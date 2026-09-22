@@ -1,17 +1,42 @@
-# Secrets — holds the live Brevo API key. Never commit this file.
-# Copy register.config.example.php to register.config.php on any new
-# checkout and fill in your own key.
-register.config.php
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Logs — records applicant names/emails, and is host-local anyway.
-register.log
-error_log
-*.log
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# Stale full-site snapshots kept on the server as manual backups.
-# Git is the backup now; these shouldn't be tracked or re-zipped into commits.
-*.zip
+# testing
+/coverage
 
-# OS / editor cruft
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
-Thumbs.db
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
