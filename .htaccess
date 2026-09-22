@@ -1,0 +1,33 @@
+# Tarbiyyah Global Academy — static one-page site (portable across hosts).
+#
+# This folder is the document root for the globalacademy.tarbiyyah.co.uk
+# subdomain (currently also served at globalacademy.akkworks.dev).
+#
+# If a parent public_html/.htaccess exists (an SPA fallback on the akkworks
+# server, or e.g. a WordPress rewrite on the tarbiyyah.co.uk server), Apache
+# would otherwise inherit its rewrite rules into this folder and send "/" to
+# the wrong place. RewriteEngine On + IgnoreInherit below stops that, so
+# mod_dir resolves "/" to index.html normally. Harmless if there is no parent.
+
+DirectoryIndex index.html
+
+# No directory browsing (e.g. the brand-kit folder or assets/).
+Options -Indexes
+
+RewriteEngine On
+RewriteOptions IgnoreInherit
+
+# Don't expose dotfiles (e.g. this .htaccess) to the web.
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# Keep the email config out of the web (it holds the Brevo API key).
+<FilesMatch "^register\.config\.php$">
+  Require all denied
+</FilesMatch>
+
+# The send log records applicant email addresses — never expose it.
+<FilesMatch "^register\.log$">
+  Require all denied
+</FilesMatch>

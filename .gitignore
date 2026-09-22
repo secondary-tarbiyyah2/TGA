@@ -1,0 +1,17 @@
+# Secrets — holds the live Brevo API key. Never commit this file.
+# Copy register.config.example.php to register.config.php on any new
+# checkout and fill in your own key.
+register.config.php
+
+# Logs — records applicant names/emails, and is host-local anyway.
+register.log
+error_log
+*.log
+
+# Stale full-site snapshots kept on the server as manual backups.
+# Git is the backup now; these shouldn't be tracked or re-zipped into commits.
+*.zip
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
