@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "sanity:dev": "sanity dev",
+    "sanity:build": "sanity build out/studio --yes && node scripts/clean-studio-build.mjs",
     "sanity:deploy": "sanity deploy"
   },
   "dependencies": {

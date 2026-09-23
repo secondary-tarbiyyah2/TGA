@@ -11,6 +11,15 @@ Options -Indexes
 RewriteEngine On
 RewriteOptions IgnoreInherit
 
+# Sanity Studio (out/studio, built separately by `npm run sanity:build` — see
+# README) is a client-side-routed single-page app: any /studio/* request that
+# isn't a real file must fall back to /studio/index.html so its own router
+# can handle the path.
+RewriteCond %{REQUEST_URI} ^/studio/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /studio/index.html [L]
+
 # Don't expose dotfiles (e.g. this .htaccess) to the web.
 <FilesMatch "^\.">
   Require all denied

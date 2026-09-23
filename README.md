@@ -32,6 +32,15 @@ produces a self-contained `out/` folder — that folder's contents (plus the `.p
 to go in the web root on the server. No `npm install`, no Node, no running process required
 there.
 
+Then, if Sanity is connected (see "Admin panel" below):
+
+```bash
+npm run sanity:build
+```
+
+adds the admin panel into `out/studio/` — same deploy, one extra static folder, still zero
+Node processes at runtime.
+
 **Recommended deploy path:** build in CI (e.g. a GitHub Actions workflow — build cost is free
 there and it keeps the 2GB server from ever having to run `next build`, which is itself
 memory-hungry for the few minutes it runs), then sync the `out/` folder to the server (rsync
@@ -55,21 +64,31 @@ here since this is a low-frequency-change marketing site, not an app.
 
 ## Admin panel (no-code content editing)
 
-The admin dashboard is [Sanity](https://sanity.io) Studio — hosted for free by Sanity itself
-(`<project>.sanity.studio`), **not** embedded in this site, so it costs the server nothing.
+The admin dashboard is [Sanity](https://sanity.io) Studio, and it lives **on the site itself**
+at `/studio` (e.g. `globalacademy.tarbiyyah.co.uk/studio`) — `robots.txt` keeps it out of
+search results. Studio is a client-side-only app, so it builds to static files exactly like
+the rest of the site (`npm run sanity:build`, see above) and costs the server nothing at
+runtime: it's just another static folder for Apache to serve, no Node process involved either
+way.
+
+(An alternative — Sanity's own free hosted Studio at `<project>.sanity.studio`, kept off this
+site entirely — is still available via `npm run sanity:deploy` if ever preferred instead. Not
+used by default since having it on our own domain is the more natural "admin panel" for the
+owner/Headteacher.)
 
 **To connect it (one-time setup):**
 1. Create a free project at [sanity.io](https://sanity.io).
 2. Set `NEXT_PUBLIC_SANITY_PROJECT_ID` and `NEXT_PUBLIC_SANITY_DATASET` (see `.env.example`)
    wherever the site is built (CI secrets, or a local `.env.local` if building on the server).
-3. Run `npm run sanity:deploy` once to publish the Studio to `<project>.sanity.studio`
-   (`npm run sanity:dev` runs it locally first if you want to preview before publishing).
+3. Run `npm run build && npm run sanity:build` and deploy the resulting `out/` — `/studio` is
+   now live on the site.
 4. From the Sanity project's **Members** page, invite:
    - The Owner/site admin as **Administrator** (full edit + project settings access).
    - The Headteacher (Hardeep Sandhar) as **Editor** (can add/edit all content below, cannot
      change project settings or schema). Sanity's built-in Editor role does not require the
      paid tier.
-5. Editors log in at `<project>.sanity.studio` directly — no separate password to manage.
+5. Editors go to `globalacademy.tarbiyyah.co.uk/studio` and log in with the invited email — no
+   separate password to manage.
 
 **Every one of these is editable from Studio once connected. Remember: because the site is
 statically exported, changes appear on the site after the next build+redeploy, not instantly**
