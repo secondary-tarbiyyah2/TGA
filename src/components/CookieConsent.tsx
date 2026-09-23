@@ -39,33 +39,31 @@ export function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent"
-      className="fixed inset-x-0 bottom-0 z-[60] border-t border-gold-light/40 bg-white p-4 shadow-[0_-8px_24px_rgba(32,18,23,0.12)] sm:p-6"
+      className="shadow-warm fixed inset-x-4 bottom-4 z-[60] max-w-[420px] rounded-2xl border border-gold-light/50 bg-white p-5 sm:inset-x-auto sm:left-4"
     >
-      <div className="mx-auto flex max-w-4xl flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-ink/80">
-          We use essential cookies to run this site, and (with your consent) analytics cookies to understand how it&apos;s
-          used. You can change your choice at any time — see our{" "}
-          <a href="/legal/cookies" className="underline text-gold-700">
-            Cookie Policy
-          </a>
-          .
-        </p>
-        <div className="flex shrink-0 gap-3">
-          <button
-            type="button"
-            onClick={() => choose("rejected")}
-            className="rounded-full border border-gold-500 px-4 py-2 text-sm font-medium text-gold-700 hover:bg-cream"
-          >
-            Reject non-essential
-          </button>
-          <button
-            type="button"
-            onClick={() => choose("accepted")}
-            className="rounded-full bg-gold-500 px-4 py-2 text-sm font-medium text-ink-900 hover:brightness-95"
-          >
-            Accept all
-          </button>
-        </div>
+      <p className="text-sm text-ink/80">
+        We use essential cookies to run this site, and (with your consent) analytics cookies to understand how
+        it&apos;s used. You can change your choice at any time — see our{" "}
+        <a href="/legal/cookies" className="underline text-gold-700">
+          Cookie Policy
+        </a>
+        .
+      </p>
+      <div className="mt-4 flex gap-3">
+        <button
+          type="button"
+          onClick={() => choose("rejected")}
+          className="rounded-full border border-gold-500 px-4 py-2 text-sm font-medium text-gold-700 hover:bg-cream"
+        >
+          Reject non-essential
+        </button>
+        <button
+          type="button"
+          onClick={() => choose("accepted")}
+          className="rounded-full bg-gold-500 px-4 py-2 text-sm font-medium text-ink-900 hover:brightness-95"
+        >
+          Accept all
+        </button>
       </div>
     </div>
   );

@@ -58,6 +58,36 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+/* Fluid type scale (see DESIGN.md spacing/layout rules). Spacing itself uses
+   Tailwind's own numeric utilities directly (p-6=24px, p-8=32px, p-12=48px,
+   p-16=64px, p-24=96px…) rather than a parallel token set, since that scale
+   already is an 8px-based system — no need to duplicate it. */
+.text-display {
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem); /* 40–68px */
+  line-height: 1.08;
+}
+.text-h2 {
+  font-size: clamp(1.875rem, 3.8vw, 2.875rem); /* 30–46px */
+  line-height: 1.15;
+}
+.text-h3 {
+  font-size: clamp(1.375rem, 2vw, 1.625rem); /* 22–26px */
+  line-height: 1.25;
+}
+
+/* Section vertical rhythm. */
+.section-pad {
+  padding-top: clamp(4rem, 10vw, 8rem);
+  padding-bottom: clamp(4rem, 10vw, 8rem);
+}
+
+/* Soft warm shadow — ink at low opacity, not a generic grey drop-shadow. */
+.shadow-warm {
+  box-shadow: 0 8px 24px -8px rgba(27, 30, 33, 0.12), 0 2px 8px -2px rgba(27, 30, 33, 0.08);
 }
 
 .font-serif {
@@ -104,6 +134,15 @@ body {
 
 .skip-link:focus {
   left: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 :focus-visible {
