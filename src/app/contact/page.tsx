@@ -21,11 +21,11 @@ export default function ContactPage() {
           </p>
           <dl className="mt-8 space-y-4 text-ink/80">
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-maroon">Email</dt>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-gold-700">Email</dt>
               <dd><a href="mailto:globalacademy@tarbiyyah.co.uk" className="underline">globalacademy@tarbiyyah.co.uk</a></dd>
             </div>
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-maroon">Part of</dt>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-gold-700">Part of</dt>
               <dd>The Tarbiyyah Education Trust, United Kingdom</dd>
             </div>
           </dl>

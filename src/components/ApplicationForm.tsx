@@ -50,12 +50,12 @@ export function ApplicationForm() {
     <form onSubmit={handleSubmit} className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8" noValidate>
       <div className="mb-6 flex items-center gap-2" role="group" aria-label={`Step ${step} of ${totalSteps}`}>
         {Array.from({ length: totalSteps }).map((_, i) => (
-          <span key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-maroon" : "bg-gold-light/50"}`} aria-hidden="true" />
+          <span key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-gold-500" : "bg-gold-light/50"}`} aria-hidden="true" />
         ))}
       </div>
 
       <div className={step === 1 ? "block" : "hidden"}>
-        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-maroon">Step 1 · About you</p>
+        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-gold-700">Step 1 · About you</p>
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">
             Your full name
@@ -77,7 +77,7 @@ export function ApplicationForm() {
       </div>
 
       <div className={step === 2 ? "block" : "hidden"}>
-        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-maroon">Step 2 · Your child</p>
+        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-gold-700">Step 2 · Your child</p>
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">
             Child&apos;s full name
@@ -94,7 +94,7 @@ export function ApplicationForm() {
       </div>
 
       <div className={step === 3 ? "block" : "hidden"}>
-        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-maroon">Step 3 · Notes &amp; consent</p>
+        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-gold-700">Step 3 · Notes &amp; consent</p>
         <label className="block text-sm font-medium text-ink">
           Anything else we should know? <span className="font-normal text-ink/70">(optional)</span>
           <textarea name="notes" rows={4} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
@@ -109,7 +109,7 @@ export function ApplicationForm() {
         <button
           type="button"
           onClick={() => setStep((s) => Math.max(1, s - 1))}
-          className={`rounded-full border border-maroon px-5 py-2.5 text-sm font-semibold text-maroon ${step === 1 ? "invisible" : ""}`}
+          className={`rounded-full border border-gold-500 px-5 py-2.5 text-sm font-semibold text-gold-700 ${step === 1 ? "invisible" : ""}`}
         >
           Back
         </button>
@@ -117,12 +117,12 @@ export function ApplicationForm() {
           <button
             type="button"
             onClick={() => setStep((s) => Math.min(totalSteps, s + 1))}
-            className="rounded-full bg-maroon px-6 py-2.5 text-sm font-semibold text-white hover:bg-maroon-dark"
+            className="rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95"
           >
             Continue
           </button>
         ) : (
-          <button type="submit" disabled={status === "submitting"} className="rounded-full bg-maroon px-6 py-2.5 text-sm font-semibold text-white hover:bg-maroon-dark disabled:opacity-60">
+          <button type="submit" disabled={status === "submitting"} className="rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-60">
             {status === "submitting" ? "Submitting…" : "Submit application"}
           </button>
         )}

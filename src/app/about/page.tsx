@@ -49,7 +49,7 @@ export default function AboutPage() {
               the same safeguarding standards as Tarbiyyah Primary and Tarbiyyah Secondary, including vetted,
               DBS-checked staff, a named Designated Safeguarding Lead, and clear reporting routes for any concern.
               Our full Safeguarding Policy is available on the{" "}
-              <a href="/policies" className="text-maroon underline">Policies</a> page.
+              <a href="/policies" className="text-gold-700 underline">Policies</a> page.
             </p>
           </div>
         </Container>
@@ -90,7 +90,7 @@ export default function AboutPage() {
                 Tarbiyyah Global Academy we bring the standards of the Tarbiyyah family of schools to families
                 anywhere in the world.&rdquo;
               </p>
-              <footer className="mt-4 text-sm font-semibold text-maroon">Hardeep Sandhar, Headteacher</footer>
+              <footer className="mt-4 text-sm font-semibold text-gold-700">Hardeep Sandhar, Headteacher</footer>
             </blockquote>
           </div>
         </Container>

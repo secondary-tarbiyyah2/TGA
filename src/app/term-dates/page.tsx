@@ -25,7 +25,7 @@ export default async function TermDatesPage() {
                 <p className="font-medium text-ink">{d.label}</p>
                 <p className="text-xs text-ink/70">{d.kind}</p>
               </div>
-              <p className="text-sm font-semibold text-maroon">
+              <p className="text-sm font-semibold text-gold-700">
                 {new Date(d.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
               </p>
             </li>

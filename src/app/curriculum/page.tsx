@@ -41,11 +41,11 @@ export default function CurriculumPage() {
       <section className="geo-texture bg-cream py-16">
         <Container className="grid gap-6 sm:grid-cols-2">
           {keyStages.map((ks) => (
-            <a key={ks.slug} href={`/curriculum/${ks.slug}`} className="rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-maroon hover:shadow-md">
-              <p className="text-xs font-semibold uppercase tracking-wide text-maroon">{ks.title}</p>
+            <a key={ks.slug} href={`/curriculum/${ks.slug}`} className="rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-gold-500 hover:shadow-md">
+              <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">{ks.title}</p>
               <h3 className="mt-1 font-serif text-xl font-semibold text-ink">{ks.range}</h3>
               <p className="mt-3 text-sm text-ink/70">{ks.subjects.slice(0, 4).join(" · ")}…</p>
-              <span className="mt-4 inline-block text-sm font-semibold text-maroon">View timetable →</span>
+              <span className="mt-4 inline-block text-sm font-semibold text-gold-700">View timetable →</span>
             </a>
           ))}
         </Container>

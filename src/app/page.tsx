@@ -27,7 +27,7 @@ export default async function HomePage() {
           <div>
             <Kicker>An online school by Tarbiyyah Education Trust</Kicker>
             <h1 className="font-serif text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-              A British education, rooted in faith — <span className="text-maroon">wherever home is.</span>
+              A British education, rooted in faith — <span className="text-gold-700">wherever home is.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-ink/75">
               Live, timetabled lessons with qualified UK teachers. The full British curriculum, taught with{" "}
@@ -36,9 +36,9 @@ export default async function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href="/admissions">Apply Now</Button>
-              <Button href="/about" variant="ghost">Part of the Tarbiyyah family →</Button>
+              <Button href="/about" variant="secondary">Part of the Tarbiyyah family →</Button>
             </div>
-            <p className="mt-6 text-sm font-medium text-maroon">Under the Tarbiyyah Education Trust — 10+ years operating.</p>
+            <p className="mt-6 text-sm font-medium text-gold-700">Under the Tarbiyyah Education Trust — 10+ years operating.</p>
           </div>
           <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl border border-gold-light/50 shadow-xl">
             <Image src="/hero.jpg" alt="An open notebook and pen on a warm wooden desk — calm, focused learning" fill className="object-cover" priority sizes="(min-width: 1024px) 24rem, 80vw" />
@@ -69,7 +69,7 @@ export default async function HomePage() {
               Live-timetabled academic subjects from Reception through GCSE, taught by qualified UK teachers — with
               Qur&apos;an, Islamic Studies and Arabic woven through every key stage, not bolted on.
             </p>
-            <Button href="/curriculum" variant="ghost" className="mt-6">Explore the curriculum</Button>
+            <Button href="/curriculum" variant="secondary" className="mt-6">Explore the curriculum</Button>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
@@ -78,8 +78,8 @@ export default async function HomePage() {
               { stage: "Year 7 – Year 9", href: "/curriculum/year-7-9" },
               { stage: "Year 10 – Year 11 (GCSE)", href: "/curriculum/year-10-11" },
             ].map((s) => (
-              <a key={s.href} href={s.href} className="rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-maroon hover:shadow-md">
-                <p className="font-serif text-lg font-semibold text-maroon">{s.stage}</p>
+              <a key={s.href} href={s.href} className="rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-gold-500 hover:shadow-md">
+                <p className="font-serif text-lg font-semibold text-gold-700">{s.stage}</p>
                 <p className="mt-2 text-sm text-ink/70">View timetable, subjects and sample week →</p>
               </a>
             ))}
@@ -119,12 +119,12 @@ export default async function HomePage() {
             {testimonials.slice(0, 2).map((t) => (
               <blockquote key={t._id} className="rounded-2xl border border-gold-light/50 bg-white p-6">
                 <p className="text-ink/80">&ldquo;{t.quote}&rdquo;</p>
-                <footer className="mt-4 text-sm font-semibold text-maroon">{t.attribution}</footer>
+                <footer className="mt-4 text-sm font-semibold text-gold-700">{t.attribution}</footer>
                 {t.isPlaceholder && <PlaceholderNote>Placeholder — real testimonials to follow</PlaceholderNote>}
               </blockquote>
             ))}
           </div>
-          <Button href="/testimonials" variant="ghost" className="mt-8">Read more testimonials</Button>
+          <Button href="/testimonials" variant="secondary" className="mt-8">Read more testimonials</Button>
         </Container>
       </section>
 
@@ -138,7 +138,7 @@ export default async function HomePage() {
               Every fee is published on our website — nothing shared only &quot;on enquiry.&quot; Annual, termly and
               monthly plans are available for every year group.
             </p>
-            <Button href="/fees" variant="ghost" className="mt-6">See the full fee table</Button>
+            <Button href="/fees" variant="secondary" className="mt-6">See the full fee table</Button>
           </div>
           <div className="overflow-hidden rounded-2xl border border-gold-light/50">
             <table className="w-full text-left text-sm">
@@ -152,7 +152,7 @@ export default async function HomePage() {
                 {feeBands.map((f) => (
                   <tr key={f._id} className="border-t border-gold-light/40">
                     <td className="px-4 py-3">{f.yearGroupRange}</td>
-                    <td className="px-4 py-3 font-semibold text-maroon">£{f.annualFee.toLocaleString()}</td>
+                    <td className="px-4 py-3 font-semibold text-gold-700">£{f.annualFee.toLocaleString()}</td>
                   </tr>
                 ))}
               </tbody>

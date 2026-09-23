@@ -25,7 +25,7 @@ export default async function PortalPage() {
         {settings.portalUrl ? (
           <a
             href={settings.portalUrl}
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-maroon px-8 py-3.5 text-sm font-semibold text-white hover:bg-maroon-dark"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-gold-500 px-8 py-3.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95"
           >
             Log In
           </a>

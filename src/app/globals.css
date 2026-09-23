@@ -1,17 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #201217;
+  --background: #fdfbf6;
+  --foreground: #1b1e21;
 
-  /* Brand */
-  --color-maroon: #8c1d40;
-  --color-maroon-dark: #6b1530;
-  --color-maroon-light: #a8355a;
-  --color-gold: #c9a15a;
-  --color-gold-light: #e4cd98;
-  --color-cream: #fbf6ec;
-  --color-ink: #201217;
+  /* Brand — gold, sampled from public/brand/ga-wordmark.png (see DESIGN.md).
+     The dominant logo pixel colour was #7C6428, essentially identical to the
+     brand gold-700 below. Full scale + WCAG contrast table in DESIGN.md. */
+  --color-gold-900: #5e4b1e; /* darkest — hover states, small text */
+  --color-gold-700: #7d6428; /* LOGO GOLD — headline accents, links */
+  --color-gold-500: #b08e45; /* button fills (with ink-900 text), icons, rules */
+  --color-gold-300: #e3c98f; /* borders, hover tints */
+  --color-gold-100: #f5ecd6; /* soft section backgrounds, chips */
+  --color-gold-50: #fbf7ee; /* page background alt */
+
+  --color-ink-900: #1b1e21; /* headings, primary text */
+  --color-ink-700: #3a3f45; /* body text */
+  --color-ink-500: #6b7178; /* muted text (large text only — see DESIGN.md) */
+
+  --color-cream: #fdfbf6;
+  --color-white: #ffffff;
+
+  /* Back-compat aliases so the many existing gold/gold-light/ink/ink-light
+     utility classes across the site automatically pick up the real palette
+     without a full rewrite of every call site. */
+  --color-ink: var(--color-ink-900);
+  --color-gold: var(--color-gold-500);
+  --color-gold-light: var(--color-gold-300);
+  --color-gold-dark: var(--color-gold-900);
 }
 
 @theme inline {
@@ -20,13 +36,22 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-space-grotesk);
 
-  --color-maroon: var(--color-maroon);
-  --color-maroon-dark: var(--color-maroon-dark);
-  --color-maroon-light: var(--color-maroon-light);
+  --color-gold-900: var(--color-gold-900);
+  --color-gold-700: var(--color-gold-700);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-100: var(--color-gold-100);
+  --color-gold-50: var(--color-gold-50);
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-700: var(--color-ink-700);
+  --color-ink-500: var(--color-ink-500);
+  --color-cream: var(--color-cream);
+  --color-white: var(--color-white);
+
+  --color-ink: var(--color-ink);
   --color-gold: var(--color-gold);
   --color-gold-light: var(--color-gold-light);
-  --color-cream: var(--color-cream);
-  --color-ink: var(--color-ink);
+  --color-gold-dark: var(--color-gold-dark);
 }
 
 body {
@@ -42,10 +67,28 @@ body {
 /* Subtle Islamic geometric texture, used sparingly on header/footer bands */
 .geo-texture {
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(201, 161, 90, 0.08) 0, transparent 45%),
-    radial-gradient(circle at 80% 0%, rgba(140, 29, 64, 0.06) 0, transparent 40%),
-    repeating-linear-gradient(45deg, rgba(201, 161, 90, 0.05) 0 2px, transparent 2px 28px),
-    repeating-linear-gradient(-45deg, rgba(201, 161, 90, 0.05) 0 2px, transparent 2px 28px);
+    radial-gradient(circle at 20% 20%, rgba(176, 142, 69, 0.08) 0, transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(94, 75, 30, 0.06) 0, transparent 40%),
+    repeating-linear-gradient(45deg, rgba(176, 142, 69, 0.05) 0 2px, transparent 2px 28px),
+    repeating-linear-gradient(-45deg, rgba(176, 142, 69, 0.05) 0 2px, transparent 2px 28px);
+}
+
+/* Thin gold "foil" divider: a hairline rule with a small 8-point star at its
+   centre. Use sparingly — see DESIGN.md brand direction. */
+.foil-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--color-gold-500);
+}
+.foil-divider::before,
+.foil-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  max-width: 6rem;
+  background: linear-gradient(90deg, transparent, var(--color-gold-300), transparent);
 }
 
 .skip-link {
@@ -53,7 +96,7 @@ body {
   left: -9999px;
   top: 0;
   z-index: 100;
-  background: var(--color-maroon);
+  background: var(--color-ink-900);
   color: #fff;
   padding: 0.75rem 1.25rem;
   border-radius: 0 0 0.5rem 0;
@@ -64,6 +107,8 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-gold);
+  /* gold-900, not gold-500: a gold-500 ring would vanish against a gold-500
+     button fill. Darkest gold stays visible against every surface in use. */
+  outline: 3px solid var(--color-gold-900);
   outline-offset: 2px;
 }

@@ -39,7 +39,7 @@ export function FaqAccordion({ entries }: { entries: FaqEntry[] }) {
               onClick={() => setCategory(c)}
               aria-pressed={category === c}
               className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
-                category === c ? "bg-maroon text-white" : "bg-cream text-ink/70 hover:bg-gold-light/50"
+                category === c ? "bg-gold-500 text-ink-900" : "bg-cream text-ink/70 hover:bg-gold-light/50"
               }`}
             >
               {c}

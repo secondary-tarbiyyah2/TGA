@@ -66,7 +66,7 @@ export function RegisterInterestForm() {
       <div className="hidden">
         <label>Company <input type="text" name="company" tabIndex={-1} autoComplete="off" /></label>
       </div>
-      <button type="submit" disabled={status === "submitting"} className="mt-6 w-full rounded-full bg-maroon px-6 py-3 text-sm font-semibold text-white hover:bg-maroon-dark disabled:opacity-60">
+      <button type="submit" disabled={status === "submitting"} className="mt-6 w-full rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-60">
         {status === "submitting" ? "Sending…" : "Register interest"}
       </button>
       {status === "error" && (

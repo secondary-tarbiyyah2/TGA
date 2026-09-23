@@ -25,9 +25,9 @@ export default async function TestimonialsPage() {
         <Container className="grid gap-6 sm:grid-cols-2">
           {testimonials.map((t) => (
             <blockquote key={t._id} className="rounded-2xl border border-gold-light/50 bg-white p-6">
-              <p className="text-xs font-semibold uppercase tracking-wide text-maroon">{t.role}</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">{t.role}</p>
               <p className="mt-2 text-ink/80">&ldquo;{t.quote}&rdquo;</p>
-              <footer className="mt-4 text-sm font-semibold text-maroon">{t.attribution}</footer>
+              <footer className="mt-4 text-sm font-semibold text-gold-700">{t.attribution}</footer>
               {t.isPlaceholder && <PlaceholderNote>Placeholder — real testimonials to follow</PlaceholderNote>}
             </blockquote>
           ))}

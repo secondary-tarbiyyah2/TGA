@@ -29,7 +29,7 @@ export default async function OpenEveningPage() {
             <>
               <p className="mt-2 text-sm text-ink/70">
                 Our booking widget isn&apos;t connected yet. In the meantime, email{" "}
-                <a href="mailto:globalacademy@tarbiyyah.co.uk" className="text-maroon underline">globalacademy@tarbiyyah.co.uk</a> to register for the next session.
+                <a href="mailto:globalacademy@tarbiyyah.co.uk" className="text-gold-700 underline">globalacademy@tarbiyyah.co.uk</a> to register for the next session.
               </p>
               <PlaceholderNote>Booking widget link to be added via Site settings in the admin panel.</PlaceholderNote>
             </>

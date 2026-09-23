@@ -45,7 +45,7 @@ export function CookieConsent() {
         <p className="text-sm text-ink/80">
           We use essential cookies to run this site, and (with your consent) analytics cookies to understand how it&apos;s
           used. You can change your choice at any time — see our{" "}
-          <a href="/legal/cookies" className="underline text-maroon">
+          <a href="/legal/cookies" className="underline text-gold-700">
             Cookie Policy
           </a>
           .
@@ -54,14 +54,14 @@ export function CookieConsent() {
           <button
             type="button"
             onClick={() => choose("rejected")}
-            className="rounded-full border border-maroon px-4 py-2 text-sm font-medium text-maroon hover:bg-cream"
+            className="rounded-full border border-gold-500 px-4 py-2 text-sm font-medium text-gold-700 hover:bg-cream"
           >
             Reject non-essential
           </button>
           <button
             type="button"
             onClick={() => choose("accepted")}
-            className="rounded-full bg-maroon px-4 py-2 text-sm font-medium text-white hover:bg-maroon-dark"
+            className="rounded-full bg-gold-500 px-4 py-2 text-sm font-medium text-ink-900 hover:brightness-95"
           >
             Accept all
           </button>

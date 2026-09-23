@@ -29,14 +29,14 @@ export default async function TeamPage() {
         <Container className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {staff.map((s) => (
             <div key={s._id} className="rounded-2xl border border-gold-light/50 bg-white p-6 text-center">
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-cream font-serif text-2xl font-semibold text-maroon">
+              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-cream font-serif text-2xl font-semibold text-gold-700">
                 {s.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
               </div>
               <h2 className="mt-4 font-serif text-lg font-semibold text-ink">{s.name}</h2>
-              <p className="text-sm font-medium text-maroon">{s.roleTitle}</p>
+              <p className="text-sm font-medium text-gold-700">{s.roleTitle}</p>
               {s.qualifications && <p className="mt-2 text-sm text-ink/70">{s.qualifications}</p>}
               {s.introVideoUrl && (
-                <a href={s.introVideoUrl} className="mt-3 inline-block text-sm font-semibold text-maroon underline">
+                <a href={s.introVideoUrl} className="mt-3 inline-block text-sm font-semibold text-gold-700 underline">
                   Watch intro video
                 </a>
               )}

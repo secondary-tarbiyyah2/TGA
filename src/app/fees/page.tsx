@@ -41,7 +41,7 @@ export default async function FeesPage() {
                 {feeBands.map((f) => (
                   <tr key={f._id} className="border-t border-gold-light/40 bg-white">
                     <td className="px-4 py-3 font-medium text-ink">{f.yearGroupRange}</td>
-                    <td className="px-4 py-3 font-semibold text-maroon">£{f.annualFee.toLocaleString()}</td>
+                    <td className="px-4 py-3 font-semibold text-gold-700">£{f.annualFee.toLocaleString()}</td>
                     <td className="px-4 py-3">£{f.termlyFee.toLocaleString()} / term</td>
                     <td className="px-4 py-3">£{f.monthlyFee.toLocaleString()} / month</td>
                   </tr>
@@ -53,12 +53,12 @@ export default async function FeesPage() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-              <p className="text-sm font-semibold uppercase tracking-wide text-maroon">Application fee</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.applicationFee}</p>
               <p className="mt-1 text-sm text-ink/60">Non-refundable, paid when you submit your application.</p>
             </div>
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-              <p className="text-sm font-semibold uppercase tracking-wide text-maroon">Registration fee</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
               <p className="mt-1 text-sm text-ink/60">One-time, paid once a place is offered and accepted.</p>
             </div>

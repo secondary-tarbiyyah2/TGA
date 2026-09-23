@@ -28,7 +28,7 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
           <Kicker>{ks.title}</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">{ks.range}</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">{ks.liveSplit}</p>
-          {ks.gcseNote && <p className="mt-4 max-w-2xl text-sm font-medium text-maroon">{ks.gcseNote}</p>}
+          {ks.gcseNote && <p className="mt-4 max-w-2xl text-sm font-medium text-gold-700">{ks.gcseNote}</p>}
         </Container>
       </section>
 

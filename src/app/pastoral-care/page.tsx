@@ -35,7 +35,7 @@ export default function PastoralCarePage() {
             <PlaceholderNote>Draft concept — not yet confirmed</PlaceholderNote>
           </div>
           <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-            <p className="text-xs font-semibold uppercase tracking-wide text-maroon">Sample note (illustrative)</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">Sample note (illustrative)</p>
             <p className="mt-3 font-serif text-ink/80">
               &ldquo;This week, [child] helped a classmate who was struggling with their reading task without being
               asked — a lovely example of ihsan in action. Keep it up!&rdquo;

@@ -20,7 +20,7 @@ export function Header() {
 
         <button
           type="button"
-          className="lg:hidden rounded-md p-2 text-maroon"
+          className="lg:hidden rounded-md p-2 text-gold-700"
           aria-expanded={open}
           aria-controls="primary-nav"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -45,7 +45,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 aria-current={active ? "page" : undefined}
                 className={`rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
-                  active ? "text-maroon" : "text-ink/80 hover:text-maroon"
+                  active ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
                 }`}
               >
                 {item.label}
@@ -55,7 +55,7 @@ export function Header() {
           <Link
             href={primaryCta.href}
             onClick={() => setOpen(false)}
-            className="mt-2 inline-flex items-center justify-center rounded-full bg-maroon px-5 py-2.5 text-sm font-semibold text-white hover:bg-maroon-dark lg:mt-0 lg:ml-2"
+            className="mt-2 inline-flex items-center justify-center rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 lg:mt-0 lg:ml-2"
           >
             {primaryCta.label}
           </Link>
