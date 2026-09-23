@@ -14,7 +14,7 @@ export function RegisterInterestForm() {
     const data = Object.fromEntries(new FormData(form).entries());
 
     try {
-      const res = await fetch("/api/register", {
+      const res = await fetch("/register.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...data, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone }),

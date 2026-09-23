@@ -22,7 +22,7 @@ export function ApplicationForm() {
     const data = Object.fromEntries(new FormData(form).entries());
 
     try {
-      const res = await fetch("/api/apply", {
+      const res = await fetch("/apply.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

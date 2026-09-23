@@ -37,6 +37,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# PHP form-handler secrets/logs (live on the server, never in git — see
+# public/register.config.example.php)
+/public/register.config.php
+/public/register.log
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

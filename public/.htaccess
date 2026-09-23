@@ -1,0 +1,32 @@
+# Tarbiyyah Global Academy — static export document root.
+#
+# Copied verbatim by `next build` (output: "export") into out/, so this ships
+# with every deploy. Mirrors the legacy-static/.htaccess rules.
+
+DirectoryIndex index.html
+
+# No directory browsing.
+Options -Indexes
+
+RewriteEngine On
+RewriteOptions IgnoreInherit
+
+# Don't expose dotfiles (e.g. this .htaccess) to the web.
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# Keep the email config out of the web (it holds the Brevo API key).
+<FilesMatch "^register\.config\.php$">
+  Require all denied
+</FilesMatch>
+
+# The mailer helper isn't meant to be requested directly.
+<FilesMatch "^_mailer\.php$">
+  Require all denied
+</FilesMatch>
+
+# The send log records applicant email addresses — never expose it.
+<FilesMatch "^register\.log$">
+  Require all denied
+</FilesMatch>

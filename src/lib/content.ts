@@ -9,12 +9,16 @@ import {
 /** Every getter below tries live Sanity content first, and falls back to bundled seed
  * content (same shape) whenever Sanity isn't configured yet or a query fails. This lets
  * every page work out of the box, and start reading real CMS data the moment a Sanity
- * project is connected — no code change required. */
+ * project is connected — no code change required.
+ *
+ * This site is statically exported (output: "export"), so these queries only ever run
+ * at build time — there is no server to re-fetch at request time. CMS edits appear on
+ * the next rebuild/redeploy, not instantly; see README for how to trigger one. */
 async function fetchOrFallback<T>(query: string, fallback: T): Promise<T> {
   const client = getSanityClient();
   if (!client) return fallback;
   try {
-    const result = await client.fetch<T>(query, {}, { next: { revalidate: 60 } });
+    const result = await client.fetch<T>(query);
     if (Array.isArray(result) && result.length === 0) return fallback;
     if (result == null) return fallback;
     return result;

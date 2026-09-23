@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { keyStages } from "@/content/curriculum";
 
+export const dynamic = "force-static";
+
 const siteUrl = "https://globalacademy.tarbiyyah.co.uk";
 
 const routes = [
