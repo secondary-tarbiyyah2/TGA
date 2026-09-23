@@ -5,6 +5,7 @@ import { Kicker, PlaceholderNote } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { getDifferentiators, getFeeBands, getTestimonials } from "@/lib/content";
+import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "A British education, rooted in faith",
@@ -145,14 +146,14 @@ export default async function HomePage() {
               <thead className="bg-cream text-ink/70">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Year group</th>
-                  <th className="px-4 py-3 font-semibold">Annual</th>
+                  <th className="px-4 py-3 font-semibold">Jan–Jul 2027</th>
                 </tr>
               </thead>
               <tbody>
                 {feeBands.map((f) => (
                   <tr key={f._id} className="border-t border-gold-light/40">
                     <td className="px-4 py-3">{f.yearGroupRange}</td>
-                    <td className="px-4 py-3 font-semibold text-gold-700">£{f.annualFee.toLocaleString()}</td>
+                    <td className="px-4 py-3 font-semibold text-gold-700">{formatGBP(f.annualFee)}</td>
                   </tr>
                 ))}
               </tbody>

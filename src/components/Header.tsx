@@ -15,7 +15,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-gold-light/40 bg-white/95 backdrop-blur">
       <Container className="flex h-20 items-center justify-between gap-4">
         <Link href="/" className="flex items-center" aria-label="Tarbiyyah Global Academy — home">
-          <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={180} height={55} priority />
+          <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={220} height={67} priority />
         </Link>
 
         <button

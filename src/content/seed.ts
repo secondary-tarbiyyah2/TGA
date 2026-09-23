@@ -14,13 +14,14 @@ export type FeeBand = {
   notes?: string;
 };
 
-// Annual figures are confirmed. Termly/monthly are an even split pending confirmation
-// from the school of the actual termly/monthly payment plan figures.
+// Launch-cohort pricing: the first cohort starts January 2027, so this covers a
+// shortened Jan–Jul 2027 period (two terms, not three) rather than a full school
+// year. Figures as supplied by the school — not recalculated or inferred here.
 export const feeBands: FeeBand[] = [
-  { _id: "fb1", yearGroupRange: "Reception – Year 2", order: 1, annualFee: 2395, termlyFee: 799, monthlyFee: 200 },
-  { _id: "fb2", yearGroupRange: "Year 3 – Year 6", order: 2, annualFee: 3195, termlyFee: 1065, monthlyFee: 267 },
-  { _id: "fb3", yearGroupRange: "Year 7 – Year 9", order: 3, annualFee: 4195, termlyFee: 1399, monthlyFee: 350 },
-  { _id: "fb4", yearGroupRange: "Year 10 – Year 11", order: 4, annualFee: 4500, termlyFee: 1500, monthlyFee: 375, notes: "GCSE exam entry fees are billed separately by the exam centre." },
+  { _id: "fb1", yearGroupRange: "Reception – Year 2", order: 1, annualFee: 1596, termlyFee: 798, monthlyFee: 342.14 },
+  { _id: "fb2", yearGroupRange: "Year 3 – Year 6", order: 2, annualFee: 2130, termlyFee: 1597.5, monthlyFee: 456.43 },
+  { _id: "fb3", yearGroupRange: "Year 7 – Year 9", order: 3, annualFee: 2796, termlyFee: 2097.5, monthlyFee: 599.29 },
+  { _id: "fb4", yearGroupRange: "Year 10 – Year 11", order: 4, annualFee: 3000, termlyFee: 2250, monthlyFee: 642.86, notes: "GCSE exam entry fees are billed separately by the exam centre." },
 ];
 
 export const siteSettings = {

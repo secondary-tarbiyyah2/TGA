@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { Kicker, PlaceholderNote } from "@/components/Section";
+import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
+import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Fees & Payment Plans",
@@ -22,6 +23,11 @@ export default async function FeesPage() {
             Every figure is published here — nothing shared only on enquiry. Choose annual, termly or monthly
             payment for any year group.
           </p>
+          <p className="mt-3 max-w-2xl text-sm text-ink/60">
+            Our first cohort starts in January 2027, so the figures below cover the shortened January–July 2027
+            period (two terms, not a full three-term year) — not a full annual fee. All fees are inclusive of 20%
+            VAT.
+          </p>
         </Container>
       </section>
 
@@ -32,7 +38,7 @@ export default async function FeesPage() {
               <thead className="bg-cream text-ink/70">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Year group</th>
-                  <th className="px-4 py-3 font-semibold">Annual</th>
+                  <th className="px-4 py-3 font-semibold">Total (Jan–Jul 2027)</th>
                   <th className="px-4 py-3 font-semibold">Termly</th>
                   <th className="px-4 py-3 font-semibold">Monthly</th>
                 </tr>
@@ -41,15 +47,19 @@ export default async function FeesPage() {
                 {feeBands.map((f) => (
                   <tr key={f._id} className="border-t border-gold-light/40 bg-white">
                     <td className="px-4 py-3 font-medium text-ink">{f.yearGroupRange}</td>
-                    <td className="px-4 py-3 font-semibold text-gold-700">£{f.annualFee.toLocaleString()}</td>
-                    <td className="px-4 py-3">£{f.termlyFee.toLocaleString()} / term</td>
-                    <td className="px-4 py-3">£{f.monthlyFee.toLocaleString()} / month</td>
+                    <td className="px-4 py-3 font-semibold text-gold-700">{formatGBP(f.annualFee)}</td>
+                    <td className="px-4 py-3">{formatGBP(f.termlyFee)} / term</td>
+                    <td className="px-4 py-3">{formatGBP(f.monthlyFee)} / month</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <PlaceholderNote>Termly and monthly figures are an even split of the confirmed annual fee, pending the school&apos;s final published payment-plan figures.</PlaceholderNote>
+          <p className="mt-3 text-xs text-ink/60">
+            The total figure represents tuition payable for the shortened January–July 2027 launch period. Term
+            instalments are split evenly across the two terms in this period; monthly instalments are spread across
+            the same period. All fees are inclusive of 20% VAT.
+          </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
