@@ -71,3 +71,9 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     )
   );
 }
+
+// Report this run into the central retention registry — see
+// scripts/compliance-retention.mjs's header for why this job keeps
+// deleting its own table but reports the run centrally.
+await supabase.from("retention_job_runs").insert({ data_type: "Parent/staff/student messages", action: "delete", rows_affected: deleted, notes: null });
+await supabase.from("retention_schedule").update({ last_run_at: new Date().toISOString() }).eq("data_type", "Parent/staff/student messages");

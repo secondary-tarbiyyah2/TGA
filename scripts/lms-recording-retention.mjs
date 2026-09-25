@@ -106,3 +106,10 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     fs.appendFile(process.env.GITHUB_STEP_SUMMARY, `## Recording retention\n${summary.map((l) => `- ${l}`).join("\n")}\n`)
   );
 }
+
+// Report this run into the central retention registry (0015_compliance.sql)
+// so the compliance page's "when did each retention job last run" view
+// covers this job too, without this job touching a table it doesn't own —
+// see scripts/compliance-retention.mjs's header for the reasoning.
+await supabase.from("retention_job_runs").insert({ data_type: "Lesson recordings", action: "delete", rows_affected: deleted, notes: null });
+await supabase.from("retention_schedule").update({ last_run_at: new Date().toISOString() }).eq("data_type", "Lesson recordings");
