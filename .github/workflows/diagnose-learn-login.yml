@@ -1,0 +1,99 @@
+name: Diagnose /learn/login
+
+# One-off diagnostic: the sandbox this app is built in can't reach the live
+# host directly (network policy), so when something on the live site is
+# reported broken, this runs a real headless browser against it from a
+# GitHub-hosted runner instead, capturing console errors, network failures,
+# and a screenshot — actual evidence instead of guessing.
+
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: "Email to test signing in with"
+        required: true
+      password:
+        description: "Password to test signing in with"
+        required: true
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright
+        run: |
+          npm install playwright@1
+          npx playwright install --with-deps chromium
+      - name: Run diagnostic
+        env:
+          TEST_EMAIL: ${{ inputs.email }}
+          TEST_PASSWORD: ${{ inputs.password }}
+        run: |
+          cat > /tmp/diagnose.mjs << 'SCRIPT'
+          import { chromium } from "playwright";
+
+          const email = process.env.TEST_EMAIL;
+          const password = process.env.TEST_PASSWORD;
+          const browser = await chromium.launch();
+          const page = await browser.newPage();
+
+          const consoleMsgs = [];
+          const requestFails = [];
+          page.on("console", (msg) => consoleMsgs.push(`[${msg.type()}] ${msg.text()}`));
+          page.on("pageerror", (err) => consoleMsgs.push(`[pageerror] ${err.message}`));
+          page.on("requestfailed", (req) => requestFails.push(`${req.method()} ${req.url()} -> ${req.failure()?.errorText}`));
+          page.on("response", (res) => {
+            if (res.status() >= 400) requestFails.push(`${res.request().method()} ${res.url()} -> HTTP ${res.status()}`);
+          });
+
+          console.log("=== Navigating to /learn/login ===");
+          const resp = await page.goto("https://globalacademy.tarbiyyah.co.uk/learn/login", { waitUntil: "networkidle", timeout: 30000 }).catch((e) => {
+            console.log("NAVIGATION ERROR:", e.message);
+            return null;
+          });
+          console.log("Response status:", resp?.status());
+          await page.screenshot({ path: "/tmp/01-login-page.png" });
+
+          const emailInput = page.locator('input[type="email"]');
+          const passwordInput = page.locator('input[type="password"]');
+          const hasForm = await emailInput.isVisible().catch(() => false);
+          console.log("Login form visible:", hasForm);
+
+          if (hasForm) {
+            await emailInput.fill(email);
+            await passwordInput.fill(password);
+            console.log("=== Submitting sign-in form ===");
+            await page.locator('button[type="submit"]').click();
+            // Wait a bounded time for navigation/response rather than hanging forever
+            await page.waitForTimeout(8000);
+            console.log("URL after 8s:", page.url());
+            await page.screenshot({ path: "/tmp/02-after-submit.png" });
+
+            const errorText = await page.locator('[role="alert"]').textContent().catch(() => null);
+            console.log("Visible error message:", errorText);
+
+            // Wait longer in case it's just slow
+            await page.waitForTimeout(15000);
+            console.log("URL after 23s total:", page.url());
+            await page.screenshot({ path: "/tmp/03-after-longer-wait.png" });
+          }
+
+          console.log("=== Console messages ===");
+          consoleMsgs.forEach((m) => console.log(m));
+          console.log("=== Failed/error requests ===");
+          requestFails.forEach((m) => console.log(m));
+
+          await browser.close();
+          SCRIPT
+          node /tmp/diagnose.mjs
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: login-diagnostic-screenshots
+          path: /tmp/*.png
+          retention-days: 3
