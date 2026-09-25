@@ -58,13 +58,24 @@ jobs:
         with:
           version: latest
 
-      - name: Find the "TGA" project ref
+      - name: Find the project ref
         id: project
         run: |
           set -euo pipefail
-          REF=$(supabase projects list -o json | jq -r '.[] | select(.name=="TGA") | .id' | head -n1)
+          PROJECTS=$(supabase projects list -o json)
+          # The project was never renamed off Supabase's auto-generated default
+          # ("<account>'s Project"), so match that first; fall back to "there's
+          # only one project on this account" so a future rename doesn't quietly
+          # break this — either way, never guess among multiple candidates.
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
           if [ -z "$REF" ] || [ "$REF" = "null" ]; then
-            echo "::error::No Supabase project named 'TGA' found on this account. Create it at supabase.com (region: London) first — see SETUP.md."
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then
+              REF=$(echo "$PROJECTS" | jq -r '.[0].id')
+            fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project (expected 'secondary-tarbiyyah2's Project', or exactly one project on this account). Projects found: $(echo "$PROJECTS" | jq -c '[.[].name]')"
             exit 1
           fi
           echo "ref=$REF" >> "$GITHUB_OUTPUT"
