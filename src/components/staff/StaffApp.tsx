@@ -32,7 +32,17 @@ function SignIn() {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     const { error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) setError("Incorrect email or password.");
+    if (error) {
+      // invalid_credentials covers both "wrong password" and "no such
+      // account" (Supabase deliberately doesn't distinguish, to avoid
+      // leaking which emails exist) — anything else is a real error
+      // (network, rate limit, etc.) and shouldn't be misreported as that.
+      setError(
+        error.code === "invalid_credentials"
+          ? "Incorrect email or password. If you were recently given a temporary password, check it wasn't already changed."
+          : `Couldn't sign in: ${error.message}`,
+      );
+    }
   }
 
   async function handleLinkSubmit(e: React.FormEvent) {
