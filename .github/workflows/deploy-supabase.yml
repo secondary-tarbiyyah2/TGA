@@ -148,6 +148,11 @@ jobs:
 
       - name: Report public config (add these to the site's env)
         run: |
+          # Also echo to the job log (not just the step summary) — the anon
+          # key is meant to be public (see DESIGN.md), so this is safe, and
+          # it makes the values retrievable via the Actions API/logs too.
+          echo "NEXT_PUBLIC_SUPABASE_URL=https://${{ steps.project.outputs.ref }}.supabase.co"
+          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ steps.keys.outputs.anon_key }}"
           echo "## Add these to the site's build environment" >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
           echo "NEXT_PUBLIC_SUPABASE_URL=https://${{ steps.project.outputs.ref }}.supabase.co" >> "$GITHUB_STEP_SUMMARY"
