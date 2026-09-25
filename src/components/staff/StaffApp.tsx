@@ -106,37 +106,51 @@ function SignIn() {
   );
 }
 
-function ForcePasswordChange({ onDone }: { onDone: () => void }) {
+function ForcePasswordChange({ userId, onDone }: { userId: string; onDone: () => void }) {
   const supabase = getSupabaseClient();
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  // True once auth.updateUser has actually succeeded — lets a failed retry
+  // below skip re-submitting the password (which would just no-op) and go
+  // straight to the flag update, instead of asking for it again.
+  const [passwordChanged, setPasswordChanged] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
-    if (password.length < 8) {
-      setError("Use at least 8 characters.");
-      return;
-    }
-    if (password !== confirm) {
-      setError("Passwords don't match.");
-      return;
+    if (!passwordChanged) {
+      if (password.length < 8) {
+        setError("Use at least 8 characters.");
+        return;
+      }
+      if (password !== confirm) {
+        setError("Passwords don't match.");
+        return;
+      }
     }
     if (!supabase) return;
     setBusy(true);
-    const { error: updateErr } = await supabase.auth.updateUser({ password });
-    if (updateErr) {
-      setBusy(false);
-      setError("Couldn't update your password — try again.");
+    if (!passwordChanged) {
+      const { error: updateErr } = await supabase.auth.updateUser({ password });
+      if (updateErr) {
+        setBusy(false);
+        setError("Couldn't update your password — try again.");
+        return;
+      }
+      setPasswordChanged(true);
+    }
+    // Password is already changed at this point either way — a failure here
+    // only means the "ask again next time" flag didn't clear, so it's safe
+    // (and necessary) to let the user retry just this part without
+    // re-entering a password that's already set.
+    const { error: flagErr } = await supabase.from("profiles").update({ must_change_password: false }).eq("id", userId);
+    setBusy(false);
+    if (flagErr) {
+      setError("Your password was changed, but we couldn't finish updating your account — please try again.");
       return;
     }
-    const { data: userData } = await supabase.auth.getUser();
-    if (userData?.user) {
-      await supabase.from("profiles").update({ must_change_password: false }).eq("id", userData.user.id);
-    }
-    setBusy(false);
     onDone();
   }
 
@@ -283,7 +297,7 @@ function Dashboard({ session }: { session: Session }) {
   }
 
   if (!staff) return <p className="text-ink/60">Loading your staff profile…</p>;
-  if (mustChangePassword) return <ForcePasswordChange onDone={() => setMustChangePassword(false)} />;
+  if (mustChangePassword) return <ForcePasswordChange userId={session.user.id} onDone={() => setMustChangePassword(false)} />;
 
   if (profileRole === "teacher") {
     return <TeacherDashboard staff={staff} />;
@@ -407,7 +421,7 @@ function TeachersOnlyAdminGate({ session }: { session: Session }) {
   }, [supabase, session.user.id]);
 
   if (profileRole === "loading") return <p className="text-ink/60">Loading…</p>;
-  if (mustChangePassword) return <ForcePasswordChange onDone={() => setMustChangePassword(false)} />;
+  if (mustChangePassword) return <ForcePasswordChange userId={session.user.id} onDone={() => setMustChangePassword(false)} />;
   if (profileRole !== "admin") {
     return <p className="text-ink/60">This page is only available to admin accounts.</p>;
   }
