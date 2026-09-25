@@ -23,6 +23,7 @@ export function ApplicationForm() {
   const totalSteps = 3;
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing from an external system (localStorage), not a render-cycle self-sync; localStorage isn't readable during SSR/first render
     setPrefill(readRegisterInterest());
   }, []);
 
