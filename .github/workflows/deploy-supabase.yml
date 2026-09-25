@@ -100,9 +100,13 @@ jobs:
             echo "::error::Could not find both an anon/publishable key and a service_role/secret key. Key names found: $(echo "$KEYS" | jq -c '[.[].name]')"
             exit 1
           fi
+          # ::add-mask:: is a stdout workflow command, not an output — it must
+          # NOT go inside the block redirected to $GITHUB_OUTPUT (that file
+          # only accepts key=value lines; a stray "::add-mask::..." line in
+          # it is what broke this step both previous runs).
+          echo "::add-mask::$SERVICE_ROLE"
           {
             echo "anon_key=$ANON"
-            echo "::add-mask::$SERVICE_ROLE"
             echo "service_role_key=$SERVICE_ROLE"
           } >> "$GITHUB_OUTPUT"
 
