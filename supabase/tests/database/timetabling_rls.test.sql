@@ -107,12 +107,13 @@ select is((select count(*)::int from public.timetable_conflicts), 1, 'the timeta
 set local "request.jwt.claims" to '{"sub": "e0000000-0000-0000-0000-000000000004"}';
 select is((select count(*)::int from public.timetable_conflicts), 0, 'a parent cannot read timetable_conflicts');
 
--- The public sample-week function returns rows for the published run's
--- class only, with no teacher/student identity in its result columns.
+-- public_sample_timetable_week() is now per-year-group and reads only an
+-- EXPLICIT published mark (0015) — with none marked yet for TEST Year 4 it
+-- must return nothing at all, never fall back to "any published run".
 select is(
-  (select count(*)::int from public.public_sample_timetable_week() where subject = 'TEST Arabic'),
-  1,
-  'public_sample_timetable_week surfaces the published (non-test-flagged) run''s slot'
+  (select count(*)::int from public.public_sample_timetable_week('TEST Year 4')),
+  0,
+  'public_sample_timetable_week returns nothing until a year group has an explicit published mark (see quiz_v2_rls.test.sql for the marked case)'
 );
 
 select * from finish();
