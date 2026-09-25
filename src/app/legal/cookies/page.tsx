@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { Kicker, PlaceholderNote } from "@/components/Section";
+import { Kicker } from "@/components/Section";
 
 export const metadata: Metadata = { title: "Cookie Policy" };
 
@@ -10,7 +10,6 @@ export default function CookiePolicyPage() {
       <Container className="max-w-2xl">
         <Kicker>Legal</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink">Cookie Policy</h1>
-        <PlaceholderNote>Placeholder copy — full details will be published here before launch.</PlaceholderNote>
 
         <div className="mt-8 space-y-6 text-ink/75">
           <div>

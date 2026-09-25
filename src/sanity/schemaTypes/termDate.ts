@@ -16,6 +16,13 @@ export default defineType({
     defineField({ name: "date", title: "Date", type: "date", validation: (r) => r.required() }),
     defineField({ name: "endDate", title: "End date (optional, for ranges)", type: "date" }),
     defineField({ name: "notes", title: "Notes", type: "string" }),
+    defineField({
+      name: "confirmed",
+      title: "Confirmed",
+      type: "boolean",
+      initialValue: false,
+      description: "Only confirmed dates are ever shown on the public Term Dates page — leave off while a date is provisional.",
+    }),
   ],
   preview: {
     select: { title: "label", subtitle: "date" },

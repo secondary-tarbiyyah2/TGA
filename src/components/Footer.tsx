@@ -2,8 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
 import { footerNav } from "@/lib/nav";
+import { getSiteSettings } from "@/lib/content";
 
-export function Footer() {
+export async function Footer() {
+  const settings = await getSiteSettings();
+  const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
+
   return (
     <footer className="geo-texture mt-24 border-t border-gold-light/30 bg-ink text-cream/90">
       <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
@@ -41,8 +45,16 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-wide text-gold-light">Contact</h2>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a className="text-cream/75 hover:text-cream" href="mailto:globalacademy@tarbiyyah.co.uk">globalacademy@tarbiyyah.co.uk</a></li>
-            <li className="text-cream/75">United Kingdom</li>
+            <li><a className="text-cream/75 hover:text-cream" href={`mailto:${email}`}>{email}</a></li>
+            {settings.contactPhone && (
+              <li><a className="text-cream/75 hover:text-cream" href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`}>{settings.contactPhone}</a></li>
+            )}
+            {settings.contactAddress ? (
+              <li className="whitespace-pre-line text-cream/75">{settings.contactAddress}</li>
+            ) : (
+              <li className="text-cream/75">United Kingdom</li>
+            )}
+            {settings.openingHours && <li className="text-cream/75">{settings.openingHours}</li>}
           </ul>
         </div>
       </Container>

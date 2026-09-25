@@ -41,6 +41,27 @@
    me) to wherever the Next.js site itself gets built — see `.env.example`.
    The anon key is meant to be public; safe to commit to CI config.
 
+## Settings layer — one manual step to make publishing actually go live
+
+The site is statically exported, so publishing a change in Sanity Studio
+doesn't appear on the live site by itself — it needs a rebuild. This is
+automated (`.github/workflows/setup-sanity-webhook.yml`), but it needs two
+secrets only you can create (they're credentials, not something I can
+generate on your behalf):
+
+1. **`SANITY_MANAGEMENT_TOKEN`** — sanity.io/manage → your project → API →
+   Tokens → Add API token → give it a name, choose an access level that can
+   manage webhooks (Editor or Administrator), copy the token.
+2. **`GH_DISPATCH_TOKEN`** — github.com/settings/personal-access-tokens/new
+   → Fine-grained token → repository access: only this repo → permissions:
+   **Actions: Read and write**, nothing else → generate, copy the token.
+
+Add both as repo secrets (Settings → Secrets and variables → Actions →
+New repository secret), then run **Actions → "Set up Sanity auto-rebuild
+webhook" → Run workflow** once. After that, every publish in Studio
+triggers a fresh deploy automatically — no more manual redeploys needed for
+content changes.
+
 ## Deliberately not built yet
 
 - Admin management of staff/meeting-types/families from `/staff` (only the

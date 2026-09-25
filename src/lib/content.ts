@@ -3,7 +3,7 @@ import {
   feeBands as seedFeeBands, siteSettings as seedSiteSettings, faqEntries as seedFaqEntries,
   termDates as seedTermDates, testimonials as seedTestimonials, staffMembers as seedStaffMembers,
   differentiators as seedDifferentiators, policyLinks as seedPolicyLinks,
-  type FeeBand, type FaqEntry, type TermDate, type Testimonial, type StaffMember, type Differentiator, type PolicyLink,
+  type FeeBand, type FaqEntry, type TermDate, type Testimonial, type StaffMember, type Differentiator, type PolicyLink, type SiteSettings,
 } from "@/content/seed";
 
 /** Every getter below tries live Sanity content first, and falls back to bundled seed
@@ -29,11 +29,12 @@ async function fetchOrFallback<T>(query: string, fallback: T): Promise<T> {
 
 export const getFeeBands = () => fetchOrFallback<FeeBand[]>(`*[_type == "feeBand"] | order(order asc)`, seedFeeBands);
 
-export const getSiteSettings = () => fetchOrFallback(`*[_type == "siteSettings"][0]`, seedSiteSettings);
+export const getSiteSettings = () => fetchOrFallback<SiteSettings>(`*[_type == "siteSettings"][0]`, seedSiteSettings);
 
 export const getFaqEntries = () => fetchOrFallback<FaqEntry[]>(`*[_type == "faqEntry"] | order(order asc)`, seedFaqEntries);
 
-export const getTermDates = () => fetchOrFallback<TermDate[]>(`*[_type == "termDate"] | order(date asc)`, seedTermDates);
+export const getTermDates = () =>
+  fetchOrFallback<TermDate[]>(`*[_type == "termDate" && confirmed == true] | order(date asc)`, seedTermDates.filter((d) => d.confirmed));
 
 export const getTestimonials = () => fetchOrFallback<Testimonial[]>(`*[_type == "testimonial"] | order(order asc)`, seedTestimonials);
 

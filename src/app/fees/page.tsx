@@ -78,6 +78,13 @@ export default async function FeesPage() {
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
               <p className="mt-1 text-sm text-ink/60">One-time, paid once a place is offered and accepted.</p>
             </div>
+            {settings.siblingDiscountPercent != null && (
+              <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">
+                <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Sibling discount</p>
+                <p className="mt-1 font-serif text-3xl font-bold text-ink">{settings.siblingDiscountPercent}%</p>
+                {settings.siblingDiscountNote && <p className="mt-1 text-sm text-ink/60">{settings.siblingDiscountNote}</p>}
+              </div>
+            )}
           </div>
 
           <div className="mt-10">

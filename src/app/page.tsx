@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { Kicker, PlaceholderNote } from "@/components/Section";
+import { Kicker } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { FaqPreview } from "@/components/FaqPreview";
-import { getDifferentiators, getFaqEntries, getFeeBands, getStaffMembers, getTestimonials } from "@/lib/content";
+import { getDifferentiators, getFaqEntries, getFeeBands, getSiteSettings, getStaffMembers, getTestimonials } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -36,13 +36,21 @@ const stages = [
 ];
 
 export default async function HomePage() {
-  const [differentiators, feeBands, testimonials, staff, faqs] = await Promise.all([
+  const [differentiators, feeBands, testimonials, staff, faqs, settings] = await Promise.all([
     getDifferentiators(),
     getFeeBands(),
     getTestimonials(),
     getStaffMembers(),
     getFaqEntries(),
+    getSiteSettings(),
   ]);
+  // Never show fabricated/unconfirmed content publicly — see ground rule 3
+  // and 4. A differentiator, testimonial or team member only appears once
+  // an admin has confirmed it; the homepage headteacher quote only appears
+  // if a real one has been entered in Site settings.
+  const confirmedDifferentiators = differentiators.filter((d) => d.status === "Confirmed commitment");
+  const realTestimonials = testimonials.filter((t) => !t.isPlaceholder);
+  const confirmedStaff = staff.filter((s) => !s.isPlaceholder);
 
   return (
     <>
@@ -60,7 +68,7 @@ export default async function HomePage() {
               lessons launching January 2027.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/admissions">Apply Now</Button>
+              <Button href={settings.ctaPrimaryHref || "/admissions"}>{settings.ctaPrimaryLabel || "Apply Now"}</Button>
               <Button href="/book-a-call" variant="secondary">Book an admissions call</Button>
             </div>
             <p className="mt-6 text-sm font-medium text-ink/60">
@@ -141,66 +149,67 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* DIFFERENTIATORS */}
-      <section className="geo-texture bg-cream section-pad">
-        <Container>
-          <Kicker>What makes us different</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">Distinctive, not just online.</h2>
-          <p className="mt-3 max-w-2xl text-ink/70">
-            Some of the ideas below are confirmed; others are still being finalised ahead of the January 2027 launch —
-            each is marked as such.
-          </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {differentiators.map((d) => (
-              <div key={d._id} className="rounded-2xl bg-white p-6 shadow-sm">
-                <h3 className="font-serif text-lg font-semibold text-ink">{d.title}</h3>
-                <p className="mt-2 text-sm text-ink/70">{d.summary}</p>
-                {d.status === "Draft / concept — not yet confirmed" && (
-                  <PlaceholderNote>Draft concept — not yet confirmed</PlaceholderNote>
-                )}
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      {/* DIFFERENTIATORS — only confirmed commitments are ever shown publicly;
+          draft/concept ideas stay in the CMS until confirmed, per ground rule
+          3 (no unconfirmed claims to prospective families) rather than shown
+          with a "not yet confirmed" disclaimer. */}
+      {confirmedDifferentiators.length > 0 && (
+        <section className="geo-texture bg-cream section-pad">
+          <Container>
+            <Kicker>What makes us different</Kicker>
+            <h2 className="text-h2 font-serif font-semibold text-ink">Distinctive, not just online.</h2>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {confirmedDifferentiators.map((d) => (
+                <div key={d._id} className="rounded-2xl bg-white p-6 shadow-sm">
+                  <h3 className="font-serif text-lg font-semibold text-ink">{d.title}</h3>
+                  <p className="mt-2 text-sm text-ink/70">{d.summary}</p>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* MEET THE TEAM PREVIEW */}
-      <section className="section-pad">
-        <Container>
-          <Kicker>Meet the team</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">The people teaching your child.</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {staff.slice(0, 3).map((s) => (
-              <div key={s._id} className="rounded-2xl border border-gold-light/50 bg-white p-6 text-center">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-cream font-serif text-xl font-semibold text-gold-700">
-                  {s.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+      {confirmedStaff.length > 0 && (
+        <section className="section-pad">
+          <Container>
+            <Kicker>Meet the team</Kicker>
+            <h2 className="text-h2 font-serif font-semibold text-ink">The people teaching your child.</h2>
+            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+              {confirmedStaff.slice(0, 3).map((s) => (
+                <div key={s._id} className="rounded-2xl border border-gold-light/50 bg-white p-6 text-center">
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-cream font-serif text-xl font-semibold text-gold-700">
+                    {s.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                  </div>
+                  <h3 className="mt-3 font-serif text-base font-semibold text-ink">{s.name}</h3>
+                  <p className="text-sm text-gold-700">{s.roleTitle}</p>
                 </div>
-                <h3 className="mt-3 font-serif text-base font-semibold text-ink">{s.name}</h3>
-                <p className="text-sm text-gold-700">{s.roleTitle}</p>
-              </div>
-            ))}
-          </div>
-          <Button href="/team" variant="secondary" className="mt-8">Meet the whole team</Button>
-        </Container>
-      </section>
+              ))}
+            </div>
+            <Button href="/team" variant="secondary" className="mt-8">Meet the whole team</Button>
+          </Container>
+        </section>
+      )}
 
       {/* TESTIMONIALS TEASER */}
-      <section className="geo-texture bg-cream section-pad">
-        <Container>
-          <Kicker>Families &amp; students</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">What our community says.</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {testimonials.slice(0, 2).map((t) => (
-              <blockquote key={t._id} className="rounded-2xl border border-gold-light/50 bg-white p-6">
-                <p className="text-ink/80">&ldquo;{t.quote}&rdquo;</p>
-                <footer className="mt-4 text-sm font-semibold text-gold-700">{t.attribution}</footer>
-                {t.isPlaceholder && <PlaceholderNote>Placeholder — real testimonials to follow</PlaceholderNote>}
-              </blockquote>
-            ))}
-          </div>
-          <Button href="/testimonials" variant="secondary" className="mt-8">Read more testimonials</Button>
-        </Container>
-      </section>
+      {realTestimonials.length > 0 && (
+        <section className="geo-texture bg-cream section-pad">
+          <Container>
+            <Kicker>Families &amp; students</Kicker>
+            <h2 className="text-h2 font-serif font-semibold text-ink">What our community says.</h2>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {realTestimonials.slice(0, 2).map((t) => (
+                <blockquote key={t._id} className="rounded-2xl border border-gold-light/50 bg-white p-6">
+                  <p className="text-ink/80">&ldquo;{t.quote}&rdquo;</p>
+                  <footer className="mt-4 text-sm font-semibold text-gold-700">{t.attribution}</footer>
+                </blockquote>
+              ))}
+            </div>
+            <Button href="/testimonials" variant="secondary" className="mt-8">Read more testimonials</Button>
+          </Container>
+        </section>
+      )}
 
       {/* FEE TRANSPARENCY TEASER */}
       <section className="bg-white section-pad">
@@ -247,23 +256,22 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* HEADTEACHER WELCOME */}
-      <section className="geo-texture bg-ink-900 section-pad text-cream">
-        <Container className="grid gap-10 lg:grid-cols-[1fr_2fr] lg:items-center">
-          <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full border-2 border-gold-300 bg-white/10 text-4xl font-serif font-semibold">
-            HS
-          </div>
-          <div>
-            <Kicker>A welcome from our Headteacher</Kicker>
-            <p className="font-serif text-2xl leading-relaxed text-white">
-              &ldquo;Every child deserves an education that nurtures their mind and their faith together. At Tarbiyyah
-              Global Academy we bring the standards of the Tarbiyyah family of schools to families anywhere in the
-              world.&rdquo;
-            </p>
-            <p className="mt-4 font-semibold text-gold-300">Hardeep Sandhar, Headteacher</p>
-          </div>
-        </Container>
-      </section>
+      {/* HEADTEACHER WELCOME — only renders once a genuine quote has been
+          entered in Site settings; never a drafted-for-them stand-in. */}
+      {settings.headteacherWelcomeQuote && (
+        <section className="geo-texture bg-ink-900 section-pad text-cream">
+          <Container className="grid gap-10 lg:grid-cols-[1fr_2fr] lg:items-center">
+            <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full border-2 border-gold-300 bg-white/10 text-4xl font-serif font-semibold">
+              {settings.headteacherName?.split(" ").map((n) => n[0]).join("").slice(0, 2) || ""}
+            </div>
+            <div>
+              <Kicker>A welcome from our Headteacher</Kicker>
+              <p className="font-serif text-2xl leading-relaxed text-white">&ldquo;{settings.headteacherWelcomeQuote}&rdquo;</p>
+              {settings.headteacherName && <p className="mt-4 font-semibold text-gold-300">{settings.headteacherName}, Headteacher</p>}
+            </div>
+          </Container>
+        </section>
+      )}
 
       <CtaBand
         heading="Be among the first families to join."

@@ -1,0 +1,25 @@
+name: Set up Sanity auto-rebuild webhook
+
+# One-time (idempotent) setup — see scripts/setup-sanity-webhook.mjs for
+# what this does and why. Requires two repo secrets that must be added by
+# hand first (see SETUP.md): SANITY_MANAGEMENT_TOKEN and GH_DISPATCH_TOKEN.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
+      SANITY_MANAGEMENT_TOKEN: ${{ secrets.SANITY_MANAGEMENT_TOKEN }}
+      GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/setup-sanity-webhook.mjs

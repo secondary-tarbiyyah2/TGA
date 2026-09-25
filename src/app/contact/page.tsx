@@ -2,13 +2,17 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { RegisterInterestForm } from "@/components/RegisterInterestForm";
+import { getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with Tarbiyyah Global Academy.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings = await getSiteSettings();
+  const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
+
   return (
     <section className="py-16">
       <Container className="grid gap-12 lg:grid-cols-2">
@@ -22,8 +26,26 @@ export default function ContactPage() {
           <dl className="mt-8 space-y-4 text-ink/80">
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-gold-700">Email</dt>
-              <dd><a href="mailto:globalacademy@tarbiyyah.co.uk" className="underline">globalacademy@tarbiyyah.co.uk</a></dd>
+              <dd><a href={`mailto:${email}`} className="underline">{email}</a></dd>
             </div>
+            {settings.contactPhone && (
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-gold-700">Phone</dt>
+                <dd><a href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`} className="underline">{settings.contactPhone}</a></dd>
+              </div>
+            )}
+            {settings.openingHours && (
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-gold-700">Opening hours</dt>
+                <dd>{settings.openingHours}</dd>
+              </div>
+            )}
+            {settings.contactAddress && (
+              <div>
+                <dt className="text-xs font-semibold uppercase tracking-wide text-gold-700">Address</dt>
+                <dd className="whitespace-pre-line">{settings.contactAddress}</dd>
+              </div>
+            )}
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-gold-700">Part of</dt>
               <dd>The Tarbiyyah Education Trust, United Kingdom</dd>

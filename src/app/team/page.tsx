@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { Kicker, PlaceholderNote } from "@/components/Section";
+import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { getStaffMembers } from "@/lib/content";
 
@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default async function TeamPage() {
-  const staff = await getStaffMembers();
+  // Unconfirmed entries never render publicly — no visible "bio to follow"
+  // placeholder; a staff member simply appears once an admin has real
+  // details for them, per the no-visible-placeholder rule.
+  const staff = (await getStaffMembers()).filter((s) => !s.isPlaceholder);
 
   return (
     <>
@@ -40,9 +43,11 @@ export default async function TeamPage() {
                   Watch intro video
                 </a>
               )}
-              {s.isPlaceholder && <PlaceholderNote>Placeholder — bio to follow</PlaceholderNote>}
             </div>
           ))}
+          {staff.length === 0 && (
+            <p className="text-ink/60 sm:col-span-2 lg:col-span-3">Team profiles will appear here as they&apos;re confirmed.</p>
+          )}
         </Container>
       </section>
 

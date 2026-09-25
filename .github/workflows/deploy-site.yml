@@ -36,6 +36,14 @@ on:
       - "tsconfig.json"
       - ".github/workflows/deploy-site.yml"
   workflow_dispatch:
+  # Fired by a Sanity webhook (see scripts/setup-sanity-webhook.mjs) whenever
+  # content is published in Studio — this is what makes "every page reads
+  # from Site settings" actually true operationally on a statically
+  # exported site: publishing alone doesn't change anything live until a
+  # rebuild runs, so the rebuild has to happen automatically, not only when
+  # someone next pushes code.
+  repository_dispatch:
+    types: [sanity-content-published]
 
 # Deploys to the same live FTP server regardless of which branch triggered
 # it — a global (branch-independent) group, not one keyed by github.ref, so

@@ -64,6 +64,18 @@ export default async function PoliciesPage() {
           <Link href="/legal/privacy" className="font-semibold text-gold-700 underline">Privacy page</Link>.
         </p>
 
+        {(siteSettings.safeguardingLeadName || siteSettings.regulatoryStatusNote) && (
+          <div className="mt-8 rounded-2xl border border-gold-light/50 bg-cream p-5 text-sm text-ink/75">
+            {siteSettings.safeguardingLeadName && (
+              <p>
+                <span className="font-semibold text-ink">Designated Safeguarding Lead:</span> {siteSettings.safeguardingLeadName}
+                {siteSettings.safeguardingLeadContact && <> — {siteSettings.safeguardingLeadContact}</>}
+              </p>
+            )}
+            {siteSettings.regulatoryStatusNote && <p className="mt-1">{siteSettings.regulatoryStatusNote}</p>}
+          </div>
+        )}
+
         <h2 className="mt-12 font-serif text-2xl font-semibold text-ink">Must be on the website</h2>
         <PolicyList policies={required} complaintsLastYear={siteSettings.complaintsLastYear} />
 

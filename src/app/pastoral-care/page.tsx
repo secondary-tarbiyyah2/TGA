@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { Kicker, PlaceholderNote } from "@/components/Section";
+import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 
 export const metadata: Metadata = {
@@ -19,28 +19,6 @@ export default function PastoralCarePage() {
             An online school still means real relationships. Every pupil has a form tutor who knows them personally
             — academically and personally.
           </p>
-        </Container>
-      </section>
-
-      <section className="py-16">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <Kicker>The Weekly Tarbiyah Note</Kicker>
-            <h2 className="font-serif text-2xl font-semibold text-ink">A personal update, every week.</h2>
-            <p className="mt-4 text-ink/75">
-              Separate from academic reports, the Weekly Tarbiyah Note is a short, personal update from your
-              child&apos;s form tutor on their character and akhlaq — how they treated others, effort shown, and
-              moments worth celebrating.
-            </p>
-            <PlaceholderNote>Draft concept — not yet confirmed</PlaceholderNote>
-          </div>
-          <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-            <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">Sample note (illustrative)</p>
-            <p className="mt-3 font-serif text-ink/80">
-              &ldquo;This week, [child] helped a classmate who was struggling with their reading task without being
-              asked — a lovely example of ihsan in action. Keep it up!&rdquo;
-            </p>
-          </div>
         </Container>
       </section>
 

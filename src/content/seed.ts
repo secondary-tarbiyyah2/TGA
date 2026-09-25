@@ -24,12 +24,41 @@ export const feeBands: FeeBand[] = [
   { _id: "fb4", yearGroupRange: "Year 10 – Year 11", order: 4, annualFee: 3000, termlyFee: 2250, monthlyFee: 642.86, notes: "GCSE exam entry fees are billed separately by the exam centre." },
 ];
 
-export const siteSettings = {
+// Fields left empty/undefined here are deliberately NOT invented — every page
+// reading them must hide the corresponding section rather than show a blank
+// or fabricated value. Only figures the school has actually confirmed are
+// filled in (and only as a build-time fallback for when Sanity is
+// unreachable — the live values always come from Sanity once configured).
+export type SiteSettings = {
+  launchDate?: string;
+  ctaPrimaryLabel?: string;
+  ctaPrimaryHref?: string;
+  applicationFee?: number;
+  registrationFee?: number;
+  siblingDiscountPercent?: number;
+  siblingDiscountNote?: string;
+  bookingWidgetUrl?: string;
+  openEveningRecordingUrl?: string;
+  portalUrl?: string;
+  admissionsEmail?: string;
+  contactPhone?: string;
+  contactAddress?: string;
+  openingHours?: string;
+  safeguardingLeadName?: string;
+  safeguardingLeadContact?: string;
+  complaintsLastYear?: number;
+  registrationBody?: string;
+  registrationNumber?: string;
+  regulatoryStatusNote?: string;
+  headteacherWelcomeQuote?: string;
+  headteacherName?: string;
+};
+
+export const siteSettings: SiteSettings = {
+  ctaPrimaryLabel: "Apply Now",
+  ctaPrimaryHref: "/admissions",
   applicationFee: 247,
   registrationFee: 150,
-  bookingWidgetUrl: "",
-  openEveningRecordingUrl: "",
-  portalUrl: "",
   admissionsEmail: "globalacademy@tarbiyyah.co.uk",
   complaintsLastYear: 0,
 };
@@ -49,12 +78,14 @@ export const faqEntries: FaqEntry[] = [
 
 export const faqCategories = ["Admissions", "Fees", "Curriculum", "Technology", "Islamic Studies", "SEND"] as const;
 
-export type TermDate = { _id: string; label: string; kind: string; date: string; endDate?: string; notes?: string };
+export type TermDate = { _id: string; label: string; kind: string; date: string; endDate?: string; notes?: string; confirmed?: boolean };
 
-// No confirmed term dates / admissions calendar exist yet for the Jan 2027 launch — placeholder shape only.
+// No confirmed term dates / admissions calendar exist yet for the Jan 2027
+// launch. confirmed: false means the Term Dates page hides these entirely
+// rather than showing unconfirmed dates as if real — see ground rule 3/4.
 export const termDates: TermDate[] = [
-  { _id: "t1", label: "Applications open", kind: "Admissions deadline", date: "2026-09-01", notes: "Placeholder date — to be confirmed." },
-  { _id: "t2", label: "Spring Term begins (launch)", kind: "Term date", date: "2027-01-06", notes: "Placeholder date — to be confirmed." },
+  { _id: "t1", label: "Applications open", kind: "Admissions deadline", date: "2026-09-01", confirmed: false },
+  { _id: "t2", label: "Spring Term begins (launch)", kind: "Term date", date: "2027-01-06", confirmed: false },
 ];
 
 export type Testimonial = { _id: string; quote: string; attribution: string; role: "Parent" | "Student"; isPlaceholder: boolean; order?: number };

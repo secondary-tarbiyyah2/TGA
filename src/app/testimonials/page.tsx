@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
-import { Kicker, PlaceholderNote } from "@/components/Section";
+import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { getTestimonials } from "@/lib/content";
 
@@ -10,7 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default async function TestimonialsPage() {
-  const testimonials = await getTestimonials();
+  // Never show a fabricated/placeholder quote as if it were real — a
+  // testimonial only appears once an admin has a genuine one to publish.
+  const testimonials = (await getTestimonials()).filter((t) => !t.isPlaceholder);
 
   return (
     <>
@@ -28,9 +30,11 @@ export default async function TestimonialsPage() {
               <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">{t.role}</p>
               <p className="mt-2 text-ink/80">&ldquo;{t.quote}&rdquo;</p>
               <footer className="mt-4 text-sm font-semibold text-gold-700">{t.attribution}</footer>
-              {t.isPlaceholder && <PlaceholderNote>Placeholder — real testimonials to follow</PlaceholderNote>}
             </blockquote>
           ))}
+          {testimonials.length === 0 && (
+            <p className="text-ink/60 sm:col-span-2">Testimonials from our families will appear here once our first cohort has enrolled.</p>
+          )}
         </Container>
       </section>
 

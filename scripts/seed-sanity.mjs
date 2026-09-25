@@ -51,8 +51,8 @@ const faqEntries = [
 ];
 
 const termDates = [
-  { _id: "termDate-t1", _type: "termDate", label: "Applications open", kind: "Admissions deadline", date: "2026-09-01", notes: "Placeholder date — to be confirmed." },
-  { _id: "termDate-t2", _type: "termDate", label: "Spring Term begins (launch)", kind: "Term date", date: "2027-01-06", notes: "Placeholder date — to be confirmed." },
+  { _id: "termDate-t1", _type: "termDate", label: "Applications open", kind: "Admissions deadline", date: "2026-09-01", confirmed: false },
+  { _id: "termDate-t2", _type: "termDate", label: "Spring Term begins (launch)", kind: "Term date", date: "2027-01-06", confirmed: false },
 ];
 
 const testimonials = [
