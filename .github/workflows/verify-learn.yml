@@ -4,7 +4,11 @@ name: Verify /learn deployment
 # security headers for the /learn area actually behave as intended on the
 # live host — not verifiable from the sandbox this was built in (network
 # policy blocks it), so this runs the real checks from a GitHub-hosted
-# runner instead.
+# runner instead. Also checks the homepage for stale/legacy content, since
+# `dangerous-clean-slate: false` in deploy-site.yml means the FTP deploy
+# never removes old files already on the server — if an old build (e.g.
+# legacy-static/) was ever uploaded to the same path, it could still be
+# live underneath what looks like a fresh deploy.
 
 on:
   workflow_dispatch:
@@ -42,3 +46,14 @@ jobs:
           headers=$(curl -sSI "https://globalacademy.tarbiyyah.co.uk/" || true)
           echo "$headers"
           echo "$headers" | grep -qi "^cache-control:.*no-store" && { echo "FAIL: public homepage unexpectedly got no-store"; exit 1; } || echo "PASS: public homepage not affected by /learn headers"
+
+      - name: Check homepage isn't a stale/legacy build
+        run: |
+          set -euo pipefail
+          headers=$(curl -sSI "https://globalacademy.tarbiyyah.co.uk/" || true)
+          echo "$headers"
+          body=$(curl -sS "https://globalacademy.tarbiyyah.co.uk/" || true)
+          echo "---"
+          echo "$body" | grep -o "A Level" | head -1 && echo "FOUND: 'A Level' text — likely stale/legacy content" || echo "not found (good)"
+          echo "$body" | grep -o '"buildId":"[^"]*"' | head -1 || echo "no Next.js buildId marker found in HTML — may not be the Next.js build at all"
+          echo "$body" | grep -o "next/static" | head -1 && echo "Next.js static asset references found (expected)" || echo "WARNING: no next/static references found — this may not be the current Next.js build"
