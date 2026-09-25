@@ -48,7 +48,7 @@ export const getDifferentiators = () =>
 export const getPolicyLinks = () =>
   fetchOrFallback<PolicyLink[]>(
     `*[_type == "policyLink"] | order(order asc) {
-      _id, number, title, category, summary, lastReviewed, nextReview, order,
+      _id, number, title, category, parentQuestionCategory, summary, lastReviewed, nextReview, order,
       "fileUrl": coalesce(file.asset->url, fileUrl)
     }`,
     seedPolicyLinks

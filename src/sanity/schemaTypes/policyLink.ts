@@ -9,11 +9,27 @@ export default defineType({
     defineField({ name: "title", title: "Title", type: "string", validation: (r) => r.required() }),
     defineField({
       name: "category",
-      title: "Category",
+      title: "DfE category",
       type: "string",
+      description: "Kept for the DfE-required-vs-published-for-simplicity distinction — shown as a small badge, not a separate section.",
       options: { list: [{ title: "Must be on the website", value: "required" }, { title: "Published for simplicity", value: "published" }] },
       initialValue: "required",
       validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "parentQuestionCategory",
+      title: "Parent question group",
+      type: "string",
+      description: "Which question a parent is likely to have when they reach for this document. Used to group the Policies page by what parents actually want to know, instead of by DfE category.",
+      options: {
+        list: [
+          { title: "Is my child safe?", value: "safety" },
+          { title: "How do we apply and what does it cost?", value: "admissions-fees" },
+          { title: "What if something goes wrong?", value: "complaints" },
+          { title: "How is my data used?", value: "data" },
+          { title: "What do you teach and how?", value: "curriculum" },
+        ],
+      },
     }),
     defineField({
       name: "file",

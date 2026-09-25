@@ -6,8 +6,8 @@ export const dynamic = "force-static";
 const siteUrl = "https://globalacademy.tarbiyyah.co.uk";
 
 const routes = [
-  "", "about", "curriculum", "admissions", "fees", "flexible-learning", "pastoral-care", "team",
-  "testimonials", "faqs", "contact", "term-dates", "open-evening", "portal", "policies",
+  "", "about", "curriculum", "admissions", "eligibility", "fees", "flexible-learning", "pastoral-care", "team",
+  "testimonials", "faqs", "contact", "term-dates", "open-evening", "policies", "safeguarding", "book-a-call",
   "legal/privacy", "legal/cookies", "legal/terms",
 ];
 

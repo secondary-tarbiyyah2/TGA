@@ -80,20 +80,20 @@ const differentiators = [
 const ISSUED = "2026-09-01";
 const NEXT_REVIEW = "2027-08-31";
 const policyLinks = [
-  { _id: "policyLink-p01", number: "01", order: 1, category: "required", title: "Child Protection and Safeguarding Policy", fileUrl: "/policies/01-child-protection-and-safeguarding.pdf" },
-  { _id: "policyLink-p06", number: "06", order: 2, category: "required", title: "Anti-Bullying and Cyberbullying Policy", fileUrl: "/policies/06-anti-bullying-and-cyberbullying.pdf" },
-  { _id: "policyLink-p07", number: "07", order: 3, category: "required", title: "Behaviour and Online Conduct Policy", fileUrl: "/policies/07-behaviour-and-online-conduct.pdf", summary: "Includes suspensions and exclusions." },
-  { _id: "policyLink-p12", number: "12", order: 4, category: "required", title: "Curriculum Policy", fileUrl: "/policies/12-curriculum.pdf" },
-  { _id: "policyLink-p16", number: "16", order: 5, category: "required", title: "SEND and Inclusion Policy", fileUrl: "/policies/16-send-and-inclusion.pdf" },
-  { _id: "policyLink-p17", number: "17", order: 6, category: "required", title: "Relationships, Sex and Health Education (RSHE) Policy", fileUrl: "/policies/17-rshe.pdf" },
-  { _id: "policyLink-p19", number: "19", order: 7, category: "required", title: "Careers Education and Guidance Policy", fileUrl: "/policies/19-careers.pdf" },
-  { _id: "policyLink-p25", number: "25", order: 8, category: "required", title: "Admissions Policy", fileUrl: "/policies/25-admissions.pdf" },
-  { _id: "policyLink-p26", number: "26", order: 9, category: "required", title: "Fees Policy", fileUrl: "/policies/26-fees.pdf", summary: "Terms should be read before enrolling." },
-  { _id: "policyLink-p27", number: "27", order: 10, category: "required", title: "Concerns and Complaints Policy", fileUrl: "/policies/27-concerns-and-complaints.pdf" },
-  { _id: "policyLink-p29", number: "29", order: 11, category: "required", title: "Data Protection Policy", fileUrl: "/policies/29-data-protection.pdf", summary: "See also our short Privacy Notice." },
-  { _id: "policyLink-p30", number: "30", order: 12, category: "required", title: "Equality, Diversity and Accessibility Policy", fileUrl: "/policies/30-equality-diversity-and-accessibility.pdf", summary: "Includes our accessibility plan." },
-  { _id: "policyLink-p10", number: "10", order: 13, category: "published", title: "Health, Safety and Wellbeing Policy", fileUrl: "/policies/10-health-safety-and-wellbeing.pdf" },
-  { _id: "policyLink-p09", number: "09", order: 14, category: "published", title: "Supporting Pupils with Medical Conditions Policy", fileUrl: "/policies/09-supporting-pupils-with-medical-conditions.pdf" },
+  { _id: "policyLink-p01", number: "01", order: 1, category: "required", parentQuestionCategory: "safety", title: "Child Protection and Safeguarding Policy", fileUrl: "/policies/01-child-protection-and-safeguarding.pdf" },
+  { _id: "policyLink-p06", number: "06", order: 2, category: "required", parentQuestionCategory: "safety", title: "Anti-Bullying and Cyberbullying Policy", fileUrl: "/policies/06-anti-bullying-and-cyberbullying.pdf" },
+  { _id: "policyLink-p07", number: "07", order: 3, category: "required", parentQuestionCategory: "safety", title: "Behaviour and Online Conduct Policy", fileUrl: "/policies/07-behaviour-and-online-conduct.pdf", summary: "Includes suspensions and exclusions." },
+  { _id: "policyLink-p12", number: "12", order: 4, category: "required", parentQuestionCategory: "curriculum", title: "Curriculum Policy", fileUrl: "/policies/12-curriculum.pdf" },
+  { _id: "policyLink-p16", number: "16", order: 5, category: "required", parentQuestionCategory: "curriculum", title: "SEND and Inclusion Policy", fileUrl: "/policies/16-send-and-inclusion.pdf" },
+  { _id: "policyLink-p17", number: "17", order: 6, category: "required", parentQuestionCategory: "curriculum", title: "Relationships, Sex and Health Education (RSHE) Policy", fileUrl: "/policies/17-rshe.pdf" },
+  { _id: "policyLink-p19", number: "19", order: 7, category: "required", parentQuestionCategory: "curriculum", title: "Careers Education and Guidance Policy", fileUrl: "/policies/19-careers.pdf" },
+  { _id: "policyLink-p25", number: "25", order: 8, category: "required", parentQuestionCategory: "admissions-fees", title: "Admissions Policy", fileUrl: "/policies/25-admissions.pdf" },
+  { _id: "policyLink-p26", number: "26", order: 9, category: "required", parentQuestionCategory: "admissions-fees", title: "Fees Policy", fileUrl: "/policies/26-fees.pdf", summary: "Terms should be read before enrolling." },
+  { _id: "policyLink-p27", number: "27", order: 10, category: "required", parentQuestionCategory: "complaints", title: "Concerns and Complaints Policy", fileUrl: "/policies/27-concerns-and-complaints.pdf" },
+  { _id: "policyLink-p29", number: "29", order: 11, category: "required", parentQuestionCategory: "data", title: "Data Protection Policy", fileUrl: "/policies/29-data-protection.pdf", summary: "See also our short Privacy Notice." },
+  { _id: "policyLink-p30", number: "30", order: 12, category: "required", parentQuestionCategory: "curriculum", title: "Equality, Diversity and Accessibility Policy", fileUrl: "/policies/30-equality-diversity-and-accessibility.pdf", summary: "Includes our accessibility plan." },
+  { _id: "policyLink-p10", number: "10", order: 13, category: "published", parentQuestionCategory: "safety", title: "Health, Safety and Wellbeing Policy", fileUrl: "/policies/10-health-safety-and-wellbeing.pdf" },
+  { _id: "policyLink-p09", number: "09", order: 14, category: "published", parentQuestionCategory: "safety", title: "Supporting Pupils with Medical Conditions Policy", fileUrl: "/policies/09-supporting-pupils-with-medical-conditions.pdf" },
 ].map((p) => ({ ...p, _type: "policyLink", lastReviewed: ISSUED, nextReview: NEXT_REVIEW }));
 
 // Editable-page-section singletons — created empty so they appear in Studio

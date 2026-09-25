@@ -6,11 +6,13 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
   return "items" in entry;
 }
 
-// Grouped so no label wraps onto two lines in the header. Some target pages
-// (Journey Planner, a dedicated admissions-call booking flow, separate
-// Parent/Student portals) don't exist yet — those come with later prompts
-// (booking engine, portals) and are intentionally left out rather than
-// linking somewhere that doesn't exist yet.
+// Grouped so no label wraps onto two lines in the header. Five top-level
+// groups — About / Learning / Admissions / Parents / Contact — plus a single
+// "Book a free call" primary CTA (see primaryCta below). Applying is still
+// reachable via Admissions → "How to apply"; it's just no longer the header's
+// primary button. "Parents" gathers pages that used to be scattered across
+// About and the footer only (Policies, Safeguarding, Term Dates, Open
+// Evening, Pastoral care) into one place a parent would actually look.
 export const primaryNav: NavEntry[] = [
   { href: "/", label: "Home" },
   {
@@ -18,9 +20,7 @@ export const primaryNav: NavEntry[] = [
     items: [
       { href: "/about", label: "About us" },
       { href: "/team", label: "Meet the team" },
-      { href: "/pastoral-care", label: "Pastoral care" },
       { href: "/testimonials", label: "Testimonials" },
-      { href: "/policies", label: "Policies" },
     ],
   },
   {
@@ -36,7 +36,17 @@ export const primaryNav: NavEntry[] = [
       { href: "/eligibility", label: "Is it right for us?" },
       { href: "/admissions", label: "How to apply" },
       { href: "/fees", label: "Fees" },
-      { href: "/book-a-call", label: "Book an admissions call" },
+      { href: "/book-a-call", label: "Book a free call" },
+    ],
+  },
+  {
+    label: "Parents",
+    items: [
+      { href: "/policies", label: "Policies" },
+      { href: "/safeguarding", label: "Safeguarding" },
+      { href: "/term-dates", label: "Term dates" },
+      { href: "/open-evening", label: "Open evening" },
+      { href: "/pastoral-care", label: "Pastoral care" },
     ],
   },
   { href: "/faqs", label: "FAQs" },
@@ -46,13 +56,19 @@ export const primaryNav: NavEntry[] = [
 export const footerNav = [
   { href: "/term-dates", label: "Term Dates" },
   { href: "/open-evening", label: "Virtual Open Evening" },
-  { href: "/portal", label: "Parent/Student Portal" },
+  { href: "/safeguarding", label: "Safeguarding" },
   { href: "/policies", label: "Policies" },
   { href: "/legal/privacy", label: "Privacy Policy" },
   { href: "/legal/cookies", label: "Cookie Policy" },
   { href: "/legal/terms", label: "Terms" },
 ];
 
-export const primaryCta = { href: "/admissions", label: "Apply Now" };
+// A single, unambiguous primary CTA. Applying remains reachable (Admissions
+// → "How to apply"), but a free call is a lower-commitment first step and is
+// what the header now leads with.
+export const primaryCta = { href: "/book-a-call", label: "Book a free call" };
+// Single log-in destination across header, mobile drawer and footer — /staff
+// and /portal both 301-redirect to this same URL at the server level (see
+// public/.htaccess), so there is only ever one login entry point live.
 export const portalCta = { href: "/learn/login", label: "Log in" };
 export const openEveningCta = { href: "/open-evening", label: "Book Open Evening" };

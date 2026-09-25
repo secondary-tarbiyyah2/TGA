@@ -215,11 +215,14 @@ export const differentiators: Differentiator[] = [
   },
 ];
 
+export type ParentQuestionCategory = "safety" | "admissions-fees" | "complaints" | "data" | "curriculum";
+
 export type PolicyLink = {
   _id: string;
   number: string;
   title: string;
   category: "required" | "published";
+  parentQuestionCategory?: ParentQuestionCategory;
   fileUrl: string;
   summary?: string;
   lastReviewed?: string;
@@ -233,19 +236,25 @@ export type PolicyLink = {
 const ISSUED = "2026-09-01";
 const NEXT_REVIEW = "2027-08-31";
 
+// parentQuestionCategory groups the Policies page by what a parent is
+// actually trying to find out, rather than by DfE required/published
+// category (that split is kept too — see `category` — just shown as a badge
+// now instead of as the section headings). This grouping is an editorial/UX
+// call, not a new fact: every document keeps its existing DfE category,
+// number and file — only how they're grouped on the page changes.
 export const policyLinks: PolicyLink[] = [
-  { _id: "p01", number: "01", order: 1, category: "required", title: "Child Protection and Safeguarding Policy", fileUrl: "/policies/01-child-protection-and-safeguarding.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p06", number: "06", order: 2, category: "required", title: "Anti-Bullying and Cyberbullying Policy", fileUrl: "/policies/06-anti-bullying-and-cyberbullying.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p07", number: "07", order: 3, category: "required", title: "Behaviour and Online Conduct Policy", fileUrl: "/policies/07-behaviour-and-online-conduct.pdf", summary: "Includes suspensions and exclusions.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p12", number: "12", order: 4, category: "required", title: "Curriculum Policy", fileUrl: "/policies/12-curriculum.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p16", number: "16", order: 5, category: "required", title: "SEND and Inclusion Policy", fileUrl: "/policies/16-send-and-inclusion.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p17", number: "17", order: 6, category: "required", title: "Relationships, Sex and Health Education (RSHE) Policy", fileUrl: "/policies/17-rshe.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p19", number: "19", order: 7, category: "required", title: "Careers Education and Guidance Policy", fileUrl: "/policies/19-careers.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p25", number: "25", order: 8, category: "required", title: "Admissions Policy", fileUrl: "/policies/25-admissions.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p26", number: "26", order: 9, category: "required", title: "Fees Policy", fileUrl: "/policies/26-fees.pdf", summary: "Terms should be read before enrolling.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p27", number: "27", order: 10, category: "required", title: "Concerns and Complaints Policy", fileUrl: "/policies/27-concerns-and-complaints.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p29", number: "29", order: 11, category: "required", title: "Data Protection Policy", fileUrl: "/policies/29-data-protection.pdf", summary: "See also our short Privacy Notice.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p30", number: "30", order: 12, category: "required", title: "Equality, Diversity and Accessibility Policy", fileUrl: "/policies/30-equality-diversity-and-accessibility.pdf", summary: "Includes our accessibility plan.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p10", number: "10", order: 13, category: "published", title: "Health, Safety and Wellbeing Policy", fileUrl: "/policies/10-health-safety-and-wellbeing.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p09", number: "09", order: 14, category: "published", title: "Supporting Pupils with Medical Conditions Policy", fileUrl: "/policies/09-supporting-pupils-with-medical-conditions.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p01", number: "01", order: 1, category: "required", parentQuestionCategory: "safety", title: "Child Protection and Safeguarding Policy", fileUrl: "/policies/01-child-protection-and-safeguarding.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p06", number: "06", order: 2, category: "required", parentQuestionCategory: "safety", title: "Anti-Bullying and Cyberbullying Policy", fileUrl: "/policies/06-anti-bullying-and-cyberbullying.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p07", number: "07", order: 3, category: "required", parentQuestionCategory: "safety", title: "Behaviour and Online Conduct Policy", fileUrl: "/policies/07-behaviour-and-online-conduct.pdf", summary: "Includes suspensions and exclusions.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p12", number: "12", order: 4, category: "required", parentQuestionCategory: "curriculum", title: "Curriculum Policy", fileUrl: "/policies/12-curriculum.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p16", number: "16", order: 5, category: "required", parentQuestionCategory: "curriculum", title: "SEND and Inclusion Policy", fileUrl: "/policies/16-send-and-inclusion.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p17", number: "17", order: 6, category: "required", parentQuestionCategory: "curriculum", title: "Relationships, Sex and Health Education (RSHE) Policy", fileUrl: "/policies/17-rshe.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p19", number: "19", order: 7, category: "required", parentQuestionCategory: "curriculum", title: "Careers Education and Guidance Policy", fileUrl: "/policies/19-careers.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p25", number: "25", order: 8, category: "required", parentQuestionCategory: "admissions-fees", title: "Admissions Policy", fileUrl: "/policies/25-admissions.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p26", number: "26", order: 9, category: "required", parentQuestionCategory: "admissions-fees", title: "Fees Policy", fileUrl: "/policies/26-fees.pdf", summary: "Terms should be read before enrolling.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p27", number: "27", order: 10, category: "required", parentQuestionCategory: "complaints", title: "Concerns and Complaints Policy", fileUrl: "/policies/27-concerns-and-complaints.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p29", number: "29", order: 11, category: "required", parentQuestionCategory: "data", title: "Data Protection Policy", fileUrl: "/policies/29-data-protection.pdf", summary: "See also our short Privacy Notice.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p30", number: "30", order: 12, category: "required", parentQuestionCategory: "curriculum", title: "Equality, Diversity and Accessibility Policy", fileUrl: "/policies/30-equality-diversity-and-accessibility.pdf", summary: "Includes our accessibility plan.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p10", number: "10", order: 13, category: "published", parentQuestionCategory: "safety", title: "Health, Safety and Wellbeing Policy", fileUrl: "/policies/10-health-safety-and-wellbeing.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p09", number: "09", order: 14, category: "published", parentQuestionCategory: "safety", title: "Supporting Pupils with Medical Conditions Policy", fileUrl: "/policies/09-supporting-pupils-with-medical-conditions.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
 ];

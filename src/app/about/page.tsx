@@ -50,15 +50,10 @@ export default async function AboutPage() {
             <Kicker>Safeguarding</Kicker>
             <p className="text-ink/75">
               {content.safeguardingBody || (
-                <>
-                  The safety and wellbeing of every child is our first responsibility. Tarbiyyah Global Academy
-                  follows the same safeguarding standards as Tarbiyyah Primary and Tarbiyyah Secondary, including
-                  vetted, DBS-checked staff, a named Designated Safeguarding Lead, and clear reporting routes for any
-                  concern.
-                </>
+                <>The safety and wellbeing of every child is our first responsibility, with vetted, DBS-checked staff and a named Designated Safeguarding Lead.</>
               )}{" "}
-              Our full Safeguarding Policy is available on the{" "}
-              <a href="/policies" className="text-gold-700 underline">Policies</a> page.
+              Read our full approach, including how to raise a concern, on the{" "}
+              <a href="/safeguarding" className="text-gold-700 underline">Safeguarding</a> page.
             </p>
           </div>
         </Container>
