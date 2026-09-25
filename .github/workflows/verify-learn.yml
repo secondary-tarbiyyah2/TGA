@@ -1,0 +1,44 @@
+name: Verify /learn deployment
+
+# One-off/reusable health check: confirms the .htaccess-driven redirects and
+# security headers for the /learn area actually behave as intended on the
+# live host — not verifiable from the sandbox this was built in (network
+# policy blocks it), so this runs the real checks from a GitHub-hosted
+# runner instead.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check /staff redirects to /learn/login
+        run: |
+          set -euo pipefail
+          headers=$(curl -sSI -L --max-redirs 0 "https://globalacademy.tarbiyyah.co.uk/staff" || true)
+          echo "$headers"
+          echo "$headers" | grep -qi "^location:.*\/learn\/login" && echo "PASS: /staff redirects to /learn/login" || { echo "FAIL: /staff did not redirect to /learn/login"; exit 1; }
+
+      - name: Check /portal redirects to /learn/login
+        run: |
+          set -euo pipefail
+          headers=$(curl -sSI -L --max-redirs 0 "https://globalacademy.tarbiyyah.co.uk/portal" || true)
+          echo "$headers"
+          echo "$headers" | grep -qi "^location:.*\/learn\/login" && echo "PASS: /portal redirects to /learn/login" || { echo "FAIL: /portal did not redirect to /learn/login"; exit 1; }
+
+      - name: Check /learn/login security headers
+        run: |
+          set -euo pipefail
+          headers=$(curl -sSI "https://globalacademy.tarbiyyah.co.uk/learn/login/" || true)
+          echo "$headers"
+          echo "$headers" | grep -qi "^cache-control:.*no-store" && echo "PASS: Cache-Control: no-store present" || { echo "FAIL: Cache-Control: no-store missing"; exit 1; }
+          echo "$headers" | grep -qi "^x-robots-tag:.*noindex" && echo "PASS: X-Robots-Tag: noindex present" || { echo "FAIL: X-Robots-Tag: noindex missing"; exit 1; }
+          echo "$headers" | grep -qi "^content-security-policy:" && echo "PASS: CSP header present" || { echo "FAIL: CSP header missing"; exit 1; }
+
+      - name: Check public pages are unaffected
+        run: |
+          set -euo pipefail
+          headers=$(curl -sSI "https://globalacademy.tarbiyyah.co.uk/" || true)
+          echo "$headers"
+          echo "$headers" | grep -qi "^cache-control:.*no-store" && { echo "FAIL: public homepage unexpectedly got no-store"; exit 1; } || echo "PASS: public homepage not affected by /learn headers"
