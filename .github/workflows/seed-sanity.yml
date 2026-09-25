@@ -14,6 +14,11 @@ name: Seed Sanity content
 
 on:
   workflow_dispatch:
+  push:
+    branches: [claude/sweet-albattani-e7fav5, main]
+    paths:
+      - "scripts/seed-sanity.mjs"
+      - ".github/workflows/seed-sanity.yml"
 
 jobs:
   seed:
