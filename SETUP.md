@@ -121,6 +121,48 @@ platform-wide lock. If BBB is ever upgraded/reconfigured independently of
 this codebase, re-verify that setting still applies. See the final report
 for the full reasoning.
 
+## Phase C: homework, assessment, reports, messaging, e-signature — what's needed from you
+
+Almost everything in this phase runs on migrations/RLS already, so there's
+less to configure than Phase B. Still:
+
+1. **Nothing to create manually for Supabase Storage.** Unlike a typical
+   Supabase project, the `homework-submissions` bucket (private, 20MB
+   limit, PDF/image/Word/text only) is created BY the migration
+   (`0010_homework.sql`, `insert into storage.buckets ...`) — it appears
+   automatically once migrations run against your project, no dashboard
+   step needed.
+2. **Deploy the schema + new scheduled jobs** the same way as every other
+   migration/workflow here — `.github/workflows/deploy-supabase.yml`
+   picks up the new migrations on push; the three new scheduled workflows
+   (`messaging-retention.yml`, `nudge-outstanding-signatures.yml`,
+   `sync-signable-documents.yml`) start firing on their own schedule once
+   merged — no extra secrets beyond what Phase A/B already added
+   (`SUPABASE_ACCESS_TOKEN`, `RESEND_API_KEY`, `SANITY_IO`,
+   `NEXT_PUBLIC_SANITY_PROJECT_ID`).
+3. **Mark which policies require a signature, in Sanity Studio.** Open any
+   Policy document, tick "Requires e-signature on /learn", and choose
+   "Who must sign" (the /learn role vocabulary). Run the "Sync signable
+   documents from Sanity" workflow once by hand
+   (`workflow_dispatch` on `sync-signable-documents.yml`) after setting
+   this up the first time, rather than waiting for its nightly schedule —
+   after that it stays in sync automatically. Nothing needs setting in the
+   database directly; that table is Sanity-synced only, same as `terms`.
+4. **Set `message_retention_days`** in the `messaging_settings` table
+   (default 730 days / ~2 school years) to match your actual data-retention
+   policy — there's no admin-UI screen for this one yet (see "deliberately
+   not built" below), so it's a one-off SQL update against your project:
+   `update messaging_settings set message_retention_days = <n>;`.
+5. **Add at least one assessment type, mark scheme and set of grade
+   boundaries** from `/learn/admin/reports` before teachers start entering
+   grades — the list ships with five starter assessment types
+   (`insert`-ed by the migration) but NO mark schemes, since those are
+   genuinely school-specific.
+6. **Review the starter safeguarding keyword list** at
+   `/learn/admin/compliance` (Safeguarding Lead or Head Teacher/Admin) —
+   six illustrative phrases ship in the migration; extend it to match your
+   actual safeguarding policy before relying on it.
+
 ## Deliberately not built yet
 
 - Admin management of staff/meeting-types/families from `/staff` (only the
@@ -146,3 +188,20 @@ for the full reasoning.
   `/learn` only ever show the sibling discount (computed from real
   enrolments), never the self-reported ones, because no system yet records
   which family was actually approved for which discount.
+- An admin UI screen for `messaging_settings.message_retention_days` —
+  it's a real, RLS-governed, scheduled-job-enforced setting (see Phase C
+  above), just without its own settings-page field yet; the same one-off
+  SQL update works until that's added.
+- A drawn-signature pad for e-signature — deliberately not built (see the
+  final report): typed name + affirmation checkbox is the standard,
+  legally-sufficient approach for internal policy acknowledgement and
+  consent capture, and a signature pad would add complexity without
+  adding legal weight here.
+- Real-time (websocket) message delivery — `/learn` messaging is
+  request/response (send, then the next load/poll picks it up), matching
+  every other `/learn` data view in this codebase (no realtime
+  subscriptions used anywhere else either); a parent/teacher conversation
+  refreshes on next visit/action rather than pushing instantly.
+- A UI for editing an individual `document_signatures` row, or for
+  un-signing — deliberate: no edit/retract policy exists in the schema at
+  all (see 0014_esignature.sql), so there is nothing for a UI to expose.
