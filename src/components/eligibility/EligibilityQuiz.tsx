@@ -3,9 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { feeBands } from "@/content/seed";
+import { feeBands as fallbackFeeBands } from "@/content/seed";
+import type { FeeBand, Discount } from "@/content/seed";
 import { keyStages } from "@/content/curriculum";
 import { formatGBP } from "@/lib/format";
+import { FeeEstimator } from "@/components/FeeEstimator";
 
 const YEAR_GROUPS = [
   "Reception", "Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6",
@@ -106,7 +108,21 @@ const READINESS_OPTIONS = [
 
 type Step = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-export function EligibilityQuiz() {
+export function EligibilityQuiz({
+  feeBands: feeBandsProp,
+  siblingDiscountPercent,
+  siblingDiscountNote,
+  discounts,
+}: {
+  feeBands?: FeeBand[];
+  siblingDiscountPercent?: number;
+  siblingDiscountNote?: string;
+  discounts?: Discount[];
+} = {}) {
+  // feeBandsProp comes from live Sanity content (via the /eligibility server
+  // page) when available, falling back to the same bundled seed data used
+  // elsewhere so the quiz keeps working if it's ever rendered without props.
+  const feeBands = feeBandsProp && feeBandsProp.length > 0 ? feeBandsProp : fallbackFeeBands;
   const [step, setStep] = useState<Step>(0);
   const [yearGroup, setYearGroup] = useState("");
   const [timezone, setTimezone] = useState("");
@@ -366,6 +382,20 @@ export function EligibilityQuiz() {
                 ({formatGBP(feeBand.monthlyFee)}/month if paying monthly).{" "}
                 <Link href="/fees" className="underline">Full fee table</Link>
               </p>
+            </div>
+          )}
+
+          {feeBand && (
+            <div className="mt-6">
+              <p className="mb-2 text-sm font-semibold text-ink">Your personalised fee estimate</p>
+              <FeeEstimator
+                feeBands={feeBands}
+                initialBandId={feeBand._id}
+                siblingDiscountPercent={siblingDiscountPercent}
+                siblingDiscountNote={siblingDiscountNote}
+                discounts={discounts}
+                compact
+              />
             </div>
           )}
 
