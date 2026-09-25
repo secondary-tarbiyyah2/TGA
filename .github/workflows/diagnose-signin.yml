@@ -1,0 +1,90 @@
+name: Diagnose sign-in failure
+
+# One-off diagnostic tool: reproduces a password sign-in exactly as the
+# browser does (anon key) and inspects the account's real state (service
+# role), so a failed sign-in can be root-caused instead of guessed at.
+# See scripts/diagnose-signin.mjs.
+
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: "Account email to check"
+        required: true
+      password:
+        description: "Password to attempt signing in with"
+        required: true
+
+concurrency:
+  group: diagnose-signin
+  cancel-in-progress: false
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref
+        id: project
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then
+              REF=$(echo "$PROJECTS" | jq -r '.[0].id')
+            fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch project API keys
+        id: keys
+        run: |
+          set -euo pipefail
+          KEYS=$(supabase projects api-keys --project-ref "${{ steps.project.outputs.ref }}" -o json)
+          ANON=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          SERVICE_ROLE=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$ANON" ] || [ "$ANON" = "null" ] || [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find both keys."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          {
+            echo "anon_key=$ANON"
+            echo "service_role_key=$SERVICE_ROLE"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Run diagnostic
+        env:
+          SUPABASE_URL: https://${{ steps.project.outputs.ref }}.supabase.co
+          SUPABASE_ANON_KEY: ${{ steps.keys.outputs.anon_key }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+        run: |
+          set -euo pipefail
+          echo "::add-mask::${{ inputs.password }}"
+          npm ci
+          node scripts/diagnose-signin.mjs "${{ inputs.email }}" "${{ inputs.password }}" | tee /tmp/diagnose-output.txt
+
+          {
+            echo "## Sign-in diagnostic"
+            echo '```'
+            cat /tmp/diagnose-output.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
