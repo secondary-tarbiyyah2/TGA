@@ -137,6 +137,10 @@ jobs:
           supabase functions deploy book-admissions-call --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy manage-booking --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy send-reminders --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # No --no-verify-jwt here on purpose: this one requires a valid
+          # signed-in caller before its own code even runs (it separately
+          # checks that caller is specifically an admin — see the function).
+          supabase functions deploy admin-manage-staff --project-ref "${{ steps.project.outputs.ref }}"
 
       - name: Configure Auth (magic link via Resend SMTP)
         run: |

@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { MfaGate } from "./MfaGate";
+import { AdminStaffPanel } from "./AdminStaffPanel";
 
 type StaffRow = { id: string; display_name: string; role_title: string; teams_meeting_url: string | null };
 type BookingRow = {
@@ -58,8 +60,16 @@ function Dashboard({ session }: { session: Session }) {
   const [rules, setRules] = useState<AvailabilityRule[]>([]);
   const [teamsUrl, setTeamsUrl] = useState("");
   const [savingTeamsUrl, setSavingTeamsUrl] = useState(false);
+  const [profileRole, setProfileRole] = useState<string | null>(null);
 
   const supabase = getSupabaseClient();
+
+  useEffect(() => {
+    if (!supabase) return;
+    supabase.from("profiles").select("role").eq("id", session.user.id).single().then(({ data }) => {
+      if (data) setProfileRole(data.role);
+    });
+  }, [supabase, session.user.id]);
 
   useEffect(() => {
     if (!supabase) return;
@@ -229,6 +239,18 @@ function Dashboard({ session }: { session: Session }) {
           <button type="submit" className="rounded-full bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 hover:brightness-95">Add</button>
         </form>
       </section>
+
+      {profileRole === "admin" && (
+        <section>
+          <h2 className="font-serif text-lg font-semibold text-ink">Admin</h2>
+          <p className="mt-1 text-sm text-ink/60">Manage staff accounts, roles and see recent activity.</p>
+          <div className="mt-4">
+            <MfaGate>
+              <AdminStaffPanel />
+            </MfaGate>
+          </div>
+        </section>
+      )}
     </div>
   );
 }
