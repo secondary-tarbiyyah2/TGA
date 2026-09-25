@@ -5,6 +5,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
+import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
 import { useLearnSession, useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
@@ -25,6 +26,7 @@ function TeachContent() {
   const [slots, setSlots] = useState<TimetableSlot[] | null>(null);
   const [covers, setCovers] = useState<Cover[] | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
+  const [classIds, setClassIds] = useState<string[]>([]);
 
   useEffect(() => {
     if (!supabase) return;
@@ -55,6 +57,14 @@ function TeachContent() {
         .or(`original_teacher_user_id.eq.${user.id},covering_teacher_user_id.eq.${user.id}`)
         .order("cover_date", { ascending: true });
       setCovers((coverRows as unknown as Cover[]) || []);
+
+      const { data: roleRows } = await supabase
+        .from("user_roles")
+        .select("scope_id")
+        .eq("user_id", user.id)
+        .eq("scope_type", "class")
+        .in("role", ["teacher", "teaching_assistant_cover"]);
+      setClassIds((roleRows || []).map((r) => r.scope_id as string).filter(Boolean));
     })();
   }, [supabase]);
 
@@ -77,6 +87,14 @@ function TeachContent() {
         </div>
         <div className="mt-6">
           {slots === null ? <p className="text-sm text-ink/60">Loading…</p> : <TimetableGrid slots={slots} showClassLabel />}
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+        <h2 className="font-serif text-h3 font-semibold text-ink">Lessons</h2>
+        <p className="mt-1 text-sm text-ink/60">Join a live lesson, set objectives/resources, and take the register.</p>
+        <div className="mt-4">
+          <UpcomingLessons classIds={classIds} basePath="/learn/teach/lessons/view" emptyLabel="No lessons scheduled in the next two weeks." />
         </div>
       </div>
 

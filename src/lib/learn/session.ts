@@ -80,6 +80,34 @@ export function useLearnSession() {
   return { session, roles, rolesLoaded };
 }
 
+export type LearnAddOnPermission = "timetabler" | "safeguarding_lead" | "can_export_data" | "assessment_lead";
+
+/**
+ * Whether the signed-in user currently holds a given add-on permission
+ * (separate from `roles` above — add-ons stack on top of any primary
+ * role via `user_permissions`, see 0007_learn_roles_permissions.sql).
+ * UX only, same caveat as useLearnSession: the real enforcement is RLS /
+ * the Edge Function that re-checks this same permission server-side.
+ */
+export function useLearnPermission(permission: LearnAddOnPermission): boolean {
+  const supabase = getSupabaseClient();
+  const [has, setHas] = useState(false);
+
+  useEffect(() => {
+    if (!supabase) return;
+    (async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data } = await supabase.from("user_permissions").select("permission").eq("user_id", user.id).eq("permission", permission);
+      setHas((data || []).length > 0);
+    })();
+  }, [supabase, permission]);
+
+  return has;
+}
+
 export function useLearnSignOut() {
   const router = useRouter();
   return async () => {

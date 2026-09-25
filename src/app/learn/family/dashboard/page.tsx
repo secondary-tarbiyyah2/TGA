@@ -5,35 +5,76 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
+import { FamilyFees } from "@/components/learn/FamilyFees";
+import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
 import { useLearnSession, useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 
 type Child = { id: string; name: string; year_group_id: string | null; year_groups?: { name: string } | null };
 
-function ChildTimetable({ childId }: { childId: string }) {
+function useChildClassIds(childId: string) {
+  const supabase = getSupabaseClient();
+  const [classIds, setClassIds] = useState<string[] | null>(null);
+
+  useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from("enrolments")
+      .select("class_id")
+      .eq("child_id", childId)
+      .then(({ data }) => setClassIds((data || []).map((e) => e.class_id as string)));
+  }, [supabase, childId]);
+
+  return classIds;
+}
+
+function ChildTimetable({ classIds }: { classIds: string[] | null }) {
   const supabase = getSupabaseClient();
   const [slots, setSlots] = useState<TimetableSlot[] | null>(null);
 
   useEffect(() => {
-    if (!supabase) return;
-    (async () => {
-      const { data: enrolments } = await supabase.from("enrolments").select("class_id").eq("child_id", childId);
-      const classIds = (enrolments || []).map((e) => e.class_id);
-      if (classIds.length === 0) {
-        setSlots([]);
-        return;
-      }
-      const { data } = await supabase
-        .from("timetable_slots")
-        .select("id, run_id, class_id, subject_id, teacher_user_id, virtual_session_id, weekday, start_time, end_time, classes(name, year_group), subjects(name)")
-        .in("class_id", classIds);
-      setSlots((data as unknown as TimetableSlot[]) || []);
-    })();
-  }, [supabase, childId]);
+    if (!supabase || classIds === null) return;
+    (classIds.length === 0
+      ? Promise.resolve({ data: [] as TimetableSlot[] })
+      : supabase
+          .from("timetable_slots")
+          .select("id, run_id, class_id, subject_id, teacher_user_id, virtual_session_id, weekday, start_time, end_time, classes(name, year_group), subjects(name)")
+          .in("class_id", classIds)
+    ).then(({ data }) => setSlots((data as unknown as TimetableSlot[]) || []));
+  }, [supabase, classIds]);
 
   if (slots === null) return <p className="text-sm text-ink/60">Loading timetable…</p>;
   return <TimetableGrid slots={slots} />;
+}
+
+function ChildCard({ child }: { child: Child }) {
+  const classIds = useChildClassIds(child.id);
+  return (
+    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+      <div className="flex items-center justify-between">
+        <h2 className="font-serif text-h3 font-semibold text-ink">
+          {child.name}
+          {child.year_groups?.name ? <span className="ml-2 text-sm font-normal text-ink/60">{child.year_groups.name}</span> : null}
+        </h2>
+        <PrintButton />
+      </div>
+      <div className="mt-4">
+        <ChildTimetable classIds={classIds} />
+      </div>
+      <div className="mt-4 border-t border-gold-light/30 pt-4">
+        <h3 className="text-sm font-medium text-ink">Lessons</h3>
+        <div className="mt-2">
+          <UpcomingLessons
+            classIds={classIds || []}
+            basePath="/learn/family/lessons/view"
+            extraQuery={`&child=${child.id}`}
+            emptyLabel="No lessons in the next two weeks."
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function FamilyContent() {
@@ -128,19 +169,10 @@ function FamilyContent() {
         <p className="text-sm text-ink/60">No children added yet — add your child above to see their timetable.</p>
       )}
       {children?.map((child) => (
-        <div key={child.id} className="rounded-2xl border border-gold-light/50 bg-white p-6">
-          <div className="flex items-center justify-between">
-            <h2 className="font-serif text-h3 font-semibold text-ink">
-              {child.name}
-              {child.year_groups?.name ? <span className="ml-2 text-sm font-normal text-ink/60">{child.year_groups.name}</span> : null}
-            </h2>
-            <PrintButton />
-          </div>
-          <div className="mt-4">
-            <ChildTimetable childId={child.id} />
-          </div>
-        </div>
+        <ChildCard key={child.id} child={child} />
       ))}
+
+      {children && children.length > 0 && <FamilyFees familyChildren={children} />}
 
       <IcsFeedLink />
     </div>

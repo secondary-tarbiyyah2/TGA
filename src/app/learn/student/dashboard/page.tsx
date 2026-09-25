@@ -5,6 +5,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
+import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
 import { useLearnSession, useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
@@ -28,6 +29,7 @@ function StudentContent() {
   const supabase = getSupabaseClient();
   const [slots, setSlots] = useState<TimetableSlot[] | null>(null);
   const [yearGroupName, setYearGroupName] = useState<string | undefined>(undefined);
+  const [classIds, setClassIds] = useState<string[]>([]);
 
   useEffect(() => {
     if (!supabase) return;
@@ -51,15 +53,16 @@ function StudentContent() {
         return;
       }
       const { data: enrolments } = await supabase.from("enrolments").select("class_id").eq("child_id", childId);
-      const classIds = (enrolments || []).map((e) => e.class_id);
-      if (classIds.length === 0) {
+      const ids = (enrolments || []).map((e) => e.class_id);
+      setClassIds(ids);
+      if (ids.length === 0) {
         setSlots([]);
         return;
       }
       const { data } = await supabase
         .from("timetable_slots")
         .select("id, run_id, class_id, subject_id, teacher_user_id, virtual_session_id, weekday, start_time, end_time, classes(name, year_group), subjects(name)")
-        .in("class_id", classIds);
+        .in("class_id", ids);
       setSlots((data as unknown as TimetableSlot[]) || []);
     })();
   }, [supabase]);
@@ -85,6 +88,13 @@ function StudentContent() {
 
       <div className="mt-6">
         {slots === null ? <p className="text-sm text-ink/60">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} />}
+      </div>
+
+      <div className="mt-6 border-t border-gold-light/30 pt-4">
+        <h2 className="font-serif text-h3 font-semibold text-ink">Lessons</h2>
+        <div className="mt-3">
+          <UpcomingLessons classIds={classIds} basePath="/learn/student/lessons/view" emptyLabel="No lessons in the next two weeks." />
+        </div>
       </div>
 
       <IcsFeedLink />

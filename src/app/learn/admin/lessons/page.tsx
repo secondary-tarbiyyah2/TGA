@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
@@ -200,6 +201,90 @@ function CoverForm({ slots, teachers, onDone }: { slots: TimetableSlot[]; teache
   );
 }
 
+function GenerateLessonsForm({ runId, onDone }: { runId: string; onDone: () => void }) {
+  const [from, setFrom] = useState(() => new Date().toISOString().slice(0, 10));
+  const [to, setTo] = useState(() => new Date(Date.now() + 13 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10));
+  const [message, setMessage] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+
+  const generate = async () => {
+    setBusy(true);
+    setMessage(null);
+    try {
+      const result = await callFunction("lesson-instances-generate", { run_id: runId, from, to });
+      setMessage(result.ok ? `Generated ${(result as { created?: number }).created ?? 0} lesson instance(s).` : `Could not generate: ${result.detail || result.error}`);
+      if (result.ok) onDone();
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+      <h2 className="font-serif text-h3 font-semibold text-ink">Generate lesson instances</h2>
+      <p className="mt-1 text-sm text-ink/60">
+        Creates one lesson (with a join link, objectives, resources, register and recording) for each occurrence of every
+        published lesson in this date range. Safe to re-run — existing dates are never duplicated.
+      </p>
+      <div className="mt-3 flex flex-wrap items-end gap-2">
+        <div>
+          <label className="block text-xs font-medium text-ink/70">From</label>
+          <input type="date" value={from} onChange={(e) => setFrom(e.target.value)} className="mt-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-ink/70">To</label>
+          <input type="date" value={to} onChange={(e) => setTo(e.target.value)} className="mt-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
+        </div>
+        <button type="button" disabled={busy} onClick={generate} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+          Generate
+        </button>
+      </div>
+      {message && <p className="mt-2 text-xs text-ink/70">{message}</p>}
+    </div>
+  );
+}
+
+type LessonInstanceRow = { id: string; date: string; timetable_slots?: { classes?: { name: string; subjects?: { name: string } | null } | null } | null };
+
+function UpcomingInstances({ runId, refreshKey }: { runId: string; refreshKey: number }) {
+  const supabase = getSupabaseClient();
+  const [rows, setRows] = useState<LessonInstanceRow[] | null>(null);
+
+  useEffect(() => {
+    if (!supabase) return;
+    (async () => {
+      const { data: slots } = await supabase.from("timetable_slots").select("id").eq("run_id", runId);
+      const slotIds = (slots || []).map((s) => s.id);
+      if (slotIds.length === 0) {
+        setRows([]);
+        return;
+      }
+      const { data } = await supabase
+        .from("lesson_instances")
+        .select("id, date, timetable_slots(classes(name, subjects(name)))")
+        .in("timetable_slot_id", slotIds)
+        .gte("date", new Date().toISOString().slice(0, 10))
+        .order("date", { ascending: true })
+        .limit(20);
+      setRows((data as unknown as LessonInstanceRow[]) || []);
+    })();
+  }, [supabase, runId, refreshKey]);
+
+  if (rows === null) return null;
+  if (rows.length === 0) return <p className="text-xs text-ink/50">No upcoming lesson instances generated yet.</p>;
+  return (
+    <ul className="mt-3 space-y-1 text-sm">
+      {rows.map((r) => (
+        <li key={r.id}>
+          <Link href={`/learn/admin/lessons/view?id=${r.id}`} className="text-gold-700 underline">
+            {r.date} — {r.timetable_slots?.classes?.subjects?.name} ({r.timetable_slots?.classes?.name})
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function LessonsContent() {
   const supabase = getSupabaseClient();
   const [runs, setRuns] = useState<Run[] | null>(null);
@@ -208,6 +293,7 @@ function LessonsContent() {
   const [conflicts, setConflicts] = useState<Conflict[]>([]);
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const [publishMessage, setPublishMessage] = useState<string | null>(null);
+  const [instancesRefreshKey, setInstancesRefreshKey] = useState(0);
 
   const loadRuns = async () => {
     if (!supabase) return;
@@ -338,6 +424,16 @@ function LessonsContent() {
           </div>
 
           <CoverForm slots={slots} teachers={teachers} onDone={() => loadRunDetail(selectedRunRow.id)} />
+
+          {selectedRunRow.status === "published" && (
+            <>
+              <GenerateLessonsForm runId={selectedRunRow.id} onDone={() => setInstancesRefreshKey((k) => k + 1)} />
+              <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+                <h2 className="font-serif text-h3 font-semibold text-ink">Upcoming lesson instances</h2>
+                <UpcomingInstances runId={selectedRunRow.id} refreshKey={instancesRefreshKey} />
+              </div>
+            </>
+          )}
         </>
       )}
     </div>
