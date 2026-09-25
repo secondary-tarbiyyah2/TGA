@@ -16,11 +16,26 @@ type AvailabilityRule = { id: string; weekday: number; start_time: string; end_t
 const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function SignIn() {
+  // Password sign-in first: magic-link email delivery is currently broken
+  // (Resend sending-domain isn't verified), so password is the only option
+  // that actually works right now. Both stay available — once email is
+  // fixed, magic link works again with no code change needed.
+  const [mode, setMode] = useState<"password" | "link">("password");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handlePasswordSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError(null);
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) setError("Incorrect email or password.");
+  }
+
+  async function handleLinkSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
     const supabase = getSupabaseClient();
@@ -38,19 +53,119 @@ function SignIn() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-sm">
-      <label className="block text-sm font-medium text-ink">
-        Staff email
-        <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
-      </label>
-      <button type="submit" className="mt-4 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
-        Send sign-in link
-      </button>
+    <div className="max-w-sm">
+      <div className="mb-4 flex gap-2 text-sm">
+        <button type="button" onClick={() => setMode("password")} className={`rounded-full px-3 py-1 ${mode === "password" ? "bg-gold-500 text-ink-900" : "text-ink/60 underline"}`}>
+          Password
+        </button>
+        <button type="button" onClick={() => setMode("link")} className={`rounded-full px-3 py-1 ${mode === "link" ? "bg-gold-500 text-ink-900" : "text-ink/60 underline"}`}>
+          Email link
+        </button>
+      </div>
+
+      {mode === "password" ? (
+        <form onSubmit={handlePasswordSubmit}>
+          <label className="block text-sm font-medium text-ink">
+            Staff email
+            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+          </label>
+          <label className="mt-3 block text-sm font-medium text-ink">
+            Password
+            <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+          </label>
+          <button type="submit" className="mt-4 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
+            Sign in
+          </button>
+        </form>
+      ) : (
+        <form onSubmit={handleLinkSubmit}>
+          <label className="block text-sm font-medium text-ink">
+            Staff email
+            <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+          </label>
+          <button type="submit" className="mt-4 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
+            Send sign-in link
+          </button>
+        </form>
+      )}
       {error && <p role="alert" className="mt-3 text-sm text-red-700">{error}</p>}
       <p className="mt-4 text-xs text-ink/50">
         Staff accounts are created by an admin — this only works for emails already on file.
       </p>
-    </form>
+    </div>
+  );
+}
+
+function ForcePasswordChange({ onDone }: { onDone: () => void }) {
+  const supabase = getSupabaseClient();
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError(null);
+    if (password.length < 8) {
+      setError("Use at least 8 characters.");
+      return;
+    }
+    if (password !== confirm) {
+      setError("Passwords don't match.");
+      return;
+    }
+    if (!supabase) return;
+    setBusy(true);
+    const { error: updateErr } = await supabase.auth.updateUser({ password });
+    if (updateErr) {
+      setBusy(false);
+      setError("Couldn't update your password — try again.");
+      return;
+    }
+    const { data: userData } = await supabase.auth.getUser();
+    if (userData?.user) {
+      await supabase.from("profiles").update({ must_change_password: false }).eq("id", userData.user.id);
+    }
+    setBusy(false);
+    onDone();
+  }
+
+  return (
+    <div className="mx-auto max-w-sm rounded-2xl border border-gold-500/40 bg-gold-50 p-6">
+      <h2 className="font-serif text-lg font-semibold text-ink">Set a new password</h2>
+      <p className="mt-1 text-sm text-ink/70">You&apos;re signing in with a temporary password — choose a new one to continue.</p>
+      <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+        <label className="block text-sm font-medium text-ink">
+          New password
+          <input type="password" required minLength={8} value={password} onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+        </label>
+        <label className="block text-sm font-medium text-ink">
+          Confirm password
+          <input type="password" required minLength={8} value={confirm} onChange={(e) => setConfirm(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+        </label>
+        {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
+        <button type="submit" disabled={busy} className="rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 hover:brightness-95 disabled:opacity-60">
+          {busy ? "Saving…" : "Set password"}
+        </button>
+      </form>
+    </div>
+  );
+}
+
+function TeacherDashboard({ staff }: { staff: StaffRow }) {
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-h2 font-serif font-semibold text-ink">Welcome, {staff.display_name}.</h1>
+        <p className="text-ink/60">{staff.role_title}</p>
+      </div>
+      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+        <p className="text-ink/75">
+          Your teacher dashboard — lessons, homework, attendance and grades will live here once the Learning
+          Platform is built. For now this confirms your account is set up correctly with teacher access.
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -61,13 +176,17 @@ function Dashboard({ session }: { session: Session }) {
   const [teamsUrl, setTeamsUrl] = useState("");
   const [savingTeamsUrl, setSavingTeamsUrl] = useState(false);
   const [profileRole, setProfileRole] = useState<string | null>(null);
+  const [mustChangePassword, setMustChangePassword] = useState<boolean | null>(null);
 
   const supabase = getSupabaseClient();
 
   useEffect(() => {
     if (!supabase) return;
-    supabase.from("profiles").select("role").eq("id", session.user.id).single().then(({ data }) => {
-      if (data) setProfileRole(data.role);
+    supabase.from("profiles").select("role, must_change_password").eq("id", session.user.id).single().then(({ data }) => {
+      if (data) {
+        setProfileRole(data.role);
+        setMustChangePassword(data.must_change_password);
+      }
     });
   }, [supabase, session.user.id]);
 
@@ -154,6 +273,11 @@ function Dashboard({ session }: { session: Session }) {
   }
 
   if (!staff) return <p className="text-ink/60">Loading your staff profile…</p>;
+  if (mustChangePassword) return <ForcePasswordChange onDone={() => setMustChangePassword(false)} />;
+
+  if (profileRole === "teacher") {
+    return <TeacherDashboard staff={staff} />;
+  }
 
   const now = new Date();
   const upcoming = bookings.filter((b) => new Date(b.starts_at) >= now && b.status === "confirmed");
@@ -255,7 +379,42 @@ function Dashboard({ session }: { session: Session }) {
   );
 }
 
-export function StaffApp() {
+function TeachersOnlyAdminGate({ session }: { session: Session }) {
+  const supabase = getSupabaseClient();
+  const [profileRole, setProfileRole] = useState<string | null | "loading">("loading");
+  const [mustChangePassword, setMustChangePassword] = useState(false);
+
+  useEffect(() => {
+    if (!supabase) return;
+    supabase.from("profiles").select("role, must_change_password").eq("id", session.user.id).single().then(({ data }) => {
+      if (data) {
+        setProfileRole(data.role);
+        setMustChangePassword(data.must_change_password);
+      } else {
+        setProfileRole(null);
+      }
+    });
+  }, [supabase, session.user.id]);
+
+  if (profileRole === "loading") return <p className="text-ink/60">Loading…</p>;
+  if (mustChangePassword) return <ForcePasswordChange onDone={() => setMustChangePassword(false)} />;
+  if (profileRole !== "admin") {
+    return <p className="text-ink/60">This page is only available to admin accounts.</p>;
+  }
+  return (
+    <MfaGate>
+      <div>
+        <h1 className="text-h2 font-serif font-semibold text-ink">Teacher accounts</h1>
+        <p className="mt-2 text-ink/60">Create and manage teacher accounts. Teachers signing in land on their own dashboard, not this one.</p>
+        <div className="mt-6">
+          <AdminStaffPanel roleFilter="teacher" defaultInviteRole="teacher" />
+        </div>
+      </div>
+    </MfaGate>
+  );
+}
+
+export function StaffApp({ view = "dashboard" }: { view?: "dashboard" | "teachers" }) {
   const [session, setSession] = useState<Session | null | "loading">("loading");
 
   useEffect(() => {
@@ -273,5 +432,6 @@ export function StaffApp() {
   if (session === "loading") return <p className="text-ink/60">Loading…</p>;
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return <p className="text-ink/60">Staff area isn&apos;t connected yet.</p>;
   if (!session) return <SignIn />;
+  if (view === "teachers") return <TeachersOnlyAdminGate session={session} />;
   return <Dashboard session={session} />;
 }
