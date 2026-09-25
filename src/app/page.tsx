@@ -60,7 +60,7 @@ export default async function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href="/admissions">Apply Now</Button>
-              <Button href="/open-evening" variant="secondary">Book an admissions call</Button>
+              <Button href="/book-a-call" variant="secondary">Book an admissions call</Button>
             </div>
             <p className="mt-6 text-sm font-medium text-ink/60">
               Part of the Tarbiyyah Education Trust · 10+ years · Qualified UK teachers · Reception–Year 11

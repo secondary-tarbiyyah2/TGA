@@ -34,7 +34,7 @@ export const primaryNav: NavEntry[] = [
     items: [
       { href: "/admissions", label: "How to apply" },
       { href: "/fees", label: "Fees" },
-      { href: "/open-evening", label: "Book an admissions call" },
+      { href: "/book-a-call", label: "Book an admissions call" },
     ],
   },
   { href: "/faqs", label: "FAQs" },

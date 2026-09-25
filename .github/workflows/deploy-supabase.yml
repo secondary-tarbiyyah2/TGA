@@ -1,0 +1,166 @@
+name: Deploy Supabase backend
+
+# Runs the Supabase CLI on GitHub's runners (which have normal internet
+# access) instead of any developer machine — this is how the booking
+# backend gets deployed given that couldn't happen from the Claude Code
+# sandbox that built it (org network policy blocks api.supabase.com there).
+#
+# Requires two repo secrets (Settings > Secrets and variables > Actions):
+#   SUPABASE_ACCESS_TOKEN  — Supabase account access token
+#   RESEND_API_KEY         — Resend API key, used both to configure Auth SMTP
+#                             and as the Edge Functions' own secret for
+#                             sending booking emails
+#
+# Assumes a Supabase project named "TGA" already exists on the account tied
+# to SUPABASE_ACCESS_TOKEN (per the original setup instructions). This
+# workflow finds it by name rather than a hardcoded project ref, so no ref
+# needs to be stored anywhere.
+
+on:
+  push:
+    branches: [claude/sweet-albattani-e7fav5, main]
+    paths:
+      - "supabase/**"
+      - ".github/workflows/deploy-supabase.yml"
+  workflow_dispatch:
+    inputs:
+      owner_email:
+        description: "One-time: email to seed as the first staff admin (leave blank to skip)"
+        required: false
+        default: ""
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      # supabase test db spins up a local ephemeral Postgres via Docker
+      # (preinstalled on ubuntu-latest) — no project credentials involved.
+      - run: supabase test db
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the "TGA" project ref
+        id: project
+        run: |
+          set -euo pipefail
+          REF=$(supabase projects list -o json | jq -r '.[] | select(.name=="TGA") | .id' | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::No Supabase project named 'TGA' found on this account. Create it at supabase.com (region: London) first — see SETUP.md."
+            exit 1
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+
+      - name: Link project
+        run: supabase link --project-ref "${{ steps.project.outputs.ref }}"
+
+      - name: Push database migrations
+        run: supabase db push --linked
+
+      - name: Fetch project API keys
+        id: keys
+        run: |
+          set -euo pipefail
+          KEYS=$(supabase projects api-keys --project-ref "${{ steps.project.outputs.ref }}" -o json)
+          ANON=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon") | .api_key')
+          SERVICE_ROLE=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role") | .api_key')
+          {
+            echo "anon_key=$ANON"
+            echo "::add-mask::$SERVICE_ROLE"
+            echo "service_role_key=$SERVICE_ROLE"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Set Edge Function secrets
+        run: |
+          supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" \
+            RESEND_API_KEY="${{ secrets.RESEND_API_KEY }}" \
+            ADMISSIONS_TEAMS_URL="${{ vars.ADMISSIONS_TEAMS_URL || 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2UwM2U2NzYtNjhkMS00ZDRkLTlmODctNTZiMWZmMWFiMzcw%40thread.v2/0?context=%7b%22Tid%22%3a%22a0b25b15-bb34-4892-a564-6c8277ae3db2%22%2c%22Oid%22%3a%223b6d0aa6-0912-44cc-b592-f83506cd0d80%22%7d' }}" \
+            SITE_URL="https://globalacademy.tarbiyyah.co.uk" \
+            ADMISSIONS_EMAIL="globalacademy@tarbiyyah.co.uk" \
+            MAIL_FROM_EMAIL="globalacademy@tarbiyyah.co.uk" \
+            MAIL_FROM_NAME="Tarbiyyah Global Academy"
+
+      - name: Deploy Edge Functions
+        run: |
+          supabase functions deploy book-admissions-call --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy manage-booking --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy send-reminders --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+
+      - name: Configure Auth (magic link via Resend SMTP)
+        run: |
+          set -euo pipefail
+          curl -sS -X PATCH "https://api.supabase.com/v1/projects/${{ steps.project.outputs.ref }}/config/auth" \
+            -H "Authorization: Bearer ${SUPABASE_ACCESS_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "site_url": "https://globalacademy.tarbiyyah.co.uk",
+              "uri_allow_list": "https://globalacademy.tarbiyyah.co.uk/**,http://localhost:3000/**",
+              "external_email_enabled": true,
+              "mailer_autoconfirm": false,
+              "smtp_admin_email": "globalacademy@tarbiyyah.co.uk",
+              "smtp_host": "smtp.resend.com",
+              "smtp_port": 465,
+              "smtp_user": "resend",
+              "smtp_pass": "${{ secrets.RESEND_API_KEY }}",
+              "smtp_sender_name": "Tarbiyyah Global Academy"
+            }' \
+            --fail-with-body
+
+      - name: Report public config (add these to the site's env)
+        run: |
+          echo "## Add these to the site's build environment" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "NEXT_PUBLIC_SUPABASE_URL=https://${{ steps.project.outputs.ref }}.supabase.co" >> "$GITHUB_STEP_SUMMARY"
+          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ steps.keys.outputs.anon_key }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "NEXT_PUBLIC_ADMISSIONS_TEAMS_URL=<same value as the ADMISSIONS_TEAMS_URL repo variable>" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "The anon key is safe to publish — it's meant to be public (see DESIGN.md)." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Seed first staff admin (only if owner_email was provided)
+        if: github.event_name == 'workflow_dispatch' && inputs.owner_email != ''
+        env:
+          SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          PROJECT_REF: ${{ steps.project.outputs.ref }}
+          OWNER_EMAIL: ${{ inputs.owner_email }}
+        run: |
+          set -euo pipefail
+          BASE="https://${PROJECT_REF}.supabase.co"
+
+          INVITE_RESPONSE=$(curl -sS -X POST "$BASE/auth/v1/invite" \
+            -H "apikey: $SERVICE_ROLE_KEY" \
+            -H "Authorization: Bearer $SERVICE_ROLE_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"email\": \"$OWNER_EMAIL\"}")
+
+          USER_ID=$(echo "$INVITE_RESPONSE" | jq -r '.id // .user.id // empty')
+          if [ -z "$USER_ID" ]; then
+            echo "::error::Could not invite $OWNER_EMAIL — response: $INVITE_RESPONSE"
+            exit 1
+          fi
+
+          curl -sS -X POST "$BASE/rest/v1/profiles" \
+            -H "apikey: $SERVICE_ROLE_KEY" -H "Authorization: Bearer $SERVICE_ROLE_KEY" \
+            -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" \
+            -d "{\"id\": \"$USER_ID\", \"role\": \"admin\", \"full_name\": \"$OWNER_EMAIL\", \"email\": \"$OWNER_EMAIL\"}" \
+            --fail-with-body
+
+          curl -sS -X POST "$BASE/rest/v1/staff_members" \
+            -H "apikey: $SERVICE_ROLE_KEY" -H "Authorization: Bearer $SERVICE_ROLE_KEY" \
+            -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" \
+            -d "{\"profile_id\": \"$USER_ID\", \"display_name\": \"$OWNER_EMAIL\", \"role_title\": \"Admissions\", \"bookable\": true}" \
+            --fail-with-body
+
+          echo "Seeded $OWNER_EMAIL as the first staff admin. They can sign in at /staff." >> "$GITHUB_STEP_SUMMARY"
