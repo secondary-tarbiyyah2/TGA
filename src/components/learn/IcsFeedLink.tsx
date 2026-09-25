@@ -28,6 +28,7 @@ export function IcsFeedLink() {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
     load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase]);
