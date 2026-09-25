@@ -3,8 +3,16 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
-import { useLearnPermission } from "@/lib/learn/session";
+import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { SafeguardingLog } from "@/components/learn/compliance/SafeguardingLog";
+import { DataRights } from "@/components/learn/compliance/DataRights";
+import { RetentionRegistry } from "@/components/learn/compliance/RetentionRegistry";
+import { SingleCentralRecord } from "@/components/learn/compliance/SingleCentralRecord";
+import { ConsentRegister } from "@/components/learn/compliance/ConsentRegister";
+import { IncidentBreachLog } from "@/components/learn/compliance/IncidentBreachLog";
+import { AuditLogViewer } from "@/components/learn/compliance/AuditLogViewer";
+import { PolicyReviewTracker } from "@/components/learn/compliance/PolicyReviewTracker";
 
 type AuditRow = { id: number; action: string; target_id: string | null; changes: Record<string, unknown> | null; created_at: string };
 type FlaggedMessage = { id: string; body: string; flagged_keywords: string[] | null; created_at: string; thread_id: string };
@@ -78,6 +86,9 @@ function SafeguardingKeywordsAdmin() {
  */
 function ComplianceContent() {
   const isSafeguardingLead = useLearnPermission("safeguarding_lead");
+  const { roles } = useLearnSession();
+  const isHeadTeacher = roles.some((r) => r.role === "head_teacher");
+  const isHeadTeacherOrAdmin = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
   const [absenceAlerts, setAbsenceAlerts] = useState<AuditRow[] | null>(null);
   const [flagged, setFlagged] = useState<FlaggedMessage[] | null>(null);
   const [outstanding, setOutstanding] = useState<Outstanding[] | null>(null);
@@ -155,6 +166,16 @@ function ComplianceContent() {
           {outstanding?.length === 0 && <p className="text-sm text-ink/60">Everyone is up to date.</p>}
         </ul>
       </div>
+
+      {(isSafeguardingLead || isHeadTeacher) && <SafeguardingLog />}
+
+      <DataRights />
+      <RetentionRegistry />
+      {isHeadTeacherOrAdmin && <SingleCentralRecord />}
+      <ConsentRegister />
+      <IncidentBreachLog />
+      <AuditLogViewer />
+      <PolicyReviewTracker />
     </div>
   );
 }

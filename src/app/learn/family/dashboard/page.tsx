@@ -12,6 +12,7 @@ import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
+import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 import { useLearnSession, useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
@@ -161,9 +162,12 @@ function FamilyContent() {
               Signed in as {session && session !== "loading" ? session.user.email : ""}.
             </p>
           </div>
-          <button type="button" onClick={signOut} className="print:hidden rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-            Sign out
-          </button>
+          <div className="print:hidden flex items-center gap-2">
+            <ReportConcernLink />
+            <button type="button" onClick={signOut} className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
+              Sign out
+            </button>
+          </div>
         </div>
 
         <div className="print:hidden mt-4 flex flex-wrap items-end gap-2 border-t border-gold-light/30 pt-4">

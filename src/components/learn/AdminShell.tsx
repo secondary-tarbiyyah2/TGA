@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLearnSignOut } from "@/lib/learn/session";
+import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 
 const NAV = [
   { href: "/learn/admin/dashboard", label: "Dashboard" },
@@ -38,7 +39,10 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             {item.label}
           </Link>
         ))}
-        <button type="button" onClick={signOut} className="mt-4 block w-full rounded-lg px-3 py-2 text-left text-sm text-ink/50 hover:bg-cream">
+        <div className="mt-4">
+          <ReportConcernLink />
+        </div>
+        <button type="button" onClick={signOut} className="mt-2 block w-full rounded-lg px-3 py-2 text-left text-sm text-ink/50 hover:bg-cream">
           Sign out
         </button>
       </nav>
