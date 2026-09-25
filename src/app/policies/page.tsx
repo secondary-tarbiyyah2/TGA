@@ -1,32 +1,75 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
-import { getPolicyLinks } from "@/lib/content";
+import { getPolicyLinks, getSiteSettings } from "@/lib/content";
+import type { PolicyLink } from "@/content/seed";
 
 export const metadata: Metadata = {
   title: "Policies",
-  description: "Published school policy documents, including our Fee Policy and Safeguarding Policy.",
+  description: "Our statutory school policies, including Safeguarding, Admissions, Fees and Data Protection.",
 };
 
+function formatReviewDate(iso?: string): string | null {
+  if (!iso) return null;
+  return new Date(iso).toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+}
+
+function PolicyList({ policies, complaintsLastYear }: { policies: PolicyLink[]; complaintsLastYear?: number }) {
+  return (
+    <ul className="mt-6 divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
+      {policies.map((p) => {
+        const lastReviewed = formatReviewDate(p.lastReviewed);
+        const nextReview = formatReviewDate(p.nextReview);
+        return (
+          <li key={p._id} className="flex flex-wrap items-start justify-between gap-3 px-5 py-4">
+            <div>
+              <p className="font-medium text-ink">
+                <span className="text-ink/40">{p.number}</span> {p.title}
+              </p>
+              {p.summary && <p className="mt-0.5 text-xs text-ink/70">{p.summary}</p>}
+              {p.number === "27" && typeof complaintsLastYear === "number" && (
+                <p className="mt-0.5 text-xs text-ink/70">Formal complaints in the last academic year: {complaintsLastYear}</p>
+              )}
+              {(lastReviewed || nextReview) && (
+                <p className="mt-1 text-xs text-ink/50">
+                  {lastReviewed && <>Last reviewed: {lastReviewed}</>}
+                  {lastReviewed && nextReview && " · "}
+                  {nextReview && <>Next review: {nextReview}</>}
+                </p>
+              )}
+            </div>
+            <a href={p.fileUrl} className="shrink-0 text-sm font-semibold text-gold-700 underline" target="_blank" rel="noopener noreferrer">
+              View PDF
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 export default async function PoliciesPage() {
-  const policies = await getPolicyLinks();
+  const [policies, siteSettings] = await Promise.all([getPolicyLinks(), getSiteSettings()]);
+  const required = policies.filter((p) => p.category === "required");
+  const published = policies.filter((p) => p.category === "published");
 
   return (
     <section className="py-16">
       <Container className="max-w-2xl">
         <Kicker>Policies</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">School policies.</h1>
-        <ul className="mt-10 divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
-          {policies.map((p) => (
-            <li key={p._id} className="flex items-center justify-between gap-4 px-5 py-4">
-              <div>
-                <p className="font-medium text-ink">{p.title}</p>
-                {p.summary && <p className="text-xs text-ink/70">{p.summary}</p>}
-              </div>
-              <a href={p.fileUrl} className="text-sm font-semibold text-gold-700 underline">View</a>
-            </li>
-          ))}
-        </ul>
+        <p className="mt-4 text-ink/70">
+          Our statutory policies for the 2026–27 academic year. For our privacy notice, see the{" "}
+          <Link href="/legal/privacy" className="font-semibold text-gold-700 underline">Privacy page</Link>.
+        </p>
+
+        <h2 className="mt-12 font-serif text-2xl font-semibold text-ink">Must be on the website</h2>
+        <PolicyList policies={required} complaintsLastYear={siteSettings.complaintsLastYear} />
+
+        <h2 className="mt-12 font-serif text-2xl font-semibold text-ink">Published for simplicity</h2>
+        <p className="mt-1 text-sm text-ink/60">Only strictly required on request — published here for transparency.</p>
+        <PolicyList policies={published} />
       </Container>
     </section>
   );

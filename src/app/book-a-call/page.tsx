@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
@@ -35,6 +36,11 @@ export default function BookACallPage() {
           <p className="mt-6 rounded-2xl bg-gold-100 p-4 text-sm text-ink/80">
             Calls are on Microsoft Teams — no download needed, just click the link in your confirmation email at the
             time of your call.
+          </p>
+          <p className="mt-4 text-xs text-ink/60">
+            See our{" "}
+            <Link href="/policies" className="font-semibold text-gold-700 underline">Fees Policy</Link>{" "}
+            for payment terms ahead of enrolling.
           </p>
         </div>
         <Suspense fallback={<p className="text-ink/60">Loading booking calendar…</p>}>

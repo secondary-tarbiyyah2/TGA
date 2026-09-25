@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
+import Link from "next/link";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 
@@ -27,6 +28,11 @@ export default async function FeesPage() {
             Our first cohort starts in January 2027, so the figures below cover the shortened January–July 2027
             period (two terms, not a full three-term year) — not a full annual fee. All fees are inclusive of 20%
             VAT.
+          </p>
+          <p className="mt-3 max-w-2xl text-sm text-ink/60">
+            Read the full{" "}
+            <Link href="/policies" className="font-semibold text-gold-700 underline">Fees Policy</Link>{" "}
+            before enrolling — it covers payment terms, refunds and what happens if a payment is missed.
           </p>
         </Container>
       </section>

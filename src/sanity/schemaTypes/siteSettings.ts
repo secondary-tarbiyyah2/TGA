@@ -11,6 +11,13 @@ export default defineType({
     defineField({ name: "openEveningRecordingUrl", title: "Past open evening recording URL", type: "url" }),
     defineField({ name: "portalUrl", title: "Parent/Student portal URL (Moodle / M365 SSO)", type: "url" }),
     defineField({ name: "admissionsEmail", title: "Admissions email", type: "string", initialValue: "globalacademy@tarbiyyah.co.uk" }),
+    defineField({
+      name: "complaintsLastYear",
+      title: "Formal complaints in the last academic year",
+      type: "number",
+      description: "Shown on the Policies page next to the Concerns and Complaints Policy, per the DfE transparency expectation.",
+      initialValue: 0,
+    }),
   ],
   preview: {
     prepare: () => ({ title: "Site settings" }),

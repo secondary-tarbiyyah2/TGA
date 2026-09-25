@@ -42,4 +42,11 @@ export const getStaffMembers = () => fetchOrFallback<StaffMember[]>(`*[_type == 
 export const getDifferentiators = () =>
   fetchOrFallback<Differentiator[]>(`*[_type == "differentiator" && visible == true] | order(order asc)`, seedDifferentiators.filter((d) => d.visible));
 
-export const getPolicyLinks = () => fetchOrFallback<PolicyLink[]>(`*[_type == "policyLink"] | order(order asc)`, seedPolicyLinks);
+export const getPolicyLinks = () =>
+  fetchOrFallback<PolicyLink[]>(
+    `*[_type == "policyLink"] | order(order asc) {
+      _id, number, title, category, summary, lastReviewed, nextReview, order,
+      "fileUrl": coalesce(file.asset->url, fileUrl)
+    }`,
+    seedPolicyLinks
+  );

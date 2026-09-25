@@ -20,6 +20,7 @@ export const primaryNav: NavEntry[] = [
       { href: "/team", label: "Meet the team" },
       { href: "/pastoral-care", label: "Pastoral care" },
       { href: "/testimonials", label: "Testimonials" },
+      { href: "/policies", label: "Policies" },
     ],
   },
   {
