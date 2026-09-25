@@ -29,6 +29,13 @@ on:
         required: false
         default: ""
 
+# Same reasoning as deploy-site.yml: one shared live Supabase project
+# regardless of which branch triggered this, so concurrent runs shouldn't
+# apply migrations/deploy functions against it at once.
+concurrency:
+  group: deploy-supabase
+  cancel-in-progress: false
+
 jobs:
   test:
     runs-on: ubuntu-latest

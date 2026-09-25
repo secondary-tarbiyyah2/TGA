@@ -20,6 +20,10 @@ on:
       - "scripts/seed-sanity.mjs"
       - ".github/workflows/seed-sanity.yml"
 
+concurrency:
+  group: seed-sanity
+  cancel-in-progress: false
+
 jobs:
   seed:
     runs-on: ubuntu-latest

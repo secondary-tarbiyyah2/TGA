@@ -37,6 +37,17 @@ on:
       - ".github/workflows/deploy-site.yml"
   workflow_dispatch:
 
+# Deploys to the same live FTP server regardless of which branch triggered
+# it — a global (branch-independent) group, not one keyed by github.ref, so
+# a push to main right after one to the feature branch queues instead of
+# racing it. Found the hard way: two runs at the same commit on different
+# branches both touched the FTP-Deploy-Action's remote sync-state file at
+# once, and one got "FTPError: 550 ... No such file or directory" from a
+# file the other had already moved.
+concurrency:
+  group: deploy-site
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
