@@ -54,5 +54,5 @@ export const footerNav = [
 ];
 
 export const primaryCta = { href: "/admissions", label: "Apply Now" };
-export const portalCta = { href: "/portal", label: "Portals" };
+export const portalCta = { href: "/learn/login", label: "Log in" };
 export const openEveningCta = { href: "/open-evening", label: "Book Open Evening" };

@@ -10,6 +10,13 @@ backend was originally built in).
   correctly removes just that slot.
 - `database/rls.test.sql` — anon can't read bookings; a parent can't read
   another family's student records.
+- `database/learn_rls.test.sql` — /learn authorization (0007): a teacher
+  can't reach another class, a parent can't reach another family, a non-
+  staff account can't read other users' role assignments, and no client
+  role can self-escalate by inserting into `user_roles` directly (writes to
+  that table are service-role-only, by design — every "who can grant Head
+  Teacher" decision lives in one Edge Function, not scattered across RLS
+  write policies).
 
 ## The double-booking race
 

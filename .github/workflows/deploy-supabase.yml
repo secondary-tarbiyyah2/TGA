@@ -28,6 +28,14 @@ on:
         description: "One-time: email to seed as the first staff admin (leave blank to skip)"
         required: false
         default: ""
+      head_teacher_email:
+        description: "One-time: email to invite as the first /learn Head Teacher (leave blank to skip)"
+        required: false
+        default: ""
+      head_teacher_name:
+        description: "Full name for the first /learn Head Teacher (required if head_teacher_email is set)"
+        required: false
+        default: ""
 
 # Same reasoning as deploy-site.yml: one shared live Supabase project
 # regardless of which branch triggered this, so concurrent runs shouldn't
@@ -153,6 +161,13 @@ jobs:
           # signed-in caller before its own code even runs (it separately
           # checks that caller is specifically an admin — see the function).
           supabase functions deploy admin-manage-staff --project-ref "${{ steps.project.outputs.ref }}"
+          # learn-login must be reachable with no session at all (it's what
+          # decides whether a sign-in attempt is even allowed to proceed).
+          supabase functions deploy learn-login --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # learn-invite: verified, like admin-manage-staff — it separately
+          # re-checks the caller holds Head Teacher/Admin under their own
+          # RLS before doing anything (see the function).
+          supabase functions deploy learn-invite --project-ref "${{ steps.project.outputs.ref }}"
 
       - name: Configure Auth (magic link via Resend SMTP)
         run: |
@@ -209,4 +224,23 @@ jobs:
             cat /tmp/seed-admin-output.txt
             echo '```'
             echo "⚠️ The temporary password above is shown only in this log — copy it now. It will not be shown again."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Invite first /learn Head Teacher (only if head_teacher_email was provided)
+        if: github.event_name == 'workflow_dispatch' && inputs.head_teacher_email != ''
+        env:
+          SUPABASE_URL: https://${{ steps.project.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          SITE_URL: https://globalacademy.tarbiyyah.co.uk
+        run: |
+          set -euo pipefail
+          npm ci
+          node scripts/invite-first-head-teacher.mjs "${{ inputs.head_teacher_email }}" "${{ inputs.head_teacher_name }}" | tee /tmp/invite-ht-output.txt
+
+          {
+            echo "## First /learn Head Teacher invited"
+            echo '```'
+            cat /tmp/invite-ht-output.txt
+            echo '```'
+            echo "⚠️ The setup link above is shown only in this log — copy it now. It will not be shown again."
           } >> "$GITHUB_STEP_SUMMARY"

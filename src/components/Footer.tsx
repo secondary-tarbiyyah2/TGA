@@ -50,7 +50,10 @@ export function Footer() {
       <div className="border-t border-white/10 py-6">
         <Container className="flex flex-col gap-2 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Tarbiyyah Education Trust. All rights reserved.</p>
-          <p>globalacademy.tarbiyyah.co.uk</p>
+          <div className="flex items-center gap-4">
+            <p>globalacademy.tarbiyyah.co.uk</p>
+            <Link href="/learn/login" className="text-white/60 hover:text-cream">Staff login</Link>
+          </div>
         </Container>
       </div>
     </footer>

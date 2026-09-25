@@ -11,6 +11,12 @@ Options -Indexes
 RewriteEngine On
 RewriteOptions IgnoreInherit
 
+# /staff and /portal are superseded by /learn — redirect at the server
+# level (not a JS/meta-refresh page) so this works even pre-JS and for
+# anything that had the old URLs bookmarked or indexed.
+RewriteRule ^staff(/.*)?$ /learn/login/ [R=301,L]
+RewriteRule ^portal(/.*)?$ /learn/login/ [R=301,L]
+
 # Sanity Studio (out/studio, built separately by `npm run sanity:build` — see
 # README) is a client-side-routed single-page app: any /studio/* request that
 # isn't a real file must fall back to /studio/index.html so its own router
@@ -19,6 +25,19 @@ RewriteCond %{REQUEST_URI} ^/studio/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /studio/index.html [L]
+
+# /learn is the authenticated area: never cached (by any proxy/browser
+# between here and the visitor — there is no CDN in front of this host),
+# never indexed, and locked to a strict CSP with no third-party origins at
+# all (no analytics/chat-widget script tags exist under /learn, and this
+# header means one couldn't silently be added later without it breaking).
+<IfModule mod_headers.c>
+  <If "%{REQUEST_URI} =~ m#^/learn#">
+    Header set Cache-Control "no-store"
+    Header set X-Robots-Tag "noindex, nofollow"
+    Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://*.supabase.co; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+  </If>
+</IfModule>
 
 # Don't expose dotfiles (e.g. this .htaccess) to the web.
 <FilesMatch "^\.">
