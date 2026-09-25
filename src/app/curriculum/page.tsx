@@ -3,24 +3,31 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { keyStages } from "@/content/curriculum";
+import { getCurriculumContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Curriculum",
   description: "The full British curriculum plus Islamic Studies, by key stage, Reception to GCSE.",
 };
 
-export default function CurriculumPage() {
+export default async function CurriculumPage() {
+  const content = await getCurriculumContent();
+
   return (
     <>
       <section className="geo-texture bg-cream py-16">
         <Container>
           <Kicker>Curriculum</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">
-            The full British curriculum, plus Islamic Studies.
+            {content.heroHeading || "The full British curriculum, plus Islamic Studies."}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            Live-timetabled academic subjects taught by qualified UK teachers, through to GCSE — with Qur&apos;an,
-            Islamic Studies and Arabic on the timetable at every key stage.
+            {content.heroBody || (
+              <>
+                Live-timetabled academic subjects taught by qualified UK teachers, through to GCSE — with
+                Qur&apos;an, Islamic Studies and Arabic on the timetable at every key stage.
+              </>
+            )}
           </p>
         </Container>
       </section>
@@ -28,12 +35,18 @@ export default function CurriculumPage() {
       <section className="py-16">
         <Container>
           <Kicker>Two live-lesson time bands</Kicker>
-          <h2 className="font-serif text-2xl font-semibold text-ink">Lessons timed for a genuinely global school.</h2>
+          <h2 className="font-serif text-2xl font-semibold text-ink">
+            {content.timeBandsHeading || "Lessons timed for a genuinely global school."}
+          </h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Rather than one UK-hours timetable, families choose the live-lesson band that suits their timezone: a{" "}
-            <strong>UK / Europe / West-Africa band</strong> and a <strong>Gulf / South-Asia band</strong>. This is a
-            draft concept, not yet a confirmed commitment — final timetable bands will be published ahead of
-            enrolment.
+            {content.timeBandsBody || (
+              <>
+                Rather than one UK-hours timetable, families choose the live-lesson band that suits their timezone: a{" "}
+                <strong>UK / Europe / West-Africa band</strong> and a <strong>Gulf / South-Asia band</strong>. This
+                is a draft concept, not yet a confirmed commitment — final timetable bands will be published ahead
+                of enrolment.
+              </>
+            )}
           </p>
         </Container>
       </section>

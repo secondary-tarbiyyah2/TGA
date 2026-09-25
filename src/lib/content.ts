@@ -3,7 +3,9 @@ import {
   feeBands as seedFeeBands, siteSettings as seedSiteSettings, faqEntries as seedFaqEntries,
   termDates as seedTermDates, testimonials as seedTestimonials, staffMembers as seedStaffMembers,
   differentiators as seedDifferentiators, policyLinks as seedPolicyLinks,
+  homepageContent as seedHomepageContent, aboutContent as seedAboutContent, curriculumContent as seedCurriculumContent,
   type FeeBand, type FaqEntry, type TermDate, type Testimonial, type StaffMember, type Differentiator, type PolicyLink, type SiteSettings,
+  type HomepageContent, type AboutContent, type CurriculumContent,
 } from "@/content/seed";
 
 /** Every getter below tries live Sanity content first, and falls back to bundled seed
@@ -51,3 +53,9 @@ export const getPolicyLinks = () =>
     }`,
     seedPolicyLinks
   );
+
+export const getHomepageContent = () => fetchOrFallback<HomepageContent>(`*[_type == "homepageContent"][0]`, seedHomepageContent);
+
+export const getAboutContent = () => fetchOrFallback<AboutContent>(`*[_type == "aboutContent"][0]`, seedAboutContent);
+
+export const getCurriculumContent = () => fetchOrFallback<CurriculumContent>(`*[_type == "curriculumContent"][0]`, seedCurriculumContent);

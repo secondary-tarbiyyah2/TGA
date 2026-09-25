@@ -96,7 +96,17 @@ const policyLinks = [
   { _id: "policyLink-p09", number: "09", order: 14, category: "published", title: "Supporting Pupils with Medical Conditions Policy", fileUrl: "/policies/09-supporting-pupils-with-medical-conditions.pdf" },
 ].map((p) => ({ ...p, _type: "policyLink", lastReviewed: ISSUED, nextReview: NEXT_REVIEW }));
 
-const allDocs = [siteSettings, ...feeBands, ...faqEntries, ...termDates, ...testimonials, ...staffMembers, ...differentiators, ...policyLinks];
+// Editable-page-section singletons — created empty so they appear in Studio
+// ready to edit; every field left blank falls back to the page's existing
+// bundled copy (see src/content/seed.ts), never a blank section.
+const homepageContent = { _id: "homepageContent", _type: "homepageContent" };
+const aboutContent = { _id: "aboutContent", _type: "aboutContent" };
+const curriculumContent = { _id: "curriculumContent", _type: "curriculumContent" };
+
+const allDocs = [
+  siteSettings, ...feeBands, ...faqEntries, ...termDates, ...testimonials, ...staffMembers, ...differentiators, ...policyLinks,
+  homepageContent, aboutContent, curriculumContent,
+];
 
 const tx = client.transaction();
 for (const doc of allDocs) tx.createOrReplace(doc);

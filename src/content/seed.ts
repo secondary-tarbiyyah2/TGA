@@ -63,6 +63,49 @@ export const siteSettings: SiteSettings = {
   complaintsLastYear: 0,
 };
 
+// Editable-page-section content: every field here is optional and mirrors
+// what's already hardcoded on the corresponding page. A page reads
+// `content.someField || "the existing default copy"` — so leaving Studio
+// blank changes nothing, and an admin can override any field without a
+// code change or redeploy waiting on anything but the next scheduled/
+// webhook-triggered rebuild.
+export type HomepageContent = {
+  heroKicker?: string;
+  heroHeading?: string;
+  heroBody?: string;
+  pillars?: { title: string; body: string }[];
+  howItWorksHeading?: string;
+  howItWorksSteps?: { title: string; body: string }[];
+  stagesHeading?: string;
+  stagesBody?: string;
+  feeTeaserHeading?: string;
+  feeTeaserBody?: string;
+};
+
+export const homepageContent: HomepageContent = {};
+
+export type AboutContent = {
+  heroHeading?: string;
+  heroBody?: string;
+  missionBody?: string;
+  safeguardingBody?: string;
+  recipeIntro?: string;
+  recipeItems?: { letter: string; word: string; body: string }[];
+  familyHeading?: string;
+  familyBody?: string;
+};
+
+export const aboutContent: AboutContent = {};
+
+export type CurriculumContent = {
+  heroHeading?: string;
+  heroBody?: string;
+  timeBandsHeading?: string;
+  timeBandsBody?: string;
+};
+
+export const curriculumContent: CurriculumContent = {};
+
 export type FaqEntry = { _id: string; question: string; answer: string; category: string; order?: number };
 
 export const faqEntries: FaqEntry[] = [

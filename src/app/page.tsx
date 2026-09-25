@@ -6,7 +6,7 @@ import { Kicker } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { FaqPreview } from "@/components/FaqPreview";
-import { getDifferentiators, getFaqEntries, getFeeBands, getSiteSettings, getStaffMembers, getTestimonials } from "@/lib/content";
+import { getDifferentiators, getFaqEntries, getFeeBands, getHomepageContent, getSiteSettings, getStaffMembers, getTestimonials } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -15,17 +15,17 @@ export const metadata: Metadata = {
     "An online school by Tarbiyyah Education Trust. Live, timetabled lessons with qualified UK teachers — the full British curriculum, from Reception to Year 11, taught with tarbiyyah at its heart.",
 };
 
-const pillars = [
+const defaultPillars = [
   { title: "British curriculum", body: "The full national curriculum, live-timetabled, taught to GCSE by qualified UK teachers." },
   { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage — not an add-on." },
   { title: "Live, small classes", body: "Real-time lessons with real teachers, sized to keep every child known and supported." },
 ];
 
-const howItWorks = [
-  { step: "1", title: "Apply", body: "A short multi-step application — no obligation." },
-  { step: "2", title: "Entry assessment", body: "A friendly, age-appropriate check so we know how to support your child." },
-  { step: "3", title: "Offer", body: "A place offered, confirmed with a one-time registration fee." },
-  { step: "4", title: "Welcome", body: "Onboarding ahead of live lessons launching January 2027." },
+const defaultHowItWorks = [
+  { title: "Apply", body: "A short multi-step application — no obligation." },
+  { title: "Entry assessment", body: "A friendly, age-appropriate check so we know how to support your child." },
+  { title: "Offer", body: "A place offered, confirmed with a one-time registration fee." },
+  { title: "Welcome", body: "Onboarding ahead of live lessons launching January 2027." },
 ];
 
 const stages = [
@@ -36,14 +36,19 @@ const stages = [
 ];
 
 export default async function HomePage() {
-  const [differentiators, feeBands, testimonials, staff, faqs, settings] = await Promise.all([
+  const [differentiators, feeBands, testimonials, staff, faqs, settings, content] = await Promise.all([
     getDifferentiators(),
     getFeeBands(),
     getTestimonials(),
     getStaffMembers(),
     getFaqEntries(),
     getSiteSettings(),
+    getHomepageContent(),
   ]);
+  const pillars = content.pillars?.length ? content.pillars : defaultPillars;
+  const howItWorks = content.howItWorksSteps?.length
+    ? content.howItWorksSteps.map((s, i) => ({ step: String(i + 1), ...s }))
+    : defaultHowItWorks.map((s, i) => ({ step: String(i + 1), ...s }));
   // Never show fabricated/unconfirmed content publicly — see ground rule 3
   // and 4. A differentiator, testimonial or team member only appears once
   // an admin has confirmed it; the homepage headteacher quote only appears
@@ -58,15 +63,23 @@ export default async function HomePage() {
       <section className="geo-texture relative overflow-hidden bg-cream">
         <Container className="grid gap-12 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
           <div>
-            <Kicker>An online school by Tarbiyyah Education Trust</Kicker>
-            <h1 className="text-display font-serif font-semibold text-ink">
-              A British education, rooted in faith — <span className="text-gold-700">wherever home is.</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-ink/75">
-              Live, timetabled lessons with qualified UK teachers. The full British curriculum, taught with{" "}
-              <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Reception to Year 11, live
-              lessons launching January 2027.
-            </p>
+            <Kicker>{content.heroKicker || "An online school by Tarbiyyah Education Trust"}</Kicker>
+            {content.heroHeading ? (
+              <h1 className="text-display font-serif font-semibold text-ink">{content.heroHeading}</h1>
+            ) : (
+              <h1 className="text-display font-serif font-semibold text-ink">
+                A British education, rooted in faith — <span className="text-gold-700">wherever home is.</span>
+              </h1>
+            )}
+            {content.heroBody ? (
+              <p className="mt-6 max-w-xl text-lg text-ink/75">{content.heroBody}</p>
+            ) : (
+              <p className="mt-6 max-w-xl text-lg text-ink/75">
+                Live, timetabled lessons with qualified UK teachers. The full British curriculum, taught with{" "}
+                <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Reception to Year 11, live
+                lessons launching January 2027.
+              </p>
+            )}
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href={settings.ctaPrimaryHref || "/admissions"}>{settings.ctaPrimaryLabel || "Apply Now"}</Button>
               <Button href="/book-a-call" variant="secondary">Book an admissions call</Button>
@@ -108,7 +121,7 @@ export default async function HomePage() {
       <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>How it works</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">Four steps to a place at TGA.</h2>
+          <h2 className="text-h2 font-serif font-semibold text-ink">{content.howItWorksHeading || "Four steps to a place at TGA."}</h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {howItWorks.map((s, i) => (
               <div key={s.step} className="relative">
@@ -131,10 +144,12 @@ export default async function HomePage() {
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div>
             <Kicker>Stages of school</Kicker>
-            <h2 className="text-h2 font-serif font-semibold text-ink">The full British curriculum, plus Islamic Studies.</h2>
+            <h2 className="text-h2 font-serif font-semibold text-ink">
+              {content.stagesHeading || "The full British curriculum, plus Islamic Studies."}
+            </h2>
             <p className="mt-4 text-ink/75">
-              Live-timetabled academic subjects from Reception through GCSE, taught by qualified UK teachers — with
-              Qur&apos;an, Islamic Studies and Arabic woven through every key stage, not bolted on.
+              {content.stagesBody ||
+                "Live-timetabled academic subjects from Reception through GCSE, taught by qualified UK teachers — with Qur'an, Islamic Studies and Arabic woven through every key stage, not bolted on."}
             </p>
             <Button href="/curriculum" variant="secondary" className="mt-6">Explore the curriculum</Button>
           </div>
@@ -216,10 +231,10 @@ export default async function HomePage() {
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <Kicker>Fees</Kicker>
-            <h2 className="text-h2 font-serif font-semibold text-ink">Transparent fees, no surprises.</h2>
+            <h2 className="text-h2 font-serif font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h2>
             <p className="mt-4 text-ink/75">
-              Every fee is published on our website — nothing shared only &quot;on enquiry.&quot; Annual, termly and
-              monthly plans are available for every year group.
+              {content.feeTeaserBody ||
+                'Every fee is published on our website — nothing shared only "on enquiry." Annual, termly and monthly plans are available for every year group.'}
             </p>
             <Button href="/fees" variant="secondary" className="mt-6">See the full fee table</Button>
           </div>

@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
+import { getAboutContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About Us",
   description: "Our mission, Islamic ethos, the Tarbiyyah family background, and our safeguarding commitment.",
 };
 
-const recipe = [
+const defaultRecipe = [
   { letter: "R", word: "Respect", body: "For Allah, for others, and for oneself." },
   { letter: "E", word: "Excellence", body: "In academic work and in character alike." },
   { letter: "C", word: "Compassion", body: "Kindness modelled and expected, every day." },
@@ -17,18 +18,21 @@ const recipe = [
   { letter: "E", word: "Excellence in Adab", body: "Manners and conduct as the foundation of learning." },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const content = await getAboutContent();
+  const recipe = content.recipeItems?.length ? content.recipeItems : defaultRecipe;
+
   return (
     <>
       <section className="geo-texture bg-cream py-16">
         <Container>
           <Kicker>About Us</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">
-            Academic excellence, rooted in faith.
+            {content.heroHeading || "Academic excellence, rooted in faith."}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            Tarbiyyah Global Academy is an online British school where academic excellence meets Islamic values —
-            preparing children for success in this life and the Hereafter.
+            {content.heroBody ||
+              "Tarbiyyah Global Academy is an online British school where academic excellence meets Islamic values — preparing children for success in this life and the Hereafter."}
           </p>
         </Container>
       </section>
@@ -38,16 +42,21 @@ export default function AboutPage() {
           <div>
             <Kicker>Our mission</Kicker>
             <p className="font-serif text-2xl leading-relaxed text-ink">
-              To nurture confident, compassionate and capable Muslims who excel academically, lead with integrity and
-              make a positive impact.
+              {content.missionBody ||
+                "To nurture confident, compassionate and capable Muslims who excel academically, lead with integrity and make a positive impact."}
             </p>
           </div>
           <div>
             <Kicker>Safeguarding</Kicker>
             <p className="text-ink/75">
-              The safety and wellbeing of every child is our first responsibility. Tarbiyyah Global Academy follows
-              the same safeguarding standards as Tarbiyyah Primary and Tarbiyyah Secondary, including vetted,
-              DBS-checked staff, a named Designated Safeguarding Lead, and clear reporting routes for any concern.
+              {content.safeguardingBody || (
+                <>
+                  The safety and wellbeing of every child is our first responsibility. Tarbiyyah Global Academy
+                  follows the same safeguarding standards as Tarbiyyah Primary and Tarbiyyah Secondary, including
+                  vetted, DBS-checked staff, a named Designated Safeguarding Lead, and clear reporting routes for any
+                  concern.
+                </>
+              )}{" "}
               Our full Safeguarding Policy is available on the{" "}
               <a href="/policies" className="text-gold-700 underline">Policies</a> page.
             </p>
@@ -58,7 +67,7 @@ export default function AboutPage() {
       <section className="geo-texture bg-cream py-16">
         <Container>
           <Kicker>Our character framework — RECIPE</Kicker>
-          <h2 className="font-serif text-3xl font-semibold text-ink">Building akhlaq alongside attainment.</h2>
+          <h2 className="font-serif text-3xl font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {recipe.map((r) => (
               <div key={r.word} className="rounded-2xl bg-white p-6 shadow-sm">
@@ -75,11 +84,10 @@ export default function AboutPage() {
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <Kicker>The Tarbiyyah family</Kicker>
-            <h2 className="font-serif text-3xl font-semibold text-ink">10+ years, two established schools.</h2>
+            <h2 className="font-serif text-3xl font-semibold text-ink">{content.familyHeading || "10+ years, two established schools."}</h2>
             <p className="mt-4 text-ink/75">
-              Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools — Tarbiyyah Primary and
-              Tarbiyyah Secondary School for Boys, both operating for over ten years. The Academy brings that same
-              ethos and standard of care online, for families anywhere in the world.
+              {content.familyBody ||
+                "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools — Tarbiyyah Primary and Tarbiyyah Secondary School for Boys, both operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world."}
             </p>
           </div>
           <div>
