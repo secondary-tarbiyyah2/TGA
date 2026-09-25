@@ -168,6 +168,15 @@ jobs:
           # re-checks the caller holds Head Teacher/Admin under their own
           # RLS before doing anything (see the function).
           supabase functions deploy learn-invite --project-ref "${{ steps.project.outputs.ref }}"
+          # timetable-ics must be reachable with no session at all (a
+          # calendar app polling a URL) — security is the token, not login.
+          supabase functions deploy timetable-ics --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # timetable-move/-publish/-cover: verified — each separately
+          # re-checks the caller's own permission server-side (see each
+          # function's own comments).
+          supabase functions deploy timetable-move --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy timetable-publish --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy timetable-cover --project-ref "${{ steps.project.outputs.ref }}"
 
       - name: Configure Auth (magic link via Resend SMTP)
         run: |
