@@ -163,6 +163,28 @@ less to configure than Phase B. Still:
    six illustrative phrases ship in the migration; extend it to match your
    actual safeguarding policy before relying on it.
 
+## "Your Child's Week" quiz + per-year-group sample weeks — what's needed from you
+
+Runs on migrations/RLS already (`0016_eligibility_quiz_v2.sql`), and the
+public `/eligibility` page works out of the box on bundled fallback copy
+(`src/lib/quiz/defaultConfig.ts`) even before any of this is done. Still:
+
+1. **Publish an initial quiz config.** Visit `/learn/admin/quiz` as a Head
+   Teacher/Admin — a draft is seeded automatically from the bundled
+   default copy the first time the page loads. Review it and click
+   "Publish draft" so the public quiz reads from the database (and shows
+   a real "last updated" date) instead of the bundled fallback.
+2. **Mark a public sample week per year group.** Under the "Sample weeks"
+   tab, for each year group pick one of your PUBLISHED `timetable_runs`
+   and publish it as that year group's public sample week. Until this is
+   done for a year group, the quiz shows the honest "no sample week yet"
+   fallback for it — never a fabricated timetable — and the same tab
+   shows you exactly which year groups still need this.
+3. **No new secrets or scheduled workflows** — this phase reuses the
+   existing Supabase anon-key client and `leadRef()`/`register.php` lead
+   mechanism already deployed; nothing new to add to
+   `deploy-supabase.yml`.
+
 ## Compliance area (Phase D) — what's needed from you
 
 Everything under `/learn/admin/compliance` runs on migrations/RLS already
@@ -269,3 +291,19 @@ most sensitive area of the app, so read this section before relying on it.
   permissions (not just roles) would fix this properly but touches a
   shared component used by every `/learn` page, so it wasn't done under
   this phase's time budget. See the final report.
+- Actually emailing the "Your Child's Week" plan as a PDF — the "Email me
+  this plan" CTA saves email + explicit consent as a real `quiz_leads` row
+  (the GDPR-critical part, schema-enforced and pgTAP-tested) but does not
+  yet generate or send a PDF; the confirmation copy says a family's plan
+  is saved and admissions will follow up, which is accurate today. Sending
+  an actual PDF needs a templating/PDF-generation step and an Edge
+  Function (or a mailer endpoint alongside `register.php`/`apply.php`)
+  that doesn't exist yet — see the final report for the reasoning.
+- Hot-reloading the `/eligibility` page's intro heading/kicker/body from
+  the published quiz config without a rebuild — that copy is read from
+  the bundled `DEFAULT_QUIZ_CONFIG` at build time (the page is a static
+  server component), while the questions/rules/result copy the admin
+  edits at `/learn/admin/quiz` are live immediately (fetched client-side).
+  Editing the intro copy currently means updating `defaultConfig.ts` and
+  redeploying; wiring the server component to fetch the published version
+  at build time (same pattern as `getSiteSettings()`) would fix this.
