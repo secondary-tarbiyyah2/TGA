@@ -1,0 +1,110 @@
+name: Deploy site
+
+# Builds the static export (output: "export" in next.config.ts — plain
+# HTML/CSS/JS, no Node server needed) and uploads it over FTP to the box
+# hosting https://globalacademy.tarbiyyah.co.uk/. This is why the site can
+# live on a 2GB shared host alongside WordPress: there's nothing running,
+# just files.
+#
+# Requires three repo secrets (Settings > Secrets and variables > Actions):
+#   FTP_HOST      — e.g. ftp.tarbiyyah.co.uk
+#   FTP_USERNAME  — the FTP account's login, e.g. tga-deploy@globalacademy.tarbiyyah.co.uk
+#   FTP_PASSWORD  — that FTP account's password
+#
+# Optional repo variable:
+#   FTP_REMOTE_DIR — where in the FTP account to upload to. If the FTP
+#     account's own home directory was set to the site's document root when
+#     it was created, leave this unset (defaults to "./"). Otherwise set it
+#     to the doc root's path relative to the FTP account's home, e.g.
+#     "public_html/globalacademy/".
+#
+# Also fetches the Supabase URL/anon key directly from the Supabase API at
+# build time (using the same SUPABASE_ACCESS_TOKEN secret as the backend
+# deploy workflow) and bakes them into the build via NEXT_PUBLIC_* env vars
+# — the anon key is safe to publish (see DESIGN.md) but this avoids ever
+# needing to copy/paste it by hand.
+
+on:
+  push:
+    branches: [claude/sweet-albattani-e7fav5, main]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "package.json"
+      - "package-lock.json"
+      - "next.config.ts"
+      - "tsconfig.json"
+      - ".github/workflows/deploy-site.yml"
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the Supabase project ref
+        id: project
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then
+              REF=$(echo "$PROJECTS" | jq -r '.[0].id')
+            fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project. Projects found: $(echo "$PROJECTS" | jq -c '[.[].name]')"
+            exit 1
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch the Supabase anon key
+        id: keys
+        run: |
+          set -euo pipefail
+          KEYS=$(supabase projects api-keys --project-ref "${{ steps.project.outputs.ref }}" -o json)
+          ANON=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          if [ -z "$ANON" ] || [ "$ANON" = "null" ]; then
+            echo "::error::Could not find an anon/publishable key. Key names found: $(echo "$KEYS" | jq -c '[.[].name]')"
+            exit 1
+          fi
+          echo "anon_key=$ANON" >> "$GITHUB_OUTPUT"
+
+      - name: Build static export
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://${{ steps.project.outputs.ref }}.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ steps.keys.outputs.anon_key }}
+          NEXT_PUBLIC_ADMISSIONS_TEAMS_URL: ${{ vars.ADMISSIONS_TEAMS_URL || 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2UwM2U2NzYtNjhkMS00ZDRkLTlmODctNTZiMWZmMWFiMzcw%40thread.v2/0?context=%7b%22Tid%22%3a%22a0b25b15-bb34-4892-a564-6c8277ae3db2%22%2c%22Oid%22%3a%223b6d0aa6-0912-44cc-b592-f83506cd0d80%22%7d' }}
+        run: npm run build
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./out/
+          server-dir: ${{ vars.FTP_REMOTE_DIR || './' }}
+          # Never delete files on the server that aren't in this build —
+          # protects anything placed there outside of this pipeline (e.g.
+          # register.config.php, which isn't committed to git — see README).
+          dangerous-clean-slate: false
