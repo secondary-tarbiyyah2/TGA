@@ -59,6 +59,8 @@ export default defineType({
     defineField({ name: "stagesBody", title: "\"Stages of school\" body", type: "text", rows: 3, group: "sections" }),
     defineField({ name: "feeTeaserHeading", title: "Fees teaser heading", type: "string", group: "sections" }),
     defineField({ name: "feeTeaserBody", title: "Fees teaser body", type: "text", rows: 2, group: "sections" }),
+    defineField({ name: "safeHeading", title: "\"Safe, open and accountable\" heading", type: "string", group: "sections" }),
+    defineField({ name: "safeBody", title: "\"Safe, open and accountable\" intro body", type: "text", rows: 2, group: "sections" }),
   ],
   preview: {
     prepare: () => ({ title: "Homepage content" }),

@@ -80,6 +80,8 @@ export type HomepageContent = {
   stagesBody?: string;
   feeTeaserHeading?: string;
   feeTeaserBody?: string;
+  safeHeading?: string;
+  safeBody?: string;
 };
 
 export const homepageContent: HomepageContent = {};

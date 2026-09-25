@@ -259,6 +259,45 @@ export default async function HomePage() {
         </Container>
       </section>
 
+      {/* SAFE, OPEN AND ACCOUNTABLE — every claim here already exists
+          elsewhere on the site (DBS-checked staff and a named DSL are
+          stated as fact on /about and /safeguarding today; the complaints
+          count is settings.complaintsLastYear, already shown on
+          /policies). This section only links through and summarises —
+          it never introduces a new unconfirmed claim. */}
+      <section className="bg-white section-pad">
+        <Container className="max-w-3xl">
+          <Kicker>Safeguarding &amp; transparency</Kicker>
+          <h2 className="text-h2 font-serif font-semibold text-ink">{content.safeHeading || "Safe, open and accountable."}</h2>
+          <p className="mt-4 text-ink/75">
+            {content.safeBody ||
+              "Every member of staff is DBS-checked, and a named Designated Safeguarding Lead is responsible for keeping children safe. We publish how to raise a concern, and how many formal complaints we received last year — nothing handled quietly, on request."}
+          </p>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+            <li className="rounded-2xl border border-gold-light/50 bg-cream p-5">
+              <p className="font-semibold text-ink">DBS-checked staff</p>
+              <p className="mt-1 text-sm text-ink/70">Every member of staff is vetted before they ever teach a child.</p>
+            </li>
+            {settings.safeguardingLeadName && (
+              <li className="rounded-2xl border border-gold-light/50 bg-cream p-5">
+                <p className="font-semibold text-ink">A named Safeguarding Lead</p>
+                <p className="mt-1 text-sm text-ink/70">{settings.safeguardingLeadName} leads on keeping every child safe.</p>
+              </li>
+            )}
+            {typeof settings.complaintsLastYear === "number" && (
+              <li className="rounded-2xl border border-gold-light/50 bg-cream p-5">
+                <p className="font-semibold text-ink">Complaints, published</p>
+                <p className="mt-1 text-sm text-ink/70">Formal complaints last academic year: {settings.complaintsLastYear}.</p>
+              </li>
+            )}
+          </ul>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Button href="/safeguarding" variant="secondary">Our safeguarding approach</Button>
+            <Button href="/policies" variant="secondary">All school policies</Button>
+          </div>
+        </Container>
+      </section>
+
       {/* FAQ PREVIEW */}
       <section className="geo-texture bg-cream section-pad">
         <Container className="max-w-2xl">
