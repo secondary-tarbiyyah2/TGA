@@ -28,14 +28,29 @@ RewriteRule ^ /studio/index.html [L]
 
 # /learn is the authenticated area: never cached (by any proxy/browser
 # between here and the visitor — there is no CDN in front of this host),
-# never indexed, and locked to a strict CSP with no third-party origins at
-# all (no analytics/chat-widget script tags exist under /learn, and this
-# header means one couldn't silently be added later without it breaking).
+# never indexed, and locked to a CSP with no third-party origins at all
+# (no analytics/chat-widget script tags exist under /learn, and this
+# header means one couldn't silently be added later without it breaking
+# — script-src stays 'self' only, so an injected <script src="...evil">
+# still can't load).
+#
+# script-src needs 'unsafe-inline' specifically: Next.js's App Router
+# emits inline <script> tags in every static page to stream the RSC
+# payload for hydration (self.__next_f.push(...)) — this exists in the
+# built HTML itself, not something added later, and without it React
+# never finishes hydrating (confirmed live: every /learn page rendered
+# but no event handler ever ran — a silent, total functionality break,
+# not a cosmetic one). A per-request nonce isn't possible here (this is
+# a static export with no server to mint one per request), and a
+# hash-allowlist would need to be recomputed and kept in sync with every
+# single build's inline-script content — 'unsafe-inline' is the honest
+# trade-off: same-origin-only script loading is still enforced, but an
+# XSS that got attacker content into the page could now execute inline.
 <IfModule mod_headers.c>
   <If "%{REQUEST_URI} =~ m#^/learn#">
     Header set Cache-Control "no-store"
     Header set X-Robots-Tag "noindex, nofollow"
-    Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://*.supabase.co; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://*.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
   </If>
 </IfModule>
 
