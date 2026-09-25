@@ -92,7 +92,19 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: https://${{ steps.project.outputs.ref }}.supabase.co
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ steps.keys.outputs.anon_key }}
           NEXT_PUBLIC_ADMISSIONS_TEAMS_URL: ${{ vars.ADMISSIONS_TEAMS_URL || 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2UwM2U2NzYtNjhkMS00ZDRkLTlmODctNTZiMWZmMWFiMzcw%40thread.v2/0?context=%7b%22Tid%22%3a%22a0b25b15-bb34-4892-a564-6c8277ae3db2%22%2c%22Oid%22%3a%223b6d0aa6-0912-44cc-b592-f83506cd0d80%22%7d' }}
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
         run: npm run build
+
+      # Sanity Studio (the admin panel at /studio) is a separate static SPA
+      # built from the same schema — only worth building once a project ID
+      # exists, otherwise `sanity build` has nothing to point at.
+      - name: Build Sanity Studio
+        if: vars.NEXT_PUBLIC_SANITY_PROJECT_ID != ''
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
+        run: npm run sanity:build
 
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
