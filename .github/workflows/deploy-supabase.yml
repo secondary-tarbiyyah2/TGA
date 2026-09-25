@@ -37,9 +37,14 @@ jobs:
       - uses: supabase/setup-cli@v1
         with:
           version: latest
-      # supabase test db spins up a local ephemeral Postgres via Docker
-      # (preinstalled on ubuntu-latest) — no project credentials involved.
+      # `supabase test db` needs a local stack already running — it doesn't
+      # start one itself. `supabase start` spins up ephemeral Postgres +
+      # friends via Docker (preinstalled on ubuntu-latest) — no project
+      # credentials involved, this is entirely local to the runner.
+      - run: supabase start
       - run: supabase test db
+      - if: always()
+        run: supabase stop
 
   deploy:
     needs: test
