@@ -1,0 +1,72 @@
+name: Sync signable documents from Sanity
+
+# Keeps signable_documents (0014_esignature.sql) in sync with Sanity's
+# policyLink documents flagged requiresSignature — same "find the project,
+# fetch the service-role key" steps as lms-recording-retention.yml, plus
+# the Sanity env vars seed-sanity.yml already uses.
+
+on:
+  schedule:
+    - cron: "0 4 * * *" # once a day, 04:00 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: sync-signable-documents
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+      NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
+      SANITY_API_TOKEN: ${{ secrets.SANITY_IO }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref
+        id: project
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then
+              REF=$(echo "$PROJECTS" | jq -r '.[0].id')
+            fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project. Projects found: $(echo "$PROJECTS" | jq -c '[.[].name]')"
+            exit 1
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch service-role key
+        id: keys
+        run: |
+          set -euo pipefail
+          KEYS=$(supabase projects api-keys --project-ref "${{ steps.project.outputs.ref }}" -o json)
+          SERVICE_ROLE=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Run sync
+        env:
+          SUPABASE_URL: https://${{ steps.project.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+        run: node scripts/sync-signable-documents-from-sanity.mjs
