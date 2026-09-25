@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Container } from "./Container";
 import { primaryNav, primaryCta, portalCta, isNavGroup, type NavGroup } from "@/lib/nav";
 
@@ -46,13 +47,164 @@ function DesktopDropdown({ group, open, onToggle, onClose }: { group: NavGroup; 
   );
 }
 
+// Rendered via a portal into document.body — NOT as a descendant of <header>.
+// <header> has `backdrop-blur` (backdrop-filter), which per the CSS spec
+// creates a new containing block for any `position: fixed` descendant, the
+// same way `transform` or `filter` do. A `fixed inset-0` drawer nested
+// inside that header was being positioned relative to the header's own
+// 80px-tall box instead of the viewport — collapsing to zero height and
+// staying invisible even though its open/close state was toggling
+// correctly. Verified with Playwright device emulation (iPhone/Android/
+// tablet viewports): the drawer's computed height was exactly 0px while
+// nested inside the blurred header, and became correct (full viewport
+// height below the header) the moment it was rendered outside it. A portal
+// is the robust fix — the drawer's positioning no longer depends on
+// whatever CSS an ancestor happens to have now or in the future.
+function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: () => void; triggerRef: React.RefObject<HTMLButtonElement | null> }) {
+  const [mobileOpenGroups, setMobileOpenGroups] = useState<Set<string>>(new Set());
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- portals must not render during SSR/the first client render (no `document` yet); this flips true only after mount, matching React's documented createPortal-in-effect pattern
+  useEffect(() => setMounted(true), []);
+
+  function toggleMobileGroup(label: string) {
+    setMobileOpenGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(label)) next.delete(label);
+      else next.add(label);
+      return next;
+    });
+  }
+
+  function close() {
+    onClose();
+    triggerRef.current?.focus();
+  }
+
+  // Body scroll lock + focus trap + Escape-to-close, all scoped to exactly
+  // while the drawer is open.
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const panel = panelRef.current;
+    const focusable = panel?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+    focusable?.[0]?.focus();
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        close();
+        return;
+      }
+      if (e.key !== "Tab" || !focusable || focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- close()/triggerRef are stable for this component's lifetime; re-running per open-state change only
+  }, [open]);
+
+  if (!mounted || !open) return null;
+
+  return createPortal(
+    <div
+      ref={panelRef}
+      id="mobile-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site menu"
+      className="fixed inset-0 top-20 z-40 flex flex-col overflow-y-auto bg-cream lg:hidden"
+    >
+      <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 p-5">
+        {primaryNav.map((entry) =>
+          isNavGroup(entry) ? (
+            <div key={entry.label} className="border-b border-gold-light/40">
+              <button
+                type="button"
+                onClick={() => toggleMobileGroup(entry.label)}
+                aria-expanded={mobileOpenGroups.has(entry.label)}
+                className="flex w-full items-center justify-between px-2 py-3 text-left text-base font-semibold text-ink"
+                style={{ minHeight: 48, touchAction: "manipulation" }}
+              >
+                {entry.label}
+                <svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" className={`transition-transform ${mobileOpenGroups.has(entry.label) ? "rotate-180" : ""}`}>
+                  <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              {mobileOpenGroups.has(entry.label) && (
+                <div className="pb-2 pl-4">
+                  {entry.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={close}
+                      className="flex items-center px-2 text-ink/75"
+                      style={{ minHeight: 48, touchAction: "manipulation" }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link
+              key={entry.href}
+              href={entry.href}
+              onClick={close}
+              className="flex items-center border-b border-gold-light/40 px-2 text-base font-semibold text-ink"
+              style={{ minHeight: 48, touchAction: "manipulation" }}
+            >
+              {entry.label}
+            </Link>
+          )
+        )}
+        <Link
+          href={portalCta.href}
+          onClick={close}
+          className="flex items-center border-b border-gold-light/40 px-2 text-base font-semibold text-ink"
+          style={{ minHeight: 48, touchAction: "manipulation" }}
+        >
+          {portalCta.label}
+        </Link>
+      </nav>
+      <div className="sticky bottom-0 border-t border-gold-light/40 bg-cream p-5">
+        <Link
+          href={primaryCta.href}
+          onClick={close}
+          className="flex w-full items-center justify-center rounded-full bg-gold-500 px-5 py-3.5 text-base font-semibold text-ink-900"
+          style={{ touchAction: "manipulation" }}
+        >
+          {primaryCta.label}
+        </Link>
+      </div>
+    </div>,
+    document.body,
+  );
+}
+
 export function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
-  const [mobileOpenGroups, setMobileOpenGroups] = useState<Set<string>>(new Set());
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
+  const drawerTriggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     function onScroll() {
@@ -78,14 +230,13 @@ export function Header() {
     };
   }, []);
 
-  function toggleMobileGroup(label: string) {
-    setMobileOpenGroups((prev) => {
-      const next = new Set(prev);
-      if (next.has(label)) next.delete(label);
-      else next.add(label);
-      return next;
-    });
-  }
+  // Closing the drawer on route change (e.g. browser back/forward, or a
+  // link handled outside this component) keeps it from ever being left
+  // open over a different page than the one the user tapped through to.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing drawer visibility to an external change (the route), not a render-cycle self-sync
+    setDrawerOpen(false);
+  }, [pathname]);
 
   return (
     <header
@@ -99,8 +250,10 @@ export function Header() {
         </Link>
 
         <button
+          ref={drawerTriggerRef}
           type="button"
           className="rounded-md p-2 text-gold-700 lg:hidden"
+          style={{ touchAction: "manipulation" }}
           aria-expanded={drawerOpen}
           aria-controls="mobile-drawer"
           aria-label={drawerOpen ? "Close menu" : "Open menu"}
@@ -148,73 +301,7 @@ export function Header() {
         </nav>
       </Container>
 
-      {/* Mobile full-screen drawer */}
-      {drawerOpen && (
-        <div id="mobile-drawer" className="fixed inset-0 top-20 z-40 flex flex-col overflow-y-auto bg-cream lg:hidden">
-          <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 p-5">
-            {primaryNav.map((entry) =>
-              isNavGroup(entry) ? (
-                <div key={entry.label} className="border-b border-gold-light/40">
-                  <button
-                    type="button"
-                    onClick={() => toggleMobileGroup(entry.label)}
-                    aria-expanded={mobileOpenGroups.has(entry.label)}
-                    className="flex w-full items-center justify-between px-2 py-3 text-left text-base font-semibold text-ink"
-                    style={{ minHeight: 48 }}
-                  >
-                    {entry.label}
-                    <svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" className={`transition-transform ${mobileOpenGroups.has(entry.label) ? "rotate-180" : ""}`}>
-                      <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                  {mobileOpenGroups.has(entry.label) && (
-                    <div className="pb-2 pl-4">
-                      {entry.items.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={() => setDrawerOpen(false)}
-                          className="flex items-center px-2 text-ink/75"
-                          style={{ minHeight: 48 }}
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  key={entry.href}
-                  href={entry.href}
-                  onClick={() => setDrawerOpen(false)}
-                  className="flex items-center border-b border-gold-light/40 px-2 text-base font-semibold text-ink"
-                  style={{ minHeight: 48 }}
-                >
-                  {entry.label}
-                </Link>
-              )
-            )}
-            <Link
-              href={portalCta.href}
-              onClick={() => setDrawerOpen(false)}
-              className="flex items-center border-b border-gold-light/40 px-2 text-base font-semibold text-ink"
-              style={{ minHeight: 48 }}
-            >
-              {portalCta.label}
-            </Link>
-          </nav>
-          <div className="sticky bottom-0 border-t border-gold-light/40 bg-cream p-5">
-            <Link
-              href={primaryCta.href}
-              onClick={() => setDrawerOpen(false)}
-              className="flex w-full items-center justify-center rounded-full bg-gold-500 px-5 py-3.5 text-base font-semibold text-ink-900"
-            >
-              {primaryCta.label}
-            </Link>
-          </div>
-        </div>
-      )}
+      <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} triggerRef={drawerTriggerRef} />
     </header>
   );
 }
