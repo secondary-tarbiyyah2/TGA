@@ -5,6 +5,7 @@ import { CtaBand } from "@/components/CtaBand";
 import Link from "next/link";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
+import { FeeEstimator } from "@/components/FeeEstimator";
 
 export const metadata: Metadata = {
   title: "Fees & Payment Plans",
@@ -93,6 +94,24 @@ export default async function FeesPage() {
               Fees can be paid by bank transfer or card. Full payment instructions are shared once a place is
               offered.
             </p>
+          </div>
+        </Container>
+      </section>
+
+      <section id="estimator" className="bg-cream py-16">
+        <Container>
+          <Kicker>Estimate your fees</Kicker>
+          <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">See a personalised estimate</h2>
+          <p className="mt-2 max-w-2xl text-ink/70">
+            Pick a year group and payment frequency to see the fee, with any discounts you qualify for applied.
+          </p>
+          <div className="mt-6 max-w-2xl">
+            <FeeEstimator
+              feeBands={feeBands}
+              siblingDiscountPercent={settings.siblingDiscountPercent}
+              siblingDiscountNote={settings.siblingDiscountNote}
+              discounts={settings.discounts}
+            />
           </div>
         </Container>
       </section>
