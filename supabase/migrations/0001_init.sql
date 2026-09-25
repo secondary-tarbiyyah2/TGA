@@ -23,16 +23,36 @@ create table public.profiles (
 
 alter table public.profiles enable row level security;
 
+-- A policy on `profiles` (or on any other table) that checks the caller's
+-- role via a plain `exists (select 1 from profiles where id = auth.uid() ...)`
+-- recurses: that subquery reads `profiles`, which re-triggers `profiles`'
+-- own RLS policies, which run the same subquery again. SECURITY DEFINER
+-- breaks the cycle — the function runs as its owner (the migration role,
+-- which owns and therefore bypasses RLS on this table), so the query
+-- inside it never re-enters policy evaluation. Every policy below that
+-- needs a staff/admin check calls this instead of querying profiles
+-- directly.
+create or replace function public.current_role_is(roles text[])
+returns boolean
+language sql
+security definer
+stable
+set search_path = public
+as $$
+  select exists (
+    select 1 from public.profiles where id = auth.uid() and role = any(roles)
+  );
+$$;
+
+grant execute on function public.current_role_is(text[]) to anon, authenticated;
+
 create policy "profiles: read own row"
   on public.profiles for select
   using (id = auth.uid());
 
 create policy "profiles: staff/admin read all"
   on public.profiles for select
-  using (exists (
-    select 1 from public.profiles p
-    where p.id = auth.uid() and p.role in ('staff', 'admin')
-  ));
+  using (public.current_role_is(array['staff','admin']));
 
 create policy "profiles: update own row"
   on public.profiles for update
@@ -62,9 +82,7 @@ create policy "family_members: read own membership"
 
 create policy "family_members: staff/admin read all"
   on public.family_members for select
-  using (exists (
-    select 1 from public.profiles p where p.id = auth.uid() and p.role in ('staff', 'admin')
-  ));
+  using (public.current_role_is(array['staff','admin']));
 
 create policy "families: members read own family"
   on public.families for select
@@ -75,9 +93,7 @@ create policy "families: members read own family"
 
 create policy "families: staff/admin read all"
   on public.families for select
-  using (exists (
-    select 1 from public.profiles p where p.id = auth.uid() and p.role in ('staff', 'admin')
-  ));
+  using (public.current_role_is(array['staff','admin']));
 
 -- ── students ─────────────────────────────────────────────────────────────
 create table public.students (
@@ -101,9 +117,7 @@ create policy "students: family members read own children"
 
 create policy "students: staff/admin read all"
   on public.students for select
-  using (exists (
-    select 1 from public.profiles p where p.id = auth.uid() and p.role in ('staff', 'admin')
-  ));
+  using (public.current_role_is(array['staff','admin']));
 
 -- ── staff_members ────────────────────────────────────────────────────────
 create table public.staff_members (
@@ -124,9 +138,7 @@ create policy "staff_members: self read own row"
 
 create policy "staff_members: staff/admin read all"
   on public.staff_members for select
-  using (exists (
-    select 1 from public.profiles p where p.id = auth.uid() and p.role in ('staff', 'admin')
-  ));
+  using (public.current_role_is(array['staff','admin']));
 
 create policy "staff_members: self update own availability fields"
   on public.staff_members for update
@@ -161,9 +173,7 @@ create policy "meeting_types: anyone reads public rows"
 
 create policy "meeting_types: staff/admin read all"
   on public.meeting_types for select
-  using (exists (
-    select 1 from public.profiles p where p.id = auth.uid() and p.role in ('staff', 'admin')
-  ));
+  using (public.current_role_is(array['staff','admin']));
 
 insert into public.meeting_types (key, duration_min, buffer_min, min_notice_hours, max_days_ahead, public) values
   ('admissions', 20, 10, 12, 60, true),
@@ -199,8 +209,8 @@ create policy "availability_rules: owning staff manage own"
 
 create policy "availability_rules: admin manage all"
   on public.availability_rules for all
-  using (exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin'))
-  with check (exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin'));
+  using (public.current_role_is(array['admin']))
+  with check (public.current_role_is(array['admin']));
 
 create table public.availability_exceptions (
   id uuid primary key default gen_random_uuid(),
@@ -231,8 +241,8 @@ create policy "availability_exceptions: owning staff manage own"
 
 create policy "availability_exceptions: admin manage all"
   on public.availability_exceptions for all
-  using (exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin'))
-  with check (exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin'));
+  using (public.current_role_is(array['admin']))
+  with check (public.current_role_is(array['admin']));
 
 -- ── bookings ─────────────────────────────────────────────────────────────
 create table public.bookings (
@@ -284,17 +294,17 @@ create policy "bookings: staff reads own assigned bookings"
 
 create policy "bookings: admin reads all"
   on public.bookings for select
-  using (exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin'));
+  using (public.current_role_is(array['admin']));
 
 create policy "bookings: staff/admin update own/all (outcome, notes)"
   on public.bookings for update
   using (
     exists (select 1 from public.staff_members sm where sm.id = bookings.staff_id and sm.profile_id = auth.uid())
-    or exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin')
+    or public.current_role_is(array['admin'])
   )
   with check (
     exists (select 1 from public.staff_members sm where sm.id = bookings.staff_id and sm.profile_id = auth.uid())
-    or exists (select 1 from public.profiles p where p.id = auth.uid() and p.role = 'admin')
+    or public.current_role_is(array['admin'])
   );
 
 -- No INSERT policy for anon/authenticated: every booking is created by an
@@ -375,12 +385,10 @@ begin
     -- Base availability windows for this day, from the staff member's
     -- weekly rules matching this weekday (0 = Sunday, matches extract(dow)).
     select coalesce(
-      tstzmultirange(coalesce(array_agg(
-        tstzrange(
-          (v_day + r.start_time) at time zone 'Europe/London',
-          (v_day + r.end_time) at time zone 'Europe/London'
-        )
-      ), array[]::tstzrange[])),
+      range_agg(tstzrange(
+        (v_day + r.start_time) at time zone 'Europe/London',
+        (v_day + r.end_time) at time zone 'Europe/London'
+      )),
       '{}'::tstzmultirange
     )
     into v_window
@@ -391,12 +399,10 @@ begin
 
     -- Extra hours added for this specific date.
     select coalesce(
-      tstzmultirange(coalesce(array_agg(
-        tstzrange(
-          (v_day + e.start_time) at time zone 'Europe/London',
-          (v_day + e.end_time) at time zone 'Europe/London'
-        )
-      ), array[]::tstzrange[])),
+      range_agg(tstzrange(
+        (v_day + e.start_time) at time zone 'Europe/London',
+        (v_day + e.end_time) at time zone 'Europe/London'
+      )),
       '{}'::tstzmultirange
     )
     into v_extra
@@ -407,12 +413,12 @@ begin
 
     -- Blocked time removed for this specific date (whole day if start/end null).
     select coalesce(
-      tstzmultirange(coalesce(array_agg(
+      range_agg(
         case
           when e.start_time is null then tstzrange(v_day::timestamp at time zone 'Europe/London', (v_day + 1)::timestamp at time zone 'Europe/London')
           else tstzrange((v_day + e.start_time) at time zone 'Europe/London', (v_day + e.end_time) at time zone 'Europe/London')
         end
-      ), array[]::tstzrange[])),
+      ),
       '{}'::tstzmultirange
     )
     into v_blocked
@@ -423,7 +429,7 @@ begin
 
     -- Existing non-cancelled bookings for this staff member overlapping the day.
     select coalesce(
-      tstzmultirange(coalesce(array_agg(tstzrange(b.starts_at, b.ends_at)), array[]::tstzrange[])),
+      range_agg(tstzrange(b.starts_at, b.ends_at)),
       '{}'::tstzmultirange
     )
     into v_booked
