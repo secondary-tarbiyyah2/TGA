@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Kicker, PlaceholderNote } from "@/components/Section";
@@ -64,6 +65,12 @@ export default async function HomePage() {
             </div>
             <p className="mt-6 text-sm font-medium text-ink/60">
               Part of the Tarbiyyah Education Trust · 10+ years · Qualified UK teachers · Reception–Year 11
+            </p>
+            <p className="mt-3 text-sm text-ink/70">
+              Not sure yet?{" "}
+              <Link href="/eligibility" className="font-semibold text-gold-700 underline">
+                Take our 2-minute fit quiz
+              </Link>
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-sm">

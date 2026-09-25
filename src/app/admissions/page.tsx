@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { ApplicationForm } from "@/components/ApplicationForm";
@@ -26,6 +27,11 @@ export default async function AdmissionsPage() {
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">How to apply.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             A straightforward, four-step process. Applications for the January 2027 launch are open now.
+          </p>
+          <p className="mt-4 max-w-2xl text-sm text-ink/70">
+            Not sure it&apos;s the right fit yet?{" "}
+            <Link href="/eligibility" className="font-semibold text-gold-700 underline">Take our 2-minute fit quiz</Link>{" "}
+            for a personalised recommendation before you apply.
           </p>
         </Container>
       </section>

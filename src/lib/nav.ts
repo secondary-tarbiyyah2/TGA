@@ -33,6 +33,7 @@ export const primaryNav: NavEntry[] = [
   {
     label: "Admissions",
     items: [
+      { href: "/eligibility", label: "Is it right for us?" },
       { href: "/admissions", label: "How to apply" },
       { href: "/fees", label: "Fees" },
       { href: "/book-a-call", label: "Book an admissions call" },
