@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
+import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
+import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { useLearnSession, useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
@@ -97,6 +100,28 @@ function TeachContent() {
           <UpcomingLessons classIds={classIds} basePath="/learn/teach/lessons/view" emptyLabel="No lessons scheduled in the next two weeks." />
         </div>
       </div>
+
+      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+        <h2 className="font-serif text-h3 font-semibold text-ink">Homework, assessment &amp; messages</h2>
+        <div className="mt-3 flex flex-wrap gap-3">
+          <Link href="/learn/teach/homework" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
+            Homework
+          </Link>
+          <Link href="/learn/teach/assessment" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
+            Assessment &amp; grades
+          </Link>
+          <Link href="/learn/teach/reports" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
+            Term reports
+          </Link>
+          <Link href="/learn/teach/messages" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
+            Messages
+          </Link>
+        </div>
+      </div>
+
+      <SignaturePrompts />
+
+      <AnnouncementsFeed classIds={classIds} canPost={classIds.length > 0} postClassId={classIds[0]} postScope="class" />
 
       {covers && covers.length > 0 && (
         <div className="rounded-2xl border border-gold-light/50 bg-white p-6">

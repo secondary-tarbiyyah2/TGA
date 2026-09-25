@@ -1,12 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { FamilyFees } from "@/components/learn/FamilyFees";
 import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
+import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
+import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
+import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
+import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { useLearnSession, useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
@@ -73,6 +78,33 @@ function ChildCard({ child }: { child: Child }) {
           />
         </div>
       </div>
+
+      <div className="mt-4 border-t border-gold-light/30 pt-4">
+        <div className="flex items-center justify-between">
+          <h3 className="text-sm font-medium text-ink">Homework &amp; grades</h3>
+          <div className="flex gap-3">
+            <Link href={`/learn/family/homework?child=${child.id}`} className="text-sm text-gold-700 underline">
+              View all homework
+            </Link>
+            <Link href="/learn/family/reports" className="text-sm text-gold-700 underline">
+              Term reports
+            </Link>
+            <Link href="/learn/family/messages" className="text-sm text-gold-700 underline">
+              Messages
+            </Link>
+          </div>
+        </div>
+        <div className="mt-2 grid gap-6 sm:grid-cols-2">
+          <HomeworkDueWidget childId={child.id} />
+          <LatestGradesWidget childId={child.id} />
+        </div>
+      </div>
+
+      {classIds && classIds.length > 0 && (
+        <div className="mt-4 border-t border-gold-light/30 pt-4">
+          <AnnouncementsFeed classIds={classIds} limit={3} />
+        </div>
+      )}
     </div>
   );
 }
@@ -168,11 +200,15 @@ function FamilyContent() {
       {children && children.length === 0 && (
         <p className="text-sm text-ink/60">No children added yet — add your child above to see their timetable.</p>
       )}
+      <SignaturePrompts />
+
       {children?.map((child) => (
         <ChildCard key={child.id} child={child} />
       ))}
 
       {children && children.length > 0 && <FamilyFees familyChildren={children} />}
+
+      <AnnouncementsFeed />
 
       <IcsFeedLink />
     </div>

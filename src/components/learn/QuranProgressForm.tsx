@@ -1,0 +1,150 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { getSupabaseClient } from "@/lib/supabase/client";
+
+type Entry = {
+  id: string;
+  milestone_type: string;
+  surah_from: number | null;
+  surah_to: number | null;
+  juz: number | null;
+  topic: string | null;
+  standard: string | null;
+  note: string | null;
+  recorded_at: string;
+};
+
+const STANDARDS = ["introduced", "consolidating", "secure", "fluent"] as const;
+
+/**
+ * Only rendered for someone holding the `assessment_lead` add-on
+ * permission (checked by the caller via useLearnPermission — see
+ * 0011_assessment.sql's RLS, which is the real enforcement point; this
+ * form simply can't submit anything that policy would reject anyway).
+ * Two entry shapes, matching quran_progress' own CHECK constraint:
+ * Qur'an memorisation (surah/juz range) or Islamic Studies (topic).
+ */
+export function QuranProgressForm({ childId, classId }: { childId: string; classId: string | null }) {
+  const supabase = getSupabaseClient();
+  const [entries, setEntries] = useState<Entry[] | null>(null);
+  const [type, setType] = useState<"quran_memorisation" | "islamic_studies">("quran_memorisation");
+  const [surahFrom, setSurahFrom] = useState("");
+  const [surahTo, setSurahTo] = useState("");
+  const [juz, setJuz] = useState("");
+  const [topic, setTopic] = useState("");
+  const [standard, setStandard] = useState<(typeof STANDARDS)[number]>("consolidating");
+  const [note, setNote] = useState("");
+  const [busy, setBusy] = useState(false);
+
+  const load = async () => {
+    if (!supabase || !childId) return;
+    const { data } = await supabase.from("quran_progress").select("*").eq("child_id", childId).order("recorded_at", { ascending: false });
+    setEntries((data as Entry[]) || []);
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
+    load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [supabase, childId]);
+
+  const save = async () => {
+    if (!supabase || !childId) return;
+    setBusy(true);
+    try {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user) return;
+      const payload = {
+        child_id: childId,
+        class_id: classId,
+        milestone_type: type,
+        surah_from: type === "quran_memorisation" && surahFrom ? Number(surahFrom) : null,
+        surah_to: type === "quran_memorisation" && surahTo ? Number(surahTo) : null,
+        juz: type === "quran_memorisation" && juz ? Number(juz) : null,
+        topic: type === "islamic_studies" ? topic.trim() || null : null,
+        standard,
+        note: note.trim() || null,
+        recorded_by: user.id,
+      };
+      const { error } = await supabase.from("quran_progress").insert(payload);
+      if (!error) {
+        setSurahFrom("");
+        setSurahTo("");
+        setJuz("");
+        setTopic("");
+        setNote("");
+        await load();
+      }
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+      <h2 className="font-serif text-h3 font-semibold text-ink">Qur&apos;an / Islamic Studies progress</h2>
+      <div className="mt-3 flex gap-2">
+        <button
+          type="button"
+          onClick={() => setType("quran_memorisation")}
+          className={`rounded-full px-3 py-1 text-xs ${type === "quran_memorisation" ? "bg-gold-600 text-white" : "border border-gold-500 text-gold-700"}`}
+        >
+          Qur&apos;an memorisation
+        </button>
+        <button
+          type="button"
+          onClick={() => setType("islamic_studies")}
+          className={`rounded-full px-3 py-1 text-xs ${type === "islamic_studies" ? "bg-gold-600 text-white" : "border border-gold-500 text-gold-700"}`}
+        >
+          Islamic Studies
+        </button>
+      </div>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        {type === "quran_memorisation" ? (
+          <>
+            <input type="number" min={1} max={114} value={surahFrom} onChange={(e) => setSurahFrom(e.target.value)} placeholder="Surah from (1-114)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+            <input type="number" min={1} max={114} value={surahTo} onChange={(e) => setSurahTo(e.target.value)} placeholder="Surah to (1-114)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+            <input type="number" min={1} max={30} value={juz} onChange={(e) => setJuz(e.target.value)} placeholder="Juz (optional, 1-30)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+          </>
+        ) : (
+          <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} placeholder="Topic / unit" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm sm:col-span-2" />
+        )}
+        <select value={standard} onChange={(e) => setStandard(e.target.value as (typeof STANDARDS)[number])} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+          {STANDARDS.map((s) => (
+            <option key={s} value={s}>
+              {s.charAt(0).toUpperCase() + s.slice(1)}
+            </option>
+          ))}
+        </select>
+      </div>
+      <textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Note (e.g. tajweed points to revisit)" rows={2} className="mt-3 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+      <button type="button" disabled={busy} onClick={save} className="mt-3 rounded-full bg-gold-600 px-4 py-2 text-sm text-white disabled:opacity-50">
+        Record progress
+      </button>
+
+      <div className="mt-6 border-t border-gold-light/30 pt-4">
+        <h3 className="text-sm font-medium text-ink">History</h3>
+        <ul className="mt-2 space-y-2">
+          {(entries || []).map((e) => (
+            <li key={e.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
+              <div className="flex items-center justify-between">
+                <span>
+                  {e.milestone_type === "quran_memorisation"
+                    ? `Surah ${e.surah_from}${e.surah_to && e.surah_to !== e.surah_from ? `–${e.surah_to}` : ""}${e.juz ? ` (Juz ${e.juz})` : ""}`
+                    : e.topic}
+                </span>
+                <span className="text-ink/60">
+                  {e.standard} · {new Date(e.recorded_at).toLocaleDateString("en-GB")}
+                </span>
+              </div>
+              {e.note && <p className="mt-1 text-xs text-ink/50">{e.note}</p>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
