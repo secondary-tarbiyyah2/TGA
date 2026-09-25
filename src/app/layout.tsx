@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
+import { getSiteSettings } from "@/lib/content";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk", subsets: ["latin"], weight: ["500", "600", "700"] });
@@ -32,19 +33,26 @@ export const metadata: Metadata = {
 // ink-900 — matches the brand's deep-ink token, not the old burgundy.
 export const viewport: Viewport = { themeColor: "#1B1E21" };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  name: "Tarbiyyah Global Academy",
-  description:
-    "An online British-curriculum school by the Tarbiyyah Education Trust — live, timetabled lessons with qualified UK teachers, Reception to Year 11, taught with tarbiyyah at its heart.",
-  url: siteUrl,
-  email: "globalacademy@tarbiyyah.co.uk",
-  areaServed: "Worldwide",
-  parentOrganization: { "@type": "EducationalOrganization", name: "Tarbiyyah Education Trust", url: "https://tarbiyyaheducationtrust.com" },
-};
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  // Built only from real, already-published fields — site settings (contact
+  // phone/address) if set, and the Trust link already stated in the footer.
+  // Never adds a rating, review or accreditation claim that isn't backed by
+  // an actual confirmed field elsewhere on the site (see ground rule 2).
+  const settings = await getSiteSettings();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "Tarbiyyah Global Academy",
+    description:
+      "An online British-curriculum school by the Tarbiyyah Education Trust — live, timetabled lessons with qualified UK teachers, Reception to Year 11, taught with tarbiyyah at its heart.",
+    url: siteUrl,
+    email: settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk",
+    ...(settings.contactPhone && { telephone: settings.contactPhone }),
+    ...(settings.contactAddress && { address: { "@type": "PostalAddress", streetAddress: settings.contactAddress } }),
+    areaServed: "Worldwide",
+    parentOrganization: { "@type": "EducationalOrganization", name: "Tarbiyyah Education Trust", url: "https://tarbiyyaheducationtrust.com" },
+  };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-ink">
