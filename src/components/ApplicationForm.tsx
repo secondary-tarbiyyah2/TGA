@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
+import { leadRef, readRegisterInterest, type StoredRegisterInterest } from "@/lib/leadRef";
 
 const YEAR_GROUPS = [
   "Reception (age 4–5)", "Year 1 (age 5–6)", "Year 2 (age 6–7)", "Year 3 (age 7–8)", "Year 4 (age 8–9)",
@@ -13,19 +14,30 @@ type Status = "idle" | "submitting" | "success" | "error";
 export function ApplicationForm() {
   const [step, setStep] = useState(1);
   const [status, setStatus] = useState<Status>("idle");
+  // Pre-fill from a register-interest submission made earlier on this same
+  // device, so a family that already told us who they are doesn't have to
+  // retype it — and so the two submissions carry the same lead reference.
+  // See src/lib/leadRef.ts for why this (not server-side dedup) is the
+  // honest limit given this site's stateless PHP mail backend.
+  const [prefill, setPrefill] = useState<StoredRegisterInterest | null>(null);
   const totalSteps = 3;
+
+  useEffect(() => {
+    setPrefill(readRegisterInterest());
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    const ref = prefill?.lead_ref && prefill.email === data.email ? prefill.lead_ref : await leadRef(data.email || "");
 
     try {
       const res = await fetch("/apply.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, lead_ref: ref, previous_register_interest: prefill ? "yes" : "" }),
       });
       if (!res.ok) throw new Error("failed");
       setStatus("success");
@@ -47,7 +59,16 @@ export function ApplicationForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8" noValidate>
+    <form onSubmit={handleSubmit} className="relative rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8" noValidate>
+      {/* Honeypot: visually hidden via an off-screen clip (not display:none),
+          plus tabIndex=-1 and autoComplete="off", so real keyboard/AT users
+          never encounter it. apply.php already rejects a non-empty value. */}
+      <div className="absolute h-px w-px overflow-hidden whitespace-nowrap [clip:rect(0,0,0,0)]" aria-hidden="true">
+        <label>
+          Leave this field blank
+          <input type="text" name="company" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
       <div className="mb-6 flex items-center gap-2" role="group" aria-label={`Step ${step} of ${totalSteps}`}>
         {Array.from({ length: totalSteps }).map((_, i) => (
           <span key={i} className={`h-1.5 flex-1 rounded-full ${i < step ? "bg-gold-500" : "bg-gold-light/50"}`} aria-hidden="true" />
@@ -56,18 +77,26 @@ export function ApplicationForm() {
 
       <div className={step === 1 ? "block" : "hidden"}>
         <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-gold-700">Step 1 · About you</p>
-        <div className="grid gap-4 sm:grid-cols-2">
+        {prefill && (
+          <p className="mb-4 rounded-lg bg-cream px-3 py-2 text-xs text-ink/70">
+            We&apos;ve filled in your details from when you registered interest — please check them and update anything that&apos;s changed.
+          </p>
+        )}
+        {/* key forces a remount once prefill loads from localStorage after
+            mount, so defaultValue (uncontrolled inputs) actually applies —
+            defaultValue only takes effect when a DOM node is first created. */}
+        <div key={prefill ? "prefilled" : "empty"} className="grid gap-4 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">
             Your full name
-            <input name="parent_name" type="text" required={step === 1} autoComplete="name" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            <input name="parent_name" type="text" required={step === 1} autoComplete="name" defaultValue={prefill?.parent_name} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
           </label>
           <label className="block text-sm font-medium text-ink">
             Email address
-            <input name="email" type="email" required={step === 1} autoComplete="email" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            <input name="email" type="email" required={step === 1} autoComplete="email" defaultValue={prefill?.email} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
           </label>
           <label className="block text-sm font-medium text-ink">
             Contact number
-            <input name="phone" type="tel" required={step === 1} autoComplete="tel" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            <input name="phone" type="tel" required={step === 1} autoComplete="tel" defaultValue={prefill?.phone} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
           </label>
           <label className="block text-sm font-medium text-ink">
             Country you&apos;re based in

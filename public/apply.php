@@ -19,7 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $body = mailer_read_body();
 
-// Honeypot, kept for parity with register.php even though the form doesn't render one yet.
+// Honeypot: silently accept (200) so bots don't retry, but send nothing.
+// ApplicationForm.tsx renders the matching hidden "company" field.
 if (!empty($body['company'])) {
     echo json_encode(['ok' => true]);
     exit;
@@ -33,6 +34,11 @@ $childName  = mailer_clean($body['child_name']  ?? '');
 $yeargroup  = mailer_clean($body['yeargroup']   ?? '');
 $consent    = mailer_clean($body['consent']     ?? '');
 $notes      = trim((string) ($body['notes'] ?? ''));
+// See register.php for what this is — the same reference sent for a prior
+// register-interest submission from the same email, so the two can be
+// matched as one lead by a human or a downstream CRM.
+$leadRef    = mailer_clean($body['lead_ref']    ?? '');
+$hadRegisteredInterest = mailer_clean($body['previous_register_interest'] ?? '') === 'yes';
 
 $errors = [];
 if ($parentName === '')                                          $errors[] = 'parent_name';
@@ -63,6 +69,9 @@ $text = implode("\n", [
     '  Name: ' . $childName,
     '  Year group: ' . $yeargroup,
     '',
+    'Lead reference: ' . ($leadRef !== '' ? $leadRef : '(none)') . ' — matches a register-interest email with the same reference.',
+    'Previously registered interest (same device): ' . ($hadRegisteredInterest ? 'Yes' : 'Not indicated'),
+    '',
     'Notes: ' . ($notes !== '' ? $notes : '(none)'),
 ]);
 
@@ -91,7 +100,7 @@ if (MAIL_SEND_ACK && $sent) {
     mailer_log(($ackOk ? 'OK   ' : 'FAIL ') . 'apply ack to=' . $email . ' via=' . $ackTransport . ' — ' . $ackDetail);
 }
 
-mailer_forward_to_crm(['type' => 'application', 'parentName' => $parentName, 'email' => $email, 'phone' => $phone, 'country' => $country, 'childName' => $childName, 'yeargroup' => $yeargroup, 'notes' => $notes, 'submittedAt' => gmdate('c')]);
+mailer_forward_to_crm(['type' => 'application', 'leadRef' => $leadRef, 'parentName' => $parentName, 'email' => $email, 'phone' => $phone, 'country' => $country, 'childName' => $childName, 'yeargroup' => $yeargroup, 'notes' => $notes, 'submittedAt' => gmdate('c')]);
 
 if (!$sent) {
     http_response_code(502);

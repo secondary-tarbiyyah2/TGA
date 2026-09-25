@@ -32,6 +32,12 @@ $yeargroup  = mailer_clean($body['yeargroup']   ?? '');
 $consent    = mailer_clean($body['consent']     ?? '');
 $timezone   = mailer_clean($body['timezone']    ?? '');
 $message    = trim((string) ($body['message'] ?? ''));
+// A short reference derived client-side from the email address (see
+// src/lib/leadRef.ts) — the same value the admissions application form
+// sends for the same email, so the two submissions can be matched by a
+// human (or a downstream CRM) as one lead, even though neither PHP script
+// keeps a database of its own.
+$leadRef    = mailer_clean($body['lead_ref']    ?? '');
 
 $errors = [];
 if ($parentName === '')                                          $errors[] = 'parent_name';
@@ -55,6 +61,7 @@ $text = implode("\n", [
     'Phone: ' . $phone,
     'Year group: ' . $yeargroup,
     'Time zone: ' . ($timezone !== '' ? $timezone : '(not detected)'),
+    'Lead reference: ' . ($leadRef !== '' ? $leadRef : '(none)') . ' — same reference on a later application from this email means the same family.',
     '',
     'Message: ' . ($message !== '' ? $message : '(none)'),
 ]);
@@ -83,7 +90,7 @@ if (MAIL_SEND_ACK && $sent) {
     mailer_log(($ackOk ? 'OK   ' : 'FAIL ') . 'register ack to=' . $email . ' via=' . $ackTransport . ' — ' . $ackDetail);
 }
 
-mailer_forward_to_crm(['type' => 'register_interest', 'parentName' => $parentName, 'email' => $email, 'phone' => $phone, 'yeargroup' => $yeargroup, 'message' => $message, 'timezone' => $timezone, 'submittedAt' => gmdate('c')]);
+mailer_forward_to_crm(['type' => 'register_interest', 'leadRef' => $leadRef, 'parentName' => $parentName, 'email' => $email, 'phone' => $phone, 'yeargroup' => $yeargroup, 'message' => $message, 'timezone' => $timezone, 'submittedAt' => gmdate('c')]);
 
 if (!$sent) {
     http_response_code(502);

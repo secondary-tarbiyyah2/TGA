@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { leadRef, saveRegisterInterest } from "@/lib/leadRef";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -11,15 +12,27 @@ export function RegisterInterestForm() {
     e.preventDefault();
     setStatus("submitting");
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    const ref = await leadRef(data.email || "");
 
     try {
       const res = await fetch("/register.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone }),
+        body: JSON.stringify({ ...data, lead_ref: ref, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone }),
       });
       if (!res.ok) throw new Error("failed");
+      // Lets the admissions application form (if the same family completes
+      // it on this device) pre-fill and carry the same lead reference — see
+      // src/lib/leadRef.ts for why this is the honest limit of "one lead"
+      // linking given this site's stateless PHP mail backend.
+      saveRegisterInterest({
+        parent_name: data.parent_name || "",
+        email: data.email || "",
+        phone: data.phone || "",
+        yeargroup: data.yeargroup || "",
+        lead_ref: ref,
+      });
       setStatus("success");
     } catch {
       setStatus("error");
@@ -36,7 +49,7 @@ export function RegisterInterestForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8" noValidate>
+    <form onSubmit={handleSubmit} className="relative rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8" noValidate>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-sm font-medium text-ink">
           Your full name
@@ -63,8 +76,17 @@ export function RegisterInterestForm() {
         <input type="checkbox" name="consent" value="yes" required className="mt-1" />
         I&apos;m happy for Tarbiyyah Global Academy to contact me about this registration.
       </label>
-      <div className="hidden">
-        <label>Company <input type="text" name="company" tabIndex={-1} autoComplete="off" /></label>
+      {/* Honeypot: visually hidden (not display:none, which some screen readers
+          skip entirely along with everything an assistive-tech user would
+          need to notice and avoid it) via an off-screen clip, plus
+          tabIndex=-1 and autoComplete="off" so real keyboard/AT users never
+          land on or fill it. Bots that fill every field trip it; register.php
+          rejects any submission where it's non-empty. */}
+      <div className="absolute h-px w-px overflow-hidden whitespace-nowrap [clip:rect(0,0,0,0)]" aria-hidden="true">
+        <label>
+          Leave this field blank
+          <input type="text" name="company" tabIndex={-1} autoComplete="off" />
+        </label>
       </div>
       <button type="submit" disabled={status === "submitting"} className="mt-6 w-full rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-60">
         {status === "submitting" ? "Sending…" : "Register interest"}
