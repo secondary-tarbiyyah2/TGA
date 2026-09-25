@@ -1,0 +1,32 @@
+name: Seed Sanity content
+
+# One-time (but safe to re-run) job that pushes the real content already
+# bundled as this site's build-time fallback (src/content/seed.ts) into the
+# actual Sanity dataset, so the Studio opens with real documents instead of
+# empty ones. Runs on GitHub's runners because the Sanity API isn't reachable
+# from the Claude Code sandbox that built this (org network policy).
+#
+# Requires:
+#   Repo secret SANITY_API_TOKEN — an Editor-permission token from
+#     sanity.io/manage > your project > API > Tokens.
+#   Repo variable NEXT_PUBLIC_SANITY_PROJECT_ID (already set for the site
+#     deploy workflow).
+
+on:
+  workflow_dispatch:
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Seed Sanity dataset
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+        run: node scripts/seed-sanity.mjs
