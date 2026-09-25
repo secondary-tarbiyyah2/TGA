@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
-import { EligibilityQuiz } from "@/components/eligibility/EligibilityQuiz";
+import { YourChildsWeekQuiz } from "@/components/eligibility/YourChildsWeekQuiz";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
+import { DEFAULT_QUIZ_CONFIG } from "@/lib/quiz/defaultConfig";
 
 export const metadata: Metadata = {
-  title: "Is TGA Right for Your Family?",
-  description: "A quick, personalised quiz to see whether Tarbiyyah Global Academy is the right fit for your child — and what to do next.",
+  title: "Your Child's Week",
+  description: "Five short questions to see a sample week for your child at Tarbiyyah Global Academy, in your own timezone — with fees and next steps.",
 };
 
 export default async function EligibilityPage() {
@@ -16,15 +17,12 @@ export default async function EligibilityPage() {
     <section className="section-pad geo-texture bg-cream">
       <Container>
         <div className="mx-auto max-w-xl text-center">
-          <Kicker>Is it right for us?</Kicker>
-          <h1 className="text-h2 font-serif font-semibold text-ink">Two minutes to find out if TGA fits your family.</h1>
-          <p className="mt-4 text-ink/70">
-            Answer a handful of questions about your child and we&apos;ll point you straight to the right next step —
-            no generic form, just a personalised recommendation.
-          </p>
+          <Kicker>{DEFAULT_QUIZ_CONFIG.intro.kicker}</Kicker>
+          <h1 className="text-h2 font-serif font-semibold text-ink">{DEFAULT_QUIZ_CONFIG.intro.title}</h1>
+          <p className="mt-4 text-ink/70">{DEFAULT_QUIZ_CONFIG.intro.body}</p>
         </div>
         <div className="mt-10">
-          <EligibilityQuiz
+          <YourChildsWeekQuiz
             feeBands={feeBands}
             siblingDiscountPercent={settings.siblingDiscountPercent}
             siblingDiscountNote={settings.siblingDiscountNote}

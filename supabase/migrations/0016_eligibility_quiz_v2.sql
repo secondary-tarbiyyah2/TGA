@@ -378,3 +378,13 @@ create trigger audit_quiz_config_versions
 create trigger audit_quiz_leads
   after insert or update or delete on public.quiz_leads
   for each row execute function public.audit_row_change();
+
+-- ── 5. public read of year_groups (0008 only granted `authenticated`) ─────
+-- The public quiz's year-group picker needs the list of year group names,
+-- and it runs anonymously (no login). A year group's NAME is not sensitive
+-- data (it carries no child/family information), so this widens 0008's
+-- read policy to anon too rather than duplicating the list in quiz config.
+create policy "year_groups: anon read"
+  on public.year_groups for select
+  to anon
+  using (true);
