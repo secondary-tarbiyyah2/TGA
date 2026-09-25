@@ -34,6 +34,72 @@ export default defineType({
       description: "e.g. which child the discount applies to, from which sibling onward.",
       group: "fees",
     }),
+    defineField({
+      name: "discounts",
+      title: "Other discounts",
+      type: "array",
+      group: "fees",
+      description:
+        "General-purpose discount catalogue for the fee estimator (early-registration, bursary, multi-child, etc). Leave empty until the school has confirmed a real discount to add here — an empty list hides the fee estimator's discount section entirely.",
+      of: [
+        defineField({
+          name: "discount",
+          title: "Discount",
+          type: "object",
+          fields: [
+            defineField({ name: "label", title: "Label", type: "string", validation: (Rule) => Rule.required() }),
+            defineField({
+              name: "type",
+              title: "Discount type",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Percentage off", value: "percent" },
+                  { title: "Fixed amount off (£)", value: "fixedAmount" },
+                ],
+              },
+              initialValue: "percent",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "percent",
+              title: "Percent off (%)",
+              type: "number",
+              hidden: ({ parent }) => (parent as { type?: string } | undefined)?.type !== "percent",
+            }),
+            defineField({
+              name: "fixedAmount",
+              title: "Fixed amount off (£)",
+              type: "number",
+              hidden: ({ parent }) => (parent as { type?: string } | undefined)?.type !== "fixedAmount",
+            }),
+            defineField({ name: "note", title: "Note — how it applies", type: "text", rows: 2 }),
+            defineField({
+              name: "appliesAutomatically",
+              title: "Applies automatically (no eligibility check needed)",
+              type: "boolean",
+              initialValue: false,
+              description: "On, e.g., a straightforward promotional discount. Off for anything needing a human eligibility check, like a bursary.",
+            }),
+            defineField({
+              name: "eligibilityDescription",
+              title: "Eligibility description",
+              type: "text",
+              rows: 2,
+              description:
+                "For discounts needing a human check (e.g. a bursary). Shown as an 'I believe I qualify' checkbox on the fee estimator — never applied automatically, and final eligibility is always confirmed during application.",
+            }),
+          ],
+          preview: {
+            select: { title: "label", type: "type", percent: "percent", fixedAmount: "fixedAmount" },
+            prepare: ({ title, type, percent, fixedAmount }) => ({
+              title,
+              subtitle: type === "percent" ? `${percent ?? "?"}% off` : `£${fixedAmount ?? "?"} off`,
+            }),
+          },
+        }),
+      ],
+    }),
     defineField({ name: "bookingWidgetUrl", title: "Open Evening booking widget URL", type: "url", description: "Embed link for the booking widget (e.g. Calendly).", group: "launch" }),
     defineField({ name: "openEveningRecordingUrl", title: "Past open evening recording URL", type: "url", group: "launch" }),
     defineField({ name: "portalUrl", title: "Parent/Student portal URL (legacy — superseded by /learn)", type: "url", group: "launch" }),

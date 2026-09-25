@@ -37,6 +37,7 @@ const siteSettings = {
   portalUrl: "",
   admissionsEmail: "globalacademy@tarbiyyah.co.uk",
   complaintsLastYear: 0,
+  discounts: [],
 };
 
 const faqEntries = [

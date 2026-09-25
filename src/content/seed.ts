@@ -29,6 +29,16 @@ export const feeBands: FeeBand[] = [
 // or fabricated value. Only figures the school has actually confirmed are
 // filled in (and only as a build-time fallback for when Sanity is
 // unreachable — the live values always come from Sanity once configured).
+export type Discount = {
+  label: string;
+  type: "percent" | "fixedAmount";
+  percent?: number;
+  fixedAmount?: number;
+  note?: string;
+  appliesAutomatically?: boolean;
+  eligibilityDescription?: string;
+};
+
 export type SiteSettings = {
   launchDate?: string;
   ctaPrimaryLabel?: string;
@@ -37,6 +47,10 @@ export type SiteSettings = {
   registrationFee?: number;
   siblingDiscountPercent?: number;
   siblingDiscountNote?: string;
+  // General-purpose discount catalogue for the fee estimator, beyond the
+  // legacy sibling-discount fields above. Empty until the school confirms
+  // a real discount to add — see ground rule 2, never invent an entry here.
+  discounts?: Discount[];
   bookingWidgetUrl?: string;
   openEveningRecordingUrl?: string;
   portalUrl?: string;
@@ -61,6 +75,7 @@ export const siteSettings: SiteSettings = {
   registrationFee: 150,
   admissionsEmail: "globalacademy@tarbiyyah.co.uk",
   complaintsLastYear: 0,
+  discounts: [],
 };
 
 // Editable-page-section content: every field here is optional and mirrors
