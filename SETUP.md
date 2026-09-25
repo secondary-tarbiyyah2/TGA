@@ -163,6 +163,49 @@ less to configure than Phase B. Still:
    six illustrative phrases ship in the migration; extend it to match your
    actual safeguarding policy before relying on it.
 
+## Compliance area (Phase D) — what's needed from you
+
+Everything under `/learn/admin/compliance` runs on migrations/RLS already
+(`0015_compliance.sql`), so there's little manual setup — but this is the
+most sensitive area of the app, so read this section before relying on it.
+
+1. **Nothing to create manually for Supabase Storage.** The
+   `safeguarding-attachments` bucket (private, 20MB limit, PDF/image/text
+   only) is created BY the migration, same as `homework-submissions` in
+   Phase C.
+2. **Deploy the schema + two new scheduled jobs** the same way as every
+   other migration/workflow here — `compliance-retention.yml` (daily) and
+   `check-scr-expiry.yml` (weekly) start firing on their own schedule once
+   merged, with no new secrets beyond what earlier phases already added.
+3. **Set up MFA (any Safeguarding Lead / Head Teacher account must have an
+   authenticator app enrolled)** before trying to open the safeguarding
+   log — it's gated behind a FRESHLY re-entered code (not just "signed in
+   with MFA earlier"), by design (see the migration header and the final
+   report for the reasoning). If you see "Set up an authenticator app from
+   any other admin page first", visit any other admin page to enroll, then
+   come back.
+4. **Review/extend the safeguarding classification list**
+   (`safeguarding_categories`) and the **consent wording**
+   (`consent_wordings`) to match your school's actual safeguarding policy
+   and actual parental-consent letter wording — both ship with small,
+   clearly illustrative starter content, the same convention as Phase C's
+   safeguarding-keyword list.
+5. **Populate the Single Central Record** (`/learn/admin/compliance`, Head
+   Teacher/Admin) for every existing staff member — nothing is
+   pre-populated, since DBS/reference/right-to-work data is genuinely
+   school-specific and was never anywhere in this codebase before this
+   phase.
+6. **Decide on closed-safeguarding-concern retention by hand.** The
+   registry lists a 25-year anonymise-don't-delete entry for closed
+   safeguarding concerns, but deliberately has NO automated job wired up
+   for it (see `retention_schedule`'s seed row and the migration header) —
+   this is exactly the kind of decision (when a child-protection case file
+   stops mattering) that should never run unattended. Review closed cases
+   periodically by hand instead.
+7. **`RESEND_API_KEY`** (already added in earlier phases) is reused for
+   `check-scr-expiry.yml`'s best-effort email to the Head Teacher; without
+   it, the weekly Actions run summary is still the real notification.
+
 ## Deliberately not built yet
 
 - Admin management of staff/meeting-types/families from `/staff` (only the
@@ -205,3 +248,24 @@ less to configure than Phase B. Still:
 - A UI for editing an individual `document_signatures` row, or for
   un-signing — deliberate: no edit/retract policy exists in the schema at
   all (see 0014_esignature.sql), so there is nothing for a UI to expose.
+- An automated deletion/anonymisation job for closed safeguarding concerns
+  — deliberate, see "Compliance area" above.
+- A public self-serve data-rights request form — `data_rights_requests` is
+  currently logged by Head Teacher/Admin after a request arrives by
+  whatever channel a person actually used (email, letter, in person),
+  matching how schools handle SARs today; a public form could be added
+  later without a schema change, but wasn't built now to avoid an
+  unauthenticated write surface into a GDPR-sensitive table.
+- Right-to-work document number/image storage — deliberately never
+  captured at all (verified/date/type/verifier only); see
+  0015_compliance.sql's `staff_vetting_records` header for the reasoning.
+- An RLS policy letting a `can_export_data` holder who ISN'T Head
+  Teacher/Admin/Admissions reach `/learn/admin/compliance` at all —
+  `LearnGate` gates by role, not by add-on permission, so a plain
+  Teacher/TA holding only `can_export_data` currently can't open the page
+  to use their export access, even though the underlying RLS would allow
+  the reads. In practice `can_export_data` is expected to be granted
+  alongside an admin-ish role; widening `LearnGate` to understand
+  permissions (not just roles) would fix this properly but touches a
+  shared component used by every `/learn` page, so it wasn't done under
+  this phase's time budget. See the final report.
