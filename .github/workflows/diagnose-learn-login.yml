@@ -33,7 +33,7 @@ jobs:
           TEST_EMAIL: ${{ inputs.email }}
           TEST_PASSWORD: ${{ inputs.password }}
         run: |
-          cat > /tmp/diagnose.mjs << 'SCRIPT'
+          cat > ./diagnose.mjs << 'SCRIPT'
           import { chromium } from "playwright";
 
           const email = process.env.TEST_EMAIL;
@@ -89,7 +89,7 @@ jobs:
 
           await browser.close();
           SCRIPT
-          node /tmp/diagnose.mjs
+          node ./diagnose.mjs
       - name: Upload screenshots
         if: always()
         uses: actions/upload-artifact@v4
