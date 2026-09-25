@@ -91,8 +91,15 @@ jobs:
         run: |
           set -euo pipefail
           KEYS=$(supabase projects api-keys --project-ref "${{ steps.project.outputs.ref }}" -o json)
-          ANON=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon") | .api_key')
-          SERVICE_ROLE=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role") | .api_key')
+          # Newer Supabase projects expose "publishable"/"secret" keys instead
+          # of (or alongside) the legacy "anon"/"service_role" names — accept
+          # either so this doesn't silently emit an empty key.
+          ANON=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          SERVICE_ROLE=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$ANON" ] || [ "$ANON" = "null" ] || [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find both an anon/publishable key and a service_role/secret key. Key names found: $(echo "$KEYS" | jq -c '[.[].name]')"
+            exit 1
+          fi
           {
             echo "anon_key=$ANON"
             echo "::add-mask::$SERVICE_ROLE"
