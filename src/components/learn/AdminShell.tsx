@@ -17,6 +17,7 @@ const NAV = [
   { href: "/learn/admin/messages", label: "Messages" },
   { href: "/learn/admin/fees", label: "Fees" },
   { href: "/learn/admin/content", label: "Website content" },
+  { href: "/learn/admin/quiz", label: "Quiz & sample weeks" },
   { href: "/learn/admin/compliance", label: "Compliance" },
   { href: "/learn/admin/settings", label: "Settings" },
 ];
