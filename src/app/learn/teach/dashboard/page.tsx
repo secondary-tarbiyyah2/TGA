@@ -95,23 +95,23 @@ function TeachContent() {
         <h2 className="font-serif text-h3 font-semibold text-ink">Lessons</h2>
         <p className="mt-1 text-sm text-ink/60">Join a live lesson, set objectives/resources, and take the register.</p>
         <div className="mt-4">
-          <UpcomingLessons classIds={classIds} basePath="/learn/teach/lessons/view" emptyLabel="No lessons scheduled in the next two weeks." />
+          <UpcomingLessons classIds={classIds} basePath="/teach/lessons/view" emptyLabel="No lessons scheduled in the next two weeks." />
         </div>
       </div>
 
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Homework, assessment &amp; messages</h2>
         <div className="mt-3 flex flex-wrap gap-3">
-          <Link href="/learn/teach/homework" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
+          <Link href="/teach/homework" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
             Homework
           </Link>
-          <Link href="/learn/teach/assessment" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
+          <Link href="/teach/assessment" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
             Assessment &amp; grades
           </Link>
-          <Link href="/learn/teach/reports" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
+          <Link href="/teach/reports" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
             Term reports
           </Link>
-          <Link href="/learn/teach/messages" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
+          <Link href="/teach/messages" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
             Messages
           </Link>
         </div>

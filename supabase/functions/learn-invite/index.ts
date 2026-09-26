@@ -21,7 +21,10 @@ import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-const siteUrl = Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk";
+// /learn lives on its own subdomain (see SETUP.md, "Moving /learn to its own
+// subdomain") — LEARN_SITE_URL, not SITE_URL (the main marketing domain), is
+// where the setup link must land.
+const learnSiteUrl = Deno.env.get("LEARN_SITE_URL") || "https://learn.globalacademy.tarbiyyah.co.uk";
 
 const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 
@@ -139,7 +142,7 @@ Deno.serve(async (req) => {
   const { data: linkData, error: linkErr } = await serviceClient.auth.admin.generateLink({
     type: isNewUser ? "invite" : "recovery",
     email,
-    options: { redirectTo: `${siteUrl}/learn/login/invite` },
+    options: { redirectTo: `${learnSiteUrl}/login/invite` },
   });
   if (linkErr || !linkData) return jsonResponse({ ok: false, error: "link_generation_failed", detail: linkErr?.message }, 500);
 

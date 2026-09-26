@@ -74,7 +74,7 @@ export function LearnAccountMenu({ session, roles }: { session: Session; roles: 
           </div>
           <div className="my-1 border-t border-gold-light/40" />
           <Link
-            href="/learn/account"
+            href="/account"
             role="menuitem"
             onClick={() => setOpen(false)}
             className="block rounded-lg px-3 py-2 text-sm text-ink/80 hover:bg-cream"

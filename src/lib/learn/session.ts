@@ -26,11 +26,14 @@ export function learnRoleLabel(role: LearnRole): string {
   return ROLE_LABELS[role];
 }
 
+// Root-relative, not "/learn/..." — these pages live at the /learn
+// subdomain's own root (see src/lib/learn/origin.ts), so an in-app link
+// between them should never carry the old path prefix.
 export function dashboardPathForRole(role: LearnRole): string {
-  if (role === "teacher" || role === "teaching_assistant_cover") return "/learn/teach/dashboard";
-  if (role === "parent") return "/learn/family/dashboard";
-  if (role === "student") return "/learn/student/dashboard";
-  return "/learn/admin/dashboard";
+  if (role === "teacher" || role === "teaching_assistant_cover") return "/teach/dashboard";
+  if (role === "parent") return "/family/dashboard";
+  if (role === "student") return "/student/dashboard";
+  return "/admin/dashboard";
 }
 
 /**
@@ -114,6 +117,6 @@ export function useLearnSignOut() {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     await supabase.auth.signOut();
-    router.push("/learn/login");
+    router.push("/login");
   };
 }

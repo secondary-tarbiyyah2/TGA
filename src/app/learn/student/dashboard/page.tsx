@@ -99,7 +99,7 @@ function StudentContent() {
         <div className="mt-6 border-t border-gold-light/30 pt-4">
           <h2 className="font-serif text-h3 font-semibold text-ink">Lessons</h2>
           <div className="mt-3">
-            <UpcomingLessons classIds={classIds} basePath="/learn/student/lessons/view" emptyLabel="No lessons in the next two weeks." />
+            <UpcomingLessons classIds={classIds} basePath="/student/lessons/view" emptyLabel="No lessons in the next two weeks." />
           </div>
         </div>
 
@@ -113,10 +113,10 @@ function StudentContent() {
           <div className="flex items-center justify-between">
             <h2 className="font-serif text-h3 font-semibold text-ink">Homework &amp; grades</h2>
             <div className="flex gap-3">
-              <Link href="/learn/student/homework" className="text-sm text-gold-700 underline">
+              <Link href="/student/homework" className="text-sm text-gold-700 underline">
                 View all homework
               </Link>
-              <Link href="/learn/student/reports" className="text-sm text-gold-700 underline">
+              <Link href="/student/reports" className="text-sm text-gold-700 underline">
                 Term reports
               </Link>
             </div>

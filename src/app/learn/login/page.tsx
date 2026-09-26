@@ -67,7 +67,7 @@ export default function LearnLoginPage() {
       );
       return;
     }
-    router.replace("/learn");
+    router.replace("/");
   }
 
   return (
@@ -89,7 +89,7 @@ export default function LearnLoginPage() {
             {busy ? "Signing in…" : "Sign in"}
           </button>
         </form>
-        <Link href="/learn/login/forgot" className="mt-3 inline-block text-sm font-semibold text-gold-700 underline">
+        <Link href="/login/forgot" className="mt-3 inline-block text-sm font-semibold text-gold-700 underline">
           Forgotten your password?
         </Link>
         <p className="mt-4 text-xs text-ink/50">Accounts are created by the school — this only works for emails already on file.</p>

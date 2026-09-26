@@ -18,7 +18,10 @@ const url = process.env.SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const email = (process.argv[2] || "").trim().toLowerCase();
 const fullName = (process.argv[3] || "").trim();
-const siteUrl = process.env.SITE_URL || "https://globalacademy.tarbiyyah.co.uk";
+// /learn lives on its own subdomain (see src/lib/learn/origin.ts and
+// SETUP.md, "Moving /learn to its own subdomain") — LEARN_SITE_URL, not
+// SITE_URL (the main marketing domain), is where the setup link must land.
+const learnSiteUrl = process.env.LEARN_SITE_URL || "https://learn.globalacademy.tarbiyyah.co.uk";
 
 if (!url || !serviceRoleKey) {
   console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
@@ -73,7 +76,7 @@ if (roleErr) throw roleErr;
 const { data: linkData, error: linkErr } = await supabase.auth.admin.generateLink({
   type: isNewUser ? "invite" : "recovery",
   email,
-  options: { redirectTo: `${siteUrl}/learn/login/invite` },
+  options: { redirectTo: `${learnSiteUrl}/login/invite` },
 });
 if (linkErr) throw linkErr;
 

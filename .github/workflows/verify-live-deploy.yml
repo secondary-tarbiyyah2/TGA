@@ -22,24 +22,24 @@ jobs:
           echo "---"
           echo "Current time (UTC): $(date -u)"
 
-      - name: Check /learn/account exists (new in this restructure)
+      - name: Check /learn/account exists (now at the /learn subdomain's own root)
         run: |
           set -euo pipefail
-          code=$(curl -sS -o /dev/null -w "%{http_code}" "https://globalacademy.tarbiyyah.co.uk/learn/account/")
-          echo "HTTP $code for /learn/account/"
-          [ "$code" = "200" ] && echo "PASS: /learn/account/ exists" || { echo "FAIL: /learn/account/ missing"; exit 1; }
+          code=$(curl -sS -o /dev/null -w "%{http_code}" "https://learn.globalacademy.tarbiyyah.co.uk/account/")
+          echo "HTTP $code for /account/ on the /learn subdomain"
+          [ "$code" = "200" ] && echo "PASS: /account/ exists on the /learn subdomain" || { echo "FAIL: /account/ missing on the /learn subdomain"; exit 1; }
 
       - name: Check /learn/login no longer shows the public marketing nav
         run: |
           set -euo pipefail
-          body=$(curl -sS "https://globalacademy.tarbiyyah.co.uk/learn/login/" || true)
-          echo "$body" | grep -q "Book a free call" && { echo "FAIL: public nav still present on /learn/login"; exit 1; } || echo "PASS: public nav absent from /learn/login"
+          body=$(curl -sS "https://learn.globalacademy.tarbiyyah.co.uk/login/" || true)
+          echo "$body" | grep -q "Book a free call" && { echo "FAIL: public nav still present on the /learn subdomain's login"; exit 1; } || echo "PASS: public nav absent from the /learn subdomain's login"
           echo "$body" | grep -q "your dashboard" && echo "PASS: new /learn layout wordmark present" || echo "WARNING: dashboard-link wordmark not found"
 
       - name: Check /learn/admin/lessons no longer tells admins to use GitHub
         run: |
           set -euo pipefail
-          body=$(curl -sS "https://globalacademy.tarbiyyah.co.uk/learn/admin/lessons/" || true)
+          body=$(curl -sS "https://learn.globalacademy.tarbiyyah.co.uk/admin/lessons/" || true)
           echo "$body" | grep -qi "Actions .. Generate timetable .. Run workflow" && { echo "FAIL: old GitHub-Actions instructions still present"; exit 1; } || echo "PASS: old GitHub instructions not found (page is gated/client-rendered so this is a soft check)"
 
       - name: Check /eligibility is the new quiz, not the old one

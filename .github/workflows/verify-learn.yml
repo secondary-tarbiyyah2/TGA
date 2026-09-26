@@ -1,7 +1,7 @@
 name: Verify /learn deployment
 
 # One-off/reusable health check: confirms the .htaccess-driven redirects and
-# security headers for the /learn area actually behave as intended on the
+# security headers for the /learn portal actually behave as intended on the
 # live host — not verifiable from the sandbox this was built in (network
 # policy blocks it), so this runs the real checks from a GitHub-hosted
 # runner instead. Also checks the homepage for stale/legacy content, since
@@ -9,6 +9,12 @@ name: Verify /learn deployment
 # never removes old files already on the server — if an old build (e.g.
 # legacy-static/) was ever uploaded to the same path, it could still be
 # live underneath what looks like a fresh deploy.
+#
+# /learn moved from a path on the main domain to its own subdomain (see
+# SETUP.md, "Moving /learn to its own subdomain") — these checks target
+# learn.globalacademy.tarbiyyah.co.uk directly for anything that's now the
+# portal's own concern, and will only pass once that subdomain has been
+# created and deployed to (a manual step; see SETUP.md).
 
 on:
   workflow_dispatch:
@@ -17,24 +23,30 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Check /staff redirects to /learn/login
+      - name: Check /staff redirects to the /learn subdomain's login
         run: |
           set -euo pipefail
           headers=$(curl -sSI -L --max-redirs 0 "https://globalacademy.tarbiyyah.co.uk/staff" || true)
           echo "$headers"
-          echo "$headers" | grep -qi "^location:.*\/learn\/login" && echo "PASS: /staff redirects to /learn/login" || { echo "FAIL: /staff did not redirect to /learn/login"; exit 1; }
+          echo "$headers" | grep -qi "^location:.*learn\.globalacademy\.tarbiyyah\.co\.uk/login" && echo "PASS: /staff redirects to the /learn subdomain's login" || { echo "FAIL: /staff did not redirect to the /learn subdomain's login"; exit 1; }
 
-      - name: Check /portal redirects to /learn/login
+      - name: Check /portal redirects to the /learn subdomain's login
         run: |
           set -euo pipefail
           headers=$(curl -sSI -L --max-redirs 0 "https://globalacademy.tarbiyyah.co.uk/portal" || true)
           echo "$headers"
-          echo "$headers" | grep -qi "^location:.*\/learn\/login" && echo "PASS: /portal redirects to /learn/login" || { echo "FAIL: /portal did not redirect to /learn/login"; exit 1; }
+          echo "$headers" | grep -qi "^location:.*learn\.globalacademy\.tarbiyyah\.co\.uk/login" && echo "PASS: /portal redirects to the /learn subdomain's login" || { echo "FAIL: /portal did not redirect to the /learn subdomain's login"; exit 1; }
 
-      - name: Check /learn/login security headers
+      - name: Check old /learn/login bookmark bridges across origins
         run: |
           set -euo pipefail
-          headers=$(curl -sSI "https://globalacademy.tarbiyyah.co.uk/learn/login/" || true)
+          body=$(curl -sS "https://globalacademy.tarbiyyah.co.uk/learn/login/" || true)
+          echo "$body" | grep -qi "learn.globalacademy.tarbiyyah.co.uk" && echo "PASS: old /learn/login bridge page references the new subdomain" || { echo "FAIL: bridge page missing/not referencing the new subdomain"; exit 1; }
+
+      - name: Check the /learn subdomain's security headers
+        run: |
+          set -euo pipefail
+          headers=$(curl -sSI "https://learn.globalacademy.tarbiyyah.co.uk/login/" || true)
           echo "$headers"
           echo "$headers" | grep -qi "^cache-control:.*no-store" && echo "PASS: Cache-Control: no-store present" || { echo "FAIL: Cache-Control: no-store missing"; exit 1; }
           echo "$headers" | grep -qi "^x-robots-tag:.*noindex" && echo "PASS: X-Robots-Tag: noindex present" || { echo "FAIL: X-Robots-Tag: noindex missing"; exit 1; }

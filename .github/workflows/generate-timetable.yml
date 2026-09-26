@@ -100,5 +100,5 @@ jobs:
             echo '```'
             cat /tmp/solver-output.txt
             echo '```'
-            echo "Review the draft run under /learn/admin/lessons/timetable before publishing it."
+            echo "Review the draft run under /admin/lessons/timetable on the /learn subdomain before publishing it."
           } >> "$GITHUB_STEP_SUMMARY"

@@ -5,20 +5,20 @@ import { usePathname } from "next/navigation";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 
 const NAV = [
-  { href: "/learn/admin/dashboard", label: "Dashboard" },
-  { href: "/learn/admin/admissions", label: "Admissions" },
-  { href: "/learn/admin/people", label: "People" },
-  { href: "/learn/admin/academic", label: "Academic" },
-  { href: "/learn/admin/lessons", label: "Lessons" },
-  { href: "/learn/admin/attendance", label: "Attendance" },
-  { href: "/learn/admin/reports", label: "Reports" },
-  { href: "/learn/admin/documents", label: "Documents" },
-  { href: "/learn/admin/messages", label: "Messages" },
-  { href: "/learn/admin/fees", label: "Fees" },
-  { href: "/learn/admin/content", label: "Website content" },
-  { href: "/learn/admin/quiz", label: "Quiz & sample weeks" },
-  { href: "/learn/admin/compliance", label: "Compliance" },
-  { href: "/learn/admin/settings", label: "Settings" },
+  { href: "/admin/dashboard", label: "Dashboard" },
+  { href: "/admin/admissions", label: "Admissions" },
+  { href: "/admin/people", label: "People" },
+  { href: "/admin/academic", label: "Academic" },
+  { href: "/admin/lessons", label: "Lessons" },
+  { href: "/admin/attendance", label: "Attendance" },
+  { href: "/admin/reports", label: "Reports" },
+  { href: "/admin/documents", label: "Documents" },
+  { href: "/admin/messages", label: "Messages" },
+  { href: "/admin/fees", label: "Fees" },
+  { href: "/admin/content", label: "Website content" },
+  { href: "/admin/quiz", label: "Quiz & sample weeks" },
+  { href: "/admin/compliance", label: "Compliance" },
+  { href: "/admin/settings", label: "Settings" },
 ];
 
 export function AdminShell({ children }: { children: React.ReactNode }) {

@@ -73,7 +73,7 @@ function ChildCard({ child }: { child: Child }) {
         <div className="mt-2">
           <UpcomingLessons
             classIds={classIds || []}
-            basePath="/learn/family/lessons/view"
+            basePath="/family/lessons/view"
             extraQuery={`&child=${child.id}`}
             emptyLabel="No lessons in the next two weeks."
           />
@@ -84,13 +84,13 @@ function ChildCard({ child }: { child: Child }) {
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-medium text-ink">Homework &amp; grades</h3>
           <div className="flex gap-3">
-            <Link href={`/learn/family/homework?child=${child.id}`} className="text-sm text-gold-700 underline">
+            <Link href={`/family/homework?child=${child.id}`} className="text-sm text-gold-700 underline">
               View all homework
             </Link>
-            <Link href="/learn/family/reports" className="text-sm text-gold-700 underline">
+            <Link href="/family/reports" className="text-sm text-gold-700 underline">
               Term reports
             </Link>
-            <Link href="/learn/family/messages" className="text-sm text-gold-700 underline">
+            <Link href="/family/messages" className="text-sm text-gold-700 underline">
               Messages
             </Link>
           </div>

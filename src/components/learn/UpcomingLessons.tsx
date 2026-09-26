@@ -23,7 +23,7 @@ export function UpcomingLessons({
   emptyLabel,
 }: {
   classIds: string[];
-  basePath: string; // e.g. "/learn/teach/lessons/view" or "/learn/family/lessons/view"
+  basePath: string; // e.g. "/teach/lessons/view" or "/family/lessons/view"
   extraQuery?: string; // e.g. "&child=<id>" appended to each link (id= is always first)
   emptyLabel: string;
 }) {

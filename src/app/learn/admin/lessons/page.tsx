@@ -276,7 +276,7 @@ function UpcomingInstances({ runId, refreshKey }: { runId: string; refreshKey: n
     <ul className="mt-3 space-y-1 text-sm">
       {rows.map((r) => (
         <li key={r.id}>
-          <Link href={`/learn/admin/lessons/view?id=${r.id}`} className="text-gold-700 underline">
+          <Link href={`/admin/lessons/view?id=${r.id}`} className="text-gold-700 underline">
             {r.date} — {r.timetable_slots?.classes?.subjects?.name} ({r.timetable_slots?.classes?.name})
           </Link>
         </li>

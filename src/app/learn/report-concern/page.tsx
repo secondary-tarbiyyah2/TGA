@@ -131,7 +131,7 @@ export default function ReportConcernPage() {
         {session === "loading" && <p className="text-ink/60">Loading…</p>}
         {session === null && (
           <p className="text-ink/60">
-            Please <Link href="/learn/login" className="text-gold-700 underline">sign in</Link> to report a concern.
+            Please <Link href="/login" className="text-gold-700 underline">sign in</Link> to report a concern.
           </p>
         )}
         {session && session !== "loading" && <ReportConcernForm />}

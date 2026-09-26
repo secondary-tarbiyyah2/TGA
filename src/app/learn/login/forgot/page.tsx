@@ -28,7 +28,11 @@ export default function ForgotPasswordPage() {
     if (!supabase) return;
     setBusy(true);
     await supabase.auth.resetPasswordForEmail(email.trim().toLowerCase(), {
-      redirectTo: `${window.location.origin}/learn/login/invite`,
+      // window.location.origin, not a hardcoded string: once this page is
+      // served from the /learn subdomain, that origin already IS the right
+      // one (see src/lib/learn/origin.ts) — and Supabase's redirect
+      // allowlist (deploy-supabase.yml) must include it.
+      redirectTo: `${window.location.origin}/login/invite`,
     });
     setBusy(false);
     // Always show the same confirmation, whether or not the address
@@ -45,7 +49,7 @@ export default function ForgotPasswordPage() {
             If an account exists for <strong>{email}</strong>, we&apos;ve sent a link to reset your password. It expires
             after a short time and can only be used once.
           </p>
-          <Link href="/learn/login" className="mt-6 inline-block text-sm font-semibold text-gold-700 underline">
+          <Link href="/login" className="mt-6 inline-block text-sm font-semibold text-gold-700 underline">
             Back to sign in
           </Link>
         </div>
@@ -79,7 +83,7 @@ export default function ForgotPasswordPage() {
           <Link href="/contact" className="font-semibold text-gold-700 underline">Contact the school office</Link> and
           we can look it up for you.
         </p>
-        <Link href="/learn/login" className="mt-2 inline-block text-xs text-ink/50 underline">
+        <Link href="/login" className="mt-2 inline-block text-xs text-ink/50 underline">
           Back to sign in
         </Link>
       </div>

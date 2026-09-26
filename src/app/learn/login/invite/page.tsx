@@ -69,7 +69,7 @@ export default function LearnInvitePage() {
               <p className="text-sm text-ink">You&apos;re all set.</p>
               <button
                 type="button"
-                onClick={() => router.replace("/learn")}
+                onClick={() => router.replace("/")}
                 className="mt-4 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 hover:brightness-95"
               >
                 Continue

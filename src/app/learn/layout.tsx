@@ -26,7 +26,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
   const { session, roles, rolesLoaded } = useLearnSession();
   const activeSession = session && session !== "loading" ? session : null;
   const signedIn = !!(activeSession && rolesLoaded && roles.length > 0);
-  const homeHref = signedIn ? dashboardPathForRole(roles[0].role) : "/learn";
+  const homeHref = signedIn ? dashboardPathForRole(roles[0].role) : "/";
 
   return (
     <>

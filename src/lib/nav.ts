@@ -1,3 +1,5 @@
+import { LEARN_ORIGIN } from "./learn/origin";
+
 export type NavLink = { href: string; label: string };
 export type NavGroup = { label: string; items: NavLink[] };
 export type NavEntry = NavLink | NavGroup;
@@ -69,6 +71,8 @@ export const footerNav = [
 export const primaryCta = { href: "/book-a-call", label: "Book a free call" };
 // Single log-in destination across header, mobile drawer and footer — /staff
 // and /portal both 301-redirect to this same URL at the server level (see
-// public/.htaccess), so there is only ever one login entry point live.
-export const portalCta = { href: "/learn/login", label: "Log in" };
+// public/.htaccess), so there is only ever one login entry point live. This
+// is a cross-origin, absolute link (not "/learn/login") because /learn lives
+// on its own subdomain — see src/lib/learn/origin.ts.
+export const portalCta = { href: `${LEARN_ORIGIN}/login`, label: "Log in" };
 export const openEveningCta = { href: "/open-evening", label: "Book Open Evening" };

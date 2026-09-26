@@ -30,7 +30,7 @@ export function LearnGate({ allowedRoles, children }: { allowedRoles: LearnRole[
   if (!session) {
     return (
       <p className="text-ink/60">
-        Please <Link href="/learn/login" className="text-gold-700 underline">sign in</Link> to continue.
+        Please <Link href="/login" className="text-gold-700 underline">sign in</Link> to continue.
       </p>
     );
   }

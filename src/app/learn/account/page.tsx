@@ -8,7 +8,7 @@ import { getOrCreateDeviceToken, getDeviceToken, getStoredDeviceRowId, setStored
 
 /**
  * The signed-in user's OWN account settings — password, MFA, and trusted
- * devices — deliberately separate from `/learn/admin/settings` (site-wide
+ * devices — deliberately separate from `/admin/settings` (site-wide
  * LMS settings such as recording retention), and open to every /learn role,
  * not just admin. Before this page existed there was no personal-account
  * entry point at all: an admin could edit SITE settings but not their own
@@ -313,7 +313,7 @@ function AccountContent() {
           {session && session !== "loading" ? session.user.email : ""} — {roles.map((r) => learnRoleLabel(r.role)).join(", ") || "no /learn role yet"}
         </p>
         <p className="mt-2 text-xs text-ink/50">
-          <Link href={roles[0] ? "/learn" : "/learn/login"} className="text-gold-700 underline">
+          <Link href={roles[0] ? "/" : "/login"} className="text-gold-700 underline">
             Back to your dashboard
           </Link>
         </p>
@@ -333,7 +333,7 @@ export default function LearnAccountPage() {
       {session === "loading" && <p className="text-ink/60">Loading…</p>}
       {session === null && (
         <p className="text-ink/60">
-          Please <Link href="/learn/login" className="text-gold-700 underline">sign in</Link> to manage your account.
+          Please <Link href="/login" className="text-gold-700 underline">sign in</Link> to manage your account.
         </p>
       )}
       {session && session !== "loading" && <AccountContent />}

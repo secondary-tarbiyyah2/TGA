@@ -148,6 +148,7 @@ jobs:
             RESEND_API_KEY="${{ secrets.RESEND_API_KEY }}" \
             ADMISSIONS_TEAMS_URL="${{ vars.ADMISSIONS_TEAMS_URL || 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2UwM2U2NzYtNjhkMS00ZDRkLTlmODctNTZiMWZmMWFiMzcw%40thread.v2/0?context=%7b%22Tid%22%3a%22a0b25b15-bb34-4892-a564-6c8277ae3db2%22%2c%22Oid%22%3a%223b6d0aa6-0912-44cc-b592-f83506cd0d80%22%7d' }}" \
             SITE_URL="https://globalacademy.tarbiyyah.co.uk" \
+            LEARN_SITE_URL="${{ vars.LEARN_SITE_URL || 'https://learn.globalacademy.tarbiyyah.co.uk' }}" \
             ADMISSIONS_EMAIL="globalacademy@tarbiyyah.co.uk" \
             MAIL_FROM_EMAIL="globalacademy@tarbiyyah.co.uk" \
             MAIL_FROM_NAME="Tarbiyyah Global Academy"
@@ -186,7 +187,7 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{
               "site_url": "https://globalacademy.tarbiyyah.co.uk",
-              "uri_allow_list": "https://globalacademy.tarbiyyah.co.uk/**,http://localhost:3000/**",
+              "uri_allow_list": "https://globalacademy.tarbiyyah.co.uk/**,${{ vars.LEARN_SITE_URL || 'https://learn.globalacademy.tarbiyyah.co.uk' }}/**,http://localhost:3000/**",
               "external_email_enabled": true,
               "mailer_autoconfirm": false,
               "smtp_admin_email": "globalacademy@tarbiyyah.co.uk",
@@ -240,7 +241,7 @@ jobs:
         env:
           SUPABASE_URL: https://${{ steps.project.outputs.ref }}.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
-          SITE_URL: https://globalacademy.tarbiyyah.co.uk
+          LEARN_SITE_URL: ${{ vars.LEARN_SITE_URL || 'https://learn.globalacademy.tarbiyyah.co.uk' }}
         run: |
           set -euo pipefail
           npm ci

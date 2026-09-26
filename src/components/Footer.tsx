@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "./Container";
 import { footerNav } from "@/lib/nav";
 import { getSiteSettings } from "@/lib/content";
+import { LEARN_ORIGIN } from "@/lib/learn/origin";
 
 export async function Footer() {
   const settings = await getSiteSettings();
@@ -64,7 +65,7 @@ export async function Footer() {
           <p>© {new Date().getFullYear()} Tarbiyyah Education Trust. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <p>globalacademy.tarbiyyah.co.uk</p>
-            <Link href="/learn/login" className="text-white/60 hover:text-cream">Staff login</Link>
+            <Link href={`${LEARN_ORIGIN}/login`} className="text-white/60 hover:text-cream">Staff login</Link>
           </div>
         </Container>
       </div>

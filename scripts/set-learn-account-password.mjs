@@ -7,7 +7,7 @@
 // scripts/invite-first-head-teacher.mjs or learn-invite), and does nothing
 // to roles/permissions.
 //
-// /learn/login already supports email+password sign-in directly, so this
+// The /learn subdomain's login page already supports email+password sign-in directly, so this
 // lets someone in immediately without depending on the invite link at all.
 //
 // Requires SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY. Run via:
@@ -60,6 +60,6 @@ console.log("");
 console.log("========================================");
 console.log(`Password set for: ${email}`);
 console.log(`Temporary password: ${tempPassword}`);
-console.log("Sign in at /learn/login with this email and password.");
+console.log("Sign in at https://learn.globalacademy.tarbiyyah.co.uk/login with this email and password.");
 console.log("This password is shown ONCE — it is not stored anywhere. Change it after signing in.");
 console.log("========================================");
