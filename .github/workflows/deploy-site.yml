@@ -84,6 +84,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      # Mirrored into env because the `secrets` context isn't available in
+      # step `if:` conditions at all (confirmed by a real dispatch attempt:
+      # "Unrecognized named-value: 'secrets'") — only in env/with. The `env`
+      # context IS available in step `if:`, so the "is this secret set"
+      # check below reads this instead of secrets.FTP_LEARN_REMOTE_DIR
+      # directly.
+      FTP_LEARN_REMOTE_DIR: ${{ secrets.FTP_LEARN_REMOTE_DIR }}
     steps:
       - uses: actions/checkout@v4
 
@@ -182,7 +189,7 @@ jobs:
       # not something this pipeline can do), so this step deploys nowhere
       # near a guessed path until that's confirmed and the secret is added.
       - name: Deploy /learn portal to FTP (subdomain)
-        if: ${{ secrets.FTP_LEARN_REMOTE_DIR != '' }}
+        if: env.FTP_LEARN_REMOTE_DIR != ''
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
