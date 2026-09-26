@@ -1,0 +1,60 @@
+name: Verify live deploy matches latest build
+
+# One-off diagnostic, run from a GitHub-hosted runner since the build
+# sandbox can't reach the live host directly. Checks that pages/content
+# unique to the most recent restructure are actually live — the previous
+# time a user reported the site looking stale, it turned out to be their
+# browser cache, not a real deploy failure, but this checks it directly
+# rather than assuming that again.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check homepage timestamp and headers
+        run: |
+          set -euo pipefail
+          headers=$(curl -sSI "https://globalacademy.tarbiyyah.co.uk/" || true)
+          echo "$headers"
+          echo "---"
+          echo "Current time (UTC): $(date -u)"
+
+      - name: Check /learn/account exists (new in this restructure)
+        run: |
+          set -euo pipefail
+          code=$(curl -sS -o /dev/null -w "%{http_code}" "https://globalacademy.tarbiyyah.co.uk/learn/account/")
+          echo "HTTP $code for /learn/account/"
+          [ "$code" = "200" ] && echo "PASS: /learn/account/ exists" || { echo "FAIL: /learn/account/ missing"; exit 1; }
+
+      - name: Check /learn/login no longer shows the public marketing nav
+        run: |
+          set -euo pipefail
+          body=$(curl -sS "https://globalacademy.tarbiyyah.co.uk/learn/login/" || true)
+          echo "$body" | grep -q "Book a free call" && { echo "FAIL: public nav still present on /learn/login"; exit 1; } || echo "PASS: public nav absent from /learn/login"
+          echo "$body" | grep -q "your dashboard" && echo "PASS: new /learn layout wordmark present" || echo "WARNING: dashboard-link wordmark not found"
+
+      - name: Check /learn/admin/lessons no longer tells admins to use GitHub
+        run: |
+          set -euo pipefail
+          body=$(curl -sS "https://globalacademy.tarbiyyah.co.uk/learn/admin/lessons/" || true)
+          echo "$body" | grep -qi "Actions .. Generate timetable .. Run workflow" && { echo "FAIL: old GitHub-Actions instructions still present"; exit 1; } || echo "PASS: old GitHub instructions not found (page is gated/client-rendered so this is a soft check)"
+
+      - name: Check /eligibility is the new quiz, not the old one
+        run: |
+          set -euo pipefail
+          body=$(curl -sS "https://globalacademy.tarbiyyah.co.uk/eligibility/" || true)
+          echo "$body" | grep -q "Your Child" && echo "PASS: new quiz heading found" || echo "WARNING: expected new quiz heading not found in static HTML (may be client-rendered)"
+
+      - name: Check homepage cursor/button CSS fix is in the deployed bundle
+        run: |
+          set -euo pipefail
+          body=$(curl -sS "https://globalacademy.tarbiyyah.co.uk/" || true)
+          css_path=$(echo "$body" | grep -o '/_next/static/css/[^"]*\.css' | head -1)
+          echo "CSS path: $css_path"
+          if [ -n "$css_path" ]; then
+            css=$(curl -sS "https://globalacademy.tarbiyyah.co.uk$css_path" || true)
+            echo "$css" | grep -q "cursor:pointer" && echo "PASS: cursor-pointer rule present in deployed CSS" || echo "WARNING: cursor:pointer rule not found (may be minified differently)"
+          fi
