@@ -27,16 +27,43 @@ async function invite(body: Record<string, unknown>): Promise<InviteResult> {
 
 type Step = "parent" | "child" | "student" | "done";
 
+type AddedChild = {
+  id: string;
+  name: string;
+  studentLink: string | null;
+  linked: boolean; // has a student login (or was explicitly skipped)
+  skipped: boolean;
+};
+
 /**
- * One guided flow: invite a parent, add their child, then (optionally)
- * invite the child their own student login — carrying state between the
- * three steps instead of three disconnected screens. Every account
- * creation step re-uses the exact same learn-invite Edge Function the rest
- * of /learn's staff invites go through (no password ever emailed — a
- * one-time setup link is shown once and must be copied/sent by the admin,
- * same handling as scripts/invite-first-head-teacher.mjs).
+ * One guided flow: invite a parent, add ONE OR MORE of their children, then
+ * (optionally, per child) invite each child their own student login —
+ * carrying state between the steps instead of three disconnected screens.
+ * Every account creation step re-uses the exact same learn-invite Edge
+ * Function the rest of /learn's staff invites go through (no password ever
+ * emailed — a one-time setup link is shown once and must be copied/sent by
+ * the admin, same handling as scripts/invite-first-head-teacher.mjs).
+ *
+ * Reworked (reported feedback: "doing this each time is slow when a family
+ * has multiple children, or when processing several families in a row") so
+ * that:
+ *  - the "child" step is now repeatable — "Add another child" stays on the
+ *    same step instead of forcing a restart of the parent-invite step for
+ *    every additional child of the same family;
+ *  - the "student login" step now covers every child added in one pass,
+ *    not just one;
+ *  - "done" offers a clear "Start another family" action that actually
+ *    resets the whole flow (previously a dead end — see the report).
+ *
+ * Deliberately NOT a CSV/bulk import: the reported pain point is "a family
+ * with a handful of children" and "several families in a row", both of
+ * which this in-flow repeat solves directly; a CSV importer would add real
+ * complexity (parsing, validation, partial-failure handling, a very
+ * different UI) for a use case (bulk-loading many families at once) that
+ * wasn't actually reported. Worth reconsidering if onboarding an entire
+ * school roll at once turns out to be a real, recurring need.
  */
-function GuidedFlow({ yearGroups, onFinished }: { yearGroups: YearGroup[]; onFinished: () => void }) {
+function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChanged: () => void }) {
   const supabase = getSupabaseClient();
   const [step, setStep] = useState<Step>("parent");
   const [busy, setBusy] = useState(false);
@@ -48,15 +75,28 @@ function GuidedFlow({ yearGroups, onFinished }: { yearGroups: YearGroup[]; onFin
   const [parentLink, setParentLink] = useState<string | null>(null);
   const [parentUserId, setParentUserId] = useState<string | null>(null);
 
-  // Child
+  // Children added so far, this family
+  const [children, setChildren] = useState<AddedChild[]>([]);
   const [childName, setChildName] = useState("");
   const [childDob, setChildDob] = useState("");
   const [childYearGroupId, setChildYearGroupId] = useState("");
-  const [childId, setChildId] = useState<string | null>(null);
 
-  // Student account
-  const [studentEmail, setStudentEmail] = useState("");
-  const [studentLink, setStudentLink] = useState<string | null>(null);
+  // Student logins, keyed by child id, for the "student" step
+  const [studentEmails, setStudentEmails] = useState<Record<string, string>>({});
+
+  const resetAll = () => {
+    setStep("parent");
+    setError(null);
+    setParentEmail("");
+    setParentName("");
+    setParentLink(null);
+    setParentUserId(null);
+    setChildren([]);
+    setChildName("");
+    setChildDob("");
+    setChildYearGroupId("");
+    setStudentEmails({});
+  };
 
   const inviteParent = async () => {
     if (!parentEmail.trim() || !parentName.trim()) return;
@@ -90,42 +130,58 @@ function GuidedFlow({ yearGroups, onFinished }: { yearGroups: YearGroup[]; onFin
         setError(`Could not add child: ${insertErr?.message}`);
         return;
       }
-      setChildId(data.id);
-      setStep("student");
+      setChildren((prev) => [...prev, { id: data.id, name: childName.trim(), studentLink: null, linked: false, skipped: false }]);
+      onChanged();
+      // Reset the form fields only — stay on the same "child" step so
+      // adding a second/third/fourth child is just filling the form again,
+      // no navigating back or restarting the parent step.
+      setChildName("");
+      setChildDob("");
+      setChildYearGroupId("");
     } finally {
       setBusy(false);
     }
   };
 
-  const inviteStudent = async () => {
-    if (!supabase || !childId || !studentEmail.trim()) return;
+  const proceedToStudentLogins = () => {
+    if (children.length === 0) return;
+    setStep("student");
+  };
+
+  const inviteStudentFor = async (child: AddedChild) => {
+    const email = (studentEmails[child.id] || "").trim();
+    if (!supabase || !email) return;
     setBusy(true);
     setError(null);
     try {
-      const result = await invite({ email: studentEmail.trim(), fullName: childName.trim(), role: "student" });
+      const result = await invite({ email, fullName: child.name, role: "student" });
       if (!result.ok || !result.profileId) {
-        setError(`Could not invite student: ${result.detail || result.error}`);
+        setError(`Could not invite a login for ${child.name}: ${result.detail || result.error}`);
         return;
       }
       const { error: linkErr } = await supabase
         .from("student_accounts")
-        .upsert({ child_id: childId, profile_id: result.profileId, invited_at: new Date().toISOString() }, { onConflict: "child_id" });
+        .upsert({ child_id: child.id, profile_id: result.profileId, invited_at: new Date().toISOString() }, { onConflict: "child_id" });
       if (linkErr) {
-        setError(`Account created but could not link it to the child record: ${linkErr.message}`);
+        setError(`Account created for ${child.name} but could not link it to their child record: ${linkErr.message}`);
         return;
       }
-      setStudentLink(result.setupLink || null);
-      setStep("done");
+      setChildren((prev) => prev.map((c) => (c.id === child.id ? { ...c, linked: true, studentLink: result.setupLink || null } : c)));
+      onChanged();
     } finally {
       setBusy(false);
     }
   };
 
-  const skipStudentAccount = () => {
+  const skipStudentFor = (childId: string) => {
     // A child record with no linked account is a normal, supported end
     // state (not every child needs their own login yet).
-    setStep("done");
+    setChildren((prev) => prev.map((c) => (c.id === childId ? { ...c, skipped: true } : c)));
   };
+
+  const finishFamily = () => setStep("done");
+
+  const allChildrenHandled = children.every((c) => c.linked || c.skipped);
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
@@ -133,7 +189,7 @@ function GuidedFlow({ yearGroups, onFinished }: { yearGroups: YearGroup[]; onFin
         {(["parent", "child", "student", "done"] as Step[]).map((s, i) => (
           <span key={s} className={`flex items-center gap-2 ${step === s ? "text-gold-700" : ""}`}>
             {i > 0 && <span>→</span>}
-            {i + 1}. {s === "parent" ? "Parent" : s === "child" ? "Child" : s === "student" ? "Student login" : "Done"}
+            {i + 1}. {s === "parent" ? "Parent" : s === "child" ? "Child(ren)" : s === "student" ? "Student logins" : "Done"}
           </span>
         ))}
       </div>
@@ -155,7 +211,7 @@ function GuidedFlow({ yearGroups, onFinished }: { yearGroups: YearGroup[]; onFin
 
       {step === "child" && (
         <div className="mt-4 space-y-3">
-          <h2 className="font-serif text-h3 font-semibold text-ink">2. Add their child</h2>
+          <h2 className="font-serif text-h3 font-semibold text-ink">2. Add their children</h2>
           {parentLink && (
             <p className="rounded-lg bg-cream px-3 py-2 text-xs text-ink/70">
               Parent account created. Setup link (send this to the parent — it is shown once):{" "}
@@ -164,6 +220,17 @@ function GuidedFlow({ yearGroups, onFinished }: { yearGroups: YearGroup[]; onFin
               </a>
             </p>
           )}
+
+          {children.length > 0 && (
+            <ul className="space-y-1 text-sm text-ink/70">
+              {children.map((c) => (
+                <li key={c.id} className="rounded-lg bg-cream px-3 py-1.5">
+                  {c.name}
+                </li>
+              ))}
+            </ul>
+          )}
+
           <div className="flex flex-wrap gap-2">
             <input value={childName} onChange={(e) => setChildName(e.target.value)} placeholder="Child's full name" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
             <input type="date" value={childDob} onChange={(e) => setChildDob(e.target.value)} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
@@ -175,48 +242,96 @@ function GuidedFlow({ yearGroups, onFinished }: { yearGroups: YearGroup[]; onFin
                 </option>
               ))}
             </select>
-            <button type="button" disabled={busy} onClick={addChild} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
-              Add child &amp; continue
+            <button type="button" disabled={busy || !childName.trim() || !childDob} onClick={addChild} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+              {children.length === 0 ? "Add child" : "Add another child"}
             </button>
           </div>
+
+          {children.length > 0 && (
+            <button type="button" onClick={proceedToStudentLogins} className="rounded-full border border-gold-500 px-4 py-2 text-xs font-semibold text-gold-700 hover:bg-cream">
+              Continue to student logins ({children.length} {children.length === 1 ? "child" : "children"}) →
+            </button>
+          )}
         </div>
       )}
 
       {step === "student" && (
         <div className="mt-4 space-y-3">
-          <h2 className="font-serif text-h3 font-semibold text-ink">3. Give {childName} their own login (optional)</h2>
+          <h2 className="font-serif text-h3 font-semibold text-ink">3. Give each child their own login (optional)</h2>
           <p className="text-xs text-ink/60">
             Every student, any year group, gets a full account — the dashboard is simply simpler for younger year groups. You
-            can skip this and add it later from this same page.
+            can skip any of these and add a login later from this same page.
           </p>
-          <div className="flex flex-wrap gap-2">
-            <input value={studentEmail} onChange={(e) => setStudentEmail(e.target.value)} placeholder="Student's email" type="email" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-            <button type="button" disabled={busy || !studentEmail.trim()} onClick={inviteStudent} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
-              Invite &amp; finish
-            </button>
-            <button type="button" onClick={skipStudentAccount} className="rounded-full border border-gold-light/60 px-4 py-2 text-xs text-ink/60 hover:bg-cream">
-              Skip for now
-            </button>
+          <div className="space-y-2">
+            {children.map((c) => (
+              <div key={c.id} className="rounded-lg border border-gold-light/40 p-3">
+                <p className="text-sm font-medium text-ink">{c.name}</p>
+                {c.linked ? (
+                  <p className="mt-1 text-xs text-ink/60">
+                    Login created.
+                    {c.studentLink && (
+                      <>
+                        {" "}
+                        Setup link (send this to the family — it is shown once):{" "}
+                        <a href={c.studentLink} className="break-all text-gold-700 underline">
+                          {c.studentLink}
+                        </a>
+                      </>
+                    )}
+                  </p>
+                ) : c.skipped ? (
+                  <p className="mt-1 text-xs text-ink/60">Skipped for now — add a login later from this page.</p>
+                ) : (
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <input
+                      value={studentEmails[c.id] || ""}
+                      onChange={(e) => setStudentEmails((prev) => ({ ...prev, [c.id]: e.target.value }))}
+                      placeholder={`${c.name}'s email`}
+                      type="email"
+                      className="rounded-lg border border-gold-light/60 px-3 py-2 text-xs"
+                    />
+                    <button
+                      type="button"
+                      disabled={busy || !(studentEmails[c.id] || "").trim()}
+                      onClick={() => inviteStudentFor(c)}
+                      className="rounded-full bg-gold-500 px-3 py-1.5 text-xs font-semibold text-ink-900 disabled:opacity-50"
+                    >
+                      Invite
+                    </button>
+                    <button type="button" onClick={() => skipStudentFor(c.id)} className="rounded-full border border-gold-light/60 px-3 py-1.5 text-xs text-ink/60 hover:bg-cream">
+                      Skip for now
+                    </button>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
+          <button type="button" onClick={finishFamily} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900">
+            {allChildrenHandled ? "Finish this family" : "Finish (skip the rest)"}
+          </button>
         </div>
       )}
 
       {step === "done" && (
         <div className="mt-4 space-y-2">
           <h2 className="font-serif text-h3 font-semibold text-ink">Done</h2>
-          <p className="text-sm text-ink/70">{childName} has been added, linked to their parent{studentLink ? ", with their own login." : "."}</p>
-          {studentLink && (
-            <p className="rounded-lg bg-cream px-3 py-2 text-xs text-ink/70">
-              Student setup link (send this to the family — it is shown once):{" "}
-              <a href={studentLink} className="break-all text-gold-700 underline">
-                {studentLink}
-              </a>
-            </p>
-          )}
-          <p className="text-xs text-ink/50">Enrol {childName} into their classes from Academic → Classes.</p>
-          <button type="button" onClick={onFinished} className="rounded-full border border-gold-500 px-4 py-2 text-xs text-gold-700 hover:bg-cream">
-            Start another
-          </button>
+          <p className="text-sm text-ink/70">
+            {children.length} {children.length === 1 ? "child has" : "children have"} been added to this family
+            {children.some((c) => c.linked) ? ", with logins for those given one." : "."}
+          </p>
+          <p className="text-xs text-ink/50">Enrol {children.map((c) => c.name).join(", ")} into their classes from Academic → Classes.</p>
+          <div className="flex flex-wrap gap-2 pt-2">
+            <button
+              type="button"
+              onClick={() => {
+                resetAll();
+                onChanged();
+              }}
+              className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900"
+            >
+              Start another family
+            </button>
+          </div>
         </div>
       )}
     </div>
@@ -315,7 +430,7 @@ function PeopleContent() {
         </p>
       </div>
 
-      <GuidedFlow yearGroups={yearGroups} onFinished={() => setRefreshKey((k) => k + 1)} />
+      <GuidedFlow yearGroups={yearGroups} onChanged={() => setRefreshKey((k) => k + 1)} />
 
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Families on record</h2>
