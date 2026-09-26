@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { useLearnSession, dashboardPathForRole } from "@/lib/learn/session";
@@ -88,6 +89,9 @@ export default function LearnLoginPage() {
             {busy ? "Signing in…" : "Sign in"}
           </button>
         </form>
+        <Link href="/learn/login/forgot" className="mt-3 inline-block text-sm font-semibold text-gold-700 underline">
+          Forgotten your password?
+        </Link>
         <p className="mt-4 text-xs text-ink/50">Accounts are created by the school — this only works for emails already on file.</p>
       </div>
     </section>
