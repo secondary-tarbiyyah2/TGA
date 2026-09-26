@@ -285,9 +285,83 @@ function UpcomingInstances({ runId, refreshKey }: { runId: string; refreshKey: n
   );
 }
 
+type AcademicYear = { id: string; label: string };
+
+/**
+ * Replaces the previous "go do this manually on GitHub Actions" copy with a
+ * real button (reported feedback: "the user explicitly does not want to
+ * touch GitHub at all"). Calls the trigger-timetable-generation Edge
+ * Function, which dispatches the SAME GitHub Actions workflow
+ * (generate-timetable.yml) that a manual "Run workflow" click would — this
+ * just removes the need to ever open GitHub to do it. The workflow still
+ * runs on its own schedule in Actions and writes its result back to
+ * timetable_runs as before; this page already polls that table (loadRuns,
+ * via the "Check for a new draft" button below) to notice the result, since
+ * there is no webhook-free way for the Edge Function itself to know when a
+ * GitHub Actions run finishes.
+ */
+function GenerateTimetableForm({ academicYears, onDispatched }: { academicYears: AcademicYear[]; onDispatched: () => void }) {
+  const [academicYearId, setAcademicYearId] = useState("");
+  const [runLabel, setRunLabel] = useState("");
+  const [message, setMessage] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+
+  const dispatch = async () => {
+    const year = academicYears.find((y) => y.id === academicYearId);
+    if (!year) return;
+    setBusy(true);
+    setMessage(null);
+    try {
+      const result = await callFunction("trigger-timetable-generation", { academic_year_label: year.label, run_label: runLabel.trim() || undefined });
+      setMessage(
+        result.ok
+          ? "Started. This runs in the background and usually takes a couple of minutes — use \"Check for a new draft\" below, or just check back shortly; the new run will appear in the list once it's ready to review."
+          : `Could not start timetable generation: ${result.detail || result.error}`
+      );
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+      <h2 className="font-serif text-h3 font-semibold text-ink">Generate timetable</h2>
+      <p className="mt-1 text-sm text-ink/60">
+        Runs the solver against the current classes, subjects, teachers and constraints, and creates a new DRAFT run for you
+        to review below before publishing. Safe to run again — it never touches an already-published timetable.
+      </p>
+      <div className="mt-3 flex flex-wrap items-end gap-2">
+        <div>
+          <label className="block text-xs font-medium text-ink/70">Academic year</label>
+          <select value={academicYearId} onChange={(e) => setAcademicYearId(e.target.value)} className="mt-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
+            <option value="">Choose…</option>
+            {academicYears.map((y) => (
+              <option key={y.id} value={y.id}>
+                {y.label}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-ink/70">Label (optional)</label>
+          <input value={runLabel} onChange={(e) => setRunLabel(e.target.value)} placeholder="e.g. Draft 2" className="mt-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
+        </div>
+        <button type="button" disabled={busy || !academicYearId} onClick={dispatch} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+          {busy ? "Starting…" : "Generate timetable"}
+        </button>
+        <button type="button" onClick={onDispatched} className="rounded-full border border-gold-light/60 px-4 py-2 text-xs text-ink/60 hover:bg-cream">
+          Check for a new draft
+        </button>
+      </div>
+      {message && <p className="mt-2 text-xs text-ink/70">{message}</p>}
+    </div>
+  );
+}
+
 function LessonsContent() {
   const supabase = getSupabaseClient();
   const [runs, setRuns] = useState<Run[] | null>(null);
+  const [academicYears, setAcademicYears] = useState<AcademicYear[]>([]);
   const [selectedRun, setSelectedRun] = useState<string | null>(null);
   const [slots, setSlots] = useState<TimetableSlot[]>([]);
   const [conflicts, setConflicts] = useState<Conflict[]>([]);
@@ -325,6 +399,11 @@ function LessonsContent() {
         .select("id, full_name, user_roles!inner(role)")
         .in("user_roles.role", ["teacher", "teaching_assistant_cover"])
         .then(({ data }) => setTeachers(((data as unknown as { id: string; full_name: string }[]) || []).map((r) => ({ id: r.id, full_name: r.full_name }))));
+      supabase
+        .from("academic_years")
+        .select("id, label")
+        .order("starts_on", { ascending: false })
+        .then(({ data }) => setAcademicYears((data as AcademicYear[]) || []));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase]);
@@ -362,14 +441,13 @@ function LessonsContent() {
     <div className="space-y-6">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h1 className="font-serif text-h2 font-semibold text-ink">Timetable</h1>
-        <p className="mt-1 text-sm text-ink/60">
-          Generate a new draft from the &quot;Generate timetable&quot; GitHub Actions workflow (Actions → Generate
-          timetable → Run workflow, with the academic year label). New draft runs then appear here for review.
-        </p>
+        <p className="mt-1 text-sm text-ink/60">New draft runs appear here for review, whichever way they were started.</p>
         {runs === null && <p className="mt-4 text-sm text-ink/60">Loading…</p>}
         {runs && runs.length === 0 && <p className="mt-4 text-sm text-ink/60">No timetable runs yet.</p>}
         {runs && runs.length > 0 && <div className="mt-4"><RunPicker runs={runs} selected={selectedRun} onSelect={setSelectedRun} /></div>}
       </div>
+
+      <GenerateTimetableForm academicYears={academicYears} onDispatched={loadRuns} />
 
       {selectedRunRow && (
         <>

@@ -228,6 +228,64 @@ most sensitive area of the app, so read this section before relying on it.
    `check-scr-expiry.yml`'s best-effort email to the Head Teacher; without
    it, the weekly Actions run summary is still the real notification.
 
+## `/learn` UX fixes — what's needed from you
+
+Real first-use feedback from someone actually using `/learn` surfaced a
+batch of genuine problems, now fixed in code: the public marketing
+Header/Footer no longer render on top of `/learn`'s own shell (see
+`src/app/(marketing)/layout.tsx` vs `src/app/learn/layout.tsx`), a single
+account menu (top-right of every `/learn` page) now holds account
+settings/sign-out instead of a buried sidebar text link, MFA now offers a
+30-day "remember this device" so an enrolled admin isn't re-challenged on
+every sign-in, the admin People flow now adds several children to one
+family in a single pass, and timetable generation can now be triggered from
+a button on `/learn/admin/lessons` instead of GitHub Actions. Only the last
+of these needs anything from you:
+
+1. **Add `GH_DISPATCH_TOKEN` as an Edge Function secret too.** You already
+   created this token for the Sanity publish webhook (see "Settings layer"
+   above) — it's a fine-grained GitHub PAT scoped to only this repo with
+   "Actions: Read and write", which already covers firing
+   `workflow_dispatch` on `generate-timetable.yml` as well as the
+   `repository_dispatch` the Sanity webhook uses, so there's no need for a
+   second token. What IS needed: that secret currently only exists as a
+   **GitHub Actions repo secret** (Settings → Secrets and variables →
+   Actions) — the new `trigger-timetable-generation` **Edge Function** reads
+   it as a **Supabase Edge Function secret**, a separate store. Add it once
+   with `supabase secrets set GH_DISPATCH_TOKEN=<the same token>` against
+   the linked project (or via the Supabase dashboard → Edge Functions →
+   Secrets). Without this, the "Generate timetable" button on
+   `/learn/admin/lessons` shows "not configured" instead of dispatching the
+   workflow — GitHub Actions → "Generate timetable" → Run workflow by hand
+   still works as a fallback either way.
+2. **Deploy the new migration and Edge Function** the same way as every
+   other one here — `.github/workflows/deploy-supabase.yml` picks up
+   `0017_trusted_devices.sql` and `trigger-timetable-generation` on push, no
+   extra step needed beyond #1 above.
+
+**Judgement call — trusted-device storage:** this site is a static export
+with no server (see `next.config.ts`), so there is no place to set a real
+httpOnly cookie. The "remember this device" token is stored in
+`localStorage` instead of a `document.cookie` value — a cookie here would
+carry `Secure; SameSite=Strict` but gain none of a real cookie's actual
+protection (no server ever reads it), while still being readable by any
+script exactly like localStorage, and would additionally be attached to
+every same-site request for no benefit. See
+`src/lib/learn/trustedDevice.ts` for the full reasoning. Practical effect:
+clearing site data, private browsing, or switching browsers all "forget"
+the device, which fails toward asking for MFA again — never toward skipping
+it when it shouldn't.
+
+**Judgement call — no CSV import for the People flow:** the reported pain
+point was "a family with a handful of children" and "several families in a
+row", not bulk-loading an entire school roll at once. The fix lets the
+guided flow add multiple children to one family without restarting, and
+offers a clear "Start another family" action, which addresses both directly
+without adding a CSV parser, validation UI, and partial-failure handling
+for a bulk-import use case that wasn't actually reported. Worth
+reconsidering only if onboarding an entire year group's worth of families
+at once turns out to be a real, recurring need.
+
 ## Deliberately not built yet
 
 - Admin management of staff/meeting-types/families from `/staff` (only the
