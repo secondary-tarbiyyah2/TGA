@@ -6,7 +6,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { MfaGate } from "./MfaGate";
 import { AdminStaffPanel } from "./AdminStaffPanel";
 
-type StaffRow = { id: string; display_name: string; role_title: string; teams_meeting_url: string | null };
+type StaffRow = { id: string; display_name: string; role_title: string; teams_meeting_url: string | null; bookable?: boolean };
 type BookingRow = {
   id: string; starts_at: string; ends_at: string; status: string;
   contact_name: string | null; contact_email: string | null; notes: string | null;
@@ -199,6 +199,8 @@ function Dashboard({ session }: { session: Session }) {
   const [rules, setRules] = useState<AvailabilityRule[]>([]);
   const [teamsUrl, setTeamsUrl] = useState("");
   const [savingTeamsUrl, setSavingTeamsUrl] = useState(false);
+  const [savingBookable, setSavingBookable] = useState(false);
+  const [bookableError, setBookableError] = useState<string | null>(null);
   const [profileRole, setProfileRole] = useState<string | null>(null);
   const [mustChangePassword, setMustChangePassword] = useState<boolean | null>(null);
 
@@ -218,7 +220,7 @@ function Dashboard({ session }: { session: Session }) {
     if (!supabase) return;
     supabase
       .from("staff_members")
-      .select("id, display_name, role_title, teams_meeting_url")
+      .select("id, display_name, role_title, teams_meeting_url, bookable")
       .eq("profile_id", session.user.id)
       .single()
       .then(({ data }) => {
@@ -251,6 +253,22 @@ function Dashboard({ session }: { session: Session }) {
     setSavingTeamsUrl(true);
     await supabase.from("staff_members").update({ teams_meeting_url: teamsUrl }).eq("id", staff.id);
     setSavingTeamsUrl(false);
+  }
+
+  // The public booking page only lists staff whose `bookable` flag is true
+  // (the bookable_staff view). Nothing else in the app ever sets it, so
+  // without this switch saved availability is never shown to visitors.
+  async function toggleBookable(next: boolean) {
+    if (!supabase || !staff) return;
+    setBookableError(null);
+    setSavingBookable(true);
+    const { error } = await supabase.from("staff_members").update({ bookable: next }).eq("id", staff.id);
+    setSavingBookable(false);
+    if (error) {
+      setBookableError("Couldn't update this setting. Please try again, or ask an admin.");
+      return;
+    }
+    setStaff({ ...staff, bookable: next });
   }
 
   async function addRule(e: React.FormEvent<HTMLFormElement>) {
@@ -361,6 +379,29 @@ function Dashboard({ session }: { session: Session }) {
 
       <section>
         <h2 className="font-serif text-lg font-semibold text-ink">Weekly availability (admissions calls)</h2>
+        <div className="mt-3 max-w-xl rounded-lg border border-gold-light/50 bg-white p-4">
+          <label className="flex items-start gap-3 text-sm text-ink">
+            <input
+              type="checkbox"
+              checked={staff.bookable === true}
+              disabled={savingBookable}
+              onChange={(e) => toggleBookable(e.target.checked)}
+              className="mt-1"
+            />
+            <span>
+              <span className="font-medium">Show me on the public admissions booking page</span>
+              <span className="mt-1 block text-ink/60">
+                Visitors can only book calls with you while this is on. Your weekly availability below is saved either way.
+              </span>
+            </span>
+          </label>
+          {staff.bookable !== true && rules.length > 0 && (
+            <p role="status" className="mt-3 text-sm text-red-700">
+              Your availability is saved, but visitors can&apos;t see or book it until you turn this on.
+            </p>
+          )}
+          {bookableError && <p role="alert" className="mt-3 text-sm text-red-700">{bookableError}</p>}
+        </div>
         <ul className="mt-3 space-y-2">
           {rules.map((r) => (
             <li key={r.id} className="flex items-center justify-between rounded-lg border border-gold-light/50 bg-white px-4 py-2 text-sm">

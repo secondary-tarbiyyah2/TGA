@@ -21,8 +21,14 @@ function localTz(): string {
   }
 }
 
+// YYYY-MM-DD from the date's LOCAL parts. (toISOString() converts to UTC, which
+// shifts midnight-local dates back a day for anyone ahead of UTC — e.g. UK
+// summer time — so month ranges and day cells drifted by one day.)
 function fmtDateKey(d: Date): string {
-  return d.toISOString().slice(0, 10);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
 }
 
 export function BookingCalendar() {
@@ -36,6 +42,11 @@ export function BookingCalendar() {
   });
   const [slotsByDate, setSlotsByDate] = useState<Record<string, Slot[]>>({});
   const [loadingSlots, setLoadingSlots] = useState(false);
+  // "loading" until the bookable-staff query returns. "none" means the query
+  // worked but no staff member is marked bookable; "error" means it failed.
+  // Both must be shown to the visitor — never a silently empty calendar.
+  const [staffStatus, setStaffStatus] = useState<"loading" | "ready" | "none" | "error">("loading");
+  const [slotsError, setSlotsError] = useState(false);
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null);
   const [status, setStatus] = useState<Status>("idle");
@@ -49,10 +60,17 @@ export function BookingCalendar() {
     supabase
       .from("bookable_staff")
       .select("id, display_name, role_title")
-      .then(({ data }) => {
+      .then(({ data, error }) => {
+        if (error) {
+          setStaffStatus("error");
+          return;
+        }
         if (data && data.length) {
           setStaffList(data);
           setStaffId(data[0].id);
+          setStaffStatus("ready");
+        } else {
+          setStaffStatus("none");
         }
       });
   }, []);
@@ -63,11 +81,15 @@ export function BookingCalendar() {
     if (!supabase) return;
     // eslint-disable-next-line react-hooks/set-state-in-effect -- kicks off an async fetch triggered by staff/month changing
     setLoadingSlots(true);
-    const from = fmtDateKey(monthCursor);
-    const to = fmtDateKey(new Date(monthCursor.getFullYear(), monthCursor.getMonth() + 1, 0));
+    // The RPC takes UK dates but days are shown in the visitor's timezone, so
+    // ask for one extra day either side; otherwise slots near a month edge
+    // (e.g. for visitors in Australia) fall outside the requested range.
+    const from = fmtDateKey(new Date(monthCursor.getFullYear(), monthCursor.getMonth(), 0));
+    const to = fmtDateKey(new Date(monthCursor.getFullYear(), monthCursor.getMonth() + 1, 1));
     supabase
       .rpc("get_open_slots", { p_meeting_type: "admissions", p_staff_id: staffId, p_from: from, p_to: to })
-      .then(({ data }: { data: Slot[] | null }) => {
+      .then(({ data, error }: { data: Slot[] | null; error: unknown }) => {
+        setSlotsError(Boolean(error));
         const grouped: Record<string, Slot[]> = {};
         for (const slot of data || []) {
           const key = new Date(slot.slot_start).toLocaleDateString("en-CA", { timeZone: tz }); // YYYY-MM-DD in local tz
@@ -149,6 +171,21 @@ export function BookingCalendar() {
     );
   }
 
+  if (staffStatus === "none" || staffStatus === "error") {
+    return (
+      <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center text-sm text-ink/70">
+        <p className="font-medium text-ink">
+          {staffStatus === "error" ? "We couldn't load available times just now." : "Online booking isn't open yet."}
+        </p>
+        <p className="mt-2">
+          Please email{" "}
+          <a href="mailto:globalacademy@tarbiyyah.co.uk" className="text-gold-700 underline">globalacademy@tarbiyyah.co.uk</a>{" "}
+          or <a href="/contact/" className="text-gold-700 underline">leave your details</a> and our admissions team will arrange a time with you.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
@@ -200,6 +237,14 @@ export function BookingCalendar() {
           })}
         </div>
         {loadingSlots && <p className="mt-3 text-xs text-ink/50">Loading availability…</p>}
+        {slotsError && !loadingSlots && (
+          <p role="alert" className="mt-3 text-xs text-red-700">
+            We couldn&apos;t load times for this month. Please try again, or email globalacademy@tarbiyyah.co.uk.
+          </p>
+        )}
+        {!slotsError && !loadingSlots && staffStatus === "ready" && Object.keys(slotsByDate).length === 0 && (
+          <p className="mt-3 text-xs text-ink/60">No times available this month. Try the next month, or email globalacademy@tarbiyyah.co.uk.</p>
+        )}
         <p className="mt-3 text-xs text-ink/50">Times shown in your local timezone ({tz}), UK time alongside.</p>
       </div>
 
