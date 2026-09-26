@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Redirecting…</title>
+</head>
+<body>
+<p>This page has moved to <a id="dest" href="https://learn.globalacademy.tarbiyyah.co.uk/">the /learn portal's new address</a>.</p>
+<script>
+  // /learn used to be a path on this domain; it now lives on its own
+  // subdomain (learn.globalacademy.tarbiyyah.co.uk) for real browser-origin
+  // isolation — see SETUP.md, "Moving /learn to its own subdomain". This
+  // page exists ONLY so that links already sent before the move (invite
+  // emails, password-reset emails, bookmarks, search results) keep working
+  // instead of 404ing once the /learn folder is removed from this domain
+  // (see public/.htaccess's fallback rewrite to /learn/index.html).
+  //
+  // Deliberately a client-side redirect, not a server-side 301: Supabase's
+  // invite/recovery links carry the access token in the URL FRAGMENT
+  // (#access_token=...), which browsers do not send to the server and do
+  // not reliably re-attach across an Apache RewriteRule redirect. Reading
+  // window.location.hash here and copying it onto the destination URL
+  // ourselves removes any doubt — an already-sent invite/reset link must
+  // not silently break and lock someone out.
+  (function () {
+    var path = window.location.pathname.replace(/^\/learn/, "") || "/";
+    var dest = "https://learn.globalacademy.tarbiyyah.co.uk" + path + window.location.search + window.location.hash;
+    document.getElementById("dest").href = dest;
+    window.location.replace(dest);
+  })();
+</script>
+</body>
+</html>

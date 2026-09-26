@@ -1,0 +1,51 @@
+# Document root for learn.globalacademy.tarbiyyah.co.uk — the ENTIRE
+# authenticated /learn portal, promoted from a path under the main domain to
+# its own subdomain for real browser-origin isolation (see SETUP.md, "Moving
+# /learn to its own subdomain", and the top-level public/.htaccess). Built
+# by scripts/split-static-export.mjs from the same `next build` output as
+# the main site; deployed by the second FTP step in deploy-site.yml.
+#
+# Unlike the main domain's .htaccess, EVERYTHING here is the portal, so the
+# header block below applies unconditionally (no REQUEST_URI path match
+# needed — contrast with public/.htaccess's old `<If ... =~ m#^/learn#>`
+# gate, which no longer exists because there's no longer a public sibling
+# path to gate against on this origin).
+
+DirectoryIndex index.html
+
+# No directory browsing.
+Options -Indexes
+
+RewriteEngine On
+RewriteOptions IgnoreInherit
+
+# Never cached (by any proxy/browser between here and the visitor — there is
+# no CDN in front of this host), never indexed, and locked to a CSP with no
+# third-party origins at all (no analytics/chat-widget script tags exist
+# anywhere under this subdomain, and this header means one couldn't silently
+# be added later without it breaking — script-src stays 'self' only, so an
+# injected <script src="...evil"> still can't load).
+#
+# 'self' now means THIS subdomain, not a path under the main domain — the
+# whole point of this migration — so no directive value needed to change.
+#
+# script-src needs 'unsafe-inline' specifically: Next.js's App Router emits
+# inline <script> tags in every static page to stream the RSC payload for
+# hydration (self.__next_f.push(...)) — this exists in the built HTML
+# itself, not something added later, and without it React never finishes
+# hydrating. A per-request nonce isn't possible here (this is a static
+# export with no server to mint one per request), and a hash-allowlist would
+# need to be recomputed and kept in sync with every single build's inline-
+# script content — 'unsafe-inline' is the honest trade-off: same-origin-only
+# script loading is still enforced, but an XSS that got attacker content
+# into the page could now execute inline.
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-store"
+  Header set X-Robots-Tag "noindex, nofollow"
+  Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://*.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+</IfModule>
+
+# Don't expose dotfiles (e.g. this .htaccess) to the web.
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>

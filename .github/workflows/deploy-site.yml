@@ -1,22 +1,45 @@
 name: Deploy site
 
 # Builds the static export (output: "export" in next.config.ts — plain
-# HTML/CSS/JS, no Node server needed) and uploads it over FTP to the box
-# hosting https://globalacademy.tarbiyyah.co.uk/. This is why the site can
-# live on a 2GB shared host alongside WordPress: there's nothing running,
-# just files.
+# HTML/CSS/JS, no Node server needed), splits it in two
+# (scripts/split-static-export.mjs — see its header comment for why), and
+# uploads each half over FTP to its own document root: the marketing site to
+# https://globalacademy.tarbiyyah.co.uk/ and the authenticated /learn portal
+# to its own subdomain, https://learn.globalacademy.tarbiyyah.co.uk/ — kept
+# on a separate origin so an XSS bug on the public site can never read the
+# portal's session/localStorage (see public/.htaccess and SETUP.md, "Moving
+# /learn to its own subdomain"). This is why the site can live on a 2GB
+# shared host alongside WordPress: there's nothing running, just files.
 #
-# Requires three repo secrets (Settings > Secrets and variables > Actions):
+# Requires three repo secrets for the main site (Settings > Secrets and
+# variables > Actions):
 #   FTP_HOST      — e.g. ftp.tarbiyyah.co.uk
 #   FTP_USERNAME  — the FTP account's login, e.g. tga-deploy@globalacademy.tarbiyyah.co.uk
 #   FTP_PASSWORD  — that FTP account's password
 #
+# ...and one more for the /learn subdomain's document root (see SETUP.md —
+# this needs the subdomain to already exist in cPanel/hosting, a manual step
+# only the site owner can do):
+#   FTP_LEARN_REMOTE_DIR — the /learn subdomain's document root, as a path
+#     relative to the FTP account's home (e.g.
+#     "public_html/learn.globalacademy/"). No default — the deploy step
+#     below is skipped entirely (not aimed at a guessed path) until this is
+#     set, so the main-site deploy keeps working on its own in the meantime.
+#
 # Optional repo variable:
-#   FTP_REMOTE_DIR — where in the FTP account to upload to. If the FTP
-#     account's own home directory was set to the site's document root when
-#     it was created, leave this unset (defaults to "./"). Otherwise set it
-#     to the doc root's path relative to the FTP account's home, e.g.
-#     "public_html/globalacademy/".
+#   FTP_REMOTE_DIR — where in the FTP account to upload the MAIN site to. If
+#     the FTP account's own home directory was set to the site's document
+#     root when it was created, leave this unset (defaults to "./").
+#     Otherwise set it to the doc root's path relative to the FTP account's
+#     home, e.g. "public_html/globalacademy/".
+#   LEARN_SITE_URL — the /learn subdomain's public origin, e.g.
+#     "https://learn.globalacademy.tarbiyyah.co.uk". Defaults to that same
+#     value if unset. This is the ONE place that URL is configured for CI —
+#     it's baked into the frontend build (NEXT_PUBLIC_LEARN_ORIGIN, see
+#     src/lib/learn/origin.ts) and also feeds deploy-supabase.yml's Auth
+#     config and Edge Function secrets, so every marketing-site link into
+#     the portal and every server-generated invite/reset link point at the
+#     same origin.
 #
 # Also fetches the Supabase URL/anon key directly from the Supabase API at
 # build time (using the same SUPABASE_ACCESS_TOKEN secret as the backend
@@ -113,6 +136,7 @@ jobs:
           NEXT_PUBLIC_ADMISSIONS_TEAMS_URL: ${{ vars.ADMISSIONS_TEAMS_URL || 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2UwM2U2NzYtNjhkMS00ZDRkLTlmODctNTZiMWZmMWFiMzcw%40thread.v2/0?context=%7b%22Tid%22%3a%22a0b25b15-bb34-4892-a564-6c8277ae3db2%22%2c%22Oid%22%3a%223b6d0aa6-0912-44cc-b592-f83506cd0d80%22%7d' }}
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
+          NEXT_PUBLIC_LEARN_ORIGIN: ${{ vars.LEARN_SITE_URL || 'https://learn.globalacademy.tarbiyyah.co.uk' }}
         run: npm run build
 
       # Sanity Studio (the admin panel at /studio) is a separate static SPA
@@ -125,7 +149,7 @@ jobs:
           NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
         run: npm run sanity:build
 
-      - name: Deploy to FTP
+      - name: Deploy main site to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
@@ -133,9 +157,29 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
-          local-dir: ./out/
+          local-dir: ./out-main/
           server-dir: ${{ vars.FTP_REMOTE_DIR || './' }}
           # Never delete files on the server that aren't in this build —
           # protects anything placed there outside of this pipeline (e.g.
           # register.config.php, which isn't committed to git — see README).
+          dangerous-clean-slate: false
+
+      # Skipped until FTP_LEARN_REMOTE_DIR is set — see this workflow's top
+      # comment and SETUP.md, "Moving /learn to its own subdomain". The
+      # subdomain itself has to exist in hosting first (manual, cPanel/DNS —
+      # not something this pipeline can do), so this step deploys nowhere
+      # near a guessed path until that's confirmed and the secret is added.
+      - name: Deploy /learn portal to FTP (subdomain)
+        if: ${{ secrets.FTP_LEARN_REMOTE_DIR != '' }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./out-learn/
+          server-dir: ${{ secrets.FTP_LEARN_REMOTE_DIR }}
+          # Same reasoning as the main site's step above — never wipe
+          # anything placed there outside this pipeline.
           dangerous-clean-slate: false
