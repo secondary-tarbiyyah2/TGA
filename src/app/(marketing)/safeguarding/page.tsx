@@ -19,19 +19,20 @@ export default async function SafeguardingPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container className="max-w-2xl">
           <Kicker>Safeguarding</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Keeping every child safe.</h1>
           <p className="mt-6 text-lg text-ink/75">
             The safety and wellbeing of every child is our first responsibility. Tarbiyyah Global Academy follows the
-            same safeguarding standards as Tarbiyyah Primary and Tarbiyyah Secondary, including vetted, DBS-checked
-            staff, a named Designated Safeguarding Lead, and clear reporting routes for any concern.
+            same safeguarding standards as Tarbiyyah Primary, Tarbiyyah Secondary and Tarbiyyah Al-Banaat, including
+            vetted, DBS-checked staff, a named Designated Safeguarding Lead, and clear reporting routes for any
+            concern.
           </p>
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container className="max-w-2xl space-y-12">
           {(settings.safeguardingLeadName || settings.safeguardingLeadContact) && (
             <div>

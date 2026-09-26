@@ -24,7 +24,7 @@ export default async function AboutPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>About Us</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">
@@ -37,7 +37,7 @@ export default async function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container className="grid gap-12 lg:grid-cols-2">
           <div>
             <Kicker>Our mission</Kicker>
@@ -59,7 +59,7 @@ export default async function AboutPage() {
         </Container>
       </section>
 
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>Our character framework — RECIPE</Kicker>
           <h2 className="font-serif text-3xl font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
@@ -75,14 +75,14 @@ export default async function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <Kicker>The Tarbiyyah family</Kicker>
-            <h2 className="font-serif text-3xl font-semibold text-ink">{content.familyHeading || "10+ years, two established schools."}</h2>
+            <h2 className="font-serif text-3xl font-semibold text-ink">{content.familyHeading || "10+ years, three established schools."}</h2>
             <p className="mt-4 text-ink/75">
               {content.familyBody ||
-                "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools — Tarbiyyah Primary and Tarbiyyah Secondary School for Boys, both operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world."}
+                "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools — Tarbiyyah Primary, Tarbiyyah Secondary School for Boys, and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world."}
             </p>
           </div>
           <div>
