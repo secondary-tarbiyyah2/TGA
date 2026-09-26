@@ -13,7 +13,7 @@ import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
-import { useLearnSession, useLearnSignOut } from "@/lib/learn/session";
+import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 
@@ -112,7 +112,6 @@ function ChildCard({ child }: { child: Child }) {
 
 function FamilyContent() {
   const { session } = useLearnSession();
-  const signOut = useLearnSignOut();
   const supabase = getSupabaseClient();
   const [children, setChildren] = useState<Child[] | null>(null);
   const [newChildName, setNewChildName] = useState("");
@@ -164,9 +163,6 @@ function FamilyContent() {
           </div>
           <div className="print:hidden flex items-center gap-2">
             <ReportConcernLink />
-            <button type="button" onClick={signOut} className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-              Sign out
-            </button>
           </div>
         </div>
 

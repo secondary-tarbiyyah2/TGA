@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
-import { useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type ClassOption = { id: string; name: string };
@@ -12,7 +11,6 @@ type Comment = { id: string; text: string };
 type Report = { id: string; status: string; overall_comment: string | null };
 
 function TeachReportsContent() {
-  const signOut = useLearnSignOut();
   const supabase = getSupabaseClient();
   const [classes, setClasses] = useState<ClassOption[]>([]);
   const [classId, setClassId] = useState("");
@@ -94,9 +92,6 @@ function TeachReportsContent() {
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <div className="flex items-center justify-between">
           <h1 className="font-serif text-h2 font-semibold text-ink">Term reports</h1>
-          <button type="button" onClick={signOut} className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-            Sign out
-          </button>
         </div>
         <div className="mt-4 flex flex-wrap gap-3">
           <select value={classId} onChange={(e) => setClassId(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">

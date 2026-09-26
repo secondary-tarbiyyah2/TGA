@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
-import { useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type ClassOption = { id: string; name: string };
@@ -158,7 +157,6 @@ function HomeworkCard({ hw }: { hw: Homework }) {
 }
 
 function TeachHomeworkContent() {
-  const signOut = useLearnSignOut();
   const supabase = getSupabaseClient();
   const [classes, setClasses] = useState<ClassOption[]>([]);
   const [homework, setHomework] = useState<Homework[] | null>(null);
@@ -226,9 +224,6 @@ function TeachHomeworkContent() {
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <div className="flex items-center justify-between">
           <h1 className="font-serif text-h2 font-semibold text-ink">Homework</h1>
-          <button type="button" onClick={signOut} className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-            Sign out
-          </button>
         </div>
       </div>
 

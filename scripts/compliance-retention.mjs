@@ -74,6 +74,22 @@ const summary = [];
   }
 }
 
+// trusted_devices ("remember this device" MFA-skip records, 0017): purge
+// rows more than a day past their own expiry. The RPC re-derives nothing
+// from the caller (it's a plain service-role delete via SQL function) —
+// unlike trust_this_device/is_device_trusted, which run as the signed-in
+// user, this one only ever runs as the service role from this job.
+{
+  const cutoff = new Date(Date.now() - 86400000).toISOString();
+  const { error, count } = await supabase.from("trusted_devices").delete({ count: "exact" }).lt("expires_at", cutoff);
+  if (error) {
+    console.error("trusted_devices cleanup failed:", error.message);
+  } else {
+    await logRun("Trusted device records", "delete", count || 0, null);
+    summary.push(`Trusted device records: deleted ${count || 0} row(s) expired more than a day ago.`);
+  }
+}
+
 console.log(summary.join("\n") || "Nothing to report.");
 if (process.env.GITHUB_STEP_SUMMARY) {
   await import("node:fs/promises").then((fs) =>

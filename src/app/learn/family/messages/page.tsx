@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { MessageThread } from "@/components/learn/MessageThread";
-import { useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type Child = { id: string; name: string };
@@ -11,7 +10,6 @@ type Teacher = { user_id: string; name: string; class_name: string };
 type Thread = { id: string; teacher_id: string; child_id: string };
 
 function FamilyMessagesContent() {
-  const signOut = useLearnSignOut();
   const supabase = getSupabaseClient();
   const [children, setChildren] = useState<Child[]>([]);
   const [teachers, setTeachers] = useState<Teacher[]>([]);
@@ -83,9 +81,6 @@ function FamilyMessagesContent() {
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <div className="flex items-center justify-between">
         <h1 className="font-serif text-h2 font-semibold text-ink">Messages</h1>
-        <button type="button" onClick={signOut} className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-          Sign out
-        </button>
       </div>
       <p className="mt-1 text-sm text-ink/60">Message your child&apos;s teachers directly. Staff review messages for safeguarding as part of normal practice.</p>
 

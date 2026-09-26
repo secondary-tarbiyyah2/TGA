@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PrintButton } from "@/components/learn/PrintButton";
-import { useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type Report = {
@@ -16,7 +15,6 @@ type Report = {
 };
 
 function StudentReportsContent() {
-  const signOut = useLearnSignOut();
   const supabase = getSupabaseClient();
   const [reports, setReports] = useState<Report[] | null>(null);
 
@@ -36,9 +34,6 @@ function StudentReportsContent() {
           <h1 className="font-serif text-h2 font-semibold text-ink">Term reports</h1>
           <div className="print:hidden flex items-center gap-2">
             <PrintButton />
-            <button type="button" onClick={signOut} className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-              Sign out
-            </button>
           </div>
         </div>
       </div>

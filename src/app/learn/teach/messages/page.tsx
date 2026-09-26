@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { MessageThread } from "@/components/learn/MessageThread";
-import { useLearnSignOut } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type Parent = { parent_user_id: string; name: string; child_id: string; child_name: string };
@@ -11,7 +10,6 @@ type Staff = { id: string; name: string };
 type Thread = { id: string; kind: string; parent_id: string | null; child_id: string | null; staff_a_id: string | null; staff_b_id: string | null };
 
 function TeachMessagesContent() {
-  const signOut = useLearnSignOut();
   const supabase = getSupabaseClient();
   const [userId, setUserId] = useState<string | null>(null);
   const [parents, setParents] = useState<Parent[]>([]);
@@ -93,9 +91,6 @@ function TeachMessagesContent() {
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <div className="flex items-center justify-between">
         <h1 className="font-serif text-h2 font-semibold text-ink">Messages</h1>
-        <button type="button" onClick={signOut} className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-          Sign out
-        </button>
       </div>
 
       <div className="mt-4 grid gap-6 md:grid-cols-[260px_1fr]">

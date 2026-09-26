@@ -12,7 +12,7 @@ import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
-import { useLearnSession, useLearnSignOut } from "@/lib/learn/session";
+import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 
@@ -31,7 +31,6 @@ function isYoungerYearGroup(yearGroupName: string | undefined): boolean {
 
 function StudentContent() {
   const { session } = useLearnSession();
-  const signOut = useLearnSignOut();
   const supabase = getSupabaseClient();
   const [slots, setSlots] = useState<TimetableSlot[] | null>(null);
   const [yearGroupName, setYearGroupName] = useState<string | undefined>(undefined);
@@ -90,9 +89,6 @@ function StudentContent() {
           <div className="print:hidden flex items-center gap-2">
             <PrintButton />
             <ReportConcernLink />
-            <button type="button" onClick={signOut} className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-              Sign out
-            </button>
           </div>
         </div>
 

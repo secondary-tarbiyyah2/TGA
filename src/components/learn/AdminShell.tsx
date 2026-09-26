@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useLearnSignOut } from "@/lib/learn/session";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 
 const NAV = [
@@ -24,7 +23,6 @@ const NAV = [
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const signOut = useLearnSignOut();
 
   return (
     <div className="grid gap-8 md:grid-cols-[220px_1fr]">
@@ -43,9 +41,10 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         <div className="mt-4">
           <ReportConcernLink />
         </div>
-        <button type="button" onClick={signOut} className="mt-2 block w-full rounded-lg px-3 py-2 text-left text-sm text-ink/50 hover:bg-cream">
-          Sign out
-        </button>
+        {/* Account settings and sign out live in the top bar's account menu
+            now (src/app/learn/layout.tsx + LearnAccountMenu.tsx) — one
+            consistent place across every /learn role area, not a
+            sidebar-only, easy-to-miss text button. */}
       </nav>
       <div>{children}</div>
     </div>
