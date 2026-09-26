@@ -149,6 +149,18 @@ jobs:
           NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
         run: npm run sanity:build
 
+      # Runs explicitly here (NOT as an npm `postbuild` hook on the Next.js
+      # build above) specifically because it must happen AFTER Sanity Studio
+      # is built into out/studio — a postbuild hook fires the moment `next
+      # build` itself finishes, before this later "Build Sanity Studio" step
+      # even runs, which would silently ship out-main/ with no /studio at
+      # all. Splits the complete out/ (marketing pages + studio) into
+      # out-main/, and out/learn/ (promoted to root) into out-learn/ — see
+      # scripts/split-static-export.mjs and SETUP.md, "Moving /learn to its
+      # own subdomain".
+      - name: Split static export for the /learn subdomain
+        run: npm run split-static-export
+
       - name: Deploy main site to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
