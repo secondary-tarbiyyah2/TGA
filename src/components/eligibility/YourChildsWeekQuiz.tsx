@@ -302,7 +302,10 @@ export function YourChildsWeekQuiz({
                   )}
                   <button
                     type="button"
-                    onClick={() => setAnswer("timezone", timezone)}
+                    onClick={() => {
+                      setAnswer("timezone", timezone);
+                      advance();
+                    }}
                     disabled={!timezone}
                     className="mt-4 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-50"
                   >

@@ -62,6 +62,16 @@ body {
   line-height: 1.65;
 }
 
+/* Tailwind's preflight resets <button> to `cursor: default` (matching the
+   native OS default) rather than `pointer` — every clickable button on
+   this site (option cards, CTAs, admin controls) needs the hand cursor
+   back, since they all visually read as clickable. Disabled buttons keep
+   the default "not clickable" cursor. */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
 /* Fluid type scale (see DESIGN.md spacing/layout rules). Spacing itself uses
    Tailwind's own numeric utilities directly (p-6=24px, p-8=32px, p-12=48px,
    p-16=64px, p-24=96px…) rather than a parallel token set, since that scale
