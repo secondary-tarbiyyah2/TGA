@@ -92,7 +92,7 @@ begin
   end if;
 
   insert into public.trusted_devices (user_id, device_token_hash, label, expires_at, last_used_at)
-  values (auth.uid(), encode(digest(p_token, 'sha256'), 'hex'), nullif(trim(coalesce(p_label, '')), ''), now() + make_interval(days => greatest(1, least(p_days, 90))), now())
+  values (auth.uid(), encode(extensions.digest(p_token, 'sha256'), 'hex'), nullif(trim(coalesce(p_label, '')), ''), now() + make_interval(days => greatest(1, least(p_days, 90))), now())
   on conflict (user_id, device_token_hash)
   do update set expires_at = excluded.expires_at, last_used_at = now(), label = coalesce(excluded.label, public.trusted_devices.label)
   returning id into row_id;
@@ -115,7 +115,7 @@ set search_path = public
 as $$
   delete from public.trusted_devices
   where user_id = auth.uid()
-    and device_token_hash = encode(digest(coalesce(p_token, ''), 'sha256'), 'hex');
+    and device_token_hash = encode(extensions.digest(coalesce(p_token, ''), 'sha256'), 'hex');
 $$;
 
 grant execute on function public.revoke_device_by_token(text) to authenticated;
@@ -142,7 +142,7 @@ begin
   update public.trusted_devices
     set last_used_at = now()
     where user_id = auth.uid()
-      and device_token_hash = encode(digest(p_token, 'sha256'), 'hex')
+      and device_token_hash = encode(extensions.digest(p_token, 'sha256'), 'hex')
       and expires_at > now()
     returning id into matched_id;
 

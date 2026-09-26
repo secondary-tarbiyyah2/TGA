@@ -5,7 +5,7 @@
 -- validates or revokes another user's row, and the raw hash column is
 -- never selectable by a client even for the owner's own row.
 begin;
-select plan(11);
+select plan(12);
 
 insert into auth.users (id, email) values
   ('e0000000-0000-0000-0000-000000000001', 'alice@example.com'),
@@ -55,6 +55,14 @@ select is(
   'a non-matching token is never accepted as trusted'
 );
 
+-- Captured while still impersonating alice (RLS's "read own" policy means
+-- capturing this after switching to bob's claims would silently return
+-- zero rows, not an error — the subquery below would just pass NULL to
+-- revoke_trusted_device, and every assertion using it would pass
+-- vacuously without actually testing anything).
+create temporary table _test_alice_device as
+  select id from public.trusted_devices where user_id = 'e0000000-0000-0000-0000-000000000001' limit 1;
+
 -- Bob: cannot see Alice's row, and Alice's token never validates for Bob's
 -- session even though it's a live, correctly-hashed row (just owned by
 -- someone else).
@@ -70,13 +78,7 @@ select is(
   'alice''s valid device token is never accepted as trusted when the caller is bob'
 );
 
--- Bob cannot revoke Alice's device by guessing/knowing its id. Captured via
--- a plain temp table rather than a psql \gset meta-command, since these
--- tests run through pg_prove/pgTAP rather than an interactive psql session.
-create temporary table _test_alice_device as
-  select id from public.trusted_devices where user_id = 'e0000000-0000-0000-0000-000000000001' limit 1;
-
-set local "request.jwt.claims" to '{"sub": "e0000000-0000-0000-0000-000000000002"}';
+-- Bob cannot revoke Alice's device by guessing/knowing its id.
 select lives_ok(
   $$ select public.revoke_trusted_device((select id from _test_alice_device)) $$,
   'revoke_trusted_device does not error even for a foreign id (it silently no-ops)'
