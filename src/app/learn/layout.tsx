@@ -24,7 +24,8 @@ import { LearnAccountMenu } from "@/components/learn/LearnAccountMenu";
  */
 export default function LearnLayout({ children }: { children: React.ReactNode }) {
   const { session, roles, rolesLoaded } = useLearnSession();
-  const signedIn = !!(session && session !== "loading" && rolesLoaded && roles.length > 0);
+  const activeSession = session && session !== "loading" ? session : null;
+  const signedIn = !!(activeSession && rolesLoaded && roles.length > 0);
   const homeHref = signedIn ? dashboardPathForRole(roles[0].role) : "/learn";
 
   return (
@@ -37,7 +38,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
               Learn
             </span>
           </Link>
-          {signedIn && session !== "loading" && session && <LearnAccountMenu session={session} roles={roles} />}
+          {signedIn && activeSession && <LearnAccountMenu session={activeSession} roles={roles} />}
         </div>
       </header>
       <main id="main" className="flex-1 bg-cream/30">

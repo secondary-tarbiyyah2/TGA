@@ -264,12 +264,12 @@ function TrustedDevices() {
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Trusted devices</h2>
       <p className="mt-1 text-sm text-ink/60">
-        A device you confirm MFA on is remembered for 30 days, so you're not asked for a code on every sign-in from it. It
+        A device you confirm MFA on is remembered for 30 days, so you&apos;re not asked for a code on every sign-in from it. It
         still expires automatically, and you can forget any device early here.
       </p>
 
       {rows === null && <p className="mt-3 text-sm text-ink/60">Loading…</p>}
-      {rows && rows.length === 0 && <p className="mt-3 text-sm text-ink/60">No devices are currently remembered — you'll be asked for a code at your next sign-in.</p>}
+      {rows && rows.length === 0 && <p className="mt-3 text-sm text-ink/60">No devices are currently remembered — you&apos;ll be asked for a code at your next sign-in.</p>}
       {rows && rows.length > 0 && (
         <ul className="mt-4 space-y-2">
           {rows.map((r) => (
