@@ -17,7 +17,7 @@ export default async function TeamPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>Meet the Team</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">The people teaching your child.</h1>
@@ -28,7 +28,7 @@ export default async function TeamPage() {
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {staff.map((s) => (
             <div key={s._id} className="rounded-2xl border border-gold-light/50 bg-white p-6 text-center">

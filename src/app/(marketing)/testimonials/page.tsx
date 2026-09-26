@@ -16,14 +16,14 @@ export default async function TestimonialsPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>Testimonials</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">What our community says.</h1>
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container className="grid gap-6 sm:grid-cols-2">
           {testimonials.map((t) => (
             <blockquote key={t._id} className="rounded-2xl border border-gold-light/50 bg-white p-6">

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function PastoralCarePage() {
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>Pastoral Care &amp; SEND Support</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Every child known, every child supported.</h1>
@@ -22,7 +22,7 @@ export default function PastoralCarePage() {
         </Container>
       </section>
 
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>SEND support</Kicker>
           <h2 className="font-serif text-2xl font-semibold text-ink">Support for a range of additional needs.</h2>

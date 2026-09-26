@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function FlexibleLearningPage() {
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>Flexible Learning Options</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">A timetable that fits your family.</h1>
@@ -22,7 +22,7 @@ export default function FlexibleLearningPage() {
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container className="grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
             <h2 className="font-serif text-xl font-semibold text-ink">Standard: Monday – Friday</h2>
@@ -41,7 +41,7 @@ export default function FlexibleLearningPage() {
         </Container>
       </section>
 
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container className="max-w-2xl">
           <Kicker>Our screen-time philosophy</Kicker>
           <h2 className="font-serif text-2xl font-semibold text-ink">Live lessons, not endless screen time.</h2>

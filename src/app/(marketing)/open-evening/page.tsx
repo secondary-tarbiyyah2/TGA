@@ -12,7 +12,7 @@ export default async function OpenEveningPage() {
   const settings = await getSiteSettings();
 
   return (
-    <section className="py-16">
+    <section className="section-pad">
       <Container className="max-w-2xl">
         <Kicker>Virtual Open Evening</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Meet us online.</h1>

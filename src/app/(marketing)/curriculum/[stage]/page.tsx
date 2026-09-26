@@ -23,7 +23,7 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
 
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>{ks.title}</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">{ks.range}</h1>
@@ -32,7 +32,7 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container className="grid gap-12 lg:grid-cols-2">
           <div>
             <Kicker>Subjects</Kicker>

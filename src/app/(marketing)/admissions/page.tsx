@@ -21,7 +21,7 @@ export default async function AdmissionsPage() {
   const settings = await getSiteSettings();
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>Admissions</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">How to apply.</h1>
@@ -36,7 +36,7 @@ export default async function AdmissionsPage() {
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <div key={s.title} className="rounded-2xl border border-gold-light/50 bg-white p-6">
@@ -48,7 +48,7 @@ export default async function AdmissionsPage() {
         </Container>
       </section>
 
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl bg-white p-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application fee</p>
@@ -63,7 +63,7 @@ export default async function AdmissionsPage() {
         </Container>
       </section>
 
-      <section className="py-16" id="apply">
+      <section className="section-pad" id="apply">
         <Container className="max-w-2xl">
           <Kicker>Application form</Kicker>
           <h2 className="font-serif text-3xl font-semibold text-ink">Start your child&apos;s application.</h2>

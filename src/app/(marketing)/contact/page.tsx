@@ -14,7 +14,7 @@ export default async function ContactPage() {
   const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
 
   return (
-    <section className="py-16">
+    <section className="section-pad">
       <Container className="grid gap-12 lg:grid-cols-2">
         <div>
           <Kicker>Contact</Kicker>

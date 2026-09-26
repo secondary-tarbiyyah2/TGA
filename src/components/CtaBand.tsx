@@ -13,7 +13,7 @@ export function CtaBand({
   ctaHref?: string;
 }) {
   return (
-    <section className="geo-texture bg-ink-900 py-16 text-cream">
+    <section className="geo-texture bg-ink-900 section-pad text-cream">
       <Container className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
         <div>
           <h2 className="font-serif text-2xl font-semibold text-white sm:text-3xl">{heading}</h2>

@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Cookie Policy" };
 
 export default function CookiePolicyPage() {
   return (
-    <section className="py-16">
+    <section className="section-pad">
       <Container className="max-w-2xl">
         <Kicker>Legal</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink">Cookie Policy</h1>

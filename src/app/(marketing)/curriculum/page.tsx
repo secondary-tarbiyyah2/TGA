@@ -15,7 +15,7 @@ export default async function CurriculumPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>Curriculum</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">
@@ -32,7 +32,7 @@ export default async function CurriculumPage() {
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container>
           <Kicker>Two live-lesson time bands</Kicker>
           <h2 className="font-serif text-2xl font-semibold text-ink">
@@ -51,7 +51,7 @@ export default async function CurriculumPage() {
         </Container>
       </section>
 
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container className="grid gap-6 sm:grid-cols-2">
           {keyStages.map((ks) => (
             <a key={ks.slug} href={`/curriculum/${ks.slug}`} className="rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-gold-500 hover:shadow-md">

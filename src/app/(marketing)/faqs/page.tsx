@@ -13,7 +13,7 @@ export default async function FaqsPage() {
   const faqs = await getFaqEntries();
 
   return (
-    <section className="py-16">
+    <section className="section-pad">
       <Container className="max-w-3xl">
         <Kicker>FAQs</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Frequently asked questions.</h1>

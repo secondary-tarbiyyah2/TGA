@@ -12,7 +12,7 @@ export default async function TermDatesPage() {
   const dates = await getTermDates();
 
   return (
-    <section className="py-16">
+    <section className="section-pad">
       <Container className="max-w-2xl">
         <Kicker>Term Dates</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Term dates &amp; admissions calendar.</h1>

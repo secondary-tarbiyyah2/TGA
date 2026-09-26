@@ -17,7 +17,7 @@ export default async function FeesPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream py-16">
+      <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>Fees &amp; Payment Plans</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Transparent fees, no surprises.</h1>
@@ -38,7 +38,7 @@ export default async function FeesPage() {
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="section-pad">
         <Container>
           <div className="overflow-x-auto rounded-2xl border border-gold-light/50">
             <table className="w-full min-w-[560px] text-left text-sm">

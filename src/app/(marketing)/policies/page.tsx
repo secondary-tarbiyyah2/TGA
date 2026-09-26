@@ -84,7 +84,7 @@ export default async function PoliciesPage() {
   const ungrouped = policies.filter((p) => !p.parentQuestionCategory);
 
   return (
-    <section className="py-16">
+    <section className="section-pad">
       <Container className="max-w-2xl">
         <Kicker>Policies</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">School policies.</h1>

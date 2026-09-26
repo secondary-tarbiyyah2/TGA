@@ -10,7 +10,7 @@ export default async function TermsPage() {
   const contactEmail = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
 
   return (
-    <section className="py-16">
+    <section className="section-pad">
       <Container className="max-w-2xl">
         <Kicker>Legal</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink">Terms of Use</h1>
