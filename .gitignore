@@ -16,6 +16,9 @@
 # next.js
 /.next/
 /out/
+# The two deploy-split document roots (see scripts/split-static-export.mjs)
+/out-main/
+/out-learn/
 
 # production
 /build

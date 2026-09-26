@@ -286,6 +286,83 @@ for a bulk-import use case that wasn't actually reported. Worth
 reconsidering only if onboarding an entire year group's worth of families
 at once turns out to be a real, recurring need.
 
+## Moving `/learn` to its own subdomain — what's needed from you
+
+`/learn` (the authenticated portal — admin/teach/family/student dashboards,
+sign-in) is moving off a path under `globalacademy.tarbiyyah.co.uk` onto its
+own subdomain, `learn.globalacademy.tarbiyyah.co.uk`. This is a security
+change, not a cosmetic one: right now the portal and the public marketing
+site share one browser origin, so an XSS bug anywhere on the public site
+(a comment field, a compromised script, anything) could in principle read
+the portal's session token out of localStorage and act as a signed-in
+user. A separate subdomain is a separate origin — the browser itself then
+refuses that access, with no code on either side able to opt back in.
+
+All the code/config for this is written and pushed to
+`claude/sweet-albattani-e7fav5`, but **it cannot go live until you do one
+thing only you can do**: create the subdomain in hosting. Do this BEFORE
+merging/deploying this branch, in this order:
+
+1. **Create the subdomain and its document root.** In cPanel (or your
+   host's equivalent) → Domains/Subdomains → create
+   `learn.globalacademy.tarbiyyah.co.uk`, pointed at a NEW, separate
+   document root (not the same folder the main site's FTP account
+   already deploys to — it needs its own folder so the two builds
+   (`out-main/` and `out-learn/` — see `scripts/split-static-export.mjs`)
+   don't collide). Note the document root's path relative to your FTP
+   account's home directory; you'll need it in step 2. DNS for a cPanel
+   subdomain is usually created automatically as part of this step; if
+   your DNS is managed elsewhere, add an A/CNAME record for
+   `learn.globalacademy.tarbiyyah.co.uk` pointing at the same server the
+   main site already resolves to.
+2. **Add the `FTP_LEARN_REMOTE_DIR` repo secret** (Settings → Secrets and
+   variables → Actions → New repository secret) with the path from step 1.
+   `deploy-site.yml`'s second FTP step is conditional on this secret being
+   set — until it is, the pipeline keeps deploying only the main site,
+   exactly as before, so there's no risk of a half-broken deploy in the
+   meantime.
+3. **Re-run the deploy.** Push to this branch (or `workflow_dispatch` →
+   "Deploy site") — this builds `out-main/`/`out-learn/` and now deploys
+   both. The FTP account used is the same one already configured
+   (`FTP_HOST`/`FTP_USERNAME`/`FTP_PASSWORD`); it just needs write access to
+   both document roots, which it will if it's the account whose home
+   directory sits above both (typical for a single cPanel hosting account
+   with multiple subdomains). If your FTP account is scoped narrower than
+   that, either widen it or create a second FTP account for the subdomain
+   and use that instead (would need `FTP-Deploy-Action`'s inputs split
+   further — ask if you hit this).
+4. **You do NOT need to touch the Supabase dashboard by hand for the Auth
+   allowlist** — `deploy-supabase.yml`'s "Configure Auth" step already adds
+   `https://learn.globalacademy.tarbiyyah.co.uk/**` to `uri_allow_list`
+   declaratively (alongside the existing main-domain and localhost entries)
+   and runs on every push to `supabase/**`, so it takes effect automatically
+   the next time that workflow runs (or trigger it by hand once via
+   `workflow_dispatch` if you want it live sooner, without waiting for an
+   unrelated Supabase change).
+5. **Optional: override `LEARN_SITE_URL`** (Settings → Secrets and
+   variables → Actions → Variables) only if the portal's real address will
+   ever differ from `https://learn.globalacademy.tarbiyyah.co.uk` — it
+   feeds both the frontend build (`NEXT_PUBLIC_LEARN_ORIGIN`, see
+   `src/lib/learn/origin.ts`) and the Supabase Auth/Edge Function config, so
+   changing it in one place updates every link and redirect together. Leave
+   it unset to use that default.
+
+**What was already sent before this migration.** Real invite and
+password-reset emails went out this session pointing at
+`globalacademy.tarbiyyah.co.uk/learn/login/invite`. Those links keep
+working: `public/.htaccess` falls back any `/learn/*` request on the main
+domain to a small bridge page
+(`deploy/learn-bridge.html`) that reads the link's own URL (including the
+`#access_token=...` fragment Supabase's invite/recovery links carry) and
+redirects the browser to the equivalent address on the new subdomain,
+carrying that fragment over explicitly — this was chosen over a plain
+server-side 301 specifically so an already-sent link can't silently break.
+
+**Do not delete the old `/learn/` bridge folder from the main domain**
+after the subdomain goes live — as long as any invite/reset link sent
+before this migration might still be unused in someone's inbox, that
+bridge is what keeps it working.
+
 ## Deliberately not built yet
 
 - Admin management of staff/meeting-types/families from `/staff` (only the
