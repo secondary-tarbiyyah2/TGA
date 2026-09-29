@@ -35,3 +35,26 @@ jobs:
             head -60 /tmp/body.html
             echo ""
           done
+
+      - name: Check whether /learn's files landed nested inside the main site's own docroot
+        run: |
+          set -uo pipefail
+          # public_html/learn (the real learn.tarbiyyah.co.uk docroot) is
+          # confirmed empty via cPanel File Manager (only the default
+          # cgi-bin folder cPanel auto-creates). If the FTP account used by
+          # deploy-site.yml is chrooted to the MAIN site's own docroot
+          # (public_html/globalacademy.tarbiyyah.co.uk) rather than the
+          # true account root, then FTP_LEARN_REMOTE_DIR=public_html/learn/
+          # would have been created AS A NESTED PATH inside that chroot —
+          # i.e. .../globalacademy.tarbiyyah.co.uk/public_html/learn/ —
+          # which would be reachable over HTTP at this exact nested URL
+          # under the MAIN domain, not the /learn subdomain at all.
+          for path in "/public_html/learn/index.html" "/public_html/learn/.htaccess" "/public_html/"; do
+            echo "=================================================="
+            echo "GET https://globalacademy.tarbiyyah.co.uk${path}?cb=$RANDOM"
+            echo "=================================================="
+            curl -sS -D - -o /tmp/body2.html "https://globalacademy.tarbiyyah.co.uk${path}?cb=$RANDOM"
+            echo "--- body (first 30 lines) ---"
+            head -30 /tmp/body2.html
+            echo ""
+          done
