@@ -22,6 +22,8 @@ jobs:
   research:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - name: Fetch and extract text from each page
         run: |
           set -uo pipefail
@@ -34,27 +36,6 @@ jobs:
             echo "URL: $url"
             echo "=================================================="
             curl -sS -L -A "Mozilla/5.0 (research)" "$url" -o /tmp/page.html || { echo "fetch failed"; continue; }
-            python3 - <<'PYEOF'
-from bs4 import BeautifulSoup
-with open("/tmp/page.html", "r", encoding="utf-8", errors="ignore") as f:
-    soup = BeautifulSoup(f.read(), "lxml")
-for tag in soup(["script", "style", "noscript", "svg"]):
-    tag.decompose()
-# Nav links
-print("--- NAV LINKS ---")
-for a in soup.select("nav a, header a"):
-    text = a.get_text(strip=True)
-    href = a.get("href", "")
-    if text:
-        print(f"{text} -> {href}")
-print()
-print("--- HEADINGS ---")
-for h in soup.find_all(["h1", "h2", "h3"]):
-    print(f"{h.name}: {h.get_text(strip=True)}")
-print()
-print("--- BODY TEXT (first ~4000 chars) ---")
-body_text = soup.get_text(separator=" | ", strip=True)
-print(body_text[:4000])
-PYEOF
+            python3 scripts/extract-page-text.py
             echo ""
           done
