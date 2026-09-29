@@ -35,6 +35,9 @@ jobs:
           ANON=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
           echo "::add-mask::$ANON"
           echo "anon_key=$ANON" >> "$GITHUB_OUTPUT"
+          SERVICE=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          echo "::add-mask::$SERVICE"
+          echo "service_key=$SERVICE" >> "$GITHUB_OUTPUT"
 
       - name: Attempt the exact insert the quiz's submitLead makes
         env:
@@ -80,3 +83,42 @@ jobs:
           curl -sS -i "https://$REF.supabase.co/rest/v1/quiz_config_versions?select=id,status,published_at&status=eq.published" \
             -H "apikey: $ANON" \
             -H "Authorization: Bearer $ANON"
+
+      - name: Retry the same quiz_leads insert with the service role key (bypasses RLS)
+        env:
+          REF: ${{ steps.keys.outputs.ref }}
+          SERVICE: ${{ steps.keys.outputs.service_key }}
+        run: |
+          set -uo pipefail
+          curl -sS -i -X POST "https://$REF.supabase.co/rest/v1/quiz_leads" \
+            -H "apikey: $SERVICE" \
+            -H "Authorization: Bearer $SERVICE" \
+            -H "Content-Type: application/json" \
+            -H "Prefer: return=representation" \
+            -d '{
+              "session_id": null,
+              "lead_ref": "deadbeef2",
+              "email": "diagnose-quiz-lead-2@example.com",
+              "parent_name": "Diagnostic Test 2",
+              "consent_given_at": "2026-09-29T00:00:00Z",
+              "consent_text": "I agree to be contacted about this plan.",
+              "year_group_id": null,
+              "answers_snapshot": {}
+            }'
+
+      - name: Read the actual live RLS policy definition for quiz_leads
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          REF: ${{ steps.keys.outputs.ref }}
+        run: |
+          set -uo pipefail
+          curl -sS -i -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query": "select policyname, permissive, roles, cmd, qual, with_check from pg_policies where tablename = '"'"'quiz_leads'"'"';"}'
+          echo ""
+          echo "--- table-level privileges granted to anon/authenticated on quiz_leads ---"
+          curl -sS -i -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query": "select grantee, privilege_type from information_schema.role_table_grants where table_name = '"'"'quiz_leads'"'"';"}'
