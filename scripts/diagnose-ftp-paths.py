@@ -15,9 +15,11 @@ print(f"FTP_LEARN_REMOTE_DIR secret value: {learn_dir!r}")
 print(f"FTP_REMOTE_DIR variable value: {main_dir!r}")
 print()
 
-ftp = ftplib.FTP_TLS(host, timeout=30)
+ftp = ftplib.FTP_TLS(timeout=30)
+ftp.connect(host, 21)
+ftp.auth()  # negotiate TLS on the control channel BEFORE login — cPanel rejects a plaintext login attempt
 ftp.login(username, password)
-ftp.prot_p()
+ftp.prot_p()  # encrypt the data channel too (LIST/RETR/STOR)
 
 print(f"--- Working directory immediately after login ---")
 print(ftp.pwd())
