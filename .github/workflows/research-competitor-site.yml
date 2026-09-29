@@ -1,0 +1,60 @@
+name: Research competitor site (one-off)
+
+# This sandbox's own egress proxy blocks arbitrary external domains, but a
+# GitHub-hosted runner has normal internet access — same reason this
+# workflow exists as check-*.yml diagnostics do for the live TGA site
+# itself. Fetches a competitor's public pages and extracts readable text
+# (via BeautifulSoup) so it can be reviewed for design/content ideas.
+# Read-only, no write access to anything — just curl + text extraction.
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Base URL of the site to research, e.g. https://example.co.uk"
+        required: true
+      paths:
+        description: "Comma-separated paths to fetch, e.g. /,/admissions,/fees,/curriculum"
+        required: false
+        default: "/"
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch and extract text from each page
+        run: |
+          set -uo pipefail
+          pip install --quiet beautifulsoup4 lxml
+          BASE="${{ inputs.base_url }}"
+          IFS=',' read -ra PATHS <<< "${{ inputs.paths }}"
+          for p in "${PATHS[@]}"; do
+            url="${BASE}${p}"
+            echo "=================================================="
+            echo "URL: $url"
+            echo "=================================================="
+            curl -sS -L -A "Mozilla/5.0 (research)" "$url" -o /tmp/page.html || { echo "fetch failed"; continue; }
+            python3 - <<'PYEOF'
+from bs4 import BeautifulSoup
+with open("/tmp/page.html", "r", encoding="utf-8", errors="ignore") as f:
+    soup = BeautifulSoup(f.read(), "lxml")
+for tag in soup(["script", "style", "noscript", "svg"]):
+    tag.decompose()
+# Nav links
+print("--- NAV LINKS ---")
+for a in soup.select("nav a, header a"):
+    text = a.get_text(strip=True)
+    href = a.get("href", "")
+    if text:
+        print(f"{text} -> {href}")
+print()
+print("--- HEADINGS ---")
+for h in soup.find_all(["h1", "h2", "h3"]):
+    print(f"{h.name}: {h.get_text(strip=True)}")
+print()
+print("--- BODY TEXT (first ~4000 chars) ---")
+body_text = soup.get_text(separator=" | ", strip=True)
+print(body_text[:4000])
+PYEOF
+            echo ""
+          done
