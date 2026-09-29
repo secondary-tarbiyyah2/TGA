@@ -56,11 +56,35 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /learn/index.html [L]
 
+# Caching. There's no CDN in front of this host, so these headers are the
+# only caching the site gets — worth setting deliberately rather than
+# leaving to Apache's defaults (which send no explicit Cache-Control at all,
+# so browsers/proxies revalidate every asset on every visit).
+#
+# /_next/static/* is content-hashed by Next.js (a changed file gets a new
+# filename), so it's safe to cache for a year and mark immutable — a
+# redeploy never needs to invalidate it, it just starts referencing new
+# hashed paths from the new HTML.
+#
+# Other static assets under public/ (images, fonts, the favicon, brand
+# logos) are NOT hashed — the same filename can be replaced by a future
+# deploy — so they get a short, safely-revalidated cache instead of a year.
+#
+# HTML documents (and the sitemap/robots/ics feeds) are deliberately left
+# uncached here: this is a plain FTP deploy with no cache purge step, so an
+# HTML page must be free to change on the next deploy and be picked up
+# immediately rather than served stale from a visitor's cache.
 <IfModule mod_headers.c>
   <If "%{REQUEST_URI} =~ m#^/learn#">
     Header set Cache-Control "no-store"
     Header set X-Robots-Tag "noindex, nofollow"
   </If>
+  <ElseIf "%{REQUEST_URI} =~ m#^/_next/static/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </ElseIf>
+  <ElseIf "%{REQUEST_URI} =~ m#\.(?:jpg|jpeg|png|webp|gif|svg|ico|woff2?|ttf|otf)$#">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </ElseIf>
 </IfModule>
 
 # Don't expose dotfiles (e.g. this .htaccess) to the web.
