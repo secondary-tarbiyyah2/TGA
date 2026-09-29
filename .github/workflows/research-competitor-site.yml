@@ -3,9 +3,11 @@ name: Research competitor site (one-off)
 # This sandbox's own egress proxy blocks arbitrary external domains, but a
 # GitHub-hosted runner has normal internet access — same reason this
 # workflow exists as check-*.yml diagnostics do for the live TGA site
-# itself. Fetches a competitor's public pages and extracts readable text
-# (via BeautifulSoup) so it can be reviewed for design/content ideas.
-# Read-only, no write access to anything — just curl + text extraction.
+# itself. Fetches a competitor's public pages with a real headless browser
+# (a plain curl+BeautifulSoup version was tried first, but returned only
+# an empty client-rendered shell on the site this was built for) and
+# extracts readable text so it can be reviewed for design/content ideas.
+# Read-only, no write access to anything.
 
 on:
   workflow_dispatch:
@@ -24,18 +26,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch and extract text from each page
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Playwright
         run: |
-          set -uo pipefail
-          pip install --quiet beautifulsoup4 lxml
-          BASE="${{ inputs.base_url }}"
-          IFS=',' read -ra PATHS <<< "${{ inputs.paths }}"
-          for p in "${PATHS[@]}"; do
-            url="${BASE}${p}"
-            echo "=================================================="
-            echo "URL: $url"
-            echo "=================================================="
-            curl -sS -L -A "Mozilla/5.0 (research)" "$url" -o /tmp/page.html || { echo "fetch failed"; continue; }
-            python3 scripts/extract-page-text.py
-            echo ""
-          done
+          npm install playwright@1
+          npx playwright install --with-deps chromium
+
+      - name: Render each page with a real browser and extract text
+        env:
+          RESEARCH_BASE_URL: ${{ inputs.base_url }}
+          RESEARCH_PATHS: ${{ inputs.paths }}
+        run: node scripts/extract-page-text-rendered.mjs
