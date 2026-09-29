@@ -32,7 +32,7 @@ export default async function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             {content.heroBody ||
-              "Tarbiyyah Global Academy is an online British school where academic excellence meets Islamic values — preparing children for success in this life and the Hereafter."}
+              "Tarbiyyah Global Academy is a specialist online school where academic excellence meets Islamic values — preparing children for success in this life and the Hereafter."}
           </p>
         </Container>
       </section>

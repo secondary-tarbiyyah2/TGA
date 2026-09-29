@@ -7,7 +7,7 @@ import { getCurriculumContent } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Curriculum",
-  description: "The full British curriculum plus Islamic Studies, by key stage, Reception to GCSE.",
+  description: "A specialist curriculum — the full British national curriculum plus Islamic Studies, by key stage, Reception to GCSE.",
 };
 
 export default async function CurriculumPage() {
@@ -19,13 +19,13 @@ export default async function CurriculumPage() {
         <Container>
           <Kicker>Curriculum</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">
-            {content.heroHeading || "The full British curriculum, plus Islamic Studies."}
+            {content.heroHeading || "A specialist curriculum, academic and Islamic together."}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             {content.heroBody || (
               <>
-                Live-timetabled academic subjects taught by qualified UK teachers, through to GCSE — with
-                Qur&apos;an, Islamic Studies and Arabic on the timetable at every key stage.
+                The full British curriculum, live-timetabled and taught by qualified UK teachers, through to GCSE —
+                with Qur&apos;an, Islamic Studies and Arabic on the timetable at every key stage.
               </>
             )}
           </p>

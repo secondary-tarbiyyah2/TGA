@@ -2,11 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { getSupabaseClient } from "@/lib/supabase/client";
+import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { feeBands as fallbackFeeBands } from "@/content/seed";
 import type { FeeBand, Discount } from "@/content/seed";
 import { FeeEstimator } from "@/components/FeeEstimator";
 import { LineIcon } from "@/components/eligibility/LineIcon";
+import { formatGBP } from "@/lib/format";
 import { leadRef } from "@/lib/leadRef";
 import { DEFAULT_QUIZ_CONFIG } from "@/lib/quiz/defaultConfig";
 import { questionsByStep, type QuizAnswers, type QuizConfig } from "@/lib/quiz/schema";
@@ -210,22 +211,61 @@ export function YourChildsWeekQuiz({
     const supabase = getSupabaseClient();
     if (supabase) {
       const ref = await leadRef(contactEmail);
-      const { error } = await supabase.from("quiz_leads").insert({
-        session_id: sessionRowId,
-        lead_ref: ref,
-        email: contactEmail.trim().toLowerCase(),
-        parent_name: contactName || null,
-        consent_given_at: new Date().toISOString(),
-        consent_text: config.consentText,
-        year_group_id: yearGroupId,
-        answers_snapshot: answers,
-      });
-      if (error) {
+      const { data: insertedLead, error } = await supabase
+        .from("quiz_leads")
+        .insert({
+          session_id: sessionRowId,
+          lead_ref: ref,
+          email: contactEmail.trim().toLowerCase(),
+          parent_name: contactName || null,
+          consent_given_at: new Date().toISOString(),
+          consent_text: config.consentText,
+          year_group_id: yearGroupId,
+          answers_snapshot: answers,
+        })
+        .select("id")
+        .single();
+      if (error || !insertedLead) {
         setLeadError("Something went wrong saving your details — please try again, or book a call instead.");
         setLeadSubmitting(false);
         return;
       }
-      recordQuizEvent(sessionRowId, "pdf_email_sent", stepIndex);
+
+      // The lead row is saved either way — this call only decides whether
+      // we can also honestly record "an email actually went out." Never
+      // record pdf_email_sent before this confirms success (see
+      // quiz-send-plan's header comment): that event feeds the admin
+      // analytics panel's "PDF emails" count, which must not lie about
+      // deliveries that never happened.
+      const feeSummary = feeBand
+        ? `${feeBand.yearGroupRange}: ${formatGBP(feeBand.termlyFee)}/term or ${formatGBP(feeBand.monthlyFee)}/month${siblingDiscountNote ? ` — ${siblingDiscountNote}` : ""}`
+        : "";
+      const functionUrl = getEdgeFunctionUrl("quiz-send-plan");
+      const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      if (functionUrl && anonKey) {
+        try {
+          const res = await fetch(functionUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", apikey: anonKey, Authorization: `Bearer ${anonKey}` },
+            body: JSON.stringify({
+              leadId: insertedLead.id,
+              yearGroup: yearGroupAnswer,
+              sampleSlots: sampleWeek.slots || [],
+              startingPoints: evaluated.startingPoints,
+              feeSummary,
+              timezoneFlagText: timeInfo?.concern
+                ? `From your timezone, our live lessons (9am–3pm UK) fall around ${formatLocalHour(timeInfo.localStart)}–${formatLocalHour(timeInfo.localEnd)} — outside hours that work well for most children. We don't have an alternative live-lesson time slot to offer at this stage, so we'd want to talk this through honestly with you before you apply.`
+                : "",
+              texts: evaluated.texts,
+            }),
+          });
+          const result = await res.json().catch(() => ({ ok: false }));
+          if (result?.ok) recordQuizEvent(sessionRowId, "pdf_email_sent", stepIndex);
+        } catch {
+          // Lead is already saved; a failed send just means we don't record
+          // the event below — no user-facing error needed for this part.
+        }
+      }
     }
     setLeadSubmitting(false);
     setLeadSubmitted(true);

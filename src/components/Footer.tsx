@@ -16,7 +16,7 @@ export async function Footer() {
           <Image src="/brand/ga-wordmark-white.png" alt="Tarbiyyah Global Academy" width={200} height={61} />
           <p className="mt-4 text-sm text-white/70">Part of the Tarbiyyah Education Trust.</p>
           <p className="mt-2 text-sm text-white/70">
-            A British education, rooted in faith — delivered live, wherever your family calls home.
+            A specialist, quality education, rooted in faith — delivered live, wherever your family calls home.
           </p>
         </div>
 

@@ -12,9 +12,9 @@ const siteUrl = "https://globalacademy.tarbiyyah.co.uk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Tarbiyyah Global Academy — A British education, rooted in faith", template: "%s — Tarbiyyah Global Academy" },
+  title: { default: "Tarbiyyah Global Academy — A specialist, quality education, rooted in faith", template: "%s — Tarbiyyah Global Academy" },
   description:
-    "An online school by the Tarbiyyah Education Trust. Live, timetabled British-curriculum lessons and Islamic Studies with qualified UK teachers, Reception to Year 11, launching January 2027.",
+    "An online school by the Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons and Islamic Studies with qualified UK teachers on the full British curriculum, Reception to Year 11, launching January 2027.",
   openGraph: {
     type: "website",
     siteName: "Tarbiyyah Global Academy",
@@ -51,7 +51,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     "@type": "EducationalOrganization",
     name: "Tarbiyyah Global Academy",
     description:
-      "An online British-curriculum school by the Tarbiyyah Education Trust — live, timetabled lessons with qualified UK teachers, Reception to Year 11, taught with tarbiyyah at its heart.",
+      "A specialist online school by the Tarbiyyah Education Trust — live, timetabled lessons with qualified UK teachers on the full British curriculum, Reception to Year 11, taught with tarbiyyah at its heart.",
     url: siteUrl,
     email: settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk",
     ...(settings.contactPhone && { telephone: settings.contactPhone }),

@@ -10,13 +10,13 @@ import { getDifferentiators, getFaqEntries, getFeeBands, getHomepageContent, get
 import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
-  title: "A British education, rooted in faith",
+  title: "A specialist, quality education, rooted in faith",
   description:
-    "An online school by Tarbiyyah Education Trust. Live, timetabled lessons with qualified UK teachers — the full British curriculum, from Reception to Year 11, taught with tarbiyyah at its heart.",
+    "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified UK teachers on the full British curriculum, from Reception to Year 11, taught with tarbiyyah at its heart.",
 };
 
 const defaultPillars = [
-  { title: "British curriculum", body: "The full national curriculum, live-timetabled, taught to GCSE by qualified UK teachers." },
+  { title: "Specialist curriculum", body: "The full British national curriculum, live-timetabled, taught to GCSE by qualified UK teachers." },
   { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage — not an add-on." },
   { title: "Live, small classes", body: "Real-time lessons with real teachers, sized to keep every child known and supported." },
 ];
@@ -68,14 +68,14 @@ export default async function HomePage() {
               <h1 className="text-display font-serif font-semibold text-ink">{content.heroHeading}</h1>
             ) : (
               <h1 className="text-display font-serif font-semibold text-ink">
-                A British education, rooted in faith — <span className="text-gold-700">wherever home is.</span>
+                A specialist, quality education, rooted in faith — <span className="text-gold-700">wherever home is.</span>
               </h1>
             )}
             {content.heroBody ? (
               <p className="mt-6 max-w-xl text-lg text-ink/75">{content.heroBody}</p>
             ) : (
               <p className="mt-6 max-w-xl text-lg text-ink/75">
-                Live, timetabled lessons with qualified UK teachers. The full British curriculum, taught with{" "}
+                Live, timetabled lessons with qualified UK teachers on the full British curriculum, taught with{" "}
                 <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Reception to Year 11, live
                 lessons launching January 2027.
               </p>
@@ -145,11 +145,11 @@ export default async function HomePage() {
           <div>
             <Kicker>Stages of school</Kicker>
             <h2 className="text-h2 font-serif font-semibold text-ink">
-              {content.stagesHeading || "The full British curriculum, plus Islamic Studies."}
+              {content.stagesHeading || "A specialist curriculum, from Reception to GCSE."}
             </h2>
             <p className="mt-4 text-ink/75">
               {content.stagesBody ||
-                "Live-timetabled academic subjects from Reception through GCSE, taught by qualified UK teachers — with Qur'an, Islamic Studies and Arabic woven through every key stage, not bolted on."}
+                "The full British curriculum, live-timetabled and taught by qualified UK teachers — with Qur'an, Islamic Studies and Arabic woven through every key stage, not bolted on."}
             </p>
             <Button href="/curriculum" variant="secondary" className="mt-6">Explore the curriculum</Button>
           </div>
