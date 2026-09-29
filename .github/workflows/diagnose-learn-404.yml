@@ -1,0 +1,37 @@
+name: Diagnose the raw 404 response from learn.tarbiyyah.co.uk
+
+# One-off: /account/ (and reportedly the whole site) 404s on
+# learn.tarbiyyah.co.uk despite a just-confirmed clean FTP upload to
+# FTP_LEARN_REMOTE_DIR. A 404 could come from three very different places
+# that need three very different fixes:
+#   - Cloudflare itself (its own error page, e.g. DNS/origin unreachable)
+#   - the origin web server's own 404 (Apache/LiteSpeed — means the
+#     document root genuinely has no matching file, i.e. FTP_LEARN_REMOTE_DIR
+#     doesn't point at the real docroot, or the vhost config hasn't picked up
+#     the new docroot yet)
+#   - a cached 404 Cloudflare is serving from edge (stale from before the
+#     subdomain's docroot existed)
+# The response body/headers make this obvious (Cloudflare's own error pages
+# are very distinctive; an Apache/LiteSpeed 404 looks different again), so
+# this fetches full headers + body with cache-busting query strings and
+# prints everything raw rather than guessing.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch raw 404 response
+        run: |
+          set -uo pipefail
+          for path in "/" "/account/" "/login/" "/nonexistent-path-xyz/"; do
+            echo "=================================================="
+            echo "GET https://learn.tarbiyyah.co.uk${path}?cb=$RANDOM"
+            echo "=================================================="
+            curl -sS -D - -o /tmp/body.html "https://learn.tarbiyyah.co.uk${path}?cb=$RANDOM"
+            echo "--- body (first 60 lines) ---"
+            head -60 /tmp/body.html
+            echo ""
+          done
