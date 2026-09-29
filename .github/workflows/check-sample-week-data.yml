@@ -1,0 +1,67 @@
+name: Check sample week / timetable live data
+
+# One-off read-only diagnostic: why does "Your Child's Week" show "we
+# haven't published a sample week for this year group yet"? Checks
+# whether any timetable_runs exist at all, and whether any
+# public_sample_week_marks rows have ever been published.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find project ref
+        id: keys
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+
+      - name: Query timetable_runs and public_sample_week_marks
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          REF: ${{ steps.keys.outputs.ref }}
+        run: |
+          set -uo pipefail
+          echo "--- timetable_runs (any published academic-year timetable at all?) ---"
+          curl -sS -i -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query": "select tr.id, tr.label, tr.status, tr.created_at from public.timetable_runs tr order by tr.created_at desc limit 10;"}'
+          echo ""
+          echo "--- public_sample_week_marks (any year group ever marked as a public sample?) ---"
+          curl -sS -i -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query": "select psm.status, yg.name as year_group, psm.updated_at from public.public_sample_week_marks psm join public.year_groups yg on yg.id = psm.year_group_id order by psm.updated_at desc limit 20;"}'
+          echo ""
+          echo "--- year_groups (do they even exist / are they seeded?) ---"
+          curl -sS -i -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query": "select count(*) from public.year_groups;"}'
+          echo ""
+          echo "--- lesson_instances (any actual lessons ever generated?) ---"
+          curl -sS -i -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query": "select count(*) from public.lesson_instances;"}'
+          echo ""
+          echo "--- head_teacher/admin accounts (so a password can be reset for the right email) ---"
+          curl -sS -i -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query": "select p.email, ur.role from public.user_roles ur join public.profiles p on p.id = ur.user_id where ur.role in ('"'"'head_teacher'"'"','"'"'admin'"'"');"}'

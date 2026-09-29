@@ -193,7 +193,14 @@ export function YourChildsWeekQuiz({
   const orderedSections = [...config.resultSections].filter((s) => s.active).sort((a, b) => a.order - b.order);
 
   const firstName = contactName ? capitaliseName(contactName).split(" ")[0] : "";
-  const resultHeading = config.resultHeading.replace("{name}", firstName || "there");
+  // Before the parent has typed their name (in the CTA form further down
+  // the same screen), "{name}, here is..." has no name to fill in yet —
+  // substituting a filler word there ("there, here is...") reads as
+  // broken English, not a personalised greeting. Drop the name clause
+  // entirely and capitalise what's left instead.
+  const resultHeading = firstName
+    ? config.resultHeading.replace("{name}", firstName)
+    : config.resultHeading.replace(/\{name\},?\s*/, "").replace(/^[a-z]/, (c) => c.toUpperCase());
 
   const bookCallHref = `/book-a-call?name=${encodeURIComponent(contactName)}&email=${encodeURIComponent(contactEmail)}&year=${encodeURIComponent(yearGroupAnswer)}&notes=${encodeURIComponent(
     `From "Your Child's Week" — timezone: ${timezone}${timeInfo?.concern ? ", TIMEZONE CONCERN: lessons fall outside a workable local window" : ""}, hifz role: ${answers.hifz_role ?? "n/a"}`
