@@ -158,6 +158,20 @@ export function BookingCalendar() {
       <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center">
         <h2 className="font-serif text-xl font-semibold text-ink">Call booked.</h2>
         <p className="mt-2 text-ink/70">Check your email for confirmation, the Teams link, and a calendar invite.</p>
+        <ul className="mt-6 space-y-2 text-left text-sm text-ink/70">
+          <li className="flex items-start gap-2">
+            <span aria-hidden="true" className="mt-1 text-gold-500">◆</span>
+            A confirmation email with the Teams link and a calendar invite — sent now.
+          </li>
+          <li className="flex items-start gap-2">
+            <span aria-hidden="true" className="mt-1 text-gold-500">◆</span>
+            Reminder emails 24 hours and 1 hour before your call.
+          </li>
+          <li className="flex items-start gap-2">
+            <span aria-hidden="true" className="mt-1 text-gold-500">◆</span>
+            Need to change the time? <a href="/manage-booking" className="font-semibold text-gold-700 underline">Reschedule or cancel</a> using the link in your confirmation email.
+          </li>
+        </ul>
       </div>
     );
   }
@@ -171,9 +185,17 @@ export function BookingCalendar() {
     );
   }
 
+  if (staffStatus === "loading") {
+    return (
+      <div role="status" aria-live="polite" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center text-sm text-ink/60">
+        Loading booking calendar…
+      </div>
+    );
+  }
+
   if (staffStatus === "none" || staffStatus === "error") {
     return (
-      <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center text-sm text-ink/70">
+      <div role="status" aria-live="polite" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center text-sm text-ink/70">
         <p className="font-medium text-ink">
           {staffStatus === "error" ? "We couldn't load available times just now." : "Online booking isn't open yet."}
         </p>
@@ -186,21 +208,18 @@ export function BookingCalendar() {
     );
   }
 
+  const activeStaff = staffList.find((s) => s.id === staffId) || staffList[0];
+
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <div className="flex items-center justify-between">
-          <button type="button" onClick={() => setMonthCursor((d) => new Date(d.getFullYear(), d.getMonth() - 1, 1))} aria-label="Previous month" className="p-2 text-gold-700">
-            ←
-          </button>
-          <p className="font-serif font-semibold text-ink">{monthCursor.toLocaleDateString("en-GB", { month: "long", year: "numeric" })}</p>
-          <button type="button" onClick={() => setMonthCursor((d) => new Date(d.getFullYear(), d.getMonth() + 1, 1))} aria-label="Next month" className="p-2 text-gold-700">
-            →
-          </button>
-        </div>
-
+        {activeStaff && staffList.length === 1 && (
+          <p className="text-sm font-medium text-ink">
+            You&apos;ll be speaking with <span className="font-semibold">{activeStaff.display_name}</span>, {activeStaff.role_title}.
+          </p>
+        )}
         {staffList.length > 1 && (
-          <label className="mt-4 block text-sm font-medium text-ink">
+          <label className="block text-sm font-medium text-ink">
             Speak with
             <select value={staffId} onChange={(e) => setStaffId(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2">
               {staffList.map((s) => (
@@ -209,6 +228,17 @@ export function BookingCalendar() {
             </select>
           </label>
         )}
+        <p className="mt-2 text-sm text-ink/60">Times shown in your local timezone ({tz}), UK time alongside.</p>
+
+        <div className="mt-4 flex items-center justify-between">
+          <button type="button" onClick={() => setMonthCursor((d) => new Date(d.getFullYear(), d.getMonth() - 1, 1))} aria-label="Previous month" className="p-2 text-gold-700">
+            ←
+          </button>
+          <p className="font-serif font-semibold text-ink">{monthCursor.toLocaleDateString("en-GB", { month: "long", year: "numeric" })}</p>
+          <button type="button" onClick={() => setMonthCursor((d) => new Date(d.getFullYear(), d.getMonth() + 1, 1))} aria-label="Next month" className="p-2 text-gold-700">
+            →
+          </button>
+        </div>
 
         <div className="mt-4 grid grid-cols-7 gap-1 text-center text-xs text-ink/60">
           {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => <div key={d}>{d}</div>)}
@@ -227,7 +257,7 @@ export function BookingCalendar() {
                 disabled={!hasSlots || isPast}
                 onClick={() => { setSelectedDate(key); setSelectedSlot(null); }}
                 aria-pressed={isSelected}
-                className={`aspect-square rounded-lg text-sm ${
+                className={`aspect-square min-h-10 rounded-lg text-sm ${
                   isSelected ? "bg-gold-500 text-ink-900 font-semibold" : hasSlots && !isPast ? "bg-gold-100 text-ink hover:bg-gold-300" : "text-ink/30"
                 }`}
               >
@@ -236,7 +266,9 @@ export function BookingCalendar() {
             );
           })}
         </div>
-        {loadingSlots && <p className="mt-3 text-xs text-ink/50">Loading availability…</p>}
+        {loadingSlots && (
+          <p role="status" aria-live="polite" className="mt-3 text-xs text-ink/50">Loading availability…</p>
+        )}
         {slotsError && !loadingSlots && (
           <p role="alert" className="mt-3 text-xs text-red-700">
             We couldn&apos;t load times for this month. Please try again, or email globalacademy@tarbiyyah.co.uk.
@@ -245,7 +277,6 @@ export function BookingCalendar() {
         {!slotsError && !loadingSlots && staffStatus === "ready" && Object.keys(slotsByDate).length === 0 && (
           <p className="mt-3 text-xs text-ink/60">No times available this month. Try the next month, or email globalacademy@tarbiyyah.co.uk.</p>
         )}
-        <p className="mt-3 text-xs text-ink/50">Times shown in your local timezone ({tz}), UK time alongside.</p>
       </div>
 
       <div>
@@ -265,7 +296,7 @@ export function BookingCalendar() {
                     type="button"
                     onClick={() => setSelectedSlot(slot)}
                     aria-pressed={selected}
-                    className={`rounded-full border px-4 py-2 text-sm ${selected ? "border-gold-500 bg-gold-500 text-ink-900 font-semibold" : "border-gold-light/60 text-ink hover:border-gold-500"}`}
+                    className={`min-h-10 rounded-full border px-4 py-2.5 text-sm ${selected ? "border-gold-500 bg-gold-500 text-ink-900 font-semibold" : "border-gold-light/60 text-ink hover:border-gold-500"}`}
                   >
                     {local}{tz !== "Europe/London" ? ` (${uk} UK)` : ""}
                   </button>

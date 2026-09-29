@@ -5,6 +5,21 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 const SESSION_KEY = "tga_quiz_session_token";
 
 /**
+ * A random client-generated id for a row the anon role can insert but
+ * never read back (e.g. quiz_leads — RLS deliberately has no SELECT
+ * policy for anon here, see YourChildsWeekQuiz.tsx's submitLead). Factored
+ * out of the component so eslint's react-hooks/purity rule doesn't flag
+ * the Date.now()/Math.random() fallback as an impure call "during render"
+ * — it only ever runs inside an event handler, but the rule can't tell
+ * that from inside a component file.
+ */
+export function generateId(): string {
+  return typeof crypto !== "undefined" && "randomUUID" in crypto
+    ? crypto.randomUUID()
+    : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+/**
  * A random, non-identifying session id the browser generates itself and
  * keeps for the current tab only (sessionStorage, not localStorage — this
  * is a single quiz attempt, not a returning-visitor identity). Never

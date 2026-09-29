@@ -15,7 +15,7 @@ import { evaluateRules, isQuestionVisible } from "@/lib/quiz/rules";
 import { detectTimezone, TIMEZONE_OPTIONS, schoolDayTimeInfo, formatLocalHour } from "@/lib/quiz/timezone";
 import { feeBandForYearGroup, keyStageForYearGroup } from "@/lib/quiz/feeBand";
 import { useSampleWeek } from "@/lib/quiz/useSampleWeek";
-import { recordQuizEvent, upsertQuizSession } from "@/lib/quiz/session";
+import { generateId, recordQuizEvent, upsertQuizSession } from "@/lib/quiz/session";
 
 type YearGroupOption = { id: string; name: string };
 
@@ -211,21 +211,27 @@ export function YourChildsWeekQuiz({
     const supabase = getSupabaseClient();
     if (supabase) {
       const ref = await leadRef(contactEmail);
-      const { data: insertedLead, error } = await supabase
-        .from("quiz_leads")
-        .insert({
-          session_id: sessionRowId,
-          lead_ref: ref,
-          email: contactEmail.trim().toLowerCase(),
-          parent_name: contactName || null,
-          consent_given_at: new Date().toISOString(),
-          consent_text: config.consentText,
-          year_group_id: yearGroupId,
-          answers_snapshot: answers,
-        })
-        .select("id")
-        .single();
-      if (error || !insertedLead) {
+      // The id is generated here, not read back via .select() — quiz_leads
+      // deliberately has no SELECT policy for anon ("anon cannot read back
+      // the lead they just submitted", enforced by RLS and proven in
+      // quiz_v2_rls.test.sql), so a .select().single() after this insert
+      // asks Postgres to RETURNING a row anon isn't allowed to see, and
+      // Postgres reports that as "new row violates row-level security
+      // policy" — indistinguishable from the insert itself being rejected.
+      // Same pattern already used for quiz_sessions' id in session.ts.
+      const leadId = generateId();
+      const { error } = await supabase.from("quiz_leads").insert({
+        id: leadId,
+        session_id: sessionRowId,
+        lead_ref: ref,
+        email: contactEmail.trim().toLowerCase(),
+        parent_name: contactName || null,
+        consent_given_at: new Date().toISOString(),
+        consent_text: config.consentText,
+        year_group_id: yearGroupId,
+        answers_snapshot: answers,
+      });
+      if (error) {
         setLeadError("Something went wrong saving your details — please try again, or book a call instead.");
         setLeadSubmitting(false);
         return;
@@ -248,7 +254,7 @@ export function YourChildsWeekQuiz({
             method: "POST",
             headers: { "Content-Type": "application/json", apikey: anonKey, Authorization: `Bearer ${anonKey}` },
             body: JSON.stringify({
-              leadId: insertedLead.id,
+              leadId,
               yearGroup: yearGroupAnswer,
               sampleSlots: sampleWeek.slots || [],
               startingPoints: evaluated.startingPoints,
