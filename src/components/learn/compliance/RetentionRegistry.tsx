@@ -40,6 +40,13 @@ export function RetentionRegistry() {
             </tr>
           </thead>
           <tbody>
+            {schedule === null && (
+              <tr>
+                <td colSpan={4} className="py-2 text-sm text-ink/60">
+                  Loading…
+                </td>
+              </tr>
+            )}
             {(schedule || []).map((s) => (
               <tr key={s.id} className="border-t border-gold-light/30">
                 <td className="py-2 pr-3">{s.data_type}<p className="text-xs text-ink/50">{s.description}</p></td>
@@ -55,6 +62,7 @@ export function RetentionRegistry() {
 
       <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink/60">Recent retention job runs</p>
       <ul className="mt-2 space-y-1">
+        {runs === null && <p className="text-sm text-ink/60">Loading…</p>}
         {(runs || []).map((r) => (
           <li key={r.id} className="text-sm text-ink/70">
             {new Date(r.run_at).toLocaleString("en-GB")} — {r.data_type}: {r.action}d {r.rows_affected} row(s)

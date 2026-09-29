@@ -69,6 +69,7 @@ export function DataRights() {
       <p className="mt-1 text-xs text-ink/50">Subject access, rectification, erasure, export and objection requests, with the UK GDPR one-calendar-month statutory deadline computed automatically.</p>
 
       <ul className="mt-3 space-y-2">
+        {requests === null && <p className="text-sm text-ink/60">Loading…</p>}
         {(requests || []).map((r) => {
           const deadline = r.extended_deadline || r.statutory_deadline;
           const days = daysUntil(deadline);
@@ -103,7 +104,7 @@ export function DataRights() {
       <form onSubmit={submit} className="mt-4 space-y-2 border-t border-gold-light/30 pt-4">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Log a new request</p>
         <div className="grid gap-2 sm:grid-cols-2">
-          <select value={form.request_type} onChange={(e) => setForm({ ...form, request_type: e.target.value })} className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm">
+          <select value={form.request_type} onChange={(e) => setForm({ ...form, request_type: e.target.value })} aria-label="Request type" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm">
             <option value="subject_access">Subject access</option>
             <option value="rectification">Rectification</option>
             <option value="erasure">Erasure</option>

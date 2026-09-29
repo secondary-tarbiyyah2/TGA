@@ -49,6 +49,7 @@ function TermReportApprovals() {
       <h2 className="font-serif text-h3 font-semibold text-ink">Term report approvals</h2>
       <p className="mt-1 text-xs text-ink/50">Approve, then release — release is what makes a report visible to the parent/student.</p>
       <ul className="mt-3 space-y-3">
+        {reports === null && <p className="text-sm text-ink/60">Loading…</p>}
         {(reports || []).map((r) => (
           <li key={r.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
             <div className="flex items-center justify-between">
@@ -230,7 +231,7 @@ function MarkSchemesAdmin() {
       <h2 className="font-serif text-h3 font-semibold text-ink">Mark schemes &amp; grade boundaries</h2>
       <p className="mt-1 text-xs text-ink/50">Per-subject percentage bands — the single source of truth grades are resolved against, never hardcoded.</p>
       <div className="mt-3 flex flex-wrap gap-2">
-        <select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+        <select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} aria-label="Subject" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
           <option value="">Select a subject…</option>
           {subjects.map((s) => (
             <option key={s.id} value={s.id}>
@@ -245,7 +246,7 @@ function MarkSchemesAdmin() {
           <button type="button" onClick={addScheme} className="rounded-full border border-gold-500 px-3 py-2 text-xs text-gold-700">
             Add scale
           </button>
-          <select value={selectedScheme} onChange={(e) => setSelectedScheme(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+          <select value={selectedScheme} onChange={(e) => setSelectedScheme(e.target.value)} aria-label="Mark scheme scale" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
             <option value="">Select a scale…</option>
             {schemes.map((s) => (
               <option key={s.id} value={s.id}>

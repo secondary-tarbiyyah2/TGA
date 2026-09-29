@@ -78,7 +78,12 @@ function AttendanceContent() {
             <p className="mt-1 text-sm text-ink/60">Whole-school register, most recent first.</p>
           </div>
           <div className="flex items-center gap-2">
-            <select value={days} onChange={(e) => setDays(Number(e.target.value))} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
+            <select
+              value={days}
+              onChange={(e) => setDays(Number(e.target.value))}
+              aria-label="Date range"
+              className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
+            >
               <option value={7}>Last 7 days</option>
               <option value={14}>Last 14 days</option>
               <option value={30}>Last 30 days</option>

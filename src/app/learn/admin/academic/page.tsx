@@ -32,6 +32,7 @@ function TermsSection() {
         scripts/sync-terms-from-sanity.mjs). Edit them in the Sanity Studio&apos;s Term Dates, not here.
       </p>
       <div className="mt-4 space-y-4">
+        {years === null && <p className="text-sm text-ink/60">Loading…</p>}
         {years?.map((y) => (
           <div key={y.id} className="rounded-lg border border-gold-light/30 p-3">
             <div className="flex items-center gap-2 text-sm font-medium text-ink">
@@ -130,6 +131,7 @@ function NamedListSection<T extends { id: string; name: string }>({
         </button>
       </div>
       <ul className="mt-4 space-y-1">
+        {rows === null && <p className="text-sm text-ink/60">Loading…</p>}
         {rows?.map((r) => (
           <li key={r.id} className="flex items-center justify-between rounded-lg border border-gold-light/20 px-3 py-2 text-sm">
             {r.name}
@@ -209,15 +211,15 @@ function ClassesSection() {
       <h2 className="font-serif text-h3 font-semibold text-ink">Classes &amp; enrolment</h2>
       <div className="mt-3 flex flex-wrap items-end gap-2">
         <input value={form.name} onChange={(e) => setForm((s) => ({ ...s, name: e.target.value }))} placeholder="Class name" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        <select value={form.year_group_id} onChange={(e) => setForm((s) => ({ ...s, year_group_id: e.target.value }))} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
+        <select value={form.year_group_id} onChange={(e) => setForm((s) => ({ ...s, year_group_id: e.target.value }))} aria-label="Year group" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
           <option value="">Year group…</option>
           {yearGroups.map((y) => <option key={y.id} value={y.id}>{y.name}</option>)}
         </select>
-        <select value={form.subject_id} onChange={(e) => setForm((s) => ({ ...s, subject_id: e.target.value }))} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
+        <select value={form.subject_id} onChange={(e) => setForm((s) => ({ ...s, subject_id: e.target.value }))} aria-label="Subject" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
           <option value="">Subject…</option>
           {subjects.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
         </select>
-        <select value={form.academic_year_id} onChange={(e) => setForm((s) => ({ ...s, academic_year_id: e.target.value }))} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
+        <select value={form.academic_year_id} onChange={(e) => setForm((s) => ({ ...s, academic_year_id: e.target.value }))} aria-label="Academic year" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
           <option value="">Academic year…</option>
           {academicYears.map((y) => <option key={y.id} value={y.id}>{y.label}</option>)}
         </select>
@@ -235,6 +237,7 @@ function ClassesSection() {
       </div>
 
       <div className="mt-5 space-y-3">
+        {classes === null && <p className="text-sm text-ink/60">Loading…</p>}
         {classes?.map((c) => (
           <div key={c.id} className="rounded-lg border border-gold-light/30 p-3">
             <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-medium text-ink">
@@ -247,6 +250,7 @@ function ClassesSection() {
               <select
                 value={enrolForm[c.id] || ""}
                 onChange={(e) => setEnrolForm((s) => ({ ...s, [c.id]: e.target.value }))}
+                aria-label={`Enrol a child into ${c.name}`}
                 className="rounded-lg border border-gold-light/60 px-2 py-1"
               >
                 <option value="">Enrol child…</option>

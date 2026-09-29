@@ -175,7 +175,7 @@ function CoverForm({ slots, teachers, onDone }: { slots: TimetableSlot[]; teache
       <h2 className="font-serif text-h3 font-semibold text-ink">Assign cover</h2>
       {message && <p className="mt-2 text-xs text-ink/70">{message}</p>}
       <div className="mt-3 flex flex-wrap items-end gap-2">
-        <select value={slotId} onChange={(e) => setSlotId(e.target.value)} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
+        <select value={slotId} onChange={(e) => setSlotId(e.target.value)} aria-label="Lesson" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
           <option value="">Lesson…</option>
           {slots.map((s) => (
             <option key={s.id} value={s.id}>
@@ -184,7 +184,7 @@ function CoverForm({ slots, teachers, onDone }: { slots: TimetableSlot[]; teache
           ))}
         </select>
         <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        <select value={coveringTeacher} onChange={(e) => setCoveringTeacher(e.target.value)} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
+        <select value={coveringTeacher} onChange={(e) => setCoveringTeacher(e.target.value)} aria-label="Covering teacher" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
           <option value="">Covering teacher…</option>
           {teachers.map((t) => (
             <option key={t.id} value={t.id}>
@@ -270,7 +270,7 @@ function UpcomingInstances({ runId, refreshKey }: { runId: string; refreshKey: n
     })();
   }, [supabase, runId, refreshKey]);
 
-  if (rows === null) return null;
+  if (rows === null) return <p className="text-xs text-ink/50">Loading…</p>;
   if (rows.length === 0) return <p className="text-xs text-ink/50">No upcoming lesson instances generated yet.</p>;
   return (
     <ul className="mt-3 space-y-1 text-sm">

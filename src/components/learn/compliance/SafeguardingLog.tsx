@@ -120,6 +120,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
       <div className="mt-4 border-t border-red-200 pt-3">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Chronology (append-only)</p>
         <ul className="mt-2 space-y-2">
+          {chronology === null && <p className="text-sm text-ink/50">Loading…</p>}
           {(chronology || []).map((c) => (
             <li key={c.id} className="rounded-lg bg-white p-2 text-sm">
               <p>{c.entry}</p>
@@ -139,6 +140,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
       <div className="mt-4 border-t border-red-200 pt-3">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Secure attachments</p>
         <ul className="mt-2 space-y-1">
+          {attachments === null && <p className="text-sm text-ink/50">Loading…</p>}
           {(attachments || []).map((a) => (
             <li key={a.id} className="text-sm text-ink/70">
               {a.filename} — {new Date(a.uploaded_at).toLocaleDateString("en-GB")}
@@ -184,6 +186,7 @@ function SafeguardingLogInner() {
         this section.
       </p>
       <ul className="mt-3 space-y-2">
+        {concerns === null && <p className="text-sm text-ink/60">Loading…</p>}
         {(concerns || []).map((c) => (
           <li key={c.id}>
             <button

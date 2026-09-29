@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { useMyClasses } from "@/lib/learn/useMyClasses";
 
-type ClassOption = { id: string; name: string };
 type Child = { id: string; name: string };
 type Term = { id: string; name: string };
 type Comment = { id: string; text: string };
@@ -12,8 +12,8 @@ type Report = { id: string; status: string; overall_comment: string | null };
 
 function TeachReportsContent() {
   const supabase = getSupabaseClient();
-  const [classes, setClasses] = useState<ClassOption[]>([]);
   const [classId, setClassId] = useState("");
+  const classes = useMyClasses(setClassId) || [];
   const [children, setChildren] = useState<Child[]>([]);
   const [childId, setChildId] = useState("");
   const [terms, setTerms] = useState<Term[]>([]);
@@ -26,14 +26,6 @@ function TeachReportsContent() {
   useEffect(() => {
     if (!supabase) return;
     (async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) return;
-      const { data: roleRows } = await supabase.from("user_roles").select("scope_id, classes(id, name)").eq("user_id", user.id).eq("scope_type", "class");
-      const opts = ((roleRows as unknown as { classes: ClassOption | null }[]) || []).map((r) => r.classes).filter(Boolean) as ClassOption[];
-      setClasses(opts);
-      if (opts[0]) setClassId(opts[0].id);
       const { data: termRows } = await supabase.from("terms").select("id, name").order("starts_on", { ascending: false }).limit(6);
       setTerms((termRows as Term[]) || []);
       const { data: commentRows } = await supabase.from("comment_bank").select("id, text").limit(30);
@@ -94,14 +86,14 @@ function TeachReportsContent() {
           <h1 className="font-serif text-h2 font-semibold text-ink">Term reports</h1>
         </div>
         <div className="mt-4 flex flex-wrap gap-3">
-          <select value={classId} onChange={(e) => setClassId(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+          <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
             {classes.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.name}
               </option>
             ))}
           </select>
-          <select value={childId} onChange={(e) => setChildId(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+          <select value={childId} onChange={(e) => setChildId(e.target.value)} aria-label="Student" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
             <option value="">Select a student…</option>
             {children.map((c) => (
               <option key={c.id} value={c.id}>
@@ -109,7 +101,7 @@ function TeachReportsContent() {
               </option>
             ))}
           </select>
-          <select value={termId} onChange={(e) => setTermId(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+          <select value={termId} onChange={(e) => setTermId(e.target.value)} aria-label="Term" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
             <option value="">Select a term…</option>
             {terms.map((t) => (
               <option key={t.id} value={t.id}>

@@ -94,6 +94,13 @@ export function AuditLogViewer() {
             </tr>
           </thead>
           <tbody>
+            {rows === null && (
+              <tr>
+                <td colSpan={4} className="py-2 text-sm text-ink/60">
+                  Loading…
+                </td>
+              </tr>
+            )}
             {(rows || []).map((r) => (
               <tr key={r.id} className="border-t border-gold-light/30">
                 <td className="py-1.5 pr-3">{new Date(r.created_at).toLocaleString("en-GB")}</td>

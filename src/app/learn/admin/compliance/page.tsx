@@ -126,6 +126,7 @@ function ComplianceContent() {
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Unexplained absence alerts</h2>
         <ul className="mt-3 space-y-2">
+          {absenceAlerts === null && <p className="text-sm text-ink/60">Loading…</p>}
           {(absenceAlerts || []).map((a) => (
             <li key={a.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
               {String((a.changes as { child_id?: string })?.child_id || "")} — {new Date(a.created_at).toLocaleString("en-GB")}
@@ -142,6 +143,7 @@ function ComplianceContent() {
           <h2 className="font-serif text-h3 font-semibold text-ink">Keyword-flagged messages</h2>
           <p className="mt-1 text-xs text-ink/50">Visible to you as Safeguarding Lead regardless of thread membership.</p>
           <ul className="mt-3 space-y-2">
+            {flagged === null && <p className="text-sm text-ink/60">Loading…</p>}
             {(flagged || []).map((m) => (
               <li key={m.id} className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm">
                 <p>{m.body}</p>
@@ -158,6 +160,7 @@ function ComplianceContent() {
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Outstanding policy signatures</h2>
         <ul className="mt-3 space-y-2">
+          {outstanding === null && <p className="text-sm text-ink/60">Loading…</p>}
           {(outstanding || []).map((o, i) => (
             <li key={`${o.user_id}-${i}`} className="rounded-lg border border-gold-light/40 p-3 text-sm">
               {o.full_name} ({o.email}) — {o.title}

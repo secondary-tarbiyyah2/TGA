@@ -234,7 +234,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
           <div className="flex flex-wrap gap-2">
             <input value={childName} onChange={(e) => setChildName(e.target.value)} placeholder="Child's full name" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
             <input type="date" value={childDob} onChange={(e) => setChildDob(e.target.value)} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-            <select value={childYearGroupId} onChange={(e) => setChildYearGroupId(e.target.value)} className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
+            <select value={childYearGroupId} onChange={(e) => setChildYearGroupId(e.target.value)} aria-label="Year group" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
               <option value="">Year group…</option>
               {yearGroups.map((yg) => (
                 <option key={yg.id} value={yg.id}>
@@ -350,6 +350,7 @@ type FamilyRow = {
 function ExistingFamilies() {
   const supabase = getSupabaseClient();
   const [rows, setRows] = useState<FamilyRow[] | null>(null);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     if (!supabase) return;
@@ -375,32 +376,63 @@ function ExistingFamilies() {
     })();
   }, [supabase]);
 
-  if (rows === null) return null;
+  if (rows === null) return <p className="text-sm text-ink/60">Loading…</p>;
   if (rows.length === 0) return <p className="text-sm text-ink/60">No families added yet.</p>;
 
+  const query = search.trim().toLowerCase();
+  const filtered = query
+    ? rows.filter((r) =>
+        [r.childName, r.yearGroup, r.parentName, r.parentEmail].some((v) => (v || "").toLowerCase().includes(query))
+      )
+    : rows;
+
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-        <thead>
-          <tr>
-            {["Child", "Year group", "Parent", "Student login"].map((h) => (
-              <th key={h} className="border-b border-gold-light/50 p-2 font-semibold text-ink/70">
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.childId}>
-              <td className="border-b border-gold-light/20 p-2 font-medium text-ink">{r.childName}</td>
-              <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.yearGroup || "—"}</td>
-              <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.parentName || r.parentEmail || "—"}</td>
-              <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.hasStudentAccount ? "Yes" : "Not yet"}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div>
+      {/* Client-side filter only — the whole roster is already loaded above, so this is instant with no round trip. Worth a real search-as-you-go combobox once families run into the hundreds; a plain filtered table is still comfortable at current/expected roll sizes. */}
+      <div className="mb-3">
+        <label htmlFor="family-search" className="sr-only">
+          Search families by child, year group or parent
+        </label>
+        <input
+          id="family-search"
+          type="search"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search by child, year group or parent…"
+          className="w-full max-w-sm rounded-lg border border-gold-light/60 px-3 py-2 text-sm sm:w-auto"
+        />
+      </div>
+      {filtered.length === 0 ? (
+        <p className="text-sm text-ink/60">No families match &quot;{search.trim()}&quot;.</p>
+      ) : (
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[560px] border-collapse text-left text-sm">
+            <thead>
+              <tr>
+                {["Child", "Year group", "Parent", "Student login"].map((h) => (
+                  <th key={h} className="border-b border-gold-light/50 p-2 font-semibold text-ink/70">
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.map((r) => (
+                <tr key={r.childId}>
+                  <td className="border-b border-gold-light/20 p-2 font-medium text-ink">{r.childName}</td>
+                  <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.yearGroup || "—"}</td>
+                  <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.parentName || r.parentEmail || "—"}</td>
+                  <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.hasStudentAccount ? "Yes" : "Not yet"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      <p className="mt-2 text-xs text-ink/50">
+        {filtered.length} of {rows.length} famil{rows.length === 1 ? "y" : "ies"}
+        {query ? " shown" : " on record"}.
+      </p>
     </div>
   );
 }

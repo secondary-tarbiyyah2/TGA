@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { useMyClasses } from "@/lib/learn/useMyClasses";
 
-type ClassOption = { id: string; name: string };
 type Homework = { id: string; class_id: string; title: string; instructions: string | null; due_at: string; classes?: { name: string } | null };
 type StatusRow = { child_id: string; status: string; submission_id: string | null };
 type Child = { id: string; name: string };
@@ -158,9 +158,9 @@ function HomeworkCard({ hw }: { hw: Homework }) {
 
 function TeachHomeworkContent() {
   const supabase = getSupabaseClient();
-  const [classes, setClasses] = useState<ClassOption[]>([]);
-  const [homework, setHomework] = useState<Homework[] | null>(null);
   const [classId, setClassId] = useState("");
+  const classes = useMyClasses((firstId) => setClassId((current) => current || firstId)) || [];
+  const [homework, setHomework] = useState<Homework[] | null>(null);
   const [title, setTitle] = useState("");
   const [instructions, setInstructions] = useState("");
   const [dueAt, setDueAt] = useState("");
@@ -172,13 +172,6 @@ function TeachHomeworkContent() {
       data: { user },
     } = await supabase.auth.getUser();
     if (!user) return;
-    const { data: roleRows } = await supabase.from("user_roles").select("scope_id, classes(id, name)").eq("user_id", user.id).eq("scope_type", "class");
-    const opts = ((roleRows as unknown as { scope_id: string; classes: ClassOption | null }[]) || [])
-      .map((r) => r.classes)
-      .filter(Boolean) as ClassOption[];
-    setClasses(opts);
-    if (!classId && opts[0]) setClassId(opts[0].id);
-
     const { data: hwRows } = await supabase
       .from("homework")
       .select("id, class_id, title, instructions, due_at, classes(name)")
@@ -230,7 +223,7 @@ function TeachHomeworkContent() {
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Set new homework</h2>
         <div className="mt-3 space-y-3">
-          <select value={classId} onChange={(e) => setClassId(e.target.value)} className="w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+          <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm">
             {classes.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.name}

@@ -5,8 +5,8 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { QuranProgressForm } from "@/components/learn/QuranProgressForm";
+import { useMyClasses } from "@/lib/learn/useMyClasses";
 
-type ClassOption = { id: string; name: string; subject_id: string | null };
 type Child = { id: string; name: string };
 type AssessmentType = { id: string; name: string };
 type MarkScheme = { id: string; scale_name: string };
@@ -25,8 +25,8 @@ type Assessment = {
 function AssessmentContent() {
   const supabase = getSupabaseClient();
   const isAssessmentLead = useLearnPermission("assessment_lead");
-  const [classes, setClasses] = useState<ClassOption[]>([]);
   const [classId, setClassId] = useState("");
+  const classes = useMyClasses((firstId) => setClassId((current) => current || firstId));
   const [children, setChildren] = useState<Child[]>([]);
   const [types, setTypes] = useState<AssessmentType[]>([]);
   const [schemes, setSchemes] = useState<MarkScheme[]>([]);
@@ -42,24 +42,13 @@ function AssessmentContent() {
   const [notes, setNotes] = useState("");
   const [busy, setBusy] = useState(false);
 
-  const load = async () => {
-    if (!supabase) return;
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) return;
-    const { data: roleRows } = await supabase.from("user_roles").select("scope_id, classes(id, name, subject_id)").eq("user_id", user.id).eq("scope_type", "class");
-    const opts = ((roleRows as unknown as { classes: ClassOption | null }[]) || []).map((r) => r.classes).filter(Boolean) as ClassOption[];
-    setClasses(opts);
-    if (!classId && opts[0]) setClassId(opts[0].id);
-    const { data: typeRows } = await supabase.from("assessment_types").select("id, name").order("name");
-    setTypes((typeRows as AssessmentType[]) || []);
-  };
-
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (!supabase) return;
+    supabase
+      .from("assessment_types")
+      .select("id, name")
+      .order("name")
+      .then(({ data }) => setTypes((data as AssessmentType[]) || []));
   }, [supabase]);
 
   useEffect(() => {
@@ -72,7 +61,7 @@ function AssessmentContent() {
         const kids = ((data as unknown as { children: Child | null }[]) || []).map((r) => r.children).filter(Boolean) as Child[];
         setChildren(kids);
       });
-    const cls = classes.find((c) => c.id === classId);
+    const cls = (classes || []).find((c) => c.id === classId);
     if (cls?.subject_id) {
       supabase
         .from("mark_schemes")
@@ -149,14 +138,14 @@ function AssessmentContent() {
           <h1 className="font-serif text-h2 font-semibold text-ink">Assessment &amp; grades</h1>
         </div>
         <div className="mt-4 flex flex-wrap gap-3">
-          <select value={classId} onChange={(e) => setClassId(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
-            {classes.map((c) => (
+          <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+            {(classes || []).map((c) => (
               <option key={c.id} value={c.id}>
                 {c.name}
               </option>
             ))}
           </select>
-          <select value={childId} onChange={(e) => setChildId(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+          <select value={childId} onChange={(e) => setChildId(e.target.value)} aria-label="Student" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
             <option value="">Select a student…</option>
             {children.map((c) => (
               <option key={c.id} value={c.id}>

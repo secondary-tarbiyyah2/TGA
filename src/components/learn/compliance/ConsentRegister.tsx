@@ -32,6 +32,7 @@ export function ConsentRegister() {
       <h2 className="font-serif text-h3 font-semibold text-ink">Consent register</h2>
       <p className="mt-1 text-xs text-ink/50">Recordings, marketing and photos — each entry keeps the exact wording shown at the time, even if the current wording later changes.</p>
       <ul className="mt-3 space-y-2">
+        {rows === null && <p className="text-sm text-ink/60">Loading…</p>}
         {(rows || []).map((r) => (
           <li key={r.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
             <p className="font-semibold capitalize">{r.category} — {r.given ? "consent given" : "consent withdrawn"} {r.children?.name ? `(${r.children.name})` : ""}</p>
