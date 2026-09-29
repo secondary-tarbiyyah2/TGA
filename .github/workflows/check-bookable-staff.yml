@@ -1,0 +1,56 @@
+name: Check bookable_staff live data
+
+# One-off read-only diagnostic: shows exactly what the public booking
+# calendar's bookable_staff view returns right now, to confirm whether the
+# root cause of the earlier "empty calendar" bug (staff_members.bookable
+# defaulting to false, nothing else setting it true) is actually fixed.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find project ref and anon key
+        id: keys
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          KEYS=$(supabase projects api-keys --project-ref "$REF" -o json)
+          ANON=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          echo "::add-mask::$ANON"
+          echo "anon_key=$ANON" >> "$GITHUB_OUTPUT"
+
+      - name: Query bookable_staff (exactly what BookingCalendar.tsx reads)
+        env:
+          REF: ${{ steps.keys.outputs.ref }}
+          ANON: ${{ steps.keys.outputs.anon_key }}
+        run: |
+          set -uo pipefail
+          curl -sS -i "https://$REF.supabase.co/rest/v1/bookable_staff?select=id,display_name,role_title" \
+            -H "apikey: $ANON" \
+            -H "Authorization: Bearer $ANON"
+
+      - name: Query all staff_members' bookable flags via the Management API (service-role-equivalent)
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          REF: ${{ steps.keys.outputs.ref }}
+        run: |
+          set -uo pipefail
+          curl -sS -i -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"query": "select sm.display_name, sm.role_title, sm.bookable, sm.teams_meeting_url is not null as has_teams_url from public.staff_members sm;"}'
