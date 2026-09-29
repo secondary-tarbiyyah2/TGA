@@ -1,0 +1,82 @@
+name: Diagnose quiz_leads insert failure
+
+# One-off diagnostic: reproduces the user-reported "Something went wrong
+# saving your details" error from the "Your Child's Week" quiz by making
+# the exact same anon-key REST insert the browser makes, and prints the
+# full Postgrest error response — the browser only ever sees a generic
+# fallback message (YourChildsWeekQuiz.tsx's submitLead), so this is the
+# only way to see the real cause without a live Supabase dashboard.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find project ref and anon key
+        id: keys
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          KEYS=$(supabase projects api-keys --project-ref "$REF" -o json)
+          ANON=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          echo "::add-mask::$ANON"
+          echo "anon_key=$ANON" >> "$GITHUB_OUTPUT"
+
+      - name: Attempt the exact insert the quiz's submitLead makes
+        env:
+          REF: ${{ steps.keys.outputs.ref }}
+          ANON: ${{ steps.keys.outputs.anon_key }}
+        run: |
+          set -uo pipefail
+          echo "Project: $REF"
+          echo "--- quiz_leads insert ---"
+          curl -sS -i -X POST "https://$REF.supabase.co/rest/v1/quiz_leads" \
+            -H "apikey: $ANON" \
+            -H "Authorization: Bearer $ANON" \
+            -H "Content-Type: application/json" \
+            -H "Prefer: return=representation" \
+            -d '{
+              "session_id": null,
+              "lead_ref": "deadbeef",
+              "email": "diagnose-quiz-lead@example.com",
+              "parent_name": "Diagnostic Test",
+              "consent_given_at": "2026-09-29T00:00:00Z",
+              "consent_text": "I agree to be contacted about this plan.",
+              "year_group_id": null,
+              "answers_snapshot": {}
+            }'
+          echo ""
+          echo "--- quiz_sessions insert (what upsertQuizSession does first) ---"
+          curl -sS -i -X POST "https://$REF.supabase.co/rest/v1/quiz_sessions" \
+            -H "apikey: $ANON" \
+            -H "Authorization: Bearer $ANON" \
+            -H "Content-Type: application/json" \
+            -H "Prefer: return=minimal" \
+            -d '{
+              "id": "00000000-0000-4000-8000-000000000001",
+              "session_token": "diagnostic-token",
+              "quiz_config_version_id": null,
+              "year_group_id": null,
+              "timezone": "Europe/London",
+              "current_step": 0,
+              "answers": {}
+            }'
+          echo ""
+          echo "--- quiz_config_versions published row (confirms the quiz schema exists at all) ---"
+          curl -sS -i "https://$REF.supabase.co/rest/v1/quiz_config_versions?select=id,status,published_at&status=eq.published" \
+            -H "apikey: $ANON" \
+            -H "Authorization: Bearer $ANON"
