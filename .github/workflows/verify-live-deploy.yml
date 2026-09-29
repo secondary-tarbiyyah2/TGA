@@ -23,6 +23,12 @@ jobs:
           echo "Current time (UTC): $(date -u)"
 
       - name: Check /learn/account exists (now at the /learn subdomain's own root)
+        # Non-fatal: the learn.* subdomain doesn't exist in hosting yet (a
+        # known, documented pending step — see SETUP.md), so this always
+        # fails DNS resolution for now. Without continue-on-error, that
+        # single expected failure was halting the job before any of the
+        # later, currently-relevant checks (e.g. /eligibility) ever ran.
+        continue-on-error: true
         run: |
           set -euo pipefail
           code=$(curl -sS -o /dev/null -w "%{http_code}" "https://learn.globalacademy.tarbiyyah.co.uk/account/")
