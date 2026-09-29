@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { ApplicationForm } from "@/components/ApplicationForm";
+import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
 import { getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -47,6 +48,8 @@ export default async function AdmissionsPage() {
           ))}
         </Container>
       </section>
+
+      <PlacesRemaining />
 
       <section className="geo-texture bg-cream section-pad">
         <Container className="grid gap-4 sm:grid-cols-2">

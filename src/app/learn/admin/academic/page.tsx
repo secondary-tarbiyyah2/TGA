@@ -7,7 +7,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 
 type AcademicYear = { id: string; label: string; starts_on: string; ends_on: string; is_test: boolean };
 type Term = { id: string; name: string; starts_on: string; ends_on: string; academic_year_id: string; sanity_document_id: string | null };
-type YearGroup = { id: string; name: string; sort_order: number };
+type YearGroup = { id: string; name: string; sort_order: number; capacity: number | null };
 type Subject = { id: string; name: string; code: string | null; is_core: boolean };
 type ClassRow = { id: string; name: string; year_group_id: string | null; subject_id: string | null; weekly_lessons: number; academic_year_id: string | null };
 type Child = { id: string; name: string };
@@ -137,6 +137,82 @@ function NamedListSection<T extends { id: string; name: string }>({
             {r.name}
             <button type="button" onClick={() => remove(r.id)} className="text-xs text-red-700 underline">
               Remove
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/**
+ * Capacity per year group — kept separate from NamedListSection (which
+ * only supports adding new rows, not editing existing ones). "Places
+ * remaining" itself is never typed in here: it's computed from real
+ * enrolments (see the year_group_places view, migration 0019) so it can
+ * never go stale. Capacity is nullable and starts unset for every year
+ * group — the public pages only show a year group once it's set here.
+ */
+function YearGroupCapacitySection() {
+  const supabase = getSupabaseClient();
+  const [rows, setRows] = useState<YearGroup[] | null>(null);
+  const [drafts, setDrafts] = useState<Record<string, string>>({});
+  const [savingId, setSavingId] = useState<string | null>(null);
+
+  const load = async () => {
+    if (!supabase) return;
+    const { data } = await supabase.from("year_groups").select("id, name, sort_order, capacity").order("sort_order");
+    setRows((data as YearGroup[]) || []);
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
+    load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [supabase]);
+
+  const save = async (id: string) => {
+    if (!supabase) return;
+    const raw = drafts[id];
+    const capacity = raw === undefined || raw.trim() === "" ? null : Number(raw);
+    if (capacity !== null && (!Number.isFinite(capacity) || capacity <= 0)) return;
+    setSavingId(id);
+    await supabase.from("year_groups").update({ capacity }).eq("id", id);
+    setSavingId(null);
+    await load();
+  };
+
+  return (
+    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+      <h2 className="font-serif text-h3 font-semibold text-ink">Year group capacity</h2>
+      <p className="mt-1 text-xs text-ink/60">
+        Sets the total places for each year group. Leave blank to hide &quot;places remaining&quot; for that year
+        group on the public site entirely — it never shows a placeholder or guessed number.
+      </p>
+      <ul className="mt-4 space-y-2">
+        {rows === null && <p className="text-sm text-ink/60">Loading…</p>}
+        {rows?.map((r) => (
+          <li key={r.id} className="flex flex-wrap items-center gap-2 rounded-lg border border-gold-light/20 px-3 py-2 text-sm">
+            <span className="min-w-[8rem] font-medium text-ink">{r.name}</span>
+            <label className="flex items-center gap-1 text-xs text-ink/70">
+              Capacity
+              <input
+                type="number"
+                min={1}
+                inputMode="numeric"
+                value={drafts[r.id] ?? r.capacity ?? ""}
+                onChange={(e) => setDrafts((s) => ({ ...s, [r.id]: e.target.value }))}
+                placeholder="Unset"
+                className="w-24 rounded-lg border border-gold-light/60 px-2 py-1"
+              />
+            </label>
+            <button
+              type="button"
+              onClick={() => save(r.id)}
+              disabled={savingId === r.id}
+              className="rounded-full bg-gold-500 px-3 py-1 text-xs font-semibold text-ink-900 disabled:opacity-60"
+            >
+              {savingId === r.id ? "Saving…" : "Save"}
             </button>
           </li>
         ))}
@@ -275,6 +351,7 @@ function AcademicContent() {
     <div className="space-y-6">
       <TermsSection />
       <NamedListSection<YearGroup> title="Year groups" table="year_groups" />
+      <YearGroupCapacitySection />
       <NamedListSection<Subject> title="Subjects" table="subjects" extraFields={[{ key: "is_core", label: "Core subject", type: "checkbox" }]} />
       <ClassesSection />
     </div>
