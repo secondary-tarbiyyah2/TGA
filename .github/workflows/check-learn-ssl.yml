@@ -1,0 +1,33 @@
+name: Check /learn subdomain SSL certificate
+
+# The user's browser now reports ERR_SSL_VERSION_OR_CIPHER_MISMATCH for
+# learn.globalacademy.tarbiyyah.co.uk (DNS resolves correctly, confirmed
+# separately). Cloudflare's free Universal SSL certificate typically only
+# covers the apex domain plus ONE level of wildcard (e.g. *.tarbiyyah.co.uk),
+# which is why globalacademy.tarbiyyah.co.uk (one level deep) already has
+# working HTTPS — but learn.globalacademy.tarbiyyah.co.uk is a SECOND
+# level of subdomain, which that certificate would not cover. This
+# fetches the actual certificate presented for both hostnames and prints
+# their Subject/SAN fields to confirm or rule this out directly, rather
+# than guessing.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch certificate details
+        run: |
+          set -uo pipefail
+          for host in globalacademy.tarbiyyah.co.uk learn.globalacademy.tarbiyyah.co.uk; do
+            echo "=================================================="
+            echo "Host: $host"
+            echo "=================================================="
+            echo | openssl s_client -connect "$host:443" -servername "$host" 2>/dev/null | openssl x509 -noout -subject -ext subjectAltName 2>/dev/null || echo "Could not retrieve certificate"
+            echo ""
+            echo "--- Raw handshake attempt (for error detail) ---"
+            echo | openssl s_client -connect "$host:443" -servername "$host" 2>&1 | head -20 || true
+            echo ""
+          done
