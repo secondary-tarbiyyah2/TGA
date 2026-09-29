@@ -28,14 +28,14 @@ jobs:
           set -euo pipefail
           headers=$(curl -sSI -L --max-redirs 0 "https://globalacademy.tarbiyyah.co.uk/staff" || true)
           echo "$headers"
-          echo "$headers" | grep -qi "^location:.*learn\.globalacademy\.tarbiyyah\.co\.uk/login" && echo "PASS: /staff redirects to the /learn subdomain's login" || { echo "FAIL: /staff did not redirect to the /learn subdomain's login"; exit 1; }
+          echo "$headers" | grep -qi "^location:.*learn\.tarbiyyah\.co\.uk/login" && echo "PASS: /staff redirects to the /learn subdomain's login" || { echo "FAIL: /staff did not redirect to the /learn subdomain's login"; exit 1; }
 
       - name: Check /portal redirects to the /learn subdomain's login
         run: |
           set -euo pipefail
           headers=$(curl -sSI -L --max-redirs 0 "https://globalacademy.tarbiyyah.co.uk/portal" || true)
           echo "$headers"
-          echo "$headers" | grep -qi "^location:.*learn\.globalacademy\.tarbiyyah\.co\.uk/login" && echo "PASS: /portal redirects to the /learn subdomain's login" || { echo "FAIL: /portal did not redirect to the /learn subdomain's login"; exit 1; }
+          echo "$headers" | grep -qi "^location:.*learn\.tarbiyyah\.co\.uk/login" && echo "PASS: /portal redirects to the /learn subdomain's login" || { echo "FAIL: /portal did not redirect to the /learn subdomain's login"; exit 1; }
 
       - name: Check old /learn/login bookmark bridges across origins
         run: |
