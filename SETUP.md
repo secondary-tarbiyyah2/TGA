@@ -309,29 +309,39 @@ merging/deploying this branch, in this order:
    document root (not the same folder the main site's FTP account
    already deploys to — it needs its own folder so the two builds
    (`out-main/` and `out-learn/` — see `scripts/split-static-export.mjs`)
-   don't collide). Note the document root's path relative to your FTP
-   account's home directory; you'll need it in step 2. DNS for a cPanel
-   subdomain is usually created automatically as part of this step; if
-   your DNS is managed elsewhere, add an A/CNAME record for
-   `learn.tarbiyyah.co.uk` pointing at the same server the
-   main site already resolves to.
-2. **Add the `FTP_LEARN_REMOTE_DIR` repo secret** (Settings → Secrets and
-   variables → Actions → New repository secret) with the path from step 1.
-   `deploy-site.yml`'s second FTP step is conditional on this secret being
-   set — until it is, the pipeline keeps deploying only the main site,
-   exactly as before, so there's no risk of a half-broken deploy in the
-   meantime.
-3. **Re-run the deploy.** Push to this branch (or `workflow_dispatch` →
+   don't collide). DNS for a cPanel subdomain is usually created
+   automatically as part of this step; if your DNS is managed elsewhere,
+   add an A/CNAME record for `learn.tarbiyyah.co.uk` pointing at the same
+   server the main site already resolves to.
+2. **Create a SEPARATE FTP account scoped directly to that document root**
+   (cPanel → FTP Accounts → Create FTP Account, directory =
+   `public_html/learn` or wherever step 1 put it) — do NOT reuse the main
+   site's `FTP_USERNAME`/`FTP_PASSWORD`. This is required, not just
+   convenient: that account is itself scoped ("chrooted") to the MAIN
+   site's own document root, confirmed live when a first attempt at this
+   migration used it with a `server-dir` of `public_html/learn/` — instead
+   of reaching the real subdomain folder, it silently created a nested
+   phantom folder INSIDE the main site's own docroot
+   (`public_html/globalacademy.tarbiyyah.co.uk/public_html/learn/`,
+   provably reachable at the time via
+   `https://globalacademy.tarbiyyah.co.uk/public_html/learn/index.html`
+   returning the `/learn` build's own HTML) while the real
+   `learn.tarbiyyah.co.uk` document root stayed empty and 404'd. A chroot
+   can't be escaped with any relative path, so no secret value fixes this
+   with the same account — only a second account scoped to the right
+   directory does.
+3. **Add two repo secrets** (Settings → Secrets and variables → Actions →
+   New repository secret): `FTP_LEARN_USERNAME` and `FTP_LEARN_PASSWORD`,
+   from the account created in step 2. `deploy-site.yml`'s second FTP step
+   is conditional on `FTP_LEARN_USERNAME` being set — until it is, the
+   pipeline keeps deploying only the main site, exactly as before, so
+   there's no risk of a half-broken deploy in the meantime.
+4. **Re-run the deploy.** Push to this branch (or `workflow_dispatch` →
    "Deploy site") — this builds `out-main/`/`out-learn/` and now deploys
-   both. The FTP account used is the same one already configured
-   (`FTP_HOST`/`FTP_USERNAME`/`FTP_PASSWORD`); it just needs write access to
-   both document roots, which it will if it's the account whose home
-   directory sits above both (typical for a single cPanel hosting account
-   with multiple subdomains). If your FTP account is scoped narrower than
-   that, either widen it or create a second FTP account for the subdomain
-   and use that instead (would need `FTP-Deploy-Action`'s inputs split
-   further — ask if you hit this).
-4. **You do NOT need to touch the Supabase dashboard by hand for the Auth
+   both, the second one using the new dedicated FTP account with
+   `server-dir: ./` (its home directory already IS the subdomain's
+   document root).
+5. **You do NOT need to touch the Supabase dashboard by hand for the Auth
    allowlist** — `deploy-supabase.yml`'s "Configure Auth" step already adds
    `https://learn.tarbiyyah.co.uk/**` to `uri_allow_list`
    declaratively (alongside the existing main-domain and localhost entries)
@@ -339,7 +349,7 @@ merging/deploying this branch, in this order:
    the next time that workflow runs (or trigger it by hand once via
    `workflow_dispatch` if you want it live sooner, without waiting for an
    unrelated Supabase change).
-5. **Optional: override `LEARN_SITE_URL`** (Settings → Secrets and
+6. **Optional: override `LEARN_SITE_URL`** (Settings → Secrets and
    variables → Actions → Variables) only if the portal's real address will
    ever differ from `https://learn.tarbiyyah.co.uk` — it
    feeds both the frontend build (`NEXT_PUBLIC_LEARN_ORIGIN`, see

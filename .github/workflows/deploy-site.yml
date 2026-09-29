@@ -17,16 +17,22 @@ name: Deploy site
 #   FTP_USERNAME  — the FTP account's login, e.g. tga-deploy@globalacademy.tarbiyyah.co.uk
 #   FTP_PASSWORD  — that FTP account's password
 #
-# ...and one more for the /learn subdomain's document root (see SETUP.md —
-# this needs the subdomain to already exist in cPanel/hosting, a manual step
-# only the site owner can do):
-#   FTP_LEARN_REMOTE_DIR — the /learn subdomain's document root, as a path
-#     relative to the FTP account's home (e.g. "public_html/learn/", if the
-#     learn.tarbiyyah.co.uk subdomain was created directly under the account's
-#     home — check cPanel's own listing rather than guessing). No default —
-#     the deploy step below is skipped entirely (not aimed at a guessed path)
-#     until this is set, so the main-site deploy keeps working on its own in
-#     the meantime.
+# ...and two more for the /learn subdomain, using its OWN separate FTP
+# account rather than FTP_USERNAME/FTP_PASSWORD above:
+#   FTP_LEARN_USERNAME / FTP_LEARN_PASSWORD — a SEPARATE FTP account scoped
+#     directly to the learn.tarbiyyah.co.uk document root (public_html/learn).
+#     A second account is required, not just a different server-dir on the
+#     main account, because FTP_USERNAME is itself scoped ("chrooted") to
+#     the main site's own document root — confirmed live: uploading to
+#     "public_html/learn/" under that account silently created a nested
+#     phantom folder INSIDE the main site's docroot
+#     (public_html/globalacademy.tarbiyyah.co.uk/public_html/learn/,
+#     reachable proof at the time: https://globalacademy.tarbiyyah.co.uk/
+#     public_html/learn/index.html returned our /learn build's HTML) rather
+#     than ever reaching the real, sibling public_html/learn folder — a
+#     chroot can't be escaped by any relative path. No default — the deploy
+#     step below is skipped entirely until FTP_LEARN_USERNAME is set, so the
+#     main-site deploy keeps working on its own in the meantime.
 #
 # Optional repo variable:
 #   FTP_REMOTE_DIR — where in the FTP account to upload the MAIN site to. If
@@ -90,9 +96,9 @@ jobs:
       # step `if:` conditions at all (confirmed by a real dispatch attempt:
       # "Unrecognized named-value: 'secrets'") — only in env/with. The `env`
       # context IS available in step `if:`, so the "is this secret set"
-      # check below reads this instead of secrets.FTP_LEARN_REMOTE_DIR
+      # check below reads this instead of secrets.FTP_LEARN_USERNAME
       # directly.
-      FTP_LEARN_REMOTE_DIR: ${{ secrets.FTP_LEARN_REMOTE_DIR }}
+      FTP_LEARN_USERNAME: ${{ secrets.FTP_LEARN_USERNAME }}
     steps:
       - uses: actions/checkout@v4
 
@@ -185,22 +191,23 @@ jobs:
           # register.config.php, which isn't committed to git — see README).
           dangerous-clean-slate: false
 
-      # Skipped until FTP_LEARN_REMOTE_DIR is set — see this workflow's top
-      # comment and SETUP.md, "Moving /learn to its own subdomain". The
-      # subdomain itself has to exist in hosting first (manual, cPanel/DNS —
-      # not something this pipeline can do), so this step deploys nowhere
-      # near a guessed path until that's confirmed and the secret is added.
+      # Skipped until FTP_LEARN_USERNAME is set — see this workflow's top
+      # comment. Uses its OWN FTP account (scoped directly to
+      # public_html/learn, server-dir "./") rather than FTP_USERNAME/
+      # FTP_PASSWORD — that account is chrooted to the main site's own
+      # docroot and cannot reach the /learn subdomain's folder at all, no
+      # matter what server-dir is given (confirmed live — see top comment).
       - name: Deploy /learn portal to FTP (subdomain)
-        if: env.FTP_LEARN_REMOTE_DIR != ''
+        if: env.FTP_LEARN_USERNAME != ''
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          username: ${{ secrets.FTP_LEARN_USERNAME }}
+          password: ${{ secrets.FTP_LEARN_PASSWORD }}
           protocol: ftps
           port: 21
           local-dir: ./out-learn/
-          server-dir: ${{ secrets.FTP_LEARN_REMOTE_DIR }}
+          server-dir: ./
           # Same reasoning as the main site's step above — never wipe
           # anything placed there outside this pipeline.
           dangerous-clean-slate: false
