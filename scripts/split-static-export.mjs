@@ -6,7 +6,7 @@
 //                (globalacademy.tarbiyyah.co.uk).
 //   out-learn/ — the contents of /learn, PROMOTED TO ROOT (so
 //                "/learn/login/" becomes "/login/"), for the new subdomain
-//                (learn.globalacademy.tarbiyyah.co.uk).
+//                (learn.tarbiyyah.co.uk).
 //
 // Why not two separate builds? Next's static export shares one `_next/`
 // asset directory (JS/CSS chunks, fonts) across every route, including

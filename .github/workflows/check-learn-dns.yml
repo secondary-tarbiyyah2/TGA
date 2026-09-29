@@ -1,7 +1,7 @@
 name: Check /learn subdomain DNS
 
 # One-off diagnostic: the user reports DNS_PROBE_FINISHED_NXDOMAIN for
-# learn.globalacademy.tarbiyyah.co.uk in their browser, right after a
+# learn.tarbiyyah.co.uk in their browser, right after a
 # successful FTP deploy to that subdomain's document root. FTP works by
 # server hostname/IP, not public DNS, so this checks whether the
 # subdomain actually has a DNS record at all, and compares it to the
@@ -22,8 +22,8 @@ jobs:
           echo "--- globalacademy.tarbiyyah.co.uk (known working) ---"
           getent hosts globalacademy.tarbiyyah.co.uk || echo "no A record"
           echo ""
-          echo "--- learn.globalacademy.tarbiyyah.co.uk ---"
-          getent hosts learn.globalacademy.tarbiyyah.co.uk || echo "no A record"
+          echo "--- learn.tarbiyyah.co.uk ---"
+          getent hosts learn.tarbiyyah.co.uk || echo "no A record"
 
       - name: Detailed DNS records (A/NS/CNAME) via dnspython
         run: |

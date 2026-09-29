@@ -21,7 +21,7 @@ const fullName = (process.argv[3] || "").trim();
 // /learn lives on its own subdomain (see src/lib/learn/origin.ts and
 // SETUP.md, "Moving /learn to its own subdomain") — LEARN_SITE_URL, not
 // SITE_URL (the main marketing domain), is where the setup link must land.
-const learnSiteUrl = process.env.LEARN_SITE_URL || "https://learn.globalacademy.tarbiyyah.co.uk";
+const learnSiteUrl = process.env.LEARN_SITE_URL || "https://learn.tarbiyyah.co.uk";
 
 if (!url || !serviceRoleKey) {
   console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");

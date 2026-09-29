@@ -290,7 +290,7 @@ at once turns out to be a real, recurring need.
 
 `/learn` (the authenticated portal — admin/teach/family/student dashboards,
 sign-in) is moving off a path under `globalacademy.tarbiyyah.co.uk` onto its
-own subdomain, `learn.globalacademy.tarbiyyah.co.uk`. This is a security
+own subdomain, `learn.tarbiyyah.co.uk`. This is a security
 change, not a cosmetic one: right now the portal and the public marketing
 site share one browser origin, so an XSS bug anywhere on the public site
 (a comment field, a compromised script, anything) could in principle read
@@ -305,7 +305,7 @@ merging/deploying this branch, in this order:
 
 1. **Create the subdomain and its document root.** In cPanel (or your
    host's equivalent) → Domains/Subdomains → create
-   `learn.globalacademy.tarbiyyah.co.uk`, pointed at a NEW, separate
+   `learn.tarbiyyah.co.uk`, pointed at a NEW, separate
    document root (not the same folder the main site's FTP account
    already deploys to — it needs its own folder so the two builds
    (`out-main/` and `out-learn/` — see `scripts/split-static-export.mjs`)
@@ -313,7 +313,7 @@ merging/deploying this branch, in this order:
    account's home directory; you'll need it in step 2. DNS for a cPanel
    subdomain is usually created automatically as part of this step; if
    your DNS is managed elsewhere, add an A/CNAME record for
-   `learn.globalacademy.tarbiyyah.co.uk` pointing at the same server the
+   `learn.tarbiyyah.co.uk` pointing at the same server the
    main site already resolves to.
 2. **Add the `FTP_LEARN_REMOTE_DIR` repo secret** (Settings → Secrets and
    variables → Actions → New repository secret) with the path from step 1.
@@ -333,7 +333,7 @@ merging/deploying this branch, in this order:
    further — ask if you hit this).
 4. **You do NOT need to touch the Supabase dashboard by hand for the Auth
    allowlist** — `deploy-supabase.yml`'s "Configure Auth" step already adds
-   `https://learn.globalacademy.tarbiyyah.co.uk/**` to `uri_allow_list`
+   `https://learn.tarbiyyah.co.uk/**` to `uri_allow_list`
    declaratively (alongside the existing main-domain and localhost entries)
    and runs on every push to `supabase/**`, so it takes effect automatically
    the next time that workflow runs (or trigger it by hand once via
@@ -341,7 +341,7 @@ merging/deploying this branch, in this order:
    unrelated Supabase change).
 5. **Optional: override `LEARN_SITE_URL`** (Settings → Secrets and
    variables → Actions → Variables) only if the portal's real address will
-   ever differ from `https://learn.globalacademy.tarbiyyah.co.uk` — it
+   ever differ from `https://learn.tarbiyyah.co.uk` — it
    feeds both the frontend build (`NEXT_PUBLIC_LEARN_ORIGIN`, see
    `src/lib/learn/origin.ts`) and the Supabase Auth/Edge Function config, so
    changing it in one place updates every link and redirect together. Leave
@@ -362,6 +362,19 @@ server-side 301 specifically so an already-sent link can't silently break.
 after the subdomain goes live — as long as any invite/reset link sent
 before this migration might still be unused in someone's inbox, that
 bridge is what keeps it working.
+
+**Why `learn.tarbiyyah.co.uk`, not `learn.globalacademy.tarbiyyah.co.uk`.**
+The portal was originally built at the latter (one level under the
+marketing site's own subdomain), but that is a SECOND level of subdomain
+below the registered apex (`tarbiyyah.co.uk`). Cloudflare's free Universal
+SSL certificate only covers the apex plus ONE level of wildcard
+(`tarbiyyah.co.uk` + `*.tarbiyyah.co.uk`) — confirmed by inspecting the
+actual certificate presented for each hostname — so the two-level address
+got no certificate at all (browser: `ERR_SSL_VERSION_OR_CIPHER_MISMATCH`,
+not a graceful fallback). It was renamed to `learn.tarbiyyah.co.uk`, one
+level deep, which the existing wildcard covers for free. Do not move it
+back under `globalacademy.*` unless Cloudflare's paid Advanced Certificate
+Manager add-on (~$10/mo) is bought to cover that depth.
 
 ## Deliberately not built yet
 

@@ -1,7 +1,7 @@
 # Tarbiyyah Global Academy — MAIN DOMAIN static export document root
 # (globalacademy.tarbiyyah.co.uk). The authenticated /learn portal used to be
 # a path under this same domain; it now lives on its own subdomain
-# (learn.globalacademy.tarbiyyah.co.uk, its own document root, its own
+# (learn.tarbiyyah.co.uk, its own document root, its own
 # .htaccess — see deploy/learn-subdomain.htaccess) for real browser-origin
 # isolation, so an XSS bug here can never read the portal's session/
 # localStorage or make credentialed requests against it. See SETUP.md,
@@ -26,8 +26,8 @@ RewriteOptions IgnoreInherit
 # old URLs bookmarked or indexed. Neither of these carries an auth token in
 # its URL, so a plain server-side 301 is safe here (contrast with the
 # /learn/* bridge page below).
-RewriteRule ^staff(/.*)?$ https://learn.globalacademy.tarbiyyah.co.uk/login/ [R=301,L]
-RewriteRule ^portal(/.*)?$ https://learn.globalacademy.tarbiyyah.co.uk/login/ [R=301,L]
+RewriteRule ^staff(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
+RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 
 # Sanity Studio (out/studio, built separately by `npm run sanity:build` — see
 # README) is a client-side-routed single-page app: any /studio/* request that
@@ -40,7 +40,7 @@ RewriteRule ^ /studio/index.html [L]
 
 # /learn no longer exists under this domain at all — every route that used
 # to live here now lives at the same path under
-# https://learn.globalacademy.tarbiyyah.co.uk instead. Real invite/
+# https://learn.tarbiyyah.co.uk instead. Real invite/
 # password-reset links already sent to real people before this migration
 # point at /learn/login/invite on THIS domain, though, so this can't just
 # 404: any /learn/* request that isn't a real file (the /learn folder here

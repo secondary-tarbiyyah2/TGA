@@ -51,7 +51,7 @@ jobs:
           });
 
           console.log("=== Navigating to the /learn subdomain's login page ===");
-          const resp = await page.goto("https://learn.globalacademy.tarbiyyah.co.uk/login", { waitUntil: "networkidle", timeout: 30000 }).catch((e) => {
+          const resp = await page.goto("https://learn.tarbiyyah.co.uk/login", { waitUntil: "networkidle", timeout: 30000 }).catch((e) => {
             console.log("NAVIGATION ERROR:", e.message);
             return null;
           });

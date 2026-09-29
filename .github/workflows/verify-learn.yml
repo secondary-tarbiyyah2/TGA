@@ -12,7 +12,7 @@ name: Verify /learn deployment
 #
 # /learn moved from a path on the main domain to its own subdomain (see
 # SETUP.md, "Moving /learn to its own subdomain") — these checks target
-# learn.globalacademy.tarbiyyah.co.uk directly for anything that's now the
+# learn.tarbiyyah.co.uk directly for anything that's now the
 # portal's own concern, and will only pass once that subdomain has been
 # created and deployed to (a manual step; see SETUP.md).
 
@@ -41,12 +41,12 @@ jobs:
         run: |
           set -euo pipefail
           body=$(curl -sS "https://globalacademy.tarbiyyah.co.uk/learn/login/" || true)
-          echo "$body" | grep -qi "learn.globalacademy.tarbiyyah.co.uk" && echo "PASS: old /learn/login bridge page references the new subdomain" || { echo "FAIL: bridge page missing/not referencing the new subdomain"; exit 1; }
+          echo "$body" | grep -qi "learn.tarbiyyah.co.uk" && echo "PASS: old /learn/login bridge page references the new subdomain" || { echo "FAIL: bridge page missing/not referencing the new subdomain"; exit 1; }
 
       - name: Check the /learn subdomain's security headers
         run: |
           set -euo pipefail
-          headers=$(curl -sSI "https://learn.globalacademy.tarbiyyah.co.uk/login/" || true)
+          headers=$(curl -sSI "https://learn.tarbiyyah.co.uk/login/" || true)
           echo "$headers"
           echo "$headers" | grep -qi "^cache-control:.*no-store" && echo "PASS: Cache-Control: no-store present" || { echo "FAIL: Cache-Control: no-store missing"; exit 1; }
           echo "$headers" | grep -qi "^x-robots-tag:.*noindex" && echo "PASS: X-Robots-Tag: noindex present" || { echo "FAIL: X-Robots-Tag: noindex missing"; exit 1; }

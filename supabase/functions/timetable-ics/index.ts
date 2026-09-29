@@ -124,7 +124,7 @@ Deno.serve(async (req) => {
     const end = toIcsDateForNextOccurrence(s.weekday, s.end_time);
     lines.push(
       "BEGIN:VEVENT",
-      `UID:${s.id}@learn.globalacademy.tarbiyyah.co.uk`,
+      `UID:${s.id}@learn.tarbiyyah.co.uk`,
       `DTSTAMP:${toIcsDate(new Date())}`,
       `DTSTART:${toIcsDate(start)}`,
       `DTEND:${toIcsDate(end)}`,

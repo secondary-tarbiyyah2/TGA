@@ -5,7 +5,7 @@ name: Deploy site
 # (scripts/split-static-export.mjs — see its header comment for why), and
 # uploads each half over FTP to its own document root: the marketing site to
 # https://globalacademy.tarbiyyah.co.uk/ and the authenticated /learn portal
-# to its own subdomain, https://learn.globalacademy.tarbiyyah.co.uk/ — kept
+# to its own subdomain, https://learn.tarbiyyah.co.uk/ — kept
 # on a separate origin so an XSS bug on the public site can never read the
 # portal's session/localStorage (see public/.htaccess and SETUP.md, "Moving
 # /learn to its own subdomain"). This is why the site can live on a 2GB
@@ -21,10 +21,12 @@ name: Deploy site
 # this needs the subdomain to already exist in cPanel/hosting, a manual step
 # only the site owner can do):
 #   FTP_LEARN_REMOTE_DIR — the /learn subdomain's document root, as a path
-#     relative to the FTP account's home (e.g.
-#     "public_html/learn.globalacademy/"). No default — the deploy step
-#     below is skipped entirely (not aimed at a guessed path) until this is
-#     set, so the main-site deploy keeps working on its own in the meantime.
+#     relative to the FTP account's home (e.g. "public_html/learn/", if the
+#     learn.tarbiyyah.co.uk subdomain was created directly under the account's
+#     home — check cPanel's own listing rather than guessing). No default —
+#     the deploy step below is skipped entirely (not aimed at a guessed path)
+#     until this is set, so the main-site deploy keeps working on its own in
+#     the meantime.
 #
 # Optional repo variable:
 #   FTP_REMOTE_DIR — where in the FTP account to upload the MAIN site to. If
@@ -33,7 +35,7 @@ name: Deploy site
 #     Otherwise set it to the doc root's path relative to the FTP account's
 #     home, e.g. "public_html/globalacademy/".
 #   LEARN_SITE_URL — the /learn subdomain's public origin, e.g.
-#     "https://learn.globalacademy.tarbiyyah.co.uk". Defaults to that same
+#     "https://learn.tarbiyyah.co.uk". Defaults to that same
 #     value if unset. This is the ONE place that URL is configured for CI —
 #     it's baked into the frontend build (NEXT_PUBLIC_LEARN_ORIGIN, see
 #     src/lib/learn/origin.ts) and also feeds deploy-supabase.yml's Auth
@@ -143,7 +145,7 @@ jobs:
           NEXT_PUBLIC_ADMISSIONS_TEAMS_URL: ${{ vars.ADMISSIONS_TEAMS_URL || 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2UwM2U2NzYtNjhkMS00ZDRkLTlmODctNTZiMWZmMWFiMzcw%40thread.v2/0?context=%7b%22Tid%22%3a%22a0b25b15-bb34-4892-a564-6c8277ae3db2%22%2c%22Oid%22%3a%223b6d0aa6-0912-44cc-b592-f83506cd0d80%22%7d' }}
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
-          NEXT_PUBLIC_LEARN_ORIGIN: ${{ vars.LEARN_SITE_URL || 'https://learn.globalacademy.tarbiyyah.co.uk' }}
+          NEXT_PUBLIC_LEARN_ORIGIN: ${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}
         run: npm run build
 
       # Sanity Studio (the admin panel at /studio) is a separate static SPA

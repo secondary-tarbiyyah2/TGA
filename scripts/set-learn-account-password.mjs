@@ -60,6 +60,6 @@ console.log("");
 console.log("========================================");
 console.log(`Password set for: ${email}`);
 console.log(`Temporary password: ${tempPassword}`);
-console.log("Sign in at https://learn.globalacademy.tarbiyyah.co.uk/login with this email and password.");
+console.log("Sign in at https://learn.tarbiyyah.co.uk/login with this email and password.");
 console.log("This password is shown ONCE — it is not stored anywhere. Change it after signing in.");
 console.log("========================================");

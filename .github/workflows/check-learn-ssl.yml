@@ -1,15 +1,16 @@
 name: Check /learn subdomain SSL certificate
 
-# The user's browser now reports ERR_SSL_VERSION_OR_CIPHER_MISMATCH for
-# learn.globalacademy.tarbiyyah.co.uk (DNS resolves correctly, confirmed
-# separately). Cloudflare's free Universal SSL certificate typically only
-# covers the apex domain plus ONE level of wildcard (e.g. *.tarbiyyah.co.uk),
-# which is why globalacademy.tarbiyyah.co.uk (one level deep) already has
-# working HTTPS — but learn.globalacademy.tarbiyyah.co.uk is a SECOND
-# level of subdomain, which that certificate would not cover. This
-# fetches the actual certificate presented for both hostnames and prints
-# their Subject/SAN fields to confirm or rule this out directly, rather
-# than guessing.
+# HISTORICAL: this diagnosed ERR_SSL_VERSION_OR_CIPHER_MISMATCH on the
+# portal's OLD address, learn.globalacademy.tarbiyyah.co.uk — confirmed via
+# this workflow that Cloudflare's free Universal SSL certificate only covers
+# the apex plus ONE level of wildcard (tarbiyyah.co.uk + *.tarbiyyah.co.uk),
+# so that second-level hostname got no certificate at all. Fixed by renaming
+# the portal to learn.tarbiyyah.co.uk (one level deep, covered by the same
+# wildcard for free) — see src/lib/learn/origin.ts and SETUP.md, "Moving
+# /learn to its own subdomain". Kept here as a live check that the current
+# hostname still gets a valid certificate; do not renest it under
+# globalacademy.* again without buying Cloudflare's Advanced Certificate
+# Manager add-on to cover it.
 
 on:
   workflow_dispatch:
@@ -21,7 +22,7 @@ jobs:
       - name: Fetch certificate details
         run: |
           set -uo pipefail
-          for host in globalacademy.tarbiyyah.co.uk learn.globalacademy.tarbiyyah.co.uk; do
+          for host in globalacademy.tarbiyyah.co.uk learn.tarbiyyah.co.uk; do
             echo "=================================================="
             echo "Host: $host"
             echo "=================================================="

@@ -24,7 +24,7 @@ const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 // /learn lives on its own subdomain (see SETUP.md, "Moving /learn to its own
 // subdomain") — LEARN_SITE_URL, not SITE_URL (the main marketing domain), is
 // where the setup link must land.
-const learnSiteUrl = Deno.env.get("LEARN_SITE_URL") || "https://learn.globalacademy.tarbiyyah.co.uk";
+const learnSiteUrl = Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk";
 
 const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 

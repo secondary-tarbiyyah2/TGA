@@ -3,7 +3,7 @@ not an inline workflow heredoc, so it isn't at the mercy of YAML
 block-scalar indentation (the mistake made twice already this session)."""
 import dns.resolver
 
-hosts = ["globalacademy.tarbiyyah.co.uk", "learn.globalacademy.tarbiyyah.co.uk", "tarbiyyah.co.uk"]
+hosts = ["globalacademy.tarbiyyah.co.uk", "learn.tarbiyyah.co.uk", "tarbiyyah.co.uk"]
 for host in hosts:
     print(f"--- {host} ---")
     for rtype in ["A", "NS", "CNAME"]:
