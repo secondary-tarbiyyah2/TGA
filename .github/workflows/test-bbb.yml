@@ -1,0 +1,31 @@
+name: Test BigBlueButton integration
+
+# Runs our real BBB client code (supabase/functions/_shared/bbb.ts)
+# against a live server: create a meeting, join as teacher / student /
+# guest parent, list recordings, end it. Uses the repo's BBB_SERVER_URL /
+# BBB_SECRET secrets when set, else the public test server Moodle ships
+# with (test only; never for real lessons). See scripts/test-bbb.ts.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "supabase/functions/_shared/bbb.ts"
+      - "scripts/test-bbb.ts"
+      - ".github/workflows/test-bbb.yml"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Run BBB smoke test
+        env:
+          BBB_SERVER_URL: ${{ secrets.BBB_SERVER_URL }}
+          BBB_SECRET: ${{ secrets.BBB_SECRET }}
+        run: deno run --allow-net --allow-env --allow-write scripts/test-bbb.ts

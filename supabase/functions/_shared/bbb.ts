@@ -19,7 +19,14 @@
 // the shared secret hashed together as `checksum` — BBB rejects any request
 // whose checksum doesn't match. No SDK needed; this is the documented norm.
 
-const BBB_SERVER_URL = (Deno.env.get("BBB_SERVER_URL") || "").replace(/\/$/, "");
+// Accept the base URL however it's pasted: "https://bbb.example.com",
+// ".../bigbluebutton/", or the full ".../bigbluebutton/api/" that BBB's own
+// `bbb-conf --secret` prints. We append /bigbluebutton/api ourselves.
+const BBB_SERVER_URL = (Deno.env.get("BBB_SERVER_URL") || "")
+  .trim()
+  .replace(/\/+$/, "")
+  .replace(/\/api$/, "")
+  .replace(/\/bigbluebutton$/, "");
 const BBB_SECRET = Deno.env.get("BBB_SECRET") || "";
 // BBB >= 2.6 defaults to sha256 checksums (api version 2.0); older servers
 // need "sha1". Configurable so this doesn't silently break against an
@@ -48,7 +55,7 @@ async function checksum(callName: string, query: string): Promise<string> {
 /** Builds a fully-signed BBB API URL for the given call and params. Never
  * logged, never returned to a client — every caller of this module runs
  * server-side inside an Edge Function. */
-async function signedUrl(callName: string, params: Record<string, string | undefined>): Promise<string> {
+export async function signedUrl(callName: string, params: Record<string, string | undefined>): Promise<string> {
   const usp = new URLSearchParams();
   for (const [k, v] of Object.entries(params)) {
     if (v !== undefined && v !== "") usp.set(k, v);
@@ -121,7 +128,8 @@ export async function ensureMeeting(opts: {
     // room split off into smaller, less-supervised groups.
     breakoutRoomsEnabled: "true",
     breakoutRoomsRecord: "false",
-    breakoutRoomsPrivateChatEnabled: "true",
+    // Same rule as the main room: no private 1:1 chat anywhere in the call.
+    breakoutRoomsPrivateChatEnabled: "false",
   });
   const res = await fetch(url, { method: "GET" });
   const text = await res.text();
@@ -161,6 +169,9 @@ export async function buildGuestJoinUrl(opts: { meetingId: string; fullName: str
   return signedUrl("join", {
     meetingID: opts.meetingId,
     fullName: opts.fullName,
+    // BBB 2.6+ requires a role (or password) on every join; a guest with
+    // neither is rejected outright. VIEWER + guest=true = waiting room.
+    role: "VIEWER",
     guest: "true",
     redirect: "true",
   });
