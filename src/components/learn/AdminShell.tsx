@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 
 // Grouped into labeled sections rather than one flat 14-item list — reported
@@ -75,10 +75,43 @@ const NAV_GROUPS = [
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <div className="grid gap-8 md:grid-cols-[240px_1fr]">
-      <nav className="space-y-3">
+      {/* Below md, the full sidebar (six sections, each with its own list)
+          made the actual page content start well below the fold — reported
+          as "everything appears at bottom, have to scroll down" on a
+          non-maximised browser window. A single compact dropdown here
+          replaces the whole sidebar in that case: one control, page content
+          starts immediately after it, and every destination is still one
+          tap away via its group under an <optgroup>. */}
+      <nav className="md:hidden">
+        <label className="sr-only" htmlFor="admin-nav-select">
+          Go to
+        </label>
+        <select
+          id="admin-nav-select"
+          value={pathname}
+          onChange={(e) => router.push(e.target.value)}
+          className="w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2.5 text-sm font-medium text-ink"
+        >
+          {NAV_GROUPS.map((group) => (
+            <optgroup key={group.label} label={group.label}>
+              {group.items.map((item) => (
+                <option key={item.href} value={item.href}>
+                  {item.label}
+                </option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+        <div className="mt-3">
+          <ReportConcernLink />
+        </div>
+      </nav>
+
+      <nav className="hidden space-y-3 md:block">
         {NAV_GROUPS.map((group) => (
             <details key={group.label} open className="group rounded-xl border border-gold-light/40 bg-white">
               <summary className="flex cursor-pointer list-none items-center justify-between px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/50 [&::-webkit-details-marker]:hidden">

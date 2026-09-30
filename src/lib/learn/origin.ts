@@ -26,3 +26,11 @@
 // preview/staging build could point elsewhere; production always builds
 // with the real subdomain, which is why a hardcoded fallback is safe here.
 export const LEARN_ORIGIN = process.env.NEXT_PUBLIC_LEARN_ORIGIN || "https://learn.tarbiyyah.co.uk";
+
+// The main marketing domain, where Sanity Studio (/studio) lives — needed
+// from within /learn (e.g. the admin "Website content" page linking out to
+// Studio) since /learn is now on its own separate origin and can't reach
+// /studio with a root-relative path. A plain cross-origin link like this is
+// fine even from the portal's stricter origin: it carries no session data,
+// just a same-tab/new-tab navigation.
+export const MAIN_SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_ORIGIN || "https://globalacademy.tarbiyyah.co.uk";
