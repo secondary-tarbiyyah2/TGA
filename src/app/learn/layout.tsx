@@ -36,7 +36,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
   return (
     <div className="portal flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 border-b border-gold-light bg-white">
-        <div className="relative mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex h-14 max-w-[1440px] items-center gap-3 px-4 sm:px-6 lg:px-8">
           {area && <PortalMobileMenu area={area} roles={roleNames} />}
           <Link href={homeHref} className="flex items-center gap-3" aria-label="Tarbiyyah Global Academy — your dashboard">
             <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={124} height={38} priority />
@@ -67,7 +67,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
 
         {area && (
           <div className="hidden border-t border-gold-light/70 md:block">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
               <PortalNav area={area} roles={roleNames} />
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
       </header>
 
       <main id="main" className="flex-1">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
+        <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">{children}</div>
       </main>
     </div>
   );

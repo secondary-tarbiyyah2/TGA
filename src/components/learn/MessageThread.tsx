@@ -63,7 +63,7 @@ export function MessageThread({ threadId }: { threadId: string }) {
           <p className="text-sm text-ink/60">No messages yet — say hello.</p>
         ) : (
           messages.map((m) => (
-            <div key={m.id} className={`max-w-[80%] rounded-lg px-3 py-2 text-sm ${m.sender_id === userId ? "ml-auto bg-gold-600 text-white" : "bg-cream text-ink"}`}>
+            <div key={m.id} className={`max-w-[80%] rounded-lg px-3 py-2 text-sm ${m.sender_id === userId ? "ml-auto bg-gold-700 text-white" : "bg-cream text-ink"}`}>
               <p>{m.body}</p>
               <p className={`mt-1 text-[10px] ${m.sender_id === userId ? "text-white/70" : "text-ink/50"}`}>{new Date(m.created_at).toLocaleString("en-GB")}</p>
             </div>
@@ -80,7 +80,7 @@ export function MessageThread({ threadId }: { threadId: string }) {
           placeholder="Type a message…"
           className="flex-1 rounded-md border border-gold-light/60 px-3 py-2 text-sm"
         />
-        <button type="button" disabled={!body.trim() || busy} onClick={send} className="rounded-full bg-gold-600 px-4 py-2 text-sm text-white disabled:opacity-50">
+        <button type="button" disabled={!body.trim() || busy} onClick={send} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors">
           Send
         </button>
       </div>

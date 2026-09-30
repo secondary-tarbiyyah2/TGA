@@ -70,7 +70,7 @@ function ChangePassword() {
             className="mt-1 block rounded-lg border border-gold-light/60 px-3 py-2"
           />
         </label>
-        <button type="submit" disabled={busy} className="rounded-full bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 disabled:opacity-60">
+        <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
           {busy ? "Saving…" : "Change password"}
         </button>
       </form>

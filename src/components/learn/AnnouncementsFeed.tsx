@@ -97,7 +97,7 @@ export function AnnouncementsFeed({
             type="button"
             disabled={!title.trim() || !body.trim() || busy}
             onClick={post}
-            className="rounded-full bg-gold-600 px-4 py-1.5 text-sm text-white disabled:opacity-50"
+            className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors"
           >
             Post {postScope === "school" ? "school-wide" : "to class"}
           </button>

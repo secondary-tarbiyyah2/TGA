@@ -153,6 +153,20 @@ jobs:
             MAIL_FROM_EMAIL="globalacademy@tarbiyyah.co.uk" \
             MAIL_FROM_NAME="Tarbiyyah Global Academy"
 
+      # Video calls (BigBlueButton). Only set when the repo has the secrets,
+      # so an empty value never overwrites a server secret set by hand.
+      # Until they exist, booking-join falls back to the Teams link.
+      - name: Set video-call secrets (if provided)
+        env:
+          BBB_SERVER_URL: ${{ secrets.BBB_SERVER_URL }}
+          BBB_SECRET: ${{ secrets.BBB_SECRET }}
+        run: |
+          if [ -n "$BBB_SERVER_URL" ] && [ -n "$BBB_SECRET" ]; then
+            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" BBB_SERVER_URL="$BBB_SERVER_URL" BBB_SECRET="$BBB_SECRET"
+          else
+            echo "BBB_SERVER_URL / BBB_SECRET not set in repo secrets; calls will use the Teams fallback."
+          fi
+
       - name: Deploy Edge Functions
         run: |
           supabase functions deploy book-admissions-call --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
@@ -178,6 +192,21 @@ jobs:
           supabase functions deploy timetable-move --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy timetable-publish --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy timetable-cover --project-ref "${{ steps.project.outputs.ref }}"
+          # These were written but never added here, so they didn't exist on
+          # the server: "Start call", lesson joins, recordings, lesson set-up,
+          # timetable generation, the quiz plan email and flagged-message
+          # alerts all failed. Verified ones re-check the caller's role in
+          # their own code; the two --no-verify-jwt ones are called with no
+          # session (anonymous quiz-takers, a scheduled job).
+          supabase functions deploy booking-join --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy lesson-join --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy lesson-instances-generate --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy lesson-update-details --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy recording-access --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy recording-control --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy trigger-timetable-generation --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy quiz-send-plan --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy notify-flagged-messages --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
 
       - name: Configure Auth (magic link via Resend SMTP)
         run: |

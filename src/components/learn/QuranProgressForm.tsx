@@ -90,14 +90,14 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
         <button
           type="button"
           onClick={() => setType("quran_memorisation")}
-          className={`rounded-full px-3 py-1 text-xs ${type === "quran_memorisation" ? "bg-gold-600 text-white" : "border border-gold-500 text-gold-700"}`}
+          className={`rounded-full px-3 py-1 text-xs ${type === "quran_memorisation" ? "bg-gold-700 text-white" : "border border-gold-500 text-gold-700"}`}
         >
           Qur&apos;an memorisation
         </button>
         <button
           type="button"
           onClick={() => setType("islamic_studies")}
-          className={`rounded-full px-3 py-1 text-xs ${type === "islamic_studies" ? "bg-gold-600 text-white" : "border border-gold-500 text-gold-700"}`}
+          className={`rounded-full px-3 py-1 text-xs ${type === "islamic_studies" ? "bg-gold-700 text-white" : "border border-gold-500 text-gold-700"}`}
         >
           Islamic Studies
         </button>
@@ -121,7 +121,7 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
         </select>
       </div>
       <textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Note (e.g. tajweed points to revisit)" rows={2} className="mt-3 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-      <button type="button" disabled={busy} onClick={save} className="mt-3 rounded-full bg-gold-600 px-4 py-2 text-sm text-white disabled:opacity-50">
+      <button type="button" disabled={busy} onClick={save} className="mt-3 rounded-lg bg-gold-700 px-4 py-2 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors">
         Record progress
       </button>
 

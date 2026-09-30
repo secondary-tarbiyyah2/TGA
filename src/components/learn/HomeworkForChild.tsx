@@ -127,12 +127,12 @@ function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childI
                 rows={3}
                 className="w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm"
               />
-              <button type="button" disabled={!responseText.trim() || busy} onClick={submitText} className="rounded-full bg-gold-600 px-4 py-1.5 text-xs text-white disabled:opacity-50">
+              <button type="button" disabled={!responseText.trim() || busy} onClick={submitText} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors">
                 Submit text
               </button>
               <div className="flex items-center gap-2 pt-1">
                 <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} className="text-xs" />
-                <button type="button" disabled={!file || busy} onClick={submitFile} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 disabled:opacity-50">
+                <button type="button" disabled={!file || busy} onClick={submitFile} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs disabled:opacity-50 bg-white text-ink/80 hover:bg-cream font-medium transition-colors">
                   Upload file
                 </button>
               </div>

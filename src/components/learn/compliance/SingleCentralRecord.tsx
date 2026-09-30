@@ -98,7 +98,7 @@ export function SingleCentralRecord() {
             <div key={s.user_id} className={`rounded-lg border p-3 text-sm ${v && isExpiring(v.dbs_renewal_due) ? "border-red-300 bg-red-50" : "border-gold-light/40"}`}>
               <div className="flex items-center justify-between">
                 <p className="font-semibold">{s.full_name} <span className="font-normal text-ink/50">({s.role.replace("_", " ")})</span></p>
-                <button type="button" onClick={() => startEdit(s.user_id)} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 hover:bg-cream">
+                <button type="button" onClick={() => startEdit(s.user_id)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
                   {v ? "Edit" : "Add record"}
                 </button>
               </div>
@@ -137,8 +137,8 @@ export function SingleCentralRecord() {
                     <input type="checkbox" checked={form.qualification_check_done} onChange={(e) => setForm({ ...form, qualification_check_done: e.target.checked })} /> Qualifications checked
                   </label>
                   <div className="sm:col-span-2 flex gap-2">
-                    <button type="button" onClick={() => save(s.user_id)} disabled={busy} className="rounded-full bg-gold-500 px-4 py-1.5 text-xs font-semibold text-ink-900 hover:brightness-95 disabled:opacity-60">Save</button>
-                    <button type="button" onClick={() => setEditing(null)} className="rounded-full border border-gold-light/60 px-4 py-1.5 text-xs text-ink/70">Cancel</button>
+                    <button type="button" onClick={() => save(s.user_id)} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">Save</button>
+                    <button type="button" onClick={() => setEditing(null)} className="rounded-lg border border-gold-light px-4 py-1.5 text-sm bg-white text-ink/80 hover:bg-cream font-medium transition-colors">Cancel</button>
                   </div>
                 </div>
               )}

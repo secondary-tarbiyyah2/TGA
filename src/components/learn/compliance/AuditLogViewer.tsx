@@ -75,9 +75,9 @@ export function AuditLogViewer() {
         <input value={action} onChange={(e) => setAction(e.target.value)} placeholder="Action contains…" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
         <input type="date" value={from} onChange={(e) => setFrom(e.target.value)} className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
         <input type="date" value={to} onChange={(e) => setTo(e.target.value)} className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
-        <button type="submit" className="rounded-full border border-gold-500 px-4 py-1.5 text-xs text-gold-700 hover:bg-cream sm:col-span-1">Filter</button>
+        <button type="submit" className="rounded-lg border border-gold-light px-4 py-1.5 text-sm hover:bg-cream sm:col-span-1 bg-white text-ink/80 font-medium transition-colors">Filter</button>
         {canExport && (
-          <button type="button" onClick={exportCsv} className="rounded-full bg-gold-500 px-4 py-1.5 text-xs font-semibold text-ink-900 hover:brightness-95 sm:col-span-1">
+          <button type="button" onClick={exportCsv} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold sm:col-span-1 text-white hover:bg-gold-900 transition-colors">
             Export CSV
           </button>
         )}
@@ -115,9 +115,9 @@ export function AuditLogViewer() {
       </div>
 
       <div className="mt-3 flex items-center gap-3 text-xs text-ink/60">
-        <button type="button" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} className="rounded-full border border-gold-light/60 px-3 py-1 disabled:opacity-40">Previous</button>
+        <button type="button" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} className="rounded-lg border border-gold-light px-3 py-1.5 disabled:opacity-40 bg-white text-ink/80 hover:bg-cream font-medium transition-colors">Previous</button>
         <span>Page {page + 1} of {Math.max(1, Math.ceil(count / PAGE_SIZE))} ({count} total)</span>
-        <button type="button" disabled={(page + 1) * PAGE_SIZE >= count} onClick={() => setPage((p) => p + 1)} className="rounded-full border border-gold-light/60 px-3 py-1 disabled:opacity-40">Next</button>
+        <button type="button" disabled={(page + 1) * PAGE_SIZE >= count} onClick={() => setPage((p) => p + 1)} className="rounded-lg border border-gold-light px-3 py-1.5 disabled:opacity-40 bg-white text-ink/80 hover:bg-cream font-medium transition-colors">Next</button>
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ export default function AdminWebsitecontentPage() {
               href={studioUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink-900 hover:brightness-95"
+              className="mt-4 inline-block rounded-lg bg-gold-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 transition-colors"
             >
               Open Sanity Studio →
             </a>

@@ -8,7 +8,7 @@ import Link from "next/link";
  */
 export function ReportConcernLink() {
   return (
-    <Link href="/report-concern" className="print:hidden rounded-full border border-red-300 px-4 py-2 text-sm text-red-700 hover:bg-red-50">
+    <Link href="/report-concern" className="print:hidden rounded-lg border border-red-300 px-4 py-2 text-sm text-red-700 hover:bg-red-50 font-medium transition-colors">
       Report a concern
     </Link>
   );

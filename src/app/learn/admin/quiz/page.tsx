@@ -20,7 +20,7 @@ function AdminQuizContent() {
       <div>
         <div className="mb-6 flex items-center justify-between rounded-2xl bg-amber-50 p-4 text-amber-900">
           <p className="text-sm font-medium">Previewing as a parent — the draft config, no data is saved from this run.</p>
-          <button type="button" onClick={() => setPreviewConfig(null)} className="rounded-full border border-amber-300 px-4 py-2 text-xs font-semibold hover:bg-amber-100">
+          <button type="button" onClick={() => setPreviewConfig(null)} className="rounded-lg border border-amber-300 px-4 py-2 text-sm font-semibold hover:bg-amber-100 transition-colors">
             Exit preview
           </button>
         </div>

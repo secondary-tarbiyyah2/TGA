@@ -97,10 +97,10 @@ function MarkRow({ submissionId, childName, existing, onSaved }: { submissionId:
         />
       </div>
       <div className="mt-2 flex items-center gap-2">
-        <button type="button" disabled={busy} onClick={() => save(false)} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700">
+        <button type="button" disabled={busy} onClick={() => save(false)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs bg-white text-ink/80 hover:bg-cream font-medium transition-colors">
           Save draft
         </button>
-        <button type="button" disabled={busy} onClick={() => save(true)} className="rounded-full bg-gold-600 px-3 py-1 text-xs text-white">
+        <button type="button" disabled={busy} onClick={() => save(true)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs text-white hover:bg-gold-900 font-medium transition-colors">
           Save &amp; release to family
         </button>
         {existing?.released && <span className="text-xs text-green-700">Released</span>}
@@ -288,7 +288,7 @@ function TeachHomeworkContent() {
             type="button"
             disabled={!classId || !title.trim() || !dueAt || busy}
             onClick={create}
-            className="rounded-full bg-gold-600 px-4 py-2 text-sm text-white disabled:opacity-50"
+            className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors"
           >
             Set homework
           </button>

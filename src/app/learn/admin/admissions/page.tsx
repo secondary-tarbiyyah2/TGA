@@ -5,7 +5,8 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { Card } from "@/components/learn/Card";
 import { useLearnSession } from "@/lib/learn/session";
-import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
+import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
+import { getSupabaseClient } from "@/lib/supabase/client";
 
 /**
  * Starts (or rejoins) the in-house video call for a booking — same
@@ -15,18 +16,8 @@ import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
  * see supabase/functions/booking-join.
  */
 async function startBookingCall(bookingId: string): Promise<{ ok: boolean; joinUrl?: string; error?: string }> {
-  const supabase = getSupabaseClient();
-  const url = getEdgeFunctionUrl("booking-join");
-  if (!supabase || !url) return { ok: false, error: "not_configured" };
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${session?.access_token || ""}` },
-    body: JSON.stringify({ booking_id: bookingId }),
-  });
-  return res.json();
+  // Shared helper: never throws or hangs, see src/lib/learn/edge.ts.
+  return (await callEdgeFunction("booking-join", { booking_id: bookingId })) as never;
 }
 
 type StaffRow = { id: string; profile_id: string; display_name: string; role_title: string; teams_meeting_url: string | null; bookable: boolean };
@@ -120,7 +111,7 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
           Teams meeting link
           <div className="mt-1 flex max-w-lg gap-2">
             <input value={teamsUrl} onChange={(e) => setTeamsUrl(e.target.value)} type="url" placeholder="https://teams.microsoft.com/…" className="flex-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-            <button type="button" onClick={saveTeamsUrl} disabled={savingTeamsUrl} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 hover:brightness-95 disabled:opacity-50">
+            <button type="button" onClick={saveTeamsUrl} disabled={savingTeamsUrl} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
               Save
             </button>
           </div>
@@ -173,7 +164,7 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
             To
             <input name="end_time" type="time" required defaultValue="15:00" className="mt-1 block rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
           </label>
-          <button type="submit" className="rounded-full bg-gold-500 px-4 py-1.5 text-xs font-semibold text-ink-900 hover:brightness-95">
+          <button type="submit" className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 transition-colors">
             Add
           </button>
         </form>
@@ -186,19 +177,32 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
   const supabase = getSupabaseClient();
   const [bookings, setBookings] = useState<BookingRow[] | null>(null);
   const [callState, setCallState] = useState<Record<string, "starting" | "error">>({});
+  const [callError, setCallError] = useState<Record<string, string>>({});
 
   async function joinCall(bookingId: string) {
+    // Open the tab now, while we still have the click. Safari and Firefox
+    // block a window.open that only happens after an await.
+    const popup = window.open("", "_blank");
+    if (popup) {
+      popup.opener = null;
+      popup.document.title = "Starting your call…";
+      popup.document.body.innerHTML = '<p style="font-family:system-ui,sans-serif;padding:2rem;color:#3a3f45">Starting your call…</p>';
+    }
     setCallState((s) => ({ ...s, [bookingId]: "starting" }));
+    setCallError((e) => ({ ...e, [bookingId]: "" }));
     const result = await startBookingCall(bookingId);
-    setCallState((s) => {
-      const next = { ...s };
-      delete next[bookingId];
-      return next;
-    });
     if (result.ok && result.joinUrl) {
-      window.open(result.joinUrl, "_blank", "noopener");
+      setCallState((s) => {
+        const next = { ...s };
+        delete next[bookingId];
+        return next;
+      });
+      if (popup) popup.location.href = result.joinUrl;
+      else window.location.href = result.joinUrl;
     } else {
+      popup?.close();
       setCallState((s) => ({ ...s, [bookingId]: "error" }));
+      setCallError((e) => ({ ...e, [bookingId]: edgeErrorMessage(result) }));
     }
   }
 
@@ -240,7 +244,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm font-medium text-ink">Upcoming bookings</p>
-        <button type="button" onClick={exportCsv} className="rounded-full border border-gold-500 px-3 py-1 text-xs font-medium text-gold-700 hover:bg-cream">
+        <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium hover:bg-cream bg-white text-ink/80 transition-colors">
           Export CSV
         </button>
       </div>
@@ -255,19 +259,19 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              {callState[b.id] === "error" && <span className="text-xs text-red-700">Couldn&apos;t start the call — try again.</span>}
+              {callState[b.id] === "error" && <span className="max-w-xs text-xs text-red-700">{callError[b.id] || "Couldn't start the call. Try again."}</span>}
               <button
                 type="button"
                 onClick={() => joinCall(b.id)}
                 disabled={callState[b.id] === "starting"}
-                className="rounded-full bg-teal-700 px-3 py-1 text-xs font-semibold text-white hover:brightness-110 disabled:opacity-50"
+                className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:brightness-110 disabled:opacity-50 transition-colors"
               >
                 {callState[b.id] === "starting" ? "Starting…" : "Start call"}
               </button>
-              <button type="button" onClick={() => setOutcome(b.id, "completed")} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 hover:bg-cream">
+              <button type="button" onClick={() => setOutcome(b.id, "completed")} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
                 Mark completed
               </button>
-              <button type="button" onClick={() => setOutcome(b.id, "no_show")} className="rounded-full border border-red-300 px-3 py-1 text-xs text-red-700 hover:bg-red-50">
+              <button type="button" onClick={() => setOutcome(b.id, "no_show")} className="rounded-lg border border-red-300 px-3 py-1.5 text-xs text-red-700 hover:bg-red-50 font-medium transition-colors">
                 No-show
               </button>
             </div>

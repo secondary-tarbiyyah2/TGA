@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
-import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
+import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
+import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel } from "@/lib/learn/session";
 
 type YearGroup = { id: string; name: string };
@@ -11,18 +12,8 @@ type YearGroup = { id: string; name: string };
 type InviteResult = { ok: boolean; error?: string; detail?: string; profileId?: string; isNewUser?: boolean; setupLink?: string; emailSent?: boolean };
 
 async function invite(body: Record<string, unknown>): Promise<InviteResult> {
-  const supabase = getSupabaseClient();
-  const url = getEdgeFunctionUrl("learn-invite");
-  if (!supabase || !url) return { ok: false, error: "not_configured" };
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${session?.access_token || ""}` },
-    body: JSON.stringify(body),
-  });
-  return res.json();
+  // Shared helper: never throws or hangs, see src/lib/learn/edge.ts.
+  return (await callEdgeFunction("learn-invite", body)) as never;
 }
 
 type Step = "parent" | "child" | "student" | "done";
@@ -108,7 +99,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
     try {
       const result = await invite({ email: parentEmail.trim(), fullName: parentName.trim(), role: "parent" });
       if (!result.ok || !result.profileId) {
-        setError(`Could not invite parent: ${result.detail || result.error}`);
+        setError(`Could not invite parent: ${edgeErrorMessage(result)}`);
         return;
       }
       setParentUserId(result.profileId);
@@ -160,7 +151,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
     try {
       const result = await invite({ email, fullName: child.name, role: "student" });
       if (!result.ok || !result.profileId) {
-        setError(`Could not invite a login for ${child.name}: ${result.detail || result.error}`);
+        setError(`Could not invite a login for ${child.name}: ${edgeErrorMessage(result)}`);
         return;
       }
       const { error: linkErr } = await supabase
@@ -208,7 +199,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
           <div className="flex flex-wrap gap-2">
             <input value={parentName} onChange={(e) => setParentName(e.target.value)} placeholder="Parent's full name" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
             <input value={parentEmail} onChange={(e) => setParentEmail(e.target.value)} placeholder="Parent's email" type="email" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-            <button type="button" disabled={busy} onClick={inviteParent} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+            <button type="button" disabled={busy} onClick={inviteParent} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
               Invite &amp; continue
             </button>
           </div>
@@ -255,13 +246,13 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
                 </option>
               ))}
             </select>
-            <button type="button" disabled={busy || !childName.trim() || !childDob} onClick={addChild} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+            <button type="button" disabled={busy || !childName.trim() || !childDob} onClick={addChild} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
               {children.length === 0 ? "Add child" : "Add another child"}
             </button>
           </div>
 
           {children.length > 0 && (
-            <button type="button" onClick={proceedToStudentLogins} className="rounded-full border border-gold-500 px-4 py-2 text-xs font-semibold text-gold-700 hover:bg-cream">
+            <button type="button" onClick={proceedToStudentLogins} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors">
               Continue to student logins ({children.length} {children.length === 1 ? "child" : "children"}) →
             </button>
           )}
@@ -310,11 +301,11 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
                       type="button"
                       disabled={busy || !(studentEmails[c.id] || "").trim()}
                       onClick={() => inviteStudentFor(c)}
-                      className="rounded-full bg-gold-500 px-3 py-1.5 text-xs font-semibold text-ink-900 disabled:opacity-50"
+                      className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors"
                     >
                       Invite
                     </button>
-                    <button type="button" onClick={() => skipStudentFor(c.id)} className="rounded-full border border-gold-light/60 px-3 py-1.5 text-xs text-ink/60 hover:bg-cream">
+                    <button type="button" onClick={() => skipStudentFor(c.id)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
                       Skip for now
                     </button>
                   </div>
@@ -322,7 +313,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
               </div>
             ))}
           </div>
-          <button type="button" onClick={finishFamily} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900">
+          <button type="button" onClick={finishFamily} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors">
             {allChildrenHandled ? "Finish this family" : "Finish (skip the rest)"}
           </button>
         </div>
@@ -343,7 +334,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
                 resetAll();
                 onChanged();
               }}
-              className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900"
+              className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors"
             >
               Start another family
             </button>

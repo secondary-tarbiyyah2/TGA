@@ -12,7 +12,7 @@ export function PrintButton({ label = "Print / Save as PDF" }: { label?: string 
     <button
       type="button"
       onClick={() => window.print()}
-      className="print:hidden rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream"
+      className="print:hidden rounded-lg border border-gold-light px-4 py-2 text-sm hover:bg-cream bg-white text-ink/80 font-medium transition-colors"
     >
       {label}
     </button>

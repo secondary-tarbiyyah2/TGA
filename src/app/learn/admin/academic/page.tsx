@@ -126,7 +126,7 @@ function NamedListSection<T extends { id: string; name: string }>({
             />
           )
         )}
-        <button type="button" onClick={add} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900">
+        <button type="button" onClick={add} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors">
           Add
         </button>
       </div>
@@ -210,7 +210,7 @@ function YearGroupCapacitySection() {
               type="button"
               onClick={() => save(r.id)}
               disabled={savingId === r.id}
-              className="rounded-full bg-gold-500 px-3 py-1 text-xs font-semibold text-ink-900 disabled:opacity-60"
+              className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors"
             >
               {savingId === r.id ? "Saving…" : "Save"}
             </button>
@@ -307,7 +307,7 @@ function ClassesSection() {
           className="w-24 rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
           placeholder="Lessons/wk"
         />
-        <button type="button" onClick={addClass} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900">
+        <button type="button" onClick={addClass} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors">
           Add class
         </button>
       </div>
@@ -332,7 +332,7 @@ function ClassesSection() {
                 <option value="">Enrol child…</option>
                 {children.map((ch) => <option key={ch.id} value={ch.id}>{ch.name}</option>)}
               </select>
-              <button type="button" onClick={() => enrol(c.id)} className="rounded-full border border-gold-500 px-3 py-1 text-gold-700">
+              <button type="button" onClick={() => enrol(c.id)} className="rounded-lg border border-gold-light px-3 py-1.5 bg-white text-ink/80 hover:bg-cream font-medium transition-colors">
                 Enrol
               </button>
               <span className="text-ink/60">

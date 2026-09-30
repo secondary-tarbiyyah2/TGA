@@ -131,7 +131,7 @@ export function SampleWeeksPanel() {
                       const sel = document.getElementById(`run-${yg.id}`) as HTMLSelectElement;
                       saveMark(yg.id, sel.value, "draft", existing);
                     }}
-                    className="rounded-full border border-gold-light/60 px-4 py-2 text-xs font-semibold text-ink/70 hover:bg-cream"
+                    className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors"
                   >
                     Save draft
                   </button>
@@ -142,7 +142,7 @@ export function SampleWeeksPanel() {
                       const sel = document.getElementById(`run-${yg.id}`) as HTMLSelectElement;
                       saveMark(yg.id, sel.value, "review", existing);
                     }}
-                    className="rounded-full border border-gold-light/60 px-4 py-2 text-xs font-semibold text-ink/70 hover:bg-cream"
+                    className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors"
                   >
                     Send to review
                   </button>
@@ -153,7 +153,7 @@ export function SampleWeeksPanel() {
                       const sel = document.getElementById(`run-${yg.id}`) as HTMLSelectElement;
                       saveMark(yg.id, sel.value, "published", existing);
                     }}
-                    className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 hover:brightness-95"
+                    className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors"
                   >
                     Publish
                   </button>
@@ -185,7 +185,7 @@ export function SampleWeeksPanel() {
                       <button
                         type="button"
                         onClick={() => saveMark(yg.id, h.run_id, h.status as Mark["status"], existing)}
-                        className="shrink-0 rounded-full border border-gold-light/60 px-2 py-0.5 text-[11px] font-medium text-ink/70 hover:bg-cream"
+                        className="shrink-0 rounded-lg border border-gold-light px-2 py-0.5 text-[11px] font-medium hover:bg-cream bg-white text-ink/80 transition-colors"
                       >
                         Revert to this
                       </button>

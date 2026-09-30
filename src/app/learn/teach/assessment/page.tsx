@@ -192,7 +192,7 @@ function AssessmentContent() {
             rows={2}
             className="mt-3 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm"
           />
-          <button type="button" disabled={busy || !typeId || !title.trim() || !date} onClick={save} className="mt-3 rounded-full bg-gold-600 px-4 py-2 text-sm text-white disabled:opacity-50">
+          <button type="button" disabled={busy || !typeId || !title.trim() || !date} onClick={save} className="mt-3 rounded-lg bg-gold-700 px-4 py-2 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors">
             Save assessment
           </button>
 
