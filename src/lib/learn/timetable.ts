@@ -12,9 +12,12 @@ export const WEEKDAYS: { value: number; label: string; short: string }[] = [
 ];
 
 // Two live-lesson time bands (see scripts/timetable-solver/generate.py's
-// module docstring / src/sanity/schemaTypes/curriculumContent.ts's
-// timeBandsHeading/timeBandsBody) — this school teaches an
-// international, timezone-spread cohort across two daily windows.
+// module docstring) — this school teaches an international,
+// timezone-spread cohort across two daily windows. This is the actual
+// scheduling engine's structure; it is independent of the (now removed)
+// "Two live-lesson time bands" marketing differentiator, which described
+// specific named bands (UK/Europe/West-Africa, Gulf/South-Asia) that were
+// never confirmed as a commitment.
 export const PERIODS: { start: string; end: string; band: "A" | "B" }[] = [
   { start: "09:00", end: "10:00", band: "A" },
   { start: "10:00", end: "11:00", band: "A" },
