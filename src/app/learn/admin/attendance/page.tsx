@@ -141,7 +141,7 @@ function AttendanceContent() {
 
 export default function AdminAttendancePage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <AdminShell>
           <AttendanceContent />

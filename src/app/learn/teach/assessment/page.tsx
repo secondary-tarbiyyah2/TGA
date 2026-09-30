@@ -6,6 +6,7 @@ import { LearnShell } from "@/components/learn/LearnShell";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { QuranProgressForm } from "@/components/learn/QuranProgressForm";
+import { WeeklyTarbiyahNoteForm } from "@/components/learn/WeeklyTarbiyahNoteForm";
 import { useMyClasses } from "@/lib/learn/useMyClasses";
 
 type Child = { id: string; name: string };
@@ -215,13 +216,14 @@ function AssessmentContent() {
       )}
 
       {isAssessmentLead && childId && <QuranProgressForm childId={childId} classId={classId || null} />}
+      {childId && classId && <WeeklyTarbiyahNoteForm childId={childId} classId={classId} />}
     </div>
   );
 }
 
 export default function TeachAssessmentPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
           <AssessmentContent />

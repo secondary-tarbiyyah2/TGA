@@ -145,7 +145,7 @@ function TeachContent() {
 
 export default function TeachDashboardPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
           <TeachContent />

@@ -520,7 +520,7 @@ function LessonsContent() {
 
 export default function AdminLessonsPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <AdminShell>
           <LessonsContent />

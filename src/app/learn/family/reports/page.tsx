@@ -67,7 +67,7 @@ function FamilyReportsContent() {
 
 export default function FamilyReportsPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
           <FamilyReportsContent />

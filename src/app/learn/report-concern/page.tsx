@@ -123,7 +123,7 @@ function ReportConcernForm() {
 export default function ReportConcernPage() {
   const { session } = useLearnSession();
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <div className="mx-auto max-w-2xl">
         {session === "loading" && <p className="text-ink/60">Loading…</p>}
         {session === null && (

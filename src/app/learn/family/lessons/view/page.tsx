@@ -16,7 +16,7 @@ function FamilyLessonContent() {
 
 export default function FamilyLessonPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
           <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>

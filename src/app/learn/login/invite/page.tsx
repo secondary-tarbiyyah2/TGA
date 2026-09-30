@@ -47,7 +47,7 @@ export default function LearnInvitePage() {
   if (session === "loading") return <p className="text-ink/60">Loading…</p>;
   if (!session) {
     return (
-      <section className="section-pad">
+      <section className="app-pad">
         <div className="mx-auto max-w-sm">
           <p className="text-ink/60">
             This setup link is invalid or has expired. Ask whoever set up your account to send you a new one.
@@ -59,7 +59,7 @@ export default function LearnInvitePage() {
 
   if (passwordSet) {
     return (
-      <section className="section-pad">
+      <section className="app-pad">
         <div className="mx-auto max-w-sm">
           <h1 className="font-serif text-h2 font-semibold text-ink">You&apos;re all set</h1>
           <p className="mt-1 text-sm text-ink/60">Your password has been set.</p>
@@ -76,7 +76,7 @@ export default function LearnInvitePage() {
   }
 
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <div className="mx-auto max-w-sm">
         <h1 className="font-serif text-h2 font-semibold text-ink">Set your password</h1>
         <p className="mt-1 text-sm text-ink/60">Choose a password for your account.</p>

@@ -10,6 +10,8 @@ import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
 import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
+import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
+import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
@@ -125,7 +127,9 @@ function StudentContent() {
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             <HomeworkDueWidget childId={childId} />
             <LatestGradesWidget childId={childId} />
+            <QuranProgressWidget childId={childId} />
           </div>
+          <WeeklyTarbiyahNoteWidget childId={childId} />
         </div>
       )}
 
@@ -136,7 +140,7 @@ function StudentContent() {
 
 export default function StudentDashboardPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["student"]}>
         <LearnShell role="student">
           <StudentContent />

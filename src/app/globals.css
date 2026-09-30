@@ -108,10 +108,22 @@ button:not(:disabled),
   line-height: 1.25;
 }
 
-/* Section vertical rhythm. */
+/* Section vertical rhythm — marketing pages only (hero-style breathing
+   room between sections). NOT for /learn: applying this to every portal
+   page left a 64–128px dead gap above content on every dashboard, more
+   appropriate to a handful of marketing sections per page than a dense
+   app screen visited dozens of times a day. Use .app-pad there instead. */
 .section-pad {
   padding-top: clamp(4rem, 10vw, 8rem);
   padding-bottom: clamp(4rem, 10vw, 8rem);
+}
+
+/* The /learn portal's equivalent — same job (top-level vertical spacing
+   for the page's outer <section>) at a scale that fits a dense,
+   frequently-revisited app UI rather than an occasional marketing page. */
+.app-pad {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
 }
 
 /* Soft warm shadow — ink at low opacity, not a generic grey drop-shadow. */

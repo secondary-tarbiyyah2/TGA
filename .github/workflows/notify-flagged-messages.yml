@@ -1,0 +1,57 @@
+name: Notify flagged messages
+
+# A flagged message (0013's keyword-match trigger on message_thread_
+# messages) previously had NO alerting at all — a safeguarding lead had to
+# happen to open Compliance to ever see one. This calls the deployed
+# notify-flagged-messages Edge Function every 15 minutes, which emails
+# every current safeguarding_lead and marks each message notified so it's
+# never sent twice. Same "find the project ref, call its Edge Function"
+# pattern as check-bookable-staff.yml; runs frequently (unlike the weekly
+# signature nudge or hourly absence alerts) because a safeguarding concern
+# deserves a fast alert, not a digest.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: notify-flagged-messages
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref and anon key
+        id: keys
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          ANON=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          echo "::add-mask::$ANON"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "anon_key=$ANON" >> "$GITHUB_OUTPUT"
+
+      - name: Call notify-flagged-messages
+        run: |
+          set -euo pipefail
+          curl -sS -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/notify-flagged-messages" \
+            -H "apikey: ${{ steps.keys.outputs.anon_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.anon_key }}" \
+            -H "Content-Type: application/json"

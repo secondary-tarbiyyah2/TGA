@@ -30,7 +30,7 @@ export default function LearnLandingPage() {
   }
 
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <div className="mx-auto max-w-md">
         <h1 className="font-serif text-h2 font-semibold text-ink">Choose how you&apos;d like to continue</h1>
         <p className="mt-1 text-sm text-ink/60">Your account holds more than one role.</p>

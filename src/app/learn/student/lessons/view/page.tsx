@@ -33,7 +33,7 @@ function StudentLessonContent() {
 
 export default function StudentLessonPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["student"]}>
         <LearnShell role="student">
           <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>

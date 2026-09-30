@@ -195,7 +195,7 @@ function ComplianceContent() {
 
 export default function AdminCompliancePage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
         <AdminShell>
           <ComplianceContent />
