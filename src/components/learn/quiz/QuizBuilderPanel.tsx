@@ -9,6 +9,12 @@ type VersionRow = { id: string; status: string; label: string; content: QuizConf
 
 const ICONS: LineIcon[] = ["book", "moon", "graduation-cap", "clock", "home", "compass", "none"];
 const OPERATORS: RuleOperator[] = ["equals", "not_equals", "in", "not_in"];
+const OPERATOR_LABELS: Record<RuleOperator, string> = {
+  equals: "is",
+  not_equals: "is not",
+  in: "is one of",
+  not_in: "is none of",
+};
 const RESULT_SECTION_LABELS: Record<ResultSectionKey, string> = {
   sample_week: "Sample week timetable",
   starting_points: "Arabic / Qur'an starting points",
@@ -203,7 +209,7 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
       {config.questions.map((q, i) => (
         <div key={q.key} className="rounded-2xl border border-gold-light/50 bg-white p-4">
           <div className="flex items-center justify-between gap-2">
-            <span className="text-xs font-medium text-ink/40">Step {q.step} · key: {q.key}</span>
+            <span className="text-xs font-medium text-ink/40">Step {q.step}</span>
             <div className="flex items-center gap-2">
               <button type="button" onClick={() => move(i, -1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/60 hover:bg-cream" aria-label="Move up">↑</button>
               <button type="button" onClick={() => move(i, 1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/60 hover:bg-cream" aria-label="Move down">↓</button>
@@ -251,10 +257,94 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
   );
 }
 
+/**
+ * One "if [question] [is/is not/...] [answer]" line, shared by the
+ * show-only-when editor and the rules editor. Picks a question by its
+ * real title (never the internal key), and for a single_select question
+ * picks the answer from its actual option labels instead of typing a raw
+ * value by hand — the free-text value box was the main "too technical"
+ * pain point, since it silently failed if you didn't type the exact
+ * internal value.
+ */
+function ConditionRow({
+  condition,
+  questions,
+  onChange,
+  onRemove,
+  leadWord,
+}: {
+  condition: RuleCondition;
+  questions: QuizQuestion[];
+  onChange: (patch: Partial<RuleCondition>) => void;
+  onRemove: () => void;
+  leadWord: string;
+}) {
+  const question = questions.find((q) => q.key === condition.questionKey);
+  const isMulti = condition.operator === "in" || condition.operator === "not_in";
+  const selectedValues = Array.isArray(condition.value) ? condition.value : condition.value ? [condition.value] : [];
+
+  return (
+    <div className="flex flex-wrap items-center gap-2 text-xs">
+      <span className="text-ink/40">{leadWord}</span>
+      <select
+        value={condition.questionKey}
+        onChange={(e) => onChange({ questionKey: e.target.value, value: "" })}
+        className="rounded border border-gold-light/60 px-2 py-1"
+      >
+        {questions.map((q) => (
+          <option key={q.key} value={q.key}>{q.title}</option>
+        ))}
+      </select>
+      <select
+        value={condition.operator}
+        onChange={(e) => onChange({ operator: e.target.value as RuleOperator })}
+        className="rounded border border-gold-light/60 px-2 py-1"
+      >
+        {OPERATORS.map((op) => (
+          <option key={op} value={op}>{OPERATOR_LABELS[op]}</option>
+        ))}
+      </select>
+      {question && question.options.length > 0 ? (
+        isMulti ? (
+          <select
+            multiple
+            value={selectedValues}
+            onChange={(e) => onChange({ value: Array.from(e.target.selectedOptions, (o) => o.value) })}
+            className="min-w-[10rem] rounded border border-gold-light/60 px-2 py-1"
+          >
+            {question.options.map((opt) => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+        ) : (
+          <select
+            value={Array.isArray(condition.value) ? condition.value[0] ?? "" : condition.value}
+            onChange={(e) => onChange({ value: e.target.value })}
+            className="rounded border border-gold-light/60 px-2 py-1"
+          >
+            <option value="">Choose an answer…</option>
+            {question.options.map((opt) => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+        )
+      ) : (
+        <input
+          value={Array.isArray(condition.value) ? condition.value.join(",") : condition.value}
+          onChange={(e) => onChange({ value: e.target.value })}
+          placeholder={isMulti ? "comma-separated answers" : "answer"}
+          className="w-40 rounded border border-gold-light/60 px-2 py-1"
+        />
+      )}
+      <button type="button" onClick={onRemove} className="text-red-700 hover:underline">Remove</button>
+    </div>
+  );
+}
+
 function ShowWhenEditor({ questions, value, onChange }: { questions: QuizQuestion[]; value: RuleCondition[]; onChange: (v: RuleCondition[]) => void }) {
   function add() {
     const first = questions[0];
-    onChange([...value, { questionKey: first?.key ?? "", operator: "equals", value: first?.options[0]?.value ?? "" }]);
+    onChange([...value, { questionKey: first?.key ?? "", operator: "equals", value: "" }]);
   }
   function update(i: number, patch: Partial<RuleCondition>) {
     const next = [...value];
@@ -267,21 +357,7 @@ function ShowWhenEditor({ questions, value, onChange }: { questions: QuizQuestio
   return (
     <div className="mt-1 space-y-2">
       {value.map((c, i) => (
-        <div key={i} className="flex flex-wrap items-center gap-2 text-xs">
-          <span className="text-ink/40">AND</span>
-          <select value={c.questionKey} onChange={(e) => update(i, { questionKey: e.target.value })} className="rounded border border-gold-light/60 px-2 py-1">
-            {questions.map((q) => (
-              <option key={q.key} value={q.key}>{q.key}</option>
-            ))}
-          </select>
-          <select value={c.operator} onChange={(e) => update(i, { operator: e.target.value as RuleOperator })} className="rounded border border-gold-light/60 px-2 py-1">
-            {OPERATORS.map((op) => (
-              <option key={op} value={op}>{op}</option>
-            ))}
-          </select>
-          <input value={Array.isArray(c.value) ? c.value.join(",") : c.value} onChange={(e) => update(i, { value: e.target.value })} className="w-28 rounded border border-gold-light/60 px-2 py-1" />
-          <button type="button" onClick={() => remove(i)} className="text-red-700 hover:underline">Remove</button>
-        </div>
+        <ConditionRow key={i} condition={c} questions={questions} onChange={(patch) => update(i, patch)} onRemove={() => remove(i)} leadWord="and" />
       ))}
       <button type="button" onClick={add} className="text-xs text-gold-700 underline">Add condition (always shown if none)</button>
     </div>
@@ -298,7 +374,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
       active: true,
       match: "all",
       order: config.rules.length,
-      conditions: first ? [{ questionKey: first.key, operator: "equals", value: first.options[0]?.value ?? "" }] : [],
+      conditions: first ? [{ questionKey: first.key, operator: "equals", value: "" }] : [],
       action: { type: "show_text", text: "" },
     };
     onChange({ ...config, rules: [...config.rules, rule] });
@@ -324,7 +400,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
     const rule = config.rules.find((r) => r.id === ruleId);
     if (!rule) return;
     const first = config.questions[0];
-    updateRule(ruleId, { conditions: [...rule.conditions, { questionKey: first?.key ?? "", operator: "equals", value: first?.options[0]?.value ?? "" }] });
+    updateRule(ruleId, { conditions: [...rule.conditions, { questionKey: first?.key ?? "", operator: "equals", value: "" }] });
   }
 
   function removeCondition(ruleId: string, index: number) {
@@ -336,8 +412,9 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
   return (
     <div className="space-y-4">
       <p className="text-xs text-ink/50">
-        Example from the brief: &quot;If Arabic level = none AND hifz = central, show [text] and [flag].&quot; Build the same shape here —
-        pick a question, an operator and a value for each condition, combine with AND/OR, then choose what happens when they all match.
+        Example: &quot;If Arabic level is None and Hifz focus is Central, show this message and this flag.&quot; Pick a
+        question and an answer for each line below, choose whether every line needs to match or just one of them, then
+        say what should happen when they do.
       </p>
       {config.rules.map((rule) => (
         <div key={rule.id} className="rounded-2xl border border-gold-light/50 bg-white p-4">
@@ -348,8 +425,8 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
                 <input type="checkbox" checked={rule.active} onChange={(e) => updateRule(rule.id, { active: e.target.checked })} /> Active
               </label>
               <select value={rule.match} onChange={(e) => updateRule(rule.id, { match: e.target.value as "all" | "any" })} className="rounded border border-gold-light/60 px-2 py-1">
-                <option value="all">Match ALL conditions (AND)</option>
-                <option value="any">Match ANY condition (OR)</option>
+                <option value="all">All of these must be true</option>
+                <option value="any">Any one of these can be true</option>
               </select>
               <button type="button" onClick={() => removeRule(rule.id)} className="text-red-700 hover:underline">Delete rule</button>
             </div>
@@ -357,26 +434,14 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
 
           <div className="mt-3 space-y-2">
             {rule.conditions.map((c, i) => (
-              <div key={i} className="flex flex-wrap items-center gap-2 text-xs">
-                <span className="text-ink/40">If</span>
-                <select value={c.questionKey} onChange={(e) => updateCondition(rule.id, i, { questionKey: e.target.value })} className="rounded border border-gold-light/60 px-2 py-1">
-                  {config.questions.map((q) => (
-                    <option key={q.key} value={q.key}>{q.key}</option>
-                  ))}
-                </select>
-                <select value={c.operator} onChange={(e) => updateCondition(rule.id, i, { operator: e.target.value as RuleOperator })} className="rounded border border-gold-light/60 px-2 py-1">
-                  {OPERATORS.map((op) => (
-                    <option key={op} value={op}>{op}</option>
-                  ))}
-                </select>
-                <input
-                  value={Array.isArray(c.value) ? c.value.join(",") : c.value}
-                  onChange={(e) => updateCondition(rule.id, i, { value: e.target.value })}
-                  placeholder="value (comma-separate for in/not_in)"
-                  className="w-40 rounded border border-gold-light/60 px-2 py-1"
-                />
-                <button type="button" onClick={() => removeCondition(rule.id, i)} className="text-red-700 hover:underline">Remove</button>
-              </div>
+              <ConditionRow
+                key={i}
+                condition={c}
+                questions={config.questions}
+                onChange={(patch) => updateCondition(rule.id, i, patch)}
+                onRemove={() => removeCondition(rule.id, i)}
+                leadWord="If"
+              />
             ))}
             <button type="button" onClick={() => addCondition(rule.id)} className="text-xs text-gold-700 underline">Add condition</button>
           </div>
@@ -393,9 +458,9 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
               }}
               className="mt-1 rounded border border-gold-light/60 px-2 py-1 text-xs"
             >
-              <option value="show_text">Show text</option>
-              <option value="show_flag">Show flag</option>
-              <option value="recommend_start">Recommend starting point</option>
+              <option value="show_text">Show a message</option>
+              <option value="show_flag">Show a highlighted flag</option>
+              <option value="recommend_start">Recommend a starting point</option>
             </select>
 
             {rule.action.type === "show_text" && (
