@@ -74,11 +74,26 @@ for (const rec of bbbRecordings) {
 summary.push(`Synced ${synced} new recording(s) from BBB.`);
 
 // ── Pass 2: delete expired recordings ───────────────────────────────────
+// `legal_hold` is filtered here AND enforced by a BEFORE DELETE trigger
+// (0026_recording_legal_hold.sql). Both, deliberately: the filter keeps the
+// run quiet and correct, the trigger is what makes it safe — this job holds
+// the service-role key, so if the filter is ever dropped in a refactor, RLS
+// would not stop it. Policy 04 §6 keeps any recording relevant to a
+// safeguarding concern, staff allegation, complaint or legal claim until the
+// matter is resolved, and deleting that material mid-investigation is
+// irreversible.
 const { data: expired } = await supabase
   .from("lesson_recordings")
   .select("id, bbb_recording_id")
   .lte("retention_deletes_at", new Date().toISOString())
+  .eq("legal_hold", false)
   .neq("status", "deleted");
+
+const { count: onHoldCount } = await supabase
+  .from("lesson_recordings")
+  .select("id", { count: "exact", head: true })
+  .eq("legal_hold", true)
+  .lte("retention_deletes_at", new Date().toISOString());
 
 let deleted = 0;
 for (const rec of expired || []) {
@@ -99,6 +114,16 @@ for (const rec of expired || []) {
   deleted++;
 }
 summary.push(`Deleted ${deleted} recording(s) past their ${retentionDays}-day retention date.`);
+if (onHoldCount) {
+  // Surfaced rather than silent: these are past their retention date and
+  // being kept only because of an open matter. If the number grows and never
+  // falls, holds are not being released when cases close — which is its own
+  // retention problem (policy 28 §3, principle 5). See the
+  // recordings_on_legal_hold view.
+  summary.push(
+    `Skipped ${onHoldCount} recording(s) past retention but on legal hold — review /learn/admin/compliance if this number is not falling.`
+  );
+}
 
 console.log(summary.join("\n"));
 if (process.env.GITHUB_STEP_SUMMARY) {
