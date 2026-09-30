@@ -34,20 +34,31 @@ function tag(xml: string, t: string) {
   return xml.match(new RegExp(`<${t}>([\\s\\S]*?)</${t}>`))?.[1] ?? null;
 }
 
-/** A join URL is good if BBB redirects (302) into its client or waiting
- * room. A rejected join comes back 200 with a FAILED XML body. */
+/** Follow the join URL's redirects by hand (a load balancer such as
+ * Scalelite first redirects to a backend's own /api/join) until it lands
+ * in BBB's client or waiting room — that's an accepted join. A rejected
+ * join comes back as a 200 FAILED XML body instead. */
 async function checkJoin(name: string, url: string) {
   try {
-    const res = await fetch(url, { redirect: "manual" });
-    const body = res.status === 200 ? await res.text() : "";
-    const loc = res.headers.get("location") || "";
-    await res.body?.cancel().catch(() => {});
-    if (res.status >= 300 && res.status < 400 && loc) {
-      const where = loc.includes("guestWait") || loc.includes("guest-wait") ? "waiting room" : loc.includes("html5client") ? "call client" : new URL(loc).pathname;
-      record(name, true, `redirected to the ${where}`);
-    } else {
-      record(name, false, `HTTP ${res.status} ${tag(body, "messageKey") || ""} ${tag(body, "message") || body.slice(0, 200)}`);
+    let current = url;
+    const hops: string[] = [];
+    for (let i = 0; i < 6; i++) {
+      const res = await fetch(current, { redirect: "manual" });
+      const loc = res.headers.get("location");
+      if (res.status >= 300 && res.status < 400 && loc) {
+        await res.body?.cancel().catch(() => {});
+        current = new URL(loc, current).toString();
+        const path = new URL(current).pathname;
+        hops.push(path);
+        if (/guest-?wait/i.test(current)) return record(name, true, `accepted, placed in the waiting room (${hops.join(" → ")})`);
+        if (/html5client|sessionToken=/.test(current)) return record(name, true, `accepted, into the call (${hops.join(" → ")})`);
+        continue;
+      }
+      const body = await res.text();
+      if (tag(body, "returncode") === "FAILED") return record(name, false, `rejected: ${tag(body, "messageKey") || ""} ${tag(body, "message") || ""}`);
+      return record(name, false, `ended at HTTP ${res.status} ${new URL(current).pathname} without reaching the client`);
     }
+    record(name, false, `too many redirects (${hops.join(" → ")})`);
   } catch (e) {
     record(name, false, String(e));
   }
@@ -60,8 +71,8 @@ const meetingId = `tga-ci-${Date.now()}`;
 try {
   const res = await fetch(`${serverBase}/bigbluebutton/api`);
   const xml = await res.text();
-  const version = tag(xml, "bbbVersion") || tag(xml, "version");
-  record("Server reachable", tag(xml, "returncode") === "SUCCESS", `${usingOwnServer ? "your server" : "public test server"} · BBB ${version ?? "unknown version"}`);
+  const version = tag(xml, "bbbVersion") ? `BBB ${tag(xml, "bbbVersion")}` : `API ${tag(xml, "version") ?? "unknown"}`;
+  record("Server reachable", tag(xml, "returncode") === "SUCCESS", `${usingOwnServer ? "your server" : "public test server"} · ${version}`);
 } catch (e) {
   record("Server reachable", false, String(e));
 }
