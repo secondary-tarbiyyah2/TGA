@@ -4,8 +4,9 @@ import {
   termDates as seedTermDates, testimonials as seedTestimonials, staffMembers as seedStaffMembers,
   differentiators as seedDifferentiators, policyLinks as seedPolicyLinks,
   homepageContent as seedHomepageContent, aboutContent as seedAboutContent, curriculumContent as seedCurriculumContent,
+  curriculumDocuments as seedCurriculumDocuments,
   type FeeBand, type FaqEntry, type TermDate, type Testimonial, type StaffMember, type Differentiator, type PolicyLink, type SiteSettings,
-  type HomepageContent, type AboutContent, type CurriculumContent,
+  type HomepageContent, type AboutContent, type CurriculumContent, type CurriculumDocument,
 } from "@/content/seed";
 
 /** Every getter below tries live Sanity content first, and falls back to bundled seed
@@ -59,3 +60,12 @@ export const getHomepageContent = () => fetchOrFallback<HomepageContent>(`*[_typ
 export const getAboutContent = () => fetchOrFallback<AboutContent>(`*[_type == "aboutContent"][0]`, seedAboutContent);
 
 export const getCurriculumContent = () => fetchOrFallback<CurriculumContent>(`*[_type == "curriculumContent"][0]`, seedCurriculumContent);
+
+export const getCurriculumDocuments = () =>
+  fetchOrFallback<CurriculumDocument[]>(
+    `*[_type == "curriculumDocument"] | order(order asc) {
+      _id, keyStage, subject, title, term, order,
+      "fileUrl": coalesce(file.asset->url, fileUrl)
+    }`,
+    seedCurriculumDocuments
+  );

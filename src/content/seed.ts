@@ -302,3 +302,18 @@ export const policyLinks: PolicyLink[] = [
   { _id: "p10", number: "10", order: 13, category: "published", parentQuestionCategory: "safety", title: "Health, Safety and Wellbeing Policy", fileUrl: "/policies/10-health-safety-and-wellbeing.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
   { _id: "p09", number: "09", order: 14, category: "published", parentQuestionCategory: "safety", title: "Supporting Pupils with Medical Conditions Policy", fileUrl: "/policies/09-supporting-pupils-with-medical-conditions.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
 ];
+
+export type CurriculumDocument = {
+  _id: string;
+  keyStage: string;
+  subject: string;
+  title: string;
+  term?: "autumn" | "spring" | "summer";
+  fileUrl: string;
+  order?: number;
+};
+
+// No real curriculum overview/scheme-of-work documents have been produced
+// yet — deliberately empty rather than invented, so the section on each
+// /curriculum/[stage] page stays hidden until an admin uploads a real one.
+export const curriculumDocuments: CurriculumDocument[] = [];

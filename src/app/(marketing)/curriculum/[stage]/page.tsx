@@ -4,6 +4,9 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { keyStages } from "@/content/curriculum";
+import { getCurriculumDocuments } from "@/lib/content";
+
+const TERM_LABEL: Record<string, string> = { autumn: "Autumn", spring: "Spring", summer: "Summer" };
 
 export function generateStaticParams() {
   return keyStages.map((ks) => ({ stage: ks.slug }));
@@ -20,6 +23,12 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
   const { stage } = await params;
   const ks = keyStages.find((k) => k.slug === stage);
   if (!ks) notFound();
+
+  const documents = (await getCurriculumDocuments()).filter((d) => d.keyStage === stage);
+  const documentsBySubject = documents.reduce<Record<string, typeof documents>>((acc, d) => {
+    (acc[d.subject] ||= []).push(d);
+    return acc;
+  }, {});
 
   return (
     <>
@@ -59,6 +68,37 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
           </div>
         </Container>
       </section>
+
+      {documents.length > 0 && (
+        <section className="geo-texture bg-cream section-pad" aria-labelledby="curriculum-documents-heading">
+          <Container>
+            <Kicker>Curriculum documents</Kicker>
+            <h2 id="curriculum-documents-heading" className="font-serif text-2xl font-semibold text-ink">
+              Subject overviews and schemes of work
+            </h2>
+            <div className="mt-6 grid gap-8 sm:grid-cols-2">
+              {Object.entries(documentsBySubject).map(([subject, docs]) => (
+                <div key={subject}>
+                  <h3 className="font-semibold text-ink">{subject}</h3>
+                  <ul className="mt-2 space-y-2">
+                    {docs
+                      .slice()
+                      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+                      .map((d) => (
+                        <li key={d._id}>
+                          <a href={d.fileUrl} className="text-sm font-medium text-gold-700 underline" target="_blank" rel="noopener noreferrer">
+                            {d.title}
+                          </a>
+                          {d.term && <span className="ml-2 text-xs text-ink/60">{TERM_LABEL[d.term]}</span>}
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       <CtaBand heading="Ready to apply?" body={`Start your child's application for ${ks.range} today.`} />
     </>
