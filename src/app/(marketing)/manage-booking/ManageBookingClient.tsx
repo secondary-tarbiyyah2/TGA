@@ -18,6 +18,50 @@ async function callManageBooking(action: string, token: string, extra: Record<st
   return res.json();
 }
 
+/** Fallback for a lost/never-received confirmation email — the only way
+ * forward used to be "use the link from your confirmation email", a dead
+ * end if that email never arrived. Deliberately shows the same
+ * "if we found it, check your email" message either way (see the Edge
+ * Function's resend_link action), never confirming whether an address has
+ * a booking. */
+function ResendLinkForm() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      await callManageBooking("resend_link", "", { email: email.trim() });
+    } catch {
+      // fall through to the same message regardless — see note above
+    }
+    setStatus("done");
+  }
+
+  if (status === "done") {
+    return <p className="mt-4 text-sm text-ink/70">If that email has a booking with us, we&apos;ve just sent a link to manage it.</p>;
+  }
+
+  return (
+    <form onSubmit={submit} className="mt-4 flex flex-wrap items-end gap-2">
+      <label className="text-sm text-ink">
+        Your email
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="mt-1 block rounded-lg border border-gold-light/60 px-3 py-2"
+        />
+      </label>
+      <button type="submit" disabled={status === "sending"} className="rounded-full bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 disabled:opacity-60">
+        {status === "sending" ? "Sending…" : "Email me my link"}
+      </button>
+    </form>
+  );
+}
+
 export function ManageBookingClient() {
   const params = useSearchParams();
   const token = params.get("token") || "";
@@ -50,8 +94,22 @@ export function ManageBookingClient() {
   }
 
   if (loading) return <p className="text-ink/60">Loading your booking…</p>;
-  if (error === "no_token") return <p className="text-ink/70">No booking link found. Use the link from your confirmation email.</p>;
-  if (error) return <p className="text-ink/70">We couldn&apos;t find that booking — the link may have expired. Email us at globalacademy@tarbiyyah.co.uk.</p>;
+  if (error === "no_token") {
+    return (
+      <div>
+        <p className="text-ink/70">No booking link found. Use the link from your confirmation email, or get a new one below.</p>
+        <ResendLinkForm />
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div>
+        <p className="text-ink/70">We couldn&apos;t find that booking — the link may have expired. Get a new one below, or email us at globalacademy@tarbiyyah.co.uk.</p>
+        <ResendLinkForm />
+      </div>
+    );
+  }
   if (!booking) return null;
 
   if (actionDone === "cancelled" || booking.status === "cancelled") {

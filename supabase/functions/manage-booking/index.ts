@@ -6,9 +6,11 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { buildIcs } from "../_shared/ics.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
-import { hashToken } from "../_shared/manageToken.ts";
+import { generateToken, hashToken } from "../_shared/manageToken.ts";
+import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
 
 const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+const SITE_URL = Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk";
 
 const supabase = createClient(
   Deno.env.get("SUPABASE_URL")!,
@@ -41,8 +43,56 @@ Deno.serve(async (req) => {
     return jsonResponse({ ok: false, error: "invalid_json" }, 400);
   }
 
+  const action = String(body.action || "view"); // 'view' | 'reschedule' | 'cancel' | 'resend_link'
+
+  // Fallback for a parent who lost or never received their confirmation
+  // email (the original ask that prompted this: /manage-booking with no
+  // token just dead-ended at "use the link from your confirmation email",
+  // with no way forward). Looks up by email instead of token, issues a
+  // FRESH manage token (the old one still works too — this doesn't revoke
+  // it), and emails a link. Always responds ok regardless of whether a
+  // match was found, so this can't be used to enumerate which email
+  // addresses have booked a call.
+  if (action === "resend_link") {
+    const email = String(body.email || "").trim().toLowerCase();
+    if (!email) return jsonResponse({ ok: false, error: "missing_email" }, 400);
+
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const ipHash = await hashIp(ip);
+    if (await isRateLimited(supabase, ipHash, email)) {
+      return jsonResponse({ ok: false, error: "rate_limited" }, 429);
+    }
+    await recordAttempt(supabase, ipHash, email);
+
+    const { data: found } = await supabase
+      .from("bookings")
+      .select("id, contact_name, contact_email")
+      .eq("contact_email", email)
+      .eq("status", "confirmed")
+      .order("starts_at", { ascending: true })
+      .limit(1)
+      .maybeSingle();
+
+    if (found) {
+      const newToken = generateToken();
+      const newTokenHash = await hashToken(newToken);
+      const { error: updateErr } = await supabase.from("bookings").update({ manage_token_hash: newTokenHash }).eq("id", found.id);
+      if (!updateErr) {
+        const manageUrl = `${SITE_URL}/manage-booking?token=${newToken}`;
+        await sendEmail({
+          to: found.contact_email,
+          toName: found.contact_name,
+          subject: "Your admissions call booking link",
+          html: emailShell(`<p>Here's the link to view, reschedule or cancel your admissions call: <a href="${manageUrl}">${manageUrl}</a></p>`),
+        });
+      }
+    }
+
+    // Same response whether or not a booking was found.
+    return jsonResponse({ ok: true });
+  }
+
   const token = String(body.token || "");
-  const action = String(body.action || "view"); // 'view' | 'reschedule' | 'cancel'
   if (!token) return jsonResponse({ ok: false, error: "missing_token" }, 400);
 
   const booking = await findBooking(token);
