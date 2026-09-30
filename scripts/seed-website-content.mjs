@@ -16,7 +16,6 @@
 // Requires SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY. Run via:
 //   node scripts/seed-website-content.mjs
 import { createClient } from "@supabase/supabase-js";
-import { randomUUID } from "node:crypto";
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
