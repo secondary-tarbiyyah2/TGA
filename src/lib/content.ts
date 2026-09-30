@@ -1,4 +1,4 @@
-import { getSanityClient } from "./sanity/client";
+import { getSupabaseClient } from "./supabase/client";
 import {
   feeBands as seedFeeBands, siteSettings as seedSiteSettings, faqEntries as seedFaqEntries,
   termDates as seedTermDates, testimonials as seedTestimonials, staffMembers as seedStaffMembers,
@@ -9,63 +9,211 @@ import {
   type HomepageContent, type AboutContent, type CurriculumContent, type CurriculumDocument,
 } from "@/content/seed";
 
-/** Every getter below tries live Sanity content first, and falls back to bundled seed
- * content (same shape) whenever Sanity isn't configured yet or a query fails. This lets
- * every page work out of the box, and start reading real CMS data the moment a Sanity
- * project is connected — no code change required.
+/** Every getter below reads live content from Supabase (0025_website_content.sql
+ * and later migrations), and falls back to bundled seed content (same shape)
+ * whenever Supabase isn't configured or a query fails/returns nothing. This
+ * used to read from Sanity — moved so every piece of content (marketing site
+ * + the /learn portal) is managed from one place, editable at
+ * /learn/admin/content, rather than a separate CMS with its own login.
  *
- * This site is statically exported (output: "export"), so these queries only ever run
- * at build time — there is no server to re-fetch at request time. CMS edits appear on
- * the next rebuild/redeploy, not instantly; see README for how to trigger one. */
-async function fetchOrFallback<T>(query: string, fallback: T): Promise<T> {
-  const client = getSanityClient();
-  if (!client) return fallback;
+ * This site is statically exported (output: "export"), so these queries only
+ * ever run at build time — there is no server to re-fetch at request time.
+ * An edit in /learn/admin/content appears on the next rebuild/redeploy
+ * (triggered automatically on save — see that page), not instantly. */
+async function queryOrFallback<T>(run: (supabase: NonNullable<ReturnType<typeof getSupabaseClient>>) => PromiseLike<{ data: unknown; error: unknown }>, fallback: T): Promise<T> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return fallback;
   try {
-    const result = await client.fetch<T>(query);
-    if (Array.isArray(result) && result.length === 0) return fallback;
-    if (result == null) return fallback;
-    return result;
+    const { data, error } = await run(supabase);
+    if (error) return fallback;
+    if (Array.isArray(data) && data.length === 0) return fallback;
+    if (data == null) return fallback;
+    return data as T;
   } catch {
     return fallback;
   }
 }
 
-export const getFeeBands = () => fetchOrFallback<FeeBand[]>(`*[_type == "feeBand"] | order(order asc)`, seedFeeBands);
+export const getFeeBands = () =>
+  queryOrFallback<FeeBand[]>(
+    (s) => s.from("fee_bands").select("id, year_group_range, order_index, annual_fee, termly_fee, monthly_fee, notes").order("order_index"),
+    seedFeeBands
+  ).then((rows) => (rows === seedFeeBands ? rows : rows.map((r: unknown) => mapFeeBand(r as Record<string, unknown>))));
 
-export const getSiteSettings = () => fetchOrFallback<SiteSettings>(`*[_type == "siteSettings"][0]`, seedSiteSettings);
+function mapFeeBand(r: Record<string, unknown>): FeeBand {
+  return { _id: r.id as string, yearGroupRange: r.year_group_range as string, order: r.order_index as number, annualFee: r.annual_fee as number, termlyFee: r.termly_fee as number, monthlyFee: r.monthly_fee as number, notes: (r.notes as string) || undefined };
+}
 
-export const getFaqEntries = () => fetchOrFallback<FaqEntry[]>(`*[_type == "faqEntry"] | order(order asc)`, seedFaqEntries);
+export const getSiteSettings = async (): Promise<SiteSettings> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) return seedSiteSettings;
+  try {
+    const { data, error } = await supabase.from("site_settings").select("*").eq("id", true).maybeSingle();
+    if (error || !data) return seedSiteSettings;
+    const r = data as Record<string, unknown>;
+    const settings: SiteSettings = {
+      launchDate: (r.launch_date as string) || undefined,
+      ctaPrimaryLabel: (r.cta_primary_label as string) || undefined,
+      ctaPrimaryHref: (r.cta_primary_href as string) || undefined,
+      applicationFee: (r.application_fee as number) ?? undefined,
+      registrationFee: (r.registration_fee as number) ?? undefined,
+      siblingDiscountPercent: (r.sibling_discount_percent as number) ?? undefined,
+      siblingDiscountNote: (r.sibling_discount_note as string) || undefined,
+      discounts: (r.discounts as SiteSettings["discounts"]) || [],
+      bookingWidgetUrl: (r.booking_widget_url as string) || undefined,
+      openEveningRecordingUrl: (r.open_evening_recording_url as string) || undefined,
+      portalUrl: (r.portal_url as string) || undefined,
+      admissionsEmail: (r.admissions_email as string) || undefined,
+      contactPhone: (r.contact_phone as string) || undefined,
+      contactAddress: (r.contact_address as string) || undefined,
+      openingHours: (r.opening_hours as string) || undefined,
+      safeguardingLeadName: (r.safeguarding_lead_name as string) || undefined,
+      safeguardingLeadContact: (r.safeguarding_lead_contact as string) || undefined,
+      complaintsLastYear: (r.complaints_last_year as number) ?? undefined,
+      registrationBody: (r.registration_body as string) || undefined,
+      registrationNumber: (r.registration_number as string) || undefined,
+      regulatoryStatusNote: (r.regulatory_status_note as string) || undefined,
+      headteacherWelcomeQuote: (r.headteacher_welcome_quote as string) || undefined,
+      headteacherName: (r.headteacher_name as string) || undefined,
+    };
+    return settings;
+  } catch {
+    return seedSiteSettings;
+  }
+};
+
+export const getFaqEntries = () =>
+  queryOrFallback<FaqEntry[]>(
+    (s) => s.from("faq_entries").select("id, question, answer, category, order_index").order("order_index"),
+    seedFaqEntries
+  ).then((rows) => (rows === seedFaqEntries ? rows : rows.map((r: unknown) => mapFaq(r as Record<string, unknown>))));
+
+function mapFaq(r: Record<string, unknown>): FaqEntry {
+  return { _id: r.id as string, question: r.question as string, answer: r.answer as string, category: r.category as string, order: r.order_index as number };
+}
 
 export const getTermDates = () =>
-  fetchOrFallback<TermDate[]>(`*[_type == "termDate" && confirmed == true] | order(date asc)`, seedTermDates.filter((d) => d.confirmed));
+  queryOrFallback<TermDate[]>(
+    (s) => s.from("site_term_dates").select("id, label, kind, date, end_date, notes, confirmed").eq("confirmed", true).order("date"),
+    seedTermDates.filter((d) => d.confirmed)
+  ).then((rows) => (rows === seedTermDates ? rows : rows.map((r: unknown) => mapTermDate(r as Record<string, unknown>))));
 
-export const getTestimonials = () => fetchOrFallback<Testimonial[]>(`*[_type == "testimonial"] | order(order asc)`, seedTestimonials);
+function mapTermDate(r: Record<string, unknown>): TermDate {
+  return { _id: r.id as string, label: r.label as string, kind: r.kind as string, date: r.date as string, endDate: (r.end_date as string) || undefined, notes: (r.notes as string) || undefined, confirmed: r.confirmed as boolean };
+}
 
-export const getStaffMembers = () => fetchOrFallback<StaffMember[]>(`*[_type == "staffMember"] | order(order asc)`, seedStaffMembers);
+export const getTestimonials = () =>
+  queryOrFallback<Testimonial[]>(
+    (s) => s.from("testimonials").select("id, quote, attribution, role, is_placeholder, order_index").order("order_index"),
+    seedTestimonials
+  ).then((rows) => (rows === seedTestimonials ? rows : rows.map((r: unknown) => mapTestimonial(r as Record<string, unknown>))));
+
+function mapTestimonial(r: Record<string, unknown>): Testimonial {
+  return { _id: r.id as string, quote: r.quote as string, attribution: r.attribution as string, role: r.role as Testimonial["role"], isPlaceholder: r.is_placeholder as boolean, order: r.order_index as number };
+}
+
+export const getStaffMembers = () =>
+  queryOrFallback<StaffMember[]>(
+    (s) => s.from("team_profiles").select("id, name, role_title, qualifications, intro_video_url, is_placeholder, order_index").order("order_index"),
+    seedStaffMembers
+  ).then((rows) => (rows === seedStaffMembers ? rows : rows.map((r: unknown) => mapStaffMember(r as Record<string, unknown>))));
+
+function mapStaffMember(r: Record<string, unknown>): StaffMember {
+  return { _id: r.id as string, name: r.name as string, roleTitle: r.role_title as string, qualifications: (r.qualifications as string) || undefined, introVideoUrl: (r.intro_video_url as string) || undefined, isPlaceholder: r.is_placeholder as boolean, order: r.order_index as number };
+}
 
 export const getDifferentiators = () =>
-  fetchOrFallback<Differentiator[]>(`*[_type == "differentiator" && visible == true] | order(order asc)`, seedDifferentiators.filter((d) => d.visible));
+  queryOrFallback<Differentiator[]>(
+    (s) => s.from("differentiators").select("id, title, summary, detail, icon, status, visible, order_index").eq("visible", true).order("order_index"),
+    seedDifferentiators.filter((d) => d.visible)
+  ).then((rows) => (rows === seedDifferentiators ? rows : rows.map((r: unknown) => mapDifferentiator(r as Record<string, unknown>))));
+
+function mapDifferentiator(r: Record<string, unknown>): Differentiator {
+  return { _id: r.id as string, title: r.title as string, summary: r.summary as string, detail: (r.detail as string) || undefined, icon: (r.icon as string) || undefined, status: r.status as Differentiator["status"], visible: r.visible as boolean, order: r.order_index as number };
+}
 
 export const getPolicyLinks = () =>
-  fetchOrFallback<PolicyLink[]>(
-    `*[_type == "policyLink"] | order(order asc) {
-      _id, number, title, category, parentQuestionCategory, summary, lastReviewed, nextReview, order,
-      "fileUrl": coalesce(file.asset->url, fileUrl)
-    }`,
+  queryOrFallback<PolicyLink[]>(
+    (s) => s.from("policy_links").select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index").order("order_index"),
     seedPolicyLinks
-  );
+  ).then((rows) => (rows === seedPolicyLinks ? rows : rows.map((r: unknown) => mapPolicyLink(r as Record<string, unknown>))));
 
-export const getHomepageContent = () => fetchOrFallback<HomepageContent>(`*[_type == "homepageContent"][0]`, seedHomepageContent);
+function mapPolicyLink(r: Record<string, unknown>): PolicyLink {
+  return {
+    _id: r.id as string, number: r.number as string, title: r.title as string, category: r.category as PolicyLink["category"],
+    parentQuestionCategory: (r.parent_question_category as PolicyLink["parentQuestionCategory"]) || undefined,
+    fileUrl: r.file_url as string, summary: (r.summary as string) || undefined,
+    lastReviewed: (r.last_reviewed as string) || undefined, nextReview: (r.next_review as string) || undefined, order: r.order_index as number,
+  };
+}
 
-export const getAboutContent = () => fetchOrFallback<AboutContent>(`*[_type == "aboutContent"][0]`, seedAboutContent);
+export const getHomepageContent = async (): Promise<HomepageContent> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) return seedHomepageContent;
+  try {
+    const { data, error } = await supabase.from("homepage_content").select("*").eq("id", true).maybeSingle();
+    if (error || !data) return seedHomepageContent;
+    const r = data as Record<string, unknown>;
+    return {
+      heroKicker: (r.hero_kicker as string) || undefined,
+      heroHeading: (r.hero_heading as string) || undefined,
+      heroBody: (r.hero_body as string) || undefined,
+      pillars: (r.pillars as HomepageContent["pillars"]) || undefined,
+      howItWorksHeading: (r.how_it_works_heading as string) || undefined,
+      howItWorksSteps: (r.how_it_works_steps as HomepageContent["howItWorksSteps"]) || undefined,
+      stagesHeading: (r.stages_heading as string) || undefined,
+      stagesBody: (r.stages_body as string) || undefined,
+      feeTeaserHeading: (r.fee_teaser_heading as string) || undefined,
+      feeTeaserBody: (r.fee_teaser_body as string) || undefined,
+      safeHeading: (r.safe_heading as string) || undefined,
+      safeBody: (r.safe_body as string) || undefined,
+    };
+  } catch {
+    return seedHomepageContent;
+  }
+};
 
-export const getCurriculumContent = () => fetchOrFallback<CurriculumContent>(`*[_type == "curriculumContent"][0]`, seedCurriculumContent);
+export const getAboutContent = async (): Promise<AboutContent> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) return seedAboutContent;
+  try {
+    const { data, error } = await supabase.from("about_content").select("*").eq("id", true).maybeSingle();
+    if (error || !data) return seedAboutContent;
+    const r = data as Record<string, unknown>;
+    return {
+      heroHeading: (r.hero_heading as string) || undefined,
+      heroBody: (r.hero_body as string) || undefined,
+      missionBody: (r.mission_body as string) || undefined,
+      safeguardingBody: (r.safeguarding_body as string) || undefined,
+      recipeIntro: (r.recipe_intro as string) || undefined,
+      recipeItems: (r.recipe_items as AboutContent["recipeItems"]) || undefined,
+      familyHeading: (r.family_heading as string) || undefined,
+      familyBody: (r.family_body as string) || undefined,
+    };
+  } catch {
+    return seedAboutContent;
+  }
+};
+
+export const getCurriculumContent = async (): Promise<CurriculumContent> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) return seedCurriculumContent;
+  try {
+    const { data, error } = await supabase.from("curriculum_content").select("*").eq("id", true).maybeSingle();
+    if (error || !data) return seedCurriculumContent;
+    const r = data as Record<string, unknown>;
+    return { heroHeading: (r.hero_heading as string) || undefined, heroBody: (r.hero_body as string) || undefined };
+  } catch {
+    return seedCurriculumContent;
+  }
+};
 
 export const getCurriculumDocuments = () =>
-  fetchOrFallback<CurriculumDocument[]>(
-    `*[_type == "curriculumDocument"] | order(order asc) {
-      _id, keyStage, subject, title, term, order,
-      "fileUrl": coalesce(file.asset->url, fileUrl)
-    }`,
+  queryOrFallback<CurriculumDocument[]>(
+    (s) => s.from("curriculum_documents").select("id, key_stage, subject, title, term, file_url, order_index").order("order_index"),
     seedCurriculumDocuments
-  );
+  ).then((rows) => (rows === seedCurriculumDocuments ? rows : rows.map((r: unknown) => mapCurriculumDocument(r as Record<string, unknown>))));
+
+function mapCurriculumDocument(r: Record<string, unknown>): CurriculumDocument {
+  return { _id: r.id as string, keyStage: r.key_stage as string, subject: r.subject as string, title: r.title as string, term: (r.term as CurriculumDocument["term"]) || undefined, fileUrl: r.file_url as string, order: r.order_index as number };
+}
