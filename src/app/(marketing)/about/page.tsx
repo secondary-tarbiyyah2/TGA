@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
-import { getAboutContent } from "@/lib/content";
+import { getAboutContent, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -15,11 +15,11 @@ const defaultRecipe = [
   { letter: "C", word: "Compassion", body: "Kindness modelled and expected, every day." },
   { letter: "I", word: "Integrity", body: "Doing right when no one is watching." },
   { letter: "P", word: "Purpose", body: "Learning connected to a life of meaning and worship." },
-  { letter: "E", word: "Excellence in Adab", body: "Manners and conduct as the foundation of learning." },
+  { letter: "E", word: "Etiquette (Adab)", body: "Manners and conduct as the foundation of learning." },
 ];
 
 export default async function AboutPage() {
-  const content = await getAboutContent();
+  const [content, settings] = await Promise.all([getAboutContent(), getSiteSettings()]);
   const recipe = content.recipeItems?.length ? content.recipeItems : defaultRecipe;
 
   return (
@@ -76,7 +76,7 @@ export default async function AboutPage() {
       </section>
 
       <section className="section-pad">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <Container className={`grid gap-10 ${settings.headteacherWelcomeQuote ? "lg:grid-cols-2 lg:items-center" : ""}`}>
           <div>
             <Kicker>The Tarbiyyah family</Kicker>
             <h2 className="font-serif text-3xl font-semibold text-ink">{content.familyHeading || "10+ years, three established schools."}</h2>
@@ -85,17 +85,22 @@ export default async function AboutPage() {
                 "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools — Tarbiyyah Primary, Tarbiyyah Secondary School for Boys, and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world."}
             </p>
           </div>
-          <div>
-            <Kicker>Headteacher&apos;s message</Kicker>
-            <blockquote className="rounded-2xl border border-gold-light/50 bg-white p-6">
-              <p className="font-serif text-lg leading-relaxed text-ink">
-                &ldquo;Every child deserves an education that nurtures their mind and their faith together. At
-                Tarbiyyah Global Academy we bring the standards of the Tarbiyyah family of schools to families
-                anywhere in the world.&rdquo;
-              </p>
-              <footer className="mt-4 text-sm font-semibold text-gold-700">Hardeep Sandhar, Headteacher</footer>
-            </blockquote>
-          </div>
+          {/* Same Site Settings field the homepage's welcome quote uses (see
+              src/app/(marketing)/page.tsx) — this used to be a hardcoded
+              quote with a hardcoded name here, out of step with the
+              homepage's "only a real, admin-confirmed quote appears"
+              pattern and liable to go stale/wrong independently of it. */}
+          {settings.headteacherWelcomeQuote && (
+            <div>
+              <Kicker>Headteacher&apos;s message</Kicker>
+              <blockquote className="rounded-2xl border border-gold-light/50 bg-white p-6">
+                <p className="font-serif text-lg leading-relaxed text-ink">&ldquo;{settings.headteacherWelcomeQuote}&rdquo;</p>
+                {settings.headteacherName && (
+                  <footer className="mt-4 text-sm font-semibold text-gold-700">{settings.headteacherName}, Headteacher</footer>
+                )}
+              </blockquote>
+            </div>
+          )}
         </Container>
       </section>
 

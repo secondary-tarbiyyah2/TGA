@@ -6,7 +6,7 @@ import { getStaffMembers } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Meet the Team",
-  description: "Photos, qualifications and intro videos for the teachers of Tarbiyyah Global Academy.",
+  description: "Qualifications and intro videos for the teachers of Tarbiyyah Global Academy.",
 };
 
 export default async function TeamPage() {
@@ -22,8 +22,7 @@ export default async function TeamPage() {
           <Kicker>Meet the Team</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">The people teaching your child.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            Every teacher is public on our website — photo, qualifications and a short intro video, before you ever
-            apply.
+            Every teacher is public on our website — qualifications and a short intro video, before you ever apply.
           </p>
         </Container>
       </section>

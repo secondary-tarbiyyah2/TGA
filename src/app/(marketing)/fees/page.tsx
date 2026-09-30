@@ -26,9 +26,8 @@ export default async function FeesPage() {
             payment for any year group.
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/60">
-            Our first cohort starts in January 2027, so the figures below cover the shortened January–July 2027
-            period (two terms, not a full three-term year) — not a full annual fee. All fees are inclusive of 20%
-            VAT.
+            Our first academic year runs January–July 2027 (two terms, since our first cohort starts in January) —
+            the figures below are the full fee for that year. All fees are inclusive of 20% VAT.
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/60">
             Read the full{" "}
@@ -63,9 +62,8 @@ export default async function FeesPage() {
             </table>
           </div>
           <p className="mt-3 text-xs text-ink/60">
-            The total figure represents tuition payable for the shortened January–July 2027 launch period. Term
-            instalments are split evenly across the two terms in this period; monthly instalments are spread across
-            the same period. All fees are inclusive of 20% VAT.
+            Term instalments are split evenly across the two terms in this first academic year; monthly instalments
+            are spread across the same period.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">

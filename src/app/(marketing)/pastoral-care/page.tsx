@@ -22,6 +22,19 @@ export default function PastoralCarePage() {
         </Container>
       </section>
 
+      <section className="section-pad">
+        <Container>
+          <Kicker>Weekly Tarbiyah Note</Kicker>
+          <h2 className="font-serif text-2xl font-semibold text-ink">A personal update, every week.</h2>
+          <p className="mt-4 max-w-2xl text-ink/75">
+            Alongside academic reports, your child&apos;s form tutor sends a personal weekly note on their character
+            and akhlaq — how they&apos;ve been with their peers, their effort and attitude, and anything worth
+            celebrating or working on. It&apos;s separate from academic reporting, because we want you to know your
+            child as a person, not just as a set of grades.
+          </p>
+        </Container>
+      </section>
+
       <section className="geo-texture bg-cream section-pad">
         <Container>
           <Kicker>SEND support</Kicker>

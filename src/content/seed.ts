@@ -216,11 +216,11 @@ export const differentiators: Differentiator[] = [
     _id: "d5", order: 5, visible: true, icon: "users",
     status: "Confirmed commitment",
     title: "Meet the Teachers",
-    summary: "Every teacher is public on our website — photo, qualifications and a short intro video, before you ever apply.",
+    summary: "Every teacher is public on our website — qualifications and a short intro video, before you ever apply.",
   },
   {
     _id: "d6", order: 6, visible: true, icon: "note",
-    status: "Draft / concept — not yet confirmed",
+    status: "Confirmed commitment",
     title: "Weekly Tarbiyah Note",
     summary: "A personal weekly update on your child's character and akhlaq from their form tutor — separate from academic reports.",
   },
