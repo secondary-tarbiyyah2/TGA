@@ -18,12 +18,15 @@ export function AnnouncementsFeed({
   postClassId,
   postScope = "class",
   limit = 10,
+  includeSchool = true,
 }: {
   classIds?: string[];
   canPost?: boolean;
   postClassId?: string;
   postScope?: "class" | "school";
   limit?: number;
+  /** false = only this class's posts (the class page's Announcements tab). */
+  includeSchool?: boolean;
 }) {
   const supabase = getSupabaseClient();
   const [items, setItems] = useState<Announcement[] | null>(null);
@@ -33,7 +36,12 @@ export function AnnouncementsFeed({
 
   const load = async () => {
     if (!supabase) return;
-    const filter = classIds.length > 0 ? `scope.eq.school,class_id.in.(${classIds.join(",")})` : "scope.eq.school";
+    const classFilter = classIds.length > 0 ? `class_id.in.(${classIds.join(",")})` : null;
+    const filter = includeSchool ? ["scope.eq.school", classFilter].filter(Boolean).join(",") : classFilter;
+    if (!filter) {
+      setItems([]);
+      return;
+    }
     const { data } = await supabase
       .from("announcements")
       .select("id, scope, class_id, title, body, created_at")

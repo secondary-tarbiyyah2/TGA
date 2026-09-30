@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
@@ -66,7 +67,12 @@ function ChildCard({ child }: { child: Child }) {
           {child.name}
           {child.year_groups?.name ? <span className="ml-2 text-sm font-normal text-ink/60">{child.year_groups.name}</span> : null}
         </h2>
-        <PrintButton />
+        <div className="flex items-center gap-2">
+          <Link href={`/family/classes?child=${child.id}`} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
+            View classes
+          </Link>
+          <PrintButton />
+        </div>
       </div>
       <div className="mt-4">
         <ChildTimetable classIds={classIds} />
@@ -158,6 +164,7 @@ function FamilyContent() {
   };
 
   return (
+    <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }}>
     <div className="space-y-6">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <div className="flex items-center justify-between">
@@ -218,6 +225,7 @@ function FamilyContent() {
 
       <IcsFeedLink />
     </div>
+    </DashboardWithPanel>
   );
 }
 

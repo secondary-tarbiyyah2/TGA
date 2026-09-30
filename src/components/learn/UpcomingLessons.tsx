@@ -63,12 +63,18 @@ export function UpcomingLessons({
     <ul className="space-y-2">
       {lessons.map((l) => (
         <li key={l.id}>
-          <Link href={`${basePath}?id=${l.id}${extraQuery || ""}`} className="flex items-center justify-between rounded-lg border border-gold-light/40 p-3 text-sm hover:bg-cream">
+          <Link
+            href={`${basePath}?id=${l.id}${extraQuery || ""}`}
+            className="flex flex-wrap items-center justify-between gap-x-3 gap-y-0.5 rounded-lg border border-gold-light/70 p-3 text-sm transition-colors hover:bg-cream"
+          >
             <span className="font-medium text-ink">
-              {l.timetable_slots?.classes?.subjects?.name} — {l.timetable_slots?.classes?.name}
+              {l.timetable_slots?.classes?.subjects?.name}
+              {l.timetable_slots?.classes?.subjects?.name ? " — " : ""}
+              {l.timetable_slots?.classes?.name}
             </span>
             <span className="text-ink/60">
-              {l.date} · {l.timetable_slots?.start_time.slice(0, 5)}
+              {new Date(`${l.date}T00:00:00`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })} ·{" "}
+              {l.timetable_slots?.start_time.slice(0, 5)}
             </span>
           </Link>
         </li>

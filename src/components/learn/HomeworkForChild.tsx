@@ -155,7 +155,7 @@ function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childI
 
 /** Shared homework list for a parent (canSubmit=false, they view only) or
  * a student (canSubmit=true, viewing/submitting their own homework). */
-export function HomeworkForChild({ childId, canSubmit }: { childId: string; canSubmit: boolean }) {
+export function HomeworkForChild({ childId, canSubmit, classId }: { childId: string; canSubmit: boolean; classId?: string }) {
   const supabase = getSupabaseClient();
   const [rows, setRows] = useState<Row[] | null>(null);
 
@@ -165,6 +165,7 @@ export function HomeworkForChild({ childId, canSubmit }: { childId: string; canS
       .from("homework_status")
       .select("homework_id, due_at, status, submission_id, homework:homework_id(title, instructions)")
       .eq("child_id", childId)
+      .match(classId ? { class_id: classId } : {})
       .order("due_at", { ascending: false });
     setRows((data as unknown as Row[]) || []);
   };
@@ -173,7 +174,7 @@ export function HomeworkForChild({ childId, canSubmit }: { childId: string; canS
     // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
     load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [supabase, childId]);
+  }, [supabase, childId, classId]);
 
   if (rows === null) return <p className="text-sm text-ink/60">Loading homework…</p>;
   if (rows.length === 0) return <p className="text-sm text-ink/60">No homework set yet.</p>;

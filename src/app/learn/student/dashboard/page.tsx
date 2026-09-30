@@ -1,13 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
-import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
+import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
+import { ClassGrid } from "@/components/learn/class/ClassGrid";
+import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
 import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
@@ -78,9 +80,29 @@ function StudentContent() {
   }, [supabase]);
 
   const simplified = isYoungerYearGroup(yearGroupName);
+  const viewer = useMemo<ClassViewer | null>(() => (childId ? { kind: "student", childId } : null), [childId]);
+  const myClasses = useViewerClasses(viewer);
 
-  return (
+  const content = (
     <div className="space-y-6">
+      {viewer && (
+        <section>
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-ink">My classes</h2>
+            <Link href="/student/classes" className="text-sm font-medium text-teal-700 hover:underline">
+              View all
+            </Link>
+          </div>
+          <ClassGrid
+            viewer={viewer}
+            classes={myClasses ? myClasses.slice(0, 4) : null}
+            hrefFor={(c) => `/student/class?id=${c.id}`}
+            emptyLabel="You're not in any classes yet."
+            controls={false}
+          />
+        </section>
+      )}
+
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <div className="flex items-center justify-between">
           <div>
@@ -97,13 +119,6 @@ function StudentContent() {
 
         <div className="mt-6">
           {slots === null ? <p className="text-sm text-ink/60">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} />}
-        </div>
-
-        <div className="mt-6 border-t border-gold-light/30 pt-4">
-          <h2 className="font-serif text-h3 font-semibold text-ink">Lessons</h2>
-          <div className="mt-3">
-            <UpcomingLessons classIds={classIds} basePath="/student/lessons/view" emptyLabel="No lessons in the next two weeks." />
-          </div>
         </div>
 
         <IcsFeedLink />
@@ -135,6 +150,13 @@ function StudentContent() {
 
       <AnnouncementsFeed classIds={classIds} />
     </div>
+  );
+
+  if (!childId) return content;
+  return (
+    <DashboardWithPanel viewer={{ kind: "student", childId, classIds }}>
+      {content}
+    </DashboardWithPanel>
   );
 }
 

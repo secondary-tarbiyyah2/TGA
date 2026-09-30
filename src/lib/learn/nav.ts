@@ -56,6 +56,7 @@ export const PORTAL_NAV: Record<PortalArea, PortalNavGroup[]> = {
   ],
   teach: [
     { label: "Dashboard", items: [{ href: "/teach/dashboard", label: "Dashboard" }] },
+    { label: "My classes", items: [{ href: "/teach/classes", label: "My classes" }] },
     { label: "Homework", items: [{ href: "/teach/homework", label: "Homework" }] },
     { label: "Assessment", items: [{ href: "/teach/assessment", label: "Assessment" }] },
     { label: "Reports", items: [{ href: "/teach/reports", label: "Reports" }] },
@@ -63,12 +64,14 @@ export const PORTAL_NAV: Record<PortalArea, PortalNavGroup[]> = {
   ],
   family: [
     { label: "Dashboard", items: [{ href: "/family/dashboard", label: "Dashboard" }] },
+    { label: "My classes", items: [{ href: "/family/classes", label: "My classes" }] },
     { label: "Homework", items: [{ href: "/family/homework", label: "Homework" }] },
     { label: "Reports", items: [{ href: "/family/reports", label: "Reports" }] },
     { label: "Messages", items: [{ href: "/family/messages", label: "Messages" }] },
   ],
   student: [
     { label: "Dashboard", items: [{ href: "/student/dashboard", label: "Dashboard" }] },
+    { label: "My classes", items: [{ href: "/student/classes", label: "My classes" }] },
     { label: "Homework", items: [{ href: "/student/homework", label: "Homework" }] },
     { label: "Reports", items: [{ href: "/student/reports", label: "Reports" }] },
   ],
@@ -95,6 +98,8 @@ export function portalAreaFor(pathname: string): PortalArea | null {
 /** Active if it's the page itself or a sub-page (e.g. /admin/lessons/view). */
 export function isActivePath(pathname: string, href: string): boolean {
   const p = normalisePortalPath(pathname);
+  // A single class page (/teach/class?id=…) belongs under "My classes".
+  if (href.endsWith("/classes") && (p === href.slice(0, -2) || p === href.slice(0, -2) + "/")) return true;
   return p === href || p.startsWith(href + "/");
 }
 

@@ -1,13 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
+import { ClassGrid } from "@/components/learn/class/ClassGrid";
+import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { StatTile } from "@/components/learn/Card";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
-import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { useLearnSession } from "@/lib/learn/session";
@@ -23,6 +26,24 @@ type Cover = {
   covering_teacher_user_id: string;
   timetable_slots?: { classes?: { name: string } | null; subjects?: { name: string } | null } | null;
 };
+
+const TEACHER: ClassViewer = { kind: "teacher" };
+
+/** Moodle's "Course overview" block: the first few class cards, linking to all. */
+function MyClassesStrip() {
+  const classes = useViewerClasses(TEACHER);
+  return (
+    <section>
+      <div className="mb-3 flex items-center justify-between">
+        <h2 className="text-sm font-semibold text-ink">My classes</h2>
+        <Link href="/teach/classes" className="text-sm font-medium text-teal-700 hover:underline">
+          View all
+        </Link>
+      </div>
+      <ClassGrid viewer={TEACHER} classes={classes ? classes.slice(0, 4) : null} hrefFor={(c) => `/teach/class?id=${c.id}`} emptyLabel="You haven't been assigned to any classes yet." controls={false} />
+    </section>
+  );
+}
 
 function TeachContent() {
   const { session } = useLearnSession();
@@ -73,7 +94,10 @@ function TeachContent() {
   }, [supabase]);
 
   return (
+    <DashboardWithPanel viewer={{ kind: "teacher", classIds }}>
     <div className="space-y-6">
+      <MyClassesStrip />
+
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <div className="flex items-center justify-between">
           <div>
@@ -101,14 +125,6 @@ function TeachContent() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <h2 className="font-serif text-h3 font-semibold text-ink">Lessons</h2>
-        <p className="mt-1 text-sm text-ink/60">Join a live lesson, set objectives/resources, and take the register.</p>
-        <div className="mt-4">
-          <UpcomingLessons classIds={classIds} basePath="/teach/lessons/view" emptyLabel="No lessons scheduled in the next two weeks." />
-        </div>
-      </div>
-
       <SignaturePrompts />
 
       <AnnouncementsFeed classIds={classIds} canPost={classIds.length > 0} postClassId={classIds[0]} postScope="class" />
@@ -131,6 +147,7 @@ function TeachContent() {
 
       <IcsFeedLink />
     </div>
+    </DashboardWithPanel>
   );
 }
 
