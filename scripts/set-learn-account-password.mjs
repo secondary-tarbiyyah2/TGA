@@ -52,14 +52,26 @@ if (!existing) {
   process.exit(1);
 }
 
-const tempPassword = generatePassword();
+// TEMP_PASSWORD (optional, from the workflow's masked input) lets whoever
+// runs this choose the password instead of reading it back from the log.
+const chosen = (process.env.TEMP_PASSWORD || "").trim();
+if (chosen && chosen.length < 12) {
+  console.error("TEMP_PASSWORD must be at least 12 characters.");
+  process.exit(1);
+}
+const tempPassword = chosen || generatePassword();
 const { error } = await supabase.auth.admin.updateUserById(existing.id, { password: tempPassword, email_confirm: true });
 if (error) throw error;
+
+const { data: roleRows } = await supabase.from("user_roles").select("role").eq("user_id", existing.id);
+const roleList = [...new Set((roleRows || []).map((r) => r.role))].join(", ") || "none";
+// Annotation (no password in it) so the result is visible from the run page/API.
+console.log(`::notice title=Password reset::${email} (roles: ${roleList}) can now sign in with the new password.`);
 
 console.log("");
 console.log("========================================");
 console.log(`Password set for: ${email}`);
-console.log(`Temporary password: ${tempPassword}`);
+console.log(chosen ? "Password: the one entered when this workflow was run." : `Temporary password: ${tempPassword}`);
 console.log("Sign in at https://learn.tarbiyyah.co.uk/login with this email and password.");
 console.log("This password is shown ONCE — it is not stored anywhere. Change it after signing in.");
 console.log("========================================");
