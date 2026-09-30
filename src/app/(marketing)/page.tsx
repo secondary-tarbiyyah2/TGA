@@ -8,6 +8,22 @@ import { CtaBand } from "@/components/CtaBand";
 import { FaqPreview } from "@/components/FaqPreview";
 import { getDifferentiators, getFaqEntries, getFeeBands, getHomepageContent, getSiteSettings, getStaffMembers, getTestimonials } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
+import { getSupabaseClient } from "@/lib/supabase/client";
+
+/**
+ * Reads public.bursary_seats_public (migration 0020) — only returns a row
+ * once an admin has actually set a seat count, same "hide until real"
+ * pattern as public.year_group_places. Used to substitute the real number
+ * into the "Transparent bursary seats" differentiator (d9) below; that
+ * differentiator is only shown once this resolves to a real count, never
+ * on its generic CMS summary alone.
+ */
+async function getBursarySeats(): Promise<number | null> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return null;
+  const { data } = await supabase.from("bursary_seats_public").select("bursary_seats").maybeSingle();
+  return (data as { bursary_seats: number | null } | null)?.bursary_seats ?? null;
+}
 
 export const metadata: Metadata = {
   title: "A specialist, quality education, rooted in faith",
@@ -36,7 +52,7 @@ const stages = [
 ];
 
 export default async function HomePage() {
-  const [differentiators, feeBands, testimonials, staff, faqs, settings, content] = await Promise.all([
+  const [differentiators, feeBands, testimonials, staff, faqs, settings, content, bursarySeats] = await Promise.all([
     getDifferentiators(),
     getFeeBands(),
     getTestimonials(),
@@ -44,6 +60,7 @@ export default async function HomePage() {
     getFaqEntries(),
     getSiteSettings(),
     getHomepageContent(),
+    getBursarySeats(),
   ]);
   const pillars = content.pillars?.length ? content.pillars : defaultPillars;
   const howItWorks = content.howItWorksSteps?.length
@@ -53,7 +70,18 @@ export default async function HomePage() {
   // and 4. A differentiator, testimonial or team member only appears once
   // an admin has confirmed it; the homepage headteacher quote only appears
   // if a real one has been entered in Site settings.
-  const confirmedDifferentiators = differentiators.filter((d) => d.status === "Confirmed commitment");
+  // d9 ("Transparent bursary seats") additionally requires a real, live
+  // seat count from Supabase — its CMS "Confirmed commitment" status alone
+  // is not enough, so it never shows a placeholder claim if that value
+  // hasn't been set yet (see getBursarySeats above).
+  const confirmedDifferentiators = differentiators
+    .filter((d) => d.status === "Confirmed commitment")
+    .filter((d) => d._id !== "d9" || bursarySeats !== null)
+    .map((d) =>
+      d._id === "d9" && bursarySeats !== null
+        ? { ...d, summary: `${bursarySeats} bursary/scholarship seat${bursarySeats === 1 ? "" : "s"} available this year, published openly rather than handled quietly on request.` }
+        : d
+    );
   const realTestimonials = testimonials.filter((t) => !t.isPlaceholder);
   const confirmedStaff = staff.filter((s) => !s.isPlaceholder);
 

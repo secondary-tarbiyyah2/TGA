@@ -32,25 +32,6 @@ export default async function CurriculumPage() {
         </Container>
       </section>
 
-      <section className="section-pad">
-        <Container>
-          <Kicker>Two live-lesson time bands</Kicker>
-          <h2 className="font-serif text-2xl font-semibold text-ink">
-            {content.timeBandsHeading || "Lessons timed for a genuinely global school."}
-          </h2>
-          <p className="mt-4 max-w-2xl text-ink/75">
-            {content.timeBandsBody || (
-              <>
-                Rather than one UK-hours timetable, families choose the live-lesson band that suits their timezone: a{" "}
-                <strong>UK / Europe / West-Africa band</strong> and a <strong>Gulf / South-Asia band</strong>. This
-                is a draft concept, not yet a confirmed commitment — final timetable bands will be published ahead
-                of enrolment.
-              </>
-            )}
-          </p>
-        </Container>
-      </section>
-
       <section className="geo-texture bg-cream section-pad">
         <Container className="grid gap-6 sm:grid-cols-2">
           {keyStages.map((ks) => (

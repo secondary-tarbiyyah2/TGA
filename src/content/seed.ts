@@ -117,8 +117,6 @@ export const aboutContent: AboutContent = {};
 export type CurriculumContent = {
   heroHeading?: string;
   heroBody?: string;
-  timeBandsHeading?: string;
-  timeBandsBody?: string;
 };
 
 export const curriculumContent: CurriculumContent = {};
@@ -202,13 +200,6 @@ export type Differentiator = {
 
 export const differentiators: Differentiator[] = [
   {
-    _id: "d1", order: 1, visible: true, icon: "clock",
-    status: "Draft / concept — not yet confirmed",
-    title: "Two live-lesson time bands",
-    summary: "A UK/Europe/West-Africa band and a Gulf/South-Asia band, so live lessons land at a sensible hour wherever home is.",
-    detail: "Rather than a single UK-hours timetable, families choose the live-lesson band that suits their timezone — reflecting a genuinely global intake rather than a UK-only one.",
-  },
-  {
     _id: "d2", order: 2, visible: true, icon: "quran",
     status: "Draft / concept — not yet confirmed",
     title: "Hifz as a first-class subject",
@@ -220,12 +211,6 @@ export const differentiators: Differentiator[] = [
     status: "Draft / concept — not yet confirmed",
     title: "Big Sibling mentorship",
     summary: "Peer mentors from Tarbiyyah Primary and Secondary support Academy pupils, connecting the whole Tarbiyyah family.",
-  },
-  {
-    _id: "d4", order: 4, visible: true, icon: "map-pin",
-    status: "Draft / concept — not yet confirmed",
-    title: "Real-world touchpoints",
-    summary: "Meetups, exam-sitting venues and events so an online school still means real friendships and real places.",
   },
   {
     _id: "d5", order: 5, visible: true, icon: "users",
@@ -253,8 +238,12 @@ export const differentiators: Differentiator[] = [
   },
   {
     _id: "d9", order: 9, visible: true, icon: "heart",
-    status: "Draft / concept — not yet confirmed",
+    status: "Confirmed commitment",
     title: "Transparent bursary seats",
+    // The real count is set by an admin (public.site_settings.bursary_seats,
+    // migration 0020) and substituted into this summary on the homepage —
+    // see BursarySeatsSummary. This fallback text is only ever shown if
+    // that live value can't be reached, so it names no number.
     summary: "A tracked number of bursary/scholarship seats each year, published openly rather than handled quietly on request.",
   },
 ];
