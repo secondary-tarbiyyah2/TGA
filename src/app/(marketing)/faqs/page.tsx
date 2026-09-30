@@ -17,7 +17,7 @@ export default async function FaqsPage() {
       <Container className="max-w-3xl">
         <Kicker>FAQs</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Frequently asked questions.</h1>
-        <p className="mt-6 text-lg text-ink/75">Search or filter by category to find your answer.</p>
+        <p className="mt-6 text-lg text-ink/75">Grouped by what you&apos;re actually asking, or search to jump straight to an answer.</p>
         <div className="mt-10">
           <FaqAccordion entries={faqs} />
         </div>
