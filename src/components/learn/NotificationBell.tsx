@@ -79,7 +79,7 @@ export function NotificationBell({ userId }: { userId: string }) {
         type="button"
         onClick={markRead}
         aria-label={unreadCount > 0 ? `Notifications, ${unreadCount} unread` : "Notifications"}
-        className="relative flex h-9 w-9 items-center justify-center rounded-full border border-gold-light/60 text-ink/70 hover:bg-cream"
+        className="relative flex h-9 w-9 items-center justify-center rounded-full text-ink/65 hover:bg-cream hover:text-ink"
       >
         <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4.5 w-4.5">
           <path
@@ -88,14 +88,14 @@ export function NotificationBell({ userId }: { userId: string }) {
           />
         </svg>
         {unreadCount > 0 && (
-          <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-teal-700 px-1 text-[10px] font-semibold text-white">
+          <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-semibold text-white ring-2 ring-white">
             {unreadCount}
           </span>
         )}
       </button>
 
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-80 rounded-2xl border border-gold-light/50 bg-white p-3 shadow-lg">
+        <div className="absolute right-0 z-50 mt-2 w-80 rounded-xl border border-gold-light bg-white p-3 shadow-warm">
           <p className="px-1 pb-2 text-xs font-semibold uppercase tracking-wide text-ink/50">Notifications</p>
           {signals === null ? (
             <p className="p-2 text-sm text-ink/60">Loading…</p>
