@@ -8,7 +8,7 @@ import { learnRoleLabel } from "@/lib/learn/session";
 
 type YearGroup = { id: string; name: string };
 
-type InviteResult = { ok: boolean; error?: string; detail?: string; profileId?: string; isNewUser?: boolean; setupLink?: string };
+type InviteResult = { ok: boolean; error?: string; detail?: string; profileId?: string; isNewUser?: boolean; setupLink?: string; emailSent?: boolean };
 
 async function invite(body: Record<string, unknown>): Promise<InviteResult> {
   const supabase = getSupabaseClient();
@@ -31,6 +31,7 @@ type AddedChild = {
   id: string;
   name: string;
   studentLink: string | null;
+  studentEmailSent: boolean;
   linked: boolean; // has a student login (or was explicitly skipped)
   skipped: boolean;
 };
@@ -73,6 +74,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
   const [parentEmail, setParentEmail] = useState("");
   const [parentName, setParentName] = useState("");
   const [parentLink, setParentLink] = useState<string | null>(null);
+  const [parentEmailSent, setParentEmailSent] = useState(false);
   const [parentUserId, setParentUserId] = useState<string | null>(null);
 
   // Children added so far, this family
@@ -90,6 +92,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
     setParentEmail("");
     setParentName("");
     setParentLink(null);
+    setParentEmailSent(false);
     setParentUserId(null);
     setChildren([]);
     setChildName("");
@@ -110,6 +113,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
       }
       setParentUserId(result.profileId);
       setParentLink(result.setupLink || null);
+      setParentEmailSent(!!result.emailSent);
       setStep("child");
     } finally {
       setBusy(false);
@@ -130,7 +134,7 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
         setError(`Could not add child: ${insertErr?.message}`);
         return;
       }
-      setChildren((prev) => [...prev, { id: data.id, name: childName.trim(), studentLink: null, linked: false, skipped: false }]);
+      setChildren((prev) => [...prev, { id: data.id, name: childName.trim(), studentLink: null, studentEmailSent: false, linked: false, skipped: false }]);
       onChanged();
       // Reset the form fields only — stay on the same "child" step so
       // adding a second/third/fourth child is just filling the form again,
@@ -166,7 +170,9 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
         setError(`Account created for ${child.name} but could not link it to their child record: ${linkErr.message}`);
         return;
       }
-      setChildren((prev) => prev.map((c) => (c.id === child.id ? { ...c, linked: true, studentLink: result.setupLink || null } : c)));
+      setChildren((prev) =>
+        prev.map((c) => (c.id === child.id ? { ...c, linked: true, studentLink: result.setupLink || null, studentEmailSent: !!result.emailSent } : c))
+      );
       onChanged();
     } finally {
       setBusy(false);
@@ -214,10 +220,17 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
           <h2 className="font-serif text-h3 font-semibold text-ink">2. Add their children</h2>
           {parentLink && (
             <p className="rounded-lg bg-cream px-3 py-2 text-xs text-ink/70">
-              Parent account created. Setup link (send this to the parent — it is shown once):{" "}
-              <a href={parentLink} className="break-all text-gold-700 underline">
-                {parentLink}
-              </a>
+              {parentEmailSent ? (
+                <>Parent account created — a setup email has been sent to them directly.</>
+              ) : (
+                <>
+                  Parent account created, but the setup email could not be sent. Copy this link and send it to the parent yourself
+                  (shown once):{" "}
+                  <a href={parentLink} className="break-all text-gold-700 underline">
+                    {parentLink}
+                  </a>
+                </>
+              )}
             </p>
           )}
 
@@ -268,15 +281,18 @@ function GuidedFlow({ yearGroups, onChanged }: { yearGroups: YearGroup[]; onChan
                 <p className="text-sm font-medium text-ink">{c.name}</p>
                 {c.linked ? (
                   <p className="mt-1 text-xs text-ink/60">
-                    Login created.
-                    {c.studentLink && (
+                    {c.studentEmailSent ? (
+                      "Login created — a setup email has been sent to the family directly."
+                    ) : c.studentLink ? (
                       <>
-                        {" "}
-                        Setup link (send this to the family — it is shown once):{" "}
+                        Login created, but the setup email could not be sent. Copy this link and send it to the family yourself
+                        (shown once):{" "}
                         <a href={c.studentLink} className="break-all text-gold-700 underline">
                           {c.studentLink}
                         </a>
                       </>
+                    ) : (
+                      "Login created."
                     )}
                   </p>
                 ) : c.skipped ? (

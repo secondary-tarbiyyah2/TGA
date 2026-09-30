@@ -17,6 +17,7 @@
 // own comments).
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
+import { sendEmail, emailShell } from "../_shared/resend.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -35,6 +36,20 @@ type AddOn = (typeof ADD_ON_PERMISSIONS)[number];
 
 const SENSITIVE_ROLES: Role[] = ["head_teacher", "admin"];
 const SENSITIVE_ADD_ONS: AddOn[] = ["safeguarding_lead"];
+
+// Kept local rather than shared with the frontend's role-label helper
+// (src/lib/learn/session.ts) — Edge Functions run on Deno with their own
+// module resolution, and this is only ever used for the email subject/body
+// below, not anywhere roles are actually enforced.
+const ROLE_LABEL: Record<Role, string> = {
+  head_teacher: "Head Teacher",
+  admin: "Admin",
+  admissions: "Admissions",
+  teacher: "Teacher",
+  teaching_assistant_cover: "Teaching Assistant/Cover",
+  parent: "Parent",
+  student: "Student",
+};
 
 // Coarse mapping onto the legacy profiles.role vocabulary (0001/0005),
 // which the pre-existing booking admin panel still reads — kept working
@@ -146,10 +161,42 @@ Deno.serve(async (req) => {
   });
   if (linkErr || !linkData) return jsonResponse({ ok: false, error: "link_generation_failed", detail: linkErr?.message }, 500);
 
+  const setupLink = linkData.properties.action_link;
+
+  // Actually email the setup link rather than only handing it back for the
+  // inviting admin to copy and send themselves by hand — reported as "we
+  // need something better, like an email sent for them to make [an]
+  // account". Failure here is never fatal to the invite itself (the
+  // account/role are already created either way) — the admin still gets
+  // setupLink back in the response as a fallback they can copy manually if
+  // Resend is down or misconfigured; emailSent tells the frontend which
+  // happened so it never claims an email went out that didn't.
+  const firstName = fullName.split(/\s+/)[0] || fullName;
+  const emailResult = await sendEmail({
+    to: email,
+    toName: fullName,
+    subject: isNewUser ? "Set up your Tarbiyyah Global Academy Learn account" : "Reset your Tarbiyyah Global Academy Learn password",
+    html: emailShell(`
+      <p style="margin:0 0 16px;">Assalamu alaikum ${firstName},</p>
+      <p style="margin:0 0 16px;">
+        ${isNewUser ? "An account has been created for you" : "A password reset has been requested for your account"}
+        on the Tarbiyyah Global Academy Learn portal, as <strong>${ROLE_LABEL[role]}</strong>.
+      </p>
+      <p style="margin:0 0 24px;">
+        <a href="${setupLink}" style="display:inline-block;background:#B08E45;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;">
+          ${isNewUser ? "Set up your account" : "Reset your password"}
+        </a>
+      </p>
+      <p style="margin:0;font-size:13px;color:#777;">This link is for you alone and expires after a short time. If you didn't expect this email, you can ignore it.</p>
+    `),
+  });
+
   return jsonResponse({
     ok: true,
     profileId: userId,
     isNewUser,
-    setupLink: linkData.properties.action_link,
+    setupLink,
+    emailSent: emailResult.ok,
+    emailError: emailResult.ok ? undefined : emailResult.detail,
   });
 });
