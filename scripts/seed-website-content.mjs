@@ -16,6 +16,7 @@
 // Requires SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY. Run via:
 //   node scripts/seed-website-content.mjs
 import { createClient } from "@supabase/supabase-js";
+import { createHash } from "node:crypto";
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -29,19 +30,12 @@ const supabase = createClient(supabaseUrl, serviceRoleKey);
 
 // Deterministic UUIDs derived from the original seed _id strings, so
 // re-running this script upserts the same rows rather than duplicating —
-// plain randomUUID() would break that on a second run.
+// plain randomUUID() would break that on a second run. Not cryptographic,
+// just needs to be stable and UUID-shaped: a SHA-256 of the seed string
+// gives 64 hex chars, plenty for the 32 a UUID needs.
 function deterministicId(seed) {
-  // Not cryptographic — just needs to be stable and UUID-shaped.
-  let h1 = 0xdeadbeef, h2 = 0x41c6ce57;
-  for (let i = 0; i < seed.length; i++) {
-    const ch = seed.charCodeAt(i);
-    h1 = Math.imul(h1 ^ ch, 2654435761);
-    h2 = Math.imul(h2 ^ ch, 1597334677);
-  }
-  h1 = (Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909)) >>> 0;
-  h2 = (Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909)) >>> 0;
-  const hex = h1.toString(16).padStart(8, "0") + h2.toString(16).padStart(8, "0");
-  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-4${hex.slice(13, 16)}-8${hex.slice(17, 20)}-${hex.slice(20, 32).padEnd(12, "0")}`;
+  const hex = createHash("sha256").update(seed).digest("hex");
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-4${hex.slice(13, 16)}-8${hex.slice(17, 20)}-${hex.slice(20, 32)}`;
 }
 
 async function upsertAll(table, rows) {
