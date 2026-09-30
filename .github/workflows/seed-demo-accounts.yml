@@ -1,0 +1,87 @@
+name: Seed demo portal accounts
+
+# Creates/resets three demo /learn logins (teacher, parent, student) and a
+# small fake world (two "Demo:" classes, timetable, lessons, homework,
+# grades, announcements) for walking through the portal. See
+# scripts/seed-demo-accounts.mjs. Re-running wipes and rebuilds the demo
+# data and sets the passwords given here. Demo accounts only ever see demo
+# data: RLS scopes them to their own demo class/child.
+
+on:
+  workflow_dispatch:
+    inputs:
+      teacher_password:
+        description: "Password for demo-teacher@tarbiyyah.co.uk (12+ chars)"
+        required: true
+      parent_password:
+        description: "Password for demo-parent@tarbiyyah.co.uk (12+ chars)"
+        required: true
+      student_password:
+        description: "Password for demo-student@tarbiyyah.co.uk (12+ chars)"
+        required: true
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - name: Mask passwords
+        run: |
+          echo "::add-mask::${{ inputs.teacher_password }}"
+          echo "::add-mask::${{ inputs.parent_password }}"
+          echo "::add-mask::${{ inputs.student_password }}"
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref
+        id: project
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch service role key
+        id: keys
+        run: |
+          set -euo pipefail
+          KEYS=$(supabase projects api-keys --project-ref "${{ steps.project.outputs.ref }}" -o json)
+          SERVICE_ROLE=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Seed demo accounts
+        env:
+          SUPABASE_URL: https://${{ steps.project.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          DEMO_TEACHER_PASSWORD: ${{ inputs.teacher_password }}
+          DEMO_PARENT_PASSWORD: ${{ inputs.parent_password }}
+          DEMO_STUDENT_PASSWORD: ${{ inputs.student_password }}
+        run: |
+          set -euo pipefail
+          npm ci
+          node scripts/seed-demo-accounts.mjs 2>&1 | tee /tmp/out.txt || { echo "::error::$(tail -1 /tmp/out.txt)"; exit 1; }
+          echo "::notice title=Demo accounts ready::$(tail -2 /tmp/out.txt | tr '\n' ' ')"
