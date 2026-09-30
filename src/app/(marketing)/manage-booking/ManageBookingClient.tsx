@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getEdgeFunctionUrl } from "@/lib/supabase/client";
 
-type Booking = { id: string; status: string; startsAt: string; endsAt: string; teamsJoinUrl: string; staffName: string };
+type Booking = { id: string; status: string; startsAt: string; endsAt: string; teamsJoinUrl: string; bbbJoinUrl: string | null; staffName: string };
 
 async function callManageBooking(action: string, token: string, extra: Record<string, unknown> = {}) {
   const url = getEdgeFunctionUrl("manage-booking");
@@ -127,7 +127,15 @@ export function ManageBookingClient() {
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-lg font-semibold text-ink">Your admissions call</h2>
       <p className="mt-2 text-ink/80">{when} (UK time), with {booking.staffName}</p>
-      <a href={booking.teamsJoinUrl} className="mt-2 inline-block text-sm font-semibold text-gold-700 underline">Join on Microsoft Teams</a>
+      {booking.bbbJoinUrl ? (
+        <a href={booking.bbbJoinUrl} className="mt-3 inline-block rounded-full bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 hover:brightness-95">
+          Join the call
+        </a>
+      ) : booking.teamsJoinUrl ? (
+        <a href={booking.teamsJoinUrl} className="mt-2 inline-block text-sm font-semibold text-gold-700 underline">Join on Microsoft Teams</a>
+      ) : (
+        <p className="mt-2 text-sm text-ink/60">Your join link will appear here shortly before the call starts.</p>
+      )}
       <div className="mt-6 flex flex-wrap gap-3">
         <a href="/book-a-call" className="rounded-full border border-gold-500 px-4 py-2 text-sm font-medium text-gold-700 hover:bg-cream">
           Book a different time

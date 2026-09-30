@@ -5,7 +5,29 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { Card } from "@/components/learn/Card";
 import { useLearnSession } from "@/lib/learn/session";
-import { getSupabaseClient } from "@/lib/supabase/client";
+import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
+
+/**
+ * Starts (or rejoins) the in-house video call for a booking — same
+ * BigBlueButton system already running lessons, including native
+ * moderator breakout rooms, rather than the old external Teams-link
+ * workaround. Returns a role-scoped join URL the caller opens directly;
+ * see supabase/functions/booking-join.
+ */
+async function startBookingCall(bookingId: string): Promise<{ ok: boolean; joinUrl?: string; error?: string }> {
+  const supabase = getSupabaseClient();
+  const url = getEdgeFunctionUrl("booking-join");
+  if (!supabase || !url) return { ok: false, error: "not_configured" };
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${session?.access_token || ""}` },
+    body: JSON.stringify({ booking_id: bookingId }),
+  });
+  return res.json();
+}
 
 type StaffRow = { id: string; profile_id: string; display_name: string; role_title: string; teams_meeting_url: string | null; bookable: boolean };
 type BookingRow = { id: string; starts_at: string; ends_at: string; status: string; contact_name: string | null; contact_email: string | null; notes: string | null };
@@ -163,6 +185,22 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
 function StaffBookingsPanel({ staffId }: { staffId: string }) {
   const supabase = getSupabaseClient();
   const [bookings, setBookings] = useState<BookingRow[] | null>(null);
+  const [callState, setCallState] = useState<Record<string, "starting" | "error">>({});
+
+  async function joinCall(bookingId: string) {
+    setCallState((s) => ({ ...s, [bookingId]: "starting" }));
+    const result = await startBookingCall(bookingId);
+    setCallState((s) => {
+      const next = { ...s };
+      delete next[bookingId];
+      return next;
+    });
+    if (result.ok && result.joinUrl) {
+      window.open(result.joinUrl, "_blank", "noopener");
+    } else {
+      setCallState((s) => ({ ...s, [bookingId]: "error" }));
+    }
+  }
 
   useEffect(() => {
     if (!supabase) return;
@@ -216,7 +254,16 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
                 {b.contact_name} — {b.contact_email}
               </p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              {callState[b.id] === "error" && <span className="text-xs text-red-700">Couldn&apos;t start the call — try again.</span>}
+              <button
+                type="button"
+                onClick={() => joinCall(b.id)}
+                disabled={callState[b.id] === "starting"}
+                className="rounded-full bg-gold-500 px-3 py-1 text-xs font-semibold text-ink-900 hover:brightness-95 disabled:opacity-50"
+              >
+                {callState[b.id] === "starting" ? "Starting…" : "Start call"}
+              </button>
               <button type="button" onClick={() => setOutcome(b.id, "completed")} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 hover:bg-cream">
                 Mark completed
               </button>

@@ -8,6 +8,9 @@ import { buildIcs } from "../_shared/ics.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { generateToken, hashToken } from "../_shared/manageToken.ts";
 import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
+import { bbbConfigured, ensureMeeting, buildGuestJoinUrl, derivePasswords } from "../_shared/bbb.ts";
+
+const JOIN_WINDOW_MINUTES_BEFORE = 15;
 
 const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
 const SITE_URL = Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk";
@@ -99,6 +102,35 @@ Deno.serve(async (req) => {
   if (!booking) return jsonResponse({ ok: false, error: "not_found" }, 404);
 
   if (action === "view") {
+    // In-house video call (BigBlueButton — same system already powering
+    // lessons) replaces the old external Teams link wherever BBB is
+    // configured; Teams stays as the fallback for a deployment that hasn't
+    // set up BBB yet — never a broken/placeholder link either way. Only
+    // built within a join window around the booking (not days early): no
+    // point spinning up a meeting, and the guest join URL, on BBB's server
+    // for a call that isn't starting yet.
+    let bbbJoinUrl: string | null = null;
+    if (bbbConfigured() && booking.status === "confirmed") {
+      const startsAt = new Date(booking.starts_at as string);
+      const endsAt = new Date(booking.ends_at as string);
+      const now = new Date();
+      const joinableFrom = new Date(startsAt.getTime() - JOIN_WINDOW_MINUTES_BEFORE * 60_000);
+      if (now >= joinableFrom && now <= endsAt) {
+        const meetingId = `booking-${booking.id}`;
+        const { moderatorPassword, attendeePassword } = await derivePasswords(meetingId);
+        const ensured = await ensureMeeting({
+          meetingId,
+          meetingName: `Admissions call with ${booking.staff_members?.display_name || "Tarbiyyah Global Academy"}`,
+          moderatorPassword,
+          attendeePassword,
+          recordingEnabled: false,
+        });
+        if (ensured.ok) {
+          bbbJoinUrl = await buildGuestJoinUrl({ meetingId, fullName: String(booking.contact_name || "Guest") });
+        }
+      }
+    }
+
     return jsonResponse({
       ok: true,
       booking: {
@@ -107,6 +139,7 @@ Deno.serve(async (req) => {
         startsAt: booking.starts_at,
         endsAt: booking.ends_at,
         teamsJoinUrl: booking.teams_join_url,
+        bbbJoinUrl,
         staffName: booking.staff_members?.display_name,
       },
     });
