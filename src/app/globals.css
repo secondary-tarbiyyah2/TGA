@@ -21,6 +21,20 @@
   --color-cream: #fdfbf6;
   --color-white: #ffffff;
 
+  /* Secondary accent — a deep teal, the colour most associated with
+     Islamic geometric tilework alongside gold, so it reads as deliberate
+     rather than arbitrary. The site was gold/cream/ink only (flagged as
+     monochrome in a design review); this gives a second accent for
+     interactive/portal contexts specifically, so gold stays the "brand"
+     colour and teal marks "you're doing something" (the /learn portal's
+     primary actions, plus sparing marketing-site use to break up 20+
+     visually-identical sections) rather than every element competing for
+     the same gold. */
+  --color-teal-900: #0f3d3a; /* darkest — portal hover states */
+  --color-teal-700: #1f6f6b; /* portal primary actions, links-in-portal */
+  --color-teal-500: #3b9a93; /* fills, icons */
+  --color-teal-100: #e3f2f0; /* soft backgrounds, chips */
+
   /* Back-compat aliases so the many existing gold/gold-light/ink/ink-light
      utility classes across the site automatically pick up the real palette
      without a full rewrite of every call site. */
@@ -47,6 +61,11 @@
   --color-ink-500: var(--color-ink-500);
   --color-cream: var(--color-cream);
   --color-white: var(--color-white);
+
+  --color-teal-900: var(--color-teal-900);
+  --color-teal-700: var(--color-teal-700);
+  --color-teal-500: var(--color-teal-500);
+  --color-teal-100: var(--color-teal-100);
 
   --color-ink: var(--color-ink);
   --color-gold: var(--color-gold);

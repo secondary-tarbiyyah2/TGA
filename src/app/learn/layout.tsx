@@ -34,7 +34,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <Link href={homeHref} className="flex items-center gap-2" aria-label="Tarbiyyah Global Academy — your dashboard">
             <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={150} height={46} priority />
-            <span className="hidden rounded-full bg-cream px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-ink/50 sm:inline">
+            <span className="hidden rounded-full bg-teal-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-teal-700 sm:inline">
               Learn
             </span>
           </Link>

@@ -131,7 +131,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
                     aria-current={pathname === item.href ? "page" : undefined}
                     className={`block rounded-lg border-l-2 px-3 py-1.5 text-sm font-medium transition-colors ${
                       pathname === item.href
-                        ? "border-gold-500 bg-cream text-ink"
+                        ? "border-teal-700 bg-teal-100/60 text-ink"
                         : "border-transparent text-ink/70 hover:border-gold-light hover:bg-cream/60"
                     }`}
                   >
