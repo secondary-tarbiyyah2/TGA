@@ -167,6 +167,22 @@ jobs:
             echo "BBB_SERVER_URL / BBB_SECRET not set in repo secrets; calls will use the Teams fallback."
           fi
 
+      # Lets publish-website-content trigger a site rebuild after an admin
+      # saves a change in /learn/admin/content (0025_website_content.sql) --
+      # same GH_DISPATCH_TOKEN used for the old Sanity webhook setup (a
+      # fine-grained PAT scoped to only this repo's Actions:write). Until
+      # it's added as a repo secret, that function's dispatch call simply
+      # no-ops (see its own code) rather than failing the save.
+      - name: Set website-content publish secrets (if provided)
+        env:
+          GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+        run: |
+          if [ -n "$GH_DISPATCH_TOKEN" ]; then
+            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" GH_DISPATCH_TOKEN="$GH_DISPATCH_TOKEN" GH_DISPATCH_REPO="${{ github.repository }}"
+          else
+            echo "GH_DISPATCH_TOKEN not set in repo secrets; website-content saves won't auto-trigger a rebuild yet."
+          fi
+
       - name: Deploy Edge Functions
         run: |
           supabase functions deploy book-admissions-call --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
@@ -207,6 +223,10 @@ jobs:
           supabase functions deploy trigger-timetable-generation --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy quiz-send-plan --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy notify-flagged-messages --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # Verified -- separately re-checks the caller is an admin (see the
+          # function); a session-less caller would be rejected before that
+          # check even runs.
+          supabase functions deploy publish-website-content --project-ref "${{ steps.project.outputs.ref }}"
 
       - name: Configure Auth (magic link via Resend SMTP)
         run: |

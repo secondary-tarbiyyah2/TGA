@@ -67,14 +67,19 @@ on:
       - "tsconfig.json"
       - ".github/workflows/deploy-site.yml"
   workflow_dispatch:
-  # Fired by a Sanity webhook (see scripts/setup-sanity-webhook.mjs) whenever
-  # content is published in Studio — this is what makes "every page reads
-  # from Site settings" actually true operationally on a statically
-  # exported site: publishing alone doesn't change anything live until a
-  # rebuild runs, so the rebuild has to happen automatically, not only when
-  # someone next pushes code.
+  # sanity-content-published: fired by a Sanity webhook (see
+  # scripts/setup-sanity-webhook.mjs) -- kept for the LMS's own
+  # terms/academic-year and signable-document syncs, which are still
+  # Sanity-sourced (see 0025_website_content.sql's header for why those
+  # two weren't migrated alongside the rest of the marketing content).
+  # website-content-published: fired by the publish-website-content Edge
+  # Function right after an admin saves a change in /learn/admin/content
+  # (marketing content's new home, see 0025_website_content.sql) -- this is
+  # what makes an edit there actually go live: the site is a static
+  # export, so the database write alone changes nothing until a rebuild
+  # runs.
   repository_dispatch:
-    types: [sanity-content-published]
+    types: [sanity-content-published, website-content-published]
 
 # Deploys to the same live FTP server regardless of which branch triggered
 # it — a global (branch-independent) group, not one keyed by github.ref, so

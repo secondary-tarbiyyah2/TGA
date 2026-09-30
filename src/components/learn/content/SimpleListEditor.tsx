@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
+import { triggerPublish } from "@/lib/learn/publishSiteContent";
 
 export type FieldDef = {
   key: string;
@@ -77,21 +78,24 @@ export function SimpleListEditor({
     delete payload.id;
     delete payload.created_at;
     const { error } = editingId === "new" ? await supabase.from(table).insert(payload) : await supabase.from(table).update(payload).eq("id", editingId);
-    setBusy(false);
     if (error) {
+      setBusy(false);
       setMessage(`Could not save: ${error.message}`);
       return;
     }
     setEditingId(null);
     await load();
+    setMessage(await triggerPublish());
+    setBusy(false);
   }
 
   async function remove(id: string) {
     if (!supabase || !confirm("Delete this entry? This can't be undone.")) return;
     setBusy(true);
     await supabase.from(table).delete().eq("id", id);
-    setBusy(false);
     await load();
+    setMessage(await triggerPublish());
+    setBusy(false);
   }
 
   return (
@@ -132,7 +136,7 @@ export function SimpleListEditor({
           Add new
         </button>
       )}
-      {message && <p className="mt-2 text-sm text-red-700">{message}</p>}
+      {message && <p className={`mt-2 text-sm ${message.startsWith("Could not save") ? "text-red-700" : "text-ink/70"}`}>{message}</p>}
     </Card>
   );
 }

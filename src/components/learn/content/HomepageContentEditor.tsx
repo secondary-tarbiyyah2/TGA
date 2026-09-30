@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
+import { triggerPublish } from "@/lib/learn/publishSiteContent";
 
 type TitleBody = { title: string; body: string };
 type Row = {
@@ -71,8 +72,14 @@ export function HomepageContentEditor() {
     setSaving(true);
     setMessage(null);
     const { error } = await supabase.from("homepage_content").update(row).eq("id", true);
+    if (error) {
+      setSaving(false);
+      setMessage(`Could not save: ${error.message}`);
+      return;
+    }
+    const publishMessage = await triggerPublish();
     setSaving(false);
-    setMessage(error ? `Could not save: ${error.message}` : "Saved. Changes go live on the next rebuild.");
+    setMessage(publishMessage);
   }
 
   if (!row) return <p className="text-sm text-ink/60">Loading…</p>;
