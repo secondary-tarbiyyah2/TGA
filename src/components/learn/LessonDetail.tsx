@@ -231,6 +231,9 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
             <button type="button" disabled={busy} onClick={join} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
               {variant === "teacher" ? "Start / join as teacher" : "Join lesson"}
             </button>
+            {variant === "teacher" && (
+              <span className="text-xs text-ink/50">Once in, use the call&apos;s own toolbar to split the class into breakout rooms.</span>
+            )}
             {variant === "teacher" && lesson.bbb_status === "live" && lesson.recording_enabled && (
               <button
                 type="button"
