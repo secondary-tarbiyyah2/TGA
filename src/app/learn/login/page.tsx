@@ -71,7 +71,7 @@ export default function LearnLoginPage() {
   }
 
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <div className="mx-auto max-w-sm">
         <h1 className="font-serif text-h2 font-semibold text-ink">Sign in</h1>
         <p className="mt-1 text-sm text-ink/60">Staff, parents and students all sign in here.</p>

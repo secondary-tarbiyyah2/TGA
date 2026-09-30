@@ -222,7 +222,7 @@ function FamilyContent() {
 
 export default function FamilyDashboardPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <FamilyContent />
       </LearnGate>

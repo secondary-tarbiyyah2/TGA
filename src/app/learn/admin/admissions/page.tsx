@@ -425,7 +425,7 @@ function AdmissionsContent() {
 
 export default function AdminAdmissionsPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
         <AdminShell>
           <AdmissionsContent />

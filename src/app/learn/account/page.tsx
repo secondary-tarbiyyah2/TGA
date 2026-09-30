@@ -104,7 +104,7 @@ export default function LearnAccountPage() {
   const { session } = useLearnSession();
 
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       {session === "loading" && <p className="text-ink/60">Loading…</p>}
       {session === null && (
         <p className="text-ink/60">

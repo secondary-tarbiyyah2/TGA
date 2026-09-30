@@ -15,7 +15,7 @@ const EDITABLE_SECTIONS = ["Site settings (contact details, fees, key dates)", "
 export default function AdminWebsitecontentPage() {
   const studioUrl = `${MAIN_SITE_ORIGIN}/studio`;
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
         <AdminShell>
           <Card title="Website content" description="Edited in Sanity Studio, the CMS behind the public site.">

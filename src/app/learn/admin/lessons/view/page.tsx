@@ -15,7 +15,7 @@ function AdminLessonContent() {
 
 export default function AdminLessonViewPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <AdminShell>
           <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>

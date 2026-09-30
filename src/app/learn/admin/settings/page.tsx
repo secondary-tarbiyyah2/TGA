@@ -109,7 +109,7 @@ function LmsSettingsForm() {
 
 export default function AdminSettingsPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
         <AdminShell>
           <LmsSettingsForm />

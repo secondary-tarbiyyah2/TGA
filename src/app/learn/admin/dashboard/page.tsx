@@ -86,7 +86,11 @@ function ActivityFeed() {
 function DashboardContent() {
   const { session, roles } = useLearnSession();
   const isSafeguardingLead = useLearnPermission("safeguarding_lead");
-  const myRoles = roles.map((r) => learnRoleLabel(r.role)).join(", ");
+  // roles can hold one row per scope (e.g. several classes) that all
+  // resolve to the same label — dedupe before display, or "Head Teacher"
+  // repeats once per underlying row (seen live: "Head Teacher, Head
+  // Teacher, Head Teacher…").
+  const myRoles = Array.from(new Set(roles.map((r) => learnRoleLabel(r.role)))).join(", ");
   const supabase = getSupabaseClient();
 
   const [absenceCount, setAbsenceCount] = useState<number | null>(null);
@@ -178,7 +182,7 @@ function DashboardContent() {
 
 export default function AdminDashboardPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
         <AdminShell>
           <DashboardContent />

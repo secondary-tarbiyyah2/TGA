@@ -222,7 +222,7 @@ function AssessmentContent() {
 
 export default function TeachAssessmentPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <AssessmentContent />
       </LearnGate>

@@ -139,7 +139,7 @@ function StudentContent() {
 
 export default function StudentDashboardPage() {
   return (
-    <section className="section-pad">
+    <section className="app-pad">
       <LearnGate allowedRoles={["student"]}>
         <StudentContent />
       </LearnGate>
