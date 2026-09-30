@@ -6,6 +6,8 @@ import { Kicker } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { FaqPreview } from "@/components/FaqPreview";
+import { TimezoneConverter } from "@/components/TimezoneConverter";
+import { ComparisonTable } from "@/components/ComparisonTable";
 import { getDifferentiators, getFaqEntries, getFeeBands, getHomepageContent, getSiteSettings, getStaffMembers, getTestimonials } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -145,6 +147,23 @@ export default async function HomePage() {
         </Container>
       </section>
 
+      {/* TIMEZONE CONVERTER — genuinely useful, not a card, so it also
+          breaks the repeated Kicker+h2+3-card rhythm every other section
+          uses. See src/components/TimezoneConverter.tsx. */}
+      <section className="bg-cream section-pad">
+        <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+          <div>
+            <Kicker>Live lessons, wherever home is</Kicker>
+            <h2 className="text-h2 font-serif font-semibold text-ink">What time is school, for you?</h2>
+            <p className="mt-4 text-ink/75">
+              We teach an international, timezone-spread cohort across two daily live-lesson windows. Pick where
+              you&apos;re based to see what that means in your own time.
+            </p>
+          </div>
+          <TimezoneConverter />
+        </Container>
+      </section>
+
       {/* HOW IT WORKS */}
       <section className="geo-texture bg-cream section-pad">
         <Container>
@@ -192,26 +211,32 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* DIFFERENTIATORS — only confirmed commitments are ever shown publicly;
-          draft/concept ideas stay in the CMS until confirmed, per ground rule
-          3 (no unconfirmed claims to prospective families) rather than shown
-          with a "not yet confirmed" disclaimer. */}
-      {confirmedDifferentiators.length > 0 && (
-        <section className="geo-texture bg-cream section-pad">
-          <Container>
-            <Kicker>What makes us different</Kicker>
-            <h2 className="text-h2 font-serif font-semibold text-ink">Distinctive, not just online.</h2>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* WHAT MAKES US DIFFERENT — was a repeated 3-card grid identical to
+          five other sections on this page; a comparison table says the
+          same thing more usefully (and reads differently), with the CMS's
+          confirmed differentiators kept as a compact supporting list
+          rather than dropped. Only confirmed commitments ever appear
+          publicly — draft/concept ideas stay in the CMS until confirmed,
+          per ground rule 3. */}
+      <section className="geo-texture bg-cream section-pad">
+        <Container>
+          <Kicker>What makes us different</Kicker>
+          <h2 className="text-h2 font-serif font-semibold text-ink">Distinctive, not just online.</h2>
+          <div className="mt-10">
+            <ComparisonTable />
+          </div>
+          {confirmedDifferentiators.length > 0 && (
+            <ul className="mt-8 grid gap-x-8 gap-y-3 sm:grid-cols-2">
               {confirmedDifferentiators.map((d) => (
-                <div key={d._id} className="rounded-2xl bg-white p-6 shadow-sm">
-                  <h3 className="font-serif text-lg font-semibold text-ink">{d.title}</h3>
-                  <p className="mt-2 text-sm text-ink/70">{d.summary}</p>
-                </div>
+                <li key={d._id} className="flex items-start gap-2 text-sm text-ink/80">
+                  <span aria-hidden="true" className="mt-1 text-gold-500">◆</span>
+                  <span><span className="font-semibold text-ink">{d.title}.</span> {d.summary}</span>
+                </li>
               ))}
-            </div>
-          </Container>
-        </section>
-      )}
+            </ul>
+          )}
+        </Container>
+      </section>
 
       {/* MEET THE TEAM PREVIEW */}
       {confirmedStaff.length > 0 && (

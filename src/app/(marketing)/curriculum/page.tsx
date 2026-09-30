@@ -4,6 +4,7 @@ import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { keyStages } from "@/content/curriculum";
 import { getCurriculumContent } from "@/lib/content";
+import { CurriculumSampleWeek } from "@/components/CurriculumSampleWeek";
 
 export const metadata: Metadata = {
   title: "Curriculum",
@@ -45,7 +46,17 @@ export default async function CurriculumPage() {
         </Container>
       </section>
 
-      <CtaBand heading="See how a typical week looks." body="Explore the sample timetable for your child's year group." />
+      <section className="section-pad">
+        <Container>
+          <Kicker>Sample weekly timetable</Kicker>
+          <h2 className="text-h2 font-serif font-semibold text-ink">See how a typical week looks.</h2>
+          <div className="mt-8 max-w-xl">
+            <CurriculumSampleWeek />
+          </div>
+        </Container>
+      </section>
+
+      <CtaBand heading="Ready to apply?" body="Start your child's application today." />
     </>
   );
 }
