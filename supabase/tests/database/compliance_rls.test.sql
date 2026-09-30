@@ -102,7 +102,7 @@ select is_empty(
 
 -- MFA (and with it the safeguarding log's extra "freshly re-checked token"
 -- requirement) was removed app-wide at the user's explicit request —
--- current_token_fresh() now always returns true (0020_remove_mfa.sql), so a
+-- current_token_fresh() now always returns true (0021_remove_mfa.sql), so a
 -- Safeguarding Lead reads the log on role/permission alone, same as every
 -- other compliance table. These two cases (stale iat, no iat at all) used
 -- to prove the freshness gate was real at the RLS level; now they prove it
@@ -173,7 +173,7 @@ select results_eq(
 );
 
 -- A stale-token Safeguarding Lead can still read the chronology — MFA
--- freshness removed app-wide (0020_remove_mfa.sql), same as above.
+-- freshness removed app-wide (0021_remove_mfa.sql), same as above.
 set local "request.jwt.claims" to '{"sub": "a5000000-0000-0000-0000-000000000004", "iat": 1}';
 select isnt_empty(
   $$select 1 from public.safeguarding_chronology$$,
