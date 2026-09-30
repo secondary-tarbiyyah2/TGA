@@ -113,6 +113,15 @@ export async function ensureMeeting(opts: {
     lockSettingsDisableCam: "false",
     muteOnStart: "true",
     logoutURL: "about:blank",
+    // Explicit rather than relying on BBB's own server default (which
+    // varies by version/config) — the moderator's in-call toolbar gets a
+    // native "Create breakout rooms" button. breakoutRoomsRecord stays
+    // false: recording only ever happens in the main room, on an explicit
+    // moderator action (see setRecordingStatus), never automatically in a
+    // room split off into smaller, less-supervised groups.
+    breakoutRoomsEnabled: "true",
+    breakoutRoomsRecord: "false",
+    breakoutRoomsPrivateChatEnabled: "true",
   });
   const res = await fetch(url, { method: "GET" });
   const text = await res.text();
@@ -136,6 +145,23 @@ export async function buildJoinUrl(opts: {
     fullName: opts.fullName,
     password: opts.password,
     userID: opts.userId,
+    redirect: "true",
+  });
+}
+
+/**
+ * Guest join URL for someone with no Supabase account at all — a
+ * prospective parent booking an admissions call, who we can't ask to sign
+ * in before we've even offered them a place. Relies on guestPolicy=
+ * ASK_MODERATOR (set in ensureMeeting): no password is passed, so BBB puts
+ * them in its waiting room until the staff moderator admits them — same
+ * safeguard as an authenticated viewer, just without the login step.
+ */
+export async function buildGuestJoinUrl(opts: { meetingId: string; fullName: string }): Promise<string> {
+  return signedUrl("join", {
+    meetingID: opts.meetingId,
+    fullName: opts.fullName,
+    guest: "true",
     redirect: "true",
   });
 }
