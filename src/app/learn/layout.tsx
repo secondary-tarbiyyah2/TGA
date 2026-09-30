@@ -62,7 +62,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
       <PortalSidebar area={area} session={activeSession} roles={roles} />
 
       <div className="flex min-h-screen flex-col lg:pl-[272px]">
-        <header className="sticky top-0 z-20 border-b border-gold-light bg-white/95 backdrop-blur">
+        <header className="sticky top-0 z-20 border-b border-gold-light bg-white">
           <div className="flex h-[60px] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
             <Link href={homeHref} className="lg:hidden" aria-label="Tarbiyyah Global Academy — your dashboard">

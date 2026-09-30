@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
@@ -192,14 +193,16 @@ export function PortalSidebarDrawer(props: { area: PortalArea; session: Session;
           <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
         </svg>
       </button>
-      {open && (
-        <div className="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-label="Menu">
-          <button type="button" aria-label="Close menu" className="absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
-          <div className="absolute inset-y-0 left-0 w-[85%] max-w-[300px] bg-white shadow-xl">
-            <SidebarBody {...props} onNavigate={() => setOpen(false)} />
-          </div>
-        </div>
-      )}
+      {open &&
+        createPortal(
+          <div className="portal fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
+            <button type="button" aria-label="Close menu" className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
+            <div className="absolute inset-y-0 left-0 w-[85%] max-w-[300px] bg-white shadow-xl">
+              <SidebarBody {...props} onNavigate={() => setOpen(false)} />
+            </div>
+          </div>,
+          document.body,
+        )}
     </div>
   );
 }
