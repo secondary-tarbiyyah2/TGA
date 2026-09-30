@@ -10,6 +10,8 @@ import { FamilyFees } from "@/components/learn/FamilyFees";
 import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
 import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
+import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
+import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
@@ -98,8 +100,11 @@ function ChildCard({ child }: { child: Child }) {
         <div className="mt-2 grid gap-6 sm:grid-cols-2">
           <HomeworkDueWidget childId={child.id} />
           <LatestGradesWidget childId={child.id} />
+          <QuranProgressWidget childId={child.id} />
         </div>
       </div>
+
+      <WeeklyTarbiyahNoteWidget childId={child.id} />
 
       {classIds && classIds.length > 0 && (
         <div className="mt-4 border-t border-gold-light/30 pt-4">

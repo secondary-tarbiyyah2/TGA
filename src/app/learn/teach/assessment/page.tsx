@@ -5,6 +5,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { QuranProgressForm } from "@/components/learn/QuranProgressForm";
+import { WeeklyTarbiyahNoteForm } from "@/components/learn/WeeklyTarbiyahNoteForm";
 import { useMyClasses } from "@/lib/learn/useMyClasses";
 
 type Child = { id: string; name: string };
@@ -214,6 +215,7 @@ function AssessmentContent() {
       )}
 
       {isAssessmentLead && childId && <QuranProgressForm childId={childId} classId={classId || null} />}
+      {childId && classId && <WeeklyTarbiyahNoteForm childId={childId} classId={classId} />}
     </div>
   );
 }
