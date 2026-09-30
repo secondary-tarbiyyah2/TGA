@@ -20,13 +20,20 @@ Options -Indexes
 RewriteEngine On
 RewriteOptions IgnoreInherit
 
-# /staff and /portal are superseded by /learn, which is now on its own
-# subdomain — redirect straight there at the server level (not a JS/
-# meta-refresh page) so this works even pre-JS and for anything that had the
-# old URLs bookmarked or indexed. Neither of these carries an auth token in
-# its URL, so a plain server-side 301 is safe here (contrast with the
-# /learn/* bridge page below).
-RewriteRule ^staff(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
+# /portal is superseded by /learn, which is now on its own subdomain —
+# redirect straight there at the server level (not a JS/meta-refresh page)
+# so this works even pre-JS and for anything that had the old URL bookmarked
+# or indexed. Doesn't carry an auth token in its URL, so a plain server-side
+# 301 is safe here (contrast with the /learn/* bridge page below).
+#
+# /staff is DELIBERATELY NOT redirected yet, unlike /portal — StaffApp.tsx
+# (booking/availability management) has no replacement live in /learn yet
+# (/learn/admin/admissions was still a stub when this redirect was first
+# added, which would have left every staff member with no way to manage
+# bookings at all). Re-add `RewriteRule ^staff(/.*)?$ .../login/ [R=301,L]`
+# here, and only then retire src/app/(marketing)/staff/ and StaffApp.tsx,
+# once /learn/admin/admissions' "My availability"/"All staff" views are
+# confirmed working for a real staff member — see SETUP.md.
 RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 
 # Sanity Studio (out/studio, built separately by `npm run sanity:build` — see
