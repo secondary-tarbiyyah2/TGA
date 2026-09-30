@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { getHomeworkFileUrl } from "@/lib/learn/homeworkFile";
 
 type Row = {
   homework_id: string;
@@ -28,6 +29,15 @@ function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childI
   const [file, setFile] = useState<File | null>(null);
   const [busy, setBusy] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [openingFile, setOpeningFile] = useState(false);
+
+  const openFile = async () => {
+    if (!submission?.file_path) return;
+    setOpeningFile(true);
+    const url = await getHomeworkFileUrl(submission.file_path);
+    setOpeningFile(false);
+    if (url) window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   const loadDetail = async () => {
     if (!supabase || !row.submission_id) return;
@@ -102,7 +112,11 @@ function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childI
                 Submitted {submission.submitted_at ? new Date(submission.submitted_at).toLocaleString("en-GB") : "—"}
               </p>
               {submission.kind === "text" && <p className="mt-1">{submission.response_text}</p>}
-              {submission.kind === "file" && <p className="mt-1 text-ink/70">File uploaded.</p>}
+              {submission.kind === "file" && (
+                <button type="button" onClick={openFile} disabled={openingFile} className="mt-1 text-sm font-semibold text-gold-700 underline disabled:opacity-50">
+                  {openingFile ? "Opening…" : "Open uploaded file"}
+                </button>
+              )}
             </div>
           ) : canSubmit ? (
             <div className="space-y-2">

@@ -5,17 +5,44 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useMyClasses } from "@/lib/learn/useMyClasses";
+import { getHomeworkFileUrl } from "@/lib/learn/homeworkFile";
 
 type Homework = { id: string; class_id: string; title: string; instructions: string | null; due_at: string; classes?: { name: string } | null };
 type StatusRow = { child_id: string; status: string; submission_id: string | null };
 type Child = { id: string; name: string };
 type Mark = { id: string; submission_id: string; grade: string | null; feedback: string | null; released: boolean };
+type Submission = { kind: string; response_text: string | null; file_path: string | null };
 
 function MarkRow({ submissionId, childName, existing, onSaved }: { submissionId: string; childName: string; existing: Mark | null; onSaved: () => void }) {
   const supabase = getSupabaseClient();
   const [grade, setGrade] = useState(existing?.grade || "");
   const [feedback, setFeedback] = useState(existing?.feedback || "");
   const [busy, setBusy] = useState(false);
+  // Previously this row let a teacher grade+release feedback without ever
+  // seeing what the student submitted — no response text, no way to open
+  // an uploaded file. Fetched here rather than passed down from the parent
+  // list load, since the parent only ever queried homework_status/marks,
+  // not the submission content itself.
+  const [submission, setSubmission] = useState<Submission | null>(null);
+  const [openingFile, setOpeningFile] = useState(false);
+
+  useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from("homework_submissions")
+      .select("kind, response_text, file_path")
+      .eq("id", submissionId)
+      .maybeSingle()
+      .then(({ data }) => setSubmission((data as Submission) || null));
+  }, [supabase, submissionId]);
+
+  const openFile = async () => {
+    if (!submission?.file_path) return;
+    setOpeningFile(true);
+    const url = await getHomeworkFileUrl(submission.file_path);
+    setOpeningFile(false);
+    if (url) window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   const save = async (release: boolean) => {
     if (!supabase) return;
@@ -47,6 +74,12 @@ function MarkRow({ submissionId, childName, existing, onSaved }: { submissionId:
   return (
     <div className="rounded-lg border border-gold-light/40 p-3">
       <p className="text-sm font-medium text-ink">{childName}</p>
+      {submission?.kind === "text" && <p className="mt-1 rounded-md bg-cream p-2 text-sm text-ink/80">{submission.response_text}</p>}
+      {submission?.kind === "file" && (
+        <button type="button" onClick={openFile} disabled={openingFile} className="mt-1 text-sm font-semibold text-gold-700 underline disabled:opacity-50">
+          {openingFile ? "Opening…" : "Open submitted file"}
+        </button>
+      )}
       <div className="mt-2 flex flex-col gap-2 sm:flex-row">
         <input
           type="text"
