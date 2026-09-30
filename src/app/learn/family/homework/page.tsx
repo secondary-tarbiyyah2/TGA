@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { LearnShell } from "@/components/learn/LearnShell";
 import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -51,9 +52,11 @@ export default function FamilyHomeworkPage() {
   return (
     <section className="section-pad">
       <LearnGate allowedRoles={["parent"]}>
-        <Suspense fallback={<p className="text-ink/60">Loading…</p>}>
-          <FamilyHomeworkContent />
-        </Suspense>
+        <LearnShell role="family">
+          <Suspense fallback={<p className="text-ink/60">Loading…</p>}>
+            <FamilyHomeworkContent />
+          </Suspense>
+        </LearnShell>
       </LearnGate>
     </section>
   );

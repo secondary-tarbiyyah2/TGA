@@ -3,6 +3,7 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { LearnShell } from "@/components/learn/LearnShell";
 import { LessonDetail } from "@/components/learn/LessonDetail";
 
 function TeachLessonContent() {
@@ -16,9 +17,11 @@ export default function TeachLessonPage() {
   return (
     <section className="section-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
-        <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
-          <TeachLessonContent />
-        </Suspense>
+        <LearnShell role="teach">
+          <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
+            <TeachLessonContent />
+          </Suspense>
+        </LearnShell>
       </LearnGate>
     </section>
   );

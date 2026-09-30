@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { LearnShell } from "@/components/learn/LearnShell";
 import { MessageThread } from "@/components/learn/MessageThread";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -110,7 +111,9 @@ export default function FamilyMessagesPage() {
   return (
     <section className="section-pad">
       <LearnGate allowedRoles={["parent"]}>
-        <FamilyMessagesContent />
+        <LearnShell role="family">
+          <FamilyMessagesContent />
+        </LearnShell>
       </LearnGate>
     </section>
   );

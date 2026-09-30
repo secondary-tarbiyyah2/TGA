@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { LearnShell } from "@/components/learn/LearnShell";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -68,7 +69,9 @@ export default function FamilyReportsPage() {
   return (
     <section className="section-pad">
       <LearnGate allowedRoles={["parent"]}>
-        <FamilyReportsContent />
+        <LearnShell role="family">
+          <FamilyReportsContent />
+        </LearnShell>
       </LearnGate>
     </section>
   );

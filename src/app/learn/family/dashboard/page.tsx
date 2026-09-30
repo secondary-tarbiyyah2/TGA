@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { LearnShell } from "@/components/learn/LearnShell";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
@@ -219,7 +220,9 @@ export default function FamilyDashboardPage() {
   return (
     <section className="section-pad">
       <LearnGate allowedRoles={["parent"]}>
-        <FamilyContent />
+        <LearnShell role="family">
+          <FamilyContent />
+        </LearnShell>
       </LearnGate>
     </section>
   );

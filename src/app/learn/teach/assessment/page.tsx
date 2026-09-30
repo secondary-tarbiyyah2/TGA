@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { LearnShell } from "@/components/learn/LearnShell";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { QuranProgressForm } from "@/components/learn/QuranProgressForm";
@@ -222,7 +223,9 @@ export default function TeachAssessmentPage() {
   return (
     <section className="section-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
-        <AssessmentContent />
+        <LearnShell role="teach">
+          <AssessmentContent />
+        </LearnShell>
       </LearnGate>
     </section>
   );

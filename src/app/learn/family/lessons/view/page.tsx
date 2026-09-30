@@ -3,6 +3,7 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { LearnShell } from "@/components/learn/LearnShell";
 import { LessonDetail } from "@/components/learn/LessonDetail";
 
 function FamilyLessonContent() {
@@ -17,9 +18,11 @@ export default function FamilyLessonPage() {
   return (
     <section className="section-pad">
       <LearnGate allowedRoles={["parent"]}>
-        <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
-          <FamilyLessonContent />
-        </Suspense>
+        <LearnShell role="family">
+          <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
+            <FamilyLessonContent />
+          </Suspense>
+        </LearnShell>
       </LearnGate>
     </section>
   );

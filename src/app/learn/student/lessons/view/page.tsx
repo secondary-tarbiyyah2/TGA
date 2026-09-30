@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { LearnShell } from "@/components/learn/LearnShell";
 import { LessonDetail } from "@/components/learn/LessonDetail";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -34,9 +35,11 @@ export default function StudentLessonPage() {
   return (
     <section className="section-pad">
       <LearnGate allowedRoles={["student"]}>
-        <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
-          <StudentLessonContent />
-        </Suspense>
+        <LearnShell role="student">
+          <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
+            <StudentLessonContent />
+          </Suspense>
+        </LearnShell>
       </LearnGate>
     </section>
   );
