@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
+import { StatTile } from "@/components/learn/Card";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
@@ -92,29 +92,20 @@ function TeachContent() {
         </div>
       </div>
 
+      <div>
+        <h2 className="text-xs font-semibold uppercase tracking-wide text-ink/50">At a glance</h2>
+        <div className="mt-3 grid gap-3 sm:grid-cols-3">
+          <StatTile label="Classes" value={classIds.length} />
+          <StatTile label="Published lessons this week" value={slots === null ? "…" : slots.length} />
+          <StatTile label="Cover assignments" value={covers === null ? "…" : covers.length} status={covers && covers.length > 0 ? "warning" : covers === null ? undefined : "ok"} />
+        </div>
+      </div>
+
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Lessons</h2>
         <p className="mt-1 text-sm text-ink/60">Join a live lesson, set objectives/resources, and take the register.</p>
         <div className="mt-4">
           <UpcomingLessons classIds={classIds} basePath="/teach/lessons/view" emptyLabel="No lessons scheduled in the next two weeks." />
-        </div>
-      </div>
-
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <h2 className="font-serif text-h3 font-semibold text-ink">Homework, assessment &amp; messages</h2>
-        <div className="mt-3 flex flex-wrap gap-3">
-          <Link href="/teach/homework" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-            Homework
-          </Link>
-          <Link href="/teach/assessment" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-            Assessment &amp; grades
-          </Link>
-          <Link href="/teach/reports" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-            Term reports
-          </Link>
-          <Link href="/teach/messages" className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 hover:bg-cream">
-            Messages
-          </Link>
         </div>
       </div>
 
