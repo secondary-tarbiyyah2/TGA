@@ -139,7 +139,14 @@ Deno.serve(async (req) => {
     attendeeEmail: email,
   });
 
-  await sendEmail({
+  // Never let a failed send block the booking (it's already saved) — but
+  // previously a failure here was completely invisible: sendEmail() never
+  // throws, and the result was discarded, so "the parent never got an
+  // email" had no trace anywhere. Logging it means it now shows up in
+  // `supabase functions logs book-admissions-call` (or the Studio's Edge
+  // Function logs), which is the only way to tell "Resend rejected it"
+  // (e.g. an unverified sending domain) apart from "it sent fine".
+  const parentEmailResult = await sendEmail({
     to: email,
     toName: parentName,
     subject: "Your admissions call is confirmed — Tarbiyyah Global Academy",
@@ -154,8 +161,11 @@ Deno.serve(async (req) => {
     icsContent: ics,
     icsFilename: "admissions-call.ics",
   });
+  if (!parentEmailResult.ok) {
+    console.error(`booking ${booking.id}: confirmation email to parent (${email}) failed: ${parentEmailResult.detail}`);
+  }
 
-  await sendEmail({
+  const staffEmailResult = await sendEmail({
     to: staff.profiles.email,
     toName: staff.profiles.full_name,
     subject: `New admissions call — ${parentName}`,
@@ -170,6 +180,9 @@ Deno.serve(async (req) => {
     icsContent: ics,
     icsFilename: "admissions-call.ics",
   });
+  if (!staffEmailResult.ok) {
+    console.error(`booking ${booking.id}: notification email to staff (${staff.profiles.email}) failed: ${staffEmailResult.detail}`);
+  }
 
-  return jsonResponse({ ok: true, bookingId: booking.id });
+  return jsonResponse({ ok: true, bookingId: booking.id, parentEmailSent: parentEmailResult.ok, staffEmailSent: staffEmailResult.ok });
 });

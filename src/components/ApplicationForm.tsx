@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { leadRef, readRegisterInterest, type StoredRegisterInterest } from "@/lib/leadRef";
+import { COUNTRIES } from "@/lib/countries";
 
 const YEAR_GROUPS = [
   "Reception (age 4–5)", "Year 1 (age 5–6)", "Year 2 (age 6–7)", "Year 3 (age 7–8)", "Year 4 (age 8–9)",
@@ -101,7 +102,10 @@ export function ApplicationForm() {
           </label>
           <label className="block text-sm font-medium text-ink">
             Country you&apos;re based in
-            <input name="country" type="text" required={step === 1} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            <input name="country" type="text" list="application-countries" required={step === 1} autoComplete="country-name" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            <datalist id="application-countries">
+              {COUNTRIES.map((c) => <option key={c} value={c} />)}
+            </datalist>
           </label>
         </div>
       </div>

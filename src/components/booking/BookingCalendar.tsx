@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
+import { COUNTRIES } from "@/lib/countries";
 
 type Slot = { slot_start: string; slot_end: string };
 type Staff = { id: string; display_name: string; role_title: string };
@@ -323,7 +324,10 @@ export function BookingCalendar() {
               </label>
               <label className="block text-sm font-medium text-ink">
                 Country
-                <input name="country" type="text" required className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+                <input name="country" type="text" list="booking-countries" required autoComplete="country-name" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+                <datalist id="booking-countries">
+                  {COUNTRIES.map((c) => <option key={c} value={c} />)}
+                </datalist>
               </label>
             </div>
             <label className="mt-4 block text-sm font-medium text-ink">
