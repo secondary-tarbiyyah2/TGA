@@ -99,7 +99,7 @@ function LmsSettingsForm() {
           />
         </label>
       </div>
-      <button type="button" disabled={busy} onClick={save} className="mt-4 rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+      <button type="button" disabled={busy} onClick={save} className="mt-4 rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
         Save
       </button>
       {message && <p className="mt-2 text-xs text-ink/70">{message}</p>}

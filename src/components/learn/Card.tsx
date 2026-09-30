@@ -44,24 +44,35 @@ export function Card({
   );
 }
 
-/** A small at-a-glance stat tile — the dashboard's grid of these replaces a
- * bare "Welcome" line with real counts already queried elsewhere in the
- * portal (absence alerts, outstanding signatures, etc.), never invented
- * numbers. */
+/** A small at-a-glance stat tile. Every count comes from a query the
+ * portal already runs elsewhere (absence alerts, outstanding signatures,
+ * etc.), never an invented number. */
 export function StatTile({ label, value, status, href }: { label: string; value: number | string; status?: CardStatus; href?: string }) {
-  const statusStyle = status ? STATUS_STYLES[status] : null;
+  const statusStyle = status && status !== "neutral" ? STATUS_STYLES[status] : null;
   const content = (
-    <div className="rounded-xl border border-gold-light/50 bg-white p-4 transition hover:border-gold-500">
-      <div className="flex items-center justify-between">
-        <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">{label}</p>
-        {statusStyle && <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${statusStyle.dot}`} />}
+    <div className="group h-full rounded-2xl border border-gold-light bg-white p-5 transition hover:border-teal-500/60 hover:shadow-sm">
+      <p className="text-sm font-medium text-ink/60">{label}</p>
+      <p className="mt-1.5 text-3xl font-semibold tabular-nums tracking-tight text-ink">{value}</p>
+      <div className="mt-3 flex items-center justify-between">
+        {statusStyle ? (
+          <span className={`inline-flex items-center gap-1.5 text-xs font-medium ${status === "warning" ? "text-red-700" : "text-green-700"}`}>
+            <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${statusStyle.dot}`} />
+            {statusStyle.label}
+          </span>
+        ) : (
+          <span />
+        )}
+        {href && (
+          <span aria-hidden="true" className="text-xs font-medium text-teal-700 opacity-0 transition group-hover:opacity-100">
+            View &rarr;
+          </span>
+        )}
       </div>
-      <p className="mt-2 font-serif text-3xl font-semibold text-ink">{value}</p>
     </div>
   );
   if (!href) return content;
   return (
-    <a href={href} className="block">
+    <a href={href} className="block h-full">
       {content}
     </a>
   );

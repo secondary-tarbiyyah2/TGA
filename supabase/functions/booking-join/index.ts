@@ -21,10 +21,6 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
   if (req.method !== "POST") return jsonResponse({ ok: false, error: "method_not_allowed" }, 405);
 
-  if (!bbbConfigured()) {
-    return jsonResponse({ ok: false, error: "bbb_not_configured", detail: "BBB_SERVER_URL/BBB_SECRET are not set yet — see SETUP.md." }, 503);
-  }
-
   const authHeader = req.headers.get("Authorization");
   if (!authHeader) return jsonResponse({ ok: false, error: "forbidden" }, 403);
   const callerClient = createClient(supabaseUrl, anonKey, { global: { headers: { Authorization: authHeader } } });
@@ -43,7 +39,7 @@ Deno.serve(async (req) => {
 
   const { data: booking, error: bookingErr } = await serviceClient
     .from("bookings")
-    .select("id, status, staff_id, staff_members(display_name)")
+    .select("id, status, staff_id, teams_join_url, staff_members(display_name, teams_meeting_url)")
     .eq("id", bookingId)
     .single();
   if (bookingErr || !booking) return jsonResponse({ ok: false, error: "booking_not_found" }, 404);
@@ -61,6 +57,26 @@ Deno.serve(async (req) => {
   const isOwnBooking = Boolean(ownStaffRow);
   const isAdmissionsStaff = (staffRoles || []).some((r) => ["head_teacher", "admin", "admissions"].includes(r.role));
   if (!isOwnBooking && !isAdmissionsStaff) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+
+  // No video server configured yet: fall back to the Teams link the family
+  // was given (the booking's own, else the staff member's standing one,
+  // else the admissions default), so "Start call" still gets staff into
+  // the call instead of failing.
+  if (!bbbConfigured()) {
+    const teamsUrl =
+      booking.teams_join_url || booking.staff_members?.teams_meeting_url || Deno.env.get("ADMISSIONS_TEAMS_URL") || null;
+    if (!teamsUrl) {
+      return jsonResponse({ ok: false, error: "bbb_not_configured", detail: "BBB_SERVER_URL/BBB_SECRET are not set yet — see SETUP.md." }, 503);
+    }
+    await serviceClient.from("audit_log").insert({
+      actor_id: userId,
+      action: "BOOKING_CALL_JOIN",
+      target_table: "bookings",
+      target_id: bookingId,
+      changes: { role: "moderator", provider: "teams" },
+    });
+    return jsonResponse({ ok: true, joinUrl: teamsUrl, provider: "teams" });
+  }
 
   const meetingId = `booking-${booking.id}`;
   const { moderatorPassword, attendeePassword } = await derivePasswords(meetingId);

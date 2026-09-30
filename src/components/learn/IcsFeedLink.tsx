@@ -82,7 +82,7 @@ export function IcsFeedLink() {
           type="button"
           onClick={createToken}
           disabled={busy}
-          className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50"
+          className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors"
         >
           {busy ? "Creating…" : "Create a new calendar link"}
         </button>

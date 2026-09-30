@@ -112,7 +112,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
         Referral details (e.g. external agency referred to, and when)
         <textarea value={referral} onChange={(e) => setReferral(e.target.value)} rows={2} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
       </label>
-      <button type="button" onClick={saveCase} disabled={busy} className="mt-2 rounded-full bg-gold-500 px-4 py-1.5 text-xs font-semibold text-ink-900 hover:brightness-95 disabled:opacity-60">
+      <button type="button" onClick={saveCase} disabled={busy} className="mt-2 rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
         Save case details
       </button>
 
@@ -130,7 +130,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
         </ul>
         <div className="mt-2 flex gap-2">
           <textarea value={entry} onChange={(e) => setEntry(e.target.value)} rows={2} placeholder="Add a dated entry…" className="flex-1 rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
-          <button type="button" onClick={addEntry} disabled={busy} className="self-start rounded-full bg-ink px-4 py-1.5 text-xs font-semibold text-white disabled:opacity-60">
+          <button type="button" onClick={addEntry} disabled={busy} className="self-start rounded-lg bg-ink px-4 py-1.5 text-sm font-semibold text-white disabled:opacity-60 transition-colors">
             Add
           </button>
         </div>
@@ -149,7 +149,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
         </ul>
         <div className="mt-2 flex items-center gap-2">
           <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} className="text-sm" />
-          <button type="button" onClick={uploadFile} disabled={busy || !file} className="rounded-full bg-ink px-4 py-1.5 text-xs font-semibold text-white disabled:opacity-60">
+          <button type="button" onClick={uploadFile} disabled={busy || !file} className="rounded-lg bg-ink px-4 py-1.5 text-sm font-semibold text-white disabled:opacity-60 transition-colors">
             Upload
           </button>
         </div>

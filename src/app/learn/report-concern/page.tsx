@@ -108,7 +108,7 @@ function ReportConcernForm() {
           <textarea value={summary} onChange={(e) => setSummary(e.target.value)} required rows={5} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2" />
         </label>
         {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
-        <button type="submit" disabled={busy} className="rounded-full bg-gold-500 px-5 py-2 text-sm font-semibold text-ink-900 hover:brightness-95 disabled:opacity-60">
+        <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-5 py-2 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
           {busy ? "Sending…" : "Send to Safeguarding Lead"}
         </button>
       </form>

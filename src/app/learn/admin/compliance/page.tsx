@@ -57,7 +57,7 @@ function SafeguardingKeywordsAdmin() {
       <p className="mt-1 text-xs text-ink/50">Messages matching any phrase below are automatically flagged for the Safeguarding Lead.</p>
       <div className="mt-3 flex gap-2">
         <input value={phrase} onChange={(e) => setPhrase(e.target.value)} placeholder="Add a phrase…" className="flex-1 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-        <button type="button" onClick={add} className="rounded-full bg-gold-600 px-4 py-2 text-sm text-white">
+        <button type="button" onClick={add} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white hover:bg-gold-900 font-medium transition-colors">
           Add
         </button>
       </div>

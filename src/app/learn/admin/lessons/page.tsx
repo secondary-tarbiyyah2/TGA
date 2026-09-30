@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
-import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
+import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
+import { getSupabaseClient } from "@/lib/supabase/client";
 import { WEEKDAYS, PERIODS, timeLabel, type TimetableSlot } from "@/lib/learn/timetable";
 
 type Run = { id: string; label: string; status: string; academic_year_id: string; created_at: string; solver_stats: Record<string, unknown> | null };
@@ -12,21 +13,8 @@ type Conflict = { id: string; severity: "hard" | "soft"; message: string; resolv
 type Teacher = { id: string; full_name: string };
 
 async function callFunction(name: string, body: Record<string, unknown>): Promise<{ ok: boolean; error?: string; detail?: string; run_id?: string }> {
-  const supabase = getSupabaseClient();
-  const url = getEdgeFunctionUrl(name);
-  if (!supabase || !url) return { ok: false, error: "not_configured" };
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-  const res = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${session?.access_token || ""}`,
-    },
-    body: JSON.stringify(body),
-  });
-  return res.json();
+  // Shared helper: never throws or hangs, see src/lib/learn/edge.ts.
+  return (await callEdgeFunction(name, body)) as never;
 }
 
 function RunPicker({ runs, selected, onSelect }: { runs: Run[]; selected: string | null; onSelect: (id: string) => void }) {
@@ -82,7 +70,7 @@ function EditableGrid({
     }
     const result = await callFunction("timetable-move", { slot_id: slotId, weekday, start_time: start, end_time: end });
     if (!result.ok) {
-      setMessage(`Move rejected: ${result.detail || result.error}`);
+      setMessage(`Move rejected: ${edgeErrorMessage(result)}`);
     } else {
       setMessage(null);
       onMoved();
@@ -159,7 +147,7 @@ function CoverForm({ slots, teachers, onDone }: { slots: TimetableSlot[]; teache
     if (!slotId || !date || !coveringTeacher) return;
     const result = await callFunction("timetable-cover", { slot_id: slotId, cover_date: date, covering_teacher_user_id: coveringTeacher, reason });
     if (!result.ok) {
-      setMessage(`Could not assign cover: ${result.detail || result.error}`);
+      setMessage(`Could not assign cover: ${edgeErrorMessage(result)}`);
     } else {
       setMessage("Cover assigned.");
       setSlotId("");
@@ -193,7 +181,7 @@ function CoverForm({ slots, teachers, onDone }: { slots: TimetableSlot[]; teache
           ))}
         </select>
         <input value={reason} onChange={(e) => setReason(e.target.value)} placeholder="Reason (optional)" className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        <button type="button" onClick={assign} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900">
+        <button type="button" onClick={assign} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors">
           Assign
         </button>
       </div>
@@ -212,7 +200,7 @@ function GenerateLessonsForm({ runId, onDone }: { runId: string; onDone: () => v
     setMessage(null);
     try {
       const result = await callFunction("lesson-instances-generate", { run_id: runId, from, to });
-      setMessage(result.ok ? `Generated ${(result as { created?: number }).created ?? 0} lesson instance(s).` : `Could not generate: ${result.detail || result.error}`);
+      setMessage(result.ok ? `Generated ${(result as { created?: number }).created ?? 0} lesson instance(s).` : `Could not generate: ${edgeErrorMessage(result)}`);
       if (result.ok) onDone();
     } finally {
       setBusy(false);
@@ -235,7 +223,7 @@ function GenerateLessonsForm({ runId, onDone }: { runId: string; onDone: () => v
           <label className="block text-xs font-medium text-ink/70">To</label>
           <input type="date" value={to} onChange={(e) => setTo(e.target.value)} className="mt-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
         </div>
-        <button type="button" disabled={busy} onClick={generate} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+        <button type="button" disabled={busy} onClick={generate} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
           Generate
         </button>
       </div>
@@ -316,7 +304,7 @@ function GenerateTimetableForm({ academicYears, onDispatched }: { academicYears:
       setMessage(
         result.ok
           ? "Started. This runs in the background and usually takes a couple of minutes — use \"Check for a new draft\" below, or just check back shortly; the new run will appear in the list once it's ready to review."
-          : `Could not start timetable generation: ${result.detail || result.error}`
+          : `Could not start timetable generation: ${edgeErrorMessage(result)}`
       );
     } finally {
       setBusy(false);
@@ -330,11 +318,20 @@ function GenerateTimetableForm({ academicYears, onDispatched }: { academicYears:
         Runs the solver against the current classes, subjects, teachers and constraints, and creates a new DRAFT run for you
         to review below before publishing. Safe to run again — it never touches an already-published timetable.
       </p>
+      {academicYears.length === 0 && (
+        <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
+          There are no academic years yet, so there&apos;s nothing to generate a timetable for.{" "}
+          <a href="/admin/academic" className="font-medium underline">
+            Add one in Academic
+          </a>
+          , then come back here.
+        </p>
+      )}
       <div className="mt-3 flex flex-wrap items-end gap-2">
         <div>
           <label className="block text-xs font-medium text-ink/70">Academic year</label>
           <select value={academicYearId} onChange={(e) => setAcademicYearId(e.target.value)} className="mt-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
-            <option value="">Choose…</option>
+            <option value="">{academicYears.length === 0 ? "None set up yet" : "Choose…"}</option>
             {academicYears.map((y) => (
               <option key={y.id} value={y.id}>
                 {y.label}
@@ -346,10 +343,10 @@ function GenerateTimetableForm({ academicYears, onDispatched }: { academicYears:
           <label className="block text-xs font-medium text-ink/70">Label (optional)</label>
           <input value={runLabel} onChange={(e) => setRunLabel(e.target.value)} placeholder="e.g. Draft 2" className="mt-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
         </div>
-        <button type="button" disabled={busy || !academicYearId} onClick={dispatch} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+        <button type="button" disabled={busy || !academicYearId} onClick={dispatch} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
           {busy ? "Starting…" : "Generate timetable"}
         </button>
-        <button type="button" onClick={onDispatched} className="rounded-full border border-gold-light/60 px-4 py-2 text-xs text-ink/60 hover:bg-cream">
+        <button type="button" onClick={onDispatched} className="rounded-lg border border-gold-light px-4 py-2 text-sm hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
           Check for a new draft
         </button>
       </div>
@@ -422,7 +419,7 @@ function LessonsContent() {
   const publish = async () => {
     if (!selectedRun) return;
     const result = await callFunction("timetable-publish", { action: "publish", run_id: selectedRun });
-    setPublishMessage(result.ok ? "Published." : `Could not publish: ${result.detail || result.error}`);
+    setPublishMessage(result.ok ? "Published." : `Could not publish: ${edgeErrorMessage(result)}`);
     if (result.ok) {
       await loadRuns();
     }
@@ -430,7 +427,7 @@ function LessonsContent() {
 
   const rollback = async (runId: string) => {
     const result = await callFunction("timetable-publish", { action: "rollback", run_id: runId });
-    setPublishMessage(result.ok ? "Rolled back — a new draft was created from that run; review then publish it." : `Could not roll back: ${result.detail || result.error}`);
+    setPublishMessage(result.ok ? "Rolled back — a new draft was created from that run; review then publish it." : `Could not roll back: ${edgeErrorMessage(result)}`);
     if (result.ok && result.run_id) {
       await loadRuns();
       setSelectedRun(result.run_id);
@@ -463,14 +460,14 @@ function LessonsContent() {
                     type="button"
                     onClick={publish}
                     disabled={hardConflicts.length > 0}
-                    className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-40"
+                    className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-40 text-white hover:bg-gold-900 transition-colors"
                     title={hardConflicts.length > 0 ? "Resolve hard conflicts before publishing" : undefined}
                   >
                     Publish
                   </button>
                 )}
                 {(selectedRunRow.status === "published" || selectedRunRow.status === "superseded") && (
-                  <button type="button" onClick={() => rollback(selectedRunRow.id)} className="rounded-full border border-gold-500 px-4 py-2 text-xs text-gold-700">
+                  <button type="button" onClick={() => rollback(selectedRunRow.id)} className="rounded-lg border border-gold-light px-4 py-2 text-sm bg-white text-ink/80 hover:bg-cream font-medium transition-colors">
                     Roll back to this version
                   </button>
                 )}

@@ -74,7 +74,7 @@ export default function ForgotPasswordPage() {
             />
           </label>
           {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
-          <button type="submit" disabled={busy} className="w-full rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 hover:brightness-95 disabled:opacity-60">
+          <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-6 py-2.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
             {busy ? "Sending…" : "Send reset link"}
           </button>
         </form>

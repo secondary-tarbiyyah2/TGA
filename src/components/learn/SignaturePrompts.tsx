@@ -78,7 +78,7 @@ export function SignaturePrompts() {
                 <button
                   type="button"
                   onClick={() => setSigning(d.document_id)}
-                  className="rounded-full border border-gold-500 px-4 py-1.5 text-sm text-gold-700 hover:bg-cream"
+                  className="rounded-lg border border-gold-light px-4 py-1.5 text-sm hover:bg-cream bg-white text-ink/80 font-medium transition-colors"
                 >
                   Review &amp; sign
                 </button>
@@ -106,7 +106,7 @@ export function SignaturePrompts() {
                     type="button"
                     disabled={!typedName.trim() || !affirmed || busy}
                     onClick={() => sign(d)}
-                    className="rounded-full bg-gold-600 px-4 py-1.5 text-sm text-white disabled:opacity-50"
+                    className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors"
                   >
                     Sign
                   </button>

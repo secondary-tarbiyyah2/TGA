@@ -90,7 +90,7 @@ function AttendanceContent() {
               <option value={90}>Last 90 days</option>
             </select>
             {canExport && rows && rows.length > 0 && (
-              <button type="button" onClick={exportCsv} className="rounded-full border border-gold-500 px-4 py-2 text-xs font-semibold text-gold-700 hover:bg-cream">
+              <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors">
                 Export CSV
               </button>
             )}

@@ -83,14 +83,14 @@ export function DataRights() {
               {canAction && r.status !== "completed" && r.status !== "rejected" && (
                 <div className="mt-2 flex gap-2">
                   {r.status === "received" && (
-                    <button type="button" onClick={() => setStatus(r.id, "in_progress")} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 hover:bg-cream">
+                    <button type="button" onClick={() => setStatus(r.id, "in_progress")} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
                       Mark in progress
                     </button>
                   )}
-                  <button type="button" onClick={() => setStatus(r.id, "completed")} className="rounded-full bg-gold-500 px-3 py-1 text-xs font-semibold text-ink-900 hover:brightness-95">
+                  <button type="button" onClick={() => setStatus(r.id, "completed")} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 transition-colors">
                     Mark completed
                   </button>
-                  <button type="button" onClick={() => setStatus(r.id, "rejected")} className="rounded-full border border-red-300 px-3 py-1 text-xs text-red-700 hover:bg-red-50">
+                  <button type="button" onClick={() => setStatus(r.id, "rejected")} className="rounded-lg border border-red-300 px-3 py-1.5 text-xs text-red-700 hover:bg-red-50 font-medium transition-colors">
                     Reject
                   </button>
                 </div>
@@ -115,7 +115,7 @@ export function DataRights() {
           <input value={form.requester_email} onChange={(e) => setForm({ ...form, requester_email: e.target.value })} placeholder="Requester email" type="email" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
           <input value={form.subject_description} onChange={(e) => setForm({ ...form, subject_description: e.target.value })} placeholder="Whose data (e.g. name/relationship)" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
         </div>
-        <button type="submit" disabled={busy} className="rounded-full bg-gold-500 px-4 py-1.5 text-xs font-semibold text-ink-900 hover:brightness-95 disabled:opacity-60">
+        <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
           Log request
         </button>
       </form>

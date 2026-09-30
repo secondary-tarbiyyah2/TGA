@@ -126,6 +126,57 @@ button:not(:disabled),
   padding-bottom: 3rem;
 }
 
+/* /learn portal look. The marketing site's warm beige borders and
+   30-46px headings made the portal read as a brochure rather than an app.
+   Scoped to .portal (the wrapper in src/app/learn/layout.tsx), so the
+   public site is unaffected. It redefines the tokens the portal's
+   utilities already use (border-gold-light, bg-cream, rounded-2xl,
+   text-h2/h3), so all 36 portal pages pick it up without editing each one.
+   Gold stays as the brand accent on buttons and links; teal marks
+   navigation and state. */
+.portal {
+  --color-gold-light: #dfe3e8; /* hairline borders: neutral, not beige */
+  --color-cream: #f2f4f7; /* hover and tint surface */
+  --radius-2xl: 0.75rem; /* cards: tighter than the marketing site's 1rem */
+  background: #f6f7f9;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.portal .text-h2 {
+  font-size: 1.5rem; /* 24px page titles */
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.portal .text-h3 {
+  font-size: 1.0625rem; /* 17px card titles */
+  line-height: 1.35;
+}
+.portal .font-serif {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif; /* app UI uses one typeface */
+}
+/* Form controls: white, same corner radius as buttons, and a clear teal
+   focus ring (a thin border colour change alone is easy to miss). */
+.portal :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea) {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  transition: border-color 120ms, box-shadow 120ms;
+}
+.portal :is(input, select, textarea):focus-visible {
+  outline: none;
+  border-color: var(--color-teal-500);
+  box-shadow: 0 0 0 3px rgba(59, 154, 147, 0.22);
+}
+.portal :is(button, a):focus-visible {
+  outline: 2px solid var(--color-teal-700);
+  outline-offset: 2px;
+}
+.portal button:disabled {
+  cursor: not-allowed;
+}
+.portal .rounded-2xl.border.bg-white {
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
 /* Soft warm shadow — ink at low opacity, not a generic grey drop-shadow. */
 .shadow-warm {
   box-shadow: 0 8px 24px -8px rgba(27, 30, 33, 0.12), 0 2px 8px -2px rgba(27, 30, 33, 0.08);

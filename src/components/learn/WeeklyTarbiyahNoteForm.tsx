@@ -82,7 +82,7 @@ export function WeeklyTarbiyahNoteForm({ childId, classId }: { childId: string; 
         className="mt-2 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
       />
       <div className="mt-2 flex items-center gap-3">
-        <button type="button" disabled={busy || !note.trim()} onClick={submit} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+        <button type="button" disabled={busy || !note.trim()} onClick={submit} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
           {busy ? "Saving…" : "Save note"}
         </button>
         {message && <span className="text-xs text-ink/60">{message}</span>}

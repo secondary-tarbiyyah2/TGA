@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
+import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
+import { getSupabaseClient } from "@/lib/supabase/client";
 
 type Resource = { label: string; url: string };
 type LessonInstance = {
@@ -23,18 +24,8 @@ type Recording = { id: string; status: string; duration_seconds: number | null; 
 type Child = { id: string; name: string };
 
 async function callFunction<T = Record<string, unknown>>(name: string, body: Record<string, unknown>): Promise<T & { ok: boolean; error?: string; detail?: string }> {
-  const supabase = getSupabaseClient();
-  const url = getEdgeFunctionUrl(name);
-  if (!supabase || !url) return { ok: false, error: "not_configured" } as T & { ok: boolean; error?: string };
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${session?.access_token || ""}` },
-    body: JSON.stringify(body),
-  });
-  return res.json();
+  // Shared helper: never throws or hangs, see src/lib/learn/edge.ts.
+  return (await callEdgeFunction(name, body)) as never;
 }
 
 function timeLabel(t: string) {
@@ -112,15 +103,24 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
   const title = `${slot?.classes?.subjects?.name || "Lesson"} — ${slot?.classes?.name || ""}`;
 
   const join = async () => {
+    // Open the tab during the click; Safari/Firefox block it after an await.
+    const popup = window.open("", "_blank");
+    if (popup) {
+      popup.opener = null;
+      popup.document.title = "Joining your lesson…";
+      popup.document.body.innerHTML = '<p style="font-family:system-ui,sans-serif;padding:2rem;color:#3a3f45">Joining your lesson…</p>';
+    }
     setBusy(true);
     setMessage(null);
     try {
       const result = await callFunction<{ joinUrl?: string; role?: string }>("lesson-join", { lesson_instance_id: lessonInstanceId });
       if (!result.ok || !result.joinUrl) {
-        setMessage(`Could not join: ${result.detail || result.error}`);
+        popup?.close();
+        setMessage(`Could not join: ${edgeErrorMessage(result)}`);
         return;
       }
-      window.open(result.joinUrl, "_blank", "noopener,noreferrer");
+      if (popup) popup.location.href = result.joinUrl;
+      else window.location.href = result.joinUrl;
       await load();
     } finally {
       setBusy(false);
@@ -131,7 +131,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
     setBusy(true);
     try {
       const result = await callFunction("recording-control", { lesson_instance_id: lessonInstanceId, action });
-      if (!result.ok) setMessage(`Could not ${action} recording: ${result.detail || result.error}`);
+      if (!result.ok) setMessage(`Could not ${action} recording: ${edgeErrorMessage(result)}`);
       await load();
     } finally {
       setBusy(false);
@@ -146,7 +146,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
         objectives: objectivesDraft,
         resources: resourcesDraft.filter((r) => r.url.trim()),
       });
-      setMessage(result.ok ? "Saved." : `Could not save: ${result.detail || result.error}`);
+      setMessage(result.ok ? "Saved." : `Could not save: ${edgeErrorMessage(result)}`);
       if (result.ok) await load();
     } finally {
       setBusy(false);
@@ -171,7 +171,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
         setMessage(
           result.error === "forbidden_or_consent_required"
             ? "Consent hasn't been given for this recording yet — give consent below to view it."
-            : `Could not open recording: ${result.detail || result.error}`
+            : `Could not open recording: ${edgeErrorMessage(result)}`
         );
         return;
       }
@@ -228,7 +228,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            <button type="button" disabled={busy} onClick={join} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+            <button type="button" disabled={busy} onClick={join} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
               {variant === "teacher" ? "Start / join as teacher" : "Join lesson"}
             </button>
             {variant === "teacher" && (
@@ -239,7 +239,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
                 type="button"
                 disabled={busy}
                 onClick={() => toggleRecording(lesson.recording_paused ? "resume" : "pause")}
-                className="rounded-full border border-gold-500 px-4 py-2 text-xs text-gold-700 disabled:opacity-50"
+                className="rounded-lg border border-gold-light px-4 py-2 text-sm disabled:opacity-50 bg-white text-ink/80 hover:bg-cream font-medium transition-colors"
               >
                 {lesson.recording_paused ? "Resume recording" : "Pause recording"}
               </button>
@@ -288,12 +288,12 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
               <button
                 type="button"
                 onClick={() => setResourcesDraft((prev) => [...prev, { label: "", url: "" }])}
-                className="rounded-full border border-gold-light/60 px-3 py-1.5 text-xs text-ink/70 hover:bg-cream"
+                className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors"
               >
                 + Add resource link
               </button>
             </div>
-            <button type="button" disabled={busy} onClick={saveDetails} className="mt-4 rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+            <button type="button" disabled={busy} onClick={saveDetails} className="mt-4 rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
               Save
             </button>
           </>
@@ -354,7 +354,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
             </span>
             {r.status === "available" && (
               <div className="flex gap-2">
-                <button type="button" disabled={busy} onClick={() => watchRecording(r.id, "stream")} className="rounded-full border border-gold-500 px-3 py-1.5 text-xs text-gold-700">
+                <button type="button" disabled={busy} onClick={() => watchRecording(r.id, "stream")} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs bg-white text-ink/80 hover:bg-cream font-medium transition-colors">
                   Watch (streaming only)
                 </button>
                 {variant === "admin" && (
@@ -362,7 +362,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
                     type="button"
                     disabled={busy}
                     onClick={() => watchRecording(r.id, "export")}
-                    className="rounded-full border border-red-300 px-3 py-1.5 text-xs text-red-700"
+                    className="rounded-lg border border-red-300 px-3 py-1.5 text-xs text-red-700 font-medium transition-colors"
                     title="Requires Head Teacher/Admin with Can export data — every use is logged"
                   >
                     Export raw file (logged)
@@ -421,7 +421,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
                   placeholder="Reason (e.g. medical appointment)"
                   className="flex-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
                 />
-                <button type="button" disabled={busy || !absenceReason.trim()} onClick={submitAbsenceNotice} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 disabled:opacity-50">
+                <button type="button" disabled={busy || !absenceReason.trim()} onClick={submitAbsenceNotice} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
                   Submit
                 </button>
               </div>

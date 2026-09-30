@@ -127,7 +127,7 @@ function TeachReportsContent() {
                   key={c.id}
                   type="button"
                   onClick={() => setOverall((o) => (o ? `${o} ${c.text}` : c.text))}
-                  className="rounded-full border border-gold-light/40 px-2 py-1 text-xs text-ink/60 hover:bg-cream"
+                  className="rounded-lg border border-gold-light px-2 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors"
                 >
                   + {c.text.slice(0, 30)}
                   {c.text.length > 30 ? "…" : ""}
@@ -136,10 +136,10 @@ function TeachReportsContent() {
             </div>
           )}
           <div className="mt-3 flex gap-2">
-            <button type="button" disabled={busy || (!!existing && existing.status !== "draft")} onClick={() => saveDraft(false)} className="rounded-full border border-gold-500 px-4 py-2 text-sm text-gold-700 disabled:opacity-50">
+            <button type="button" disabled={busy || (!!existing && existing.status !== "draft")} onClick={() => saveDraft(false)} className="rounded-lg border border-gold-light px-4 py-2 text-sm disabled:opacity-50 bg-white text-ink/80 hover:bg-cream font-medium transition-colors">
               Save draft
             </button>
-            <button type="button" disabled={busy || (!!existing && existing.status !== "draft")} onClick={() => saveDraft(true)} className="rounded-full bg-gold-600 px-4 py-2 text-sm text-white disabled:opacity-50">
+            <button type="button" disabled={busy || (!!existing && existing.status !== "draft")} onClick={() => saveDraft(true)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors">
               Submit for approval
             </button>
           </div>

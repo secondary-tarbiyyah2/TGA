@@ -138,7 +138,8 @@ Deno.serve(async (req) => {
         status: booking.status,
         startsAt: booking.starts_at,
         endsAt: booking.ends_at,
-        teamsJoinUrl: booking.teams_join_url,
+        // Same fallback chain as booking-join, so both sides land in the same call.
+        teamsJoinUrl: booking.teams_join_url || booking.staff_members?.teams_meeting_url || Deno.env.get("ADMISSIONS_TEAMS_URL") || null,
         bbbJoinUrl,
         staffName: booking.staff_members?.display_name,
       },

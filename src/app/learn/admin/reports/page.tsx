@@ -61,12 +61,12 @@ function TermReportApprovals() {
             {r.overall_comment && <p className="mt-1 text-ink/70">{r.overall_comment}</p>}
             <div className="mt-2 flex gap-2">
               {r.status === "pending_approval" && (
-                <button type="button" onClick={() => approve(r.id)} className="rounded-full bg-gold-600 px-3 py-1 text-xs text-white">
+                <button type="button" onClick={() => approve(r.id)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs text-white hover:bg-gold-900 font-medium transition-colors">
                   Approve
                 </button>
               )}
               {r.status === "approved" && (
-                <button type="button" onClick={() => release(r.id)} className="rounded-full bg-gold-600 px-3 py-1 text-xs text-white">
+                <button type="button" onClick={() => release(r.id)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs text-white hover:bg-gold-900 font-medium transition-colors">
                   Release to family
                 </button>
               )}
@@ -107,7 +107,7 @@ function AssessmentTypesAdmin() {
       <h2 className="font-serif text-h3 font-semibold text-ink">Assessment types</h2>
       <div className="mt-3 flex gap-2">
         <input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Spelling test" className="flex-1 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-        <button type="button" onClick={add} className="rounded-full bg-gold-600 px-4 py-2 text-sm text-white">
+        <button type="button" onClick={add} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white hover:bg-gold-900 font-medium transition-colors">
           Add
         </button>
       </div>
@@ -154,7 +154,7 @@ function CommentBankAdmin() {
       <p className="mt-1 text-xs text-ink/50">Reusable snippets teachers can pick from when writing report comments.</p>
       <div className="mt-3 flex gap-2">
         <input value={text} onChange={(e) => setText(e.target.value)} placeholder="e.g. Makes a positive contribution in class discussions." className="flex-1 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-        <button type="button" onClick={add} className="rounded-full bg-gold-600 px-4 py-2 text-sm text-white">
+        <button type="button" onClick={add} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white hover:bg-gold-900 font-medium transition-colors">
           Add
         </button>
       </div>
@@ -243,7 +243,7 @@ function MarkSchemesAdmin() {
       {subjectId && (
         <div className="mt-3 flex flex-wrap gap-2">
           <input value={schemeName} onChange={(e) => setSchemeName(e.target.value)} placeholder="New scale name (e.g. A*-U)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-          <button type="button" onClick={addScheme} className="rounded-full border border-gold-500 px-3 py-2 text-xs text-gold-700">
+          <button type="button" onClick={addScheme} className="rounded-lg border border-gold-light px-3 py-2 text-xs bg-white text-ink/80 hover:bg-cream font-medium transition-colors">
             Add scale
           </button>
           <select value={selectedScheme} onChange={(e) => setSelectedScheme(e.target.value)} aria-label="Mark scheme scale" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
@@ -261,7 +261,7 @@ function MarkSchemesAdmin() {
           <div className="flex flex-wrap gap-2">
             <input value={label} onChange={(e) => setLabel(e.target.value)} placeholder="Grade label (e.g. B)" className="w-28 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
             <input value={minPercent} onChange={(e) => setMinPercent(e.target.value)} type="number" placeholder="Min %" className="w-28 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-            <button type="button" onClick={addBoundary} className="rounded-full bg-gold-600 px-4 py-2 text-xs text-white">
+            <button type="button" onClick={addBoundary} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white hover:bg-gold-900 font-medium transition-colors">
               Add boundary
             </button>
           </div>

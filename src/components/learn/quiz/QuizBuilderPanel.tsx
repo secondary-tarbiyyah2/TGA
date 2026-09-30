@@ -121,10 +121,10 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
           {saveState === "saved" && <span className="ml-2 text-xs text-gold-700">Saved</span>}
         </div>
         <div className="flex gap-2">
-          <button type="button" onClick={() => onPreview(config)} className="rounded-full border border-gold-light/60 px-4 py-2 text-xs font-semibold text-ink/70 hover:bg-cream">
+          <button type="button" onClick={() => onPreview(config)} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors">
             Preview as a parent
           </button>
-          <button type="button" onClick={publish} className="rounded-full bg-gold-500 px-4 py-2 text-xs font-semibold text-ink-900 hover:brightness-95">
+          <button type="button" onClick={publish} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors">
             Publish draft
           </button>
         </div>
@@ -137,7 +137,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
             {history.map((v) => (
               <li key={v.id} className="flex items-center justify-between gap-2 border-b border-gold-light/20 py-1">
                 <span>{v.label} — {v.status} — {new Date(v.created_at).toLocaleString("en-GB")}</span>
-                <button type="button" onClick={() => revertTo(v)} className="shrink-0 rounded-full border border-gold-light/60 px-2 py-0.5 text-[11px] font-medium text-ink/70 hover:bg-cream">
+                <button type="button" onClick={() => revertTo(v)} className="shrink-0 rounded-lg border border-gold-light px-2 py-0.5 text-[11px] font-medium hover:bg-cream bg-white text-ink/80 transition-colors">
                   Load into draft
                 </button>
               </li>
@@ -510,7 +510,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
           </div>
         </div>
       ))}
-      <button type="button" onClick={addRule} className="rounded-full border border-gold-light/60 px-4 py-2 text-xs font-semibold text-ink/70 hover:bg-cream">
+      <button type="button" onClick={addRule} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors">
         Add rule
       </button>
     </div>
