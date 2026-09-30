@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { MfaGate } from "./MfaGate";
 import { AdminStaffPanel } from "./AdminStaffPanel";
 
 type StaffRow = { id: string; display_name: string; role_title: string; teams_meeting_url: string | null; bookable?: boolean };
@@ -434,9 +433,7 @@ function Dashboard({ session }: { session: Session }) {
           <h2 className="font-serif text-lg font-semibold text-ink">Admin</h2>
           <p className="mt-1 text-sm text-ink/60">Manage staff accounts, roles and see recent activity.</p>
           <div className="mt-4">
-            <MfaGate>
-              <AdminStaffPanel />
-            </MfaGate>
+            <AdminStaffPanel />
           </div>
         </section>
       )}
@@ -467,15 +464,13 @@ function TeachersOnlyAdminGate({ session }: { session: Session }) {
     return <p className="text-ink/60">This page is only available to admin accounts.</p>;
   }
   return (
-    <MfaGate>
-      <div>
-        <h1 className="text-h2 font-serif font-semibold text-ink">Teacher accounts</h1>
-        <p className="mt-2 text-ink/60">Create and manage teacher accounts. Teachers signing in land on their own dashboard, not this one.</p>
-        <div className="mt-6">
-          <AdminStaffPanel roleFilter="teacher" defaultInviteRole="teacher" />
-        </div>
+    <div>
+      <h1 className="text-h2 font-serif font-semibold text-ink">Teacher accounts</h1>
+      <p className="mt-2 text-ink/60">Create and manage teacher accounts. Teachers signing in land on their own dashboard, not this one.</p>
+      <div className="mt-6">
+        <AdminStaffPanel roleFilter="teacher" defaultInviteRole="teacher" />
       </div>
-    </MfaGate>
+    </div>
   );
 }
 

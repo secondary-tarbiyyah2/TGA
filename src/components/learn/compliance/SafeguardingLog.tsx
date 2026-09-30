@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { FreshMfaGate } from "@/components/learn/compliance/FreshMfaGate";
 
 type Concern = {
   id: string;
@@ -159,7 +158,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
   );
 }
 
-function SafeguardingLogInner() {
+export function SafeguardingLog() {
   const supabase = getSupabaseClient();
   const [concerns, setConcerns] = useState<Concern[] | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
@@ -205,11 +204,3 @@ function SafeguardingLogInner() {
   );
 }
 
-/** Public export: wraps the actual log behind the MFA re-check gate. */
-export function SafeguardingLog() {
-  return (
-    <FreshMfaGate>
-      <SafeguardingLogInner />
-    </FreshMfaGate>
-  );
-}

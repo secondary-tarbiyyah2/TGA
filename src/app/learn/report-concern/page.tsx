@@ -116,13 +116,10 @@ function ReportConcernForm() {
   );
 }
 
-// Deliberately NOT wrapped in LearnGate/MfaGate: LearnGate requires MFA the
-// moment ANY allowed role is a staff role, which would force parents and
-// students (who don't hold MFA factors) through an MFA-enrollment screen
-// just to raise a concern — the opposite of what this page is for. Every
-// /learn role, staff or not, should be able to reach this with only an
-// ordinary sign-in. The write itself is still fully RLS-scoped (0015):
-// reported_by must equal auth.uid(), and there is no read access back.
+// Deliberately not wrapped in LearnGate — every /learn role, staff or not,
+// should be able to reach this with only an ordinary sign-in, no role check
+// at all. The write itself is still fully RLS-scoped (0015): reported_by
+// must equal auth.uid(), and there is no read access back.
 export default function ReportConcernPage() {
   const { session } = useLearnSession();
   return (

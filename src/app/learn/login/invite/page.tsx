@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnSession } from "@/lib/learn/session";
-import { MfaGate } from "@/components/staff/MfaGate";
 
 /**
  * Where a one-time invite/recovery link (from learn-invite or
@@ -62,20 +61,15 @@ export default function LearnInvitePage() {
     return (
       <section className="section-pad">
         <div className="mx-auto max-w-sm">
-          <h1 className="font-serif text-h2 font-semibold text-ink">One more step</h1>
-          <p className="mt-1 text-sm text-ink/60">Set up an authenticator app to finish securing your account.</p>
-          <div className="mt-6">
-            <MfaGate>
-              <p className="text-sm text-ink">You&apos;re all set.</p>
-              <button
-                type="button"
-                onClick={() => router.replace("/")}
-                className="mt-4 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 hover:brightness-95"
-              >
-                Continue
-              </button>
-            </MfaGate>
-          </div>
+          <h1 className="font-serif text-h2 font-semibold text-ink">You&apos;re all set</h1>
+          <p className="mt-1 text-sm text-ink/60">Your password has been set.</p>
+          <button
+            type="button"
+            onClick={() => router.replace("/")}
+            className="mt-6 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 hover:brightness-95"
+          >
+            Continue
+          </button>
         </div>
       </section>
     );

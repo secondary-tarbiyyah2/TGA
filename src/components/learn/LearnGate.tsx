@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useLearnSession, STAFF_ROLES, type LearnRole } from "@/lib/learn/session";
-import { MfaGate } from "@/components/staff/MfaGate";
+import { useLearnSession, type LearnRole } from "@/lib/learn/session";
 
 /**
  * Client-side route gate — decides what to RENDER, not what's ALLOWED. If
@@ -14,9 +13,8 @@ import { MfaGate } from "@/components/staff/MfaGate";
  * empty/broken page — that's UX, and it is NOT where this system's actual
  * security decision is made.
  *
- * MFA: any of `allowedRoles` that's a staff role makes MFA mandatory before
- * children render, by wrapping them in the same MfaGate the old /staff area
- * uses (real Supabase Auth TOTP, not a UI mock).
+ * MFA was removed app-wide (see supabase/migrations/0020_remove_mfa.sql) —
+ * this used to also wrap children in MfaGate for any staff-role page.
  */
 export function LearnGate({ allowedRoles, children }: { allowedRoles: LearnRole[]; children: React.ReactNode }) {
   const { session, roles, rolesLoaded } = useLearnSession();
@@ -40,9 +38,5 @@ export function LearnGate({ allowedRoles, children }: { allowedRoles: LearnRole[
     return <p className="text-ink/60">Your account doesn&apos;t have access to this page.</p>;
   }
 
-  const requiresMfa = allowedRoles.some((r) => STAFF_ROLES.includes(r));
-  if (requiresMfa) {
-    return <MfaGate>{children}</MfaGate>;
-  }
   return <>{children}</>;
 }

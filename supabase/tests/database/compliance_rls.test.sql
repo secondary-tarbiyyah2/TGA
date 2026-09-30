@@ -100,22 +100,25 @@ select is_empty(
   'can_export_data alone does not grant safeguarding-log access'
 );
 
--- The Safeguarding Lead WITHOUT a fresh token (old iat, simulating "logged
--- in with MFA a long time ago" rather than "just re-entered their code")
--- is blocked — this is the extra layer beyond every other table in this
--- migration, proving it's real at the RLS level, not just UI copy.
+-- MFA (and with it the safeguarding log's extra "freshly re-checked token"
+-- requirement) was removed app-wide at the user's explicit request —
+-- current_token_fresh() now always returns true (0020_remove_mfa.sql), so a
+-- Safeguarding Lead reads the log on role/permission alone, same as every
+-- other compliance table. These two cases (stale iat, no iat at all) used
+-- to prove the freshness gate was real at the RLS level; now they prove it
+-- no longer blocks anything, which is the same fact from the other side.
 set local "request.jwt.claims" to '{"sub": "a5000000-0000-0000-0000-000000000004", "iat": 1}';
-select is_empty(
-  $$select 1 from public.safeguarding_concerns$$,
-  'Safeguarding Lead with a STALE token cannot read the safeguarding log'
+select results_eq(
+  $$select count(*)::int from public.safeguarding_concerns$$,
+  $$values (3)$$,
+  'Safeguarding Lead with a stale token can still read the safeguarding log (MFA removed)'
 );
 
--- The Safeguarding Lead with NO iat claim at all is blocked too (the
--- coalesce(...) in current_token_fresh() defaults to false, not true).
 set local "request.jwt.claims" to '{"sub": "a5000000-0000-0000-0000-000000000004"}';
-select is_empty(
-  $$select 1 from public.safeguarding_concerns$$,
-  'Safeguarding Lead with no iat claim at all cannot read the safeguarding log'
+select results_eq(
+  $$select count(*)::int from public.safeguarding_concerns$$,
+  $$values (3)$$,
+  'Safeguarding Lead with no iat claim at all can still read the safeguarding log (MFA removed)'
 );
 
 -- The Safeguarding Lead WITH a fresh token can read every concern,
@@ -169,11 +172,12 @@ select results_eq(
   'the chronology entry is unchanged after the blocked update attempt'
 );
 
--- A stale-token Safeguarding Lead cannot read the chronology either.
+-- A stale-token Safeguarding Lead can still read the chronology — MFA
+-- freshness removed app-wide (0020_remove_mfa.sql), same as above.
 set local "request.jwt.claims" to '{"sub": "a5000000-0000-0000-0000-000000000004", "iat": 1}';
-select is_empty(
+select isnt_empty(
   $$select 1 from public.safeguarding_chronology$$,
-  'stale-token Safeguarding Lead cannot read the chronology'
+  'stale-token Safeguarding Lead can still read the chronology (MFA removed)'
 );
 
 -- ── staff_vetting_records (Single Central Record): head_teacher/admin
