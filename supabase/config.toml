@@ -42,5 +42,8 @@ verify_jwt = false
 [functions.send-reminders]
 verify_jwt = false
 
+[functions.notify-flagged-messages]
+verify_jwt = false
+
 [functions.quiz-send-plan]
 verify_jwt = false

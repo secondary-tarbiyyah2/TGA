@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLearnSession, dashboardPathForRole } from "@/lib/learn/session";
 import { LearnAccountMenu } from "@/components/learn/LearnAccountMenu";
+import { NotificationBell } from "@/components/learn/NotificationBell";
+
+const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
 /**
  * The authenticated /learn area's own shell — applies to EVERY /learn route
@@ -38,7 +41,12 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
               Learn
             </span>
           </Link>
-          {signedIn && activeSession && <LearnAccountMenu session={activeSession} roles={roles} />}
+          {signedIn && activeSession && (
+            <div className="flex items-center gap-3">
+              {roles.some((r) => ADMIN_ISH_ROLES.includes(r.role)) && <NotificationBell userId={activeSession.user.id} />}
+              <LearnAccountMenu session={activeSession} roles={roles} />
+            </div>
+          )}
         </div>
       </header>
       <main id="main" className="flex-1 bg-cream/30">
