@@ -29,7 +29,6 @@ export const primaryNav: NavEntry[] = [
     label: "Learning",
     items: [
       { href: "/curriculum", label: "Curriculum" },
-      { href: "/flexible-learning", label: "Flexible learning" },
     ],
   },
   {
