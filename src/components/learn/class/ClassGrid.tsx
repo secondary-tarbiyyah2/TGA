@@ -18,7 +18,7 @@ function useCardProgress(viewer: ClassViewer, classes: ClassSummary[]): Record<s
   // .slice()) on every render, which must not trigger a refetch.
   const idKey = classes.map((c) => c.id).join(",");
   const ids = useMemo(() => (idKey ? idKey.split(",") : []), [idKey]);
-  const childId = viewer.kind === "teacher" ? null : viewer.childId;
+  const childId = viewer.kind === "student" || viewer.kind === "parent" ? viewer.childId : null;
 
   useEffect(() => {
     const supabase = getSupabaseClient();

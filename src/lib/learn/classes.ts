@@ -17,7 +17,11 @@ export type ClassSummary = {
 };
 
 /** Who is looking: a teacher, or a student/parent looking at one child. */
-export type ClassViewer = { kind: "teacher" } | { kind: "student"; childId: string } | { kind: "parent"; childId: string };
+export type ClassViewer =
+  | { kind: "teacher" }
+  | { kind: "staff" } // head teacher / admin: every class, read via manage_academic
+  | { kind: "student"; childId: string }
+  | { kind: "parent"; childId: string };
 
 type ClassRow = {
   id: string;
@@ -63,6 +67,14 @@ export async function fetchTeacherClasses(): Promise<ClassSummary[]> {
   return [...seen.values()].sort(byName);
 }
 
+/** Every class staff can read (RLS: manage_academic), demo classes last. */
+export async function fetchAllClasses(): Promise<ClassSummary[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  const { data } = await supabase.from("classes").select(CLASS_COLUMNS).order("name");
+  return ((data as unknown as ClassRow[]) || []).map(toSummary).sort((a, b) => Number(a.name.startsWith("Demo:")) - Number(b.name.startsWith("Demo:")) || byName(a, b));
+}
+
 export async function fetchChildClasses(childId: string): Promise<ClassSummary[]> {
   const supabase = getSupabaseClient();
   if (!supabase || !childId) return [];
@@ -80,11 +92,11 @@ export async function fetchClass(classId: string): Promise<ClassSummary | null> 
 
 export function useViewerClasses(viewer: ClassViewer | null): ClassSummary[] | null {
   const [classes, setClasses] = useState<ClassSummary[] | null>(null);
-  const key = viewer ? (viewer.kind === "teacher" ? "teacher" : `${viewer.kind}:${viewer.childId}`) : "";
+  const key = viewer ? (viewer.kind === "teacher" || viewer.kind === "staff" ? viewer.kind : `${viewer.kind}:${viewer.childId}`) : "";
   useEffect(() => {
     if (!viewer) return;
     let cancelled = false;
-    (viewer.kind === "teacher" ? fetchTeacherClasses() : fetchChildClasses(viewer.childId)).then((c) => {
+    (viewer.kind === "teacher" ? fetchTeacherClasses() : viewer.kind === "staff" ? fetchAllClasses() : fetchChildClasses(viewer.childId)).then((c) => {
       if (!cancelled) setClasses(c);
     });
     return () => {

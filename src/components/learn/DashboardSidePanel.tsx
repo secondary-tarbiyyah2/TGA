@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { classColour, readRecentPages, type RecentPage } from "@/lib/learn/classes";
 import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
+import { MiniCalendar } from "@/components/learn/CalendarView";
+import type { CalendarScope } from "@/lib/learn/calendar";
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -65,6 +67,7 @@ function Timeline({ items }: { items: TimelineItem[] | null }) {
 }
 
 type Viewer =
+  | { kind: "staff" }
   | { kind: "teacher"; classIds: string[] }
   | { kind: "student"; childId: string; classIds: string[] }
   | { kind: "parent"; children: { id: string; name: string }[] };
@@ -72,7 +75,13 @@ type Viewer =
 function useTimeline(viewer: Viewer): TimelineItem[] | null {
   const [items, setItems] = useState<TimelineItem[] | null>(null);
   const key =
-    viewer.kind === "teacher" ? `t:${viewer.classIds.join(",")}` : viewer.kind === "student" ? `s:${viewer.childId}` : `p:${viewer.children.map((c) => c.id).join(",")}`;
+    viewer.kind === "staff"
+      ? "staff"
+      : viewer.kind === "teacher"
+        ? `t:${viewer.classIds.join(",")}`
+        : viewer.kind === "student"
+          ? `s:${viewer.childId}`
+          : `p:${viewer.children.map((c) => c.id).join(",")}`;
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -81,23 +90,19 @@ function useTimeline(viewer: Viewer): TimelineItem[] | null {
     const horizon = new Date(Date.now() + 14 * 86_400_000).toISOString();
     (async () => {
       let out: TimelineItem[] = [];
-      if (viewer.kind === "teacher") {
-        if (viewer.classIds.length === 0) return setItems([]);
+      if (viewer.kind === "teacher" || viewer.kind === "staff") {
+        if (viewer.kind === "teacher" && viewer.classIds.length === 0) return setItems([]);
         const since = new Date(Date.now() - 2 * 86_400_000).toISOString();
-        const { data } = await supabase
-          .from("homework")
-          .select("id, title, due_at, class_id, classes(name)")
-          .in("class_id", viewer.classIds)
-          .gte("due_at", since)
-          .lte("due_at", horizon)
-          .order("due_at");
+        let q = supabase.from("homework").select("id, title, due_at, class_id, classes(name)").gte("due_at", since).lte("due_at", horizon);
+        if (viewer.kind === "teacher") q = q.in("class_id", viewer.classIds);
+        const { data } = await q.order("due_at").limit(40);
         out = ((data as unknown as { id: string; title: string; due_at: string; class_id: string; classes?: { name: string } | null }[]) || []).map((h) => ({
           key: h.id,
           title: h.title,
           dueAt: h.due_at,
           classId: h.class_id,
           className: h.classes?.name || "",
-          href: `/teach/class?id=${h.class_id}&tab=homework`,
+          href: `${viewer.kind === "staff" ? "/admin" : "/teach"}/class?id=${h.class_id}&tab=assignments`,
           overdue: new Date(h.due_at).getTime() < Date.now(),
         }));
       } else {
@@ -124,7 +129,7 @@ function useTimeline(viewer: Viewer): TimelineItem[] | null {
             dueAt: r.due_at,
             classId: r.class_id,
             className: r.homework?.classes?.name || "",
-            href: `${base}&tab=homework`,
+            href: `${base}&tab=assignments`,
             overdue: r.status === "missing",
             who: viewer.kind === "parent" && viewer.children.length > 1 ? kid?.name : undefined,
           };
@@ -177,8 +182,20 @@ const PANEL_KEY = "tga:side-panel-hidden";
 export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; children: React.ReactNode }) {
   const [hidden, setHidden] = useState(false);
   const timeline = useTimeline(viewer);
-  const area = viewer.kind === "teacher" ? "/teach" : viewer.kind === "student" ? "/student" : "/family";
-  const lessonClassIds = viewer.kind === "parent" ? [] : viewer.classIds;
+  const area = viewer.kind === "staff" ? "/admin" : viewer.kind === "teacher" ? "/teach" : viewer.kind === "student" ? "/student" : "/family";
+  const lessonClassIds = viewer.kind === "teacher" || viewer.kind === "student" ? viewer.classIds : [];
+  const calendarScope = useMemo<CalendarScope>(
+    () =>
+      viewer.kind === "staff"
+        ? { kind: "staff" }
+        : viewer.kind === "teacher"
+          ? { kind: "teacher" }
+          : viewer.kind === "student"
+            ? { kind: "student", childId: viewer.childId }
+            : { kind: "parent", children: viewer.children },
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- keyed on the viewer's identity
+    [viewer.kind, viewer.kind === "student" ? viewer.childId : viewer.kind === "parent" ? viewer.children.map((c) => c.id).join(",") : ""],
+  );
 
   useEffect(() => {
     try {
@@ -212,10 +229,13 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
       </div>
       {!hidden && (
         <aside aria-label="Side panel" className="space-y-4 xl:pt-11">
+          <Block title="Calendar">
+            <MiniCalendar scope={calendarScope} href={`${area}/calendar`} />
+          </Block>
           <Block title="Timeline">
             <Timeline items={timeline} />
           </Block>
-          {viewer.kind !== "parent" && (
+          {(viewer.kind === "teacher" || viewer.kind === "student") && (
             <Block title="Upcoming lessons">
               <UpcomingLessons
                 classIds={lessonClassIds}

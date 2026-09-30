@@ -3,21 +3,11 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
+import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
+import { localDateKey } from "@/lib/learn/calendar";
 import { StatTile } from "@/components/learn/Card";
 import { useLearnPermission, useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
-
-// Quick links: the handful of places an admin lands day to day, not a
-// copy of the top nav. headOnly links are hidden from admissions staff,
-// whose LearnGate on those pages would refuse them.
-const QUICK_ACTIONS: { href: string; label: string; hint: string; icon: string; headOnly?: boolean }[] = [
-  { href: "/admin/people", label: "People", hint: "Invite a family or staff member", icon: "M10 9a3 3 0 100-6 3 3 0 000 6zm-6 8a6 6 0 0112 0v1H4v-1z" },
-  { href: "/admin/admissions", label: "Admissions", hint: "Bookings, calls, availability", icon: "M4 4a1 1 0 011-1h10a1 1 0 011 1v12l-6-3-6 3V4z" },
-  { href: "/admin/messages", label: "Messages", hint: "Read and reply to threads", icon: "M2 5a2 2 0 012-2h12a2 2 0 012 2v7a2 2 0 01-2 2H9l-4 3v-3H4a2 2 0 01-2-2V5z", headOnly: true },
-  { href: "/admin/fees", label: "Fees", hint: "Invoices and payment status", icon: "M10 2a1 1 0 011 1v1.06a5.5 5.5 0 014.09 4.49 1 1 0 11-1.98.27A3.5 3.5 0 0011 5.6V9c1.98.36 4 1.23 4 3.4 0 2.02-1.7 3.13-4 3.46V17a1 1 0 11-2 0v-1.06c-1.98-.28-3.5-1.4-4-3.03a1 1 0 111.9-.62c.3.98 1.09 1.62 2.1 1.83V9.86c-1.9-.38-3.7-1.25-3.7-3.3C5.3 4.6 6.9 3.5 9 3.16V2a1 1 0 011-1z", headOnly: true },
-  { href: "/admin/attendance", label: "Attendance", hint: "Today's registers", icon: "M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zM4 8h12v8H4V8z", headOnly: true },
-  { href: "/admin/compliance", label: "Compliance", hint: "Signatures, safeguarding, retention", icon: "M10 1l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V4l7-3z" },
-];
 
 const AUDIT_ACTION_LABELS: Record<string, string> = {
   BOOKING_CALL_JOIN: "started a call for a booking",
@@ -82,6 +72,114 @@ function ActivityFeed() {
   );
 }
 
+type TodayLessonRow = { id: string; bbb_status: string; start_time: string; end_time: string; class_id: string; className: string; registered: number };
+
+/**
+ * The brief's admin "today" view: today's live lessons across the school,
+ * which registers are taken and which are missing, plus overdue marking
+ * and new enrolments. Every figure is a live query (RLS: manage_academic);
+ * fees and inactive-student figures are left out until that data exists.
+ */
+function useSchoolToday() {
+  const [lessons, setLessons] = useState<TodayLessonRow[] | null>(null);
+  const [overdueMarking, setOverdueMarking] = useState<number | null>(null);
+  const [newEnrolments, setNewEnrolments] = useState<number | null>(null);
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    (async () => {
+      const { data } = await supabase
+        .from("lesson_instances")
+        .select("id, bbb_status, timetable_slots(start_time, end_time, class_id, classes(name))")
+        .eq("date", localDateKey(new Date()));
+      const rows = (data as unknown as { id: string; bbb_status: string; timetable_slots?: { start_time: string; end_time: string; class_id: string; classes?: { name: string } | null } | null }[]) || [];
+      const ids = rows.map((r) => r.id);
+      const { data: att } = ids.length ? await supabase.from("attendance_records").select("lesson_instance_id").in("lesson_instance_id", ids) : { data: [] };
+      const counts = new Map<string, number>();
+      for (const a of (att as { lesson_instance_id: string }[]) || []) counts.set(a.lesson_instance_id, (counts.get(a.lesson_instance_id) || 0) + 1);
+      setLessons(
+        rows
+          .filter((r) => r.timetable_slots)
+          .map((r) => ({
+            id: r.id,
+            bbb_status: r.bbb_status,
+            start_time: r.timetable_slots!.start_time,
+            end_time: r.timetable_slots!.end_time,
+            class_id: r.timetable_slots!.class_id,
+            className: r.timetable_slots!.classes?.name || "Class",
+            registered: counts.get(r.id) || 0,
+          }))
+          .sort((a, b) => a.start_time.localeCompare(b.start_time)),
+      );
+    })();
+    (async () => {
+      // Handed in more than 7 days ago and still not marked.
+      const cutoff = new Date(Date.now() - 7 * 86_400_000).toISOString();
+      const { data } = await supabase.from("homework_submissions").select("id, submitted_at, homework_marks(id, marked_at)").not("submitted_at", "is", null).lt("submitted_at", cutoff).limit(1000);
+      const rows = (data as unknown as { id: string; homework_marks: { marked_at: string | null }[] | { marked_at: string | null } | null }[]) || [];
+      setOverdueMarking(
+        rows.filter((r) => {
+          const m = Array.isArray(r.homework_marks) ? r.homework_marks[0] : r.homework_marks;
+          return !m || !m.marked_at;
+        }).length,
+      );
+    })();
+    supabase
+      .from("enrolments")
+      .select("id", { count: "exact", head: true })
+      .gte("created_at", new Date(Date.now() - 7 * 86_400_000).toISOString())
+      .then(({ count }) => setNewEnrolments(count ?? 0));
+  }, []);
+
+  return { lessons, overdueMarking, newEnrolments };
+}
+
+function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
+  const now = new Date().toTimeString().slice(0, 5);
+  return (
+    <div className="rounded-2xl border border-gold-light bg-white">
+      <div className="flex items-center justify-between border-b border-gold-light px-5 py-3.5">
+        <h2 className="text-sm font-semibold text-ink">Today&apos;s live lessons</h2>
+        <a href="/admin/calendar" className="text-xs font-medium text-teal-700 hover:underline">
+          Calendar
+        </a>
+      </div>
+      {lessons === null ? (
+        <p className="px-5 py-4 text-sm text-ink/50">Loading…</p>
+      ) : lessons.length === 0 ? (
+        <p className="px-5 py-4 text-sm text-ink/50">No lessons scheduled today.</p>
+      ) : (
+        <ul className="divide-y divide-gold-light/70">
+          {lessons.map((l) => {
+            const started = now >= l.start_time.slice(0, 5);
+            return (
+              <li key={l.id} className="flex flex-wrap items-center gap-3 px-5 py-3 text-sm">
+                <span className="w-24 shrink-0 font-medium tabular-nums text-ink/70">
+                  {l.start_time.slice(0, 5)}–{l.end_time.slice(0, 5)}
+                </span>
+                <a href={`/admin/class?id=${l.class_id}`} className="min-w-0 flex-1 truncate font-medium text-ink hover:text-teal-700">
+                  {l.className}
+                </a>
+                {l.bbb_status === "live" && <span className="rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">Live</span>}
+                {started ? (
+                  l.registered > 0 ? (
+                    <span className="rounded-full bg-green-50 px-2.5 py-0.5 text-xs font-medium text-green-800 ring-1 ring-inset ring-green-600/20">Register taken</span>
+                  ) : (
+                    <span className="rounded-full bg-red-50 px-2.5 py-0.5 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Register missing</span>
+                  )
+                ) : (
+                  <span className="rounded-full bg-cream px-2.5 py-0.5 text-xs font-medium text-ink/60">Later</span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 /**
  * Replaces the previous bare "Welcome, signed in as X" line with real
  * at-a-glance counts — reported from a live screenshot as "too simplistic".
@@ -139,8 +237,13 @@ function DashboardContent() {
   const hour = new Date().getHours();
   const greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
   const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
+  const { lessons, overdueMarking, newEnrolments } = useSchoolToday();
+  const now = new Date().toTimeString().slice(0, 5);
+  const startedLessons = (lessons || []).filter((l) => now >= l.start_time.slice(0, 5));
+  const missingRegisters = startedLessons.filter((l) => l.registered === 0).length;
+  const statusOf = (n: number | null) => (n === null ? undefined : n === 0 ? ("ok" as const) : ("warning" as const));
 
-  return (
+  const content = (
     <div className="space-y-8">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
@@ -156,74 +259,49 @@ function DashboardContent() {
             View bookings
           </a>
           <a href="/admin/people" className="rounded-lg bg-teal-700 px-3.5 py-2 text-sm font-medium text-white hover:bg-teal-900">
-            Invite someone
+            + Invite someone
           </a>
         </div>
       </div>
+
+      <section aria-labelledby="today-heading">
+        <h2 id="today-heading" className="text-sm font-semibold text-ink">
+          Today
+        </h2>
+        <div className="mt-3 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <StatTile label="Lessons today" value={lessons === null ? "…" : lessons.length} href="/admin/calendar" />
+          <StatTile
+            label="Registers missing"
+            value={lessons === null ? "…" : `${missingRegisters}/${startedLessons.length}`}
+            status={lessons === null ? undefined : statusOf(missingRegisters)}
+            href="/admin/attendance"
+          />
+          <StatTile label="Marking overdue (7+ days)" value={overdueMarking ?? "…"} status={statusOf(overdueMarking)} href="/admin/classes" />
+          <StatTile label="New enrolments (7 days)" value={newEnrolments ?? "…"} href="/admin/people" />
+        </div>
+      </section>
+
+      <TodayLessons lessons={lessons} />
 
       <section aria-labelledby="glance-heading">
         <h2 id="glance-heading" className="text-sm font-semibold text-ink">
           Needs attention
         </h2>
-        <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <StatTile
-            label="Unexplained absences"
-            value={absenceCount ?? "…"}
-            status={absenceCount === null ? undefined : absenceCount === 0 ? "ok" : "warning"}
-            href="/admin/compliance"
-          />
-          <StatTile
-            label="Outstanding signatures"
-            value={outstandingCount ?? "…"}
-            status={outstandingCount === null ? undefined : outstandingCount === 0 ? "ok" : "warning"}
-            href="/admin/compliance"
-          />
-          {isSafeguardingLead && (
-            <StatTile
-              label="Flagged messages"
-              value={flaggedCount ?? "…"}
-              status={flaggedCount === null ? undefined : flaggedCount === 0 ? "ok" : "warning"}
-              href="/admin/compliance"
-            />
-          )}
+        <div className="mt-3 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          <StatTile label="Unexplained absences" value={absenceCount ?? "…"} status={statusOf(absenceCount)} href="/admin/compliance" />
+          <StatTile label="Outstanding signatures" value={outstandingCount ?? "…"} status={statusOf(outstandingCount)} href="/admin/compliance" />
+          {isSafeguardingLead && <StatTile label="Flagged messages" value={flaggedCount ?? "…"} status={statusOf(flaggedCount)} href="/admin/compliance" />}
         </div>
       </section>
 
-      <div className="grid gap-6 lg:grid-cols-5">
-        <section aria-labelledby="quick-heading" className="lg:col-span-3">
-          <h2 id="quick-heading" className="text-sm font-semibold text-ink">
-            Quick links
-          </h2>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            {QUICK_ACTIONS.filter((a) => isHead || !a.headOnly).map((a) => (
-              <a
-                key={a.href}
-                href={a.href}
-                className="group flex items-center gap-3.5 rounded-2xl border border-gold-light bg-white p-4 transition hover:border-teal-500/60 hover:shadow-sm"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-100 text-teal-700">
-                  <svg aria-hidden="true" viewBox="0 0 20 20" className="h-5 w-5">
-                    <path d={a.icon} fill="currentColor" />
-                  </svg>
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-semibold text-ink">{a.label}</span>
-                  <span className="block truncate text-xs text-ink/55">{a.hint}</span>
-                </span>
-                <span aria-hidden="true" className="text-ink/30 transition group-hover:translate-x-0.5 group-hover:text-teal-700">
-                  &rarr;
-                </span>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        <section aria-label="Recent activity" className="lg:col-span-2 lg:pt-8">
-          <ActivityFeed />
-        </section>
-      </div>
+      <ActivityFeed />
     </div>
   );
+
+  // The side panel reads every class (manage_academic); admissions-only
+  // staff don't have that, so they get the dashboard without it.
+  if (!isHead) return content;
+  return <DashboardWithPanel viewer={{ kind: "staff" }}>{content}</DashboardWithPanel>;
 }
 
 export default function AdminDashboardPage() {

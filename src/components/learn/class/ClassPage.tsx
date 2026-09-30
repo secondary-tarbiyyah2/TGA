@@ -5,24 +5,15 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { classBannerStyle, fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
-import { PageHeader, type Crumb } from "@/components/learn/PageHeader";
-import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
+import type { Crumb } from "@/components/learn/PageHeader";
+import { CourseTab } from "@/components/learn/class/CourseTab";
 import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
-
-type TabKey = "lessons" | "homework" | "grades" | "people" | "announcements";
-
-const TAB_LABELS: Record<TabKey, string> = {
-  lessons: "Lessons",
-  homework: "Homework",
-  grades: "Grades",
-  people: "People",
-  announcements: "Announcements",
-};
 
 /** Route bases per viewer, e.g. the class page and lesson page URLs. */
 function routesFor(viewer: ClassViewer) {
   if (viewer.kind === "teacher") return { area: "/teach", lessonBase: "/teach/lessons/view", extra: "" };
+  if (viewer.kind === "staff") return { area: "/admin", lessonBase: "/admin/lessons/view", extra: "" };
   if (viewer.kind === "student") return { area: "/student", lessonBase: "/student/lessons/view", extra: "" };
   return { area: "/family", lessonBase: "/family/lessons/view", extra: `&child=${viewer.childId}` };
 }
@@ -41,60 +32,6 @@ function Panel({ title, action, children }: { title: string; action?: React.Reac
 
 function fmtDate(d: string) {
   return new Date(d.length === 10 ? `${d}T00:00:00` : d).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
-}
-
-// ── Lessons ───────────────────────────────────────────────────────────
-type PastLesson = { id: string; date: string; objectives: string | null; timetable_slots?: { start_time: string } | null };
-
-function LessonsTab({ classId, viewer }: { classId: string; viewer: ClassViewer }) {
-  const { lessonBase, extra } = routesFor(viewer);
-  const [past, setPast] = useState<PastLesson[] | null>(null);
-
-  useEffect(() => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    (async () => {
-      const { data: slots } = await supabase.from("timetable_slots").select("id").eq("class_id", classId);
-      const slotIds = (slots || []).map((s) => s.id as string);
-      if (slotIds.length === 0) return setPast([]);
-      const today = new Date().toISOString().slice(0, 10);
-      const { data } = await supabase
-        .from("lesson_instances")
-        .select("id, date, objectives, timetable_slots(start_time)")
-        .in("timetable_slot_id", slotIds)
-        .lt("date", today)
-        .order("date", { ascending: false })
-        .limit(12);
-      setPast((data as unknown as PastLesson[]) || []);
-    })();
-  }, [classId]);
-
-  return (
-    <div className="grid gap-6 lg:grid-cols-2">
-      <Panel title="Coming up">
-        <UpcomingLessons classIds={[classId]} basePath={lessonBase} extraQuery={extra} emptyLabel="No lessons scheduled in the next two weeks." />
-      </Panel>
-      <Panel title="Past lessons">
-        {past === null ? (
-          <p className="text-sm text-ink/60">Loading…</p>
-        ) : past.length === 0 ? (
-          <p className="text-sm text-ink/60">No past lessons yet.</p>
-        ) : (
-          <ul className="divide-y divide-gold-light/70">
-            {past.map((l) => (
-              <li key={l.id}>
-                <Link href={`${lessonBase}?id=${l.id}${extra}`} className="block py-2.5 text-sm hover:text-teal-700">
-                  <span className="font-medium text-ink">{fmtDate(l.date)}</span>
-                  <span className="text-ink/50"> · {l.timetable_slots?.start_time?.slice(0, 5)}</span>
-                  {l.objectives && <span className="mt-0.5 block truncate text-ink/60">{l.objectives}</span>}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </Panel>
-    </div>
-  );
 }
 
 // ── Homework ──────────────────────────────────────────────────────────
@@ -164,7 +101,7 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
   const [rows, setRows] = useState<GradeRow[] | null>(null);
 
   // Depend on primitives, not the viewer object (a new object each render).
-  const childId = viewer.kind === "teacher" ? null : viewer.childId;
+  const childId = viewer.kind === "student" || viewer.kind === "parent" ? viewer.childId : null;
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -179,7 +116,7 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
 
   if (rows === null) return <p className="text-sm text-ink/60">Loading…</p>;
   if (rows.length === 0) return <p className="text-sm text-ink/60">No grades recorded for this class yet.</p>;
-  const teacher = viewer.kind === "teacher";
+  const teacher = !childId;
   return (
     <div className="-mx-5 overflow-x-auto">
       <table className="w-full min-w-[480px] text-left text-sm">
@@ -250,20 +187,33 @@ function PeopleTab({ classId }: { classId: string }) {
 
 /**
  * One class's own page, laid out like a Moodle course page: coloured
- * banner, breadcrumb, and a row of tabs (Moodle's "secondary navigation")
- * for everything about that class in one place. The tab lives in the URL
- * (?tab=homework) so it survives refresh and can be linked to.
+ * banner, breadcrumb, then tabs (Moodle's secondary navigation). The
+ * default "Course" tab is Moodle's weekly format: week-by-week sections of
+ * lessons, assignments and graded work, with a course index on the left.
+ * The tab lives in the URL (?tab=grades) so it survives refresh.
  */
+type TabKey = "course" | "assignments" | "grades" | "participants" | "announcements";
+
+const TAB_LABELS: Record<TabKey, string> = {
+  course: "Course",
+  assignments: "Assignments",
+  grades: "Grades",
+  participants: "Participants",
+  announcements: "Announcements",
+};
+
 export function ClassPage({ viewer }: { viewer: ClassViewer }) {
   const params = useSearchParams();
   const classId = params.get("id") || "";
   const [cls, setCls] = useState<ClassSummary | null | undefined>(undefined);
-  const { area } = routesFor(viewer);
+  const { area, lessonBase, extra } = routesFor(viewer);
   const childQuery = viewer.kind === "parent" ? `&child=${viewer.childId}` : "";
+  const isStaff = viewer.kind === "teacher" || viewer.kind === "staff";
 
-  const tabs: TabKey[] = viewer.kind === "teacher" ? ["lessons", "homework", "grades", "people", "announcements"] : ["lessons", "homework", "grades", "announcements"];
+  const tabs: TabKey[] = isStaff ? ["course", "assignments", "grades", "participants", "announcements"] : ["course", "assignments", "grades", "announcements"];
   const requested = params.get("tab") as TabKey | null;
-  const tab: TabKey = requested && tabs.includes(requested) ? requested : "lessons";
+  const tab: TabKey = requested && tabs.includes(requested) ? requested : "course";
+  const classHref = (t: string) => `${area}/class?id=${classId}${childQuery}&tab=${t}`;
 
   useEffect(() => {
     if (!classId) return;
@@ -280,34 +230,53 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
     });
   }, [classId, area, childQuery]);
 
-  if (!classId) return <p className="text-sm text-ink/60">No class selected. Open one from My classes.</p>;
+  if (!classId) return <p className="text-sm text-ink/60">No class selected. Open one from the classes page.</p>;
   if (cls === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
   if (cls === null) return <p className="text-sm text-ink/60">That class couldn&apos;t be found, or you don&apos;t have access to it.</p>;
 
   const crumbs: Crumb[] = [
     { label: "Dashboard", href: `${area}/dashboard` },
-    { label: "My classes", href: `${area}/classes${viewer.kind === "parent" ? `?child=${viewer.childId}` : ""}` },
+    { label: viewer.kind === "staff" ? "Classes" : "My classes", href: `${area}/classes${viewer.kind === "parent" ? `?child=${viewer.childId}` : ""}` },
     { label: cls.name },
   ];
   const meta = [cls.subject, cls.yearGroup].filter(Boolean).join(" · ");
 
   return (
     <div>
-      <PageHeader crumbs={crumbs} title={cls.name} subtitle={meta || undefined} />
+      <nav aria-label="Breadcrumb" className="mb-3">
+        <ol className="flex flex-wrap items-center gap-1 text-sm text-ink/55">
+          {crumbs.map((c, i) => (
+            <li key={c.label} className="flex items-center gap-1">
+              {i > 0 && <span aria-hidden="true">/</span>}
+              {c.href ? (
+                <Link href={c.href} className="hover:text-teal-700 hover:underline">
+                  {c.label}
+                </Link>
+              ) : (
+                <span className="text-ink/75">{c.label}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
 
-      <div className="-mt-2 mb-6 h-20 rounded-2xl" style={classBannerStyle(cls.id)} aria-hidden="true" />
+      {/* Course header: Moodle shows the course image/pattern behind the title */}
+      <div className="relative mb-0 overflow-hidden rounded-t-2xl px-6 pb-6 pt-10 text-white" style={classBannerStyle(cls.id)}>
+        {meta && <p className="text-xs font-semibold uppercase tracking-wider text-white/75">{meta}</p>}
+        <h1 className="mt-1 text-2xl font-semibold tracking-tight">{cls.name}</h1>
+      </div>
 
-      <nav aria-label="Class sections" className="mb-6 flex gap-1 overflow-x-auto border-b border-gold-light">
+      <nav aria-label="Class sections" className="mb-6 flex gap-1 overflow-x-auto rounded-b-2xl border border-t-0 border-gold-light bg-white px-3">
         {tabs.map((t) => {
           const active = t === tab;
           return (
             <Link
               key={t}
-              href={`${area}/class?id=${cls.id}${childQuery}&tab=${t}`}
+              href={classHref(t)}
               scroll={false}
               aria-current={active ? "page" : undefined}
-              className={`-mb-px shrink-0 border-b-2 px-3 py-2.5 text-sm font-medium transition-colors ${
-                active ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:border-gold-light hover:text-ink"
+              className={`shrink-0 border-b-[3px] px-3 py-3 text-sm font-medium transition-colors ${
+                active ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"
               }`}
             >
               {TAB_LABELS[t]}
@@ -316,23 +285,25 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
         })}
       </nav>
 
-      {tab === "lessons" && <LessonsTab classId={cls.id} viewer={viewer} />}
+      {tab === "course" && <CourseTab classId={cls.id} viewer={viewer} routes={{ area, lessonBase, extra, classHref }} />}
 
-      {tab === "homework" &&
-        (viewer.kind === "teacher" ? (
+      {tab === "assignments" &&
+        (viewer.kind === "student" || viewer.kind === "parent" ? (
+          <Panel title="Assignments">
+            <HomeworkForChild childId={viewer.childId} canSubmit={viewer.kind === "student"} classId={cls.id} />
+          </Panel>
+        ) : (
           <Panel
-            title="Homework"
+            title="Assignments"
             action={
-              <Link href="/teach/homework" className="text-sm font-medium text-teal-700 hover:underline">
-                Set homework
-              </Link>
+              viewer.kind === "teacher" ? (
+                <Link href="/teach/homework" className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900">
+                  + Set homework
+                </Link>
+              ) : undefined
             }
           >
             <TeacherHomework classId={cls.id} />
-          </Panel>
-        ) : (
-          <Panel title="Homework">
-            <HomeworkForChild childId={viewer.childId} canSubmit={viewer.kind === "student"} classId={cls.id} />
           </Panel>
         ))}
 
@@ -341,8 +312,8 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           title="Grades"
           action={
             viewer.kind === "teacher" ? (
-              <Link href="/teach/assessment" className="text-sm font-medium text-teal-700 hover:underline">
-                Record a grade
+              <Link href="/teach/assessment" className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900">
+                + Record a grade
               </Link>
             ) : undefined
           }
@@ -351,14 +322,14 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
         </Panel>
       )}
 
-      {tab === "people" && viewer.kind === "teacher" && (
-        <Panel title="Students">
+      {tab === "participants" && isStaff && (
+        <Panel title="Participants">
           <PeopleTab classId={cls.id} />
         </Panel>
       )}
 
       {tab === "announcements" && (
-        <AnnouncementsFeed classIds={[cls.id]} includeSchool={false} canPost={viewer.kind === "teacher"} postClassId={cls.id} postScope="class" />
+        <AnnouncementsFeed classIds={[cls.id]} includeSchool={false} canPost={isStaff} postClassId={cls.id} postScope="class" />
       )}
     </div>
   );
