@@ -1,0 +1,23 @@
+name: Set up Sanity Studio CORS origins
+
+# One-time (idempotent) setup — see scripts/setup-sanity-cors.mjs for what
+# this does and why. Reuses the SANITY_MANAGEMENT_TOKEN secret already set
+# up for setup-sanity-webhook.yml (see SETUP.md).
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+      SANITY_MANAGEMENT_TOKEN: ${{ secrets.SANITY_MANAGEMENT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/setup-sanity-cors.mjs
