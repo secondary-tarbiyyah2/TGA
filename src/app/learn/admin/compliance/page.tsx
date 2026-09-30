@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
+import { Card } from "@/components/learn/Card";
 import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { SafeguardingLog } from "@/components/learn/compliance/SafeguardingLog";
@@ -123,9 +124,12 @@ function ComplianceContent() {
         <p className="mt-1 text-sm text-ink/60">Attendance escalations, flagged messages, and outstanding policy signatures.</p>
       </div>
 
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <h2 className="font-serif text-h3 font-semibold text-ink">Unexplained absence alerts</h2>
-        <ul className="mt-3 space-y-2">
+      <Card
+        title="Unexplained absence alerts"
+        status={absenceAlerts === null ? undefined : absenceAlerts.length === 0 ? "ok" : "warning"}
+        statusLabel={absenceAlerts && absenceAlerts.length > 0 ? `${absenceAlerts.length} open` : undefined}
+      >
+        <ul className="space-y-2">
           {absenceAlerts === null && <p className="text-sm text-ink/60">Loading…</p>}
           {(absenceAlerts || []).map((a) => (
             <li key={a.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
@@ -134,15 +138,18 @@ function ComplianceContent() {
           ))}
           {absenceAlerts?.length === 0 && <p className="text-sm text-ink/60">No unexplained-absence alerts.</p>}
         </ul>
-      </div>
+      </Card>
 
       {isSafeguardingLead && <SafeguardingKeywordsAdmin />}
 
       {isSafeguardingLead && (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-          <h2 className="font-serif text-h3 font-semibold text-ink">Keyword-flagged messages</h2>
-          <p className="mt-1 text-xs text-ink/50">Visible to you as Safeguarding Lead regardless of thread membership.</p>
-          <ul className="mt-3 space-y-2">
+        <Card
+          title="Keyword-flagged messages"
+          description="Visible to you as Safeguarding Lead regardless of thread membership."
+          status={flagged === null ? undefined : flagged.length === 0 ? "ok" : "warning"}
+          statusLabel={flagged && flagged.length > 0 ? `${flagged.length} flagged` : undefined}
+        >
+          <ul className="space-y-2">
             {flagged === null && <p className="text-sm text-ink/60">Loading…</p>}
             {(flagged || []).map((m) => (
               <li key={m.id} className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm">
@@ -154,12 +161,15 @@ function ComplianceContent() {
             ))}
             {flagged?.length === 0 && <p className="text-sm text-ink/60">No flagged messages.</p>}
           </ul>
-        </div>
+        </Card>
       )}
 
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <h2 className="font-serif text-h3 font-semibold text-ink">Outstanding policy signatures</h2>
-        <ul className="mt-3 space-y-2">
+      <Card
+        title="Outstanding policy signatures"
+        status={outstanding === null ? undefined : outstanding.length === 0 ? "ok" : "warning"}
+        statusLabel={outstanding && outstanding.length > 0 ? `${outstanding.length} outstanding` : undefined}
+      >
+        <ul className="space-y-2">
           {outstanding === null && <p className="text-sm text-ink/60">Loading…</p>}
           {(outstanding || []).map((o, i) => (
             <li key={`${o.user_id}-${i}`} className="rounded-lg border border-gold-light/40 p-3 text-sm">
@@ -168,7 +178,7 @@ function ComplianceContent() {
           ))}
           {outstanding?.length === 0 && <p className="text-sm text-ink/60">Everyone is up to date.</p>}
         </ul>
-      </div>
+      </Card>
 
       {(isSafeguardingLead || isHeadTeacher) && <SafeguardingLog />}
 
