@@ -6,10 +6,11 @@
 // Shared by `document-signed-pdf` (the main entry point) and
 // `document-signed-copy` (email). Runs with the service-role client; the
 // callers do their own authorisation first.
-import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFPage } from "npm:pdf-lib@1.17.1";
+import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFImage, type PDFPage } from "npm:pdf-lib@1.17.1";
 
 export const SIGNED_BUCKET = "signed-documents";
 const EVIDENCE_BUCKET = "signed-paper-copies";
+const SIGNATURE_BUCKET = "signature-images";
 const SITE_URL = (Deno.env.get("PUBLIC_SITE_URL") || "https://globalacademy.tarbiyyah.co.uk").replace(/\/$/, "");
 const MAX_ORIGINAL_BYTES = 20 * 1024 * 1024;
 
@@ -42,6 +43,8 @@ type SigRow = {
   evidence_path: string | null;
   record_note: string | null;
   signed_pdf_path: string | null;
+  signature_image_path?: string | null;
+  signature_image_sha256?: string | null;
 };
 
 export const shortRef = (id: string) => id.replace(/-/g, "").slice(0, 8).toUpperCase();
@@ -163,7 +166,7 @@ function sniff(bytes: Uint8Array): "png" | "jpg" | "pdf" | null {
   return null;
 }
 
-async function addSignaturePage(pdf: PDFDocument, sig: SigRow, title: string): Promise<void> {
+async function addSignaturePage(pdf: PDFDocument, sig: SigRow, title: string, sigImage: PDFImage | null): Promise<void> {
   const font = await pdf.embedFont(StandardFonts.Helvetica);
   const bold = await pdf.embedFont(StandardFonts.HelveticaBold);
   const script = await pdf.embedFont(StandardFonts.TimesRomanItalic);
@@ -202,22 +205,29 @@ async function addSignaturePage(pdf: PDFDocument, sig: SigRow, title: string): P
   block(`Version signed: ${sig.asset_id_signed}`, { size: 8, color: GREY });
   y -= 14;
 
-  // Signature box
-  const boxH = 110;
+  // Signature box. With a drawn signature: the image large above the line,
+  // the typed name and date beneath it. Without one: the typed name in script.
+  const boxH = sigImage ? 170 : 110;
+  const dateLine = safe(font, `${sig.typed_full_name}  ·  ${hand ? ukDate(sig.signed_at) : ukDateTime(sig.signed_at) + " (UK time)"}`);
   page.drawRectangle({ x: M, y: y - boxH, width: CW, height: boxH, borderColor: GOLD, borderWidth: 1, color: rgb(0.99, 0.98, 0.96) });
   page.drawText("SIGNED BY", { x: M + 14, y: y - 20, size: 8, font: bold, color: GREY });
-  let nameSize = 30;
-  const typed = safe(script, sig.typed_full_name);
-  while (nameSize > 12 && script.widthOfTextAtSize(typed, nameSize) > CW - 28) nameSize -= 2;
-  page.drawText(typed, { x: M + 14, y: y - 62, size: nameSize, font: script, color: rgb(0.1, 0.15, 0.4) });
-  page.drawLine({ start: { x: M + 14, y: y - 72 }, end: { x: W - M - 14, y: y - 72 }, thickness: 0.6, color: GREY });
-  page.drawText(safe(font, `${sig.typed_full_name}  ·  ${hand ? ukDate(sig.signed_at) : ukDateTime(sig.signed_at) + " (UK time)"}`), {
-    x: M + 14,
-    y: y - 88,
-    size: 9,
-    font,
-    color: GREY,
-  });
+  if (sigImage) {
+    const maxW = CW - 28, maxH = 90;
+    const k = Math.min(maxW / sigImage.width, maxH / sigImage.height);
+    const w = sigImage.width * k, h = sigImage.height * k;
+    const lineY = y - 128;
+    page.drawImage(sigImage, { x: M + 14 + (maxW - w) / 2, y: lineY + 6 + (maxH - h) / 2, width: w, height: h });
+    page.drawLine({ start: { x: M + 14, y: lineY }, end: { x: W - M - 14, y: lineY }, thickness: 0.6, color: GREY });
+    page.drawText(safe(bold, sig.typed_full_name), { x: M + 14, y: lineY - 14, size: 11, font: bold, color: INK });
+    page.drawText(safe(font, hand ? ukDate(sig.signed_at) : `${ukDateTime(sig.signed_at)} (UK time)`), { x: M + 14, y: lineY - 28, size: 9, font, color: GREY });
+  } else {
+    let nameSize = 30;
+    const typed = safe(script, sig.typed_full_name);
+    while (nameSize > 12 && script.widthOfTextAtSize(typed, nameSize) > CW - 28) nameSize -= 2;
+    page.drawText(typed, { x: M + 14, y: y - 62, size: nameSize, font: script, color: rgb(0.1, 0.15, 0.4) });
+    page.drawLine({ start: { x: M + 14, y: y - 72 }, end: { x: W - M - 14, y: y - 72 }, thickness: 0.6, color: GREY });
+    page.drawText(dateLine, { x: M + 14, y: y - 88, size: 9, font, color: GREY });
+  }
   y -= boxH + 20;
 
   const recordedOn = sig.recorded_at ? ukDate(sig.recorded_at) : null;
@@ -232,6 +242,7 @@ async function addSignaturePage(pdf: PDFDocument, sig: SigRow, title: string): P
     ],
     ...(sig.record_note ? ([["Note", sig.record_note]] as [string, string][]) : []),
     ["Reference", `${shortRef(sig.id)} (${sig.id})`],
+    ...(sigImage ? ([["Signature", "Drawn by hand on screen (image embedded above)"]] as [string, string][]) : []),
   ];
   for (const [k, v] of rows) {
     const lines = wrap(font, 10, v, CW - 130);
@@ -245,6 +256,11 @@ async function addSignaturePage(pdf: PDFDocument, sig: SigRow, title: string): P
   y -= 8;
   text("Record hash (SHA-256)", { size: 8, color: GREY });
   block(sig.content_hash || "Not available for signatures made before receipts were introduced.", { size: 7, color: INK });
+  if (sigImage && sig.signature_image_sha256) {
+    y -= 6;
+    text("Signature image hash (SHA-256)", { size: 8, color: GREY });
+    block(sig.signature_image_sha256, { size: 7, color: INK });
+  }
   y -= 10;
   block(
     hand
@@ -275,6 +291,46 @@ async function addEvidencePages(pdf: PDFDocument, scan: Uint8Array, sig: SigRow)
   } else {
     const img = kind === "png" ? await pdf.embedPng(scan) : await pdf.embedJpg(scan);
     page.drawImage(img, place(img.width, img.height));
+  }
+}
+
+/** Small copy of the drawn signature on the last page of the original document. */
+function stampSignatureOnLastPage(pdf: PDFDocument, img: PDFImage, font: PDFFont) {
+  const pages = pdf.getPages();
+  const page = pages[pages.length - 1];
+  if (!page || page.getRotation().angle % 360 !== 0) return;
+  const { width } = page.getSize();
+  const maxW = 110, maxH = 34;
+  const k = Math.min(maxW / img.width, maxH / img.height);
+  const w = img.width * k, h = img.height * k;
+  const x = width - 16 - w;
+  page.drawText("Signed:", { x, y: 22 + h + 2, size: 6, font, color: GREY });
+  page.drawImage(img, { x, y: 22, width: w, height: h });
+}
+
+/** The drawn signature as an embeddable PNG, or null when there is none / it fails its integrity check. */
+async function loadSignatureImage(service: Service, pdf: PDFDocument, sig: SigRow): Promise<PDFImage | null> {
+  if (!sig.signature_image_path) return null;
+  try {
+    const { data: blob } = await service.storage.from(SIGNATURE_BUCKET).download(sig.signature_image_path);
+    if (!blob) return null;
+    const bytes = new Uint8Array(await blob.arrayBuffer());
+    if (sniff(bytes) !== "png") return null;
+    const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
+    const hex = Array.from(digest, (b) => b.toString(16).padStart(2, "0")).join("");
+    if (sig.signature_image_sha256 && sig.signature_image_sha256 !== hex) {
+      console.error("signed-pdf: signature image hash mismatch", sig.id);
+      return null;
+    }
+    if (!sig.signature_image_sha256) {
+      // Recorded server-side from the stored bytes when the client did not supply one.
+      sig.signature_image_sha256 = hex;
+      await service.from("document_signatures").update({ signature_image_sha256: hex }).eq("id", sig.id).is("signature_image_sha256", null);
+    }
+    return await pdf.embedPng(bytes);
+  } catch (e) {
+    console.error("signed-pdf: signature image embed failed", (e as Error).message);
+    return null;
   }
 }
 
@@ -319,7 +375,9 @@ export async function buildSignedPdf(service: Service, sig: SigRow): Promise<Uin
     );
   }
 
-  await addSignaturePage(pdf, sig, title);
+  const sigImage = await loadSignatureImage(service, pdf, sig);
+  if (sigImage) stampSignatureOnLastPage(pdf, sigImage, await pdf.embedFont(StandardFonts.Helvetica));
+  await addSignaturePage(pdf, sig, title, sigImage);
 
   if (sig.method && sig.method !== "portal" && sig.evidence_path) {
     try {
@@ -341,7 +399,7 @@ export async function loadSignature(service: Service, signatureId: string): Prom
   const { data } = await service
     .from("document_signatures")
     .select(
-      "id, signer_id, document_id, typed_full_name, signed_at, asset_id_signed, content_hash, document_title_signed, method, recorded_by_name, recorded_at, evidence_path, record_note, signed_pdf_path",
+      "id, signer_id, document_id, typed_full_name, signed_at, asset_id_signed, content_hash, document_title_signed, method, recorded_by_name, recorded_at, evidence_path, record_note, signed_pdf_path, signature_image_path, signature_image_sha256",
     )
     .eq("id", signatureId)
     .maybeSingle();

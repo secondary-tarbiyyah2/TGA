@@ -3,12 +3,13 @@
 import { useState } from "react";
 import type { ApplicationPatch, ApplicationRow } from "@/components/admissions/applicationShared";
 import { EmailComposer } from "@/components/learn/admissions/EmailComposer";
+import { sendTemplateEmail } from "@/components/learn/admissions/admissionsData";
 import { buildTemplate, type TemplateContext } from "@/components/learn/admissions/messageTemplates";
-import { OUTCOME_LABELS, fmtLondon, fromLondonInput, toLondonInput, type InterviewOutcome } from "@/components/learn/admissions/stageTypes";
+import { OUTCOME_LABELS, fmtLondon, fromLondonInput, toLondonInput, type InterviewOutcome, type StageDetails } from "@/components/learn/admissions/stageTypes";
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
 import { Group, Pill, fieldCls, ghostBtn, primaryBtn } from "@/components/learn/admissions/ui";
 
-type Draft = { at: string; interviewer: string; link: string; notes: string; outcome: string };
+type Draft = { at: string; interviewer: string; link: string; notes: string; outcome: string; autoEmail: boolean };
 const nz = (s: string) => (s.trim() === "" ? null : s.trim());
 
 export function InterviewPanel({
@@ -28,6 +29,7 @@ export function InterviewPanel({
     link: ctx.details?.interview_link || "",
     notes: ctx.details?.interview_notes || "",
     outcome: ctx.details?.interview_outcome || "",
+    autoEmail: ctx.templates.interview_invite?.auto_send ?? true,
   });
   const [d, setD] = useState<Draft>(init);
   const [saved, setSaved] = useState<Draft>(d);
@@ -35,7 +37,7 @@ export function InterviewPanel({
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const [composing, setComposing] = useState(false);
   const set = <K extends keyof Draft>(k: K, v: Draft[K]) => setD((c) => ({ ...c, [k]: v }));
-  const dirty = JSON.stringify(d) !== JSON.stringify(saved);
+  const dirty = JSON.stringify({ ...d, autoEmail: 0 }) !== JSON.stringify({ ...saved, autoEmail: 0 });
   const defaultLink = ctx.settings?.interview_join_url || "";
 
   async function save() {
@@ -49,9 +51,32 @@ export function InterviewPanel({
       interview_notes: nz(d.notes),
       interview_outcome: (d.outcome || null) as InterviewOutcome | null,
     });
+    if (!(okApp && okDet)) {
+      setSaving(false);
+      return setMsg({ ok: false, text: "Couldn't save. Please try again." });
+    }
+    setSaved(d);
+    let text = "Saved.";
+    let ok = true;
+    if (d.autoEmail && at && at !== app.interview_at) {
+      const out = await sendTemplateEmail({
+        app: { ...app, interview_at: at },
+        key: "interview_invite",
+        auto: false, // the tick-box is the staff member's choice for this save
+        data: {
+          settings: ctx.settings,
+          bands: ctx.bands,
+          planIntent: ctx.planIntent,
+          fees: ctx.fees,
+          details: { ...(ctx.details as StageDetails), interview_interviewer: nz(d.interviewer), interview_link: nz(d.link) },
+        },
+      });
+      text = out.emailSent ? `Saved, and the interview invitation emailed to ${app.parent_email}.` : `Saved, but the invitation email could not be sent. ${out.text}`;
+      ok = out.emailSent;
+      await ctx.reload();
+    }
     setSaving(false);
-    if (okApp && okDet) setSaved(d);
-    setMsg({ ok: okApp && okDet, text: okApp && okDet ? "Saved." : "Couldn't save. Please try again." });
+    setMsg({ ok, text });
   }
 
   return (
@@ -72,6 +97,10 @@ export function InterviewPanel({
             <input type="url" value={d.link} onChange={(e) => set("link", e.target.value)} placeholder={defaultLink ? `Default: ${defaultLink}` : "https://…"} maxLength={500} className={fieldCls} />
           </label>
         </div>
+        <label className="mt-3 flex items-start gap-2 text-sm text-ink">
+          <input type="checkbox" className="mt-1" checked={d.autoEmail} onChange={(e) => set("autoEmail", e.target.checked)} />
+          <span>Email the interview invitation to the parent when I save a new date/time{ctx.templates.interview_invite?.auto_send === false ? " (automatic sending is switched off in Email settings; tick to send this time)" : ""}</span>
+        </label>
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <button type="button" onClick={() => { setComposing((c) => !c); setMsg(null); }} disabled={!app.interview_at || dirty} className={ghostBtn}>
             Email interview invitation

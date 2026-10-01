@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { FilePreview, mimeFromName } from "@/components/learn/admissions/FilePreview";
 import { DOCUMENTS_BUCKET } from "@/components/admissions/applicationShared";
 
 type Doc = { path: string; name: string; size: number | null; created: string | null };
@@ -99,12 +100,12 @@ export function DocumentsPanel({ applicationId }: { applicationId: string }) {
           <div className="flex items-center justify-between gap-3">
             <p className="text-sm font-medium text-ink">{viewing.label}</p>
             <div className="flex gap-2 text-xs font-semibold">
-              <a href={viewing.url} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light px-3 py-1 text-ink/80 hover:bg-cream">Open in new tab</a>
+              <a href={viewing.url} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-gold-500 px-3 py-1 text-ink-900 hover:brightness-105">Open in new tab</a>
               <a href={viewing.downloadUrl} className="rounded-lg bg-teal-700 px-3 py-1 text-white hover:brightness-110">Download</a>
               <button type="button" onClick={() => setViewing(null)} className="px-2 py-1 text-ink/70 underline">Close</button>
             </div>
           </div>
-          <iframe src={viewing.url} title={viewing.label} className="h-[28rem] w-full rounded-lg border border-gold-light/60 bg-white" />
+          <FilePreview key={viewing.url} url={viewing.url} type={mimeFromName(viewing.path)} name={viewing.label} />
         </div>
       )}
     </div>

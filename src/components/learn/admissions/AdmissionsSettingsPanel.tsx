@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { EmailTemplatesPanel } from "@/components/learn/admissions/EmailTemplatesPanel";
 import { Group, fieldCls, primaryBtn } from "@/components/learn/admissions/ui";
 
 type Draft = { payment_instructions: string; assessment_join_url: string; interview_join_url: string; assessment_duration_text: string };
@@ -93,6 +94,7 @@ export function AdmissionsSettingsPanel() {
         <button type="button" onClick={save} disabled={saving || !dirty || !loaded} className={primaryBtn}>{saving ? "Saving…" : "Save settings"}</button>
         {msg && <span role={msg.ok ? "status" : "alert"} className={`text-xs ${msg.ok ? "text-teal-700" : "text-red-700"}`}>{msg.text}</span>}
       </div>
+      <EmailTemplatesPanel />
     </div>
   );
 }

@@ -1,6 +1,12 @@
-// Sends an editable admissions update (assessment details, interview
-// invitation, offer, payment-proof rejection, decline / waitlist, document request) to the parent of an application and records it
-// in admissions_messages. Deployed WITH JWT verification; additionally the
+// Sends an admissions email (acknowledgement, assessment / interview invitation,
+// offer, payment received / rejected, waiting list, decline, document request)
+// to the parent of an application and records it in admissions_messages.
+// Two modes: (1) the portal sends finished, staff-edited text (subject + body);
+// (2) the portal sends only a template key (+ optional `vars` it computed, e.g.
+// fee amounts) and this function renders the stored template text from
+// admissions_email_templates with the shared templating.ts, so automatic
+// emails go out fully filled in. With auto:true the template's auto_send flag
+// is honoured (off => {skipped}) and 'decline' is never sent automatically. Deployed WITH JWT verification; additionally the
 // caller's own user_roles are re-checked here: Headteacher, Admin or
 // Admissions only. The recipient address is read from the application row,
 // never trusted from the request body. A failed send is never fatal: the log
@@ -9,13 +15,24 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { sendEmail, emailShell } from "../_shared/resend.ts";
 import { generateToken, hashToken } from "../_shared/manageToken.ts";
+import {
+  DEFAULT_TEMPLATES,
+  LEGACY_KEYS,
+  NEVER_AUTO,
+  TEMPLATE_KEYS,
+  buildTemplateContext,
+  findUnresolvedTokens,
+  renderTemplate,
+  type TemplateKey,
+  type TemplateVars,
+} from "./templating.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 
-const TEMPLATES = ["assessment_invite", "assessment_details", "interview_invite", "offer", "decline_waitlist", "request_documents", "payment_rejected", "custom"];
+const TEMPLATES: string[] = [...TEMPLATE_KEYS, ...LEGACY_KEYS];
 const SITE_URL = (Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk").replace(/\/$/, "");
 // Replaced with the family's personal proof-of-payment upload link when sent.
 const PAYMENT_LINK_TOKEN = "{{PAYMENT_LINK}}";
@@ -65,19 +82,60 @@ Deno.serve(async (req) => {
 
   const applicationId = String(body.applicationId || "");
   const template = String(body.template || "custom");
-  const subject = String(body.subject || "").trim();
-  const text = String(body.body || "").trim();
-  if (!/^[0-9a-f-]{36}$/i.test(applicationId) || !TEMPLATES.includes(template) || !subject || !text) {
+  let subject = String(body.subject || "").trim();
+  let text = String(body.body || "").trim();
+  const auto = body.auto === true;
+  if (!/^[0-9a-f-]{36}$/i.test(applicationId) || !TEMPLATES.includes(template)) {
     return jsonResponse({ ok: false, error: "missing_or_invalid_fields" }, 400);
   }
   if (subject.length > 300 || text.length > 20000) return jsonResponse({ ok: false, error: "too_long" }, 400);
 
+  // Client-computed values (fee amounts etc.): strings only, bounded.
+  const clientVars: TemplateVars = {};
+  if (body.vars && typeof body.vars === "object") {
+    for (const [k, v] of Object.entries(body.vars as Record<string, unknown>)) {
+      if (/^\w{1,60}$/.test(k) && typeof v === "string" && v.length <= 5000) clientVars[k] = v;
+    }
+  }
+
   const { data: app, error: appErr } = await serviceClient
     .from("admissions_applications")
-    .select("id, reference, parent_name, parent_email")
+    .select("id, reference, parent_name, parent_email, child_first_name, child_last_name, year_group_applying, preferred_start, assessment_at, interview_at, offer_deadline, report_received, id_documents_received")
     .eq("id", applicationId)
     .maybeSingle();
   if (appErr || !app) return jsonResponse({ ok: false, error: "application_not_found" }, 404);
+
+  // Template mode: render the stored text for this key.
+  if (!subject || !text) {
+    if (!(TEMPLATE_KEYS as string[]).includes(template)) return jsonResponse({ ok: false, error: "missing_or_invalid_fields" }, 400);
+    const key = template as TemplateKey;
+    if (auto && NEVER_AUTO.includes(key)) return jsonResponse({ ok: true, skipped: "never_automatic" });
+
+    const { data: row } = await serviceClient.from("admissions_email_templates").select("subject, body, auto_send").eq("key", key).maybeSingle();
+    const tpl = row ? { subject: row.subject as string, body: row.body as string, auto_send: Boolean(row.auto_send) } : DEFAULT_TEMPLATES[key];
+    if (auto && !tpl.auto_send) return jsonResponse({ ok: true, skipped: "auto_send_off" });
+
+    if (auto && key === "received") {
+      const { count } = await serviceClient.from("admissions_messages").select("id", { count: "exact", head: true }).eq("application_id", applicationId).eq("template", "received");
+      if ((count ?? 0) > 0) return jsonResponse({ ok: true, skipped: "already_sent" });
+    }
+
+    const [{ data: settings }, { data: stage }] = await Promise.all([
+      serviceClient.from("site_settings").select("payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone").eq("id", true).maybeSingle(),
+      serviceClient.from("admissions_stage_details").select("assessment_platform, assessment_link, assessment_duration_text, interview_interviewer, interview_link, offer_start_date").eq("application_id", applicationId).maybeSingle(),
+    ]);
+    const ctx = buildTemplateContext(app as never, (settings as never) || null, (stage as never) || null);
+    // Values the portal computed (fees, overridden dates/links) win, but only when non-empty.
+    for (const [k, v] of Object.entries(clientVars)) if (v.trim() !== "" && k !== "payment_link") ctx[k] = v;
+    const out = renderTemplate(tpl, ctx);
+    if (out.unresolved.length) return jsonResponse({ ok: false, error: "unresolved_tokens", unresolved: out.unresolved }, 400);
+    subject = out.subject;
+    text = out.body;
+    if (!subject || !text) return jsonResponse({ ok: false, error: "missing_or_invalid_fields" }, 400);
+  } else {
+    const left = findUnresolvedTokens(`${subject}\n${text}`);
+    if (left.length) return jsonResponse({ ok: false, error: "unresolved_tokens", unresolved: left }, 400);
+  }
 
   // Personal upload link: a fresh random token (only its SHA-256 hash is
   // stored once the email is sent), which switches off any earlier link. The

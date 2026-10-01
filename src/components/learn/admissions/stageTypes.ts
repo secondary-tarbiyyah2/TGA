@@ -51,10 +51,12 @@ export type AdmissionsSettings = {
   assessment_join_url: string | null;
   interview_join_url: string | null;
   assessment_duration_text: string | null;
+  admissions_email: string | null;
+  contact_phone: string | null;
 };
 
 export const SETTINGS_COLUMNS =
-  "application_fee, registration_fee, fee_terms, fee_instalments, annual_discount_percent, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text";
+  "application_fee, registration_fee, fee_terms, fee_instalments, annual_discount_percent, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone";
 
 export type FeeBandRow = { year_group_range: string; annual_fee: number };
 

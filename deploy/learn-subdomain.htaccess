@@ -39,10 +39,14 @@ RewriteOptions IgnoreInherit
 # script content — 'unsafe-inline' is the honest trade-off: same-origin-only
 # script loading is still enforced, but an XSS that got attacker content
 # into the page could now execute inline.
+# blob: (and ONLY blob:) is allowed for img/frame/child/object-src so the
+# admissions drawer can preview an uploaded PDF/image: the browser fetches the
+# private file over connect-src (Supabase), wraps it in a same-origin blob: URL
+# and frames that. No other origin may be framed or embedded.
 <IfModule mod_headers.c>
   Header set Cache-Control "no-store"
   Header set X-Robots-Tag "noindex, nofollow"
-  Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://*.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+  Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://*.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; frame-src blob:; child-src blob:; object-src blob:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 </IfModule>
 
 # Don't expose dotfiles (e.g. this .htaccess) to the web.

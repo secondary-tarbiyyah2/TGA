@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { DOCUMENTS_BUCKET, MAX_REPORT_BYTES, type ApplicationPatch, type ApplicationRow } from "@/components/admissions/applicationShared";
-import { EmailComposer, sendAdmissionsEmail } from "@/components/learn/admissions/EmailComposer";
+import { EmailComposer } from "@/components/learn/admissions/EmailComposer";
+import { sendTemplateEmail } from "@/components/learn/admissions/admissionsData";
 import { buildTemplate, type TemplateContext } from "@/components/learn/admissions/messageTemplates";
 import { fmtLondon, fromLondonInput, toLondonInput, type StageDetails } from "@/components/learn/admissions/stageTypes";
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
@@ -29,12 +30,12 @@ type Draft = {
 
 const nz = (s: string) => (s.trim() === "" ? null : s.trim());
 
-function fromState(app: ApplicationRow, d: StageDetails | null): Draft {
+function fromState(app: ApplicationRow, d: StageDetails | null, autoEmail: boolean): Draft {
   return {
     assessmentAt: toLondonInput(app.assessment_at),
     link: d?.assessment_link || "",
     duration: d?.assessment_duration_text || "",
-    autoEmail: true,
+    autoEmail,
     platform: d?.assessment_platform || "",
     invigilator: d?.assessment_invigilator || "",
     startedAt: toLondonInput(d?.assessment_started_at ?? null),
@@ -61,7 +62,7 @@ export function AssessmentPanel({
   baseCtx: TemplateContext;
   onPatch: (id: string, patch: ApplicationPatch) => Promise<boolean>;
 }) {
-  const [d, setD] = useState<Draft>(() => fromState(app, ctx.details));
+  const [d, setD] = useState<Draft>(() => fromState(app, ctx.details, ctx.templates.assessment_invite?.auto_send ?? true));
   const [saved, setSaved] = useState<Draft>(d);
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
@@ -103,19 +104,21 @@ export function AssessmentPanel({
     let text = "Saved.";
     let ok = true;
     if (d.autoEmail && newAt && dateChanged) {
-      const tpl = buildTemplate("assessment_details", { ...app, assessment_at: newAt }, {
-        ...baseCtx,
-        details: { ...(ctx.details as StageDetails), assessment_link: nz(d.link), assessment_duration_text: nz(d.duration), assessment_platform: nz(d.platform) },
+      const out = await sendTemplateEmail({
+        app: { ...app, assessment_at: newAt },
+        key: "assessment_invite",
+        auto: false, // the tick-box above is the staff member's choice for this save
+        data: {
+          settings: ctx.settings,
+          bands: ctx.bands,
+          planIntent: ctx.planIntent,
+          fees: ctx.fees,
+          details: { ...(ctx.details as StageDetails), assessment_link: nz(d.link), assessment_duration_text: nz(d.duration), assessment_platform: nz(d.platform) },
+        },
       });
-      if (/\[[^\]]+\]/.test(tpl.body)) {
-        text = "Saved. The assessment email was NOT sent automatically because it still needs a join link; add one (or a default in Admissions settings) and use \"Email assessment details\".";
-        ok = false;
-      } else {
-        const out = await sendAdmissionsEmail(app.id, "assessment_details", tpl.subject, tpl.body);
-        text = out.emailSent ? `Saved, and assessment details emailed to ${app.parent_email}.` : `Saved, but the email failed. ${out.text}`;
-        ok = out.emailSent;
-        await ctx.reload();
-      }
+      text = out.emailSent ? `Saved, and the assessment invitation emailed to ${app.parent_email}.` : `Saved, but the invitation email could not be sent. ${out.text}`;
+      ok = out.emailSent;
+      await ctx.reload();
     }
     setSaving(false);
     setMsg({ ok, text });
@@ -140,7 +143,7 @@ export function AssessmentPanel({
     setMsg({ ok, text: ok ? "Results PDF uploaded. It now appears in the Documents tab." : "Uploaded, but couldn't record it. Check the Documents tab." });
   }
 
-  const emailBuilt = () => buildTemplate("assessment_details", app, { ...baseCtx, details: ctx.details });
+  const emailBuilt = () => buildTemplate("assessment_invite", app, { ...baseCtx, details: ctx.details });
 
   return (
     <div className="space-y-4">
@@ -174,7 +177,7 @@ export function AssessmentPanel({
         </div>
         <label className="mt-3 flex items-start gap-2 text-sm text-ink">
           <input type="checkbox" className="mt-1" checked={d.autoEmail} onChange={(e) => set("autoEmail", e.target.checked)} />
-          <span>Email the assessment details to the parent when I save a new date/time</span>
+          <span>Email the assessment invitation to the parent when I save a new date/time{ctx.templates.assessment_invite?.auto_send === false ? " (automatic sending is switched off in Email settings; tick to send this time)" : ""}</span>
         </label>
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <button type="button" onClick={() => { setComposing((c) => !c); setMsg(null); }} disabled={!app.assessment_at || dirty} className={ghostBtn}>
@@ -186,7 +189,7 @@ export function AssessmentPanel({
         {composing && (
           <EmailComposer
             app={app}
-            template="assessment_details"
+            template="assessment_invite"
             initial={emailBuilt()}
             sendLabel="Send assessment details"
             onCancel={() => setComposing(false)}

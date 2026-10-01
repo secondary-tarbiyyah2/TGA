@@ -17,6 +17,8 @@ import {
   type ApplicationStatus,
 } from "@/components/admissions/applicationShared";
 
+export type MoveOptions = { /** Do not send the automatic email for this move (the caller has just sent it). */ skipAutoEmail?: boolean };
+
 export type StaffOption = { profile_id: string; display_name: string };
 
 function fmtDate(iso: string): string {
@@ -51,7 +53,7 @@ export function ApplicationDrawer({
   app: ApplicationRow;
   staff: StaffOption[];
   onClose: () => void;
-  onMove: (id: string, status: ApplicationStatus) => Promise<boolean>;
+  onMove: (id: string, status: ApplicationStatus, opts?: MoveOptions) => Promise<boolean>;
   onPatch: (id: string, patch: ApplicationPatch) => Promise<boolean>;
 }) {
   const [tab, setTab] = useState<Tab>("details");
@@ -87,11 +89,10 @@ export function ApplicationDrawer({
   const childName = `${app.child_first_name} ${app.child_last_name}`;
   const staffNames = Object.fromEntries(staff.map((s) => [s.profile_id, s.display_name]));
   const templateCtx: TemplateContext = {
-    adminFee: app.admin_fee_amount ?? admissions.fees.registrationFee,
-    deposit: app.deposit_amount ?? admissions.fees.activeFirstPayment,
     details: admissions.details,
     settings: admissions.settings,
     fees: admissions.fees,
+    templates: admissions.templates,
   };
   const tabCls = (t: Tab) =>
     `-mb-px border-b-2 px-3 py-2 text-sm font-medium ${tab === t ? "border-teal-700 text-teal-700" : "border-transparent text-ink/60 hover:text-ink"}`;
@@ -198,17 +199,22 @@ export function ApplicationDrawer({
             (admissions.loading ? (
               <p role="status" className="text-sm text-ink/60">Loading…</p>
             ) : (
-              <ProcessPanel key={app.id} app={app} ctx={admissions} staff={staff} onPatch={onPatch} onMove={onMove} />
+              <ProcessPanel key={app.id} app={app} ctx={admissions} staff={staff} baseCtx={templateCtx} onPatch={onPatch} onMove={onMove} />
             ))}
 
           {tab === "payments" &&
             (admissions.loading ? (
               <p role="status" className="text-sm text-ink/60">Loading…</p>
             ) : (
-              <PaymentsPanel key={app.id} app={app} ctx={admissions} baseCtx={templateCtx} staffNames={staffNames} onPatch={onPatch} />
+              <PaymentsPanel key={app.id} app={app} ctx={admissions} staffNames={staffNames} onPatch={onPatch} />
             ))}
 
-          {tab === "messages" && <MessagesPanel app={app} ctx={templateCtx} staffNames={staffNames} />}
+          {tab === "messages" &&
+            (admissions.loading ? (
+              <p role="status" className="text-sm text-ink/60">Loading…</p>
+            ) : (
+              <MessagesPanel key={app.id} app={app} ctx={templateCtx} staffNames={staffNames} />
+            ))}
         </div>
       </aside>
     </div>

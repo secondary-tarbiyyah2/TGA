@@ -4,6 +4,8 @@ import { absoluteFileUrl } from "@/lib/learn/fileLinks";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { openSignedPdf } from "@/app/learn/documents/signedPdf";
+import { SignatureCapture, type SignatureCaptureHandle } from "@/components/learn/documents/SignatureCapture";
+import { saveDefaultSignature, uploadSignatureImage } from "@/components/learn/documents/signatureImage";
 
 type OutstandingDoc = {
   document_id: string;
@@ -35,6 +37,8 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
   const [success, setSuccess] = useState(false);
   const [receiptId, setReceiptId] = useState<string | null>(null);
   const deepLinkHandled = useRef(false);
+  const capture = useRef<SignatureCaptureHandle>(null);
+  const [sigReady, setSigReady] = useState(false);
 
   const load = useCallback(async () => {
     if (!supabase) return;
@@ -69,6 +73,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
     setError(null);
     setSuccess(false);
     setReceiptId(null);
+    setSigReady(false);
   };
 
   const sign = async (doc: OutstandingDoc) => {
@@ -80,9 +85,28 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
         data: { user },
       } = await supabase.auth.getUser();
       if (!user) return;
+      const cap = await capture.current?.getCapture();
+      if (!cap) {
+        setError("Please draw your signature in the box first.");
+        return;
+      }
+      // The id is chosen here so the drawn image can be stored at
+      // <user>/<signature id>.png before the signature row that points at it.
+      const signatureId = crypto.randomUUID();
+      let image: { path: string; sha256: string } | null = null;
+      if (cap.blob) {
+        image = await uploadSignatureImage(supabase, user.id, signatureId, cap.blob);
+        if (!image) {
+          setError("Could not save your drawn signature — please try again.");
+          return;
+        }
+      }
       const { data: inserted, error: insertErr } = await supabase
         .from("document_signatures")
         .insert({
+          id: signatureId,
+          signature_image_path: image?.path ?? null,
+          signature_image_sha256: image?.sha256 ?? null,
           document_id: doc.document_id,
           asset_id_signed: doc.current_asset_id,
           signer_id: user.id,
@@ -95,6 +119,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
         setError("Could not record your signature — please try again.");
         return;
       }
+      if (cap.saveDefault && cap.blob) void saveDefaultSignature(supabase, user.id, cap.blob);
       setSigning(null);
       setTypedName("");
       setAffirmed(false);
@@ -138,7 +163,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
       {hasDocs && (
         <div className="rounded-2xl border border-gold-light bg-white p-5">
           <h2 className="text-lg font-semibold text-ink">Pending your signature</h2>
-          <p className="mt-0.5 text-sm text-ink/60">Please read each document, then sign it with your full name.</p>
+          <p className="mt-0.5 text-sm text-ink/60">Please read each document, then sign it by typing your full name and drawing your signature.</p>
           <ul className="mt-4 space-y-3">
             {docs.map((d) => {
               const isOpen = signing === d.document_id;
@@ -178,6 +203,10 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
                           placeholder="Full name"
                         />
                       </label>
+                      <div>
+                        <p className="mb-1 text-sm text-ink">Draw your signature</p>
+                        <SignatureCapture ref={capture} disabled={busy} onReadyChange={setSigReady} />
+                      </div>
                       <label className="flex items-start gap-2 text-sm text-ink">
                         <input type="checkbox" checked={affirmed} onChange={(e) => setAffirmed(e.target.checked)} className="mt-0.5 h-4 w-4" />
                         <span>I confirm I have read and understood this document.</span>
@@ -186,7 +215,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
                       <div className="flex items-center gap-3">
                         <button
                           type="button"
-                          disabled={!typedName.trim() || !affirmed || busy}
+                          disabled={!typedName.trim() || !affirmed || !sigReady || busy}
                           onClick={() => sign(d)}
                           className="rounded-lg bg-gold-700 px-5 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50"
                         >

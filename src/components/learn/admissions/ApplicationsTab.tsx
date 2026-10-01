@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState, type DragEvent } from "react";
 import { Card } from "@/components/learn/Card";
-import { ApplicationDrawer, type StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
+import { ApplicationDrawer, type MoveOptions, type StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
+import { autoToast, fetchAdmissionsData, sendTemplateEmail } from "@/components/learn/admissions/admissionsData";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
@@ -51,7 +52,7 @@ function ApplicationCard({
 }: {
   app: ApplicationRow;
   onOpen: (id: string) => void;
-  onMove: (id: string, status: ApplicationStatus) => Promise<boolean>;
+  onMove: (id: string, status: ApplicationStatus, opts?: MoveOptions) => Promise<boolean>;
   onDragStart: (e: DragEvent<HTMLDivElement>, id: string) => void;
   onDragEnd: () => void;
 }) {
@@ -166,6 +167,7 @@ export function ApplicationsTab() {
   const [dragOver, setDragOver] = useState<ApplicationStatus | null>(null);
   const [showSideline, setShowSideline] = useState(false);
   const [actionError, setActionError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<{ ok: boolean; text: string } | null>(null);
 
   const fetchAll = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -229,7 +231,7 @@ export function ApplicationsTab() {
   }
 
   const moveTo = useCallback(
-    async (id: string, status: ApplicationStatus): Promise<boolean> => {
+    async (id: string, status: ApplicationStatus, opts?: MoveOptions): Promise<boolean> => {
       const supabase = getSupabaseClient();
       const current = rows.find((r) => r.id === id);
       if (!supabase || !current) return false;
@@ -266,12 +268,38 @@ export function ApplicationsTab() {
         if (!current.id_documents_received && !window.confirm("ID documents are not marked as received yet. Move to Accepted anyway?")) return false;
       }
       setActionError(null);
+      setNotice(null);
       setRows((list) => list.map((r) => (r.id === id ? { ...r, status } : r)));
       const { error } = await supabase.from("admissions_applications").update({ status }).eq("id", id);
       if (error) {
         setRows((list) => list.map((r) => (r.id === id ? { ...r, status: previous } : r)));
         setActionError("Couldn't move that application. Please try again.");
         return false;
+      }
+      if (!opts?.skipAutoEmail) {
+        // Automatic emails never block or undo the move: a failure is reported, nothing more.
+        void (async () => {
+          const sends: { key: "received" | "offer"; label: string }[] = [];
+          if (previous === "new" && status !== "new" && status !== "declined" && status !== "withdrawn") sends.push({ key: "received", label: "Acknowledgement" });
+          if (status === "offered" && previous !== "offered") sends.push({ key: "offer", label: "Offer" });
+          if (sends.length === 0) return;
+          try {
+            const data = await fetchAdmissionsData(id);
+            for (const send of sends) {
+              if (send.key === "offer" && data.details?.offer_emailed_at) continue; // already offered by email
+              const out = await sendTemplateEmail({ app: { ...current, status }, key: send.key, auto: true, data });
+              const text = autoToast(send.label, current.parent_email, out);
+              if (text) setNotice({ ok: out.emailSent, text });
+              if (send.key === "offer" && out.emailSent && !current.offer_made_at) {
+                const day = new Date().toISOString().slice(0, 10);
+                const { error: e2 } = await supabase.from("admissions_applications").update({ offer_made_at: day }).eq("id", id);
+                if (!e2) setRows((list) => list.map((r) => (r.id === id ? { ...r, offer_made_at: day } : r)));
+              }
+            }
+          } catch {
+            setNotice({ ok: false, text: "The automatic email could not be sent. The move itself went through." });
+          }
+        })();
       }
       return true;
     },
@@ -398,6 +426,11 @@ export function ApplicationsTab() {
       </div>
 
       {actionError && <p role="alert" className="text-sm text-red-700">{actionError}</p>}
+      {notice && (
+        <p role={notice.ok ? "status" : "alert"} className={`text-sm ${notice.ok ? "text-teal-700" : "text-red-700"}`}>
+          {notice.text} <button type="button" onClick={() => setNotice(null)} className="underline">Dismiss</button>
+        </p>
+      )}
 
       {load === "loading" && <p role="status" className="text-sm text-ink/60">Loading applications…</p>}
       {load === "error" && (

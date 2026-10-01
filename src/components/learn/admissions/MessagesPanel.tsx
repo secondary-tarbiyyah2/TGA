@@ -2,9 +2,9 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
+import { EmailComposer } from "@/components/learn/admissions/EmailComposer";
 import type { ApplicationRow } from "@/components/admissions/applicationShared";
-import { SELECTABLE_TEMPLATES, TEMPLATE_LABELS, buildTemplate, type TemplateContext, type TemplateId } from "@/components/learn/admissions/messageTemplates";
+import { SELECTABLE_TEMPLATES, TEMPLATE_LABELS, buildTemplate, type TemplateContext, type TemplateId, type TemplateKey } from "@/components/learn/admissions/messageTemplates";
 
 type MessageRow = {
   id: string;
@@ -17,16 +17,10 @@ type MessageRow = {
   email_error: string | null;
 };
 
-const fieldCls = "mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm";
-
 export function MessagesPanel({ app, ctx, staffNames }: { app: ApplicationRow; ctx: TemplateContext; staffNames: Record<string, string> }) {
   const [history, setHistory] = useState<MessageRow[] | null>(null);
   const [loadError, setLoadError] = useState(false);
-  const [composing, setComposing] = useState(false);
-  const [template, setTemplate] = useState<TemplateId>("assessment_invite");
-  const [subject, setSubject] = useState("");
-  const [body, setBody] = useState("");
-  const [sending, setSending] = useState(false);
+  const [composing, setComposing] = useState<{ key: TemplateKey; subject: string; body: string; n: number } | null>(null);
   const [result, setResult] = useState<{ ok: boolean; text: string } | null>(null);
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -48,48 +42,25 @@ export function MessagesPanel({ app, ctx, staffNames }: { app: ApplicationRow; c
     void load();
   }, [load]);
 
-  function pick(t: TemplateId) {
+  function pick(t: TemplateKey) {
     const built = buildTemplate(t, app, ctx);
-    setTemplate(t);
-    setSubject(built.subject);
-    setBody(built.body);
-    setComposing(true);
+    setComposing({ key: t, subject: built.subject, body: built.body, n: Date.now() });
     setResult(null);
-  }
-
-  async function send() {
-    if (/\[[^\]]+\]/.test(body) && !window.confirm("The message still contains [square bracket] gaps. Send anyway?")) return;
-    if (!window.confirm(`Send this email to ${app.parent_email}?`)) return;
-    setSending(true);
-    setResult(null);
-    const r = await callEdgeFunction("admissions-correspond", { applicationId: app.id, template, subject, body });
-    setSending(false);
-    if (!r.ok) {
-      setResult({ ok: false, text: `Not sent. ${edgeErrorMessage(r)}` });
-      return;
-    }
-    if (r.emailSent) {
-      setResult({ ok: true, text: `Sent to ${app.parent_email}.` });
-      setComposing(false);
-    } else {
-      setResult({ ok: false, text: `The email could not be delivered (${String(r.emailError || "unknown error")}). It is recorded as "not delivered" in the history. Check the address, or contact the family another way.` });
-    }
-    await load();
   }
 
   return (
     <div className="space-y-5">
       <section aria-label="Send update">
         <h3 className="text-sm font-semibold text-ink">Send update to {app.parent_name}</h3>
-        <p className="text-xs text-ink/60">Goes to {app.parent_email}. Pick a template, edit it, then send. Replace anything in [square brackets].</p>
+        <p className="text-xs text-ink/60">Goes to {app.parent_email}. Pick a template: it is filled in from the application, the fees and the dates saved for it. Edit the wording if you like, then send. The template texts themselves are edited in Admissions &gt; Email settings.</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {SELECTABLE_TEMPLATES.map((t) => (
             <button
               key={t}
               type="button"
               onClick={() => pick(t)}
-              aria-pressed={composing && template === t}
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${composing && template === t ? "bg-teal-700 text-white" : "border border-gold-light/60 text-ink/70 hover:bg-cream"}`}
+              aria-pressed={composing?.key === t}
+              className={`rounded-full px-3 py-1 text-xs font-semibold ${composing?.key === t ? "bg-teal-700 text-white" : "border border-gold-light/60 text-ink/70 hover:bg-cream"}`}
             >
               {TEMPLATE_LABELS[t]}
             </button>
@@ -97,22 +68,19 @@ export function MessagesPanel({ app, ctx, staffNames }: { app: ApplicationRow; c
         </div>
 
         {composing && (
-          <div className="mt-3 space-y-3 rounded-xl border border-gold-light/50 bg-cream/40 p-4">
-            <label className="block text-sm font-medium text-ink">
-              Subject
-              <input value={subject} onChange={(e) => setSubject(e.target.value)} maxLength={300} className={fieldCls} />
-            </label>
-            <label className="block text-sm font-medium text-ink">
-              Message
-              <textarea value={body} onChange={(e) => setBody(e.target.value)} rows={14} maxLength={20000} className={`${fieldCls} font-mono text-xs leading-relaxed`} />
-            </label>
-            <div className="flex items-center gap-3">
-              <button type="button" onClick={send} disabled={sending || !subject.trim() || !body.trim()} className="rounded-lg bg-teal-700 px-4 py-1.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50">
-                {sending ? "Sending…" : "Send email"}
-              </button>
-              <button type="button" onClick={() => setComposing(false)} disabled={sending} className="text-sm text-ink/70 underline">Cancel</button>
-            </div>
-          </div>
+          <EmailComposer
+            key={`${composing.key}-${composing.n}`}
+            app={app}
+            template={composing.key}
+            initial={{ subject: composing.subject, body: composing.body }}
+            note={composing.key === "offer" ? "The payment link line is replaced with the family's personal upload link when sent (a new link switches off the old one)." : undefined}
+            onAttempt={() => void load()}
+            onSent={(o) => {
+              setResult({ ok: true, text: `${o.text} Sent to ${app.parent_email}.` });
+              setComposing(null);
+            }}
+            onCancel={() => setComposing(null)}
+          />
         )}
         {result && (
           <p role={result.ok ? "status" : "alert"} className={`mt-2 text-sm ${result.ok ? "text-teal-700" : "text-red-700"}`}>{result.text}</p>

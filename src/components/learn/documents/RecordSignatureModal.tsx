@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { SignatureCapture, type SignatureCaptureHandle } from "./SignatureCapture";
+import { uploadSignatureImage } from "./signatureImage";
 import { HAND_METHODS, METHOD_LABEL, type SignatureMethod } from "./signatureMethod";
 
 export type SignTarget = { user_id: string; name: string };
@@ -33,7 +35,11 @@ export function RecordSignatureModal({
   onDone: (message: string) => void;
 }) {
   const bulk = targets.length > 1;
-  const [method, setMethod] = useState<SignatureMethod>("paper");
+  const [choice, setChoice] = useState<SignatureMethod | "capture">("paper");
+  const capture = choice === "capture" && !bulk;
+  const method: SignatureMethod = choice === "capture" ? "in_person" : choice;
+  const pad = useRef<SignatureCaptureHandle>(null);
+  const [padReady, setPadReady] = useState(false);
   const [date, setDate] = useState(todayIso());
   const [note, setNote] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -59,6 +65,12 @@ export function RecordSignatureModal({
     if (!supabase) return setError("Not connected.");
     if (!seen) return setError("Please confirm you have seen the signed document.");
     if (!date || date > todayIso()) return setError("The date signed can't be in the future.");
+    let drawn: Blob | null = null;
+    if (capture) {
+      const cap = await pad.current?.getCapture();
+      if (!cap?.blob) return setError("Please ask them to sign in the box first.");
+      drawn = cap.blob;
+    }
     setBusy(true);
     setError(null);
 
@@ -88,7 +100,19 @@ export function RecordSignatureModal({
         }
         evidence = path;
       }
+      const signatureId = crypto.randomUUID();
+      let image: { path: string; sha256: string } | null = null;
+      if (drawn) {
+        image = await uploadSignatureImage(supabase, t.user_id, signatureId, drawn);
+        if (!image) {
+          failed.push(`${t.name} (signature image upload failed)`);
+          continue;
+        }
+      }
       const { data: inserted, error: err } = await supabase.from("document_signatures").insert({
+        id: signatureId,
+        signature_image_path: image?.path ?? null,
+        signature_image_sha256: image?.sha256 ?? null,
         document_id: documentId,
         asset_id_signed: doc.current_asset_id,
         signer_id: t.user_id,
@@ -147,12 +171,25 @@ export function RecordSignatureModal({
             <div className="space-y-1.5">
               {HAND_METHODS.map((m) => (
                 <label key={m} className="flex items-center gap-2">
-                  <input type="radio" name="sig-method" checked={method === m} onChange={() => setMethod(m)} />
+                  <input type="radio" name="sig-method" checked={choice === m} onChange={() => setChoice(m)} />
                   {METHOD_LABEL[m]}
                 </label>
               ))}
+              {!bulk && (
+                <label className="flex items-center gap-2">
+                  <input type="radio" name="sig-method" checked={choice === "capture"} onChange={() => setChoice("capture")} />
+                  Capture signature now (they sign on this device)
+                </label>
+              )}
             </div>
           </fieldset>
+          {capture && (
+            <div>
+              <p className="mb-1 font-medium text-ink">{targets[0]?.name}: sign here with a finger or stylus</p>
+              <SignatureCapture ref={pad} mode="staff" disabled={busy} onReadyChange={setPadReady} />
+              <p className="mt-1 text-xs text-ink/50">Recorded as signed in person, with the drawn signature kept on file.</p>
+            </div>
+          )}
           <label className="block">
             <span className="font-medium text-ink">Date signed</span>
             <input type="date" value={date} max={todayIso()} onChange={(e) => setDate(e.target.value)} className="mt-1 block rounded-lg border border-gold-light px-3 py-2" />
@@ -180,7 +217,7 @@ export function RecordSignatureModal({
           <button type="button" onClick={onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/75 hover:bg-cream">
             Cancel
           </button>
-          <button type="button" disabled={busy || !seen} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" disabled={busy || !seen || (capture && !padReady)} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             {busy ? "Recording…" : bulk ? `Record ${targets.length} signatures` : "Record signature"}
           </button>
         </div>

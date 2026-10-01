@@ -9,7 +9,7 @@ import { InterviewPanel } from "@/components/learn/admissions/InterviewPanel";
 import { buildTemplate, type TemplateContext } from "@/components/learn/admissions/messageTemplates";
 import { gbp } from "@/components/learn/admissions/paymentCalc";
 import type { PlanId } from "@/components/learn/admissions/stageTypes";
-import type { StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
+import type { MoveOptions, StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
 import { Group, Pill, fieldCls, primaryBtn } from "@/components/learn/admissions/ui";
 
@@ -48,24 +48,18 @@ export function ProcessPanel({
   app,
   ctx,
   staff,
+  baseCtx,
   onPatch,
   onMove,
 }: {
   app: ApplicationRow;
   ctx: AdmissionsContext;
   staff: StaffOption[];
+  baseCtx: TemplateContext;
   onPatch: (id: string, patch: ApplicationPatch) => Promise<boolean>;
-  onMove: (id: string, status: ApplicationStatus) => Promise<boolean>;
+  onMove: (id: string, status: ApplicationStatus, opts?: MoveOptions) => Promise<boolean>;
 }) {
   const [section, setSection] = useState<Section>("assessment");
-  const baseCtx: TemplateContext = {
-    adminFee: app.admin_fee_amount ?? ctx.fees.registrationFee,
-    deposit: app.deposit_amount ?? ctx.fees.activeFirstPayment,
-    details: ctx.details,
-    settings: ctx.settings,
-    fees: ctx.fees,
-  };
-
   return (
     <div className="space-y-4">
       {ctx.error && <p role="alert" className="text-sm text-red-700">{ctx.error}</p>}
@@ -101,7 +95,7 @@ function OfferSection({
   ctx: AdmissionsContext;
   baseCtx: TemplateContext;
   onPatch: (id: string, patch: ApplicationPatch) => Promise<boolean>;
-  onMove: (id: string, status: ApplicationStatus) => Promise<boolean>;
+  onMove: (id: string, status: ApplicationStatus, opts?: MoveOptions) => Promise<boolean>;
 }) {
   const { fees, details } = ctx;
   const fromApp = (): Draft => ({
@@ -165,7 +159,7 @@ function OfferSection({
   async function offerSent() {
     setComposing(false);
     if (!app.offer_made_at) await onPatch(app.id, { offer_made_at: today() });
-    if (app.status !== "offered" && app.status !== "accepted") await onMove(app.id, "offered");
+    if (app.status !== "offered" && app.status !== "accepted") await onMove(app.id, "offered", { skipAutoEmail: true });
     setMsg({ ok: true, text: "Offer emailed. The application is now Offered, awaiting proof of payment." });
     void ctx.reload();
   }

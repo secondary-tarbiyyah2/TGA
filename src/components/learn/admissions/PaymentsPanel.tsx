@@ -3,8 +3,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { ApplicationPatch, ApplicationRow } from "@/components/admissions/applicationShared";
-import { EmailComposer, sendAdmissionsEmail } from "@/components/learn/admissions/EmailComposer";
-import { PAYMENT_LINK_TOKEN, buildTemplate, type TemplateContext } from "@/components/learn/admissions/messageTemplates";
+import { FilePreview } from "@/components/learn/admissions/FilePreview";
+import { EmailComposer } from "@/components/learn/admissions/EmailComposer";
+import { sendTemplateEmail } from "@/components/learn/admissions/admissionsData";
+import { PAYMENT_LINK_TOKEN } from "@/components/learn/admissions/messageTemplates";
 import { gbp } from "@/components/learn/admissions/paymentCalc";
 import type { PlanId } from "@/components/learn/admissions/stageTypes";
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
@@ -40,13 +42,11 @@ const today = () => new Date().toISOString().slice(0, 10);
 export function PaymentsPanel({
   app,
   ctx,
-  baseCtx,
   staffNames,
   onPatch,
 }: {
   app: ApplicationRow;
   ctx: AdmissionsContext;
-  baseCtx: TemplateContext;
   staffNames: Record<string, string>;
   onPatch: (id: string, patch: ApplicationPatch) => Promise<boolean>;
 }) {
@@ -123,13 +123,14 @@ export function PaymentsPanel({
     if (Object.keys(patch).length) await onPatch(app.id, patch);
     let text = "Verified. Fee flags updated.";
     if (verifying.email) {
-      const covered = proof.covers.map((c) => COVER_LABELS[c] || c).join(", ") || "your payment";
-      const out = await sendAdmissionsEmail(
-        app.id,
-        "custom",
-        `Payment received for ${app.child_first_name} - Tarbiyyah Global Academy`,
-        `Assalamu alaikum ${app.parent_name.split(/\s+/)[0] || app.parent_name},\n\nThank you. We have checked your proof of payment for ${app.child_first_name}${app.reference ? ` (${app.reference})` : ""} and it covers: ${covered}${amount !== null ? ` (${gbp(amount)})` : ""}.\n\nWe will be in touch about the next steps. If you have any questions, just reply to this email.\n\nJazakum Allahu khairan,\nAdmissions Team\nTarbiyyah Global Academy`,
-      );
+      const covered = proof.covers.map((c) => COVER_LABELS[c] || c).join(", ");
+      const out = await sendTemplateEmail({
+        app,
+        key: "payment_received",
+        auto: false, // the tick-box in the verify panel is the staff member's choice
+        data: { settings: ctx.settings, bands: ctx.bands, details: ctx.details, planIntent: ctx.planIntent, fees: ctx.fees },
+        extra: { payment_covers: covered || undefined, payment_amount: amount !== null ? gbp(amount) : undefined },
+      });
       text += out.emailSent ? " Confirmation emailed." : ` The confirmation email failed: ${out.text}`;
     }
     setVerifying(null);
@@ -157,8 +158,13 @@ export function PaymentsPanel({
     }
     let text = "Rejected.";
     if (rejecting.email) {
-      const tpl = buildTemplate("payment_rejected", app, { ...baseCtx, rejectReason: rejecting.reason.trim(), rejectItem: proof.file_name || undefined });
-      const out = await sendAdmissionsEmail(app.id, "payment_rejected", tpl.subject, tpl.body);
+      const out = await sendTemplateEmail({
+        app,
+        key: "payment_rejected",
+        auto: false,
+        data: { settings: ctx.settings, bands: ctx.bands, details: ctx.details, planIntent: ctx.planIntent, fees: ctx.fees },
+        extra: { reject_reason: rejecting.reason.trim(), reject_item: proof.file_name ? `the file "${proof.file_name}"` : undefined },
+      });
       text += out.emailSent ? " The family has been emailed with a fresh upload link." : ` The email failed: ${out.text}`;
     }
     setRejecting(null);
@@ -266,8 +272,8 @@ export function PaymentsPanel({
                 <button type="button" onClick={() => void view(p)} disabled={busyId === p.id} className={ghostBtn}>{busyId === p.id ? "Working…" : viewing?.id === p.id ? "Reload" : "View"}</button>
                 {p.status === "pending" && (
                   <>
-                    <button type="button" onClick={() => { setRejecting(null); setVerifying({ id: p.id, amount: p.amount_claimed !== null ? String(p.amount_claimed) : "", email: true }); }} className={primaryBtn}>Verify</button>
-                    <button type="button" onClick={() => { setVerifying(null); setRejecting({ id: p.id, reason: "", email: true }); }} className="rounded-lg border border-red-300 px-3 py-1.5 text-sm font-semibold text-red-700 hover:bg-red-50">Reject</button>
+                    <button type="button" onClick={() => { setRejecting(null); setVerifying({ id: p.id, amount: p.amount_claimed !== null ? String(p.amount_claimed) : "", email: ctx.templates.payment_received?.auto_send ?? true }); }} className={primaryBtn}>Verify</button>
+                    <button type="button" onClick={() => { setVerifying(null); setRejecting({ id: p.id, reason: "", email: ctx.templates.payment_rejected?.auto_send ?? true }); }} className="rounded-lg border border-red-300 px-3 py-1.5 text-sm font-semibold text-red-700 hover:bg-red-50">Reject</button>
                   </>
                 )}
                 {p.status !== "pending" && <button type="button" onClick={() => void reset(p)} disabled={busyId === p.id} className="text-xs text-ink/60 underline">Reset to pending</button>}
@@ -311,12 +317,7 @@ export function PaymentsPanel({
                     <a href={viewing.url} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light px-3 py-1 text-ink/80 hover:bg-cream">Open in new tab</a>
                     <button type="button" onClick={() => setViewing(null)} className="px-2 py-1 text-ink/70 underline">Close</button>
                   </div>
-                  {viewing.type === "application/pdf" ? (
-                    <iframe src={viewing.url} title={viewing.name} className="h-[26rem] w-full rounded-lg border border-gold-light/60 bg-white" />
-                  ) : (
-                    // eslint-disable-next-line @next/next/no-img-element -- short-lived signed URL
-                    <img src={viewing.url} alt={viewing.name} className="max-h-[26rem] w-full rounded-lg border border-gold-light/60 bg-white object-contain" />
-                  )}
+                  <FilePreview key={viewing.url} url={viewing.url} type={viewing.type || "application/pdf"} name={viewing.name} heightClass="h-[26rem]" />
                 </div>
               )}
             </li>
