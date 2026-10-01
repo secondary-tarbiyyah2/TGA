@@ -150,9 +150,9 @@ export default async function HomePage() {
       {/* HOW IT WORKS */}
       <section className="geo-texture bg-cream section-pad">
         <Container>
-          <Kicker>Admissions in four steps</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">{content.howItWorksHeading || "Four steps to a place at TGA."}</h2>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <Kicker>Admissions in six steps</Kicker>
+          <h2 className="text-h2 font-serif font-semibold text-ink">{content.howItWorksHeading || "Six steps to a place at TGA."}</h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {howItWorks.map((s, i) => (
               <div key={s.step} className="relative">
                 {i < howItWorks.length - 1 && (

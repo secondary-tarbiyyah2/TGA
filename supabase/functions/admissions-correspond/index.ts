@@ -1,5 +1,5 @@
-// Sends an editable admissions update (assessment invite, offer, decline /
-// waitlist, document request) to the parent of an application and records it
+// Sends an editable admissions update (assessment details, interview
+// invitation, offer, payment-proof rejection, decline / waitlist, document request) to the parent of an application and records it
 // in admissions_messages. Deployed WITH JWT verification; additionally the
 // caller's own user_roles are re-checked here: Headteacher, Admin or
 // Admissions only. The recipient address is read from the application row,
@@ -8,13 +8,17 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { sendEmail, emailShell } from "../_shared/resend.ts";
+import { generateToken, hashToken } from "../_shared/manageToken.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 
-const TEMPLATES = ["assessment_invite", "offer", "decline_waitlist", "request_documents", "custom"];
+const TEMPLATES = ["assessment_invite", "assessment_details", "interview_invite", "offer", "decline_waitlist", "request_documents", "payment_rejected", "custom"];
+const SITE_URL = (Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk").replace(/\/$/, "");
+// Replaced with the family's personal proof-of-payment upload link when sent.
+const PAYMENT_LINK_TOKEN = "{{PAYMENT_LINK}}";
 const ALLOWED = ["head_teacher", "admin", "admissions"];
 
 function escapeHtml(s: string): string {
@@ -70,10 +74,24 @@ Deno.serve(async (req) => {
 
   const { data: app, error: appErr } = await serviceClient
     .from("admissions_applications")
-    .select("id, parent_name, parent_email")
+    .select("id, reference, parent_name, parent_email")
     .eq("id", applicationId)
     .maybeSingle();
   if (appErr || !app) return jsonResponse({ ok: false, error: "application_not_found" }, 404);
+
+  // Personal upload link: a fresh random token (only its SHA-256 hash is
+  // stored once the email is sent), which switches off any earlier link. The
+  // history log keeps the text WITHOUT the secret.
+  let token: string | null = null;
+  let sendText = text;
+  let loggedText = text;
+  if (text.includes(PAYMENT_LINK_TOKEN)) {
+    if (!app.reference) return jsonResponse({ ok: false, error: "application_has_no_reference" }, 400);
+    token = generateToken();
+    const link = `${SITE_URL}/admissions/payment?ref=${encodeURIComponent(app.reference as string)}&token=${token}`;
+    sendText = text.split(PAYMENT_LINK_TOKEN).join(link);
+    loggedText = text.split(PAYMENT_LINK_TOKEN).join("(personal secure upload link sent by email)");
+  }
 
   let emailSent = false;
   let emailError: string | null = null;
@@ -82,7 +100,7 @@ Deno.serve(async (req) => {
       to: app.parent_email as string,
       toName: app.parent_name as string,
       subject,
-      html: emailShell(bodyToHtml(text)),
+      html: emailShell(bodyToHtml(sendText)),
     });
     emailSent = result.ok;
     if (!result.ok) emailError = result.detail;
@@ -96,13 +114,34 @@ Deno.serve(async (req) => {
       application_id: applicationId,
       template,
       subject,
-      body: text,
+      body: loggedText,
       sent_by: user.id,
       email_sent: emailSent,
       email_error: emailError ? emailError.slice(0, 500) : null,
     })
     .select("id, sent_at")
     .single();
+
+  // Activate the new link only once the email has really gone out, so a failed
+  // send never kills the family's previous (working) link.
+  if (emailSent && token) {
+    await serviceClient
+      .from("admissions_stage_details")
+      .upsert({ application_id: applicationId, payment_token_hash: await hashToken(token), payment_token_created_at: new Date().toISOString() }, { onConflict: "application_id" });
+  }
+
+  // Stamp the stage the email belonged to (only when it really went out).
+  if (emailSent) {
+    const stamp: Record<string, unknown> | null =
+      template === "assessment_details" || template === "assessment_invite"
+        ? { assessment_emailed_at: new Date().toISOString() }
+        : template === "interview_invite"
+          ? { interview_emailed_at: new Date().toISOString() }
+          : template === "offer"
+            ? { offer_emailed_at: new Date().toISOString() }
+            : null;
+    if (stamp) await serviceClient.from("admissions_stage_details").upsert({ application_id: applicationId, ...stamp }, { onConflict: "application_id" });
+  }
 
   return jsonResponse({
     ok: true,

@@ -230,6 +230,7 @@ jobs:
           # their own code; the two --no-verify-jwt ones are called with no
           # session (anonymous quiz-takers, a scheduled job).
           supabase functions deploy admissions-correspond --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy admissions-payment-proof --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy document-sign-request --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy document-signed-copy --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy document-signed-pdf --project-ref "${{ steps.project.outputs.ref }}"

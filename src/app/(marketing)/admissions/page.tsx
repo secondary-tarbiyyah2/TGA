@@ -4,21 +4,18 @@ import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { Kicker } from "@/components/Section";
 import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
+import { admissionsProcessSteps } from "@/components/admissions/applicationShared";
 import { getSiteSettings } from "@/lib/content";
+import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Admissions",
   description: "How to apply to Tarbiyyah Global Academy — process, entry assessment, key dates, and the application form.",
 };
 
-const steps = [
-  { title: "Application", body: "Complete our online application form and upload your child's latest school report (or email it to the admissions team)." },
-  { title: "Assessment & interview", body: "A short, age-appropriate assessment, then a conversation with you and your child to confirm that we are the right fit." },
-  { title: "Offer & acceptance", body: "If we offer a place, the admin fee and a deposit are due by the deadline in your offer, along with ID documents. The place is held once both are received. See our fees page for details." },
-];
-
 export default async function AdmissionsPage() {
   const settings = await getSiteSettings();
+  const steps = admissionsProcessSteps({ applicationFee: settings.applicationFee, registrationFee: settings.registrationFee });
   return (
     <>
       <section className="geo-texture bg-cream section-pad">
@@ -26,7 +23,7 @@ export default async function AdmissionsPage() {
           <Kicker>Admissions</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">How to apply.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            A straightforward, three-step process. Applications for the January 2027 launch are open now.
+            A straightforward, six-step process, from your online application to your child's first lesson, including a supervised remote assessment and an interview with you and your child. Applications for the January 2027 launch are open now.
           </p>
           <div className="mt-8">
             <Button href="/admissions/apply">Apply now</Button>
@@ -40,7 +37,7 @@ export default async function AdmissionsPage() {
       </section>
 
       <section className="section-pad">
-        <Container className="grid gap-6 md:grid-cols-3">
+        <Container className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {steps.map((s, i) => (
             <div key={s.title} className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <span className="font-serif text-2xl font-bold text-gold">{i + 1}</span>
@@ -55,16 +52,24 @@ export default async function AdmissionsPage() {
 
       <section className="geo-texture bg-cream section-pad">
         <Container className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl bg-white p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Assessment</p>
-            <p className="mt-1 font-serif text-3xl font-bold text-ink">Free</p>
-            <p className="mt-1 text-sm text-ink/60">There is no charge to apply or to sit the entry assessment.</p>
-          </div>
-          <div className="rounded-2xl bg-white p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
-            <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
-            <p className="mt-1 text-sm text-ink/60">One-time admin fee, requested with the deposit when a place is offered, to secure it.</p>
-          </div>
+          {settings.applicationFee != null && (
+            <div className="rounded-2xl bg-white p-6">
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application and assessment fee</p>
+              <p className="mt-1 font-serif text-3xl font-bold text-ink">{formatGBP(settings.applicationFee)}</p>
+              <p className="mt-1 text-sm text-ink/60">Non-refundable. Covers the baseline assessment and the administrative review. Send proof of payment with your offer acceptance if you have not already paid it.</p>
+            </div>
+          )}
+          {settings.registrationFee != null && (
+            <div className="rounded-2xl bg-white p-6">
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
+              <p className="mt-1 font-serif text-3xl font-bold text-ink">{formatGBP(settings.registrationFee)}</p>
+              <p className="mt-1 text-sm text-ink/60">One-off, per child, due when you accept an offer. Covers account setup, platform licences and onboarding. Refundable only within the 14-day cancellation period.</p>
+            </div>
+          )}
+          <p className="text-sm text-ink/70 sm:col-span-2">
+            Your first tuition payment is also sent with your proof of payment: at least the first month on a monthly plan, or the first term, or the whole year {settings.annualDiscountPercent ? `(${settings.annualDiscountPercent}% off if paid in full)` : ""}. See the{" "}
+            <Link href="/fees#estimator" className="font-semibold text-gold-700 underline">fee estimator</Link> for your family&apos;s figures.
+          </p>
         </Container>
       </section>
 
@@ -73,7 +78,7 @@ export default async function AdmissionsPage() {
           <Kicker>Application form</Kicker>
           <h2 className="font-serif text-3xl font-semibold text-ink">Start your child&apos;s application.</h2>
           <p className="mt-3 text-ink/70">
-            Our online form takes about ten minutes. Have your details and your child&apos;s to hand, and your child&apos;s latest school report ready to email to us.
+            Our online form takes about ten minutes. Have your details and your child&apos;s to hand, plus your child&apos;s latest school report, photo ID for a parent or guardian, and your child&apos;s passport or birth certificate (PDF, JPG or PNG) ready to upload.
           </p>
           <div className="mt-6">
             <Button href="/admissions/apply">Apply now</Button>

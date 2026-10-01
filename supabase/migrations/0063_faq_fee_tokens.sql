@@ -1,0 +1,8 @@
+-- Existing FAQ rows hold literal fee figures (e.g. £247). Make the fee answers token-driven
+-- so they follow the admin-edited settings ({{applicationFee}}, {{registrationFee}}, {{terms}}, {{instalments}}, {{annualDiscount}}).
+update public.faq_entries set answer = 'The {{applicationFee}} application fee is non-refundable and covers the baseline assessment and administrative review. It is separate from the one-time {{registrationFee}} registration fee, which is payable on acceptance of a place and no later than 19 December 2026.' where question = 'What does the application fee cover?';
+update public.faq_entries set answer = 'Yes. Fees are for the shortened January–July 2027 period. You can pay annually (with a {{annualDiscount}} discount if paid in full by 19 December 2026), termly ({{terms}} payments) or monthly ({{instalments}} payments) for every year group band. The instalments always add up exactly to the annual fee — see the Fees page for the full table and payment dates.' where question = 'Can I pay fees monthly?';
+update public.faq_entries set answer = replace(replace(answer, '£247', '{{applicationFee}}'), '£150', '{{registrationFee}}')
+  where answer like '%£247%' or answer like '%£150%';
+update public.faq_entries set answer = 'We confirm receipt and review your application, then arrange a supervised online assessment and an interview with you and your child. If we offer a place, we email the offer; it is confirmed once we receive proof of the application fee (if unpaid), the {{registrationFee}} registration fee and your first payment.'
+  where question = 'What happens after I submit my application?';

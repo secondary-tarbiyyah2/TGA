@@ -36,6 +36,9 @@ enabled = true
 [functions.book-admissions-call]
 verify_jwt = false
 
+[functions.admissions-payment-proof]
+verify_jwt = false
+
 [functions.manage-booking]
 verify_jwt = false
 

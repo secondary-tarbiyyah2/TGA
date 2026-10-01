@@ -6,6 +6,20 @@ import { DOCUMENTS_BUCKET } from "@/components/admissions/applicationShared";
 
 type Doc = { path: string; name: string; size: number | null; created: string | null };
 
+const KIND_LABELS: Record<string, string> = {
+  report: "School report",
+  parent_id: "Parent/guardian ID",
+  child_id: "Child ID",
+  results: "Assessment results",
+};
+
+/** "<kind>-<uuid>.<ext>" (or legacy "<uuid>.pdf" = school report) -> label + extension. */
+function describeFile(name: string, index: number): { label: string; ext: string; kind: string } {
+  const ext = (name.split(".").pop() || "pdf").toLowerCase();
+  const kind = /^(report|parent_id|child_id|results)-/.exec(name)?.[1] || "report";
+  return { label: `${KIND_LABELS[kind]} ${index}`, ext, kind };
+}
+
 export function DocumentsPanel({ applicationId }: { applicationId: string }) {
   const [docs, setDocs] = useState<Doc[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -44,7 +58,7 @@ export function DocumentsPanel({ applicationId }: { applicationId: string }) {
     await supabase.rpc("admissions_log_document_access", { p_application_id: applicationId, p_path: doc.path, p_action: "view" });
     const [view, dl] = await Promise.all([
       supabase.storage.from(DOCUMENTS_BUCKET).createSignedUrl(doc.path, 300),
-      supabase.storage.from(DOCUMENTS_BUCKET).createSignedUrl(doc.path, 300, { download: `${label}.pdf` }),
+      supabase.storage.from(DOCUMENTS_BUCKET).createSignedUrl(doc.path, 300, { download: `${label}.${describeFile(doc.name, 1).ext}` }),
     ]);
     setBusyPath(null);
     if (view.error || !view.data || dl.error || !dl.data) return setError("Couldn't open that document. Please try again.");
@@ -53,20 +67,22 @@ export function DocumentsPanel({ applicationId }: { applicationId: string }) {
 
   return (
     <div className="space-y-4">
-      <p className="text-xs text-ink/60">Uploaded by the family on the application form. Viewing a document is recorded in the audit log. Links expire after a few minutes.</p>
+      <p className="text-xs text-ink/60">Uploaded by the family on the application form, plus assessment results added by staff. Viewing a document is recorded in the audit log. Links expire after a few minutes.</p>
       {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
       {docs === null && !error && <p role="status" className="text-sm text-ink/60">Loading…</p>}
       {docs && docs.length === 0 && <p className="text-sm text-ink/60">No documents uploaded. The family may have emailed the report instead.</p>}
       {docs && docs.length > 0 && (
         <ul className="space-y-2">
           {docs.map((d, i) => {
-            const label = `School report ${i + 1}`;
+            const kind = describeFile(d.name, 0).kind;
+            const nth = docs.slice(0, i + 1).filter((x) => describeFile(x.name, 0).kind === kind).length;
+            const { label, ext } = describeFile(d.name, nth);
             return (
               <li key={d.path} className="flex items-center justify-between gap-3 rounded-lg border border-gold-light/50 px-3 py-2">
                 <span className="min-w-0 text-sm text-ink">
                   {label}
                   <span className="block text-xs text-ink/50">
-                    PDF{d.size ? ` · ${(d.size / 1048576).toFixed(1)} MB` : ""}
+                    {ext.toUpperCase()}{d.size ? ` · ${(d.size / 1048576).toFixed(1)} MB` : ""}
                     {d.created ? ` · ${new Date(d.created).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" })}` : ""}
                   </span>
                 </span>

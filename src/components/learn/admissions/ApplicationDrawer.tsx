@@ -3,7 +3,10 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { DocumentsPanel } from "@/components/learn/admissions/DocumentsPanel";
 import { MessagesPanel } from "@/components/learn/admissions/MessagesPanel";
-import { ProcessPanel, loadFeeDefaults } from "@/components/learn/admissions/ProcessPanel";
+import { PaymentsPanel } from "@/components/learn/admissions/PaymentsPanel";
+import { ProcessPanel } from "@/components/learn/admissions/ProcessPanel";
+import { useAdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
+import type { TemplateContext } from "@/components/learn/admissions/messageTemplates";
 import {
   PIPELINE_STATUSES,
   SIDELINE_STATUSES,
@@ -29,11 +32,12 @@ function Row({ label, children }: { label: string; children: ReactNode }) {
   );
 }
 
-type Tab = "details" | "documents" | "process" | "messages";
+type Tab = "details" | "documents" | "process" | "payments" | "messages";
 const TABS: { id: Tab; label: string }[] = [
   { id: "details", label: "Details" },
   { id: "documents", label: "Documents" },
   { id: "process", label: "Process" },
+  { id: "payments", label: "Payments" },
   { id: "messages", label: "Messages" },
 ];
 
@@ -54,7 +58,7 @@ export function ApplicationDrawer({
   const [notes, setNotes] = useState(app.notes || "");
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
-  const [defaults, setDefaults] = useState<{ adminFee: number | null; deposit: number | null } | null>(null);
+  const admissions = useAdmissionsContext(app);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -65,10 +69,6 @@ export function ApplicationDrawer({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
-
-  useEffect(() => {
-    void loadFeeDefaults().then(setDefaults);
-  }, []);
 
   async function saveNotes() {
     setSaving(true);
@@ -86,6 +86,13 @@ export function ApplicationDrawer({
 
   const childName = `${app.child_first_name} ${app.child_last_name}`;
   const staffNames = Object.fromEntries(staff.map((s) => [s.profile_id, s.display_name]));
+  const templateCtx: TemplateContext = {
+    adminFee: app.admin_fee_amount ?? admissions.fees.registrationFee,
+    deposit: app.deposit_amount ?? admissions.fees.activeFirstPayment,
+    details: admissions.details,
+    settings: admissions.settings,
+    fees: admissions.fees,
+  };
   const tabCls = (t: Tab) =>
     `-mb-px border-b-2 px-3 py-2 text-sm font-medium ${tab === t ? "border-teal-700 text-teal-700" : "border-transparent text-ink/60 hover:text-ink"}`;
 
@@ -188,13 +195,20 @@ export function ApplicationDrawer({
           {tab === "documents" && <DocumentsPanel applicationId={app.id} />}
 
           {tab === "process" &&
-            (defaults ? (
-              <ProcessPanel key={app.id} app={app} defaults={defaults} onPatch={onPatch} onMove={onMove} />
-            ) : (
+            (admissions.loading ? (
               <p role="status" className="text-sm text-ink/60">Loading…</p>
+            ) : (
+              <ProcessPanel key={app.id} app={app} ctx={admissions} staff={staff} onPatch={onPatch} onMove={onMove} />
             ))}
 
-          {tab === "messages" && <MessagesPanel app={app} ctx={{ adminFee: app.admin_fee_amount ?? defaults?.adminFee ?? null, deposit: app.deposit_amount ?? defaults?.deposit ?? null }} staffNames={staffNames} />}
+          {tab === "payments" &&
+            (admissions.loading ? (
+              <p role="status" className="text-sm text-ink/60">Loading…</p>
+            ) : (
+              <PaymentsPanel key={app.id} app={app} ctx={admissions} baseCtx={templateCtx} staffNames={staffNames} onPatch={onPatch} />
+            ))}
+
+          {tab === "messages" && <MessagesPanel app={app} ctx={templateCtx} staffNames={staffNames} />}
         </div>
       </aside>
     </div>

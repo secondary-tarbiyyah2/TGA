@@ -1,11 +1,12 @@
 // Shared by the public application form (/admissions/apply) and the admin
 // Admissions pipeline, so the two can never disagree on stages or fields.
 
-export const APPLICATION_STATUSES = ["new", "assessment", "interview", "offered", "accepted", "waitlisted", "declined", "withdrawn"] as const;
+export const APPLICATION_STATUSES = ["new", "reviewing", "assessment", "interview", "offered", "accepted", "waitlisted", "declined", "withdrawn"] as const;
 export type ApplicationStatus = (typeof APPLICATION_STATUSES)[number];
 
 export const STATUS_LABELS: Record<ApplicationStatus, string> = {
   new: "New",
+  reviewing: "Reviewing",
   assessment: "Assessment",
   interview: "Interview",
   offered: "Offered",
@@ -15,7 +16,7 @@ export const STATUS_LABELS: Record<ApplicationStatus, string> = {
   withdrawn: "Withdrawn",
 };
 
-export const PIPELINE_STATUSES: ApplicationStatus[] = ["new", "assessment", "interview", "offered", "accepted"];
+export const PIPELINE_STATUSES: ApplicationStatus[] = ["new", "reviewing", "assessment", "interview", "offered", "accepted"];
 export const SIDELINE_STATUSES: ApplicationStatus[] = ["waitlisted", "declined", "withdrawn"];
 
 // Same names as public.year_groups (migration 0018) and the existing
@@ -60,6 +61,10 @@ export type ApplicationRow = {
   how_heard: string | null;
   sibling_at_tarbiyyah: boolean | null;
   sibling_details: string | null;
+  /** 0060: intended plan, children applying together, and the others' names/year groups. */
+  payment_plan_intent?: string | null;
+  children_applying?: number | null;
+  sibling_applicants?: { name: string; year_group: string }[] | null;
   consent_contact: boolean;
   consent_data: boolean;
   declaration_name: string;
@@ -111,7 +116,7 @@ export function processPips(a: Pick<ApplicationRow, "assessment_at" | "interview
 }
 
 export const APPLICATION_COLUMNS =
-  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, offer_made_at, offer_deadline, admin_fee_amount, admin_fee_received, admin_fee_received_at, deposit_amount, deposit_received_at, parent_profile_id, child_id, student_profile_id, accounts_created_at, created_at, updated_at";
+  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, payment_plan_intent, children_applying, sibling_applicants, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, offer_made_at, offer_deadline, admin_fee_amount, admin_fee_received, admin_fee_received_at, deposit_amount, deposit_received_at, parent_profile_id, child_id, student_profile_id, accounts_created_at, created_at, updated_at";
 
 /** Age in whole years from an ISO date (yyyy-mm-dd), e.g. "7". Empty if invalid. */
 export function ageFromDob(dob: string): string {
@@ -122,6 +127,76 @@ export function ageFromDob(dob: string): string {
   const beforeBirthday = now.getMonth() + 1 < Number(m[2]) || (now.getMonth() + 1 === Number(m[2]) && now.getDate() < Number(m[3]));
   if (beforeBirthday) age -= 1;
   return age >= 0 ? String(age) : "";
+}
+
+export const PAYMENT_PLAN_OPTIONS = [
+  { value: "annual", label: "Annual (pay in full)" },
+  { value: "termly", label: "Termly" },
+  { value: "monthly", label: "Monthly" },
+] as const;
+export type PaymentPlanIntent = (typeof PAYMENT_PLAN_OPTIONS)[number]["value"];
+
+/** Kinds of uploaded document, tagged in the storage file name: <application_id>/<kind>-<uuid>.<ext> (migration 0060). */
+export type DocumentKind = "report" | "parent_id" | "child_id";
+export const DOCUMENT_KIND_LABELS: Record<DocumentKind, string> = {
+  report: "School report",
+  parent_id: "Parent or guardian photo ID",
+  child_id: "Child's passport or birth certificate",
+};
+export const DOCUMENT_ACCEPT = "application/pdf,image/jpeg,image/png,.pdf,.jpg,.jpeg,.png";
+export const MAX_ID_FILES = 3;
+/** Returns the storage extension for an allowed upload, or null when the type is not allowed. */
+export function documentExtension(f: { name: string; type: string }): "pdf" | "jpg" | "png" | null {
+  const n = f.name.toLowerCase();
+  if (f.type === "application/pdf" || n.endsWith(".pdf")) return "pdf";
+  if (f.type === "image/jpeg" || n.endsWith(".jpg") || n.endsWith(".jpeg")) return "jpg";
+  if (f.type === "image/png" || n.endsWith(".png")) return "png";
+  return null;
+}
+export const DOCUMENT_CONTENT_TYPES = { pdf: "application/pdf", jpg: "image/jpeg", png: "image/png" } as const;
+
+const money = (n: number | undefined, fallback: string) => (n == null ? fallback : Number.isInteger(n) ? `£${n}` : `£${n.toFixed(2)}`);
+
+/**
+ * The admissions process, in one place, so the admissions page, the apply page,
+ * the success state and the strip on other pages can never disagree.
+ * Fee figures come from site_settings (never hard-coded in copy).
+ */
+export function admissionsProcessSteps(fees: { applicationFee?: number; registrationFee?: number }): { title: string; short: string; body: string }[] {
+  const app = money(fees.applicationFee, "the application fee");
+  const reg = money(fees.registrationFee, "the registration fee");
+  return [
+    {
+      title: "Apply",
+      short: "Online form, with your child's school report and ID uploaded.",
+      body: "Complete the online application form and upload your child's latest school report, photo ID for a parent or guardian, and your child's passport or birth certificate.",
+    },
+    {
+      title: "We review your application",
+      short: "We check your documents and details.",
+      body: "The admissions team reviews your application and documents, and tells you if anything else is needed.",
+    },
+    {
+      title: "Remote assessment",
+      short: "A supervised online assessment; we email the details.",
+      body: "Your child sits an age-appropriate assessment online, supervised with the camera on. We email you the date, time and what to prepare.",
+    },
+    {
+      title: "Interview",
+      short: "A conversation with you and your child.",
+      body: "A video interview with you (the parent or guardian) and your child, about learning goals, values and any support needs.",
+    },
+    {
+      title: "Offer and securing your place",
+      short: `We email the offer. Send proof of payment (${app} application fee if unpaid, ${reg} registration fee, first payment) to confirm your place.`,
+      body: `We email you the offer. You then send proof of payment (a screenshot or receipt) for the ${app} application fee (if not already paid), the ${reg} registration fee, and your first payment: a minimum of the first month, or the first term, or the whole year, depending on your plan. Your place is confirmed once we receive them.`,
+    },
+    {
+      title: "Welcome",
+      short: "Accounts created and onboarding before lessons begin.",
+      body: "We create your parent and pupil accounts and take you through onboarding, ahead of live lessons in January 2027.",
+    },
+  ];
 }
 
 export const GENDER_OPTIONS = ["Male", "Female"] as const;

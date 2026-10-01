@@ -4,9 +4,10 @@ import { useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { ApplicationsTab } from "@/components/learn/admissions/ApplicationsTab";
+import { AdmissionsSettingsPanel } from "@/components/learn/admissions/AdmissionsSettingsPanel";
 import { CallsAndBookings } from "@/components/learn/admissions/CallsAndBookings";
 
-type Tab = "applications" | "calls";
+type Tab = "applications" | "calls" | "settings";
 
 function AdmissionsContent() {
   const [tab, setTab] = useState<Tab>("applications");
@@ -27,9 +28,12 @@ function AdmissionsContent() {
         <button type="button" role="tab" aria-selected={tab === "calls"} onClick={() => setTab("calls")} className={tabCls("calls")}>
           Calls &amp; bookings
         </button>
+        <button type="button" role="tab" aria-selected={tab === "settings"} onClick={() => setTab("settings")} className={tabCls("settings")}>
+          Email settings
+        </button>
       </div>
 
-      {tab === "applications" ? <ApplicationsTab /> : <CallsAndBookings />}
+      {tab === "applications" ? <ApplicationsTab /> : tab === "calls" ? <CallsAndBookings /> : <AdmissionsSettingsPanel />}
     </div>
   );
 }

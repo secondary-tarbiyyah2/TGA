@@ -171,6 +171,99 @@ export function applyFeeTokens(
   return text.replace(/\{\{(applicationFee|registrationFee|terms|instalments|annualDiscount)\}\}/g, (m, k: string) => map[k] ?? m);
 }
 
+export type PaymentPlan = "annual" | "termly" | "monthly";
+
+export type EstimateDiscountInput = { label: string; type: "percent" | "fixedAmount"; percent?: number; fixedAmount?: number; note?: string };
+
+export type FamilyEstimateInput = {
+  /** One entry per child: the band label and its ANNUAL fee (from fee_bands). */
+  children: { label: string; annual: number }[];
+  plan: PaymentPlan;
+  terms: number;
+  instalments: number;
+  /** % off total tuition when the annual plan is chosen (Fees Policy: 2). */
+  annualDiscountPercent: number;
+  /** % off each child after the first (site_settings.sibling_discount_percent). */
+  siblingDiscountPercent?: number;
+  /** Catalogue discounts that apply (automatic ones plus any the family ticked). */
+  extraDiscounts?: EstimateDiscountInput[];
+  applicationFee: number;
+  registrationFee: number;
+};
+
+export type FamilyEstimate = {
+  perChild: { label: string; gross: number; siblingDiscount: number; net: number }[];
+  gross: number;
+  discounts: { label: string; note?: string; amountOff: number }[];
+  totalDiscount: number;
+  /** Tuition after discounts. */
+  total: number;
+  payments: number[];
+  paymentUnit: "year" | "term" | "month";
+  firstPayment: number;
+  applicationFeeTotal: number;
+  registrationFeeTotal: number;
+  /** Registration fee(s) + first tuition payment: what is due once an offer is accepted. */
+  dueOnAcceptance: number;
+};
+
+/**
+ * Pure family fee estimate in integer pence. Sibling discount applies to each
+ * child after the first (in the order entered); the annual-payment discount and
+ * percentage catalogue discounts come off the combined gross; fixed-amount
+ * catalogue discounts come off once per family. Discounts can never take the
+ * total below zero. The discounted total is then split with splitInstalments
+ * so the plan sums exactly to the total.
+ */
+export function estimateFamilyFees(input: FamilyEstimateInput): FamilyEstimate {
+  const n = input.children.length;
+  const pct = (v: number | undefined) => (Number.isFinite(v) && (v as number) > 0 ? Math.min(100, v as number) : 0);
+  const perChildP = input.children.map((c, i) => {
+    const gross = toPence(c.annual);
+    const sib = i > 0 ? Math.round((gross * pct(input.siblingDiscountPercent)) / 100) : 0;
+    return { label: c.label, gross, sib };
+  });
+  const grossP = perChildP.reduce((s, c) => s + c.gross, 0);
+  const discountsP: { label: string; note?: string; amountOff: number }[] = [];
+  const sibTotal = perChildP.reduce((s, c) => s + c.sib, 0);
+  if (sibTotal > 0) discountsP.push({ label: `Sibling discount (${pct(input.siblingDiscountPercent)}% off child 2${n > 2 ? " onwards" : ""})`, amountOff: sibTotal });
+  for (const d of input.extraDiscounts ?? []) {
+    const off = d.type === "percent" ? Math.round((grossP * pct(d.percent)) / 100) : toPence(d.fixedAmount ?? 0);
+    if (off > 0) discountsP.push({ label: d.label, note: d.note, amountOff: off });
+  }
+  if (input.plan === "annual" && pct(input.annualDiscountPercent) > 0) {
+    discountsP.push({
+      label: `Annual payment discount (${pct(input.annualDiscountPercent)}%)`,
+      note: "If paid in full by 19 December 2026.",
+      amountOff: Math.round((grossP * pct(input.annualDiscountPercent)) / 100),
+    });
+  }
+  let remaining = grossP;
+  const discounts = discountsP.map((d) => {
+    const off = Math.min(d.amountOff, remaining);
+    remaining -= off;
+    return { ...d, amountOff: toPounds(off) };
+  });
+  const totalP = remaining;
+  const count = input.plan === "termly" ? Math.max(1, input.terms) : input.plan === "monthly" ? Math.max(1, input.instalments) : 1;
+  const payments = splitInstalments(toPounds(totalP), count);
+  const appTotal = toPence(input.applicationFee) * n;
+  const regTotal = toPence(input.registrationFee) * n;
+  return {
+    perChild: perChildP.map((c) => ({ label: c.label, gross: toPounds(c.gross), siblingDiscount: toPounds(c.sib), net: toPounds(c.gross - c.sib) })),
+    gross: toPounds(grossP),
+    discounts,
+    totalDiscount: toPounds(grossP - totalP),
+    total: toPounds(totalP),
+    payments,
+    paymentUnit: input.plan === "annual" ? "year" : input.plan === "termly" ? "term" : "month",
+    firstPayment: payments[0],
+    applicationFeeTotal: toPounds(appTotal),
+    registrationFeeTotal: toPounds(regTotal),
+    dueOnAcceptance: toPounds(regTotal + toPence(payments[0])),
+  };
+}
+
 export const FEES_POLICY_REMINDER = "Check the Fees Policy PDF states the same schedule.";
 
 /**
@@ -201,6 +294,11 @@ export function runFeeSelfCheck(): void {
   assert(computeFeeSchedule(2796, FEE_DEFAULTS).monthlyAmount === 399.43, "Y7-9 monthly");
   assert(computeFeeSchedule(3000, FEE_DEFAULTS).monthlyAmount === 428.57, "Y10-11 monthly");
   assert(applyAnnualDiscount(1596, 2).total === 1564.08, "2% annual discount");
+  const est = estimateFamilyFees({ children: [{ label: "a", annual: 1596 }, { label: "b", annual: 2130 }], plan: "annual", terms: 2, instalments: 7, annualDiscountPercent: 2, siblingDiscountPercent: 10, applicationFee: 100, registrationFee: 150 });
+  assert(toPence(est.total) === toPence(est.gross) - toPence(est.totalDiscount), "estimate total = gross - discounts");
+  assert(est.registrationFeeTotal === 300 && est.dueOnAcceptance === est.total + 300, "estimate due on acceptance");
+  const m = estimateFamilyFees({ children: [{ label: "a", annual: 2130 }], plan: "monthly", terms: 2, instalments: 7, annualDiscountPercent: 2, applicationFee: 100, registrationFee: 150 });
+  assert(m.total === 2130 && m.payments.length === 7 && m.firstPayment === 304.29 && toPence(sumPounds(m.payments)) === 213000, "monthly estimate, no annual discount");
   const odd = splitInstalments(100, 3);
   assert(odd[0] === 33.33 && odd[1] === 33.33 && odd[2] === 33.34, "remainder on last instalment");
   assert(sanitiseFeeSettings({ terms: "x", instalments: 99 }).terms === FEE_DEFAULTS.terms, "sanitise fallback");

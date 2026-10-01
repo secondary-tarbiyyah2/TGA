@@ -104,12 +104,12 @@ export default async function FeesPage() {
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.applicationFee}</p>
-              <p className="mt-1 text-sm text-ink/70">Non-refundable, paid when you apply. Covers the baseline assessment and administrative review.</p>
+              <p className="mt-1 text-sm text-ink/70">Non-refundable. Covers the baseline assessment and administrative review. If not yet paid, send proof of payment with your offer acceptance.</p>
             </div>
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
-              <p className="mt-1 text-sm text-ink/70">One-time, due on acceptance of a place and no later than 19 December 2026.</p>
+              <p className="mt-1 text-sm text-ink/70">One-time, per child, due on acceptance of a place and no later than 19 December 2026.</p>
             </div>
             {settings.siblingDiscountPercent != null && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">
@@ -125,8 +125,7 @@ export default async function FeesPage() {
             <p className="mb-8 max-w-2xl text-ink/70">{scheduleText}</p>
             <Kicker>Payment methods</Kicker>
             <p className="text-ink/70">
-              Fees can be paid by bank transfer or card. Full payment instructions are shared once a place is
-              offered.
+              Fees can be paid by bank transfer or card. Full payment instructions are shared with your offer, after the assessment and interview. You then send proof of payment (a screenshot or receipt) to confirm your place.
             </p>
           </div>
         </Container>
@@ -137,7 +136,7 @@ export default async function FeesPage() {
           <Kicker>Estimate your fees</Kicker>
           <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">See a personalised estimate</h2>
           <p className="mt-2 max-w-2xl text-ink/70">
-            Pick a year group and payment frequency to see the fee, with any discounts you qualify for applied.
+            Choose how many children, each child's year group and your payment plan. We show a line for each child, the discounts that apply, your total and what you pay to secure a place.
           </p>
           <div className="mt-6 max-w-2xl">
             <FeeEstimator
@@ -146,6 +145,8 @@ export default async function FeesPage() {
               siblingDiscountNote={settings.siblingDiscountNote}
               discounts={settings.discounts}
               annualDiscountPercent={discountPercent}
+              applicationFee={settings.applicationFee}
+              registrationFee={settings.registrationFee}
             />
           </div>
         </Container>

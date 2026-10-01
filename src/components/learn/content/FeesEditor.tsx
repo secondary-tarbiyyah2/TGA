@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { formatGBP } from "@/lib/format";
+import type { Discount } from "@/content/seed";
 import {
   FEE_DEFAULTS, FEE_POLICY_DEFAULTS, FEES_POLICY_REMINDER, roundingNote, INSTALMENT_CHOICES, MAX_INSTALMENTS, MAX_TERMS,
   computeFeeSchedule, describePlan, sanitiseFeeSettings, sumPounds,
@@ -20,7 +21,11 @@ type SettingsDraft = {
   annual_discount_percent: string;
   payment_schedule_text: string;
   admissions_deposit_amount: string;
+  sibling_discount_percent: string;
+  sibling_discount_note: string;
 };
+
+type DiscountDraft = { key: string; label: string; type: "percent" | "fixedAmount"; value: string; note: string; eligibility: string; auto: boolean };
 
 const input = "mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm";
 let keyCounter = 0;
@@ -40,6 +45,7 @@ export function FeesEditor() {
   const [bands, setBands] = useState<BandDraft[] | null>(null);
   const [removedIds, setRemovedIds] = useState<string[]>([]);
   const [settings, setSettings] = useState<SettingsDraft | null>(null);
+  const [discountDrafts, setDiscountDrafts] = useState<DiscountDraft[]>([]);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
@@ -65,7 +71,19 @@ export function FeesEditor() {
         // Never blank: pre-fill the default so the admin edits real text.
         payment_schedule_text: typeof s.payment_schedule_text === "string" && s.payment_schedule_text.trim() ? s.payment_schedule_text : FEE_POLICY_DEFAULTS.paymentScheduleText,
         admissions_deposit_amount: s.admissions_deposit_amount != null ? String(s.admissions_deposit_amount) : "",
+        sibling_discount_percent: s.sibling_discount_percent != null ? String(s.sibling_discount_percent) : "",
+        sibling_discount_note: typeof s.sibling_discount_note === "string" ? s.sibling_discount_note : "",
       });
+      const cat = Array.isArray(s.discounts) ? (s.discounts as Discount[]) : [];
+      setDiscountDrafts(cat.map((d) => ({
+        key: newKey(),
+        label: d.label ?? "",
+        type: d.type === "fixedAmount" ? "fixedAmount" : "percent",
+        value: String(d.type === "fixedAmount" ? d.fixedAmount ?? "" : d.percent ?? ""),
+        note: d.note ?? "",
+        eligibility: d.eligibilityDescription ?? "",
+        auto: !!d.appliesAutomatically,
+      })));
     })();
     return () => {
       cancelled = true;
@@ -93,6 +111,15 @@ export function FeesEditor() {
   }
   if (!settings.payment_schedule_text.trim()) problems.push("Payment schedule text cannot be blank.");
   if (settings.registration_fee.trim() !== "" && (numOrNull(settings.registration_fee) ?? -1) < 0) problems.push("Registration fee must be zero or more.");
+  if (settings.sibling_discount_percent.trim() !== "") {
+    const d = numOrNull(settings.sibling_discount_percent);
+    if (d == null || d < 0 || d > 100) problems.push("Sibling discount must be between 0 and 100 (%).");
+  }
+  discountDrafts.forEach((d, i) => {
+    const v = numOrNull(d.value);
+    if (!d.label.trim()) problems.push(`Discount ${i + 1}: name is required.`);
+    if (v == null || v <= 0 || (d.type === "percent" && v > 100)) problems.push(`Discount ${i + 1}: enter a ${d.type === "percent" ? "percentage between 0 and 100" : "positive amount in pounds"}.`);
+  });
   if (settings.admissions_deposit_amount.trim() !== "" && (numOrNull(settings.admissions_deposit_amount) ?? -1) < 0) problems.push("Deposit must be zero or more.");
 
   const patch = (key: string, p: Partial<BandDraft>) => setBands(bands.map((b) => (b.key === key ? { ...b, ...p } : b)));
@@ -123,6 +150,19 @@ export function FeesEditor() {
       annual_discount_percent: numOrNull(settings.annual_discount_percent) ?? FEE_POLICY_DEFAULTS.annualDiscountPercent,
       payment_schedule_text: settings.payment_schedule_text.trim() || FEE_POLICY_DEFAULTS.paymentScheduleText,
       admissions_deposit_amount: numOrNull(settings.admissions_deposit_amount),
+      sibling_discount_percent: numOrNull(settings.sibling_discount_percent),
+      sibling_discount_note: settings.sibling_discount_note.trim() || null,
+      discounts: discountDrafts.map((d): Discount => {
+        const v = numOrNull(d.value) as number;
+        return {
+          label: d.label.trim(),
+          type: d.type,
+          ...(d.type === "percent" ? { percent: v } : { fixedAmount: v }),
+          ...(d.note.trim() ? { note: d.note.trim() } : {}),
+          ...(d.eligibility.trim() ? { eligibilityDescription: d.eligibility.trim() } : {}),
+          appliesAutomatically: d.auto,
+        };
+      }),
     }).eq("id", true);
     if (sErr) {
       setSaving(false);
@@ -190,7 +230,7 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Application fee (£, non-refundable)
             <input type="number" min={0} step="0.01" value={settings.application_fee} onChange={(e) => setSettings({ ...settings, application_fee: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Default £{FEE_POLICY_DEFAULTS.applicationFee} (Fees Policy).</span>
+            <span className="mt-0.5 block text-xs text-ink/60">Default £{FEE_POLICY_DEFAULTS.applicationFee} (Fees Policy). Covers the baseline assessment and admin review. Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink">
             Annual payment discount (%)
@@ -198,8 +238,9 @@ export function FeesEditor() {
             <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 19 Dec 2026. Applied automatically in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink">
-            Registration fee (£, one-time)
+            Registration fee (£, one-time, per child)
             <input type="number" min={0} step="0.01" value={settings.registration_fee} onChange={(e) => setSettings({ ...settings, registration_fee: e.target.value })} className={input} />
+            <span className="mt-0.5 block text-xs text-ink/60">Default £{FEE_POLICY_DEFAULTS.registrationFee} (Fees Policy). Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink sm:col-span-2">
             Payment schedule text (shown on the Fees page)
@@ -212,6 +253,69 @@ export function FeesEditor() {
             <span className="mt-0.5 block text-xs text-ink/60">Default deposit used by the admissions process. Leave blank for none.</span>
           </label>
         </div>
+      </Card>
+
+      <Card title="Discounts" description="Used by the fee estimator. The annual payment discount is set above. A sibling discount applies to each child after the first; other discounts below are applied automatically or offered as tick-boxes.">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <label className="text-sm text-ink">
+            Sibling discount (%)
+            <input type="number" min={0} max={100} step="0.1" value={settings.sibling_discount_percent} onChange={(e) => setSettings({ ...settings, sibling_discount_percent: e.target.value })} className={input} />
+            <span className="mt-0.5 block text-xs text-ink/60">Leave blank for no sibling discount.</span>
+          </label>
+          <label className="text-sm text-ink">
+            Sibling discount note
+            <input value={settings.sibling_discount_note} onChange={(e) => setSettings({ ...settings, sibling_discount_note: e.target.value })} className={input} placeholder="e.g. Applies to the second and each later child." />
+          </label>
+        </div>
+        <ul className="mt-4 space-y-3">
+          {discountDrafts.map((d) => {
+            const patchD = (p: Partial<DiscountDraft>) => setDiscountDrafts(discountDrafts.map((x) => (x.key === d.key ? { ...x, ...p } : x)));
+            return (
+              <li key={d.key} className="grid gap-3 rounded-xl border border-gold-light/50 p-4 sm:grid-cols-2">
+                <label className="text-sm text-ink">
+                  Name
+                  <input value={d.label} onChange={(e) => patchD({ label: e.target.value })} className={input} />
+                </label>
+                <div className="grid grid-cols-2 gap-3">
+                  <label className="text-sm text-ink">
+                    Type
+                    <select value={d.type} onChange={(e) => patchD({ type: e.target.value as DiscountDraft["type"] })} className={input}>
+                      <option value="percent">Percent (%)</option>
+                      <option value="fixedAmount">Fixed amount (£)</option>
+                    </select>
+                  </label>
+                  <label className="text-sm text-ink">
+                    {d.type === "percent" ? "Percent" : "Amount (£)"}
+                    <input type="number" min={0} step="0.01" value={d.value} onChange={(e) => patchD({ value: e.target.value })} className={input} />
+                  </label>
+                </div>
+                <label className="text-sm text-ink">
+                  Note shown with the discount (optional)
+                  <input value={d.note} onChange={(e) => patchD({ note: e.target.value })} className={input} />
+                </label>
+                <label className="text-sm text-ink">
+                  Who qualifies (optional)
+                  <input value={d.eligibility} onChange={(e) => patchD({ eligibility: e.target.value })} className={input} />
+                </label>
+                <label className="flex items-center gap-2 text-sm text-ink sm:col-span-2">
+                  <input type="checkbox" checked={d.auto} onChange={(e) => patchD({ auto: e.target.checked })} />
+                  Apply automatically to every estimate (otherwise families tick it if they believe they qualify)
+                </label>
+                <div className="sm:col-span-2">
+                  <button type="button" onClick={() => setDiscountDrafts(discountDrafts.filter((x) => x.key !== d.key))} className="rounded-full border border-red-300 px-3 py-1 text-xs text-red-700">Remove discount</button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+        <button
+          type="button"
+          onClick={() => setDiscountDrafts([...discountDrafts, { key: newKey(), label: "", type: "percent", value: "", note: "", eligibility: "", auto: false }])}
+          className="mt-4 rounded-full border border-gold-light/60 px-4 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream"
+        >
+          Add a discount
+        </button>
+        <p className="mt-2 text-xs text-ink/60">Save with the &quot;Save fees&quot; button below.</p>
       </Card>
 
       <Card title="Fee bands" description="Name, order, annual fee and an optional note. Published on the Fees page and used by the fee estimator.">

@@ -5,29 +5,46 @@ import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import {
   DOCUMENTS_BUCKET,
+  DOCUMENT_ACCEPT,
+  DOCUMENT_CONTENT_TYPES,
   GENDER_OPTIONS,
+  MAX_ID_FILES,
   MAX_REPORT_BYTES,
   MAX_REPORT_FILES,
+  PAYMENT_PLAN_OPTIONS,
   YEAR_GROUP_OPTIONS,
+  admissionsProcessSteps,
+  documentExtension,
   suggestYearGroup,
+  type DocumentKind,
 } from "@/components/admissions/applicationShared";
+import { formatGBP } from "@/lib/format";
 
 type TextKey =
   | "parentName" | "parentEmail" | "parentPhone" | "relationship" | "address"
   | "childFirstName" | "childLastName" | "childDob" | "childGender"
   | "yearGroup" | "preferredStart" | "currentSchool" | "currentSchoolYear"
-  | "islamicEducation" | "sendNotes" | "howHeard" | "siblingDetails" | "declarationName" | "website";
+  | "islamicEducation" | "sendNotes" | "howHeard" | "siblingDetails" | "declarationName" | "website" | "paymentPlan";
 type BoolKey = "sibling" | "consentContact" | "consentData";
 type Values = Record<TextKey, string> & Record<BoolKey, boolean>;
 type Errors = Partial<Record<TextKey | BoolKey, string>>;
 type Phase = "loading" | "closed" | "open" | "submitting" | "success";
-type Errors2 = { reports?: string };
+type FileErrors = Partial<Record<DocumentKind, string>>;
+type SiblingApplicant = { name: string; yearGroup: string };
+
+const STEP_TITLES = ["About you and your child", "Documents", "Plan and declaration"] as const;
+const STEP_FIELDS: (TextKey | BoolKey)[][] = [
+  ["parentName", "parentEmail", "parentPhone", "childFirstName", "childLastName", "childDob", "childGender", "yearGroup"],
+  [],
+  ["paymentPlan", "consentContact", "consentData", "declarationName"],
+];
+const KIND_LIMITS: Record<DocumentKind, number> = { report: MAX_REPORT_FILES, parent_id: MAX_ID_FILES, child_id: MAX_ID_FILES };
 
 const INITIAL: Values = {
   parentName: "", parentEmail: "", parentPhone: "", relationship: "", address: "",
   childFirstName: "", childLastName: "", childDob: "", childGender: "",
   yearGroup: "", preferredStart: "", currentSchool: "", currentSchoolYear: "",
-  islamicEducation: "", sendNotes: "", howHeard: "", siblingDetails: "", declarationName: "", website: "",
+  islamicEducation: "", sendNotes: "", howHeard: "", siblingDetails: "", declarationName: "", website: "", paymentPlan: "",
   sibling: false, consentContact: false, consentData: false,
 };
 
@@ -39,7 +56,15 @@ const FIELD_ORDER: (TextKey | BoolKey)[] = [
 
 const inputCls = "mt-1 w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-ink disabled:opacity-60 aria-[invalid=true]:border-red-600";
 
-function validate(v: Values): Errors {
+function validate(v: Values, step?: number): Errors {
+  const all = validateAll(v);
+  if (step == null) return all;
+  const e: Errors = {};
+  for (const k of STEP_FIELDS[step]) if (all[k]) e[k] = all[k];
+  return e;
+}
+
+function validateAll(v: Values): Errors {
   const e: Errors = {};
   if (!v.parentName.trim()) e.parentName = "Please enter your full name.";
   if (!v.parentEmail.trim()) e.parentEmail = "Please enter your email address.";
@@ -59,6 +84,7 @@ function validate(v: Values): Errors {
   }
   if (v.childGender !== "Male" && v.childGender !== "Female") e.childGender = "Please choose Male or Female.";
   if (!v.yearGroup) e.yearGroup = "Please choose the year group you are applying for.";
+  if (v.paymentPlan !== "annual" && v.paymentPlan !== "termly" && v.paymentPlan !== "monthly") e.paymentPlan = "Please choose the payment plan you expect to use. You can change it later.";
   if (!v.consentContact) e.consentContact = "Please tick the box to say we may contact you about this application.";
   if (!v.consentData) e.consentData = "Please tick the box to agree to us using your information for this application.";
   if (!v.declarationName.trim()) e.declarationName = "Please type your full name to confirm the declaration.";
@@ -92,15 +118,18 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   );
 }
 
-export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
+export function ApplyForm({ admissionsEmail, applicationFee, registrationFee }: { admissionsEmail: string; applicationFee?: number; registrationFee?: number }) {
   const [phase, setPhase] = useState<Phase>("loading");
   const [values, setValues] = useState<Values>(INITIAL);
   const [errors, setErrors] = useState<Errors>({});
   const [submitError, setSubmitError] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
-  const [files, setFiles] = useState<File[]>([]);
-  const [fileError, setFileError] = useState<Errors2["reports"]>();
-  const [uploadWarning, setUploadWarning] = useState(false);
+  const [step, setStep] = useState(0);
+  const [docs, setDocs] = useState<Record<DocumentKind, File[]>>({ report: [], parent_id: [], child_id: [] });
+  const [fileErrors, setFileErrors] = useState<FileErrors>({});
+  const [failedKinds, setFailedKinds] = useState<DocumentKind[]>([]);
+  const [childrenCount, setChildrenCount] = useState(1);
+  const [siblingApplicants, setSiblingApplicants] = useState<SiblingApplicant[]>([]);
   // Once the family picks a year group themselves we stop overwriting it.
   const [yearTouched, setYearTouched] = useState(false);
   const suggestion = suggestYearGroup(values.childDob, values.preferredStart);
@@ -151,28 +180,69 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
     "aria-describedby": errors[k] ? `e-f-${k}` : undefined,
   });
 
-  function addFiles(list: FileList | null) {
+  function addFiles(kind: DocumentKind, list: FileList | null) {
     if (!list) return;
     const incoming = Array.from(list);
-    const bad = incoming.find((f) => !(f.type === "application/pdf" || f.name.toLowerCase().endsWith(".pdf")));
-    if (bad) return setFileError(`"${bad.name}" is not a PDF. Please upload PDF files only.`);
+    const bad = incoming.find((f) => documentExtension(f) === null);
+    if (bad) return setFileErrors((e) => ({ ...e, [kind]: `"${bad.name}" is not a PDF, JPG or PNG. Please upload one of those types.` }));
     const big = incoming.find((f) => f.size > MAX_REPORT_BYTES);
-    if (big) return setFileError(`"${big.name}" is larger than 10 MB. Please upload a smaller file.`);
-    if (files.length + incoming.length > MAX_REPORT_FILES) return setFileError(`You can upload up to ${MAX_REPORT_FILES} files.`);
-    setFileError(undefined);
-    setFiles((f) => [...f, ...incoming]);
+    if (big) return setFileErrors((e) => ({ ...e, [kind]: `"${big.name}" is larger than 10 MB. Please upload a smaller file.` }));
+    if (docs[kind].length + incoming.length > KIND_LIMITS[kind]) return setFileErrors((e) => ({ ...e, [kind]: `You can upload up to ${KIND_LIMITS[kind]} files here.` }));
+    setFileErrors((e) => ({ ...e, [kind]: undefined }));
+    setDocs((d) => ({ ...d, [kind]: [...d[kind], ...incoming] }));
+  }
+
+  function setChildren(n: number) {
+    const count = Math.max(1, Math.min(6, n));
+    setChildrenCount(count);
+    setSiblingApplicants((list) => Array.from({ length: count - 1 }, (_, i) => list[i] ?? { name: "", yearGroup: "" }));
+  }
+  function setSibling(i: number, patch: Partial<SiblingApplicant>) {
+    setSiblingApplicants((list) => list.map((s, j) => (j === i ? { ...s, ...patch } : s)));
+  }
+
+  /** Step 2 (documents): parent and child ID are required up front. */
+  function validateDocs(): FileErrors {
+    const e: FileErrors = {};
+    if (docs.parent_id.length === 0) e.parent_id = "Please upload photo ID for a parent or guardian.";
+    if (docs.child_id.length === 0) e.child_id = "Please upload your child's passport or birth certificate.";
+    return e;
+  }
+
+  function goNext() {
+    const found = validate(values, step);
+    const fe = step === 1 ? validateDocs() : {};
+    setErrors((er) => ({ ...er, ...found }));
+    if (step === 1) setFileErrors((f) => ({ ...f, ...fe }));
+    const first = STEP_FIELDS[step].find((k) => found[k]);
+    if (first) {
+      formRef.current?.querySelector<HTMLElement>(`#f-${first}`)?.focus();
+      return;
+    }
+    const firstDoc = (["parent_id", "child_id"] as DocumentKind[]).find((k) => fe[k]);
+    if (firstDoc) {
+      formRef.current?.querySelector<HTMLElement>(`#f-doc-${firstDoc}`)?.focus();
+      return;
+    }
+    setStep(step + 1);
+    formRef.current?.scrollIntoView({ block: "start" });
   }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (busy) return;
+    if (step < STEP_TITLES.length - 1) return goNext();
     setSubmitError(false);
     const found = validate(values);
     setErrors(found);
+    const docErr = validateDocs();
+    setFileErrors((f) => ({ ...f, ...docErr }));
+    // Send the family back to the step holding the first problem.
+    if (STEP_FIELDS[0].some((k) => found[k])) return setStep(0);
+    if (docErr.parent_id || docErr.child_id) return setStep(1);
     const first = FIELD_ORDER.find((k) => found[k]);
     if (first) {
-      const el = formRef.current?.querySelector<HTMLElement>(`#f-${first}`);
-      el?.focus();
+      formRef.current?.querySelector<HTMLElement>(`#f-${first}`)?.focus();
       return;
     }
     // Honeypot: bots fill the hidden field. Pretend it worked, send nothing.
@@ -209,6 +279,11 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
       how_heard: nullIfEmpty(values.howHeard),
       sibling_at_tarbiyyah: values.sibling,
       sibling_details: values.sibling ? nullIfEmpty(values.siblingDetails) : null,
+      payment_plan_intent: values.paymentPlan,
+      children_applying: childrenCount,
+      sibling_applicants: siblingApplicants
+        .map((s) => ({ name: s.name.trim(), year_group: s.yearGroup }))
+        .filter((s) => s.name !== "" || s.year_group !== ""),
       consent_contact: values.consentContact,
       consent_data: values.consentData,
       declaration_name: values.declarationName.trim(),
@@ -218,16 +293,21 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
       setSubmitError(true);
       return;
     }
-    // Reports go in after the application exists: storage only accepts
-    // uploads for an application created in the last hour (migration 0041).
-    let failed = false;
-    for (const f of files) {
-      const { error: upErr } = await supabase.storage
-        .from(DOCUMENTS_BUCKET)
-        .upload(`${applicationId}/${crypto.randomUUID()}.pdf`, f, { contentType: "application/pdf", upsert: false });
-      if (upErr) failed = true;
+    // Documents go in after the application exists: storage only accepts
+    // uploads for an application created in the last hour (migration 0041/0060).
+    // File names carry the document kind: <application_id>/<kind>-<uuid>.<ext>.
+    const failed: DocumentKind[] = [];
+    for (const kind of Object.keys(docs) as DocumentKind[]) {
+      for (const f of docs[kind]) {
+        const ext = documentExtension(f);
+        if (!ext) continue;
+        const { error: upErr } = await supabase.storage
+          .from(DOCUMENTS_BUCKET)
+          .upload(`${applicationId}/${kind}-${crypto.randomUUID()}.${ext}`, f, { contentType: DOCUMENT_CONTENT_TYPES[ext], upsert: false });
+        if (upErr && !failed.includes(kind)) failed.push(kind);
+      }
     }
-    setUploadWarning(failed);
+    setFailedKinds(failed);
     setPhase("success");
   }
 
@@ -249,41 +329,77 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
   }
 
   if (phase === "success") {
+    const processSteps = admissionsProcessSteps({ applicationFee, registrationFee });
+    const uploadNote = failedKinds.length > 0
+      ? `Your application was sent, but we couldn't upload some documents. Please email them to ${admissionsEmail}.`
+      : "Thank you for uploading your documents. We will tell you if we need anything else.";
     return (
       <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
         <h3 className="text-center font-serif text-xl font-semibold text-ink">Application received. Thank you.</h3>
-        <h4 className="mt-6 font-semibold text-ink">What happens next</h4>
-        <ol className="mt-3 space-y-4 border-l-2 border-gold-light/70 pl-5">
-          <li className="relative">
-            <span aria-hidden="true" className="absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full bg-gold-500" />
-            <p className="text-sm font-medium text-ink">{files.length > 0 && !uploadWarning ? "School report received" : "Send your child's latest school report"}</p>
-            <p className="text-sm text-ink/70">
-              {files.length > 0 && !uploadWarning ? (
-                "Thank you for uploading it. We will let you know if we need anything else."
-              ) : (
-                <>
-                  {uploadWarning ? "Your application was sent, but we couldn't upload the report. " : ""}Please email it to{" "}
-                  <a href={`mailto:${admissionsEmail}`} className="font-semibold text-gold-700 underline">{admissionsEmail}</a>.
-                </>
-              )}
-            </p>
-          </li>
-          <li className="relative">
-            <span aria-hidden="true" className="absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full bg-gold-500" />
-            <p className="text-sm font-medium text-ink">Assessment and conversation</p>
-            <p className="text-sm text-ink/70">The admissions team will contact you to arrange the assessment (free of charge) and conversation.</p>
-          </li>
-          <li className="relative">
-            <span aria-hidden="true" className="absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full bg-gold-500" />
-            <p className="text-sm font-medium text-ink">Offer, fees and deposit</p>
-            <p className="text-sm text-ink/70">If we offer a place, we will explain the admin fee and deposit that confirm it, and ask for ID documents.</p>
-          </li>
+        <p className="mt-2 text-center text-sm text-ink/70">
+          You do not need to pay anything now. Here is what happens next.
+        </p>
+        <ol className="mt-6 space-y-4 border-l-2 border-gold-light/70 pl-5">
+          {processSteps.map((st, i) => (
+            <li key={st.title} className="relative">
+              <span aria-hidden="true" className={`absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full ${i === 0 ? "bg-gold-500" : "bg-gold-light"}`} />
+              <p className="text-sm font-medium text-ink">{i + 1}. {i === 0 ? "Apply: done" : st.title}</p>
+              <p className="text-sm text-ink/70">
+                {i === 0 ? uploadNote : st.body}
+                {i === 3 && " Interviews are held by video call."}
+              </p>
+            </li>
+          ))}
         </ol>
+        {values.paymentPlan && (
+          <p className="mt-6 rounded-lg bg-cream px-3 py-2 text-sm text-ink/80">
+            You told us you expect to pay <strong>{values.paymentPlan}</strong>
+            {childrenCount > 1 ? ` for ${childrenCount} children` : ""}. You can still change this before you accept an offer.
+            {registrationFee != null && ` The registration fee is ${formatGBP(registrationFee)} per child.`}
+          </p>
+        )}
       </div>
     );
   }
 
-  const errorCount = Object.values(errors).filter(Boolean).length;
+  const errorCount = Object.values(errors).filter(Boolean).length + Object.values(fileErrors).filter(Boolean).length;
+
+  function renderDocPicker({ kind, label, hint, optional }: { kind: DocumentKind; label: string; hint: string; optional?: boolean }) {
+    const list = docs[kind];
+    const err = fileErrors[kind];
+    return (
+      <div>
+        <Field id={`f-doc-${kind}`} label={label} optional={optional} hint={hint} error={err}>
+          <input
+            id={`f-doc-${kind}`}
+            type="file"
+            accept={DOCUMENT_ACCEPT}
+            multiple
+            disabled={busy || list.length >= KIND_LIMITS[kind]}
+            onChange={(e) => {
+              addFiles(kind, e.target.files);
+              e.target.value = "";
+            }}
+            aria-invalid={err ? true : undefined}
+            aria-describedby={err ? `e-f-doc-${kind}` : `h-f-doc-${kind}`}
+            className={`${inputCls} file:mr-3 file:rounded-md file:border-0 file:bg-cream file:px-3 file:py-1 file:text-sm`}
+          />
+        </Field>
+        {list.length > 0 && (
+          <ul className="mt-2 space-y-1 text-sm text-ink/80">
+            {list.map((f, i) => (
+              <li key={`${f.name}-${i}`} className="flex items-center justify-between gap-3 rounded-lg bg-cream px-3 py-1.5">
+                <span className="truncate">{f.name} <span className="text-ink/50">({(f.size / 1048576).toFixed(1)} MB)</span></span>
+                <button type="button" disabled={busy} onClick={() => setDocs((d) => ({ ...d, [kind]: d[kind].filter((_, j) => j !== i) }))} className="shrink-0 font-semibold text-gold-700 underline">
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    );
+  }
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} noValidate className="relative space-y-6" aria-busy={busy}>
@@ -295,6 +411,21 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
         </label>
       </div>
 
+      <nav aria-label="Application steps">
+        <ol className="flex flex-wrap gap-2 text-sm">
+          {STEP_TITLES.map((t, i) => (
+            <li
+              key={t}
+              aria-current={i === step ? "step" : undefined}
+              className={`rounded-full px-3 py-1 font-medium ${i === step ? "bg-gold-500 text-ink-900" : i < step ? "bg-cream text-ink" : "bg-white text-ink/60 ring-1 ring-gold-light/50"}`}
+            >
+              {i + 1}. {t}
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      {step === 0 && (<>
       <Section title="Parent or guardian">
         <Field id="f-parentName" label="Full name" error={errors.parentName}>
           <input {...props("parentName")} type="text" autoComplete="name" maxLength={120} className={inputCls} />
@@ -379,6 +510,9 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
         </Field>
       </Section>
 
+      </>)}
+
+      {step === 1 && (<>
       <Section title="Education so far">
         <Field id="f-currentSchool" label="Current school" optional>
           <input {...props("currentSchool")} type="text" maxLength={200} className={inputCls} />
@@ -387,39 +521,7 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
           <input {...props("currentSchoolYear")} type="text" maxLength={60} className={inputCls} />
         </Field>
         <div className="sm:col-span-2">
-          <Field
-            id="f-reports"
-            label="Latest school report(s)"
-            optional
-            hint={`PDF only, up to ${MAX_REPORT_FILES} files, 10 MB each. You can also email them to ${admissionsEmail}.`}
-            error={fileError}
-          >
-            <input
-              id="f-reports"
-              type="file"
-              accept="application/pdf,.pdf"
-              multiple
-              disabled={busy || files.length >= MAX_REPORT_FILES}
-              onChange={(e) => {
-                addFiles(e.target.files);
-                e.target.value = "";
-              }}
-              aria-describedby={fileError ? "e-f-reports" : "h-f-reports"}
-              className={`${inputCls} file:mr-3 file:rounded-md file:border-0 file:bg-cream file:px-3 file:py-1 file:text-sm`}
-            />
-          </Field>
-          {files.length > 0 && (
-            <ul className="mt-2 space-y-1 text-sm text-ink/80">
-              {files.map((f, i) => (
-                <li key={`${f.name}-${i}`} className="flex items-center justify-between gap-3 rounded-lg bg-cream px-3 py-1.5">
-                  <span className="truncate">{f.name} <span className="text-ink/50">({(f.size / 1048576).toFixed(1)} MB)</span></span>
-                  <button type="button" disabled={busy} onClick={() => setFiles((l) => l.filter((_, j) => j !== i))} className="shrink-0 font-semibold text-gold-700 underline">
-                    Remove
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
+          {renderDocPicker({ kind: "report", label: "Latest school report(s)", optional: true, hint: `PDF, JPG or PNG, up to ${MAX_REPORT_FILES} files, 10 MB each. You can also email them to ${admissionsEmail}.` })}
         </div>
         <div className="sm:col-span-2">
           <Field id="f-islamicEducation" label="Previous Islamic education" optional hint="For example Qur'an level, any hifz, and Arabic.">
@@ -428,6 +530,20 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
         </div>
       </Section>
 
+      <Section title="Identity documents">
+        <p className="text-sm text-ink/70 sm:col-span-2">
+          Admissions is a safeguarding process, so we verify the identity of the adults with parental responsibility and of your child. Files are stored privately and only admissions staff can open them. We will ask for proof of address and any other documents later, if needed.
+        </p>
+        <div className="sm:col-span-2">
+          {renderDocPicker({ kind: "parent_id", label: "Photo ID for a parent or guardian", hint: `Passport, driving licence or national ID card. PDF, JPG or PNG, up to ${MAX_ID_FILES} files, 10 MB each.` })}
+        </div>
+        <div className="sm:col-span-2">
+          {renderDocPicker({ kind: "child_id", label: "Your child's passport or birth certificate", hint: `PDF, JPG or PNG, up to ${MAX_ID_FILES} files, 10 MB each.` })}
+        </div>
+      </Section>
+      </>)}
+
+      {step === 2 && (<>
       <Section title="Anything we should know">
         <div className="sm:col-span-2">
           <Field id="f-sendNotes" label="Special educational needs, medical needs or anything else we should know" optional hint="This helps us prepare the right support. Share only what you are comfortable with.">
@@ -458,6 +574,44 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
               <input {...props("siblingDetails")} type="text" maxLength={500} className={inputCls} />
             </Field>
           </div>
+        )}
+      </Section>
+
+      <Section title="Fees and siblings">
+        <Field id="f-paymentPlan" label="Payment plan you expect to use" error={errors.paymentPlan} hint="Annual, termly or monthly. This is only your intention; you confirm it when you accept an offer.">
+          <select {...props("paymentPlan")} className={inputCls}>
+            <option value="">Select a plan</option>
+            {PAYMENT_PLAN_OPTIONS.map((p) => (
+              <option key={p.value} value={p.value}>{p.label}</option>
+            ))}
+          </select>
+        </Field>
+        <Field id="f-childrenCount" label="Number of children applying together" hint="Including this child. Siblings may qualify for a discount.">
+          <select id="f-childrenCount" value={childrenCount} disabled={busy} onChange={(e) => setChildren(Number(e.target.value))} className={inputCls}>
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <option key={n} value={n}>{n}</option>
+            ))}
+          </select>
+        </Field>
+        {siblingApplicants.map((sib, i) => (
+          <div key={i} className="grid gap-4 sm:col-span-2 sm:grid-cols-2">
+            <Field id={`f-sibName-${i}`} label={`Child ${i + 2}: full name`}>
+              <input id={`f-sibName-${i}`} type="text" value={sib.name} maxLength={120} disabled={busy} onChange={(e) => setSibling(i, { name: e.target.value })} className={inputCls} />
+            </Field>
+            <Field id={`f-sibYear-${i}`} label={`Child ${i + 2}: year group applying for`}>
+              <select id={`f-sibYear-${i}`} value={sib.yearGroup} disabled={busy} onChange={(e) => setSibling(i, { yearGroup: e.target.value })} className={inputCls}>
+                <option value="">Select a year group</option>
+                {YEAR_GROUP_OPTIONS.map((y) => (
+                  <option key={y.value} value={y.value}>{y.label}</option>
+                ))}
+              </select>
+            </Field>
+          </div>
+        ))}
+        {childrenCount > 1 && (
+          <p className="text-sm text-ink/70 sm:col-span-2">
+            Each child needs their own application form, so please submit one for each child. Telling us the names here lets us link them and apply any sibling discount.
+          </p>
         )}
       </Section>
 
@@ -516,7 +670,7 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
 
       {errorCount > 0 && (
         <p role="alert" className="text-sm font-medium text-red-700">
-          Please fix the {errorCount === 1 ? "problem" : `${errorCount} problems`} marked above and send again.
+          Please fix the {errorCount === 1 ? "problem" : `${errorCount} problems`} marked above and continue.
         </p>
       )}
       {submitError && (
@@ -526,13 +680,37 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
         </p>
       )}
 
-      <button
-        type="submit"
-        disabled={busy}
-        className="w-full rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-60 sm:w-auto"
-      >
-        {busy ? "Sending…" : "Submit application"}
-      </button>
+      </>)}
+
+      <div className="flex flex-wrap items-center gap-3">
+        {step > 0 && (
+          <button
+            type="button"
+            disabled={busy}
+            onClick={() => setStep(step - 1)}
+            className="rounded-full border border-gold-light/70 bg-white px-6 py-3 text-sm font-semibold text-ink disabled:opacity-60"
+          >
+            Back
+          </button>
+        )}
+        {step < STEP_TITLES.length - 1 ? (
+          <button
+            type="button"
+            onClick={goNext}
+            className="rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95"
+          >
+            Next: {STEP_TITLES[step + 1]}
+          </button>
+        ) : (
+          <button
+            type="submit"
+            disabled={busy}
+            className="rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-60"
+          >
+            {busy ? "Sending…" : "Submit application"}
+          </button>
+        )}
+      </div>
     </form>
   );
 }

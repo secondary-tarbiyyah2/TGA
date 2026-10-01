@@ -250,6 +250,19 @@ export function ApplicationsTab() {
           }
           if (!window.confirm(`The ${list} ${blockers.length > 1 ? "are" : "is"} not marked as received. As Headteacher you can override. Move to Accepted anyway?`)) return false;
         }
+        // Proofs of payment awaiting staff review (0061): they must be verified or rejected first.
+        const { count: pendingProofs } = await supabase
+          .from("admissions_payment_proofs")
+          .select("id", { count: "exact", head: true })
+          .eq("application_id", id)
+          .eq("status", "pending");
+        if ((pendingProofs ?? 0) > 0) {
+          if (!isHeadteacher) {
+            window.alert(`Can't accept yet: ${pendingProofs} proof${pendingProofs === 1 ? "" : "s"} of payment ${pendingProofs === 1 ? "is" : "are"} waiting to be verified. Review them in the Payments tab, or ask the Headteacher to override.`);
+            return false;
+          }
+          if (!window.confirm(`${pendingProofs} proof${pendingProofs === 1 ? "" : "s"} of payment ${pendingProofs === 1 ? "is" : "are"} still unverified. As Headteacher you can override. Move to Accepted anyway?`)) return false;
+        }
         if (!current.id_documents_received && !window.confirm("ID documents are not marked as received yet. Move to Accepted anyway?")) return false;
       }
       setActionError(null);
