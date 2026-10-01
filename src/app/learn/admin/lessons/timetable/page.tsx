@@ -239,6 +239,7 @@ function TimetableContent() {
             onAdd={(weekday, start, end) => setEditor({ slot: null, weekday, start, end })}
             onMove={moveSlot}
             moveNotes={moveNotes}
+            breaks={data.protectedTimes.filter((p) => p.academic_year_id === runYearId)}
           />
 
           <ReconciliationPanel conflicts={conflicts} canRerun={Boolean(editable)} onRerun={rerunKeepingLocked} busy={rerunBusy} lockedCount={lockedCount} />
