@@ -135,7 +135,7 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
       }
 
       const items: DayItem[] = [];
-      const blank = { endTime: null, subject: null, classId: null, className: null, teacherId: null, teacherName: null, childId: null, childName: null, childIds: [], room: null, joinUrl: null, href: null, note: null };
+      const blank = { time: null as string | null, endTime: null, subject: null, classId: null, className: null, teacherId: null, teacherName: null, childId: null, childName: null, childIds: [], room: null, joinUrl: null, href: null, note: null };
       const ownChildIds = scope.kind === "parent" ? scope.children.map((c) => c.id) : scope.kind === "student" ? [scope.childId] : [];
 
       // ── Lessons: instances in range, then their slots (chunked). ──
