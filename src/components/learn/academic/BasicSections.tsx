@@ -49,7 +49,9 @@ export function YearsSection({ years, terms, reload }: Common & { years: Academi
     await run(
       () => supabase.from("academic_years").insert({ label: form.label.trim(), starts_on: form.starts_on, ends_on: form.ends_on }),
       () => setForm({ label: "", starts_on: "", ends_on: "" }),
-    ).then((ok) => ok && reload());
+    ).then(async (ok) => {
+      if (ok) await reload();
+    });
   };
 
   const save = async (id: string) => {
