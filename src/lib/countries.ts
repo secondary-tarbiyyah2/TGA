@@ -3,7 +3,7 @@
 // than a long forced <select>, so typing narrows it instead of scrolling
 // through ~195 options, while still allowing free text for anyone whose
 // country isn't listed or who prefers to just type it.
-export const COUNTRIES = [
+const RAW_COUNTRIES = [
   "United Kingdom", "Ireland", "United States", "Canada", "Australia", "New Zealand",
   "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Austria",
   "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize",
@@ -31,3 +31,6 @@ export const COUNTRIES = [
   "United Arab Emirates", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela",
   "Vietnam", "Yemen", "Zambia", "Zimbabwe",
 ];
+
+// Strictly A–Z (the list above is grouped for maintenance, not display).
+export const COUNTRIES: string[] = [...new Set(RAW_COUNTRIES)].sort((a, b) => a.localeCompare(b, "en"));
