@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { REASONS, saveReason } from "@/components/learn/absences/data";
 
 export type Status = "present" | "late" | "absent" | "excused";
 export const STATUSES: { value: Status; label: string; on: string }[] = [
@@ -19,12 +20,17 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   const [marks, setMarks] = useState<Record<string, Status>>({});
   const marksRef = useRef<Record<string, Status>>({});
   const totalRef = useRef(0);
+  const [lessonDate, setLessonDate] = useState<string | null>(null);
+  const [reasons, setReasons] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState<Record<string, "saving" | "saved" | "error">>({});
 
   useEffect(() => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     (async () => {
+      const { data: li } = await supabase.from("lesson_instances").select("date").eq("id", lessonId).maybeSingle();
+      const date = (li as { date: string } | null)?.date || null;
+      setLessonDate(date);
       const [{ data: enr }, { data: att }] = await Promise.all([
         supabase.from("enrolments").select("children(id, name)").eq("class_id", classId),
         supabase.from("attendance_records").select("child_id, status").eq("lesson_instance_id", lessonId),
@@ -35,6 +41,10 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           a.name.localeCompare(b.name),
         ),
       );
+      if (date) {
+        const { data: rs } = await supabase.from("absence_reasons").select("child_id, reason_code").eq("absence_date", date);
+        setReasons(Object.fromEntries(((rs as { child_id: string; reason_code: string }[]) || []).map((r) => [r.child_id, r.reason_code])));
+      }
       const m: Record<string, Status> = {};
       for (const a of (att as { child_id: string; status: Status }[]) || []) m[a.child_id] = a.status;
       setMarks(m);
@@ -67,6 +77,12 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [lessonId],
   );
+
+  const setReason = async (childId: string, code: string) => {
+    if (!lessonDate || !code) return;
+    setReasons((r) => ({ ...r, [childId]: code }));
+    await saveReason(childId, lessonDate, code, "");
+  };
 
   if (children === null) return <p className="px-5 py-4 text-sm text-ink/55">Loading register…</p>;
   if (children.length === 0) return <p className="px-5 py-4 text-sm text-ink/55">No students enrolled in this class yet.</p>;
@@ -119,6 +135,19 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                   );
                 })}
               </div>
+              {current === "absent" && lessonDate && (
+                <label className="flex w-full items-center gap-2 text-xs text-ink/60">
+                  Reason
+                  <select value={reasons[c.id] || ""} onChange={(e) => setReason(c.id, e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
+                    <option value="">Not recorded</option>
+                    {REASONS.map((r) => (
+                      <option key={r.value} value={r.value}>
+                        {r.label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
             </li>
           );
         })}

@@ -26,6 +26,8 @@ export type Absence = {
   classId: string;
   className: string;
   kind: AbsenceKind;
+  /** Staff-recorded reason code for this child and day, if any. */
+  reasonCode?: string;
 };
 
 export const STATUS_LABEL: Record<NoteStatus, string> = {
@@ -117,7 +119,16 @@ export function classify(childId: string, date: string, attendance: "absent" | "
   return sawNo ? "unauthorised" : "unexplained";
 }
 
-export async function fetchAbsences(from: string, to: string, notes: AbsenceNote[]): Promise<{ absences: Absence[]; error: string | null }> {
+/** Recorded reasons that count as an authorised / unauthorised explanation. */
+const REASON_KIND: Record<string, AbsenceKind> = {
+  illness: "authorised",
+  medical_appointment: "authorised",
+  family_emergency: "authorised",
+  religious_observance: "authorised",
+  holiday: "unauthorised",
+};
+
+export async function fetchAbsences(from: string, to: string, notes: AbsenceNote[], reasons: Record<string, string> = {}): Promise<{ absences: Absence[]; error: string | null }> {
   const supabase = getSupabaseClient();
   if (!supabase) return { absences: [], error: "Not connected." };
   const out: AttRaw[] = [];
@@ -137,6 +148,9 @@ export async function fetchAbsences(from: string, to: string, notes: AbsenceNote
   }
   const absences: Absence[] = out.map((r) => {
     const date = r.lesson_instances?.date || "";
+    let kind = classify(r.child_id, date, r.status, notes);
+    const reasonCode = reasons[`${r.child_id}|${date}`];
+    if (kind === "unexplained" && reasonCode && REASON_KIND[reasonCode]) kind = REASON_KIND[reasonCode];
     return {
       id: r.id,
       childId: r.child_id,
@@ -144,7 +158,8 @@ export async function fetchAbsences(from: string, to: string, notes: AbsenceNote
       date,
       classId: r.lesson_instances?.timetable_slots?.class_id || "",
       className: r.lesson_instances?.timetable_slots?.classes?.name || "Unknown class",
-      kind: classify(r.child_id, date, r.status, notes),
+      kind,
+      reasonCode,
     };
   });
   absences.sort((a, b) => b.date.localeCompare(a.date) || a.childName.localeCompare(b.childName));
@@ -155,6 +170,7 @@ export async function fetchAbsences(from: string, to: string, notes: AbsenceNote
 export function useAbsenceData(from: string, to: string) {
   const [notes, setNotes] = useState<AbsenceNote[] | null>(null);
   const [absences, setAbsences] = useState<Absence[] | null>(null);
+  const [reasonMap, setReasonMap] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [tick, setTick] = useState(0);
 
@@ -165,10 +181,13 @@ export function useAbsenceData(from: string, to: string) {
       const n = await fetchNotes();
       if (cancelled) return;
       setNotes(n.notes);
-      const a = await fetchAbsences(from, to, n.notes);
+      const rs = await fetchReasons(from, to);
+      if (cancelled) return;
+      const a = await fetchAbsences(from, to, n.notes, rs.map);
       if (cancelled) return;
       setAbsences(a.absences);
-      setError(n.error || a.error);
+      setReasonMap(rs.map);
+      setError(n.error || rs.error || a.error);
     })();
     return () => {
       cancelled = true;
@@ -176,5 +195,37 @@ export function useAbsenceData(from: string, to: string) {
   }, [from, to, tick]);
 
   const reload = useCallback(() => setTick((t) => t + 1), []);
-  return { notes, absences, error, reload };
+  return { notes, absences, reasonMap, error, reload };
+}
+
+/** Staff-recorded reasons keyed by "childId|date" (RLS scopes teachers to their classes). */
+export async function fetchReasons(from: string, to: string): Promise<{ map: Record<string, string>; error: string | null }> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return { map: {}, error: null };
+  const { data, error } = await supabase.from("absence_reasons").select("child_id, absence_date, reason_code").gte("absence_date", from).lte("absence_date", to).limit(5000);
+  const map: Record<string, string> = {};
+  for (const r of ((data as unknown as { child_id: string; absence_date: string; reason_code: string }[]) || [])) map[`${r.child_id}|${r.absence_date}`] = r.reason_code;
+  return { map, error: error ? error.message : null };
+}
+
+export const REASONS: { value: string; label: string }[] = [
+  { value: "illness", label: "Illness" },
+  { value: "medical_appointment", label: "Medical appointment" },
+  { value: "family_emergency", label: "Family emergency" },
+  { value: "religious_observance", label: "Religious observance" },
+  { value: "holiday", label: "Holiday" },
+  { value: "unknown", label: "Unknown / no contact" },
+  { value: "other", label: "Other" },
+];
+export const reasonLabel = (code?: string | null) => REASONS.find((r) => r.value === code)?.label || "";
+
+/** Save (or replace) the reason for a child's absence on a day. */
+export async function saveReason(childId: string, date: string, code: string, note: string): Promise<string | null> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return "Not connected.";
+  const userId = (await supabase.auth.getUser()).data.user?.id;
+  const { error } = await supabase
+    .from("absence_reasons")
+    .upsert({ child_id: childId, absence_date: date, reason_code: code, note: note.trim() || null, recorded_by: userId, recorded_at: new Date().toISOString() }, { onConflict: "child_id,absence_date" });
+  return error ? error.message : null;
 }

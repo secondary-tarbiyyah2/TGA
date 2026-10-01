@@ -108,7 +108,7 @@ export function FamilyAbsences() {
             {nudges.map((a) => (
               <li key={`${a.childId}|${a.date}`} className="flex flex-wrap items-center justify-between gap-2 text-sm text-amber-950">
                 <span>
-                  We marked {a.childName} absent on {formatDay(a.date)}. Tell us why
+                  Please tell us why {a.childName} was absent on {formatDay(a.date)}
                 </span>
                 <button type="button" onClick={() => prefill(a)} className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-sm font-semibold text-amber-950 hover:bg-amber-100">
                   Tell us why

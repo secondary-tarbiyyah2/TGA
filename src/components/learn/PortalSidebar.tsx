@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
-import { AREA_SUBTITLE, isActivePath, visibleSidebar, type PortalArea, type SidebarIcon } from "@/lib/learn/nav";
+import { AREA_SUBTITLE, isActivePath, visibleSidebarGroups, type PortalArea, type SidebarIcon } from "@/lib/learn/nav";
 
 // Outline icons, 20×20, drawn with stroke so they read like the rest of
 // the UI (Ihsan/Lucide style).
@@ -65,10 +65,39 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
   const pathname = usePathname();
   const signOut = useLearnSignOut();
   const [fullName, setFullName] = useState<string | null>(null);
-  const items = visibleSidebar(
+  const groups = visibleSidebarGroups(
     area,
     roles.map((r) => r.role),
   );
+  const activeGroup = groups.find((g) => g.items.some((i) => isActivePath(pathname, i.href)))?.label;
+  // Open state is remembered per area; the group holding the current page
+  // is always opened. Default: just the first group.
+  const storeKey = `learn.sidebar.open.${area}`;
+  const [openGroups, setOpenGroups] = useState<string[]>(() => groups.slice(0, 1).map((g) => g.label));
+  useEffect(() => {
+    let saved: string[] | null = null;
+    try {
+      const raw = window.localStorage.getItem(storeKey);
+      if (raw) saved = JSON.parse(raw) as string[];
+    } catch {
+      /* storage unavailable: keep defaults */
+    }
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- restore remembered state after mount
+    setOpenGroups((cur) => {
+      const base = Array.isArray(saved) ? saved : cur;
+      return activeGroup && !base.includes(activeGroup) ? [...base, activeGroup] : base;
+    });
+  }, [storeKey, activeGroup]);
+  const toggleGroup = (label: string) =>
+    setOpenGroups((cur) => {
+      const next = cur.includes(label) ? cur.filter((l) => l !== label) : [...cur, label];
+      try {
+        window.localStorage.setItem(storeKey, JSON.stringify(next));
+      } catch {
+        /* ignore */
+      }
+      return next;
+    });
   const areas = [...new Set(roles.map((r) => dashboardPathForRole(r.role)))];
   const roleLabel = [...new Set(roles.map((r) => learnRoleLabel(r.role)))].join(" · ");
   const displayName = fullName || session.user.email || "Your account";
@@ -92,31 +121,56 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
       <p className="px-6 pb-1 pt-4 text-[11px] font-semibold uppercase tracking-wider text-ink/45">{AREA_SUBTITLE[area]}</p>
 
       <nav aria-label="Portal" className="min-h-0 flex-1 overflow-y-auto px-3 pb-4">
-        <ul className="space-y-0.5">
-          {items.map((item) => {
-            const active = isActivePath(pathname, item.href);
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={onNavigate}
-                  aria-current={active ? "page" : undefined}
-                  className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-medium transition-colors ${
-                    active ? "bg-teal-100 text-teal-900" : "text-ink/75 hover:bg-cream hover:text-ink"
-                  }`}
+        {groups.map((g) => {
+          const grouped = g.label !== "";
+          const isOpen = !grouped || openGroups.includes(g.label) || g.label === activeGroup;
+          const listId = `sb-${area}-${g.label.replace(/\W+/g, "-")}`;
+          return (
+            <div key={g.label || "all"} className={grouped ? "mt-1" : ""}>
+              {grouped && (
+                <button
+                  type="button"
+                  onClick={() => toggleGroup(g.label)}
+                  aria-expanded={isOpen}
+                  aria-controls={listId}
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-ink/50 hover:bg-cream hover:text-ink/70"
                 >
-                  <NavIcon name={item.icon} />
-                  <span className="min-w-0 flex-1 truncate">{item.label}</span>
-                  {active && (
-                    <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4 text-teal-700">
-                      <path d="M7.5 5l5 5-5 5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  )}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+                  <span className={g.label === activeGroup ? "text-teal-800" : ""}>{g.label}</span>
+                  <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-4 w-4 transition-transform ${isOpen ? "rotate-90" : ""}`}>
+                    <path d="M7.5 5l5 5-5 5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              )}
+              {isOpen && (
+                <ul id={listId} className="space-y-0.5">
+                  {g.items.map((item) => {
+                    const active = isActivePath(pathname, item.href);
+                    return (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          onClick={onNavigate}
+                          aria-current={active ? "page" : undefined}
+                          className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-medium transition-colors ${
+                            active ? "bg-teal-100 text-teal-900" : "text-ink/75 hover:bg-cream hover:text-ink"
+                          }`}
+                        >
+                          <NavIcon name={item.icon} />
+                          <span className="min-w-0 flex-1 truncate">{item.label}</span>
+                          {active && (
+                            <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4 text-teal-700">
+                              <path d="M7.5 5l5 5-5 5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          )}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
+          );
+        })}
 
         {areas.length > 1 && (
           <div className="mt-5 border-t border-gold-light pt-3">

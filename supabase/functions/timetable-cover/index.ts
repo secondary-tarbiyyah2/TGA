@@ -54,8 +54,7 @@ Deno.serve(async (req) => {
     .single();
   if (slotErr || !slot) return jsonResponse({ ok: false, error: "slot_not_found" }, 404);
 
-  if (covering_teacher_user_id === slot.teacher_user_id) {
-    return jsonResponse({ ok: false, error: "same_teacher", detail: "The covering teacher can't be the original teacher." }, 400);
+  if (covering_teacher_user_id === slot.teacher_user_id) {    return jsonResponse({ ok: false, error: "same_teacher", detail: "The covering teacher can't be the original teacher." }, 400);
   }
 
   // Does the covering teacher already have another slot at this exact
@@ -87,10 +86,15 @@ Deno.serve(async (req) => {
     return jsonResponse({ ok: false, error: "covering_teacher_already_covering", detail: "That teacher is already covering another lesson at this time." }, 409);
   }
 
+  // Who would have taught it: the (class, subject) teacher in force on that
+  // date (migration 0051), falling back to the weekly slot's teacher.
+  const { data: effectiveTeacher } = await serviceClient.rpc("lesson_effective_teacher", { p_slot_id: slot_id, p_date: cover_date });
+  const originalTeacher = (effectiveTeacher as string | null) || slot.teacher_user_id;
+
   const { error: insertErr } = await serviceClient.from("cover_assignments").insert({
     slot_id,
     cover_date,
-    original_teacher_user_id: slot.teacher_user_id,
+    original_teacher_user_id: originalTeacher,
     covering_teacher_user_id,
     reason: reason || null,
     created_by: userData.user.id,
@@ -98,6 +102,13 @@ Deno.serve(async (req) => {
   if (insertErr) {
     return jsonResponse({ ok: false, error: "db_rejected", detail: insertErr.message }, 409);
   }
+
+  // The dated lesson (if already generated) now has the covering teacher.
+  await serviceClient
+    .from("lesson_instances")
+    .update({ teacher_user_id: covering_teacher_user_id })
+    .eq("timetable_slot_id", slot_id)
+    .eq("date", cover_date);
 
   return jsonResponse({ ok: true });
 });

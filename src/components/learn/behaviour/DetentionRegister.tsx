@@ -64,7 +64,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
     setError(null);
     const { error: err } = await supabase.from("detentions").update({ status }).eq("id", id);
     setBusy(false);
-    if (err) return setError("Couldn't update that detention.");
+    if (err) return setError("Couldn't update that follow-up session.");
     onChanged();
   };
 
@@ -94,7 +94,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
   return (
     <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-5">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-        <h3 className="text-base font-semibold text-ink">Detention register</h3>
+        <h3 className="text-base font-semibold text-ink">Online follow-up sessions</h3>
         <div className="flex gap-2">
           {canAct && btn("register", "Take register")}
           {btn("roster", "View roster")}
@@ -104,7 +104,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
 
       {view === "board" && (
         <div className="grid gap-4 md:grid-cols-3">
-          <Column title="Today" tone="text-teal-700" count={todays.length} empty="No detentions today.">
+          <Column title="Today" tone="text-teal-700" count={todays.length} empty="No follow-up sessions today.">
             {todays.map((d) => (
               <Item key={d.id} d={d} canAct={canAct} busy={busy} onSet={set} />
             ))}
@@ -133,7 +133,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
             )}
           </div>
           {todays.length + overdue.length === 0 ? (
-            <p className="rounded-lg border border-dashed border-gold-light px-3 py-6 text-center text-sm text-ink/55">No detentions to register today.</p>
+            <p className="rounded-lg border border-dashed border-gold-light px-3 py-6 text-center text-sm text-ink/55">No follow-up sessions to register today.</p>
           ) : (
             <ul className="grid gap-2 md:grid-cols-2">
               {[...overdue, ...todays].map((d) => (
@@ -146,7 +146,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
 
       {view === "roster" &&
         (roster.length === 0 ? (
-          <p className="rounded-lg border border-dashed border-gold-light px-3 py-6 text-center text-sm text-ink/55">No detentions have been issued yet.</p>
+          <p className="rounded-lg border border-dashed border-gold-light px-3 py-6 text-center text-sm text-ink/55">No follow-up sessions have been set yet.</p>
         ) : (
           <ul className="grid gap-2 md:grid-cols-2">
             {roster.map((d) => (

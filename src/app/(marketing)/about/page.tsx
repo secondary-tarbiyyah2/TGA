@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
+import { HubCards } from "@/components/HubCards";
+import { aboutHub } from "@/lib/nav";
 import { getAboutContent, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -101,6 +103,16 @@ export default async function AboutPage() {
               </blockquote>
             </div>
           )}
+        </Container>
+      </section>
+
+      <section className="geo-texture bg-cream section-pad">
+        <Container>
+          <Kicker>Explore</Kicker>
+          <h2 className="font-serif text-3xl font-semibold text-ink">More about the Academy.</h2>
+          <div className="mt-8">
+            <HubCards cards={aboutHub} />
+          </div>
         </Container>
       </section>
 

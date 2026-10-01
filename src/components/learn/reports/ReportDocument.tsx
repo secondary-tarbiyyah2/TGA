@@ -1,16 +1,12 @@
+import { PrintSheet } from "@/components/learn/print";
+import { PRINT_AREA } from "./printArea";
 import type { ClassSummary, ReportNarrative } from "./summary";
 
-export const PRINT_AREA = "report-print-area";
+export { PRINT_AREA };
 
-/** Hides everything except the .report-print-area element when printing. */
+/** A4 print rules: prints only the .report-print-area element, flowing across pages. */
 export function PrintStyles() {
-  return (
-    <style>{`@media print {
-  body * { visibility: hidden !important; }
-  .${PRINT_AREA}, .${PRINT_AREA} * { visibility: visible !important; }
-  .${PRINT_AREA} { position: absolute; left: 0; top: 0; width: 100%; border: none !important; box-shadow: none !important; }
-}`}</style>
-  );
+  return <PrintSheet />;
 }
 
 const STATUS_LABEL: Record<string, string> = {
@@ -141,6 +137,7 @@ export function ReportDocument({
   const legacy = Object.entries(subjectComments || {});
   return (
     <article className={`rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6 ${printing ? PRINT_AREA : ""}`}>
+      <p className="mb-2 hidden text-[10pt] font-semibold uppercase tracking-wider print:block">Tarbiyyah Global Academy</p>
       <header className="flex flex-wrap items-start justify-between gap-2 border-b border-gold-light/40 pb-3">
         <div className="min-w-0">
           <p className="text-xs uppercase tracking-wide text-ink/50">Progress Report</p>

@@ -81,12 +81,15 @@ for (const [label, terms] of byYear) {
   // single-day term is a valid edge case in real data).
   const yearEnds = ends > starts ? ends : new Date(new Date(starts).getTime() + 86400000).toISOString().slice(0, 10);
 
-  const { data: yearRow, error: yearErr } = await supabase
-    .from("academic_years")
-    .upsert({ label, starts_on: starts, ends_on: yearEnds, is_test: false }, { onConflict: "label" })
-    .select()
-    .single();
+  // Never overwrite an academic year that already exists (it may have been
+  // created in the portal, migration 0052); only create it when missing.
+  let { data: yearRow, error: yearErr } = await supabase.from("academic_years").select("*").eq("label", label).maybeSingle();
   if (yearErr) throw yearErr;
+  if (!yearRow) {
+    const ins = await supabase.from("academic_years").insert({ label, starts_on: starts, ends_on: yearEnds, is_test: false }).select().single();
+    if (ins.error) throw ins.error;
+    yearRow = ins.data;
+  }
 
   for (const t of terms) {
     const termEnds = t.endDate && t.endDate > t.date ? t.endDate : new Date(new Date(t.date).getTime() + 86400000).toISOString().slice(0, 10);
@@ -97,6 +100,7 @@ for (const [label, terms] of byYear) {
         starts_on: t.date,
         ends_on: termEnds,
         sanity_document_id: t._id,
+        source: "sanity", // portal-created terms (source='portal') are never touched by this script
         synced_at: new Date().toISOString(),
       },
       { onConflict: "sanity_document_id" }

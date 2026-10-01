@@ -1,11 +1,13 @@
 "use client";
 
+import { absoluteFileUrl } from "@/lib/learn/fileLinks";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { getPolicyLinks } from "@/lib/content";
 import { learnRoleLabel, useLearnPermission, type LearnRole } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { AUDIENCE_LABEL, audienceText, audienceToRoles, requestSignatures, rolesToAudience, type Audience } from "@/components/learn/documents/audience";
 
 type PolicyRow = { id: string; number: string; title: string; category: string; fileUrl: string; lastReviewed?: string; nextReview?: string };
 type SignableDoc = {
@@ -19,7 +21,48 @@ type SignableDoc = {
   body: string | null;
 };
 type Progress = { document_id: string; required_count: number; signed_count: number };
-type Outstanding = { user_id: string; full_name: string | null; email: string | null; title: string };
+type Outstanding = { user_id: string; full_name: string | null; email: string | null; title: string; document_id: string };
+type RequestRow = { document_id: string; user_id: string; requested_at: string; email_sent: boolean };
+
+const AUDIENCES: Audience[] = ["staff", "parents", "students"];
+
+function AudiencePicker({ value, onChange, disabled }: { value: Audience[]; onChange: (v: Audience[]) => void; disabled?: boolean }) {
+  return (
+    <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Who must sign">
+      {AUDIENCES.map((a) => {
+        const on = value.includes(a);
+        return (
+          <button
+            key={a}
+            type="button"
+            disabled={disabled}
+            aria-pressed={on}
+            onClick={() => onChange(on ? value.filter((x) => x !== a) : [...value, a])}
+            className={`rounded-full border px-3 py-1 text-xs font-medium disabled:opacity-50 ${on ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+          >
+            {AUDIENCE_LABEL[a]}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function Switch({ on, onChange, label, disabled }: { on: boolean; onChange: (v: boolean) => void; label: string; disabled?: boolean }) {
+  return (
+    <button
+      type="button"
+      role="switch"
+      aria-checked={on}
+      aria-label={label}
+      disabled={disabled}
+      onClick={() => onChange(!on)}
+      className={`relative h-6 w-11 shrink-0 rounded-full transition-colors disabled:opacity-50 ${on ? "bg-teal-700" : "bg-ink/25"}`}
+    >
+      <span className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all ${on ? "left-[22px]" : "left-0.5"}`} />
+    </button>
+  );
+}
 
 const SIGNER_ROLES: LearnRole[] = ["parent", "student", "teacher", "teaching_assistant_cover", "admissions", "admin", "head_teacher"];
 const DEFAULT_ROLES: LearnRole[] = ["parent"];
@@ -140,8 +183,8 @@ function DocumentsContent() {
   const [docs, setDocs] = useState<SignableDoc[] | null>(null);
   const [progress, setProgress] = useState<Record<string, Progress>>({});
   const [outstanding, setOutstanding] = useState<Outstanding[] | null>(null);
-  const [editing, setEditing] = useState<string | null>(null); // policy id being configured
-  const [editRoles, setEditRoles] = useState<string[]>(DEFAULT_ROLES);
+  const [requests, setRequests] = useState<RequestRow[]>([]);
+  const [busyId, setBusyId] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
   const [q, setQ] = useState("");
   const [docFilter, setDocFilter] = useState("all");
@@ -155,11 +198,13 @@ function DocumentsContent() {
       ),
     );
     if (!supabase) return;
-    const [d, p, o] = await Promise.all([
+    const [d, p, o, rq] = await Promise.all([
       supabase.from("signable_documents").select("id, sanity_document_id, title, requires_signature, target_roles, source, file_url, body"),
       supabase.from("document_signature_progress").select("document_id, required_count, signed_count"),
-      supabase.from("outstanding_signatures").select("user_id, full_name, email, title"),
+      supabase.from("outstanding_signatures").select("user_id, full_name, email, title, document_id"),
+      supabase.from("signature_requests").select("document_id, user_id, requested_at, email_sent").order("requested_at", { ascending: false }).limit(1000),
     ]);
+    setRequests((rq.data as RequestRow[]) || []);
     setDocs((d.data as SignableDoc[]) || []);
     const map: Record<string, Progress> = {};
     for (const r of (p.data as Progress[]) || []) map[r.document_id] = r;
@@ -175,21 +220,47 @@ function DocumentsContent() {
   const docForPolicy = (id: string) => (docs || []).find((d) => d.sanity_document_id === `policy:${id}`);
   const signing = (docs || []).filter((d) => d.requires_signature);
 
-  const savePolicy = async (p: PolicyRow, on: boolean) => {
+  const savePolicy = async (p: PolicyRow, on: boolean, audiences: Audience[]) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     setNote(null);
-    if (on && editRoles.length === 0) return setNote("Choose who has to sign.");
+    const roles = audienceToRoles(audiences);
+    if (on && roles.length === 0) return setNote("Choose who has to sign (Staff, Parents or Students).");
+    setBusyId(p.id);
     const existing = docForPolicy(p.id);
     const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-/i.test(p.id);
-    const fields = { title: `${p.number ? `${p.number}. ` : ""}${p.title}`, file_url: p.fileUrl, target_roles: editRoles, requires_signature: on, source: "policy" as const };
+    const fields = {
+      title: `${p.number ? `${p.number}. ` : ""}${p.title}`,
+      file_url: p.fileUrl,
+      target_roles: roles.length ? roles : existing?.target_roles || audienceToRoles(["parents"]),
+      requires_signature: on,
+      source: "policy" as const,
+    };
     const { error } = existing
       ? await supabase.from("signable_documents").update(fields).eq("id", existing.id)
       : await supabase.from("signable_documents").insert({ ...fields, sanity_document_id: `policy:${p.id}`, policy_link_id: isUuid ? p.id : null, current_asset_id: "pending" });
+    setBusyId(null);
     if (error) return setNote("Couldn't save. Only a Headteacher or Admin can change this.");
-    setEditing(null);
     await load();
   };
+
+  const remind = async (documentId: string, userIds?: string[]) => {
+    setNote(null);
+    setBusyId(documentId + (userIds?.join(",") || ""));
+    const r = await requestSignatures(documentId, { userIds, kind: "reminder" });
+    setBusyId(null);
+    setNote(r.message);
+    await load();
+  };
+
+  const lastAsked = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const r of requests) {
+      const k = `${r.document_id}:${r.user_id}`;
+      if (!m.has(k) && r.email_sent) m.set(k, r.requested_at);
+    }
+    return m;
+  }, [requests]);
 
   const stopSigning = async (d: SignableDoc) => {
     const supabase = getSupabaseClient();
@@ -211,11 +282,19 @@ function DocumentsContent() {
     URL.revokeObjectURL(a.href);
   };
 
+  // One entry per person, each document listed once (same person + same
+  // policy never repeats), people with the most outstanding first.
   const outstandingShown = useMemo(() => {
     const needle = q.trim().toLowerCase();
-    return (outstanding || []).filter(
-      (o) => (docFilter === "all" || o.title === docFilter) && (!needle || (o.full_name || "").toLowerCase().includes(needle) || (o.email || "").toLowerCase().includes(needle)),
-    );
+    const people = new Map<string, { user_id: string; name: string; email: string | null; docs: Map<string, string> }>();
+    for (const o of outstanding || []) {
+      if (docFilter !== "all" && o.title !== docFilter) continue;
+      if (needle && !(o.full_name || "").toLowerCase().includes(needle) && !(o.email || "").toLowerCase().includes(needle)) continue;
+      const person = people.get(o.user_id) || { user_id: o.user_id, name: o.full_name || o.email || "Unknown", email: o.email, docs: new Map<string, string>() };
+      if (!person.docs.has(o.title)) person.docs.set(o.title, o.document_id);
+      people.set(o.user_id, person);
+    }
+    return [...people.values()].sort((a, b) => b.docs.size - a.docs.size || a.name.localeCompare(b.name));
   }, [outstanding, q, docFilter]);
 
   const tabBtn = (id: typeof tab, label: string, count?: number) => (
@@ -253,7 +332,7 @@ function DocumentsContent() {
       <div className="mb-4 flex flex-wrap gap-1 rounded-xl border border-gold-light bg-white p-1">
         {tabBtn("policies", "Website policies", policies?.length)}
         {tabBtn("signing", "Needs a signature", signing.length)}
-        {tabBtn("outstanding", "Outstanding", outstanding?.length)}
+        {tabBtn("outstanding", "Outstanding", outstanding ? new Set(outstanding.map((o) => o.user_id)).size : undefined)}
       </div>
 
       {note && <p className="mb-4 rounded-lg bg-red-50 px-4 py-2 text-sm text-red-800">{note}</p>}
@@ -269,13 +348,15 @@ function DocumentsContent() {
               {policies.map((p) => {
                 const d = docForPolicy(p.id);
                 const on = !!d?.requires_signature;
+                const audiences = rolesToAudience(d?.target_roles || []);
                 const prog = d ? progress[d.id] : undefined;
+                const busy = busyId === p.id;
                 return (
                   <li key={p.id} className="px-5 py-4">
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-cream text-sm font-semibold text-ink/70">{p.number}</span>
-                      <div className="min-w-0 flex-1">
-                        <a href={p.fileUrl} target="_blank" rel="noreferrer" className="block truncate text-sm font-semibold text-ink hover:text-teal-700 hover:underline">
+                      <div className="min-w-0 flex-1 basis-56">
+                        <a href={absoluteFileUrl(p.fileUrl)} target="_blank" rel="noreferrer" className="block truncate text-sm font-semibold text-ink hover:text-teal-700 hover:underline">
                           {p.title}
                         </a>
                         <p className="text-xs text-ink/50">
@@ -284,35 +365,27 @@ function DocumentsContent() {
                         </p>
                       </div>
                       {on && prog && <Bar signed={prog.signed_count} required={prog.required_count} />}
-                      {on ? (
-                        <span className="rounded-full bg-teal-100 px-2.5 py-1 text-xs font-semibold text-teal-900">Signed by: {d!.target_roles.map((r) => learnRoleLabel(r as LearnRole)).join(", ")}</span>
-                      ) : null}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setEditing(editing === p.id ? null : p.id);
-                          setEditRoles(d?.target_roles?.length ? d.target_roles : DEFAULT_ROLES);
-                        }}
-                        className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream"
-                      >
-                        {on ? "Change" : "Ask for signatures"}
-                      </button>
+                      <label className="flex items-center gap-2 text-sm font-medium text-ink/80">
+                        <Switch
+                          on={on}
+                          disabled={busy}
+                          label={`Requires signature: ${p.title}`}
+                          onChange={(v) => savePolicy(p, v, audiences.length ? audiences : ["parents"])}
+                        />
+                        Requires signature
+                      </label>
                     </div>
-                    {editing === p.id && (
-                      <div className="mt-4 rounded-xl bg-cream/60 p-4">
-                        <p className="mb-2 text-sm font-medium text-ink">Who has to sign this policy?</p>
-                        <RolePicker value={editRoles} onChange={setEditRoles} />
-                        <div className="mt-4 flex flex-wrap gap-2">
-                          <button type="button" onClick={() => savePolicy(p, true)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
-                            {on ? "Save" : "Ask them to sign"}
-                          </button>
-                          {on && (
-                            <button type="button" onClick={() => savePolicy(p, false)} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/75 hover:bg-cream">
-                              Stop asking for signatures
-                            </button>
-                          )}
-                        </div>
+                    {on ? (
+                      <div className="mt-3 flex flex-wrap items-center gap-3 pl-12">
+                        <span className="text-xs text-ink/55">Who must sign:</span>
+                        <AudiencePicker
+                          value={audiences}
+                          disabled={busy}
+                          onChange={(v) => (v.length ? savePolicy(p, true, v) : setNote("At least one group must sign, or switch the signature off."))}
+                        />
                       </div>
+                    ) : (
+                      <p className="mt-1 pl-12 text-xs text-ink/45">View only. Nobody is asked to sign this.</p>
                     )}
                   </li>
                 );
@@ -329,23 +402,34 @@ function DocumentsContent() {
           ) : signing.length === 0 ? (
             <div className="px-5 py-12 text-center">
               <p className="text-base font-semibold text-ink">Nothing needs a signature yet</p>
-              <p className="mt-1 text-sm text-ink/60">Pick a website policy, or create your own document.</p>
+              <p className="mt-1 text-sm text-ink/60">Switch on &ldquo;Requires signature&rdquo; for a website policy, or create your own document.</p>
             </div>
           ) : (
             <ul className="divide-y divide-gold-light/70">
               {signing.map((d) => {
                 const prog = progress[d.id];
+                const waiting = prog ? prog.required_count - prog.signed_count : 0;
                 return (
                   <li key={d.id} className="flex flex-wrap items-center gap-4 px-5 py-4">
-                    <div className="min-w-0 flex-1">
+                    <div className="min-w-0 flex-1 basis-56">
                       <p className="truncate text-sm font-semibold text-ink">{d.title}</p>
                       <p className="text-xs text-ink/50">
-                        {d.target_roles.map((r) => learnRoleLabel(r as LearnRole)).join(", ")} · {d.source === "portal" ? "Created here" : d.source === "policy" ? "Website policy" : "From Sanity"}
+                        {audienceText(d.target_roles)} · {d.source === "portal" ? "Created here" : d.source === "policy" ? "Website policy" : "From Sanity"}
                       </p>
                     </div>
                     {prog && <Bar signed={prog.signed_count} required={prog.required_count} />}
+                    {waiting > 0 && (
+                      <button
+                        type="button"
+                        disabled={busyId === d.id}
+                        onClick={() => remind(d.id)}
+                        className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50"
+                      >
+                        {busyId === d.id ? "Sending…" : `Email ${waiting} to sign`}
+                      </button>
+                    )}
                     {d.file_url && (
-                      <a href={d.file_url} target="_blank" rel="noreferrer" className="text-sm font-medium text-teal-700 hover:underline">
+                      <a href={absoluteFileUrl(d.file_url)} target="_blank" rel="noreferrer" className="text-sm font-medium text-teal-700 hover:underline">
                         Open
                       </a>
                     )}
@@ -378,21 +462,57 @@ function DocumentsContent() {
           {outstanding === null ? (
             <div className="h-32 animate-pulse" />
           ) : outstandingShown.length === 0 ? (
-            <p className="px-5 py-10 text-center text-sm text-ink/60">{outstanding.length === 0 ? "Everyone is up to date. 🎉" : "No one matches."}</p>
+            <p className="px-5 py-10 text-center text-sm text-ink/60">{outstanding.length === 0 ? "Everyone is up to date." : "No one matches."}</p>
           ) : (
             <ul className="divide-y divide-gold-light/70">
-              {outstandingShown.map((o, i) => (
-                <li key={`${o.user_id}-${i}`} className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 text-sm">
-                  <span>
-                    <span className="font-medium text-ink">{o.full_name || o.email}</span>
-                    {o.full_name && o.email && <span className="ml-2 text-ink/50">{o.email}</span>}
-                  </span>
-                  <span className="text-ink/65">{o.title}</span>
-                </li>
-              ))}
+              {outstandingShown.map((person) => {
+                const docList = [...person.docs.entries()];
+                const key = `person-${person.user_id}`;
+                return (
+                  <li key={person.user_id} className="px-5 py-3 text-sm">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span>
+                        <span className="font-medium text-ink">{person.name}</span>
+                        <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-900">{docList.length} to sign</span>
+                        {person.email && person.name !== person.email && <span className="ml-2 text-ink/50">{person.email}</span>}
+                      </span>
+                      <button
+                        type="button"
+                        disabled={busyId === key}
+                        onClick={async () => {
+                          setBusyId(key);
+                          setNote(null);
+                          let sent = 0;
+                          for (const [, id] of docList) {
+                            const r = await requestSignatures(id, { userIds: [person.user_id], kind: "reminder" });
+                            sent += r.sent;
+                          }
+                          setBusyId(null);
+                          setNote(sent > 0 ? `Reminder sent to ${person.name}.` : `No email sent to ${person.name} (they were reminded recently, or email isn't available).`);
+                          await load();
+                        }}
+                        className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50"
+                      >
+                        {busyId === key ? "Sending…" : "Remind"}
+                      </button>
+                    </div>
+                    <ul className="mt-1 space-y-0.5 text-ink/65">
+                      {docList.map(([title, id]) => {
+                        const asked = lastAsked.get(`${id}:${person.user_id}`);
+                        return (
+                          <li key={id}>
+                            {title}
+                            {asked && <span className="ml-2 text-xs text-ink/45">asked {new Date(asked).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</span>}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                );
+              })}
             </ul>
           )}
-          <p className="border-t border-gold-light px-5 py-3 text-xs text-ink/50">A reminder email goes out automatically a week after a document becomes due.</p>
+          <p className="border-t border-gold-light px-5 py-3 text-xs text-ink/50">A reminder email also goes out automatically a week after a document becomes due. If an email can&apos;t be delivered, people can still sign in the portal.</p>
         </div>
       )}
 

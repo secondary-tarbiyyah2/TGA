@@ -105,7 +105,7 @@ function FamilyBehaviourContent() {
 
           {upcoming.length > 0 && (
             <section className="rounded-2xl border border-amber-200 bg-amber-50/60 p-4">
-              <h3 className="text-base font-semibold text-amber-900">Upcoming detentions</h3>
+              <h3 className="text-base font-semibold text-amber-900">Upcoming follow-up sessions</h3>
               <ul className="mt-2 space-y-1 text-sm text-amber-900">
                 {upcoming.map((d) => (
                   <li key={d.id}>

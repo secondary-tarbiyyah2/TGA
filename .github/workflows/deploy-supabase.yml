@@ -214,6 +214,9 @@ jobs:
           # alerts all failed. Verified ones re-check the caller's role in
           # their own code; the two --no-verify-jwt ones are called with no
           # session (anonymous quiz-takers, a scheduled job).
+          supabase functions deploy admissions-correspond --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy document-sign-request --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy document-signed-copy --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy booking-join --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy lesson-join --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy lesson-instances-generate --project-ref "${{ steps.project.outputs.ref }}"

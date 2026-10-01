@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { classTeacherNames, todayIso, type CstRow } from "@/lib/learn/teacherFor";
 import { cleanMeetingUrl, dangerBtn, EmptyState, Field, ghostBtn, inputCls, Notice, primaryBtn, StepCard } from "./shared";
 import type { AcademicYear, Child, ClassRow, ClassTeacher, Enrolment, Subject, Teacher, YearGroup } from "./shared";
 
@@ -14,6 +15,7 @@ type Props = {
   enrolments: Enrolment[];
   teachers: Teacher[];
   classTeachers: ClassTeacher[];
+  subjectTeachers: CstRow[];
   reload: () => Promise<void>;
   ready: boolean;
 };
@@ -56,7 +58,7 @@ function ClassFields({ d, set, props }: { d: Draft; set: (f: (s: Draft) => Draft
 
 export function ClassesSection(props: Props) {
   const supabase = getSupabaseClient();
-  const { classes, yearGroups, subjects, years, kids, enrolments, teachers, classTeachers, reload, ready } = props;
+  const { classes, yearGroups, subjects, years, kids, enrolments, teachers, classTeachers, subjectTeachers, reload, ready } = props;
   const [form, setForm] = useState<Draft>(BLANK);
   const [editId, setEditId] = useState<string | null>(null);
   const [draft, setDraft] = useState<Draft>(BLANK);
@@ -120,8 +122,21 @@ export function ClassesSection(props: Props) {
     await write(() => supabase.from("enrolments").insert({ class_id: classId, child_id: enrolForm[classId] }), () => setEnrolForm((s) => ({ ...s, [classId]: "" })));
   };
 
-  const teacherNames = (classId: string): string[] =>
-    classTeachers.filter((t) => t.scope_id === classId).map((t) => teachers.find((x) => x.id === t.user_id)?.full_name || "Unnamed teacher");
+  // Derived from the per-subject teacher mapping, e.g. "Mr X (Arabic), Ms Y (Maths)".
+  // Classes not yet mapped fall back to the older class-scoped teacher roles.
+  const teacherNames = (classId: string): string[] => {
+    const cls = classes.find((c) => c.id === classId);
+    const sids = new Set<string>();
+    if (cls?.subject_id) sids.add(cls.subject_id);
+    for (const r of subjectTeachers) if (r.class_id === classId) sids.add(r.subject_id);
+    const mapped = classTeacherNames(
+      subjectTeachers, classId, [...sids], todayIso(),
+      (id) => teachers.find((x) => x.id === id)?.full_name || "Unnamed teacher",
+      (id) => subjects.find((s) => s.id === id)?.name || "Subject",
+    );
+    if (mapped) return [mapped];
+    return classTeachers.filter((t) => t.scope_id === classId).map((t) => teachers.find((x) => x.id === t.user_id)?.full_name || "Unnamed teacher");
+  };
 
   return (
     <StepCard step={4} id="classes" done={classes.length > 0} title="Classes" help="A class is a subject taught to a year group. Set how many lessons it needs each week; the timetable is built from this.">
@@ -157,7 +172,7 @@ export function ClassesSection(props: Props) {
                     </span>
                   </div>
                   <dl className="mt-2 grid gap-1 text-xs text-ink/70 sm:grid-cols-3">
-                    <div><dt className="inline font-medium">Teacher: </dt><dd className="inline">{names.length ? names.join(", ") : <span className="text-amber-800">none assigned (any available teacher can be used)</span>}</dd></div>
+                    <div><dt className="inline font-medium">Teachers: </dt><dd className="inline">{names.length ? names.join(", ") : <span className="text-amber-800">none assigned (choose one in "Who teaches what" above)</span>}</dd></div>
                     <div><dt className="inline font-medium">Enrolled: </dt><dd className="inline">{enrolled.length}{yg?.capacity ? ` (year group capacity ${yg.capacity})` : ""}</dd></div>
                     <div className="truncate"><dt className="inline font-medium">Meeting link: </dt><dd className="inline">{c.meeting_url ? "set" : <span className="text-ink/50">not set</span>}</dd></div>
                   </dl>
@@ -181,7 +196,7 @@ export function ClassesSection(props: Props) {
           <div className="mt-3"><button type="button" className={primaryBtn} disabled={busy} onClick={add}>Add class</button></div>
         </div>
       )}
-      <p className="mt-3 text-xs text-ink/50">Teachers are shown here as set up in People. Assigning a teacher to a class is done by the Headteacher when inviting or editing staff.</p>
+      <p className="mt-3 text-xs text-ink/50">Teachers are chosen per class subject in "Who teaches what" above, so one teacher can teach many classes. A dated override there covers a period without changing the weekly timetable.</p>
       {error && <div className="mt-3"><Notice tone="error">{error}</Notice></div>}
     </StepCard>
   );

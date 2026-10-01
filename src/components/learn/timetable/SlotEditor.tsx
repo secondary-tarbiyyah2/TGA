@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { WEEKDAYS, type TimetableSlot } from "@/lib/learn/timetable";
+import { teacherFor, todayIso, type CstRow } from "@/lib/learn/teacherFor";
 import { hhmm } from "./types";
 import type { Availability, ClassOpt, ClassTeacherLink, Protected, Teacher } from "./types";
 
@@ -24,6 +25,7 @@ export function SlotEditor({
   classes,
   teachers,
   classTeachers,
+  subjectTeachers = [],
   availability,
   protectedTimes,
   onClose,
@@ -37,6 +39,7 @@ export function SlotEditor({
   classes: ClassOpt[];
   teachers: Teacher[];
   classTeachers: ClassTeacherLink[];
+  subjectTeachers?: CstRow[];
   availability: Availability[];
   protectedTimes: Protected[];
   onClose: () => void;
@@ -115,7 +118,11 @@ export function SlotEditor({
     }
   };
 
-  const assigned = new Set(classTeachers.filter((t) => t.scope_id === effClassId).map((t) => t.user_id));
+  // The teacher of THIS class's subject first (class_subject_teachers), then
+  // the legacy class-scoped teachers.
+  const effSubjectId = slot ? slot.subject_id : classes.find((c) => c.id === effClassId)?.subject_id || null;
+  const mapped = effClassId && effSubjectId ? teacherFor(subjectTeachers, effClassId, effSubjectId, todayIso()) : null;
+  const assigned = new Set([...(mapped ? [mapped] : []), ...classTeachers.filter((t) => t.scope_id === effClassId).map((t) => t.user_id)]);
   const sortedTeachers = [...teachers].sort((a, b) => Number(assigned.has(b.id)) - Number(assigned.has(a.id)) || a.full_name.localeCompare(b.full_name));
 
   return (
@@ -127,7 +134,12 @@ export function SlotEditor({
           {!slot && (
             <label className="block text-xs font-medium text-ink/70">
               Class
-              <select className={field} value={classId} onChange={(e) => setClassId(e.target.value)}>
+              <select className={field} value={classId} onChange={(e) => {
+                setClassId(e.target.value);
+                const sid = classes.find((c) => c.id === e.target.value)?.subject_id;
+                const t = sid ? teacherFor(subjectTeachers, e.target.value, sid, todayIso()) : null;
+                if (t) setTeacherId(t);
+              }}>
                 <option value="">Choose…</option>
                 {classes.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
               </select>
@@ -137,7 +149,7 @@ export function SlotEditor({
             Teacher
             <select className={field} value={teacherId} onChange={(e) => setTeacherId(e.target.value)}>
               <option value="">Choose…</option>
-              {sortedTeachers.map((t) => <option key={t.id} value={t.id}>{t.full_name}{assigned.has(t.id) ? " (class teacher)" : ""}</option>)}
+              {sortedTeachers.map((t) => <option key={t.id} value={t.id}>{t.full_name}{assigned.has(t.id) ? " (teaches this subject)" : ""}</option>)}
             </select>
           </label>
           <label className="block text-xs font-medium text-ink/70">

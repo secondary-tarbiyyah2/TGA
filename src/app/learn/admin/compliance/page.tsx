@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
-import { Card } from "@/components/learn/Card";
+import { ComplianceDashboard } from "@/components/learn/documents/ComplianceDashboard";
 import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { SafeguardingLog } from "@/components/learn/compliance/SafeguardingLog";
@@ -15,9 +15,6 @@ import { IncidentBreachLog } from "@/components/learn/compliance/IncidentBreachL
 import { AuditLogViewer } from "@/components/learn/compliance/AuditLogViewer";
 import { PolicyReviewTracker } from "@/components/learn/compliance/PolicyReviewTracker";
 
-type AuditRow = { id: number; action: string; target_id: string | null; changes: Record<string, unknown> | null; created_at: string };
-type FlaggedMessage = { id: string; body: string; flagged_keywords: string[] | null; created_at: string; thread_id: string };
-type Outstanding = { user_id: string; full_name: string; email: string; title: string };
 type Keyword = { id: string; phrase: string };
 
 function SafeguardingKeywordsAdmin() {
@@ -76,119 +73,42 @@ function SafeguardingKeywordsAdmin() {
 }
 
 /**
- * Headteacher/Admin/Safeguarding-Lead compliance dashboard: unexplained-
- * absence escalations (Phase B's ABSENCE_ALERT_SENT audit_log entries),
- * keyword-flagged messages (0013), and outstanding e-signatures (0014) —
- * all in one place, per the ground rule. RLS on `audit_log`,
- * `message_thread_messages` and `outstanding_signatures` is what actually
- * restricts this to permitted roles (view_compliance/safeguarding_lead/
- * head_teacher/admin/can_export_data) — a Teacher hitting this URL
- * directly gets empty result sets from every query below, not hidden UI.
+ * Headteacher/Admin/Safeguarding-Lead compliance dashboard. A summary strip
+ * and two working tabs (Alerts with an acknowledge/resolve workflow, and
+ * Signatures grouped per person) live in ComplianceDashboard; the long-form
+ * registers (safeguarding log, DBS record, data rights, ...) sit under
+ * "Records & settings". RLS on the underlying tables is what restricts each
+ * role: a Teacher hitting this URL directly gets empty result sets.
  */
 function ComplianceContent() {
   const isSafeguardingLead = useLearnPermission("safeguarding_lead");
   const { roles } = useLearnSession();
   const isHeadTeacher = roles.some((r) => r.role === "head_teacher");
   const isHeadTeacherOrAdmin = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
-  const [absenceAlerts, setAbsenceAlerts] = useState<AuditRow[] | null>(null);
-  const [flagged, setFlagged] = useState<FlaggedMessage[] | null>(null);
-  const [outstanding, setOutstanding] = useState<Outstanding[] | null>(null);
-  const supabase = getSupabaseClient();
-
-  useEffect(() => {
-    if (!supabase) return;
-    supabase
-      .from("audit_log")
-      .select("id, action, target_id, changes, created_at")
-      .eq("action", "ABSENCE_ALERT_SENT")
-      .order("created_at", { ascending: false })
-      .limit(20)
-      .then(({ data }) => setAbsenceAlerts((data as AuditRow[]) || []));
-    supabase
-      .from("message_thread_messages")
-      .select("id, body, flagged_keywords, created_at, thread_id")
-      .eq("flagged", true)
-      .order("created_at", { ascending: false })
-      .limit(20)
-      .then(({ data }) => setFlagged((data as FlaggedMessage[]) || []));
-    supabase
-      .from("outstanding_signatures")
-      .select("user_id, full_name, email, title")
-      .then(({ data }) => setOutstanding((data as Outstanding[]) || []));
-  }, [supabase]);
 
   return (
     <div className="space-y-6">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h1 className="font-serif text-h2 font-semibold text-ink">Compliance &amp; safeguarding</h1>
-        <p className="mt-1 text-sm text-ink/60">Attendance escalations, flagged messages, and outstanding policy signatures.</p>
+        <p className="mt-1 text-sm text-ink/60">Alerts that need action, outstanding policy signatures, and the school&apos;s statutory records.</p>
       </div>
 
-      <Card
-        title="Unexplained absence alerts"
-        status={absenceAlerts === null ? undefined : absenceAlerts.length === 0 ? "ok" : "warning"}
-        statusLabel={absenceAlerts && absenceAlerts.length > 0 ? `${absenceAlerts.length} open` : undefined}
-      >
-        <ul className="space-y-2">
-          {absenceAlerts === null && <p className="text-sm text-ink/60">Loading…</p>}
-          {(absenceAlerts || []).map((a) => (
-            <li key={a.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
-              {String((a.changes as { child_id?: string })?.child_id || "")} — {new Date(a.created_at).toLocaleString("en-GB")}
-            </li>
-          ))}
-          {absenceAlerts?.length === 0 && <p className="text-sm text-ink/60">No unexplained-absence alerts.</p>}
-        </ul>
-      </Card>
-
-      {isSafeguardingLead && <SafeguardingKeywordsAdmin />}
-
-      {isSafeguardingLead && (
-        <Card
-          title="Keyword-flagged messages"
-          description="Visible to you as Safeguarding Lead regardless of thread membership."
-          status={flagged === null ? undefined : flagged.length === 0 ? "ok" : "warning"}
-          statusLabel={flagged && flagged.length > 0 ? `${flagged.length} flagged` : undefined}
-        >
-          <ul className="space-y-2">
-            {flagged === null && <p className="text-sm text-ink/60">Loading…</p>}
-            {(flagged || []).map((m) => (
-              <li key={m.id} className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm">
-                <p>{m.body}</p>
-                <p className="mt-1 text-xs text-ink/50">
-                  Keywords: {(m.flagged_keywords || []).join(", ")} · {new Date(m.created_at).toLocaleString("en-GB")}
-                </p>
-              </li>
-            ))}
-            {flagged?.length === 0 && <p className="text-sm text-ink/60">No flagged messages.</p>}
-          </ul>
-        </Card>
-      )}
-
-      <Card
-        title="Outstanding policy signatures"
-        status={outstanding === null ? undefined : outstanding.length === 0 ? "ok" : "warning"}
-        statusLabel={outstanding && outstanding.length > 0 ? `${outstanding.length} outstanding` : undefined}
-      >
-        <ul className="space-y-2">
-          {outstanding === null && <p className="text-sm text-ink/60">Loading…</p>}
-          {(outstanding || []).map((o, i) => (
-            <li key={`${o.user_id}-${i}`} className="rounded-lg border border-gold-light/40 p-3 text-sm">
-              {o.full_name} ({o.email}) — {o.title}
-            </li>
-          ))}
-          {outstanding?.length === 0 && <p className="text-sm text-ink/60">Everyone is up to date.</p>}
-        </ul>
-      </Card>
-
-      {(isSafeguardingLead || isHeadTeacher) && <SafeguardingLog />}
-
-      <DataRights />
-      <RetentionRegistry />
-      {isHeadTeacherOrAdmin && <SingleCentralRecord />}
-      <ConsentRegister />
-      <IncidentBreachLog />
-      <AuditLogViewer />
-      <PolicyReviewTracker />
+      <ComplianceDashboard
+        isHeadTeacher={isHeadTeacher}
+        alertsExtra={isSafeguardingLead ? <SafeguardingKeywordsAdmin /> : null}
+        recordsTab={
+          <>
+            {(isSafeguardingLead || isHeadTeacher) && <SafeguardingLog />}
+            <DataRights />
+            <RetentionRegistry />
+            {isHeadTeacherOrAdmin && <SingleCentralRecord />}
+            <ConsentRegister />
+            <IncidentBreachLog />
+            <AuditLogViewer />
+            <PolicyReviewTracker />
+          </>
+        }
+      />
     </div>
   );
 }

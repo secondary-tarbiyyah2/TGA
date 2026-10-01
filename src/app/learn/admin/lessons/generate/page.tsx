@@ -1,0 +1,235 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
+import { btn, callFunction, chipCls, fieldCls, ghost } from "@/components/learn/timetable/api";
+import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
+import { MAX_TEACHER_LESSONS_PER_WEEK, teacherFor, todayIso } from "@/lib/learn/teacherFor";
+import { edgeErrorMessage } from "@/lib/learn/edge";
+import { getSupabaseClient } from "@/lib/supabase/client";
+
+const STEPS = ["Choose year", "Check setup", "Generate", "Review & publish"];
+
+function Step({ n, title, help, active, children }: { n: number; title: string; help: string; active?: boolean; children: React.ReactNode }) {
+  return (
+    <section id={`step-${n}`} className={`scroll-mt-20 rounded-2xl border bg-white p-4 sm:p-6 ${active ? "border-teal-500/60" : "border-gold-light/50"}`}>
+      <div className="flex items-start gap-3">
+        <span aria-hidden="true" className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-100 text-sm font-semibold text-gold-900">{n}</span>
+        <div className="min-w-0">
+          <h2 className="font-serif text-h3 font-semibold text-ink">{title}</h2>
+          <p className="mt-0.5 text-sm text-ink/60">{help}</p>
+        </div>
+      </div>
+      <div className="mt-4">{children}</div>
+    </section>
+  );
+}
+
+function Check({ ok, children, fix }: { ok: boolean; children: React.ReactNode; fix?: React.ReactNode }) {
+  return (
+    <li className={`flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-sm ${ok ? "border-green-200 bg-green-50/60 text-green-900" : "border-amber-200 bg-amber-50 text-amber-900"}`}>
+      <span><span aria-hidden="true" className="mr-2 font-bold">{ok ? "✓" : "!"}</span>{children}</span>
+      {!ok && fix}
+    </li>
+  );
+}
+
+function GenerateContent() {
+  const supabase = getSupabaseClient();
+  const { data, reload } = useTimetableData();
+  const [yearId, setYearId] = useState("");
+  const [runLabel, setRunLabel] = useState("");
+  const [message, setMessage] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [waitingFrom, setWaitingFrom] = useState<number | null>(null);
+
+  const effYearId = yearId || data.years[0]?.id || "";
+  const year = data.years.find((y) => y.id === effYearId) || null;
+  const yearClasses = data.classes.filter((c) => c.academic_year_id === effYearId);
+  // Every class subject needs a teacher: the class's own subject plus any extra subject mapped to it.
+  const gaps: { classId: string; label: string }[] = [];
+  for (const c of yearClasses) {
+    const sids = new Set<string>();
+    if (c.subject_id) sids.add(c.subject_id);
+    for (const r of data.subjectTeachers) if (r.class_id === c.id) sids.add(r.subject_id);
+    for (const sid of sids) {
+      const mapped = data.subjectTeachers.some((r) => r.class_id === c.id && r.subject_id === sid);
+      const legacy = sid === c.subject_id && data.classTeachers.some((t) => t.scope_id === c.id);
+      if (!mapped && !legacy) gaps.push({ classId: c.id, label: `${c.name} (${data.subjects.find((s) => s.id === sid)?.name || "subject"})` });
+    }
+  }
+  const mappedLoad = new Map<string, number>();
+  for (const c of yearClasses) {
+    if (!c.subject_id) continue;
+    const t = teacherFor(data.subjectTeachers, c.id, c.subject_id, todayIso());
+    if (t) mappedLoad.set(t, (mappedLoad.get(t) || 0) + c.weekly_lessons);
+  }
+  const overloaded = [...mappedLoad.entries()].filter(([, n]) => n > MAX_TEACHER_LESSONS_PER_WEEK).map(([id, n]) => `${data.teachers.find((t) => t.id === id)?.full_name || "A teacher"} (${n})`);
+  const teachersWithAvail = new Set(data.availability.filter((a) => a.academic_year_id === effYearId).map((a) => a.teacher_user_id));
+  const needsSetup = !year || yearClasses.length === 0 || data.teachers.length === 0;
+  const latest = data.runs[0] || null;
+
+  // After "Generate", the solver runs in GitHub Actions; poll for the new draft.
+  useEffect(() => {
+    if (waitingFrom === null) return;
+    const started = Date.now();
+    const timer = window.setInterval(async () => {
+      await reload();
+      if (Date.now() - started > 10 * 60 * 1000) {
+        setWaitingFrom(null);
+        setMessage("Still no new draft after 10 minutes. Press \"Check for a new draft\" later, or try generating again.");
+      }
+    }, 8000);
+    return () => window.clearInterval(timer);
+  }, [waitingFrom, reload]);
+
+  useEffect(() => {
+    if (waitingFrom !== null && data.runs.length > waitingFrom) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- reacting to the new draft arriving
+      setWaitingFrom(null);
+      setMessage("Your new draft is ready. Review it in step 4.");
+      document.getElementById("step-4")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [data.runs.length, waitingFrom]);
+
+  const generate = async () => {
+    if (!year) return;
+    setBusy(true);
+    setMessage(null);
+    try {
+      const result = await callFunction("trigger-timetable-generation", { academic_year_label: year.label, run_label: runLabel.trim() || undefined });
+      if (result.ok) {
+        setWaitingFrom(data.runs.length);
+        setMessage("Started. The solver usually takes a couple of minutes. This page checks automatically and shows the draft when it appears.");
+      } else {
+        setMessage(`Could not start timetable generation: ${edgeErrorMessage(result)}`);
+      }
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const startBlank = async () => {
+    if (!supabase || !year) return;
+    setBusy(true);
+    setMessage(null);
+    try {
+      const { data: u } = await supabase.auth.getUser();
+      const label = runLabel.trim() || `${year.label} (by hand)`;
+      const { error } = await supabase.from("timetable_runs").insert({ academic_year_id: year.id, label, status: "draft", generated_by: "manual", created_by: u.user?.id ?? null });
+      if (error) return setMessage(`Could not create a blank draft: ${error.message}`);
+      await reload();
+      setMessage("Blank draft created. Open it in the timetable and use the + buttons to add lessons.");
+      document.getElementById("step-4")?.scrollIntoView({ behavior: "smooth" });
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div>
+      <LessonsHeader title="Generate" subtitle="Build a new draft timetable in four steps. A draft never changes the live timetable." />
+      <ol className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        {STEPS.map((s, i) => (
+          <li key={s}>
+            <a href={`#step-${i + 1}`} className="flex items-center gap-2 rounded-xl border border-gold-light/50 bg-white px-3 py-2 text-xs font-medium text-ink/75 hover:bg-cream">
+              <span aria-hidden="true" className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-100 text-[11px] font-semibold text-gold-900">{i + 1}</span>
+              {s}
+            </a>
+          </li>
+        ))}
+      </ol>
+      {message && <p role="status" className="mb-4 rounded-xl border border-teal-500/30 bg-teal-100/60 px-4 py-3 text-sm text-teal-900">{message}</p>}
+
+      <div className="space-y-5">
+        <Step n={1} title="Choose the academic year" help="Which school year is this timetable for?" active={!year}>
+          {!data.loaded && <p className="text-sm text-ink/60">Loading…</p>}
+          {data.loaded && data.years.length === 0 && (
+            <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+              No academic year exists yet. <Link href="/admin/academic/years" className="font-semibold underline">Add one in Academic setup</Link>, then come back.
+            </p>
+          )}
+          {data.years.length > 0 && (
+            <div className="space-y-3">
+              <div className="flex flex-wrap gap-2" role="group" aria-label="Academic year">
+                {data.years.map((y) => <button key={y.id} type="button" aria-pressed={y.id === effYearId} onClick={() => setYearId(y.id)} className={chipCls(y.id === effYearId)}>{y.label}</button>)}
+              </div>
+              {year && <p className="text-xs text-ink/60">{year.starts_on} to {year.ends_on}</p>}
+              <label className="block max-w-md text-xs font-medium text-ink/70">
+                Name for this draft (optional)
+                <input value={runLabel} onChange={(e) => setRunLabel(e.target.value)} placeholder="e.g. Autumn draft 2" className={fieldCls} />
+              </label>
+            </div>
+          )}
+        </Step>
+
+        <Step n={2} title="Check classes, teachers and availability" help="The generator can only place what is set up. Fix anything marked ! first." active={Boolean(year) && needsSetup}>
+          {!year ? (
+            <p className="text-sm text-ink/60">Choose an academic year in step 1.</p>
+          ) : (
+            <ul className="space-y-2">
+              <Check ok={yearClasses.length > 0} fix={<Link href="/admin/academic/classes" className="text-sm font-semibold underline">Add classes</Link>}>
+                {yearClasses.length > 0 ? `${yearClasses.length} class${yearClasses.length === 1 ? "" : "es"} in ${year.label} (${yearClasses.reduce((n, c) => n + c.weekly_lessons, 0)} lessons a week to place)` : `No classes are set to ${year.label} yet.`}
+              </Check>
+              <Check ok={data.teachers.length > 0} fix={<Link href="/admin/people" className="text-sm font-semibold underline">Invite teachers</Link>}>
+                {data.teachers.length > 0 ? `${data.teachers.length} teacher${data.teachers.length === 1 ? "" : "s"}` : "No teachers exist yet."}
+              </Check>
+              <Check ok={data.teachers.length > 0 && data.teachers.every((t) => teachersWithAvail.has(t.id))} fix={<Link href="/admin/lessons/availability" className="text-sm font-semibold underline">See availability</Link>}>
+                {`${data.teachers.filter((t) => teachersWithAvail.has(t.id)).length} of ${data.teachers.length} teachers have set their availability for ${year.label}. Teachers without it cannot be given lessons.`}
+              </Check>
+              <Check ok={yearClasses.length === 0 || gaps.length === 0} fix={<Link href="/admin/academic/classes#teacher-matrix" className="text-sm font-semibold underline">Choose teachers</Link>}>
+                {gaps.length === 0 ? "Every class subject has a teacher." : (
+                  <>
+                    {gaps.length} class subject{gaps.length === 1 ? " has" : "s have"} no teacher; any available teacher can be used for them:{" "}
+                    {gaps.slice(0, 6).map((g, i) => (
+                      <span key={g.label}>{i > 0 && ", "}<Link href="/admin/academic/classes#teacher-matrix" className="underline">{g.label}</Link></span>
+                    ))}
+                    {gaps.length > 6 ? `, and ${gaps.length - 6} more` : ""}.
+                  </>
+                )}
+              </Check>
+              <Check ok={overloaded.length === 0} fix={<Link href="/admin/academic/classes#teacher-matrix" className="text-sm font-semibold underline">Rebalance</Link>}>
+                {overloaded.length === 0 ? `No teacher has more than ${MAX_TEACHER_LESSONS_PER_WEEK} lessons a week.` : `Too many lessons for: ${overloaded.join(", ")}. The limit is ${MAX_TEACHER_LESSONS_PER_WEEK} a week.`}
+              </Check>
+              {data.terms.filter((t) => t.academic_year_id === effYearId).length === 0 && (
+                <Check ok={false} fix={<Link href="/admin/academic/years" className="text-sm font-semibold underline">View terms</Link>}>No term dates are synced for {year.label}. Lessons are still generated, but term dates help later.</Check>
+              )}
+            </ul>
+          )}
+        </Step>
+
+        <Step n={3} title="Generate" help="Creates a new DRAFT for you to review. It never touches a published timetable, so it is safe to run again." active={Boolean(year) && !needsSetup}>
+          <div className="flex flex-wrap items-center gap-2">
+            <button type="button" className={btn} disabled={busy || !year || waitingFrom !== null || yearClasses.length === 0} onClick={generate}>
+              {waitingFrom !== null ? "Generating…" : busy ? "Starting…" : "Generate timetable"}
+            </button>
+            <button type="button" className={ghost} disabled={!year || busy} onClick={startBlank}>Start a blank draft instead</button>
+            <button type="button" className={ghost} onClick={async () => { await reload(); setMessage("Checked for new drafts."); }}>Check for a new draft</button>
+          </div>
+          {waitingFrom !== null && <p className="mt-3 text-sm text-ink/70">Working… this page shows the draft by itself when it is ready.</p>}
+          {yearClasses.length === 0 && year && <p className="mt-3 text-xs text-ink/55">Add classes for {year.label} first (step 2).</p>}
+        </Step>
+
+        <Step n={4} title="Review, fix and publish" help="Open the draft in the timetable to move lessons, resolve warnings and publish." active={Boolean(latest)}>
+          {!latest ? (
+            <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">No timetable yet. Complete steps 1 to 3, then your draft appears here.</p>
+          ) : (
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="text-sm text-ink/80">Latest version: <strong>{latest.label}</strong> <span className="text-ink/55">({latest.status}, {latest.created_at.slice(0, 10)})</span></p>
+              <Link href="/admin/lessons/timetable" className={btn}>Open in timetable &rarr;</Link>
+            </div>
+          )}
+        </Step>
+      </div>
+    </div>
+  );
+}
+
+export default function AdminGeneratePage() {
+  return (
+    <LessonsFrame>
+      <GenerateContent />
+    </LessonsFrame>
+  );
+}

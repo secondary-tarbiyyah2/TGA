@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
@@ -49,9 +50,14 @@ function DocumentsContent() {
               {history.map((h) => (
                 <li key={h.id} className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 text-sm">
                   <span className="font-medium text-ink">{h.title}</span>
-                  <span className="text-ink/60">
-                    Signed{" "}
-                    {new Date(h.signed_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
+                  <span className="flex flex-wrap items-center gap-3 text-ink/60">
+                    <span>
+                      Signed{" "}
+                      {new Date(h.signed_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
+                    </span>
+                    <Link href={`/documents/receipt?id=${h.id}`} className="font-medium text-teal-700 hover:underline">
+                      Signed copy
+                    </Link>
                   </span>
                 </li>
               ))}

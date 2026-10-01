@@ -157,31 +157,47 @@ export type SidebarIcon =
   | "absences"
   | "summary";
 
-export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean };
+// `group` is the collapsible heading the item sits under in the sidebar.
+// Areas whose items have no group render as one flat list.
+export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean; group?: string };
+export type SidebarGroup = { label: string; items: SidebarItem[] };
+
+const G_OVERVIEW = "Overview";
+const G_PEOPLE = "People & admissions";
+const G_TEACHING = "Teaching & learning";
+const G_ATTENDANCE = "Attendance & behaviour";
+const G_COMMS = "Communication";
+const G_FINANCE = "Finance & compliance";
+const G_SETTINGS = "Settings";
+
+/** Display order of the admin sidebar groups. */
+export const SIDEBAR_GROUP_ORDER: string[] = [G_OVERVIEW, G_PEOPLE, G_TEACHING, G_ATTENDANCE, G_COMMS, G_FINANCE, G_SETTINGS];
 
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   admin: [
-    { href: "/admin/dashboard", label: "Overview", icon: "overview" },
-    { href: "/admin/summary", label: "Summary", icon: "summary", headOnly: true },
-    { href: "/admin/calendar", label: "Calendar", icon: "calendar" },
-    { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true },
-    { href: "/admin/admissions", label: "Admissions", icon: "admissions" },
-    { href: "/admin/people", label: "People & accounts", icon: "people" },
-    { href: "/admin/attendance", label: "Attendance", icon: "attendance", headOnly: true },
-    { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true },
-    { href: "/admin/absences", label: "Absences", icon: "absences", headOnly: true },
-    { href: "/admin/staff-attendance", label: "Staff attendance", icon: "clock", headOnly: true },
-    { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true },
-    { href: "/admin/academic", label: "Academic setup", icon: "academic" },
-    { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true },
-    { href: "/admin/messages", label: "Messages", icon: "messages", headOnly: true },
-    { href: "/admin/announcements", label: "Announcements", icon: "announcements", headOnly: true },
-    { href: "/admin/fees", label: "Fees", icon: "fees", headOnly: true },
-    { href: "/admin/documents", label: "Documents & signatures", icon: "documents", headOnly: true },
-    { href: "/admin/compliance", label: "Safeguarding & compliance", icon: "compliance" },
-    { href: "/admin/content", label: "Website content", icon: "website" },
-    { href: "/admin/quiz", label: "Quiz & sample weeks", icon: "quiz", headOnly: true },
-    { href: "/admin/settings", label: "Settings", icon: "settings" },
+    { href: "/admin/dashboard", label: "Overview", icon: "overview", group: G_OVERVIEW },
+    { href: "/admin/summary", label: "Summary", icon: "summary", headOnly: true, group: G_OVERVIEW },
+    { href: "/admin/calendar", label: "Calendar", icon: "calendar", group: G_OVERVIEW },
+    { href: "/admin/admissions", label: "Admissions", icon: "admissions", group: G_PEOPLE },
+    { href: "/admin/people", label: "People & accounts", icon: "people", group: G_PEOPLE },
+    { href: "/admin/pupils", label: "Pupil records", icon: "documents", group: G_PEOPLE },
+    { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true, group: G_TEACHING },
+    { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true, group: G_TEACHING },
+    { href: "/admin/academic", label: "Academic setup", icon: "academic", group: G_TEACHING },
+    { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true, group: G_TEACHING },
+    { href: "/admin/attendance", label: "Attendance", icon: "attendance", headOnly: true, group: G_ATTENDANCE },
+    { href: "/admin/absences", label: "Absences", icon: "absences", headOnly: true, group: G_ATTENDANCE },
+    { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true, group: G_ATTENDANCE },
+    { href: "/admin/staff-attendance", label: "Staff attendance", icon: "clock", headOnly: true, group: G_ATTENDANCE },
+    { href: "/admin/messages", label: "Messages", icon: "messages", headOnly: true, group: G_COMMS },
+    { href: "/admin/message-oversight", label: "Message oversight", icon: "compliance", headOnly: true, group: G_COMMS },
+    { href: "/admin/announcements", label: "Announcements", icon: "announcements", headOnly: true, group: G_COMMS },
+    { href: "/admin/fees", label: "Fees", icon: "fees", headOnly: true, group: G_FINANCE },
+    { href: "/admin/documents", label: "Documents & signatures", icon: "documents", headOnly: true, group: G_FINANCE },
+    { href: "/admin/compliance", label: "Safeguarding & compliance", icon: "compliance", group: G_FINANCE },
+    { href: "/admin/content", label: "Website content", icon: "website", group: G_SETTINGS },
+    { href: "/admin/quiz", label: "Quiz & sample weeks", icon: "quiz", headOnly: true, group: G_SETTINGS },
+    { href: "/admin/settings", label: "Settings", icon: "settings", group: G_SETTINGS },
   ],
   teach: [
     { href: "/teach/dashboard", label: "Overview", icon: "overview" },
@@ -189,6 +205,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/teach/absences", label: "Absences", icon: "absences" },
     { href: "/teach/clock", label: "My hours", icon: "clock" },
     { href: "/teach/classes", label: "My classes", icon: "classes" },
+    { href: "/teach/pupils", label: "Pupils", icon: "people" },
     { href: "/teach/calendar", label: "Calendar", icon: "calendar" },
     { href: "/teach/homework", label: "Homework", icon: "homework" },
     { href: "/teach/behaviour", label: "Behaviour", icon: "behaviour" },
@@ -200,6 +217,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   family: [
     { href: "/family/dashboard", label: "Overview", icon: "overview" },
     { href: "/family/classes", label: "Classes", icon: "classes" },
+    { href: "/family/child-details", label: "Child details", icon: "documents" },
     { href: "/family/absences", label: "Absences", icon: "absences" },
     { href: "/family/calendar", label: "Calendar", icon: "calendar" },
     { href: "/family/homework", label: "Homework", icon: "homework" },
@@ -223,6 +241,20 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
 export function visibleSidebar(area: PortalArea, roles: string[]): SidebarItem[] {
   const isHead = roles.some((r) => r === "head_teacher" || r === "admin");
   return SIDEBAR_NAV[area].filter((i) => isHead || !i.headOnly);
+}
+
+/** The sidebar as collapsible groups (visibility rules applied). Items with
+ * no `group` land in one unlabelled group, so flat areas still work. Empty
+ * groups are dropped. Use visibleSidebar() when a flat list is needed. */
+export function visibleSidebarGroups(area: PortalArea, roles: string[]): SidebarGroup[] {
+  const items = visibleSidebar(area, roles);
+  const labels = [...new Set(items.map((i) => i.group || ""))];
+  labels.sort((a, b) => {
+    const ia = SIDEBAR_GROUP_ORDER.indexOf(a);
+    const ib = SIDEBAR_GROUP_ORDER.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+  return labels.map((label) => ({ label, items: items.filter((i) => (i.group || "") === label) }));
 }
 
 export const AREA_SUBTITLE: Record<PortalArea, string> = {

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import type { CstRow } from "@/lib/learn/teacherFor";
 import type { AcademicYear, Child, ClassRow, ClassTeacher, Enrolment, Subject, Teacher, Term, YearGroup } from "./shared";
 
 export type AcademicData = {
@@ -15,9 +16,10 @@ export type AcademicData = {
   enrolments: Enrolment[];
   teachers: Teacher[];
   classTeachers: ClassTeacher[];
+  subjectTeachers: CstRow[];
 };
 
-const EMPTY: AcademicData = { loaded: false, years: [], terms: [], yearGroups: [], subjects: [], classes: [], children: [], enrolments: [], teachers: [], classTeachers: [] };
+const EMPTY: AcademicData = { loaded: false, years: [], terms: [], yearGroups: [], subjects: [], classes: [], children: [], enrolments: [], teachers: [], classTeachers: [], subjectTeachers: [] };
 
 /** One load for the whole page; every section calls reload() after a write. */
 export function useAcademicData(): { data: AcademicData; reload: () => Promise<void> } {
@@ -26,7 +28,7 @@ export function useAcademicData(): { data: AcademicData; reload: () => Promise<v
   const reload = useCallback(async () => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    const [ay, tm, yg, sj, cl, ch, en, tr, ct] = await Promise.all([
+    const [ay, tm, yg, sj, cl, ch, en, tr, ct, st] = await Promise.all([
       supabase.from("academic_years").select("id, label, starts_on, ends_on, is_test").order("starts_on", { ascending: false }),
       supabase.from("terms").select("id, name, starts_on, ends_on, academic_year_id, sanity_document_id").order("starts_on"),
       supabase.from("year_groups").select("id, name, sort_order, capacity").order("sort_order"),
@@ -36,6 +38,7 @@ export function useAcademicData(): { data: AcademicData; reload: () => Promise<v
       supabase.from("enrolments").select("id, class_id, child_id"),
       supabase.from("profiles").select("id, full_name, user_roles!inner(role)").in("user_roles.role", ["teacher", "teaching_assistant_cover"]),
       supabase.from("user_roles").select("id, user_id, scope_id").in("role", ["teacher", "teaching_assistant_cover"]).eq("scope_type", "class"),
+      supabase.from("class_subject_teachers").select("id, class_id, subject_id, teacher_id, valid_from, valid_to, lessons_per_week, notes, created_at"),
     ]);
     const teacherRows = (tr.data as unknown as { id: string; full_name: string | null }[]) || [];
     const seen = new Set<string>();
@@ -57,6 +60,7 @@ export function useAcademicData(): { data: AcademicData; reload: () => Promise<v
       enrolments: (en.data as Enrolment[]) || [],
       teachers,
       classTeachers: (ct.data as ClassTeacher[]) || [],
+      subjectTeachers: (st.data as CstRow[]) || [],
     });
   }, []);
 

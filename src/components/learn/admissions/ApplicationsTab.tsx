@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState, type DragEvent } from "react
 import { Card } from "@/components/learn/Card";
 import { ApplicationDrawer, type StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { useLearnPermission } from "@/lib/learn/session";
+import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 import {
   APPLICATION_COLUMNS,
@@ -12,6 +12,7 @@ import {
   SIDELINE_STATUSES,
   STATUS_LABELS,
   YEAR_GROUP_OPTIONS,
+  acceptanceBlockers,
   ageFromDob,
   processPips,
   type ApplicationPatch,
@@ -50,7 +51,7 @@ function ApplicationCard({
 }: {
   app: ApplicationRow;
   onOpen: (id: string) => void;
-  onMove: (id: string, status: ApplicationStatus) => Promise<void>;
+  onMove: (id: string, status: ApplicationStatus) => Promise<boolean>;
   onDragStart: (e: DragEvent<HTMLDivElement>, id: string) => void;
   onDragEnd: () => void;
 }) {
@@ -150,6 +151,8 @@ function Column({
 
 export function ApplicationsTab() {
   const canExport = useLearnPermission("can_export_data");
+  const { roles } = useLearnSession();
+  const isHeadteacher = roles.some((r) => r.role === "head_teacher");
   const [rows, setRows] = useState<ApplicationRow[]>([]);
   const [load, setLoad] = useState<Load>("loading");
   const [staff, setStaff] = useState<StaffOption[]>([]);
@@ -226,14 +229,28 @@ export function ApplicationsTab() {
   }
 
   const moveTo = useCallback(
-    async (id: string, status: ApplicationStatus): Promise<void> => {
+    async (id: string, status: ApplicationStatus): Promise<boolean> => {
       const supabase = getSupabaseClient();
       const current = rows.find((r) => r.id === id);
-      if (!supabase || !current || current.status === status) return;
+      if (!supabase || !current) return false;
+      if (current.status === status) return true;
       const previous = current.status;
+      if (status === "declined" || status === "withdrawn") {
+        const nm = `${current.child_first_name} ${current.child_last_name}`.trim();
+        if (!window.confirm(`Mark ${nm}'s application as ${status}? The family is not notified automatically, and you can move it back later from the ${status[0].toUpperCase() + status.slice(1)} column.`)) return false;
+      }
       if (status === "accepted") {
-        const missing = [!current.deposit_received && "deposit", !current.id_documents_received && "ID documents"].filter((x): x is string => typeof x === "string");
-        if (missing.length > 0 && !window.confirm(`Heads up: ${missing.join(" and ")} not marked as received yet. Move to Accepted anyway?`)) return;
+        // Fees policy: the admin fee and deposit are conditions of acceptance.
+        const blockers = acceptanceBlockers(current);
+        if (blockers.length > 0) {
+          const list = blockers.join(" and ");
+          if (!isHeadteacher) {
+            window.alert(`Can't accept yet: the ${list} ${blockers.length > 1 ? "have" : "has"} not been marked as received. Mark ${blockers.length > 1 ? "them" : "it"} received in the Process tab, or ask the Headteacher to override.`);
+            return false;
+          }
+          if (!window.confirm(`The ${list} ${blockers.length > 1 ? "are" : "is"} not marked as received. As Headteacher you can override. Move to Accepted anyway?`)) return false;
+        }
+        if (!current.id_documents_received && !window.confirm("ID documents are not marked as received yet. Move to Accepted anyway?")) return false;
       }
       setActionError(null);
       setRows((list) => list.map((r) => (r.id === id ? { ...r, status } : r)));
@@ -241,9 +258,11 @@ export function ApplicationsTab() {
       if (error) {
         setRows((list) => list.map((r) => (r.id === id ? { ...r, status: previous } : r)));
         setActionError("Couldn't move that application. Please try again.");
+        return false;
       }
+      return true;
     },
-    [rows]
+    [rows, isHeadteacher]
   );
 
   const patch = useCallback(async (id: string, p: ApplicationPatch): Promise<boolean> => {
@@ -289,6 +308,7 @@ export function ApplicationsTab() {
       "child_first_name", "child_last_name", "child_dob", "child_gender", "year_group_applying", "preferred_start",
       "current_school", "current_school_year", "previous_islamic_education", "send_or_medical_notes", "how_heard",
       "sibling_at_tarbiyyah", "sibling_details", "consent_contact", "consent_data", "declaration_name", "notes",
+      "offer_made_at", "offer_deadline", "admin_fee_amount", "admin_fee_received", "deposit_amount", "deposit_received",
     ] as const;
     const lines = [cols.join(",")].concat(filtered.map((r) => cols.map((c) => csvCell(r[c])).join(",")));
     const blob = new Blob([lines.join("\n")], { type: "text/csv" });

@@ -116,7 +116,7 @@ export function LogModal({
       if (dErr) {
         setBusy(false);
         onSaved();
-        return setError("The record was saved but the detention could not be created.");
+        return setError("The record was saved but the follow-up session could not be created.");
       }
     }
     setBusy(false);
@@ -251,7 +251,7 @@ export function LogModal({
             <div className="rounded-lg border border-gold-light/60 bg-cream/40 p-3 text-sm">
               <label className="flex items-center gap-2 font-medium text-ink">
                 <input type="checkbox" checked={detention} onChange={(e) => setDetention(e.target.checked)} />
-                Issue a detention
+                Set an online follow-up session (reflection task, catch-up call or parent call)
               </label>
               {detention && (
                 <div className="mt-3 flex flex-wrap gap-3">

@@ -398,7 +398,7 @@ export function CallsAndBookings() {
     <div className="space-y-6">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h2 font-semibold text-ink">Calls &amp; bookings</h2>
-        <p className="mt-1 text-sm text-ink/60">Manage admissions-call availability, bookable status, and bookings.</p>
+        <p className="mt-1 text-sm text-ink/60">Manage admissions-call availability, bookable status, and bookings. These are short intro calls booked from the website. The GL assessment is a separate stage, scheduled on each application under Process.</p>
       </div>
 
       {canManageOthers && (

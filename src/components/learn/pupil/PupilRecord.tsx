@@ -1,0 +1,216 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { getSupabaseClient } from "@/lib/supabase/client";
+import {
+  CONTACT_SELECT,
+  DETAILS_SELECT,
+  ProgressBar,
+  ageFromDob,
+  completeness,
+  formatDob,
+  formatStamp,
+  medicalAlerts,
+  meaningful,
+  type Acknowledgement,
+  type EmergencyContact,
+  type PupilDetails,
+} from "./data";
+
+export type RecordChild = { id: string; name: string; dob: string | null; yearGroup: string | null; classes: string[] };
+type Tab = "basics" | "health" | "contacts" | "consents" | "acks";
+
+/**
+ * Read-only pupil record for staff. Loads the child's details and contacts
+ * (RLS decides what a teacher may see) and records the view in the audit
+ * log. `showAcks` adds the teacher acknowledgements tab (Headteacher/admin).
+ * Every section is also rendered when printing, whichever tab is open.
+ */
+export function PupilRecord({ child, showAcks = false, onLoaded }: { child: RecordChild; showAcks?: boolean; onLoaded?: (d: PupilDetails | null, contacts: EmergencyContact[]) => void }) {
+  const [details, setDetails] = useState<PupilDetails | null>(null);
+  const [contacts, setContacts] = useState<EmergencyContact[]>([]);
+  const [acks, setAcks] = useState<Acknowledgement[]>([]);
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [tab, setTab] = useState<Tab>("basics");
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    let cancelled = false;
+    (async () => {
+      const [d, c, a] = await Promise.all([
+        supabase.from("pupil_details").select(DETAILS_SELECT).eq("child_id", child.id).maybeSingle(),
+        supabase.from("pupil_emergency_contacts").select(CONTACT_SELECT).eq("child_id", child.id).order("priority"),
+        showAcks
+          ? supabase.from("pupil_detail_acknowledgements").select("id, child_id, teacher_id, acknowledged_at, details_updated_at, profiles(full_name)").eq("child_id", child.id).order("acknowledged_at", { ascending: false })
+          : Promise.resolve({ data: [], error: null }),
+      ]);
+      if (cancelled) return;
+      const row = (d.data as unknown as PupilDetails | null) || null;
+      const list = (c.data as unknown as EmergencyContact[]) || [];
+      setDetails(row);
+      setContacts(list);
+      setAcks((a.data as unknown as Acknowledgement[]) || []);
+      setError(d.error || c.error ? "Some of this record couldn't load." : null);
+      setLoaded(true);
+      onLoaded?.(row, list);
+      // Medical information is sensitive: record that a staff member opened it.
+      void supabase.rpc("log_pupil_detail_view", { p_child_id: child.id });
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- load once per pupil
+  }, [child.id, showAcks]);
+
+  if (!loaded) return <p className="text-sm text-ink/60">Loading…</p>;
+
+  const progress = completeness(details, contacts.length);
+  const alerts = medicalAlerts(details);
+  const tabs: { key: Tab; label: string }[] = [
+    { key: "basics", label: "Basics" },
+    { key: "health", label: "Health" },
+    { key: "contacts", label: `Emergency contacts (${contacts.length})` },
+    { key: "consents", label: "Consents" },
+    ...(showAcks ? [{ key: "acks" as Tab, label: `Teacher acknowledgements (${acks.length})` }] : []),
+  ];
+  const vis = (k: Tab) => (tab === k ? "" : "hidden print:block");
+  const age = ageFromDob(child.dob);
+
+  return (
+    <div className="space-y-4">
+      {error && <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
+
+      <div className="rounded-xl border border-gold-light/60 bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-2">
+          <div>
+            <p className="text-lg font-semibold text-ink">{child.name}</p>
+            <p className="text-sm text-ink/60">
+              {[child.yearGroup, child.classes.join(", "), child.dob ? `Born ${formatDob(child.dob)}${age !== null ? ` (${age})` : ""}` : ""].filter(Boolean).join(" · ")}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {alerts.map((a) => (
+              <span key={a} className="rounded-full bg-red-50 px-2.5 py-1 text-xs font-semibold text-red-800">
+                {a}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="mt-3 flex items-center gap-3">
+          <div className="flex-1">
+            <ProgressBar percent={progress.percent} />
+          </div>
+          <p className="text-xs text-ink/60">{details?.completed_at ? `Complete · ${formatStamp(details.completed_at)}` : `${progress.percent}% complete`}</p>
+        </div>
+        {!details && <p className="mt-2 text-sm text-amber-800">The family hasn&apos;t started this record yet.</p>}
+      </div>
+
+      <div className="flex flex-wrap gap-2 print:hidden" role="tablist" aria-label="Sections">
+        {tabs.map((t) => (
+          <button
+            key={t.key}
+            type="button"
+            role="tab"
+            aria-selected={tab === t.key}
+            onClick={() => setTab(t.key)}
+            className={`rounded-full border px-3 py-1.5 text-sm font-medium ${tab === t.key ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      <Section title="Basics" className={vis("basics")}>
+        <Row label="Gender" value={details?.gender === "male" ? "Male" : details?.gender === "female" ? "Female" : ""} />
+        <Row label="Home address" value={[details?.address_line1, details?.address_line2, details?.town, details?.postcode].filter(Boolean).join(", ")} />
+        <Row label="Home language" value={details?.home_language} />
+        <Row label="Ethnicity" value={details?.ethnicity} />
+        <Row label="Previous school" value={details?.previous_school} />
+        <Row label="Siblings at the school" value={details?.siblings_at_school} />
+      </Section>
+
+      <Section title="Health" className={vis("health")}>
+        <Row label="GP" value={[details?.gp_name, details?.gp_phone].filter(Boolean).join(" · ")} />
+        <Row label="Medical conditions" value={details?.medical_conditions} alert={meaningful(details?.medical_conditions)} />
+        <Row label="Allergies" value={details?.allergies} alert={meaningful(details?.allergies)} />
+        <Row label="Medication" value={details?.medication} alert={meaningful(details?.medication)} />
+        <Row label="Dietary needs" value={details?.dietary_needs} />
+        <Row label="Additional needs" value={details?.sen_notes} />
+        <Row label="Parent confirmed" value={details?.health_confirmed ? "Yes" : "No"} />
+      </Section>
+
+      <Section title="Emergency contacts" className={vis("contacts")}>
+        {contacts.length === 0 ? (
+          <p className="text-sm text-amber-800">No emergency contacts yet.</p>
+        ) : (
+          <ol className="space-y-2">
+            {contacts.map((c, i) => (
+              <li key={c.id} className="rounded-lg border border-gold-light/60 p-3 text-sm">
+                <p className="font-medium text-ink">
+                  {i + 1}. {c.name} <span className="font-normal text-ink/55">· {c.relationship}</span>
+                </p>
+                <p className="text-ink/80">
+                  <a href={`tel:${c.phone.replace(/\s+/g, "")}`} className="underline">
+                    {c.phone}
+                  </a>
+                  {c.alt_phone ? ` · ${c.alt_phone}` : ""}
+                  {c.email ? ` · ${c.email}` : ""}
+                </p>
+                <p className="mt-1 flex flex-wrap gap-1.5 text-xs">
+                  {c.is_authorised_collector && <span className="rounded-full bg-teal-50 px-2 py-0.5 font-medium text-teal-800">Can collect</span>}
+                  {c.parental_responsibility && <span className="rounded-full bg-cream px-2 py-0.5 font-medium text-ink/70">Parental responsibility</span>}
+                </p>
+              </li>
+            ))}
+          </ol>
+        )}
+      </Section>
+
+      <Section title="Consents" className={vis("consents")}>
+        <Row label="Photographs" value={details?.photo_consent == null ? "" : details.photo_consent ? "Yes" : "No"} />
+        <Row label="Trips and visits" value={details?.trip_consent == null ? "" : details.trip_consent ? "Yes" : "No"} />
+        <Row label="Last updated" value={formatStamp(details?.updated_at)} />
+      </Section>
+
+      {showAcks && (
+        <Section title="Teacher acknowledgements" className={vis("acks")}>
+          {acks.length === 0 ? (
+            <p className="text-sm text-ink/60">No teacher has acknowledged this record yet.</p>
+          ) : (
+            <ul className="space-y-1.5 text-sm text-ink">
+              {acks.map((a) => {
+                const stale = details && a.details_updated_at && new Date(details.updated_at).getTime() > new Date(a.details_updated_at).getTime() + 1000;
+                return (
+                  <li key={a.id}>
+                    {a.profiles?.full_name || "Teacher"} <span className="text-ink/55">· {formatStamp(a.acknowledged_at)}</span>
+                    {stale ? <span className="ml-2 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900">Record changed since</span> : null}
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </Section>
+      )}
+    </div>
+  );
+}
+
+function Section({ title, className, children }: { title: string; className: string; children: React.ReactNode }) {
+  return (
+    <section className={`rounded-xl border border-gold-light/60 bg-white p-4 print:break-inside-avoid ${className}`}>
+      <h3 className="mb-2 text-sm font-semibold text-ink">{title}</h3>
+      {children}
+    </section>
+  );
+}
+
+function Row({ label, value, alert }: { label: string; value: string | null | undefined; alert?: boolean }) {
+  return (
+    <div className="grid gap-0.5 border-t border-gold-light/40 py-2 first:border-t-0 sm:grid-cols-[11rem_1fr]">
+      <p className="text-xs font-medium uppercase tracking-wide text-ink/50">{label}</p>
+      <p className={`whitespace-pre-wrap text-sm ${alert ? "font-semibold text-red-800" : "text-ink"}`}>{value && value.trim() ? value : <span className="font-normal text-ink/40">Not given</span>}</p>
+    </div>
+  );
+}

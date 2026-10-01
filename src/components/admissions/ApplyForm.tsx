@@ -3,7 +3,14 @@
 import { useEffect, useRef, useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
 import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { YEAR_GROUP_OPTIONS } from "@/components/admissions/applicationShared";
+import {
+  DOCUMENTS_BUCKET,
+  GENDER_OPTIONS,
+  MAX_REPORT_BYTES,
+  MAX_REPORT_FILES,
+  YEAR_GROUP_OPTIONS,
+  suggestYearGroup,
+} from "@/components/admissions/applicationShared";
 
 type TextKey =
   | "parentName" | "parentEmail" | "parentPhone" | "relationship" | "address"
@@ -14,6 +21,7 @@ type BoolKey = "sibling" | "consentContact" | "consentData";
 type Values = Record<TextKey, string> & Record<BoolKey, boolean>;
 type Errors = Partial<Record<TextKey | BoolKey, string>>;
 type Phase = "loading" | "closed" | "open" | "submitting" | "success";
+type Errors2 = { reports?: string };
 
 const INITIAL: Values = {
   parentName: "", parentEmail: "", parentPhone: "", relationship: "", address: "",
@@ -25,7 +33,7 @@ const INITIAL: Values = {
 
 // Display order, used to focus the first problem.
 const FIELD_ORDER: (TextKey | BoolKey)[] = [
-  "parentName", "parentEmail", "parentPhone", "childFirstName", "childLastName", "childDob",
+  "parentName", "parentEmail", "parentPhone", "childFirstName", "childLastName", "childDob", "childGender",
   "yearGroup", "consentContact", "consentData", "declarationName",
 ];
 
@@ -49,6 +57,7 @@ function validate(v: Values): Errors {
     else if (d > now) e.childDob = "The date of birth can't be in the future.";
     else if (d < oldest) e.childDob = "That date of birth looks too long ago. Please check the year.";
   }
+  if (v.childGender !== "Male" && v.childGender !== "Female") e.childGender = "Please choose Male or Female.";
   if (!v.yearGroup) e.yearGroup = "Please choose the year group you are applying for.";
   if (!v.consentContact) e.consentContact = "Please tick the box to say we may contact you about this application.";
   if (!v.consentData) e.consentData = "Please tick the box to agree to us using your information for this application.";
@@ -89,6 +98,12 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
   const [errors, setErrors] = useState<Errors>({});
   const [submitError, setSubmitError] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const [files, setFiles] = useState<File[]>([]);
+  const [fileError, setFileError] = useState<Errors2["reports"]>();
+  const [uploadWarning, setUploadWarning] = useState(false);
+  // Once the family picks a year group themselves we stop overwriting it.
+  const [yearTouched, setYearTouched] = useState(false);
+  const suggestion = suggestYearGroup(values.childDob, values.preferredStart);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -109,7 +124,15 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
   }, []);
 
   function setText(k: TextKey, val: string) {
-    setValues((v) => ({ ...v, [k]: val }));
+    setValues((v) => {
+      const next = { ...v, [k]: val };
+      if ((k === "childDob" || k === "preferredStart") && !yearTouched) {
+        const sg = suggestYearGroup(next.childDob, next.preferredStart);
+        if (sg) next.yearGroup = sg.yearGroup;
+      }
+      return next;
+    });
+    if (k === "yearGroup") setYearTouched(true);
     if (errors[k]) setErrors((er) => ({ ...er, [k]: undefined }));
   }
   function setBool(k: BoolKey, val: boolean) {
@@ -127,6 +150,18 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
     "aria-invalid": errors[k] ? true : undefined,
     "aria-describedby": errors[k] ? `e-f-${k}` : undefined,
   });
+
+  function addFiles(list: FileList | null) {
+    if (!list) return;
+    const incoming = Array.from(list);
+    const bad = incoming.find((f) => !(f.type === "application/pdf" || f.name.toLowerCase().endsWith(".pdf")));
+    if (bad) return setFileError(`"${bad.name}" is not a PDF. Please upload PDF files only.`);
+    const big = incoming.find((f) => f.size > MAX_REPORT_BYTES);
+    if (big) return setFileError(`"${big.name}" is larger than 10 MB. Please upload a smaller file.`);
+    if (files.length + incoming.length > MAX_REPORT_FILES) return setFileError(`You can upload up to ${MAX_REPORT_FILES} files.`);
+    setFileError(undefined);
+    setFiles((f) => [...f, ...incoming]);
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -153,8 +188,9 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
     setPhase("submitting");
     // Anon can't read the row back, so the id is generated here and the
     // insert deliberately doesn't ask for the row back (no .select()).
+    const applicationId = crypto.randomUUID();
     const { error } = await supabase.from("admissions_applications").insert({
-      id: crypto.randomUUID(),
+      id: applicationId,
       parent_name: values.parentName.trim(),
       parent_email: values.parentEmail.trim(),
       parent_phone: values.parentPhone.trim(),
@@ -163,7 +199,7 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
       child_first_name: values.childFirstName.trim(),
       child_last_name: values.childLastName.trim(),
       child_dob: values.childDob,
-      child_gender: nullIfEmpty(values.childGender),
+      child_gender: values.childGender,
       year_group_applying: values.yearGroup,
       preferred_start: nullIfEmpty(values.preferredStart),
       current_school: nullIfEmpty(values.currentSchool),
@@ -182,6 +218,16 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
       setSubmitError(true);
       return;
     }
+    // Reports go in after the application exists: storage only accepts
+    // uploads for an application created in the last hour (migration 0041).
+    let failed = false;
+    for (const f of files) {
+      const { error: upErr } = await supabase.storage
+        .from(DOCUMENTS_BUCKET)
+        .upload(`${applicationId}/${crypto.randomUUID()}.pdf`, f, { contentType: "application/pdf", upsert: false });
+      if (upErr) failed = true;
+    }
+    setUploadWarning(failed);
     setPhase("success");
   }
 
@@ -210,21 +256,27 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
         <ol className="mt-3 space-y-4 border-l-2 border-gold-light/70 pl-5">
           <li className="relative">
             <span aria-hidden="true" className="absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full bg-gold-500" />
-            <p className="text-sm font-medium text-ink">Send your child&apos;s latest school report</p>
+            <p className="text-sm font-medium text-ink">{files.length > 0 && !uploadWarning ? "School report received" : "Send your child's latest school report"}</p>
             <p className="text-sm text-ink/70">
-              Please email it to{" "}
-              <a href={`mailto:${admissionsEmail}`} className="font-semibold text-gold-700 underline">{admissionsEmail}</a>.
+              {files.length > 0 && !uploadWarning ? (
+                "Thank you for uploading it. We will let you know if we need anything else."
+              ) : (
+                <>
+                  {uploadWarning ? "Your application was sent, but we couldn't upload the report. " : ""}Please email it to{" "}
+                  <a href={`mailto:${admissionsEmail}`} className="font-semibold text-gold-700 underline">{admissionsEmail}</a>.
+                </>
+              )}
             </p>
           </li>
           <li className="relative">
             <span aria-hidden="true" className="absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full bg-gold-500" />
             <p className="text-sm font-medium text-ink">Assessment and conversation</p>
-            <p className="text-sm text-ink/70">The admissions team will contact you to arrange the assessment and conversation.</p>
+            <p className="text-sm text-ink/70">The admissions team will contact you to arrange the assessment (free of charge) and conversation.</p>
           </li>
           <li className="relative">
             <span aria-hidden="true" className="absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full bg-gold-500" />
-            <p className="text-sm font-medium text-ink">Acceptance and deposit</p>
-            <p className="text-sm text-ink/70">If we offer a place, we will explain how to confirm it with a deposit and ID documents.</p>
+            <p className="text-sm font-medium text-ink">Offer, fees and deposit</p>
+            <p className="text-sm text-ink/70">If we offer a place, we will explain the admin fee and deposit that confirm it, and ask for ID documents.</p>
           </li>
         </ol>
       </div>
@@ -273,9 +325,26 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
         <Field id="f-childDob" label="Date of birth" error={errors.childDob}>
           <input {...props("childDob")} type="date" className={inputCls} />
         </Field>
-        <Field id="f-childGender" label="Gender" optional>
-          <input {...props("childGender")} type="text" maxLength={40} className={inputCls} />
-        </Field>
+        <div role="radiogroup" aria-labelledby="l-childGender" aria-describedby={errors.childGender ? "e-f-childGender" : undefined}>
+          <p id="l-childGender" className="block text-sm font-medium text-ink">Gender</p>
+          <div className="mt-2 flex gap-6">
+            {GENDER_OPTIONS.map((g, i) => (
+              <label key={g} className="flex items-center gap-2 text-ink">
+                <input
+                  id={i === 0 ? "f-childGender" : undefined}
+                  type="radio"
+                  name="childGender"
+                  value={g}
+                  checked={values.childGender === g}
+                  disabled={busy}
+                  onChange={() => setText("childGender", g)}
+                />
+                {g}
+              </label>
+            ))}
+          </div>
+          {errors.childGender && <p id="e-f-childGender" role="alert" className="mt-1 text-sm text-red-700">{errors.childGender}</p>}
+        </div>
         <Field id="f-yearGroup" label="Year group applying for" error={errors.yearGroup}>
           <select {...props("yearGroup")} className={inputCls}>
             <option value="">Select a year group</option>
@@ -284,6 +353,27 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
             ))}
           </select>
         </Field>
+        {suggestion && (
+          <p role="status" className="rounded-lg bg-cream px-3 py-2 text-sm text-ink sm:col-span-2">
+            Suggested year group: <strong className="text-base">{suggestion.yearGroup}</strong>{" "}
+            <span className="text-ink/70">(age {suggestion.ageAtEntry} on 31 August {suggestion.entryYear}).</span>{" "}
+            {values.yearGroup !== suggestion.yearGroup ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setYearTouched(false);
+                  setText("yearGroup", suggestion.yearGroup);
+                  setYearTouched(false);
+                }}
+                className="font-semibold text-gold-700 underline"
+              >
+                Use this
+              </button>
+            ) : (
+              <span className="text-ink/70">You can change it above if it isn&apos;t right.</span>
+            )}
+          </p>
+        )}
         <Field id="f-preferredStart" label="Preferred start" optional>
           <input {...props("preferredStart")} type="text" maxLength={120} placeholder="e.g. January 2027" className={inputCls} />
         </Field>
@@ -296,10 +386,41 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
         <Field id="f-currentSchoolYear" label="Current year group" optional>
           <input {...props("currentSchoolYear")} type="text" maxLength={60} className={inputCls} />
         </Field>
-        <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/80 sm:col-span-2">
-          Please email your child&apos;s latest school report to{" "}
-          <a href={`mailto:${admissionsEmail}`} className="font-semibold text-gold-700 underline">{admissionsEmail}</a>.
-        </p>
+        <div className="sm:col-span-2">
+          <Field
+            id="f-reports"
+            label="Latest school report(s)"
+            optional
+            hint={`PDF only, up to ${MAX_REPORT_FILES} files, 10 MB each. You can also email them to ${admissionsEmail}.`}
+            error={fileError}
+          >
+            <input
+              id="f-reports"
+              type="file"
+              accept="application/pdf,.pdf"
+              multiple
+              disabled={busy || files.length >= MAX_REPORT_FILES}
+              onChange={(e) => {
+                addFiles(e.target.files);
+                e.target.value = "";
+              }}
+              aria-describedby={fileError ? "e-f-reports" : "h-f-reports"}
+              className={`${inputCls} file:mr-3 file:rounded-md file:border-0 file:bg-cream file:px-3 file:py-1 file:text-sm`}
+            />
+          </Field>
+          {files.length > 0 && (
+            <ul className="mt-2 space-y-1 text-sm text-ink/80">
+              {files.map((f, i) => (
+                <li key={`${f.name}-${i}`} className="flex items-center justify-between gap-3 rounded-lg bg-cream px-3 py-1.5">
+                  <span className="truncate">{f.name} <span className="text-ink/50">({(f.size / 1048576).toFixed(1)} MB)</span></span>
+                  <button type="button" disabled={busy} onClick={() => setFiles((l) => l.filter((_, j) => j !== i))} className="shrink-0 font-semibold text-gold-700 underline">
+                    Remove
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
         <div className="sm:col-span-2">
           <Field id="f-islamicEducation" label="Previous Islamic education" optional hint="For example Qur'an level, any hifz, and Arabic.">
             <textarea {...props("islamicEducation")} rows={3} maxLength={1500} aria-describedby={errors.islamicEducation ? "e-f-islamicEducation" : "h-f-islamicEducation"} className={inputCls} />

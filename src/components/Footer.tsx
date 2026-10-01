@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
-import { footerNav } from "@/lib/nav";
+import { footerColumns } from "@/lib/nav";
 import { getSiteSettings } from "@/lib/content";
 import { LEARN_ORIGIN } from "@/lib/learn/origin";
 
@@ -11,41 +11,14 @@ export async function Footer() {
 
   return (
     <footer className="geo-texture mt-24 border-t border-gold-light/30 bg-ink text-cream/90">
-      <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr_1fr]">
         <div>
           <Image src="/brand/ga-wordmark-white.png" alt="Tarbiyyah Global Academy" width={200} height={61} />
           <p className="mt-4 text-sm text-white/70">Part of the Tarbiyyah Education Trust.</p>
           <p className="mt-2 text-sm text-white/70">
             A specialist, quality education, rooted in faith — delivered live, wherever your family calls home.
           </p>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-gold-light">Explore</h2>
-          <ul className="mt-4 space-y-2 text-sm">
-            {footerNav.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="text-cream/75 hover:text-cream">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-gold-light">The Trust</h2>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li><a className="text-cream/75 hover:text-cream" href="https://tarbiyyaheducationtrust.com" target="_blank" rel="noopener">Tarbiyyah Education Trust</a></li>
-            <li><a className="text-cream/75 hover:text-cream" href="https://tarbiyyah.co.uk" target="_blank" rel="noopener">Tarbiyyah Primary</a></li>
-            <li><a className="text-cream/75 hover:text-cream" href="https://tarbiyyahsecondaryboys.co.uk" target="_blank" rel="noopener">Tarbiyyah Secondary (Boys)</a></li>
-            <li><a className="text-cream/75 hover:text-cream" href="https://tarbiyyahalbanaat.co.uk" target="_blank" rel="noopener">Tarbiyyah Al-Banaat</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-gold-light">Contact</h2>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-4 space-y-1.5 text-sm">
             <li><a className="text-cream/75 hover:text-cream" href={`mailto:${email}`}>{email}</a></li>
             {settings.contactPhone && (
               <li><a className="text-cream/75 hover:text-cream" href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`}>{settings.contactPhone}</a></li>
@@ -58,7 +31,33 @@ export async function Footer() {
             {settings.openingHours && <li className="text-cream/75">{settings.openingHours}</li>}
           </ul>
         </div>
+
+        {footerColumns.map((col) => (
+          <div key={col.heading}>
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gold-light">{col.heading}</h2>
+            <ul className="mt-4 space-y-2 text-sm">
+              {col.links.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="text-cream/75 hover:text-cream">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
       </Container>
+
+      <div className="border-t border-white/10 py-5">
+        <Container className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+          <span className="font-semibold uppercase tracking-wide text-gold-light text-xs">The Trust</span>
+          <a className="text-cream/75 hover:text-cream" href="https://tarbiyyaheducationtrust.com" target="_blank" rel="noopener">Tarbiyyah Education Trust</a>
+          <a className="text-cream/75 hover:text-cream" href="https://tarbiyyah.co.uk" target="_blank" rel="noopener">Tarbiyyah Primary</a>
+          <a className="text-cream/75 hover:text-cream" href="https://tarbiyyahsecondaryboys.co.uk" target="_blank" rel="noopener">Tarbiyyah Secondary (Boys)</a>
+          <a className="text-cream/75 hover:text-cream" href="https://tarbiyyahalbanaat.co.uk" target="_blank" rel="noopener">Tarbiyyah Al-Banaat</a>
+        </Container>
+      </div>
 
       <div className="border-t border-white/10 py-6">
         <Container className="flex flex-col gap-2 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">

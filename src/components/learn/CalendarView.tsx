@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { classColour } from "@/lib/learn/classes";
 import { localDateKey, useCalendarEvents, type CalendarEvent, type CalendarScope } from "@/lib/learn/calendar";
-import { getSupabaseClient } from "@/lib/supabase/client";
+import { TermsManager } from "@/components/learn/calendar/TermsManager";
+import { CLOSURE_LABEL, dayInfo, useCalendarTerms } from "@/components/learn/calendar/useCalendarTerms";
 import { addDays, formatHijri, hijriMonthLength, hijriMonthName, hijriMonthStart, isUmmAlQura, resetHijriEngine, shiftHijriMonth, toHijri, todayHijri } from "@/lib/learn/hijri";
 
 const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -12,7 +13,6 @@ const GREG_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Se
 
 type HMonth = { year: number; month: number };
 type Cell = { date: Date; hijriDay: number } | null;
-type TermRow = { id: string; name: string; starts_on: string; ends_on: string };
 
 /** A Hijri month laid out Monday-first: leading/trailing nulls pad the weeks. */
 function hijriGrid(m: HMonth): { cells: Cell[]; first: Date; last: Date } {
@@ -77,29 +77,12 @@ const TABS: { id: Tab; label: string }[] = [
   { id: "terms", label: "Terms" },
 ];
 
-function useTerms(): TermRow[] | null {
-  const [terms, setTerms] = useState<TermRow[] | null>(null);
-  useEffect(() => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    let cancelled = false;
-    (async () => {
-      const { data } = await supabase.from("terms").select("id, name, starts_on, ends_on").order("starts_on");
-      if (!cancelled) setTerms((data as TermRow[] | null) || []);
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-  return terms;
-}
-
 /**
  * Academic calendar, Hijri-first (Umm al-Qura via the browser's Intl): the
  * month grid is a Hijri month, each cell shows the Hijri day big and the
  * Gregorian day small, with lessons and homework deadlines as entries.
  */
-export function CalendarView({ scope }: { scope: CalendarScope | null }) {
+export function CalendarView({ scope, canManageTerms = false }: { scope: CalendarScope | null; canManageTerms?: boolean }) {
   const [ver, setVer] = useState(0); // bumped by "Sync Islamic dates"
   const [tab, setTab] = useState<Tab>("month");
   const [hm, setHm] = useState<HMonth>(() => {
@@ -109,7 +92,7 @@ export function CalendarView({ scope }: { scope: CalendarScope | null }) {
   const [selected, setSelected] = useState(() => localDateKey(new Date()));
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<number | null>(null);
-  const terms = useTerms();
+  const { terms, years, closures, reload } = useCalendarTerms();
 
   const today = new Date();
   const todayKey = localDateKey(today);
@@ -149,9 +132,11 @@ export function CalendarView({ scope }: { scope: CalendarScope | null }) {
       if (t.starts_on >= todayKey) out.push({ key: `s-${t.id}`, date: t.starts_on, label: `${t.name} starts` });
       if (t.ends_on >= todayKey) out.push({ key: `e-${t.id}`, date: t.ends_on, label: `${t.name} ends` });
     }
+    for (const t of terms || []) if (t.half_term_starts_on && t.half_term_ends_on && t.half_term_ends_on >= todayKey) out.push({ key: `h-${t.id}`, date: t.half_term_starts_on, label: `${t.name} half-term break` });
+    for (const c of closures) if (c.ends_on >= todayKey) out.push({ key: `c-${c.id}`, date: c.starts_on, label: `${c.name} (${CLOSURE_LABEL[c.kind]})` });
     for (const e of events || []) if (e.kind === "homework") out.push({ key: e.id, date: e.date, label: `Homework due: ${e.title} (${e.className})` });
     return out.sort((a, b) => a.date.localeCompare(b.date));
-  }, [terms, events, todayKey]);
+  }, [terms, closures, events, todayKey]);
 
   return (
     <div className="space-y-4">
@@ -214,6 +199,11 @@ export function CalendarView({ scope }: { scope: CalendarScope | null }) {
                   <span className="text-[10px]">1</span> Gregorian date
                 </span>
               </p>
+              <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-ink/55">
+                <span className="inline-flex items-center gap-1.5"><span aria-hidden="true" className="h-3 w-3 rounded border border-green-200 bg-green-50" /> Term</span>
+                <span className="inline-flex items-center gap-1.5"><span aria-hidden="true" className="h-3 w-3 rounded border border-amber-200 bg-amber-50" /> Half-term</span>
+                <span className="inline-flex items-center gap-1.5"><span aria-hidden="true" className="h-3 w-3 rounded border border-red-200 bg-red-50" /> INSET / closure</span>
+              </p>
               {!umalqura && <p className="text-amber-800">Your browser doesn&apos;t include the Umm al-Qura calendar, so the civil Islamic calendar is shown (a day may differ).</p>}
             </div>
 
@@ -232,14 +222,18 @@ export function CalendarView({ scope }: { scope: CalendarScope | null }) {
                 const isToday = key === todayKey;
                 const isSelected = key === selected;
                 const firstOfGreg = c.date.getDate() === 1;
+                const info = dayInfo(key, terms, closures);
+                const closed = info.closure.length > 0;
+                const tint = closed ? "bg-red-50" : info.halfTerm ? "bg-amber-50" : info.term ? "bg-green-50/70" : "bg-white";
+                const cellTag = closed ? info.closure[0].name : info.halfTerm ? "Half-term" : info.boundaryLabel;
                 return (
                   <button
                     key={key}
                     type="button"
                     onClick={() => setSelected(key)}
                     aria-pressed={isSelected}
-                    aria-label={`${c.hijriDay} ${hijriMonthName(hm.month)} ${hm.year} AH, ${gregLong(c.date)}, ${list.length} event${list.length === 1 ? "" : "s"}`}
-                    className={`min-h-[64px] border-b border-r border-gold-light/70 bg-white p-1 text-left align-top transition-colors sm:min-h-[104px] sm:p-1.5 ${
+                    aria-label={`${c.hijriDay} ${hijriMonthName(hm.month)} ${hm.year} AH, ${gregLong(c.date)}, ${list.length} event${list.length === 1 ? "" : "s"}${cellTag ? `, ${cellTag}` : ""}`}
+                    className={`min-h-[64px] border-b border-r border-gold-light/70 ${tint} p-1 text-left align-top transition-colors sm:min-h-[104px] sm:p-1.5 ${
                       isSelected ? "ring-2 ring-inset ring-green-600" : "hover:bg-cream/70"
                     }`}
                   >
@@ -255,6 +249,9 @@ export function CalendarView({ scope }: { scope: CalendarScope | null }) {
                         {firstOfGreg ? gregShort(c.date) : c.date.getDate()}
                       </span>
                     </span>
+                    {cellTag && (
+                      <span className={`mt-0.5 block truncate text-[9px] font-semibold sm:text-[10px] ${closed ? "text-red-800" : info.halfTerm ? "text-amber-800" : "text-green-800"}`}>{cellTag}</span>
+                    )}
                     <span className="mt-1 hidden space-y-0.5 sm:block">
                       {list.slice(0, 3).map((e) => (
                         <span
@@ -287,6 +284,17 @@ export function CalendarView({ scope }: { scope: CalendarScope | null }) {
               <h3 className="text-sm font-semibold text-ink">{gregLong(parseKey(selected))}</h3>
               <p className="text-xs text-ink/55">{formatHijri(toHijri(parseKey(selected)))}</p>
             </div>
+            {(() => {
+              const info = dayInfo(selected, terms, closures);
+              const lines = [info.term ? `${info.term.name}${info.halfTerm ? " · half-term break" : ""}` : null, ...info.closure.map((c) => `${c.name} (${CLOSURE_LABEL[c.kind]})`)].filter(Boolean);
+              return lines.length ? (
+                <ul className="space-y-0.5 border-b border-gold-light bg-cream/40 px-4 py-2 text-xs font-medium text-ink/75">
+                  {lines.map((l) => (
+                    <li key={l}>{l}</li>
+                  ))}
+                </ul>
+              ) : null;
+            })()}
             <div className="p-2">
               {events === null ? (
                 <p className="px-2 py-3 text-sm text-ink/55">Loading…</p>
@@ -321,26 +329,7 @@ export function CalendarView({ scope }: { scope: CalendarScope | null }) {
         </section>
       )}
 
-      {tab === "terms" && (
-        <section className="rounded-2xl border border-gold-light bg-white">
-          <h3 className="border-b border-gold-light px-4 py-3 text-sm font-semibold text-ink">Terms</h3>
-          {terms === null ? (
-            <p className="px-4 py-3 text-sm text-ink/55">Loading…</p>
-          ) : terms.length === 0 ? (
-            <p className="px-4 py-3 text-sm text-ink/55">No terms have been set up yet.</p>
-          ) : (
-            <ul className="divide-y divide-gold-light/60">
-              {terms.map((t) => (
-                <li key={t.id} className="px-4 py-3 text-sm">
-                  <span className="block font-medium text-ink">{t.name}</span>
-                  <span className="block text-xs text-ink/60">Starts: {bothDates(t.starts_on)}</span>
-                  <span className="block text-xs text-ink/60">Ends: {bothDates(t.ends_on)}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-      )}
+      {tab === "terms" && <TermsManager terms={terms} years={years} closures={closures} canManage={canManageTerms} reload={reload} />}
     </div>
   );
 }

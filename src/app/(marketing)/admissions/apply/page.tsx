@@ -18,22 +18,17 @@ export default async function ApplyPage() {
   const steps = [
     {
       title: "Application",
-      body: (
-        <>
-          Complete the online form below, then email your child&apos;s latest school report to{" "}
-          <a href={`mailto:${email}`} className="font-semibold text-gold-700 underline">{email}</a>.
-        </>
-      ),
+      body: "Complete the online form below and upload your child's latest school report as a PDF (or email it to us afterwards).",
     },
     {
       title: "Assessment & interview",
-      body: "Your child takes a short assessment, then we have a conversation with you and your child to make sure we are the right fit.",
+      body: "Your child takes a short assessment, free of charge, then we have a conversation with you and your child to make sure we are the right fit.",
     },
     {
-      title: "Acceptance & deposit",
+      title: "Offer, fees & deposit",
       body: (
         <>
-          If we offer a place, you confirm it with a deposit and ID documents. See our{" "}
+          If we offer a place, you confirm it by paying the admin fee and a deposit by the deadline in your offer, and sending ID documents. See our{" "}
           <Link href="/fees" className="font-semibold text-gold-700 underline">fees page</Link> for details.
         </>
       ),
@@ -41,9 +36,10 @@ export default async function ApplyPage() {
   ];
 
   const needs = [
-    "Your child's latest school report (you can email it after applying)",
+    "Your child's latest school report as a PDF (you can also email it after applying)",
     "A parent or guardian email address and phone number",
     "ID documents, which we will ask for later if a place is offered",
+    "Admin fee and deposit: not due to apply or sit the assessment. They are requested only if a place is offered, and hold the place once received",
   ];
 
   return (

@@ -8,15 +8,13 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
   return "items" in entry;
 }
 
-// Grouped so no label wraps onto two lines in the header. Five top-level
-// groups — About / Learning / Admissions / Parents / Contact — plus a single
-// "Book a free call" primary CTA (see primaryCta below). Applying is still
-// reachable via Admissions → "How to apply"; it's just no longer the header's
-// primary button. "Parents" gathers pages that used to be scattered across
-// About and the footer only (Policies, Safeguarding, Term Dates, Open
-// Evening, Pastoral care) into one place a parent would actually look.
+// Five top-level items — About / Learning / Admissions / Parents / Contact —
+// plus a prominent "Apply" CTA and a "Log in" link. Only About and Admissions
+// open a (single-level) dropdown; Learning and Parents are plain links to hub
+// pages (/learning, /parents) whose sub-pages are presented as cards, so the
+// detail lives on sub-pages rather than in menu items. Every existing URL is
+// still live and reachable from a hub, the footer or a dropdown.
 export const primaryNav: NavEntry[] = [
-  { href: "/", label: "Home" },
   {
     label: "About",
     items: [
@@ -25,49 +23,97 @@ export const primaryNav: NavEntry[] = [
       { href: "/testimonials", label: "Testimonials" },
     ],
   },
-  {
-    label: "Learning",
-    items: [
-      { href: "/curriculum", label: "Curriculum" },
-    ],
-  },
+  { href: "/learning", label: "Learning" },
   {
     label: "Admissions",
     items: [
-      { href: "/eligibility", label: "Is it right for us?" },
       { href: "/admissions", label: "How to apply" },
       { href: "/fees", label: "Fees" },
+      { href: "/eligibility", label: "Is it right for us?" },
+      { href: "/book-a-call", label: "Book a free call" },
+    ],
+  },
+  { href: "/parents", label: "Parents" },
+  { href: "/contact", label: "Contact" },
+];
+
+export type HubCard = { href: string; title: string; body: string };
+
+export const learningHub: HubCard[] = [
+  { href: "/curriculum", title: "Curriculum", body: "The full British national curriculum plus Islamic Studies, by key stage, Reception to GCSE." },
+  { href: "/curriculum/reception-year-2", title: "Reception – Year 2", body: "View timetable, subjects and sample week." },
+  { href: "/curriculum/year-3-6", title: "Year 3 – Year 6", body: "View timetable, subjects and sample week." },
+  { href: "/curriculum/year-7-9", title: "Year 7 – Year 9", body: "View timetable, subjects and sample week." },
+  { href: "/curriculum/year-10-11", title: "Year 10 – Year 11 (GCSE)", body: "View timetable, subjects and sample week." },
+  { href: "/pastoral-care", title: "Pastoral care & SEND", body: "How we support every child's wellbeing, character and additional needs." },
+  { href: "/eligibility", title: "Your child's week", body: "Five short questions to see a sample week in your own timezone." },
+];
+
+export const parentsHub: HubCard[] = [
+  { href: "/term-dates", title: "Term dates", body: "Term dates and the admissions calendar for the January 2027 launch." },
+  { href: "/policies", title: "Policies", body: "Our statutory school policies, including Safeguarding, Admissions, Fees and Data Protection." },
+  { href: "/safeguarding", title: "Safeguarding", body: "How we keep children safe, and how to raise a concern." },
+  { href: "/pastoral-care", title: "Pastoral care & SEND", body: "Wellbeing, character and additional needs support." },
+  { href: "/open-evening", title: "Virtual open evening", body: "Book a place, or watch a past recording." },
+  { href: "/faqs", title: "FAQs", body: "Admissions, fees, curriculum, technology, Islamic Studies and SEND." },
+  { href: "/manage-booking", title: "Manage a booking", body: "Change or cancel an existing call booking." },
+];
+
+export const aboutHub: HubCard[] = [
+  { href: "/team", title: "Meet the team", body: "Qualifications and intro videos for our teachers." },
+  { href: "/testimonials", title: "Testimonials", body: "What parents and students say about the Academy." },
+  { href: "/safeguarding", title: "Safeguarding", body: "Our commitment to every child's safety." },
+  { href: "/pastoral-care", title: "Pastoral care", body: "How we nurture wellbeing and character." },
+];
+
+// Footer: four matching columns of links (+ brand/contact block in Footer.tsx).
+export const footerColumns: { heading: string; links: NavLink[] }[] = [
+  {
+    heading: "School",
+    links: [
+      { href: "/about", label: "About us" },
+      { href: "/team", label: "Meet the team" },
+      { href: "/testimonials", label: "Testimonials" },
+      { href: "/curriculum", label: "Curriculum" },
+      { href: "/learning", label: "Learning" },
+    ],
+  },
+  {
+    heading: "Admissions",
+    links: [
+      { href: "/admissions", label: "How to apply" },
+      { href: "/fees", label: "Fees" },
+      { href: "/eligibility", label: "Is it right for us?" },
+      { href: "/open-evening", label: "Virtual open evening" },
       { href: "/book-a-call", label: "Book a free call" },
     ],
   },
   {
-    label: "Parents",
-    items: [
-      { href: "/policies", label: "Policies" },
-      { href: "/safeguarding", label: "Safeguarding" },
+    heading: "Parents",
+    links: [
+      { href: "/parents", label: "Parent hub" },
       { href: "/term-dates", label: "Term dates" },
-      { href: "/open-evening", label: "Open evening" },
-      { href: "/pastoral-care", label: "Pastoral care" },
+      { href: "/safeguarding", label: "Safeguarding" },
+      { href: "/policies", label: "Policies" },
+      { href: "/faqs", label: "FAQs" },
     ],
   },
-  { href: "/faqs", label: "FAQs" },
-  { href: "/contact", label: "Contact" },
+  {
+    heading: "Legal",
+    links: [
+      { href: "/legal/privacy", label: "Privacy policy" },
+      { href: "/legal/cookies", label: "Cookie policy" },
+      { href: "/legal/terms", label: "Terms" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
 ];
 
-export const footerNav = [
-  { href: "/term-dates", label: "Term Dates" },
-  { href: "/open-evening", label: "Virtual Open Evening" },
-  { href: "/safeguarding", label: "Safeguarding" },
-  { href: "/policies", label: "Policies" },
-  { href: "/legal/privacy", label: "Privacy Policy" },
-  { href: "/legal/cookies", label: "Cookie Policy" },
-  { href: "/legal/terms", label: "Terms" },
-];
+// Kept for backwards compatibility with any importer.
+export const footerNav = footerColumns.flatMap((c) => c.links);
 
-// A single, unambiguous primary CTA. Applying remains reachable (Admissions
-// → "How to apply"), but a free call is a lower-commitment first step and is
-// what the header now leads with.
-export const primaryCta = { href: "/book-a-call", label: "Book a free call" };
+// Primary header CTA is Apply; a free call stays reachable under Admissions.
+export const primaryCta = { href: "/admissions", label: "Apply" };
 // Single log-in destination across header, mobile drawer and footer — /staff
 // and /portal both 301-redirect to this same URL at the server level (see
 // public/.htaccess), so there is only ever one login entry point live. This

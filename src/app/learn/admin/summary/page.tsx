@@ -5,7 +5,8 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { StatTile } from "@/components/learn/Card";
 import { csvEscape, round2 } from "@/components/learn/fees/shared";
-import { useLearnPermission } from "@/lib/learn/session";
+import { PrintHeader, PrintSheet } from "@/components/learn/print";
+import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
 
@@ -88,18 +89,10 @@ function emptyAgg(key: string, name: string, yearGroup: string): Agg {
   return { key, name, yearGroup, students: 0, attended: 0, marked: 0, hwDone: 0, hwExpected: 0, billed: 0, collected: 0 };
 }
 
-const PRINT_CSS = `
-@media print {
-  .portal > aside, .portal header, .portal [role="dialog"], .no-print { display: none !important; }
-  .portal > div { padding-left: 0 !important; }
-  .portal main > div { max-width: none !important; padding: 0 !important; }
-  body { background: #fff !important; }
-  .print-card { break-inside: avoid; }
-}
-`;
-
 function SummaryContent() {
   const canExport = useLearnPermission("can_export_data");
+  const { session } = useLearnSession();
+  const generatedBy = session && session !== "loading" ? session.user.email : null;
   const [raw, setRaw] = useState<Raw | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [period, setPeriod] = useState<PeriodKey>("30");
@@ -410,7 +403,8 @@ function SummaryContent() {
 
   return (
     <div>
-      <style>{PRINT_CSS}</style>
+      <PrintSheet />
+      <div className="print:hidden">
       <PageHeader
         crumbs={[{ label: "Site administration", href: "/admin/site" }, { label: "Summary" }]}
         title="Summary"
@@ -419,15 +413,16 @@ function SummaryContent() {
           <div className="no-print flex flex-wrap gap-2">
             {canExport && (
               <button type="button" onClick={exportCsv} disabled={!calc} className={`${btn} disabled:opacity-50`}>
-                CSV
+                Download CSV
               </button>
             )}
             <button type="button" onClick={() => window.print()} disabled={!calc} className={`${btn} disabled:opacity-50`}>
-              PDF
+              Save as PDF
             </button>
           </div>
         }
       />
+      </div>
 
       <div className="no-print mb-5 flex flex-wrap items-end gap-3">
         <label className="text-sm font-medium text-ink/70">
@@ -452,7 +447,7 @@ function SummaryContent() {
           </label>
         )}
       </div>
-      <p className="mb-4 hidden text-sm text-ink/70 print:block">Period: {periodLabel}</p>
+      <PrintHeader title="School Summary" period={periodLabel} generatedBy={generatedBy} />
 
       {error && (
         <p role="alert" className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">
@@ -464,7 +459,7 @@ function SummaryContent() {
 
       {calc && (
         <>
-          <div className="print-card mb-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <div className="print-tiles mb-8 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 lg:grid-cols-4">
             <StatTile label="Total students" value={calc.students} />
             <StatTile label="Lessons held" value={calc.lessons} />
             <StatTile label="Attendance rate" value={fmtPct(calc.attendance)} />
@@ -474,9 +469,9 @@ function SummaryContent() {
             <StatTile label="Collection %" value={fmtPct(calc.collection)} />
           </div>
 
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
             <h2 className="font-serif text-h3 font-semibold text-ink">Per-class breakdown</h2>
-            <label className="no-print flex items-center gap-2 text-sm font-medium text-ink/70">
+            <label className="no-print flex shrink-0 items-center gap-2 text-sm font-medium text-ink/70">
               Group by
               <select
                 value={groupBy}
@@ -497,7 +492,7 @@ function SummaryContent() {
               No classes to show yet. Add classes under Academic setup and they will appear here.
             </div>
           ) : (
-            <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
+            <div className="print-scroll overflow-x-auto rounded-2xl border border-gold-light bg-white">
               <table className="w-full min-w-[720px] text-sm">
                 <thead className="bg-cream/60 text-ink/70">
                   <tr>

@@ -42,7 +42,7 @@ import json
 import os
 import sys
 from dataclasses import dataclass, field
-from datetime import time
+from datetime import date, time
 
 from ortools.sat.python import cp_model
 
@@ -67,7 +67,17 @@ MAX_CONSECUTIVE_TEACHING_PERIODS = 4
 
 @dataclass
 class ClassInfo:
+    """One thing to place: a (class, subject) pair.
+
+    `id` is unique per pair ("<class_id>:<subject_id>") and is only used as a
+    dict/variable key; `class_id` is the real classes.id (a class can have
+    several subjects, each with its own teacher, and one class can never be in
+    two lessons at once whatever the subject).
+    """
+
     id: str
+    class_id: str
+    teacher_fixed: bool
     name: str
     year_group_name: str
     subject_id: str
@@ -86,6 +96,41 @@ class Inputs:
     teacher_ids: list[str]
     availability: dict[str, set[tuple[int, int]]]  # teacher_id -> {(weekday, period_index)}
     protected: set[tuple[int, int]]  # {(weekday, period_index)} blocked for everyone
+
+
+def teacher_for(rows: list[dict], class_id: str, subject_id: str, on: str) -> dict | None:
+    """Mirror of public.teacher_for() (migration 0050) and
+    src/lib/learn/teacherFor.ts: the most specific class_subject_teachers row
+    valid on `on` (yyyy-mm-dd): both dates set, then one date, then the default;
+    ties go to the later valid_from, then the newest row."""
+    hits = [
+        r
+        for r in rows
+        if r["class_id"] == class_id
+        and r["subject_id"] == subject_id
+        and (not r.get("valid_from") or r["valid_from"] <= on)
+        and (not r.get("valid_to") or r["valid_to"] >= on)
+    ]
+    if not hits:
+        return None
+
+    def spec(r: dict) -> int:
+        return 0 if (r.get("valid_from") and r.get("valid_to")) else 1 if (r.get("valid_from") or r.get("valid_to")) else 2
+
+    hits.sort(key=lambda r: r.get("created_at") or "", reverse=True)  # newest first (stable base order)
+    hits.sort(key=lambda r: r.get("valid_from") or "", reverse=True)  # later valid_from first, nulls last
+    hits.sort(key=spec)
+    return hits[0]
+
+
+def weekly_template_teacher(rows: list[dict], class_id: str, subject_id: str, today: str) -> dict | None:
+    """The teacher for the WEEKLY TEMPLATE: the open-ended default, never a
+    dated override (overrides apply to dated lessons only, see migration 0051).
+    With no default but dated rows, falls back to whoever is in force today."""
+    for r in rows:
+        if r["class_id"] == class_id and r["subject_id"] == subject_id and not r.get("valid_from") and not r.get("valid_to"):
+            return r
+    return teacher_for(rows, class_id, subject_id, today)
 
 
 def fetch_inputs(supabase, academic_year_label: str) -> Inputs:
@@ -155,23 +200,66 @@ def fetch_inputs(supabase, academic_year_label: str) -> Inputs:
             if pstart < end and pend > start:
                 protected.add((r["weekday"], idx))
 
+    # (class, subject) -> teacher mapping (migration 0050). Teachers differ per
+    # subject, so one teacher can teach many classes; the solver keeps them
+    # un-double-booked. A pair with no mapping falls back to the old
+    # class-scoped teacher (own subject only), then to "any available teacher".
+    class_ids = [c["id"] for c in classes_raw]
+    cst_rows: list[dict] = []
+    if class_ids:
+        try:
+            cst_rows = (
+                supabase.table("class_subject_teachers")
+                .select("class_id,subject_id,teacher_id,valid_from,valid_to,lessons_per_week,created_at")
+                .in_("class_id", class_ids)
+                .execute()
+                .data
+            )
+        except Exception as exc:  # pragma: no cover - table missing on an un-migrated project
+            print(f"WARNING: could not read class_subject_teachers ({exc}); using class-scoped teachers only.", file=sys.stderr)
+    today = date.today().isoformat()
+    mapped_teacher_ids: set[str] = set()
+
     classes = []
     for c in classes_raw:
-        subj = subjects.get(c["subject_id"], {})
-        eligible = scoped_teachers.get(c["id"]) or all_teacher_ids
-        classes.append(
-            ClassInfo(
-                id=c["id"],
-                name=c["name"],
-                year_group_name=year_groups.get(c["year_group_id"], "?"),
-                subject_id=c["subject_id"],
-                subject_name=subj.get("name", "?"),
-                weekly_lessons=c["weekly_lessons"],
-                lesson_length_minutes=c["lesson_length_minutes"],
-                is_core=bool(subj.get("is_core")),
-                eligible_teacher_ids=eligible,
+        subject_ids: list[str] = []
+        if c["subject_id"]:
+            subject_ids.append(c["subject_id"])
+        for r in cst_rows:
+            if r["class_id"] == c["id"] and r["subject_id"] not in subject_ids:
+                subject_ids.append(r["subject_id"])
+        for sid in subject_ids:
+            subj = subjects.get(sid, {})
+            row = weekly_template_teacher(cst_rows, c["id"], sid, today)
+            lessons = (row or {}).get("lessons_per_week") or (c["weekly_lessons"] if sid == c["subject_id"] else 0)
+            if not lessons:
+                continue  # an extra subject without a lesson count has nothing to place
+            if row:
+                eligible = [row["teacher_id"]]
+                mapped_teacher_ids.add(row["teacher_id"])
+            elif sid == c["subject_id"] and scoped_teachers.get(c["id"]):
+                eligible = scoped_teachers[c["id"]]
+            else:
+                eligible = all_teacher_ids
+            classes.append(
+                ClassInfo(
+                    id=f"{c['id']}:{sid}",
+                    class_id=c["id"],
+                    teacher_fixed=bool(row),
+                    name=c["name"],
+                    year_group_name=year_groups.get(c["year_group_id"], "?"),
+                    subject_id=sid,
+                    subject_name=subj.get("name", "?"),
+                    weekly_lessons=lessons,
+                    lesson_length_minutes=c["lesson_length_minutes"],
+                    is_core=bool(subj.get("is_core")),
+                    eligible_teacher_ids=eligible,
+                )
             )
-        )
+
+    # Mapped teachers who never set availability must still exist in the model
+    # (with no availability they simply cannot be given a lesson).
+    all_teacher_ids = sorted(set(all_teacher_ids) | mapped_teacher_ids | {t for ts in scoped_teachers.values() for t in ts})
 
     return Inputs(
         academic_year_id=academic_year_id,
@@ -236,10 +324,13 @@ def solve(inputs: Inputs) -> SolveResult:
     # double-booked; teacher only teaches within their own availability.
     for wd in WEEKDAYS:
         for idx, _s, _e, _band in PERIODS:
+            # A class is in one lesson at a time, whichever of its subjects it is.
+            by_class: dict[str, list] = {}
             for c in inputs.classes:
-                same_class = [
-                    place[(c.id, n, wd, idx)] for n in range(c.weekly_lessons) if (c.id, n, wd, idx) in place
-                ]
+                for n in range(c.weekly_lessons):
+                    if (c.id, n, wd, idx) in place:
+                        by_class.setdefault(c.class_id, []).append(place[(c.id, n, wd, idx)])
+            for same_class in by_class.values():
                 if len(same_class) > 1:
                     model.Add(sum(same_class) <= 1)
 
@@ -308,12 +399,17 @@ def solve(inputs: Inputs) -> SolveResult:
                     conflicts.append(
                         {
                             "severity": "hard",
-                            "class_id": c.id,
+                            "class_id": c.class_id,
                             "subject_id": c.subject_id,
                             "message": (
                                 f"{c.year_group_name} {c.subject_name} ({c.name}): lesson {n + 1} of "
-                                f"{c.weekly_lessons} could not be placed — no teacher available or no free slot "
-                                "that satisfies availability/protected-time constraints."
+                                f"{c.weekly_lessons} could not be placed — "
+                                + (
+                                    "its teacher has no free slot left that satisfies availability/protected-time "
+                                    "constraints (they may be teaching other classes at every time they are available)."
+                                    if c.teacher_fixed
+                                    else "no teacher available or no free slot that satisfies availability/protected-time constraints."
+                                )
                             ),
                         }
                     )
@@ -327,7 +423,7 @@ def solve(inputs: Inputs) -> SolveResult:
                             )
                             slots.append(
                                 {
-                                    "class_id": c.id,
+                                    "class_id": c.class_id,
                                     "subject_id": c.subject_id,
                                     "teacher_user_id": teacher_id,
                                     "weekday": wd,

@@ -140,7 +140,7 @@ function BehaviourContent() {
       <PageHeader
         crumbs={[{ label: "Site administration", href: "/admin/site" }, { label: "Behaviour" }]}
         title="Behaviour Management"
-        subtitle="Merits, demerits, incidents, detentions and badges across the school."
+        subtitle="Merits, demerits, incidents, online follow-up sessions and badges across the school."
         actions={
           <>
             <Link href="/report-concern" className="rounded-lg border border-red-300 px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50">
@@ -195,7 +195,7 @@ function BehaviourContent() {
                 <StatTile label="Merit points (all time)" value={String(stats.allTimePoints)} sub="Net of demerits" />
                 <StatTile label={`Merits · ${PERIOD_LABEL[period].toLowerCase()}`} value={String(stats.merits)} sub={delta} tone={stats.meritsPrev !== null && stats.merits >= stats.meritsPrev ? "good" : "bad"} />
                 <StatTile label={`Sanctions · ${PERIOD_LABEL[period].toLowerCase()}`} value={String(stats.demerits)} sub="Demerits given" />
-                <StatTile label="Detentions outstanding" value={String(stats.detentionsOutstanding)} sub="Scheduled, not yet served" />
+                <StatTile label="Follow-ups outstanding" value={String(stats.detentionsOutstanding)} sub="Scheduled, not yet served" />
               </div>
               <DetentionRegister detentions={detentions} onChanged={load} />
               <div className="grid gap-4 lg:grid-cols-3">
@@ -228,7 +228,7 @@ function BehaviourContent() {
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <StatTile label={`Incidents · ${PERIOD_LABEL[period].toLowerCase()}`} value={String(stats.incidents)} />
-                <StatTile label="Detentions outstanding" value={String(stats.detentionsOutstanding)} />
+                <StatTile label="Follow-ups outstanding" value={String(stats.detentionsOutstanding)} />
               </div>
               <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
                 <h3 className="mb-3 text-base font-semibold text-ink">Latest incidents</h3>

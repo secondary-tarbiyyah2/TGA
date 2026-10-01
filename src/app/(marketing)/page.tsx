@@ -6,10 +6,9 @@ import { Kicker } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { FaqPreview } from "@/components/FaqPreview";
-import { TimezoneConverter } from "@/components/TimezoneConverter";
+import { HubCards } from "@/components/HubCards";
 import { ComparisonTable } from "@/components/ComparisonTable";
-import { getDifferentiators, getFaqEntries, getFeeBands, getHomepageContent, getSiteSettings, getStaffMembers, getTestimonials } from "@/lib/content";
-import { formatGBP } from "@/lib/format";
+import { getDifferentiators, getFaqEntries, getHomepageContent, getSiteSettings, getTestimonials } from "@/lib/content";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 /**
@@ -54,11 +53,9 @@ const stages = [
 ];
 
 export default async function HomePage() {
-  const [differentiators, feeBands, testimonials, staff, faqs, settings, content, bursarySeats] = await Promise.all([
+  const [differentiators, testimonials, faqs, settings, content, bursarySeats] = await Promise.all([
     getDifferentiators(),
-    getFeeBands(),
     getTestimonials(),
-    getStaffMembers(),
     getFaqEntries(),
     getSiteSettings(),
     getHomepageContent(),
@@ -85,7 +82,6 @@ export default async function HomePage() {
         : d
     );
   const realTestimonials = testimonials.filter((t) => !t.isPlaceholder);
-  const confirmedStaff = staff.filter((s) => !s.isPlaceholder);
 
   return (
     <>
@@ -112,7 +108,7 @@ export default async function HomePage() {
             )}
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href={settings.ctaPrimaryHref || "/admissions"}>{settings.ctaPrimaryLabel || "Apply Now"}</Button>
-              <Button href="/book-a-call" variant="secondary">Book an admissions call</Button>
+              <Button href="/book-a-call" variant="secondary">Book a free call</Button>
             </div>
             <p className="mt-6 text-sm font-medium text-ink/60">
               Part of the Tarbiyyah Education Trust · 10+ years · Qualified UK teachers · Reception–Year 11
@@ -137,37 +133,23 @@ export default async function HomePage() {
 
       {/* THREE PILLARS */}
       <section className="section-pad">
-        <Container className="grid gap-6 sm:grid-cols-3">
+        <Container>
+          <Kicker>Why Tarbiyyah Global Academy</Kicker>
+          <div className="grid gap-6 sm:grid-cols-3">
           {pillars.map((p) => (
             <div key={p.title} className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <h2 className="font-serif text-lg font-semibold text-ink">{p.title}</h2>
               <p className="mt-2 text-sm text-ink/70">{p.body}</p>
             </div>
           ))}
-        </Container>
-      </section>
-
-      {/* TIMEZONE CONVERTER — genuinely useful, not a card, so it also
-          breaks the repeated Kicker+h2+3-card rhythm every other section
-          uses. See src/components/TimezoneConverter.tsx. */}
-      <section className="bg-cream section-pad">
-        <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-          <div>
-            <Kicker>Live lessons, wherever home is</Kicker>
-            <h2 className="text-h2 font-serif font-semibold text-ink">What time is school, for you?</h2>
-            <p className="mt-4 text-ink/75">
-              We teach an international, timezone-spread cohort across two daily live-lesson windows. Pick where
-              you&apos;re based to see what that means in your own time.
-            </p>
           </div>
-          <TimezoneConverter />
         </Container>
       </section>
 
       {/* HOW IT WORKS */}
       <section className="geo-texture bg-cream section-pad">
         <Container>
-          <Kicker>How it works</Kicker>
+          <Kicker>Admissions in four steps</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">{content.howItWorksHeading || "Four steps to a place at TGA."}</h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {howItWorks.map((s, i) => (
@@ -190,7 +172,7 @@ export default async function HomePage() {
       <section className="section-pad">
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div>
-            <Kicker>Stages of school</Kicker>
+            <Kicker>Curriculum highlights</Kicker>
             <h2 className="text-h2 font-serif font-semibold text-ink">
               {content.stagesHeading || "A specialist curriculum, from Reception to GCSE."}
             </h2>
@@ -198,14 +180,14 @@ export default async function HomePage() {
               {content.stagesBody ||
                 "The full British curriculum, live-timetabled and taught by qualified UK teachers — with Qur'an, Islamic Studies and Arabic woven through every key stage, not bolted on."}
             </p>
-            <Button href="/curriculum" variant="secondary" className="mt-6">Explore the curriculum</Button>
+            <Button href="/learning" variant="secondary" className="mt-6">Explore learning</Button>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {stages.map((s) => (
-              <a key={s.href} href={s.href} className="rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-gold-500 hover:shadow-md">
+              <Link key={s.href} href={s.href} className="rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-gold-500 hover:shadow-md">
                 <p className="font-serif text-lg font-semibold text-gold-700">{s.stage}</p>
                 <p className="mt-2 text-sm text-ink/70">View timetable, subjects and sample week →</p>
-              </a>
+              </Link>
             ))}
           </div>
         </Container>
@@ -238,28 +220,6 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* MEET THE TEAM PREVIEW */}
-      {confirmedStaff.length > 0 && (
-        <section className="section-pad">
-          <Container>
-            <Kicker>Meet the team</Kicker>
-            <h2 className="text-h2 font-serif font-semibold text-ink">The people teaching your child.</h2>
-            <div className="mt-10 grid gap-6 sm:grid-cols-3">
-              {confirmedStaff.slice(0, 3).map((s) => (
-                <div key={s._id} className="rounded-2xl border border-gold-light/50 bg-white p-6 text-center">
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-cream font-serif text-xl font-semibold text-gold-700">
-                    {s.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
-                  </div>
-                  <h3 className="mt-3 font-serif text-base font-semibold text-ink">{s.name}</h3>
-                  <p className="text-sm text-gold-700">{s.roleTitle}</p>
-                </div>
-              ))}
-            </div>
-            <Button href="/team" variant="secondary" className="mt-8">Meet the whole team</Button>
-          </Container>
-        </section>
-      )}
-
       {/* TESTIMONIALS TEASER */}
       {realTestimonials.length > 0 && (
         <section className="geo-texture bg-cream section-pad">
@@ -279,74 +239,20 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* FEE TRANSPARENCY TEASER */}
-      <section className="bg-white section-pad">
-        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <Kicker>Fees</Kicker>
-            <h2 className="text-h2 font-serif font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h2>
-            <p className="mt-4 text-ink/75">
-              {content.feeTeaserBody ||
-                'Every fee is published on our website — nothing shared only "on enquiry." Annual, termly and monthly plans are available for every year group.'}
-            </p>
-            <Button href="/fees" variant="secondary" className="mt-6">See the full fee table</Button>
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-gold-light/50">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-cream text-ink/70">
-                <tr>
-                  <th className="px-4 py-3 font-semibold">Year group</th>
-                  <th className="px-4 py-3 font-semibold">Jan–Jul 2027</th>
-                </tr>
-              </thead>
-              <tbody>
-                {feeBands.map((f) => (
-                  <tr key={f._id} className="border-t border-gold-light/40">
-                    <td className="px-4 py-3">{f.yearGroupRange}</td>
-                    <td className="px-4 py-3 font-semibold text-gold-700">{formatGBP(f.annualFee)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Container>
-      </section>
-
-      {/* SAFE, OPEN AND ACCOUNTABLE — every claim here already exists
-          elsewhere on the site (DBS-checked staff and a named DSL are
-          stated as fact on /about and /safeguarding today; the complaints
-          count is settings.complaintsLastYear, already shown on
-          /policies). This section only links through and summarises —
-          it never introduces a new unconfirmed claim. */}
-      <section className="bg-white section-pad">
-        <Container className="max-w-3xl">
-          <Kicker>Safeguarding &amp; transparency</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">{content.safeHeading || "Safe, open and accountable."}</h2>
-          <p className="mt-4 text-ink/75">
-            {content.safeBody ||
-              "Every member of staff is DBS-checked, and a named Designated Safeguarding Lead is responsible for keeping children safe. We publish how to raise a concern, and how many formal complaints we received last year — nothing handled quietly, on request."}
-          </p>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-3">
-            <li className="rounded-2xl border border-gold-light/50 bg-cream p-5">
-              <p className="font-semibold text-ink">DBS-checked staff</p>
-              <p className="mt-1 text-sm text-ink/70">Every member of staff is vetted before they ever teach a child.</p>
-            </li>
-            {settings.safeguardingLeadName && (
-              <li className="rounded-2xl border border-gold-light/50 bg-cream p-5">
-                <p className="font-semibold text-ink">A named Safeguarding Lead</p>
-                <p className="mt-1 text-sm text-ink/70">{settings.safeguardingLeadName} leads on keeping every child safe.</p>
-              </li>
-            )}
-            {typeof settings.complaintsLastYear === "number" && (
-              <li className="rounded-2xl border border-gold-light/50 bg-cream p-5">
-                <p className="font-semibold text-ink">Complaints, published</p>
-                <p className="mt-1 text-sm text-ink/70">Formal complaints last academic year: {settings.complaintsLastYear}.</p>
-              </li>
-            )}
-          </ul>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button href="/safeguarding" variant="secondary">Our safeguarding approach</Button>
-            <Button href="/policies" variant="secondary">All school policies</Button>
+      {/* MORE — compact links replacing the former fee table, safeguarding
+          and team sections; detail lives on those pages. */}
+      <section className="section-pad">
+        <Container>
+          <Kicker>Good to know</Kicker>
+          <h2 className="text-h2 font-serif font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h2>
+          <div className="mt-8">
+            <HubCards
+              cards={[
+                { href: "/fees", title: "Fees & payment plans", body: content.feeTeaserBody || 'Every fee is published on our website — nothing shared only "on enquiry." Annual, termly and monthly plans are available for every year group.' },
+                { href: "/safeguarding", title: content.safeHeading || "Safe, open and accountable.", body: "Every member of staff is DBS-checked, and a named Designated Safeguarding Lead is responsible for keeping children safe." },
+                { href: "/team", title: "Meet the team", body: "Qualifications and intro videos for the teachers of Tarbiyyah Global Academy." },
+              ]}
+            />
           </div>
         </Container>
       </section>

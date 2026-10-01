@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { WEEKDAYS, PERIODS, type TimetableSlot } from "@/lib/learn/timetable";
-import { classColour, hhmm, moveProblem, type Teacher } from "./types";
+import { classColour, hhmm, moveProblem, type Colour, type Teacher } from "./types";
 
 /**
  * Days across, times down. Every slot is a coloured block (colour = class).
@@ -16,8 +16,17 @@ export function WeeklyGrid({
   onEdit,
   onAdd,
   onMove,
+  allSlots,
+  colourOf,
+  flagged,
 }: {
   slots: TimetableSlot[];
+  /** Every slot in the run: clash checks use this even when `slots` is a filtered view. */
+  allSlots?: TimetableSlot[];
+  /** Block colour; defaults to one colour per class. */
+  colourOf?: (slot: TimetableSlot) => Colour;
+  /** Slot ids with a warning: drawn with a red outline. */
+  flagged?: Set<string>;
   teachers: Teacher[];
   editable: boolean;
   onEdit: (slot: TimetableSlot) => void;
@@ -35,13 +44,14 @@ export function WeeklyGrid({
     },
     [],
   );
+  const universe = allSlots ?? slots;
   const canDrag = editable && Boolean(onMove);
   const fail = (msg: string) => {
     setMoveError(msg);
     if (timer.current !== null) window.clearTimeout(timer.current);
     timer.current = window.setTimeout(() => setMoveError(null), 5000);
   };
-  const dragging = dragId ? slots.find((s) => s.id === dragId) || null : null;
+  const dragging = dragId ? universe.find((s) => s.id === dragId) || null : null;
   const endDrag = () => {
     setDragId(null);
     setOver(null);
@@ -51,7 +61,7 @@ export function WeeklyGrid({
     endDrag();
     if (!slot || !onMove) return;
     if (slot.weekday === weekday && hhmm(slot.start_time) === start) return;
-    const problem = moveProblem(slot, weekday, start, end, slots);
+    const problem = moveProblem(slot, weekday, start, end, universe);
     if (problem) return fail(`Can't move there: ${problem}`);
     const err = await onMove(slot, weekday, start, end);
     if (err) fail(`Move failed: ${err}`);
@@ -104,7 +114,7 @@ export function WeeklyGrid({
                       canDrag && dragging
                         ? (e) => {
                             e.preventDefault();
-                            const ok = moveProblem(dragging, wd.value, start, end, slots) === null;
+                            const ok = moveProblem(dragging, wd.value, start, end, universe) === null;
                             e.dataTransfer.dropEffect = ok ? "move" : "none";
                             if (!over || over.key !== cellKey || over.ok !== ok) setOver({ key: cellKey, ok });
                           }
@@ -122,7 +132,7 @@ export function WeeklyGrid({
                   >
                     <div className="flex flex-col gap-1">
                       {cell.map((s) => {
-                        const c = classColour(s.class_id);
+                        const c = colourOf ? colourOf(s) : classColour(s.class_id);
                         const inner = (
                           <>
                             <span className="block truncate text-xs font-semibold">{s.classes?.name || "Class"}</span>
@@ -131,6 +141,7 @@ export function WeeklyGrid({
                           </>
                         );
                         const style = { backgroundColor: c.bg, borderColor: c.border, color: c.text };
+                        const ring = flagged?.has(s.id) ? " ring-2 ring-red-500" : "";
                         return editable ? (
                           <div
                             key={s.id}
@@ -147,12 +158,12 @@ export function WeeklyGrid({
                             onDragEnd={canDrag ? endDrag : undefined}
                             className={canDrag ? `cursor-grab active:cursor-grabbing ${dragId === s.id ? "opacity-40" : ""}` : undefined}
                           >
-                            <button type="button" onClick={() => onEdit(s)} style={style} className="w-full rounded-lg border-l-4 px-2 py-1 text-left transition hover:shadow-md focus-visible:outline focus-visible:outline-2" aria-label={`Edit ${s.classes?.name} ${WEEKDAYS.find((w) => w.value === s.weekday)?.label} ${start}`}>
+                            <button type="button" onClick={() => onEdit(s)} style={style} className={`w-full rounded-lg border-l-4 px-2 py-1 text-left transition hover:shadow-md focus-visible:outline focus-visible:outline-2${ring}`} aria-label={`Edit ${s.classes?.name} ${WEEKDAYS.find((w) => w.value === s.weekday)?.label} ${start}`}>
                               {inner}
                             </button>
                           </div>
                         ) : (
-                          <div key={s.id} style={style} className="rounded-lg border-l-4 px-2 py-1" title="Locked: make an editable draft to change this lesson">
+                          <div key={s.id} style={style} className={`rounded-lg border-l-4 px-2 py-1${ring}`} title="Locked: make an editable draft to change this lesson">
                             {inner}
                           </div>
                         );

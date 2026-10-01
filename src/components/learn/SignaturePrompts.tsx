@@ -1,6 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { absoluteFileUrl } from "@/lib/learn/fileLinks";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type OutstandingDoc = {
@@ -31,6 +33,8 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const [receiptId, setReceiptId] = useState<string | null>(null);
+  const deepLinkHandled = useRef(false);
 
   const load = useCallback(async () => {
     if (!supabase) return;
@@ -38,6 +42,19 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
     const list = (data as OutstandingDoc[] | null) || [];
     setDocs(list);
     onLoaded?.(list.length);
+    // Email links look like /documents?sign=<document id>: open that one.
+    if (!deepLinkHandled.current) {
+      deepLinkHandled.current = true;
+      try {
+        const wanted = new URLSearchParams(window.location.search).get("sign");
+        if (wanted && list.some((d) => d.document_id === wanted)) {
+          setSigning(wanted);
+          setTimeout(() => document.getElementById(`sign-${wanted}`)?.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
+        }
+      } catch {
+        /* no URL access: ignore */
+      }
+    }
   }, [supabase, onLoaded]);
 
   useEffect(() => {
@@ -51,6 +68,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
     setAffirmed(false);
     setError(null);
     setSuccess(false);
+    setReceiptId(null);
   };
 
   const sign = async (doc: OutstandingDoc) => {
@@ -62,13 +80,17 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
         data: { user },
       } = await supabase.auth.getUser();
       if (!user) return;
-      const { error: insertErr } = await supabase.from("document_signatures").insert({
-        document_id: doc.document_id,
-        asset_id_signed: doc.current_asset_id,
-        signer_id: user.id,
-        typed_full_name: typedName.trim(),
-        affirmed: true,
-      });
+      const { data: inserted, error: insertErr } = await supabase
+        .from("document_signatures")
+        .insert({
+          document_id: doc.document_id,
+          asset_id_signed: doc.current_asset_id,
+          signer_id: user.id,
+          typed_full_name: typedName.trim(),
+          affirmed: true,
+        })
+        .select("id")
+        .maybeSingle();
       if (insertErr) {
         setError("Could not record your signature — please try again.");
         return;
@@ -77,6 +99,13 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
       setTypedName("");
       setAffirmed(false);
       setSuccess(true);
+      const newId = (inserted as { id: string } | null)?.id ?? null;
+      setReceiptId(newId);
+      if (newId) {
+        // Email a confirmation copy. Fire-and-forget: the signature is
+        // already saved, so an email problem must never surface as a failure.
+        supabase.functions.invoke("document-signed-copy", { body: { signature_id: newId } }).catch(() => {});
+      }
       await load();
       onSigned?.();
     } finally {
@@ -92,6 +121,13 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
       {success && (
         <p role="status" className="rounded-2xl border border-green-200 bg-green-50 px-5 py-3 text-sm font-medium text-green-800">
           Signed. Thank you.
+          {receiptId && (
+            <>
+              {" "}
+              <Link href={`/documents/receipt?id=${receiptId}`} className="underline">View or print your signed copy</Link>
+              <span className="font-normal"> (we are also emailing you a copy).</span>
+            </>
+          )}
         </p>
       )}
       {hasDocs && (
@@ -102,12 +138,12 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
             {docs.map((d) => {
               const isOpen = signing === d.document_id;
               return (
-                <li key={d.document_id} className="rounded-2xl border border-gold-light bg-cream/40 p-4">
+                <li key={d.document_id} id={`sign-${d.document_id}`} className="rounded-2xl border border-gold-light bg-cream/40 p-4">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <span className="min-w-0 font-medium text-ink">{d.title}</span>
                     <div className="flex flex-wrap items-center gap-2">
                       {d.file_url && (
-                        <a href={d.file_url} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-teal-700 hover:bg-cream">
+                        <a href={absoluteFileUrl(d.file_url)} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-teal-700 hover:bg-cream">
                           Open document
                         </a>
                       )}

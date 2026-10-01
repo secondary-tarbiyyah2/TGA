@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { title: "Application", body: "Complete our online application form, then email your child's latest school report to the admissions team." },
+  { title: "Application", body: "Complete our online application form and upload your child's latest school report (or email it to the admissions team)." },
   { title: "Assessment & interview", body: "A short, age-appropriate assessment, then a conversation with you and your child to confirm that we are the right fit." },
-  { title: "Acceptance", body: "Accepted families provide a deposit and ID documents to secure the place. See our fees page for details." },
+  { title: "Offer & acceptance", body: "If we offer a place, the admin fee and a deposit are due by the deadline in your offer, along with ID documents. The place is held once both are received. See our fees page for details." },
 ];
 
 export default async function AdmissionsPage() {
@@ -56,14 +56,14 @@ export default async function AdmissionsPage() {
       <section className="geo-texture bg-cream section-pad">
         <Container className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl bg-white p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application fee</p>
-            <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.applicationFee}</p>
-            <p className="mt-1 text-sm text-ink/60">Non-refundable, covers processing and assessment.</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Assessment</p>
+            <p className="mt-1 font-serif text-3xl font-bold text-ink">Free</p>
+            <p className="mt-1 text-sm text-ink/60">There is no charge to apply or to sit the entry assessment.</p>
           </div>
           <div className="rounded-2xl bg-white p-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
             <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
-            <p className="mt-1 text-sm text-ink/60">One-time, paid once a place is offered and accepted.</p>
+            <p className="mt-1 text-sm text-ink/60">One-time admin fee, requested with the deposit when a place is offered, to secure it.</p>
           </div>
         </Container>
       </section>

@@ -5,14 +5,35 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
 import { CHIP_STYLES, GOLD_BUTTON, INPUT_CLASS, friendlyError, initials, invite, type Person } from "./shared";
 
-type Filter = "all" | "students" | "parents" | "teachers" | "staff";
+type Tab = "staff" | "families";
+type Chip = { id: string; label: string; roles: LearnRole[] };
 
-const FILTERS: { id: Filter; label: string; roles: LearnRole[] }[] = [
-  { id: "all", label: "All", roles: [] },
-  { id: "students", label: "Students", roles: ["student"] },
-  { id: "parents", label: "Parents", roles: ["parent"] },
-  { id: "teachers", label: "Teachers", roles: ["teacher", "teaching_assistant_cover"] },
-  { id: "staff", label: "Staff", roles: ["head_teacher", "admin", "admissions"] },
+// Teachers are staff: the top tabs split the school's own people from the
+// families it serves, and the chips narrow by role inside a tab.
+const TABS: { id: Tab; label: string; roles: LearnRole[]; chips: Chip[] }[] = [
+  {
+    id: "staff",
+    label: "Staff",
+    roles: ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"],
+    chips: [
+      { id: "all", label: "All staff", roles: [] },
+      { id: "head", label: "Headteacher", roles: ["head_teacher"] },
+      { id: "admin", label: "Admin", roles: ["admin"] },
+      { id: "admissions", label: "Admissions", roles: ["admissions"] },
+      { id: "teachers", label: "Teachers", roles: ["teacher"] },
+      { id: "cover", label: "Assistants & cover", roles: ["teaching_assistant_cover"] },
+    ],
+  },
+  {
+    id: "families",
+    label: "Families",
+    roles: ["parent", "student"],
+    chips: [
+      { id: "all", label: "Everyone", roles: [] },
+      { id: "parents", label: "Parents", roles: ["parent"] },
+      { id: "students", label: "Students", roles: ["student"] },
+    ],
+  },
 ];
 
 type RowMsg = { kind: "ok" | "err"; text: string; link?: string };
@@ -161,27 +182,31 @@ export function PeopleList({
   onChanged: () => void;
   initialSearch?: string;
 }) {
-  const [filter, setFilter] = useState<Filter>("all");
+  const [tab, setTab] = useState<Tab>("staff");
+  const [chip, setChip] = useState("all");
   const [search, setSearch] = useState(initialSearch);
+  const tabDef = TABS.find((t) => t.id === tab) as (typeof TABS)[number];
 
-  const counts = useMemo(() => {
-    const c: Record<Filter, number> = { all: people.length, students: 0, parents: 0, teachers: 0, staff: 0 };
-    for (const f of FILTERS) {
-      if (f.id === "all") continue;
-      c[f.id] = people.filter((p) => p.roles.some((r) => f.roles.includes(r))).length;
-    }
-    return c;
+  const inTab = useMemo(() => {
+    const byTab = (t: (typeof TABS)[number]) => people.filter((p) => p.roles.some((r) => t.roles.includes(r)));
+    return { staff: byTab(TABS[0]), families: byTab(TABS[1]) };
   }, [people]);
 
+  const chipCounts = useMemo(() => {
+    const out: Record<string, number> = {};
+    for (const c of tabDef.chips) out[c.id] = c.roles.length ? inTab[tab].filter((p) => p.roles.some((r) => c.roles.includes(r))).length : inTab[tab].length;
+    return out;
+  }, [tabDef, inTab, tab]);
+
   const shown = useMemo(() => {
-    const roles = FILTERS.find((f) => f.id === filter)?.roles || [];
+    const roles = tabDef.chips.find((c) => c.id === chip)?.roles || [];
     const q = search.trim().toLowerCase();
-    return people.filter((p) => {
+    return inTab[tab].filter((p) => {
       if (roles.length && !p.roles.some((r) => roles.includes(r))) return false;
       if (!q) return true;
       return [p.name, p.email, p.yearGroup, p.parentName, ...p.childNames, ...p.classNames].some((v) => (v || "").toLowerCase().includes(q));
     });
-  }, [people, filter, search]);
+  }, [tabDef, chip, search, inTab, tab]);
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white">
@@ -194,16 +219,33 @@ export function PeopleList({
           aria-label="Search people"
           className={INPUT_CLASS}
         />
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter people">
-          {FILTERS.map((f) => (
+        <div className="flex gap-1 rounded-xl bg-cream/70 p-1" role="tablist" aria-label="People">
+          {TABS.map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              role="tab"
+              aria-selected={tab === t.id}
+              onClick={() => {
+                setTab(t.id);
+                setChip("all");
+              }}
+              className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold ${tab === t.id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}
+            >
+              {t.label} <span className="text-xs font-medium opacity-70">{inTab[t.id].length}</span>
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by role">
+          {tabDef.chips.map((f) => (
             <button
               key={f.id}
               type="button"
-              aria-pressed={filter === f.id}
-              onClick={() => setFilter(f.id)}
-              className={`rounded-full border px-3 py-1 text-sm font-medium ${filter === f.id ? "border-gold-500 bg-gold-500 text-ink" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+              aria-pressed={chip === f.id}
+              onClick={() => setChip(f.id)}
+              className={`rounded-full border px-3 py-1 text-sm font-medium ${chip === f.id ? "border-gold-500 bg-gold-500 text-ink" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
             >
-              {f.label} <span className="text-xs opacity-70">{counts[f.id]}</span>
+              {f.label} <span className="text-xs opacity-70">{chipCounts[f.id]}</span>
             </button>
           ))}
         </div>
@@ -216,7 +258,7 @@ export function PeopleList({
       ) : people.length === 0 ? (
         <div className="p-10 text-center">
           <p className="text-base font-semibold text-ink">No one here yet</p>
-          <p className="mt-1 text-sm text-ink/60">Add your first student, parent or teacher to get started.</p>
+          <p className="mt-1 text-sm text-ink/60">Add your first member of staff, parent or student to get started.</p>
           <button type="button" onClick={onAdd} className={`${GOLD_BUTTON} mt-4`}>
             Add person
           </button>

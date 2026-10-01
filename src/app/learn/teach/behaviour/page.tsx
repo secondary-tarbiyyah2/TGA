@@ -118,7 +118,7 @@ function TeachBehaviourContent() {
             <StatTile label="Merit points (all time)" value={String(stats.allTimePoints)} sub="Net of demerits" />
             <StatTile label="Merits this week" value={String(stats.merits)} sub={delta} tone={stats.meritsPrev !== null && stats.merits >= stats.meritsPrev ? "good" : "bad"} />
             <StatTile label="Sanctions this week" value={String(stats.demerits)} />
-            <StatTile label="Detentions outstanding" value={String(stats.detentionsOutstanding)} />
+            <StatTile label="Follow-ups outstanding" value={String(stats.detentionsOutstanding)} />
           </div>
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4">

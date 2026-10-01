@@ -71,6 +71,17 @@ export type ApplicationRow = {
   deposit_received: boolean;
   id_documents_received: boolean;
   decision_note: string | null;
+  offer_made_at: string | null;
+  offer_deadline: string | null;
+  admin_fee_amount: number | null;
+  admin_fee_received: boolean;
+  admin_fee_received_at: string | null;
+  deposit_amount: number | null;
+  deposit_received_at: string | null;
+  parent_profile_id: string | null;
+  child_id: string | null;
+  student_profile_id: string | null;
+  accounts_created_at: string | null;
   created_at: string;
   updated_at: string;
 };
@@ -79,7 +90,9 @@ export type ApplicationRow = {
 export type ApplicationPatch = Partial<
   Pick<
     ApplicationRow,
-    "notes" | "assigned_to" | "assessment_at" | "interview_at" | "report_received" | "deposit_received" | "id_documents_received" | "decision_note"
+    | "notes" | "assigned_to" | "assessment_at" | "interview_at" | "report_received" | "deposit_received" | "id_documents_received" | "decision_note"
+    | "offer_made_at" | "offer_deadline" | "admin_fee_amount" | "admin_fee_received" | "admin_fee_received_at" | "deposit_amount" | "deposit_received_at"
+    | "parent_profile_id" | "child_id" | "student_profile_id" | "accounts_created_at"
   >
 >;
 
@@ -98,7 +111,7 @@ export function processPips(a: Pick<ApplicationRow, "assessment_at" | "interview
 }
 
 export const APPLICATION_COLUMNS =
-  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, created_at, updated_at";
+  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, offer_made_at, offer_deadline, admin_fee_amount, admin_fee_received, admin_fee_received_at, deposit_amount, deposit_received_at, parent_profile_id, child_id, student_profile_id, accounts_created_at, created_at, updated_at";
 
 /** Age in whole years from an ISO date (yyyy-mm-dd), e.g. "7". Empty if invalid. */
 export function ageFromDob(dob: string): string {
@@ -109,4 +122,61 @@ export function ageFromDob(dob: string): string {
   const beforeBirthday = now.getMonth() + 1 < Number(m[2]) || (now.getMonth() + 1 === Number(m[2]) && now.getDate() < Number(m[3]));
   if (beforeBirthday) age -= 1;
   return age >= 0 ? String(age) : "";
+}
+
+export const GENDER_OPTIONS = ["Male", "Female"] as const;
+
+export const MAX_REPORT_FILES = 5;
+export const MAX_REPORT_BYTES = 10 * 1024 * 1024;
+export const DOCUMENTS_BUCKET = "admissions-documents";
+
+const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+/**
+ * Start year of the UK academic year (1 Sep to 31 Aug) the child is entering.
+ * If "Preferred start" names a year (e.g. "January 2027", "Sept 2027") that is
+ * used (a bare year means September of that year). Otherwise: applying Sep to
+ * Dec means the current academic year (a start this term or in January); Jan to
+ * Aug means the NEXT September.
+ */
+export function entryAcademicYear(preferredStart?: string | null, today: Date = new Date()): number {
+  const text = (preferredStart || "").toLowerCase();
+  const y = /\b(20\d{2})\b/.exec(text);
+  if (y) {
+    const year = Number(y[1]);
+    const mi = MONTHS.findIndex((m) => text.includes(m.slice(0, 3)));
+    const month = mi === -1 ? 8 : mi; // 0-based; default September
+    return month >= 8 ? year : year - 1;
+  }
+  // Sep-Dec: current academic year; Jan-Aug: next September. Both start in this calendar year.
+  return today.getFullYear();
+}
+
+/**
+ * Suggested year group from a date of birth (yyyy-mm-dd): the child's age on
+ * 31 August of the entry year. Age 4 = Reception, 5 = Year 1 ... 15 = Year 11.
+ * Returns null when the date is invalid or outside Reception to Year 11.
+ */
+export function suggestYearGroup(dob: string, preferredStart?: string | null, today: Date = new Date()): { yearGroup: string; entryYear: number; ageAtEntry: number } | null {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dob);
+  if (!m) return null;
+  const [by, bm] = [Number(m[1]), Number(m[2])];
+  if (by < 1990 || bm < 1 || bm > 12) return null;
+  const entryYear = entryAcademicYear(preferredStart, today);
+  // Born 1 Sep or later: one year younger on the 31 Aug cut-off.
+  const age = entryYear - by - (bm >= 9 ? 1 : 0);
+  if (age < 4 || age > 15) return null;
+  return { yearGroup: age === 4 ? "Reception" : `Year ${age - 4}`, entryYear, ageAtEntry: age };
+}
+
+/** Why an application should not yet move to Accepted (empty = fine). */
+export function acceptanceBlockers(a: Pick<ApplicationRow, "admin_fee_received" | "deposit_received">): string[] {
+  const out: string[] = [];
+  if (!a.admin_fee_received) out.push("admin fee");
+  if (!a.deposit_received) out.push("deposit");
+  return out;
+}
+
+export function formatMoney(n: number | null | undefined): string {
+  return n === null || n === undefined ? "" : `\u00a3${Number(n).toLocaleString("en-GB", { minimumFractionDigits: Number.isInteger(Number(n)) ? 0 : 2 })}`;
 }

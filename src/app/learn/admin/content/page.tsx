@@ -7,6 +7,7 @@ import { SiteSettingsEditor } from "@/components/learn/content/SiteSettingsEdito
 import { HomepageContentEditor } from "@/components/learn/content/HomepageContentEditor";
 import { AboutContentEditor } from "@/components/learn/content/AboutContentEditor";
 import { CurriculumContentEditor } from "@/components/learn/content/CurriculumContentEditor";
+import { PolicyEditor } from "@/components/learn/documents/PolicyEditor";
 import { SimpleListEditor } from "@/components/learn/content/SimpleListEditor";
 
 // Real editor, replacing the old "link out to Sanity Studio" stub now
@@ -65,26 +66,7 @@ function TabContent({ tab }: { tab: Tab }) {
         />
       );
     case "Policies":
-      return (
-        <SimpleListEditor
-          table="policy_links"
-          title="Policy documents"
-          description="PDF files served from /policies/ — upload a replacement there via FTP/hosting, then update this row's URL if the filename changes."
-          orderKey="order_index"
-          rowLabel={(r) => `${r.number} — ${r.title}`}
-          fields={[
-            { key: "number", label: "Policy number", required: true },
-            { key: "title", label: "Title", required: true },
-            { key: "category", label: "DfE category", type: "select", options: ["required", "published"], required: true },
-            { key: "parent_question_category", label: "Parent question group", type: "select", options: ["safety", "admissions-fees", "complaints", "data", "curriculum"] },
-            { key: "file_url", label: "File URL", required: true },
-            { key: "summary", label: "One-line summary" },
-            { key: "last_reviewed", label: "Last reviewed", type: "date" },
-            { key: "next_review", label: "Next review due", type: "date" },
-            { key: "order_index", label: "Display order", type: "number" },
-          ]}
-        />
-      );
+      return <PolicyEditor />;
     case "Term dates":
       return (
         <SimpleListEditor

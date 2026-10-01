@@ -32,3 +32,19 @@ export function moveProblem(slot: TimetableSlot, weekday: number, start: string,
   if (slot.virtual_session_id && hit.some((s) => s.virtual_session_id === slot.virtual_session_id)) return "That virtual session is already in use at this time.";
   return null;
 }
+
+export type SubjectOpt = { id: string; name: string };
+export type SessionOpt = { id: string; name: string };
+export type Colour = { bg: string; border: string; text: string };
+
+/** Distinct colour per subject: hues are spread evenly over the subjects in
+ * name order, so two subjects never look alike. Unknown ids get grey. */
+export function subjectColours(subjects: SubjectOpt[]): (subjectId: string | null | undefined) => Colour {
+  const ids = [...subjects].sort((a, b) => a.name.localeCompare(b.name)).map((s) => s.id);
+  return (id) => {
+    const i = id ? ids.indexOf(id) : -1;
+    if (i < 0) return { bg: "hsl(0 0% 94%)", border: "hsl(0 0% 55%)", text: "hsl(0 0% 20%)" };
+    const h = Math.round((i * 137.508) % 360);
+    return { bg: `hsl(${h} 70% 91%)`, border: `hsl(${h} 50% 48%)`, text: `hsl(${h} 60% 20%)` };
+  };
+}
