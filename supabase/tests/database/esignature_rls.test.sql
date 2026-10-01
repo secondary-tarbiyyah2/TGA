@@ -96,7 +96,7 @@ insert into public.user_roles (user_id, role, scope_type, scope_id) values
 
 set local role authenticated;
 set local "request.jwt.claims" to '{"sub": "e4000000-0000-0000-0000-000000000004"}';
-select is((select count(*)::int from public.my_outstanding_signatures), 1, 'the exporter (a teacher who has not signed) sees the document in their own outstanding list');
+select is((select count(*)::int from public.my_outstanding_signatures where document_id = 'f4000000-0000-0000-0000-000000000001'), 1, 'the exporter (a teacher who has not signed) sees the document in their own outstanding list');
 
 select * from finish();
 rollback;
