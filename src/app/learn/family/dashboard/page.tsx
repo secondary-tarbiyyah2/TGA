@@ -7,14 +7,19 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
+import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { FamilyFees } from "@/components/learn/FamilyFees";
 import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
 import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
+import { GcseProgressWidget } from "@/components/learn/GcseTracker";
+import { HomeworkFeedbackWidget } from "@/components/learn/homework/HomeworkFeedbackWidget";
 import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
 import { FamilyLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
+import { FamilyRewards } from "@/components/learn/rewards/RewardsCards";
+import { DigestPreference } from "@/components/learn/rewards/DigestPreference";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
@@ -108,7 +113,9 @@ function ChildCard({ child }: { child: Child }) {
         <div className="mt-2 grid gap-6 sm:grid-cols-2">
           <HomeworkDueWidget childId={child.id} />
           <LatestGradesWidget childId={child.id} />
+          <HomeworkFeedbackWidget childId={child.id} href={`/family/homework?child=${child.id}`} />
           <QuranProgressWidget childId={child.id} />
+          <GcseProgressWidget childId={child.id} />
         </div>
       </div>
 
@@ -167,6 +174,7 @@ function FamilyContent() {
   return (
     <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }}>
     <div className="space-y-6">
+      <JoinLessonCard who={{ kind: "parent" }} />
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <div className="flex items-center justify-between">
           <div>
@@ -218,6 +226,8 @@ function FamilyContent() {
 
       {children && children.length > 0 && <FamilyLeaderboard kids={children} />}
 
+      {children && children.length > 0 && <FamilyRewards childIds={children.map((c) => c.id)} />}
+
       {children?.map((child) => (
         <ChildCard key={child.id} child={child} />
       ))}
@@ -225,6 +235,8 @@ function FamilyContent() {
       {children && children.length > 0 && <FamilyFees familyChildren={children} />}
 
       <AnnouncementsFeed />
+
+      {children && children.length > 0 && <DigestPreference />}
 
       <IcsFeedLink />
     </div>

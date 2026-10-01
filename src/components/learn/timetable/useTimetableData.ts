@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { normalisePeriods, type TimetablePeriod } from "@/lib/learn/timetable";
+import { PERIOD_COLUMNS, PERIOD_COLUMNS_WITH_SUPERVISOR, attachSupervisorNames, normalisePeriods, type TimetablePeriod } from "@/lib/learn/timetable";
 import type { CstRow } from "@/lib/learn/teacherFor";
 import type { Availability, ClassOpt, ClassTeacherLink, Protected, Run, SessionOpt, SubjectOpt, Teacher, TermOpt, YearOpt } from "./types";
 
@@ -47,8 +47,11 @@ export function useTimetableData(): { data: TimetableData; reload: () => Promise
       supabase.from("teacher_availability").select("id, teacher_user_id, academic_year_id, weekday, start_time, end_time"),
       supabase.from("protected_times").select("id, name, academic_year_id, weekday, start_time, end_time"),
       supabase.from("class_subject_teachers").select("id, class_id, subject_id, teacher_id, valid_from, valid_to, lessons_per_week, notes, created_at"),
-      supabase.from("timetable_periods").select("id, name, kind, start_time, end_time, weekdays, band, applies_to, activity, sort, active"),
+      supabase.from("timetable_periods").select(PERIOD_COLUMNS_WITH_SUPERVISOR),
     ]);
+    // supervisor_user_id needs migration 0069; fall back to the older columns until it is applied.
+    const periodRes = pd.error ? await supabase.from("timetable_periods").select(PERIOD_COLUMNS) : pd;
+    const periods = periodRes.error ? [] : await attachSupervisorNames(normalisePeriods(periodRes.data as unknown as Parameters<typeof normalisePeriods>[0]));
     const seen = new Set<string>();
     const teachers: Teacher[] = [];
     for (const r of (tr.data as unknown as { id: string; full_name: string | null }[]) || []) {
@@ -70,7 +73,7 @@ export function useTimetableData(): { data: TimetableData; reload: () => Promise
       subjectTeachers: (st.data as CstRow[]) || [],
       availability: (av.data as AvailabilityRow[]) || [],
       protectedTimes: (pt.data as ProtectedRow[]) || [],
-      periods: pd.error ? [] : normalisePeriods(pd.data as unknown as Parameters<typeof normalisePeriods>[0]),
+      periods,
     });
   }, []);
 

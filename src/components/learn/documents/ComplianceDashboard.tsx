@@ -55,7 +55,7 @@ function downloadCsv(name: string, header: string[], rows: unknown[][]) {
  * compliance_alert_status, 0047), and outstanding signatures grouped per
  * person. RLS decides what each role actually receives.
  */
-export function ComplianceDashboard({ isHeadTeacher, alertsExtra, recordsTab }: { isHeadTeacher: boolean; alertsExtra?: ReactNode; recordsTab: ReactNode }) {
+export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, recordsTab }: { isHeadTeacher: boolean; alertsExtra?: ReactNode; topExtra?: ReactNode; recordsTab: ReactNode }) {
   const supabase = getSupabaseClient();
   const [tab, setTab] = useState<"alerts" | "signatures" | "records">("alerts");
   const [alerts, setAlerts] = useState<Alert[] | null>(null);
@@ -265,6 +265,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, recordsTab }: 
 
   return (
     <div className="space-y-5">
+      {topExtra}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="Safeguarding summary">
         {tile("Open alerts", loading ? "…" : activeCount, activeCount === 0 ? "ok" : openCount > 0 ? "bad" : "warn", () => { setTab("alerts"); setFilter("active"); }, loading ? undefined : `${openCount} not yet acknowledged`)}
         {tile("Flagged messages", loading ? "…" : openFlagged, openFlagged === 0 ? "ok" : "bad", () => { setTab("alerts"); setFilter("active"); })}

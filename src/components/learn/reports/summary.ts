@@ -1,4 +1,5 @@
 import type { getSupabaseClient } from "@/lib/supabase/client";
+import { averageScore, scoreTrend, type ScoreTrend } from "@/lib/learn/quran";
 
 export type Sb = NonNullable<ReturnType<typeof getSupabaseClient>>;
 
@@ -6,7 +7,15 @@ export type AttendanceSummary = { attended: number; absent: number; excused: num
 export type HomeworkSummary = { done: number; total: number; rate: number | null };
 export type AssessmentItem = { title: string; percent: number | null; grade: string | null };
 export type AssessmentSummary = { count: number; average_percent: number | null; items: AssessmentItem[] };
-export type QuranSummary = { entries: number; latest: string | null };
+export type QuranSummary = {
+  entries: number;
+  latest: string | null;
+  /** Mean of the teacher's 0-10 session scores in the period (optional so older snapshots still render). */
+  average_score?: number | null;
+  scored_sessions?: number;
+  /** Later half of the period against the earlier half. */
+  trend?: ScoreTrend | null;
+};
 /** Merits and demerits only: incident notes are never part of a report. */
 export type BehaviourSummary = { merits: number; demerits: number; net_points: number };
 export type ClassSummary = {
@@ -57,7 +66,7 @@ function emptySummary(cls: { id: string; name: string }): ClassSummary {
     attendance: { attended: 0, absent: 0, excused: 0, total: 0, rate: null },
     homework: { done: 0, total: 0, rate: null },
     assessments: { count: 0, average_percent: null, items: [] },
-    quran: { entries: 0, latest: null },
+    quran: { entries: 0, latest: null, average_score: null, scored_sessions: 0, trend: null },
     behaviour: { merits: 0, demerits: 0, net_points: 0 },
   };
 }
@@ -73,6 +82,7 @@ type QRow = {
   surah_to: number | null;
   topic: string | null;
   standard: string | null;
+  score: number | null;
 };
 
 type BhRow = { child_id: string; kind: string; points: number };
@@ -139,12 +149,13 @@ export async function buildClassSummaries(
     fetchAll<QRow>((f, t) => {
       let q = supabase
         .from("quran_progress")
-        .select("child_id, milestone_type, surah_from, surah_to, topic, standard")
+        .select("child_id, milestone_type, surah_from, surah_to, topic, standard, score")
         .eq("class_id", cls.id)
         .in("child_id", childIds);
-      if (range.start) q = q.gte("recorded_at", range.start);
-      if (endTs) q = q.lte("recorded_at", endTs);
-      return q.order("recorded_at", { ascending: false }).range(f, t);
+      // session_date (0072) is the day the session happened; backfilled from recorded_at for older rows.
+      if (range.start) q = q.gte("session_date", range.start);
+      if (range.end) q = q.lte("session_date", range.end);
+      return q.order("session_date", { ascending: false }).order("recorded_at", { ascending: false }).range(f, t);
     }),
     fetchAll<BhRow>((f, t) => {
       let q = supabase
@@ -199,11 +210,22 @@ export async function buildClassSummaries(
   for (const id of Object.keys(sums)) {
     if (result[id] && sums[id].n > 0) result[id].assessments.average_percent = Math.round((sums[id].sum / sums[id].n) * 10) / 10;
   }
+  // Rows arrive newest first; collect each child's scores oldest first for the trend.
+  const scoresByChild: Record<string, number[]> = {};
   for (const r of qp) {
     const s = result[r.child_id];
     if (!s) continue;
     s.quran.entries += 1;
     if (!s.quran.latest) s.quran.latest = quranLabel(r);
+    if (r.score !== null && r.score !== undefined) (scoresByChild[r.child_id] ||= []).unshift(Number(r.score));
+  }
+  for (const id of Object.keys(scoresByChild)) {
+    const scores = scoresByChild[id];
+    const q = result[id]?.quran;
+    if (!q) continue;
+    q.scored_sessions = scores.length;
+    q.average_score = averageScore(scores);
+    q.trend = scoreTrend(scores);
   }
   for (const r of bh) {
     const b = result[r.child_id]?.behaviour;

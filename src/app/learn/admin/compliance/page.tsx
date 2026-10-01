@@ -12,7 +12,7 @@ import { RetentionRegistry } from "@/components/learn/compliance/RetentionRegist
 import { SingleCentralRecord } from "@/components/learn/compliance/SingleCentralRecord";
 import { ConsentRegister } from "@/components/learn/compliance/ConsentRegister";
 import { IncidentBreachLog } from "@/components/learn/compliance/IncidentBreachLog";
-import { AuditLogViewer } from "@/components/learn/compliance/AuditLogViewer";
+import { SafeguardingReviews } from "@/components/learn/compliance/SafeguardingReviews";
 import { PolicyReviewTracker } from "@/components/learn/compliance/PolicyReviewTracker";
 
 type Keyword = { id: string; phrase: string };
@@ -95,6 +95,7 @@ function ComplianceContent() {
 
       <ComplianceDashboard
         isHeadTeacher={isHeadTeacher}
+        topExtra={isSafeguardingLead || isHeadTeacher ? <SafeguardingReviews /> : null}
         alertsExtra={isSafeguardingLead ? <SafeguardingKeywordsAdmin /> : null}
         recordsTab={
           <>
@@ -104,7 +105,14 @@ function ComplianceContent() {
             {isHeadTeacherOrAdmin && <SingleCentralRecord />}
             <ConsentRegister />
             <IncidentBreachLog />
-            <AuditLogViewer />
+            {isHeadTeacherOrAdmin && (
+              <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+                <h2 className="font-serif text-h3 font-semibold text-ink">Audit log and data protection</h2>
+                <p className="mt-1 text-sm text-ink/60">
+                  The <a href="/admin/audit-log" className="font-medium text-teal-700 underline">audit log</a> has filters and CSV export, with restricted records masked. <a href="/admin/data-protection" className="font-medium text-teal-700 underline">Data protection</a> holds the retention rules and subject access exports.
+                </p>
+              </div>
+            )}
             <PolicyReviewTracker />
           </>
         }

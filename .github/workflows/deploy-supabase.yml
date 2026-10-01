@@ -252,15 +252,37 @@ jobs:
           supabase functions deploy lesson-join --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy lesson-instances-generate --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy lesson-update-details --project-ref "${{ steps.project.outputs.ref }}"
+          # Verified: re-checks the caller is the booking's parent/teacher or
+          # Head Teacher/Admin before emailing (see the function).
+          supabase functions deploy parent-evening-confirm --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy recording-access --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy recording-control --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy trigger-timetable-generation --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy quiz-send-plan --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy notify-flagged-messages --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # Scheduled (safeguarding-review-check.yml): idempotent sweep and
+          # lead alert; the purge only deletes expired export files.
+          supabase functions deploy safeguarding-review-check --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy purge-data-exports --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # subject-access-export: verified; re-checks Headteacher/Admin with
+          # the caller's own token, then uses the service role to assemble data.
+          supabase functions deploy subject-access-export --project-ref "${{ steps.project.outputs.ref }}"
+          # noshow-alerts is scheduled (no session) so it skips JWT verification,
+          # but the function itself requires the service-role key as the Bearer
+          # token. cover-notify is verified and re-checks the caller's role.
+          supabase functions deploy noshow-alerts --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy cover-notify --project-ref "${{ steps.project.outputs.ref }}"
           # Verified -- separately re-checks the caller is an admin (see the
           # function); a session-less caller would be rejected before that
           # check even runs.
           supabase functions deploy publish-website-content --project-ref "${{ steps.project.outputs.ref }}"
+          # weekly-digest: no gateway JWT check because the Friday cron
+          # (weekly-digest.yml) is not a user. The function authorises
+          # itself: service-role key for the scheduled run, or a signed-in
+          # Headteacher/Admin for the preview/test tools.
+          supabase functions deploy weekly-digest --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # star-certificate: verified; staff only (re-checked in the function).
+          supabase functions deploy star-certificate --project-ref "${{ steps.project.outputs.ref }}"
 
       - name: Configure Auth (magic link via Resend SMTP)
         run: |

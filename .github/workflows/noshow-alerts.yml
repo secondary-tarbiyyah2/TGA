@@ -1,0 +1,64 @@
+name: No-show alerts
+
+# Ten minutes into a live lesson, emails the parent of any enrolled child who
+# has not pressed "Join lesson" and has no recorded reason for being away, and
+# opens a safeguarding concern (plus a digest to the safeguarding lead) when
+# the same child reaches 3 such no-shows in 14 days. All the logic, and the
+# "never alert the same lesson twice" guarantee, live in the noshow-alerts
+# Edge Function; this only calls it.
+#
+# GitHub cron runs in UTC and can start several minutes late, so it runs every
+# 5 minutes on weekdays and the function itself works out the school's local
+# time (Europe/London unless SCHOOL_TIMEZONE is set) and looks at lessons that
+# started 10 or more minutes ago and have not ended. The function is deployed
+# with --no-verify-jwt and checks for the service-role key as the Bearer token.
+
+on:
+  schedule:
+    - cron: "*/5 * * * 1-5"
+  workflow_dispatch:
+
+concurrency:
+  group: noshow-alerts
+  cancel-in-progress: false
+
+jobs:
+  alerts:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref and service-role key
+        id: keys
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          SERVICE_ROLE=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Call noshow-alerts
+        run: |
+          set -euo pipefail
+          curl -sS --fail-with-body -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/noshow-alerts" \
+            -H "apikey: ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Content-Type: application/json"

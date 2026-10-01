@@ -2,18 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { QuranTargetsPanel } from "@/components/learn/QuranTargets";
+import { localDateISO, summariseScores, TREND_LABEL, type QuranEntry } from "@/lib/learn/quran";
 
-type Entry = {
-  id: string;
-  milestone_type: string;
-  surah_from: number | null;
-  surah_to: number | null;
-  juz: number | null;
-  topic: string | null;
-  standard: string | null;
-  note: string | null;
-  recorded_at: string;
-};
+type Entry = QuranEntry;
 
 const STANDARDS = ["introduced", "consolidating", "secure", "fluent"] as const;
 
@@ -35,11 +27,20 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
   const [topic, setTopic] = useState("");
   const [standard, setStandard] = useState<(typeof STANDARDS)[number]>("consolidating");
   const [note, setNote] = useState("");
+  const [score, setScore] = useState<number | null>(null);
+  const [pages, setPages] = useState("");
+  const [sessionDate, setSessionDate] = useState(localDateISO());
+  const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
   const load = async () => {
     if (!supabase || !childId) return;
-    const { data } = await supabase.from("quran_progress").select("*").eq("child_id", childId).order("recorded_at", { ascending: false });
+    const { data } = await supabase
+      .from("quran_progress")
+      .select("*")
+      .eq("child_id", childId)
+      .order("session_date", { ascending: false })
+      .order("recorded_at", { ascending: false });
     setEntries((data as Entry[]) || []);
   };
 
@@ -51,6 +52,11 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
 
   const save = async () => {
     if (!supabase || !childId) return;
+    setError(null);
+    if (pages !== "" && (!Number.isInteger(Number(pages)) || Number(pages) < 0 || Number(pages) > 604)) {
+      setError("Pages must be a whole number between 0 and 604.");
+      return;
+    }
     setBusy(true);
     try {
       const {
@@ -67,15 +73,22 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
         topic: type === "islamic_studies" ? topic.trim() || null : null,
         standard,
         note: note.trim() || null,
+        score,
+        pages: type === "quran_memorisation" && pages !== "" ? Number(pages) : null,
+        session_date: sessionDate || localDateISO(),
         recorded_by: user.id,
       };
-      const { error } = await supabase.from("quran_progress").insert(payload);
-      if (!error) {
+      const { error: insertError } = await supabase.from("quran_progress").insert(payload);
+      if (insertError) {
+        setError(insertError.message);
+      } else {
         setSurahFrom("");
         setSurahTo("");
         setJuz("");
         setTopic("");
         setNote("");
+        setScore(null);
+        setPages("");
         await load();
       }
     } finally {
@@ -120,13 +133,56 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
           ))}
         </select>
       </div>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        <div>
+          <label className="block text-xs font-medium text-ink/70" htmlFor="quran-session-date">
+            Session date
+          </label>
+          <input id="quran-session-date" type="date" value={sessionDate} max={localDateISO()} onChange={(e) => setSessionDate(e.target.value)} className="mt-1 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+        </div>
+        {type === "quran_memorisation" && (
+          <div>
+            <label className="block text-xs font-medium text-ink/70" htmlFor="quran-pages">
+              Pages covered (optional)
+            </label>
+            <input id="quran-pages" type="number" min={0} max={604} value={pages} onChange={(e) => setPages(e.target.value)} placeholder="e.g. 2" className="mt-1 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+          </div>
+        )}
+      </div>
+      <fieldset className="mt-3">
+        <legend className="text-xs font-medium text-ink/70">Session score out of 10 (recitation, tajweed and memorisation quality)</legend>
+        <div className="mt-1 flex flex-wrap gap-1.5" role="group" aria-label="Score out of 10">
+          {Array.from({ length: 11 }, (_, n) => (
+            <button
+              key={n}
+              type="button"
+              aria-pressed={score === n}
+              onClick={() => setScore(score === n ? null : n)}
+              className={`h-9 w-9 rounded-lg border text-sm font-medium ${score === n ? "border-gold-700 bg-gold-700 text-white" : "border-gold-light bg-white text-ink/80 hover:bg-cream"}`}
+            >
+              {n}
+            </button>
+          ))}
+        </div>
+        {score === null && <p className="mt-1 text-xs text-ink/50">Choose a score, or leave it blank if this entry isn&apos;t a rated session.</p>}
+      </fieldset>
       <textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Note (e.g. tajweed points to revisit)" rows={2} className="mt-3 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+      {error && <p className="mt-2 text-sm text-red-700">{error}</p>}
       <button type="button" disabled={busy} onClick={save} className="mt-3 rounded-lg bg-gold-700 px-4 py-2 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors">
         Record progress
       </button>
 
       <div className="mt-6 border-t border-gold-light/30 pt-4">
         <h3 className="text-sm font-medium text-ink">History</h3>
+        {(() => {
+          const sum = summariseScores(entries || []);
+          return sum.sessions > 0 ? (
+            <p className="mt-1 text-xs text-ink/60">
+              Average {sum.average}/10 over {sum.sessions} rated session{sum.sessions === 1 ? "" : "s"}
+              {sum.trend ? ` · ${TREND_LABEL[sum.trend].toLowerCase()}` : ""}
+            </p>
+          ) : null;
+        })()}
         <ul className="mt-2 space-y-2">
           {(entries || []).map((e) => (
             <li key={e.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
@@ -137,13 +193,19 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
                     : e.topic}
                 </span>
                 <span className="text-ink/60">
-                  {e.standard} · {new Date(e.recorded_at).toLocaleDateString("en-GB")}
+                  {e.score !== null && e.score !== undefined ? `${e.score}/10 · ` : ""}
+                  {e.pages ? `${e.pages} pg · ` : ""}
+                  {e.standard} · {new Date(e.session_date || e.recorded_at).toLocaleDateString("en-GB")}
                 </span>
               </div>
               {e.note && <p className="mt-1 text-xs text-ink/50">{e.note}</p>}
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="mt-6 border-t border-gold-light/30 pt-4">
+        <QuranTargetsPanel childId={childId} classId={classId} entries={entries || []} canEdit />
       </div>
     </div>
   );

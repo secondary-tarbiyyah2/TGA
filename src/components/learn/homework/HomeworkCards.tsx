@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { getHomeworkFileUrl } from "@/lib/learn/homeworkFile";
+import { SubmissionFeedback } from "@/components/learn/homework/SubmissionFeedback";
 
 export type Homework = { id: string; class_id: string; title: string; instructions: string | null; due_at: string; classes?: { name: string } | null };
 type StatusRow = { child_id: string; status: string; submission_id: string | null };
 type Child = { id: string; name: string };
 type Mark = { id: string; submission_id: string; grade: string | null; feedback: string | null; released: boolean };
-type Submission = { kind: string; response_text: string | null; file_path: string | null };
+type Submission = { homework_id: string; child_id: string; kind: string; response_text: string | null; file_path: string | null };
 
 export function MarkRow({ submissionId, childName, existing, onSaved }: { submissionId: string; childName: string; existing: Mark | null; onSaved: () => void }) {
   const supabase = getSupabaseClient();
@@ -27,7 +28,7 @@ export function MarkRow({ submissionId, childName, existing, onSaved }: { submis
     if (!supabase) return;
     supabase
       .from("homework_submissions")
-      .select("kind, response_text, file_path")
+      .select("homework_id, child_id, kind, response_text, file_path")
       .eq("id", submissionId)
       .maybeSingle()
       .then(({ data }) => setSubmission((data as Submission) || null));
@@ -102,6 +103,7 @@ export function MarkRow({ submissionId, childName, existing, onSaved }: { submis
         </button>
         {existing?.released && <span className="text-xs text-green-700">Released</span>}
       </div>
+      {submission && <SubmissionFeedback submissionId={submissionId} homeworkId={submission.homework_id} childId={submission.child_id} />}
     </div>
   );
 }

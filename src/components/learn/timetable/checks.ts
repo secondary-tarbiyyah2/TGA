@@ -1,4 +1,4 @@
-import { PERIODS, WEEKDAYS, type TimetableSlot } from "@/lib/learn/timetable";
+import { PERIODS, WEEKDAYS, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
 import { isDefaultRow, rowFor, todayIso, type CstRow } from "@/lib/learn/teacherFor";
 import { hhmm, type Availability, type ClassOpt, type ClassTeacherLink, type Protected, type Teacher } from "./types";
 
@@ -10,8 +10,9 @@ const overlap = (a: TimetableSlot, b: TimetableSlot) => a.weekday === b.weekday 
 /** Client-side warnings for a set of slots (the database already refuses
  * hard clashes; these also catch availability and protected-time problems
  * that it cannot express). */
-export function slotIssues(slots: TimetableSlot[], teachers: Teacher[], availability: Availability[], protectedTimes: Protected[], yearId: string): SlotIssue[] {
+export function slotIssues(slots: TimetableSlot[], teachers: Teacher[], availability: Availability[], protectedTimes: Protected[], yearId: string, periods: TimetablePeriod[] = []): SlotIssue[] {
   const out: SlotIssue[] = [];
+  for (const c of supervisorClashes(slots, periods, teachers)) out.push({ slotId: c.slotId, level: "soft", text: c.text });
   const tname = (id: string) => teachers.find((t) => t.id === id)?.full_name || "Teacher";
   const avail = availability.filter((a) => a.academic_year_id === yearId);
   const prot = protectedTimes.filter((p) => p.academic_year_id === yearId);
@@ -30,6 +31,33 @@ export function slotIssues(slots: TimetableSlot[], teachers: Teacher[], availabi
     }
     for (const p of prot) {
       if (p.weekday === s.weekday && hhmm(p.start_time) < hhmm(s.end_time) && hhmm(s.start_time) < hhmm(p.end_time)) out.push({ slotId: s.id, level: "soft", text: `${label} overlaps a protected time (${p.name}).` });
+    }
+  }
+  return out;
+}
+
+export type SupervisorClash = { periodId: string; slotId: string; teacherId: string; text: string };
+
+/**
+ * Enrichment blocks whose supervisor is also teaching a lesson at the same
+ * time (same weekday, overlapping times). A warning, not a hard clash: the
+ * head decides whether to move the lesson or pick another supervisor.
+ */
+export function supervisorClashes(slots: TimetableSlot[], periods: TimetablePeriod[], teachers: Teacher[] = []): SupervisorClash[] {
+  const out: SupervisorClash[] = [];
+  const tname = (id: string) => teachers.find((t) => t.id === id)?.full_name || "The supervisor";
+  for (const p of periods) {
+    if (!p.active || p.kind !== "enrichment" || !p.supervisor_user_id) continue;
+    for (const s of slots) {
+      if (s.teacher_user_id !== p.supervisor_user_id) continue;
+      if (!p.weekdays.includes(s.weekday)) continue;
+      if (!(hhmm(s.start_time) < hhmm(p.end_time) && hhmm(p.start_time) < hhmm(s.end_time))) continue;
+      out.push({
+        periodId: p.id,
+        slotId: s.id,
+        teacherId: s.teacher_user_id,
+        text: `${tname(s.teacher_user_id)} supervises "${p.name}" (${hhmm(p.start_time)}-${hhmm(p.end_time)}) on ${dayName(s.weekday)} but is teaching ${s.classes?.name || "a class"}${s.subjects?.name ? ` ${s.subjects.name}` : ""} at ${hhmm(s.start_time)}-${hhmm(s.end_time)}.`,
+      });
     }
   }
   return out;
@@ -93,6 +121,13 @@ export function selfTestChecks(): string[] {
   expect("class double-booked", [mk("1", "A", "T1", 1, "09:00", "10:00"), mk("2", "A", "T2", 1, "09:00", "10:00")], ["class"]);
   expect("both", [mk("1", "A", "T", 1, "09:00", "10:00"), mk("2", "A", "T", 1, "09:00", "10:00")], ["class", "teacher"]);
   expect("bad times", [mk("1", "A", "T", 1, "10:00", "09:00")], ["time"]);
+  const block = (supervisor: string | null): TimetablePeriod => ({ id: "p", name: "Enrichment", kind: "enrichment", start_time: "12:45", end_time: "13:30", weekdays: [1, 2], band: "A", applies_to: ["all"], activity: null, sort: 0, active: true, supervisor_user_id: supervisor });
+  const supervised = (slots: TimetableSlot[], supervisor: string | null) => supervisorClashes(slots, [block(supervisor)]).length;
+  if (supervised([mk("1", "A", "T", 1, "13:00", "14:00")], "T") !== 1) failed.push("supervisor teaching during the block should warn");
+  if (supervised([mk("1", "A", "T", 3, "13:00", "14:00")], "T") !== 0) failed.push("supervisor teaching on another day should not warn");
+  if (supervised([mk("1", "A", "T", 1, "13:30", "14:00")], "T") !== 0) failed.push("lesson starting when the block ends should not warn");
+  if (supervised([mk("1", "A", "U", 1, "13:00", "14:00")], "T") !== 0) failed.push("a different teacher should not warn");
+  if (supervised([mk("1", "A", "T", 1, "13:00", "14:00")], null) !== 0) failed.push("a block with no supervisor should not warn");
   return failed;
 }
 

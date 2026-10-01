@@ -66,7 +66,7 @@ function DayContent() {
         <p className="text-sm text-ink/60">Loading…</p>
       ) : (
         <div className="space-y-5">
-          <PeriodsEditor periods={data.periods} reload={reload} />
+          <PeriodsEditor periods={data.periods} reload={reload} staff={data.teachers} />
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
             <h2 className="font-serif text-h3 font-semibold text-ink">Protected times</h2>

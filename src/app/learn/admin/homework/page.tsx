@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { HomeworkCard, type Homework } from "@/components/learn/homework/HomeworkCards";
+import { LateMissingView } from "@/components/learn/homework/LateMissingView";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type ClassOpt = { id: string; name: string };
@@ -117,6 +118,10 @@ function AdminHomeworkContent() {
         title="Homework"
         subtitle="Set, edit and mark homework for any class. Students and families see it exactly as they would from a teacher."
       />
+
+      <div className="mb-6">
+        <LateMissingView scope="admin" />
+      </div>
 
       <div className="mb-6 rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Class</h2>

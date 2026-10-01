@@ -6,6 +6,7 @@ import { LearnShell } from "@/components/learn/LearnShell";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useMyClasses } from "@/lib/learn/useMyClasses";
 import { HomeworkCard, type Homework } from "@/components/learn/homework/HomeworkCards";
+import { LateMissingView } from "@/components/learn/homework/LateMissingView";
 
 function TeachHomeworkContent() {
   const supabase = getSupabaseClient();
@@ -71,6 +72,8 @@ function TeachHomeworkContent() {
           <h1 className="font-serif text-h2 font-semibold text-ink">Homework</h1>
         </div>
       </div>
+
+      <LateMissingView scope="teach" />
 
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Set new homework</h2>

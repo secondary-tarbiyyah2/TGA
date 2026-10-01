@@ -6,6 +6,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
+import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
@@ -13,8 +14,11 @@ import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
 import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
+import { GcseProgressWidget } from "@/components/learn/GcseTracker";
+import { HomeworkFeedbackWidget } from "@/components/learn/homework/HomeworkFeedbackWidget";
 import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
 import { StudentLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
+import { StudentRewards } from "@/components/learn/rewards/RewardsCards";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 import { useLearnSession } from "@/lib/learn/session";
@@ -85,6 +89,7 @@ function StudentContent() {
 
   const content = (
     <div className="space-y-6">
+      {childId && <JoinLessonCard who={{ kind: "student", childId }} />}
       {viewer && (
         <section>
           <div className="mb-3 flex items-center justify-between">
@@ -127,6 +132,8 @@ function StudentContent() {
 
       {childId && <StudentLeaderboard childId={childId} />}
 
+      {childId && <StudentRewards childId={childId} />}
+
       {childId && (
         <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
           <div className="flex items-center justify-between">
@@ -143,7 +150,9 @@ function StudentContent() {
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             <HomeworkDueWidget childId={childId} />
             <LatestGradesWidget childId={childId} />
+            <HomeworkFeedbackWidget childId={childId} href="/student/homework" />
             <QuranProgressWidget childId={childId} />
+            <GcseProgressWidget childId={childId} />
           </div>
           <WeeklyTarbiyahNoteWidget childId={childId} />
         </div>

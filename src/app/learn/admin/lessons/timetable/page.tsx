@@ -84,7 +84,7 @@ function TimetableContent() {
   const effFocus = view === "all" ? null : focus && entities.some((e) => e.id === focus) ? focus : entities[0]?.id || null;
   const shown = view === "all" ? slots : slots.filter((s) => (view === "class" ? s.class_id === effFocus : view === "teacher" ? s.teacher_user_id === effFocus : s.virtual_session_id === effFocus));
 
-  const issues = useMemo(() => slotIssues(slots, data.teachers, data.availability, data.protectedTimes, runYearId), [slots, data.teachers, data.availability, data.protectedTimes, runYearId]);
+  const issues = useMemo(() => slotIssues(slots, data.teachers, data.availability, data.protectedTimes, runYearId, data.periods), [slots, data.teachers, data.availability, data.protectedTimes, runYearId, data.periods]);
   const flagged = useMemo(() => new Set(issues.map((i) => i.slotId)), [issues]);
   const gaps = useMemo(() => coverageGaps(slots, runClasses.filter((c) => c.academic_year_id === runYearId)), [slots, runClasses, runYearId]);
   const hardConflicts = conflicts.filter((c) => c.severity === "hard" && !c.resolved);

@@ -72,6 +72,21 @@ export function overallOf(classes: ClassSummary[]): { rate: number | null; atten
   };
 }
 
+// Average teacher score out of 10 when sessions were rated, else the entry count.
+function quranValue(q: ClassSummary["quran"]): string {
+  if (q.average_score !== null && q.average_score !== undefined) return `${q.average_score}/10`;
+  return q.entries === 0 ? "–" : String(q.entries);
+}
+
+function quranSub(q: ClassSummary["quran"]): string {
+  if (q.entries === 0) return "No entries";
+  const parts: string[] = [];
+  if (q.scored_sessions) parts.push(`${q.scored_sessions} rated session${q.scored_sessions === 1 ? "" : "s"}`);
+  if (q.trend) parts.push(q.trend);
+  if (q.latest) parts.push(`latest: ${q.latest}`);
+  return parts.length > 0 ? parts.join(" · ") : q.latest || "No entries";
+}
+
 function ClassBlock({ c }: { c: ClassSummary }) {
   const a = c.attendance;
   const h = c.homework;
@@ -83,7 +98,7 @@ function ClassBlock({ c }: { c: ClassSummary }) {
         <Stat label="Attendance" value={fmtPct(a.rate)} sub={a.total === 0 ? "No lessons recorded" : `${a.attended} attended · ${a.absent} missed${a.excused ? ` · ${a.excused} excused` : ""}`} />
         <Stat label="Homework" value={h.total === 0 ? "–" : `${h.done}/${h.total}`} sub={h.rate === null ? "None set" : `${h.rate}% completed`} />
         <Stat label="Average grade" value={fmtPct(s.average_percent)} sub={s.count === 0 ? "No assessments" : `${s.count} assessment${s.count === 1 ? "" : "s"}`} />
-        <Stat label="Qur'an progress" value={c.quran.entries === 0 ? "–" : String(c.quran.entries)} sub={c.quran.latest || "No entries"} />
+        <Stat label="Qur'an progress" value={quranValue(c.quran)} sub={quranSub(c.quran)} />
       </div>
       {c.behaviour && (
         <div className="mt-3 grid grid-cols-3 gap-3">

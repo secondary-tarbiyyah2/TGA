@@ -1,0 +1,91 @@
+name: Weekly parent digest
+
+# Fridays at 15:00 UK time: calls the weekly-digest Edge Function, which
+# emails each parent ONE branded summary of their children's week
+# (attendance, homework, merits, teacher comments, next week's lessons).
+# Parents who switched it off in the family area are skipped.
+#
+# GitHub cron is UTC only, so there are two slots (14:05 and 15:05 UTC) and
+# the request carries uk_hour=15: the function does nothing unless it is
+# currently 15:xx in the UK, so exactly one slot fires in both BST and GMT.
+# The function is also idempotent per week (weekly_digest_log), so a manual
+# re-run or a delayed cron never double-sends. Same "find the project,
+# fetch the service-role key" steps as lms-absence-alerts.yml; the service
+# role key is the credential the function accepts for scheduled calls.
+
+on:
+  schedule:
+    - cron: "5 14 * * 5" # 15:05 UK during BST
+    - cron: "5 15 * * 5" # 15:05 UK during GMT
+  workflow_dispatch:
+    inputs:
+      any_hour:
+        description: "Send now, whatever the time (still once per family per week)"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: weekly-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref
+        id: project
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then
+              REF=$(echo "$PROJECTS" | jq -r '.[0].id')
+            fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project. Projects found: $(echo "$PROJECTS" | jq -c '[.[].name]')"
+            exit 1
+          fi
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch service-role key
+        id: keys
+        run: |
+          set -euo pipefail
+          KEYS=$(supabase projects api-keys --project-ref "${{ steps.project.outputs.ref }}" -o json)
+          SERVICE_ROLE=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Call weekly-digest
+        env:
+          FN_URL: https://${{ steps.project.outputs.ref }}.supabase.co/functions/v1/weekly-digest
+          SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          ANY_HOUR: ${{ inputs.any_hour }}
+        run: |
+          set -euo pipefail
+          if [ "$ANY_HOUR" = "true" ]; then BODY='{}'; else BODY='{"uk_hour":15}'; fi
+          # A big school may not finish inside one call; the function reports
+          # partial=true and the next call carries on (already-sent families
+          # are skipped).
+          for attempt in 1 2 3 4 5 6; do
+            RESP=$(curl -sS -X POST "$FN_URL" \
+              -H "Authorization: Bearer $SERVICE_ROLE_KEY" \
+              -H "Content-Type: application/json" \
+              -d "$BODY" --fail-with-body --max-time 170)
+            echo "$RESP"
+            [ "$(echo "$RESP" | jq -r '.partial // false')" = "true" ] || break
+          done

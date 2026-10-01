@@ -5,6 +5,7 @@ import { PageHeader, type Crumb } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { localDateKey } from "@/lib/learn/calendar";
 import { AbsenceReports } from "./AbsenceReports";
+import { CoverSuggestions } from "./CoverSuggestions";
 import { FollowUpTab } from "./FollowUpTab";
 import { NotesReview } from "./NotesReview";
 import { RecentAbsences } from "./RecentAbsences";
@@ -12,12 +13,13 @@ import { SummaryCard } from "./SummaryCard";
 import { dateKeyDaysAgo, formatDay, useAbsenceData } from "./data";
 
 type Term = { name: string; starts_on: string; ends_on: string };
-type Tab = "overview" | "followup" | "notes" | "reports";
+type Tab = "overview" | "followup" | "notes" | "reports" | "cover";
 const TABS: { key: Tab; label: string }[] = [
   { key: "overview", label: "Overview" },
   { key: "followup", label: "To follow up" },
   { key: "notes", label: "Parent notes" },
   { key: "reports", label: "Reports" },
+  { key: "cover", label: "Suggest cover" },
 ];
 type Period = "30" | "60" | "90" | "term";
 const PERIODS: { key: Period; label: string }[] = [
@@ -27,7 +29,7 @@ const PERIODS: { key: Period; label: string }[] = [
   { key: "term", label: "This term" },
 ];
 
-export function StaffAbsences({ crumbs, subtitle }: { crumbs: Crumb[]; subtitle?: string }) {
+export function StaffAbsences({ crumbs, subtitle, showCover = false }: { crumbs: Crumb[]; subtitle?: string; showCover?: boolean }) {
   const [period, setPeriod] = useState<Period>("90");
   const [tab, setTab] = useState<Tab>("overview");
   const [terms, setTerms] = useState<Term[]>([]);
@@ -83,7 +85,7 @@ export function StaffAbsences({ crumbs, subtitle }: { crumbs: Crumb[]; subtitle?
         </div>
         {error && <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
         <div className="flex flex-wrap gap-2 border-b border-gold-light/60 pb-2" role="tablist" aria-label="Absences sections">
-          {TABS.map((t) => (
+          {TABS.filter((t) => t.key !== "cover" || showCover).map((t) => (
             <button
               key={t.key}
               type="button"
@@ -106,6 +108,7 @@ export function StaffAbsences({ crumbs, subtitle }: { crumbs: Crumb[]; subtitle?
         {tab === "followup" && <FollowUpTab absences={absences} onChanged={reload} />}
         {tab === "notes" && <NotesReview notes={notes} onChanged={reload} />}
         {tab === "reports" && <AbsenceReports absences={absences} periodLabel={label} />}
+        {tab === "cover" && showCover && <CoverSuggestions />}
       </div>
     </>
   );

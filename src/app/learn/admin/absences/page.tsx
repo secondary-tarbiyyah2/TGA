@@ -7,7 +7,7 @@ export default function AdminAbsencesPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
-        <StaffAbsences crumbs={[{ label: "Dashboard", href: "/learn/admin/dashboard" }, { label: "Absences" }]} />
+        <StaffAbsences crumbs={[{ label: "Dashboard", href: "/learn/admin/dashboard" }, { label: "Absences" }]} showCover />
       </LearnGate>
     </section>
   );

@@ -150,15 +150,21 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     const [rolesRes, vettingRes] = await Promise.all([
-      supabase.from("user_roles").select("user_id, role, profiles(full_name, email)").in("role", ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"]),
+      supabase.from("user_roles").select("user_id, role").in("role", ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"]),
       supabase.from("staff_vetting_records").select(VETTING_COLUMNS),
     ]);
     if (rolesRes.error) {
       setError(true);
       return setStaff([]);
     }
+    const roleRows = (rolesRes.data as unknown as { user_id: string; role: string }[]) || [];
+    const ids = Array.from(new Set(roleRows.map((r) => r.user_id)));
+    const profRes = ids.length ? await supabase.from("profiles").select("id, full_name, email").in("id", ids) : { data: [], error: null };
+    const profById = new Map(((profRes.data as { id: string; full_name: string | null; email: string | null }[]) || []).map((p) => [p.id, p]));
     const byUser = new Map<string, StaffRow>();
-    for (const r of (rolesRes.data as unknown as RoleQuery[]) || []) {
+    for (const r0 of roleRows) {
+      const pr = profById.get(r0.user_id);
+      const r: RoleQuery = { user_id: r0.user_id, role: r0.role as LearnRole, profiles: pr ? { full_name: pr.full_name || "", email: pr.email } : null };
       const existing = byUser.get(r.user_id);
       if (existing) {
         if (!existing.roles.includes(r.role)) existing.roles.push(r.role);

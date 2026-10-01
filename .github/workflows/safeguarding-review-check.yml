@@ -1,0 +1,66 @@
+name: Safeguarding review check
+
+# Hourly sweep for the safeguarding auto-review (0075). Calls the deployed
+# safeguarding-review-check Edge Function, which idempotently opens any
+# 'review required' item that is now due (serious concern open > 24h; the
+# repeat-concern rules also fire instantly from a database trigger), then
+# emails the Designated Safeguarding Lead and Headteacher about new and
+# overdue reviews. The email names no pupil and gives no concern details.
+# The same run also calls purge-data-exports, which deletes subject-access
+# export files once their 24-hour download link has expired.
+# Same "find the project ref, call its Edge Function" pattern as
+# notify-flagged-messages.yml.
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: safeguarding-review-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref and anon key
+        id: keys
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          ANON=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          echo "::add-mask::$ANON"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "anon_key=$ANON" >> "$GITHUB_OUTPUT"
+
+      - name: Call safeguarding-review-check
+        run: |
+          set -euo pipefail
+          curl -sS --fail-with-body -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/safeguarding-review-check" \
+            -H "apikey: ${{ steps.keys.outputs.anon_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.anon_key }}" \
+            -H "Content-Type: application/json"
+
+      - name: Call purge-data-exports
+        run: |
+          set -euo pipefail
+          curl -sS --fail-with-body -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/purge-data-exports" \
+            -H "apikey: ${{ steps.keys.outputs.anon_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.anon_key }}" \
+            -H "Content-Type: application/json"

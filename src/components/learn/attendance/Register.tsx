@@ -23,6 +23,22 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   const [lessonDate, setLessonDate] = useState<string | null>(null);
   const [reasons, setReasons] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState<Record<string, "saving" | "saved" | "error">>({});
+  // Who pressed "Join lesson" (lesson_joins): child id -> first join time. Used to pre-fill 'present'.
+  const [joined, setJoined] = useState<Record<string, string>>({});
+  const [joinsLoaded, setJoinsLoaded] = useState(false);
+
+  const loadJoins = useCallback(async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    const { data, error } = await supabase.from("lesson_joins").select("child_id, joined_at").eq("lesson_instance_id", lessonId).eq("role", "child").order("joined_at", { ascending: true });
+    if (error) return setJoinsLoaded(false); // table not there yet: the register works as before
+    const map: Record<string, string> = {};
+    for (const j of (data as unknown as { child_id: string | null; joined_at: string }[] | null) || []) {
+      if (j.child_id && !map[j.child_id]) map[j.child_id] = j.joined_at;
+    }
+    setJoined(map);
+    setJoinsLoaded(true);
+  }, [lessonId]);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -51,6 +67,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
       marksRef.current = m;
       const list = ((enr as unknown as { children: { id: string } | null }[]) || []).filter((r) => r.children);
       onProgress?.(list.filter((r) => r.children && m[r.children.id]).length, list.length);
+      await loadJoins();
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lessonId, classId]);
@@ -78,6 +95,14 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
     [lessonId],
   );
 
+  // Pre-fill 'present' for every child who joined and has no mark yet. The
+  // teacher can still change any of them.
+  useEffect(() => {
+    if (!joinsLoaded || children === null) return;
+    const entries = children.filter((c) => !marksRef.current[c.id] && joined[c.id]).map((c) => ({ childId: c.id, status: "present" as Status }));
+    if (entries.length > 0) void save(entries);
+  }, [joinsLoaded, joined, children, save]);
+
   const setReason = async (childId: string, code: string) => {
     if (!lessonDate || !code) return;
     setReasons((r) => ({ ...r, [childId]: code }));
@@ -88,6 +113,8 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   if (children.length === 0) return <p className="px-5 py-4 text-sm text-ink/55">No students enrolled in this class yet.</p>;
   const unmarked = children.filter((c) => !marks[c.id]);
   const taken = children.length - unmarked.length;
+  const anyJoins = Object.keys(joined).length > 0;
+  const timeOf = (iso: string): string => new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
 
   return (
     <div>
@@ -98,6 +125,9 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           </span>{" "}
           marked
         </p>
+        <button type="button" onClick={() => void loadJoins()} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
+          Check who has joined
+        </button>
         {unmarked.length > 0 && (
           <button
             type="button"
@@ -111,10 +141,15 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
       <ul className="divide-y divide-gold-light/70">
         {children.map((c) => {
           const current = marks[c.id];
-          const shown = current || "present";
+          // Once anyone has joined, only children who joined are suggested as present.
+          const didJoin = Boolean(joined[c.id]);
+          const shown: Status | null = current || (didJoin || !anyJoins ? "present" : null);
           return (
             <li key={c.id} className="flex flex-wrap items-center gap-3 px-5 py-2.5">
-              <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">{c.name}</span>
+              <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">
+                {c.name}
+                {didJoin ? <span className="ml-2 text-xs font-normal text-green-800">Joined {timeOf(joined[c.id])}</span> : anyJoins ? <span className="ml-2 text-xs font-normal text-amber-800">Has not joined</span> : null}
+              </span>
               <span className="w-14 text-right text-xs text-ink/45" aria-live="polite">
                 {saving[c.id] === "saving" ? "Saving…" : saving[c.id] === "error" ? <span className="text-red-700">Not saved</span> : saving[c.id] === "saved" ? "Saved" : current ? "" : "Not yet"}
               </span>

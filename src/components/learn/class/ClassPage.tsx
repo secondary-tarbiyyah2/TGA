@@ -11,6 +11,7 @@ import { CourseTab } from "@/components/learn/class/CourseTab";
 import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { MeetYourTeachers } from "@/components/learn/staff/MeetYourTeachers";
+import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 
 /** Route bases per viewer, e.g. the class page and lesson page URLs. */
 function routesFor(viewer: ClassViewer) {
@@ -246,6 +247,14 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           );
         })}
       </nav>
+
+      {viewer.kind !== "staff" && (
+        <JoinLessonCard
+          who={viewer.kind === "teacher" ? { kind: "teacher" } : viewer.kind === "student" ? { kind: "student", childId: viewer.childId } : { kind: "parent", childId: viewer.childId }}
+          classId={cls.id}
+          className="mb-6"
+        />
+      )}
 
       {tab === "course" && !isStaff && (
         <div className="mb-6">

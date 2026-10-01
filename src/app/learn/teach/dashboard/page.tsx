@@ -10,8 +10,11 @@ import { LearnShell } from "@/components/learn/LearnShell";
 import { TeachNow } from "@/components/learn/teach/TeachNow";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
+import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
+import { EnrichmentSupervisorLink } from "@/components/learn/enrichment/SupervisorLink";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { TeacherLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
+import { TeacherRewards } from "@/components/learn/rewards/RewardsCards";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -88,7 +91,11 @@ function TeachContent() {
   return (
     <DashboardWithPanel viewer={{ kind: "teacher", classIds }}>
     <div className="space-y-5">
+      <JoinLessonCard who={{ kind: "teacher" }} />
+
       <TeachNow slots={slots} />
+
+      <EnrichmentSupervisorLink />
 
       <MyClassesStrip />
 
@@ -109,6 +116,7 @@ function TeachContent() {
       <SignaturePrompts />
 
       <TeacherLeaderboard />
+      <TeacherRewards />
 
       <AnnouncementsFeed classIds={classIds} canPost={classIds.length > 0} postClassId={classIds[0]} postScope="class" />
 

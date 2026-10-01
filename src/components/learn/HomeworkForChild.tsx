@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { getHomeworkFileUrl } from "@/lib/learn/homeworkFile";
+import { FEEDBACK_COLUMNS, type HomeworkFeedback } from "@/lib/learn/homeworkFeedback";
+import { FeedbackStatusChip, FeedbackView } from "@/components/learn/homework/SubmissionFeedback";
 
 type Row = {
   homework_id: string;
@@ -21,7 +23,21 @@ const STATUS_LABEL: Record<string, { label: string; className: string }> = {
   not_yet_due: { label: "Due", className: "bg-gold-light/40 text-gold-700" },
 };
 
-function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childId: string; canSubmit: boolean; onChanged: () => void }) {
+function HomeworkItem({
+  row,
+  childId,
+  canSubmit,
+  canResubmit,
+  feedback,
+  onChanged,
+}: {
+  row: Row;
+  childId: string;
+  canSubmit: boolean;
+  canResubmit: boolean;
+  feedback: HomeworkFeedback | null;
+  onChanged: () => void;
+}) {
   const supabase = getSupabaseClient();
   const [submission, setSubmission] = useState<Submission | null>(null);
   const [mark, setMark] = useState<Mark | null>(null);
@@ -30,6 +46,9 @@ function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childI
   const [busy, setBusy] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [openingFile, setOpeningFile] = useState(false);
+  const [resubText, setResubText] = useState("");
+  const [resubFile, setResubFile] = useState<File | null>(null);
+  const [resubError, setResubError] = useState<string | null>(null);
 
   const openFile = async () => {
     if (!submission?.file_path) return;
@@ -92,6 +111,59 @@ function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childI
     }
   };
 
+  // A resubmission UPDATES the existing submission (never inserts): the
+  // database notices the content change and moves the feedback status from
+  // "resubmission requested" to "resubmitted". submitted_at is left alone so
+  // the original on-time/late record is kept.
+  const resubmitText = async () => {
+    if (!supabase || !submission || !resubText.trim()) return;
+    setBusy(true);
+    setResubError(null);
+    try {
+      const { error } = await supabase
+        .from("homework_submissions")
+        .update({ kind: "text", response_text: resubText.trim(), file_path: null })
+        .eq("id", submission.id);
+      if (error) {
+        setResubError(error.message);
+        return;
+      }
+      setResubText("");
+      onChanged();
+      await loadDetail();
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const resubmitFile = async () => {
+    if (!supabase || !submission || !resubFile) return;
+    setBusy(true);
+    setResubError(null);
+    try {
+      const path = `${row.homework_id}/${childId}/${Date.now()}-${resubFile.name}`;
+      const { error: uploadErr } = await supabase.storage.from("homework-submissions").upload(path, resubFile);
+      if (uploadErr) {
+        setResubError(uploadErr.message);
+        return;
+      }
+      const { error } = await supabase
+        .from("homework_submissions")
+        .update({ kind: "file", file_path: path, response_text: null })
+        .eq("id", submission.id);
+      if (error) {
+        setResubError(error.message);
+        return;
+      }
+      setResubFile(null);
+      onChanged();
+      await loadDetail();
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const awaitingResubmission = feedback?.status === "resubmission_requested";
   const statusMeta = STATUS_LABEL[row.status] || STATUS_LABEL.not_yet_due;
 
   return (
@@ -101,6 +173,7 @@ function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childI
         <span className="flex items-center gap-2 text-xs">
           <span className="text-ink/60">{new Date(row.due_at).toLocaleDateString("en-GB")}</span>
           <span className={`rounded-full px-2 py-0.5 ${statusMeta.className}`}>{statusMeta.label}</span>
+          {feedback && <FeedbackStatusChip status={feedback.status} />}
         </span>
       </button>
       {expanded && (
@@ -140,6 +213,29 @@ function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childI
           ) : (
             <p className="text-ink/60">Not yet submitted.</p>
           )}
+          {feedback && <FeedbackView feedback={feedback} />}
+          {awaitingResubmission && submission && (canSubmit || canResubmit) && (
+            <div className="space-y-2 rounded-lg border border-amber-200 bg-amber-50 p-3">
+              <p className="text-xs font-medium text-amber-900">Your teacher has asked for a resubmission. Send an improved version below.</p>
+              <textarea
+                value={resubText}
+                onChange={(e) => setResubText(e.target.value)}
+                placeholder="Type your improved answer…"
+                rows={3}
+                className="w-full rounded-md border border-gold-light/60 bg-white px-3 py-2 text-sm"
+              />
+              <button type="button" disabled={!resubText.trim() || busy} onClick={resubmitText} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
+                Resubmit text
+              </button>
+              <div className="flex items-center gap-2 pt-1">
+                <input type="file" onChange={(e) => setResubFile(e.target.files?.[0] || null)} className="text-xs" />
+                <button type="button" disabled={!resubFile || busy} onClick={resubmitFile} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 transition-colors hover:bg-cream disabled:opacity-50">
+                  Resubmit file
+                </button>
+              </div>
+              {resubError && <p className="text-xs text-red-700">{resubError}</p>}
+            </div>
+          )}
           {mark?.released && (
             <div className="rounded-lg border border-gold-light/40 p-3">
               <p className="text-xs font-medium text-ink">Feedback</p>
@@ -155,9 +251,10 @@ function HomeworkItem({ row, childId, canSubmit, onChanged }: { row: Row; childI
 
 /** Shared homework list for a parent (canSubmit=false, they view only) or
  * a student (canSubmit=true, viewing/submitting their own homework). */
-export function HomeworkForChild({ childId, canSubmit, classId }: { childId: string; canSubmit: boolean; classId?: string }) {
+export function HomeworkForChild({ childId, canSubmit, classId, canResubmit = false }: { childId: string; canSubmit: boolean; classId?: string; canResubmit?: boolean }) {
   const supabase = getSupabaseClient();
   const [rows, setRows] = useState<Row[] | null>(null);
+  const [feedbackBySubmission, setFeedbackBySubmission] = useState<Record<string, HomeworkFeedback>>({});
 
   const load = async () => {
     if (!supabase || !childId) return;
@@ -168,6 +265,14 @@ export function HomeworkForChild({ childId, canSubmit, classId }: { childId: str
       .match(classId ? { class_id: classId } : {})
       .order("due_at", { ascending: false });
     setRows((data as unknown as Row[]) || []);
+    // Teacher feedback for this child's submissions (RLS limits it to what the viewer may see).
+    const { data: fb } = await supabase
+      .from("homework_feedback")
+      .select(`${FEEDBACK_COLUMNS}, submission:submission_id!inner(child_id)`)
+      .eq("submission.child_id", childId);
+    const map: Record<string, HomeworkFeedback> = {};
+    for (const f of (fb as unknown as HomeworkFeedback[]) || []) map[f.submission_id] = f;
+    setFeedbackBySubmission(map);
   };
 
   useEffect(() => {
@@ -182,7 +287,15 @@ export function HomeworkForChild({ childId, canSubmit, classId }: { childId: str
   return (
     <ul className="space-y-2">
       {rows.map((r) => (
-        <HomeworkItem key={r.homework_id} row={r} childId={childId} canSubmit={canSubmit} onChanged={load} />
+        <HomeworkItem
+          key={r.homework_id}
+          row={r}
+          childId={childId}
+          canSubmit={canSubmit}
+          canResubmit={canResubmit}
+          feedback={r.submission_id ? feedbackBySubmission[r.submission_id] || null : null}
+          onChanged={load}
+        />
       ))}
     </ul>
   );

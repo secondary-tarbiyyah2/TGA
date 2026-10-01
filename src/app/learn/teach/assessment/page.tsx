@@ -6,6 +6,7 @@ import { LearnShell } from "@/components/learn/LearnShell";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { QuranProgressForm } from "@/components/learn/QuranProgressForm";
+import { GcseClassPanel } from "@/components/learn/GcseTracker";
 import { WeeklyTarbiyahNoteForm } from "@/components/learn/WeeklyTarbiyahNoteForm";
 import { useMyClasses } from "@/lib/learn/useMyClasses";
 
@@ -215,6 +216,7 @@ function AssessmentContent() {
         </div>
       )}
 
+      {classId && <GcseClassPanel classId={classId} />}
       {isAssessmentLead && childId && <QuranProgressForm childId={childId} classId={classId || null} />}
       {childId && classId && <WeeklyTarbiyahNoteForm childId={childId} classId={classId} />}
     </div>

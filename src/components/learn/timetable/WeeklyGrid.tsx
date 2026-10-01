@@ -122,7 +122,7 @@ export function WeeklyGrid({
     for (const p of blocks) {
       const who = p.applies_to.includes("all") ? "" : ` (${p.applies_to.map((a) => AUDIENCES.find((x) => x.value === a)?.label ?? a).join(", ")})`;
       const kind = p.kind as Exclude<PeriodKind, "lesson">;
-      bands.push({ weekday: null, weekdays: p.weekdays, start: toMin(p.start_time), end: toMin(p.end_time), label: `${p.name}${p.kind === "enrichment" && p.activity ? `: ${p.activity}` : ""}${who}`, className: BAND_CLASS[kind] });
+      bands.push({ weekday: null, weekdays: p.weekdays, start: toMin(p.start_time), end: toMin(p.end_time), label: `${p.name}${p.kind === "enrichment" && p.activity ? `: ${p.activity}` : ""}${p.kind === "enrichment" && p.supervisor_name ? ` · ${p.supervisor_name}` : ""}${who}`, className: BAND_CLASS[kind] });
     }
   } else {
     const sortedPeriods = [...PERIODS].sort((a, b) => a.start.localeCompare(b.start));

@@ -125,21 +125,35 @@ Deno.serve(async (req) => {
 
   // Non-lesson blocks of the school day (break, lunch, prayer, supervised
   // enrichment) for the year groups this calendar covers. They have no teacher.
-  type PeriodRow = { id: string; name: string; kind: string; start_time: string; end_time: string; weekdays: number[] | null; applies_to: string[] | null; activity: string | null };
+  type PeriodRow = { id: string; name: string; kind: string; start_time: string; end_time: string; weekdays: number[] | null; applies_to: string[] | null; activity: string | null; supervisor_user_id?: string | null };
   let blocks: PeriodRow[] = [];
+  const supervisorNames = new Map<string, string>();
   if (slots.length > 0 && classIds.length > 0) {
-    const [{ data: periodRows }, { data: classRows }] = await Promise.all([
-      serviceClient.from("timetable_periods").select("id, name, kind, start_time, end_time, weekdays, applies_to, activity").eq("active", true).neq("kind", "lesson"),
+    // supervisor_user_id needs migration 0069; fall back to the older columns until it is applied.
+    const [withSupervisor, { data: classRows }] = await Promise.all([
+      serviceClient.from("timetable_periods").select("id, name, kind, start_time, end_time, weekdays, applies_to, activity, supervisor_user_id").eq("active", true).neq("kind", "lesson"),
       serviceClient.from("classes").select("year_group").in("id", classIds),
     ]);
+    const periodRows = withSupervisor.error
+      ? (await serviceClient.from("timetable_periods").select("id, name, kind, start_time, end_time, weekdays, applies_to, activity").eq("active", true).neq("kind", "lesson")).data
+      : withSupervisor.data;
     const tokens = new Set<string>();
     for (const c of (classRows as { year_group: string | null }[] | null) || []) {
       if (c.year_group) for (const t of audiencesOf(c.year_group)) tokens.add(t);
     }
     blocks = ((periodRows as PeriodRow[] | null) || []).filter((p) => {
       const applies = p.applies_to && p.applies_to.length > 0 ? p.applies_to : ["all"];
-      return applies.includes("all") || applies.some((a) => tokens.has(a.trim().toLowerCase()));
+      return p.supervisor_user_id === userId || applies.includes("all") || applies.some((a) => tokens.has(a.trim().toLowerCase()));
     });
+  }
+
+  // Supervisor names for enrichment blocks (name only, nothing else from the profile).
+  const supervisorIds = Array.from(new Set(blocks.map((p) => p.supervisor_user_id).filter((id): id is string => Boolean(id))));
+  if (supervisorIds.length > 0) {
+    const { data: supervisors } = await serviceClient.from("profiles").select("id, full_name").in("id", supervisorIds);
+    for (const sv of (supervisors as { id: string; full_name: string | null }[] | null) || []) {
+      if (sv.full_name) supervisorNames.set(sv.id, sv.full_name);
+    }
   }
 
   const lines = [
@@ -174,6 +188,7 @@ Deno.serve(async (req) => {
       const start = toIcsDateForNextOccurrence(wd, p.start_time);
       const end = toIcsDateForNextOccurrence(wd, p.end_time);
       const label = p.kind === "enrichment" && p.activity ? `${p.name}: ${p.activity}` : p.name;
+      const supervisor = p.kind === "enrichment" && p.supervisor_user_id ? supervisorNames.get(p.supervisor_user_id) : undefined;
       lines.push(
         "BEGIN:VEVENT",
         `UID:${p.id}-${wd}@learn.tarbiyyah.co.uk`,
@@ -182,6 +197,7 @@ Deno.serve(async (req) => {
         `DTEND:${toIcsDate(end)}`,
         `RRULE:FREQ=WEEKLY;BYDAY=${RRULE_DAY[wd]}`,
         `SUMMARY:${escapeIcsText(label)}`,
+        ...(supervisor ? [`DESCRIPTION:${escapeIcsText(`Supervised by ${supervisor}`)}`] : []),
         `CATEGORIES:${p.kind === "enrichment" ? "ENRICHMENT" : "BREAK"}`,
         "TRANSP:TRANSPARENT",
         "END:VEVENT"

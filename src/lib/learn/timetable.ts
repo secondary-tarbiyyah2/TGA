@@ -44,6 +44,10 @@ export type TimetablePeriod = {
   activity: string | null;
   sort: number;
   active: boolean;
+  /** Enrichment only (migration 0069): the member of staff supervising the block. */
+  supervisor_user_id?: string | null;
+  /** Display name of the supervisor, filled by attachSupervisorNames() (families cannot read profiles). */
+  supervisor_name?: string | null;
 };
 
 export const PERIOD_KINDS: { value: PeriodKind; label: string }[] = [
@@ -128,6 +132,7 @@ type PeriodRow = {
   activity: string | null;
   sort: number | null;
   active: boolean | null;
+  supervisor_user_id?: string | null;
 };
 
 export function normalisePeriods(rows: PeriodRow[] | null | undefined): TimetablePeriod[] {
@@ -145,8 +150,27 @@ export function normalisePeriods(rows: PeriodRow[] | null | undefined): Timetabl
       activity: r.activity,
       sort: r.sort ?? 0,
       active: r.active !== false,
+      supervisor_user_id: r.supervisor_user_id ?? null,
     }))
     .sort((a, b) => a.start_time.localeCompare(b.start_time) || a.sort - b.sort);
+}
+
+/** Columns of timetable_periods; `supervisor_user_id` needs migration 0069, so it is retried without it. */
+export const PERIOD_COLUMNS: string = "id, name, kind, start_time, end_time, weekdays, band, applies_to, activity, sort, active";
+export const PERIOD_COLUMNS_WITH_SUPERVISOR: string = `${PERIOD_COLUMNS}, supervisor_user_id`;
+
+/** Fills `supervisor_name` on enrichment periods through period_supervisor_names() (name only; works for families and students). Never throws. */
+export async function attachSupervisorNames(periods: TimetablePeriod[]): Promise<TimetablePeriod[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase || !periods.some((p) => p.supervisor_user_id)) return periods;
+  try {
+    const { data, error } = await supabase.rpc("period_supervisor_names");
+    if (error || !data) return periods;
+    const names = new Map((data as { period_id: string; supervisor_name: string }[]).map((r) => [r.period_id, r.supervisor_name]));
+    return periods.map((p) => (p.supervisor_user_id ? { ...p, supervisor_name: names.get(p.id) ?? null } : p));
+  } catch {
+    return periods;
+  }
 }
 
 /** Stored periods, or [] when the table is empty / missing. Never throws. */
@@ -154,9 +178,10 @@ export async function fetchTimetablePeriods(): Promise<TimetablePeriod[]> {
   const supabase = getSupabaseClient();
   if (!supabase) return [];
   try {
-    const { data, error } = await supabase.from("timetable_periods").select("id, name, kind, start_time, end_time, weekdays, band, applies_to, activity, sort, active");
-    if (error) return [];
-    return normalisePeriods(data as unknown as PeriodRow[]);
+    const first = await supabase.from("timetable_periods").select(PERIOD_COLUMNS_WITH_SUPERVISOR);
+    const res = first.error ? await supabase.from("timetable_periods").select(PERIOD_COLUMNS) : first;
+    if (res.error) return [];
+    return await attachSupervisorNames(normalisePeriods(res.data as unknown as PeriodRow[]));
   } catch {
     return [];
   }

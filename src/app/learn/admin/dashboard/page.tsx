@@ -214,6 +214,22 @@ function DashboardContent() {
   const [absenceCount, setAbsenceCount] = useState<number | null>(null);
   const [outstandingCount, setOutstandingCount] = useState<number | null>(null);
   const [flaggedCount, setFlaggedCount] = useState<number | null>(null);
+  // Safeguarding reviews awaiting action (RLS returns rows only to the
+  // Safeguarding Lead / Headteacher; everyone else simply gets 0).
+  const isHeadTeacherRole = roles.some((r) => r.role === "head_teacher");
+  const showReviews = isSafeguardingLead || isHeadTeacherRole;
+  const [reviewCounts, setReviewCounts] = useState<{ open: number; overdue: number } | null>(null);
+  useEffect(() => {
+    if (!supabase || !showReviews) return;
+    supabase
+      .from("safeguarding_reviews")
+      .select("due_at")
+      .neq("status", "completed")
+      .then(({ data }) => {
+        const due = ((data as { due_at: string }[] | null) || []).map((r) => new Date(r.due_at).getTime());
+        setReviewCounts({ open: due.length, overdue: due.filter((t) => t < Date.now()).length });
+      });
+  }, [supabase, showReviews]);
 
   useEffect(() => {
     if (!supabase) return;
@@ -292,6 +308,14 @@ function DashboardContent() {
           <StatTile label="Unexplained absences" value={absenceCount ?? "…"} status={statusOf(absenceCount)} href="/admin/compliance" />
           <StatTile label="Outstanding signatures" value={outstandingCount ?? "…"} status={statusOf(outstandingCount)} href="/admin/compliance" />
           {isSafeguardingLead && <StatTile label="Flagged messages" value={flaggedCount ?? "…"} status={statusOf(flaggedCount)} href="/admin/compliance" />}
+          {showReviews && (
+            <StatTile
+              label={reviewCounts && reviewCounts.overdue > 0 ? `Safeguarding reviews (${reviewCounts.overdue} overdue)` : "Safeguarding reviews due"}
+              value={reviewCounts ? reviewCounts.open : "…"}
+              status={reviewCounts ? (reviewCounts.open === 0 ? "ok" : "warning") : undefined}
+              href="/admin/compliance"
+            />
+          )}
         </div>
       </section>
 

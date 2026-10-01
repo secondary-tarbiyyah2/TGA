@@ -98,6 +98,7 @@ export function TimetableGrid({ slots, simplified = false, showClassLabel = fals
                         <div className={`rounded-lg border ${style.cell} px-2 py-1 text-xs font-medium`}>
                           {p.name}
                           {p.kind === "enrichment" && p.activity ? <div className="font-normal opacity-80">{p.activity}</div> : null}
+                          {p.kind === "enrichment" && p.supervisor_name ? <div className="font-normal opacity-80">Supervised by {p.supervisor_name}</div> : null}
                         </div>
                       )}
                     </td>

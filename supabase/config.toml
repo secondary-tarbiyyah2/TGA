@@ -50,3 +50,15 @@ verify_jwt = false
 
 [functions.quiz-send-plan]
 verify_jwt = false
+
+[functions.weekly-digest]
+verify_jwt = false
+
+[functions.safeguarding-review-check]
+verify_jwt = false
+
+[functions.purge-data-exports]
+verify_jwt = false
+
+[functions.noshow-alerts]
+verify_jwt = false
