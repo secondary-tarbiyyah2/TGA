@@ -4,25 +4,38 @@
  * Figures/copy marked isPlaceholder or "Draft / concept" are not confirmed — see task brief.
  */
 
+import { withDerivedFees, FEE_DEFAULTS, type FeeSchedule } from "@/lib/fees";
+
+/** Only `annualFee` is a stored/edited number. `termlyFee`, `monthlyFee` and
+ * `schedule` are DERIVED (src/lib/fees.ts) from the annual fee plus the
+ * site-wide terms / instalments settings; any stored termly/monthly value on
+ * an old row is ignored. They stay on the type for back-compat with older
+ * consumers (LMS fee dialog, book-a-call "from" price). */
 export type FeeBand = {
   _id: string;
   yearGroupRange: string;
   order: number;
   annualFee: number;
+  /** Derived: regular per-term amount. Never stored independently. */
   termlyFee: number;
+  /** Derived: regular per-month amount. Never stored independently. */
   monthlyFee: number;
+  /** Derived full schedule (all instalments, sums exactly to annualFee). */
+  schedule?: FeeSchedule;
   notes?: string;
 };
 
-// Launch-cohort pricing: the first cohort starts January 2027, so this covers a
-// shortened Jan–Jul 2027 period (two terms, not three) rather than a full school
-// year. Figures as supplied by the school — not recalculated or inferred here.
-export const feeBands: FeeBand[] = [
-  { _id: "fb1", yearGroupRange: "Reception – Year 2", order: 1, annualFee: 1596, termlyFee: 798, monthlyFee: 342.14 },
-  { _id: "fb2", yearGroupRange: "Year 3 – Year 6", order: 2, annualFee: 2130, termlyFee: 1597.5, monthlyFee: 456.43 },
-  { _id: "fb3", yearGroupRange: "Year 7 – Year 9", order: 3, annualFee: 2796, termlyFee: 2097.5, monthlyFee: 599.29 },
-  { _id: "fb4", yearGroupRange: "Year 10 – Year 11", order: 4, annualFee: 3000, termlyFee: 2250, monthlyFee: 642.86, notes: "GCSE exam entry fees are billed separately by the exam centre." },
+// Annual fees are the owner's published figures. Termly / monthly amounts are
+// derived from them (see src/lib/fees.ts) using the site-wide number of terms
+// and monthly instalments (defaults: 3 terms, 12 instalments, editable in
+// /learn/admin/content -> Fees) so the instalments always add up exactly.
+const seedFeeBandsAnnual: { _id: string; yearGroupRange: string; order: number; annualFee: number; notes?: string }[] = [
+  { _id: "fb1", yearGroupRange: "Reception – Year 2", order: 1, annualFee: 1596 },
+  { _id: "fb2", yearGroupRange: "Year 3 – Year 6", order: 2, annualFee: 2130 },
+  { _id: "fb3", yearGroupRange: "Year 7 – Year 9", order: 3, annualFee: 2796 },
+  { _id: "fb4", yearGroupRange: "Year 10 – Year 11", order: 4, annualFee: 3000, notes: "GCSE exam entry fees are billed separately by the exam centre." },
 ];
+export const feeBands: FeeBand[] = seedFeeBandsAnnual.map((b) => withDerivedFees(b, FEE_DEFAULTS));
 
 // Fields left empty/undefined here are deliberately NOT invented — every page
 // reading them must hide the corresponding section rather than show a blank
@@ -45,6 +58,12 @@ export type SiteSettings = {
   ctaPrimaryHref?: string;
   applicationFee?: number;
   registrationFee?: number;
+  /** Optional default deposit amount (admissions_deposit_amount). */
+  depositAmount?: number;
+  /** Number of terms the annual fee is split across (default 3). */
+  feeTerms?: number;
+  /** Number of monthly instalments the annual fee is split across (default 12; 10 allowed). */
+  feeInstalments?: number;
   siblingDiscountPercent?: number;
   siblingDiscountNote?: string;
   // General-purpose discount catalogue for the fee estimator, beyond the
@@ -73,6 +92,8 @@ export const siteSettings: SiteSettings = {
   ctaPrimaryHref: "/admissions",
   applicationFee: 247,
   registrationFee: 150,
+  feeTerms: FEE_DEFAULTS.terms,
+  feeInstalments: FEE_DEFAULTS.instalments,
   admissionsEmail: "globalacademy@tarbiyyah.co.uk",
   complaintsLastYear: 0,
   discounts: [],
@@ -126,8 +147,8 @@ export type FaqEntry = { _id: string; question: string; answer: string; category
 export const faqEntries: FaqEntry[] = [
   { _id: "f1", category: "Admissions", order: 1, question: "How do I apply for a place?", answer: "Start by registering your interest, then complete the multi-step application form on the Admissions page. We'll confirm receipt, arrange an entry assessment where relevant, and follow up with next steps." },
   { _id: "f2", category: "Admissions", order: 2, question: "Is there an entry assessment?", answer: "Yes — a short, age-appropriate assessment helps us understand where your child is and how best to support them from day one. Details are shared once your application is received." },
-  { _id: "f3", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The £247 application fee is non-refundable and covers processing and assessment of your application. It is separate from the one-time £150 registration fee, which is charged once a place is offered and accepted." },
-  { _id: "f4", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. Annual, termly and monthly payment plans are available for every year group band — see the Fees page for the full table." },
+  { _id: "f3", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers processing and assessment of your application. It is separate from the one-time {{registrationFee}} registration fee, which is charged once a place is offered and accepted." },
+  { _id: "f4", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. You can pay annually, termly ({{terms}} terms) or monthly ({{instalments}} instalments) for every year group band. Termly and monthly amounts are simply the annual fee divided evenly, and the instalments always add up exactly to the annual fee — see the Fees page for the full table." },
   { _id: "f5", category: "Curriculum", order: 1, question: "Is this the full British curriculum?", answer: "Yes, taught live by qualified UK teachers, alongside a dedicated Islamic Studies programme, through to GCSE at Year 10–11." },
   { _id: "f6", category: "Technology", order: 1, question: "What equipment does my child need?", answer: "A reliable internet connection and a laptop or tablet with a camera and microphone. Full technical requirements are confirmed ahead of the January 2027 launch." },
   { _id: "f7", category: "Islamic Studies", order: 1, question: "How is Qur'an memorisation (hifz) taught?", answer: "Hifz sits alongside academic subjects as a first-class part of the timetable, with progress tracked just as academic subjects are." },

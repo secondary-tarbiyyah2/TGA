@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ParentPinSettings } from "@/components/learn/pin/ParentPinSettings";
+import { MessageSettings } from "@/components/learn/messages/MessageSettings";
 
 /**
  * The signed-in user's OWN account settings — password only, since MFA was
@@ -97,6 +98,7 @@ function AccountContent() {
         </p>
       </div>
       <ChangePassword />
+      {session && session !== "loading" && !roles.every((r) => r.role === "student") && <MessageSettings userId={session.user.id} />}
       {session && session !== "loading" && roles.some((r) => r.role === "parent") && <ParentPinSettings userId={session.user.id} />}
     </div>
   );

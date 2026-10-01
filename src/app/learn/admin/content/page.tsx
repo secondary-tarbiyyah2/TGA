@@ -8,6 +8,7 @@ import { HomepageContentEditor } from "@/components/learn/content/HomepageConten
 import { AboutContentEditor } from "@/components/learn/content/AboutContentEditor";
 import { CurriculumContentEditor } from "@/components/learn/content/CurriculumContentEditor";
 import { PolicyEditor } from "@/components/learn/documents/PolicyEditor";
+import { FeesEditor } from "@/components/learn/content/FeesEditor";
 import { SimpleListEditor } from "@/components/learn/content/SimpleListEditor";
 
 // Real editor, replacing the old "link out to Sanity Studio" stub now
@@ -32,23 +33,7 @@ function TabContent({ tab }: { tab: Tab }) {
     case "Curriculum page":
       return <CurriculumContentEditor />;
     case "Fees":
-      return (
-        <SimpleListEditor
-          table="fee_bands"
-          title="Fee bands"
-          description="Published on the Fees page and used by the fee estimator."
-          orderKey="order_index"
-          rowLabel={(r) => `${r.year_group_range} — £${r.annual_fee}/yr`}
-          fields={[
-            { key: "year_group_range", label: "Year group range", required: true },
-            { key: "order_index", label: "Display order", type: "number" },
-            { key: "annual_fee", label: "Annual (year) fee (£)", type: "number", required: true },
-            { key: "termly_fee", label: "Termly fee (£)", type: "number", required: true },
-            { key: "monthly_fee", label: "Monthly fee (£)", type: "number", required: true },
-            { key: "notes", label: "Notes", type: "textarea" },
-          ]}
-        />
-      );
+      return <FeesEditor />;
     case "FAQs":
       return (
         <SimpleListEditor

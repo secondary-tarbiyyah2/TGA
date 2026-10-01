@@ -1,4 +1,5 @@
 import { getSupabaseClient } from "./supabase/client";
+import { withDerivedFees, sanitiseFeeSettings, applyFeeTokens } from "./fees";
 import {
   feeBands as seedFeeBands, siteSettings as seedSiteSettings, faqEntries as seedFaqEntries,
   termDates as seedTermDates, testimonials as seedTestimonials, staffMembers as seedStaffMembers,
@@ -34,14 +35,27 @@ async function queryOrFallback<T>(run: (supabase: NonNullable<ReturnType<typeof 
   }
 }
 
-export const getFeeBands = () =>
-  queryOrFallback<FeeBand[]>(
-    (s) => s.from("fee_bands").select("id, year_group_range, order_index, annual_fee, termly_fee, monthly_fee, notes").order("order_index"),
+/** Fee bands. Only `annual_fee` is read as a fee number: termly/monthly are
+ * DERIVED from it using the site-wide terms / instalments settings
+ * (src/lib/fees.ts), so they always add up. Any stored termly_fee /
+ * monthly_fee column value is ignored. */
+export const getFeeBands = async (): Promise<FeeBand[]> => {
+  const settings = await getSiteSettings();
+  const rows = await queryOrFallback<FeeBand[]>(
+    (s) => s.from("fee_bands").select("id, year_group_range, order_index, annual_fee, notes").order("order_index"),
     seedFeeBands
-  ).then((rows) => (rows === seedFeeBands ? rows : rows.map((r: unknown) => mapFeeBand(r as Record<string, unknown>))));
+  );
+  if (rows === seedFeeBands) {
+    return seedFeeBands.map((b) => withDerivedFees(b, { terms: settings.feeTerms, instalments: settings.feeInstalments }));
+  }
+  return rows.map((r: unknown) => mapFeeBand(r as Record<string, unknown>, settings));
+};
 
-function mapFeeBand(r: Record<string, unknown>): FeeBand {
-  return { _id: r.id as string, yearGroupRange: r.year_group_range as string, order: r.order_index as number, annualFee: r.annual_fee as number, termlyFee: r.termly_fee as number, monthlyFee: r.monthly_fee as number, notes: (r.notes as string) || undefined };
+function mapFeeBand(r: Record<string, unknown>, settings: SiteSettings): FeeBand {
+  return withDerivedFees(
+    { _id: r.id as string, yearGroupRange: r.year_group_range as string, order: r.order_index as number, annualFee: Number(r.annual_fee), notes: (r.notes as string) || undefined },
+    { terms: settings.feeTerms, instalments: settings.feeInstalments }
+  );
 }
 
 export const getSiteSettings = async (): Promise<SiteSettings> => {
@@ -57,6 +71,9 @@ export const getSiteSettings = async (): Promise<SiteSettings> => {
       ctaPrimaryHref: (r.cta_primary_href as string) || undefined,
       applicationFee: (r.application_fee as number) ?? undefined,
       registrationFee: (r.registration_fee as number) ?? undefined,
+      depositAmount: r.admissions_deposit_amount != null ? Number(r.admissions_deposit_amount) : undefined,
+      feeTerms: sanitiseFeeSettings({ terms: r.fee_terms }).terms,
+      feeInstalments: sanitiseFeeSettings({ instalments: r.fee_instalments }).instalments,
       siblingDiscountPercent: (r.sibling_discount_percent as number) ?? undefined,
       siblingDiscountNote: (r.sibling_discount_note as string) || undefined,
       discounts: (r.discounts as SiteSettings["discounts"]) || [],
@@ -82,11 +99,20 @@ export const getSiteSettings = async (): Promise<SiteSettings> => {
   }
 };
 
-export const getFaqEntries = () =>
-  queryOrFallback<FaqEntry[]>(
-    (s) => s.from("faq_entries").select("id, question, answer, category, order_index").order("order_index"),
-    seedFaqEntries
-  ).then((rows) => (rows === seedFaqEntries ? rows : rows.map((r: unknown) => mapFaq(r as Record<string, unknown>))));
+export const getFaqEntries = async (): Promise<FaqEntry[]> => {
+  const [settings, rows] = await Promise.all([
+    getSiteSettings(),
+    queryOrFallback<FaqEntry[]>(
+      (s) => s.from("faq_entries").select("id, question, answer, category, order_index").order("order_index"),
+      seedFaqEntries
+    ),
+  ]);
+  const entries = rows === seedFaqEntries ? seedFaqEntries : rows.map((r: unknown) => mapFaq(r as Record<string, unknown>));
+  // Fee figures quoted in FAQ copy use {{applicationFee}} / {{registrationFee}} /
+  // {{terms}} / {{instalments}} tokens so they always match the live settings.
+  const tokens = { applicationFee: settings.applicationFee, registrationFee: settings.registrationFee, terms: settings.feeTerms, instalments: settings.feeInstalments };
+  return entries.map((e) => ({ ...e, answer: applyFeeTokens(e.answer, tokens) }));
+};
 
 function mapFaq(r: Record<string, unknown>): FaqEntry {
   return { _id: r.id as string, question: r.question as string, answer: r.answer as string, category: r.category as string, order: r.order_index as number };

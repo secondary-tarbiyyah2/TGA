@@ -3,27 +3,28 @@
 import { useMemo, useState } from "react";
 import type { FeeBand, Discount } from "@/content/seed";
 import { formatGBP } from "@/lib/format";
+import { computeFeeSchedule, splitInstalments, FEE_DEFAULTS, describePlan } from "@/lib/fees";
 
 type Frequency = "annual" | "termly" | "monthly";
 
 const FREQUENCIES: { value: Frequency; label: string }[] = [
-  { value: "annual", label: "Annual (Jan–Jul 2027)" },
+  { value: "annual", label: "Annual (pay in full)" },
   { value: "termly", label: "Termly" },
   { value: "monthly", label: "Monthly" },
 ];
 
-function frequencyFee(band: FeeBand, frequency: Frequency): number {
-  if (frequency === "termly") return band.termlyFee;
-  if (frequency === "monthly") return band.monthlyFee;
-  return band.annualFee;
-}
-
 type LineItem = { label: string; note?: string; amountOff: number };
+
+const round2 = (n: number) => Math.round(n * 100) / 100;
 
 /**
  * Pure client-side estimate — nothing here is submitted anywhere (UK GDPR:
  * no data collection). All discount figures come from Sanity site settings
- * (or its build-time fallback); nothing is invented here. If no discounts
+ * (or its build-time fallback); nothing is invented here. Fees are derived from the ANNUAL fee only
+ * (src/lib/fees.ts): discounts come off the annual total, then the
+ * discounted total is split into terms / monthly instalments with any
+ * rounding pence on the final instalment, so the plan always sums to the
+ * estimated total. If no discounts
  * are configured at all, this degrades to a plain band → frequency → price
  * lookup with no discount section rendered (hide-when-empty, matching the
  * pattern on /fees).
@@ -56,7 +57,9 @@ export function FeeEstimator({
   const checkableDiscounts = discounts.filter((d) => !d.appliesAutomatically);
   const hasAnyDiscounts = hasSiblingDiscount || discounts.length > 0;
 
-  const baseFee = band ? frequencyFee(band, frequency) : 0;
+  // Fee shape (terms / instalments) travels with the band, derived in content.ts.
+  const schedule = band ? band.schedule ?? computeFeeSchedule(band.annualFee, FEE_DEFAULTS) : null;
+  const baseFee = band ? band.annualFee : 0;
 
   const lineItems: LineItem[] = useMemo(() => {
     if (!band) return [];
@@ -66,19 +69,19 @@ export function FeeEstimator({
       items.push({
         label: "Sibling discount",
         note: siblingDiscountNote,
-        amountOff: (baseFee * (siblingDiscountPercent as number)) / 100,
+        amountOff: round2((baseFee * (siblingDiscountPercent as number)) / 100),
       });
     }
 
     for (const d of autoDiscounts) {
-      const amountOff = d.type === "percent" ? (baseFee * (d.percent ?? 0)) / 100 : d.fixedAmount ?? 0;
+      const amountOff = d.type === "percent" ? round2((baseFee * (d.percent ?? 0)) / 100) : d.fixedAmount ?? 0;
       if (amountOff > 0) items.push({ label: d.label, note: d.note, amountOff });
     }
 
     discounts.forEach((d, i) => {
       if (d.appliesAutomatically) return;
       if (!checkedDiscounts[i]) return;
-      const amountOff = d.type === "percent" ? (baseFee * (d.percent ?? 0)) / 100 : d.fixedAmount ?? 0;
+      const amountOff = d.type === "percent" ? round2((baseFee * (d.percent ?? 0)) / 100) : d.fixedAmount ?? 0;
       if (amountOff > 0) items.push({ label: d.label, note: d.note, amountOff });
     });
 
@@ -86,9 +89,12 @@ export function FeeEstimator({
   }, [band, baseFee, hasSiblingDiscount, siblings, siblingDiscountPercent, siblingDiscountNote, autoDiscounts, discounts, checkedDiscounts]);
 
   const totalDiscount = lineItems.reduce((sum, item) => sum + item.amountOff, 0);
-  const estimatedTotal = Math.max(0, baseFee - totalDiscount);
+  const estimatedTotal = Math.max(0, round2(baseFee - totalDiscount));
 
-  if (!band) return null;
+  if (!band || !schedule) return null;
+
+  const instalmentCount = frequency === "termly" ? schedule.terms : frequency === "monthly" ? schedule.instalments : 1;
+  const plan = frequency === "annual" ? null : describePlan(splitInstalments(estimatedTotal, instalmentCount), frequency === "termly" ? "term" : "month");
 
   return (
     <div className={`rounded-2xl border border-gold-light/50 bg-white ${compact ? "p-5" : "p-6 sm:p-8"}`}>
@@ -178,7 +184,7 @@ export function FeeEstimator({
 
       <div className="mt-6 rounded-xl bg-cream p-4">
         <div className="flex items-center justify-between text-sm">
-          <span className="text-ink/70">Base fee ({FREQUENCIES.find((f) => f.value === frequency)?.label})</span>
+          <span className="text-ink/70">Annual fee</span>
           <span className="font-medium text-ink">{formatGBP(baseFee)}</span>
         </div>
 
@@ -194,11 +200,18 @@ export function FeeEstimator({
           <span className="font-semibold text-ink">Estimated total</span>
           <span className="font-serif text-xl font-bold text-ink">{formatGBP(estimatedTotal)}</span>
         </div>
+
+        {plan && (
+          <div className="mt-3 border-t border-gold-light/50 pt-3 text-sm" aria-live="polite">
+            <p className="font-semibold text-ink">{plan.headline}</p>
+            <p className="text-xs text-ink/70">{plan.detail}</p>
+          </div>
+        )}
       </div>
 
       <p className="mt-3 text-xs text-ink/70">
-        This is an estimate for planning purposes only, not a binding quote — final fees and eligibility are confirmed during
-        application.
+        All fees include 20% VAT. This is an estimate for planning purposes only, not a binding quote — final fees and
+        eligibility are confirmed during application.
       </p>
     </div>
   );

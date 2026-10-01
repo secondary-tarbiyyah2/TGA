@@ -58,6 +58,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
   const [picking, setPicking] = useState(false);
   const [query, setQuery] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [unread, setUnread] = useState<Record<string, number>>({});
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -118,10 +119,23 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
     }
   }, []);
 
+  const loadUnread = useCallback(async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    const { data } = await supabase.rpc("thread_unread_counts");
+    setUnread(Object.fromEntries(((data as { thread_id: string; unread: number }[]) || []).map((r) => [r.thread_id, r.unread])));
+  }, []);
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load
     load();
-  }, [load]);
+    loadUnread();
+    const id = window.setInterval(() => {
+      load();
+      loadUnread();
+    }, 30000);
+    return () => window.clearInterval(id);
+  }, [load, loadUnread]);
 
   const byId = useMemo(() => new Map((people || []).map((p) => [p.user_id, p])), [people]);
 
@@ -213,6 +227,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
                 const other = byId.get(otherOf(t) || "");
                 const last = lasts[t.id];
                 const name = other?.full_name || "Conversation";
+                const unreadN = active === t.id ? 0 : unread[t.id] || 0;
                 const context = t.kind === "parent_teacher" && t.children?.name ? `About ${t.children.name}` : other ? roleText(other.roles) : "";
                 return (
                   <li key={t.id}>
@@ -224,11 +239,18 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials(name)}</span>
                       <span className="min-w-0 flex-1">
                         <span className="flex items-baseline justify-between gap-2">
-                          <span className="truncate text-sm font-semibold text-ink">{name}</span>
+                          <span className={`truncate text-sm text-ink ${unreadN ? "font-bold" : "font-semibold"}`}>{name}</span>
                           {last && <span className="shrink-0 text-xs text-ink/45">{ago(last.created_at)}</span>}
                         </span>
                         <span className="block truncate text-xs text-ink/50">{context}</span>
-                        <span className="block truncate text-sm text-ink/65">{last ? `${last.sender_id === me ? "You: " : ""}${last.body}` : "No messages yet"}</span>
+                        <span className="flex items-center gap-2">
+                          <span className={`block min-w-0 flex-1 truncate text-sm ${unreadN ? "font-semibold text-ink" : "text-ink/65"}`}>{last ? `${last.sender_id === me ? "You: " : ""}${last.body}` : "No messages yet"}</span>
+                          {unreadN > 0 && (
+                            <span aria-label={`${unreadN} unread`} className="flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-teal-600 px-1.5 text-[11px] font-semibold text-white">
+                              {unreadN > 99 ? "99+" : unreadN}
+                            </span>
+                          )}
+                        </span>
                       </span>
                     </button>
                   </li>
@@ -253,7 +275,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
                     </p>
                   </div>
                 </div>
-                <MessageThread key={activeThread.id} threadId={activeThread.id} onSent={load} />
+                <MessageThread key={activeThread.id} threadId={activeThread.id} onSent={load} onRead={loadUnread} />
               </div>
             ) : (
               <div className="flex h-full min-h-[320px] flex-col items-center justify-center px-6 py-16 text-center">

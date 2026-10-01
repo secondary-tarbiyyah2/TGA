@@ -251,7 +251,7 @@ export function YourChildsWeekQuiz({
       // analytics panel's "PDF emails" count, which must not lie about
       // deliveries that never happened.
       const feeSummary = feeBand
-        ? `${feeBand.yearGroupRange}: ${formatGBP(feeBand.termlyFee)}/term or ${formatGBP(feeBand.monthlyFee)}/month${siblingDiscountNote ? ` — ${siblingDiscountNote}` : ""}`
+        ? `${feeBand.yearGroupRange}: ${formatGBP(feeBand.schedule?.termlyAmount ?? feeBand.termlyFee)}/term or ${formatGBP(feeBand.schedule?.monthlyAmount ?? feeBand.monthlyFee)}/month${siblingDiscountNote ? ` — ${siblingDiscountNote}` : ""}`
         : "";
       const functionUrl = getEdgeFunctionUrl("quiz-send-plan");
       const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

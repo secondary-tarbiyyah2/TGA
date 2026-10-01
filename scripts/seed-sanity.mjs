@@ -21,10 +21,10 @@ if (!projectId || !token) {
 const client = createClient({ projectId, dataset, token, apiVersion: "2025-01-01", useCdn: false });
 
 const feeBands = [
-  { _id: "feeBand-fb1", _type: "feeBand", yearGroupRange: "Reception – Year 2", order: 1, annualFee: 1596, termlyFee: 798, monthlyFee: 342.14 },
-  { _id: "feeBand-fb2", _type: "feeBand", yearGroupRange: "Year 3 – Year 6", order: 2, annualFee: 2130, termlyFee: 1597.5, monthlyFee: 456.43 },
-  { _id: "feeBand-fb3", _type: "feeBand", yearGroupRange: "Year 7 – Year 9", order: 3, annualFee: 2796, termlyFee: 2097.5, monthlyFee: 599.29 },
-  { _id: "feeBand-fb4", _type: "feeBand", yearGroupRange: "Year 10 – Year 11", order: 4, annualFee: 3000, termlyFee: 2250, monthlyFee: 642.86, notes: "GCSE exam entry fees are billed separately by the exam centre." },
+  { _id: "feeBand-fb1", _type: "feeBand", yearGroupRange: "Reception – Year 2", order: 1, annualFee: 1596 },
+  { _id: "feeBand-fb2", _type: "feeBand", yearGroupRange: "Year 3 – Year 6", order: 2, annualFee: 2130 },
+  { _id: "feeBand-fb3", _type: "feeBand", yearGroupRange: "Year 7 – Year 9", order: 3, annualFee: 2796 },
+  { _id: "feeBand-fb4", _type: "feeBand", yearGroupRange: "Year 10 – Year 11", order: 4, annualFee: 3000, notes: "GCSE exam entry fees are billed separately by the exam centre." },
 ];
 
 const siteSettings = {
@@ -43,8 +43,8 @@ const siteSettings = {
 const faqEntries = [
   { _id: "faqEntry-f1", _type: "faqEntry", category: "Admissions", order: 1, question: "How do I apply for a place?", answer: "Start by registering your interest, then complete the multi-step application form on the Admissions page. We'll confirm receipt, arrange an entry assessment where relevant, and follow up with next steps." },
   { _id: "faqEntry-f2", _type: "faqEntry", category: "Admissions", order: 2, question: "Is there an entry assessment?", answer: "Yes — a short, age-appropriate assessment helps us understand where your child is and how best to support them from day one. Details are shared once your application is received." },
-  { _id: "faqEntry-f3", _type: "faqEntry", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The £247 application fee is non-refundable and covers processing and assessment of your application. It is separate from the one-time £150 registration fee, which is charged once a place is offered and accepted." },
-  { _id: "faqEntry-f4", _type: "faqEntry", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. Annual, termly and monthly payment plans are available for every year group band — see the Fees page for the full table." },
+  { _id: "faqEntry-f3", _type: "faqEntry", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers processing and assessment of your application. It is separate from the one-time {{registrationFee}} registration fee, which is charged once a place is offered and accepted." },
+  { _id: "faqEntry-f4", _type: "faqEntry", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. You can pay annually, termly ({{terms}} terms) or monthly ({{instalments}} instalments) for every year group band. Termly and monthly amounts are simply the annual fee divided evenly, and the instalments always add up exactly to the annual fee — see the Fees page for the full table." },
   { _id: "faqEntry-f5", _type: "faqEntry", category: "Curriculum", order: 1, question: "Is this the full British curriculum?", answer: "Yes, taught live by qualified UK teachers, alongside a dedicated Islamic Studies programme, through to GCSE at Year 10–11." },
   { _id: "faqEntry-f6", _type: "faqEntry", category: "Technology", order: 1, question: "What equipment does my child need?", answer: "A reliable internet connection and a laptop or tablet with a camera and microphone. Full technical requirements are confirmed ahead of the January 2027 launch." },
   { _id: "faqEntry-f7", _type: "faqEntry", category: "Islamic Studies", order: 1, question: "How is Qur'an memorisation (hifz) taught?", answer: "Hifz sits alongside academic subjects as a first-class part of the timetable, with progress tracked just as academic subjects are." },
