@@ -67,7 +67,7 @@ export function moveWarnings(
 }
 
 export type SubjectOpt = { id: string; name: string };
-export type SessionOpt = { id: string; name: string };
+export type SessionOpt = { id: string; name: string; meeting_url?: string | null; capacity?: number | null };
 export type Colour = { bg: string; border: string; text: string };
 
 /** Distinct colour per subject: hues are spread evenly over the subjects in

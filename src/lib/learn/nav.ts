@@ -51,6 +51,7 @@ export const ADMIN_SECTIONS: PortalNavGroup[] = [
       items: [
         { href: "/admin/admissions", label: "Admissions", hint: "Applications, calls and availability" },
         { href: "/admin/people", label: "People & roles", hint: "Families, students and staff" },
+        { href: "/admin/staff", label: "Staff profiles", hint: "Teacher profiles and compliance dates", headOnly: true },
       ],
     },
     {
@@ -219,6 +220,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/admissions", label: "Admissions", icon: "admissions", group: G_PEOPLE },
     { href: "/admin/people", label: "People & accounts", icon: "people", group: G_PEOPLE },
     { href: "/admin/pupils", label: "Pupil records", icon: "documents", group: G_PEOPLE },
+    { href: "/admin/staff", label: "Staff profiles", icon: "people", headOnly: true, group: G_PEOPLE },
     { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true, group: G_CLASSROOM, matchPrefixes: ["/admin/class"] },
     { href: "/admin/homework", label: "Homework", icon: "homework", headOnly: true, group: G_CLASSROOM },
     { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true, group: G_CLASSROOM },
@@ -248,6 +250,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/teach/calendar", label: "Calendar", icon: "calendar" },
     { href: "/teach/messages", label: "Messages", icon: "messages" },
     { href: "/teach/reports", label: "Reports", icon: "reports" },
+    { href: "/teach/profile", label: "My profile", icon: "people", group: G_STAFF },
     { href: "/teach/clock", label: "My hours", icon: "clock", group: G_STAFF },
     { href: "/teach/absences", label: "Absences", icon: "absences", group: G_STAFF },
     { href: "/teach/announcements", label: "Announcements", icon: "announcements", group: G_STAFF },
@@ -258,6 +261,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/family/calendar", label: "Calendar", icon: "calendar" },
     { href: "/family/messages", label: "Messages", icon: "messages" },
     { href: "/family/announcements", label: "Announcements", icon: "announcements" },
+    { href: "/family/teachers", label: "Meet the teachers", icon: "people" },
     { href: "/family/absences", label: "Absences", icon: "absences" },
     { href: "/family/child-details", label: "Child details", icon: "documents" },
     { href: "/family/fees", label: "Fees", icon: "fees" },
@@ -267,6 +271,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/student/classes", label: "Classroom", icon: "classes", matchPrefixes: tabPrefixes("student", ["/student/class", "/student/lessons"]) },
     { href: "/student/calendar", label: "Calendar", icon: "calendar" },
     { href: "/student/announcements", label: "Announcements", icon: "announcements" },
+    { href: "/student/teachers", label: "My teachers", icon: "people" },
   ],
 };
 

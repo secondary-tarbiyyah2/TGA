@@ -11,6 +11,7 @@ import { TeachNow } from "@/components/learn/teach/TeachNow";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
+import { TeacherLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -106,6 +107,8 @@ function TeachContent() {
       </details>
 
       <SignaturePrompts />
+
+      <TeacherLeaderboard />
 
       <AnnouncementsFeed classIds={classIds} canPost={classIds.length > 0} postClassId={classIds[0]} postScope="class" />
 

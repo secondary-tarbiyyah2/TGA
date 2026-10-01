@@ -45,12 +45,22 @@ band suits the timezone soft-constraint weighting per class (see
 `--timezone-hint` per class in the DB, read from classes.timezone_band if
 present — Phase A keeps this simple: two fixed bands, weighted equally
 unless a class overrides it).
+
+School-day periods (migration 0066): the grid above is only the DEFAULT. The
+head edits the real day in the `timetable_periods` table (admin UI: School
+day). `fetch_inputs` reads the active rows with kind='lesson' and calls
+`set_periods()`; each row has weekdays and `applies_to` (year-group audiences
+such as 'all' or 'gcse' = Years 10-11) so GCSE classes can use extra periods.
+Break / lunch / prayer / enrichment rows are not lesson periods and are never
+used by the solver. With no rows (or no table) the default grid is used and
+behaviour is identical to before.
 """
 from __future__ import annotations
 
 import argparse
 import json
 import os
+import re
 import sys
 from dataclasses import dataclass, field
 from datetime import date, time
@@ -70,9 +80,12 @@ WEEKDAYS = [1, 2, 3, 4, 5]  # Monday=1 .. Friday=5 (Sunday=0, Saturday=6 unused)
 # period grid, which covers the seed/test data and the common case.
 BAND_A = [(time(9, 0), time(10, 0)), (time(10, 0), time(11, 0)), (time(11, 15), time(12, 15))]   # UK morning
 BAND_B = [(time(15, 0), time(16, 0)), (time(16, 0), time(17, 0)), (time(17, 15), time(18, 15))]  # UK afternoon/evening
-PERIODS = [(i, start, end, "A") for i, (start, end) in enumerate(BAND_A)] + [
+_DEFAULT_PERIODS = [(i, start, end, "A") for i, (start, end) in enumerate(BAND_A)] + [
     (i + len(BAND_A), start, end, "B") for i, (start, end) in enumerate(BAND_B)
 ]
+PERIODS = list(_DEFAULT_PERIODS)
+# Parallel to PERIODS: which weekdays / audiences each period is open to.
+PERIOD_META: list[dict] = [{"weekdays": set(WEEKDAYS), "applies": {"all"}} for _ in PERIODS]
 # Teacher load rules (hard). Overridable via env or CLI flags.
 MAX_CONSECUTIVE_TEACHING_PERIODS = int(os.environ.get("TT_MAX_CONSECUTIVE", "3"))
 MAX_TEACHER_LESSONS_PER_DAY = int(os.environ.get("TT_MAX_LESSONS_PER_DAY", "6"))
@@ -171,6 +184,7 @@ def weekly_template_teacher(rows: list[dict], class_id: str, subject_id: str, to
 
 
 def fetch_inputs(supabase, academic_year_label: str) -> Inputs:
+    load_periods(supabase)  # the school day's lesson periods, before anything is mapped onto them
     year = supabase.table("academic_years").select("id").eq("label", academic_year_label).single().execute().data
     academic_year_id = year["id"]
 
@@ -428,7 +442,112 @@ def _mins(t: time) -> int:
 
 
 ALL_CELLS = [(wd, idx) for wd in WEEKDAYS for idx, _s, _e, _b in PERIODS]
-SCHOOL_DAY_SPANS = [(BAND_A[0][0], BAND_A[-1][1]), (BAND_B[0][0], BAND_B[-1][1])]
+# Contiguous stretches of the lesson day (periods at most CONTIGUOUS_GAP_MINUTES
+# apart are one stretch): the default grid gives the two bands, 09:00-12:15 and 15:00-18:15.
+SCHOOL_DAY_SPANS: list = []
+# Index pairs of lesson periods whose times overlap (only with custom periods).
+OVERLAPPING_PERIODS: list = []
+
+
+def audience_tokens(year_group_name: str | None) -> set[str]:
+    """Audience tokens a year group belongs to; mirrors audiencesOf() in
+    src/lib/learn/timetable.ts. 'Year 10' -> {'all', 'year 10', 'gcse'}."""
+    name = (year_group_name or "").strip().lower()
+    out = {"all", name}
+    m = re.search(r"(\d+)", name)
+    if name.startswith("reception"):
+        out.add("primary")
+    elif m:
+        n = int(m.group(1))
+        if n <= 6:
+            out.add("primary")
+        elif n <= 9:
+            out.add("ks3")
+        elif n <= 11:
+            out.add("gcse")
+    return out
+
+
+def period_open(idx: int, weekday: int, year_group_name: str | None) -> bool:
+    """Can a class of this year group be taught in period idx on this weekday?"""
+    meta = PERIOD_META[idx]
+    if weekday not in meta["weekdays"]:
+        return False
+    return "all" in meta["applies"] or bool(meta["applies"] & audience_tokens(year_group_name))
+
+
+def cells_for_year_group(year_group_name: str | None) -> list:
+    return [cell for cell in ALL_CELLS if period_open(cell[1], cell[0], year_group_name)]
+
+
+def _rebuild_derived() -> None:
+    global ALL_CELLS, SCHOOL_DAY_SPANS, OVERLAPPING_PERIODS
+    ALL_CELLS = [(wd, idx) for idx, _s, _e, _b in PERIODS for wd in WEEKDAYS if wd in PERIOD_META[idx]["weekdays"]]
+    ALL_CELLS.sort()
+    spans: list = []
+    for _i, s, e, _b in sorted(PERIODS, key=lambda p: (p[1], p[2])):
+        if spans and _mins(s) - _mins(spans[-1][1]) <= CONTIGUOUS_GAP_MINUTES:
+            spans[-1] = (spans[-1][0], max(spans[-1][1], e))
+        else:
+            spans.append((s, e))
+    SCHOOL_DAY_SPANS = spans
+    OVERLAPPING_PERIODS = [
+        (i, j)
+        for i in range(len(PERIODS))
+        for j in range(i + 1, len(PERIODS))
+        if PERIODS[i][1] < PERIODS[j][2] and PERIODS[j][1] < PERIODS[i][2]
+        and PERIOD_META[i]["weekdays"] & PERIOD_META[j]["weekdays"]
+    ]
+
+
+def set_periods(rows: list[dict]) -> None:
+    """Install the lesson periods from timetable_periods rows (kind='lesson',
+    active). No usable rows -> the built-in default grid."""
+    global PERIODS, PERIOD_META
+    parsed = []
+    for r in rows:
+        if r.get("kind", "lesson") != "lesson" or r.get("active") is False:
+            continue
+        start, end = _parse_time(r["start_time"]), _parse_time(r["end_time"])
+        if end <= start:
+            continue
+        days = {int(d) for d in (r.get("weekdays") or WEEKDAYS) if int(d) in WEEKDAYS}
+        if not days:
+            continue
+        applies = {str(a).strip().lower() for a in (r.get("applies_to") or ["all"])} or {"all"}
+        parsed.append((start, end, days, applies))
+    if not parsed:
+        PERIODS = list(_DEFAULT_PERIODS)
+        PERIOD_META = [{"weekdays": set(WEEKDAYS), "applies": {"all"}} for _ in PERIODS]
+    else:
+        parsed.sort(key=lambda p: (p[0], p[1]))
+        PERIODS = [(i, st, en, "A" if st < time(14, 0) else "B") for i, (st, en, _d, _a) in enumerate(parsed)]
+        PERIOD_META = [{"weekdays": d, "applies": a} for _st, _en, d, a in parsed]
+    _rebuild_derived()
+
+
+def load_periods(supabase) -> None:
+    """Read the school-day lesson periods from the DB (migration 0066); fall back to the default grid."""
+    try:
+        rows = (
+            supabase.table("timetable_periods")
+            .select("kind,start_time,end_time,weekdays,applies_to,active")
+            .eq("kind", "lesson")
+            .eq("active", True)
+            .execute()
+            .data
+        )
+    except Exception as exc:  # pragma: no cover - table missing on an un-migrated project
+        print(f"WARNING: could not read timetable_periods ({exc}); using the default period grid.", file=sys.stderr)
+        rows = []
+    set_periods(rows or [])
+    if rows:
+        print(f"Using {len(PERIODS)} lesson periods from timetable_periods.")
+        if OVERLAPPING_PERIODS:
+            print(f"WARNING: {len(OVERLAPPING_PERIODS)} pair(s) of lesson periods overlap; a teacher or class is never placed in both.", file=sys.stderr)
+
+
+_rebuild_derived()
 
 
 def period_chains() -> list[list[int]]:
@@ -524,7 +643,7 @@ def solve(inputs: Inputs) -> SolveResult:
         flex = len(elig) != 1
         cell_teachers: dict[tuple, list] = {}
         for cell in ALL_CELLS:
-            if cell in inputs.protected or cell in cb.get(c.class_id, {}):
+            if cell in inputs.protected or cell in cb.get(c.class_id, {}) or not period_open(cell[1], cell[0], c.year_group_name):
                 continue
             ts = [t for t in elig if _free_for(inputs, tb, t, cell)]
             if not ts:
@@ -559,6 +678,17 @@ def solve(inputs: Inputs) -> SolveResult:
     for lits in by_class.values():
         if len(lits) > 1:
             model.Add(sum(lits) <= 1)  # a class is in one lesson at a time, whatever the subject
+    # Custom lesson periods can overlap in time: nobody is in two overlapping periods at once.
+    if OVERLAPPING_PERIODS:
+        class_keys = {k[0] for k in by_class}
+        teacher_keys = {k[0] for k in tl}
+        for i, j in OVERLAPPING_PERIODS:
+            for wd in WEEKDAYS:
+                for src, keys in ((by_class, class_keys), (tl, teacher_keys)):
+                    for key in keys:
+                        lits = src.get((key, (wd, i)), []) + src.get((key, (wd, j)), [])
+                        if len(lits) > 1:
+                            model.Add(sum(lits) <= 1)
     for lits in tl.values():
         if len(lits) > 1:
             model.Add(sum(lits) <= 1)  # a teacher is in one place at a time, whichever class
@@ -812,7 +942,7 @@ def reconcile(inputs: Inputs, all_slots: list[dict]) -> list[dict]:
         by_cls.setdefault(c.class_id, []).append(c)
     for cid, cs in by_cls.items():
         need = sum(c.weekly_lessons for c in cs)
-        free_cells = [cell for cell in ALL_CELLS if cell not in inputs.protected]
+        free_cells = [cell for cell in cells_for_year_group(cs[0].year_group_name) if cell not in inputs.protected]
         cname = cs[0].name
         if need > len(free_cells):
             row("hard", "class_overfull", f"{cname} needs {need} lessons/week but the school week only has {len(free_cells)} usable periods. Reduce lessons for {cname} by {need - len(free_cells)}.", class_id=cid, need=need, periods=len(free_cells))
@@ -858,7 +988,7 @@ def reconcile(inputs: Inputs, all_slots: list[dict]) -> list[dict]:
         elig = list(dict.fromkeys(c.eligible_teacher_ids))
         reasons = {"protected": 0, "class_busy": 0, "teacher_busy": 0, "unavailable": 0, "other": 0}
         busy_with: dict[str, int] = {}
-        for cell in ALL_CELLS:
+        for cell in cells_for_year_group(c.year_group_name):
             if cell in inputs.protected:
                 reasons["protected"] += 1
             elif (c.class_id, cell) in c_occ:
@@ -889,7 +1019,7 @@ def reconcile(inputs: Inputs, all_slots: list[dict]) -> list[dict]:
             why = "No teacher is assigned and no teacher has availability. Choose a teacher in the class teacher matrix and ask them to set availability."
         else:
             who = _tname(inputs, elig[0]) if len(elig) == 1 else "the available teachers"
-            usable = sum(1 for cell in ALL_CELLS if cell not in inputs.protected and any(cell in inputs.availability.get(t, set()) for t in elig))
+            usable = sum(1 for cell in cells_for_year_group(c.year_group_name) if cell not in inputs.protected and any(cell in inputs.availability.get(t, set()) for t in elig))
             top = ", ".join(f"{k} ({v})" for k, v in sorted(busy_with.items(), key=lambda kv: -kv[1])[:3])
             bits = [f"{who} is available for {usable} periods"]
             if reasons["teacher_busy"]:

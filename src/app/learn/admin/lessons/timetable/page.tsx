@@ -240,6 +240,7 @@ function TimetableContent() {
             onMove={moveSlot}
             moveNotes={moveNotes}
             breaks={data.protectedTimes.filter((p) => p.academic_year_id === runYearId).map((p) => ({ weekday: p.weekday, start: p.start_time, end: p.end_time, name: p.name }))}
+            periods={data.periods}
           />
 
           <ReconciliationPanel conflicts={conflicts} canRerun={Boolean(editable)} onRerun={rerunKeepingLocked} busy={rerunBusy} lockedCount={lockedCount} />

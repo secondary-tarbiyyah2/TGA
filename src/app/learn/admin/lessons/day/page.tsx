@@ -5,7 +5,8 @@ import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/Lesson
 import { btn, chipCls, fieldCls } from "@/components/learn/timetable/api";
 import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
 import { hhmm } from "@/components/learn/timetable/types";
-import { PERIODS, WEEKDAYS } from "@/lib/learn/timetable";
+import { PeriodsEditor } from "@/components/learn/timetable/PeriodsEditor";
+import { WEEKDAYS } from "@/lib/learn/timetable";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 function DayContent() {
@@ -18,6 +19,9 @@ function DayContent() {
   const [start, setStart] = useState("12:30");
   const [end, setEnd] = useState("13:30");
   const [error, setError] = useState<string | null>(null);
+  const [sessName, setSessName] = useState("");
+  const [sessUrl, setSessUrl] = useState("");
+  const [sessError, setSessError] = useState<string | null>(null);
   const protectedHere = data.protectedTimes.filter((p) => p.academic_year_id === effYearId);
 
   const add = async () => {
@@ -37,27 +41,32 @@ function DayContent() {
     await reload();
   };
 
+  const addSession = async () => {
+    if (!supabase) return;
+    if (!sessName.trim()) return setSessError("Give the session a name, e.g. Session A.");
+    setSessError(null);
+    const { error: err } = await supabase.from("virtual_sessions").insert({ name: sessName.trim(), meeting_url: sessUrl.trim() || null });
+    if (err) return setSessError(err.message);
+    setSessName("");
+    setSessUrl("");
+    await reload();
+  };
+  const removeSession = async (id: string) => {
+    if (!supabase) return;
+    setSessError(null);
+    const { error: err } = await supabase.from("virtual_sessions").delete().eq("id", id);
+    if (err) return setSessError(/foreign key|violates/i.test(err.message) ? "That session is used by timetabled lessons, so it can't be removed." : err.message);
+    await reload();
+  };
+
   return (
     <div>
-      <LessonsHeader title="School day" subtitle="The lesson periods the timetable uses, and the breaks no lesson may overlap." />
+      <LessonsHeader title="School day" subtitle="The blocks of the school day (lessons, breaks, lunch, prayer, enrichment) and the protected times no lesson may overlap." />
       {!data.loaded ? (
         <p className="text-sm text-ink/60">Loading…</p>
       ) : (
         <div className="space-y-5">
-          <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
-            <h2 className="font-serif text-h3 font-semibold text-ink">Lesson periods</h2>
-            <p className="mt-0.5 text-sm text-ink/60">Two live-lesson bands, Monday to Friday. These are built into the timetable generator, so they are shown here for reference.</p>
-            <div className="mt-3 grid gap-2 sm:grid-cols-2">
-              {(["A", "B"] as const).map((band) => (
-                <div key={band} className="rounded-xl bg-cream/60 p-3">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-ink/50">Band {band}</p>
-                  <ul className="mt-1 space-y-0.5 text-sm tabular-nums text-ink">
-                    {PERIODS.filter((p) => p.band === band).map((p) => <li key={p.start}>{p.start} – {p.end}</li>)}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
+          <PeriodsEditor periods={data.periods} reload={reload} />
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
             <h2 className="font-serif text-h3 font-semibold text-ink">Protected times</h2>
@@ -95,7 +104,25 @@ function DayContent() {
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
             <h2 className="font-serif text-h3 font-semibold text-ink">Sessions (rooms)</h2>
-            <p className="mt-0.5 text-sm text-ink/60">For an online school a room is a virtual session. {data.sessions.length === 0 ? "None are set up." : data.sessions.map((s) => s.name).join(", ")}</p>
+            <p className="mt-0.5 text-sm text-ink/60">For an online school a room is a virtual session (a meeting link a lesson runs in). Two lessons can share a session only at different times.</p>
+            {data.sessions.length === 0 ? (
+              <p className="mt-3 rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-3 text-sm text-ink/70">None are set up.</p>
+            ) : (
+              <ul className="mt-3 divide-y divide-gold-light/30">
+                {data.sessions.map((s) => (
+                  <li key={s.id} className="flex items-center justify-between gap-2 py-2 text-sm">
+                    <span><strong>{s.name}</strong>{s.meeting_url ? <span className="ml-2 break-all text-ink/60">{s.meeting_url}</span> : null}</span>
+                    <button type="button" onClick={() => removeSession(s.id)} className="rounded-lg px-2 py-1 text-xs font-medium text-red-700 hover:bg-red-50">Remove</button>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <div className="mt-4 flex flex-wrap items-end gap-2 border-t border-gold-light/40 pt-4">
+              <label className="text-xs font-medium text-ink/70">Name<input value={sessName} onChange={(e) => setSessName(e.target.value)} placeholder="Session A" className={fieldCls} /></label>
+              <label className="text-xs font-medium text-ink/70">Meeting link (optional)<input value={sessUrl} onChange={(e) => setSessUrl(e.target.value)} placeholder="https://" className={fieldCls} /></label>
+              <button type="button" onClick={addSession} className={btn}>Add session</button>
+            </div>
+            {sessError && <p role="alert" className="mt-2 text-xs text-red-800">{sessError}</p>}
           </section>
         </div>
       )}

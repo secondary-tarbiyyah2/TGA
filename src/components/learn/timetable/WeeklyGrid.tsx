@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { WEEKDAYS, PERIODS, type TimetableSlot } from "@/lib/learn/timetable";
+import { WEEKDAYS, PERIODS, AUDIENCES, type PeriodKind, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
 import { classColour, hhmm, moveProblem, type Colour, type LockableSlot, type Teacher } from "./types";
 
 const PX_PER_MIN = 1.15; // vertical scale: 60 min = 69px
@@ -18,6 +18,14 @@ const fmt = (m: number) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${Str
 const snap = (m: number) => Math.round(m / SNAP) * SNAP;
 
 export type GridBreak = { weekday: number; start: string; end: string; name: string };
+
+/** Band shading per period kind: break grey, lunch/prayer amber, enrichment green. */
+const BAND_CLASS: Record<Exclude<PeriodKind, "lesson">, string> = {
+  break: "bg-gray-200/70 text-gray-700",
+  lunch: "bg-amber-100/80 text-amber-900",
+  prayer: "bg-amber-100/80 text-amber-900",
+  enrichment: "bg-green-100/80 text-green-900",
+};
 
 type Drag = {
   id: string;
@@ -51,6 +59,7 @@ export function WeeklyGrid({
   flagged,
   moveNotes,
   breaks,
+  periods,
 }: {
   slots: TimetableSlot[];
   /** Every slot in the run: clash checks use this even when `slots` is a filtered view. */
@@ -69,6 +78,8 @@ export function WeeklyGrid({
   moveNotes?: (slot: TimetableSlot, weekday: number, start: string, end: string) => string[];
   /** Extra shaded bands (protected times such as prayer or lunch). */
   breaks?: GridBreak[];
+  /** The school day's stored periods. Their non-lesson blocks (break, lunch, prayer, enrichment) are drawn as bands; with none, gaps between the standard lesson periods show as breaks. */
+  periods?: TimetablePeriod[];
 }) {
   const [drag, setDrag] = useState<Drag | null>(null);
   const dragRef = useRef<Drag | null>(null);
@@ -103,15 +114,25 @@ export function WeeklyGrid({
   const hours: number[] = [];
   for (let m = lo; m <= hi; m += 60) hours.push(m);
 
-  // Breaks: short gaps between consecutive standard periods, plus protected times.
-  const bands: { weekday: number | null; start: number; end: number; label: string; protectedTime: boolean }[] = [];
-  const sortedPeriods = [...PERIODS].sort((a, b) => a.start.localeCompare(b.start));
-  for (let i = 0; i + 1 < sortedPeriods.length; i++) {
-    const a = toMin(sortedPeriods[i].end);
-    const b = toMin(sortedPeriods[i + 1].start);
-    if (b > a && b - a <= 30) bands.push({ weekday: null, start: a, end: b, label: "Break", protectedTime: false });
+  // Bands: the stored non-lesson periods (break, lunch, prayer, enrichment); with
+  // none stored, short gaps between the standard periods; then protected times.
+  const bands: { weekday: number | null; weekdays?: number[]; start: number; end: number; label: string; className: string }[] = [];
+  const blocks = (periods ?? []).filter((p) => p.active && p.kind !== "lesson");
+  if (blocks.length > 0) {
+    for (const p of blocks) {
+      const who = p.applies_to.includes("all") ? "" : ` (${p.applies_to.map((a) => AUDIENCES.find((x) => x.value === a)?.label ?? a).join(", ")})`;
+      const kind = p.kind as Exclude<PeriodKind, "lesson">;
+      bands.push({ weekday: null, weekdays: p.weekdays, start: toMin(p.start_time), end: toMin(p.end_time), label: `${p.name}${p.kind === "enrichment" && p.activity ? `: ${p.activity}` : ""}${who}`, className: BAND_CLASS[kind] });
+    }
+  } else {
+    const sortedPeriods = [...PERIODS].sort((a, b) => a.start.localeCompare(b.start));
+    for (let i = 0; i + 1 < sortedPeriods.length; i++) {
+      const a = toMin(sortedPeriods[i].end);
+      const b = toMin(sortedPeriods[i + 1].start);
+      if (b > a && b - a <= 30) bands.push({ weekday: null, start: a, end: b, label: "Break", className: BAND_CLASS.break });
+    }
   }
-  for (const p of breaks ?? []) bands.push({ weekday: p.weekday, start: toMin(p.start), end: toMin(p.end), label: p.name, protectedTime: true });
+  for (const p of breaks ?? []) bands.push({ weekday: p.weekday, start: toMin(p.start), end: toMin(p.end), label: p.name, className: "bg-orange-100/80 text-orange-900/80" });
 
   const nameOf = (id: string) => teachers.find((t) => t.id === id)?.full_name || "Teacher";
 
@@ -209,7 +230,7 @@ export function WeeklyGrid({
       {moveNote && !moveError && <p role="status" className="mb-2 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-900">{moveNote}</p>}
       {moveError && <p role="alert" className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">{moveError}</p>}
       {!editable && slots.length > 0 && <p className="mb-2 text-xs text-ink/50">Locked: only draft timetables can be changed or dragged.</p>}
-      {canDrag && <p className="mb-2 text-xs text-ink/50">Tip: drag a lesson to any day or minute (snaps to 5 min), drag its bottom edge to change the length, click an empty spot to add a lesson. Shaded bands are breaks and protected times.</p>}
+      {canDrag && <p className="mb-2 text-xs text-ink/50">Tip: drag a lesson to any day or minute (snaps to 5 min), drag its bottom edge to change the length, click an empty spot to add a lesson. Shaded bands are breaks (grey), lunch and prayer (amber), enrichment (green) and protected times (orange).</p>}
       <div className="overflow-x-auto rounded-xl border border-gold-light/50">
         <div className="min-w-[720px]">
           <div className="flex bg-cream/70 text-xs font-semibold text-ink/70">
@@ -255,13 +276,13 @@ export function WeeklyGrid({
                   }
                 >
                   {bands
-                    .filter((b) => b.weekday === null || b.weekday === wd.value)
+                    .filter((b) => (b.weekday === null ? !b.weekdays || b.weekdays.includes(wd.value) : b.weekday === wd.value))
                     .map((b, bi) => (
                       <div
                         key={bi}
                         data-bg="1"
                         title={`${b.label} ${fmt(b.start)}-${fmt(b.end)}`}
-                        className={`absolute left-0 right-0 overflow-hidden px-1 text-[10px] ${b.protectedTime ? "bg-amber-100/70 text-amber-900/80" : "bg-ink/[0.05] text-ink/45"}`}
+                        className={`absolute left-0 right-0 overflow-hidden px-1 text-[10px] ${b.className}`}
                         style={{ top: yOf(b.start), height: Math.max(8, (b.end - b.start) * PX_PER_MIN) }}
                       >
                         {b.label}

@@ -127,9 +127,12 @@ export function teacherLoadTable(args: {
   availability: Availability[];
   protectedTimes: Protected[];
   maxPerDay?: number;
+  /** Lesson periods (stored school day); defaults to the built-in PERIODS. */
+  periods?: { start: string; end: string }[];
 }): { rows: TeacherLoadRow[]; unassignedLessons: number } {
   const { yearId, subjects, subjectTeachers, classTeachers, teachers } = args;
   const maxPerDay = args.maxPerDay ?? DEFAULT_MAX_LESSONS_PER_DAY;
+  const gridPeriods = args.periods && args.periods.length > 0 ? args.periods : PERIODS;
   const today = todayIso();
   const classes = args.classes.filter((c) => c.academic_year_id === yearId);
   const prot = args.protectedTimes.filter((p) => p.academic_year_id === yearId);
@@ -170,7 +173,7 @@ export function teacherLoadTable(args: {
     let capacity = 0;
     for (const wd of WEEKDAYS) {
       let day = 0;
-      for (const p of PERIODS) {
+      for (const p of gridPeriods) {
         const ok = avail.some((a) => a.teacher_user_id === teacherId && a.weekday === wd.value && hhmm(a.start_time) <= p.start && p.end <= hhmm(a.end_time));
         const blocked = prot.some((q) => q.weekday === wd.value && hhmm(q.start_time) < p.end && p.start < hhmm(q.end_time));
         if (ok && !blocked) day++;

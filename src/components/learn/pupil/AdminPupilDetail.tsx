@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { LeaderboardPrivacy } from "@/components/learn/behaviour/LeaderboardPrivacy";
 import { PupilRecord, type RecordChild } from "./PupilRecord";
 
 type ChildRaw = { id: string; name: string; dob: string | null; year_groups?: { name: string } | null };
@@ -57,6 +58,11 @@ export function AdminPupilDetail({ id }: { id: string }) {
       </div>
       <h1 className="mb-3 hidden text-xl font-semibold text-ink print:block">Pupil information: {child?.name}</h1>
       {state === "loading" || !child ? <p className="text-sm text-ink/60">Loading…</p> : <PupilRecord child={child} showAcks />}
+      {child && (
+        <div className="print:hidden">
+          <LeaderboardPrivacy kids={[{ id: child.id, name: child.name }]} />
+        </div>
+      )}
     </>
   );
 }

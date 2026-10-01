@@ -14,6 +14,7 @@ import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
 import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
+import { StudentLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 import { useLearnSession } from "@/lib/learn/session";
@@ -117,12 +118,14 @@ function StudentContent() {
         </div>
 
         <div className="mt-6">
-          {slots === null ? <p className="text-sm text-ink/60">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} />}
+          {slots === null ? <p className="text-sm text-ink/60">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} yearGroups={yearGroupName ? [yearGroupName] : undefined} />}
         </div>
 
         <IcsFeedLink />
       </div>
 
+
+      {childId && <StudentLeaderboard childId={childId} />}
 
       {childId && (
         <div className="rounded-2xl border border-gold-light/50 bg-white p-6">

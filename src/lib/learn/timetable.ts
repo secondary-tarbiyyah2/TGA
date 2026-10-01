@@ -27,6 +27,161 @@ export const PERIODS: { start: string; end: string; band: "A" | "B" }[] = [
   { start: "17:15", end: "18:15", band: "B" },
 ];
 
+// ── Admin-editable school day (table public.timetable_periods, migration
+// 0066). PERIODS above stays as the fallback used when the table is empty
+// or not migrated yet, so nothing ever breaks.
+export type PeriodKind = "lesson" | "break" | "lunch" | "prayer" | "enrichment";
+
+export type TimetablePeriod = {
+  id: string;
+  name: string;
+  kind: PeriodKind;
+  start_time: string; // "HH:MM"
+  end_time: string; // "HH:MM"
+  weekdays: number[];
+  band: string | null;
+  applies_to: string[];
+  activity: string | null;
+  sort: number;
+  active: boolean;
+};
+
+export const PERIOD_KINDS: { value: PeriodKind; label: string }[] = [
+  { value: "lesson", label: "Lesson" },
+  { value: "break", label: "Break" },
+  { value: "lunch", label: "Lunch" },
+  { value: "prayer", label: "Prayer" },
+  { value: "enrichment", label: "Enrichment (supervised, no teaching)" },
+];
+
+/** Who a period is for. 'gcse' = Years 10-11, 'ks3' = Years 7-9, 'primary' = Reception-Year 6. */
+export const AUDIENCES: { value: string; label: string }[] = [
+  { value: "all", label: "Everyone" },
+  { value: "primary", label: "Primary (Reception-Y6)" },
+  { value: "ks3", label: "Years 7-9" },
+  { value: "gcse", label: "GCSE (Years 10-11)" },
+];
+
+/** Suggestions for what a supervised enrichment block can be. */
+export const ENRICHMENT_ACTIVITIES: string[] = [
+  "Games & play",
+  "Outdoor activity",
+  "Nasheed",
+  "Reading club",
+  "Quiet reading",
+  "Art & crafts",
+  "Board games & chess",
+  "Qur'an recitation circle",
+  "Show and tell",
+  "Stretch & movement",
+  "Story time",
+];
+
+export const KIND_STYLE: Record<PeriodKind, { label: string; chip: string; cell: string }> = {
+  lesson: { label: "Lesson", chip: "bg-gold-500/10 text-ink", cell: "border-gold-500/40 bg-gold-500/10 text-ink" },
+  break: { label: "Break", chip: "bg-gray-100 text-gray-700", cell: "border-gray-300 bg-gray-100 text-gray-700" },
+  lunch: { label: "Lunch", chip: "bg-amber-100 text-amber-900", cell: "border-amber-300 bg-amber-100 text-amber-900" },
+  prayer: { label: "Prayer", chip: "bg-amber-100 text-amber-900", cell: "border-amber-300 bg-amber-100 text-amber-900" },
+  enrichment: { label: "Enrichment", chip: "bg-green-100 text-green-900", cell: "border-green-300 bg-green-100 text-green-900" },
+};
+
+/** Audience tokens a year group name belongs to, e.g. "Year 10" -> ["all", "gcse", "year 10"]. */
+export function audiencesOf(yearGroupName: string | null | undefined): string[] {
+  if (!yearGroupName) return [];
+  const name = yearGroupName.trim().toLowerCase();
+  const out = ["all", name];
+  const m = name.match(/(\d+)/);
+  if (name.startsWith("reception")) out.push("primary");
+  else if (m) {
+    const n = Number(m[1]);
+    if (n <= 6) out.push("primary");
+    else if (n <= 9) out.push("ks3");
+    else if (n <= 11) out.push("gcse");
+  }
+  return out;
+}
+
+/** Does a period apply to a viewer? `viewer` = year group names (or tokens); undefined/empty = unknown, so only 'all' rows match. */
+export function periodApplies(p: { applies_to: string[] }, viewer?: string[]): boolean {
+  if (p.applies_to.includes("all")) return true;
+  if (!viewer || viewer.length === 0) return false;
+  const tokens = new Set(viewer.flatMap((v) => audiencesOf(v)));
+  return p.applies_to.some((a) => tokens.has(a.trim().toLowerCase()));
+}
+
+/** The built-in day, used when no periods are stored. */
+export const FALLBACK_PERIODS: TimetablePeriod[] = [
+  ...PERIODS.map((p, i): TimetablePeriod => ({ id: `fallback-lesson-${i}`, name: `Period ${i + 1}`, kind: "lesson", start_time: p.start, end_time: p.end, weekdays: [1, 2, 3, 4, 5], band: p.band, applies_to: ["all"], activity: null, sort: i * 10, active: true })),
+  { id: "fallback-break-1", name: "Break", kind: "break", start_time: "11:00", end_time: "11:15", weekdays: [1, 2, 3, 4, 5], band: "A", applies_to: ["all"], activity: null, sort: 5, active: true },
+  { id: "fallback-break-2", name: "Break", kind: "break", start_time: "17:00", end_time: "17:15", weekdays: [1, 2, 3, 4, 5], band: "B", applies_to: ["all"], activity: null, sort: 55, active: true },
+];
+
+type PeriodRow = {
+  id: string;
+  name: string | null;
+  kind: string | null;
+  start_time: string;
+  end_time: string;
+  weekdays: number[] | null;
+  band: string | null;
+  applies_to: string[] | null;
+  activity: string | null;
+  sort: number | null;
+  active: boolean | null;
+};
+
+export function normalisePeriods(rows: PeriodRow[] | null | undefined): TimetablePeriod[] {
+  const kinds = PERIOD_KINDS.map((k) => k.value) as string[];
+  return (rows || [])
+    .map((r): TimetablePeriod => ({
+      id: r.id,
+      name: r.name || "Period",
+      kind: (r.kind && kinds.includes(r.kind) ? r.kind : "lesson") as PeriodKind,
+      start_time: timeLabel(r.start_time),
+      end_time: timeLabel(r.end_time),
+      weekdays: r.weekdays && r.weekdays.length > 0 ? r.weekdays : [1, 2, 3, 4, 5],
+      band: r.band,
+      applies_to: r.applies_to && r.applies_to.length > 0 ? r.applies_to : ["all"],
+      activity: r.activity,
+      sort: r.sort ?? 0,
+      active: r.active !== false,
+    }))
+    .sort((a, b) => a.start_time.localeCompare(b.start_time) || a.sort - b.sort);
+}
+
+/** Stored periods, or [] when the table is empty / missing. Never throws. */
+export async function fetchTimetablePeriods(): Promise<TimetablePeriod[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  try {
+    const { data, error } = await supabase.from("timetable_periods").select("id, name, kind, start_time, end_time, weekdays, band, applies_to, activity, sort, active");
+    if (error) return [];
+    return normalisePeriods(data as unknown as PeriodRow[]);
+  } catch {
+    return [];
+  }
+}
+
+/** Active stored periods, or the built-in day when there are none. */
+export function effectivePeriods(stored: TimetablePeriod[] | null | undefined): TimetablePeriod[] {
+  const active = (stored || []).filter((p) => p.active);
+  return active.length > 0 ? active : FALLBACK_PERIODS;
+}
+
+/** Lesson periods as the simple {start,end,band} shape the old PERIODS had. */
+export function lessonPeriods(stored: TimetablePeriod[] | null | undefined, viewer?: string[]): { start: string; end: string; band: string }[] {
+  const lessons = effectivePeriods(stored).filter((p) => p.kind === "lesson" && (viewer === undefined || periodApplies(p, viewer)));
+  const seen = new Set<string>();
+  const out: { start: string; end: string; band: string }[] = [];
+  for (const p of lessons) {
+    const key = `${p.start_time}-${p.end_time}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ start: p.start_time, end: p.end_time, band: p.band || (p.start_time < "14:00" ? "A" : "B") });
+  }
+  return out.sort((a, b) => a.start.localeCompare(b.start));
+}
+
 export type TimetableSlot = {
   id: string;
   run_id: string;

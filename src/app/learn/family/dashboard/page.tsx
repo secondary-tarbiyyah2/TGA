@@ -14,6 +14,7 @@ import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
 import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
+import { FamilyLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
@@ -39,7 +40,7 @@ function useChildClassIds(childId: string) {
   return classIds;
 }
 
-function ChildTimetable({ classIds }: { classIds: string[] | null }) {
+function ChildTimetable({ classIds, yearGroup }: { classIds: string[] | null; yearGroup?: string }) {
   const supabase = getSupabaseClient();
   const [slots, setSlots] = useState<TimetableSlot[] | null>(null);
 
@@ -55,7 +56,7 @@ function ChildTimetable({ classIds }: { classIds: string[] | null }) {
   }, [supabase, classIds]);
 
   if (slots === null) return <p className="text-sm text-ink/60">Loading timetable…</p>;
-  return <TimetableGrid slots={slots} />;
+  return <TimetableGrid slots={slots} yearGroups={yearGroup ? [yearGroup] : undefined} />;
 }
 
 function ChildCard({ child }: { child: Child }) {
@@ -75,7 +76,7 @@ function ChildCard({ child }: { child: Child }) {
         </div>
       </div>
       <div className="mt-4">
-        <ChildTimetable classIds={classIds} />
+        <ChildTimetable classIds={classIds} yearGroup={child.year_groups?.name} />
       </div>
       <div className="mt-4 border-t border-gold-light/30 pt-4">
         <h3 className="text-sm font-medium text-ink">Lessons</h3>
@@ -214,6 +215,8 @@ function FamilyContent() {
         <p className="text-sm text-ink/60">No children added yet — add your child above to see their timetable.</p>
       )}
       <SignaturePrompts />
+
+      {children && children.length > 0 && <FamilyLeaderboard kids={children} />}
 
       {children?.map((child) => (
         <ChildCard key={child.id} child={child} />

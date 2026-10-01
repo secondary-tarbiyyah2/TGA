@@ -5,6 +5,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { localDateKey } from "@/lib/learn/calendar";
+import { AdminLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
 import { StatTile } from "@/components/learn/Card";
 import { useLearnPermission, useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -293,6 +294,8 @@ function DashboardContent() {
           {isSafeguardingLead && <StatTile label="Flagged messages" value={flaggedCount ?? "…"} status={statusOf(flaggedCount)} href="/admin/compliance" />}
         </div>
       </section>
+
+      {isHead && <AdminLeaderboard />}
 
       <ActivityFeed />
     </div>

@@ -9,6 +9,7 @@ import { ReconciliationPanel } from "@/components/learn/timetable/Reconciliation
 import { DEFAULT_MAX_LESSONS_PER_DAY, teacherLoadTable } from "@/components/learn/timetable/checks";
 import type { Conflict } from "@/components/learn/timetable/types";
 import { edgeErrorMessage } from "@/lib/learn/edge";
+import { lessonPeriods } from "@/lib/learn/timetable";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 const STEPS = ["Choose year", "Check setup", "Generate", "Review & publish"];
@@ -62,7 +63,7 @@ function GenerateContent() {
     }
   }
   // Pre-flight: lessons each teacher needs across ALL classes vs the periods they can work.
-  const load = teacherLoadTable({ yearId: effYearId, classes: data.classes, subjects: data.subjects, subjectTeachers: data.subjectTeachers, classTeachers: data.classTeachers, teachers: data.teachers, availability: data.availability, protectedTimes: data.protectedTimes });
+  const load = teacherLoadTable({ yearId: effYearId, classes: data.classes, subjects: data.subjects, subjectTeachers: data.subjectTeachers, classTeachers: data.classTeachers, teachers: data.teachers, availability: data.availability, protectedTimes: data.protectedTimes, periods: lessonPeriods(data.periods) });
   const overloaded = load.rows.filter((r) => r.status === "over" || r.status === "no_availability").map((r) => `${r.name} (${r.lessons} needed, ${r.capacity} possible)`);
   const teachersWithAvail = new Set(data.availability.filter((a) => a.academic_year_id === effYearId).map((a) => a.teacher_user_id));
   const needsSetup = !year || yearClasses.length === 0 || data.teachers.length === 0;

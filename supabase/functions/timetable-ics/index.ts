@@ -41,6 +41,21 @@ function escapeIcsText(s: string): string {
   return s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
 }
 
+// Mirrors audiencesOf()/periodApplies() in src/lib/learn/timetable.ts.
+function audiencesOf(yearGroupName: string): string[] {
+  const name = yearGroupName.trim().toLowerCase();
+  const out = ["all", name];
+  const m = name.match(/(\d+)/);
+  if (name.startsWith("reception")) out.push("primary");
+  else if (m) {
+    const n = Number(m[1]);
+    if (n <= 6) out.push("primary");
+    else if (n <= 9) out.push("ks3");
+    else if (n <= 11) out.push("gcse");
+  }
+  return out;
+}
+
 const RRULE_DAY = ["", "MO", "TU", "WE", "TH", "FR"]; // index by our weekday 1..5
 
 Deno.serve(async (req) => {
@@ -108,6 +123,25 @@ Deno.serve(async (req) => {
     }
   }
 
+  // Non-lesson blocks of the school day (break, lunch, prayer, supervised
+  // enrichment) for the year groups this calendar covers. They have no teacher.
+  type PeriodRow = { id: string; name: string; kind: string; start_time: string; end_time: string; weekdays: number[] | null; applies_to: string[] | null; activity: string | null };
+  let blocks: PeriodRow[] = [];
+  if (slots.length > 0 && classIds.length > 0) {
+    const [{ data: periodRows }, { data: classRows }] = await Promise.all([
+      serviceClient.from("timetable_periods").select("id, name, kind, start_time, end_time, weekdays, applies_to, activity").eq("active", true).neq("kind", "lesson"),
+      serviceClient.from("classes").select("year_group").in("id", classIds),
+    ]);
+    const tokens = new Set<string>();
+    for (const c of (classRows as { year_group: string | null }[] | null) || []) {
+      if (c.year_group) for (const t of audiencesOf(c.year_group)) tokens.add(t);
+    }
+    blocks = ((periodRows as PeriodRow[] | null) || []).filter((p) => {
+      const applies = p.applies_to && p.applies_to.length > 0 ? p.applies_to : ["all"];
+      return applies.includes("all") || applies.some((a) => tokens.has(a.trim().toLowerCase()));
+    });
+  }
+
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
@@ -132,6 +166,27 @@ Deno.serve(async (req) => {
       `SUMMARY:${escapeIcsText(s.subjects?.name || "Lesson")}${s.classes ? ` (${escapeIcsText(s.classes.name)})` : ""}`,
       "END:VEVENT"
     );
+  }
+
+  for (const p of blocks) {
+    for (const wd of p.weekdays && p.weekdays.length > 0 ? p.weekdays : [1, 2, 3, 4, 5]) {
+      if (wd < 1 || wd > 5) continue;
+      const start = toIcsDateForNextOccurrence(wd, p.start_time);
+      const end = toIcsDateForNextOccurrence(wd, p.end_time);
+      const label = p.kind === "enrichment" && p.activity ? `${p.name}: ${p.activity}` : p.name;
+      lines.push(
+        "BEGIN:VEVENT",
+        `UID:${p.id}-${wd}@learn.tarbiyyah.co.uk`,
+        `DTSTAMP:${toIcsDate(new Date())}`,
+        `DTSTART:${toIcsDate(start)}`,
+        `DTEND:${toIcsDate(end)}`,
+        `RRULE:FREQ=WEEKLY;BYDAY=${RRULE_DAY[wd]}`,
+        `SUMMARY:${escapeIcsText(label)}`,
+        `CATEGORIES:${p.kind === "enrichment" ? "ENRICHMENT" : "BREAK"}`,
+        "TRANSP:TRANSPARENT",
+        "END:VEVENT"
+      );
+    }
   }
 
   lines.push("END:VCALENDAR");
