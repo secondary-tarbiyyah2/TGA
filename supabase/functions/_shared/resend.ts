@@ -38,7 +38,7 @@ export async function sendEmail(opts: {
   const apiKey = Deno.env.get("RESEND_API_KEY");
   if (!apiKey) return { ok: false, detail: "RESEND_API_KEY not configured" };
 
-  const fromEmail = Deno.env.get("MAIL_FROM_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+  const fromEmail = Deno.env.get("MAIL_FROM_EMAIL") || "noreply@globalacademy.tarbiyyah.co.uk";
   const fromName = Deno.env.get("MAIL_FROM_NAME") || "Tarbiyyah Global Academy";
 
   const payload: Record<string, unknown> = {
@@ -46,6 +46,7 @@ export async function sendEmail(opts: {
     to: [opts.toName ? `${opts.toName} <${opts.to}>` : opts.to],
     subject: opts.subject,
     html: opts.html,
+    reply_to: Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk",
   };
 
   if (opts.icsContent) {

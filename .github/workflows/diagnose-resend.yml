@@ -25,5 +25,5 @@ jobs:
           echo "::notice title=Resend domains::$(echo "$D" | jq -c '.' | cut -c1-400)"
           R=$(curl -sS -w ' HTTP %{http_code}' https://api.resend.com/emails \
             -H "Authorization: Bearer $RESEND_API_KEY" -H "Content-Type: application/json" \
-            -d "{\"from\":\"Tarbiyyah Global Academy <globalacademy@tarbiyyah.co.uk>\",\"to\":[\"$TO\"],\"subject\":\"TGA email test\",\"html\":\"<p>Test from the Learn portal diagnostics.</p>\"}")
+            -d "{\"from\":\"Tarbiyyah Global Academy <noreply@globalacademy.tarbiyyah.co.uk>\",\"to\":[\"$TO\"],\"subject\":\"TGA email test\",\"html\":\"<p>Test from the Learn portal diagnostics.</p>\"}")
           echo "::notice title=Resend test send::$(echo "$R" | cut -c1-400)"

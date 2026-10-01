@@ -150,7 +150,7 @@ jobs:
             SITE_URL="https://globalacademy.tarbiyyah.co.uk" \
             LEARN_SITE_URL="${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}" \
             ADMISSIONS_EMAIL="globalacademy@tarbiyyah.co.uk" \
-            MAIL_FROM_EMAIL="globalacademy@tarbiyyah.co.uk" \
+            MAIL_FROM_EMAIL="noreply@globalacademy.tarbiyyah.co.uk" \
             MAIL_FROM_NAME="Tarbiyyah Global Academy"
 
       # Video calls (BigBlueButton). Only set when the repo has the secrets,
@@ -239,7 +239,7 @@ jobs:
               "uri_allow_list": "https://globalacademy.tarbiyyah.co.uk/**,${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}/**,http://localhost:3000/**",
               "external_email_enabled": true,
               "mailer_autoconfirm": false,
-              "smtp_admin_email": "globalacademy@tarbiyyah.co.uk",
+              "smtp_admin_email": "noreply@globalacademy.tarbiyyah.co.uk",
               "smtp_host": "smtp.resend.com",
               "smtp_port": "465",
               "smtp_user": "resend",
