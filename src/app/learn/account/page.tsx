@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { ParentPinSettings } from "@/components/learn/pin/ParentPinSettings";
 
 /**
  * The signed-in user's OWN account settings — password only, since MFA was
@@ -96,6 +97,7 @@ function AccountContent() {
         </p>
       </div>
       <ChangePassword />
+      {session && session !== "loading" && roles.some((r) => r.role === "parent") && <ParentPinSettings userId={session.user.id} />}
     </div>
   );
 }

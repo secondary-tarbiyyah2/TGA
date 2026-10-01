@@ -71,6 +71,11 @@ export async function hashIcsToken(token: string): Promise<string> {
 }
 
 export function icsFeedUrl(token: string): string | null {
+  // Branded address on the portal's own domain (proxied by deploy/calendar.php);
+  // falls back to the function URL when running somewhere without the proxy.
+  if (typeof window !== "undefined" && /(^|\.)learn\.tarbiyyah\.co\.uk$/.test(window.location.hostname)) {
+    return `${window.location.origin}/calendar.php?token=${token}`;
+  }
   const base = getEdgeFunctionUrl("timetable-ics");
   if (!base) return null;
   return `${base}?token=${token}`;

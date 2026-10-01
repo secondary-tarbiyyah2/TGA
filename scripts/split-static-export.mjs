@@ -84,6 +84,7 @@ async function main() {
     await cp(src, path.join(outLearnDir, assetPath), { recursive: true });
   }
 
+  await cp(path.join(repoRoot, "deploy", "calendar.php"), path.join(outLearnDir, "calendar.php"));
   await cp(path.join(repoRoot, "deploy", "learn-subdomain.htaccess"), path.join(outLearnDir, ".htaccess"));
 
   const [mainTop, learnTop] = await Promise.all([readdir(outMainDir), readdir(outLearnDir)]);

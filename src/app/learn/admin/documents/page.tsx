@@ -7,6 +7,8 @@ import { PageHeader } from "@/components/learn/PageHeader";
 import { getPolicyLinks } from "@/lib/content";
 import { learnRoleLabel, useLearnPermission, type LearnRole } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { RecordSignatureModal, type SignTarget } from "@/components/learn/documents/RecordSignatureModal";
+import { SignatureHistory } from "@/components/learn/documents/SignatureHistory";
 import { AUDIENCE_LABEL, audienceText, audienceToRoles, requestSignatures, rolesToAudience, type Audience } from "@/components/learn/documents/audience";
 
 type PolicyRow = { id: string; number: string; title: string; category: string; fileUrl: string; lastReviewed?: string; nextReview?: string };
@@ -189,6 +191,9 @@ function DocumentsContent() {
   const [q, setQ] = useState("");
   const [docFilter, setDocFilter] = useState("all");
   const [note, setNote] = useState<string | null>(null);
+  const [record, setRecord] = useState<{ documentId: string; title: string; targets: SignTarget[] } | null>(null);
+  const [picked, setPicked] = useState<Set<string>>(new Set()); // `${documentId}:${userId}`
+  const [historyKey, setHistoryKey] = useState(0);
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -297,6 +302,20 @@ function DocumentsContent() {
     return [...people.values()].sort((a, b) => b.docs.size - a.docs.size || a.name.localeCompare(b.name));
   }, [outstanding, q, docFilter]);
 
+  // Picked rows grouped by document, for bulk recording (one document at a time).
+  const pickedByDoc = useMemo(() => {
+    const m = new Map<string, { title: string; targets: SignTarget[] }>();
+    for (const person of outstandingShown) {
+      for (const [title, id] of person.docs) {
+        if (!picked.has(`${id}:${person.user_id}`)) continue;
+        const g = m.get(id) || { title, targets: [] };
+        g.targets.push({ user_id: person.user_id, name: person.name });
+        m.set(id, g);
+      }
+    }
+    return m;
+  }, [outstandingShown, picked]);
+
   const tabBtn = (id: typeof tab, label: string, count?: number) => (
     <button
       key={id}
@@ -335,7 +354,7 @@ function DocumentsContent() {
         {tabBtn("outstanding", "Outstanding", outstanding ? new Set(outstanding.map((o) => o.user_id)).size : undefined)}
       </div>
 
-      {note && <p className="mb-4 rounded-lg bg-red-50 px-4 py-2 text-sm text-red-800">{note}</p>}
+      {note && <p className={`mb-4 rounded-lg px-4 py-2 text-sm ${note.startsWith("Recorded") ? "bg-green-50 text-green-900" : "bg-red-50 text-red-800"}`}>{note}</p>}
 
       {tab === "policies" && (
         <div className="overflow-hidden rounded-2xl border border-gold-light bg-white">
@@ -459,6 +478,20 @@ function DocumentsContent() {
               ))}
             </select>
           </div>
+          {picked.size > 0 && (
+            <div className="flex flex-wrap items-center gap-2 border-b border-gold-light bg-cream px-5 py-2 text-sm">
+              <span className="text-ink/70">{picked.size} selected.</span>
+              {[...pickedByDoc.entries()].map(([id, g]) => (
+                <button key={id} type="button" onClick={() => setRecord({ documentId: id, title: g.title, targets: g.targets })} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900">
+                  Record {g.targets.length} by hand: {g.title}
+                </button>
+              ))}
+              <button type="button" onClick={() => setPicked(new Set())} className="text-xs text-ink/60 underline">
+                Clear
+              </button>
+              {pickedByDoc.size > 1 && <span className="text-xs text-ink/50">Each document is recorded separately.</span>}
+            </div>
+          )}
           {outstanding === null ? (
             <div className="h-32 animate-pulse" />
           ) : outstandingShown.length === 0 ? (
@@ -500,9 +533,25 @@ function DocumentsContent() {
                       {docList.map(([title, id]) => {
                         const asked = lastAsked.get(`${id}:${person.user_id}`);
                         return (
-                          <li key={id}>
-                            {title}
-                            {asked && <span className="ml-2 text-xs text-ink/45">asked {new Date(asked).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</span>}
+                          <li key={id} className="flex flex-wrap items-center gap-x-2">
+                            <input
+                              type="checkbox"
+                              aria-label={`Select ${person.name} for ${title}`}
+                              checked={picked.has(`${id}:${person.user_id}`)}
+                              onChange={(e) =>
+                                setPicked((prev) => {
+                                  const n = new Set(prev);
+                                  if (e.target.checked) n.add(`${id}:${person.user_id}`);
+                                  else n.delete(`${id}:${person.user_id}`);
+                                  return n;
+                                })
+                              }
+                            />
+                            <span>{title}</span>
+                            {asked && <span className="text-xs text-ink/45">asked {new Date(asked).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</span>}
+                            <button type="button" onClick={() => setRecord({ documentId: id, title, targets: [{ user_id: person.user_id, name: person.name }] })} className="text-xs font-medium text-teal-700 underline">
+                              Record signature by hand
+                            </button>
                           </li>
                         );
                       })}
@@ -514,6 +563,24 @@ function DocumentsContent() {
           )}
           <p className="border-t border-gold-light px-5 py-3 text-xs text-ink/50">A reminder email also goes out automatically a week after a document becomes due. If an email can&apos;t be delivered, people can still sign in the portal.</p>
         </div>
+      )}
+
+      {tab === "outstanding" && <SignatureHistory refreshKey={historyKey} />}
+
+      {record && (
+        <RecordSignatureModal
+          documentId={record.documentId}
+          documentTitle={record.title}
+          targets={record.targets}
+          onClose={() => setRecord(null)}
+          onDone={(msg) => {
+            setRecord(null);
+            setPicked(new Set());
+            setNote(msg);
+            setHistoryKey((k) => k + 1);
+            load();
+          }}
+        />
       )}
 
       {creating && (

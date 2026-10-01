@@ -7,6 +7,7 @@ import type { Session } from "@supabase/supabase-js";
 import { useLearnSignOut, learnRoleLabel, dashboardPathForRole, type RoleGrant } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { normalisePortalPath } from "@/lib/learn/nav";
+import { lockPin, useHasPin } from "@/components/learn/pin/pinState";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -42,6 +43,8 @@ export function LearnAccountMenu({ session, roles }: { session: Session; roles: 
   const [open, setOpen] = useState(false);
   const [fullName, setFullName] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const isParent = roles.some((r) => r.role === "parent");
+  const { has: hasPin } = useHasPin(session.user.id, isParent);
 
   useEffect(() => {
     if (!supabase) return;
@@ -141,6 +144,19 @@ export function LearnAccountMenu({ session, roles }: { session: Session; roles: 
           </div>
 
           <div className="border-t border-gold-light/70 p-1.5">
+            {isParent && hasPin && (
+              <button
+                type="button"
+                role="menuitem"
+                onClick={() => {
+                  close();
+                  lockPin(session.user.id);
+                }}
+                className="flex w-full items-center rounded-lg px-3 py-2 text-left text-sm text-ink/80 hover:bg-cream hover:text-ink"
+              >
+                Lock family area
+              </button>
+            )}
             <button
               type="button"
               role="menuitem"

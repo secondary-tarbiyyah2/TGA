@@ -74,6 +74,11 @@ export function IcsFeedLink() {
         <div className="mt-3 rounded-lg border border-gold-500 bg-white p-3 text-xs">
           <p className="font-medium text-ink">Your feed link (shown once — copy it now):</p>
           <code className="mt-1 block break-all text-ink/80">{freshUrl}</code>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button type="button" onClick={() => navigator.clipboard?.writeText(freshUrl)} className="rounded-lg bg-gold-700 px-3 py-1.5 font-semibold text-white hover:bg-gold-900">Copy link</button>
+            <a href={freshUrl.replace(/^https?:/, "webcal:")} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">Open in Apple / Outlook</a>
+            <a href={`https://calendar.google.com/calendar/r?cid=${encodeURIComponent(freshUrl.replace(/^https?:/, "webcal:"))}`} target="_blank" rel="noreferrer" className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">Add to Google Calendar</a>
+          </div>
         </div>
       )}
 

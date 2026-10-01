@@ -15,7 +15,6 @@ import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
 import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
-import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -124,7 +123,6 @@ function StudentContent() {
         <IcsFeedLink />
       </div>
 
-      <SignaturePrompts />
 
       {childId && (
         <div className="rounded-2xl border border-gold-light/50 bg-white p-6">

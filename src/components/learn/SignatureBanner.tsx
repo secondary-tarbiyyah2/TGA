@@ -3,11 +3,15 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { useLearnSession } from "@/lib/learn/session";
 
 /** Amber "you have documents to sign" banner; renders nothing when clear. */
 export function SignatureBanner() {
   const supabase = getSupabaseClient();
   const [count, setCount] = useState(0);
+  const { roles } = useLearnSession();
+  // Students never see signing prompts (parents sign on their behalf).
+  const studentOnly = roles.length > 0 && roles.every((r) => r.role === "student");
 
   useEffect(() => {
     if (!supabase) return;
@@ -21,7 +25,7 @@ export function SignatureBanner() {
     };
   }, [supabase]);
 
-  if (count === 0) return null;
+  if (count === 0 || studentOnly) return null;
 
   return (
     <div role="status" className="flex flex-wrap items-center justify-between gap-3 border-b border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
