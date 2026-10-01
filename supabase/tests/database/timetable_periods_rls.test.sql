@@ -2,7 +2,7 @@
 -- day is seeded, any signed-in user can read it, only head_teacher/admin can
 -- change it, and bad rows are rejected by the table checks.
 begin;
-select plan(7);
+select plan(8);
 
 insert into auth.users (id, email) values
   ('e6600000-0000-0000-0000-000000000001', 'ht-periods@example.com'),
@@ -33,11 +33,8 @@ select throws_ok(
   'a teacher cannot add a period'
 );
 
-select is(
-  (with u as (update public.timetable_periods set name = 'TEST hacked' returning 1) select count(*)::int from u),
-  0,
-  'a teacher cannot edit a period'
-);
+select lives_ok($$update public.timetable_periods set name = 'TEST hacked'$$, 'a teacher update runs but touches nothing');
+select is((select count(*)::int from public.timetable_periods where name = 'TEST hacked'), 0, 'a teacher cannot edit a period');
 
 select set_config('request.jwt.claims', '{"sub":"e6600000-0000-0000-0000-000000000001","role":"authenticated"}', true);
 

@@ -3,7 +3,7 @@
 -- only their child's teachers, compliance data stays admin-only, and the
 -- leaderboard honours scope access, the opt-out flag and ignores demerits.
 begin;
-select plan(12);
+select plan(11);
 
 insert into auth.users (id, email) values
   ('e6000000-0000-0000-0000-000000000001', 'ht@example.com'),
