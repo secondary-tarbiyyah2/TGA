@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnSession } from "@/lib/learn/session";
@@ -20,6 +20,23 @@ export default function LearnInvitePage() {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [passwordSet, setPasswordSet] = useState(false);
+  const [verifying, setVerifying] = useState(false);
+
+  // Branded links look like /login/invite?token_hash=…&type=recovery. The token is
+  // only redeemed here in the browser (so email scanners that merely fetch the
+  // URL can't use it up), and the address never shows the backend host.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tokenHash = params.get("token_hash");
+    const type = params.get("type");
+    const supabase = getSupabaseClient();
+    if (!tokenHash || !supabase) return;
+    setVerifying(true);
+    supabase.auth
+      .verifyOtp({ token_hash: tokenHash, type: type === "invite" ? "invite" : "recovery" })
+      .then(() => window.history.replaceState(null, "", window.location.pathname))
+      .finally(() => setVerifying(false));
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -44,7 +61,7 @@ export default function LearnInvitePage() {
     setPasswordSet(true);
   }
 
-  if (session === "loading") return <p className="text-ink/60">Loading…</p>;
+  if (session === "loading" || verifying) return <p className="text-ink/60">Loading…</p>;
   if (!session) {
     return (
       <section className="app-pad">

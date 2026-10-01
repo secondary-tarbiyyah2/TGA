@@ -172,7 +172,12 @@ Deno.serve(async (req) => {
   });
   if (linkErr || !linkData) return jsonResponse({ ok: false, error: "link_generation_failed", detail: linkErr?.message }, 500);
 
-  const setupLink = linkData.properties.action_link;
+  // Hand out a link on our own domain (never the backend's verify URL): the
+  // invite page redeems the token in the browser.
+  const hashed = linkData.properties.hashed_token;
+  const setupLink = hashed
+    ? `${learnSiteUrl}/login/invite?token_hash=${encodeURIComponent(hashed)}&type=recovery`
+    : linkData.properties.action_link;
 
   // Actually email the setup link rather than only handing it back for the
   // inviting admin to copy and send themselves by hand — reported as "we
