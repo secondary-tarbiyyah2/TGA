@@ -6,6 +6,8 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { openSignedPdf } from "../signedPdf";
 import { signatureImageUrl } from "@/components/learn/documents/signatureImage";
+import { PrintSheet } from "@/components/learn/print";
+import { PRINT_AREA } from "@/components/learn/reports/printArea";
 import { METHOD_LABEL, type SignatureMethod } from "@/components/learn/documents/signatureMethod";
 
 type Receipt = {
@@ -89,6 +91,7 @@ function ReceiptContent() {
   ];
   return (
     <>
+      <PrintSheet />
       <div className="mb-4 flex flex-wrap gap-2 print:hidden">
         <button
           type="button"
@@ -106,7 +109,7 @@ function ReceiptContent() {
         <Link href="/documents" className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">Back to My documents</Link>
       </div>
       {pdfFailed && <p role="alert" className="mb-3 text-sm text-red-800 print:hidden">We couldn&apos;t prepare the signed PDF just now. Please try again in a moment.</p>}
-      <article className="mx-auto max-w-2xl rounded-2xl border border-gold-light bg-white p-8 print:border-0 print:p-0">
+      <article className={`${PRINT_AREA} mx-auto max-w-2xl rounded-2xl border border-gold-light bg-white p-8 print:border-0 print:p-0`}>
         <p className="text-xs font-semibold uppercase tracking-wider text-ink/50">Tarbiyyah Global Academy</p>
         <h1 className="mt-1 font-serif text-2xl font-semibold text-ink">Signed document record</h1>
         <p className="mt-2 text-sm text-ink/70">{handRecorded ? "This confirms that the person below signed the document by hand, and that the school recorded it on their behalf." : "This confirms that the person below read and signed the document at the time shown."}</p>

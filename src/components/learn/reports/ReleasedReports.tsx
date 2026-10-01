@@ -34,7 +34,8 @@ export function ReleasedReports() {
 
   const print = (id: string) => {
     setPrintId(id);
-    setTimeout(() => window.print(), 50);
+    window.addEventListener("afterprint", () => setPrintId(null), { once: true });
+    setTimeout(() => window.print(), 100);
   };
 
   return (

@@ -295,7 +295,8 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
 
   const print = (childId: string) => {
     setPrintId(childId);
-    setTimeout(() => window.print(), 50);
+    window.addEventListener("afterprint", () => setPrintId(null), { once: true });
+    setTimeout(() => window.print(), 100);
   };
 
   const groups = useMemo(() => {

@@ -38,7 +38,7 @@ export const PRINT_CSS = `
   h1, h2, h3 { break-after: avoid; }
 
   /* A single report: print only the report area, but keep it flowing over several pages. */
-  .portal main:has(.${PRINT_AREA}) *:not(.${PRINT_AREA}):not(:has(.${PRINT_AREA})):not(.${PRINT_AREA} *) { display: none !important; }
+  body:has(.${PRINT_AREA}) *:not(.${PRINT_AREA}):not(:has(.${PRINT_AREA})):not(.${PRINT_AREA} *) { display: none !important; }
   .${PRINT_AREA} { border: none !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important; width: 100% !important; }
   .${PRINT_AREA} .grid { break-inside: avoid; }
 }
