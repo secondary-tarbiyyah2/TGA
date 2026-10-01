@@ -204,15 +204,29 @@ export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
 
   if (phase === "success") {
     return (
-      <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center">
-        <h3 className="font-serif text-xl font-semibold text-ink">Application received. Thank you.</h3>
-        <p className="mt-2 text-ink/70">
-          Our admissions team will be in touch about the next step, the assessment and interview.
-        </p>
-        <p className="mt-2 text-ink/70">
-          Please email your child&apos;s latest school report to{" "}
-          <a href={`mailto:${admissionsEmail}`} className="font-semibold text-gold-700 underline">{admissionsEmail}</a>.
-        </p>
+      <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
+        <h3 className="text-center font-serif text-xl font-semibold text-ink">Application received. Thank you.</h3>
+        <h4 className="mt-6 font-semibold text-ink">What happens next</h4>
+        <ol className="mt-3 space-y-4 border-l-2 border-gold-light/70 pl-5">
+          <li className="relative">
+            <span aria-hidden="true" className="absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full bg-gold-500" />
+            <p className="text-sm font-medium text-ink">Send your child&apos;s latest school report</p>
+            <p className="text-sm text-ink/70">
+              Please email it to{" "}
+              <a href={`mailto:${admissionsEmail}`} className="font-semibold text-gold-700 underline">{admissionsEmail}</a>.
+            </p>
+          </li>
+          <li className="relative">
+            <span aria-hidden="true" className="absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full bg-gold-500" />
+            <p className="text-sm font-medium text-ink">Assessment and conversation</p>
+            <p className="text-sm text-ink/70">The admissions team will contact you to arrange the assessment and conversation.</p>
+          </li>
+          <li className="relative">
+            <span aria-hidden="true" className="absolute -left-[1.6rem] top-1 h-3 w-3 rounded-full bg-gold-500" />
+            <p className="text-sm font-medium text-ink">Acceptance and deposit</p>
+            <p className="text-sm text-ink/70">If we offer a place, we will explain how to confirm it with a deposit and ID documents.</p>
+          </li>
+        </ol>
       </div>
     );
   }

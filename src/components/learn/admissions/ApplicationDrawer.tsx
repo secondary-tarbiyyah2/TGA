@@ -6,6 +6,7 @@ import {
   SIDELINE_STATUSES,
   STATUS_LABELS,
   ageFromDob,
+  type ApplicationPatch,
   type ApplicationRow,
   type ApplicationStatus,
 } from "@/components/admissions/applicationShared";
@@ -14,6 +15,21 @@ export type StaffOption = { profile_id: string; display_name: string };
 
 function fmtDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" });
+}
+
+/** ISO timestamp -> value for <input type="datetime-local"> in the browser's zone. */
+function toLocalInput(iso: string | null): string {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  const p = (n: number) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+
+function fromLocalInput(v: string): string | null {
+  if (!v) return null;
+  const d = new Date(v);
+  return Number.isNaN(d.getTime()) ? null : d.toISOString();
 }
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
@@ -36,11 +52,16 @@ export function ApplicationDrawer({
   staff: StaffOption[];
   onClose: () => void;
   onMove: (id: string, status: ApplicationStatus) => Promise<void>;
-  onPatch: (id: string, patch: { notes?: string | null; assigned_to?: string | null }) => Promise<boolean>;
+  onPatch: (id: string, patch: ApplicationPatch) => Promise<boolean>;
 }) {
   const [notes, setNotes] = useState(app.notes || "");
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
+  const [assessmentAt, setAssessmentAt] = useState(toLocalInput(app.assessment_at));
+  const [interviewAt, setInterviewAt] = useState(toLocalInput(app.interview_at));
+  const [decisionNote, setDecisionNote] = useState(app.decision_note || "");
+  const [savingProcess, setSavingProcess] = useState(false);
+  const [processMsg, setProcessMsg] = useState<string | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -58,6 +79,29 @@ export function ApplicationDrawer({
     const ok = await onPatch(app.id, { notes: notes.trim() === "" ? null : notes });
     setSaving(false);
     setMsg(ok ? "Notes saved." : "Couldn't save the notes. Please try again.");
+  }
+
+  const processDirty =
+    assessmentAt !== toLocalInput(app.assessment_at) ||
+    interviewAt !== toLocalInput(app.interview_at) ||
+    decisionNote !== (app.decision_note || "");
+
+  async function saveProcess() {
+    setSavingProcess(true);
+    setProcessMsg(null);
+    const ok = await onPatch(app.id, {
+      assessment_at: fromLocalInput(assessmentAt),
+      interview_at: fromLocalInput(interviewAt),
+      decision_note: decisionNote.trim() === "" ? null : decisionNote,
+    });
+    setSavingProcess(false);
+    setProcessMsg(ok ? "Saved." : "Couldn't save. Please try again.");
+  }
+
+  async function toggleFlag(key: "report_received" | "deposit_received" | "id_documents_received", value: boolean) {
+    setProcessMsg(null);
+    const ok = await onPatch(app.id, { [key]: value } as ApplicationPatch);
+    if (!ok) setProcessMsg("Couldn't update that. Please try again.");
   }
 
   async function assign(profileId: string) {
@@ -99,6 +143,43 @@ export function ApplicationDrawer({
                   {STATUS_LABELS[s]}
                 </button>
               ))}
+            </div>
+          </section>
+
+          <section aria-label="Admissions process" className="rounded-xl border border-gold-light/50 bg-cream/40 p-4">
+            <h3 className="mb-3 font-serif text-lg font-semibold text-ink">Admissions process</h3>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="block text-sm font-medium text-ink">
+                Assessment
+                <input type="datetime-local" value={assessmentAt} onChange={(e) => setAssessmentAt(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm" />
+              </label>
+              <label className="block text-sm font-medium text-ink">
+                Parent and student conversation
+                <input type="datetime-local" value={interviewAt} onChange={(e) => setInterviewAt(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm" />
+              </label>
+            </div>
+            <div className="mt-3 space-y-2">
+              {([
+                ["report_received", "Latest school report received", app.report_received],
+                ["id_documents_received", "ID documents received", app.id_documents_received],
+                ["deposit_received", "Deposit received", app.deposit_received],
+              ] as const).map(([key, label, checked]) => (
+                <label key={key} className="flex items-center gap-2 text-sm text-ink">
+                  <input type="checkbox" checked={checked} onChange={(e) => toggleFlag(key, e.target.checked)} />
+                  {label}
+                </label>
+              ))}
+            </div>
+            <label className="mt-3 block text-sm font-medium text-ink">
+              Decision note
+              <span className="ml-1 text-xs font-normal text-ink/50">(staff only)</span>
+              <textarea value={decisionNote} onChange={(e) => setDecisionNote(e.target.value)} rows={3} maxLength={5000} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm" />
+            </label>
+            <div className="mt-2 flex items-center gap-3">
+              <button type="button" onClick={saveProcess} disabled={savingProcess || !processDirty} className="rounded-lg bg-teal-700 px-4 py-1.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50">
+                {savingProcess ? "Saving…" : "Save process"}
+              </button>
+              {processMsg && <span role="status" className="text-xs text-ink/70">{processMsg}</span>}
             </div>
           </section>
 

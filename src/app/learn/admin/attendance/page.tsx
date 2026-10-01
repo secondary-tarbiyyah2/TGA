@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { Register } from "@/components/learn/attendance/Register";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { localDateKey } from "@/lib/learn/calendar";
+import { classBannerStyle } from "@/lib/learn/classes";
 
 type Status = "present" | "late" | "absent" | "excused";
 const STATUSES: { value: Status; label: string; dot: string }[] = [
@@ -109,7 +112,7 @@ function Section({ title, hint, children }: { title: string; hint?: string; chil
 const th = "whitespace-nowrap border-b border-gold-light/50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/55";
 const td = "border-b border-gold-light/20 px-3 py-2";
 
-function AttendanceContent() {
+function ReportsContent() {
   const canExport = useLearnPermission("can_export_data");
   const [rows, setRows] = useState<Row[] | null>(null);
   const [truncated, setTruncated] = useState(false);
@@ -501,6 +504,147 @@ function AttendanceContent() {
           </>
         )}
       </div>
+    </>
+  );
+}
+
+type DayLesson = { id: string; classId: string; className: string; start: string; end: string };
+type RawDayLesson = {
+  id: string;
+  timetable_slots?: { class_id: string; start_time: string; end_time: string; classes?: { name: string } | null; timetable_runs?: { status: string } | null } | null;
+};
+
+function shiftDate(key: string, days: number): string {
+  const d = new Date(`${key}T12:00:00`);
+  d.setDate(d.getDate() + days);
+  return localDateKey(d);
+}
+
+function DayLessonCard({ lesson }: { lesson: DayLesson }) {
+  const [progress, setProgress] = useState<{ taken: number; total: number } | null>(null);
+  const [open, setOpen] = useState(true);
+  const onProgress = useCallback((taken: number, total: number) => setProgress({ taken, total }), []);
+  const done = progress !== null && progress.total > 0 && progress.taken >= progress.total;
+  const partial = progress !== null && progress.taken > 0 && !done;
+  return (
+    <section className="overflow-hidden rounded-2xl border border-gold-light bg-white">
+      <div className="flex flex-wrap items-center gap-3 px-4 py-3 sm:px-5">
+        <span className="h-10 w-10 shrink-0 rounded-xl" style={classBannerStyle(lesson.classId)} aria-hidden="true" />
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold text-ink/60">
+            {lesson.start}–{lesson.end}
+          </p>
+          <Link href={`/admin/class?id=${lesson.classId}`} className="block truncate text-base font-semibold text-ink hover:text-teal-700">
+            {lesson.className}
+          </Link>
+        </div>
+        <span
+          className={`rounded-full px-2.5 py-1 text-xs font-semibold ${done ? "bg-green-100 text-green-800" : partial ? "bg-amber-100 text-amber-800" : "bg-red-50 text-red-700"}`}
+        >
+          {done ? "Register taken" : partial ? `Register part taken (${progress?.taken}/${progress?.total})` : "Register not taken"}
+        </span>
+        <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/70 hover:bg-cream">
+          {open ? "Hide" : "Show"}
+        </button>
+      </div>
+      {open && (
+        <div className="border-t border-gold-light">
+          <Register lessonId={lesson.id} classId={lesson.classId} onProgress={onProgress} />
+        </div>
+      )}
+    </section>
+  );
+}
+
+function TakeRegister() {
+  const [date, setDate] = useState(localDateKey(new Date()));
+  const [lessons, setLessons] = useState<DayLesson[] | null>(null);
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    let cancelled = false;
+    (async () => {
+      const { data } = await supabase
+        .from("lesson_instances")
+        .select("id, timetable_slots(class_id, start_time, end_time, classes(name), timetable_runs(status))")
+        .eq("date", date);
+      if (cancelled) return;
+      const rows = ((data as unknown as RawDayLesson[]) || [])
+        .filter((l) => l.timetable_slots && l.timetable_slots.timetable_runs?.status === "published")
+        .map((l) => {
+          const t = l.timetable_slots!;
+          return { id: l.id, classId: t.class_id, className: t.classes?.name || "Class", start: t.start_time.slice(0, 5), end: t.end_time.slice(0, 5) };
+        })
+        .sort((a, b) => a.start.localeCompare(b.start) || a.className.localeCompare(b.className));
+      setLessons(rows);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [date]);
+
+  const go = (d: string) => {
+    if (!d) return;
+    setLessons(null);
+    setDate(d);
+  };
+  const label = new Date(`${date}T12:00:00`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+
+  return (
+    <>
+      <PageHeader crumbs={[{ label: "Dashboard", href: "/learn/admin/dashboard" }, { label: "Attendance" }]} title="Take register" subtitle="Take or correct the register for any lesson in the school." />
+      <div className="mb-5 flex flex-wrap items-center gap-2 rounded-2xl border border-gold-light bg-white p-3">
+        <button type="button" onClick={() => go(shiftDate(date, -1))} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream" aria-label="Previous day">
+          ‹ Prev
+        </button>
+        <input type="date" value={date} onChange={(e) => go(e.target.value)} className={`${fieldCls} !w-auto`} aria-label="Register date" />
+        <button type="button" onClick={() => go(shiftDate(date, 1))} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream" aria-label="Next day">
+          Next ›
+        </button>
+        <button type="button" onClick={() => go(localDateKey(new Date()))} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-teal-700 hover:bg-cream">
+          Today
+        </button>
+        <span className="w-full text-sm text-ink/60 sm:ml-auto sm:w-auto">{label}</span>
+      </div>
+      {lessons === null ? (
+        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+      ) : lessons.length === 0 ? (
+        <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/60">No lessons on this day.</div>
+      ) : (
+        <div className="space-y-4">
+          {lessons.map((l) => (
+            <DayLessonCard key={l.id} lesson={l} />
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+function AttendanceContent() {
+  const [tab, setTab] = useState<"register" | "reports">("register");
+  const tabs: { key: "register" | "reports"; label: string }[] = [
+    { key: "register", label: "Take register" },
+    { key: "reports", label: "Reports & filters" },
+  ];
+  return (
+    <>
+      <div role="tablist" aria-label="Attendance sections" className="mb-5 flex gap-1 overflow-x-auto border-b border-gold-light">
+        {tabs.map((t) => (
+          <button
+            key={t.key}
+            type="button"
+            role="tab"
+            aria-selected={tab === t.key}
+            onClick={() => setTab(t.key)}
+            className={`shrink-0 border-b-[3px] px-4 py-2.5 text-sm font-medium transition-colors ${tab === t.key ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"}`}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+      {tab === "register" ? <TakeRegister /> : <ReportsContent />}
     </>
   );
 }

@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { classBannerStyle, fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
 import type { Crumb } from "@/components/learn/PageHeader";
+import { ParticipantsTab } from "@/components/learn/class/ParticipantsTab";
 import { CourseTab } from "@/components/learn/class/CourseTab";
 import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
@@ -142,46 +143,6 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
         </tbody>
       </table>
     </div>
-  );
-}
-
-// ── People (teacher only: families can't read other children) ────────
-function PeopleTab({ classId }: { classId: string }) {
-  const [people, setPeople] = useState<{ id: string; name: string }[] | null>(null);
-  useEffect(() => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    supabase
-      .from("enrolments")
-      .select("children(id, name)")
-      .eq("class_id", classId)
-      .then(({ data }) =>
-        setPeople(
-          (((data as unknown as { children: { id: string; name: string } | null }[]) || []).map((r) => r.children).filter(Boolean) as { id: string; name: string }[]).sort((a, b) =>
-            a.name.localeCompare(b.name),
-          ),
-        ),
-      );
-  }, [classId]);
-
-  if (people === null) return <p className="text-sm text-ink/60">Loading…</p>;
-  if (people.length === 0) return <p className="text-sm text-ink/60">No students enrolled yet.</p>;
-  return (
-    <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-      {people.map((p) => (
-        <li key={p.id} className="flex items-center gap-3 rounded-lg border border-gold-light/70 px-3 py-2.5">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-100 text-xs font-semibold text-teal-900" aria-hidden="true">
-            {p.name
-              .split(/\s+/)
-              .map((w) => w[0])
-              .slice(0, 2)
-              .join("")
-              .toUpperCase()}
-          </span>
-          <span className="truncate text-sm font-medium text-ink">{p.name}</span>
-        </li>
-      ))}
-    </ul>
   );
 }
 
@@ -324,7 +285,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
 
       {tab === "participants" && isStaff && (
         <Panel title="Participants">
-          <PeopleTab classId={cls.id} />
+          <ParticipantsTab classId={cls.id} />
         </Panel>
       )}
 

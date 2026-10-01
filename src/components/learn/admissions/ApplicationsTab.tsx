@@ -13,6 +13,8 @@ import {
   STATUS_LABELS,
   YEAR_GROUP_OPTIONS,
   ageFromDob,
+  processPips,
+  type ApplicationPatch,
   type ApplicationRow,
   type ApplicationStatus,
 } from "@/components/admissions/applicationShared";
@@ -24,6 +26,13 @@ type Load = "loading" | "error" | "ready";
 function fmtShort(iso: string): string {
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" });
 }
+
+function fmtWhen(iso: string): string {
+  return new Date(iso).toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" });
+}
+
+const PIP_CLS = { none: "bg-ink/15", scheduled: "bg-gold-500", done: "bg-teal-500" } as const;
+const PIP_WORD = { none: "not started", scheduled: "scheduled", done: "done" } as const;
 
 function csvCell(v: unknown): string {
   let s = v === null || v === undefined ? "" : String(v);
@@ -49,6 +58,11 @@ function ApplicationCard({
   const prev = idx > 0 ? PIPELINE_STATUSES[idx - 1] : null;
   const next = idx >= 0 && idx < PIPELINE_STATUSES.length - 1 ? PIPELINE_STATUSES[idx + 1] : null;
   const name = `${app.child_first_name} ${app.child_last_name}`;
+  const pips = processPips(app);
+  const nowMs = Date.now();
+  const upcoming: { label: string; at: string }[] = [];
+  if (app.assessment_at && new Date(app.assessment_at).getTime() > nowMs) upcoming.push({ label: "Assessment", at: app.assessment_at });
+  if (app.interview_at && new Date(app.interview_at).getTime() > nowMs) upcoming.push({ label: "Conversation", at: app.interview_at });
   return (
     <div
       draggable
@@ -66,6 +80,14 @@ function ApplicationCard({
         </span>
         <span className="block text-xs text-ink/60">{app.parent_name}</span>
         <span className="block text-xs text-ink/50">Received {fmtShort(app.created_at)}</span>
+        <span className="mt-1.5 flex items-center gap-1" role="img" aria-label={pips.map((p) => `${p.label} ${PIP_WORD[p.state]}`).join(", ")}>
+          {pips.map((p) => (
+            <span key={p.label} title={`${p.label}: ${PIP_WORD[p.state]}`} className={`h-1.5 w-5 rounded-full ${PIP_CLS[p.state]}`} />
+          ))}
+        </span>
+        {upcoming.map((u) => (
+          <span key={u.label} className="block text-xs text-teal-700">{u.label}: {fmtWhen(u.at)}</span>
+        ))}
       </button>
       {(prev || next) && (
         <div className="mt-2 flex justify-between gap-2">
@@ -209,6 +231,10 @@ export function ApplicationsTab() {
       const current = rows.find((r) => r.id === id);
       if (!supabase || !current || current.status === status) return;
       const previous = current.status;
+      if (status === "accepted") {
+        const missing = [!current.deposit_received && "deposit", !current.id_documents_received && "ID documents"].filter((x): x is string => typeof x === "string");
+        if (missing.length > 0 && !window.confirm(`Heads up: ${missing.join(" and ")} not marked as received yet. Move to Accepted anyway?`)) return;
+      }
       setActionError(null);
       setRows((list) => list.map((r) => (r.id === id ? { ...r, status } : r)));
       const { error } = await supabase.from("admissions_applications").update({ status }).eq("id", id);
@@ -220,7 +246,7 @@ export function ApplicationsTab() {
     [rows]
   );
 
-  const patch = useCallback(async (id: string, p: { notes?: string | null; assigned_to?: string | null }): Promise<boolean> => {
+  const patch = useCallback(async (id: string, p: ApplicationPatch): Promise<boolean> => {
     const supabase = getSupabaseClient();
     if (!supabase) return false;
     const { error } = await supabase.from("admissions_applications").update(p).eq("id", id);

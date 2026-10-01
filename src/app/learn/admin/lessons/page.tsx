@@ -331,6 +331,21 @@ function LessonsContent() {
   const runYearId = selectedRunRow?.academic_year_id || yearId;
   const runClasses = classes.filter((c) => c.academic_year_id === runYearId || c.academic_year_id === null);
 
+  // Drag-move: optimistic, reverted if the database refuses (EXCLUDE constraints have the last word).
+  const moveSlot = async (slot: TimetableSlot, weekday: number, start: string, end: string): Promise<string | null> => {
+    if (!supabase) return "Not connected.";
+    const before = slots;
+    setSlots((cur) => cur.map((s) => (s.id === slot.id ? { ...s, weekday, start_time: start, end_time: end } : s)));
+    const { error } = await supabase.from("timetable_slots").update({ weekday, start_time: start, end_time: end }).eq("id", slot.id);
+    if (error) {
+      setSlots(before);
+      if (error.code === "23P01" || /no_(teacher|class|session)_overlap/.test(error.message)) return "That clashes with another lesson (same teacher, class or session at the same time).";
+      if (/permission|row-level|policy/i.test(error.message)) return "Your account isn't allowed to change this timetable.";
+      return error.message;
+    }
+    return null;
+  };
+
   const publish = async () => {
     if (!selectedRun) return;
     const result = await callFunction("timetable-publish", { action: "publish", run_id: selectedRun });
@@ -438,7 +453,7 @@ function LessonsContent() {
           {yearClasses.length === 0 && year && <p className="mt-3 text-xs text-ink/55">Add classes for {year.label} first (step 2).</p>}
         </Step>
 
-        <Step n={4} title="Review, fix and publish" help="Click a lesson to change its teacher, day or time, or delete it. Click + to add one. Nothing goes live until you publish." active={Boolean(selectedRunRow)}>
+        <Step n={4} title="Review, fix and publish" help="Drag a lesson to move it, or click it to change its teacher or time, or delete it. Click + to add one. Nothing goes live until you publish." active={Boolean(selectedRunRow)}>
           {runs === null && <p className="text-sm text-ink/60">Loading…</p>}
           {runs && runs.length === 0 && <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">No timetable yet. Complete steps 1 to 3, then your draft appears here.</p>}
           {runs && runs.length > 0 && (
@@ -476,6 +491,7 @@ function LessonsContent() {
                     editable={Boolean(editable)}
                     onEdit={(s) => setEditor({ slot: s, weekday: s.weekday, start: s.start_time.slice(0, 5), end: s.end_time.slice(0, 5) })}
                     onAdd={(weekday, start, end) => setEditor({ slot: null, weekday, start, end })}
+                    onMove={moveSlot}
                   />
                   {legendClasses.length > 0 && (
                     <ul className="flex flex-wrap gap-2 text-xs">

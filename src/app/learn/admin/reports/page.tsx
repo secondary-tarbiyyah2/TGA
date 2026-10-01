@@ -4,80 +4,10 @@ import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { ReportsWorkspace } from "@/components/learn/reports/ReportsWorkspace";
 
-type Report = { id: string; child_id: string; term_id: string; status: string; overall_comment: string | null; children?: { name: string } | null; terms?: { name: string } | null };
 type AssessmentType = { id: string; name: string };
 type Comment = { id: string; text: string; subject_id: string | null };
-
-function TermReportApprovals() {
-  const supabase = getSupabaseClient();
-  const [reports, setReports] = useState<Report[] | null>(null);
-
-  const load = async () => {
-    if (!supabase) return;
-    const { data } = await supabase
-      .from("term_reports")
-      .select("id, child_id, term_id, status, overall_comment, children(name), terms(name)")
-      .in("status", ["pending_approval", "approved"])
-      .order("updated_at", { ascending: false });
-    setReports((data as unknown as Report[]) || []);
-  };
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
-    load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [supabase]);
-
-  const approve = async (id: string) => {
-    if (!supabase) return;
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    await supabase.from("term_reports").update({ status: "approved", approved_by: user?.id, approved_at: new Date().toISOString() }).eq("id", id);
-    await load();
-  };
-
-  const release = async (id: string) => {
-    if (!supabase) return;
-    await supabase.from("term_reports").update({ status: "released", released_at: new Date().toISOString() }).eq("id", id);
-    await load();
-  };
-
-  return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <h2 className="font-serif text-h3 font-semibold text-ink">Term report approvals</h2>
-      <p className="mt-1 text-xs text-ink/50">Approve, then release — release is what makes a report visible to the parent/student.</p>
-      <ul className="mt-3 space-y-3">
-        {reports === null && <p className="text-sm text-ink/60">Loading…</p>}
-        {(reports || []).map((r) => (
-          <li key={r.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
-            <div className="flex items-center justify-between">
-              <span>
-                {r.children?.name} — {r.terms?.name}
-              </span>
-              <span className="rounded-full bg-gold-light/40 px-2 py-0.5 text-xs text-gold-700">{r.status}</span>
-            </div>
-            {r.overall_comment && <p className="mt-1 text-ink/70">{r.overall_comment}</p>}
-            <div className="mt-2 flex gap-2">
-              {r.status === "pending_approval" && (
-                <button type="button" onClick={() => approve(r.id)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs text-white hover:bg-gold-900 font-medium transition-colors">
-                  Approve
-                </button>
-              )}
-              {r.status === "approved" && (
-                <button type="button" onClick={() => release(r.id)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs text-white hover:bg-gold-900 font-medium transition-colors">
-                  Release to family
-                </button>
-              )}
-            </div>
-          </li>
-        ))}
-        {reports?.length === 0 && <p className="text-sm text-ink/60">Nothing awaiting approval.</p>}
-      </ul>
-    </div>
-  );
-}
 
 function AssessmentTypesAdmin() {
   const supabase = getSupabaseClient();
@@ -281,14 +211,16 @@ function MarkSchemesAdmin() {
 function ReportsAdminContent() {
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <h1 className="font-serif text-h2 font-semibold text-ink">Reports</h1>
-        <p className="mt-1 text-sm text-ink/60">Term report approval, comment bank, and assessment types.</p>
-      </div>
-      <TermReportApprovals />
-      <CommentBankAdmin />
-      <AssessmentTypesAdmin />
-      <MarkSchemesAdmin />
+      <ReportsWorkspace mode="admin" />
+      <details className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
+        <summary className="cursor-pointer select-none font-serif text-h3 font-semibold text-ink">Report settings</summary>
+        <p className="mt-1 text-xs text-ink/50">Comment bank, assessment types and mark schemes used when building reports.</p>
+        <div className="mt-4 space-y-6">
+          <CommentBankAdmin />
+          <AssessmentTypesAdmin />
+          <MarkSchemesAdmin />
+        </div>
+      </details>
     </div>
   );
 }

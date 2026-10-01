@@ -65,12 +65,40 @@ export type ApplicationRow = {
   declaration_name: string;
   notes: string | null;
   assigned_to: string | null;
+  assessment_at: string | null;
+  interview_at: string | null;
+  report_received: boolean;
+  deposit_received: boolean;
+  id_documents_received: boolean;
+  decision_note: string | null;
   created_at: string;
   updated_at: string;
 };
 
+/** Fields staff may change from the drawer (0032 notes/assignee + 0037 process tracking). */
+export type ApplicationPatch = Partial<
+  Pick<
+    ApplicationRow,
+    "notes" | "assigned_to" | "assessment_at" | "interview_at" | "report_received" | "deposit_received" | "id_documents_received" | "decision_note"
+  >
+>;
+
+export type PipState = "none" | "scheduled" | "done";
+
+/** Three progress pips for pipeline cards: assessment, interview, documents. */
+export function processPips(a: Pick<ApplicationRow, "assessment_at" | "interview_at" | "report_received" | "id_documents_received">): { label: string; state: PipState }[] {
+  const now = Date.now();
+  const byDate = (iso: string | null): PipState => (!iso ? "none" : new Date(iso).getTime() <= now ? "done" : "scheduled");
+  const docs: PipState = a.report_received && a.id_documents_received ? "done" : a.report_received || a.id_documents_received ? "scheduled" : "none";
+  return [
+    { label: "Assessment", state: byDate(a.assessment_at) },
+    { label: "Interview", state: byDate(a.interview_at) },
+    { label: "Documents", state: docs },
+  ];
+}
+
 export const APPLICATION_COLUMNS =
-  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, consent_contact, consent_data, declaration_name, notes, assigned_to, created_at, updated_at";
+  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, created_at, updated_at";
 
 /** Age in whole years from an ISO date (yyyy-mm-dd), e.g. "7". Empty if invalid. */
 export function ageFromDob(dob: string): string {
