@@ -1,171 +1,381 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
-import { AdminShell } from "@/components/learn/AdminShell";
+import { PageHeader } from "@/components/learn/PageHeader";
+import { StatTile } from "@/components/learn/Card";
+import { NewChargeDialog, type ChildOpt, type ClassOpt, type EnrolmentOpt, type FamilyOpt, type YearGroupOpt } from "@/components/learn/fees/NewChargeDialog";
+import { PaymentDialog } from "@/components/learn/fees/PaymentDialog";
+import {
+  METHOD_LABEL,
+  STATUS_LABEL,
+  STATUS_STYLE,
+  chargeStatus,
+  csvEscape,
+  formatDate,
+  round2,
+  type ChargeStatus,
+  type FeeCharge,
+  type FeePayment,
+} from "@/components/learn/fees/shared";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { getFeeBands, getSiteSettings } from "@/lib/content";
-import { matchFeeBand } from "@/lib/learn/fees";
+import { getFeeBands } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 import type { FeeBand } from "@/content/seed";
 
 type Row = {
-  childId: string;
+  charge: FeeCharge;
+  familyName: string;
+  email: string;
   childName: string;
-  yearGroup: string | null;
-  parentName: string | null;
-  parentEmail: string | null;
-  enrolled: boolean;
-  band: FeeBand | null;
-  discount: number;
-  total: number;
+  yearGroup: string;
+  payments: FeePayment[];
+  paid: number;
+  balance: number;
+  status: ChargeStatus;
 };
 
-function toCsv(rows: Row[]): string {
-  const header = ["Child", "Year group", "Parent", "Parent email", "Enrolled", "Fee band", "Annual fee", "Sibling discount", "Total"];
-  const lines = rows.map((r) =>
-    [
-      r.childName,
-      r.yearGroup || "",
-      r.parentName || "",
-      r.parentEmail || "",
-      r.enrolled ? "Yes" : "No",
-      r.band?.yearGroupRange || "",
-      r.band ? r.band.annualFee.toFixed(2) : "",
-      r.discount ? r.discount.toFixed(2) : "0.00",
-      r.band ? r.total.toFixed(2) : "",
-    ]
-      .map((v) => `"${String(v).replace(/"/g, '""')}"`)
-      .join(",")
-  );
-  return [header.join(","), ...lines].join("\n");
-}
+type Profile = { id: string; full_name: string | null; email: string | null };
+type ChildRow = { id: string; name: string; parent_user_id: string; year_group_id: string | null; year_groups: { name: string } | null };
+
+const inputCls = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm";
 
 function FeesContent() {
   const supabase = getSupabaseClient();
   const canExport = useLearnPermission("can_export_data");
   const [rows, setRows] = useState<Row[] | null>(null);
+  const [families, setFamilies] = useState<FamilyOpt[]>([]);
+  const [children, setChildren] = useState<ChildOpt[]>([]);
+  const [yearGroups, setYearGroups] = useState<YearGroupOpt[]>([]);
+  const [classes, setClasses] = useState<ClassOpt[]>([]);
+  const [enrolments, setEnrolments] = useState<EnrolmentOpt[]>([]);
+  const [feeBands, setFeeBands] = useState<FeeBand[]>([]);
+  const [view, setView] = useState<"charges" | "families">("charges");
+  const [statusFilter, setStatusFilter] = useState<"all" | ChargeStatus>("all");
+  const [yearFilter, setYearFilter] = useState("all");
+  const [search, setSearch] = useState("");
+  const [creating, setCreating] = useState(false);
+  const [paying, setPaying] = useState<{ row: Row; full: boolean } | null>(null);
+  const [expanded, setExpanded] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState(false);
 
-  useEffect(() => {
+  const load = useCallback(async () => {
     if (!supabase) return;
-    (async () => {
-      const [feeBands, settings, { data: children }, { data: enrolments }] = await Promise.all([
-        getFeeBands(),
-        getSiteSettings(),
-        supabase.from("children").select("id, name, parent_user_id, year_groups(name)"),
-        supabase.from("enrolments").select("child_id"),
-      ]);
-      const enrolledChildIds = new Set((enrolments || []).map((e) => e.child_id as string));
+    const [bands, chargesRes, paymentsRes, childrenRes, ygRes, classRes, enrolRes] = await Promise.all([
+      getFeeBands(),
+      supabase.from("fee_charges").select("id, parent_user_id, child_id, description, amount, due_date, voided_at, created_at").order("due_date", { ascending: false }),
+      supabase.from("fee_payments").select("id, charge_id, amount, method, paid_on, reference, created_at").order("paid_on", { ascending: false }),
+      supabase.from("children").select("id, name, parent_user_id, year_group_id, year_groups(name)").order("name"),
+      supabase.from("year_groups").select("id, name").order("sort_order"),
+      supabase.from("classes").select("id, name").order("name"),
+      supabase.from("enrolments").select("class_id, child_id"),
+    ]);
+    if (chargesRes.error || paymentsRes.error || childrenRes.error) {
+      setLoadError(true);
+      setRows([]);
+      return;
+    }
+    setLoadError(false);
+    const charges = ((chargesRes.data as unknown as FeeCharge[]) || []).map((c) => ({ ...c, amount: Number(c.amount) }));
+    const payments = ((paymentsRes.data as unknown as FeePayment[]) || []).map((p) => ({ ...p, amount: Number(p.amount) }));
+    const kids = (childrenRes.data as unknown as ChildRow[]) || [];
 
-      const parentIds = Array.from(new Set((children || []).map((c) => c.parent_user_id).filter(Boolean)));
-      const { data: parents } = parentIds.length
-        ? await supabase.from("profiles").select("id, full_name, email").in("id", parentIds)
-        : { data: [] };
-      const parentById = new Map((parents || []).map((p) => [p.id, p]));
+    const parentIds = Array.from(new Set([...kids.map((k) => k.parent_user_id), ...charges.map((c) => c.parent_user_id)]));
+    const { data: profData } = parentIds.length ? await supabase.from("profiles").select("id, full_name, email").in("id", parentIds) : { data: [] };
+    const profiles = new Map(((profData as unknown as Profile[]) || []).map((p) => [p.id, p]));
+    const nameOf = (id: string): string => profiles.get(id)?.full_name || profiles.get(id)?.email || "Unknown family";
 
-      // Sibling discount per family: count of THAT family's enrolled children.
-      const enrolledCountByParent = new Map<string, number>();
-      for (const c of children || []) {
-        if (!enrolledChildIds.has(c.id)) continue;
-        enrolledCountByParent.set(c.parent_user_id, (enrolledCountByParent.get(c.parent_user_id) || 0) + 1);
-      }
+    const kidById = new Map(kids.map((k) => [k.id, k]));
+    const paymentsByCharge = new Map<string, FeePayment[]>();
+    for (const p of payments) paymentsByCharge.set(p.charge_id, [...(paymentsByCharge.get(p.charge_id) || []), p]);
 
-      const out: Row[] = (children || []).map((c) => {
-        const yearGroupName = (c.year_groups as unknown as { name?: string } | null)?.name || null;
-        const band = matchFeeBand(yearGroupName, feeBands);
-        const enrolled = enrolledChildIds.has(c.id);
-        const siblingCount = enrolledCountByParent.get(c.parent_user_id) || 0;
-        const hasSiblingDiscount = (settings.siblingDiscountPercent ?? 0) > 0 && siblingCount >= 2 && enrolled;
-        const discount = hasSiblingDiscount && band ? (band.annualFee * (settings.siblingDiscountPercent as number)) / 100 : 0;
-        const parent = parentById.get(c.parent_user_id);
+    setFeeBands(bands);
+    setFamilies(
+      Array.from(new Set(kids.map((k) => k.parent_user_id)))
+        .map((id) => ({ id, name: nameOf(id) }))
+        .sort((a, b) => a.name.localeCompare(b.name))
+    );
+    setChildren(kids.map((k) => ({ id: k.id, name: k.name, parentId: k.parent_user_id, yearGroupId: k.year_group_id, yearGroup: k.year_groups?.name || null })));
+    setYearGroups((ygRes.data as unknown as YearGroupOpt[]) || []);
+    setClasses((classRes.data as unknown as ClassOpt[]) || []);
+    setEnrolments(((enrolRes.data as unknown as { class_id: string; child_id: string }[]) || []).map((e) => ({ classId: e.class_id, childId: e.child_id })));
+
+    setRows(
+      charges.map((c) => {
+        const pays = paymentsByCharge.get(c.id) || [];
+        const paid = round2(pays.reduce((s, p) => s + p.amount, 0));
+        const kid = c.child_id ? kidById.get(c.child_id) : undefined;
         return {
-          childId: c.id,
-          childName: c.name,
-          yearGroup: yearGroupName,
-          parentName: parent?.full_name || null,
-          parentEmail: parent?.email || null,
-          enrolled,
-          band,
-          discount,
-          total: band ? band.annualFee - discount : 0,
+          charge: c,
+          familyName: nameOf(c.parent_user_id),
+          email: profiles.get(c.parent_user_id)?.email || "",
+          childName: kid?.name || "",
+          yearGroup: kid?.year_groups?.name || "",
+          payments: pays,
+          paid,
+          balance: Math.max(0, round2(c.amount - paid)),
+          status: chargeStatus(c, paid),
         };
-      });
-      setRows(out);
-    })();
+      })
+    );
   }, [supabase]);
 
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load
+    load();
+  }, [load]);
+
+  const live = useMemo(() => (rows || []).filter((r) => r.status !== "void"), [rows]);
+  const stats = useMemo(() => {
+    const billed = live.reduce((s, r) => s + r.charge.amount, 0);
+    const collected = live.reduce((s, r) => s + Math.min(r.paid, r.charge.amount), 0);
+    const overdue = live.filter((r) => r.status === "overdue").reduce((s, r) => s + r.balance, 0);
+    return { billed, collected, outstanding: Math.max(0, billed - collected), overdue };
+  }, [live]);
+
+  const yearOptions = useMemo(() => Array.from(new Set((rows || []).map((r) => r.yearGroup).filter(Boolean))).sort(), [rows]);
+
+  const filtered = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return (rows || []).filter((r) => {
+      if (statusFilter !== "all" && r.status !== statusFilter) return false;
+      if (yearFilter !== "all" && r.yearGroup !== yearFilter) return false;
+      if (q && !`${r.familyName} ${r.email} ${r.childName} ${r.charge.description}`.toLowerCase().includes(q)) return false;
+      return true;
+    });
+  }, [rows, statusFilter, yearFilter, search]);
+
+  const familyBalances = useMemo(() => {
+    const m = new Map<string, { name: string; email: string; billed: number; paid: number; overdue: number; count: number }>();
+    for (const r of filtered) {
+      if (r.status === "void") continue;
+      const cur = m.get(r.charge.parent_user_id) || { name: r.familyName, email: r.email, billed: 0, paid: 0, overdue: 0, count: 0 };
+      cur.billed += r.charge.amount;
+      cur.paid += Math.min(r.paid, r.charge.amount);
+      if (r.status === "overdue") cur.overdue += r.balance;
+      cur.count += 1;
+      m.set(r.charge.parent_user_id, cur);
+    }
+    return Array.from(m.entries())
+      .map(([id, v]) => ({ id, ...v, balance: Math.max(0, v.billed - v.paid) }))
+      .sort((a, b) => b.balance - a.balance);
+  }, [filtered]);
+
+  const voidCharge = async (r: Row) => {
+    if (!supabase || !window.confirm(`Void "${r.charge.description}" for ${r.familyName}? Payments already recorded are kept.`)) return;
+    const { error } = await supabase.from("fee_charges").update({ voided_at: new Date().toISOString() }).eq("id", r.charge.id);
+    setNotice(error ? "Could not void the charge." : "Charge voided.");
+    await load();
+  };
+
   const exportCsv = () => {
-    if (!rows) return;
-    const blob = new Blob([toCsv(rows)], { type: "text/csv" });
+    const header = ["Family", "Email", "Child", "Year group", "Description", "Due date", "Amount", "Paid", "Balance", "Status"];
+    const lines = filtered.map((r) =>
+      [r.familyName, r.email, r.childName, r.yearGroup, r.charge.description, r.charge.due_date, r.charge.amount.toFixed(2), r.paid.toFixed(2), r.balance.toFixed(2), STATUS_LABEL[r.status]].map(csvEscape).join(",")
+    );
+    const blob = new Blob([[header.map(csvEscape).join(","), ...lines].join("\n")], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `fees-export-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.download = `fees-${new Date().toISOString().slice(0, 10)}.csv`;
     a.click();
     URL.revokeObjectURL(url);
   };
 
   return (
-    <div className="space-y-6">
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <h1 className="font-serif text-h2 font-semibold text-ink">Fees &amp; billing</h1>
-            <p className="mt-1 text-sm text-ink/60">
-              Every child&apos;s fee band (from the published fee table) and sibling discount, computed from real enrolments —
-              not a hand-kept spreadsheet.
-            </p>
-          </div>
-          {canExport && rows && rows.length > 0 && (
-            <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors">
-              Export CSV
+    <>
+      <PageHeader
+        crumbs={[{ label: "Site administration", href: "/admin/site" }, { label: "Fees" }]}
+        title="Fees & billing"
+        subtitle="Charges raised against families, payments received, and who still owes what."
+        actions={
+          <>
+            {canExport && rows && rows.length > 0 && (
+              <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
+                Export CSV
+              </button>
+            )}
+            <button type="button" onClick={() => setCreating(true)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
+              + New charge
             </button>
-          )}
-        </div>
-        {!canExport && (
-          <p className="mt-2 text-xs text-ink/50">
-            Exporting this data requires the &quot;Can export data&quot; permission — ask a Headteacher to grant it if you need it.
-          </p>
-        )}
+          </>
+        }
+      />
+      {!canExport && <p className="-mt-3 mb-4 text-xs text-ink/50">Exporting requires the &quot;Can export data&quot; permission — ask a Headteacher to grant it.</p>}
+      {notice && (
+        <p role="status" className="mb-4 rounded-lg border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-800">
+          {notice}
+        </p>
+      )}
+      {loadError && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load fees. Has the latest database migration been applied?</p>}
+
+      <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <StatTile label="Billed" value={formatGBP(stats.billed)} />
+        <StatTile label="Collected" value={formatGBP(stats.collected)} status={stats.collected > 0 && stats.outstanding === 0 ? "ok" : undefined} />
+        <StatTile label="Outstanding" value={formatGBP(stats.outstanding)} />
+        <StatTile label="Overdue" value={formatGBP(stats.overdue)} status={stats.overdue > 0 ? "warning" : stats.billed > 0 ? "ok" : undefined} />
       </div>
 
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6 overflow-x-auto">
-        {rows === null && <p className="text-sm text-ink/60">Loading…</p>}
-        {rows && rows.length === 0 && <p className="text-sm text-ink/60">No children on record yet.</p>}
-        {rows && rows.length > 0 && (
-          <table className="w-full min-w-[720px] border-collapse text-left text-sm">
+      <div className="mb-4 flex flex-wrap items-center gap-2">
+        <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search family, child, description" className={`${inputCls} min-w-0 flex-1 sm:max-w-xs`} />
+        <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value as "all" | ChargeStatus)} className={inputCls} aria-label="Status">
+          <option value="all">All statuses</option>
+          <option value="outstanding">Outstanding</option>
+          <option value="overdue">Overdue</option>
+          <option value="paid">Paid</option>
+          <option value="void">Void</option>
+        </select>
+        <select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className={inputCls} aria-label="Year group">
+          <option value="all">All year groups</option>
+          {yearOptions.map((y) => (
+            <option key={y} value={y}>{y}</option>
+          ))}
+        </select>
+        <div className="ml-auto flex rounded-lg border border-gold-light bg-white p-0.5 text-sm">
+          {(["charges", "families"] as const).map((v) => (
+            <button key={v} type="button" aria-pressed={view === v} onClick={() => setView(v)} className={`rounded-md px-3 py-1.5 font-medium ${view === v ? "bg-teal-700 text-white" : "text-ink/70 hover:bg-cream"}`}>
+              {v === "charges" ? "Charges" : "By family"}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {rows === null && <p className="text-sm text-ink/60">Loading…</p>}
+      {rows && rows.length === 0 && !loadError && (
+        <div className="rounded-2xl border border-gold-light bg-white p-8 text-center">
+          <p className="font-medium text-ink">No charges yet</p>
+          <p className="mt-1 text-sm text-ink/60">Raise a charge for one family, or for a whole year group or class in a few clicks.</p>
+          <button type="button" onClick={() => setCreating(true)} className="mt-4 rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
+            + New charge
+          </button>
+        </div>
+      )}
+      {rows && rows.length > 0 && filtered.length === 0 && <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/60">Nothing matches those filters.</p>}
+
+      {rows && filtered.length > 0 && view === "charges" && (
+        <ul className="space-y-3">
+          {filtered.map((r) => (
+            <li key={r.charge.id} className="rounded-2xl border border-gold-light bg-white p-4">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="font-medium text-ink">{r.charge.description}</p>
+                  <p className="text-sm text-ink/60">
+                    {r.familyName}
+                    {r.childName && ` · ${r.childName}`}
+                    {r.yearGroup && ` (${r.yearGroup})`}
+                  </p>
+                  <p className="mt-0.5 text-xs text-ink/50">Due {formatDate(r.charge.due_date)}</p>
+                </div>
+                <div className="text-right">
+                  <span className={`inline-block rounded-full border px-2.5 py-0.5 text-xs font-semibold ${STATUS_STYLE[r.status]}`}>{STATUS_LABEL[r.status]}</span>
+                  <p className="mt-1 text-sm tabular-nums text-ink">
+                    {formatGBP(r.paid)} <span className="text-ink/50">of {formatGBP(r.charge.amount)}</span>
+                  </p>
+                  {r.balance > 0 && r.status !== "void" && <p className="text-xs font-medium tabular-nums text-ink/70">{formatGBP(r.balance)} to pay</p>}
+                </div>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2 text-sm">
+                {r.status !== "void" && r.balance > 0 && (
+                  <>
+                    <button type="button" onClick={() => setPaying({ row: r, full: true })} className="rounded-lg bg-teal-700 px-3 py-1.5 font-medium text-white hover:bg-teal-800">
+                      Mark paid
+                    </button>
+                    <button type="button" onClick={() => setPaying({ row: r, full: false })} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-medium text-ink/80 hover:bg-cream">
+                      Record payment
+                    </button>
+                  </>
+                )}
+                {r.payments.length > 0 && (
+                  <button type="button" onClick={() => setExpanded(expanded === r.charge.id ? null : r.charge.id)} className="rounded-lg px-3 py-1.5 font-medium text-teal-700 hover:underline">
+                    {expanded === r.charge.id ? "Hide" : "Show"} payments ({r.payments.length})
+                  </button>
+                )}
+                {r.status !== "void" && r.status !== "paid" && (
+                  <button type="button" onClick={() => voidCharge(r)} className="ml-auto rounded-lg px-3 py-1.5 text-ink/50 hover:text-red-700">
+                    Void
+                  </button>
+                )}
+              </div>
+              {expanded === r.charge.id && (
+                <ul className="mt-3 divide-y divide-gold-light/60 rounded-lg bg-cream px-3 text-sm">
+                  {r.payments.map((p) => (
+                    <li key={p.id} className="flex flex-wrap justify-between gap-2 py-2">
+                      <span className="text-ink/75">
+                        {formatDate(p.paid_on)} · {METHOD_LABEL[p.method]}
+                        {p.reference && ` · ${p.reference}`}
+                      </span>
+                      <span className="font-medium tabular-nums text-ink">{formatGBP(p.amount)}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {rows && filtered.length > 0 && view === "families" && (
+        <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
+          <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead>
-              <tr>
-                {["Child", "Year group", "Parent", "Enrolled", "Fee band", "Annual fee", "Discount", "Total"].map((h) => (
-                  <th key={h} className="border-b border-gold-light/50 p-2 font-semibold text-ink/70">
-                    {h}
-                  </th>
+              <tr className="text-ink/60">
+                {["Family", "Charges", "Billed", "Paid", "Balance", "Overdue"].map((h, i) => (
+                  <th key={h} className={`border-b border-gold-light p-3 font-semibold ${i > 1 ? "text-right" : ""}`}>{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {rows.map((r) => (
-                <tr key={r.childId}>
-                  <td className="border-b border-gold-light/20 p-2 font-medium text-ink">{r.childName}</td>
-                  <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.yearGroup || "—"}</td>
-                  <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.parentName || "—"}</td>
-                  <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.enrolled ? "Yes" : "No"}</td>
-                  <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.band?.yearGroupRange || "—"}</td>
-                  <td className="border-b border-gold-light/20 p-2 text-ink/70">{r.band ? formatGBP(r.band.annualFee) : "—"}</td>
-                  <td className="border-b border-gold-light/20 p-2 text-gold-700">{r.discount ? `−${formatGBP(r.discount)}` : "—"}</td>
-                  <td className="border-b border-gold-light/20 p-2 font-medium text-ink">{r.band ? formatGBP(r.total) : "—"}</td>
+              {familyBalances.map((f) => (
+                <tr key={f.id}>
+                  <td className="border-b border-gold-light/40 p-3">
+                    <span className="font-medium text-ink">{f.name}</span>
+                    {f.email && <span className="block text-xs text-ink/50">{f.email}</span>}
+                  </td>
+                  <td className="border-b border-gold-light/40 p-3 text-ink/70">{f.count}</td>
+                  <td className="border-b border-gold-light/40 p-3 text-right tabular-nums">{formatGBP(f.billed)}</td>
+                  <td className="border-b border-gold-light/40 p-3 text-right tabular-nums">{formatGBP(f.paid)}</td>
+                  <td className="border-b border-gold-light/40 p-3 text-right font-semibold tabular-nums">{formatGBP(f.balance)}</td>
+                  <td className={`border-b border-gold-light/40 p-3 text-right tabular-nums ${f.overdue > 0 ? "font-semibold text-red-700" : "text-ink/40"}`}>{f.overdue > 0 ? formatGBP(f.overdue) : "—"}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-        )}
-        <p className="mt-3 text-xs text-ink/50">
-          &quot;Fee band&quot; is matched from the child&apos;s year group against the published fee table — a child with no year
-          group set, or one that doesn&apos;t match a published band, shows as &quot;—&quot; rather than a guessed figure.
-        </p>
-      </div>
-    </div>
+        </div>
+      )}
+
+      {creating && (
+        <NewChargeDialog
+          families={families}
+          children={children}
+          yearGroups={yearGroups}
+          classes={classes}
+          enrolments={enrolments}
+          feeBands={feeBands}
+          onClose={() => setCreating(false)}
+          onDone={(n) => {
+            setCreating(false);
+            setNotice(`${n} charge${n === 1 ? "" : "s"} created.`);
+            load();
+          }}
+        />
+      )}
+      {paying && (
+        <PaymentDialog
+          chargeId={paying.row.charge.id}
+          title={`${paying.row.charge.description} · ${paying.row.familyName}`}
+          balance={paying.row.balance}
+          fullPayment={paying.full}
+          onClose={() => setPaying(null)}
+          onDone={() => {
+            setPaying(null);
+            setNotice("Payment recorded.");
+            load();
+          }}
+        />
+      )}
+    </>
   );
 }
 
@@ -173,9 +383,7 @@ export default function AdminFeesPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
-        <AdminShell>
-          <FeesContent />
-        </AdminShell>
+        <FeesContent />
       </LearnGate>
     </section>
   );

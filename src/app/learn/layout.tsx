@@ -8,6 +8,7 @@ import { LearnAccountMenu } from "@/components/learn/LearnAccountMenu";
 import { NotificationBell } from "@/components/learn/NotificationBell";
 import { PortalSidebar, PortalSidebarDrawer } from "@/components/learn/PortalSidebar";
 import { portalAreaFor } from "@/lib/learn/nav";
+import { SignatureBanner } from "@/components/learn/SignatureBanner";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -99,7 +100,10 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
         </header>
 
         <main id="main" className="flex-1">
-          <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">{children}</div>
+          <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
+            <SignatureBanner />
+            {children}
+          </div>
         </main>
       </div>
     </div>

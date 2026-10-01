@@ -189,6 +189,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/family/homework", label: "Homework", icon: "homework" },
     { href: "/family/reports", label: "Reports", icon: "reports" },
     { href: "/family/messages", label: "Messages", icon: "messages" },
+    { href: "/family/fees", label: "Fees", icon: "fees" },
   ],
   student: [
     { href: "/student/dashboard", label: "Home", icon: "overview" },
