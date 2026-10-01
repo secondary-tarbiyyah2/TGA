@@ -9,7 +9,7 @@ const PAGE_SIZE = 25;
 
 /**
  * A genuine filterable, paginated viewer over audit_log — restricted to
- * /learn Head Teacher/Admin at the RLS level (0015's additive policy),
+ * /learn Headteacher/Admin at the RLS level (0015's additive policy),
  * broader than the safeguarding log since audit entries span every phase,
  * narrower than every other compliance permission holder. Export (CSV) is
  * gated behind can_export_data, matching the pattern already established

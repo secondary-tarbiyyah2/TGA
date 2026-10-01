@@ -181,7 +181,7 @@ export function SafeguardingLog() {
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Safeguarding log</h2>
       <p className="mt-1 text-xs text-ink/50">
-        Visible only to you as Safeguarding Lead / Head Teacher, with a freshly re-verified authenticator code. Even Admin cannot see
+        Visible only to you as Safeguarding Lead / Headteacher, with a freshly re-verified authenticator code. Even Admin cannot see
         this section.
       </p>
       <ul className="mt-3 space-y-2">

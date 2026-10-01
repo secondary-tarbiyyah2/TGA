@@ -125,7 +125,7 @@ function FeesContent() {
         </div>
         {!canExport && (
           <p className="mt-2 text-xs text-ink/50">
-            Exporting this data requires the &quot;Can export data&quot; permission — ask a Head Teacher to grant it if you need it.
+            Exporting this data requires the &quot;Can export data&quot; permission — ask a Headteacher to grant it if you need it.
           </p>
         )}
       </div>

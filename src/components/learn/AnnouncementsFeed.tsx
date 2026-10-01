@@ -9,7 +9,7 @@ type Announcement = { id: string; scope: "class" | "school"; class_id: string | 
  * Reads school-wide + (when classIds is given) class-scoped announcements.
  * RLS (0013) already scopes what comes back per role — this component just
  * renders it. `canPost`/`postClassId` optionally render a small compose
- * form for a teacher posting to their own class, or Head Teacher/Admin
+ * form for a teacher posting to their own class, or Headteacher/Admin
  * posting school-wide.
  */
 export function AnnouncementsFeed({

@@ -13,7 +13,7 @@ export const STAFF_ROLES: LearnRole[] = ["head_teacher", "admin", "admissions", 
 export type RoleGrant = { role: LearnRole; scope_type: "none" | "class" | "family"; scope_id: string | null };
 
 const ROLE_LABELS: Record<LearnRole, string> = {
-  head_teacher: "Head Teacher",
+  head_teacher: "Headteacher",
   admin: "Admin",
   admissions: "Admissions",
   teacher: "Teacher",

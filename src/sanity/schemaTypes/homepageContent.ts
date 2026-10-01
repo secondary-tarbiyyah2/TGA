@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 
-// Singleton (_id: "homepageContent") — lets Head Teacher/Admin edit the
+// Singleton (_id: "homepageContent") — lets Headteacher/Admin edit the
 // homepage's headline copy, pillar cards and "how it works" steps from
 // Studio, with draft/publish/history/revert, instead of needing a code
 // change + redeploy for every wording tweak. Every field is optional and

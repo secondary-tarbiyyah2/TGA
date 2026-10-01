@@ -18,7 +18,7 @@
 // child" — see the ground rule to reuse the existing audit table rather
 // than invent a parallel one.
 //
-// Per-run digests, not one email per absence: the Head Teacher gets ONE
+// Per-run digests, not one email per absence: the Headteacher gets ONE
 // email per run listing every newly-unexplained absence (not N separate
 // emails), and the Safeguarding Lead gets ONE email per run listing every
 // child who newly crossed the threshold. This is a practical choice to
@@ -27,7 +27,7 @@
 //
 // Requires SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY. Email requires
 // RESEND_API_KEY (best-effort, same as elsewhere in this project — always
-// logs to the run summary regardless). Safeguarding Lead / Head Teacher
+// logs to the run summary regardless). Safeguarding Lead / Headteacher
 // contact details are read live from Sanity at runtime (this is a
 // GitHub-Actions batch job, not a Next.js build step, so it can call
 // Sanity's read API directly — same approach as
@@ -66,7 +66,7 @@ function shell(bodyHtml) {
 </div></body></html>`;
 }
 
-// ── Sanity: safeguarding lead / head teacher contact ────────────────────
+// ── Sanity: safeguarding lead / headteacher contact ────────────────────
 const sanityProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const sanityDataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const sanityToken = process.env.SANITY_API_TOKEN;
@@ -80,7 +80,7 @@ if (sanityProjectId && sanityToken) {
   headteacherName = settings?.headteacherName || null;
   admissionsEmail = settings?.admissionsEmail || null;
 } else {
-  console.log("NEXT_PUBLIC_SANITY_PROJECT_ID/SANITY_API_TOKEN not set — Head Teacher/Safeguarding Lead escalation emails will be skipped (unexplained absences are still logged to audit_log).");
+  console.log("NEXT_PUBLIC_SANITY_PROJECT_ID/SANITY_API_TOKEN not set — Headteacher/Safeguarding Lead escalation emails will be skipped (unexplained absences are still logged to audit_log).");
 }
 
 // ── Settings ─────────────────────────────────────────────────────────────
@@ -216,7 +216,7 @@ for (const li of dueLessons) {
   }
 }
 
-const headTeacherEmail = admissionsEmail; // no dedicated "head teacher email" field in siteSettings yet — see report
+const headTeacherEmail = admissionsEmail; // no dedicated "headteacher email" field in siteSettings yet — see report
 if (headTeacherDigest.length > 0 && headTeacherEmail) {
   await sendEmail(
     headTeacherEmail,
@@ -236,7 +236,7 @@ const summaryLines = [
   "## Absence alerts",
   `Checked ${dueLessons.length} lesson(s) past their alert window.`,
   `Parent alert emails sent: ${parentEmailsSent}.`,
-  `Newly unexplained absences this run: ${headTeacherDigest.length}${headTeacherEmail ? "" : " (Head Teacher digest skipped — no admissionsEmail configured in Site settings)"}.`,
+  `Newly unexplained absences this run: ${headTeacherDigest.length}${headTeacherEmail ? "" : " (Headteacher digest skipped — no admissionsEmail configured in Site settings)"}.`,
   `Safeguarding escalations this run: ${safeguardingDigest.length}${safeguardingLeadContact ? "" : safeguardingDigest.length ? " (email skipped — no safeguardingLeadContact configured in Site settings)" : ""}.`,
 ];
 console.log(summaryLines.join("\n"));

@@ -2,7 +2,7 @@
 // `staff_vetting_records`) for a DBS renewal due within the warning window,
 // or missing checks entirely for a current staff member. Always writes a
 // summary (visible in the GitHub Actions run), and best-effort emails the
-// Head Teacher — same "never depend on email alone" pattern as
+// Headteacher — same "never depend on email alone" pattern as
 // scripts/check-policy-reviews.mjs.
 //
 // Requires SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY. RESEND_API_KEY is
@@ -93,7 +93,7 @@ if (!resendApiKey || !notifyEmail) {
 
 const html = `<!DOCTYPE html><html><body style="font-family:Georgia,serif;color:#1B1E21;">
 <h2 style="color:#5E4B1E;">Single Central Record — checks due</h2>
-<p>Dear ${headTeacherRole.profiles.full_name || "Head Teacher"},</p>
+<p>Dear ${headTeacherRole.profiles.full_name || "Headteacher"},</p>
 <p>The following ${flags.length === 1 ? "item needs" : "items need"} attention on the Single Central Record:</p>
 <ul>${flags.map((f) => `<li><strong>${f.name}</strong> — ${f.reason}</li>`).join("")}</ul>
 <p>Review and update these on the Compliance page under /learn/admin/compliance.</p>

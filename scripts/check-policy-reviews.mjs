@@ -1,7 +1,7 @@
 // Checks every policyLink's nextReview date against Sanity, and flags any
 // due within the next 30 days. Always writes a summary (visible in the
 // GitHub Actions run regardless of email working), and best-effort emails
-// the Head Teacher / admissions address via Resend — matching this
+// the Headteacher / admissions address via Resend — matching this
 // project's established "never depend on email alone" pattern (Resend's
 // sending domain isn't verified yet; see scripts/seed-admin.mjs and
 // supabase/functions/*/index.ts for the same reasoning elsewhere).

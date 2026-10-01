@@ -1,6 +1,6 @@
 // Fires the "Generate timetable" GitHub Actions workflow
 // (.github/workflows/generate-timetable.yml) via GitHub's workflow_dispatch
-// API, so a Head Teacher/Admin/Timetabler can start a new draft timetable
+// API, so a Headteacher/Admin/Timetabler can start a new draft timetable
 // run from a button on /learn/admin/lessons — no GitHub access required
 // (reported feedback: "the user explicitly does not want to touch GitHub
 // at all"). This function only ever DISPATCHES the workflow; the workflow

@@ -17,7 +17,7 @@ type Mark = {
 type HistoryRow = { id: string; run_id: string; status: string; note: string | null; changed_at: string };
 
 /**
- * The Head Teacher/Admin action from the ground rules: mark a specific
+ * The Headteacher/Admin action from the ground rules: mark a specific
  * published timetable_run's slots for a specific year_group as the public
  * sample week, with its own draft -> review -> published lifecycle and a
  * real history/revert. RLS (0016_eligibility_quiz_v2.sql) is the actual

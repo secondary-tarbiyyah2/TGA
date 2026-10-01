@@ -54,7 +54,7 @@ export default defineType({
       of: [{ type: "string" }],
       options: {
         list: [
-          { title: "Head Teacher", value: "head_teacher" },
+          { title: "Headteacher", value: "head_teacher" },
           { title: "Admin", value: "admin" },
           { title: "Admissions", value: "admissions" },
           { title: "Teacher", value: "teacher" },

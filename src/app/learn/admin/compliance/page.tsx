@@ -76,7 +76,7 @@ function SafeguardingKeywordsAdmin() {
 }
 
 /**
- * Head Teacher/Admin/Safeguarding-Lead compliance dashboard: unexplained-
+ * Headteacher/Admin/Safeguarding-Lead compliance dashboard: unexplained-
  * absence escalations (Phase B's ABSENCE_ALERT_SENT audit_log entries),
  * keyword-flagged messages (0013), and outstanding e-signatures (0014) —
  * all in one place, per the ground rule. RLS on `audit_log`,

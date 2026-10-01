@@ -29,7 +29,7 @@ function ReportConcernForm() {
 
   useEffect(() => {
     if (!supabase) return;
-    // Categories are readable only by Safeguarding Lead/Head Teacher (0015)
+    // Categories are readable only by Safeguarding Lead/Headteacher (0015)
     // — a reporter never needs to browse this list, so it's fine that a
     // plain parent/student/teacher gets an empty list back here and falls
     // through to the free-text-only "Other" path below.
@@ -76,7 +76,7 @@ function ReportConcernForm() {
       <h1 className="font-serif text-h2 font-semibold text-ink">Report a concern</h1>
       <p className="mt-1 text-sm text-ink/60">
         Use this form to raise any safeguarding or welfare concern — about a child, a member of staff, or anything else. It goes
-        directly and only to the school&apos;s Safeguarding Lead and Head Teacher.
+        directly and only to the school&apos;s Safeguarding Lead and Headteacher.
       </p>
       <form onSubmit={submit} className="mt-4 space-y-4">
         <label className="block text-sm text-ink">

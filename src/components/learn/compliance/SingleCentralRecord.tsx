@@ -21,7 +21,7 @@ const EMPTY_FORM = {
 };
 
 /**
- * The Single Central Record — Head Teacher/Admin only (0015), not broadly
+ * The Single Central Record — Headteacher/Admin only (0015), not broadly
  * staff-visible, standard SCR practice. Right-to-work is deliberately
  * verified/date/type/verifier only, never a document number — see the
  * migration header for the data-minimization reasoning.

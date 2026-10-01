@@ -363,7 +363,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
                     disabled={busy}
                     onClick={() => watchRecording(r.id, "export")}
                     className="rounded-lg border border-red-300 px-3 py-1.5 text-xs text-red-700 font-medium transition-colors"
-                    title="Requires Head Teacher/Admin with Can export data — every use is logged"
+                    title="Requires Headteacher/Admin with Can export data — every use is logged"
                   >
                     Export raw file (logged)
                   </button>

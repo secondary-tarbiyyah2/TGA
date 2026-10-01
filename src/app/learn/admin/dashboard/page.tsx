@@ -192,9 +192,9 @@ function DashboardContent() {
   const { session, roles } = useLearnSession();
   const isSafeguardingLead = useLearnPermission("safeguarding_lead");
   // roles can hold one row per scope (e.g. several classes) that all
-  // resolve to the same label — dedupe before display, or "Head Teacher"
-  // repeats once per underlying row (seen live: "Head Teacher, Head
-  // Teacher, Head Teacher…").
+  // resolve to the same label — dedupe before display, or "Headteacher"
+  // repeats once per underlying row (seen live: "Headteacher, Head
+  // Teacher, Headteacher…").
   const isHead = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
   const myRoles = Array.from(new Set(roles.map((r) => learnRoleLabel(r.role)))).join(", ");
   const supabase = getSupabaseClient();

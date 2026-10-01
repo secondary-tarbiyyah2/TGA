@@ -9,7 +9,7 @@ type RunRow = { id: number; data_type: string; run_at: string; action: string; r
 /**
  * Read-only view of the retention registry (0015_compliance.sql) — the
  * schedule itself and a log of what each retention job actually did on its
- * last few runs. Writes to retention_schedule stay Head Teacher/Admin-only
+ * last few runs. Writes to retention_schedule stay Headteacher/Admin-only
  * and aren't exposed here (this is a compliance viewer, not a settings
  * page); retention_job_runs has no client write policy at all (service
  * role only).

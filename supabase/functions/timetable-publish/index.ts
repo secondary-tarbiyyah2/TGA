@@ -1,7 +1,7 @@
 // Publish, or roll back, a timetable run. Deployed WITH JWT verification;
 // only head_teacher/admin may call this at all (re-checked here from the
 // caller's OWN user_roles, never trusted from the request body) — matches
-// the ground rule "Publish action (Head Teacher/Admin/Timetabler only)"
+// the ground rule "Publish action (Headteacher/Admin/Timetabler only)"
 // (timetabler alone is deliberately NOT enough for publish/rollback: those
 // are higher-stakes than editing a draft, same reasoning 0007 already
 // applies to "sensitive roles").

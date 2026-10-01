@@ -10,7 +10,7 @@ type Message = { id: string; sender_id: string; body: string; created_at: string
  * messages are just shown as normal to the two participants — flagging
  * only changes who ELSE (the Safeguarding Lead) can see it, never blocks
  * sending. */
-export function MessageThread({ threadId }: { threadId: string }) {
+export function MessageThread({ threadId, onSent }: { threadId: string; onSent?: () => void }) {
   const supabase = getSupabaseClient();
   const [messages, setMessages] = useState<Message[] | null>(null);
   const [body, setBody] = useState("");
@@ -36,6 +36,14 @@ export function MessageThread({ threadId }: { threadId: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase, threadId]);
 
+  // Pick up replies without a refresh.
+  useEffect(() => {
+    if (!supabase) return;
+    const id = window.setInterval(() => load(), 8000);
+    return () => window.clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [supabase, threadId]);
+
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ block: "nearest" });
   }, [messages]);
@@ -48,6 +56,7 @@ export function MessageThread({ threadId }: { threadId: string }) {
       if (!error) {
         setBody("");
         await load();
+        onSent?.();
       }
     } finally {
       setBusy(false);
@@ -55,7 +64,7 @@ export function MessageThread({ threadId }: { threadId: string }) {
   };
 
   return (
-    <div className="flex h-96 flex-col rounded-lg border border-gold-light/40">
+    <div className="flex h-[58vh] min-h-[340px] flex-col">
       <div className="flex-1 space-y-2 overflow-y-auto p-3">
         {messages === null ? (
           <p className="text-sm text-ink/60">Loading…</p>

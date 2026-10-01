@@ -21,7 +21,7 @@ function daysUntil(iso: string) {
 }
 
 /**
- * Head Teacher/Admin can log and action requests; anyone holding
+ * Headteacher/Admin can log and action requests; anyone holding
  * can_export_data can see the queue too (they run the export mechanics)
  * but cannot change status — enforced by RLS (0015), this component just
  * hides the action controls for them as a convenience.

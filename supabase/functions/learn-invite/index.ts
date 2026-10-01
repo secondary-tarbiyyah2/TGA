@@ -2,18 +2,18 @@
 // (never a password — nothing here ever displays, logs, or emails a
 // credential) and grants the requested primary role plus any add-on
 // permissions. Deployed WITH JWT verification: only a caller who already
-// holds Head Teacher or Admin (per THEIR OWN user_roles rows, re-checked
+// holds Headteacher or Admin (per THEIR OWN user_roles rows, re-checked
 // here server-side, never trusted from the request body) can call this at
-// all, and granting Head Teacher, Admin, or the Safeguarding Lead add-on
-// requires the caller to specifically be Head Teacher.
+// all, and granting Headteacher, Admin, or the Safeguarding Lead add-on
+// requires the caller to specifically be Headteacher.
 //
 // The full staff-creation form (capability preview, recruitment gate,
 // subjects/year-groups/classes UI) is Phase 2 — this function is the
 // server-side plumbing Phase 2's UI calls into, plus what the Phase 1
 // bootstrap script (scripts/invite-first-head-teacher.mjs) uses directly
-// via the service-role key to create the very first Head Teacher account
+// via the service-role key to create the very first Headteacher account
 // (that script doesn't go through this HTTP function at all, since there's
-// no existing Head Teacher yet to authorize the call — see that script's
+// no existing Headteacher yet to authorize the call — see that script's
 // own comments).
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
@@ -42,7 +42,7 @@ const SENSITIVE_ADD_ONS: AddOn[] = ["safeguarding_lead"];
 // module resolution, and this is only ever used for the email subject/body
 // below, not anywhere roles are actually enforced.
 const ROLE_LABEL: Record<Role, string> = {
-  head_teacher: "Head Teacher",
+  head_teacher: "Headteacher",
   admin: "Admin",
   admissions: "Admissions",
   teacher: "Teacher",

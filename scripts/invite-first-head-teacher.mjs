@@ -1,6 +1,6 @@
-// Bootstraps the very first Head Teacher account for /learn. Doesn't go
+// Bootstraps the very first Headteacher account for /learn. Doesn't go
 // through the learn-invite Edge Function (which requires the CALLER to
-// already be a Head Teacher/Admin under their own JWT) — there is by
+// already be a Headteacher/Admin under their own JWT) — there is by
 // definition no one to authorize this yet. This script instead uses the
 // service-role key directly, exactly as trusted as that Edge Function is,
 // and does the same three things it would: create the auth account with no
@@ -82,7 +82,7 @@ if (linkErr) throw linkErr;
 
 console.log("");
 console.log("========================================");
-console.log(`Head Teacher account ready: ${email}`);
+console.log(`Headteacher account ready: ${email}`);
 console.log("One-time setup link (sets their own password + MFA — never a password we hand over):");
 console.log(linkData.properties.action_link);
 console.log("This link is shown ONCE — it is not stored anywhere. Copy it now and share it with them directly.");

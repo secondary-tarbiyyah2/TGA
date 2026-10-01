@@ -143,7 +143,7 @@ function TeachReportsContent() {
               Submit for approval
             </button>
           </div>
-          <p className="mt-2 text-xs text-ink/50">Once submitted, only Head Teacher/Admin can approve and release it to the family.</p>
+          <p className="mt-2 text-xs text-ink/50">Once submitted, only Headteacher/Admin can approve and release it to the family.</p>
         </div>
       )}
     </div>

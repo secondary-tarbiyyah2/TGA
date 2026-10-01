@@ -64,7 +64,7 @@ for (const d of docs) {
 // flip requires_signature off rather than deleting, so existing
 // document_signatures history (audit trail) is never lost.
 const syncedIds = new Set(docs.map((d) => d._id));
-const { data: existing } = await supabase.from("signable_documents").select("id, sanity_document_id").eq("requires_signature", true);
+const { data: existing } = await supabase.from("signable_documents").select("id, sanity_document_id").eq("requires_signature", true).eq("source", "sanity");
 for (const row of existing || []) {
   if (!syncedIds.has(row.sanity_document_id)) {
     await supabase.from("signable_documents").update({ requires_signature: false }).eq("id", row.id);

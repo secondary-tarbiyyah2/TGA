@@ -71,7 +71,7 @@ function IncidentCard({ incident }: { incident: Incident }) {
   );
 }
 
-/** Head Teacher/Admin write, view_compliance read — see 0015. */
+/** Headteacher/Admin write, view_compliance read — see 0015. */
 export function IncidentBreachLog() {
   const supabase = getSupabaseClient();
   const [incidents, setIncidents] = useState<Incident[] | null>(null);

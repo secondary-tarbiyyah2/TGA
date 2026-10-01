@@ -19,7 +19,7 @@ export type ClassSummary = {
 /** Who is looking: a teacher, or a student/parent looking at one child. */
 export type ClassViewer =
   | { kind: "teacher" }
-  | { kind: "staff" } // head teacher / admin: every class, read via manage_academic
+  | { kind: "staff" } // headteacher / admin: every class, read via manage_academic
   | { kind: "student"; childId: string }
   | { kind: "parent"; childId: string };
 

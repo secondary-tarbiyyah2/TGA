@@ -27,10 +27,6 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
   if (req.method !== "POST") return jsonResponse({ ok: false, error: "method_not_allowed" }, 405);
 
-  if (!bbbConfigured()) {
-    return jsonResponse({ ok: false, error: "bbb_not_configured", detail: "BBB_SERVER_URL/BBB_SECRET are not set yet — see SETUP.md." }, 503);
-  }
-
   const authHeader = req.headers.get("Authorization");
   if (!authHeader) return jsonResponse({ ok: false, error: "forbidden" }, 403);
   const callerClient = createClient(supabaseUrl, anonKey, { global: { headers: { Authorization: authHeader } } });
@@ -49,7 +45,7 @@ Deno.serve(async (req) => {
 
   const { data: instance, error: instanceErr } = await serviceClient
     .from("lesson_instances")
-    .select("id, date, recording_enabled, timetable_slots(class_id, classes(name, subjects(name)))")
+    .select("id, date, recording_enabled, timetable_slots(class_id, classes(name, meeting_url, subjects(name)))")
     .eq("id", lessonInstanceId)
     .single();
   if (instanceErr || !instance) return jsonResponse({ ok: false, error: "lesson_not_found" }, 404);
@@ -87,6 +83,30 @@ Deno.serve(async (req) => {
   if (isClassTeacher || isManageAcademicStaff) role = "moderator";
   else if (isParentOfEnrolledChild || isEnrolledStudent) role = "viewer";
   else return jsonResponse({ ok: false, error: "forbidden" }, 403);
+
+  // No BigBlueButton server yet: fall back to the class's own recurring
+  // meeting link (e.g. a Microsoft Teams link) so lessons still run.
+  if (!bbbConfigured()) {
+    const link = (instance.timetable_slots as unknown as { classes?: { meeting_url?: string | null } })?.classes?.meeting_url;
+    if (!link) {
+      return jsonResponse(
+        {
+          ok: false,
+          error: "bbb_not_configured",
+          detail: "This class has no meeting link yet. Add one (for example a recurring Teams link) in Academic setup, on the class.",
+        },
+        503
+      );
+    }
+    await serviceClient.from("audit_log").insert({
+      actor_id: userId,
+      action: "LESSON_JOIN",
+      target_table: "lesson_instances",
+      target_id: lessonInstanceId,
+      changes: { role, provider: "class_link" },
+    });
+    return jsonResponse({ ok: true, joinUrl: link, role, provider: "link" });
+  }
 
   // Deterministic external meeting ID — the lesson instance's own id, so
   // "ensure it exists" is naturally idempotent across repeated joins.

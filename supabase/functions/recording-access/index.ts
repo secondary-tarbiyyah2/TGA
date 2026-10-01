@@ -67,10 +67,10 @@ Deno.serve(async (req) => {
 
   if (mode === "export") {
     if (!isHeadTeacherOrAdmin || !canExportData) {
-      return jsonResponse({ ok: false, error: "forbidden", detail: "Raw recording export requires Head Teacher/Admin with the Can export data permission." }, 403);
+      return jsonResponse({ ok: false, error: "forbidden", detail: "Raw recording export requires Headteacher/Admin with the Can export data permission." }, 403);
     }
   } else {
-    // stream mode: class staff, head teacher/admin, or a consenting
+    // stream mode: class staff, headteacher/admin, or a consenting
     // enrolled family member.
     let isConsentingFamily = false;
     if (!isClassStaff && !isHeadTeacherOrAdmin && classId) {
