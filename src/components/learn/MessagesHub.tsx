@@ -70,12 +70,23 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
 
     const dir = await supabase.rpc("message_directory");
     if (dir.error) {
-      setPeople([]);
-      setError(
-        /message_directory/.test(dir.error.message)
-          ? "Messaging is being upgraded. Give it a minute and refresh."
-          : "Couldn't load the list of people.",
-      );
+      // Fallback: build the list straight from roles + profiles (works for staff,
+      // who can read both) so messaging never goes blank if the RPC misbehaves.
+      const { data: roleRows, error: rErr } = await supabase.from("user_roles").select("user_id, role");
+      if (rErr || !roleRows) {
+        setPeople([]);
+        setError(`Couldn't load the list of people (${dir.error.message}).`);
+      } else {
+        const ids = [...new Set((roleRows as { user_id: string; role: string }[]).map((r) => r.user_id))].filter((id) => id !== user.id);
+        const { data: profs } = await supabase.from("profiles").select("id, full_name").in("id", ids);
+        const names = new Map(((profs as { id: string; full_name: string | null }[]) || []).map((p) => [p.id, p.full_name || "Unnamed"]));
+        const byUser = new Map<string, string[]>();
+        for (const r of roleRows as { user_id: string; role: string }[]) {
+          if (r.user_id === user.id || r.role === "student") continue;
+          byUser.set(r.user_id, [...(byUser.get(r.user_id) || []), r.role]);
+        }
+        setPeople([...byUser.entries()].map(([id, roles]) => ({ user_id: id, full_name: names.get(id) || "Unnamed", roles: [...new Set(roles)], detail: null })).sort((a, b) => a.full_name.localeCompare(b.full_name)));
+      }
     } else {
       setPeople((dir.data as Person[]) || []);
     }
