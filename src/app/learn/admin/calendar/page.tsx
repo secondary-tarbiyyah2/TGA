@@ -11,7 +11,7 @@ export default function AdminCalendarPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
-        <PageHeader title="Calendar" subtitle="Every live lesson and homework deadline across the school." />
+        <PageHeader title="Calendar" subtitle="Pick a date to see every lesson, deadline and notice for any child, class or teacher." />
         <CalendarView scope={SCOPE} canManageTerms />
       </LearnGate>
     </section>

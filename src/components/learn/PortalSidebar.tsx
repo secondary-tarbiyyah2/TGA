@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
-import { AREA_SUBTITLE, isActivePath, visibleSidebarGroups, type PortalArea, type SidebarIcon } from "@/lib/learn/nav";
+import { AREA_SUBTITLE, isSidebarItemActive, visibleSidebarGroups, type PortalArea, type SidebarIcon } from "@/lib/learn/nav";
 
 // Outline icons, 20×20, drawn with stroke so they read like the rest of
 // the UI (Ihsan/Lucide style).
@@ -69,7 +69,7 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
     area,
     roles.map((r) => r.role),
   );
-  const activeGroup = groups.find((g) => g.items.some((i) => isActivePath(pathname, i.href)))?.label;
+  const activeGroup = groups.find((g) => g.items.some((i) => isSidebarItemActive(pathname, i)))?.label;
   // Open state is remembered per area; the group holding the current page
   // is always opened. Default: just the first group.
   const storeKey = `learn.sidebar.open.${area}`;
@@ -144,7 +144,7 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
               {isOpen && (
                 <ul id={listId} className="space-y-0.5">
                   {g.items.map((item) => {
-                    const active = isActivePath(pathname, item.href);
+                    const active = isSidebarItemActive(pathname, item);
                     return (
                       <li key={item.href}>
                         <Link

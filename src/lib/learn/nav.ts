@@ -159,19 +159,57 @@ export type SidebarIcon =
 
 // `group` is the collapsible heading the item sits under in the sidebar.
 // Areas whose items have no group render as one flat list.
-export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean; group?: string };
+// `group` is the collapsible heading the item sits under in the sidebar.
+// Items with no `group` render first, as an unlabelled flat list.
+// `matchPrefixes` lets one item stay highlighted across several routes
+// (the "Classroom" item covers classes, homework, behaviour and so on).
+export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean; group?: string; matchPrefixes?: string[] };
 export type SidebarGroup = { label: string; items: SidebarItem[] };
 
 const G_OVERVIEW = "Overview";
 const G_PEOPLE = "People & admissions";
-const G_TEACHING = "Teaching & learning";
-const G_ATTENDANCE = "Attendance & behaviour";
+const G_CLASSROOM = "Classroom";
+const G_ATTENDANCE = "Attendance";
 const G_COMMS = "Communication";
 const G_FINANCE = "Finance & compliance";
 const G_SETTINGS = "Settings";
+const G_STAFF = "Staff";
 
-/** Display order of the admin sidebar groups. */
-export const SIDEBAR_GROUP_ORDER: string[] = [G_OVERVIEW, G_PEOPLE, G_TEACHING, G_ATTENDANCE, G_COMMS, G_FINANCE, G_SETTINGS];
+/** Display order of the sidebar groups (unlabelled items come first). */
+export const SIDEBAR_GROUP_ORDER: string[] = ["", G_OVERVIEW, G_PEOPLE, G_CLASSROOM, G_ATTENDANCE, G_COMMS, G_FINANCE, G_SETTINGS, G_STAFF];
+
+/** The "Classroom" tab strip shown on every page of that area's classroom
+ * routes (see ClassroomTabs). Routes are unchanged; the tabs just link them. */
+export type ClassroomTab = { href: string; label: string };
+export const CLASSROOM_TABS: Record<PortalArea, ClassroomTab[]> = {
+  teach: [
+    { href: "/teach/classes", label: "My classes" },
+    { href: "/teach/homework", label: "Homework" },
+    { href: "/teach/assessment", label: "Assessment & grades" },
+    { href: "/teach/behaviour", label: "Behaviour" },
+    { href: "/teach/pupils", label: "Pupils" },
+  ],
+  admin: [
+    { href: "/admin/classes", label: "Classes" },
+    { href: "/admin/homework", label: "Homework" },
+    { href: "/admin/behaviour", label: "Behaviour" },
+    { href: "/admin/reports", label: "Reports" },
+  ],
+  family: [
+    { href: "/family/classes", label: "Classes" },
+    { href: "/family/homework", label: "Homework" },
+    { href: "/family/behaviour", label: "Behaviour" },
+    { href: "/family/reports", label: "Reports" },
+  ],
+  student: [
+    { href: "/student/classes", label: "Classes" },
+    { href: "/student/homework", label: "Homework" },
+    { href: "/student/behaviour", label: "Behaviour" },
+    { href: "/student/reports", label: "Reports" },
+  ],
+};
+
+const tabPrefixes = (area: PortalArea, extra: string[] = []) => [...CLASSROOM_TABS[area].map((t) => t.href), ...extra];
 
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   admin: [
@@ -181,14 +219,14 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/admissions", label: "Admissions", icon: "admissions", group: G_PEOPLE },
     { href: "/admin/people", label: "People & accounts", icon: "people", group: G_PEOPLE },
     { href: "/admin/pupils", label: "Pupil records", icon: "documents", group: G_PEOPLE },
-    { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true, group: G_TEACHING },
-    { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true, group: G_TEACHING },
-    { href: "/admin/academic", label: "Academic setup", icon: "academic", group: G_TEACHING },
-    { href: "/admin/homework", label: "Homework", icon: "homework", headOnly: true, group: G_TEACHING },
-    { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true, group: G_TEACHING },
+    { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true, group: G_CLASSROOM, matchPrefixes: ["/admin/class"] },
+    { href: "/admin/homework", label: "Homework", icon: "homework", headOnly: true, group: G_CLASSROOM },
+    { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true, group: G_CLASSROOM },
+    { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true, group: G_CLASSROOM },
+    { href: "/admin/academic", label: "Academic setup", icon: "academic", group: G_CLASSROOM },
+    { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true, group: G_CLASSROOM },
     { href: "/admin/attendance", label: "Attendance", icon: "attendance", headOnly: true, group: G_ATTENDANCE },
     { href: "/admin/absences", label: "Absences", icon: "absences", headOnly: true, group: G_ATTENDANCE },
-    { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true, group: G_ATTENDANCE },
     { href: "/admin/staff-attendance", label: "Staff attendance", icon: "clock", headOnly: true, group: G_ATTENDANCE },
     { href: "/admin/messages", label: "Messages", icon: "messages", headOnly: true, group: G_COMMS },
     { href: "/admin/message-oversight", label: "Message oversight", icon: "compliance", headOnly: true, group: G_COMMS },
@@ -200,44 +238,54 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/quiz", label: "Quiz & sample weeks", icon: "quiz", headOnly: true, group: G_SETTINGS },
     { href: "/admin/settings", label: "Settings", icon: "settings", group: G_SETTINGS },
   ],
+  // Teacher: a short flat list; everything about classes lives under one
+  // "Classroom" item (tab strip: classes, homework, assessment, behaviour,
+  // pupils). Staff admin sits in its own small group.
   teach: [
     { href: "/teach/dashboard", label: "Overview", icon: "overview" },
     { href: "/teach/today", label: "Today", icon: "today" },
-    { href: "/teach/absences", label: "Absences", icon: "absences" },
-    { href: "/teach/clock", label: "My hours", icon: "clock" },
-    { href: "/teach/classes", label: "My classes", icon: "classes" },
-    { href: "/teach/pupils", label: "Pupils", icon: "people" },
+    { href: "/teach/classes", label: "Classroom", icon: "classes", matchPrefixes: tabPrefixes("teach", ["/teach/class", "/teach/lessons"]) },
     { href: "/teach/calendar", label: "Calendar", icon: "calendar" },
-    { href: "/teach/homework", label: "Homework", icon: "homework" },
-    { href: "/teach/behaviour", label: "Behaviour", icon: "behaviour" },
-    { href: "/teach/assessment", label: "Assessment & grades", icon: "grades" },
-    { href: "/teach/reports", label: "Reports", icon: "reports" },
     { href: "/teach/messages", label: "Messages", icon: "messages" },
-    { href: "/teach/announcements", label: "Announcements", icon: "announcements" },
+    { href: "/teach/reports", label: "Reports", icon: "reports" },
+    { href: "/teach/clock", label: "My hours", icon: "clock", group: G_STAFF },
+    { href: "/teach/absences", label: "Absences", icon: "absences", group: G_STAFF },
+    { href: "/teach/announcements", label: "Announcements", icon: "announcements", group: G_STAFF },
   ],
   family: [
     { href: "/family/dashboard", label: "Overview", icon: "overview" },
-    { href: "/family/classes", label: "Classes", icon: "classes" },
-    { href: "/family/child-details", label: "Child details", icon: "documents" },
-    { href: "/family/absences", label: "Absences", icon: "absences" },
+    { href: "/family/classes", label: "Classroom", icon: "classes", matchPrefixes: tabPrefixes("family", ["/family/class", "/family/lessons"]) },
     { href: "/family/calendar", label: "Calendar", icon: "calendar" },
-    { href: "/family/homework", label: "Homework", icon: "homework" },
-    { href: "/family/behaviour", label: "Behaviour", icon: "behaviour" },
-    { href: "/family/reports", label: "Reports", icon: "reports" },
     { href: "/family/messages", label: "Messages", icon: "messages" },
     { href: "/family/announcements", label: "Announcements", icon: "announcements" },
+    { href: "/family/absences", label: "Absences", icon: "absences" },
+    { href: "/family/child-details", label: "Child details", icon: "documents" },
     { href: "/family/fees", label: "Fees", icon: "fees" },
   ],
   student: [
     { href: "/student/dashboard", label: "Home", icon: "overview" },
-    { href: "/student/classes", label: "My classes", icon: "classes" },
+    { href: "/student/classes", label: "Classroom", icon: "classes", matchPrefixes: tabPrefixes("student", ["/student/class", "/student/lessons"]) },
     { href: "/student/calendar", label: "Calendar", icon: "calendar" },
-    { href: "/student/homework", label: "Homework", icon: "homework" },
-    { href: "/student/behaviour", label: "Behaviour", icon: "behaviour" },
-    { href: "/student/reports", label: "Reports", icon: "reports" },
     { href: "/student/announcements", label: "Announcements", icon: "announcements" },
   ],
 };
+
+/** Is this sidebar item the current page (own route, sub-page or any matchPrefix)? */
+export function isSidebarItemActive(pathname: string, item: SidebarItem): boolean {
+  if (isActivePath(pathname, item.href)) return true;
+  const p = normalisePortalPath(pathname);
+  return !!item.matchPrefixes?.some((m) => p === m || p.startsWith(m + "/"));
+}
+
+/** Does this path belong to the area's Classroom tab strip? Class detail
+ * pages (/teach/class?id=…) deliberately don't show it. */
+export function classroomTabsFor(pathname: string): { area: PortalArea; tabs: ClassroomTab[] } | null {
+  const area = portalAreaFor(pathname);
+  if (!area) return null;
+  const p = normalisePortalPath(pathname).replace(/\/$/, "");
+  const tabs = CLASSROOM_TABS[area];
+  return tabs.some((t) => p === t.href || p.startsWith(t.href + "/")) ? { area, tabs } : null;
+}
 
 export function visibleSidebar(area: PortalArea, roles: string[]): SidebarItem[] {
   const isHead = roles.some((r) => r === "head_teacher" || r === "admin");

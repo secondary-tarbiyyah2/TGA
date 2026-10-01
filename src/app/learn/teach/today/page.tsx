@@ -30,8 +30,9 @@ function useTodayLessons() {
       if (!user) return setLessons([]);
       const { data: slots } = await supabase
         .from("timetable_slots")
-        .select("id, class_id, start_time, end_time, classes(name), timetable_runs(status)")
-        .eq("teacher_user_id", user.id);
+        .select("id, class_id, start_time, end_time, classes(name), timetable_runs!inner(status)")
+        .eq("teacher_user_id", user.id)
+        .eq("timetable_runs.status", "published");
       const published = ((slots as unknown as { id: string; class_id: string; start_time: string; end_time: string; classes?: { name: string } | null; timetable_runs?: { status: string } | null }[]) || []).filter(
         (s) => s.timetable_runs?.status === "published",
       );

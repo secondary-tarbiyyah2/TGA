@@ -27,7 +27,8 @@ function TeachHomeworkContent() {
       .from("homework")
       .select("id, class_id, title, instructions, due_at, classes(name)")
       .eq("teacher_id", user.id)
-      .order("due_at", { ascending: false });
+      .order("due_at", { ascending: false })
+      .limit(60);
     setHomework((hwRows as unknown as Homework[]) || []);
   };
 
@@ -116,7 +117,7 @@ function TeachHomeworkContent() {
         <h2 className="font-serif text-h3 font-semibold text-ink">Set homework</h2>
         <div className="mt-3 space-y-3">
           {homework === null ? (
-            <p className="text-sm text-ink/60">Loading…</p>
+            <div className="h-24 animate-pulse rounded-lg bg-cream" />
           ) : homework.length === 0 ? (
             <p className="text-sm text-ink/60">No homework set yet.</p>
           ) : (
