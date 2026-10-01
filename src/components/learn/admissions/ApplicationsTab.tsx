@@ -1,0 +1,388 @@
+"use client";
+
+import { useCallback, useEffect, useMemo, useState, type DragEvent } from "react";
+import { Card } from "@/components/learn/Card";
+import { ApplicationDrawer, type StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
+import { getSupabaseClient } from "@/lib/supabase/client";
+import { useLearnPermission } from "@/lib/learn/session";
+import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
+import {
+  APPLICATION_COLUMNS,
+  PIPELINE_STATUSES,
+  SIDELINE_STATUSES,
+  STATUS_LABELS,
+  YEAR_GROUP_OPTIONS,
+  ageFromDob,
+  type ApplicationRow,
+  type ApplicationStatus,
+} from "@/components/admissions/applicationShared";
+
+const FORM_URL = `${MAIN_SITE_ORIGIN}/admissions/apply`;
+
+type Load = "loading" | "error" | "ready";
+
+function fmtShort(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" });
+}
+
+function csvCell(v: unknown): string {
+  let s = v === null || v === undefined ? "" : String(v);
+  // Stop spreadsheet apps treating a typed value as a formula.
+  if (/^[=+\-@\t\r]/.test(s)) s = `'${s}`;
+  return `"${s.replace(/"/g, '""')}"`;
+}
+
+function ApplicationCard({
+  app,
+  onOpen,
+  onMove,
+  onDragStart,
+  onDragEnd,
+}: {
+  app: ApplicationRow;
+  onOpen: (id: string) => void;
+  onMove: (id: string, status: ApplicationStatus) => Promise<void>;
+  onDragStart: (e: DragEvent<HTMLDivElement>, id: string) => void;
+  onDragEnd: () => void;
+}) {
+  const idx = PIPELINE_STATUSES.indexOf(app.status);
+  const prev = idx > 0 ? PIPELINE_STATUSES[idx - 1] : null;
+  const next = idx >= 0 && idx < PIPELINE_STATUSES.length - 1 ? PIPELINE_STATUSES[idx + 1] : null;
+  const name = `${app.child_first_name} ${app.child_last_name}`;
+  return (
+    <div
+      draggable
+      onDragStart={(e) => onDragStart(e, app.id)}
+      onDragEnd={onDragEnd}
+      className="cursor-grab rounded-xl border border-gold-light/60 bg-white p-3 shadow-sm active:cursor-grabbing"
+    >
+      <button type="button" onClick={() => onOpen(app.id)} className="block w-full text-left">
+        <span className="flex items-center gap-2">
+          {app.status === "new" && <span className="h-2 w-2 shrink-0 rounded-full bg-teal-500" aria-label="New" role="img" />}
+          <span className="text-sm font-semibold text-ink">{name}</span>
+        </span>
+        <span className="mt-0.5 block text-xs text-ink/70">
+          {app.year_group_applying} · age {ageFromDob(app.child_dob) || "?"}
+        </span>
+        <span className="block text-xs text-ink/60">{app.parent_name}</span>
+        <span className="block text-xs text-ink/50">Received {fmtShort(app.created_at)}</span>
+      </button>
+      {(prev || next) && (
+        <div className="mt-2 flex justify-between gap-2">
+          {prev ? (
+            <button type="button" onClick={() => onMove(app.id, prev)} aria-label={`Move ${name} back to ${STATUS_LABELS[prev]}`} className="rounded-md border border-gold-light/60 px-2 py-0.5 text-xs text-ink/70 hover:bg-cream">
+              ← {STATUS_LABELS[prev]}
+            </button>
+          ) : (
+            <span />
+          )}
+          {next && (
+            <button type="button" onClick={() => onMove(app.id, next)} aria-label={`Move ${name} on to ${STATUS_LABELS[next]}`} className="rounded-md border border-gold-light/60 px-2 py-0.5 text-xs text-ink/70 hover:bg-cream">
+              {STATUS_LABELS[next]} →
+            </button>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function Column({
+  status,
+  apps,
+  dragOver,
+  setDragOver,
+  onDropOn,
+  cardProps,
+}: {
+  status: ApplicationStatus;
+  apps: ApplicationRow[];
+  dragOver: ApplicationStatus | null;
+  setDragOver: (s: ApplicationStatus | null) => void;
+  onDropOn: (e: DragEvent<HTMLDivElement>, s: ApplicationStatus) => void;
+  cardProps: Omit<Parameters<typeof ApplicationCard>[0], "app">;
+}) {
+  return (
+    <div
+      onDragOver={(e) => {
+        e.preventDefault();
+        setDragOver(status);
+      }}
+      onDragLeave={() => setDragOver(null)}
+      onDrop={(e) => onDropOn(e, status)}
+      className={`min-h-[8rem] rounded-2xl border p-3 transition-colors ${dragOver === status ? "border-teal-500 bg-teal-100" : "border-gold-light/50 bg-cream/50"}`}
+    >
+      <h3 className="mb-2 flex items-center justify-between text-sm font-semibold text-ink">
+        {STATUS_LABELS[status]}
+        <span className="rounded-full bg-white px-2 py-0.5 text-xs tabular-nums text-ink/70" aria-label={`${apps.length} applications`}>{apps.length}</span>
+      </h3>
+      <div className="space-y-2">
+        {apps.length === 0 && <p className="py-4 text-center text-xs text-ink/40">Nothing here</p>}
+        {apps.map((a) => (
+          <ApplicationCard key={a.id} app={a} {...cardProps} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function ApplicationsTab() {
+  const canExport = useLearnPermission("can_export_data");
+  const [rows, setRows] = useState<ApplicationRow[]>([]);
+  const [load, setLoad] = useState<Load>("loading");
+  const [staff, setStaff] = useState<StaffOption[]>([]);
+  const [accepting, setAccepting] = useState<boolean | null>(null);
+  const [toggling, setToggling] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [search, setSearch] = useState("");
+  const [yearFilter, setYearFilter] = useState("");
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [dragId, setDragId] = useState<string | null>(null);
+  const [dragOver, setDragOver] = useState<ApplicationStatus | null>(null);
+  const [showSideline, setShowSideline] = useState(false);
+  const [actionError, setActionError] = useState<string | null>(null);
+
+  const fetchAll = useCallback(async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      setLoad("error");
+      return;
+    }
+    setLoad("loading");
+    const { data, error } = await supabase.from("admissions_applications").select(APPLICATION_COLUMNS).order("created_at", { ascending: false });
+    if (error) {
+      setLoad("error");
+      return;
+    }
+    setRows((data as unknown as ApplicationRow[]) || []);
+    setLoad("ready");
+  }, []);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load
+    void fetchAll();
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    supabase
+      .from("site_settings")
+      .select("accepting_applications")
+      .eq("id", true)
+      .maybeSingle()
+      .then(({ data }) => {
+        const row = data as { accepting_applications: boolean | null } | null;
+        setAccepting(row ? row.accepting_applications !== false : true);
+      });
+    supabase
+      .from("staff_members")
+      .select("profile_id, display_name")
+      .order("display_name", { ascending: true })
+      .then(({ data }) => setStaff((data as StaffOption[]) || []));
+  }, [fetchAll]);
+
+  async function toggleAccepting(next: boolean) {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    setToggling(true);
+    setActionError(null);
+    const { error } = await supabase.from("site_settings").update({ accepting_applications: next }).eq("id", true);
+    setToggling(false);
+    if (error) {
+      setActionError("Couldn't change this setting. Please try again.");
+      return;
+    }
+    setAccepting(next);
+  }
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(FORM_URL);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setActionError("Couldn't copy automatically. Select the link and copy it by hand.");
+    }
+  }
+
+  const moveTo = useCallback(
+    async (id: string, status: ApplicationStatus): Promise<void> => {
+      const supabase = getSupabaseClient();
+      const current = rows.find((r) => r.id === id);
+      if (!supabase || !current || current.status === status) return;
+      const previous = current.status;
+      setActionError(null);
+      setRows((list) => list.map((r) => (r.id === id ? { ...r, status } : r)));
+      const { error } = await supabase.from("admissions_applications").update({ status }).eq("id", id);
+      if (error) {
+        setRows((list) => list.map((r) => (r.id === id ? { ...r, status: previous } : r)));
+        setActionError("Couldn't move that application. Please try again.");
+      }
+    },
+    [rows]
+  );
+
+  const patch = useCallback(async (id: string, p: { notes?: string | null; assigned_to?: string | null }): Promise<boolean> => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return false;
+    const { error } = await supabase.from("admissions_applications").update(p).eq("id", id);
+    if (error) return false;
+    setRows((list) => list.map((r) => (r.id === id ? { ...r, ...p } : r)));
+    return true;
+  }, []);
+
+  const closeDrawer = useCallback(() => setSelectedId(null), []);
+
+  const filtered = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return rows.filter((r) => {
+      if (yearFilter && r.year_group_applying !== yearFilter) return false;
+      if (!q) return true;
+      return [r.child_first_name, r.child_last_name, r.parent_name, r.parent_email, r.reference || ""].some((v) => v.toLowerCase().includes(q));
+    });
+  }, [rows, search, yearFilter]);
+
+  const byStatus = (s: ApplicationStatus) => filtered.filter((r) => r.status === s);
+  const sidelineCount = filtered.filter((r) => SIDELINE_STATUSES.includes(r.status)).length;
+  const selected = rows.find((r) => r.id === selectedId) || null;
+
+  function handleDragStart(e: DragEvent<HTMLDivElement>, id: string) {
+    e.dataTransfer.setData("text/plain", id);
+    e.dataTransfer.effectAllowed = "move";
+    setDragId(id);
+  }
+  function handleDrop(e: DragEvent<HTMLDivElement>, status: ApplicationStatus) {
+    e.preventDefault();
+    const id = e.dataTransfer.getData("text/plain") || dragId;
+    setDragOver(null);
+    setDragId(null);
+    if (id) void moveTo(id, status);
+  }
+
+  function exportCsv() {
+    const cols = [
+      "reference", "status", "created_at", "parent_name", "parent_email", "parent_phone", "relationship", "address",
+      "child_first_name", "child_last_name", "child_dob", "child_gender", "year_group_applying", "preferred_start",
+      "current_school", "current_school_year", "previous_islamic_education", "send_or_medical_notes", "how_heard",
+      "sibling_at_tarbiyyah", "sibling_details", "consent_contact", "consent_data", "declaration_name", "notes",
+    ] as const;
+    const lines = [cols.join(",")].concat(filtered.map((r) => cols.map((c) => csvCell(r[c])).join(",")));
+    const blob = new Blob([lines.join("\n")], { type: "text/csv" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "applications.csv";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  const cardProps = { onOpen: setSelectedId, onMove: moveTo, onDragStart: handleDragStart, onDragEnd: () => { setDragId(null); setDragOver(null); } };
+  const newCount = rows.filter((r) => r.status === "new").length;
+
+  return (
+    <div className="space-y-6">
+      <Card title="Online application form" description="The public form families use at the link below.">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <label className="flex items-start gap-3 text-sm text-ink">
+            <input
+              type="checkbox"
+              role="switch"
+              checked={accepting === true}
+              disabled={accepting === null || toggling}
+              onChange={(e) => toggleAccepting(e.target.checked)}
+              className="mt-1"
+            />
+            <span>
+              <span className="font-medium">Accepting applications</span>
+              <span className="block text-xs text-ink/60">
+                {accepting === null ? "Checking…" : accepting ? "The form is open to families." : "Families see an “applications are closed” message instead of the form."}
+              </span>
+            </span>
+          </label>
+          <div className="flex flex-wrap items-center gap-2">
+            <code className="max-w-full break-all rounded-lg bg-cream px-3 py-1.5 text-xs text-ink/80">{FORM_URL}</code>
+            <button type="button" onClick={copyLink} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
+              {copied ? "Copied" : "Copy link"}
+            </button>
+            <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:brightness-110">
+              Preview
+            </a>
+          </div>
+        </div>
+      </Card>
+
+      <div className="flex flex-wrap items-end gap-3">
+        <label className="text-xs font-medium text-ink">
+          Search
+          <input
+            type="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Child, parent, email or reference"
+            className="mt-1 block w-64 max-w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm"
+          />
+        </label>
+        <label className="text-xs font-medium text-ink">
+          Year group
+          <select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className="mt-1 block rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm">
+            <option value="">All year groups</option>
+            {YEAR_GROUP_OPTIONS.map((y) => (
+              <option key={y.value} value={y.value}>{y.value}</option>
+            ))}
+          </select>
+        </label>
+        <p className="pb-2 text-sm text-ink/60">
+          {newCount} new · {rows.length} total
+        </p>
+        {canExport && (
+          <button type="button" onClick={exportCsv} disabled={filtered.length === 0} className="ml-auto rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
+            Export CSV
+          </button>
+        )}
+      </div>
+
+      {actionError && <p role="alert" className="text-sm text-red-700">{actionError}</p>}
+
+      {load === "loading" && <p role="status" className="text-sm text-ink/60">Loading applications…</p>}
+      {load === "error" && (
+        <div role="alert" className="rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
+          Couldn&apos;t load applications.{" "}
+          <button type="button" onClick={() => void fetchAll()} className="font-semibold underline">Try again</button>
+        </div>
+      )}
+      {load === "ready" && rows.length === 0 && (
+        <div className="rounded-2xl border border-gold-light/50 bg-white p-6 text-center text-sm text-ink/70">
+          No applications yet. Share the form link above and they will appear here.
+        </div>
+      )}
+
+      {load === "ready" && rows.length > 0 && (
+        <>
+          {filtered.length === 0 && <p className="text-sm text-ink/60">No applications match your search.</p>}
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+            {PIPELINE_STATUSES.map((s) => (
+              <Column key={s} status={s} apps={byStatus(s)} dragOver={dragOver} setDragOver={setDragOver} onDropOn={handleDrop} cardProps={cardProps} />
+            ))}
+          </div>
+
+          <div>
+            <button
+              type="button"
+              onClick={() => setShowSideline((v) => !v)}
+              aria-expanded={showSideline}
+              className="text-sm font-medium text-ink/70 hover:text-ink"
+            >
+              {showSideline ? "Hide" : "Show"} waitlisted / declined / withdrawn ({sidelineCount})
+            </button>
+            {showSideline && (
+              <div className="mt-3 grid gap-3 md:grid-cols-3">
+                {SIDELINE_STATUSES.map((s) => (
+                  <Column key={s} status={s} apps={byStatus(s)} dragOver={dragOver} setDragOver={setDragOver} onDropOn={handleDrop} cardProps={cardProps} />
+                ))}
+              </div>
+            )}
+          </div>
+        </>
+      )}
+
+      {selected && <ApplicationDrawer key={selected.id} app={selected} staff={staff} onClose={closeDrawer} onMove={moveTo} onPatch={patch} />}
+    </div>
+  );
+}

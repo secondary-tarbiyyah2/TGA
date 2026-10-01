@@ -37,7 +37,10 @@ export async function invite(body: Record<string, unknown>): Promise<InviteResul
 export function friendlyError(result: InviteResult): string {
   if (result.error === "head_teacher_required") return "Only a Headteacher can add or re-invite a Headteacher or Admin.";
   if (result.error === "missing_or_invalid_fields") return "Please check the name and email address.";
-  return edgeErrorMessage(result);
+  if (result.error === "forbidden") return "Only a Headteacher or Admin account can add people. Sign in with one of those accounts, or ask the Headteacher to add them.";
+  const base = edgeErrorMessage(result);
+  const code = result.error && !base.includes(result.error) ? ` (${result.error}${result.detail ? `: ${result.detail}` : ""})` : "";
+  return `${base}${code}`;
 }
 
 export function initials(name: string): string {

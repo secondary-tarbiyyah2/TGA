@@ -49,7 +49,7 @@ export const ADMIN_SECTIONS: PortalNavGroup[] = [
     {
       label: "Users",
       items: [
-        { href: "/admin/admissions", label: "Admissions", hint: "Bookings, calls and availability" },
+        { href: "/admin/admissions", label: "Admissions", hint: "Applications, calls and availability" },
         { href: "/admin/people", label: "People & roles", hint: "Families, students and staff" },
       ],
     },
@@ -59,6 +59,7 @@ export const ADMIN_SECTIONS: PortalNavGroup[] = [
         { href: "/admin/academic", label: "Academic", hint: "Year groups, classes, subjects" },
         { href: "/admin/lessons", label: "Lessons", hint: "Live lessons and recordings", headOnly: true },
         { href: "/admin/attendance", label: "Attendance", hint: "Registers and absences", headOnly: true },
+        { href: "/admin/staff-attendance", label: "Staff attendance", hint: "Clock-ins, hours and late arrivals", headOnly: true },
         { href: "/admin/reports", label: "Reports", hint: "Term reports", headOnly: true },
       ],
     },
@@ -149,7 +150,8 @@ export type SidebarIcon =
   | "quiz"
   | "settings"
   | "homework"
-  | "grades";
+  | "grades"
+  | "clock";
 
 export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean };
 
@@ -161,6 +163,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/admissions", label: "Admissions", icon: "admissions" },
     { href: "/admin/people", label: "People & accounts", icon: "people" },
     { href: "/admin/attendance", label: "Attendance", icon: "attendance", headOnly: true },
+    { href: "/admin/staff-attendance", label: "Staff attendance", icon: "clock", headOnly: true },
     { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true },
     { href: "/admin/academic", label: "Academic setup", icon: "academic" },
     { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true },
@@ -175,6 +178,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   teach: [
     { href: "/teach/dashboard", label: "Overview", icon: "overview" },
     { href: "/teach/today", label: "Today", icon: "today" },
+    { href: "/teach/clock", label: "My hours", icon: "clock" },
     { href: "/teach/classes", label: "My classes", icon: "classes" },
     { href: "/teach/calendar", label: "Calendar", icon: "calendar" },
     { href: "/teach/homework", label: "Homework", icon: "homework" },

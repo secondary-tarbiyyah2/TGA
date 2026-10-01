@@ -9,6 +9,7 @@ import { NotificationBell } from "@/components/learn/NotificationBell";
 import { PortalSidebar, PortalSidebarDrawer } from "@/components/learn/PortalSidebar";
 import { portalAreaFor } from "@/lib/learn/nav";
 import { SignatureBanner } from "@/components/learn/SignatureBanner";
+import { ClockChip, ClockInGate } from "@/components/learn/ClockInGate";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -71,6 +72,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
             </Link>
 
             <div className="ml-auto flex items-center gap-1">
+              <ClockChip userId={activeSession.user.id} roles={roles} />
               <Link
                 href="/report-concern"
                 title="Report a concern"
@@ -102,7 +104,9 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
         <main id="main" className="flex-1">
           <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
             <SignatureBanner />
-            {children}
+            <ClockInGate userId={activeSession.user.id} roles={roles}>
+              {children}
+            </ClockInGate>
           </div>
         </main>
       </div>

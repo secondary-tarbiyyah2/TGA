@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { Button } from "@/components/Button";
 import { Kicker } from "@/components/Section";
-import { ApplicationForm } from "@/components/ApplicationForm";
 import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
 import { getSiteSettings } from "@/lib/content";
 
@@ -12,10 +12,9 @@ export const metadata: Metadata = {
 };
 
 const steps = [
-  { title: "Register your interest", body: "Tell us a little about your child — no obligation." },
-  { title: "Complete the application", body: "The full multi-step application form below, including your child's year group." },
-  { title: "Entry assessment", body: "A short, age-appropriate assessment so we understand how best to support your child." },
-  { title: "Offer & registration", body: "Places are offered subject to assessment and availability, and confirmed with a one-time registration fee." },
+  { title: "Application", body: "Complete our online application form, then email your child's latest school report to the admissions team." },
+  { title: "Assessment & interview", body: "A short, age-appropriate assessment, then a conversation with you and your child to confirm that we are the right fit." },
+  { title: "Acceptance", body: "Accepted families provide a deposit and ID documents to secure the place. See our fees page for details." },
 ];
 
 export default async function AdmissionsPage() {
@@ -27,8 +26,11 @@ export default async function AdmissionsPage() {
           <Kicker>Admissions</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">How to apply.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            A straightforward, four-step process. Applications for the January 2027 launch are open now.
+            A straightforward, three-step process. Applications for the January 2027 launch are open now.
           </p>
+          <div className="mt-8">
+            <Button href="/admissions/apply">Apply now</Button>
+          </div>
           <p className="mt-4 max-w-2xl text-sm text-ink/70">
             Not sure it&apos;s the right fit yet?{" "}
             <Link href="/eligibility" className="font-semibold text-gold-700 underline">Take our 2-minute fit quiz</Link>{" "}
@@ -38,7 +40,7 @@ export default async function AdmissionsPage() {
       </section>
 
       <section className="section-pad">
-        <Container className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Container className="grid gap-6 md:grid-cols-3">
           {steps.map((s, i) => (
             <div key={s.title} className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <span className="font-serif text-2xl font-bold text-gold">{i + 1}</span>
@@ -70,9 +72,11 @@ export default async function AdmissionsPage() {
         <Container className="max-w-2xl">
           <Kicker>Application form</Kicker>
           <h2 className="font-serif text-3xl font-semibold text-ink">Start your child&apos;s application.</h2>
-          <p className="mt-3 text-ink/70">Three short steps. You can always follow up by email if you need to pause.</p>
-          <div className="mt-8">
-            <ApplicationForm />
+          <p className="mt-3 text-ink/70">
+            Our online form takes about ten minutes. Have your details and your child&apos;s to hand, and your child&apos;s latest school report ready to email to us.
+          </p>
+          <div className="mt-6">
+            <Button href="/admissions/apply">Apply now</Button>
           </div>
           <p className="mt-4 text-xs text-ink/70">
             Key admissions dates for the January 2027 launch will be published on our{" "}

@@ -1,0 +1,403 @@
+"use client";
+
+import { useEffect, useRef, useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
+import Link from "next/link";
+import { getSupabaseClient } from "@/lib/supabase/client";
+import { YEAR_GROUP_OPTIONS } from "@/components/admissions/applicationShared";
+
+type TextKey =
+  | "parentName" | "parentEmail" | "parentPhone" | "relationship" | "address"
+  | "childFirstName" | "childLastName" | "childDob" | "childGender"
+  | "yearGroup" | "preferredStart" | "currentSchool" | "currentSchoolYear"
+  | "islamicEducation" | "sendNotes" | "howHeard" | "siblingDetails" | "declarationName" | "website";
+type BoolKey = "sibling" | "consentContact" | "consentData";
+type Values = Record<TextKey, string> & Record<BoolKey, boolean>;
+type Errors = Partial<Record<TextKey | BoolKey, string>>;
+type Phase = "loading" | "closed" | "open" | "submitting" | "success";
+
+const INITIAL: Values = {
+  parentName: "", parentEmail: "", parentPhone: "", relationship: "", address: "",
+  childFirstName: "", childLastName: "", childDob: "", childGender: "",
+  yearGroup: "", preferredStart: "", currentSchool: "", currentSchoolYear: "",
+  islamicEducation: "", sendNotes: "", howHeard: "", siblingDetails: "", declarationName: "", website: "",
+  sibling: false, consentContact: false, consentData: false,
+};
+
+// Display order, used to focus the first problem.
+const FIELD_ORDER: (TextKey | BoolKey)[] = [
+  "parentName", "parentEmail", "parentPhone", "childFirstName", "childLastName", "childDob",
+  "yearGroup", "consentContact", "consentData", "declarationName",
+];
+
+const inputCls = "mt-1 w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-ink disabled:opacity-60 aria-[invalid=true]:border-red-600";
+
+function validate(v: Values): Errors {
+  const e: Errors = {};
+  if (!v.parentName.trim()) e.parentName = "Please enter your full name.";
+  if (!v.parentEmail.trim()) e.parentEmail = "Please enter your email address.";
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.parentEmail.trim())) e.parentEmail = "That doesn't look like an email address. It should look like name@example.com.";
+  if (!v.parentPhone.trim()) e.parentPhone = "Please enter a phone number we can reach you on.";
+  else if (v.parentPhone.replace(/\D/g, "").length < 7) e.parentPhone = "That phone number looks too short. Please include the full number with its country code if outside the UK.";
+  if (!v.childFirstName.trim()) e.childFirstName = "Please enter your child's first name.";
+  if (!v.childLastName.trim()) e.childLastName = "Please enter your child's last name.";
+  if (!v.childDob) e.childDob = "Please enter your child's date of birth.";
+  else {
+    const d = new Date(v.childDob);
+    const now = new Date();
+    const oldest = new Date(now.getFullYear() - 19, now.getMonth(), now.getDate());
+    if (Number.isNaN(d.getTime())) e.childDob = "That date doesn't look right. Please check it.";
+    else if (d > now) e.childDob = "The date of birth can't be in the future.";
+    else if (d < oldest) e.childDob = "That date of birth looks too long ago. Please check the year.";
+  }
+  if (!v.yearGroup) e.yearGroup = "Please choose the year group you are applying for.";
+  if (!v.consentContact) e.consentContact = "Please tick the box to say we may contact you about this application.";
+  if (!v.consentData) e.consentData = "Please tick the box to agree to us using your information for this application.";
+  if (!v.declarationName.trim()) e.declarationName = "Please type your full name to confirm the declaration.";
+  return e;
+}
+
+function nullIfEmpty(s: string): string | null {
+  const t = s.trim();
+  return t === "" ? null : t;
+}
+
+function Field({ id, label, optional, error, hint, children }: { id: string; label: string; optional?: boolean; error?: string; hint?: string; children: ReactNode }) {
+  return (
+    <div>
+      <label htmlFor={id} className="block text-sm font-medium text-ink">
+        {label} {optional && <span className="font-normal text-ink/70">(optional)</span>}
+      </label>
+      {hint && <p id={`h-${id}`} className="text-xs text-ink/70">{hint}</p>}
+      {children}
+      {error && <p id={`e-${id}`} role="alert" className="mt-1 text-sm text-red-700">{error}</p>}
+    </div>
+  );
+}
+
+function Section({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <fieldset className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
+      <legend className="px-2 font-serif text-xl font-semibold text-ink">{title}</legend>
+      <div className="grid gap-4 sm:grid-cols-2">{children}</div>
+    </fieldset>
+  );
+}
+
+export function ApplyForm({ admissionsEmail }: { admissionsEmail: string }) {
+  const [phase, setPhase] = useState<Phase>("loading");
+  const [values, setValues] = useState<Values>(INITIAL);
+  const [errors, setErrors] = useState<Errors>({});
+  const [submitError, setSubmitError] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- whether Supabase is configured is only known post-mount
+      setPhase("open");
+      return;
+    }
+    supabase
+      .from("site_settings")
+      .select("accepting_applications")
+      .eq("id", true)
+      .maybeSingle()
+      .then(({ data }) => {
+        const row = data as { accepting_applications: boolean | null } | null;
+        setPhase(row && row.accepting_applications === false ? "closed" : "open");
+      });
+  }, []);
+
+  function setText(k: TextKey, val: string) {
+    setValues((v) => ({ ...v, [k]: val }));
+    if (errors[k]) setErrors((er) => ({ ...er, [k]: undefined }));
+  }
+  function setBool(k: BoolKey, val: boolean) {
+    setValues((v) => ({ ...v, [k]: val }));
+    if (errors[k]) setErrors((er) => ({ ...er, [k]: undefined }));
+  }
+
+  const busy = phase === "submitting";
+  const props = (k: TextKey) => ({
+    id: `f-${k}`,
+    name: k,
+    value: values[k],
+    disabled: busy,
+    onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => setText(k, e.target.value),
+    "aria-invalid": errors[k] ? true : undefined,
+    "aria-describedby": errors[k] ? `e-f-${k}` : undefined,
+  });
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (busy) return;
+    setSubmitError(false);
+    const found = validate(values);
+    setErrors(found);
+    const first = FIELD_ORDER.find((k) => found[k]);
+    if (first) {
+      const el = formRef.current?.querySelector<HTMLElement>(`#f-${first}`);
+      el?.focus();
+      return;
+    }
+    // Honeypot: bots fill the hidden field. Pretend it worked, send nothing.
+    if (values.website.trim() !== "") {
+      setPhase("success");
+      return;
+    }
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      setSubmitError(true);
+      return;
+    }
+    setPhase("submitting");
+    // Anon can't read the row back, so the id is generated here and the
+    // insert deliberately doesn't ask for the row back (no .select()).
+    const { error } = await supabase.from("admissions_applications").insert({
+      id: crypto.randomUUID(),
+      parent_name: values.parentName.trim(),
+      parent_email: values.parentEmail.trim(),
+      parent_phone: values.parentPhone.trim(),
+      relationship: nullIfEmpty(values.relationship),
+      address: nullIfEmpty(values.address),
+      child_first_name: values.childFirstName.trim(),
+      child_last_name: values.childLastName.trim(),
+      child_dob: values.childDob,
+      child_gender: nullIfEmpty(values.childGender),
+      year_group_applying: values.yearGroup,
+      preferred_start: nullIfEmpty(values.preferredStart),
+      current_school: nullIfEmpty(values.currentSchool),
+      current_school_year: nullIfEmpty(values.currentSchoolYear),
+      previous_islamic_education: nullIfEmpty(values.islamicEducation),
+      send_or_medical_notes: nullIfEmpty(values.sendNotes),
+      how_heard: nullIfEmpty(values.howHeard),
+      sibling_at_tarbiyyah: values.sibling,
+      sibling_details: values.sibling ? nullIfEmpty(values.siblingDetails) : null,
+      consent_contact: values.consentContact,
+      consent_data: values.consentData,
+      declaration_name: values.declarationName.trim(),
+    });
+    if (error) {
+      setPhase("open");
+      setSubmitError(true);
+      return;
+    }
+    setPhase("success");
+  }
+
+  if (phase === "loading") {
+    return <p role="status" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center text-ink/70">Loading the application form…</p>;
+  }
+
+  if (phase === "closed") {
+    return (
+      <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center">
+        <h3 className="font-serif text-xl font-semibold text-ink">Applications are closed for now.</h3>
+        <p className="mt-2 text-ink/70">
+          We aren&apos;t taking new applications at the moment. Please email{" "}
+          <a href={`mailto:${admissionsEmail}`} className="font-semibold text-gold-700 underline">{admissionsEmail}</a>{" "}
+          and we&apos;ll let you know when they reopen, or <Link href="/book-a-call" className="font-semibold text-gold-700 underline">book a call</Link> with our admissions team.
+        </p>
+      </div>
+    );
+  }
+
+  if (phase === "success") {
+    return (
+      <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center">
+        <h3 className="font-serif text-xl font-semibold text-ink">Application received. Thank you.</h3>
+        <p className="mt-2 text-ink/70">
+          Our admissions team will be in touch about the next step, the assessment and interview.
+        </p>
+        <p className="mt-2 text-ink/70">
+          Please email your child&apos;s latest school report to{" "}
+          <a href={`mailto:${admissionsEmail}`} className="font-semibold text-gold-700 underline">{admissionsEmail}</a>.
+        </p>
+      </div>
+    );
+  }
+
+  const errorCount = Object.values(errors).filter(Boolean).length;
+
+  return (
+    <form ref={formRef} onSubmit={handleSubmit} noValidate className="relative space-y-6" aria-busy={busy}>
+      {/* Honeypot: off-screen (not display:none), skipped by keyboard and assistive tech. */}
+      <div className="absolute h-px w-px overflow-hidden whitespace-nowrap [clip:rect(0,0,0,0)]" aria-hidden="true">
+        <label>
+          Leave this field blank
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" value={values.website} onChange={(e) => setText("website", e.target.value)} />
+        </label>
+      </div>
+
+      <Section title="Parent or guardian">
+        <Field id="f-parentName" label="Full name" error={errors.parentName}>
+          <input {...props("parentName")} type="text" autoComplete="name" maxLength={120} className={inputCls} />
+        </Field>
+        <Field id="f-relationship" label="Relationship to the child" optional>
+          <input {...props("relationship")} type="text" maxLength={60} placeholder="e.g. Mother, Father, Guardian" className={inputCls} />
+        </Field>
+        <Field id="f-parentEmail" label="Email address" error={errors.parentEmail}>
+          <input {...props("parentEmail")} type="email" autoComplete="email" maxLength={254} className={inputCls} />
+        </Field>
+        <Field id="f-parentPhone" label="Phone number" error={errors.parentPhone}>
+          <input {...props("parentPhone")} type="tel" autoComplete="tel" maxLength={40} className={inputCls} />
+        </Field>
+        <div className="sm:col-span-2">
+          <Field id="f-address" label="Home address" optional>
+            <textarea {...props("address")} rows={2} maxLength={500} autoComplete="street-address" className={inputCls} />
+          </Field>
+        </div>
+      </Section>
+
+      <Section title="Your child">
+        <Field id="f-childFirstName" label="First name" error={errors.childFirstName}>
+          <input {...props("childFirstName")} type="text" autoComplete="off" maxLength={80} className={inputCls} />
+        </Field>
+        <Field id="f-childLastName" label="Last name" error={errors.childLastName}>
+          <input {...props("childLastName")} type="text" autoComplete="off" maxLength={80} className={inputCls} />
+        </Field>
+        <Field id="f-childDob" label="Date of birth" error={errors.childDob}>
+          <input {...props("childDob")} type="date" className={inputCls} />
+        </Field>
+        <Field id="f-childGender" label="Gender" optional>
+          <input {...props("childGender")} type="text" maxLength={40} className={inputCls} />
+        </Field>
+        <Field id="f-yearGroup" label="Year group applying for" error={errors.yearGroup}>
+          <select {...props("yearGroup")} className={inputCls}>
+            <option value="">Select a year group</option>
+            {YEAR_GROUP_OPTIONS.map((y) => (
+              <option key={y.value} value={y.value}>{y.label}</option>
+            ))}
+          </select>
+        </Field>
+        <Field id="f-preferredStart" label="Preferred start" optional>
+          <input {...props("preferredStart")} type="text" maxLength={120} placeholder="e.g. January 2027" className={inputCls} />
+        </Field>
+      </Section>
+
+      <Section title="Education so far">
+        <Field id="f-currentSchool" label="Current school" optional>
+          <input {...props("currentSchool")} type="text" maxLength={200} className={inputCls} />
+        </Field>
+        <Field id="f-currentSchoolYear" label="Current year group" optional>
+          <input {...props("currentSchoolYear")} type="text" maxLength={60} className={inputCls} />
+        </Field>
+        <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/80 sm:col-span-2">
+          Please email your child&apos;s latest school report to{" "}
+          <a href={`mailto:${admissionsEmail}`} className="font-semibold text-gold-700 underline">{admissionsEmail}</a>.
+        </p>
+        <div className="sm:col-span-2">
+          <Field id="f-islamicEducation" label="Previous Islamic education" optional hint="For example Qur'an level, any hifz, and Arabic.">
+            <textarea {...props("islamicEducation")} rows={3} maxLength={1500} aria-describedby={errors.islamicEducation ? "e-f-islamicEducation" : "h-f-islamicEducation"} className={inputCls} />
+          </Field>
+        </div>
+      </Section>
+
+      <Section title="Anything we should know">
+        <div className="sm:col-span-2">
+          <Field id="f-sendNotes" label="Special educational needs, medical needs or anything else we should know" optional hint="This helps us prepare the right support. Share only what you are comfortable with.">
+            <textarea {...props("sendNotes")} rows={4} maxLength={3000} aria-describedby={errors.sendNotes ? "e-f-sendNotes" : "h-f-sendNotes"} className={inputCls} />
+          </Field>
+        </div>
+        <div className="sm:col-span-2">
+          <Field id="f-howHeard" label="How did you hear about us?" optional>
+            <input {...props("howHeard")} type="text" maxLength={300} className={inputCls} />
+          </Field>
+        </div>
+        <div className="sm:col-span-2">
+          <label className="flex items-start gap-2 text-sm text-ink/80">
+            <input
+              type="checkbox"
+              name="sibling"
+              checked={values.sibling}
+              disabled={busy}
+              onChange={(e) => setBool("sibling", e.target.checked)}
+              className="mt-1"
+            />
+            Another child in our family attends a Tarbiyyah school
+          </label>
+        </div>
+        {values.sibling && (
+          <div className="sm:col-span-2">
+            <Field id="f-siblingDetails" label="Which child and which school?" optional>
+              <input {...props("siblingDetails")} type="text" maxLength={500} className={inputCls} />
+            </Field>
+          </div>
+        )}
+      </Section>
+
+      <Section title="Consent and declaration">
+        <div className="space-y-3 sm:col-span-2">
+          <div>
+            <label className="flex items-start gap-2 text-sm text-ink/80">
+              <input
+                id="f-consentContact"
+                type="checkbox"
+                name="consentContact"
+                checked={values.consentContact}
+                disabled={busy}
+                onChange={(e) => setBool("consentContact", e.target.checked)}
+                aria-invalid={errors.consentContact ? true : undefined}
+                aria-describedby={errors.consentContact ? "e-f-consentContact" : undefined}
+                className="mt-1"
+              />
+              I agree that Tarbiyyah Global Academy may contact me about this application.
+            </label>
+            {errors.consentContact && <p id="e-f-consentContact" role="alert" className="mt-1 text-sm text-red-700">{errors.consentContact}</p>}
+          </div>
+          <div>
+            <label className="flex items-start gap-2 text-sm text-ink/80">
+              <input
+                id="f-consentData"
+                type="checkbox"
+                name="consentData"
+                checked={values.consentData}
+                disabled={busy}
+                onChange={(e) => setBool("consentData", e.target.checked)}
+                aria-invalid={errors.consentData ? true : undefined}
+                aria-describedby={errors.consentData ? "e-f-consentData" : undefined}
+                className="mt-1"
+              />
+              <span>
+                I agree to my and my child&apos;s information being used to process this application, as explained in the{" "}
+                <Link href="/legal/privacy" target="_blank" className="font-semibold text-gold-700 underline">privacy policy</Link>.
+              </span>
+            </label>
+            {errors.consentData && <p id="e-f-consentData" role="alert" className="mt-1 text-sm text-red-700">{errors.consentData}</p>}
+          </div>
+        </div>
+        <div className="sm:col-span-2">
+          <Field id="f-declarationName" label="Type your full name to confirm" hint="I confirm that the information given is true to the best of my knowledge." error={errors.declarationName}>
+            <input
+              {...props("declarationName")}
+              type="text"
+              maxLength={120}
+              aria-describedby={errors.declarationName ? "e-f-declarationName" : "h-f-declarationName"}
+              className={inputCls}
+            />
+          </Field>
+        </div>
+      </Section>
+
+      {errorCount > 0 && (
+        <p role="alert" className="text-sm font-medium text-red-700">
+          Please fix the {errorCount === 1 ? "problem" : `${errorCount} problems`} marked above and send again.
+        </p>
+      )}
+      {submitError && (
+        <p role="alert" className="text-sm text-red-700">
+          Something went wrong sending your application, so nothing has been submitted. Please try again, or email{" "}
+          <a href={`mailto:${admissionsEmail}`} className="underline">{admissionsEmail}</a> directly.
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={busy}
+        className="w-full rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-60 sm:w-auto"
+      >
+        {busy ? "Sending…" : "Submit application"}
+      </button>
+    </form>
+  );
+}

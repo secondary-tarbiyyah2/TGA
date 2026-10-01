@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { learnRoleLabel, STAFF_ROLES } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type LmsSettings = {
@@ -213,6 +214,66 @@ function MessagingSettings() {
   );
 }
 
+type ClockInSettings = { require_clock_in: boolean; clock_in_roles: string[]; auto_clock_out_hours: number };
+
+function ClockInSettingsSection() {
+  const [s, setS] = useState<ClockInSettings | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    supabase
+      .from("lms_settings")
+      .select("require_clock_in, clock_in_roles, auto_clock_out_hours")
+      .eq("id", true)
+      .maybeSingle()
+      .then(({ data }) => setS((data as ClockInSettings | null) || null));
+  }, []);
+
+  const save = async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase || !s) return;
+    if (!Number.isInteger(s.auto_clock_out_hours) || s.auto_clock_out_hours < 1 || s.auto_clock_out_hours > 48) return setMsg("Auto clock-out must be 1 to 48 hours.");
+    setBusy(true);
+    setMsg(null);
+    const { error } = await supabase.from("lms_settings").update({ ...s, updated_at: new Date().toISOString() }).eq("id", true);
+    setBusy(false);
+    setMsg(error ? "Couldn't save. Only a Headteacher or Admin can change this." : "Saved.");
+  };
+
+  if (!s) return null;
+  return (
+    <Section title="Staff clock-in" hint="Staff who must clock in see a clock-in screen instead of the portal until they do." onSave={save} busy={busy} message={msg}>
+      <div className="space-y-4">
+        <label className="flex items-center gap-2 text-sm font-medium text-ink">
+          <input type="checkbox" checked={s.require_clock_in} onChange={(e) => setS({ ...s, require_clock_in: e.target.checked })} />
+          Require staff to clock in before using the portal
+        </label>
+        <fieldset className="text-sm">
+          <legend className="mb-1 font-medium text-ink">Who must clock in</legend>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {STAFF_ROLES.map((r) => (
+              <label key={r} className="flex items-center gap-2 text-ink/80">
+                <input
+                  type="checkbox"
+                  checked={s.clock_in_roles.includes(r)}
+                  onChange={(e) => setS({ ...s, clock_in_roles: e.target.checked ? [...s.clock_in_roles, r] : s.clock_in_roles.filter((x) => x !== r) })}
+                />
+                {learnRoleLabel(r)}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <Field label="Auto clock-out after (hours)" help="A shift left open this long is closed automatically at that length, so a forgotten clock-out doesn't run on.">
+          <input type="number" min={1} max={48} className={`${inputCls} max-w-xs`} value={s.auto_clock_out_hours} onChange={(e) => setS({ ...s, auto_clock_out_hours: Number(e.target.value) })} />
+        </Field>
+      </div>
+    </Section>
+  );
+}
+
 function Shortcuts() {
   const links = [
     { href: "/admin/people", title: "People & accounts", text: "Add students, parents, teachers and admins." },
@@ -246,6 +307,7 @@ export default function AdminSettingsPage() {
           <SchoolDetails />
           <LessonSettings />
           <MessagingSettings />
+          <ClockInSettingsSection />
           <Shortcuts />
         </div>
       </LearnGate>
