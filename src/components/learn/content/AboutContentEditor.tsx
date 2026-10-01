@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
+import { aboutDefaults as D, withDefault, toStored, listWithDefault, listToStored } from "@/content/defaults";
+import { DefaultTextField, DefaultBadge, ResetLink } from "./DefaultField";
 
 type RecipeItem = { letter: string; word: string; body: string };
 type Row = {
@@ -17,6 +19,22 @@ type Row = {
   family_body: string | null;
 };
 
+const TEXT_KEYS = ["hero_heading", "hero_body", "mission_body", "safeguarding_body", "recipe_intro", "family_heading", "family_body"] as const;
+
+function fill(r: Row): Row {
+  const out = { ...r } as Row;
+  for (const k of TEXT_KEYS) out[k] = withDefault(r[k], D[k]);
+  out.recipe_items = listWithDefault(r.recipe_items, D.recipe_items);
+  return out;
+}
+
+function toPayload(row: Row): Row {
+  const out = { ...row } as Row;
+  for (const k of TEXT_KEYS) out[k] = toStored(row[k], D[k]);
+  out.recipe_items = listToStored(row.recipe_items, D.recipe_items);
+  return out;
+}
+
 export function AboutContentEditor() {
   const supabase = getSupabaseClient();
   const [row, setRow] = useState<Row | null>(null);
@@ -25,14 +43,17 @@ export function AboutContentEditor() {
 
   useEffect(() => {
     if (!supabase) return;
-    supabase.from("about_content").select("*").eq("id", true).maybeSingle().then(({ data }) => setRow((data as Row) || null));
+    supabase.from("about_content").select("*").eq("id", true).maybeSingle().then(({ data }) => {
+      const r = (data as Row) || null;
+      setRow(r ? fill(r) : null);
+    });
   }, [supabase]);
 
   async function save() {
     if (!supabase || !row) return;
     setSaving(true);
     setMessage(null);
-    const { error } = await supabase.from("about_content").update(row).eq("id", true);
+    const { error } = await supabase.from("about_content").update(toPayload(row)).eq("id", true);
     if (error) {
       setSaving(false);
       setMessage(`Could not save: ${error.message}`);
@@ -48,32 +69,21 @@ export function AboutContentEditor() {
   const setItems = (recipe_items: RecipeItem[]) => setRow({ ...row, recipe_items });
 
   return (
-    <Card title="About page content" description="Leave a field blank to keep the site's existing default copy.">
+    <Card title="About page content" description="Showing the current website text. Edit it and Save to change the site.">
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="text-sm text-ink">
-          Hero heading
-          <input value={row.hero_heading || ""} onChange={(e) => setRow({ ...row, hero_heading: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
+        <DefaultTextField label="Hero heading" value={row.hero_heading} def={D.hero_heading} onChange={(v) => setRow({ ...row, hero_heading: v })} />
         <div />
-        <label className="text-sm text-ink sm:col-span-2">
-          Hero body
-          <textarea value={row.hero_body || ""} onChange={(e) => setRow({ ...row, hero_body: e.target.value })} rows={3} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink sm:col-span-2">
-          Mission body
-          <textarea value={row.mission_body || ""} onChange={(e) => setRow({ ...row, mission_body: e.target.value })} rows={3} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink sm:col-span-2">
-          Safeguarding body
-          <textarea value={row.safeguarding_body || ""} onChange={(e) => setRow({ ...row, safeguarding_body: e.target.value })} rows={3} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink sm:col-span-2">
-          RECIPE intro
-          <textarea value={row.recipe_intro || ""} onChange={(e) => setRow({ ...row, recipe_intro: e.target.value })} rows={2} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
+        <DefaultTextField label="Hero body" value={row.hero_body} def={D.hero_body} multiline rows={3} onChange={(v) => setRow({ ...row, hero_body: v })} />
+        <DefaultTextField label="Mission body" value={row.mission_body} def={D.mission_body} multiline rows={3} onChange={(v) => setRow({ ...row, mission_body: v })} />
+        <DefaultTextField label="Safeguarding body" value={row.safeguarding_body} def={D.safeguarding_body} multiline rows={3} onChange={(v) => setRow({ ...row, safeguarding_body: v })} />
+        <DefaultTextField label="RECIPE intro" value={row.recipe_intro} def={D.recipe_intro} multiline rows={2} onChange={(v) => setRow({ ...row, recipe_intro: v })} />
 
         <div className="sm:col-span-2">
-          <p className="text-sm font-medium text-ink">RECIPE values</p>
+          <p className="text-sm font-medium text-ink">
+            RECIPE values
+            <DefaultBadge isDefault={JSON.stringify(items) === JSON.stringify(D.recipe_items)} />
+            <ResetLink show={JSON.stringify(items) !== JSON.stringify(D.recipe_items)} onReset={() => setItems(D.recipe_items)} />
+          </p>
           <div className="mt-2 space-y-2">
             {items.map((item, i) => (
               <div key={i} className="flex gap-2 rounded-lg border border-gold-light/50 p-2">
@@ -93,15 +103,9 @@ export function AboutContentEditor() {
           </button>
         </div>
 
-        <label className="text-sm text-ink">
-          Tarbiyyah family heading
-          <input value={row.family_heading || ""} onChange={(e) => setRow({ ...row, family_heading: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
+        <DefaultTextField label="Tarbiyyah family heading" value={row.family_heading} def={D.family_heading} onChange={(v) => setRow({ ...row, family_heading: v })} />
         <div />
-        <label className="text-sm text-ink sm:col-span-2">
-          Tarbiyyah family body
-          <textarea value={row.family_body || ""} onChange={(e) => setRow({ ...row, family_body: e.target.value })} rows={3} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
+        <DefaultTextField label="Tarbiyyah family body" value={row.family_body} def={D.family_body} multiline rows={3} onChange={(v) => setRow({ ...row, family_body: v })} />
       </div>
       <button type="button" onClick={save} disabled={saving} className="mt-6 rounded-full bg-gold-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
         {saving ? "Saving…" : "Save"}

@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import type { FeeBand, Discount } from "@/content/seed";
 import { formatGBP } from "@/lib/format";
-import { computeFeeSchedule, splitInstalments, FEE_DEFAULTS, describePlan } from "@/lib/fees";
+import { computeFeeSchedule, splitInstalments, FEE_DEFAULTS, FEE_POLICY_DEFAULTS, describePlan } from "@/lib/fees";
 
 type Frequency = "annual" | "termly" | "monthly";
 
@@ -34,6 +34,7 @@ export function FeeEstimator({
   siblingDiscountPercent,
   siblingDiscountNote,
   discounts = [],
+  annualDiscountPercent = FEE_POLICY_DEFAULTS.annualDiscountPercent,
   initialBandId,
   compact = false,
 }: {
@@ -41,6 +42,8 @@ export function FeeEstimator({
   siblingDiscountPercent?: number;
   siblingDiscountNote?: string;
   discounts?: Discount[];
+  /** % off when plan = annual and paid in full by the due date (Fees Policy: 2%). */
+  annualDiscountPercent?: number;
   initialBandId?: string;
   compact?: boolean;
 }) {
@@ -85,8 +88,16 @@ export function FeeEstimator({
       if (amountOff > 0) items.push({ label: d.label, note: d.note, amountOff });
     });
 
+    if (frequency === "annual" && annualDiscountPercent > 0) {
+      items.push({
+        label: `Annual payment discount (${annualDiscountPercent}%)`,
+        note: "If paid in full by 19 December 2026.",
+        amountOff: round2((baseFee * annualDiscountPercent) / 100),
+      });
+    }
+
     return items;
-  }, [band, baseFee, hasSiblingDiscount, siblings, siblingDiscountPercent, siblingDiscountNote, autoDiscounts, discounts, checkedDiscounts]);
+  }, [band, baseFee, frequency, annualDiscountPercent, hasSiblingDiscount, siblings, siblingDiscountPercent, siblingDiscountNote, autoDiscounts, discounts, checkedDiscounts]);
 
   const totalDiscount = lineItems.reduce((sum, item) => sum + item.amountOff, 0);
   const estimatedTotal = Math.max(0, round2(baseFee - totalDiscount));
@@ -130,6 +141,7 @@ export function FeeEstimator({
             {FREQUENCIES.map((f) => (
               <option key={f.value} value={f.value}>
                 {f.label}
+                {f.value === "termly" ? ` (${schedule.terms} payments)` : f.value === "monthly" ? ` (${schedule.instalments} payments)` : ""}
               </option>
             ))}
           </select>
@@ -184,11 +196,11 @@ export function FeeEstimator({
 
       <div className="mt-6 rounded-xl bg-cream p-4">
         <div className="flex items-center justify-between text-sm">
-          <span className="text-ink/70">Annual fee</span>
+          <span className="text-ink/70">Annual fee (Jan–Jul 2027)</span>
           <span className="font-medium text-ink">{formatGBP(baseFee)}</span>
         </div>
 
-        {hasAnyDiscounts &&
+        {(hasAnyDiscounts || lineItems.length > 0) &&
           lineItems.map((item, i) => (
             <div key={i} className="mt-1 flex items-center justify-between text-sm text-gold-700">
               <span>{item.label}</span>
@@ -210,7 +222,7 @@ export function FeeEstimator({
       </div>
 
       <p className="mt-3 text-xs text-ink/70">
-        All fees include 20% VAT. This is an estimate for planning purposes only, not a binding quote — final fees and
+        All fees include VAT and cover the shortened January–July 2027 period; examination fees are extra. This is an estimate for planning purposes only, not a binding quote — final fees and
         eligibility are confirmed during application.
       </p>
     </div>

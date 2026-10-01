@@ -8,6 +8,9 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
+import { ensureSignedPdf, loadSignature, SIGNED_BUCKET, toBase64 } from "../_shared/signedPdf.ts";
+
+const MAX_ATTACH_BYTES = 8 * 1024 * 1024;
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -53,6 +56,26 @@ Deno.serve(async (req) => {
       const when = new Date(sig.signed_at).toLocaleString("en-GB", { dateStyle: "long", timeStyle: "short", timeZone: "Europe/London" });
       const title = sig.document_title_signed || "Document";
       const receiptUrl = `${LEARN_SITE_URL}/documents/receipt/?id=${sig.id}`;
+      // The signed PDF (original document + signature page). Best effort: if
+      // it can't be built or is large, the email links to the portal instead.
+      let attachment: { filename: string; content: string } | null = null;
+      try {
+        const full = await loadSignature(service, sig.id);
+        if (full) {
+          const r = await ensureSignedPdf(service, full);
+          let bytes = r.bytes;
+          if (!bytes) {
+            const { data: blob } = await service.storage.from(SIGNED_BUCKET).download(r.path);
+            bytes = blob ? new Uint8Array(await blob.arrayBuffer()) : null;
+          }
+          if (bytes && bytes.length <= MAX_ATTACH_BYTES) {
+            const safeTitle = title.replace(/[^a-zA-Z0-9 _-]/g, "").trim().replace(/\s+/g, "-").slice(0, 60) || "document";
+            attachment = { filename: `${safeTitle}-signed.pdf`, content: toBase64(bytes) };
+          }
+        }
+      } catch (e) {
+        console.error("document-signed-copy: signed pdf failed", (e as Error).message);
+      }
       const html = emailShell(`
         <h2 style="margin:0 0 12px;font-size:18px;">Your signed copy</h2>
         <p style="margin:0 0 12px;">Thank you, ${esc(sig.typed_full_name)}. This is your record that you read and signed <strong>${esc(title)}</strong>.</p>
@@ -63,8 +86,8 @@ Deno.serve(async (req) => {
           <tr><td style="padding:3px 16px 3px 0;color:#777;">Signed at</td><td>${esc(when)} (UK time)</td></tr>
           <tr><td style="padding:3px 16px 3px 0;color:#777;">Record hash</td><td style="font-family:monospace;font-size:12px;word-break:break-all;">${esc(sig.content_hash || "n/a")}</td></tr>
         </table>
-        <p style="margin:0 0 20px;"><a href="${receiptUrl}" style="color:#B08E45;">Open a printable copy &rarr;</a></p>`);
-      const r = await sendEmail({ to, toName: profile?.full_name || undefined, subject: `Your signed copy: ${title}`, html });
+        <p style="margin:0 0 20px;">${attachment ? "Your signed PDF, the document itself with your signature page, is attached. " : ""}<a href="${receiptUrl}" style="color:#B08E45;">${attachment ? "You can also download it from your documents page" : "Open your signed copy"} &rarr;</a></p>`);
+      const r = await sendEmail({ to, toName: profile?.full_name || undefined, subject: `Your signed copy: ${title}`, html, attachments: attachment ? [attachment] : undefined });
       ok = r.ok;
       detail = r.detail;
     } catch (e) {

@@ -2,8 +2,8 @@
 
 import { absoluteFileUrl } from "@/lib/learn/fileLinks";
 import { useCallback, useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { openSignedPdf } from "@/app/learn/documents/signedPdf";
 
 type OutstandingDoc = {
   document_id: string;
@@ -102,9 +102,14 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
       const newId = (inserted as { id: string } | null)?.id ?? null;
       setReceiptId(newId);
       if (newId) {
-        // Email a confirmation copy. Fire-and-forget: the signature is
-        // already saved, so an email problem must never surface as a failure.
-        supabase.functions.invoke("document-signed-copy", { body: { signature_id: newId } }).catch(() => {});
+        // Build the signed PDF, then email a confirmation copy (which attaches
+        // it). Fire-and-forget: the signature is already saved, so a PDF or
+        // email problem must never surface as a failure.
+        void supabase.functions
+          .invoke("document-signed-pdf", { body: { signature_id: newId } })
+          .catch(() => {})
+          .then(() => supabase.functions.invoke("document-signed-copy", { body: { signature_id: newId } }))
+          .catch(() => {});
       }
       await load();
       onSigned?.();
@@ -124,7 +129,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
           {receiptId && (
             <>
               {" "}
-              <Link href={`/documents/receipt?id=${receiptId}`} className="underline">View or print your signed copy</Link>
+              <button type="button" onClick={() => void openSignedPdf(receiptId)} className="underline">Open your signed PDF</button>
               <span className="font-normal"> (we are also emailing you a copy).</span>
             </>
           )}

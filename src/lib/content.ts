@@ -1,5 +1,5 @@
 import { getSupabaseClient } from "./supabase/client";
-import { withDerivedFees, sanitiseFeeSettings, applyFeeTokens } from "./fees";
+import { withDerivedFees, sanitiseFeeSettings, applyFeeTokens, FEE_POLICY_DEFAULTS } from "./fees";
 import {
   feeBands as seedFeeBands, siteSettings as seedSiteSettings, faqEntries as seedFaqEntries,
   termDates as seedTermDates, testimonials as seedTestimonials, staffMembers as seedStaffMembers,
@@ -74,6 +74,8 @@ export const getSiteSettings = async (): Promise<SiteSettings> => {
       depositAmount: r.admissions_deposit_amount != null ? Number(r.admissions_deposit_amount) : undefined,
       feeTerms: sanitiseFeeSettings({ terms: r.fee_terms }).terms,
       feeInstalments: sanitiseFeeSettings({ instalments: r.fee_instalments }).instalments,
+      annualDiscountPercent: r.annual_discount_percent != null && Number.isFinite(Number(r.annual_discount_percent)) ? Number(r.annual_discount_percent) : FEE_POLICY_DEFAULTS.annualDiscountPercent,
+      paymentScheduleText: (r.payment_schedule_text as string) || FEE_POLICY_DEFAULTS.paymentScheduleText,
       siblingDiscountPercent: (r.sibling_discount_percent as number) ?? undefined,
       siblingDiscountNote: (r.sibling_discount_note as string) || undefined,
       discounts: (r.discounts as SiteSettings["discounts"]) || [],
@@ -110,7 +112,7 @@ export const getFaqEntries = async (): Promise<FaqEntry[]> => {
   const entries = rows === seedFaqEntries ? seedFaqEntries : rows.map((r: unknown) => mapFaq(r as Record<string, unknown>));
   // Fee figures quoted in FAQ copy use {{applicationFee}} / {{registrationFee}} /
   // {{terms}} / {{instalments}} tokens so they always match the live settings.
-  const tokens = { applicationFee: settings.applicationFee, registrationFee: settings.registrationFee, terms: settings.feeTerms, instalments: settings.feeInstalments };
+  const tokens = { applicationFee: settings.applicationFee, registrationFee: settings.registrationFee, terms: settings.feeTerms, instalments: settings.feeInstalments, annualDiscountPercent: settings.annualDiscountPercent };
   return entries.map((e) => ({ ...e, answer: applyFeeTokens(e.answer, tokens) }));
 };
 

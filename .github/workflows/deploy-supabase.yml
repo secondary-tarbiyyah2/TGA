@@ -225,6 +225,7 @@ jobs:
           supabase functions deploy admissions-correspond --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy document-sign-request --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy document-signed-copy --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy document-signed-pdf --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy booking-join --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy lesson-join --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy lesson-instances-generate --project-ref "${{ steps.project.outputs.ref }}"

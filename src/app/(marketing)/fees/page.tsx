@@ -7,7 +7,7 @@ import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import Link from "next/link";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
-import { computeFeeSchedule, describePlan } from "@/lib/fees";
+import { computeFeeSchedule, describePlan, roundingNote, FEE_DEFAULTS, FEE_POLICY_DEFAULTS } from "@/lib/fees";
 import { FeeEstimator } from "@/components/FeeEstimator";
 
 export const metadata: Metadata = pageMetadata({
@@ -23,8 +23,10 @@ export default async function FeesPage() {
     const sched = f.schedule ?? computeFeeSchedule(f.annualFee, feeSettings);
     return { band: f, sched, termly: describePlan(sched.termly, "term"), monthly: describePlan(sched.monthly, "month") };
   });
-  const terms = rows[0]?.sched.terms ?? settings.feeTerms ?? 3;
-  const instalments = rows[0]?.sched.instalments ?? settings.feeInstalments ?? 12;
+  const terms = rows[0]?.sched.terms ?? settings.feeTerms ?? FEE_DEFAULTS.terms;
+  const discountPercent = settings.annualDiscountPercent ?? FEE_POLICY_DEFAULTS.annualDiscountPercent;
+  const scheduleText = settings.paymentScheduleText || FEE_POLICY_DEFAULTS.paymentScheduleText;
+  const instalments = rows[0]?.sched.instalments ?? settings.feeInstalments ?? FEE_DEFAULTS.instalments;
 
   return (
     <>
@@ -37,9 +39,9 @@ export default async function FeesPage() {
             payment for any year group.
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/70">
-            Our first cohort starts in January 2027. The annual fee below is the full fee, and termly and monthly
-            amounts are simply that total divided across {terms} terms or {instalments} monthly instalments. All
-            fees are inclusive of 20% VAT.
+            Live lessons launch in January 2027, so the fees below are for the shortened January–July 2027 period.
+            Choose to pay annually, termly ({terms} payments) or monthly ({instalments} payments). All fees are
+            inclusive of VAT. Examination fees are not included and are paid directly to the examination centre.
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/70">
             Read the full{" "}
@@ -57,9 +59,9 @@ export default async function FeesPage() {
               <thead className="bg-cream text-ink/70">
                 <tr>
                   <th scope="col" className="px-4 py-3 font-semibold">Year group</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Annual total</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Termly ({terms} terms)</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Monthly ({instalments} instalments)</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Annual (Jan–Jul 2027)</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Termly ({terms} payments)</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Monthly ({instalments} payments)</th>
                 </tr>
               </thead>
               <tbody>
@@ -88,20 +90,26 @@ export default async function FeesPage() {
           </div>
           <p className="mt-3 text-xs text-ink/70">
             Every payment plan adds up to exactly the annual total: each instalment is the annual fee divided by{" "}
-            {terms} terms or {instalments} months, and if the division leaves a few pence over they are added to the
-            final instalment.
+            {terms} termly or {instalments} monthly payments, and if the division leaves a few pence over they are
+            added to the final instalment. A {discountPercent}% discount applies when the annual option is chosen and
+            paid in full by 19 December 2026.
           </p>
+          {rows.some((r) => roundingNote(r.sched.monthly)) && (
+            <p className="mt-1 text-xs text-ink/70">
+              Monthly figures are rounded to the penny, so the final payment may be a penny or two different from the others.
+            </p>
+          )}
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.applicationFee}</p>
-              <p className="mt-1 text-sm text-ink/70">Non-refundable, paid when you submit your application.</p>
+              <p className="mt-1 text-sm text-ink/70">Non-refundable, paid when you apply. Covers the baseline assessment and administrative review.</p>
             </div>
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
-              <p className="mt-1 text-sm text-ink/70">One-time, paid once a place is offered and accepted.</p>
+              <p className="mt-1 text-sm text-ink/70">One-time, due on acceptance of a place and no later than 19 December 2026.</p>
             </div>
             {settings.siblingDiscountPercent != null && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">
@@ -113,6 +121,8 @@ export default async function FeesPage() {
           </div>
 
           <div className="mt-10">
+            <Kicker>Payment dates</Kicker>
+            <p className="mb-8 max-w-2xl text-ink/70">{scheduleText}</p>
             <Kicker>Payment methods</Kicker>
             <p className="text-ink/70">
               Fees can be paid by bank transfer or card. Full payment instructions are shared once a place is
@@ -135,6 +145,7 @@ export default async function FeesPage() {
               siblingDiscountPercent={settings.siblingDiscountPercent}
               siblingDiscountNote={settings.siblingDiscountNote}
               discounts={settings.discounts}
+              annualDiscountPercent={discountPercent}
             />
           </div>
         </Container>

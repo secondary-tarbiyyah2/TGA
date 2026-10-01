@@ -74,6 +74,7 @@ export function RecordSignatureModal({
     const signedAt = date === todayIso() ? new Date().toISOString() : `${date}T12:00:00.000Z`;
     let done = 0;
     let already = 0;
+    const newIds: string[] = [];
     const failed: string[] = [];
     for (const t of targets) {
       let evidence: string | null = null;
@@ -87,7 +88,7 @@ export function RecordSignatureModal({
         }
         evidence = path;
       }
-      const { error: err } = await supabase.from("document_signatures").insert({
+      const { data: inserted, error: err } = await supabase.from("document_signatures").insert({
         document_id: documentId,
         asset_id_signed: doc.current_asset_id,
         signer_id: t.user_id,
@@ -97,12 +98,28 @@ export function RecordSignatureModal({
         method,
         evidence_path: evidence,
         record_note: note.trim() || null,
-      });
-      if (!err) done++;
+      }).select("id").maybeSingle();
+      if (!err) {
+        done++;
+        if (inserted?.id) newIds.push(inserted.id as string);
+      }
       else if (err.code === "23505") already++;
       else failed.push(t.name);
     }
     setBusy(false);
+    if (newIds.length) {
+      // Build each person's signed PDF in the background, one at a time
+      // (fire-and-forget; it is also generated on demand when first opened).
+      void (async () => {
+        for (const id of newIds) {
+          try {
+            await supabase.functions.invoke("document-signed-pdf", { body: { signature_id: id } });
+          } catch {
+            /* generated on demand later */
+          }
+        }
+      })();
+    }
     if (failed.length) {
       setError(`Couldn't record: ${failed.join(", ")}.${done ? ` ${done} recorded.` : ""} Only a Headteacher or Admin can do this.`);
       if (done) onDone(`Recorded ${done} signature${done === 1 ? "" : "s"}; some failed.`);

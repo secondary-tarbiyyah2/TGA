@@ -17,9 +17,44 @@
 
 export type FeeSettings = { terms: number; instalments: number };
 
-export const FEE_DEFAULTS: FeeSettings = { terms: 3, instalments: 12 };
+/** Fees Policy 2026-27: shortened Jan-Jul 2027 period = 2 termly payments, 7 monthly payments. */
+export const FEE_DEFAULTS: FeeSettings = { terms: 2, instalments: 7 };
 /** Instalment counts the admin UI offers (any whole number 1-12 is accepted by the maths). */
-export const INSTALMENT_CHOICES = [10, 12] as const;
+export const INSTALMENT_CHOICES = [7, 10, 12] as const;
+
+export const DEFAULT_PAYMENT_SCHEDULE_TEXT =
+  "Termly payments are due on 19 December 2026 and 28 March 2027. Monthly payments are taken on the 28th of each month from 28 December 2026 to 28 June 2027. The registration fee is due on acceptance and no later than 19 December 2026.";
+
+/** Non-schedule fee defaults from the Fees Policy PDF (all editable in the admin Fees editor). */
+export const FEE_POLICY_DEFAULTS = {
+  applicationFee: 100,
+  registrationFee: 150,
+  /** % off the annual total when the annual option is paid in full by the due date (19 Dec 2026). */
+  annualDiscountPercent: 2,
+  paymentScheduleText: DEFAULT_PAYMENT_SCHEDULE_TEXT,
+} as const;
+
+/** Annual fee after the annual-payment discount, rounded to the penny. */
+export function applyAnnualDiscount(annual: number, percent: number): { discount: number; total: number } {
+  const pct = Number.isFinite(percent) && percent > 0 ? Math.min(100, percent) : 0;
+  const discountPence = Math.round((toPence(annual) * pct) / 100);
+  return { discount: toPounds(discountPence), total: toPounds(toPence(annual) - discountPence) };
+}
+
+/**
+ * If the derived monthly plan is uneven, return a note comparing it with the
+ * rounded regular figure a PDF policy would print (regular x count), so admins
+ * can see why the last instalment differs. Null when the plan is even.
+ */
+export function roundingNote(monthly: number[]): string | null {
+  const n = monthly.length;
+  if (n < 2) return null;
+  const first = monthly[0];
+  const last = monthly[n - 1];
+  if (first === last) return null;
+  const printedTotal = toPounds(toPence(first) * n);
+  return `Policy-style rounded figure ${gbp(first)} x ${n} = ${gbp(printedTotal)}; the site charges ${n - 1} x ${gbp(first)} + final ${gbp(last)} so the total is exactly ${gbp(sumPounds(monthly))}.`;
+}
 export const MAX_TERMS = 6;
 export const MAX_INSTALMENTS = 12;
 
@@ -120,10 +155,10 @@ export function describePlan(amounts: number[], unit: "term" | "month"): { headl
   return { headline, detail, total };
 }
 
-/** Replace {{applicationFee}}, {{registrationFee}}, {{terms}}, {{instalments}} tokens in editable copy (e.g. FAQ answers). */
+/** Replace {{applicationFee}}, {{registrationFee}}, {{terms}}, {{instalments}}, {{annualDiscount}} tokens in editable copy (e.g. FAQ answers). */
 export function applyFeeTokens(
   text: string,
-  v: { applicationFee?: number; registrationFee?: number; terms?: number; instalments?: number }
+  v: { applicationFee?: number; registrationFee?: number; terms?: number; instalments?: number; annualDiscountPercent?: number }
 ): string {
   const fmt = (n?: number) => (n == null ? null : Number.isInteger(n) ? `£${n}` : gbp(n));
   const map: Record<string, string | null> = {
@@ -131,8 +166,9 @@ export function applyFeeTokens(
     registrationFee: fmt(v.registrationFee),
     terms: v.terms != null ? String(v.terms) : null,
     instalments: v.instalments != null ? String(v.instalments) : null,
+    annualDiscount: v.annualDiscountPercent != null ? `${v.annualDiscountPercent}%` : null,
   };
-  return text.replace(/\{\{(applicationFee|registrationFee|terms|instalments)\}\}/g, (m, k: string) => map[k] ?? m);
+  return text.replace(/\{\{(applicationFee|registrationFee|terms|instalments|annualDiscount)\}\}/g, (m, k: string) => map[k] ?? m);
 }
 
 export const FEES_POLICY_REMINDER = "Check the Fees Policy PDF states the same schedule.";
@@ -159,11 +195,15 @@ export function runFeeSelfCheck(): void {
     }
   }
   const d = computeFeeSchedule(1596, FEE_DEFAULTS);
-  assert(d.termlyAmount === 532 && d.monthlyAmount === 133, "published Reception-Y2 defaults");
-  assert(computeFeeSchedule(2130, FEE_DEFAULTS).monthlyAmount === 177.5, "Y3-6 monthly");
+  assert(d.termlyAmount === 798 && d.monthlyAmount === 228, "published Reception-Y2 defaults");
+  const y36 = computeFeeSchedule(2130, FEE_DEFAULTS);
+  assert(y36.termlyAmount === 1065 && y36.monthlyAmount === 304.29 && y36.monthly[6] === 304.26, "Y3-6 policy figures");
+  assert(computeFeeSchedule(2796, FEE_DEFAULTS).monthlyAmount === 399.43, "Y7-9 monthly");
+  assert(computeFeeSchedule(3000, FEE_DEFAULTS).monthlyAmount === 428.57, "Y10-11 monthly");
+  assert(applyAnnualDiscount(1596, 2).total === 1564.08, "2% annual discount");
   const odd = splitInstalments(100, 3);
   assert(odd[0] === 33.33 && odd[1] === 33.33 && odd[2] === 33.34, "remainder on last instalment");
-  assert(sanitiseFeeSettings({ terms: "x", instalments: 99 }).terms === 3, "sanitise fallback");
+  assert(sanitiseFeeSettings({ terms: "x", instalments: 99 }).terms === FEE_DEFAULTS.terms, "sanitise fallback");
   assert(sanitiseFeeSettings({ instalments: 99 }).instalments === MAX_INSTALMENTS, "sanitise clamp");
 }
 

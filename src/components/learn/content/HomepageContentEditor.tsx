@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
+import { homepageDefaults as D, withDefault, toStored, listWithDefault, listToStored } from "@/content/defaults";
+import { DefaultTextField, DefaultBadge, ResetLink } from "./DefaultField";
 
 type TitleBody = { title: string; body: string };
 type Row = {
@@ -21,10 +23,15 @@ type Row = {
   safe_body: string | null;
 };
 
-function TitleBodyListEditor({ label, items, onChange }: { label: string; items: TitleBody[]; onChange: (items: TitleBody[]) => void }) {
+function TitleBodyListEditor({ label, items, def, onChange }: { label: string; items: TitleBody[]; def: TitleBody[]; onChange: (items: TitleBody[]) => void }) {
+  const isDefault = JSON.stringify(items) === JSON.stringify(def);
   return (
     <div className="sm:col-span-2">
-      <p className="text-sm font-medium text-ink">{label}</p>
+      <p className="text-sm font-medium text-ink">
+        {label}
+        <DefaultBadge isDefault={isDefault} />
+        <ResetLink show={!isDefault} onReset={() => onChange(def)} />
+      </p>
       <div className="mt-2 space-y-2">
         {items.map((item, i) => (
           <div key={i} className="flex gap-2 rounded-lg border border-gold-light/50 p-2">
@@ -56,6 +63,27 @@ function TitleBodyListEditor({ label, items, onChange }: { label: string; items:
   );
 }
 
+const TEXT_KEYS = [
+  "hero_kicker", "hero_heading", "hero_body", "how_it_works_heading", "stages_heading", "stages_body",
+  "fee_teaser_heading", "fee_teaser_body", "safe_heading", "safe_body",
+] as const;
+
+function fill(r: Row): Row {
+  const out = { ...r } as Row;
+  for (const k of TEXT_KEYS) out[k] = withDefault(r[k], D[k]);
+  out.pillars = listWithDefault(r.pillars, D.pillars);
+  out.how_it_works_steps = listWithDefault(r.how_it_works_steps, D.how_it_works_steps);
+  return out;
+}
+
+function toPayload(row: Row): Row {
+  const out = { ...row } as Row;
+  for (const k of TEXT_KEYS) out[k] = toStored(row[k], D[k]);
+  out.pillars = listToStored(row.pillars, D.pillars);
+  out.how_it_works_steps = listToStored(row.how_it_works_steps, D.how_it_works_steps);
+  return out;
+}
+
 export function HomepageContentEditor() {
   const supabase = getSupabaseClient();
   const [row, setRow] = useState<Row | null>(null);
@@ -64,14 +92,17 @@ export function HomepageContentEditor() {
 
   useEffect(() => {
     if (!supabase) return;
-    supabase.from("homepage_content").select("*").eq("id", true).maybeSingle().then(({ data }) => setRow((data as Row) || null));
+    supabase.from("homepage_content").select("*").eq("id", true).maybeSingle().then(({ data }) => {
+      const r = (data as Row) || null;
+      setRow(r ? fill(r) : null);
+    });
   }, [supabase]);
 
   async function save() {
     if (!supabase || !row) return;
     setSaving(true);
     setMessage(null);
-    const { error } = await supabase.from("homepage_content").update(row).eq("id", true);
+    const { error } = await supabase.from("homepage_content").update(toPayload(row)).eq("id", true);
     if (error) {
       setSaving(false);
       setMessage(`Could not save: ${error.message}`);
@@ -85,51 +116,20 @@ export function HomepageContentEditor() {
   if (!row) return <p className="text-sm text-ink/60">Loading…</p>;
 
   return (
-    <Card title="Homepage content" description="Leave a field blank to keep the site's existing default copy.">
+    <Card title="Homepage content" description="Showing the current website text. Edit it and Save to change the site.">
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="text-sm text-ink">
-          Hero kicker
-          <input value={row.hero_kicker || ""} onChange={(e) => setRow({ ...row, hero_kicker: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink">
-          Hero heading
-          <input value={row.hero_heading || ""} onChange={(e) => setRow({ ...row, hero_heading: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink sm:col-span-2">
-          Hero body
-          <textarea value={row.hero_body || ""} onChange={(e) => setRow({ ...row, hero_body: e.target.value })} rows={3} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <TitleBodyListEditor label="Three pillars" items={row.pillars || []} onChange={(pillars) => setRow({ ...row, pillars })} />
-        <label className="text-sm text-ink">
-          &ldquo;How it works&rdquo; heading
-          <input value={row.how_it_works_heading || ""} onChange={(e) => setRow({ ...row, how_it_works_heading: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <div />
-        <TitleBodyListEditor label="How it works — steps" items={row.how_it_works_steps || []} onChange={(how_it_works_steps) => setRow({ ...row, how_it_works_steps })} />
-        <label className="text-sm text-ink">
-          Stages heading
-          <input value={row.stages_heading || ""} onChange={(e) => setRow({ ...row, stages_heading: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink">
-          Stages body
-          <input value={row.stages_body || ""} onChange={(e) => setRow({ ...row, stages_body: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink">
-          Fee teaser heading
-          <input value={row.fee_teaser_heading || ""} onChange={(e) => setRow({ ...row, fee_teaser_heading: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink">
-          Fee teaser body
-          <input value={row.fee_teaser_body || ""} onChange={(e) => setRow({ ...row, fee_teaser_body: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink">
-          &ldquo;Safe &amp; known&rdquo; heading
-          <input value={row.safe_heading || ""} onChange={(e) => setRow({ ...row, safe_heading: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
-        <label className="text-sm text-ink">
-          &ldquo;Safe &amp; known&rdquo; body
-          <input value={row.safe_body || ""} onChange={(e) => setRow({ ...row, safe_body: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        </label>
+        <DefaultTextField label="Hero kicker" value={row.hero_kicker} def={D.hero_kicker} onChange={(v) => setRow({ ...row, hero_kicker: v })} />
+        <DefaultTextField label="Hero heading" value={row.hero_heading} def={D.hero_heading} onChange={(v) => setRow({ ...row, hero_heading: v })} />
+        <DefaultTextField label="Hero body" value={row.hero_body} def={D.hero_body} multiline onChange={(v) => setRow({ ...row, hero_body: v })} />
+        <TitleBodyListEditor label="Three pillars" items={row.pillars} def={D.pillars} onChange={(pillars) => setRow({ ...row, pillars })} />
+        <DefaultTextField label="“How it works” heading" value={row.how_it_works_heading} def={D.how_it_works_heading} wide onChange={(v) => setRow({ ...row, how_it_works_heading: v })} />
+        <TitleBodyListEditor label="How it works — steps" items={row.how_it_works_steps} def={D.how_it_works_steps} onChange={(how_it_works_steps) => setRow({ ...row, how_it_works_steps })} />
+        <DefaultTextField label="Stages heading" value={row.stages_heading} def={D.stages_heading} onChange={(v) => setRow({ ...row, stages_heading: v })} />
+        <DefaultTextField label="Stages body" value={row.stages_body} def={D.stages_body} multiline onChange={(v) => setRow({ ...row, stages_body: v })} />
+        <DefaultTextField label="Fee teaser heading" value={row.fee_teaser_heading} def={D.fee_teaser_heading} onChange={(v) => setRow({ ...row, fee_teaser_heading: v })} />
+        <DefaultTextField label="Fee teaser body" value={row.fee_teaser_body} def={D.fee_teaser_body} multiline onChange={(v) => setRow({ ...row, fee_teaser_body: v })} />
+        <DefaultTextField label="“Safe & known” heading" value={row.safe_heading} def={D.safe_heading} onChange={(v) => setRow({ ...row, safe_heading: v })} />
+        <DefaultTextField label="“Safe & known” body" value={row.safe_body} def={D.safe_body} multiline onChange={(v) => setRow({ ...row, safe_body: v })} />
       </div>
       <button type="button" onClick={save} disabled={saving} className="mt-6 rounded-full bg-gold-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
         {saving ? "Saving…" : "Save"}

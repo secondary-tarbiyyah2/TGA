@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { methodBadge } from "./signatureMethod";
+import { openSignedPdf } from "@/app/learn/documents/signedPdf";
 
 type Row = {
   id: string;
@@ -62,6 +63,9 @@ export function SignatureHistory({ refreshKey }: { refreshKey: number }) {
                   View scan
                 </button>
               )}
+              <button type="button" onClick={() => void openSignedPdf(r.id).then((ok) => setErr(ok ? null : "Couldn't prepare the signed PDF."))} className="font-medium text-teal-700 underline">
+                Signed PDF
+              </button>
               <Link href={`/documents/receipt?id=${r.id}`} className="font-medium text-teal-700 underline">
                 Record
               </Link>

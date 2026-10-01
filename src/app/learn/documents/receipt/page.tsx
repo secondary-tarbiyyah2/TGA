@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { openSignedPdf } from "../signedPdf";
 import { METHOD_LABEL, type SignatureMethod } from "@/components/learn/documents/signatureMethod";
 
 type Receipt = {
@@ -22,6 +23,8 @@ type Receipt = {
 
 function ReceiptContent() {
   const [receipt, setReceipt] = useState<Receipt | null>(null);
+  const [pdfBusy, setPdfBusy] = useState(false);
+  const [pdfFailed, setPdfFailed] = useState(false);
   const [state, setState] = useState<"loading" | "missing" | "ready">("loading");
 
   useEffect(() => {
@@ -76,9 +79,22 @@ function ReceiptContent() {
   return (
     <>
       <div className="mb-4 flex flex-wrap gap-2 print:hidden">
-        <button type="button" onClick={() => window.print()} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">Print or save as PDF</button>
+        <button
+          type="button"
+          disabled={pdfBusy}
+          onClick={async () => {
+            setPdfBusy(true);
+            setPdfFailed(!(await openSignedPdf(receipt.id)));
+            setPdfBusy(false);
+          }}
+          className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60"
+        >
+          {pdfBusy ? "Preparing…" : "Open signed PDF"}
+        </button>
+        <button type="button" onClick={() => window.print()} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">Print this record</button>
         <Link href="/documents" className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">Back to My documents</Link>
       </div>
+      {pdfFailed && <p role="alert" className="mb-3 text-sm text-red-800 print:hidden">We couldn&apos;t prepare the signed PDF just now. Please try again in a moment.</p>}
       <article className="mx-auto max-w-2xl rounded-2xl border border-gold-light bg-white p-8 print:border-0 print:p-0">
         <p className="text-xs font-semibold uppercase tracking-wider text-ink/50">Tarbiyyah Global Academy</p>
         <h1 className="mt-1 font-serif text-2xl font-semibold text-ink">Signed document record</h1>

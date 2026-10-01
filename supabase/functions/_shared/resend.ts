@@ -34,6 +34,8 @@ export async function sendEmail(opts: {
   html: string;
   icsContent?: string;
   icsFilename?: string;
+  /** Extra attachments; `content` is base64. */
+  attachments?: { filename: string; content: string }[];
 }): Promise<{ ok: boolean; detail: string }> {
   const apiKey = Deno.env.get("RESEND_API_KEY");
   if (!apiKey) return { ok: false, detail: "RESEND_API_KEY not configured" };
@@ -56,6 +58,10 @@ export async function sendEmail(opts: {
         content: btoa(unescape(encodeURIComponent(opts.icsContent))),
       },
     ];
+  }
+
+  if (opts.attachments?.length) {
+    payload.attachments = [...((payload.attachments as unknown[]) || []), ...opts.attachments];
   }
 
   const res = await fetch("https://api.resend.com/emails", {

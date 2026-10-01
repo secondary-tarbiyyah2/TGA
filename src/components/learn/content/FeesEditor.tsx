@@ -6,13 +6,21 @@ import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { formatGBP } from "@/lib/format";
 import {
-  FEE_DEFAULTS, FEES_POLICY_REMINDER, INSTALMENT_CHOICES, MAX_INSTALMENTS, MAX_TERMS,
+  FEE_DEFAULTS, FEE_POLICY_DEFAULTS, FEES_POLICY_REMINDER, roundingNote, INSTALMENT_CHOICES, MAX_INSTALMENTS, MAX_TERMS,
   computeFeeSchedule, describePlan, sanitiseFeeSettings, sumPounds,
 } from "@/lib/fees";
 
 type BandDraft = { key: string; id?: string; year_group_range: string; annual_fee: string; notes: string };
 
-type SettingsDraft = { fee_terms: string; fee_instalments: string; registration_fee: string; admissions_deposit_amount: string };
+type SettingsDraft = {
+  fee_terms: string;
+  fee_instalments: string;
+  application_fee: string;
+  registration_fee: string;
+  annual_discount_percent: string;
+  payment_schedule_text: string;
+  admissions_deposit_amount: string;
+};
 
 const input = "mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm";
 let keyCounter = 0;
@@ -51,7 +59,11 @@ export function FeesEditor() {
       setSettings({
         fee_terms: String(fs.terms),
         fee_instalments: String(fs.instalments),
-        registration_fee: s.registration_fee != null ? String(s.registration_fee) : "",
+        application_fee: s.application_fee != null ? String(s.application_fee) : String(FEE_POLICY_DEFAULTS.applicationFee),
+        registration_fee: s.registration_fee != null ? String(s.registration_fee) : String(FEE_POLICY_DEFAULTS.registrationFee),
+        annual_discount_percent: s.annual_discount_percent != null ? String(s.annual_discount_percent) : String(FEE_POLICY_DEFAULTS.annualDiscountPercent),
+        // Never blank: pre-fill the default so the admin edits real text.
+        payment_schedule_text: typeof s.payment_schedule_text === "string" && s.payment_schedule_text.trim() ? s.payment_schedule_text : FEE_POLICY_DEFAULTS.paymentScheduleText,
         admissions_deposit_amount: s.admissions_deposit_amount != null ? String(s.admissions_deposit_amount) : "",
       });
     })();
@@ -74,6 +86,12 @@ export function FeesEditor() {
     if (!b.year_group_range.trim()) problems.push(`Band ${i + 1}: name is required.`);
     if (n == null || n <= 0) problems.push(`Band ${i + 1}: annual fee must be a positive number.`);
   });
+  if (settings.application_fee.trim() !== "" && (numOrNull(settings.application_fee) ?? -1) < 0) problems.push("Application fee must be zero or more.");
+  {
+    const d = numOrNull(settings.annual_discount_percent);
+    if (d == null || d < 0 || d > 100) problems.push("Annual payment discount must be between 0 and 100 (%).");
+  }
+  if (!settings.payment_schedule_text.trim()) problems.push("Payment schedule text cannot be blank.");
   if (settings.registration_fee.trim() !== "" && (numOrNull(settings.registration_fee) ?? -1) < 0) problems.push("Registration fee must be zero or more.");
   if (settings.admissions_deposit_amount.trim() !== "" && (numOrNull(settings.admissions_deposit_amount) ?? -1) < 0) problems.push("Deposit must be zero or more.");
 
@@ -100,7 +118,10 @@ export function FeesEditor() {
     const { error: sErr } = await supabase.from("site_settings").update({
       fee_terms: terms,
       fee_instalments: instalments,
+      application_fee: numOrNull(settings.application_fee),
       registration_fee: numOrNull(settings.registration_fee),
+      annual_discount_percent: numOrNull(settings.annual_discount_percent) ?? FEE_POLICY_DEFAULTS.annualDiscountPercent,
+      payment_schedule_text: settings.payment_schedule_text.trim() || FEE_POLICY_DEFAULTS.paymentScheduleText,
       admissions_deposit_amount: numOrNull(settings.admissions_deposit_amount),
     }).eq("id", true);
     if (sErr) {
@@ -147,7 +168,7 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Number of terms
             <input type="number" min={1} max={MAX_TERMS} step={1} value={settings.fee_terms} onChange={(e) => setSettings({ ...settings, fee_terms: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.terms}. Termly fee = annual fee ÷ terms.</span>
+            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.terms} (Fees Policy: 19 Dec 2026 and 28 Mar 2027). Termly fee = annual fee ÷ terms.</span>
           </label>
           <label className="text-sm text-ink">
             Number of monthly instalments
@@ -164,11 +185,26 @@ export function FeesEditor() {
             <datalist id="fee-instalment-choices">
               {INSTALMENT_CHOICES.map((n) => <option key={n} value={n} />)}
             </datalist>
-            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.instalments}; use 10 for a school-year plan. Monthly fee = annual fee ÷ instalments.</span>
+            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.instalments} (28 Dec 2026 to 28 Jun 2027). Monthly fee = annual fee ÷ instalments.</span>
+          </label>
+          <label className="text-sm text-ink">
+            Application fee (£, non-refundable)
+            <input type="number" min={0} step="0.01" value={settings.application_fee} onChange={(e) => setSettings({ ...settings, application_fee: e.target.value })} className={input} />
+            <span className="mt-0.5 block text-xs text-ink/60">Default £{FEE_POLICY_DEFAULTS.applicationFee} (Fees Policy).</span>
+          </label>
+          <label className="text-sm text-ink">
+            Annual payment discount (%)
+            <input type="number" min={0} max={100} step="0.1" value={settings.annual_discount_percent} onChange={(e) => setSettings({ ...settings, annual_discount_percent: e.target.value })} className={input} />
+            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 19 Dec 2026. Applied automatically in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink">
             Registration fee (£, one-time)
             <input type="number" min={0} step="0.01" value={settings.registration_fee} onChange={(e) => setSettings({ ...settings, registration_fee: e.target.value })} className={input} />
+          </label>
+          <label className="text-sm text-ink sm:col-span-2">
+            Payment schedule text (shown on the Fees page)
+            <textarea rows={4} value={settings.payment_schedule_text} onChange={(e) => setSettings({ ...settings, payment_schedule_text: e.target.value })} className={input} />
+            <button type="button" onClick={() => setSettings({ ...settings, payment_schedule_text: FEE_POLICY_DEFAULTS.paymentScheduleText })} className="mt-1 text-xs text-gold-700 underline">Reset to policy default</button>
           </label>
           <label className="text-sm text-ink">
             Deposit (£, default amount)
@@ -237,13 +273,14 @@ export function FeesEditor() {
                 const sched = computeFeeSchedule(annual, live);
                 const termly = describePlan(sched.termly, "term");
                 const monthly = describePlan(sched.monthly, "month");
+                const note = roundingNote(sched.monthly);
                 const ok = sumPounds(sched.termly) === sched.annual && sumPounds(sched.monthly) === sched.annual;
                 return (
                   <tr key={b.key} className="border-t border-gold-light/40 align-top">
                     <td className="px-3 py-2 font-medium text-ink">{b.year_group_range || "(unnamed)"}</td>
                     <td className="px-3 py-2">{formatGBP(sched.annual)}</td>
                     <td className="px-3 py-2">{termly.headline}<span className="block text-xs text-ink/70">{termly.detail}</span></td>
-                    <td className="px-3 py-2">{monthly.headline}<span className="block text-xs text-ink/70">{monthly.detail}</span></td>
+                    <td className="px-3 py-2">{monthly.headline}<span className="block text-xs text-ink/70">{monthly.detail}</span>{note && <span className="mt-1 block text-xs text-amber-700">{note} Check this matches the Fees Policy PDF.</span>}</td>
                     <td className={`px-3 py-2 font-semibold ${ok ? "text-green-700" : "text-red-700"}`}>
                       {ok ? `OK — both plans total ${formatGBP(sched.annual)}` : "MISMATCH"}
                     </td>

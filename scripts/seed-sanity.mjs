@@ -30,7 +30,7 @@ const feeBands = [
 const siteSettings = {
   _id: "siteSettings",
   _type: "siteSettings",
-  applicationFee: 247,
+  applicationFee: 100,
   registrationFee: 150,
   bookingWidgetUrl: "",
   openEveningRecordingUrl: "",
@@ -43,8 +43,8 @@ const siteSettings = {
 const faqEntries = [
   { _id: "faqEntry-f1", _type: "faqEntry", category: "Admissions", order: 1, question: "How do I apply for a place?", answer: "Start by registering your interest, then complete the multi-step application form on the Admissions page. We'll confirm receipt, arrange an entry assessment where relevant, and follow up with next steps." },
   { _id: "faqEntry-f2", _type: "faqEntry", category: "Admissions", order: 2, question: "Is there an entry assessment?", answer: "Yes — a short, age-appropriate assessment helps us understand where your child is and how best to support them from day one. Details are shared once your application is received." },
-  { _id: "faqEntry-f3", _type: "faqEntry", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers processing and assessment of your application. It is separate from the one-time {{registrationFee}} registration fee, which is charged once a place is offered and accepted." },
-  { _id: "faqEntry-f4", _type: "faqEntry", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. You can pay annually, termly ({{terms}} terms) or monthly ({{instalments}} instalments) for every year group band. Termly and monthly amounts are simply the annual fee divided evenly, and the instalments always add up exactly to the annual fee — see the Fees page for the full table." },
+  { _id: "faqEntry-f3", _type: "faqEntry", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers the baseline assessment and administrative review. It is separate from the one-time {{registrationFee}} registration fee, which is payable on acceptance of a place and no later than 19 December 2026." },
+  { _id: "faqEntry-f4", _type: "faqEntry", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. Fees are for the shortened January–July 2027 period. You can pay annually (with a {{annualDiscount}} discount if paid in full by 19 December 2026), termly ({{terms}} payments) or monthly ({{instalments}} payments) for every year group band. The instalments always add up exactly to the annual fee — see the Fees page for the full table and payment dates." },
   { _id: "faqEntry-f5", _type: "faqEntry", category: "Curriculum", order: 1, question: "Is this the full British curriculum?", answer: "Yes, taught live by qualified UK teachers, alongside a dedicated Islamic Studies programme, through to GCSE at Year 10–11." },
   { _id: "faqEntry-f6", _type: "faqEntry", category: "Technology", order: 1, question: "What equipment does my child need?", answer: "A reliable internet connection and a laptop or tablet with a camera and microphone. Full technical requirements are confirmed ahead of the January 2027 launch." },
   { _id: "faqEntry-f7", _type: "faqEntry", category: "Islamic Studies", order: 1, question: "How is Qur'an memorisation (hifz) taught?", answer: "Hifz sits alongside academic subjects as a first-class part of the timetable, with progress tracked just as academic subjects are." },

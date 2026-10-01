@@ -6,6 +6,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { openSignedPdf } from "./signedPdf";
 
 type Signed = { id: string; signed_at: string; document_id: string; title: string };
 
@@ -13,6 +14,16 @@ function DocumentsContent() {
   const supabase = getSupabaseClient();
   const [outstanding, setOutstanding] = useState<number | null>(null);
   const [history, setHistory] = useState<Signed[] | null>(null);
+  const [pdfBusy, setPdfBusy] = useState<string | null>(null);
+  const [pdfError, setPdfError] = useState<string | null>(null);
+
+  const downloadPdf = async (id: string) => {
+    setPdfBusy(id);
+    setPdfError(null);
+    const ok = await openSignedPdf(id);
+    if (!ok) setPdfError("We couldn't prepare the signed PDF just now. Please try again in a moment.");
+    setPdfBusy(null);
+  };
 
   const loadHistory = useCallback(async () => {
     if (!supabase) return;
@@ -43,6 +54,7 @@ function DocumentsContent() {
 
         <div className="rounded-2xl border border-gold-light bg-white">
           <h2 className="border-b border-gold-light px-5 py-3 text-lg font-semibold text-ink">Signed by you</h2>
+          {pdfError && <p role="alert" className="px-5 py-2 text-sm text-red-800">{pdfError}</p>}
           {history === null && <p className="px-5 py-4 text-sm text-ink/60">Loading…</p>}
           {history && history.length === 0 && <p className="px-5 py-4 text-sm text-ink/60">You have not signed any documents yet.</p>}
           {history && history.length > 0 && (
@@ -55,8 +67,11 @@ function DocumentsContent() {
                       Signed{" "}
                       {new Date(h.signed_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
                     </span>
-                    <Link href={`/documents/receipt?id=${h.id}`} className="font-medium text-teal-700 hover:underline">
-                      Signed copy
+                    <button type="button" disabled={pdfBusy === h.id} onClick={() => downloadPdf(h.id)} className="font-medium text-teal-700 hover:underline disabled:opacity-60">
+                      {pdfBusy === h.id ? "Preparing…" : "Download signed PDF"}
+                    </button>
+                    <Link href={`/documents/receipt?id=${h.id}`} className="hover:underline">
+                      Receipt
                     </Link>
                   </span>
                 </li>

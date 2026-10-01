@@ -4,7 +4,7 @@
  * Figures/copy marked isPlaceholder or "Draft / concept" are not confirmed — see task brief.
  */
 
-import { withDerivedFees, FEE_DEFAULTS, type FeeSchedule } from "@/lib/fees";
+import { withDerivedFees, FEE_DEFAULTS, FEE_POLICY_DEFAULTS, type FeeSchedule } from "@/lib/fees";
 
 /** Only `annualFee` is a stored/edited number. `termlyFee`, `monthlyFee` and
  * `schedule` are DERIVED (src/lib/fees.ts) from the annual fee plus the
@@ -27,7 +27,7 @@ export type FeeBand = {
 
 // Annual fees are the owner's published figures. Termly / monthly amounts are
 // derived from them (see src/lib/fees.ts) using the site-wide number of terms
-// and monthly instalments (defaults: 3 terms, 12 instalments, editable in
+// and monthly instalments (defaults: 2 terms, 7 instalments - Fees Policy, Jan-Jul 2027, editable in
 // /learn/admin/content -> Fees) so the instalments always add up exactly.
 const seedFeeBandsAnnual: { _id: string; yearGroupRange: string; order: number; annualFee: number; notes?: string }[] = [
   { _id: "fb1", yearGroupRange: "Reception – Year 2", order: 1, annualFee: 1596 },
@@ -60,10 +60,14 @@ export type SiteSettings = {
   registrationFee?: number;
   /** Optional default deposit amount (admissions_deposit_amount). */
   depositAmount?: number;
-  /** Number of terms the annual fee is split across (default 3). */
+  /** Number of terms the annual fee is split across (default 2). */
   feeTerms?: number;
-  /** Number of monthly instalments the annual fee is split across (default 12; 10 allowed). */
+  /** Number of monthly instalments the annual fee is split across (default 7). */
   feeInstalments?: number;
+  /** % off the annual total when paid in full by the due date (default 2). */
+  annualDiscountPercent?: number;
+  /** Editable payment dates copy shown on the Fees page. */
+  paymentScheduleText?: string;
   siblingDiscountPercent?: number;
   siblingDiscountNote?: string;
   // General-purpose discount catalogue for the fee estimator, beyond the
@@ -90,10 +94,12 @@ export type SiteSettings = {
 export const siteSettings: SiteSettings = {
   ctaPrimaryLabel: "Apply Now",
   ctaPrimaryHref: "/admissions",
-  applicationFee: 247,
-  registrationFee: 150,
+  applicationFee: FEE_POLICY_DEFAULTS.applicationFee,
+  registrationFee: FEE_POLICY_DEFAULTS.registrationFee,
   feeTerms: FEE_DEFAULTS.terms,
   feeInstalments: FEE_DEFAULTS.instalments,
+  annualDiscountPercent: FEE_POLICY_DEFAULTS.annualDiscountPercent,
+  paymentScheduleText: FEE_POLICY_DEFAULTS.paymentScheduleText,
   admissionsEmail: "globalacademy@tarbiyyah.co.uk",
   complaintsLastYear: 0,
   discounts: [],
@@ -147,8 +153,8 @@ export type FaqEntry = { _id: string; question: string; answer: string; category
 export const faqEntries: FaqEntry[] = [
   { _id: "f1", category: "Admissions", order: 1, question: "How do I apply for a place?", answer: "Start by registering your interest, then complete the multi-step application form on the Admissions page. We'll confirm receipt, arrange an entry assessment where relevant, and follow up with next steps." },
   { _id: "f2", category: "Admissions", order: 2, question: "Is there an entry assessment?", answer: "Yes — a short, age-appropriate assessment helps us understand where your child is and how best to support them from day one. Details are shared once your application is received." },
-  { _id: "f3", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers processing and assessment of your application. It is separate from the one-time {{registrationFee}} registration fee, which is charged once a place is offered and accepted." },
-  { _id: "f4", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. You can pay annually, termly ({{terms}} terms) or monthly ({{instalments}} instalments) for every year group band. Termly and monthly amounts are simply the annual fee divided evenly, and the instalments always add up exactly to the annual fee — see the Fees page for the full table." },
+  { _id: "f3", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers the baseline assessment and administrative review. It is separate from the one-time {{registrationFee}} registration fee, which is payable on acceptance of a place and no later than 19 December 2026." },
+  { _id: "f4", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. Fees are for the shortened January–July 2027 period. You can pay annually (with a {{annualDiscount}} discount if paid in full by 19 December 2026), termly ({{terms}} payments) or monthly ({{instalments}} payments) for every year group band. The instalments always add up exactly to the annual fee — see the Fees page for the full table and payment dates." },
   { _id: "f5", category: "Curriculum", order: 1, question: "Is this the full British curriculum?", answer: "Yes, taught live by qualified UK teachers, alongside a dedicated Islamic Studies programme, through to GCSE at Year 10–11." },
   { _id: "f6", category: "Technology", order: 1, question: "What equipment does my child need?", answer: "A reliable internet connection and a laptop or tablet with a camera and microphone. Full technical requirements are confirmed ahead of the January 2027 launch." },
   { _id: "f7", category: "Islamic Studies", order: 1, question: "How is Qur'an memorisation (hifz) taught?", answer: "Hifz sits alongside academic subjects as a first-class part of the timetable, with progress tracked just as academic subjects are." },

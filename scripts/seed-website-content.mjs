@@ -48,11 +48,12 @@ async function upsertAll(table, rows) {
 const { error: settingsErr } = await supabase.from("site_settings").update({
   cta_primary_label: "Apply Now",
   cta_primary_href: "/admissions",
-  application_fee: 247,
+  application_fee: 100,
   registration_fee: 150,
   // Termly/monthly fees are derived from annual_fee in the app (src/lib/fees.ts).
-  fee_terms: 3,
-  fee_instalments: 12,
+  fee_terms: 2,
+  fee_instalments: 7,
+  annual_discount_percent: 2,
   admissions_email: "globalacademy@tarbiyyah.co.uk",
   complaints_last_year: 0,
   discounts: [],
@@ -77,8 +78,8 @@ await upsertAll("fee_bands", [
 await upsertAll("faq_entries", [
   { id: deterministicId("f1"), category: "Admissions", order_index: 1, question: "How do I apply for a place?", answer: "Start by registering your interest, then complete the multi-step application form on the Admissions page. We'll confirm receipt, arrange an entry assessment where relevant, and follow up with next steps." },
   { id: deterministicId("f2"), category: "Admissions", order_index: 2, question: "Is there an entry assessment?", answer: "Yes — a short, age-appropriate assessment helps us understand where your child is and how best to support them from day one. Details are shared once your application is received." },
-  { id: deterministicId("f3"), category: "Fees", order_index: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers processing and assessment of your application. It is separate from the one-time {{registrationFee}} registration fee, which is charged once a place is offered and accepted." },
-  { id: deterministicId("f4"), category: "Fees", order_index: 2, question: "Can I pay fees monthly?", answer: "Yes. You can pay annually, termly ({{terms}} terms) or monthly ({{instalments}} instalments) for every year group band. Termly and monthly amounts are simply the annual fee divided evenly, and the instalments always add up exactly to the annual fee — see the Fees page for the full table." },
+  { id: deterministicId("f3"), category: "Fees", order_index: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers the baseline assessment and administrative review. It is separate from the one-time {{registrationFee}} registration fee, which is payable on acceptance of a place and no later than 19 December 2026." },
+  { id: deterministicId("f4"), category: "Fees", order_index: 2, question: "Can I pay fees monthly?", answer: "Yes. Fees are for the shortened January–July 2027 period. You can pay annually (with a {{annualDiscount}} discount if paid in full by 19 December 2026), termly ({{terms}} payments) or monthly ({{instalments}} payments) for every year group band. The instalments always add up exactly to the annual fee — see the Fees page for the full table and payment dates." },
   { id: deterministicId("f5"), category: "Curriculum", order_index: 1, question: "Is this the full British curriculum?", answer: "Yes, taught live by qualified UK teachers, alongside a dedicated Islamic Studies programme, through to GCSE at Year 10–11." },
   { id: deterministicId("f6"), category: "Technology", order_index: 1, question: "What equipment does my child need?", answer: "A reliable internet connection and a laptop or tablet with a camera and microphone. Full technical requirements are confirmed ahead of the January 2027 launch." },
   { id: deterministicId("f7"), category: "Islamic Studies", order_index: 1, question: "How is Qur'an memorisation (hifz) taught?", answer: "Hifz sits alongside academic subjects as a first-class part of the timetable, with progress tracked just as academic subjects are." },

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
+import { siteSettingsDefaults as D, withDefault, toStored } from "@/content/defaults";
+import { DefaultBadge, ResetLink } from "./DefaultField";
 
 type Row = {
   launch_date: string | null;
@@ -29,6 +31,10 @@ type Row = {
   headteacher_welcome_quote: string | null;
   headteacher_name: string | null;
 };
+
+const DEFAULT_KEYS = ["cta_primary_label", "cta_primary_href", "admissions_email"] as const;
+type DefaultKey = (typeof DEFAULT_KEYS)[number];
+const hasDefault = (k: keyof Row): k is DefaultKey => (DEFAULT_KEYS as readonly string[]).includes(k);
 
 const FIELDS: { key: keyof Row; label: string; type?: "text" | "number" | "textarea" | "email" | "url"; hint?: string }[] = [
   { key: "cta_primary_label", label: "Homepage primary button label" },
@@ -62,7 +68,13 @@ export function SiteSettingsEditor() {
 
   useEffect(() => {
     if (!supabase) return;
-    supabase.from("site_settings").select("*").eq("id", true).maybeSingle().then(({ data }) => setRow((data as Row) || null));
+    supabase.from("site_settings").select("*").eq("id", true).maybeSingle().then(({ data }) => {
+      const r = (data as Row) || null;
+      if (!r) return setRow(null);
+      const filled = { ...r };
+      for (const k of DEFAULT_KEYS) filled[k] = withDefault(r[k], D[k]);
+      setRow(filled);
+    });
   }, [supabase]);
 
   async function save() {
@@ -71,6 +83,7 @@ export function SiteSettingsEditor() {
     setMessage(null);
     const { id: _id, ...payload } = row as Row & { id?: unknown };
     void _id;
+    for (const k of DEFAULT_KEYS) payload[k] = toStored(row[k], D[k]);
     const { error } = await supabase.from("site_settings").update(payload).eq("id", true);
     if (error) {
       setSaving(false);
@@ -85,11 +98,23 @@ export function SiteSettingsEditor() {
   if (!row) return <p className="text-sm text-ink/60">Loading…</p>;
 
   return (
-    <Card title="Site settings" description="Contact details, fees, Open Evening links and key public-facing figures.">
+    <Card title="Site settings" description="Contact details, fees, Open Evening links and key public-facing figures. Fields that already show text on the website are filled with that text; edit it and Save to change the site.">
       <div className="grid gap-4 sm:grid-cols-2">
         {FIELDS.map((f) => (
           <label key={f.key} className={`text-sm text-ink ${f.type === "textarea" ? "sm:col-span-2" : ""}`}>
-            {f.label}
+            <span>
+              {f.label}
+              {hasDefault(f.key) && (() => {
+                const k: DefaultKey = f.key as DefaultKey;
+                const same = ((row[k] as string) || "").trim() === D[k];
+                return (
+                  <>
+                    <DefaultBadge isDefault={same} />
+                    <ResetLink show={!same} onReset={() => setRow({ ...row, [k]: D[k] })} />
+                  </>
+                );
+              })()}
+            </span>
             {f.type === "textarea" ? (
               <textarea
                 value={(row[f.key] as string) || ""}
