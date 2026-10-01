@@ -1,9 +1,21 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { normalisePortalPath, portalAreaFor } from "@/lib/learn/nav";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
-type Announcement = { id: string; scope: "class" | "school"; class_id: string | null; title: string; body: string; created_at: string };
+type Announcement = {
+  id: string;
+  scope: "class" | "school";
+  class_id: string | null;
+  title: string;
+  body: string;
+  created_at: string;
+  pinned: boolean;
+  expires_at: string | null;
+};
 
 /**
  * Reads school-wide + (when classIds is given) class-scoped announcements.
@@ -19,6 +31,7 @@ export function AnnouncementsFeed({
   postScope = "class",
   limit = 10,
   includeSchool = true,
+  viewAllHref,
 }: {
   classIds?: string[];
   canPost?: boolean;
@@ -27,8 +40,14 @@ export function AnnouncementsFeed({
   limit?: number;
   /** false = only this class's posts (the class page's Announcements tab). */
   includeSchool?: boolean;
+  /** Link to the full Announcements page. Defaults to the current portal area's page when shown on a dashboard. */
+  viewAllHref?: string;
 }) {
   const supabase = getSupabaseClient();
+  const pathname = usePathname() || "";
+  const area = portalAreaFor(pathname);
+  const onDashboard = /^\/(admin|teach|family|student)\/dashboard\/?$/.test(normalisePortalPath(pathname));
+  const allHref = viewAllHref ?? (area && onDashboard ? `/${area}/announcements` : null);
   const [items, setItems] = useState<Announcement[] | null>(null);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -44,11 +63,16 @@ export function AnnouncementsFeed({
     }
     const { data } = await supabase
       .from("announcements")
-      .select("id, scope, class_id, title, body, created_at")
+      .select("id, scope, class_id, title, body, created_at, pinned, expires_at")
       .or(filter)
+      .is("recalled_at", null)
+      .order("pinned", { ascending: false })
       .order("created_at", { ascending: false })
-      .limit(limit);
-    setItems((data as Announcement[]) || []);
+      .limit(limit * 3);
+    // Expired notices are dropped client-side (over-fetched above so the cut
+    // still yields `limit` live ones); recalled ones are hidden by RLS + filter.
+    const live = ((data as Announcement[] | null) || []).filter((a) => !a.expires_at || new Date(a.expires_at).getTime() > Date.now());
+    setItems(live.slice(0, limit));
   };
 
   useEffect(() => {
@@ -84,7 +108,14 @@ export function AnnouncementsFeed({
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <h2 className="font-serif text-h3 font-semibold text-ink">Announcements</h2>
+      <div className="flex items-center justify-between gap-2">
+        <h2 className="font-serif text-h3 font-semibold text-ink">Announcements</h2>
+        {allHref && (
+          <Link href={allHref} className="text-sm font-medium text-teal-700 hover:underline">
+            View all
+          </Link>
+        )}
+      </div>
       {canPost && (
         <div className="mt-3 space-y-2 border-b border-gold-light/30 pb-4">
           <input
@@ -120,7 +151,10 @@ export function AnnouncementsFeed({
           {items.map((a) => (
             <li key={a.id} className="rounded-lg border border-gold-light/40 p-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-ink">{a.title}</span>
+                <span className="text-sm font-medium text-ink">
+                  {a.pinned && <span className="mr-1.5 rounded-full bg-gold-light/60 px-1.5 py-0.5 text-xs font-medium text-ink/70">Pinned</span>}
+                  {a.title}
+                </span>
                 <span className="text-xs text-ink/50">{new Date(a.created_at).toLocaleDateString("en-GB")}</span>
               </div>
               <p className="mt-1 text-sm text-ink/70">{a.body}</p>

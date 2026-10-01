@@ -33,6 +33,10 @@ const ICONS: Record<SidebarIcon, string> = {
   homework: "M4 3.5h9.5l2.5 2.5v11H4zM7 8h6M7 11h6M7 14h3.5",
   clock: "M10 17.5a7.5 7.5 0 100-15 7.5 7.5 0 000 15zM10 5.5V10l3 2",
   grades: "M3 16.5h14M5.5 13.5V9M10 13.5V5M14.5 13.5v-6",
+  announcements: "M3 8.5v3l9 3.5V5zM12 5l5-2v14l-5-2M5 12.5l1 4h2.5l-.8-3",
+  behaviour: "M10 2.5l2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L2.8 7.7l5-.7z",
+  absences: "M3.5 5h13v11.5h-13zM3.5 8.5h13M7 3v3.5M13 3v3.5M8 11.5l4 3.5M12 11.5L8 15",
+  summary: "M3 17V8M8 17V4M13 17v-6M18 17v-9",
 };
 
 function NavIcon({ name }: { name: SidebarIcon }) {

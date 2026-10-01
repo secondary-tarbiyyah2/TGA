@@ -89,6 +89,13 @@ function ClassBlock({ c }: { c: ClassSummary }) {
         <Stat label="Average grade" value={fmtPct(s.average_percent)} sub={s.count === 0 ? "No assessments" : `${s.count} assessment${s.count === 1 ? "" : "s"}`} />
         <Stat label="Qur'an progress" value={c.quran.entries === 0 ? "–" : String(c.quran.entries)} sub={c.quran.latest || "No entries"} />
       </div>
+      {c.behaviour && (
+        <div className="mt-3 grid grid-cols-3 gap-3">
+          <Stat label="Merits" value={String(c.behaviour.merits)} sub="Good choices recognised" />
+          <Stat label="Demerits" value={String(c.behaviour.demerits)} />
+          <Stat label="Net points" value={c.behaviour.net_points > 0 ? `+${c.behaviour.net_points}` : String(c.behaviour.net_points)} sub="This period" />
+        </div>
+      )}
       {s.items.length > 0 && (
         <ul className="mt-3 divide-y divide-gold-light/30 text-sm">
           {s.items.map((it, i) => (

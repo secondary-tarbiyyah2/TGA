@@ -9,6 +9,7 @@ import { NotificationBell } from "@/components/learn/NotificationBell";
 import { PortalSidebar, PortalSidebarDrawer } from "@/components/learn/PortalSidebar";
 import { portalAreaFor } from "@/lib/learn/nav";
 import { SignatureBanner } from "@/components/learn/SignatureBanner";
+import { CommandPalette } from "@/components/learn/CommandPalette";
 import { ClockChip, ClockInGate } from "@/components/learn/ClockInGate";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
@@ -72,6 +73,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
             </Link>
 
             <div className="ml-auto flex items-center gap-1">
+              <CommandPalette area={area} roles={roles.map((r) => r.role)} />
               <ClockChip userId={activeSession.user.id} roles={roles} />
               <Link
                 href="/report-concern"

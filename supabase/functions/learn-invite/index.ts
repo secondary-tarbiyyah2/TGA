@@ -86,6 +86,14 @@ async function requireInviter(authHeader: string | null) {
   return { user: userData.user, roles };
 }
 
+async function safeSend(opts: Parameters<typeof sendEmail>[0]) {
+  try {
+    return await sendEmail(opts);
+  } catch (e) {
+    return { ok: false, detail: String(e) };
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
   if (req.method !== "POST") return jsonResponse({ ok: false, error: "method_not_allowed" }, 405);
@@ -154,8 +162,11 @@ Deno.serve(async (req) => {
   // already has an account) gets a 'recovery' link instead, which lets them
   // (re)set their password the same way without erroring on "already
   // registered". Either way: a link, never a password.
+  // createUser (above) already creates the auth user, so an 'invite' link
+  // would always fail with "already registered". A 'recovery' link works for
+  // any existing user (brand new included) and lets them set a password.
   const { data: linkData, error: linkErr } = await serviceClient.auth.admin.generateLink({
-    type: isNewUser ? "invite" : "recovery",
+    type: "recovery",
     email,
     options: { redirectTo: `${learnSiteUrl}/login/invite` },
   });
@@ -172,7 +183,7 @@ Deno.serve(async (req) => {
   // Resend is down or misconfigured; emailSent tells the frontend which
   // happened so it never claims an email went out that didn't.
   const firstName = fullName.split(/\s+/)[0] || fullName;
-  const emailResult = await sendEmail({
+  const emailResult = await safeSend({
     to: email,
     toName: fullName,
     subject: isNewUser ? "Set up your Tarbiyyah Global Academy Learn account" : "Reset your Tarbiyyah Global Academy Learn password",

@@ -151,6 +151,7 @@ export function PeopleList({
   onAdd,
   onAddChild,
   onChanged,
+  initialSearch = "",
 }: {
   people: Person[];
   loading: boolean;
@@ -158,9 +159,10 @@ export function PeopleList({
   onAdd: () => void;
   onAddChild: (parentId: string) => void;
   onChanged: () => void;
+  initialSearch?: string;
 }) {
   const [filter, setFilter] = useState<Filter>("all");
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(initialSearch);
 
   const counts = useMemo(() => {
     const c: Record<Filter, number> = { all: people.length, students: 0, parents: 0, teachers: 0, staff: 0 };

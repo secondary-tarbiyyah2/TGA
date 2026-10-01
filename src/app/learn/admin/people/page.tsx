@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { PageHeader } from "@/components/learn/PageHeader";
@@ -13,6 +14,7 @@ type ModalState = { open: boolean; type?: PersonType; parentId?: string; nonce: 
 
 function PeopleContent() {
   const data = usePeople();
+  const initialSearch = useSearchParams().get("q") || "";
   const [modal, setModal] = useState<ModalState>({ open: false, nonce: 0 });
 
   const openModal = (type?: PersonType, parentId?: string) => setModal((m) => ({ open: true, type, parentId, nonce: m.nonce + 1 }));
@@ -35,6 +37,7 @@ function PeopleContent() {
         onAdd={() => openModal()}
         onAddChild={(parentId) => openModal("student", parentId)}
         onChanged={data.reload}
+        initialSearch={initialSearch}
       />
       {modal.open && (
         <AddPersonModal
@@ -57,7 +60,9 @@ export default function AdminPeoplePage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
         <AdminShell>
-          <PeopleContent />
+          <Suspense fallback={null}>
+            <PeopleContent />
+          </Suspense>
         </AdminShell>
       </LearnGate>
     </section>

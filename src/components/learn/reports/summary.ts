@@ -7,6 +7,8 @@ export type HomeworkSummary = { done: number; total: number; rate: number | null
 export type AssessmentItem = { title: string; percent: number | null; grade: string | null };
 export type AssessmentSummary = { count: number; average_percent: number | null; items: AssessmentItem[] };
 export type QuranSummary = { entries: number; latest: string | null };
+/** Merits and demerits only: incident notes are never part of a report. */
+export type BehaviourSummary = { merits: number; demerits: number; net_points: number };
 export type ClassSummary = {
   class_id: string;
   class_name: string;
@@ -14,6 +16,8 @@ export type ClassSummary = {
   homework: HomeworkSummary;
   assessments: AssessmentSummary;
   quran: QuranSummary;
+  /** Optional so snapshots stored before the behaviour module still render. */
+  behaviour?: BehaviourSummary;
 };
 /** Snapshot stored in term_reports.narrative. Safeguarding data is never part of it. */
 export type ReportNarrative = {
@@ -54,6 +58,7 @@ function emptySummary(cls: { id: string; name: string }): ClassSummary {
     homework: { done: 0, total: 0, rate: null },
     assessments: { count: 0, average_percent: null, items: [] },
     quran: { entries: 0, latest: null },
+    behaviour: { merits: 0, demerits: 0, net_points: 0 },
   };
 }
 
@@ -70,6 +75,8 @@ type QRow = {
   standard: string | null;
 };
 
+type BhRow = { child_id: string; kind: string; points: number };
+
 function quranLabel(r: QRow): string {
   const what =
     r.milestone_type === "quran_memorisation"
@@ -81,8 +88,8 @@ function quranLabel(r: QRow): string {
 /**
  * Builds the auto-summary for every child of one class from data already
  * recorded (RLS-scoped to the caller). Only attendance, homework,
- * assessments and Qur'an progress are read: safeguarding tables are never
- * queried, and there is no behaviour table in this app.
+ * assessments, Qur'an progress and behaviour merits/demerits are read:
+ * safeguarding tables and behaviour incident rows are never queried.
  */
 export async function buildClassSummaries(
   supabase: Sb,
@@ -96,7 +103,7 @@ export async function buildClassSummaries(
 
   const endTs = range.end ? `${range.end}T23:59:59` : null;
 
-  const [att, hw, subs, ass, qp] = await Promise.all([
+  const [att, hw, subs, ass, qp, bh] = await Promise.all([
     fetchAll<AttRow>((f, t) => {
       let q = supabase
         .from("attendance_records")
@@ -138,6 +145,18 @@ export async function buildClassSummaries(
       if (range.start) q = q.gte("recorded_at", range.start);
       if (endTs) q = q.lte("recorded_at", endTs);
       return q.order("recorded_at", { ascending: false }).range(f, t);
+    }),
+    fetchAll<BhRow>((f, t) => {
+      let q = supabase
+        .from("behaviour_records")
+        .select("child_id, kind, points")
+        .eq("class_id", cls.id)
+        .in("child_id", childIds)
+        .in("kind", ["merit", "demerit"])
+        .is("voided_at", null);
+      if (range.start) q = q.gte("occurred_on", range.start);
+      if (range.end) q = q.lte("occurred_on", range.end);
+      return q.range(f, t);
     }),
   ]);
 
@@ -185,6 +204,13 @@ export async function buildClassSummaries(
     if (!s) continue;
     s.quran.entries += 1;
     if (!s.quran.latest) s.quran.latest = quranLabel(r);
+  }
+  for (const r of bh) {
+    const b = result[r.child_id]?.behaviour;
+    if (!b) continue;
+    if (r.kind === "merit") b.merits += 1;
+    else if (r.kind === "demerit") b.demerits += 1;
+    b.net_points += r.points;
   }
   return result;
 }

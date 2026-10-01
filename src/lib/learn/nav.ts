@@ -151,23 +151,31 @@ export type SidebarIcon =
   | "settings"
   | "homework"
   | "grades"
-  | "clock";
+  | "clock"
+  | "announcements"
+  | "behaviour"
+  | "absences"
+  | "summary";
 
 export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean };
 
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   admin: [
     { href: "/admin/dashboard", label: "Overview", icon: "overview" },
+    { href: "/admin/summary", label: "Summary", icon: "summary", headOnly: true },
     { href: "/admin/calendar", label: "Calendar", icon: "calendar" },
     { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true },
     { href: "/admin/admissions", label: "Admissions", icon: "admissions" },
     { href: "/admin/people", label: "People & accounts", icon: "people" },
     { href: "/admin/attendance", label: "Attendance", icon: "attendance", headOnly: true },
+    { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true },
+    { href: "/admin/absences", label: "Absences", icon: "absences", headOnly: true },
     { href: "/admin/staff-attendance", label: "Staff attendance", icon: "clock", headOnly: true },
     { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true },
     { href: "/admin/academic", label: "Academic setup", icon: "academic" },
     { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true },
     { href: "/admin/messages", label: "Messages", icon: "messages", headOnly: true },
+    { href: "/admin/announcements", label: "Announcements", icon: "announcements", headOnly: true },
     { href: "/admin/fees", label: "Fees", icon: "fees", headOnly: true },
     { href: "/admin/documents", label: "Documents & signatures", icon: "documents", headOnly: true },
     { href: "/admin/compliance", label: "Safeguarding & compliance", icon: "compliance" },
@@ -178,21 +186,27 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   teach: [
     { href: "/teach/dashboard", label: "Overview", icon: "overview" },
     { href: "/teach/today", label: "Today", icon: "today" },
+    { href: "/teach/absences", label: "Absences", icon: "absences" },
     { href: "/teach/clock", label: "My hours", icon: "clock" },
     { href: "/teach/classes", label: "My classes", icon: "classes" },
     { href: "/teach/calendar", label: "Calendar", icon: "calendar" },
     { href: "/teach/homework", label: "Homework", icon: "homework" },
+    { href: "/teach/behaviour", label: "Behaviour", icon: "behaviour" },
     { href: "/teach/assessment", label: "Assessment & grades", icon: "grades" },
     { href: "/teach/reports", label: "Reports", icon: "reports" },
     { href: "/teach/messages", label: "Messages", icon: "messages" },
+    { href: "/teach/announcements", label: "Announcements", icon: "announcements" },
   ],
   family: [
     { href: "/family/dashboard", label: "Overview", icon: "overview" },
     { href: "/family/classes", label: "Classes", icon: "classes" },
+    { href: "/family/absences", label: "Absences", icon: "absences" },
     { href: "/family/calendar", label: "Calendar", icon: "calendar" },
     { href: "/family/homework", label: "Homework", icon: "homework" },
+    { href: "/family/behaviour", label: "Behaviour", icon: "behaviour" },
     { href: "/family/reports", label: "Reports", icon: "reports" },
     { href: "/family/messages", label: "Messages", icon: "messages" },
+    { href: "/family/announcements", label: "Announcements", icon: "announcements" },
     { href: "/family/fees", label: "Fees", icon: "fees" },
   ],
   student: [
@@ -200,7 +214,9 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/student/classes", label: "My classes", icon: "classes" },
     { href: "/student/calendar", label: "Calendar", icon: "calendar" },
     { href: "/student/homework", label: "Homework", icon: "homework" },
+    { href: "/student/behaviour", label: "Behaviour", icon: "behaviour" },
     { href: "/student/reports", label: "Reports", icon: "reports" },
+    { href: "/student/announcements", label: "Announcements", icon: "announcements" },
   ],
 };
 

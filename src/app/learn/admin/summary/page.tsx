@@ -1,0 +1,548 @@
+"use client";
+
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { LearnGate } from "@/components/learn/LearnGate";
+import { PageHeader } from "@/components/learn/PageHeader";
+import { StatTile } from "@/components/learn/Card";
+import { csvEscape, round2 } from "@/components/learn/fees/shared";
+import { useLearnPermission } from "@/lib/learn/session";
+import { getSupabaseClient } from "@/lib/supabase/client";
+import { formatGBP } from "@/lib/format";
+
+type Term = { id: string; name: string; starts_on: string; ends_on: string };
+type ClassRow = { id: string; name: string; year_group_id: string | null; year_groups: { name: string } | null };
+type ChildRow = { id: string; year_group_id: string | null };
+type EnrolRow = { class_id: string; child_id: string };
+type LessonRow = { id: string; date: string; timetable_slots: { class_id: string } | null };
+type AttRow = { status: string; lesson_instances: { date: string; timetable_slots: { class_id: string } | null } | null };
+type HwRow = { id: string; class_id: string; due_at: string };
+type SubRow = { homework_id: string; submitted_at: string | null };
+type ChargeRow = { id: string; child_id: string | null; amount: number; due_date: string; fee_payments: { amount: number }[] | null };
+
+type Raw = {
+  terms: Term[];
+  classes: ClassRow[];
+  children: ChildRow[];
+  enrolments: EnrolRow[];
+  lessons: LessonRow[];
+  attendance: AttRow[];
+  homework: HwRow[];
+  submissions: SubRow[];
+  charges: ChargeRow[];
+};
+
+type Agg = {
+  key: string;
+  name: string;
+  yearGroup: string;
+  students: number;
+  attended: number;
+  marked: number;
+  hwDone: number;
+  hwExpected: number;
+  billed: number;
+  collected: number;
+};
+
+type PeriodKey = "term" | "30" | "90" | "all";
+type GroupBy = "class" | "year";
+type SortKey = "name" | "yearGroup" | "students" | "attendance" | "homework" | "collected" | "outstanding";
+
+const PAGE = 1000;
+const NO_YEAR = "No year group";
+
+type PageResult = { data: unknown; error: { message: string } | null };
+
+async function fetchAll<T>(build: (from: number, to: number) => PromiseLike<PageResult>): Promise<T[]> {
+  const out: T[] = [];
+  for (let from = 0; ; from += PAGE) {
+    const res = await build(from, from + PAGE - 1);
+    if (res.error) throw new Error(res.error.message);
+    const rows = (res.data as T[] | null) || [];
+    out.push(...rows);
+    if (rows.length < PAGE) break;
+  }
+  return out;
+}
+
+function isoDay(d: Date): string {
+  const p = (n: number) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+function daysAgo(n: number): string {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return isoDay(d);
+}
+
+function pct(num: number, den: number): number | null {
+  return den > 0 ? Math.round((num / den) * 1000) / 10 : null;
+}
+
+function fmtPct(v: number | null): string {
+  return v === null ? "–" : `${v}%`;
+}
+
+function emptyAgg(key: string, name: string, yearGroup: string): Agg {
+  return { key, name, yearGroup, students: 0, attended: 0, marked: 0, hwDone: 0, hwExpected: 0, billed: 0, collected: 0 };
+}
+
+const PRINT_CSS = `
+@media print {
+  .portal > aside, .portal header, .portal [role="dialog"], .no-print { display: none !important; }
+  .portal > div { padding-left: 0 !important; }
+  .portal main > div { max-width: none !important; padding: 0 !important; }
+  body { background: #fff !important; }
+  .print-card { break-inside: avoid; }
+}
+`;
+
+function SummaryContent() {
+  const canExport = useLearnPermission("can_export_data");
+  const [raw, setRaw] = useState<Raw | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [period, setPeriod] = useState<PeriodKey>("30");
+  const [termId, setTermId] = useState("");
+  const [groupBy, setGroupBy] = useState<GroupBy>("class");
+  const [sortKey, setSortKey] = useState<SortKey>("name");
+  const [sortDir, setSortDir] = useState<1 | -1>(1);
+
+  // Terms and the static lookups load once.
+  const [base, setBase] = useState<Pick<Raw, "terms" | "classes" | "children" | "enrolments"> | null>(null);
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const [terms, classes, children, enrolments] = await Promise.all([
+          fetchAll<Term>((a, b) => supabase.from("terms").select("id, name, starts_on, ends_on").order("starts_on", { ascending: false }).range(a, b)),
+          fetchAll<ClassRow>((a, b) => supabase.from("classes").select("id, name, year_group_id, year_groups(name)").order("name").range(a, b)),
+          fetchAll<ChildRow>((a, b) => supabase.from("children").select("id, year_group_id").order("id").range(a, b)),
+          fetchAll<EnrolRow>((a, b) => supabase.from("enrolments").select("class_id, child_id").order("id").range(a, b)),
+        ]);
+        if (cancelled) return;
+        setBase({ terms, classes, children, enrolments });
+        const today = isoDay(new Date());
+        const current = terms.find((t) => t.starts_on <= today && t.ends_on >= today) || terms[0];
+        if (current) setTermId(current.id);
+        else setPeriod("30");
+      } catch {
+        if (!cancelled) setError("Couldn't load the summary. Refresh the page and try again.");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const range = useMemo((): { from: string | null; to: string | null } => {
+    if (period === "30") return { from: daysAgo(30), to: isoDay(new Date()) };
+    if (period === "90") return { from: daysAgo(90), to: isoDay(new Date()) };
+    if (period === "term" && base) {
+      const t = base.terms.find((x) => x.id === termId);
+      if (t) return { from: t.starts_on, to: t.ends_on };
+    }
+    return { from: null, to: null };
+  }, [period, termId, base]);
+
+  const load = useCallback(async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase || !base) return;
+    const { from, to } = range;
+    setRaw(null);
+    setError(null);
+    try {
+      const lessons = await fetchAll<LessonRow>((a, b) => {
+        let q = supabase.from("lesson_instances").select("id, date, timetable_slots(class_id)");
+        if (from) q = q.gte("date", from);
+        if (to) q = q.lte("date", to);
+        return q.order("id").range(a, b);
+      });
+      const attendance = await fetchAll<AttRow>((a, b) => {
+        let q = supabase.from("attendance_records").select("status, lesson_instances!inner(date, timetable_slots(class_id))");
+        if (from) q = q.gte("lesson_instances.date", from);
+        if (to) q = q.lte("lesson_instances.date", to);
+        return q.order("id").range(a, b);
+      });
+      const nowIso = new Date().toISOString();
+      const homework = await fetchAll<HwRow>((a, b) => {
+        let q = supabase.from("homework").select("id, class_id, due_at").lte("due_at", nowIso);
+        if (from) q = q.gte("due_at", `${from}T00:00:00`);
+        if (to) q = q.lte("due_at", `${to}T23:59:59`);
+        return q.order("id").range(a, b);
+      });
+      const submissions = await fetchAll<SubRow>((a, b) => {
+        let q = supabase.from("homework_submissions").select("homework_id, submitted_at, homework!inner(due_at)").not("submitted_at", "is", null).lte("homework.due_at", nowIso);
+        if (from) q = q.gte("homework.due_at", `${from}T00:00:00`);
+        if (to) q = q.lte("homework.due_at", `${to}T23:59:59`);
+        return q.order("id").range(a, b);
+      });
+      const charges = await fetchAll<ChargeRow>((a, b) => {
+        let q = supabase.from("fee_charges").select("id, child_id, amount, due_date, fee_payments(amount)").is("voided_at", null);
+        if (from) q = q.gte("due_date", from);
+        if (to) q = q.lte("due_date", to);
+        return q.order("id").range(a, b);
+      });
+      setRaw({ ...base, lessons, attendance, homework, submissions, charges });
+    } catch {
+      setError("Couldn't load the summary. Refresh the page and try again.");
+    }
+  }, [base, range]);
+
+  useEffect(() => {
+    void load();
+  }, [load]);
+
+  const calc = useMemo(() => {
+    if (!raw) return null;
+    const ygName = new Map<string, string>();
+    raw.classes.forEach((c) => {
+      if (c.year_group_id && c.year_groups) ygName.set(c.year_group_id, c.year_groups.name);
+    });
+
+    const classAgg = new Map<string, Agg>();
+    raw.classes.forEach((c) => classAgg.set(c.id, emptyAgg(c.id, c.name, c.year_groups?.name || NO_YEAR)));
+
+    const enrolledByClass = new Map<string, Set<string>>();
+    const classesByChild = new Map<string, string[]>();
+    raw.enrolments.forEach((e) => {
+      if (!enrolledByClass.has(e.class_id)) enrolledByClass.set(e.class_id, new Set());
+      enrolledByClass.get(e.class_id)?.add(e.child_id);
+      classesByChild.set(e.child_id, [...(classesByChild.get(e.child_id) || []), e.class_id]);
+    });
+    enrolledByClass.forEach((set, id) => {
+      const a = classAgg.get(id);
+      if (a) a.students = set.size;
+    });
+
+    let attended = 0;
+    let marked = 0;
+    raw.attendance.forEach((r) => {
+      if (r.status === "excused") return;
+      const ok = r.status === "present" || r.status === "late";
+      marked += 1;
+      if (ok) attended += 1;
+      const cid = r.lesson_instances?.timetable_slots?.class_id;
+      const a = cid ? classAgg.get(cid) : undefined;
+      if (a) {
+        a.marked += 1;
+        if (ok) a.attended += 1;
+      }
+    });
+
+    const hwClass = new Map<string, string>();
+    let hwExpected = 0;
+    raw.homework.forEach((h) => {
+      hwClass.set(h.id, h.class_id);
+      const n = enrolledByClass.get(h.class_id)?.size || 0;
+      hwExpected += n;
+      const a = classAgg.get(h.class_id);
+      if (a) a.hwExpected += n;
+    });
+    let hwDone = 0;
+    raw.submissions.forEach((s) => {
+      const cid = hwClass.get(s.homework_id);
+      if (!cid) return;
+      hwDone += 1;
+      const a = classAgg.get(cid);
+      if (a) a.hwDone += 1;
+    });
+
+    // Fees belong to a child. Classes use enrolments (a child in several
+    // classes counts in each); year groups use the child's own year group.
+    const ygAgg = new Map<string, Agg>();
+    const childYg = new Map<string, string>();
+    raw.children.forEach((c) => {
+      const name = (c.year_group_id && ygName.get(c.year_group_id)) || NO_YEAR;
+      childYg.set(c.id, name);
+      if (!ygAgg.has(name)) ygAgg.set(name, emptyAgg(name, name, name));
+      const y = ygAgg.get(name);
+      if (y) y.students += 1;
+    });
+
+    let billed = 0;
+    let collected = 0;
+    raw.charges.forEach((c) => {
+      const paid = Math.min(c.amount, (c.fee_payments || []).reduce((s, p) => s + p.amount, 0));
+      billed += c.amount;
+      collected += paid;
+      if (!c.child_id) return;
+      (classesByChild.get(c.child_id) || []).forEach((cid) => {
+        const a = classAgg.get(cid);
+        if (a) {
+          a.billed += c.amount;
+          a.collected += paid;
+        }
+      });
+      const yName = childYg.get(c.child_id);
+      const y = yName ? ygAgg.get(yName) : undefined;
+      if (y) {
+        y.billed += c.amount;
+        y.collected += paid;
+      }
+    });
+
+    // Year group rows take attendance and homework from their classes.
+    classAgg.forEach((a) => {
+      if (!ygAgg.has(a.yearGroup)) ygAgg.set(a.yearGroup, emptyAgg(a.yearGroup, a.yearGroup, a.yearGroup));
+      const y = ygAgg.get(a.yearGroup);
+      if (y) {
+        y.attended += a.attended;
+        y.marked += a.marked;
+        y.hwDone += a.hwDone;
+        y.hwExpected += a.hwExpected;
+      }
+    });
+
+    return {
+      students: raw.children.length,
+      lessons: raw.lessons.filter((l) => l.date <= isoDay(new Date())).length,
+      attendance: pct(attended, marked),
+      collected: round2(collected),
+      outstanding: round2(Math.max(0, billed - collected)),
+      billed,
+      collection: pct(collected, billed),
+      homework: pct(hwDone, hwExpected),
+      classRows: [...classAgg.values()],
+      yearRows: [...ygAgg.values()].filter((y) => y.students > 0 || y.marked > 0 || y.hwExpected > 0),
+    };
+  }, [raw]);
+
+  const periodLabel = useMemo(() => {
+    if (period === "all") return "All time";
+    if (period === "30") return "Last 30 days";
+    if (period === "90") return "Last 90 days";
+    const t = base?.terms.find((x) => x.id === termId);
+    return t ? `${t.name} (${t.starts_on} to ${t.ends_on})` : "Term";
+  }, [period, base, termId]);
+
+  const rows = useMemo(() => {
+    if (!calc) return [];
+    const src = groupBy === "class" ? calc.classRows : calc.yearRows;
+    const val = (a: Agg): number | string => {
+      switch (sortKey) {
+        case "name":
+          return a.name.toLowerCase();
+        case "yearGroup":
+          return a.yearGroup.toLowerCase();
+        case "students":
+          return a.students;
+        case "attendance":
+          return pct(a.attended, a.marked) ?? -1;
+        case "homework":
+          return pct(a.hwDone, a.hwExpected) ?? -1;
+        case "collected":
+          return a.collected;
+        default:
+          return Math.max(0, a.billed - a.collected);
+      }
+    };
+    return [...src].sort((a, b) => {
+      const x = val(a);
+      const y = val(b);
+      const c = typeof x === "string" && typeof y === "string" ? x.localeCompare(y) : Number(x) - Number(y);
+      return c * sortDir || a.name.localeCompare(b.name);
+    });
+  }, [calc, groupBy, sortKey, sortDir]);
+
+  const sortBy = (k: SortKey) => {
+    if (k === sortKey) setSortDir((d) => (d === 1 ? -1 : 1));
+    else {
+      setSortKey(k);
+      setSortDir(k === "name" || k === "yearGroup" ? 1 : -1);
+    }
+  };
+
+  const exportCsv = () => {
+    if (!calc) return;
+    const lines: string[] = [];
+    lines.push(["Period", periodLabel].map(csvEscape).join(","));
+    lines.push(["Total students", calc.students].map(csvEscape).join(","));
+    lines.push(["Lessons held", calc.lessons].map(csvEscape).join(","));
+    lines.push(["Attendance rate", fmtPct(calc.attendance)].map(csvEscape).join(","));
+    lines.push(["Fees collected", calc.collected.toFixed(2)].map(csvEscape).join(","));
+    lines.push(["Fees outstanding", calc.outstanding.toFixed(2)].map(csvEscape).join(","));
+    lines.push(["Collection rate", fmtPct(calc.collection)].map(csvEscape).join(","));
+    lines.push(["Homework completion", fmtPct(calc.homework)].map(csvEscape).join(","));
+    lines.push("");
+    lines.push([groupBy === "class" ? "Class" : "Year group", "Year group", "Students", "Attendance %", "Homework completion %", "Fees collected", "Fees outstanding"].map(csvEscape).join(","));
+    rows.forEach((r) => {
+      lines.push(
+        [
+          r.name,
+          r.yearGroup,
+          r.students,
+          pct(r.attended, r.marked) ?? "",
+          pct(r.hwDone, r.hwExpected) ?? "",
+          r.collected.toFixed(2),
+          Math.max(0, r.billed - r.collected).toFixed(2),
+        ]
+          .map(csvEscape)
+          .join(",")
+      );
+    });
+    const blob = new Blob([lines.join("\n")], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `summary-${isoDay(new Date())}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const field = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-gold-700 focus:outline-none focus:ring-2 focus:ring-gold-300/60";
+  const btn = "rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream";
+  const hasTerms = !!base && base.terms.length > 0;
+
+  const th = (k: SortKey, label: string, align: "left" | "right" = "right") => (
+    <th scope="col" aria-sort={sortKey === k ? (sortDir === 1 ? "ascending" : "descending") : "none"} className={`px-4 py-3 ${align === "left" ? "text-left" : "text-right"}`}>
+      <button type="button" onClick={() => sortBy(k)} className="inline-flex items-center gap-1 font-semibold hover:text-ink">
+        {label}
+        <span aria-hidden="true" className={sortKey === k ? "text-teal-700" : "text-ink/25"}>
+          {sortKey === k ? (sortDir === 1 ? "▲" : "▼") : "↕"}
+        </span>
+      </button>
+    </th>
+  );
+
+  return (
+    <div>
+      <style>{PRINT_CSS}</style>
+      <PageHeader
+        crumbs={[{ label: "Site administration", href: "/admin/site" }, { label: "Summary" }]}
+        title="Summary"
+        subtitle="School-wide attendance, fees, homework and lessons, with a per-class breakdown."
+        actions={
+          <div className="no-print flex flex-wrap gap-2">
+            {canExport && (
+              <button type="button" onClick={exportCsv} disabled={!calc} className={`${btn} disabled:opacity-50`}>
+                CSV
+              </button>
+            )}
+            <button type="button" onClick={() => window.print()} disabled={!calc} className={`${btn} disabled:opacity-50`}>
+              PDF
+            </button>
+          </div>
+        }
+      />
+
+      <div className="no-print mb-5 flex flex-wrap items-end gap-3">
+        <label className="text-sm font-medium text-ink/70">
+          <span className="mb-1 block">Period</span>
+          <select value={period} onChange={(e) => setPeriod(e.target.value as PeriodKey)} className={field}>
+            {hasTerms && <option value="term">Term</option>}
+            <option value="30">Last 30 days</option>
+            <option value="90">Last 90 days</option>
+            <option value="all">All time</option>
+          </select>
+        </label>
+        {period === "term" && hasTerms && (
+          <label className="text-sm font-medium text-ink/70">
+            <span className="mb-1 block">Term</span>
+            <select value={termId} onChange={(e) => setTermId(e.target.value)} className={field}>
+              {base?.terms.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.name} ({t.starts_on.slice(0, 4)})
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+      </div>
+      <p className="mb-4 hidden text-sm text-ink/70 print:block">Period: {periodLabel}</p>
+
+      {error && (
+        <p role="alert" className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">
+          {error}
+        </p>
+      )}
+
+      {!calc && !error && <p role="status" className="py-10 text-center text-sm text-ink/60">Loading summary…</p>}
+
+      {calc && (
+        <>
+          <div className="print-card mb-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <StatTile label="Total students" value={calc.students} />
+            <StatTile label="Lessons held" value={calc.lessons} />
+            <StatTile label="Attendance rate" value={fmtPct(calc.attendance)} />
+            <StatTile label="Homework completion" value={fmtPct(calc.homework)} />
+            <StatTile label="Fees collected" value={formatGBP(calc.collected)} />
+            <StatTile label="Fees outstanding" value={formatGBP(calc.outstanding)} status={calc.outstanding > 0 ? "warning" : calc.billed > 0 ? "ok" : undefined} />
+            <StatTile label="Collection %" value={fmtPct(calc.collection)} />
+          </div>
+
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+            <h2 className="font-serif text-h3 font-semibold text-ink">Per-class breakdown</h2>
+            <label className="no-print flex items-center gap-2 text-sm font-medium text-ink/70">
+              Group by
+              <select
+                value={groupBy}
+                onChange={(e) => {
+                  setGroupBy(e.target.value as GroupBy);
+                  if (sortKey === "yearGroup") setSortKey("name");
+                }}
+                className={field}
+              >
+                <option value="class">Class</option>
+                <option value="year">Year group</option>
+              </select>
+            </label>
+          </div>
+
+          {rows.length === 0 ? (
+            <div className="rounded-2xl border border-gold-light bg-white p-8 text-center text-sm text-ink/60">
+              No classes to show yet. Add classes under Academic setup and they will appear here.
+            </div>
+          ) : (
+            <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
+              <table className="w-full min-w-[720px] text-sm">
+                <thead className="bg-cream/60 text-ink/70">
+                  <tr>
+                    {th("name", groupBy === "class" ? "Class" : "Year group", "left")}
+                    {groupBy === "class" && th("yearGroup", "Year group", "left")}
+                    {th("students", "Students")}
+                    {th("attendance", "Attendance %")}
+                    {th("homework", "Homework completion %")}
+                    {th("collected", "Fees collected")}
+                    {th("outstanding", "Fees outstanding")}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gold-light/60">
+                  {rows.map((r) => (
+                    <tr key={r.key}>
+                      <th scope="row" className="px-4 py-3 text-left font-medium text-ink">{r.name}</th>
+                      {groupBy === "class" && <td className="px-4 py-3 text-ink/70">{r.yearGroup}</td>}
+                      <td className="px-4 py-3 text-right tabular-nums">{r.students}</td>
+                      <td className="px-4 py-3 text-right tabular-nums">{fmtPct(pct(r.attended, r.marked))}</td>
+                      <td className="px-4 py-3 text-right tabular-nums">{fmtPct(pct(r.hwDone, r.hwExpected))}</td>
+                      <td className="px-4 py-3 text-right tabular-nums">{formatGBP(r.collected)}</td>
+                      <td className="px-4 py-3 text-right tabular-nums">{formatGBP(Math.max(0, r.billed - r.collected))}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <p className="mt-3 text-xs text-ink/50">
+            Attendance counts present and late marks; excused absences are left out. Homework completion is submissions against pupils enrolled, for homework already due.
+            {groupBy === "class" && " Class fees follow enrolments, so a child in several classes appears in each; the totals above count every charge once."}
+            {" "}Fees cover charges falling due in the period.
+          </p>
+        </>
+      )}
+    </div>
+  );
+}
+
+export default function AdminSummaryPage() {
+  return (
+    <section className="app-pad">
+      <LearnGate allowedRoles={["head_teacher", "admin"]}>
+        <SummaryContent />
+      </LearnGate>
+    </section>
+  );
+}
