@@ -85,13 +85,13 @@ export function TimezoneConverter() {
             <p className="mt-1 font-serif text-2xl font-semibold text-ink">
               {b.localStart}–{b.localEnd}
             </p>
-            <p className="mt-1 text-xs text-ink/50">
+            <p className="mt-1 text-xs text-ink/70">
               {b.start}–{b.end} UK time
             </p>
           </div>
         ))}
       </div>
-      <p className="mt-4 text-xs text-ink/50">
+      <p className="mt-4 text-xs text-ink/70">
         Every family is placed into whichever window fits their timezone best — see our{" "}
         <a href="/eligibility" className="font-semibold text-gold-700 underline">fit quiz</a> or book an admissions
         call to talk it through.

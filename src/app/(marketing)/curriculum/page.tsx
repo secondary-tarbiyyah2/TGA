@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
+import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { keyStages } from "@/content/curriculum";
 import { getCurriculumContent } from "@/lib/content";
 import { CurriculumSampleWeek } from "@/components/CurriculumSampleWeek";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Curriculum",
   description: "A specialist curriculum — the full British national curriculum plus Islamic Studies, by key stage, Reception to GCSE.",
-};
+  path: "/curriculum",
+});
 
 export default async function CurriculumPage() {
   const content = await getCurriculumContent();
@@ -56,6 +59,7 @@ export default async function CurriculumPage() {
         </Container>
       </section>
 
+      <AdmissionsStrip />
       <CtaBand heading="Ready to apply?" body="Start your child's application today." />
     </>
   );

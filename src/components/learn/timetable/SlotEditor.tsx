@@ -4,7 +4,8 @@ import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { WEEKDAYS, type TimetableSlot } from "@/lib/learn/timetable";
 import { teacherFor, todayIso, type CstRow } from "@/lib/learn/teacherFor";
-import { hhmm } from "./types";
+import { hhmm, moveProblem } from "./types";
+import { insertSlotLocked, updateSlotLocked } from "./api";
 import type { Availability, ClassOpt, ClassTeacherLink, Protected, Teacher } from "./types";
 
 const field = "mt-1 w-full rounded-lg border border-gold-light/70 bg-white px-3 py-2 text-sm text-ink";
@@ -53,9 +54,8 @@ export function SlotEditor({
   const [end, setEnd] = useState(slot ? hhmm(slot.end_time) : defaults.end);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [lockIt, setLockIt] = useState(true);
 
-  const overlaps = (s: TimetableSlot) => s.weekday === weekday && hhmm(s.start_time) < end && start < hhmm(s.end_time);
-  const others = allSlots.filter((s) => s.id !== slot?.id);
   const effClassId = slot ? slot.class_id : classId;
 
   const warnings: string[] = [];
@@ -67,15 +67,18 @@ export function SlotEditor({
     if (p.academic_year_id === academicYearId && p.weekday === weekday && hhmm(p.start_time) < end && start < hhmm(p.end_time)) warnings.push(`This overlaps a protected time (${p.name}).`);
   }
 
+  const effSubjectIdForProbe = slot ? slot.subject_id : classes.find((c) => c.id === effClassId)?.subject_id || "";
   const hardProblem = (): string | null => {
     if (!effClassId) return "Choose a class.";
     if (!teacherId) return "Choose a teacher.";
     if (!start || !end || end <= start) return "The end time must be after the start time.";
-    if (others.some((s) => overlaps(s) && s.teacher_user_id === teacherId)) return "That teacher already has a lesson at this time.";
-    if (others.some((s) => overlaps(s) && s.class_id === effClassId)) return "That class already has a lesson at this time.";
-    if (slot?.virtual_session_id && others.some((s) => overlaps(s) && s.virtual_session_id === slot.virtual_session_id)) return "That virtual session is already in use at this time.";
-    return null;
+    // `allSlots` is every slot in the run (all classes, all year groups), so a
+    // teacher teaching another class at this time is caught here too.
+    const probe: TimetableSlot = slot || { id: "new", run_id: runId, class_id: effClassId, subject_id: effSubjectIdForProbe, teacher_user_id: teacherId, virtual_session_id: null, weekday, start_time: start, end_time: end };
+    return moveProblem(probe, weekday, start, end, allSlots, teacherId);
   };
+
+  const clashNow = teacherId && end > start && effClassId ? hardProblem() : null;
 
   const friendly = (message: string, code?: string): string => {
     if (code === "23P01" || /no_(teacher|class|session)_overlap/.test(message)) return "That clashes with another lesson (same teacher, class or session at the same time).";
@@ -91,12 +94,12 @@ export function SlotEditor({
     setError(null);
     try {
       if (slot) {
-        const { error: err } = await supabase.from("timetable_slots").update({ teacher_user_id: teacherId, weekday, start_time: start, end_time: end }).eq("id", slot.id);
+        const err = await updateSlotLocked(supabase, slot.id, { teacher_user_id: teacherId, weekday, start_time: start, end_time: end }, lockIt);
         if (err) return setError(friendly(err.message, err.code));
       } else {
         const cls = classes.find((c) => c.id === classId);
         if (!cls || !cls.subject_id) return setError("That class has no subject yet. Set one in Academic setup.");
-        const { error: err } = await supabase.from("timetable_slots").insert({ run_id: runId, class_id: classId, subject_id: cls.subject_id, teacher_user_id: teacherId, weekday, start_time: start, end_time: end });
+        const err = await insertSlotLocked(supabase, { run_id: runId, class_id: classId, subject_id: cls.subject_id, teacher_user_id: teacherId, weekday, start_time: start, end_time: end }, lockIt);
         if (err) return setError(friendly(err.message, err.code));
       }
       onSaved();
@@ -162,14 +165,19 @@ export function SlotEditor({
             <label className="block text-xs font-medium text-ink/70">Starts<input type="time" className={field} value={start} onChange={(e) => setStart(e.target.value)} /></label>
             <label className="block text-xs font-medium text-ink/70">Ends<input type="time" className={field} value={end} onChange={(e) => setEnd(e.target.value)} /></label>
           </div>
+          <label className="flex items-start gap-2 text-xs text-ink/70">
+            <input type="checkbox" checked={lockIt} onChange={(e) => setLockIt(e.target.checked)} className="mt-0.5" />
+            <span>Keep this lesson fixed when the timetable is re-generated (&ldquo;Re-run keeping locked lessons&rdquo;).</span>
+          </label>
         </div>
+        {clashNow && <p role="alert" className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">{clashNow} Saving is blocked until you change the teacher, day or time.</p>}
         {warnings.map((w) => <p key={w} className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-900">{w} You can still save it.</p>)}
         {error && <p role="alert" className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">{error}</p>}
         <div className="mt-5 flex flex-wrap items-center justify-between gap-2">
           {slot ? <button type="button" onClick={remove} disabled={busy} className="rounded-lg px-3 py-2 text-sm font-medium text-red-700 hover:bg-red-50">Delete lesson</button> : <span />}
           <span className="flex gap-2">
             <button type="button" onClick={onClose} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">Cancel</button>
-            <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">{busy ? "Saving…" : "Save"}</button>
+            <button type="button" onClick={save} disabled={busy || Boolean(clashNow)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">{busy ? "Saving…" : "Save"}</button>
           </span>
         </div>
       </div>

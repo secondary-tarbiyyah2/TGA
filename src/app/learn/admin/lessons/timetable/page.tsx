@@ -6,10 +6,11 @@ import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/Lesson
 import { SlotEditor } from "@/components/learn/timetable/SlotEditor";
 import { WeeklyGrid } from "@/components/learn/timetable/WeeklyGrid";
 import { CoverForm } from "@/components/learn/timetable/CoverForm";
-import { btn, callFunction, chipCls, ghost } from "@/components/learn/timetable/api";
-import { coverageGaps, slotIssues } from "@/components/learn/timetable/checks";
+import { btn, callFunction, chipCls, ghost, updateSlotLocked } from "@/components/learn/timetable/api";
+import { ReconciliationPanel } from "@/components/learn/timetable/ReconciliationPanel";
+import { coverageGaps, publishBlocker, slotIssues } from "@/components/learn/timetable/checks";
 import { downloadCsv, printTimetable } from "@/components/learn/timetable/export";
-import { subjectColours, type Conflict } from "@/components/learn/timetable/types";
+import { moveWarnings, subjectColours, type Conflict, type LockableSlot } from "@/components/learn/timetable/types";
 import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
 import { edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -27,7 +28,8 @@ function TimetableContent() {
   const supabase = getSupabaseClient();
   const { data, reload } = useTimetableData();
   const [selectedRun, setSelectedRun] = useState<string | null>(null);
-  const [slots, setSlots] = useState<TimetableSlot[]>([]);
+  const [slots, setSlots] = useState<LockableSlot[]>([]);
+  const [rerunBusy, setRerunBusy] = useState(false);
   const [conflicts, setConflicts] = useState<Conflict[]>([]);
   const [view, setView] = useState<View>("all");
   const [focus, setFocus] = useState<string | null>(null);
@@ -42,11 +44,15 @@ function TimetableContent() {
   const loadDetail = useCallback(
     async (id: string) => {
       if (!supabase) return;
-      const [{ data: slotData }, { data: conflictData }] = await Promise.all([
-        supabase.from("timetable_slots").select("id, run_id, class_id, subject_id, teacher_user_id, virtual_session_id, weekday, start_time, end_time, classes(name, year_group), subjects(name)").eq("run_id", id),
-        supabase.from("timetable_conflicts").select("id, severity, message, resolved").eq("run_id", id),
+      const base = "id, run_id, class_id, subject_id, teacher_user_id, virtual_session_id, weekday, start_time, end_time, classes(name, year_group), subjects(name)";
+      // `locked` and `kind`/`details` exist once migration 0056 is applied; fall back without them.
+      const [slotRes, conflictRes] = await Promise.all([
+        supabase.from("timetable_slots").select(`${base}, locked`).eq("run_id", id),
+        supabase.from("timetable_conflicts").select("id, severity, message, resolved, kind, details").eq("run_id", id),
       ]);
-      setSlots((slotData as unknown as TimetableSlot[]) || []);
+      const slotData = slotRes.error ? (await supabase.from("timetable_slots").select(base).eq("run_id", id)).data : slotRes.data;
+      const conflictData = conflictRes.error ? (await supabase.from("timetable_conflicts").select("id, severity, message, resolved").eq("run_id", id)).data : conflictRes.data;
+      setSlots((slotData as unknown as LockableSlot[]) || []);
       setConflicts((conflictData as Conflict[]) || []);
     },
     [supabase],
@@ -90,7 +96,7 @@ function TimetableContent() {
     if (!supabase) return "Not connected.";
     const before = slots;
     setSlots((cur) => cur.map((s) => (s.id === slot.id ? { ...s, weekday, start_time: start, end_time: end } : s)));
-    const { error } = await supabase.from("timetable_slots").update({ weekday, start_time: start, end_time: end }).eq("id", slot.id);
+    const error = await updateSlotLocked(supabase, slot.id, { weekday, start_time: start, end_time: end });
     if (error) {
       setSlots(before);
       if (error.code === "23P01" || /no_(teacher|class|session)_overlap/.test(error.message)) return "That clashes with another lesson (same teacher, class or session at the same time).";
@@ -100,8 +106,46 @@ function TimetableContent() {
     return null;
   };
 
+  // Offline re-check of the whole run before Publish (teacher in two places, class double-booked...).
+  const blocker = useMemo(() => (run && (run.status === "draft" || run.status === "review") ? publishBlocker(slots, data.teachers) : null), [run, slots, data.teachers]);
+  const lockedCount = slots.filter((s) => s.locked).length;
+
+  const moveNotes = (slot: TimetableSlot, weekday: number, start: string, end: string) => moveWarnings(slot, weekday, start, end, slots, data.availability, data.protectedTimes, runYearId);
+
+  const rerunKeepingLocked = async () => {
+    if (!supabase || !run) return;
+    const year = data.years.find((y) => y.id === run.academic_year_id);
+    if (!year) return;
+    setRerunBusy(true);
+    setMessage(null);
+    try {
+      const { data: u } = await supabase.auth.getUser();
+      const { data: created, error } = await supabase
+        .from("timetable_runs")
+        .insert({ academic_year_id: run.academic_year_id, term_id: null, label: `${run.label} (re-run)`, status: "draft", generated_by: "manual", created_by: u.user?.id ?? null, solver_stats: { regenerate_pending: true, source_run_id: run.id } })
+        .select("id")
+        .single();
+      if (error || !created) return setMessage(`Could not prepare the re-run: ${error?.message || "unknown error"}`);
+      const keep = slots.filter((s) => s.locked).map((s) => ({ run_id: created.id, class_id: s.class_id, subject_id: s.subject_id, teacher_user_id: s.teacher_user_id, virtual_session_id: s.virtual_session_id, weekday: s.weekday, start_time: s.start_time, end_time: s.end_time, locked: true }));
+      if (keep.length > 0) {
+        const { error: copyErr } = await supabase.from("timetable_slots").insert(keep);
+        if (copyErr) {
+          await supabase.from("timetable_runs").delete().eq("id", created.id);
+          return setMessage(`Could not copy the locked lessons: ${copyErr.message}`);
+        }
+      }
+      const result = await callFunction("trigger-timetable-generation", { academic_year_label: year.label, run_label: `${run.label} (re-run)` });
+      await reload();
+      setSelectedRun(created.id);
+      setMessage(result.ok ? `Re-run started with ${keep.length} locked lesson${keep.length === 1 ? "" : "s"} kept. The solver fills the rest of the new draft in a couple of minutes; use Check for results.` : `The draft with your locked lessons was created, but the solver could not be started: ${edgeErrorMessage(result)}. Start "Generate timetable" in the Generate page; it will fill this draft.`);
+    } finally {
+      setRerunBusy(false);
+    }
+  };
+
   const publish = async () => {
     if (!runId) return;
+    if (blocker) return setMessage(blocker);
     const result = await callFunction("timetable-publish", { action: "publish", run_id: runId });
     setMessage(result.ok ? "Published." : `Could not publish: ${edgeErrorMessage(result)}`);
     if (result.ok) await reload();
@@ -168,14 +212,18 @@ function TimetableContent() {
             )}
             <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-gold-light/40 pt-3">
               {run && (run.status === "draft" || run.status === "review") && (
-                <button type="button" onClick={publish} disabled={hardConflicts.length > 0} className={btn} title={hardConflicts.length > 0 ? "Resolve hard conflicts before publishing" : undefined}>Publish timetable</button>
+                <button type="button" onClick={publish} disabled={hardConflicts.length > 0 || Boolean(blocker)} className={btn} title={blocker ? "Teacher or class clashes must be fixed first" : hardConflicts.length > 0 ? "Resolve hard conflicts before publishing" : undefined}>Publish timetable</button>
               )}
               {run && (run.status === "published" || run.status === "superseded") && (
                 <button type="button" onClick={() => rollback(run.id)} className={ghost}>Make an editable draft from this version</button>
               )}
               {run && !editable && <span className="text-xs text-ink/60">This version is {run.status} and read-only.</span>}
               {hardConflicts.length > 0 && <span className="text-xs text-red-800">Publishing blocked: {hardConflicts.length} hard conflict{hardConflicts.length === 1 ? "" : "s"}.</span>}
+              {run?.solver_stats && (run.solver_stats as Record<string, unknown>).regenerate_pending === true && (
+                <button type="button" className={ghost} onClick={async () => { await reload(); if (runId) await loadDetail(runId); }}>Check for results</button>
+              )}
             </div>
+            {blocker && <p role="alert" className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">{blocker}</p>}
           </div>
 
           {slots.length === 0 && editable && <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-3 text-sm text-ink/70">This draft has no lessons. Click + in the grid to add one, or <Link href="/admin/lessons/generate" className="font-semibold underline">generate again</Link>.</p>}
@@ -190,7 +238,10 @@ function TimetableContent() {
             onEdit={(s) => setEditor({ slot: s, weekday: s.weekday, start: s.start_time.slice(0, 5), end: s.end_time.slice(0, 5) })}
             onAdd={(weekday, start, end) => setEditor({ slot: null, weekday, start, end })}
             onMove={moveSlot}
+            moveNotes={moveNotes}
           />
+
+          <ReconciliationPanel conflicts={conflicts} canRerun={Boolean(editable)} onRerun={rerunKeepingLocked} busy={rerunBusy} lockedCount={lockedCount} />
 
           {legendSubjects.length > 0 && (
             <ul className="flex flex-wrap gap-2 text-xs" aria-label="Subject colours">

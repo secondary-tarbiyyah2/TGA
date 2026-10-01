@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
@@ -16,7 +17,11 @@ export async function generateMetadata({ params }: { params: Promise<{ stage: st
   const { stage } = await params;
   const ks = keyStages.find((k) => k.slug === stage);
   if (!ks) return {};
-  return { title: `${ks.range} Curriculum`, description: `Subjects, timetable and sample week for ${ks.range}.` };
+  return pageMetadata({
+    title: `${ks.range} Curriculum`,
+    description: `Subjects, timetable and sample week for ${ks.range} at Tarbiyyah Global Academy.`,
+    path: `/curriculum/${ks.slug}`,
+  });
 }
 
 export default async function KeyStagePage({ params }: { params: Promise<{ stage: string }> }) {
@@ -89,7 +94,7 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
                           <a href={d.fileUrl} className="text-sm font-medium text-gold-700 underline" target="_blank" rel="noopener noreferrer">
                             {d.title}
                           </a>
-                          {d.term && <span className="ml-2 text-xs text-ink/60">{TERM_LABEL[d.term]}</span>}
+                          {d.term && <span className="ml-2 text-xs text-ink/70">{TERM_LABEL[d.term]}</span>}
                         </li>
                       ))}
                   </ul>

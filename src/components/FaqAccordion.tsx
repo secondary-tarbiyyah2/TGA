@@ -78,7 +78,7 @@ export function FaqAccordion({ entries }: { entries: FaqEntry[] }) {
         />
       </label>
 
-      {filtered.length === 0 && <p className="text-ink/60">No FAQs match your search yet.</p>}
+      {filtered.length === 0 && <p className="text-ink/70">No FAQs match your search yet.</p>}
 
       {grouped.map((g) => (
         <div key={g.heading} className="mb-8">

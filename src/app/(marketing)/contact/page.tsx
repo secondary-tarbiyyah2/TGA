@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { RegisterInterestForm } from "@/components/RegisterInterestForm";
 import { getSiteSettings } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description: "Get in touch with Tarbiyyah Global Academy.",
-};
+  path: "/contact",
+});
 
 export default async function ContactPage() {
   const settings = await getSiteSettings();

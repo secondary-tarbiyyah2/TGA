@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 
-export const metadata: Metadata = { title: "Cookie Policy" };
+export const metadata: Metadata = pageMetadata({
+  title: "Cookie Policy",
+  description: "How Tarbiyyah Global Academy uses essential and analytics cookies, and how to change your choice.",
+  path: "/legal/cookies",
+});
 
 export default function CookiePolicyPage() {
   return (
@@ -33,7 +38,7 @@ export default function CookiePolicyPage() {
           </div>
         </div>
 
-        <p className="mt-8 text-sm text-ink/60">
+        <p className="mt-8 text-sm text-ink/70">
           You can change your cookie choice at any time by clearing your browser&apos;s local storage for this site.
         </p>
       </Container>

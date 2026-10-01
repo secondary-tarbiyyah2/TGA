@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "An online school by the Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons and Islamic Studies with qualified UK teachers on the full British curriculum, Reception to Year 11, launching January 2027.",
   openGraph: {
     type: "website",
+    locale: "en_GB",
     siteName: "Tarbiyyah Global Academy",
     url: siteUrl,
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Tarbiyyah Global Academy" }],
@@ -53,6 +54,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     description:
       "A specialist online school by the Tarbiyyah Education Trust — live, timetabled lessons with qualified UK teachers on the full British curriculum, Reception to Year 11, taught with tarbiyyah at its heart.",
     url: siteUrl,
+    logo: `${siteUrl}/brand/ga-wordmark.png`,
     email: settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk",
     ...(settings.contactPhone && { telephone: settings.contactPhone }),
     ...(settings.contactAddress && { address: { "@type": "PostalAddress", streetAddress: settings.contactAddress } }),

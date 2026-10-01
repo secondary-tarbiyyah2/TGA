@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { Button } from "@/components/Button";
@@ -26,11 +27,11 @@ async function getBursarySeats(): Promise<number | null> {
   return (data as { bursary_seats: number | null } | null)?.bursary_seats ?? null;
 }
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "A specialist, quality education, rooted in faith",
-  description:
-    "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified UK teachers on the full British curriculum, from Reception to Year 11, taught with tarbiyyah at its heart.",
-};
+  description: "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified UK teachers on the full British curriculum, from Reception to Year 11, taught with tarbiyyah at its heart.",
+  path: "",
+});
 
 const defaultPillars = [
   { title: "Specialist curriculum", body: "The full British national curriculum, live-timetabled, taught to GCSE by qualified UK teachers." },
@@ -110,7 +111,7 @@ export default async function HomePage() {
               <Button href={settings.ctaPrimaryHref || "/admissions"}>{settings.ctaPrimaryLabel || "Apply Now"}</Button>
               <Button href="/book-a-call" variant="secondary">Book a free call</Button>
             </div>
-            <p className="mt-6 text-sm font-medium text-ink/60">
+            <p className="mt-6 text-sm font-medium text-ink/70">
               Part of the Tarbiyyah Education Trust · 10+ years · Qualified UK teachers · Reception–Year 11
             </p>
             <p className="mt-3 text-sm text-ink/70">

@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { getPolicyLinks, getSiteSettings } from "@/lib/content";
 import type { ParentQuestionCategory, PolicyLink } from "@/content/seed";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Policies",
   description: "Our statutory school policies, including Safeguarding, Admissions, Fees and Data Protection.",
-};
+  path: "/policies",
+});
 
 function formatReviewDate(iso?: string): string | null {
   if (!iso) return null;
@@ -34,7 +36,7 @@ function CategoryBadge({ category }: { category: PolicyLink["category"] }) {
   return (
     <span
       className={`inline-flex shrink-0 items-center rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${
-        category === "required" ? "bg-gold-100 text-gold-900" : "bg-ink/5 text-ink/60"
+        category === "required" ? "bg-gold-100 text-gold-900" : "bg-ink/5 text-ink/70"
       }`}
       title={category === "required" ? "Must be on the website (DfE requirement)" : "Published for simplicity — only strictly required on request"}
     >
@@ -53,7 +55,7 @@ function PolicyList({ policies, complaintsLastYear }: { policies: PolicyLink[]; 
           <li key={p._id} className="flex flex-wrap items-start justify-between gap-3 px-5 py-4">
             <div>
               <p className="flex flex-wrap items-center gap-2 font-medium text-ink">
-                <span className="text-ink/40">{p.number}</span> {p.title}
+                <span className="text-ink/60">{p.number}</span> {p.title}
                 <CategoryBadge category={p.category} />
               </p>
               {p.summary && <p className="mt-0.5 text-xs text-ink/70">{p.summary}</p>}
@@ -61,7 +63,7 @@ function PolicyList({ policies, complaintsLastYear }: { policies: PolicyLink[]; 
                 <p className="mt-0.5 text-xs text-ink/70">Formal complaints in the last academic year: {complaintsLastYear}</p>
               )}
               {(lastReviewed || nextReview) && (
-                <p className="mt-1 text-xs text-ink/50">
+                <p className="mt-1 text-xs text-ink/70">
                   {lastReviewed && <>Last reviewed: {lastReviewed}</>}
                   {lastReviewed && nextReview && " · "}
                   {nextReview && <>Next review: {nextReview}</>}
@@ -109,7 +111,7 @@ export default async function PoliciesPage() {
         {keyDocuments.length > 0 && (
           <div className="mt-10">
             <h2 className="font-serif text-xl font-semibold text-ink">Key documents</h2>
-            <p className="mt-1 text-sm text-ink/60">The policies parents ask for most often.</p>
+            <p className="mt-1 text-sm text-ink/70">The policies parents ask for most often.</p>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {keyDocuments.map((p) => (
                 <li key={p._id}>

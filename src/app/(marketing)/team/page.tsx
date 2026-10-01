@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
+import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { getStaffMembers } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Meet the Team",
   description: "Qualifications and intro videos for the teachers of Tarbiyyah Global Academy.",
-};
+  path: "/team",
+});
 
 export default async function TeamPage() {
   // Unconfirmed entries never render publicly — no visible "bio to follow"
@@ -45,11 +48,12 @@ export default async function TeamPage() {
             </div>
           ))}
           {staff.length === 0 && (
-            <p className="text-ink/60 sm:col-span-2 lg:col-span-3">Team profiles will appear here as they&apos;re confirmed.</p>
+            <p className="text-ink/70 sm:col-span-2 lg:col-span-3">Team profiles will appear here as they&apos;re confirmed.</p>
           )}
         </Container>
       </section>
 
+      <AdmissionsStrip />
       <CtaBand heading="Ready to meet us properly?" body="Book a place at our next virtual open evening." ctaLabel="Book Open Evening" ctaHref="/open-evening" />
     </>
   );

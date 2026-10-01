@@ -39,7 +39,7 @@ export function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent"
-      className="shadow-warm fixed inset-x-4 bottom-4 z-[60] max-w-[420px] rounded-2xl border border-gold-light/50 bg-white p-5 sm:inset-x-auto sm:left-4"
+      className="shadow-warm fixed inset-x-4 bottom-20 z-[60] md:bottom-4 max-w-[420px] rounded-2xl border border-gold-light/50 bg-white p-5 sm:inset-x-auto sm:left-4"
     >
       <p className="text-sm text-ink/80">
         We use essential cookies to run this site, and (with your consent) analytics cookies to understand how

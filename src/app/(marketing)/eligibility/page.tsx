@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { YourChildsWeekQuiz } from "@/components/eligibility/YourChildsWeekQuiz";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { DEFAULT_QUIZ_CONFIG } from "@/lib/quiz/defaultConfig";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Your Child's Week",
   description: "Five short questions to see a sample week for your child at Tarbiyyah Global Academy, in your own timezone — with fees and next steps.",
-};
+  path: "/eligibility",
+});
 
 export default async function EligibilityPage() {
   const [feeBands, settings] = await Promise.all([getFeeBands(), getSiteSettings()]);

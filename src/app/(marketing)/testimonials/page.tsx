@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
+import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { getTestimonials } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Testimonials",
   description: "What parents and students say about Tarbiyyah Global Academy.",
-};
+  path: "/testimonials",
+});
 
 export default async function TestimonialsPage() {
   // Never show a fabricated/placeholder quote as if it were real — a
@@ -33,11 +36,12 @@ export default async function TestimonialsPage() {
             </blockquote>
           ))}
           {testimonials.length === 0 && (
-            <p className="text-ink/60 sm:col-span-2">Testimonials from our families will appear here once our first cohort has enrolled.</p>
+            <p className="text-ink/70 sm:col-span-2">Testimonials from our families will appear here once our first cohort has enrolled.</p>
           )}
         </Container>
       </section>
 
+      <AdmissionsStrip />
       <CtaBand heading="Want to hear more?" body="Book a place at our next virtual open evening to ask questions live." ctaLabel="Book Open Evening" ctaHref="/open-evening" />
     </>
   );

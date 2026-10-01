@@ -184,6 +184,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true, group: G_TEACHING },
     { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true, group: G_TEACHING },
     { href: "/admin/academic", label: "Academic setup", icon: "academic", group: G_TEACHING },
+    { href: "/admin/homework", label: "Homework", icon: "homework", headOnly: true, group: G_TEACHING },
     { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true, group: G_TEACHING },
     { href: "/admin/attendance", label: "Attendance", icon: "attendance", headOnly: true, group: G_ATTENDANCE },
     { href: "/admin/absences", label: "Absences", icon: "absences", headOnly: true, group: G_ATTENDANCE },

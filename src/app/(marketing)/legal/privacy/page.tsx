@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { getSiteSettings } from "@/lib/content";
 
-export const metadata: Metadata = { title: "Privacy Policy" };
+export const metadata: Metadata = pageMetadata({
+  title: "Privacy Policy",
+  description: "How Tarbiyyah Global Academy collects, uses and protects personal information.",
+  path: "/legal/privacy",
+});
 
 export default async function PrivacyPolicyPage() {
   const settings = await getSiteSettings();
@@ -14,7 +19,7 @@ export default async function PrivacyPolicyPage() {
       <Container className="prose max-w-2xl">
         <Kicker>Legal</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink">Privacy Policy</h1>
-        <p className="mt-6 text-sm text-ink/60">Last updated: {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
+        <p className="mt-6 text-sm text-ink/70">Last updated: {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
 
         <p className="mt-6 text-ink/75">
           Tarbiyyah Global Academy, part of the Tarbiyyah Education Trust, is the data controller for the personal

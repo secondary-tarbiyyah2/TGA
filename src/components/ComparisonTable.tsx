@@ -19,31 +19,38 @@ const ROWS: Row[] = [
 
 const CELL_STYLE: Record<Cell, { symbol: string; className: string }> = {
   yes: { symbol: "✓", className: "text-teal-700" },
-  no: { symbol: "✕", className: "text-ink/30" },
-  varies: { symbol: "Varies", className: "text-ink/50 text-xs" },
+  no: { symbol: "✕", className: "text-ink/70" },
+  varies: { symbol: "Varies", className: "text-ink/70 text-xs" },
 };
 
 function ScoreCell({ value }: { value: Cell }) {
   const s = CELL_STYLE[value];
-  return <td className={`px-4 py-3 text-center font-semibold ${s.className}`}>{s.symbol}</td>;
+  const spoken = value === "yes" ? "Yes" : value === "no" ? "No" : "Varies";
+  return (
+    <td className={`px-4 py-3 text-center font-semibold ${s.className}`}>
+      <span aria-hidden="true">{s.symbol}</span>
+      <span className="sr-only">{spoken}</span>
+    </td>
+  );
 }
 
 export function ComparisonTable() {
   return (
     <div className="overflow-x-auto rounded-2xl border border-gold-light/50 bg-white">
       <table className="w-full min-w-[640px] text-left text-sm">
+        <caption className="sr-only">How Tarbiyyah Global Academy compares with generic online tutoring and a local Islamic school</caption>
         <thead>
           <tr className="border-b border-gold-light/40">
-            <th className="px-4 py-3 font-semibold text-ink/70"> </th>
-            <th className="px-4 py-3 text-center font-serif text-base font-semibold text-gold-700">TGA</th>
-            <th className="px-4 py-3 text-center font-medium text-ink/70">Generic online tutoring</th>
-            <th className="px-4 py-3 text-center font-medium text-ink/70">Local Islamic school</th>
+            <th scope="col" className="px-4 py-3 font-semibold text-ink/70"><span className="sr-only">Feature</span></th>
+            <th scope="col" className="px-4 py-3 text-center font-serif text-base font-semibold text-gold-700">TGA</th>
+            <th scope="col" className="px-4 py-3 text-center font-medium text-ink/70">Generic online tutoring</th>
+            <th scope="col" className="px-4 py-3 text-center font-medium text-ink/70">Local Islamic school</th>
           </tr>
         </thead>
         <tbody>
           {ROWS.map((r) => (
             <tr key={r.label} className="border-b border-gold-light/20 last:border-0">
-              <td className="px-4 py-3 font-medium text-ink">{r.label}</td>
+              <th scope="row" className="px-4 py-3 text-left font-medium text-ink">{r.label}</th>
               <ScoreCell value={r.tga} />
               <ScoreCell value={r.tutoring} />
               <ScoreCell value={r.localSchool} />

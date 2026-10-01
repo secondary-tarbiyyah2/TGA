@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { getSiteSettings } from "@/lib/content";
 
-export const metadata: Metadata = { title: "Terms" };
+export const metadata: Metadata = pageMetadata({
+  title: "Terms",
+  description: "Terms of use for the Tarbiyyah Global Academy website.",
+  path: "/legal/terms",
+});
 
 export default async function TermsPage() {
   const settings = await getSiteSettings();
@@ -14,7 +19,7 @@ export default async function TermsPage() {
       <Container className="max-w-2xl">
         <Kicker>Legal</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink">Terms of Use</h1>
-        <p className="mt-6 text-sm text-ink/60">Last updated: {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
+        <p className="mt-6 text-sm text-ink/70">Last updated: {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
 
         <p className="mt-6 text-ink/75">
           These terms govern your use of this website (globalacademy.tarbiyyah.co.uk), operated by Tarbiyyah Global

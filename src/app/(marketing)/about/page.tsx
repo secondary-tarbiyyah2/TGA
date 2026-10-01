@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
+import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { HubCards } from "@/components/HubCards";
 import { aboutHub } from "@/lib/nav";
 import { getAboutContent, getSiteSettings } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About Us",
   description: "Our mission, Islamic ethos, the Tarbiyyah family background, and our safeguarding commitment.",
-};
+  path: "/about",
+});
 
 const defaultRecipe = [
   { letter: "R", word: "Respect", body: "For Allah, for others, and for oneself." },
@@ -116,7 +119,8 @@ export default async function AboutPage() {
         </Container>
       </section>
 
-      <CtaBand heading="Ready to find out more?" body="See how we teach, what a school day looks like, and how to apply." />
+      <AdmissionsStrip />
+      <CtaBand heading="Ready to apply?" body="Start your child&apos;s application, or book a free call first." />
     </>
   );
 }

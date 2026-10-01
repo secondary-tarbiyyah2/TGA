@@ -106,6 +106,29 @@ Deno.serve(async (req) => {
     }
   }
 
+  // Final server-side guard (the database EXCLUDE constraints from 0008 should make
+  // this impossible; this re-checks anyway and explains it): no teacher in two
+  // places at once across ALL classes, and no class with two lessons at once.
+  {
+    const { data: all } = await serviceClient
+      .from("timetable_slots")
+      .select("id, class_id, teacher_user_id, weekday, start_time, end_time")
+      .eq("run_id", runToPublishId);
+    const slots = (all || []).map((s) => ({ ...s, st: String(s.start_time).slice(0, 5), en: String(s.end_time).slice(0, 5) }));
+    slots.sort((x, y) => x.weekday - y.weekday || x.st.localeCompare(y.st));
+    const clashes: string[] = [];
+    for (let i = 0; i < slots.length; i++) {
+      for (let j = i + 1; j < slots.length; j++) {
+        if (slots[j].weekday !== slots[i].weekday || slots[j].st >= slots[i].en) break;
+        if (slots[i].teacher_user_id === slots[j].teacher_user_id) clashes.push(`teacher ${slots[i].teacher_user_id} on weekday ${slots[i].weekday} at ${slots[i].st}`);
+        else if (slots[i].class_id === slots[j].class_id) clashes.push(`class ${slots[i].class_id} on weekday ${slots[i].weekday} at ${slots[i].st}`);
+      }
+    }
+    if (clashes.length > 0) {
+      return jsonResponse({ ok: false, error: "timetable_clashes", detail: `This run has ${clashes.length} clash(es) (${clashes.slice(0, 3).join("; ")}). Fix them before publishing.` }, 409);
+    }
+  }
+
   // Supersede the currently published run for the same academic year (if
   // any), then publish the target run — done as two sequential updates
   // (Supabase's JS client has no multi-statement transaction API); a

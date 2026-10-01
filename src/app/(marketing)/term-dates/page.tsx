@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { getTermDates } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Term Dates",
   description: "Term dates and the admissions calendar for the January 2027 launch.",
-};
+  path: "/term-dates",
+});
 
 export default async function TermDatesPage() {
   const dates = await getTermDates();

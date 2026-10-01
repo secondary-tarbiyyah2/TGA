@@ -59,7 +59,7 @@ export async function Footer() {
         </Container>
       </div>
 
-      <div className="border-t border-white/10 py-6">
+      <div className="border-t border-white/10 pt-6 pb-24 md:pb-6">
         <Container className="flex flex-col gap-2 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Tarbiyyah Education Trust. All rights reserved.</p>
           <div className="flex items-center gap-4">

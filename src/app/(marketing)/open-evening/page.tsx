@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { getSiteSettings } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Virtual Open Evening",
   description: "Book a place at our virtual open evening, or watch a past recording.",
-};
+  path: "/open-evening",
+});
 
 export default async function OpenEveningPage() {
   const settings = await getSiteSettings();
@@ -24,7 +26,7 @@ export default async function OpenEveningPage() {
         <div className="mt-10 rounded-2xl border border-gold-light/50 bg-white p-6">
           <h2 className="font-serif text-lg font-semibold text-ink">Book your place</h2>
           {settings.bookingWidgetUrl ? (
-            <iframe title="Book an open evening" src={settings.bookingWidgetUrl} className="mt-4 h-[600px] w-full rounded-xl border border-gold-light/40" />
+            <iframe loading="lazy" title="Book an open evening" src={settings.bookingWidgetUrl} className="mt-4 h-[600px] w-full rounded-xl border border-gold-light/40" />
           ) : (
             <p className="mt-2 text-sm text-ink/70">
               Email{" "}
@@ -40,7 +42,7 @@ export default async function OpenEveningPage() {
           <div className="mt-10 rounded-2xl border border-gold-light/50 bg-white p-6">
             <h2 className="font-serif text-lg font-semibold text-ink">Watch a past recording</h2>
             <div className="mt-4 aspect-video overflow-hidden rounded-xl">
-              <iframe title="Past open evening recording" src={settings.openEveningRecordingUrl} className="h-full w-full" allowFullScreen />
+              <iframe loading="lazy" title="Past open evening recording" src={settings.openEveningRecordingUrl} className="h-full w-full" allowFullScreen />
             </div>
           </div>
         )}

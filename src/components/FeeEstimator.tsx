@@ -143,7 +143,7 @@ export function FeeEstimator({
               onChange={(e) => setSiblings(Math.max(0, Math.min(10, Number(e.target.value) || 0)))}
               className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
             />
-            <p className="mt-1 text-xs text-ink/50">Not counting this child — used to apply the sibling discount.</p>
+            <p className="mt-1 text-xs text-ink/70">Not counting this child — used to apply the sibling discount.</p>
           </div>
         )}
       </div>
@@ -151,7 +151,7 @@ export function FeeEstimator({
       {checkableDiscounts.length > 0 && (
         <div className="mt-5">
           <p className="text-sm font-medium text-ink">Other discounts that might apply</p>
-          <p className="mt-1 text-xs text-ink/50">
+          <p className="mt-1 text-xs text-ink/70">
             Estimate only — tick any that you believe apply. Final eligibility is always confirmed during application.
           </p>
           <div className="mt-3 space-y-2">
@@ -167,7 +167,7 @@ export function FeeEstimator({
                   />
                   <span>
                     <span className="font-medium text-ink">I believe I qualify for: {d.label}</span>
-                    {d.eligibilityDescription && <span className="block text-xs text-ink/60">{d.eligibilityDescription}</span>}
+                    {d.eligibilityDescription && <span className="block text-xs text-ink/70">{d.eligibilityDescription}</span>}
                   </span>
                 </label>
               );
@@ -196,7 +196,7 @@ export function FeeEstimator({
         </div>
       </div>
 
-      <p className="mt-3 text-xs text-ink/50">
+      <p className="mt-3 text-xs text-ink/70">
         This is an estimate for planning purposes only, not a binding quote — final fees and eligibility are confirmed during
         application.
       </p>

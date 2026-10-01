@@ -5,7 +5,9 @@ import Link from "next/link";
 import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
 import { btn, callFunction, chipCls, fieldCls, ghost } from "@/components/learn/timetable/api";
 import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
-import { MAX_TEACHER_LESSONS_PER_WEEK, teacherFor, todayIso } from "@/lib/learn/teacherFor";
+import { ReconciliationPanel } from "@/components/learn/timetable/ReconciliationPanel";
+import { DEFAULT_MAX_LESSONS_PER_DAY, teacherLoadTable } from "@/components/learn/timetable/checks";
+import type { Conflict } from "@/components/learn/timetable/types";
 import { edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -59,16 +61,26 @@ function GenerateContent() {
       if (!mapped && !legacy) gaps.push({ classId: c.id, label: `${c.name} (${data.subjects.find((s) => s.id === sid)?.name || "subject"})` });
     }
   }
-  const mappedLoad = new Map<string, number>();
-  for (const c of yearClasses) {
-    if (!c.subject_id) continue;
-    const t = teacherFor(data.subjectTeachers, c.id, c.subject_id, todayIso());
-    if (t) mappedLoad.set(t, (mappedLoad.get(t) || 0) + c.weekly_lessons);
-  }
-  const overloaded = [...mappedLoad.entries()].filter(([, n]) => n > MAX_TEACHER_LESSONS_PER_WEEK).map(([id, n]) => `${data.teachers.find((t) => t.id === id)?.full_name || "A teacher"} (${n})`);
+  // Pre-flight: lessons each teacher needs across ALL classes vs the periods they can work.
+  const load = teacherLoadTable({ yearId: effYearId, classes: data.classes, subjects: data.subjects, subjectTeachers: data.subjectTeachers, classTeachers: data.classTeachers, teachers: data.teachers, availability: data.availability, protectedTimes: data.protectedTimes });
+  const overloaded = load.rows.filter((r) => r.status === "over" || r.status === "no_availability").map((r) => `${r.name} (${r.lessons} needed, ${r.capacity} possible)`);
   const teachersWithAvail = new Set(data.availability.filter((a) => a.academic_year_id === effYearId).map((a) => a.teacher_user_id));
   const needsSetup = !year || yearClasses.length === 0 || data.teachers.length === 0;
   const latest = data.runs[0] || null;
+  const [latestConflicts, setLatestConflicts] = useState<Conflict[]>([]);
+  const latestId = latest?.id || null;
+  useEffect(() => {
+    if (!supabase || !latestId) return;
+    let cancelled = false;
+    (async () => {
+      const full = await supabase.from("timetable_conflicts").select("id, severity, message, resolved, kind, details").eq("run_id", latestId);
+      const res = full.error ? await supabase.from("timetable_conflicts").select("id, severity, message, resolved").eq("run_id", latestId) : full;
+      if (!cancelled) setLatestConflicts((res.data as Conflict[]) || []);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [supabase, latestId, data.runs.length]);
 
   // After "Generate", the solver runs in GitHub Actions; poll for the new draft.
   useEffect(() => {
@@ -190,12 +202,53 @@ function GenerateContent() {
                 )}
               </Check>
               <Check ok={overloaded.length === 0} fix={<Link href="/admin/academic/classes#teacher-matrix" className="text-sm font-semibold underline">Rebalance</Link>}>
-                {overloaded.length === 0 ? `No teacher has more than ${MAX_TEACHER_LESSONS_PER_WEEK} lessons a week.` : `Too many lessons for: ${overloaded.join(", ")}. The limit is ${MAX_TEACHER_LESSONS_PER_WEEK} a week.`}
+                {overloaded.length === 0 ? "Every teacher has enough available periods for their lessons." : `Not enough available periods for: ${overloaded.join(", ")}.`}
               </Check>
+              {load.unassignedLessons > 0 && (
+                <Check ok={false}>{load.unassignedLessons} lessons a week have no fixed teacher; the solver will pick any teacher who is free.</Check>
+              )}
               {data.terms.filter((t) => t.academic_year_id === effYearId).length === 0 && (
                 <Check ok={false} fix={<Link href="/admin/academic/years" className="text-sm font-semibold underline">View terms</Link>}>No term dates are synced for {year.label}. Lessons are still generated, but term dates help later.</Check>
               )}
             </ul>
+          )}
+          {year && load.rows.length > 0 && (
+            <div className="mt-4">
+              <h3 className="text-sm font-semibold text-ink">Teacher load vs availability</h3>
+              <p className="text-xs text-ink/55">Lessons a week each teacher needs across every class, against the periods they can work (at most {DEFAULT_MAX_LESSONS_PER_DAY} lessons a day). Fix red rows first or the generator will leave lessons out.</p>
+              <div className="mt-2 overflow-x-auto rounded-xl border border-gold-light/50">
+                <table className="w-full min-w-[560px] border-collapse text-left text-sm">
+                  <thead>
+                    <tr className="bg-cream/70 text-xs text-ink/60">
+                      <th className="p-2 font-semibold">Teacher</th>
+                      <th className="p-2 text-right font-semibold">Lessons needed</th>
+                      <th className="p-2 text-right font-semibold">Available periods</th>
+                      <th className="p-2 text-right font-semibold">Room for</th>
+                      <th className="p-2 font-semibold">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {load.rows.map((r) => (
+                      <tr key={r.teacherId} className="border-t border-gold-light/30 align-top">
+                        <td className="p-2">
+                          <span className="font-medium text-ink">{r.name}</span>
+                          <span className="block text-[11px] text-ink/55">{r.contributors.map((c) => `${c.label} ${c.lessons}`).join(", ")}</span>
+                        </td>
+                        <td className="p-2 text-right tabular-nums">{r.lessons}</td>
+                        <td className="p-2 text-right tabular-nums">{r.availablePeriods}</td>
+                        <td className="p-2 text-right tabular-nums">{r.capacity}</td>
+                        <td className="p-2">
+                          <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${r.status === "ok" ? "bg-green-100 text-green-900" : r.status === "tight" ? "bg-amber-100 text-amber-900" : "bg-red-100 text-red-900"}`}>
+                            {r.status === "ok" ? "OK" : r.status === "tight" ? "Tight" : r.status === "over" ? "Overbooked" : "No availability"}
+                          </span>
+                          {r.advice && <span className="mt-1 block text-[11px] text-ink/70">{r.advice}</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           )}
         </Step>
 
@@ -218,6 +271,12 @@ function GenerateContent() {
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-sm text-ink/80">Latest version: <strong>{latest.label}</strong> <span className="text-ink/55">({latest.status}, {latest.created_at.slice(0, 10)})</span></p>
               <Link href="/admin/lessons/timetable" className={btn}>Open in timetable &rarr;</Link>
+            </div>
+          )}
+          {latest && latestConflicts.some((c) => !c.resolved) && (
+            <div className="mt-4">
+              <ReconciliationPanel conflicts={latestConflicts} canRerun={false} onRerun={() => undefined} busy={false} lockedCount={0} />
+              <p className="mt-2 text-xs text-ink/60">To keep lessons you place by hand and re-generate the rest, open the draft in the timetable and use &ldquo;Re-run keeping locked lessons&rdquo;.</p>
             </div>
           )}
         </Step>

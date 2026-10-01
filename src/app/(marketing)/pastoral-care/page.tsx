@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
+import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Pastoral Care & SEND Support",
   description: "How we support every child's wellbeing, character and additional needs — including the Weekly Tarbiyah Note.",
-};
+  path: "/pastoral-care",
+});
 
 export default function PastoralCarePage() {
   return (
@@ -47,6 +50,7 @@ export default function PastoralCarePage() {
         </Container>
       </section>
 
+      <AdmissionsStrip />
       <CtaBand heading="Questions about pastoral or SEND support?" body="Reach out — we're happy to talk it through before you apply." ctaLabel="Contact us" ctaHref="/contact" />
     </>
   );

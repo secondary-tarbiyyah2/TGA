@@ -25,6 +25,17 @@ What it does:
      not be placed, rather than failing silently — never leaves the caller
      with just a stack trace.
 
+Reconciliation (added with migration 0056):
+  * One teacher is never in two places: constraints are per (teacher, period)
+    across ALL classes, plus other overlapping academic years' published runs.
+  * Locked slots (timetable_slots.locked) of a draft flagged
+    solver_stats.regenerate_pending are FIXED inputs; the solver fills that draft
+    in place ("Re-run keeping locked lessons" in the UI).
+  * After solving, verify() re-checks the result independently and reconcile()
+    explains overbooked teachers / unfillable classes / unplaced lessons with
+    concrete suggestions. Everything lands in timetable_conflicts (kind, details).
+  * Tunables: TT_MAX_LESSONS_PER_DAY (6), TT_MAX_CONSECUTIVE (3), or the CLI flags.
+
 Two "live-lesson time bands" (grep hit: src/sanity/schemaTypes/curriculumContent.ts
 `timeBandsHeading`/`timeBandsBody` — this school teaches an international,
 timezone-spread cohort across two daily live-lesson windows). This solver
@@ -62,7 +73,11 @@ BAND_B = [(time(15, 0), time(16, 0)), (time(16, 0), time(17, 0)), (time(17, 15),
 PERIODS = [(i, start, end, "A") for i, (start, end) in enumerate(BAND_A)] + [
     (i + len(BAND_A), start, end, "B") for i, (start, end) in enumerate(BAND_B)
 ]
-MAX_CONSECUTIVE_TEACHING_PERIODS = 4
+# Teacher load rules (hard). Overridable via env or CLI flags.
+MAX_CONSECUTIVE_TEACHING_PERIODS = int(os.environ.get("TT_MAX_CONSECUTIVE", "3"))
+MAX_TEACHER_LESSONS_PER_DAY = int(os.environ.get("TT_MAX_LESSONS_PER_DAY", "6"))
+# Two periods count as "back to back" when the gap between them is at most this.
+CONTIGUOUS_GAP_MINUTES = 15
 
 
 @dataclass
@@ -89,6 +104,20 @@ class ClassInfo:
 
 
 @dataclass
+class FixedSlot:
+    """A locked / manually placed lesson that the solver must keep as is."""
+
+    id: str | None
+    class_id: str
+    subject_id: str
+    teacher_id: str
+    weekday: int
+    start_time: str
+    end_time: str
+    cells: set = field(default_factory=set)  # {(weekday, period_index)} it covers
+
+
+@dataclass
 class Inputs:
     academic_year_id: str
     term_id: str | None
@@ -96,6 +125,14 @@ class Inputs:
     teacher_ids: list[str]
     availability: dict[str, set[tuple[int, int]]]  # teacher_id -> {(weekday, period_index)}
     protected: set[tuple[int, int]]  # {(weekday, period_index)} blocked for everyone
+    teacher_names: dict = field(default_factory=dict)  # teacher_id -> full name
+    availability_ranges: dict = field(default_factory=dict)  # teacher_id -> [(weekday, time, time)] raw
+    protected_ranges: list = field(default_factory=list)  # [(weekday, time, time)] raw
+    external_busy: dict = field(default_factory=dict)  # teacher_id -> {(weekday, idx): label} (other years' published runs)
+    fixed: list = field(default_factory=list)  # list[FixedSlot]
+    target_run_id: str | None = None  # draft run to fill in place (re-run keeping locked lessons)
+    max_per_day: int = MAX_TEACHER_LESSONS_PER_DAY
+    max_consecutive: int = MAX_CONSECUTIVE_TEACHING_PERIODS
 
 
 def teacher_for(rows: list[dict], class_id: str, subject_id: str, on: str) -> dict | None:
@@ -170,6 +207,7 @@ def fetch_inputs(supabase, academic_year_label: str) -> Inputs:
     ):
         scoped_teachers.setdefault(r["scope_id"], []).append(r["user_id"])
 
+    teacher_names: dict[str, str] = {}
     avail_rows = (
         supabase.table("teacher_availability")
         .select("teacher_user_id,weekday,start_time,end_time")
@@ -178,10 +216,12 @@ def fetch_inputs(supabase, academic_year_label: str) -> Inputs:
         .data
     )
     availability: dict[str, set[tuple[int, int]]] = {}
+    availability_ranges: dict[str, list] = {}
     all_teacher_ids = sorted({r["teacher_user_id"] for r in avail_rows})
     for r in avail_rows:
         start = _parse_time(r["start_time"])
         end = _parse_time(r["end_time"])
+        availability_ranges.setdefault(r["teacher_user_id"], []).append((r["weekday"], start, end))
         for idx, pstart, pend, _band in PERIODS:
             if pstart >= start and pend <= end:
                 availability.setdefault(r["teacher_user_id"], set()).add((r["weekday"], idx))
@@ -194,8 +234,10 @@ def fetch_inputs(supabase, academic_year_label: str) -> Inputs:
         .data
     )
     protected: set[tuple[int, int]] = set()
+    protected_ranges: list = []
     for r in protected_rows:
         start, end = _parse_time(r["start_time"]), _parse_time(r["end_time"])
+        protected_ranges.append((r["weekday"], start, end))
         for idx, pstart, pend, _band in PERIODS:
             if pstart < end and pend > start:
                 protected.add((r["weekday"], idx))
@@ -261,218 +303,676 @@ def fetch_inputs(supabase, academic_year_label: str) -> Inputs:
     # (with no availability they simply cannot be given a lesson).
     all_teacher_ids = sorted(set(all_teacher_ids) | mapped_teacher_ids | {t for ts in scoped_teachers.values() for t in ts})
 
-    return Inputs(
+    # Teacher display names, for the reconciliation report.
+    try:
+        for r in supabase.table("profiles").select("id,full_name").in_("id", all_teacher_ids).execute().data:
+            teacher_names[r["id"]] = r.get("full_name") or "Unnamed teacher"
+    except Exception as exc:  # pragma: no cover
+        print(f"WARNING: could not read teacher names ({exc}).", file=sys.stderr)
+
+    inputs = Inputs(
         academic_year_id=academic_year_id,
         term_id=term_id,
         classes=classes,
         teacher_ids=all_teacher_ids,
         availability=availability,
         protected=protected,
+        teacher_names=teacher_names,
+        availability_ranges=availability_ranges,
+        protected_ranges=protected_ranges,
     )
+    inputs.external_busy = fetch_external_busy(supabase, academic_year_id)
+    return inputs
 
 
-def _parse_time(s: str) -> time:
-    parts = [int(p) for p in s.split(":")]
+def cells_for_range(weekday: int, start: time, end: time) -> set[tuple[int, int]]:
+    """Every (weekday, period_index) whose period overlaps [start, end)."""
+    return {(weekday, idx) for idx, ps, pe, _b in PERIODS if ps < end and pe > start}
+
+
+def fetch_external_busy(supabase, academic_year_id: str) -> dict:
+    """A teacher is one person across academic years. Published timetables of
+    OTHER academic years whose dates overlap this one make the teacher busy at
+    those times. Returns {teacher_id: {(weekday, period_index): label}}."""
+    busy: dict[str, dict] = {}
+    try:
+        years = supabase.table("academic_years").select("id,label,starts_on,ends_on").execute().data
+        me = next((y for y in years if y["id"] == academic_year_id), None)
+        if not me:
+            return busy
+        others = {
+            y["id"]: y["label"]
+            for y in years
+            if y["id"] != academic_year_id and y["starts_on"] <= me["ends_on"] and y["ends_on"] >= me["starts_on"]
+        }
+        if not others:
+            return busy
+        runs = (
+            supabase.table("timetable_runs")
+            .select("id,academic_year_id")
+            .eq("status", "published")
+            .in_("academic_year_id", list(others))
+            .execute()
+            .data
+        )
+        for run in runs:
+            rows = (
+                supabase.table("timetable_slots")
+                .select("teacher_user_id,weekday,start_time,end_time")
+                .eq("run_id", run["id"])
+                .execute()
+                .data
+            )
+            for r in rows:
+                for cell in cells_for_range(r["weekday"], _parse_time(r["start_time"]), _parse_time(r["end_time"])):
+                    busy.setdefault(r["teacher_user_id"], {})[cell] = f"the published {others[run['academic_year_id']]} timetable"
+    except Exception as exc:  # pragma: no cover - best effort; never blocks generation
+        print(f"WARNING: could not read other academic years' timetables ({exc}).", file=sys.stderr)
+    return busy
+
+
+def fetch_fixed(supabase, run_id: str) -> list[FixedSlot]:
+    """Locked (manually placed) slots of a draft run, to be kept as fixed inputs."""
+    try:
+        rows = (
+            supabase.table("timetable_slots")
+            .select("id,class_id,subject_id,teacher_user_id,weekday,start_time,end_time")
+            .eq("run_id", run_id)
+            .eq("locked", True)
+            .execute()
+            .data
+        )
+    except Exception as exc:  # pragma: no cover - 0056 not applied
+        print(f"WARNING: could not read locked slots ({exc}); is migration 0056 applied?", file=sys.stderr)
+        return []
+    out = []
+    for r in rows:
+        st, en = _parse_time(r["start_time"]), _parse_time(r["end_time"])
+        out.append(
+            FixedSlot(r["id"], r["class_id"], r["subject_id"], r["teacher_user_id"], r["weekday"], st.isoformat(), en.isoformat(), cells_for_range(r["weekday"], st, en))
+        )
+    return out
+
+
+def find_pending_run(supabase, academic_year_id: str) -> str | None:
+    """A draft the UI prepared with 'Re-run keeping locked lessons'
+    (solver_stats.regenerate_pending = true). The solver fills it in place."""
+    try:
+        rows = (
+            supabase.table("timetable_runs")
+            .select("id,solver_stats")
+            .eq("academic_year_id", academic_year_id)
+            .eq("status", "draft")
+            .order("created_at", desc=True)
+            .limit(20)
+            .execute()
+            .data
+        )
+    except Exception:  # pragma: no cover
+        return None
+    for r in rows:
+        if (r.get("solver_stats") or {}).get("regenerate_pending"):
+            return r["id"]
+    return None
+
+
+def _parse_time(s) -> time:
+    if isinstance(s, time):
+        return s
+    parts = [int(p) for p in str(s).split(":")]
     return time(parts[0], parts[1], parts[2] if len(parts) > 2 else 0)
+
+
+def _mins(t: time) -> int:
+    return t.hour * 60 + t.minute
+
+
+ALL_CELLS = [(wd, idx) for wd in WEEKDAYS for idx, _s, _e, _b in PERIODS]
+SCHOOL_DAY_SPANS = [(BAND_A[0][0], BAND_A[-1][1]), (BAND_B[0][0], BAND_B[-1][1])]
+
+
+def period_chains() -> list[list[int]]:
+    """Runs of period indexes that are back to back (gap <= CONTIGUOUS_GAP_MINUTES)."""
+    chains: list[list[int]] = [[0]]
+    for i in range(1, len(PERIODS)):
+        gap = _mins(PERIODS[i][1]) - _mins(PERIODS[i - 1][2])
+        if gap <= CONTIGUOUS_GAP_MINUTES:
+            chains[-1].append(i)
+        else:
+            chains.append([i])
+    return chains
+
+
+def _weekly_day_cap(weekly: int) -> int:
+    """Most lessons of one subject allowed on one day: 1 unless the subject has
+    more lessons than there are days."""
+    return max(1, -(-weekly // len(WEEKDAYS)))
 
 
 @dataclass
 class SolveResult:
     status: str  # 'optimal' | 'feasible' | 'infeasible'
-    slots: list[dict]
+    slots: list[dict]  # NEW slots only (locked/fixed slots already exist in the target run)
     conflicts: list[dict]
     stats: dict
 
 
+# ── lookups shared by the model, the self-check and the reconciliation ──────
+def _pair_label(c: ClassInfo) -> str:
+    return f"{c.name} {c.subject_name}"
+
+
+def _tname(inputs: Inputs, t: str | None) -> str:
+    return inputs.teacher_names.get(t or "", "A teacher")
+
+
+def _busy_maps(inputs: Inputs) -> tuple[dict, dict]:
+    """(teacher_busy, class_busy): cells already taken by locked lessons (and, for
+    teachers, by other academic years' published timetables). {id: {cell: label}}"""
+    labels = {(c.class_id, c.subject_id): _pair_label(c) for c in inputs.classes}
+    cnames = {c.class_id: c.name for c in inputs.classes}
+    tb: dict[str, dict] = {t: dict(cells) for t, cells in inputs.external_busy.items()}
+    cb: dict[str, dict] = {}
+    for f in inputs.fixed:
+        label = labels.get((f.class_id, f.subject_id)) or f"{cnames.get(f.class_id, 'a class')} (locked lesson)"
+        for cell in f.cells:
+            tb.setdefault(f.teacher_id, {})[cell] = label
+            cb.setdefault(f.class_id, {})[cell] = label
+    return tb, cb
+
+
+def _free_for(inputs: Inputs, tb: dict, t: str, cell: tuple[int, int]) -> bool:
+    return cell in inputs.availability.get(t, set()) and cell not in inputs.protected and cell not in tb.get(t, {})
+
+
+# ── the model ───────────────────────────────────────────────────────────────
 def solve(inputs: Inputs) -> SolveResult:
+    """Place the lessons that are not already locked.
+
+    Variables: place[pair, weekday, period] (a (class,subject) pair has at most one
+    lesson in a given period, so no per-lesson index and no symmetry), plus, for
+    pairs without one fixed teacher, teach[pair, teacher] (one teacher per pair
+    for the whole week, matching teacher-per-(class,subject)).
+
+    HARD: class in <=1 lesson per period (all its subjects); teacher in <=1 lesson
+    per period ACROSS ALL CLASSES (and across overlapping academic years' published
+    timetables, and locked lessons); teacher availability; protected times; only
+    periods inside the school day exist; teacher <= max lessons/day; teacher
+    <= max consecutive periods; a subject at most ceil(weekly/5) times per day;
+    pair total <= weekly lessons; locked lessons are constants.
+    """
     model = cp_model.CpModel()
+    tb, cb = _busy_maps(inputs)
+    locked_cnt: dict[tuple, int] = {}
+    locked_day: dict[tuple, int] = {}
+    for f in inputs.fixed:
+        locked_cnt[(f.class_id, f.subject_id)] = locked_cnt.get((f.class_id, f.subject_id), 0) + 1
+        locked_day[(f.class_id, f.subject_id, f.weekday)] = locked_day.get((f.class_id, f.subject_id, f.weekday), 0) + 1
 
-    # occ[class][n] -> which (weekday, period) it's placed at (or unplaced)
-    # place[class][n][weekday][period] = bool
-    place: dict[tuple[str, int, int, int], cp_model.IntVar] = {}
-    teach: dict[tuple[str, int, str], cp_model.IntVar] = {}  # (class,n,teacher) -> bool, only meaningful if placed
-    placed_flag: dict[tuple[str, int], cp_model.IntVar] = {}
+    place: dict[tuple, cp_model.IntVar] = {}  # (pair_id, cell) -> var
+    teach: dict[tuple, cp_model.IntVar] = {}  # (pair_id, teacher) -> var
+    by_class: dict[tuple, list] = {}  # (class_id, cell) -> [place vars]
+    tl: dict[tuple, list] = {}  # (teacher, cell) -> literals meaning "teacher teaches here"
+    pairs = []
 
     for c in inputs.classes:
-        for n in range(c.weekly_lessons):
-            options = []
-            for wd in WEEKDAYS:
-                for idx, _s, _e, _band in PERIODS:
-                    if (wd, idx) in inputs.protected:
-                        continue
-                    v = model.NewBoolVar(f"place_{c.id}_{n}_{wd}_{idx}")
-                    place[(c.id, n, wd, idx)] = v
-                    options.append(v)
-            pf = model.NewBoolVar(f"placed_{c.id}_{n}")
-            placed_flag[(c.id, n)] = pf
-            if options:
-                model.Add(sum(options) == pf)
-            else:
-                model.Add(pf == 0)
-
-            teacher_opts = []
-            for t in c.eligible_teacher_ids:
-                tv = model.NewBoolVar(f"teach_{c.id}_{n}_{t}")
-                teach[(c.id, n, t)] = tv
-                teacher_opts.append(tv)
-            if teacher_opts:
-                model.Add(sum(teacher_opts) == pf)
-            else:
-                model.Add(pf == 0)  # no eligible teacher at all -> cannot be placed
-
-    # Hard: no two lessons of the same class at the same time; no teacher
-    # double-booked; teacher only teaches within their own availability.
-    for wd in WEEKDAYS:
-        for idx, _s, _e, _band in PERIODS:
-            # A class is in one lesson at a time, whichever of its subjects it is.
-            by_class: dict[str, list] = {}
-            for c in inputs.classes:
-                for n in range(c.weekly_lessons):
-                    if (c.id, n, wd, idx) in place:
-                        by_class.setdefault(c.class_id, []).append(place[(c.id, n, wd, idx)])
-            for same_class in by_class.values():
-                if len(same_class) > 1:
-                    model.Add(sum(same_class) <= 1)
-
-            for t in inputs.teacher_ids:
-                teaching_now = []
-                for c in inputs.classes:
-                    for n in range(c.weekly_lessons):
-                        if (c.id, n, wd, idx) not in place or (c.id, n, t) not in teach:
-                            continue
-                        both = model.NewBoolVar(f"teach_at_{c.id}_{n}_{t}_{wd}_{idx}")
-                        model.AddMultiplicationEquality(both, [place[(c.id, n, wd, idx)], teach[(c.id, n, t)]])
-                        teaching_now.append(both)
-                        if (wd, idx) not in inputs.availability.get(t, set()):
-                            model.Add(both == 0)  # hard: outside contracted availability
-                if len(teaching_now) > 1:
-                    model.Add(sum(teaching_now) <= 1)
-
-    # Hard: max consecutive teaching periods per teacher per day (within a band).
-    for t in inputs.teacher_ids:
+        remaining = c.weekly_lessons - locked_cnt.get((c.class_id, c.subject_id), 0)
+        if remaining <= 0:
+            continue
+        pairs.append((c, remaining))
+        elig = list(dict.fromkeys(c.eligible_teacher_ids))
+        flex = len(elig) != 1
+        cell_teachers: dict[tuple, list] = {}
+        for cell in ALL_CELLS:
+            if cell in inputs.protected or cell in cb.get(c.class_id, {}):
+                continue
+            ts = [t for t in elig if _free_for(inputs, tb, t, cell)]
+            if not ts:
+                continue
+            v = model.NewBoolVar(f"place_{c.id}_{cell[0]}_{cell[1]}")
+            place[(c.id, cell)] = v
+            cell_teachers[cell] = ts
+            by_class.setdefault((c.class_id, cell), []).append(v)
+            if not flex:
+                tl.setdefault((elig[0], cell), []).append(v)
+        mine = [place[(c.id, cell)] for cell in ALL_CELLS if (c.id, cell) in place]
+        if not mine:
+            continue
+        model.Add(sum(mine) <= remaining)
+        cap = _weekly_day_cap(c.weekly_lessons)
         for wd in WEEKDAYS:
-            for band_start in range(0, len(PERIODS) - MAX_CONSECUTIVE_TEACHING_PERIODS):
-                window = []
-                for offset in range(MAX_CONSECUTIVE_TEACHING_PERIODS + 1):
-                    idx = band_start + offset
-                    if idx >= len(PERIODS):
-                        continue
-                    for c in inputs.classes:
-                        for n in range(c.weekly_lessons):
-                            if (c.id, n, wd, idx) in place and (c.id, n, t) in teach:
-                                both = model.NewBoolVar(f"win_{t}_{wd}_{band_start}_{c.id}_{n}_{idx}")
-                                model.AddMultiplicationEquality(both, [place[(c.id, n, wd, idx)], teach[(c.id, n, t)]])
-                                window.append(both)
-                if window:
-                    model.Add(sum(window) <= MAX_CONSECUTIVE_TEACHING_PERIODS)
+            day = [place[(c.id, (wd, idx))] for idx, *_ in PERIODS if (c.id, (wd, idx)) in place]
+            if day:
+                model.Add(sum(day) <= max(0, cap - locked_day.get((c.class_id, c.subject_id, wd), 0)))
+        if flex:
+            for t in elig:
+                teach[(c.id, t)] = model.NewBoolVar(f"teach_{c.id}_{t}")
+            model.Add(sum(teach[(c.id, t)] for t in elig) <= 1)
+            for cell, ts in cell_teachers.items():
+                v = place[(c.id, cell)]
+                model.Add(sum(teach[(c.id, t)] for t in ts) >= v)  # a teacher who is free here must be the one chosen
+                for t in ts:
+                    b = model.NewBoolVar(f"at_{c.id}_{t}_{cell[0]}_{cell[1]}")
+                    model.Add(b >= v + teach[(c.id, t)] - 1)
+                    tl.setdefault((t, cell), []).append(b)
 
-    # Soft objective terms.
-    objective_terms = []
-    for c in inputs.classes:
-        for n in range(c.weekly_lessons):
-            for wd in WEEKDAYS:
-                for idx, _s, _e, band in PERIODS:
-                    if (c.id, n, wd, idx) not in place:
-                        continue
-                    v = place[(c.id, n, wd, idx)]
-                    # Core subjects earlier in the day (lower period index preferred).
-                    if c.is_core:
-                        objective_terms.append((-1 * (len(PERIODS) - idx), v))
-                    # Balance across the week: mild bonus for Tue-Thu over Mon/Fri edges.
-                    if wd in (2, 3, 4):
-                        objective_terms.append((1, v))
-    model.Maximize(sum(weight * var for weight, var in objective_terms) + 1000 * sum(placed_flag.values()))
+    for lits in by_class.values():
+        if len(lits) > 1:
+            model.Add(sum(lits) <= 1)  # a class is in one lesson at a time, whatever the subject
+    for lits in tl.values():
+        if len(lits) > 1:
+            model.Add(sum(lits) <= 1)  # a teacher is in one place at a time, whichever class
+
+    chains = period_chains()
+    k = inputs.max_consecutive
+    teachers_in_model = sorted({t for t, _cell in tl})
+    for t in teachers_in_model:
+        busy_cells = tb.get(t, {})
+        for wd in WEEKDAYS:
+            day_lits = [lit for idx, *_ in PERIODS for lit in tl.get((t, (wd, idx)), [])]
+            if not day_lits:
+                continue
+            const = sum(1 for idx, *_ in PERIODS if (wd, idx) in busy_cells)
+            if len(day_lits) + const > inputs.max_per_day:
+                model.Add(sum(day_lits) <= max(0, inputs.max_per_day - const))
+            for chain in chains:
+                for i in range(0, len(chain) - k):
+                    window = chain[i : i + k + 1]
+                    lits = [lit for idx in window for lit in tl.get((t, (wd, idx)), [])]
+                    wconst = sum(1 for idx in window if (wd, idx) in busy_cells)
+                    if lits and len(lits) + wconst > k:
+                        model.Add(sum(lits) <= max(0, k - wconst))
+
+    objective = []
+    core = {c.id: c.is_core for c, _rem in pairs}
+    for (pid, cell), v in place.items():
+        wd, idx = cell
+        objective.append((1000, v))  # placing a lesson dominates every preference
+        if core[pid]:
+            objective.append((-(len(PERIODS) - idx), v))  # core subjects earlier in the day
+        if wd in (2, 3, 4):
+            objective.append((1, v))  # mild preference for Tue-Thu
+    if objective:
+        model.Maximize(sum(w * v for w, v in objective))
 
     solver = cp_model.CpSolver()
     solver.parameters.max_time_in_seconds = float(os.environ.get("SOLVER_MAX_SECONDS", "60"))
     solver.parameters.num_search_workers = 8
-    status = solver.Solve(model)
-
-    slots = []
-    conflicts = []
+    status = solver.Solve(model) if place else cp_model.OPTIMAL
+    ok = status in (cp_model.OPTIMAL, cp_model.FEASIBLE)
     status_name = {cp_model.OPTIMAL: "optimal", cp_model.FEASIBLE: "feasible"}.get(status, "infeasible")
 
-    if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-        for c in inputs.classes:
-            for n in range(c.weekly_lessons):
-                if solver.Value(placed_flag[(c.id, n)]) == 0:
-                    conflicts.append(
-                        {
-                            "severity": "hard",
-                            "class_id": c.class_id,
-                            "subject_id": c.subject_id,
-                            "message": (
-                                f"{c.year_group_name} {c.subject_name} ({c.name}): lesson {n + 1} of "
-                                f"{c.weekly_lessons} could not be placed — "
-                                + (
-                                    "its teacher has no free slot left that satisfies availability/protected-time "
-                                    "constraints (they may be teaching other classes at every time they are available)."
-                                    if c.teacher_fixed
-                                    else "no teacher available or no free slot that satisfies availability/protected-time constraints."
-                                )
-                            ),
-                        }
-                    )
+    slots: list[dict] = []
+    if ok:
+        for c, _rem in pairs:
+            elig = list(dict.fromkeys(c.eligible_teacher_ids))
+            chosen = elig[0] if len(elig) == 1 else next((t for t in elig if (c.id, t) in teach and solver.Value(teach[(c.id, t)]) == 1), None)
+            for (cid, cell), v in place.items():
+                if cid != c.id or solver.Value(v) != 1:
                     continue
-                for wd in WEEKDAYS:
-                    for idx, s, e, _band in PERIODS:
-                        key = (c.id, n, wd, idx)
-                        if key in place and solver.Value(place[key]) == 1:
-                            teacher_id = next(
-                                t for t in c.eligible_teacher_ids if solver.Value(teach[(c.id, n, t)]) == 1
-                            )
-                            slots.append(
-                                {
-                                    "class_id": c.class_id,
-                                    "subject_id": c.subject_id,
-                                    "teacher_user_id": teacher_id,
-                                    "weekday": wd,
-                                    "start_time": s.isoformat(),
-                                    "end_time": e.isoformat(),
-                                }
-                            )
-    else:
-        conflicts.append(
-            {
-                "severity": "hard",
-                "class_id": None,
-                "subject_id": None,
-                "message": "The solver could not find any feasible timetable at all within the time limit — "
-                "check that teacher availability and protected times leave enough room for every class's "
-                "weekly lessons.",
-            }
-        )
-
+                wd, idx = cell
+                _i, s, e, _b = PERIODS[idx]
+                slots.append(
+                    {
+                        "class_id": c.class_id,
+                        "subject_id": c.subject_id,
+                        "teacher_user_id": chosen,
+                        "weekday": wd,
+                        "start_time": s.isoformat(),
+                        "end_time": e.isoformat(),
+                    }
+                )
     return SolveResult(
         status=status_name,
-        slots=slots,
-        conflicts=conflicts,
+        slots=[s for s in slots if s["teacher_user_id"]],
+        conflicts=[],
         stats={
-            "wall_time_seconds": solver.WallTime(),
-            "objective_value": solver.ObjectiveValue() if status in (cp_model.OPTIMAL, cp_model.FEASIBLE) else None,
+            "wall_time_seconds": solver.WallTime() if place else 0,
+            "objective_value": solver.ObjectiveValue() if ok and place else None,
             "num_classes": len(inputs.classes),
-            "num_conflicts": len(conflicts),
+            "num_locked_kept": len(inputs.fixed),
+            "max_lessons_per_day": inputs.max_per_day,
+            "max_consecutive": inputs.max_consecutive,
         },
     )
 
 
-def write_results(supabase, inputs: Inputs, result: SolveResult, label: str, is_test: bool) -> str:
-    run = (
-        supabase.table("timetable_runs")
-        .insert(
+# ── independent self-check ──────────────────────────────────────────────────
+def verify(inputs: Inputs, all_slots: list[dict]) -> list[dict]:
+    """Re-verify finished slots from first principles (real start/end times, raw
+    availability and protected ranges; NOT the solver's cell maps). Returns
+    conflict rows; clashes are always hard. Locked (manual) lessons that break a
+    softer rule are reported as soft so they can still be published knowingly."""
+    out: list[dict] = []
+    labels = {(c.class_id, c.subject_id): _pair_label(c) for c in inputs.classes}
+    weekly = {(c.class_id, c.subject_id): c.weekly_lessons for c in inputs.classes}
+    cname = {c.class_id: c.name for c in inputs.classes}
+
+    def lab(s: dict) -> str:
+        return labels.get((s["class_id"], s["subject_id"])) or f"{cname.get(s['class_id'], 'A class')} lesson"
+
+    def when(s: dict) -> str:
+        return f"{DAY_NAMES.get(s['weekday'], s['weekday'])} {_parse_time(s['start_time']).strftime('%H:%M')}"
+
+    def add(sev: str, kind: str, s: dict | None, msg: str, **details):
+        out.append(
             {
-                "academic_year_id": inputs.academic_year_id,
-                "term_id": inputs.term_id,
-                "status": "draft",
-                "label": label,
-                "generated_by": "solver",
-                "solver_stats": {**result.stats, "status": result.status, "is_test": is_test},
+                "severity": sev,
+                "kind": kind,
+                "class_id": s["class_id"] if s else None,
+                "subject_id": s["subject_id"] if s else None,
+                "teacher_user_id": s["teacher_user_id"] if s else None,
+                "message": f"Self-check: {msg}",
+                "details": details or None,
             }
         )
-        .execute()
-        .data[0]
-    )
-    run_id = run["id"]
+
+    P = [(s, s["weekday"], _parse_time(s["start_time"]), _parse_time(s["end_time"])) for s in all_slots]
+    for i in range(len(P)):
+        a, wa, sa, ea = P[i]
+        for j in range(i + 1, len(P)):
+            b, wb, sb, eb = P[j]
+            if wa != wb or not (sa < eb and sb < ea):
+                continue
+            if a["teacher_user_id"] == b["teacher_user_id"]:
+                add("hard", "teacher_clash", a, f"{_tname(inputs, a['teacher_user_id'])} is double-booked on {when(a)}: {lab(a)} and {lab(b)} overlap.", other_class_id=b["class_id"])
+            if a["class_id"] == b["class_id"]:
+                add("hard", "class_clash", a, f"{cname.get(a['class_id'], 'A class')} has two lessons at once on {when(a)}: {lab(a)} and {lab(b)}.")
+
+    for s, wd, st, en in P:
+        t = s["teacher_user_id"]
+        sev = "soft" if s.get("_locked") else "hard"
+        who = _tname(inputs, t)
+        if wd not in WEEKDAYS or not any(a <= st and en <= b for a, b in SCHOOL_DAY_SPANS):
+            add(sev, "outside_school_day", s, f"{lab(s)} on {when(s)} is outside the school day.")
+        ranges = inputs.availability_ranges.get(t, [])
+        if not any(w == wd and rs <= st and en <= re for w, rs, re in ranges):
+            add(sev, "teacher_unavailable", s, f"{who} is not available for {lab(s)} on {when(s)}.")
+        if any(w == wd and ps < en and st < pe for w, ps, pe in inputs.protected_ranges):
+            add(sev, "protected_time", s, f"{lab(s)} on {when(s)} falls in a protected time.")
+        ext = inputs.external_busy.get(t, {})
+        hit = next((ext[cell] for cell in cells_for_range(wd, st, en) if cell in ext), None)
+        if hit:
+            add("hard", "teacher_clash", s, f"{who} is already teaching at {when(s)} in {hit}.")
+
+    # per teacher per day: load and consecutive periods
+    by_td: dict[tuple, list] = {}
+    for s, wd, st, en in P:
+        by_td.setdefault((s["teacher_user_id"], wd), []).append((s, st, en))
+    chains = period_chains()
+    for (t, wd), items in by_td.items():
+        sev = "soft" if all(x[0].get("_locked") for x in items) else "hard"
+        if len(items) > inputs.max_per_day:
+            add(sev, "teacher_day_overload", items[0][0], f"{_tname(inputs, t)} has {len(items)} lessons on {DAY_NAMES.get(wd, wd)} (maximum {inputs.max_per_day}).", count=len(items))
+        idxs = {idx for _s, st, en in items for (_w, idx) in cells_for_range(wd, st, en)}
+        for chain in chains:
+            run = 0
+            for idx in chain:
+                run = run + 1 if idx in idxs else 0
+                if run == inputs.max_consecutive + 1:
+                    add(sev, "teacher_consecutive", items[0][0], f"{_tname(inputs, t)} teaches more than {inputs.max_consecutive} periods in a row on {DAY_NAMES.get(wd, wd)}.")
+                    break
+
+    # subject spread and totals
+    by_pair: dict[tuple, list] = {}
+    for s, wd, st, en in P:
+        by_pair.setdefault((s["class_id"], s["subject_id"]), []).append(s)
+    for key, items in by_pair.items():
+        w = weekly.get(key)
+        if w is None:
+            continue
+        if len(items) > w:
+            add("hard", "too_many_lessons", items[0], f"{lab(items[0])} has {len(items)} lessons but only {w} are needed.")
+        cap = _weekly_day_cap(w)
+        for wd in WEEKDAYS:
+            day = [x for x in items if x["weekday"] == wd]
+            if len(day) > cap:
+                sev = "soft" if all(x.get("_locked") for x in day) else "hard"
+                add(sev, "subject_repeated_day", day[0], f"{lab(day[0])} is scheduled {len(day)} times on {DAY_NAMES.get(wd, wd)} (maximum {cap}).")
+    return out
+
+
+DAY_NAMES = {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday", 6: "Saturday", 0: "Sunday"}
+
+
+# ── reconciliation report ───────────────────────────────────────────────────
+def _max_matching(options: list[list]) -> list[int | None]:
+    """Bipartite matching (Kuhn). options[i] = candidate cells of lesson i;
+    returns the matched cell per lesson (None = cannot be placed)."""
+    owner: dict = {}
+
+    def try_lesson(i: int, seen: set) -> bool:
+        for cell in options[i]:
+            if cell in seen:
+                continue
+            seen.add(cell)
+            if cell not in owner or try_lesson(owner[cell], seen):
+                owner[cell] = i
+                return True
+        return False
+
+    for i in range(len(options)):
+        try_lesson(i, set())
+    result: list = [None] * len(options)
+    for cell, i in owner.items():
+        result[i] = cell
+    return result
+
+
+def _occupancy(inputs: Inputs, all_slots: list[dict]) -> tuple[dict, dict]:
+    labels = {(c.class_id, c.subject_id): _pair_label(c) for c in inputs.classes}
+    cname = {c.class_id: c.name for c in inputs.classes}
+    t_occ: dict[tuple, str] = {}
+    c_occ: dict[tuple, str] = {}
+    for s in all_slots:
+        label = labels.get((s["class_id"], s["subject_id"])) or cname.get(s["class_id"], "another class")
+        for cell in cells_for_range(s["weekday"], _parse_time(s["start_time"]), _parse_time(s["end_time"])):
+            t_occ[(s["teacher_user_id"], cell)] = label
+            c_occ[(s["class_id"], cell)] = label
+    return t_occ, c_occ
+
+
+def reconcile(inputs: Inputs, all_slots: list[dict]) -> list[dict]:
+    """Plain-language reconciliation: why things collide and what to change."""
+    out: list[dict] = []
+    tb, cb = _busy_maps(inputs)
+    classes = inputs.classes
+    max_day = inputs.max_per_day
+
+    def row(sev, kind, msg, class_id=None, subject_id=None, teacher_id=None, **details):
+        out.append({"severity": sev, "kind": kind, "class_id": class_id, "subject_id": subject_id, "teacher_user_id": teacher_id, "message": msg, "details": details or None})
+
+    # 1. Teachers overbooked: demand (all their classes) vs periods they can be given.
+    demand: dict[str, list] = {}
+    for c in classes:
+        elig = list(dict.fromkeys(c.eligible_teacher_ids))
+        if len(elig) == 1 and c.weekly_lessons > 0:
+            demand.setdefault(elig[0], []).append(c)
+    for t, cs in sorted(demand.items(), key=lambda kv: _tname(inputs, kv[0])):
+        total = sum(c.weekly_lessons for c in cs)
+        usable = [cell for cell in ALL_CELLS if cell in inputs.availability.get(t, set()) and cell not in inputs.protected and cell not in inputs.external_busy.get(t, {})]
+        capacity = sum(min(sum(1 for cell in usable if cell[0] == wd), max_day) for wd in WEEKDAYS)
+        name = _tname(inputs, t)
+        if total > capacity:
+            top = sorted(cs, key=lambda c: -c.weekly_lessons)
+            lead = top[0]
+            if not usable:
+                reason = f"{name} teaches {total} lessons/week but has set no availability for this year. Ask them to add availability, or assign another teacher for {_pair_label(lead)}."
+            else:
+                reason = (
+                    f"{name} teaches {total} lessons/week but is available for {len(usable)} periods (at most {capacity} lessons with the {max_day}-a-day limit). "
+                    f"Reduce their load by {total - capacity}, add availability, or assign another teacher for {_pair_label(lead)} ({lead.weekly_lessons} lessons/week)"
+                    + (f" or {_pair_label(top[1])} ({top[1].weekly_lessons})." if len(top) > 1 else ".")
+                )
+            row("hard", "teacher_overbooked", reason, teacher_id=t, demand=total, capacity=capacity, available_periods=len(usable), contributors=[{"class": c.name, "subject": c.subject_name, "lessons": c.weekly_lessons} for c in top])
+
+    # 2. Classes that can never be filled, whatever else is going on.
+    by_cls: dict[str, list] = {}
+    for c in classes:
+        by_cls.setdefault(c.class_id, []).append(c)
+    for cid, cs in by_cls.items():
+        need = sum(c.weekly_lessons for c in cs)
+        free_cells = [cell for cell in ALL_CELLS if cell not in inputs.protected]
+        cname = cs[0].name
+        if need > len(free_cells):
+            row("hard", "class_overfull", f"{cname} needs {need} lessons/week but the school week only has {len(free_cells)} usable periods. Reduce lessons for {cname} by {need - len(free_cells)}.", class_id=cid, need=need, periods=len(free_cells))
+            continue
+        lessons, owners = [], []
+        for c in cs:
+            elig = list(dict.fromkeys(c.eligible_teacher_ids))
+            have = sum(1 for f in inputs.fixed if f.class_id == cid and f.subject_id == c.subject_id)
+            opts = [cell for cell in free_cells if cell not in cb.get(cid, {}) and any(_free_for(inputs, tb, t, cell) for t in elig)]
+            for _ in range(max(0, c.weekly_lessons - have)):
+                lessons.append(opts)
+                owners.append(c)
+        matched = _max_matching(lessons)
+        short: dict[str, list] = {}
+        for res, c in zip(matched, owners):
+            if res is None:
+                short.setdefault(c.id, []).append(c)
+        if short:
+            parts = []
+            for items in short.values():
+                c = items[0]
+                elig = list(dict.fromkeys(c.eligible_teacher_ids))
+                who = _tname(inputs, elig[0]) if len(elig) == 1 else "any teacher"
+                parts.append(f"{_pair_label(c)} ({len(items)} lesson{'s' if len(items) > 1 else ''}, {who})")
+            row(
+                "hard", "class_unfillable",
+                f"{cname} cannot be completed even before other classes are considered: {sum(len(v) for v in short.values())} lesson(s) have no common free period between the class and its teachers: "
+                + "; ".join(parts) + ". Widen those teachers' availability, or assign another teacher for the subject.",
+                class_id=cid, short=[{"subject": v[0].subject_name, "lessons": len(v)} for v in short.values()],
+            )
+
+    # 3. Lessons still missing from the finished timetable, with the collisions behind them.
+    t_occ, c_occ = _occupancy(inputs, all_slots)
+    placed: dict[tuple, int] = {}
+    for s in all_slots:
+        placed[(s["class_id"], s["subject_id"])] = placed.get((s["class_id"], s["subject_id"]), 0) + 1
+    total_missing = 0
+    for c in classes:
+        missing = c.weekly_lessons - placed.get((c.class_id, c.subject_id), 0)
+        if missing <= 0:
+            continue
+        total_missing += missing
+        elig = list(dict.fromkeys(c.eligible_teacher_ids))
+        reasons = {"protected": 0, "class_busy": 0, "teacher_busy": 0, "unavailable": 0, "other": 0}
+        busy_with: dict[str, int] = {}
+        for cell in ALL_CELLS:
+            if cell in inputs.protected:
+                reasons["protected"] += 1
+            elif (c.class_id, cell) in c_occ:
+                reasons["class_busy"] += 1
+            else:
+                states = []
+                for t in elig:
+                    if cell in inputs.external_busy.get(t, {}):
+                        states.append(("busy", inputs.external_busy[t][cell]))
+                    elif cell not in inputs.availability.get(t, set()):
+                        states.append(("unavailable", ""))
+                    elif (t, cell) in t_occ:
+                        states.append(("busy", t_occ[(t, cell)]))
+                    else:
+                        states.append(("free", ""))
+                if any(s == "free" for s, _ in states):
+                    reasons["other"] += 1
+                elif any(s == "busy" for s, _ in states):
+                    reasons["teacher_busy"] += 1
+                    for s, label in states:
+                        if s == "busy":
+                            busy_with[label] = busy_with.get(label, 0) + 1
+                else:
+                    reasons["unavailable"] += 1
+        label = _pair_label(c)
+        got = c.weekly_lessons - missing
+        if not elig:
+            why = "No teacher is assigned and no teacher has availability. Choose a teacher in the class teacher matrix and ask them to set availability."
+        else:
+            who = _tname(inputs, elig[0]) if len(elig) == 1 else "the available teachers"
+            usable = sum(1 for cell in ALL_CELLS if cell not in inputs.protected and any(cell in inputs.availability.get(t, set()) for t in elig))
+            top = ", ".join(f"{k} ({v})" for k, v in sorted(busy_with.items(), key=lambda kv: -kv[1])[:3])
+            bits = [f"{who} is available for {usable} periods"]
+            if reasons["teacher_busy"]:
+                bits.append(f"{reasons['teacher_busy']} period(s) are taken by other lessons" + (f" ({top})" if top else ""))
+            if reasons["class_busy"]:
+                bits.append(f"{reasons['class_busy']} period(s) are already used by {c.name}'s other subjects")
+            if reasons["other"]:
+                bits.append(f"{reasons['other']} free period(s) were ruled out by the per-day limits (max {max_day} lessons a day, max {inputs.max_consecutive} in a row, one lesson of a subject a day)")
+            # Judge by the periods the teacher could actually work; "unavailable"
+            # only matters when there are none.
+            main = max(("teacher_busy", "class_busy", "other"), key=lambda k: reasons[k])
+            if reasons[main] == 0:
+                main = "unavailable"
+            tip = {
+                "teacher_busy": f"Suggestion: reduce {who}'s other lessons, add availability for {who}, or assign another teacher for {label}.",
+                "class_busy": f"Suggestion: {c.name} is already full at the times {who} is free; move another subject or reduce lessons for {c.name}.",
+                "unavailable": f"Suggestion: {who} has no availability when {c.name} is free; add availability or assign another teacher for {label}.",
+                "other": "Suggestion: raise the per-day limit or spread the week differently.",
+            }[main]
+            why = "; ".join(bits) + ". " + tip
+        row(
+            "hard", "unplaced",
+            f"{label}: {got} of {c.weekly_lessons} weekly lessons placed ({missing} missing). {why}",
+            class_id=c.class_id, subject_id=c.subject_id, teacher_id=elig[0] if len(elig) == 1 else None,
+            missing=missing, needed=c.weekly_lessons, reasons=reasons,
+        )
+
+    if out or inputs.fixed:
+        n_over = sum(1 for r in out if r["kind"] == "teacher_overbooked")
+        row(
+            "soft", "summary",
+            f"Reconciliation: {total_missing} lesson(s) could not be placed; {n_over} teacher(s) overbooked; "
+            f"{len(inputs.fixed)} locked lesson(s) kept as fixed. Fix the items above, then use \"Re-run keeping locked lessons\".",
+            missing=total_missing, overbooked=n_over, locked_kept=len(inputs.fixed),
+        )
+    return out
+
+
+def generate(inputs: Inputs) -> SolveResult:
+    """Solve, then independently re-verify and reconcile. Never raises on an
+    unsolvable input: the problems come back as conflict rows instead."""
+    result = solve(inputs)
+    locked = [
+        {"class_id": f.class_id, "subject_id": f.subject_id, "teacher_user_id": f.teacher_id, "weekday": f.weekday, "start_time": f.start_time, "end_time": f.end_time, "_locked": True}
+        for f in inputs.fixed
+    ]
+    all_slots = locked + result.slots
+    violations = verify(inputs, all_slots)
+    report = reconcile(inputs, all_slots)
+    if result.status == "infeasible" and inputs.classes:
+        report.insert(0, {"severity": "hard", "kind": "infeasible", "class_id": None, "subject_id": None, "teacher_user_id": None,
+                          "message": "The solver found no feasible timetable within the time limit (the locked lessons may contradict each other). See the items below for the collisions.", "details": None})
+    result.conflicts = report + violations
+    result.stats["num_conflicts"] = len(result.conflicts)
+    result.stats["self_check_violations"] = len(violations)
+    result.stats["self_check_hard"] = sum(1 for v in violations if v["severity"] == "hard")
+    return result
+
+
+# ── persistence ─────────────────────────────────────────────────────────────
+def _conflict_rows(run_id: str, conflicts: list[dict], extended: bool) -> list[dict]:
+    rows = []
+    for c in conflicts:
+        r = {k: v for k, v in c.items() if extended or k not in ("kind", "details")}
+        if not extended and c.get("kind"):
+            r["message"] = f"[{c['kind']}] {r['message']}"
+        rows.append({**r, "run_id": run_id})
+    return rows
+
+
+def write_results(supabase, inputs: Inputs, result: SolveResult, label: str, is_test: bool) -> str:
+    stats = {**result.stats, "status": result.status, "is_test": is_test, "regenerate_pending": False}
+    if inputs.target_run_id:
+        run_id = inputs.target_run_id
+        old = supabase.table("timetable_runs").select("solver_stats").eq("id", run_id).single().execute().data or {}
+        supabase.table("timetable_runs").update({"solver_stats": {**(old.get("solver_stats") or {}), **stats}, "generated_by": "solver"}).eq("id", run_id).execute()
+    else:
+        run_id = (
+            supabase.table("timetable_runs")
+            .insert({"academic_year_id": inputs.academic_year_id, "term_id": inputs.term_id, "status": "draft", "label": label, "generated_by": "solver", "solver_stats": stats})
+            .execute()
+            .data[0]["id"]
+        )
 
     if result.slots:
         rows = [{**s, "run_id": run_id} for s in result.slots]
@@ -480,9 +980,11 @@ def write_results(supabase, inputs: Inputs, result: SolveResult, label: str, is_
             supabase.table("timetable_slots").insert(rows[i : i + 500]).execute()
 
     if result.conflicts:
-        rows = [{**c, "run_id": run_id} for c in result.conflicts]
-        supabase.table("timetable_conflicts").insert(rows).execute()
-
+        try:
+            supabase.table("timetable_conflicts").insert(_conflict_rows(run_id, result.conflicts, True)).execute()
+        except Exception as exc:  # migration 0056 (kind/details columns) not applied yet
+            print(f"WARNING: writing conflicts with kind/details failed ({exc}); retrying without.", file=sys.stderr)
+            supabase.table("timetable_conflicts").insert(_conflict_rows(run_id, result.conflicts, False)).execute()
     return run_id
 
 
@@ -491,6 +993,9 @@ def main() -> int:
     parser.add_argument("--academic-year-label", required=True)
     parser.add_argument("--label", default=None, help="Label for the resulting timetable_runs row")
     parser.add_argument("--dry-run", action="store_true", help="Solve and print results, don't write to Supabase")
+    parser.add_argument("--keep-locked-from", default=None, help="Draft run id whose locked slots are kept as fixed; that run is filled in place")
+    parser.add_argument("--max-lessons-per-day", type=int, default=MAX_TEACHER_LESSONS_PER_DAY)
+    parser.add_argument("--max-consecutive", type=int, default=MAX_CONSECUTIVE_TEACHING_PERIODS)
     args = parser.parse_args()
 
     supabase_url = os.environ.get("SUPABASE_URL")
@@ -504,15 +1009,23 @@ def main() -> int:
 
     supabase = create_client(supabase_url, service_key)
     inputs = fetch_inputs(supabase, args.academic_year_label)
-    print(f"Loaded {len(inputs.classes)} classes, {len(inputs.teacher_ids)} teachers with availability.")
+    inputs.max_per_day = args.max_lessons_per_day
+    inputs.max_consecutive = args.max_consecutive
+    # "Re-run keeping locked lessons": the UI prepares a draft holding the locked
+    # slots and flags it regenerate_pending; fill that draft in place.
+    inputs.target_run_id = args.keep_locked_from or find_pending_run(supabase, inputs.academic_year_id)
+    if inputs.target_run_id:
+        inputs.fixed = fetch_fixed(supabase, inputs.target_run_id)
+        print(f"Keeping {len(inputs.fixed)} locked lesson(s) from run {inputs.target_run_id}.")
+    print(f"Loaded {len(inputs.classes)} class-subject pairs, {len(inputs.teacher_ids)} teachers.")
 
-    result = solve(inputs)
-    print(f"Solve status: {result.status}. Placed {len(result.slots)} slots, {len(result.conflicts)} conflicts.")
+    result = generate(inputs)
+    print(f"Solve status: {result.status}. Placed {len(result.slots)} new slots, {len(result.conflicts)} conflict rows.")
     for conflict in result.conflicts:
-        print(f"  CONFLICT: {conflict['message']}")
+        print(f"  [{conflict['severity']}] {conflict['message']}")
 
     if args.dry_run:
-        print(json.dumps({"slots": result.slots, "conflicts": result.conflicts, "stats": result.stats}, indent=2))
+        print(json.dumps({"slots": result.slots, "conflicts": result.conflicts, "stats": result.stats}, indent=2, default=str))
         return 0
 
     is_test = "TEST" in args.academic_year_label

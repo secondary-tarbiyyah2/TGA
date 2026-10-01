@@ -16,7 +16,7 @@ export default function robots(): MetadataRoute.Robots {
     // /learn/* bridge page left behind here for old bookmarked links is
     // marked noindex via a header rather than disallow, so it can still be
     // crawled-and-redirected rather than silently ignored.
-    rules: [{ userAgent: "*", allow: "/", disallow: ["/studio", "/staff", "/portal"] }],
+    rules: [{ userAgent: "*", allow: "/", disallow: ["/studio", "/staff", "/portal", "/manage-booking"] }],
     sitemap: `${siteUrl}/sitemap.xml`,
   };
 }

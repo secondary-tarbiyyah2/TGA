@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { WEEKDAYS, PERIODS, type TimetableSlot } from "@/lib/learn/timetable";
-import { classColour, hhmm, moveProblem, type Colour, type Teacher } from "./types";
+import { classColour, hhmm, moveProblem, type Colour, type LockableSlot, type Teacher } from "./types";
 
 /**
  * Days across, times down. Every slot is a coloured block (colour = class).
@@ -19,6 +19,7 @@ export function WeeklyGrid({
   allSlots,
   colourOf,
   flagged,
+  moveNotes,
 }: {
   slots: TimetableSlot[];
   /** Every slot in the run: clash checks use this even when `slots` is a filtered view. */
@@ -33,10 +34,13 @@ export function WeeklyGrid({
   onAdd: (weekday: number, start: string, end: string) => void;
   /** Persist a drag-move; resolve with an error message, or null on success. */
   onMove?: (slot: TimetableSlot, weekday: number, start: string, end: string) => Promise<string | null>;
+  /** Non-blocking warnings for a move (availability, protected time, load); shown after it is saved. */
+  moveNotes?: (slot: TimetableSlot, weekday: number, start: string, end: string) => string[];
 }) {
   const [dragId, setDragId] = useState<string | null>(null);
   const [over, setOver] = useState<{ key: string; ok: boolean } | null>(null);
   const [moveError, setMoveError] = useState<string | null>(null);
+  const [moveNote, setMoveNote] = useState<string | null>(null);
   const timer = useRef<number | null>(null);
   useEffect(
     () => () => {
@@ -58,13 +62,16 @@ export function WeeklyGrid({
   };
   const drop = async (weekday: number, start: string, end: string) => {
     const slot = dragging;
+    setMoveNote(null);
     endDrag();
     if (!slot || !onMove) return;
     if (slot.weekday === weekday && hhmm(slot.start_time) === start) return;
     const problem = moveProblem(slot, weekday, start, end, universe);
     if (problem) return fail(`Can't move there: ${problem}`);
+    const notes = moveNotes ? moveNotes(slot, weekday, start, end) : [];
     const err = await onMove(slot, weekday, start, end);
-    if (err) fail(`Move failed: ${err}`);
+    if (err) return fail(`Move failed: ${err}`);
+    setMoveNote(notes.length ? `Moved, but note: ${notes.join(" ")}` : null);
   };
 
   const rows = new Map<string, string>(); // start -> end
@@ -78,6 +85,7 @@ export function WeeklyGrid({
 
   return (
     <div>
+    {moveNote && !moveError && <p role="status" className="mb-2 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-900">{moveNote}</p>}
     {moveError && <p role="alert" className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">{moveError}</p>}
     {!editable && slots.length > 0 && <p className="mb-2 text-xs text-ink/50">Locked: only draft timetables can be changed or dragged.</p>}
     {canDrag && slots.length > 0 && <p className="mb-2 text-xs text-ink/50">Tip: drag a lesson to another day or time to move it.</p>}
@@ -137,7 +145,7 @@ export function WeeklyGrid({
                           <>
                             <span className="block truncate text-xs font-semibold">{s.classes?.name || "Class"}</span>
                             <span className="block truncate text-[11px] opacity-80">{s.subjects?.name}</span>
-                            <span className="block truncate text-[11px] opacity-70">{nameOf(s.teacher_user_id)}</span>
+                            <span className="block truncate text-[11px] opacity-70">{nameOf(s.teacher_user_id)}{(s as LockableSlot).locked ? " · fixed" : ""}</span>
                           </>
                         );
                         const style = { backgroundColor: c.bg, borderColor: c.border, color: c.text };

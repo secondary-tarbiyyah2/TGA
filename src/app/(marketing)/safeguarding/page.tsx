@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
+import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { getPolicyLinks, getSiteSettings } from "@/lib/content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Safeguarding",
-  description:
-    "How Tarbiyyah Global Academy keeps children safe: our Designated Safeguarding Lead, how to raise a concern, and our Child Protection and Safeguarding Policy.",
-};
+  description: "How Tarbiyyah Global Academy keeps children safe: our Designated Safeguarding Lead, how to raise a concern, and our Child Protection and Safeguarding Policy.",
+  path: "/safeguarding",
+});
 
 export default async function SafeguardingPage() {
   const [settings, policies] = await Promise.all([getSiteSettings(), getPolicyLinks()]);
@@ -92,7 +94,7 @@ export default async function SafeguardingPage() {
               <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-gold-500/60 bg-gold-100/40 px-6 py-5">
                 <div>
                   <p className="font-semibold text-ink">{safeguardingPolicy.title}</p>
-                  <p className="mt-0.5 text-xs text-ink/60">Our full statutory policy, covering reporting procedures, staff training and recruitment checks.</p>
+                  <p className="mt-0.5 text-xs text-ink/70">Our full statutory policy, covering reporting procedures, staff training and recruitment checks.</p>
                 </div>
                 <a
                   href={safeguardingPolicy.fileUrl}
@@ -106,13 +108,14 @@ export default async function SafeguardingPage() {
             </div>
           )}
 
-          <p className="text-sm text-ink/60">
+          <p className="text-sm text-ink/70">
             See all of our policies, including Anti-Bullying, Behaviour and Online Conduct, on the{" "}
             <Link href="/policies" className="font-semibold text-gold-700 underline">Policies page</Link>.
           </p>
         </Container>
       </section>
 
+      <AdmissionsStrip />
       <CtaBand heading="Have a question first?" body="Get in touch and we'll point you to the right person." ctaLabel="Contact us" ctaHref="/contact" />
     </>
   );

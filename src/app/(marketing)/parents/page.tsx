@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { HubCards } from "@/components/HubCards";
 import { CtaBand } from "@/components/CtaBand";
 import { parentsHub } from "@/lib/nav";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Parents",
   description: "Term dates, policies, safeguarding, FAQs and everything else parents need in one place.",
-};
+  path: "/parents",
+});
 
 export default function ParentsHubPage() {
   return (
@@ -22,6 +24,7 @@ export default function ParentsHubPage() {
       </section>
       <section className="section-pad">
         <Container>
+          <h2 className="sr-only">Parent information</h2>
           <HubCards cards={parentsHub} />
         </Container>
       </section>
