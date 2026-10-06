@@ -14,6 +14,8 @@ export type Person = {
   roles: LearnRole[];
   classScope: string | null; // class id when the role is scoped to one class
   classNames: string[];
+  /** Pupil's username when they sign in without an email (the synthetic address is never exposed). */
+  username: string | null;
   yearGroup: string | null;
   parentName: string | null;
   childNames: string[];

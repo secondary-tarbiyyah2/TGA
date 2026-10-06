@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
-import { FaqAccordion } from "@/components/FaqAccordion";
+import { LiveFaq } from "@/components/LiveFaq";
 import { JsonLd } from "@/components/JsonLd";
 import { getFaqEntries } from "@/lib/content";
 
@@ -33,7 +33,7 @@ export default async function FaqsPage() {
         <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Frequently asked questions.</h1>
         <p className="mt-6 text-lg text-ink/75">Grouped by what you&apos;re actually asking, or search to jump straight to an answer.</p>
         <div className="mt-10">
-          <FaqAccordion entries={faqs} />
+          <LiveFaq initialEntries={faqs} />
         </div>
       </Container>
     </section>

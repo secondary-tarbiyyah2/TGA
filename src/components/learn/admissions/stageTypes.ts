@@ -2,7 +2,7 @@
 // (assessment, interview, offer, payments). Table: admissions_stage_details (0061).
 
 export const STAGE_COLUMNS =
-  "application_id, assessment_platform, assessment_link, assessment_duration_text, assessment_invigilator, assessment_started_at, assessment_finished_at, assessment_id_verified, assessment_camera_on, assessment_irregularities, assessment_raw_score, assessment_standard_score, assessment_recommendation, assessment_results_path, assessment_emailed_at, interview_interviewer, interview_link, interview_notes, interview_outcome, interview_emailed_at, offer_start_date, offer_emailed_at, chosen_plan, application_fee_amount, application_fee_received, application_fee_received_at, annual_fee_override, first_payment_override, payment_token_created_at";
+  "application_id, assessment_platform, assessment_link, assessment_duration_text, assessment_invigilator, assessment_started_at, assessment_finished_at, assessment_id_verified, assessment_camera_on, assessment_irregularities, assessment_raw_score, assessment_standard_score, assessment_recommendation, assessment_results_path, assessment_emailed_at, interview_interviewer, interview_link, interview_notes, interview_outcome, interview_emailed_at, offer_start_date, offer_emailed_at, chosen_plan, application_fee_amount, application_fee_received, application_fee_received_at, annual_fee_override, first_payment_override, payment_token_created_at, account_class_ids, account_student_login";
 
 export type PlanId = "annual" | "termly" | "monthly";
 export type InterviewOutcome = "pending" | "positive" | "further_consideration" | "not_progressing";
@@ -37,6 +37,9 @@ export type StageDetails = {
   annual_fee_override: number | null;
   first_payment_override: number | null;
   payment_token_created_at: string | null;
+  /** 0081: what automatic account creation applies on acceptance. */
+  account_class_ids: string[];
+  account_student_login: boolean;
 };
 
 export type StagePatch = Partial<Omit<StageDetails, "application_id">>;
@@ -47,6 +50,7 @@ export type AdmissionsSettings = {
   fee_terms: number | null;
   fee_instalments: number | null;
   annual_discount_percent: number | null;
+  sibling_discount_percent: number | null;
   payment_instructions: string | null;
   assessment_join_url: string | null;
   interview_join_url: string | null;
@@ -56,7 +60,7 @@ export type AdmissionsSettings = {
 };
 
 export const SETTINGS_COLUMNS =
-  "application_fee, registration_fee, fee_terms, fee_instalments, annual_discount_percent, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone";
+  "application_fee, registration_fee, fee_terms, fee_instalments, annual_discount_percent, sibling_discount_percent, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone";
 
 export type FeeBandRow = { year_group_range: string; annual_fee: number };
 

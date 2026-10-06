@@ -245,6 +245,14 @@ jobs:
           # session (anonymous quiz-takers, a scheduled job).
           supabase functions deploy admissions-correspond --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy admissions-payment-proof --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # Automatic accounts on acceptance, student username logins and the
+          # instant "application received" email. The first two are verified
+          # (each re-checks the caller's role); admissions-submitted has no
+          # session (the public form) and only emails the address already on
+          # the fresh application.
+          supabase functions deploy admissions-create-accounts --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy student-account --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy admissions-submitted --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy document-sign-request --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy document-signed-copy --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy document-signed-pdf --project-ref "${{ steps.project.outputs.ref }}"
@@ -283,6 +291,13 @@ jobs:
           supabase functions deploy weekly-digest --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # star-certificate: verified; staff only (re-checked in the function).
           supabase functions deploy star-certificate --project-ref "${{ steps.project.outputs.ref }}"
+          # policy-file: public website policies streamed to deploy/policy.php
+          # (the main site's /policies/<slug>.pdf); open-evening-book: the
+          # public booking form (honeypot + rate limit inside); open-evening-
+          # reminders: hourly scheduled job, requires the service-role key.
+          supabase functions deploy policy-file --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy open-evening-book --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy open-evening-reminders --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
 
       - name: Configure Auth (magic link via Resend SMTP)
         run: |

@@ -24,6 +24,73 @@ type LessonRowRaw = {
   } | null;
 };
 
+/**
+ * A meeting link as typed by staff, made safe to open: trimmed, "https://"
+ * added when it was pasted without a scheme (a bare "meet.google.com/abc"
+ * would otherwise open as a path on our own site), and anything that is not
+ * http(s) refused. Returns null when there is nothing usable.
+ */
+export function normaliseMeetingUrl(raw: string | null | undefined): string | null {
+  const t = (raw || "").trim();
+  if (!t) return null;
+  const withScheme = /^[a-z][a-z0-9+.-]*:/i.test(t) ? t : `https://${t.replace(/^\/+/, "")}`;
+  try {
+    const u = new URL(withScheme);
+    return u.protocol === "https:" || u.protocol === "http:" ? u.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
+// Self-check, run once in development builds: fails loudly if the normaliser regresses.
+if (process.env.NODE_ENV === "development") {
+  const cases: [string | null, string | null][] = [
+    ["https://meet.google.com/abc-defg-hij", "https://meet.google.com/abc-defg-hij"],
+    [" meet.google.com/abc-defg-hij ", "https://meet.google.com/abc-defg-hij"],
+    ["javascript:alert(1)", null],
+    ["", null],
+    [null, null],
+  ];
+  for (const [input, want] of cases) {
+    if (normaliseMeetingUrl(input) !== want) console.error("normaliseMeetingUrl self-check failed for", input);
+  }
+}
+
+/** Opens `url` in a new tab straight away, or a holding tab when it is not known yet. */
+function openMeetingWindow(url: string | null): Window | null {
+  try {
+    const w = window.open(url || "", "_blank");
+    if (!w) {
+      // Popup blocked: just navigate this tab if we have somewhere to go.
+      if (url) window.location.href = url;
+      return null;
+    }
+    w.opener = null;
+    if (!url) {
+      w.document.title = "Joining your lesson…";
+      w.document.body.innerHTML = '<p style="font-family:system-ui,sans-serif;padding:2rem;color:#3a3f45">Joining your lesson…</p>';
+    }
+    return w;
+  } catch {
+    if (url) window.location.href = url;
+    return null;
+  }
+}
+
+/** Fire-and-forget attendance log (the RPC never raises; any failure is swallowed). */
+function logJoin(lessonInstanceId: string, childId: string | null): void {
+  try {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    Promise.resolve(supabase.rpc("log_lesson_join", { p_lesson_instance_id: lessonInstanceId, p_child_id: childId })).then(
+      () => undefined,
+      () => undefined,
+    );
+  } catch {
+    /* logging must never get in the way of joining */
+  }
+}
+
 /** The button appears this long before the lesson starts. */
 export const JOIN_LEAD_MINUTES = 10;
 
@@ -50,7 +117,6 @@ export function joinWindowOpen(nowMinutes: number, start: string, end: string): 
  */
 export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho; classId?: string; className?: string }) {
   const [lessons, setLessons] = useState<Lesson[]>([]);
-  const [userId, setUserId] = useState<string | null>(null);
   const [now, setNow] = useState<Date>(() => new Date());
   const [busy, setBusy] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -72,7 +138,6 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
         data: { user },
       } = await supabase.auth.getUser();
       if (!user || !alive) return;
-      setUserId(user.id);
 
       // Which children this person joins for, and which classes they are in.
       const kidsByClass = new Map<string, Kid[]>();
@@ -149,32 +214,25 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
   if (open.length === 0 && !message) return null;
 
   const join = async (lesson: Lesson, kid: Kid | null) => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    // Open the tab during the click; Safari/Firefox block it after an await.
-    const popup = window.open("", "_blank");
-    if (popup) {
-      popup.opener = null;
-      popup.document.title = "Joining your lesson…";
-      popup.document.body.innerHTML = '<p style="font-family:system-ui,sans-serif;padding:2rem;color:#3a3f45">Joining your lesson…</p>';
-    }
-    const key = `${lesson.id}:${kid?.id ?? "me"}`;
-    setBusy(key);
     setMessage(null);
+    const known = normaliseMeetingUrl(lesson.meetingUrl);
+    // Open the meeting DURING the click (browsers block a window opened after
+    // an await). With a known link we go straight there; otherwise we open a
+    // holding tab and point it at the link the lesson-join function returns.
+    const popup = openMeetingWindow(known);
+    // Log the join for the register in the background. It can never block,
+    // delay or show an error: the meeting is already opening.
+    logJoin(lesson.id, kid ? kid.id : null);
+    if (known) return;
+
+    setBusy(`${lesson.id}:${kid?.id ?? "me"}`);
     try {
-      let url = lesson.meetingUrl;
-      if (!url) {
-        const result = await callEdgeFunction("lesson-join", { lesson_instance_id: lesson.id });
-        url = typeof result.joinUrl === "string" ? result.joinUrl : null;
-        if (!result.ok || !url) {
-          popup?.close();
-          setMessage(`Could not join: ${edgeErrorMessage(result)}`);
-          return;
-        }
-      }
-      // Log the join (the register uses it). A logging problem never stops anyone joining.
-      if (userId) {
-        await supabase.from("lesson_joins").insert({ lesson_instance_id: lesson.id, user_id: userId, child_id: kid ? kid.id : null, role: kid ? "child" : "teacher" });
+      const result = await callEdgeFunction("lesson-join", { lesson_instance_id: lesson.id });
+      const url = normaliseMeetingUrl(typeof result.joinUrl === "string" ? result.joinUrl : null);
+      if (!result.ok || !url) {
+        popup?.close();
+        setMessage(`Could not join: ${edgeErrorMessage(result)}`);
+        return;
       }
       if (popup) popup.location.href = url;
       else window.location.href = url;

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { generateIcsToken, hashIcsToken, icsFeedUrl } from "@/lib/learn/timetable";
+import { generateIcsToken, googleSubscribeUrl, hashIcsToken, icsFeedUrl, outlookSubscribeUrl, webcalUrl } from "@/lib/learn/timetable";
 
 type TokenRow = { id: string; created_at: string };
 
@@ -20,6 +20,7 @@ export function IcsFeedLink() {
   const [tokens, setTokens] = useState<TokenRow[] | null>(null);
   const [freshUrl, setFreshUrl] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const load = async () => {
     if (!supabase) return;
@@ -53,6 +54,17 @@ export function IcsFeedLink() {
     }
   };
 
+  const copy = async () => {
+    if (!freshUrl) return;
+    try {
+      await navigator.clipboard?.writeText(freshUrl);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* clipboard blocked: the link is selectable above */
+    }
+  };
+
   const revoke = async (id: string) => {
     if (!supabase) return;
     await supabase.from("ics_tokens").update({ revoked_at: new Date().toISOString() }).eq("id", id);
@@ -73,12 +85,14 @@ export function IcsFeedLink() {
       {freshUrl && (
         <div className="mt-3 rounded-lg border border-gold-500 bg-white p-3 text-xs">
           <p className="font-medium text-ink">Your feed link (shown once — copy it now):</p>
-          <code className="mt-1 block break-all text-ink/80">{freshUrl}</code>
+          <code className="mt-1 block select-all break-all text-ink/80">{freshUrl}</code>
           <div className="mt-3 flex flex-wrap gap-2">
-            <button type="button" onClick={() => navigator.clipboard?.writeText(freshUrl)} className="rounded-lg bg-gold-700 px-3 py-1.5 font-semibold text-white hover:bg-gold-900">Copy link</button>
-            <a href={freshUrl.replace(/^https?:/, "webcal:")} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">Open in Apple / Outlook</a>
-            <a href={`https://calendar.google.com/calendar/r?cid=${encodeURIComponent(freshUrl.replace(/^https?:/, "webcal:"))}`} target="_blank" rel="noreferrer" className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">Add to Google Calendar</a>
+            <a href={webcalUrl(freshUrl)} className="rounded-lg bg-gold-700 px-3 py-1.5 font-semibold text-white hover:bg-gold-900">Subscribe in my calendar app</a>
+            <a href={googleSubscribeUrl(freshUrl)} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">Add to Google Calendar</a>
+            <a href={outlookSubscribeUrl(freshUrl)} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">Add to Outlook</a>
+            <button type="button" onClick={copy} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">{copied ? "Copied" : "Copy link"}</button>
           </div>
+          <p className="mt-2 text-[11px] text-ink/55">The first button opens Apple Calendar, Outlook or whichever calendar app is your default. Opening the link in a browser will not subscribe you: use the buttons.</p>
         </div>
       )}
 

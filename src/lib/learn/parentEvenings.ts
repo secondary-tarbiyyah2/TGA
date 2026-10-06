@@ -52,6 +52,25 @@ export function formatTime(iso: string | Date): string {
   return new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: TZ });
 }
 
+/** The evening's real window: "Tuesday 7 October, 17:00–19:30", or both dates when it spans days. */
+export function formatWindow(startIso: string, endIso: string): string {
+  const sameDay = formatDay(startIso) === formatDay(endIso);
+  return sameDay
+    ? `${formatDay(startIso)}, ${formatTime(startIso)}–${formatTime(endIso)}`
+    : `${formatDay(startIso)} ${formatTime(startIso)} to ${formatDay(endIso)} ${formatTime(endIso)}`;
+}
+
+/** Why a start/end pair isn't a valid single-evening window, or null when it is. Inputs are datetime-local values. */
+export function windowProblem(startsAt: string, endsAt: string, slotMinutes: number): string | null {
+  const start = new Date(startsAt);
+  const end = new Date(endsAt);
+  if (!startsAt || !endsAt || Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return "Choose both a start and an end time.";
+  if (end.getTime() <= start.getTime()) return "The end time must be after the start time.";
+  if (end.getTime() - start.getTime() < slotMinutes * 60_000) return "The evening must be at least one meeting long.";
+  if (start.toDateString() !== end.toDateString()) return "A parent evening must start and end on the same day.";
+  return null;
+}
+
 export function formatSlot(startIso: string, endIso?: string): string {
   const day = new Date(startIso).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: TZ });
   return `${day}, ${formatTime(startIso)}${endIso ? `–${formatTime(endIso)}` : ""}`;

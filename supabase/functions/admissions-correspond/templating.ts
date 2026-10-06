@@ -45,6 +45,7 @@ export const TEMPLATE_LABELS: Record<string, string> = {
   assessment_details: "Assessment details",
   decline_waitlist: "Decline / waitlist",
   custom: "Custom message",
+  accounts: "Account details",
 };
 
 /** Never sent automatically, whatever the toggle says (sensitive; always manual with a confirmation). */
@@ -143,6 +144,74 @@ function upperFirst(s: string): string {
   return s ? s[0].toUpperCase() + s.slice(1) : s;
 }
 
+// ── families (several children on one application form) ─────────────────
+
+export type FamilyInput = {
+  children: { first_name: string; last_name: string; year_group: string }[];
+  /** admissions_families.fee_snapshot: numbers only, an estimate shown to the family on the form. */
+  snapshot?: unknown;
+};
+
+type FeeLine = { gross: number; siblingDiscount: number; net: number };
+type FeeSnapshot = { plan: "annual" | "termly" | "monthly"; perChild: FeeLine[]; total: number };
+
+const money = (x: unknown): number | null => (typeof x === "number" && Number.isFinite(x) && x >= 0 && x < 1000000 ? x : null);
+
+/** Accepts only the numeric shape the form writes; anything else is ignored (never echoed into an email). */
+export function parseFeeSnapshot(raw: unknown): FeeSnapshot | null {
+  if (!raw || typeof raw !== "object") return null;
+  const o = raw as Record<string, unknown>;
+  if (!Array.isArray(o.perChild) || o.perChild.length < 1 || o.perChild.length > 6) return null;
+  const perChild: FeeLine[] = [];
+  for (const c of o.perChild as unknown[]) {
+    if (!c || typeof c !== "object") return null;
+    const r = c as Record<string, unknown>;
+    const gross = money(r.gross);
+    const siblingDiscount = money(r.siblingDiscount);
+    const net = money(r.net);
+    if (gross === null || siblingDiscount === null || net === null) return null;
+    perChild.push({ gross, siblingDiscount, net });
+  }
+  const total = money(o.total);
+  if (total === null) return null;
+  const plan: FeeSnapshot["plan"] = o.plan === "termly" ? "termly" : o.plan === "monthly" ? "monthly" : "annual";
+  return { plan, perChild, total };
+}
+
+export function joinNames(names: string[]): string {
+  if (names.length <= 1) return names[0] || "";
+  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
+
+/**
+ * The "children and estimated fees" paragraph of the confirmation email.
+ * Empty for a single child. Names and year groups come from the application
+ * rows; only the amounts come from the form's snapshot.
+ */
+export function buildFamilyFeesText(family: FamilyInput | null | undefined): string {
+  if (!family || family.children.length < 2) return "";
+  const snap = parseFeeSnapshot(family.snapshot);
+  const usable = snap !== null && snap.perChild.length === family.children.length ? snap : null;
+  const lines: string[] = [usable ? "Children on this application and estimated annual tuition:" : "Children on this application:"];
+  family.children.forEach((c, i) => {
+    const name = `${c.first_name} ${c.last_name}`.trim();
+    const base = `- ${name} (${c.year_group})`;
+    if (!usable) return lines.push(base);
+    const f = usable.perChild[i];
+    if (f.gross <= 0) return lines.push(`${base}: fee to be confirmed`);
+    lines.push(f.siblingDiscount > 0 ? `${base}: ${gbp(f.gross)} less ${gbp(f.siblingDiscount)} sibling discount = ${gbp(f.net)}` : `${base}: ${gbp(f.gross)}`);
+  });
+  if (usable) {
+    const afterSibling = usable.perChild.reduce((sum, f) => sum + f.net, 0);
+    const annualOff = Math.round((afterSibling - usable.total) * 100) / 100;
+    if (annualOff > 0.004) lines.push(`Annual payment discount: -${gbp(annualOff)}`);
+    const how = usable.plan === "annual" ? "paid in full" : usable.plan === "termly" ? "paid termly" : "paid monthly";
+    lines.push(`Estimated total: ${gbp(usable.total)} (${how}).`);
+    lines.push("This is an estimate only. Your offer confirms the exact fees.");
+  }
+  return lines.join("\n");
+}
+
 // ── context ──────────────────────────────────────────────────────────────
 
 /**
@@ -156,7 +225,7 @@ export function buildTemplateContext(
   app: AppInput,
   settings: SettingsInput | null,
   stage: StageInput | null,
-  opts: { fees?: FeesInput | null; extra?: Record<string, string | null | undefined>; now?: Date } = {},
+  opts: { fees?: FeesInput | null; family?: FamilyInput | null; extra?: Record<string, string | null | undefined>; now?: Date } = {},
 ): TemplateVars {
   const now = opts.now || new Date();
   const fees = opts.fees || null;
@@ -202,6 +271,7 @@ export function buildTemplateContext(
     school_email: (settings?.admissions_email || "").trim() || DEFAULT_SCHOOL_EMAIL,
     school_phone: (settings?.contact_phone || "").trim(),
     missing_documents: missing.join("\n"),
+    family_fees: "",
     application_fee: "",
     registration_fee: "",
     application_fee_status: "",
@@ -226,6 +296,14 @@ export function buildTemplateContext(
     v.fee_plans = fees.plans.map((p) => `    * ${p.label}: ${gbp(p.firstPayment)} (${p.detail})`).join("\n");
     v.amounts_due = fees.plans.map((p) => `- ${p.label}: ${gbp(r2(baseDue + p.firstPayment))}`).join("\n");
     for (const p of fees.plans) v[`first_payment_${p.id}`] = gbp(p.firstPayment);
+  }
+
+  if (opts.family && opts.family.children.length > 1) {
+    const kids = opts.family.children;
+    v.child_first_name = joinNames(kids.map((c) => c.first_name.trim()));
+    v.child_name = joinNames(kids.map((c) => `${c.first_name} ${c.last_name}`.trim()));
+    v.year_group = joinNames(kids.map((c) => c.year_group));
+    v.family_fees = buildFamilyFeesText(opts.family);
   }
 
   for (const [k, val] of Object.entries(opts.extra || {})) {
@@ -257,6 +335,7 @@ export const TOKEN_DOCS: { token: string; description: string }[] = [
   { token: "interview_link", description: "Interview join link" },
   { token: "interviewer", description: "Interviewer (blank if none)" },
   { token: "interview_duration", description: "Interview length wording" },
+  { token: "family_fees", description: "Children on a multi-child application with estimated fees and any sibling discount (blank for one child)" },
   { token: "application_fee", description: "Application / assessment fee" },
   { token: "application_fee_status", description: "The fee, or \"received, thank you\"" },
   { token: "registration_fee", description: "Registration fee" },
@@ -354,6 +433,10 @@ Thank you for applying to Tarbiyyah Global Academy for {{child_first_name}} ({{y
 {{#reference}}
 Your application reference is {{reference}}. Please quote it if you contact us.
 {{/reference}}
+
+{{#family_fees}}
+{{family_fees}}
+{{/family_fees}}
 
 Our admissions team will review the application and contact you about the next steps, which usually begin with a short remote assessment. If you have any questions in the meantime, just reply to this email.
 

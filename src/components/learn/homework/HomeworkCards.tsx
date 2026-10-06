@@ -1,121 +1,104 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { getHomeworkFileUrl } from "@/lib/learn/homeworkFile";
+import { FileLinks } from "@/components/learn/homework/FileViewer";
 import { SubmissionFeedback } from "@/components/learn/homework/SubmissionFeedback";
+import { FILE_CATEGORY_LABEL, SUBMISSION_TYPE_LABEL, submissionFiles } from "@/lib/learn/homeworkFiles";
+import { attachmentsOf, describeAllowed, formatDue, formatEdited, type Homework } from "@/lib/learn/homework";
 
-export type Homework = { id: string; class_id: string; title: string; instructions: string | null; due_at: string; classes?: { name: string } | null };
+export type { Homework } from "@/lib/learn/homework";
+
 type StatusRow = { child_id: string; status: string; submission_id: string | null };
 type Child = { id: string; name: string };
-type Mark = { id: string; submission_id: string; grade: string | null; feedback: string | null; released: boolean };
-type Submission = { homework_id: string; child_id: string; kind: string; response_text: string | null; file_path: string | null };
+type Submission = {
+  homework_id: string;
+  child_id: string;
+  kind: string;
+  response_text: string | null;
+  link_url: string | null;
+  file_path: string | null;
+  files: unknown;
+  submitted_at: string | null;
+};
 
-export function MarkRow({ submissionId, childName, existing, onSaved }: { submissionId: string; childName: string; existing: Mark | null; onSaved: () => void }) {
+/** One submitted piece of work: what the student wrote, linked, and attached, with the marking form. */
+export function MarkRow({ submissionId, childName, maxPoints, onSaved }: { submissionId: string; childName: string; maxPoints: number | null; onSaved: () => void }) {
   const supabase = getSupabaseClient();
-  const [grade, setGrade] = useState(existing?.grade || "");
-  const [feedback, setFeedback] = useState(existing?.feedback || "");
-  const [busy, setBusy] = useState(false);
-  // Previously this row let a teacher grade+release feedback without ever
-  // seeing what the student submitted — no response text, no way to open
-  // an uploaded file. Fetched here rather than passed down from the parent
-  // list load, since the parent only ever queried homework_status/marks,
-  // not the submission content itself.
   const [submission, setSubmission] = useState<Submission | null>(null);
-  const [openingFile, setOpeningFile] = useState(false);
 
-  useEffect(() => {
+  const loadSubmission = useCallback(async () => {
     if (!supabase) return;
-    supabase
+    const { data } = await supabase
       .from("homework_submissions")
-      .select("homework_id, child_id, kind, response_text, file_path")
+      .select("homework_id, child_id, kind, response_text, link_url, file_path, files, submitted_at")
       .eq("id", submissionId)
-      .maybeSingle()
-      .then(({ data }) => setSubmission((data as Submission) || null));
+      .maybeSingle();
+    setSubmission((data as Submission) || null);
   }, [supabase, submissionId]);
 
-  const openFile = async () => {
-    if (!submission?.file_path) return;
-    setOpeningFile(true);
-    const url = await getHomeworkFileUrl(submission.file_path);
-    setOpeningFile(false);
-    if (url) window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  const save = async (release: boolean) => {
-    if (!supabase) return;
-    setBusy(true);
-    try {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) return;
-      const payload = {
-        submission_id: submissionId,
-        grade: grade || null,
-        feedback: feedback || null,
-        marked_by: user.id,
-        marked_at: new Date().toISOString(),
-        ...(release ? { released: true, released_by: user.id, released_at: new Date().toISOString() } : {}),
-      };
-      if (existing) {
-        await supabase.from("homework_marks").update(payload).eq("id", existing.id);
-      } else {
-        await supabase.from("homework_marks").insert(payload);
-      }
-      onSaved();
-    } finally {
-      setBusy(false);
-    }
-  };
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
+    loadSubmission();
+  }, [loadSubmission]);
 
   return (
     <div className="rounded-lg border border-gold-light/40 p-3">
-      <p className="text-sm font-medium text-ink">{childName}</p>
-      {submission?.kind === "text" && <p className="mt-1 rounded-md bg-cream p-2 text-sm text-ink/80">{submission.response_text}</p>}
-      {submission?.kind === "file" && (
-        <button type="button" onClick={openFile} disabled={openingFile} className="mt-1 text-sm font-semibold text-gold-700 underline disabled:opacity-50">
-          {openingFile ? "Opening…" : "Open submitted file"}
-        </button>
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <p className="text-sm font-medium text-ink">{childName}</p>
+        {submission?.submitted_at && <p className="text-xs text-ink/50">Handed in {new Date(submission.submitted_at).toLocaleString("en-GB")}</p>}
+      </div>
+      {submission?.response_text && <p className="mt-1 whitespace-pre-line rounded-md bg-cream p-2 text-sm text-ink/80">{submission.response_text}</p>}
+      {submission?.link_url && (
+        <p className="mt-1 text-sm">
+          <a href={submission.link_url} target="_blank" rel="noopener noreferrer" className="break-all font-semibold text-gold-700 underline">
+            {submission.link_url}
+          </a>
+        </p>
       )}
-      <div className="mt-2 flex flex-col gap-2 sm:flex-row">
-        <input
-          type="text"
-          value={grade}
-          onChange={(e) => setGrade(e.target.value)}
-          placeholder="Grade"
-          className="w-full rounded-md border border-gold-light/60 px-3 py-1.5 text-sm sm:w-32"
+      {submission && (
+        <SubmissionFeedback
+          submissionId={submissionId}
+          homeworkId={submission.homework_id}
+          childId={submission.child_id}
+          childName={childName}
+          maxPoints={maxPoints}
+          files={submissionFiles(submission)}
+          onChanged={onSaved}
         />
-        <input
-          type="text"
-          value={feedback}
-          onChange={(e) => setFeedback(e.target.value)}
-          placeholder="Feedback"
-          className="w-full rounded-md border border-gold-light/60 px-3 py-1.5 text-sm"
-        />
-      </div>
-      <div className="mt-2 flex items-center gap-2">
-        <button type="button" disabled={busy} onClick={() => save(false)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs bg-white text-ink/80 hover:bg-cream font-medium transition-colors">
-          Save draft
-        </button>
-        <button type="button" disabled={busy} onClick={() => save(true)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs text-white hover:bg-gold-900 font-medium transition-colors">
-          Save &amp; release to family
-        </button>
-        {existing?.released && <span className="text-xs text-green-700">Released</span>}
-      </div>
-      {submission && <SubmissionFeedback submissionId={submissionId} homeworkId={submission.homework_id} childId={submission.child_id} />}
+      )}
     </div>
   );
 }
 
-export function HomeworkCard({ hw, actions }: { hw: Homework; actions?: React.ReactNode }) {
+/**
+ * A homework assignment as staff see it: details, an "Edited" stamp, Edit and Delete
+ * (delete archives it: students stop seeing it, submissions and marks are kept, and
+ * it can be restored), and the list of submissions to mark.
+ */
+export function HomeworkCard({
+  hw,
+  onEdit,
+  onChanged,
+  actions,
+}: {
+  hw: Homework;
+  /** Shows an Edit button; the page decides how editing is presented. */
+  onEdit?: (hw: Homework) => void;
+  /** Called after the homework was archived or restored. */
+  onChanged?: () => void;
+  actions?: React.ReactNode;
+}) {
   const supabase = getSupabaseClient();
   const [statuses, setStatuses] = useState<StatusRow[] | null>(null);
   const [children, setChildren] = useState<Record<string, string>>({});
-  const [marks, setMarks] = useState<Record<string, Mark>>({});
   const [open, setOpen] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const archived = !!hw.archived_at;
+  const attachments = attachmentsOf(hw);
 
-  const load = async () => {
+  const load = useCallback(async () => {
     if (!supabase) return;
     const { data: statusRows } = await supabase.from("homework_status").select("child_id, status, submission_id").eq("homework_id", hw.id);
     setStatuses((statusRows as StatusRow[]) || []);
@@ -124,43 +107,78 @@ export function HomeworkCard({ hw, actions }: { hw: Homework; actions?: React.Re
       const { data: kids } = await supabase.from("children").select("id, name").in("id", childIds);
       setChildren(Object.fromEntries(((kids as Child[]) || []).map((c) => [c.id, c.name])));
     }
-    const submissionIds = (statusRows || []).map((r) => r.submission_id).filter(Boolean) as string[];
-    if (submissionIds.length > 0) {
-      const { data: markRows } = await supabase.from("homework_marks").select("id, submission_id, grade, feedback, released").in("submission_id", submissionIds);
-      setMarks(Object.fromEntries(((markRows as Mark[]) || []).map((m) => [m.submission_id, m])));
-    }
-  };
+  }, [supabase, hw.id]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
     if (open) load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, supabase]);
+  }, [open, load]);
+
+  const setArchived = async (on: boolean) => {
+    if (!supabase) return;
+    if (on && !window.confirm(`Delete "${hw.title}"?\n\nStudents and families will no longer see it. Submissions, marks and feedback are kept, and you can restore it from "Show deleted".`)) return;
+    setBusy(true);
+    setError(null);
+    const { error: err } = await supabase.from("homework").update({ archived_at: on ? new Date().toISOString() : null }).eq("id", hw.id);
+    setBusy(false);
+    if (err) setError(err.message);
+    else onChanged?.();
+  };
 
   const missing = (statuses || []).filter((s) => s.status === "missing").length;
   const late = (statuses || []).filter((s) => s.status === "late").length;
+  const handedIn = (statuses || []).filter((s) => s.submission_id).length;
 
   return (
-    <div className="rounded-lg border border-gold-light/40 p-4">
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm font-medium text-ink">{hw.title}</p>
+    <div className={`rounded-lg border p-4 ${archived ? "border-ink/20 bg-ink/5" : "border-gold-light/40"}`}>
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div className="min-w-0">
+          <p className="text-sm font-medium text-ink">
+            {hw.title}
+            {archived && <span className="ml-2 rounded-full bg-ink/10 px-2 py-0.5 text-xs font-normal text-ink/70">Deleted</span>}
+          </p>
           <p className="text-xs text-ink/60">
-            {hw.classes?.name} · Due {new Date(hw.due_at).toLocaleString("en-GB")}
+            {hw.classes?.name} · Due {formatDue(hw.due_at)}
+            {hw.edited_at && <span title={`Edited ${formatEdited(hw.edited_at)}`}> · Edited {formatEdited(hw.edited_at)}</span>}
+          </p>
+          <p className="mt-0.5 text-xs text-ink/50">
+            {describeAllowed(hw, { types: SUBMISSION_TYPE_LABEL, files: FILE_CATEGORY_LABEL })}
+            {hw.max_points != null && ` · ${hw.max_points} marks`}
+            {hw.late_policy === "block" && " · closes at the due time"}
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           {actions}
+          {archived ? (
+            <button type="button" disabled={busy} onClick={() => setArchived(false)} className="text-sm text-gold-700 underline disabled:opacity-50">
+              Restore
+            </button>
+          ) : (
+            <>
+              {onEdit && (
+                <button type="button" onClick={() => onEdit(hw)} className="text-sm text-gold-700 underline">
+                  Edit
+                </button>
+              )}
+              <button type="button" disabled={busy} onClick={() => setArchived(true)} className="text-sm text-red-700 underline disabled:opacity-50">
+                Delete
+              </button>
+            </>
+          )}
           <button type="button" onClick={() => setOpen((o) => !o)} className="text-sm text-gold-700 underline">
             {open ? "Hide" : "Submissions"}
           </button>
         </div>
       </div>
-      {(missing > 0 || late > 0) && (
-        <p className="mt-1 text-xs text-ink/60">
-          {missing > 0 && <span className="text-red-700">{missing} missing</span>}
-          {missing > 0 && late > 0 && " · "}
-          {late > 0 && <span className="text-amber-700">{late} late</span>}
+      {hw.instructions && <p className="mt-2 line-clamp-2 whitespace-pre-line text-sm text-ink/70">{hw.instructions}</p>}
+      {attachments.length > 0 && (
+        <div className="mt-2">
+          <FileLinks files={attachments} bucket="homework-attachments" />
+        </div>
+      )}
+      {error && (
+        <p role="alert" className="mt-2 text-sm text-red-700">
+          {error}
         </p>
       )}
       {open && (
@@ -170,25 +188,25 @@ export function HomeworkCard({ hw, actions }: { hw: Homework; actions?: React.Re
           ) : statuses.length === 0 ? (
             <p className="text-sm text-ink/60">No enrolled students.</p>
           ) : (
-            statuses.map((s) =>
-              s.submission_id ? (
-                <MarkRow
-                  key={s.child_id}
-                  submissionId={s.submission_id}
-                  childName={children[s.child_id] || s.child_id}
-                  existing={marks[s.submission_id] || null}
-                  onSaved={load}
-                />
-              ) : (
-                <div key={s.child_id} className="rounded-lg border border-gold-light/40 p-3 text-sm text-ink/60">
-                  {children[s.child_id] || s.child_id} — not submitted{s.status === "missing" ? " (missing)" : ""}
-                </div>
-              )
-            )
+            <>
+              <p className="text-xs text-ink/60">
+                {handedIn} of {statuses.length} handed in
+                {missing > 0 && <span className="text-red-700"> · {missing} missing</span>}
+                {late > 0 && <span className="text-amber-700"> · {late} late</span>}
+              </p>
+              {statuses.map((s) =>
+                s.submission_id ? (
+                  <MarkRow key={s.child_id} submissionId={s.submission_id} childName={children[s.child_id] || s.child_id} maxPoints={hw.max_points ?? null} onSaved={load} />
+                ) : (
+                  <div key={s.child_id} className="rounded-lg border border-gold-light/40 p-3 text-sm text-ink/60">
+                    {children[s.child_id] || s.child_id} — not submitted{s.status === "missing" ? " (missing)" : ""}
+                  </div>
+                )
+              )}
+            </>
           )}
         </div>
       )}
     </div>
   );
 }
-

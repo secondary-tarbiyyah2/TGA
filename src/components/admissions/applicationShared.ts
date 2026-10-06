@@ -87,9 +87,31 @@ export type ApplicationRow = {
   child_id: string | null;
   student_profile_id: string | null;
   accounts_created_at: string | null;
+  /** 0081: sibling group (applications submitted together), this child's place in it, and an optional different legal guardian. */
+  family_id?: string | null;
+  sibling_index?: number | null;
+  guardian_is_other?: boolean | null;
+  guardian_name?: string | null;
+  guardian_relationship?: string | null;
+  guardian_email?: string | null;
+  guardian_phone?: string | null;
+  guardian_address?: string | null;
   created_at: string;
   updated_at: string;
 };
+
+/** admissions_families (0081): the shared contact record for a sibling group. */
+export type FamilyRow = {
+  id: string;
+  lead_application_id: string | null;
+  parent_name: string;
+  parent_email: string;
+  parent_phone: string;
+  children_count: number;
+  fee_snapshot: unknown;
+  created_at: string;
+};
+export const FAMILY_COLUMNS = "id, lead_application_id, parent_name, parent_email, parent_phone, children_count, fee_snapshot, created_at";
 
 /** Fields staff may change from the drawer (0032 notes/assignee + 0037 process tracking). */
 export type ApplicationPatch = Partial<
@@ -116,7 +138,7 @@ export function processPips(a: Pick<ApplicationRow, "assessment_at" | "interview
 }
 
 export const APPLICATION_COLUMNS =
-  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, payment_plan_intent, children_applying, sibling_applicants, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, offer_made_at, offer_deadline, admin_fee_amount, admin_fee_received, admin_fee_received_at, deposit_amount, deposit_received_at, parent_profile_id, child_id, student_profile_id, accounts_created_at, created_at, updated_at";
+  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, payment_plan_intent, children_applying, sibling_applicants, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, offer_made_at, offer_deadline, admin_fee_amount, admin_fee_received, admin_fee_received_at, deposit_amount, deposit_received_at, parent_profile_id, child_id, student_profile_id, accounts_created_at, family_id, sibling_index, guardian_is_other, guardian_name, guardian_relationship, guardian_email, guardian_phone, guardian_address, created_at, updated_at";
 
 /** Age in whole years from an ISO date (yyyy-mm-dd), e.g. "7". Empty if invalid. */
 export function ageFromDob(dob: string): string {
@@ -137,11 +159,12 @@ export const PAYMENT_PLAN_OPTIONS = [
 export type PaymentPlanIntent = (typeof PAYMENT_PLAN_OPTIONS)[number]["value"];
 
 /** Kinds of uploaded document, tagged in the storage file name: <application_id>/<kind>-<uuid>.<ext> (migration 0060). */
-export type DocumentKind = "report" | "parent_id" | "child_id";
+export type DocumentKind = "report" | "parent_id" | "child_id" | "guardian_id";
 export const DOCUMENT_KIND_LABELS: Record<DocumentKind, string> = {
   report: "School report",
   parent_id: "Parent or guardian photo ID",
   child_id: "Child's passport or birth certificate",
+  guardian_id: "Legal guardian's photo ID",
 };
 export const DOCUMENT_ACCEPT = "application/pdf,image/jpeg,image/png,.pdf,.jpg,.jpeg,.png";
 export const MAX_ID_FILES = 3;
@@ -157,44 +180,55 @@ export const DOCUMENT_CONTENT_TYPES = { pdf: "application/pdf", jpg: "image/jpeg
 
 const money = (n: number | undefined, fallback: string) => (n == null ? fallback : Number.isInteger(n) ? `£${n}` : `£${n.toFixed(2)}`);
 
+export type ProcessOwner = "you" | "us" | "together";
+export type ProcessStep = { title: string; short: string; body: string; owner: ProcessOwner };
+export const PROCESS_OWNER_LABELS: Record<ProcessOwner, string> = { you: "Your part", us: "Our part", together: "Together" };
+
 /**
  * The admissions process, in one place, so the admissions page, the apply page,
  * the success state and the strip on other pages can never disagree.
  * Fee figures come from site_settings (never hard-coded in copy).
+ * Titles are in sentence case and every sentence ends with a full stop.
  */
-export function admissionsProcessSteps(fees: { applicationFee?: number; registrationFee?: number }): { title: string; short: string; body: string }[] {
+export function admissionsProcessSteps(fees: { applicationFee?: number; registrationFee?: number }): ProcessStep[] {
   const app = money(fees.applicationFee, "the application fee");
   const reg = money(fees.registrationFee, "the registration fee");
   return [
     {
       title: "Apply",
-      short: "Online form, with your child's school report and ID uploaded.",
-      body: "Complete the online application form and upload your child's latest school report, photo ID for a parent or guardian, and your child's passport or birth certificate.",
+      owner: "you",
+      short: "Complete the online form and upload your documents.",
+      body: "Complete the online application form and upload a school report, photo ID for a parent or guardian, and your child's passport or birth certificate. Applying for more than one child? Add them all in the same form.",
     },
     {
       title: "We review your application",
-      short: "We check your documents and details.",
+      owner: "us",
+      short: "We check your details and documents.",
       body: "The admissions team reviews your application and documents, and tells you if anything else is needed.",
     },
     {
       title: "Remote assessment",
-      short: "A supervised online assessment; we email the details.",
+      owner: "together",
+      short: "A supervised online assessment. We email the details.",
       body: "Your child sits an age-appropriate assessment online, supervised with the camera on. We email you the date, time and what to prepare.",
     },
     {
       title: "Interview",
-      short: "A conversation with you and your child.",
+      owner: "together",
+      short: "A video conversation with you and your child.",
       body: "A video interview with you (the parent or guardian) and your child, about learning goals, values and any support needs.",
     },
     {
       title: "Offer and securing your place",
-      short: `We email the offer. Send proof of payment (${app} application fee if unpaid, ${reg} registration fee, first payment) to confirm your place.`,
+      owner: "you",
+      short: `We email the offer. Send proof of payment (${app} application fee if unpaid, ${reg} registration fee and your first payment) to confirm your place.`,
       body: `We email you the offer. You then send proof of payment (a screenshot or receipt) for the ${app} application fee (if not already paid), the ${reg} registration fee, and your first payment: a minimum of the first month, or the first term, or the whole year, depending on your plan. Your place is confirmed once we receive them.`,
     },
     {
       title: "Welcome",
-      short: "Accounts created and onboarding before lessons begin.",
-      body: "We create your parent and pupil accounts and take you through onboarding, ahead of live lessons in January 2027.",
+      owner: "us",
+      short: "We create your accounts and take you through onboarding.",
+      body: "We create your parent and pupil accounts, email you the sign-in details, and take you through onboarding ahead of live lessons in January 2027.",
     },
   ];
 }

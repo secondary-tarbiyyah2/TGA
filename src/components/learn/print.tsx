@@ -41,6 +41,16 @@ export const PRINT_CSS = `
   body:has(.${PRINT_AREA}) *:not(.${PRINT_AREA}):not(:has(.${PRINT_AREA})):not(.${PRINT_AREA} *) { display: none !important; }
   .${PRINT_AREA} { border: none !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important; width: 100% !important; }
   .${PRINT_AREA} .grid { break-inside: avoid; }
+
+  /* A scoped print (see printScope.tsx): everything except the marked element,
+     its ancestors and its contents is removed from the page. */
+  body.print-scoped *:not([data-print-active]):not(:has([data-print-active])):not([data-print-active] *) { display: none !important; }
+  body.print-scoped [data-print-active] { border: none !important; box-shadow: none !important; width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  body.print-scoped .portal, body.print-scoped .portal > div, body.print-scoped .portal main, body.print-scoped .portal main > div { display: block !important; padding: 0 !important; margin: 0 !important; max-width: none !important; }
+  body.print-scoped [data-print-active] table { width: 100% !important; min-width: 0 !important; font-size: 9pt; border-collapse: collapse; }
+  body.print-scoped [data-print-active] th, body.print-scoped [data-print-active] td { border: 1px solid #ccc !important; padding: 4px 6px !important; }
+  body.print-scoped [data-print-active] .print-break-row { text-align: center; }
+  body.print-scoped [data-print-active] .print-break-pill { display: block !important; border-radius: 4px !important; padding: 2px 6px !important; font-size: 8pt !important; line-height: 1.3 !important; }
 }
 `;
 

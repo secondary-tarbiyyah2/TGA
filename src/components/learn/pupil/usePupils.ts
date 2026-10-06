@@ -60,7 +60,7 @@ export function usePupils(withOwnAcks = false) {
       const rows: PupilRow[] = ((kids.data as unknown as ChildRaw[]) || []).map((c) => {
         const d = detailsBy.get(c.id) || null;
         const n = countBy.get(c.id) || 0;
-        const p = completeness(d, n);
+        const p = completeness(d, n, c.dob || null);
         return {
           id: c.id,
           name: c.name,

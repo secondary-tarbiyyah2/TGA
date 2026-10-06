@@ -7,6 +7,7 @@ import { ComplianceDashboard } from "@/components/learn/documents/ComplianceDash
 import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { SafeguardingLog } from "@/components/learn/compliance/SafeguardingLog";
+import { SafeguardingLeadsBanner } from "@/components/learn/compliance/SafeguardingLeads";
 import { DataRights } from "@/components/learn/compliance/DataRights";
 import { RetentionRegistry } from "@/components/learn/compliance/RetentionRegistry";
 import { SingleCentralRecord } from "@/components/learn/compliance/SingleCentralRecord";
@@ -92,6 +93,8 @@ function ComplianceContent() {
         <h1 className="font-serif text-h2 font-semibold text-ink">Compliance &amp; safeguarding</h1>
         <p className="mt-1 text-sm text-ink/60">Alerts that need action, outstanding policy signatures, and the school&apos;s statutory records.</p>
       </div>
+
+      <SafeguardingLeadsBanner canManage={isHeadTeacher} />
 
       <ComplianceDashboard
         isHeadTeacher={isHeadTeacher}

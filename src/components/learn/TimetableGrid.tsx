@@ -92,17 +92,27 @@ export function TimetableGrid({ slots, simplified = false, showClassLabel = fals
                   <td className={`${cellPad} ${textSize} border-b border-gold-light/20 whitespace-nowrap text-ink/50`}>
                     {r.start}–{r.end}
                   </td>
-                  {WEEKDAYS.map((wd) => (
-                    <td key={wd.value} className={`${cellPad} border-b border-gold-light/20 align-top`}>
-                      {p.weekdays.includes(wd.value) && (
-                        <div className={`rounded-lg border ${style.cell} px-2 py-1 text-xs font-medium`}>
-                          {p.name}
-                          {p.kind === "enrichment" && p.activity ? <div className="font-normal opacity-80">{p.activity}</div> : null}
-                          {p.kind === "enrichment" && p.supervisor_name ? <div className="font-normal opacity-80">Supervised by {p.supervisor_name}</div> : null}
-                        </div>
-                      )}
+                  {WEEKDAYS.every((wd) => p.weekdays.includes(wd.value)) ? (
+                    <td colSpan={WEEKDAYS.length} className={`${cellPad} print-break-row border-b border-gold-light/20 text-center align-middle`}>
+                      <div className={`print-break-pill rounded-lg border ${style.cell} px-2 py-1 text-xs font-medium`}>
+                        {p.name}
+                        {p.kind === "enrichment" && p.activity ? <span className="font-normal opacity-80"> · {p.activity}</span> : null}
+                        {p.kind === "enrichment" && p.supervisor_name ? <span className="font-normal opacity-80"> · Supervised by {p.supervisor_name}</span> : null}
+                      </div>
                     </td>
-                  ))}
+                  ) : (
+                    WEEKDAYS.map((wd) => (
+                      <td key={wd.value} className={`${cellPad} border-b border-gold-light/20 align-top`}>
+                        {p.weekdays.includes(wd.value) && (
+                          <div className={`print-break-pill rounded-lg border ${style.cell} px-2 py-1 text-xs font-medium`}>
+                            {p.name}
+                            {p.kind === "enrichment" && p.activity ? <div className="font-normal opacity-80">{p.activity}</div> : null}
+                            {p.kind === "enrichment" && p.supervisor_name ? <div className="font-normal opacity-80">Supervised by {p.supervisor_name}</div> : null}
+                          </div>
+                        )}
+                      </td>
+                    ))
+                  )}
                 </tr>
               );
             }

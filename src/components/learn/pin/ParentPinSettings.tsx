@@ -6,7 +6,7 @@ import { rememberHasPin, useHasPin } from "./pinState";
 
 export function ParentPinSettings({ userId }: { userId: string }) {
   const supabase = getSupabaseClient();
-  const { has, error: loadErr, reload } = useHasPin(userId, true);
+  const { has, status, error: loadErr, reload } = useHasPin(userId, true);
   const [current, setCurrent] = useState("");
   const [pin, setPin] = useState("");
   const [confirm, setConfirm] = useState("");
@@ -16,7 +16,7 @@ export function ParentPinSettings({ userId }: { userId: string }) {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!supabase) return;
-    if (!/^[0-9]{4,6}$/.test(pin)) return setMessage("A PIN must be 4 to 6 digits.");
+    if (!/^[0-9]{6}$/.test(pin)) return setMessage("A PIN must be exactly 6 digits.");
     if (pin !== confirm) return setMessage("PINs don't match.");
     setBusy(true);
     setMessage(null);
@@ -36,8 +36,8 @@ export function ParentPinSettings({ userId }: { userId: string }) {
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Parent PIN</h2>
       <p className="mt-1 text-sm text-ink/60">
-        A 4 to 6 digit PIN asked for before the family area opens, so children sharing this device can&apos;t get into it.
-        {has === false ? " You haven't set one yet." : ""} If you forget it, the Headteacher can reset it.
+        A 6-digit PIN, asked for every time you open the family area, so children sharing this device can&apos;t get into it. It is required.
+        {has === false ? " You haven't set one yet: you'll be asked to create it before the family area opens." : ""}{status === "reset" ? " Your current PIN is an older, shorter one: please change it to 6 digits below." : ""} If you forget it, the Headteacher can reset it.
       </p>
       {loadErr && <p className="mt-2 text-sm text-red-700">Couldn&apos;t check PIN status. Try reloading.</p>}
       <form onSubmit={submit} className="mt-3 flex flex-wrap items-end gap-2">

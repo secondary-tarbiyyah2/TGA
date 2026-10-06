@@ -1,12 +1,5 @@
-import { ClassroomTabs } from "@/components/learn/ClassroomTabs";
-
-// The Classroom tab strip appears on the classroom routes only (it hides
-// itself elsewhere).
+// The sidebar is the portal's only navigation (see src/lib/learn/nav.ts);
+// there is no second tab strip inside the page.
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <ClassroomTabs />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

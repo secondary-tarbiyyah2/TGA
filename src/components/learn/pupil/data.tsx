@@ -59,7 +59,7 @@ export const CONTACT_SELECT = "id, child_id, name, relationship, phone, alt_phon
 export type MissingKey = "basics" | "address" | "gp" | "health" | "contacts" | "consents";
 
 export const MISSING_LABEL: Record<MissingKey, string> = {
-  basics: "Gender missing",
+  basics: "Gender or date of birth missing",
   address: "No address",
   gp: "No GP",
   health: "Health not confirmed",
@@ -68,7 +68,7 @@ export const MISSING_LABEL: Record<MissingKey, string> = {
 };
 
 export const MISSING_CHIP: Record<MissingKey, string> = {
-  basics: "Missing gender",
+  basics: "Missing basics",
   address: "Missing address",
   gp: "Missing GP",
   health: "Health not confirmed",
@@ -80,8 +80,10 @@ const filled = (v: string | null | undefined) => !!v && v.trim() !== "";
 
 type Check = { key: MissingKey; label: string; ok: boolean };
 
-export function checks(d: PupilDetails | null, contactCount: number): Check[] {
+/** `dob` is the child's date of birth from the enrolment record (children.dob); pass undefined to leave it out of the checklist. */
+export function checks(d: PupilDetails | null, contactCount: number, dob?: string | null): Check[] {
   return [
+    ...(dob === undefined ? [] : [{ key: "basics" as MissingKey, label: "Date of birth", ok: filled(dob) }]),
     { key: "basics", label: "Gender", ok: !!d?.gender },
     { key: "address", label: "Home address", ok: filled(d?.address_line1) },
     { key: "address", label: "Postcode", ok: filled(d?.postcode) },
@@ -94,8 +96,8 @@ export function checks(d: PupilDetails | null, contactCount: number): Check[] {
   ];
 }
 
-export function completeness(d: PupilDetails | null, contactCount: number): { percent: number; missing: MissingKey[]; items: Check[] } {
-  const items = checks(d, contactCount);
+export function completeness(d: PupilDetails | null, contactCount: number, dob?: string | null): { percent: number; missing: MissingKey[]; items: Check[] } {
+  const items = checks(d, contactCount, dob);
   const done = items.filter((c) => c.ok).length;
   const missing = Array.from(new Set(items.filter((c) => !c.ok).map((c) => c.key)));
   return { percent: Math.round((done / items.length) * 100), missing, items };
@@ -141,6 +143,23 @@ export function ageFromDob(key: string | null | undefined): number | null {
 
 export const fieldCls =
   "mt-1 w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500";
+
+/** Loose UK postcode check (format only), e.g. "NW1 6XE", "M1 1AE", "sw1a1aa". */
+export const UK_POSTCODE = /^[A-Za-z]{1,2}\d[A-Za-z\d]?\s*\d[A-Za-z]{2}$/;
+
+/** A phone number with at least 7 digits (spaces, +, brackets and dashes allowed). */
+export function validPhone(v: string): boolean {
+  return /^[+()\d\s-]{7,}$/.test(v.trim()) && v.replace(/\D/g, "").length >= 7;
+}
+
+/** The red "Required" marker shown next to a compulsory field's label. */
+export function Required() {
+  return (
+    <span className="ml-1.5 inline-block rounded bg-red-50 px-1.5 py-px align-middle text-[10px] font-semibold uppercase tracking-wide text-red-700">
+      Required
+    </span>
+  );
+}
 
 export function ProgressBar({ percent }: { percent: number }) {
   return (

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { ClassViewer } from "@/lib/learn/classes";
+import { RecordingChip, useRecordingLinks } from "@/components/learn/class/LessonRecordingLinks";
 
 // Moodle's "weekly format" course page: the class laid out week by week,
 // each week a section of activities (lessons, assignments, graded work),
@@ -20,6 +21,7 @@ type Activity = {
   href: string;
   meta: string;
   status?: { label: string; tone: "done" | "todo" | "late" | "live" | "muted" };
+  recordingUrl?: string;
 };
 
 type Week = { key: string; start: Date; activities: Activity[] };
@@ -219,8 +221,8 @@ function useActivities(classId: string, viewer: ClassViewer, routes: Routes): Ac
 function ActivityRow({ a }: { a: Activity }) {
   const k = KIND_STYLE[a.kind];
   return (
-    <li>
-      <Link href={a.href} className="group flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-cream">
+    <li className="flex items-center gap-2 rounded-lg pr-3 transition-colors hover:bg-cream">
+      <Link href={a.href} className="group flex min-w-0 flex-1 items-center gap-3 rounded-lg px-3 py-2.5">
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-white" style={{ backgroundColor: k.bg }} title={k.label}>
           <svg aria-hidden="true" viewBox="0 0 20 20" className="h-[18px] w-[18px]">
             <path d={k.path} fill="currentColor" />
@@ -233,12 +235,18 @@ function ActivityRow({ a }: { a: Activity }) {
         </span>
         {a.status && <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset ${TONE[a.status.tone]}`}>{a.status.label}</span>}
       </Link>
+      {a.recordingUrl && <RecordingChip url={a.recordingUrl} />}
     </li>
   );
 }
 
 export function CourseTab({ classId, viewer, routes }: { classId: string; viewer: ClassViewer; routes: Routes }) {
-  const activities = useActivities(classId, viewer, routes);
+  const baseActivities = useActivities(classId, viewer, routes);
+  const recordings = useRecordingLinks(classId);
+  const activities = useMemo(
+    () => (baseActivities === null ? null : baseActivities.map((a) => (a.kind === "lesson" && recordings.byLesson.has(a.id.slice(2)) ? { ...a, recordingUrl: recordings.byLesson.get(a.id.slice(2)) } : a))),
+    [baseActivities, recordings.byLesson],
+  );
   const thisWeek = mondayOf(new Date()).getTime();
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
 

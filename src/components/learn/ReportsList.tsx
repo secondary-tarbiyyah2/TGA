@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { PrintButton } from "@/components/learn/PrintButton";
+import { PrintScope } from "@/components/learn/printScope";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type Report = {
@@ -42,6 +43,7 @@ export function ReportsList() {
           </div>
         </div>
       </div>
+      <PrintScope title="Term reports" className="space-y-6">
       {reports === null ? (
         <p className="text-sm text-ink/60">Loading…</p>
       ) : reports.length === 0 ? (
@@ -65,6 +67,7 @@ export function ReportsList() {
           </div>
         ))
       )}
+      </PrintScope>
     </div>
   );
 }

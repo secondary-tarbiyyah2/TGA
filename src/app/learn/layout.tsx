@@ -36,7 +36,6 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
   // Pages outside an area (/account, /report-concern) keep the sidebar of
   // the user's main area, so there's always a way back.
   const area = signedIn ? portalAreaFor(pathname) || portalAreaFor(homeHref) : null;
-  const messagesHref = area && area !== "student" ? `/${area}/messages` : null;
 
   if (!signedIn || !activeSession || !area) {
     return (
@@ -86,18 +85,6 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
                 </svg>
                 <span className="hidden sm:inline">Report a concern</span>
               </Link>
-              {messagesHref && (
-                <Link
-                  href={messagesHref}
-                  title="Messages"
-                  aria-label="Messages"
-                  className="flex h-10 w-10 items-center justify-center rounded-full text-ink/65 hover:bg-cream hover:text-ink"
-                >
-                  <svg aria-hidden="true" viewBox="0 0 20 20" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round">
-                    <path d="M3 4.5h14v9H8l-4 3v-3H3z" />
-                  </svg>
-                </Link>
-              )}
               {roles.some((r) => ADMIN_ISH_ROLES.includes(r.role)) && <NotificationBell userId={activeSession.user.id} />}
             </div>
           </div>

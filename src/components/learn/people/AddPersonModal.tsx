@@ -3,11 +3,15 @@
 import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { LearnRole } from "@/lib/learn/session";
+import { CredentialsCard } from "./StudentCredentials";
+import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
 import { GOLD_BUTTON, INPUT_CLASS, friendlyError, invite, type ClassOption, type InviteResult, type ParentOption, type YearGroup } from "./shared";
 
 export type PersonType = "student" | "parent" | "teacher" | "staff";
 
-type Outcome = { text: string; link?: string };
+type Outcome = { text: string; link?: string; creds?: IssuedCredentials };
+
+type LoginMode = "username" | "email" | "none";
 
 const TILES: { type: PersonType; title: string; blurb: string; icon: string }[] = [
   { type: "student", title: "Student", blurb: "A pupil, linked to a parent", icon: "🎓" },
@@ -68,6 +72,9 @@ export function AddPersonModal({
   const [yearGroupId, setYearGroupId] = useState("");
   const [classId, setClassId] = useState("");
   const [studentEmail, setStudentEmail] = useState("");
+  // A pupil can sign in with a username and temporary password (no email), or with their own email.
+  const [loginMode, setLoginMode] = useState<LoginMode>("username");
+  const [classIds, setClassIds] = useState<string[]>([]);
   const [parentMode, setParentMode] = useState<"existing" | "new">(presetParentId || parents.length > 0 ? "existing" : "new");
   const [parentId, setParentId] = useState(presetParentId || "");
   const [newParentName, setNewParentName] = useState("");
@@ -82,10 +89,12 @@ export function AddPersonModal({
   const [createdParentId, setCreatedParentId] = useState<string | null>(null);
   const [createdChildId, setCreatedChildId] = useState<string | null>(null);
 
-  const visibleClasses = (() => {
-    const match = yearGroupId ? classes.filter((c) => c.yearGroupId === yearGroupId) : [];
-    return match.length > 0 ? match : classes;
-  })();
+  // Same-year classes first, but every class stays selectable: a pupil can be in one class per subject.
+  const orderedClasses = [...classes].sort((a, b) => {
+    const am = yearGroupId && a.yearGroupId === yearGroupId ? 0 : 1;
+    const bm = yearGroupId && b.yearGroupId === yearGroupId ? 0 : 1;
+    return am - bm || a.name.localeCompare(b.name);
+  });
 
   const pickType = (t: PersonType) => {
     setType(t);
@@ -123,13 +132,20 @@ export function AddPersonModal({
       setCreatedChildId(row.id);
     }
     out.push({ text: `${cname} has been added.` });
-    if (classId) {
-      const { error: enrErr } = await supabase.from("enrolments").upsert({ class_id: classId, child_id: childId }, { onConflict: "class_id,child_id" });
-      const cls = classes.find((c) => c.id === classId)?.name || "the class";
-      out.push({ text: enrErr ? `${cname} couldn't be added to ${cls} — do it from Academic → Classes.` : `Enrolled in ${cls}.` });
+    if (classIds.length > 0) {
+      const { error: enrErr } = await supabase.rpc("set_child_classes", { p_child_id: childId, p_class_ids: classIds });
+      const names = classIds.map((id) => classes.find((c) => c.id === id)?.name).filter(Boolean).join(", ");
+      out.push({ text: enrErr ? `${cname} couldn't be added to the chosen classes. Do it from Academic, then Classes.` : `Enrolled in ${names}.` });
     }
     const login = studentEmail.trim();
-    if (login) {
+    if (loginMode === "username") {
+      const r = await studentAccountAction("create", childId, cname);
+      if (!r.ok) {
+        out.push({ text: `${cname} was added, but their login couldn't be created: ${r.text} You can add it later from the people list.` });
+      } else {
+        out.push({ text: `Username login created for ${cname}. The parent has been emailed the details. Note the password now: it can't be shown again.`, creds: r.creds });
+      }
+    } else if (loginMode === "email" && login) {
       const r = await invite({ email: login, fullName: cname, role: "student" });
       if (!r.ok || !r.profileId) {
         out.push({ text: `${cname} was added, but their login couldn't be created: ${friendlyError(r)} You can add it later from the people list.` });
@@ -214,7 +230,7 @@ export function AddPersonModal({
     if (!type) return false;
     if (type === "student") {
       const parentOk = parentMode === "existing" ? !!parentId : !!newParentName.trim() && emailOk(newParentEmail);
-      return !!name.trim() && !!dob && parentOk && (!studentEmail.trim() || emailOk(studentEmail));
+      return !!name.trim() && !!dob && parentOk && (loginMode !== "email" || emailOk(studentEmail));
     }
     if (type === "parent") return !!name.trim() && emailOk(email) && (!withChild || (!!childName.trim() && !!dob));
     return !!name.trim() && emailOk(email);
@@ -239,6 +255,7 @@ export function AddPersonModal({
                 {done.map((o, i) => (
                   <li key={i} className="rounded-lg bg-teal-100/60 px-3 py-2 text-sm text-ink">
                     ✓ {o.text}
+                    {o.creds && <span className="mt-2 block"><CredentialsCard creds={o.creds} onDismiss={() => setDone((d) => (d ? d.map((x) => (x === o ? { ...x, creds: undefined } : x)) : d))} /></span>}
                     {o.link && (
                       <span className="mt-1 flex flex-wrap items-center gap-2">
                         <input readOnly value={o.link} onFocus={(e) => e.currentTarget.select()} className="min-w-0 flex-1 rounded border border-gold-light bg-white px-2 py-1 text-xs" aria-label="Setup link" />
@@ -268,6 +285,8 @@ export function AddPersonModal({
                     setNewParentEmail("");
                     setChildName("");
                     setClassId("");
+                    setClassIds([]);
+                    setLoginMode("username");
                     setWithChild(false);
                     setCreatedChildId(null);
                     setCreatedParentId(null);
@@ -364,19 +383,41 @@ export function AddPersonModal({
                     )}
                   </div>
 
-                  <Field label="Enrol in a class (optional)">
-                    <select value={classId} onChange={(e) => setClassId(e.target.value)} className={INPUT_CLASS}>
-                      <option value="">No class yet</option>
-                      {visibleClasses.map((c) => (
-                        <option key={c.id} value={c.id}>
-                          {c.name}
-                        </option>
-                      ))}
+                  <fieldset>
+                    <legend className="mb-1 text-sm font-medium text-ink">Classes (optional)</legend>
+                    <p className="mb-1 text-xs text-ink/55">Choose as many as needed, for example one per subject.</p>
+                    {classes.length === 0 ? (
+                      <p className="text-xs text-ink/55">No classes have been set up yet.</p>
+                    ) : (
+                      <ul className="grid max-h-44 gap-1 overflow-y-auto rounded-lg border border-gold-light/70 p-2 sm:grid-cols-2">
+                        {orderedClasses.map((c) => (
+                          <li key={c.id}>
+                            <label className="flex items-center gap-2 text-sm text-ink">
+                              <input
+                                type="checkbox"
+                                className="h-4 w-4"
+                                checked={classIds.includes(c.id)}
+                                onChange={(e) => setClassIds((ids) => (e.target.checked ? [...ids, c.id] : ids.filter((x) => x !== c.id)))}
+                              />
+                              <span className="min-w-0 break-words">{c.name}</span>
+                            </label>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </fieldset>
+                  <Field label="Student's login" hint={loginMode === "username" ? "A username (firstname.lastname) and a temporary password are generated. The parent is emailed them, and you see them once. The student chooses their own password at first sign-in." : undefined}>
+                    <select value={loginMode} onChange={(e) => setLoginMode(e.target.value as LoginMode)} className={INPUT_CLASS}>
+                      <option value="username">Username and password (no email needed)</option>
+                      <option value="email">Their own email address</option>
+                      <option value="none">No login yet</option>
                     </select>
                   </Field>
-                  <Field label="Student's own login email (optional)" hint="Leave blank if they don't need their own login yet. You can add one later.">
-                    <input type="email" value={studentEmail} onChange={(e) => setStudentEmail(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
-                  </Field>
+                  {loginMode === "email" && (
+                    <Field label="Student's email">
+                      <input type="email" value={studentEmail} onChange={(e) => setStudentEmail(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
+                    </Field>
+                  )}
                 </>
               )}
 

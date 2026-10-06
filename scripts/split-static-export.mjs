@@ -65,6 +65,9 @@ async function main() {
   console.log(`Copying ${outDir} -> ${outMainDir} ...`);
   await cp(outDir, outMainDir, { recursive: true });
   await rm(path.join(outMainDir, "learn"), { recursive: true, force: true });
+  // Policy documents are served live from storage at /policies/<slug>.pdf by
+  // this passthrough (see deploy/policy.php and the rewrite in public/.htaccess).
+  await cp(path.join(repoRoot, "deploy", "policy.php"), path.join(outMainDir, "policy.php"));
   await mkdir(path.join(outMainDir, "learn"), { recursive: true });
   await cp(path.join(repoRoot, "deploy", "learn-bridge.html"), path.join(outMainDir, "learn", "index.html"));
 

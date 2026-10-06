@@ -81,6 +81,7 @@ export const ADMIN_SECTIONS: PortalNavGroup[] = [
       items: [
         { href: "/admin/content", label: "Website content", hint: "Pages on the public site" },
         { href: "/admin/quiz", label: "Quiz & sample weeks", hint: "Eligibility quiz and timetables", headOnly: true },
+        { href: "/admin/open-evening", label: "Open evenings", hint: "Sessions, bookings and attendee lists" },
       ],
     },
     {
@@ -170,7 +171,7 @@ export type SidebarIcon =
 // `group` is the collapsible heading the item sits under in the sidebar.
 // Items with no `group` render first, as an unlabelled flat list.
 // `matchPrefixes` lets one item stay highlighted across several routes
-// (the "Classroom" item covers classes, homework, behaviour and so on).
+// (e.g. a single class page keeps "My classes" highlighted).
 export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean; group?: string; matchPrefixes?: string[] };
 export type SidebarGroup = { label: string; items: SidebarItem[] };
 
@@ -185,39 +186,6 @@ const G_STAFF = "Staff";
 
 /** Display order of the sidebar groups (unlabelled items come first). */
 export const SIDEBAR_GROUP_ORDER: string[] = ["", G_OVERVIEW, G_PEOPLE, G_CLASSROOM, G_ATTENDANCE, G_COMMS, G_FINANCE, G_SETTINGS, G_STAFF];
-
-/** The "Classroom" tab strip shown on every page of that area's classroom
- * routes (see ClassroomTabs). Routes are unchanged; the tabs just link them. */
-export type ClassroomTab = { href: string; label: string };
-export const CLASSROOM_TABS: Record<PortalArea, ClassroomTab[]> = {
-  teach: [
-    { href: "/teach/classes", label: "My classes" },
-    { href: "/teach/homework", label: "Homework" },
-    { href: "/teach/assessment", label: "Assessment & grades" },
-    { href: "/teach/behaviour", label: "Behaviour" },
-    { href: "/teach/pupils", label: "Pupils" },
-  ],
-  admin: [
-    { href: "/admin/classes", label: "Classes" },
-    { href: "/admin/homework", label: "Homework" },
-    { href: "/admin/behaviour", label: "Behaviour" },
-    { href: "/admin/reports", label: "Reports" },
-  ],
-  family: [
-    { href: "/family/classes", label: "Classes" },
-    { href: "/family/homework", label: "Homework" },
-    { href: "/family/behaviour", label: "Behaviour" },
-    { href: "/family/reports", label: "Reports" },
-  ],
-  student: [
-    { href: "/student/classes", label: "Classes" },
-    { href: "/student/homework", label: "Homework" },
-    { href: "/student/behaviour", label: "Behaviour" },
-    { href: "/student/reports", label: "Reports" },
-  ],
-};
-
-const tabPrefixes = (area: PortalArea, extra: string[] = []) => [...CLASSROOM_TABS[area].map((t) => t.href), ...extra];
 
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   admin: [
@@ -251,15 +219,22 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/data-protection", label: "Data protection", icon: "compliance", headOnly: true, group: G_FINANCE },
     { href: "/admin/content", label: "Website content", icon: "website", group: G_SETTINGS },
     { href: "/admin/quiz", label: "Quiz & sample weeks", icon: "quiz", headOnly: true, group: G_SETTINGS },
+    { href: "/admin/open-evening", label: "Open evenings", icon: "calendar", group: G_SETTINGS },
     { href: "/admin/settings", label: "Settings", icon: "settings", group: G_SETTINGS },
   ],
-  // Teacher: a short flat list; everything about classes lives under one
-  // "Classroom" item (tab strip: classes, homework, assessment, behaviour,
-  // pupils). Staff admin sits in its own small group.
+  // Teacher/family/student: one flat list. The sidebar is the ONLY place
+  // classroom destinations are listed (there is no second tab strip), so
+  // each destination appears exactly once. A class's own sections (Stream,
+  // Classwork, People, Grades) are in-page tabs on the class page itself.
   teach: [
     { href: "/teach/dashboard", label: "Overview", icon: "overview" },
     { href: "/teach/today", label: "Today", icon: "today" },
-    { href: "/teach/classes", label: "Classroom", icon: "classes", matchPrefixes: tabPrefixes("teach", ["/teach/class", "/teach/lessons"]) },
+    { href: "/teach/classes", label: "My classes", icon: "classes", matchPrefixes: ["/teach/class", "/teach/lessons"] },
+    { href: "/teach/review", label: "To review", icon: "attendance" },
+    { href: "/teach/homework", label: "Homework", icon: "homework" },
+    { href: "/teach/assessment", label: "Assessment & grades", icon: "grades" },
+    { href: "/teach/behaviour", label: "Behaviour", icon: "behaviour" },
+    { href: "/teach/pupils", label: "Pupils", icon: "people" },
     { href: "/teach/calendar", label: "Calendar", icon: "calendar" },
     { href: "/teach/parent-evenings", label: "Parent evenings", icon: "calendar" },
     { href: "/teach/messages", label: "Messages", icon: "messages" },
@@ -272,7 +247,10 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   ],
   family: [
     { href: "/family/dashboard", label: "Overview", icon: "overview" },
-    { href: "/family/classes", label: "Classroom", icon: "classes", matchPrefixes: tabPrefixes("family", ["/family/class", "/family/lessons"]) },
+    { href: "/family/classes", label: "My classes", icon: "classes", matchPrefixes: ["/family/class", "/family/lessons"] },
+    { href: "/family/todo", label: "To do", icon: "homework", matchPrefixes: ["/family/homework"] },
+    { href: "/family/behaviour", label: "Behaviour", icon: "behaviour" },
+    { href: "/family/reports", label: "Reports", icon: "reports" },
     { href: "/family/calendar", label: "Calendar", icon: "calendar" },
     { href: "/family/parent-evenings", label: "Parent evenings", icon: "calendar" },
     { href: "/family/messages", label: "Messages", icon: "messages" },
@@ -284,7 +262,10 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   ],
   student: [
     { href: "/student/dashboard", label: "Home", icon: "overview" },
-    { href: "/student/classes", label: "Classroom", icon: "classes", matchPrefixes: tabPrefixes("student", ["/student/class", "/student/lessons"]) },
+    { href: "/student/classes", label: "My classes", icon: "classes", matchPrefixes: ["/student/class", "/student/lessons"] },
+    { href: "/student/todo", label: "To do", icon: "homework", matchPrefixes: ["/student/homework"] },
+    { href: "/student/behaviour", label: "Behaviour", icon: "behaviour" },
+    { href: "/student/reports", label: "Reports", icon: "reports" },
     { href: "/student/calendar", label: "Calendar", icon: "calendar" },
     { href: "/student/announcements", label: "Announcements", icon: "announcements" },
     { href: "/student/teachers", label: "My teachers", icon: "people" },
@@ -296,16 +277,6 @@ export function isSidebarItemActive(pathname: string, item: SidebarItem): boolea
   if (isActivePath(pathname, item.href)) return true;
   const p = normalisePortalPath(pathname);
   return !!item.matchPrefixes?.some((m) => p === m || p.startsWith(m + "/"));
-}
-
-/** Does this path belong to the area's Classroom tab strip? Class detail
- * pages (/teach/class?id=…) deliberately don't show it. */
-export function classroomTabsFor(pathname: string): { area: PortalArea; tabs: ClassroomTab[] } | null {
-  const area = portalAreaFor(pathname);
-  if (!area) return null;
-  const p = normalisePortalPath(pathname).replace(/\/$/, "");
-  const tabs = CLASSROOM_TABS[area];
-  return tabs.some((t) => p === t.href || p.startsWith(t.href + "/")) ? { area, tabs } : null;
 }
 
 export function visibleSidebar(area: PortalArea, roles: string[]): SidebarItem[] {

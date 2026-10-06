@@ -39,6 +39,9 @@ verify_jwt = false
 [functions.admissions-payment-proof]
 verify_jwt = false
 
+[functions.admissions-submitted]
+verify_jwt = false
+
 [functions.manage-booking]
 verify_jwt = false
 
@@ -61,4 +64,13 @@ verify_jwt = false
 verify_jwt = false
 
 [functions.noshow-alerts]
+verify_jwt = false
+
+[functions.policy-file]
+verify_jwt = false
+
+[functions.open-evening-book]
+verify_jwt = false
+
+[functions.open-evening-reminders]
 verify_jwt = false

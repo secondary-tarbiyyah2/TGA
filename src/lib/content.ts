@@ -20,7 +20,13 @@ import {
  * This site is statically exported (output: "export"), so these queries only
  * ever run at build time — there is no server to re-fetch at request time.
  * An edit in /learn/admin/content appears on the next rebuild/redeploy
- * (triggered automatically on save — see that page), not instantly. */
+ * (triggered automatically on save — see that page), not instantly.
+ *
+ * Exceptions that are live immediately: the Policies page, the FAQs page and
+ * the open-evening page re-read the database in the visitor's browser (the
+ * getLive* functions below, which return null instead of falling back to the
+ * seed), using the build-time copy only for the first paint and as the
+ * fallback. */
 async function queryOrFallback<T>(run: (supabase: NonNullable<ReturnType<typeof getSupabaseClient>>) => PromiseLike<{ data: unknown; error: unknown }>, fallback: T): Promise<T> {
   const supabase = getSupabaseClient();
   if (!supabase) return fallback;
@@ -58,12 +64,16 @@ function mapFeeBand(r: Record<string, unknown>, settings: SiteSettings): FeeBand
   );
 }
 
-export const getSiteSettings = async (): Promise<SiteSettings> => {
+/** Site settings straight from the database, or null when they cannot be read
+ * (no connection configured, an error, or no row). The marketing pages use this
+ * in the browser so a failed refresh keeps what the build rendered instead of
+ * swapping in the bundled defaults. */
+export const getLiveSiteSettings = async (): Promise<SiteSettings | null> => {
   const supabase = getSupabaseClient();
-  if (!supabase) return seedSiteSettings;
+  if (!supabase) return null;
   try {
     const { data, error } = await supabase.from("site_settings").select("*").eq("id", true).maybeSingle();
-    if (error || !data) return seedSiteSettings;
+    if (error || !data) return null;
     const r = data as Record<string, unknown>;
     const settings: SiteSettings = {
       launchDate: (r.launch_date as string) || undefined,
@@ -97,9 +107,11 @@ export const getSiteSettings = async (): Promise<SiteSettings> => {
     };
     return settings;
   } catch {
-    return seedSiteSettings;
+    return null;
   }
 };
+
+export const getSiteSettings = async (): Promise<SiteSettings> => (await getLiveSiteSettings()) ?? seedSiteSettings;
 
 export const getFaqEntries = async (): Promise<FaqEntry[]> => {
   const [settings, rows] = await Promise.all([
@@ -114,6 +126,25 @@ export const getFaqEntries = async (): Promise<FaqEntry[]> => {
   // {{terms}} / {{instalments}} tokens so they always match the live settings.
   const tokens = { applicationFee: settings.applicationFee, registrationFee: settings.registrationFee, terms: settings.feeTerms, instalments: settings.feeInstalments, annualDiscountPercent: settings.annualDiscountPercent };
   return entries.map((e) => ({ ...e, answer: applyFeeTokens(e.answer, tokens) }));
+};
+
+/** FAQ entries straight from the database (answers with the live fee figures
+ * filled in), or null when they cannot be read. Used by the browser to refresh
+ * the page without a rebuild. */
+export const getLiveFaqEntries = async (): Promise<FaqEntry[] | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) return null;
+  try {
+    const [settings, res] = await Promise.all([
+      getLiveSiteSettings(),
+      supabase.from("faq_entries").select("id, question, answer, category, order_index").order("order_index"),
+    ]);
+    if (!settings || res.error || !Array.isArray(res.data)) return null;
+    const tokens = { applicationFee: settings.applicationFee, registrationFee: settings.registrationFee, terms: settings.feeTerms, instalments: settings.feeInstalments, annualDiscountPercent: settings.annualDiscountPercent };
+    return res.data.map((r: unknown) => mapFaq(r as Record<string, unknown>)).map((e) => ({ ...e, answer: applyFeeTokens(e.answer, tokens) }));
+  } catch {
+    return null;
+  }
 };
 
 function mapFaq(r: Record<string, unknown>): FaqEntry {
@@ -165,6 +196,24 @@ export const getPolicyLinks = () =>
     (s) => s.from("policy_links").select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index").order("order_index"),
     seedPolicyLinks
   ).then((rows) => (rows === seedPolicyLinks ? rows : rows.map((r: unknown) => mapPolicyLink(r as Record<string, unknown>))));
+
+/** The policies straight from the database (removed ones are hidden by RLS), or
+ * null when they cannot be read. Used by the browser so a policy edit shows on
+ * the Policies page immediately, without a site rebuild. */
+export const getLivePolicyLinks = async (): Promise<PolicyLink[] | null> => {
+  const supabase = getSupabaseClient();
+  if (!supabase) return null;
+  try {
+    const { data, error } = await supabase
+      .from("policy_links")
+      .select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index")
+      .order("order_index");
+    if (error || !Array.isArray(data)) return null;
+    return data.map((r: unknown) => mapPolicyLink(r as Record<string, unknown>));
+  } catch {
+    return null;
+  }
+};
 
 function mapPolicyLink(r: Record<string, unknown>): PolicyLink {
   return {

@@ -7,7 +7,9 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
+import { PrintScope } from "@/components/learn/printScope";
 import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
+import { ChildDetailsBanner } from "@/components/learn/pupil/ChildDetailsBanner";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { FamilyFees } from "@/components/learn/FamilyFees";
 import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
@@ -74,15 +76,12 @@ function ChildCard({ child }: { child: Child }) {
           {child.year_groups?.name ? <span className="ml-2 text-sm font-normal text-ink/60">{child.year_groups.name}</span> : null}
         </h2>
         <div className="flex items-center gap-2">
-          <Link href={`/family/classes?child=${child.id}`} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
-            View classes
-          </Link>
           <PrintButton />
         </div>
       </div>
-      <div className="mt-4">
+      <PrintScope title={`${child.name}: timetable`} className="mt-4">
         <ChildTimetable classIds={classIds} yearGroup={child.year_groups?.name} />
-      </div>
+      </PrintScope>
       <div className="mt-4 border-t border-gold-light/30 pt-4">
         <h3 className="text-sm font-medium text-ink">Lessons</h3>
         <div className="mt-2">
@@ -99,14 +98,8 @@ function ChildCard({ child }: { child: Child }) {
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-medium text-ink">Homework &amp; grades</h3>
           <div className="flex gap-3">
-            <Link href={`/family/homework?child=${child.id}`} className="text-sm text-gold-700 underline">
-              View all homework
-            </Link>
-            <Link href="/family/reports" className="text-sm text-gold-700 underline">
-              Term reports
-            </Link>
-            <Link href="/family/messages" className="text-sm text-gold-700 underline">
-              Messages
+            <Link href={`/family/todo?child=${child.id}`} className="text-sm text-gold-700 underline">
+              See everything to do
             </Link>
           </div>
         </div>
@@ -174,6 +167,7 @@ function FamilyContent() {
   return (
     <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }}>
     <div className="space-y-6">
+      <ChildDetailsBanner />
       <JoinLessonCard who={{ kind: "parent" }} />
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <div className="flex items-center justify-between">

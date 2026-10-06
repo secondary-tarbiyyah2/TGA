@@ -260,3 +260,19 @@ export function icsFeedUrl(token: string): string | null {
   if (!base) return null;
   return `${base}?token=${token}`;
 }
+
+// ── One-click subscribe links for a feed URL ───────────────────────────
+/** webcal:// form of a feed URL: opens the user's default calendar app directly. */
+export function webcalUrl(feedUrl: string): string {
+  return feedUrl.replace(/^https?:/i, "webcal:");
+}
+
+/** Google Calendar's "add by URL" screen, pre-filled with the feed. */
+export function googleSubscribeUrl(feedUrl: string): string {
+  return `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcalUrl(feedUrl))}`;
+}
+
+/** Outlook (outlook.live.com / Microsoft 365) "subscribe from web" screen, pre-filled. */
+export function outlookSubscribeUrl(feedUrl: string, name = "Tarbiyyah Global Academy"): string {
+  return `https://outlook.live.com/calendar/0/addfromweb?url=${encodeURIComponent(feedUrl)}&name=${encodeURIComponent(name)}`;
+}

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { formatMoney, type ApplicationPatch, type ApplicationRow, type ApplicationStatus } from "@/components/admissions/applicationShared";
-import { AcceptAccounts } from "@/components/learn/admissions/AcceptAccounts";
+import { AcceptAccounts, type CreateAccountsFn } from "@/components/learn/admissions/AcceptAccounts";
 import { AssessmentPanel } from "@/components/learn/admissions/AssessmentPanel";
 import { EmailComposer } from "@/components/learn/admissions/EmailComposer";
 import { InterviewPanel } from "@/components/learn/admissions/InterviewPanel";
@@ -51,6 +51,7 @@ export function ProcessPanel({
   baseCtx,
   onPatch,
   onMove,
+  onCreateAccounts,
 }: {
   app: ApplicationRow;
   ctx: AdmissionsContext;
@@ -58,6 +59,7 @@ export function ProcessPanel({
   baseCtx: TemplateContext;
   onPatch: (id: string, patch: ApplicationPatch) => Promise<boolean>;
   onMove: (id: string, status: ApplicationStatus, opts?: MoveOptions) => Promise<boolean>;
+  onCreateAccounts: CreateAccountsFn;
 }) {
   const [section, setSection] = useState<Section>("assessment");
   return (
@@ -79,7 +81,7 @@ export function ProcessPanel({
       </div>
       {section === "assessment" && <AssessmentPanel app={app} ctx={ctx} staff={staff} baseCtx={baseCtx} onPatch={onPatch} />}
       {section === "interview" && <InterviewPanel app={app} ctx={ctx} baseCtx={baseCtx} onPatch={onPatch} />}
-      {section === "offer" && <OfferSection app={app} ctx={ctx} baseCtx={baseCtx} onPatch={onPatch} onMove={onMove} />}
+      {section === "offer" && <OfferSection app={app} ctx={ctx} baseCtx={baseCtx} onPatch={onPatch} onMove={onMove} onCreateAccounts={onCreateAccounts} />}
     </div>
   );
 }
@@ -90,12 +92,14 @@ function OfferSection({
   baseCtx,
   onPatch,
   onMove,
+  onCreateAccounts,
 }: {
   app: ApplicationRow;
   ctx: AdmissionsContext;
   baseCtx: TemplateContext;
   onPatch: (id: string, patch: ApplicationPatch) => Promise<boolean>;
   onMove: (id: string, status: ApplicationStatus, opts?: MoveOptions) => Promise<boolean>;
+  onCreateAccounts: CreateAccountsFn;
 }) {
   const { fees, details } = ctx;
   const fromApp = (): Draft => ({
@@ -295,7 +299,7 @@ function OfferSection({
         {msg && <span role={msg.ok ? "status" : "alert"} className={`text-xs ${msg.ok ? "text-teal-700" : "text-red-700"}`}>{msg.text}</span>}
       </div>
 
-      {showAccept && (dirty ? <p className="text-xs text-ink/60">Save the changes above before accepting.</p> : <AcceptAccounts app={app} onPatch={onPatch} onMove={onMove} />)}
+      {showAccept && (dirty ? <p className="text-xs text-ink/60">Save the changes above before accepting.</p> : <AcceptAccounts app={app} ctx={ctx} onMove={onMove} onCreateAccounts={onCreateAccounts} />)}
     </div>
   );
 }

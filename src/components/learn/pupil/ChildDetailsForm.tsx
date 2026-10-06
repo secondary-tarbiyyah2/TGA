@@ -8,13 +8,17 @@ import {
   DETAILS_SELECT,
   ProgressBar,
   completeness,
+  Required,
+  UK_POSTCODE,
   fieldCls,
+  formatDob,
   formatStamp,
+  validPhone,
   type EmergencyContact,
   type PupilDetails,
 } from "./data";
 
-type Child = { id: string; name: string };
+type Child = { id: string; name: string; dob: string | null };
 type StepKey = "basics" | "health" | "contacts" | "consents";
 const STEPS: { key: StepKey; label: string }[] = [
   { key: "basics", label: "Basics" },
@@ -66,6 +70,30 @@ const EMPTY: Form = {
   photo_consent: "",
   trip_consent: "",
 };
+
+type FieldErrors = Partial<Record<string, string>>;
+
+/** Inline validation per section. Everything marked Required in the form is checked here. */
+function validate(step: StepKey, f: Form): FieldErrors {
+  const e: FieldErrors = {};
+  if (step === "basics") {
+    if (!f.gender) e.gender = "Please choose male or female.";
+    if (!f.address_line1.trim()) e.address_line1 = "Please enter the first line of the home address.";
+    if (!f.postcode.trim()) e.postcode = "Please enter the postcode.";
+    else if (!UK_POSTCODE.test(f.postcode.trim())) e.postcode = "That doesn't look like a UK postcode, e.g. NW1 6XE.";
+  }
+  if (step === "health") {
+    if (!f.gp_name.trim()) e.gp_name = "Please enter your GP's name or surgery.";
+    if (!f.gp_phone.trim()) e.gp_phone = "Please enter your GP's phone number.";
+    else if (!validPhone(f.gp_phone)) e.gp_phone = "Please enter a valid phone number.";
+    if (!f.health_confirmed) e.health_confirmed = "Please tick the box to confirm you've checked this page.";
+  }
+  if (step === "consents") {
+    if (!f.photo_consent) e.photo_consent = "Please answer yes or no.";
+    if (!f.trip_consent) e.trip_consent = "Please answer yes or no.";
+  }
+  return e;
+}
 
 const yn = (v: boolean | null): "" | "yes" | "no" => (v === null || v === undefined ? "" : v ? "yes" : "no");
 
@@ -134,12 +162,14 @@ export function ChildDetailsForm() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [saved, setSaved] = useState<string | null>(null);
+  // Sections the parent has tried to save: only then do empty required fields turn red.
+  const [tried, setTried] = useState<Partial<Record<StepKey, boolean>>>({});
 
   useEffect(() => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     (async () => {
-      const { data, error: e } = await supabase.from("children").select("id, name").order("name");
+      const { data, error: e } = await supabase.from("children").select("id, name, dob").order("name");
       const list = (data as unknown as Child[]) || [];
       setChildren(list);
       if (e) setError("We couldn't load your children just now. Please refresh in a moment.");
@@ -169,11 +199,15 @@ export function ChildDetailsForm() {
     setStep("basics");
     setSaved(null);
     setError(null);
+    setTried({});
     void load(childId);
   }, [childId, load]);
 
   const savedContacts = drafts.filter((d) => d.id).length;
-  const progress = useMemo(() => completeness(details, savedContacts), [details, savedContacts]);
+  const childDob = children?.find((c) => c.id === childId)?.dob ?? null;
+  const progress = useMemo(() => completeness(details, savedContacts, childDob), [details, savedContacts, childDob]);
+  const errs = useMemo<Record<StepKey, FieldErrors>>(() => ({ basics: validate("basics", form), health: validate("health", form), contacts: {}, consents: validate("consents", form) }), [form]);
+  const shown = (k: StepKey): FieldErrors => (tried[k] ? errs[k] : {});
   const set = <K extends keyof Form>(k: K, v: Form[K]) => {
     setSaved(null);
     setForm((f) => ({ ...f, [k]: v }));
@@ -202,8 +236,8 @@ export function ChildDetailsForm() {
   };
 
   const saveBasics = () => {
-    if (!form.gender) return setError("Please choose male or female.");
-    if (!form.address_line1.trim() || !form.postcode.trim()) return setError("Please add the first line of the address and the postcode.");
+    setTried((t) => ({ ...t, basics: true }));
+    if (Object.keys(errs.basics).length > 0) return setError("Please fix the fields marked in red.");
     return saveFields(
       {
         gender: form.gender,
@@ -221,8 +255,8 @@ export function ChildDetailsForm() {
   };
 
   const saveHealth = () => {
-    if (!form.gp_name.trim() || !form.gp_phone.trim()) return setError("Please add your GP's name and phone number.");
-    if (!form.health_confirmed) return setError("Please tick the box to say you've checked this page. Write \"None\" where nothing applies.");
+    setTried((t) => ({ ...t, health: true }));
+    if (Object.keys(errs.health).length > 0) return setError("Please fix the fields marked in red. Write \"None\" where nothing applies.");
     return saveFields(
       {
         gp_name: text(form.gp_name),
@@ -239,7 +273,8 @@ export function ChildDetailsForm() {
   };
 
   const saveConsents = () => {
-    if (!form.photo_consent || !form.trip_consent) return setError("Please answer both questions. Yes or no is fine.");
+    setTried((t) => ({ ...t, consents: true }));
+    if (Object.keys(errs.consents).length > 0) return setError("Please answer both questions. Yes or no is fine.");
     return saveFields({ photo_consent: form.photo_consent === "yes", trip_consent: form.trip_consent === "yes" });
   };
 
@@ -258,8 +293,9 @@ export function ChildDetailsForm() {
   const saveDraft = async (d: Draft, index: number) => {
     const supabase = getSupabaseClient();
     if (!supabase || !childId) return;
-    if (!d.name.trim() || !d.phone.trim()) return patchDraftError(d.key, "A name and a phone number are needed.");
+    if (!d.name.trim()) return patchDraftError(d.key, "Please enter the contact's full name.");
     if (!d.relationship.trim()) return patchDraftError(d.key, "Please say how they are related to your child.");
+    if (!d.phone.trim() || !validPhone(d.phone)) return patchDraftError(d.key, "Please enter a valid phone number.");
     setBusy(true);
     setError(null);
     const payload = {
@@ -348,7 +384,17 @@ export function ChildDetailsForm() {
               <ProgressBar percent={progress.percent} />
             </div>
             {progress.percent < 100 ? (
-              <p className="mt-2 text-xs text-ink/55">Still needed: {progress.items.filter((i) => !i.ok).map((i) => i.label.toLowerCase()).join(", ")}.</p>
+              <>
+                <p className="mt-2 text-xs font-medium text-red-700">Everything below is required. The bar reaches 100% only when all of it is done.</p>
+                <ul className="mt-2 grid gap-x-4 gap-y-1 text-xs sm:grid-cols-2" aria-label="Required items">
+                  {progress.items.map((i) => (
+                    <li key={i.label} className={i.ok ? "text-green-700" : "text-red-700"}>
+                      <span aria-hidden="true">{i.ok ? "✓" : "○"}</span> {i.label}
+                      <span className="sr-only">{i.ok ? " done" : " still required"}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
             ) : (
               <p className="mt-2 text-xs text-green-700">All done. You can change anything at any time and we&apos;ll keep it up to date.</p>
             )}
@@ -369,7 +415,7 @@ export function ChildDetailsForm() {
                 className={`rounded-full border px-3 py-1.5 text-sm font-medium ${step === s.key ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
               >
                 {i + 1}. {s.label}
-                {stepOk(s.key) && details ? <span aria-label="done"> ✓</span> : null}
+                {stepOk(s.key) && details ? <span aria-label="done"> ✓</span> : <span className="ml-1 text-[10px] font-semibold uppercase" aria-label="required">{step === s.key ? "" : "Required"}</span>}
               </button>
             ))}
           </div>
@@ -383,8 +429,17 @@ export function ChildDetailsForm() {
             <div className="rounded-2xl border border-gold-light bg-white p-4">
               {step === "basics" && (
                 <div className="space-y-4">
-                  <fieldset>
-                    <legend className="text-sm font-medium text-ink">Gender</legend>
+                  <div className="text-sm">
+                    <p className="font-medium text-ink">
+                      Date of birth <span className="ml-1 text-xs font-semibold text-green-700">{childDob ? "✓ on record" : ""}</span>
+                    </p>
+                    <p className="mt-1 text-ink/75">{childDob ? formatDob(childDob) : "Not on record. Please ask the school office to add your child's date of birth."}</p>
+                  </div>
+                  <fieldset aria-invalid={!!shown("basics").gender}>
+                    <legend className="text-sm font-medium text-ink">
+                      Gender
+                      <Required />
+                    </legend>
                     <div className="mt-1 flex gap-4 text-sm text-ink">
                       {(["male", "female"] as const).map((g) => (
                         <label key={g} className="flex items-center gap-2">
@@ -392,12 +447,13 @@ export function ChildDetailsForm() {
                         </label>
                       ))}
                     </div>
+                    <FieldError message={shown("basics").gender} />
                   </fieldset>
                   <div className="grid gap-3 sm:grid-cols-2">
-                    <Text label="Home address, line 1" value={form.address_line1} onChange={(v) => set("address_line1", v)} autoComplete="address-line1" />
+                    <Text label="Home address, line 1" required error={shown("basics").address_line1} value={form.address_line1} onChange={(v) => set("address_line1", v)} autoComplete="address-line1" />
                     <Text label="Line 2 (optional)" value={form.address_line2} onChange={(v) => set("address_line2", v)} autoComplete="address-line2" />
                     <Text label="Town or city" value={form.town} onChange={(v) => set("town", v)} autoComplete="address-level2" />
-                    <Text label="Postcode" value={form.postcode} onChange={(v) => set("postcode", v)} autoComplete="postal-code" />
+                    <Text label="Postcode" required error={shown("basics").postcode} value={form.postcode} onChange={(v) => set("postcode", v)} autoComplete="postal-code" />
                     <Text label="Language spoken at home" value={form.home_language} onChange={(v) => set("home_language", v)} />
                     <Text label="Ethnicity (optional)" value={form.ethnicity} onChange={(v) => set("ethnicity", v)} />
                     <Text label="Previous school (if any)" value={form.previous_school} onChange={(v) => set("previous_school", v)} />
@@ -410,8 +466,8 @@ export function ChildDetailsForm() {
               {step === "health" && (
                 <div className="space-y-4">
                   <div className="grid gap-3 sm:grid-cols-2">
-                    <Text label="GP's name or surgery" value={form.gp_name} onChange={(v) => set("gp_name", v)} />
-                    <Text label="GP's phone number" value={form.gp_phone} onChange={(v) => set("gp_phone", v)} type="tel" />
+                    <Text label="GP's name or surgery" required error={shown("health").gp_name} value={form.gp_name} onChange={(v) => set("gp_name", v)} />
+                    <Text label="GP's phone number" required error={shown("health").gp_phone} value={form.gp_phone} onChange={(v) => set("gp_phone", v)} type="tel" />
                   </div>
                   <Area label="Medical conditions" hint="Asthma, diabetes, epilepsy and so on. Write None if there are none." value={form.medical_conditions} onChange={(v) => set("medical_conditions", v)} />
                   <Area label="Allergies" hint="Food, medicine, stings. Please say how serious." value={form.allergies} onChange={(v) => set("allergies", v)} />
@@ -420,24 +476,31 @@ export function ChildDetailsForm() {
                   <Area label="Additional learning needs" hint="Anything that helps us teach your child well: dyslexia, speech, hearing or sight, a plan from a previous school." value={form.sen_notes} onChange={(v) => set("sen_notes", v)} />
                   <label className="flex items-start gap-2 text-sm text-ink">
                     <input type="checkbox" className="mt-1" checked={form.health_confirmed} onChange={(e) => set("health_confirmed", e.target.checked)} />
-                    <span>I&apos;ve checked this page and the information is correct. Where nothing applies, I&apos;ve written &quot;None&quot;.</span>
+                    <span>
+                      I&apos;ve checked this page and the information is correct. Where nothing applies, I&apos;ve written &quot;None&quot;.
+                      <Required />
+                    </span>
                   </label>
+                  <FieldError message={shown("health").health_confirmed} />
                   <SaveRow busy={busy} onSave={saveHealth} label="Save and continue" />
                 </div>
               )}
 
               {step === "contacts" && (
                 <div className="space-y-4">
-                  <p className="text-sm text-ink/70">Please give at least two people we can call in an emergency, in the order we should try them. They don&apos;t have to live with you.</p>
+                  <p className="text-sm text-ink/70">
+                    Please give at least two people we can call in an emergency, in the order we should try them. They don&apos;t have to live with you.
+                    <Required />
+                  </p>
                   {drafts.length === 0 && <p className="text-sm text-ink/55">No contacts yet.</p>}
                   <ul className="space-y-3">
                     {drafts.map((d, i) => (
                       <li key={d.key} className="rounded-xl border border-gold-light/70 p-3">
                         <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">Contact {i + 1}</p>
                         <div className="mt-2 grid gap-3 sm:grid-cols-2">
-                          <Text label="Full name" value={d.name} onChange={(v) => patchDraft(d.key, { name: v })} />
-                          <Text label="Relationship to child" value={d.relationship} onChange={(v) => patchDraft(d.key, { relationship: v })} />
-                          <Text label="Phone" value={d.phone} onChange={(v) => patchDraft(d.key, { phone: v })} type="tel" />
+                          <Text label="Full name" required value={d.name} onChange={(v) => patchDraft(d.key, { name: v })} />
+                          <Text label="Relationship to child" required value={d.relationship} onChange={(v) => patchDraft(d.key, { relationship: v })} />
+                          <Text label="Phone" required value={d.phone} onChange={(v) => patchDraft(d.key, { phone: v })} type="tel" />
                           <Text label="Second phone (optional)" value={d.alt_phone} onChange={(v) => patchDraft(d.key, { alt_phone: v })} type="tel" />
                           <Text label="Email (optional)" value={d.email} onChange={(v) => patchDraft(d.key, { email: v })} type="email" />
                         </div>
@@ -464,7 +527,7 @@ export function ChildDetailsForm() {
                   <button type="button" onClick={addDraft} className="rounded-lg border border-teal-600 px-3 py-2 text-sm font-semibold text-teal-800 hover:bg-teal-50">
                     + Add a contact
                   </button>
-                  {savedContacts < 2 && <p className="text-xs text-amber-800">You have {savedContacts} saved. We need at least 2.</p>}
+                  {savedContacts < 2 && <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">You have {savedContacts} saved contact{savedContacts === 1 ? "" : "s"}. At least 2 are required.</p>}
                   <div>
                     <button type="button" onClick={() => setStep("consents")} className="text-sm font-medium text-teal-800 underline">
                       Continue to consents
@@ -481,6 +544,7 @@ export function ChildDetailsForm() {
                     value={form.photo_consent}
                     onChange={(v) => set("photo_consent", v)}
                     name="photo"
+                    error={shown("consents").photo_consent}
                   />
                   <Choice
                     legend="Trips and visits"
@@ -488,6 +552,7 @@ export function ChildDetailsForm() {
                     value={form.trip_consent}
                     onChange={(v) => set("trip_consent", v)}
                     name="trip"
+                    error={shown("consents").trip_consent}
                   />
                   <p className="text-xs text-ink/55">You can change your mind at any time by coming back to this page.</p>
                   <SaveRow busy={busy} onSave={saveConsents} label="Save consents" />
@@ -502,11 +567,47 @@ export function ChildDetailsForm() {
   );
 }
 
-function Text({ label, value, onChange, type = "text", autoComplete }: { label: string; value: string; onChange: (v: string) => void; type?: string; autoComplete?: string }) {
+function FieldError({ message }: { message?: string }) {
+  return message ? (
+    <p role="alert" className="mt-1 text-xs font-medium text-red-700">
+      {message}
+    </p>
+  ) : null;
+}
+
+function Text({
+  label,
+  value,
+  onChange,
+  type = "text",
+  autoComplete,
+  required = false,
+  error,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  type?: string;
+  autoComplete?: string;
+  required?: boolean;
+  error?: string;
+}) {
   return (
     <label className="block text-sm font-medium text-ink">
-      {label}
-      <input type={type} value={value} autoComplete={autoComplete} onChange={(e) => onChange(e.target.value)} className={fieldCls} />
+      <span>
+        {label}
+        {required && <Required />}
+      </span>
+      <input
+        type={type}
+        value={value}
+        autoComplete={autoComplete}
+        required={required}
+        aria-invalid={error ? true : undefined}
+        onChange={(e) => onChange(e.target.value)}
+        className={`${fieldCls} ${error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}`}
+      />
+      <FieldError message={error} />
     </label>
   );
 }
@@ -521,10 +622,13 @@ function Area({ label, hint, value, onChange }: { label: string; hint?: string; 
   );
 }
 
-function Choice({ legend, help, value, onChange, name }: { legend: string; help: string; value: "" | "yes" | "no"; onChange: (v: "yes" | "no") => void; name: string }) {
+function Choice({ legend, help, value, onChange, name, error }: { legend: string; help: string; value: "" | "yes" | "no"; onChange: (v: "yes" | "no") => void; name: string; error?: string }) {
   return (
     <fieldset>
-      <legend className="text-sm font-semibold text-ink">{legend}</legend>
+      <legend className="text-sm font-semibold text-ink">
+        {legend}
+        <Required />
+      </legend>
       <p className="mt-1 text-sm text-ink/70">{help}</p>
       <div className="mt-2 flex gap-5 text-sm text-ink">
         <label className="flex items-center gap-2">
@@ -534,6 +638,7 @@ function Choice({ legend, help, value, onChange, name }: { legend: string; help:
           <input type="radio" name={name} checked={value === "no"} onChange={() => onChange("no")} /> No
         </label>
       </div>
+      <FieldError message={error} />
     </fieldset>
   );
 }

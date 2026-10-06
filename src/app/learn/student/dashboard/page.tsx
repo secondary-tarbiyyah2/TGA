@@ -6,6 +6,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
+import { PrintScope } from "@/components/learn/printScope";
 import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
@@ -122,9 +123,9 @@ function StudentContent() {
           </div>
         </div>
 
-        <div className="mt-6">
+        <PrintScope title="My timetable" className="mt-6">
           {slots === null ? <p className="text-sm text-ink/60">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} yearGroups={yearGroupName ? [yearGroupName] : undefined} />}
-        </div>
+        </PrintScope>
 
         <IcsFeedLink />
       </div>
@@ -139,11 +140,8 @@ function StudentContent() {
           <div className="flex items-center justify-between">
             <h2 className="font-serif text-h3 font-semibold text-ink">Homework &amp; grades</h2>
             <div className="flex gap-3">
-              <Link href="/student/homework" className="text-sm text-gold-700 underline">
-                View all homework
-              </Link>
-              <Link href="/student/reports" className="text-sm text-gold-700 underline">
-                Term reports
+              <Link href="/student/todo" className="text-sm text-gold-700 underline">
+                See everything to do
               </Link>
             </div>
           </div>

@@ -114,6 +114,28 @@ function originalUrl(assetIdSigned: string, fileUrl: string | null): string | nu
   return null;
 }
 
+/** Storage path of an uploaded PDF for the version that was signed ("file:<path>[-<md5 of body>]"), or null. */
+function privateFilePath(assetIdSigned: string): string | null {
+  if (!assetIdSigned || !assetIdSigned.startsWith("file:")) return null;
+  const rest = assetIdSigned.slice("file:".length);
+  const m = rest.match(/^(.*)-[0-9a-f]{32}$/);
+  return m ? m[1] : rest;
+}
+
+/** An uploaded PDF from the private signable-documents bucket, exactly the version that was signed. */
+async function fetchPrivatePdf(service: Service, path: string): Promise<Uint8Array | null> {
+  try {
+    const { data: blob } = await service.storage.from("signable-documents").download(path);
+    if (!blob) return null;
+    const bytes = new Uint8Array(await blob.arrayBuffer());
+    if (bytes.length > MAX_ORIGINAL_BYTES) return null;
+    if (!(bytes[0] === 0x25 && bytes[1] === 0x50 && bytes[2] === 0x44 && bytes[3] === 0x46)) return null;
+    return bytes;
+  } catch {
+    return null;
+  }
+}
+
 async function fetchOriginalPdf(url: string): Promise<Uint8Array | null> {
   try {
     const res = await fetch(url, { signal: AbortSignal.timeout(20000) });
@@ -356,8 +378,19 @@ export async function buildSignedPdf(service: Service, sig: SigRow): Promise<Uin
   const title = sig.document_title_signed || doc?.title || "Document";
 
   let pdf: PDFDocument | null = null;
-  const url = originalUrl(sig.asset_id_signed, doc?.file_url ?? null);
-  if (url) {
+  const privatePath = privateFilePath(sig.asset_id_signed);
+  if (privatePath) {
+    const bytes = await fetchPrivatePdf(service, privatePath);
+    if (bytes) {
+      try {
+        pdf = await PDFDocument.load(bytes, { ignoreEncryption: true });
+      } catch {
+        pdf = null;
+      }
+    }
+  }
+  const url = privatePath ? null : originalUrl(sig.asset_id_signed, doc?.file_url ?? null);
+  if (!pdf && url) {
     const bytes = await fetchOriginalPdf(url);
     if (bytes) {
       try {
@@ -371,7 +404,7 @@ export async function buildSignedPdf(service: Service, sig: SigRow): Promise<Uin
     pdf = await textDocumentPdf(
       title,
       doc?.body ?? null,
-      url ? "The original file could not be reproduced here. Please refer to the document in the school portal." : undefined,
+      url || privatePath ? "The original file could not be reproduced here. Please refer to the document in the school portal." : undefined,
     );
   }
 

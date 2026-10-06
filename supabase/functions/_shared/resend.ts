@@ -111,6 +111,9 @@ export async function sendEmail(opts: {
   /** Extra attachments; `content` is base64. */
   attachments?: { filename: string; content: string }[];
 }): Promise<{ ok: boolean; detail: string }> {
+  // Student usernames are backed by a synthetic, mail-less address (see
+  // _shared/studentAccount.ts). Never try to deliver to it.
+  if (/\.internal$/i.test(opts.to.trim())) return { ok: false, detail: "Not sent: that is an internal student sign-in address, not a mailbox" };
   // Preferred: send from the school's Outlook mailbox through Microsoft Graph.
   let graphFailure = "";
   if (Deno.env.get("MS_TENANT_ID") && Deno.env.get("MS_CLIENT_ID") && Deno.env.get("MS_CLIENT_SECRET") && Deno.env.get("MS_SENDER_EMAIL")) {

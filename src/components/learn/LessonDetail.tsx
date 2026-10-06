@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { LessonRecordingPanel } from "@/components/learn/class/LessonRecordingLinks";
 
 type Resource = { label: string; url: string };
 type LessonInstance = {
@@ -345,7 +346,8 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
 
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Recording</h2>
-        {recordings.length === 0 && <p className="mt-2 text-sm text-ink/60">No recording available for this lesson.</p>}
+        <LessonRecordingPanel lessonInstanceId={lessonInstanceId} canManage={variant === "teacher" || variant === "admin"} />
+        {recordings.length === 0 && <p className="mt-4 text-xs text-ink/50">No portal-hosted recording for this lesson.</p>}
         {recordings.map((r) => (
           <div key={r.id} className="mt-2 flex flex-wrap items-center justify-between gap-2 rounded-lg border border-gold-light/30 p-3 text-sm">
             <span className="text-ink/70">

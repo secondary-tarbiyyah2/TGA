@@ -26,6 +26,7 @@ export function normaliseSettings(sr: Record<string, unknown> | null): Admission
     application_fee: num(sr.application_fee),
     registration_fee: num(sr.registration_fee),
     annual_discount_percent: num(sr.annual_discount_percent),
+    sibling_discount_percent: num(sr.sibling_discount_percent),
   };
 }
 

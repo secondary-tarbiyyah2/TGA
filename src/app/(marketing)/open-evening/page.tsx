@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
+import { OpenEveningLive } from "@/components/OpenEveningLive";
 import { getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -23,29 +24,15 @@ export default async function OpenEveningPage() {
           makes Tarbiyyah Global Academy different.
         </p>
 
-        <div className="mt-10 rounded-2xl border border-gold-light/50 bg-white p-6">
-          <h2 className="font-serif text-lg font-semibold text-ink">Book your place</h2>
-          {settings.bookingWidgetUrl ? (
-            <iframe loading="lazy" title="Book an open evening" src={settings.bookingWidgetUrl} className="mt-4 h-[600px] w-full rounded-xl border border-gold-light/40" />
-          ) : (
-            <p className="mt-2 text-sm text-ink/70">
-              Email{" "}
-              <a href={`mailto:${settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk"}`} className="text-gold-700 underline">
-                {settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk"}
-              </a>{" "}
-              to register for the next session.
-            </p>
-          )}
-        </div>
-
-        {settings.openEveningRecordingUrl && (
-          <div className="mt-10 rounded-2xl border border-gold-light/50 bg-white p-6">
-            <h2 className="font-serif text-lg font-semibold text-ink">Watch a past recording</h2>
-            <div className="mt-4 aspect-video overflow-hidden rounded-xl">
-              <iframe loading="lazy" title="Past open evening recording" src={settings.openEveningRecordingUrl} className="h-full w-full" allowFullScreen />
-            </div>
-          </div>
-        )}
+        {/* Dates, places left and the booking form load in the browser, so a new
+            evening added in the admin portal appears without a site rebuild. */}
+        <OpenEveningLive
+          initialSettings={{
+            admissionsEmail: settings.admissionsEmail,
+            bookingWidgetUrl: settings.bookingWidgetUrl,
+            openEveningRecordingUrl: settings.openEveningRecordingUrl,
+          }}
+        />
       </Container>
     </section>
   );

@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { CredentialsCard } from "@/components/learn/people/StudentCredentials";
+import type { IssuedCredentials } from "@/components/learn/people/studentAccounts";
+import type { CreateAccountsFn } from "@/components/learn/admissions/AcceptAccounts";
 import { DocumentsPanel } from "@/components/learn/admissions/DocumentsPanel";
+import { FamilyPanel, siblingBadgeText } from "@/components/learn/admissions/FamilyPanel";
 import { MessagesPanel } from "@/components/learn/admissions/MessagesPanel";
 import { PaymentsPanel } from "@/components/learn/admissions/PaymentsPanel";
 import { ProcessPanel } from "@/components/learn/admissions/ProcessPanel";
@@ -17,7 +21,12 @@ import {
   type ApplicationStatus,
 } from "@/components/admissions/applicationShared";
 
-export type MoveOptions = { /** Do not send the automatic email for this move (the caller has just sent it). */ skipAutoEmail?: boolean };
+export type MoveOptions = {
+  /** Do not send the automatic email for this move (the caller has just sent it). */
+  skipAutoEmail?: boolean;
+  /** Do not create accounts automatically when this move is to Accepted (the caller does it itself). */
+  skipAccounts?: boolean;
+};
 
 export type StaffOption = { profile_id: string; display_name: string };
 
@@ -45,16 +54,28 @@ const TABS: { id: Tab; label: string }[] = [
 
 export function ApplicationDrawer({
   app,
+  family,
   staff,
+  credentials,
   onClose,
   onMove,
   onPatch,
+  onOpenApplication,
+  onCreateAccounts,
+  onDismissCredentials,
 }: {
   app: ApplicationRow;
+  /** Every application in this child's family (including this one), first child first. Just this one when applying alone. */
+  family: ApplicationRow[];
   staff: StaffOption[];
+  /** Usernames and temporary passwords issued this session, shown once. */
+  credentials: IssuedCredentials[];
   onClose: () => void;
   onMove: (id: string, status: ApplicationStatus, opts?: MoveOptions) => Promise<boolean>;
   onPatch: (id: string, patch: ApplicationPatch) => Promise<boolean>;
+  onOpenApplication: (id: string) => void;
+  onCreateAccounts: CreateAccountsFn;
+  onDismissCredentials: (key: string) => void;
 }) {
   const [tab, setTab] = useState<Tab>("details");
   const [notes, setNotes] = useState(app.notes || "");
@@ -87,6 +108,8 @@ export function ApplicationDrawer({
   }
 
   const childName = `${app.child_first_name} ${app.child_last_name}`;
+  const badge = siblingBadgeText(app, family);
+  const leadApp = family.length > 1 && !app.guardian_is_other && family[0].id !== app.id ? family[0] : null;
   const staffNames = Object.fromEntries(staff.map((s) => [s.profile_id, s.display_name]));
   const templateCtx: TemplateContext = {
     details: admissions.details,
@@ -108,6 +131,7 @@ export function ApplicationDrawer({
               <p className="text-xs text-ink/60">
                 {app.reference || "No reference"} · received {fmtDate(app.created_at)} · {STATUS_LABELS[app.status]}
               </p>
+              {badge && <span className="mt-1 inline-block rounded-full bg-gold-100 px-2.5 py-0.5 text-xs font-semibold text-gold-900">{badge}</span>}
             </div>
             <button ref={closeRef} type="button" onClick={onClose} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm text-ink/80 hover:bg-cream">
               Close
@@ -136,6 +160,13 @@ export function ApplicationDrawer({
         </div>
 
         <div className="p-5">
+          {credentials.length > 0 && (
+            <div className="mb-5 space-y-3">
+              {credentials.map((c) => (
+                <CredentialsCard key={c.key} creds={c} onDismiss={() => onDismissCredentials(c.key)} />
+              ))}
+            </div>
+          )}
           {tab === "details" && (
             <div className="space-y-6">
               <section aria-label="Assigned to">
@@ -149,6 +180,8 @@ export function ApplicationDrawer({
                   </select>
                 </label>
               </section>
+
+              {admissions.loading ? null : <FamilyPanel app={app} family={family} ctx={admissions} onOpen={onOpenApplication} />}
 
               <section aria-label="Internal notes">
                 <label className="block text-sm font-medium text-ink">
@@ -172,7 +205,12 @@ export function ApplicationDrawer({
                   <Row label="Gender">{app.child_gender}</Row>
                   <Row label="Year group applying">{app.year_group_applying}</Row>
                   <Row label="Preferred start">{app.preferred_start}</Row>
-                  <Row label="Parent or guardian">{app.parent_name}</Row>
+                  <Row label="Family contact">{app.parent_name}</Row>
+                  <Row label="Legal parent or guardian">
+                    {app.guardian_is_other
+                      ? [app.guardian_name, app.guardian_relationship, app.guardian_email, app.guardian_phone, app.guardian_address].filter(Boolean).join("\n")
+                      : "Same as the family contact"}
+                  </Row>
                   <Row label="Relationship">{app.relationship}</Row>
                   <Row label="Email"><a href={`mailto:${app.parent_email}`} className="text-teal-700 underline">{app.parent_email}</a></Row>
                   <Row label="Phone">{app.parent_phone}</Row>
@@ -182,7 +220,7 @@ export function ApplicationDrawer({
                   <Row label="Previous Islamic education">{app.previous_islamic_education}</Row>
                   <Row label="SEND / medical / other">{app.send_or_medical_notes}</Row>
                   <Row label="How they heard of us">{app.how_heard}</Row>
-                  <Row label="Sibling at a Tarbiyyah school">{app.sibling_at_tarbiyyah ? "Yes" : "No"}</Row>
+                  <Row label="Sibling already at a Tarbiyyah school">{app.sibling_at_tarbiyyah ? "Yes" : "No"}</Row>
                   <Row label="Sibling details">{app.sibling_details}</Row>
                   <Row label="Consent to contact">{app.consent_contact ? "Yes" : "No"}</Row>
                   <Row label="Consent to data processing">{app.consent_data ? "Yes" : "No"}</Row>
@@ -193,13 +231,13 @@ export function ApplicationDrawer({
             </div>
           )}
 
-          {tab === "documents" && <DocumentsPanel applicationId={app.id} />}
+          {tab === "documents" && <DocumentsPanel applicationId={app.id} sharedIdFrom={leadApp ? { id: leadApp.id, childName: leadApp.child_first_name } : null} />}
 
           {tab === "process" &&
             (admissions.loading ? (
               <p role="status" className="text-sm text-ink/60">Loading…</p>
             ) : (
-              <ProcessPanel key={app.id} app={app} ctx={admissions} staff={staff} baseCtx={templateCtx} onPatch={onPatch} onMove={onMove} />
+              <ProcessPanel key={app.id} app={app} ctx={admissions} staff={staff} baseCtx={templateCtx} onPatch={onPatch} onMove={onMove} onCreateAccounts={onCreateAccounts} />
             ))}
 
           {tab === "payments" &&

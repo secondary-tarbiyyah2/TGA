@@ -8,8 +8,10 @@ import { classBannerStyle, fetchClass, recordRecentPage, type ClassSummary, type
 import type { Crumb } from "@/components/learn/PageHeader";
 import { ParticipantsTab } from "@/components/learn/class/ParticipantsTab";
 import { CourseTab } from "@/components/learn/class/CourseTab";
-import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
-import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
+import { StreamTab } from "@/components/learn/class/StreamTab";
+import { ClassworkTab } from "@/components/learn/class/ClassworkTab";
+import { ClassSettingsTab } from "@/components/learn/class/ClassSettingsTab";
+import { fetchClassSettings, overallPercent, type ClassSettings, type GradeCategory } from "@/lib/learn/classSettings";
 import { MeetYourTeachers } from "@/components/learn/staff/MeetYourTeachers";
 import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 
@@ -37,71 +39,13 @@ function fmtDate(d: string) {
   return new Date(d.length === 10 ? `${d}T00:00:00` : d).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
 }
 
-// ── Homework ──────────────────────────────────────────────────────────
-type HomeworkRow = { id: string; title: string; due_at: string };
-
-function TeacherHomework({ classId }: { classId: string }) {
-  const [rows, setRows] = useState<(HomeworkRow & { submitted: number })[] | null>(null);
-  const [enrolled, setEnrolled] = useState(0);
-
-  useEffect(() => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    (async () => {
-      const [{ data: hw }, { count }] = await Promise.all([
-        supabase.from("homework").select("id, title, due_at").eq("class_id", classId).order("due_at", { ascending: false }),
-        supabase.from("enrolments").select("id", { count: "exact", head: true }).eq("class_id", classId),
-      ]);
-      const list = (hw as HomeworkRow[]) || [];
-      setEnrolled(count ?? 0);
-      if (list.length === 0) return setRows([]);
-      const { data: subs } = await supabase
-        .from("homework_submissions")
-        .select("homework_id, submitted_at")
-        .in(
-          "homework_id",
-          list.map((h) => h.id),
-        );
-      const done = ((subs as { homework_id: string; submitted_at: string | null }[]) || []).filter((s) => s.submitted_at);
-      setRows(list.map((h) => ({ ...h, submitted: done.filter((s) => s.homework_id === h.id).length })));
-    })();
-  }, [classId]);
-
-  if (rows === null) return <p className="text-sm text-ink/60">Loading…</p>;
-  if (rows.length === 0) return <p className="text-sm text-ink/60">No homework set for this class yet.</p>;
-  const now = Date.now();
-  return (
-    <ul className="divide-y divide-gold-light/70">
-      {rows.map((h) => {
-        const overdue = new Date(h.due_at).getTime() < now;
-        return (
-          <li key={h.id} className="flex flex-wrap items-center justify-between gap-3 py-3 text-sm">
-            <div className="min-w-0">
-              <p className="font-medium text-ink">{h.title}</p>
-              <p className={overdue ? "text-ink/50" : "text-teal-700"}>
-                {overdue ? "Was due" : "Due"} {fmtDate(h.due_at)}
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="h-1.5 w-24 overflow-hidden rounded-full bg-cream" aria-hidden="true">
-                <div className="h-full rounded-full bg-teal-500" style={{ width: `${enrolled ? Math.round((h.submitted / enrolled) * 100) : 0}%` }} />
-              </div>
-              <span className="w-24 text-right text-ink/60">
-                {h.submitted}/{enrolled} handed in
-              </span>
-            </div>
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
-
 // ── Grades ────────────────────────────────────────────────────────────
-type GradeRow = { id: string; title: string; date: string; percent: number | null; grade_label: string | null; children?: { name: string } | null };
+type GradeRow = { id: string; title: string; date: string; percent: number | null; grade_label: string | null; assessment_type_id?: string | null; children?: { name: string } | null };
 
 function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }) {
   const [rows, setRows] = useState<GradeRow[] | null>(null);
+  const [settings, setSettings] = useState<ClassSettings | null>(null);
+  const [cats, setCats] = useState<GradeCategory[]>([]);
 
   // Depend on primitives, not the viewer object (a new object each render).
   const childId = viewer.kind === "student" || viewer.kind === "parent" ? viewer.childId : null;
@@ -110,17 +54,46 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
     const supabase = getSupabaseClient();
     if (!supabase) return;
     const q = childId
-      ? supabase.from("assessments_for_family").select("id, title, date, percent, grade_label").eq("class_id", classId).eq("child_id", childId)
+      ? supabase.from("assessments_for_family").select("id, title, date, percent, grade_label, assessment_type_id").eq("class_id", classId).eq("child_id", childId)
       : supabase.from("assessments").select("id, title, date, percent, grade_label, children(name)").eq("class_id", classId);
     q.order("date", { ascending: false })
       .limit(100)
       .then(({ data }) => setRows((data as unknown as GradeRow[]) || []));
   }, [classId, childId]);
 
+  // The overall grade is only fetched for pupils and families, and only shown when the teacher has switched it on.
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase || !childId) return;
+    fetchClassSettings(classId).then(setSettings);
+    supabase
+      .from("class_grade_categories")
+      .select("id, name, weight, assessment_type_id")
+      .eq("class_id", classId)
+      .then(({ data }) =>
+        setCats(((data as unknown as { id: string; name: string; weight: number | string; assessment_type_id: string | null }[]) || []).map((c) => ({ id: c.id, name: c.name, weight: Number(c.weight), assessmentTypeId: c.assessment_type_id }))),
+      );
+  }, [classId, childId]);
+
   if (rows === null) return <p className="text-sm text-ink/60">Loading…</p>;
   if (rows.length === 0) return <p className="text-sm text-ink/60">No grades recorded for this class yet.</p>;
   const teacher = !childId;
+  const overall =
+    settings?.showOverallGrade && childId
+      ? overallPercent(
+          settings.gradeCalculation,
+          rows.filter((r) => r.percent != null).map((r) => ({ percent: Number(r.percent), categoryId: cats.find((c) => c.assessmentTypeId && c.assessmentTypeId === r.assessment_type_id)?.id ?? null })),
+          cats,
+        )
+      : null;
   return (
+    <>
+      {overall !== null && (
+        <p className="mb-4 rounded-xl bg-teal-50 px-4 py-3 text-sm text-teal-900">
+          Overall grade: <span className="text-base font-semibold tabular-nums">{overall}%</span>
+          <span className="ml-2 text-xs text-teal-900/70">{settings?.gradeCalculation === "weighted" ? "weighted by category" : "average of all results"}</span>
+        </p>
+      )}
     <div className="-mx-5 overflow-x-auto">
       <table className="w-full min-w-[480px] text-left text-sm">
         <thead>
@@ -145,25 +118,30 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
         </tbody>
       </table>
     </div>
+    </>
   );
 }
 
 /**
- * One class's own page, laid out like a Moodle course page: coloured
- * banner, breadcrumb, then tabs (Moodle's secondary navigation). The
- * default "Course" tab is Moodle's weekly format: week-by-week sections of
- * lessons, assignments and graded work, with a course index on the left.
- * The tab lives in the URL (?tab=grades) so it survives refresh.
+ * One class's own page: coloured banner, breadcrumb, then the class
+ * sections as tabs: Stream (announcements, upcoming), Classwork (grouped by
+ * topic), Lessons (the week-by-week course view), People, Grades and, for
+ * staff, Settings. The tab lives in the URL (?tab=grades) so it survives a
+ * refresh. Older links (?tab=course, assignments, participants,
+ * announcements) still land on the matching new tab.
  */
-type TabKey = "course" | "assignments" | "grades" | "participants" | "announcements";
+type TabKey = "stream" | "classwork" | "lessons" | "people" | "grades" | "settings";
 
 const TAB_LABELS: Record<TabKey, string> = {
-  course: "Course",
-  assignments: "Assignments",
+  stream: "Stream",
+  classwork: "Classwork",
+  lessons: "Lessons",
+  people: "People",
   grades: "Grades",
-  participants: "Participants",
-  announcements: "Announcements",
+  settings: "Settings",
 };
+
+const TAB_ALIASES: Record<string, TabKey> = { course: "lessons", assignments: "classwork", participants: "people", announcements: "stream" };
 
 export function ClassPage({ viewer }: { viewer: ClassViewer }) {
   const params = useSearchParams();
@@ -173,9 +151,10 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
   const childQuery = viewer.kind === "parent" ? `&child=${viewer.childId}` : "";
   const isStaff = viewer.kind === "teacher" || viewer.kind === "staff";
 
-  const tabs: TabKey[] = isStaff ? ["course", "assignments", "grades", "participants", "announcements"] : ["course", "assignments", "grades", "announcements"];
-  const requested = params.get("tab") as TabKey | null;
-  const tab: TabKey = requested && tabs.includes(requested) ? requested : "course";
+  const tabs: TabKey[] = isStaff ? ["stream", "classwork", "lessons", "people", "grades", "settings"] : ["stream", "classwork", "lessons", "people", "grades"];
+  const rawTab = params.get("tab") || "";
+  const requested = (TAB_ALIASES[rawTab] ?? rawTab) as TabKey;
+  const tab: TabKey = tabs.includes(requested) ? requested : "stream";
   const classHref = (t: string) => `${area}/class?id=${classId}${childQuery}&tab=${t}`;
 
   useEffect(() => {
@@ -256,32 +235,19 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
         />
       )}
 
-      {tab === "course" && !isStaff && (
-        <div className="mb-6">
-          <MeetYourTeachers classId={cls.id} />
-        </div>
-      )}
+      {tab === "stream" && <StreamTab classId={cls.id} viewer={viewer} area={area} classHref={classHref} />}
 
-      {tab === "course" && <CourseTab classId={cls.id} viewer={viewer} routes={{ area, lessonBase, extra, classHref }} />}
+      {tab === "classwork" && <ClassworkTab classId={cls.id} viewer={viewer} classHref={classHref} />}
 
-      {tab === "assignments" &&
-        (viewer.kind === "student" || viewer.kind === "parent" ? (
-          <Panel title="Assignments">
-            <HomeworkForChild childId={viewer.childId} canSubmit={viewer.kind === "student"} classId={cls.id} />
+      {tab === "lessons" && <CourseTab classId={cls.id} viewer={viewer} routes={{ area, lessonBase, extra, classHref }} />}
+
+      {tab === "people" &&
+        (isStaff ? (
+          <Panel title="People">
+            <ParticipantsTab classId={cls.id} />
           </Panel>
         ) : (
-          <Panel
-            title="Assignments"
-            action={
-              viewer.kind === "teacher" ? (
-                <Link href="/teach/homework" className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900">
-                  + Set homework
-                </Link>
-              ) : undefined
-            }
-          >
-            <TeacherHomework classId={cls.id} />
-          </Panel>
+          <MeetYourTeachers classId={cls.id} />
         ))}
 
       {tab === "grades" && (
@@ -299,15 +265,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
         </Panel>
       )}
 
-      {tab === "participants" && isStaff && (
-        <Panel title="Participants">
-          <ParticipantsTab classId={cls.id} />
-        </Panel>
-      )}
-
-      {tab === "announcements" && (
-        <AnnouncementsFeed classIds={[cls.id]} includeSchool={false} canPost={isStaff} postClassId={cls.id} postScope="class" />
-      )}
+      {tab === "settings" && isStaff && <ClassSettingsTab classId={cls.id} className={cls.name} subject={cls.subject} canRename={viewer.kind === "staff"} />}
     </div>
   );
 }

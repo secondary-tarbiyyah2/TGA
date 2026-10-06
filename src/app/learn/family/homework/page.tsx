@@ -43,7 +43,7 @@ function FamilyHomeworkContent() {
           ))}
         </select>
       )}
-      <div className="mt-6">{selected ? <HomeworkForChild childId={selected} canSubmit={false} canResubmit /> : <p className="text-sm text-ink/60">Loading…</p>}</div>
+      <div className="mt-6">{selected ? <HomeworkForChild childId={selected} canSubmit canResubmit /> : <p className="text-sm text-ink/60">Loading…</p>}</div>
     </div>
   );
 }

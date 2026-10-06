@@ -10,6 +10,7 @@ import { LearnShell } from "@/components/learn/LearnShell";
 import { TeachNow } from "@/components/learn/teach/TeachNow";
 import { TimetableGrid } from "@/components/learn/TimetableGrid";
 import { PrintButton } from "@/components/learn/PrintButton";
+import { PrintScope } from "@/components/learn/printScope";
 import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 import { EnrichmentSupervisorLink } from "@/components/learn/enrichment/SupervisorLink";
 import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
@@ -109,7 +110,9 @@ function TeachContent() {
             <PrintButton />
             <ReportConcernLink />
           </div>
-          {slots === null ? <div className="h-40 animate-pulse rounded-lg bg-cream" /> : <TimetableGrid slots={slots} showClassLabel />}
+          <PrintScope title="My timetable">
+            {slots === null ? <div className="h-40 animate-pulse rounded-lg bg-cream" /> : <TimetableGrid slots={slots} showClassLabel />}
+          </PrintScope>
         </div>
       </details>
 

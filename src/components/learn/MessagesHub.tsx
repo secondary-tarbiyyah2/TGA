@@ -58,6 +58,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
   const [picking, setPicking] = useState(false);
   const [query, setQuery] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [directoryFailed, setDirectoryFailed] = useState(false);
   const [unread, setUnread] = useState<Record<string, number>>({});
 
   const load = useCallback(async () => {
@@ -69,26 +70,19 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
     if (!user) return;
     setMe(user.id);
 
+    // The directory is a SECURITY DEFINER RPC (0085) that applies the
+    // safeguarding rules server-side: staff see staff and the families of their
+    // classes, parents see their children's teachers and the office. There is
+    // deliberately no client-side fallback onto user_roles/profiles: RLS hides
+    // other people there, which is what produced the empty list before.
     const dir = await supabase.rpc("message_directory");
     if (dir.error) {
-      // Fallback: build the list straight from roles + profiles (works for staff,
-      // who can read both) so messaging never goes blank if the RPC misbehaves.
-      const { data: roleRows, error: rErr } = await supabase.from("user_roles").select("user_id, role");
-      if (rErr || !roleRows) {
-        setPeople([]);
-        setError(`Couldn't load the list of people (${dir.error.message}).`);
-      } else {
-        const ids = [...new Set((roleRows as { user_id: string; role: string }[]).map((r) => r.user_id))].filter((id) => id !== user.id);
-        const { data: profs } = await supabase.from("profiles").select("id, full_name").in("id", ids);
-        const names = new Map(((profs as { id: string; full_name: string | null }[]) || []).map((p) => [p.id, p.full_name || "Unnamed"]));
-        const byUser = new Map<string, string[]>();
-        for (const r of roleRows as { user_id: string; role: string }[]) {
-          if (r.user_id === user.id || r.role === "student") continue;
-          byUser.set(r.user_id, [...(byUser.get(r.user_id) || []), r.role]);
-        }
-        setPeople([...byUser.entries()].map(([id, roles]) => ({ user_id: id, full_name: names.get(id) || "Unnamed", roles: [...new Set(roles)], detail: null })).sort((a, b) => a.full_name.localeCompare(b.full_name)));
-      }
+      setPeople([]);
+      setDirectoryFailed(true);
+      setError(`Couldn't load the list of people to message: ${dir.error.message}`);
     } else {
+      setDirectoryFailed(false);
+      setError(null);
       setPeople((dir.data as Person[]) || []);
     }
 
@@ -178,18 +172,18 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
   const activeOther = activeThread ? byId.get(otherOf(activeThread) || "") : undefined;
 
   const loading = people === null || threads === null;
-  const nobodyToMessage = people !== null && people.length === 0;
+  const nobodyToMessage = people !== null && people.length === 0 && !directoryFailed;
 
   return (
     <>
       <PageHeader
         title="Messages"
-        subtitle="Write to any teacher, admin or parent at the school. Staff review messages for safeguarding as part of normal practice."
+        subtitle="Message the teachers, office and families you work with. Staff review messages for safeguarding as part of normal practice."
         actions={
           <button
             type="button"
             onClick={() => setPicking(true)}
-            disabled={loading || nobodyToMessage}
+            disabled={loading || nobodyToMessage || directoryFailed}
             className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50"
           >
             + New message

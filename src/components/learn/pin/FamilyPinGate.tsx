@@ -5,42 +5,59 @@ import { useCallback, useEffect, useState } from "react";
 import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PinPad } from "./PinPad";
-import {
-  PIN_IDLE_MS,
-  PIN_LOCK_EVENT,
-  dismissPrompt,
-  knownHasPin,
-  lockPin,
-  promptDismissed,
-  readUnlocked,
-  touchUnlocked,
-  useHasPin,
-} from "./pinState";
+import { PinSetup } from "./PinSetup";
+import { PIN_LOCK_EVENT, knownHasPin, lockPin, readUnlocked, rememberHasPin, touchUnlocked, useHasPin } from "./pinState";
+
+// Leaving the family area (switching to the student/teacher/admin area, or
+// signing out) locks it again. The lock is scheduled for the next tick and
+// cancelled by a re-mount, so React strict-mode's mount/unmount/mount in
+// development doesn't lock a gate that is merely being re-created.
+let pendingLock: ReturnType<typeof setTimeout> | null = null;
 
 /**
  * Full-screen Parent PIN gate in front of /family/*. UX protection against
  * children on a shared device, not a server security boundary (RLS still
- * guards the data). Fail-open on RPC errors unless a PIN is known to exist.
+ * guards the data).
+ *
+ *  - The PIN is compulsory: a parent without one must create a 6-digit PIN
+ *    before the family area opens (no "not now").
+ *  - An older 4-5 digit PIN is accepted once, then must be replaced by a
+ *    6-digit one before entry.
+ *  - Every time the user switches into the family area the PIN is asked
+ *    again (leaving the area locks it), and it also re-locks after 5 idle
+ *    minutes.
+ *  - Fails open only when the PIN service can't be reached AND no PIN is
+ *    known to exist, so an outage never locks every parent out.
  */
 export function FamilyPinGate({ children }: { children: React.ReactNode }) {
   const { session, roles, rolesLoaded } = useLearnSession();
   const user = session && session !== "loading" ? session.user : null;
   const uid = user?.id ?? null;
   const isParent = roles.some((r) => r.role === "parent");
-  const { has, error: hasErr, loaded, reload } = useHasPin(uid, !!uid && rolesLoaded && isParent);
+  const { has, status, error: hasErr, loaded, reload } = useHasPin(uid, !!uid && rolesLoaded && isParent);
   const [unlocked, setUnlocked] = useState(false);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
-  const [dismissed, setDismissed] = useState(true);
+  // Set after a correct old-format PIN: it's the "current PIN" for the forced re-set.
+  const [legacyPin, setLegacyPin] = useState<string | null>(null);
 
   const known = uid ? knownHasPin(uid) : false;
   const pinExists = has === true || (has === null && hasErr && known);
 
   useEffect(() => {
     if (!uid) return;
+    if (pendingLock) {
+      clearTimeout(pendingLock);
+      pendingLock = null;
+    }
     // eslint-disable-next-line react-hooks/set-state-in-effect -- reading sessionStorage after mount
     setUnlocked(readUnlocked(uid) !== null);
-    setDismissed(promptDismissed(uid));
+    return () => {
+      pendingLock = setTimeout(() => {
+        pendingLock = null;
+        lockPin(uid);
+      }, 0);
+    };
   }, [uid]);
 
   // Idle expiry + activity refresh + explicit Lock from the account menu.
@@ -76,21 +93,45 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
       setBusy(true);
       setErr(null);
       const { data, error } = await supabase.rpc("verify_my_pin", { p_pin: pin });
-      setBusy(false);
       if (error) {
+        setBusy(false);
         setErr("We couldn't check your PIN just now. Please try again.");
         return;
       }
       if (data === true) {
+        // An old 4-5 digit PIN verifies once, then must be replaced.
+        const st = await supabase.rpc("my_pin_status");
+        setBusy(false);
+        if (st.data === "reset" || !/^[0-9]{6}$/.test(pin)) {
+          setLegacyPin(pin);
+          return;
+        }
         touchUnlocked(uid);
         setUnlocked(true);
         return;
       }
       const { data: rem } = await supabase.rpc("my_pin_lock_remaining");
+      setBusy(false);
       const secs = typeof rem === "number" ? rem : 0;
       setErr(secs > 0 ? `Too many wrong attempts. Try again in ${Math.ceil(secs / 60)} minute(s).` : "That PIN isn't right.");
     },
     [uid],
+  );
+
+  const savePin = useCallback(
+    async (pin: string, current: string | null): Promise<string | null> => {
+      const supabase = getSupabaseClient();
+      if (!supabase || !uid) return "We couldn't save your PIN just now. Please try again.";
+      const { error } = await supabase.rpc("set_my_pin", { p_pin: pin, p_current: current });
+      if (error) return error.message;
+      rememberHasPin(uid, true);
+      setLegacyPin(null);
+      touchUnlocked(uid);
+      setUnlocked(true);
+      void reload();
+      return null;
+    },
+    [uid, reload],
   );
 
   // Not a parent (or still working it out): never block. Parent roles load
@@ -98,11 +139,32 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
   if (!user || !rolesLoaded || !isParent) return <>{children}</>;
   if (!loaded) return <p className="py-10 text-center text-sm text-ink/60">Loading…</p>;
 
+  // Compulsory: no PIN yet means create one before anything else.
+  if (has === false && status === "none") {
+    return (
+      <PinSetup
+        title="Create your Parent PIN"
+        intro="A 6-digit PIN protects the family area when you share this device with your children. It's required."
+        save={(pin) => savePin(pin, null)}
+      />
+    );
+  }
+
+  if (legacyPin !== null) {
+    return (
+      <PinSetup
+        title="Choose a new 6-digit PIN"
+        intro="PINs are now exactly 6 digits. Please replace your old PIN to continue."
+        save={(pin) => savePin(pin, legacyPin)}
+      />
+    );
+  }
+
   if (pinExists && !unlocked) {
     return (
       <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-white px-4">
         <h1 className="font-serif text-h2 font-semibold text-ink">Parent PIN</h1>
-        <p className="mb-6 mt-1 max-w-xs text-center text-sm text-ink/60">Enter your PIN to open the family area.</p>
+        <p className="mb-6 mt-1 max-w-xs text-center text-sm text-ink/60">Enter your 6-digit PIN to open the family area.</p>
         {hasErr && !has && <p className="mb-3 text-center text-sm text-red-700">We couldn&apos;t reach the server to check your PIN settings.</p>}
         <PinPad onSubmit={submit} busy={busy} error={err} />
         <div className="mt-6 flex gap-4 text-xs text-ink/55">
@@ -120,29 +182,7 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
     );
   }
 
-  return (
-    <>
-      {has === false && !dismissed && uid && (
-        <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-gold-light bg-cream px-4 py-3 text-sm text-ink">
-          <span className="flex-1">Sharing this device with your children? Set a Parent PIN so they can&apos;t open your family area.</span>
-          <Link href="/account" className="font-semibold text-gold-700 underline">
-            Set a PIN
-          </Link>
-          <button
-            type="button"
-            onClick={() => {
-              dismissPrompt(uid);
-              setDismissed(true);
-            }}
-            className="text-ink/60 underline"
-          >
-            Not now
-          </button>
-        </div>
-      )}
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }
 
 export { lockPin };

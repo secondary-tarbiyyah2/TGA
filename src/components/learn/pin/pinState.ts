@@ -3,7 +3,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
-export const PIN_IDLE_MS = 30 * 60 * 1000;
+/** Exactly this many digits (enforced in the UI and by set_my_pin). */
+export const PIN_LENGTH = 6;
+/** Short idle limit: the family area locks again after 5 minutes without activity. */
+export const PIN_IDLE_MS = 5 * 60 * 1000;
 export const PIN_LOCK_EVENT = "learn-pin-lock";
 const unlockKey = (uid: string) => `learn.pin.unlocked.${uid}`;
 const knownKey = (uid: string) => `learn.pin.has.${uid}`;
@@ -71,19 +74,33 @@ export function dismissPrompt(uid: string) {
   } catch {}
 }
 
-/** has_my_pin(): true / false, or null while loading / on error (unknown). */
+export type PinStatus = "none" | "ok" | "reset";
+
+/**
+ * my_pin_status(): 'none' (no PIN yet: must create one), 'reset' (old 4-5
+ * digit PIN: must choose a 6-digit one at next unlock), 'ok'. Falls back to
+ * has_my_pin() if the newer RPC isn't deployed yet. `has` is null while
+ * loading / on error (unknown).
+ */
 export function useHasPin(userId: string | null, enabled: boolean) {
-  const [state, setState] = useState<{ has: boolean | null; error: boolean; loaded: boolean }>({ has: null, error: false, loaded: false });
+  const [state, setState] = useState<{ has: boolean | null; status: PinStatus | null; error: boolean; loaded: boolean }>({ has: null, status: null, error: false, loaded: false });
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
     if (!supabase || !userId) return;
-    const { data, error } = await supabase.rpc("has_my_pin");
-    if (error) {
-      setState({ has: null, error: true, loaded: true });
-      return;
+    let status: PinStatus | null = null;
+    const st = await supabase.rpc("my_pin_status");
+    if (!st.error && (st.data === "none" || st.data === "ok" || st.data === "reset")) {
+      status = st.data;
+    } else {
+      const { data, error } = await supabase.rpc("has_my_pin");
+      if (error) {
+        setState({ has: null, status: null, error: true, loaded: true });
+        return;
+      }
+      status = data ? "ok" : "none";
     }
-    rememberHasPin(userId, !!data);
-    setState({ has: !!data, error: false, loaded: true });
+    rememberHasPin(userId, status !== "none");
+    setState({ has: status !== "none", status, error: false, loaded: true });
   }, [userId]);
   useEffect(() => {
     if (!enabled || !userId) return;

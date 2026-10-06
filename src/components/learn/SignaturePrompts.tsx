@@ -3,6 +3,7 @@
 import { absoluteFileUrl } from "@/lib/learn/fileLinks";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { openSignableFile } from "@/lib/learn/documentUpload";
 import { openSignedPdf } from "@/app/learn/documents/signedPdf";
 import { SignatureCapture, type SignatureCaptureHandle } from "@/components/learn/documents/SignatureCapture";
 import { saveDefaultSignature, uploadSignatureImage } from "@/components/learn/documents/signatureImage";
@@ -13,6 +14,8 @@ type OutstandingDoc = {
   current_asset_id: string | null;
   file_url: string | null;
   body: string | null;
+  /** An uploaded PDF in the private signable-documents bucket (opened via a short-lived link). */
+  file_path?: string | null;
 };
 
 /**
@@ -44,6 +47,13 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
     if (!supabase) return;
     const { data } = await supabase.from("my_outstanding_signatures").select("document_id, title, current_asset_id, file_url, body");
     const list = (data as OutstandingDoc[] | null) || [];
+    // Uploaded files live in a private bucket: look up which documents have one.
+    const ids = list.map((d) => d.document_id);
+    if (ids.length > 0) {
+      const { data: files } = await supabase.from("signable_documents").select("id, file_path").in("id", ids);
+      const paths = new Map(((files as { id: string; file_path: string | null }[] | null) || []).map((f) => [f.id, f.file_path]));
+      for (const d of list) d.file_path = paths.get(d.document_id) ?? null;
+    }
     setDocs(list);
     onLoaded?.(list.length);
     // Email links look like /documents?sign=<document id>: open that one.
@@ -172,6 +182,18 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <span className="min-w-0 font-medium text-ink">{d.title}</span>
                     <div className="flex flex-wrap items-center gap-2">
+                      {!d.file_url && d.file_path && (
+                        <button
+                          type="button"
+                          onClick={async () => {
+                            if (!supabase || !d.file_path) return;
+                            if (!(await openSignableFile(supabase, d.file_path))) setError("We couldn't open the document just now. Please try again.");
+                          }}
+                          className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-teal-700 hover:bg-cream"
+                        >
+                          Open document
+                        </button>
+                      )}
                       {d.file_url && (
                         <a href={absoluteFileUrl(d.file_url)} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-teal-700 hover:bg-cream">
                           Open document
@@ -191,7 +213,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
                           {d.body}
                         </div>
                       )}
-                      {!d.body && !d.file_url && <p className="text-sm text-ink/60">This document has no text attached — please check with the school office if you need a copy.</p>}
+                      {!d.body && !d.file_url && !d.file_path && <p className="text-sm text-ink/60">This document has no text attached — please check with the school office if you need a copy.</p>}
                       <label className="block text-sm text-ink">
                         Type your full name
                         <input

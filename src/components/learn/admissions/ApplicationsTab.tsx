@@ -4,6 +4,8 @@ import { useCallback, useEffect, useMemo, useState, type DragEvent } from "react
 import { Card } from "@/components/learn/Card";
 import { ApplicationDrawer, type MoveOptions, type StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
 import { autoToast, fetchAdmissionsData, sendTemplateEmail } from "@/components/learn/admissions/admissionsData";
+import { createAccountsFor, type AccountsResult } from "@/components/learn/admissions/accountsApi";
+import type { IssuedCredentials } from "@/components/learn/people/studentAccounts";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
@@ -45,12 +47,14 @@ function csvCell(v: unknown): string {
 
 function ApplicationCard({
   app,
+  familySize,
   onOpen,
   onMove,
   onDragStart,
   onDragEnd,
 }: {
   app: ApplicationRow;
+  familySize: number;
   onOpen: (id: string) => void;
   onMove: (id: string, status: ApplicationStatus, opts?: MoveOptions) => Promise<boolean>;
   onDragStart: (e: DragEvent<HTMLDivElement>, id: string) => void;
@@ -81,6 +85,7 @@ function ApplicationCard({
           {app.year_group_applying} · age {ageFromDob(app.child_dob) || "?"}
         </span>
         <span className="block text-xs text-ink/60">{app.parent_name}</span>
+        {familySize > 1 && <span className="mt-0.5 inline-block rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900">{(app.sibling_index ?? 1) > 1 ? "Sibling" : `Family of ${familySize}`}</span>}
         <span className="block text-xs text-ink/50">Received {fmtShort(app.created_at)}</span>
         <span className="mt-1.5 flex items-center gap-1" role="img" aria-label={pips.map((p) => `${p.label} ${PIP_WORD[p.state]}`).join(", ")}>
           {pips.map((p) => (
@@ -118,13 +123,15 @@ function Column({
   setDragOver,
   onDropOn,
   cardProps,
+  familySizes,
 }: {
   status: ApplicationStatus;
   apps: ApplicationRow[];
   dragOver: ApplicationStatus | null;
   setDragOver: (s: ApplicationStatus | null) => void;
   onDropOn: (e: DragEvent<HTMLDivElement>, s: ApplicationStatus) => void;
-  cardProps: Omit<Parameters<typeof ApplicationCard>[0], "app">;
+  cardProps: Omit<Parameters<typeof ApplicationCard>[0], "app" | "familySize">;
+  familySizes: Map<string, number>;
 }) {
   return (
     <div
@@ -143,7 +150,7 @@ function Column({
       <div className="space-y-2">
         {apps.length === 0 && <p className="py-4 text-center text-xs text-ink/40">Nothing here</p>}
         {apps.map((a) => (
-          <ApplicationCard key={a.id} app={a} {...cardProps} />
+          <ApplicationCard key={a.id} app={a} familySize={a.family_id ? familySizes.get(a.family_id) ?? 1 : 1} {...cardProps} />
         ))}
       </div>
     </div>
@@ -168,6 +175,8 @@ export function ApplicationsTab() {
   const [showSideline, setShowSideline] = useState(false);
   const [actionError, setActionError] = useState<string | null>(null);
   const [notice, setNotice] = useState<{ ok: boolean; text: string } | null>(null);
+  // Temporary pupil passwords are shown once, here, and never stored in the browser.
+  const [credentials, setCredentials] = useState<IssuedCredentials[]>([]);
 
   const fetchAll = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -229,6 +238,26 @@ export function ApplicationsTab() {
       setActionError("Couldn't copy automatically. Select the link and copy it by hand.");
     }
   }
+
+  const runAccounts = useCallback(
+    async (app: ApplicationRow, opts?: { resend?: boolean; classIds?: string[]; createStudentLogin?: boolean }): Promise<AccountsResult> => {
+      const r = await createAccountsFor(app, opts);
+      if (r.ok) {
+        const now = new Date().toISOString();
+        setRows((list) =>
+          list.map((x) =>
+            x.id === app.id
+              ? { ...x, parent_profile_id: r.parentProfileId ?? x.parent_profile_id, child_id: r.childId ?? x.child_id, student_profile_id: r.studentProfileId ?? x.student_profile_id, accounts_created_at: x.accounts_created_at ?? now }
+              : x,
+          ),
+        );
+        if (r.credentials) setCredentials((c) => [...c, r.credentials as IssuedCredentials]);
+      }
+      setNotice({ ok: r.ok && r.emailSent, text: r.notes.join(" ") || (r.ok ? "Accounts are ready." : "Accounts could not be created.") });
+      return r;
+    },
+    [],
+  );
 
   const moveTo = useCallback(
     async (id: string, status: ApplicationStatus, opts?: MoveOptions): Promise<boolean> => {
@@ -301,9 +330,13 @@ export function ApplicationsTab() {
           }
         })();
       }
+      // Accepting creates the parent and pupil accounts automatically (staff can tweak classes and re-run in the Process tab).
+      if (status === "accepted" && previous !== "accepted" && !current.accounts_created_at && !opts?.skipAccounts) {
+        void runAccounts({ ...current, status });
+      }
       return true;
     },
-    [rows, isHeadteacher]
+    [rows, isHeadteacher, runAccounts]
   );
 
   const patch = useCallback(async (id: string, p: ApplicationPatch): Promise<boolean> => {
@@ -329,6 +362,15 @@ export function ApplicationsTab() {
   const byStatus = (s: ApplicationStatus) => filtered.filter((r) => r.status === s);
   const sidelineCount = filtered.filter((r) => SIDELINE_STATUSES.includes(r.status)).length;
   const selected = rows.find((r) => r.id === selectedId) || null;
+  const familySizes = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const r of rows) if (r.family_id) m.set(r.family_id, (m.get(r.family_id) ?? 0) + 1);
+    return m;
+  }, [rows]);
+  const selectedFamily = useMemo(
+    () => (selected ? (selected.family_id ? rows.filter((r) => r.family_id === selected.family_id).sort((a, b) => (a.sibling_index ?? 0) - (b.sibling_index ?? 0)) : [selected]) : []),
+    [rows, selected],
+  );
 
   function handleDragStart(e: DragEvent<HTMLDivElement>, id: string) {
     e.dataTransfer.setData("text/plain", id);
@@ -450,7 +492,7 @@ export function ApplicationsTab() {
           {filtered.length === 0 && <p className="text-sm text-ink/60">No applications match your search.</p>}
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
             {PIPELINE_STATUSES.map((s) => (
-              <Column key={s} status={s} apps={byStatus(s)} dragOver={dragOver} setDragOver={setDragOver} onDropOn={handleDrop} cardProps={cardProps} />
+              <Column key={s} status={s} apps={byStatus(s)} dragOver={dragOver} setDragOver={setDragOver} onDropOn={handleDrop} cardProps={cardProps} familySizes={familySizes} />
             ))}
           </div>
 
@@ -466,7 +508,7 @@ export function ApplicationsTab() {
             {showSideline && (
               <div className="mt-3 grid gap-3 md:grid-cols-3">
                 {SIDELINE_STATUSES.map((s) => (
-                  <Column key={s} status={s} apps={byStatus(s)} dragOver={dragOver} setDragOver={setDragOver} onDropOn={handleDrop} cardProps={cardProps} />
+                  <Column key={s} status={s} apps={byStatus(s)} dragOver={dragOver} setDragOver={setDragOver} onDropOn={handleDrop} cardProps={cardProps} familySizes={familySizes} />
                 ))}
               </div>
             )}
@@ -474,7 +516,7 @@ export function ApplicationsTab() {
         </>
       )}
 
-      {selected && <ApplicationDrawer key={selected.id} app={selected} staff={staff} onClose={closeDrawer} onMove={moveTo} onPatch={patch} />}
+      {selected && <ApplicationDrawer key={selected.id} app={selected} staff={staff} onClose={closeDrawer} onMove={moveTo} onPatch={patch} family={selectedFamily} credentials={credentials} onOpenApplication={setSelectedId} onCreateAccounts={runAccounts} onDismissCredentials={(k) => setCredentials((c) => c.filter((x) => x.key !== k))} />}
     </div>
   );
 }

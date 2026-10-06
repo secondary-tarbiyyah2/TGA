@@ -15,8 +15,18 @@ $ctx = stream_context_create(['http' => ['timeout' => 15, 'ignore_errors' => tru
 $body = @file_get_contents($url, false, $ctx);
 $status = 502;
 if (isset($http_response_header[0]) && preg_match('/\s(\d{3})\s/', $http_response_header[0], $m)) $status = (int)$m[1];
+$ok = $body !== false && $status >= 200 && $status < 300;
 http_response_code($body === false ? 502 : $status);
-header('Content-Type: text/calendar; charset=utf-8');
+if ($ok) {
+    // Subscription clients (Outlook, Google, Apple) need a real calendar
+    // response shown inline; "attachment" makes browsers download it instead.
+    header('Content-Type: text/calendar; charset=utf-8');
+    header('Content-Disposition: inline; filename="tarbiyyah-calendar.ics"');
+} else {
+    header('Content-Type: text/plain; charset=utf-8');
+}
 header('Cache-Control: private, max-age=300');
 header('X-Robots-Tag: noindex');
+header('X-Content-Type-Options: nosniff');
+if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'HEAD') exit;
 echo $body === false ? '' : $body;

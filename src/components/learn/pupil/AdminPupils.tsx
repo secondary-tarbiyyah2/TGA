@@ -65,6 +65,16 @@ export function AdminPupils() {
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
 
       <div className="space-y-4">
+        {pupils !== null && counts.incomplete > 0 && (
+          <div role="status" className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
+            <span>
+              <strong>{counts.incomplete}</strong> of {counts.all} pupil{counts.all === 1 ? "" : "s"} {counts.incomplete === 1 ? "has" : "have"} incomplete details. Families see a notice on their dashboard until each record is complete.
+            </span>
+            <button type="button" onClick={() => setChip("incomplete")} className="rounded-lg border border-red-300 bg-white px-3 py-1 text-xs font-semibold text-red-800 hover:bg-red-100">
+              Show incomplete
+            </button>
+          </div>
+        )}
         <div className="flex flex-wrap gap-2">
           <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className={`${selectCls} min-w-[12rem] flex-1`} />
           <select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className={selectCls}>

@@ -1,4 +1,5 @@
 import { getSupabaseClient } from "@/lib/supabase/client";
+import type { HomeworkFileRef } from "@/lib/learn/homeworkFiles";
 
 // Homework feedback loop (supabase/migrations/0071_homework_feedback.sql).
 // Teacher feedback is typed text and/or a short audio note kept in the private
@@ -15,6 +16,8 @@ export type HomeworkFeedback = {
   feedback_text: string | null;
   audio_path: string | null;
   audio_seconds: number | null;
+  mark: number | null;
+  marked_files: HomeworkFileRef[];
   resubmit_count: number;
   given_at: string;
   requested_at: string | null;
@@ -22,7 +25,7 @@ export type HomeworkFeedback = {
 };
 
 export const FEEDBACK_COLUMNS =
-  "id, submission_id, status, feedback_text, audio_path, audio_seconds, resubmit_count, given_at, requested_at, resubmitted_at";
+  "id, submission_id, status, feedback_text, audio_path, audio_seconds, mark, marked_files, resubmit_count, given_at, requested_at, resubmitted_at";
 
 export const FEEDBACK_STATUS_META: Record<FeedbackStatus, { label: string; className: string }> = {
   feedback_given: { label: "Feedback given", className: "bg-teal-100 text-teal-800" },
@@ -73,12 +76,17 @@ export function formatSeconds(total: number): string {
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 }
 
-/** A short-lived signed URL; createSignedUrl enforces the same RLS as a direct read. */
-export async function getFeedbackAudioUrl(path: string): Promise<string | null> {
+/**
+ * The audio note as a same-origin blob: URL (the caller revokes it). The bytes are
+ * fetched with the viewer's own access, so no Supabase address reaches the page.
+ */
+export async function getFeedbackAudioBlobUrl(path: string): Promise<string | null> {
   const supabase = getSupabaseClient();
   if (!supabase) return null;
-  const { data } = await supabase.storage.from(FEEDBACK_AUDIO_BUCKET).createSignedUrl(path, 300);
-  return data?.signedUrl || null;
+  const { data, error } = await supabase.storage.from(FEEDBACK_AUDIO_BUCKET).download(path);
+  if (error || !data) return null;
+  const type = path.endsWith(".webm") ? "audio/webm" : "audio/mp4";
+  return URL.createObjectURL(new Blob([data], { type }));
 }
 
 /** Uploads a feedback audio note into <homework_id>/<child_id>/ and returns its object name. */

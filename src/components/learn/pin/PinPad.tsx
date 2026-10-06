@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/** 4-6 digit entry with an on-screen keypad (and physical keyboard support). */
+/** Exactly 6-digit entry with an on-screen keypad (and physical keyboard support). */
 export function PinPad({
   onSubmit,
   busy,
@@ -21,7 +21,7 @@ export function PinPad({
       if (/^[0-9]$/.test(e.key)) setPin((p) => (p.length < 6 ? p + e.key : p));
       else if (e.key === "Backspace") setPin((p) => p.slice(0, -1));
       else if (e.key === "Enter") setPin((p) => {
-        if (p.length >= 4 && !busy) onSubmit(p);
+        if (p.length === 6 && !busy) onSubmit(p);
         return p;
       });
     }
@@ -54,7 +54,7 @@ export function PinPad({
             <button
               key={k}
               type="button"
-              disabled={busy || pin.length < 4}
+              disabled={busy || pin.length !== 6}
               onClick={() => onSubmit(pin)}
               className="h-14 rounded-xl bg-gold-700 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50"
             >

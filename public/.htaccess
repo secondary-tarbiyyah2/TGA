@@ -36,6 +36,13 @@ RewriteOptions IgnoreInherit
 # confirmed working for a real staff member — see SETUP.md.
 RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 
+# Policy documents (/policies/<slug>.pdf or .docx) are served live by
+# policy.php, which streams whatever is currently uploaded in the admin
+# portal and falls back to the PDF bundled in /policies/ — so a policy edit
+# is live immediately, with no rebuild, on an address that stays on this
+# domain. See deploy/policy.php.
+RewriteRule ^policies/([a-z0-9][a-z0-9-]*)\.(pdf|docx)$ /policy.php?slug=$1&ext=$2 [L,QSA]
+
 # Sanity Studio (out/studio, built separately by `npm run sanity:build` — see
 # README) is a client-side-routed single-page app: any /studio/* request that
 # isn't a real file must fall back to /studio/index.html so its own router

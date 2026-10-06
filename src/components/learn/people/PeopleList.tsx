@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
+import { CredentialsCard } from "./StudentCredentials";
+import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
 import { CHIP_STYLES, GOLD_BUTTON, INPUT_CLASS, friendlyError, initials, invite, type Person } from "./shared";
 
 type Tab = "staff" | "families";
@@ -44,6 +46,7 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
   const [msg, setMsg] = useState<RowMsg | null>(null);
   const [loginOpen, setLoginOpen] = useState(false);
   const [loginEmail, setLoginEmail] = useState("");
+  const [creds, setCreds] = useState<IssuedCredentials | null>(null);
 
   const describe = (r: { emailSent?: boolean; setupLink?: string }, email: string): RowMsg =>
     r.emailSent
@@ -64,6 +67,26 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
       }
       const r = await invite(body);
       setMsg(r.ok ? describe(r, person.email) : { kind: "err", text: friendlyError(r) });
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  // Username login: no email needed. The password is shown once here and emailed to the parent.
+  const issueUsernameLogin = async (action: "create" | "reset") => {
+    if (!person.childId) return;
+    if (action === "reset" && !window.confirm(`Generate a new temporary password for ${person.name}? The old one stops working.`)) return;
+    setBusy(true);
+    setMsg(null);
+    try {
+      const r = await studentAccountAction(action, person.childId, person.name);
+      if (!r.ok) {
+        setMsg({ kind: "err", text: r.text });
+        return;
+      }
+      setCreds(r.creds);
+      setLoginOpen(false);
+      onChanged();
     } finally {
       setBusy(false);
     }
@@ -120,7 +143,7 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
             ))}
             {!person.profileId && <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-800">No login yet</span>}
           </div>
-          <p className="truncate text-xs text-ink/55">{[person.email, ...meta].filter(Boolean).join(" · ") || "—"}</p>
+          <p className="truncate text-xs text-ink/55">{[person.username ? `Username: ${person.username}` : null, person.email, ...meta].filter(Boolean).join(" · ") || "—"}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {person.profileId && person.roles.some((r) => r === "teacher" || r === "teaching_assistant_cover" || r === "head_teacher" || r === "admin") && (
@@ -134,8 +157,18 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
             </button>
           )}
           {!person.profileId && person.childId && (
+            <button type="button" className={btn} disabled={busy} onClick={() => void issueUsernameLogin("create")} title="Creates a username and temporary password. No email address needed.">
+              Give login (username)
+            </button>
+          )}
+          {!person.profileId && person.childId && (
             <button type="button" className={btn} onClick={() => setLoginOpen((o) => !o)}>
-              Give login
+              Use an email instead
+            </button>
+          )}
+          {person.username && person.childId && (
+            <button type="button" className={btn} disabled={busy} onClick={() => void issueUsernameLogin("reset")} title="Generates a new temporary password, shown once and emailed to the parent.">
+              Reset password
             </button>
           )}
           {person.profileId && person.email && (
@@ -151,6 +184,11 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
           <button type="button" disabled={busy || !loginEmail.trim()} onClick={giveLogin} className={GOLD_BUTTON}>
             {busy ? "Sending…" : "Send invite"}
           </button>
+        </div>
+      )}
+      {creds && (
+        <div className="mt-2 sm:ml-[52px]">
+          <CredentialsCard creds={creds} onDismiss={() => setCreds(null)} />
         </div>
       )}
       {msg && (
@@ -209,7 +247,7 @@ export function PeopleList({
     return inTab[tab].filter((p) => {
       if (roles.length && !p.roles.some((r) => roles.includes(r))) return false;
       if (!q) return true;
-      return [p.name, p.email, p.yearGroup, p.parentName, ...p.childNames, ...p.classNames].some((v) => (v || "").toLowerCase().includes(q));
+      return [p.name, p.email, p.username, p.yearGroup, p.parentName, ...p.childNames, ...p.classNames].some((v) => (v || "").toLowerCase().includes(q));
     });
   }, [tabDef, chip, search, inTab, tab]);
 

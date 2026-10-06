@@ -6,6 +6,26 @@ import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type Category = { id: string; label: string };
+/** One row of safeguarding_leads() (migration 0085): a name and why they receive concerns. Names only. */
+type Recipient = { full_name: string; kind: "dsl" | "head_teacher" };
+
+/** "A", "A and B", "A, B and C". */
+function joinList(items: string[]): string {
+  if (items.length <= 1) return items.join("");
+  return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
+}
+
+/**
+ * Who a reported concern goes to, by name: the Designated Safeguarding Lead(s)
+ * (the safeguarding_lead permission), and the Headteacher(s) who are not
+ * already named as a lead.
+ */
+function describeRecipients(recipients: Recipient[]): { dsl: string[]; heads: string[]; headIsAlsoDsl: boolean } {
+  const dsl = Array.from(new Set(recipients.filter((r) => r.kind === "dsl").map((r) => r.full_name)));
+  const allHeads = Array.from(new Set(recipients.filter((r) => r.kind === "head_teacher").map((r) => r.full_name)));
+  const heads = allHeads.filter((n) => !dsl.includes(n));
+  return { dsl, heads, headIsAlsoDsl: allHeads.length > 0 && heads.length === 0 };
+}
 
 /**
  * The reporting entry point every /learn role (staff, parent, student) can
@@ -19,6 +39,7 @@ function ReportConcernForm() {
   const { session, roles } = useLearnSession();
   const supabase = getSupabaseClient();
   const [categories, setCategories] = useState<Category[]>([]);
+  const [recipients, setRecipients] = useState<Recipient[]>([]);
   const [categoryId, setCategoryId] = useState("");
   const [subject, setSubject] = useState("");
   const [summary, setSummary] = useState("");
@@ -34,7 +55,13 @@ function ReportConcernForm() {
     // plain parent/student/teacher gets an empty list back here and falls
     // through to the free-text-only "Other" path below.
     supabase.from("safeguarding_categories").select("id, label").eq("active", true).order("label").then(({ data }) => setCategories((data as Category[]) || []));
+    // Names only, so everyone who can open this form can see who will read it.
+    supabase.rpc("safeguarding_leads").then(({ data, error: rpcError }) => {
+      if (!rpcError) setRecipients((data as Recipient[] | null) || []);
+    });
   }, [supabase]);
+
+  const { dsl, heads, headIsAlsoDsl } = describeRecipients(recipients);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,9 +90,23 @@ function ReportConcernForm() {
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h1 className="font-serif text-h2 font-semibold text-ink">Thank you</h1>
         <p className="mt-2 text-sm text-ink/70">
-          Your concern has been recorded and sent to the school&apos;s Safeguarding Lead. It is not visible to anyone else, including
-          you, once submitted — this matches how the school handles safeguarding concerns generally. If this is an emergency, please
-          contact emergency services or the school office directly rather than relying on this form.
+          Your concern has been recorded and sent to the school&apos;s Designated Safeguarding Lead
+          {dsl.length > 0 ? <>, <span className="font-medium text-ink">{joinList(dsl)}</span>,</> : ""}{" "}
+          {headIsAlsoDsl ? (
+            "who is also the Headteacher"
+          ) : (
+            <>
+              and to the Headteacher{heads.length > 0 ? <>, <span className="font-medium text-ink">{joinList(heads)}</span></> : ""}
+            </>
+          )}
+          .
+        </p>
+        <p className="mt-2 text-sm text-ink/70">
+          It is not visible to anyone else, including you, once it has been submitted. This is how the school handles all safeguarding
+          concerns.
+        </p>
+        <p className="mt-2 text-sm text-ink/70">
+          If this is an emergency, please contact the emergency services or the school office directly. Please do not rely on this form.
         </p>
       </div>
     );
@@ -75,9 +116,20 @@ function ReportConcernForm() {
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h1 className="font-serif text-h2 font-semibold text-ink">Report a concern</h1>
       <p className="mt-1 text-sm text-ink/60">
-        Use this form to raise any safeguarding or welfare concern — about a child, a member of staff, or anything else. It goes
-        directly and only to the school&apos;s Safeguarding Lead and Headteacher.
+        Use this form to raise any safeguarding or welfare concern, whether it is about a child, a member of staff, or anything else.
+        It goes directly, and only, to the school&apos;s Designated Safeguarding Lead and the Headteacher.
       </p>
+      {dsl.length > 0 && (
+        <p className="mt-2 text-sm text-ink/70">
+          Our Designated Safeguarding Lead {dsl.length === 1 ? "is" : "team is"} <span className="font-medium text-ink">{joinList(dsl)}</span>
+          {headIsAlsoDsl ? ", who is also the Headteacher" : ""}.{" "}
+          {heads.length > 0 && (
+            <>
+              The Headteacher {heads.length === 1 ? "is" : "team is"} <span className="font-medium text-ink">{joinList(heads)}</span>.
+            </>
+          )}
+        </p>
+      )}
       <form onSubmit={submit} className="mt-4 space-y-4">
         <label className="block text-sm text-ink">
           Who or what is this about?

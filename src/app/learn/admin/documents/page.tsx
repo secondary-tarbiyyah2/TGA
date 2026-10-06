@@ -7,6 +7,7 @@ import { PageHeader } from "@/components/learn/PageHeader";
 import { getPolicyLinks } from "@/lib/content";
 import { learnRoleLabel, useLearnPermission, type LearnRole } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { DOCX_MIME, UPLOAD_ACCEPT, extractDocxText, openSignableFile, storageObjectName, uploadKind, uploadProblem } from "@/lib/learn/documentUpload";
 import { RecordSignatureModal, type SignTarget } from "@/components/learn/documents/RecordSignatureModal";
 import { SignatureHistory } from "@/components/learn/documents/SignatureHistory";
 import { AUDIENCE_LABEL, audienceText, audienceToRoles, requestSignatures, rolesToAudience, type Audience } from "@/components/learn/documents/audience";
@@ -21,6 +22,8 @@ type SignableDoc = {
   source: "sanity" | "policy" | "portal";
   file_url: string | null;
   body: string | null;
+  file_path: string | null;
+  original_path: string | null;
 };
 type Progress = { document_id: string; required_count: number; signed_count: number };
 type Outstanding = { user_id: string; full_name: string | null; email: string | null; title: string; document_id: string };
@@ -108,31 +111,81 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [fileUrl, setFileUrl] = useState("");
+  const [file, setFile] = useState<File | null>(null);
+  const [reading, setReading] = useState(false);
   const [roles, setRoles] = useState<string[]>(DEFAULT_ROLES);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const kind = file ? uploadKind(file) : null;
+
+  const choose = async (f: File | undefined) => {
+    setError(null);
+    if (!f) return;
+    const problem = uploadProblem(f);
+    if (problem) {
+      setFile(null);
+      return setError(problem);
+    }
+    setFile(f);
+    if (!title.trim()) setTitle(f.name.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").trim());
+    if (uploadKind(f) === "docx") {
+      setReading(true);
+      try {
+        const text = await extractDocxText(f);
+        if (text) setBody(text);
+        else setError("We couldn't read any text from that Word file. Please save it as a PDF and upload that instead.");
+      } catch {
+        setError("We couldn't read that Word file. Please save it as a PDF and upload that instead.");
+      }
+      setReading(false);
+    }
+  };
 
   const save = async () => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     if (!title.trim()) return setError("Give the document a title.");
-    if (!body.trim() && !fileUrl.trim()) return setError("Add the text of the document, or a link to it.");
+    if (!body.trim() && !fileUrl.trim() && !file) return setError("Upload a file, add the text of the document, or add a link to it.");
+    if (file && fileUrl.trim()) return setError("Use either an uploaded file or a link, not both.");
+    if (kind === "docx" && !body.trim()) return setError("We couldn't read any text from that Word file. Please save it as a PDF and upload that instead.");
     if (roles.length === 0) return setError("Choose who has to sign it.");
     if (fileUrl.trim() && !/^https:\/\//i.test(fileUrl.trim())) return setError("The link must start with https://");
     setBusy(true);
     setError(null);
+
+    // The original always goes in the private bucket. A PDF is the file people
+    // sign; for a Word file the original is kept and its text (above) is what
+    // people read, and what the signed PDF is made from.
+    let uploadedPath: string | null = null;
+    if (file && kind) {
+      uploadedPath = `${crypto.randomUUID()}/${storageObjectName(file, "doc")}`;
+      const { error: upErr } = await supabase.storage.from("signable-documents").upload(uploadedPath, file, { contentType: kind === "pdf" ? "application/pdf" : DOCX_MIME, upsert: false });
+      if (upErr) {
+        setBusy(false);
+        return setError("Couldn't upload the file. Only a Headteacher or Admin can.");
+      }
+    }
     const { error: err } = await supabase.from("signable_documents").insert({
       sanity_document_id: `portal:${crypto.randomUUID()}`,
       source: "portal",
       title: title.trim(),
       body: body.trim() || null,
       file_url: fileUrl.trim() || null,
+      file_path: kind === "pdf" ? uploadedPath : null,
+      file_name: kind === "pdf" && file ? file.name : null,
+      original_path: kind === "docx" ? uploadedPath : null,
+      original_name: kind === "docx" && file ? file.name : null,
       target_roles: roles,
       requires_signature: true,
       current_asset_id: "pending",
     });
+    if (err) {
+      if (uploadedPath) await supabase.storage.from("signable-documents").remove([uploadedPath]);
+      setBusy(false);
+      return setError("Couldn't create it. Only a Headteacher or Admin can.");
+    }
     setBusy(false);
-    if (err) return setError("Couldn't create it. Only a Headteacher or Admin can.");
     onDone();
   };
 
@@ -150,9 +203,31 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
             <span className="font-medium text-ink">Title</span>
             <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="e.g. Acceptable Use Agreement 2026/27" className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
           </label>
+          <div className="block text-sm">
+            <span className="font-medium text-ink">Upload a file</span>
+            <span className="block text-xs text-ink/50">
+              A PDF (people sign that exact file) or a Word (.docx) file. For Word, the text is read out below so people can read it before signing, and a PDF is made when they sign. Or type the text, or add a link, instead.
+            </span>
+            <input
+              type="file"
+              accept={UPLOAD_ACCEPT}
+              aria-label="Upload a PDF or Word file"
+              onChange={(e) => {
+                void choose(e.target.files?.[0]);
+                e.target.value = "";
+              }}
+              className="mt-1 block w-full text-sm text-ink/80 file:mr-3 file:rounded-lg file:border file:border-gold-light file:bg-white file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-ink/80 hover:file:bg-cream"
+            />
+            {file && (
+              <p className="mt-1 text-xs text-ink/70">
+                {reading ? "Reading the Word file…" : `Chosen: ${file.name} (${kind === "pdf" ? "PDF" : "Word"}).`}{" "}
+                <button type="button" onClick={() => setFile(null)} className="font-medium text-red-700 underline">Remove</button>
+              </p>
+            )}
+          </div>
           <label className="block text-sm">
             <span className="font-medium text-ink">Text</span>
-            <span className="block text-xs text-ink/50">What people read before signing. Optional if you add a link instead.</span>
+            <span className="block text-xs text-ink/50">What people read before signing. Optional if you upload a PDF or add a link instead.</span>
             <textarea rows={7} value={body} onChange={(e) => setBody(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
           </label>
           <label className="block text-sm">
@@ -169,7 +244,7 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
           <button type="button" onClick={onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/75 hover:bg-cream">
             Cancel
           </button>
-          <button type="button" disabled={busy} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" disabled={busy || reading} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             {busy ? "Creating…" : "Create and ask for signatures"}
           </button>
         </div>
@@ -204,7 +279,7 @@ function DocumentsContent() {
     );
     if (!supabase) return;
     const [d, p, o, rq] = await Promise.all([
-      supabase.from("signable_documents").select("id, sanity_document_id, title, requires_signature, target_roles, source, file_url, body"),
+      supabase.from("signable_documents").select("id, sanity_document_id, title, requires_signature, target_roles, source, file_url, body, file_path, original_path"),
       supabase.from("document_signature_progress").select("document_id, required_count, signed_count"),
       supabase.from("outstanding_signatures").select("user_id, full_name, email, title, document_id"),
       supabase.from("signature_requests").select("document_id, user_id, requested_at, email_sent").order("requested_at", { ascending: false }).limit(1000),
@@ -451,6 +526,20 @@ function DocumentsContent() {
                       <a href={absoluteFileUrl(d.file_url)} target="_blank" rel="noreferrer" className="text-sm font-medium text-teal-700 hover:underline">
                         Open
                       </a>
+                    )}
+                    {!d.file_url && (d.file_path || d.original_path) && (
+                      <button
+                        type="button"
+                        onClick={async () => {
+                          const supabase = getSupabaseClient();
+                          const path = d.file_path || d.original_path;
+                          if (!supabase || !path) return;
+                          if (!(await openSignableFile(supabase, path))) setNote("Couldn't open that file just now.");
+                        }}
+                        className="text-sm font-medium text-teal-700 hover:underline"
+                      >
+                        {d.file_path ? "Open" : "Open Word file"}
+                      </button>
                     )}
                     {d.source !== "sanity" && (
                       <button type="button" onClick={() => stopSigning(d)} className="text-sm font-medium text-ink/55 hover:text-red-700">

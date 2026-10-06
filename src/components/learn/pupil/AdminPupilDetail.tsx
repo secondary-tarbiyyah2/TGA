@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { PrintButton } from "@/components/learn/PrintButton";
+import { PrintScope } from "@/components/learn/printScope";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { LeaderboardPrivacy } from "@/components/learn/behaviour/LeaderboardPrivacy";
 import { PupilRecord, type RecordChild } from "./PupilRecord";
@@ -56,8 +57,9 @@ export function AdminPupilDetail({ id }: { id: string }) {
       <div className="print:hidden">
         <PageHeader crumbs={crumbs} title={child?.name || "Pupil"} subtitle="Pupil information. Opening this record is logged because it contains medical details." actions={<PrintButton label="Print view" />} />
       </div>
-      <h1 className="mb-3 hidden text-xl font-semibold text-ink print:block">Pupil information: {child?.name}</h1>
-      {state === "loading" || !child ? <p className="text-sm text-ink/60">Loading…</p> : <PupilRecord child={child} showAcks />}
+      <PrintScope title={`Pupil information: ${child?.name || ""}`}>
+        {state === "loading" || !child ? <p className="text-sm text-ink/60">Loading…</p> : <PupilRecord child={child} showAcks />}
+      </PrintScope>
       {child && (
         <div className="print:hidden">
           <LeaderboardPrivacy kids={[{ id: child.id, name: child.name }]} />

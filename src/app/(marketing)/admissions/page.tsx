@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { Kicker } from "@/components/Section";
+import { AdmissionsStepsGrid } from "@/components/admissions/AdmissionsSteps";
 import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
 import { admissionsProcessSteps } from "@/components/admissions/applicationShared";
 import { getSiteSettings } from "@/lib/content";
@@ -37,14 +38,9 @@ export default async function AdmissionsPage() {
       </section>
 
       <section className="section-pad">
-        <Container className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {steps.map((s, i) => (
-            <div key={s.title} className="rounded-2xl border border-gold-light/50 bg-white p-6">
-              <span className="font-serif text-2xl font-bold text-gold">{i + 1}</span>
-              <h2 className="mt-2 font-semibold text-ink">{s.title}</h2>
-              <p className="mt-1 text-sm text-ink/70">{s.body}</p>
-            </div>
-          ))}
+        <Container>
+          <h2 className="font-serif text-2xl font-semibold text-ink">How admissions works</h2>
+          <AdmissionsStepsGrid steps={steps} />
         </Container>
       </section>
 
@@ -76,9 +72,9 @@ export default async function AdmissionsPage() {
       <section className="section-pad" id="apply">
         <Container className="max-w-2xl">
           <Kicker>Application form</Kicker>
-          <h2 className="font-serif text-3xl font-semibold text-ink">Start your child&apos;s application.</h2>
+          <h2 className="font-serif text-3xl font-semibold text-ink">Start your application.</h2>
           <p className="mt-3 text-ink/70">
-            Our online form takes about ten minutes. Have your details and your child&apos;s to hand, plus your child&apos;s latest school report, photo ID for a parent or guardian, and your child&apos;s passport or birth certificate (PDF, JPG or PNG) ready to upload.
+            Our online form takes about ten minutes. Have your details and your child&apos;s to hand, plus a recent school report, photo ID for a parent or guardian, and your child&apos;s passport or birth certificate (PDF, JPG or PNG) ready to upload. Applying for more than one child? Add them all in the same form: you only enter your own details once.
           </p>
           <div className="mt-6">
             <Button href="/admissions/apply">Apply now</Button>

@@ -465,3 +465,37 @@ Manager add-on (~$10/mo) is bought to cover that depth.
   Editing the intro copy currently means updating `defaultConfig.ts` and
   redeploying; wiring the server component to fetch the published version
   at build time (same pattern as `getSiteSettings()`) would fix this.
+
+
+## Live policies, uploads and open evenings (migrations 0086 and 0087)
+
+- **Policies are live without a rebuild.** `/policies` (and the FAQs and
+  open-evening pages) re-read Supabase in the visitor's browser with the
+  public anon key; the build-time copy is only the first paint and the
+  fallback. The admin editor ("Website content" > "Policy documents") says
+  "Changes are live immediately" and no longer triggers a rebuild for policies.
+- **Policy files** (PDF or Word `.docx`) are uploaded to the public
+  `policy-documents` bucket but are linked as `/policies/<slug>.pdf` on the
+  main site. `deploy/policy.php` (copied into `out-main/` by
+  `scripts/split-static-export.mjs`, same idea as `calendar.php`) and the
+  rewrite in `public/.htaccess` stream the current file through the
+  `policy-file` Edge Function, so no `supabase.co` address is visible. If
+  nothing is uploaded for a slug, it falls back to the PDF bundled in
+  `public/policies/`. The project ref is hard-coded in `policy.php`, exactly
+  as in `calendar.php`: change both if the project moves.
+- **Documents to sign** can be uploaded (PDF or `.docx`) in Documents &
+  signatures > "New document to sign". The original goes in the private
+  `signable-documents` bucket. A PDF is the file people sign; for a `.docx`
+  the text is extracted in the browser (no library) and the signed copy is a
+  clean PDF built from that text. Replacing a file is a new version.
+- **"Sync signable documents from Sanity"** only ever touches rows with
+  `source = 'sanity'`, so it keeps working unchanged next to policy and portal
+  documents; it can be switched off once nothing in Sanity needs a signature.
+- **Open evenings:** admin page `/admin/open-evening` (Headteacher, Admin,
+  Admissions). Parents book on `/open-evening` via the `open-evening-book`
+  Edge Function (honeypot, minimum fill-in time, per-IP/per-email rate limit,
+  capacity enforced inside `open_evening_book()` under a row lock). It emails
+  the parent a confirmation with an .ics and the joining link and notifies
+  `ADMISSIONS_EMAIL`. `open-evening-reminders.yml` (hourly) calls
+  `open-evening-reminders`, which sends a reminder in the 24 hours before.
+  Both new functions deploy with `--no-verify-jwt` (see `deploy-supabase.yml`).

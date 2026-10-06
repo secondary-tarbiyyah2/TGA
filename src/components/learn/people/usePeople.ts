@@ -3,12 +3,14 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { LearnRole } from "@/lib/learn/session";
+import { displayEmail, usernameFromEmail } from "@/lib/learn/studentLogin";
 import { ROLE_PRIORITY, type ClassOption, type ParentOption, type Person, type YearGroup } from "./shared";
 
 type RoleRow = { user_id: string; role: LearnRole; scope_type: string; scope_id: string | null };
 type ProfileRow = { id: string; full_name: string | null; email: string | null };
 type ChildRow = { id: string; name: string; parent_user_id: string; year_group_id: string | null };
 type AccountRow = { child_id: string; profile_id: string | null };
+type EnrolmentRow = { child_id: string; class_id: string };
 type ClassRow = { id: string; name: string; year_group_id: string | null };
 
 export type PeopleData = {
@@ -37,13 +39,14 @@ export function usePeople(): PeopleData {
     if (!supabase) return;
     let cancelled = false;
     (async () => {
-      const [rolesRes, profilesRes, childrenRes, accountsRes, ygRes, classRes] = await Promise.all([
+      const [rolesRes, profilesRes, childrenRes, accountsRes, ygRes, classRes, enrolRes] = await Promise.all([
         supabase.from("user_roles").select("user_id, role, scope_type, scope_id"),
         supabase.from("profiles").select("id, full_name, email"),
         supabase.from("children").select("id, name, parent_user_id, year_group_id").order("name"),
         supabase.from("student_accounts").select("child_id, profile_id"),
         supabase.from("year_groups").select("id, name").order("sort_order"),
         supabase.from("classes").select("id, name, year_group_id").order("name"),
+        supabase.from("enrolments").select("child_id, class_id"),
       ]);
       if (cancelled) return;
       if (rolesRes.error || profilesRes.error) {
@@ -57,6 +60,13 @@ export function usePeople(): PeopleData {
       const accounts = (accountsRes.data as AccountRow[] | null) || [];
       const ygs = (ygRes.data as YearGroup[] | null) || [];
       const classRows = (classRes.data as ClassRow[] | null) || [];
+      // A pupil can be enrolled in several classes: collect them all by child.
+      const classNamesByChild = new Map<string, string[]>();
+      const classNameById = new Map(classRows.map((c) => [c.id, c.name]));
+      for (const e of ((enrolRes.data as EnrolmentRow[] | null) || [])) {
+        const n = classNameById.get(e.class_id);
+        if (n) classNamesByChild.set(e.child_id, [...(classNamesByChild.get(e.child_id) || []), n]);
+      }
 
       const ygName = new Map(ygs.map((y) => [y.id, y.name]));
       const className = new Map(classRows.map((c) => [c.id, c.name]));
@@ -86,10 +96,11 @@ export function usePeople(): PeopleData {
           profileId: userId,
           childId: child?.id || null,
           name: profile.full_name || profile.email || "Unnamed",
-          email: profile.email,
+          email: displayEmail(profile.email),
+          username: usernameFromEmail(profile.email),
           roles,
           classScope: classScopes[0] || null,
-          classNames: classScopes.map((id) => className.get(id) || "").filter(Boolean),
+          classNames: child ? classNamesByChild.get(child.id) || [] : classScopes.map((id) => className.get(id) || "").filter(Boolean),
           yearGroup: child?.year_group_id ? ygName.get(child.year_group_id) || null : null,
           parentName: child ? profileById.get(child.parent_user_id)?.full_name || null : null,
           childNames: children.filter((c) => c.parent_user_id === userId).map((c) => c.name),
@@ -103,9 +114,10 @@ export function usePeople(): PeopleData {
           childId: c.id,
           name: c.name,
           email: null,
+          username: null,
           roles: ["student"],
           classScope: null,
-          classNames: [],
+          classNames: classNamesByChild.get(c.id) || [],
           yearGroup: c.year_group_id ? ygName.get(c.year_group_id) || null : null,
           parentName: profileById.get(c.parent_user_id)?.full_name || null,
           childNames: [],

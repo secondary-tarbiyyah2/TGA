@@ -43,10 +43,15 @@ RewriteOptions IgnoreInherit
 # admissions drawer can preview an uploaded PDF/image: the browser fetches the
 # private file over connect-src (Supabase), wraps it in a same-origin blob: URL
 # and frames that. No other origin may be framed or embedded.
+# https://cdnjs.cloudflare.com (and only it) is allowed for script-src and
+# connect-src so the homework annotator can load pdf.js and pdf-lib at pinned
+# versions (src/lib/learn/pdfLibs.ts); the pdf.js worker is run from a blob: copy
+# (worker-src). media-src blob: lets audio/video submissions play in the in-app
+# file viewer.
 <IfModule mod_headers.c>
   Header set Cache-Control "no-store"
   Header set X-Robots-Tag "noindex, nofollow"
-  Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://*.supabase.co; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; frame-src blob:; child-src blob:; object-src blob:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+  Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://*.supabase.co https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; worker-src 'self' blob:; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; frame-src blob:; child-src blob:; object-src blob:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 </IfModule>
 
 # Don't expose dotfiles (e.g. this .htaccess) to the web.

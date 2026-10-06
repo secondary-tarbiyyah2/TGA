@@ -7,15 +7,18 @@ import {
   EVENING_STATUS_META,
   SLOT_LENGTHS,
   bookingErrorMessage,
-  formatDay,
   formatSlot,
   formatTime,
+  formatWindow,
   generateSlots,
+  toLocalInput,
+  windowProblem,
   type EveningStatus,
   type ParentEvening,
 } from "@/lib/learn/parentEvenings";
 
-type Teacher = { id: string; name: string };
+type Teacher = { id: string; name: string; cover: boolean };
+type TeacherOption = { user_id: string; full_name: string; role: string };
 type EveningRow = ParentEvening & { parent_evening_teachers: { teacher_id: string }[] };
 type AdminBooking = { booking_id: string; teacher_id: string; teacher_name: string; child_name: string; parent_name: string; slot_start: string; slot_end: string };
 
@@ -27,6 +30,9 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
   const [bookings, setBookings] = useState<AdminBooking[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [editStart, setEditStart] = useState(() => toLocalInput(ev.starts_at));
+  const [editEnd, setEditEnd] = useState(() => toLocalInput(ev.ends_at));
 
   const chosen = useMemo(() => new Set(ev.parent_evening_teachers.map((t) => t.teacher_id)), [ev.parent_evening_teachers]);
   const total = generateSlots(ev).length * chosen.size;
@@ -50,6 +56,22 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
     setError(null);
     const { error: err } = await supabase.from("parent_evenings").update({ status }).eq("id", ev.id);
     if (err) setError(bookingErrorMessage(err.message));
+    await onChanged();
+    setBusy(false);
+  };
+
+  const saveWindow = async () => {
+    if (!supabase) return;
+    const problem = windowProblem(editStart, editEnd, ev.slot_minutes);
+    if (problem) return setError(problem);
+    setBusy(true);
+    setError(null);
+    const { error: err } = await supabase
+      .from("parent_evenings")
+      .update({ starts_at: new Date(editStart).toISOString(), ends_at: new Date(editEnd).toISOString() })
+      .eq("id", ev.id);
+    if (err) setError(err.message.includes("evening_has_bookings") ? "This evening already has bookings, so its times can't be changed. Cancel the bookings first." : err.message);
+    else setEditing(false);
     await onChanged();
     setBusy(false);
   };
@@ -86,7 +108,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
         <div>
           <h3 className="font-serif text-h3 font-semibold text-ink">{ev.title}</h3>
           <p className="mt-1 text-sm text-ink/70">
-            {formatDay(ev.starts_at)}, {formatTime(ev.starts_at)}–{formatTime(ev.ends_at)} · {ev.slot_minutes}-minute meetings
+            {formatWindow(ev.starts_at, ev.ends_at)} · {ev.slot_minutes}-minute meetings
             {ev.location ? ` · ${ev.location}` : ""}
           </p>
           <p className="mt-1 text-xs text-ink/60">
@@ -112,10 +134,28 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
         <button type="button" onClick={() => setOpen((o) => !o)} className="text-sm text-gold-700 underline">
           {open ? "Hide details" : "Teachers & bookings"}
         </button>
+        <button type="button" onClick={() => setEditing((e) => !e)} className="text-sm text-gold-700 underline">
+          {editing ? "Cancel editing times" : "Edit times"}
+        </button>
         <button type="button" onClick={remove} className="text-sm text-red-700 underline">
           Delete
         </button>
       </div>
+      {editing && (
+        <div className="mt-3 flex flex-wrap items-end gap-3 rounded-lg border border-gold-light/50 bg-cream/40 p-3">
+          <div>
+            <label className="block text-xs font-medium text-ink/70" htmlFor={`pe-es-${ev.id}`}>Starts</label>
+            <input id={`pe-es-${ev.id}`} type="datetime-local" value={editStart} onChange={(e) => setEditStart(e.target.value)} className={inputCls} />
+          </div>
+          <div>
+            <label className="block text-xs font-medium text-ink/70" htmlFor={`pe-ee-${ev.id}`}>Ends</label>
+            <input id={`pe-ee-${ev.id}`} type="datetime-local" value={editEnd} onChange={(e) => setEditEnd(e.target.value)} className={inputCls} />
+          </div>
+          <button type="button" disabled={busy} onClick={saveWindow} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-50">
+            Save times
+          </button>
+        </div>
+      )}
       {error && <p className="mt-2 text-sm text-red-700">{error}</p>}
 
       {open && (
@@ -127,9 +167,10 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
                 <label key={t.id} className="flex items-center gap-2 text-sm text-ink/80">
                   <input type="checkbox" checked={chosen.has(t.id)} onChange={() => toggleTeacher(t.id)} />
                   {t.name}
+                  {t.cover && <span className="text-xs text-ink/50">(TA / cover)</span>}
                 </label>
               ))}
-              {teachers.length === 0 && <p className="text-sm text-ink/60">No teachers found.</p>}
+              {teachers.length === 0 && <p className="text-sm text-ink/60">No active teachers found. Check Staff for teachers who are marked inactive.</p>}
             </div>
           </div>
           <div>
@@ -165,6 +206,8 @@ export function AdminParentEvenings() {
   const supabase = getSupabaseClient();
   const [evenings, setEvenings] = useState<EveningRow[] | null>(null);
   const [teachers, setTeachers] = useState<Teacher[]>([]);
+  const [loadProblems, setLoadProblems] = useState<string[]>([]);
+  const [includeCover, setIncludeCover] = useState(false);
 
   const [title, setTitle] = useState("");
   const [startsAt, setStartsAt] = useState("");
@@ -179,16 +222,28 @@ export function AdminParentEvenings() {
 
   const load = useCallback(async () => {
     if (!supabase) return;
-    const [{ data: ev }, { data: roles }] = await Promise.all([
+    const [evRes, optRes] = await Promise.all([
       supabase.from("parent_evenings").select(`${EVENING_COLUMNS}, parent_evening_teachers(teacher_id)`).order("starts_at", { ascending: false }),
-      supabase.from("user_roles").select("user_id, profiles(full_name)").eq("role", "teacher"),
+      supabase.rpc("parent_evening_teacher_options"),
     ]);
-    setEvenings((ev as unknown as EveningRow[]) || []);
-    const seen = new Map<string, string>();
-    for (const r of (roles as unknown as { user_id: string; profiles: { full_name: string } | null }[]) || []) {
-      seen.set(r.user_id, r.profiles?.full_name || "Teacher");
+    setEvenings((evRes.data as unknown as EveningRow[]) || []);
+    const problems: string[] = [];
+    if (evRes.error) problems.push(`Parent evenings: ${evRes.error.message}`);
+    let list: Teacher[] = [];
+    if (!optRes.error) {
+      list = ((optRes.data as TeacherOption[] | null) || []).map((o) => ({ id: o.user_id, name: o.full_name, cover: o.role !== "teacher" }));
+    } else {
+      problems.push(`Teachers: ${optRes.error.message}`);
+      // Fallback without any profiles embed: roles first, then names.
+      const rolesRes = await supabase.from("user_roles").select("user_id, role").in("role", ["teacher", "teaching_assistant_cover"]);
+      const rows = (rolesRes.data as unknown as { user_id: string; role: string }[] | null) || [];
+      const ids = Array.from(new Set(rows.map((r) => r.user_id)));
+      const profRes = ids.length ? await supabase.from("profiles").select("id, full_name").in("id", ids) : { data: [], error: null };
+      const names = new Map(((profRes.data as { id: string; full_name: string | null }[] | null) || []).map((p) => [p.id, p.full_name || "Teacher"]));
+      list = ids.map((id) => ({ id, name: names.get(id) || "Teacher", cover: !rows.some((r) => r.user_id === id && r.role === "teacher") }));
     }
-    setTeachers([...seen.entries()].map(([id, name]) => ({ id, name })).sort((a, b) => a.name.localeCompare(b.name)));
+    setTeachers(list.sort((a, b) => a.name.localeCompare(b.name)));
+    setLoadProblems(problems);
   }, [supabase]);
 
   useEffect(() => {
@@ -209,12 +264,13 @@ export function AdminParentEvenings() {
     setError(null);
     const start = new Date(startsAt);
     const end = new Date(endsAt);
-    if (!title.trim() || Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
-      setError("Give the evening a title, a start time and an end time.");
+    if (!title.trim()) {
+      setError("Give the evening a title.");
       return;
     }
-    if (end.getTime() - start.getTime() < slotMinutes * 60_000) {
-      setError("The evening must be at least one slot long.");
+    const problem = windowProblem(startsAt, endsAt, slotMinutes);
+    if (problem) {
+      setError(problem);
       return;
     }
     if (joinUrl.trim() && !/^https:\/\/\S+$/i.test(joinUrl.trim())) {
@@ -301,15 +357,30 @@ export function AdminParentEvenings() {
           <textarea value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Notes for parents (optional)" rows={2} maxLength={1000} className={`${inputCls} sm:col-span-2`} />
         </div>
         <div className="mt-3">
-          <p className="text-sm font-medium text-ink">Teachers taking part</p>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-sm font-medium text-ink">Teachers taking part</p>
+            {teachers.some((t) => t.cover) && (
+              <label className="flex items-center gap-2 text-xs text-ink/70">
+                <input type="checkbox" checked={includeCover} onChange={(e) => setIncludeCover(e.target.checked)} />
+                Include teaching assistants / cover
+              </label>
+            )}
+          </div>
           <div className="mt-2 grid gap-1 sm:grid-cols-2 md:grid-cols-3">
-            {teachers.map((t) => (
+            {teachers.filter((t) => !t.cover || includeCover || picked.has(t.id)).map((t) => (
               <label key={t.id} className="flex items-center gap-2 text-sm text-ink/80">
                 <input type="checkbox" checked={picked.has(t.id)} onChange={() => togglePicked(t.id)} />
                 {t.name}
+                {t.cover && <span className="text-xs text-ink/50">(TA / cover)</span>}
               </label>
             ))}
+            {teachers.filter((t) => !t.cover).length === 0 && <p className="text-sm text-ink/60 sm:col-span-2 md:col-span-3">No active teachers found. Teachers appear here once they hold the Teacher role and are active under Staff.</p>}
           </div>
+          {loadProblems.length > 0 && (
+            <p role="alert" className="mt-2 break-words text-xs text-amber-900">
+              Couldn&apos;t load everything: {loadProblems.join(" · ")}
+            </p>
+          )}
         </div>
         {error && <p className="mt-3 text-sm text-red-700">{error}</p>}
         <button type="button" disabled={busy} onClick={create} className="mt-4 rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
