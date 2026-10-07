@@ -166,6 +166,23 @@ button:not(:disabled),
   border-color: var(--color-teal-500);
   box-shadow: 0 0 0 3px rgba(59, 154, 147, 0.22);
 }
+/* Dropdowns: one consistent look (soft chevron, roomy padding) instead of the browser default. */
+.portal select:not([multiple]):not([size]) {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.25rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b7280' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 7.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1.1rem;
+  cursor: pointer;
+}
+.portal select:not([multiple]):not([size]):hover:not(:disabled) {
+  border-color: var(--color-teal-500);
+}
+.portal select:disabled {
+  opacity: 0.6;
+}
 .portal :is(button, a):focus-visible {
   outline: 2px solid var(--color-teal-700);
   outline-offset: 2px;

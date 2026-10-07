@@ -84,11 +84,14 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
       /* storage unavailable: keep defaults */
     }
     // eslint-disable-next-line react-hooks/set-state-in-effect -- restore remembered state after mount
-    setOpenGroups((cur) => {
-      const base = Array.isArray(saved) ? saved : cur;
-      return activeGroup && !base.includes(activeGroup) ? [...base, activeGroup] : base;
-    });
-  }, [storeKey, activeGroup]);
+    setOpenGroups((cur) => (Array.isArray(saved) ? saved : cur));
+  }, [storeKey]);
+  // Landing on a page opens its group once; after that the user can still collapse it.
+  useEffect(() => {
+    if (!activeGroup) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- open the group of the page just navigated to
+    setOpenGroups((cur) => (cur.includes(activeGroup) ? cur : [...cur, activeGroup]));
+  }, [activeGroup]);
   const toggleGroup = (label: string) =>
     setOpenGroups((cur) => {
       const next = cur.includes(label) ? cur.filter((l) => l !== label) : [...cur, label];
@@ -122,9 +125,30 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
       <p className="px-6 pb-1 pt-4 text-[11px] font-semibold uppercase tracking-wider text-ink/45">{AREA_SUBTITLE[area]}</p>
 
       <nav aria-label="Portal" className="min-h-0 flex-1 overflow-y-auto px-3 pb-4">
+        {groups.some((g) => g.label !== "") && (
+          <div className="flex justify-end px-3 pb-1">
+            <button
+              type="button"
+              onClick={() => {
+                const labels = groups.filter((g) => g.label !== "").map((g) => g.label);
+                const allOpen = labels.every((l) => openGroups.includes(l));
+                const next = allOpen ? [] : labels;
+                setOpenGroups(next);
+                try {
+                  window.localStorage.setItem(storeKey, JSON.stringify(next));
+                } catch {
+                  /* ignore */
+                }
+              }}
+              className="text-[11px] font-medium text-ink/45 hover:text-teal-800"
+            >
+              {groups.filter((g) => g.label !== "").every((g) => openGroups.includes(g.label)) ? "Collapse all" : "Expand all"}
+            </button>
+          </div>
+        )}
         {groups.map((g) => {
           const grouped = g.label !== "";
-          const isOpen = !grouped || openGroups.includes(g.label) || g.label === activeGroup;
+          const isOpen = !grouped || openGroups.includes(g.label);
           const listId = `sb-${area}-${g.label.replace(/\W+/g, "-")}`;
           return (
             <div key={g.label || "all"} className={grouped ? "mt-1" : ""}>
@@ -134,41 +158,43 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
                   onClick={() => toggleGroup(g.label)}
                   aria-expanded={isOpen}
                   aria-controls={listId}
-                  className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-ink/50 hover:bg-cream hover:text-ink/70"
+                  className={`group flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-[13px] font-semibold transition-colors hover:bg-cream ${
+                    g.label === activeGroup ? "text-teal-900" : "text-ink/65 hover:text-ink"
+                  }`}
                 >
-                  <span className={g.label === activeGroup ? "text-teal-800" : ""}>{g.label}</span>
-                  <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-4 w-4 transition-transform ${isOpen ? "rotate-90" : ""}`}>
-                    <path d="M7.5 5l5 5-5 5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                  <span className={`h-1.5 w-1.5 shrink-0 rounded-full transition-colors ${g.label === activeGroup ? "bg-teal-600" : "bg-ink/20 group-hover:bg-ink/35"}`} aria-hidden="true" />
+                  <span className="min-w-0 flex-1 truncate">{g.label}</span>
+                  {!isOpen && <span className="rounded-full bg-ink/5 px-1.5 text-[11px] font-medium tabular-nums text-ink/50">{g.items.length}</span>}
+                  <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-4 w-4 shrink-0 text-ink/40 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}>
+                    <path d="M5 7.5l5 5 5-5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
               )}
-              {isOpen && (
-                <ul id={listId} className="space-y-0.5">
-                  {g.items.map((item) => {
-                    const active = isSidebarItemActive(pathname, item);
-                    return (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          onClick={onNavigate}
-                          aria-current={active ? "page" : undefined}
-                          className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-medium transition-colors ${
-                            active ? "bg-teal-100 text-teal-900" : "text-ink/75 hover:bg-cream hover:text-ink"
-                          }`}
-                        >
-                          <NavIcon name={item.icon} />
-                          <span className="min-w-0 flex-1 truncate">{item.label}</span>
-                          {active && (
-                            <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4 text-teal-700">
-                              <path d="M7.5 5l5 5-5 5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                          )}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
+              <div className={`grid transition-[grid-template-rows] duration-200 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                <div className={`min-h-0 overflow-hidden ${isOpen ? "" : "invisible"}`} aria-hidden={!isOpen}>
+                  <ul id={listId} className={`space-y-0.5 ${grouped ? "pb-1 pl-2" : ""}`}>
+                    {g.items.map((item) => {
+                      const active = isSidebarItemActive(pathname, item);
+                      return (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            onClick={onNavigate}
+                            aria-current={active ? "page" : undefined}
+                            tabIndex={isOpen ? undefined : -1}
+                            className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-medium transition-colors ${
+                              active ? "bg-teal-100 text-teal-900 shadow-sm" : "text-ink/75 hover:bg-cream hover:text-ink"
+                            }`}
+                          >
+                            <NavIcon name={item.icon} />
+                            <span className="min-w-0 flex-1 truncate">{item.label}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
             </div>
           );
         })}
