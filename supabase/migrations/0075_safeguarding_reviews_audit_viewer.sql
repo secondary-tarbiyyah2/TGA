@@ -411,6 +411,19 @@ create policy "audit_log: learn head_teacher/admin read"
     and not public.audit_table_is_sensitive(target_table)
   );
 
+drop policy if exists "audit_log: learn staff with view_compliance/safeguarding_lead read" on public.audit_log;
+create policy "audit_log: learn staff with view_compliance/safeguarding_lead read"
+  on public.audit_log for select
+  to authenticated
+  using (
+    (
+      public.current_has_permission('view_compliance')
+      or public.current_has_permission('safeguarding_lead')
+      or public.current_has_role(array['head_teacher'])
+    )
+    and not public.audit_table_is_sensitive(target_table)
+  );
+
 -- Human-readable, content-free description of one audit row.
 create or replace function public.audit_log_describe(p_action text, p_table text, p_changes jsonb)
 returns table (summary text, fields text[], masked boolean)
