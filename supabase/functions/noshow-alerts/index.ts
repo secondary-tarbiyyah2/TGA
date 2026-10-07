@@ -32,7 +32,8 @@ const FLAG_WINDOW_DAYS = 14;
 const FLAG_SUMMARY_PREFIX = "Automated: repeated lesson no-shows";
 
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-const supabase = createClient(Deno.env.get("SUPABASE_URL")!, serviceRoleKey);
+const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+const supabase = createClient(supabaseUrl, serviceRoleKey);
 
 const esc = (s: string): string => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const hhmm = (t: string): string => t.slice(0, 5);
