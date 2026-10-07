@@ -57,8 +57,14 @@ jobs:
 
       - name: Call noshow-alerts
         run: |
-          set -euo pipefail
-          curl -sS --fail-with-body -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/noshow-alerts" \
+          set -uo pipefail
+          CODE=$(curl -sS -o /tmp/out.txt -w "%{http_code}" -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/noshow-alerts" \
             -H "apikey: ${{ steps.keys.outputs.service_role_key }}" \
             -H "Authorization: Bearer ${{ steps.keys.outputs.service_role_key }}" \
-            -H "Content-Type: application/json"
+            -H "Content-Type: application/json")
+          BODY=$(head -c 400 /tmp/out.txt | tr '\n' ' ')
+          if [ "$CODE" -ge 400 ]; then
+            echo "::error::noshow-alerts returned HTTP $CODE: $BODY"
+            exit 1
+          fi
+          echo "HTTP $CODE: $BODY"
