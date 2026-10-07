@@ -7,6 +7,8 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnSession } from "@/lib/learn/session";
 import { friendlyPasswordError, passwordProblem } from "@/lib/learn/passwordRules";
 import { PasswordChecklist } from "@/components/learn/PasswordChecklist";
+import { PasswordInput } from "@/components/learn/PasswordInput";
+import { SendNewLink } from "@/components/learn/SendNewLink";
 
 /**
  * Where a one-time invite/recovery link (from learn-invite or
@@ -88,10 +90,11 @@ export default function LearnInvitePage() {
       <section className="app-pad">
         <div className="mx-auto max-w-sm">
           <p role="alert" className="text-ink/70">
-            {linkError || "This setup link is invalid, has expired, or has already been used. Ask whoever set up your account to send you a new one."}
+            {linkError || "This link has expired or has already been used (each link works once). Enter your email and we will send you a new one."}
           </p>
-          <Link href="/login/forgot" className="mt-3 inline-block text-sm font-semibold text-gold-700 underline">
-            Request a new reset link
+          <SendNewLink />
+          <Link href="/login" className="mt-4 inline-block text-xs text-ink/50 underline">
+            Back to sign in
           </Link>
         </div>
       </section>
@@ -122,14 +125,8 @@ export default function LearnInvitePage() {
         <h1 className="font-serif text-h2 font-semibold text-ink">Set your password</h1>
         <p className="mt-1 text-sm text-ink/60">Choose a password for your account.</p>
         <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-3">
-          <label className="block text-sm font-medium text-ink">
-            Password
-            <input type="password" required autoComplete="new-password" value={password} onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
-          </label>
-          <label className="block text-sm font-medium text-ink">
-            Confirm password
-            <input type="password" required autoComplete="new-password" value={confirm} onChange={(e) => setConfirm(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
-          </label>
+          <PasswordInput label="Password" required autoComplete="new-password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <PasswordInput label="Confirm password" required autoComplete="new-password" value={confirm} onChange={(e) => setConfirm(e.target.value)} />
           <PasswordChecklist password={password} confirm={confirm} />
           {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
           <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-6 py-2.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">

@@ -52,6 +52,7 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
   const [showBounds, setShowBounds] = useState(false);
   const [subjectRowId, setSubjectRowId] = useState(rows[0]?.id || "");
   const [label, setLabel] = useState("Mock exam");
+  const [sat, setSat] = useState(() => new Date().toISOString().slice(0, 10));
   const [mark, setMark] = useState("");
   const [outOf, setOutOf] = useState("100");
   const [gradeOverride, setGradeOverride] = useState("");
@@ -88,6 +89,8 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
         mark: m,
         out_of: o,
         recorded_by: user?.id ?? null,
+        // The date the paper was sat (noon avoids a timezone flip to the previous day).
+        recorded_at: /^\d{4}-\d{2}-\d{2}$/.test(sat) ? new Date(`${sat}T12:00:00`).toISOString() : new Date().toISOString(),
       });
       if (error) return setMsg({ ok: false, text: "Couldn't save the mock result. Migration 0089 may not be applied yet, or you can't edit this class." });
       if (setActual) {
@@ -227,8 +230,12 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
                   </select>
                 </label>
                 <label>
-                  Name
-                  <input value={label} maxLength={80} onChange={(e) => setLabel(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+                  Paper
+                  <input value={label} maxLength={80} placeholder="e.g. Paper 1, Dec mock" onChange={(e) => setLabel(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+                </label>
+                <label>
+                  Date sat
+                  <input type="date" value={sat} max={new Date().toISOString().slice(0, 10)} onChange={(e) => setSat(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
                 </label>
                 <label>
                   Mark

@@ -1,6 +1,6 @@
-// The admin area's navigation now lives in the shared portal header
-// (src/app/learn/layout.tsx + PortalNav, config in src/lib/learn/nav.ts),
-// so every area gets the same Moodle-style top bar. AdminShell stays as a
+// The admin area's navigation now lives in the sidebar
+// (src/components/learn/PortalSidebar.tsx, config in src/lib/learn/nav.ts),
+// so every area gets the same sidebar. AdminShell stays as a
 // thin wrapper so the admin pages that use it don't need changing.
 export function AdminShell({ children }: { children: React.ReactNode }) {
   return <>{children}</>;

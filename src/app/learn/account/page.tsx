@@ -6,6 +6,7 @@ import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { friendlyPasswordError, passwordProblem } from "@/lib/learn/passwordRules";
 import { PasswordChecklist } from "@/components/learn/PasswordChecklist";
+import { PasswordInput } from "@/components/learn/PasswordInput";
 import { ParentPinSettings } from "@/components/learn/pin/ParentPinSettings";
 import { MessageSettings } from "@/components/learn/messages/MessageSettings";
 
@@ -65,26 +66,8 @@ function ChangePassword() {
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Password</h2>
       <form onSubmit={submit} noValidate className="mt-3 flex flex-wrap items-end gap-2">
-        <label className="text-sm text-ink">
-          New password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoComplete="new-password"
-            className="mt-1 block rounded-lg border border-gold-light/60 px-3 py-2"
-          />
-        </label>
-        <label className="text-sm text-ink">
-          Confirm
-          <input
-            type="password"
-            value={confirm}
-            onChange={(e) => setConfirm(e.target.value)}
-            autoComplete="new-password"
-            className="mt-1 block rounded-lg border border-gold-light/60 px-3 py-2"
-          />
-        </label>
+        <PasswordInput label="New password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="new-password" />
+        <PasswordInput label="Confirm" value={confirm} onChange={(e) => setConfirm(e.target.value)} autoComplete="new-password" />
         <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
           {busy ? "Saving…" : "Change password"}
         </button>

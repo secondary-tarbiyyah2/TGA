@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { pinProblem } from "@/lib/learn/passwordRules";
 import { PinPad } from "./PinPad";
 import { PIN_LENGTH } from "./pinState";
 
@@ -24,13 +25,18 @@ export function PinSetup({
 
   const onSubmit = async (pin: string) => {
     if (first === null) {
+      const problem = pinProblem(pin);
+      if (problem) {
+        setErr(problem);
+        return;
+      }
       setErr(null);
       setFirst(pin);
       return;
     }
     if (pin !== first) {
       setFirst(null);
-      setErr("Those didn't match. Please choose your PIN again.");
+      setErr("The two PINs didn't match. Choose your PIN again and type the same 6 digits both times.");
       return;
     }
     setBusy(true);

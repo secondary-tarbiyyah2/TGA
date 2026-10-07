@@ -132,15 +132,12 @@ export type SidebarItem = { href: string; label: string; icon: SidebarIcon; head
 export type SidebarGroup = { label: string; items: SidebarItem[] };
 
 const G_CLASSROOM = "Classroom";
-const G_BEHAVIOUR = "Behaviour & rewards";
-const G_REPORTS = "Reports & progress";
 const G_PROGRESS = "Progress";
+const G_PUPIL_WORK = "Pupils & progress";
 const G_CALENDAR = "Calendar & timetable";
-const G_PEOPLE = "People & admissions";
-const G_ATTENDANCE = "Attendance";
+const G_PEOPLE = "People & attendance";
 const G_COMMS = "Communication";
-const G_FINANCE = "Finance & compliance";
-const G_SETTINGS = "Settings";
+const G_FINANCE = "Admin & settings";
 const G_STAFF = "My staff area";
 const G_SCHOOL = "School";
 const G_FAMILY = "My family";
@@ -149,37 +146,40 @@ const G_FAMILY = "My family";
 export const SIDEBAR_GROUP_ORDER: string[] = [
   "",
   G_CLASSROOM,
-  G_BEHAVIOUR,
-  G_REPORTS,
+  G_PUPIL_WORK,
   G_PROGRESS,
   G_CALENDAR,
   G_COMMS,
   G_SCHOOL,
   G_PEOPLE,
-  G_ATTENDANCE,
   G_FINANCE,
-  G_SETTINGS,
   G_FAMILY,
   G_STAFF,
 ];
 
-// Each destination appears exactly once per area. Order inside an area is
-// Home, Classroom, Behaviour, Reports, Calendar, Communication, then the
-// rest. Admin groups are collapsed by default (see PortalSidebar), except
-// the one holding the current page.
+// Each destination appears exactly once per area, and every area has at
+// most 7 top-level entries (unlabelled items + collapsible groups):
+//   admin   Home + Classroom, Pupils & progress, Calendar, Communication,
+//           People & attendance, Admin & settings (see below)
+//   teach   Home, Today + Classroom, Pupils & progress, Calendar,
+//           Communication, My staff area
+// Admin groups are collapsed by default (see PortalSidebar), except the
+// one holding the current page.
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
+  // Admin: seven top-level entries (Home + six groups). "Classroom" and
+  // "Pupils & progress" together cover class, homework, behaviour and reports.
   admin: [
     { href: "/admin/dashboard", label: "Home", icon: "overview" },
-    { href: "/admin/summary", label: "Summary", icon: "summary", headOnly: true },
     { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true, group: G_CLASSROOM, matchPrefixes: ["/admin/class"] },
     { href: "/admin/homework", label: "Homework", icon: "homework", headOnly: true, group: G_CLASSROOM },
     { href: "/admin/academic", label: "Academic setup", icon: "academic", group: G_CLASSROOM },
-    { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true, group: G_BEHAVIOUR },
-    { href: "/admin/rewards", label: "Houses & stars", icon: "behaviour", headOnly: true, group: G_BEHAVIOUR },
-    { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true, group: G_REPORTS },
-    { href: "/admin/gcse", label: "GCSE progress", icon: "grades", headOnly: true, group: G_REPORTS },
+    { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true, group: G_CLASSROOM },
+    { href: "/admin/summary", label: "Summary", icon: "summary", headOnly: true, group: G_PUPIL_WORK },
+    { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true, group: G_PUPIL_WORK },
+    { href: "/admin/rewards", label: "Houses & stars", icon: "behaviour", headOnly: true, group: G_PUPIL_WORK },
+    { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true, group: G_PUPIL_WORK },
+    { href: "/admin/gcse", label: "GCSE progress", icon: "grades", headOnly: true, group: G_PUPIL_WORK },
     { href: "/admin/calendar", label: "Calendar", icon: "calendar", group: G_CALENDAR },
-    { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true, group: G_CALENDAR },
     { href: "/admin/parent-evenings", label: "Parent evenings", icon: "calendar", headOnly: true, group: G_CALENDAR },
     { href: "/admin/open-evening", label: "Open evenings", icon: "calendar", group: G_CALENDAR },
     { href: "/admin/messages", label: "Messages", icon: "messages", headOnly: true, group: G_COMMS },
@@ -190,17 +190,18 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/people", label: "People & accounts", icon: "people", group: G_PEOPLE },
     { href: "/admin/pupils", label: "Pupil records", icon: "documents", group: G_PEOPLE },
     { href: "/admin/staff", label: "Staff profiles", icon: "people", headOnly: true, group: G_PEOPLE },
-    { href: "/admin/attendance", label: "Attendance", icon: "attendance", headOnly: true, group: G_ATTENDANCE },
-    { href: "/admin/absences", label: "Absences", icon: "absences", headOnly: true, group: G_ATTENDANCE },
-    { href: "/admin/staff-attendance", label: "Staff attendance", icon: "clock", headOnly: true, group: G_ATTENDANCE },
+    { href: "/admin/attendance", label: "Attendance", icon: "attendance", headOnly: true, group: G_PEOPLE },
+    { href: "/admin/absences", label: "Absences", icon: "absences", headOnly: true, group: G_PEOPLE },
+    { href: "/admin/staff-attendance", label: "Staff attendance", icon: "clock", headOnly: true, group: G_PEOPLE },
+    { href: "/admin/enrichment", label: "Enrichment attendance", icon: "attendance", headOnly: true, group: G_PEOPLE },
     { href: "/admin/fees", label: "Fees", icon: "fees", headOnly: true, group: G_FINANCE },
     { href: "/admin/documents", label: "Documents & signatures", icon: "documents", headOnly: true, group: G_FINANCE },
     { href: "/admin/compliance", label: "Safeguarding & compliance", icon: "compliance", group: G_FINANCE },
     { href: "/admin/audit-log", label: "Audit log", icon: "compliance", headOnly: true, group: G_FINANCE },
     { href: "/admin/data-protection", label: "Data protection", icon: "compliance", headOnly: true, group: G_FINANCE },
-    { href: "/admin/content", label: "Website content", icon: "website", group: G_SETTINGS },
-    { href: "/admin/quiz", label: "Quiz & sample weeks", icon: "quiz", headOnly: true, group: G_SETTINGS },
-    { href: "/admin/settings", label: "Settings", icon: "settings", group: G_SETTINGS },
+    { href: "/admin/content", label: "Website content", icon: "website", group: G_FINANCE },
+    { href: "/admin/quiz", label: "Quiz & sample weeks", icon: "quiz", headOnly: true, group: G_FINANCE },
+    { href: "/admin/settings", label: "Settings", icon: "settings", group: G_FINANCE },
   ],
   // Teacher/family/student: the sidebar is the ONLY place destinations are
   // listed (there is no second tab strip), so each appears exactly once. A
@@ -210,13 +211,13 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/teach/dashboard", label: "Home", icon: "overview" },
     { href: "/teach/today", label: "Today", icon: "today", matchPrefixes: ["/teach/enrichment"] },
     { href: "/teach/classes", label: "My classes", icon: "classes", group: G_CLASSROOM, matchPrefixes: ["/teach/class", "/teach/lessons"] },
-    { href: "/teach/review", label: "To review", icon: "attendance", group: G_CLASSROOM },
     { href: "/teach/homework", label: "Homework", icon: "homework", group: G_CLASSROOM },
+    { href: "/teach/review", label: "To review", icon: "attendance", group: G_CLASSROOM },
     { href: "/teach/assessment", label: "Assessment & grades", icon: "grades", group: G_CLASSROOM },
-    { href: "/teach/behaviour", label: "Behaviour", icon: "behaviour", group: G_BEHAVIOUR },
-    { href: "/teach/stars", label: "Star of the week", icon: "behaviour", group: G_BEHAVIOUR },
-    { href: "/teach/pupils", label: "Pupils", icon: "people", group: G_REPORTS },
-    { href: "/teach/reports", label: "Reports", icon: "reports", group: G_REPORTS },
+    { href: "/teach/pupils", label: "Pupils", icon: "people", group: G_PUPIL_WORK },
+    { href: "/teach/behaviour", label: "Behaviour", icon: "behaviour", group: G_PUPIL_WORK },
+    { href: "/teach/stars", label: "Houses & stars", icon: "behaviour", group: G_PUPIL_WORK },
+    { href: "/teach/reports", label: "Reports", icon: "reports", group: G_PUPIL_WORK },
     { href: "/teach/calendar", label: "Calendar", icon: "calendar", group: G_CALENDAR },
     { href: "/teach/parent-evenings", label: "Parent evenings", icon: "calendar", group: G_CALENDAR },
     { href: "/teach/messages", label: "Messages", icon: "messages", group: G_COMMS },
@@ -225,6 +226,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/teach/clock", label: "My hours", icon: "clock", group: G_STAFF },
     { href: "/teach/absences", label: "Absences", icon: "absences", group: G_STAFF },
   ],
+  // Family: Home + Classroom, Progress, Calendar, Communication, My family.
   family: [
     { href: "/family/dashboard", label: "Home", icon: "overview" },
     { href: "/family/classes", label: "My classes", icon: "classes", group: G_CLASSROOM, matchPrefixes: ["/family/class", "/family/lessons"] },

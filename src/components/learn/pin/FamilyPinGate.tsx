@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { friendlyPinError } from "@/lib/learn/passwordRules";
 import { PinPad } from "./PinPad";
 import { PinSetup } from "./PinSetup";
 import { PIN_LOCK_EVENT, knownHasPin, lockPin, readUnlocked, rememberHasPin, touchUnlocked, useHasPin } from "./pinState";
@@ -123,7 +124,7 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
       const supabase = getSupabaseClient();
       if (!supabase || !uid) return "We couldn't save your PIN just now. Please try again.";
       const { error } = await supabase.rpc("set_my_pin", { p_pin: pin, p_current: current });
-      if (error) return error.message;
+      if (error) return friendlyPinError(error);
       rememberHasPin(uid, true);
       setLegacyPin(null);
       touchUnlocked(uid);

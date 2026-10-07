@@ -50,8 +50,7 @@ export function friendlyPasswordError(err: unknown, context: PasswordErrorContex
   const msg = (e.message || (typeof err === "string" ? err : "")).toLowerCase();
   const status = e.status;
   const linkWord = context === "set" ? "setup link" : "reset link";
-  const newLink =
-    context === "set" ? "Ask the person who set up your account to send you a new link." : "Request a new link from the \"Forgotten your password?\" page.";
+  const newLink = "Use the \"Send me a new link\" button to get a fresh one.";
 
   if (code === "weak_password" || msg.includes("weak") || msg.includes("password should") || msg.includes("password is too")) {
     const reasons = e.reasons || [];
@@ -112,4 +111,52 @@ export function friendlyPasswordError(err: unknown, context: PasswordErrorContex
   return raw
     ? `The password was not changed. The service said: "${raw.replace(/\.$/, "")}". Please try a different password, or contact the school office if this repeats.`
     : "The password was not changed and the service gave no reason. Check your connection, try again, or contact the school office.";
+}
+
+// ── Strength meter ───────────────────────────────────────────────────
+
+export type PasswordStrength = { score: 0 | 1 | 2 | 3 | 4; label: string };
+
+/** A rough 0-4 score for the live meter (meeting every rule is "Good"; length and variety push it to "Strong"). */
+export function passwordStrength(password: string): PasswordStrength {
+  if (!password) return { score: 0, label: "Too short" };
+  const rulesMet = passwordChecks(password).every((c) => c.ok);
+  if (!rulesMet) return { score: 1, label: password.length < MIN_PASSWORD_LENGTH ? "Too short" : "Weak" };
+  let points = 0;
+  if (password.length >= 12) points++;
+  if (password.length >= 16) points++;
+  if (/[a-z]/.test(password) && /[A-Z]/.test(password)) points++;
+  if (/[^A-Za-z0-9]/.test(password)) points++;
+  if (/^(.)\1+$/.test(password)) points = 0;
+  const score = (points >= 3 ? 4 : points === 2 ? 3 : 2) as 2 | 3 | 4;
+  return { score, label: score === 4 ? "Strong" : score === 3 ? "Good" : "Okay" };
+}
+
+// ── PIN ──────────────────────────────────────────────────────────────
+
+const WEAK_PINS = new Set(["000000", "111111", "222222", "333333", "444444", "555555", "666666", "777777", "888888", "999999", "123456", "654321", "012345", "123123", "121212", "112233"]);
+
+/** First reason a 6-digit PIN can't be used (checked before asking the server), or null. */
+export function pinProblem(pin: string, confirm?: string): string | null {
+  if (!/^[0-9]*$/.test(pin)) return "A PIN can only contain the digits 0 to 9.";
+  if (pin.length < 6) return `Your PIN is too short. It needs exactly 6 digits (${6 - pin.length} more).`;
+  if (pin.length > 6) return "Your PIN is too long. It needs exactly 6 digits.";
+  if (WEAK_PINS.has(pin)) return "That PIN is too easy to guess (such as 123456 or all the same digit). Choose a less obvious one.";
+  if (confirm !== undefined && pin !== confirm) return "The two PINs don't match. Type the same 6 digits in both boxes.";
+  return null;
+}
+
+/** Turns a set_my_pin / verify_my_pin error into a specific reason. */
+export function friendlyPinError(err: unknown): string {
+  const e = (err && typeof err === "object" ? err : {}) as AuthLike;
+  const msg = (e.message || (typeof err === "string" ? err : "")).toLowerCase();
+  if (msg.includes("exactly 6 digits")) return "A PIN must be exactly 6 digits, numbers only.";
+  if (msg.includes("current pin is incorrect")) return "Your current PIN isn't right, so the PIN was not changed. Try your current PIN again.";
+  if (msg.includes("too many wrong attempts")) return "Too many wrong attempts. Wait a few minutes before trying again.";
+  if (msg.includes("not signed in") || e.status === 401 || msg.includes("jwt")) return "You have been signed out, so the PIN could not be saved. Sign in again and retry.";
+  if (e.name === "AuthRetryableFetchError" || msg.includes("failed to fetch") || msg.includes("network") || msg.includes("load failed")) {
+    return "Could not reach the server. Check your internet connection and try again. Your PIN has not been changed.";
+  }
+  const raw = (e.message || "").trim();
+  return raw ? `The PIN was not saved. The service said: "${raw.replace(/\.$/, "")}".` : "The PIN was not saved and the service gave no reason. Try again, or contact the school office.";
 }

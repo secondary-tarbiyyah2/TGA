@@ -112,7 +112,7 @@ export function IcsFeedLink() {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
-      setError("Couldn't copy automatically. Select the link above and copy it by hand.");
+      setError("Couldn't copy automatically. Use one of the calendar buttons instead.");
     }
   };
 
@@ -163,18 +163,26 @@ export function IcsFeedLink() {
               </p>
             ) : (
               <>
+                <p className="mt-3 text-sm text-ink/70">Pick the calendar you use. Your timetable, homework and events will show up there and stay up to date by themselves.</p>
                 <div className="mt-4 space-y-2.5">
                   {url ? (
                     <>
-                      <a href={googleSubscribeUrl(url)} target="_blank" rel="noopener noreferrer" className={`${choice} bg-gold-700 text-white hover:bg-gold-900`}>
+                      <a href={googleSubscribeUrl(url)} target="_blank" rel="noopener noreferrer" className={`${choice} flex-col bg-gold-700 text-white hover:bg-gold-900`}>
                         Google Calendar
+                        <span className="text-xs font-normal text-white/80">Gmail, Android phones</span>
                       </a>
-                      <a href={outlookSubscribeUrl(url)} target="_blank" rel="noopener noreferrer" className={`${choice} bg-gold-700 text-white hover:bg-gold-900`}>
+                      <a href={outlookSubscribeUrl(url)} target="_blank" rel="noopener noreferrer" className={`${choice} flex-col bg-gold-700 text-white hover:bg-gold-900`}>
                         Outlook
+                        <span className="text-xs font-normal text-white/80">Outlook.com, Microsoft 365, Hotmail</span>
                       </a>
-                      <a href={webcalUrl(url)} className={`${choice} bg-gold-700 text-white hover:bg-gold-900`}>
-                        Apple / other calendar
+                      <a href={webcalUrl(url)} className={`${choice} flex-col bg-gold-700 text-white hover:bg-gold-900`}>
+                        Apple Calendar
+                        <span className="text-xs font-normal text-white/80">iPhone, iPad, Mac and most other apps</span>
                       </a>
+                      <button type="button" onClick={copy} className={`${choice} flex-col border border-gold-light bg-white text-ink hover:bg-cream`}>
+                        {copied ? "Link copied" : "Copy link"}
+                        <span className="text-xs font-normal text-ink/60">Paste it into any calendar&apos;s &ldquo;add by link&rdquo; option. Keep it private.</span>
+                      </button>
                     </>
                   ) : (
                     <p role="status" className="py-6 text-center text-sm text-ink/60">
@@ -182,14 +190,6 @@ export function IcsFeedLink() {
                     </p>
                   )}
                 </div>
-                {url && (
-                  <div className="mt-4 flex items-center gap-2">
-                    <code className="min-w-0 flex-1 select-all truncate rounded-lg bg-cream/60 px-2 py-1.5 text-xs text-ink/70">{url}</code>
-                    <button type="button" onClick={copy} className="shrink-0 rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-semibold text-ink hover:bg-cream">
-                      {copied ? "Copied" : "Copy link"}
-                    </button>
-                  </div>
-                )}
               </>
             )}
 

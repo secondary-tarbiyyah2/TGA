@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
+import { PasswordInput } from "@/components/learn/PasswordInput";
 import { loginEmailFor } from "@/lib/learn/studentLogin";
 import { useLearnSession, dashboardPathForRole } from "@/lib/learn/session";
 
@@ -68,10 +69,20 @@ export default function LearnLoginPage() {
 
     if (signInErr) {
       setFinishing(false);
+      const sc = (signInErr.code || "").toLowerCase();
+      const sm = (signInErr.message || "").toLowerCase();
       setError(
-        signInErr.code === "invalid_credentials"
-          ? "Incorrect email, username or password."
-          : `Couldn't sign in: ${signInErr.message}`,
+        sc === "invalid_credentials"
+          ? "Incorrect email, username or password. Check for typos and caps lock, or use \"Forgotten your password?\" below."
+          : sc === "email_not_confirmed"
+            ? "Your email address hasn't been confirmed yet. Open the invitation email we sent and follow its link first."
+            : sc === "user_banned"
+              ? "This account is disabled. Contact the school office."
+              : sc === "over_request_rate_limit" || signInErr.status === 429
+                ? "Too many sign-in attempts. Wait a few minutes and try again."
+                : signInErr.name === "AuthRetryableFetchError" || signInErr.status === 0 || sm.includes("fetch") || sm.includes("network")
+                  ? "Could not reach the server. Check your internet connection and try again."
+                  : `Couldn't sign in. The service said: "${signInErr.message}".`,
       );
       return;
     }
@@ -103,10 +114,7 @@ export default function LearnLoginPage() {
             Email or username
             <input type="text" required autoComplete="username" autoCapitalize="none" autoCorrect="off" spellCheck={false} value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
           </label>
-          <label className="block text-sm font-medium text-ink">
-            Password
-            <input type="password" required autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
-          </label>
+          <PasswordInput label="Password" required autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
           {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
           <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-6 py-2.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
             {busy ? "Signing in…" : "Sign in"}

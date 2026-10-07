@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { friendlyPinError, pinProblem } from "@/lib/learn/passwordRules";
 import { rememberHasPin, useHasPin } from "./pinState";
 
 export function ParentPinSettings({ userId }: { userId: string }) {
@@ -16,13 +17,13 @@ export function ParentPinSettings({ userId }: { userId: string }) {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!supabase) return;
-    if (!/^[0-9]{6}$/.test(pin)) return setMessage("A PIN must be exactly 6 digits.");
-    if (pin !== confirm) return setMessage("PINs don't match.");
+    const problem = pinProblem(pin, confirm);
+    if (problem) return setMessage(problem);
     setBusy(true);
     setMessage(null);
     const { error } = await supabase.rpc("set_my_pin", { p_pin: pin, p_current: has ? current : null });
     setBusy(false);
-    if (error) return setMessage(error.message);
+    if (error) return setMessage(friendlyPinError(error));
     rememberHasPin(userId, true);
     setCurrent("");
     setPin("");
