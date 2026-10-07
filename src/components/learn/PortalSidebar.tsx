@@ -96,9 +96,9 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
         {groups.map((g) => {
           const grouped = g.label !== "";
           return (
-            <div key={g.label || "all"} className={grouped ? "mt-5 first:mt-1" : ""}>
+            <div key={g.label || "all"} className={grouped ? "mt-4 border-t border-gold-light pt-4 first:mt-1 first:border-t-0 first:pt-0" : ""}>
               {grouped && (
-                <p className={`px-3 pb-1.5 text-[11px] font-semibold uppercase tracking-wider ${g.label === activeGroup ? "text-teal-800" : "text-ink/45"}`}>{g.label}</p>
+                <p className={`px-3 pb-2 text-[11px] font-bold uppercase tracking-[0.08em] ${g.label === activeGroup ? "text-teal-800" : "text-ink/45"}`}>{g.label}</p>
               )}
               <ul className="space-y-0.5">
                 {g.items.map((item) => {
@@ -109,8 +109,8 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
                         href={item.href}
                         onClick={onNavigate}
                         aria-current={active ? "page" : undefined}
-                        className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-medium transition-colors ${
-                          active ? "bg-teal-100 text-teal-900 shadow-sm" : "text-ink/75 hover:bg-cream hover:text-ink"
+                        className={`flex items-center gap-3 rounded-md border-l-[3px] px-3 py-2 text-[14.5px] font-medium transition-colors ${
+                          active ? "border-teal-700 bg-teal-100/70 text-teal-900" : "border-transparent text-ink/75 hover:bg-cream hover:text-ink"
                         }`}
                       >
                         <NavIcon name={item.icon} />
