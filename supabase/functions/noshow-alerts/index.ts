@@ -66,9 +66,21 @@ type SlotRow = {
 type LessonRow = { id: string; date: string; timetable_slots: SlotRow | null };
 type EnrolRow = { child_id: string; children: { id: string; name: string; parent_user_id: string } | null };
 
+/** A service-role caller: the exact key, or any key the auth admin API accepts (new-style secret keys differ from the env value). */
+async function isServiceCaller(token: string): Promise<boolean> {
+  if (!token) return false;
+  if (token === serviceRoleKey) return true;
+  try {
+    const res = await fetch(`${supabaseUrl}/auth/v1/admin/users?per_page=1`, { headers: { apikey: token, Authorization: `Bearer ${token}` } });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: { "Access-Control-Allow-Origin": "*" } });
-  if (req.headers.get("Authorization") !== `Bearer ${serviceRoleKey}`) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+  if (!(await isServiceCaller((req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "").trim()))) return jsonResponse({ ok: false, error: "forbidden" }, 403);
   const dryRun = new URL(req.url).searchParams.get("dry_run") === "1";
 
   const now = schoolNow();
