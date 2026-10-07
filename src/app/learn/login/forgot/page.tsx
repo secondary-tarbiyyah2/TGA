@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { friendlyPasswordError } from "@/lib/learn/passwordRules";
 
 /**
  * Sends a password-reset link via Supabase Auth (resetPasswordForEmail).
@@ -25,16 +26,36 @@ export default function ForgotPasswordPage() {
     e.preventDefault();
     setError(null);
     const supabase = getSupabaseClient();
-    if (!supabase) return;
+    if (!supabase) {
+      setError("The sign-in service isn't available right now. Reload the page and try again.");
+      return;
+    }
+    const clean = email.trim().toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean)) {
+      setError("That doesn't look like an email address. Check it for typos (it should look like name@example.com).");
+      return;
+    }
     setBusy(true);
-    await supabase.auth.resetPasswordForEmail(email.trim().toLowerCase(), {
+    let resetErr: unknown = null;
+    try {
+      const res = await supabase.auth.resetPasswordForEmail(clean, {
       // window.location.origin, not a hardcoded string: once this page is
       // served from the /learn subdomain, that origin already IS the right
       // one (see src/lib/learn/origin.ts) — and Supabase's redirect
       // allowlist (deploy-supabase.yml) must include it.
       redirectTo: `${window.location.origin}/login/invite`,
-    });
+      });
+      resetErr = res.error;
+    } catch (err) {
+      resetErr = err;
+    }
     setBusy(false);
+    if (resetErr) {
+      // "No such account" is never reported by Supabase here, so anything that
+      // lands here is a real problem (rate limit, network, service) the user can act on.
+      setError(friendlyPasswordError(resetErr, "request"));
+      return;
+    }
     // Always show the same confirmation, whether or not the address
     // matched an account — never let this page reveal that.
     setSent(true);
@@ -62,12 +83,13 @@ export default function ForgotPasswordPage() {
       <div className="mx-auto max-w-sm">
         <h1 className="font-serif text-h2 font-semibold text-ink">Reset your password</h1>
         <p className="mt-1 text-sm text-ink/60">Enter the email address your account was set up with.</p>
-        <form onSubmit={handleSubmit} className="mt-6 space-y-3">
+        <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-3">
           <label className="block text-sm font-medium text-ink">
             Email
             <input
               type="email"
               required
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2"

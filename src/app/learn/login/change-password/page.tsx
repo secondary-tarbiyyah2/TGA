@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnSession } from "@/lib/learn/session";
+import { friendlyPasswordError, passwordProblem } from "@/lib/learn/passwordRules";
+import { PasswordChecklist } from "@/components/learn/PasswordChecklist";
 
 /**
  * First sign-in for a pupil with a username login: the temporary password the
@@ -22,21 +24,27 @@ export default function ChangePasswordPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
-    if (password.length < 8) {
-      setError("Use at least 8 characters.");
-      return;
-    }
-    if (password !== confirm) {
-      setError("The two passwords don't match.");
+    const problem = passwordProblem(password, confirm);
+    if (problem) {
+      setError(problem);
       return;
     }
     const supabase = getSupabaseClient();
-    if (!supabase) return;
+    if (!supabase) {
+      setError("The sign-in service isn't available right now. Reload the page and try again.");
+      return;
+    }
     setBusy(true);
-    const { error: updateErr } = await supabase.auth.updateUser({ password });
+    let updateErr: unknown = null;
+    try {
+      const res = await supabase.auth.updateUser({ password });
+      updateErr = res.error;
+    } catch (err) {
+      updateErr = err;
+    }
     if (updateErr) {
       setBusy(false);
-      setError("Couldn't change your password. Please try again.");
+      setError(friendlyPasswordError(updateErr, "change"));
       return;
     }
     // Clears the "must change" flag. If this fails the pupil is only asked again next time.
@@ -64,15 +72,16 @@ export default function ChangePasswordPage() {
       <div className="mx-auto max-w-sm">
         <h1 className="font-serif text-h2 font-semibold text-ink">Choose your own password</h1>
         <p className="mt-1 text-sm text-ink/60">The password the school gave you was only temporary. Choose a new one that you will remember. Don&apos;t share it with anyone.</p>
-        <form onSubmit={handleSubmit} className="mt-6 space-y-3">
+        <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-3">
           <label className="block text-sm font-medium text-ink">
             New password
-            <input type="password" required minLength={8} autoComplete="new-password" value={password} onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            <input type="password" required autoComplete="new-password" value={password} onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
           </label>
           <label className="block text-sm font-medium text-ink">
             Type it again
-            <input type="password" required minLength={8} autoComplete="new-password" value={confirm} onChange={(e) => setConfirm(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            <input type="password" required autoComplete="new-password" value={confirm} onChange={(e) => setConfirm(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
           </label>
+          <PasswordChecklist password={password} confirm={confirm} />
           {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
           <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gold-900 disabled:opacity-60">
             {busy ? "Saving…" : "Save password"}

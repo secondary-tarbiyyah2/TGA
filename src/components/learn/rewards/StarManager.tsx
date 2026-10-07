@@ -5,6 +5,7 @@ import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { fetchAllClasses, fetchTeacherClasses, type ClassSummary } from "@/lib/learn/classes";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { loadStudents, type StudentOption } from "@/components/learn/behaviour/data";
+import { BatchAward } from "@/components/learn/rewards/BatchAward";
 
 // Star of the week workflow (0074).
 //  * Teachers nominate one pupil per class per week (suggestions come from the
@@ -29,6 +30,29 @@ type Star = {
 };
 
 type Suggestion = { child_id: string; child_name: string; merits: number; hidden: boolean };
+
+/** One-tap reasons for "Why are they the star?". Each adds to the text box (or fills it when empty). */
+export const STAR_QUICK_TAGS = [
+  "Outstanding effort",
+  "Acts of kindness",
+  "Academic progress",
+  "Great attitude",
+  "Helping others",
+  "Excellent Qur'an recitation",
+  "Great teamwork",
+  "Leadership",
+  "Always on time",
+  "Beautiful manners",
+];
+
+/** Appends a tag to the reason, comma-separated, without repeating it or going over the limit. */
+export function addReasonTag(current: string, tag: string, max = 300): string {
+  const trimmed = current.trim();
+  if (!trimmed) return tag.slice(0, max);
+  if (trimmed.toLowerCase().includes(tag.toLowerCase())) return current;
+  const next = `${trimmed.replace(/[,.;\s]+$/, "")}, ${tag.charAt(0).toLowerCase()}${tag.slice(1)}`;
+  return next.length > max ? current : next;
+}
 
 const STAR_SELECT = "id, class_id, child_id, week_start, reason, status, certificate_path, certificate_emailed_at, children(name, hide_from_leaderboard), classes(name)";
 
@@ -343,10 +367,23 @@ export function StarManager({ isHead }: { isHead: boolean }) {
                     ))}
                   </select>
                 </label>
-                <label className="block text-sm text-ink/70">
-                  <span className="mb-1 block text-xs font-medium">Why are they the star? (shown on the certificate and in the school shout-out)</span>
-                  <textarea value={reason} onChange={(e) => setReason(e.target.value)} maxLength={300} rows={2} className="w-full max-w-xl rounded-lg border border-gold-light px-3 py-2 text-sm" placeholder="Kindness, effort, a big improvement…" />
-                </label>
+                <div className="block text-sm text-ink/70">
+                  <span id="star-why-label" className="mb-1 block text-xs font-medium">Why are they the star? (shown on the certificate and in the school shout-out)</span>
+                  <div role="group" aria-label="Quick reasons" className="mb-2 flex flex-wrap gap-1.5">
+                    {STAR_QUICK_TAGS.map((t) => (
+                      <button
+                        key={t}
+                        type="button"
+                        onClick={() => setReason((cur) => addReasonTag(cur, t))}
+                        className="rounded-full border border-gold-light bg-white px-2.5 py-1 text-xs font-medium text-ink/80 hover:bg-cream"
+                      >
+                        + {t}
+                      </button>
+                    ))}
+                  </div>
+                  <textarea aria-labelledby="star-why-label" value={reason} onChange={(e) => setReason(e.target.value)} maxLength={300} rows={2} className="w-full max-w-xl rounded-lg border border-gold-light px-3 py-2 text-sm" placeholder="Kindness, effort, a big improvement… or tap a reason above" />
+                  <span className="mt-1 block text-[11px] text-ink/50">{reason.length}/300. Tap reasons to add them, then edit the sentence if you like.</span>
+                </div>
                 <button
                   type="button"
                   disabled={busy || !childId || reason.trim().length < 3}
@@ -371,6 +408,8 @@ export function StarManager({ isHead }: { isHead: boolean }) {
           </>
         )}
       </section>
+
+      {classes !== null && classes.length > 0 && classId && <BatchAward key={classId} classId={classId} roster={roster} onAwarded={() => void loadClass()} />}
     </div>
   );
 }

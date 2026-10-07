@@ -4,120 +4,227 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { generateIcsToken, googleSubscribeUrl, hashIcsToken, icsFeedUrl, outlookSubscribeUrl, webcalUrl } from "@/lib/learn/timetable";
 
-type TokenRow = { id: string; created_at: string };
+type Saved = { userId: string; tokenId: string; url: string };
+
+const STORE_KEY = "learn.ics.feed";
+
+function readSaved(userId: string): Saved | null {
+  try {
+    const raw = window.localStorage.getItem(STORE_KEY);
+    if (!raw) return null;
+    const v = JSON.parse(raw) as Partial<Saved>;
+    return v && v.userId === userId && typeof v.tokenId === "string" && typeof v.url === "string" ? (v as Saved) : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeSaved(v: Saved | null) {
+  try {
+    if (v) window.localStorage.setItem(STORE_KEY, JSON.stringify(v));
+    else window.localStorage.removeItem(STORE_KEY);
+  } catch {
+    /* storage blocked: a new link is made next time */
+  }
+}
 
 /**
- * Lets the signed-in user create/revoke their own calendar-feed token and
- * copy its .ics URL. The raw token is shown ONCE, right after creation —
- * only its SHA-256 hash is ever stored (see ics_tokens' migration comment
- * and supabase/functions/timetable-ics), so it can never be redisplayed
- * later; creating a new one is how you "see it again" (and invalidates
- * nothing else — a user can hold several live tokens at once, each
- * independently revocable).
+ * One button: "Add to my calendar". The feed link is created the first time
+ * it's needed (only its SHA-256 hash is stored server-side, so the link is
+ * remembered in this browser and re-made if that memory is gone). Choices:
+ * Google, Outlook, Apple/other (webcal), copy link, and "Stop sharing" which
+ * revokes every live link for this user.
  */
 export function IcsFeedLink() {
   const supabase = getSupabaseClient();
-  const [tokens, setTokens] = useState<TokenRow[] | null>(null);
-  const [freshUrl, setFreshUrl] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
+  const [url, setUrl] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
-
-  const load = async () => {
-    if (!supabase) return;
-    const { data } = await supabase.from("ics_tokens").select("id, created_at").is("revoked_at", null).order("created_at", { ascending: false });
-    setTokens((data as TokenRow[]) || []);
-  };
+  const [stopped, setStopped] = useState(false);
+  const [confirmStop, setConfirmStop] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
-    load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [supabase]);
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
-  const createToken = async () => {
-    if (!supabase) return;
+  if (!supabase) return null;
+
+  // Creates the link on first use; reuses the remembered one while it is still live.
+  const ensureLink = async () => {
     setBusy(true);
+    setError(null);
+    setStopped(false);
+    setConfirmStop(false);
     try {
       const {
         data: { user },
       } = await supabase.auth.getUser();
-      if (!user) return;
-      const token = generateIcsToken();
-      const hash = await hashIcsToken(token);
-      const { error } = await supabase.from("ics_tokens").insert({ user_id: user.id, token_hash: hash });
-      if (!error) {
-        setFreshUrl(icsFeedUrl(token));
-        await load();
+      if (!user) {
+        setError("You're signed out. Sign in again to add your calendar.");
+        return;
       }
+      const saved = readSaved(user.id);
+      if (saved) {
+        const { data: live } = await supabase.from("ics_tokens").select("id").eq("id", saved.tokenId).is("revoked_at", null).maybeSingle();
+        if (live) {
+          setUrl(saved.url);
+          return;
+        }
+        writeSaved(null);
+      }
+      const token = generateIcsToken();
+      const feed = icsFeedUrl(token);
+      if (!feed) {
+        setError("Calendar links aren't available on this site yet. Please tell the school office.");
+        return;
+      }
+      const hash = await hashIcsToken(token);
+      const { data: row, error: insErr } = await supabase.from("ics_tokens").insert({ user_id: user.id, token_hash: hash }).select("id").single();
+      if (insErr || !row) {
+        setError("We couldn't create your calendar link. Check your connection and try again.");
+        return;
+      }
+      writeSaved({ userId: user.id, tokenId: (row as { id: string }).id, url: feed });
+      setUrl(feed);
+    } catch {
+      setError("We couldn't create your calendar link. Check your connection and try again.");
     } finally {
       setBusy(false);
     }
   };
 
+  const openMenu = () => {
+    setOpen(true);
+    setCopied(false);
+    setUrl(null);
+    void ensureLink();
+  };
+
   const copy = async () => {
-    if (!freshUrl) return;
+    if (!url) return;
     try {
-      await navigator.clipboard?.writeText(freshUrl);
+      await navigator.clipboard.writeText(url);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2000);
     } catch {
-      /* clipboard blocked: the link is selectable above */
+      setError("Couldn't copy automatically. Select the link above and copy it by hand.");
     }
   };
 
-  const revoke = async (id: string) => {
-    if (!supabase) return;
-    await supabase.from("ics_tokens").update({ revoked_at: new Date().toISOString() }).eq("id", id);
-    setFreshUrl(null);
-    await load();
+  const stopSharing = async () => {
+    setBusy(true);
+    setError(null);
+    const { error: revErr } = await supabase.from("ics_tokens").update({ revoked_at: new Date().toISOString() }).is("revoked_at", null);
+    setBusy(false);
+    if (revErr) {
+      setError("We couldn't stop sharing just now. Check your connection and try again.");
+      return;
+    }
+    writeSaved(null);
+    setUrl(null);
+    setConfirmStop(false);
+    setStopped(true);
   };
 
-  if (!supabase) return null;
+  const choice = "flex w-full items-center justify-center rounded-xl px-4 py-3.5 text-base font-semibold transition-colors";
 
   return (
-    <div className="print:hidden mt-6 rounded-xl border border-gold-light/40 bg-cream/30 p-4">
-      <h2 className="text-sm font-semibold text-ink">Subscribe from your calendar app</h2>
-      <p className="mt-1 text-xs text-ink/60">
-        Get a link you can add to Google Calendar, Apple Calendar or Outlook — it updates automatically and needs
-        no sign-in, so keep it private and revoke it if it&apos;s ever shared by mistake.
-      </p>
+    <div className="print:hidden mt-4">
+      <button
+        type="button"
+        onClick={openMenu}
+        className="inline-flex items-center gap-2 rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-900"
+      >
+        <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3.5 5h13v11.5h-13zM3.5 8.5h13M7 3v3.5M13 3v3.5M10 11v3.5M8.25 12.75h3.5" />
+        </svg>
+        Add to my calendar
+      </button>
 
-      {freshUrl && (
-        <div className="mt-3 rounded-lg border border-gold-500 bg-white p-3 text-xs">
-          <p className="font-medium text-ink">Your feed link (shown once — copy it now):</p>
-          <code className="mt-1 block select-all break-all text-ink/80">{freshUrl}</code>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <a href={webcalUrl(freshUrl)} className="rounded-lg bg-gold-700 px-3 py-1.5 font-semibold text-white hover:bg-gold-900">Subscribe in my calendar app</a>
-            <a href={googleSubscribeUrl(freshUrl)} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">Add to Google Calendar</a>
-            <a href={outlookSubscribeUrl(freshUrl)} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">Add to Outlook</a>
-            <button type="button" onClick={copy} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-semibold text-ink hover:bg-cream">{copied ? "Copied" : "Copy link"}</button>
-          </div>
-          <p className="mt-2 text-[11px] text-ink/55">The first button opens Apple Calendar, Outlook or whichever calendar app is your default. Opening the link in a browser will not subscribe you: use the buttons.</p>
-        </div>
-      )}
-
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <button
-          type="button"
-          onClick={createToken}
-          disabled={busy}
-          className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors"
-        >
-          {busy ? "Creating…" : "Create a new calendar link"}
-        </button>
-      </div>
-
-      {tokens && tokens.length > 0 && (
-        <ul className="mt-3 space-y-1 text-xs text-ink/60">
-          {tokens.map((t) => (
-            <li key={t.id} className="flex items-center justify-between gap-2">
-              <span>Created {new Date(t.created_at).toLocaleString()}</span>
-              <button type="button" onClick={() => revoke(t.id)} className="text-red-700 underline">
-                Revoke
+      {open && (
+        <div className="portal fixed inset-0 z-[100] flex items-end justify-center sm:items-center" role="dialog" aria-modal="true" aria-label="Add to my calendar">
+          <button type="button" aria-label="Close" className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
+          <div className="relative w-full max-w-sm rounded-t-2xl bg-white p-5 shadow-xl sm:rounded-2xl">
+            <div className="flex items-center justify-between">
+              <h2 className="font-serif text-lg font-semibold text-ink">Add to my calendar</h2>
+              <button type="button" onClick={() => setOpen(false)} aria-label="Close" className="rounded-lg px-2 py-1 text-ink/60 hover:bg-cream">
+                ✕
               </button>
-            </li>
-          ))}
-        </ul>
+            </div>
+
+            {stopped ? (
+              <p role="status" className="mt-4 text-sm text-ink/70">
+                Sharing stopped. Calendars that used your old link will stop updating. Close this and tap the button again any time to make a new link.
+              </p>
+            ) : (
+              <>
+                <div className="mt-4 space-y-2.5">
+                  {url ? (
+                    <>
+                      <a href={googleSubscribeUrl(url)} target="_blank" rel="noopener noreferrer" className={`${choice} bg-gold-700 text-white hover:bg-gold-900`}>
+                        Google Calendar
+                      </a>
+                      <a href={outlookSubscribeUrl(url)} target="_blank" rel="noopener noreferrer" className={`${choice} bg-gold-700 text-white hover:bg-gold-900`}>
+                        Outlook
+                      </a>
+                      <a href={webcalUrl(url)} className={`${choice} bg-gold-700 text-white hover:bg-gold-900`}>
+                        Apple / other calendar
+                      </a>
+                    </>
+                  ) : (
+                    <p role="status" className="py-6 text-center text-sm text-ink/60">
+                      {error ? "" : busy ? "Setting up your link…" : ""}
+                    </p>
+                  )}
+                </div>
+                {url && (
+                  <div className="mt-4 flex items-center gap-2">
+                    <code className="min-w-0 flex-1 select-all truncate rounded-lg bg-cream/60 px-2 py-1.5 text-xs text-ink/70">{url}</code>
+                    <button type="button" onClick={copy} className="shrink-0 rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-semibold text-ink hover:bg-cream">
+                      {copied ? "Copied" : "Copy link"}
+                    </button>
+                  </div>
+                )}
+              </>
+            )}
+
+            {error && (
+              <p role="alert" className="mt-3 text-sm text-red-700">
+                {error}
+                {!url && !stopped && (
+                  <button type="button" onClick={() => void ensureLink()} className="ml-2 font-semibold underline">
+                    Try again
+                  </button>
+                )}
+              </p>
+            )}
+
+            {!stopped && (
+              <div className="mt-4 border-t border-gold-light/50 pt-3 text-right">
+                {confirmStop ? (
+                  <span className="text-xs text-ink/70">
+                    Stop all calendar links?{" "}
+                    <button type="button" onClick={() => void stopSharing()} disabled={busy} className="font-semibold text-red-700 underline disabled:opacity-50">
+                      Yes, stop
+                    </button>{" "}
+                    <button type="button" onClick={() => setConfirmStop(false)} className="underline">
+                      Cancel
+                    </button>
+                  </span>
+                ) : (
+                  <button type="button" onClick={() => setConfirmStop(true)} className="text-xs text-ink/50 underline hover:text-red-700">
+                    Stop sharing
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );

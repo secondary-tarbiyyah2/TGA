@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnSession } from "@/lib/learn/session";
+import { friendlyPasswordError, passwordProblem } from "@/lib/learn/passwordRules";
+import { PasswordChecklist } from "@/components/learn/PasswordChecklist";
 
 /**
  * Where a one-time invite/recovery link (from learn-invite or
@@ -21,12 +24,20 @@ export default function LearnInvitePage() {
   const [busy, setBusy] = useState(false);
   const [passwordSet, setPasswordSet] = useState(false);
   const [verifying, setVerifying] = useState(false);
+  const [linkError, setLinkError] = useState<string | null>(null);
 
   // Branded links look like /login/invite?token_hash=…&type=recovery. The token is
   // only redeemed here in the browser (so email scanners that merely fetch the
   // URL can't use it up), and the address never shows the backend host.
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+    // Supabase reports a bad link in the URL hash (#error_code=otp_expired&...).
+    const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+    const hashCode = hash.get("error_code") || hash.get("error");
+    if (hashCode) {
+      setLinkError(friendlyPasswordError({ code: hash.get("error_code") || undefined, message: hash.get("error_description") || "" }, "set"));
+      return;
+    }
     const tokenHash = params.get("token_hash");
     const type = params.get("type");
     const supabase = getSupabaseClient();
@@ -34,28 +45,38 @@ export default function LearnInvitePage() {
     setVerifying(true);
     supabase.auth
       .verifyOtp({ token_hash: tokenHash, type: type === "invite" ? "invite" : "recovery" })
-      .then(() => window.history.replaceState(null, "", window.location.pathname))
+      .then(({ error: otpErr }) => {
+        if (otpErr) setLinkError(friendlyPasswordError(otpErr, "set"));
+        else window.history.replaceState(null, "", window.location.pathname);
+      })
+      .catch((err: unknown) => setLinkError(friendlyPasswordError(err, "set")))
       .finally(() => setVerifying(false));
   }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
-    if (password.length < 8) {
-      setError("Use at least 8 characters.");
-      return;
-    }
-    if (password !== confirm) {
-      setError("Passwords don't match.");
+    const problem = passwordProblem(password, confirm);
+    if (problem) {
+      setError(problem);
       return;
     }
     const supabase = getSupabaseClient();
-    if (!supabase) return;
+    if (!supabase) {
+      setError("The sign-in service isn't available right now. Reload the page and try again.");
+      return;
+    }
     setBusy(true);
-    const { error: updateErr } = await supabase.auth.updateUser({ password });
+    let updateErr: unknown = null;
+    try {
+      const res = await supabase.auth.updateUser({ password });
+      updateErr = res.error;
+    } catch (err) {
+      updateErr = err;
+    }
     setBusy(false);
     if (updateErr) {
-      setError("Couldn't set your password — try again.");
+      setError(friendlyPasswordError(updateErr, "set"));
       return;
     }
     setPasswordSet(true);
@@ -66,9 +87,12 @@ export default function LearnInvitePage() {
     return (
       <section className="app-pad">
         <div className="mx-auto max-w-sm">
-          <p className="text-ink/60">
-            This setup link is invalid or has expired. Ask whoever set up your account to send you a new one.
+          <p role="alert" className="text-ink/70">
+            {linkError || "This setup link is invalid, has expired, or has already been used. Ask whoever set up your account to send you a new one."}
           </p>
+          <Link href="/login/forgot" className="mt-3 inline-block text-sm font-semibold text-gold-700 underline">
+            Request a new reset link
+          </Link>
         </div>
       </section>
     );
@@ -97,15 +121,16 @@ export default function LearnInvitePage() {
       <div className="mx-auto max-w-sm">
         <h1 className="font-serif text-h2 font-semibold text-ink">Set your password</h1>
         <p className="mt-1 text-sm text-ink/60">Choose a password for your account.</p>
-        <form onSubmit={handleSubmit} className="mt-6 space-y-3">
+        <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-3">
           <label className="block text-sm font-medium text-ink">
             Password
-            <input type="password" required minLength={8} value={password} onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            <input type="password" required autoComplete="new-password" value={password} onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
           </label>
           <label className="block text-sm font-medium text-ink">
             Confirm password
-            <input type="password" required minLength={8} value={confirm} onChange={(e) => setConfirm(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            <input type="password" required autoComplete="new-password" value={confirm} onChange={(e) => setConfirm(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
           </label>
+          <PasswordChecklist password={password} confirm={confirm} />
           {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
           <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-6 py-2.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
             {busy ? "Saving…" : "Continue"}

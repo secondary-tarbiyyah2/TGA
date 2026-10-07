@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { friendlyPasswordError, passwordProblem } from "@/lib/learn/passwordRules";
+import { PasswordChecklist } from "@/components/learn/PasswordChecklist";
 import { ParentPinSettings } from "@/components/learn/pin/ParentPinSettings";
 import { MessageSettings } from "@/components/learn/messages/MessageSettings";
 
@@ -23,35 +25,46 @@ function ChangePassword() {
   const [confirm, setConfirm] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!supabase) return;
-    if (password.length < 8) {
-      setMessage("Choose a password at least 8 characters long.");
+    if (!supabase) {
+      setMessage("The sign-in service isn't available right now. Reload the page and try again.");
+      setFailed(true);
       return;
     }
-    if (password !== confirm) {
-      setMessage("Passwords don't match.");
+    const problem = passwordProblem(password, confirm);
+    if (problem) {
+      setMessage(problem);
+      setFailed(true);
       return;
     }
     setBusy(true);
     setMessage(null);
-    const { error } = await supabase.auth.updateUser({ password });
+    let error: unknown = null;
+    try {
+      const res = await supabase.auth.updateUser({ password });
+      error = res.error;
+    } catch (err) {
+      error = err;
+    }
     setBusy(false);
     if (error) {
-      setMessage(`Could not change your password: ${error.message}`);
+      setMessage(friendlyPasswordError(error, "change"));
+      setFailed(true);
       return;
     }
     setPassword("");
     setConfirm("");
-    setMessage("Password changed.");
+    setFailed(false);
+    setMessage("Your password has been changed.");
   };
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Password</h2>
-      <form onSubmit={submit} className="mt-3 flex flex-wrap items-end gap-2">
+      <form onSubmit={submit} noValidate className="mt-3 flex flex-wrap items-end gap-2">
         <label className="text-sm text-ink">
           New password
           <input
@@ -76,7 +89,14 @@ function ChangePassword() {
           {busy ? "Saving…" : "Change password"}
         </button>
       </form>
-      {message && <p className="mt-2 text-sm text-ink/70">{message}</p>}
+      <div className="mt-3">
+        <PasswordChecklist password={password} confirm={confirm} />
+      </div>
+      {message && (
+        <p role={failed ? "alert" : "status"} className={`mt-2 text-sm ${failed ? "text-red-700" : "text-teal-700"}`}>
+          {message}
+        </p>
+      )}
     </div>
   );
 }

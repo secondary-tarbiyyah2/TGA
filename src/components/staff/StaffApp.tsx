@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { friendlyPasswordError } from "@/lib/learn/passwordRules";
 import { AdminStaffPanel } from "./AdminStaffPanel";
 
 type StaffRow = { id: string; display_name: string; role_title: string; teams_meeting_url: string | null; bookable?: boolean };
@@ -135,7 +136,7 @@ function ForcePasswordChange({ userId, onDone }: { userId: string; onDone: () =>
       const { error: updateErr } = await supabase.auth.updateUser({ password });
       if (updateErr) {
         setBusy(false);
-        setError("Couldn't update your password — try again.");
+        setError(friendlyPasswordError(updateErr, "change"));
         return;
       }
       setPasswordChanged(true);

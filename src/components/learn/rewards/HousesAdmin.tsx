@@ -4,13 +4,16 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchAllRows } from "@/components/learn/behaviour/data";
 import { HouseTable } from "@/components/learn/rewards/HouseTable";
+import { HouseBoard, type BoardChild } from "@/components/learn/rewards/HouseBoard";
+import { HouseStandingsMini } from "@/components/learn/rewards/HouseStandingsMini";
+import { fetchAllClasses, type ClassSummary } from "@/lib/learn/classes";
 
 // Headteacher/Admin tools for houses (0073): define houses (name, colour),
 // assign children, and award bonus points. Merits add house points
 // automatically, so nothing here has to be re-entered when merits are logged.
 
 type House = { id: string; name: string; colour: string; motto: string | null; sort_order: number; active: boolean };
-type ChildRow = { id: string; name: string; parent_user_id: string; year_groups: { name: string } | null };
+type ChildRow = BoardChild;
 type Member = { child_id: string; house_id: string };
 type Award = { id: string; house_id: string; points: number; reason: string; awarded_on: string; voided_at: string | null };
 
@@ -42,9 +45,11 @@ export function HousesAdmin() {
   const [awardHouse, setAwardHouse] = useState("");
   const [awardPoints, setAwardPoints] = useState("5");
   const [awardReason, setAwardReason] = useState("");
-
-  const [onlyUnassigned, setOnlyUnassigned] = useState(false);
-  const [search, setSearch] = useState("");
+  const [awardTarget, setAwardTarget] = useState<"house" | "class">("house");
+  const [awardClass, setAwardClass] = useState("");
+  const [classes, setClasses] = useState<ClassSummary[]>([]);
+  const [classShare, setClassShare] = useState<{ houseId: string; pupils: number }[] | null>(null);
+  const [classNoHouse, setClassNoHouse] = useState(0);
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -72,6 +77,39 @@ export function HousesAdmin() {
       cancelled = true;
     };
   }, [load]);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchAllClasses().then((list) => {
+      if (!cancelled) setClasses(list);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Who is in the chosen class, grouped by house, so the form can say who gets what before anything is saved.
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (awardTarget !== "class" || !awardClass || !supabase) return;
+    let cancelled = false;
+    (async () => {
+      const enr = await fetchAllRows<{ child_id: string }>((f, t) => supabase.from("enrolments").select("child_id").eq("class_id", awardClass).order("child_id").range(f, t));
+      if (cancelled) return;
+      const per = new Map<string, number>();
+      let none = 0;
+      for (const e of enr) {
+        const h = members.get(e.child_id);
+        if (h) per.set(h, (per.get(h) || 0) + 1);
+        else none += 1;
+      }
+      setClassShare([...per.entries()].map(([houseId, pupils]) => ({ houseId, pupils })));
+      setClassNoHouse(none);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [awardTarget, awardClass, members]);
 
   const houseById = useMemo(() => new Map((houses || []).map((h) => [h.id, h] as const)), [houses]);
   const counts = useMemo(() => {
@@ -125,15 +163,19 @@ export function HousesAdmin() {
     }, "House deleted.");
   };
 
-  const assign = (childId: string, houseId: string) =>
+  const assignMany = (childIds: string[], houseId: string) =>
     run(async () => {
       const supabase = getSupabaseClient();
       if (!supabase) return "Not connected.";
-      const { error } = houseId
-        ? await supabase.from("house_members").upsert({ child_id: childId, house_id: houseId }, { onConflict: "child_id" })
-        : await supabase.from("house_members").delete().eq("child_id", childId);
-      return error ? "Couldn't change that house." : null;
-    }, "House updated.");
+      for (let i = 0; i < childIds.length; i += 200) {
+        const chunk = childIds.slice(i, i + 200);
+        const { error } = houseId
+          ? await supabase.from("house_members").upsert(chunk.map((child_id) => ({ child_id, house_id: houseId })), { onConflict: "child_id" })
+          : await supabase.from("house_members").delete().in("child_id", chunk);
+        if (error) return "Couldn't change those houses. Try again.";
+      }
+      return null;
+    }, childIds.length === 1 ? "House updated." : `${childIds.length} children moved.`);
 
   // Siblings go to the same house; each family joins the smallest active house.
   const autoAssign = () => {
@@ -172,14 +214,31 @@ export function HousesAdmin() {
       const supabase = getSupabaseClient();
       if (!supabase) return "Not connected.";
       const pts = Number(awardPoints);
-      if (!awardHouse) return "Choose a house.";
       if (!Number.isInteger(pts) || pts < 1 || pts > 100) return "Points must be a whole number from 1 to 100.";
       if (!awardReason.trim()) return "Add a reason.";
-      const { error } = await supabase.from("house_point_awards").insert({ house_id: awardHouse, points: pts, reason: awardReason.trim() });
+      let rows: { house_id: string; points: number; reason: string }[];
+      if (awardTarget === "house") {
+        if (!awardHouse) return "Choose a house.";
+        rows = [{ house_id: awardHouse, points: pts, reason: awardReason.trim() }];
+      } else {
+        if (!awardClass) return "Choose a class.";
+        if (!classShare || classShare.length === 0) return "None of the pupils in that class have a house yet.";
+        // Each pupil earns their house `pts`; an award row holds at most 100, so large totals are split.
+        rows = [];
+        for (const s of classShare) {
+          let left = pts * s.pupils;
+          while (left > 0) {
+            const part = Math.min(100, left);
+            rows.push({ house_id: s.houseId, points: part, reason: awardReason.trim().slice(0, 200) });
+            left -= part;
+          }
+        }
+      }
+      const { error } = await supabase.from("house_point_awards").insert(rows);
       if (error) return "Couldn't award those points.";
       setAwardReason("");
       return null;
-    }, "Bonus points awarded.");
+    }, awardTarget === "house" ? "Bonus points awarded." : "Bonus points awarded to the class's houses.");
 
   const voidAward = (a: Award) => {
     if (!window.confirm("Void this award? It stops counting.")) return;
@@ -192,11 +251,6 @@ export function HousesAdmin() {
   };
 
   const editHouse = (id: string, patch: Partial<House>) => setHouses((hs) => (hs || []).map((h) => (h.id === id ? { ...h, ...patch } : h)));
-
-  const visibleChildren = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    return children.filter((c) => (!onlyUnassigned || !members.has(c.id)) && (!q || c.name.toLowerCase().includes(q))).slice(0, 200);
-  }, [children, members, onlyUnassigned, search]);
 
   if (houses === null) return <p className="text-sm text-ink/60">Loading…</p>;
 
@@ -250,29 +304,72 @@ export function HousesAdmin() {
 
       <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
         <h2 className="text-base font-semibold text-ink">Bonus points</h2>
-        <div className="mt-3 flex flex-wrap items-end gap-2">
-          <label className="text-xs font-medium text-ink/70">
-            House
-            <select value={awardHouse} onChange={(e) => setAwardHouse(e.target.value)} className="mt-1 block rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm">
-              <option value="">Choose…</option>
-              {houses.filter((h) => h.active).map((h) => (
-                <option key={h.id} value={h.id}>
-                  {h.name}
-                </option>
+        <div className="mt-3 grid gap-4 lg:grid-cols-[minmax(0,1fr)_17rem]">
+          <div>
+            <div role="group" aria-label="Who earns the points" className="mb-3 inline-flex gap-0.5 rounded-lg bg-cream p-0.5">
+              {([
+                ["house", "A house"],
+                ["class", "A whole class"],
+              ] as const).map(([id, label]) => (
+                <button key={id} type="button" aria-pressed={awardTarget === id} onClick={() => setAwardTarget(id)} className={`rounded-md px-3 py-1 text-xs font-semibold ${awardTarget === id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}>
+                  {label}
+                </button>
               ))}
-            </select>
-          </label>
-          <label className="text-xs font-medium text-ink/70">
-            Points
-            <input type="number" min={1} max={100} value={awardPoints} onChange={(e) => setAwardPoints(e.target.value)} className="mt-1 block w-20 rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
-          </label>
-          <label className="min-w-[12rem] flex-1 text-xs font-medium text-ink/70">
-            Reason
-            <input value={awardReason} maxLength={200} onChange={(e) => setAwardReason(e.target.value)} placeholder="e.g. Charity bake sale" className="mt-1 block w-full rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
-          </label>
-          <button type="button" disabled={busy} onClick={award} className="rounded-lg bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800 disabled:opacity-50">
-            Award
-          </button>
+            </div>
+            <div className="flex flex-wrap items-end gap-2">
+              {awardTarget === "house" ? (
+                <label className="text-xs font-medium text-ink/70">
+                  House
+                  <select value={awardHouse} onChange={(e) => setAwardHouse(e.target.value)} className="mt-1 block rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm">
+                    <option value="">Choose…</option>
+                    {houses.filter((h) => h.active).map((h) => (
+                      <option key={h.id} value={h.id}>
+                        {h.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              ) : (
+                <label className="text-xs font-medium text-ink/70">
+                  Class
+                  <select
+                    value={awardClass}
+                    onChange={(e) => {
+                      setAwardClass(e.target.value);
+                      setClassShare(null);
+                    }}
+                    className="mt-1 block rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm"
+                  >
+                    <option value="">Choose…</option>
+                    {classes.map((c) => (
+                      <option key={c.id} value={c.id}>
+                        {c.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
+              <label className="text-xs font-medium text-ink/70">
+                {awardTarget === "class" ? "Points per pupil" : "Points"}
+                <input type="number" min={1} max={100} value={awardPoints} onChange={(e) => setAwardPoints(e.target.value)} className="mt-1 block w-20 rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
+              </label>
+              <label className="min-w-[12rem] flex-1 text-xs font-medium text-ink/70">
+                Reason
+                <input value={awardReason} maxLength={200} onChange={(e) => setAwardReason(e.target.value)} placeholder="e.g. Charity bake sale" className="mt-1 block w-full rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
+              </label>
+              <button type="button" disabled={busy} onClick={award} className="rounded-lg bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800 disabled:opacity-50">
+                Award
+              </button>
+            </div>
+            {awardTarget === "class" && awardClass && classShare && (
+              <p className="mt-2 text-xs text-ink/60">
+                {classShare.length === 0
+                  ? "None of this class's pupils have a house yet."
+                  : `${classShare.map((s) => `${houseById.get(s.houseId)?.name || "House"} +${(Number(awardPoints) || 0) * s.pupils}`).join(", ")}${classNoHouse > 0 ? `. ${classNoHouse} without a house earn nothing.` : "."}`}
+              </p>
+            )}
+          </div>
+          <HouseStandingsMini refreshKey={refresh} highlightHouseId={awardTarget === "house" ? awardHouse : undefined} />
         </div>
         {awards.length > 0 && (
           <ul className="mt-4 divide-y divide-gold-light/50 text-sm">
@@ -293,47 +390,7 @@ export function HousesAdmin() {
         )}
       </section>
 
-      <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-base font-semibold text-ink">Assign children</h2>
-          <button type="button" disabled={busy} onClick={autoAssign} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-semibold text-ink/80 hover:bg-cream disabled:opacity-50">
-            Auto-assign everyone without a house
-          </button>
-        </div>
-        <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
-          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search by name" className="rounded-lg border border-gold-light px-3 py-1.5" />
-          <label className="flex items-center gap-1.5 text-ink/70">
-            <input type="checkbox" checked={onlyUnassigned} onChange={(e) => setOnlyUnassigned(e.target.checked)} />
-            Only children without a house
-          </label>
-          <span className="text-xs text-ink/50">
-            {children.length - members.size > 0 ? `${children.length - members.size} without a house` : "Everyone has a house"}
-          </span>
-        </div>
-        {visibleChildren.length === 0 ? (
-          <p className="mt-3 text-sm text-ink/60">No children to show.</p>
-        ) : (
-          <ul className="mt-3 divide-y divide-gold-light/50">
-            {visibleChildren.map((c) => (
-              <li key={c.id} className="flex flex-wrap items-center justify-between gap-2 py-1.5 text-sm">
-                <span>
-                  {c.name}
-                  {c.year_groups?.name && <span className="ml-2 text-xs text-ink/50">{c.year_groups.name}</span>}
-                </span>
-                <select aria-label={`House for ${c.name}`} disabled={busy} value={members.get(c.id) || ""} onChange={(e) => assign(c.id, e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-sm">
-                  <option value="">No house</option>
-                  {(houses || []).filter((h) => h.active || members.get(c.id) === h.id).map((h) => (
-                    <option key={h.id} value={h.id}>
-                      {h.name}
-                    </option>
-                  ))}
-                </select>
-              </li>
-            ))}
-          </ul>
-        )}
-        {children.length > visibleChildren.length && <p className="mt-2 text-xs text-ink/50">Showing the first {visibleChildren.length}. Use search to find others.</p>}
-      </section>
+      <HouseBoard houses={houses} pupils={children}members={members} busy={busy} onMove={assignMany} onAutoAssign={autoAssign} />
 
       <div key={refresh} className="max-w-xl">
         <HouseTable title="Current house table" />

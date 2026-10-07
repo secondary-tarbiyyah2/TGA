@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { ApplicationRow } from "@/components/admissions/applicationShared";
 import { sendAdmissionsEmail, type SendOutcome } from "@/components/learn/admissions/admissionsData";
 import { findUnresolvedTokens } from "@/components/learn/admissions/messageTemplates";
+import { TokenEditor } from "@/components/learn/admissions/TokenEditor";
 
 export { sendAdmissionsEmail };
 export type { SendOutcome };
@@ -65,11 +66,11 @@ export function EmailComposer({
         Subject
         <input value={subject} onChange={(e) => setSubject(e.target.value)} maxLength={300} className={fieldCls} />
       </label>
-      <label className="block text-sm font-medium text-ink">
-        Message
-        <textarea value={body} onChange={(e) => setBody(e.target.value)} rows={rows} maxLength={20000} className={`${fieldCls} font-mono text-xs leading-relaxed`} />
-      </label>
-      {unresolved.length > 0 && <p role="alert" className="text-xs text-red-700">Unknown values to fix: {unresolved.map((t) => `{{${t}}}`).join(", ")}</p>}
+      <div className="text-sm font-medium text-ink">
+        <span>Message</span>
+        <TokenEditor value={body} onChange={setBody} known={null} rows={rows} maxLength={20000} ariaLabel="Message" />
+      </div>
+      {unresolved.length > 0 && <p role="alert" className="text-xs text-red-700">Unfilled values to fix (highlighted in red): {unresolved.map((t) => `{{${t}}}`).join(", ")}</p>}
       <div className="flex items-center gap-3">
         <button type="button" onClick={send} disabled={sending || !subject.trim() || !body.trim()} className="rounded-lg bg-teal-700 px-4 py-1.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50">
           {sending ? "Sending…" : sendLabel}

@@ -71,9 +71,10 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
   );
   const activeGroup = groups.find((g) => g.items.some((i) => isSidebarItemActive(pathname, i)))?.label;
   // Open state is remembered per area; the group holding the current page
-  // is always opened. Default: just the first group.
+  // is always opened. Default: admin groups start collapsed (there are many);
+  // the other areas are short, so every group starts open.
   const storeKey = `learn.sidebar.open.${area}`;
-  const [openGroups, setOpenGroups] = useState<string[]>(() => groups.slice(0, 1).map((g) => g.label));
+  const [openGroups, setOpenGroups] = useState<string[]>(() => (area === "admin" ? [] : groups.map((g) => g.label)));
   useEffect(() => {
     let saved: string[] | null = null;
     try {

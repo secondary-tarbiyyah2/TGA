@@ -1,48 +1,12 @@
-// One place for every /learn area's primary navigation. The shared portal
-// header (src/app/learn/layout.tsx → PortalNav) reads this, so admin,
-// teach, family and student all get the same Moodle-style top bar instead
-// of each area drawing its own second nav strip inside the page.
-//
-// A group with one item is a plain tab. A group with several items opens
-// as a dropdown.
+// One place for every /learn area's navigation. The sidebar
+// (PortalSidebar, SIDEBAR_NAV below) is the ONLY navigation: there is no
+// top tab strip, so no destination is listed twice.
 
 export type PortalArea = "admin" | "teach" | "family" | "student";
 // headOnly: the page's LearnGate only admits head_teacher/admin, so the
 // tab is hidden from admissions staff rather than leading to a refusal.
 export type PortalNavItem = { href: string; label: string; hint?: string; headOnly?: boolean };
 export type PortalNavGroup = { label: string; items: PortalNavItem[] };
-
-export const PORTAL_NAV: Record<PortalArea, PortalNavGroup[]> = {
-  // Moodle-style: a handful of primary tabs, with every admin tool
-  // collected on one "Site administration" page (ADMIN_SECTIONS below).
-  admin: [
-    { label: "Dashboard", items: [{ href: "/admin/dashboard", label: "Dashboard" }] },
-    { label: "Classes", items: [{ href: "/admin/classes", label: "Classes" }] },
-    { label: "Messages", items: [{ href: "/admin/messages", label: "Messages", headOnly: true }] },
-    { label: "Site administration", items: [{ href: "/admin/site", label: "Site administration" }] },
-  ],
-  teach: [
-    { label: "Dashboard", items: [{ href: "/teach/dashboard", label: "Dashboard" }] },
-    { label: "My classes", items: [{ href: "/teach/classes", label: "My classes" }] },
-    { label: "Homework", items: [{ href: "/teach/homework", label: "Homework" }] },
-    { label: "Assessment", items: [{ href: "/teach/assessment", label: "Assessment" }] },
-    { label: "Reports", items: [{ href: "/teach/reports", label: "Reports" }] },
-    { label: "Messages", items: [{ href: "/teach/messages", label: "Messages" }] },
-  ],
-  family: [
-    { label: "Dashboard", items: [{ href: "/family/dashboard", label: "Dashboard" }] },
-    { label: "My classes", items: [{ href: "/family/classes", label: "My classes" }] },
-    { label: "Homework", items: [{ href: "/family/homework", label: "Homework" }] },
-    { label: "Reports", items: [{ href: "/family/reports", label: "Reports" }] },
-    { label: "Messages", items: [{ href: "/family/messages", label: "Messages" }] },
-  ],
-  student: [
-    { label: "Dashboard", items: [{ href: "/student/dashboard", label: "Dashboard" }] },
-    { label: "My classes", items: [{ href: "/student/classes", label: "My classes" }] },
-    { label: "Homework", items: [{ href: "/student/homework", label: "Homework" }] },
-    { label: "Reports", items: [{ href: "/student/reports", label: "Reports" }] },
-  ],
-};
 
 /** Every admin tool, grouped like Moodle's Site administration tabs. */
 export const ADMIN_SECTIONS: PortalNavGroup[] = [
@@ -123,14 +87,6 @@ export function isActivePath(pathname: string, href: string): boolean {
   return p === href || p.startsWith(href + "/");
 }
 
-/** The area's nav with anything the signed-in user can't open removed. */
-export function visiblePortalNav(area: PortalArea, roles: string[]): PortalNavGroup[] {
-  const isHead = roles.some((r) => r === "head_teacher" || r === "admin");
-  return PORTAL_NAV[area]
-    .map((g) => ({ ...g, items: g.items.filter((i) => isHead || !i.headOnly) }))
-    .filter((g) => g.items.length > 0);
-}
-
 /** Site administration sections with anything the user can't open removed. */
 export function visibleAdminSections(roles: string[]): PortalNavGroup[] {
   const isHead = roles.some((r) => r === "head_teacher" || r === "admin");
@@ -175,43 +131,68 @@ export type SidebarIcon =
 export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean; group?: string; matchPrefixes?: string[] };
 export type SidebarGroup = { label: string; items: SidebarItem[] };
 
-const G_OVERVIEW = "Overview";
-const G_PEOPLE = "People & admissions";
 const G_CLASSROOM = "Classroom";
+const G_BEHAVIOUR = "Behaviour & rewards";
+const G_REPORTS = "Reports & progress";
+const G_PROGRESS = "Progress";
+const G_CALENDAR = "Calendar & timetable";
+const G_PEOPLE = "People & admissions";
 const G_ATTENDANCE = "Attendance";
 const G_COMMS = "Communication";
 const G_FINANCE = "Finance & compliance";
 const G_SETTINGS = "Settings";
-const G_STAFF = "Staff";
+const G_STAFF = "My staff area";
+const G_SCHOOL = "School";
+const G_FAMILY = "My family";
 
-/** Display order of the sidebar groups (unlabelled items come first). */
-export const SIDEBAR_GROUP_ORDER: string[] = ["", G_OVERVIEW, G_PEOPLE, G_CLASSROOM, G_ATTENDANCE, G_COMMS, G_FINANCE, G_SETTINGS, G_STAFF];
+/** Display order of the sidebar groups (unlabelled "Home" items come first). */
+export const SIDEBAR_GROUP_ORDER: string[] = [
+  "",
+  G_CLASSROOM,
+  G_BEHAVIOUR,
+  G_REPORTS,
+  G_PROGRESS,
+  G_CALENDAR,
+  G_COMMS,
+  G_SCHOOL,
+  G_PEOPLE,
+  G_ATTENDANCE,
+  G_FINANCE,
+  G_SETTINGS,
+  G_FAMILY,
+  G_STAFF,
+];
 
+// Each destination appears exactly once per area. Order inside an area is
+// Home, Classroom, Behaviour, Reports, Calendar, Communication, then the
+// rest. Admin groups are collapsed by default (see PortalSidebar), except
+// the one holding the current page.
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   admin: [
-    { href: "/admin/dashboard", label: "Overview", icon: "overview", group: G_OVERVIEW },
-    { href: "/admin/summary", label: "Summary", icon: "summary", headOnly: true, group: G_OVERVIEW },
-    { href: "/admin/calendar", label: "Calendar", icon: "calendar", group: G_OVERVIEW },
+    { href: "/admin/dashboard", label: "Home", icon: "overview" },
+    { href: "/admin/summary", label: "Summary", icon: "summary", headOnly: true },
+    { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true, group: G_CLASSROOM, matchPrefixes: ["/admin/class"] },
+    { href: "/admin/homework", label: "Homework", icon: "homework", headOnly: true, group: G_CLASSROOM },
+    { href: "/admin/academic", label: "Academic setup", icon: "academic", group: G_CLASSROOM },
+    { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true, group: G_BEHAVIOUR },
+    { href: "/admin/rewards", label: "Houses & stars", icon: "behaviour", headOnly: true, group: G_BEHAVIOUR },
+    { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true, group: G_REPORTS },
+    { href: "/admin/gcse", label: "GCSE progress", icon: "grades", headOnly: true, group: G_REPORTS },
+    { href: "/admin/calendar", label: "Calendar", icon: "calendar", group: G_CALENDAR },
+    { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true, group: G_CALENDAR },
+    { href: "/admin/parent-evenings", label: "Parent evenings", icon: "calendar", headOnly: true, group: G_CALENDAR },
+    { href: "/admin/open-evening", label: "Open evenings", icon: "calendar", group: G_CALENDAR },
+    { href: "/admin/messages", label: "Messages", icon: "messages", headOnly: true, group: G_COMMS },
+    { href: "/admin/message-oversight", label: "Message oversight", icon: "compliance", headOnly: true, group: G_COMMS },
+    { href: "/admin/announcements", label: "Announcements", icon: "announcements", headOnly: true, group: G_COMMS },
+    { href: "/admin/digest", label: "Weekly digest", icon: "messages", headOnly: true, group: G_COMMS },
     { href: "/admin/admissions", label: "Admissions", icon: "admissions", group: G_PEOPLE },
     { href: "/admin/people", label: "People & accounts", icon: "people", group: G_PEOPLE },
     { href: "/admin/pupils", label: "Pupil records", icon: "documents", group: G_PEOPLE },
     { href: "/admin/staff", label: "Staff profiles", icon: "people", headOnly: true, group: G_PEOPLE },
-    { href: "/admin/classes", label: "Classes", icon: "classes", headOnly: true, group: G_CLASSROOM, matchPrefixes: ["/admin/class"] },
-    { href: "/admin/homework", label: "Homework", icon: "homework", headOnly: true, group: G_CLASSROOM },
-    { href: "/admin/gcse", label: "GCSE progress", icon: "grades", headOnly: true, group: G_CLASSROOM },
-    { href: "/admin/behaviour", label: "Behaviour", icon: "behaviour", headOnly: true, group: G_CLASSROOM },
-    { href: "/admin/rewards", label: "Houses & stars", icon: "behaviour", headOnly: true, group: G_CLASSROOM },
-    { href: "/admin/lessons", label: "Timetable & lessons", icon: "lessons", headOnly: true, group: G_CLASSROOM },
-    { href: "/admin/academic", label: "Academic setup", icon: "academic", group: G_CLASSROOM },
-    { href: "/admin/reports", label: "Reports", icon: "reports", headOnly: true, group: G_CLASSROOM },
     { href: "/admin/attendance", label: "Attendance", icon: "attendance", headOnly: true, group: G_ATTENDANCE },
     { href: "/admin/absences", label: "Absences", icon: "absences", headOnly: true, group: G_ATTENDANCE },
     { href: "/admin/staff-attendance", label: "Staff attendance", icon: "clock", headOnly: true, group: G_ATTENDANCE },
-    { href: "/admin/messages", label: "Messages", icon: "messages", headOnly: true, group: G_COMMS },
-    { href: "/admin/message-oversight", label: "Message oversight", icon: "compliance", headOnly: true, group: G_COMMS },
-    { href: "/admin/announcements", label: "Announcements", icon: "announcements", headOnly: true, group: G_COMMS },
-    { href: "/admin/parent-evenings", label: "Parent evenings", icon: "calendar", headOnly: true, group: G_COMMS },
-    { href: "/admin/digest", label: "Weekly digest", icon: "messages", headOnly: true, group: G_COMMS },
     { href: "/admin/fees", label: "Fees", icon: "fees", headOnly: true, group: G_FINANCE },
     { href: "/admin/documents", label: "Documents & signatures", icon: "documents", headOnly: true, group: G_FINANCE },
     { href: "/admin/compliance", label: "Safeguarding & compliance", icon: "compliance", group: G_FINANCE },
@@ -219,56 +200,55 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/data-protection", label: "Data protection", icon: "compliance", headOnly: true, group: G_FINANCE },
     { href: "/admin/content", label: "Website content", icon: "website", group: G_SETTINGS },
     { href: "/admin/quiz", label: "Quiz & sample weeks", icon: "quiz", headOnly: true, group: G_SETTINGS },
-    { href: "/admin/open-evening", label: "Open evenings", icon: "calendar", group: G_SETTINGS },
     { href: "/admin/settings", label: "Settings", icon: "settings", group: G_SETTINGS },
   ],
-  // Teacher/family/student: one flat list. The sidebar is the ONLY place
-  // classroom destinations are listed (there is no second tab strip), so
-  // each destination appears exactly once. A class's own sections (Stream,
-  // Classwork, People, Grades) are in-page tabs on the class page itself.
+  // Teacher/family/student: the sidebar is the ONLY place destinations are
+  // listed (there is no second tab strip), so each appears exactly once. A
+  // class's own sections (Stream, Classwork, People, Grades) are in-page
+  // tabs on the class page itself.
   teach: [
-    { href: "/teach/dashboard", label: "Overview", icon: "overview" },
-    { href: "/teach/today", label: "Today", icon: "today" },
-    { href: "/teach/classes", label: "My classes", icon: "classes", matchPrefixes: ["/teach/class", "/teach/lessons"] },
-    { href: "/teach/review", label: "To review", icon: "attendance" },
-    { href: "/teach/homework", label: "Homework", icon: "homework" },
-    { href: "/teach/assessment", label: "Assessment & grades", icon: "grades" },
-    { href: "/teach/behaviour", label: "Behaviour", icon: "behaviour" },
-    { href: "/teach/pupils", label: "Pupils", icon: "people" },
-    { href: "/teach/calendar", label: "Calendar", icon: "calendar" },
-    { href: "/teach/parent-evenings", label: "Parent evenings", icon: "calendar" },
-    { href: "/teach/messages", label: "Messages", icon: "messages" },
-    { href: "/teach/reports", label: "Reports", icon: "reports" },
-    { href: "/teach/stars", label: "Star of the week", icon: "behaviour" },
+    { href: "/teach/dashboard", label: "Home", icon: "overview" },
+    { href: "/teach/today", label: "Today", icon: "today", matchPrefixes: ["/teach/enrichment"] },
+    { href: "/teach/classes", label: "My classes", icon: "classes", group: G_CLASSROOM, matchPrefixes: ["/teach/class", "/teach/lessons"] },
+    { href: "/teach/review", label: "To review", icon: "attendance", group: G_CLASSROOM },
+    { href: "/teach/homework", label: "Homework", icon: "homework", group: G_CLASSROOM },
+    { href: "/teach/assessment", label: "Assessment & grades", icon: "grades", group: G_CLASSROOM },
+    { href: "/teach/behaviour", label: "Behaviour", icon: "behaviour", group: G_BEHAVIOUR },
+    { href: "/teach/stars", label: "Star of the week", icon: "behaviour", group: G_BEHAVIOUR },
+    { href: "/teach/pupils", label: "Pupils", icon: "people", group: G_REPORTS },
+    { href: "/teach/reports", label: "Reports", icon: "reports", group: G_REPORTS },
+    { href: "/teach/calendar", label: "Calendar", icon: "calendar", group: G_CALENDAR },
+    { href: "/teach/parent-evenings", label: "Parent evenings", icon: "calendar", group: G_CALENDAR },
+    { href: "/teach/messages", label: "Messages", icon: "messages", group: G_COMMS },
+    { href: "/teach/announcements", label: "Announcements", icon: "announcements", group: G_COMMS },
     { href: "/teach/profile", label: "My profile", icon: "people", group: G_STAFF },
     { href: "/teach/clock", label: "My hours", icon: "clock", group: G_STAFF },
     { href: "/teach/absences", label: "Absences", icon: "absences", group: G_STAFF },
-    { href: "/teach/announcements", label: "Announcements", icon: "announcements", group: G_STAFF },
   ],
   family: [
-    { href: "/family/dashboard", label: "Overview", icon: "overview" },
-    { href: "/family/classes", label: "My classes", icon: "classes", matchPrefixes: ["/family/class", "/family/lessons"] },
-    { href: "/family/todo", label: "To do", icon: "homework", matchPrefixes: ["/family/homework"] },
-    { href: "/family/behaviour", label: "Behaviour", icon: "behaviour" },
-    { href: "/family/reports", label: "Reports", icon: "reports" },
-    { href: "/family/calendar", label: "Calendar", icon: "calendar" },
-    { href: "/family/parent-evenings", label: "Parent evenings", icon: "calendar" },
-    { href: "/family/messages", label: "Messages", icon: "messages" },
-    { href: "/family/announcements", label: "Announcements", icon: "announcements" },
-    { href: "/family/teachers", label: "Meet the teachers", icon: "people" },
-    { href: "/family/absences", label: "Absences", icon: "absences" },
-    { href: "/family/child-details", label: "Child details", icon: "documents" },
-    { href: "/family/fees", label: "Fees", icon: "fees" },
+    { href: "/family/dashboard", label: "Home", icon: "overview" },
+    { href: "/family/classes", label: "My classes", icon: "classes", group: G_CLASSROOM, matchPrefixes: ["/family/class", "/family/lessons"] },
+    { href: "/family/todo", label: "To do", icon: "homework", group: G_CLASSROOM, matchPrefixes: ["/family/homework"] },
+    { href: "/family/behaviour", label: "Behaviour", icon: "behaviour", group: G_PROGRESS },
+    { href: "/family/reports", label: "Reports", icon: "reports", group: G_PROGRESS },
+    { href: "/family/calendar", label: "Calendar", icon: "calendar", group: G_CALENDAR },
+    { href: "/family/parent-evenings", label: "Parent evenings", icon: "calendar", group: G_CALENDAR },
+    { href: "/family/messages", label: "Messages", icon: "messages", group: G_COMMS },
+    { href: "/family/announcements", label: "Announcements", icon: "announcements", group: G_COMMS },
+    { href: "/family/teachers", label: "Meet the teachers", icon: "people", group: G_FAMILY },
+    { href: "/family/absences", label: "Absences", icon: "absences", group: G_FAMILY },
+    { href: "/family/child-details", label: "Child details", icon: "documents", group: G_FAMILY },
+    { href: "/family/fees", label: "Fees", icon: "fees", group: G_FAMILY },
   ],
   student: [
     { href: "/student/dashboard", label: "Home", icon: "overview" },
-    { href: "/student/classes", label: "My classes", icon: "classes", matchPrefixes: ["/student/class", "/student/lessons"] },
-    { href: "/student/todo", label: "To do", icon: "homework", matchPrefixes: ["/student/homework"] },
-    { href: "/student/behaviour", label: "Behaviour", icon: "behaviour" },
-    { href: "/student/reports", label: "Reports", icon: "reports" },
-    { href: "/student/calendar", label: "Calendar", icon: "calendar" },
-    { href: "/student/announcements", label: "Announcements", icon: "announcements" },
-    { href: "/student/teachers", label: "My teachers", icon: "people" },
+    { href: "/student/classes", label: "My classes", icon: "classes", group: G_CLASSROOM, matchPrefixes: ["/student/class", "/student/lessons"] },
+    { href: "/student/todo", label: "To do", icon: "homework", group: G_CLASSROOM, matchPrefixes: ["/student/homework"] },
+    { href: "/student/behaviour", label: "Behaviour", icon: "behaviour", group: G_PROGRESS },
+    { href: "/student/reports", label: "Reports", icon: "reports", group: G_PROGRESS },
+    { href: "/student/calendar", label: "Calendar", icon: "calendar", group: G_CALENDAR },
+    { href: "/student/announcements", label: "Announcements", icon: "announcements", group: G_SCHOOL },
+    { href: "/student/teachers", label: "My teachers", icon: "people", group: G_SCHOOL },
   ],
 };
 
