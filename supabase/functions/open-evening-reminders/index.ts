@@ -14,7 +14,19 @@ import { emailShell, sendEmail } from "../_shared/resend.ts";
 const SITE_URL = Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk";
 const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-const supabase = createClient(Deno.env.get("SUPABASE_URL")!, serviceRoleKey);
+const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+const supabase = createClient(supabaseUrl, serviceRoleKey);
+
+async function isServiceCaller(token: string): Promise<boolean> {
+  if (!token) return false;
+  if (token === serviceRoleKey) return true;
+  try {
+    const res = await fetch(`${supabaseUrl}/auth/v1/admin/users?per_page=1`, { headers: { apikey: token, Authorization: `Bearer ${token}` } });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
 
 const esc = (s: string): string => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const ukWhen = (iso: string): string => new Date(iso).toLocaleString("en-GB", { dateStyle: "full", timeStyle: "short", timeZone: "Europe/London" }) + " (UK time)";
@@ -31,7 +43,7 @@ type BookingRow = {
 
 Deno.serve(async (req) => {
   if (req.method !== "POST") return jsonResponse({ ok: false, error: "method_not_allowed" }, 405);
-  if (req.headers.get("Authorization") !== `Bearer ${serviceRoleKey}`) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+  if (!(await isServiceCaller((req.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "").trim()))) return jsonResponse({ ok: false, error: "forbidden" }, 403);
   const dryRun = new URL(req.url).searchParams.get("dry_run") === "1";
 
   const now = new Date();
