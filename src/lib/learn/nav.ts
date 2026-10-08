@@ -288,3 +288,40 @@ export const AREA_SUBTITLE: Record<PortalArea, string> = {
   family: "Parent portal",
   student: "Student portal",
 };
+
+/** Icon for a whole section (a group of sidebar items) in the sidebar. */
+const GROUP_ICON: Record<string, SidebarIcon> = {
+  [G_CLASSROOM]: "classes",
+  [G_PUPIL_WORK]: "grades",
+  [G_PROGRESS]: "grades",
+  [G_CALENDAR]: "calendar",
+  [G_COMMS]: "messages",
+  [G_SCHOOL]: "academic",
+  [G_PEOPLE]: "people",
+  [G_FINANCE]: "settings",
+  [G_FAMILY]: "people",
+  [G_STAFF]: "clock",
+};
+
+/** One row in the sidebar: either a single page, or a whole section that
+ * links to its first page (the section's other pages show as tabs along the
+ * top of the page, see SectionTabs). */
+export type SidebarEntry = { label: string; icon: SidebarIcon; href: string; items: SidebarItem[]; section: boolean };
+
+export function sidebarEntries(area: PortalArea, roles: string[]): SidebarEntry[] {
+  const out: SidebarEntry[] = [];
+  for (const g of visibleSidebarGroups(area, roles)) {
+    if (g.label === "" || g.items.length === 1) {
+      for (const i of g.items) out.push({ label: g.label === "" ? i.label : g.items.length === 1 ? i.label : g.label, icon: i.icon, href: i.href, items: [i], section: false });
+    } else {
+      out.push({ label: g.label, icon: GROUP_ICON[g.label] || g.items[0].icon, href: g.items[0].href, items: g.items, section: true });
+    }
+  }
+  return out;
+}
+
+/** The section (group with more than one page) the current page sits in. */
+export function activeSection(area: PortalArea, roles: string[], pathname: string): SidebarGroup | null {
+  const g = visibleSidebarGroups(area, roles).find((x) => x.label !== "" && x.items.length > 1 && x.items.some((i) => isSidebarItemActive(pathname, i)));
+  return g || null;
+}

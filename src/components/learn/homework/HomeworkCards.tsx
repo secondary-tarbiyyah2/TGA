@@ -130,7 +130,7 @@ export function HomeworkCard({
   const handedIn = (statuses || []).filter((s) => s.submission_id).length;
 
   return (
-    <div className={`rounded-lg border p-4 ${archived ? "border-ink/20 bg-ink/5" : "border-gold-light/40"}`}>
+    <div className={`rounded-2xl border p-5 ${archived ? "border-ink/20 bg-ink/5" : "border-gold-light bg-white"}`}>
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="min-w-0">
           <p className="text-sm font-medium text-ink">

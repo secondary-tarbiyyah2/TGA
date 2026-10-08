@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
-import { AREA_SUBTITLE, isSidebarItemActive, visibleSidebarGroups, type PortalArea, type SidebarIcon } from "@/lib/learn/nav";
+import { AREA_SUBTITLE, isSidebarItemActive, sidebarEntries, type PortalArea, type SidebarIcon } from "@/lib/learn/nav";
 
 // Outline icons, 20×20, drawn with stroke so they read like the rest of
 // the UI (Ihsan/Lucide style).
@@ -70,11 +70,10 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
   const pathname = usePathname();
   const signOut = useLearnSignOut();
   const [fullName, setFullName] = useState<string | null>(null);
-  const groups = visibleSidebarGroups(
+  const entries = sidebarEntries(
     area,
     roles.map((r) => r.role),
   );
-  const activeGroup = groups.find((g) => g.items.some((i) => isSidebarItemActive(pathname, i)))?.label;
   const areas = [...new Set(roles.map((r) => dashboardPathForRole(r.role)))];
   const roleLabel = [...new Set(roles.map((r) => learnRoleLabel(r.role)))].join(" · ");
   const displayName = fullName || session.user.email || "Your account";
@@ -97,37 +96,32 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
       </Link>
       <p className="px-6 pb-1 pt-4 text-[11px] font-semibold uppercase tracking-wider text-ink/45">{AREA_SUBTITLE[area]}</p>
 
-      <nav aria-label="Portal" className="min-h-0 flex-1 overflow-y-auto px-3 pb-4">
-        {groups.map((g) => {
-          const grouped = g.label !== "";
-          return (
-            <div key={g.label || "all"} className={grouped ? "mt-4 border-t border-gold-light pt-4 first:mt-1 first:border-t-0 first:pt-0" : ""}>
-              {grouped && (
-                <p className={`px-3 pb-2 text-[11px] font-bold uppercase tracking-[0.08em] ${g.label === activeGroup ? "text-teal-800" : "text-ink/45"}`}>{g.label}</p>
-              )}
-              <ul className="space-y-0.5">
-                {g.items.map((item) => {
-                  const active = isSidebarItemActive(pathname, item);
-                  return (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        onClick={onNavigate}
-                        aria-current={active ? "page" : undefined}
-                        className={`group flex items-center gap-3 rounded-xl px-2 py-1.5 text-[14.5px] font-medium transition-colors ${
-                          active ? "bg-teal-100/60 font-semibold text-teal-900" : "text-ink/75 hover:bg-cream hover:text-ink"
-                        }`}
-                      >
-                        <NavIcon name={item.icon} active={active} />
-                        <span className="min-w-0 flex-1 truncate">{item.label}</span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          );
-        })}
+      <nav aria-label="Portal" className="min-h-0 flex-1 overflow-y-auto px-3 pb-4 pt-1">
+        <ul className="space-y-1">
+          {entries.map((e) => {
+            const active = e.items.some((i) => isSidebarItemActive(pathname, i));
+            return (
+              <li key={e.label + e.href}>
+                <Link
+                  href={e.href}
+                  onClick={onNavigate}
+                  aria-current={active ? "page" : undefined}
+                  className={`group flex items-center gap-3 rounded-xl px-2 py-1.5 text-[15px] font-medium transition-colors ${
+                    active ? "bg-teal-100/60 font-semibold text-teal-900" : "text-ink/75 hover:bg-cream hover:text-ink"
+                  }`}
+                >
+                  <NavIcon name={e.icon} active={active} />
+                  <span className="min-w-0 flex-1 truncate">{e.label}</span>
+                  {e.section && (
+                    <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4 shrink-0 text-ink/30">
+                      <path d="M7.5 5l5 5-5 5" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
 
         {areas.length > 1 && (
           <div className="mt-5 border-t border-gold-light pt-3">

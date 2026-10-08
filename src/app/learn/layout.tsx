@@ -8,6 +8,7 @@ import { LearnAccountMenu } from "@/components/learn/LearnAccountMenu";
 import { NotificationBell } from "@/components/learn/NotificationBell";
 import { PortalSidebar, PortalSidebarDrawer } from "@/components/learn/PortalSidebar";
 import { portalAreaFor } from "@/lib/learn/nav";
+import { SectionTabs } from "@/components/learn/SectionTabs";
 import { SignatureBanner } from "@/components/learn/SignatureBanner";
 import { CommandPalette } from "@/components/learn/CommandPalette";
 import { ClockChip, ClockInGate } from "@/components/learn/ClockInGate";
@@ -92,6 +93,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
 
         <main id="main" className="flex-1">
           <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
+            <SectionTabs area={area} roles={roles.map((r) => r.role)} />
             <SignatureBanner />
             <ClockInGate userId={activeSession.user.id} roles={roles}>
               {children}
