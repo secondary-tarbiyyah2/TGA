@@ -168,11 +168,11 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
                 </ul>
                 {r.comment && <p className="mt-3 rounded-lg bg-cream/60 px-3 py-2 text-xs text-ink/75">Teacher comment: {r.comment}</p>}
 
-                <h4 className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/50">History</h4>
+                <h4 className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/65">History</h4>
                 {history === null ? (
-                  <p className="mt-1 text-xs text-ink/50">Loading…</p>
+                  <p className="mt-1 text-xs text-ink/65">Loading…</p>
                 ) : hist.length === 0 ? (
-                  <p className="mt-1 text-xs text-ink/50">No changes recorded yet.</p>
+                  <p className="mt-1 text-xs text-ink/65">No changes recorded yet.</p>
                 ) : (
                   <ul className="mt-1 divide-y divide-gold-light/30 text-xs">
                     {hist
@@ -202,7 +202,7 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
                               </>
                             )}
                             {canEdit && h.kind === "mock" && (
-                              <button type="button" onClick={() => removeMock(h)} aria-label="Remove mock result" className="text-ink/40 hover:text-red-700">
+                              <button type="button" onClick={() => removeMock(h)} aria-label="Remove mock result" className="text-ink/65 hover:text-red-700">
                                 ×
                               </button>
                             )}

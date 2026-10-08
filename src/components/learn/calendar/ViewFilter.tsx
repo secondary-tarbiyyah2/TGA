@@ -117,12 +117,12 @@ function SearchChip({
                   className="flex w-full items-baseline justify-between gap-2 rounded-lg px-3 py-1.5 text-left text-sm hover:bg-cream"
                 >
                   <span className="truncate text-ink">{o.name}</span>
-                  {o.hint && <span className="shrink-0 text-xs text-ink/45">{o.hint}</span>}
+                  {o.hint && <span className="shrink-0 text-xs text-ink/65">{o.hint}</span>}
                 </button>
               </li>
             ))}
           </ul>
-          {options.length > 40 && !q && <p className="px-3 pt-1 text-[11px] text-ink/45">Type to search all {options.length}.</p>}
+          {options.length > 40 && !q && <p className="px-3 pt-1 text-[11px] text-ink/65">Type to search all {options.length}.</p>}
         </div>
       )}
     </div>

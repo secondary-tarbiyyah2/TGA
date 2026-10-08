@@ -117,7 +117,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
           ) : (
             <>Nothing published yet — the public quiz is showing the bundled fallback copy.</>
           )}
-          {saveState === "saving" && <span className="ml-2 text-xs text-ink/40">Saving…</span>}
+          {saveState === "saving" && <span className="ml-2 text-xs text-ink/65">Saving…</span>}
           {saveState === "saved" && <span className="ml-2 text-xs text-gold-700">Saved</span>}
         </div>
         <div className="flex gap-2">
@@ -152,7 +152,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
             key={t}
             type="button"
             onClick={() => setTab(t)}
-            className={`px-3 py-2 text-sm font-medium ${tab === t ? "border-b-2 border-gold-500 text-ink" : "text-ink/50"}`}
+            className={`px-3 py-2 text-sm font-medium ${tab === t ? "border-b-2 border-gold-500 text-ink" : "text-ink/65"}`}
           >
             {t === "questions" ? "Questions" : t === "rules" ? "Rules" : "Result sections"}
           </button>
@@ -209,7 +209,7 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
       {config.questions.map((q, i) => (
         <div key={q.key} className="rounded-2xl border border-gold-light/50 bg-white p-4">
           <div className="flex items-center justify-between gap-2">
-            <span className="text-xs font-medium text-ink/40">Step {q.step}</span>
+            <span className="text-xs font-medium text-ink/65">Step {q.step}</span>
             <div className="flex items-center gap-2">
               <button type="button" onClick={() => move(i, -1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/60 hover:bg-cream" aria-label="Move up">↑</button>
               <button type="button" onClick={() => move(i, 1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/60 hover:bg-cream" aria-label="Move down">↓</button>
@@ -285,7 +285,7 @@ function ConditionRow({
 
   return (
     <div className="flex flex-wrap items-center gap-2 text-xs">
-      <span className="text-ink/40">{leadWord}</span>
+      <span className="text-ink/65">{leadWord}</span>
       <select
         value={condition.questionKey}
         onChange={(e) => onChange({ questionKey: e.target.value, value: "" })}
@@ -411,7 +411,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
 
   return (
     <div className="space-y-4">
-      <p className="text-xs text-ink/50">
+      <p className="text-xs text-ink/65">
         Example: &quot;If Arabic level is None and Hifz focus is Central, show this message and this flag.&quot; Pick a
         question and an answer for each line below, choose whether every line needs to match or just one of them, then
         say what should happen when they do.

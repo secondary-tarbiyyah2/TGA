@@ -205,7 +205,7 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
           </label>
           <div className="block text-sm">
             <span className="font-medium text-ink">Upload a file</span>
-            <span className="block text-xs text-ink/50">
+            <span className="block text-xs text-ink/65">
               A PDF (people sign that exact file) or a Word (.docx) file. For Word, the text is read out below so people can read it before signing, and a PDF is made when they sign. Or type the text, or add a link, instead.
             </span>
             <input
@@ -227,7 +227,7 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
           </div>
           <label className="block text-sm">
             <span className="font-medium text-ink">Text</span>
-            <span className="block text-xs text-ink/50">What people read before signing. Optional if you upload a PDF or add a link instead.</span>
+            <span className="block text-xs text-ink/65">What people read before signing. Optional if you upload a PDF or add a link instead.</span>
             <textarea rows={7} value={body} onChange={(e) => setBody(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
           </label>
           <label className="block text-sm">
@@ -453,7 +453,7 @@ function DocumentsContent() {
                         <a href={absoluteFileUrl(p.fileUrl)} target="_blank" rel="noreferrer" className="block truncate text-sm font-semibold text-ink hover:text-teal-700 hover:underline">
                           {p.title}
                         </a>
-                        <p className="text-xs text-ink/50">
+                        <p className="text-xs text-ink/65">
                           {p.category === "required" ? "Required policy" : "Published"}
                           {p.nextReview ? ` · review due ${new Date(p.nextReview).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}` : ""}
                         </p>
@@ -479,7 +479,7 @@ function DocumentsContent() {
                         />
                       </div>
                     ) : (
-                      <p className="mt-1 pl-12 text-xs text-ink/45">View only. Nobody is asked to sign this.</p>
+                      <p className="mt-1 pl-12 text-xs text-ink/65">View only. Nobody is asked to sign this.</p>
                     )}
                   </li>
                 );
@@ -507,7 +507,7 @@ function DocumentsContent() {
                   <li key={d.id} className="flex flex-wrap items-center gap-4 px-5 py-4">
                     <div className="min-w-0 flex-1 basis-56">
                       <p className="truncate text-sm font-semibold text-ink">{d.title}</p>
-                      <p className="text-xs text-ink/50">
+                      <p className="text-xs text-ink/65">
                         {audienceText(d.target_roles)} · {d.source === "portal" ? "Created here" : d.source === "policy" ? "Website policy" : "From Sanity"}
                       </p>
                     </div>
@@ -578,7 +578,7 @@ function DocumentsContent() {
               <button type="button" onClick={() => setPicked(new Set())} className="text-xs text-ink/60 underline">
                 Clear
               </button>
-              {pickedByDoc.size > 1 && <span className="text-xs text-ink/50">Each document is recorded separately.</span>}
+              {pickedByDoc.size > 1 && <span className="text-xs text-ink/65">Each document is recorded separately.</span>}
             </div>
           )}
           {outstanding === null ? (
@@ -596,7 +596,7 @@ function DocumentsContent() {
                       <span>
                         <span className="font-medium text-ink">{person.name}</span>
                         <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-900">{docList.length} to sign</span>
-                        {person.email && person.name !== person.email && <span className="ml-2 text-ink/50">{person.email}</span>}
+                        {person.email && person.name !== person.email && <span className="ml-2 text-ink/65">{person.email}</span>}
                       </span>
                       <button
                         type="button"
@@ -637,7 +637,7 @@ function DocumentsContent() {
                               }
                             />
                             <span>{title}</span>
-                            {asked && <span className="text-xs text-ink/45">asked {new Date(asked).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</span>}
+                            {asked && <span className="text-xs text-ink/65">asked {new Date(asked).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</span>}
                             <button type="button" onClick={() => setRecord({ documentId: id, title, targets: [{ user_id: person.user_id, name: person.name }] })} className="text-xs font-medium text-teal-700 underline">
                               Record signature by hand
                             </button>
@@ -650,7 +650,7 @@ function DocumentsContent() {
               })}
             </ul>
           )}
-          <p className="border-t border-gold-light px-5 py-3 text-xs text-ink/50">A reminder email also goes out automatically a week after a document becomes due. If an email can&apos;t be delivered, people can still sign in the portal.</p>
+          <p className="border-t border-gold-light px-5 py-3 text-xs text-ink/65">A reminder email also goes out automatically a week after a document becomes due. If an email can&apos;t be delivered, people can still sign in the portal.</p>
         </div>
       )}
 

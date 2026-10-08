@@ -354,14 +354,14 @@ export function ClassworkTab({ classId, viewer, classHref }: { classId: string; 
             {g.topic ? (
               <div className="flex items-center gap-2 px-4 py-3">
                 <button type="button" onClick={() => setCollapsed((c) => ({ ...c, [g.key]: !closed }))} aria-expanded={!closed} className="flex min-w-0 flex-1 items-center gap-2 text-left">
-                  <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-4 w-4 shrink-0 text-ink/50 transition-transform ${closed ? "-rotate-90" : ""}`}>
+                  <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-4 w-4 shrink-0 text-ink/65 transition-transform ${closed ? "-rotate-90" : ""}`}>
                     <path d="M5.5 7.5l4.5 4.5 4.5-4.5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <h2 className="truncate text-base font-semibold text-ink">{g.topic.name}</h2>
-                  <span className="text-xs text-ink/50">{g.items.length}</span>
+                  <span className="text-xs text-ink/65">{g.items.length}</span>
                 </button>
                 {canEdit && (
-                  <button type="button" onClick={() => removeTopic(g.topic as Topic)} className="text-xs text-ink/50 hover:text-red-700 hover:underline">
+                  <button type="button" onClick={() => removeTopic(g.topic as Topic)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
                     Delete topic
                   </button>
                 )}
@@ -380,7 +380,7 @@ export function ClassworkTab({ classId, viewer, classHref }: { classId: string; 
                     <li key={`${r.type}-${r.id}`} className="px-3 py-2.5">
                       <div className="flex flex-wrap items-center gap-3">
                         <div className="min-w-0 flex-1">
-                          <p className="text-[11px] font-semibold uppercase tracking-wider text-ink/45">{KIND_LABEL[kindKey]}</p>
+                          <p className="text-[11px] font-semibold uppercase tracking-wider text-ink/65">{KIND_LABEL[kindKey]}</p>
                           {r.type === "homework" ? (
                             <Link href={homeworkHref(viewer)} className="block truncate text-sm font-medium text-ink hover:text-teal-700 hover:underline">
                               {r.title}
@@ -404,7 +404,7 @@ export function ClassworkTab({ classId, viewer, classHref }: { classId: string; 
                           </select>
                         )}
                         {canEdit && r.type === "material" && (
-                          <button type="button" onClick={() => removeMaterial(r.id)} className="text-xs text-ink/50 hover:text-red-700 hover:underline">
+                          <button type="button" onClick={() => removeMaterial(r.id)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
                             Delete
                           </button>
                         )}

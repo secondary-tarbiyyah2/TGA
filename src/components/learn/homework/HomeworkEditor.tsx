@@ -254,7 +254,7 @@ export function HomeworkEditor({
           <input ref={picker} type="file" multiple onChange={(e) => addAttachments(e.target.files)} className="hidden" aria-label="Add attachments" />
         </div>
         {kept.length === 0 && newFiles.length === 0 ? (
-          <p className="text-xs text-ink/50">None.</p>
+          <p className="text-xs text-ink/65">None.</p>
         ) : (
           <ul className="space-y-1">
             {kept.map((f) => (
@@ -271,7 +271,7 @@ export function HomeworkEditor({
                 <li key={`${f.name}-${i}`} className="rounded-md bg-cream px-3 py-1.5 text-sm">
                   <div className="flex items-center justify-between gap-2">
                     <span className="min-w-0 truncate">
-                      {f.name} <span className="text-xs text-ink/50">{formatBytes(f.size)}</span>
+                      {f.name} <span className="text-xs text-ink/65">{formatBytes(f.size)}</span>
                     </span>
                     <button type="button" disabled={busy} onClick={() => setNewFiles((cur) => cur.filter((_, j) => j !== i))} className="shrink-0 text-xs text-red-700 underline disabled:opacity-50">
                       Remove

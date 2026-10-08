@@ -94,7 +94,7 @@ function AccountContent() {
         <p className="mt-1 text-sm text-ink/60">
           {session && session !== "loading" ? session.user.email : ""} — {roles.map((r) => learnRoleLabel(r.role)).join(", ") || "no /learn role yet"}
         </p>
-        <p className="mt-2 text-xs text-ink/50">
+        <p className="mt-2 text-xs text-ink/65">
           <Link href={roles[0] ? "/" : "/login"} className="text-gold-700 underline">
             Back to your dashboard
           </Link>

@@ -84,12 +84,12 @@ function FamilyFeesContent() {
                   <div className="min-w-0">
                     <p className="font-medium text-ink">{r.charge.description}</p>
                     <p className="text-sm text-ink/60">{r.childName || "Whole family"}</p>
-                    <p className="mt-0.5 text-xs text-ink/50">Due {formatDate(r.charge.due_date)}</p>
+                    <p className="mt-0.5 text-xs text-ink/65">Due {formatDate(r.charge.due_date)}</p>
                   </div>
                   <div className="text-right">
                     <span className={`inline-block rounded-full border px-2.5 py-0.5 text-xs font-semibold ${STATUS_STYLE[r.status]}`}>{STATUS_LABEL[r.status]}</span>
                     <p className="mt-1 text-sm tabular-nums text-ink">
-                      {formatGBP(r.paid)} <span className="text-ink/50">of {formatGBP(r.charge.amount)}</span>
+                      {formatGBP(r.paid)} <span className="text-ink/65">of {formatGBP(r.charge.amount)}</span>
                     </p>
                     {r.balance > 0 && <p className="text-xs font-medium tabular-nums text-ink/70">{formatGBP(r.balance)} to pay</p>}
                   </div>
@@ -110,7 +110,7 @@ function FamilyFeesContent() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs text-ink/50">Paid by bank transfer, cash or card? It appears here once the school office has recorded it. Contact the office with any billing query.</p>
+          <p className="mt-4 text-xs text-ink/65">Paid by bank transfer, cash or card? It appears here once the school office has recorded it. Contact the office with any billing query.</p>
         </>
       )}
     </>

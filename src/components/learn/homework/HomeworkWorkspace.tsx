@@ -184,7 +184,7 @@ function Group({ title, hint, items, onEdit, onChanged }: { title: string; hint:
       <div className="mb-3 flex items-baseline gap-2">
         <h2 className="text-base font-semibold text-ink">{title}</h2>
         <span className="rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-ink/60">{items.length}</span>
-        <span className="text-sm text-ink/50">{hint}</span>
+        <span className="text-sm text-ink/65">{hint}</span>
       </div>
       <div className="space-y-3">
         {items.map((hw) => (

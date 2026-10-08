@@ -201,12 +201,12 @@ export function MessageThread({ threadId, onSent, onRead }: { threadId: string; 
             return (
               <div key={m.id}>
                 {showDay && (
-                  <p className="my-2 text-center text-[10px] font-medium uppercase tracking-wide text-ink/40">{dayLabel(m.created_at)}</p>
+                  <p className="my-2 text-center text-[10px] font-medium uppercase tracking-wide text-ink/65">{dayLabel(m.created_at)}</p>
                 )}
                 {recalled ? (
-                  <div className={`max-w-[80%] rounded-lg border border-dashed border-ink/20 px-3 py-2 text-sm italic text-ink/50 ${mine ? "ml-auto" : ""}`}>
+                  <div className={`max-w-[80%] rounded-lg border border-dashed border-ink/20 px-3 py-2 text-sm italic text-ink/65 ${mine ? "ml-auto" : ""}`}>
                     Message recalled
-                    <p className="mt-1 text-[10px] not-italic text-ink/40">{new Date(m.created_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}</p>
+                    <p className="mt-1 text-[10px] not-italic text-ink/65">{new Date(m.created_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}</p>
                   </div>
                 ) : (
                   <div className={`relative max-w-[80%] rounded-lg px-3 py-2 text-sm ${mine ? "ml-auto bg-gold-700 text-white" : "bg-cream text-ink"}`}>
@@ -232,7 +232,7 @@ export function MessageThread({ threadId, onSent, onRead }: { threadId: string; 
                     ) : (
                       <>
                         <p className="whitespace-pre-wrap break-words">{m.body}</p>
-                        <p className={`mt-1 text-[10px] ${mine ? "text-white/70" : "text-ink/50"}`}>
+                        <p className={`mt-1 text-[10px] ${mine ? "text-white/70" : "text-ink/65"}`}>
                           {new Date(m.created_at).toLocaleString("en-GB")}
                           {m.edited_at && " (edited)"}
                           {mine && receiptsOn && m.id in receipts && <ReadTicks readAt={receipts[m.id]} />}
@@ -249,7 +249,7 @@ export function MessageThread({ threadId, onSent, onRead }: { threadId: string; 
                             setConfirmRecallId(null);
                             setMenuId(menuId === m.id ? null : m.id);
                           }}
-                          className="rounded px-1.5 text-base leading-none text-ink/50 hover:bg-cream"
+                          className="rounded px-1.5 text-base leading-none text-ink/65 hover:bg-cream"
                         >
                           ⋯
                         </button>

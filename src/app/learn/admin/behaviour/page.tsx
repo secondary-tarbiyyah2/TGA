@@ -265,7 +265,7 @@ function BehaviourContent() {
                 <input type="date" value={fTo} onChange={(e) => setFTo(e.target.value)} aria-label="To date" className="rounded-lg border border-gold-light px-3 py-2 text-sm" />
               </div>
               <RecordsTable records={filtered.slice(0, 300)} onVoid={voidRecord} empty="No records match these filters." />
-              {filtered.length > 300 && <p className="mt-2 text-xs text-ink/50">Showing the latest 300 of {filtered.length}. Narrow the filters to see more.</p>}
+              {filtered.length > 300 && <p className="mt-2 text-xs text-ink/65">Showing the latest 300 of {filtered.length}. Narrow the filters to see more.</p>}
             </section>
           )}
         </>

@@ -102,7 +102,7 @@ function ListContent() {
             {rows === null ? (
               <p className="mt-4 text-sm text-ink/60">Loading…</p>
             ) : rows.length === 0 ? (
-              <p className="mt-4 text-sm text-ink/60">No lessons in this range. Use "Create dated lessons" above to make them.</p>
+              <p className="mt-4 text-sm text-ink/60">No lessons in this range. Use &quot;Create dated lessons&quot; above to make them.</p>
             ) : (
               <div className="mt-4 space-y-4">
                 {[...byDate.entries()].map(([date, list]) => (

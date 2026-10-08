@@ -131,7 +131,7 @@ function TeachBehaviourContent() {
                   <li key={`${s.childId}:${s.classId}`} className="flex items-center justify-between gap-2 rounded-lg border border-gold-light/50 px-3 py-2 text-sm">
                     <span className="min-w-0">
                       <span className="block truncate font-medium text-ink">{s.name}</span>
-                      {!classId && s.className && <span className="block truncate text-xs text-ink/50">{s.className}</span>}
+                      {!classId && s.className && <span className="block truncate text-xs text-ink/65">{s.className}</span>}
                     </span>
                     <span className="flex shrink-0 gap-1">
                       <button type="button" aria-label={`Merit for ${s.name}`} onClick={() => setModal({ kind: "merit", childId: s.childId })} className="rounded-md bg-green-100 px-2.5 py-1 text-xs font-semibold text-green-800 hover:bg-green-200">

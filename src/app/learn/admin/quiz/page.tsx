@@ -49,7 +49,7 @@ function AdminQuizContent() {
             key={key}
             type="button"
             onClick={() => setTab(key)}
-            className={`px-3 py-2 text-sm font-medium ${tab === key ? "border-b-2 border-gold-500 text-ink" : "text-ink/50"}`}
+            className={`px-3 py-2 text-sm font-medium ${tab === key ? "border-b-2 border-gold-500 text-ink" : "text-ink/65"}`}
           >
             {label}
           </button>

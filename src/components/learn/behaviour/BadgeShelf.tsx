@@ -18,7 +18,7 @@ export function BadgeShelf({ badges, showStudent = false, empty = "No badges yet
           </p>
           <p className="mt-1 text-sm font-semibold text-ink">{b.badge}</p>
           {showStudent && <p className="truncate text-xs text-ink/70">{b.children?.name || "Student"}</p>}
-          <p className="text-xs text-ink/50">{fmtDate(b.awarded_on)}</p>
+          <p className="text-xs text-ink/65">{fmtDate(b.awarded_on)}</p>
         </li>
       ))}
     </ul>

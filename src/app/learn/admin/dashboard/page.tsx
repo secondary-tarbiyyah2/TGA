@@ -50,9 +50,9 @@ function ActivityFeed() {
         </a>
       </div>
       {rows === null ? (
-        <p className="px-5 py-4 text-sm text-ink/50">Loading…</p>
+        <p className="px-5 py-4 text-sm text-ink/65">Loading…</p>
       ) : rows.length === 0 ? (
-        <p className="px-5 py-4 text-sm text-ink/50">Nothing recorded yet.</p>
+        <p className="px-5 py-4 text-sm text-ink/65">Nothing recorded yet.</p>
       ) : (
         <ul className="divide-y divide-gold-light/70">
           {rows.map((r) => (
@@ -64,7 +64,7 @@ function ActivityFeed() {
                 <p className="text-ink/80">
                   <span className="font-medium text-ink">{r.actor_email || "System"}</span> {humanizeAuditAction(r.action)}
                 </p>
-                <p className="text-xs text-ink/45">{new Date(r.created_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</p>
+                <p className="text-xs text-ink/65">{new Date(r.created_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</p>
               </div>
             </li>
           ))}
@@ -148,9 +148,9 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
         </a>
       </div>
       {lessons === null ? (
-        <p className="px-5 py-4 text-sm text-ink/50">Loading…</p>
+        <p className="px-5 py-4 text-sm text-ink/65">Loading…</p>
       ) : lessons.length === 0 ? (
-        <p className="px-5 py-4 text-sm text-ink/50">No lessons scheduled today.</p>
+        <p className="px-5 py-4 text-sm text-ink/65">No lessons scheduled today.</p>
       ) : (
         <ul className="divide-y divide-gold-light/70">
           {lessons.map((l) => {
@@ -191,7 +191,7 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
  * an admin actually lands after signing in.
  */
 function DashboardContent() {
-  const { session, roles } = useLearnSession();
+  const { roles } = useLearnSession();
   const isSafeguardingLead = useLearnPermission("safeguarding_lead");
   // roles can hold one row per scope (e.g. several classes) that all
   // resolve to the same label — dedupe before display, or "Headteacher"
@@ -261,7 +261,7 @@ function DashboardContent() {
         <h2 id="today-heading" className="text-sm font-semibold text-ink">
           Today
         </h2>
-        <div className="mt-3 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-3 grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
           <StatTile label="Lessons today" value={lessons === null ? "…" : lessons.length} href="/admin/calendar" />
           <StatTile
             label="Registers missing"
@@ -280,7 +280,7 @@ function DashboardContent() {
         <h2 id="glance-heading" className="text-sm font-semibold text-ink">
           Needs attention
         </h2>
-        <div className="mt-3 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-3 grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-3">
           <StatTile label="Unexplained absences" value={absenceCount ?? "…"} status={statusOf(absenceCount)} href="/admin/compliance" />
           <StatTile label="Outstanding signatures" value={outstandingCount ?? "…"} status={statusOf(outstandingCount)} href="/admin/compliance" />
           {isSafeguardingLead && <StatTile label="Flagged messages" value={flaggedCount ?? "…"} status={statusOf(flaggedCount)} href="/admin/compliance" />}

@@ -67,7 +67,7 @@ export function WeeklyTarbiyahNoteForm({ childId, classId }: { childId: string; 
   return (
     <div className="mt-6 border-t border-gold-light/30 pt-4">
       <h3 className="text-sm font-medium text-ink">Weekly Tarbiyah Note</h3>
-      <p className="mt-1 text-xs text-ink/50">A short personal note on this child&apos;s character and akhlaq this week — separate from grades.</p>
+      <p className="mt-1 text-xs text-ink/65">A short personal note on this child&apos;s character and akhlaq this week — separate from grades.</p>
       <div className="mt-3 flex flex-wrap items-end gap-2">
         <label className="text-xs text-ink/70">
           Week of

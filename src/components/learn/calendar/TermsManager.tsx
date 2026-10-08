@@ -426,7 +426,7 @@ export function TermsManager({
                         </button>
                       </div>
                     )}
-                    {canManage && t.source === "sanity" && <span className="text-[11px] text-ink/45">Edit in the website CMS</span>}
+                    {canManage && t.source === "sanity" && <span className="text-[11px] text-ink/65">Edit in the website CMS</span>}
                   </li>
                 ))}
               </ul>
@@ -487,10 +487,10 @@ export function TermsManager({
               <li key={c.id} className="flex flex-wrap items-start gap-2 px-4 py-3 text-sm">
                 <div className="min-w-0 flex-1">
                   <span className="block font-medium text-ink">
-                    {c.name} <span className="text-xs font-normal text-ink/50">· {CLOSURE_LABEL[c.kind]}</span>
+                    {c.name} <span className="text-xs font-normal text-ink/65">· {CLOSURE_LABEL[c.kind]}</span>
                   </span>
                   <span className="block text-xs text-ink/60">{span(c.starts_on, c.ends_on)}</span>
-                  {c.notes && <span className="block text-xs text-ink/50">{c.notes}</span>}
+                  {c.notes && <span className="block text-xs text-ink/65">{c.notes}</span>}
                 </div>
                 {canManage && (
                   <div className="flex gap-2">

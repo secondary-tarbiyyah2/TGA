@@ -130,7 +130,7 @@ export function SiteSettingsEditor() {
                 className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
               />
             )}
-            {f.hint && <span className="mt-0.5 block text-xs text-ink/50">{f.hint}</span>}
+            {f.hint && <span className="mt-0.5 block text-xs text-ink/65">{f.hint}</span>}
           </label>
         ))}
       </div>

@@ -93,14 +93,14 @@ function StarRow({ star, isHead, busy, onAct }: { star: Star; isHead: boolean; b
       <span className="min-w-0">
         <span className="block font-medium text-ink">
           {star.children?.name || "Pupil"}
-          <span className="ml-2 text-xs font-normal text-ink/50">
+          <span className="ml-2 text-xs font-normal text-ink/65">
             {star.classes?.name ? `${star.classes.name} · ` : ""}week of {weekLabel}
           </span>
           <span className={`ml-2 rounded-full px-2 py-0.5 text-[11px] font-semibold ${STATUS_STYLE[star.status]}`}>{STATUS_LABEL[star.status]}</span>
         </span>
         <span className="block text-xs text-ink/70">{star.reason}</span>
-        {star.children?.hide_from_leaderboard && <span className="block text-[11px] text-ink/50">Family opted out of the leaderboard: no public shout-out; the certificate stays private to the family.</span>}
-        {star.certificate_emailed_at && <span className="block text-[11px] text-ink/50">Certificate emailed {new Date(star.certificate_emailed_at).toLocaleDateString("en-GB")}.</span>}
+        {star.children?.hide_from_leaderboard && <span className="block text-[11px] text-ink/65">Family opted out of the leaderboard: no public shout-out; the certificate stays private to the family.</span>}
+        {star.certificate_emailed_at && <span className="block text-[11px] text-ink/65">Certificate emailed {new Date(star.certificate_emailed_at).toLocaleDateString("en-GB")}.</span>}
       </span>
       <span className="flex shrink-0 flex-wrap gap-1.5">
         {star.status === "nominated" && isHead && (
@@ -382,7 +382,7 @@ export function StarManager({ isHead }: { isHead: boolean }) {
                     ))}
                   </div>
                   <textarea aria-labelledby="star-why-label" value={reason} onChange={(e) => setReason(e.target.value)} maxLength={300} rows={2} className="w-full max-w-xl rounded-lg border border-gold-light px-3 py-2 text-sm" placeholder="Kindness, effort, a big improvement… or tap a reason above" />
-                  <span className="mt-1 block text-[11px] text-ink/50">{reason.length}/300. Tap reasons to add them, then edit the sentence if you like.</span>
+                  <span className="mt-1 block text-[11px] text-ink/65">{reason.length}/300. Tap reasons to add them, then edit the sentence if you like.</span>
                 </div>
                 <button
                   type="button"

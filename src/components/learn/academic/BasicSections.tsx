@@ -93,7 +93,7 @@ export function YearsSection({ years, terms, reload }: Common & { years: Academi
                 {yTerms.map((t) => (
                   <li key={t.id} className="rounded-full bg-cream px-2.5 py-1">{t.name}: {t.starts_on} to {t.ends_on}</li>
                 ))}
-                {yTerms.length === 0 && <li className="text-ink/50">No terms synced for this year yet. Add them as Term Dates in the website editor (Sanity).</li>}
+                {yTerms.length === 0 && <li className="text-ink/65">No terms synced for this year yet. Add them as Term Dates in the website editor (Sanity).</li>}
               </ul>
             </div>
           );

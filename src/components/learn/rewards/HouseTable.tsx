@@ -81,7 +81,7 @@ export function HouseTable({ title = "House points" }: { title?: string }) {
             {rows.map((r) => (
               <li key={r.house_id}>
                 <div className="flex items-center gap-2 text-sm">
-                  <span className="w-5 text-center text-xs font-semibold tabular-nums text-ink/50">
+                  <span className="w-5 text-center text-xs font-semibold tabular-nums text-ink/65">
                     <span className="sr-only">Place </span>
                     {r.rank}
                   </span>
@@ -97,7 +97,7 @@ export function HouseTable({ title = "House points" }: { title?: string }) {
             ))}
           </ol>
         )}
-        {rows !== null && rows.length > 0 && <p className="mt-3 text-[11px] text-ink/50">Every merit earns points for your house.</p>}
+        {rows !== null && rows.length > 0 && <p className="mt-3 text-[11px] text-ink/65">Every merit earns points for your house.</p>}
       </div>
     </section>
   );

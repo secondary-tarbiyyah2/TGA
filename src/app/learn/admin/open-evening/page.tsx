@@ -165,11 +165,11 @@ function OpenEveningContent() {
         </label>
         <label className="text-sm text-ink">Joining link
           <input value={draft.joinUrl} onChange={(e) => set("joinUrl", e.target.value)} placeholder="https://…" className={inputCls} />
-          <span className="block text-xs text-ink/50">Only sent in the confirmation and reminder emails. Never shown on the website.</span>
+          <span className="block text-xs text-ink/65">Only sent in the confirmation and reminder emails. Never shown on the website.</span>
         </label>
         <label className="text-sm text-ink sm:col-span-2">Description
           <textarea rows={3} value={draft.description} onChange={(e) => set("description", e.target.value)} maxLength={2000} className={inputCls} />
-          <span className="block text-xs text-ink/50">Shown to parents under the date, for example who will speak and what will be covered.</span>
+          <span className="block text-xs text-ink/65">Shown to parents under the date, for example who will speak and what will be covered.</span>
         </label>
         <label className="flex items-center gap-2 text-sm text-ink sm:col-span-2">
           <input type="checkbox" checked={draft.published} onChange={(e) => set("published", e.target.checked)} />
@@ -264,7 +264,7 @@ function OpenEveningContent() {
                             <div className="overflow-x-auto">
                               <table className="w-full min-w-[640px] text-left text-sm">
                                 <thead>
-                                  <tr className="border-b border-gold-light/60 text-xs uppercase tracking-wide text-ink/50">
+                                  <tr className="border-b border-gold-light/60 text-xs uppercase tracking-wide text-ink/65">
                                     <th className="py-2 pr-3 font-medium">Name</th>
                                     <th className="py-2 pr-3 font-medium">Contact</th>
                                     <th className="py-2 pr-3 font-medium">People</th>
@@ -275,7 +275,7 @@ function OpenEveningContent() {
                                 </thead>
                                 <tbody className="divide-y divide-gold-light/40">
                                   {list.map((b) => (
-                                    <tr key={b.id} className={b.status === "cancelled" ? "text-ink/40 line-through" : "text-ink/85"}>
+                                    <tr key={b.id} className={b.status === "cancelled" ? "text-ink/65 line-through" : "text-ink/85"}>
                                       <td className="py-2 pr-3 align-top">{b.parent_name}</td>
                                       <td className="py-2 pr-3 align-top"><a href={`mailto:${b.email}`} className="hover:underline">{b.email}</a>{b.phone && <span className="block text-xs">{b.phone}</span>}</td>
                                       <td className="py-2 pr-3 align-top">{b.attendees}</td>
@@ -302,7 +302,7 @@ function OpenEveningContent() {
           })}
         </ul>
       )}
-      <p className="mt-6 text-xs text-ink/50">
+      <p className="mt-6 text-xs text-ink/65">
         Parents get a confirmation email with a calendar invitation and the joining link, the admissions inbox is told about each booking, and a reminder goes out the day before. The booking list contains parents&apos; contact details: please download it only when you need it.
       </p>
     </>

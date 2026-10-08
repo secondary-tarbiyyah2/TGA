@@ -5,7 +5,7 @@ import { PREFILLED_HELP } from "@/content/defaults";
 /** Subtle "default" / "edited" badge. */
 export function DefaultBadge({ isDefault }: { isDefault: boolean }) {
   return (
-    <span className={`ml-2 rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide ${isDefault ? "bg-ink/5 text-ink/50" : "bg-gold-light/40 text-gold-900"}`}>
+    <span className={`ml-2 rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide ${isDefault ? "bg-ink/5 text-ink/65" : "bg-gold-light/40 text-gold-900"}`}>
       {isDefault ? "default" : "edited"}
     </span>
   );
@@ -53,7 +53,7 @@ export function DefaultTextField({
       ) : (
         <input type={type} value={v} onChange={(e) => onChange(e.target.value)} className={cls} />
       )}
-      {hint && <span className="mt-0.5 block text-xs text-ink/50">{hint}</span>}
+      {hint && <span className="mt-0.5 block text-xs text-ink/65">{hint}</span>}
     </label>
   );
 }

@@ -10,7 +10,7 @@ function KindPill({ r }: { r: BehaviourRecord }) {
 }
 
 function Pts({ r }: { r: BehaviourRecord }) {
-  if (r.kind === "incident") return <span className="text-ink/40">–</span>;
+  if (r.kind === "incident") return <span className="text-ink/65">–</span>;
   return <span className={r.points > 0 ? "font-semibold text-green-700" : "font-semibold text-red-700"}>{r.points > 0 ? `+${r.points}` : r.points}</span>;
 }
 
@@ -34,7 +34,7 @@ export function RecordsTable({
       <div className="hidden overflow-x-auto sm:block">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b border-gold-light/60 text-left text-xs uppercase tracking-wide text-ink/50">
+            <tr className="border-b border-gold-light/60 text-left text-xs uppercase tracking-wide text-ink/65">
               <th className="py-2 pr-3 font-medium">Date</th>
               {showStudent && <th className="py-2 pr-3 font-medium">Student</th>}
               <th className="py-2 pr-3 font-medium">Type</th>
@@ -46,12 +46,12 @@ export function RecordsTable({
           </thead>
           <tbody className="divide-y divide-gold-light/30">
             {records.map((r) => (
-              <tr key={r.id} className={r.voided_at ? "text-ink/40 line-through" : ""}>
+              <tr key={r.id} className={r.voided_at ? "text-ink/65 line-through" : ""}>
                 <td className="whitespace-nowrap py-2 pr-3">{fmtDate(r.occurred_on)}</td>
                 {showStudent && (
                   <td className="py-2 pr-3">
                     <span className="font-medium text-ink">{r.children?.name || "Student"}</span>
-                    {r.classes?.name && <span className="block text-xs text-ink/50">{r.classes.name}</span>}
+                    {r.classes?.name && <span className="block text-xs text-ink/65">{r.classes.name}</span>}
                   </td>
                 )}
                 <td className="py-2 pr-3">

@@ -238,7 +238,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
         <div>
           <label className="block text-sm font-medium text-ink" htmlFor="sd-email">Email on file</label>
           <input id="sd-email" type="email" className={INPUT} value={form.email} onChange={(e) => set("email", e.target.value)} />
-          <p className="mt-1 text-xs text-ink/50">Changes the email held on their record. Their sign-in email only changes through an account reset.</p>
+          <p className="mt-1 text-xs text-ink/65">Changes the email held on their record. Their sign-in email only changes through an account reset.</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-ink" htmlFor="sd-phone">Phone</label>
@@ -257,15 +257,15 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
             </label>
           ))}
         </div>
-        {!canEditRoles && <p className="mt-1 text-xs text-ink/50">Only the Headteacher can change roles.</p>}
-        {canEditRoles && <p className="mt-1 text-xs text-ink/50">Removing a role removes every class it was granted for.</p>}
+        {!canEditRoles && <p className="mt-1 text-xs text-ink/65">Only the Headteacher can change roles.</p>}
+        {canEditRoles && <p className="mt-1 text-xs text-ink/65">Removing a role removes every class it was granted for.</p>}
       </fieldset>
 
       <div className="flex items-center gap-3">
         <Toggle id="sd-active" checked={form.active} onChange={(v) => set("active", v)} label="Active" disabled={isSelf} />
         <label htmlFor="sd-active" className="text-sm text-ink">
           {form.active ? "Active" : "Inactive"}
-          <span className="block text-xs text-ink/50">Inactive staff are not offered in message lists or parent evenings. {isSelf ? "You can't make your own account inactive." : ""}</span>
+          <span className="block text-xs text-ink/65">Inactive staff are not offered in message lists or parent evenings. {isSelf ? "You can't make your own account inactive." : ""}</span>
         </label>
       </div>
 

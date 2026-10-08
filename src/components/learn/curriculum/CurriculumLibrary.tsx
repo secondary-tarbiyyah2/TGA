@@ -165,7 +165,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               <ul>
                 {ls.map((l) => (
                   <li key={l.id} className="flex flex-wrap items-center gap-2 border-t border-gold-light/40 px-4 py-2.5 first:border-t-0">
-                    <span className="w-8 shrink-0 text-sm font-semibold tabular-nums text-ink/50">{l.lesson_no}</span>
+                    <span className="w-8 shrink-0 text-sm font-semibold tabular-nums text-ink/65">{l.lesson_no}</span>
                     <div className="min-w-[12rem] flex-1">
                       <p className="text-sm font-medium text-ink">{l.title}</p>
                       <p className="text-xs text-ink/55">
@@ -199,7 +199,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                         </button>
                       </div>
                     ) : (
-                      <span className="text-xs text-ink/50">Deck not built yet</span>
+                      <span className="text-xs text-ink/65">Deck not built yet</span>
                     )}
                   </li>
                 ))}

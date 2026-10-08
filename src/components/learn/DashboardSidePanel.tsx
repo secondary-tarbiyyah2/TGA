@@ -42,7 +42,7 @@ function Timeline({ items }: { items: TimelineItem[] | null }) {
     <div className="space-y-4">
       {groups.map(({ b, list }) => (
         <div key={b}>
-          <p className={`mb-1.5 text-[11px] font-semibold uppercase tracking-wider ${b === "Overdue" ? "text-red-700" : "text-ink/45"}`}>{b}</p>
+          <p className={`mb-1.5 text-[11px] font-semibold uppercase tracking-wider ${b === "Overdue" ? "text-red-700" : "text-ink/65"}`}>{b}</p>
           <ul className="space-y-1">
             {list.map((i) => (
               <li key={i.key}>
@@ -220,15 +220,17 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
   return (
     <div className={`grid gap-6 ${hidden ? "" : "xl:grid-cols-[minmax(0,1fr)_340px]"}`}>
       <div className="min-w-0">
-        <div className="mb-3 flex justify-end">
-          <button type="button" onClick={toggle} className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink/60 hover:bg-white hover:text-ink">
-            {hidden ? "Show side panel" : "Hide side panel"}
-          </button>
-        </div>
+        {hidden && (
+          <div className="mb-3 hidden justify-end xl:flex">
+            <button type="button" onClick={toggle} className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink/65 hover:bg-white hover:text-ink">
+              Show side panel
+            </button>
+          </div>
+        )}
         {children}
       </div>
       {!hidden && (
-        <aside aria-label="Side panel" className="space-y-4 xl:pt-11">
+        <aside aria-label="Side panel" className="space-y-4">
           <Block title="Calendar">
             <MiniCalendar scope={calendarScope} href={`${area}/calendar`} />
           </Block>
@@ -247,6 +249,11 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
           <Block title="Recently accessed">
             <Recent prefix={area} />
           </Block>
+          <div className="hidden justify-end xl:flex">
+            <button type="button" onClick={toggle} className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink/65 hover:bg-white hover:text-ink">
+              Hide side panel
+            </button>
+          </div>
         </aside>
       )}
     </div>

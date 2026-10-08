@@ -40,7 +40,7 @@ function Column({ title, tone, children, count, empty }: { title: string; tone: 
         {title}
         <span className="rounded-full bg-cream px-1.5 py-0.5 text-[11px] text-ink/60">{count}</span>
       </h4>
-      {count === 0 ? <p className="rounded-lg border border-dashed border-gold-light px-3 py-4 text-center text-xs text-ink/50">{empty}</p> : <ul className="space-y-2">{children}</ul>}
+      {count === 0 ? <p className="rounded-lg border border-dashed border-gold-light px-3 py-4 text-center text-xs text-ink/65">{empty}</p> : <ul className="space-y-2">{children}</ul>}
     </div>
   );
 }

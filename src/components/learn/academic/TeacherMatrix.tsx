@@ -38,10 +38,6 @@ export function TeacherMatrix({ classes, yearGroups, subjects, teachers, classTe
 
   const teacherName = (id: string | null | undefined): string => teachers.find((t) => t.id === id)?.full_name || "Unnamed teacher";
   const offered = (c: ClassRow, sid: string): boolean => c.subject_id === sid || subjectTeachers.some((r) => r.class_id === c.id && r.subject_id === sid);
-  const lessonsFor = (c: ClassRow, sid: string): number => {
-    const dflt = subjectTeachers.find((r) => r.class_id === c.id && r.subject_id === sid && isDefaultRow(r));
-    return dflt?.lessons_per_week ?? subjectTeachers.find((r) => r.class_id === c.id && r.subject_id === sid && r.lessons_per_week)?.lessons_per_week ?? (c.subject_id === sid ? c.weekly_lessons : 0);
-  };
   const legacyTeacher = (c: ClassRow, sid: string): string | null =>
     c.subject_id === sid ? classTeachers.find((t) => t.scope_id === c.id)?.user_id ?? null : null;
   const effective = (c: ClassRow, sid: string): string | null => teacherFor(subjectTeachers, c.id, sid, today) ?? legacyTeacher(c, sid);
@@ -141,14 +137,14 @@ export function TeacherMatrix({ classes, yearGroups, subjects, teachers, classTe
                 <tr key={c.id} className="border-t border-gold-light/40">
                   <th scope="row" className="sticky left-0 z-10 bg-white px-3 py-2 font-medium text-ink">
                     {c.name}
-                    <span className="block text-[11px] font-normal text-ink/50">{yearGroups.find((y) => y.id === c.year_group_id)?.name || ""}</span>
+                    <span className="block text-[11px] font-normal text-ink/65">{yearGroups.find((y) => y.id === c.year_group_id)?.name || ""}</span>
                   </th>
                   {columns.map((s) => {
                     if (!offered(c, s.id)) {
                       return (
                         <td key={s.id} className="px-2 py-1.5">
                           {showAllSubjects && (
-                            <button type="button" className="rounded-lg border border-dashed border-gold-light px-2 py-1 text-ink/40 hover:bg-cream" aria-label={`Add ${s.name} to ${c.name}`} onClick={() => setCell({ classId: c.id, subjectId: s.id })}>+</button>
+                            <button type="button" className="rounded-lg border border-dashed border-gold-light px-2 py-1 text-ink/65 hover:bg-cream" aria-label={`Add ${s.name} to ${c.name}`} onClick={() => setCell({ classId: c.id, subjectId: s.id })}>+</button>
                           )}
                         </td>
                       );
@@ -319,7 +315,7 @@ function CellDialog({ cls, subject, teachers, rows, load, legacyTeacher, onClose
                 <li key={t.id}>
                   <button type="button" disabled={busy} onClick={() => pick(t.id)} className={`flex w-full items-center justify-between px-3 py-2 text-left text-sm hover:bg-cream ${dflt?.teacher_id === t.id ? "bg-gold-100/60 font-semibold" : ""}`}>
                     <span>{t.full_name}</span>
-                    <span className={`text-xs ${n >= MAX_TEACHER_LESSONS_PER_WEEK ? "font-semibold text-red-700" : "text-ink/50"}`}>{n} lessons</span>
+                    <span className={`text-xs ${n >= MAX_TEACHER_LESSONS_PER_WEEK ? "font-semibold text-red-700" : "text-ink/65"}`}>{n} lessons</span>
                   </button>
                 </li>
               );

@@ -324,7 +324,7 @@ export function GcseOverview() {
                       <button type="button" onClick={() => setDrawerChild(childId)} className="text-left underline-offset-2 hover:underline">
                         {p.name}
                       </button>
-                      {p.cls && <span className="block text-[11px] font-normal text-ink/50">{p.cls}</span>}
+                      {p.cls && <span className="block text-[11px] font-normal text-ink/65">{p.cls}</span>}
                     </th>
                     {grid.subjects.map(([sid]) => {
                       const r = p.cells.get(sid);
@@ -397,7 +397,7 @@ export function GcseOverview() {
             </table>
           )}
         </div>
-        {view === "grid" && shown.length > 0 && <p className="mt-3 text-[11px] text-ink/50">Each cell shows the actual grade, then T = target and P = predicted. Amber means behind. Select a pupil for their history.</p>}
+        {view === "grid" && shown.length > 0 && <p className="mt-3 text-[11px] text-ink/65">Each cell shows the actual grade, then T = target and P = predicted. Amber means behind. Select a pupil for their history.</p>}
       </section>
 
       {drawerChild && (

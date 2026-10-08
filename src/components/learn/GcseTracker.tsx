@@ -432,7 +432,7 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
               </tbody>
             </table>
           </div>
-          <p className="mt-2 text-[11px] text-ink/50">Trend line: solid = actual grade over time (gold dot = mock exam), dashed = target, dotted = predicted.</p>
+          <p className="mt-2 text-[11px] text-ink/65">Trend line: solid = actual grade over time (gold dot = mock exam), dashed = target, dotted = predicted.</p>
           <div className="mt-3">
             <BoundaryCalculator />
           </div>
@@ -557,7 +557,7 @@ export function GcseProgressWidget({ childId }: { childId: string }) {
           );
         })}
       </ul>
-      <p className="mt-2 text-[11px] text-ink/50">Grades are on the 9–1 scale (9 is highest). Predicted grades are a teacher&apos;s best estimate and change as work comes in.</p>
+      <p className="mt-2 text-[11px] text-ink/65">Grades are on the 9–1 scale (9 is highest). Predicted grades are a teacher&apos;s best estimate and change as work comes in.</p>
     </div>
   );
 }

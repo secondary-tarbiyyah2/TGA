@@ -209,8 +209,8 @@ function Section({ title, className, children }: { title: string; className: str
 function Row({ label, value, alert }: { label: string; value: string | null | undefined; alert?: boolean }) {
   return (
     <div className="grid gap-0.5 border-t border-gold-light/40 py-2 first:border-t-0 sm:grid-cols-[11rem_1fr]">
-      <p className="text-xs font-medium uppercase tracking-wide text-ink/50">{label}</p>
-      <p className={`whitespace-pre-wrap text-sm ${alert ? "font-semibold text-red-800" : "text-ink"}`}>{value && value.trim() ? value : <span className="font-normal text-ink/40">Not given</span>}</p>
+      <p className="text-xs font-medium uppercase tracking-wide text-ink/65">{label}</p>
+      <p className={`whitespace-pre-wrap text-sm ${alert ? "font-semibold text-red-800" : "text-ink"}`}>{value && value.trim() ? value : <span className="font-normal text-ink/65">Not given</span>}</p>
     </div>
   );
 }

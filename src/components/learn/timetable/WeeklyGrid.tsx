@@ -229,8 +229,8 @@ export function WeeklyGrid({
     <div>
       {moveNote && !moveError && <p role="status" className="mb-2 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-900">{moveNote}</p>}
       {moveError && <p role="alert" className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">{moveError}</p>}
-      {!editable && slots.length > 0 && <p className="mb-2 text-xs text-ink/50">Locked: only draft timetables can be changed or dragged.</p>}
-      {canDrag && <p className="mb-2 text-xs text-ink/50">Tip: drag a lesson to any day or minute (snaps to 5 min), drag its bottom edge to change the length, click an empty spot to add a lesson. Shaded bands are breaks (grey), lunch and prayer (amber), enrichment (green) and protected times (orange).</p>}
+      {!editable && slots.length > 0 && <p className="mb-2 text-xs text-ink/65">Locked: only draft timetables can be changed or dragged.</p>}
+      {canDrag && <p className="mb-2 text-xs text-ink/65">Tip: drag a lesson to any day or minute (snaps to 5 min), drag its bottom edge to change the length, click an empty spot to add a lesson. Shaded bands are breaks (grey), lunch and prayer (amber), enrichment (green) and protected times (orange).</p>}
       <div className="overflow-x-auto rounded-xl border border-gold-light/50">
         <div className="min-w-[720px]">
           <div className="flex bg-cream/70 text-xs font-semibold text-ink/70">
@@ -243,7 +243,7 @@ export function WeeklyGrid({
             {/* hour lines + labels */}
             {hours.map((m) => (
               <div key={m} className="pointer-events-none absolute left-0 right-0 border-t border-gold-light/40" style={{ top: yOf(m) }}>
-                <span className="absolute left-2 -translate-y-1/2 bg-white px-0.5 text-[11px] tabular-nums text-ink/50">{fmt(m)}</span>
+                <span className="absolute left-2 -translate-y-1/2 bg-white px-0.5 text-[11px] tabular-nums text-ink/65">{fmt(m)}</span>
               </div>
             ))}
             {WEEKDAYS.map((wd, i) => {

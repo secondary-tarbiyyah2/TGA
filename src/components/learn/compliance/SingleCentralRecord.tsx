@@ -89,7 +89,7 @@ export function SingleCentralRecord() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Single Central Record</h2>
-      <p className="mt-1 text-xs text-ink/50">Recruitment/vetting checks for every staff member. DBS renewals due within 60 days are highlighted.</p>
+      <p className="mt-1 text-xs text-ink/65">Recruitment/vetting checks for every staff member. DBS renewals due within 60 days are highlighted.</p>
       <div className="mt-3 space-y-2">
         {staff === null && <p className="text-sm text-ink/60">Loading…</p>}
         {(staff || []).map((s) => {
@@ -97,7 +97,7 @@ export function SingleCentralRecord() {
           return (
             <div key={s.user_id} className={`rounded-lg border p-3 text-sm ${v && isExpiring(v.dbs_renewal_due) ? "border-red-300 bg-red-50" : "border-gold-light/40"}`}>
               <div className="flex items-center justify-between">
-                <p className="font-semibold">{s.full_name} <span className="font-normal text-ink/50">({s.role.replace("_", " ")})</span></p>
+                <p className="font-semibold">{s.full_name} <span className="font-normal text-ink/65">({s.role.replace("_", " ")})</span></p>
                 <button type="button" onClick={() => startEdit(s.user_id)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
                   {v ? "Edit" : "Add record"}
                 </button>

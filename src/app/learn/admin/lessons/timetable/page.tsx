@@ -183,7 +183,7 @@ function TimetableContent() {
 
           <div className="rounded-2xl border border-gold-light/50 bg-white p-4">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-semibold uppercase tracking-wider text-ink/45">Version</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-ink/65">Version</span>
               {runs.slice(0, 4).map((r) => (
                 <button key={r.id} type="button" aria-pressed={r.id === runId} onClick={() => setSelectedRun(r.id)} className={chipCls(r.id === runId)}>
                   {r.label} <span className="text-xs opacity-70">{r.status}</span>
@@ -197,7 +197,7 @@ function TimetableContent() {
               )}
             </div>
             <div className="mt-3 flex flex-wrap items-center gap-2">
-              <span className="text-xs font-semibold uppercase tracking-wider text-ink/45">View</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-ink/65">View</span>
               {VIEWS.filter((v) => v.id !== "session" || hasSessions).map((v) => (
                 <button key={v.id} type="button" aria-pressed={view === v.id} onClick={() => { setView(v.id); setFocus(null); }} className={chipCls(view === v.id)}>{v.label}</button>
               ))}

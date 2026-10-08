@@ -28,11 +28,11 @@ export function RetentionRegistry() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Retention schedule</h2>
-      <p className="mt-1 text-xs text-ink/50">By data type, fed by the school&apos;s actual scheduled jobs — not a duplicated set of numbers.</p>
+      <p className="mt-1 text-xs text-ink/65">By data type, fed by the school&apos;s actual scheduled jobs — not a duplicated set of numbers.</p>
       <div className="mt-3 overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="text-left text-xs uppercase tracking-wide text-ink/50">
+            <tr className="text-left text-xs uppercase tracking-wide text-ink/65">
               <th className="pb-2 pr-3">Data type</th>
               <th className="pb-2 pr-3">Retention period</th>
               <th className="pb-2 pr-3">On expiry</th>
@@ -49,7 +49,7 @@ export function RetentionRegistry() {
             )}
             {(schedule || []).map((s) => (
               <tr key={s.id} className="border-t border-gold-light/30">
-                <td className="py-2 pr-3">{s.data_type}<p className="text-xs text-ink/50">{s.description}</p></td>
+                <td className="py-2 pr-3">{s.data_type}<p className="text-xs text-ink/65">{s.description}</p></td>
                 <td className="py-2 pr-3">{s.retention_period}</td>
                 <td className="py-2 pr-3 capitalize">{s.action_on_expiry}</td>
                 <td className="py-2 pr-3">{s.last_run_at ? new Date(s.last_run_at).toLocaleString("en-GB") : "Never"}</td>

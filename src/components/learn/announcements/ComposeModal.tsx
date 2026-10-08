@@ -112,7 +112,7 @@ export function ComposeModal({
               <input type="checkbox" checked={pinned} onChange={(e) => setPinned(e.target.checked)} className="mt-0.5 h-4 w-4" />
               <span>
                 <span className="font-medium text-ink">Pin to top</span>
-                <span className="block text-xs text-ink/50">Stays above newer notices.</span>
+                <span className="block text-xs text-ink/65">Stays above newer notices.</span>
               </span>
             </label>
             <label className="block text-sm">

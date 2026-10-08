@@ -66,7 +66,7 @@ export function DataRights() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Data rights requests</h2>
-      <p className="mt-1 text-xs text-ink/50">Subject access, rectification, erasure, export and objection requests, with the UK GDPR one-calendar-month statutory deadline computed automatically.</p>
+      <p className="mt-1 text-xs text-ink/65">Subject access, rectification, erasure, export and objection requests, with the UK GDPR one-calendar-month statutory deadline computed automatically.</p>
 
       <ul className="mt-3 space-y-2">
         {requests === null && <p className="text-sm text-ink/60">Loading…</p>}
@@ -77,7 +77,7 @@ export function DataRights() {
             <li key={r.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
               <p className="font-semibold">{r.request_type.replace("_", " ")} — {r.requester_name} ({r.requester_email})</p>
               <p className="mt-0.5 text-ink/70">Subject: {r.subject_description}</p>
-              <p className={`mt-1 text-xs ${days < 7 ? "font-semibold text-red-700" : "text-ink/50"}`}>
+              <p className={`mt-1 text-xs ${days < 7 ? "font-semibold text-red-700" : "text-ink/65"}`}>
                 Status: {r.status} · deadline {new Date(deadline).toLocaleDateString("en-GB")} ({days < 0 ? "overdue" : `${days} day(s) left`})
               </p>
               {canAction && r.status !== "completed" && r.status !== "rejected" && (

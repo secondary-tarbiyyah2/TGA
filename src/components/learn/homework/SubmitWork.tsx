@@ -197,7 +197,7 @@ export function SubmitWork({
                 Take a photo
               </button>
             )}
-            <span className="text-xs text-ink/50">
+            <span className="text-xs text-ink/65">
               {cats.map((c) => FILE_CATEGORY_LABEL[c]).join(", ")} · up to {formatBytes(MAX_FILE_BYTES)} each
             </span>
           </div>
@@ -218,7 +218,7 @@ export function SubmitWork({
                 <li key={p.key} className="rounded-md bg-cream px-3 py-1.5 text-sm">
                   <div className="flex items-center justify-between gap-2">
                     <span className="min-w-0 truncate">
-                      {p.file.name} <span className="text-xs text-ink/50">{formatBytes(p.file.size)}</span>
+                      {p.file.name} <span className="text-xs text-ink/65">{formatBytes(p.file.size)}</span>
                     </span>
                     <button type="button" disabled={busy} onClick={() => setPicked((cur) => cur.filter((x) => x.key !== p.key))} className="shrink-0 text-xs text-red-700 underline disabled:opacity-50">
                       Remove

@@ -123,7 +123,7 @@ export default function LearnLoginPage() {
         <Link href="/login/forgot" className="mt-3 inline-block text-sm font-semibold text-gold-700 underline">
           Forgotten your password?
         </Link>
-        <p className="mt-4 text-xs text-ink/50">Accounts are created by the school. Students sign in with the username the school gave them. If a student forgets their password, a parent or the school can reset it.</p>
+        <p className="mt-4 text-xs text-ink/65">Accounts are created by the school. Students sign in with the username the school gave them. If a student forgets their password, a parent or the school can reset it.</p>
       </div>
     </section>
   );

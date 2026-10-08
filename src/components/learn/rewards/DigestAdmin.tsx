@@ -129,7 +129,7 @@ export function DigestAdmin() {
             ))}
           </ul>
         )}
-        {shown.length > 100 && <p className="mt-2 text-xs text-ink/50">Showing the first 100. Use search to narrow down.</p>}
+        {shown.length > 100 && <p className="mt-2 text-xs text-ink/65">Showing the first 100. Use search to narrow down.</p>}
       </section>
 
       {preview && (

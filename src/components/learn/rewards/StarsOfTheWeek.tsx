@@ -40,14 +40,14 @@ export function StarShoutOuts() {
         <h2 id="stars-heading" className="text-sm font-semibold text-ink">
           <span aria-hidden="true">★ </span>Stars of the week
         </h2>
-        <p className="text-[11px] text-ink/50">Week beginning {longDate(rows[0].week_start)}</p>
+        <p className="text-[11px] text-ink/65">Week beginning {longDate(rows[0].week_start)}</p>
       </div>
       <ul className="divide-y divide-gold-light/60">
         {rows.map((r, i) => (
           <li key={`${r.class_name}-${r.first_name}-${i}`} className={`px-4 py-2.5 text-sm ${r.is_mine ? "bg-teal-100/40" : ""}`}>
             <p className="font-medium text-ink">
               {r.surname_initial ? `${r.first_name} ${r.surname_initial}.` : r.first_name}
-              <span className="ml-2 text-xs font-normal text-ink/50">{r.class_name}</span>
+              <span className="ml-2 text-xs font-normal text-ink/65">{r.class_name}</span>
               {r.is_mine && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 text-[11px] font-semibold text-teal-900">That&apos;s you!</span>}
             </p>
             <p className="text-xs text-ink/70">{r.reason}</p>
@@ -121,7 +121,7 @@ export function MyCertificates({ childIds }: { childIds: string[] }) {
             <span className="min-w-0">
               <span className="block font-medium text-ink">
                 {r.children?.name || "Star"}
-                <span className="ml-2 text-xs font-normal text-ink/50">
+                <span className="ml-2 text-xs font-normal text-ink/65">
                   {r.classes?.name ? `${r.classes.name} · ` : ""}
                   week of {longDate(r.week_start)}
                 </span>

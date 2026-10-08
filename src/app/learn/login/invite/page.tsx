@@ -93,7 +93,7 @@ export default function LearnInvitePage() {
             {linkError || "This link has expired or has already been used (each link works once). Enter your email and we will send you a new one."}
           </p>
           <SendNewLink />
-          <Link href="/login" className="mt-4 inline-block text-xs text-ink/50 underline">
+          <Link href="/login" className="mt-4 inline-block text-xs text-ink/65 underline">
             Back to sign in
           </Link>
         </div>

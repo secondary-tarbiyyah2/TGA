@@ -181,7 +181,7 @@ export function EmailTemplatesPanel() {
           ] as const).map(([label, hint, keys]) => (
             <div key={label}>
               <div className="mb-1.5 flex items-center gap-2 px-1" title={hint}>
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-ink/45">{label}</span>
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-ink/65">{label}</span>
                 <span aria-hidden="true" className="h-px flex-1 bg-gold-light/60" />
               </div>
               <ul className="space-y-1">
@@ -197,7 +197,7 @@ export function EmailTemplatesPanel() {
                         className={`flex w-full items-center justify-between gap-2 rounded-lg px-3 py-1.5 text-left text-sm ${on ? "bg-teal-700 font-semibold text-white" : "border border-gold-light/60 font-medium text-ink hover:bg-cream"}`}
                       >
                         <span>{TEMPLATE_LABELS[k]}{JSON.stringify(rows[k]) !== JSON.stringify(saved[k]) ? " *" : ""}</span>
-                        <span className={`shrink-0 rounded px-1.5 py-px text-[10px] font-normal ${on ? "bg-white/20 text-white/85" : "bg-ink/5 text-ink/45"}`}>
+                        <span className={`shrink-0 rounded px-1.5 py-px text-[10px] font-normal ${on ? "bg-white/20 text-white/85" : "bg-ink/5 text-ink/65"}`}>
                           {MANUAL_ONLY.includes(k) ? "Manual" : isAuto ? "Auto" : "Auto off"}
                         </span>
                       </button>
@@ -245,14 +245,14 @@ export function EmailTemplatesPanel() {
               Reset to default
             </button>
             <button type="button" onClick={sendTestToMe} className={ghostBtn}>Send test to me</button>
-            {!isDefault && <span className="text-xs text-ink/50">Edited from the built-in text</span>}
+            {!isDefault && <span className="text-xs text-ink/65">Edited from the built-in text</span>}
             {anyDirty && !dirty && <span className="text-xs text-ink/55">Other templates have unsaved changes (marked *).</span>}
             {msg && <span role={msg.ok ? "status" : "alert"} className={`text-xs ${msg.ok ? "text-teal-700" : "text-red-700"}`}>{msg.text}</span>}
           </div>
 
           <div className="rounded-lg border border-gold-light/50 bg-white p-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">Live preview (made-up application: Yusuf Rahman, Year 4)</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Live preview (made-up application: Yusuf Rahman, Year 4)</p>
               <button type="button" onClick={copyPreview} className="text-xs font-medium text-ink/70 underline">Copy preview</button>
             </div>
                         <p className="mt-2 text-sm font-semibold text-ink">{preview.subject}</p>

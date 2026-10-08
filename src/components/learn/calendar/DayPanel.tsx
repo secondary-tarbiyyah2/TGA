@@ -132,7 +132,7 @@ export function DayPanel({
           <button type="button" onClick={() => onShift(1)} aria-label="Next day" className={iconBtn}>
             ›
           </button>
-          <span className="ml-auto text-xs text-ink/50">
+          <span className="ml-auto text-xs text-ink/65">
             {loading ? "Loading…" : `${items.length} item${items.length === 1 ? "" : "s"}`}
           </span>
         </div>
@@ -174,7 +174,7 @@ export function DayPanel({
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section>
-      <h4 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/45">{title}</h4>
+      <h4 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/65">{title}</h4>
       <ul className="space-y-2">{children}</ul>
     </section>
   );

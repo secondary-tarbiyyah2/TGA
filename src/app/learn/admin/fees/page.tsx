@@ -203,7 +203,7 @@ function FeesContent() {
           </>
         }
       />
-      {!canExport && <p className="-mt-3 mb-4 text-xs text-ink/50">Exporting requires the &quot;Can export data&quot; permission — ask a Headteacher to grant it.</p>}
+      {!canExport && <p className="-mt-3 mb-4 text-xs text-ink/65">Exporting requires the &quot;Can export data&quot; permission — ask a Headteacher to grant it.</p>}
       {notice && (
         <p role="status" className="mb-4 rounded-lg border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-800">
           {notice}
@@ -266,12 +266,12 @@ function FeesContent() {
                     {r.childName && ` · ${r.childName}`}
                     {r.yearGroup && ` (${r.yearGroup})`}
                   </p>
-                  <p className="mt-0.5 text-xs text-ink/50">Due {formatDate(r.charge.due_date)}</p>
+                  <p className="mt-0.5 text-xs text-ink/65">Due {formatDate(r.charge.due_date)}</p>
                 </div>
                 <div className="text-right">
                   <span className={`inline-block rounded-full border px-2.5 py-0.5 text-xs font-semibold ${STATUS_STYLE[r.status]}`}>{STATUS_LABEL[r.status]}</span>
                   <p className="mt-1 text-sm tabular-nums text-ink">
-                    {formatGBP(r.paid)} <span className="text-ink/50">of {formatGBP(r.charge.amount)}</span>
+                    {formatGBP(r.paid)} <span className="text-ink/65">of {formatGBP(r.charge.amount)}</span>
                   </p>
                   {r.balance > 0 && r.status !== "void" && <p className="text-xs font-medium tabular-nums text-ink/70">{formatGBP(r.balance)} to pay</p>}
                 </div>
@@ -293,7 +293,7 @@ function FeesContent() {
                   </button>
                 )}
                 {r.status !== "void" && r.status !== "paid" && (
-                  <button type="button" onClick={() => voidCharge(r)} className="ml-auto rounded-lg px-3 py-1.5 text-ink/50 hover:text-red-700">
+                  <button type="button" onClick={() => voidCharge(r)} className="ml-auto rounded-lg px-3 py-1.5 text-ink/65 hover:text-red-700">
                     Void
                   </button>
                 )}
@@ -331,13 +331,13 @@ function FeesContent() {
                 <tr key={f.id}>
                   <td className="border-b border-gold-light/40 p-3">
                     <span className="font-medium text-ink">{f.name}</span>
-                    {f.email && <span className="block text-xs text-ink/50">{f.email}</span>}
+                    {f.email && <span className="block text-xs text-ink/65">{f.email}</span>}
                   </td>
                   <td className="border-b border-gold-light/40 p-3 text-ink/70">{f.count}</td>
                   <td className="border-b border-gold-light/40 p-3 text-right tabular-nums">{formatGBP(f.billed)}</td>
                   <td className="border-b border-gold-light/40 p-3 text-right tabular-nums">{formatGBP(f.paid)}</td>
                   <td className="border-b border-gold-light/40 p-3 text-right font-semibold tabular-nums">{formatGBP(f.balance)}</td>
-                  <td className={`border-b border-gold-light/40 p-3 text-right tabular-nums ${f.overdue > 0 ? "font-semibold text-red-700" : "text-ink/40"}`}>{f.overdue > 0 ? formatGBP(f.overdue) : "—"}</td>
+                  <td className={`border-b border-gold-light/40 p-3 text-right tabular-nums ${f.overdue > 0 ? "font-semibold text-red-700" : "text-ink/65"}`}>{f.overdue > 0 ? formatGBP(f.overdue) : "—"}</td>
                 </tr>
               ))}
             </tbody>
@@ -348,7 +348,7 @@ function FeesContent() {
       {creating && (
         <NewChargeDialog
           families={families}
-          children={children}
+          pupils={children}
           yearGroups={yearGroups}
           classes={classes}
           enrolments={enrolments}

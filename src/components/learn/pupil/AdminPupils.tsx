@@ -104,7 +104,7 @@ export function AdminPupils() {
               onClick={() => setChip(c.key)}
               className={`rounded-full border px-3 py-1.5 text-sm font-medium ${chip === c.key ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
             >
-              {c.label} <span className={chip === c.key ? "text-white/80" : "text-ink/40"}>{counts[c.key] ?? 0}</span>
+              {c.label} <span className={chip === c.key ? "text-white/80" : "text-ink/65"}>{counts[c.key] ?? 0}</span>
             </button>
           ))}
         </div>
@@ -116,7 +116,7 @@ export function AdminPupils() {
         ) : (
           <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
             <table className="w-full min-w-[40rem] text-left text-sm">
-              <thead className="border-b border-gold-light/60 text-xs uppercase tracking-wide text-ink/50">
+              <thead className="border-b border-gold-light/60 text-xs uppercase tracking-wide text-ink/65">
                 <tr>
                   <th className="px-4 py-3 font-medium">Pupil</th>
                   <th className="px-4 py-3 font-medium">Class</th>
@@ -131,7 +131,7 @@ export function AdminPupils() {
                       <Link href={`/admin/pupils?id=${p.id}`} className="font-medium text-teal-800 hover:underline">
                         {p.name}
                       </Link>
-                      {p.yearGroup && <p className="text-xs text-ink/50">{p.yearGroup}</p>}
+                      {p.yearGroup && <p className="text-xs text-ink/65">{p.yearGroup}</p>}
                     </td>
                     <td className="px-4 py-3 text-ink/75">{p.classes.map((c) => c.name).join(", ") || "None"}</td>
                     <td className="w-40 px-4 py-3">

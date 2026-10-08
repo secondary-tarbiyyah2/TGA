@@ -87,7 +87,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
     const url = typeof result.joinUrl === "string" ? result.joinUrl : null;
     if (result.ok && url) {
       if (popup) popup.location.href = url;
-      else window.location.href = url;
+      else window.location.assign(url);
     } else {
       popup?.close();
       setMessage(edgeErrorMessage(result));

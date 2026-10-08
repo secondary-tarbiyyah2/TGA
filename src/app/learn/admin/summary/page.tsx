@@ -521,7 +521,7 @@ function SummaryContent() {
               </table>
             </div>
           )}
-          <p className="mt-3 text-xs text-ink/50">
+          <p className="mt-3 text-xs text-ink/65">
             Attendance counts present and late marks; excused absences are left out. Homework completion is submissions against pupils enrolled, for homework already due.
             {groupBy === "class" && " Class fees follow enrolments, so a child in several classes appears in each; the totals above count every charge once."}
             {" "}Fees cover charges falling due in the period.

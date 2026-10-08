@@ -69,7 +69,7 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
     <section className="rounded-2xl border border-gold-light bg-white">
       <div className="border-b border-gold-light/60 px-4 py-3">
         <h2 className="text-base font-semibold text-ink">{title}</h2>
-        <p className="text-xs text-ink/50">{periodLabel}. Select a class to see who was away.</p>
+        <p className="text-xs text-ink/65">{periodLabel}. Select a class to see who was away.</p>
       </div>
       {absences === null ? (
         <p className="px-4 py-6 text-sm text-ink/60">Loading…</p>
@@ -102,7 +102,7 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
                   <td className={`${td} text-right`}>{c.tally.authorised}</td>
                   <td className={`${td} text-right`}>{c.tally.unauthorised}</td>
                   <td className={`${td} text-right`}>
-                    <span className={c.tally.unexplained > 0 ? "rounded bg-amber-100 px-2 py-0.5 font-semibold text-amber-900" : "text-ink/50"}>{c.tally.unexplained}</span>
+                    <span className={c.tally.unexplained > 0 ? "rounded bg-amber-100 px-2 py-0.5 font-semibold text-amber-900" : "text-ink/65"}>{c.tally.unexplained}</span>
                   </td>
                 </tr>
               ))}
@@ -133,7 +133,7 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
             {students.map((s) => (
               <li key={s.id} className="rounded-xl border border-gold-light/60 p-3">
                 <p className="text-sm font-medium text-ink">
-                  {s.name} <span className="font-normal text-ink/50">· {s.tally.total} absence{s.tally.total === 1 ? "" : "s"}</span>
+                  {s.name} <span className="font-normal text-ink/65">· {s.tally.total} absence{s.tally.total === 1 ? "" : "s"}</span>
                 </p>
                 <ul className="mt-2 flex flex-wrap gap-1.5">
                   {s.dates.map((d) => (

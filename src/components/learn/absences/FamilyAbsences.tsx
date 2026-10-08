@@ -172,7 +172,7 @@ export function FamilyAbsences() {
                 <li key={n.id} className="rounded-xl border border-gold-light/60 p-3">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <p className="text-sm font-medium text-ink">
-                      {nameOf(n.child_id)} <span className="font-normal text-ink/50">· {formatRange(n.from_date, n.to_date)}</span>
+                      {nameOf(n.child_id)} <span className="font-normal text-ink/65">· {formatRange(n.from_date, n.to_date)}</span>
                     </p>
                     <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${CHIP[n.status]}`}>{n.status === "undecided" ? "Awaiting" : STATUS_LABEL[n.status]}</span>
                   </div>

@@ -88,7 +88,6 @@ export function MeritLeaderboard({
       cancelled = true;
     };
     // choiceKey stands in for the choices array identity
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scope, scopeId, period, limit, choiceKey]);
 
   const podium = useMemo(() => (rows || []).filter((r) => r.rank <= 3).slice(0, 3), [rows]);
@@ -163,7 +162,7 @@ export function MeritLeaderboard({
               <ol start={rest[0].rank} className="mt-4 divide-y divide-gold-light/60 rounded-xl border border-gold-light/60" aria-label="Next places">
                 {rest.map((r, i) => (
                   <li key={`${r.first_name}-${r.surname_initial}-${i}`} className={`flex items-center gap-3 px-3 py-2 text-sm ${r.is_mine ? "bg-teal-100/40" : ""}`}>
-                    <span className="w-6 text-center text-xs font-semibold tabular-nums text-ink/50">
+                    <span className="w-6 text-center text-xs font-semibold tabular-nums text-ink/65">
                       <span className="sr-only">Place </span>
                       {r.rank}
                     </span>

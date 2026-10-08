@@ -105,7 +105,7 @@ export function DocumentsPanel({ applicationId, sharedIdFrom }: { applicationId:
               <li key={d.path} className="flex items-center justify-between gap-3 rounded-lg border border-gold-light/50 px-3 py-2">
                 <span className="min-w-0 text-sm text-ink">
                   {label}
-                  <span className="block text-xs text-ink/50">
+                  <span className="block text-xs text-ink/65">
                     {ext.toUpperCase()}{d.size ? ` · ${(d.size / 1048576).toFixed(1)} MB` : ""}
                     {d.created ? ` · ${new Date(d.created).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" })}` : ""}
                   </span>

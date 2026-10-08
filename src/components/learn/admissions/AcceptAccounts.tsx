@@ -118,7 +118,7 @@ export function AcceptAccounts({
         </label>
         <fieldset className="sm:col-span-2">
           <legend className="text-sm font-medium text-ink">
-            Classes <span className="font-normal text-ink/50">(optional, choose as many as needed: one per subject)</span>
+            Classes <span className="font-normal text-ink/65">(optional, choose as many as needed: one per subject)</span>
           </legend>
           {classes.length === 0 ? (
             <p className="mt-1 text-xs text-ink/55">No classes have been set up yet. You can enrol {app.child_first_name} later from Academic.</p>

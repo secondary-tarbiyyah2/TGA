@@ -136,7 +136,7 @@ export default async function FeesPage() {
           <Kicker>Estimate your fees</Kicker>
           <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">See a personalised estimate</h2>
           <p className="mt-2 max-w-2xl text-ink/70">
-            Choose how many children, each child's year group and your payment plan. We show a line for each child, the discounts that apply, your total and what you pay to secure a place.
+            Choose how many children, each child&apos;s year group and your payment plan. We show a line for each child, the discounts that apply, your total and what you pay to secure a place.
           </p>
           <div className="mt-6 max-w-2xl">
             <FeeEstimator

@@ -24,7 +24,7 @@ export default async function AdmissionsPage() {
           <Kicker>Admissions</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">How to apply.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            A straightforward, six-step process, from your online application to your child's first lesson, including a supervised remote assessment and an interview with you and your child. Applications for the January 2027 launch are open now.
+            A straightforward, six-step process, from your online application to your child&apos;s first lesson, including a supervised remote assessment and an interview with you and your child. Applications for the January 2027 launch are open now.
           </p>
           <div className="mt-8">
             <Button href="/admissions/apply">Apply now</Button>

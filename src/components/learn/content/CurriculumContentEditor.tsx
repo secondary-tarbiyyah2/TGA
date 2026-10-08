@@ -5,7 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { curriculumDefaults as D, withDefault, toStored } from "@/content/defaults";
-import { DefaultTextField, PrefilledHelp } from "./DefaultField";
+import { DefaultTextField } from "./DefaultField";
 
 type Row = { hero_heading: string | null; hero_body: string | null };
 

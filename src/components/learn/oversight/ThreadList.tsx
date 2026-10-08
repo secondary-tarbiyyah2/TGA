@@ -72,7 +72,7 @@ export function ThreadList({
             >
               <span className="flex items-baseline justify-between gap-2">
                 <span className="truncate text-sm font-semibold text-ink">{threadTitle(t)}</span>
-                <span className="shrink-0 text-xs text-ink/50">{shortTime(t.last_at)}</span>
+                <span className="shrink-0 text-xs text-ink/65">{shortTime(t.last_at)}</span>
               </span>
               <span className="mt-0.5 flex items-center gap-2">
                 <span className="truncate text-xs text-ink/60">

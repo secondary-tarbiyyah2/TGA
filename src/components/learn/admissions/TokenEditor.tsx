@@ -140,7 +140,7 @@ export function VariablePicker({ onPick }: { onPick: (token: string) => void }) 
                 </button>
               </li>
             ))}
-            {list.length === 0 && <li className="px-2 py-1 text-xs text-ink/50">No match.</li>}
+            {list.length === 0 && <li className="px-2 py-1 text-xs text-ink/65">No match.</li>}
           </ul>
         </div>
       )}

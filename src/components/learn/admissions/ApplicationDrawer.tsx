@@ -37,8 +37,8 @@ function fmtDate(iso: string): string {
 function Row({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="grid gap-0.5 sm:grid-cols-[11rem_1fr] sm:gap-3">
-      <dt className="text-xs font-semibold uppercase tracking-wide text-ink/50">{label}</dt>
-      <dd className="whitespace-pre-wrap break-words text-sm text-ink">{children || <span className="text-ink/40">Not given</span>}</dd>
+      <dt className="text-xs font-semibold uppercase tracking-wide text-ink/65">{label}</dt>
+      <dd className="whitespace-pre-wrap break-words text-sm text-ink">{children || <span className="text-ink/65">Not given</span>}</dd>
     </div>
   );
 }
@@ -186,7 +186,7 @@ export function ApplicationDrawer({
               <section aria-label="Internal notes">
                 <label className="block text-sm font-medium text-ink">
                   Internal notes
-                  <span className="ml-1 text-xs font-normal text-ink/50">(staff only, never shown to families)</span>
+                  <span className="ml-1 text-xs font-normal text-ink/65">(staff only, never shown to families)</span>
                   <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} maxLength={10000} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
                 </label>
                 <div className="mt-2 flex items-center gap-3">

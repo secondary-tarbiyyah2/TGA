@@ -208,7 +208,7 @@ function AssessmentContent() {
                       {a.grade_label || (a.percent !== null ? `${a.percent}%` : "—")} · {new Date(a.date).toLocaleDateString("en-GB")}
                     </span>
                   </div>
-                  {a.moderation_notes && <p className="mt-1 text-xs text-ink/50">Moderation: {a.moderation_notes}</p>}
+                  {a.moderation_notes && <p className="mt-1 text-xs text-ink/65">Moderation: {a.moderation_notes}</p>}
                 </li>
               ))}
             </ul>

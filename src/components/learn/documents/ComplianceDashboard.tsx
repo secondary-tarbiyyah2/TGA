@@ -252,7 +252,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
     <button type="button" onClick={onClick} className={`rounded-2xl border p-4 text-left ${tone === "bad" ? "border-red-300 bg-red-50" : tone === "warn" ? "border-amber-300 bg-amber-50" : "border-green-200 bg-green-50"} ${onClick ? "hover:brightness-95" : "cursor-default"}`}>
       <p className="text-2xl font-semibold text-ink">{value}</p>
       <p className="text-xs font-medium text-ink/70">{label}</p>
-      {sub && <p className="mt-0.5 text-[11px] text-ink/50">{sub}</p>}
+      {sub && <p className="mt-0.5 text-[11px] text-ink/65">{sub}</p>}
     </button>
   );
   const loading = alerts === null || outstanding === null;
@@ -329,7 +329,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
                               {isOver && <span className="ml-2 rounded-full bg-red-600 px-2 py-0.5 text-[11px] font-semibold text-white">Overdue</span>}
                             </p>
                             <p className="text-xs text-ink/65">{a.detail}</p>
-                            <p className="mt-0.5 text-xs text-ink/45">
+                            <p className="mt-0.5 text-xs text-ink/65">
                               Raised {fmt(a.when)}
                               {a.body && (
                                 <button type="button" onClick={() => setOpenBody(openBody === a.key ? null : a.key)} className="ml-2 font-medium text-teal-700 underline">
@@ -423,7 +423,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
               );
             })}
           </ul>
-          <p className="border-t border-gold-light px-5 py-3 text-xs text-ink/50">Overdue means more than a week since the person was first asked (or since the document was set up). People can sign in the portal or from the emailed link.</p>
+          <p className="border-t border-gold-light px-5 py-3 text-xs text-ink/65">Overdue means more than a week since the person was first asked (or since the document was set up). People can sign in the portal or from the emailed link.</p>
         </div>
       )}
 

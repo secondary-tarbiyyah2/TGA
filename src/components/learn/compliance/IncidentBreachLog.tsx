@@ -50,9 +50,9 @@ function IncidentCard({ incident }: { incident: Incident }) {
 
   return (
     <li className="rounded-lg border border-gold-light/40 p-3 text-sm">
-      <p className="font-semibold">{incident.title} <span className="font-normal text-ink/50">({incident.severity}, {incident.status})</span></p>
+      <p className="font-semibold">{incident.title} <span className="font-normal text-ink/65">({incident.severity}, {incident.status})</span></p>
       <p className="mt-1 text-ink/70">{incident.description}</p>
-      <p className="mt-1 text-xs text-ink/50">
+      <p className="mt-1 text-xs text-ink/65">
         Affected: {incident.affected_count ?? "not yet counted"} · discovered {new Date(incident.discovered_at).toLocaleString("en-GB")}
       </p>
       <p className={`mt-1 text-xs font-semibold ${hoursLeft !== null && hoursLeft < 24 ? "text-red-700" : "text-ink/60"}`}>
@@ -62,8 +62,8 @@ function IncidentCard({ incident }: { incident: Incident }) {
         {(items || []).map((it) => (
           <li key={it.id} className="flex items-center gap-2 text-xs">
             <input type="checkbox" checked={it.done} onChange={() => toggle(it)} />
-            <span className={it.done ? "text-ink/50 line-through" : "text-ink/80"}>{ITEM_LABELS[it.item_key] || it.item_key}</span>
-            {it.done && it.done_at && <span className="text-ink/40">— {new Date(it.done_at).toLocaleString("en-GB")}</span>}
+            <span className={it.done ? "text-ink/65 line-through" : "text-ink/80"}>{ITEM_LABELS[it.item_key] || it.item_key}</span>
+            {it.done && it.done_at && <span className="text-ink/65">— {new Date(it.done_at).toLocaleString("en-GB")}</span>}
           </li>
         ))}
       </ul>
@@ -106,7 +106,7 @@ export function IncidentBreachLog() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Incident &amp; data-breach log</h2>
-      <p className="mt-1 text-xs text-ink/50">Every incident gets a structured ICO-notification checklist with a live 72-hour countdown from the moment it was logged as discovered.</p>
+      <p className="mt-1 text-xs text-ink/65">Every incident gets a structured ICO-notification checklist with a live 72-hour countdown from the moment it was logged as discovered.</p>
       <ul className="mt-3 space-y-2">
         {incidents === null && <p className="text-sm text-ink/60">Loading…</p>}
         {(incidents || []).map((i) => <IncidentCard key={i.id} incident={i} />)}

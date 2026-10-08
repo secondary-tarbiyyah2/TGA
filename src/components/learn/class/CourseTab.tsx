@@ -229,7 +229,7 @@ function ActivityRow({ a }: { a: Activity }) {
           </svg>
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block text-[11px] font-semibold uppercase tracking-wider text-ink/45">{k.label}</span>
+          <span className="block text-[11px] font-semibold uppercase tracking-wider text-ink/65">{k.label}</span>
           <span className="block truncate text-sm font-medium text-ink group-hover:text-teal-700 group-hover:underline">{a.title}</span>
           <span className="block truncate text-xs text-ink/55">{a.meta}</span>
         </span>
@@ -276,7 +276,7 @@ export function CourseTab({ classId, viewer, routes }: { classId: string; viewer
       {/* Course index (Moodle's left drawer) */}
       <nav aria-label="Course index" className="hidden lg:block">
         <div className="sticky top-[76px] max-h-[calc(100vh-96px)] overflow-y-auto rounded-2xl border border-gold-light bg-white p-2">
-          <p className="px-2 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/45">Course index</p>
+          <p className="px-2 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/65">Course index</p>
           <ul>
             {weeks.map((w) => {
               const current = w.start.getTime() === thisWeek;
@@ -330,12 +330,12 @@ export function CourseTab({ classId, viewer, routes }: { classId: string; viewer
                   aria-expanded={!closed}
                   className="flex w-full items-center gap-2 px-4 py-3 text-left"
                 >
-                  <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-4 w-4 shrink-0 text-ink/50 transition-transform ${closed ? "-rotate-90" : ""}`}>
+                  <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-4 w-4 shrink-0 text-ink/65 transition-transform ${closed ? "-rotate-90" : ""}`}>
                     <path d="M5.5 7.5l4.5 4.5 4.5-4.5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <h2 className="flex-1 text-base font-semibold text-ink">{weekLabel(w.start)}</h2>
                   {current && <span className="rounded-full bg-teal-700 px-2.5 py-0.5 text-xs font-semibold text-white">This week</span>}
-                  <span className="text-xs text-ink/50">
+                  <span className="text-xs text-ink/65">
                     {w.activities.length} item{w.activities.length === 1 ? "" : "s"}
                   </span>
                 </button>

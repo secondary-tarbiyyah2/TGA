@@ -23,7 +23,7 @@ export function RecentAbsences({ absences, onChanged }: { absences: Absence[] | 
     <section className="rounded-2xl border border-gold-light bg-white">
       <div className="border-b border-gold-light/60 px-4 py-3">
         <h2 className="text-base font-semibold text-ink">Recent absences</h2>
-        <p className="text-xs text-ink/50">Record why a child was away. Reasons are staff-only.</p>
+        <p className="text-xs text-ink/65">Record why a child was away. Reasons are staff-only.</p>
       </div>
       {absences === null ? (
         <p className="px-4 py-4 text-sm text-ink/60">Loading…</p>
@@ -34,7 +34,7 @@ export function RecentAbsences({ absences, onChanged }: { absences: Absence[] | 
           {rows.map((a) => (
             <li key={`${a.childId}|${a.date}`} className="flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-sm">
               <span className="min-w-0 text-ink">
-                <span className="font-medium">{a.childName}</span> <span className="text-ink/50">· {formatDay(a.date)} · {a.className}</span>
+                <span className="font-medium">{a.childName}</span> <span className="text-ink/65">· {formatDay(a.date)} · {a.className}</span>
               </span>
               <span className="flex items-center gap-2">
                 {a.reasonCode && <span className="rounded-full bg-cream px-2.5 py-1 text-xs font-medium text-ink/70">{reasonLabel(a.reasonCode)}</span>}

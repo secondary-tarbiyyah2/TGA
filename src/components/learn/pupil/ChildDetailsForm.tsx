@@ -496,7 +496,7 @@ export function ChildDetailsForm() {
                   <ul className="space-y-3">
                     {drafts.map((d, i) => (
                       <li key={d.key} className="rounded-xl border border-gold-light/70 p-3">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">Contact {i + 1}</p>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Contact {i + 1}</p>
                         <div className="mt-2 grid gap-3 sm:grid-cols-2">
                           <Text label="Full name" required value={d.name} onChange={(v) => patchDraft(d.key, { name: v })} />
                           <Text label="Relationship to child" required value={d.relationship} onChange={(v) => patchDraft(d.key, { relationship: v })} />

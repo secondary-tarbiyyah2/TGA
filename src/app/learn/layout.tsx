@@ -9,10 +9,10 @@ import { LearnAccountMenu } from "@/components/learn/LearnAccountMenu";
 import { NotificationBell } from "@/components/learn/NotificationBell";
 import { PortalSidebar, PortalSidebarDrawer } from "@/components/learn/PortalSidebar";
 import { portalAreaFor } from "@/lib/learn/nav";
-import { SectionTabs } from "@/components/learn/SectionTabs";
 import { SignatureBanner } from "@/components/learn/SignatureBanner";
 import { CommandPalette } from "@/components/learn/CommandPalette";
 import { ClockChip, ClockInGate } from "@/components/learn/ClockInGate";
+import { Icon } from "@/components/learn/Icon";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -20,10 +20,10 @@ const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
  * The shared shell for every /learn route (it replaces the public site's
  * Header/Footer, see src/app/(marketing)/layout.tsx).
  *
- * Signed in: an Ihsan-style app shell. A fixed sidebar down the left with
- * every destination for the area as one flat list of icon links, your
- * name and sign-out at the bottom; a slim top bar with report-a-concern,
- * messages and notifications. On phones the sidebar becomes a drawer.
+ * Signed in: an app shell. A fixed sidebar down the left holds every
+ * destination for the area, in sections that open and close in place, with
+ * your name and sign-out at the bottom; a slim top bar has search, clock-in,
+ * report-a-concern and notifications. On phones the sidebar becomes a drawer.
  * The pages inside use Moodle's patterns (class cards, weekly course
  * pages, timeline and calendar blocks).
  *
@@ -99,11 +99,9 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
                 href="/report-concern"
                 title="Report a concern"
                 aria-label="Report a concern"
-                className="portal-topbar-btn ml-1 text-sm font-medium text-red-700 hover:!bg-red-50"
+                className="portal-topbar-btn ml-1 whitespace-nowrap text-sm font-medium text-red-700 hover:!bg-red-50"
               >
-                <svg aria-hidden="true" viewBox="0 0 20 20" className="h-[18px] w-[18px]">
-                  <path d="M10 1.5l7 3v5c0 4.4-3 7.9-7 9.5-4-1.6-7-5.1-7-9.5v-5l7-3zm0 5a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zm0 7.25a1 1 0 100 2 1 1 0 000-2z" fill="currentColor" />
-                </svg>
+                <Icon name="shieldAlert" className="h-[18px] w-[18px]" />
                 <span className="hidden sm:inline">Report a concern</span>
               </Link>
               {roles.some((r) => ADMIN_ISH_ROLES.includes(r.role)) && <NotificationBell userId={activeSession.user.id} />}
@@ -113,7 +111,6 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
 
         <main id="main" className="flex-1">
           <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
-            <SectionTabs area={area} roles={roles.map((r) => r.role)} />
             <SignatureBanner />
             <ClockInGate userId={activeSession.user.id} roles={roles}>
               {children}

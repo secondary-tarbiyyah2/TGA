@@ -246,7 +246,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
                   />
                   %
                 </label>
-                <button type="button" onClick={() => removeCat(c)} className="text-xs text-ink/50 hover:text-red-700 hover:underline">
+                <button type="button" onClick={() => removeCat(c)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
                   Remove
                 </button>
               </li>

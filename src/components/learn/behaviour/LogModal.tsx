@@ -181,7 +181,7 @@ export function LogModal({
                   <li key={keyOf(s)}>
                     <button type="button" aria-pressed={on} onClick={() => toggle(s)} className={`flex w-full items-center justify-between gap-2 px-3 py-2 text-left ${on ? "bg-teal-50" : "hover:bg-cream"}`}>
                       <span className="min-w-0 truncate text-ink">{s.name}</span>
-                      <span className="shrink-0 text-xs text-ink/50">{on ? "Selected" : s.className || ""}</span>
+                      <span className="shrink-0 text-xs text-ink/65">{on ? "Selected" : s.className || ""}</span>
                     </button>
                   </li>
                 );
@@ -200,7 +200,7 @@ export function LogModal({
                   </option>
                 ))}
               </select>
-              <span className="mt-1 block text-xs text-ink/50">If a child may be at risk, use Raise a concern instead.</span>
+              <span className="mt-1 block text-xs text-ink/65">If a child may be at risk, use Raise a concern instead.</span>
             </label>
           ) : (
             <div className="text-sm">

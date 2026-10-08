@@ -155,7 +155,7 @@ export function AnnouncementsFeed({
                   {a.pinned && <span className="mr-1.5 rounded-full bg-gold-light/60 px-1.5 py-0.5 text-xs font-medium text-ink/70">Pinned</span>}
                   {a.title}
                 </span>
-                <span className="text-xs text-ink/50">{new Date(a.created_at).toLocaleDateString("en-GB")}</span>
+                <span className="text-xs text-ink/65">{new Date(a.created_at).toLocaleDateString("en-GB")}</span>
               </div>
               <p className="mt-1 text-sm text-ink/70">{a.body}</p>
               {a.scope === "school" && <span className="mt-1 inline-block text-xs text-gold-700">School-wide</span>}

@@ -37,7 +37,7 @@ export function fmtPct(v: number | null): string {
 function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
     <div className="rounded-xl border border-gold-light/40 bg-cream/40 p-3">
-      <p className="text-xs uppercase tracking-wide text-ink/50">{label}</p>
+      <p className="text-xs uppercase tracking-wide text-ink/65">{label}</p>
       <p className="mt-0.5 text-xl font-semibold text-ink">{value}</p>
       {sub && <p className="text-xs text-ink/60">{sub}</p>}
     </div>
@@ -155,7 +155,7 @@ export function ReportDocument({
       <p className="mb-2 hidden text-[10pt] font-semibold uppercase tracking-wider print:block">Tarbiyyah Global Academy</p>
       <header className="flex flex-wrap items-start justify-between gap-2 border-b border-gold-light/40 pb-3">
         <div className="min-w-0">
-          <p className="text-xs uppercase tracking-wide text-ink/50">Progress Report</p>
+          <p className="text-xs uppercase tracking-wide text-ink/65">Progress Report</p>
           <h2 className="font-serif text-xl font-semibold text-ink">{childName}</h2>
           <p className="text-sm text-ink/60">
             {termLabel}

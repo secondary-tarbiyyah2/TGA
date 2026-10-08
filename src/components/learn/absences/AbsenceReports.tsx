@@ -44,7 +44,7 @@ export function AbsenceReports({ absences, periodLabel }: { absences: Absence[] 
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gold-light/60 px-4 py-3">
         <div>
           <h2 className="text-base font-semibold text-ink">Reasons for absence</h2>
-          <p className="text-xs text-ink/50">{periodLabel}. One count per child and day.</p>
+          <p className="text-xs text-ink/65">{periodLabel}. One count per child and day.</p>
         </div>
         {canExport && (
           <button type="button" onClick={exportCsv} disabled={rows.length === 0} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-semibold text-ink/80 hover:bg-cream disabled:opacity-50">

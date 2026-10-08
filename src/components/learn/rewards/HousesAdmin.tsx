@@ -374,10 +374,10 @@ export function HousesAdmin() {
         {awards.length > 0 && (
           <ul className="mt-4 divide-y divide-gold-light/50 text-sm">
             {awards.map((a) => (
-              <li key={a.id} className={`flex flex-wrap items-center justify-between gap-2 py-1.5 ${a.voided_at ? "text-ink/40 line-through" : ""}`}>
+              <li key={a.id} className={`flex flex-wrap items-center justify-between gap-2 py-1.5 ${a.voided_at ? "text-ink/65 line-through" : ""}`}>
                 <span>
                   <strong>+{a.points}</strong> {houseById.get(a.house_id)?.name || "House"} · {a.reason}
-                  <span className="ml-2 text-xs text-ink/50">{new Date(`${a.awarded_on}T12:00:00`).toLocaleDateString("en-GB")}</span>
+                  <span className="ml-2 text-xs text-ink/65">{new Date(`${a.awarded_on}T12:00:00`).toLocaleDateString("en-GB")}</span>
                 </span>
                 {!a.voided_at && (
                   <button type="button" disabled={busy} onClick={() => voidAward(a)} className="text-xs font-medium text-red-700 underline disabled:opacity-50">

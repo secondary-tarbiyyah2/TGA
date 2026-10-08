@@ -35,10 +35,10 @@ function NoteRow({ note, onDone }: { note: AbsenceNote; onDone: () => void }) {
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="min-w-0">
           <p className="text-sm font-medium text-ink">
-            {note.childName} <span className="font-normal text-ink/50">· {formatRange(note.from_date, note.to_date)}</span>
+            {note.childName} <span className="font-normal text-ink/65">· {formatRange(note.from_date, note.to_date)}</span>
           </p>
           <p className="mt-1 whitespace-pre-wrap text-sm text-ink/80">{note.reason}</p>
-          <p className="mt-1 text-xs text-ink/45">Sent {formatDay(note.created_at.slice(0, 10))}</p>
+          <p className="mt-1 text-xs text-ink/65">Sent {formatDay(note.created_at.slice(0, 10))}</p>
         </div>
         <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${CHIP[note.status]}`}>{STATUS_LABEL[note.status]}</span>
       </div>

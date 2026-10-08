@@ -150,7 +150,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                 {c.name}
                 {didJoin ? <span className="ml-2 text-xs font-normal text-green-800">Joined {timeOf(joined[c.id])}</span> : anyJoins ? <span className="ml-2 text-xs font-normal text-amber-800">Has not joined</span> : null}
               </span>
-              <span className="w-14 text-right text-xs text-ink/45" aria-live="polite">
+              <span className="w-14 text-right text-xs text-ink/65" aria-live="polite">
                 {saving[c.id] === "saving" ? "Saving…" : saving[c.id] === "error" ? <span className="text-red-700">Not saved</span> : saving[c.id] === "saved" ? "Saved" : current ? "" : "Not yet"}
               </span>
               <div role="radiogroup" aria-label={`Attendance for ${c.name}`} className="flex overflow-hidden rounded-lg border border-gold-light">
