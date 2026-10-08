@@ -1,0 +1,248 @@
+{
+  "subject": "Computing",
+  "year": "y7",
+  "board": "National Curriculum (aligned to Edexcel GCSE Computer Science 1CP2)",
+  "source": "Drive 'Computing Overview' Year 7 scheme (Intro to Scratch: Introduction, Variables and IF statements, Variables and operators, The Scratch Calculator), National Curriculum KS3, aligned to Edexcel GCSE Computer Science 1CP2",
+  "lessons": [
+    {
+      "unit": "Unit 1: Introduction to Scratch",
+      "n": 1,
+      "title": "Introduction to Scratch: sprites, movement and input",
+      "duration": 50,
+      "objectives": [
+        "Create and control sprites and backdrops in Scratch",
+        "Program movement using keyboard input",
+        "Explain the terms sequence, event and input"
+      ],
+      "keywords": [
+        { "term": "sprite", "def": "an object or character that a Scratch program controls" },
+        { "term": "sequence", "def": "instructions carried out one after another in order" },
+        { "term": "event", "def": "something that triggers a script, such as a key press" },
+        { "term": "input", "def": "data given to a program by the user or a device" }
+      ],
+      "starter": [
+        "Bismillah. What is an algorithm?",
+        "Give one example of an input device and one output device.",
+        "Why does the order of instructions matter in a program?"
+      ],
+      "teach": [
+        {
+          "heading": "The Scratch environment",
+          "bullets": ["Stage: where the program runs.", "Sprites: the objects we control.", "Blocks palette and script area."],
+          "note": "Share your screen with Scratch open. Show how to add a sprite, change the backdrop and drag blocks. Pupils should have a free Scratch account or use the offline editor. Remind them to save regularly."
+        },
+        {
+          "heading": "Events and sequence",
+          "bullets": ["'When green flag clicked' starts a script.", "Blocks run top to bottom.", "Order changes the result."],
+          "note": "Build: when flag clicked, go to x:0 y:0, say Hello for 2 seconds, move 50 steps. Swap two blocks and run it again to show that order matters. Ask pupils to predict the result before each run."
+        },
+        {
+          "heading": "Keyboard input",
+          "bullets": ["'When right arrow key pressed' is an event.", "change x by 10 moves right.", "change x by -10 moves left."],
+          "note": "Demonstrate four scripts for the arrow keys using change x and change y. Introduce the coordinates: the stage centre is (0,0), x goes left to right, y goes bottom to top. Misconception: pupils confuse x and y; ask them to point along each axis."
+        },
+        {
+          "heading": "Debug a script",
+          "bullets": ["Test every key.", "Compare with what you expected.", "Fix one problem at a time."],
+          "note": "Show a script where up and down are swapped. Ask pupils to find the bug. Reinforce the habit of testing and tracing. Mention that patience and carefulness are part of good character (sabr and ihsan) when we debug."
+        }
+      ],
+      "practice": [
+        "On the stage, what are the coordinates of the centre? What does change x by 10 do?",
+        "Predict: when flag clicked, move 100 steps, turn 90 degrees, move 100 steps. Draw the path.",
+        "Which block would you use to make a sprite say 'Assalamu alaykum' for 3 seconds?"
+      ],
+      "independent": [
+        "Build a script so a sprite moves in four directions using the arrow keys.",
+        "Add a backdrop and a second sprite that says 'Welcome!' when the space key is pressed.",
+        "Stretch: add a sound that plays each time the sprite moves, and make the sprite stay within the stage edges."
+      ],
+      "exit": [
+        "Name one event block and say what it does.",
+        "What is the difference between a sprite and a backdrop?"
+      ],
+      "homework": "Create a Scratch project where a sprite navigates a simple maze with the arrow keys. Share a screenshot.",
+      "send": "SEND/EAL: provide a labelled screenshot of the Scratch interface and a word bank; give partially built scripts. Stretch: add a rule that sends the sprite back to the start when it touches a wall colour."
+    },
+    {
+      "unit": "Unit 1: Introduction to Scratch",
+      "n": 2,
+      "title": "Variables and IF statements",
+      "duration": 50,
+      "objectives": [
+        "Store user input in a variable",
+        "Use IF and IF-ELSE statements with a condition",
+        "Build a guessing game that uses selection"
+      ],
+      "keywords": [
+        { "term": "variable", "def": "a named store for data that can change while a program runs" },
+        { "term": "selection", "def": "choosing which instructions to run based on a condition" },
+        { "term": "condition", "def": "a statement that is either true or false" },
+        { "term": "random", "def": "chosen by chance, with no pattern" }
+      ],
+      "starter": [
+        "Bismillah. What is the output of: set score to 3, change score by 4?",
+        "Which keyboard events did we use last lesson?",
+        "Is 'x > 5' a true/false condition? When is it true?"
+      ],
+      "teach": [
+        {
+          "heading": "Variables store data",
+          "bullets": ["Make a variable called secret.", "set secret to a random number.", "The value can change as the program runs."],
+          "note": "Create the variable and show it on the stage. Use pick random 1 to 10. Run several times to show different values. Link to Year 5 learning: variable = labelled box."
+        },
+        {
+          "heading": "Ask and answer",
+          "bullets": ["'ask' and 'wait' takes input.", "'answer' holds what was typed.", "Store it: set guess to answer."],
+          "note": "Show that answer changes each time something is asked, so we store it in a variable called guess if we need it later. This is a misconception many pupils have: answer is overwritten by the next ask."
+        },
+        {
+          "heading": "IF and IF-ELSE",
+          "bullets": ["IF guess = secret THEN say 'Correct'.", "ELSE say 'Wrong, try again'.", "The condition is true or false."],
+          "note": "Build the guessing game. Run it with a right and wrong guess. Show also guess > secret to give hints (too high). Introduce comparison operators: <, >, =."
+        },
+        {
+          "heading": "Test thoroughly",
+          "bullets": ["Test a correct guess.", "Test a guess that is too high.", "Test a guess that is too low."],
+          "note": "Create a test table on screen: input, expected output, actual output. This is a skill needed at GCSE. Ask pupils to find a test case which might break the game (e.g. typing text)."
+        }
+      ],
+      "practice": [
+        "Is the condition true? x = 7: x > 5, x = 5, x < 7.",
+        "What is wrong with this: IF answer = secret, but secret was never set? (the program compares with an empty or old value)",
+        "Write the IF-ELSE for a game which says 'Pass' when score >= 50 else 'Fail'."
+      ],
+      "independent": [
+        "Build a number guessing game with a random number from 1 to 10.",
+        "Add hints: 'too high' or 'too low' using nested IF blocks.",
+        "Stretch: add a variable to count the number of guesses and show it at the end."
+      ],
+      "exit": [
+        "What is a condition?",
+        "Write one test for your guessing game with the input and the expected output."
+      ],
+      "homework": "Make the guessing game harder by using a bigger range of numbers (1 to 50). Test it and write down three test cases.",
+      "send": "SEND/EAL: provide a flow diagram of the program with sentences to complete. Stretch: let the game tell the player how close they are (within 3 or not)."
+    },
+    {
+      "unit": "Unit 1: Introduction to Scratch",
+      "n": 3,
+      "title": "Variables and operators",
+      "duration": 50,
+      "objectives": [
+        "Use arithmetic operators (+, -, *, /) in Scratch",
+        "Use more than one variable in a program",
+        "Combine conditions using AND, OR and NOT"
+      ],
+      "keywords": [
+        { "term": "operator", "def": "a symbol or block that performs a calculation or comparison" },
+        { "term": "AND", "def": "true only if both conditions are true" },
+        { "term": "OR", "def": "true if at least one condition is true" },
+        { "term": "NOT", "def": "reverses true to false and false to true" }
+      ],
+      "starter": [
+        "Bismillah. What is the value of x after: set x to 2, change x by 3?",
+        "What is a condition? Give one example.",
+        "What does 'answer' hold in Scratch?"
+      ],
+      "teach": [
+        {
+          "heading": "Arithmetic operators",
+          "bullets": ["+ add, - subtract.", "* multiply, / divide.", "mod gives the remainder."],
+          "note": "Build a small script which asks two numbers and says the total. Test with 3 and 4 (7). Point out the difference between the + operator (3 and 4 make 7) and the 'join' block (3 and 4 make 34). Misconception: pupils use join when they mean add."
+        },
+        {
+          "heading": "Two variables",
+          "bullets": ["Variable 'a' stores the first number.", "Variable 'b' stores the second.", "Variable 'total' stores a + b."],
+          "note": "Rebuild the script using a, b and total. Explain why storing values in variables is better than using answer directly. Pupils should trace the program with a trace table for inputs 6 and 9."
+        },
+        {
+          "heading": "Combining conditions",
+          "bullets": ["age >= 11 AND age <= 16.", "day = Friday OR day = Saturday.", "NOT (score > 50)."],
+          "note": "Use a truth table with two inputs. Ask pupils when 'A AND B' is true (only when both are). Link to logic gates covered later at GCSE. Misconception: pupils think OR means exactly one is true; it also includes both."
+        },
+        {
+          "heading": "Mod: remainders",
+          "bullets": ["7 mod 2 = 1.", "8 mod 2 = 0.", "If n mod 2 = 0 then n is even."],
+          "note": "Demonstrate an even-or-odd checker. Explain mod gives the remainder after division. This idea returns in GCSE programming as the modulus operator."
+        }
+      ],
+      "practice": [
+        "Work out 17 mod 5. (2) and 20 mod 4. (0)",
+        "Is (5 > 3) AND (2 > 4) true or false? (false)",
+        "Is (5 > 3) OR (2 > 4) true or false? (true)"
+      ],
+      "independent": [
+        "Build a program that asks for two numbers and tells the user their sum, difference and product.",
+        "Build an even/odd checker using mod and an IF-ELSE.",
+        "Stretch: make a program which tells you if a number is between 10 and 20 using AND."
+      ],
+      "exit": [
+        "Evaluate: 13 mod 4.",
+        "When is 'A OR B' false?"
+      ],
+      "homework": "Design a program on paper which asks the user for their age and uses AND to decide whether they are in the 11 to 14 age band.",
+      "send": "SEND/EAL: provide a truth table template and colour-coded blocks for AND/OR. Stretch: use mod to make a program that checks whether a number is divisible by 3."
+    },
+    {
+      "unit": "Unit 1: Introduction to Scratch",
+      "n": 4,
+      "title": "The Scratch calculator and flowcharts",
+      "duration": 50,
+      "objectives": [
+        "Draw a flowchart using standard symbols",
+        "Build a calculator that chooses an operation",
+        "Test and evaluate a program against its design"
+      ],
+      "keywords": [
+        { "term": "flowchart", "def": "a diagram that shows the steps of an algorithm using symbols" },
+        { "term": "terminator", "def": "the start or end symbol (rounded box) in a flowchart" },
+        { "term": "decision", "def": "a diamond symbol with a yes/no question" },
+        { "term": "process", "def": "a rectangle showing an action or calculation" }
+      ],
+      "starter": [
+        "Bismillah. Work out 15 mod 4.",
+        "Is (7 > 3) AND (3 > 7) true or false?",
+        "Name the three types of programming structure (sequence, selection, ___)."
+      ],
+      "teach": [
+        {
+          "heading": "Flowchart symbols",
+          "bullets": ["Rounded box: start or end.", "Parallelogram: input or output.", "Rectangle: process.", "Diamond: decision."],
+          "note": "Draw each symbol on screen and give an example. These symbols are used in GCSE Computer Science exams. Ask pupils to say which symbol would show 'ask for number 1'. Parallelogram."
+        },
+        {
+          "heading": "Flowchart for a calculator",
+          "bullets": ["Start.", "Input number 1, number 2 and operator.", "Decision: is operator '+'?", "Output result. End."],
+          "note": "Build the flowchart step by step. Show how decisions chain: if not +, check -, then *, then /. Ask pupils to trace through with 8, 2 and '*' (16)."
+        },
+        {
+          "heading": "Build the calculator",
+          "bullets": ["Ask for two numbers and an operator.", "IF operator = '+' THEN add.", "ELSE IF operator = '-' THEN subtract."],
+          "note": "Convert the flowchart to Scratch blocks. Point out how each diamond becomes an IF block. Take care with division by zero: ask what should happen if number 2 is 0 and let pupils suggest adding a check."
+        },
+        {
+          "heading": "Test and improve",
+          "bullets": ["Test each operator.", "Test unusual input like 0.", "Compare the result with the flowchart."],
+          "note": "Use the test table again: input, expected, actual. Ask: does the program do what the design says? Invite pupils to describe one improvement. Linking to honesty in work: we check our work thoroughly rather than just hoping it is right."
+        }
+      ],
+      "practice": [
+        "Which flowchart symbol is used for 'Is the number even?'",
+        "Trace the calculator with 12, 4 and '/'. What is the output? (3)",
+        "Why must we check for division by zero?"
+      ],
+      "independent": [
+        "Draw a flowchart for a calculator that adds or subtracts two numbers.",
+        "Build the calculator in Scratch with four operators and test it with at least 6 test cases.",
+        "Stretch: add a check for division by zero that displays a friendly error message."
+      ],
+      "exit": [
+        "Which symbol shows a decision?",
+        "Give one test case for the calculator and its expected output."
+      ],
+      "homework": "Draw a flowchart for a program that decides whether a number typed by the user is positive, negative or zero.",
+      "send": "SEND/EAL: provide a flowchart with missing text to complete and a symbol key. Stretch: draw the flowchart for a program that works out the area of either a rectangle or a triangle."
+    }
+  ]
+}

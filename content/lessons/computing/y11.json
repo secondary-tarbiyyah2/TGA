@@ -1,0 +1,493 @@
+{
+  "subject": "Computing",
+  "year": "y11",
+  "board": "Edexcel",
+  "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 3 Computers, Topic 4 Networks); sequence follows the school's Drive Y10-11 scheme of work topics (cyber security, networks) and the Computer Science 9-1 folder; Python practice retained for Paper 2 skills",
+  "lessons": [
+    {
+      "unit": "Unit 1: Computers (Topic 3)",
+      "n": 1,
+      "title": "The CPU and the fetch-decode-execute cycle",
+      "duration": 50,
+      "objectives": [
+        "Describe the purpose of the CPU and its main components",
+        "Explain the fetch-decode-execute cycle",
+        "Explain how clock speed, cores and cache affect performance"
+      ],
+      "keywords": [
+        { "term": "CPU", "def": "the central processing unit which carries out program instructions" },
+        { "term": "ALU", "def": "arithmetic logic unit: does calculations and logical comparisons" },
+        { "term": "control unit", "def": "directs the flow of data and instructions in the CPU" },
+        { "term": "register", "def": "a very small, very fast storage location inside the CPU" },
+        { "term": "cache", "def": "fast memory close to the CPU which holds frequently used data" }
+      ],
+      "starter": [
+        "Bismillah. State two input devices and two output devices.",
+        "Why does a program need to be in main memory before it can run?",
+        "What does 'processing' mean in input-process-output?"
+      ],
+      "teach": [
+        {
+          "heading": "Inside the CPU",
+          "bullets": ["ALU: arithmetic and logic.", "Control unit: manages instructions.", "Registers: tiny, fast storage.", "Cache: fast memory near the CPU."],
+          "note": "Draw a block diagram with the CPU connected to main memory by buses. Explain that the CPU follows the stored program idea of Von Neumann architecture: instructions and data are stored in the same main memory. Pupils sketch the diagram."
+        },
+        {
+          "heading": "Registers",
+          "bullets": ["PC: address of the next instruction.", "MAR: address to read or write.", "MDR: data being transferred.", "ACC: results of calculations."],
+          "note": "Walk through what each register holds. A common mistake is to say the PC holds the instruction; it holds the address of the next instruction. Learners should be able to say what each register stores."
+        },
+        {
+          "heading": "Fetch-decode-execute",
+          "bullets": ["Fetch: instruction copied from memory to CPU.", "Decode: control unit works out what it means.", "Execute: instruction is carried out.", "Repeat for the next instruction."],
+          "note": "Trace a simple instruction 'ADD 5': PC address goes to MAR, the instruction is fetched into MDR, the PC increases, the control unit decodes, the ALU executes and the ACC stores the result. Use the cycle as a loop."
+        },
+        {
+          "heading": "Performance factors",
+          "bullets": ["Clock speed: cycles per second (GHz).", "More cores: tasks run in parallel.", "Bigger cache: fewer slow memory trips."],
+          "note": "Explain each factor with consequences. Misconception: more cores always means faster; it only helps when the software can use multiple cores. Embedded systems (in washing machines, cars) have a CPU dedicated to one function; ask for examples."
+        }
+      ],
+      "practice": [
+        "State the purpose of the ALU. (carries out calculations and logical comparisons)",
+        "Which register stores the address of the next instruction to be fetched? (PC)",
+        "Why might a computer with a higher clock speed not always be faster?"
+      ],
+      "independent": [
+        "Draw and label a diagram showing the CPU, main memory and the registers.",
+        "Write a numbered description of the fetch-decode-execute cycle in your own words using the names of the registers.",
+        "Write a 4-mark answer: 'Explain how the number of cores and the clock speed affect performance.'"
+      ],
+      "exit": [
+        "What happens in the 'fetch' stage?",
+        "Give two ways to increase the performance of a CPU."
+      ],
+      "homework": "Research the CPU in a modern phone or laptop. State its clock speed, number of cores and cache size and explain what each means.",
+      "send": "SEND/EAL: provide a colour-coded diagram and a card sort for register names. Stretch: explain why cache is faster than RAM but smaller."
+    },
+    {
+      "unit": "Unit 1: Computers (Topic 3)",
+      "n": 2,
+      "title": "Memory and storage",
+      "duration": 50,
+      "objectives": [
+        "Distinguish between primary and secondary storage",
+        "Compare RAM, ROM, cache and virtual memory",
+        "Compare magnetic, solid-state and optical storage"
+      ],
+      "keywords": [
+        { "term": "RAM", "def": "volatile main memory that holds programs and data in use" },
+        { "term": "ROM", "def": "non-volatile memory holding start-up instructions" },
+        { "term": "volatile", "def": "loses its contents when power is switched off" },
+        { "term": "secondary storage", "def": "non-volatile storage for programs and files for the long term" },
+        { "term": "virtual memory", "def": "part of secondary storage used as extra RAM when RAM is full" }
+      ],
+      "starter": [
+        "Bismillah. Describe the fetch stage of the fetch-decode-execute cycle.",
+        "What is the difference between a bit and a byte?",
+        "Why does your computer lose unsaved work if the power cuts out?"
+      ],
+      "teach": [
+        {
+          "heading": "Primary memory",
+          "bullets": ["RAM: volatile, read and write, programs in use.", "ROM: non-volatile, holds boot instructions.", "Cache: very fast, small, near the CPU."],
+          "note": "Link to the CPU lesson: CPU only works with data in main memory. Use the desk analogy: RAM is your desk (fast access but small and cleared), storage is a filing cabinet. Ask pupils what happens when RAM fills up."
+        },
+        {
+          "heading": "Virtual memory",
+          "bullets": ["RAM full? Move some data to secondary storage.", "Swap data back when needed.", "Slower than RAM."],
+          "note": "Explain that virtual memory prevents crashes when RAM is full but slows the computer down because storage is much slower than RAM. Ask pupils to explain why adding more RAM helps."
+        },
+        {
+          "heading": "Secondary storage",
+          "bullets": ["Magnetic: hard disk drives, cheap, large, moving parts.", "Solid state: SSD, flash, fast, durable, costly.", "Optical: CD, DVD, Blu-ray, portable, slower."],
+          "note": "Teach by characteristics: capacity, speed, portability, durability, cost, reliability. Hard disks have moving parts, so are more easily damaged by knocks. Solid state storage has no moving parts. Pupils should always relate their choice to the scenario in the question."
+        },
+        {
+          "heading": "Units of data",
+          "bullets": ["8 bits = 1 byte; 4 bits = 1 nibble.", "Kilobyte, megabyte, gigabyte, terabyte.", "Each step up is a factor of 1000 (as used in the specification)."],
+          "note": "Practise conversions: 3 GB = 3000 MB; 4500 KB = 4.5 MB. Before the lesson, check the unit convention (1000) in the Edexcel specification and be consistent. Ask pupils to estimate how many 5 MB photos fit on a 64 GB card (12,800)."
+        }
+      ],
+      "practice": [
+        "State two differences between RAM and ROM.",
+        "A photographer needs to carry thousands of photos and store them safely. Which secondary storage would you recommend and why?",
+        "Convert 2.5 GB to MB. (2500 MB)"
+      ],
+      "independent": [
+        "Create a comparison table of magnetic, solid state and optical storage using capacity, speed, portability, durability and cost.",
+        "Explain in 4 marks why a computer with too little RAM can become slow.",
+        "Calculate how many 4 MB files fit on a 2 GB USB stick. (500)"
+      ],
+      "exit": [
+        "Define 'volatile'.",
+        "Give one advantage of solid-state storage over magnetic storage."
+      ],
+      "homework": "Find the RAM and storage type of a device in your home. Explain whether it is suitable for its purpose.",
+      "send": "SEND/EAL: provide an annotated comparison table with icons and a word bank. Stretch: explain why SSDs are often used as the main drive in laptops but hard disks in servers storing large archives."
+    },
+    {
+      "unit": "Unit 1: Computers (Topic 3)",
+      "n": 3,
+      "title": "Software: operating systems and utility software",
+      "duration": 50,
+      "objectives": [
+        "Distinguish between system software and application software",
+        "Describe the functions of an operating system",
+        "Describe the purpose of utility software"
+      ],
+      "keywords": [
+        { "term": "operating system", "def": "software which manages the hardware and runs other programs" },
+        { "term": "application software", "def": "programs which carry out tasks for users, such as a word processor" },
+        { "term": "utility software", "def": "programs which maintain or protect a computer" },
+        { "term": "device driver", "def": "software that lets the operating system communicate with a hardware device" }
+      ],
+      "starter": [
+        "Bismillah. Name one type of secondary storage and give one advantage.",
+        "What is the difference between hardware and software?",
+        "Name three programs that you use on a device."
+      ],
+      "teach": [
+        {
+          "heading": "Types of software",
+          "bullets": ["System software: OS and utilities.", "Application software: tasks for users.", "Applications need an OS to run."],
+          "note": "Give examples for each type and ask pupils to classify unfamiliar ones: Windows, an antivirus, a spreadsheet, a web browser. Misconception: a web browser is part of the operating system; it is an application."
+        },
+        {
+          "heading": "Operating system functions",
+          "bullets": ["User interface.", "Memory management and multitasking.", "Managing peripherals and drivers.", "File management and security."],
+          "note": "Link each function to an example: a window system for the interface; sharing RAM among apps; a printer driver; folders; user accounts and passwords. A strong exam answer states the function and explains what the OS does."
+        },
+        {
+          "heading": "Utility software",
+          "bullets": ["Antivirus: finds and removes malware.", "Firewall: filters network traffic.", "Backup: copies data for safety.", "Compression: makes files smaller."],
+          "note": "Add disk defragmentation for hard disks (reorders fragmented files) and encryption software. Explain why backups matter: protect against hardware failure, accidental deletion and ransomware. Link to amanah: we look after people's data."
+        },
+        {
+          "heading": "Exam-style link",
+          "bullets": ["Scenario: a school with 1000 pupils.", "Which OS functions are needed?", "Which utilities are essential?"],
+          "note": "Practise applying knowledge to a context. For example, multi-user accounts and file permissions are important so pupils cannot see teachers' files. Ask them to justify the importance of regular updates."
+        }
+      ],
+      "practice": [
+        "Classify: Windows, a spreadsheet, a firewall, a game. (OS, application, utility, application)",
+        "Describe two functions of an operating system.",
+        "Why is a backup important?"
+      ],
+      "independent": [
+        "Create a table listing five OS functions with a one-line explanation and an example for each.",
+        "Explain the difference between application software and system software with two examples of each.",
+        "Write a 4-mark answer about why a business should use antivirus software and regular backups."
+      ],
+      "exit": [
+        "What is a device driver?",
+        "Give two examples of utility software and say what they do."
+      ],
+      "homework": "List the utility software on a home computer or phone and explain what each does. If you cannot find any, research what built-in tools do the same job.",
+      "send": "SEND/EAL: provide a sorting activity with icons for system and application software. Stretch: explain how multitasking appears to run several programs at the same time."
+    },
+    {
+      "unit": "Unit 1: Computers (Topic 3)",
+      "n": 4,
+      "title": "Programming languages and translators",
+      "duration": 50,
+      "objectives": [
+        "Compare high-level and low-level languages",
+        "Describe the purpose of a compiler, interpreter and assembler",
+        "Choose a suitable language or translator for a situation"
+      ],
+      "keywords": [
+        { "term": "high-level language", "def": "a language close to human language, such as Python" },
+        { "term": "low-level language", "def": "a language close to the machine: machine code or assembly" },
+        { "term": "compiler", "def": "translates the whole program into machine code before it runs" },
+        { "term": "interpreter", "def": "translates and runs a program one line at a time" },
+        { "term": "assembler", "def": "translates assembly language into machine code" }
+      ],
+      "starter": [
+        "Bismillah. Name two functions of an operating system.",
+        "What language have you used for programming in Python lessons?",
+        "Why can't a CPU run Python code directly?"
+      ],
+      "teach": [
+        {
+          "heading": "High-level languages",
+          "bullets": ["Examples: Python, Java, C#.", "Easier to read, write and debug.", "Not tied to one type of CPU.", "Must be translated before the CPU runs it."],
+          "note": "Show the same task in Python and in assembly pseudocode to illustrate the difference. Emphasise portability of high-level code. Misconception: Python is not 'run directly by the computer'."
+        },
+        {
+          "heading": "Low-level languages",
+          "bullets": ["Machine code: binary instructions for the CPU.", "Assembly: short mnemonics like ADD, LDA.", "Hard to write; specific to the CPU.", "Used where speed and hardware control matter."],
+          "note": "Give uses: embedded systems, device drivers, parts of operating systems. The CPU only understands machine code in binary. Assembly needs an assembler."
+        },
+        {
+          "heading": "Compiler vs interpreter",
+          "bullets": ["Compiler: translates all code first, creates a file to run.", "Interpreter: translates one line at a time.", "Compiled programs run faster.", "Interpreters help find errors line by line."],
+          "note": "Use the analogy of translating a whole book beforehand (compiler) versus a live interpreter in a meeting. Python is usually interpreted when run in a shell. The source code is not needed once a program is compiled, which helps protect it."
+        },
+        {
+          "heading": "Choosing",
+          "bullets": ["Learning to program: high-level + interpreter.", "Games with high speed: compiled language.", "Tiny embedded device: low-level language."],
+          "note": "Practise exam-style scenario questions: they require a choice and a reason. Remind pupils that 'it is faster' alone is a weak answer; they should link to the context."
+        }
+      ],
+      "practice": [
+        "State one advantage and one disadvantage of low-level languages.",
+        "Which translator converts assembly language to machine code? (assembler)",
+        "Explain why an interpreter is useful when testing a program."
+      ],
+      "independent": [
+        "Create a table comparing compiler and interpreter with at least four points.",
+        "Explain why a game developer might use a compiled language but a student might use an interpreted language.",
+        "Write a 6-mark answer comparing high-level and low-level languages."
+      ],
+      "exit": [
+        "What is the only language the CPU can run directly?",
+        "State one difference between a compiler and an interpreter."
+      ],
+      "homework": "Research one embedded system (such as a washing machine). Explain why its programmers might use a low-level language.",
+      "send": "SEND/EAL: provide a flow diagram showing source code to translator to machine code and a word bank. Stretch: explain what happens when a compiled program contains a syntax error."
+    },
+    {
+      "unit": "Unit 2: Networks (Topic 4)",
+      "n": 5,
+      "title": "Network types, topologies and performance",
+      "duration": 50,
+      "objectives": [
+        "Distinguish between LANs and WANs",
+        "Describe star and mesh topologies, with advantages and disadvantages",
+        "Explain factors that affect network performance"
+      ],
+      "keywords": [
+        { "term": "LAN", "def": "local area network covering a small area such as a school" },
+        { "term": "WAN", "def": "wide area network covering a large geographical area" },
+        { "term": "topology", "def": "the layout of devices and connections in a network" },
+        { "term": "bandwidth", "def": "the amount of data that can be sent in a given time" }
+      ],
+      "starter": [
+        "Bismillah. Name one compiler or interpreter and say what it does.",
+        "What is the difference between the internet and the web?",
+        "How many devices are connected to your home network?"
+      ],
+      "teach": [
+        {
+          "heading": "LANs and WANs",
+          "bullets": ["LAN: small area, owned by one organisation.", "WAN: large area, often uses third-party links.", "The internet is the largest WAN."],
+          "note": "Give examples: a school network (LAN), a bank linking branches across the UK (WAN). Ask pupils which type they use at home. A common error is to say WAN is 'wireless'; it is about size, not wireless."
+        },
+        {
+          "heading": "Star topology",
+          "bullets": ["Every device connects to a central switch.", "A cable failure affects only one device.", "Easy to add devices.", "If the switch fails, the whole network fails."],
+          "note": "Draw the star and tick the advantages. Collisions are reduced because the switch sends data only to the intended device. Cost: more cable and a switch."
+        },
+        {
+          "heading": "Mesh topology",
+          "bullets": ["Devices connect to many others.", "Data has alternative routes.", "Very reliable.", "Expensive and complex."],
+          "note": "Explain full mesh versus partial mesh and why the internet is mesh-like, giving resilience. Compare the number of connections needed as devices increase. Exam answers compare in context."
+        },
+        {
+          "heading": "Performance factors",
+          "bullets": ["Bandwidth.", "Number of users.", "Transmission media: copper, fibre, wireless.", "Interference and distance."],
+          "note": "Link each factor to an effect on speed: many users share bandwidth; fibre is faster than copper; Wi-Fi suffers from interference and walls. Compare wired and wireless: wired is more stable and secure, wireless is more convenient and mobile."
+        }
+      ],
+      "practice": [
+        "Is a network linking two mosque centres in different cities a LAN or a WAN? (WAN)",
+        "State one advantage and one disadvantage of a star network.",
+        "Give two reasons why a wired connection may be better than Wi-Fi for a gaming PC."
+      ],
+      "independent": [
+        "Draw a star and a mesh network with 5 devices and label the switch/connections.",
+        "Compare star and mesh in a table with advantages, disadvantages and one use for each.",
+        "Write a 6-mark answer recommending a network type and topology for a school with 200 computers."
+      ],
+      "exit": [
+        "Define 'bandwidth'.",
+        "State one advantage of a mesh topology."
+      ],
+      "homework": "Draw the network in your home (router, devices, connection to the internet) and say whether it is a LAN. Explain which devices are wired or wireless.",
+      "send": "SEND/EAL: provide topology diagrams to label and a table with icons for advantages and disadvantages. Stretch: calculate the number of cables needed for a full mesh of 6 devices (15)."
+    },
+    {
+      "unit": "Unit 2: Networks (Topic 4)",
+      "n": 6,
+      "title": "Network protocols and hardware",
+      "duration": 50,
+      "objectives": [
+        "Describe the purpose of common protocols",
+        "Explain how data is sent as packets across a network",
+        "Describe the role of network hardware"
+      ],
+      "keywords": [
+        { "term": "protocol", "def": "a set of rules for how devices communicate" },
+        { "term": "IP address", "def": "a number identifying a device on a network" },
+        { "term": "DNS", "def": "domain name system: converts website names into IP addresses" },
+        { "term": "router", "def": "a device that forwards packets between networks" },
+        { "term": "switch", "def": "a device that connects devices in a LAN and sends data to the correct one" }
+      ],
+      "starter": [
+        "Bismillah. Name two topologies and state one advantage of each.",
+        "Why are rules needed when different devices communicate?",
+        "What happens when you type a web address into a browser? Describe the first step."
+      ],
+      "teach": [
+        {
+          "heading": "Why protocols?",
+          "bullets": ["Devices from different makers must understand each other.", "Protocols set the rules.", "Each protocol has a job."],
+          "note": "Use the analogy of languages and postal rules. Without agreed rules, communication fails. Link to the Y4 packet activity: packets have addresses and are reassembled."
+        },
+        {
+          "heading": "Common protocols",
+          "bullets": ["HTTP/HTTPS: web pages (HTTPS is encrypted).", "FTP: transferring files.", "SMTP: sending email.", "IMAP/POP: receiving email.", "TCP/IP: sending packets across the internet."],
+          "note": "Learners should match each protocol with its purpose. Misconception: HTTPS means a site is trustworthy; it only means the connection is encrypted. Check the specification for the exact list required."
+        },
+        {
+          "heading": "Packets and addresses",
+          "bullets": ["Data is split into packets.", "Each packet has source and destination IP addresses.", "Packets can take different routes.", "TCP reassembles them in order."],
+          "note": "Explain that IP addresses are logical and can change, whereas MAC addresses are fixed to a device's network card. DNS works like a phone book converting names to IP addresses. Walk through the sequence from typing a URL to receiving a page."
+        },
+        {
+          "heading": "Network hardware",
+          "bullets": ["NIC: connects a device to a network.", "Switch: connects devices in a LAN.", "Router: connects networks.", "WAP: wireless access point."],
+          "note": "Draw a home network: a router with built-in switch and WAP. Ask what each does. A router uses IP addresses to forward packets; a switch uses MAC addresses on a LAN."
+        }
+      ],
+      "practice": [
+        "Which protocol is used to send email? (SMTP)",
+        "Why do packets carry a destination IP address?",
+        "State the difference between a switch and a router."
+      ],
+      "independent": [
+        "Create a table of five protocols with their purposes and an example of use.",
+        "Explain in 4 marks how a web page is requested using DNS and HTTPS and delivered as packets.",
+        "Draw a network diagram showing a router, a switch, three computers, a printer and a wireless access point."
+      ],
+      "exit": [
+        "What does DNS do?",
+        "State the purpose of HTTPS."
+      ],
+      "homework": "Use the command prompt or an online tool to look up an IP address for a website (for example with nslookup). Record the website name and the address, and describe how DNS helped.",
+      "send": "SEND/EAL: provide a matching activity for protocols and a labelled diagram of a network. Stretch: explain the difference between IPv4 and IPv6 addresses and why IPv6 was developed."
+    },
+    {
+      "unit": "Unit 2: Networks (Topic 4)",
+      "n": 7,
+      "title": "Network security: threats",
+      "duration": 50,
+      "objectives": [
+        "Describe common network threats and how they work",
+        "Explain how social engineering tricks people",
+        "Describe the impact of attacks on organisations"
+      ],
+      "keywords": [
+        { "term": "malware", "def": "malicious software designed to damage or gain access to a system" },
+        { "term": "phishing", "def": "fake emails or messages used to trick people into giving information" },
+        { "term": "social engineering", "def": "manipulating people into giving away information or access" },
+        { "term": "DoS attack", "def": "flooding a server with requests so legitimate users cannot access it" },
+        { "term": "brute force", "def": "trying many passwords until the correct one is found" }
+      ],
+      "starter": [
+        "Bismillah. State the purpose of a router.",
+        "Name two ways that data on a network could be put at risk.",
+        "Why might someone want to steal data from a company?"
+      ],
+      "teach": [
+        {
+          "heading": "Malware",
+          "bullets": ["Virus: attaches to files and spreads when they are run.", "Worm: spreads itself across networks.", "Trojan: pretends to be useful software.", "Ransomware: locks files and demands payment.", "Spyware: records activity."],
+          "note": "Distinguish carefully: viruses need a host file and user action; worms replicate on their own. Misconception: a Trojan is a virus; it is distinguished by disguise. Mention that paying a ransom is never guaranteed to restore files."
+        },
+        {
+          "heading": "Attacks on networks",
+          "bullets": ["Brute force: guessing passwords.", "Denial of service: overwhelming a server.", "Data interception: stealing data in transit.", "SQL injection: harmful code typed into a form."],
+          "note": "Explain each simply. SQL injection happens when a web form allows database commands to be entered. A DoS uses one source; DDoS uses many. Show how long, complex passwords make brute force harder."
+        },
+        {
+          "heading": "Social engineering",
+          "bullets": ["Phishing emails and texts.", "Pretending to be IT support.", "Shoulder surfing: watching someone type a password.", "People are the weakest link."],
+          "note": "Show a phishing example with clues: urgent tone, strange sender, link that does not match, requests for private data. Link to honesty and amanah: attackers exploit trust, and we protect trust by being careful."
+        },
+        {
+          "heading": "Impact",
+          "bullets": ["Lost or stolen data.", "Financial loss and fines.", "Damaged reputation.", "Downtime."],
+          "note": "Use a scenario of a hospital or school being hit by ransomware. Ask pupils to name stakeholders affected. Exam answers describe the cause and the effect in context."
+        }
+      ],
+      "practice": [
+        "Which type of malware spreads itself without the user opening a file? (worm)",
+        "Explain how a denial of service attack stops a website working.",
+        "Give two clues that an email is phishing."
+      ],
+      "independent": [
+        "Create a table of six threats with a one-line description and the possible effect on a business.",
+        "Write a 4-mark answer explaining how social engineering might be used to gain access to a company network.",
+        "Read a scenario about a school hit by ransomware and list three consequences."
+      ],
+      "exit": [
+        "Define phishing.",
+        "State one difference between a virus and a worm."
+      ],
+      "homework": "Find a real news report about a cyber attack. Summarise what happened, the type of attack and the impact in 100 words.",
+      "send": "SEND/EAL: provide threat cards with pictures to match with descriptions. Stretch: explain why DDoS attacks are harder to block than DoS attacks."
+    },
+    {
+      "unit": "Unit 2: Networks (Topic 4)",
+      "n": 8,
+      "title": "Network security: prevention and the law",
+      "duration": 50,
+      "objectives": [
+        "Describe methods of protecting networks and data",
+        "Explain how encryption, firewalls and authentication work",
+        "State the purpose of the Computer Misuse Act 1990"
+      ],
+      "keywords": [
+        { "term": "firewall", "def": "filters incoming and outgoing network traffic using rules" },
+        { "term": "encryption", "def": "scrambling data so only authorised people can read it" },
+        { "term": "authentication", "def": "proving who you are, such as with a password or fingerprint" },
+        { "term": "penetration testing", "def": "authorised attempts to break into a system to find weaknesses" }
+      ],
+      "starter": [
+        "Bismillah. Name three types of malware and give one feature of each.",
+        "What is social engineering?",
+        "How can a user make a password harder to guess?"
+      ],
+      "teach": [
+        {
+          "heading": "Protecting systems",
+          "bullets": ["Anti-malware software.", "Firewalls.", "Software updates and patches.", "Backups."],
+          "note": "Link each prevention to the threat it stops. Anti-malware finds known malware; updates fix vulnerabilities; firewalls block unwanted traffic; backups allow recovery. Prevention is layered: no single method is enough."
+        },
+        {
+          "heading": "Authentication and access",
+          "bullets": ["Strong passwords and two-factor authentication.", "Biometrics: fingerprints, face.", "Access levels: different rights for different users.", "Physical security: locks, ID cards."],
+          "note": "Explain access levels: pupils can read some folders, teachers can write, administrators control everything. Biometrics are hard to copy but can raise privacy concerns. Add CAPTCHA only if the spec lists it."
+        },
+        {
+          "heading": "Encryption",
+          "bullets": ["Plain text is scrambled to cipher text.", "A key is used to scramble and unscramble.", "Protects data in transit and storage.", "HTTPS uses encryption."],
+          "note": "Demonstrate a Caesar shift of 3: 'ILM' becomes 'LOP'. Show decryption with the key. Explain that modern encryption is far stronger but follows the same idea: algorithm plus key. Misconception: encryption stops hackers from intercepting data; it stops them reading it."
+        },
+        {
+          "heading": "Testing and the law",
+          "bullets": ["Penetration testing finds weaknesses.", "Computer Misuse Act 1990: unauthorised access is illegal.", "Data Protection Act 2018: protect personal data."],
+          "note": "Explain ethical hackers have permission, which makes their testing legal. The Computer Misuse Act covers unauthorised access, access with intent to commit further offences and unauthorised modification of data. Link to the Islamic value of keeping trusts (amanah) when handling others' data."
+        }
+      ],
+      "practice": [
+        "Encrypt the word CAT using a Caesar shift of 1. (DBU)",
+        "State two ways to prevent unauthorised access to a school network.",
+        "Why is penetration testing legal when hacking is not?"
+      ],
+      "independent": [
+        "Create a table matching five threats with the best prevention methods and a reason for each.",
+        "Write a 6-mark answer: 'A company stores customer data on a network. Discuss how it can protect the data.'",
+        "Write pseudo-code for a program that asks for a password, allows 3 attempts, and prints 'Locked' after 3 failures."
+      ],
+      "exit": [
+        "What is the purpose of a firewall?",
+        "Give one offence covered by the Computer Misuse Act 1990."
+      ],
+      "homework": "Review your own online security. List three improvements you or your family could make and which threat each would reduce.",
+      "send": "SEND/EAL: provide a matching grid of threats and defences with icons. Stretch: write a Python function that encrypts a message with a Caesar shift of a given key."
+    }
+  ]
+}

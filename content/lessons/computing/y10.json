@@ -1,0 +1,489 @@
+{
+  "subject": "Computing",
+  "year": "y10",
+  "board": "Edexcel",
+  "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 1 Computational thinking, Topic 6 Problem solving with programming; Python and pseudo-code, no non-exam assessment), sequence informed by the school's Drive Y10-11 scheme (1 Fundamentals of Algorithms, 2A Programming Basics) and Y9 Programming basics lesson plan",
+  "lessons": [
+    {
+      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "n": 1,
+      "title": "Decomposition, abstraction and algorithmic thinking",
+      "duration": 50,
+      "objectives": [
+        "Define and apply decomposition, abstraction and algorithmic thinking",
+        "Decompose a problem into smaller sub-problems",
+        "Identify which details to keep and which to ignore (abstraction)"
+      ],
+      "keywords": [
+        { "term": "computational thinking", "def": "a way of solving problems using decomposition, abstraction and algorithms" },
+        { "term": "decomposition", "def": "breaking a problem into smaller, manageable parts" },
+        { "term": "abstraction", "def": "removing unnecessary detail to focus on what matters" },
+        { "term": "algorithm", "def": "a sequence of steps or rules to solve a problem" }
+      ],
+      "starter": [
+        "Bismillah. Define the term algorithm in one sentence.",
+        "Write the steps to make a cup of tea, as an algorithm, in under 6 steps.",
+        "Why does a map of the London Underground leave out most of the real geography?"
+      ],
+      "teach": [
+        {
+          "heading": "Computational thinking",
+          "bullets": ["Decomposition: break the problem down.", "Abstraction: focus on the important detail.", "Algorithmic thinking: write clear steps."],
+          "note": "Introduce the three skills as the toolkit for the whole course; Paper 2 asks you to apply computational thinking to problems. Pose the question: how would you design a prayer-times app? Collect ideas, then organise them."
+        },
+        {
+          "heading": "Decomposition example",
+          "bullets": ["Problem: a quiz app.", "Sub-problem 1: store questions.", "Sub-problem 2: ask and check answers.", "Sub-problem 3: keep score and show result."],
+          "note": "Show the tree diagram. Benefits: easier to understand, different people can work on each part, parts can be tested separately and reused. A common mistake in exams is to give a generic answer; always relate to the scenario in the question."
+        },
+        {
+          "heading": "Abstraction example",
+          "bullets": ["Tube map: stations and lines only.", "Ignore distances and street layout.", "Simpler model, easier to use."],
+          "note": "Ask pupils what a satnav needs and ignores (it needs roads, speed limits; it ignores the colour of buildings). Define abstraction exactly: filtering out details we do not need so we can focus on the problem. Another example is a variable representing a value."
+        },
+        {
+          "heading": "Algorithmic thinking",
+          "bullets": ["Work out the steps in order.", "Decide the inputs, processes and outputs.", "Plan before coding."],
+          "note": "Model an input-process-output table for 'calculate the average of three marks': inputs mark1, mark2, mark3; process add and divide by 3; output the average. Exams often ask you to identify inputs, processes and outputs."
+        }
+      ],
+      "practice": [
+        "Decompose the problem 'create a program to run a school canteen till' into at least three sub-problems.",
+        "A bus route map shows stops and numbers but not the exact bends in the road. Which computational thinking skill is this?",
+        "State one benefit of decomposition for a team creating a game."
+      ],
+      "independent": [
+        "Decompose the problem of a program that manages a mosque's weekly timetable. Draw a tree diagram with at least three levels.",
+        "List the details to keep and details to ignore when abstracting a model of a car park for a ticket machine.",
+        "Write an input-process-output table for a program that calculates the cost of a taxi journey from miles and price per mile."
+      ],
+      "exit": [
+        "Define abstraction.",
+        "Give one reason for using decomposition when writing a large program."
+      ],
+      "homework": "Choose a real system (such as an online shop). Describe how it could be decomposed and what abstractions it uses. Write 150 words.",
+      "send": "SEND/EAL: provide a tree diagram template and sentence stems ('This is abstraction because...'). Stretch: evaluate whether a given abstraction has removed too much detail."
+    },
+    {
+      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "n": 2,
+      "title": "Flowcharts",
+      "duration": 50,
+      "objectives": [
+        "Use the standard flowchart symbols correctly",
+        "Interpret and complete a flowchart for an algorithm",
+        "Create a flowchart for a problem with selection and iteration"
+      ],
+      "keywords": [
+        { "term": "flowchart", "def": "a diagram showing the steps of an algorithm using standard symbols" },
+        { "term": "terminator", "def": "oval symbol marking start or end" },
+        { "term": "decision", "def": "diamond symbol with two exits, yes and no" },
+        { "term": "process", "def": "rectangle symbol for an action or calculation" },
+        { "term": "input/output", "def": "parallelogram symbol for data entering or leaving" }
+      ],
+      "starter": [
+        "Bismillah. State the three parts of computational thinking.",
+        "Which flowchart symbol is used for a yes/no question?",
+        "What is the difference between selection and iteration?"
+      ],
+      "teach": [
+        {
+          "heading": "Flowchart symbols",
+          "bullets": ["Oval: start/end.", "Parallelogram: input/output.", "Rectangle: process.", "Diamond: decision.", "Arrows show the flow."],
+          "note": "Use the Edexcel-style symbols. Remind pupils that arrows show direction and that each diamond must have two labelled exits (Yes/No). Marks are lost for unlabelled decisions."
+        },
+        {
+          "heading": "Selection in a flowchart",
+          "bullets": ["Start.", "Input n.", "Decision: n MOD 2 = 0?", "Yes: output 'even'. No: output 'odd'. End."],
+          "note": "Draw this step by step. Trace with n = 7 (odd) and n = 10 (even). Ask what MOD does. Link to Y9 learning: remainders. Use the phrase 'follow the arrows' when tracing."
+        },
+        {
+          "heading": "Iteration in a flowchart",
+          "bullets": ["Set total to 0 and count to 1.", "Decision: count <= 5?", "Yes: add count to total, add 1 to count, loop back.", "No: output total."],
+          "note": "Show how a loop is made by an arrow going back to a decision. Trace this algorithm: it outputs 15. Ask pupils what it calculates (sum of 1 to 5). A common mistake is forgetting to increase the counter, causing an infinite loop."
+        },
+        {
+          "heading": "Exam technique",
+          "bullets": ["Use a ruler and correct shapes.", "Start with a terminator.", "Label Yes/No.", "Check by tracing."],
+          "note": "Teach pupils to check any flowchart they draw using test data. Mention that on Paper 1 they may need to complete missing parts of a flowchart or say what the algorithm does. Use command words: 'complete', 'describe', 'state'."
+        }
+      ],
+      "practice": [
+        "Which symbol would you use for 'Input the user's age'? (parallelogram)",
+        "Trace the sum flowchart. What are the values of count and total at each pass? (count 1,2,3,4,5; total 1,3,6,10,15)",
+        "Add the missing labels to a decision diamond which asks 'Is the temperature above 30?'"
+      ],
+      "independent": [
+        "Draw a flowchart for an algorithm that inputs a mark and outputs 'Pass' if it is 40 or more, otherwise 'Fail'.",
+        "Draw a flowchart which asks for numbers repeatedly until the user enters 0, then outputs how many numbers were entered (not counting 0).",
+        "Trace your flowchart with test data 5, 8, 2, 0 and write down the final output."
+      ],
+      "exit": [
+        "Name the shape used for a decision and explain what must be on its exits.",
+        "State the output of the sum flowchart if the limit changes from 5 to 4."
+      ],
+      "homework": "Draw a flowchart for an algorithm that asks for a password up to 3 times and ends with 'Locked' if all attempts are wrong.",
+      "send": "SEND/EAL: provide symbol stencils and partly completed flowcharts. Stretch: draw a flowchart with a nested decision for a ticket price calculator."
+    },
+    {
+      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "n": 3,
+      "title": "Pseudo-code and trace tables",
+      "duration": 50,
+      "objectives": [
+        "Read and write algorithms in pseudo-code using sequence, selection and iteration",
+        "Complete a trace table for an algorithm",
+        "Identify the purpose of an algorithm and find errors"
+      ],
+      "keywords": [
+        { "term": "pseudo-code", "def": "a way of writing algorithms in structured English not tied to a programming language" },
+        { "term": "trace table", "def": "a table used to record the values of variables as an algorithm runs" },
+        { "term": "variable", "def": "a named store whose value can change" },
+        { "term": "logic error", "def": "a mistake that makes a program run but give the wrong result" }
+      ],
+      "starter": [
+        "Bismillah. Draw the symbol for a decision.",
+        "Why is a flowchart useful before coding?",
+        "What is the value of 17 MOD 5?"
+      ],
+      "teach": [
+        {
+          "heading": "What is pseudo-code?",
+          "bullets": ["Structured English for algorithms.", "No strict syntax, but be clear.", "Uses SET/IF/WHILE-type keywords."],
+          "note": "Explain that Pearson's papers present algorithms in pseudo-code (and flowcharts) and that you should check the specification's conventions for the exact style; clear, consistent structure is what matters. Show how to write assignments, inputs and outputs. Keep to one style throughout."
+        },
+        {
+          "heading": "Pseudo-code example",
+          "bullets": ["SET total TO 0", "FOR i FROM 1 TO 4", "SET total TO total + i * 2", "OUTPUT total"],
+          "note": "Walk through the algorithm: i = 1 → total 2; i = 2 → total 6; i = 3 → total 12; i = 4 → total 20. Present the trace table with the columns i and total. Pupils should fill the table as you go and see that the output is 20."
+        },
+        {
+          "heading": "Trace tables",
+          "bullets": ["One column for each variable.", "One row for each change.", "Output column for printed values."],
+          "note": "Show a second example with selection: SET x TO 12, IF x MOD 2 = 0 THEN OUTPUT 'even' ELSE OUTPUT 'odd'. Teach pupils to record every change and not to skip rows. Common mistake: updating two variables on one row when they change at different steps."
+        },
+        {
+          "heading": "Purpose and errors",
+          "bullets": ["Trace with simple test data.", "State what it does in one sentence.", "Look for off-by-one and wrong operators."],
+          "note": "Give an algorithm that finds the largest of three numbers with a bug (uses < instead of >). Trace it with 5, 9, 2 to show the wrong result. Explain syntax errors vs logic errors. Discuss how testing with boundary data finds errors."
+        }
+      ],
+      "practice": [
+        "Trace: SET a TO 3; SET b TO 4; SET c TO a * b; SET a TO c - a; OUTPUT a. (a = 9)",
+        "State the purpose: SET count TO 0; FOR i FROM 1 TO 10; IF i MOD 2 = 0 THEN SET count TO count + 1; OUTPUT count. (counts even numbers from 1 to 10, outputs 5)",
+        "Spot the error: an algorithm meant to output the highest of two numbers outputs the lower one."
+      ],
+      "independent": [
+        "Complete a trace table for: SET n TO 5; SET f TO 1; WHILE n > 1; SET f TO f * n; SET n TO n - 1; END WHILE; OUTPUT f. (output 120)",
+        "Write pseudo-code that inputs 3 numbers and outputs the largest.",
+        "Write pseudo-code to output the total of the numbers 1 to 100, and state the expected answer (5050)."
+      ],
+      "exit": [
+        "What is the purpose of a trace table?",
+        "State the output of: SET x TO 2; FOR i FROM 1 TO 3; SET x TO x * 2; OUTPUT x. (16)"
+      ],
+      "homework": "Write pseudo-code for a program which asks for 5 test marks and outputs the average. Trace it with 60, 70, 80, 90, 100.",
+      "send": "SEND/EAL: provide trace table templates and pre-filled first rows; use colour to track variables. Stretch: find and correct two errors in an unfamiliar pseudo-code algorithm."
+    },
+    {
+      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "n": 4,
+      "title": "Searching algorithms: linear and binary search",
+      "duration": 50,
+      "objectives": [
+        "Describe and carry out a linear search",
+        "Describe and carry out a binary search on a sorted list",
+        "Compare the two searches and choose the right one"
+      ],
+      "keywords": [
+        { "term": "linear search", "def": "checks each item in turn from the start until the target is found or the list ends" },
+        { "term": "binary search", "def": "repeatedly checks the middle item of a sorted list and halves the search area" },
+        { "term": "sorted", "def": "arranged in order, such as lowest to highest" },
+        { "term": "efficiency", "def": "how few steps or how little time or memory an algorithm needs" }
+      ],
+      "starter": [
+        "Bismillah. Trace: SET x TO 3; SET x TO x + 4; OUTPUT x.",
+        "How do you look up a name in a printed phone book?",
+        "What does 'sorted' mean for a list of numbers?"
+      ],
+      "teach": [
+        {
+          "heading": "Linear search",
+          "bullets": ["Start at the first item.", "Compare each item with the target.", "Stop when found or at the end."],
+          "note": "Search [14, 9, 22, 5, 17] for 22: compare 14, 9, 22 found at the third position (3 comparisons). Search for 30: all 5 compared, not found. Note it works on any list, sorted or not."
+        },
+        {
+          "heading": "Binary search idea",
+          "bullets": ["The list must be sorted.", "Check the middle item.", "Target smaller? Discard the right half.", "Target bigger? Discard the left half."],
+          "note": "Link to guessing a number between 1 and 100 and being told higher or lower. State the rule for a list with an even number of items: pick a consistent middle (e.g. the lower middle) and follow it, which is acceptable as long as it is clear. Misconception: binary search works on unsorted lists; it does not."
+        },
+        {
+          "heading": "Worked example",
+          "bullets": ["List: 3, 8, 12, 15, 21, 27, 34, 40, 52.", "Target 27. Middle: 21 (position 5).", "27 > 21, so search 27, 34, 40, 52.", "Middle (lower): 34. 27 < 34, so search 27. Found."],
+          "note": "Draw the list as boxes and cross out the discarded half each time. Count comparisons: 3 for binary against 6 for linear. Show how with 1,000,000 items binary search needs about 20 comparisons at most. State that this is why sorted data is valuable."
+        },
+        {
+          "heading": "Choosing a search",
+          "bullets": ["Unsorted list: linear.", "Sorted and large: binary.", "Binary needs fewer comparisons.", "Sorting first costs time."],
+          "note": "Pose a scenario: a list of 10 names unsorted versus 1 million sorted student IDs. Ask which search to choose and why. Exam answers should compare efficiency and the requirement for sorted data."
+        }
+      ],
+      "practice": [
+        "Linear search for 5 in [8, 3, 5, 9]. How many comparisons? (3)",
+        "Why can't you use binary search on [9, 2, 7, 4]? (not sorted)",
+        "Binary search for 12 in [2, 5, 9, 12, 15, 20, 31]. Which item is checked first? (12, the middle item, found immediately)"
+      ],
+      "independent": [
+        "Carry out a linear search for 40 in [52, 12, 40, 8, 27] and record each comparison.",
+        "Carry out a binary search for 8 in [3, 8, 12, 15, 21, 27, 34, 40, 52] showing low, high and middle each time.",
+        "Write a paragraph comparing linear and binary search, with one advantage and one disadvantage of each."
+      ],
+      "exit": [
+        "State one requirement for using binary search.",
+        "Which search is usually faster on a large sorted list, and why?"
+      ],
+      "homework": "Write pseudo-code for a linear search that outputs the position of a target in a list or 'not found'. Test with two lists.",
+      "send": "SEND/EAL: provide cards to physically cross out halves; show each step in colour. Stretch: work out the maximum number of comparisons binary search needs for 31 items (5)."
+    },
+    {
+      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "n": 5,
+      "title": "Sorting algorithms: bubble sort",
+      "duration": 50,
+      "objectives": [
+        "Describe how a bubble sort works",
+        "Carry out a bubble sort on a list, showing each pass",
+        "Explain when the algorithm can stop"
+      ],
+      "keywords": [
+        { "term": "sort", "def": "arrange data in order" },
+        { "term": "bubble sort", "def": "compares neighbouring items and swaps them if out of order, repeating passes" },
+        { "term": "pass", "def": "one complete run through the list" },
+        { "term": "swap", "def": "exchange the positions of two items" }
+      ],
+      "starter": [
+        "Bismillah. Name the two searches we studied and state when binary search can be used.",
+        "Put these in order: 7, 2, 9, 4.",
+        "Explain how you physically sorted a hand of cards when you last played a card game."
+      ],
+      "teach": [
+        {
+          "heading": "Why sort?",
+          "bullets": ["Sorted data is easier to search.", "Used in contacts, scores and files.", "Different algorithms sort differently."],
+          "note": "Ask for examples of sorted data in apps (alphabetical contacts, leaderboards). Explain we need precise instructions for a computer to sort."
+        },
+        {
+          "heading": "How bubble sort works",
+          "bullets": ["Compare the first two items.", "Swap if they are in the wrong order.", "Move along one place and repeat.", "Repeat passes until no swaps."],
+          "note": "Demonstrate with 5 pupils holding number cards or with number cards on screen. Largest values 'bubble' to the end. After pass 1 the largest item is in its final position."
+        },
+        {
+          "heading": "Worked example",
+          "bullets": ["Start: 5 3 8 1.", "Pass 1: 3 5 1 8.", "Pass 2: 3 1 5 8.", "Pass 3: 1 3 5 8. Pass 4: no swaps, stop."],
+          "note": "Show every comparison in pass 1: compare 5, 3 swap giving 3 5 8 1; compare 5, 8 no swap; compare 8, 1 swap giving 3 5 1 8. Count swaps per pass. A common mistake is to stop after pass 3 without a final pass proving no swaps are needed (but accept if all in place and explain)."
+        },
+        {
+          "heading": "Strengths and weaknesses",
+          "bullets": ["Simple to understand and code.", "Needs many passes on big lists.", "Slow compared with merge sort."],
+          "note": "Compare: for n items bubble sort may need around n × n comparisons. Do not require formulas at GCSE, but pupils should state it is inefficient for large lists. Use a flag: if no swaps in a pass, stop early."
+        }
+      ],
+      "practice": [
+        "Carry out pass 1 of a bubble sort on 4, 2, 7, 1. (2 4 1 7)",
+        "How many swaps happen in pass 1 on 3, 2, 1? (2) What is the list after pass 1? (2 1 3)",
+        "How does the algorithm know it is finished?"
+      ],
+      "independent": [
+        "Bubble sort 9, 4, 7, 2, 6, writing the list after each pass and the number of swaps.",
+        "Write pseudo-code for one pass of a bubble sort on a list called nums with n items.",
+        "Explain two weaknesses of bubble sort for a list of one million items."
+      ],
+      "exit": [
+        "State what happens in a bubble sort when two neighbouring items are in the wrong order.",
+        "After one pass of 6, 5, 1, 4 what is the list? (5 1 4 6)"
+      ],
+      "homework": "Bubble sort the list 12, 5, 9, 1, 8 and show every pass. Explain how you know when to stop.",
+      "send": "SEND/EAL: use physical number cards and highlighters to mark the pair being compared. Stretch: describe how a flag variable could stop the sort early."
+    },
+    {
+      "unit": "Unit 1: Computational thinking (Topic 1)",
+      "n": 6,
+      "title": "Sorting algorithms: merge sort and comparing sorts",
+      "duration": 50,
+      "objectives": [
+        "Describe how a merge sort splits and merges lists",
+        "Carry out a merge sort on a list of 8 items",
+        "Compare bubble sort and merge sort"
+      ],
+      "keywords": [
+        { "term": "merge sort", "def": "splits a list into single items, then merges them back in order" },
+        { "term": "divide and conquer", "def": "solving a problem by splitting it into smaller problems" },
+        { "term": "merge", "def": "combine two sorted lists into one sorted list" },
+        { "term": "memory", "def": "storage used while the algorithm is running" }
+      ],
+      "starter": [
+        "Bismillah. After one pass of bubble sort on 4, 3, 2, 1 what is the list? (3 2 1 4)",
+        "Why does bubble sort slow down on large lists?",
+        "How would you sort a pile of 100 exam papers with the help of 3 friends?"
+      ],
+      "teach": [
+        {
+          "heading": "Split then merge",
+          "bullets": ["Keep splitting the list in half.", "Stop at lists of one item.", "Merge pairs of lists back in order."],
+          "note": "Introduce merge sort as a divide and conquer algorithm and link to decomposition. A list of one item is already sorted. Show the stages with arrows."
+        },
+        {
+          "heading": "Splitting",
+          "bullets": ["6 2 8 4 3 7 1 5.", "6 2 8 4 | 3 7 1 5.", "6 2 | 8 4 | 3 7 | 1 5.", "6 | 2 | 8 | 4 | 3 | 7 | 1 | 5."],
+          "note": "Draw the split tree. Emphasise that no sorting happens while splitting; it all happens during merging. Common mistake: trying to sort during the split stage."
+        },
+        {
+          "heading": "Merging",
+          "bullets": ["Compare the first items of each list.", "Move the smaller one to the new list.", "Repeat until both lists are used."],
+          "note": "Merge 6 and 2 to get 2 6; 8 and 4 to get 4 8; 3 and 7 to get 3 7; 1 and 5 to get 1 5. Then merge 2 6 with 4 8: compare 2 and 4, take 2; compare 6 and 4, take 4; compare 6 and 8, take 6; then 8: result 2 4 6 8. Merge 3 7 with 1 5: 1 3 5 7. Final merge gives 1 2 3 4 5 6 7 8."
+        },
+        {
+          "heading": "Bubble vs merge",
+          "bullets": ["Merge sort is faster on large lists.", "Merge sort needs extra memory.", "Bubble sort is simpler to write."],
+          "note": "Give exam-style comparison language: merge sort is more efficient (fewer comparisons) for large data sets but uses more memory because it creates new lists; bubble sort is simple but slow. Ask pupils to decide for a list of 10 items versus 10 million."
+        }
+      ],
+      "practice": [
+        "Merge the sorted lists 2 5 9 and 1 6 8. (1 2 5 6 8 9)",
+        "Split 7 3 9 1 5 2 into halves and halves again. (7 3 9 | 1 5 2 then 7 | 3 9 | 1 | 5 2 and so on)",
+        "State one advantage and one disadvantage of merge sort."
+      ],
+      "independent": [
+        "Merge sort 9, 3, 7, 1, 8, 2, 6, 4, showing the split and merge stages in a diagram.",
+        "Compare bubble sort and merge sort in a table with three rows: how it works, speed on large lists, memory use.",
+        "Write a 4-mark answer: 'Explain which sorting algorithm would be better for sorting 1 million customer records.'"
+      ],
+      "exit": [
+        "What does a merge sort do first?",
+        "Give one reason merge sort needs more memory than bubble sort."
+      ],
+      "homework": "Merge sort the list 14, 3, 9, 20, 1, 7 and show your working. Then explain why merge sort is a divide and conquer algorithm.",
+      "send": "SEND/EAL: provide a split-and-merge template with boxes; use number cards. Stretch: count the comparisons used in your merge sort and compare with a bubble sort of the same list."
+    },
+    {
+      "unit": "Unit 2: Programming in Python (Topic 6)",
+      "n": 7,
+      "title": "Python: variables, data types, operators and validation",
+      "duration": 50,
+      "objectives": [
+        "Use variables, constants and the five main data types in Python",
+        "Use arithmetic, comparison and logical operators, including // and %",
+        "Write a program that validates input with a loop"
+      ],
+      "keywords": [
+        { "term": "constant", "def": "a named value that does not change while a program runs" },
+        { "term": "casting", "def": "converting a value from one data type to another" },
+        { "term": "validation", "def": "checking that data is sensible and in the allowed range before using it" },
+        { "term": "syntax error", "def": "a mistake that breaks the rules of the language so the program cannot run" }
+      ],
+      "starter": [
+        "Bismillah. State the data type of: 5, '5', 5.0, True.",
+        "What is 29 // 6 and 29 % 6? (4 and 5)",
+        "Which loop do you use when you do not know how many repeats are needed?"
+      ],
+      "teach": [
+        {
+          "heading": "Variables and constants",
+          "bullets": ["Variables change; constants do not.", "Use meaningful names: price_per_item.", "Python style for a constant: VAT_RATE = 0.2."],
+          "note": "Python has no true constants, but writing in capital letters shows the value should not be changed. Explain why named constants help: changing one line updates the whole program. Show how a bad name like x makes code hard to read."
+        },
+        {
+          "heading": "Casting and operators",
+          "bullets": ["int(), float(), str() change types.", "Arithmetic: + - * / // % **.", "Comparison: == != < > <= >=.", "Logical: and, or, not."],
+          "note": "Run the code to find a worker's wages: hours = float(input('Hours? ')), rate = 12.50, pay = hours * rate. Predict the output for 8 hours (100.0). Remind pupils that input returns a string."
+        },
+        {
+          "heading": "Validation with while",
+          "bullets": ["Ask for input.", "While it is invalid: show message, ask again.", "Continue when valid."],
+          "note": "Code: age = int(input('Age (0-120)? ')); while age < 0 or age > 120: print('Invalid'); age = int(input('Age (0-120)? ')). Distinguish validation (sensible data) from verification (correct data, such as typing a password twice). Discuss what happens if the user types letters: ValueError; show try/except only as an extension."
+        },
+        {
+          "heading": "Testing",
+          "bullets": ["Normal data: 25.", "Boundary data: 0, 120, -1, 121.", "Erroneous data: 'abc'."],
+          "note": "Teach test data types and have pupils write a test table with expected result. Exams (Paper 2) reward programs that handle boundaries correctly. Model running tests and recording results."
+        }
+      ],
+      "practice": [
+        "Write the Python to store a constant PI as 3.14.",
+        "What is the output? x = 17; print(x // 5); print(x % 5); print(x / 5). (3, 2, 3.4)",
+        "Write a condition that is True when age is between 11 and 16 inclusive. (age >= 11 and age <= 16)"
+      ],
+      "independent": [
+        "Write a program which asks for a price and a quantity, uses a constant for VAT at 20 per cent, and outputs the total including VAT.",
+        "Write a program that asks for a mark from 0 to 100 and keeps asking until a valid mark is entered.",
+        "Create a test table with normal, boundary and erroneous data for your mark program."
+      ],
+      "exit": [
+        "What is the difference between validation and verification?",
+        "Name one example each of normal, boundary and erroneous test data for an age between 0 and 120."
+      ],
+      "homework": "Write and test a Python program that converts a number of minutes into hours and minutes and validates the input is not negative.",
+      "send": "SEND/EAL: provide code with comments and blanks and a data type glossary. Stretch: use try and except to handle non-numeric input without crashing."
+    },
+    {
+      "unit": "Unit 2: Programming in Python (Topic 6)",
+      "n": 8,
+      "title": "Python: lists, strings and implementing a search",
+      "duration": 50,
+      "objectives": [
+        "Create, index and loop through a list in Python",
+        "Use common string operations such as len and slicing",
+        "Implement a linear search in Python"
+      ],
+      "keywords": [
+        { "term": "list", "def": "an ordered collection of items stored under one name" },
+        { "term": "index", "def": "the position of an item in a list, starting at 0" },
+        { "term": "length", "def": "the number of items in a list or characters in a string, found with len()" },
+        { "term": "substring", "def": "part of a string" }
+      ],
+      "starter": [
+        "Bismillah. Write a for loop which prints the numbers 1 to 5.",
+        "Which search needs a sorted list?",
+        "What data type is 'Quran'?"
+      ],
+      "teach": [
+        {
+          "heading": "Lists",
+          "bullets": ["names = ['Amina', 'Bilal', 'Sara'].", "names[0] is 'Amina'.", "len(names) is 3.", "names.append('Omar') adds an item."],
+          "note": "Stress that indexes start at 0, a very common source of off-by-one errors. Ask what names[3] would be after the append (Omar) and what it was before (error: index out of range)."
+        },
+        {
+          "heading": "Looping through lists",
+          "bullets": ["for name in names: print(name).", "for i in range(len(names)): uses the index.", "Total: total = total + marks[i]."],
+          "note": "Show both loop styles. Use the index loop when position matters, e.g. printing position numbers. Calculate the total and mean of the list [60, 72, 85, 91] (308 and 77.0)."
+        },
+        {
+          "heading": "Strings",
+          "bullets": ["len('Quran') is 5.", "word[0] is the first letter.", "word[1:4] slices characters 1 to 3.", "word.upper() makes capitals."],
+          "note": "Demonstrate slicing: 'Madinah'[0:3] = 'Mad'. Strings can be indexed but not changed in place. Link to ASCII later in the Data topic."
+        },
+        {
+          "heading": "Linear search in Python",
+          "bullets": ["found = False", "for i in range(len(nums)):", "if nums[i] == target: found = True", "print position or 'not found'."],
+          "note": "Write the program together and test with [14, 9, 22, 5, 17] and the target 22 (position 2 as index; position 3 counting from 1). Test with a target that is not present. Compare with the pseudo-code from lesson 4 and note the matching structure."
+        }
+      ],
+      "practice": [
+        "Given marks = [45, 60, 72, 88], what is marks[2] and len(marks)? (72, 4)",
+        "What does 'Computer'[0:3] give? ('Com')",
+        "Complete the loop to add all items of marks into total."
+      ],
+      "independent": [
+        "Write a program that stores 5 names in a list, then asks the user for a name and says whether it is in the list using a linear search.",
+        "Write a program that finds the largest number in a list of 6 numbers without using max().",
+        "Stretch: write a program that counts how many vowels are in a word typed by the user."
+      ],
+      "exit": [
+        "What is the index of the first item in a Python list?",
+        "Write the Python expression for the number of items in a list called scores."
+      ],
+      "homework": "Write a Python program which asks the user for 5 marks, stores them in a list, then prints the total, average and highest mark.",
+      "send": "SEND/EAL: provide code with comments to match to descriptions, and colour index positions on a list diagram. Stretch: implement a bubble sort in Python for a list of 6 numbers."
+    }
+  ]
+}

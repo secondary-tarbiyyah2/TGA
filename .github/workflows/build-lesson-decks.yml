@@ -1,0 +1,116 @@
+name: Build lesson decks
+
+# Turns content/lessons/**/*.json into branded PowerPoint decks (with the TGA
+# logo) plus a PDF copy of each, and loads them into the portal's Lesson
+# library (storage bucket lesson-decks + table curriculum_lessons, migration
+# 0091). Decks a teacher has edited in the portal are never overwritten.
+# Runs when lesson content or the generator changes, or on demand.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/lessons/**"
+      - "scripts/lessons/**"
+      - ".github/workflows/build-lesson-decks.yml"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Re-upload generated decks that already exist (never overwrites teacher-edited ones)"
+        required: false
+        default: "false"
+
+concurrency:
+  group: build-lesson-decks
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate lesson content
+        run: node scripts/lessons/validate.mjs
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install --no-save pptxgenjs@4.0.1
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref and service-role key
+        id: keys
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          SERVICE_ROLE=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Build PowerPoint decks
+        run: node scripts/lessons/build-decks.mjs out/decks
+
+      - name: Work out which decks still need uploading
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          FORCE: ${{ github.event.inputs.force == 'true' && '1' || '0' }}
+        run: node scripts/lessons/upload-decks.mjs plan out/decks
+
+      - name: Install LibreOffice (for PDF copies)
+        run: |
+          if ! command -v soffice >/dev/null; then
+            sudo apt-get update -y
+            sudo apt-get install -y --no-install-recommends libreoffice-impress fonts-liberation fonts-noto-core fonts-noto-naskh-arabic || sudo apt-get install -y libreoffice
+          fi
+
+      - name: Convert needed decks to PDF
+        run: |
+          set -euo pipefail
+          cd out/decks
+          node -e 'const n=require("./needed.json");require("fs").writeFileSync("needed.txt",n.join("\n"))'
+          if [ ! -s needed.txt ]; then echo "Nothing to convert"; exit 0; fi
+          # Four LibreOffice instances in parallel, each with its own profile.
+          split -n l/4 -d needed.txt chunk_
+          for c in chunk_*; do
+            (
+              while IFS= read -r f; do
+                dir=$(dirname "$f")
+                soffice -env:UserInstallation=file:///tmp/lo_$c --headless --convert-to pdf --outdir "$dir" "$f" >/dev/null 2>&1 || echo "::warning::PDF failed for $f"
+              done < "$c"
+            ) &
+          done
+          wait
+          echo "PDFs: $(find . -name '*.pdf' | wc -l)"
+
+      - name: Upload decks to the portal
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          FORCE: ${{ github.event.inputs.force == 'true' && '1' || '0' }}
+        run: node scripts/lessons/upload-decks.mjs upload out/decks

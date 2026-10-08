@@ -1,0 +1,249 @@
+{
+  "subject": "Computing",
+  "year": "y9",
+  "board": "National Curriculum (aligned to Edexcel GCSE Computer Science 1CP2)",
+  "source": "Drive 'Computing Overview' Year 9 (Python Programming Revisited) and the Y9 lesson plan example 'Programming basics: data types and operations' (AQA 8525 Unit 2A style), adapted to Python and to the Edexcel 1CP2 Topic 6 style (pseudo-code and Python)",
+  "lessons": [
+    {
+      "unit": "Unit 1: Python programming revisited",
+      "n": 1,
+      "title": "Input, output, variables and data types",
+      "duration": 50,
+      "objectives": [
+        "Use print and input to communicate with a user in Python",
+        "Declare and assign variables with sensible names",
+        "Name and use the data types integer, real (float), Boolean, character and string"
+      ],
+      "keywords": [
+        { "term": "variable", "def": "a named location in memory that stores a value" },
+        { "term": "data type", "def": "the kind of data stored, such as integer or string" },
+        { "term": "integer", "def": "a whole number, for example 7" },
+        { "term": "string", "def": "a sequence of characters, for example 'Salam'" },
+        { "term": "casting", "def": "changing data from one type to another" }
+      ],
+      "starter": [
+        "Bismillah. What is a variable in Scratch? Give an example from last year.",
+        "Is the number 3.5 a whole number?",
+        "What is the difference between an input and an output?"
+      ],
+      "teach": [
+        {
+          "heading": "Print and input",
+          "bullets": ["print('Salam') shows text.", "name = input('Your name? ') stores a reply.", "Input always returns a string."],
+          "note": "Open IDLE or an online Python editor. Type the two lines and run them. Colour coding in IDLE helps pupils spot strings. Misconception: input() gives a number if the user types digits; it always returns a string, so casting is needed."
+        },
+        {
+          "heading": "Data types",
+          "bullets": ["Integer: 42.", "Real/float: 3.14.", "Boolean: True or False.", "Character and string: 'a', 'hello'."],
+          "note": "Show type(x) in the shell for each. Note: Python has no separate character type; a character is a string of length 1, but in exam questions a character is one symbol. A string can contain digits but is not a number: '5' is not 5."
+        },
+        {
+          "heading": "Casting",
+          "bullets": ["int('5') gives 5.", "float('2.5') gives 2.5.", "str(5) gives '5'."],
+          "note": "Live-code: age = input('Age? ') then age + 1 causes an error. Fix with int(age) + 1. Ask pupils to read the error message. Debugging is a skill: read the message from the bottom up."
+        },
+        {
+          "heading": "Pseudo-code and Python",
+          "bullets": ["OUTPUT 'Hello' becomes print('Hello').", "name ← USERINPUT becomes name = input().", "Constants: use capital letters."],
+          "note": "Show pseudo-code beside Python for the same program. At GCSE, algorithms in written papers appear as flowcharts and pseudo-code while programming is in Python, so we practise translating. Keep names meaningful: total_price rather than x."
+        }
+      ],
+      "practice": [
+        "What data type is each: 17, 'Maryam', 3.5, True, '17'?",
+        "What is the output? name = 'Yusuf' then print('Salam ' + name). (Salam Yusuf)",
+        "Fix the bug: age = input('Age? ') then print(age + 1). (use int(age) + 1)"
+      ],
+      "independent": [
+        "Write a program that asks for the user's name and favourite number and prints a sentence using both.",
+        "Write a program that asks for two decimal numbers and prints their average.",
+        "Stretch: write a program that asks for a price and a quantity and prints the total cost, formatted with 2 decimal places."
+      ],
+      "exit": [
+        "What data type does input() return?",
+        "Write the Python to convert the string '8' to an integer."
+      ],
+      "homework": "Write a program that asks for a user's name and age and prints how old they will be in 10 years. Write down the data type of each variable.",
+      "send": "SEND/EAL: provide a data type matching card and Python code to fill in; pair programming. Stretch: explain what happens when float('abc') runs and how a program might avoid crashing."
+    },
+    {
+      "unit": "Unit 1: Python programming revisited",
+      "n": 2,
+      "title": "Arithmetic: DIV, MOD and operations",
+      "duration": 50,
+      "objectives": [
+        "Use +, -, *, / and the integer division and modulus operators",
+        "Explain the difference between / and // (DIV) and % (MOD)",
+        "Solve problems using DIV and MOD"
+      ],
+      "keywords": [
+        { "term": "integer division (DIV)", "def": "division that gives only the whole-number part, written // in Python" },
+        { "term": "modulus (MOD)", "def": "the remainder after division, written % in Python" },
+        { "term": "operator", "def": "a symbol that carries out an operation" },
+        { "term": "exponent", "def": "raising to a power, written ** in Python" }
+      ],
+      "starter": [
+        "Bismillah. What is the output of: x = 4, y = 3, print(x * y)?",
+        "17 divided by 5 is 3 remainder ___.",
+        "What does int('9') do?"
+      ],
+      "teach": [
+        {
+          "heading": "Operators in Python",
+          "bullets": ["+ - * / as in maths.", "/ always gives a decimal.", "** means power: 2 ** 3 = 8."],
+          "note": "Run 7 / 2 (3.5) and 8 / 2 (4.0) in the shell. Misconception: pupils expect 8 / 2 to be an integer; in Python 3 it is a float 4.0."
+        },
+        {
+          "heading": "DIV and MOD",
+          "bullets": ["31 DIV 7 = 4 (whole sevens in 31).", "31 MOD 7 = 3 (remainder).", "Python: 31 // 7 and 31 % 7."],
+          "note": "Use a 'how many full weeks in 31 days' context. 31 days is 4 full weeks and 3 days left. Mod gives remainder, not a percentage: a common misconception, especially because the symbol % looks like percent. Ensure pupils know DIV and MOD as exam words even though Python writes // and %."
+        },
+        {
+          "heading": "Real uses of MOD",
+          "bullets": ["Even or odd: n % 2 == 0.", "Convert minutes: 135 minutes is 2 h 15 min.", "Clock: (hour + 5) % 24."],
+          "note": "Work the minutes example on screen: hours = 135 // 60, minutes = 135 % 60. Use prayer-time style questions: Fajr is at 05:30 and Dhuhr at 13:05, so how many minutes between? 455 minutes, 7 h 35 min. Pupils practise converting."
+        },
+        {
+          "heading": "Order of operations",
+          "bullets": ["Brackets first.", "Then powers.", "Then * / // % left to right.", "Then + -."],
+          "note": "Use the example 2 + 3 * 4 = 14 and (2 + 3) * 4 = 20. Show that expressions are evaluated by precedence in Python as in maths. Ask pupils to predict before running."
+        }
+      ],
+      "practice": [
+        "Work out: 25 // 4, 25 % 4, 25 / 4. (6, 1, 6.25)",
+        "Work out 2 + 3 * 4 and (2 + 3) * 4. (14, 20)",
+        "A box holds 12 eggs. How many full boxes from 100 eggs, and how many left over? (8 boxes, 4 left)"
+      ],
+      "independent": [
+        "Write a program that asks for a number of seconds and prints it as minutes and seconds using // and %.",
+        "Write a program that asks for a whole number and prints 'even' or 'odd' using %.",
+        "Stretch: write a program which asks for pence and prints how many pounds and pence that is."
+      ],
+      "exit": [
+        "What is 38 MOD 5?",
+        "What is 38 DIV 5?"
+      ],
+      "homework": "Write a Python program that converts a number of days into weeks and days. Test with 100 days (14 weeks, 2 days).",
+      "send": "SEND/EAL: provide a worked example sheet with DIV and MOD shown as groups of counters. Stretch: use % to check whether a year is divisible by 4 and explain why this is not enough for leap years."
+    },
+    {
+      "unit": "Unit 1: Python programming revisited",
+      "n": 3,
+      "title": "Selection: if, elif, else and Boolean logic",
+      "duration": 50,
+      "objectives": [
+        "Use comparison operators to write Boolean expressions",
+        "Combine conditions with AND, OR and NOT",
+        "Write programs using if, elif and else"
+      ],
+      "keywords": [
+        { "term": "selection", "def": "a program structure that chooses between paths based on a condition" },
+        { "term": "Boolean expression", "def": "a condition that evaluates to True or False" },
+        { "term": "nested", "def": "one structure placed inside another" },
+        { "term": "indentation", "def": "spaces at the start of a line which show which block of code it belongs to" }
+      ],
+      "starter": [
+        "Bismillah. What is 22 % 5?",
+        "Is 'age >= 13' True when age is 13? Why?",
+        "Name the three programming constructs: sequence, ___, iteration."
+      ],
+      "teach": [
+        {
+          "heading": "Comparison operators",
+          "bullets": ["== equal to.", "!= not equal to.", "< > less than, greater than.", "<= >= with equals."],
+          "note": "Emphasise that = assigns and == compares. This is one of the most common syntax errors. Run quick shell checks: 5 == 5, 5 != 5, 7 >= 7."
+        },
+        {
+          "heading": "if, elif, else",
+          "bullets": ["if checks the first condition.", "elif checks another if the first is False.", "else catches everything left."],
+          "note": "Live-code a grade program: score >= 70 'Distinction', score >= 50 'Merit', else 'Pass'. Explain that Python checks from the top and stops at the first True condition. Indentation is part of the syntax: four spaces."
+        },
+        {
+          "heading": "AND, OR, NOT",
+          "bullets": ["and: both must be True.", "or: at least one True.", "not: reverses True and False."],
+          "note": "Use a truth table. Example: if age >= 11 and age <= 16: print('Secondary pupil'). Python also allows 11 <= age <= 16, but stay with the 'and' form because it works in other languages and in exam pseudo-code. Link to logic gates which appear later in the course."
+        },
+        {
+          "heading": "Pseudo-code version",
+          "bullets": ["IF score >= 50 THEN", "OUTPUT 'Pass'", "ELSE OUTPUT 'Try again'", "END IF"],
+          "note": "Show pseudo-code and Python side by side. Ask pupils to trace it for scores 49, 50 and 51. Boundary values (49, 50, 51) are the key test cases. Introduce the idea of test data: normal, boundary and erroneous."
+        }
+      ],
+      "practice": [
+        "Evaluate: (4 > 2) and (3 == 3), (4 < 2) or (3 == 3), not (4 > 2). (True, True, False)",
+        "Trace the grade program for 70, 69 and 50. (Distinction, Merit, Merit)",
+        "Correct the error: if score = 50: print('Pass'). (use ==)"
+      ],
+      "independent": [
+        "Write a program which asks for a score out of 100 and prints a grade using if, elif and else.",
+        "Write a program that asks for a day number (1 to 7) and prints whether it is Jumu'ah (day 5, with Monday as 1), the weekend or a weekday.",
+        "Stretch: write a ticket price program using age and whether the person is a student, with nested if statements."
+      ],
+      "exit": [
+        "What is the difference between = and ==?",
+        "Give three test values for a program that checks score >= 50."
+      ],
+      "homework": "Write a program that asks for a password and prints 'Access granted' if it matches a stored password, else 'Access denied'. List three test cases.",
+      "send": "SEND/EAL: provide a flow diagram and colour-coded code blocks to reorder. Stretch: add input validation that rejects scores below 0 or above 100."
+    },
+    {
+      "unit": "Unit 1: Python programming revisited",
+      "n": 4,
+      "title": "Iteration: while loops and for loops",
+      "duration": 50,
+      "objectives": [
+        "Use while loops for condition-controlled iteration",
+        "Use for loops with range for count-controlled iteration",
+        "Trace a loop and use it to validate input"
+      ],
+      "keywords": [
+        { "term": "iteration", "def": "repeating a set of instructions" },
+        { "term": "while loop", "def": "repeats while a condition is True" },
+        { "term": "for loop", "def": "repeats a set number of times" },
+        { "term": "infinite loop", "def": "a loop which never stops because its condition never becomes False" }
+      ],
+      "starter": [
+        "Bismillah. Write an if statement that prints 'Adult' when age >= 18.",
+        "What is the difference between selection and iteration?",
+        "Why might we need to repeat part of a program?"
+      ],
+      "teach": [
+        {
+          "heading": "For loops",
+          "bullets": ["for i in range(5): runs 5 times.", "i takes 0, 1, 2, 3, 4.", "range(1, 6) gives 1 to 5."],
+          "note": "Run for i in range(1, 6): print(i). Ask pupils what range(1, 6) gives: 1 to 5, not 6. Misconception: the end value is included; it is not. Count-controlled iteration is used when the number of repeats is known."
+        },
+        {
+          "heading": "While loops",
+          "bullets": ["while condition: repeats.", "The condition is checked first.", "Change something inside so it can end."],
+          "note": "Live-code a password loop or a countdown: count = 3, while count > 0: print(count), count = count - 1. Show the effect of forgetting count = count - 1 (infinite loop, stop with Ctrl+C). Link to Year 5 'repeat until'."
+        },
+        {
+          "heading": "Validating input",
+          "bullets": ["Ask for a number from 1 to 10.", "While the number is outside the range:", "Ask again."],
+          "note": "Write: n = int(input('1-10? ')), while n < 1 or n > 10: n = int(input('Try again: ')). Introduce validation as checking that input is sensible. Say input validation is not the same as verification (checking it is correct). Use the example of an age field."
+        },
+        {
+          "heading": "Tracing a loop",
+          "bullets": ["total = 0.", "for i in range(1, 4): total = total + i.", "Trace table: i = 1, 2, 3; total = 1, 3, 6."],
+          "note": "Draw the trace table on screen with columns i and total. Pupils fill it with you. Teach that careful tracing is the key skill for finding bugs and is tested in written exams."
+        }
+      ],
+      "practice": [
+        "What does for i in range(2, 6): print(i) print? (2, 3, 4, 5)",
+        "How many times does 'while x < 3' run if x starts at 0 and increases by 1 each time? (3)",
+        "Spot the bug: count = 5, while count > 0: print(count). (count is never reduced: infinite loop)"
+      ],
+      "independent": [
+        "Write a program that prints the 7 times table from 1 x 7 to 12 x 7 using a for loop.",
+        "Write a program which keeps asking for a password until the user types the correct one (use a while loop).",
+        "Stretch: write a program that asks for 5 numbers and prints the total and the average."
+      ],
+      "exit": [
+        "Which loop would you use when you do not know how many repeats are needed?",
+        "Complete the trace: total = 0; for i in range(1, 5): total = total + i. What is total at the end? (10)"
+      ],
+      "homework": "Write a program using a loop to print the first 10 square numbers (1, 4, 9 ... 100). Include a comment explaining each line.",
+      "send": "SEND/EAL: provide code skeletons with blanks and a trace table template. Stretch: write a nested loop that prints a 5 by 5 multiplication grid."
+    }
+  ]
+}

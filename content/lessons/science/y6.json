@@ -1,0 +1,488 @@
+{
+  "subject": "Science",
+  "year": "y6",
+  "board": "National Curriculum (KS2, upper)",
+  "source": "National Curriculum KS2 Science (Light; Animals including humans); Drive Science 'Science lower school' and Activate 1 resources as a guide",
+  "lessons": [
+    {
+      "unit": "Light",
+      "n": 1,
+      "title": "How we see: light travels in straight lines",
+      "duration": 45,
+      "objectives": [
+        "Explain that light travels in straight lines",
+        "Explain that we see objects because light from them enters our eyes",
+        "Describe the contribution of Ibn al-Haytham to the study of light"
+      ],
+      "keywords": [
+        { "term": "light source", "def": "an object that gives out its own light, like the Sun" },
+        { "term": "ray", "def": "a straight line showing the path of light" },
+        { "term": "reflect", "def": "to bounce off a surface" },
+        { "term": "pupil", "def": "the opening in the eye that lets light in" }
+      ],
+      "starter": [
+        "Bismillah. Name two light sources.",
+        "Is the Moon a light source? Explain.",
+        "What happens in a room with the lights off?"
+      ],
+      "teach": [
+        {
+          "heading": "Light sources",
+          "bullets": ["The Sun, lamps and fires give out light", "The Moon reflects light", "Most objects are not sources"],
+          "note": "Sort objects: Sun, candle, mirror, Moon, torch, book. Misconception: shiny things are light sources; they only reflect."
+        },
+        {
+          "heading": "Straight lines",
+          "bullets": ["Light travels in straight lines", "We show it with rays", "Light cannot bend around corners"],
+          "note": "Safe demo: shine a torch through three pieces of card with holes in a line; light goes through only when the holes line up. Or show a video."
+        },
+        {
+          "heading": "How we see",
+          "bullets": ["Light from a source hits an object", "Some light reflects into our eyes", "The eye sends signals to the brain"],
+          "note": "Draw rays from the Sun to a tree and into an eye. Misconception: our eyes send out beams. Show the arrows going INTO the eye."
+        },
+        {
+          "heading": "Ibn al-Haytham",
+          "bullets": ["Born in Basra around 965 CE", "Wrote the Book of Optics", "Used experiments to test ideas"],
+          "note": "Ibn al-Haytham (c. 965 to c. 1040) argued that vision happens when light enters the eye, and he tested ideas by experiment, including with a camera obscura. Say this plainly; do not exaggerate. Link to seeking knowledge."
+        }
+      ],
+      "practice": [
+        "Is a mirror a light source? Explain.",
+        "In which direction do arrows go when we draw how we see a tree?",
+        "How can you show that light travels in straight lines?"
+      ],
+      "independent": [
+        "Draw a diagram showing how a person sees a book with a lamp. Label light source, ray, book and eye.",
+        "Sort ten objects into light sources and non-light sources.",
+        "Write a paragraph explaining why we cannot see in complete darkness."
+      ],
+      "exit": [
+        "Why can we see a non-luminous object?",
+        "Name one scientist who studied light in the Muslim world."
+      ],
+      "homework": "Use a torch and three cardboard rectangles at home to test straight-line light, and describe what you found.",
+      "send": "SEND/EAL: provide a ready-drawn scene with arrows to label. Stretch: explain why a pinhole camera produces an upside-down image."
+    },
+    {
+      "unit": "Light",
+      "n": 2,
+      "title": "Reflection and mirrors",
+      "duration": 45,
+      "objectives": [
+        "Explain that light reflects from surfaces",
+        "Use the law of reflection in a simple form",
+        "Describe how mirrors form images"
+      ],
+      "keywords": [
+        { "term": "reflection", "def": "light bouncing off a surface" },
+        { "term": "mirror", "def": "a smooth, shiny surface that reflects light clearly" },
+        { "term": "incident ray", "def": "the ray of light that hits the surface" },
+        { "term": "reflected ray", "def": "the ray of light that bounces off the surface" }
+      ],
+      "starter": [
+        "Bismillah. Name one way to show that light travels in a straight line.",
+        "How do we see an object?",
+        "Where would you see your reflection?"
+      ],
+      "teach": [
+        {
+          "heading": "Reflection",
+          "bullets": ["Light bounces off surfaces", "Smooth surfaces reflect clearly", "Rough surfaces scatter light"],
+          "note": "Compare a mirror, a metal spoon and a sheet of paper. All reflect light; only smooth surfaces give a clear image."
+        },
+        {
+          "heading": "Law of reflection",
+          "bullets": ["Angle in equals angle out", "Measure from the normal", "The normal is a line at 90 degrees"],
+          "note": "Draw a mirror, a normal, an incident ray at 30 degrees, and the reflected ray at 30 degrees. Misconception: measuring angles from the mirror surface instead of the normal."
+        },
+        {
+          "heading": "Mirror images",
+          "bullets": ["Image is the same size", "Image appears behind the mirror", "Left and right appear reversed"],
+          "note": "Safe task: write your name on paper and read it in a mirror at home. Ambulances have reversed lettering so drivers can read them in their mirror."
+        },
+        {
+          "heading": "Using reflection",
+          "bullets": ["Car mirrors and periscopes", "Cat's eyes on roads", "Telescopes"],
+          "note": "Show a periscope diagram with two mirrors at 45 degrees. Safe activity: make a periscope from a box or cardboard tube with two small mirrors, with a grown-up."
+        }
+      ],
+      "practice": [
+        "An incident ray hits a mirror at 40 degrees to the normal. What is the angle of the reflected ray?",
+        "Why can you see yourself in a mirror but not in a piece of paper?",
+        "What does a periscope use?"
+      ],
+      "independent": [
+        "Draw ray diagrams for angles of incidence of 20, 45 and 60 degrees.",
+        "Write your name as it would appear in a mirror.",
+        "Explain why white paper looks bright but does not show a clear image."
+      ],
+      "exit": [
+        "State the law of reflection in your own words.",
+        "What is the normal?"
+      ],
+      "homework": "Find three reflective and three non-reflective surfaces at home. Explain the difference.",
+      "send": "SEND/EAL: provide ray diagrams with the angles pre-drawn. Stretch: draw how a periscope lets you see over a wall."
+    },
+    {
+      "unit": "Light",
+      "n": 3,
+      "title": "Shadows",
+      "duration": 45,
+      "objectives": [
+        "Explain how shadows are formed",
+        "Investigate how shadow size changes with distance",
+        "Describe transparent, translucent and opaque materials"
+      ],
+      "keywords": [
+        { "term": "shadow", "def": "a dark area where light is blocked" },
+        { "term": "opaque", "def": "does not let any light through" },
+        { "term": "translucent", "def": "lets some light through, but you cannot see clearly" },
+        { "term": "transparent", "def": "lets light through so you can see clearly" }
+      ],
+      "starter": [
+        "Bismillah. State the law of reflection.",
+        "Why do we see a mirror image?",
+        "When is your shadow longest?"
+      ],
+      "teach": [
+        {
+          "heading": "Making shadows",
+          "bullets": ["Light travels in straight lines", "An opaque object blocks the light", "A shadow forms behind it"],
+          "note": "Use a torch and a toy. Shadows have the same shape as the object because light travels in straight lines. Misconception: a shadow is a reflection."
+        },
+        {
+          "heading": "Types of materials",
+          "bullets": ["Transparent: clear glass", "Translucent: tissue paper", "Opaque: wood, metal"],
+          "note": "Test materials with a torch (safe household items: cling film, tissue paper, card, foil). Shadow depth depends on how much light is blocked."
+        },
+        {
+          "heading": "Changing shadow size",
+          "bullets": ["Move the object closer to the light", "The shadow gets larger", "Move it away: smaller shadow"],
+          "note": "Draw ray diagrams with straight rays from a source past an object onto a screen. Safe practical: torch, toy, wall. Measure shadow height at 20, 40 and 60 cm."
+        },
+        {
+          "heading": "Sundials",
+          "bullets": ["Shadows change with the Sun", "A sundial tells time", "Used for thousands of years"],
+          "note": "Link to the use of shadow and sundials to know time. Muslim scholars also developed sundials and astronomical tools to find prayer times; keep it general."
+        }
+      ],
+      "practice": [
+        "Is a window transparent, translucent or opaque?",
+        "What happens to the shadow when the torch moves closer?",
+        "Draw the rays that form the shadow of a ball."
+      ],
+      "independent": [
+        "Record shadow heights at different distances in a table and draw a line graph.",
+        "Write a conclusion: what happens to shadow height as the object moves closer to the light?",
+        "Sort five household materials into transparent, translucent and opaque."
+      ],
+      "exit": [
+        "What type of material makes the darkest shadow?",
+        "Why do shadows have the same shape as the object?"
+      ],
+      "homework": "Make a shadow puppet at home and draw the ray diagram that explains its shadow.",
+      "send": "SEND/EAL: provide a ready table and ray diagram. Stretch: predict the shadow height at 80 cm and explain."
+    },
+    {
+      "unit": "Light",
+      "n": 4,
+      "title": "Refraction and colour",
+      "duration": 45,
+      "objectives": [
+        "Describe refraction as light bending when it changes material",
+        "Explain how white light splits into colours",
+        "Name the colours of the spectrum"
+      ],
+      "keywords": [
+        { "term": "refraction", "def": "bending of light when it passes from one material to another" },
+        { "term": "spectrum", "def": "the range of colours that make up white light" },
+        { "term": "prism", "def": "a triangular block of glass that splits white light" },
+        { "term": "rainbow", "def": "colours formed when sunlight passes through raindrops" }
+      ],
+      "starter": [
+        "Bismillah. What is a shadow?",
+        "Name an opaque and a transparent object.",
+        "Have you seen a rainbow? When?"
+      ],
+      "teach": [
+        {
+          "heading": "Light bends",
+          "bullets": ["Light slows down in water or glass", "This makes it change direction", "This is refraction"],
+          "note": "Safe demo: put a pencil in a glass of water and look from the side. It appears bent. Use a straw or a coin in a bowl if needed."
+        },
+        {
+          "heading": "Seeing with a lens",
+          "bullets": ["Lenses refract light", "Magnifying glasses make things look bigger", "Glasses help people see"],
+          "note": "Ibn al-Haytham studied lenses and refraction in his Book of Optics. Keep the claim accurate: he made important contributions to understanding how lenses and refraction worked."
+        },
+        {
+          "heading": "White light and colours",
+          "bullets": ["White light is a mixture of colours", "A prism splits it", "Red, orange, yellow, green, blue, indigo, violet"],
+          "note": "Show a video of a prism or use a CD held to the light. Never look at the Sun. Mnemonic: ROYGBIV. Colours always appear in the same order."
+        },
+        {
+          "heading": "Rainbows",
+          "bullets": ["Sunlight enters raindrops", "Each drop splits the light", "The Sun is behind you"],
+          "note": "Safe demo: make a rainbow with a garden hose or a glass of water on a sunny windowsill, with a white sheet of paper. Or show a video. Invite pupils to reflect on the beauty of Allah's creation and to say SubhanAllah."
+        }
+      ],
+      "practice": [
+        "Why does a pencil look bent in water?",
+        "Name the colours of the spectrum in order.",
+        "What does a prism do to white light?"
+      ],
+      "independent": [
+        "Draw white light entering a prism and splitting into seven colours; label each.",
+        "Explain in your own words how a rainbow forms.",
+        "Describe two uses of lenses in everyday life."
+      ],
+      "exit": [
+        "What is refraction?",
+        "Which colour of the spectrum bends least?"
+      ],
+      "homework": "Try the pencil-in-water test and draw what you see. Explain it using the word refraction.",
+      "send": "SEND/EAL: use a colour order strip with pictures. Stretch: explain why red is on the outside of a rainbow."
+    },
+    {
+      "unit": "Animals including humans",
+      "n": 5,
+      "title": "The heart and circulatory system",
+      "duration": 45,
+      "objectives": [
+        "Describe the function of the heart, blood vessels and blood",
+        "Name the three types of blood vessel",
+        "Explain how blood circulates around the body"
+      ],
+      "keywords": [
+        { "term": "heart", "def": "a muscular pump that pushes blood around the body" },
+        { "term": "artery", "def": "a blood vessel carrying blood away from the heart" },
+        { "term": "vein", "def": "a blood vessel carrying blood back to the heart" },
+        { "term": "capillary", "def": "a tiny blood vessel that exchanges materials with cells" }
+      ],
+      "starter": [
+        "Bismillah. Name the colours of the spectrum.",
+        "Put your hand on your chest. What can you feel?",
+        "Why does the body need oxygen?"
+      ],
+      "teach": [
+        {
+          "heading": "The circulatory system",
+          "bullets": ["Blood carries oxygen and nutrients", "It carries waste away", "The heart pumps it"],
+          "note": "Link to previous work on digestion: nutrients from the small intestine enter the blood. The heart is a muscle, about the size of a fist."
+        },
+        {
+          "heading": "The heart",
+          "bullets": ["Four chambers", "Right side: blood to the lungs", "Left side: blood to the body"],
+          "note": "Keep it simple: the right side sends blood to pick up oxygen from the lungs, the left side pumps blood around the body. Valves stop backflow. Show a diagram."
+        },
+        {
+          "heading": "Blood vessels",
+          "bullets": ["Arteries: away from the heart", "Veins: back to the heart", "Capillaries: tiny and thin-walled"],
+          "note": "Mnemonic: Arteries Away. Misconception: arteries always carry oxygen-rich blood; the pulmonary artery carries oxygen-poor blood. Keep this for GCSE, but be ready if asked."
+        },
+        {
+          "heading": "Pulse",
+          "bullets": ["Find your pulse in the wrist", "Count beats in 15 seconds", "Multiply by four"],
+          "note": "Safe task: children find their pulse using two fingers (not the thumb) on the wrist or neck, count for 15 seconds and multiply by four. Resting rate for children is typically between 70 and 100 beats per minute."
+        }
+      ],
+      "practice": [
+        "What is the job of the heart?",
+        "Which blood vessels carry blood away from the heart?",
+        "You count 20 beats in 15 seconds. What is the pulse rate per minute?"
+      ],
+      "independent": [
+        "Draw a simple diagram of the circulatory system with the heart, arteries, veins and capillaries labelled.",
+        "Write what blood carries to the body and what it takes away.",
+        "Measure and record your resting pulse three times and find the average."
+      ],
+      "exit": [
+        "Name the three types of blood vessel.",
+        "What does the heart do?"
+      ],
+      "homework": "Measure your resting pulse at the same time each day for three days and record it in a table.",
+      "send": "SEND/EAL: provide a labelled heart diagram and key word cards. Stretch: explain why capillary walls are only one cell thick."
+    },
+    {
+      "unit": "Animals including humans",
+      "n": 6,
+      "title": "Exercise and the heart",
+      "duration": 45,
+      "objectives": [
+        "Explain why the heart rate increases during exercise",
+        "Plan and carry out a fair test on exercise and pulse",
+        "Present results in a graph and draw a conclusion"
+      ],
+      "keywords": [
+        { "term": "pulse rate", "def": "the number of heartbeats per minute" },
+        { "term": "resting rate", "def": "pulse rate when the body is still" },
+        { "term": "oxygen", "def": "a gas in the air that the body needs to release energy" },
+        { "term": "recovery time", "def": "how long the pulse takes to return to normal after exercise" }
+      ],
+      "starter": [
+        "Bismillah. Name the three types of blood vessel.",
+        "How do you measure your pulse?",
+        "What happens to your breathing when you run?"
+      ],
+      "teach": [
+        {
+          "heading": "Muscles need more oxygen",
+          "bullets": ["Exercise needs energy", "Muscles need more oxygen and sugar", "The heart beats faster"],
+          "note": "Link to energy from food. Faster heartbeat delivers more blood to muscles. Breathing also speeds up."
+        },
+        {
+          "heading": "Planning a fair test",
+          "bullets": ["Change: type or time of exercise", "Measure: pulse rate", "Keep the same: person, time of day"],
+          "note": "Choose activities safe indoors, such as star jumps for 30 seconds, marching on the spot or stepping. Children should only exercise to a comfortable level and stop if they feel unwell."
+        },
+        {
+          "heading": "Collecting results",
+          "bullets": ["Resting pulse first", "Pulse straight after exercise", "Pulse after 2 minutes"],
+          "note": "Record in a table. Repeat the test to improve reliability. Misconception: a higher pulse means a less healthy person; it is normal during exercise."
+        },
+        {
+          "heading": "Drawing a conclusion",
+          "bullets": ["Pulse rose after exercise", "Then fell during recovery", "Fitter people recover faster"],
+          "note": "Draw a line graph of pulse against time. Discuss why athletes have lower resting pulse. Link to the body as an amanah (trust) to be looked after."
+        }
+      ],
+      "practice": [
+        "Why does your heart beat faster when you run?",
+        "A pupil has a resting pulse of 80 and a pulse of 128 after star jumps. By how much did it rise?",
+        "Name two things to keep the same in the test."
+      ],
+      "independent": [
+        "Carry out the investigation and record your pulse at rest, after exercise, and after two minutes.",
+        "Draw a line graph of your results.",
+        "Write a conclusion that explains the pattern using oxygen and energy."
+      ],
+      "exit": [
+        "What happens to pulse during exercise?",
+        "Why does the body need more oxygen when exercising?"
+      ],
+      "homework": "Repeat your test with a different exercise and compare the results.",
+      "send": "SEND/EAL: provide a pre-drawn table and graph axes. Stretch: explain how to make the test more reliable."
+    },
+    {
+      "unit": "Animals including humans",
+      "n": 7,
+      "title": "Diet, drugs and lifestyle",
+      "duration": 45,
+      "objectives": [
+        "Describe how diet, exercise, drugs and lifestyle affect the body",
+        "Explain the difference between helpful and harmful drugs",
+        "Make healthy choices and explain them"
+      ],
+      "keywords": [
+        { "term": "drug", "def": "a substance that changes how the body works" },
+        { "term": "medicine", "def": "a drug used to treat illness, taken safely as directed" },
+        { "term": "lifestyle", "def": "the way a person lives, including diet, activity and sleep" },
+        { "term": "harmful", "def": "can damage health" }
+      ],
+      "starter": [
+        "Bismillah. What happens to your pulse during exercise?",
+        "Name two foods that give energy.",
+        "What does 'healthy' mean?"
+      ],
+      "teach": [
+        {
+          "heading": "A healthy lifestyle",
+          "bullets": ["Balanced diet", "Regular exercise", "Enough sleep and clean habits"],
+          "note": "Link back to nutrition in Year 3. Primary-age children need roughly 9 to 11 hours of sleep a night."
+        },
+        {
+          "heading": "Medicines",
+          "bullets": ["Medicines help when we are ill", "Take them only as directed", "Never take someone else's"],
+          "note": "Emphasise safety: only a trusted adult gives medicine. Paracetamol example is fine, but avoid dose information."
+        },
+        {
+          "heading": "Harmful substances",
+          "bullets": ["Tobacco harms the lungs and heart", "Alcohol harms the body and is forbidden in Islam", "Caffeine and energy drinks are not for children"],
+          "note": "Keep age-appropriate and factual. Link: Islam encourages protecting our bodies and minds, and intoxicants are forbidden (Qur'an 5:90). Do not frighten; give clear safe responses."
+        },
+        {
+          "heading": "Making good choices",
+          "bullets": ["Know the facts", "Say no politely", "Talk to a trusted adult"],
+          "note": "Role play a short scenario of being offered something unsafe. Practise a confident reply. Remind pupils that they can always speak to a teacher, parent or imam."
+        }
+      ],
+      "practice": [
+        "Give one example of a medicine and one rule for taking it safely.",
+        "Which organ is harmed by smoking?",
+        "What could you say if someone offered you something unsafe?"
+      ],
+      "independent": [
+        "Make a poster with five rules for a healthy lifestyle.",
+        "Write a short script of a safe response to an unsafe offer.",
+        "Explain in your own words why sleep is important."
+      ],
+      "exit": [
+        "Name one healthy habit.",
+        "Who can you talk to if you are worried about a drug?"
+      ],
+      "homework": "Interview a family member about one healthy habit they keep, and write what you learned.",
+      "send": "SEND/EAL: provide a pictorial poster template. Stretch: evaluate a day's choices in a diary and suggest improvements."
+    },
+    {
+      "unit": "Animals including humans",
+      "n": 8,
+      "title": "Review: light and the circulatory system",
+      "duration": 45,
+      "objectives": [
+        "Recall key facts about light, the heart and a healthy lifestyle",
+        "Apply knowledge to new questions",
+        "Identify areas to improve"
+      ],
+      "keywords": [
+        { "term": "reflection", "def": "light bouncing off a surface" },
+        { "term": "refraction", "def": "light bending as it moves between materials" },
+        { "term": "circulation", "def": "the movement of blood around the body" },
+        { "term": "pulse", "def": "the beat of the heart felt in the wrist or neck" }
+      ],
+      "starter": [
+        "Bismillah. State two facts about light.",
+        "State two facts about the heart.",
+        "What is a healthy habit?"
+      ],
+      "teach": [
+        {
+          "heading": "Light review",
+          "bullets": ["Light travels in straight lines", "Reflection: angle in equals angle out", "Refraction bends light"],
+          "note": "Quick questioning. Ask children to explain how we see, using arrows into the eye. Correct the common misconceptions again."
+        },
+        {
+          "heading": "Heart review",
+          "bullets": ["The heart pumps blood", "Arteries, veins, capillaries", "Exercise raises the pulse"],
+          "note": "Ask children to draw the circulation on mini whiteboards. Check that they say 'away from the heart' for arteries."
+        },
+        {
+          "heading": "Healthy lifestyle review",
+          "bullets": ["Balanced diet and exercise", "Medicines used safely", "Avoid harmful substances"],
+          "note": "Link back to previous lessons. Ask: 'What would you advise a friend?' Encourage respectful and kind answers."
+        },
+        {
+          "heading": "Applying ideas",
+          "bullets": ["A tall person casts a long shadow", "A swimmer's pulse after a race", "A rainbow on a sunny, rainy day"],
+          "note": "Use unfamiliar contexts so children must explain with science words. Model one answer in full sentences with 'because'."
+        }
+      ],
+      "practice": [
+        "Explain why a red jumper looks red in white light.",
+        "A boy's pulse is 70 at rest and 120 after running. Explain why.",
+        "A ray hits a mirror at 25 degrees to the normal. State the reflected angle."
+      ],
+      "independent": [
+        "Complete a 10-question quiz on light, the heart and lifestyle.",
+        "Write three things you remember well and one you need to revise.",
+        "Make a mind map linking light, the eye, and the heart."
+      ],
+      "exit": [
+        "Name one thing you are confident about.",
+        "Name one thing you will practise."
+      ],
+      "homework": "Revise using your mind map and teach one idea to a family member.",
+      "send": "SEND/EAL: provide the quiz with picture support. Stretch: write three exam-style questions with answers for a partner."
+    }
+  ]
+}

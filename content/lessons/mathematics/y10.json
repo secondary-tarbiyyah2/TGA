@@ -1,0 +1,1502 @@
+{
+  "subject": "Mathematics",
+  "year": "y10",
+  "board": "Edexcel GCSE (1MA1)",
+  "source": "Drive: Maths folder (SoW Maths, Secondary National Curriculum Mathematics, GCSE Maths folder); Edexcel GCSE Mathematics (1MA1) specification",
+  "lessons": [
+    {
+      "unit": "Unit 1: Quadratic algebra",
+      "n": 1,
+      "title": "Expanding double brackets",
+      "duration": 50,
+      "objectives": [
+        "Expand and simplify two linear brackets",
+        "Expand squared brackets such as (x + 4)²",
+        "Recognise the difference of two squares"
+      ],
+      "keywords": [
+        {
+          "term": "quadratic expression",
+          "def": "an expression whose highest power of x is x²"
+        },
+        {
+          "term": "expand",
+          "def": "multiply out brackets and simplify"
+        },
+        {
+          "term": "difference of two squares",
+          "def": "an expression of the form a² − b², which equals (a + b)(a − b)"
+        }
+      ],
+      "starter": [
+        "Bismillah. Expand 3(x − 5).",
+        "Simplify 4x + 3x − 2x.",
+        "Work out (−3) × (−4) and (−3) × 4."
+      ],
+      "teach": [
+        {
+          "heading": "The grid method",
+          "bullets": [
+            "Multiply each term in the first bracket by each in the second.",
+            "(x + 3)(x + 5) = x² + 5x + 3x + 15.",
+            "= x² + 8x + 15."
+          ],
+          "note": "Draw a 2 by 2 grid with x and 3 across the top and x and 5 down the side. The four boxes are x², 5x, 3x and 15. Check by substituting x = 1: 4 × 6 = 24 and 1 + 8 + 15 = 24 ✓."
+        },
+        {
+          "heading": "Negative terms",
+          "bullets": [
+            "(x − 2)(x + 7) = x² + 7x − 2x − 14.",
+            "= x² + 5x − 14.",
+            "Keep the sign with each term."
+          ],
+          "note": "Pupils make the most errors with signs. Write −2 in the grid, not 2. Check with x = 1: (−1)(8) = −8 and 1 + 5 − 14 = −8 ✓."
+        },
+        {
+          "heading": "Coefficients in front of x",
+          "bullets": [
+            "(2x + 1)(x − 4) = 2x² − 8x + x − 4.",
+            "= 2x² − 7x − 4.",
+            "Collect the x terms last."
+          ],
+          "note": "Four terms are always produced; then collect like terms. Ask: which two terms combine? (−8x and +x.) FOIL (first, outer, inner, last) is a mnemonic, but the grid is more reliable."
+        },
+        {
+          "heading": "Squared brackets",
+          "bullets": [
+            "(x + 4)² means (x + 4)(x + 4).",
+            "= x² + 8x + 16, not x² + 16.",
+            "(x − 5)² = x² − 10x + 25."
+          ],
+          "note": "Misconception: (x + 4)² = x² + 16. Expand it fully to show the middle term 8x. Use a geometric square of side x + 4 divided into x², two 4x rectangles and a 4 by 4 square."
+        },
+        {
+          "heading": "Difference of two squares",
+          "bullets": [
+            "(x + 6)(x − 6) = x² − 36.",
+            "The middle terms cancel.",
+            "(a + b)(a − b) = a² − b²."
+          ],
+          "note": "Expand it: x² − 6x + 6x − 36. Ask pupils to predict (x + 9)(x − 9) before expanding (x² − 81). This is used again when factorising. Link: 51² − 49² = 100 × 2 = 200 quickly."
+        }
+      ],
+      "practice": [
+        "Expand and simplify (x + 2)(x + 9).",
+        "Expand and simplify (x − 3)(x − 8).",
+        "Expand and simplify (3x + 2)(x − 5)."
+      ],
+      "independent": [
+        "Expand (x + 5)(x − 4) and (2x − 1)(x + 6).",
+        "Expand (2x − 3)² and (x + 7)².",
+        "Expand (x + 8)(x − 8) and (3x + 2)(3x − 2)."
+      ],
+      "exit": [
+        "Expand and simplify (x + 6)(x − 2).",
+        "Expand (x − 3)²."
+      ],
+      "homework": "Complete eight double-bracket expansions and check each by substituting x = 2.",
+      "send": "SEND/EAL: pre-drawn grids and colour-coded signs. Stretch: expand (x + 2)(x + 3)(x − 1)."
+    },
+    {
+      "unit": "Unit 1: Quadratic algebra",
+      "n": 2,
+      "title": "Factorising quadratic expressions",
+      "duration": 50,
+      "objectives": [
+        "Factorise x² + bx + c into two brackets",
+        "Factorise the difference of two squares",
+        "Factorise ax² + bx + c where a is greater than 1"
+      ],
+      "keywords": [
+        {
+          "term": "factorise",
+          "def": "write an expression as a product of brackets"
+        },
+        {
+          "term": "sum",
+          "def": "the result of adding numbers"
+        },
+        {
+          "term": "product",
+          "def": "the result of multiplying numbers"
+        }
+      ],
+      "starter": [
+        "Expand (x + 4)(x + 5).",
+        "Find two numbers with sum 7 and product 12.",
+        "Factorise 6x + 9."
+      ],
+      "teach": [
+        {
+          "heading": "x² + bx + c",
+          "bullets": [
+            "Find two numbers that multiply to c and add to b.",
+            "x² + 8x + 15: numbers 3 and 5.",
+            "= (x + 3)(x + 5)."
+          ],
+          "note": "Always list factor pairs of c. Check by expanding. Ask: why must both numbers be positive when b and c are both positive? Because they add and multiply to positive values."
+        },
+        {
+          "heading": "Negative numbers",
+          "bullets": [
+            "x² + 2x − 24: product −24, sum +2.",
+            "The numbers are +6 and −4.",
+            "= (x + 6)(x − 4)."
+          ],
+          "note": "If c is negative, the numbers have different signs. Factor pairs of 24: 1 and 24, 2 and 12, 3 and 8, 4 and 6. Which pair differs by 2? 4 and 6, with the larger positive. Check: 6 × (−4) = −24 and 6 − 4 = 2 ✓."
+        },
+        {
+          "heading": "Both negative",
+          "bullets": [
+            "x² − 9x + 20: product +20, sum −9.",
+            "The numbers are −4 and −5.",
+            "= (x − 4)(x − 5)."
+          ],
+          "note": "If c is positive and b is negative, both numbers are negative. Quick check: expand (x − 4)(x − 5) = x² − 5x − 4x + 20 ✓."
+        },
+        {
+          "heading": "Difference of two squares",
+          "bullets": [
+            "x² − 49 = (x + 7)(x − 7).",
+            "x² + 5x = x(x + 5) is a common factor.",
+            "Always look for a common factor first."
+          ],
+          "note": "There is no x term in x² − 49, so the two numbers add to 0: +7 and −7. Remind pupils that x² + 49 cannot be factorised. Practise spotting the type of expression before starting."
+        },
+        {
+          "heading": "Harder: ax² + bx + c (Higher)",
+          "bullets": [
+            "2x² + 7x + 3: find two numbers with product 6 and sum 7.",
+            "Numbers are 6 and 1: 2x² + 6x + x + 3.",
+            "= 2x(x + 3) + 1(x + 3) = (2x + 1)(x + 3)."
+          ],
+          "note": "Multiply a × c = 6, find the pair with sum 7 (6 and 1), split the middle term, then factorise in pairs. Check by expanding: 2x² + 6x + x + 3 ✓. This is Higher tier content; Foundation pupils continue with x² + bx + c."
+        }
+      ],
+      "practice": [
+        "Factorise x² + 7x + 12.",
+        "Factorise x² − x − 12.",
+        "Factorise x² − 81."
+      ],
+      "independent": [
+        "Factorise x² + 10x + 21, x² − 3x − 10 and x² − 11x + 28.",
+        "Factorise x² − 100 and 4x² − 25.",
+        "Higher: factorise 3x² + 10x + 8."
+      ],
+      "exit": [
+        "Factorise x² + 5x + 6.",
+        "Factorise x² − 16."
+      ],
+      "homework": "Factorise eight quadratics and check every answer by expanding.",
+      "send": "SEND/EAL: factor pair tables and a sum-and-product grid. Stretch: factorise 6x² − x − 2."
+    },
+    {
+      "unit": "Unit 1: Quadratic algebra",
+      "n": 3,
+      "title": "Solving quadratic equations by factorising",
+      "duration": 50,
+      "objectives": [
+        "Solve quadratic equations by factorising",
+        "Rearrange to equal zero first",
+        "Use quadratic equations to solve area problems"
+      ],
+      "keywords": [
+        {
+          "term": "quadratic equation",
+          "def": "an equation that can be written as ax² + bx + c = 0"
+        },
+        {
+          "term": "root",
+          "def": "a solution of an equation"
+        },
+        {
+          "term": "null factor law",
+          "def": "if two factors multiply to zero, at least one factor is zero"
+        }
+      ],
+      "starter": [
+        "Factorise x² + 5x + 6.",
+        "Solve 2x − 6 = 0.",
+        "If a × b = 0, what can you say about a and b?"
+      ],
+      "teach": [
+        {
+          "heading": "The null factor law",
+          "bullets": [
+            "If (x + 2)(x + 3) = 0, one bracket is zero.",
+            "x + 2 = 0 or x + 3 = 0.",
+            "So x = −2 or x = −3."
+          ],
+          "note": "This is why the equation must equal zero. Ask: could (x + 2)(x + 3) = 12 be solved by setting each bracket to 12? No. Check each solution by substituting: (−2 + 2)(−2 + 3) = 0 ✓."
+        },
+        {
+          "heading": "Factorise then solve",
+          "bullets": [
+            "x² + 5x + 6 = 0.",
+            "(x + 2)(x + 3) = 0.",
+            "x = −2 or x = −3."
+          ],
+          "note": "Show the full format: equation = 0, factorise, split into two linear equations, state both answers. Two answers are expected, unless the quadratic is a perfect square (x + 3)² = 0 which gives one repeated root."
+        },
+        {
+          "heading": "Missing terms",
+          "bullets": [
+            "x² − 7x = 0 gives x(x − 7) = 0.",
+            "So x = 0 or x = 7.",
+            "x² − 16 = 0 gives x = 4 or x = −4."
+          ],
+          "note": "Never divide both sides by x, since that loses the solution x = 0. For x² = 16 write x = ±4. Ask: how do we write two answers together? ±4."
+        },
+        {
+          "heading": "Rearrange first",
+          "bullets": [
+            "x² = 3x + 10.",
+            "Rearrange: x² − 3x − 10 = 0.",
+            "(x − 5)(x + 2) = 0, so x = 5 or x = −2."
+          ],
+          "note": "Collect everything on one side so the other is zero, with x² positive. Check: x = 5: 25 = 15 + 10 ✓. x = −2: 4 = −6 + 10 ✓."
+        },
+        {
+          "heading": "Area problem",
+          "bullets": [
+            "Rectangle: length x + 3, width x, area 40.",
+            "x(x + 3) = 40 gives x² + 3x − 40 = 0.",
+            "(x + 8)(x − 5) = 0, so x = 5 (length cannot be negative)."
+          ],
+          "note": "Reject x = −8 because lengths are positive. Check: width 5, length 8, area 40 ✓. Higher: 2x² + 7x + 3 = 0 factorises as (2x + 1)(x + 3) = 0 giving x = −1/2 or x = −3."
+        }
+      ],
+      "practice": [
+        "Solve x² + 7x + 12 = 0.",
+        "Solve x² − 9x = 0.",
+        "Solve x² − 25 = 0."
+      ],
+      "independent": [
+        "Solve x² − 2x − 15 = 0 and x² + 4x = 21.",
+        "Solve x² = 5x − 6.",
+        "A rectangle has length x + 5 and width x. Its area is 24. Find x."
+      ],
+      "exit": [
+        "Solve x² + 3x − 10 = 0.",
+        "Solve x² − 36 = 0."
+      ],
+      "homework": "Solve six quadratics by factorising, checking each answer by substitution.",
+      "send": "SEND/EAL: step-by-step solution frames. Stretch: solve 6x² − 5x − 6 = 0."
+    },
+    {
+      "unit": "Unit 1: Quadratic algebra",
+      "n": 4,
+      "title": "The quadratic formula (Higher)",
+      "duration": 50,
+      "objectives": [
+        "State and use the quadratic formula",
+        "Give answers to a stated degree of accuracy",
+        "Use the discriminant to say how many roots there are"
+      ],
+      "keywords": [
+        {
+          "term": "quadratic formula",
+          "def": "x = (−b ± √(b² − 4ac)) ÷ 2a, which solves ax² + bx + c = 0"
+        },
+        {
+          "term": "discriminant",
+          "def": "the expression b² − 4ac under the square root"
+        },
+        {
+          "term": "coefficient",
+          "def": "the number in front of a letter"
+        }
+      ],
+      "starter": [
+        "Solve x² − 5x + 6 = 0.",
+        "Evaluate b² − 4ac for a = 1, b = 3, c = −5.",
+        "Work out √29 to 2 decimal places."
+      ],
+      "teach": [
+        {
+          "heading": "The formula",
+          "bullets": [
+            "For ax² + bx + c = 0:",
+            "x = (−b ± √(b² − 4ac)) ÷ 2a.",
+            "Use when factorising fails."
+          ],
+          "note": "Write the formula in a box. Say it aloud as a rhythm. Identify a, b and c with their signs first. The ± gives two solutions."
+        },
+        {
+          "heading": "Example 1",
+          "bullets": [
+            "x² + 3x − 5 = 0: a = 1, b = 3, c = −5.",
+            "b² − 4ac = 9 + 20 = 29.",
+            "x = (−3 ± √29) ÷ 2.",
+            "x = 1.19 or x = −4.19 (2 d.p.)."
+          ],
+          "note": "√29 = 5.385. (−3 + 5.385) ÷ 2 = 1.19. (−3 − 5.385) ÷ 2 = −4.19. Take care with −4ac: with c = −5, −4 × 1 × (−5) = +20."
+        },
+        {
+          "heading": "Example 2 with a > 1",
+          "bullets": [
+            "2x² − 5x − 1 = 0: a = 2, b = −5, c = −1.",
+            "b² − 4ac = 25 + 8 = 33.",
+            "x = (5 ± √33) ÷ 4.",
+            "x = 2.69 or x = −0.19 (2 d.p.)."
+          ],
+          "note": "Here −b = −(−5) = +5. Misconceptions: dividing by 2 not 2a, or only the square root by 2a. Use brackets on the calculator for the numerator and denominator."
+        },
+        {
+          "heading": "The discriminant",
+          "bullets": [
+            "b² − 4ac > 0: two roots.",
+            "b² − 4ac = 0: one repeated root.",
+            "b² − 4ac < 0: no real roots."
+          ],
+          "note": "Example: x² + 2x + 5: 4 − 20 = −16 < 0 so no real solutions. The graph does not cross the x-axis. Ask: what does x² − 6x + 9 give? 36 − 36 = 0: one root, x = 3."
+        },
+        {
+          "heading": "Checking",
+          "bullets": [
+            "Substitute answers into the original equation.",
+            "Check x = 1.19 in x² + 3x − 5.",
+            "1.19² + 3 × 1.19 − 5 ≈ 0."
+          ],
+          "note": "1.19² = 1.4161; 3 × 1.19 = 3.57; total 1.4161 + 3.57 − 5 = −0.0139, close to 0 because the solution is rounded. Show how storing the unrounded value on a calculator gives a better check."
+        }
+      ],
+      "practice": [
+        "Solve x² + 6x + 2 = 0 giving 2 decimal places.",
+        "Solve 3x² − 6x + 2 = 0 giving 2 decimal places.",
+        "How many roots does x² + 4x + 7 = 0 have?"
+      ],
+      "independent": [
+        "Solve x² + 5x + 3 = 0 to 2 d.p.",
+        "Solve 2x² + 3x − 7 = 0 to 2 d.p.",
+        "Write a quadratic equation with exactly one root and solve it with the formula."
+      ],
+      "exit": [
+        "State the quadratic formula.",
+        "Use it to solve x² − 4x − 3 = 0 to 2 d.p."
+      ],
+      "homework": "Solve four quadratics using the formula and check with a calculator.",
+      "send": "SEND/EAL: pre-labelled a, b, c boxes. Stretch: show that the sum of the roots of ax² + bx + c = 0 is −b/a."
+    },
+    {
+      "unit": "Unit 2: Pythagoras and trigonometry",
+      "n": 5,
+      "title": "Pythagoras' theorem",
+      "duration": 50,
+      "objectives": [
+        "Identify the hypotenuse of a right-angled triangle",
+        "Calculate the hypotenuse or a shorter side using Pythagoras",
+        "Test whether a triangle is right-angled"
+      ],
+      "keywords": [
+        {
+          "term": "hypotenuse",
+          "def": "the longest side of a right-angled triangle, opposite the right angle"
+        },
+        {
+          "term": "Pythagoras' theorem",
+          "def": "in a right-angled triangle, a² + b² = c² where c is the hypotenuse"
+        },
+        {
+          "term": "square root",
+          "def": "the number that multiplies by itself to give a given number"
+        }
+      ],
+      "starter": [
+        "Bismillah. Work out 6² + 8².",
+        "Work out √144 and √50 to 1 d.p.",
+        "Which side of a right-angled triangle is the longest?"
+      ],
+      "teach": [
+        {
+          "heading": "The theorem",
+          "bullets": [
+            "Right-angled triangle with sides a, b and hypotenuse c.",
+            "a² + b² = c².",
+            "The squares on the two shorter sides add to the square on the hypotenuse."
+          ],
+          "note": "Show a diagram with squares drawn on the sides of a 3-4-5 triangle: 9 + 16 = 25. Label the hypotenuse first every time. Ask: why can the theorem only be used in right-angled triangles?"
+        },
+        {
+          "heading": "Finding the hypotenuse",
+          "bullets": [
+            "Sides 6 cm and 8 cm.",
+            "c² = 6² + 8² = 36 + 64 = 100.",
+            "c = 10 cm.",
+            "Sides 7 and 9: c² = 130, so c = 11.4 (1 d.p.)."
+          ],
+          "note": "Add the squares, then square root. Check the hypotenuse is the longest side: 11.4 > 9 ✓. √130 = 11.40175..., giving 11.4 to 1 d.p."
+        },
+        {
+          "heading": "Finding a shorter side",
+          "bullets": [
+            "Hypotenuse 13 cm, one side 12 cm.",
+            "b² = 13² − 12² = 169 − 144 = 25.",
+            "b = 5 cm.",
+            "Subtract when finding a shorter side."
+          ],
+          "note": "Misconception: always adding. Sense check: the shorter side must be smaller than the hypotenuse. Second example: hypotenuse 15, side 9: 225 − 81 = 144, so the other side is 12."
+        },
+        {
+          "heading": "Pythagorean triples",
+          "bullets": [
+            "3, 4, 5 and 5, 12, 13 are triples.",
+            "Multiples such as 6, 8, 10 also work.",
+            "7, 24, 25: 49 + 576 = 625, a right angle."
+          ],
+          "note": "To test for a right angle, check if a² + b² = c² for the longest side c. Example: 8, 9, 12 gives 64 + 81 = 145 but 12² = 144, so not a right angle (close, but not equal)."
+        },
+        {
+          "heading": "Rounding and accuracy",
+          "bullets": [
+            "Leave answers as surds only if asked.",
+            "Otherwise round to a sensible accuracy.",
+            "Include units."
+          ],
+          "note": "Encourage storing unrounded values on the calculator. Link: Islamic architecture uses right-angled constructions; ancient builders used knotted ropes with 3-4-5 lengths to make right angles."
+        }
+      ],
+      "practice": [
+        "Find the hypotenuse for sides 5 cm and 12 cm.",
+        "Find the missing side: hypotenuse 17 cm, one side 8 cm.",
+        "Is a triangle with sides 9, 12, 15 right-angled?"
+      ],
+      "independent": [
+        "Find c for a = 7, b = 9 to 1 d.p.",
+        "Find the other side: hypotenuse 20 cm, one side 16 cm.",
+        "A rectangular screen is 24 cm by 18 cm. Find the diagonal."
+      ],
+      "exit": [
+        "Find the hypotenuse of a triangle with sides 9 cm and 12 cm.",
+        "Find the missing side: hypotenuse 10 cm, one side 6 cm."
+      ],
+      "homework": "Find three right-angled triangles in your home and use Pythagoras to check them.",
+      "send": "SEND/EAL: diagrams with the hypotenuse already coloured. Stretch: find a Pythagorean triple where the hypotenuse is 41."
+    },
+    {
+      "unit": "Unit 2: Pythagoras and trigonometry",
+      "n": 6,
+      "title": "Pythagoras in context and in 3D",
+      "duration": 50,
+      "objectives": [
+        "Use Pythagoras to find the distance between two points",
+        "Solve problems with isosceles triangles and ladders",
+        "Apply Pythagoras in three dimensions"
+      ],
+      "keywords": [
+        {
+          "term": "coordinates",
+          "def": "a pair of numbers (x, y) that give the position of a point"
+        },
+        {
+          "term": "diagonal",
+          "def": "a line joining two non-adjacent vertices"
+        },
+        {
+          "term": "isosceles triangle",
+          "def": "a triangle with two equal sides"
+        }
+      ],
+      "starter": [
+        "Find the hypotenuse for sides 5 and 12.",
+        "Find the length of the line from (1, 2) to (1, 8).",
+        "Draw a right-angled triangle on a line."
+      ],
+      "teach": [
+        {
+          "heading": "Distance between points",
+          "bullets": [
+            "From (1, 2) to (7, 10).",
+            "Horizontal 6, vertical 8.",
+            "Distance = √(6² + 8²) = √100 = 10."
+          ],
+          "note": "Draw the coordinate grid and make a right-angled triangle by going across and up. The distance is the hypotenuse. Ask: what would we do if the points were (−2, 3) and (4, −1)? Horizontal 6, vertical 4, distance √52 ≈ 7.21."
+        },
+        {
+          "heading": "Isosceles triangles",
+          "bullets": [
+            "Equal sides 13 cm, base 10 cm.",
+            "Drop a perpendicular height: splits the base into 5 and 5.",
+            "h² = 13² − 5² = 144, so h = 12 cm."
+          ],
+          "note": "The perpendicular bisector makes two right-angled triangles. Area is ½ × 10 × 12 = 60 cm². Ask pupils to draw the triangle before calculating."
+        },
+        {
+          "heading": "Ladders and ramps",
+          "bullets": [
+            "A 5 m ladder has its foot 1.5 m from a wall.",
+            "h² = 25 − 2.25 = 22.75.",
+            "h = 4.77 m (2 d.p.)."
+          ],
+          "note": "Make a sketch with the wall, ground and ladder. The ladder is the hypotenuse. Check: 4.77² + 1.5² = 22.75 + 2.25 = 25 ✓. Discuss ladder safety: the foot should be about one quarter of the height from the wall."
+        },
+        {
+          "heading": "Diagonal of a rectangle",
+          "bullets": [
+            "Rectangle 8 cm by 15 cm.",
+            "Diagonal² = 8² + 15² = 289.",
+            "Diagonal = 17 cm."
+          ],
+          "note": "Both 8-15-17 and 5-12-13 are common exam triples. Ask: why must the diagonal of a rectangle always be longer than either side?"
+        },
+        {
+          "heading": "Pythagoras in 3D",
+          "bullets": [
+            "Cuboid 3 cm by 4 cm by 12 cm.",
+            "Base diagonal = √(3² + 4²) = 5.",
+            "Space diagonal = √(5² + 12²) = 13 cm."
+          ],
+          "note": "Use two steps: first find the diagonal across the base, then use it with the height. Alternatively d² = a² + b² + c² = 9 + 16 + 144 = 169. Use a box to model."
+        }
+      ],
+      "practice": [
+        "Find the distance between (0, 0) and (5, 12).",
+        "An isosceles triangle has equal sides 10 cm and base 12 cm. Find its height.",
+        "A ladder 6 m long reaches 5.5 m up a wall. How far from the wall is its foot?"
+      ],
+      "independent": [
+        "Find the distance between (−2, 3) and (4, −1) to 2 d.p.",
+        "A rectangle has diagonal 26 cm and one side 10 cm. Find the other side and the area.",
+        "A box is 6 cm by 8 cm by 24 cm. Find the longest straight line that fits inside."
+      ],
+      "exit": [
+        "Find the distance between (1, 1) and (7, 9).",
+        "A 4 m ladder has its foot 1 m from a wall. How high does it reach (2 d.p.)?"
+      ],
+      "homework": "Find the length of the diagonal of your phone or tablet screen from its width and height and compare with the advertised size.",
+      "send": "SEND/EAL: pre-drawn right-angled triangles on the coordinate grid. Stretch: show that the points (1, 1), (4, 5) and (8, 2) form an isosceles right-angled triangle."
+    },
+    {
+      "unit": "Unit 2: Pythagoras and trigonometry",
+      "n": 7,
+      "title": "Trigonometry: finding sides",
+      "duration": 50,
+      "objectives": [
+        "Label the sides of a right-angled triangle as opposite, adjacent and hypotenuse",
+        "Choose between sin, cos and tan",
+        "Calculate a missing side"
+      ],
+      "keywords": [
+        {
+          "term": "opposite",
+          "def": "the side across from the angle being used"
+        },
+        {
+          "term": "adjacent",
+          "def": "the side next to the angle being used, that is not the hypotenuse"
+        },
+        {
+          "term": "sine, cosine, tangent",
+          "def": "ratios of sides in a right-angled triangle"
+        }
+      ],
+      "starter": [
+        "Find the hypotenuse for sides 6 and 8.",
+        "Solve 12 × x = 9.",
+        "Make x the subject of 4x = 10."
+      ],
+      "teach": [
+        {
+          "heading": "Labelling sides",
+          "bullets": [
+            "Hypotenuse: opposite the right angle.",
+            "Opposite: opposite the chosen angle.",
+            "Adjacent: next to the chosen angle."
+          ],
+          "note": "Opposite and adjacent change with the angle chosen; the hypotenuse never changes. Label three triangles on the board with different angles. Make sure the calculator is in degree mode (DEG)."
+        },
+        {
+          "heading": "SOH CAH TOA",
+          "bullets": [
+            "sin θ = Opposite ÷ Hypotenuse.",
+            "cos θ = Adjacent ÷ Hypotenuse.",
+            "tan θ = Opposite ÷ Adjacent."
+          ],
+          "note": "Use the mnemonic SOH CAH TOA. Decide which two sides are involved (one known, one wanted) and pick the ratio that uses exactly those sides."
+        },
+        {
+          "heading": "Finding the opposite",
+          "bullets": [
+            "Angle 35°, hypotenuse 12 cm.",
+            "sin 35° = O ÷ 12.",
+            "O = 12 × sin 35° = 6.88 cm."
+          ],
+          "note": "Multiply when the unknown is on top. Sense check: the opposite side is shorter than the hypotenuse ✓. Second example: tan 28° = O ÷ 9.5, so O = 9.5 × tan 28° = 5.05 cm."
+        },
+        {
+          "heading": "Finding the adjacent",
+          "bullets": [
+            "Angle 50°, hypotenuse 8 cm.",
+            "cos 50° = A ÷ 8.",
+            "A = 8 × cos 50° = 5.14 cm."
+          ],
+          "note": "The adjacent is also shorter than the hypotenuse. Ask pupils which ratio they would use if they knew the opposite and wanted the adjacent (tan)."
+        },
+        {
+          "heading": "Finding the hypotenuse",
+          "bullets": [
+            "Angle 40°, opposite 7 cm.",
+            "sin 40° = 7 ÷ H.",
+            "H = 7 ÷ sin 40° = 10.89 cm."
+          ],
+          "note": "When the unknown is on the bottom, divide. Common error: multiplying and getting 4.5 cm, which is smaller than the opposite side, an impossible answer. Always check the hypotenuse is the longest side."
+        }
+      ],
+      "practice": [
+        "Find the opposite: angle 35°, hypotenuse 12 cm.",
+        "Find the adjacent: angle 50°, hypotenuse 8 cm.",
+        "Find the opposite: angle 28°, adjacent 9.5 cm."
+      ],
+      "independent": [
+        "Find x if the angle is 32° and the adjacent side is 20 cm, opposite side x.",
+        "Find the hypotenuse: angle 25°, adjacent side 15 cm.",
+        "A ramp rises at 12° and is 5 m long. Find the vertical height."
+      ],
+      "exit": [
+        "Find the opposite side: angle 40°, hypotenuse 10 cm.",
+        "Find the hypotenuse: angle 30°, opposite side 6 cm."
+      ],
+      "homework": "Draw three right-angled triangles with different angles and use trigonometry to calculate a side, then measure to check.",
+      "send": "SEND/EAL: laminated SOH CAH TOA cards and a labelled-triangle template. Stretch: find x given tan 52° = x ÷ 8 and hence the hypotenuse."
+    },
+    {
+      "unit": "Unit 2: Pythagoras and trigonometry",
+      "n": 8,
+      "title": "Trigonometry: finding angles",
+      "duration": 50,
+      "objectives": [
+        "Use inverse trigonometric functions to find angles",
+        "Solve angle of elevation problems",
+        "Choose between Pythagoras and trigonometry"
+      ],
+      "keywords": [
+        {
+          "term": "inverse function",
+          "def": "undoes another function, such as sin⁻¹ undoing sin"
+        },
+        {
+          "term": "angle of elevation",
+          "def": "the angle above the horizontal when looking up at an object"
+        },
+        {
+          "term": "angle of depression",
+          "def": "the angle below the horizontal when looking down"
+        }
+      ],
+      "starter": [
+        "Label the sides: opposite, adjacent, hypotenuse.",
+        "Calculate 8 ÷ 20 as a decimal.",
+        "Find sin 30° on a calculator."
+      ],
+      "teach": [
+        {
+          "heading": "Inverse functions",
+          "bullets": [
+            "If sin θ = 0.5, then θ = sin⁻¹(0.5) = 30°.",
+            "Use the shift or 2nd key.",
+            "Check the calculator is in degree mode."
+          ],
+          "note": "Show how to use sin⁻¹ on the calculator. Check that sin 30° = 0.5 first, then reverse it. Ask pupils to verify their calculator mode with sin 30."
+        },
+        {
+          "heading": "Finding an angle with sin",
+          "bullets": [
+            "Opposite 5, hypotenuse 8.",
+            "sin θ = 5/8 = 0.625.",
+            "θ = sin⁻¹(0.625) = 38.7° (1 d.p.)."
+          ],
+          "note": "Choose the ratio from the two sides known. Check sensible: since 5/8 is greater than 1/2, the angle is greater than 30° ✓."
+        },
+        {
+          "heading": "Finding an angle with cos and tan",
+          "bullets": [
+            "cos θ = 4.5/6 = 0.75, so θ = 41.4°.",
+            "tan θ = 7/9, so θ = 37.9°.",
+            "Write the fraction first."
+          ],
+          "note": "Show both examples fully. Ask pupils how to decide which ratio to use: look at the labels of the two known sides. Remind them not to round before the inverse step."
+        },
+        {
+          "heading": "Angle of elevation",
+          "bullets": [
+            "A mast is 12 m tall.",
+            "From 20 m away: tan θ = 12/20 = 0.6.",
+            "θ = tan⁻¹(0.6) = 31.0° (1 d.p.)."
+          ],
+          "note": "Draw the triangle with the ground horizontal. The angle of elevation is measured from the horizontal at the observer. A sketch is essential. Ask: how does the angle change if the observer moves closer?"
+        },
+        {
+          "heading": "Choosing a method",
+          "bullets": [
+            "Two sides, need a side: Pythagoras.",
+            "Angle involved: trigonometry.",
+            "Write the formula, substitute, solve."
+          ],
+          "note": "Give three mixed problems and ask pupils to choose the method before calculating. Check: if the angle is acute and the answer is more than 90°, an error has occurred."
+        }
+      ],
+      "practice": [
+        "Find θ if sin θ = 0.8 (1 d.p.).",
+        "Find θ: opposite 7, adjacent 9.",
+        "Find θ: adjacent 4.5, hypotenuse 6."
+      ],
+      "independent": [
+        "A ladder 6 m long has its foot 2 m from a wall. Find the angle with the ground.",
+        "A tree is 9 m high. From a point 15 m from its base, find the angle of elevation.",
+        "In a right-angled triangle the sides are 5, 12 and 13. Find the smallest angle."
+      ],
+      "exit": [
+        "Find the angle θ where tan θ = 3/5.",
+        "A 10 m slope rises 3 m. Find the angle of the slope."
+      ],
+      "homework": "Measure a height using a protractor, a tape measure and trigonometry, or complete the worksheet on angles of elevation.",
+      "send": "SEND/EAL: step list for calculator use. Stretch: find angles when two sides are given as surds."
+    },
+    {
+      "unit": "Unit 3: Simultaneous equations, graphs and inequalities",
+      "n": 9,
+      "title": "Simultaneous linear equations",
+      "duration": 50,
+      "objectives": [
+        "Solve simultaneous equations by elimination",
+        "Multiply one or both equations to match coefficients",
+        "Form and solve simultaneous equations from context"
+      ],
+      "keywords": [
+        {
+          "term": "simultaneous equations",
+          "def": "two or more equations that are true at the same time"
+        },
+        {
+          "term": "elimination",
+          "def": "adding or subtracting equations to remove one unknown"
+        },
+        {
+          "term": "coefficient",
+          "def": "the number multiplying a letter"
+        }
+      ],
+      "starter": [
+        "Bismillah. Solve 2x + 3 = 11.",
+        "Solve 4y − 1 = 15.",
+        "Write an expression for the cost of 3 pens at p pence each."
+      ],
+      "teach": [
+        {
+          "heading": "Why elimination?",
+          "bullets": [
+            "Two unknowns need two equations.",
+            "Make the coefficients of one letter equal.",
+            "Add or subtract to remove it."
+          ],
+          "note": "Explain that one equation x + y = 10 has many solutions, but two equations pin down exactly one pair. Rule: same signs subtract, different signs add (SSS: same signs subtract)."
+        },
+        {
+          "heading": "Subtracting",
+          "bullets": [
+            "3x + 2y = 16 and x + 2y = 8.",
+            "Subtract: 2x = 8, so x = 4.",
+            "Substitute: 4 + 2y = 8, so y = 2."
+          ],
+          "note": "Both equations have +2y, the same sign, so subtract. Check in both equations: 12 + 4 = 16 ✓ and 4 + 4 = 8 ✓. Insist on checking in the equation not used for substitution."
+        },
+        {
+          "heading": "Adding",
+          "bullets": [
+            "2x + 3y = 12 and 5x − 3y = 9.",
+            "Add: 7x = 21, so x = 3.",
+            "Substitute: 6 + 3y = 12, so y = 2."
+          ],
+          "note": "The y terms have opposite signs (+3y and −3y), so add. Check: 15 − 6 = 9 ✓. Misconception: subtracting when the signs are different and getting 6y."
+        },
+        {
+          "heading": "Multiplying first",
+          "bullets": [
+            "3x + 2y = 7 and 2x + 5y = 12.",
+            "Multiply: 6x + 4y = 14 and 6x + 15y = 36.",
+            "Subtract: 11y = 22, so y = 2 and x = 1."
+          ],
+          "note": "Multiply the whole equation, not just one term. Alternative route: eliminate y by multiplying by 5 and 2. Check: 3 + 4 = 7 ✓ and 2 + 10 = 12 ✓."
+        },
+        {
+          "heading": "Context",
+          "bullets": [
+            "3 samosas and 2 drinks cost £9.50.",
+            "1 samosa and 2 drinks cost £5.50.",
+            "Subtract: 2s = 4, so a samosa is £2 and a drink £1.75."
+          ],
+          "note": "Define the unknowns first (s and d). Check: 3 × 2 + 2 × 1.75 = 6 + 3.5 = 9.50 ✓ and 2 + 3.50 = 5.50 ✓. Link: honesty and fairness in trade."
+        }
+      ],
+      "practice": [
+        "Solve x + y = 10 and x − y = 4.",
+        "Solve 4x + y = 19 and 2x + y = 11.",
+        "Solve 3x + 2y = 13 and 4x − 5y = 2."
+      ],
+      "independent": [
+        "Solve 5x + 2y = 24 and 3x − 2y = 8.",
+        "Solve 2x + 3y = 8 and 3x + 2y = 7.",
+        "Two adult tickets and three child tickets cost £31. One adult and two child tickets cost £18. Find each price."
+      ],
+      "exit": [
+        "Solve x + y = 9 and x − y = 3.",
+        "Solve 2x + y = 11 and x + y = 7."
+      ],
+      "homework": "Create two simultaneous equation puzzles of your own, solve them and check the answers.",
+      "send": "SEND/EAL: colour-coded method card with SSS rule. Stretch: solve y = 2x − 1 and 3x + 2y = 12 by substitution."
+    },
+    {
+      "unit": "Unit 3: Simultaneous equations, graphs and inequalities",
+      "n": 10,
+      "title": "Straight-line graphs: y = mx + c",
+      "duration": 50,
+      "objectives": [
+        "Find the gradient and y-intercept of a line from its equation",
+        "Calculate gradient from two points",
+        "Find parallel lines"
+      ],
+      "keywords": [
+        {
+          "term": "gradient",
+          "def": "a measure of the steepness of a line: change in y divided by change in x"
+        },
+        {
+          "term": "y-intercept",
+          "def": "the point where the line crosses the y-axis"
+        },
+        {
+          "term": "parallel",
+          "def": "lines with the same gradient that never meet"
+        }
+      ],
+      "starter": [
+        "Plot (1, 3) and (5, 11).",
+        "Work out 8 ÷ 4 and −9 ÷ 3.",
+        "Make y the subject: 2y = 6x + 4."
+      ],
+      "teach": [
+        {
+          "heading": "y = mx + c",
+          "bullets": [
+            "m is the gradient.",
+            "c is the y-intercept.",
+            "y = 2x + 1 has gradient 2 and crosses the y-axis at (0, 1)."
+          ],
+          "note": "Draw y = 2x + 1: table of values x = 0, 1, 2, 3 gives y = 1, 3, 5, 7. Positive gradient goes up to the right. Ask: what does y = −x + 4 look like?"
+        },
+        {
+          "heading": "Calculating gradient",
+          "bullets": [
+            "Gradient = change in y ÷ change in x.",
+            "From (1, 3) to (5, 11): 8 ÷ 4 = 2.",
+            "Draw a right-angled triangle on the line."
+          ],
+          "note": "Take care with direction: subtract in the same order for both coordinates. Example with negative gradient: (2, 9) to (6, 1): change in y = −8, change in x = 4, gradient −2."
+        },
+        {
+          "heading": "Finding the equation",
+          "bullets": [
+            "Line through (1, 3) and (5, 11), gradient 2.",
+            "y = 2x + c; substitute (1, 3): 3 = 2 + c.",
+            "c = 1, so y = 2x + 1."
+          ],
+          "note": "Check with the other point: 2 × 5 + 1 = 11 ✓. Pupils must always check using the second point."
+        },
+        {
+          "heading": "Rearranging to y = mx + c",
+          "bullets": [
+            "2y = 6x + 4 becomes y = 3x + 2.",
+            "3x + y = 7 becomes y = −3x + 7.",
+            "Divide every term."
+          ],
+          "note": "Misconception: 2y = 6x + 4 gives y = 6x + 2 (dividing only one term). Practise reading gradient and intercept from rearranged forms."
+        },
+        {
+          "heading": "Parallel lines",
+          "bullets": [
+            "Parallel lines have equal gradients.",
+            "Parallel to y = 3x − 2 through (2, 9).",
+            "y = 3x + c; 9 = 6 + c; y = 3x + 3."
+          ],
+          "note": "Check: 3 × 2 + 3 = 9 ✓. Which of y = 2x + 5, 4x − 2y = 3 and y = 3 − 2x are parallel? The first two (4x − 2y = 3 gives y = 2x − 1.5)."
+        }
+      ],
+      "practice": [
+        "Find the gradient between (0, 2) and (4, 10).",
+        "Write 2y = 8x − 6 in the form y = mx + c.",
+        "Find the equation of the line with gradient 4 through (0, −3)."
+      ],
+      "independent": [
+        "Find the equation of the line through (2, 7) and (6, 15).",
+        "Find the equation of the line parallel to y = 5x − 1 through (1, 9).",
+        "Which of y = 2x + 5, 4x − 2y = 3 and y = 3 − 2x are parallel?"
+      ],
+      "exit": [
+        "State the gradient and intercept of y = −3x + 4.",
+        "Find the equation of the line through (0, 1) and (3, 7)."
+      ],
+      "homework": "Sketch five lines of the form y = mx + c, labelling their gradient and intercept.",
+      "send": "SEND/EAL: gradient triangles on squared paper. Stretch: find where y = 2x + 1 meets y = −x + 7."
+    },
+    {
+      "unit": "Unit 3: Simultaneous equations, graphs and inequalities",
+      "n": 11,
+      "title": "Equation of a line and perpendicular lines (Higher)",
+      "duration": 50,
+      "objectives": [
+        "Find the equation of a line through two points",
+        "Find the gradient of a perpendicular line",
+        "Find the equation of a perpendicular line through a point"
+      ],
+      "keywords": [
+        {
+          "term": "perpendicular",
+          "def": "meeting at a right angle"
+        },
+        {
+          "term": "negative reciprocal",
+          "def": "flip the fraction and change the sign"
+        },
+        {
+          "term": "linear equation",
+          "def": "an equation whose graph is a straight line"
+        }
+      ],
+      "starter": [
+        "Find the gradient between (1, 7) and (4, −2).",
+        "Write the reciprocal of 2 and of −3.",
+        "Make y the subject of 2y + x = 6."
+      ],
+      "teach": [
+        {
+          "heading": "Two points",
+          "bullets": [
+            "Line through (1, 7) and (4, −2).",
+            "Gradient = (−2 − 7) ÷ (4 − 1) = −3.",
+            "7 = −3(1) + c gives c = 10, so y = −3x + 10."
+          ],
+          "note": "Check with the second point: −3 × 4 + 10 = −2 ✓. A line sketch helps to see a negative gradient going down to the right."
+        },
+        {
+          "heading": "Perpendicular gradients",
+          "bullets": [
+            "Perpendicular lines: m₁ × m₂ = −1.",
+            "The perpendicular to gradient 2 has gradient −1/2.",
+            "Flip and change the sign."
+          ],
+          "note": "Show on squared paper by rotating a gradient triangle 90°: 2 up, 1 across becomes 1 up, 2 back. Examples: 3 becomes −1/3; −4 becomes 1/4; 2/5 becomes −5/2."
+        },
+        {
+          "heading": "Equation of a perpendicular line",
+          "bullets": [
+            "Perpendicular to y = 2x + 3 through (4, 1).",
+            "m = −1/2, so y = −½x + c.",
+            "1 = −2 + c gives c = 3, so y = −½x + 3."
+          ],
+          "note": "Check that the point (4, 1) lies on the line: −½ × 4 + 3 = 1 ✓. The y-intercept of the original is not used."
+        },
+        {
+          "heading": "Testing perpendicular",
+          "bullets": [
+            "Are y = 2x + 1 and 2y + x = 6 perpendicular?",
+            "2y + x = 6 gives y = −½x + 3.",
+            "2 × (−½) = −1, so yes."
+          ],
+          "note": "Always rearrange into y = mx + c first. Ask: are y = 3x and y = −3x perpendicular? (No: the product is −9.) Mixed practice helps distinguish parallel from perpendicular."
+        },
+        {
+          "heading": "Reading a problem",
+          "bullets": [
+            "Find the line through (−2, −1) and (2, 7).",
+            "Gradient = 8 ÷ 4 = 2.",
+            "−1 = −4 + c gives c = 3, so y = 2x + 3."
+          ],
+          "note": "Check with (2, 7): 4 + 3 = 7 ✓. Link to perpendicular: the perpendicular through (−2, −1) has gradient −1/2 and equation y = −½x − 2."
+        }
+      ],
+      "practice": [
+        "Find the equation of the line through (1, 3) and (3, 7).",
+        "State the gradient of a line perpendicular to y = 4x − 1.",
+        "Are y = ½x − 4 and y = −2x + 5 perpendicular?"
+      ],
+      "independent": [
+        "Find the line perpendicular to y = ½x − 4 through (0, 5).",
+        "Find the line perpendicular to y = 3x + 1 through (6, 1).",
+        "Show that the line through (0, 2) and (4, 4) is perpendicular to the line through (1, 5) and (2, 3)."
+      ],
+      "exit": [
+        "Find the gradient of a line perpendicular to y = −5x + 2.",
+        "Find the equation of the line through (0, 4) with gradient 3."
+      ],
+      "homework": "Make a one-page summary of parallel and perpendicular line rules with two worked examples.",
+      "send": "SEND/EAL: step prompts and gradient triangles. Stretch: find the equation of the perpendicular bisector of the line segment from (1, 2) to (5, 6)."
+    },
+    {
+      "unit": "Unit 3: Simultaneous equations, graphs and inequalities",
+      "n": 12,
+      "title": "Solving linear inequalities",
+      "duration": 50,
+      "objectives": [
+        "Solve linear inequalities",
+        "Represent solutions on a number line",
+        "List the integers satisfying an inequality"
+      ],
+      "keywords": [
+        {
+          "term": "inequality",
+          "def": "a statement comparing two values using <, >, ≤ or ≥"
+        },
+        {
+          "term": "integer",
+          "def": "a whole number, positive, negative or zero"
+        },
+        {
+          "term": "solution set",
+          "def": "all the values that make an inequality true"
+        }
+      ],
+      "starter": [
+        "Solve 3x − 4 = 11.",
+        "Write 'x is at least 3' using a symbol.",
+        "Which is bigger, −5 or −2?"
+      ],
+      "teach": [
+        {
+          "heading": "Inequality symbols",
+          "bullets": [
+            "< less than; > greater than.",
+            "≤ less than or equal; ≥ greater than or equal.",
+            "Open circle: not included. Closed circle: included."
+          ],
+          "note": "Practise reading symbols aloud. Number line: x > 5 has an open circle at 5 and an arrow right; x ≤ 5 has a filled circle at 5 and an arrow left."
+        },
+        {
+          "heading": "Solving like equations",
+          "bullets": [
+            "3x − 4 > 11.",
+            "Add 4: 3x > 15.",
+            "Divide by 3: x > 5."
+          ],
+          "note": "Use the same steps as equations. Test a value: x = 6 gives 14 > 11 ✓ while x = 5 gives 11 which is not greater. 2x + 7 ≤ 1 gives 2x ≤ −6, so x ≤ −3."
+        },
+        {
+          "heading": "Negative coefficient",
+          "bullets": [
+            "−2x ≤ 6.",
+            "Divide by −2 and reverse the sign.",
+            "x ≥ −3."
+          ],
+          "note": "Show why: −2 < 3 but 2 > −3 when multiplied by −1. Alternatively add 2x to both sides: 0 ≤ 6 + 2x, so x ≥ −3. Test x = 0: 0 ≤ 6 ✓."
+        },
+        {
+          "heading": "Double inequalities",
+          "bullets": [
+            "−2 ≤ 2x + 1 < 9.",
+            "Subtract 1: −3 ≤ 2x < 8.",
+            "Divide by 2: −1.5 ≤ x < 4."
+          ],
+          "note": "Do the same to all three parts. Integers: −1, 0, 1, 2, 3. Ask why −1.5 is not an integer and why 4 is excluded."
+        },
+        {
+          "heading": "Context",
+          "bullets": [
+            "Tickets cost £8 each; budget is £50.",
+            "8n ≤ 50 gives n ≤ 6.25.",
+            "At most 6 tickets."
+          ],
+          "note": "Interpret the answer in context: only whole tickets can be bought, so round down. Another: if each box holds 12 and we need to hold at least 100 items: 12n ≥ 100 gives n ≥ 8.33, so at least 9 boxes."
+        }
+      ],
+      "practice": [
+        "Solve 5x − 3 ≤ 17.",
+        "Solve 4 − 3x < 19.",
+        "List the integers with −2 < x ≤ 2."
+      ],
+      "independent": [
+        "Solve 7 < 2x + 1 ≤ 15 and list the integers.",
+        "Solve 3(x − 2) ≥ 9 and show it on a number line.",
+        "A taxi costs £3 plus £2 per mile. Yusuf has £25. Write and solve an inequality for the number of miles."
+      ],
+      "exit": [
+        "Solve 3x + 2 > 14.",
+        "Solve −4x ≥ 20."
+      ],
+      "homework": "Write five inequalities, solve them, draw the number lines and test one value for each.",
+      "send": "SEND/EAL: number line templates with open and closed circle examples. Stretch: solve x² < 16."
+    },
+    {
+      "unit": "Unit 4: Probability",
+      "n": 13,
+      "title": "Probability: relative frequency, expected outcomes and sample spaces",
+      "duration": 50,
+      "objectives": [
+        "Calculate theoretical probability and relative frequency",
+        "Estimate how many times an outcome is expected",
+        "Use sample space diagrams to find probabilities"
+      ],
+      "keywords": [
+        {
+          "term": "relative frequency",
+          "def": "the number of times an outcome happens divided by the number of trials"
+        },
+        {
+          "term": "sample space",
+          "def": "the list or table of all possible outcomes"
+        },
+        {
+          "term": "expected number",
+          "def": "probability multiplied by the number of trials"
+        }
+      ],
+      "starter": [
+        "Bismillah. What is the probability of rolling a 4 on a fair dice?",
+        "Write 0.35 as a fraction and a percentage.",
+        "If P(rain) = 0.3, what is P(no rain)?"
+      ],
+      "teach": [
+        {
+          "heading": "Probability basics",
+          "bullets": [
+            "P(event) = favourable outcomes ÷ total outcomes.",
+            "Probabilities are between 0 and 1.",
+            "P(not A) = 1 − P(A).",
+            "The probabilities of all outcomes add to 1."
+          ],
+          "note": "Use a fair dice as the standard example. Ask pupils to place events on a probability line: impossible 0, evens 0.5, certain 1. Misconception: 'the chances are 50:50 because it either happens or does not'."
+        },
+        {
+          "heading": "Relative frequency",
+          "bullets": [
+            "A dice is rolled 60 times; 6 appears 18 times.",
+            "Relative frequency = 18 ÷ 60 = 0.3.",
+            "A fair dice gives 1/6 ≈ 0.167, so this dice may be biased."
+          ],
+          "note": "More trials give a better estimate of the true probability. 60 trials is small. Ask: how could we improve our estimate? (Roll many more times.)"
+        },
+        {
+          "heading": "Expected outcomes",
+          "bullets": [
+            "Expected number = probability × number of trials.",
+            "Using 0.3, expect 0.3 × 200 = 60 sixes in 200 rolls.",
+            "P(rain) = 0.35: about 35 wet days in 100."
+          ],
+          "note": "Expected is an average, not a guarantee. A fair coin tossed 100 times is expected to give 50 heads but 47 or 54 would not be surprising."
+        },
+        {
+          "heading": "Sample space for two dice",
+          "bullets": [
+            "Two dice have 36 equally likely outcomes.",
+            "Sum 7 appears 6 times: P = 6/36 = 1/6.",
+            "Sum of at least 10 appears 6 times: P = 1/6."
+          ],
+          "note": "Draw a 6 by 6 table. Sum 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1). Sum of 10 or more: (4,6), (5,5), (6,4), (5,6), (6,5), (6,6). Product even: 27 out of 36 = 3/4."
+        },
+        {
+          "heading": "Systematic listing",
+          "bullets": [
+            "Two coins: HH, HT, TH, TT.",
+            "P(2 heads) = 1/4.",
+            "P(one head and one tail) = 2/4 = 1/2."
+          ],
+          "note": "HT and TH are different outcomes. Misconception: pupils think the three outcomes 'two heads, two tails, one of each' are equally likely. They are not."
+        }
+      ],
+      "practice": [
+        "A spinner lands on red 18 times in 60 spins. Find the relative frequency of red.",
+        "P(rain on a given day) = 0.35. How many wet days expected in 120 days?",
+        "Find the probability of a total of 8 with two dice."
+      ],
+      "independent": [
+        "A spinner has red 18 times, blue 30 times, green 12 times in 60 spins. Find each relative frequency and check they add to 1.",
+        "Predict how many blues in 150 spins.",
+        "Two spinners each have 1, 2, 3. Draw a sample space and find P(total 4)."
+      ],
+      "exit": [
+        "P(a bus is late) = 0.15. How many late buses expected in 200 journeys?",
+        "Two coins are tossed. Find P(two tails)."
+      ],
+      "homework": "Roll two dice 36 times and compare your relative frequencies with the theoretical probabilities.",
+      "send": "SEND/EAL: pre-drawn sample space grids. Stretch: find P(product is even) using a 6 by 6 table."
+    },
+    {
+      "unit": "Unit 4: Probability",
+      "n": 14,
+      "title": "Tree diagrams: independent events",
+      "duration": 50,
+      "objectives": [
+        "Draw tree diagrams for two or more independent events",
+        "Multiply along branches and add between outcomes",
+        "Find probabilities of 'at least one'"
+      ],
+      "keywords": [
+        {
+          "term": "independent events",
+          "def": "events where one outcome does not affect the other"
+        },
+        {
+          "term": "tree diagram",
+          "def": "a diagram of branches showing all outcomes and their probabilities"
+        },
+        {
+          "term": "with replacement",
+          "def": "an item is put back before the next pick"
+        }
+      ],
+      "starter": [
+        "Work out 0.4 × 0.6.",
+        "A bag has 4 red and 6 blue counters. Find P(red).",
+        "Add: 0.16 + 0.48 + 0.36."
+      ],
+      "teach": [
+        {
+          "heading": "Branches",
+          "bullets": [
+            "Each branch shows an outcome and its probability.",
+            "Branches from one point add to 1.",
+            "A bag has 4 red and 6 blue counters; one is taken and replaced."
+          ],
+          "note": "Draw the first column with R (0.4) and B (0.6), and the second column identical because the counter is replaced. Check each pair adds to 1."
+        },
+        {
+          "heading": "The multiplication rule",
+          "bullets": [
+            "Multiply along the branches for 'and'.",
+            "P(R then R) = 0.4 × 0.4 = 0.16.",
+            "P(B then B) = 0.6 × 0.6 = 0.36."
+          ],
+          "note": "Explain: 0.4 of the time we get red first, and then 0.4 of those times red second. List all four outcomes: RR 0.16, RB 0.24, BR 0.24, BB 0.36. They add to 1 ✓."
+        },
+        {
+          "heading": "The addition rule",
+          "bullets": [
+            "Add probabilities for 'or' between outcomes.",
+            "P(one of each) = 0.24 + 0.24 = 0.48.",
+            "Check: 0.16 + 0.48 + 0.36 = 1."
+          ],
+          "note": "'One of each' can be RB or BR, so add. Always check the total is 1. Ask: why is it wrong to multiply 0.4 × 0.6 only once for this case?"
+        },
+        {
+          "heading": "At least one",
+          "bullets": [
+            "P(at least one red) = 1 − P(no red).",
+            "= 1 − 0.36 = 0.64.",
+            "Quicker than adding three outcomes."
+          ],
+          "note": "Complement method: 'at least one' is everything except 'none'. Verify: 0.16 + 0.48 = 0.64 ✓. This approach is much faster for three or more events."
+        },
+        {
+          "heading": "A context",
+          "bullets": [
+            "P(on time) = 0.8 each day.",
+            "P(late both days) = 0.2 × 0.2 = 0.04.",
+            "P(exactly one late day) = 2 × 0.8 × 0.2 = 0.32."
+          ],
+          "note": "The events are independent if the days are not affected by each other. Then P(at least one late) = 1 − 0.8 × 0.8 = 0.36 ✓ (0.04 + 0.32)."
+        }
+      ],
+      "practice": [
+        "A fair coin is tossed twice. Draw a tree and find P(two heads).",
+        "P(red) = 0.3 on a spinner. It is spun twice. Find P(red, then not red).",
+        "Find P(at least one red) in two spins."
+      ],
+      "independent": [
+        "P(rain) = 0.3 on Monday and Tuesday. Find P(rain both days) and P(no rain either day).",
+        "A spinner has P(red) = 0.3. It is spun twice. Find P(exactly one red).",
+        "A coin is tossed three times. Find P(three heads) and P(at least one head)."
+      ],
+      "exit": [
+        "P(pass) = 0.7 for each of two tests. Find P(pass both).",
+        "Find P(pass exactly one)."
+      ],
+      "homework": "Draw a tree diagram for a real-life situation with two independent events and calculate all four probabilities.",
+      "send": "SEND/EAL: tree diagram templates with branch labels. Stretch: three spins with P(red) = 0.3: find P(at least one red)."
+    },
+    {
+      "unit": "Unit 4: Probability",
+      "n": 15,
+      "title": "Tree diagrams: dependent events",
+      "duration": 50,
+      "objectives": [
+        "Recognise when events are dependent",
+        "Adjust probabilities when items are not replaced",
+        "Solve problems involving two picks without replacement"
+      ],
+      "keywords": [
+        {
+          "term": "dependent events",
+          "def": "events where the first outcome changes the probability of the second"
+        },
+        {
+          "term": "without replacement",
+          "def": "an item is kept out before the next pick"
+        },
+        {
+          "term": "conditional probability",
+          "def": "the probability of an event given that another has happened"
+        }
+      ],
+      "starter": [
+        "A bag has 5 red and 3 blue counters. Find P(blue).",
+        "Work out 5/8 × 4/7.",
+        "Simplify 20/56."
+      ],
+      "teach": [
+        {
+          "heading": "What changes?",
+          "bullets": [
+            "A bag has 5 red and 3 blue counters.",
+            "One is taken and not replaced.",
+            "The second pick is from 7 counters."
+          ],
+          "note": "Contrast with replacement: the second column of the tree changes. If red was taken first, there are 4 red and 3 blue left (4/7 and 3/7)."
+        },
+        {
+          "heading": "Building the tree",
+          "bullets": [
+            "First pick: R 5/8, B 3/8.",
+            "After R: R 4/7, B 3/7.",
+            "After B: R 5/7, B 2/7."
+          ],
+          "note": "Check that each pair of branches adds to 1. Ask pupils to explain each fraction in words. Misconception: keeping 5/8 and 3/8 on the second pick."
+        },
+        {
+          "heading": "Calculating",
+          "bullets": [
+            "P(RR) = 5/8 × 4/7 = 20/56 = 5/14.",
+            "P(BB) = 3/8 × 2/7 = 6/56 = 3/28.",
+            "P(one of each) = 5/8 × 3/7 + 3/8 × 5/7 = 30/56 = 15/28."
+          ],
+          "note": "Check the total: 5/14 + 3/28 + 15/28 = 10/28 + 3/28 + 15/28 = 28/28 ✓. P(at least one red) = 1 − 3/28 = 25/28."
+        },
+        {
+          "heading": "Chocolates",
+          "bullets": [
+            "4 dark and 2 milk chocolates; two eaten.",
+            "P(both dark) = 4/6 × 3/5 = 12/30 = 2/5.",
+            "P(both milk) = 2/6 × 1/5 = 1/15."
+          ],
+          "note": "P(one of each) = 1 − 2/5 − 1/15 = 8/15. Check directly: 4/6 × 2/5 + 2/6 × 4/5 = 8/30 + 8/30 = 16/30 = 8/15 ✓."
+        },
+        {
+          "heading": "Conditional probability (Higher)",
+          "bullets": [
+            "Given the first is red, P(second red) = 4/7.",
+            "This is 'given that' probability.",
+            "Read from the second set of branches."
+          ],
+          "note": "The phrase 'given that' tells us the first event has already happened. Ask: how does P(second red | first red) differ from P(second red)? The first is 4/7; the second, over all cases, is 5/8 (by symmetry)."
+        }
+      ],
+      "practice": [
+        "A bag has 7 counters: 3 green, 4 yellow. Two are taken without replacement. Find P(both green).",
+        "Find P(both yellow).",
+        "Find P(different colours)."
+      ],
+      "independent": [
+        "A box has 6 red and 4 green sweets. Two are taken without replacement. Find P(both red) and P(both green).",
+        "Find P(at least one red).",
+        "A bag has 4 black and 5 white socks. Two are taken without replacement. Find P(same colour)."
+      ],
+      "exit": [
+        "A bag has 3 red and 2 blue. Two are taken without replacement. Find P(both red).",
+        "Find P(one red and one blue)."
+      ],
+      "homework": "Draw a tree diagram for taking two counters without replacement from a bag you choose, and calculate all outcomes.",
+      "send": "SEND/EAL: tree diagram templates with first-pick fractions filled in. Stretch: three counters taken without replacement from 5 red and 3 blue: find P(all red)."
+    },
+    {
+      "unit": "Unit 4: Probability",
+      "n": 16,
+      "title": "Venn diagrams and set notation",
+      "duration": 50,
+      "objectives": [
+        "Use set notation: union, intersection and complement",
+        "Complete Venn diagrams from given information",
+        "Calculate probabilities, including conditional, from Venn diagrams"
+      ],
+      "keywords": [
+        {
+          "term": "union (∪)",
+          "def": "all elements in A, in B, or in both"
+        },
+        {
+          "term": "intersection (∩)",
+          "def": "only the elements in both A and B"
+        },
+        {
+          "term": "complement (A′)",
+          "def": "all elements not in A"
+        }
+      ],
+      "starter": [
+        "List the factors of 12 and of 18.",
+        "Which numbers are in both lists?",
+        "Work out 22 + 18 − 8."
+      ],
+      "teach": [
+        {
+          "heading": "Set notation",
+          "bullets": [
+            "ξ is the universal set.",
+            "A ∪ B: in A or B or both.",
+            "A ∩ B: in both A and B.",
+            "A′: not in A."
+          ],
+          "note": "Draw a Venn diagram with two overlapping circles inside a rectangle. Shade each region as you introduce the notation. Example: A = {2, 4, 6, 8}, B = {3, 6, 9}; A ∩ B = {6}; A ∪ B = {2, 3, 4, 6, 8, 9}."
+        },
+        {
+          "heading": "Filling a Venn diagram",
+          "bullets": [
+            "40 pupils: 22 football, 18 cricket, 8 both.",
+            "Both: 8. Football only: 22 − 8 = 14.",
+            "Cricket only: 18 − 8 = 10."
+          ],
+          "note": "Always start with the overlap, then subtract. Neither = 40 − (14 + 8 + 10) = 40 − 32 = 8. Check that all regions add to 40 ✓."
+        },
+        {
+          "heading": "Reading a Venn diagram",
+          "bullets": [
+            "n(F ∪ C) = 14 + 8 + 10 = 32.",
+            "n(F ∩ C) = 8.",
+            "n(F′) = 40 − 22 = 18."
+          ],
+          "note": "n(A) means the number of elements in A. Ask pupils to describe in words what F′ is (pupils who do not play football) and why n(F′) = 18 (10 cricket-only plus 8 neither)."
+        },
+        {
+          "heading": "Probabilities",
+          "bullets": [
+            "P(F ∩ C) = 8/40 = 1/5.",
+            "P(F ∪ C) = 32/40 = 4/5.",
+            "P(neither) = 8/40 = 1/5."
+          ],
+          "note": "Divide the region count by the total (40). Check complementary: P(F ∪ C) + P(neither) = 4/5 + 1/5 = 1 ✓."
+        },
+        {
+          "heading": "Conditional (Higher)",
+          "bullets": [
+            "P(football | cricket): restrict to the cricket circle.",
+            "= 8 ÷ 18 = 4/9.",
+            "P(cricket | football) = 8 ÷ 22 = 4/11."
+          ],
+          "note": "'Given' restricts the denominator to the given set. The two conditional probabilities are different because the circles have different sizes. Common error: dividing by 40."
+        }
+      ],
+      "practice": [
+        "A = {2, 4, 6, 8} and B = {3, 6, 9}. Find A ∪ B and A ∩ B.",
+        "30 pupils: 15 play A, 12 play B, 5 play both. How many play neither?",
+        "In the same group find P(A and B)."
+      ],
+      "independent": [
+        "50 pupils: 28 study Arabic, 20 study French, 6 study both. Draw and complete a Venn diagram.",
+        "Find P(Arabic only) and P(neither).",
+        "Higher: find P(Arabic | French)."
+      ],
+      "exit": [
+        "Describe A ∩ B′ in words.",
+        "In a Venn diagram, 10 are in A only, 5 in both, 7 in B only, 8 in neither. Find P(A)."
+      ],
+      "homework": "Survey 20 people about two drinks they like and draw a Venn diagram of the results.",
+      "send": "SEND/EAL: Venn templates with regions labelled. Stretch: three-set Venn diagram problem with 60 pupils."
+    }
+  ]
+}

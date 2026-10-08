@@ -1,0 +1,938 @@
+{
+  "subject": "Mathematics",
+  "year": "y5",
+  "board": "National Curriculum (KS2)",
+  "source": "National Curriculum (KS2 Year 5: number and place value to 1,000,000, negative numbers, Roman numerals, addition and subtraction, multiples, factors, primes, squares and cubes); sequencing checked against the school's Drive Maths folder (Primary national curriculum material; no Y5-specific scheme found, so lessons written from the National Curriculum)",
+  "lessons": [
+    {
+      "unit": "Unit 1: Place value to 1,000,000",
+      "n": 1,
+      "title": "Reading and writing numbers to 1,000,000",
+      "duration": 45,
+      "objectives": [
+        "Read and write numbers up to 1,000,000 in numerals and words",
+        "State the value of each digit in a 6-digit number"
+      ],
+      "keywords": [
+        { "term": "ten thousand", "def": "10,000; ten groups of one thousand" },
+        { "term": "hundred thousand", "def": "100,000; ten groups of ten thousand" },
+        { "term": "million", "def": "1,000,000; ten groups of one hundred thousand" },
+        { "term": "place value", "def": "the value a digit has because of its position" }
+      ],
+      "starter": [
+        "Say Bismillah. Write six thousand and forty-two as a number.",
+        "What is the value of the 7 in 7,305?",
+        "What is 9,999 + 1?"
+      ],
+      "teach": [
+        {
+          "heading": "Beyond 9,999",
+          "bullets": [
+            "10 thousands make 1 ten thousand: 10,000.",
+            "10 ten thousands make 1 hundred thousand: 100,000.",
+            "10 hundred thousands make 1 million: 1,000,000."
+          ],
+          "note": "Use a place value chart with HTh, TTh, Th, H, T, O. Each place is ten times the one to its right. Ask: what is the largest 6-digit number? (999,999) What happens when we add 1?"
+        },
+        {
+          "heading": "Reading 372,145",
+          "bullets": [
+            "Read the thousands group first: 372 thousand.",
+            "Then the last three digits: 145.",
+            "Three hundred and seventy-two thousand, one hundred and forty-five."
+          ],
+          "note": "Point out the comma splits the number into two groups of three. Say each group like a 3-digit number, then add the word thousand. Common error: reading it digit by digit."
+        },
+        {
+          "heading": "Value of each digit",
+          "bullets": [
+            "In 372,145 the 3 is worth 300,000.",
+            "The 7 is worth 70,000 and the 2 is worth 2,000.",
+            "The 1 is 100, the 4 is 40 and the 5 is 5."
+          ],
+          "note": "Build with arrow cards. Ask pupils to say 'the 7 is worth seventy thousand, not seven'. Check the difference between digit and value."
+        },
+        {
+          "heading": "Zero holds the place",
+          "bullets": [
+            "805,030 has no tens of thousands and no ones.",
+            "Eight hundred and five thousand and thirty.",
+            "Each zero keeps the other digits in the right place."
+          ],
+          "note": "Compare 805,030, 85,030 and 850,030 on the chart. Typical mistake: writing 'eight hundred and five thousand and thirty' as 80,5030."
+        },
+        {
+          "heading": "One million",
+          "bullets": [
+            "999,999 + 1 = 1,000,000.",
+            "One million has seven digits.",
+            "One million is one thousand thousands."
+          ],
+          "note": "Give a sense of size: a stadium holding 60,000 would need to be filled about seventeen times to reach one million people. Keep it light; the aim is to feel the size."
+        }
+      ],
+      "practice": [
+        "Write 458,206 in words.",
+        "What is the value of the 5 in 451,908?",
+        "Write 'six hundred and three thousand and twelve' as a number."
+      ],
+      "independent": [
+        "Write as numbers: 4 hundred thousands, 2 ten thousands, 7 thousands, 0 hundreds, 3 tens, 9 ones; and seven hundred and eight thousand and five.",
+        "State the value of the digit 4 in each: 40,512; 415,000; 904,321; 12,345.",
+        "Write in words: 560,040; 999,999; 1,000,000.",
+        "I am a 6-digit number. My hundred thousands digit is 3, my ones digit is 0 and all other digits are 5. What number am I?"
+      ],
+      "exit": [
+        "What is the value of the 6 in 264,319?",
+        "Write 'four hundred and two thousand, six hundred and eight' as a number."
+      ],
+      "homework": "Find six 5- or 6-digit numbers in real life (prices, distances, populations) and write each one in words.",
+      "send": "SEND: place value chart with arrow cards and counters. EAL: pre-teach thousand/hundred/million with a labelled chart. Stretch: read and write numbers up to 10,000,000."
+    },
+    {
+      "unit": "Unit 1: Place value to 1,000,000",
+      "n": 2,
+      "title": "Partitioning and powers of 10",
+      "duration": 45,
+      "objectives": [
+        "Partition numbers up to 1,000,000",
+        "Find 10, 100, 1,000, 10,000 and 100,000 more or less than a number"
+      ],
+      "keywords": [
+        { "term": "partition", "def": "split a number into parts, usually by place value" },
+        { "term": "more than", "def": "add an amount to a number" },
+        { "term": "less than", "def": "subtract an amount from a number" }
+      ],
+      "starter": [
+        "Say Bismillah. What is 10 more than 4,995?",
+        "Write 600,000 + 30,000 + 5,000 + 200 + 40 + 7 as a number.",
+        "What is 1,000 less than 8,300?"
+      ],
+      "teach": [
+        {
+          "heading": "Partitioning",
+          "bullets": [
+            "365,482 = 300,000 + 60,000 + 5,000 + 400 + 80 + 2.",
+            "Each part shows the value of one digit.",
+            "Zeros mean there is no part for that place."
+          ],
+          "note": "Use arrow cards that slide together. Ask for a different partition too: 365,482 = 365,000 + 482. Both are correct."
+        },
+        {
+          "heading": "Changing one digit",
+          "bullets": [
+            "10,000 more than 365,482 is 375,482.",
+            "100,000 less than 365,482 is 265,482.",
+            "Only one digit changes, if we do not cross a boundary."
+          ],
+          "note": "Ask pupils which digit changes for each power of 10. Use the place value chart and point to the column."
+        },
+        {
+          "heading": "Crossing a boundary",
+          "bullets": [
+            "1,000 more than 299,500 is 300,500.",
+            "10 less than 70,005 is 69,995.",
+            "More than one digit may change."
+          ],
+          "note": "This is the main misconception: pupils write 209,500 or 69,995 incorrectly. Count on or back on a number line to check."
+        },
+        {
+          "heading": "Times 10, 100, 1,000",
+          "bullets": [
+            "Each digit moves one place left when x 10.",
+            "45 x 10 = 450 and 45 x 100 = 4,500.",
+            "45 x 1,000 = 45,000."
+          ],
+          "note": "Do not say 'add a zero' without explaining digits move. Show 45 on the chart then shift it. Link to the reverse: dividing moves digits right."
+        }
+      ],
+      "practice": [
+        "Partition 704,058 into its place values.",
+        "Write 100,000 more than 468,300 and 1,000 less than 468,300.",
+        "What is 10,000 more than 96,500?"
+      ],
+      "independent": [
+        "Write the number that is 10 more, 100 more and 1,000 more than 399,990.",
+        "Write the number that is 10 less, 100 less and 10,000 less than 120,050.",
+        "Complete: 4,300 x 10 = ___; 4,300 x 100 = ___; 52 x 1,000 = ___.",
+        "Count on in steps of 100,000 from 250,000 for five steps and write each number."
+      ],
+      "exit": [
+        "Write 10,000 less than 53,200.",
+        "What is 1,000 more than 998,500?"
+      ],
+      "homework": "Choose three 6-digit numbers. For each, write the number that is 10 more, 1,000 more and 100,000 less.",
+      "send": "SEND: place value chart and counters to move digits. EAL: sentence stems 'one thousand more than ... is ...'. Stretch: add and subtract 20,000 or 300,000."
+    },
+    {
+      "unit": "Unit 1: Place value to 1,000,000",
+      "n": 3,
+      "title": "Comparing and ordering large numbers",
+      "duration": 45,
+      "objectives": [
+        "Compare numbers up to 1,000,000 using < and >",
+        "Order a set of numbers from smallest to largest"
+      ],
+      "keywords": [
+        { "term": "greater than", "def": "bigger than; shown by the symbol >" },
+        { "term": "less than", "def": "smaller than; shown by the symbol <" },
+        { "term": "ascending", "def": "in order from smallest to largest" },
+        { "term": "descending", "def": "in order from largest to smallest" }
+      ],
+      "starter": [
+        "Say Bismillah. Which is bigger: 7,908 or 7,980?",
+        "Write 50,000 + 600 + 7 as a number.",
+        "Put in order, smallest first: 1,200; 987; 10,000."
+      ],
+      "teach": [
+        {
+          "heading": "Compare from the left",
+          "bullets": [
+            "456,789 and 456,798: start at the left.",
+            "The digits match until the tens: 8 and 9.",
+            "So 456,798 is greater."
+          ],
+          "note": "Write one number above the other with columns lined up. Ask: where do they first differ? Stress that digit count comes first: a 6-digit number beats a 5-digit number."
+        },
+        {
+          "heading": "Using < and >",
+          "bullets": [
+            "The open side faces the bigger number.",
+            "456,789 < 456,798.",
+            "456,798 > 456,789."
+          ],
+          "note": "Use the 'crocodile eats the bigger number' image if useful. Ask pupils to say the sentence aloud in words each time."
+        },
+        {
+          "heading": "Ordering a list",
+          "bullets": [
+            "Order 305,210; 350,120; 305,021; 53,012.",
+            "53,012 has only 5 digits, so it is smallest.",
+            "53,012 < 305,021 < 305,210 < 350,120."
+          ],
+          "note": "Model: sort by number of digits first, then compare hundred thousands, then ten thousands, and so on. Check by reading the finished list in words."
+        },
+        {
+          "heading": "Ascending and descending",
+          "bullets": [
+            "Ascending: smallest to largest.",
+            "Descending: largest to smallest.",
+            "Descending: 350,120; 305,210; 305,021; 53,012."
+          ],
+          "note": "Link ascending with climbing up stairs. Pupils often reverse the order when the question uses these words, so underline the key word."
+        }
+      ],
+      "practice": [
+        "Write < or > : 640,300 ___ 640,030.",
+        "Which is greater: 99,999 or 100,000? Explain how you know.",
+        "Order smallest first: 450,001; 405,100; 450,010; 45,100."
+      ],
+      "independent": [
+        "Write < or > in each: 782,401 ___ 782,410; 91,250 ___ 912,500; 300,000 ___ 299,999.",
+        "Order from largest to smallest: 612,340; 612,304; 621,034; 61,234.",
+        "Write a number that is between 540,000 and 541,000. Write another that is between 540,000 and 540,100.",
+        "Five towns have populations 128,450; 128,045; 182,405; 82,540 and 128,540. Order them ascending."
+      ],
+      "exit": [
+        "Write < or > : 367,200 ___ 367,020.",
+        "Order smallest first: 80,505; 85,005; 80,550."
+      ],
+      "homework": "Write six different 6-digit numbers using the digits 1 to 6 once each, then put them in ascending order.",
+      "send": "SEND: digit cards to line numbers up in columns. EAL: pre-teach greater/less/ascending/descending. Stretch: numbers with 7 digits."
+    },
+    {
+      "unit": "Unit 1: Place value to 1,000,000",
+      "n": 4,
+      "title": "Rounding numbers up to 1,000,000",
+      "duration": 45,
+      "objectives": [
+        "Round any number up to 1,000,000 to the nearest 10, 100, 1,000, 10,000 and 100,000",
+        "Use rounding to estimate in context"
+      ],
+      "keywords": [
+        { "term": "round", "def": "change a number to a simpler one that is close" },
+        { "term": "nearest", "def": "the closest number of the type asked for" },
+        { "term": "approximate", "def": "close to, but not exact" }
+      ],
+      "starter": [
+        "Say Bismillah. Round 48 to the nearest 10.",
+        "Round 650 to the nearest 100.",
+        "Round 3,500 to the nearest 1,000."
+      ],
+      "teach": [
+        {
+          "heading": "The rounding rule",
+          "bullets": [
+            "Look at the digit to the right of the rounding place.",
+            "4 or less: round down.",
+            "5 or more: round up."
+          ],
+          "note": "Use a number line with a halfway marker. Make clear that exactly halfway (for example 350 to the nearest 100) rounds up by convention."
+        },
+        {
+          "heading": "Round 358,946",
+          "bullets": [
+            "Nearest 10: 358,950.",
+            "Nearest 100: 358,900. Nearest 1,000: 359,000.",
+            "Nearest 10,000: 360,000. Nearest 100,000: 400,000."
+          ],
+          "note": "Underline the rounding digit and circle the deciding digit each time. For the tens: ones digit 6 rounds up. For 100,000: ten thousands digit is 5 so round up to 400,000. Ask why zeros are needed."
+        },
+        {
+          "heading": "Watch for 9s",
+          "bullets": [
+            "99,960 to the nearest 100 is 100,000.",
+            "74,500 to the nearest 1,000 is 75,000.",
+            "Carry over like column addition."
+          ],
+          "note": "When the rounding digit is 9 and we round up, it becomes 0 and the digit to the left increases. Use a number line to prove 99,960 is nearer 100,000 than 99,900."
+        },
+        {
+          "heading": "Why round?",
+          "bullets": [
+            "Rounding makes numbers easier to use.",
+            "A crowd of 62,345 is about 62,000.",
+            "Estimates check answers make sense."
+          ],
+          "note": "Ask pupils when exact numbers matter (money in the bank) and when approximations are fine (a news report). Link to sadaqah totals: 'about £15,000 raised'."
+        }
+      ],
+      "practice": [
+        "Round 47,382 to the nearest 10, 100 and 1,000.",
+        "Round 635,418 to the nearest 10,000.",
+        "Round 249,999 to the nearest 100,000."
+      ],
+      "independent": [
+        "Round 83,574 to the nearest 10, 100, 1,000 and 10,000.",
+        "Round 507,260 to the nearest 1,000, 10,000 and 100,000.",
+        "A mosque fundraiser raised £124,650. Write this to the nearest £1,000 and the nearest £10,000.",
+        "Write the smallest and largest whole numbers that round to 70,000 when rounded to the nearest 10,000."
+      ],
+      "exit": [
+        "Round 56,481 to the nearest 1,000.",
+        "Round 349,500 to the nearest 100,000."
+      ],
+      "homework": "Find five large numbers in news or books, and round each to the nearest 1,000 and nearest 10,000.",
+      "send": "SEND: number line with halfway marker, circle the deciding digit. EAL: model 'round to the nearest ...'. Stretch: smallest and largest numbers that round to a given value."
+    },
+    {
+      "unit": "Unit 1: Place value to 1,000,000",
+      "n": 5,
+      "title": "Negative numbers in context",
+      "duration": 45,
+      "objectives": [
+        "Order positive and negative numbers",
+        "Calculate intervals across zero"
+      ],
+      "keywords": [
+        { "term": "negative number", "def": "a number below zero, written with a minus sign" },
+        { "term": "interval", "def": "the distance between two numbers" },
+        { "term": "temperature", "def": "how hot or cold something is, in degrees Celsius" }
+      ],
+      "starter": [
+        "Say Bismillah. Count back from 5 to -5.",
+        "Which is warmer: -3 degrees or 2 degrees?",
+        "What is 12 - 7?"
+      ],
+      "teach": [
+        {
+          "heading": "Numbers below zero",
+          "bullets": [
+            "Negative numbers are less than zero.",
+            "Seen on thermometers, lifts and bank statements.",
+            "-5 is further from zero than -2."
+          ],
+          "note": "Show a vertical thermometer. Ask for other places negatives appear (basement floors, overdrafts, golf scores, depth below sea level)."
+        },
+        {
+          "heading": "Ordering on the number line",
+          "bullets": [
+            "Numbers increase as you move right.",
+            "-6 < -2 < 0 < 3.",
+            "The further below zero, the smaller the number."
+          ],
+          "note": "Misconception: -9 is bigger than -2 because 9 is bigger than 2. Use temperatures: -9 degrees is colder than -2 degrees."
+        },
+        {
+          "heading": "Counting through zero",
+          "bullets": [
+            "5 down 8: 4, 3, 2, 1, 0, -1, -2, -3.",
+            "So 5 - 8 = -3.",
+            "-6 up 9: the answer is 3."
+          ],
+          "note": "Use a number line and jump to zero first, then continue. Model: -6 to 0 is 6, then 3 more makes 9, so we land on 3."
+        },
+        {
+          "heading": "Finding the difference",
+          "bullets": [
+            "From -5 to 8: jump 5 to zero, then 8.",
+            "5 + 8 = 13 degrees difference.",
+            "From 21 down to -3 is 24."
+          ],
+          "note": "Emphasise: add the two distances when crossing zero. Context question: Cairo reaches 21 degrees in the day and a hilltop at night is -3 degrees. What is the difference?"
+        }
+      ],
+      "practice": [
+        "Order from smallest: 4, -7, 0, -2, 6.",
+        "The temperature is -4 degrees and rises by 9 degrees. What is it now?",
+        "What is the difference between -12 degrees and 15 degrees?"
+      ],
+      "independent": [
+        "Put in ascending order: -15, 8, -3, 0, -20, 11.",
+        "Find the missing number: -6 + ? = 4; 3 - ? = -5; ? - 7 = -2.",
+        "A diver is at -35 m, then rises 23 m. Where is the diver now? Then dives 18 m. Where now?",
+        "Five day temperatures were -3, 5, -8, 2, -1 degrees. Find the range (highest minus lowest)."
+      ],
+      "exit": [
+        "Which is smaller: -9 or -3?",
+        "The temperature falls from 4 degrees to -6 degrees. By how much did it fall?"
+      ],
+      "homework": "Record or research the temperatures in three cold places, then order them and find the difference between the coldest and warmest.",
+      "send": "SEND: vertical number line / thermometer. EAL: pre-teach below zero, rise, fall. Stretch: calculate with decimals such as -2.5."
+    },
+    {
+      "unit": "Unit 1: Place value to 1,000,000",
+      "n": 6,
+      "title": "Roman numerals to 1,000",
+      "duration": 45,
+      "objectives": [
+        "Read and write Roman numerals up to 1,000 (M)",
+        "Recognise years written in Roman numerals"
+      ],
+      "keywords": [
+        { "term": "Roman numeral", "def": "a letter used by the Romans to stand for a number" },
+        { "term": "subtractive rule", "def": "a smaller numeral before a larger one is subtracted, as in IV" }
+      ],
+      "starter": [
+        "Say Bismillah. What is 40 + 9?",
+        "What is 500 + 100 + 100?",
+        "What are the Roman numerals for 1 to 10? (Recall from Year 4.)"
+      ],
+      "teach": [
+        {
+          "heading": "The seven symbols",
+          "bullets": [
+            "I = 1, V = 5, X = 10, L = 50.",
+            "C = 100, D = 500, M = 1,000.",
+            "Letters are added when they go largest to smallest."
+          ],
+          "note": "Use a memory phrase if wanted. Link to our numbers: the digits 0 to 9 we use today are Hindu-Arabic numerals, which reached Europe through the Muslim world. Roman numerals have no zero."
+        },
+        {
+          "heading": "Repeating and adding",
+          "bullets": [
+            "XXVI = 10 + 10 + 5 + 1 = 26.",
+            "Never repeat a letter more than three times in a row.",
+            "V, L and D are never repeated."
+          ],
+          "note": "Write 888 = DCCCLXXXVIII (500 + 300 + 80 + 8) as the longest example for numbers below 1,000. Ask why 4 is not IIII."
+        },
+        {
+          "heading": "Subtractive pairs",
+          "bullets": [
+            "IV = 4 and IX = 9.",
+            "XL = 40 and XC = 90.",
+            "CD = 400 and CM = 900."
+          ],
+          "note": "Only I, X and C can go before a larger numeral. Pupils may try VC for 95; the correct form is XCV."
+        },
+        {
+          "heading": "Build 276 and 49",
+          "bullets": [
+            "276 = 200 + 70 + 6 = CCLXXVI.",
+            "49 = 40 + 9 = XLIX.",
+            "Partition by place value, then write each part."
+          ],
+          "note": "Model the partition-first strategy. Then reverse: read MCMXCIV left to right as 1,000 + 900 + 90 + 4 = 1,994."
+        },
+        {
+          "heading": "Years in Roman numerals",
+          "bullets": [
+            "2026 = MMXXVI.",
+            "Check: 2,000 + 20 + 6.",
+            "Seen on clocks, buildings and film credits."
+          ],
+          "note": "Show a clock face. Ask pupils to find Roman numerals around school or home. Check that no letter is repeated four times."
+        }
+      ],
+      "practice": [
+        "Write 34 and 79 as Roman numerals.",
+        "What number is CDXLVII?",
+        "Write 2026 in Roman numerals."
+      ],
+      "independent": [
+        "Write as Roman numerals: 18, 44, 99, 150, 390, 608.",
+        "Write as numbers: XXIX, LXXIV, CCXC, DCCCLXXXVIII, MCMLXXX.",
+        "Order these from smallest to largest: XLV, XXXIX, LIV, XLIV.",
+        "Explain why IL is not a correct way to write 49."
+      ],
+      "exit": [
+        "Write 94 as a Roman numeral.",
+        "What number is CMXC?"
+      ],
+      "homework": "Find three Roman numerals around your home or neighbourhood (a clock, a book, a building) and write the numbers they represent.",
+      "send": "SEND: Roman numeral reference card. EAL: letters for numbers are quick to learn; pre-teach 'subtract'. Stretch: write years such as 1,999 and 2,049 in Roman numerals."
+    },
+    {
+      "unit": "Unit 2: Addition and subtraction",
+      "n": 7,
+      "title": "Column addition with large numbers",
+      "duration": 45,
+      "objectives": [
+        "Add numbers with more than 4 digits using column addition",
+        "Check answers by estimating"
+      ],
+      "keywords": [
+        { "term": "column addition", "def": "adding numbers by lining up place value columns" },
+        { "term": "carry", "def": "move 10 of one place to the next column to the left" },
+        { "term": "sum", "def": "the answer to an addition" }
+      ],
+      "starter": [
+        "Say Bismillah. What is 7 + 6?",
+        "What is 80 + 90?",
+        "Round 4,687 to the nearest 1,000."
+      ],
+      "teach": [
+        {
+          "heading": "Line up the columns",
+          "bullets": [
+            "Write the numbers with matching place values.",
+            "Start with the ones column on the right.",
+            "Carry when a column totals 10 or more."
+          ],
+          "note": "Use squared paper, one digit per box. Messy columns are the main source of error. Remind pupils that carrying is exchanging 10 ones for 1 ten."
+        },
+        {
+          "heading": "45,687 + 38,596",
+          "bullets": [
+            "Ones: 7 + 6 = 13. Write 3, carry 1.",
+            "Tens: 8 + 9 + 1 = 18. Write 8, carry 1.",
+            "Hundreds: 6 + 5 + 1 = 12. Write 2, carry 1."
+          ],
+          "note": "Continue: thousands 5 + 8 + 1 = 14, write 4 and carry 1; ten thousands 4 + 3 + 1 = 8. The answer is 84,283. Say each step aloud as 'seven plus six equals thirteen'."
+        },
+        {
+          "heading": "Check by estimating",
+          "bullets": [
+            "45,687 rounds to 46,000; 38,596 rounds to 39,000.",
+            "46,000 + 39,000 = 85,000.",
+            "84,283 is close to 85,000, so it is sensible."
+          ],
+          "note": "Estimating catches place value slips. Ask what would look wrong (an answer of 8,428 or 840,283)."
+        },
+        {
+          "heading": "Six digits: 126,408 + 59,775",
+          "bullets": [
+            "Different lengths: line up from the right.",
+            "Ones 8 + 5 = 13; tens 0 + 7 + 1 = 8.",
+            "Answer: 186,183."
+          ],
+          "note": "Hundreds 4 + 7 = 11 (write 1, carry 1); thousands 6 + 9 + 1 = 16 (write 6, carry 1); ten thousands 2 + 5 + 1 = 8; hundred thousands 1. Total 186,183. Check: 126,000 + 60,000 is about 186,000."
+        }
+      ],
+      "practice": [
+        "Work out 23,456 + 18,979 and estimate to check.",
+        "Work out 305,200 + 94,865.",
+        "A shop sold 12,450 items in June and 9,875 in July. How many altogether?"
+      ],
+      "independent": [
+        "Calculate: 34,521 + 27,389; 68,907 + 5,094; 214,365 + 178,456.",
+        "Estimate first, then calculate: 52,918 + 36,487.",
+        "Three masjids raised £14,250, £9,875 and £21,600 for charity. How much in total?",
+        "A total of 71,017 is made from 45,632 and another number. Find the other number."
+      ],
+      "exit": [
+        "Calculate 47,865 + 36,478.",
+        "Estimate 52,310 + 28,790 by rounding to the nearest 1,000."
+      ],
+      "homework": "Write five addition calculations with 5- and 6-digit numbers, solve them using column addition and check each with an estimate.",
+      "send": "SEND: squared paper or place value columns, digit cards. EAL: model language 'carry one'. Stretch: add four numbers or decimals."
+    },
+    {
+      "unit": "Unit 2: Addition and subtraction",
+      "n": 8,
+      "title": "Column subtraction with large numbers",
+      "duration": 45,
+      "objectives": [
+        "Subtract numbers with more than 4 digits using column subtraction",
+        "Exchange across zeros accurately"
+      ],
+      "keywords": [
+        { "term": "column subtraction", "def": "subtracting by lining up place value columns" },
+        { "term": "exchange", "def": "swap 1 of one place for 10 of the place to the right" },
+        { "term": "difference", "def": "how much more or less one number is than another" }
+      ],
+      "starter": [
+        "Say Bismillah. What is 15 - 8?",
+        "What is 100 - 37?",
+        "Write 10,000 less than 53,200."
+      ],
+      "teach": [
+        {
+          "heading": "Exchange when needed",
+          "bullets": [
+            "Subtract the bottom digit from the top digit.",
+            "If the top digit is smaller, exchange from the left.",
+            "Exchanging gives 10 more in the column."
+          ],
+          "note": "Use place value counters to show exchanging 1 ten for 10 ones. Insist the bigger number goes on top."
+        },
+        {
+          "heading": "72,405 - 38,689",
+          "bullets": [
+            "Ones: 15 - 9 = 6 after exchanging.",
+            "Tens: 9 - 8 = 1. Hundreds: 13 - 6 = 7.",
+            "Answer: 33,716."
+          ],
+          "note": "Working: 5 < 9, but there are 0 tens, so exchange 1 hundred for 10 tens, then 1 ten for 10 ones. Thousands: 1 - 8 needs another exchange from the ten thousands, giving 11 - 8 = 3, and 6 - 3 = 3 ten thousands. Check using addition: 33,716 + 38,689 = 72,405."
+        },
+        {
+          "heading": "Zeros in the number",
+          "bullets": [
+            "50,000 - 23,764: exchange across four zeros.",
+            "Think 49,999 - 23,764, then add 1.",
+            "Answer: 26,236."
+          ],
+          "note": "Show both methods: exchanging one place at a time, and the shortcut of subtracting from 49,999 and adding 1. Check by addition: 26,236 + 23,764 = 50,000."
+        },
+        {
+          "heading": "Check with the inverse",
+          "bullets": [
+            "Subtraction is the inverse of addition.",
+            "305,120 - 148,975 = 156,145.",
+            "Check: 148,975 + 156,145 = 305,120."
+          ],
+          "note": "Stress that checking with the inverse is a habit, not extra work. Ask pupils to create a fact family: 148,975 + 156,145 = 305,120 and three more."
+        }
+      ],
+      "practice": [
+        "Work out 84,263 - 29,718 and check by adding.",
+        "Work out 400,000 - 156,284.",
+        "A school needs 60,000 stickers and has 38,450. How many more are needed?"
+      ],
+      "independent": [
+        "Calculate: 65,432 - 28,765; 90,001 - 45,678; 512,300 - 249,875.",
+        "Estimate first, then calculate: 73,904 - 38,115.",
+        "A book had 125,400 words. A reader has read 87,865 words. How many words are left?",
+        "Spot the mistake: 7,000 - 2,345 = 5,765. Find the correct answer."
+      ],
+      "exit": [
+        "Calculate 52,300 - 17,845.",
+        "Check by addition that 80,000 - 36,500 = 43,500."
+      ],
+      "homework": "Write five subtraction questions involving zeros, solve them, then check each using the inverse addition.",
+      "send": "SEND: place value counters; highlight the exchanging digit in a colour. EAL: pre-teach exchange/difference. Stretch: subtract decimals or three numbers."
+    },
+    {
+      "unit": "Unit 2: Addition and subtraction",
+      "n": 9,
+      "title": "Estimating, checking and multi-step problems",
+      "duration": 45,
+      "objectives": [
+        "Estimate answers to addition and subtraction problems",
+        "Solve multi-step problems using the correct operations"
+      ],
+      "keywords": [
+        { "term": "estimate", "def": "find an approximate answer by rounding first" },
+        { "term": "inverse operation", "def": "the operation that undoes another, such as + and -" },
+        { "term": "multi-step", "def": "a problem that needs more than one calculation" }
+      ],
+      "starter": [
+        "Say Bismillah. Round 48,612 to the nearest 1,000.",
+        "Calculate 14,250 + 9,875.",
+        "What is 30,000 - 24,125?"
+      ],
+      "teach": [
+        {
+          "heading": "Estimate first",
+          "bullets": [
+            "Round each number to a sensible degree.",
+            "48,612 + 29,387 is about 50,000 + 30,000.",
+            "The estimate is 80,000."
+          ],
+          "note": "The exact answer is 77,999, which is close to 80,000. Ask: do we always round to the nearest 10,000? Discuss choosing a useful rounding, such as 1,000."
+        },
+        {
+          "heading": "Use inverse to check",
+          "bullets": [
+            "48,612 + 29,387 = 77,999.",
+            "Check: 77,999 - 29,387 = 48,612.",
+            "A matching answer proves the calculation."
+          ],
+          "note": "Compare estimating (checks if the answer is sensible) with inverse (checks if it is exactly right). Both are useful."
+        },
+        {
+          "heading": "Bar models for problems",
+          "bullets": [
+            "A library has 12,450 books.",
+            "It buys 3,875 and gives away 2,190.",
+            "12,450 + 3,875 = 16,325; 16,325 - 2,190 = 14,135."
+          ],
+          "note": "Draw a bar model: start amount, then the part added, then the part removed. Ask pupils which words tell us to add or subtract (buys, gives away)."
+        },
+        {
+          "heading": "A fundraiser problem",
+          "bullets": [
+            "Target: £30,000. Week 1: £14,250. Week 2: £9,875.",
+            "Raised: 14,250 + 9,875 = 24,125.",
+            "Still needed: 30,000 - 24,125 = £5,875."
+          ],
+          "note": "Link to sadaqah and generosity in the community. Focus on the structure: understand, plan, calculate, check."
+        }
+      ],
+      "practice": [
+        "Estimate, then calculate 63,480 + 28,915.",
+        "A farm picks 25,600 dates on Monday and 18,750 on Tuesday. 9,400 are sold. How many are left?",
+        "Check 91,000 - 36,250 = 54,750 using an inverse."
+      ],
+      "independent": [
+        "Estimate by rounding to the nearest 1,000, then find the exact answer: 47,305 + 52,698.",
+        "A stadium holds 80,000 fans. 36,450 sit in the east stand and 28,775 in the west. How many seats are in the other stands?",
+        "A charity needs £100,000. It has £47,250 in January and £31,875 in February. How much more is needed?",
+        "Write your own two-step problem using 12,000, 3,500 and 4,200. Solve it."
+      ],
+      "exit": [
+        "Estimate 38,900 + 41,200 by rounding to the nearest 1,000.",
+        "A tank holds 50,000 litres. 18,750 litres are used. How many are left?"
+      ],
+      "homework": "Write and solve two multi-step addition and subtraction problems about a school trip budget or a fundraiser.",
+      "send": "SEND: bar model templates and step-by-step prompt cards. EAL: highlight key words in problems. Stretch: problems with three or more steps."
+    },
+    {
+      "unit": "Unit 3: Multiples, factors and special numbers",
+      "n": 10,
+      "title": "Multiples and factors",
+      "duration": 45,
+      "objectives": [
+        "Identify multiples and factors of a number",
+        "Find common factors and common multiples of two numbers"
+      ],
+      "keywords": [
+        { "term": "multiple", "def": "a number in the times table of another number" },
+        { "term": "factor", "def": "a whole number that divides exactly into another number" },
+        { "term": "common factor", "def": "a factor shared by two numbers" },
+        { "term": "common multiple", "def": "a multiple shared by two numbers" }
+      ],
+      "starter": [
+        "Say Bismillah. What is 6 x 7?",
+        "What is 48 ÷ 8?",
+        "List the multiples of 5 up to 50."
+      ],
+      "teach": [
+        {
+          "heading": "Multiples",
+          "bullets": [
+            "Multiples of 8: 8, 16, 24, 32, 40, 48.",
+            "They come from counting in 8s.",
+            "A multiple is divisible by the number."
+          ],
+          "note": "Use a number grid and shade multiples. Ask: is 56 a multiple of 8? How do you know (8 x 7)?"
+        },
+        {
+          "heading": "Factors in pairs",
+          "bullets": [
+            "Pairs: 1x36, 2x18, 3x12, 4x9, 6x6.",
+            "Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36.",
+            "Factors come in pairs."
+          ],
+          "note": "Work systematically from 1 upwards and stop when the pairs meet. 6 x 6 is listed once. Pupils often miss factors or include non-factors."
+        },
+        {
+          "heading": "Common factors",
+          "bullets": [
+            "Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.",
+            "Common factors of 24 and 36: 1, 2, 3, 4, 6, 12.",
+            "The highest is 12."
+          ],
+          "note": "Write the two factor lists one above the other and circle matches. Introduce a Venn diagram if time allows. The highest common factor is the greatest number in both lists."
+        },
+        {
+          "heading": "Common multiples",
+          "bullets": [
+            "Multiples of 4: 4, 8, 12, 16, 20, 24, 28, 32, 36.",
+            "Multiples of 6: 6, 12, 18, 24, 30, 36.",
+            "Common multiples: 12, 24, 36."
+          ],
+          "note": "The lowest common multiple of 4 and 6 is 12. Real life: two buses leaving every 4 and 6 minutes meet again after 12 minutes."
+        },
+        {
+          "heading": "Quick divisibility checks",
+          "bullets": [
+            "Divisible by 2 if it ends in 0, 2, 4, 6, 8.",
+            "Divisible by 5 if it ends in 0 or 5.",
+            "Divisible by 10 if it ends in 0."
+          ],
+          "note": "Ask: is 3,475 a multiple of 5? Of 2? Of 10? Pupils can justify using the last digit."
+        }
+      ],
+      "practice": [
+        "List the first six multiples of 9.",
+        "List all the factors of 40.",
+        "Find the common factors of 18 and 30."
+      ],
+      "independent": [
+        "List all factors of 28, 45 and 64.",
+        "Find the common factors of 16 and 40. What is the highest?",
+        "Find the first three common multiples of 6 and 9.",
+        "Pens come in packs of 8 and pencils in packs of 12. What is the smallest number of each so that there are the same number of pens and pencils?"
+      ],
+      "exit": [
+        "List all the factors of 30.",
+        "What is the lowest common multiple of 5 and 10?"
+      ],
+      "homework": "Choose any three numbers between 20 and 60. List all factors of each and find any common factors.",
+      "send": "SEND: multiplication grid, arrays with counters to find factor pairs. EAL: pre-teach factor/multiple with examples. Stretch: three numbers' common factors."
+    },
+    {
+      "unit": "Unit 3: Multiples, factors and special numbers",
+      "n": 11,
+      "title": "Prime and composite numbers",
+      "duration": 45,
+      "objectives": [
+        "Recall prime numbers up to 19 and identify primes up to 100",
+        "Explain why a number is composite"
+      ],
+      "keywords": [
+        { "term": "prime number", "def": "a number with exactly two factors, 1 and itself" },
+        { "term": "composite number", "def": "a number with more than two factors" },
+        { "term": "sieve", "def": "a method of crossing out numbers to leave only the primes" }
+      ],
+      "starter": [
+        "Say Bismillah. List the factors of 12.",
+        "Is 35 a multiple of 5? How do you know?",
+        "List the factors of 13."
+      ],
+      "teach": [
+        {
+          "heading": "What is a prime?",
+          "bullets": [
+            "A prime has exactly two factors: 1 and itself.",
+            "13 has factors 1 and 13, so it is prime.",
+            "12 has six factors, so it is composite."
+          ],
+          "note": "Ask pupils to sort numbers 2 to 20 into prime and composite using factor lists. Make clear that 1 has only one factor so it is not prime."
+        },
+        {
+          "heading": "Primes to 19",
+          "bullets": [
+            "2, 3, 5, 7, 11, 13, 17, 19.",
+            "2 is the only even prime number.",
+            "1 is neither prime nor composite."
+          ],
+          "note": "Common misconceptions: that 1 is prime, or that all odd numbers are prime (9 and 15 are not). Learn this list by heart."
+        },
+        {
+          "heading": "Sieve to 100",
+          "bullets": [
+            "Cross out 1. Circle 2, cross out its multiples.",
+            "Circle 3, cross out its multiples. Repeat for 5 and 7.",
+            "There are 25 primes below 100."
+          ],
+          "note": "Use a 100 square. Primes up to 100: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97. This method is attributed to Eratosthenes; you may mention that."
+        },
+        {
+          "heading": "Testing a number",
+          "bullets": [
+            "Is 51 prime? 51 = 3 x 17, so no.",
+            "Is 91 prime? 91 = 7 x 13, so no.",
+            "Is 87 prime? 87 = 3 x 29, so no."
+          ],
+          "note": "Odd numbers that look prime catch many pupils. Tell them: to test, try dividing by 2, 3, 5, 7. If none divide, the number below 100 is prime."
+        }
+      ],
+      "practice": [
+        "List the prime numbers between 20 and 40.",
+        "Is 57 prime? Show why or why not.",
+        "Write two prime numbers that add to make 20."
+      ],
+      "independent": [
+        "Circle the primes: 21, 23, 27, 29, 33, 37, 39, 41.",
+        "Explain why 2 is the only even prime number.",
+        "Find a prime between 90 and 100, and a composite number between 90 and 100 that is odd.",
+        "Find two prime numbers with a difference of 2 between 40 and 80. These are called twin primes."
+      ],
+      "exit": [
+        "Write the prime numbers up to 20.",
+        "Is 51 prime? Explain."
+      ],
+      "homework": "Make a poster listing the 25 prime numbers below 100 and write one sentence about how to test whether a number is prime.",
+      "send": "SEND: 100 square and counters for the sieve. EAL: pre-teach prime/composite. Stretch: find all primes up to 150."
+    },
+    {
+      "unit": "Unit 3: Multiples, factors and special numbers",
+      "n": 12,
+      "title": "Square and cube numbers",
+      "duration": 45,
+      "objectives": [
+        "Recognise and calculate square and cube numbers",
+        "Use the notation ² and ³"
+      ],
+      "keywords": [
+        { "term": "square number", "def": "the result of multiplying a whole number by itself" },
+        { "term": "cube number", "def": "the result of multiplying a whole number by itself, then by itself again" },
+        { "term": "squared (²)", "def": "multiplied by itself" },
+        { "term": "cubed (³)", "def": "multiplied by itself three times" }
+      ],
+      "starter": [
+        "Say Bismillah. What is 7 x 7?",
+        "What is 4 x 4 x 4?",
+        "List the first five prime numbers."
+      ],
+      "teach": [
+        {
+          "heading": "Square numbers",
+          "bullets": [
+            "4² = 4 x 4 = 16.",
+            "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144.",
+            "They make square arrays of dots."
+          ],
+          "note": "Build squares with counters or tiles and show 3 x 3 = 9, 4 x 4 = 16. Ask: how do the differences between squares grow? (3, 5, 7, 9...)"
+        },
+        {
+          "heading": "Notation matters",
+          "bullets": [
+            "3² means 3 x 3 = 9.",
+            "It does not mean 3 x 2 = 6.",
+            "10² = 100 and 12² = 144."
+          ],
+          "note": "The most common error is multiplying by the index. Write several on the board and ask pupils to say 'three squared equals three times three'."
+        },
+        {
+          "heading": "Cube numbers",
+          "bullets": [
+            "2³ = 2 x 2 x 2 = 8.",
+            "3³ = 27 and 4³ = 64.",
+            "5³ = 125 and 10³ = 1,000."
+          ],
+          "note": "Build 2 x 2 x 2 with cubes. Remind pupils that cubed means three factors, not 3 times the number. Learn cubes to 5³ and 10³."
+        },
+        {
+          "heading": "Using squares and cubes",
+          "bullets": [
+            "3² + 4² = 9 + 16 = 25.",
+            "5² - 2³ = 25 - 8 = 17.",
+            "Do the powers first."
+          ],
+          "note": "Notice that 25 is also 5².  Order of calculation: powers before add or subtract."
+        }
+      ],
+      "practice": [
+        "Work out 8² and 6³.",
+        "Is 50 a square number? Is 64 a square number and a cube number?",
+        "Work out 2² + 3³."
+      ],
+      "independent": [
+        "Write the first ten square numbers.",
+        "Work out: 9²; 11²; 4³; 1³; 10³.",
+        "Calculate: 5² + 6²; 7² - 3³; 2³ x 3².",
+        "Find a number that is both a square number and a cube number, greater than 1 and less than 100."
+      ],
+      "exit": [
+        "Work out 7² and 3³.",
+        "Calculate 4² + 2³."
+      ],
+      "homework": "Draw dot patterns for the first six square numbers and write what you notice about the differences between them.",
+      "send": "SEND: counters and linking cubes to build squares and cubes. EAL: practise saying 'squared' and 'cubed'. Stretch: find the next number that is both square and cube after 64."
+    }
+  ]
+}

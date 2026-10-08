@@ -1,0 +1,1489 @@
+{
+  "subject": "Mathematics",
+  "year": "y9",
+  "board": "Edexcel-aligned KS3 (bridge to GCSE)",
+  "source": "Drive: Maths folder (SoW Maths 'year 8_9 maths' Year 9 scheme of work; Year 8 Maths LTP for prior learning; Secondary National Curriculum Mathematics); Edexcel GCSE (1MA1) specification for bridging content",
+  "lessons": [
+    {
+      "unit": "Unit 1: Number skills",
+      "n": 1,
+      "title": "Place value, decimal places and significant figures",
+      "duration": 50,
+      "objectives": [
+        "Round numbers to a given number of decimal places",
+        "Round numbers to a given number of significant figures",
+        "Choose sensible rounding in context"
+      ],
+      "keywords": [
+        {
+          "term": "decimal place",
+          "def": "the position of a digit after the decimal point"
+        },
+        {
+          "term": "significant figure",
+          "def": "a digit that counts from the first non-zero digit onwards"
+        },
+        {
+          "term": "round",
+          "def": "replace a number by a nearby simpler number"
+        }
+      ],
+      "starter": [
+        "Bismillah. Write the value of the digit 7 in 4.0728.",
+        "Round 3,482 to the nearest 100.",
+        "Work out 3.2 × 100 and 3.2 ÷ 10."
+      ],
+      "teach": [
+        {
+          "heading": "Place value with decimals",
+          "bullets": [
+            "Columns after the point: tenths, hundredths, thousandths.",
+            "In 4.0728 the 7 is worth 7 hundredths.",
+            "Zero holds a place; it is not empty."
+          ],
+          "note": "Draw a place value grid on the board and fill in 4.0728. Ask: what is the value of the 2? (2 thousandths, 0.002). Misconception: pupils read 0.305 as 'point three hundred and five'. Practise reading digit by digit."
+        },
+        {
+          "heading": "Rounding to decimal places",
+          "bullets": [
+            "Count the decimal places you must keep.",
+            "Look at the next digit: 5 or more, round up.",
+            "3.846 = 3.8 (1 d.p.) and 3.85 (2 d.p.).",
+            "7.396 to 2 d.p. is 7.40, keeping the zero."
+          ],
+          "note": "Draw a line after the last digit you keep and circle the decider digit. Stress that 7.396 to 2 d.p. is 7.40 not 7.4, because the zero shows the accuracy. Ask: why is 7.396 to 2 d.p. equal to 7.40? The decider digit 6 rounds the 9 up to 10, which carries into the tenths."
+        },
+        {
+          "heading": "Significant figures",
+          "bullets": [
+            "The first significant figure is the first non-zero digit.",
+            "45,872 to 2 s.f. = 46,000.",
+            "0.0030582 to 2 s.f. = 0.0031.",
+            "6.0472 to 3 s.f. = 6.05."
+          ],
+          "note": "Leading zeros are never significant, but zeros between digits are (6.0472 has 5 s.f.). After rounding a large number, fill with zeros to keep the place value: 46,000 not 46. Ask pupils to say the first s.f. of 0.0030582 aloud: it is the 3."
+        },
+        {
+          "heading": "Rounding in context",
+          "bullets": [
+            "23 people, 4 per minibus: 5.75 means 6 minibuses.",
+            "Sometimes always round up, sometimes down.",
+            "Money is usually rounded to 2 decimal places."
+          ],
+          "note": "Context overrides the rounding rule. Ask: if a plank 1.85 m is needed and planks are sold in 0.5 m lengths, how many? (4, as 3 planks give only 1.5 m). Another: £13.456 as money is £13.46."
+        }
+      ],
+      "practice": [
+        "Round 8.2749 to 2 decimal places.",
+        "Round 0.03582 to 2 significant figures.",
+        "Round 52,386 to 3 significant figures."
+      ],
+      "independent": [
+        "Round 7.0486 to 1, 2 and 3 decimal places.",
+        "Round 3,586,214 to 1, 2 and 3 significant figures.",
+        "A box holds 12 eggs. A caterer needs 150 eggs. How many boxes must be bought? Explain your rounding."
+      ],
+      "exit": [
+        "Round 0.07354 to 2 significant figures.",
+        "Round 25,968 to 3 significant figures."
+      ],
+      "homework": "Round ten numbers from a newspaper or food label to 1 decimal place and 2 significant figures.",
+      "send": "SEND/EAL: place value grid and a rounding line to mark the decider digit. Stretch: round 0.0996 to 2 s.f. and explain the result."
+    },
+    {
+      "unit": "Unit 1: Number skills",
+      "n": 2,
+      "title": "Estimation and error intervals",
+      "duration": 50,
+      "objectives": [
+        "Estimate calculations by rounding to 1 significant figure",
+        "Decide whether an estimate is an over- or under-estimate",
+        "Write error intervals using inequality notation"
+      ],
+      "keywords": [
+        {
+          "term": "estimate",
+          "def": "an approximate answer found using simpler numbers"
+        },
+        {
+          "term": "error interval",
+          "def": "the range of values a rounded number could have been"
+        },
+        {
+          "term": "bound",
+          "def": "the smallest or largest value that rounds to a given number"
+        }
+      ],
+      "starter": [
+        "Round 48.2 to 1 significant figure.",
+        "Round 6.9 to the nearest whole number.",
+        "Which is greater: 3.45 or 3.5? Explain."
+      ],
+      "teach": [
+        {
+          "heading": "Estimating by rounding",
+          "bullets": [
+            "Round every number to 1 significant figure.",
+            "48.2 × 6.9 is about 50 × 7 = 350.",
+            "The exact answer is 332.58, close to 350."
+          ],
+          "note": "Write the exact value after the estimate so pupils see the estimate is sensible. Ask: why would 3,500 or 35 be wrong? Estimates catch decimal point slips on calculators."
+        },
+        {
+          "heading": "Estimating with division",
+          "bullets": [
+            "593 ÷ 29.7 is about 600 ÷ 30 = 20.",
+            "Choose numbers that divide easily.",
+            "Never round a denominator to 0."
+          ],
+          "note": "The exact value is 19.97 to 2 d.p. Ask: 0.48 rounds to 0.5; what is 312 × 0.48 about? (300 × 0.5 = 150, exact 149.76). Misconception: rounding 0.48 to 0 giving an estimate of 0."
+        },
+        {
+          "heading": "Over or under?",
+          "bullets": [
+            "Rounding both numbers up makes a product an over-estimate.",
+            "Rounding the divisor up makes a quotient smaller.",
+            "Think about each number separately."
+          ],
+          "note": "For 48.2 × 6.9 we rounded 48.2 up and 6.9 up, so the estimate 350 is bigger than 332.58: an over-estimate. For 593 ÷ 29.7 the top rounds up (bigger) and the bottom rounds up (smaller answer), so the effects compete. Give pupils time to reason it out."
+        },
+        {
+          "heading": "Error intervals",
+          "bullets": [
+            "x = 3.4 to 1 d.p. means 3.35 ≤ x < 3.45.",
+            "Half a unit below, half a unit above.",
+            "Lower bound is included; upper bound is not."
+          ],
+          "note": "Use a number line from 3.3 to 3.5 and mark the midpoint at 3.4. Anything from 3.35 up to but not including 3.45 rounds to 3.4. The ≤ and < symbols matter: 3.45 would round up to 3.5."
+        },
+        {
+          "heading": "More error intervals",
+          "bullets": [
+            "12 cm to the nearest cm: 11.5 ≤ l < 12.5.",
+            "250 g to the nearest 10 g: 245 ≤ m < 255.",
+            "Half of the rounding unit each way."
+          ],
+          "note": "Ask: what is the rounding unit for each? (1 cm, 10 g). Half is 0.5 and 5. Check the pupils write the inequality in the order lower ≤ x < upper."
+        }
+      ],
+      "practice": [
+        "Estimate 7.8 × 31.2 by rounding to 1 s.f.",
+        "Write the error interval for n = 60 to the nearest 10.",
+        "A length is 4.6 m to 1 d.p. Write the error interval."
+      ],
+      "independent": [
+        "Estimate 312 × 0.48 and 3.9 × 21.2 ÷ 0.52. Compare with a calculator.",
+        "Write error intervals for 8 cm (nearest cm), 0.7 (1 d.p.) and 3,500 (nearest 100).",
+        "A crowd is reported as 12,000 to the nearest thousand. Could it be 12,499? 11,400?"
+      ],
+      "exit": [
+        "Estimate 41.3 × 4.8.",
+        "Write the error interval for x = 5.2 to 1 decimal place."
+      ],
+      "homework": "Estimate the cost of a weekly shop of ten items using rounded prices, then compare with the exact total.",
+      "send": "SEND/EAL: sentence frames 'The lower bound is ... the upper bound is ...'. Stretch: find the largest possible value of a + b if both are 5.4 to 1 d.p."
+    },
+    {
+      "unit": "Unit 1: Number skills",
+      "n": 3,
+      "title": "Factors, multiples, primes, HCF and LCM",
+      "duration": 50,
+      "objectives": [
+        "Write a number as a product of prime factors",
+        "Find the highest common factor (HCF) and lowest common multiple (LCM)",
+        "Solve real-life problems using HCF and LCM"
+      ],
+      "keywords": [
+        {
+          "term": "prime number",
+          "def": "a number with exactly two factors, 1 and itself"
+        },
+        {
+          "term": "HCF",
+          "def": "the largest number that divides into each of the numbers"
+        },
+        {
+          "term": "LCM",
+          "def": "the smallest number that is a multiple of each of the numbers"
+        },
+        {
+          "term": "prime factorisation",
+          "def": "writing a number as a product of prime numbers"
+        }
+      ],
+      "starter": [
+        "Bismillah. List all the factors of 36.",
+        "Write the first five multiples of 8.",
+        "Is 51 prime? Explain."
+      ],
+      "teach": [
+        {
+          "heading": "Primes",
+          "bullets": [
+            "A prime has exactly two factors.",
+            "2 is the only even prime.",
+            "1 is not prime.",
+            "51 = 3 × 17, so it is not prime."
+          ],
+          "note": "Ask for the primes up to 30: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29. Test divisibility: digit sum 5 + 1 = 6 is divisible by 3, so 51 is too. Misconception: pupils say 1 is prime."
+        },
+        {
+          "heading": "Prime factor trees",
+          "bullets": [
+            "Break a number into a product of primes.",
+            "84 = 2² × 3 × 7.",
+            "90 = 2 × 3² × 5."
+          ],
+          "note": "Build the trees: 84 splits to 4 × 21 then 2 × 2 and 3 × 7. 90 splits to 9 × 10 then 3 × 3 and 2 × 5. Check by multiplying back: 4 × 3 × 7 = 84. Use index notation for repeated primes."
+        },
+        {
+          "heading": "HCF from prime factors",
+          "bullets": [
+            "List the primes of each number.",
+            "HCF multiplies the common primes.",
+            "84 and 90 share 2 and 3, so HCF = 6."
+          ],
+          "note": "Use a Venn diagram: 84 only has 2 and 7, 90 only has 3 and 5, and the overlap has 2 and 3. HCF = product of the overlap = 6. Check: 84 ÷ 6 = 14 and 90 ÷ 6 = 15."
+        },
+        {
+          "heading": "LCM from prime factors",
+          "bullets": [
+            "Multiply every prime in the Venn diagram once.",
+            "LCM of 84 and 90 = 2² × 3² × 5 × 7.",
+            "Check: 84 × 90 ÷ HCF = 7560 ÷ 6 = 1260."
+          ],
+          "note": "Multiply every number in the Venn diagram, counting the overlap only once: 2 × 3 × 2 × 7 × 3 × 5 = 1260. Using indices, this is the highest power of each prime. Keep the check HCF × LCM = 6 × 1260 = 7,560 = 84 × 90."
+        },
+        {
+          "heading": "Problem solving",
+          "bullets": [
+            "Buses run every 12 and 18 minutes.",
+            "They leave together at 8:00 am.",
+            "Next together after LCM = 36 minutes, at 8:36 am."
+          ],
+          "note": "Decide HCF or LCM: LCM is for 'when will they next coincide', HCF is for 'largest size of equal groups'. Example for HCF: 24 red and 36 blue counters shared into identical groups: HCF 12, so 12 groups each with 2 red and 3 blue."
+        }
+      ],
+      "practice": [
+        "Write 60 as a product of prime factors.",
+        "Find the HCF of 24 and 36.",
+        "Find the LCM of 6 and 8."
+      ],
+      "independent": [
+        "Write 60 and 75 as products of primes, then find their HCF and LCM.",
+        "Two lights flash every 15 s and 20 s. When do they next flash together?",
+        "Check whether 91 and 97 are prime."
+      ],
+      "exit": [
+        "Write 72 as a product of prime factors.",
+        "Find the HCF and LCM of 12 and 18."
+      ],
+      "homework": "Find the prime factorisations of 120, 150 and 180 and their HCF.",
+      "send": "SEND/EAL: colour-coded factor trees. Stretch: the HCF of two numbers is 6 and the LCM is 72; find two possible numbers."
+    },
+    {
+      "unit": "Unit 1: Number skills",
+      "n": 4,
+      "title": "Powers, roots and the index laws",
+      "duration": 50,
+      "objectives": [
+        "Evaluate powers and roots including negative and zero indices",
+        "Use the laws of indices for multiplication, division and powers",
+        "Simplify algebraic powers"
+      ],
+      "keywords": [
+        {
+          "term": "index",
+          "def": "the small raised number showing how many times to multiply the base"
+        },
+        {
+          "term": "base",
+          "def": "the number or letter that is being multiplied by itself"
+        },
+        {
+          "term": "reciprocal",
+          "def": "1 divided by the number"
+        }
+      ],
+      "starter": [
+        "Work out 2³ and 3².",
+        "What is √49? What is ∛27?",
+        "Write 5 × 5 × 5 × 5 using a power."
+      ],
+      "teach": [
+        {
+          "heading": "Powers and roots",
+          "bullets": [
+            "2³ = 2 × 2 × 2 = 8, not 6.",
+            "√49 = 7 and ∛27 = 3.",
+            "Roots undo powers."
+          ],
+          "note": "Misconception: 2³ = 6. Say it as '2 multiplied by itself 3 times'. Show square numbers to 15² = 225 and cube numbers 1, 8, 27, 64, 125. Check pupils know 10³ = 1,000."
+        },
+        {
+          "heading": "Multiplying and dividing powers",
+          "bullets": [
+            "aᵐ × aⁿ = aᵐ⁺ⁿ.",
+            "3⁴ × 3² = 3⁶ = 729.",
+            "aᵐ ÷ aⁿ = aᵐ⁻ⁿ.",
+            "5⁷ ÷ 5⁴ = 5³ = 125."
+          ],
+          "note": "Expand to show why: 3⁴ × 3² = (3×3×3×3) × (3×3) = 3⁶. The rule only works when the bases are the same. Ask: can we simplify 2³ × 3²? (No, but it equals 8 × 9 = 72.)"
+        },
+        {
+          "heading": "Power of a power",
+          "bullets": [
+            "(aᵐ)ⁿ = aᵐⁿ.",
+            "(2³)² = 2⁶ = 64.",
+            "Multiply the indices."
+          ],
+          "note": "Show (2³)² = 2³ × 2³ = 2⁶. Misconception: adding the indices instead of multiplying. Link back: 2⁶ = 64 and 8² = 64."
+        },
+        {
+          "heading": "Zero and negative indices",
+          "bullets": [
+            "a⁰ = 1 for any non-zero a.",
+            "a⁻¹ = 1/a.",
+            "2⁻³ = 1/2³ = 1/8.",
+            "10⁻² = 1/100 = 0.01."
+          ],
+          "note": "Pattern: 10³ = 1000, 10² = 100, 10¹ = 10, 10⁰ = 1, 10⁻¹ = 0.1. Each step divides by 10. A negative index means 'reciprocal', not a negative number. Ask: is 2⁻³ negative? (No, it is 0.125.)"
+        },
+        {
+          "heading": "Algebraic powers",
+          "bullets": [
+            "x³ × x⁴ = x⁷.",
+            "6x⁵ ÷ 2x² = 3x³.",
+            "Divide the numbers; subtract the indices."
+          ],
+          "note": "Coefficients and letters are handled separately: 6 ÷ 2 = 3 and x⁵ ÷ x² = x³. For (2x³)² = 4x⁶, square the 2 as well as the index. Common slip: writing 2x⁶."
+        }
+      ],
+      "practice": [
+        "Evaluate 4³ and 2⁵.",
+        "Simplify 2⁸ ÷ 2⁵.",
+        "Simplify y² × y⁵."
+      ],
+      "independent": [
+        "Evaluate 10⁻², 5⁰ and 3⁻².",
+        "Simplify (3²)³ and 7⁶ ÷ 7⁴.",
+        "Simplify 12a⁶ ÷ 4a² and (2x³)²."
+      ],
+      "exit": [
+        "Simplify 5⁴ × 5³ as a single power.",
+        "Write 2⁻⁴ as a fraction."
+      ],
+      "homework": "Create a one-page index laws poster with a worked example for each law.",
+      "send": "SEND/EAL: expanded-form cards (2³ = 2 × 2 × 2). Stretch: solve 2ˣ = 1/32."
+    },
+    {
+      "unit": "Unit 2: Fractions and percentages",
+      "n": 5,
+      "title": "Adding and subtracting fractions and mixed numbers",
+      "duration": 50,
+      "objectives": [
+        "Find a common denominator to add and subtract fractions",
+        "Add and subtract mixed numbers",
+        "Solve word problems with fractions"
+      ],
+      "keywords": [
+        {
+          "term": "denominator",
+          "def": "the bottom number of a fraction; it shows the size of each part"
+        },
+        {
+          "term": "common denominator",
+          "def": "a shared multiple of the denominators of two fractions"
+        },
+        {
+          "term": "mixed number",
+          "def": "a whole number and a fraction together, such as 2 ½"
+        }
+      ],
+      "starter": [
+        "Bismillah. Simplify 18/24.",
+        "Write 7/4 as a mixed number.",
+        "Find the LCM of 3 and 4."
+      ],
+      "teach": [
+        {
+          "heading": "Equivalent fractions",
+          "bullets": [
+            "Multiply top and bottom by the same number.",
+            "2/3 = 8/12 and 3/4 = 9/12.",
+            "Equivalent fractions have the same value."
+          ],
+          "note": "Use fraction walls or rectangles divided into 12 parts. Ask: which fraction is bigger, 2/3 or 3/4? Convert to twelfths: 8/12 and 9/12, so 3/4."
+        },
+        {
+          "heading": "Adding fractions",
+          "bullets": [
+            "Make the denominators equal first.",
+            "2/3 + 3/4 = 8/12 + 9/12 = 17/12.",
+            "17/12 = 1 5/12."
+          ],
+          "note": "Only the numerators are added; the denominator stays the same. Misconception: 2/3 + 3/4 = 5/7. Show with a picture why that is wrong: it is smaller than 3/4 yet should be bigger than 1."
+        },
+        {
+          "heading": "Subtracting fractions",
+          "bullets": [
+            "5/6 − 3/8: use 24 as the common denominator.",
+            "20/24 − 9/24 = 11/24.",
+            "Use the LCM to keep numbers small."
+          ],
+          "note": "Find the LCM of 6 and 8 (24). Convert: 5/6 = 20/24 and 3/8 = 9/24. Check by estimation: 0.83 − 0.375 ≈ 0.46 and 11/24 ≈ 0.46."
+        },
+        {
+          "heading": "Mixed numbers",
+          "bullets": [
+            "Convert to improper fractions first.",
+            "3 ½ − 1 ¾ = 14/4 − 7/4 = 7/4.",
+            "7/4 = 1 ¾."
+          ],
+          "note": "Alternative: subtract whole numbers and fractions separately, borrowing when needed. Check: 3.5 − 1.75 = 1.75. Second example: 2 2/5 + 1 3/10 = 24/10 + 13/10 = 37/10 = 3 7/10."
+        },
+        {
+          "heading": "Word problems",
+          "bullets": [
+            "A recipe uses 3/4 cup of flour and 2/3 cup of oats.",
+            "Total: 9/12 + 8/12 = 17/12 = 1 5/12 cups.",
+            "Always write the answer with units."
+          ],
+          "note": "Ask pupils to read, underline the operation, then calculate. Discuss: is 1 5/12 sensible? Each amount is less than 1 cup, together a bit more than 1. Link: sharing food generously is part of Islamic good character."
+        }
+      ],
+      "practice": [
+        "Work out 1/2 + 1/3.",
+        "Work out 7/8 − 1/4.",
+        "Work out 2 1/3 + 1 1/2."
+      ],
+      "independent": [
+        "Work out 3/5 + 1/4 and 5/6 − 2/9.",
+        "Work out 3 2/3 + 2 1/6 and 4 1/5 − 2 3/4.",
+        "A water tank is 3/8 full. 1/4 of the tank is added. What fraction is full now?"
+      ],
+      "exit": [
+        "Work out 2/5 + 1/3.",
+        "Work out 3 1/2 − 1 1/4."
+      ],
+      "homework": "Complete ten fraction additions and subtractions and check each with a calculator.",
+      "send": "SEND/EAL: fraction wall template. Stretch: find three different fractions that add to make 1."
+    },
+    {
+      "unit": "Unit 2: Fractions and percentages",
+      "n": 6,
+      "title": "Multiplying and dividing fractions",
+      "duration": 50,
+      "objectives": [
+        "Multiply fractions and mixed numbers",
+        "Divide by a fraction using the reciprocal",
+        "Find a fraction of an amount"
+      ],
+      "keywords": [
+        {
+          "term": "reciprocal",
+          "def": "the fraction turned upside down; 3/4 has reciprocal 4/3"
+        },
+        {
+          "term": "improper fraction",
+          "def": "a fraction where the numerator is bigger than the denominator"
+        },
+        {
+          "term": "cancel",
+          "def": "divide the top and bottom by a common factor"
+        }
+      ],
+      "starter": [
+        "Convert 2 1/4 to an improper fraction.",
+        "Find 3/5 of 40.",
+        "Simplify 12/18."
+      ],
+      "teach": [
+        {
+          "heading": "Multiplying fractions",
+          "bullets": [
+            "Multiply the numerators, then the denominators.",
+            "2/3 × 3/5 = 6/15 = 2/5.",
+            "Cancel before multiplying to keep numbers small."
+          ],
+          "note": "Show 2/3 × 3/5 by cross-cancelling the 3s: 2/1 × 1/5 = 2/5. Use an area model: a 3 by 5 grid shaded 2 down and 3 across. Fraction of an amount is the same as multiplication: 3/5 of 40 = 3/5 × 40 = 24."
+        },
+        {
+          "heading": "Mixed numbers",
+          "bullets": [
+            "Always convert to improper fractions first.",
+            "1 ½ × 2 ⅔ = 3/2 × 8/3 = 24/6 = 4.",
+            "Never multiply the whole numbers separately."
+          ],
+          "note": "Misconception: 1 ½ × 2 ⅔ = 2 + 1/2 × 2/3. Ask: is 4 sensible? 1.5 × 2.67 ≈ 4. Good."
+        },
+        {
+          "heading": "Dividing by a fraction",
+          "bullets": [
+            "Keep, change, flip: multiply by the reciprocal.",
+            "3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8.",
+            "15/8 = 1 7/8."
+          ],
+          "note": "Explain with meaning: how many 1/8 litre glasses can be filled from a 3/4 litre bottle? 3/4 ÷ 1/8 = 3/4 × 8 = 6 glasses. Dividing by a fraction less than 1 gives a bigger answer."
+        },
+        {
+          "heading": "Dividing mixed numbers",
+          "bullets": [
+            "2 ¼ ÷ ¾ = 9/4 × 4/3 = 3.",
+            "1 ⅔ ÷ 2 ½ = 5/3 × 2/5 = 2/3.",
+            "Check with a decimal estimate."
+          ],
+          "note": "Work through slowly. Cancel the 4s in the first example and the 5s in the second. Check: 2.25 ÷ 0.75 = 3 and 1.667 ÷ 2.5 = 0.667."
+        }
+      ],
+      "practice": [
+        "Work out 4/7 × 7/8.",
+        "Work out 5/6 ÷ 5/12.",
+        "Work out 1 1/2 × 2 2/3."
+      ],
+      "independent": [
+        "Work out 2/9 × 3/4 and 3/5 of 40.",
+        "Work out 3/8 ÷ 3/4 and 1 2/3 ÷ 2 1/2.",
+        "A 3/4 litre bottle fills glasses of 1/8 litre. How many glasses?"
+      ],
+      "exit": [
+        "Work out 3/4 × 2/9.",
+        "Work out 2/3 ÷ 4/5."
+      ],
+      "homework": "Write a short list of the rules for multiplying and dividing fractions with one example for each.",
+      "send": "SEND/EAL: grid paper to show products as areas. Stretch: show that dividing by 0.25 is the same as multiplying by 4."
+    },
+    {
+      "unit": "Unit 2: Fractions and percentages",
+      "n": 7,
+      "title": "Percentages of amounts and multipliers",
+      "duration": 50,
+      "objectives": [
+        "Calculate percentages of amounts without and with a calculator",
+        "Use decimal multipliers for percentage increase and decrease",
+        "Solve problems involving sales and increases"
+      ],
+      "keywords": [
+        {
+          "term": "percentage",
+          "def": "a number of parts per hundred"
+        },
+        {
+          "term": "multiplier",
+          "def": "the number you multiply by to apply a percentage change"
+        },
+        {
+          "term": "increase",
+          "def": "to make bigger"
+        }
+      ],
+      "starter": [
+        "Bismillah. Write 35% as a fraction and a decimal.",
+        "Find 10% of 240.",
+        "Find 1/4 of 80."
+      ],
+      "teach": [
+        {
+          "heading": "Percentages of amounts",
+          "bullets": [
+            "Build from 10%, 5% and 1%.",
+            "15% of 240: 10% = 24, 5% = 12, total 36.",
+            "Decimal method: 0.15 × 240 = 36."
+          ],
+          "note": "Non-calculator first, then check on calculator. For 2.5% of 360: 1% = 3.6; 2.5% = 9. Percent means 'per hundred' so 15% = 15/100 = 0.15."
+        },
+        {
+          "heading": "Percentage increase",
+          "bullets": [
+            "Increase £60 by 20%.",
+            "Multiplier = 100% + 20% = 120% = 1.2.",
+            "£60 × 1.2 = £72."
+          ],
+          "note": "Show the long method (20% of 60 = 12, 60 + 12 = 72) then the multiplier method. Ask: what is the multiplier for a 7.5% increase? (1.075.)"
+        },
+        {
+          "heading": "Percentage decrease",
+          "bullets": [
+            "Decrease £85 by 30%.",
+            "Multiplier = 100% − 30% = 70% = 0.7.",
+            "£85 × 0.7 = £59.50."
+          ],
+          "note": "A 12% decrease has multiplier 0.88. Misconception: multiplier 0.3 for a 30% decrease; that finds the 30% itself. Always write the multiplier before calculating."
+        },
+        {
+          "heading": "Applying multipliers",
+          "bullets": [
+            "A £480 phone is reduced by 35% in a sale.",
+            "Multiplier 0.65: 480 × 0.65 = £312.",
+            "Check: 35% of 480 = £168; 480 − 168 = £312."
+          ],
+          "note": "Encourage a check by a second method. Link to honest trade: being fair and clear in pricing matters. Ask for the multiplier for 'VAT at 20%': 1.2."
+        }
+      ],
+      "practice": [
+        "Find 35% of 80.",
+        "Increase 340 by 15%.",
+        "Decrease 52 by 25%."
+      ],
+      "independent": [
+        "Find 12% of 450 and 2.5% of 360.",
+        "Write the multiplier for: +8%, −15%, +2.5%, −0.5%.",
+        "A £120 coat is reduced by 15% and a £75 bag by 20%. Which has the lower sale price?"
+      ],
+      "exit": [
+        "Increase £250 by 12%.",
+        "Write the multiplier for a 9% decrease."
+      ],
+      "homework": "Find three sale prices in a catalogue or online and work out the new prices after a 25% discount.",
+      "send": "SEND/EAL: 10% and 1% building-block strips. Stretch: what single multiplier is equivalent to a 10% increase followed by a 10% decrease?"
+    },
+    {
+      "unit": "Unit 2: Fractions and percentages",
+      "n": 8,
+      "title": "Percentage change and reverse percentages",
+      "duration": 50,
+      "objectives": [
+        "Calculate percentage change and express one number as a percentage of another",
+        "Find the original amount using reverse percentages",
+        "Choose the correct method for a problem"
+      ],
+      "keywords": [
+        {
+          "term": "percentage change",
+          "def": "the change divided by the original amount, written as a percentage"
+        },
+        {
+          "term": "original value",
+          "def": "the amount before a change was applied"
+        },
+        {
+          "term": "reverse percentage",
+          "def": "finding the original value from the value after a change"
+        }
+      ],
+      "starter": [
+        "Increase 80 by 25%.",
+        "Write 18 as a fraction of 72.",
+        "What is the multiplier for a 20% increase?"
+      ],
+      "teach": [
+        {
+          "heading": "One number as a percentage of another",
+          "bullets": [
+            "Write as a fraction, then multiply by 100.",
+            "18 out of 72 = 18/72 × 100 = 25%.",
+            "Always divide by the whole."
+          ],
+          "note": "Check with a simple equivalent: 18/72 = 1/4 = 25%. Ask pupils what '100%' stands for in the question."
+        },
+        {
+          "heading": "Percentage change",
+          "bullets": [
+            "% change = change ÷ original × 100.",
+            "£40 to £46: 6 ÷ 40 × 100 = 15% increase.",
+            "250 to 200: 50 ÷ 250 × 100 = 20% decrease."
+          ],
+          "note": "The original value is the first one in the story, not the larger one. Misconception: dividing by the new value. State increase or decrease in the answer."
+        },
+        {
+          "heading": "Reverse percentages",
+          "bullets": [
+            "After a 20% increase the price is £90.",
+            "£90 is 120% of the original.",
+            "Original = 90 ÷ 1.2 = £75."
+          ],
+          "note": "Draw a bar model: 100% to 120%. Common error: 90 × 0.8 = £72, which takes 20% of the new price. Check: 75 × 1.2 = 90 ✓."
+        },
+        {
+          "heading": "Reverse with a decrease",
+          "bullets": [
+            "A coat costs £68 after a 15% reduction.",
+            "£68 is 85% of the original.",
+            "Original = 68 ÷ 0.85 = £80."
+          ],
+          "note": "The multiplier for a 15% decrease is 0.85. Always divide by the multiplier to reverse. Check: 80 × 0.85 = 68 ✓."
+        },
+        {
+          "heading": "Choosing the method",
+          "bullets": [
+            "Find the percentage of an amount: multiply.",
+            "Find the original: divide by the multiplier.",
+            "Find the % change: change ÷ original."
+          ],
+          "note": "Give three quick cards and ask pupils to name the type before calculating. This decision step is what exam questions test."
+        }
+      ],
+      "practice": [
+        "Find the percentage change from 5 to 8.",
+        "A price falls from £150 to £132. Find the percentage decrease.",
+        "After 10% off, a book costs £27. Find the original price."
+      ],
+      "independent": [
+        "Write 15 as a percentage of 60 and 9 as a percentage of 40.",
+        "A house price rises from £240,000 to £264,000. Find the percentage increase.",
+        "After an 8% rise, a salary is £324. Find the original salary."
+      ],
+      "exit": [
+        "A bike costs £180 and is reduced to £144. Find the percentage reduction.",
+        "A TV costs £420 after a 30% reduction. Find the original price."
+      ],
+      "homework": "Find the percentage change in three real prices or scores and the original price of an item given a sale price.",
+      "send": "SEND/EAL: bar model template with 100% marked. Stretch: a price is increased by 20% then decreased by 20%. Find the overall percentage change."
+    },
+    {
+      "unit": "Unit 3: Algebra foundations",
+      "n": 9,
+      "title": "Algebraic notation and collecting like terms",
+      "duration": 50,
+      "objectives": [
+        "Use correct algebraic notation",
+        "Collect like terms to simplify expressions",
+        "Multiply and divide simple algebraic terms"
+      ],
+      "keywords": [
+        {
+          "term": "term",
+          "def": "a single number, letter or product in an expression, such as 3x"
+        },
+        {
+          "term": "like terms",
+          "def": "terms with exactly the same letters and powers"
+        },
+        {
+          "term": "coefficient",
+          "def": "the number multiplying a letter"
+        },
+        {
+          "term": "expression",
+          "def": "a collection of terms with no equals sign"
+        }
+      ],
+      "starter": [
+        "Bismillah. Work out 3 × 5 + 2 × 4.",
+        "Write 'a number n, multiplied by 4' in algebra.",
+        "Evaluate 3a when a = 6."
+      ],
+      "teach": [
+        {
+          "heading": "Algebraic notation",
+          "bullets": [
+            "Write 3 × a as 3a, with no sign.",
+            "a × a = a²; a × a × b = a²b.",
+            "a ÷ b is written a/b.",
+            "Write the number first, then letters in order."
+          ],
+          "note": "Teach by translating: 'twice n' is 2n, 'n squared plus 3' is n² + 3. Misconception: 3a means 3 + a. Substitute a = 4 to show 3a = 12 not 7."
+        },
+        {
+          "heading": "Like terms",
+          "bullets": [
+            "3a and 5a are like terms; 3a and 5b are not.",
+            "x² and x are different, so cannot be added.",
+            "3ab, −ab and 2ab are like terms."
+          ],
+          "note": "Explain that x could be a length while x² is an area, so they cannot be combined. Ask: what is 3a + 2b when a = 1 and b = 5? It does not simplify to 5ab."
+        },
+        {
+          "heading": "Collecting like terms",
+          "bullets": [
+            "5x + 3y − 2x + 4y = 3x + 7y.",
+            "3x² + 2x² = 5x².",
+            "3ab + 2ab − ab = 4ab.",
+            "The sign belongs to the term after it."
+          ],
+          "note": "Circle or underline like terms with matching colours, bringing the sign with the term. 3ab + 2ab − ab: coefficients 3 + 2 − 1 = 4. Ask: what is 4x − x? (3x, since x is 1x.)"
+        },
+        {
+          "heading": "Perimeter",
+          "bullets": [
+            "A triangle has sides (2x + 3), (x + 5) and (3x − 1).",
+            "Perimeter = 2x + x + 3x + 3 + 5 − 1.",
+            "= 6x + 7."
+          ],
+          "note": "Check by substituting x = 2: sides are 7, 7, 5 so perimeter 19, and 6 × 2 + 7 = 19 ✓. Substitution is the best way to check any simplification."
+        },
+        {
+          "heading": "Multiplying and dividing terms",
+          "bullets": [
+            "6a × 2b = 12ab.",
+            "3x × 4x² = 12x³.",
+            "12xy ÷ 4x = 3y."
+          ],
+          "note": "Multiply the numbers, then multiply the letters. For division cancel numbers and letters. Misconception: 3x × 4x² = 12x² (forgetting that x × x² = x³)."
+        }
+      ],
+      "practice": [
+        "Simplify 7p − 3q + 2p + 5q.",
+        "Simplify 4m² + 3m − m² + 2m.",
+        "Simplify 6a × 2b."
+      ],
+      "independent": [
+        "Simplify 9x + 4 − 3x − 7.",
+        "Simplify 5ab + 2a − 3ab + a.",
+        "Write and simplify an expression for the perimeter of a rectangle with sides (3x + 2) and (x − 4)."
+      ],
+      "exit": [
+        "Simplify 8a + 3b − 2a + b.",
+        "Simplify 3x × 5x²."
+      ],
+      "homework": "Write five expressions with at least six terms each, then simplify them and check by substituting x = 2.",
+      "send": "SEND/EAL: colour-coded like term cards. Stretch: explain why 2x + 3x² cannot be simplified."
+    },
+    {
+      "unit": "Unit 3: Algebra foundations",
+      "n": 10,
+      "title": "Expanding and factorising single brackets",
+      "duration": 50,
+      "objectives": [
+        "Expand a single bracket including negative terms",
+        "Expand and simplify expressions with two brackets",
+        "Factorise by taking out the highest common factor"
+      ],
+      "keywords": [
+        {
+          "term": "expand",
+          "def": "multiply out a bracket"
+        },
+        {
+          "term": "factorise",
+          "def": "write an expression as a product by taking out a common factor"
+        },
+        {
+          "term": "common factor",
+          "def": "a number or letter that divides into every term"
+        }
+      ],
+      "starter": [
+        "Simplify 5x + 2 − 3x + 4.",
+        "Work out 3 × (4 + 5) in two ways.",
+        "Find the HCF of 12 and 18."
+      ],
+      "teach": [
+        {
+          "heading": "Expanding brackets",
+          "bullets": [
+            "Multiply every term inside by the term outside.",
+            "3(x + 4) = 3x + 12.",
+            "5(2a − 3) = 10a − 15.",
+            "x(x + 6) = x² + 6x."
+          ],
+          "note": "Use an area model: a rectangle of width 3 and length (x + 4) has area 3x + 12. Misconception: only multiplying the first term. Stress that the outside term multiplies everything."
+        },
+        {
+          "heading": "Negative terms",
+          "bullets": [
+            "−2(x − 7) = −2x + 14.",
+            "A negative times a negative is positive.",
+            "Watch signs carefully."
+          ],
+          "note": "Ask: −2 × −7? (+14). Write the sign with each term. Common error −2x − 14."
+        },
+        {
+          "heading": "Expand and simplify",
+          "bullets": [
+            "3(x + 2) + 2(x − 5): expand both brackets",
+            "= 5x − 4.",
+            "2(3x + 1) − 3(x − 4) = 3x + 14."
+          ],
+          "note": "For the second: 6x + 2 − 3x + 12 = 3x + 14. The minus before the second bracket changes both signs inside. Check by substituting x = 1: 2 × 4 − 3 × (−3) = 8 + 9 = 17 and 3 + 14 = 17 ✓."
+        },
+        {
+          "heading": "Factorising",
+          "bullets": [
+            "Factorising is the reverse of expanding.",
+            "6x + 15 = 3(2x + 5).",
+            "12a − 8 = 4(3a − 2).",
+            "x² + 7x = x(x + 7)."
+          ],
+          "note": "Find the HCF of the number parts and of the letter parts. Check by expanding. Misconception: stopping early, such as 8xy + 12x = 2(4xy + 6x); highest common factor is 4x."
+        },
+        {
+          "heading": "Fully factorised",
+          "bullets": [
+            "8xy + 12x: HCF is 4x.",
+            "8xy + 12x = 4x(2y + 3).",
+            "Check by expanding."
+          ],
+          "note": "Ask: is 2(4xy + 6x) fully factorised? No: 2x is still common inside. Always check there is no common factor left in the bracket."
+        }
+      ],
+      "practice": [
+        "Expand 4(3y − 5).",
+        "Factorise 10p + 25.",
+        "Expand and simplify 2(x + 3) + 3(x − 1)."
+      ],
+      "independent": [
+        "Expand −3(2x − 5) and x(3x + 4).",
+        "Expand and simplify 2(3x + 1) − 3(x − 4).",
+        "Factorise 9t² − 6t and 15ab + 10a."
+      ],
+      "exit": [
+        "Expand 7(2x − 3).",
+        "Factorise 18x + 12 fully."
+      ],
+      "homework": "Write four expansion and four factorising questions and check each answer by substituting a value.",
+      "send": "SEND/EAL: area model grids. Stretch: factorise 6x²y + 9xy² completely."
+    },
+    {
+      "unit": "Unit 3: Algebra foundations",
+      "n": 11,
+      "title": "Solving linear equations",
+      "duration": 50,
+      "objectives": [
+        "Solve one- and two-step equations",
+        "Solve equations with brackets and the unknown on both sides",
+        "Form and solve equations from word problems"
+      ],
+      "keywords": [
+        {
+          "term": "equation",
+          "def": "a statement that two expressions are equal, with an unknown to find"
+        },
+        {
+          "term": "inverse operation",
+          "def": "the operation that undoes another"
+        },
+        {
+          "term": "solve",
+          "def": "find the value of the unknown that makes the equation true"
+        }
+      ],
+      "starter": [
+        "Write the inverse of 'add 7'.",
+        "Expand 4(x + 3).",
+        "Simplify 5x − 2x."
+      ],
+      "teach": [
+        {
+          "heading": "Balance method",
+          "bullets": [
+            "Do the same to both sides.",
+            "3x + 7 = 22: subtract 7, then divide by 3.",
+            "3x = 15, so x = 5."
+          ],
+          "note": "Use a balance scale picture. Check by substituting: 3 × 5 + 7 = 22 ✓. Insist on vertical working with one operation per line."
+        },
+        {
+          "heading": "Unknown on both sides",
+          "bullets": [
+            "5x − 4 = 2x + 11.",
+            "Subtract 2x from both sides: 3x − 4 = 11.",
+            "Add 4: 3x = 15, so x = 5."
+          ],
+          "note": "Remove the smaller x term to avoid negative coefficients, but accept either method. Check: left 5 × 5 − 4 = 21, right 2 × 5 + 11 = 21 ✓."
+        },
+        {
+          "heading": "Brackets",
+          "bullets": [
+            "4(x + 3) = 2x + 20.",
+            "Expand: 4x + 12 = 2x + 20.",
+            "2x = 8, so x = 4."
+          ],
+          "note": "Expand first. Check: left 4 × 7 = 28, right 8 + 20 = 28 ✓. Ask: could we first divide both sides by 2? (Yes: 2(x + 3) = x + 10 also works.)"
+        },
+        {
+          "heading": "Fractions and negatives",
+          "bullets": [
+            "x/3 + 2 = 7: subtract 2, multiply by 3, x = 15.",
+            "7 − 2x = 1: subtract 7, then divide by −2.",
+            "−2x = −6, so x = 3."
+          ],
+          "note": "Take care with signs in the last example. An alternative is to add 2x to both sides: 7 = 1 + 2x. Then 6 = 2x and x = 3. Both are correct."
+        },
+        {
+          "heading": "Forming equations",
+          "bullets": [
+            "Hamza thinks of a number.",
+            "He doubles it and adds 9 to get 31.",
+            "2x + 9 = 31, so x = 11."
+          ],
+          "note": "Model translating words to an equation. Check in the context: 2 × 11 = 22, 22 + 9 = 31 ✓. Second: Perimeter of a rectangle with sides x + 3 and x is 26: 4x + 6 = 26, so x = 5."
+        }
+      ],
+      "practice": [
+        "Solve 6x − 5 = 19.",
+        "Solve 8x + 3 = 5x + 18.",
+        "Solve 4(x − 2) = 20."
+      ],
+      "independent": [
+        "Solve 3(2x − 1) = 2(x + 5).",
+        "Solve x/4 − 3 = 2 and 5 − 3x = −10.",
+        "A taxi charges £3 plus £2 per mile. The fare is £19. How many miles?"
+      ],
+      "exit": [
+        "Solve 5x − 3 = 2x + 12.",
+        "Solve 3(x + 4) = 27."
+      ],
+      "homework": "Write three equations, solve them and write the checking step for each.",
+      "send": "SEND/EAL: balance-scale diagrams and flow charts. Stretch: solve (x + 1)/3 = (2x − 5)/4."
+    },
+    {
+      "unit": "Unit 3: Algebra foundations",
+      "n": 12,
+      "title": "Substitution and rearranging formulae",
+      "duration": 50,
+      "objectives": [
+        "Substitute numbers including negatives into formulae",
+        "Use the correct order of operations",
+        "Rearrange simple formulae to change the subject"
+      ],
+      "keywords": [
+        {
+          "term": "formula",
+          "def": "a rule connecting quantities, written using letters"
+        },
+        {
+          "term": "substitute",
+          "def": "replace letters with numbers"
+        },
+        {
+          "term": "subject",
+          "def": "the letter on its own on one side of a formula"
+        }
+      ],
+      "starter": [
+        "Work out 3 + 4 × 2 and (3 + 4) × 2.",
+        "Work out (−3)² and −3².",
+        "Solve 2x + 5 = 17."
+      ],
+      "teach": [
+        {
+          "heading": "Substitution",
+          "bullets": [
+            "v = u + at: u = 5, a = 3, t = 4",
+            "v = 5 + 3 × 4 = 5 + 12 = 17.",
+            "Use BIDMAS: multiply before adding."
+          ],
+          "note": "Write the formula, substitute with brackets, then calculate in steps. A = ½bh with b = 10 and h = 7 gives A = 35. Ask: what are the units if b and h are in cm? (cm²)."
+        },
+        {
+          "heading": "Negative numbers",
+          "bullets": [
+            "x = −3: x² + 2x = (−3)² + 2(−3).",
+            "= 9 − 6 = 3.",
+            "2x² with x = −3 is 2 × 9 = 18."
+          ],
+          "note": "Always put negative substitutions in brackets. A calculator needs brackets too: (−3)² = 9, but −3² on a calculator may be −9. Misconception: (−3)² = −9."
+        },
+        {
+          "heading": "Changing the subject",
+          "bullets": [
+            "y = 3x + 5: make x the subject.",
+            "Subtract 5: y − 5 = 3x.",
+            "Divide by 3: x = (y − 5)/3."
+          ],
+          "note": "Treat it like solving an equation with letters. Check by substituting numbers: if x = 2, y = 11; (11 − 5)/3 = 2 ✓."
+        },
+        {
+          "heading": "More rearranging",
+          "bullets": [
+            "v = u + at: make a the subject.",
+            "a = (v − u)/t.",
+            "C = 2πr gives r = C/2π."
+          ],
+          "note": "In v = u + at: subtract u: v − u = at, then divide by t. Substitute v = 17, u = 5, t = 4: a = 12/4 = 3 ✓ matches the first slide."
+        },
+        {
+          "heading": "Real formulae",
+          "bullets": [
+            "F = 9C/5 + 32 converts Celsius to Fahrenheit.",
+            "Make C the subject: C = 5(F − 32)/9.",
+            "F = 212 gives C = 5 × 180/9 = 100."
+          ],
+          "note": "Water boils at 100°C = 212°F: a nice check. Steps: F − 32 = 9C/5, multiply by 5, divide by 9. Stretch: make r the subject of A = πr²."
+        }
+      ],
+      "practice": [
+        "Find 3a − b² when a = 4 and b = −2.",
+        "Make s the subject of P = 4s.",
+        "Make x the subject of y = mx + c."
+      ],
+      "independent": [
+        "Find the value of 2x² − 3x when x = −2 and when x = 4.",
+        "Make t the subject of v = u + at and check with numbers.",
+        "Convert 68°F to Celsius using C = 5(F − 32)/9."
+      ],
+      "exit": [
+        "Find x² − 4x when x = −3.",
+        "Make m the subject of E = 5m + 2."
+      ],
+      "homework": "Find a formula from science or cooking, substitute three sets of values and rearrange it.",
+      "send": "SEND/EAL: step cards for substitution. Stretch: make r the subject of A = πr²."
+    },
+    {
+      "unit": "Unit 4: Ratio and proportion",
+      "n": 13,
+      "title": "Ratio: simplifying and sharing",
+      "duration": 50,
+      "objectives": [
+        "Simplify ratios including with different units",
+        "Share an amount in a given ratio",
+        "Find a missing quantity given one part of a ratio"
+      ],
+      "keywords": [
+        {
+          "term": "ratio",
+          "def": "compares the sizes of two or more quantities"
+        },
+        {
+          "term": "simplify",
+          "def": "divide all parts by a common factor"
+        },
+        {
+          "term": "part",
+          "def": "one share in a ratio"
+        }
+      ],
+      "starter": [
+        "Bismillah. Find the HCF of 12 and 18.",
+        "Divide 120 by 8.",
+        "Convert 2 m to centimetres."
+      ],
+      "teach": [
+        {
+          "heading": "Simplifying ratios",
+          "bullets": [
+            "Divide every part by the HCF.",
+            "12 : 18 = 2 : 3.",
+            "15 : 45 : 60 = 1 : 3 : 4."
+          ],
+          "note": "Use the idea of equivalent ratios as scaled recipes. Check the pupils divide all the parts by the same number. Ratio 1 : n is called a unit ratio form."
+        },
+        {
+          "heading": "Different units",
+          "bullets": [
+            "Convert to the same unit first.",
+            "50 cm : 2 m = 50 : 200.",
+            "50 : 200 = 1 : 4."
+          ],
+          "note": "Misconception: writing 50 : 2 = 25 : 1. Always check the units match before simplifying. Other pairs to try: 30 minutes to 2 hours (30 : 120 = 1 : 4) and 250 g to 1 kg (250 : 1000 = 1 : 4)."
+        },
+        {
+          "heading": "Sharing in a ratio",
+          "bullets": [
+            "Share £120 in the ratio 3 : 5.",
+            "Total parts = 3 + 5 = 8.",
+            "One part = 120 ÷ 8 = £15.",
+            "Shares: 3 × 15 = £45 and 5 × 15 = £75."
+          ],
+          "note": "Draw a bar split into 8 equal parts. Check the shares add to the total: 45 + 75 = 120 ✓. Link: Islamic inheritance and charity (zakat) involve sharing in fixed proportions; this is the mathematics beneath those calculations."
+        },
+        {
+          "heading": "Three parts",
+          "bullets": [
+            "Share 200 in the ratio 2 : 3 : 5.",
+            "Total parts = 10; one part = 20.",
+            "Shares: 40, 60 and 100."
+          ],
+          "note": "Check 40 + 60 + 100 = 200 ✓. Ask: which share is half of the total? (100, since 5 of 10 parts.)"
+        },
+        {
+          "heading": "Given one part",
+          "bullets": [
+            "Boys : girls = 4 : 5 with 12 boys.",
+            "4 parts = 12, so 1 part = 3.",
+            "Girls = 5 × 3 = 15."
+          ],
+          "note": "Do not share the 12 in the ratio. The 12 is already one of the parts. Ask: how many pupils altogether? (27, as 9 parts × 3.)"
+        }
+      ],
+      "practice": [
+        "Simplify 24 : 36.",
+        "Share 84 kg in the ratio 2 : 5.",
+        "Simplify 40 cm : 1.2 m."
+      ],
+      "independent": [
+        "Simplify 15 : 45 : 60 and 3 hours : 45 minutes.",
+        "Red, blue and green counters are in the ratio 3 : 4 : 5. There are 48 counters. How many of each?",
+        "Flour : sugar = 5 : 2. A cake uses 350 g of flour. How much sugar?"
+      ],
+      "exit": [
+        "Share £90 in the ratio 4 : 5.",
+        "Girls : boys = 3 : 2 with 18 girls. How many boys?"
+      ],
+      "homework": "Find three ratios in everyday life, such as a recipe or a map, and simplify each.",
+      "send": "SEND/EAL: bar model template. Stretch: £360 is shared between three people in the ratio 1 : 2 : 3 and the smallest share is then doubled; find the new ratio of the three shares."
+    },
+    {
+      "unit": "Unit 4: Ratio and proportion",
+      "n": 14,
+      "title": "Direct proportion and the unitary method",
+      "duration": 50,
+      "objectives": [
+        "Recognise direct proportion",
+        "Use the unitary method to solve problems",
+        "Compare best buys"
+      ],
+      "keywords": [
+        {
+          "term": "direct proportion",
+          "def": "two quantities that increase or decrease in the same ratio"
+        },
+        {
+          "term": "unitary method",
+          "def": "finding the value of one unit first"
+        },
+        {
+          "term": "best buy",
+          "def": "the option that gives the lowest cost per unit"
+        }
+      ],
+      "starter": [
+        "Bismillah. Simplify 18 : 12.",
+        "Work out 3.50 ÷ 5.",
+        "Work out 70 × 8."
+      ],
+      "teach": [
+        {
+          "heading": "Direct proportion",
+          "bullets": [
+            "If one quantity doubles, so does the other.",
+            "Cost is directly proportional to the number bought.",
+            "The graph is a straight line through the origin."
+          ],
+          "note": "Ask pupils for examples (cost of apples, distance walked at steady speed) and non-examples (age and height). A ratio table helps: 1 pen is 70p, 2 pens are £1.40, 3 pens are £2.10."
+        },
+        {
+          "heading": "Unitary method",
+          "bullets": [
+            "5 pens cost £3.50.",
+            "1 pen = £3.50 ÷ 5 = 70p.",
+            "8 pens = 8 × 70p = £5.60."
+          ],
+          "note": "Always find the cost of 1 first. A scale factor method also works: 8 pens is 1.6 times 5 pens, but the unitary method is more reliable with awkward numbers."
+        },
+        {
+          "heading": "Recipes",
+          "bullets": [
+            "A recipe for 4 uses 300 g of flour.",
+            "1 person needs 75 g.",
+            "6 people need 6 × 75 = 450 g."
+          ],
+          "note": "Scale every ingredient. Another example: 250 ml of milk for 4 people means 625 ml for 10 people (62.5 ml each). Pupils often add instead of scale."
+        },
+        {
+          "heading": "Best buys",
+          "bullets": [
+            "500 g costs £1.60; 750 g costs £2.28.",
+            "Per 100 g: 32p and 30.4p.",
+            "750 g is the better value."
+          ],
+          "note": "Compare cost per unit or amount per unit of money. Check: £1.60 ÷ 5 = 32p; £2.28 ÷ 7.5 = 30.4p. A bigger pack is not always cheaper per unit, so calculate. Link: avoiding waste (israf) means buying what you need."
+        },
+        {
+          "heading": "Rates",
+          "bullets": [
+            "A car uses 6 litres per 100 km.",
+            "250 km uses 6 × 2.5 = 15 litres.",
+            "Rates are examples of proportion."
+          ],
+          "note": "Use the multiplier 2.5 (250 ÷ 100). Fuel use is proportional to distance for a constant rate. Ask: how far on 21 litres? (350 km.)"
+        }
+      ],
+      "practice": [
+        "12 m of rope costs £9. Find the cost of 20 m.",
+        "A typist types 240 words in 4 minutes. How many words in 7 minutes?",
+        "Which is better value: 3 for £2.40 or 5 for £3.75?"
+      ],
+      "independent": [
+        "8 identical books weigh 3.6 kg. Find the mass of 11 books.",
+        "Suppose £1 = 65 Egyptian pounds. Convert £40 and 1,820 Egyptian pounds.",
+        "A recipe for 6 uses 450 g of rice. How much rice for 10 people?"
+      ],
+      "exit": [
+        "7 tickets cost £63. Find the cost of 12 tickets.",
+        "Which is better value: 600 g for £2.10 or 900 g for £3.06?"
+      ],
+      "homework": "Find the unit price of three items on a supermarket website and decide which size is the best value.",
+      "send": "SEND/EAL: ratio tables. Stretch: 6 workers build a wall in 10 days; how long would 4 workers need? Explain why this is not direct proportion."
+    },
+    {
+      "unit": "Unit 4: Ratio and proportion",
+      "n": 15,
+      "title": "Scale drawings and map scales",
+      "duration": 50,
+      "objectives": [
+        "Interpret scales written as ratios",
+        "Convert between map and real lengths",
+        "Write a scale as a ratio 1 : n"
+      ],
+      "keywords": [
+        {
+          "term": "scale",
+          "def": "the ratio of a length on a drawing to the real length"
+        },
+        {
+          "term": "scale factor",
+          "def": "the number that all lengths are multiplied by"
+        },
+        {
+          "term": "scale drawing",
+          "def": "an accurate smaller or larger drawing of a real object"
+        }
+      ],
+      "starter": [
+        "Convert 50,000 cm to metres and kilometres.",
+        "Work out 4.6 × 0.5.",
+        "Convert 3.2 m to centimetres."
+      ],
+      "teach": [
+        {
+          "heading": "What a scale means",
+          "bullets": [
+            "Scale 1 : 50,000 means 1 cm shows 50,000 cm.",
+            "50,000 cm = 500 m = 0.5 km.",
+            "So 1 cm on the map is 0.5 km."
+          ],
+          "note": "Convert in stages: 50,000 ÷ 100 = 500 m and 500 ÷ 1000 = 0.5 km. Ask pupils to say it in words. A scale of 1 : n means real lengths are n times larger."
+        },
+        {
+          "heading": "Map to real",
+          "bullets": [
+            "Map distance 4.6 cm at 1 : 50,000.",
+            "Real distance = 4.6 × 0.5 km.",
+            "= 2.3 km."
+          ],
+          "note": "Multiply by the scale to go from map to real. Check it is sensible: 4.6 cm is a few cm, and a few cm at about 0.5 km each is a few km."
+        },
+        {
+          "heading": "Real to map",
+          "bullets": [
+            "Real distance 7.5 km on the same map.",
+            "Map distance = 7.5 ÷ 0.5.",
+            "= 15 cm."
+          ],
+          "note": "Divide to go from real to map. Ask: what operation would you use if the real distance was 12 km? (12 ÷ 0.5 = 24 cm.) A common error is multiplying instead."
+        },
+        {
+          "heading": "Models and plans",
+          "bullets": [
+            "Model scale 1 : 25; real height 3.2 m.",
+            "3.2 m = 320 cm; 320 ÷ 25 = 12.8 cm.",
+            "Plan scale 1 : 200: 6 cm shows 12 m."
+          ],
+          "note": "For the plan, 6 × 200 = 1,200 cm = 12 m. Another dimension 4.5 cm means 900 cm = 9 m. Ask: what is the real area of the room? (12 × 9 = 108 m².) Do not multiply area by 200."
+        },
+        {
+          "heading": "Writing a scale as 1 : n",
+          "bullets": [
+            "'2 cm to 5 km' becomes 1 : n.",
+            "5 km = 500,000 cm.",
+            "500,000 ÷ 2 = 250,000, so 1 : 250,000."
+          ],
+          "note": "Both parts must be in the same unit first, then divide so the left side is 1. Check by testing: 1 cm on the map would be 250,000 cm = 2.5 km, half of 5 km ✓."
+        }
+      ],
+      "practice": [
+        "On a 1 : 100,000 map, 3.4 cm is how many kilometres?",
+        "A real distance is 18 km on a 1 : 100,000 map. Find the map length.",
+        "A table is 1.8 m long. Find its length at scale 1 : 20."
+      ],
+      "independent": [
+        "A map has scale 1 : 25,000. Two mosques are 6.4 cm apart on the map. Find the real distance in km.",
+        "Write '1 cm to 2 km' as a ratio 1 : n.",
+        "A model car is 1 : 40. The real car is 4.4 m long. Find the model length in cm."
+      ],
+      "exit": [
+        "On a 1 : 200 plan, a wall is 7.5 cm. How long is it in metres?",
+        "Write 4 cm to 1 km as a ratio 1 : n."
+      ],
+      "homework": "Use a map or an online map scale bar to measure the distance between two places in your area and work out the real distance.",
+      "send": "SEND/EAL: conversion triangle for cm, m, km. Stretch: a map scale is 1 : 20,000. Find the area on the map of a field that is 400 m by 300 m (answer in cm²)."
+    },
+    {
+      "unit": "Unit 4: Ratio and proportion",
+      "n": 16,
+      "title": "Speed, distance and time",
+      "duration": 50,
+      "objectives": [
+        "Use speed = distance ÷ time and rearrangements",
+        "Convert between units of speed and time",
+        "Calculate average speed for a whole journey"
+      ],
+      "keywords": [
+        {
+          "term": "speed",
+          "def": "distance travelled per unit of time"
+        },
+        {
+          "term": "average speed",
+          "def": "total distance divided by total time"
+        },
+        {
+          "term": "compound measure",
+          "def": "a measure made from two other measures, such as km/h"
+        }
+      ],
+      "starter": [
+        "Convert 2 h 15 min to hours as a decimal.",
+        "Rearrange: make t the subject of d = vt.",
+        "Work out 36,000 ÷ 3,600."
+      ],
+      "teach": [
+        {
+          "heading": "The speed triangle",
+          "bullets": [
+            "Speed = distance ÷ time.",
+            "Distance = speed × time.",
+            "Time = distance ÷ speed.",
+            "Units: km/h, m/s."
+          ],
+          "note": "Draw a triangle with D at the top and S, T at the bottom. Cover the unknown. Example: 150 km in 2.5 hours: speed = 150 ÷ 2.5 = 60 km/h. Check the units are consistent."
+        },
+        {
+          "heading": "Distance and time",
+          "bullets": [
+            "45 km/h for 40 minutes.",
+            "40 min = 2/3 h.",
+            "Distance = 45 × 2/3 = 30 km.",
+            "210 km at 70 km/h takes 3 hours."
+          ],
+          "note": "Convert minutes to hours as a fraction (40/60 = 2/3) or decimal before multiplying. Misconception: writing 2 h 30 min as 2.30 hours; it is 2.5 hours."
+        },
+        {
+          "heading": "Unit conversion",
+          "bullets": [
+            "36 km/h to m/s: 36,000 m ÷ 3,600 s.",
+            "= 10 m/s.",
+            "To convert m/s to km/h multiply by 3.6."
+          ],
+          "note": "Check with 15 m/s: 15 × 3.6 = 54 km/h. A good sense check is that a walking pace 1.4 m/s is about 5 km/h."
+        },
+        {
+          "heading": "Average speed",
+          "bullets": [
+            "60 km in 1 hour, then 40 km in 1 hour.",
+            "Total distance = 100 km; total time = 2 h.",
+            "Average speed = 50 km/h."
+          ],
+          "note": "Average speed is total distance divided by total time, not the mean of the speeds. Second example: 120 km in 1.5 h then 60 km in 1 h gives 180 ÷ 2.5 = 72 km/h. The mean of 80 and 60 would be 70, which is wrong."
+        },
+        {
+          "heading": "Problem solving",
+          "bullets": [
+            "A bus leaves at 9:15 and covers 72 km at 48 km/h.",
+            "Time = 72 ÷ 48 = 1.5 hours.",
+            "It arrives at 10:45."
+          ],
+          "note": "Convert 1.5 hours to 1 h 30 min before adding to the start time. Ask pupils to check: 48 × 1.5 = 72 ✓."
+        }
+      ],
+      "practice": [
+        "Find the speed of a runner who covers 270 m in 30 s.",
+        "How far at 80 km/h for 1 hour 30 minutes?",
+        "Convert 15 m/s to km/h."
+      ],
+      "independent": [
+        "A train travels 270 km in 3 hours. Find its average speed.",
+        "A cyclist rides 24 km at 16 km/h. How long does it take in hours and minutes?",
+        "A car drives 120 km in 1.5 hours and then 60 km in 1 hour. Find the average speed for the whole journey."
+      ],
+      "exit": [
+        "Find the time taken to travel 150 km at 60 km/h.",
+        "Convert 72 km/h to m/s."
+      ],
+      "homework": "Time a walk or drive of a known distance and calculate the average speed in km/h and m/s.",
+      "send": "SEND/EAL: formula triangle and a unit conversion chart. Stretch: Hamza runs 100 m in 12.5 s; find his speed in km/h."
+    }
+  ]
+}

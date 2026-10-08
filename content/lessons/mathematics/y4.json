@@ -1,0 +1,408 @@
+{
+  "subject": "Mathematics",
+  "year": "y4",
+  "board": "Edexcel",
+  "source": "National Curriculum (KS2 Year 4: place value to 10,000, rounding, Roman numerals, negative numbers; addition and subtraction; times tables to 12 x 12)",
+  "lessons": [
+    {
+      "unit": "Unit 1: Place value and rounding",
+      "n": 1,
+      "title": "Thousands, hundreds, tens and ones",
+      "duration": 45,
+      "objectives": ["Read and write 4-digit numbers in numerals and words", "State the value of each digit in a number up to 9999"],
+      "keywords": [{ "term": "thousands", "def": "groups of one thousand; the left digit of a 4-digit number" }, { "term": "place value", "def": "the value a digit has from its position" }, { "term": "digit", "def": "one of the symbols 0 to 9" }],
+      "starter": ["Say Bismillah. Write four hundred and seven as a number.", "What is the value of the 6 in 862?", "What is 10 x 100?"],
+      "teach": [
+        { "heading": "Ten hundreds make a thousand", "bullets": ["10 ones make 1 ten.", "10 tens make 1 hundred.", "10 hundreds make 1 thousand."], "note": "Use place value counters or a place value chart with Th, H, T, O. Each place is ten times the one to its right. Ask what comes after ten thousands." },
+        { "heading": "Reading 4,365", "bullets": ["4 thousands, 3 hundreds, 6 tens, 5 ones.", "Four thousand, three hundred and sixty-five.", "The 4 is worth 4000."], "note": "Build the number with counters. Say it aloud. Common error: reading 4,365 as 'four three six five'." },
+        { "heading": "Zero as a placeholder", "bullets": ["5,070 has no hundreds and no ones.", "Each zero keeps a digit in position.", "Five thousand and seventy."], "note": "Compare 5,070, 570 and 5,700 in a place value chart. Pupils often write five thousand and seventy as 5,0070." },
+        { "heading": "Commas and spaces", "bullets": ["We group digits in threes.", "9,999 is the largest 4-digit number.", "10,000 is ten thousands."], "note": "Mention that 4-digit numbers can be written 4365 or 4,365. 9,999 + 1 = 10,000 is a key idea." }
+      ],
+      "practice": ["Write 7,208 in words.", "What is the value of the 3 in 6,342?", "Write 'nine thousand and forty' as a number."],
+      "independent": ["Write as numbers: 3 thousands 5 hundreds 2 tens 1 one; 8 thousands 0 hundreds 4 tens 0 ones; five thousand six hundred.", "State the value of the digit 7 in: 7,031; 5,672; 2,917; 9,007.", "Write these in words: 4,018; 6,500; 8,999."],
+      "exit": ["What is the value of the 5 in 3,512?", "Write 'two thousand and sixteen' as a number."],
+      "homework": "Write six 4-digit numbers from things you see (for example a house number, a price) and write them in words.",
+      "send": "SEND: place value chart with counters. EAL: pre-teach thousand/hundred vocabulary. Stretch: numbers to 100,000."
+    },
+    {
+      "unit": "Unit 1: Place value and rounding",
+      "n": 2,
+      "title": "Partitioning and 1000 more or less",
+      "duration": 45,
+      "objectives": ["Partition 4-digit numbers in different ways", "Find 1000, 100 and 10 more or less than a number"],
+      "keywords": [{ "term": "partition", "def": "split a number into parts" }, { "term": "more than / less than", "def": "add to or take from a number by a given amount" }],
+      "starter": ["Bismillah. Value of the 4 in 5,430?", "Write 7,007 in words.", "100 more than 892?"],
+      "teach": [
+        { "heading": "Standard partition", "bullets": ["6,482 = 6000 + 400 + 80 + 2.", "Thousands, hundreds, tens, ones.", "Check by adding the parts."], "note": "Show a part-whole model with four parts. Ask pupils to say each part's value." },
+        { "heading": "Flexible partition", "bullets": ["6,482 = 5000 + 1400 + 80 + 2.", "6,482 = 6000 + 480 + 2.", "All equal 6,482."], "note": "Exchange one thousand for ten hundreds. This is the basis of column subtraction." },
+        { "heading": "1000 more, 1000 less", "bullets": ["1000 more than 4,376 is 5,376.", "1000 less than 4,376 is 3,376.", "Only the thousands digit changes."], "note": "Crossing 10,000 and 1,000 are tricky: 1000 less than 1,200 is 200." },
+        { "heading": "100 and 10 more or less", "bullets": ["100 more than 4,376 is 4,476.", "10 less than 4,376 is 4,366.", "10 less than 4,005 is 3,995."], "note": "Take care with crossing boundaries. 4,005 - 10 = 3,995 as the thousands digit changes." }
+      ],
+      "practice": ["Partition 3,905 in two ways.", "What is 1000 less than 7,250?", "What is 10 more than 5,998?"],
+      "independent": ["Partition: 8,214; 4,060; 9,999.", "Complete the table of 1000 more, 1000 less, 100 more, 100 less for 2,750; 6,008; 9,950.", "Find the missing number: 5,000 + __ + 60 + 3 = 5,463; 7,000 + 300 + __ = 7,309."],
+      "exit": ["1000 more than 8,642 = ?", "10 less than 3,100 = ?"],
+      "homework": "Choose five 4-digit numbers and find 1000, 100 and 10 more and less for each.",
+      "send": "SEND: use place value counters on a chart. Stretch: use 5- and 6-digit numbers."
+    },
+    {
+      "unit": "Unit 1: Place value and rounding",
+      "n": 3,
+      "title": "Comparing and ordering 4-digit numbers",
+      "duration": 45,
+      "objectives": ["Compare 4-digit numbers using <, > and =", "Order numbers in ascending and descending order"],
+      "keywords": [{ "term": "ascending", "def": "in order from smallest to largest" }, { "term": "descending", "def": "in order from largest to smallest" }],
+      "starter": ["Bismillah. 1000 less than 4,500?", "Partition 5,031.", "Which is greater: 3,420 or 3,402?"],
+      "teach": [
+        { "heading": "Start from the left", "bullets": ["Compare 5,436 and 5,364.", "Thousands are equal.", "Hundreds: 4 > 3, so 5,436 > 5,364."], "note": "Always compare the highest place value first. Use a place value chart with numbers one above the other." },
+        { "heading": "Number of digits", "bullets": ["9,999 has 4 digits. 10,000 has 5.", "More digits means a larger number.", "So 10,000 > 9,999."], "note": "Only valid when there are no leading zeros. Ask pupils why a number with more digits is larger." },
+        { "heading": "Ordering lists", "bullets": ["Order 3,078; 3,780; 3,087; 3,708.", "Ascending: 3,078; 3,087; 3,708; 3,780.", "Descending is the reverse."], "note": "Use a systematic approach: group by hundreds, then tens." },
+        { "heading": "Missing digits", "bullets": ["6,4_2 > 6,452.", "What digits could go in the box?", "Digits 6, 7, 8 or 9... wait, check the tens place."], "note": "Careful: in 6,4_2 the blank is the tens digit; for 6,4_2 > 6,452 the digit must be 6, 7, 8 or 9? No: compare 6,4?2 with 6,452: tens digit must be 5 or more with ones 2 vs 2 equal, so 6,452 equals itself at 5; > needs 6 to 9. Discuss and verify with pupils." }
+      ],
+      "practice": ["Write <, > or =: 4,502 __ 4,052.", "Order ascending: 8,121; 8,112; 8,211; 8,021.", "Which is the largest: 7,899, 7,989, 7,998?"],
+      "independent": ["Write <, > or =: 3,456 __ 3,465; 9,000 __ 8,999; 5,100 __ 5,010; 6,000 + 40 __ 6,040.", "Order descending: 2,909; 2,990; 9,209; 9,029; 2,099.", "Using digits 2, 4, 6 and 9 once each, make the largest and smallest 4-digit numbers."],
+      "exit": ["Write <, > or =: 7,215 __ 7,251.", "Order ascending: 3,330; 3,303; 3,033."],
+      "homework": "Write down ten 4-digit numbers using the digits 1, 3, 5 and 7, then order them.",
+      "send": "SEND: use digit cards and a chart. Stretch: compare numbers up to 100,000."
+    },
+    {
+      "unit": "Unit 1: Place value and rounding",
+      "n": 4,
+      "title": "Rounding to the nearest 10",
+      "duration": 45,
+      "objectives": ["Round numbers to the nearest 10", "Understand the rule for numbers ending in 5"],
+      "keywords": [{ "term": "round", "def": "change a number to a nearby, simpler one" }, { "term": "nearest 10", "def": "the closest multiple of ten" }],
+      "starter": ["Bismillah. Largest number from 2, 5, 8, 1.", "Write <, > or =: 3,120 __ 3,210.", "Count in 10s from 3,970 to 4,030."],
+      "teach": [
+        { "heading": "On a number line", "bullets": ["Round 63 to the nearest 10.", "It is between 60 and 70.", "63 is nearer 60."], "note": "Mark 60, 65, 70 and place 63. Ask why 65 is a special point." },
+        { "heading": "The rule", "bullets": ["Look at the ones digit.", "0 to 4: round down.", "5 to 9: round up."], "note": "5 rounds up by convention (halfway rounds up). Make sure pupils know the rule and why." },
+        { "heading": "Bigger numbers", "bullets": ["3,847 to the nearest 10 is 3,850.", "4,992 to the nearest 10 is 4,990.", "3,995 to the nearest 10 is 4,000."], "note": "Show the tens carrying over: 3,995 rounds up to 4,000. This is a common misconception area." },
+        { "heading": "Why round?", "bullets": ["Estimates are easier to work with.", "6.98 and 7 are close.", "Say 'about 50' when exact is not needed."], "note": "Link rounding to everyday contexts like prices and distances. Ask pupils where rounding is useful." }
+      ],
+      "practice": ["Round 48 to the nearest 10.", "Round 1,265 to the nearest 10.", "Round 2,996 to the nearest 10."],
+      "independent": ["Round to the nearest 10: 34; 75; 506; 2,148; 3,999.", "A number rounds to 80. What could it be? List all whole numbers.", "True or false: 4,455 rounds to 4,450."],
+      "exit": ["Round 837 to the nearest 10.", "Round 4,995 to the nearest 10."],
+      "homework": "Round ten numbers you find at home (e.g. prices, distances) to the nearest 10.",
+      "send": "SEND: use a number line with the halfway point marked. Stretch: rounding decimals to the nearest whole number."
+    },
+    {
+      "unit": "Unit 1: Place value and rounding",
+      "n": 5,
+      "title": "Rounding to the nearest 100",
+      "duration": 45,
+      "objectives": ["Round numbers to the nearest 100", "Decide using the tens digit"],
+      "keywords": [{ "term": "nearest 100", "def": "the closest multiple of one hundred" }, { "term": "halfway", "def": "exactly in the middle between two numbers" }],
+      "starter": ["Bismillah. Round 783 to the nearest 10.", "Round 4,995 to the nearest 10.", "What is halfway between 300 and 400?"],
+      "teach": [
+        { "heading": "Between hundreds", "bullets": ["Round 463 to the nearest 100.", "It is between 400 and 500.", "Halfway is 450. 463 is above, so 500."], "note": "Use the number line with 450 marked. Compare with rounding to 10." },
+        { "heading": "The tens digit decides", "bullets": ["Look at the tens digit.", "0 to 4: stay the same, ones go to zero.", "5 to 9: round the hundreds up."], "note": "Show 463 -> tens digit 6 -> up to 500. And 438 -> tens digit 3 -> down to 400." },
+        { "heading": "Bigger numbers", "bullets": ["2,745 to the nearest 100 is 2,700.", "6,951 to the nearest 100 is 7,000.", "9,960 to the nearest 100 is 10,000."], "note": "Work through the carrying: 6,951 has tens digit 5 so round up to 7,000. Check by number line." },
+        { "heading": "Error trap", "bullets": ["Do not look at the ones digit.", "349 rounds to 300, not 350.", "Check the digit to the right."], "note": "A common error is rounding 349 to 350 and then to 400. Rounding is done in one step, using only the digit to the right." }
+      ],
+      "practice": ["Round 372 to the nearest 100.", "Round 5,850 to the nearest 100.", "Round 8,962 to the nearest 100."],
+      "independent": ["Round to the nearest 100: 128; 450; 3,619; 7,049; 9,951.", "A number rounds to 600. What is the smallest it could be? The largest?", "Is 2,349 closer to 2,300 or 2,400? Explain."],
+      "exit": ["Round 6,284 to the nearest 100.", "Round 9,970 to the nearest 100."],
+      "homework": "Collect five large numbers (e.g. populations, prices) and round each to the nearest 100.",
+      "send": "SEND: scaffold with a number line and highlight the deciding digit. Stretch: rounding to the nearest 1000 and 10,000."
+    },
+    {
+      "unit": "Unit 1: Place value and rounding",
+      "n": 6,
+      "title": "Rounding to the nearest 1000",
+      "duration": 45,
+      "objectives": ["Round numbers to the nearest 1000", "Choose the correct degree of rounding"],
+      "keywords": [{ "term": "nearest 1000", "def": "the closest multiple of one thousand" }, { "term": "degree of accuracy", "def": "how exact a rounded number is, such as nearest 10 or 100" }],
+      "starter": ["Bismillah. Round 4,672 to the nearest 100.", "Round 8,950 to the nearest 100.", "What is halfway between 5,000 and 6,000?"],
+      "teach": [
+        { "heading": "The hundreds digit decides", "bullets": ["Round 4,628 to the nearest 1000.", "Hundreds digit is 6, so round up.", "Answer: 5,000."], "note": "Same rule, one place left. Halfway is 4,500; 4,628 is more than halfway." },
+        { "heading": "Rounding down", "bullets": ["7,342 to the nearest 1000 is 7,000.", "Hundreds digit 3, so round down.", "Hundreds, tens, ones become 0."], "note": "Emphasise replacing the lower digits with zeros. Show on a number line from 7,000 to 8,000." },
+        { "heading": "Three levels", "bullets": ["5,468 to the nearest 10 is 5,470.", "To the nearest 100 is 5,500.", "To the nearest 1000 is 5,000."], "note": "Compare the three roundings for one number. Discuss which is most appropriate in different contexts." },
+        { "heading": "In context", "bullets": ["A stadium holds 7,861 people.", "About 8,000 people, to the nearest 1000.", "Rounding makes numbers easy to say."], "note": "Use real contexts like numbers of pilgrims, book sales or distances. Never state invented statistics; use made-up values plainly." }
+      ],
+      "practice": ["Round 3,500 to the nearest 1000.", "Round 6,499 to the nearest 1000.", "Round 9,501 to the nearest 1000."],
+      "independent": ["Round to the nearest 1000: 2,450; 5,555; 8,499; 9,999.", "Round 4,768 to the nearest 10, 100 and 1000.", "A number rounds to 3,000 to the nearest 1000. Write the smallest and largest whole numbers it could be."],
+      "exit": ["Round 7,615 to the nearest 1000.", "Round 4,382 to the nearest 100."],
+      "homework": "Write down five numbers and round each to the nearest 10, 100 and 1000.",
+      "send": "SEND: use a three-row rounding grid. Stretch: round 5-digit numbers."
+    },
+    {
+      "unit": "Unit 1: Place value and rounding",
+      "n": 7,
+      "title": "Roman numerals to 100",
+      "duration": 45,
+      "objectives": ["Read and write Roman numerals to 100", "Convert between Roman and Hindu-Arabic numerals"],
+      "keywords": [{ "term": "Roman numeral", "def": "a letter used for a number: I, V, X, L, C" }, { "term": "Hindu-Arabic numerals", "def": "the digits 0 to 9 we use today" }],
+      "starter": ["Bismillah. Round 4,372 to the nearest 1000.", "Round 6,950 to the nearest 100.", "Which is bigger: 5,009 or 5,090?"],
+      "teach": [
+        { "heading": "The symbols", "bullets": ["I = 1, V = 5, X = 10.", "L = 50, C = 100.", "Letters are added together."], "note": "Our usual digits came through the Arabic-speaking world from India, which is why they are called Hindu-Arabic numerals. Roman numerals were used in the Roman Empire." },
+        { "heading": "Adding letters", "bullets": ["III = 3, VII = 7.", "XVI = 16, XXVIII = 28.", "LXX = 70."], "note": "Larger values go first when adding. Never write more than three of the same letter in a row." },
+        { "heading": "Subtracting", "bullets": ["IV = 4 (5 - 1).", "IX = 9 (10 - 1).", "XL = 40, XC = 90."], "note": "A smaller value before a larger one is subtracted. Only I, X and C can be used to subtract. XIV = 14, XLIX = 49." },
+        { "heading": "Converting", "bullets": ["67 = 50 + 10 + 5 + 2 = LXVII.", "XCIV = 90 + 4 = 94.", "Check by adding."], "note": "Work from the largest. Ask pupils to say why 99 is XCIX and not IC." }
+      ],
+      "practice": ["Write 14 in Roman numerals.", "What number is XXXVI?", "Write 49 in Roman numerals."],
+      "independent": ["Write in Roman numerals: 8; 19; 44; 76; 99.", "Write as numbers: XII; XXIV; LXXXIX; XCVIII.", "Order from smallest: XIX, XL, XIV, LX, XC."],
+      "exit": ["Write 27 in Roman numerals.", "What is XLIII as a number?"],
+      "homework": "Find three places that use Roman numerals (clocks, book chapters) and write them as numbers.",
+      "send": "SEND: Roman numeral conversion chart. Stretch: Roman numerals to 1000 (D, M)."
+    },
+    {
+      "unit": "Unit 1: Place value and rounding",
+      "n": 8,
+      "title": "Negative numbers in context",
+      "duration": 45,
+      "objectives": ["Understand negative numbers using temperature", "Order numbers including negatives"],
+      "keywords": [{ "term": "negative number", "def": "a number below zero" }, { "term": "temperature", "def": "how hot or cold something is, in degrees Celsius" }, { "term": "zero", "def": "the number between positive and negative" }],
+      "starter": ["Bismillah. Write 56 in Roman numerals.", "Round 3,850 to the nearest 100.", "Count back from 5 to 0."],
+      "teach": [
+        { "heading": "Below zero", "bullets": ["Water freezes at 0 degrees Celsius.", "Colder than 0 is negative.", "-3 degrees is 3 below zero."], "note": "Use a thermometer picture. Introduce the minus sign. Ask where negative numbers are used: temperatures, bank overdraft, floors below ground." },
+        { "heading": "Number line", "bullets": ["Zero is in the middle.", "Positive numbers go right.", "Negative numbers go left."], "note": "Draw a line from -10 to 10. Point out that -2 is greater than -5 because it is further right." },
+        { "heading": "Ordering", "bullets": ["Order: 3, -2, 0, -7, 5.", "-7, -2, 0, 3, 5.", "Further left means smaller."], "note": "Common error: thinking -7 is bigger than -2 because 7 is bigger than 2. Use temperature: -7 is colder." },
+        { "heading": "Counting through zero", "bullets": ["Count back from 4: 4, 3, 2, 1, 0, -1, -2.", "Count up from -3: -3, -2, -1, 0, 1.", "Differences across zero."], "note": "Practise in steps of 1 and 2. Ask: how many steps from -3 to 2? (5)" }
+      ],
+      "practice": ["Which is colder: -4 or -1?", "Put in order smallest first: 2, -5, -1, 0.", "Count back in 2s from 6 to -6."],
+      "independent": ["The temperature is 3 degrees. It falls by 5 degrees. What is the temperature now?", "Write <, > or =: -3 __ -8; -1 __ 1; 0 __ -4.", "A lift goes from floor 2 down to floor -3. How many floors does it move?"],
+      "exit": ["Which is smaller: -6 or -2?", "The temperature is -2 and rises by 5. What is it now?"],
+      "homework": "Look at a weather forecast for another country this week. Write down the temperatures and order them.",
+      "send": "SEND: use a vertical thermometer model. Stretch: find differences between temperatures such as 8 and -5."
+    },
+    {
+      "unit": "Unit 1: Place value and rounding",
+      "n": 9,
+      "title": "Place value review",
+      "duration": 45,
+      "objectives": ["Apply place value, rounding and negative numbers to problems", "Reason with numbers up to 10,000"],
+      "keywords": [{ "term": "reasoning", "def": "explaining why an answer is correct" }],
+      "starter": ["Bismillah. Order: 5, -3, 0, -8.", "Write 3,075 in words.", "Round 6,450 to the nearest 100."],
+      "teach": [
+        { "heading": "Mixed problems", "bullets": ["Read carefully.", "Choose the skill: place value, rounding, order.", "Check your answer."], "note": "This lesson consolidates the unit. Work through each type with a worked example before pupils try." },
+        { "heading": "Number riddles", "bullets": ["I am a 4-digit number.", "My thousands digit is 3. I round to 3,500 to the nearest 100.", "What could I be? 3,450 to 3,549."], "note": "Pupils find the full range. Ask for the smallest and largest." },
+        { "heading": "Odd one out", "bullets": ["Which does not belong: 4,000; 3,999 + 1; 3,500 + 500; 4,010?", "4,010 is the odd one out.", "Justify your choice."], "note": "Encourage precise explanation. Several answers may be justified." },
+        { "heading": "True or false", "bullets": ["XLV is greater than XXXIX.", "-5 is greater than -2.", "Explain each answer."], "note": "XLV = 45, XXXIX = 39: true. -5 < -2: false. Ask pupils to prove each answer." }
+      ],
+      "practice": ["Which numbers round to 5,000 to the nearest 1000?", "Write the largest 4-digit number with digits adding to 10.", "Is XC more or less than LXXX?"],
+      "independent": ["A number rounds to 7,300 to the nearest 100. List five possible numbers.", "The temperature in three towns is -4, 2 and -9 degrees. Order them and find the coldest.", "Write 2,468 in two different partitioned ways, then round it to the nearest 10, 100 and 1000."],
+      "exit": ["Round 8,567 to the nearest 100.", "Which is smaller: -9 or -4?"],
+      "homework": "Create a one-page place value fact sheet with an example for each skill.",
+      "send": "SEND: choose fewer questions and use number lines. Stretch: write and solve your own riddle with five clues."
+    },
+    {
+      "unit": "Unit 2: Addition and subtraction",
+      "n": 10,
+      "title": "Column addition with 4-digit numbers",
+      "duration": 45,
+      "objectives": ["Add two 4-digit numbers using the column method", "Add with exchanges in several columns"],
+      "keywords": [{ "term": "column addition", "def": "adding numbers written under each other, ones first" }, { "term": "exchange", "def": "swap ten of one unit for one of the next unit" }],
+      "starter": ["Bismillah. 365 + 278 = ?", "Round 5,764 to the nearest 10.", "7 + 8 + 1 = ?"],
+      "teach": [
+        { "heading": "Set it out", "bullets": ["Write Th, H, T, O above the columns.", "Line up the digits.", "Start from the ones."], "note": "Use squared paper. Draw the headings to prevent misalignment. Pupils may need place value counters as support." },
+        { "heading": "Worked example", "bullets": ["3,584 + 2,759.", "Ones: 4 + 9 = 13: write 3, carry 1.", "Tens: 8 + 5 + 1 = 14: write 4, carry 1."], "note": "Show the carry digits under the line. Continue: hundreds 5 + 7 + 1 = 13: write 3, carry 1; thousands 3 + 2 + 1 = 6. Answer 6,343." },
+        { "heading": "Check", "bullets": ["Estimate: 3,600 + 2,800 = 6,400.", "Exact answer 6,343.", "It is close, so it is sensible."], "note": "Always estimate. Ask: could the answer be 5,343? 16,343?" },
+        { "heading": "Different lengths", "bullets": ["4,865 + 328.", "Write 328 as 0 thousands.", "Answer 5,193."], "note": "Line up 328 under the last three digits. Pupils sometimes add 3 to the thousands column." }
+      ],
+      "practice": ["Solve 2,456 + 1,327.", "Solve 4,578 + 2,865.", "Estimate then solve 3,906 + 4,575."],
+      "independent": ["Solve: 1,234 + 5,432; 3,675 + 2,458; 6,909 + 1,191; 4,382 + 4,718.", "Two schools have 1,456 and 2,378 pupils. How many altogether?", "Find the missing digits: 3,_47 + 2,_36 = 6,083."],
+      "exit": ["3,456 + 2,789 = ?", "Estimate the answer first."],
+      "homework": "Solve six 4-digit additions, estimating each first, and check with the inverse.",
+      "send": "SEND: place value counters, grid paper. Stretch: add 5-digit numbers."
+    },
+    {
+      "unit": "Unit 2: Addition and subtraction",
+      "n": 11,
+      "title": "Column subtraction with 4-digit numbers",
+      "duration": 45,
+      "objectives": ["Subtract 4-digit numbers using the column method", "Exchange across several columns"],
+      "keywords": [{ "term": "column subtraction", "def": "subtracting numbers written under each other, ones first" }, { "term": "exchange", "def": "break one unit into ten of the unit below" }],
+      "starter": ["Bismillah. 3,456 + 2,789 = ?", "Partition 4,300 as 3,000 + 1,300.", "Estimate 5,000 - 1,980."],
+      "teach": [
+        { "heading": "Set it out", "bullets": ["The larger number goes on top.", "Line up the columns.", "Start from the ones."], "note": "Show the place value headings. Check that pupils place 6,432 above 2,185." },
+        { "heading": "Exchange as needed", "bullets": ["6,432 - 2,185.", "Ones: 2 - 5: exchange from the tens.", "Tens 2 - 8: exchange from the hundreds."], "note": "Use counters. 6,432 becomes 6 Th, 3 H, 12 T... Step through: 2 ones need 10 from tens, so tens 3 become 2, ones 12; then tens 2 - 8 requires hundreds." },
+        { "heading": "Finish", "bullets": ["Ones: 12 - 5 = 7.", "Tens: 12 - 8 = 4.", "Answer: 4,247."], "note": "After exchanging, the hundreds 3 become 2 and tens 2 become 12 (then 12 - 8 = 4); hundreds 2 - 1 = 1; thousands 6 - 2 = 4... Check this: 6,432 - 2,185 = 4,247, so the hundreds digit is 2: ones 12-5=7, tens 12-8=4, hundreds 3-1=2 (after giving to tens), thousands 4." },
+        { "heading": "Check by adding", "bullets": ["4,247 + 2,185 = 6,432.", "It matches.", "So the answer is right."], "note": "Inverse check. Estimate too: 6,400 - 2,200 = 4,200." }
+      ],
+      "practice": ["Solve 5,678 - 2,345.", "Solve 7,203 - 3,568.", "Check 8,000 - 2,456 = 5,544."],
+      "independent": ["Solve: 6,543 - 2,317; 8,214 - 3,567; 9,005 - 4,278; 7,000 - 2,468.", "A stadium has 8,350 seats. 5,874 are sold. How many are left?", "Spot the mistake: 5,204 - 1,865 = 4,461."],
+      "exit": ["7,234 - 3,568 = ?", "Check with addition."],
+      "homework": "Solve six 4-digit subtractions and check each with addition.",
+      "send": "SEND: base ten and place value counters; a template with exchanges marked. Stretch: subtraction across zeros."
+    },
+    {
+      "unit": "Unit 2: Addition and subtraction",
+      "n": 12,
+      "title": "Estimating answers using rounding",
+      "duration": 45,
+      "objectives": ["Estimate sums and differences by rounding", "Use estimates to check for errors"],
+      "keywords": [{ "term": "estimate", "def": "an approximate answer found by rounding" }, { "term": "approximately", "def": "close to, but not exact" }],
+      "starter": ["Bismillah. 7,234 - 3,568 = ?", "Round 3,968 to the nearest 1000.", "Round 5,455 to the nearest 100."],
+      "teach": [
+        { "heading": "Round first", "bullets": ["Estimate 4,892 + 3,107.", "4,892 is about 4,900. 3,107 is about 3,100.", "Estimate: 8,000."], "note": "Choose a sensible degree of rounding. Rounding to the nearest 100 gives 4,900 + 3,100 = 8,000. Nearest 1000 gives 5,000 + 3,000 = 8,000." },
+        { "heading": "Estimating differences", "bullets": ["Estimate 7,812 - 2,189.", "About 7,800 - 2,200.", "Estimate: 5,600."], "note": "Compare with the exact answer 5,623. Ask which rounding gives the best estimate." },
+        { "heading": "Is it reasonable?", "bullets": ["Sara says 4,316 + 2,689 = 7,005.", "Estimate: 4,300 + 2,700 = 7,000.", "Her answer is reasonable."], "note": "Use the estimate to check for large errors. Estimates do not prove the answer is exact." },
+        { "heading": "Choose the rounding", "bullets": ["Nearest 10: more accurate.", "Nearest 100: quicker.", "Nearest 1000: roughest."], "note": "Discuss the trade-off. Ask when an estimate is enough, e.g. checking a shopping bill." }
+      ],
+      "practice": ["Estimate 5,312 + 2,589.", "Estimate 9,120 - 4,876.", "Is 3,874 + 5,126 = 9,000 reasonable?"],
+      "independent": ["Estimate by rounding to the nearest 100: 2,876 + 4,125; 8,432 - 3,589; 6,709 + 2,198.", "Estimate by rounding to the nearest 1000 and compare to the nearest 100 estimate for 4,632 + 3,498.", "Find the exact answers to the first three and say how close your estimates were."],
+      "exit": ["Estimate 6,189 + 2,901.", "Estimate 8,090 - 3,920."],
+      "homework": "Estimate six calculations of your own choice, then calculate the exact answers.",
+      "send": "SEND: use a rounding number line. Stretch: estimate with 5-digit numbers and decimals."
+    },
+    {
+      "unit": "Unit 2: Addition and subtraction",
+      "n": 13,
+      "title": "Two-step addition and subtraction problems",
+      "duration": 45,
+      "objectives": ["Solve two-step problems with 4-digit numbers", "Use bar models to organise information"],
+      "keywords": [{ "term": "bar model", "def": "a diagram of bars showing how the amounts relate" }, { "term": "two-step", "def": "needing two calculations to solve" }],
+      "starter": ["Bismillah. Estimate 4,982 + 3,107.", "5,000 - 1,486 = ?", "2,300 + 1,700 = ?"],
+      "teach": [
+        { "heading": "Plan the steps", "bullets": ["What do we know?", "What do we need to find?", "Which calculation first?"], "note": "Model reading aloud and annotating the question. A bar model clarifies parts and whole." },
+        { "heading": "Worked example 1", "bullets": ["A masjid collects 2,450 pounds in week 1 and 1,875 in week 2.", "Total: 4,325 pounds.", "It needs 5,000. Shortfall: 675 pounds."], "note": "Two steps: add, then subtract. Keep the context respectful and simple; this is just money in a fundraising example." },
+        { "heading": "Worked example 2", "bullets": ["A shop has 6,200 pens.", "It sells 2,845, then receives 1,500.", "6,200 - 2,845 = 3,355; 3,355 + 1,500 = 4,855."], "note": "Check by working backwards: 4,855 - 1,500 = 3,355; 3,355 + 2,845 = 6,200." },
+        { "heading": "Check", "bullets": ["Does the answer fit the story?", "Write it as a sentence.", "Include the units."], "note": "Teach pupils to give the answer in context. Ask whether the answer should be bigger or smaller than the start." }
+      ],
+      "practice": ["A train has 1,240 passengers. 485 get off and 362 get on. How many now?", "A library has 7,500 books. It buys 1,260 and loans 2,845. How many on the shelves?", "Which operation do we do first in each?"],
+      "independent": ["A school raises 3,420 pounds in term 1 and 2,985 in term 2. They need 8,000. How much more?", "A factory makes 5,620 toys in a week. 1,375 are sent to shop A and 2,480 to shop B. How many remain?", "Write your own two-step problem with the answer 4,200."],
+      "exit": ["A shop has 4,500 mugs and sells 1,275 then 860. How many are left?", "Draw a bar model for this problem."],
+      "homework": "Write and solve three two-step word problems using 4-digit numbers.",
+      "send": "SEND: use a template with step boxes. EAL: pre-teach vocabulary such as remain and altogether. Stretch: three-step problems."
+    },
+    {
+      "unit": "Unit 2: Addition and subtraction",
+      "n": 14,
+      "title": "Inverse operations and checking",
+      "duration": 45,
+      "objectives": ["Use the inverse operation to check calculations", "Find missing numbers in additions and subtractions"],
+      "keywords": [{ "term": "inverse operation", "def": "an operation that undoes another" }, { "term": "missing number", "def": "an unknown number in a calculation" }],
+      "starter": ["Bismillah. 3,400 - 1,275 = ?", "Estimate 5,899 + 3,120.", "What is the inverse of adding 40?"],
+      "teach": [
+        { "heading": "Undoing", "bullets": ["Add 250, then subtract 250.", "You return to the start.", "Addition and subtraction are inverses."], "note": "Show on a number line. Use fact families with 4-digit numbers: 2,000, 1,500, 3,500." },
+        { "heading": "Check by inverse", "bullets": ["4,628 + 3,175 = 7,803.", "7,803 - 3,175 = 4,628.", "The check works."], "note": "Pupils use a subtraction to check an addition. Also 7,803 - 4,628 = 3,175." },
+        { "heading": "Missing numbers", "bullets": ["__ + 2,350 = 6,000.", "6,000 - 2,350 = 3,650.", "The missing number is 3,650."], "note": "Use a bar model with the unknown part. Then try 8,000 - __ = 5,125, found by 8,000 - 5,125." },
+        { "heading": "Spot the error", "bullets": ["5,000 - 2,468 = 3,532?", "Check: 3,532 + 2,468 = 6,000.", "That is not 5,000, so there is an error."], "note": "Correct answer is 2,532. Ask pupils to find where the exchange went wrong." }
+      ],
+      "practice": ["Check 7,246 - 3,875 = 3,371 using addition.", "Find the missing number: __ + 3,456 = 9,000.", "Find the missing number: 7,500 - __ = 4,125."],
+      "independent": ["Check these using the inverse: 3,245 + 4,567 = 7,812; 9,000 - 3,456 = 5,544.", "Find the missing numbers: __ - 2,345 = 4,000; 6,123 + __ = 9,000; 10,000 - __ = 4,567.", "Write a fact family for 2,500, 3,750 and 6,250."],
+      "exit": ["Find the missing number: __ + 1,250 = 5,000.", "Check 8,000 - 2,500 = 5,500 by addition."],
+      "homework": "Make a set of five missing number questions for a friend, with answers separately.",
+      "send": "SEND: use a part-whole model. Stretch: missing digits in column calculations."
+    },
+    {
+      "unit": "Unit 3: Multiplication tables",
+      "n": 15,
+      "title": "The 6 times table",
+      "duration": 45,
+      "objectives": ["Recall multiplication and division facts for the 6 times table", "Use known facts to derive new ones"],
+      "keywords": [{ "term": "multiple", "def": "a number in a times table" }, { "term": "product", "def": "the result of multiplying" }],
+      "starter": ["Bismillah. Check 6,000 - 2,500 = 3,500.", "Count in 3s to 36.", "3 x 7 = ?"],
+      "teach": [
+        { "heading": "Double the 3s", "bullets": ["3 x 4 = 12.", "Double: 6 x 4 = 24.", "6 x is double 3 x."], "note": "Use the 3s you know. Show 6 x 7 as double 3 x 7 = 21 -> 42." },
+        { "heading": "5 and 1 more", "bullets": ["6 x 7 = 5 x 7 + 1 x 7.", "= 35 + 7 = 42.", "Another way to derive facts."], "note": "Show the array split. Decide which method pupils prefer." },
+        { "heading": "The facts", "bullets": ["6, 12, 18, 24, 30, 36.", "42, 48, 54, 60, 66, 72.", "Ones digits: 6, 2, 8, 4, 0 repeat."], "note": "Chant and write. Note the pattern in the ones digits. Look for 6 x 6 = 36, 6 x 8 = 48." },
+        { "heading": "Division", "bullets": ["54 / 6 = 9.", "42 / 6 = 7.", "72 / 6 = 12."], "note": "Use the multiplication fact backwards. Ask for the fact family of 6, 8 and 48." }
+      ],
+      "practice": ["6 x 8 = ?", "54 / 6 = ?", "Use 6 x 6 to find 6 x 7."],
+      "independent": ["Complete: 6 x 3, 6 x 9, 6 x 11, 6 x 12.", "Complete: 36 / 6, 48 / 6, 60 / 6, 66 / 6.", "A pack has 6 eggs. How many in 7 packs? How many packs for 54 eggs?"],
+      "exit": ["6 x 7 = ?", "48 / 6 = ?"],
+      "homework": "Practise the 6 times table for five minutes a day and test yourself.",
+      "send": "SEND: use arrays and a times table square. Stretch: 6 x 14 using partitioning."
+    },
+    {
+      "unit": "Unit 3: Multiplication tables",
+      "n": 16,
+      "title": "The 9 times table",
+      "duration": 45,
+      "objectives": ["Recall multiplication and division facts for the 9 times table", "Spot patterns in the 9 times table"],
+      "keywords": [{ "term": "digit sum", "def": "the sum of the digits of a number" }],
+      "starter": ["Bismillah. 6 x 8 = ?", "42 / 6 = ?", "10 x 7 = ?"],
+      "teach": [
+        { "heading": "Ten minus one", "bullets": ["9 x 7 = 10 x 7 - 7.", "= 70 - 7 = 63.", "9 x is 10 x less one group."], "note": "Show the array: 10 rows minus 1 row. This method works for any 9 times fact." },
+        { "heading": "The facts", "bullets": ["9, 18, 27, 36, 45, 54.", "63, 72, 81, 90, 99, 108.", "Tens digit goes up, ones digit goes down."], "note": "Pupils notice: for products up to 90 the digits add to 9. Ask why 108 breaks the pattern (1 + 0 + 8 = 9 still holds)." },
+        { "heading": "Finger trick", "bullets": ["Hold up 10 fingers.", "For 9 x 4, fold down finger 4.", "3 fingers left, 6 fingers right: 36."], "note": "A fun method. Use it for 9 x 1 to 9 x 10. Check against the pattern." },
+        { "heading": "Division", "bullets": ["63 / 9 = 7.", "81 / 9 = 9.", "108 / 9 = 12."], "note": "Use the facts backwards. Check by multiplying." }
+      ],
+      "practice": ["9 x 6 = ?", "72 / 9 = ?", "Use 10 x 8 to find 9 x 8."],
+      "independent": ["Complete: 9 x 3, 9 x 7, 9 x 9, 9 x 11.", "Complete: 27 / 9, 54 / 9, 90 / 9, 99 / 9.", "Nine children each have 9 marbles. How many altogether? Share 108 sweets among 9 children."],
+      "exit": ["9 x 8 = ?", "63 / 9 = ?"],
+      "homework": "Write out the 9 times table and colour the digit patterns you can see.",
+      "send": "SEND: use the finger method and times table grid. Stretch: 9 x 15 as 10 x 15 - 15."
+    },
+    {
+      "unit": "Unit 3: Multiplication tables",
+      "n": 17,
+      "title": "The 7 times table",
+      "duration": 45,
+      "objectives": ["Recall multiplication and division facts for the 7 times table", "Use known facts to derive the remaining 7s"],
+      "keywords": [{ "term": "derive", "def": "work out a new fact from one you already know" }],
+      "starter": ["Bismillah. 9 x 7 = ?", "Count in 6s to 72.", "54 / 6 = ?"],
+      "teach": [
+        { "heading": "Facts you already know", "bullets": ["7 x 1, 7 x 2, 7 x 5, 7 x 10.", "7 x 3 = 21 and 7 x 4 = 28.", "7 x 6 = 42, 7 x 8 = 56, 7 x 9 = 63."], "note": "Most of the 7s are known from other tables by commutativity. Only 7 x 7 = 49 is new." },
+        { "heading": "The new fact", "bullets": ["7 x 7 = 49.", "Check: 7 x 5 + 7 x 2 = 35 + 14.", "= 49."], "note": "Use partitioning to derive. Ask pupils to find another route: 7 x 7 = 7 x 8 - 7 = 56 - 7 = 49." },
+        { "heading": "All the facts", "bullets": ["7, 14, 21, 28, 35, 42.", "49, 56, 63, 70, 77, 84.", "Chant forwards and backwards."], "note": "Chant at speed. Practise recall with fast questions." },
+        { "heading": "Division and problems", "bullets": ["56 / 7 = 8.", "84 / 7 = 12.", "A week has 7 days: 9 weeks = 63 days."], "note": "Use real context: days in weeks. 365 days is 52 weeks and 1 day (stretch)." }
+      ],
+      "practice": ["7 x 6 = ?", "49 / 7 = ?", "How many days in 8 weeks?"],
+      "independent": ["Complete: 7 x 4, 7 x 8, 7 x 11, 7 x 12.", "Complete: 35 / 7, 63 / 7, 77 / 7, 84 / 7.", "A packet has 7 biscuits. How many in 9 packets? How many packets for 70 biscuits?"],
+      "exit": ["7 x 8 = ?", "42 / 7 = ?"],
+      "homework": "Learn the 7 times table and test yourself with a timer.",
+      "send": "SEND: highlight the 7s on a times table square. Stretch: 7 x 13."
+    },
+    {
+      "unit": "Unit 3: Multiplication tables",
+      "n": 18,
+      "title": "The 11 and 12 times tables",
+      "duration": 45,
+      "objectives": ["Recall the 11 and 12 times tables", "Use patterns to multiply by 11 and 12"],
+      "keywords": [{ "term": "pattern", "def": "something that repeats or follows a rule" }],
+      "starter": ["Bismillah. 7 x 9 = ?", "56 / 7 = ?", "10 x 12 = ?"],
+      "teach": [
+        { "heading": "The 11 times table", "bullets": ["11, 22, 33, 44, 55, 66.", "77, 88, 99, 110, 121, 132.", "Repeated digits up to 99."], "note": "Pupils notice the repeated digits. After 99 the pattern changes: 110, 121, 132." },
+        { "heading": "11 x 12", "bullets": ["11 x 12 = 132.", "10 x 12 + 1 x 12 = 120 + 12.", "= 132."], "note": "Use partitioning for the harder facts. Show 11 x n = 10 x n + n." },
+        { "heading": "The 12 times table", "bullets": ["12, 24, 36, 48, 60, 72.", "84, 96, 108, 120, 132, 144.", "12 x n = 10 x n + 2 x n."], "note": "Partition 12 as 10 + 2. 12 x 7 = 70 + 14 = 84. A dozen is 12." },
+        { "heading": "Division facts", "bullets": ["96 / 12 = 8.", "132 / 11 = 12.", "144 / 12 = 12."], "note": "Use inverse. Ask how many months are in 12 years? (144)" }
+      ],
+      "practice": ["11 x 7 = ?", "12 x 6 = ?", "108 / 12 = ?"],
+      "independent": ["Complete: 11 x 3, 11 x 9, 11 x 12; 12 x 4, 12 x 8, 12 x 11.", "Complete: 66 / 11, 121 / 11, 72 / 12, 132 / 12.", "There are 12 months in a year. How many months in 9 years? A box holds 12 eggs; how many boxes for 96 eggs?"],
+      "exit": ["12 x 7 = ?", "99 / 11 = ?"],
+      "homework": "Complete a full 12 x 12 multiplication grid from memory, then check it.",
+      "send": "SEND: use a pre-filled grid and partitioning. Stretch: 11 x 25 and 12 x 15."
+    },
+    {
+      "unit": "Unit 3: Multiplication tables",
+      "n": 19,
+      "title": "Multiplying three numbers; special numbers",
+      "duration": 45,
+      "objectives": ["Multiply three numbers together", "Understand multiplying by 0 and by 1"],
+      "keywords": [{ "term": "factor", "def": "a number that divides exactly into another" }, { "term": "associative", "def": "grouping numbers differently does not change the product" }],
+      "starter": ["Bismillah. 11 x 8 = ?", "12 x 9 = ?", "96 / 12 = ?"],
+      "teach": [
+        { "heading": "Multiply by 1 and 0", "bullets": ["Any number x 1 stays the same.", "Any number x 0 is 0.", "0 / 5 = 0, but we cannot divide by 0."], "note": "Use groups: 5 groups of 1 is 5; 5 groups of 0 is 0. Dividing by zero is not possible; avoid long discussion." },
+        { "heading": "Three numbers", "bullets": ["2 x 3 x 5.", "(2 x 3) x 5 = 6 x 5 = 30.", "2 x (3 x 5) = 2 x 15 = 30."], "note": "We can group in any order. Look for easy pairs, such as 2 x 5 = 10." },
+        { "heading": "Choose a clever order", "bullets": ["4 x 7 x 5.", "4 x 5 = 20, then 20 x 7 = 140.", "Choose the easiest pair first."], "note": "Pupils find the most efficient pairing. Check with the other order: 28 x 5 = 140." },
+        { "heading": "Cuboid volumes", "bullets": ["A box is 4 cm by 3 cm by 2 cm.", "4 x 3 x 2 = 24.", "24 small cubes fit."], "note": "Link to volume as an application. Avoid formal volume work, just the idea of three numbers." }
+      ],
+      "practice": ["Calculate 6 x 1 x 9.", "Calculate 5 x 4 x 3.", "Calculate 8 x 0 x 7."],
+      "independent": ["Calculate: 2 x 6 x 5; 3 x 4 x 5; 2 x 9 x 5; 4 x 25 x 2.", "Find the missing number: 3 x __ x 4 = 60.", "Make 36 using three numbers multiplied together in two different ways."],
+      "exit": ["Calculate 4 x 3 x 5.", "What is 9 x 0 x 6?"],
+      "homework": "Write five three-number multiplication questions with a clever order for each.",
+      "send": "SEND: use cubes to build boxes. Stretch: multiply four numbers together."
+    },
+    {
+      "unit": "Unit 3: Multiplication tables",
+      "n": 20,
+      "title": "Factor pairs and times tables review",
+      "duration": 45,
+      "objectives": ["Find all the factor pairs of a number", "Recall multiplication facts up to 12 x 12"],
+      "keywords": [{ "term": "factor pair", "def": "two numbers that multiply to make a given number" }, { "term": "factor", "def": "a number that divides exactly into another" }],
+      "starter": ["Bismillah. 4 x 5 x 3 = ?", "9 x 8 = ?", "84 / 7 = ?"],
+      "teach": [
+        { "heading": "Factors", "bullets": ["Factors divide exactly with no remainder.", "12 / 3 = 4, so 3 is a factor of 12.", "12 / 5 is not exact."], "note": "Link to the times tables: factors are the numbers in the table that multiply to make the target." },
+        { "heading": "Factor pairs of 12", "bullets": ["1 x 12.", "2 x 6.", "3 x 4."], "note": "List systematically: start with 1, then 2, then 3. Stop when the pairs repeat. The factors of 12 are 1, 2, 3, 4, 6, 12." },
+        { "heading": "Factor pairs of 36", "bullets": ["1 x 36, 2 x 18, 3 x 12.", "4 x 9, 6 x 6.", "6 is paired with itself."], "note": "Square numbers have a factor pair with the same number. Count the factors of 36: 9, an odd number." },
+        { "heading": "Review", "bullets": ["Times tables to 12 x 12.", "Fast recall is important.", "Use the facts you know."], "note": "Short recall quiz, then problems. Pupils mark their own with the answers." }
+      ],
+      "practice": ["List the factor pairs of 20.", "Is 7 a factor of 42? Is 5 a factor of 42?", "List all the factors of 24."],
+      "independent": ["Find all the factors of: 18; 28; 30; 45.", "Find the number which has factor pairs 1 x 16, 2 x 8 and 4 x 4.", "Complete a mixed times tables quiz of 20 questions."],
+      "exit": ["List all the factors of 15.", "What is 7 x 12?"],
+      "homework": "Find the factor pairs of ten numbers up to 50 and note any that have an odd number of factors.",
+      "send": "SEND: use cubes to build arrays for each factor pair. Stretch: prime and composite numbers."
+    }
+  ]
+}

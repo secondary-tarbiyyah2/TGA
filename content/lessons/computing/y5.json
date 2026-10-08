@@ -1,0 +1,245 @@
+{
+  "subject": "Computing",
+  "year": "y5",
+  "board": "National Curriculum",
+  "source": "National Curriculum KS2 Computing (variables, repetition and selection, designing and debugging programs); Scratch game-making sequence adapted from the school's Drive Scratch Game Maker resources (Y7-Y9 computing overview)",
+  "lessons": [
+    {
+      "unit": "Unit 1: Variables and game programming",
+      "n": 1,
+      "title": "Variables: boxes that store information",
+      "duration": 45,
+      "objectives": [
+        "Explain that a variable stores a value which can change",
+        "Use 'set' and 'change by' to update a variable",
+        "Trace the value of a variable through a short algorithm"
+      ],
+      "keywords": [
+        { "term": "variable", "def": "a named box that stores a value which can change" },
+        { "term": "value", "def": "the information stored in a variable" },
+        { "term": "set", "def": "give a variable a starting value" },
+        { "term": "change by", "def": "add to or take away from a variable" }
+      ],
+      "starter": [
+        "Bismillah. Say what an if-then-else does.",
+        "What is a loop?",
+        "A game shows 'Score: 0'. Where does the computer remember the score?"
+      ],
+      "teach": [
+        {
+          "heading": "A variable is a labelled box",
+          "bullets": ["The label is the name: score.", "The box holds a value: 0.", "The value can change; the name stays."],
+          "note": "Use real boxes or a drawn box with a sticky note. Write score on the label and 0 inside. Change the number inside. Ask what stayed the same and what changed. Misconception: pupils think a variable name and its value are the same thing."
+        },
+        {
+          "heading": "Set and change",
+          "bullets": ["set score to 0 (start of game).", "change score by 1 (a point).", "change score by -1 (lose a point)."],
+          "note": "Act it out: pupils hold a whiteboard with the variable name and a number; you give instructions and they update. Ask: after set score to 0, change by 3, change by 2, what is score? (5)."
+        },
+        {
+          "heading": "Trace it",
+          "bullets": ["set lives to 3.", "change lives by -1.", "change lives by -1.", "lives is now 1."],
+          "note": "Show a trace table with a column per line of the algorithm and a row for the value. Teach pupils to fill it in line by line. This is the foundation for trace tables later in secondary computing."
+        },
+        {
+          "heading": "Variables in real life",
+          "bullets": ["Game scores and lives.", "Shopping basket total.", "Battery percentage on a phone."],
+          "note": "Ask pupils to give their own examples of something that changes and a computer must remember. Example: the number of steps counted by a fitness watch."
+        }
+      ],
+      "practice": [
+        "set score to 5, change score by 3, change score by -2. What is score? (6)",
+        "set lives to 3, change lives by -1 twice. What is lives? (1)",
+        "What is the variable name and what is the value in: set coins to 10?"
+      ],
+      "independent": [
+        "Complete 4 trace tables for algorithms with 'set' and 'change' blocks.",
+        "Write an algorithm to keep score in a game where you earn 10 points for a star and lose 5 for a rock.",
+        "Design a variable box diagram for a game: choose 3 variables, name them and give each a starting value."
+      ],
+      "exit": [
+        "What is a variable?",
+        "set x to 4, change x by 6. What is x?"
+      ],
+      "homework": "Find two places on a device or game where a number changes. Name the variable and describe when it changes.",
+      "send": "SEND/EAL: use physical boxes and counters; give a template trace table. Stretch: trace an algorithm containing a repeat loop that changes a variable each time."
+    },
+    {
+      "unit": "Unit 1: Variables and game programming",
+      "n": 2,
+      "title": "Variables in Scratch: score and lives",
+      "duration": 45,
+      "objectives": [
+        "Create a variable in Scratch",
+        "Use set and change blocks to update a score",
+        "Show a variable on the stage and test it"
+      ],
+      "keywords": [
+        { "term": "make a variable", "def": "the button in Scratch that creates a new variable" },
+        { "term": "show variable", "def": "makes the variable's value visible on the stage" },
+        { "term": "global", "def": "a variable that all sprites can use" }
+      ],
+      "starter": [
+        "Bismillah. set score to 2, change score by 5. What is score?",
+        "What stays the same in a variable: the name or the value?",
+        "Why might a game need a lives variable?"
+      ],
+      "teach": [
+        {
+          "heading": "Make a variable",
+          "bullets": ["Open the Variables palette.", "Click 'Make a Variable'.", "Name it score; choose 'For all sprites'."],
+          "note": "Share the screen and make the variable step by step. Pupils follow on their own machines. Explain that a name like score tells us what the variable is for, so choose names that make sense."
+        },
+        {
+          "heading": "Start at zero",
+          "bullets": ["When green flag clicked.", "set score to 0.", "This resets the game."],
+          "note": "Show what happens if you forget to set score to 0: the score continues from last time. Misconception: pupils think Scratch resets variables automatically; it does not."
+        },
+        {
+          "heading": "Change the score",
+          "bullets": ["When a sprite is clicked.", "change score by 1.", "Score appears on the stage."],
+          "note": "Build a clicker game: click the star sprite to add 1 to the score. Run it and click five times. Ask for predictions: what will the score be after 10 clicks? Check."
+        },
+        {
+          "heading": "Lives and sensing",
+          "bullets": ["set lives to 3.", "If touching the rock: change lives by -1.", "If lives = 0: say 'Game over'."],
+          "note": "Preview the selection with variables. Do not build all of it now. Ask pupils what blocks they will need and in what order. Connect to selection from Year 4."
+        }
+      ],
+      "practice": [
+        "Which block puts the score back to 0 at the start of the game?",
+        "What happens to the score if the sprite is clicked 7 times and each click changes score by 2? (14)",
+        "Name two good variable names for a game and say what each is for."
+      ],
+      "independent": [
+        "Build a click game: a sprite appears at a random place and each click adds 1 to score.",
+        "Add a second variable called 'clicks' that counts every click even when the sprite is missed.",
+        "Test the game and write what the score and clicks are after you click 10 times."
+      ],
+      "exit": [
+        "Why do we set the score to 0 when the green flag is clicked?",
+        "Which block changes a variable by adding a number?"
+      ],
+      "homework": "Improve the click game at home: make the sprite move to a new place each time it is clicked, and send a screenshot.",
+      "send": "SEND/EAL: provide a half-built project with the variable already created and the blocks to arrange. Stretch: make each click worth 2 points and the score show on the stage in a large font."
+    },
+    {
+      "unit": "Unit 1: Variables and game programming",
+      "n": 3,
+      "title": "Loops and conditions: forever, if and repeat until",
+      "duration": 45,
+      "objectives": [
+        "Use 'forever' with 'if' to keep checking something",
+        "Use 'repeat until' to repeat until a condition is true",
+        "Explain the difference between a count-controlled and a condition-controlled loop"
+      ],
+      "keywords": [
+        { "term": "forever", "def": "a loop which never stops until the program ends" },
+        { "term": "repeat until", "def": "a loop which stops when its condition becomes true" },
+        { "term": "touching", "def": "a sensing block that checks if sprites meet" }
+      ],
+      "starter": [
+        "Bismillah. How do you make a sprite move 10 steps five times without writing the block five times?",
+        "set coins to 3, change coins by 2. What is coins?",
+        "What does an if block need before it can decide?"
+      ],
+      "teach": [
+        {
+          "heading": "Counting loops",
+          "bullets": ["repeat 10 runs exactly 10 times.", "We know how many times.", "Good for drawing shapes."],
+          "note": "Recap repeat from Year 3 with a quick square. Ask pupils how they would know how many times to repeat if they did not know the number in advance."
+        },
+        {
+          "heading": "Repeat until",
+          "bullets": ["repeat until touching the edge.", "The loop stops when the condition is true.", "We do not need to know how many."],
+          "note": "Demonstrate a sprite moving 5 steps repeat until touching the edge. Change the starting position and show the loop still works. Misconception: pupils think the loop stops immediately when the condition is first checked; it checks every time round."
+        },
+        {
+          "heading": "Forever and if",
+          "bullets": ["forever keeps checking.", "if touching star: change score by 1.", "The game keeps responding."],
+          "note": "Build a catch game: a basket sprite moves with the arrow keys; inside a forever loop an if block checks touching star. Explain that a loop with a condition inside is how games check what is happening. Show what happens without the forever loop (the check only happens once)."
+        },
+        {
+          "heading": "Choosing the right loop",
+          "bullets": ["Know how many times: repeat.", "Know when to stop: repeat until.", "Keep going all game: forever."],
+          "note": "Give three scenarios and ask which loop fits: draw a hexagon, walk until you reach the wall, keep checking for key presses. Take answers using thumbs signals."
+        }
+      ],
+      "practice": [
+        "Which loop would you use to make a sprite walk until it touches a wall?",
+        "Which loop would you use to draw a pentagon (5 sides)?",
+        "A game must always check if the player touches an enemy. Which loop? (forever)"
+      ],
+      "independent": [
+        "Build a sprite which moves across the stage until it touches the edge, then says 'Done!'.",
+        "Build a catch game where the basket moves left and right and score increases when it touches the falling star.",
+        "Test the game and debug any problems; write one change you made."
+      ],
+      "exit": [
+        "Which loop stops only when a condition becomes true?",
+        "Why does the 'if touching' block need to be inside a forever loop?"
+      ],
+      "homework": "Think of a game you play. Write which actions would need a forever loop and which would need repeat.",
+      "send": "SEND/EAL: provide a screenshot of the finished script to compare with theirs and label the loops with colour. Stretch: make the falling star start at a random place at the top each time."
+    },
+    {
+      "unit": "Unit 1: Variables and game programming",
+      "n": 4,
+      "title": "Project: design, build and test a catching game",
+      "duration": 45,
+      "objectives": [
+        "Design a game using a plan with sprites, variables and rules",
+        "Use variables, loops and selection together",
+        "Test, evaluate and improve the game"
+      ],
+      "keywords": [
+        { "term": "design", "def": "plan what your program will do" },
+        { "term": "evaluate", "def": "decide how well something works and how to improve it" },
+        { "term": "game rule", "def": "what happens when something occurs in the game" }
+      ],
+      "starter": [
+        "Bismillah. Name the three kinds of loop block we have used.",
+        "What would 'change lives by -1' do?",
+        "What should a game do when lives reach 0?"
+      ],
+      "teach": [
+        {
+          "heading": "Design first",
+          "bullets": ["Who or what is the player?", "What do you catch or avoid?", "What are the variables and rules?"],
+          "note": "Show a design template: sprites, variables, rules, extras. Model filling it in for a fruit-catching game with dates. Explain why designers plan before building. Tidy and careful work is part of excellence (ihsan)."
+        },
+        {
+          "heading": "Build in steps",
+          "bullets": ["Step 1: move the player.", "Step 2: make items fall.", "Step 3: score and lives."],
+          "note": "Decompose the project into steps (callback to Year 3) and display them. Pupils should test after each step. Encourage them to save their project often."
+        },
+        {
+          "heading": "Test with a checklist",
+          "bullets": ["Does the player move?", "Does the score go up when caught?", "Does the game end at 0 lives?"],
+          "note": "Give a checklist to tick off. Explain that a good tester tries unexpected things too, such as holding two keys. Typical bug: the score keeps rising while the item is touching the player; fix with a move-back or hide."
+        },
+        {
+          "heading": "Evaluate",
+          "bullets": ["What works well?", "What would you change?", "Ask a friend to play your game."],
+          "note": "Teach evaluation sentences: 'My game works well because... To improve it I would...'. Encourage honest and gentle peer feedback. Give a few minutes for pupils to play each other's games via shared links."
+        }
+      ],
+      "practice": [
+        "Design on screen: choose three variables for the game (score, lives, time) and give each a starting value.",
+        "Write the rule for losing a life in the form IF ___ THEN ___.",
+        "Plan three steps for building the game in the order you would do them."
+      ],
+      "independent": [
+        "Complete the design template for your own catching game.",
+        "Build and test your game with at least one variable, one loop and one if block.",
+        "Fill in the evaluation: two things that work and one improvement."
+      ],
+      "exit": [
+        "Name one variable in your game and say what it does.",
+        "What is one bug you fixed and how did you find it?"
+      ],
+      "homework": "Add one improvement to your game (a new level, a timer, or sounds) and write one sentence about how it changes the game.",
+      "send": "SEND/EAL: provide a starter project with sprites and backdrop; give sentence starters for the design and evaluation. Stretch: add a second type of falling object that takes points away."
+    }
+  ]
+}

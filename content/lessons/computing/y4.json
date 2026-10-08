@@ -1,0 +1,245 @@
+{
+  "subject": "Computing",
+  "year": "y4",
+  "board": "National Curriculum",
+  "source": "National Curriculum KS2 Computing (computer networks and the internet, search technologies, selection in programs); unplugged packets activity and Scratch work adapted from the school's Drive Computing scheme (Compute-IT 'How the web works' / ComputerScienceUK)",
+  "lessons": [
+    {
+      "unit": "Unit 1: Networks, the internet and searching",
+      "n": 1,
+      "title": "How the internet works",
+      "duration": 45,
+      "objectives": [
+        "Explain what a network and the internet are",
+        "Describe how a message is split into packets and sent",
+        "Tell the difference between the internet and the World Wide Web"
+      ],
+      "keywords": [
+        { "term": "network", "def": "computers and devices joined together to share information" },
+        { "term": "internet", "def": "a huge network of networks across the world" },
+        { "term": "packet", "def": "a small piece of a message sent across a network" },
+        { "term": "router", "def": "a device that sends data to the right place" }
+      ],
+      "starter": [
+        "Bismillah. Name three devices that can connect to Wi-Fi.",
+        "What is an input device? Give an example.",
+        "How do you think a photo gets from your phone to a friend's phone?"
+      ],
+      "teach": [
+        {
+          "heading": "What is a network?",
+          "bullets": ["Devices joined so they can share information.", "A home network: phones, tablets, router.", "School networks share printers and files."],
+          "note": "Draw your own home network on screen: router in the middle with lines to devices. Ask pupils how many devices are connected in their homes. Explain that the router is the device that connects them to the internet."
+        },
+        {
+          "heading": "The internet",
+          "bullets": ["The internet is a network of networks.", "Cables under the sea and wires join countries.", "Servers are computers that store websites."],
+          "note": "Show a world map with cable routes (many internet connections between continents travel through undersea cables). Say clearly that the internet is not 'the cloud in the sky'; it is real cables, routers and servers. Misconception: pupils say 'the internet is Wi-Fi'; Wi-Fi is only the last wireless step to the router."
+        },
+        {
+          "heading": "Packets",
+          "bullets": ["Big messages are split into small packets.", "Each packet has an address.", "Packets can take different routes.", "They are put back in order at the end."],
+          "note": "Do the unplugged activity: write the sentence 'Bismillah, I am learning about packets' with one word on each card. Number the cards. Shuffle and send 'by different routes' (pupils pass them around), then rebuild in order. Link this to why numbering is important."
+        },
+        {
+          "heading": "Internet or web?",
+          "bullets": ["The internet is the network.", "The World Wide Web is websites on it.", "Email and games use the internet but are not websites."],
+          "note": "Use the analogy of roads and shops: the internet is the road system, the web is the shops on the roads. Ask: is a video call the web? (It uses the internet; it is not necessarily a web page.) Accept discussion; the key idea is that the web runs on the internet."
+        }
+      ],
+      "practice": [
+        "Which is bigger, a network or the internet? Explain in one sentence.",
+        "Why are packets numbered? (so they can be put back in the right order)",
+        "True or false: all packets must take the same route."
+      ],
+      "independent": [
+        "Draw your home network with at least 4 devices and a router, and label each part.",
+        "Split the sentence 'Please send the file to my friend' into 6 packets, number them, shuffle and swap with a partner to rebuild.",
+        "Write three sentences explaining the difference between the internet and the web."
+      ],
+      "exit": [
+        "What is a packet?",
+        "What is the job of a router?"
+      ],
+      "homework": "Count how many devices in your home connect to the internet and list them with the type of each (phone, TV, console, etc.).",
+      "send": "SEND/EAL: provide labelled diagrams and a word bank; allow pupils to rebuild the packet sentence physically. Stretch: ask what happens if one packet goes missing."
+    },
+    {
+      "unit": "Unit 1: Networks, the internet and searching",
+      "n": 2,
+      "title": "Searching the web and checking if it is trustworthy",
+      "duration": 45,
+      "objectives": [
+        "Use keywords to search effectively",
+        "Spot adverts and sponsored results",
+        "Check whether a website can be trusted"
+      ],
+      "keywords": [
+        { "term": "search engine", "def": "a website which finds web pages for the words you type" },
+        { "term": "keyword", "def": "an important word used in a search" },
+        { "term": "reliable", "def": "something you can trust to be true" }
+      ],
+      "starter": [
+        "Bismillah. What is the difference between the internet and the web?",
+        "What is a packet?",
+        "Where would you look to find out how tall Mount Everest is?"
+      ],
+      "teach": [
+        {
+          "heading": "Choosing keywords",
+          "bullets": ["Use short, important words.", "'Tallest mountain world' beats a long sentence.", "Add words to narrow the search."],
+          "note": "Search live for 'mountain' and then 'tallest mountain in the world height metres'. Compare the results. Ask pupils to say which keywords gave a better answer. Use a child-safe search engine or safe search if available."
+        },
+        {
+          "heading": "Adverts and results",
+          "bullets": ["Some results are adverts.", "Adverts want you to buy or click.", "Look for the word 'Ad' or 'Sponsored'."],
+          "note": "Point to the labels on a real results page. Ask: who pays for an advert, and what do they want you to do? Remind pupils never to click on pop-ups or download things without asking a trusted adult."
+        },
+        {
+          "heading": "Can I trust this page?",
+          "bullets": ["Who wrote it?", "When was it written?", "Do other sites say the same thing?", "Is it trying to sell something?"],
+          "note": "Compare two pages on the same topic: one from a museum or a school, one a personal blog with adverts. Ask pupils to apply the four checks. Teach that if something is shared online but not checked, we should be careful, and that checking before repeating information is part of honesty (sidq)."
+        },
+        {
+          "heading": "Fact or opinion",
+          "bullets": ["Fact: Mount Everest is the highest mountain above sea level.", "Opinion: Everest is the best mountain.", "Facts can be checked."],
+          "note": "Give pupils five statements to sort into fact or opinion. Misconception: pupils think if it is on the internet it is true. Show a made-up news story (clearly labelled as fake for the lesson) and ask how they could check it."
+        }
+      ],
+      "practice": [
+        "Which keywords would you use to find the date of Eid al-Fitr this year? Choose from: when, Eid al-Fitr, date, 2026, please tell me.",
+        "Is this a fact or an opinion? 'The Thames is a river in London.' 'Football is the best sport.'",
+        "Name two ways to check if a website is trustworthy."
+      ],
+      "independent": [
+        "Use a search engine to find out the length of the River Nile. Write the answer and the website you used.",
+        "Find two websites with the answer. Do they agree? Which seems more reliable and why?",
+        "Make a poster with 'Four questions to ask about a website'."
+      ],
+      "exit": [
+        "Write two good keywords to find out about volcanoes.",
+        "Name one reason why a website might not be reliable."
+      ],
+      "homework": "Find a fact about your favourite animal from two different websites. Write both sources down and say if they agree.",
+      "send": "SEND/EAL: provide a checklist with icons and sentence starters ('I trust this website because...'). Stretch: investigate how a page's address (URL) can help show who made it."
+    },
+    {
+      "unit": "Unit 2: Selection in programs",
+      "n": 3,
+      "title": "Selection: if, then, else",
+      "duration": 45,
+      "objectives": [
+        "Explain that selection lets a program make a choice",
+        "Write simple if-then-else rules using a condition",
+        "Predict the output of a selection algorithm"
+      ],
+      "keywords": [
+        { "term": "selection", "def": "choosing which instructions to follow" },
+        { "term": "condition", "def": "a question with a yes or no answer" },
+        { "term": "if", "def": "the word we use to check a condition" }
+      ],
+      "starter": [
+        "Bismillah. How many sides does a square have?",
+        "What does a loop do?",
+        "If it is raining, what do you take with you? What if it is not raining?"
+      ],
+      "teach": [
+        {
+          "heading": "Everyday choices",
+          "bullets": ["If it is raining, take an umbrella.", "Otherwise, wear sunglasses.", "A condition is a yes or no question."],
+          "note": "Ask pupils to stand if the condition is true. Use: 'If you are wearing a blue top, stand up'. The condition is 'wearing a blue top?' and the answer is yes or no. Link to making choices carefully."
+        },
+        {
+          "heading": "If, then, else",
+          "bullets": ["IF it is Friday THEN go to Jumu'ah.", "ELSE go to school as normal.", "Only one path is followed."],
+          "note": "Display the flow as a diamond decision shape with two arrows. Ask pupils which path they follow on Mondays. Only one path is followed; misconception: pupils think the program does both."
+        },
+        {
+          "heading": "Number conditions",
+          "bullets": ["IF score > 10 THEN say 'Well done!'", "ELSE say 'Try again'.", "Score is 12. What is said?"],
+          "note": "Explain the symbols: greater than (>), less than (<), equal to (=). Test with different scores: 5, 10, 11. Many pupils get 10 wrong: 10 is not greater than 10, so the else branch runs."
+        },
+        {
+          "heading": "Unplugged robot rule",
+          "bullets": ["IF the robot is next to a wall THEN turn right.", "ELSE move forward.", "Follow the rule on a grid."],
+          "note": "Use a drawn grid with walls around the edges and a counter. Pupils follow the rule step by step. Ask for predictions then check. This builds the idea of a program which responds to its situation."
+        }
+      ],
+      "practice": [
+        "IF age is 8 or more THEN 'You can join the club' ELSE 'Come back next year'. What is said for age 7? For age 9?",
+        "Complete: IF the light is red THEN ___ ELSE ___.",
+        "IF score > 10 THEN 'Well done' ELSE 'Try again'. What is said for 10?"
+      ],
+      "independent": [
+        "Write three if-then-else rules for a robot that chooses what to wear based on the weather.",
+        "Draw a flowchart with a decision diamond for 'Is it Friday?'.",
+        "Create a quiz question with an if-then-else response for a right and wrong answer."
+      ],
+      "exit": [
+        "What is a condition?",
+        "IF number > 5 THEN 'big' ELSE 'small'. What is said for 3?"
+      ],
+      "homework": "Write three if-then-else rules that describe decisions you make in a normal day.",
+      "send": "SEND/EAL: use colour-coded cards (green IF, orange THEN, blue ELSE) and physical movement for the paths. Stretch: write a rule with two conditions joined with AND."
+    },
+    {
+      "unit": "Unit 2: Selection in programs",
+      "n": 4,
+      "title": "Selection in Scratch: a quiz",
+      "duration": 45,
+      "objectives": [
+        "Use if-then-else blocks in Scratch",
+        "Use ask and answer to take input from the user",
+        "Build and debug a short quiz"
+      ],
+      "keywords": [
+        { "term": "ask and wait", "def": "a block that asks a question and waits for typed input" },
+        { "term": "answer", "def": "the block which stores what the user typed" },
+        { "term": "if-else", "def": "a block that chooses between two sets of instructions" }
+      ],
+      "starter": [
+        "Bismillah. What does a condition give: yes/no or a number?",
+        "IF 7 > 5 THEN 'yes' ELSE 'no'. What is said?",
+        "What is an input?"
+      ],
+      "teach": [
+        {
+          "heading": "Ask and answer",
+          "bullets": ["'ask ... and wait' shows a question.", "The user types a reply.", "'answer' holds the reply."],
+          "note": "Build live: when green flag clicked, ask 'What is the capital of France?' and wait. Show the answer block holding the reply by making the sprite say it. Explain that this is input from the user."
+        },
+        {
+          "heading": "If-else block",
+          "bullets": ["Put the condition in the diamond.", "'answer' = 'Paris' is the condition.", "Right: say 'Correct!'.", "Wrong: say 'Try again'."],
+          "note": "Build the if-else around the answer check. Stress that the equals block compares the answer with the text. Mention that Scratch ignores upper or lower case for text, so 'paris' also matches. Misconception: forgetting to put the if-else block after the ask block."
+        },
+        {
+          "heading": "Test every path",
+          "bullets": ["Test a right answer.", "Test a wrong answer.", "Both paths must work."],
+          "note": "Run the quiz twice, once right and once wrong. Discuss why testing both paths matters: a bug can hide in the path we did not try. Praise pupils who test carefully."
+        },
+        {
+          "heading": "More questions",
+          "bullets": ["Add question 2 after question 1.", "Use a different condition.", "Keep a score later."],
+          "note": "Show how to copy and edit the blocks for another question. If time, show how a variable can count correct answers, but do not require it yet. Questions can be about Islamic knowledge such as the number of daily prayers (5)."
+        }
+      ],
+      "practice": [
+        "Which block gives the text the user typed?",
+        "What is wrong? The if-else block is placed before the ask block. (the program checks before the user answers)",
+        "Predict: the answer is '5'. IF answer = 5 THEN say 'Correct'. What happens?"
+      ],
+      "independent": [
+        "Build a 3-question quiz in Scratch with if-else feedback for each answer.",
+        "Test every question with a right and a wrong answer and write down any bug you fix.",
+        "Swap quizzes with a partner and give one improvement."
+      ],
+      "exit": [
+        "Which Scratch block takes input from the user?",
+        "Why do we test both the right and wrong answer?"
+      ],
+      "homework": "Add two more questions to your quiz, about a subject you love, and test it with someone at home.",
+      "send": "SEND/EAL: provide a partially built quiz with the blocks in order to complete. Stretch: add a variable called score and add 1 for each correct answer."
+    }
+  ]
+}

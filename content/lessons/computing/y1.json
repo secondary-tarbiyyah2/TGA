@@ -1,0 +1,244 @@
+{
+  "subject": "Computing",
+  "year": "y1",
+  "board": "National Curriculum",
+  "source": "National Curriculum KS1 Computing (algorithms, programs, debugging); unplugged activities adapted from the school's Drive Computer Science / Computing Scheme Ideas approach",
+  "lessons": [
+    {
+      "unit": "Unit 1: Algorithms and instructions (unplugged)",
+      "n": 1,
+      "title": "What is an algorithm?",
+      "duration": 30,
+      "objectives": [
+        "Say that an algorithm is a set of steps in the right order",
+        "Put the steps of an everyday task in the correct order",
+        "Explain why the order of instructions matters"
+      ],
+      "keywords": [
+        { "term": "algorithm", "def": "a set of steps, in order, to do a job" },
+        { "term": "instruction", "def": "one step that tells you what to do" },
+        { "term": "order", "def": "which step comes first, next and last" }
+      ],
+      "starter": [
+        "Say Bismillah together. Clap your hands 3 times, then stamp your feet 2 times. Which came first?",
+        "What do you do first when you wake up: put on your shoes or open your eyes?",
+        "Can you name one job you do every day that has more than one step?"
+      ],
+      "teach": [
+        {
+          "heading": "Steps in order",
+          "bullets": ["A job is made of small steps.", "The steps must be in the right order.", "A list of steps is an algorithm."],
+          "note": "Say: today we are being computer thinkers. Ask pupils to hold up fingers as you count the steps of washing hands: turn on tap, wet hands, soap, rub, rinse, dry. Stress that 'algorithm' is just a posh word for a list of steps."
+        },
+        {
+          "heading": "Making a jam sandwich",
+          "bullets": ["1. Get two slices of bread.", "2. Spread jam on one slice.", "3. Put the other slice on top.", "4. Cut it in half."],
+          "note": "Show the four steps on screen in the wrong order first (cut it, spread jam, get bread, put slice on top) and ask pupils what goes wrong. Take answers by thumbs up or down. Misconception: pupils may think any order works; let them discover the mess."
+        },
+        {
+          "heading": "Steps for wudu",
+          "bullets": ["Wash face.", "Wash arms up to the elbows.", "Wipe head.", "Wash feet."],
+          "note": "Link to their own life: we follow steps in order when we make wudu, and the Qur'an mentions these actions in Surah al-Ma'idah (5:6). Keep it light: ask pupils to act each step, then ask what would happen if we did them in a muddled order. Do not teach fiqh detail here; the point is sequencing."
+        },
+        {
+          "heading": "Computers need exact steps",
+          "bullets": ["A computer cannot guess.", "It does exactly what the steps say.", "So we must be clear and exact."],
+          "note": "Play 'silly robot': a pupil is the robot and only does exactly what you say. Say 'put the pencil in the box' while the pencil is in a drawer and watch the robot freeze. Explain the robot cannot guess what we mean."
+        }
+      ],
+      "practice": [
+        "Put these in order: 1) put on socks 2) put on shoes 3) take socks out of the drawer.",
+        "Teacher reads 4 jumbled steps for brushing teeth; pupils tell you the correct order using 'first, next, then, last'.",
+        "Act out the algorithm 'stand up, turn around, sit down' and then do it in the wrong order."
+      ],
+      "independent": [
+        "Cut and order (or drag on screen): 4 pictures showing planting a seed: dig hole, put seed in, cover with soil, water it.",
+        "Draw 3 pictures of the steps for making a cup of milk and number them 1, 2, 3.",
+        "Tell a partner your own 3-step algorithm for getting ready for school."
+      ],
+      "exit": [
+        "What is an algorithm?",
+        "True or false: you can do the steps of an algorithm in any order. Why?"
+      ],
+      "homework": "At home, tell a family member the steps for brushing your teeth in the right order, using the words first, next, then, last.",
+      "send": "SEND/EAL: use picture cards and gestures for each step and let pupils point or act rather than write. Stretch: ask what happens if a step is missing out, and add a step such as 'wait 10 seconds'."
+    },
+    {
+      "unit": "Unit 1: Algorithms and instructions (unplugged)",
+      "n": 2,
+      "title": "Giving directions to a robot",
+      "duration": 30,
+      "objectives": [
+        "Use the instructions forward, backward, turn left and turn right",
+        "Give a robot partner clear steps to reach a target",
+        "Understand that a robot needs instructions one at a time"
+      ],
+      "keywords": [
+        { "term": "robot", "def": "a machine that follows instructions" },
+        { "term": "forward", "def": "move one step in the direction you are facing" },
+        { "term": "turn", "def": "face a new direction without moving to a new square" }
+      ],
+      "starter": [
+        "Bismillah. What is an algorithm?",
+        "Put in order: cut the bread, get the bread, eat the bread. Which is first?",
+        "Which hand is your left hand? Hold it up."
+      ],
+      "teach": [
+        {
+          "heading": "Robot instructions",
+          "bullets": ["Forward: go one step ahead.", "Turn left: face left, stay on the spot.", "Turn right: face right, stay on the spot."],
+          "note": "Have everyone stand up on camera. Practise the three moves with the whole class, using the words slowly. Many Year 1 pupils confuse left and right; use 'L' made with the left thumb and finger. Turn means rotating on the spot, not walking."
+        },
+        {
+          "heading": "A grid and a robot",
+          "bullets": ["The floor is a grid of squares.", "The robot starts on the green square.", "The robot must reach the star."],
+          "note": "Show a 4 by 4 grid on screen with a start square, a star and an arrow showing which way the robot faces. Ask: how many steps forward to reach the star in a straight line? Count together."
+        },
+        {
+          "heading": "Worked example",
+          "bullets": ["Start facing up. Star is 2 forward, 1 right.", "Forward, forward.", "Turn right.", "Forward."],
+          "note": "Think aloud as you build the algorithm. Then ask a volunteer to be the robot at home on a pretend grid (tiles, cushions or a drawn grid) and follow your commands exactly. Stress one instruction at a time and no helping the robot."
+        },
+        {
+          "heading": "Be a clear programmer",
+          "bullets": ["Say one instruction at a time.", "Use only the robot words.", "Check by watching the robot."],
+          "note": "Praise exactness. Ask: why can't I say 'go to the star'? Because the robot only understands its own instructions. Mention kind speech: when we help our friend robot we speak politely and patiently."
+        }
+      ],
+      "practice": [
+        "Whole class: robot starts facing up. Give the steps to go 3 squares forward. (forward, forward, forward)",
+        "Whole class: robot faces up, star is 1 forward and 2 to the right. Say the steps. (forward, turn right, forward, forward)",
+        "In pairs on a drawn grid with a counter: one gives instructions, one moves the counter exactly."
+      ],
+      "independent": [
+        "Draw a 4 by 4 grid, mark a start and a star, and write an arrow algorithm to reach the star.",
+        "Give your partner a 4-step algorithm using only forward, turn left, turn right. Where do they finish?",
+        "Challenge: find a route which uses 5 instructions or fewer."
+      ],
+      "exit": [
+        "Which instruction makes the robot face a new way without moving to a new square?",
+        "Robot faces up. You say: turn right, forward. Which way does the robot move?"
+      ],
+      "homework": "Make a path with 5 cushions or shoes on the floor and tell a family member the steps to get from the start to the end, using forward and turn.",
+      "send": "SEND/EAL: use coloured arrow cards (green forward, blue left, orange right) and a physical counter. Stretch: ask pupils to write the algorithm for a route that goes around an obstacle square."
+    },
+    {
+      "unit": "Unit 1: Algorithms and instructions (unplugged)",
+      "n": 3,
+      "title": "Finding and fixing bugs",
+      "duration": 30,
+      "objectives": [
+        "Explain that a bug is a mistake in an algorithm",
+        "Spot a mistake by following the steps exactly",
+        "Fix the mistake and test again"
+      ],
+      "keywords": [
+        { "term": "bug", "def": "a mistake in a set of instructions" },
+        { "term": "debug", "def": "find and fix a bug" },
+        { "term": "test", "def": "try out the steps to see if they work" }
+      ],
+      "starter": [
+        "Bismillah. Say the three robot instructions we have learned.",
+        "A robot faces up and you say: turn left. Which way does it face now?",
+        "Why must we say instructions one at a time?"
+      ],
+      "teach": [
+        {
+          "heading": "What is a bug?",
+          "bullets": ["A bug is a mistake in the steps.", "Computers do exactly what we say.", "So the mistake is in our instructions."],
+          "note": "Tell pupils that grown-ups call mistakes in programs bugs and fixing them debugging. Reassure them: everybody makes mistakes when they write algorithms, even expert programmers. Good learners notice mistakes and try again with patience (sabr)."
+        },
+        {
+          "heading": "A buggy algorithm",
+          "bullets": ["Goal: get from start to star.", "Steps: forward, forward, turn left, forward.", "The robot ends in the wrong square."],
+          "note": "Show a 4 by 4 grid: robot at bottom left facing up, star 2 forward and 1 to the right. Run the steps on screen with a counter. It ends on the left, off the path. Ask: what is wrong? Pupils should say 'turn left' should be 'turn right'."
+        },
+        {
+          "heading": "Fix and test",
+          "bullets": ["Change turn left to turn right.", "Run the steps again slowly.", "Did the robot reach the star?"],
+          "note": "Model the debugging cycle in three words: find, fix, test. Many pupils fix a bug but forget to test again. Make them say 'test it' each time."
+        },
+        {
+          "heading": "Bugs can be anywhere",
+          "bullets": ["A wrong turn.", "A missing step.", "An extra step.", "Steps in the wrong order."],
+          "note": "Show four short buggy algorithms, one for each kind of bug, and ask pupils to vote which kind it is. Do not expect them to use all the terms yet; pointing and explaining in their own words is enough."
+        }
+      ],
+      "practice": [
+        "Debug together: robot faces up, star is 3 forward. Steps are forward, forward. What is missing? (one more forward)",
+        "Debug together: steps are forward, turn right, turn right, forward to reach a star 1 forward and 1 right. Which step is wrong?",
+        "Pupils close their eyes and a partner reads a buggy algorithm; they raise a hand when they hear the mistake."
+      ],
+      "independent": [
+        "Look at 3 buggy algorithms on the worksheet. Circle the mistake in each one and write the fixed version.",
+        "Make your own algorithm with one deliberate bug and swap it with a partner to debug.",
+        "Challenge: write an algorithm with two bugs for a friend."
+      ],
+      "exit": [
+        "What do we call it when we find and fix a mistake in an algorithm?",
+        "Robot steps: forward, turn left, forward. The star is to the right. What should you change?"
+      ],
+      "homework": "Ask someone at home to follow your robot instructions to walk across a room. Did it work? If not, fix the bug.",
+      "send": "SEND/EAL: give a model buggy algorithm with the bug highlighted in colour and a sentence frame: 'The bug is ___. I fix it by ___'. Stretch: pupils explain which type of bug it was (wrong turn, missing step, extra step, wrong order)."
+    },
+    {
+      "unit": "Unit 1: Algorithms and instructions (unplugged)",
+      "n": 4,
+      "title": "Plan, write and test a treasure map route",
+      "duration": 30,
+      "objectives": [
+        "Plan a route for a robot on a grid map",
+        "Write the steps as a clear algorithm",
+        "Test the algorithm and debug it if needed"
+      ],
+      "keywords": [
+        { "term": "plan", "def": "think about what you will do before you do it" },
+        { "term": "route", "def": "the path from start to finish" },
+        { "term": "program", "def": "an algorithm written so a computer can follow it" }
+      ],
+      "starter": [
+        "Bismillah. What is a bug?",
+        "What are the three words for fixing a bug: find, ___, test?",
+        "Robot faces up. Forward, forward, turn right, forward. Is it facing up or right at the end?"
+      ],
+      "teach": [
+        {
+          "heading": "Our project",
+          "bullets": ["A robot is looking for treasure.", "Plan a route on the map.", "Write the steps.", "Test and debug."],
+          "note": "Introduce the project: a friendly robot must collect a gold coin and avoid the water squares. Show the map, with pictures of a palm tree and a river. Explain the four-part cycle: plan, write, test, debug."
+        },
+        {
+          "heading": "Plan first",
+          "bullets": ["Put your finger on the start.", "Trace the route to the treasure.", "Count the squares and the turns."],
+          "note": "Model tracing a route with a finger or cursor. Say: 'I go up 2 squares, then I turn right, then I go 3 squares'. Encourage pupils to plan aloud before writing. Misconception: pupils write instructions without checking which way the robot is facing."
+        },
+        {
+          "heading": "Write the algorithm",
+          "bullets": ["Forward, forward.", "Turn right.", "Forward, forward, forward.", "Treasure found!"],
+          "note": "Write the algorithm with arrows or words. Use a numbered list. Remind pupils that every instruction is a single step and that the robot starts facing up."
+        },
+        {
+          "heading": "Test and debug",
+          "bullets": ["Move a counter along your steps.", "Did it reach the treasure?", "Find, fix, test again."],
+          "note": "Ask pupils to test each other's algorithms. Praise kind, helpful feedback: 'Your algorithm worked until step 4'. Celebrate perseverance."
+        }
+      ],
+      "practice": [
+        "Together: write the algorithm for a map where the coin is 2 squares up and 2 squares right of the start.",
+        "Test the class algorithm with a volunteer counter; deliberately include a bug and debug it.",
+        "Plan out loud how you could avoid a water square between the start and the coin."
+      ],
+      "independent": [
+        "Draw your own 5 by 5 treasure map with a start, a coin and two water squares.",
+        "Write an algorithm to reach the coin without touching water, then test it with a counter.",
+        "Swap maps with a partner. Debug your partner's algorithm if it fails and tell them what you fixed."
+      ],
+      "exit": [
+        "Name the four things we did in our project (plan, write, test, ___).",
+        "Draw one bug you found and how you fixed it."
+      ],
+      "homework": "Make a treasure map at home with a toy or coin, write your algorithm in arrows and show someone how it works.",
+      "send": "SEND/EAL: provide a pre-drawn map and arrow cards to arrange; allow oral explanations. Stretch: ask for the shortest possible algorithm and a second route that uses more steps."
+    }
+  ]
+}
