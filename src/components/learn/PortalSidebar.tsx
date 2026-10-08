@@ -39,11 +39,16 @@ const ICONS: Record<SidebarIcon, string> = {
   summary: "M3 17V8M8 17V4M13 17v-6M18 17v-9",
 };
 
-function NavIcon({ name }: { name: SidebarIcon }) {
+function NavIcon({ name, active }: { name: SidebarIcon; active?: boolean }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" className="h-5 w-5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <path d={ICONS[name]} />
-    </svg>
+    <span
+      aria-hidden="true"
+      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-colors ${active ? "bg-teal-700 text-white shadow-sm" : "bg-[#eef3f9] text-ink/60 group-hover:bg-white"}`}
+    >
+      <svg viewBox="0 0 20 20" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d={ICONS[name]} />
+      </svg>
+    </span>
   );
 }
 
@@ -109,11 +114,11 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
                         href={item.href}
                         onClick={onNavigate}
                         aria-current={active ? "page" : undefined}
-                        className={`flex items-center gap-3 rounded-md border-l-[3px] px-3 py-2 text-[14.5px] font-medium transition-colors ${
-                          active ? "border-teal-700 bg-teal-100/70 text-teal-900" : "border-transparent text-ink/75 hover:bg-cream hover:text-ink"
+                        className={`group flex items-center gap-3 rounded-xl px-2 py-1.5 text-[14.5px] font-medium transition-colors ${
+                          active ? "bg-teal-100/60 font-semibold text-teal-900" : "text-ink/75 hover:bg-cream hover:text-ink"
                         }`}
                       >
-                        <NavIcon name={item.icon} />
+                        <NavIcon name={item.icon} active={active} />
                         <span className="min-w-0 flex-1 truncate">{item.label}</span>
                       </Link>
                     </li>
@@ -168,7 +173,7 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
 /** Desktop: a fixed rail down the left. */
 export function PortalSidebar(props: { area: PortalArea; session: Session; roles: RoleGrant[] }) {
   return (
-    <aside className="fixed inset-y-0 left-0 z-30 hidden w-[272px] border-r border-gold-light bg-white lg:block">
+    <aside className="portal-sidebar fixed inset-y-0 left-0 z-30 hidden w-[272px] bg-white lg:block">
       <SidebarBody {...props} />
     </aside>
   );
@@ -198,7 +203,7 @@ export function PortalSidebarDrawer(props: { area: PortalArea; session: Session;
         aria-label="Open menu"
         aria-expanded={open}
         onClick={() => setOpen(true)}
-        className="flex h-10 w-10 items-center justify-center rounded-lg text-ink/70 hover:bg-cream"
+        className="portal-topbar-btn text-ink/70"
       >
         <svg aria-hidden="true" viewBox="0 0 20 20" className="h-5 w-5">
           <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />

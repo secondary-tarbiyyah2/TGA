@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
+import { DashboardHero } from "@/components/learn/DashboardHero";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
 import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -92,6 +93,7 @@ function TeachContent() {
   return (
     <DashboardWithPanel viewer={{ kind: "teacher", classIds }}>
     <div className="space-y-5">
+      <DashboardHero subtitle="Your day at a glance" chips={[{ label: "Lessons a week", value: slots === null ? "…" : slots.length, tone: "yellow" }, { label: "My classes", value: classIds.length, tone: "white" }]} />
       <JoinLessonCard who={{ kind: "teacher" }} />
 
       <TeachNow slots={slots} />

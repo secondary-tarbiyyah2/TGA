@@ -64,7 +64,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
       <PortalSidebar area={area} session={activeSession} roles={roles} />
 
       <div className="flex min-h-screen flex-col lg:pl-[272px]">
-        <header className="sticky top-0 z-20 border-b border-gold-light bg-white">
+        <header className="portal-topbar sticky top-0 z-20">
           <div className="flex h-[60px] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
             <Link href={homeHref} className="lg:hidden" aria-label="Tarbiyyah Global Academy — your dashboard">
@@ -78,7 +78,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
                 href="/report-concern"
                 title="Report a concern"
                 aria-label="Report a concern"
-                className="flex h-9 items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-red-700 hover:bg-red-50"
+                className="portal-topbar-btn ml-1 text-sm font-medium text-red-700 hover:!bg-red-50"
               >
                 <svg aria-hidden="true" viewBox="0 0 20 20" className="h-[18px] w-[18px]">
                   <path d="M10 1.5l7 3v5c0 4.4-3 7.9-7 9.5-4-1.6-7-5.1-7-9.5v-5l7-3zm0 5a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zm0 7.25a1 1 0 100 2 1 1 0 000-2z" fill="currentColor" />

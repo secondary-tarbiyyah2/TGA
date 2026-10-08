@@ -1,5 +1,6 @@
 "use client";
 
+import { DashboardHero } from "@/components/learn/DashboardHero";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -90,6 +91,7 @@ function StudentContent() {
 
   const content = (
     <div className="space-y-6">
+      <DashboardHero subtitle="Ready to learn today?" chips={[{ label: "Lessons a week", value: slots === null ? "…" : slots.length, tone: "yellow" }]} />
       {childId && <JoinLessonCard who={{ kind: "student", childId }} />}
       {viewer && (
         <section>

@@ -1,5 +1,6 @@
 "use client";
 
+import { DashboardHero } from "@/components/learn/DashboardHero";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
@@ -167,6 +168,7 @@ function FamilyContent() {
   return (
     <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }}>
     <div className="space-y-6">
+      <DashboardHero subtitle="Your children's school life in one place" chips={[{ label: "Children", value: children === null ? "…" : children.length, tone: "yellow" }]} />
       <ChildDetailsBanner />
       <JoinLessonCard who={{ kind: "parent" }} />
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">

@@ -7,6 +7,7 @@ import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { localDateKey } from "@/lib/learn/calendar";
 import { AdminLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
 import { StatTile } from "@/components/learn/Card";
+import { DashboardHero } from "@/components/learn/DashboardHero";
 import { useLearnPermission, useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -199,17 +200,6 @@ function DashboardContent() {
   const isHead = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
   const myRoles = Array.from(new Set(roles.map((r) => learnRoleLabel(r.role)))).join(", ");
   const supabase = getSupabaseClient();
-  const [firstName, setFirstName] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!supabase || !session || session === "loading") return;
-    supabase
-      .from("profiles")
-      .select("full_name")
-      .eq("id", session.user.id)
-      .maybeSingle()
-      .then(({ data }) => setFirstName(((data as { full_name?: string } | null)?.full_name || "").split(" ")[0] || null));
-  }, [supabase, session]);
 
   const [absenceCount, setAbsenceCount] = useState<number | null>(null);
   const [outstandingCount, setOutstandingCount] = useState<number | null>(null);
@@ -251,9 +241,6 @@ function DashboardContent() {
     }
   }, [supabase, isSafeguardingLead]);
 
-  const hour = new Date().getHours();
-  const greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
-  const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
   const { lessons, overdueMarking, newEnrolments } = useSchoolToday();
   const now = new Date().toTimeString().slice(0, 5);
   const startedLessons = (lessons || []).filter((l) => now >= l.start_time.slice(0, 5));
@@ -262,16 +249,13 @@ function DashboardContent() {
 
   const content = (
     <div className="space-y-8">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p className="text-sm text-ink/55">{today}</p>
-          <h1 className="mt-0.5 text-2xl font-semibold tracking-tight text-ink">
-            {greeting}
-            {firstName ? `, ${firstName}` : ""}
-          </h1>
-          {myRoles && <p className="mt-1 text-sm text-ink/60">{myRoles}</p>}
-        </div>
-      </div>
+      <DashboardHero
+        subtitle={myRoles}
+        chips={[
+          { label: "Lessons today", value: lessons === null ? "…" : lessons.length, tone: "yellow" },
+          { label: "Need attention", value: (absenceCount ?? 0) + (outstandingCount ?? 0), tone: "pink" },
+        ]}
+      />
 
       <section aria-labelledby="today-heading">
         <h2 id="today-heading" className="text-sm font-semibold text-ink">
