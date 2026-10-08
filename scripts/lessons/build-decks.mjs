@@ -77,6 +77,80 @@ function numberedCards(slide, ctx, items, y0 = 1.95) {
   });
 }
 
+
+// ── Qur'an & tajweed decks: a more visual look, a colour key and short
+// "brain break" activities between the explanations. ──────────────────────
+const EMERALD = "0B4F45";
+const BREAK_SECONDS = 60;
+const TAJWEED_KEY = [
+  { name: "Madd", what: "Stretch the sound", color: "D9534F" },
+  { name: "Ghunnah", what: "Nasal hum", color: "2E9E5B" },
+  { name: "Qalqalah", what: "Little echo", color: "3B82C4" },
+  { name: "Ikhfa / Idgham", what: "Hide or merge", color: "8E5BB5" },
+  { name: "Tafkhim", what: "Heavy letter, full mouth", color: "5B4636" },
+  { name: "Izhar", what: "Clear, no blending", color: "7A8793" },
+];
+const BREAK_ACTIVITIES = [
+  { name: "Echo recitation", steps: ["Teacher recites a short phrase from today's text", "Class echoes it in a whisper", "Then again at full voice, then humming the ghunnah"] },
+  { name: "Makhraj mirror", steps: ["Teacher calls out a letter", "Everyone points to where it comes from: throat, tongue, lips or nose", "Fastest correct pointers win a smile"] },
+  { name: "Count with your fingers", steps: ["Teacher stretches a sound", "Show 2, 4 or 6 counts on your fingers", "Hold them up on the camera together"] },
+  { name: "Rule or not?", steps: ["Teacher reads a statement about today's rule", "Thumbs up if true, thumbs down if false", "Explain one answer to the class"] },
+  { name: "Silent recitation", steps: ["Mouth an ayah with no sound", "Classmates watch your lips and guess it", "Swap, then check against the mushaf"] },
+  { name: "Breathe and remember Allah", steps: ["Sit tall and breathe in slowly", "Breathe out saying SubhanAllah", "Repeat with Alhamdulillah, then Allahu Akbar"] },
+  { name: "Colour hunt", steps: ["Look at today's text", "Find a letter that matches one colour in our key", "Type the letter and the rule in the chat"] },
+  { name: "Teach your neighbour", steps: ["Turn to a partner (or breakout room)", "You have 20 seconds to explain today's rule", "Then swap roles"] },
+  { name: "Stand, stretch, bismillah", steps: ["Stand up and stretch tall", "Roll your shoulders three times", "Sit and say Bismillah before we carry on"] },
+  { name: "Fastest finger", steps: ["Teacher asks a quick recall question", "Type the answer in the chat but do not press send", "On 'go', everyone sends together"] },
+];
+
+function starPattern(slide, x0, y0, cols, rows, size, gap, color, transparency) {
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const x = x0 + c * (size + gap) + (r % 2 ? (size + gap) / 2 : 0);
+      const y = y0 + r * (size + gap) * 0.62;
+      slide.addShape("star8", { x, y, w: size, h: size, fill: { color, transparency }, line: { color, width: 0.5, transparency: Math.max(0, transparency - 20) } });
+    }
+  }
+}
+
+function tajweedKeySlide(pptx, ctx) {
+  const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
+  header(s, ctx, "Our tajweed colour key", "Look for these in today's slides");
+  const w = 3.75;
+  const h = 2.0;
+  TAJWEED_KEY.forEach((k, i) => {
+    const x = 0.8 + (i % 3) * (w + 0.3);
+    const y = 1.95 + Math.floor(i / 3) * (h + 0.3);
+    s.addShape("roundRect", { x, y, w, h, rectRadius: 0.12, fill: { color: "FFFFFF" }, line: { color: k.color, width: 2.5 } });
+    s.addShape("ellipse", { x: x + 0.3, y: y + 0.3, w: 0.7, h: 0.7, fill: { color: k.color }, line: { color: k.color, width: 0 } });
+    s.addShape("star8", { x: x + 0.43, y: y + 0.43, w: 0.44, h: 0.44, fill: { color: "FFFFFF" }, line: { color: "FFFFFF", width: 0 } });
+    s.addText(k.name, { x: x + 1.15, y: y + 0.25, w: w - 1.3, h: 0.8, fontFace: FONT, fontSize: 22, bold: true, color: INK, valign: "middle", fit: "shrink" });
+    s.addText(k.what, { x: x + 0.3, y: y + 1.1, w: w - 0.6, h: 0.7, fontFace: FONT, fontSize: 18, color: MUTED, valign: "top", fit: "shrink" });
+  });
+  s.addNotes("This colour key is used on our slides to help pupils spot rules. If a pupil's mushaf uses different colours, that is fine: always follow the colours in the mushaf you read from.");
+  return s;
+}
+
+function breakSlide(pptx, ctx, act) {
+  const s = pptx.addSlide();
+  s.background = { color: "F5ECD6" };
+  starPattern(s, 8.2, -0.5, 4, 7, 1.4, 0.15, "B08E45", 82);
+  s.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.5, fill: { color: GOLD }, line: { color: GOLD, width: 0 } });
+  s.addText("BRAIN BREAK", { x: 0.9, y: 0.7, w: 7, h: 0.4, fontFace: FONT, fontSize: 16, bold: true, color: GOLD_DARK, charSpacing: 6 });
+  s.addText(act.name, { x: 0.9, y: 1.2, w: 7.6, h: 1.4, fontFace: FONT, fontSize: 46, bold: true, color: EMERALD, valign: "top", fit: "shrink" });
+  act.steps.forEach((t, i) => {
+    const y = 3.0 + i * 1.1;
+    s.addShape("ellipse", { x: 0.9, y, w: 0.75, h: 0.75, fill: { color: EMERALD }, line: { color: EMERALD, width: 0 } });
+    s.addText(String(i + 1), { x: 0.9, y, w: 0.75, h: 0.75, fontFace: FONT, fontSize: 22, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
+    s.addText(t, { x: 1.9, y: y - 0.1, w: 6.6, h: 0.95, fontFace: FONT, fontSize: 22, color: INK, valign: "middle", fit: "shrink" });
+  });
+  s.addShape("ellipse", { x: 9.6, y: 2.7, w: 2.6, h: 2.6, fill: { color: "FFFFFF" }, line: { color: EMERALD, width: 6 } });
+  s.addText(String(BREAK_SECONDS), { x: 9.6, y: 2.95, w: 2.6, h: 1.5, fontFace: FONT, fontSize: 72, bold: true, color: EMERALD, align: "center", valign: "middle" });
+  s.addText("seconds", { x: 9.6, y: 4.2, w: 2.6, h: 0.5, fontFace: FONT, fontSize: 20, color: MUTED, align: "center" });
+  s.addNotes(`Keep this to about ${BREAK_SECONDS} seconds. Start a timer on screen. It resets attention before the next part of the lesson.`);
+  return s;
+}
+
 function buildDeck(file, lesson) {
   const pptx = new PptxGenJS();
   pptx.layout = "LAYOUT_WIDE"; // 13.33 x 7.5
@@ -90,6 +164,9 @@ function buildDeck(file, lesson) {
     n: lesson.n,
     accent: ACCENTS[slug0] || TEAL,
   };
+  const quran = slug0 === "quran";
+  let breakNo = lesson.n * 3; // rotates the activities so neighbouring lessons differ
+  const nextBreak = () => BREAK_ACTIVITIES[breakNo++ % BREAK_ACTIVITIES.length];
   let num = 0;
   // The footer (logo, deck label, slide number) lives on a slide master so the
   // logo is stored once in the file instead of once per slide.
@@ -111,6 +188,7 @@ function buildDeck(file, lesson) {
     s.background = { color: TEAL_DARK };
     s.addShape("rect", { x: 0, y: 0, w: 0.5, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
     s.addShape("rect", { x: 0.5, y: 0, w: 0.06, h: 7.5, fill: { color: GOLD }, line: { color: GOLD, width: 0 } });
+    if (quran) starPattern(s, 8.6, 1.9, 4, 7, 1.15, 0.12, "B08E45", 86);
     s.addImage({ path: LOGO_WHITE, x: 1.0, y: 0.6, w: 0.8 * LOGO_RATIO, h: 0.8 });
     s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: "Arial", fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
     s.addText(`${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}`, { x: 1.0, y: 2.35, w: 11.5, h: 0.4, fontFace: FONT, fontSize: 16, bold: true, color: "E3C98F", charSpacing: 4 });
@@ -141,6 +219,8 @@ function buildDeck(file, lesson) {
     }
   }
 
+  if (quran) tajweedKeySlide(pptx, ctx);
+
   // 3. Starter
   {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
@@ -156,8 +236,18 @@ function buildDeck(file, lesson) {
     num++;
     header(s, ctx, clean(t.heading), `Explanation ${i + 1} of ${lesson.teach.length}`);
     s.addShape("roundRect", { x: 0.8, y: 1.95, w: 11.8, h: 4.85, rectRadius: 0.1, fill: { color: i % 2 ? "FFFFFF" : TEAL_SOFT }, line: { color: "E5E5E5", width: 0.75 } });
-    bulletList(s, t.bullets || [], { x: 1.2, y: 2.15, w: 11.0, h: 4.5 }, fontSizeFor(t.bullets || [], 32, 20));
+    // Qur'an decks: when the teacher note quotes the Arabic, show it big on the slide.
+    const ar = quran ? (String(t.note || "").match(/[\u0600-\u06FF\u0750-\u077F][\u0600-\u06FF\u0750-\u077F\u064B-\u065F\u0670\s،؛؟]{10,}/) || [])[0] : null;
+    if (ar) {
+      bulletList(s, t.bullets || [], { x: 1.2, y: 2.1, w: 11.0, h: 2.3 }, fontSizeFor(t.bullets || [], 26, 18));
+      s.addShape("roundRect", { x: 1.2, y: 4.55, w: 11.0, h: 2.1, rectRadius: 0.1, fill: { color: "FFFFFF" }, line: { color: GOLD, width: 1.5 } });
+      s.addText(clean(ar), { x: 1.4, y: 4.6, w: 10.6, h: 2.0, fontFace: "Arial", fontSize: 38, color: EMERALD, align: "center", valign: "middle", rtlMode: true, fit: "shrink" });
+    } else {
+      bulletList(s, t.bullets || [], { x: 1.2, y: 2.15, w: 11.0, h: 4.5 }, fontSizeFor(t.bullets || [], 32, 20));
+    }
     s.addNotes(clean(t.note));
+    if (quran) s.addShape("star8", { x: 12.0, y: 0.45, w: 0.8, h: 0.8, fill: { color: ctx.accent, transparency: 80 }, line: { color: ctx.accent, width: 1, transparency: 40 } });
+    if (quran && lesson.teach.length >= 4 && i === 1) breakSlide(pptx, ctx, nextBreak());
   });
 
   // 5. Guided practice
@@ -168,6 +258,8 @@ function buildDeck(file, lesson) {
     numberedCards(s, ctx, lesson.practice || []);
     s.addNotes("Work through these with the class, modelling thinking aloud. Use mini-whiteboards or the chat to check every pupil before moving on.");
   }
+
+  if (quran) breakSlide(pptx, ctx, nextBreak());
 
   // 6. Independent
   {

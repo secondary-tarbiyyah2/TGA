@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { classBannerStyle, fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
+import { fetchClass, recordRecentPage, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
 import type { Crumb } from "@/components/learn/PageHeader";
 import { ParticipantsTab } from "@/components/learn/class/ParticipantsTab";
 import { CourseTab } from "@/components/learn/class/CourseTab";
@@ -185,47 +185,37 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
 
   return (
     <div>
-      <nav aria-label="Breadcrumb" className="mb-3">
-        <ol className="flex flex-wrap items-center gap-1 text-sm text-ink/55">
-          {crumbs.map((c, i) => (
-            <li key={c.label} className="flex items-center gap-1">
-              {i > 0 && <span aria-hidden="true">/</span>}
-              {c.href ? (
-                <Link href={c.href} className="hover:text-teal-700 hover:underline">
-                  {c.label}
-                </Link>
-              ) : (
-                <span className="text-ink/75">{c.label}</span>
-              )}
-            </li>
-          ))}
-        </ol>
-      </nav>
-
-      {/* Course header: Moodle shows the course image/pattern behind the title */}
-      <div className="relative mb-0 overflow-hidden rounded-t-2xl px-6 pb-6 pt-10 text-white" style={classBannerStyle(cls.id)}>
-        {meta && <p className="text-xs font-semibold uppercase tracking-wider text-white/75">{meta}</p>}
-        <h1 className="mt-1 text-2xl font-semibold tracking-tight">{cls.name}</h1>
-      </div>
-
-      <nav aria-label="Class sections" className="mb-6 flex gap-1 overflow-x-auto rounded-b-2xl border border-t-0 border-gold-light bg-white px-3">
-        {tabs.map((t) => {
-          const active = t === tab;
-          return (
-            <Link
-              key={t}
-              href={classHref(t)}
-              scroll={false}
-              aria-current={active ? "page" : undefined}
-              className={`shrink-0 border-b-[3px] px-3 py-3 text-sm font-medium transition-colors ${
-                active ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"
-              }`}
-            >
-              {TAB_LABELS[t]}
-            </Link>
-          );
-        })}
-      </nav>
+      {/* One plain header: title, subject line and the section tabs together */}
+      <header className="mb-6 overflow-hidden rounded-2xl border border-gold-light bg-white">
+        <div className="flex items-center gap-3 px-5 pb-3 pt-5">
+          <span aria-hidden="true" className="h-10 w-1.5 shrink-0 rounded-full bg-teal-700" />
+          <div className="min-w-0">
+            <h1 className="truncate text-xl font-semibold tracking-tight text-ink">{cls.name}</h1>
+            {meta && <p className="text-sm text-ink/55">{meta}</p>}
+          </div>
+          <Link href={crumbs[1].href as string} className="ml-auto shrink-0 text-sm text-ink/55 hover:text-teal-700 hover:underline">
+            All classes
+          </Link>
+        </div>
+        <nav aria-label="Class sections" className="flex gap-1 overflow-x-auto border-t border-gold-light/70 px-3">
+          {tabs.map((t) => {
+            const active = t === tab;
+            return (
+              <Link
+                key={t}
+                href={classHref(t)}
+                scroll={false}
+                aria-current={active ? "page" : undefined}
+                className={`shrink-0 border-b-[3px] px-3 py-3 text-sm font-medium transition-colors ${
+                  active ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"
+                }`}
+              >
+                {TAB_LABELS[t]}
+              </Link>
+            );
+          })}
+        </nav>
+      </header>
 
       {viewer.kind !== "staff" && (
         <JoinLessonCard
