@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useLearnSession, dashboardPathForRole } from "@/lib/learn/session";
 import { LearnAccountMenu } from "@/components/learn/LearnAccountMenu";
 import { NotificationBell } from "@/components/learn/NotificationBell";
@@ -31,6 +32,25 @@ const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 export default function LearnLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { session, roles, rolesLoaded } = useLearnSession();
+  // Desktop sidebar: open (full) or closed (icon rail). Remembered per browser.
+  const [collapsed, setCollapsed] = useState(false);
+  useEffect(() => {
+    try {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- restore saved preference after mount
+      if (window.localStorage.getItem("tga-sidebar") === "closed") setCollapsed(true);
+    } catch {
+      /* storage unavailable: stay open */
+    }
+  }, []);
+  const toggleSidebar = () =>
+    setCollapsed((c) => {
+      try {
+        window.localStorage.setItem("tga-sidebar", c ? "open" : "closed");
+      } catch {
+        /* ignore */
+      }
+      return !c;
+    });
   const activeSession = session && session !== "loading" ? session : null;
   const signedIn = !!(activeSession && rolesLoaded && roles.length > 0);
   const homeHref = signedIn ? dashboardPathForRole(roles[0].role) : "/";
@@ -62,9 +82,9 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
 
   return (
     <div className="portal min-h-screen">
-      <PortalSidebar area={area} session={activeSession} roles={roles} />
+      <PortalSidebar area={area} session={activeSession} roles={roles} collapsed={collapsed} onToggle={toggleSidebar} />
 
-      <div className="flex min-h-screen flex-col lg:pl-[272px]">
+      <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-out ${collapsed ? "lg:pl-[76px]" : "lg:pl-[272px]"}`}>
         <header className="portal-topbar sticky top-0 z-20">
           <div className="flex h-[60px] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />

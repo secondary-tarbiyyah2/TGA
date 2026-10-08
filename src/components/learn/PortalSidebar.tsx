@@ -66,7 +66,7 @@ function initialsOf(name: string): string {
 
 /** Everything inside the sidebar; shared by the desktop rail and the
  * mobile drawer. */
-function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; session: Session; roles: RoleGrant[]; onNavigate?: () => void }) {
+function SidebarBody({ area, session, roles, onNavigate, collapsed = false, onToggle }: { area: PortalArea; session: Session; roles: RoleGrant[]; onNavigate?: () => void; collapsed?: boolean; onToggle?: () => void }) {
   const pathname = usePathname();
   const signOut = useLearnSignOut();
   const [fullName, setFullName] = useState<string | null>(null);
@@ -91,12 +91,31 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
 
   return (
     <div className="flex h-full flex-col">
-      <Link href={areas.find((a) => a.startsWith(`/${area}/`)) || areas[0] || "/"} onClick={onNavigate} className="flex items-center gap-3 border-b border-gold-light px-5 py-4">
-        <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={132} height={40} priority />
-      </Link>
-      <p className="px-6 pb-1 pt-4 text-[11px] font-semibold uppercase tracking-wider text-ink/45">{AREA_SUBTITLE[area]}</p>
+      <div className={`flex items-center border-b border-gold-light py-4 ${collapsed ? "justify-center px-2" : "justify-between gap-2 px-5"}`}>
+        {collapsed ? (
+          <button type="button" onClick={onToggle} title="Open sidebar" aria-label="Open sidebar" className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-700 text-sm font-bold text-white shadow-sm hover:bg-teal-900">
+            <svg aria-hidden="true" viewBox="0 0 20 20" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M8 5l5 5-5 5" />
+            </svg>
+          </button>
+        ) : (
+          <>
+            <Link href={areas.find((a) => a.startsWith(`/${area}/`)) || areas[0] || "/"} onClick={onNavigate} className="min-w-0">
+              <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={132} height={40} priority />
+            </Link>
+            {onToggle && (
+              <button type="button" onClick={onToggle} title="Close sidebar" aria-label="Close sidebar" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#eef3f9] text-ink/60 hover:bg-[#e3ebf5] hover:text-ink">
+                <svg aria-hidden="true" viewBox="0 0 20 20" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 5l-5 5 5 5" />
+                </svg>
+              </button>
+            )}
+          </>
+        )}
+      </div>
+      {!collapsed && <p className="px-6 pb-1 pt-4 text-[11px] font-semibold uppercase tracking-wider text-ink/45">{AREA_SUBTITLE[area]}</p>}
 
-      <nav aria-label="Portal" className="min-h-0 flex-1 overflow-y-auto px-3 pb-4 pt-1">
+      <nav aria-label="Portal" className={`min-h-0 flex-1 overflow-y-auto pb-4 pt-2 ${collapsed ? "px-2" : "px-3"}`}>
         <ul className="space-y-1">
           {entries.map((e) => {
             const active = e.items.some((i) => isSidebarItemActive(pathname, i));
@@ -106,13 +125,14 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
                   href={e.href}
                   onClick={onNavigate}
                   aria-current={active ? "page" : undefined}
-                  className={`group flex items-center gap-3 rounded-xl px-2 py-1.5 text-[15px] font-medium transition-colors ${
+                  title={collapsed ? e.label : undefined}
+                  className={`group flex items-center rounded-xl py-1.5 text-[15px] font-medium transition-colors ${collapsed ? "justify-center px-0" : "gap-3 px-2"} ${
                     active ? "bg-teal-100/60 font-semibold text-teal-900" : "text-ink/75 hover:bg-cream hover:text-ink"
                   }`}
                 >
                   <NavIcon name={e.icon} active={active} />
-                  <span className="min-w-0 flex-1 truncate">{e.label}</span>
-                  {e.section && (
+                  {!collapsed && <span className="min-w-0 flex-1 truncate">{e.label}</span>}
+                  {!collapsed && e.section && (
                     <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4 shrink-0 text-ink/30">
                       <path d="M7.5 5l5 5-5 5" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -123,7 +143,7 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
           })}
         </ul>
 
-        {areas.length > 1 && (
+        {areas.length > 1 && !collapsed && (
           <div className="mt-5 border-t border-gold-light pt-3">
             <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-ink/45">Switch area</p>
             {areas.map((href) => (
@@ -140,34 +160,54 @@ function SidebarBody({ area, session, roles, onNavigate }: { area: PortalArea; s
         )}
       </nav>
 
-      <div className="flex items-center gap-3 border-t border-gold-light px-4 py-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900" aria-hidden="true">
-          {initialsOf(displayName)}
-        </span>
-        <Link href="/account" onClick={onNavigate} className="min-w-0 flex-1" title="Account settings">
-          <span className="block truncate text-sm font-semibold text-ink">{displayName}</span>
-          <span className="block truncate text-xs text-ink/55">{roleLabel}</span>
-        </Link>
-        <button
-          type="button"
-          onClick={signOut}
-          title="Sign out"
-          aria-label="Sign out"
-          className="flex h-9 w-9 items-center justify-center rounded-lg text-ink/55 hover:bg-cream hover:text-ink"
-        >
-          <svg aria-hidden="true" viewBox="0 0 20 20" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M8 3.5H4.5v13H8M12.5 6.5L16 10l-3.5 3.5M16 10H8" />
-          </svg>
-        </button>
+      <div className={`border-t border-gold-light ${collapsed ? "flex flex-col items-center gap-2 px-2 py-3" : "p-3"}`}>
+        {collapsed ? (
+          <>
+            <Link href="/account" onClick={onNavigate} title={`${displayName} · ${roleLabel}`} className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-sm font-semibold text-teal-900 hover:bg-teal-200">
+              {initialsOf(displayName)}
+            </Link>
+            <button type="button" onClick={signOut} title="Sign out" aria-label="Sign out" className="flex h-9 w-9 items-center justify-center rounded-xl text-ink/55 hover:bg-red-50 hover:text-red-700">
+              <SignOutIcon />
+            </button>
+          </>
+        ) : (
+          <div className="rounded-2xl bg-[#eef3f9] p-3">
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-700 text-xs font-bold text-white" aria-hidden="true">
+                {initialsOf(displayName)}
+              </span>
+              <div className="min-w-0">
+                <p className="truncate text-sm font-semibold text-ink">{fullName || "Your account"}</p>
+                <p className="truncate text-xs text-ink/55">{roleLabel}</p>
+              </div>
+            </div>
+            <div className="mt-2.5 grid grid-cols-2 gap-1.5">
+              <Link href="/account" onClick={onNavigate} className="rounded-lg bg-white py-1.5 text-center text-xs font-semibold text-ink/75 shadow-sm hover:text-ink">
+                Account
+              </Link>
+              <button type="button" onClick={signOut} className="flex items-center justify-center gap-1 rounded-lg bg-white py-1.5 text-xs font-semibold text-ink/75 shadow-sm hover:bg-red-50 hover:text-red-700">
+                <SignOutIcon small /> Sign out
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-/** Desktop: a fixed rail down the left. */
-export function PortalSidebar(props: { area: PortalArea; session: Session; roles: RoleGrant[] }) {
+function SignOutIcon({ small }: { small?: boolean }) {
   return (
-    <aside className="portal-sidebar fixed inset-y-0 left-0 z-30 hidden w-[272px] bg-white lg:block">
+    <svg aria-hidden="true" viewBox="0 0 20 20" className={small ? "h-3.5 w-3.5" : "h-5 w-5"} fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 3.5H4.5v13H8M12.5 6.5L16 10l-3.5 3.5M16 10H8" />
+    </svg>
+  );
+}
+
+/** Desktop: a fixed rail down the left. */
+export function PortalSidebar(props: { area: PortalArea; session: Session; roles: RoleGrant[]; collapsed: boolean; onToggle: () => void }) {
+  return (
+    <aside className={`portal-sidebar fixed inset-y-0 left-0 z-30 hidden bg-white transition-[width] duration-200 ease-out lg:block ${props.collapsed ? "w-[76px]" : "w-[272px]"}`}>
       <SidebarBody {...props} />
     </aside>
   );
