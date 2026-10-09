@@ -4,6 +4,7 @@ import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "re
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { SignaturePad, type SignaturePadHandle } from "./SignaturePad";
 import { forgetDefaultSignature, loadSavedSignature } from "./signatureImage";
+import { Tabs } from "@/components/learn/Tabs";
 
 export type CapturedSignature = {
   /** The PNG to store, or null for a typed-name-only signature. */
@@ -87,25 +88,19 @@ export const SignatureCapture = forwardRef<
     [tab, useSaved, saved, saveDefault, self],
   );
 
-  const tabBtn = (id: "draw" | "type", text: string) => (
-    <button
-      type="button"
-      role="tab"
-      aria-selected={tab === id}
-      onClick={() => setTab(id)}
-      className={`rounded-lg px-3 py-1.5 text-sm font-medium ${tab === id ? "bg-gold-700 text-white" : "border border-gold-light bg-white text-ink/75 hover:bg-cream"}`}
-    >
-      {text}
-    </button>
-  );
-
   return (
     <div className="space-y-2">
       {self && (
-        <div role="tablist" aria-label="How to sign" className="flex flex-wrap gap-2">
-          {tabBtn("draw", "Draw")}
-          {tabBtn("type", "Type (if you can't draw)")}
-        </div>
+        <Tabs
+          variant="switch"
+          items={[
+            { key: "draw", label: "Draw" },
+            { key: "type", label: "Type it instead" },
+          ]}
+          value={tab}
+          onChange={setTab}
+          label="How to sign"
+        />
       )}
       <div className={tab === "draw" ? "" : "hidden"}>
         {self && saved && useSaved ? (

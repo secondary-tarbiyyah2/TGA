@@ -86,7 +86,7 @@ function ApplicationCard({
         </span>
         <span className="block text-xs text-ink/60">{app.parent_name}</span>
         {familySize > 1 && <span className="mt-0.5 inline-block rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900">{(app.sibling_index ?? 1) > 1 ? "Sibling" : `Family of ${familySize}`}</span>}
-        <span className="block text-xs text-ink/50">Received {fmtShort(app.created_at)}</span>
+        <span className="block text-xs text-ink/65">Received {fmtShort(app.created_at)}</span>
         <span className="mt-1.5 flex items-center gap-1" role="img" aria-label={pips.map((p) => `${p.label} ${PIP_WORD[p.state]}`).join(", ")}>
           {pips.map((p) => (
             <span key={p.label} title={`${p.label}: ${PIP_WORD[p.state]}`} className={`h-1.5 w-5 rounded-full ${PIP_CLS[p.state]}`} />
@@ -148,7 +148,7 @@ function Column({
         <span className="rounded-full bg-white px-2 py-0.5 text-xs tabular-nums text-ink/70" aria-label={`${apps.length} applications`}>{apps.length}</span>
       </h3>
       <div className="space-y-2">
-        {apps.length === 0 && <p className="py-4 text-center text-xs text-ink/40">Nothing here</p>}
+        {apps.length === 0 && <p className="py-4 text-center text-xs text-ink/65">Nothing here</p>}
         {apps.map((a) => (
           <ApplicationCard key={a.id} app={a} familySize={a.family_id ? familySizes.get(a.family_id) ?? 1 : 1} {...cardProps} />
         ))}
@@ -430,7 +430,7 @@ export function ApplicationsTab() {
             <button type="button" onClick={copyLink} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
               {copied ? "Copied" : "Copy link"}
             </button>
-            <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:brightness-110">
+            <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900">
               Preview
             </a>
           </div>

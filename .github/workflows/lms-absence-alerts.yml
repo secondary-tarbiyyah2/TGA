@@ -24,6 +24,9 @@ jobs:
       NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
       SANITY_API_TOKEN: ${{ secrets.SANITY_IO }}
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      AWS_SES_REGION: ${{ secrets.AWS_SES_REGION }}
+      AWS_SES_ACCESS_KEY_ID: ${{ secrets.AWS_SES_ACCESS_KEY_ID }}
+      AWS_SES_SECRET_ACCESS_KEY: ${{ secrets.AWS_SES_SECRET_ACCESS_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

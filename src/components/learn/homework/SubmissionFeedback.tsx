@@ -86,7 +86,7 @@ export function FeedbackView({ feedback, maxPoints, grade }: { feedback: Homewor
           <FileLinks files={markedFiles} bucket="homework-marked" />
         </div>
       )}
-      <p className="mt-1 text-xs text-ink/50">
+      <p className="mt-1 text-xs text-ink/65">
         {new Date(feedback.given_at).toLocaleDateString("en-GB")}
         {feedback.resubmit_count > 0 ? ` · resubmitted ${feedback.resubmit_count} time${feedback.resubmit_count === 1 ? "" : "s"}` : ""}
       </p>

@@ -13,7 +13,7 @@ export default function TeachCurriculumPage() {
           <PageHeader
             crumbs={[{ label: "Dashboard", href: "/teach/dashboard" }, { label: "Lesson library" }]}
             title="Lesson library"
-            subtitle="Every lesson as a ready-made PowerPoint. Download it, edit it in PowerPoint if you need to catch up or change pace, upload it back, and share it to your class."
+            subtitle="Every lesson with ready-made slides and a lesson plan (timings, slide-by-slide script, adaptations). View or present in the browser, download a whole unit at once, edit and re-upload, or share slides to your class."
           />
           <CurriculumLibrary area="teach" />
         </LearnShell>

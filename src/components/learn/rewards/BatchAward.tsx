@@ -151,7 +151,7 @@ export function BatchAward({ classId, roster, onAwarded }: { classId: string; ro
             )}
 
             <div className="flex flex-wrap items-center gap-2">
-              <button type="button" disabled={busy || picked.size === 0} onClick={() => award([...picked])} className="rounded-lg bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800 disabled:opacity-50">
+              <button type="button" disabled={busy || picked.size === 0} onClick={() => award([...picked])} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                 {busy ? "Saving…" : `Award to selected (${picked.size})`}
               </button>
               <button type="button" disabled={busy} onClick={everyone} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-semibold text-ink/80 hover:bg-cream disabled:opacity-50">

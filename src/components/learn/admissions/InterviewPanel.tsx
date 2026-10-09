@@ -126,7 +126,7 @@ export function InterviewPanel({
 
       <Group title="Interview notes &amp; outcome">
         <label className="block text-sm font-medium text-ink">
-          Notes <span className="text-xs font-normal text-ink/50">(staff only)</span>
+          Notes <span className="text-xs font-normal text-ink/65">(staff only)</span>
           <textarea value={d.notes} onChange={(e) => set("notes", e.target.value)} rows={5} maxLength={10000} className={fieldCls} />
         </label>
         <label className="mt-3 block text-sm font-medium text-ink">

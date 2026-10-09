@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission } from "@/lib/learn/session";
+import { Icon } from "@/components/learn/Icon";
 
 type Signal = { id: string; message: string; href: string; createdAt: string };
 
@@ -28,7 +29,7 @@ export function NotificationBell({ userId }: { userId: string }) {
       const { data: readRow } = await supabase.from("notification_reads").select("last_read_at").eq("user_id", userId).maybeSingle();
       setLastReadAt(readRow?.last_read_at ?? "1970-01-01T00:00:00Z");
 
-      const [{ data: absences }, { data: outstanding }, flaggedResult] = await Promise.all([
+      const [{ data: absences }, { data: outstanding }, flaggedResult, { data: feedback }] = await Promise.all([
         supabase.from("audit_log").select("id, created_at").eq("action", "ABSENCE_ALERT_SENT").order("created_at", { ascending: false }).limit(10),
         // outstanding_signatures is current STATE (who hasn't signed right
         // now), not an event log — it has no created_at to know "when this
@@ -40,6 +41,8 @@ export function NotificationBell({ userId }: { userId: string }) {
         isSafeguardingLead
           ? supabase.from("message_thread_messages").select("id, created_at").eq("flagged", true).order("created_at", { ascending: false }).limit(10)
           : Promise.resolve({ data: [] as { id: string; created_at: string }[] }),
+        // New feedback tickets (0092). RLS returns rows only to head/admin.
+        supabase.from("feedback_tickets").select("id, created_at, kind").eq("status", "new").order("created_at", { ascending: false }).limit(10),
       ]);
 
       const timestamped: Signal[] = [
@@ -50,12 +53,18 @@ export function NotificationBell({ userId }: { userId: string }) {
           href: "/admin/compliance",
           createdAt: m.created_at,
         })),
+        ...((feedback || []) as { id: string; created_at: string; kind: string }[]).map((f) => ({
+          id: `feedback-${f.id}`,
+          message: f.kind === "problem" ? "New problem reported through Feedback." : f.kind === "idea" ? "New improvement idea sent through Feedback." : "New question sent through Feedback.",
+          href: "/admin/feedback",
+          createdAt: f.created_at,
+        })),
       ].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
       const untimestamped: Signal[] = (outstanding || []).map((o, i) => ({
         id: `sig-${o.user_id}-${i}`,
         message: `${o.title || "A document"} is still unsigned.`,
-        href: "/admin/compliance",
+        href: "/admin/documents",
         createdAt: "",
       }));
 
@@ -63,9 +72,26 @@ export function NotificationBell({ userId }: { userId: string }) {
     })();
   }, [supabase, userId, isSafeguardingLead]);
 
+  // Close on Escape or a click anywhere outside the bell.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const onClick = (e: MouseEvent) => {
+      if (!(e.target as Element | null)?.closest?.("[data-notification-bell]")) setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onClick);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onClick);
+    };
+  }, [open]);
+
   async function markRead() {
-    setOpen((o) => !o);
-    if (!supabase) return;
+    const opening = !open;
+    setOpen(opening);
+    // Only opening the list counts as reading it.
+    if (!supabase || !opening) return;
     const now = new Date().toISOString();
     await supabase.from("notification_reads").upsert({ user_id: userId, last_read_at: now });
     setLastReadAt(now);
@@ -74,29 +100,25 @@ export function NotificationBell({ userId }: { userId: string }) {
   const unreadCount = signals && lastReadAt ? signals.filter((s) => s.createdAt > lastReadAt).length : 0;
 
   return (
-    <div className="relative">
+    <div className="relative" data-notification-bell>
       <button
         type="button"
         onClick={markRead}
+        aria-expanded={open}
         aria-label={unreadCount > 0 ? `Notifications, ${unreadCount} unread` : "Notifications"}
-        className="relative flex h-9 w-9 items-center justify-center rounded-full text-ink/65 hover:bg-cream hover:text-ink"
+        className="portal-icon-btn relative"
       >
-        <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4.5 w-4.5">
-          <path
-            d="M10 2a5 5 0 00-5 5v2.586l-1.707 1.707A1 1 0 004 13h12a1 1 0 00.707-1.707L15 9.586V7a5 5 0 00-5-5zm0 16a2.5 2.5 0 002.45-2H7.55A2.5 2.5 0 0010 18z"
-            fill="currentColor"
-          />
-        </svg>
+        <Icon name="bell" className="h-5 w-5" />
         {unreadCount > 0 && (
           <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-semibold text-white ring-2 ring-white">
-            {unreadCount}
+            {unreadCount > 99 ? "99+" : unreadCount}
           </span>
         )}
       </button>
 
       {open && (
         <div className="absolute right-0 z-50 mt-2 w-80 rounded-xl border border-gold-light bg-white p-3 shadow-warm">
-          <p className="px-1 pb-2 text-xs font-semibold uppercase tracking-wide text-ink/50">Notifications</p>
+          <p className="px-1 pb-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Notifications</p>
           {signals === null ? (
             <p className="p-2 text-sm text-ink/60">Loading…</p>
           ) : signals.length === 0 ? (
@@ -108,7 +130,7 @@ export function NotificationBell({ userId }: { userId: string }) {
                   <a href={s.href} className="block rounded-lg px-2 py-2 text-sm hover:bg-cream">
                     <span className="text-ink/80">{s.message}</span>
                     {s.createdAt && (
-                      <span className="mt-0.5 block text-xs text-ink/40">{new Date(s.createdAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</span>
+                      <span className="mt-0.5 block text-xs text-ink/65">{new Date(s.createdAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</span>
                     )}
                   </a>
                 </li>

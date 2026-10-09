@@ -58,7 +58,7 @@ function ClassFields({ d, set, props }: { d: Draft; set: (f: (s: Draft) => Draft
 
 export function ClassesSection(props: Props) {
   const supabase = getSupabaseClient();
-  const { classes, yearGroups, subjects, years, kids, enrolments, teachers, classTeachers, subjectTeachers, reload, ready } = props;
+  const { classes, yearGroups, subjects, kids, enrolments, teachers, classTeachers, subjectTeachers, reload, ready } = props;
   const [form, setForm] = useState<Draft>(BLANK);
   const [editId, setEditId] = useState<string | null>(null);
   const [draft, setDraft] = useState<Draft>(BLANK);
@@ -172,9 +172,9 @@ export function ClassesSection(props: Props) {
                     </span>
                   </div>
                   <dl className="mt-2 grid gap-1 text-xs text-ink/70 sm:grid-cols-3">
-                    <div><dt className="inline font-medium">Teachers: </dt><dd className="inline">{names.length ? names.join(", ") : <span className="text-amber-800">none assigned (choose one in "Who teaches what" above)</span>}</dd></div>
+                    <div><dt className="inline font-medium">Teachers: </dt><dd className="inline">{names.length ? names.join(", ") : <span className="text-amber-800">none assigned (choose one in &quot;Who teaches what&quot; above)</span>}</dd></div>
                     <div><dt className="inline font-medium">Enrolled: </dt><dd className="inline">{enrolled.length}{yg?.capacity ? ` (year group capacity ${yg.capacity})` : ""}</dd></div>
-                    <div className="truncate"><dt className="inline font-medium">Meeting link: </dt><dd className="inline">{c.meeting_url ? "set" : <span className="text-ink/50">not set</span>}</dd></div>
+                    <div className="truncate"><dt className="inline font-medium">Meeting link: </dt><dd className="inline">{c.meeting_url ? "set" : <span className="text-ink/65">not set</span>}</dd></div>
                   </dl>
                   <div className="mt-2 flex flex-wrap items-center gap-2">
                     <select value={enrolForm[c.id] || ""} onChange={(e) => setEnrolForm((s) => ({ ...s, [c.id]: e.target.value }))} aria-label={`Enrol a child into ${c.name}`} className="rounded-lg border border-gold-light/70 px-2 py-1.5 text-xs">
@@ -196,7 +196,7 @@ export function ClassesSection(props: Props) {
           <div className="mt-3"><button type="button" className={primaryBtn} disabled={busy} onClick={add}>Add class</button></div>
         </div>
       )}
-      <p className="mt-3 text-xs text-ink/50">Teachers are chosen per class subject in "Who teaches what" above, so one teacher can teach many classes. A dated override there covers a period without changing the weekly timetable.</p>
+      <p className="mt-3 text-xs text-ink/65">Teachers are chosen per class subject in &quot;Who teaches what&quot; above, so one teacher can teach many classes. A dated override there covers a period without changing the weekly timetable.</p>
       {error && <div className="mt-3"><Notice tone="error">{error}</Notice></div>}
     </StepCard>
   );

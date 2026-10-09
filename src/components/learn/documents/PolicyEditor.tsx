@@ -264,7 +264,7 @@ export function PolicyEditor() {
             {draft.file_path ? "Replace the file" : "Upload a PDF or Word file"}
             <input type="file" accept={UPLOAD_ACCEPT} className="sr-only" disabled={busy} onChange={(e) => { const f = e.target.files?.[0]; if (f) upload(f); e.target.value = ""; }} />
           </label>
-          <p className="mt-1 text-xs text-ink/50">
+          <p className="mt-1 text-xs text-ink/65">
             A PDF is best. A Word (.docx) file is offered to visitors as a Word download. Replacing the file makes everyone who must sign this policy sign the new version.
           </p>
         </div>
@@ -311,7 +311,7 @@ export function PolicyEditor() {
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div className="min-w-0">
                     <p className="text-sm text-ink">{r.number} &mdash; {r.title}</p>
-                    <p className="text-xs text-ink/50">
+                    <p className="text-xs text-ink/65">
                       {r.category === "required" ? "Required" : "Published"}
                       {r.next_review ? ` · review due ${new Date(r.next_review).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}` : ""}
                       {" · "}

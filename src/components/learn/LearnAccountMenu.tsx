@@ -96,7 +96,7 @@ export function LearnAccountMenu({ session, roles }: { session: Session; roles: 
           {initialsOf(displayName)}
         </span>
         <span className="hidden max-w-[9rem] truncate lg:inline">{fullName?.split(" ")[0] || displayName}</span>
-        <svg viewBox="0 0 12 8" width="10" height="7" aria-hidden="true" className={`text-ink/50 transition-transform ${open ? "rotate-180" : ""}`}>
+        <svg viewBox="0 0 12 8" width="10" height="7" aria-hidden="true" className={`text-ink/65 transition-transform ${open ? "rotate-180" : ""}`}>
           <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
@@ -116,7 +116,7 @@ export function LearnAccountMenu({ session, roles }: { session: Session; roles: 
 
           {areas.length > 1 && (
             <div className="border-b border-gold-light/70 p-1.5">
-              <p className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/45">Switch area</p>
+              <p className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/65">Switch area</p>
               {areas.map((href) => (
                 <MenuLink key={href} href={href} onClick={close}>
                   <span className="flex-1">{AREA_NAMES[href]}</span>

@@ -64,7 +64,7 @@ function FileViewer({ viewing, onClose }: { viewing: Viewing; onClose: () => voi
             <a href={blobUrl} download={name} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
               Download
             </a>
-            <button type="button" onClick={onClose} className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900">
+            <button type="button" onClick={onClose} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900">
               Close
             </button>
           </div>

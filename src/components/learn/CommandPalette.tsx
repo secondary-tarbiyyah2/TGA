@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchAllClasses, fetchChildClasses, fetchTeacherClasses, readRecentPages, type ClassSummary } from "@/lib/learn/classes";
 import { visibleSidebar, type PortalArea } from "@/lib/learn/nav";
+import { Icon } from "@/components/learn/Icon";
 
 type Item = { id: string; group: "Recent" | "Pages" | "Classes" | "People"; label: string; hint?: string; href: string };
 type PersonHit = { id: string; full_name: string | null; email: string | null };
@@ -36,10 +37,7 @@ async function loadClasses(area: PortalArea, isHead: boolean): Promise<ClassSumm
 
 function SearchIcon({ className }: { className: string }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" className={className} fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round">
-      <circle cx="8.5" cy="8.5" r="5.5" />
-      <path d="M13 13l4 4" />
-    </svg>
+    <Icon name="search" className={className} />
   );
 }
 
@@ -214,7 +212,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
           <div className="portal fixed inset-0 z-[100] flex items-start justify-center bg-ink/40 px-3 pt-[8vh] sm:pt-[12vh]" onMouseDown={(e) => e.target === e.currentTarget && closePalette()}>
             <div role="dialog" aria-modal="true" aria-label="Search" className="flex max-h-[75vh] w-full max-w-xl flex-col overflow-hidden rounded-2xl border border-gold-light bg-white shadow-2xl">
               <div className="flex items-center gap-2 border-b border-gold-light px-4">
-                <SearchIcon className="h-5 w-5 shrink-0 text-ink/45" />
+                <SearchIcon className="h-5 w-5 shrink-0 text-ink/65" />
                 <input
                   ref={inputRef}
                   autoFocus
@@ -229,7 +227,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={onInputKey}
                   placeholder={canSearchPeople ? "Search pages, classes and people…" : "Search pages and classes…"}
-                  className="h-14 min-w-0 flex-1 bg-transparent text-base text-ink placeholder:text-ink/40 focus:outline-none"
+                  className="h-14 min-w-0 flex-1 bg-transparent text-base text-ink placeholder:text-ink/65 focus:outline-none"
                 />
                 <button type="button" onClick={closePalette} className="rounded-md border border-gold-light px-2 py-1 text-xs font-medium text-ink/55 hover:bg-cream">
                   Esc
@@ -247,7 +245,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                     if (groupItems.length === 0) return null;
                     return (
                       <div key={g} role="group" aria-label={g} className="mb-1">
-                        <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wide text-ink/45">{g}</p>
+                        <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wide text-ink/65">{g}</p>
                         {groupItems.map(({ it, idx }) => (
                           <div
                             key={it.id}
@@ -260,7 +258,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                             className={`flex cursor-pointer items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-sm ${idx === active ? "bg-cream text-ink" : "text-ink/80"}`}
                           >
                             <span className="truncate font-medium">{it.label}</span>
-                            {it.hint && <span className="truncate text-xs text-ink/50">{it.hint}</span>}
+                            {it.hint && <span className="truncate text-xs text-ink/65">{it.hint}</span>}
                           </div>
                         ))}
                       </div>
@@ -269,7 +267,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                 )}
               </div>
 
-              <div className="hidden items-center gap-4 border-t border-gold-light px-4 py-2 text-xs text-ink/50 sm:flex">
+              <div className="hidden items-center gap-4 border-t border-gold-light px-4 py-2 text-xs text-ink/65 sm:flex">
                 <span>↑↓ to move</span>
                 <span>Enter to open</span>
                 <span>Esc to close</span>

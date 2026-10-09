@@ -62,7 +62,7 @@ export function FileViewer({ file, onClose }: { file: ViewerFile; onClose: () =>
         <div className="flex items-center justify-between gap-3 border-b border-gold-light/40 px-4 py-2">
           <div className="min-w-0">
             <p className="truncate text-sm font-medium text-ink">{file.name}</p>
-            {state.status === "ready" && <p className="text-xs text-ink/50">{formatBytes(state.size)}</p>}
+            {state.status === "ready" && <p className="text-xs text-ink/65">{formatBytes(state.size)}</p>}
           </div>
           <div className="flex shrink-0 items-center gap-2">
             <button
@@ -144,7 +144,7 @@ export function FileLinks({
             <button type="button" onClick={() => setOpen({ ...f, bucket })} className="min-w-0 truncate text-left font-semibold text-gold-700 underline">
               {f.name}
             </button>
-            {f.size > 0 && <span className="text-xs text-ink/50">{formatBytes(f.size)}</span>}
+            {f.size > 0 && <span className="text-xs text-ink/65">{formatBytes(f.size)}</span>}
             {extra?.(f)}
           </li>
         ))}

@@ -9,6 +9,7 @@ import { PasswordChecklist } from "@/components/learn/PasswordChecklist";
 import { PasswordInput } from "@/components/learn/PasswordInput";
 import { ParentPinSettings } from "@/components/learn/pin/ParentPinSettings";
 import { MessageSettings } from "@/components/learn/messages/MessageSettings";
+import { PageHeader } from "@/components/learn/PageHeader";
 
 /**
  * The signed-in user's OWN account settings — password only, since MFA was
@@ -89,20 +90,23 @@ function AccountContent() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <h1 className="font-serif text-h2 font-semibold text-ink">Your account</h1>
-        <p className="mt-1 text-sm text-ink/60">
-          {session && session !== "loading" ? session.user.email : ""} — {roles.map((r) => learnRoleLabel(r.role)).join(", ") || "no /learn role yet"}
-        </p>
-        <p className="mt-2 text-xs text-ink/50">
-          <Link href={roles[0] ? "/" : "/login"} className="text-gold-700 underline">
-            Back to your dashboard
-          </Link>
-        </p>
-      </div>
+      <PageHeader
+        crumbs={[{ label: "Home", href: roles[0] ? "/" : "/login" }, { label: "Your account" }]}
+        title="Your account"
+        subtitle={`${session && session !== "loading" ? session.user.email : ""} · ${roles.map((r) => learnRoleLabel(r.role)).join(", ") || "no portal role yet"}`}
+      />
       <ChangePassword />
       {session && session !== "loading" && !roles.every((r) => r.role === "student") && <MessageSettings userId={session.user.id} />}
       {session && session !== "loading" && roles.some((r) => r.role === "parent") && <ParentPinSettings userId={session.user.id} />}
+      <Link href="/feedback" className="flex items-center justify-between gap-3 rounded-2xl border border-gold-light bg-white p-6 hover:bg-cream">
+        <span>
+          <span className="block text-h3 font-semibold text-ink">Your feedback</span>
+          <span className="mt-1 block text-sm text-ink/70">Problems you&apos;ve reported and ideas you&apos;ve shared, with our replies.</span>
+        </span>
+        <span aria-hidden="true" className="text-teal-700">
+          &rarr;
+        </span>
+      </Link>
     </div>
   );
 }

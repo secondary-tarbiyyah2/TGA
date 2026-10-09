@@ -122,7 +122,7 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
         Basis for this period (your note - check with legal / ICO guidance)
         <textarea value={basis} onChange={(e) => setBasis(e.target.value)} rows={2} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
       </label>
-      <p className="mt-1 text-xs text-ink/50">
+      <p className="mt-1 text-xs text-ink/65">
         {rule.last_run_at ? `Last run ${new Date(rule.last_run_at).toLocaleString("en-GB")}: ${rule.last_run_count ?? 0} record(s).` : "Never run."}
       </p>
 
@@ -205,7 +205,7 @@ export function RetentionRules() {
       <div role="note" className="mt-2 rounded-lg border border-amber-300 bg-amber-50 px-4 py-2.5 text-xs text-amber-900">
         The periods below are sensible starting points, not legal advice. Before you rely on or change them, check the latest ICO and DfE guidance and take advice from your legal adviser or Data Protection Officer. Records that must be kept by law (safeguarding files, financial records) are not covered by these rules.
       </div>
-      <p className="mt-2 text-xs text-ink/50">
+      <p className="mt-2 text-xs text-ink/65">
         Nothing is removed automatically from here. Review the list for a rule, tick the box, then run it. Every run is logged, and the audit history of removed records is redacted. Recordings, the sign-in log and (in part) messages are also handled by their own scheduled jobs; see the retention schedule on the Compliance page.
       </p>
       {error && <p role="alert" className="mt-2 text-sm text-red-700">{error}</p>}

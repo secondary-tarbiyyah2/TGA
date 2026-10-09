@@ -81,7 +81,7 @@ function CommentBankAdmin() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Comment bank</h2>
-      <p className="mt-1 text-xs text-ink/50">Reusable snippets teachers can pick from when writing report comments.</p>
+      <p className="mt-1 text-xs text-ink/65">Reusable snippets teachers can pick from when writing report comments.</p>
       <div className="mt-3 flex gap-2">
         <input value={text} onChange={(e) => setText(e.target.value)} placeholder="e.g. Makes a positive contribution in class discussions." className="flex-1 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
         <button type="button" onClick={add} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white hover:bg-gold-900 font-medium transition-colors">
@@ -159,7 +159,7 @@ function MarkSchemesAdmin() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Mark schemes &amp; grade boundaries</h2>
-      <p className="mt-1 text-xs text-ink/50">Per-subject percentage bands — the single source of truth grades are resolved against, never hardcoded.</p>
+      <p className="mt-1 text-xs text-ink/65">Per-subject percentage bands — the single source of truth grades are resolved against, never hardcoded.</p>
       <div className="mt-3 flex flex-wrap gap-2">
         <select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} aria-label="Subject" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
           <option value="">Select a subject…</option>
@@ -214,7 +214,7 @@ function ReportsAdminContent() {
       <ReportsWorkspace mode="admin" />
       <details className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
         <summary className="cursor-pointer select-none font-serif text-h3 font-semibold text-ink">Report settings</summary>
-        <p className="mt-1 text-xs text-ink/50">Comment bank, assessment types and mark schemes used when building reports.</p>
+        <p className="mt-1 text-xs text-ink/65">Comment bank, assessment types and mark schemes used when building reports.</p>
         <div className="mt-4 space-y-6">
           <CommentBankAdmin />
           <AssessmentTypesAdmin />

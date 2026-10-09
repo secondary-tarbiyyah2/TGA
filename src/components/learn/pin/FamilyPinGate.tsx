@@ -178,7 +178,7 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
             Back
           </Link>
         </div>
-        <p className="mt-3 max-w-xs text-center text-xs text-ink/45">Forgotten your PIN? Ask the Headteacher to reset it.</p>
+        <p className="mt-3 max-w-xs text-center text-xs text-ink/65">Forgotten your PIN? Ask the Headteacher to reset it.</p>
       </div>
     );
   }

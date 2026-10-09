@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { PrintScope } from "@/components/learn/printScope";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { PageHeader } from "@/components/learn/PageHeader";
 
 type Report = {
   id: string;
@@ -35,14 +36,15 @@ export function ReportsList() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <div className="flex items-center justify-between">
-          <h1 className="font-serif text-h2 font-semibold text-ink">Term reports</h1>
-          <div className="print:hidden flex items-center gap-2">
+      <PageHeader
+        title="Term reports"
+        subtitle="Reports released by the school. Print or save any of them as a PDF."
+        actions={
+          <div className="print:hidden">
             <PrintButton />
           </div>
-        </div>
-      </div>
+        }
+      />
       <PrintScope title="Term reports" className="space-y-6">
       {reports === null ? (
         <p className="text-sm text-ink/60">Loading…</p>

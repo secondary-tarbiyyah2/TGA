@@ -93,7 +93,7 @@ function ReviewCard({ review, onChanged }: { review: ReviewRow; onChanged: () =>
           <p className="text-xs text-ink/65">
             {RULE_LABEL[review.rule] || review.rule}: {review.reason}. {review.concern_count} concern{review.concern_count === 1 ? "" : "s"} linked.
           </p>
-          <p className="mt-0.5 text-xs text-ink/50">
+          <p className="mt-0.5 text-xs text-ink/65">
             Opened {fmt(review.opened_at)} · due {fmt(review.due_at)}
           </p>
         </div>
@@ -151,10 +151,10 @@ function ReviewCard({ review, onChanged }: { review: ReviewRow; onChanged: () =>
           <button type="button" onClick={() => save(false)} disabled={busy} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
             Save progress
           </button>
-          <button type="button" onClick={() => save(true)} disabled={busy || !allTicked || !decision} className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+          <button type="button" onClick={() => save(true)} disabled={busy || !allTicked || !decision} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             Complete review
           </button>
-          {(!allTicked || !decision) && <span className="self-center text-xs text-ink/50">Tick every item and choose a decision to complete.</span>}
+          {(!allTicked || !decision) && <span className="self-center text-xs text-ink/65">Tick every item and choose a decision to complete.</span>}
         </div>
       )}
     </li>
@@ -200,7 +200,7 @@ export function SafeguardingReviews() {
           </p>
         )}
       </div>
-      <p className="mt-1 text-xs text-ink/50">
+      <p className="mt-1 text-xs text-ink/65">
         Opened automatically when concerns repeat (2+ about the same child in 30 days, 3+ in 90) or a serious concern stays open for 24 hours. Visible only to the Safeguarding Lead and Headteacher.
       </p>
 

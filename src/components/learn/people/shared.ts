@@ -67,7 +67,7 @@ export const CHIP_STYLES: Record<LearnRole, string> = {
 export const ROLE_PRIORITY: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "parent", "student"];
 
 export const INPUT_CLASS =
-  "w-full rounded-lg border border-gold-light/70 bg-white px-3 py-2.5 text-sm text-ink placeholder:text-ink/40 focus:border-gold-700 focus:outline-none focus:ring-2 focus:ring-gold-300/60";
+  "w-full rounded-lg border border-gold-light/70 bg-white px-3 py-2.5 text-sm text-ink placeholder:text-ink/65 focus:border-gold-700 focus:outline-none focus:ring-2 focus:ring-gold-300/60";
 
 export const GOLD_BUTTON =
   "inline-flex items-center justify-center gap-2 rounded-xl bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink shadow-sm transition-colors hover:bg-gold-700 hover:text-white disabled:cursor-not-allowed disabled:opacity-50";

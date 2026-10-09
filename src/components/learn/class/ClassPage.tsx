@@ -97,7 +97,7 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
     <div className="-mx-5 overflow-x-auto">
       <table className="w-full min-w-[480px] text-left text-sm">
         <thead>
-          <tr className="border-b border-gold-light text-xs uppercase tracking-wide text-ink/50">
+          <tr className="border-b border-gold-light text-xs uppercase tracking-wide text-ink/65">
             {teacher && <th className="px-5 py-2 font-semibold">Student</th>}
             <th className="px-5 py-2 font-semibold">Assessment</th>
             <th className="px-5 py-2 font-semibold">Date</th>
@@ -245,7 +245,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           title="Grades"
           action={
             viewer.kind === "teacher" ? (
-              <Link href="/teach/assessment" className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900">
+              <Link href="/teach/assessment" className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900">
                 + Record a grade
               </Link>
             ) : undefined

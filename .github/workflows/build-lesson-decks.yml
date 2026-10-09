@@ -1,7 +1,7 @@
 name: Build lesson decks
 
 # Turns content/lessons/**/*.json into branded PowerPoint decks (with the TGA
-# logo) plus a PDF copy of each, and loads them into the portal's Lesson
+# logo) plus a PDF copy of each, and a teacher lesson plan (Word + PDF), and loads them into the portal's Lesson
 # library (storage bucket lesson-decks + table curriculum_lessons, migration
 # 0091). Decks a teacher has edited in the portal are never overwritten.
 # Runs when lesson content or the generator changes, or on demand.
@@ -32,6 +32,22 @@ jobs:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      # When the deck design itself changes (build-decks.mjs), every generated
+      # deck already in the portal is refreshed so all lessons get the new
+      # look. Teacher-edited decks (version > 1) are still never touched.
+      - name: Refresh existing decks if the design changed
+        id: refresh
+        run: |
+          FORCE=0
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then FORCE=1; fi
+          if [ "${{ github.event_name }}" = "push" ] && git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qx "scripts/lessons/build-decks.mjs"; then
+            echo "Deck design changed: refreshing all generated decks."
+            FORCE=1
+          fi
+          echo "force=$FORCE" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v4
         with:
@@ -43,7 +59,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          npm install --no-save pptxgenjs@4.0.1
+          npm install --no-save pptxgenjs@4.0.1 docx@9.5.1
 
       - uses: supabase/setup-cli@v1
         with:
@@ -79,14 +95,14 @@ jobs:
         env:
           SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
-          FORCE: ${{ github.event.inputs.force == 'true' && '1' || '0' }}
+          FORCE: ${{ steps.refresh.outputs.force }}
         run: node scripts/lessons/upload-decks.mjs plan out/decks
 
       - name: Install LibreOffice (for PDF copies)
         run: |
           if ! command -v soffice >/dev/null; then
             sudo apt-get update -y
-            sudo apt-get install -y --no-install-recommends libreoffice-impress fonts-liberation fonts-noto-core fonts-noto-naskh-arabic || sudo apt-get install -y libreoffice
+            sudo apt-get install -y --no-install-recommends libreoffice-impress fonts-liberation fonts-crosextra-carlito fonts-noto-core fonts-noto-naskh-arabic || sudo apt-get install -y libreoffice
           fi
 
       - name: Convert needed decks to PDF
@@ -112,5 +128,5 @@ jobs:
         env:
           SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
-          FORCE: ${{ github.event.inputs.force == 'true' && '1' || '0' }}
+          FORCE: ${{ steps.refresh.outputs.force }}
         run: node scripts/lessons/upload-decks.mjs upload out/decks

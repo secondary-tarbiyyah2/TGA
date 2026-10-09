@@ -110,7 +110,7 @@ function HomeworkItem({
         <div className="mt-3 space-y-3 border-t border-gold-light/30 pt-3 text-sm">
           <div className="space-y-1">
             {hw.instructions && <p className="whitespace-pre-line text-ink/70">{hw.instructions}</p>}
-            <p className="text-xs text-ink/50">
+            <p className="text-xs text-ink/65">
               Due {new Date(row.due_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}
               {hw.max_points != null && ` · ${hw.max_points} marks`}
               {hw.edited_at && ` · Edited ${formatEdited(hw.edited_at)}`}

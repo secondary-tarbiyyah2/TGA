@@ -10,6 +10,7 @@ import { CurriculumContentEditor } from "@/components/learn/content/CurriculumCo
 import { PolicyEditor } from "@/components/learn/documents/PolicyEditor";
 import { FeesEditor } from "@/components/learn/content/FeesEditor";
 import { SimpleListEditor } from "@/components/learn/content/SimpleListEditor";
+import { PageHeader } from "@/components/learn/PageHeader";
 
 // Real editor, replacing the old "link out to Sanity Studio" stub now
 // that website content lives in this database (0025_website_content.sql)
@@ -149,10 +150,7 @@ function ContentAdmin() {
   const [tab, setTab] = useState<Tab>("Site settings");
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <h1 className="font-serif text-h2 font-semibold text-ink">Website content</h1>
-        <p className="mt-1 text-sm text-ink/60">Everything published on the public marketing site — managed here, not a separate CMS.</p>
-      </div>
+      <PageHeader crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Website content" }]} title="Website content" subtitle="Everything published on the public website, managed here." />
       <div className="flex flex-wrap gap-2">
         {TABS.map((t) => (
           <button

@@ -50,7 +50,7 @@ function ItemCard({ item, colour }: { item: DayItem; colour: string }) {
           {(item.href || item.joinUrl) && (
             <div className="mt-2 flex flex-wrap gap-2">
               {item.href && (
-                <Link href={item.href} className="rounded-lg bg-green-700 px-3 py-1 text-xs font-semibold text-white hover:bg-green-800">
+                <Link href={item.href} className="rounded-lg bg-gold-700 px-3 py-1 text-xs font-semibold text-white hover:bg-gold-900">
                   {item.kind === "lesson" ? "Open lesson" : item.kind === "homework" ? "Open homework" : item.kind === "assessment" ? "Open class" : "Read"}
                 </Link>
               )}
@@ -132,7 +132,7 @@ export function DayPanel({
           <button type="button" onClick={() => onShift(1)} aria-label="Next day" className={iconBtn}>
             ›
           </button>
-          <span className="ml-auto text-xs text-ink/50">
+          <span className="ml-auto text-xs text-ink/65">
             {loading ? "Loading…" : `${items.length} item${items.length === 1 ? "" : "s"}`}
           </span>
         </div>
@@ -174,7 +174,7 @@ export function DayPanel({
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section>
-      <h4 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/45">{title}</h4>
+      <h4 className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/65">{title}</h4>
       <ul className="space-y-2">{children}</ul>
     </section>
   );

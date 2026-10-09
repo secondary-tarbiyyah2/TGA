@@ -86,12 +86,12 @@ export function FamilyFees({ familyChildren }: { familyChildren: Child[] }) {
                   <span>−{formatGBP(discount)}</span>
                 </div>
               )}
-              {band.notes && <p className="mt-2 text-xs text-ink/50">{band.notes}</p>}
+              {band.notes && <p className="mt-2 text-xs text-ink/65">{band.notes}</p>}
             </div>
           );
         })}
       </div>
-      <p className="mt-3 text-xs text-ink/50">
+      <p className="mt-3 text-xs text-ink/65">
         See the full published fee table and payment options at <a href="/fees" className="underline">/fees</a>. Contact the school
         office for a binding invoice or to query billing.
       </p>

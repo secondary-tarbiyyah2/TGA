@@ -8,10 +8,10 @@
 // Requires SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY. RESEND_API_KEY is
 // optional — if absent, this still reports via the step summary.
 import { createClient } from "@supabase/supabase-js";
+import { mailConfigured, sendMail } from "./lib/sendMail.mjs";
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const resendApiKey = process.env.RESEND_API_KEY;
 const WARNING_WINDOW_DAYS = 60;
 
 if (!supabaseUrl || !serviceRoleKey) {
@@ -86,8 +86,8 @@ const { data: headTeacherRole } = await supabase
   .maybeSingle();
 const notifyEmail = headTeacherRole?.profiles?.email;
 
-if (!resendApiKey || !notifyEmail) {
-  console.log(`\n(No email sent — ${!resendApiKey ? "RESEND_API_KEY not set" : "no head_teacher account found"}. The list above is the notification for this run.)`);
+if (!mailConfigured() || !notifyEmail) {
+  console.log(`\n(No email sent — ${!mailConfigured() ? "no email provider configured (AWS_SES_* or RESEND_API_KEY)" : "no head_teacher account found"}. The list above is the notification for this run.)`);
   process.exit(0);
 }
 
@@ -99,15 +99,6 @@ const html = `<!DOCTYPE html><html><body style="font-family:Georgia,serif;color:
 <p>Review and update these on the Compliance page under /learn/admin/compliance.</p>
 </body></html>`;
 
-const res = await fetch("https://api.resend.com/emails", {
-  method: "POST",
-  headers: { Authorization: `Bearer ${resendApiKey}`, "Content-Type": "application/json" },
-  body: JSON.stringify({
-    from: `${process.env.MAIL_FROM_NAME || "Tarbiyyah Global Academy"} <${process.env.MAIL_FROM_EMAIL || "globalacademy@tarbiyyah.co.uk"}>`,
-    to: [notifyEmail],
-    subject: `${flags.length} Single Central Record item(s) need attention`,
-    html,
-  }),
-});
+const res = await sendMail(notifyEmail, `${flags.length} Single Central Record item(s) need attention`, html);
 
-console.log(res.ok ? `\nEmail sent to ${notifyEmail}.` : `\nEmail could not be sent (HTTP ${res.status}) — the list above is the notification for this run.`);
+console.log(res.ok ? `\nEmail sent to ${notifyEmail}.` : `\nEmail could not be sent (${res.detail}) — the list above is the notification for this run.`);

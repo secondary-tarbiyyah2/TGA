@@ -86,7 +86,7 @@ function CommentThread({
 
   return (
     <div className="mt-3 border-t border-gold-light/60 pt-3">
-      {visible.length === 0 && <p className="text-xs text-ink/50">No comments yet.</p>}
+      {visible.length === 0 && <p className="text-xs text-ink/65">No comments yet.</p>}
       <ul className="space-y-2.5">
         {visible.map((c) => (
           <li key={c.id} className={`text-sm ${c.deleted_at ? "opacity-60" : ""}`}>
@@ -96,7 +96,7 @@ function CommentThread({
             </p>
             <p className={`whitespace-pre-wrap text-ink/85 ${c.deleted_at ? "line-through" : ""}`}>{c.body}</p>
             {!c.deleted_at && (isStaff || c.author_id === myId) && (
-              <button type="button" onClick={() => remove(c.id)} className="text-xs text-ink/50 hover:text-red-700 hover:underline">
+              <button type="button" onClick={() => remove(c.id)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
                 Remove
               </button>
             )}
@@ -117,7 +117,7 @@ function CommentThread({
             aria-label="Add a class comment"
             className="min-w-0 flex-1 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm"
           />
-          <button type="button" onClick={add} disabled={busy || !text.trim()} className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900 disabled:opacity-50">
+          <button type="button" onClick={add} disabled={busy || !text.trim()} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-50">
             Post
           </button>
         </div>
@@ -289,7 +289,7 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
                   {recalled && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/60">Removed</span>}
                   {isStaff && audience && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/70">{audience.length} selected pupil{audience.length === 1 ? "" : "s"}</span>}
                   {isStaff && isAnn && !recalled && (
-                    <button type="button" onClick={() => recall(item.row.id)} className="text-xs text-ink/50 hover:text-red-700 hover:underline">
+                    <button type="button" onClick={() => recall(item.row.id)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
                       Remove
                     </button>
                   )}

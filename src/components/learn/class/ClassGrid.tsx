@@ -64,7 +64,7 @@ export function ClassCard({ cls, href, progress }: { cls: ClassSummary; href: st
     >
       <div className="h-24" style={classBannerStyle(cls.id)} aria-hidden="true" />
       <div className="flex flex-1 flex-col p-4">
-        {meta && <p className="truncate text-xs font-medium uppercase tracking-wide text-ink/50">{meta}</p>}
+        {meta && <p className="truncate text-xs font-medium uppercase tracking-wide text-ink/65">{meta}</p>}
         <h3 className="mt-1 line-clamp-2 text-base font-semibold text-ink group-hover:text-teal-700">{cls.name}</h3>
         <div className="mt-auto pt-4">
           {progress?.percent != null && (

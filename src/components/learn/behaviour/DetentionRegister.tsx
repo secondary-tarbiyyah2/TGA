@@ -21,7 +21,7 @@ function Item({ d, canAct, busy, onSet, showDate }: { d: Detention; canAct: bool
       </div>
       {canAct && d.status === "scheduled" && (
         <div className="mt-2 flex gap-2">
-          <button type="button" disabled={busy} onClick={() => onSet(d.id, "served")} className="rounded-md bg-green-700 px-2.5 py-1 text-xs font-semibold text-white hover:bg-green-800 disabled:opacity-50">
+          <button type="button" disabled={busy} onClick={() => onSet(d.id, "served")} className="rounded-md bg-gold-700 px-2.5 py-1 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             Mark served
           </button>
           <button type="button" disabled={busy} onClick={() => onSet(d.id, "missed")} className="rounded-md border border-red-300 px-2.5 py-1 text-xs font-semibold text-red-700 hover:bg-red-50 disabled:opacity-50">
@@ -40,7 +40,7 @@ function Column({ title, tone, children, count, empty }: { title: string; tone: 
         {title}
         <span className="rounded-full bg-cream px-1.5 py-0.5 text-[11px] text-ink/60">{count}</span>
       </h4>
-      {count === 0 ? <p className="rounded-lg border border-dashed border-gold-light px-3 py-4 text-center text-xs text-ink/50">{empty}</p> : <ul className="space-y-2">{children}</ul>}
+      {count === 0 ? <p className="rounded-lg border border-dashed border-gold-light px-3 py-4 text-center text-xs text-ink/65">{empty}</p> : <ul className="space-y-2">{children}</ul>}
     </div>
   );
 }
@@ -127,7 +127,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
             <p className="text-sm text-ink/70">Register for {fmtDate(today)}, including anything overdue.</p>
             {todays.length + overdue.length > 1 && (
-              <button type="button" disabled={busy} onClick={() => markAll([...overdue, ...todays], "served")} className="rounded-lg bg-green-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-green-800 disabled:opacity-50">
+              <button type="button" disabled={busy} onClick={() => markAll([...overdue, ...todays], "served")} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                 Mark all served
               </button>
             )}

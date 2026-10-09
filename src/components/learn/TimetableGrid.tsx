@@ -89,7 +89,7 @@ export function TimetableGrid({ slots, simplified = false, showClassLabel = fals
               const style = KIND_STYLE[p.kind];
               return (
                 <tr key={r.key}>
-                  <td className={`${cellPad} ${textSize} border-b border-gold-light/20 whitespace-nowrap text-ink/50`}>
+                  <td className={`${cellPad} ${textSize} border-b border-gold-light/20 whitespace-nowrap text-ink/65`}>
                     {r.start}–{r.end}
                   </td>
                   {WEEKDAYS.every((wd) => p.weekdays.includes(wd.value)) ? (

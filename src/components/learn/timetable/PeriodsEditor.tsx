@@ -176,7 +176,7 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
                 {p.kind === "enrichment" && p.activity ? <span className="text-ink/60">({p.activity})</span> : null}
                 {p.kind === "enrichment" && p.supervisor_user_id ? <span className="text-ink/60">supervised by {p.supervisor_name || staffName(p.supervisor_user_id) || "a member of staff"}</span> : null}
                 {rowClashes.some((c) => c.periodId === p.id) ? <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-900">Supervisor is teaching then</span> : null}
-                <span className="text-xs text-ink/50">{daysLabel(p.weekdays)} · {audienceLabel(p.applies_to)}{p.active ? "" : " · off"}</span>
+                <span className="text-xs text-ink/65">{daysLabel(p.weekdays)} · {audienceLabel(p.applies_to)}{p.active ? "" : " · off"}</span>
               </span>
               <span className="flex gap-1">
                 <button type="button" onClick={() => toggleActive(p)} className="rounded-lg px-2 py-1 text-xs font-medium text-ink/70 hover:bg-cream">{p.active ? "Turn off" : "Turn on"}</button>
@@ -230,7 +230,7 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
                   {staff.map((t) => <option key={t.id} value={t.id}>{t.full_name}</option>)}
                 </select>
               </label>
-              <p className="mt-1 text-xs text-ink/50">The supervisor is shown on timetables and calendars, and ticks who joined from Teaching, Enrichment.</p>
+              <p className="mt-1 text-xs text-ink/65">The supervisor is shown on timetables and calendars, and ticks who joined from Teaching, Enrichment.</p>
               {draftClashes.length > 0 && (
                 <ul role="status" className="mt-2 space-y-1 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900">
                   {draftClashes.slice(0, 4).map((c) => <li key={c.slotId}>{c.text}</li>)}
@@ -259,7 +259,7 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
             <button type="button" className={btn} onClick={save} disabled={busy}>{draft.id ? "Save changes" : "Add period"}</button>
             <button type="button" className={ghost} onClick={() => { setDraft(null); setError(null); }}>Cancel</button>
           </div>
-          {draft.kind === "lesson" && <p className="text-xs text-ink/50">Changes to lesson periods apply the next time you generate a timetable. Lessons already in a draft or published timetable are not moved.</p>}
+          {draft.kind === "lesson" && <p className="text-xs text-ink/65">Changes to lesson periods apply the next time you generate a timetable. Lessons already in a draft or published timetable are not moved.</p>}
         </div>
       )}
       {error && <p role="alert" className="mt-2 text-xs text-red-800">{error}</p>}

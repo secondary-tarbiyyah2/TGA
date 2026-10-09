@@ -100,12 +100,12 @@ export default function ForgotPasswordPage() {
             {busy ? "Sending…" : "Send reset link"}
           </button>
         </form>
-        <p className="mt-4 text-xs text-ink/50">
+        <p className="mt-4 text-xs text-ink/65">
           Forgotten which email you used?{" "}
           <Link href="/contact" className="font-semibold text-gold-700 underline">Contact the school office</Link> and
           we can look it up for you.
         </p>
-        <Link href="/login" className="mt-2 inline-block text-xs text-ink/50 underline">
+        <Link href="/login" className="mt-2 inline-block text-xs text-ink/65 underline">
           Back to sign in
         </Link>
       </div>

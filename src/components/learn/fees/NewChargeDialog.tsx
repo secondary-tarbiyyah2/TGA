@@ -17,7 +17,7 @@ type Target = "family" | "year_group" | "class";
 
 export function NewChargeDialog({
   families,
-  children,
+  pupils,
   yearGroups,
   classes,
   enrolments,
@@ -26,7 +26,7 @@ export function NewChargeDialog({
   onDone,
 }: {
   families: FamilyOpt[];
-  children: ChildOpt[];
+  pupils: ChildOpt[];
   yearGroups: YearGroupOpt[];
   classes: ClassOpt[];
   enrolments: EnrolmentOpt[];
@@ -46,7 +46,7 @@ export function NewChargeDialog({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const familyChildren = children.filter((c) => c.parentId === familyId);
+  const familyChildren = pupils.filter((c) => c.parentId === familyId);
 
   // The charges that will be created: one per child for group targets, one
   // per family (optionally tied to a child) for the family target.
@@ -56,17 +56,17 @@ export function NewChargeDialog({
       return [{ parentId: familyId, childId: childId || null }];
     }
     let kids: ChildOpt[] = [];
-    if (target === "year_group" && yearGroupId) kids = children.filter((c) => c.yearGroupId === yearGroupId);
+    if (target === "year_group" && yearGroupId) kids = pupils.filter((c) => c.yearGroupId === yearGroupId);
     if (target === "class" && classId) {
       const ids = new Set(enrolments.filter((e) => e.classId === classId).map((e) => e.childId));
-      kids = children.filter((c) => ids.has(c.id));
+      kids = pupils.filter((c) => ids.has(c.id));
     }
     return kids.map((c) => ({ parentId: c.parentId, childId: c.id }));
-  }, [target, familyId, childId, yearGroupId, classId, children, enrolments]);
+  }, [target, familyId, childId, yearGroupId, classId, pupils, enrolments]);
 
   const familyCount = new Set(targets.map((t) => t.parentId)).size;
   const groupYearName =
-    target === "year_group" ? yearGroups.find((y) => y.id === yearGroupId)?.name : target === "family" && childId ? children.find((c) => c.id === childId)?.yearGroup : null;
+    target === "year_group" ? yearGroups.find((y) => y.id === yearGroupId)?.name : target === "family" && childId ? pupils.find((c) => c.id === childId)?.yearGroup : null;
   const band = matchFeeBand(groupYearName, feeBands);
   const value = round2(Number(amount));
   const valid = targets.length > 0 && description.trim().length > 0 && value > 0 && !!dueDate;

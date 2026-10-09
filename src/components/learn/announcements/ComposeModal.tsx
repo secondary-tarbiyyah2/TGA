@@ -112,7 +112,7 @@ export function ComposeModal({
               <input type="checkbox" checked={pinned} onChange={(e) => setPinned(e.target.checked)} className="mt-0.5 h-4 w-4" />
               <span>
                 <span className="font-medium text-ink">Pin to top</span>
-                <span className="block text-xs text-ink/50">Stays above newer notices.</span>
+                <span className="block text-xs text-ink/65">Stays above newer notices.</span>
               </span>
             </label>
             <label className="block text-sm">
@@ -126,7 +126,7 @@ export function ComposeModal({
           <button type="button" onClick={onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/70 hover:bg-cream">
             Cancel
           </button>
-          <button type="button" disabled={!valid || busy} onClick={save} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+          <button type="button" disabled={!valid || busy} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             {busy ? "Saving…" : existing ? "Save changes" : "Post notice"}
           </button>
         </div>

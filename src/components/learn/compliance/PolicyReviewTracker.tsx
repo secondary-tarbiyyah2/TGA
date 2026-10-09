@@ -39,7 +39,7 @@ export function PolicyReviewTracker() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Policy review tracker</h2>
-      <p className="mt-1 text-xs text-ink/50">Read live from the Policies manager (Sanity) — the same data scripts/check-policy-reviews.mjs alerts on weekly, not a separate copy.</p>
+      <p className="mt-1 text-xs text-ink/65">Read live from the Policies manager (Sanity) — the same data scripts/check-policy-reviews.mjs alerts on weekly, not a separate copy.</p>
       {policies === null && <p className="mt-3 text-sm text-ink/60">Loading…</p>}
       {policies && policies.length === 0 && <p className="mt-3 text-sm text-ink/60">No policies with a review date found (or the CMS isn&apos;t connected yet).</p>}
       <ul className="mt-3 space-y-2">

@@ -10,11 +10,11 @@
 // RESEND_API_KEY is optional — if absent, this still reports via the step
 // summary, it just skips the email.
 import { createClient } from "@sanity/client";
+import { mailConfigured, sendMail } from "./lib/sendMail.mjs";
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const token = process.env.SANITY_API_TOKEN;
-const resendApiKey = process.env.RESEND_API_KEY;
 const WARNING_WINDOW_DAYS = 30;
 
 if (!projectId || !token) {
@@ -68,8 +68,8 @@ if (due.length === 0) {
 }
 
 const notifyEmail = settings?.safeguardingLeadContact || settings?.admissionsEmail;
-if (!resendApiKey || !notifyEmail) {
-  console.log(`\n(No email sent — ${!resendApiKey ? "RESEND_API_KEY not set" : "no safeguardingLeadContact/admissionsEmail configured in Site settings"}. The list above is the notification for this run.)`);
+if (!mailConfigured() || !notifyEmail) {
+  console.log(`\n(No email sent — ${!mailConfigured() ? "no email provider configured (AWS_SES_* or RESEND_API_KEY)" : "no safeguardingLeadContact/admissionsEmail configured in Site settings"}. The list above is the notification for this run.)`);
   process.exit(0);
 }
 
@@ -81,19 +81,10 @@ const html = `<!DOCTYPE html><html><body style="font-family:Georgia,serif;color:
 <p>Update the review date once each has been re-reviewed, via Sanity Studio.</p>
 </body></html>`;
 
-const res = await fetch("https://api.resend.com/emails", {
-  method: "POST",
-  headers: { Authorization: `Bearer ${resendApiKey}`, "Content-Type": "application/json" },
-  body: JSON.stringify({
-    from: `${process.env.MAIL_FROM_NAME || "Tarbiyyah Global Academy"} <${process.env.MAIL_FROM_EMAIL || "globalacademy@tarbiyyah.co.uk"}>`,
-    to: [notifyEmail],
-    subject: `${due.length} polic${due.length === 1 ? "y" : "ies"} due for review`,
-    html,
-  }),
-});
+const res = await sendMail(notifyEmail, `${due.length} polic${due.length === 1 ? "y" : "ies"} due for review`, html);
 
 if (res.ok) {
   console.log(`\nEmail sent to ${notifyEmail}.`);
 } else {
-  console.log(`\nEmail could not be sent (HTTP ${res.status}) — the list above is the notification for this run.`);
+  console.log(`\nEmail could not be sent (${res.detail}) — the list above is the notification for this run.`);
 }

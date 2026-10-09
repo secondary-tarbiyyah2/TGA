@@ -164,7 +164,7 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
             </button>
           ))}
         </div>
-        {score === null && <p className="mt-1 text-xs text-ink/50">Choose a score, or leave it blank if this entry isn&apos;t a rated session.</p>}
+        {score === null && <p className="mt-1 text-xs text-ink/65">Choose a score, or leave it blank if this entry isn&apos;t a rated session.</p>}
       </fieldset>
       <textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Note (e.g. tajweed points to revisit)" rows={2} className="mt-3 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
       {error && <p className="mt-2 text-sm text-red-700">{error}</p>}
@@ -198,7 +198,7 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
                   {e.standard} · {new Date(e.session_date || e.recorded_at).toLocaleDateString("en-GB")}
                 </span>
               </div>
-              {e.note && <p className="mt-1 text-xs text-ink/50">{e.note}</p>}
+              {e.note && <p className="mt-1 text-xs text-ink/65">{e.note}</p>}
             </li>
           ))}
         </ul>

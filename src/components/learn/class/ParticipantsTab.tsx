@@ -120,7 +120,7 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
             <button type="button" onClick={onClose} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
               Cancel
             </button>
-            <button type="button" onClick={submit} disabled={busy || picked.size === 0} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-60">
+            <button type="button" onClick={submit} disabled={busy || picked.size === 0} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
               {busy ? "Adding…" : `Add ${picked.size || ""}`.trim()}
             </button>
           </div>
@@ -178,7 +178,7 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
     <div className="space-y-6">
       {teachers.length > 0 && (
         <div>
-          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink/50">Teacher{teachers.length === 1 ? "" : "s"}</h3>
+          <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Teacher{teachers.length === 1 ? "" : "s"}</h3>
           <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {teachers.map((t) => (
               <li key={`${t.user_id}-${t.role}`} className="flex items-center gap-3 rounded-lg border border-gold-light/70 bg-cream/40 px-3 py-2.5">
@@ -187,19 +187,19 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
                 </span>
                 <span className="min-w-0">
                   <span className="block truncate text-sm font-medium text-ink">{t.full_name}</span>
-                  <span className="block text-xs text-ink/50">{t.role === "teacher" ? "Teacher" : "Teaching assistant"}</span>
+                  <span className="block text-xs text-ink/65">{t.role === "teacher" ? "Teacher" : "Teaching assistant"}</span>
                 </span>
               </li>
             ))}
           </ul>
         </div>
       )}
-      <p className="text-xs text-ink/50">Teachers are assigned from People.</p>
+      <p className="text-xs text-ink/65">Teachers are assigned from People.</p>
 
       <div>
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/50">Students ({people.length})</h3>
-          <button type="button" onClick={() => setAdding(true)} className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Students ({people.length})</h3>
+          <button type="button" onClick={() => setAdding(true)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900">
             + Add participants
           </button>
         </div>
@@ -214,7 +214,7 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
                   {initials(p.name)}
                 </span>
                 <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">{p.name}</span>
-                <button type="button" onClick={() => remove(p)} aria-label={`Remove ${p.name}`} className="rounded-md px-2 py-1 text-base leading-none text-ink/45 hover:bg-red-50 hover:text-red-700">
+                <button type="button" onClick={() => remove(p)} aria-label={`Remove ${p.name}`} className="rounded-md px-2 py-1 text-base leading-none text-ink/65 hover:bg-red-50 hover:text-red-700">
                   ×
                 </button>
               </li>

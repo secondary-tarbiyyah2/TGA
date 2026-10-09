@@ -196,7 +196,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
         return next;
       });
       if (popup) popup.location.href = result.joinUrl;
-      else window.location.href = result.joinUrl;
+      else window.location.assign(result.joinUrl);
     } else {
       popup?.close();
       setCallState((s) => ({ ...s, [bookingId]: "error" }));
@@ -262,7 +262,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
                 type="button"
                 onClick={() => joinCall(b.id)}
                 disabled={callState[b.id] === "starting"}
-                className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:brightness-110 disabled:opacity-50 transition-colors"
+                className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50 transition-colors"
               >
                 {callState[b.id] === "starting" ? "Starting…" : "Start call"}
               </button>
@@ -364,12 +364,12 @@ function AllStaff() {
             >
               <span>
                 <span className="text-sm font-medium text-ink">{s.display_name}</span>
-                <span className="ml-2 text-xs text-ink/50">{s.role_title}</span>
+                <span className="ml-2 text-xs text-ink/65">{s.role_title}</span>
               </span>
               <span className="flex items-center gap-2">
                 <span className={`h-1.5 w-1.5 rounded-full ${s.bookable ? "bg-green-600" : "bg-ink/30"}`} aria-hidden="true" />
-                <span className="text-xs text-ink/50">{s.bookable ? "Bookable" : "Not bookable"}</span>
-                <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-3.5 w-3.5 text-ink/40 transition-transform ${expandedId === s.id ? "rotate-180" : ""}`}>
+                <span className="text-xs text-ink/65">{s.bookable ? "Bookable" : "Not bookable"}</span>
+                <svg aria-hidden="true" viewBox="0 0 20 20" className={`h-3.5 w-3.5 text-ink/65 transition-transform ${expandedId === s.id ? "rotate-180" : ""}`}>
                   <path d="M5.5 7.5l4.5 4.5 4.5-4.5" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>

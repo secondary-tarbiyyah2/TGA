@@ -97,7 +97,7 @@ function EditShift({ shift, name, adminId, onClose, onDone }: { shift: Shift; na
           </label>
           <label className="block">
             <span className="font-medium text-ink">Clocked out</span>
-            <span className="block text-xs text-ink/50">Leave empty to keep the shift open.</span>
+            <span className="block text-xs text-ink/65">Leave empty to keep the shift open.</span>
             <input type="datetime-local" value={outAt} onChange={(e) => setOutAt(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
           </label>
           <label className="block">
@@ -309,7 +309,7 @@ function StaffAttendanceContent() {
           <ul className="flex flex-wrap gap-2 px-5 py-4">
             {notIn.map((p) => (
               <li key={p.id} className="rounded-full border border-gold-light px-3 py-1 text-sm text-ink/80">
-                {p.name} <span className="text-xs text-ink/45">{p.roles.map(learnRoleLabel).join(", ")}</span>
+                {p.name} <span className="text-xs text-ink/65">{p.roles.map(learnRoleLabel).join(", ")}</span>
               </li>
             ))}
           </ul>
@@ -376,7 +376,7 @@ function StaffAttendanceContent() {
                     <td className={td}>{formatHours(t.ms)}</td>
                     <td className={td}>{t.days}</td>
                     <td className={td}>{hhmm(t.avg)}</td>
-                    <td className={td}>{t.late > 0 ? <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900">{t.late} late</span> : <span className="text-ink/40">-</span>}</td>
+                    <td className={td}>{t.late > 0 ? <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900">{t.late} late</span> : <span className="text-ink/65">-</span>}</td>
                   </tr>
                 ))
               )}
@@ -406,7 +406,7 @@ function StaffAttendanceContent() {
                   <td className={td}>
                     {s.clocked_out_at ? timeOf(s.clocked_out_at) : <span className="text-teal-700">On shift</span>}
                     {s.auto_closed && <span className="ml-1 text-xs text-amber-800">(auto)</span>}
-                    {s.clocked_out_by && <span className="ml-1 text-xs text-ink/50">(by admin)</span>}
+                    {s.clocked_out_by && <span className="ml-1 text-xs text-ink/65">(by admin)</span>}
                   </td>
                   <td className={td}>{formatHours(new Date(s.clocked_out_at || now.toISOString()).getTime() - new Date(s.clocked_in_at).getTime())}</td>
                   <td className={`${td} max-w-[200px] truncate text-ink/60`}>{s.note || ""}</td>

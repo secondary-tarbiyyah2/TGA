@@ -118,7 +118,7 @@ export function AcceptAccounts({
         </label>
         <fieldset className="sm:col-span-2">
           <legend className="text-sm font-medium text-ink">
-            Classes <span className="font-normal text-ink/50">(optional, choose as many as needed: one per subject)</span>
+            Classes <span className="font-normal text-ink/65">(optional, choose as many as needed: one per subject)</span>
           </legend>
           {classes.length === 0 ? (
             <p className="mt-1 text-xs text-ink/55">No classes have been set up yet. You can enrol {app.child_first_name} later from Academic.</p>
@@ -161,7 +161,7 @@ export function AcceptAccounts({
       )}
 
       <div className="mt-3 flex flex-wrap items-center gap-3">
-        <button type="button" onClick={() => void run(false)} disabled={busy} className="rounded-lg bg-teal-700 px-4 py-1.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50">
+        <button type="button" onClick={() => void run(false)} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
           {busy ? "Working…" : app.status !== "accepted" ? "Accept and create accounts" : done ? "Run again (fill any gaps)" : "Create accounts now"}
         </button>
         {done && (

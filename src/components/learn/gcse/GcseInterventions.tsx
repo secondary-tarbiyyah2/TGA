@@ -334,9 +334,9 @@ export function GcseInterventions() {
                   </label>
                 </div>
                 <dl className="mt-2 grid gap-x-4 gap-y-1 text-xs sm:grid-cols-[auto_1fr]">
-                  <dt className="text-ink/50">Owner</dt>
+                  <dt className="text-ink/65">Owner</dt>
                   <dd className="text-ink/80">{i.owner_name || "Nobody yet"}</dd>
-                  <dt className="text-ink/50">Next step</dt>
+                  <dt className="text-ink/65">Next step</dt>
                   <dd className="text-ink/80">
                     {i.next_step || "None set"}
                     {i.next_step_due && <span className={`ml-2 rounded px-1.5 py-0.5 ${overdue ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>{overdue ? "Overdue, was due " : "Due "}{fmtDate(i.next_step_due)}</span>}

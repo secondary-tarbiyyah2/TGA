@@ -156,7 +156,8 @@ export function useFamilyChildren(): FamilyChild[] | null {
 // class (hashed from its id) behind a subtle eight-point-star tile.
 const CLASS_COLOURS = ["#1f6f6b", "#7d6428", "#3f4c8a", "#6b3f69", "#2f6b45", "#9a4b2f", "#2d5f86", "#5b5f2a"];
 
-export function classColour(classId: string): string {
+export function classColour(classId: string | null | undefined): string {
+  if (!classId) return CLASS_COLOURS[0];
   let h = 0;
   for (let i = 0; i < classId.length; i++) h = (h * 31 + classId.charCodeAt(i)) >>> 0;
   return CLASS_COLOURS[h % CLASS_COLOURS.length];

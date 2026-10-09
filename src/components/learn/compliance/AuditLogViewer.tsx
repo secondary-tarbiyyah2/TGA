@@ -148,7 +148,7 @@ export function AuditLogViewer() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Audit log</h2>
-      <p className="mt-1 text-xs text-ink/50">
+      <p className="mt-1 text-xs text-ink/65">
         Every change captured by the database, newest first. Summaries show which fields changed, never what they changed to. Anything involving safeguarding, health, messages or admissions shows only that a change happened. Exporting is itself logged.
       </p>
 
@@ -188,7 +188,7 @@ export function AuditLogViewer() {
           <input type="date" value={filters.to} onChange={(e) => setFilters({ ...filters, to: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
         </label>
         <div className="flex flex-wrap gap-2 sm:col-span-2 lg:col-span-6">
-          <button type="submit" className="rounded-lg bg-teal-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-teal-900">
+          <button type="submit" className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900">
             Apply filters
           </button>
           <button type="button" onClick={clearFilters} className="rounded-lg border border-gold-light bg-white px-4 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
@@ -205,7 +205,7 @@ export function AuditLogViewer() {
       <div className="mt-4 overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
-            <tr className="text-left text-xs uppercase tracking-wide text-ink/50">
+            <tr className="text-left text-xs uppercase tracking-wide text-ink/65">
               <th className="pb-2 pr-3">When</th>
               <th className="pb-2 pr-3">Who</th>
               <th className="pb-2 pr-3">What happened</th>

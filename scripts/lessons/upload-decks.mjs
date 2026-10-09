@@ -24,7 +24,7 @@ async function existingRows() {
   for (let from = 0; ; from += 1000) {
     const { data, error } = await supabase
       .from("curriculum_lessons")
-      .select("id, subject_slug, year, lesson_no, deck_path, version")
+      .select("id, subject_slug, year, lesson_no, deck_path, version, plan_pdf_path")
       .range(from, from + 999);
     if (error) throw error;
     for (const r of data) out.set(`${r.subject_slug}/${r.year}/${r.lesson_no}`, r);
@@ -42,10 +42,18 @@ const needsFile = (m) => {
   return force || !row.deck_path;
 };
 
+// Lesson plans are generated (never teacher-edited), so they're added to
+// every lesson that lacks one, including lessons whose deck a teacher edited.
+const needsPlan = (m) => {
+  if (!m.plan_file) return false;
+  const row = existing.get(keyOf(m));
+  return force || !row || !row.plan_pdf_path;
+};
+
 if (mode === "plan") {
-  const needed = manifest.filter(needsFile).map((m) => m.file);
+  const needed = [...manifest.filter(needsFile).map((m) => m.file), ...manifest.filter(needsPlan).map((m) => m.plan_file)];
   fs.writeFileSync(path.join(dir, "needed.json"), JSON.stringify(needed));
-  console.log(`${needed.length} of ${manifest.length} decks need uploading`);
+  console.log(`${needed.filter((f) => f.endsWith(".pptx")).length} of ${manifest.length} decks and ${needed.filter((f) => f.endsWith(".docx")).length} lesson plans need uploading`);
   process.exit(0);
 }
 
@@ -58,6 +66,24 @@ async function pool(items, n, fn) {
     }
   });
   await Promise.all(workers);
+}
+
+async function uploadPlan(m) {
+  const base = path.basename(m.plan_file, ".docx");
+  const docxPath = `${m.subject_slug}/${m.year}/${m.lesson_no}/plan-${base}.docx`;
+  const pdfLocal = path.join(dir, m.plan_file.replace(/\.docx$/, ".pdf"));
+  const up = await supabase.storage.from("lesson-decks").upload(docxPath, fs.readFileSync(path.join(dir, m.plan_file)), {
+    upsert: true,
+    contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  });
+  if (up.error) throw up.error;
+  let pdfPath = null;
+  if (fs.existsSync(pdfLocal)) {
+    pdfPath = docxPath.replace(/\.docx$/, ".pdf");
+    const up2 = await supabase.storage.from("lesson-decks").upload(pdfPath, fs.readFileSync(pdfLocal), { upsert: true, contentType: "application/pdf" });
+    if (up2.error) throw up2.error;
+  }
+  return { plan_docx_path: docxPath, plan_pdf_path: pdfPath };
 }
 
 let uploaded = 0;
@@ -77,7 +103,9 @@ await pool(manifest, 6, async (m) => {
     objectives: m.objectives,
   };
   try {
+    const planPaths = needsPlan(m) ? await uploadPlan(m) : null;
     if (!needsFile(m)) {
+      if (planPaths && row) await supabase.from("curriculum_lessons").update(planPaths).eq("id", row.id);
       // Keep wording/ordering current without touching files or edited versions.
       if (row && row.version === 1) {
         await supabase.from("curriculum_lessons").update(meta).eq("id", row.id);
@@ -101,7 +129,7 @@ await pool(manifest, 6, async (m) => {
     }
     const { data, error } = await supabase
       .from("curriculum_lessons")
-      .upsert({ ...meta, deck_path: deckPath, pdf_path: pdfPath, version: 1 }, { onConflict: "subject_slug,year,lesson_no" })
+      .upsert({ ...meta, ...(planPaths || {}), deck_path: deckPath, pdf_path: pdfPath, version: 1 }, { onConflict: "subject_slug,year,lesson_no" })
       .select("id")
       .single();
     if (error) throw error;

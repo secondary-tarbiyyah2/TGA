@@ -240,7 +240,7 @@ export function ClockChip({ userId, roles }: { userId: string; roles: RoleGrant[
           await clockIn(userId, "");
           setBusy(false);
         }}
-        className="flex h-9 items-center gap-1.5 rounded-full border border-gold-light px-3 text-sm font-medium text-ink/70 hover:bg-cream disabled:opacity-50"
+        className="flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full border border-gold-light px-3 text-sm font-medium text-ink/70 hover:bg-cream disabled:opacity-50"
       >
         Clock in
       </button>
@@ -268,7 +268,7 @@ export function ClockChip({ userId, roles }: { userId: string; roles: RoleGrant[
         aria-expanded={open}
         aria-haspopup="dialog"
         title="You are clocked in"
-        className="flex h-9 items-center gap-1.5 rounded-full bg-teal-100 px-3 text-sm font-medium tabular-nums text-teal-900 hover:bg-teal-100/70"
+        className="flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full bg-teal-100 px-3 text-sm font-medium tabular-nums text-teal-900 hover:bg-teal-100/70"
       >
         <span aria-hidden="true" className="text-teal-500">
           ●

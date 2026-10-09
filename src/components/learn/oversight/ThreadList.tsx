@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { shortTime, threadTitle, type Category, type OversightThread } from "./types";
+import { Tabs } from "@/components/learn/Tabs";
 
 type Tab = "all" | Category | "flagged";
 const TABS: { id: Tab; label: string }[] = [
@@ -39,21 +40,7 @@ export function ThreadList({
 
   return (
     <div className="flex h-full min-h-0 flex-col">
-      <div role="tablist" aria-label="Conversation type" className="flex flex-wrap gap-1 rounded-lg bg-ink/5 p-1">
-        {TABS.map((t) => (
-          <button
-            key={t.id}
-            role="tab"
-            aria-selected={tab === t.id}
-            onClick={() => setTab(t.id)}
-            className={`rounded-md px-2.5 py-1 text-xs font-medium ${
-              tab === t.id ? "bg-white text-teal-800 shadow-sm" : "text-ink/60 hover:text-ink"
-            }`}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
+      <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Conversation type" />
       <input
         type="search"
         value={q}
@@ -72,7 +59,7 @@ export function ThreadList({
             >
               <span className="flex items-baseline justify-between gap-2">
                 <span className="truncate text-sm font-semibold text-ink">{threadTitle(t)}</span>
-                <span className="shrink-0 text-xs text-ink/50">{shortTime(t.last_at)}</span>
+                <span className="shrink-0 text-xs text-ink/65">{shortTime(t.last_at)}</span>
               </span>
               <span className="mt-0.5 flex items-center gap-2">
                 <span className="truncate text-xs text-ink/60">

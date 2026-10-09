@@ -26,6 +26,7 @@ import {
   type Period,
   type StudentOption,
 } from "@/components/learn/behaviour/data";
+import { Tabs } from "@/components/learn/Tabs";
 
 type Tab = "merits" | "incidents" | "badges";
 type Sub = "overview" | "all";
@@ -123,42 +124,36 @@ function BehaviourContent() {
 
   const delta = stats.meritsPrev === null ? undefined : `${stats.merits - stats.meritsPrev >= 0 ? "+" : ""}${stats.merits - stats.meritsPrev} vs previous period`;
 
-  const tabBtn = (id: Tab, label: string) => (
-    <button
-      key={id}
-      type="button"
-      onClick={() => setTab(id)}
-      aria-pressed={tab === id}
-      className={`whitespace-nowrap border-b-2 px-3 py-2 text-sm font-semibold ${tab === id ? "border-teal-700 text-teal-800" : "border-transparent text-ink/60 hover:text-ink"}`}
-    >
-      {label}
-    </button>
-  );
-
   return (
     <>
       <PageHeader
         crumbs={[{ label: "Site administration", href: "/admin/site" }, { label: "Behaviour" }]}
-        title="Behaviour Management"
+        title="Behaviour"
         subtitle="Merits, demerits, incidents, online follow-up sessions and badges across the school."
         actions={
           <>
             <Link href="/report-concern" className="rounded-lg border border-red-300 px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50">
               Raise a concern
             </Link>
-            <button type="button" onClick={() => setModal(tab === "incidents" ? "incident" : "merit")} className="rounded-lg bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800">
-              {tab === "incidents" ? "+ Log incident" : "+ Log Merit / Demerit"}
+            <button type="button" onClick={() => setModal(tab === "incidents" ? "incident" : "merit")} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
+              {tab === "incidents" ? "+ Log incident" : "+ Log merit or demerit"}
             </button>
           </>
         }
       />
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
 
-      <div className="mb-4 flex gap-1 overflow-x-auto border-b border-gold-light/60" role="tablist">
-        {tabBtn("merits", "Merits & Demerits")}
-        {tabBtn("incidents", "Incidents")}
-        {tabBtn("badges", "Badges")}
-      </div>
+      <Tabs
+        items={[
+          { key: "merits", label: "Merits and demerits" },
+          { key: "incidents", label: "Incidents" },
+          { key: "badges", label: "Badges" },
+        ]}
+        value={tab}
+        onChange={setTab}
+        label="Behaviour sections"
+        className="mb-4"
+      />
 
       {records === null ? (
         <p className="text-ink/60">Loading…</p>
@@ -170,13 +165,16 @@ function BehaviourContent() {
       ) : (
         <>
           <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-            <div className="flex gap-1 rounded-lg bg-cream p-1">
-              {(["overview", "all"] as Sub[]).map((s) => (
-                <button key={s} type="button" aria-pressed={sub === s} onClick={() => setSub(s)} className={`rounded-md px-3 py-1 text-sm font-medium ${sub === s ? "bg-white text-ink shadow-sm" : "text-ink/60"}`}>
-                  {s === "overview" ? "Overview" : "All records"}
-                </button>
-              ))}
-            </div>
+            <Tabs
+              variant="switch"
+              items={[
+                { key: "overview", label: "Overview" },
+                { key: "all", label: "All records" },
+              ]}
+              value={sub}
+              onChange={setSub}
+              label="Behaviour view"
+            />
             <label className="text-sm text-ink/70">
               <span className="sr-only">Period</span>
               <select value={period} onChange={(e) => setPeriod(e.target.value as Period)} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm">
@@ -265,7 +263,7 @@ function BehaviourContent() {
                 <input type="date" value={fTo} onChange={(e) => setFTo(e.target.value)} aria-label="To date" className="rounded-lg border border-gold-light px-3 py-2 text-sm" />
               </div>
               <RecordsTable records={filtered.slice(0, 300)} onVoid={voidRecord} empty="No records match these filters." />
-              {filtered.length > 300 && <p className="mt-2 text-xs text-ink/50">Showing the latest 300 of {filtered.length}. Narrow the filters to see more.</p>}
+              {filtered.length > 300 && <p className="mt-2 text-xs text-ink/65">Showing the latest 300 of {filtered.length}. Narrow the filters to see more.</p>}
             </section>
           )}
         </>

@@ -6,6 +6,7 @@ import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
 import { CredentialsCard } from "./StudentCredentials";
 import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
 import { CHIP_STYLES, GOLD_BUTTON, INPUT_CLASS, friendlyError, initials, invite, type Person } from "./shared";
+import { Tabs } from "@/components/learn/Tabs";
 
 type Tab = "staff" | "families";
 type Chip = { id: string; label: string; roles: LearnRole[] };
@@ -262,23 +263,17 @@ export function PeopleList({
           aria-label="Search people"
           className={INPUT_CLASS}
         />
-        <div className="flex gap-1 rounded-xl bg-cream/70 p-1" role="tablist" aria-label="People">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              type="button"
-              role="tab"
-              aria-selected={tab === t.id}
-              onClick={() => {
-                setTab(t.id);
-                setChip("all");
-              }}
-              className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold ${tab === t.id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}
-            >
-              {t.label} <span className="text-xs font-medium opacity-70">{inTab[t.id].length}</span>
-            </button>
-          ))}
-        </div>
+        <Tabs
+          variant="switch"
+          fill
+          items={TABS.map((t) => ({ key: t.id, label: t.label, count: inTab[t.id].length }))}
+          value={tab}
+          onChange={(k) => {
+            setTab(k);
+            setChip("all");
+          }}
+          label="People"
+        />
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by role">
           {tabDef.chips.map((f) => (
             <button

@@ -203,12 +203,12 @@ export function SampleWeeksPanel() {
 }
 
 function StatusBadge({ status }: { status?: string }) {
-  if (!status) return <span className="rounded-full bg-cream px-2 py-0.5 text-xs text-ink/50">Not marked</span>;
+  if (!status) return <span className="rounded-full bg-cream px-2 py-0.5 text-xs text-ink/65">Not marked</span>;
   const tones: Record<string, string> = {
     draft: "bg-cream text-ink/60",
     review: "bg-amber-100 text-amber-800",
     published: "bg-gold-100 text-gold-800",
-    archived: "bg-cream text-ink/40",
+    archived: "bg-cream text-ink/65",
   };
-  return <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${tones[status] ?? "bg-cream text-ink/50"}`}>{status}</span>;
+  return <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${tones[status] ?? "bg-cream text-ink/65"}`}>{status}</span>;
 }

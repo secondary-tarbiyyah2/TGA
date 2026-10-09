@@ -233,7 +233,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
               {variant === "teacher" ? "Start / join as teacher" : "Join lesson"}
             </button>
             {variant === "teacher" && (
-              <span className="text-xs text-ink/50">Once in, use the call&apos;s own toolbar to split the class into breakout rooms.</span>
+              <span className="text-xs text-ink/65">Once in, use the call&apos;s own toolbar to split the class into breakout rooms.</span>
             )}
             {variant === "teacher" && lesson.bbb_status === "live" && lesson.recording_enabled && (
               <button
@@ -248,7 +248,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
           </div>
         </div>
         {message && <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-800">{message}</p>}
-        <p className="mt-3 text-xs text-ink/50">
+        <p className="mt-3 text-xs text-ink/65">
           Waiting room is on — students and parents wait for the teacher to admit them. In-meeting chat is whole-class only (no
           private 1:1 chat).
         </p>
@@ -281,7 +281,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
                     placeholder="https://…"
                     className="flex-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
                   />
-                  <button type="button" onClick={() => setResourcesDraft((prev) => prev.filter((_, idx) => idx !== i))} className="text-xs text-ink/50 hover:text-ink">
+                  <button type="button" onClick={() => setResourcesDraft((prev) => prev.filter((_, idx) => idx !== i))} className="text-xs text-ink/65 hover:text-ink">
                     Remove
                   </button>
                 </div>
@@ -347,7 +347,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Recording</h2>
         <LessonRecordingPanel lessonInstanceId={lessonInstanceId} canManage={variant === "teacher" || variant === "admin"} />
-        {recordings.length === 0 && <p className="mt-4 text-xs text-ink/50">No portal-hosted recording for this lesson.</p>}
+        {recordings.length === 0 && <p className="mt-4 text-xs text-ink/65">No portal-hosted recording for this lesson.</p>}
         {recordings.map((r) => (
           <div key={r.id} className="mt-2 flex flex-wrap items-center justify-between gap-2 rounded-lg border border-gold-light/30 p-3 text-sm">
             <span className="text-ink/70">

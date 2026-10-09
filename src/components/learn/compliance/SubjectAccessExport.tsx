@@ -112,7 +112,7 @@ export function SubjectAccessExport() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Subject access export</h2>
-      <p className="mt-1 text-xs text-ink/50">
+      <p className="mt-1 text-xs text-ink/65">
         Gathers one person&apos;s data (profile, child record, contacts, attendance, behaviour, reports, messages, signatures, admissions record) into a readable summary and a data file, available for 24 hours. Staff names, other families and safeguarding concern content are left out unless you ask for it. The export is recorded in the audit log.
       </p>
 
@@ -149,7 +149,7 @@ export function SubjectAccessExport() {
             <li key={c.id}>
               <button type="button" onClick={() => { setChosen(c); setResult(null); }} className={`flex w-full items-center justify-between px-3 py-2 text-left text-sm hover:bg-cream ${chosen?.id === c.id ? "bg-cream font-medium" : ""}`}>
                 <span>{c.label}</span>
-                <span className="text-xs text-ink/50">{c.detail}</span>
+                <span className="text-xs text-ink/65">{c.detail}</span>
               </button>
             </li>
           ))}
@@ -184,7 +184,7 @@ export function SubjectAccessExport() {
               ))}
             </select>
           </label>
-          <button type="button" onClick={generate} disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+          <button type="button" onClick={generate} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             {busy ? "Preparing the export…" : "Generate export"}
           </button>
         </div>

@@ -12,10 +12,10 @@
 //
 // Requires SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY. RESEND_API_KEY optional.
 import { createClient } from "@supabase/supabase-js";
+import { mailConfigured, sendMail } from "./lib/sendMail.mjs";
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const resendApiKey = process.env.RESEND_API_KEY;
 const nudgeAfterDays = Number(process.env.NUDGE_AFTER_DAYS || 7);
 
 if (!supabaseUrl || !serviceRoleKey) {
@@ -82,8 +82,8 @@ if (process.env.GITHUB_STEP_SUMMARY) {
   await import("node:fs/promises").then((fs) => fs.appendFile(process.env.GITHUB_STEP_SUMMARY, summaryLines.join("\n") + "\n"));
 }
 
-if (byPerson.size === 0 || !resendApiKey) {
-  if (byPerson.size > 0) console.log("(No emails sent — RESEND_API_KEY not set. The summary above is the notification for this run.)");
+if (byPerson.size === 0 || !mailConfigured()) {
+  if (byPerson.size > 0) console.log("(No emails sent — no email provider configured (AWS_SES_* or RESEND_API_KEY). The summary above is the notification for this run.)");
   process.exit(0);
 }
 
@@ -97,16 +97,8 @@ for (const [, person] of byPerson) {
 <ul>${person.titles.map((t) => `<li>${t}</li>`).join("")}</ul>
 <p>Please sign in at your earliest convenience.</p>
 </body></html>`;
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${resendApiKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      from: `${process.env.MAIL_FROM_NAME || "Tarbiyyah Global Academy"} <${process.env.MAIL_FROM_EMAIL || "globalacademy@tarbiyyah.co.uk"}>`,
-      to: [person.email],
-      subject: `${person.titles.length} document(s) awaiting your signature`,
-      html,
-    }),
-  });
+  const res = await sendMail(person.email, `${person.titles.length} document(s) awaiting your signature`, html);
+
   if (res.ok) sent += 1;
 }
 console.log(`Sent ${sent} nudge email(s).`);

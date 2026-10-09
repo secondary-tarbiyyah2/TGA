@@ -5,6 +5,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { PageHeader } from "@/components/learn/PageHeader";
 
 function StudentHomeworkContent() {
   const supabase = getSupabaseClient();
@@ -23,11 +24,9 @@ function StudentHomeworkContent() {
   }, [supabase]);
 
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <div className="flex items-center justify-between">
-        <h1 className="font-serif text-h2 font-semibold text-ink">My homework</h1>
-      </div>
-      <div className="mt-6">{childId ? <HomeworkForChild childId={childId} canSubmit /> : <p className="text-sm text-ink/60">Loading…</p>}</div>
+    <div>
+      <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "To do", href: "/student/todo" }, { label: "My homework" }]} title="My homework" subtitle="Hand in your work and read your teacher's feedback." />
+      <div className="rounded-2xl border border-gold-light bg-white p-6">{childId ? <HomeworkForChild childId={childId} canSubmit /> : <p className="text-sm text-ink/60">Loading…</p>}</div>
     </div>
   );
 }

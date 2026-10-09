@@ -15,6 +15,7 @@ import { ConsentRegister } from "@/components/learn/compliance/ConsentRegister";
 import { IncidentBreachLog } from "@/components/learn/compliance/IncidentBreachLog";
 import { SafeguardingReviews } from "@/components/learn/compliance/SafeguardingReviews";
 import { PolicyReviewTracker } from "@/components/learn/compliance/PolicyReviewTracker";
+import { PageHeader } from "@/components/learn/PageHeader";
 
 type Keyword = { id: string; phrase: string };
 
@@ -52,7 +53,7 @@ function SafeguardingKeywordsAdmin() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Safeguarding keywords</h2>
-      <p className="mt-1 text-xs text-ink/50">Messages matching any phrase below are automatically flagged for the Safeguarding Lead.</p>
+      <p className="mt-1 text-xs text-ink/65">Messages matching any phrase below are automatically flagged for the Safeguarding Lead.</p>
       <div className="mt-3 flex gap-2">
         <input value={phrase} onChange={(e) => setPhrase(e.target.value)} placeholder="Add a phrase…" className="flex-1 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
         <button type="button" onClick={add} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white hover:bg-gold-900 font-medium transition-colors">
@@ -63,7 +64,7 @@ function SafeguardingKeywordsAdmin() {
         {keywords.map((k) => (
           <li key={k.id} className="flex items-center gap-1 rounded-full border border-gold-light/40 px-3 py-1 text-xs text-ink/70">
             {k.phrase}
-            <button type="button" onClick={() => remove(k.id)} className="text-ink/40 hover:text-red-700" aria-label={`Remove ${k.phrase}`}>
+            <button type="button" onClick={() => remove(k.id)} className="text-ink/65 hover:text-red-700" aria-label={`Remove ${k.phrase}`}>
               ×
             </button>
           </li>
@@ -89,10 +90,7 @@ function ComplianceContent() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <h1 className="font-serif text-h2 font-semibold text-ink">Compliance &amp; safeguarding</h1>
-        <p className="mt-1 text-sm text-ink/60">Alerts that need action, outstanding policy signatures, and the school&apos;s statutory records.</p>
-      </div>
+      <PageHeader crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Safeguarding and compliance" }]} title="Safeguarding and compliance" subtitle="Alerts that need action, outstanding policy signatures, and the school's statutory records." />
 
       <SafeguardingLeadsBanner canManage={isHeadTeacher} />
 

@@ -11,6 +11,7 @@ import { applyView, countByKind, groupByDate, itemColour, type CalView } from "@
 import { ViewFilter } from "@/components/learn/calendar/ViewFilter";
 import { DayPanel, gregLong, parseKey, shiftKey } from "@/components/learn/calendar/DayPanel";
 import { addDays, formatHijri, hijriMonthLength, hijriMonthName, hijriMonthStart, isUmmAlQura, resetHijriEngine, shiftHijriMonth, toHijri, todayHijri } from "@/lib/learn/hijri";
+import { Tabs } from "@/components/learn/Tabs";
 
 const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const GREG_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
@@ -77,7 +78,7 @@ const navBtn = "rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm
 type Tab = "month" | "dates" | "terms";
 const TABS: { id: Tab; label: string }[] = [
   { id: "month", label: "Calendar" },
-  { id: "dates", label: "Dates & overrides" },
+  { id: "dates", label: "Dates and overrides" },
   { id: "terms", label: "Terms" },
 ];
 
@@ -184,7 +185,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
     }
     for (const t of terms || []) if (t.half_term_starts_on && t.half_term_ends_on && t.half_term_ends_on >= todayKey) out.push({ key: `h-${t.id}`, date: t.half_term_starts_on, label: `${t.name} half-term break` });
     for (const c of closures) if (c.ends_on >= todayKey) out.push({ key: `c-${c.id}`, date: c.starts_on, label: `${c.name} (${CLOSURE_LABEL[c.kind]})` });
-    for (const e of items) if (e.kind === "homework") out.push({ key: e.id, date: e.date, label: `Homework due: ${e.title} (${e.className})${e.childName ? ` · ${e.childName}` : ""}` });
+    for (const e of items) if (e.kind === "homework" && e.date >= todayKey) out.push({ key: e.id, date: e.date, label: `Homework due: ${e.title} (${e.className})${e.childName ? ` · ${e.childName}` : ""}` });
     return out.sort((a, b) => a.date.localeCompare(b.date));
   }, [terms, closures, items, todayKey]);
 
@@ -217,20 +218,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
         <h2 className="mr-auto font-serif text-h3 font-semibold text-ink">Academic Calendar</h2>
-        <div role="tablist" aria-label="Calendar sections" className="flex gap-1 rounded-xl border border-gold-light bg-cream/60 p-1">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              type="button"
-              role="tab"
-              aria-selected={tab === t.id}
-              onClick={() => setTab(t.id)}
-              className={`rounded-lg px-3 py-1.5 text-xs font-medium sm:text-sm ${tab === t.id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
+        <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Calendar sections" />
       </div>
 
       {toast && (
@@ -299,7 +287,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                   <span className="inline-flex items-center gap-1.5"><Mark kind="homework" colour="#555" /> Homework due</span>
                   <span className="inline-flex items-center gap-1.5"><Mark kind="assessment" colour="#555" size={7} /> Assessment</span>
                   <span className="inline-flex items-center gap-1.5"><Mark kind="announcement" colour="#555" /> Announcement</span>
-                  <span className="text-ink/45">{perChild ? "Colour = child" : "Colour = class"}</span>
+                  <span className="text-ink/65">{perChild ? "Colour = child" : "Colour = class"}</span>
                 </p>
                 {mode === "month" && (
                   <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-ink/60">
@@ -314,7 +302,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
 
               {mode === "month" && (
                 <>
-                  <div className="grid grid-cols-7 border-b border-gold-light bg-cream/60 text-center text-xs font-semibold uppercase tracking-wide text-ink/50">
+                  <div className="grid grid-cols-7 border-b border-gold-light bg-cream/60 text-center text-xs font-semibold uppercase tracking-wide text-ink/65">
                     {WEEKDAYS.map((d) => (
                       <div key={d} className="py-2">
                         {d}
@@ -326,7 +314,6 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                       if (!c) return <div key={`pad-${i}`} className="min-h-[64px] border-b border-r border-gold-light/70 bg-cream/40 sm:min-h-[96px]" />;
                       const key = localDateKey(c.date);
                       const list = byDay.get(key) || [];
-                      const counts = countByKind(list);
                       const isToday = key === todayKey;
                       const isSelected = key === selected;
                       const firstOfGreg = c.date.getDate() === 1;
@@ -345,19 +332,19 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                           onKeyDown={(e) => onCellKey(e, key)}
                           aria-pressed={isSelected}
                           aria-label={`${c.hijriDay} ${hijriMonthName(hm.month)} ${hm.year} AH, ${gregLong(c.date)}, ${summary(list)}${cellTag ? `, ${cellTag}` : ""}`}
-                          className={`relative min-h-[64px] border-b border-r border-gold-light/70 p-1 text-left align-top transition-colors focus-visible:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-green-700 sm:min-h-[96px] sm:p-1.5 ${
-                            isSelected ? "z-10 bg-green-100 shadow-[inset_0_0_0_3px_#15803d]" : `${tint} hover:bg-cream/70`
+                          className={`relative min-h-[64px] border-b border-r border-gold-light/70 p-1 text-left align-top transition-colors focus-visible:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-teal-700 sm:min-h-[96px] sm:p-1.5 ${
+                            isSelected ? "z-10 bg-teal-100 shadow-[inset_0_0_0_3px_var(--color-teal-700)]" : `${tint} hover:bg-cream/70`
                           }`}
                         >
                           <span className="flex items-start justify-between gap-1">
                             <span
                               className={`inline-flex h-6 min-w-6 items-center justify-center rounded-full px-1 text-sm font-semibold sm:h-7 sm:min-w-7 sm:text-base ${
-                                isToday ? "bg-green-700 text-white" : isSelected ? "text-green-900" : "text-ink/85"
+                                isToday ? "bg-teal-700 text-white" : isSelected ? "text-teal-900" : "text-ink/85"
                               }`}
                             >
                               {c.hijriDay}
                             </span>
-                            <span className={`pt-0.5 text-[9px] sm:text-[11px] ${firstOfGreg ? "font-semibold text-ink/70" : "text-ink/40"}`}>
+                            <span className={`pt-0.5 text-[9px] sm:text-[11px] ${firstOfGreg ? "font-semibold text-ink/70" : "text-ink/65"}`}>
                               {firstOfGreg ? gregShort(c.date) : c.date.getDate()}
                             </span>
                           </span>
@@ -393,18 +380,18 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                     const info = dayInfo(key, terms, closures);
                     const tag = info.closure[0]?.name || (info.halfTerm ? "Half-term" : info.boundaryLabel);
                     return (
-                      <li key={key} className={isSelected ? "bg-green-100 shadow-[inset_4px_0_0_#15803d]" : ""}>
-                        <button type="button" data-day={key} onClick={() => select(key, true)} aria-pressed={isSelected} className="flex w-full items-start gap-3 px-4 py-3 text-left hover:bg-cream/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-700">
+                      <li key={key} className={isSelected ? "bg-teal-100 shadow-[inset_4px_0_0_var(--color-teal-700)]" : ""}>
+                        <button type="button" data-day={key} onClick={() => select(key, true)} aria-pressed={isSelected} className="flex w-full items-start gap-3 px-4 py-3 text-left hover:bg-cream/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700">
                           <span className="w-16 shrink-0">
-                            <span className={`inline-flex h-8 min-w-8 items-center justify-center rounded-full px-1 text-base font-semibold ${key === todayKey ? "bg-green-700 text-white" : "text-ink/85"}`}>{toHijri(d).day}</span>
-                            <span className="block text-[11px] text-ink/50">
+                            <span className={`inline-flex h-8 min-w-8 items-center justify-center rounded-full px-1 text-base font-semibold ${key === todayKey ? "bg-teal-700 text-white" : "text-ink/85"}`}>{toHijri(d).day}</span>
+                            <span className="block text-[11px] text-ink/65">
                               {WEEKDAYS[(d.getDay() + 6) % 7]} {gregShort(d)}
                             </span>
                           </span>
                           <span className="min-w-0 flex-1">
                             {tag && <span className="mb-0.5 block text-xs font-semibold text-amber-800">{tag}</span>}
                             {list.length === 0 ? (
-                              <span className="text-xs text-ink/45">Nothing scheduled</span>
+                              <span className="text-xs text-ink/65">Nothing scheduled</span>
                             ) : (
                               <span className="block space-y-1">
                                 {list.slice(0, 4).map((e) => (
@@ -412,7 +399,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                                     <Mark kind={e.kind} colour={itemColour(e, childOrder)} />
                                     <span className="w-11 shrink-0 text-xs text-ink/55">{e.time || ""}</span>
                                     <span className="truncate">{e.kind === "homework" ? `Due: ${e.title}` : e.title}</span>
-                                    {e.childName && <span className="shrink-0 text-xs text-ink/50">{e.childName}</span>}
+                                    {e.childName && <span className="shrink-0 text-xs text-ink/65">{e.childName}</span>}
                                   </span>
                                 ))}
                                 {list.length > 4 && <span className="block text-xs font-medium text-ink/55">+{list.length - 4} more</span>}
@@ -428,14 +415,14 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
 
               {mode === "day" && <div className="max-h-[75vh] overflow-y-auto">{panel()}</div>}
 
-              <p className="px-4 py-2 text-[10px] text-ink/40">
+              <p className="px-4 py-2 text-[10px] text-ink/65">
                 {umalqura ? "Umm al-Qura calendar" : "Islamic civil calendar (fallback)"}
                 {loading && data ? " · updating…" : ""}
               </p>
             </section>
 
             {mode !== "day" && isDesktop && (
-              <aside aria-labelledby={headingId} className="overflow-hidden rounded-2xl border-2 border-green-700/30 bg-white xl:sticky xl:top-4 xl:max-h-[calc(100vh-2rem)] xl:self-start">
+              <aside aria-labelledby={headingId} className="overflow-hidden rounded-2xl border border-gold-light bg-white xl:sticky xl:top-4 xl:max-h-[calc(100vh-2rem)] xl:self-start">
                 {panel()}
               </aside>
             )}
@@ -444,7 +431,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
           {sheetShown && (
             <div className="fixed inset-0 z-50 flex items-end" role="dialog" aria-modal="true" aria-labelledby={headingId}>
               <button type="button" aria-label="Close day details" tabIndex={-1} onClick={() => setSheetOpen(false)} className="absolute inset-0 bg-ink/40" />
-              <div ref={sheetRef} tabIndex={-1} className="relative max-h-[82vh] w-full overflow-hidden rounded-t-2xl border-t-2 border-green-700/40 bg-white shadow-2xl outline-none">
+              <div ref={sheetRef} tabIndex={-1} className="relative max-h-[82vh] w-full overflow-hidden rounded-t-2xl border-t border-gold-light bg-white shadow-2xl outline-none">
                 <div aria-hidden="true" className="mx-auto mt-2 h-1 w-10 rounded-full bg-ink/20" />
                 {panel(() => setSheetOpen(false))}
               </div>
@@ -470,7 +457,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
               ))}
             </ul>
           )}
-          <p className="border-t border-gold-light px-4 py-2 text-[11px] text-ink/45">Showing term boundaries and the homework deadlines around {hijriMonthName(hm.month)} {hm.year} AH.</p>
+          <p className="border-t border-gold-light px-4 py-2 text-[11px] text-ink/65">Showing term boundaries and the homework deadlines around {hijriMonthName(hm.month)} {hm.year} AH.</p>
         </section>
       )}
 
@@ -506,7 +493,7 @@ export function MiniCalendar({ scope, href }: { scope: CalendarScope | null; hre
           Full calendar
         </Link>
       </div>
-      <div className="grid grid-cols-7 text-center text-[10px] font-semibold uppercase text-ink/40">
+      <div className="grid grid-cols-7 text-center text-[10px] font-semibold uppercase text-ink/65">
         {WEEKDAYS.map((d) => (
           <span key={d} className="py-1">
             {d[0]}
@@ -519,14 +506,22 @@ export function MiniCalendar({ scope, href }: { scope: CalendarScope | null; hre
           const key = localDateKey(c.date);
           const list = byDay.get(key) || [];
           return (
-            <Link key={key} href={href} className="flex flex-col items-center py-0.5" title={`${gregShort(c.date, true)}${list.length ? `: ${list.map((e) => e.title).join(", ")}` : ""}`}>
+            <Link
+              key={key}
+              href={href}
+              className="group flex flex-col items-center rounded-lg py-0.5"
+              aria-label={`${c.hijriDay} ${hijriMonthName(th.month)}, ${gregShort(c.date, true)}${list.length ? `: ${list.map((e) => e.title).join(", ")}` : ""}`}
+              title={`${gregShort(c.date, true)}${list.length ? `: ${list.map((e) => e.title).join(", ")}` : ""}`}
+            >
               <span
-                className={`relative flex h-7 w-7 items-center justify-center rounded-full text-xs ${
-                  key === todayKey ? "bg-green-700 font-semibold text-white" : "text-ink/80 hover:bg-cream"
+                className={`flex h-7 w-7 items-center justify-center rounded-full text-[13px] tabular-nums ${
+                  key === todayKey ? "bg-teal-700 font-semibold text-white" : "text-ink/85 group-hover:bg-cream"
                 }`}
               >
                 {c.hijriDay}
-                <span className={`absolute -right-0.5 -top-0.5 text-[7px] leading-none ${key === todayKey ? "text-green-700" : "text-ink/35"}`}>{c.date.getDate()}</span>
+              </span>
+              <span aria-hidden="true" className={`text-[10px] leading-3 tabular-nums ${key === todayKey ? "font-semibold text-teal-700" : "text-ink/60"}`}>
+                {c.date.getDate()}
               </span>
               <span className="flex h-1.5 gap-0.5">
                 {list.slice(0, 3).map((e) => (

@@ -167,7 +167,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
                 <label key={t.id} className="flex items-center gap-2 text-sm text-ink/80">
                   <input type="checkbox" checked={chosen.has(t.id)} onChange={() => toggleTeacher(t.id)} />
                   {t.name}
-                  {t.cover && <span className="text-xs text-ink/50">(TA / cover)</span>}
+                  {t.cover && <span className="text-xs text-ink/65">(TA / cover)</span>}
                 </label>
               ))}
               {teachers.length === 0 && <p className="text-sm text-ink/60">No active teachers found. Check Staff for teachers who are marked inactive.</p>}
@@ -371,7 +371,7 @@ export function AdminParentEvenings() {
               <label key={t.id} className="flex items-center gap-2 text-sm text-ink/80">
                 <input type="checkbox" checked={picked.has(t.id)} onChange={() => togglePicked(t.id)} />
                 {t.name}
-                {t.cover && <span className="text-xs text-ink/50">(TA / cover)</span>}
+                {t.cover && <span className="text-xs text-ink/65">(TA / cover)</span>}
               </label>
             ))}
             {teachers.filter((t) => !t.cover).length === 0 && <p className="text-sm text-ink/60 sm:col-span-2 md:col-span-3">No active teachers found. Teachers appear here once they hold the Teacher role and are active under Staff.</p>}

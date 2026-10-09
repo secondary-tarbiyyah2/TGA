@@ -32,7 +32,7 @@ export function WeeklyTarbiyahNoteWidget({ childId, limit = 3 }: { childId: stri
   return (
     <div className="mt-4 border-t border-gold-light/30 pt-4">
       <h3 className="text-sm font-medium text-ink">Weekly Tarbiyah Note</h3>
-      <p className="mt-1 text-xs text-ink/50">A personal note from the form tutor on character and akhlaq — separate from academic grades.</p>
+      <p className="mt-1 text-xs text-ink/65">A personal note from the form tutor on character and akhlaq — separate from academic grades.</p>
       <ul className="mt-2 space-y-2">
         {rows.map((r) => (
           <li key={r.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">

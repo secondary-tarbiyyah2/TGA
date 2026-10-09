@@ -70,7 +70,7 @@ function DayContent() {
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
             <h2 className="font-serif text-h3 font-semibold text-ink">Protected times</h2>
-            <p className="mt-0.5 text-sm text-ink/60">Prayer or Jumu'ah breaks. Lessons that overlap one are flagged on the timetable.</p>
+            <p className="mt-0.5 text-sm text-ink/60">Prayer or Jumu&apos;ah breaks. Lessons that overlap one are flagged on the timetable.</p>
             <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Academic year">
               {data.years.map((y) => <button key={y.id} type="button" aria-pressed={y.id === effYearId} onClick={() => setYearId(y.id)} className={chipCls(y.id === effYearId)}>{y.label}</button>)}
             </div>

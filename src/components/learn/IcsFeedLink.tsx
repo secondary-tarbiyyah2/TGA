@@ -217,7 +217,7 @@ export function IcsFeedLink() {
                     </button>
                   </span>
                 ) : (
-                  <button type="button" onClick={() => setConfirmStop(true)} className="text-xs text-ink/50 underline hover:text-red-700">
+                  <button type="button" onClick={() => setConfirmStop(true)} className="text-xs text-ink/65 underline hover:text-red-700">
                     Stop sharing
                   </button>
                 )}

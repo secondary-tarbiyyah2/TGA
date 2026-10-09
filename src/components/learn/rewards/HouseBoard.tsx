@@ -133,7 +133,7 @@ export function HouseBoard({
             ))}
           </select>
         )}
-        <span className="text-xs text-ink/50">{columns[0].total > 0 ? `${columns[0].total} without a house` : "Everyone has a house"}</span>
+        <span className="text-xs text-ink/65">{columns[0].total > 0 ? `${columns[0].total} without a house` : "Everyone has a house"}</span>
       </div>
 
       {selected.size > 0 && (
@@ -151,7 +151,7 @@ export function HouseBoard({
               <option value={NONE}>No house</option>
             </select>
           </label>
-          <button type="button" disabled={busy || target === null} onClick={moveSelected} className="rounded-lg bg-teal-700 px-3 py-1 text-xs font-semibold text-white hover:brightness-110 disabled:opacity-50">
+          <button type="button" disabled={busy || target === null} onClick={moveSelected} className="rounded-lg bg-gold-700 px-3 py-1 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             Move
           </button>
           <button type="button" onClick={() => setSelected(new Set())} className="text-xs text-ink/70 underline">
@@ -189,9 +189,9 @@ export function HouseBoard({
                 <input type="checkbox" checked={allTicked} disabled={col.kids.length === 0} onChange={() => toggleColumn(col.kids)} aria-label={`Select everyone shown in ${col.name}`} />
                 <button type="button" aria-expanded={!isCollapsed} onClick={() => setCollapsed((s) => flip(s, col.id))} className="flex min-w-0 flex-1 items-center gap-2 text-left">
                   <span className="truncate text-sm font-semibold text-ink">{col.name}</span>
-                  {col.archived && <span className="rounded bg-ink/5 px-1.5 py-px text-[10px] text-ink/50">archived</span>}
+                  {col.archived && <span className="rounded bg-ink/5 px-1.5 py-px text-[10px] text-ink/65">archived</span>}
                   <span className="ml-auto rounded-full bg-white px-2 py-0.5 text-xs font-semibold tabular-nums text-ink/70">{col.total}</span>
-                  <span aria-hidden="true" className="text-xs text-ink/50">
+                  <span aria-hidden="true" className="text-xs text-ink/65">
                     {isCollapsed ? "▸" : "▾"}
                   </span>
                   <span className="sr-only">{isCollapsed ? "Expand" : "Collapse"}</span>
@@ -217,11 +217,11 @@ export function HouseBoard({
                         >
                           <input type="checkbox" checked={on} onChange={() => toggle(c.id)} aria-label={`Select ${c.name}`} />
                           <span className="min-w-0 flex-1 truncate text-ink">{c.name}</span>
-                          {c.year_groups?.name && <span className="shrink-0 text-[11px] text-ink/45">{c.year_groups.name}</span>}
+                          {c.year_groups?.name && <span className="shrink-0 text-[11px] text-ink/65">{c.year_groups.name}</span>}
                         </li>
                       );
                     })}
-                    {col.kids.length === 0 && <li className="px-1 py-2 text-xs text-ink/45">{col.total === 0 ? "Drop children here." : "No matches."}</li>}
+                    {col.kids.length === 0 && <li className="px-1 py-2 text-xs text-ink/65">{col.total === 0 ? "Drop children here." : "No matches."}</li>}
                   </ul>
                   {col.kids.length > FIRST && (
                     <button type="button" onClick={() => setExpanded((s) => flip(s, col.id))} className="mb-2 ml-3 text-xs font-medium text-ink/70 underline">

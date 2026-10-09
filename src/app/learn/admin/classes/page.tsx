@@ -16,7 +16,7 @@ function AdminClassesContent() {
         title="Classes"
         subtitle="Every class in the school. Open one to see its week-by-week course page."
         actions={
-          <a href="/admin/academic" className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-medium text-white hover:bg-teal-900">
+          <a href="/admin/academic" className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white hover:bg-gold-900">
             + Add a class
           </a>
         }

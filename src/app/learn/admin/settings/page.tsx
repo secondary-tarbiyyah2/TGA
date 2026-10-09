@@ -51,7 +51,7 @@ function Field({ label, help, children }: { label: string; help?: string; childr
   return (
     <label className="block text-sm">
       <span className="block font-medium text-ink">{label}</span>
-      {help && <span className="block text-xs text-ink/50">{help}</span>}
+      {help && <span className="block text-xs text-ink/65">{help}</span>}
       <span className="mt-1 block">{children}</span>
     </label>
   );

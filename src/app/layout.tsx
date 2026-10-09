@@ -4,6 +4,7 @@ import "./globals.css";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
 import { getSiteSettings } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk", subsets: ["latin"], weight: ["500", "600", "700"] });
@@ -65,7 +66,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-ink">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <JsonLd data={jsonLd} />
         <a href="#main" className="skip-link">Skip to content</a>
         {/* The `#main` skip-link target is rendered by the nested layout
             below (the public (marketing) group's <main id="main"> around

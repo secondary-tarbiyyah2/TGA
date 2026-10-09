@@ -8,6 +8,7 @@ import { SampleWeeksPanel } from "@/components/learn/quiz/SampleWeeksPanel";
 import { AnalyticsPanel } from "@/components/learn/quiz/AnalyticsPanel";
 import { YourChildsWeekQuiz } from "@/components/eligibility/YourChildsWeekQuiz";
 import type { QuizConfig } from "@/lib/quiz/schema";
+import { PageHeader } from "@/components/learn/PageHeader";
 
 type Tab = "builder" | "sample-weeks" | "analytics";
 
@@ -33,11 +34,11 @@ function AdminQuizContent() {
 
   return (
     <div>
-      <h1 className="font-serif text-h2 font-semibold text-ink">Quiz &amp; sample weeks</h1>
-      <p className="mt-1 text-sm text-ink/60">
-        Edit &quot;Your Child&apos;s Week&quot; — questions, the no-code rules editor, result sections, per-year-group sample-week
-        publishing, and quiz analytics.
-      </p>
+      <PageHeader
+        crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Quiz and sample weeks" }]}
+        title="Quiz and sample weeks"
+        subtitle={"Edit \"Your Child's Week\": questions, the rules editor, result sections, sample weeks for each year group, and quiz analytics."}
+      />
 
       <div className="mt-6 flex gap-2 border-b border-gold-light/30">
         {([
@@ -49,7 +50,7 @@ function AdminQuizContent() {
             key={key}
             type="button"
             onClick={() => setTab(key)}
-            className={`px-3 py-2 text-sm font-medium ${tab === key ? "border-b-2 border-gold-500 text-ink" : "text-ink/50"}`}
+            className={`px-3 py-2 text-sm font-medium ${tab === key ? "border-b-2 border-gold-500 text-ink" : "text-ink/65"}`}
           >
             {label}
           </button>

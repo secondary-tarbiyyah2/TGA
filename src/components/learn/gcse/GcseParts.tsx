@@ -30,7 +30,7 @@ export function GcseStatusChip({ row }: { row: Pick<GcseRow, "target_grade" | "p
 /** A 1-9 grade in a small rounded chip. `kind` is read out for screen readers. */
 export function GradeChip({ grade, kind, muted }: { grade: number | null | undefined; kind?: string; muted?: boolean }) {
   return (
-    <span className={`inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-md px-1.5 text-xs font-semibold tabular-nums ${muted ? "bg-cream text-ink/50" : gradeChipClass(grade)}`}>
+    <span className={`inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-md px-1.5 text-xs font-semibold tabular-nums ${muted ? "bg-cream text-ink/65" : gradeChipClass(grade)}`}>
       {kind && <span className="sr-only">{kind} </span>}
       {grade ?? "–"}
     </span>

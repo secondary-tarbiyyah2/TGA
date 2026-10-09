@@ -66,7 +66,7 @@ export function ThreadViewer({ thread }: { thread: OversightThread }) {
           return (
             <div key={m.id}>
               {showDay && (
-                <p className="my-3 text-center text-xs font-medium text-ink/50">{dayLabel(m.created_at)}</p>
+                <p className="my-3 text-center text-xs font-medium text-ink/65">{dayLabel(m.created_at)}</p>
               )}
               <div className={`flex ${isA ? "justify-start" : "justify-end"}`}>
                 <div
@@ -79,7 +79,7 @@ export function ThreadViewer({ thread }: { thread: OversightThread }) {
                   </p>
                   {m.recalled_at ? (
                     <>
-                      <p className="italic text-ink/50">Recalled by sender</p>
+                      <p className="italic text-ink/65">Recalled by sender</p>
                       <p className="mt-1 whitespace-pre-wrap rounded bg-amber-50 px-2 py-1 text-ink">
                         <span className="block text-[11px] font-semibold uppercase text-amber-800">Original text</span>
                         {m.original_body}

@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel, useLearnSession, type LearnRole } from "@/lib/learn/session";
 import { dueState, trainingDue, type DueState, type Vetting } from "@/lib/learn/staffProfiles";
 import { StaffProfileForm } from "@/components/learn/staff/StaffProfileForm";
+import { Tabs } from "@/components/learn/Tabs";
 
 type StaffRow = {
   user_id: string;
@@ -148,7 +149,7 @@ function ComplianceForm({ person, record, onSaved }: { person: StaffRow; record:
           {msg.text}
         </p>
       )}
-      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
         {busy ? "Saving…" : "Save compliance dates"}
       </button>
     </div>
@@ -238,7 +239,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
         <div>
           <label className="block text-sm font-medium text-ink" htmlFor="sd-email">Email on file</label>
           <input id="sd-email" type="email" className={INPUT} value={form.email} onChange={(e) => set("email", e.target.value)} />
-          <p className="mt-1 text-xs text-ink/50">Changes the email held on their record. Their sign-in email only changes through an account reset.</p>
+          <p className="mt-1 text-xs text-ink/65">Changes the email held on their record. Their sign-in email only changes through an account reset.</p>
         </div>
         <div>
           <label className="block text-sm font-medium text-ink" htmlFor="sd-phone">Phone</label>
@@ -257,15 +258,15 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
             </label>
           ))}
         </div>
-        {!canEditRoles && <p className="mt-1 text-xs text-ink/50">Only the Headteacher can change roles.</p>}
-        {canEditRoles && <p className="mt-1 text-xs text-ink/50">Removing a role removes every class it was granted for.</p>}
+        {!canEditRoles && <p className="mt-1 text-xs text-ink/65">Only the Headteacher can change roles.</p>}
+        {canEditRoles && <p className="mt-1 text-xs text-ink/65">Removing a role removes every class it was granted for.</p>}
       </fieldset>
 
       <div className="flex items-center gap-3">
         <Toggle id="sd-active" checked={form.active} onChange={(v) => set("active", v)} label="Active" disabled={isSelf} />
         <label htmlFor="sd-active" className="text-sm text-ink">
           {form.active ? "Active" : "Inactive"}
-          <span className="block text-xs text-ink/50">Inactive staff are not offered in message lists or parent evenings. {isSelf ? "You can't make your own account inactive." : ""}</span>
+          <span className="block text-xs text-ink/65">Inactive staff are not offered in message lists or parent evenings. {isSelf ? "You can't make your own account inactive." : ""}</span>
         </label>
       </div>
 
@@ -274,7 +275,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
           {msg.text}
         </p>
       )}
-      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
         {busy ? "Saving…" : "Save details"}
       </button>
 
@@ -457,20 +458,19 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
                 ))}
               </ul>
             )}
-            <div role="tablist" aria-label="Staff sections" className="mt-4 flex gap-1 rounded-xl bg-cream/70 p-1">
-              {(["details", "profile", "compliance"] as const).map((t) => (
-                <button
-                  key={t}
-                  type="button"
-                  role="tab"
-                  aria-selected={tab === t}
-                  onClick={() => setTab(t)}
-                  className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold ${tab === t ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}
-                >
-                  {t === "details" ? "Edit details" : t === "profile" ? "Public profile" : "Compliance"}
-                </button>
-              ))}
-            </div>
+            <Tabs
+              variant="switch"
+              fill
+              items={[
+                { key: "details", label: "Edit details" },
+                { key: "profile", label: "Public profile" },
+                { key: "compliance", label: "Compliance" },
+              ]}
+              value={tab}
+              onChange={setTab}
+              label="Staff sections"
+              className="mt-4"
+            />
             <div className="mt-5">
               {tab === "details" ? (
                 <DetailsForm key={person.user_id} person={person} canEditRoles={isHead} canSetDsl={isHead} isSelf={person.user_id === myId} onSaved={load} />

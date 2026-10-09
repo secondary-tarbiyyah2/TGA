@@ -6,11 +6,11 @@ import { useLearnSession } from "@/lib/learn/session";
 
 export type HeroChip = { label: string; value: string | number; tone?: "pink" | "yellow" | "white" };
 
-const TONES: Record<NonNullable<HeroChip["tone"]>, string> = {
-  pink: "bg-[#F4426F]",
-  yellow: "bg-[#FFC107] text-ink",
-  white: "bg-white/90 text-teal-900",
-};
+// "pink" marks a number that needs attention; the others are neutral.
+// (Names kept so existing callers don't change.)
+function formatChipValue(v: string | number): string {
+  return typeof v === "number" && v > 999 ? "999+" : String(v);
+}
 
 /**
  * The big welcome banner at the top of every dashboard: greeting, date and a
@@ -38,8 +38,8 @@ export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chi
   const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
 
   return (
-    <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#2A8C84] to-[#1F6F6B] px-6 py-7 text-white shadow-[0_8px_24px_-12px_rgba(31,111,107,0.55)] sm:px-8">
-      <svg aria-hidden="true" className="pointer-events-none absolute -right-6 -top-10 h-[130%] w-[46%] text-white/[0.09]" viewBox="0 0 240 240" preserveAspectRatio="xMaxYMid slice">
+    <section className="relative overflow-hidden rounded-2xl bg-teal-700 px-6 py-7 text-white sm:px-8">
+      <svg aria-hidden="true" className="pointer-events-none absolute -right-6 -top-10 h-[130%] w-[46%] text-white/[0.07]" viewBox="0 0 240 240" preserveAspectRatio="xMaxYMid slice">
         <defs>
           <pattern id="hero-star" width="60" height="60" patternUnits="userSpaceOnUse">
             <path d="M30 4l5.5 13.2L48.8 11.2 42.8 24.5 56 30l-13.2 5.5 6 13.3-13.3-6L30 56l-5.5-13.2-13.3 6 6-13.3L4 30l13.2-5.5-6-13.3 13.3 6z" fill="currentColor" />
@@ -48,23 +48,24 @@ export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chi
         <rect width="240" height="240" fill="url(#hero-star)" />
       </svg>
       <div className="relative">
-        <p className="text-sm text-white/75">{today}</p>
+        <p className="text-sm text-white/80">{today}</p>
         <h1 className="mt-1 text-2xl font-semibold tracking-tight sm:text-[1.75rem]">
           {greeting}
           {firstName ? `, ${firstName}` : ""}
         </h1>
-        {subtitle && <p className="mt-1 text-sm text-white/80">{subtitle}</p>}
+        {subtitle && <p className="mt-1 text-sm text-white/85">{subtitle}</p>}
         {chips.length > 0 && (
-          <div className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
+          <dl className="mt-5 flex flex-wrap gap-3">
             {chips.map((c) => (
-              <div key={c.label} className="flex items-center gap-3">
-                <span aria-hidden="true" className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold text-white ${TONES[c.tone || "white"]}`}>
-                  {String(c.value).slice(0, 3)}
-                </span>
-                <span className="text-sm font-medium leading-tight text-white/90">{c.label}</span>
+              <div key={c.label} className="flex min-w-[9rem] flex-col-reverse rounded-xl bg-white/10 px-4 py-2.5 ring-1 ring-inset ring-white/15">
+                <dt className="text-xs font-medium text-white/85">{c.label}</dt>
+                <dd className="flex items-center gap-2 text-2xl font-semibold tabular-nums leading-tight">
+                  {formatChipValue(c.value)}
+                  {c.tone === "pink" && typeof c.value === "number" && c.value > 0 && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-gold-300" />}
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         )}
       </div>
     </section>

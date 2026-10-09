@@ -46,7 +46,7 @@ export function MarkRow({ submissionId, childName, maxPoints, onSaved }: { submi
     <div className="rounded-lg border border-gold-light/40 p-3">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <p className="text-sm font-medium text-ink">{childName}</p>
-        {submission?.submitted_at && <p className="text-xs text-ink/50">Handed in {new Date(submission.submitted_at).toLocaleString("en-GB")}</p>}
+        {submission?.submitted_at && <p className="text-xs text-ink/65">Handed in {new Date(submission.submitted_at).toLocaleString("en-GB")}</p>}
       </div>
       {submission?.response_text && <p className="mt-1 whitespace-pre-line rounded-md bg-cream p-2 text-sm text-ink/80">{submission.response_text}</p>}
       {submission?.link_url && (
@@ -141,7 +141,7 @@ export function HomeworkCard({
             {hw.classes?.name} · Due {formatDue(hw.due_at)}
             {hw.edited_at && <span title={`Edited ${formatEdited(hw.edited_at)}`}> · Edited {formatEdited(hw.edited_at)}</span>}
           </p>
-          <p className="mt-0.5 text-xs text-ink/50">
+          <p className="mt-0.5 text-xs text-ink/65">
             {describeAllowed(hw, { types: SUBMISSION_TYPE_LABEL, files: FILE_CATEGORY_LABEL })}
             {hw.max_points != null && ` · ${hw.max_points} marks`}
             {hw.late_policy === "block" && " · closes at the due time"}

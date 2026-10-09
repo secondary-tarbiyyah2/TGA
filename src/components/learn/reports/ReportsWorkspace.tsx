@@ -165,7 +165,6 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
       setRoster([]);
       return;
     }
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- data load for the chosen class/term, not a render-cycle sync
     loadRoster();
   }, [cls, loadRoster]);
 
@@ -556,7 +555,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                                 Print / Save as PDF
                               </button>
                             </div>
-                            {mode === "teach" && <p className="mt-2 text-xs text-ink/50">Once submitted, only the Headteacher or an admin can approve and release it to the family.</p>}
+                            {mode === "teach" && <p className="mt-2 text-xs text-ink/65">Once submitted, only the Headteacher or an admin can approve and release it to the family.</p>}
                           </div>
                         </div>
                       )}

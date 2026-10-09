@@ -105,7 +105,7 @@ export function DocumentsPanel({ applicationId, sharedIdFrom }: { applicationId:
               <li key={d.path} className="flex items-center justify-between gap-3 rounded-lg border border-gold-light/50 px-3 py-2">
                 <span className="min-w-0 text-sm text-ink">
                   {label}
-                  <span className="block text-xs text-ink/50">
+                  <span className="block text-xs text-ink/65">
                     {ext.toUpperCase()}{d.size ? ` · ${(d.size / 1048576).toFixed(1)} MB` : ""}
                     {d.created ? ` · ${new Date(d.created).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" })}` : ""}
                   </span>
@@ -124,7 +124,7 @@ export function DocumentsPanel({ applicationId, sharedIdFrom }: { applicationId:
             <p className="text-sm font-medium text-ink">{viewing.label}</p>
             <div className="flex gap-2 text-xs font-semibold">
               <a href={viewing.url} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-gold-500 px-3 py-1 text-ink-900 hover:brightness-105">Open in new tab</a>
-              <a href={viewing.downloadUrl} className="rounded-lg bg-teal-700 px-3 py-1 text-white hover:brightness-110">Download</a>
+              <a href={viewing.downloadUrl} className="rounded-lg bg-gold-700 px-3 py-1 text-white hover:bg-gold-900">Download</a>
               <button type="button" onClick={() => setViewing(null)} className="px-2 py-1 text-ink/70 underline">Close</button>
             </div>
           </div>

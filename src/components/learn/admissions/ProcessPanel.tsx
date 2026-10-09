@@ -12,6 +12,7 @@ import type { PlanId } from "@/components/learn/admissions/stageTypes";
 import type { MoveOptions, StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
 import { Group, Pill, fieldCls, primaryBtn } from "@/components/learn/admissions/ui";
+import { Tabs } from "@/components/learn/Tabs";
 
 const today = () => new Date().toISOString().slice(0, 10);
 const numOrNull = (v: string): number | null => (v.trim() === "" || Number.isNaN(Number(v)) ? null : Number(v));
@@ -65,20 +66,7 @@ export function ProcessPanel({
   return (
     <div className="space-y-4">
       {ctx.error && <p role="alert" className="text-sm text-red-700">{ctx.error}</p>}
-      <div role="tablist" aria-label="Process sections" className="flex flex-wrap gap-1.5">
-        {SECTIONS.map((s) => (
-          <button
-            key={s.id}
-            type="button"
-            role="tab"
-            aria-selected={section === s.id}
-            onClick={() => setSection(s.id)}
-            className={`rounded-full px-3 py-1 text-xs font-semibold ${section === s.id ? "bg-ink text-white" : "border border-gold-light/60 text-ink/70 hover:bg-cream"}`}
-          >
-            {s.label}
-          </button>
-        ))}
-      </div>
+      <Tabs variant="switch" items={SECTIONS.map((x) => ({ key: x.id, label: x.label }))} value={section} onChange={setSection} label="Process sections" />
       {section === "assessment" && <AssessmentPanel app={app} ctx={ctx} staff={staff} baseCtx={baseCtx} onPatch={onPatch} />}
       {section === "interview" && <InterviewPanel app={app} ctx={ctx} baseCtx={baseCtx} onPatch={onPatch} />}
       {section === "offer" && <OfferSection app={app} ctx={ctx} baseCtx={baseCtx} onPatch={onPatch} onMove={onMove} onCreateAccounts={onCreateAccounts} />}
@@ -219,7 +207,7 @@ function OfferSection({
               {fees.plans.map((p) => (
                 <li key={p.id}>
                   {p.label}: <strong>{gbp(Math.round(((fees.applicationFeeReceived ? 0 : fees.applicationFee) + fees.registrationFee + p.firstPayment) * 100) / 100)}</strong>
-                  <span className="text-ink/50"> = {fees.applicationFeeReceived ? "" : `${gbp(fees.applicationFee)} + `}{gbp(fees.registrationFee)} + {gbp(p.firstPayment)}</span>
+                  <span className="text-ink/65"> = {fees.applicationFeeReceived ? "" : `${gbp(fees.applicationFee)} + `}{gbp(fees.registrationFee)} + {gbp(p.firstPayment)}</span>
                 </li>
               ))}
             </ul>
@@ -286,7 +274,7 @@ function OfferSection({
           </label>
         </div>
         <label className="mt-3 block text-sm font-medium text-ink">
-          Decision note <span className="text-xs font-normal text-ink/50">(staff only)</span>
+          Decision note <span className="text-xs font-normal text-ink/65">(staff only)</span>
           <textarea value={d.decisionNote} onChange={(e) => set("decisionNote", e.target.value)} rows={3} maxLength={5000} className={fieldCls} />
         </label>
       </Group>

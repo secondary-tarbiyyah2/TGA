@@ -171,7 +171,7 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
 
       <div>
         <label className={LABEL} htmlFor="sp-bio">
-          About me <span className="font-normal text-ink/50">(shown to families and students)</span>
+          About me <span className="font-normal text-ink/65">(shown to families and students)</span>
         </label>
         <textarea id="sp-bio" className={INPUT} rows={4} maxLength={2000} value={form.bio} onChange={(e) => set("bio", e.target.value)} />
       </div>
@@ -186,13 +186,13 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label className={LABEL} htmlFor="sp-subjects">
-            Subjects taught <span className="font-normal text-ink/50">(comma separated)</span>
+            Subjects taught <span className="font-normal text-ink/65">(comma separated)</span>
           </label>
           <input id="sp-subjects" className={INPUT} value={form.subjects} placeholder="Qur'an, Arabic, Maths" onChange={(e) => set("subjects", e.target.value)} />
         </div>
         <div>
           <label className={LABEL} htmlFor="sp-lang">
-            Languages <span className="font-normal text-ink/50">(comma separated)</span>
+            Languages <span className="font-normal text-ink/65">(comma separated)</span>
           </label>
           <input id="sp-lang" className={INPUT} value={form.languages} placeholder="English, Arabic, Urdu" onChange={(e) => set("languages", e.target.value)} />
         </div>
@@ -212,7 +212,7 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
         </p>
       )}
 
-      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
         {busy ? "Saving…" : "Save profile"}
       </button>
     </div>

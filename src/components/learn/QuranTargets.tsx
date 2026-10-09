@@ -72,7 +72,7 @@ export function TargetList({ targets, entries, onDelete }: { targets: QuranTarge
                 </button>
               )}
             </p>
-            {t.note && <p className="mt-1 text-xs text-ink/50">{t.note}</p>}
+            {t.note && <p className="mt-1 text-xs text-ink/65">{t.note}</p>}
           </li>
         );
       })}

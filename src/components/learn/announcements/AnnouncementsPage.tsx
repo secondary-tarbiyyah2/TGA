@@ -105,7 +105,7 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
               type="button"
               disabled={!canCompose}
               onClick={() => setComposing(true)}
-              className="rounded-lg bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50"
+              className="rounded-lg bg-gold-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50"
             >
               + Post notice
             </button>

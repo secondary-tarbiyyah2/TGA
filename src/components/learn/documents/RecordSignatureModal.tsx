@@ -187,7 +187,7 @@ export function RecordSignatureModal({
             <div>
               <p className="mb-1 font-medium text-ink">{targets[0]?.name}: sign here with a finger or stylus</p>
               <SignatureCapture ref={pad} mode="staff" disabled={busy} onReadyChange={setPadReady} />
-              <p className="mt-1 text-xs text-ink/50">Recorded as signed in person, with the drawn signature kept on file.</p>
+              <p className="mt-1 text-xs text-ink/65">Recorded as signed in person, with the drawn signature kept on file.</p>
             </div>
           )}
           <label className="block">
@@ -203,7 +203,7 @@ export function RecordSignatureModal({
           ) : (
             <label className="block">
               <span className="font-medium text-ink">Scan of the signed copy (optional)</span>
-              <span className="block text-xs text-ink/50">PDF, JPG or PNG, up to 10MB. Only a Headteacher or Admin can open it.</span>
+              <span className="block text-xs text-ink/65">PDF, JPG or PNG, up to 10MB. Only a Headteacher or Admin can open it.</span>
               <input type="file" accept="application/pdf,image/jpeg,image/png" onChange={(e) => onFile(e.target.files?.[0] || null)} className="mt-1 block w-full text-sm" />
             </label>
           )}

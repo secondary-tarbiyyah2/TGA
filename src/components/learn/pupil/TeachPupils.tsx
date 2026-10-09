@@ -161,7 +161,7 @@ export function TeachPupils() {
                         : "Tick this off once you have read the medical and emergency information."}
                   </p>
                   {ackState(open) !== "current" && (
-                    <button type="button" disabled={busy} onClick={() => acknowledge(open)} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+                    <button type="button" disabled={busy} onClick={() => acknowledge(open)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                       {busy ? "Saving…" : "I've read the medical and emergency information"}
                     </button>
                   )}

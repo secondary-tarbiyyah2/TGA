@@ -110,12 +110,12 @@ function ReceiptContent() {
       </div>
       {pdfFailed && <p role="alert" className="mb-3 text-sm text-red-800 print:hidden">We couldn&apos;t prepare the signed PDF just now. Please try again in a moment.</p>}
       <article className={`${PRINT_AREA} mx-auto max-w-2xl rounded-2xl border border-gold-light bg-white p-8 print:border-0 print:p-0`}>
-        <p className="text-xs font-semibold uppercase tracking-wider text-ink/50">Tarbiyyah Global Academy</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-ink/65">Tarbiyyah Global Academy</p>
         <h1 className="mt-1 font-serif text-2xl font-semibold text-ink">Signed document record</h1>
         <p className="mt-2 text-sm text-ink/70">{handRecorded ? "This confirms that the person below signed the document by hand, and that the school recorded it on their behalf." : "This confirms that the person below read and signed the document at the time shown."}</p>
         {receipt.signature_image_path && (
           <figure className="mt-6 rounded-xl border border-gold-light bg-cream/40 p-4">
-            <figcaption className="text-xs font-semibold uppercase tracking-wider text-ink/50">Handwritten signature</figcaption>
+            <figcaption className="text-xs font-semibold uppercase tracking-wider text-ink/65">Handwritten signature</figcaption>
             {sigUrl ? (
               // eslint-disable-next-line @next/next/no-img-element -- private blob URL
               <img src={sigUrl} alt={`Handwritten signature of ${receipt.typed_full_name}`} className="mx-auto mt-2 max-h-32 w-auto" />
@@ -133,7 +133,7 @@ function ReceiptContent() {
             </div>
           ))}
         </dl>
-        <p className="mt-6 text-xs text-ink/50">The hash is computed by the school&apos;s system from the document title, version, signer, typed name and time of signing. Keep this record for your files.</p>
+        <p className="mt-6 text-xs text-ink/65">The hash is computed by the school&apos;s system from the document title, version, signer, typed name and time of signing. Keep this record for your files.</p>
       </article>
     </>
   );

@@ -42,7 +42,7 @@ function Timeline({ items }: { items: TimelineItem[] | null }) {
     <div className="space-y-4">
       {groups.map(({ b, list }) => (
         <div key={b}>
-          <p className={`mb-1.5 text-[11px] font-semibold uppercase tracking-wider ${b === "Overdue" ? "text-red-700" : "text-ink/45"}`}>{b}</p>
+          <p className={`mb-1.5 text-[11px] font-semibold uppercase tracking-wider ${b === "Overdue" ? "text-red-700" : "text-ink/65"}`}>{b}</p>
           <ul className="space-y-1">
             {list.map((i) => (
               <li key={i.key}>
@@ -93,7 +93,7 @@ function useTimeline(viewer: Viewer): TimelineItem[] | null {
       if (viewer.kind === "teacher" || viewer.kind === "staff") {
         if (viewer.kind === "teacher" && viewer.classIds.length === 0) return setItems([]);
         const since = new Date(Date.now() - 2 * 86_400_000).toISOString();
-        let q = supabase.from("homework").select("id, title, due_at, class_id, classes(name)").gte("due_at", since).lte("due_at", horizon);
+        let q = supabase.from("homework").select("id, title, due_at, class_id, classes(name)").is("archived_at", null).gte("due_at", since).lte("due_at", horizon);
         if (viewer.kind === "teacher") q = q.in("class_id", viewer.classIds);
         const { data } = await q.order("due_at").limit(40);
         out = ((data as unknown as { id: string; title: string; due_at: string; class_id: string; classes?: { name: string } | null }[]) || []).map((h) => ({
@@ -110,7 +110,7 @@ function useTimeline(viewer: Viewer): TimelineItem[] | null {
         if (kids.length === 0) return setItems([]);
         const { data } = await supabase
           .from("homework_status")
-          .select("homework_id, child_id, class_id, due_at, status, homework:homework_id(title, classes(name))")
+          .select("homework_id, child_id, class_id, due_at, status, homework:homework_id(title, archived_at, classes(name))")
           .in(
             "child_id",
             kids.map((k) => k.id),
@@ -119,8 +119,9 @@ function useTimeline(viewer: Viewer): TimelineItem[] | null {
           .lte("due_at", horizon)
           .order("due_at");
         const rows =
-          (data as unknown as { homework_id: string; child_id: string; class_id: string; due_at: string; status: string; homework?: { title: string; classes?: { name: string } | null } | null }[]) || [];
-        out = rows.map((r) => {
+          (data as unknown as { homework_id: string; child_id: string; class_id: string; due_at: string; status: string; homework?: { title: string; archived_at?: string | null; classes?: { name: string } | null } | null }[]) || [];
+        // Archived (deleted) homework is never shown to pupils or parents.
+        out = rows.filter((r) => r.homework && !r.homework.archived_at).map((r) => {
           const kid = kids.find((k) => k.id === r.child_id);
           const base = viewer.kind === "student" ? `/student/class?id=${r.class_id}` : `/family/class?id=${r.class_id}&child=${r.child_id}`;
           return {
@@ -220,15 +221,17 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
   return (
     <div className={`grid gap-6 ${hidden ? "" : "xl:grid-cols-[minmax(0,1fr)_340px]"}`}>
       <div className="min-w-0">
-        <div className="mb-3 flex justify-end">
-          <button type="button" onClick={toggle} className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink/60 hover:bg-white hover:text-ink">
-            {hidden ? "Show side panel" : "Hide side panel"}
-          </button>
-        </div>
+        {hidden && (
+          <div className="mb-3 hidden justify-end xl:flex">
+            <button type="button" onClick={toggle} className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink/65 hover:bg-white hover:text-ink">
+              Show side panel
+            </button>
+          </div>
+        )}
         {children}
       </div>
       {!hidden && (
-        <aside aria-label="Side panel" className="space-y-4 xl:pt-11">
+        <aside aria-label="Side panel" className="space-y-4">
           <Block title="Calendar">
             <MiniCalendar scope={calendarScope} href={`${area}/calendar`} />
           </Block>
@@ -247,6 +250,11 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
           <Block title="Recently accessed">
             <Recent prefix={area} />
           </Block>
+          <div className="hidden justify-end xl:flex">
+            <button type="button" onClick={toggle} className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink/65 hover:bg-white hover:text-ink">
+              Hide side panel
+            </button>
+          </div>
         </aside>
       )}
     </div>

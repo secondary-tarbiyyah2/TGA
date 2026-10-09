@@ -496,7 +496,7 @@ export function ChildDetailsForm() {
                   <ul className="space-y-3">
                     {drafts.map((d, i) => (
                       <li key={d.key} className="rounded-xl border border-gold-light/70 p-3">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-ink/50">Contact {i + 1}</p>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Contact {i + 1}</p>
                         <div className="mt-2 grid gap-3 sm:grid-cols-2">
                           <Text label="Full name" required value={d.name} onChange={(v) => patchDraft(d.key, { name: v })} />
                           <Text label="Relationship to child" required value={d.relationship} onChange={(v) => patchDraft(d.key, { relationship: v })} />
@@ -514,7 +514,7 @@ export function ChildDetailsForm() {
                         </div>
                         {d.error && <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{d.error}</p>}
                         <div className="mt-3 flex flex-wrap gap-2">
-                          <button type="button" disabled={busy || (!d.dirty && !!d.id)} onClick={() => saveDraft(d, i)} className="rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+                          <button type="button" disabled={busy || (!d.dirty && !!d.id)} onClick={() => saveDraft(d, i)} className="rounded-lg bg-gold-700 px-3 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                             {d.id ? "Save changes" : "Save contact"}
                           </button>
                           <button type="button" disabled={busy} onClick={() => removeDraft(d)} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/70 hover:bg-cream disabled:opacity-50">
@@ -645,7 +645,7 @@ function Choice({ legend, help, value, onChange, name, error }: { legend: string
 
 function SaveRow({ busy, onSave, label }: { busy: boolean; onSave: () => void; label: string }) {
   return (
-    <button type="button" disabled={busy} onClick={onSave} className="w-full rounded-lg bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50 sm:w-auto">
+    <button type="button" disabled={busy} onClick={onSave} className="w-full rounded-lg bg-gold-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50 sm:w-auto">
       {busy ? "Saving…" : label}
     </button>
   );

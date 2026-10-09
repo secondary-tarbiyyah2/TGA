@@ -16,6 +16,7 @@ import {
   type EmergencyContact,
   type PupilDetails,
 } from "./data";
+import { Tabs } from "@/components/learn/Tabs";
 
 export type RecordChild = { id: string; name: string; dob: string | null; yearGroup: string | null; classes: string[] };
 type Tab = "basics" | "health" | "contacts" | "consents" | "acks";
@@ -107,20 +108,7 @@ export function PupilRecord({ child, showAcks = false, onLoaded }: { child: Reco
         {!details && <p className="mt-2 text-sm text-amber-800">The family hasn&apos;t started this record yet.</p>}
       </div>
 
-      <div className="flex flex-wrap gap-2 print:hidden" role="tablist" aria-label="Sections">
-        {tabs.map((t) => (
-          <button
-            key={t.key}
-            type="button"
-            role="tab"
-            aria-selected={tab === t.key}
-            onClick={() => setTab(t.key)}
-            className={`rounded-full border px-3 py-1.5 text-sm font-medium ${tab === t.key ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
+      <Tabs items={tabs} value={tab} onChange={setTab} label="Pupil record sections" className="print:hidden" />
 
       <Section title="Basics" className={vis("basics")}>
         <Row label="Gender" value={details?.gender === "male" ? "Male" : details?.gender === "female" ? "Female" : ""} />
@@ -209,8 +197,8 @@ function Section({ title, className, children }: { title: string; className: str
 function Row({ label, value, alert }: { label: string; value: string | null | undefined; alert?: boolean }) {
   return (
     <div className="grid gap-0.5 border-t border-gold-light/40 py-2 first:border-t-0 sm:grid-cols-[11rem_1fr]">
-      <p className="text-xs font-medium uppercase tracking-wide text-ink/50">{label}</p>
-      <p className={`whitespace-pre-wrap text-sm ${alert ? "font-semibold text-red-800" : "text-ink"}`}>{value && value.trim() ? value : <span className="font-normal text-ink/40">Not given</span>}</p>
+      <p className="text-xs font-medium uppercase tracking-wide text-ink/65">{label}</p>
+      <p className={`whitespace-pre-wrap text-sm ${alert ? "font-semibold text-red-800" : "text-ink"}`}>{value && value.trim() ? value : <span className="font-normal text-ink/65">Not given</span>}</p>
     </div>
   );
 }

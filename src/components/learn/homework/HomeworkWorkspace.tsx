@@ -7,6 +7,7 @@ import { HomeworkEditor } from "@/components/learn/homework/HomeworkEditor";
 import { LateMissingView } from "@/components/learn/homework/LateMissingView";
 import { Switch } from "@/components/learn/homework/Switch";
 import type { Homework } from "@/lib/learn/homework";
+import { Tabs } from "@/components/learn/Tabs";
 
 type ClassOpt = { id: string; name: string };
 
@@ -63,9 +64,6 @@ export function HomeworkWorkspace({
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const tabCls = (active: boolean) =>
-    `rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${active ? "bg-ink text-white" : "text-ink/65 hover:text-ink"}`;
-
   return (
     <>
       <PageHeader
@@ -80,7 +78,7 @@ export function HomeworkWorkspace({
                 setNote(null);
                 setComposing(true);
               }}
-              className="rounded-xl bg-teal-700 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-teal-900"
+              className="rounded-xl bg-gold-700 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gold-900"
             >
               + Set homework
             </button>
@@ -89,14 +87,16 @@ export function HomeworkWorkspace({
       />
 
       <div className="mb-5 flex flex-wrap items-center gap-3">
-        <div role="tablist" aria-label="Homework views" className="inline-flex rounded-full bg-white p-1 shadow-[0_1px_2px_rgba(30,60,110,0.08)]">
-          <button type="button" role="tab" aria-selected={tab === "set"} onClick={() => setTab("set")} className={tabCls(tab === "set")}>
-            Set &amp; mark
-          </button>
-          <button type="button" role="tab" aria-selected={tab === "late"} onClick={() => setTab("late")} className={tabCls(tab === "late")}>
-            Late &amp; missing
-          </button>
-        </div>
+        <Tabs
+          variant="switch"
+          items={[
+            { key: "set", label: "Set and mark" },
+            { key: "late", label: "Late and missing" },
+          ]}
+          value={tab}
+          onChange={setTab}
+          label="Homework views"
+        />
         {tab === "set" && (
           <>
             <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="rounded-xl border border-gold-light bg-white px-3 py-2 text-sm">
@@ -160,7 +160,7 @@ export function HomeworkWorkspace({
               <p className="text-base font-semibold text-ink">No homework yet{classId ? " for this class" : ""}</p>
               <p className="mx-auto mt-1 max-w-sm text-sm text-ink/60">Set a piece of homework and pupils and families will see it straight away.</p>
               {!formOpen && (
-                <button type="button" onClick={() => setComposing(true)} className="mt-4 rounded-xl bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900">
+                <button type="button" onClick={() => setComposing(true)} className="mt-4 rounded-xl bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
                   + Set homework
                 </button>
               )}
@@ -184,7 +184,7 @@ function Group({ title, hint, items, onEdit, onChanged }: { title: string; hint:
       <div className="mb-3 flex items-baseline gap-2">
         <h2 className="text-base font-semibold text-ink">{title}</h2>
         <span className="rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-ink/60">{items.length}</span>
-        <span className="text-sm text-ink/50">{hint}</span>
+        <span className="text-sm text-ink/65">{hint}</span>
       </div>
       <div className="space-y-3">
         {items.map((hw) => (

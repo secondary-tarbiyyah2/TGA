@@ -6,6 +6,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { PageHeader } from "@/components/learn/PageHeader";
 
 type Child = { id: string; name: string };
 
@@ -30,12 +31,10 @@ function FamilyHomeworkContent() {
   }, [supabase]);
 
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <div className="flex items-center justify-between">
-        <h1 className="font-serif text-h2 font-semibold text-ink">Homework</h1>
-      </div>
+    <div>
+      <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "To do", href: "/family/todo" }, { label: "Homework" }]} title="Homework" subtitle="See what's been set, hand in work and read feedback." />
       {children && children.length > 1 && (
-        <select value={selected} onChange={(e) => setSelected(e.target.value)} className="mt-4 rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+        <select value={selected} onChange={(e) => setSelected(e.target.value)} aria-label="Child" className="rounded-lg border border-gold-light px-3 py-2 text-sm">
           {children.map((c) => (
             <option key={c.id} value={c.id}>
               {c.name}

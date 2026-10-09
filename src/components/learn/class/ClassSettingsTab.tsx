@@ -179,7 +179,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
           <input type="url" value={s.meetingLink} onChange={(e) => set({ meetingLink: e.target.value })} placeholder="https://… (Teams, Meet or Zoom)" className={`${input} mt-1`} />
           <span className="mt-1 block text-xs font-normal text-ink/55">This is where &ldquo;Join lesson&rdquo; takes pupils and families.</span>
         </label>
-        <button type="button" onClick={saveDetails} className="rounded-lg bg-teal-700 px-5 py-2 text-sm font-medium text-white hover:bg-teal-900">
+        <button type="button" onClick={saveDetails} className="rounded-lg bg-gold-700 px-5 py-2 text-sm font-medium text-white hover:bg-gold-900">
           Save details
         </button>
       </Group>
@@ -246,7 +246,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
                   />
                   %
                 </label>
-                <button type="button" onClick={() => removeCat(c)} className="text-xs text-ink/50 hover:text-red-700 hover:underline">
+                <button type="button" onClick={() => removeCat(c)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
                   Remove
                 </button>
               </li>

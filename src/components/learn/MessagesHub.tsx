@@ -234,9 +234,9 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
                       <span className="min-w-0 flex-1">
                         <span className="flex items-baseline justify-between gap-2">
                           <span className={`truncate text-sm text-ink ${unreadN ? "font-bold" : "font-semibold"}`}>{name}</span>
-                          {last && <span className="shrink-0 text-xs text-ink/45">{ago(last.created_at)}</span>}
+                          {last && <span className="shrink-0 text-xs text-ink/65">{ago(last.created_at)}</span>}
                         </span>
-                        <span className="block truncate text-xs text-ink/50">{context}</span>
+                        <span className="block truncate text-xs text-ink/65">{context}</span>
                         <span className="flex items-center gap-2">
                           <span className={`block min-w-0 flex-1 truncate text-sm ${unreadN ? "font-semibold text-ink" : "text-ink/65"}`}>{last ? `${last.sender_id === me ? "You: " : ""}${last.body}` : "No messages yet"}</span>
                           {unreadN > 0 && (
@@ -263,7 +263,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials(activeOther?.full_name || "?")}</span>
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold text-ink">{activeOther?.full_name || "Conversation"}</p>
-                    <p className="truncate text-xs text-ink/50">
+                    <p className="truncate text-xs text-ink/65">
                       {activeOther ? roleText(activeOther.roles) : ""}
                       {activeOther?.detail ? ` · ${activeOther.detail}` : ""}
                     </p>
@@ -309,13 +309,13 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
                 (g) =>
                   g.list.length > 0 && (
                     <div key={g.label} className="mb-2">
-                      <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-wider text-ink/45">{g.label}</p>
+                      <p className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-wider text-ink/65">{g.label}</p>
                       {g.list.map((p) => (
                         <button key={p.user_id} type="button" onClick={() => start(p)} className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left hover:bg-cream">
                           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials(p.full_name)}</span>
                           <span className="min-w-0">
                             <span className="block truncate text-sm font-medium text-ink">{p.full_name}</span>
-                            <span className="block truncate text-xs text-ink/50">
+                            <span className="block truncate text-xs text-ink/65">
                               {roleText(p.roles)}
                               {p.detail ? ` · ${p.detail}` : ""}
                             </span>

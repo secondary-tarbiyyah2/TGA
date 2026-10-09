@@ -76,7 +76,7 @@ export function AnalyticsPanel() {
         </div>
       )}
 
-      <p className="text-xs text-ink/40">
+      <p className="text-xs text-ink/65">
         Session data is fully anonymous until a family submits their email with consent (a quiz_leads row) — figures
         here can never be traced back to an identity before that point.
       </p>
@@ -87,9 +87,9 @@ export function AnalyticsPanel() {
 function Stat({ label, value, note }: { label: string; value: number; note?: string }) {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-4">
-      <p className="text-xs font-medium text-ink/50">{label}</p>
+      <p className="text-xs font-medium text-ink/65">{label}</p>
       <p className="mt-1 font-serif text-2xl font-semibold text-ink">{value}</p>
-      {note && <p className="mt-0.5 text-xs text-ink/50">{note}</p>}
+      {note && <p className="mt-0.5 text-xs text-ink/65">{note}</p>}
     </div>
   );
 }

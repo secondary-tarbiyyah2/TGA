@@ -9,6 +9,7 @@ import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { localDateKey } from "@/lib/learn/calendar";
 import { classBannerStyle } from "@/lib/learn/classes";
+import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 
 type Status = "present" | "late" | "absent" | "excused";
 const STATUSES: { value: Status; label: string; dot: string }[] = [
@@ -92,7 +93,7 @@ function StatTile({ label, value, sub, dot }: { label: string; value: string | n
         {label}
       </p>
       <p className="mt-1 text-2xl font-semibold tabular-nums tracking-tight text-ink">{value}</p>
-      {sub && <p className="mt-0.5 text-xs text-ink/50">{sub}</p>}
+      {sub && <p className="mt-0.5 text-xs text-ink/65">{sub}</p>}
     </div>
   );
 }
@@ -102,7 +103,7 @@ function Section({ title, hint, children }: { title: string; hint?: string; chil
     <section className="rounded-2xl border border-gold-light bg-white">
       <div className="border-b border-gold-light/60 px-4 py-3">
         <h2 className="text-base font-semibold text-ink">{title}</h2>
-        {hint && <p className="text-xs text-ink/50">{hint}</p>}
+        {hint && <p className="text-xs text-ink/65">{hint}</p>}
       </div>
       {children}
     </section>
@@ -263,7 +264,7 @@ function ReportsContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Dashboard", href: "/learn/admin/dashboard" }, { label: "Attendance" }]}
+        crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Attendance" }]}
         title="Attendance"
         subtitle="Whole-school register, filtered by lesson date."
         actions={
@@ -274,7 +275,7 @@ function ReportsContent() {
           ) : undefined
         }
       />
-      {!canExport && <p className="-mt-3 mb-4 text-xs text-ink/50">Exporting requires the &quot;Can export data&quot; permission. Ask a Headteacher to grant it.</p>}
+      {!canExport && <p className="-mt-3 mb-4 text-xs text-ink/65">Exporting requires the &quot;Can export data&quot; permission. Ask a Headteacher to grant it.</p>}
 
       <div className="space-y-5">
         <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4">
@@ -290,7 +291,7 @@ function ReportsContent() {
                 {p.label}
               </button>
             ))}
-            <span className="ml-auto text-xs text-ink/50">
+            <span className="ml-auto text-xs text-ink/65">
               {from} to {to}
             </span>
           </div>
@@ -462,7 +463,7 @@ function ReportsContent() {
                         </tbody>
                       </table>
                     </div>
-                    <p className="px-4 py-2 text-xs text-ink/50">P present, L late, A absent, E excused. Rate = (present + late) / (present + late + absent); excused is not counted against attendance.</p>
+                    <p className="px-4 py-2 text-xs text-ink/65">P present, L late, A absent, E excused. Rate = (present + late) / (present + late + absent); excused is not counted against attendance.</p>
                   </Section>
                 </div>
 
@@ -497,7 +498,7 @@ function ReportsContent() {
                       </tbody>
                     </table>
                   </div>
-                  {filtered.length > 1000 && <p className="px-4 py-2 text-xs text-ink/50">Showing the first 1,000 rows. Export CSV includes all {filtered.length.toLocaleString()}.</p>}
+                  {filtered.length > 1000 && <p className="px-4 py-2 text-xs text-ink/65">Showing the first 1,000 rows. Export CSV includes all {filtered.length.toLocaleString()}.</p>}
                 </Section>
               </>
             )}
@@ -593,7 +594,7 @@ function TakeRegister() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Dashboard", href: "/learn/admin/dashboard" }, { label: "Attendance" }]} title="Take register" subtitle="Take or correct the register for any lesson in the school." />
+      <PageHeader crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Take register" subtitle="Take or correct the register for any lesson in the school." />
       <div className="mb-5 flex flex-wrap items-center gap-2 rounded-2xl border border-gold-light bg-white p-3">
         <button type="button" onClick={() => go(shiftDate(date, -1))} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream" aria-label="Previous day">
           ‹ Prev
@@ -626,25 +627,12 @@ function AttendanceContent() {
   const [tab, setTab] = useState<"register" | "reports">("register");
   const tabs: { key: "register" | "reports"; label: string }[] = [
     { key: "register", label: "Take register" },
-    { key: "reports", label: "Reports & filters" },
+    { key: "reports", label: "Reports and filters" },
   ];
   return (
     <>
-      <div role="tablist" aria-label="Attendance sections" className="mb-5 flex gap-1 overflow-x-auto border-b border-gold-light">
-        {tabs.map((t) => (
-          <button
-            key={t.key}
-            type="button"
-            role="tab"
-            aria-selected={tab === t.key}
-            onClick={() => setTab(t.key)}
-            className={`shrink-0 border-b-[3px] px-4 py-2.5 text-sm font-medium transition-colors ${tab === t.key ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"}`}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
-      {tab === "register" ? <TakeRegister /> : <ReportsContent />}
+      <Tabs items={tabs} value={tab} onChange={setTab} label="Attendance sections" idBase="attendance" className="mb-5" />
+      <div {...tabPanelProps("attendance", tab)}>{tab === "register" ? <TakeRegister /> : <ReportsContent />}</div>
     </>
   );
 }

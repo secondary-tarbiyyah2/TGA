@@ -148,7 +148,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
     <section className="rounded-2xl border border-gold-light bg-white">
       <div className="border-b border-gold-light/60 px-4 py-3">
         <h2 className="text-base font-semibold text-ink">Absences to follow up</h2>
-        <p className="text-xs text-ink/50">No reason recorded and no note from the family. First contact is due within one school day.</p>
+        <p className="text-xs text-ink/65">No reason recorded and no note from the family. First contact is due within one school day.</p>
       </div>
       {error && <p className="m-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">{error}</p>}
       <div className="px-4 py-4">
@@ -170,7 +170,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div className="min-w-0">
                       <p className="text-sm font-medium text-ink">
-                        {r.abs.childName} <span className="font-normal text-ink/50">· {r.abs.className}</span>
+                        {r.abs.childName} <span className="font-normal text-ink/65">· {r.abs.className}</span>
                       </p>
                       <p className="mt-0.5 text-sm text-ink/70">
                         Absent {formatDay(r.abs.date)} · {calendarAge(r.abs.date, today)} day{calendarAge(r.abs.date, today) === 1 ? "" : "s"} ago
@@ -193,7 +193,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
                     </ul>
                   )}
                   <div className="mt-3 flex flex-wrap gap-2">
-                    <button type="button" disabled={busyKey === r.key} onClick={() => setContactRow(r)} className="rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+                    <button type="button" disabled={busyKey === r.key} onClick={() => setContactRow(r)} className="rounded-lg bg-gold-700 px-3 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                       Log contact
                     </button>
                     <button type="button" disabled={busyKey === r.key} onClick={() => setExplainRow(r)} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-semibold text-ink/80 hover:bg-cream disabled:opacity-50">
@@ -295,7 +295,7 @@ function ContactModal({ row, ensure, onClose, onSaved }: { row: Row; ensure: (r:
           <input type="date" value={next} onChange={(e) => setNext(e.target.value)} className={modalFieldCls} />
         </label>
         {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
-        <button type="submit" disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+        <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
           {busy ? "Saving…" : "Save contact"}
         </button>
       </form>

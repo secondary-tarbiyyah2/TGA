@@ -86,7 +86,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
     <div className="mt-4 rounded-xl border border-red-200 bg-red-50/50 p-4">
       <p className="text-sm font-semibold text-ink">{concern.subject_description}</p>
       <p className="mt-1 text-sm text-ink/70">{concern.summary}</p>
-      <p className="mt-1 text-xs text-ink/50">
+      <p className="mt-1 text-xs text-ink/65">
         {concern.safeguarding_categories?.label || "Uncategorised"} · severity: {concern.severity} · reported {new Date(concern.created_at).toLocaleString("en-GB")}
       </p>
 
@@ -119,14 +119,14 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
       <div className="mt-4 border-t border-red-200 pt-3">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Chronology (append-only)</p>
         <ul className="mt-2 space-y-2">
-          {chronology === null && <p className="text-sm text-ink/50">Loading…</p>}
+          {chronology === null && <p className="text-sm text-ink/65">Loading…</p>}
           {(chronology || []).map((c) => (
             <li key={c.id} className="rounded-lg bg-white p-2 text-sm">
               <p>{c.entry}</p>
-              <p className="mt-0.5 text-xs text-ink/50">{new Date(c.entered_at).toLocaleString("en-GB")}</p>
+              <p className="mt-0.5 text-xs text-ink/65">{new Date(c.entered_at).toLocaleString("en-GB")}</p>
             </li>
           ))}
-          {chronology?.length === 0 && <p className="text-sm text-ink/50">No chronology entries yet.</p>}
+          {chronology?.length === 0 && <p className="text-sm text-ink/65">No chronology entries yet.</p>}
         </ul>
         <div className="mt-2 flex gap-2">
           <textarea value={entry} onChange={(e) => setEntry(e.target.value)} rows={2} placeholder="Add a dated entry…" className="flex-1 rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
@@ -139,13 +139,13 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
       <div className="mt-4 border-t border-red-200 pt-3">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Secure attachments</p>
         <ul className="mt-2 space-y-1">
-          {attachments === null && <p className="text-sm text-ink/50">Loading…</p>}
+          {attachments === null && <p className="text-sm text-ink/65">Loading…</p>}
           {(attachments || []).map((a) => (
             <li key={a.id} className="text-sm text-ink/70">
               {a.filename} — {new Date(a.uploaded_at).toLocaleDateString("en-GB")}
             </li>
           ))}
-          {attachments?.length === 0 && <p className="text-sm text-ink/50">No attachments.</p>}
+          {attachments?.length === 0 && <p className="text-sm text-ink/65">No attachments.</p>}
         </ul>
         <div className="mt-2 flex items-center gap-2">
           <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} className="text-sm" />
@@ -180,7 +180,7 @@ export function SafeguardingLog() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Safeguarding log</h2>
-      <p className="mt-1 text-xs text-ink/50">
+      <p className="mt-1 text-xs text-ink/65">
         Visible only to you as Safeguarding Lead / Headteacher, with a freshly re-verified authenticator code. Even Admin cannot see
         this section.
       </p>
