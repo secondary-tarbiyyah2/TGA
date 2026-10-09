@@ -47,7 +47,7 @@ function NoteRow({ note, onDone }: { note: AbsenceNote; onDone: () => void }) {
         <input value={text} onChange={(e) => setText(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm text-ink" />
       </label>
       <div className="mt-2 flex flex-wrap gap-2">
-        <button type="button" disabled={busy || note.status === "authorised"} onClick={() => decide("authorised")} className="rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+        <button type="button" disabled={busy || note.status === "authorised"} onClick={() => decide("authorised")} className="rounded-lg bg-gold-700 px-3 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
           Authorise
         </button>
         <button type="button" disabled={busy || note.status === "unauthorised"} onClick={() => decide("unauthorised")} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-semibold text-ink/80 hover:bg-cream disabled:opacity-50">

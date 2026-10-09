@@ -21,7 +21,7 @@ function Item({ d, canAct, busy, onSet, showDate }: { d: Detention; canAct: bool
       </div>
       {canAct && d.status === "scheduled" && (
         <div className="mt-2 flex gap-2">
-          <button type="button" disabled={busy} onClick={() => onSet(d.id, "served")} className="rounded-md bg-green-700 px-2.5 py-1 text-xs font-semibold text-white hover:bg-green-800 disabled:opacity-50">
+          <button type="button" disabled={busy} onClick={() => onSet(d.id, "served")} className="rounded-md bg-gold-700 px-2.5 py-1 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             Mark served
           </button>
           <button type="button" disabled={busy} onClick={() => onSet(d.id, "missed")} className="rounded-md border border-red-300 px-2.5 py-1 text-xs font-semibold text-red-700 hover:bg-red-50 disabled:opacity-50">
@@ -127,7 +127,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
             <p className="text-sm text-ink/70">Register for {fmtDate(today)}, including anything overdue.</p>
             {todays.length + overdue.length > 1 && (
-              <button type="button" disabled={busy} onClick={() => markAll([...overdue, ...todays], "served")} className="rounded-lg bg-green-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-green-800 disabled:opacity-50">
+              <button type="button" disabled={busy} onClick={() => markAll([...overdue, ...todays], "served")} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                 Mark all served
               </button>
             )}

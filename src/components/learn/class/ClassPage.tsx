@@ -245,7 +245,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           title="Grades"
           action={
             viewer.kind === "teacher" ? (
-              <Link href="/teach/assessment" className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900">
+              <Link href="/teach/assessment" className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900">
                 + Record a grade
               </Link>
             ) : undefined

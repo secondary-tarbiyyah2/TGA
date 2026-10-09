@@ -120,7 +120,7 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
             <button type="button" onClick={onClose} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
               Cancel
             </button>
-            <button type="button" onClick={submit} disabled={busy || picked.size === 0} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-60">
+            <button type="button" onClick={submit} disabled={busy || picked.size === 0} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
               {busy ? "Adding…" : `Add ${picked.size || ""}`.trim()}
             </button>
           </div>
@@ -199,7 +199,7 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
       <div>
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
           <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Students ({people.length})</h3>
-          <button type="button" onClick={() => setAdding(true)} className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900">
+          <button type="button" onClick={() => setAdding(true)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900">
             + Add participants
           </button>
         </div>

@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel, useLearnSession, type LearnRole } from "@/lib/learn/session";
 import { dueState, trainingDue, type DueState, type Vetting } from "@/lib/learn/staffProfiles";
 import { StaffProfileForm } from "@/components/learn/staff/StaffProfileForm";
+import { Tabs } from "@/components/learn/Tabs";
 
 type StaffRow = {
   user_id: string;
@@ -148,7 +149,7 @@ function ComplianceForm({ person, record, onSaved }: { person: StaffRow; record:
           {msg.text}
         </p>
       )}
-      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
         {busy ? "Saving…" : "Save compliance dates"}
       </button>
     </div>
@@ -274,7 +275,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
           {msg.text}
         </p>
       )}
-      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
         {busy ? "Saving…" : "Save details"}
       </button>
 
@@ -457,20 +458,19 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
                 ))}
               </ul>
             )}
-            <div role="tablist" aria-label="Staff sections" className="mt-4 flex gap-1 rounded-xl bg-cream/70 p-1">
-              {(["details", "profile", "compliance"] as const).map((t) => (
-                <button
-                  key={t}
-                  type="button"
-                  role="tab"
-                  aria-selected={tab === t}
-                  onClick={() => setTab(t)}
-                  className={`flex-1 rounded-lg px-3 py-2 text-sm font-semibold ${tab === t ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}
-                >
-                  {t === "details" ? "Edit details" : t === "profile" ? "Public profile" : "Compliance"}
-                </button>
-              ))}
-            </div>
+            <Tabs
+              variant="switch"
+              fill
+              items={[
+                { key: "details", label: "Edit details" },
+                { key: "profile", label: "Public profile" },
+                { key: "compliance", label: "Compliance" },
+              ]}
+              value={tab}
+              onChange={setTab}
+              label="Staff sections"
+              className="mt-4"
+            />
             <div className="mt-5">
               {tab === "details" ? (
                 <DetailsForm key={person.user_id} person={person} canEditRoles={isHead} canSetDsl={isHead} isSelf={person.user_id === myId} onSaved={load} />

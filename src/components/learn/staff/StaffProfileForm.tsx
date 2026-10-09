@@ -212,7 +212,7 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
         </p>
       )}
 
-      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
         {busy ? "Saving…" : "Save profile"}
       </button>
     </div>

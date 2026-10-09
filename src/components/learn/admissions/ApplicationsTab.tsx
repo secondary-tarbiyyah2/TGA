@@ -430,7 +430,7 @@ export function ApplicationsTab() {
             <button type="button" onClick={copyLink} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
               {copied ? "Copied" : "Copy link"}
             </button>
-            <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:brightness-110">
+            <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900">
               Preview
             </a>
           </div>

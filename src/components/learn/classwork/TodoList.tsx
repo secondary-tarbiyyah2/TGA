@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchChildClasses, useFamilyChildren, useStudentChildId, type ClassSummary } from "@/lib/learn/classes";
+import { Tabs } from "@/components/learn/Tabs";
 
 type StatusRow = { homework_id: string; class_id: string; due_at: string; status: "missing" | "late" | "on_time" | "not_yet_due"; submitted_at: string | null };
 type Hw = { id: string; title: string; archived_at: string | null };
@@ -92,21 +93,7 @@ function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: strin
           </select>
         )}
       </div>
-      <div role="tablist" aria-label="Homework status" className="flex gap-1 border-b border-gold-light px-3">
-        {TABS.map((t) => (
-          <button
-            key={t.key}
-            type="button"
-            role="tab"
-            aria-selected={tab === t.key}
-            onClick={() => setTab(t.key)}
-            className={`border-b-[3px] px-3 py-3 text-sm font-medium ${tab === t.key ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"}`}
-          >
-            {t.label}
-            <span className={`ml-1.5 rounded-full px-1.5 py-0.5 text-xs ${t.key === "missing" && counts.missing > 0 ? "bg-red-50 text-red-800" : "bg-cream text-ink/60"}`}>{counts[t.key]}</span>
-          </button>
-        ))}
-      </div>
+      <Tabs items={TABS.map((t) => ({ ...t, count: counts[t.key], countAlert: t.key === "missing" }))} value={tab} onChange={setTab} label="Homework status" className="px-3" />
       {items === null ? (
         <div className="m-5 h-24 animate-pulse rounded-lg bg-cream" />
       ) : list.length === 0 ? (

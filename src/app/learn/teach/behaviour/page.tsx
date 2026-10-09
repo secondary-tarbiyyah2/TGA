@@ -86,7 +86,7 @@ function TeachBehaviourContent() {
             <Link href="/report-concern" className="rounded-lg border border-red-300 px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50">
               Raise a concern
             </Link>
-            <button type="button" onClick={() => setModal({ kind: "merit" })} className="rounded-lg bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800">
+            <button type="button" onClick={() => setModal({ kind: "merit" })} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
               + Log Merit / Demerit
             </button>
           </>

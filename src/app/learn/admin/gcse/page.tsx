@@ -9,6 +9,7 @@ import { GcseMocks } from "@/components/learn/gcse/GcseMocks";
 import { GcseInterventions } from "@/components/learn/gcse/GcseInterventions";
 import { isGcseYear } from "@/lib/learn/gcse";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 
 type Tab = "overview" | "mocks" | "interventions" | "enter";
 const TABS: { id: Tab; label: string }[] = [
@@ -44,24 +45,9 @@ function AdminGcseContent() {
         subtitle="Target, predicted and actual grades (1–9) for Years 10 and 11. See who needs help first, compare classes and subjects, and open a pupil for their grade history and mock exams, and track interventions with an owner and next step. Pupils and parents see their own."
       />
 
-      <div role="tablist" aria-label="GCSE progress sections" className="mb-5 flex gap-1 overflow-x-auto border-b border-gold-light">
-        {TABS.map((t) => (
-          <button
-            key={t.id}
-            type="button"
-            role="tab"
-            id={`gcse-tab-${t.id}`}
-            aria-selected={tab === t.id}
-            aria-controls={`gcse-panel-${t.id}`}
-            onClick={() => setTab(t.id)}
-            className={`-mb-px shrink-0 border-b-[3px] px-3 py-2.5 text-sm font-medium transition-colors ${tab === t.id ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"}`}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
+      <Tabs items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="GCSE progress sections" idBase="gcse" className="mb-5" />
 
-      <div role="tabpanel" id={`gcse-panel-${tab}`} aria-labelledby={`gcse-tab-${tab}`}>
+      <div {...tabPanelProps("gcse", tab)}>
         {tab === "overview" && <GcseOverview key={version} />}
         {tab === "mocks" && <GcseMocks key={version} />}
         {tab === "interventions" && <GcseInterventions />}

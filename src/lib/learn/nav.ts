@@ -152,6 +152,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/announcements", label: "Announcements", icon: "megaphone", headOnly: true, group: "Communication" },
     { href: "/admin/digest", label: "Weekly digest", icon: "inbox", headOnly: true, group: "Communication" },
     { href: "/admin/message-oversight", label: "Message oversight", icon: "shieldAlert", headOnly: true, group: "Communication" },
+    { href: "/admin/feedback", label: "Feedback and requests", icon: "messageSquarePlus", headOnly: true, group: "Communication" },
     { href: "/admin/admissions", label: "Admissions", icon: "userRoundPlus", group: "Admissions and staff" },
     { href: "/admin/people", label: "People and accounts", icon: "users", group: "Admissions and staff" },
     { href: "/admin/staff", label: "Staff profiles", icon: "idCard", headOnly: true, group: "Admissions and staff" },

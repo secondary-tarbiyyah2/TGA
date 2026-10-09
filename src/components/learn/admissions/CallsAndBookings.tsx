@@ -262,7 +262,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
                 type="button"
                 onClick={() => joinCall(b.id)}
                 disabled={callState[b.id] === "starting"}
-                className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:brightness-110 disabled:opacity-50 transition-colors"
+                className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50 transition-colors"
               >
                 {callState[b.id] === "starting" ? "Starting…" : "Start call"}
               </button>

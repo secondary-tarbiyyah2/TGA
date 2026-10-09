@@ -15,7 +15,7 @@ type Suggestion = { staff: Staff; why: string; sameSubject: boolean };
 
 const fieldCls = "mt-1 w-full rounded-lg border border-gold-light/70 bg-white px-3 py-2 text-sm text-ink";
 const btn = "rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-900 disabled:opacity-50";
-const small = "rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-teal-900 disabled:opacity-50";
+const small = "rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50";
 
 const MAX_DAYS = 31;
 const hm = (t: string): string => t.slice(0, 5);

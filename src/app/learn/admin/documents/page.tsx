@@ -11,6 +11,7 @@ import { DOCX_MIME, UPLOAD_ACCEPT, extractDocxText, openSignableFile, storageObj
 import { RecordSignatureModal, type SignTarget } from "@/components/learn/documents/RecordSignatureModal";
 import { SignatureHistory } from "@/components/learn/documents/SignatureHistory";
 import { AUDIENCE_LABEL, audienceText, audienceToRoles, requestSignatures, rolesToAudience, type Audience } from "@/components/learn/documents/audience";
+import { Tabs } from "@/components/learn/Tabs";
 
 type PolicyRow = { id: string; number: string; title: string; category: string; fileUrl: string; lastReviewed?: string; nextReview?: string };
 type SignableDoc = {
@@ -391,23 +392,10 @@ function DocumentsContent() {
     return m;
   }, [outstandingShown, picked]);
 
-  const tabBtn = (id: typeof tab, label: string, count?: number) => (
-    <button
-      key={id}
-      type="button"
-      onClick={() => setTab(id)}
-      aria-pressed={tab === id}
-      className={`rounded-lg px-3.5 py-2 text-sm font-medium ${tab === id ? "bg-teal-700 text-white" : "text-ink/70 hover:bg-cream"}`}
-    >
-      {label}
-      {count !== undefined && <span className={`ml-2 rounded-full px-2 py-0.5 text-xs ${tab === id ? "bg-white/20" : "bg-cream"}`}>{count}</span>}
-    </button>
-  );
-
   return (
     <>
       <PageHeader
-        title="Documents & signatures"
+        title="Policies and signatures"
         subtitle="Every policy on the website, who has to sign what, and who still hasn't."
         actions={
           <>
@@ -423,11 +411,17 @@ function DocumentsContent() {
         }
       />
 
-      <div className="mb-4 flex flex-wrap gap-1 rounded-xl border border-gold-light bg-white p-1">
-        {tabBtn("policies", "Website policies", policies?.length)}
-        {tabBtn("signing", "Needs a signature", signing.length)}
-        {tabBtn("outstanding", "Outstanding", outstanding ? new Set(outstanding.map((o) => o.user_id)).size : undefined)}
-      </div>
+      <Tabs
+        items={[
+          { key: "policies", label: "Website policies", count: policies?.length },
+          { key: "signing", label: "Needs a signature", count: signing.length },
+          { key: "outstanding", label: "Outstanding", count: outstanding ? new Set(outstanding.map((o) => o.user_id)).size : undefined, countAlert: true },
+        ]}
+        value={tab}
+        onChange={setTab}
+        label="Documents sections"
+        className="mb-4"
+      />
 
       {note && <p className={`mb-4 rounded-lg px-4 py-2 text-sm ${note.startsWith("Recorded") ? "bg-green-50 text-green-900" : "bg-red-50 text-red-800"}`}>{note}</p>}
 

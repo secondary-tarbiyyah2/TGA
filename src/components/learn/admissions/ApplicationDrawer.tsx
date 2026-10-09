@@ -20,6 +20,7 @@ import {
   type ApplicationRow,
   type ApplicationStatus,
 } from "@/components/admissions/applicationShared";
+import { Tabs } from "@/components/learn/Tabs";
 
 export type MoveOptions = {
   /** Do not send the automatic email for this move (the caller has just sent it). */
@@ -117,14 +118,11 @@ export function ApplicationDrawer({
     fees: admissions.fees,
     templates: admissions.templates,
   };
-  const tabCls = (t: Tab) =>
-    `-mb-px border-b-2 px-3 py-2 text-sm font-medium ${tab === t ? "border-teal-700 text-teal-700" : "border-transparent text-ink/60 hover:text-ink"}`;
-
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
       <div className="absolute inset-0 bg-black/40" onClick={onClose} aria-hidden="true" />
       <aside role="dialog" aria-modal="true" aria-labelledby="app-drawer-title" className="relative flex h-full w-full max-w-xl flex-col overflow-y-auto bg-white shadow-xl">
-        <div className="sticky top-0 z-10 border-b border-gold-light/50 bg-white px-5 pt-5">
+        <div className="sticky top-0 z-10 bg-white px-5 pt-5">
           <div className="flex items-start justify-between gap-3">
             <div>
               <h2 id="app-drawer-title" className="font-serif text-xl font-semibold text-ink">{childName}</h2>
@@ -150,13 +148,7 @@ export function ApplicationDrawer({
               </button>
             ))}
           </div>
-          <div role="tablist" aria-label="Application sections" className="mt-3 flex gap-1">
-            {TABS.map((t) => (
-              <button key={t.id} type="button" role="tab" aria-selected={tab === t.id} onClick={() => setTab(t.id)} className={tabCls(t.id)}>
-                {t.label}
-              </button>
-            ))}
-          </div>
+          <Tabs items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Application sections" className="-mx-5 mt-3 px-5" />
         </div>
 
         <div className="p-5">
@@ -190,7 +182,7 @@ export function ApplicationDrawer({
                   <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} maxLength={10000} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
                 </label>
                 <div className="mt-2 flex items-center gap-3">
-                  <button type="button" onClick={saveNotes} disabled={saving || notes === (app.notes || "")} className="rounded-lg bg-teal-700 px-4 py-1.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50">
+                  <button type="button" onClick={saveNotes} disabled={saving || notes === (app.notes || "")} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                     {saving ? "Saving…" : "Save notes"}
                   </button>
                   {msg && <span role="status" className="text-xs text-ink/70">{msg}</span>}

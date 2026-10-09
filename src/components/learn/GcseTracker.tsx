@@ -338,7 +338,7 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
                   />
                 </label>
                 <div className="mt-2 flex flex-wrap items-center gap-3">
-                  <button type="button" disabled={!pasteText.trim()} onClick={applyPaste} className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:brightness-110 disabled:opacity-50">
+                  <button type="button" disabled={!pasteText.trim()} onClick={applyPaste} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                     Fill the table
                   </button>
                   <span>Names must match the class list. Nothing is saved until you press Save.</span>

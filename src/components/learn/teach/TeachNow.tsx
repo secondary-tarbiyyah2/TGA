@@ -134,7 +134,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
                   {l.live && <span className="rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">Live</span>}
                   {!l.registerTaken && now >= hhmm(l.start) && <span className="hidden rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900 sm:inline">Register due</span>}
                   {!done && (
-                    <button type="button" onClick={() => join(l.id)} disabled={busy === l.id} className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-60">
+                    <button type="button" onClick={() => join(l.id)} disabled={busy === l.id} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
                       {busy === l.id ? "Starting…" : "Join"}
                     </button>
                   )}

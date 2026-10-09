@@ -105,7 +105,7 @@ function StarRow({ star, isHead, busy, onAct }: { star: Star; isHead: boolean; b
       <span className="flex shrink-0 flex-wrap gap-1.5">
         {star.status === "nominated" && isHead && (
           <>
-            <button type="button" disabled={busy} onClick={() => onAct("approve", star)} className="rounded-md bg-green-700 px-2.5 py-1 text-xs font-semibold text-white hover:bg-green-800 disabled:opacity-50">
+            <button type="button" disabled={busy} onClick={() => onAct("approve", star)} className="rounded-md bg-gold-700 px-2.5 py-1 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
               Approve
             </button>
             <button type="button" disabled={busy} onClick={() => onAct("decline", star)} className="rounded-md border border-gold-light px-2.5 py-1 text-xs font-semibold text-ink/70 hover:bg-cream disabled:opacity-50">

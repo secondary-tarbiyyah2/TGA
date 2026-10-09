@@ -126,7 +126,7 @@ export function ComposeModal({
           <button type="button" onClick={onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/70 hover:bg-cream">
             Cancel
           </button>
-          <button type="button" disabled={!valid || busy} onClick={save} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+          <button type="button" disabled={!valid || busy} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             {busy ? "Saving…" : existing ? "Save changes" : "Post notice"}
           </button>
         </div>

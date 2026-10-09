@@ -193,7 +193,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
                     </ul>
                   )}
                   <div className="mt-3 flex flex-wrap gap-2">
-                    <button type="button" disabled={busyKey === r.key} onClick={() => setContactRow(r)} className="rounded-lg bg-teal-700 px-3 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+                    <button type="button" disabled={busyKey === r.key} onClick={() => setContactRow(r)} className="rounded-lg bg-gold-700 px-3 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                       Log contact
                     </button>
                     <button type="button" disabled={busyKey === r.key} onClick={() => setExplainRow(r)} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-semibold text-ink/80 hover:bg-cream disabled:opacity-50">
@@ -295,7 +295,7 @@ function ContactModal({ row, ensure, onClose, onSaved }: { row: Row; ensure: (r:
           <input type="date" value={next} onChange={(e) => setNext(e.target.value)} className={modalFieldCls} />
         </label>
         {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
-        <button type="submit" disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+        <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
           {busy ? "Saving…" : "Save contact"}
         </button>
       </form>

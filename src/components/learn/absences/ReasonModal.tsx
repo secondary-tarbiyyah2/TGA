@@ -58,7 +58,7 @@ export function ReasonModal({ childId, childName, date, dateLabel, initialCode, 
           <textarea rows={3} value={note} onChange={(e) => setNote(e.target.value)} className={modalFieldCls} />
         </label>
         {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
-        <button type="submit" disabled={busy} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+        <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
           {busy ? "Saving…" : "Save reason"}
         </button>
       </form>

@@ -117,7 +117,7 @@ function CommentThread({
             aria-label="Add a class comment"
             className="min-w-0 flex-1 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm"
           />
-          <button type="button" onClick={add} disabled={busy || !text.trim()} className="rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900 disabled:opacity-50">
+          <button type="button" onClick={add} disabled={busy || !text.trim()} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-50">
             Post
           </button>
         </div>

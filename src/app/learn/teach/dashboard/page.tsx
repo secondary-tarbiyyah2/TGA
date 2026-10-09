@@ -98,13 +98,31 @@ function TeachContent() {
 
       <TeachNow slots={slots} />
 
+      <SignaturePrompts />
+
+      {covers && covers.length > 0 && (
+        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+          <h2 className="text-h3 font-semibold text-ink">Upcoming cover</h2>
+          <ul className="mt-3 space-y-2 text-sm">
+            {covers.map((c) => (
+              <li key={c.id} className="rounded-lg border border-gold-light/40 p-3">
+                <span className="font-medium">{new Date(c.cover_date).toLocaleDateString("en-GB")}</span> —{" "}
+                {c.timetable_slots?.subjects?.name} ({c.timetable_slots?.classes?.name}) —{" "}
+                {c.covering_teacher_user_id === userId ? "you are covering" : "you are being covered"}
+                {c.reason ? <span className="text-ink/60"> · {c.reason}</span> : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <EnrichmentSupervisorLink />
 
       <MyClassesStrip />
 
       <details className="group rounded-2xl border border-gold-light bg-white">
         <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-3">
-          <span className="font-serif text-h3 font-semibold text-ink">My timetable</span>
+          <span className="text-h3 font-semibold text-ink">My timetable</span>
           <span className="text-sm text-ink/55">{slots === null ? "" : `${slots.length} lessons a week`}</span>
         </summary>
         <div className="border-t border-gold-light p-5">
@@ -118,28 +136,11 @@ function TeachContent() {
         </div>
       </details>
 
-      <SignaturePrompts />
-
       <TeacherLeaderboard />
       <TeacherRewards />
 
       <AnnouncementsFeed classIds={classIds} canPost={classIds.length > 0} postClassId={classIds[0]} postScope="class" />
 
-      {covers && covers.length > 0 && (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-          <h2 className="font-serif text-h3 font-semibold text-ink">Cover</h2>
-          <ul className="mt-3 space-y-2 text-sm">
-            {covers.map((c) => (
-              <li key={c.id} className="rounded-lg border border-gold-light/40 p-3">
-                <span className="font-medium">{new Date(c.cover_date).toLocaleDateString("en-GB")}</span> —{" "}
-                {c.timetable_slots?.subjects?.name} ({c.timetable_slots?.classes?.name}) —{" "}
-                {c.covering_teacher_user_id === userId ? "you are covering" : "you are being covered"}
-                {c.reason ? <span className="text-ink/60"> · {c.reason}</span> : null}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
 
       <IcsFeedLink />
     </div>

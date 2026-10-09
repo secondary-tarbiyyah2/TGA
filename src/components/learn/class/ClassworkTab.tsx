@@ -137,7 +137,7 @@ function MaterialForm({ classId, kind, topics, defaultTopic, onDone, onCancel }:
         <button type="button" onClick={onCancel} className="rounded-lg px-4 py-2 text-sm font-medium text-ink/70 hover:bg-cream">
           Cancel
         </button>
-        <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-teal-700 px-5 py-2 text-sm font-medium text-white hover:bg-teal-900 disabled:opacity-60">
+        <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-5 py-2 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-60">
           {busy ? "Working…" : "Post"}
         </button>
       </div>
@@ -166,7 +166,7 @@ function CreateMenu({ onPick, classHref, homeworkHref: hwHref }: { onPick: (k: "
   const item = "block w-full px-4 py-2 text-left text-sm text-ink hover:bg-cream";
   return (
     <div ref={ref} className="relative">
-      <button type="button" aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((o) => !o)} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-medium text-white hover:bg-teal-900">
+      <button type="button" aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((o) => !o)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white hover:bg-gold-900">
         + Create
       </button>
       {open && (
@@ -316,7 +316,7 @@ export function ClassworkTab({ classId, viewer, classHref }: { classId: string; 
       {newTopic !== null && (
         <div className="flex flex-wrap gap-2 rounded-2xl border border-gold-light bg-white p-4">
           <input type="text" value={newTopic} onChange={(e) => setNewTopic(e.target.value)} onKeyDown={(e) => e.key === "Enter" && addTopic()} placeholder="Topic name, e.g. Week 3: Tajweed" aria-label="Topic name" maxLength={80} className="min-w-0 flex-1 rounded-lg border border-gold-light/70 px-3 py-2 text-sm" />
-          <button type="button" onClick={addTopic} disabled={!newTopic.trim()} className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-medium text-white disabled:opacity-50">
+          <button type="button" onClick={addTopic} disabled={!newTopic.trim()} className="rounded-lg bg-gold-700 hover:bg-gold-900 px-4 py-2 text-sm font-medium text-white disabled:opacity-50">
             Add topic
           </button>
           <button type="button" onClick={() => setNewTopic(null)} className="rounded-lg px-3 py-2 text-sm text-ink/70 hover:bg-cream">

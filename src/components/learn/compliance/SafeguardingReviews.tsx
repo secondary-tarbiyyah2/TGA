@@ -151,7 +151,7 @@ function ReviewCard({ review, onChanged }: { review: ReviewRow; onChanged: () =>
           <button type="button" onClick={() => save(false)} disabled={busy} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
             Save progress
           </button>
-          <button type="button" onClick={() => save(true)} disabled={busy || !allTicked || !decision} className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-teal-900 disabled:opacity-50">
+          <button type="button" onClick={() => save(true)} disabled={busy || !allTicked || !decision} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             Complete review
           </button>
           {(!allTicked || !decision) && <span className="self-center text-xs text-ink/65">Tick every item and choose a decision to complete.</span>}

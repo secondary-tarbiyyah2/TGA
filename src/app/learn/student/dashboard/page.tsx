@@ -22,8 +22,9 @@ import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteW
 import { StudentLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
 import { StudentRewards } from "@/components/learn/rewards/RewardsCards";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
+import { UpNextCard } from "@/components/learn/UpNextCard";
+import { Icon } from "@/components/learn/Icon";
 import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
-import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 
@@ -41,7 +42,6 @@ function isYoungerYearGroup(yearGroupName: string | undefined): boolean {
 }
 
 function StudentContent() {
-  const { session } = useLearnSession();
   const supabase = getSupabaseClient();
   const [slots, setSlots] = useState<TimetableSlot[] | null>(null);
   const [yearGroupName, setYearGroupName] = useState<string | undefined>(undefined);
@@ -89,10 +89,15 @@ function StudentContent() {
   const viewer = useMemo<ClassViewer | null>(() => (childId ? { kind: "student", childId } : null), [childId]);
   const myClasses = useViewerClasses(viewer);
 
+  // Order follows what a pupil needs first: what's next, then their
+  // classes and work, then rewards; the full timetable is folded away
+  // (it's also on the Calendar page).
   const content = (
     <div className="space-y-6">
       <DashboardHero subtitle="Ready to learn today?" chips={[{ label: "Lessons a week", value: slots === null ? "…" : slots.length, tone: "yellow" }]} />
       {childId && <JoinLessonCard who={{ kind: "student", childId }} />}
+      {childId && <UpNextCard classIds={slots === null ? null : classIds} childId={childId} lessonHref={(id) => `/student/lessons/view?id=${id}`} homeworkHref="/student/todo" />}
+
       {viewer && (
         <section>
           <div className="mb-3 flex items-center justify-between">
@@ -111,41 +116,13 @@ function StudentContent() {
         </section>
       )}
 
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="font-serif text-h2 font-semibold text-ink">My timetable</h1>
-            <p className="mt-1 text-sm text-ink/60">
-              Signed in as {session && session !== "loading" ? session.user.email : ""}.
-            </p>
-          </div>
-          <div className="print:hidden flex items-center gap-2">
-            <PrintButton />
-            <ReportConcernLink />
-          </div>
-        </div>
-
-        <PrintScope title="My timetable" className="mt-6">
-          {slots === null ? <p className="text-sm text-ink/60">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} yearGroups={yearGroupName ? [yearGroupName] : undefined} />}
-        </PrintScope>
-
-        <IcsFeedLink />
-      </div>
-
-
-      {childId && <StudentLeaderboard childId={childId} />}
-
-      {childId && <StudentRewards childId={childId} />}
-
       {childId && (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+        <section className="rounded-2xl border border-gold-light bg-white p-6">
           <div className="flex items-center justify-between">
-            <h2 className="font-serif text-h3 font-semibold text-ink">Homework &amp; grades</h2>
-            <div className="flex gap-3">
-              <Link href="/student/todo" className="text-sm text-gold-700 underline">
-                See everything to do
-              </Link>
-            </div>
+            <h2 className="text-h3 font-semibold text-ink">Homework and grades</h2>
+            <Link href="/student/todo" className="text-sm font-medium text-teal-700 hover:underline">
+              See everything to do
+            </Link>
           </div>
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
             <HomeworkDueWidget childId={childId} />
@@ -155,8 +132,31 @@ function StudentContent() {
             <GcseProgressWidget childId={childId} />
           </div>
           <WeeklyTarbiyahNoteWidget childId={childId} />
-        </div>
+        </section>
       )}
+
+      {childId && <StudentRewards childId={childId} />}
+      {childId && <StudentLeaderboard childId={childId} />}
+
+      <details className="group rounded-2xl border border-gold-light bg-white" open={simplified || undefined}>
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-3">
+          <h2 className="text-h3 font-semibold text-ink">My timetable</h2>
+          <span className="flex items-center gap-2 text-sm text-ink/65">
+            {slots === null ? "" : `${slots.length} lessons a week`}
+            <Icon name="chevronDown" className="h-4 w-4 transition-transform group-open:rotate-180" />
+          </span>
+        </summary>
+        <div className="border-t border-gold-light p-5">
+          <div className="print:hidden mb-3 flex items-center justify-end gap-2">
+            <PrintButton />
+            <ReportConcernLink />
+          </div>
+          <PrintScope title="My timetable">
+            {slots === null ? <p className="text-sm text-ink/60">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} yearGroups={yearGroupName ? [yearGroupName] : undefined} />}
+          </PrintScope>
+          <IcsFeedLink />
+        </div>
+      </details>
 
       <AnnouncementsFeed classIds={classIds} />
     </div>

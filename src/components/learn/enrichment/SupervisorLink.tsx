@@ -40,7 +40,7 @@ export function EnrichmentSupervisorLink() {
           You supervise {count} enrichment block{count === 1 ? "" : "s"}. Tick who joined.
         </p>
       </div>
-      <Link href="/teach/enrichment" className="rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-900">
+      <Link href="/teach/enrichment" className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
         Open the register
       </Link>
     </section>

@@ -18,7 +18,7 @@ import {
 type ClassOpt = { id: string; name: string };
 
 const btn = "rounded-md border border-gold-light px-2.5 py-1 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50";
-const btnPrimary = "rounded-md bg-teal-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-900 disabled:opacity-50";
+const btnPrimary = "rounded-md bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-50";
 
 function Modal({ title, onClose, children, wide }: { title: string; onClose: () => void; children: React.ReactNode; wide?: boolean }) {
   useEffect(() => {

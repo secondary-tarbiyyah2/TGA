@@ -11,6 +11,7 @@ import { NotesReview } from "./NotesReview";
 import { RecentAbsences } from "./RecentAbsences";
 import { SummaryCard } from "./SummaryCard";
 import { dateKeyDaysAgo, formatDay, useAbsenceData } from "./data";
+import { Tabs } from "@/components/learn/Tabs";
 
 type Term = { name: string; starts_on: string; ends_on: string };
 type Tab = "overview" | "followup" | "notes" | "reports" | "cover";
@@ -84,21 +85,12 @@ export function StaffAbsences({ crumbs, subtitle, showCover = false }: { crumbs:
           ))}
         </div>
         {error && <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
-        <div className="flex flex-wrap gap-2 border-b border-gold-light/60 pb-2" role="tablist" aria-label="Absences sections">
-          {TABS.filter((t) => t.key !== "cover" || showCover).map((t) => (
-            <button
-              key={t.key}
-              type="button"
-              role="tab"
-              aria-selected={tab === t.key}
-              onClick={() => setTab(t.key)}
-              className={`rounded-lg px-3 py-2 text-sm font-semibold ${tab === t.key ? "bg-teal-700 text-white" : "text-ink/70 hover:bg-cream"}`}
-            >
-              {t.label}
-              {t.key === "followup" && followCount > 0 ? ` (${followCount})` : ""}
-            </button>
-          ))}
-        </div>
+        <Tabs
+          items={TABS.filter((t) => t.key !== "cover" || showCover).map((t) => ({ ...t, count: t.key === "followup" && followCount > 0 ? followCount : undefined, countAlert: true }))}
+          value={tab}
+          onChange={setTab}
+          label="Absences sections"
+        />
         {tab === "overview" && (
           <>
             <SummaryCard title={title} absences={absences} periodLabel={label} />

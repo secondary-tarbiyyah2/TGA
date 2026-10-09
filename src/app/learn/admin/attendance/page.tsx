@@ -9,6 +9,7 @@ import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { localDateKey } from "@/lib/learn/calendar";
 import { classBannerStyle } from "@/lib/learn/classes";
+import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 
 type Status = "present" | "late" | "absent" | "excused";
 const STATUSES: { value: Status; label: string; dot: string }[] = [
@@ -626,25 +627,12 @@ function AttendanceContent() {
   const [tab, setTab] = useState<"register" | "reports">("register");
   const tabs: { key: "register" | "reports"; label: string }[] = [
     { key: "register", label: "Take register" },
-    { key: "reports", label: "Reports & filters" },
+    { key: "reports", label: "Reports and filters" },
   ];
   return (
     <>
-      <div role="tablist" aria-label="Attendance sections" className="mb-5 flex gap-1 overflow-x-auto border-b border-gold-light">
-        {tabs.map((t) => (
-          <button
-            key={t.key}
-            type="button"
-            role="tab"
-            aria-selected={tab === t.key}
-            onClick={() => setTab(t.key)}
-            className={`shrink-0 border-b-[3px] px-4 py-2.5 text-sm font-medium transition-colors ${tab === t.key ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"}`}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
-      {tab === "register" ? <TakeRegister /> : <ReportsContent />}
+      <Tabs items={tabs} value={tab} onChange={setTab} label="Attendance sections" idBase="attendance" className="mb-5" />
+      <div {...tabPanelProps("attendance", tab)}>{tab === "register" ? <TakeRegister /> : <ReportsContent />}</div>
     </>
   );
 }

@@ -151,7 +151,7 @@ export function HouseBoard({
               <option value={NONE}>No house</option>
             </select>
           </label>
-          <button type="button" disabled={busy || target === null} onClick={moveSelected} className="rounded-lg bg-teal-700 px-3 py-1 text-xs font-semibold text-white hover:brightness-110 disabled:opacity-50">
+          <button type="button" disabled={busy || target === null} onClick={moveSelected} className="rounded-lg bg-gold-700 px-3 py-1 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             Move
           </button>
           <button type="button" onClick={() => setSelected(new Set())} className="text-xs text-ink/70 underline">

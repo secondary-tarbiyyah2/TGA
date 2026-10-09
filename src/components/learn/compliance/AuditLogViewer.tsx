@@ -188,7 +188,7 @@ export function AuditLogViewer() {
           <input type="date" value={filters.to} onChange={(e) => setFilters({ ...filters, to: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
         </label>
         <div className="flex flex-wrap gap-2 sm:col-span-2 lg:col-span-6">
-          <button type="submit" className="rounded-lg bg-teal-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-teal-900">
+          <button type="submit" className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900">
             Apply filters
           </button>
           <button type="button" onClick={clearFilters} className="rounded-lg border border-gold-light bg-white px-4 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">

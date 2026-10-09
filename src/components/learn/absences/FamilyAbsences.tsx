@@ -153,7 +153,7 @@ export function FamilyAbsences() {
               </label>
               {formError && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{formError}</p>}
               {sent && <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-800">Thank you. We&apos;ve got your note and a member of staff will look at it.</p>}
-              <button type="submit" disabled={busy} className="w-full rounded-lg bg-teal-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50 sm:w-auto">
+              <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50 sm:w-auto">
                 {busy ? "Sending…" : "Send note"}
               </button>
             </>

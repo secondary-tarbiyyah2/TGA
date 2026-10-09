@@ -145,9 +145,14 @@ button:not(:disabled),
   --portal-shadow-rgb: 60, 48, 20; /* warm ink for card shadows */
   --radius-2xl: 1rem;
   --radius-xl: 0.75rem;
-  background: var(--portal-canvas);
   font-size: 15px;
   line-height: 1.55;
+}
+/* Page canvas. Not on .fixed overlays (dialogs, drawers, the search
+   palette), which reuse the .portal class for its tokens but must let their
+   own dimmed backdrop show the page underneath. */
+.portal:not(.fixed) {
+  background: var(--portal-canvas);
 }
 .portal .text-h2 {
   font-size: 1.5rem; /* 24px page titles */

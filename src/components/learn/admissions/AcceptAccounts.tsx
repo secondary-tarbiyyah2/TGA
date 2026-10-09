@@ -161,7 +161,7 @@ export function AcceptAccounts({
       )}
 
       <div className="mt-3 flex flex-wrap items-center gap-3">
-        <button type="button" onClick={() => void run(false)} disabled={busy} className="rounded-lg bg-teal-700 px-4 py-1.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50">
+        <button type="button" onClick={() => void run(false)} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
           {busy ? "Working…" : app.status !== "accepted" ? "Accept and create accounts" : done ? "Run again (fill any gaps)" : "Create accounts now"}
         </button>
         {done && (

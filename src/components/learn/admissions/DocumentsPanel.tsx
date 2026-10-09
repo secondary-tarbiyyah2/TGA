@@ -124,7 +124,7 @@ export function DocumentsPanel({ applicationId, sharedIdFrom }: { applicationId:
             <p className="text-sm font-medium text-ink">{viewing.label}</p>
             <div className="flex gap-2 text-xs font-semibold">
               <a href={viewing.url} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-gold-500 px-3 py-1 text-ink-900 hover:brightness-105">Open in new tab</a>
-              <a href={viewing.downloadUrl} className="rounded-lg bg-teal-700 px-3 py-1 text-white hover:brightness-110">Download</a>
+              <a href={viewing.downloadUrl} className="rounded-lg bg-gold-700 px-3 py-1 text-white hover:bg-gold-900">Download</a>
               <button type="button" onClick={() => setViewing(null)} className="px-2 py-1 text-ink/70 underline">Close</button>
             </div>
           </div>

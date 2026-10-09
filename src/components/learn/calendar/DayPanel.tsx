@@ -50,7 +50,7 @@ function ItemCard({ item, colour }: { item: DayItem; colour: string }) {
           {(item.href || item.joinUrl) && (
             <div className="mt-2 flex flex-wrap gap-2">
               {item.href && (
-                <Link href={item.href} className="rounded-lg bg-green-700 px-3 py-1 text-xs font-semibold text-white hover:bg-green-800">
+                <Link href={item.href} className="rounded-lg bg-gold-700 px-3 py-1 text-xs font-semibold text-white hover:bg-gold-900">
                   {item.kind === "lesson" ? "Open lesson" : item.kind === "homework" ? "Open homework" : item.kind === "assessment" ? "Open class" : "Read"}
                 </Link>
               )}

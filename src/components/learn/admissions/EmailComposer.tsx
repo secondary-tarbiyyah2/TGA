@@ -72,7 +72,7 @@ export function EmailComposer({
       </div>
       {unresolved.length > 0 && <p role="alert" className="text-xs text-red-700">Unfilled values to fix (highlighted in red): {unresolved.map((t) => `{{${t}}}`).join(", ")}</p>}
       <div className="flex items-center gap-3">
-        <button type="button" onClick={send} disabled={sending || !subject.trim() || !body.trim()} className="rounded-lg bg-teal-700 px-4 py-1.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50">
+        <button type="button" onClick={send} disabled={sending || !subject.trim() || !body.trim()} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
           {sending ? "Sending…" : sendLabel}
         </button>
         <button type="button" onClick={onCancel} disabled={sending} className="text-sm text-ink/70 underline">Cancel</button>

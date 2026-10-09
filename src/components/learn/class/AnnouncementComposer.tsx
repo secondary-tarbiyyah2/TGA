@@ -309,7 +309,7 @@ export function AnnouncementComposer({ classId, onPosted }: { classId: string; o
         <button type="button" onClick={reset} className="rounded-lg px-4 py-2 text-sm font-medium text-ink/70 hover:bg-cream">
           Cancel
         </button>
-        <button type="button" onClick={post} disabled={busy} className="rounded-lg bg-teal-700 px-5 py-2 text-sm font-medium text-white hover:bg-teal-900 disabled:opacity-60">
+        <button type="button" onClick={post} disabled={busy} className="rounded-lg bg-gold-700 px-5 py-2 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-60">
           {busy ? "Working…" : later ? "Schedule" : "Post"}
         </button>
       </div>

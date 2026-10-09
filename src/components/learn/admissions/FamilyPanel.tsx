@@ -110,7 +110,7 @@ export function FamilyPanel({
         </p>
         {mine && mine.siblingDiscount > 0 && (
           <div className="mt-2 flex flex-wrap items-center gap-3">
-            <button type="button" onClick={applyDiscount} disabled={saving} className="rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white hover:brightness-110 disabled:opacity-50">
+            <button type="button" onClick={applyDiscount} disabled={saving} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
               {saving ? "Saving…" : `Apply ${app.child_first_name}'s discount to their fees`}
             </button>
             <span className="text-xs text-ink/60">Sets this child&apos;s annual fee override to {gbp(mine.net)}.</span>

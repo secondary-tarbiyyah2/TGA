@@ -6,7 +6,7 @@ import { CHILD_COLOURS, type CalView } from "./calendarUtils";
 
 const chip = "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors sm:text-sm";
 const chipOff = "border-gold-light bg-white text-ink/75 hover:bg-cream";
-const chipOn = "border-green-700 bg-green-700 text-white";
+const chipOn = "border-teal-700 bg-teal-700 text-white";
 
 function Chip({ active, onClick, children, colour }: { active: boolean; onClick: () => void; children: ReactNode; colour?: string }) {
   return (

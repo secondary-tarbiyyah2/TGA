@@ -23,6 +23,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { getFeeBands } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 import type { FeeBand } from "@/content/seed";
+import { Tabs } from "@/components/learn/Tabs";
 
 type Row = {
   charge: FeeCharge;
@@ -233,13 +234,17 @@ function FeesContent() {
             <option key={y} value={y}>{y}</option>
           ))}
         </select>
-        <div className="ml-auto flex rounded-lg border border-gold-light bg-white p-0.5 text-sm">
-          {(["charges", "families"] as const).map((v) => (
-            <button key={v} type="button" aria-pressed={view === v} onClick={() => setView(v)} className={`rounded-md px-3 py-1.5 font-medium ${view === v ? "bg-teal-700 text-white" : "text-ink/70 hover:bg-cream"}`}>
-              {v === "charges" ? "Charges" : "By family"}
-            </button>
-          ))}
-        </div>
+        <Tabs
+          variant="switch"
+          items={[
+            { key: "charges", label: "Charges" },
+            { key: "families", label: "By family" },
+          ]}
+          value={view}
+          onChange={setView}
+          label="Fees view"
+          className="ml-auto"
+        />
       </div>
 
       {rows === null && <p className="text-sm text-ink/60">Loading…</p>}
@@ -279,7 +284,7 @@ function FeesContent() {
               <div className="mt-3 flex flex-wrap gap-2 text-sm">
                 {r.status !== "void" && r.balance > 0 && (
                   <>
-                    <button type="button" onClick={() => setPaying({ row: r, full: true })} className="rounded-lg bg-teal-700 px-3 py-1.5 font-medium text-white hover:bg-teal-800">
+                    <button type="button" onClick={() => setPaying({ row: r, full: true })} className="rounded-lg bg-gold-700 px-3 py-1.5 font-medium text-white hover:bg-gold-900">
                       Mark paid
                     </button>
                     <button type="button" onClick={() => setPaying({ row: r, full: false })} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-medium text-ink/80 hover:bg-cream">

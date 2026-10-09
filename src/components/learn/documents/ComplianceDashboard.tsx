@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { requestSignatures } from "@/components/learn/documents/audience";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { Tabs } from "@/components/learn/Tabs";
 
 type Severity = "critical" | "high" | "medium";
 type Status = "open" | "acknowledged" | "resolved";
@@ -256,13 +257,6 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
     </button>
   );
   const loading = alerts === null || outstanding === null;
-  const tabBtn = (id: typeof tab, label: string, count?: number) => (
-    <button key={id} type="button" aria-pressed={tab === id} onClick={() => setTab(id)} className={`rounded-lg px-3.5 py-2 text-sm font-medium ${tab === id ? "bg-teal-700 text-white" : "text-ink/70 hover:bg-cream"}`}>
-      {label}
-      {!!count && <span className={`ml-2 rounded-full px-2 py-0.5 text-xs ${tab === id ? "bg-white/20" : "bg-cream"}`}>{count}</span>}
-    </button>
-  );
-
   return (
     <div className="space-y-5">
       {topExtra}
@@ -273,11 +267,16 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
         {tile("Staff without DBS on file", staffNoDbs === null ? "…" : staffNoDbs.length, staffNoDbs && staffNoDbs.length === 0 ? "ok" : "warn", () => setTab("records"), `${dbsDue.length} renewal${dbsDue.length === 1 ? "" : "s"} due within 60 days. Training isn't tracked yet.`)}
       </div>
 
-      <div className="flex flex-wrap gap-1 rounded-xl border border-gold-light bg-white p-1">
-        {tabBtn("alerts", "Alerts", activeCount)}
-        {tabBtn("signatures", "Signatures", people.length)}
-        {tabBtn("records", "Records & settings")}
-      </div>
+      <Tabs
+        items={[
+          { key: "alerts", label: "Alerts", count: activeCount || undefined, countAlert: true },
+          { key: "signatures", label: "Signatures", count: people.length || undefined },
+          { key: "records", label: "Records and settings" },
+        ]}
+        value={tab}
+        onChange={setTab}
+        label="Safeguarding sections"
+      />
 
       {message && <p role="status" className="rounded-lg bg-cream px-4 py-2 text-sm text-ink/80">{message}</p>}
 
@@ -362,7 +361,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
                               What was done? (required)
                               <textarea rows={2} value={note} onChange={(e) => setNote(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm" />
                             </label>
-                            <button type="button" disabled={!note.trim() || busy === a.key} onClick={() => setStatus(a, "resolved", note.trim())} className="rounded-lg bg-teal-700 px-4 py-1.5 text-xs font-semibold text-white hover:bg-teal-900 disabled:opacity-50">Mark resolved</button>
+                            <button type="button" disabled={!note.trim() || busy === a.key} onClick={() => setStatus(a, "resolved", note.trim())} className="rounded-lg bg-gold-700 px-4 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">Mark resolved</button>
                           </div>
                         )}
                       </li>

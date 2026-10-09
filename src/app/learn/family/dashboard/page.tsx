@@ -1,5 +1,7 @@
 "use client";
 
+import { UpNextCard } from "@/components/learn/UpNextCard";
+import { Icon } from "@/components/learn/Icon";
 import { DashboardHero } from "@/components/learn/DashboardHero";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -25,8 +27,6 @@ import { FamilyRewards } from "@/components/learn/rewards/RewardsCards";
 import { DigestPreference } from "@/components/learn/rewards/DigestPreference";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
-import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
-import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 
@@ -67,42 +67,34 @@ function ChildTimetable({ classIds, yearGroup }: { classIds: string[] | null; ye
   return <TimetableGrid slots={slots} yearGroups={yearGroup ? [yearGroup] : undefined} />;
 }
 
+function ChildUpNext({ child }: { child: Child }) {
+  const classIds = useChildClassIds(child.id);
+  return (
+    <UpNextCard
+      heading={`Up next for ${child.name.split(" ")[0]}`}
+      classIds={classIds}
+      childId={child.id}
+      lessonHref={(id) => `/family/lessons/view?id=${id}&child=${child.id}`}
+      homeworkHref={`/family/todo?child=${child.id}`}
+    />
+  );
+}
+
 function ChildCard({ child }: { child: Child }) {
   const classIds = useChildClassIds(child.id);
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <div className="flex items-center justify-between">
-        <h2 className="font-serif text-h3 font-semibold text-ink">
-          {child.name}
-          {child.year_groups?.name ? <span className="ml-2 text-sm font-normal text-ink/60">{child.year_groups.name}</span> : null}
-        </h2>
-        <div className="flex items-center gap-2">
-          <PrintButton />
-        </div>
-      </div>
-      <PrintScope title={`${child.name}: timetable`} className="mt-4">
-        <ChildTimetable classIds={classIds} yearGroup={child.year_groups?.name} />
-      </PrintScope>
-      <div className="mt-4 border-t border-gold-light/30 pt-4">
-        <h3 className="text-sm font-medium text-ink">Lessons</h3>
-        <div className="mt-2">
-          <UpcomingLessons
-            classIds={classIds || []}
-            basePath="/family/lessons/view"
-            extraQuery={`&child=${child.id}`}
-            emptyLabel="No lessons in the next two weeks."
-          />
-        </div>
-      </div>
+    <section aria-label={child.name} className="rounded-2xl border border-gold-light bg-white p-6">
+      <h2 className="text-h3 font-semibold text-ink">
+        {child.name}
+        {child.year_groups?.name ? <span className="ml-2 text-sm font-normal text-ink/65">{child.year_groups.name}</span> : null}
+      </h2>
 
-      <div className="mt-4 border-t border-gold-light/30 pt-4">
+      <div className="mt-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-sm font-medium text-ink">Homework &amp; grades</h3>
-          <div className="flex gap-3">
-            <Link href={`/family/todo?child=${child.id}`} className="text-sm text-gold-700 underline">
-              See everything to do
-            </Link>
-          </div>
+          <h3 className="text-sm font-semibold text-ink">Homework and grades</h3>
+          <Link href={`/family/todo?child=${child.id}`} className="text-sm font-medium text-teal-700 hover:underline">
+            See everything to do
+          </Link>
         </div>
         <div className="mt-2 grid gap-6 sm:grid-cols-2">
           <HomeworkDueWidget childId={child.id} />
@@ -115,17 +107,35 @@ function ChildCard({ child }: { child: Child }) {
 
       <WeeklyTarbiyahNoteWidget childId={child.id} />
 
+      <details className="group mt-4 border-t border-gold-light pt-3">
+        <summary className="flex cursor-pointer list-none items-center justify-between py-1 text-sm font-semibold text-ink">
+          Timetable and upcoming lessons
+          <Icon name="chevronDown" className="h-4 w-4 text-ink/60 transition-transform group-open:rotate-180" />
+        </summary>
+        <div className="mt-3">
+          <div className="print:hidden mb-2 flex justify-end">
+            <PrintButton />
+          </div>
+          <PrintScope title={`${child.name}: timetable`}>
+            <ChildTimetable classIds={classIds} yearGroup={child.year_groups?.name} />
+          </PrintScope>
+          <h4 className="mt-4 text-sm font-medium text-ink">Next two weeks</h4>
+          <div className="mt-2">
+            <UpcomingLessons classIds={classIds || []} basePath="/family/lessons/view" extraQuery={`&child=${child.id}`} emptyLabel="No lessons in the next two weeks." />
+          </div>
+        </div>
+      </details>
+
       {classIds && classIds.length > 0 && (
-        <div className="mt-4 border-t border-gold-light/30 pt-4">
+        <div className="mt-4 border-t border-gold-light pt-4">
           <AnnouncementsFeed classIds={classIds} limit={3} />
         </div>
       )}
-    </div>
+    </section>
   );
 }
 
 function FamilyContent() {
-  const { session } = useLearnSession();
   const supabase = getSupabaseClient();
   const [children, setChildren] = useState<Child[] | null>(null);
   const [newChildName, setNewChildName] = useState("");
@@ -165,77 +175,63 @@ function FamilyContent() {
     }
   };
 
+  const hasChildren = !!children && children.length > 0;
+
+  // What a parent needs first: anything waiting on them, then what's next
+  // for each child, then the detail. Adding a child sits at the bottom
+  // (it's rare), unless there are no children yet.
   return (
     <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }}>
-    <div className="space-y-6">
-      <DashboardHero subtitle="Your children's school life in one place" chips={[{ label: "Children", value: children === null ? "…" : children.length, tone: "yellow" }]} />
-      <ChildDetailsBanner />
-      <JoinLessonCard who={{ kind: "parent" }} />
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="font-serif text-h2 font-semibold text-ink">My children</h1>
-            <p className="mt-1 text-sm text-ink/60">
-              Signed in as {session && session !== "loading" ? session.user.email : ""}.
-            </p>
-          </div>
-          <div className="print:hidden flex items-center gap-2">
-            <ReportConcernLink />
-          </div>
-        </div>
+      <div className="space-y-6">
+        <DashboardHero subtitle="Your children's school life in one place" chips={[{ label: "Children", value: children === null ? "…" : children.length, tone: "yellow" }]} />
+        <ChildDetailsBanner />
+        <SignaturePrompts />
+        <JoinLessonCard who={{ kind: "parent" }} />
 
-        <div className="print:hidden mt-4 flex flex-wrap items-end gap-2 border-t border-gold-light/30 pt-4">
-          <div>
-            <label className="block text-xs font-medium text-ink/70">Child&apos;s name</label>
-            <input
-              value={newChildName}
-              onChange={(e) => setNewChildName(e.target.value)}
-              className="mt-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
-              placeholder="Full name"
-            />
+        {children === null && <div className="h-32 animate-pulse rounded-2xl bg-white" />}
+        {children?.map((child) => (
+          <ChildUpNext key={`next-${child.id}`} child={child} />
+        ))}
+        {children?.map((child) => (
+          <ChildCard key={child.id} child={child} />
+        ))}
+
+        {hasChildren && <FamilyRewards childIds={children.map((c) => c.id)} />}
+        {hasChildren && <FamilyLeaderboard kids={children} />}
+        {hasChildren && <FamilyFees familyChildren={children} />}
+
+        <AnnouncementsFeed />
+
+        <details className="group rounded-2xl border border-gold-light bg-white print:hidden" open={children !== null && !hasChildren ? true : undefined}>
+          <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-3">
+            <h2 className="text-h3 font-semibold text-ink">{hasChildren ? "Add another child" : "Add your child"}</h2>
+            <Icon name="chevronDown" className="h-4 w-4 text-ink/60 transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="border-t border-gold-light p-5">
+            {!hasChildren && children !== null && <p className="mb-3 text-sm text-ink/70">Add your child to see their timetable, homework and reports.</p>}
+            <div className="flex flex-wrap items-end gap-3">
+              <div>
+                <label htmlFor="new-child-name" className="block text-xs font-medium text-ink/70">
+                  Child&apos;s full name
+                </label>
+                <input id="new-child-name" value={newChildName} onChange={(e) => setNewChildName(e.target.value)} className="mt-1 rounded-lg border border-gold-light px-3 py-2 text-sm" placeholder="Maryam Khan" />
+              </div>
+              <div>
+                <label htmlFor="new-child-dob" className="block text-xs font-medium text-ink/70">
+                  Date of birth
+                </label>
+                <input id="new-child-dob" type="date" value={newChildDob} onChange={(e) => setNewChildDob(e.target.value)} className="mt-1 rounded-lg border border-gold-light px-3 py-2 text-sm" />
+              </div>
+              <button type="button" onClick={addChild} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
+                Add child
+              </button>
+            </div>
           </div>
-          <div>
-            <label className="block text-xs font-medium text-ink/70">Date of birth</label>
-            <input
-              type="date"
-              value={newChildDob}
-              onChange={(e) => setNewChildDob(e.target.value)}
-              className="mt-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
-            />
-          </div>
-          <button
-            type="button"
-            onClick={addChild}
-            disabled={busy}
-            className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors"
-          >
-            Add child
-          </button>
-        </div>
+        </details>
+
+        {hasChildren && <DigestPreference />}
+        <IcsFeedLink />
       </div>
-
-      {children === null && <p className="text-sm text-ink/60">Loading…</p>}
-      {children && children.length === 0 && (
-        <p className="text-sm text-ink/60">No children added yet — add your child above to see their timetable.</p>
-      )}
-      <SignaturePrompts />
-
-      {children && children.length > 0 && <FamilyLeaderboard kids={children} />}
-
-      {children && children.length > 0 && <FamilyRewards childIds={children.map((c) => c.id)} />}
-
-      {children?.map((child) => (
-        <ChildCard key={child.id} child={child} />
-      ))}
-
-      {children && children.length > 0 && <FamilyFees familyChildren={children} />}
-
-      <AnnouncementsFeed />
-
-      {children && children.length > 0 && <DigestPreference />}
-
-      <IcsFeedLink />
-    </div>
     </DashboardWithPanel>
   );
 }

@@ -357,7 +357,7 @@ export function HousesAdmin() {
                 Reason
                 <input value={awardReason} maxLength={200} onChange={(e) => setAwardReason(e.target.value)} placeholder="e.g. Charity bake sale" className="mt-1 block w-full rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
               </label>
-              <button type="button" disabled={busy} onClick={award} className="rounded-lg bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800 disabled:opacity-50">
+              <button type="button" disabled={busy} onClick={award} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                 Award
               </button>
             </div>

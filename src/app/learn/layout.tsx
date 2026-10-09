@@ -13,6 +13,8 @@ import { SignatureBanner } from "@/components/learn/SignatureBanner";
 import { CommandPalette } from "@/components/learn/CommandPalette";
 import { ClockChip, ClockInGate } from "@/components/learn/ClockInGate";
 import { Icon } from "@/components/learn/Icon";
+import { ActivityRecorder } from "@/components/learn/feedback/ActivityRecorder";
+import { FeedbackButton } from "@/components/learn/feedback/FeedbackButton";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -61,6 +63,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
   if (!signedIn || !activeSession || !area) {
     return (
       <div className="portal flex min-h-screen flex-col">
+        <ActivityRecorder />
         <header className="sticky top-0 z-40 border-b border-gold-light bg-white">
           <div className="mx-auto flex h-[60px] max-w-[1440px] items-center px-4 sm:px-6 lg:px-8">
             <Link href={homeHref} aria-label="Tarbiyyah Global Academy">
@@ -82,6 +85,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
 
   return (
     <div className="portal min-h-screen">
+      <ActivityRecorder />
       <PortalSidebar area={area} session={activeSession} roles={roles} collapsed={collapsed} onToggle={toggleSidebar} />
 
       <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-out ${collapsed ? "lg:pl-[76px]" : "lg:pl-[272px]"}`}>
@@ -95,6 +99,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
             <div className="ml-auto flex items-center gap-1">
               <CommandPalette area={area} roles={roles.map((r) => r.role)} />
               <ClockChip userId={activeSession.user.id} roles={roles} />
+              <FeedbackButton />
               <Link
                 href="/report-concern"
                 title="Report a concern"

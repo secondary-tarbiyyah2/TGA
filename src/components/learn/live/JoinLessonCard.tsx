@@ -267,7 +267,7 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
                       type="button"
                       onClick={() => join(l, k)}
                       disabled={busy !== null}
-                      className="rounded-xl bg-teal-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-teal-900 disabled:opacity-60"
+                      className="rounded-xl bg-gold-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-gold-900 disabled:opacity-60"
                     >
                       {busy === `${l.id}:${k.id}` ? "Joining…" : l.kids.length > 1 ? `Join lesson — ${k.name}` : "Join lesson"}
                     </button>
@@ -277,7 +277,7 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
                     type="button"
                     onClick={() => join(l, who.kind === "student" ? l.kids[0] ?? null : null)}
                     disabled={busy !== null || (who.kind === "student" && l.kids.length === 0)}
-                    className="rounded-xl bg-teal-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-teal-900 disabled:opacity-60"
+                    className="rounded-xl bg-gold-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-gold-900 disabled:opacity-60"
                   >
                     {busy === `${l.id}:${who.kind === "student" ? l.kids[0]?.id ?? "me" : "me"}` ? "Joining…" : "Join lesson"}
                   </button>
