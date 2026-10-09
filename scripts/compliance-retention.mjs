@@ -90,6 +90,59 @@ const summary = [];
   }
 }
 
+// feedback_tickets (0092): the attached activity log (pages visited,
+// errors, browser details) is only needed while the ticket is being worked
+// on, so it's cleared 90 days after the ticket is closed. The ticket itself
+// and its uploaded files go 2 years after closing. Open tickets are never
+// touched, whatever their age.
+{
+  const cutoff = new Date(Date.now() - 90 * 86400000).toISOString();
+  const { error, count } = await supabase
+    .from("feedback_tickets")
+    .update({ activity: [], environment: null }, { count: "exact" })
+    .in("status", ["done", "wont_fix"])
+    .lt("resolved_at", cutoff)
+    .neq("activity", "[]");
+  if (error) {
+    console.error("feedback_tickets activity cleanup failed:", error.message);
+  } else {
+    await logRun("Feedback ticket activity logs", "delete", count || 0, null);
+    summary.push(`Feedback ticket activity logs: cleared on ${count || 0} ticket(s) closed more than 90 days ago.`);
+  }
+}
+{
+  const cutoff = new Date(Date.now() - 2 * 365 * 86400000).toISOString();
+  const { data: old, error: listError } = await supabase
+    .from("feedback_tickets")
+    .select("id, attachments")
+    .in("status", ["done", "wont_fix"])
+    .lt("resolved_at", cutoff);
+  if (listError) {
+    console.error("feedback_tickets listing failed:", listError.message);
+  } else if (old && old.length > 0) {
+    const paths = old.flatMap((t) => (Array.isArray(t.attachments) ? t.attachments.map((a) => a?.path).filter(Boolean) : []));
+    if (paths.length > 0) {
+      const { error: rmError } = await supabase.storage.from("feedback-attachments").remove(paths);
+      if (rmError) console.error("feedback-attachments cleanup failed:", rmError.message);
+    }
+    const { error, count } = await supabase
+      .from("feedback_tickets")
+      .delete({ count: "exact" })
+      .in(
+        "id",
+        old.map((t) => t.id),
+      );
+    if (error) {
+      console.error("feedback_tickets cleanup failed:", error.message);
+    } else {
+      await logRun("Feedback tickets", "delete", count || 0, `${paths.length} file(s) removed`);
+      summary.push(`Feedback tickets: deleted ${count || 0} ticket(s) closed more than 2 years ago, with ${paths.length} file(s).`);
+    }
+  } else {
+    await logRun("Feedback tickets", "delete", 0, null);
+  }
+}
+
 console.log(summary.join("\n") || "Nothing to report.");
 if (process.env.GITHUB_STEP_SUMMARY) {
   await import("node:fs/promises").then((fs) =>

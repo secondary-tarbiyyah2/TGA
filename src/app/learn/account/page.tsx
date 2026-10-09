@@ -103,6 +103,15 @@ function AccountContent() {
       <ChangePassword />
       {session && session !== "loading" && !roles.every((r) => r.role === "student") && <MessageSettings userId={session.user.id} />}
       {session && session !== "loading" && roles.some((r) => r.role === "parent") && <ParentPinSettings userId={session.user.id} />}
+      <Link href="/feedback" className="flex items-center justify-between gap-3 rounded-2xl border border-gold-light bg-white p-6 hover:bg-cream">
+        <span>
+          <span className="block text-h3 font-semibold text-ink">Your feedback</span>
+          <span className="mt-1 block text-sm text-ink/70">Problems you&apos;ve reported and ideas you&apos;ve shared, with our replies.</span>
+        </span>
+        <span aria-hidden="true" className="text-teal-700">
+          &rarr;
+        </span>
+      </Link>
     </div>
   );
 }

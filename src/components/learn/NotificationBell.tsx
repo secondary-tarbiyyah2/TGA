@@ -29,7 +29,7 @@ export function NotificationBell({ userId }: { userId: string }) {
       const { data: readRow } = await supabase.from("notification_reads").select("last_read_at").eq("user_id", userId).maybeSingle();
       setLastReadAt(readRow?.last_read_at ?? "1970-01-01T00:00:00Z");
 
-      const [{ data: absences }, { data: outstanding }, flaggedResult] = await Promise.all([
+      const [{ data: absences }, { data: outstanding }, flaggedResult, { data: feedback }] = await Promise.all([
         supabase.from("audit_log").select("id, created_at").eq("action", "ABSENCE_ALERT_SENT").order("created_at", { ascending: false }).limit(10),
         // outstanding_signatures is current STATE (who hasn't signed right
         // now), not an event log — it has no created_at to know "when this
@@ -41,6 +41,8 @@ export function NotificationBell({ userId }: { userId: string }) {
         isSafeguardingLead
           ? supabase.from("message_thread_messages").select("id, created_at").eq("flagged", true).order("created_at", { ascending: false }).limit(10)
           : Promise.resolve({ data: [] as { id: string; created_at: string }[] }),
+        // New feedback tickets (0092). RLS returns rows only to head/admin.
+        supabase.from("feedback_tickets").select("id, created_at, kind").eq("status", "new").order("created_at", { ascending: false }).limit(10),
       ]);
 
       const timestamped: Signal[] = [
@@ -50,6 +52,12 @@ export function NotificationBell({ userId }: { userId: string }) {
           message: "A message was flagged for safeguarding review.",
           href: "/admin/compliance",
           createdAt: m.created_at,
+        })),
+        ...((feedback || []) as { id: string; created_at: string; kind: string }[]).map((f) => ({
+          id: `feedback-${f.id}`,
+          message: f.kind === "problem" ? "New problem reported through Feedback." : f.kind === "idea" ? "New improvement idea sent through Feedback." : "New question sent through Feedback.",
+          href: "/admin/feedback",
+          createdAt: f.created_at,
         })),
       ].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
