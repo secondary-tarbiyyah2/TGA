@@ -307,6 +307,13 @@ export function PortalSidebarDrawer(props: { area: PortalArea; session: Session;
     setOpen(false);
   }, [pathname]);
 
+  // The phone tab bar's "Menu" button opens this drawer.
+  useEffect(() => {
+    const openMenu = () => setOpen(true);
+    window.addEventListener("tga-open-menu", openMenu);
+    return () => window.removeEventListener("tga-open-menu", openMenu);
+  }, []);
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);

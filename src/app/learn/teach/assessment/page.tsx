@@ -9,6 +9,7 @@ import { QuranProgressForm } from "@/components/learn/QuranProgressForm";
 import { GcseClassPanel } from "@/components/learn/GcseTracker";
 import { WeeklyTarbiyahNoteForm } from "@/components/learn/WeeklyTarbiyahNoteForm";
 import { useMyClasses } from "@/lib/learn/useMyClasses";
+import { PageHeader } from "@/components/learn/PageHeader";
 
 type Child = { id: string; name: string };
 type AssessmentType = { id: string; name: string };
@@ -136,11 +137,9 @@ function AssessmentContent() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <div className="flex items-center justify-between">
-          <h1 className="font-serif text-h2 font-semibold text-ink">Assessment &amp; grades</h1>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-3">
+      <PageHeader crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Assessment and grades" }]} title="Assessment and grades" subtitle="Record marks and grades for each class, and see how pupils are doing." />
+      <div className="rounded-2xl border border-gold-light bg-white p-6">
+        <div className="flex flex-wrap gap-3">
           <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
             {(classes || []).map((c) => (
               <option key={c.id} value={c.id}>

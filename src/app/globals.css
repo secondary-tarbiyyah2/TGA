@@ -400,3 +400,8 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
   outline: 3px solid var(--color-gold-900);
   outline-offset: 2px;
 }
+
+/* Phone tab bar: clear of the iPhone home indicator. */
+.portal-tabbar {
+  padding-bottom: env(safe-area-inset-bottom);
+}

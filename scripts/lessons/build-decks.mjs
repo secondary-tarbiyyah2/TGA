@@ -1,6 +1,7 @@
 // Builds branded PowerPoint decks from content/lessons/**/*.json.
 //   node scripts/lessons/build-decks.mjs [outDir=out/decks] [--only=subject/year] [--limit=N]
-// Output: <outDir>/<subject>/<year>/<NN>-<slug>.pptx and <outDir>/manifest.json
+// Output: <outDir>/<subject>/<year>/<NN>-<slug>.pptx, a teacher lesson plan
+// <NN>-<slug>-plan.docx next to it, and <outDir>/manifest.json
 // Requires `pptxgenjs` (devDependency). Logos come from public/brand.
 //
 // Each deck is designed for its age group, not one template for everyone:
@@ -20,6 +21,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
+import { buildPlan } from "./lesson-plan.mjs";
 
 const require = createRequire(import.meta.url);
 const PptxGenJS = require("pptxgenjs");
@@ -440,6 +442,15 @@ function buildDeck(file, lesson, nextLesson) {
   pptx.title = `${file.subject} ${YEAR_LABEL(file.year)} – ${lesson.title}`;
   pptx.author = "Tarbiyyah Global Academy";
   pptx.company = "Tarbiyyah Global Academy";
+  // Count slides as they're added so the lesson plan can point to them.
+  const addSlide = pptx.addSlide.bind(pptx);
+  let slideCount = 0;
+  pptx.addSlide = (o) => {
+    slideCount++;
+    return addSlide(o);
+  };
+  const S = { teach: [] };
+  let breaksAdded = 0;
   const subjectSlug = path.basename(path.dirname(file.path));
   const band = bandFor(file.year);
   const B = BAND[band];
@@ -562,6 +573,7 @@ function buildDeck(file, lesson, nextLesson) {
   // 4. Starter ---------------------------------------------------------------
   {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
+    S.starter = slideCount;
     header(s, ctx, B.starterTitle, B.starterKicker, 0, band === "early" ? null : 5);
     const items = (lesson.starter || []).slice(0, 4);
     if (band === "early") {
@@ -577,6 +589,7 @@ function buildDeck(file, lesson, nextLesson) {
   // 5. Teach slides ----------------------------------------------------------
   teach.forEach((t, i) => {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
+    S.teach.push(slideCount);
     const kicker = band === "early" ? "Let's learn" : band === "junior" ? `Learn · part ${i + 1} of ${teach.length}` : `Explain · ${i + 1} of ${teach.length}`;
     header(s, ctx, clean(t.heading), kicker, 1);
     const rawBullets = (t.bullets || []).map(clean).filter(Boolean);
@@ -608,13 +621,14 @@ function buildDeck(file, lesson, nextLesson) {
       }
     }
     s.addNotes(clean(t.note));
-    if (quran && teach.length >= 4 && i === 1) breakSlide(pptx, ctx, nextBreak());
-    else if (!quran && band !== "senior" && i === Math.min(1, teach.length - 2)) breakSlide(pptx, ctx, nextBreak());
+    if (quran && teach.length >= 4 && i === 1) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
+    else if (!quran && band !== "senior" && i === Math.min(1, teach.length - 2)) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
   });
 
   // 6. Guided practice ---------------------------------------------------------
   {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
+    S.guided = slideCount;
     header(s, ctx, B.practiceTitle, B.practiceKicker, 2);
     const items = (lesson.practice || []).slice(0, 5);
     if (band === "senior") {
@@ -634,7 +648,7 @@ function buildDeck(file, lesson, nextLesson) {
     s.addNotes("Work through these with the class, modelling your thinking aloud. Check every pupil (mini-whiteboards, chat or thumbs) before moving on.");
   }
 
-  if (quran) breakSlide(pptx, ctx, nextBreak());
+  if (quran) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
 
   // 7. Independent -------------------------------------------------------------
   {
@@ -642,6 +656,7 @@ function buildDeck(file, lesson, nextLesson) {
     const items = (lesson.independent || []).slice(0, 4);
     const tiered = band !== "early" && items.length >= 3;
     const mins = Math.max(5, Math.round((duration * 0.3) / 5) * 5);
+    S.independent = slideCount;
     header(s, ctx, B.independentTitle, B.independentKicker, 3, band === "early" ? null : mins);
     if (tiered) {
       const tiers =
@@ -674,6 +689,7 @@ function buildDeck(file, lesson, nextLesson) {
   // 8. Exit -------------------------------------------------------------------
   {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
+    S.exit = slideCount;
     header(s, ctx, B.exitTitle, B.exitKicker, 4);
     const items = (lesson.exit || []).slice(0, 3);
     stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: 11.8, h: 3.3 }, { maxH: 1.3 });
@@ -693,6 +709,7 @@ function buildDeck(file, lesson, nextLesson) {
   // 9. Homework + close ---------------------------------------------------------
   {
     const s = pptx.addSlide();
+    S.close = slideCount;
     s.background = { color: band === "early" ? "FFFBF3" : CREAM };
     s.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
     const textW = band === "early" ? 8.2 : band === "junior" ? 10.0 : 11.8;
@@ -714,7 +731,8 @@ function buildDeck(file, lesson, nextLesson) {
     if (band === "early") najm(s, 9.6, 1.4, 2.9);
     s.addNotes(lesson.send ? `SEND / EAL / stretch: ${clean(lesson.send)}` : "");
   }
-  return pptx;
+  S.total = slideCount;
+  return { pptx, slides: S, breaks: breaksAdded, ctx };
 }
 
 function slide_circleNumber(s, x, y, d, color, label) {
@@ -744,8 +762,10 @@ for (const f of walk(LESSONS).sort()) {
     const dir = path.join(outDir, subjectSlug, year);
     fs.mkdirSync(dir, { recursive: true });
     const next = ordered.find((l) => l.n === lesson.n + 1) || null;
-    const deck = buildDeck(file, lesson, next);
-    await deck.writeFile({ fileName: path.join(dir, name) });
+    const { pptx, slides, breaks, ctx } = buildDeck(file, lesson, next);
+    await pptx.writeFile({ fileName: path.join(dir, name) });
+    const planName = name.replace(/\.pptx$/, "-plan.docx");
+    fs.writeFileSync(path.join(dir, planName), await buildPlan(file, lesson, { yearLabel: YEAR_LABEL(year), accent: ctx.accent, band: ctx.band, next, slides, breaks }));
     built++;
     manifest.push({
       subject_slug: subjectSlug,
@@ -758,6 +778,7 @@ for (const f of walk(LESSONS).sort()) {
       duration: lesson.duration || null,
       objectives: lesson.objectives,
       file: path.join(subjectSlug, year, name),
+      plan_file: path.join(subjectSlug, year, planName),
     });
   }
 }

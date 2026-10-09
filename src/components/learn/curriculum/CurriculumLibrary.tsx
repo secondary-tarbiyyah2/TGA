@@ -1,13 +1,19 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { uploadClassFile } from "@/components/learn/class/Attachments";
+import { Tabs } from "@/components/learn/Tabs";
+import { Icon } from "@/components/learn/Icon";
+import { makeZip, type ZipEntry } from "@/lib/learn/zip";
 import {
   LESSON_COLUMNS,
   YEARS,
   downloadDeck,
   fileNameFor,
+  pathFor,
+  unitFolderName,
+  type LessonFileKind,
   replaceDeck,
   saveBlob,
   yearLabel,
@@ -41,9 +47,77 @@ function Modal({ title, onClose, children, wide }: { title: string; onClose: () 
   );
 }
 
+const YEAR_KEY = "tga-library-year";
+const KIND_LABEL: Record<LessonFileKind, string> = {
+  "slides-pdf": "Slides (PDF)",
+  "slides-pptx": "Slides (PowerPoint, editable)",
+  "plan-pdf": "Lesson plan (PDF)",
+  "plan-docx": "Lesson plan (Word, editable)",
+};
+const MIME: Record<LessonFileKind, string> = {
+  "slides-pdf": "application/pdf",
+  "slides-pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  "plan-pdf": "application/pdf",
+  "plan-docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+};
+
+/** "Year 5" / "Reception" / "Y5" -> "y5" / "reception". */
+function yearFromName(name: string | null | undefined): string | null {
+  const n = String(name || "").toLowerCase();
+  if (n.includes("reception")) return "reception";
+  const m = n.match(/(?:year|y)\s*(\d{1,2})/);
+  return m && Number(m[1]) >= 1 && Number(m[1]) <= 11 ? `y${Number(m[1])}` : null;
+}
+
+/** Small drop-down menu of actions. */
+function ActionMenu({ label, items, align = "right" }: { label: React.ReactNode; items: { label: string; onClick: () => void; disabled?: boolean }[]; align?: "left" | "right" }) {
+  const [open, setOpen] = useState(false);
+  const id = useId();
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: MouseEvent | KeyboardEvent) => {
+      if (e instanceof KeyboardEvent ? e.key === "Escape" : !(e.target as Element)?.closest?.(`[data-menu="${id}"]`)) setOpen(false);
+    };
+    document.addEventListener("mousedown", close);
+    document.addEventListener("keydown", close);
+    return () => {
+      document.removeEventListener("mousedown", close);
+      document.removeEventListener("keydown", close);
+    };
+  }, [open, id]);
+  return (
+    <div className="relative" data-menu={id}>
+      <button type="button" className={btn} aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+        {label}
+      </button>
+      {open && (
+        <ul role="menu" className={`absolute z-20 mt-1 min-w-[15rem] rounded-xl border border-gold-light bg-white p-1 shadow-lg ${align === "right" ? "right-0" : "left-0"}`}>
+          {items.map((it) => (
+            <li key={it.label} role="none">
+              <button
+                type="button"
+                role="menuitem"
+                disabled={it.disabled}
+                onClick={() => {
+                  setOpen(false);
+                  it.onClick();
+                }}
+                className="block w-full rounded-lg px-3 py-2 text-left text-sm text-ink hover:bg-cream disabled:opacity-50"
+              >
+                {it.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const supabase = getSupabaseClient();
-  const [year, setYear] = useState("y7");
+  const [year, setYearState] = useState<string | null>(null);
+  const [myYears, setMyYears] = useState<string[]>([]);
   const [subject, setSubject] = useState("");
   const [search, setSearch] = useState("");
   const [lessons, setLessons] = useState<CurriculumLesson[] | null>(null);
@@ -52,14 +126,54 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const [replacing, setReplacing] = useState<CurriculumLesson | null>(null);
   const [history, setHistory] = useState<CurriculumLesson | null>(null);
   const [sharing, setSharing] = useState<CurriculumLesson | null>(null);
-  const [viewing, setViewing] = useState<{ name: string; url: string } | null>(null);
+  const [viewing, setViewing] = useState<{ lesson: CurriculumLesson; kind: "slides-pdf" | "plan-pdf"; url: string | null } | null>(null);
+  const [openLesson, setOpenLesson] = useState<string | null>(null);
+
+  const setYear = (y: string) => {
+    setYearState(y);
+    setSubject("");
+    try {
+      window.localStorage.setItem(YEAR_KEY, y);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  // Start on the year you last looked at, else the year of the first class you teach.
+  useEffect(() => {
+    if (!supabase) return;
+    let alive = true;
+    (async () => {
+      let saved: string | null = null;
+      try {
+        saved = window.localStorage.getItem(YEAR_KEY);
+      } catch {
+        /* ignore */
+      }
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      let mine: string[] = [];
+      if (user) {
+        const { data } = await supabase.from("user_roles").select("classes(year_group)").eq("user_id", user.id).eq("scope_type", "class");
+        mine = [...new Set(((data as unknown as { classes: { year_group: string | null } | null }[]) || []).map((r) => yearFromName(r.classes?.year_group)).filter(Boolean) as string[])];
+        mine.sort((a, b) => YEARS.indexOf(a) - YEARS.indexOf(b));
+      }
+      if (!alive) return;
+      setMyYears(mine);
+      setYearState(saved && YEARS.includes(saved) ? saved : mine[0] || "y7");
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [supabase]);
 
   const load = useCallback(async () => {
-    if (!supabase) return;
+    if (!supabase || !year) return;
     setLessons(null);
     const { data, error } = await supabase.from("curriculum_lessons").select(LESSON_COLUMNS).eq("year", year).order("subject").order("lesson_no");
     if (error) {
-      setMessage("Couldn't load the curriculum library.");
+      setMessage("Couldn't load the Lesson library. Refresh to try again.");
       setLessons([]);
       return;
     }
@@ -72,146 +186,238 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   }, [load]);
 
   const subjects = useMemo(() => {
-    const m = new Map<string, string>();
-    (lessons || []).forEach((l) => m.set(l.subject_slug, l.subject));
-    return [...m.entries()].sort((a, b) => a[1].localeCompare(b[1]));
+    const m = new Map<string, { name: string; count: number }>();
+    (lessons || []).forEach((l) => m.set(l.subject_slug, { name: l.subject, count: (m.get(l.subject_slug)?.count || 0) + 1 }));
+    return [...m.entries()].sort((a, b) => a[1].name.localeCompare(b[1].name));
   }, [lessons]);
 
   const shown = useMemo(() => {
     const q = search.trim().toLowerCase();
-    return (lessons || []).filter((l) => (!subject || l.subject_slug === subject) && (!q || l.title.toLowerCase().includes(q) || (l.unit || "").toLowerCase().includes(q)));
+    return (lessons || []).filter(
+      (l) => (!subject || l.subject_slug === subject) && (!q || [l.title, l.unit || "", ...(l.objectives || [])].some((v) => v.toLowerCase().includes(q))),
+    );
   }, [lessons, subject, search]);
 
   const grouped = useMemo(() => {
     const out = new Map<string, Map<string, CurriculumLesson[]>>();
     shown.forEach((l) => {
-      const s = out.get(l.subject) || new Map<string, CurriculumLesson[]>();
+      const s2 = out.get(l.subject) || new Map<string, CurriculumLesson[]>();
       const u = l.unit || "Lessons";
-      s.set(u, [...(s.get(u) || []), l]);
-      out.set(l.subject, s);
+      s2.set(u, [...(s2.get(u) || []), l]);
+      out.set(l.subject, s2);
     });
     return out;
   }, [shown]);
 
-  const download = async (l: CurriculumLesson, kind: "pptx" | "pdf") => {
-    const path = kind === "pptx" ? l.deck_path : l.pdf_path;
-    if (!path) return;
-    setBusyId(l.id + kind);
-    const blob = await downloadDeck(path);
-    setBusyId(null);
-    if (!blob) return setMessage("Couldn't download that file.");
-    saveBlob(blob, fileNameFor(l, kind));
+  const fetchFile = async (l: CurriculumLesson, kind: LessonFileKind): Promise<Blob | null> => {
+    const p = pathFor(l, kind);
+    return p ? downloadDeck(p) : null;
   };
 
-  const view = async (l: CurriculumLesson) => {
-    if (!l.pdf_path) return;
-    setBusyId(l.id + "view");
-    const blob = await downloadDeck(l.pdf_path);
+  const download = async (l: CurriculumLesson, kind: LessonFileKind) => {
+    setBusyId(l.id + kind);
+    const blob = await fetchFile(l, kind);
     setBusyId(null);
-    if (!blob) return setMessage("Couldn't open that file.");
-    setViewing({ name: l.title, url: URL.createObjectURL(new Blob([blob], { type: "application/pdf" })) });
+    if (!blob) return setMessage("Couldn't download that file.");
+    saveBlob(new Blob([blob], { type: MIME[kind] }), fileNameFor(l, kind));
+  };
+
+  const view = async (l: CurriculumLesson, kind: "slides-pdf" | "plan-pdf") => {
+    if (viewing?.url) URL.revokeObjectURL(viewing.url);
+    setViewing({ lesson: l, kind, url: null });
+    const blob = await fetchFile(l, kind);
+    if (!blob) {
+      setViewing(null);
+      return setMessage("Couldn't open that file.");
+    }
+    setViewing({ lesson: l, kind, url: URL.createObjectURL(new Blob([blob], { type: "application/pdf" })) });
   };
 
   const closeViewer = () => {
-    if (viewing) URL.revokeObjectURL(viewing.url);
+    if (viewing?.url) URL.revokeObjectURL(viewing.url);
     setViewing(null);
   };
 
+  const downloadUnit = async (subjectName: string, unit: string, ls: CurriculumLesson[], withEditable: boolean) => {
+    const key = `unit:${subjectName}:${unit}`;
+    setBusyId(key);
+    setMessage(null);
+    const folder = unitFolderName(ls[0].year, subjectName, unit);
+    const kinds: LessonFileKind[] = withEditable ? ["slides-pdf", "plan-pdf", "slides-pptx", "plan-docx"] : ["slides-pdf", "plan-pdf"];
+    const entries: ZipEntry[] = [];
+    let missing = 0;
+    for (const l of ls) {
+      for (const k of kinds) {
+        if (!pathFor(l, k)) continue;
+        const blob = await fetchFile(l, k);
+        if (!blob) {
+          missing++;
+          continue;
+        }
+        entries.push({ name: `${folder}/${fileNameFor(l, k)}`, data: new Uint8Array(await blob.arrayBuffer()) });
+      }
+    }
+    setBusyId(null);
+    if (!entries.length) return setMessage("Nothing to download for that unit yet.");
+    saveBlob(makeZip(entries), `${folder}.zip`);
+    if (missing) setMessage(`Downloaded the unit, but ${missing} file${missing === 1 ? "" : "s"} couldn't be fetched.`);
+  };
+
+  const yearTabs = YEARS.map((y) => ({ key: y, label: myYears.includes(y) ? `${yearLabel(y).replace("Year ", "Y")} •` : yearLabel(y).replace("Year ", "Y") }));
+
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-end gap-3 rounded-2xl border border-gold-light bg-white p-4">
-        <label className="text-sm font-medium text-ink/80">
-          Year group
-          <select value={year} onChange={(e) => { setYear(e.target.value); setSubject(""); }} className="mt-1 block rounded-md border border-gold-light px-3 py-2 text-sm">
-            {YEARS.map((y) => (
-              <option key={y} value={y}>
-                {yearLabel(y)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="text-sm font-medium text-ink/80">
-          Subject
-          <select value={subject} onChange={(e) => setSubject(e.target.value)} className="mt-1 block rounded-md border border-gold-light px-3 py-2 text-sm">
-            <option value="">All subjects</option>
-            {subjects.map(([slug, name]) => (
-              <option key={slug} value={slug}>
-                {name}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="min-w-[12rem] flex-1 text-sm font-medium text-ink/80">
-          Search
-          <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Lesson or unit title" className="mt-1 block w-full rounded-md border border-gold-light px-3 py-2 text-sm" />
-        </label>
-        <p className="pb-2 text-sm text-ink/55">{lessons ? `${shown.length} lesson${shown.length === 1 ? "" : "s"}` : "Loading…"}</p>
+      <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <p className="text-sm font-semibold text-ink">Year group</p>
+          {myYears.length > 0 && <p className="text-xs text-ink/65">• = a year you teach</p>}
+        </div>
+        {year && <Tabs variant="switch" items={yearTabs} value={year} onChange={setYear} label="Year group" />}
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Subject">
+          <button type="button" aria-pressed={!subject} onClick={() => setSubject("")} className={`rounded-full border px-3 py-1.5 text-sm font-medium ${!subject ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/80 hover:bg-cream"}`}>
+            All subjects{lessons ? ` (${lessons.length})` : ""}
+          </button>
+          {subjects.map(([slug, info]) => (
+            <button key={slug} type="button" aria-pressed={subject === slug} onClick={() => setSubject(slug)} className={`rounded-full border px-3 py-1.5 text-sm font-medium ${subject === slug ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/80 hover:bg-cream"}`}>
+              {info.name} ({info.count})
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search lesson titles, units or objectives" aria-label="Search lessons" className="min-w-[14rem] flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm" />
+          <p className="text-sm text-ink/65" aria-live="polite">
+            {lessons ? `${shown.length} lesson${shown.length === 1 ? "" : "s"}` : "Loading…"}
+          </p>
+        </div>
       </div>
 
       {message && (
-        <p role="status" className="rounded-md border border-gold-light bg-cream px-3 py-2 text-sm text-ink/80">
+        <p role="status" className="rounded-lg border border-gold-light bg-cream px-3 py-2 text-sm text-ink/80">
           {message}
         </p>
       )}
 
-      {lessons && shown.length === 0 && <p className="text-sm text-ink/60">No lessons found for that selection.</p>}
+      {lessons === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
+      {lessons && shown.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No lessons match. Try another subject or clear the search.</p>}
 
       {[...grouped.entries()].map(([subjectName, units]) => (
-        <section key={subjectName} className="rounded-2xl border border-gold-light bg-white">
-          <h2 className="border-b border-gold-light px-4 py-3 text-base font-semibold text-ink">{subjectName}</h2>
-          {[...units.entries()].map(([unit, ls]) => (
-            <div key={unit} className="border-b border-gold-light/60 last:border-b-0">
-              <p className="bg-cream/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink/55">{unit}</p>
-              <ul>
-                {ls.map((l) => (
-                  <li key={l.id} className="flex flex-wrap items-center gap-2 border-t border-gold-light/40 px-4 py-2.5 first:border-t-0">
-                    <span className="w-8 shrink-0 text-sm font-semibold tabular-nums text-ink/65">{l.lesson_no}</span>
-                    <div className="min-w-[12rem] flex-1">
-                      <p className="text-sm font-medium text-ink">{l.title}</p>
-                      <p className="text-xs text-ink/55">
-                        {l.duration ? `${l.duration} min` : ""}
-                        {l.version > 1 && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 font-medium text-teal-900">Edited · v{l.version}</span>}
-                      </p>
-                    </div>
-                    {l.deck_path ? (
-                      <div className="flex flex-wrap gap-1.5">
-                        {l.pdf_path && (
-                          <button type="button" className={btn} onClick={() => view(l)} disabled={busyId === l.id + "view"}>
-                            View
+        <section key={subjectName} aria-label={subjectName} className="space-y-3">
+          <h2 className="text-h3 font-semibold text-ink">{subjectName}</h2>
+          {[...units.entries()].map(([unit, ls], ui) => {
+            const unitKey = `unit:${subjectName}:${unit}`;
+            const minutes = ls.reduce((n, l) => n + (l.duration || 0), 0);
+            return (
+              <details key={unit} open={ui === 0 || !!search.trim() || undefined} className="group overflow-visible rounded-2xl border border-gold-light bg-white">
+                <summary className="flex cursor-pointer list-none flex-wrap items-center gap-x-3 gap-y-1 px-4 py-3">
+                  <Icon name="chevronDown" className="h-4 w-4 shrink-0 text-ink/60 transition-transform group-open:rotate-180" />
+                  <span className="min-w-0 flex-1 font-semibold text-ink">{unit}</span>
+                  <span className="text-xs text-ink/65">
+                    {ls.length} lesson{ls.length === 1 ? "" : "s"}
+                    {minutes ? ` · ${Math.round(minutes / 60 * 10) / 10} h` : ""}
+                  </span>
+                </summary>
+                <div className="flex flex-wrap items-center gap-2 border-t border-gold-light bg-cream/50 px-4 py-2">
+                  <span className="text-xs text-ink/70">Whole unit:</span>
+                  <button type="button" className={btn} disabled={busyId === unitKey} onClick={() => downloadUnit(subjectName, unit, ls, false)}>
+                    {busyId === unitKey ? "Preparing…" : "Download slides + plans (ZIP)"}
+                  </button>
+                  <button type="button" className={btn} disabled={busyId === unitKey} onClick={() => downloadUnit(subjectName, unit, ls, true)}>
+                    Include editable files
+                  </button>
+                </div>
+                <ol>
+                  {ls.map((l) => {
+                    const expanded = openLesson === l.id;
+                    return (
+                      <li key={l.id} className="border-t border-gold-light/70 px-4 py-3">
+                        <div className="flex flex-wrap items-center gap-3">
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-cream text-sm font-semibold tabular-nums text-ink">{l.lesson_no}</span>
+                          <button type="button" onClick={() => setOpenLesson(expanded ? null : l.id)} aria-expanded={expanded} className="min-w-[12rem] flex-1 text-left">
+                            <span className="block text-sm font-semibold text-ink">{l.title}</span>
+                            <span className="block text-xs text-ink/65">
+                              {l.duration ? `${l.duration} min` : ""}
+                              {(l.objectives || []).length ? ` · ${l.objectives.length} objective${l.objectives.length === 1 ? "" : "s"}` : ""}
+                              {l.version > 1 && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 font-medium text-teal-900">Edited · v{l.version}</span>}
+                            </span>
                           </button>
+                          {l.deck_path ? (
+                            <div className="flex flex-wrap items-center gap-1.5">
+                              {l.pdf_path && (
+                                <button type="button" className={btnPrimary} onClick={() => view(l, "slides-pdf")}>
+                                  View slides
+                                </button>
+                              )}
+                              {l.plan_pdf_path && (
+                                <button type="button" className={btn} onClick={() => view(l, "plan-pdf")}>
+                                  Lesson plan
+                                </button>
+                              )}
+                              <ActionMenu
+                                label={busyId?.startsWith(l.id) ? "Downloading…" : "Download"}
+                                items={(Object.keys(KIND_LABEL) as LessonFileKind[]).filter((k) => pathFor(l, k)).map((k) => ({ label: KIND_LABEL[k], onClick: () => download(l, k) }))}
+                              />
+                              <button type="button" className={btn} onClick={() => setSharing(l)}>
+                                Share to class
+                              </button>
+                              <ActionMenu
+                                label={<span aria-label="More actions">⋯</span>}
+                                items={[
+                                  { label: "Upload my edited version", onClick: () => setReplacing(l) },
+                                  { label: "Version history", onClick: () => setHistory(l) },
+                                ]}
+                              />
+                            </div>
+                          ) : (
+                            <span className="text-xs text-ink/65">Slides not built yet</span>
+                          )}
+                        </div>
+                        {expanded && (l.objectives || []).length > 0 && (
+                          <ul className="ml-12 mt-2 list-disc space-y-0.5 pl-4 text-sm text-ink/80">
+                            {l.objectives.map((o) => (
+                              <li key={o}>{o}</li>
+                            ))}
+                          </ul>
                         )}
-                        <button type="button" className={btn} onClick={() => download(l, "pptx")} disabled={busyId === l.id + "pptx"}>
-                          PowerPoint
-                        </button>
-                        {l.pdf_path && (
-                          <button type="button" className={btn} onClick={() => download(l, "pdf")} disabled={busyId === l.id + "pdf"}>
-                            PDF
-                          </button>
-                        )}
-                        <button type="button" className={btn} onClick={() => setReplacing(l)}>
-                          Upload edited
-                        </button>
-                        <button type="button" className={btn} onClick={() => setHistory(l)}>
-                          History
-                        </button>
-                        <button type="button" className={btnPrimary} onClick={() => setSharing(l)}>
-                          Share to class
-                        </button>
-                      </div>
-                    ) : (
-                      <span className="text-xs text-ink/65">Deck not built yet</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </details>
+            );
+          })}
         </section>
       ))}
 
       {viewing && (
-        <Modal title={viewing.name} onClose={closeViewer} wide>
-          <iframe src={viewing.url} title={viewing.name} className="h-full min-h-[70vh] w-full border-0" />
+        <Modal title={`${viewing.lesson.title}: ${viewing.kind === "plan-pdf" ? "lesson plan" : "slides"}`} onClose={closeViewer} wide>
+          <div className="flex h-full flex-col">
+            <div className="flex flex-wrap items-center gap-2 border-b border-gold-light px-4 py-2">
+              <Tabs
+                variant="switch"
+                items={[
+                  { key: "slides-pdf", label: "Slides" },
+                  ...(viewing.lesson.plan_pdf_path ? [{ key: "plan-pdf", label: "Lesson plan" }] : []),
+                ]}
+                value={viewing.kind}
+                onChange={(k) => view(viewing.lesson, k as "slides-pdf" | "plan-pdf")}
+                label="Show"
+              />
+              <span className="flex-1" />
+              {viewing.url && (
+                <a href={viewing.url} target="_blank" rel="noopener noreferrer" className={btn}>
+                  Open full screen
+                </a>
+              )}
+              <button type="button" className={btn} onClick={() => download(viewing.lesson, viewing.kind)}>
+                Download
+              </button>
+            </div>
+            {viewing.url ? (
+              <iframe src={viewing.url} title={viewing.lesson.title} className="min-h-[70vh] w-full flex-1 border-0" />
+            ) : (
+              <p className="p-8 text-center text-sm text-ink/65">Opening…</p>
+            )}
+          </div>
         </Modal>
       )}
       {replacing && (
@@ -383,7 +589,7 @@ function ShareDialog({ lesson, area, onClose, onDone }: { lesson: CurriculumLess
         setBusy(false);
         return setError("Couldn't read the lesson file.");
       }
-      const file = new File([blob], fileNameFor(lesson, it.ext), { type: it.mime });
+      const file = new File([blob], fileNameFor(lesson, it.ext === "pdf" ? "slides-pdf" : "slides-pptx"), { type: it.mime });
       const r = await uploadClassFile(classId, file);
       if ("error" in r) {
         setBusy(false);

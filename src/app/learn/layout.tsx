@@ -15,6 +15,7 @@ import { ClockChip, ClockInGate } from "@/components/learn/ClockInGate";
 import { Icon } from "@/components/learn/Icon";
 import { ActivityRecorder } from "@/components/learn/feedback/ActivityRecorder";
 import { FeedbackButton } from "@/components/learn/feedback/FeedbackButton";
+import { MobileTabBar } from "@/components/learn/MobileTabBar";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -114,7 +115,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
           </div>
         </header>
 
-        <main id="main" className="flex-1">
+        <main id="main" className="flex-1 pb-20 lg:pb-0">
           <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
             <SignatureBanner />
             <ClockInGate userId={activeSession.user.id} roles={roles}>
@@ -123,6 +124,7 @@ export default function LearnLayout({ children }: { children: React.ReactNode })
           </div>
         </main>
       </div>
+      <MobileTabBar area={area} roles={roles.map((r) => r.role)} />
     </div>
   );
 }
