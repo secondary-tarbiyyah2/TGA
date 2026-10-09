@@ -11,6 +11,15 @@ name: Deploy Supabase backend
 #                             and as the Edge Functions' own secret for
 #                             sending booking emails
 #
+# Optional, to send through Amazon SES instead (see SETUP.md, "Email via
+# Amazon SES"). When set they take priority over Resend, which stays as the
+# fallback:
+#   AWS_SES_REGION, AWS_SES_ACCESS_KEY_ID, AWS_SES_SECRET_ACCESS_KEY
+#                          — Edge Functions send via the SES API
+#   SES_SMTP_USER, SES_SMTP_PASS
+#                          — Supabase Auth (sign-in/magic-link emails) uses
+#                             SES SMTP instead of Resend SMTP
+#
 # Assumes a Supabase project named "TGA" already exists on the account tied
 # to SUPABASE_ACCESS_TOKEN (per the original setup instructions). This
 # workflow finds it by name rather than a hardcoded project ref, so no ref
@@ -182,6 +191,21 @@ jobs:
             supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" MS_TENANT_ID="$MS_TENANT_ID" MS_CLIENT_ID="$MS_CLIENT_ID" MS_CLIENT_SECRET="$MS_CLIENT_SECRET" MS_SENDER_EMAIL="$MS_SENDER_EMAIL"
           fi
 
+      # Amazon SES (see _shared/ses.ts). Only set when all three secrets
+      # exist, so blanks never overwrite a working server secret. When set,
+      # Edge Functions send via SES and only fall back to Resend on failure.
+      - name: Set Amazon SES mail secrets (if provided)
+        env:
+          AWS_SES_REGION: ${{ secrets.AWS_SES_REGION }}
+          AWS_SES_ACCESS_KEY_ID: ${{ secrets.AWS_SES_ACCESS_KEY_ID }}
+          AWS_SES_SECRET_ACCESS_KEY: ${{ secrets.AWS_SES_SECRET_ACCESS_KEY }}
+        run: |
+          if [ -n "$AWS_SES_REGION" ] && [ -n "$AWS_SES_ACCESS_KEY_ID" ] && [ -n "$AWS_SES_SECRET_ACCESS_KEY" ]; then
+            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" AWS_SES_REGION="$AWS_SES_REGION" AWS_SES_ACCESS_KEY_ID="$AWS_SES_ACCESS_KEY_ID" AWS_SES_SECRET_ACCESS_KEY="$AWS_SES_SECRET_ACCESS_KEY"
+          else
+            echo "AWS_SES_* not set in repo secrets; Edge Functions send via Resend."
+          fi
+
       # Video calls (BigBlueButton). Only set when the repo has the secrets,
       # so an empty value never overwrites a server secret set by hand.
       # Until they exist, booking-join falls back to the Teams link.
@@ -299,25 +323,45 @@ jobs:
           supabase functions deploy open-evening-book --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy open-evening-reminders --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
 
-      - name: Configure Auth (magic link via Resend SMTP)
+      # Sign-in emails: Amazon SES SMTP when SES_SMTP_USER/SES_SMTP_PASS (and
+      # AWS_SES_REGION) are set, otherwise Resend SMTP. Built with jq so a
+      # password containing + / = or quotes can't break the JSON.
+      - name: Configure Auth (magic link via SES or Resend SMTP)
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          AWS_SES_REGION: ${{ secrets.AWS_SES_REGION }}
+          SES_SMTP_USER: ${{ secrets.SES_SMTP_USER }}
+          SES_SMTP_PASS: ${{ secrets.SES_SMTP_PASS }}
+          LEARN_SITE_URL: ${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}
         run: |
           set -euo pipefail
+          if [ -n "$SES_SMTP_USER" ] && [ -n "$SES_SMTP_PASS" ] && [ -n "$AWS_SES_REGION" ]; then
+            SMTP_HOST="email-smtp.${AWS_SES_REGION}.amazonaws.com"; SMTP_USER="$SES_SMTP_USER"; SMTP_PASS="$SES_SMTP_PASS"
+            echo "Auth emails: Amazon SES SMTP ($SMTP_HOST)"
+          else
+            SMTP_HOST="smtp.resend.com"; SMTP_USER="resend"; SMTP_PASS="$RESEND_API_KEY"
+            echo "Auth emails: Resend SMTP"
+          fi
+          jq -n \
+            --arg host "$SMTP_HOST" --arg user "$SMTP_USER" --arg pass "$SMTP_PASS" --arg learn "$LEARN_SITE_URL" \
+            '{
+              site_url: "https://globalacademy.tarbiyyah.co.uk",
+              uri_allow_list: ("https://globalacademy.tarbiyyah.co.uk/**," + $learn + "/**,http://localhost:3000/**"),
+              external_email_enabled: true,
+              mailer_autoconfirm: false,
+              smtp_admin_email: "noreply@globalacademy.tarbiyyah.co.uk",
+              smtp_host: $host,
+              smtp_port: "465",
+              smtp_user: $user,
+              smtp_pass: $pass,
+              smtp_sender_name: "Tarbiyyah Global Academy"
+            }' > /tmp/auth-config.json
           curl -sS -X PATCH "https://api.supabase.com/v1/projects/${{ steps.project.outputs.ref }}/config/auth" \
             -H "Authorization: Bearer ${SUPABASE_ACCESS_TOKEN}" \
             -H "Content-Type: application/json" \
-            -d '{
-              "site_url": "https://globalacademy.tarbiyyah.co.uk",
-              "uri_allow_list": "https://globalacademy.tarbiyyah.co.uk/**,${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}/**,http://localhost:3000/**",
-              "external_email_enabled": true,
-              "mailer_autoconfirm": false,
-              "smtp_admin_email": "noreply@globalacademy.tarbiyyah.co.uk",
-              "smtp_host": "smtp.resend.com",
-              "smtp_port": "465",
-              "smtp_user": "resend",
-              "smtp_pass": "${{ secrets.RESEND_API_KEY }}",
-              "smtp_sender_name": "Tarbiyyah Global Academy"
-            }' \
+            --data @/tmp/auth-config.json \
             --fail-with-body
+          rm -f /tmp/auth-config.json
 
       - name: Report public config (add these to the site's env)
         run: |

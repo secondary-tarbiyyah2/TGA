@@ -1,5 +1,10 @@
-// Sends branded HTML email via the Resend API, optionally with an .ics
-// attachment (base64-encoded, per Resend's attachments format).
+// Sends branded HTML email, optionally with an .ics or other attachments.
+// Providers are tried in order, each only if its secrets are set:
+//   1. Microsoft 365 (Graph) — from the school's Outlook mailbox
+//   2. Amazon SES            — see ./ses.ts (AWS_SES_* secrets)
+//   3. Resend                — RESEND_API_KEY
+// so switching provider is a matter of adding or removing secrets.
+import { sendViaSes, sesConfigured } from "./ses.ts";
 
 const BRAND = {
   gold: "#B08E45",
@@ -121,18 +126,40 @@ export async function sendEmail(opts: {
     if (g.ok) return g;
     graphFailure = g.detail;
   }
-  const apiKey = Deno.env.get("RESEND_API_KEY");
-  if (!apiKey) return { ok: false, detail: graphFailure || "No email provider configured" };
-
   const fromEmail = Deno.env.get("MAIL_FROM_EMAIL") || "noreply@globalacademy.tarbiyyah.co.uk";
   const fromName = Deno.env.get("MAIL_FROM_NAME") || "Tarbiyyah Global Academy";
+  const replyTo = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+
+  // Amazon SES. The From address must be on the verified SES domain
+  // (globalacademy.tarbiyyah.co.uk), which MAIL_FROM_EMAIL is.
+  let sesFailure = "";
+  if (sesConfigured()) {
+    const sesAttachments = [
+      ...(opts.icsContent ? [{ filename: opts.icsFilename || "invite.ics", content: btoa(unescape(encodeURIComponent(opts.icsContent))), contentType: "text/calendar; method=REQUEST; charset=UTF-8" }] : []),
+      ...(opts.attachments || []),
+    ];
+    const s = await sendViaSes({
+      from: `${fromName} <${fromEmail}>`,
+      to: opts.toName ? `${opts.toName} <${opts.to}>` : opts.to,
+      replyTo,
+      subject: opts.subject,
+      html: opts.html,
+      attachments: sesAttachments,
+    });
+    if (s.ok) return s;
+    sesFailure = s.detail;
+  }
+  const earlier = [graphFailure, sesFailure].filter(Boolean).join(" | ");
+
+  const apiKey = Deno.env.get("RESEND_API_KEY");
+  if (!apiKey) return { ok: false, detail: earlier || "No email provider configured" };
 
   const payload: Record<string, unknown> = {
     from: `${fromName} <${fromEmail}>`,
     to: [opts.toName ? `${opts.toName} <${opts.to}>` : opts.to],
     subject: opts.subject,
     html: opts.html,
-    reply_to: Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk",
+    reply_to: replyTo,
   };
 
   if (opts.icsContent) {
@@ -156,5 +183,5 @@ export async function sendEmail(opts: {
 
   if (res.ok) return { ok: true, detail: "sent" };
   const body = await res.text();
-  return { ok: false, detail: `${graphFailure ? graphFailure + " | Resend " : ""}HTTP ${res.status}: ${body.slice(0, 300)}` };
+  return { ok: false, detail: `${earlier ? earlier + " | " : ""}Resend HTTP ${res.status}: ${body.slice(0, 300)}` };
 }

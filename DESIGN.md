@@ -24,7 +24,8 @@ Audience: Muslim families in the UK and abroad — "wherever home is."
   shipped frontend code. Service-role keys and email API keys live only in Supabase Edge
   Function secrets — never in this repo, never in a `NEXT_PUBLIC_*` variable.
 - **Keep owner setup minimal.** The owner should only ever need a Supabase account (access
-  token) and a Resend API key. Whoever implements each feature uses the Supabase CLI to link
+  token) and one email provider: a Resend API key, or Amazon SES credentials (optional,
+  chosen by the owner in October 2026; see SETUP.md "Email via Amazon SES"). Whoever implements each feature uses the Supabase CLI to link
   the project, run migrations, deploy functions and set secrets — not hand the owner manual
   dashboard steps unless truly unavoidable. No Azure/Microsoft app registrations, no captcha
   accounts, no extra paid services, unless a specific prompt says otherwise.

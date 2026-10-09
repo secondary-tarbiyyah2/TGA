@@ -35,6 +35,7 @@
 // SANITY_API_TOKEN.
 import { createClient } from "@supabase/supabase-js";
 import { createClient as createSanityClient } from "@sanity/client";
+import { mailConfigured, sendMail } from "./lib/sendMail.mjs";
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -44,18 +45,9 @@ if (!supabaseUrl || !serviceRoleKey) {
 }
 const supabase = createClient(supabaseUrl, serviceRoleKey);
 
-const resendApiKey = process.env.RESEND_API_KEY;
-const mailFromEmail = process.env.MAIL_FROM_EMAIL || "globalacademy@tarbiyyah.co.uk";
-const mailFromName = process.env.MAIL_FROM_NAME || "Tarbiyyah Global Academy";
-
+// Sending goes through scripts/lib/sendMail.mjs (Amazon SES, then Resend).
 async function sendEmail(to, subject, html) {
-  if (!resendApiKey || !to) return { ok: false, detail: !resendApiKey ? "no RESEND_API_KEY" : "no recipient" };
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${resendApiKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: `${mailFromName} <${mailFromEmail}>`, to: [to], subject, html }),
-  });
-  return { ok: res.ok, detail: res.ok ? "sent" : `HTTP ${res.status}` };
+  return sendMail(to, subject, html);
 }
 
 function shell(bodyHtml) {

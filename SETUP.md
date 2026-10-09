@@ -499,3 +499,42 @@ Manager add-on (~$10/mo) is bought to cover that depth.
   `ADMISSIONS_EMAIL`. `open-evening-reminders.yml` (hourly) calls
   `open-evening-reminders`, which sends a reminder in the 24 hours before.
   Both new functions deploy with `--no-verify-jwt` (see `deploy-supabase.yml`).
+
+## Email via Amazon SES (optional, replaces Resend)
+
+Every email the site sends goes through one of three providers, each used
+only when its secrets exist, tried in this order:
+
+1. **Microsoft 365** (`MS_*` secrets): sent from the school's Outlook mailbox.
+2. **Amazon SES** (`AWS_SES_*` secrets): `supabase/functions/_shared/ses.ts`,
+   and `scripts/lib/sendMail.mjs` for the scheduled GitHub Actions jobs.
+3. **Resend** (`RESEND_API_KEY`): the original provider, kept as a fallback.
+
+Sign-in (magic link) emails are sent by Supabase Auth over SMTP: Amazon SES
+SMTP when `SES_SMTP_USER`/`SES_SMTP_PASS` are set, otherwise Resend SMTP
+(`.github/workflows/deploy-supabase.yml`, "Configure Auth").
+
+**AWS setup (done October 2026, region Europe (Stockholm), `eu-north-1`):**
+
+- SES identity `globalacademy.tarbiyyah.co.uk` with Easy DKIM, and custom
+  MAIL FROM domain `mail.globalacademy.tarbiyyah.co.uk`. DNS in Cloudflare
+  (all DNS only, never proxied): three `<token>._domainkey.globalacademy`
+  CNAMEs to `<token>.dkim.amazonses.com`, MX `mail.globalacademy` →
+  `10 feedback-smtp.eu-north-1.amazonses.com`, TXT `mail.globalacademy` →
+  `v=spf1 include:amazonses.com ~all`. DMARC is inherited from the existing
+  `_dmarc.tarbiyyah.co.uk` record.
+- Production access requested (until approved, SES only delivers to
+  verified addresses).
+- IAM user `tga-ses-sender` with a policy allowing only `ses:SendEmail` and
+  `ses:SendRawEmail`; its access key is the `AWS_SES_ACCESS_KEY_ID` /
+  `AWS_SES_SECRET_ACCESS_KEY` pair. SMTP credentials come from SES → SMTP
+  settings.
+
+**GitHub repository secrets** (Settings → Secrets and variables → Actions):
+`AWS_SES_REGION` (`eu-north-1`), `AWS_SES_ACCESS_KEY_ID`,
+`AWS_SES_SECRET_ACCESS_KEY`, `SES_SMTP_USER`, `SES_SMTP_PASS`. Then re-run
+"Deploy Supabase backend" so they reach Supabase. Nothing AWS-related ever
+goes in the website code or a `NEXT_PUBLIC_*` variable.
+
+The SES identity lives in Stockholm only: in the AWS console, select
+Europe (Stockholm) before looking for it.
