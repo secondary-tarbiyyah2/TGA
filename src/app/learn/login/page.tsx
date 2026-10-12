@@ -8,6 +8,8 @@ import { PasswordInput } from "@/components/learn/PasswordInput";
 import { loginEmailFor } from "@/lib/learn/studentLogin";
 import { useLearnSession, dashboardPathForRole } from "@/lib/learn/session";
 import { StarMark } from "@/components/StarMark";
+import { AudienceToggle } from "@/components/learn/AudienceToggle";
+import type { IconName } from "@/components/learn/Icon";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 
 // Who is signing in. This only changes the wording and hints on the form:
@@ -15,10 +17,12 @@ import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 // username is mapped to their login email by loginEmailFor either way).
 type Audience = "parent" | "student" | "staff";
 
-const AUDIENCES: { id: Audience; label: string; field: string; placeholder: string; hint: string }[] = [
+const AUDIENCES: { id: Audience; label: string; icon: IconName; caption: string; field: string; placeholder: string; hint: string }[] = [
   {
     id: "parent",
     label: "Parent",
+    icon: "houseHeart",
+    caption: "For parents and guardians",
     field: "Email address",
     placeholder: "you@example.com",
     hint: "Use the email address you gave us when you applied. Your sign-in details are emailed to you when your place is confirmed.",
@@ -26,6 +30,8 @@ const AUDIENCES: { id: Audience; label: string; field: string; placeholder: stri
   {
     id: "student",
     label: "Student",
+    icon: "graduationCap",
+    caption: "For pupils, Reception to Year 11",
     field: "Username",
     placeholder: "Your school username",
     hint: "Use the username the school gave you. Forgotten your password? Ask your parent or your teacher to reset it.",
@@ -33,6 +39,8 @@ const AUDIENCES: { id: Audience; label: string; field: string; placeholder: stri
   {
     id: "staff",
     label: "Staff",
+    icon: "idCard",
+    caption: "For teachers and school staff",
     field: "School email",
     placeholder: "Your school email address",
     hint: "Use your school email address. Accounts are created by the school office.",
@@ -177,23 +185,10 @@ export default function LearnLoginPage() {
         {/* Sign-in form. */}
         <div className="p-6 sm:p-10">
           <h1 className="font-serif text-h2 font-semibold text-ink">Sign in</h1>
-          <p className="mt-1 text-sm text-ink/70">Choose who&apos;s signing in.</p>
+          <p className="mt-1 text-sm text-ink/70">Who&apos;s signing in today?</p>
 
-          <div role="radiogroup" aria-label="I am a" className="mt-5 grid grid-cols-3 gap-1 rounded-xl bg-cream p-1">
-            {AUDIENCES.map((a) => (
-              <button
-                key={a.id}
-                type="button"
-                role="radio"
-                aria-checked={audience === a.id}
-                onClick={() => setAudience(a.id)}
-                className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
-                  audience === a.id ? "bg-white text-ink shadow-sm ring-1 ring-gold-300" : "text-ink/70 hover:text-ink"
-                }`}
-              >
-                {a.label}
-              </button>
-            ))}
+          <div className="mt-5">
+            <AudienceToggle label="I am a" options={AUDIENCES} value={audience} onChange={setAudience} />
           </div>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-3">
@@ -216,7 +211,7 @@ export default function LearnLoginPage() {
             <PasswordInput label="Password" required autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
             {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
             <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-6 py-2.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
-              {busy ? "Signing in…" : "Sign in"}
+              {busy ? "Signing in…" : `Sign in as ${current.label.toLowerCase()}`}
             </button>
           </form>
           {audience !== "student" && (
