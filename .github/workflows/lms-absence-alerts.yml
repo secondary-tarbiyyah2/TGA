@@ -8,7 +8,11 @@ name: Absence alerts
 
 on:
   schedule:
-    - cron: "0 * * * *" # hourly, on the hour (anchored to creation time by Supabase-style schedulers is N/A here — GitHub cron is literal)
+    # Reduced from hourly in Oct 2026 to stay inside GitHub's 2,000 free
+    # Actions minutes a month (private repo; every run bills at least 1 min).
+    # Before live lessons start, move this schedule to Supabase pg_cron
+    # (free, no GitHub minutes) and restore the faster interval there.
+    - cron: "0 8-20/2 * * 1-5" # every 2 hours, 08:00-20:00 UTC, weekdays
   workflow_dispatch:
 
 concurrency:

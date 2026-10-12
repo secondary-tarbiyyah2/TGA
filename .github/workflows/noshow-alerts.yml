@@ -15,7 +15,11 @@ name: No-show alerts
 
 on:
   schedule:
-    - cron: "*/5 * * * 1-5"
+    # Reduced from every 5 minutes in Oct 2026 to stay inside GitHub's 2,000 free
+    # Actions minutes a month (private repo; every run bills at least 1 min).
+    # Before live lessons start, move this schedule to Supabase pg_cron
+    # (free, no GitHub minutes) and restore the faster interval there.
+    - cron: "10,40 8-16 * * 1-5" # :10 and :40 past, 08:00-16:59 UTC, weekdays
   workflow_dispatch:
 
 concurrency:

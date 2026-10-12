@@ -3,13 +3,13 @@ type Cell = "yes" | "no" | "varies";
 type Row = { label: string; tga: Cell; tutoring: Cell; localSchool: Cell };
 
 // Rows are drawn only from things already stated as fact elsewhere on this
-// site (full British curriculum to GCSE, live-timetabled lessons, Qur'an/
+// site (full curriculum to GCSE, live-timetabled lessons, Qur'an/
 // Arabic/Islamic Studies on the timetable at every stage, public qualified
 // teachers, published fees) — this compares TGA against the two GENERAL
 // categories a family choosing between online options would actually be
 // weighing, not any named competitor.
 const ROWS: Row[] = [
-  { label: "Full British curriculum to GCSE", tga: "yes", tutoring: "no", localSchool: "varies" },
+  { label: "Full curriculum to GCSE", tga: "yes", tutoring: "no", localSchool: "varies" },
   { label: "Qur'an, Arabic & Islamic Studies on the timetable, every stage", tga: "yes", tutoring: "no", localSchool: "varies" },
   { label: "Live, timetabled lessons (not self-paced videos)", tga: "yes", tutoring: "varies", localSchool: "yes" },
   { label: "Qualified UK teachers, public profiles before you apply", tga: "yes", tutoring: "varies", localSchool: "varies" },
