@@ -181,11 +181,16 @@ function mapStaffMember(r: Record<string, unknown>): StaffMember {
   return { _id: r.id as string, name: r.name as string, roleTitle: r.role_title as string, qualifications: (r.qualifications as string) || undefined, introVideoUrl: (r.intro_video_url as string) || undefined, isPlaceholder: r.is_placeholder as boolean, order: r.order_index as number };
 }
 
-export const getDifferentiators = () =>
-  queryOrFallback<Differentiator[]>(
+export const getDifferentiators = () => {
+  // Keep a reference to the exact fallback array so it can be recognised
+  // below (it was previously compared against seedDifferentiators itself,
+  // which never matched the filtered copy, so seed rows lost their _id).
+  const fallback = seedDifferentiators.filter((d) => d.visible);
+  return queryOrFallback<Differentiator[]>(
     (s) => s.from("differentiators").select("id, title, summary, detail, icon, status, visible, order_index").eq("visible", true).order("order_index"),
-    seedDifferentiators.filter((d) => d.visible)
-  ).then((rows) => (rows === seedDifferentiators ? rows : rows.map((r: unknown) => mapDifferentiator(r as Record<string, unknown>))));
+    fallback
+  ).then((rows) => (rows === fallback ? rows : rows.map((r: unknown) => mapDifferentiator(r as Record<string, unknown>))));
+};
 
 function mapDifferentiator(r: Record<string, unknown>): Differentiator {
   return { _id: r.id as string, title: r.title as string, summary: r.summary as string, detail: (r.detail as string) || undefined, icon: (r.icon as string) || undefined, status: r.status as Differentiator["status"], visible: r.visible as boolean, order: r.order_index as number };

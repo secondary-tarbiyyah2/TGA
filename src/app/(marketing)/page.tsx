@@ -11,6 +11,9 @@ import { HubCards } from "@/components/HubCards";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { getDifferentiators, getFaqEntries, getHomepageContent, getSiteSettings, getTestimonials } from "@/lib/content";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { admissionsProcessSteps } from "@/components/admissions/applicationShared";
+import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
+import { TarbiyahNoteShowcase } from "@/components/TarbiyahNoteShowcase";
 
 /**
  * Reads public.bursary_seats_public (migration 0020) — only returns a row
@@ -39,12 +42,9 @@ const defaultPillars = [
   { title: "Live, small classes", body: "Real-time lessons with real teachers, sized to keep every child known and supported." },
 ];
 
-const defaultHowItWorks = [
-  { title: "Apply", body: "A short multi-step application — no obligation." },
-  { title: "Entry assessment", body: "A friendly, age-appropriate check so we know how to support your child." },
-  { title: "Offer", body: "A place offered, confirmed with a one-time registration fee." },
-  { title: "Welcome", body: "Onboarding ahead of live lessons launching January 2027." },
-];
+const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+const numberWord = (n: number) => NUMBER_WORDS[n] ?? String(n);
+const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 const stages = [
   { stage: "Reception – Year 2", href: "/curriculum/reception-year-2" },
@@ -63,9 +63,21 @@ export default async function HomePage() {
     getBursarySeats(),
   ]);
   const pillars = content.pillars?.length ? content.pillars : defaultPillars;
-  const howItWorks = content.howItWorksSteps?.length
-    ? content.howItWorksSteps.map((s, i) => ({ step: String(i + 1), ...s }))
-    : defaultHowItWorks.map((s, i) => ({ step: String(i + 1), ...s }));
+  // The homepage summary uses the SAME steps as the Admissions page
+  // (admissionsProcessSteps), so the two can never disagree. It previously
+  // fell back to a separate four-step list under a "six steps" heading.
+  const howItWorks = admissionsProcessSteps({ applicationFee: settings.applicationFee, registrationFee: settings.registrationFee }).map(
+    (s, i) => ({ step: String(i + 1), title: s.title, body: s.short }),
+  );
+  const stepCount = numberWord(howItWorks.length);
+  // A CMS heading is only used if it doesn't state a different number of steps.
+  const cmsHeading = content.howItWorksHeading;
+  const cmsHeadingCountOk = !cmsHeading || !NUMBER_WORDS.some((w) => w !== stepCount && new RegExp(`\\b${w}\\s+steps\\b`, "i").test(cmsHeading));
+  const howItWorksHeading = cmsHeading && cmsHeadingCountOk ? cmsHeading : `${capitalise(stepCount)} steps to a place at TGA.`;
+  // Matched by title: live database rows have generated ids, not "d6".
+  const weeklyNoteConfirmed = differentiators.some(
+    (d) => /tarbiyah note/i.test(d.title) && d.status === "Confirmed commitment" && d.visible !== false,
+  );
   // Never show fabricated/unconfirmed content publicly — see ground rule 3
   // and 4. A differentiator, testimonial or team member only appears once
   // an admin has confirmed it; the homepage headteacher quote only appears
@@ -74,11 +86,15 @@ export default async function HomePage() {
   // seat count from Supabase — its CMS "Confirmed commitment" status alone
   // is not enough, so it never shows a placeholder claim if that value
   // hasn't been set yet (see getBursarySeats above).
+  // Matched by title as well as id: live database rows have generated ids,
+  // so the old `_id === "d9"` check never matched and the claim showed
+  // without a real count.
+  const isBursary = (d: { _id: string; title: string }) => d._id === "d9" || /bursary/i.test(d.title);
   const confirmedDifferentiators = differentiators
     .filter((d) => d.status === "Confirmed commitment")
-    .filter((d) => d._id !== "d9" || bursarySeats !== null)
+    .filter((d) => !isBursary(d) || bursarySeats !== null)
     .map((d) =>
-      d._id === "d9" && bursarySeats !== null
+      isBursary(d) && bursarySeats !== null
         ? { ...d, summary: `${bursarySeats} bursary/scholarship seat${bursarySeats === 1 ? "" : "s"} available this year, published openly rather than handled quietly on request.` }
         : d
     );
@@ -95,7 +111,7 @@ export default async function HomePage() {
               <h1 className="text-display font-serif font-semibold text-ink">{content.heroHeading}</h1>
             ) : (
               <h1 className="text-display font-serif font-semibold text-ink">
-                A specialist, quality education, rooted in faith — <span className="text-gold-700">wherever home is.</span>
+                A British education with a Muslim heart — <span className="text-gold-700">live, wherever home is.</span>
               </h1>
             )}
             {content.heroBody ? (
@@ -150,12 +166,12 @@ export default async function HomePage() {
       {/* HOW IT WORKS */}
       <section className="geo-texture bg-cream section-pad">
         <Container>
-          <Kicker>Admissions in six steps</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">{content.howItWorksHeading || "Six steps to a place at TGA."}</h2>
+          <Kicker>Admissions in {stepCount} steps</Kicker>
+          <h2 className="text-h2 font-serif font-semibold text-ink">{howItWorksHeading}</h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {howItWorks.map((s, i) => (
               <div key={s.step} className="relative">
-                {i < howItWorks.length - 1 && (
+                {i < howItWorks.length - 1 && (i + 1) % 3 !== 0 && (
                   <span aria-hidden="true" className="absolute top-6 left-[calc(100%-0.5rem)] hidden h-px w-8 bg-gold-300 lg:block" />
                 )}
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 font-serif text-lg font-bold text-ink-900">
@@ -220,6 +236,11 @@ export default async function HomePage() {
           )}
         </Container>
       </section>
+
+      {/* WEEKLY TARBIYAH NOTE — our most distinctive commitment, shown as an
+          actual (clearly illustrative) note rather than a bullet point. Only
+          renders while the d6 differentiator is a confirmed commitment. */}
+      {weeklyNoteConfirmed && <TarbiyahNoteShowcase />}
 
       {/* TESTIMONIALS TEASER */}
       {realTestimonials.length > 0 && (
@@ -286,6 +307,12 @@ export default async function HomePage() {
           </Container>
         </section>
       )}
+
+      {/* Founding cohort places — renders nothing until an admin has set a
+          real capacity for at least one year group (see PlacesRemaining). */}
+      <Container>
+        <PlacesRemaining />
+      </Container>
 
       <CtaBand
         heading="Be among the first families to join."
