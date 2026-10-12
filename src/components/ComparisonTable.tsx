@@ -25,18 +25,23 @@ const CELL_STYLE: Record<Cell, { symbol: string; className: string }> = {
 
 function ScoreCell({ value }: { value: Cell }) {
   const s = CELL_STYLE[value];
-  const spoken = value === "yes" ? "Yes" : value === "no" ? "No" : "Varies";
+  // "Varies" is already a word, so it's shown once; only the ✓/✕ symbols
+  // need a spoken equivalent (otherwise screen readers and search engines
+  // read "Varies Varies").
+  if (value === "varies") {
+    return <td className={`px-4 py-3 text-center font-semibold ${s.className}`}>{s.symbol}</td>;
+  }
   return (
     <td className={`px-4 py-3 text-center font-semibold ${s.className}`}>
       <span aria-hidden="true">{s.symbol}</span>
-      <span className="sr-only">{spoken}</span>
+      <span className="sr-only">{value === "yes" ? "Yes" : "No"}</span>
     </td>
   );
 }
 
 export function ComparisonTable() {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-gold-light/50 bg-white">
+    <div className="relative overflow-x-auto rounded-2xl border border-gold-light/50 bg-white">
       <table className="w-full min-w-[640px] text-left text-sm">
         <caption className="sr-only">How Tarbiyyah Global Academy compares with generic online tutoring and a local Islamic school</caption>
         <thead>
