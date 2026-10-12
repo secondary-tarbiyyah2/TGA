@@ -13,7 +13,11 @@ name: Safeguarding review check
 
 on:
   schedule:
-    - cron: "17 * * * *"
+    # Reduced from hourly in Oct 2026 to stay inside GitHub's 2,000 free
+    # Actions minutes a month (private repo; every run bills at least 1 min).
+    # Before live lessons start, move this schedule to Supabase pg_cron
+    # (free, no GitHub minutes) and restore the faster interval there.
+    - cron: "47 */3 * * *" # every 3 hours
   workflow_dispatch:
 
 concurrency:
