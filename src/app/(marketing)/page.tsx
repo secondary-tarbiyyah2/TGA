@@ -111,7 +111,7 @@ export default async function HomePage() {
               <h1 className="text-display font-serif font-semibold text-ink">{content.heroHeading}</h1>
             ) : (
               <h1 className="text-display font-serif font-semibold text-ink">
-                A British education with a Muslim heart — <span className="text-gold-700">live, wherever home is.</span>
+                Faith at the heart of every lesson — <span className="text-gold-700">live, wherever home is.</span>
               </h1>
             )}
             {content.heroBody ? (
