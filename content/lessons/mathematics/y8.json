@@ -1,1246 +1,2190 @@
 {
-  "subject": "Mathematics",
-  "year": "y8",
-  "board": "Edexcel-aligned KS3",
-  "source": "Drive: Maths folder, Year 8 Maths LTP (Autumn sequence: transformations, working with numbers, percentage changes, graphs) and SOW Maths (year 8_9 scheme); aligned to the National Curriculum KS3 and Edexcel GCSE (9-1)",
-  "lessons": [
+ "subject": "Mathematics",
+ "year": "y8",
+ "board": "Pearson Edexcel (KS3 Maths Progress, building to Edexcel GCSE Mathematics 1MA1)",
+ "boardShort": "KS3 Maths Progress",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) Year 8 Autumn, Unit 1 Number and Unit 2 Area and volume (ks3_maths_a_p_sow3.xlsx), in the scheme's order; INSET lesson standard.",
+ "lessons": [
+  {
+   "unit": "Unit 1: Number",
+   "n": 1,
+   "title": "Written calculations with decimals",
+   "duration": 50,
+   "bigQuestion": "Where does the decimal point go, and how can we be sure?",
+   "objectives": [
+    "Add and subtract decimals using columns",
+    "Choose between mental and written methods",
+    "Check answers using estimation and inverse operations"
+   ],
+   "successCriteria": [
+    "Add and subtract decimals with the points lined up",
+    "Add more than two numbers with different numbers of decimal places",
+    "Explain errors in someone else's working"
+   ],
+   "crossCurricular": "Science: adding measured masses; Business: totals on a receipt",
+   "smsc": "Moral: accuracy and honesty when handling money and measurements",
+   "keywords": [
     {
-      "unit": "Unit 1: Transformations",
-      "n": 1,
-      "title": "Reflections",
-      "duration": 50,
-      "objectives": [
-        "Reflect a point or shape in a mirror line, including on a coordinate grid",
-        "Describe a reflection fully"
-      ],
-      "keywords": [
-        { "term": "reflection", "def": "a transformation that flips a shape in a mirror line" },
-        { "term": "mirror line", "def": "the line a shape is reflected in" },
-        { "term": "object and image", "def": "the original shape and the shape after transformation" },
-        { "term": "congruent", "def": "exactly the same shape and size" }
-      ],
-      "starter": [
-        "Say Bismillah. Plot (2, 3), (-1, 4) and (-3, -2) on a grid.",
-        "What is the equation of the line through (0, 2), (1, 2) and (5, 2)?",
-        "Name the shape with 4 equal sides and 4 right angles."
-      ],
-      "teach": [
-        {
-          "heading": "What a reflection does",
-          "bullets": [
-            "Each point is the same distance from the mirror line.",
-            "The object and image are on opposite sides.",
-            "The image is congruent to the object."
-          ],
-          "note": "Use a mirror or tracing paper. The line joining a point and its image is perpendicular to the mirror line. Orientation is reversed but size is unchanged."
-        },
-        {
-          "heading": "Reflecting in the axes",
-          "bullets": [
-            "Reflect (3, 2) in the y-axis: (-3, 2).",
-            "Reflect (-2, 3) in the x-axis: (-2, -3).",
-            "Reflect in the y-axis: x changes sign."
-          ],
-          "note": "Triangle with vertices (1, 1), (1, 3), (3, 1) reflected in the y-axis gives (-1, 1), (-1, 3), (-3, 1). Ask what changes when reflecting in the x-axis (the y-coordinate)."
-        },
-        {
-          "heading": "Mirror lines x = a and y = b",
-          "bullets": [
-            "x = 4 is a vertical line through 4.",
-            "Reflect (1, 2) in x = 4: 3 units left, so 3 units right.",
-            "Image is (7, 2)."
-          ],
-          "note": "Count the distance to the line, then count the same distance on the other side. Another: reflect (4, 1) in y = 3: 2 below the line so 2 above: (4, 5)."
-        },
-        {
-          "heading": "The line y = x",
-          "bullets": [
-            "Reflecting in y = x swaps the coordinates.",
-            "(2, 5) goes to (5, 2).",
-            "Draw the line first and check by eye."
-          ],
-          "note": "Use a diagonal line on the grid. Pupils can use tracing paper to check. The line y = x makes a 45 degree angle with the axes."
-        },
-        {
-          "heading": "Describing a reflection",
-          "bullets": [
-            "Say 'reflection' and give the mirror line.",
-            "Example: reflection in the line x = 2.",
-            "Give the equation, not 'the y line'."
-          ],
-          "note": "A full description needs the type and the equation of the mirror line. Show why saying 'reflect' alone is not enough marks in an exam."
-        }
-      ],
-      "practice": [
-        "Reflect (5, -1) in the x-axis. Reflect (-4, 2) in the y-axis.",
-        "Reflect (1, 6) in the line x = 3.",
-        "Reflect (2, 7) in the line y = x."
-      ],
-      "independent": [
-        "Triangle A has vertices (2, 1), (2, 4), (5, 1). Reflect it in the y-axis and write the new coordinates.",
-        "Reflect triangle A in the line y = -1 and write the new coordinates.",
-        "Reflect triangle A in the line y = x and write the new coordinates.",
-        "A shape is mapped from (1, 1), (3, 1), (1, 2) to (-1, 1), (-3, 1), (-1, 2). Describe the transformation."
-      ],
-      "exit": [
-        "Reflect (4, -3) in the x-axis.",
-        "Reflect (-1, 2) in the y-axis."
-      ],
-      "homework": "Draw a shape of your own on a coordinate grid and reflect it in the x-axis, the y-axis and the line y = x.",
-      "send": "SEND: tracing paper and mirror, pre-drawn grids. EAL: pre-teach object/image/mirror line. Stretch: reflect in lines such as y = -x."
+     "term": "decimal place",
+     "def": "a digit position after the decimal point"
     },
     {
-      "unit": "Unit 1: Transformations",
-      "n": 2,
-      "title": "Rotations",
-      "duration": 50,
-      "objectives": [
-        "Rotate a shape about a point through a given angle and direction",
-        "Describe a rotation fully"
-      ],
-      "keywords": [
-        { "term": "rotation", "def": "a turn about a fixed point" },
-        { "term": "centre of rotation", "def": "the fixed point a shape turns about" },
-        { "term": "clockwise", "def": "the same direction as the hands of a clock" },
-        { "term": "anticlockwise", "def": "the opposite direction to the hands of a clock" }
-      ],
-      "starter": [
-        "Say Bismillah. Reflect (3, -2) in the x-axis.",
-        "How many degrees in a quarter turn? In a half turn?",
-        "What is the equation of the y-axis?"
-      ],
-      "teach": [
-        {
-          "heading": "Three things to give",
-          "bullets": [
-            "The centre of rotation.",
-            "The angle: 90, 180 or 270 degrees.",
-            "The direction: clockwise or anticlockwise."
-          ],
-          "note": "Use tracing paper: put a pencil on the centre and turn. A 180 degree turn needs no direction. Everything except the centre moves."
-        },
-        {
-          "heading": "Rotating about the origin",
-          "bullets": [
-            "90 degrees clockwise: (x, y) goes to (y, -x).",
-            "So (2, 1) goes to (1, -2).",
-            "180 degrees: (x, y) goes to (-x, -y)."
-          ],
-          "note": "Also 90 degrees anticlockwise: (x, y) goes to (-y, x), so (2, 1) goes to (-1, 2). Check with tracing paper. These rules are useful but pupils should understand them, not just memorise."
-        },
-        {
-          "heading": "Rotating about another point",
-          "bullets": [
-            "Rotate (4, 3) 90 degrees clockwise about (1, 1).",
-            "Vector from centre: (3, 2).",
-            "Rotated vector: (2, -3), so image is (3, -2)."
-          ],
-          "note": "Work out how far the point is from the centre, rotate that vector, then add to the centre: (1 + 2, 1 - 3) = (3, -2). Check with tracing paper."
-        },
-        {
-          "heading": "Describing a rotation",
-          "bullets": [
-            "State: rotation, angle, direction, centre.",
-            "Example: rotation of 90 degrees clockwise about (0, 0).",
-            "Use tracing paper to find the centre."
-          ],
-          "note": "For an exam, all four parts earn marks. Show a pair of shapes and find the centre by trial with tracing paper: the centre is a point which stays in place."
-        }
-      ],
-      "practice": [
-        "Rotate (4, 1) by 90 degrees clockwise about the origin.",
-        "Rotate (3, -2) by 180 degrees about the origin.",
-        "Rotate (2, 5) by 90 degrees anticlockwise about the origin."
-      ],
-      "independent": [
-        "Triangle with vertices (1, 1), (1, 3), (3, 1). Rotate it 90 degrees clockwise about the origin and list the new vertices.",
-        "Rotate the same triangle 180 degrees about the origin.",
-        "Rotate (5, 2) by 90 degrees anticlockwise about (2, 2).",
-        "The point (2, 1) maps to (1, -2). Describe the rotation about the origin."
-      ],
-      "exit": [
-        "Rotate (3, 1) by 90 degrees anticlockwise about the origin.",
-        "Rotate (-2, 4) by 180 degrees about the origin."
-      ],
-      "homework": "Draw an arrow shape on a grid and rotate it by 90 and 180 degrees about a point of your choice. Write what you notice.",
-      "send": "SEND: tracing paper, pre-drawn grids with centre marked. EAL: pre-teach clockwise/anticlockwise. Stretch: find the centre of rotation when given an object and its image."
+     "term": "place holder",
+     "def": "a zero used to keep digits in their correct place"
     },
     {
-      "unit": "Unit 1: Transformations",
-      "n": 3,
-      "title": "Translations",
-      "duration": 50,
-      "objectives": [
-        "Translate a shape using a column vector",
-        "Describe a translation fully"
-      ],
-      "keywords": [
-        { "term": "translation", "def": "a slide of a shape without turning or flipping it" },
-        { "term": "column vector", "def": "numbers written in brackets one above the other showing movement across and up" },
-        { "term": "inverse translation", "def": "the translation that moves the image back to the object" }
-      ],
-      "starter": [
-        "Say Bismillah. Rotate (2, 3) by 180 degrees about the origin.",
-        "Plot (1, 1), (4, 1), (4, 3).",
-        "What is -3 + 5? What is 2 - 6?"
-      ],
-      "teach": [
-        {
-          "heading": "Sliding a shape",
-          "bullets": [
-            "Every point moves the same distance in the same direction.",
-            "Size, shape and direction stay the same.",
-            "Only the position changes."
-          ],
-          "note": "Compare with reflection and rotation, which change orientation. A translation is the only one where the shape faces the same way."
-        },
-        {
-          "heading": "Column vectors",
-          "bullets": [
-            "The top number: right is positive, left is negative.",
-            "The bottom number: up is positive, down is negative.",
-            "Vector (3, -2) means 3 right, 2 down."
-          ],
-          "note": "Write the vector as a column in brackets: top number x movement, bottom number y movement. Common error: writing the numbers the wrong way round. Say 'along the corridor, then up the stairs'."
-        },
-        {
-          "heading": "Translating a point",
-          "bullets": [
-            "Translate (1, 4) by 5 right and 3 down.",
-            "x: 1 + 5 = 6. y: 4 - 3 = 1.",
-            "Image: (6, 1)."
-          ],
-          "note": "Add the vector to the coordinates. For a shape, translate every vertex. Check that the vertices keep the same relative positions."
-        },
-        {
-          "heading": "Finding the vector",
-          "bullets": [
-            "A (2, 1) maps to A' (-1, 5).",
-            "Across: -1 - 2 = -3. Up: 5 - 1 = 4.",
-            "Vector: 3 left, 4 up."
-          ],
-          "note": "Image minus object. The inverse translation is the opposite vector: 3 right, 4 down. Pupils must write the vector as a column in the answer."
-        }
-      ],
-      "practice": [
-        "Translate (3, 2) by 4 right and 5 down.",
-        "Translate the triangle (0, 0), (2, 0), (1, 3) by 3 left and 2 up.",
-        "Find the vector that maps (6, -2) to (1, 3)."
-      ],
-      "independent": [
-        "Translate (-2, -3) by 5 right and 4 up.",
-        "The image of a point after a translation of 2 left and 6 up is (4, -1). Find the original point.",
-        "Triangle ABC: A(1, 2), B(4, 2), C(1, 5). Translate it by 6 right and 1 down and list the new vertices.",
-        "Write the inverse of the translation 3 right and 2 down. Describe in words what happens if you apply both."
-      ],
-      "exit": [
-        "Translate (5, 2) by 3 left and 4 down.",
-        "Find the vector that maps (1, 1) to (4, 5)."
-      ],
-      "homework": "Draw a shape on a grid and translate it three times using vectors of your choice. Record each vector.",
-      "send": "SEND: pre-drawn grids, counters to move. EAL: pre-teach left/right/up/down in vector form. Stretch: combine two translations into one."
+     "term": "estimate",
+     "def": "an approximate answer from rounded numbers"
     },
     {
-      "unit": "Unit 1: Transformations",
-      "n": 4,
-      "title": "Describing transformations and tessellations",
-      "duration": 50,
-      "objectives": [
-        "Describe a transformation fully",
-        "Understand and create tessellations"
-      ],
-      "keywords": [
-        { "term": "transformation", "def": "a change in the position, orientation or size of a shape" },
-        { "term": "tessellation", "def": "a pattern of shapes that fit together with no gaps or overlaps" },
-        { "term": "angles at a point", "def": "angles around a point add up to 360 degrees" }
-      ],
-      "starter": [
-        "Say Bismillah. Translate (2, 5) by 3 left and 1 down.",
-        "How many degrees do angles around a point add up to?",
-        "What is the interior angle of a square? Of an equilateral triangle?"
-      ],
-      "teach": [
-        {
-          "heading": "Describing each transformation",
-          "bullets": [
-            "Reflection: give the mirror line.",
-            "Rotation: give angle, direction and centre.",
-            "Translation: give the column vector."
-          ],
-          "note": "Make a summary grid. Triangle (1, 1), (3, 1), (1, 2) mapped to (1, -1), (3, -1), (1, -2) is a reflection in the x-axis. Mapped to (4, 3), (6, 3), (4, 4) is a translation by 3 right and 2 up."
-        },
-        {
-          "heading": "Spot the transformation",
-          "bullets": [
-            "Same orientation: translation.",
-            "Flipped: reflection.",
-            "Turned: rotation."
-          ],
-          "note": "Triangle (1, 1), (3, 1), (1, 2) mapped to (-1, -1), (-3, -1), (-1, -2) is a rotation of 180 degrees about the origin. Ask pupils how they could tell."
-        },
-        {
-          "heading": "Two reflections",
-          "bullets": [
-            "Reflect (3, 2) in the x-axis: (3, -2).",
-            "Then reflect in the y-axis: (-3, -2).",
-            "Together this is a 180 degree rotation about the origin."
-          ],
-          "note": "Try with a triangle on tracing paper. This is a taste of combined transformations, a GCSE topic. Two reflections in parallel mirror lines give a translation."
-        },
-        {
-          "heading": "Tessellations",
-          "bullets": [
-            "Shapes tessellate if angles meet to make 360 degrees.",
-            "Squares: 4 x 90. Triangles: 6 x 60. Hexagons: 3 x 120.",
-            "Regular pentagons (108 degrees) do not tessellate."
-          ],
-          "note": "360 ÷ 108 is not a whole number. Regular octagons (135 degrees) do not tessellate alone but do with squares: 135 + 135 + 90 = 360. Show examples of geometric patterns in Islamic art, which use tessellation, reflection and rotation extensively."
-        }
-      ],
-      "practice": [
-        "Triangle (1, 1), (3, 1), (1, 2) maps to (1, -1), (3, -1), (1, -2). Describe the transformation.",
-        "Why do equilateral triangles tessellate?",
-        "Reflect (4, 1) in the x-axis and then in the y-axis. What single transformation does this equal?"
-      ],
-      "independent": [
-        "Describe the transformation: (1, 1), (3, 1), (1, 2) maps to (-1, 1), (-3, 1), (-1, 2).",
-        "Describe the transformation: (1, 1), (3, 1), (1, 2) maps to (4, 3), (6, 3), (4, 4).",
-        "Explain with angles why regular hexagons tessellate and regular pentagons do not.",
-        "Design a tessellating pattern using one shape and a repeated transformation. Describe the transformations you used."
-      ],
-      "exit": [
-        "Name the three transformations that do not change size.",
-        "Why can't regular octagons tessellate on their own?"
-      ],
-      "homework": "Find a tessellating pattern on a tile, wall or fabric. Draw part of it and describe the transformations in it.",
-      "send": "SEND: shape tiles to physically arrange, tracing paper. EAL: pre-teach transformation names with diagrams. Stretch: investigate which regular polygons tessellate and why."
-    },
-    {
-      "unit": "Unit 2: Working with numbers",
-      "n": 5,
-      "title": "Powers and roots",
-      "duration": 50,
-      "objectives": [
-        "Calculate squares, cubes and their roots",
-        "Evaluate numbers with positive integer powers"
-      ],
-      "keywords": [
-        { "term": "power (index)", "def": "shows how many times a number is multiplied by itself" },
-        { "term": "square root", "def": "the number that multiplied by itself gives the original" },
-        { "term": "cube root", "def": "the number that multiplied by itself three times gives the original" }
-      ],
-      "starter": [
-        "Say Bismillah. Work out 9² and 4³.",
-        "Work out 5 x 5 x 5.",
-        "What is 7 x 7 and what is 8 x 8?"
-      ],
-      "teach": [
-        {
-          "heading": "Squares and cubes",
-          "bullets": [
-            "Squares: 1, 4, 9, 16, 25 ... 144, 169, 196, 225.",
-            "Cubes: 1, 8, 27, 64, 125, 1,000.",
-            "12² = 144 and 15² = 225."
-          ],
-          "note": "Pupils should know squares up to 15² and cubes up to 5³ and 10³. Quick quiz: ask for 13², 14², 6³. A common error is 4³ = 12."
-        },
-        {
-          "heading": "Roots reverse powers",
-          "bullets": [
-            "√169 = 13 because 13² = 169.",
-            "∛64 = 4 because 4³ = 64.",
-            "√ undoes squaring; ∛ undoes cubing."
-          ],
-          "note": "Link to inverse operations. Ask: what is √196? (14) What is ∛125? (5) Square roots can be positive or negative, but √ means the positive root."
-        },
-        {
-          "heading": "Other powers",
-          "bullets": [
-            "2⁵ = 2 x 2 x 2 x 2 x 2 = 32.",
-            "3⁴ = 81.",
-            "10⁶ = 1,000,000."
-          ],
-          "note": "The index is the number of times we use the base. Note 10⁶ has six zeros. Ask pupils to calculate 2⁶ and check with a calculator."
-        },
-        {
-          "heading": "Mixed calculations and negatives",
-          "bullets": [
-            "5² - 3³ = 25 - 27 = -2.",
-            "(-3)² = 9, but -3² = -9.",
-            "Powers come before add and subtract."
-          ],
-          "note": "BIDMAS: indices before multiplication and addition. The bracket matters: (-3)² squares the negative, -3² means minus (3²). Check on a calculator."
-        },
-        {
-          "heading": "Estimating roots",
-          "bullets": [
-            "√50 is between 7 and 8, since 49 < 50 < 64.",
-            "It is close to 7 (about 7.07).",
-            "√90 is between 9 and 10."
-          ],
-          "note": "Use known squares as markers. √90 is about 9.5 since 90 is nearly halfway between 81 and 100. A calculator gives 9.49."
-        }
-      ],
-      "practice": [
-        "Work out 13², 6³ and 2⁷.",
-        "Work out √225 and ∛27.",
-        "Between which two whole numbers does √70 lie?"
-      ],
-      "independent": [
-        "Work out: 6² + 8²; √(36 + 64); 7² - 4³; 2³ x 3²; 10⁴.",
-        "Evaluate with a calculator: (-4)²; -4²; (-2)³; 5⁴.",
-        "Between which two whole numbers do √150, √20 and ∛100 lie?",
-        "Find a number between 2 and 100 that is both a square number and a cube number."
-      ],
-      "exit": [
-        "Work out √144 and 3⁴.",
-        "Between which two whole numbers does √150 lie?"
-      ],
-      "homework": "Make a poster of squares to 15², cubes to 5³ and powers of 2 up to 2¹⁰ with one fact about each.",
-      "send": "SEND: square and cube number chart. EAL: pre-teach root/power/index. Stretch: estimate roots to 1 decimal place."
-    },
-    {
-      "unit": "Unit 2: Working with numbers",
-      "n": 6,
-      "title": "Multiplying and dividing by powers of 10",
-      "duration": 50,
-      "objectives": [
-        "Multiply and divide integers and decimals by powers of 10",
-        "Use powers of 10 in unit conversions"
-      ],
-      "keywords": [
-        { "term": "power of 10", "def": "10, 100, 1,000 and so on; 10 multiplied by itself" },
-        { "term": "decimal place", "def": "a digit to the right of the decimal point" },
-        { "term": "convert", "def": "change from one unit to another" }
-      ],
-      "starter": [
-        "Say Bismillah. Work out 10², 10³ and 10⁴.",
-        "Work out 3.4 x 10.",
-        "What is 250 ÷ 100?"
-      ],
-      "teach": [
-        {
-          "heading": "Digits move, zeros don't",
-          "bullets": [
-            "x 10: every digit moves one place left.",
-            "÷ 10: every digit moves one place right.",
-            "The decimal point does not move; the digits do."
-          ],
-          "note": "Use a place value chart. Avoid the phrase 'add a zero' for decimals: 3.4 x 10 is 34, not 3.40. Show digits shifting between columns."
-        },
-        {
-          "heading": "Multiplying",
-          "bullets": [
-            "3.4 x 100 = 340.",
-            "0.056 x 1,000 = 56.",
-            "7.2 x 10⁴ = 72,000."
-          ],
-          "note": "10⁴ means shift four places. Use the chart for 7.2 x 10,000 and fill with zeros. Ask pupils to predict before showing."
-        },
-        {
-          "heading": "Dividing",
-          "bullets": [
-            "45 ÷ 1,000 = 0.045.",
-            "12,500 ÷ 10² = 125.",
-            "2.5 ÷ 10 = 0.25."
-          ],
-          "note": "Dividing makes numbers smaller; shift digits right. Include zeros as placeholders. Check by multiplying back: 0.045 x 1,000 = 45."
-        },
-        {
-          "heading": "Two steps",
-          "bullets": [
-            "0.0063 x 10⁵ = 630.",
-            "3.5 x 10 ÷ 100 = 0.35.",
-            "Combine the shifts: net movement."
-          ],
-          "note": "3.5 x 10 ÷ 100 is a net shift of one place right. Use this for unit conversions: 4.2 km = 4,200 m (x 1,000) and 6,500 ml = 6.5 litres (÷ 1,000)."
-        }
-      ],
-      "practice": [
-        "Work out 6.7 x 10 and 0.082 x 100.",
-        "Work out 450 ÷ 1,000 and 3.14 x 10³.",
-        "Convert 4.2 km to metres and 6,500 ml to litres."
-      ],
-      "independent": [
-        "Work out: 0.0409 x 1,000; 5,600 ÷ 10⁴; 8.9 x 10⁵; 0.7 ÷ 100.",
-        "Fill in the missing powers of 10: 3.6 x ___ = 3,600; 72 ÷ ___ = 0.072; ___ x 100 = 4.5.",
-        "A packet of dates weighs 0.35 kg. Find the mass of 1,000 packets in kg and in grams.",
-        "Mohammed says 4.7 x 10 = 4.70. Explain his mistake."
-      ],
-      "exit": [
-        "Work out 4.56 x 100.",
-        "Work out 72 ÷ 1,000."
-      ],
-      "homework": "Convert five measurements in your home (such as a 1.5 litre bottle, a 2 m door) into smaller units using powers of 10.",
-      "send": "SEND: place value chart with movable digit cards. EAL: pre-teach shift/decimal point. Stretch: multiply by 10⁻² and explain."
-    },
-    {
-      "unit": "Unit 2: Working with numbers",
-      "n": 7,
-      "title": "Rounding to decimal places",
-      "duration": 50,
-      "objectives": [
-        "Round numbers to a given number of decimal places",
-        "Round large numbers to the nearest power of 10"
-      ],
-      "keywords": [
-        { "term": "decimal place (d.p.)", "def": "the position of a digit after the decimal point" },
-        { "term": "round", "def": "replace a number by a nearby, simpler number" },
-        { "term": "approximation", "def": "a value that is close but not exact" }
-      ],
-      "starter": [
-        "Say Bismillah. Round 4,567 to the nearest 10 and 100.",
-        "Write 0.4 x 10².",
-        "Which digit is in the second decimal place of 3.472?"
-      ],
-      "teach": [
-        {
-          "heading": "Counting decimal places",
-          "bullets": [
-            "In 7.846 the 8 is the first decimal place.",
-            "The 4 is the second, and the 6 is the third.",
-            "Rounding to 2 d.p. keeps two digits after the point."
-          ],
-          "note": "Draw a place value chart for the decimal part. Ask: what is the value of the 4? (4 hundredths)"
-        },
-        {
-          "heading": "The rounding rule",
-          "bullets": [
-            "Look at the next digit after the one you keep.",
-            "5 or more: round up. 4 or less: leave.",
-            "7.846 to 1 d.p. is 7.8; to 2 d.p. is 7.85."
-          ],
-          "note": "For 1 d.p.: look at the 4, round down. For 2 d.p.: look at the 6, round up the 4 to 5. Make sure pupils do not round the already-rounded number again."
-        },
-        {
-          "heading": "Tricky cases",
-          "bullets": [
-            "3.996 to 2 d.p. is 4.00.",
-            "0.0749 to 2 d.p. is 0.07.",
-            "Keep the zeros: 4.00 shows 2 d.p."
-          ],
-          "note": "Carrying: 3.996 rounds up, 9 + 1 carries through. Zeros at the end of a decimal show the accuracy, so write 4.00 not 4. For 0.0749, the digit after the second d.p. is 4, so stay at 0.07."
-        },
-        {
-          "heading": "Large numbers",
-          "bullets": [
-            "1,284,560 to the nearest 1,000: 1,285,000.",
-            "To the nearest 10,000: 1,280,000.",
-            "To the nearest 100,000: 1,300,000."
-          ],
-          "note": "Same rule as in primary. Check each by looking at the digit to the right. Discuss the value of a sensible rounding in context: attendance at a match, populations."
-        }
-      ],
-      "practice": [
-        "Round 5.678 to 1 d.p. and to 2 d.p.",
-        "Round 0.0451 to 2 d.p.",
-        "Round 3,847,290 to the nearest 10,000."
-      ],
-      "independent": [
-        "Round 12.3456 to 1, 2 and 3 d.p.",
-        "Round to 2 d.p.: 9.995; 0.0396; 15.1049.",
-        "Round to the nearest 1,000, 10,000 and 100,000: 3,847,290.",
-        "A calculator shows 17.6666666. Write it to 1, 2 and 3 d.p. and say which is most accurate."
-      ],
-      "exit": [
-        "Round 8.372 to 2 d.p.",
-        "Round 56,780 to the nearest 1,000."
-      ],
-      "homework": "Divide 100 by 7, 8, 9 and 11 on a calculator and round each answer to 2 d.p.",
-      "send": "SEND: decimal place value chart, highlight the deciding digit. EAL: pre-teach decimal place. Stretch: explain why 0.995 to 2 d.p. is 1.00."
-    },
-    {
-      "unit": "Unit 2: Working with numbers",
-      "n": 8,
-      "title": "Rounding to significant figures",
-      "duration": 50,
-      "objectives": [
-        "Round numbers to a given number of significant figures",
-        "Use 1 significant figure to estimate calculations"
-      ],
-      "keywords": [
-        { "term": "significant figure (s.f.)", "def": "a digit that tells us the size of a number, starting from the first non-zero digit" },
-        { "term": "estimate", "def": "an approximate answer found by rounding" },
-        { "term": "place holder", "def": "a zero used to keep other digits in the right place" }
-      ],
-      "starter": [
-        "Say Bismillah. Round 4.567 to 2 d.p.",
-        "Round 28,640 to the nearest 1,000.",
-        "Work out 5 x 20."
-      ],
-      "teach": [
-        {
-          "heading": "What is a significant figure?",
-          "bullets": [
-            "Start counting at the first non-zero digit.",
-            "In 45,872 the first s.f. is 4.",
-            "In 0.004738 the first s.f. is 4."
-          ],
-          "note": "Leading zeros are not significant; zeros between non-zero digits are (3,046 has 4 s.f.). Contrast with decimal places, which count from the decimal point."
-        },
-        {
-          "heading": "Rounding to s.f.",
-          "bullets": [
-            "45,872 to 2 s.f. is 46,000.",
-            "0.004738 to 2 s.f. is 0.0047.",
-            "Fill with zeros to keep place value."
-          ],
-          "note": "Find the last digit to keep, look at the next, round. Use zeros as place holders for whole numbers; 45,872 is not 46. For 0.004738, the 2nd s.f. is 7, the next digit is 3, so stay at 0.0047."
-        },
-        {
-          "heading": "Careful cases",
-          "bullets": [
-            "3,046 to 3 s.f. is 3,050.",
-            "0.0305 to 1 s.f. is 0.03.",
-            "9.96 to 2 s.f. is 10; 2.0976 to 3 s.f. is 2.10."
-          ],
-          "note": "For 2.0976 to 3 s.f., the zero is the 2nd s.f. so write 2.10 (showing the accuracy). For 9.96 to 2 s.f. we get 10, which also has 2 s.f. Spend time on these as they are where marks are lost."
-        },
-        {
-          "heading": "Estimating with 1 s.f.",
-          "bullets": [
-            "4.87 x 21.3 is about 5 x 20 = 100.",
-            "Exact answer: 103.731.",
-            "The estimate shows the answer is sensible."
-          ],
-          "note": "Round each number to 1 s.f. then calculate. Make clear this is an estimate. Check: 4.87 x 21.3 = 97.4 + 6.331 = 103.731."
-        }
-      ],
-      "practice": [
-        "Round 6,849 to 1 s.f.",
-        "Round 0.07382 to 2 s.f.",
-        "Estimate 3.92 x 48.7 using 1 s.f."
-      ],
-      "independent": [
-        "Round to 2 s.f.: 5,555; 0.002049; 0.0199; 87.46.",
-        "Round 150,400 to 3 s.f. and 12.57 to 3 s.f.",
-        "Estimate: 612 ÷ 29.8; 5.1 x 19.7; 8.04 + 31.9 using 1 s.f.",
-        "Explain the difference between 2 decimal places and 2 significant figures for 0.04567."
-      ],
-      "exit": [
-        "Round 4,382 to 2 s.f.",
-        "Round 0.06051 to 2 s.f."
-      ],
-      "homework": "Choose five numbers from a newspaper or website. Round each to 1, 2 and 3 s.f.",
-      "send": "SEND: highlight the first non-zero digit with a coloured pen. EAL: pre-teach significant. Stretch: bounds of rounded numbers."
-    },
-    {
-      "unit": "Unit 2: Working with numbers",
-      "n": 9,
-      "title": "Large numbers in standard form",
-      "duration": 50,
-      "objectives": [
-        "Write large numbers in standard form and convert back",
-        "Order and multiply simple numbers in standard form"
-      ],
-      "keywords": [
-        { "term": "standard form", "def": "a number written as A x 10ⁿ with A between 1 and 10" },
-        { "term": "power of 10", "def": "10 multiplied by itself n times" },
-        { "term": "scientific notation", "def": "another name for standard form" }
-      ],
-      "starter": [
-        "Say Bismillah. Work out 10⁵.",
-        "Work out 4.5 x 10,000.",
-        "Round 148,600,000 to 2 s.f."
-      ],
-      "teach": [
-        {
-          "heading": "Why standard form?",
-          "bullets": [
-            "It writes huge numbers compactly.",
-            "Earth to Sun: about 150,000,000 km.",
-            "In standard form: 1.5 x 10⁸ km."
-          ],
-          "note": "Scientists use standard form for distances and sizes. The speed of light is about 3 x 10⁸ metres per second."
-        },
-        {
-          "heading": "The rules",
-          "bullets": [
-            "Form: A x 10ⁿ, where 1 ≤ A < 10.",
-            "n is a whole number.",
-            "45 x 10³ is not standard form."
-          ],
-          "note": "A must have exactly one non-zero digit before the decimal point. Correct 45 x 10³ to 4.5 x 10⁴. Ask pupils why 0.5 x 10⁵ is also not standard form."
-        },
-        {
-          "heading": "Ordinary to standard form",
-          "bullets": [
-            "45,000 = 4.5 x 10⁴.",
-            "3,200,000 = 3.2 x 10⁶.",
-            "600 = 6 x 10²."
-          ],
-          "note": "Count how many places the decimal point moves to get A between 1 and 10: that count is n. For 45,000 the point moves 4 places. Check by multiplying back."
-        },
-        {
-          "heading": "Standard form to ordinary",
-          "bullets": [
-            "7.3 x 10³ = 7,300.",
-            "6.05 x 10³ = 6,050.",
-            "2.7 x 10⁴ = 27,000."
-          ],
-          "note": "Move the point n places right and use zeros to fill. Also ordering: 4.1 x 10⁴ < 2.9 x 10⁵ < 3.2 x 10⁵; compare the powers first, then the A values."
-        },
-        {
-          "heading": "Multiplying",
-          "bullets": [
-            "(2 x 10³) x (3 x 10⁴).",
-            "Multiply 2 x 3 = 6 and add powers 3 + 4 = 7.",
-            "Answer: 6 x 10⁷."
-          ],
-          "note": "Extension: (4 x 10⁵) x (5 x 10³) = 20 x 10⁸ = 2 x 10⁹, which needs rewriting. Optional: small numbers use negative powers, 0.00045 = 4.5 x 10⁻⁴."
-        }
-      ],
-      "practice": [
-        "Write 83,000 in standard form.",
-        "Write 5.2 x 10⁵ as an ordinary number.",
-        "Which is bigger: 6.1 x 10⁴ or 9.8 x 10³?"
-      ],
-      "independent": [
-        "Write in standard form: 9,100,000; 150,000,000; 72; 480,000.",
-        "Write as ordinary numbers: 2.7 x 10⁴; 6.05 x 10³; 1.2 x 10⁷.",
-        "Order smallest first: 3.2 x 10⁵; 4.1 x 10⁴; 2.9 x 10⁵.",
-        "Calculate (3 x 10³) x (2 x 10⁴) and give the answer in standard form."
-      ],
-      "exit": [
-        "Write 560,000 in standard form.",
-        "Write 7.2 x 10³ as an ordinary number."
-      ],
-      "homework": "Find five large measurements (distances, populations) and write them in standard form.",
-      "send": "SEND: place value chart showing the decimal point moving. EAL: pre-teach standard form vocabulary. Stretch: very small numbers with negative powers."
-    },
-    {
-      "unit": "Unit 3: Percentage change",
-      "n": 10,
-      "title": "Percentages of amounts and simple increase and decrease",
-      "duration": 50,
-      "objectives": [
-        "Find a percentage of an amount without a calculator",
-        "Increase and decrease an amount by a percentage"
-      ],
-      "keywords": [
-        { "term": "percentage", "def": "a fraction out of 100" },
-        { "term": "increase", "def": "make bigger by an amount" },
-        { "term": "decrease", "def": "make smaller by an amount" }
-      ],
-      "starter": [
-        "Say Bismillah. Find 10% of 360.",
-        "Write 3/4 as a percentage.",
-        "Find 50% and 25% of 80."
-      ],
-      "teach": [
-        {
-          "heading": "Building percentages",
-          "bullets": [
-            "10% = divide by 10.",
-            "5% = half of 10%. 1% = divide by 100.",
-            "Combine: 15% = 10% + 5%."
-          ],
-          "note": "15% of 240: 10% is 24, 5% is 12, so 36. 35% of 80: 10% is 8, so 3 x 8 = 24 plus 5% = 4, total 28. Also 17.5% of 200 = 20 + 10 + 5 = 35."
-        },
-        {
-          "heading": "Increase by a percentage",
-          "bullets": [
-            "Increase £60 by 20%.",
-            "20% of 60 = £12.",
-            "New price: 60 + 12 = £72."
-          ],
-          "note": "Two steps: find the change, then add. Link to context: a price rise or a pay rise."
-        },
-        {
-          "heading": "Decrease by a percentage",
-          "bullets": [
-            "Decrease £85 by 40%.",
-            "40% of 85 = £34.",
-            "New price: 85 - 34 = £51."
-          ],
-          "note": "Find 10% (8.5), multiply by 4 (34), subtract. Sale prices. Common mistake: giving the 34 as the answer rather than the new price."
-        },
-        {
-          "heading": "A percentage in daily life: zakat",
-          "bullets": [
-            "Zakat on qualifying savings is 2.5%.",
-            "2.5% of £6,000: 1% = £60.",
-            "2.5 x 60 = £150."
-          ],
-          "note": "This is a maths example only; for rulings on zakat (nisab, conditions) pupils should ask a qualified scholar. Another way: 2.5% = 1/40, and 6,000 ÷ 40 = 150."
-        }
-      ],
-      "practice": [
-        "Find 12% of £350.",
-        "Increase £150 by 8%.",
-        "Decrease 64 kg by 25%."
-      ],
-      "independent": [
-        "Find: 60% of 45; 17.5% of 200; 3% of 1,500.",
-        "Increase £420 by 15%. Decrease £2,500 by 4%.",
-        "A £48 jacket has 30% off in a sale. What is the sale price?",
-        "A salary of £1,800 rises by 5%. What is the new salary?"
-      ],
-      "exit": [
-        "Find 35% of 60.",
-        "Decrease £80 by 15%."
-      ],
-      "homework": "Find three sale prices or interest rates in a shop or bank website and calculate the new price or interest for each.",
-      "send": "SEND: percentage bar models, 10% grids. EAL: pre-teach increase/decrease/off. Stretch: percentages with decimals such as 7.5% of £64."
-    },
-    {
-      "unit": "Unit 3: Percentage change",
-      "n": 11,
-      "title": "Using a multiplier",
-      "duration": 50,
-      "objectives": [
-        "Find the multiplier for a percentage increase or decrease",
-        "Use a multiplier to calculate the new amount in one step"
-      ],
-      "keywords": [
-        { "term": "multiplier", "def": "the number you multiply by to apply a percentage change" },
-        { "term": "percentage increase", "def": "the amount of increase as a percentage of the original" },
-        { "term": "original amount", "def": "the value before the change" }
-      ],
-      "starter": [
-        "Say Bismillah. Increase £80 by 10%.",
-        "Write 35% as a decimal.",
-        "Work out 250 x 1.2."
-      ],
-      "teach": [
-        {
-          "heading": "100% plus the increase",
-          "bullets": [
-            "Increase by 12%: 100% + 12% = 112%.",
-            "112% as a decimal is 1.12.",
-            "The multiplier is 1.12."
-          ],
-          "note": "Show that 112% of the original is the new amount. The multiplier does both steps (find the change and add) in one."
-        },
-        {
-          "heading": "100% minus the decrease",
-          "bullets": [
-            "Decrease by 15%: 100% - 15% = 85%.",
-            "85% as a decimal is 0.85.",
-            "The multiplier is 0.85."
-          ],
-          "note": "More: +30% gives 1.3, +7.5% gives 1.075, -35% gives 0.65, -2% gives 0.98. Common error: using 0.15 as the multiplier for a 15% decrease."
-        },
-        {
-          "heading": "Using the multiplier",
-          "bullets": [
-            "£250 increased by 12%: 250 x 1.12 = £280.",
-            "£80 decreased by 35%: 80 x 0.65 = £52.",
-            "45 increased by 8%: 45 x 1.08 = 48.6."
-          ],
-          "note": "Compare with the two-step method to check. The multiplier is efficient with a calculator and is needed for repeated change."
-        },
-        {
-          "heading": "Repeated change",
-          "bullets": [
-            "A car worth £8,000 loses 10% each year.",
-            "After 2 years: 8,000 x 0.9 x 0.9.",
-            "Value: £6,480."
-          ],
-          "note": "Stretch content. It is not the same as losing 20%, which would give £6,400. Use 0.9 squared = 0.81."
-        }
-      ],
-      "practice": [
-        "Write the multiplier for: +5%; -20%; +45%; -2%.",
-        "Increase £360 by 15% using a multiplier.",
-        "Decrease £90 by 35% using a multiplier."
-      ],
-      "independent": [
-        "Use multipliers: 64 increased by 25%; 350 decreased by 10%; £1,200 increased by 3.5%.",
-        "A £60 bike is reduced by 18% in the sale. What is the sale price?",
-        "A population of 20,000 grows by 4% each year. Find the population after 2 years.",
-        "Explain why a 20% increase followed by a 20% decrease does not return to the original amount."
-      ],
-      "exit": [
-        "What is the multiplier for a 7% increase?",
-        "Decrease £200 by 12% using a multiplier."
-      ],
-      "homework": "Write multipliers for six percentage changes of your choice, then apply each to £500.",
-      "send": "SEND: multiplier table linking percent, decimal and multiplier. EAL: pre-teach multiplier. Stretch: repeated percentage change with powers."
-    },
-    {
-      "unit": "Unit 3: Percentage change",
-      "n": 12,
-      "title": "Calculating a percentage change",
-      "duration": 50,
-      "objectives": [
-        "Express a change as a percentage of the original",
-        "Calculate percentage profit and loss"
-      ],
-      "keywords": [
-        { "term": "percentage change", "def": "the change as a percentage of the original value" },
-        { "term": "profit", "def": "money made when selling for more than the cost" },
-        { "term": "loss", "def": "money lost when selling for less than the cost" }
-      ],
-      "starter": [
-        "Say Bismillah. Write 30/120 as a percentage.",
-        "Increase £40 by 25%.",
-        "Write 9/45 as a fraction in its simplest form."
-      ],
-      "teach": [
-        {
-          "heading": "The formula",
-          "bullets": [
-            "Percentage change = change ÷ original x 100.",
-            "Always divide by the original value.",
-            "State increase or decrease."
-          ],
-          "note": "Emphasise the original (starting) value. Pupils often divide by the new value. Change = new - original."
-        },
-        {
-          "heading": "Increase example",
-          "bullets": [
-            "£120 rises to £150.",
-            "Change = £30.",
-            "30 ÷ 120 x 100 = 25% increase."
-          ],
-          "note": "Also 40 to 50 is an increase of 10, and 10 ÷ 40 = 0.25, so 25% increase."
-        },
-        {
-          "heading": "Decrease example",
-          "bullets": [
-            "£45 falls to £36.",
-            "Change = £9.",
-            "9 ÷ 45 x 100 = 20% decrease."
-          ],
-          "note": "Note that 80 to 60 is a 25% decrease, but 60 to 80 is a 33.3% increase: the original differs. Ask why."
-        },
-        {
-          "heading": "Profit and loss",
-          "bullets": [
-            "Bought for £25, sold for £30.",
-            "Profit = £5. 5 ÷ 25 x 100 = 20%.",
-            "Profit percentage is on the cost price."
-          ],
-          "note": "Loss example: bought for £40, sold for £34; loss £6, 6 ÷ 40 = 15% loss. Link to fair trade (honest dealing in business is encouraged in Islam) only as a context, without quotations."
-        }
-      ],
-      "practice": [
-        "A price rises from 50 to 65. Find the percentage increase.",
-        "A price falls from 200 to 170. Find the percentage decrease.",
-        "A trader buys for £60 and sells for £75. Find the percentage profit."
-      ],
-      "independent": [
-        "Find the percentage change: 60 to 75; 250 to 200; £12 to £15.60; 1,500 to 1,320.",
-        "A population grows from 20,000 to 23,000. Find the percentage increase.",
-        "A shirt bought for £40 is sold for £34. Find the percentage loss.",
-        "Explain why a fall from 80 to 60 and a rise from 60 to 80 are different percentages."
-      ],
-      "exit": [
-        "Find the percentage change from 20 to 27.",
-        "Find the percentage change from 90 to 72."
-      ],
-      "homework": "Find the price of an item now and a year ago (ask family, or from a website) and calculate the percentage change.",
-      "send": "SEND: formula prompt card, worked example frame. EAL: pre-teach change/original/profit/loss. Stretch: compare two percentage changes."
-    },
-    {
-      "unit": "Unit 3: Percentage change",
-      "n": 13,
-      "title": "Reverse percentages",
-      "duration": 50,
-      "objectives": [
-        "Find the original amount before a percentage change",
-        "Recognise when to divide by the multiplier"
-      ],
-      "keywords": [
-        { "term": "reverse percentage", "def": "finding the original value from the value after a percentage change" },
-        { "term": "inverse", "def": "the operation that undoes another" },
-        { "term": "original value", "def": "the starting amount before the change" }
-      ],
-      "starter": [
-        "Say Bismillah. What is the multiplier for a 20% increase?",
-        "What is the multiplier for a 15% decrease?",
-        "Work out 75 x 1.2."
-      ],
-      "teach": [
-        {
-          "heading": "Going backwards",
-          "bullets": [
-            "After a 20% increase the price is £90.",
-            "90 is 120% of the original.",
-            "The original was not £90 - 20%."
-          ],
-          "note": "Take 20% off 90 to get 72 is the classic error. Because 20% of the new price is not the same as 20% of the original."
-        },
-        {
-          "heading": "Divide by the multiplier",
-          "bullets": [
-            "120% = 1.2, so original x 1.2 = 90.",
-            "Original = 90 ÷ 1.2 = £75.",
-            "Check: 75 x 1.2 = 90."
-          ],
-          "note": "Use the inverse operation. Also show the bar model: 120% is 90, so 10% is 7.50 and 100% is 75."
-        },
-        {
-          "heading": "A sale price",
-          "bullets": [
-            "Sale price £68 after 15% off.",
-            "68 is 85% of the original.",
-            "Original = 68 ÷ 0.85 = £80."
-          ],
-          "note": "Check: 80 x 0.85 = 68. A 15% reduction on £80 is £12, giving £68."
-        },
-        {
-          "heading": "Choosing the correct approach",
-          "bullets": [
-            "Original given: multiply by the multiplier.",
-            "New value given: divide by the multiplier.",
-            "8% increase to 162: 162 ÷ 1.08 = 150."
-          ],
-          "note": "Ask pupils to say which situation they are in before calculating. Practice with a mixed set where both types are present."
-        }
-      ],
-      "practice": [
-        "After a 10% increase a price is £66. Find the original.",
-        "After a 25% decrease a price is £45. Find the original.",
-        "After a 5% rise a salary is £420 per week. What was it before?"
-      ],
-      "independent": [
-        "Find the original: £35 after 30% off; £112 after a 12% increase; £192 after a 4% decrease.",
-        "A price including 20% VAT is £144. What is the price before VAT?",
-        "A town's population grew by 6% to 31,800. What was it before?",
-        "Mina says '20% off £90 gives £72, so £90 after a 20% rise was £72.' Explain her mistake."
-      ],
-      "exit": [
-        "After an 18% increase a price is £59. Find the original.",
-        "After 20% off a coat costs £48. Find the original price."
-      ],
-      "homework": "Find three sale items. For each, make up the original price and sale percentage, and work backwards from the sale price to check.",
-      "send": "SEND: bar model templates, multiplier cards. EAL: pre-teach original/inverse. Stretch: reverse percentages after two successive changes."
-    },
-    {
-      "unit": "Unit 4: Graphs",
-      "n": 14,
-      "title": "Graphs from linear equations",
-      "duration": 50,
-      "objectives": [
-        "Complete a table of values for a linear equation",
-        "Plot and draw straight-line graphs"
-      ],
-      "keywords": [
-        { "term": "linear equation", "def": "an equation whose graph is a straight line" },
-        { "term": "table of values", "def": "a table of x values and their matching y values" },
-        { "term": "coordinates", "def": "a pair of numbers (x, y) that give a position" }
-      ],
-      "starter": [
-        "Say Bismillah. Work out 2 x (-3) + 1.",
-        "Plot (2, 3), (-1, 0), (0, -4).",
-        "Substitute x = 5 into 3x - 2."
-      ],
-      "teach": [
-        {
-          "heading": "Table of values",
-          "bullets": [
-            "y = 2x + 1.",
-            "Put each x value into the equation to get y.",
-            "x = -2: -3. x = 0: 1. x = 3: 7."
-          ],
-          "note": "Full table: x = -2, -1, 0, 1, 2, 3 gives y = -3, -1, 1, 3, 5, 7. Each x increases by 1 and y increases by 2: this pattern shows a straight line."
-        },
-        {
-          "heading": "Plot and join",
-          "bullets": [
-            "Plot the coordinates (-2, -3), (-1, -1), (0, 1) ...",
-            "Join with a ruler.",
-            "Extend the line past the points."
-          ],
-          "note": "Choose a scale to fit the range. Label the line with its equation. If one point is off the line, check the calculation."
-        },
-        {
-          "heading": "Another example",
-          "bullets": [
-            "y = 3 - x.",
-            "x = -1: 4; x = 0: 3; x = 1: 2.",
-            "x = 2: 1; x = 3: 0."
-          ],
-          "note": "This line goes down as x increases. Compare with y = 2x + 1. Link this to the gradient next lesson."
-        },
-        {
-          "heading": "Special lines",
-          "bullets": [
-            "x = 4 is a vertical line.",
-            "y = -2 is a horizontal line.",
-            "y = x passes through the origin."
-          ],
-          "note": "x = a: every point has x-coordinate a. Pupils often mix up x = 4 and y = 4. Check by naming points on each."
-        },
-        {
-          "heading": "Does a point lie on the line?",
-          "bullets": [
-            "Is (4, 9) on y = 2x + 1?",
-            "2 x 4 + 1 = 9, so yes.",
-            "Is (3, 8)? 2 x 3 + 1 = 7, so no."
-          ],
-          "note": "Substitute the x value and compare with the y value. This is a quick exam skill."
-        }
-      ],
-      "practice": [
-        "Complete a table for y = x + 3 for x from -2 to 2.",
-        "Complete a table for y = 4x - 1 for x from 0 to 3.",
-        "Is (5, 11) on y = 2x + 1?"
-      ],
-      "independent": [
-        "Draw the graph of y = 2x - 3 for x from -1 to 3.",
-        "Draw the graph of y = 5 - 2x for x from 0 to 3.",
-        "Which of (2, 4), (0, 2), (-1, -5) lie on the line y = 3x - 2?",
-        "Draw the lines x = 3 and y = -1 on the same axes and state where they cross."
-      ],
-      "exit": [
-        "Find y when x = 3 in y = x + 4.",
-        "Is (2, 9) on the line y = 3x + 3?"
-      ],
-      "homework": "Draw the graphs of y = x + 2, y = x - 3 and y = 2x on the same axes and describe what is similar and different.",
-      "send": "SEND: pre-drawn axes, partially filled tables. EAL: pre-teach table of values/substitute. Stretch: find where two lines cross."
-    },
-    {
-      "unit": "Unit 4: Graphs",
-      "n": 15,
-      "title": "Gradient of a straight line",
-      "duration": 50,
-      "objectives": [
-        "Calculate the gradient of a straight line from two points",
-        "Interpret positive, negative and zero gradients"
-      ],
-      "keywords": [
-        { "term": "gradient", "def": "a measure of how steep a line is; change in y divided by change in x" },
-        { "term": "parallel lines", "def": "lines that never meet and have the same gradient" },
-        { "term": "rise and run", "def": "the vertical change and the horizontal change between two points" }
-      ],
-      "starter": [
-        "Say Bismillah. Work out 9 ÷ 3 and -6 ÷ 2.",
-        "Complete the table for y = 2x + 1 when x = 0, 1, 2.",
-        "Plot (1, 2) and (4, 11)."
-      ],
-      "teach": [
-        {
-          "heading": "How steep?",
-          "bullets": [
-            "Gradient measures steepness.",
-            "Gradient = rise ÷ run.",
-            "Rise = vertical change. Run = horizontal change."
-          ],
-          "note": "Draw a right-angled triangle under a line. Link to ramps and roofs. Always move left to right."
-        },
-        {
-          "heading": "From two points",
-          "bullets": [
-            "Points (1, 2) and (4, 11).",
-            "Rise = 11 - 2 = 9. Run = 4 - 1 = 3.",
-            "Gradient = 9 ÷ 3 = 3."
-          ],
-          "note": "Use the same order for both coordinates. A gradient of 3 means for every 1 across the line goes 3 up."
-        },
-        {
-          "heading": "Negative gradients",
-          "bullets": [
-            "Points (0, 5) and (2, 1).",
-            "Rise = 1 - 5 = -4. Run = 2.",
-            "Gradient = -2: the line slopes downwards."
-          ],
-          "note": "Going left to right, the line falls. A horizontal line has gradient 0; a vertical line has no gradient (undefined)."
-        },
-        {
-          "heading": "Parallel lines and equations",
-          "bullets": [
-            "In y = 4x - 3 the gradient is 4.",
-            "In y = -5x + 2 the gradient is -5.",
-            "Parallel lines have equal gradients."
-          ],
-          "note": "Link to the tables last lesson: y = 2x + 1 rose by 2 each time x rose by 1; the gradient is 2. This leads to y = mx + c."
-        }
-      ],
-      "practice": [
-        "Find the gradient between (0, 1) and (3, 10).",
-        "Find the gradient between (1, 8) and (4, 2).",
-        "Find the gradient between (2, 3) and (6, 5)."
-      ],
-      "independent": [
-        "Find the gradient: (0, 0) and (4, 12); (1, 7) and (3, 1); (-2, 1) and (2, 5).",
-        "State the gradient of each: y = 7x + 1; y = x - 9; y = 4 - 3x.",
-        "A line passes through (0, 2) and has gradient 3. Find two more points on it.",
-        "Are the lines through (0, 1) and (2, 5), and through (1, 0) and (4, 6), parallel?"
-      ],
-      "exit": [
-        "Find the gradient between (1, 3) and (3, 9).",
-        "State the gradient of y = -5x + 2."
-      ],
-      "homework": "Draw three lines with gradients 1, 2 and -1. Choose two points on each and check the gradient by calculation.",
-      "send": "SEND: gradient triangles on printed graphs. EAL: pre-teach steep/rise/run. Stretch: gradient as rate of change in context."
-    },
-    {
-      "unit": "Unit 4: Graphs",
-      "n": 16,
-      "title": "The equation y = mx + c",
-      "duration": 50,
-      "objectives": [
-        "Identify the gradient and y-intercept from y = mx + c",
-        "Find the equation of a straight line from a graph or conditions"
-      ],
-      "keywords": [
-        { "term": "y-intercept", "def": "the point where a line crosses the y-axis" },
-        { "term": "y = mx + c", "def": "the equation of a straight line with gradient m and y-intercept c" },
-        { "term": "rearrange", "def": "change the form of an equation without changing its meaning" }
-      ],
-      "starter": [
-        "Say Bismillah. Find the gradient between (0, 3) and (2, 9).",
-        "Is (3, 10) on y = 3x + 1?",
-        "Solve 2y = 8."
-      ],
-      "teach": [
-        {
-          "heading": "m and c",
-          "bullets": [
-            "y = mx + c.",
-            "m is the gradient. c is the y-intercept.",
-            "y = 3x - 2: gradient 3, y-intercept -2."
-          ],
-          "note": "The line crosses the y-axis at (0, c) since x = 0 gives y = c. Draw y = 3x - 2 and check the gradient and intercept."
-        },
-        {
-          "heading": "From a gradient and intercept",
-          "bullets": [
-            "Through (0, 4) with gradient -2.",
-            "m = -2 and c = 4.",
-            "Equation: y = -2x + 4."
-          ],
-          "note": "Substitute into y = mx + c. Pupils often swap m and c. Say: 'm is the multiplier of x'."
-        },
-        {
-          "heading": "From a graph",
-          "bullets": [
-            "Line passes (0, 1) and (2, 7).",
-            "Gradient = (7 - 1) ÷ 2 = 3. Intercept = 1.",
-            "Equation: y = 3x + 1."
-          ],
-          "note": "Read c from where the line meets the y-axis, find m by drawing a triangle. Check with the second point: 3 x 2 + 1 = 7."
-        },
-        {
-          "heading": "Rearranging and parallel lines",
-          "bullets": [
-            "2y = 6x + 4 becomes y = 3x + 2.",
-            "Parallel, through (0, -5): y = 3x - 5",
-            "Through (1, 5), gradient 2: y = 2x + 3."
-          ],
-          "note": "Divide every term by 2 when rearranging. Last example: 5 = 2 x 1 + c gives c = 3. This is the stretch step."
-        }
-      ],
-      "practice": [
-        "State the gradient and y-intercept of y = 2x + 5, y = x - 4 and y = 7 - 3x.",
-        "Write the equation of the line with gradient 4 and y-intercept -1.",
-        "Find the equation of the line through (0, 3) with gradient 2."
-      ],
-      "independent": [
-        "Find the equation of the line through (0, -3) and (2, 1).",
-        "Rearrange 2y = 8x + 6 into the form y = mx + c.",
-        "Write the equation of a line parallel to y = 5x - 1 through (0, 6).",
-        "Is (3, 10) on y = 3x + 1? Find the equation of a line through (1, 5) with gradient 2."
-      ],
-      "exit": [
-        "State the gradient and y-intercept of y = 6x - 7.",
-        "Write the equation of the line with gradient 2 through (0, 3)."
-      ],
-      "homework": "Write the equations of four lines with different gradients and intercepts, draw them and check the gradient and intercept of each.",
-      "send": "SEND: m and c colour-coded equation cards, pre-drawn graphs. EAL: pre-teach intercept/gradient. Stretch: find the equation of a line through any two points."
+     "term": "inverse",
+     "def": "the opposite operation used to check"
     }
-  ]
+   ],
+   "starter": [
+    "Bismillah. Work out 7.5 + 2.5",
+    "Round 4.68 to 1 decimal place",
+    "Work out 10 − 3.2",
+    "What is the value of the 4 in 2.648?"
+   ],
+   "teach": [
+    {
+     "heading": "Line up the decimal points",
+     "bullets": [
+      "Points in a vertical line",
+      "Fill gaps with zeros",
+      "Then add or subtract as usual"
+     ],
+     "note": "Model and narrate each step.",
+     "model": {
+      "problem": "Work out 14.6 + 3.85 + 0.7",
+      "steps": [
+       "Write 14.60, 3.85, 0.70 lined up",
+       "Hundredths: 0 + 5 + 0 = 5",
+       "Tenths: 6 + 8 + 7 = 21, write 1 carry 2",
+       "Ones: 4 + 3 + 0 + 2 = 9; tens: 1"
+      ],
+      "answer": "19.15"
+     }
+    },
+    {
+     "heading": "Subtracting with place holders",
+     "bullets": [
+      "Write 12 as 12.00",
+      "Exchange across the point as normal"
+     ],
+     "note": "Example: 12 − 4.37 = 7.63. Ask: 'Why must we write 12.00?'",
+     "misconception": {
+      "wrong": "12 − 4.37 = 8.37 (ignoring the decimals)",
+      "right": "12.00 − 4.37 = 7.63"
+     }
+    },
+    {
+     "heading": "Mental or written?",
+     "bullets": [
+      "Compensate: 6.9 + 3.8 = 7 + 3.8 − 0.1",
+      "Make a whole: 2.75 + 1.25 = 4",
+      "Written for awkward numbers"
+     ],
+     "note": "Give three calculations and ask pupils to choose a method and justify it."
+    },
+    {
+     "heading": "Estimate, then check",
+     "bullets": [
+      "Round to whole numbers first",
+      "Use the inverse: subtract to check addition"
+     ],
+     "note": "14.6 + 3.85 + 0.7 ≈ 15 + 4 + 1 = 20. Our 19.15 is close. Then check 19.15 − 0.7 − 3.85 = 14.6."
+    },
+    {
+     "heading": "Check: decimals",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Work out 5.3 + 2.47",
+      "options": [
+       "7.50",
+       "7.77",
+       "2.53",
+       "7.10"
+      ],
+      "answer": 1,
+      "why": "5.30 + 2.47 = 7.77 with the points lined up. The other answers come from lining up digits instead of points, or subtracting."
+     }
+    }
+   ],
+   "practice": [
+    "Work out 23.4 + 6.75",
+    "Work out 9 − 2.48",
+    "Work out 3.6 + 12.09 + 0.5"
+   ],
+   "independent": [
+    "Core: (a) 45.8 + 7.65 (b) 20 − 6.34 (c) 0.45 + 3.9 + 12",
+    "Extend: A recipe needs 0.75 kg flour, 0.3 kg sugar and 0.125 kg butter. Find the total mass, and how much flour is left from a 2 kg bag.",
+    "Stretch: Find the missing digits: 3.□7 + □.85 = 9.12"
+   ],
+   "exit": [
+    "Work out 8.4 + 3.27",
+    "Work out 10 − 7.65",
+    "Estimate 19.8 + 4.1 + 6.9"
+   ],
+   "homework": "Use a supermarket receipt (or the sample one) to add up the items with a written method and check against the total.",
+   "send": "Support: place-value columns with the point printed. Stretch: missing-digit problems."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 2,
+   "title": "Multiplying and dividing decimals",
+   "duration": 50,
+   "bigQuestion": "Does multiplying always make a number bigger?",
+   "objectives": [
+    "Multiply decimals using a whole-number method",
+    "Divide a decimal by a whole number",
+    "Use estimation to place the decimal point"
+   ],
+   "successCriteria": [
+    "Multiply a decimal by a whole number",
+    "Multiply two decimals and place the point correctly",
+    "Explain why multiplying by 0.5 makes a number smaller"
+   ],
+   "crossCurricular": "Science: calculating with measurements; Business: unit prices",
+   "smsc": "Social: fair sharing of costs between friends",
+   "keywords": [
+    {
+     "term": "decimal point",
+     "def": "separates whole numbers from parts of a whole"
+    },
+    {
+     "term": "product",
+     "def": "the result of a multiplication"
+    },
+    {
+     "term": "quotient",
+     "def": "the result of a division"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate answer to check against"
+    }
+   ],
+   "starter": [
+    "Work out 12.5 + 3.75",
+    "Work out 24 × 3",
+    "Work out 0.1 × 10",
+    "Round 6.48 to the nearest whole number"
+   ],
+   "teach": [
+    {
+     "heading": "Multiply as whole numbers, then adjust",
+     "bullets": [
+      "Remove the points and multiply",
+      "Count decimal places in the question",
+      "The answer has the same number"
+     ],
+     "note": "Model and show the estimate as a check.",
+     "model": {
+      "problem": "Work out 3.4 × 2.6",
+      "steps": [
+       "Estimate: 3 × 3 = 9",
+       "Whole numbers: 34 × 26 = 884",
+       "Two decimal places in total",
+       "884 becomes 8.84"
+      ],
+      "answer": "8.84 (close to 9)"
+     }
+    },
+    {
+     "heading": "Multiplying by numbers less than 1",
+     "bullets": [
+      "× 0.5 is the same as halving",
+      "× 0.1 is the same as ÷ 10",
+      "The answer gets smaller"
+     ],
+     "note": "Answer the big question: multiplying by a number between 0 and 1 makes it smaller.",
+     "misconception": {
+      "wrong": "Multiplying always makes a number bigger",
+      "right": "40 × 0.5 = 20: smaller, because 0.5 is less than 1"
+     }
+    },
+    {
+     "heading": "Dividing a decimal by a whole number",
+     "bullets": [
+      "Use short division",
+      "Keep the point in line",
+      "Add zeros if needed"
+     ],
+     "note": "Example: 17.4 ÷ 6 = 2.9. Then 7 ÷ 4 = 1.75 by writing 7.00.",
+     "model": {
+      "problem": "Work out 25.2 ÷ 4",
+      "steps": [
+       "Estimate: 24 ÷ 4 = 6",
+       "25 ÷ 4 = 6 remainder 1",
+       "Carry 1: 12 ÷ 4 = 3",
+       "Point stays above the point"
+      ],
+      "answer": "6.3"
+     }
+    },
+    {
+     "heading": "Check: place the point",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "52 × 18 = 936. What is 5.2 × 1.8?",
+      "options": [
+       "93.6",
+       "9.36",
+       "0.936",
+       "936"
+      ],
+      "answer": 1,
+      "why": "Two decimal places in the question, so 9.36. Estimate: 5 × 2 = 10 confirms it."
+     }
+    }
+   ],
+   "practice": [
+    "Work out 4.3 × 6",
+    "Work out 0.7 × 0.8",
+    "Work out 13.5 ÷ 3",
+    "Given 47 × 23 = 1081, write down 4.7 × 2.3"
+   ],
+   "independent": [
+    "Core: (a) 2.8 × 7 (b) 1.4 × 3.5 (c) 31.2 ÷ 4 (d) 9 ÷ 8",
+    "Extend: Petrol costs £1.42 per litre. Find the cost of 38.5 litres to the nearest penny.",
+    "Stretch: Find two decimals whose product is 0.24 and whose sum is 1. Find another pair whose product is 1.2."
+   ],
+   "exit": [
+    "Work out 0.6 × 0.3",
+    "Work out 18.6 ÷ 3",
+    "Is 50 × 0.9 bigger or smaller than 50? Why?"
+   ],
+   "homework": "Calculate the cost of five items bought by weight (e.g. 1.4 kg of apples at £2.35 per kg), estimating first.",
+   "send": "Support: grid method for decimal multiplication. Stretch: dividing by a decimal."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 3,
+   "title": "Divisibility rules",
+   "duration": 50,
+   "bigQuestion": "How can you tell if 3 744 is divisible by 9 without dividing?",
+   "objectives": [
+    "Know and use divisibility rules for 2, 3, 4, 5, 6, 8, 9 and 10",
+    "Use divisibility to find factors quickly",
+    "Explain why a divisibility rule works"
+   ],
+   "successCriteria": [
+    "Use the rules for 2, 3, 5 and 10",
+    "Use the rules for 4, 6, 8 and 9",
+    "Explain why the digit-sum rule works for 3 and 9"
+   ],
+   "crossCurricular": "Computing: checking codes such as ISBNs; History: number systems",
+   "smsc": "Spiritual: the order and patterns in numbers",
+   "keywords": [
+    {
+     "term": "divisible",
+     "def": "can be divided exactly with no remainder"
+    },
+    {
+     "term": "digit sum",
+     "def": "the total of a number's digits"
+    },
+    {
+     "term": "factor",
+     "def": "a number that divides exactly into another"
+    },
+    {
+     "term": "rule",
+     "def": "a reliable test that always works"
+    }
+   ],
+   "starter": [
+    "Work out 2.4 × 3",
+    "Is 45 a multiple of 5?",
+    "Add the digits of 5 274",
+    "List the factors of 18"
+   ],
+   "teach": [
+    {
+     "heading": "The rules",
+     "bullets": [
+      "Quick tests without dividing"
+     ],
+     "note": "Go through the table and test each with 3 744.",
+     "table": {
+      "head": [
+       "Divisible by",
+       "Test"
+      ],
+      "rows": [
+       [
+        "2",
+        "last digit even"
+       ],
+       [
+        "3",
+        "digit sum divisible by 3"
+       ],
+       [
+        "4",
+        "last two digits divisible by 4"
+       ],
+       [
+        "5",
+        "last digit 0 or 5"
+       ],
+       [
+        "6",
+        "passes the tests for 2 and 3"
+       ],
+       [
+        "8",
+        "last three digits divisible by 8"
+       ],
+       [
+        "9",
+        "digit sum divisible by 9"
+       ],
+       [
+        "10",
+        "last digit 0"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Testing a big number",
+     "bullets": [
+      "Apply each rule in turn",
+      "Write yes or no with a reason"
+     ],
+     "note": "Model all the tests.",
+     "model": {
+      "problem": "Is 3 744 divisible by 2, 3, 4, 6, 8 and 9?",
+      "steps": [
+       "Even, so by 2: yes",
+       "Digit sum 3 + 7 + 4 + 4 = 18: by 3 and 9, yes",
+       "Last two digits 44 = 4 × 11: by 4, yes",
+       "By 2 and 3, so by 6: yes; 744 = 8 × 93: by 8, yes"
+      ],
+      "answer": "Yes to all six"
+     }
+    },
+    {
+     "heading": "Why the digit sum works",
+     "bullets": [
+      "10 = 9 + 1, 100 = 99 + 1",
+      "So 3 744 = 3 × 999 + 7 × 99 + 4 × 9 + (3 + 7 + 4 + 4)",
+      "Only the digit sum decides"
+     ],
+     "note": "Higher attainers love this. Show that the multiples of 9 vanish, leaving the digit sum. That is why it works for 3 and 9 only."
+    },
+    {
+     "heading": "The rule for 6",
+     "bullets": [
+      "6 = 2 × 3, so test both"
+     ],
+     "note": "Ask: 'Does 'divisible by 3 and 4' mean divisible by 12?' Yes, because 3 and 4 share no factors. But '2 and 4' does not mean 8.",
+     "misconception": {
+      "wrong": "Divisible by 2 and 4, so divisible by 8 (e.g. 12)",
+      "right": "Combine only when the numbers share no factor: 2 and 3 → 6"
+     }
+    },
+    {
+     "heading": "Check: divisibility",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which number is divisible by 9?",
+      "options": [
+       "1 234",
+       "4 518",
+       "6 103",
+       "7 009"
+      ],
+      "answer": 1,
+      "why": "4 + 5 + 1 + 8 = 18, which is divisible by 9. The other digit sums are 10, 10 and 16, none divisible by 9."
+     }
+    }
+   ],
+   "practice": [
+    "Is 2 358 divisible by 3? By 9?",
+    "Is 7 316 divisible by 4?",
+    "Find a digit to make 47□ divisible by 6"
+   ],
+   "independent": [
+    "Core: Test 5 040 for divisibility by 2, 3, 4, 5, 6, 8, 9 and 10",
+    "Extend: Find the smallest 4-digit number divisible by 2, 3, 4, 5 and 6.",
+    "Stretch: Find all digits d so that the number 52d6 is divisible by 4 and by 9. Explain why there may be none."
+   ],
+   "exit": [
+    "Is 846 divisible by 3?",
+    "Is 1 228 divisible by 4?",
+    "Why is 135 divisible by 5 but not by 10?"
+   ],
+   "homework": "Write down any five 4-digit numbers (e.g. phone digits) and test each for divisibility by 3, 4, 6 and 9.",
+   "send": "Support: rules card. Stretch: research the rule for 11."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 4,
+   "title": "Calculating with negative integers",
+   "duration": 50,
+   "bigQuestion": "Why is a negative times a negative a positive?",
+   "objectives": [
+    "Add and subtract negative numbers",
+    "Multiply and divide negative numbers",
+    "Use negatives with the priority of operations"
+   ],
+   "successCriteria": [
+    "Add and subtract with negatives",
+    "Multiply and divide with negatives using the sign rules",
+    "Explain the sign rules using patterns"
+   ],
+   "crossCurricular": "Science: temperature changes; Business: profit and loss",
+   "smsc": "Moral: debt and its effects; why Islam warns against riba (interest) on loans",
+   "keywords": [
+    {
+     "term": "integer",
+     "def": "a whole number: positive, negative or zero"
+    },
+    {
+     "term": "negative",
+     "def": "less than zero"
+    },
+    {
+     "term": "sign",
+     "def": "+ or − in front of a number"
+    },
+    {
+     "term": "product",
+     "def": "the result of multiplying"
+    }
+   ],
+   "starter": [
+    "Is 738 divisible by 9?",
+    "Work out −3 + 8",
+    "Work out 2 − 9",
+    "Work out 4 − (−3)"
+   ],
+   "teach": [
+    {
+     "heading": "A pattern explains the rule",
+     "bullets": [
+      "Each step down, the answer falls by 3",
+      "Keep the pattern going past zero"
+     ],
+     "note": "Build the table live. Ask pupils to continue it.",
+     "table": {
+      "head": [
+       "Calculation",
+       "Answer"
+      ],
+      "rows": [
+       [
+        "3 × 3",
+        "9"
+       ],
+       [
+        "3 × 0",
+        "0"
+       ],
+       [
+        "3 × −1",
+        "−3"
+       ],
+       [
+        "−3 × 1",
+        "−3"
+       ],
+       [
+        "−3 × 0",
+        "0"
+       ],
+       [
+        "−3 × −1",
+        "3"
+       ],
+       [
+        "−3 × −2",
+        "6"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The sign rules",
+     "bullets": [
+      "Same signs: positive",
+      "Different signs: negative",
+      "Works for × and ÷"
+     ],
+     "note": "Practise quick-fire: −6 × 4, −20 ÷ −5, 18 ÷ −3.",
+     "misconception": {
+      "wrong": "−4 × −5 = −20",
+      "right": "Same signs give a positive: −4 × −5 = 20"
+     }
+    },
+    {
+     "heading": "Negatives with BIDMAS",
+     "bullets": [
+      "Brackets and indices first",
+      "(−3)² = 9 but −3² = −9"
+     ],
+     "note": "This trips up calculator users. Show both on screen.",
+     "model": {
+      "problem": "Work out (−2)² × 3 − 10 ÷ (−5)",
+      "steps": [
+       "(−2)² = 4",
+       "4 × 3 = 12",
+       "10 ÷ (−5) = −2",
+       "12 − (−2) = 14"
+      ],
+      "answer": "14"
+     }
+    },
+    {
+     "heading": "Check: sign rules",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Work out −24 ÷ (−6) × (−2)",
+      "options": [
+       "8",
+       "−8",
+       "2",
+       "−2"
+      ],
+      "answer": 1,
+      "why": "−24 ÷ −6 = 4, then 4 × −2 = −8. Left to right for ÷ and ×."
+     }
+    }
+   ],
+   "practice": [
+    "Work out −7 × 6",
+    "Work out −42 ÷ −7",
+    "Work out (−5)²",
+    "Work out −3 × 4 + 10"
+   ],
+   "independent": [
+    "Core: (a) −8 × −3 (b) 36 ÷ −4 (c) −2 × −3 × −4 (d) (−6)² − 20",
+    "Extend: A business makes a loss of £350 in each of 4 months, then a profit of £900 in each of 2 months. What is its overall result?",
+    "Stretch: Find two integers whose product is −36 and whose sum is 5. How many pairs have a product of −36?"
+   ],
+   "exit": [
+    "Work out −9 × −4",
+    "Work out 30 ÷ −6",
+    "Work out −1 × −1 × −1"
+   ],
+   "homework": "Make a negative-number multiplication grid from −5 to 5 and colour the positive and negative answers. Describe the pattern.",
+   "send": "Support: sign-rule card and number line. Stretch: powers of negative numbers."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 5,
+   "title": "Powers and roots",
+   "duration": 50,
+   "bigQuestion": "How quickly do numbers grow when we keep multiplying?",
+   "objectives": [
+    "Calculate squares, cubes, square roots and cube roots",
+    "Know when a square root can be negative",
+    "Use a calculator for powers and roots"
+   ],
+   "successCriteria": [
+    "Recall squares to 15² and cubes of 1 to 5 and 10",
+    "Calculate with roots and powers on a calculator",
+    "Explain why √25 has two answers but ∛27 has only one real answer"
+   ],
+   "crossCurricular": "Science: area and volume units; Computing: powers of 2 in binary",
+   "smsc": "Spiritual: wonder at fast growth, such as the story of rice on a chessboard",
+   "keywords": [
+    {
+     "term": "power",
+     "def": "how many times a number is multiplied by itself"
+    },
+    {
+     "term": "cube number",
+     "def": "a number multiplied by itself three times"
+    },
+    {
+     "term": "square root",
+     "def": "a number that squares to give the original"
+    },
+    {
+     "term": "cube root",
+     "def": "a number that cubes to give the original"
+    }
+   ],
+   "starter": [
+    "Work out −6 × −7",
+    "Work out 8²",
+    "Work out √81",
+    "Work out 2 × 2 × 2"
+   ],
+   "teach": [
+    {
+     "heading": "Squares and cubes",
+     "bullets": [
+      "n² = n × n",
+      "n³ = n × n × n",
+      "Cubes: 1, 8, 27, 64, 125, …, 1000"
+     ],
+     "note": "Show a cube made of smaller cubes. 3³ = 27 small cubes.",
+     "table": {
+      "head": [
+       "n",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "10"
+      ],
+      "rows": [
+       [
+        "n²",
+        "1",
+        "4",
+        "9",
+        "16",
+        "25",
+        "100"
+       ],
+       [
+        "n³",
+        "1",
+        "8",
+        "27",
+        "64",
+        "125",
+        "1000"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Roots",
+     "bullets": [
+      "√ undoes squaring; ∛ undoes cubing",
+      "5² = 25 and (−5)² = 25",
+      "So 25 has two square roots: ±5"
+     ],
+     "note": "The √ sign means the positive root. Ask: 'What is ∛(−8)?' (−2, since −2 × −2 × −2 = −8.)",
+     "misconception": {
+      "wrong": "4³ = 12",
+      "right": "4³ = 4 × 4 × 4 = 64"
+     }
+    },
+    {
+     "heading": "Calculator skills",
+     "bullets": [
+      "x² and x³ keys",
+      "xʸ (or ^) for other powers",
+      "√ and ∛ keys"
+     ],
+     "note": "Model on an online scientific calculator on screen.",
+     "model": {
+      "problem": "Work out 2⁵ + ∛343",
+      "steps": [
+       "2⁵ = 2 × 2 × 2 × 2 × 2 = 32",
+       "∛343: 7 × 7 × 7 = 343, so 7",
+       "32 + 7 = 39"
+      ],
+      "answer": "39"
+     }
+    },
+    {
+     "heading": "Check: roots",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which number has two square roots, 6 and −6?",
+      "options": [
+       "12",
+       "36",
+       "−36",
+       "216"
+      ],
+      "answer": 1,
+      "why": "6² = 36 and (−6)² = 36. −36 has no real square root; 216 = 6³."
+     }
+    }
+   ],
+   "practice": [
+    "Work out 5³",
+    "Work out √144 and ∛64",
+    "Work out 3⁴",
+    "Write both square roots of 49"
+   ],
+   "independent": [
+    "Core: (a) 7² + 2³ (b) √100 − ∛125 (c) 10³ ÷ 4² (d) 2⁶",
+    "Extend: A cube has a volume of 512 cm³. Find the length of one edge and the area of one face.",
+    "Stretch: Find a number that is both a square and a cube between 1 and 1000 (other than 1). Find all of them. What do you notice?"
+   ],
+   "exit": [
+    "Work out 6³",
+    "Work out ∛1000",
+    "Give both square roots of 81"
+   ],
+   "homework": "One grain of rice on square 1 of a chessboard, 2 on square 2, 4 on square 3… Write the number on squares 1 to 12 as powers of 2 and work them out.",
+   "send": "Support: squares and cubes table on screen. Stretch: powers of 2 and binary."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 6,
+   "title": "Powers, roots and brackets",
+   "duration": 50,
+   "bigQuestion": "How do calculators 'know' which part to do first?",
+   "objectives": [
+    "Calculate combinations of powers, roots and brackets",
+    "Use the priority of operations accurately",
+    "Enter calculations correctly into a calculator"
+   ],
+   "successCriteria": [
+    "Work out calculations with a power and one other operation",
+    "Work out multi-step calculations with roots, powers and brackets",
+    "Enter fractions and roots correctly into a calculator, using brackets"
+   ],
+   "crossCurricular": "Computing: operator precedence in code; Science: formulae such as E = mc²",
+   "smsc": "Social: shared rules let us communicate clearly",
+   "keywords": [
+    {
+     "term": "index",
+     "def": "the small number showing the power"
+    },
+    {
+     "term": "priority of operations",
+     "def": "the order in which operations are done"
+    },
+    {
+     "term": "BIDMAS",
+     "def": "Brackets, Indices, Division and Multiplication, Addition and Subtraction"
+    },
+    {
+     "term": "root",
+     "def": "the inverse of a power"
+    }
+   ],
+   "starter": [
+    "Work out 4³",
+    "Work out ∛27",
+    "Work out 2 + 3 × 5",
+    "Work out (−4)²"
+   ],
+   "teach": [
+    {
+     "heading": "Roots count as indices",
+     "bullets": [
+      "√ and ∛ are done at the I stage",
+      "Work inside the root sign first, like a bracket"
+     ],
+     "note": "√(9 + 16) means add first: √25 = 5. Compare with √9 + √16 = 7.",
+     "misconception": {
+      "wrong": "√(9 + 16) = 3 + 4 = 7",
+      "right": "√(9 + 16) = √25 = 5"
+     }
+    },
+    {
+     "heading": "A multi-step calculation",
+     "bullets": [
+      "Write one step per line",
+      "Keep the rest of the calculation"
+     ],
+     "note": "Model, writing each line.",
+     "model": {
+      "problem": "Work out 5 + (12 − 2³) × √36",
+      "steps": [
+       "Inside the bracket: 2³ = 8, so 12 − 8 = 4",
+       "√36 = 6",
+       "4 × 6 = 24",
+       "5 + 24 = 29"
+      ],
+      "answer": "29"
+     }
+    },
+    {
+     "heading": "Fractions on a calculator",
+     "bullets": [
+      "The fraction line is a hidden bracket",
+      "Type (20 + 4) ÷ (2 × 3)"
+     ],
+     "note": "Show (20 + 4)/(2 × 3) = 4 but typing 20 + 4 ÷ 2 × 3 gives 26.",
+     "compare": {
+      "left": {
+       "title": "Typed without brackets",
+       "points": [
+        "20 + 4 ÷ 2 × 3",
+        "= 20 + 6",
+        "= 26  ✗"
+       ]
+      },
+      "right": {
+       "title": "Typed with brackets",
+       "points": [
+        "(20 + 4) ÷ (2 × 3)",
+        "= 24 ÷ 6",
+        "= 4  ✓"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Check: order",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Work out 3 × 2² + 1",
+      "options": [
+       "37",
+       "13",
+       "25",
+       "48"
+      ],
+      "answer": 1,
+      "why": "Indices first: 2² = 4, then 3 × 4 = 12, then + 1 = 13. A works out (3 × 2)² + 1 = 37, ignoring the order of operations."
+     }
+    }
+   ],
+   "practice": [
+    "Work out 4 × 3²",
+    "Work out (4 × 3)²",
+    "Work out √(50 − 1) + 2³",
+    "Work out (5 + 3)² ÷ 4"
+   ],
+   "independent": [
+    "Core: (a) 2³ × 5 (b) 100 − 4 × 3² (c) √64 ÷ (6 − 2) (d) (1 + 2)³ − 7",
+    "Extend: Use a calculator: (a) (3.2² + 4.1) ÷ (2.5 − 0.9) (b) √(7.8² − 3.6²) to 2 decimal places",
+    "Stretch: Using 2, 3 and 4 once each with powers, roots and brackets, make the largest and smallest positive numbers you can."
+   ],
+   "exit": [
+    "Work out 10 − 2³",
+    "Work out √(36 + 64)",
+    "How would you type (15 + 9) ÷ (2 + 4) into a calculator?"
+   ],
+   "homework": "Write five calculations that use a power, a root and brackets with a final answer of 10.",
+   "send": "Support: BIDMAS step frame. Stretch: nested brackets and powers of fractions."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 7,
+   "title": "Index notation and prime factor decomposition",
+   "duration": 50,
+   "bigQuestion": "Is there only one way to build a number from primes?",
+   "objectives": [
+    "Use index notation for repeated factors",
+    "Write a number as a product of its prime factors",
+    "Use a factor tree or repeated division"
+   ],
+   "successCriteria": [
+    "Draw a factor tree to find prime factors",
+    "Write the product in index form",
+    "Use the prime factors to tell if a number is a square or cube"
+   ],
+   "crossCurricular": "Computing: prime factors in internet security (RSA encryption)",
+   "smsc": "Spiritual: every number has one unique 'fingerprint' of primes",
+   "keywords": [
+    {
+     "term": "prime factor",
+     "def": "a factor that is a prime number"
+    },
+    {
+     "term": "prime factor decomposition",
+     "def": "writing a number as a product of prime factors"
+    },
+    {
+     "term": "index notation",
+     "def": "using powers to show repeated multiplication, e.g. 2³"
+    },
+    {
+     "term": "factor tree",
+     "def": "a diagram splitting a number into factors until all are prime"
+    }
+   ],
+   "starter": [
+    "List the primes under 20",
+    "Work out 2³ × 3",
+    "Is 91 prime?",
+    "Work out 5 + (8 − 2)²"
+   ],
+   "teach": [
+    {
+     "heading": "Factor trees",
+     "bullets": [
+      "Split into any factor pair",
+      "Circle primes and stop there",
+      "Keep splitting the rest"
+     ],
+     "note": "Show that 2 × 30 and 6 × 10 both give the same primes in the end. That answers the big question: the decomposition is unique.",
+     "model": {
+      "problem": "Write 120 as a product of prime factors",
+      "steps": [
+       "120 = 10 × 12",
+       "10 = 2 × 5; 12 = 2 × 6",
+       "6 = 2 × 3",
+       "Primes: 2 × 2 × 2 × 3 × 5"
+      ],
+      "answer": "120 = 2³ × 3 × 5"
+     }
+    },
+    {
+     "heading": "Repeated division",
+     "bullets": [
+      "Divide by the smallest prime that works",
+      "Repeat until you reach 1"
+     ],
+     "note": "Show the ladder for 180: ÷2 = 90, ÷2 = 45, ÷3 = 15, ÷3 = 5, ÷5 = 1. So 180 = 2² × 3² × 5."
+    },
+    {
+     "heading": "Index form errors",
+     "bullets": [
+      "Multiply out to check your answer",
+      "Primes only: no 4s, 6s or 9s"
+     ],
+     "note": "Ask: 'What is wrong with 72 = 2 × 4 × 9?' (4 and 9 are not prime.)",
+     "misconception": {
+      "wrong": "72 = 2 × 4 × 9",
+      "right": "72 = 2³ × 3²"
+     }
+    },
+    {
+     "heading": "Squares and cubes from primes",
+     "bullets": [
+      "All indices even: a square number",
+      "All indices multiples of 3: a cube number"
+     ],
+     "note": "144 = 2⁴ × 3²: all even, so square; √144 = 2² × 3 = 12."
+    },
+    {
+     "heading": "Check: product of primes",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is 84 written as a product of prime factors?",
+      "options": [
+       "2 × 42",
+       "2² × 21",
+       "2² × 3 × 7",
+       "4 × 3 × 7"
+      ],
+      "answer": 2,
+      "why": "2 × 2 × 3 × 7 = 84 and all are prime. B and D contain 21 and 4, which are not prime."
+     }
+    }
+   ],
+   "practice": [
+    "Write 36 as a product of prime factors in index form",
+    "Write 150 as a product of prime factors",
+    "Which number is 2² × 3 × 5?"
+   ],
+   "independent": [
+    "Core: Write in index form: (a) 60 (b) 98 (c) 200 (d) 252",
+    "Extend: 2ᵃ × 3ᵇ = 432. Find a and b.",
+    "Stretch: Use prime factors to find the smallest number you must multiply 90 by to get a square number, and the smallest to get a cube number."
+   ],
+   "exit": [
+    "Write 48 as a product of primes in index form.",
+    "Work out 2³ × 5.",
+    "Is 2² × 3⁴ a square number? How do you know?"
+   ],
+   "homework": "Find the prime factor decomposition of your house number, your age multiplied by 10, and the current year.",
+   "send": "Support: list of primes to 50 and partly drawn trees. Stretch: number of factors from the prime decomposition."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 8,
+   "title": "HCF and LCM using prime factors",
+   "duration": 50,
+   "bigQuestion": "When will two buses that leave together next leave together again?",
+   "objectives": [
+    "Find the HCF and LCM using prime factors",
+    "Use a Venn diagram to organise prime factors",
+    "Solve problems involving HCF and LCM"
+   ],
+   "successCriteria": [
+    "Find HCF and LCM of two numbers by listing",
+    "Use a Venn diagram of prime factors",
+    "Decide whether a problem needs the HCF or the LCM, and explain why"
+   ],
+   "crossCurricular": "Geography: bus and train timetables; Design: tiling a floor",
+   "smsc": "Social: planning fairly shared groups and events",
+   "keywords": [
+    {
+     "term": "highest common factor (HCF)",
+     "def": "the largest number that divides into both numbers"
+    },
+    {
+     "term": "lowest common multiple (LCM)",
+     "def": "the smallest number that both numbers divide into"
+    },
+    {
+     "term": "Venn diagram",
+     "def": "overlapping circles to show shared and unshared items"
+    },
+    {
+     "term": "common",
+     "def": "shared by both"
+    }
+   ],
+   "starter": [
+    "Write 60 as a product of primes",
+    "List the factors of 24",
+    "List the first 5 multiples of 6",
+    "Work out 2² × 3²"
+   ],
+   "teach": [
+    {
+     "heading": "Prime factors in a Venn diagram",
+     "bullets": [
+      "Shared primes go in the overlap",
+      "HCF: multiply the overlap",
+      "LCM: multiply everything in the diagram"
+     ],
+     "note": "Model 60 = 2² × 3 × 5 and 72 = 2³ × 3². Overlap: 2, 2, 3.",
+     "model": {
+      "problem": "Find the HCF and LCM of 60 and 72",
+      "steps": [
+       "60 = 2 × 2 × 3 × 5; 72 = 2 × 2 × 2 × 3 × 3",
+       "Overlap: 2, 2, 3",
+       "HCF = 2 × 2 × 3 = 12",
+       "LCM = 5 × (2 × 2 × 3) × 2 × 3 = 360"
+      ],
+      "answer": "HCF 12, LCM 360"
+     }
+    },
+    {
+     "heading": "Which do I need?",
+     "bullets": [
+      "Split into equal largest groups: HCF",
+      "Happen together again: LCM"
+     ],
+     "note": "Sort five problems into HCF or LCM. Read them aloud.",
+     "compare": {
+      "left": {
+       "title": "HCF problems",
+       "points": [
+        "Biggest equal groups",
+        "Largest square tile for a floor",
+        "Cutting ribbons into equal longest lengths"
+       ]
+      },
+      "right": {
+       "title": "LCM problems",
+       "points": [
+        "Buses leaving together again",
+        "Buying equal numbers of rolls and burgers",
+        "Lights flashing together"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "HCF and LCM mixed up",
+     "bullets": [
+      "The HCF is never bigger than the smaller number",
+      "The LCM is never smaller than the larger number"
+     ],
+     "note": "Use this as a sense check.",
+     "misconception": {
+      "wrong": "HCF of 60 and 72 is 360",
+      "right": "HCF must be ≤ 60; 360 is the LCM"
+     }
+    },
+    {
+     "heading": "Check: HCF or LCM",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Bus A leaves every 12 minutes and bus B every 20 minutes. Both leave at 8:00. When do they next leave together?",
+      "options": [
+       "8:04",
+       "8:32",
+       "9:00",
+       "12:00"
+      ],
+      "answer": 2,
+      "why": "LCM of 12 and 20 is 60 minutes, so 9:00. A uses the HCF (4); B adds them."
+     }
+    }
+   ],
+   "practice": [
+    "Find the HCF and LCM of 18 and 24 using prime factors",
+    "Find the HCF of 45 and 75",
+    "Is 'largest group' an HCF or LCM question?"
+   ],
+   "independent": [
+    "Core: Find the HCF and LCM of (a) 36 and 48 (b) 40 and 56 (c) 126 and 84",
+    "Extend: A floor measures 360 cm by 270 cm. What is the largest square tile that fits exactly? How many tiles are needed?",
+    "Stretch: The HCF of two numbers is 6 and their LCM is 72. Find two possible pairs."
+   ],
+   "exit": [
+    "Find the HCF of 30 and 45.",
+    "Find the LCM of 8 and 12.",
+    "Which is needed: 'largest equal bags of sweets'?"
+   ],
+   "homework": "Write three real-life problems (one HCF, one LCM, one either) with full solutions.",
+   "send": "Support: Venn diagram template. Stretch: three numbers in a three-circle Venn."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 9,
+   "title": "Estimation and checking",
+   "duration": 50,
+   "bigQuestion": "How can you tell an answer is wrong without working it out?",
+   "objectives": [
+    "Round to 1 significant figure to estimate",
+    "Estimate calculations with several operations",
+    "Use estimates to check calculator answers"
+   ],
+   "successCriteria": [
+    "Round numbers to 1 significant figure",
+    "Estimate multi-step calculations including division",
+    "Say whether an estimate is an over- or under-estimate and why"
+   ],
+   "crossCurricular": "Science: checking experimental results; Geography: estimating populations",
+   "smsc": "Moral: checking our own work honestly before handing it in",
+   "keywords": [
+    {
+     "term": "significant figure",
+     "def": "a digit that tells you about the size of the number; the first non-zero digit is the first"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate answer using rounded values"
+    },
+    {
+     "term": "≈",
+     "def": "the symbol for 'approximately equal to'"
+    },
+    {
+     "term": "overestimate",
+     "def": "an estimate bigger than the exact answer"
+    }
+   ],
+   "starter": [
+    "Find the HCF of 12 and 18",
+    "Round 4 682 to the nearest 1000",
+    "Work out 40 × 30",
+    "Work out 600 ÷ 20"
+   ],
+   "teach": [
+    {
+     "heading": "1 significant figure",
+     "bullets": [
+      "Find the first non-zero digit",
+      "Round there",
+      "Keep place-holder zeros"
+     ],
+     "note": "Examples: 4 682 → 5 000; 0.0371 → 0.04; 38.7 → 40.",
+     "table": {
+      "head": [
+       "Number",
+       "1 s.f."
+      ],
+      "rows": [
+       [
+        "4 682",
+        "5 000"
+       ],
+       [
+        "38.7",
+        "40"
+       ],
+       [
+        "0.0371",
+        "0.04"
+       ],
+       [
+        "951",
+        "1 000"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Estimating a calculation",
+     "bullets": [
+      "Round every number to 1 s.f.",
+      "Calculate mentally",
+      "Use ≈"
+     ],
+     "note": "Model with a fraction calculation.",
+     "model": {
+      "problem": "Estimate (48.7 × 6.2) ÷ 0.51",
+      "steps": [
+       "Round: 50 × 6 ÷ 0.5",
+       "50 × 6 = 300",
+       "300 ÷ 0.5 = 600"
+      ],
+      "answer": "≈ 600 (exact: 592.0…)"
+     }
+    },
+    {
+     "heading": "Dividing by a decimal",
+     "bullets": [
+      "÷ 0.5 doubles",
+      "÷ 0.1 multiplies by 10"
+     ],
+     "note": "Many pupils halve when dividing by 0.5.",
+     "misconception": {
+      "wrong": "300 ÷ 0.5 = 150",
+      "right": "300 ÷ 0.5 = 600 (how many halves in 300?)"
+     }
+    },
+    {
+     "heading": "Check: estimate",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is the best estimate of 31.6 × 0.48?",
+      "options": [
+       "1.5",
+       "15",
+       "150",
+       "60"
+      ],
+      "answer": 1,
+      "why": "30 × 0.5 = 15. A and C have the point in the wrong place; D multiplies by 2 instead of halving."
+     }
+    }
+   ],
+   "practice": [
+    "Round 0.00649 to 1 s.f.",
+    "Estimate 297 × 41",
+    "Estimate 8.9 × 3.1 ÷ 0.48"
+   ],
+   "independent": [
+    "Core: Estimate (a) 612 ÷ 19 (b) 7.8² (c) (21.4 + 38.9) ÷ 5.8",
+    "Extend: A pupil's calculator says 47.3 × 0.92 = 435.16. Use an estimate to show this is wrong, and suggest what went wrong.",
+    "Stretch: Estimate (3.92 × 0.0517) ÷ 0.198. Is your estimate bigger or smaller than the exact value? Justify without a calculator."
+   ],
+   "exit": [
+    "Round 0.0283 to 1 s.f.",
+    "Estimate 52 × 18.",
+    "Estimate 396 ÷ 0.21."
+   ],
+   "homework": "Estimate the total cost of a weekly shop of ten items, then compare with the exact total.",
+   "send": "Support: highlight the first significant digit. Stretch: estimating with powers and roots."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 10,
+   "title": "Number problem solving and review",
+   "duration": 50,
+   "bigQuestion": "Which number skill from this unit would you trust yourself with in a real-life emergency?",
+   "objectives": [
+    "Choose and combine number skills to solve problems",
+    "Show working clearly",
+    "Identify and correct own misconceptions"
+   ],
+   "successCriteria": [
+    "Solve one-step number problems",
+    "Solve multi-step problems combining several skills",
+    "Explain a strategy and correct errors in worked solutions"
+   ],
+   "crossCurricular": "Business: budgeting; Science: data calculations",
+   "smsc": "Spiritual: perseverance (sabr) on hard problems",
+   "keywords": [
+    {
+     "term": "strategy",
+     "def": "a plan for solving a problem"
+    },
+    {
+     "term": "multi-step",
+     "def": "a problem that needs several calculations"
+    },
+    {
+     "term": "justify",
+     "def": "give reasons for your answer"
+    },
+    {
+     "term": "reflect",
+     "def": "think about what went well and what to improve"
+    }
+   ],
+   "starter": [
+    "Work out −6 × −8",
+    "Write 90 as a product of primes",
+    "Find the LCM of 6 and 9",
+    "Estimate 49 × 21"
+   ],
+   "teach": [
+    {
+     "heading": "A problem-solving routine",
+     "bullets": [
+      "What do I know? What do I need?",
+      "Which skill fits?",
+      "Estimate, calculate, check"
+     ],
+     "note": "Display the routine; pupils use it for every problem today.",
+     "cycle": [
+      "Read and underline",
+      "Choose a skill",
+      "Estimate",
+      "Calculate",
+      "Check and answer in context"
+     ]
+    },
+    {
+     "heading": "A multi-step problem",
+     "bullets": [
+      "Break into parts",
+      "Label each step"
+     ],
+     "note": "Model and ask pupils to name the skill used at each step.",
+     "model": {
+      "problem": "Plates come in packs of 12, cups in packs of 18. A school wants the same number of each for a dinner and needs at least 100. Cost: plates £3.75 per pack, cups £4.20 per pack. Find the cheapest total.",
+      "steps": [
+       "LCM of 12 and 18 is 36",
+       "Multiples of 36: 36, 72, 108, so 108 of each",
+       "108 ÷ 12 = 9 plate packs; 108 ÷ 18 = 6 cup packs",
+       "9 × 3.75 + 6 × 4.20 = 33.75 + 25.20"
+      ],
+      "answer": "£58.95"
+     }
+    },
+    {
+     "heading": "Spot the error",
+     "bullets": [
+      "Each worked answer has one mistake",
+      "Find it and correct it"
+     ],
+     "note": "Show three: (−3)² = −9; 2.4 × 0.3 = 7.2; 72 = 2² × 18. Pupils fix them.",
+     "misconception": {
+      "wrong": "2.4 × 0.3 = 7.2",
+      "right": "24 × 3 = 72 with two decimal places: 0.72"
+     }
+    },
+    {
+     "heading": "Check: choose the skill",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "36 boys and 48 girls are put into the largest possible equal teams with no mixing. What size is each team?",
+      "options": [
+       "144",
+       "12",
+       "6",
+       "84"
+      ],
+      "answer": 1,
+      "why": "HCF of 36 and 48 is 12. A is the LCM; D adds them."
+     }
+    }
+   ],
+   "practice": [
+    "Find the cost of 2.5 kg of rice at £1.84 per kg",
+    "The temperature falls from 4 °C by 2.5 °C every hour for 4 hours. What is it now?",
+    "Is 2 862 divisible by 9 and by 6?"
+   ],
+   "independent": [
+    "Core: Five mixed questions: (a) 3.6 × 0.4 (b) −45 ÷ −9 (c) 2³ × 3² (d) HCF of 28 and 42 (e) estimate 812 ÷ 39",
+    "Extend: Two lighthouses flash every 15 s and 25 s. They flash together at 21:00:00. How many times do they flash together before 21:10:00?",
+    "Stretch: Write your own multi-step problem that needs at least three skills from this unit, with a full worked solution."
+   ],
+   "exit": [
+    "Which skill would you use to find when two events happen together again?",
+    "Correct this: (−4)² = −16.",
+    "Rate your confidence 1 to 3 for: decimals, negatives, primes."
+   ],
+   "homework": "Complete the Unit 1 review sheet (10 questions) and highlight the two topics you found hardest.",
+   "send": "Support: problem cards with skill hints. Stretch: open problems with multiple answers."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 11,
+   "title": "Area of a triangle",
+   "duration": 50,
+   "bigQuestion": "Why is the area of a triangle exactly half of a rectangle?",
+   "objectives": [
+    "Derive the formula for the area of a triangle",
+    "Use A = ½ × b × h with the perpendicular height",
+    "Find a missing length given the area"
+   ],
+   "successCriteria": [
+    "Find the area of a right-angled triangle",
+    "Find the area of any triangle using the perpendicular height",
+    "Find a missing base or height from the area"
+   ],
+   "crossCurricular": "Art: triangles in Islamic geometric design; DT: roof shapes",
+   "smsc": "Cultural: triangular structures in architecture around the world",
+   "keywords": [
+    {
+     "term": "area",
+     "def": "the amount of space inside a 2D shape, in square units"
+    },
+    {
+     "term": "base",
+     "def": "the side the shape stands on"
+    },
+    {
+     "term": "perpendicular height",
+     "def": "the height measured at right angles to the base"
+    },
+    {
+     "term": "formula",
+     "def": "a rule written with letters"
+    }
+   ],
+   "starter": [
+    "Area of a rectangle 6 cm by 4 cm?",
+    "Work out ½ × 10",
+    "What units is area measured in?",
+    "Name a triangle with a right angle"
+   ],
+   "teach": [
+    {
+     "heading": "Half a rectangle",
+     "bullets": [
+      "A diagonal cuts a rectangle into 2 equal triangles",
+      "So area = ½ × base × height"
+     ],
+     "note": "Animate cutting a rectangle along a diagonal. Then show a non-right triangle fits in a rectangle twice too (cut and move the pieces).",
+     "misconception": {
+      "wrong": "Area = base × slant side",
+      "right": "Use the perpendicular height, at 90° to the base"
+     }
+    },
+    {
+     "heading": "Using the formula",
+     "bullets": [
+      "A = ½ × b × h",
+      "Height is perpendicular to the base",
+      "Units: cm²"
+     ],
+     "note": "Model with a triangle base 9 cm, perpendicular height 6 cm, slant side 7 cm.",
+     "model": {
+      "problem": "Base 9 cm, perpendicular height 6 cm, slant side 7 cm. Find the area.",
+      "steps": [
+       "Ignore the slant side (7 cm)",
+       "A = ½ × 9 × 6",
+       "9 × 6 = 54; half of 54 = 27"
+      ],
+      "answer": "27 cm²"
+     }
+    },
+    {
+     "heading": "Working backwards",
+     "bullets": [
+      "Put the area into the formula",
+      "Solve for the missing length"
+     ],
+     "note": "A = 30 cm², b = 12 cm. 30 = ½ × 12 × h, so 30 = 6h, h = 5 cm."
+    },
+    {
+     "heading": "Check: which height?",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A triangle has base 10 cm, sides 8 cm and 7 cm, and perpendicular height 5 cm. What is its area?",
+      "options": [
+       "40 cm²",
+       "25 cm²",
+       "50 cm²",
+       "35 cm²"
+      ],
+      "answer": 1,
+      "why": "½ × 10 × 5 = 25. A uses the 8 cm side; C forgets to halve; D uses 7 cm."
+     }
+    }
+   ],
+   "practice": [
+    "Find the area: base 8 cm, height 5 cm",
+    "Find the area: base 7 m, height 3 m",
+    "Area 24 cm², base 8 cm. Find the height."
+   ],
+   "independent": [
+    "Core: Find the area of triangles with (a) b = 14 cm, h = 9 cm (b) b = 6.5 m, h = 4 m (c) b = 11 mm, h = 7 mm",
+    "Extend: A triangular sail has a base of 3.2 m and a height of 5.5 m. Sailcloth costs £18 per m². Find the cost.",
+    "Stretch: Draw three different triangles on a grid that each have an area of 12 cm². Explain why there are infinitely many."
+   ],
+   "exit": [
+    "Area: base 12 cm, height 5 cm?",
+    "Why do we halve?",
+    "Area 18 cm², height 4 cm. Find the base."
+   ],
+   "homework": "Find and measure three triangles at home (e.g. sandwiches, signs) and calculate their areas.",
+   "send": "Support: grid paper and labelled diagrams with the height highlighted. Stretch: triangles on coordinate grids."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 12,
+   "title": "Area of parallelograms and trapezia",
+   "duration": 50,
+   "bigQuestion": "How can cutting and rearranging a shape help us find its area?",
+   "objectives": [
+    "Derive and use the formula for the area of a parallelogram",
+    "Derive and use the formula for the area of a trapezium",
+    "Find areas of compound shapes"
+   ],
+   "successCriteria": [
+    "Find the area of a parallelogram",
+    "Find the area of a trapezium",
+    "Find areas of compound shapes using several formulae"
+   ],
+   "crossCurricular": "Geography: estimating the area of a field; DT: designing a garden",
+   "smsc": "Spiritual: patterns of tessellating shapes in mosque tilework",
+   "keywords": [
+    {
+     "term": "parallelogram",
+     "def": "a quadrilateral with two pairs of parallel sides"
+    },
+    {
+     "term": "trapezium",
+     "def": "a quadrilateral with exactly one pair of parallel sides"
+    },
+    {
+     "term": "parallel",
+     "def": "always the same distance apart; never meet"
+    },
+    {
+     "term": "compound shape",
+     "def": "a shape made of simpler shapes"
+    }
+   ],
+   "starter": [
+    "Area of a triangle: base 10 cm, height 7 cm",
+    "Area of a rectangle 9 cm by 5 cm",
+    "Work out ½ × (4 + 6)",
+    "How many pairs of parallel sides has a square?"
+   ],
+   "teach": [
+    {
+     "heading": "Parallelogram = rectangle",
+     "bullets": [
+      "Cut off a triangle and slide it across",
+      "It becomes a rectangle",
+      "A = b × h"
+     ],
+     "note": "Animate the cut and slide. Ask: 'What stays the same?' (Base and perpendicular height.)"
+    },
+    {
+     "heading": "Trapezium formula",
+     "bullets": [
+      "A = ½ (a + b) h",
+      "a and b are the parallel sides",
+      "h is the perpendicular distance between them"
+     ],
+     "note": "Show two copies making a parallelogram of base (a + b).",
+     "model": {
+      "problem": "Trapezium: parallel sides 6 cm and 10 cm, height 4 cm. Find the area.",
+      "steps": [
+       "Add parallel sides: 6 + 10 = 16",
+       "Halve: 8",
+       "Multiply by height: 8 × 4"
+      ],
+      "answer": "32 cm²"
+     }
+    },
+    {
+     "heading": "Compound shapes",
+     "bullets": [
+      "Split into rectangles, triangles and trapezia",
+      "Find any missing lengths",
+      "Add (or subtract) the areas"
+     ],
+     "note": "An L-shaped room: split into two rectangles, or a big rectangle minus a small one. Both give the same answer."
+    },
+    {
+     "heading": "Using the slant side",
+     "bullets": [
+      "Slant sides are not heights"
+     ],
+     "note": "Same error as with triangles.",
+     "misconception": {
+      "wrong": "Parallelogram area = base × slant side",
+      "right": "Area = base × perpendicular height"
+     }
+    },
+    {
+     "heading": "Check: trapezium",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A trapezium has parallel sides 5 m and 9 m and height 6 m. Its area is…",
+      "options": [
+       "270 m²",
+       "84 m²",
+       "42 m²",
+       "20 m²"
+      ],
+      "answer": 2,
+      "why": "½ × (5 + 9) × 6 = 7 × 6 = 42. B forgets the half; A multiplies all three."
+     }
+    }
+   ],
+   "practice": [
+    "Parallelogram: base 12 cm, height 7 cm",
+    "Trapezium: parallel sides 4 m and 8 m, height 5 m",
+    "Area of an L-shape made of a 10 × 4 and a 3 × 6 rectangle"
+   ],
+   "independent": [
+    "Core: Find the areas: (a) parallelogram b = 15 cm, h = 8 cm (b) trapezium a = 7 cm, b = 13 cm, h = 6 cm (c) trapezium a = 2.5 m, b = 4.5 m, h = 3 m",
+    "Extend: A garden is a trapezium with parallel sides 12 m and 18 m, 9 m apart. Turf costs £4.50 per m². Find the cost of turfing it.",
+    "Stretch: A trapezium has area 60 cm², height 6 cm and one parallel side of 8 cm. Find the other parallel side."
+   ],
+   "exit": [
+    "Area of a parallelogram: base 9 cm, height 4 cm?",
+    "Write the trapezium formula.",
+    "Area of a trapezium: 3 cm, 7 cm, height 2 cm?"
+   ],
+   "homework": "Sketch a plan of a room or garden using rectangles and trapezia and calculate its total area.",
+   "send": "Support: formula card and shapes with heights highlighted. Stretch: reverse problems."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 13,
+   "title": "Volume of cubes and cuboids",
+   "duration": 50,
+   "bigQuestion": "How many sugar cubes fit in a shoebox, and how could you find out without filling it?",
+   "objectives": [
+    "Calculate the volume of cubes and cuboids",
+    "Use the correct units for volume",
+    "Find a missing length given the volume"
+   ],
+   "successCriteria": [
+    "Find volume by counting cubes",
+    "Use V = l × w × h with units",
+    "Find a missing dimension and convert cm³ to litres"
+   ],
+   "crossCurricular": "Science: volume and capacity of containers; DT: packaging design",
+   "smsc": "Moral: avoiding waste by packing efficiently",
+   "keywords": [
+    {
+     "term": "volume",
+     "def": "the amount of space inside a 3D shape"
+    },
+    {
+     "term": "cuboid",
+     "def": "a 3D shape with six rectangular faces"
+    },
+    {
+     "term": "cubic centimetre (cm³)",
+     "def": "a cube with edges 1 cm long"
+    },
+    {
+     "term": "capacity",
+     "def": "how much a container holds; 1 litre = 1000 cm³"
+    }
+   ],
+   "starter": [
+    "Area of a trapezium: 4, 6 and height 3",
+    "Work out 5 × 4 × 3",
+    "Work out 2³",
+    "How many faces does a cube have?"
+   ],
+   "teach": [
+    {
+     "heading": "Layers of cubes",
+     "bullets": [
+      "Count the cubes in one layer: l × w",
+      "Multiply by the number of layers: h",
+      "V = l × w × h"
+     ],
+     "note": "Show a 4 × 3 layer of 12 cubes, then stack 5 layers: 60 cm³."
+    },
+    {
+     "heading": "Calculating volume",
+     "bullets": [
+      "Same units for every length",
+      "Answer in cubic units"
+     ],
+     "note": "Model, then point out converting first.",
+     "model": {
+      "problem": "A box is 25 cm long, 12 cm wide and 0.1 m high. Find its volume.",
+      "steps": [
+       "Convert: 0.1 m = 10 cm",
+       "V = 25 × 12 × 10",
+       "25 × 12 = 300; 300 × 10 = 3000"
+      ],
+      "answer": "3000 cm³ (3 litres)"
+     }
+    },
+    {
+     "heading": "Units",
+     "bullets": [
+      "Length cm, area cm², volume cm³",
+      "1 litre = 1000 cm³"
+     ],
+     "note": "Ask pupils to say which unit each answer needs.",
+     "misconception": {
+      "wrong": "Volume = 60 cm²",
+      "right": "Volume is in cubic units: 60 cm³"
+     }
+    },
+    {
+     "heading": "Missing lengths",
+     "bullets": [
+      "Put known values in the formula",
+      "Divide to find the missing length"
+     ],
+     "note": "V = 240 cm³, l = 10, w = 6: 240 = 60h, h = 4 cm."
+    },
+    {
+     "heading": "Check: volume",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A cube has edges of 4 cm. What is its volume?",
+      "options": [
+       "12 cm³",
+       "16 cm³",
+       "64 cm³",
+       "96 cm³"
+      ],
+      "answer": 2,
+      "why": "4 × 4 × 4 = 64. A adds; B is a face area; D is the surface area."
+     }
+    }
+   ],
+   "practice": [
+    "Volume of a cuboid 8 cm × 5 cm × 3 cm",
+    "Volume of a cube with edge 6 m",
+    "V = 180 cm³, l = 9 cm, w = 5 cm. Find h."
+   ],
+   "independent": [
+    "Core: Find the volumes of cuboids (a) 12 × 4 × 3 cm (b) 7 × 7 × 7 m (c) 2.5 × 4 × 10 cm",
+    "Extend: A fish tank is 60 cm × 30 cm × 40 cm. How many litres does it hold when full to 5 cm below the top?",
+    "Stretch: Find all the cuboids with whole-number edges that have a volume of 36 cm³. Which has the smallest surface area?"
+   ],
+   "exit": [
+    "Volume of a cuboid 10 × 3 × 2 cm?",
+    "How many cm³ in 2 litres?",
+    "V = 100 cm³, base 5 × 5 cm. Height?"
+   ],
+   "homework": "Measure three boxes at home, calculate their volumes and convert to litres.",
+   "send": "Support: multilink cube models or images. Stretch: compound cuboids."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 14,
+   "title": "Nets, plans and elevations",
+   "duration": 50,
+   "bigQuestion": "How do architects show a 3D building on flat paper?",
+   "objectives": [
+    "Sketch nets of 3D solids",
+    "Draw plans and elevations of 3D shapes",
+    "Identify a solid from its net, plan or elevations"
+   ],
+   "successCriteria": [
+    "Recognise nets of a cube and cuboid",
+    "Draw the plan, front and side elevations",
+    "Sketch a 3D solid from its plan and elevations"
+   ],
+   "crossCurricular": "DT: technical drawing; Art: perspective",
+   "smsc": "Cultural: the plan of the Ka'bah and the architecture of famous mosques",
+   "keywords": [
+    {
+     "term": "net",
+     "def": "a 2D pattern that folds to make a 3D shape"
+    },
+    {
+     "term": "plan",
+     "def": "the view from directly above"
+    },
+    {
+     "term": "elevation",
+     "def": "the view from the front or side"
+    },
+    {
+     "term": "face, edge, vertex",
+     "def": "flat surface, line where faces meet, corner"
+    }
+   ],
+   "starter": [
+    "Volume of a 5 cm cube?",
+    "How many edges does a cuboid have?",
+    "Name a 3D shape with a triangle face",
+    "Work out 3 × 4 × 2"
+   ],
+   "teach": [
+    {
+     "heading": "Nets",
+     "bullets": [
+      "Each face appears once",
+      "Faces must fold without overlapping",
+      "A cube has 11 different nets"
+     ],
+     "note": "Show 3 cube nets and 1 that does not fold. Ask pupils to spot which fails and why."
+    },
+    {
+     "heading": "Plans and elevations",
+     "bullets": [
+      "Plan: from above",
+      "Front elevation: from the front",
+      "Side elevation: from the side"
+     ],
+     "note": "Use a small 3D 'L' made of cubes. Show the three views.",
+     "compare": {
+      "left": {
+       "title": "3D view",
+       "points": [
+        "Shows depth",
+        "Hard to measure",
+        "Good for seeing the shape"
+       ]
+      },
+      "right": {
+       "title": "Plan and elevations",
+       "points": [
+        "Three flat views",
+        "Exact measurements",
+        "Used by architects and engineers"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Drawing the views",
+     "bullets": [
+      "Use squared paper",
+      "Each cube is one square",
+      "Draw only what you see from that side"
+     ],
+     "note": "Model on a grid. Ask pupils to hold up their drawings to the camera.",
+     "model": {
+      "problem": "Draw views of an L-shape: 3 cubes in a row, 1 cube on top of the left end",
+      "steps": [
+       "Plan (above): 3 squares in a row",
+       "Front: 3 squares, plus 1 on top of the left one",
+       "Side (from the right): a column of 2 squares",
+       "Label each view"
+      ],
+      "answer": "Three labelled views"
+     }
+    },
+    {
+     "heading": "Hidden cubes",
+     "bullets": [
+      "You cannot always see every cube"
+     ],
+     "note": "Ask: 'Could there be a hidden cube?' Discuss when the views prove there isn't.",
+     "misconception": {
+      "wrong": "The plan shows how tall the shape is",
+      "right": "The plan shows only the view from above, not height"
+     }
+    },
+    {
+     "heading": "Check: name the solid",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A solid's plan is a circle and its front elevation is a triangle. What is it?",
+      "options": [
+       "Cylinder",
+       "Cone",
+       "Sphere",
+       "Square-based pyramid"
+      ],
+      "answer": 1,
+      "why": "A cone looks circular from above and triangular from the front. A cylinder's elevation is a rectangle."
+     }
+    }
+   ],
+   "practice": [
+    "Sketch a net of a cuboid 4 × 2 × 1 cm",
+    "Draw the plan of a cylinder",
+    "Which solid has plan: square; elevation: triangle?"
+   ],
+   "independent": [
+    "Core: Draw the plan, front and side elevations of a 2 × 2 × 3 cuboid of cubes",
+    "Extend: Draw a net of a triangular prism and label its dimensions so it would fold correctly.",
+    "Stretch: Given a plan and two elevations (shown), find the smallest and largest number of cubes the solid could contain."
+   ],
+   "exit": [
+    "What is a plan?",
+    "Sketch a net of a cube.",
+    "Which solid has a circle for a plan and a rectangle for an elevation?"
+   ],
+   "homework": "Draw the plan and front elevation of your bedroom or your house, labelling measurements.",
+   "send": "Support: interactive cube-building tool and printed nets. Stretch: isometric drawing."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 15,
+   "title": "Surface area of cubes and cuboids",
+   "duration": 50,
+   "bigQuestion": "Can two boxes with the same volume need different amounts of cardboard?",
+   "objectives": [
+    "Calculate the surface area of cubes and cuboids",
+    "Use nets to organise surface area",
+    "Compare surface areas of cuboids with the same volume"
+   ],
+   "successCriteria": [
+    "Find the surface area of a cube",
+    "Find the surface area of a cuboid using pairs of faces",
+    "Find cuboids with equal volumes but different surface areas"
+   ],
+   "crossCurricular": "DT: packaging; Science: surface area and rates of reaction",
+   "smsc": "Moral: reducing packaging waste helps care for the earth (khalifah)",
+   "keywords": [
+    {
+     "term": "surface area",
+     "def": "the total area of all faces of a 3D shape"
+    },
+    {
+     "term": "face",
+     "def": "a flat surface of a 3D shape"
+    },
+    {
+     "term": "pairs of faces",
+     "def": "a cuboid has three pairs of identical opposite faces"
+    },
+    {
+     "term": "net",
+     "def": "a 2D pattern that folds into a 3D shape"
+    }
+   ],
+   "starter": [
+    "Area of a rectangle 7 cm by 3 cm",
+    "Volume of a 2 × 3 × 4 cuboid",
+    "How many faces has a cuboid?",
+    "Work out 2 × (12 + 8 + 6)"
+   ],
+   "teach": [
+    {
+     "heading": "Three pairs of faces",
+     "bullets": [
+      "Front and back",
+      "Top and bottom",
+      "Two sides"
+     ],
+     "note": "Unfold a box on camera to show the net.",
+     "model": {
+      "problem": "Surface area of a cuboid 5 cm × 4 cm × 3 cm",
+      "steps": [
+       "Top/bottom: 5 × 4 = 20, two of them: 40",
+       "Front/back: 5 × 3 = 15, two: 30",
+       "Sides: 4 × 3 = 12, two: 24",
+       "Total: 40 + 30 + 24"
+      ],
+      "answer": "94 cm²"
+     }
+    },
+    {
+     "heading": "Cubes",
+     "bullets": [
+      "Six identical square faces",
+      "SA = 6 × edge²"
+     ],
+     "note": "Edge 3 cm: 6 × 9 = 54 cm²."
+    },
+    {
+     "heading": "Volume or surface area?",
+     "bullets": [
+      "Volume: space inside, cm³",
+      "Surface area: covering, cm²"
+     ],
+     "note": "Ask: 'Wrapping paper or sand to fill it: which needs which?'",
+     "misconception": {
+      "wrong": "Surface area of a 5 × 4 × 3 cuboid = 60",
+      "right": "60 cm³ is the volume; surface area is 94 cm²"
+     }
+    },
+    {
+     "heading": "Same volume, different surface area",
+     "bullets": [
+      "All have volume 24 cm³",
+      "The most cube-like uses least card"
+     ],
+     "note": "This answers the big question.",
+     "table": {
+      "head": [
+       "Cuboid",
+       "Volume",
+       "Surface area"
+      ],
+      "rows": [
+       [
+        "1 × 1 × 24",
+        "24 cm³",
+        "98 cm²"
+       ],
+       [
+        "2 × 3 × 4",
+        "24 cm³",
+        "52 cm²"
+       ],
+       [
+        "2 × 2 × 6",
+        "24 cm³",
+        "56 cm²"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check: surface area",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Surface area of a cube with edges 5 cm?",
+      "options": [
+       "125 cm²",
+       "25 cm²",
+       "150 cm²",
+       "30 cm²"
+      ],
+      "answer": 2,
+      "why": "6 × 5² = 150. A is the volume; B is one face; D is 6 × 5."
+     }
+    }
+   ],
+   "practice": [
+    "Surface area of a cube with edge 4 cm",
+    "Surface area of a cuboid 6 × 2 × 1 cm",
+    "Volume and surface area of a cuboid 10 × 5 × 2 cm"
+   ],
+   "independent": [
+    "Core: Find the surface areas: (a) cube edge 7 cm (b) cuboid 8 × 3 × 2 cm (c) cuboid 12 × 10 × 0.5 cm",
+    "Extend: A cereal box is 30 cm × 20 cm × 7 cm. Find the area of card needed, adding 10% for flaps.",
+    "Stretch: Find the whole-number cuboid with volume 64 cm³ and the smallest surface area. Explain why that shape wins."
+   ],
+   "exit": [
+    "Surface area of a 2 cm cube?",
+    "Is 'volume' measured in cm² or cm³?",
+    "Name the three pairs of faces of a cuboid."
+   ],
+   "homework": "Measure a box at home and find both its volume and surface area. Suggest a box with the same volume that uses less card.",
+   "send": "Support: net templates with faces labelled. Stretch: surface area of triangular prisms."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 16,
+   "title": "Converting measures and problem solving",
+   "duration": 50,
+   "bigQuestion": "Why are there 10 000 cm² in a square metre and not 100?",
+   "objectives": [
+    "Convert between metric units of length, mass and capacity",
+    "Convert between units of area",
+    "Solve problems involving measures"
+   ],
+   "successCriteria": [
+    "Convert km, m, cm, mm and kg, g, litres, ml",
+    "Convert between cm² and m², and cm³ and litres",
+    "Solve multi-step measures problems and justify the units"
+   ],
+   "crossCurricular": "Science: units in practical work; Geography: map distances",
+   "smsc": "Moral: honest weights and measures (Surah Al-Mutaffifin warns against cheating in measure)",
+   "keywords": [
+    {
+     "term": "metric",
+     "def": "a system of units based on 10, 100 and 1000"
+    },
+    {
+     "term": "convert",
+     "def": "change a measurement into different units"
+    },
+    {
+     "term": "kilo-",
+     "def": "1000 times"
+    },
+    {
+     "term": "milli-",
+     "def": "one thousandth"
+    }
+   ],
+   "starter": [
+    "Surface area of a 3 cm cube",
+    "How many cm in 1 m?",
+    "How many g in 1 kg?",
+    "Work out 4.5 × 1000"
+   ],
+   "teach": [
+    {
+     "heading": "Metric conversions",
+     "bullets": [
+      "Bigger unit to smaller: multiply",
+      "Smaller to bigger: divide"
+     ],
+     "note": "Recap and practise quick-fire.",
+     "table": {
+      "head": [
+       "Length",
+       "Mass",
+       "Capacity"
+      ],
+      "rows": [
+       [
+        "1 km = 1000 m",
+        "1 kg = 1000 g",
+        "1 litre = 1000 ml"
+       ],
+       [
+        "1 m = 100 cm",
+        "1 tonne = 1000 kg",
+        "1 litre = 100 cl"
+       ],
+       [
+        "1 cm = 10 mm",
+        "",
+        "1 cm³ = 1 ml"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Area units",
+     "bullets": [
+      "1 m = 100 cm",
+      "So 1 m² = 100 × 100 = 10 000 cm²"
+     ],
+     "note": "Draw a 1 m square split into 100 × 100 small squares. This answers the big question.",
+     "misconception": {
+      "wrong": "1 m² = 100 cm²",
+      "right": "1 m² = 100 cm × 100 cm = 10 000 cm²"
+     }
+    },
+    {
+     "heading": "A measures problem",
+     "bullets": [
+      "Convert to the same units first",
+      "Answer with the unit asked for"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Paint covers 12 m² per litre. A wall is 450 cm by 320 cm. How much paint is needed?",
+      "steps": [
+       "Convert: 4.5 m by 3.2 m",
+       "Area: 4.5 × 3.2 = 14.4 m²",
+       "Paint: 14.4 ÷ 12 = 1.2"
+      ],
+      "answer": "1.2 litres"
+     }
+    },
+    {
+     "heading": "Check: units",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "How many cm² are in 3 m²?",
+      "options": [
+       "300",
+       "3000",
+       "30 000",
+       "300 000"
+      ],
+      "answer": 2,
+      "why": "3 × 10 000 = 30 000. A uses 100 instead of 10 000."
+     }
+    }
+   ],
+   "practice": [
+    "Convert 3.4 km to m",
+    "Convert 2500 g to kg",
+    "Convert 5 m² to cm²",
+    "How many litres is 4500 cm³?"
+   ],
+   "independent": [
+    "Core: Convert (a) 72 mm to cm (b) 0.65 kg to g (c) 1.8 litres to ml (d) 25 000 cm² to m²",
+    "Extend: A water tank is 1.2 m × 80 cm × 50 cm. How many litres does it hold?",
+    "Stretch: Prove that 1 m³ = 1 000 000 cm³ and use it to find how many 1-litre bottles fill a 2 m × 1.5 m × 1 m tank."
+   ],
+   "exit": [
+    "Convert 4.2 m to cm.",
+    "How many cm² in 1 m²?",
+    "How many ml in 0.75 litres?"
+   ],
+   "homework": "Find five food labels and convert each mass or volume into a different unit (e.g. 500 g to kg).",
+   "send": "Support: conversion ladder. Stretch: volume unit conversions."
+  }
+ ]
 }

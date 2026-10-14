@@ -22,12 +22,13 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { buildPlan } from "./lesson-plan.mjs";
+import { themeFor, makeParts } from "./deck-parts.mjs";
 
 const require = createRequire(import.meta.url);
 const PptxGenJS = require("pptxgenjs");
 
 const ROOT = new URL("../../", import.meta.url).pathname;
-const LESSONS = path.join(ROOT, "content/lessons");
+const LESSONS = process.env.LESSONS_DIR ? path.resolve(process.env.LESSONS_DIR) : path.join(ROOT, "content/lessons"); // LESSONS_DIR: for previews
 const LOGO_DARK = path.join(ROOT, "public/brand/ga-wordmark.png"); // for light backgrounds
 const LOGO_WHITE = path.join(ROOT, "public/brand/ga-wordmark-white.png"); // for dark backgrounds
 const args = process.argv.slice(2);
@@ -145,6 +146,10 @@ function fitSize(texts, w, h, max, min, gapPt = 8) {
   return min;
 }
 
+/** Fonts wider than Calibri need a narrower box in fitSize's estimate. */
+const FONT_WIDTH = { Georgia: 0.84, Consolas: 0.74, "Trebuchet MS": 0.88, Cambria: 0.92 };
+const fw = (w, font) => w * (FONT_WIDTH[font] || 1);
+
 /** First question in a teacher note, cleaned up for a slide ("Ask: why…?" → "Why…?"). */
 function questionFrom(note) {
   const m = String(note || "").match(/[^.!?]*\?/);
@@ -184,8 +189,8 @@ function header(slide, ctx, title, kicker, stage, minutes) {
   slide.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.05, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
   if (kicker) slide.addText(kicker.toUpperCase(), { x: 0.8, y: 0.3, w: 6.2, h: 0.3, fontFace: FONT, fontSize: 13, bold: true, color: ctx.accent, charSpacing: 3 });
   const titleW = minutes ? 9.9 : 11.9;
-  const size = fitSize(title, titleW, 0.95, B.titleSize, 22);
-  slide.addText(clean(title), { x: 0.8, y: 0.85, w: titleW, h: 0.95, fontFace: FONT, fontSize: size, bold: true, color: INK, valign: "middle" });
+  const size = fitSize(title, ctx.band === "early" ? titleW : fw(titleW, ctx.theme.head), 0.95, B.titleSize, 20);
+  slide.addText(clean(title), { x: 0.8, y: 0.85, w: titleW, h: 0.95, fontFace: ctx.band === "early" ? FONT : ctx.theme.head, fontSize: size, bold: true, color: INK, valign: "middle" });
   if (minutes) {
     slide.addShape("roundRect", { x: 10.9, y: 1.0, w: 1.7, h: 0.66, rectRadius: 0.33, fill: { color: "FFFFFF" }, line: { color: ctx.accent, width: 2.5 } });
     slide.addShape("ellipse", { x: 11.02, y: 1.11, w: 0.44, h: 0.44, fill: { color: "FFFFFF" }, line: { color: ctx.accent, width: 2 } });
@@ -435,6 +440,8 @@ function tajweedKeySlide(pptx, ctx) {
   s.addNotes("This colour key is used on our slides to help pupils spot rules. If a pupil's mushaf uses different colours, that is fine: always follow the colours in the mushaf you read from.");
 }
 
+const parts = makeParts({ fitSize, clean, FONT, INK, MUTED, GOLD, GOLD_DARK, GOLD_SOFT, CREAM, LINE });
+
 // ── The deck ───────────────────────────────────────────────────────────────
 function buildDeck(file, lesson, nextLesson) {
   const pptx = new PptxGenJS();
@@ -454,7 +461,8 @@ function buildDeck(file, lesson, nextLesson) {
   const subjectSlug = path.basename(path.dirname(file.path));
   const band = bandFor(file.year);
   const B = BAND[band];
-  const ctx = { band, n: lesson.n, accent: ACCENTS[subjectSlug] || TEAL, subjectLabel: file.subject, yearLabel: YEAR_LABEL(file.year) };
+  const theme = themeFor(subjectSlug);
+  const ctx = { band, n: lesson.n, theme, accent: theme.accent || ACCENTS[subjectSlug] || TEAL, mathy: /^(mathematics|science|gcse-science|business)$/.test(subjectSlug), subjectLabel: file.subject, yearLabel: YEAR_LABEL(file.year) };
   const quran = subjectSlug === "quran";
   const ks4 = file.year === "y10" || file.year === "y11";
   const duration = lesson.duration || (band === "early" ? 30 : band === "junior" ? 45 : 50);
@@ -494,20 +502,35 @@ function buildDeck(file, lesson, nextLesson) {
       s.addText("Hello! I'm Najm. Let's learn!", { x: 8.75, y: 5.6, w: 3.6, h: 0.85, fontFace: FONT, fontSize: 18, bold: true, color: INK, align: "center", valign: "middle" });
       s.addText(`Lesson ${lesson.n}  ·  ${duration} minutes`, { x: 1.0, y: 5.4, w: 7, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
     } else {
-      s.background = { color: band === "junior" ? EMERALD : TEAL_DARK };
+      s.background = { color: theme.dark };
       s.addShape("rect", { x: 0, y: 0, w: 0.5, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
       s.addShape("rect", { x: 0.5, y: 0, w: 0.06, h: 7.5, fill: { color: GOLD }, line: { color: GOLD, width: 0 } });
-      starPattern(s, 8.6, 1.9, 4, 7, 1.15, 0.12, GOLD, band === "junior" ? 78 : 88);
+      parts.motif(s, theme, { x: 9.0, y: 1.65, w: 4.0, h: 4.85 });
       s.addImage({ path: LOGO_WHITE, x: 1.0, y: 0.6, w: 0.8 * LOGO_RATIO, h: 0.8 });
       s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: "Arial", fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
-      const chip = band === "junior" ? `MISSION ${lesson.n}  ·  ${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}` : `${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}${ks4 && file.board ? `  ·  ${clean(file.board).toUpperCase()}` : ""}`;
-      s.addText(chip, { x: 1.0, y: 2.25, w: 9.5, h: 0.4, fontFace: FONT, fontSize: 16, bold: true, color: "E3C98F", charSpacing: 4 });
-      s.addText(lesson.title, { x: 1.0, y: 2.75, w: 8.8, h: 2.0, fontFace: FONT, fontSize: fitSize(lesson.title, 8.8, 2.0, 50, 28), bold: true, color: "FFFFFF", valign: "top" });
-      s.addText(clean(lesson.unit), { x: 1.0, y: 4.9, w: 8.8, h: 0.5, fontFace: FONT, fontSize: 20, color: "CFE5E2" });
-      s.addText(`Lesson ${lesson.n}  ·  ${duration} minutes`, { x: 1.0, y: 5.45, w: 8.8, h: 0.4, fontFace: FONT, fontSize: 15, color: "9CC5C1" });
-      s.addText("Tarbiyyah Global Academy  ·  A British education, rooted in faith", { x: 1.0, y: 6.7, w: 11.3, h: 0.35, fontFace: FONT, fontSize: 13, color: "9CC5C1" });
+      const chip = band === "junior" ? `MISSION ${lesson.n}  ·  ${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}` : `${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}${ks4 && (file.boardShort || file.board) ? `  ·  ${clean(file.boardShort || file.board).toUpperCase()}` : ""}`;
+      s.addText(chip, { x: 1.0, y: 2.2, w: 7.9, h: 0.45, fontFace: FONT, fontSize: Math.min(16, fitSize(chip, 7.0, 0.42, 16, 9)), bold: true, color: "E3C98F", charSpacing: 3, fit: "shrink" });
+      s.addText(lesson.title, { x: 1.0, y: 2.75, w: 7.8, h: 2.0, fontFace: theme.head, fontSize: fitSize(lesson.title, fw(7.8, theme.head), 2.0, 46, 22), bold: true, color: "FFFFFF", valign: "top" });
+      s.addText(clean(lesson.unit), { x: 1.0, y: 4.9, w: 7.8, h: 0.5, fontFace: FONT, fontSize: fitSize(lesson.unit, 7.8, 0.5, 20, 12), color: "D9D4C7" });
+      s.addText(`Lesson ${lesson.n}  ·  ${duration} minutes`, { x: 1.0, y: 5.45, w: 7.8, h: 0.4, fontFace: FONT, fontSize: 15, color: "B9B3A5" });
+      s.addText("Tarbiyyah Global Academy  ·  A British education, rooted in faith", { x: 1.0, y: 6.7, w: 7.8, h: 0.35, fontFace: FONT, fontSize: 13, color: "B9B3A5" });
     }
     s.addNotes(`Lesson ${lesson.n}: ${clean(lesson.title)}. ${clean(lesson.unit)}.`);
+  }
+
+  // 1b. The big question: the lesson's enquiry, revisited at the exit ticket.
+  if (lesson.bigQuestion && band !== "early") {
+    const s = pptx.addSlide();
+    s.background = { color: theme.dark };
+    s.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
+    parts.motif(s, theme, { x: 9.3, y: 0.5, w: 3.8, h: 6.5 });
+    s.addText(band === "junior" ? "TODAY'S BIG QUESTION" : "ENQUIRY QUESTION", { x: 0.9, y: 1.1, w: 8, h: 0.4, fontFace: FONT, fontSize: 16, bold: true, color: "E3C98F", charSpacing: 5 });
+    s.addText(clean(lesson.bigQuestion), { x: 0.9, y: 1.7, w: 8.0, h: 3.4, fontFace: theme.head, fontSize: fitSize(lesson.bigQuestion, fw(8.0, theme.head), 3.4, 42, 20), bold: true, color: "FFFFFF", valign: "middle" });
+    if (lesson.crossCurricular) {
+      s.addShape("line", { x: 0.9, y: 5.45, w: 1.2, h: 0, line: { color: GOLD, width: 3 } });
+      s.addText([{ text: "LINKS  ", options: { bold: true, color: "E3C98F", charSpacing: 2 } }, { text: clean(lesson.crossCurricular), options: { color: "D9D4C7" } }], { x: 0.9, y: 5.6, w: 8.0, h: 0.9, fontFace: FONT, fontSize: fitSize(lesson.crossCurricular, 7.0, 0.9, 16, 11), valign: "top" });
+    }
+    s.addNotes(`Read the question aloud and take two or three first ideas. Do not answer it yet: pupils return to it at the exit ticket, which is where progress is evidenced.${lesson.smsc ? ` SMSC: ${clean(lesson.smsc)}` : ""}`);
   }
 
   // 2. Objectives ------------------------------------------------------------
@@ -534,14 +557,29 @@ function buildDeck(file, lesson, nextLesson) {
       }
       s.addText(clean(o), { x: area.x + 1.3, y, w: area.w - 1.5, h, fontFace: FONT, fontSize: size, bold: band === "early", color: INK, valign: "middle" });
     });
-    if (band === "senior") {
+    const sc = (lesson.successCriteria || []).map(clean).filter(Boolean).slice(0, 3);
+    if (band === "senior" && sc.length) {
+      // School standard: success criteria differentiated for all / most / some.
+      s.addShape("roundRect", { x: 9.6, y: 2.15, w: 3.0, h: 4.6, rectRadius: 0.12, fill: { color: theme.soft }, line: { color: theme.soft, width: 0 } });
+      s.addText("SUCCESS CRITERIA", { x: 9.85, y: 2.3, w: 2.5, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: ctx.accent, charSpacing: 2 });
+      const tiers = ["All", "Most", "Some"];
+      const rowH = 3.85 / sc.length;
+      const size = Math.min(...sc.map((x) => fitSize(x, 2.5, rowH - 0.4, 15, 10)));
+      sc.forEach((x, i) => {
+        const y = 2.7 + i * rowH;
+        s.addShape("roundRect", { x: 9.85, y, w: 0.85, h: 0.3, rectRadius: 0.15, fill: { color: i === 0 ? ctx.accent : i === 1 ? theme.dark : GOLD_DARK }, line: { color: "FFFFFF", width: 0 } });
+        s.addText(tiers[i], { x: 9.85, y, w: 0.85, h: 0.3, fontFace: FONT, fontSize: 11, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
+        s.addText(x, { x: 9.85, y: y + 0.33, w: 2.55, h: rowH - 0.4, fontFace: FONT, fontSize: size, color: INK, valign: "top" });
+      });
+    } else if (band === "senior") {
       s.addShape("roundRect", { x: 9.6, y: 2.15, w: 3.0, h: 4.6, rectRadius: 0.12, fill: { color: TEAL_SOFT }, line: { color: TEAL_SOFT, width: 0 } });
       s.addText("THE BIG PICTURE", { x: 9.85, y: 2.35, w: 2.5, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 2 });
       s.addText(clean(lesson.unit), { x: 9.85, y: 2.75, w: 2.5, h: 1.9, fontFace: FONT, fontSize: fitSize(lesson.unit, 2.5, 1.9, 20, 12), bold: true, color: INK, valign: "top" });
-      s.addText(ks4 && file.board ? `Exam board: ${clean(file.board)}` : `${duration}-minute lesson`, { x: 9.85, y: 4.8, w: 2.5, h: 0.4, fontFace: FONT, fontSize: 14, color: TEAL, bold: true });
+      s.addText(ks4 && file.board ? `Exam board: ${clean(file.boardShort || file.board)}` : `${duration}-minute lesson`, { x: 9.85, y: 4.8, w: 2.5, h: 0.4, fontFace: FONT, fontSize: 14, color: TEAL, bold: true });
       s.addText(nextLesson ? `Builds towards: ${clean(nextLesson.title)}` : "End of this sequence", { x: 9.85, y: 5.25, w: 2.5, h: 1.3, fontFace: FONT, fontSize: fitSize(nextLesson ? nextLesson.title + "Builds towards: " : "x", 2.5, 1.3, 14, 10), color: MUTED, valign: "top" });
     }
-    s.addNotes(band === "junior" ? "Read the mission goals together. Pupils can tick each box at the end of the lesson when they feel confident." : "Share the objectives and refer back to them at the exit ticket.");
+    const extras = [lesson.crossCurricular ? `Cross-curricular links: ${clean(lesson.crossCurricular)}` : "", lesson.smsc ? `SMSC: ${clean(lesson.smsc)}` : ""].filter(Boolean).join(" ");
+    s.addNotes(`${band === "junior" ? "Read the mission goals together. Pupils can tick each box at the end of the lesson when they feel confident." : `Share the objectives${sc.length ? " and the success criteria: every pupil aims for 'All', most reach 'Most', some reach 'Some'" : ""}, and refer back to them at the exit ticket.`}${extras ? ` ${extras}` : ""}`);
   }
 
   // 3. Key words -------------------------------------------------------------
@@ -590,9 +628,16 @@ function buildDeck(file, lesson, nextLesson) {
   teach.forEach((t, i) => {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     S.teach.push(slideCount);
-    const kicker = band === "early" ? "Let's learn" : band === "junior" ? `Learn · part ${i + 1} of ${teach.length}` : `Explain · ${i + 1} of ${teach.length}`;
-    header(s, ctx, clean(t.heading), kicker, 1);
-    const rawBullets = (t.bullets || []).map(clean).filter(Boolean);
+    const blockKicker = t.model ? "I do · worked example" : t.check ? "Check for understanding" : t.misconception ? "Common mistake" : t.quote ? "Read closely" : t.code ? "Read the code" : null;
+    const kicker = band === "early" ? "Let's learn" : blockKicker ? `${blockKicker} · ${i + 1} of ${teach.length}` : band === "junior" ? `Learn · part ${i + 1} of ${teach.length}` : `Explain · ${i + 1} of ${teach.length}`;
+    header(s, ctx, clean(t.heading), kicker, t.check ? 2 : 1);
+    const blockBullets = (t.bullets || []).map(clean).filter(Boolean);
+    if (band !== "early" && parts.renderBlock(s, ctx, t, blockBullets, { x: 0.8, y: 2.15, w: 11.8, h: 4.7 })) {
+      s.addNotes(clean(t.note) + parts.blockNotes(t));
+      if (!quran && band !== "senior" && i === Math.min(1, teach.length - 2)) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
+      return;
+    }
+    const rawBullets = blockBullets;
     const numbered = rawBullets.filter((b) => /^\d+\s*[.)]/.test(b)).length >= 2;
     const bullets = numbered ? rawBullets.map(unnumber) : rawBullets;
     const q = questionFrom(t.note);
@@ -692,7 +737,12 @@ function buildDeck(file, lesson, nextLesson) {
     S.exit = slideCount;
     header(s, ctx, B.exitTitle, B.exitKicker, 4);
     const items = (lesson.exit || []).slice(0, 3);
-    stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: 11.8, h: 3.3 }, { maxH: 1.3 });
+    const bq = band !== "early" && lesson.bigQuestion ? clean(lesson.bigQuestion) : null;
+    stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: 11.8, h: bq ? 2.6 : 3.3 }, { maxH: 1.3 });
+    if (bq) {
+      s.addShape("roundRect", { x: 0.8, y: 4.88, w: 11.8, h: 0.6, rectRadius: 0.1, fill: { color: theme.dark }, line: { color: theme.dark, width: 0 } });
+      s.addText([{ text: "BACK TO THE BIG QUESTION   ", options: { bold: true, color: "E3C98F", fontSize: 12, charSpacing: 2 } }, { text: bq, options: { color: "FFFFFF" } }], { x: 1.05, y: 4.88, w: 11.4, h: 0.6, fontFace: FONT, fontSize: fitSize(bq, 8.5, 0.6, 17, 10), valign: "middle" });
+    }
     const labels = band === "early" ? ["I've got it!", "Nearly there", "Help please"] : band === "junior" ? ["Confident", "Getting there", "Need more practice"] : ["Secure", "Developing", "Not yet"];
     const colors = ["3E9B57", "E0A526", "D2553F"];
     s.addText(band === "early" ? "How do you feel? Show me on your fingers: 1, 2 or 3" : "How confident are you with today's objectives?", { x: 0.8, y: 5.6, w: 11.8, h: 0.4, fontFace: FONT, fontSize: band === "early" ? 20 : 16, bold: true, color: INK });
@@ -712,7 +762,11 @@ function buildDeck(file, lesson, nextLesson) {
     S.close = slideCount;
     s.background = { color: band === "early" ? "FFFBF3" : CREAM };
     s.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
-    const textW = band === "early" ? 8.2 : band === "junior" ? 10.0 : 11.8;
+    const textW = band === "early" ? 8.2 : band === "junior" ? 10.0 : 8.3;
+    if (band === "senior") {
+      s.addShape("roundRect", { x: 9.55, y: 0.6, w: 3.2, h: 6.2, rectRadius: 0.15, fill: { color: theme.dark }, line: { color: theme.dark, width: 0 } });
+      parts.motif(s, theme, { x: 9.65, y: 0.8, w: 3.0, h: 5.8 });
+    }
     if (band === "junior") {
       s.addShape("star8", { x: 11.2, y: 0.5, w: 1.5, h: 1.5, fill: { color: GOLD }, line: { color: GOLD_DARK, width: 1.5 } });
       s.addText("✓", { x: 11.2, y: 0.5, w: 1.5, h: 1.5, fontFace: "Arial", fontSize: 40, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
@@ -726,7 +780,7 @@ function buildDeck(file, lesson, nextLesson) {
       s.addText([{ text: band === "early" ? "Next time:  " : "Next lesson:  ", options: { bold: true, color: ctx.accent } }, { text: clean(nextLesson.title), options: { color: INK } }], { x: 1.05, y: 4.3, w: textW - 0.5, h: 0.8, fontFace: FONT, fontSize: fitSize(`Next lesson: ${nextLesson.title}`, textW - 0.5, 0.8, 20, 13), valign: "middle" });
     }
     s.addText("جزاكم الله خيرا", { x: 0.8, y: 5.25, w: 8, h: 0.7, fontFace: "Arial", fontSize: 28, color: GOLD_DARK, rtlMode: true });
-    s.addText(band === "early" ? "Well done today! See you next time, in sha Allah." : "Thank you for your effort and adab today. See you next lesson, in sha Allah.", { x: 0.8, y: 5.95, w: 11.8, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
+    s.addText(band === "early" ? "Well done today! See you next time, in sha Allah." : "Thank you for your effort and adab today. See you next lesson, in sha Allah.", { x: 0.8, y: 5.95, w: textW, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
     s.addImage({ path: LOGO_DARK, x: 0.8, y: 6.55, w: 0.55 * LOGO_RATIO, h: 0.55 });
     if (band === "early") najm(s, 9.6, 1.4, 2.9);
     s.addNotes(lesson.send ? `SEND / EAL / stretch: ${clean(lesson.send)}` : "");

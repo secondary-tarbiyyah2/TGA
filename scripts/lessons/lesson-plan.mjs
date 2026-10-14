@@ -142,6 +142,16 @@ export async function buildPlan(file, lesson, meta) {
     }),
   );
 
+  // Big question, success criteria, links (the school's planning format)
+  const sc = (lesson.successCriteria || []).map(clean).filter(Boolean);
+  if (lesson.bigQuestion || sc.length || lesson.crossCurricular || lesson.smsc) {
+    children.push(heading("Big question and success criteria", accent));
+    if (lesson.bigQuestion) children.push(para([run("Enquiry question: ", { bold: true }), run(lesson.bigQuestion, { italics: true })]));
+    sc.forEach((x, i) => children.push(para([run(`${["All", "Most", "Some"][i] || "•"} pupils: `, { bold: true, color: accent }), run(x)], { after: 40 })));
+    if (lesson.crossCurricular) children.push(para([run("Cross-curricular links: ", { bold: true }), run(lesson.crossCurricular)], { before: 60 }));
+    if (lesson.smsc) children.push(para([run("SMSC: ", { bold: true }), run(lesson.smsc)]));
+  }
+
   // Run-through
   children.push(heading("Lesson run-through", accent));
   const w = [1500, 1000, 1100, CONTENT_W - 3600];
@@ -170,6 +180,18 @@ export async function buildPlan(file, lesson, meta) {
   teach.forEach((x, i) => {
     children.push(para([run(`Slide ${S.teach[i]}  ·  ${x.heading}`, { bold: true, size: 22 })], { before: 100, after: 40, keepNext: true }));
     (x.bullets || []).forEach((b) => children.push(bullet(b, { size: 19, color: MUTED })));
+    if (x.model) {
+      children.push(para([run("Worked example (I do): ", { bold: true, color: accent, size: 20 }), run(x.model.problem, { size: 20 })], { before: 40, after: 30 }));
+      (x.model.steps || []).forEach((st, k) => children.push(para([run(`${k + 1}. ${st}`, { size: 19 })], { after: 20 })));
+      if (x.model.answer) children.push(para([run("Answer: ", { bold: true, size: 19 }), run(x.model.answer, { size: 19 })], { after: 40 }));
+    }
+    if (x.check) {
+      const c = x.check;
+      children.push(para([run("Hinge question (mini-whiteboards): ", { bold: true, color: accent, size: 20 }), run(c.q, { size: 20 })], { before: 40, after: 30 }));
+      (c.options || []).forEach((o, k) => children.push(para([run(`${"ABCD"[k]}  ${o}`, { size: 19, bold: k === Number(c.answer) })], { after: 20 })));
+      children.push(para([run(`Answer: ${"ABCD"[Number(c.answer)] || "?"}. `, { bold: true, size: 19 }), run(c.why || "", { size: 19 }), run(" If fewer than about 80% are right, reteach before moving on.", { size: 19, color: MUTED })], { after: 40 }));
+    }
+    if (x.misconception) children.push(para([run("Misconception: ", { bold: true, color: "C0392B", size: 19 }), run(x.misconception.wrong, { size: 19 }), run("  →  ", { size: 19 }), run(x.misconception.right, { size: 19 })], { after: 40 }));
     if (x.note) children.push(para([run("Say and ask: ", { bold: true, color: accent, size: 20 }), run(x.note, { size: 20 })], { before: 40, after: 60 }));
   });
 
