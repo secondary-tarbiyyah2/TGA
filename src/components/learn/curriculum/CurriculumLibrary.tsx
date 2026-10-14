@@ -4,8 +4,9 @@ import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { uploadClassFile } from "@/components/learn/class/Attachments";
 import { Tabs } from "@/components/learn/Tabs";
-import { Icon } from "@/components/learn/Icon";
 import { makeZip, type ZipEntry } from "@/lib/learn/zip";
+import { mediaUrl, unitsForYear, type StaffUnit } from "@/lib/learn/revision";
+import { UnitResults } from "@/components/learn/revision/UnitResults";
 import {
   LESSON_COLUMNS,
   YEARS,
@@ -114,13 +115,30 @@ function ActionMenu({ label, items, align = "right" }: { label: React.ReactNode;
   );
 }
 
+type UnitGroup = { key: string; subject_slug: string; subject: string; board: string | null; unit: string; lessons: CurriculumLesson[] };
+type UnitTab = "lessons" | "revision" | "results";
+const unitKey = (subjectSlug: string, unit: string) => `${subjectSlug}::${unit}`;
+
+/**
+ * The Lesson library: pick a year, then a unit from the list on the left. Each unit
+ * opens with three tabs: its lessons (slides and plans), its revision pack (what
+ * pupils revise from) and pupil results (how the class did on the revision quiz).
+ */
 export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const supabase = getSupabaseClient();
   const [year, setYearState] = useState<string | null>(null);
   const [myYears, setMyYears] = useState<string[]>([]);
-  const [subject, setSubject] = useState("");
   const [search, setSearch] = useState("");
   const [lessons, setLessons] = useState<CurriculumLesson[] | null>(null);
+  const [packs, setPacks] = useState<StaffUnit[]>([]);
+  const [selected, setSelected] = useState<string | null>(null);
+  // A link can open a particular unit and tab: ?year=y10&subject=…&unit=…&tab=results
+  const [linked] = useState(() => {
+    const p = new URLSearchParams(typeof window === "undefined" ? "" : window.location.search);
+    const t = p.get("tab");
+    return { year: p.get("year"), subject: p.get("subject"), unit: p.get("unit"), tab: (t === "revision" || t === "results" ? t : "lessons") as UnitTab };
+  });
+  const [tab, setTab] = useState<UnitTab>(linked.tab);
   const [message, setMessage] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
   const [replacing, setReplacing] = useState<CurriculumLesson | null>(null);
@@ -128,10 +146,13 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const [sharing, setSharing] = useState<CurriculumLesson | null>(null);
   const [viewing, setViewing] = useState<{ lesson: CurriculumLesson; kind: "slides-pdf" | "plan-pdf"; url: string | null } | null>(null);
   const [openLesson, setOpenLesson] = useState<string | null>(null);
+  const [wanted, setWanted] = useState<{ subject: string | null; unit: string } | null>(linked.unit ? { subject: linked.subject, unit: linked.unit } : null);
 
   const setYear = (y: string) => {
     setYearState(y);
-    setSubject("");
+    setSelected(null);
+    setWanted(null);
+    setTab("lessons");
     try {
       window.localStorage.setItem(YEAR_KEY, y);
     } catch {
@@ -139,11 +160,13 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     }
   };
 
-  // Start on the year you last looked at, else the year of the first class you teach.
+  // Start on a linked unit (?year=&subject=&unit=&tab=), else the year you last
+  // looked at, else the year of the first class you teach.
   useEffect(() => {
     if (!supabase) return;
     let alive = true;
     (async () => {
+      const linkedYear = linked.year;
       let saved: string | null = null;
       try {
         saved = window.localStorage.getItem(YEAR_KEY);
@@ -161,17 +184,21 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       }
       if (!alive) return;
       setMyYears(mine);
-      setYearState(saved && YEARS.includes(saved) ? saved : mine[0] || "y7");
+      setYearState(linkedYear && YEARS.includes(linkedYear) ? linkedYear : saved && YEARS.includes(saved) ? saved : mine[0] || "y7");
     })();
     return () => {
       alive = false;
     };
-  }, [supabase]);
+  }, [supabase, linked.year]);
 
   const load = useCallback(async () => {
     if (!supabase || !year) return;
     setLessons(null);
-    const { data, error } = await supabase.from("curriculum_lessons").select(LESSON_COLUMNS).eq("year", year).order("subject").order("lesson_no");
+    const [{ data, error }, packList] = await Promise.all([
+      supabase.from("curriculum_lessons").select(LESSON_COLUMNS).eq("year", year).order("subject").order("lesson_no"),
+      unitsForYear(year).catch(() => [] as StaffUnit[]),
+    ]);
+    setPacks(packList);
     if (error) {
       setMessage("Couldn't load the Lesson library. Refresh to try again.");
       setLessons([]);
@@ -185,29 +212,43 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     load();
   }, [load]);
 
+  // Subjects, each with its units in teaching order.
   const subjects = useMemo(() => {
-    const m = new Map<string, { name: string; count: number }>();
-    (lessons || []).forEach((l) => m.set(l.subject_slug, { name: l.subject, count: (m.get(l.subject_slug)?.count || 0) + 1 }));
-    return [...m.entries()].sort((a, b) => a[1].name.localeCompare(b[1].name));
-  }, [lessons]);
-
-  const shown = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    return (lessons || []).filter(
-      (l) => (!subject || l.subject_slug === subject) && (!q || [l.title, l.unit || "", ...(l.objectives || [])].some((v) => v.toLowerCase().includes(q))),
-    );
-  }, [lessons, subject, search]);
-
-  const grouped = useMemo(() => {
-    const out = new Map<string, Map<string, CurriculumLesson[]>>();
-    shown.forEach((l) => {
-      const s2 = out.get(l.subject) || new Map<string, CurriculumLesson[]>();
+    const bySubject = new Map<string, { slug: string; name: string; units: Map<string, UnitGroup> }>();
+    (lessons || []).forEach((l) => {
+      const s = bySubject.get(l.subject_slug) || { slug: l.subject_slug, name: l.subject, units: new Map() };
       const u = l.unit || "Lessons";
-      s2.set(u, [...(s2.get(u) || []), l]);
-      out.set(l.subject, s2);
+      const k = unitKey(l.subject_slug, u);
+      const g = s.units.get(u) || { key: k, subject_slug: l.subject_slug, subject: l.subject, board: l.board, unit: u, lessons: [] };
+      g.lessons.push(l);
+      s.units.set(u, g);
+      bySubject.set(l.subject_slug, s);
     });
-    return out;
-  }, [shown]);
+    // Revision packs with no lessons in the library (e.g. a summary-only unit) still get a place.
+    packs.forEach((p) => {
+      const s = bySubject.get(p.subject_slug) || { slug: p.subject_slug, name: p.subject, units: new Map() };
+      if (!s.units.has(p.unit)) s.units.set(p.unit, { key: unitKey(p.subject_slug, p.unit), subject_slug: p.subject_slug, subject: p.subject, board: null, unit: p.unit, lessons: [] });
+      bySubject.set(p.subject_slug, s);
+    });
+    return [...bySubject.values()]
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((s) => ({ ...s, units: [...s.units.values()].sort((a, b) => (a.lessons[0]?.lesson_no ?? 0) - (b.lessons[0]?.lesson_no ?? 0)) }));
+  }, [lessons, packs]);
+
+  const allUnits = useMemo(() => subjects.flatMap((s) => s.units), [subjects]);
+  const packFor = useCallback((g: UnitGroup | undefined) => (g ? packs.find((p) => p.subject_slug === g.subject_slug && p.unit === g.unit) : undefined), [packs]);
+
+  // The unit on show: the one you picked, else the linked one, else the first.
+  const wantedKey = wanted ? allUnits.find((u) => u.unit === wanted.unit && (!wanted.subject || u.subject_slug === wanted.subject))?.key : undefined;
+  const activeKey = selected && allUnits.some((u) => u.key === selected) ? selected : wantedKey || allUnits[0]?.key || null;
+  const current = allUnits.find((u) => u.key === activeKey);
+  const currentPack = packFor(current);
+
+  const results = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return null;
+    return (lessons || []).filter((l) => [l.title, l.unit || "", l.subject, ...(l.objectives || [])].some((v) => v.toLowerCase().includes(q)));
+  }, [lessons, search]);
 
   const fetchFile = async (l: CurriculumLesson, kind: LessonFileKind): Promise<Blob | null> => {
     const p = pathFor(l, kind);
@@ -263,7 +304,71 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     if (missing) setMessage(`Downloaded the unit, but ${missing} file${missing === 1 ? "" : "s"} couldn't be fetched.`);
   };
 
+  const openUnit = (key: string, t: UnitTab = "lessons") => {
+    setSelected(key);
+    setTab(t);
+    setSearch("");
+    setOpenLesson(null);
+  };
+
   const yearTabs = YEARS.map((y) => ({ key: y, label: myYears.includes(y) ? `${yearLabel(y).replace("Year ", "Y")} •` : yearLabel(y).replace("Year ", "Y") }));
+
+  const lessonRow = (l: CurriculumLesson, showUnit = false) => {
+    const expanded = openLesson === l.id;
+    return (
+      <li key={l.id} className="border-t border-gold-light/70 px-4 py-3 first:border-t-0">
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-cream text-sm font-semibold tabular-nums text-ink">{l.lesson_no}</span>
+          <button type="button" onClick={() => setOpenLesson(expanded ? null : l.id)} aria-expanded={expanded} className="min-w-[12rem] flex-1 text-left">
+            <span className="block text-sm font-semibold text-ink">{l.title}</span>
+            <span className="block text-xs text-ink/65">
+              {showUnit ? `${l.subject} · ${l.unit || "Lessons"}` : ""}
+              {!showUnit && l.duration ? `${l.duration} min` : ""}
+              {!showUnit && (l.objectives || []).length ? ` · ${l.objectives.length} objective${l.objectives.length === 1 ? "" : "s"}` : ""}
+              {l.version > 1 && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 font-medium text-teal-900">Edited · v{l.version}</span>}
+            </span>
+          </button>
+          {l.deck_path ? (
+            <div className="flex flex-wrap items-center gap-1.5">
+              {l.pdf_path && (
+                <button type="button" className={btnPrimary} onClick={() => view(l, "slides-pdf")}>
+                  View slides
+                </button>
+              )}
+              {l.plan_pdf_path && (
+                <button type="button" className={btn} onClick={() => view(l, "plan-pdf")}>
+                  Lesson plan
+                </button>
+              )}
+              <ActionMenu
+                label={busyId?.startsWith(l.id) ? "Downloading…" : "Download"}
+                items={(Object.keys(KIND_LABEL) as LessonFileKind[]).filter((k) => pathFor(l, k)).map((k) => ({ label: KIND_LABEL[k], onClick: () => download(l, k) }))}
+              />
+              <button type="button" className={btn} onClick={() => setSharing(l)}>
+                Share to class
+              </button>
+              <ActionMenu
+                label={<span aria-label="More actions">⋯</span>}
+                items={[
+                  { label: "Upload my edited version", onClick: () => setReplacing(l) },
+                  { label: "Version history", onClick: () => setHistory(l) },
+                ]}
+              />
+            </div>
+          ) : (
+            <span className="text-xs text-ink/65">Slides not built yet</span>
+          )}
+        </div>
+        {expanded && (l.objectives || []).length > 0 && (
+          <ul className="ml-12 mt-2 list-disc space-y-0.5 pl-4 text-sm text-ink/80">
+            {l.objectives.map((o) => (
+              <li key={o}>{o}</li>
+            ))}
+          </ul>
+        )}
+      </li>
+    );
+  };
 
   return (
     <div className="space-y-4">
@@ -273,20 +378,17 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           {myYears.length > 0 && <p className="text-xs text-ink/65">• = a year you teach</p>}
         </div>
         {year && <Tabs variant="switch" items={yearTabs} value={year} onChange={setYear} label="Year group" />}
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Subject">
-          <button type="button" aria-pressed={!subject} onClick={() => setSubject("")} className={`rounded-full border px-3 py-1.5 text-sm font-medium ${!subject ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/80 hover:bg-cream"}`}>
-            All subjects{lessons ? ` (${lessons.length})` : ""}
-          </button>
-          {subjects.map(([slug, info]) => (
-            <button key={slug} type="button" aria-pressed={subject === slug} onClick={() => setSubject(slug)} className={`rounded-full border px-3 py-1.5 text-sm font-medium ${subject === slug ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/80 hover:bg-cream"}`}>
-              {info.name} ({info.count})
-            </button>
-          ))}
-        </div>
         <div className="flex flex-wrap items-center gap-3">
-          <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search lesson titles, units or objectives" aria-label="Search lessons" className="min-w-[14rem] flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm" />
+          <input
+            type="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={`Search ${year ? yearLabel(year) : ""} lessons by title, unit or objective`}
+            aria-label="Search lessons"
+            className="min-w-0 flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm"
+          />
           <p className="text-sm text-ink/65" aria-live="polite">
-            {lessons ? `${shown.length} lesson${shown.length === 1 ? "" : "s"}` : "Loading…"}
+            {!lessons ? "Loading…" : results ? `${results.length} match${results.length === 1 ? "" : "es"}` : `${lessons.length} lessons · ${allUnits.length} units`}
           </p>
         </div>
       </div>
@@ -298,95 +400,130 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       )}
 
       {lessons === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
-      {lessons && shown.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No lessons match. Try another subject or clear the search.</p>}
+      {lessons && allUnits.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No lessons for this year yet.</p>}
 
-      {[...grouped.entries()].map(([subjectName, units]) => (
-        <section key={subjectName} aria-label={subjectName} className="space-y-3">
-          <h2 className="text-h3 font-semibold text-ink">{subjectName}</h2>
-          {[...units.entries()].map(([unit, ls], ui) => {
-            const unitKey = `unit:${subjectName}:${unit}`;
-            const minutes = ls.reduce((n, l) => n + (l.duration || 0), 0);
-            return (
-              <details key={unit} open={ui === 0 || !!search.trim() || undefined} className="group overflow-visible rounded-2xl border border-gold-light bg-white">
-                <summary className="flex cursor-pointer list-none flex-wrap items-center gap-x-3 gap-y-1 px-4 py-3">
-                  <Icon name="chevronDown" className="h-4 w-4 shrink-0 text-ink/60 transition-transform group-open:rotate-180" />
-                  <span className="min-w-0 flex-1 font-semibold text-ink">{unit}</span>
-                  <span className="text-xs text-ink/65">
-                    {ls.length} lesson{ls.length === 1 ? "" : "s"}
-                    {minutes ? ` · ${Math.round(minutes / 60 * 10) / 10} h` : ""}
-                  </span>
-                </summary>
-                <div className="flex flex-wrap items-center gap-2 border-t border-gold-light bg-cream/50 px-4 py-2">
-                  <span className="text-xs text-ink/70">Whole unit:</span>
-                  <button type="button" className={btn} disabled={busyId === unitKey} onClick={() => downloadUnit(subjectName, unit, ls, false)}>
-                    {busyId === unitKey ? "Preparing…" : "Download slides + plans (ZIP)"}
-                  </button>
-                  <button type="button" className={btn} disabled={busyId === unitKey} onClick={() => downloadUnit(subjectName, unit, ls, true)}>
-                    Include editable files
-                  </button>
-                </div>
-                <ol>
-                  {ls.map((l) => {
-                    const expanded = openLesson === l.id;
+      {lessons && allUnits.length > 0 && (
+        <div className="grid gap-4 lg:grid-cols-[17rem_minmax(0,1fr)]">
+          {/* Units: a list on wide screens, a drop-down on phones. */}
+          <div className="lg:hidden">
+            <label className="block text-sm font-semibold text-ink">
+              Unit
+              <select value={activeKey || ""} onChange={(e) => openUnit(e.target.value, tab)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm">
+                {subjects.map((s) => (
+                  <optgroup key={s.slug} label={s.name}>
+                    {s.units.map((u) => (
+                      <option key={u.key} value={u.key}>
+                        {u.unit}
+                      </option>
+                    ))}
+                  </optgroup>
+                ))}
+              </select>
+            </label>
+          </div>
+          <nav aria-label="Units" className="hidden max-h-[75vh] space-y-4 self-start overflow-y-auto rounded-2xl border border-gold-light bg-white p-3 lg:sticky lg:top-4 lg:block">
+            {subjects.map((s) => (
+              <div key={s.slug}>
+                <p className="px-2 pb-1 text-xs font-semibold uppercase tracking-wide text-ink/55">{s.name}</p>
+                <ul className="space-y-0.5">
+                  {s.units.map((u) => {
+                    const p = packFor(u);
+                    const active = u.key === activeKey && !results;
                     return (
-                      <li key={l.id} className="border-t border-gold-light/70 px-4 py-3">
-                        <div className="flex flex-wrap items-center gap-3">
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-cream text-sm font-semibold tabular-nums text-ink">{l.lesson_no}</span>
-                          <button type="button" onClick={() => setOpenLesson(expanded ? null : l.id)} aria-expanded={expanded} className="min-w-[12rem] flex-1 text-left">
-                            <span className="block text-sm font-semibold text-ink">{l.title}</span>
-                            <span className="block text-xs text-ink/65">
-                              {l.duration ? `${l.duration} min` : ""}
-                              {(l.objectives || []).length ? ` · ${l.objectives.length} objective${l.objectives.length === 1 ? "" : "s"}` : ""}
-                              {l.version > 1 && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 font-medium text-teal-900">Edited · v{l.version}</span>}
-                            </span>
-                          </button>
-                          {l.deck_path ? (
-                            <div className="flex flex-wrap items-center gap-1.5">
-                              {l.pdf_path && (
-                                <button type="button" className={btnPrimary} onClick={() => view(l, "slides-pdf")}>
-                                  View slides
-                                </button>
-                              )}
-                              {l.plan_pdf_path && (
-                                <button type="button" className={btn} onClick={() => view(l, "plan-pdf")}>
-                                  Lesson plan
-                                </button>
-                              )}
-                              <ActionMenu
-                                label={busyId?.startsWith(l.id) ? "Downloading…" : "Download"}
-                                items={(Object.keys(KIND_LABEL) as LessonFileKind[]).filter((k) => pathFor(l, k)).map((k) => ({ label: KIND_LABEL[k], onClick: () => download(l, k) }))}
-                              />
-                              <button type="button" className={btn} onClick={() => setSharing(l)}>
-                                Share to class
-                              </button>
-                              <ActionMenu
-                                label={<span aria-label="More actions">⋯</span>}
-                                items={[
-                                  { label: "Upload my edited version", onClick: () => setReplacing(l) },
-                                  { label: "Version history", onClick: () => setHistory(l) },
-                                ]}
-                              />
-                            </div>
-                          ) : (
-                            <span className="text-xs text-ink/65">Slides not built yet</span>
-                          )}
-                        </div>
-                        {expanded && (l.objectives || []).length > 0 && (
-                          <ul className="ml-12 mt-2 list-disc space-y-0.5 pl-4 text-sm text-ink/80">
-                            {l.objectives.map((o) => (
-                              <li key={o}>{o}</li>
-                            ))}
-                          </ul>
-                        )}
+                      <li key={u.key}>
+                        <button
+                          type="button"
+                          onClick={() => openUnit(u.key, tab)}
+                          aria-current={active ? "true" : undefined}
+                          className={`flex w-full items-start gap-2 rounded-lg px-2 py-1.5 text-left text-sm ${active ? "bg-teal-100 font-semibold text-teal-900" : "text-ink/85 hover:bg-cream"}`}
+                        >
+                          <span className="min-w-0 flex-1">{u.unit}</span>
+                          <span className="flex shrink-0 items-center gap-1 pt-0.5 text-xs font-normal text-ink/55">
+                            {u.lessons.length > 0 && <span className="tabular-nums">{u.lessons.length}</span>}
+                            {p && <span title={p.takers ? `${p.takers} pupils have revised` : "Revision pack ready"} className={`h-2 w-2 rounded-full ${p.takers ? "bg-teal-700" : "bg-gold-500"}`} />}
+                          </span>
+                        </button>
                       </li>
                     );
                   })}
-                </ol>
-              </details>
-            );
-          })}
-        </section>
-      ))}
+                </ul>
+              </div>
+            ))}
+            <p className="flex items-center gap-1.5 border-t border-gold-light px-2 pt-2 text-xs text-ink/60">
+              <span className="h-2 w-2 rounded-full bg-gold-500" /> revision pack
+              <span className="ml-2 h-2 w-2 rounded-full bg-teal-700" /> pupils have revised
+            </p>
+          </nav>
+
+          <div className="min-w-0 space-y-3">
+            {results ? (
+              <section aria-label="Search results" className="overflow-hidden rounded-2xl border border-gold-light bg-white">
+                {results.length === 0 ? (
+                  <p className="p-8 text-center text-sm text-ink/70">No lessons match. Try other words or another year.</p>
+                ) : (
+                  <ol>{results.map((l) => lessonRow(l, true))}</ol>
+                )}
+              </section>
+            ) : (
+              current && (
+                <section aria-label={current.unit} className="space-y-3">
+                  <div className="rounded-2xl border border-gold-light bg-white p-4">
+                    <p className="text-xs text-ink/60">
+                      {current.subject}
+                      {current.board ? ` · ${current.board}` : ""}
+                    </p>
+                    <h2 className="text-h3 font-semibold text-ink">{current.unit}</h2>
+                    <div className="mt-2 flex flex-wrap items-center gap-2">
+                      <span className="text-xs text-ink/65">
+                        {current.lessons.length} lesson{current.lessons.length === 1 ? "" : "s"}
+                        {current.lessons.length ? ` · ${Math.round((current.lessons.reduce((n, l) => n + (l.duration || 0), 0) / 60) * 10) / 10} h` : ""}
+                      </span>
+                      {currentPack && (
+                        <span className="rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900">
+                          Revision pack · {currentPack.questions} quiz questions{currentPack.takers ? ` · ${currentPack.takers} pupils` : ""}
+                        </span>
+                      )}
+                      <span className="flex-1" />
+                      {current.lessons.length > 0 && (
+                        <ActionMenu
+                          label={busyId === `unit:${current.subject}:${current.unit}` ? "Preparing…" : "Download unit"}
+                          items={[
+                            { label: "Slides + plans (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, false) },
+                            { label: "Include editable files (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, true) },
+                          ]}
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <Tabs
+                    items={[
+                      { key: "lessons" as UnitTab, label: "Lessons", count: current.lessons.length },
+                      { key: "revision" as UnitTab, label: "Revision pack" },
+                      { key: "results" as UnitTab, label: "Pupil results", count: currentPack?.takers || undefined },
+                    ]}
+                    value={tab}
+                    onChange={setTab}
+                    label="Unit"
+                  />
+                  {tab === "lessons" &&
+                    (current.lessons.length ? (
+                      <ol className="overflow-hidden rounded-2xl border border-gold-light bg-white">{current.lessons.map((l) => lessonRow(l))}</ol>
+                    ) : (
+                      <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit is a revision pack only; its summary and video are on the Revision pack tab.</p>
+                    ))}
+                  {tab === "revision" && <RevisionPackPanel pack={currentPack} onChanged={load} />}
+                  {tab === "results" &&
+                    (currentPack ? (
+                      <UnitResults key={currentPack.id} unitId={currentPack.id} />
+                    ) : (
+                      <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit has no revision pack yet, so there are no pupil results.</p>
+                    ))}
+                </section>
+              )
+            )}
+          </div>
+        </div>
+      )}
 
       {viewing && (
         <Modal title={`${viewing.lesson.title}: ${viewing.kind === "plan-pdf" ? "lesson plan" : "slides"}`} onClose={closeViewer} wide>
@@ -443,6 +580,122 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
         />
       )}
       {sharing && <ShareDialog lesson={sharing} area={area} onClose={() => setSharing(null)} onDone={(n) => { setSharing(null); setMessage(`Shared to ${n}. Pupils will see it under Classwork.`); }} />}
+    </div>
+  );
+}
+
+type PackQuestion = { id: string; topic: string; lesson_no: number | null; question: string; options: string[]; answer: number; explanation: string | null; in_quiz: boolean };
+
+/** What pupils revise from for this unit: status, the quiz questions with answers, and a switch to hide it. */
+function RevisionPackPanel({ pack, onChanged }: { pack: StaffUnit | undefined; onChanged: () => void }) {
+  const supabase = getSupabaseClient();
+  const [qs, setQs] = useState<PackQuestion[] | null>(null);
+  const [video, setVideo] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!supabase || !pack) return;
+    let alive = true;
+    (async () => {
+      const [{ data }, { data: unit }] = await Promise.all([
+        supabase.from("revision_questions").select("id, topic, lesson_no, question, options, answer, explanation, in_quiz").eq("unit_id", pack.id).eq("active", true).order("lesson_no").order("qkey"),
+        supabase.from("revision_units").select("video_path").eq("id", pack.id).maybeSingle(),
+      ]);
+      if (!alive) return;
+      setQs((data as PackQuestion[]) || []);
+      const vp = (unit as { video_path: string | null } | null)?.video_path;
+      if (vp) mediaUrl(vp).then((u) => alive && setVideo(u));
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [supabase, pack]);
+
+  if (!pack)
+    return (
+      <div className="space-y-2 rounded-2xl border border-dashed border-gold-light bg-white p-6 text-sm text-ink/75">
+        <p className="font-semibold text-ink">No revision pack for this unit yet.</p>
+        <p>
+          A pack is made automatically once the unit&apos;s lessons have at least four hinge questions (the “check” slides), or when a summary pack is added for it. Ask the head of department or the
+          portal admin to add one.
+        </p>
+      </div>
+    );
+
+  const togglePublished = async () => {
+    if (!supabase) return;
+    setBusy(true);
+    setError(null);
+    const { error: err } = await supabase.from("revision_units").update({ published: !pack.published }).eq("id", pack.id);
+    setBusy(false);
+    if (err) return setError("Couldn't change that. Only teachers and the head can.");
+    onChanged();
+  };
+
+  const quiz = (qs || []).filter((q) => q.in_quiz);
+  const topics = [...new Set(quiz.map((q) => q.topic))];
+  const letters = "ABCDEF";
+
+  return (
+    <div className="space-y-4">
+      <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-gold-light bg-white p-4">
+        <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${pack.published ? "bg-green-50 text-green-800 ring-1 ring-green-200" : "bg-amber-50 text-amber-900 ring-1 ring-amber-200"}`}>
+          {pack.published ? "Pupils can see this pack" : "Hidden from pupils"}
+        </span>
+        <span className="text-sm text-ink/75">
+          {pack.kind === "summary" ? "Summary slides" : "The unit's lesson slides"}
+          {pack.has_video ? " · video" : ""} · {pack.questions} quiz questions · {pack.practice_questions} extra practice questions from the key words
+        </span>
+        <span className="flex-1" />
+        <button type="button" className={btn} disabled={busy} onClick={togglePublished}>
+          {pack.published ? "Hide from pupils" : "Show to pupils"}
+        </button>
+      </div>
+      {error && (
+        <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
+          {error}
+        </p>
+      )}
+      <div className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/75">
+        <p className="font-semibold text-ink">How pupils use it</p>
+        <p>
+          Under <strong>Unit revision</strong> pupils see this unit for their year. They revise from the {pack.kind === "summary" ? "summary slides and video" : "lesson slides"}, take the quiz (marked on the
+          server, so answers never reach their browser early), then the practice coach works on their weakest topics with hints. No AI is involved; every question comes from the teacher-checked lessons.
+        </p>
+      </div>
+      {video && (
+        <div className="rounded-2xl border border-gold-light bg-white p-3">
+          <video src={video} controls playsInline preload="metadata" className="aspect-video w-full rounded-lg bg-ink" />
+        </div>
+      )}
+      {qs === null ? (
+        <div className="h-32 animate-pulse rounded-2xl bg-white" />
+      ) : (
+        topics.map((t) => (
+          <section key={t} aria-label={t} className="rounded-2xl border border-gold-light bg-white p-4">
+            <h3 className="mb-2 font-semibold text-ink">{t}</h3>
+            <ol className="space-y-3">
+              {quiz
+                .filter((q) => q.topic === t)
+                .map((q) => (
+                  <li key={q.id} className="text-sm">
+                    <p className="font-medium text-ink">{q.question}</p>
+                    <ul className="mt-1 grid gap-1 sm:grid-cols-2">
+                      {q.options.map((o, i) => (
+                        <li key={i} className={`rounded-md px-2 py-1 ${i === q.answer ? "bg-green-50 font-semibold text-green-900" : "bg-cream/60 text-ink/80"}`}>
+                          {letters[i]}. {o}
+                          {i === q.answer && <span className="sr-only"> (correct)</span>}
+                        </li>
+                      ))}
+                    </ul>
+                    {q.explanation && <p className="mt-1 text-xs text-ink/65">Why: {q.explanation}</p>}
+                  </li>
+                ))}
+            </ol>
+          </section>
+        ))
+      )}
     </div>
   );
 }
