@@ -37,6 +37,11 @@ Audience: Muslim families in the UK and abroad — "wherever home is."
   are the branded front door that link into each class's Team — never rebuild an LMS. Each
   class stores a `teams_class_url`. Structure code so Teams data could later be pulled in via
   Microsoft Graph without a rebuild — don't build that integration yet.
+- **Exception (owner's decision, October 2026): Unit revision.** Revision quizzes and the
+  practice coach run in the portal (`/student/revision`, migration 0094), because results feed
+  the Lesson library's "Pupil results" and the "Revision results" page. Formal assessments stay
+  in Teams Forms. No AI is used with pupils: questions, hints and explanations come from
+  teacher-checked content and are marked on the server, so answers never reach pupils' browsers.
 - Load `supabase-js` only on the pages that need it (booking, portals, staff area) — as a
   React client component import scoped to those routes, not a site-wide script.
 - The two existing PHP form endpoints (`public/register.php`, `public/apply.php`) are

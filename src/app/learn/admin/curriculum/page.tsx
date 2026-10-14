@@ -11,7 +11,7 @@ export default function AdminCurriculumPage() {
         <PageHeader
           crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Lesson library" }]}
           title="Lesson library"
-          subtitle="Every lesson with slides (PowerPoint and PDF) and a teacher lesson plan (Word and PDF). Teachers can edit, re-upload and share slides; every change is kept in the version history."
+          subtitle="Pick a year, then a unit. Each unit has its lessons (slides and plans, with version history), its revision pack for pupils, and pupil results."
         />
         <CurriculumLibrary area="admin" />
       </LearnGate>
