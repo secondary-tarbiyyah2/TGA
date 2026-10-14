@@ -1,243 +1,1047 @@
 {
-  "subject": "Mathematics",
-  "year": "y11",
-  "board": "Pearson Edexcel International GCSE (9–1) Mathematics A (4MA1), Higher tier",
-  "boardShort": "Edexcel IGCSE 4MA1 Higher",
-  "source": "School Maths folder: Pearson International GCSE Mathematics A (4MA1) two-year Scheme of Work, Higher course order (Unit 16 Harder graphs and transformations of graphs; Unit 17 Simultaneous equations); 2024 4MA1 Paper 1H for exam style; INSET lesson standard.",
-  "lessons": [
+ "subject": "Mathematics",
+ "year": "y11",
+ "board": "Pearson Edexcel GCSE (9–1) Mathematics (1MA1), Higher tier",
+ "boardShort": "Edexcel GCSE 1MA1 Higher",
+ "source": "School Maths folder: Edexcel GCSE (9–1) Mathematics content, sequenced using the school's two-year scheme order (harder graphs and transformations of graphs, then simultaneous equations); Edexcel 1MA1 Higher exam style; INSET lesson standard.",
+ "lessons": [
+  {
+   "unit": "Unit 16: Harder graphs and transformations of graphs",
+   "n": 1,
+   "title": "Quadratic graphs: roots, turning points and symmetry",
+   "duration": 50,
+   "bigQuestion": "What can the shape of a quadratic graph tell us without plotting every point?",
+   "objectives": [
+    "Plot quadratic graphs from a table of values",
+    "Identify roots, y-intercept, turning point and line of symmetry",
+    "Use a graph to solve a quadratic equation"
+   ],
+   "successCriteria": [
+    "Complete a table and plot y = x² − 2x − 3",
+    "Read roots, turning point and line of symmetry from the graph",
+    "Find the turning point by completing the square and compare with the graph"
+   ],
+   "crossCurricular": "Physics: the path of a projectile; Business: maximising profit",
+   "smsc": "Spiritual: the symmetry in the arc of a thrown ball, water from a fountain",
+   "keywords": [
     {
-      "unit": "Unit 16: Harder graphs and transformations of graphs",
-      "n": 1,
-      "title": "Quadratic graphs: roots, turning points and symmetry",
-      "duration": 50,
-      "bigQuestion": "What can the shape of a quadratic graph tell us without plotting every point?",
-      "objectives": ["Plot quadratic graphs from a table of values", "Identify roots, y-intercept, turning point and line of symmetry", "Use a graph to solve a quadratic equation"],
-      "successCriteria": ["Complete a table and plot y = x² − 2x − 3", "Read roots, turning point and line of symmetry from the graph", "Find the turning point by completing the square and compare with the graph"],
-      "crossCurricular": "Physics: the path of a projectile; Business: maximising profit",
-      "smsc": "Spiritual: the symmetry in the arc of a thrown ball, water from a fountain",
-      "keywords": [
-        { "term": "parabola", "def": "the U-shaped curve of a quadratic graph" },
-        { "term": "root", "def": "where the graph crosses the x-axis: a solution of y = 0" },
-        { "term": "turning point", "def": "the minimum or maximum point of the curve" },
-        { "term": "line of symmetry", "def": "the vertical line through the turning point" }
-      ],
-      "starter": ["Bismillah. Factorise x² − 2x − 3", "Evaluate x² − 2x − 3 when x = −2", "Solve (x − 3)(x + 1) = 0", "What is the y-intercept of y = 2x + 5?"],
-      "teach": [
-        { "heading": "Table of values", "bullets": ["Substitute each x carefully", "Use brackets for negative x", "Plot and join with a smooth curve"], "note": "Model on graph paper on screen. Stress: never join with straight lines or a pointed bottom.", "table": { "head": ["x", "−2", "−1", "0", "1", "2", "3", "4"], "rows": [["y = x² − 2x − 3", "5", "0", "−3", "−4", "−3", "0", "5"]] } },
-        { "heading": "Reading key features", "bullets": ["Roots: x = −1 and x = 3", "y-intercept: (0, −3)", "Line of symmetry: x = 1, halfway between the roots", "Turning point: (1, −4), a minimum"], "note": "Ask: 'Why is the line of symmetry halfway between the roots?' Because the parabola is symmetrical." },
-        { "heading": "Turning point by completing the square", "bullets": ["(x + p)² + q has turning point (−p, q)"], "note": "Model.", "model": { "problem": "Find the turning point of y = x² − 2x − 3", "steps": ["Halve the x coefficient: −1", "x² − 2x − 3 = (x − 1)² − 1 − 3", "= (x − 1)² − 4", "Turning point: (1, −4)"], "answer": "(1, −4), matching the graph" } },
-        { "heading": "Sign error with negative x", "bullets": ["(−2)² is +4"], "note": "Most table errors come from this.", "misconception": { "wrong": "x = −2: x² − 2x − 3 = −4 + 4 − 3 = −3", "right": "(−2)² − 2(−2) − 3 = 4 + 4 − 3 = 5" } },
-        { "heading": "Check: features", "bullets": [], "note": "Show me on 3.", "check": { "q": "A parabola has roots at x = −4 and x = 2. What is its line of symmetry?", "options": ["x = −2", "x = −1", "x = 1", "x = 3"], "answer": 1, "why": "Halfway between −4 and 2: (−4 + 2)/2 = −1. A halves −4; C uses (4 − 2)/2." } }
-      ],
-      "practice": ["Complete a table for y = x² + x − 6 for −4 ≤ x ≤ 3", "Find the roots from your graph", "Write down the y-intercept and line of symmetry"],
-      "independent": ["Core: Plot y = x² − 4x + 1 for −1 ≤ x ≤ 5. Use it to solve x² − 4x + 1 = 0 to 1 d.p.", "Extend: Write x² − 6x + 5 in the form (x − p)² − q, state the turning point, and sketch the graph showing all intercepts.", "Stretch: A ball's height is h = 20t − 5t². Find when it lands and its maximum height. Show the maximum height using completing the square."],
-      "exit": ["Roots of y = (x − 2)(x + 6)?", "Line of symmetry of that graph?", "Turning point of y = (x + 3)² − 7?"],
-      "homework": "4MA1 Higher graph questions: complete the table, draw the graph and use it to solve two equations.",
-      "send": "Support: tables partly completed. Stretch: maximum-value problems."
+     "term": "parabola",
+     "def": "the U-shaped curve of a quadratic graph"
     },
     {
-      "unit": "Unit 16: Harder graphs and transformations of graphs",
-      "n": 2,
-      "title": "Cubic and reciprocal graphs",
-      "duration": 50,
-      "bigQuestion": "Why does the graph of y = 1/x never touch the axes?",
-      "objectives": ["Plot and recognise cubic graphs", "Plot and recognise reciprocal graphs", "Match equations to graph shapes"],
-      "successCriteria": ["Complete tables and plot y = x³ − 3x", "Plot y = 1/x and describe its asymptotes", "Sketch and match graphs of linear, quadratic, cubic and reciprocal functions"],
-      "crossCurricular": "Science: Boyle's law (pressure and volume) is a reciprocal relationship",
-      "smsc": "Spiritual: approaching but never reaching: a picture of infinity",
-      "keywords": [
-        { "term": "cubic", "def": "a function whose highest power is x³" },
-        { "term": "reciprocal", "def": "a function of the form y = k/x" },
-        { "term": "asymptote", "def": "a line the graph gets closer and closer to but never meets" },
-        { "term": "sketch", "def": "a neat graph showing the shape and key points, not to scale" }
-      ],
-      "starter": ["Evaluate x³ − 3x at x = −2", "Evaluate 1/x at x = 0.5", "Roots of y = x(x − 4)?", "Turning point of y = (x − 1)² + 2?"],
-      "teach": [
-        { "heading": "Cubic graphs", "bullets": ["Positive x³: rises, wiggles, rises", "Up to two turning points", "Up to three roots"], "note": "Plot y = x³ − 3x from x = −2 to 2: y = −2, 2, 0, −2, 2.", "table": { "head": ["x", "−2", "−1", "0", "1", "2"], "rows": [["y = x³ − 3x", "−2", "2", "0", "−2", "2"]] } },
-        { "heading": "Reciprocal graphs", "bullets": ["y = 1/x: two separate branches", "Asymptotes: x = 0 and y = 0", "Cannot divide by zero"], "note": "Answer the big question: x can never be 0, and 1/x is never exactly 0 however large x gets.", "misconception": { "wrong": "y = 1/x passes through (0, 0)", "right": "x = 0 is undefined: the graph never touches the axes" } },
-        { "heading": "Matching shapes", "bullets": ["Recognise the family by its highest power or x in the denominator"], "note": "Display four sketches and match: straight line, U-shape, S-shape, two branches.", "compare": { "left": { "title": "Quadratic y = x²", "points": ["U or ∩ shape", "One turning point", "Line of symmetry"] }, "right": { "title": "Cubic y = x³", "points": ["S-shape", "Up to two turning points", "Rotational symmetry for y = x³"] } } },
-        { "heading": "Check: identify the graph", "bullets": [], "note": "Show me on 3.", "check": { "q": "A graph has two branches, in the first and third quadrants, and never meets the axes. Its equation could be…", "options": ["y = x²", "y = 4/x", "y = x³", "y = −2x"], "answer": 1, "why": "Reciprocal graphs y = k/x with k > 0 lie in quadrants 1 and 3. The others are continuous curves or lines through the origin." } }
-      ],
-      "practice": ["Complete a table for y = x³ for −3 ≤ x ≤ 3", "Complete a table for y = 6/x for x = 1, 2, 3, 6", "Sketch y = −1/x"],
-      "independent": ["Core: Plot y = x³ − 4x for −3 ≤ x ≤ 3 and find its roots", "Extend: Plot y = 12/x for 1 ≤ x ≤ 12 and use it to estimate x when y = 5. Check by calculation.", "Stretch: Sketch y = x³ − x² − 6x by factorising first. Show where it crosses the axes."],
-      "exit": ["Name the shape of y = 2x³", "Write the asymptotes of y = 5/x", "Sketch y = x² and y = x³ on the same axes"],
-      "homework": "4MA1 Higher: match ten equations to sketches, and plot one reciprocal graph.",
-      "send": "Support: graph-family cards. Stretch: exponential graphs y = aˣ."
+     "term": "root",
+     "def": "where the graph crosses the x-axis: a solution of y = 0"
     },
     {
-      "unit": "Unit 16: Harder graphs and transformations of graphs",
-      "n": 3,
-      "title": "Using graphs to solve equations",
-      "duration": 50,
-      "bigQuestion": "How can drawing one straight line solve a hard equation?",
-      "objectives": ["Solve equations using the intersection of two graphs", "Rearrange an equation to find the line to draw", "Estimate solutions from graphs"],
-      "successCriteria": ["Solve x² − 2x − 3 = 0 from a graph", "Solve x² − 2x − 3 = 2 using y = 2", "Find the line to draw to solve x² − 4x + 1 = 0 using the graph of y = x² − 3x"],
-      "crossCurricular": "Science: graphical analysis of experimental data",
-      "smsc": "Spiritual: two different paths meeting at one truth",
-      "keywords": [
-        { "term": "intersection", "def": "the point where two graphs cross" },
-        { "term": "solution", "def": "a value that makes the equation true" },
-        { "term": "estimate", "def": "an approximate reading from a graph" },
-        { "term": "rearrange", "def": "change the form of the equation" }
-      ],
-      "starter": ["Where does y = x² − 4 cross the x-axis?", "Solve x² = 9", "Rearrange x² − 3x = 5 to equal zero", "Sketch y = 2"],
-      "teach": [
-        { "heading": "Reading solutions", "bullets": ["f(x) = 0: where the curve meets the x-axis", "f(x) = k: where it meets the line y = k"], "note": "On the y = x² − 2x − 3 graph, draw y = 2. Read x ≈ −1.4 and 3.4." },
-        { "heading": "Finding the line to draw", "bullets": ["Rearrange so one side is the plotted graph", "The other side is the line"], "note": "Model.", "model": { "problem": "The graph of y = x² − 3x is drawn. What line solves x² − 4x + 1 = 0?", "steps": ["We want x² − 3x on the left", "x² − 4x + 1 = 0 → x² − 3x = x − 1", "Draw y = x − 1", "Read the x-values where the line meets the curve"], "answer": "y = x − 1 (solutions x ≈ 0.3 and 3.7)" } },
-        { "heading": "Reading y instead of x", "bullets": ["Solutions are x-values"], "note": "Pupils often give the y-coordinate of the intersection.", "misconception": { "wrong": "Solution: y = 2", "right": "Solutions are the x-coordinates: x ≈ −1.4 and 3.4" } },
-        { "heading": "Check: which line?", "bullets": [], "note": "Show me on 3.", "check": { "q": "The graph of y = x² is drawn. Which line solves x² − 2x − 1 = 0?", "options": ["y = 2x + 1", "y = −2x − 1", "y = 1", "y = 2x − 1"], "answer": 0, "why": "x² = 2x + 1. B has the signs reversed; D gets the constant wrong." } }
-      ],
-      "practice": ["From the y = x² − 2x − 3 graph, solve x² − 2x − 3 = −3", "Which line solves x² − 2x − 3 = x?", "Read the solutions from the graph"],
-      "independent": ["Core: Draw y = x² − x − 2 for −2 ≤ x ≤ 3 and solve (a) x² − x − 2 = 0 (b) x² − x − 2 = 3", "Extend: Using the graph of y = x³ − 3x, solve x³ − 3x = 1 to 1 d.p.", "Stretch: Using the graph of y = x² + 2x, find the line to draw to solve 2x² + x − 5 = 0, and solve it."],
-      "exit": ["What do the solutions of f(x) = 0 look like on a graph?", "Graph y = x² drawn. Which line solves x² − 5 = 0?", "Give the solutions as x or y values?"],
-      "homework": "4MA1 Higher 'use your graph to solve' questions (four items) with full workings.",
-      "send": "Support: pre-drawn graphs. Stretch: simultaneous equations by graph."
+     "term": "turning point",
+     "def": "the minimum or maximum point of the curve"
     },
     {
-      "unit": "Unit 16: Harder graphs and transformations of graphs",
-      "n": 4,
-      "title": "Transformations of graphs: translations",
-      "duration": 50,
-      "bigQuestion": "Why does f(x + 2) move a graph to the left, not the right?",
-      "objectives": ["Use function notation f(x)", "Sketch y = f(x) + a and y = f(x + a)", "Describe translations using vectors"],
-      "successCriteria": ["Sketch y = f(x) + 3 from y = f(x)", "Sketch y = f(x − 2) and describe the translation as a vector", "Find the new coordinates of a turning point after a translation"],
-      "crossCurricular": "Computing: moving sprites by coordinates; Art: transforming designs",
-      "smsc": "Spiritual: the same shape in a new place; constancy amid change",
-      "keywords": [
-        { "term": "function notation", "def": "f(x) means the output of function f for input x" },
-        { "term": "translation", "def": "a slide without turning or resizing" },
-        { "term": "vector", "def": "a column showing a movement (right/left over up/down)" },
-        { "term": "invariant", "def": "unchanged by a transformation" }
-      ],
-      "starter": ["f(x) = x². Find f(3)", "Find f(x + 1) for f(x) = x²", "Translate (2, 5) by the vector (3, −1)", "Turning point of y = (x − 2)²?"],
-      "teach": [
-        { "heading": "Up and down: f(x) + a", "bullets": ["Every y-value increases by a", "Translation by vector (0, a)"], "note": "Show y = x² and y = x² + 3 on the same axes. Turning point (0, 0) → (0, 3)." },
-        { "heading": "Left and right: f(x + a)", "bullets": ["Translation by vector (−a, 0)", "f(x + 2) moves left 2"], "note": "Answer the big question: for f(x + 2) to equal f(0), x must be −2. The input arrives 2 earlier.", "misconception": { "wrong": "y = f(x + 2) moves the graph 2 right", "right": "f(x + 2): 2 left, vector (−2, 0)" } },
-        { "heading": "Coordinates after a translation", "bullets": ["Apply to the key point"], "note": "Model.", "model": { "problem": "y = f(x) has a turning point at (3, −1). Find the turning point of y = f(x − 4) + 2.", "steps": ["f(x − 4): move 4 right: (7, −1)", "+ 2: move 2 up: (7, 1)", "Vector: (4, 2)"], "answer": "(7, 1)" } },
-        { "heading": "Check: describe", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which vector describes y = f(x) → y = f(x + 5)?", "options": ["(5, 0)", "(−5, 0)", "(0, 5)", "(0, −5)"], "answer": 1, "why": "Inside the bracket moves horizontally in the opposite direction: 5 left. C is f(x) + 5." } }
-      ],
-      "practice": ["Sketch y = x² − 4", "Sketch y = (x + 3)²", "Write the vector for y = f(x) − 6"],
-      "independent": ["Core: The point (2, 7) lies on y = f(x). Write the image on (a) y = f(x) + 4 (b) y = f(x − 1) (c) y = f(x + 3) − 2", "Extend: Describe fully the transformation that maps y = x² onto y = x² + 6x + 9.", "Stretch: y = x² − 8x + 10 is a translation of y = x². Find the translation vector by completing the square."],
-      "exit": ["Vector for y = f(x) + 7?", "Vector for y = f(x − 3)?", "Turning point (1, 4) on f. Where on y = f(x + 2)?"],
-      "homework": "4MA1 Higher transformations of graphs: six questions on translations.",
-      "send": "Support: tracing-paper style overlays (online graphing tool). Stretch: combined transformations."
-    },
-    {
-      "unit": "Unit 16: Harder graphs and transformations of graphs",
-      "n": 5,
-      "title": "Transformations of graphs: reflections and stretches",
-      "duration": 50,
-      "bigQuestion": "What happens to a graph when we put a minus sign inside or outside the function?",
-      "objectives": ["Sketch y = −f(x) and y = f(−x)", "Sketch y = af(x) and y = f(ax)", "Find images of key points"],
-      "successCriteria": ["Reflect a graph in the x-axis or y-axis", "Apply a vertical stretch y = 2f(x)", "Apply a horizontal stretch y = f(2x) and find the image of a point"],
-      "crossCurricular": "Science: waves and their amplitude and frequency",
-      "smsc": "Cultural: reflections and stretches in Islamic geometric art",
-      "keywords": [
-        { "term": "reflection", "def": "a mirror image in a line" },
-        { "term": "stretch", "def": "an enlargement in one direction only" },
-        { "term": "scale factor", "def": "how much the graph is stretched" },
-        { "term": "invariant point", "def": "a point that does not move" }
-      ],
-      "starter": ["Image of (3, 4) under y = f(x − 2)", "Reflect (2, 5) in the x-axis", "Reflect (2, 5) in the y-axis", "Vector for y = f(x) − 1"],
-      "teach": [
-        { "heading": "Reflections", "bullets": ["−f(x): reflect in the x-axis, (x, y) → (x, −y)", "f(−x): reflect in the y-axis, (x, y) → (−x, y)"], "note": "Show y = x³ − 3x: −f(x) and f(−x) happen to give the same graph (odd function).", "compare": { "left": { "title": "y = −f(x)", "points": ["Minus outside", "Reflect in the x-axis", "y-values change sign"] }, "right": { "title": "y = f(−x)", "points": ["Minus inside", "Reflect in the y-axis", "x-values change sign"] } } },
-        { "heading": "Stretches", "bullets": ["af(x): vertical stretch, scale factor a", "f(ax): horizontal stretch, scale factor 1/a"], "note": "Inside again works 'backwards': f(2x) squashes horizontally by ½.", "misconception": { "wrong": "y = f(2x) stretches horizontally by scale factor 2", "right": "f(2x) is a horizontal stretch by scale factor ½" } },
-        { "heading": "Images of points", "bullets": ["Apply the rule to the coordinates"], "note": "Model.", "model": { "problem": "(4, 6) lies on y = f(x). Find its image on y = 3f(x), y = f(2x) and y = −f(x)", "steps": ["3f(x): y × 3 → (4, 18)", "f(2x): x × ½ → (2, 6)", "−f(x): y × −1 → (4, −6)"], "answer": "(4, 18), (2, 6), (4, −6)" } },
-        { "heading": "Check: which transformation?", "bullets": [], "note": "Show me on 3.", "check": { "q": "(2, −3) lies on y = f(x). Which point lies on y = f(−x)?", "options": ["(2, 3)", "(−2, −3)", "(−2, 3)", "(−3, 2)"], "answer": 1, "why": "Reflect in the y-axis: x changes sign. A is −f(x); C changes both." } }
-      ],
-      "practice": ["Sketch y = −x²", "Sketch y = 2x²", "(6, 2) lies on f. Image on y = f(3x)?"],
-      "independent": ["Core: (3, 8) lies on y = f(x). Find its image on (a) y = −f(x) (b) y = f(−x) (c) y = ½f(x) (d) y = f(x/2)", "Extend: The graph y = sin x (or any curve given) has a maximum at (90, 1). Find the maximum of y = 2f(x) and of y = f(2x).", "Stretch: Describe the single transformation mapping y = x² onto y = 4x², and explain why it can be described as either a vertical or a horizontal stretch."],
-      "exit": ["What does y = −f(x) do?", "(1, 5) on f. Image on y = f(−x)?", "Scale factor of y = f(4x)?"],
-      "homework": "4MA1 Higher: graph transformation sketches from the sheet, labelling images of the turning points.",
-      "send": "Support: rule card (inside: x opposite; outside: y as written). Stretch: combined transformations."
-    },
-    {
-      "unit": "Unit 17: Simultaneous equations",
-      "n": 6,
-      "title": "Simultaneous linear equations by elimination",
-      "duration": 50,
-      "bigQuestion": "How can two pieces of information pin down two unknowns?",
-      "objectives": ["Solve simultaneous equations by elimination", "Multiply one or both equations to match coefficients", "Check solutions in both equations"],
-      "successCriteria": ["Solve when a coefficient already matches", "Solve after multiplying one equation", "Solve after multiplying both equations and interpret graphically"],
-      "crossCurricular": "Business: two pricing equations; Science: two unknowns in chemistry",
-      "smsc": "Moral: using two witnesses to establish truth (as in Islamic law)",
-      "keywords": [
-        { "term": "simultaneous equations", "def": "two equations that are true at the same time" },
-        { "term": "eliminate", "def": "remove one unknown by adding or subtracting equations" },
-        { "term": "coefficient", "def": "the number in front of a letter" },
-        { "term": "substitute", "def": "put a known value into an equation" }
-      ],
-      "starter": ["Solve 3x = 12", "If x = 2, find y in x + y = 7", "Multiply 2x + 3y = 5 by 3", "Work out 7 − (−2)"],
-      "teach": [
-        { "heading": "Same sign: subtract, different signs: add", "bullets": ["Line up x, y and constants", "Match one coefficient", "SSS: same signs subtract"], "note": "3x + 2y = 16 and x + 2y = 8: subtract → 2x = 8, x = 4, then y = 2." },
-        { "heading": "Multiplying to match", "bullets": ["Multiply one or both equations", "Then eliminate"], "note": "Model.", "model": { "problem": "Solve 3x + 4y = 5 and 2x − 3y = 26", "steps": ["× 2 and × 3: 6x + 8y = 10, 6x − 9y = 78", "Subtract: 17y = −68, y = −4", "3x + 4(−4) = 5: 3x = 21, x = 7", "Check: 2(7) − 3(−4) = 26 ✓"], "answer": "x = 7, y = −4" } },
-        { "heading": "Subtracting negatives", "bullets": ["8y − (−9y) = 17y"], "note": "Most errors happen here.", "misconception": { "wrong": "8y − (−9y) = −y", "right": "8y − (−9y) = 17y" } },
-        { "heading": "The graphical meaning", "bullets": ["Each equation is a straight line", "The solution is the intersection point"], "note": "Show both lines crossing at (7, −4) on a graphing tool." },
-        { "heading": "Check: eliminate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Solve x + y = 10 and x − y = 4", "options": ["x = 7, y = 3", "x = 3, y = 7", "x = 6, y = 4", "x = 14, y = −4"], "answer": 0, "why": "Add: 2x = 14, x = 7, y = 3. B swaps them; check both equations." } }
-      ],
-      "practice": ["Solve 2x + y = 11, x − y = 1", "Solve 3x + 2y = 18, x + 2y = 10", "Solve 4x + 3y = 25, 2x + y = 11"],
-      "independent": ["Core: Solve (a) 5x + 2y = 20, 3x + 2y = 14 (b) 2x + 3y = 13, 4x − y = 5", "Extend: Solve 5x − 2y = 24, 3x + 5y = 2", "Stretch: 3 apples and 2 bananas cost £1.95; 2 apples and 5 bananas cost £2.40. Find the cost of each, then check."],
-      "exit": ["Solve x + 2y = 9, x − y = 3", "What do you multiply to eliminate y in 2x + 3y = 7 and 5x − 2y = 8?", "What does the solution represent on a graph?"],
-      "homework": "4MA1 simultaneous equations practice: six questions including two word problems.",
-      "send": "Support: SSS reminder and a column layout. Stretch: three equations, three unknowns."
-    },
-    {
-      "unit": "Unit 17: Simultaneous equations",
-      "n": 7,
-      "title": "Simultaneous equations by substitution and from contexts",
-      "duration": 50,
-      "bigQuestion": "When is substitution quicker than elimination?",
-      "objectives": ["Solve simultaneous equations by substitution", "Form simultaneous equations from contexts", "Interpret solutions in context"],
-      "successCriteria": ["Solve when one equation gives y = …", "Form and solve equations from a word problem", "Choose the most efficient method and justify it"],
-      "crossCurricular": "Business: break-even; Geography: two-variable problems",
-      "smsc": "Social: fair pricing and transparent costs",
-      "keywords": [
-        { "term": "substitution", "def": "replacing one variable with an expression for it" },
-        { "term": "form", "def": "write equations from information" },
-        { "term": "interpret", "def": "explain the meaning in context" },
-        { "term": "efficient", "def": "using the fewest, simplest steps" }
-      ],
-      "starter": ["Solve x + y = 12, x − y = 2", "If y = 2x − 1, find y when x = 4", "Expand 3(2x − 1)", "Solve 5x − 3 = 12"],
-      "teach": [
-        { "heading": "Substitution", "bullets": ["Make one variable the subject", "Substitute into the other equation", "Solve, then back-substitute"], "note": "Model.", "model": { "problem": "Solve y = 2x − 1 and 3x + 2y = 12", "steps": ["Substitute: 3x + 2(2x − 1) = 12", "3x + 4x − 2 = 12", "7x = 14, x = 2", "y = 2(2) − 1 = 3"], "answer": "x = 2, y = 3" } },
-        { "heading": "Choosing a method", "bullets": ["y = … or x = … already: substitution", "Both in the form ax + by = c: elimination"], "note": "Sort five pairs by best method." },
-        { "heading": "Forming equations", "bullets": ["Define both letters with units", "Write one equation per fact"], "note": "Example: 4 adult and 3 child tickets cost £47; 2 adult and 5 child cost £41. Let a, c be prices in £: 4a + 3c = 47, 2a + 5c = 41 → a = 8, c = 5.", "misconception": { "wrong": "Final answer: a = 8, c = 5", "right": "Adult tickets cost £8 and child tickets £5: answer in context" } },
-        { "heading": "Check: which method?", "bullets": [], "note": "Show me on 3.", "check": { "q": "Best first step for x = 3y + 2 and 2x − 5y = 7?", "options": ["Multiply both by 5", "Substitute x = 3y + 2", "Add the equations", "Square both"], "answer": 1, "why": "x is already the subject, so substitute: 2(3y + 2) − 5y = 7 gives y = 3, x = 11." } }
-      ],
-      "practice": ["Solve y = x + 4 and 2x + y = 13", "Solve x = 2y and 3x − y = 10", "Form equations: two numbers sum to 30 and differ by 8"],
-      "independent": ["Core: Solve (a) y = 3x − 5, x + y = 11 (b) x = 4 − y, 2x + 3y = 11", "Extend: A cafe sells tea and coffee. 3 teas and 2 coffees cost £8.70; 2 teas and 3 coffees cost £9.30. Find the price of each.", "Stretch: A two-digit number's digits add to 11. Reversing the digits increases the number by 27. Find the number."],
-      "exit": ["Solve y = 2x, x + y = 9", "Form equations: 2 pens and a ruler cost £3.10; 1 pen and a ruler cost £2.20", "Solve your equations"],
-      "homework": "4MA1 problem-solving: four word problems leading to simultaneous equations.",
-      "send": "Support: method decision card. Stretch: digit problems."
-    },
-    {
-      "unit": "Unit 17: Simultaneous equations",
-      "n": 8,
-      "title": "Simultaneous equations: one linear and one quadratic",
-      "duration": 50,
-      "bigQuestion": "How many times can a straight line cross a curve?",
-      "objectives": ["Solve a linear and a quadratic equation simultaneously", "Interpret solutions as intersection points", "Pair x and y values correctly"],
-      "successCriteria": ["Solve y = x² and y = x + 6", "Solve x² + y² = 25 and y = x + 1", "Explain 0, 1 or 2 solutions using the discriminant or a sketch"],
-      "crossCurricular": "Physics: when a moving object reaches a curved path; Computing: collision detection in games",
-      "smsc": "Spiritual: meeting points and choices",
-      "keywords": [
-        { "term": "intersection", "def": "where two graphs meet" },
-        { "term": "substitute", "def": "replace a variable with an expression" },
-        { "term": "solution pair", "def": "an x-value with its matching y-value" },
-        { "term": "tangent", "def": "a line that touches a curve at exactly one point" }
-      ],
-      "starter": ["Solve x² − x − 6 = 0", "Expand (x + 1)²", "Solve y = 2x + 1, y = x + 4", "What shape is x² + y² = 25?"],
-      "teach": [
-        { "heading": "Substitute the linear into the quadratic", "bullets": ["Get a quadratic in one variable", "Solve by factorising or formula", "Find the matching y for each x"], "note": "Model.", "model": { "problem": "Solve x² + y² = 25 and y = x + 1", "steps": ["x² + (x + 1)² = 25", "2x² + 2x + 1 = 25 → x² + x − 12 = 0", "(x + 4)(x − 3) = 0: x = −4 or 3", "y = −3 or 4"], "answer": "(−4, −3) and (3, 4)" } },
-        { "heading": "Pairing values", "bullets": ["Each x has its own y", "Write the solutions as coordinate pairs"], "note": "The 4MA1 mark scheme requires correct pairs.", "misconception": { "wrong": "x = −4 or 3, y = −3 or 4 (unpaired)", "right": "x = −4, y = −3 and x = 3, y = 4" } },
-        { "heading": "How many solutions?", "bullets": ["Two crossings: two solutions", "Touches (tangent): one", "Misses: none"], "note": "Answer the big question with sketches.", "table": { "head": ["Line and curve", "Quadratic", "Solutions"], "rows": [["Crosses twice", "b² − 4ac > 0", "2"], ["Touches (tangent)", "b² − 4ac = 0", "1"], ["Misses", "b² − 4ac < 0", "0"]] } },
-        { "heading": "Check: solve", "bullets": [], "note": "Show me on 3.", "check": { "q": "Solve y = x² and y = x + 6", "options": ["(3, 9) and (−2, 4)", "(3, 9) only", "(−3, 9) and (2, 4)", "(9, 3) and (4, −2)"], "answer": 0, "why": "x² = x + 6, x² − x − 6 = 0, (x − 3)(x + 2) = 0. Then y = 9 or 4. C has the wrong signs; D swaps x and y." } }
-      ],
-      "practice": ["Solve y = x² − 3 and y = 2x", "Solve y = x² + 1 and y = 3x − 1", "Solve x² + y² = 10 and y = x + 2"],
-      "independent": ["Core: Solve (a) y = x² + 2x and y = x + 2 (b) x² + y² = 13 and y = x − 1", "Extend: Solve 2x² − y² = 7 and y = x + 1 (give exact answers if needed).", "Stretch: Find the value of c for which y = 2x + c is a tangent to y = x² + 3. Explain using the discriminant."],
-      "exit": ["Solve y = x² and y = 4", "Solve y = x² − 2x and y = x", "How many points does y = 5 meet y = x² + 7?"],
-      "homework": "4MA1 Higher Paper 1H/2H past-paper style: three linear–quadratic simultaneous questions (5 marks each).",
-      "send": "Support: substitution steps frame. Stretch: circles and tangents."
+     "term": "line of symmetry",
+     "def": "the vertical line through the turning point"
     }
-  ]
+   ],
+   "starter": [
+    "Bismillah. Factorise x² − 2x − 3",
+    "Evaluate x² − 2x − 3 when x = −2",
+    "Solve (x − 3)(x + 1) = 0",
+    "What is the y-intercept of y = 2x + 5?"
+   ],
+   "teach": [
+    {
+     "heading": "Table of values",
+     "bullets": [
+      "Substitute each x carefully",
+      "Use brackets for negative x",
+      "Plot and join with a smooth curve"
+     ],
+     "note": "Model on graph paper on screen. Stress: never join with straight lines or a pointed bottom.",
+     "table": {
+      "head": [
+       "x",
+       "−2",
+       "−1",
+       "0",
+       "1",
+       "2",
+       "3",
+       "4"
+      ],
+      "rows": [
+       [
+        "y = x² − 2x − 3",
+        "5",
+        "0",
+        "−3",
+        "−4",
+        "−3",
+        "0",
+        "5"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Reading key features",
+     "bullets": [
+      "Roots: x = −1 and x = 3",
+      "y-intercept: (0, −3)",
+      "Line of symmetry: x = 1, halfway between the roots",
+      "Turning point: (1, −4), a minimum"
+     ],
+     "note": "Ask: 'Why is the line of symmetry halfway between the roots?' Because the parabola is symmetrical."
+    },
+    {
+     "heading": "Turning point by completing the square",
+     "bullets": [
+      "(x + p)² + q has turning point (−p, q)"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Find the turning point of y = x² − 2x − 3",
+      "steps": [
+       "Halve the x coefficient: −1",
+       "x² − 2x − 3 = (x − 1)² − 1 − 3",
+       "= (x − 1)² − 4",
+       "Turning point: (1, −4)"
+      ],
+      "answer": "(1, −4), matching the graph"
+     }
+    },
+    {
+     "heading": "Sign error with negative x",
+     "bullets": [
+      "(−2)² is +4"
+     ],
+     "note": "Most table errors come from this.",
+     "misconception": {
+      "wrong": "x = −2: x² − 2x − 3 = −4 + 4 − 3 = −3",
+      "right": "(−2)² − 2(−2) − 3 = 4 + 4 − 3 = 5"
+     }
+    },
+    {
+     "heading": "Check: features",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A parabola has roots at x = −4 and x = 2. What is its line of symmetry?",
+      "options": [
+       "x = −2",
+       "x = −1",
+       "x = 1",
+       "x = 3"
+      ],
+      "answer": 1,
+      "why": "Halfway between −4 and 2: (−4 + 2)/2 = −1. A halves −4; C uses (4 − 2)/2."
+     }
+    }
+   ],
+   "practice": [
+    "Complete a table for y = x² + x − 6 for −4 ≤ x ≤ 3",
+    "Find the roots from your graph",
+    "Write down the y-intercept and line of symmetry"
+   ],
+   "independent": [
+    "Core: Plot y = x² − 4x + 1 for −1 ≤ x ≤ 5. Use it to solve x² − 4x + 1 = 0 to 1 d.p.",
+    "Extend: Write x² − 6x + 5 in the form (x − p)² − q, state the turning point, and sketch the graph showing all intercepts.",
+    "Stretch: A ball's height is h = 20t − 5t². Find when it lands and its maximum height. Show the maximum height using completing the square."
+   ],
+   "exit": [
+    "Roots of y = (x − 2)(x + 6)?",
+    "Line of symmetry of that graph?",
+    "Turning point of y = (x + 3)² − 7?"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher graph questions: complete the table, draw the graph and use it to solve two equations.",
+   "send": "Support: tables partly completed. Stretch: maximum-value problems."
+  },
+  {
+   "unit": "Unit 16: Harder graphs and transformations of graphs",
+   "n": 2,
+   "title": "Cubic and reciprocal graphs",
+   "duration": 50,
+   "bigQuestion": "Why does the graph of y = 1/x never touch the axes?",
+   "objectives": [
+    "Plot and recognise cubic graphs",
+    "Plot and recognise reciprocal graphs",
+    "Match equations to graph shapes"
+   ],
+   "successCriteria": [
+    "Complete tables and plot y = x³ − 3x",
+    "Plot y = 1/x and describe its asymptotes",
+    "Sketch and match graphs of linear, quadratic, cubic and reciprocal functions"
+   ],
+   "crossCurricular": "Science: Boyle's law (pressure and volume) is a reciprocal relationship",
+   "smsc": "Spiritual: approaching but never reaching: a picture of infinity",
+   "keywords": [
+    {
+     "term": "cubic",
+     "def": "a function whose highest power is x³"
+    },
+    {
+     "term": "reciprocal",
+     "def": "a function of the form y = k/x"
+    },
+    {
+     "term": "asymptote",
+     "def": "a line the graph gets closer and closer to but never meets"
+    },
+    {
+     "term": "sketch",
+     "def": "a neat graph showing the shape and key points, not to scale"
+    }
+   ],
+   "starter": [
+    "Evaluate x³ − 3x at x = −2",
+    "Evaluate 1/x at x = 0.5",
+    "Roots of y = x(x − 4)?",
+    "Turning point of y = (x − 1)² + 2?"
+   ],
+   "teach": [
+    {
+     "heading": "Cubic graphs",
+     "bullets": [
+      "Positive x³: rises, wiggles, rises",
+      "Up to two turning points",
+      "Up to three roots"
+     ],
+     "note": "Plot y = x³ − 3x from x = −2 to 2: y = −2, 2, 0, −2, 2.",
+     "table": {
+      "head": [
+       "x",
+       "−2",
+       "−1",
+       "0",
+       "1",
+       "2"
+      ],
+      "rows": [
+       [
+        "y = x³ − 3x",
+        "−2",
+        "2",
+        "0",
+        "−2",
+        "2"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Reciprocal graphs",
+     "bullets": [
+      "y = 1/x: two separate branches",
+      "Asymptotes: x = 0 and y = 0",
+      "Cannot divide by zero"
+     ],
+     "note": "Answer the big question: x can never be 0, and 1/x is never exactly 0 however large x gets.",
+     "misconception": {
+      "wrong": "y = 1/x passes through (0, 0)",
+      "right": "x = 0 is undefined: the graph never touches the axes"
+     }
+    },
+    {
+     "heading": "Matching shapes",
+     "bullets": [
+      "Recognise the family by its highest power or x in the denominator"
+     ],
+     "note": "Display four sketches and match: straight line, U-shape, S-shape, two branches.",
+     "compare": {
+      "left": {
+       "title": "Quadratic y = x²",
+       "points": [
+        "U or ∩ shape",
+        "One turning point",
+        "Line of symmetry"
+       ]
+      },
+      "right": {
+       "title": "Cubic y = x³",
+       "points": [
+        "S-shape",
+        "Up to two turning points",
+        "Rotational symmetry for y = x³"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Check: identify the graph",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A graph has two branches, in the first and third quadrants, and never meets the axes. Its equation could be…",
+      "options": [
+       "y = x²",
+       "y = 4/x",
+       "y = x³",
+       "y = −2x"
+      ],
+      "answer": 1,
+      "why": "Reciprocal graphs y = k/x with k > 0 lie in quadrants 1 and 3. The others are continuous curves or lines through the origin."
+     }
+    }
+   ],
+   "practice": [
+    "Complete a table for y = x³ for −3 ≤ x ≤ 3",
+    "Complete a table for y = 6/x for x = 1, 2, 3, 6",
+    "Sketch y = −1/x"
+   ],
+   "independent": [
+    "Core: Plot y = x³ − 4x for −3 ≤ x ≤ 3 and find its roots",
+    "Extend: Plot y = 12/x for 1 ≤ x ≤ 12 and use it to estimate x when y = 5. Check by calculation.",
+    "Stretch: Sketch y = x³ − x² − 6x by factorising first. Show where it crosses the axes."
+   ],
+   "exit": [
+    "Name the shape of y = 2x³",
+    "Write the asymptotes of y = 5/x",
+    "Sketch y = x² and y = x³ on the same axes"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher: match ten equations to sketches, and plot one reciprocal graph.",
+   "send": "Support: graph-family cards. Stretch: exponential graphs y = aˣ."
+  },
+  {
+   "unit": "Unit 16: Harder graphs and transformations of graphs",
+   "n": 3,
+   "title": "Using graphs to solve equations",
+   "duration": 50,
+   "bigQuestion": "How can drawing one straight line solve a hard equation?",
+   "objectives": [
+    "Solve equations using the intersection of two graphs",
+    "Rearrange an equation to find the line to draw",
+    "Estimate solutions from graphs"
+   ],
+   "successCriteria": [
+    "Solve x² − 2x − 3 = 0 from a graph",
+    "Solve x² − 2x − 3 = 2 using y = 2",
+    "Find the line to draw to solve x² − 4x + 1 = 0 using the graph of y = x² − 3x"
+   ],
+   "crossCurricular": "Science: graphical analysis of experimental data",
+   "smsc": "Spiritual: two different paths meeting at one truth",
+   "keywords": [
+    {
+     "term": "intersection",
+     "def": "the point where two graphs cross"
+    },
+    {
+     "term": "solution",
+     "def": "a value that makes the equation true"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate reading from a graph"
+    },
+    {
+     "term": "rearrange",
+     "def": "change the form of the equation"
+    }
+   ],
+   "starter": [
+    "Where does y = x² − 4 cross the x-axis?",
+    "Solve x² = 9",
+    "Rearrange x² − 3x = 5 to equal zero",
+    "Sketch y = 2"
+   ],
+   "teach": [
+    {
+     "heading": "Reading solutions",
+     "bullets": [
+      "f(x) = 0: where the curve meets the x-axis",
+      "f(x) = k: where it meets the line y = k"
+     ],
+     "note": "On the y = x² − 2x − 3 graph, draw y = 2. Read x ≈ −1.4 and 3.4."
+    },
+    {
+     "heading": "Finding the line to draw",
+     "bullets": [
+      "Rearrange so one side is the plotted graph",
+      "The other side is the line"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "The graph of y = x² − 3x is drawn. What line solves x² − 4x + 1 = 0?",
+      "steps": [
+       "We want x² − 3x on the left",
+       "x² − 4x + 1 = 0 → x² − 3x = x − 1",
+       "Draw y = x − 1",
+       "Read the x-values where the line meets the curve"
+      ],
+      "answer": "y = x − 1 (solutions x ≈ 0.3 and 3.7)"
+     }
+    },
+    {
+     "heading": "Reading y instead of x",
+     "bullets": [
+      "Solutions are x-values"
+     ],
+     "note": "Pupils often give the y-coordinate of the intersection.",
+     "misconception": {
+      "wrong": "Solution: y = 2",
+      "right": "Solutions are the x-coordinates: x ≈ −1.4 and 3.4"
+     }
+    },
+    {
+     "heading": "Check: which line?",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "The graph of y = x² is drawn. Which line solves x² − 2x − 1 = 0?",
+      "options": [
+       "y = 2x + 1",
+       "y = −2x − 1",
+       "y = 1",
+       "y = 2x − 1"
+      ],
+      "answer": 0,
+      "why": "x² = 2x + 1. B has the signs reversed; D gets the constant wrong."
+     }
+    }
+   ],
+   "practice": [
+    "From the y = x² − 2x − 3 graph, solve x² − 2x − 3 = −3",
+    "Which line solves x² − 2x − 3 = x?",
+    "Read the solutions from the graph"
+   ],
+   "independent": [
+    "Core: Draw y = x² − x − 2 for −2 ≤ x ≤ 3 and solve (a) x² − x − 2 = 0 (b) x² − x − 2 = 3",
+    "Extend: Using the graph of y = x³ − 3x, solve x³ − 3x = 1 to 1 d.p.",
+    "Stretch: Using the graph of y = x² + 2x, find the line to draw to solve 2x² + x − 5 = 0, and solve it."
+   ],
+   "exit": [
+    "What do the solutions of f(x) = 0 look like on a graph?",
+    "Graph y = x² drawn. Which line solves x² − 5 = 0?",
+    "Give the solutions as x or y values?"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher 'use your graph to solve' questions (four items) with full workings.",
+   "send": "Support: pre-drawn graphs. Stretch: simultaneous equations by graph."
+  },
+  {
+   "unit": "Unit 16: Harder graphs and transformations of graphs",
+   "n": 4,
+   "title": "Transformations of graphs: translations",
+   "duration": 50,
+   "bigQuestion": "Why does f(x + 2) move a graph to the left, not the right?",
+   "objectives": [
+    "Use function notation f(x)",
+    "Sketch y = f(x) + a and y = f(x + a)",
+    "Describe translations using vectors"
+   ],
+   "successCriteria": [
+    "Sketch y = f(x) + 3 from y = f(x)",
+    "Sketch y = f(x − 2) and describe the translation as a vector",
+    "Find the new coordinates of a turning point after a translation"
+   ],
+   "crossCurricular": "Computing: moving sprites by coordinates; Art: transforming designs",
+   "smsc": "Spiritual: the same shape in a new place; constancy amid change",
+   "keywords": [
+    {
+     "term": "function notation",
+     "def": "f(x) means the output of function f for input x"
+    },
+    {
+     "term": "translation",
+     "def": "a slide without turning or resizing"
+    },
+    {
+     "term": "vector",
+     "def": "a column showing a movement (right/left over up/down)"
+    },
+    {
+     "term": "invariant",
+     "def": "unchanged by a transformation"
+    }
+   ],
+   "starter": [
+    "f(x) = x². Find f(3)",
+    "Find f(x + 1) for f(x) = x²",
+    "Translate (2, 5) by the vector (3, −1)",
+    "Turning point of y = (x − 2)²?"
+   ],
+   "teach": [
+    {
+     "heading": "Up and down: f(x) + a",
+     "bullets": [
+      "Every y-value increases by a",
+      "Translation by vector (0, a)"
+     ],
+     "note": "Show y = x² and y = x² + 3 on the same axes. Turning point (0, 0) → (0, 3)."
+    },
+    {
+     "heading": "Left and right: f(x + a)",
+     "bullets": [
+      "Translation by vector (−a, 0)",
+      "f(x + 2) moves left 2"
+     ],
+     "note": "Answer the big question: for f(x + 2) to equal f(0), x must be −2. The input arrives 2 earlier.",
+     "misconception": {
+      "wrong": "y = f(x + 2) moves the graph 2 right",
+      "right": "f(x + 2): 2 left, vector (−2, 0)"
+     }
+    },
+    {
+     "heading": "Coordinates after a translation",
+     "bullets": [
+      "Apply to the key point"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "y = f(x) has a turning point at (3, −1). Find the turning point of y = f(x − 4) + 2.",
+      "steps": [
+       "f(x − 4): move 4 right: (7, −1)",
+       "+ 2: move 2 up: (7, 1)",
+       "Vector: (4, 2)"
+      ],
+      "answer": "(7, 1)"
+     }
+    },
+    {
+     "heading": "Check: describe",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which vector describes y = f(x) → y = f(x + 5)?",
+      "options": [
+       "(5, 0)",
+       "(−5, 0)",
+       "(0, 5)",
+       "(0, −5)"
+      ],
+      "answer": 1,
+      "why": "Inside the bracket moves horizontally in the opposite direction: 5 left. C is f(x) + 5."
+     }
+    }
+   ],
+   "practice": [
+    "Sketch y = x² − 4",
+    "Sketch y = (x + 3)²",
+    "Write the vector for y = f(x) − 6"
+   ],
+   "independent": [
+    "Core: The point (2, 7) lies on y = f(x). Write the image on (a) y = f(x) + 4 (b) y = f(x − 1) (c) y = f(x + 3) − 2",
+    "Extend: Describe fully the transformation that maps y = x² onto y = x² + 6x + 9.",
+    "Stretch: y = x² − 8x + 10 is a translation of y = x². Find the translation vector by completing the square."
+   ],
+   "exit": [
+    "Vector for y = f(x) + 7?",
+    "Vector for y = f(x − 3)?",
+    "Turning point (1, 4) on f. Where on y = f(x + 2)?"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher transformations of graphs: six questions on translations.",
+   "send": "Support: tracing-paper style overlays (online graphing tool). Stretch: combined transformations."
+  },
+  {
+   "unit": "Unit 16: Harder graphs and transformations of graphs",
+   "n": 5,
+   "title": "Transformations of graphs: reflections and stretches",
+   "duration": 50,
+   "bigQuestion": "What happens to a graph when we put a minus sign inside or outside the function?",
+   "objectives": [
+    "Sketch y = −f(x) and y = f(−x)",
+    "Sketch y = af(x) and y = f(ax)",
+    "Find images of key points"
+   ],
+   "successCriteria": [
+    "Reflect a graph in the x-axis or y-axis",
+    "Apply a vertical stretch y = 2f(x)",
+    "Apply a horizontal stretch y = f(2x) and find the image of a point"
+   ],
+   "crossCurricular": "Science: waves and their amplitude and frequency",
+   "smsc": "Cultural: reflections and stretches in Islamic geometric art",
+   "keywords": [
+    {
+     "term": "reflection",
+     "def": "a mirror image in a line"
+    },
+    {
+     "term": "stretch",
+     "def": "an enlargement in one direction only"
+    },
+    {
+     "term": "scale factor",
+     "def": "how much the graph is stretched"
+    },
+    {
+     "term": "invariant point",
+     "def": "a point that does not move"
+    }
+   ],
+   "starter": [
+    "Image of (3, 4) under y = f(x − 2)",
+    "Reflect (2, 5) in the x-axis",
+    "Reflect (2, 5) in the y-axis",
+    "Vector for y = f(x) − 1"
+   ],
+   "teach": [
+    {
+     "heading": "Reflections",
+     "bullets": [
+      "−f(x): reflect in the x-axis, (x, y) → (x, −y)",
+      "f(−x): reflect in the y-axis, (x, y) → (−x, y)"
+     ],
+     "note": "Show y = x³ − 3x: −f(x) and f(−x) happen to give the same graph (odd function).",
+     "compare": {
+      "left": {
+       "title": "y = −f(x)",
+       "points": [
+        "Minus outside",
+        "Reflect in the x-axis",
+        "y-values change sign"
+       ]
+      },
+      "right": {
+       "title": "y = f(−x)",
+       "points": [
+        "Minus inside",
+        "Reflect in the y-axis",
+        "x-values change sign"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Stretches",
+     "bullets": [
+      "af(x): vertical stretch, scale factor a",
+      "f(ax): horizontal stretch, scale factor 1/a"
+     ],
+     "note": "Inside again works 'backwards': f(2x) squashes horizontally by ½.",
+     "misconception": {
+      "wrong": "y = f(2x) stretches horizontally by scale factor 2",
+      "right": "f(2x) is a horizontal stretch by scale factor ½"
+     }
+    },
+    {
+     "heading": "Images of points",
+     "bullets": [
+      "Apply the rule to the coordinates"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "(4, 6) lies on y = f(x). Find its image on y = 3f(x), y = f(2x) and y = −f(x)",
+      "steps": [
+       "3f(x): y × 3 → (4, 18)",
+       "f(2x): x × ½ → (2, 6)",
+       "−f(x): y × −1 → (4, −6)"
+      ],
+      "answer": "(4, 18), (2, 6), (4, −6)"
+     }
+    },
+    {
+     "heading": "Check: which transformation?",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "(2, −3) lies on y = f(x). Which point lies on y = f(−x)?",
+      "options": [
+       "(2, 3)",
+       "(−2, −3)",
+       "(−2, 3)",
+       "(−3, 2)"
+      ],
+      "answer": 1,
+      "why": "Reflect in the y-axis: x changes sign. A is −f(x); C changes both."
+     }
+    }
+   ],
+   "practice": [
+    "Sketch y = −x²",
+    "Sketch y = 2x²",
+    "(6, 2) lies on f. Image on y = f(3x)?"
+   ],
+   "independent": [
+    "Core: (3, 8) lies on y = f(x). Find its image on (a) y = −f(x) (b) y = f(−x) (c) y = ½f(x) (d) y = f(x/2)",
+    "Extend: The graph y = sin x (or any curve given) has a maximum at (90, 1). Find the maximum of y = 2f(x) and of y = f(2x).",
+    "Stretch: Describe the single transformation mapping y = x² onto y = 4x², and explain why it can be described as either a vertical or a horizontal stretch."
+   ],
+   "exit": [
+    "What does y = −f(x) do?",
+    "(1, 5) on f. Image on y = f(−x)?",
+    "Scale factor of y = f(4x)?"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher: graph transformation sketches from the sheet, labelling images of the turning points.",
+   "send": "Support: rule card (inside: x opposite; outside: y as written). Stretch: combined transformations."
+  },
+  {
+   "unit": "Unit 17: Simultaneous equations",
+   "n": 6,
+   "title": "Simultaneous linear equations by elimination",
+   "duration": 50,
+   "bigQuestion": "How can two pieces of information pin down two unknowns?",
+   "objectives": [
+    "Solve simultaneous equations by elimination",
+    "Multiply one or both equations to match coefficients",
+    "Check solutions in both equations"
+   ],
+   "successCriteria": [
+    "Solve when a coefficient already matches",
+    "Solve after multiplying one equation",
+    "Solve after multiplying both equations and interpret graphically"
+   ],
+   "crossCurricular": "Business: two pricing equations; Science: two unknowns in chemistry",
+   "smsc": "Moral: using two witnesses to establish truth (as in Islamic law)",
+   "keywords": [
+    {
+     "term": "simultaneous equations",
+     "def": "two equations that are true at the same time"
+    },
+    {
+     "term": "eliminate",
+     "def": "remove one unknown by adding or subtracting equations"
+    },
+    {
+     "term": "coefficient",
+     "def": "the number in front of a letter"
+    },
+    {
+     "term": "substitute",
+     "def": "put a known value into an equation"
+    }
+   ],
+   "starter": [
+    "Solve 3x = 12",
+    "If x = 2, find y in x + y = 7",
+    "Multiply 2x + 3y = 5 by 3",
+    "Work out 7 − (−2)"
+   ],
+   "teach": [
+    {
+     "heading": "Same sign: subtract, different signs: add",
+     "bullets": [
+      "Line up x, y and constants",
+      "Match one coefficient",
+      "SSS: same signs subtract"
+     ],
+     "note": "3x + 2y = 16 and x + 2y = 8: subtract → 2x = 8, x = 4, then y = 2."
+    },
+    {
+     "heading": "Multiplying to match",
+     "bullets": [
+      "Multiply one or both equations",
+      "Then eliminate"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Solve 3x + 4y = 5 and 2x − 3y = 26",
+      "steps": [
+       "× 2 and × 3: 6x + 8y = 10, 6x − 9y = 78",
+       "Subtract: 17y = −68, y = −4",
+       "3x + 4(−4) = 5: 3x = 21, x = 7",
+       "Check: 2(7) − 3(−4) = 26 ✓"
+      ],
+      "answer": "x = 7, y = −4"
+     }
+    },
+    {
+     "heading": "Subtracting negatives",
+     "bullets": [
+      "8y − (−9y) = 17y"
+     ],
+     "note": "Most errors happen here.",
+     "misconception": {
+      "wrong": "8y − (−9y) = −y",
+      "right": "8y − (−9y) = 17y"
+     }
+    },
+    {
+     "heading": "The graphical meaning",
+     "bullets": [
+      "Each equation is a straight line",
+      "The solution is the intersection point"
+     ],
+     "note": "Show both lines crossing at (7, −4) on a graphing tool."
+    },
+    {
+     "heading": "Check: eliminate",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Solve x + y = 10 and x − y = 4",
+      "options": [
+       "x = 7, y = 3",
+       "x = 3, y = 7",
+       "x = 6, y = 4",
+       "x = 14, y = −4"
+      ],
+      "answer": 0,
+      "why": "Add: 2x = 14, x = 7, y = 3. B swaps them; check both equations."
+     }
+    }
+   ],
+   "practice": [
+    "Solve 2x + y = 11, x − y = 1",
+    "Solve 3x + 2y = 18, x + 2y = 10",
+    "Solve 4x + 3y = 25, 2x + y = 11"
+   ],
+   "independent": [
+    "Core: Solve (a) 5x + 2y = 20, 3x + 2y = 14 (b) 2x + 3y = 13, 4x − y = 5",
+    "Extend: Solve 5x − 2y = 24, 3x + 5y = 2",
+    "Stretch: 3 apples and 2 bananas cost £1.95; 2 apples and 5 bananas cost £2.40. Find the cost of each, then check."
+   ],
+   "exit": [
+    "Solve x + 2y = 9, x − y = 3",
+    "What do you multiply to eliminate y in 2x + 3y = 7 and 5x − 2y = 8?",
+    "What does the solution represent on a graph?"
+   ],
+   "homework": "1MA1 simultaneous equations practice: six questions including two word problems.",
+   "send": "Support: SSS reminder and a column layout. Stretch: three equations, three unknowns."
+  },
+  {
+   "unit": "Unit 17: Simultaneous equations",
+   "n": 7,
+   "title": "Simultaneous equations by substitution and from contexts",
+   "duration": 50,
+   "bigQuestion": "When is substitution quicker than elimination?",
+   "objectives": [
+    "Solve simultaneous equations by substitution",
+    "Form simultaneous equations from contexts",
+    "Interpret solutions in context"
+   ],
+   "successCriteria": [
+    "Solve when one equation gives y = …",
+    "Form and solve equations from a word problem",
+    "Choose the most efficient method and justify it"
+   ],
+   "crossCurricular": "Business: break-even; Geography: two-variable problems",
+   "smsc": "Social: fair pricing and transparent costs",
+   "keywords": [
+    {
+     "term": "substitution",
+     "def": "replacing one variable with an expression for it"
+    },
+    {
+     "term": "form",
+     "def": "write equations from information"
+    },
+    {
+     "term": "interpret",
+     "def": "explain the meaning in context"
+    },
+    {
+     "term": "efficient",
+     "def": "using the fewest, simplest steps"
+    }
+   ],
+   "starter": [
+    "Solve x + y = 12, x − y = 2",
+    "If y = 2x − 1, find y when x = 4",
+    "Expand 3(2x − 1)",
+    "Solve 5x − 3 = 12"
+   ],
+   "teach": [
+    {
+     "heading": "Substitution",
+     "bullets": [
+      "Make one variable the subject",
+      "Substitute into the other equation",
+      "Solve, then back-substitute"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Solve y = 2x − 1 and 3x + 2y = 12",
+      "steps": [
+       "Substitute: 3x + 2(2x − 1) = 12",
+       "3x + 4x − 2 = 12",
+       "7x = 14, x = 2",
+       "y = 2(2) − 1 = 3"
+      ],
+      "answer": "x = 2, y = 3"
+     }
+    },
+    {
+     "heading": "Choosing a method",
+     "bullets": [
+      "y = … or x = … already: substitution",
+      "Both in the form ax + by = c: elimination"
+     ],
+     "note": "Sort five pairs by best method."
+    },
+    {
+     "heading": "Forming equations",
+     "bullets": [
+      "Define both letters with units",
+      "Write one equation per fact"
+     ],
+     "note": "Example: 4 adult and 3 child tickets cost £47; 2 adult and 5 child cost £41. Let a, c be prices in £: 4a + 3c = 47, 2a + 5c = 41 → a = 8, c = 5.",
+     "misconception": {
+      "wrong": "Final answer: a = 8, c = 5",
+      "right": "Adult tickets cost £8 and child tickets £5: answer in context"
+     }
+    },
+    {
+     "heading": "Check: which method?",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Best first step for x = 3y + 2 and 2x − 5y = 7?",
+      "options": [
+       "Multiply both by 5",
+       "Substitute x = 3y + 2",
+       "Add the equations",
+       "Square both"
+      ],
+      "answer": 1,
+      "why": "x is already the subject, so substitute: 2(3y + 2) − 5y = 7 gives y = 3, x = 11."
+     }
+    }
+   ],
+   "practice": [
+    "Solve y = x + 4 and 2x + y = 13",
+    "Solve x = 2y and 3x − y = 10",
+    "Form equations: two numbers sum to 30 and differ by 8"
+   ],
+   "independent": [
+    "Core: Solve (a) y = 3x − 5, x + y = 11 (b) x = 4 − y, 2x + 3y = 11",
+    "Extend: A cafe sells tea and coffee. 3 teas and 2 coffees cost £8.70; 2 teas and 3 coffees cost £9.30. Find the price of each.",
+    "Stretch: A two-digit number's digits add to 11. Reversing the digits increases the number by 27. Find the number."
+   ],
+   "exit": [
+    "Solve y = 2x, x + y = 9",
+    "Form equations: 2 pens and a ruler cost £3.10; 1 pen and a ruler cost £2.20",
+    "Solve your equations"
+   ],
+   "homework": "1MA1 problem-solving: four word problems leading to simultaneous equations.",
+   "send": "Support: method decision card. Stretch: digit problems."
+  },
+  {
+   "unit": "Unit 17: Simultaneous equations",
+   "n": 8,
+   "title": "Simultaneous equations: one linear and one quadratic",
+   "duration": 50,
+   "bigQuestion": "How many times can a straight line cross a curve?",
+   "objectives": [
+    "Solve a linear and a quadratic equation simultaneously",
+    "Interpret solutions as intersection points",
+    "Pair x and y values correctly"
+   ],
+   "successCriteria": [
+    "Solve y = x² and y = x + 6",
+    "Solve x² + y² = 25 and y = x + 1",
+    "Explain 0, 1 or 2 solutions using the discriminant or a sketch"
+   ],
+   "crossCurricular": "Physics: when a moving object reaches a curved path; Computing: collision detection in games",
+   "smsc": "Spiritual: meeting points and choices",
+   "keywords": [
+    {
+     "term": "intersection",
+     "def": "where two graphs meet"
+    },
+    {
+     "term": "substitute",
+     "def": "replace a variable with an expression"
+    },
+    {
+     "term": "solution pair",
+     "def": "an x-value with its matching y-value"
+    },
+    {
+     "term": "tangent",
+     "def": "a line that touches a curve at exactly one point"
+    }
+   ],
+   "starter": [
+    "Solve x² − x − 6 = 0",
+    "Expand (x + 1)²",
+    "Solve y = 2x + 1, y = x + 4",
+    "What shape is x² + y² = 25?"
+   ],
+   "teach": [
+    {
+     "heading": "Substitute the linear into the quadratic",
+     "bullets": [
+      "Get a quadratic in one variable",
+      "Solve by factorising or formula",
+      "Find the matching y for each x"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Solve x² + y² = 25 and y = x + 1",
+      "steps": [
+       "x² + (x + 1)² = 25",
+       "2x² + 2x + 1 = 25 → x² + x − 12 = 0",
+       "(x + 4)(x − 3) = 0: x = −4 or 3",
+       "y = −3 or 4"
+      ],
+      "answer": "(−4, −3) and (3, 4)"
+     }
+    },
+    {
+     "heading": "Pairing values",
+     "bullets": [
+      "Each x has its own y",
+      "Write the solutions as coordinate pairs"
+     ],
+     "note": "The mark scheme requires correct pairs.",
+     "misconception": {
+      "wrong": "x = −4 or 3, y = −3 or 4 (unpaired)",
+      "right": "x = −4, y = −3 and x = 3, y = 4"
+     }
+    },
+    {
+     "heading": "How many solutions?",
+     "bullets": [
+      "Two crossings: two solutions",
+      "Touches (tangent): one",
+      "Misses: none"
+     ],
+     "note": "Answer the big question with sketches.",
+     "table": {
+      "head": [
+       "Line and curve",
+       "Quadratic",
+       "Solutions"
+      ],
+      "rows": [
+       [
+        "Crosses twice",
+        "b² − 4ac > 0",
+        "2"
+       ],
+       [
+        "Touches (tangent)",
+        "b² − 4ac = 0",
+        "1"
+       ],
+       [
+        "Misses",
+        "b² − 4ac < 0",
+        "0"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check: solve",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Solve y = x² and y = x + 6",
+      "options": [
+       "(3, 9) and (−2, 4)",
+       "(3, 9) only",
+       "(−3, 9) and (2, 4)",
+       "(9, 3) and (4, −2)"
+      ],
+      "answer": 0,
+      "why": "x² = x + 6, x² − x − 6 = 0, (x − 3)(x + 2) = 0. Then y = 9 or 4. C has the wrong signs; D swaps x and y."
+     }
+    }
+   ],
+   "practice": [
+    "Solve y = x² − 3 and y = 2x",
+    "Solve y = x² + 1 and y = 3x − 1",
+    "Solve x² + y² = 10 and y = x + 2"
+   ],
+   "independent": [
+    "Core: Solve (a) y = x² + 2x and y = x + 2 (b) x² + y² = 13 and y = x − 1",
+    "Extend: Solve 2x² − y² = 7 and y = x + 1 (give exact answers if needed).",
+    "Stretch: Find the value of c for which y = 2x + c is a tangent to y = x² + 3. Explain using the discriminant."
+   ],
+   "exit": [
+    "Solve y = x² and y = 4",
+    "Solve y = x² − 2x and y = x",
+    "How many points does y = 5 meet y = x² + 7?"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher Paper 1H/2H past-paper style: three linear–quadratic simultaneous questions (5 marks each).",
+   "send": "Support: substitution steps frame. Stretch: circles and tangents."
+  }
+ ]
 }

@@ -1,485 +1,2310 @@
 {
-  "subject": "Science",
-  "year": "y9",
-  "board": "KS3 National Curriculum via Pearson Exploring Science, bridging to Edexcel International GCSE Biology, Chemistry and Physics",
-  "boardShort": "KS3 Exploring Science",
-  "source": "School Science curriculum journey 2026–27 (Year 9 Term 1: 9A Genetics and evolution; 9E Making materials) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 9Aa–9Ae, 9Ea–9Ee) and 9E assessment pack; INSET lesson standard.",
-  "lessons": [
+ "subject": "Science",
+ "year": "y9",
+ "board": "KS3 National Curriculum via Pearson Exploring Science, building to Edexcel GCSE Biology, Chemistry and Physics",
+ "boardShort": "KS3 Exploring Science",
+ "source": "School Science curriculum journey 2026–27 (Year 9 Term 1: 9A Genetics and evolution; 9E Making materials) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 9Aa–9Ae, 9Ea–9Ee) and 9E assessment pack; INSET lesson standard.",
+ "lessons": [
+  {
+   "unit": "9A: Genetics and evolution",
+   "n": 1,
+   "title": "Variation: continuous and discontinuous",
+   "duration": 50,
+   "bigQuestion": "Why is no one in the world exactly like you?",
+   "objectives": [
+    "Describe variation within and between species",
+    "Distinguish continuous and discontinuous variation",
+    "Choose suitable graphs for each type"
+   ],
+   "successCriteria": [
+    "Give examples of variation within a species",
+    "Classify features as continuous or discontinuous",
+    "Draw a histogram or bar chart and explain the choice"
+   ],
+   "crossCurricular": "Maths: histograms and bar charts; Islamic Studies: diversity of creation (Surah Ar-Rum 30:22)",
+   "smsc": "Spiritual: diversity of human tongues and colours as a sign (Ar-Rum 30:22); social: respecting difference",
+   "keywords": [
     {
-      "unit": "9A: Genetics and evolution",
-      "n": 1,
-      "title": "Variation: continuous and discontinuous",
-      "duration": 50,
-      "bigQuestion": "Why is no one in the world exactly like you?",
-      "objectives": ["Describe variation within and between species", "Distinguish continuous and discontinuous variation", "Choose suitable graphs for each type"],
-      "successCriteria": ["Give examples of variation within a species", "Classify features as continuous or discontinuous", "Draw a histogram or bar chart and explain the choice"],
-      "crossCurricular": "Maths: histograms and bar charts; Islamic Studies: diversity of creation (Surah Ar-Rum 30:22)",
-      "smsc": "Spiritual: diversity of human tongues and colours as a sign (Ar-Rum 30:22); social: respecting difference",
-      "keywords": [
-        { "term": "variation", "def": "differences between living things" },
-        { "term": "species", "def": "organisms that can breed to produce fertile offspring" },
-        { "term": "continuous variation", "def": "can take any value in a range, e.g. height" },
-        { "term": "discontinuous variation", "def": "falls into distinct groups, e.g. blood group" }
-      ],
-      "starter": ["Bismillah. Name a feature you share with a family member", "What is a species?", "Draw a quick bar chart axis", "Name one specialised cell"],
-      "teach": [
-        { "heading": "Within and between species", "bullets": ["Between: a cat and a dog", "Within: different humans", "Variation makes every person unique"], "note": "Answer the big question partly. Identical twins share genes but still differ through environment." },
-        { "heading": "Two types of variation", "bullets": ["Continuous: measured, any value", "Discontinuous: counted into groups"], "note": "Classify features as a class: height, eye colour, mass, blood group, tongue rolling, hand span.", "compare": { "left": { "title": "Continuous", "points": ["Height", "Mass", "Hand span", "Plot as a histogram"] }, "right": { "title": "Discontinuous", "points": ["Blood group", "Eye colour (broadly)", "Earlobe attached or free", "Plot as a bar chart"] } } },
-        { "heading": "Drawing the right graph", "bullets": ["Continuous: histogram, no gaps", "Discontinuous: bar chart, gaps"], "note": "Model.", "model": { "problem": "Class hand spans (cm): 16–17: 3; 17–18: 7; 18–19: 9; 19–20: 5; 20–21: 1. Which graph and why?", "steps": ["Hand span is measured: continuous", "Use a histogram with touching bars", "Shape: most in the middle, fewer at the extremes"], "answer": "Histogram; a normal (bell-shaped) distribution" } },
-        { "heading": "Eye colour is tricky", "bullets": ["Often treated as discontinuous", "Really shades blend"], "note": "Shows that real data can be messy.", "misconception": { "wrong": "Height is discontinuous because we round it", "right": "Height can take any value; rounding doesn't change its type" } },
-        { "heading": "Check: type", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is discontinuous variation?", "options": ["Mass", "Blood group", "Height", "Foot length"], "answer": 1, "why": "Blood group is A, B, AB or O: distinct groups. The others are measured on a continuous scale." } }
-      ],
-      "practice": ["Classify: shoe size, skin colour, blood group, arm length", "Which graph for blood group data?", "Give one example of variation between species"],
-      "independent": ["Core: Draw a bar chart of blood groups in a sample: O 22, A 20, B 6, AB 2", "Extend: Draw a histogram of a class's heights from given data and describe its shape", "Stretch: Explain why shoe size data looks discontinuous even though foot length is continuous."],
-      "exit": ["Define variation.", "Is hand span continuous or discontinuous?", "Which graph for continuous data?"],
-      "homework": "Measure the hand spans of five family members and record whether each has attached or free earlobes. Identify the type of each.",
-      "send": "Support: sorting cards. Stretch: normal distribution."
+     "term": "variation",
+     "def": "differences between living things"
     },
     {
-      "unit": "9A: Genetics and evolution",
-      "n": 2,
-      "title": "Inherited and environmental variation",
-      "duration": 50,
-      "bigQuestion": "Is your accent in your genes?",
-      "objectives": ["Distinguish inherited and environmental variation", "Explain features caused by both", "Use twin studies as evidence"],
-      "successCriteria": ["Classify features as inherited, environmental or both", "Explain how environment can change inherited features", "Use identical twin data to draw conclusions"],
-      "crossCurricular": "PE: training and fitness; English: accents and dialects",
-      "smsc": "Moral: we are responsible for what we can change (effort, character)",
-      "keywords": [
-        { "term": "inherited variation", "def": "caused by genes passed from parents" },
-        { "term": "environmental variation", "def": "caused by surroundings and lifestyle" },
-        { "term": "identical twins", "def": "twins from one fertilised egg with the same genes" },
-        { "term": "characteristic", "def": "a feature of an organism" }
-      ],
-      "starter": ["Is height continuous or discontinuous?", "Which graph shows discontinuous data?", "Name a feature you inherited", "What is a gene (your best guess)?"],
-      "teach": [
-        { "heading": "Three categories", "bullets": ["Inherited: blood group, natural eye colour", "Environmental: scars, language, accent", "Both: height, mass, intelligence"], "note": "Answer the big question: accent is environmental (learned).", "table": { "head": ["Feature", "Cause"], "rows": [["Blood group", "inherited"], ["Accent", "environmental"], ["A scar", "environmental"], ["Height", "both (genes + diet)"], ["Plant height", "both (genes + light, water)"]] } },
-        { "heading": "Twin studies", "bullets": ["Identical twins: same genes", "Differences must be environmental", "Twins raised apart are especially useful"], "note": "Model reading data.", "model": { "problem": "Identical twins raised apart differ in mass by 6 kg; in height by 1 cm. What does this suggest?", "steps": ["Same genes, so differences come from environment", "Mass differs a lot: strongly affected by diet and exercise", "Height differs little: mostly controlled by genes"], "answer": "Height is mainly genetic; mass is strongly environmental" } },
-        { "heading": "Plants too", "bullets": ["Same seeds, different light → different heights", "Hydrangea flower colour changes with soil pH"], "note": "Good examples of environmental effects on inherited potential." },
-        { "heading": "Either/or thinking", "bullets": ["Many features have both causes"], "note": "Key misconception.", "misconception": { "wrong": "Height is purely inherited", "right": "Genes set a range; diet and health affect where you end up" } },
-        { "heading": "Check: cause", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which feature is purely environmental?", "options": ["Natural hair colour", "The language you speak", "Blood group", "Height"], "answer": 1, "why": "Language is learned. Hair colour and blood group are inherited; height is both." } }
-      ],
-      "practice": ["Classify: tattoo, eye colour, mass, dimples", "Why are identical twins useful to scientists?", "Give one feature affected by both"],
-      "independent": ["Core: Sort twelve features into inherited, environmental and both, with reasons", "Extend: Plan an experiment with cuttings of one plant to show environmental variation", "Stretch: Evaluate twin studies: what can they tell us, and what are their limitations?"],
-      "exit": ["Example of environmental variation?", "Why do identical twins have the same genes?", "Is mass inherited, environmental or both?"],
-      "homework": "Interview a family member: list three features they inherited and three that came from their environment or choices.",
-      "send": "Support: sorting grid. Stretch: epigenetics preview."
+     "term": "species",
+     "def": "organisms that can breed to produce fertile offspring"
     },
     {
-      "unit": "9A: Genetics and evolution",
-      "n": 3,
-      "title": "Chromosomes, genes and inheritance",
-      "duration": 50,
-      "bigQuestion": "Why do children look a bit like each parent but not exactly like either?",
-      "objectives": ["Describe the relationship between DNA, genes and chromosomes", "Explain how genetic material is passed on in fertilisation", "Explain why siblings differ"],
-      "successCriteria": ["Put nucleus, chromosome, gene and DNA in order of size", "Explain why gametes have half the chromosomes", "Explain variation between siblings using fertilisation"],
-      "crossCurricular": "Maths: probability; RE/Islamic Studies: lineage (nasab) and its importance",
-      "smsc": "Spiritual: the creation of each person in the womb (Surah Al-Mu'minun 23:12–14)",
-      "keywords": [
-        { "term": "chromosome", "def": "a long strand of DNA in the nucleus" },
-        { "term": "gene", "def": "a section of DNA that codes for a characteristic" },
-        { "term": "gamete", "def": "a sex cell: sperm or egg" },
-        { "term": "fertilisation", "def": "fusion of a sperm and egg nucleus" }
-      ],
-      "starter": ["Example of inherited variation?", "Where is genetic material found in a cell?", "What does a nucleus do?", "Name the two human gametes"],
-      "teach": [
-        { "heading": "From nucleus to gene", "bullets": ["Nucleus contains chromosomes", "Chromosomes are made of DNA", "Genes are sections of DNA"], "note": "Use the library analogy: nucleus = library, chromosomes = books, genes = recipes, DNA = the letters.", "timeline": [{ "label": "Cell", "text": "contains a nucleus" }, { "label": "Nucleus", "text": "46 chromosomes in humans" }, { "label": "Chromosome", "text": "long coiled DNA" }, { "label": "Gene", "text": "section of DNA" }, { "label": "DNA", "text": "chemical code" }] },
-        { "heading": "Half from each parent", "bullets": ["Body cells: 46 chromosomes (23 pairs)", "Gametes: 23", "Fertilisation: 23 + 23 = 46"], "note": "Answer the big question.", "model": { "problem": "Explain why a child is not identical to either parent", "steps": ["Each gamete has half the chromosomes", "Each gamete gets a random mix of the parent's chromosomes", "Fertilisation joins two random gametes", "So the child has a new combination of genes"], "answer": "A unique mix of genes from both parents" } },
-        { "heading": "Brothers and sisters differ", "bullets": ["Each sperm and egg has a different mix"], "note": "Except identical twins (one fertilised egg splits).", "misconception": { "wrong": "Gametes have 46 chromosomes", "right": "Gametes have 23 so that fertilisation restores 46" } },
-        { "heading": "Check: numbers", "bullets": [], "note": "Show me on 3.", "check": { "q": "How many chromosomes are in a human egg cell?", "options": ["46", "23", "92", "12"], "answer": 1, "why": "Gametes carry one of each pair: 23. Body cells carry 46." } }
-      ],
-      "practice": ["Order by size: gene, nucleus, chromosome", "How many chromosomes in a human skin cell?", "What happens at fertilisation?"],
-      "independent": ["Core: Draw and label a diagram from cell to gene", "Extend: Dogs have 78 chromosomes in body cells. How many in a dog sperm? Explain", "Stretch: Explain why identical twins have the same genes but non-identical twins do not."],
-      "exit": ["What is a gene?", "Chromosomes in a human sperm?", "Why do siblings look different?"],
-      "homework": "Make a model of a chromosome showing genes as coloured sections, with a label key.",
-      "send": "Support: library analogy card. Stretch: sex chromosomes XX/XY."
+     "term": "continuous variation",
+     "def": "can take any value in a range, e.g. height"
     },
     {
-      "unit": "9A: Genetics and evolution",
-      "n": 4,
-      "title": "DNA: structure and discovery",
-      "duration": 50,
-      "bigQuestion": "Who really discovered the structure of DNA?",
-      "objectives": ["Describe the structure of DNA", "Describe the work of Franklin, Wilkins, Watson and Crick", "Explain how scientific ideas develop through collaboration and evidence"],
-      "successCriteria": ["Describe DNA as a double helix with bases", "Explain each scientist's contribution", "Evaluate whether credit was shared fairly"],
-      "crossCurricular": "History: science in the 1950s; English: discussing fairness and ethics",
-      "smsc": "Moral: fairness and honesty in giving credit (avoiding injustice, zulm)",
-      "keywords": [
-        { "term": "DNA", "def": "deoxyribonucleic acid: the molecule that carries genetic code" },
-        { "term": "double helix", "def": "the twisted-ladder shape of DNA" },
-        { "term": "base", "def": "a chemical 'letter' of DNA: A, T, C or G" },
-        { "term": "X-ray crystallography", "def": "using X-rays to find the shape of molecules" }
-      ],
-      "starter": ["What is a gene?", "Chromosomes in a gamete?", "What shape is a helix?", "Name a famous scientist"],
-      "teach": [
-        { "heading": "The structure", "bullets": ["Two strands twisted into a double helix", "Bases pair: A with T, C with G", "The order of bases is the code"], "note": "Show a 3D model. Ask: 'If one strand reads ATCG, what does the other read?' (TAGC)." },
-        { "heading": "The discovery", "bullets": ["Several scientists' work combined"], "note": "Answer the big question as a discussion.", "timeline": [{ "label": "1950", "text": "Chargaff: amounts of A = T and C = G" }, { "label": "1952", "text": "Franklin and Gosling take Photo 51 using X-rays" }, { "label": "1953", "text": "Watson and Crick build the double-helix model, using Franklin's data" }, { "label": "1962", "text": "Nobel Prize to Watson, Crick and Wilkins (Franklin died in 1958)" }] },
-        { "heading": "How science works", "bullets": ["Data from experiments", "Models to explain data", "Peer review and credit"], "note": "The Nobel Prize is not given after death, but Franklin's role was underplayed for years.", "misconception": { "wrong": "Watson and Crick discovered DNA", "right": "DNA was known since 1869; they modelled its structure using others' data" } },
-        { "heading": "Check: base pairing", "bullets": [], "note": "Show me on 3.", "check": { "q": "One DNA strand reads A A G C T. What is the matching strand?", "options": ["A A G C T", "T T C G A", "G G A T C", "T T G C A"], "answer": 1, "why": "A pairs with T and G pairs with C: AAGCT → TTCGA." } }
-      ],
-      "practice": ["Name the four bases", "What is the shape of DNA called?", "What did Franklin's Photo 51 show?"],
-      "independent": ["Core: Write a short biography of Rosalind Franklin's contribution", "Extend: Explain how Watson and Crick used other scientists' data to build their model", "Stretch: 'Credit in science should be shared by everyone who contributed.' Discuss, using the DNA story."],
-      "exit": ["What is the shape of DNA?", "Which base pairs with C?", "Name two scientists in the DNA story."],
-      "homework": "Make a paper or sweet model of DNA showing base pairs correctly (photo to upload).",
-      "send": "Support: base-pair cards. Stretch: how DNA codes for proteins."
-    },
-    {
-      "unit": "9A: Genetics and evolution",
-      "n": 5,
-      "title": "Natural selection",
-      "duration": 50,
-      "bigQuestion": "Why are antibiotics becoming less effective?",
-      "objectives": ["Describe the process of natural selection", "Apply natural selection to examples such as peppered moths and bacteria", "Describe Darwin's and Wallace's contributions"],
-      "successCriteria": ["List the steps of natural selection", "Explain antibiotic resistance using natural selection", "Evaluate the evidence from peppered moths"],
-      "crossCurricular": "History: Darwin's voyage on HMS Beagle; Medicine: antibiotic resistance; Islamic Studies: Muslim scholars' views on science and creation",
-      "smsc": "Spiritual: questions of science and faith; Muslim views on the origin of humans differ and are discussed in Islamic Studies, while natural selection in bacteria and moths is observed science",
-      "keywords": [
-        { "term": "natural selection", "def": "organisms better suited to their environment survive and reproduce more" },
-        { "term": "adaptation", "def": "a feature that helps an organism survive" },
-        { "term": "mutation", "def": "a random change in DNA" },
-        { "term": "antibiotic resistance", "def": "bacteria no longer killed by an antibiotic" }
-      ],
-      "starter": ["Which base pairs with A?", "What is variation?", "Give an adaptation of a camel", "What do antibiotics kill?"],
-      "teach": [
-        { "heading": "The steps", "bullets": ["Variation exists", "Competition for resources", "Best adapted survive and reproduce", "Their genes are passed on"], "note": "Use the cycle and repeat with each example.", "cycle": ["Variation in a population", "Competition and change in environment", "Better adapted survive", "They reproduce", "Genes passed on; more common over time"] },
-        { "heading": "Peppered moths", "bullets": ["Pale moths camouflaged on clean bark", "Soot darkened trees in industrial England", "Dark moths survived better; then fell again after clean-air laws"], "note": "A classic observed example." },
-        { "heading": "Antibiotic resistance", "bullets": ["A random mutation makes a bacterium resistant", "Antibiotic kills the rest", "Resistant bacteria multiply"], "note": "Answer the big question.", "model": { "problem": "Explain how MRSA became resistant to antibiotics", "steps": ["A mutation made one bacterium resistant", "Antibiotics killed non-resistant bacteria", "The resistant bacterium survived and reproduced", "Resistant bacteria became common"], "answer": "Natural selection of a resistant variant" } },
-        { "heading": "Organisms don't choose", "bullets": ["Mutations are random", "The environment 'selects'"], "note": "Key misconception.", "misconception": { "wrong": "Bacteria become resistant because they try to", "right": "Random mutations happen; resistant ones survive and reproduce" } },
-        { "heading": "Check: steps", "bullets": [], "note": "Show me on 3.", "check": { "q": "Why should patients finish their course of antibiotics?", "options": ["To make bacteria resistant", "So that all bacteria are killed and fewer resistant ones survive", "Because the medicine tastes better later", "It doesn't matter"], "answer": 1, "why": "Stopping early leaves the toughest bacteria alive to multiply. Finishing the course kills more." } }
-      ],
-      "practice": ["List the four steps of natural selection", "Why did dark peppered moths increase?", "What is a mutation?"],
-      "independent": ["Core: Explain the peppered moth story in four steps", "Extend: Explain how antibiotic resistance develops and two ways doctors slow it", "Stretch: Darwin and Wallace both proposed natural selection in 1858. Explain why scientists working independently and reaching the same idea strengthens it."],
-      "exit": ["What is natural selection?", "Are mutations planned or random?", "One way to reduce antibiotic resistance?"],
-      "homework": "Research one example of natural selection observed today (e.g. pesticide-resistant insects) and explain it in four steps.",
-      "send": "Support: step cards to order. Stretch: Darwin and Wallace comparison."
-    },
-    {
-      "unit": "9A: Genetics and evolution",
-      "n": 6,
-      "title": "Extinction and endangered species",
-      "duration": 50,
-      "bigQuestion": "Does it matter if a species disappears forever?",
-      "objectives": ["Describe causes of extinction", "Explain how genetic diversity helps species survive", "Evaluate the effects of human activity on species"],
-      "successCriteria": ["Name four causes of extinction", "Explain why small populations are at greater risk", "Evaluate whether humans have a duty to protect species"],
-      "crossCurricular": "Geography: habitats and deforestation; Islamic Studies: animals as communities (Surah Al-An'am 6:38)",
-      "smsc": "Moral and spiritual: animals are 'communities like you' (Al-An'am 6:38); stewardship (khalifah)",
-      "keywords": [
-        { "term": "extinct", "def": "no members of the species are left alive" },
-        { "term": "endangered", "def": "at risk of becoming extinct" },
-        { "term": "habitat", "def": "the place where an organism lives" },
-        { "term": "genetic diversity", "def": "the variety of genes in a population" }
-      ],
-      "starter": ["Steps of natural selection?", "What is a mutation?", "Name an extinct animal", "What is a habitat?"],
-      "teach": [
-        { "heading": "Causes of extinction", "bullets": ["Habitat loss", "New predators or diseases", "Climate change", "Hunting and over-fishing"], "note": "Examples: dodo (hunting and introduced animals), passenger pigeon (over-hunting)." },
-        { "heading": "Small populations, big risk", "bullets": ["Few individuals: low genetic diversity", "A new disease may kill them all", "Less variation for natural selection to work on"], "note": "Model.", "model": { "problem": "Explain why cheetahs are at high risk from disease", "steps": ["Cheetahs have very low genetic diversity", "If a disease strikes, few may have resistance", "Many could die, and the population could collapse"], "answer": "Low diversity → less chance some survive a change" } },
-        { "heading": "Does it matter?", "bullets": ["Food chains and ecosystems", "Medicines from plants", "Moral and religious duties"], "note": "Answer the big question as a structured discussion.", "compare": { "left": { "title": "Reasons to protect", "points": ["Ecosystems depend on species", "Future medicines", "Duty as stewards of creation"] }, "right": { "title": "Arguments raised against", "points": ["Costs money and land", "Extinction happens naturally", "Human needs come first"] } } },
-        { "heading": "Extinction vs endangered", "bullets": ["Extinct is forever", "Endangered can recover"], "note": "Example: the giant panda has improved from endangered to vulnerable.", "misconception": { "wrong": "Endangered means extinct", "right": "Endangered means at risk; protection can help recovery" } },
-        { "heading": "Check: diversity", "bullets": [], "note": "Show me on 3.", "check": { "q": "Why does low genetic diversity increase extinction risk?", "options": ["The animals are smaller", "Fewer individuals may have genes to survive a change", "They eat less", "They live in colder places"], "answer": 1, "why": "With less variation, a new disease or climate change may affect them all in the same way." } }
-      ],
-      "practice": ["Name three causes of extinction", "What is genetic diversity?", "Name an endangered species"],
-      "independent": ["Core: Make a fact file on one endangered species: threats and protection", "Extend: Explain why rainforest destruction leads to extinctions", "Stretch: Write a balanced argument: should a country spend millions saving one species?"],
-      "exit": ["Define extinct.", "One human cause of extinction?", "Why is genetic diversity important?"],
-      "homework": "Research one UK species that is endangered (e.g. the hedgehog or red squirrel) and one thing families can do to help.",
-      "send": "Support: fact-file template. Stretch: population graphs."
-    },
-    {
-      "unit": "9A: Genetics and evolution",
-      "n": 7,
-      "title": "Gene banks and conservation",
-      "duration": 50,
-      "bigQuestion": "Why do scientists store millions of seeds in an Arctic vault?",
-      "objectives": ["Describe how gene banks preserve genetic material", "Compare methods of conservation", "Evaluate the use of gene banks"],
-      "successCriteria": ["Describe seed banks and frozen tissue banks", "Compare in-situ and ex-situ conservation", "Evaluate strengths and limits of gene banks"],
-      "crossCurricular": "Geography: food security; Food technology: crop varieties",
-      "smsc": "Moral: planning for future generations",
-      "keywords": [
-        { "term": "gene bank", "def": "a store of genetic material such as seeds, sperm or tissue" },
-        { "term": "seed bank", "def": "a store of seeds kept cold and dry" },
-        { "term": "conservation", "def": "protecting species and habitats" },
-        { "term": "captive breeding", "def": "breeding endangered animals in zoos" }
-      ],
-      "starter": ["What is genetic diversity?", "Name a cause of extinction", "Define endangered", "Why do seeds last a long time?"],
-      "teach": [
-        { "heading": "Gene banks", "bullets": ["Seeds stored cold and dry", "Sperm, eggs and tissue frozen", "Svalbard Global Seed Vault in Norway holds over a million samples"], "note": "Answer the big question: a backup if crops are lost to war, disease or disaster. Seeds from the Middle East were withdrawn from Svalbard in 2015 after the Syrian war damaged a gene bank near Aleppo." },
-        { "heading": "Conservation methods", "bullets": ["In the wild (in situ) or away from it (ex situ)"], "note": "Compare methods.", "compare": { "left": { "title": "In situ (in the wild)", "points": ["Nature reserves", "Laws against hunting", "Protects whole ecosystems"] }, "right": { "title": "Ex situ (away)", "points": ["Zoos and captive breeding", "Seed and gene banks", "Backup if wild habitat is lost"] } } },
-        { "heading": "Evaluating gene banks", "bullets": ["Weigh up strengths and limits"], "note": "Model a balanced paragraph.", "model": { "problem": "Evaluate seed banks as a way to save plant species", "steps": ["Strength: store huge diversity safely for decades", "Strength: can replant after a disaster", "Limit: does not protect habitats or animals", "Limit: stored seeds don't evolve with a changing climate"], "answer": "Valuable backup, but must be combined with protecting habitats" } },
-        { "heading": "Zoos alone are not enough", "bullets": ["Captive animals may lose wild skills"], "note": "Release programmes need habitats to return to.", "misconception": { "wrong": "Keeping a species in zoos fully saves it", "right": "Without wild habitats and enough diversity, it remains at risk" } },
-        { "heading": "Check: method", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is an example of ex-situ conservation?", "options": ["A nature reserve", "A seed bank", "A hunting ban", "Planting hedgerows"], "answer": 1, "why": "A seed bank stores genetic material away from the natural habitat. The others protect species in the wild." } }
-      ],
-      "practice": ["What is a gene bank?", "Give one in-situ method", "Why keep seeds cold and dry?"],
-      "independent": ["Core: Compare three conservation methods in a table", "Extend: Explain why the Svalbard vault is in the Arctic", "Stretch: Evaluate captive breeding of a named species (e.g. the Arabian oryx), including its reintroduction to the wild."],
-      "exit": ["Define conservation.", "One advantage of gene banks?", "One limitation?"],
-      "homework": "Research the Arabian oryx and write a paragraph on how it was saved from extinction in the wild.",
-      "send": "Support: comparison table frame. Stretch: oryx case study."
-    },
-    {
-      "unit": "9A: Genetics and evolution",
-      "n": 8,
-      "title": "9A review: genetics and evolution",
-      "duration": 50,
-      "bigQuestion": "Which idea from 9A will matter most when you study GCSE Biology?",
-      "objectives": ["Retrieve key knowledge from 9A", "Apply it to new examples", "Prepare for IGCSE Biology Section 3 (inheritance)"],
-      "successCriteria": ["Recall variation, genes and natural selection facts", "Answer data questions", "Write a structured 6-mark explanation"],
-      "crossCurricular": "Maths: data and graphs; English: extended writing",
-      "smsc": "Spiritual: reflection on the complexity of life",
-      "keywords": [
-        { "term": "variation", "def": "differences between organisms" },
-        { "term": "gene", "def": "section of DNA coding for a characteristic" },
-        { "term": "natural selection", "def": "better adapted organisms survive and reproduce" },
-        { "term": "extinction", "def": "permanent loss of a species" }
-      ],
-      "starter": ["Continuous or discontinuous: hand span?", "Chromosomes in a human sperm?", "Base that pairs with G?", "One cause of extinction?"],
-      "teach": [
-        { "heading": "9A in one chain", "bullets": ["Variation → genes → inheritance → selection → survival or extinction"], "note": "Recap.", "cycle": ["Genes and environment cause variation", "Variation in a population", "Natural selection", "Adaptation or extinction"] },
-        { "heading": "A 6-mark answer", "bullets": ["Steps in order", "Key words", "Applied to the example"], "note": "Model.", "model": { "problem": "Explain how rats became resistant to the poison warfarin (6 marks)", "steps": ["Variation: some rats had a mutation giving resistance", "Warfarin killed non-resistant rats", "Resistant rats survived and had less competition", "They reproduced and passed on the resistance gene", "Over generations, most rats became resistant"], "answer": "Five linked steps applied to rats" } },
-        { "heading": "Fix the errors", "bullets": ["From the 9A check"], "note": "Correct together.", "misconception": { "wrong": "Giraffes stretched their necks and passed on long necks", "right": "Giraffes with longer necks survived better and passed on genes for longer necks" } },
-        { "heading": "Check: apply", "bullets": [], "note": "Show me on 3.", "check": { "q": "Two plants grown from cuttings of one parent grow to different heights. The cause is…", "options": ["Inherited variation", "Environmental variation", "Mutation", "Natural selection"], "answer": 1, "why": "Cuttings have identical genes, so differences come from the environment." } }
-      ],
-      "practice": ["Explain environmental variation with an example", "Describe DNA's structure", "List steps of natural selection"],
-      "independent": ["Core: 9A end-of-unit check", "Extend: 6-mark answer on antibiotic resistance", "Stretch: Interpret peppered moth data from 1850–2000 and explain the trends."],
-      "exit": ["My strongest 9A topic", "My weakest 9A topic", "One question I still have"],
-      "homework": "Revise 9A and complete DIRT corrections.",
-      "send": "Support: knowledge organiser. Stretch: IGCSE Biology inheritance preview."
-    },
-    {
-      "unit": "9E: Making materials",
-      "n": 9,
-      "title": "Properties of materials and ceramics",
-      "duration": 50,
-      "bigQuestion": "Why are mugs made of ceramic and not metal?",
-      "objectives": ["Describe properties of materials", "Describe properties and uses of ceramics", "Link properties to uses"],
-      "successCriteria": ["Use property words correctly (hard, brittle, insulator…)", "Explain why ceramics suit given uses", "Choose a material for a job and justify it with properties"],
-      "crossCurricular": "Art: Islamic tilework and pottery; DT: material selection",
-      "smsc": "Cultural: ceramic tiles in mosques such as the Blue Mosque (Istanbul) and Iznik pottery",
-      "keywords": [
-        { "term": "ceramic", "def": "a hard material made by heating clay or similar substances" },
-        { "term": "brittle", "def": "breaks easily when hit, without bending" },
-        { "term": "thermal insulator", "def": "does not let heat through easily" },
-        { "term": "property", "def": "a feature describing how a material behaves" }
-      ],
-      "starter": ["Name a material that conducts electricity", "What is a property?", "Why are saucepan handles plastic?", "Name something made of clay"],
-      "teach": [
-        { "heading": "Property words", "bullets": ["Strength, hardness, flexibility", "Thermal and electrical conductivity", "Melting point, density"], "note": "Quick-fire: give a material for each property." },
-        { "heading": "Ceramics", "bullets": ["Made by heating clay to high temperature", "Hard, high melting point, insulators", "Brittle"], "note": "Answer the big question: ceramic mugs keep drinks hot and don't burn your hands.", "table": { "head": ["Ceramic", "Property", "Use"], "rows": [["Porcelain", "electrical insulator", "insulators on power lines"], ["Brick", "hard, strong in compression", "buildings"], ["Glazed tile", "waterproof, hard", "bathrooms, mosque walls"], ["Silicon carbide", "very hard", "cutting tools"]] } },
-        { "heading": "Hard is not the same as tough", "bullets": ["Hard: resists scratching", "Tough: resists breaking"], "note": "Ceramics are hard but brittle.", "misconception": { "wrong": "Hard materials don't break", "right": "Ceramics are hard but brittle: they shatter when dropped" } },
-        { "heading": "Justifying a choice", "bullets": ["Property → why it helps the use"], "note": "Model.", "model": { "problem": "Explain why ceramic is used for spark plug insulators in engines", "steps": ["High melting point: survives engine heat", "Electrical insulator: keeps the spark in the right place", "Hard: resists wear"], "answer": "Three properties linked to the job" } },
-        { "heading": "Check: property", "bullets": [], "note": "Show me on 3.", "check": { "q": "Why are ceramic tiles used around cookers?", "options": ["They conduct heat well", "They have a high melting point and are easy to clean", "They are flexible", "They are magnetic"], "answer": 1, "why": "Ceramics resist heat and glazed tiles are waterproof and easy to clean." } }
-      ],
-      "practice": ["Name three properties of ceramics", "Why is a ceramic plate brittle?", "Give a use of porcelain"],
-      "independent": ["Core: Choose a material for five objects and justify each with two properties", "Extend: Explain why bricks are strong in buildings but a ceramic plate breaks when dropped", "Stretch: Research how Iznik tiles were made and explain the role of high-temperature firing."],
-      "exit": ["What does brittle mean?", "One property of ceramics?", "Why are mugs made of ceramic?"],
-      "homework": "Find five ceramic objects at home and list two properties that make each suitable.",
-      "send": "Support: property word bank. Stretch: structure of ceramics."
-    },
-    {
-      "unit": "9E: Making materials",
-      "n": 10,
-      "title": "Polymers",
-      "duration": 50,
-      "bigQuestion": "How can the same element, carbon, make both a soft carrier bag and a hard plastic chair?",
-      "objectives": ["Describe polymers as long-chain molecules", "Name natural and synthetic polymers", "Link polymer properties to uses"],
-      "successCriteria": ["Explain what a polymer is", "Give natural and synthetic examples", "Explain how chain structure affects properties"],
-      "crossCurricular": "DT: plastics; Geography: oil as a raw material",
-      "smsc": "Moral: using resources responsibly",
-      "keywords": [
-        { "term": "polymer", "def": "a very long molecule made of many repeating units" },
-        { "term": "monomer", "def": "a small molecule that joins to make a polymer" },
-        { "term": "synthetic", "def": "made by people" },
-        { "term": "cross-link", "def": "a bond holding polymer chains together" }
-      ],
-      "starter": ["What is a ceramic?", "Define brittle", "What is a molecule?", "Name a plastic object"],
-      "teach": [
-        { "heading": "Chains of monomers", "bullets": ["Monomers link like beads", "Thousands per chain", "Ethene → poly(ethene)"], "note": "Pupils link paper clips to model a chain." },
-        { "heading": "Natural and synthetic", "bullets": ["Natural: wool, silk, cotton, DNA, starch", "Synthetic: poly(ethene), PVC, nylon"], "note": "Surprise: DNA and proteins are polymers too.", "compare": { "left": { "title": "Natural polymers", "points": ["Wool, silk", "Cotton (cellulose)", "Starch, proteins, DNA"] }, "right": { "title": "Synthetic polymers", "points": ["Poly(ethene): bags", "PVC: pipes", "Nylon: ropes, clothes"] } } },
-        { "heading": "Structure explains properties", "bullets": ["Chains slide: flexible, melts on heating", "Cross-linked chains: rigid, doesn't melt"], "note": "Answer the big question.", "table": { "head": ["Structure", "Property", "Example"], "rows": [["Long, tangled chains", "flexible, stretchy", "carrier bag (LDPE)"], ["Chains packed closely", "stronger, rigid", "milk bottle (HDPE)"], ["Cross-linked chains", "hard, heat-resistant", "melamine plates"]] } },
-        { "heading": "Polymer is not only plastic", "bullets": ["Many natural materials are polymers"], "note": "Clear up language.", "misconception": { "wrong": "Polymers are always man-made plastics", "right": "Wool, silk and DNA are natural polymers" } },
-        { "heading": "Check: structure", "bullets": [], "note": "Show me on 3.", "check": { "q": "Why does a cross-linked polymer not melt when heated?", "options": ["Its chains are short", "Bonds between chains stop them sliding apart", "It contains water", "It is a metal"], "answer": 1, "why": "Cross-links hold chains firmly, so they can't slide past each other as the material is heated." } }
-      ],
-      "practice": ["What is a monomer?", "Name two natural polymers", "Why is poly(ethene) flexible?"],
-      "independent": ["Core: Match polymers to uses and properties", "Extend: Explain why nylon is used for climbing ropes", "Stretch: Draw a simple diagram of the monomer ethene and the repeating unit of poly(ethene)."],
-      "exit": ["Define polymer.", "One synthetic polymer and its use?", "Why are some polymers rigid?"],
-      "homework": "Find five plastic items with recycling codes and note which polymer each is made from.",
-      "send": "Support: paper-clip model. Stretch: addition polymerisation equations."
-    },
-    {
-      "unit": "9E: Making materials",
-      "n": 11,
-      "title": "Composite materials",
-      "duration": 50,
-      "bigQuestion": "Why mix two materials when you could use the best one?",
-      "objectives": ["Define a composite material", "Describe examples of composites and their uses", "Explain how combining materials improves properties"],
-      "successCriteria": ["Name three composites", "Explain the job of each part (matrix and reinforcement)", "Evaluate a composite for a given use"],
-      "crossCurricular": "DT: carbon fibre in bikes; History: mud bricks with straw in ancient buildings",
-      "smsc": "Cultural: traditional building methods across the Muslim world (mud-brick cities such as Shibam in Yemen)",
-      "keywords": [
-        { "term": "composite", "def": "a material made from two or more materials combined" },
-        { "term": "matrix", "def": "the material that binds the reinforcement" },
-        { "term": "reinforcement", "def": "fibres or particles that add strength" },
-        { "term": "reinforced concrete", "def": "concrete with steel rods inside" }
-      ],
-      "starter": ["What is a polymer?", "Define brittle", "Why are bricks good for buildings?", "Name a strong material"],
-      "teach": [
-        { "heading": "Better together", "bullets": ["Combine properties", "Matrix holds; reinforcement strengthens"], "note": "Answer the big question: no single material has every property needed." },
-        { "heading": "Examples", "bullets": ["Each composite has a matrix and a reinforcement"], "note": "Show photos.", "table": { "head": ["Composite", "Matrix", "Reinforcement", "Use"], "rows": [["Reinforced concrete", "concrete", "steel rods", "bridges, buildings"], ["Fibreglass", "polymer resin", "glass fibres", "boats, helmets"], ["Carbon fibre", "polymer resin", "carbon fibres", "racing bikes, aircraft"], ["Mud brick", "dried mud", "straw", "traditional houses"]] } },
-        { "heading": "Reinforced concrete", "bullets": ["Concrete: strong when squashed, weak when stretched", "Steel: strong when stretched", "Together: strong both ways"], "note": "Model.", "model": { "problem": "Explain why bridges use reinforced concrete", "steps": ["Concrete resists compression but cracks in tension", "Steel resists tension", "Combined, the beam resists both forces"], "answer": "Each material covers the other's weakness" } },
-        { "heading": "Composites aren't mixtures you can separate easily", "bullets": ["They are designed structures"], "note": "Clarify.", "misconception": { "wrong": "A composite is just a mixture of two powders", "right": "A composite has a matrix holding a reinforcement in a planned structure" } },
-        { "heading": "Check: composite", "bullets": [], "note": "Show me on 3.", "check": { "q": "In fibreglass, what is the reinforcement?", "options": ["Polymer resin", "Glass fibres", "Steel", "Water"], "answer": 1, "why": "Glass fibres strengthen it; resin is the matrix holding them." } }
-      ],
-      "practice": ["Define composite", "Name the parts of reinforced concrete", "Why is carbon fibre used in racing bikes?"],
-      "independent": ["Core: Complete a table of four composites: matrix, reinforcement, properties, use", "Extend: Explain why straw in mud bricks stops them cracking", "Stretch: Evaluate carbon fibre for car bodies: consider strength, mass, cost and recycling."],
-      "exit": ["What is a matrix?", "One composite and its use?", "Why is steel added to concrete?"],
-      "homework": "Make a mini composite (e.g. paper strips in glue or plaster) and compare its strength with the plain matrix (photo to upload).",
-      "send": "Support: diagram of matrix and fibres. Stretch: materials data comparison."
-    },
-    {
-      "unit": "9E: Making materials",
-      "n": 12,
-      "title": "Problems with plastics",
-      "duration": 50,
-      "bigQuestion": "If plastics are so useful, why are they a problem?",
-      "objectives": ["Describe environmental problems caused by plastics", "Explain what biodegradable means", "Evaluate solutions to plastic waste"],
-      "successCriteria": ["Describe three problems caused by plastic waste", "Explain why most plastics are not biodegradable", "Evaluate solutions such as bans, bioplastics and recycling"],
-      "crossCurricular": "Geography: ocean pollution; Islamic Studies: avoiding waste (israf) and harm (la darar wa la dirar)",
-      "smsc": "Moral: the principle 'no harm and no reciprocating harm' (hadith in Sunan Ibn Majah); stewardship of oceans and wildlife",
-      "keywords": [
-        { "term": "biodegradable", "def": "can be broken down by microorganisms" },
-        { "term": "landfill", "def": "a large site where waste is buried" },
-        { "term": "microplastics", "def": "tiny plastic pieces smaller than 5 mm" },
-        { "term": "bioplastic", "def": "a plastic made from plant materials" }
-      ],
-      "starter": ["What is a polymer?", "Name a composite", "What happens to rubbish after collection?", "Name something biodegradable"],
-      "teach": [
-        { "heading": "Why plastics persist", "bullets": ["Strong bonds and long chains", "Microorganisms can't digest most of them", "Some last hundreds of years"], "note": "Answer the big question: the same durability that makes plastics useful makes them a problem." },
-        { "heading": "The problems", "bullets": ["Landfill space", "Ocean litter harms animals", "Microplastics enter food chains", "Burning releases toxic gases"], "note": "Show a short video about ocean plastics (e.g. turtles and bags).", "cycle": ["Plastic made from crude oil", "Used once", "Thrown away", "Breaks into microplastics", "Eaten by animals; enters food chains"] },
-        { "heading": "Evaluating solutions", "bullets": ["No single solution is perfect"], "note": "Model a balanced paragraph.", "compare": { "left": { "title": "Bioplastics", "points": ["Made from plants", "Some biodegrade", "Need specific conditions; use farmland"] }, "right": { "title": "Reduce and reuse", "points": ["Least waste of all", "Needs behaviour change", "Refill bottles, cloth bags"] } } },
-        { "heading": "Biodegradable confusion", "bullets": ["'Biodegradable' bags may need industrial composting"], "note": "Clarify.", "misconception": { "wrong": "Biodegradable plastic disappears quickly anywhere", "right": "Many need high temperatures in industrial composters" } },
-        { "heading": "Check: biodegradable", "bullets": [], "note": "Show me on 3.", "check": { "q": "Why is poly(ethene) not biodegradable?", "options": ["It is a metal", "Microorganisms cannot break down its long chains", "It contains water", "It is too light"], "answer": 1, "why": "Microorganisms lack enzymes to break the strong bonds in poly(ethene) chains." } }
-      ],
-      "practice": ["Define biodegradable", "Name two problems with plastic in oceans", "What are microplastics?"],
-      "independent": ["Core: Make a poster on three problems of plastic waste", "Extend: Evaluate the UK plastic bag charge using data (bag use fell sharply after 2015)", "Stretch: Plan an investigation to test whether a 'biodegradable' bag really breaks down in soil, including how to make it fair."],
-      "exit": ["Why do plastics last so long?", "What are microplastics?", "Best solution to plastic waste, in your view, and why?"],
-      "homework": "Do a one-day plastic audit at home: list every single-use plastic item and suggest an alternative for three.",
-      "send": "Support: problem-solution cards. Stretch: life-cycle data."
-    },
-    {
-      "unit": "9E: Making materials",
-      "n": 13,
-      "title": "Recycling materials",
-      "duration": 50,
-      "bigQuestion": "Is recycling always the best thing to do with waste?",
-      "objectives": ["Describe how metals, glass, paper and plastics are recycled", "Explain the benefits of recycling", "Evaluate when recycling is worthwhile"],
-      "successCriteria": ["Describe recycling of two materials", "Explain energy and resource savings", "Evaluate recycling against reducing and reusing"],
-      "crossCurricular": "Geography: resources; Business: costs of recycling",
-      "smsc": "Moral: avoiding waste; social: community responsibility",
-      "keywords": [
-        { "term": "recycle", "def": "process used materials to make new products" },
-        { "term": "reuse", "def": "use something again for the same or another purpose" },
-        { "term": "finite resource", "def": "a resource that will run out" },
-        { "term": "sustainable", "def": "meets our needs without harming future generations" }
-      ],
-      "starter": ["Why is plastic waste a problem?", "What is a finite resource?", "Name a material you recycle at home", "Define biodegradable"],
-      "teach": [
-        { "heading": "Reduce, reuse, recycle", "bullets": ["Reduce: best, least waste", "Reuse: next best", "Recycle: still uses energy"], "note": "Answer the big question: recycling is good but reducing is better.", "cycle": ["Reduce", "Reuse", "Recycle", "Recover energy", "Dispose (last resort)"] },
-        { "heading": "How materials are recycled", "bullets": ["Different methods for each material"], "note": "Show short videos.", "table": { "head": ["Material", "Process", "Saving"], "rows": [["Aluminium", "melted and recast", "about 95% of the energy of making new"], ["Glass", "crushed, melted, reshaped", "saves sand and energy"], ["Paper", "pulped, cleaned, rolled", "saves trees and water"], ["Plastics", "sorted, shredded, melted", "harder: many types and colours"]] } },
-        { "heading": "Is it worth it?", "bullets": ["Collection and sorting cost energy", "Some plastics can only be recycled a few times"], "note": "Model.", "model": { "problem": "Evaluate recycling aluminium cans", "steps": ["Saves about 95% of the energy needed to extract new aluminium", "Saves the bauxite ore, a finite resource", "Cans are easy to sort with magnets and eddy currents", "Conclusion: highly worthwhile"], "answer": "Strong energy and resource savings" } },
-        { "heading": "Recycling isn't free", "bullets": ["It uses energy and transport"], "note": "Clarify.", "misconception": { "wrong": "Recycling has no environmental cost", "right": "It uses energy, water and transport; reducing use is better" } },
-        { "heading": "Check: best option", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is the most sustainable choice for drinking water at school?", "options": ["Buy a new plastic bottle daily and recycle it", "Use a refillable bottle", "Buy glass bottles daily", "Throw bottles in general waste"], "answer": 1, "why": "Reusing avoids making new bottles at all. Recycling is better than landfill but still uses energy." } }
-      ],
-      "practice": ["Order: recycle, reduce, reuse (best first)", "How is aluminium recycled?", "Why is plastic harder to recycle than glass?"],
-      "independent": ["Core: Describe how two materials are recycled", "Extend: Explain why aluminium recycling saves more energy than glass recycling", "Stretch: Design a recycling scheme for a mosque or community centre and evaluate its likely impact."],
-      "exit": ["Which is best: reduce, reuse or recycle?", "Name a finite resource.", "One reason recycling plastic is difficult?"],
-      "homework": "Find out what your local council recycles and make a guide for your family.",
-      "send": "Support: process flow cards. Stretch: energy-saving calculations."
-    },
-    {
-      "unit": "9E: Making materials",
-      "n": 14,
-      "title": "Life-cycle assessments",
-      "duration": 50,
-      "bigQuestion": "Is a paper bag really better for the planet than a plastic one?",
-      "objectives": ["Describe the stages of a life-cycle assessment", "Use data to compare products", "Evaluate the limitations of life-cycle assessments"],
-      "successCriteria": ["Name the four stages of an LCA", "Compare two products using LCA data", "Explain why LCAs can be biased or incomplete"],
-      "crossCurricular": "Geography: sustainability; Maths: comparing data",
-      "smsc": "Moral: making honest, evidence-based choices",
-      "keywords": [
-        { "term": "life-cycle assessment (LCA)", "def": "an assessment of a product's environmental impact from start to end" },
-        { "term": "raw materials", "def": "the substances a product is made from" },
-        { "term": "disposal", "def": "what happens to a product at the end of its life" },
-        { "term": "bias", "def": "an unfair influence on a conclusion" }
-      ],
-      "starter": ["Order: reduce, reuse, recycle", "Energy saved recycling aluminium?", "Define sustainable", "Name the raw material for plastic"],
-      "teach": [
-        { "heading": "Four stages", "bullets": ["Every stage uses energy and resources"], "note": "Display the stages.", "timeline": [{ "label": "1", "text": "Extracting and processing raw materials" }, { "label": "2", "text": "Manufacturing and packaging" }, { "label": "3", "text": "Use and operation" }, { "label": "4", "text": "Disposal at end of life" }] },
-        { "heading": "Comparing bags", "bullets": ["Paper: more energy and water to make", "Plastic: from oil, lasts for centuries", "Cotton: must be reused many times to pay back"], "note": "Answer the big question: it depends on how many times a bag is reused.", "table": { "head": ["Bag", "Energy to make", "Biodegradable", "Reuses to beat a plastic bag (approx.)"], "rows": [["Plastic (LDPE)", "low", "no", "1"], ["Paper", "higher", "yes", "about 3"], ["Cotton", "highest", "yes", "over 100"]] } },
-        { "heading": "Limitations", "bullets": ["Some values are estimates", "Companies may choose favourable data", "Hard to put a value on harm to wildlife"], "note": "Model.", "model": { "problem": "Why might an LCA written by a bag maker be unreliable?", "steps": ["The company benefits from a good result", "It may leave out stages where its product does badly", "Some impacts (e.g. ocean litter) are hard to measure"], "answer": "Possible bias and missing data" } },
-        { "heading": "Natural isn't automatically greener", "bullets": ["Paper and cotton have big impacts too"], "note": "Clarify.", "misconception": { "wrong": "Paper bags are always better than plastic", "right": "Paper uses more energy to make; reuse matters most" } },
-        { "heading": "Check: LCA", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which stage is NOT part of a life-cycle assessment?", "options": ["Extracting raw materials", "Manufacturing", "Advertising the product", "Disposal"], "answer": 2, "why": "LCAs cover extraction, manufacture, use and disposal. Advertising isn't one of the stages." } }
-      ],
-      "practice": ["Name the four LCA stages", "Why must cotton bags be reused many times?", "Give one limitation of LCAs"],
-      "independent": ["Core: Use LCA data to compare a glass bottle and a plastic bottle", "Extend: Write a conclusion on which bag a supermarket should offer, using evidence", "Stretch: Design a simple LCA for a school exercise book, naming what you would measure at each stage."],
-      "exit": ["What does LCA stand for?", "One stage of an LCA?", "Why can LCAs be biased?"],
-      "homework": "Choose a product at home and write what happens at each LCA stage.",
-      "send": "Support: stage cards. Stretch: data-handling with real LCA figures."
-    },
-    {
-      "unit": "9E: Making materials",
-      "n": 15,
-      "title": "Making polymers: a closer look",
-      "duration": 50,
-      "bigQuestion": "How do scientists design new materials for new jobs?",
-      "objectives": ["Describe addition polymerisation simply", "Explain how changing conditions changes polymer properties", "Describe smart and new materials"],
-      "successCriteria": ["Describe how ethene monomers join to make poly(ethene)", "Explain LDPE and HDPE differences", "Describe one smart material and its use"],
-      "crossCurricular": "DT: smart materials; Chemistry: preparing for IGCSE organic chemistry",
-      "smsc": "Spiritual: human creativity as a gift; moral: using innovation responsibly",
-      "keywords": [
-        { "term": "addition polymerisation", "def": "many small unsaturated monomers joining to make one long chain" },
-        { "term": "unsaturated", "def": "contains a double bond between carbon atoms" },
-        { "term": "smart material", "def": "a material whose properties change with conditions" },
-        { "term": "shape memory alloy", "def": "a metal that returns to its shape when heated" }
-      ],
-      "starter": ["What is a monomer?", "Name a natural polymer", "What does LCA stand for?", "Name a composite"],
-      "teach": [
-        { "heading": "Joining monomers", "bullets": ["Ethene has a C=C double bond", "The double bond opens", "Monomers join into a chain"], "note": "Show a ball-and-stick animation.", "model": { "problem": "Describe how poly(ethene) forms", "steps": ["Start with many ethene molecules (C₂H₄)", "Each C=C double bond breaks open", "Carbon atoms bond to neighbouring monomers", "A long chain of repeating –CH₂–CH₂– units forms"], "answer": "Addition polymerisation" } },
-        { "heading": "Same monomer, different properties", "bullets": ["LDPE: high pressure, branched chains, flexible", "HDPE: catalyst, straight chains, rigid"], "note": "Answer the big question: chemists change conditions to design properties.", "compare": { "left": { "title": "LDPE", "points": ["Branched chains", "Low density, flexible", "Carrier bags, cling film"] }, "right": { "title": "HDPE", "points": ["Straight chains packed closely", "Higher density, rigid", "Milk bottles, pipes"] } } },
-        { "heading": "Smart materials", "bullets": ["Shape memory alloys: glasses frames, stents", "Thermochromic pigments: change colour with temperature", "Photochromic lenses: darken in sunlight"], "note": "Show examples on camera if available (thermochromic mug or strip)." },
-        { "heading": "Names matter", "bullets": ["Polymer names come from the monomer"], "note": "Clarify.", "misconception": { "wrong": "Poly(ethene) still contains double bonds", "right": "The double bonds open during polymerisation; the chain has single bonds" } },
-        { "heading": "Check: polymerisation", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which monomer makes poly(propene)?", "options": ["Ethene", "Propene", "Propane", "Methane"], "answer": 1, "why": "Polymers are named after their monomer. Propane has no double bond, so it can't polymerise this way." } }
-      ],
-      "practice": ["What happens to the double bond in polymerisation?", "Difference between LDPE and HDPE?", "Name a smart material"],
-      "independent": ["Core: Describe addition polymerisation in four steps with a diagram", "Extend: Explain why HDPE is used for pipes and LDPE for bags", "Stretch: Draw the repeating unit of poly(chloroethene) (PVC) from the monomer chloroethene, CH₂=CHCl."],
-      "exit": ["What is a monomer?", "Name the polymer made from ethene.", "One example of a smart material?"],
-      "homework": "Research one smart material and explain how it works and one use.",
-      "send": "Support: bead-chain model. Stretch: drawing repeat units."
-    },
-    {
-      "unit": "9E: Making materials",
-      "n": 16,
-      "title": "9E review: making materials",
-      "duration": 50,
-      "bigQuestion": "Which material from 9E will matter most to the future of the planet?",
-      "objectives": ["Retrieve key knowledge from 9E", "Apply it to new contexts", "Write a balanced evaluation"],
-      "successCriteria": ["Recall ceramics, polymers, composites and recycling facts", "Answer data questions", "Write a 6-mark evaluation"],
-      "crossCurricular": "Geography: sustainability; DT: materials",
-      "smsc": "Moral: personal choices and their impact",
-      "keywords": [
-        { "term": "ceramic", "def": "hard, brittle material made by heating clay" },
-        { "term": "polymer", "def": "long chain of repeating units" },
-        { "term": "composite", "def": "two materials combined" },
-        { "term": "life-cycle assessment", "def": "impact of a product from start to finish" }
-      ],
-      "starter": ["Define brittle", "Name a natural polymer", "Matrix in fibreglass?", "Best: reduce, reuse or recycle?"],
-      "teach": [
-        { "heading": "9E connections", "bullets": ["Properties → choice → impact → recycling"], "note": "Recap.", "cycle": ["Need a material", "Choose by properties", "Make and use", "Assess impact (LCA)", "Reduce, reuse, recycle"] },
-        { "heading": "A 6-mark evaluation", "bullets": ["Both sides", "Evidence", "Conclusion"], "note": "Model.", "model": { "problem": "Evaluate banning single-use plastic cutlery (6 marks)", "steps": ["For: reduces ocean litter and microplastics", "For: saves crude oil, a finite resource", "Against: replacements (wood, bioplastic) have their own impacts", "Against: hygiene and cost concerns for some users", "Conclusion: worthwhile if reusable cutlery is encouraged"], "answer": "Balanced points + justified conclusion" } },
-        { "heading": "Fix the errors", "bullets": ["From the 9E assessment pack"], "note": "Correct together.", "misconception": { "wrong": "Ceramics are tough", "right": "Ceramics are hard but brittle" } },
-        { "heading": "Check: apply", "bullets": [], "note": "Show me on 3.", "check": { "q": "A tennis racket must be light, stiff and strong. The best material is…", "options": ["Glass", "Carbon-fibre composite", "Ceramic", "Poly(ethene) bag plastic"], "answer": 1, "why": "Carbon-fibre composites are light, stiff and strong. Glass and ceramics are brittle; LDPE is too flexible." } }
-      ],
-      "practice": ["Explain why ceramics are used for oven tiles", "Describe how a polymer forms", "Name the parts of reinforced concrete"],
-      "independent": ["Core: 9E end-of-unit check (school 9E assessment pack)", "Extend: 6-mark evaluation of paper versus plastic bags", "Stretch: Use LCA data for two drinks containers to recommend one for a school canteen."],
-      "exit": ["My strongest 9E topic", "My weakest 9E topic", "One habit I'll change"],
-      "homework": "Revise 9E and complete DIRT corrections.",
-      "send": "Support: knowledge organiser. Stretch: IGCSE Chemistry polymers preview."
+     "term": "discontinuous variation",
+     "def": "falls into distinct groups, e.g. blood group"
     }
-  ]
+   ],
+   "starter": [
+    "Bismillah. Name a feature you share with a family member",
+    "What is a species?",
+    "Draw a quick bar chart axis",
+    "Name one specialised cell"
+   ],
+   "teach": [
+    {
+     "heading": "Within and between species",
+     "bullets": [
+      "Between: a cat and a dog",
+      "Within: different humans",
+      "Variation makes every person unique"
+     ],
+     "note": "Answer the big question partly. Identical twins share genes but still differ through environment."
+    },
+    {
+     "heading": "Two types of variation",
+     "bullets": [
+      "Continuous: measured, any value",
+      "Discontinuous: counted into groups"
+     ],
+     "note": "Classify features as a class: height, eye colour, mass, blood group, tongue rolling, hand span.",
+     "compare": {
+      "left": {
+       "title": "Continuous",
+       "points": [
+        "Height",
+        "Mass",
+        "Hand span",
+        "Plot as a histogram"
+       ]
+      },
+      "right": {
+       "title": "Discontinuous",
+       "points": [
+        "Blood group",
+        "Eye colour (broadly)",
+        "Earlobe attached or free",
+        "Plot as a bar chart"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Drawing the right graph",
+     "bullets": [
+      "Continuous: histogram, no gaps",
+      "Discontinuous: bar chart, gaps"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Class hand spans (cm): 16–17: 3; 17–18: 7; 18–19: 9; 19–20: 5; 20–21: 1. Which graph and why?",
+      "steps": [
+       "Hand span is measured: continuous",
+       "Use a histogram with touching bars",
+       "Shape: most in the middle, fewer at the extremes"
+      ],
+      "answer": "Histogram; a normal (bell-shaped) distribution"
+     }
+    },
+    {
+     "heading": "Eye colour is tricky",
+     "bullets": [
+      "Often treated as discontinuous",
+      "Really shades blend"
+     ],
+     "note": "Shows that real data can be messy.",
+     "misconception": {
+      "wrong": "Height is discontinuous because we round it",
+      "right": "Height can take any value; rounding doesn't change its type"
+     }
+    },
+    {
+     "heading": "Check: type",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is discontinuous variation?",
+      "options": [
+       "Mass",
+       "Blood group",
+       "Height",
+       "Foot length"
+      ],
+      "answer": 1,
+      "why": "Blood group is A, B, AB or O: distinct groups. The others are measured on a continuous scale."
+     }
+    }
+   ],
+   "practice": [
+    "Classify: shoe size, skin colour, blood group, arm length",
+    "Which graph for blood group data?",
+    "Give one example of variation between species"
+   ],
+   "independent": [
+    "Core: Draw a bar chart of blood groups in a sample: O 22, A 20, B 6, AB 2",
+    "Extend: Draw a histogram of a class's heights from given data and describe its shape",
+    "Stretch: Explain why shoe size data looks discontinuous even though foot length is continuous."
+   ],
+   "exit": [
+    "Define variation.",
+    "Is hand span continuous or discontinuous?",
+    "Which graph for continuous data?"
+   ],
+   "homework": "Measure the hand spans of five family members and record whether each has attached or free earlobes. Identify the type of each.",
+   "send": "Support: sorting cards. Stretch: normal distribution."
+  },
+  {
+   "unit": "9A: Genetics and evolution",
+   "n": 2,
+   "title": "Inherited and environmental variation",
+   "duration": 50,
+   "bigQuestion": "Is your accent in your genes?",
+   "objectives": [
+    "Distinguish inherited and environmental variation",
+    "Explain features caused by both",
+    "Use twin studies as evidence"
+   ],
+   "successCriteria": [
+    "Classify features as inherited, environmental or both",
+    "Explain how environment can change inherited features",
+    "Use identical twin data to draw conclusions"
+   ],
+   "crossCurricular": "PE: training and fitness; English: accents and dialects",
+   "smsc": "Moral: we are responsible for what we can change (effort, character)",
+   "keywords": [
+    {
+     "term": "inherited variation",
+     "def": "caused by genes passed from parents"
+    },
+    {
+     "term": "environmental variation",
+     "def": "caused by surroundings and lifestyle"
+    },
+    {
+     "term": "identical twins",
+     "def": "twins from one fertilised egg with the same genes"
+    },
+    {
+     "term": "characteristic",
+     "def": "a feature of an organism"
+    }
+   ],
+   "starter": [
+    "Is height continuous or discontinuous?",
+    "Which graph shows discontinuous data?",
+    "Name a feature you inherited",
+    "What is a gene (your best guess)?"
+   ],
+   "teach": [
+    {
+     "heading": "Three categories",
+     "bullets": [
+      "Inherited: blood group, natural eye colour",
+      "Environmental: scars, language, accent",
+      "Both: height, mass, intelligence"
+     ],
+     "note": "Answer the big question: accent is environmental (learned).",
+     "table": {
+      "head": [
+       "Feature",
+       "Cause"
+      ],
+      "rows": [
+       [
+        "Blood group",
+        "inherited"
+       ],
+       [
+        "Accent",
+        "environmental"
+       ],
+       [
+        "A scar",
+        "environmental"
+       ],
+       [
+        "Height",
+        "both (genes + diet)"
+       ],
+       [
+        "Plant height",
+        "both (genes + light, water)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Twin studies",
+     "bullets": [
+      "Identical twins: same genes",
+      "Differences must be environmental",
+      "Twins raised apart are especially useful"
+     ],
+     "note": "Model reading data.",
+     "model": {
+      "problem": "Identical twins raised apart differ in mass by 6 kg; in height by 1 cm. What does this suggest?",
+      "steps": [
+       "Same genes, so differences come from environment",
+       "Mass differs a lot: strongly affected by diet and exercise",
+       "Height differs little: mostly controlled by genes"
+      ],
+      "answer": "Height is mainly genetic; mass is strongly environmental"
+     }
+    },
+    {
+     "heading": "Plants too",
+     "bullets": [
+      "Same seeds, different light → different heights",
+      "Hydrangea flower colour changes with soil pH"
+     ],
+     "note": "Good examples of environmental effects on inherited potential."
+    },
+    {
+     "heading": "Either/or thinking",
+     "bullets": [
+      "Many features have both causes"
+     ],
+     "note": "Key misconception.",
+     "misconception": {
+      "wrong": "Height is purely inherited",
+      "right": "Genes set a range; diet and health affect where you end up"
+     }
+    },
+    {
+     "heading": "Check: cause",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which feature is purely environmental?",
+      "options": [
+       "Natural hair colour",
+       "The language you speak",
+       "Blood group",
+       "Height"
+      ],
+      "answer": 1,
+      "why": "Language is learned. Hair colour and blood group are inherited; height is both."
+     }
+    }
+   ],
+   "practice": [
+    "Classify: tattoo, eye colour, mass, dimples",
+    "Why are identical twins useful to scientists?",
+    "Give one feature affected by both"
+   ],
+   "independent": [
+    "Core: Sort twelve features into inherited, environmental and both, with reasons",
+    "Extend: Plan an experiment with cuttings of one plant to show environmental variation",
+    "Stretch: Evaluate twin studies: what can they tell us, and what are their limitations?"
+   ],
+   "exit": [
+    "Example of environmental variation?",
+    "Why do identical twins have the same genes?",
+    "Is mass inherited, environmental or both?"
+   ],
+   "homework": "Interview a family member: list three features they inherited and three that came from their environment or choices.",
+   "send": "Support: sorting grid. Stretch: epigenetics preview."
+  },
+  {
+   "unit": "9A: Genetics and evolution",
+   "n": 3,
+   "title": "Chromosomes, genes and inheritance",
+   "duration": 50,
+   "bigQuestion": "Why do children look a bit like each parent but not exactly like either?",
+   "objectives": [
+    "Describe the relationship between DNA, genes and chromosomes",
+    "Explain how genetic material is passed on in fertilisation",
+    "Explain why siblings differ"
+   ],
+   "successCriteria": [
+    "Put nucleus, chromosome, gene and DNA in order of size",
+    "Explain why gametes have half the chromosomes",
+    "Explain variation between siblings using fertilisation"
+   ],
+   "crossCurricular": "Maths: probability; RE/Islamic Studies: lineage (nasab) and its importance",
+   "smsc": "Spiritual: the creation of each person in the womb (Surah Al-Mu'minun 23:12–14)",
+   "keywords": [
+    {
+     "term": "chromosome",
+     "def": "a long strand of DNA in the nucleus"
+    },
+    {
+     "term": "gene",
+     "def": "a section of DNA that codes for a characteristic"
+    },
+    {
+     "term": "gamete",
+     "def": "a sex cell: sperm or egg"
+    },
+    {
+     "term": "fertilisation",
+     "def": "fusion of a sperm and egg nucleus"
+    }
+   ],
+   "starter": [
+    "Example of inherited variation?",
+    "Where is genetic material found in a cell?",
+    "What does a nucleus do?",
+    "Name the two human gametes"
+   ],
+   "teach": [
+    {
+     "heading": "From nucleus to gene",
+     "bullets": [
+      "Nucleus contains chromosomes",
+      "Chromosomes are made of DNA",
+      "Genes are sections of DNA"
+     ],
+     "note": "Use the library analogy: nucleus = library, chromosomes = books, genes = recipes, DNA = the letters.",
+     "timeline": [
+      {
+       "label": "Cell",
+       "text": "contains a nucleus"
+      },
+      {
+       "label": "Nucleus",
+       "text": "46 chromosomes in humans"
+      },
+      {
+       "label": "Chromosome",
+       "text": "long coiled DNA"
+      },
+      {
+       "label": "Gene",
+       "text": "section of DNA"
+      },
+      {
+       "label": "DNA",
+       "text": "chemical code"
+      }
+     ]
+    },
+    {
+     "heading": "Half from each parent",
+     "bullets": [
+      "Body cells: 46 chromosomes (23 pairs)",
+      "Gametes: 23",
+      "Fertilisation: 23 + 23 = 46"
+     ],
+     "note": "Answer the big question.",
+     "model": {
+      "problem": "Explain why a child is not identical to either parent",
+      "steps": [
+       "Each gamete has half the chromosomes",
+       "Each gamete gets a random mix of the parent's chromosomes",
+       "Fertilisation joins two random gametes",
+       "So the child has a new combination of genes"
+      ],
+      "answer": "A unique mix of genes from both parents"
+     }
+    },
+    {
+     "heading": "Brothers and sisters differ",
+     "bullets": [
+      "Each sperm and egg has a different mix"
+     ],
+     "note": "Except identical twins (one fertilised egg splits).",
+     "misconception": {
+      "wrong": "Gametes have 46 chromosomes",
+      "right": "Gametes have 23 so that fertilisation restores 46"
+     }
+    },
+    {
+     "heading": "Check: numbers",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "How many chromosomes are in a human egg cell?",
+      "options": [
+       "46",
+       "23",
+       "92",
+       "12"
+      ],
+      "answer": 1,
+      "why": "Gametes carry one of each pair: 23. Body cells carry 46."
+     }
+    }
+   ],
+   "practice": [
+    "Order by size: gene, nucleus, chromosome",
+    "How many chromosomes in a human skin cell?",
+    "What happens at fertilisation?"
+   ],
+   "independent": [
+    "Core: Draw and label a diagram from cell to gene",
+    "Extend: Dogs have 78 chromosomes in body cells. How many in a dog sperm? Explain",
+    "Stretch: Explain why identical twins have the same genes but non-identical twins do not."
+   ],
+   "exit": [
+    "What is a gene?",
+    "Chromosomes in a human sperm?",
+    "Why do siblings look different?"
+   ],
+   "homework": "Make a model of a chromosome showing genes as coloured sections, with a label key.",
+   "send": "Support: library analogy card. Stretch: sex chromosomes XX/XY."
+  },
+  {
+   "unit": "9A: Genetics and evolution",
+   "n": 4,
+   "title": "DNA: structure and discovery",
+   "duration": 50,
+   "bigQuestion": "Who really discovered the structure of DNA?",
+   "objectives": [
+    "Describe the structure of DNA",
+    "Describe the work of Franklin, Wilkins, Watson and Crick",
+    "Explain how scientific ideas develop through collaboration and evidence"
+   ],
+   "successCriteria": [
+    "Describe DNA as a double helix with bases",
+    "Explain each scientist's contribution",
+    "Evaluate whether credit was shared fairly"
+   ],
+   "crossCurricular": "History: science in the 1950s; English: discussing fairness and ethics",
+   "smsc": "Moral: fairness and honesty in giving credit (avoiding injustice, zulm)",
+   "keywords": [
+    {
+     "term": "DNA",
+     "def": "deoxyribonucleic acid: the molecule that carries genetic code"
+    },
+    {
+     "term": "double helix",
+     "def": "the twisted-ladder shape of DNA"
+    },
+    {
+     "term": "base",
+     "def": "a chemical 'letter' of DNA: A, T, C or G"
+    },
+    {
+     "term": "X-ray crystallography",
+     "def": "using X-rays to find the shape of molecules"
+    }
+   ],
+   "starter": [
+    "What is a gene?",
+    "Chromosomes in a gamete?",
+    "What shape is a helix?",
+    "Name a famous scientist"
+   ],
+   "teach": [
+    {
+     "heading": "The structure",
+     "bullets": [
+      "Two strands twisted into a double helix",
+      "Bases pair: A with T, C with G",
+      "The order of bases is the code"
+     ],
+     "note": "Show a 3D model. Ask: 'If one strand reads ATCG, what does the other read?' (TAGC)."
+    },
+    {
+     "heading": "The discovery",
+     "bullets": [
+      "Several scientists' work combined"
+     ],
+     "note": "Answer the big question as a discussion.",
+     "timeline": [
+      {
+       "label": "1950",
+       "text": "Chargaff: amounts of A = T and C = G"
+      },
+      {
+       "label": "1952",
+       "text": "Franklin and Gosling take Photo 51 using X-rays"
+      },
+      {
+       "label": "1953",
+       "text": "Watson and Crick build the double-helix model, using Franklin's data"
+      },
+      {
+       "label": "1962",
+       "text": "Nobel Prize to Watson, Crick and Wilkins (Franklin died in 1958)"
+      }
+     ]
+    },
+    {
+     "heading": "How science works",
+     "bullets": [
+      "Data from experiments",
+      "Models to explain data",
+      "Peer review and credit"
+     ],
+     "note": "The Nobel Prize is not given after death, but Franklin's role was underplayed for years.",
+     "misconception": {
+      "wrong": "Watson and Crick discovered DNA",
+      "right": "DNA was known since 1869; they modelled its structure using others' data"
+     }
+    },
+    {
+     "heading": "Check: base pairing",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "One DNA strand reads A A G C T. What is the matching strand?",
+      "options": [
+       "A A G C T",
+       "T T C G A",
+       "G G A T C",
+       "T T G C A"
+      ],
+      "answer": 1,
+      "why": "A pairs with T and G pairs with C: AAGCT → TTCGA."
+     }
+    }
+   ],
+   "practice": [
+    "Name the four bases",
+    "What is the shape of DNA called?",
+    "What did Franklin's Photo 51 show?"
+   ],
+   "independent": [
+    "Core: Write a short biography of Rosalind Franklin's contribution",
+    "Extend: Explain how Watson and Crick used other scientists' data to build their model",
+    "Stretch: 'Credit in science should be shared by everyone who contributed.' Discuss, using the DNA story."
+   ],
+   "exit": [
+    "What is the shape of DNA?",
+    "Which base pairs with C?",
+    "Name two scientists in the DNA story."
+   ],
+   "homework": "Make a paper or sweet model of DNA showing base pairs correctly (photo to upload).",
+   "send": "Support: base-pair cards. Stretch: how DNA codes for proteins."
+  },
+  {
+   "unit": "9A: Genetics and evolution",
+   "n": 5,
+   "title": "Natural selection",
+   "duration": 50,
+   "bigQuestion": "Why are antibiotics becoming less effective?",
+   "objectives": [
+    "Describe the process of natural selection",
+    "Apply natural selection to examples such as peppered moths and bacteria",
+    "Describe Darwin's and Wallace's contributions"
+   ],
+   "successCriteria": [
+    "List the steps of natural selection",
+    "Explain antibiotic resistance using natural selection",
+    "Evaluate the evidence from peppered moths"
+   ],
+   "crossCurricular": "History: Darwin's voyage on HMS Beagle; Medicine: antibiotic resistance; Islamic Studies: Muslim scholars' views on science and creation",
+   "smsc": "Spiritual: questions of science and faith; Muslim views on the origin of humans differ and are discussed in Islamic Studies, while natural selection in bacteria and moths is observed science",
+   "keywords": [
+    {
+     "term": "natural selection",
+     "def": "organisms better suited to their environment survive and reproduce more"
+    },
+    {
+     "term": "adaptation",
+     "def": "a feature that helps an organism survive"
+    },
+    {
+     "term": "mutation",
+     "def": "a random change in DNA"
+    },
+    {
+     "term": "antibiotic resistance",
+     "def": "bacteria no longer killed by an antibiotic"
+    }
+   ],
+   "starter": [
+    "Which base pairs with A?",
+    "What is variation?",
+    "Give an adaptation of a camel",
+    "What do antibiotics kill?"
+   ],
+   "teach": [
+    {
+     "heading": "The steps",
+     "bullets": [
+      "Variation exists",
+      "Competition for resources",
+      "Best adapted survive and reproduce",
+      "Their genes are passed on"
+     ],
+     "note": "Use the cycle and repeat with each example.",
+     "cycle": [
+      "Variation in a population",
+      "Competition and change in environment",
+      "Better adapted survive",
+      "They reproduce",
+      "Genes passed on; more common over time"
+     ]
+    },
+    {
+     "heading": "Peppered moths",
+     "bullets": [
+      "Pale moths camouflaged on clean bark",
+      "Soot darkened trees in industrial England",
+      "Dark moths survived better; then fell again after clean-air laws"
+     ],
+     "note": "A classic observed example."
+    },
+    {
+     "heading": "Antibiotic resistance",
+     "bullets": [
+      "A random mutation makes a bacterium resistant",
+      "Antibiotic kills the rest",
+      "Resistant bacteria multiply"
+     ],
+     "note": "Answer the big question.",
+     "model": {
+      "problem": "Explain how MRSA became resistant to antibiotics",
+      "steps": [
+       "A mutation made one bacterium resistant",
+       "Antibiotics killed non-resistant bacteria",
+       "The resistant bacterium survived and reproduced",
+       "Resistant bacteria became common"
+      ],
+      "answer": "Natural selection of a resistant variant"
+     }
+    },
+    {
+     "heading": "Organisms don't choose",
+     "bullets": [
+      "Mutations are random",
+      "The environment 'selects'"
+     ],
+     "note": "Key misconception.",
+     "misconception": {
+      "wrong": "Bacteria become resistant because they try to",
+      "right": "Random mutations happen; resistant ones survive and reproduce"
+     }
+    },
+    {
+     "heading": "Check: steps",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Why should patients finish their course of antibiotics?",
+      "options": [
+       "To make bacteria resistant",
+       "So that all bacteria are killed and fewer resistant ones survive",
+       "Because the medicine tastes better later",
+       "It doesn't matter"
+      ],
+      "answer": 1,
+      "why": "Stopping early leaves the toughest bacteria alive to multiply. Finishing the course kills more."
+     }
+    }
+   ],
+   "practice": [
+    "List the four steps of natural selection",
+    "Why did dark peppered moths increase?",
+    "What is a mutation?"
+   ],
+   "independent": [
+    "Core: Explain the peppered moth story in four steps",
+    "Extend: Explain how antibiotic resistance develops and two ways doctors slow it",
+    "Stretch: Darwin and Wallace both proposed natural selection in 1858. Explain why scientists working independently and reaching the same idea strengthens it."
+   ],
+   "exit": [
+    "What is natural selection?",
+    "Are mutations planned or random?",
+    "One way to reduce antibiotic resistance?"
+   ],
+   "homework": "Research one example of natural selection observed today (e.g. pesticide-resistant insects) and explain it in four steps.",
+   "send": "Support: step cards to order. Stretch: Darwin and Wallace comparison."
+  },
+  {
+   "unit": "9A: Genetics and evolution",
+   "n": 6,
+   "title": "Extinction and endangered species",
+   "duration": 50,
+   "bigQuestion": "Does it matter if a species disappears forever?",
+   "objectives": [
+    "Describe causes of extinction",
+    "Explain how genetic diversity helps species survive",
+    "Evaluate the effects of human activity on species"
+   ],
+   "successCriteria": [
+    "Name four causes of extinction",
+    "Explain why small populations are at greater risk",
+    "Evaluate whether humans have a duty to protect species"
+   ],
+   "crossCurricular": "Geography: habitats and deforestation; Islamic Studies: animals as communities (Surah Al-An'am 6:38)",
+   "smsc": "Moral and spiritual: animals are 'communities like you' (Al-An'am 6:38); stewardship (khalifah)",
+   "keywords": [
+    {
+     "term": "extinct",
+     "def": "no members of the species are left alive"
+    },
+    {
+     "term": "endangered",
+     "def": "at risk of becoming extinct"
+    },
+    {
+     "term": "habitat",
+     "def": "the place where an organism lives"
+    },
+    {
+     "term": "genetic diversity",
+     "def": "the variety of genes in a population"
+    }
+   ],
+   "starter": [
+    "Steps of natural selection?",
+    "What is a mutation?",
+    "Name an extinct animal",
+    "What is a habitat?"
+   ],
+   "teach": [
+    {
+     "heading": "Causes of extinction",
+     "bullets": [
+      "Habitat loss",
+      "New predators or diseases",
+      "Climate change",
+      "Hunting and over-fishing"
+     ],
+     "note": "Examples: dodo (hunting and introduced animals), passenger pigeon (over-hunting)."
+    },
+    {
+     "heading": "Small populations, big risk",
+     "bullets": [
+      "Few individuals: low genetic diversity",
+      "A new disease may kill them all",
+      "Less variation for natural selection to work on"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain why cheetahs are at high risk from disease",
+      "steps": [
+       "Cheetahs have very low genetic diversity",
+       "If a disease strikes, few may have resistance",
+       "Many could die, and the population could collapse"
+      ],
+      "answer": "Low diversity → less chance some survive a change"
+     }
+    },
+    {
+     "heading": "Does it matter?",
+     "bullets": [
+      "Food chains and ecosystems",
+      "Medicines from plants",
+      "Moral and religious duties"
+     ],
+     "note": "Answer the big question as a structured discussion.",
+     "compare": {
+      "left": {
+       "title": "Reasons to protect",
+       "points": [
+        "Ecosystems depend on species",
+        "Future medicines",
+        "Duty as stewards of creation"
+       ]
+      },
+      "right": {
+       "title": "Arguments raised against",
+       "points": [
+        "Costs money and land",
+        "Extinction happens naturally",
+        "Human needs come first"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Extinction vs endangered",
+     "bullets": [
+      "Extinct is forever",
+      "Endangered can recover"
+     ],
+     "note": "Example: the giant panda has improved from endangered to vulnerable.",
+     "misconception": {
+      "wrong": "Endangered means extinct",
+      "right": "Endangered means at risk; protection can help recovery"
+     }
+    },
+    {
+     "heading": "Check: diversity",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Why does low genetic diversity increase extinction risk?",
+      "options": [
+       "The animals are smaller",
+       "Fewer individuals may have genes to survive a change",
+       "They eat less",
+       "They live in colder places"
+      ],
+      "answer": 1,
+      "why": "With less variation, a new disease or climate change may affect them all in the same way."
+     }
+    }
+   ],
+   "practice": [
+    "Name three causes of extinction",
+    "What is genetic diversity?",
+    "Name an endangered species"
+   ],
+   "independent": [
+    "Core: Make a fact file on one endangered species: threats and protection",
+    "Extend: Explain why rainforest destruction leads to extinctions",
+    "Stretch: Write a balanced argument: should a country spend millions saving one species?"
+   ],
+   "exit": [
+    "Define extinct.",
+    "One human cause of extinction?",
+    "Why is genetic diversity important?"
+   ],
+   "homework": "Research one UK species that is endangered (e.g. the hedgehog or red squirrel) and one thing families can do to help.",
+   "send": "Support: fact-file template. Stretch: population graphs."
+  },
+  {
+   "unit": "9A: Genetics and evolution",
+   "n": 7,
+   "title": "Gene banks and conservation",
+   "duration": 50,
+   "bigQuestion": "Why do scientists store millions of seeds in an Arctic vault?",
+   "objectives": [
+    "Describe how gene banks preserve genetic material",
+    "Compare methods of conservation",
+    "Evaluate the use of gene banks"
+   ],
+   "successCriteria": [
+    "Describe seed banks and frozen tissue banks",
+    "Compare in-situ and ex-situ conservation",
+    "Evaluate strengths and limits of gene banks"
+   ],
+   "crossCurricular": "Geography: food security; Food technology: crop varieties",
+   "smsc": "Moral: planning for future generations",
+   "keywords": [
+    {
+     "term": "gene bank",
+     "def": "a store of genetic material such as seeds, sperm or tissue"
+    },
+    {
+     "term": "seed bank",
+     "def": "a store of seeds kept cold and dry"
+    },
+    {
+     "term": "conservation",
+     "def": "protecting species and habitats"
+    },
+    {
+     "term": "captive breeding",
+     "def": "breeding endangered animals in zoos"
+    }
+   ],
+   "starter": [
+    "What is genetic diversity?",
+    "Name a cause of extinction",
+    "Define endangered",
+    "Why do seeds last a long time?"
+   ],
+   "teach": [
+    {
+     "heading": "Gene banks",
+     "bullets": [
+      "Seeds stored cold and dry",
+      "Sperm, eggs and tissue frozen",
+      "Svalbard Global Seed Vault in Norway holds over a million samples"
+     ],
+     "note": "Answer the big question: a backup if crops are lost to war, disease or disaster. Seeds from the Middle East were withdrawn from Svalbard in 2015 after the Syrian war damaged a gene bank near Aleppo."
+    },
+    {
+     "heading": "Conservation methods",
+     "bullets": [
+      "In the wild (in situ) or away from it (ex situ)"
+     ],
+     "note": "Compare methods.",
+     "compare": {
+      "left": {
+       "title": "In situ (in the wild)",
+       "points": [
+        "Nature reserves",
+        "Laws against hunting",
+        "Protects whole ecosystems"
+       ]
+      },
+      "right": {
+       "title": "Ex situ (away)",
+       "points": [
+        "Zoos and captive breeding",
+        "Seed and gene banks",
+        "Backup if wild habitat is lost"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Evaluating gene banks",
+     "bullets": [
+      "Weigh up strengths and limits"
+     ],
+     "note": "Model a balanced paragraph.",
+     "model": {
+      "problem": "Evaluate seed banks as a way to save plant species",
+      "steps": [
+       "Strength: store huge diversity safely for decades",
+       "Strength: can replant after a disaster",
+       "Limit: does not protect habitats or animals",
+       "Limit: stored seeds don't evolve with a changing climate"
+      ],
+      "answer": "Valuable backup, but must be combined with protecting habitats"
+     }
+    },
+    {
+     "heading": "Zoos alone are not enough",
+     "bullets": [
+      "Captive animals may lose wild skills"
+     ],
+     "note": "Release programmes need habitats to return to.",
+     "misconception": {
+      "wrong": "Keeping a species in zoos fully saves it",
+      "right": "Without wild habitats and enough diversity, it remains at risk"
+     }
+    },
+    {
+     "heading": "Check: method",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is an example of ex-situ conservation?",
+      "options": [
+       "A nature reserve",
+       "A seed bank",
+       "A hunting ban",
+       "Planting hedgerows"
+      ],
+      "answer": 1,
+      "why": "A seed bank stores genetic material away from the natural habitat. The others protect species in the wild."
+     }
+    }
+   ],
+   "practice": [
+    "What is a gene bank?",
+    "Give one in-situ method",
+    "Why keep seeds cold and dry?"
+   ],
+   "independent": [
+    "Core: Compare three conservation methods in a table",
+    "Extend: Explain why the Svalbard vault is in the Arctic",
+    "Stretch: Evaluate captive breeding of a named species (e.g. the Arabian oryx), including its reintroduction to the wild."
+   ],
+   "exit": [
+    "Define conservation.",
+    "One advantage of gene banks?",
+    "One limitation?"
+   ],
+   "homework": "Research the Arabian oryx and write a paragraph on how it was saved from extinction in the wild.",
+   "send": "Support: comparison table frame. Stretch: oryx case study."
+  },
+  {
+   "unit": "9A: Genetics and evolution",
+   "n": 8,
+   "title": "9A review: genetics and evolution",
+   "duration": 50,
+   "bigQuestion": "Which idea from 9A will matter most when you study GCSE Biology?",
+   "objectives": [
+    "Retrieve key knowledge from 9A",
+    "Apply it to new examples",
+    "Prepare for GCSE Biology Topic 3 (genetics)"
+   ],
+   "successCriteria": [
+    "Recall variation, genes and natural selection facts",
+    "Answer data questions",
+    "Write a structured 6-mark explanation"
+   ],
+   "crossCurricular": "Maths: data and graphs; English: extended writing",
+   "smsc": "Spiritual: reflection on the complexity of life",
+   "keywords": [
+    {
+     "term": "variation",
+     "def": "differences between organisms"
+    },
+    {
+     "term": "gene",
+     "def": "section of DNA coding for a characteristic"
+    },
+    {
+     "term": "natural selection",
+     "def": "better adapted organisms survive and reproduce"
+    },
+    {
+     "term": "extinction",
+     "def": "permanent loss of a species"
+    }
+   ],
+   "starter": [
+    "Continuous or discontinuous: hand span?",
+    "Chromosomes in a human sperm?",
+    "Base that pairs with G?",
+    "One cause of extinction?"
+   ],
+   "teach": [
+    {
+     "heading": "9A in one chain",
+     "bullets": [
+      "Variation → genes → inheritance → selection → survival or extinction"
+     ],
+     "note": "Recap.",
+     "cycle": [
+      "Genes and environment cause variation",
+      "Variation in a population",
+      "Natural selection",
+      "Adaptation or extinction"
+     ]
+    },
+    {
+     "heading": "A 6-mark answer",
+     "bullets": [
+      "Steps in order",
+      "Key words",
+      "Applied to the example"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain how rats became resistant to the poison warfarin (6 marks)",
+      "steps": [
+       "Variation: some rats had a mutation giving resistance",
+       "Warfarin killed non-resistant rats",
+       "Resistant rats survived and had less competition",
+       "They reproduced and passed on the resistance gene",
+       "Over generations, most rats became resistant"
+      ],
+      "answer": "Five linked steps applied to rats"
+     }
+    },
+    {
+     "heading": "Fix the errors",
+     "bullets": [
+      "From the 9A check"
+     ],
+     "note": "Correct together.",
+     "misconception": {
+      "wrong": "Giraffes stretched their necks and passed on long necks",
+      "right": "Giraffes with longer necks survived better and passed on genes for longer necks"
+     }
+    },
+    {
+     "heading": "Check: apply",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Two plants grown from cuttings of one parent grow to different heights. The cause is…",
+      "options": [
+       "Inherited variation",
+       "Environmental variation",
+       "Mutation",
+       "Natural selection"
+      ],
+      "answer": 1,
+      "why": "Cuttings have identical genes, so differences come from the environment."
+     }
+    }
+   ],
+   "practice": [
+    "Explain environmental variation with an example",
+    "Describe DNA's structure",
+    "List steps of natural selection"
+   ],
+   "independent": [
+    "Core: 9A end-of-unit check",
+    "Extend: 6-mark answer on antibiotic resistance",
+    "Stretch: Interpret peppered moth data from 1850–2000 and explain the trends."
+   ],
+   "exit": [
+    "My strongest 9A topic",
+    "My weakest 9A topic",
+    "One question I still have"
+   ],
+   "homework": "Revise 9A and complete DIRT corrections.",
+   "send": "Support: knowledge organiser. Stretch: GCSE Biology inheritance preview."
+  },
+  {
+   "unit": "9E: Making materials",
+   "n": 9,
+   "title": "Properties of materials and ceramics",
+   "duration": 50,
+   "bigQuestion": "Why are mugs made of ceramic and not metal?",
+   "objectives": [
+    "Describe properties of materials",
+    "Describe properties and uses of ceramics",
+    "Link properties to uses"
+   ],
+   "successCriteria": [
+    "Use property words correctly (hard, brittle, insulator…)",
+    "Explain why ceramics suit given uses",
+    "Choose a material for a job and justify it with properties"
+   ],
+   "crossCurricular": "Art: Islamic tilework and pottery; DT: material selection",
+   "smsc": "Cultural: ceramic tiles in mosques such as the Blue Mosque (Istanbul) and Iznik pottery",
+   "keywords": [
+    {
+     "term": "ceramic",
+     "def": "a hard material made by heating clay or similar substances"
+    },
+    {
+     "term": "brittle",
+     "def": "breaks easily when hit, without bending"
+    },
+    {
+     "term": "thermal insulator",
+     "def": "does not let heat through easily"
+    },
+    {
+     "term": "property",
+     "def": "a feature describing how a material behaves"
+    }
+   ],
+   "starter": [
+    "Name a material that conducts electricity",
+    "What is a property?",
+    "Why are saucepan handles plastic?",
+    "Name something made of clay"
+   ],
+   "teach": [
+    {
+     "heading": "Property words",
+     "bullets": [
+      "Strength, hardness, flexibility",
+      "Thermal and electrical conductivity",
+      "Melting point, density"
+     ],
+     "note": "Quick-fire: give a material for each property."
+    },
+    {
+     "heading": "Ceramics",
+     "bullets": [
+      "Made by heating clay to high temperature",
+      "Hard, high melting point, insulators",
+      "Brittle"
+     ],
+     "note": "Answer the big question: ceramic mugs keep drinks hot and don't burn your hands.",
+     "table": {
+      "head": [
+       "Ceramic",
+       "Property",
+       "Use"
+      ],
+      "rows": [
+       [
+        "Porcelain",
+        "electrical insulator",
+        "insulators on power lines"
+       ],
+       [
+        "Brick",
+        "hard, strong in compression",
+        "buildings"
+       ],
+       [
+        "Glazed tile",
+        "waterproof, hard",
+        "bathrooms, mosque walls"
+       ],
+       [
+        "Silicon carbide",
+        "very hard",
+        "cutting tools"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Hard is not the same as tough",
+     "bullets": [
+      "Hard: resists scratching",
+      "Tough: resists breaking"
+     ],
+     "note": "Ceramics are hard but brittle.",
+     "misconception": {
+      "wrong": "Hard materials don't break",
+      "right": "Ceramics are hard but brittle: they shatter when dropped"
+     }
+    },
+    {
+     "heading": "Justifying a choice",
+     "bullets": [
+      "Property → why it helps the use"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain why ceramic is used for spark plug insulators in engines",
+      "steps": [
+       "High melting point: survives engine heat",
+       "Electrical insulator: keeps the spark in the right place",
+       "Hard: resists wear"
+      ],
+      "answer": "Three properties linked to the job"
+     }
+    },
+    {
+     "heading": "Check: property",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Why are ceramic tiles used around cookers?",
+      "options": [
+       "They conduct heat well",
+       "They have a high melting point and are easy to clean",
+       "They are flexible",
+       "They are magnetic"
+      ],
+      "answer": 1,
+      "why": "Ceramics resist heat and glazed tiles are waterproof and easy to clean."
+     }
+    }
+   ],
+   "practice": [
+    "Name three properties of ceramics",
+    "Why is a ceramic plate brittle?",
+    "Give a use of porcelain"
+   ],
+   "independent": [
+    "Core: Choose a material for five objects and justify each with two properties",
+    "Extend: Explain why bricks are strong in buildings but a ceramic plate breaks when dropped",
+    "Stretch: Research how Iznik tiles were made and explain the role of high-temperature firing."
+   ],
+   "exit": [
+    "What does brittle mean?",
+    "One property of ceramics?",
+    "Why are mugs made of ceramic?"
+   ],
+   "homework": "Find five ceramic objects at home and list two properties that make each suitable.",
+   "send": "Support: property word bank. Stretch: structure of ceramics."
+  },
+  {
+   "unit": "9E: Making materials",
+   "n": 10,
+   "title": "Polymers",
+   "duration": 50,
+   "bigQuestion": "How can the same element, carbon, make both a soft carrier bag and a hard plastic chair?",
+   "objectives": [
+    "Describe polymers as long-chain molecules",
+    "Name natural and synthetic polymers",
+    "Link polymer properties to uses"
+   ],
+   "successCriteria": [
+    "Explain what a polymer is",
+    "Give natural and synthetic examples",
+    "Explain how chain structure affects properties"
+   ],
+   "crossCurricular": "DT: plastics; Geography: oil as a raw material",
+   "smsc": "Moral: using resources responsibly",
+   "keywords": [
+    {
+     "term": "polymer",
+     "def": "a very long molecule made of many repeating units"
+    },
+    {
+     "term": "monomer",
+     "def": "a small molecule that joins to make a polymer"
+    },
+    {
+     "term": "synthetic",
+     "def": "made by people"
+    },
+    {
+     "term": "cross-link",
+     "def": "a bond holding polymer chains together"
+    }
+   ],
+   "starter": [
+    "What is a ceramic?",
+    "Define brittle",
+    "What is a molecule?",
+    "Name a plastic object"
+   ],
+   "teach": [
+    {
+     "heading": "Chains of monomers",
+     "bullets": [
+      "Monomers link like beads",
+      "Thousands per chain",
+      "Ethene → poly(ethene)"
+     ],
+     "note": "Pupils link paper clips to model a chain."
+    },
+    {
+     "heading": "Natural and synthetic",
+     "bullets": [
+      "Natural: wool, silk, cotton, DNA, starch",
+      "Synthetic: poly(ethene), PVC, nylon"
+     ],
+     "note": "Surprise: DNA and proteins are polymers too.",
+     "compare": {
+      "left": {
+       "title": "Natural polymers",
+       "points": [
+        "Wool, silk",
+        "Cotton (cellulose)",
+        "Starch, proteins, DNA"
+       ]
+      },
+      "right": {
+       "title": "Synthetic polymers",
+       "points": [
+        "Poly(ethene): bags",
+        "PVC: pipes",
+        "Nylon: ropes, clothes"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Structure explains properties",
+     "bullets": [
+      "Chains slide: flexible, melts on heating",
+      "Cross-linked chains: rigid, doesn't melt"
+     ],
+     "note": "Answer the big question.",
+     "table": {
+      "head": [
+       "Structure",
+       "Property",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Long, tangled chains",
+        "flexible, stretchy",
+        "carrier bag (LDPE)"
+       ],
+       [
+        "Chains packed closely",
+        "stronger, rigid",
+        "milk bottle (HDPE)"
+       ],
+       [
+        "Cross-linked chains",
+        "hard, heat-resistant",
+        "melamine plates"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Polymer is not only plastic",
+     "bullets": [
+      "Many natural materials are polymers"
+     ],
+     "note": "Clear up language.",
+     "misconception": {
+      "wrong": "Polymers are always man-made plastics",
+      "right": "Wool, silk and DNA are natural polymers"
+     }
+    },
+    {
+     "heading": "Check: structure",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Why does a cross-linked polymer not melt when heated?",
+      "options": [
+       "Its chains are short",
+       "Bonds between chains stop them sliding apart",
+       "It contains water",
+       "It is a metal"
+      ],
+      "answer": 1,
+      "why": "Cross-links hold chains firmly, so they can't slide past each other as the material is heated."
+     }
+    }
+   ],
+   "practice": [
+    "What is a monomer?",
+    "Name two natural polymers",
+    "Why is poly(ethene) flexible?"
+   ],
+   "independent": [
+    "Core: Match polymers to uses and properties",
+    "Extend: Explain why nylon is used for climbing ropes",
+    "Stretch: Draw a simple diagram of the monomer ethene and the repeating unit of poly(ethene)."
+   ],
+   "exit": [
+    "Define polymer.",
+    "One synthetic polymer and its use?",
+    "Why are some polymers rigid?"
+   ],
+   "homework": "Find five plastic items with recycling codes and note which polymer each is made from.",
+   "send": "Support: paper-clip model. Stretch: addition polymerisation equations."
+  },
+  {
+   "unit": "9E: Making materials",
+   "n": 11,
+   "title": "Composite materials",
+   "duration": 50,
+   "bigQuestion": "Why mix two materials when you could use the best one?",
+   "objectives": [
+    "Define a composite material",
+    "Describe examples of composites and their uses",
+    "Explain how combining materials improves properties"
+   ],
+   "successCriteria": [
+    "Name three composites",
+    "Explain the job of each part (matrix and reinforcement)",
+    "Evaluate a composite for a given use"
+   ],
+   "crossCurricular": "DT: carbon fibre in bikes; History: mud bricks with straw in ancient buildings",
+   "smsc": "Cultural: traditional building methods across the Muslim world (mud-brick cities such as Shibam in Yemen)",
+   "keywords": [
+    {
+     "term": "composite",
+     "def": "a material made from two or more materials combined"
+    },
+    {
+     "term": "matrix",
+     "def": "the material that binds the reinforcement"
+    },
+    {
+     "term": "reinforcement",
+     "def": "fibres or particles that add strength"
+    },
+    {
+     "term": "reinforced concrete",
+     "def": "concrete with steel rods inside"
+    }
+   ],
+   "starter": [
+    "What is a polymer?",
+    "Define brittle",
+    "Why are bricks good for buildings?",
+    "Name a strong material"
+   ],
+   "teach": [
+    {
+     "heading": "Better together",
+     "bullets": [
+      "Combine properties",
+      "Matrix holds; reinforcement strengthens"
+     ],
+     "note": "Answer the big question: no single material has every property needed."
+    },
+    {
+     "heading": "Examples",
+     "bullets": [
+      "Each composite has a matrix and a reinforcement"
+     ],
+     "note": "Show photos.",
+     "table": {
+      "head": [
+       "Composite",
+       "Matrix",
+       "Reinforcement",
+       "Use"
+      ],
+      "rows": [
+       [
+        "Reinforced concrete",
+        "concrete",
+        "steel rods",
+        "bridges, buildings"
+       ],
+       [
+        "Fibreglass",
+        "polymer resin",
+        "glass fibres",
+        "boats, helmets"
+       ],
+       [
+        "Carbon fibre",
+        "polymer resin",
+        "carbon fibres",
+        "racing bikes, aircraft"
+       ],
+       [
+        "Mud brick",
+        "dried mud",
+        "straw",
+        "traditional houses"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Reinforced concrete",
+     "bullets": [
+      "Concrete: strong when squashed, weak when stretched",
+      "Steel: strong when stretched",
+      "Together: strong both ways"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain why bridges use reinforced concrete",
+      "steps": [
+       "Concrete resists compression but cracks in tension",
+       "Steel resists tension",
+       "Combined, the beam resists both forces"
+      ],
+      "answer": "Each material covers the other's weakness"
+     }
+    },
+    {
+     "heading": "Composites aren't mixtures you can separate easily",
+     "bullets": [
+      "They are designed structures"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "A composite is just a mixture of two powders",
+      "right": "A composite has a matrix holding a reinforcement in a planned structure"
+     }
+    },
+    {
+     "heading": "Check: composite",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "In fibreglass, what is the reinforcement?",
+      "options": [
+       "Polymer resin",
+       "Glass fibres",
+       "Steel",
+       "Water"
+      ],
+      "answer": 1,
+      "why": "Glass fibres strengthen it; resin is the matrix holding them."
+     }
+    }
+   ],
+   "practice": [
+    "Define composite",
+    "Name the parts of reinforced concrete",
+    "Why is carbon fibre used in racing bikes?"
+   ],
+   "independent": [
+    "Core: Complete a table of four composites: matrix, reinforcement, properties, use",
+    "Extend: Explain why straw in mud bricks stops them cracking",
+    "Stretch: Evaluate carbon fibre for car bodies: consider strength, mass, cost and recycling."
+   ],
+   "exit": [
+    "What is a matrix?",
+    "One composite and its use?",
+    "Why is steel added to concrete?"
+   ],
+   "homework": "Make a mini composite (e.g. paper strips in glue or plaster) and compare its strength with the plain matrix (photo to upload).",
+   "send": "Support: diagram of matrix and fibres. Stretch: materials data comparison."
+  },
+  {
+   "unit": "9E: Making materials",
+   "n": 12,
+   "title": "Problems with plastics",
+   "duration": 50,
+   "bigQuestion": "If plastics are so useful, why are they a problem?",
+   "objectives": [
+    "Describe environmental problems caused by plastics",
+    "Explain what biodegradable means",
+    "Evaluate solutions to plastic waste"
+   ],
+   "successCriteria": [
+    "Describe three problems caused by plastic waste",
+    "Explain why most plastics are not biodegradable",
+    "Evaluate solutions such as bans, bioplastics and recycling"
+   ],
+   "crossCurricular": "Geography: ocean pollution; Islamic Studies: avoiding waste (israf) and harm (la darar wa la dirar)",
+   "smsc": "Moral: the principle 'no harm and no reciprocating harm' (hadith in Sunan Ibn Majah); stewardship of oceans and wildlife",
+   "keywords": [
+    {
+     "term": "biodegradable",
+     "def": "can be broken down by microorganisms"
+    },
+    {
+     "term": "landfill",
+     "def": "a large site where waste is buried"
+    },
+    {
+     "term": "microplastics",
+     "def": "tiny plastic pieces smaller than 5 mm"
+    },
+    {
+     "term": "bioplastic",
+     "def": "a plastic made from plant materials"
+    }
+   ],
+   "starter": [
+    "What is a polymer?",
+    "Name a composite",
+    "What happens to rubbish after collection?",
+    "Name something biodegradable"
+   ],
+   "teach": [
+    {
+     "heading": "Why plastics persist",
+     "bullets": [
+      "Strong bonds and long chains",
+      "Microorganisms can't digest most of them",
+      "Some last hundreds of years"
+     ],
+     "note": "Answer the big question: the same durability that makes plastics useful makes them a problem."
+    },
+    {
+     "heading": "The problems",
+     "bullets": [
+      "Landfill space",
+      "Ocean litter harms animals",
+      "Microplastics enter food chains",
+      "Burning releases toxic gases"
+     ],
+     "note": "Show a short video about ocean plastics (e.g. turtles and bags).",
+     "cycle": [
+      "Plastic made from crude oil",
+      "Used once",
+      "Thrown away",
+      "Breaks into microplastics",
+      "Eaten by animals; enters food chains"
+     ]
+    },
+    {
+     "heading": "Evaluating solutions",
+     "bullets": [
+      "No single solution is perfect"
+     ],
+     "note": "Model a balanced paragraph.",
+     "compare": {
+      "left": {
+       "title": "Bioplastics",
+       "points": [
+        "Made from plants",
+        "Some biodegrade",
+        "Need specific conditions; use farmland"
+       ]
+      },
+      "right": {
+       "title": "Reduce and reuse",
+       "points": [
+        "Least waste of all",
+        "Needs behaviour change",
+        "Refill bottles, cloth bags"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Biodegradable confusion",
+     "bullets": [
+      "'Biodegradable' bags may need industrial composting"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Biodegradable plastic disappears quickly anywhere",
+      "right": "Many need high temperatures in industrial composters"
+     }
+    },
+    {
+     "heading": "Check: biodegradable",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Why is poly(ethene) not biodegradable?",
+      "options": [
+       "It is a metal",
+       "Microorganisms cannot break down its long chains",
+       "It contains water",
+       "It is too light"
+      ],
+      "answer": 1,
+      "why": "Microorganisms lack enzymes to break the strong bonds in poly(ethene) chains."
+     }
+    }
+   ],
+   "practice": [
+    "Define biodegradable",
+    "Name two problems with plastic in oceans",
+    "What are microplastics?"
+   ],
+   "independent": [
+    "Core: Make a poster on three problems of plastic waste",
+    "Extend: Evaluate the UK plastic bag charge using data (bag use fell sharply after 2015)",
+    "Stretch: Plan an investigation to test whether a 'biodegradable' bag really breaks down in soil, including how to make it fair."
+   ],
+   "exit": [
+    "Why do plastics last so long?",
+    "What are microplastics?",
+    "Best solution to plastic waste, in your view, and why?"
+   ],
+   "homework": "Do a one-day plastic audit at home: list every single-use plastic item and suggest an alternative for three.",
+   "send": "Support: problem-solution cards. Stretch: life-cycle data."
+  },
+  {
+   "unit": "9E: Making materials",
+   "n": 13,
+   "title": "Recycling materials",
+   "duration": 50,
+   "bigQuestion": "Is recycling always the best thing to do with waste?",
+   "objectives": [
+    "Describe how metals, glass, paper and plastics are recycled",
+    "Explain the benefits of recycling",
+    "Evaluate when recycling is worthwhile"
+   ],
+   "successCriteria": [
+    "Describe recycling of two materials",
+    "Explain energy and resource savings",
+    "Evaluate recycling against reducing and reusing"
+   ],
+   "crossCurricular": "Geography: resources; Business: costs of recycling",
+   "smsc": "Moral: avoiding waste; social: community responsibility",
+   "keywords": [
+    {
+     "term": "recycle",
+     "def": "process used materials to make new products"
+    },
+    {
+     "term": "reuse",
+     "def": "use something again for the same or another purpose"
+    },
+    {
+     "term": "finite resource",
+     "def": "a resource that will run out"
+    },
+    {
+     "term": "sustainable",
+     "def": "meets our needs without harming future generations"
+    }
+   ],
+   "starter": [
+    "Why is plastic waste a problem?",
+    "What is a finite resource?",
+    "Name a material you recycle at home",
+    "Define biodegradable"
+   ],
+   "teach": [
+    {
+     "heading": "Reduce, reuse, recycle",
+     "bullets": [
+      "Reduce: best, least waste",
+      "Reuse: next best",
+      "Recycle: still uses energy"
+     ],
+     "note": "Answer the big question: recycling is good but reducing is better.",
+     "cycle": [
+      "Reduce",
+      "Reuse",
+      "Recycle",
+      "Recover energy",
+      "Dispose (last resort)"
+     ]
+    },
+    {
+     "heading": "How materials are recycled",
+     "bullets": [
+      "Different methods for each material"
+     ],
+     "note": "Show short videos.",
+     "table": {
+      "head": [
+       "Material",
+       "Process",
+       "Saving"
+      ],
+      "rows": [
+       [
+        "Aluminium",
+        "melted and recast",
+        "about 95% of the energy of making new"
+       ],
+       [
+        "Glass",
+        "crushed, melted, reshaped",
+        "saves sand and energy"
+       ],
+       [
+        "Paper",
+        "pulped, cleaned, rolled",
+        "saves trees and water"
+       ],
+       [
+        "Plastics",
+        "sorted, shredded, melted",
+        "harder: many types and colours"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Is it worth it?",
+     "bullets": [
+      "Collection and sorting cost energy",
+      "Some plastics can only be recycled a few times"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Evaluate recycling aluminium cans",
+      "steps": [
+       "Saves about 95% of the energy needed to extract new aluminium",
+       "Saves the bauxite ore, a finite resource",
+       "Cans are easy to sort with magnets and eddy currents",
+       "Conclusion: highly worthwhile"
+      ],
+      "answer": "Strong energy and resource savings"
+     }
+    },
+    {
+     "heading": "Recycling isn't free",
+     "bullets": [
+      "It uses energy and transport"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Recycling has no environmental cost",
+      "right": "It uses energy, water and transport; reducing use is better"
+     }
+    },
+    {
+     "heading": "Check: best option",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is the most sustainable choice for drinking water at school?",
+      "options": [
+       "Buy a new plastic bottle daily and recycle it",
+       "Use a refillable bottle",
+       "Buy glass bottles daily",
+       "Throw bottles in general waste"
+      ],
+      "answer": 1,
+      "why": "Reusing avoids making new bottles at all. Recycling is better than landfill but still uses energy."
+     }
+    }
+   ],
+   "practice": [
+    "Order: recycle, reduce, reuse (best first)",
+    "How is aluminium recycled?",
+    "Why is plastic harder to recycle than glass?"
+   ],
+   "independent": [
+    "Core: Describe how two materials are recycled",
+    "Extend: Explain why aluminium recycling saves more energy than glass recycling",
+    "Stretch: Design a recycling scheme for a mosque or community centre and evaluate its likely impact."
+   ],
+   "exit": [
+    "Which is best: reduce, reuse or recycle?",
+    "Name a finite resource.",
+    "One reason recycling plastic is difficult?"
+   ],
+   "homework": "Find out what your local council recycles and make a guide for your family.",
+   "send": "Support: process flow cards. Stretch: energy-saving calculations."
+  },
+  {
+   "unit": "9E: Making materials",
+   "n": 14,
+   "title": "Life-cycle assessments",
+   "duration": 50,
+   "bigQuestion": "Is a paper bag really better for the planet than a plastic one?",
+   "objectives": [
+    "Describe the stages of a life-cycle assessment",
+    "Use data to compare products",
+    "Evaluate the limitations of life-cycle assessments"
+   ],
+   "successCriteria": [
+    "Name the four stages of an LCA",
+    "Compare two products using LCA data",
+    "Explain why LCAs can be biased or incomplete"
+   ],
+   "crossCurricular": "Geography: sustainability; Maths: comparing data",
+   "smsc": "Moral: making honest, evidence-based choices",
+   "keywords": [
+    {
+     "term": "life-cycle assessment (LCA)",
+     "def": "an assessment of a product's environmental impact from start to end"
+    },
+    {
+     "term": "raw materials",
+     "def": "the substances a product is made from"
+    },
+    {
+     "term": "disposal",
+     "def": "what happens to a product at the end of its life"
+    },
+    {
+     "term": "bias",
+     "def": "an unfair influence on a conclusion"
+    }
+   ],
+   "starter": [
+    "Order: reduce, reuse, recycle",
+    "Energy saved recycling aluminium?",
+    "Define sustainable",
+    "Name the raw material for plastic"
+   ],
+   "teach": [
+    {
+     "heading": "Four stages",
+     "bullets": [
+      "Every stage uses energy and resources"
+     ],
+     "note": "Display the stages.",
+     "timeline": [
+      {
+       "label": "1",
+       "text": "Extracting and processing raw materials"
+      },
+      {
+       "label": "2",
+       "text": "Manufacturing and packaging"
+      },
+      {
+       "label": "3",
+       "text": "Use and operation"
+      },
+      {
+       "label": "4",
+       "text": "Disposal at end of life"
+      }
+     ]
+    },
+    {
+     "heading": "Comparing bags",
+     "bullets": [
+      "Paper: more energy and water to make",
+      "Plastic: from oil, lasts for centuries",
+      "Cotton: must be reused many times to pay back"
+     ],
+     "note": "Answer the big question: it depends on how many times a bag is reused.",
+     "table": {
+      "head": [
+       "Bag",
+       "Energy to make",
+       "Biodegradable",
+       "Reuses to beat a plastic bag (approx.)"
+      ],
+      "rows": [
+       [
+        "Plastic (LDPE)",
+        "low",
+        "no",
+        "1"
+       ],
+       [
+        "Paper",
+        "higher",
+        "yes",
+        "about 3"
+       ],
+       [
+        "Cotton",
+        "highest",
+        "yes",
+        "over 100"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Limitations",
+     "bullets": [
+      "Some values are estimates",
+      "Companies may choose favourable data",
+      "Hard to put a value on harm to wildlife"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Why might an LCA written by a bag maker be unreliable?",
+      "steps": [
+       "The company benefits from a good result",
+       "It may leave out stages where its product does badly",
+       "Some impacts (e.g. ocean litter) are hard to measure"
+      ],
+      "answer": "Possible bias and missing data"
+     }
+    },
+    {
+     "heading": "Natural isn't automatically greener",
+     "bullets": [
+      "Paper and cotton have big impacts too"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Paper bags are always better than plastic",
+      "right": "Paper uses more energy to make; reuse matters most"
+     }
+    },
+    {
+     "heading": "Check: LCA",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which stage is NOT part of a life-cycle assessment?",
+      "options": [
+       "Extracting raw materials",
+       "Manufacturing",
+       "Advertising the product",
+       "Disposal"
+      ],
+      "answer": 2,
+      "why": "LCAs cover extraction, manufacture, use and disposal. Advertising isn't one of the stages."
+     }
+    }
+   ],
+   "practice": [
+    "Name the four LCA stages",
+    "Why must cotton bags be reused many times?",
+    "Give one limitation of LCAs"
+   ],
+   "independent": [
+    "Core: Use LCA data to compare a glass bottle and a plastic bottle",
+    "Extend: Write a conclusion on which bag a supermarket should offer, using evidence",
+    "Stretch: Design a simple LCA for a school exercise book, naming what you would measure at each stage."
+   ],
+   "exit": [
+    "What does LCA stand for?",
+    "One stage of an LCA?",
+    "Why can LCAs be biased?"
+   ],
+   "homework": "Choose a product at home and write what happens at each LCA stage.",
+   "send": "Support: stage cards. Stretch: data-handling with real LCA figures."
+  },
+  {
+   "unit": "9E: Making materials",
+   "n": 15,
+   "title": "Making polymers: a closer look",
+   "duration": 50,
+   "bigQuestion": "How do scientists design new materials for new jobs?",
+   "objectives": [
+    "Describe addition polymerisation simply",
+    "Explain how changing conditions changes polymer properties",
+    "Describe smart and new materials"
+   ],
+   "successCriteria": [
+    "Describe how ethene monomers join to make poly(ethene)",
+    "Explain LDPE and HDPE differences",
+    "Describe one smart material and its use"
+   ],
+   "crossCurricular": "DT: smart materials; Chemistry: preparing for GCSE organic chemistry",
+   "smsc": "Spiritual: human creativity as a gift; moral: using innovation responsibly",
+   "keywords": [
+    {
+     "term": "addition polymerisation",
+     "def": "many small unsaturated monomers joining to make one long chain"
+    },
+    {
+     "term": "unsaturated",
+     "def": "contains a double bond between carbon atoms"
+    },
+    {
+     "term": "smart material",
+     "def": "a material whose properties change with conditions"
+    },
+    {
+     "term": "shape memory alloy",
+     "def": "a metal that returns to its shape when heated"
+    }
+   ],
+   "starter": [
+    "What is a monomer?",
+    "Name a natural polymer",
+    "What does LCA stand for?",
+    "Name a composite"
+   ],
+   "teach": [
+    {
+     "heading": "Joining monomers",
+     "bullets": [
+      "Ethene has a C=C double bond",
+      "The double bond opens",
+      "Monomers join into a chain"
+     ],
+     "note": "Show a ball-and-stick animation.",
+     "model": {
+      "problem": "Describe how poly(ethene) forms",
+      "steps": [
+       "Start with many ethene molecules (C₂H₄)",
+       "Each C=C double bond breaks open",
+       "Carbon atoms bond to neighbouring monomers",
+       "A long chain of repeating –CH₂–CH₂– units forms"
+      ],
+      "answer": "Addition polymerisation"
+     }
+    },
+    {
+     "heading": "Same monomer, different properties",
+     "bullets": [
+      "LDPE: high pressure, branched chains, flexible",
+      "HDPE: catalyst, straight chains, rigid"
+     ],
+     "note": "Answer the big question: chemists change conditions to design properties.",
+     "compare": {
+      "left": {
+       "title": "LDPE",
+       "points": [
+        "Branched chains",
+        "Low density, flexible",
+        "Carrier bags, cling film"
+       ]
+      },
+      "right": {
+       "title": "HDPE",
+       "points": [
+        "Straight chains packed closely",
+        "Higher density, rigid",
+        "Milk bottles, pipes"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Smart materials",
+     "bullets": [
+      "Shape memory alloys: glasses frames, stents",
+      "Thermochromic pigments: change colour with temperature",
+      "Photochromic lenses: darken in sunlight"
+     ],
+     "note": "Show examples on camera if available (thermochromic mug or strip)."
+    },
+    {
+     "heading": "Names matter",
+     "bullets": [
+      "Polymer names come from the monomer"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Poly(ethene) still contains double bonds",
+      "right": "The double bonds open during polymerisation; the chain has single bonds"
+     }
+    },
+    {
+     "heading": "Check: polymerisation",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which monomer makes poly(propene)?",
+      "options": [
+       "Ethene",
+       "Propene",
+       "Propane",
+       "Methane"
+      ],
+      "answer": 1,
+      "why": "Polymers are named after their monomer. Propane has no double bond, so it can't polymerise this way."
+     }
+    }
+   ],
+   "practice": [
+    "What happens to the double bond in polymerisation?",
+    "Difference between LDPE and HDPE?",
+    "Name a smart material"
+   ],
+   "independent": [
+    "Core: Describe addition polymerisation in four steps with a diagram",
+    "Extend: Explain why HDPE is used for pipes and LDPE for bags",
+    "Stretch: Draw the repeating unit of poly(chloroethene) (PVC) from the monomer chloroethene, CH₂=CHCl."
+   ],
+   "exit": [
+    "What is a monomer?",
+    "Name the polymer made from ethene.",
+    "One example of a smart material?"
+   ],
+   "homework": "Research one smart material and explain how it works and one use.",
+   "send": "Support: bead-chain model. Stretch: drawing repeat units."
+  },
+  {
+   "unit": "9E: Making materials",
+   "n": 16,
+   "title": "9E review: making materials",
+   "duration": 50,
+   "bigQuestion": "Which material from 9E will matter most to the future of the planet?",
+   "objectives": [
+    "Retrieve key knowledge from 9E",
+    "Apply it to new contexts",
+    "Write a balanced evaluation"
+   ],
+   "successCriteria": [
+    "Recall ceramics, polymers, composites and recycling facts",
+    "Answer data questions",
+    "Write a 6-mark evaluation"
+   ],
+   "crossCurricular": "Geography: sustainability; DT: materials",
+   "smsc": "Moral: personal choices and their impact",
+   "keywords": [
+    {
+     "term": "ceramic",
+     "def": "hard, brittle material made by heating clay"
+    },
+    {
+     "term": "polymer",
+     "def": "long chain of repeating units"
+    },
+    {
+     "term": "composite",
+     "def": "two materials combined"
+    },
+    {
+     "term": "life-cycle assessment",
+     "def": "impact of a product from start to finish"
+    }
+   ],
+   "starter": [
+    "Define brittle",
+    "Name a natural polymer",
+    "Matrix in fibreglass?",
+    "Best: reduce, reuse or recycle?"
+   ],
+   "teach": [
+    {
+     "heading": "9E connections",
+     "bullets": [
+      "Properties → choice → impact → recycling"
+     ],
+     "note": "Recap.",
+     "cycle": [
+      "Need a material",
+      "Choose by properties",
+      "Make and use",
+      "Assess impact (LCA)",
+      "Reduce, reuse, recycle"
+     ]
+    },
+    {
+     "heading": "A 6-mark evaluation",
+     "bullets": [
+      "Both sides",
+      "Evidence",
+      "Conclusion"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Evaluate banning single-use plastic cutlery (6 marks)",
+      "steps": [
+       "For: reduces ocean litter and microplastics",
+       "For: saves crude oil, a finite resource",
+       "Against: replacements (wood, bioplastic) have their own impacts",
+       "Against: hygiene and cost concerns for some users",
+       "Conclusion: worthwhile if reusable cutlery is encouraged"
+      ],
+      "answer": "Balanced points + justified conclusion"
+     }
+    },
+    {
+     "heading": "Fix the errors",
+     "bullets": [
+      "From the 9E assessment pack"
+     ],
+     "note": "Correct together.",
+     "misconception": {
+      "wrong": "Ceramics are tough",
+      "right": "Ceramics are hard but brittle"
+     }
+    },
+    {
+     "heading": "Check: apply",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A tennis racket must be light, stiff and strong. The best material is…",
+      "options": [
+       "Glass",
+       "Carbon-fibre composite",
+       "Ceramic",
+       "Poly(ethene) bag plastic"
+      ],
+      "answer": 1,
+      "why": "Carbon-fibre composites are light, stiff and strong. Glass and ceramics are brittle; LDPE is too flexible."
+     }
+    }
+   ],
+   "practice": [
+    "Explain why ceramics are used for oven tiles",
+    "Describe how a polymer forms",
+    "Name the parts of reinforced concrete"
+   ],
+   "independent": [
+    "Core: 9E end-of-unit check (school 9E assessment pack)",
+    "Extend: 6-mark evaluation of paper versus plastic bags",
+    "Stretch: Use LCA data for two drinks containers to recommend one for a school canteen."
+   ],
+   "exit": [
+    "My strongest 9E topic",
+    "My weakest 9E topic",
+    "One habit I'll change"
+   ],
+   "homework": "Revise 9E and complete DIRT corrections.",
+   "send": "Support: knowledge organiser. Stretch: GCSE Chemistry polymers preview."
+  }
+ ]
 }

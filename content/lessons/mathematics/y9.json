@@ -1,477 +1,2037 @@
 {
-  "subject": "Mathematics",
-  "year": "y9",
-  "board": "Pearson Edexcel (KS3 Maths Progress, bridging to International GCSE Mathematics A 4MA1)",
-  "boardShort": "KS3 Maths Progress",
-  "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) Year 9 Autumn, Unit 1 Indices and standard form and Unit 2 Expressions and formulae (ks3_maths_a_p_sow3.xlsx), in the scheme's order, with IGCSE 4MA1 notation; INSET lesson standard.",
-  "lessons": [
+ "subject": "Mathematics",
+ "year": "y9",
+ "board": "Pearson Edexcel (KS3 Maths Progress, building to Edexcel GCSE Mathematics 1MA1)",
+ "boardShort": "KS3 Maths Progress",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) Year 9 Autumn, Unit 1 Indices and standard form and Unit 2 Expressions and formulae (ks3_maths_a_p_sow3.xlsx), in the scheme's order, building to GCSE 1MA1; INSET lesson standard.",
+ "lessons": [
+  {
+   "unit": "Unit 1: Indices and standard form",
+   "n": 1,
+   "title": "Indices and the order of operations",
+   "duration": 50,
+   "bigQuestion": "Why does −3² give a different answer from (−3)²?",
+   "objectives": [
+    "Calculate with powers, including square brackets",
+    "Apply the order of operations with indices",
+    "Use a calculator correctly for powers of negative numbers"
+   ],
+   "successCriteria": [
+    "Evaluate expressions with one power and one other operation",
+    "Evaluate nested brackets and powers of negative numbers",
+    "Explain the difference between −3² and (−3)²"
+   ],
+   "crossCurricular": "Computing: operator precedence in programming; Science: units like m²",
+   "smsc": "Social: shared conventions make communication precise",
+   "keywords": [
     {
-      "unit": "Unit 1: Indices and standard form",
-      "n": 1,
-      "title": "Indices and the order of operations",
-      "duration": 50,
-      "bigQuestion": "Why does −3² give a different answer from (−3)²?",
-      "objectives": ["Calculate with powers, including square brackets", "Apply the order of operations with indices", "Use a calculator correctly for powers of negative numbers"],
-      "successCriteria": ["Evaluate expressions with one power and one other operation", "Evaluate nested brackets and powers of negative numbers", "Explain the difference between −3² and (−3)²"],
-      "crossCurricular": "Computing: operator precedence in programming; Science: units like m²",
-      "smsc": "Social: shared conventions make communication precise",
-      "keywords": [
-        { "term": "index (power)", "def": "the small number showing how many times to multiply a number by itself" },
-        { "term": "base", "def": "the number being raised to a power" },
-        { "term": "square brackets", "def": "[ ] used outside round brackets in nested calculations" },
-        { "term": "evaluate", "def": "work out the value" }
-      ],
-      "starter": ["Bismillah. Work out 2⁴", "Work out 5 + 2 × 3", "Work out (−2) × (−2) × (−2)", "Work out √49 + 1"],
-      "teach": [
-        { "heading": "Indices come before × and ÷", "bullets": ["B, then I, then D/M, then A/S", "The index belongs only to the number it touches"], "note": "Show 3 × 2³ = 24, not 216.", "misconception": { "wrong": "−3² = 9", "right": "−3² = −(3²) = −9, but (−3)² = 9" } },
-        { "heading": "Nested brackets", "bullets": ["Work from the inside out", "Round brackets first, then square"], "note": "Model.", "model": { "problem": "Evaluate 2 × [20 − (1 + 2)²] + 4³", "steps": ["Inner bracket: 1 + 2 = 3", "3² = 9; square bracket: 20 − 9 = 11", "2 × 11 = 22; 4³ = 64", "22 + 64 = 86"], "answer": "86" } },
-        { "heading": "Calculator check", "bullets": ["Type (−3)² with brackets", "Without brackets most calculators give −9"], "note": "Pupils try both on their calculators and report results in the chat." },
-        { "heading": "Check: order", "bullets": [], "note": "Show me on 3.", "check": { "q": "Evaluate 50 − 2 × 3²", "options": ["432", "32", "14", "−14"], "answer": 1, "why": "3² = 9, 2 × 9 = 18, 50 − 18 = 32. A does (50 − 2) × 9; C does 50 − 6²." } }
-      ],
-      "practice": ["Evaluate 4 × 5²", "Evaluate (4 × 5)²", "Evaluate −2⁴ and (−2)⁴", "Evaluate [3 + (6 − 4)³] × 2"],
-      "independent": ["Core: (a) 7 + 3 × 2³ (b) (10 − 7)³ − 5 (c) 6² ÷ (1 + 3)² (d) −5² + 30", "Extend: Insert brackets to make true: 2 + 3² × 4 = 100; 18 − 3² + 1 = 8", "Stretch: Find the value of x² − 2x + 3 when x = −4, showing each step. Then find a negative value of x that gives 18."],
-      "exit": ["Evaluate 3 × 4²", "Evaluate (−5)²", "Evaluate [2 × (3 + 1)]²"],
-      "homework": "Write five calculations with powers where removing or moving brackets changes the answer; give both answers.",
-      "send": "Support: BIDMAS step frame with a column per stage. Stretch: create calculations with a target value."
+     "term": "index (power)",
+     "def": "the small number showing how many times to multiply a number by itself"
     },
     {
-      "unit": "Unit 1: Indices and standard form",
-      "n": 2,
-      "title": "Calculating with powers, roots and fractions",
-      "duration": 50,
-      "bigQuestion": "What does it mean to square a fraction or find its square root?",
-      "objectives": ["Square and cube fractions and decimals", "Find square roots and cube roots of fractions", "Combine powers, roots and fractions in calculations"],
-      "successCriteria": ["Square a simple fraction", "Find roots of fractions and evaluate mixed calculations", "Explain why squaring a fraction less than 1 makes it smaller"],
-      "crossCurricular": "Science: scaling areas in diagrams; Art: scaling designs",
-      "smsc": "Spiritual: surprises in maths that challenge intuition",
-      "keywords": [
-        { "term": "numerator", "def": "the top number of a fraction" },
-        { "term": "denominator", "def": "the bottom number of a fraction" },
-        { "term": "reciprocal", "def": "1 divided by the number; the fraction flipped" },
-        { "term": "root", "def": "the inverse of a power" }
-      ],
-      "starter": ["Evaluate 3 × 2²", "Work out ¾ × ½", "What is √64?", "What is 0.5 × 0.5?"],
-      "teach": [
-        { "heading": "Powers of fractions", "bullets": ["Apply the power to top and bottom", "(2/3)² = 4/9", "Fractions below 1 get smaller when squared"], "note": "Link to the big question: (1/2)² = 1/4, a quarter is smaller than a half.", "misconception": { "wrong": "(2/3)² = 4/3", "right": "(2/3)² = 2²/3² = 4/9" } },
-        { "heading": "Roots of fractions", "bullets": ["Root the top and the bottom", "√(25/49) = 5/7", "∛(8/27) = 2/3"], "note": "Practise: √(9/16), ∛(1/64)." },
-        { "heading": "Mixed calculation", "bullets": ["Indices and roots first", "Then multiply, then add"], "note": "Model and narrate.", "model": { "problem": "Evaluate (3/4)² + √(1/16) × 2", "steps": ["(3/4)² = 9/16", "√(1/16) = 1/4", "1/4 × 2 = 1/2 = 8/16", "9/16 + 8/16 = 17/16"], "answer": "17/16 = 1 1/16" } },
-        { "heading": "Check: fractions and powers", "bullets": [], "note": "Show me on 3.", "check": { "q": "Evaluate (2/5)³", "options": ["6/15", "8/125", "8/5", "6/125"], "answer": 1, "why": "2³ = 8 and 5³ = 125. A multiplies by 3; C cubes only the numerator." } }
-      ],
-      "practice": ["Evaluate (1/3)²", "Evaluate √(36/81)", "Evaluate (0.2)³", "Evaluate (1/2)² + (1/4)"],
-      "independent": ["Core: (a) (5/6)² (b) ∛(27/1000) (c) (1/2)³ × 16 (d) √(49/100) + 0.3", "Extend: A square has area 81/169 m². Find its perimeter.", "Stretch: Find a fraction whose square is bigger than itself, one whose square is smaller, and one where they are equal. Explain the rule."],
-      "exit": ["Evaluate (3/5)²", "Evaluate √(4/9)", "Which is bigger: 0.8 or 0.8²?"],
-      "homework": "Complete a table of x, x², x³ and √x for x = 1/4, 1/2, 0.9, 1, 4 and describe the patterns.",
-      "send": "Support: fraction wall. Stretch: negative indices (preview)."
+     "term": "base",
+     "def": "the number being raised to a power"
     },
     {
-      "unit": "Unit 1: Indices and standard form",
-      "n": 3,
-      "title": "Estimating calculations",
-      "duration": 50,
-      "bigQuestion": "How do engineers check a calculation before trusting it with real lives?",
-      "objectives": ["Round to 1 significant figure to estimate", "Estimate calculations including powers and roots", "Judge whether an estimate is an over- or underestimate"],
-      "successCriteria": ["Estimate products and quotients by rounding to 1 s.f.", "Estimate calculations with roots, powers and fractions", "Justify whether the estimate is too big or too small"],
-      "crossCurricular": "Science: order of magnitude in physics; Geography: estimating resources",
-      "smsc": "Moral: responsibility to check work that affects other people",
-      "keywords": [
-        { "term": "significant figure", "def": "a digit that tells you about the size of a number" },
-        { "term": "estimate", "def": "an approximate answer using rounded values" },
-        { "term": "≈", "def": "approximately equal to" },
-        { "term": "underestimate", "def": "an estimate smaller than the exact answer" }
-      ],
-      "starter": ["Round 0.0472 to 1 s.f.", "Evaluate (1/2)³", "Work out 600 ÷ 0.2", "Work out √(100) × 3²"],
-      "teach": [
-        { "heading": "Rounding roots", "bullets": ["Round to a nearby square or cube", "√47 ≈ √49 = 7", "∛130 ≈ ∛125 = 5"], "note": "Better to choose a perfect square than to round to 1 s.f. first: √47 rounded to √50 is no easier." },
-        { "heading": "A full estimate", "bullets": ["Round each number", "Choose friendly roots and powers", "Write ≈"], "note": "Model.", "model": { "problem": "Estimate (9.87 × √62) ÷ 0.198", "steps": ["9.87 ≈ 10; √62 ≈ √64 = 8", "0.198 ≈ 0.2", "10 × 8 = 80", "80 ÷ 0.2 = 400"], "answer": "≈ 400 (exact 392.5…)" } },
-        { "heading": "Over or under?", "bullets": ["Numbers in the top rounded up: overestimate", "Numbers in the bottom rounded up: underestimate"], "note": "In the model we rounded 9.87 up (over), √62 up (over), and 0.198 up in the bottom (under). The effects partly cancel.", "compare": { "left": { "title": "Overestimate when…", "points": ["Multiplied numbers rounded up", "Divisor rounded down"] }, "right": { "title": "Underestimate when…", "points": ["Multiplied numbers rounded down", "Divisor rounded up"] } } },
-        { "heading": "Check: estimate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Best estimate of 4.1³ − √99?", "options": ["54", "64", "74", "21"], "answer": 0, "why": "4³ = 64 and √100 = 10, so 64 − 10 = 54. B forgets to subtract the root; C adds it instead; D cubes the wrong way (4 × 3 + 9)." } }
-      ],
-      "practice": ["Estimate 312 × 0.49", "Estimate √83 × 21", "Estimate 6.9² ÷ 2.1"],
-      "independent": ["Core: Estimate (a) 59.6 × 0.31 (b) √(48.5) + 3.9² (c) 812 ÷ 0.39", "Extend: Estimate (21.7 × 3.08²) ÷ √(15.8). Say if it is over or under and why.", "Stretch: The Earth is about 150 million km from the Sun and light travels about 300 000 km per second. Estimate how long sunlight takes to reach us in minutes."],
-      "exit": ["Estimate √35 × 9.8", "Estimate 4.95 ÷ 0.51", "Is your estimate of 9.8 × 3.1 over or under?"],
-      "homework": "Estimate then calculate five calculations from science or geography homework, recording the percentage difference.",
-      "send": "Support: list of square and cube numbers. Stretch: order-of-magnitude problems."
+     "term": "square brackets",
+     "def": "[ ] used outside round brackets in nested calculations"
     },
     {
-      "unit": "Unit 1: Indices and standard form",
-      "n": 4,
-      "title": "Index laws for numbers",
-      "duration": 50,
-      "bigQuestion": "Why do we add indices when we multiply powers?",
-      "objectives": ["Use the laws of indices for multiplying and dividing powers", "Raise a power to a power", "Understand zero and negative indices for numbers"],
-      "successCriteria": ["Simplify a³ × a⁴ type questions with numbers", "Simplify powers of powers and divisions", "Explain why 5⁰ = 1 and 2⁻³ = 1/8"],
-      "crossCurricular": "Science: very large and small quantities; Computing: storage sizes (2¹⁰ bytes)",
-      "smsc": "Spiritual: the elegance of short rules that explain a lot",
-      "keywords": [
-        { "term": "index law", "def": "a rule for simplifying powers with the same base" },
-        { "term": "power of a power", "def": "a power raised to another power, e.g. (2³)²" },
-        { "term": "zero index", "def": "any non-zero number to the power 0 equals 1" },
-        { "term": "negative index", "def": "a⁻ⁿ means 1 ÷ aⁿ" }
-      ],
-      "starter": ["Write 2 × 2 × 2 × 2 as a power", "Evaluate 3⁴", "Estimate √50", "Evaluate (1/2)²"],
-      "teach": [
-        { "heading": "Writing it out", "bullets": ["3² × 3⁴ = (3 × 3) × (3 × 3 × 3 × 3) = 3⁶", "Count the 3s: 2 + 4 = 6"], "note": "Let pupils discover the rule by expanding three examples." },
-        { "heading": "The three laws", "bullets": ["Same base only"], "note": "Explain each with an expansion.", "table": { "head": ["Law", "Example"], "rows": [["aᵐ × aⁿ = aᵐ⁺ⁿ", "5³ × 5² = 5⁵"], ["aᵐ ÷ aⁿ = aᵐ⁻ⁿ", "7⁶ ÷ 7² = 7⁴"], ["(aᵐ)ⁿ = aᵐⁿ", "(2³)⁴ = 2¹²"]] } },
-        { "heading": "Zero and negative indices", "bullets": ["Follow the pattern: 2³ = 8, 2² = 4, 2¹ = 2", "Halve each time: 2⁰ = 1, 2⁻¹ = 1/2"], "note": "Also: 5³ ÷ 5³ = 5⁰, but anything divided by itself is 1.", "model": { "problem": "Evaluate 4⁻²", "steps": ["Negative index means reciprocal", "4⁻² = 1 ÷ 4²", "4² = 16"], "answer": "1/16" } },
-        { "heading": "Multiplying the bases", "bullets": ["Do not multiply the bases", "Do not multiply the indices when multiplying"], "note": "Common errors to spot.", "misconception": { "wrong": "3² × 3⁴ = 9⁸", "right": "3² × 3⁴ = 3⁶ (same base, add the indices)" } },
-        { "heading": "Check: index laws", "bullets": [], "note": "Show me on 3.", "check": { "q": "Simplify (6⁴)³ ÷ 6⁵", "options": ["6²", "6⁷", "6¹²", "6¹⁷"], "answer": 1, "why": "(6⁴)³ = 6¹², then 6¹² ÷ 6⁵ = 6⁷. A adds 4 + 3 first; D adds 12 + 5." } }
-      ],
-      "practice": ["Simplify 4³ × 4⁵", "Simplify 9⁸ ÷ 9³", "Simplify (5²)³", "Evaluate 3⁻²"],
-      "independent": ["Core: Simplify as a single power: (a) 2⁷ × 2³ (b) 10⁹ ÷ 10⁴ (c) (7²)⁵ (d) 8³ × 8 ÷ 8²", "Extend: Find n: (a) 3ⁿ × 3² = 3⁹ (b) 5⁸ ÷ 5ⁿ = 5³ (c) 2ⁿ = 1/32", "Stretch: Write 8² × 4³ as a single power of 2. Then write 27 × 9² ÷ 3⁵ as a single power of 3."],
-      "exit": ["Simplify 6² × 6⁷", "Simplify (3⁴)²", "Evaluate 7⁰ and 2⁻¹"],
-      "homework": "Complete the index-laws puzzle grid (each row and column multiplies to the given power).",
-      "send": "Support: expanded forms alongside each question. Stretch: fractional indices preview."
-    },
-    {
-      "unit": "Unit 1: Indices and standard form",
-      "n": 5,
-      "title": "Standard form for large numbers",
-      "duration": 50,
-      "bigQuestion": "How can we write the distance to the nearest star without running out of zeros?",
-      "objectives": ["Write large numbers in standard form", "Convert from standard form to ordinary numbers", "Order numbers in standard form"],
-      "successCriteria": ["Write numbers like 45 000 in standard form", "Convert both ways and order a list", "Spot numbers that look like standard form but are not"],
-      "crossCurricular": "Science: astronomy and chemistry; Geography: world population",
-      "smsc": "Spiritual: the vastness of creation (Surah Adh-Dhariyat 51:47, 'We are expanding it')",
-      "keywords": [
-        { "term": "standard form", "def": "A × 10ⁿ where 1 ≤ A < 10 and n is an integer" },
-        { "term": "power of 10", "def": "10 multiplied by itself, e.g. 10³ = 1000" },
-        { "term": "ordinary number", "def": "a number written in full" },
-        { "term": "magnitude", "def": "the size of a number" }
-      ],
-      "starter": ["Evaluate 10⁴", "Simplify 10³ × 10²", "Work out 4.5 × 100", "How many zeros in one million?"],
-      "teach": [
-        { "heading": "The form A × 10ⁿ", "bullets": ["A is at least 1 and less than 10", "n says how many places the digits move", "Large numbers: n is positive"], "note": "Show 7 000 000 = 7 × 10⁶. Ask why 70 × 10⁵ is not standard form.", "misconception": { "wrong": "45 000 = 45 × 10³ in standard form", "right": "A must be between 1 and 10: 4.5 × 10⁴" } },
-        { "heading": "Converting to standard form", "bullets": ["Put the point after the first digit", "Count the places it moved"], "note": "Model with the world population.", "model": { "problem": "Write 8 100 000 000 in standard form", "steps": ["Place the point after the first non-zero digit: 8.1", "Count the place values moved: 9", "Write 8.1 × 10⁹"], "answer": "8.1 × 10⁹" } },
-        { "heading": "Ordering", "bullets": ["Compare the powers first", "If the powers match, compare A"], "note": "Planet example: Earth's mass is about 5.97 × 10²⁴ kg; the Moon's about 7.35 × 10²² kg. Which is bigger? Earth: higher power.", "table": { "head": ["Number", "Standard form"], "rows": [["340 000", "3.4 × 10⁵"], ["2 700 000", "2.7 × 10⁶"], ["910 000", "9.1 × 10⁵"]] } },
-        { "heading": "Check: standard form", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is 62 000 000 in standard form?", "options": ["62 × 10⁶", "6.2 × 10⁷", "6.2 × 10⁶", "0.62 × 10⁸"], "answer": 1, "why": "6.2 with the point moved 7 places. A and D are not standard form; C moves only 6 places." } }
-      ],
-      "practice": ["Write 5 300 in standard form", "Write 7.08 × 10⁵ as an ordinary number", "Order: 4.1 × 10⁶, 9.9 × 10⁵, 4.01 × 10⁶"],
-      "independent": ["Core: Write in standard form: (a) 600 000 (b) 38 000 (c) 1 250 000 (d) 470 million", "Extend: The Sun is about 1.5 × 10⁸ km from Earth; Neptune about 4.5 × 10⁹ km from the Sun. Write both as ordinary numbers and say how many times further Neptune is.", "Stretch: Write 45 × 10⁶ and 0.3 × 10⁹ correctly in standard form, and explain the rule you used."],
-      "exit": ["Write 92 000 in standard form", "Write 3.6 × 10⁴ as an ordinary number", "Why is 12 × 10³ not standard form?"],
-      "homework": "Find five huge numbers (e.g. distances in space, populations) and write each in standard form, ordered from smallest to largest.",
-      "send": "Support: place-value grid to count moves. Stretch: converting non-standard forms."
-    },
-    {
-      "unit": "Unit 1: Indices and standard form",
-      "n": 6,
-      "title": "Standard form for small numbers",
-      "duration": 50,
-      "bigQuestion": "How small is a bacterium, and how can we write it neatly?",
-      "objectives": ["Write small numbers in standard form using negative powers of 10", "Convert from standard form to ordinary numbers", "Order small numbers in standard form"],
-      "successCriteria": ["Write numbers like 0.004 in standard form", "Convert both ways and order a list of small numbers", "Explain why a negative power means a small number"],
-      "crossCurricular": "Science: sizes of cells, atoms and wavelengths",
-      "smsc": "Spiritual: the detail of creation down to the tiniest scale",
-      "keywords": [
-        { "term": "negative index", "def": "10⁻ⁿ means 1 ÷ 10ⁿ" },
-        { "term": "standard form", "def": "A × 10ⁿ with 1 ≤ A < 10" },
-        { "term": "micrometre (µm)", "def": "one millionth of a metre, 10⁻⁶ m" },
-        { "term": "decimal place", "def": "a position after the decimal point" }
-      ],
-      "starter": ["Write 72 000 in standard form", "Evaluate 10⁻¹", "Evaluate 10⁻²", "Order 3 × 10⁵, 9 × 10⁴"],
-      "teach": [
-        { "heading": "Negative powers of 10", "bullets": ["10⁻¹ = 0.1", "10⁻² = 0.01", "10⁻³ = 0.001"], "note": "Link back to last lesson's index laws pattern." },
-        { "heading": "Converting small numbers", "bullets": ["Move the point to after the first non-zero digit", "Count the moves: the power is negative"], "note": "Model with a real measurement.", "model": { "problem": "A bacterium is 0.000 002 m long. Write this in standard form.", "steps": ["First non-zero digit: 2", "Move the point 6 places right to get 2", "Small number, so the power is negative"], "answer": "2 × 10⁻⁶ m" } },
-        { "heading": "Ordering small numbers", "bullets": ["The more negative the power, the smaller the number", "10⁻⁸ is smaller than 10⁻⁵"], "note": "Ask pupils to order a red blood cell (8 × 10⁻⁶ m), a virus (1 × 10⁻⁷ m) and a grain of sand (5 × 10⁻⁴ m).", "misconception": { "wrong": "4 × 10⁻⁷ is bigger than 4 × 10⁻³ because 7 > 3", "right": "10⁻⁷ is much smaller: 0.000 0004 < 0.004" } },
-        { "heading": "Check: small numbers", "bullets": [], "note": "Show me on 3.", "check": { "q": "Write 0.000 53 in standard form", "options": ["5.3 × 10⁴", "5.3 × 10⁻⁴", "53 × 10⁻⁵", "5.3 × 10⁻³"], "answer": 1, "why": "Move the point 4 places to get 5.3, power −4. A uses a positive power; C is not standard form; D miscounts." } }
-      ],
-      "practice": ["Write 0.009 in standard form", "Write 6.2 × 10⁻³ as an ordinary number", "Order: 3 × 10⁻⁴, 7 × 10⁻⁵, 1.2 × 10⁻⁴"],
-      "independent": ["Core: Write in standard form: (a) 0.07 (b) 0.000 41 (c) 0.000 006 (d) 0.12", "Extend: A human hair is about 8 × 10⁻⁵ m wide. A sheet of paper is about 1 × 10⁻⁴ m thick. Which is thicker, and by how much (ordinary number)?", "Stretch: Write 0.5 × 10⁻³ and 45 × 10⁻⁸ in correct standard form."],
-      "exit": ["Write 0.0032 in standard form", "Write 9 × 10⁻⁵ as an ordinary number", "Which is smaller: 2 × 10⁻⁶ or 2 × 10⁻⁴?"],
-      "homework": "Find the sizes of five tiny things (cells, atoms, viruses) and write them in standard form in order.",
-      "send": "Support: place-value grid showing decimals. Stretch: mixed large/small ordering."
-    },
-    {
-      "unit": "Unit 1: Indices and standard form",
-      "n": 7,
-      "title": "Calculating with standard form",
-      "duration": 50,
-      "bigQuestion": "How many times heavier is the Sun than the Earth?",
-      "objectives": ["Multiply and divide numbers in standard form", "Add and subtract numbers in standard form", "Use a calculator with standard form"],
-      "successCriteria": ["Multiply and divide in standard form using index laws", "Add and subtract by converting to the same power", "Give answers correctly in standard form after adjusting A"],
-      "crossCurricular": "Science: physics calculations; Geography: global data",
-      "smsc": "Spiritual: scale of the universe as a sign for reflection",
-      "keywords": [
-        { "term": "standard form", "def": "A × 10ⁿ with 1 ≤ A < 10" },
-        { "term": "index law", "def": "10ᵃ × 10ᵇ = 10ᵃ⁺ᵇ" },
-        { "term": "adjust", "def": "rewrite so that A is between 1 and 10" },
-        { "term": "EXP/×10ˣ key", "def": "the calculator key for standard form" }
-      ],
-      "starter": ["Write 0.006 in standard form", "Simplify 10⁵ × 10³", "Simplify 10⁸ ÷ 10²", "Write 4.2 × 10³ as an ordinary number"],
-      "teach": [
-        { "heading": "Multiplying", "bullets": ["Multiply the A numbers", "Add the powers", "Adjust if A ≥ 10"], "note": "Model.", "model": { "problem": "Work out (4 × 10⁵) × (6 × 10³)", "steps": ["4 × 6 = 24", "10⁵ × 10³ = 10⁸", "24 × 10⁸ is not standard form", "24 = 2.4 × 10¹, so 2.4 × 10⁹"], "answer": "2.4 × 10⁹" } },
-        { "heading": "Dividing", "bullets": ["Divide the A numbers", "Subtract the powers", "Adjust if A < 1"], "note": "Example: (3 × 10⁴) ÷ (6 × 10⁷) = 0.5 × 10⁻³ = 5 × 10⁻⁴." },
-        { "heading": "Adding and subtracting", "bullets": ["Convert to ordinary numbers or the same power", "Then add or subtract"], "note": "Example: 3.2 × 10⁴ + 5 × 10³ = 32 000 + 5 000 = 37 000 = 3.7 × 10⁴.", "misconception": { "wrong": "3 × 10⁴ + 2 × 10³ = 5 × 10⁷", "right": "30 000 + 2 000 = 32 000 = 3.2 × 10⁴" } },
-        { "heading": "Calculator use", "bullets": ["Use the ×10ˣ key", "Do not type × 10 ^ separately inside divisions"], "note": "Show the Sun's mass 1.99 × 10³⁰ kg ÷ Earth's 5.97 × 10²⁴ kg ≈ 3.33 × 10⁵. The Sun is about 333 000 times heavier." },
-        { "heading": "Check: multiply", "bullets": [], "note": "Show me on 3.", "check": { "q": "(5 × 10⁶) × (3 × 10⁻²) =", "options": ["15 × 10⁴", "1.5 × 10⁵", "1.5 × 10⁴", "8 × 10⁴"], "answer": 1, "why": "15 × 10⁴ = 1.5 × 10⁵ after adjusting. A is not standard form; C forgets to add 1 to the power." } }
-      ],
-      "practice": ["(2 × 10³) × (4 × 10⁵)", "(9 × 10⁸) ÷ (3 × 10²)", "6 × 10⁵ + 4 × 10⁴"],
-      "independent": ["Core: (a) (3 × 10⁴) × (2 × 10⁶) (b) (8 × 10⁹) ÷ (4 × 10³) (c) (7 × 10³) × (5 × 10²) (d) 4.5 × 10⁶ − 5 × 10⁵", "Extend: Light travels 3 × 10⁸ m/s. How far does it travel in one minute? Give your answer in standard form.", "Stretch: An atom has a diameter of about 1 × 10⁻¹⁰ m. How many atoms side by side would make 1 mm?"],
-      "exit": ["(6 × 10³) × (2 × 10⁴)", "(8 × 10⁵) ÷ (2 × 10⁷)", "3 × 10³ + 4 × 10²"],
-      "homework": "Use standard form to compare the sizes of three planets (diameters) and work out how many times bigger the largest is than the smallest.",
-      "send": "Support: worked-example card. Stretch: problems with mixed units."
-    },
-    {
-      "unit": "Unit 2: Expressions and formulae",
-      "n": 8,
-      "title": "Solving equations with fractions",
-      "duration": 50,
-      "bigQuestion": "How do we 'undo' a fraction in an equation?",
-      "objectives": ["Solve equations where the unknown is divided by a number", "Solve equations with fractions on one or both sides", "Give fractional answers in their simplest form"],
-      "successCriteria": ["Solve x/4 = 7 and (x + 2)/3 = 5", "Solve equations with two fractions using a common multiple", "Decide when to give answers as fractions or decimals"],
-      "crossCurricular": "Science: rearranging physics formulae; Business: sharing profits",
-      "smsc": "Moral: keeping both sides balanced, like justice ('adl)",
-      "keywords": [
-        { "term": "equation", "def": "a statement with an equals sign containing an unknown" },
-        { "term": "solve", "def": "find the value of the unknown that makes it true" },
-        { "term": "inverse operation", "def": "the operation that undoes another" },
-        { "term": "common multiple", "def": "a number both denominators divide into" }
-      ],
-      "starter": ["Solve 3x = 21", "Solve x + 7 = 12", "Find the LCM of 3 and 4", "Work out 2 × 10³ × 3"],
-      "teach": [
-        { "heading": "Undoing division", "bullets": ["x/4 = 7: multiply both sides by 4", "x = 28", "Balance: same to both sides"], "note": "Use a balance-scales picture." },
-        { "heading": "A bracket on top", "bullets": ["Multiply both sides by the denominator first", "Then solve the linear equation"], "note": "Model.", "model": { "problem": "Solve (2x + 3)/5 = 7", "steps": ["Multiply both sides by 5: 2x + 3 = 35", "Subtract 3: 2x = 32", "Divide by 2"], "answer": "x = 16" } },
-        { "heading": "Two fractions", "bullets": ["Multiply every term by the LCM of the denominators", "This clears the fractions"], "note": "Example: x/3 + x/4 = 14. Multiply by 12: 4x + 3x = 168, so 7x = 168, x = 24.", "misconception": { "wrong": "x/3 + 2 = 5 → x + 2 = 15", "right": "Multiply every term: x + 6 = 15, so x = 9" } },
-        { "heading": "Check: solve", "bullets": [], "note": "Show me on 3.", "check": { "q": "Solve (x − 4)/3 = 6", "options": ["x = 6", "x = 22", "x = 14", "x = 10"], "answer": 1, "why": "x − 4 = 18 so x = 22. C subtracts 4 after multiplying; D adds 4 to 6 without multiplying." } }
-      ],
-      "practice": ["Solve x/5 = 9", "Solve (x + 1)/4 = 3", "Solve 2x/3 = 8", "Solve x/2 + x/3 = 10"],
-      "independent": ["Core: Solve (a) x/6 = 4 (b) (3x − 1)/2 = 7 (c) (x + 5)/4 = 2 (d) 5x/3 = 20", "Extend: Solve x/2 − x/5 = 9 and (x + 1)/3 = (x − 1)/2", "Stretch: Hamza spends a third of his money on a book and a quarter on lunch. He has £20 left. How much did he start with? Write and solve an equation."],
-      "exit": ["Solve x/7 = 3", "Solve (x + 2)/5 = 4", "Solve x/2 + x/4 = 9"],
-      "homework": "Write three word problems that lead to equations with fractions and solve them.",
-      "send": "Support: balance diagrams. Stretch: equations with unknowns on both sides and fractions."
-    },
-    {
-      "unit": "Unit 2: Expressions and formulae",
-      "n": 9,
-      "title": "Substituting into expressions",
-      "duration": 50,
-      "bigQuestion": "Why must we be extra careful substituting negative numbers?",
-      "objectives": ["Substitute positive and negative numbers into expressions", "Use the order of operations when substituting", "Substitute into expressions with powers"],
-      "successCriteria": ["Substitute positive whole numbers into expressions", "Substitute negatives and fractions, using brackets", "Spot and explain common substitution errors"],
-      "crossCurricular": "Science: using formulae such as v = u + at; Computing: variables",
-      "smsc": "Moral: careful working prevents errors that could harm others (e.g. drug doses)",
-      "keywords": [
-        { "term": "substitute", "def": "replace a letter with a number" },
-        { "term": "expression", "def": "terms combined with operations, without an equals sign" },
-        { "term": "term", "def": "a single number, letter or product such as 3x²" },
-        { "term": "evaluate", "def": "find the value" }
-      ],
-      "starter": ["Solve x/3 = 8", "Evaluate (−4)²", "Evaluate 2 × (−3) + 7", "What does 3x mean?"],
-      "teach": [
-        { "heading": "Use brackets for negatives", "bullets": ["Replace the letter with (number)", "Then follow BIDMAS"], "note": "Model.", "model": { "problem": "Find 2x² − 3y when x = −4 and y = −5", "steps": ["2 × (−4)² − 3 × (−5)", "(−4)² = 16, so 2 × 16 = 32", "3 × (−5) = −15", "32 − (−15) = 47"], "answer": "47" } },
-        { "heading": "Squaring negatives", "bullets": ["(−4)² = 16", "2x² means 2 × x², not (2x)²"], "note": "Highlight this classic error.", "misconception": { "wrong": "When x = −4, 2x² = (−8)² = 64", "right": "2x² = 2 × (−4)² = 2 × 16 = 32" } },
-        { "heading": "Fractions and decimals", "bullets": ["Same method, take care with arithmetic", "Use a calculator if allowed"], "note": "Example: a = ½, b = 6: 4a + b² = 2 + 36 = 38." },
-        { "heading": "Check: substitute", "bullets": [], "note": "Show me on 3.", "check": { "q": "Find 5 − x² when x = −3", "options": ["14", "−4", "−1", "8"], "answer": 1, "why": "x² = 9, 5 − 9 = −4. A does 5 + 9; D does 5 − (−3)." } }
-      ],
-      "practice": ["Find 3a + 2b when a = 4, b = −1", "Find p² + 2p when p = −3", "Find (x + y)/2 when x = 7, y = −2"],
-      "independent": ["Core: Find the value when m = 3, n = −2: (a) 4m − n (b) m² + n² (c) mn − 5 (d) 2n³", "Extend: Using v = u + at, find v when u = 12, a = −3 and t = 5. Interpret the answer if v is a velocity in m/s.", "Stretch: Find a value of x that makes x² − 5x + 6 equal to 0. Can you find another?"],
-      "exit": ["Find 4y − 7 when y = −2", "Find 3x² when x = −2", "Find a² − b when a = 5, b = −5"],
-      "homework": "Use five science formulae (e.g. speed = distance ÷ time) with given values and substitute to find the answers.",
-      "send": "Support: substitution frame with brackets pre-drawn. Stretch: substitution with standard form."
-    },
-    {
-      "unit": "Unit 2: Expressions and formulae",
-      "n": 10,
-      "title": "Writing and using formulae",
-      "duration": 50,
-      "bigQuestion": "How does a taxi company decide what to charge?",
-      "objectives": ["Write formulae from word descriptions", "Use formulae to find values", "Interpret formulae from real-life contexts"],
-      "successCriteria": ["Write a simple formula from words", "Write a formula with a fixed charge and a rate", "Explain what each part of a formula represents"],
-      "crossCurricular": "Business: pricing plans; Science: physics formulae",
-      "smsc": "Moral: transparent, fair pricing",
-      "keywords": [
-        { "term": "formula", "def": "a rule linking two or more variables with an equals sign" },
-        { "term": "variable", "def": "a letter that can take different values" },
-        { "term": "subject", "def": "the variable on its own on one side of a formula" },
-        { "term": "fixed charge", "def": "a cost that does not change" }
-      ],
-      "starter": ["Find 3n + 4 when n = 5", "Find 2a² when a = −3", "Solve 4x − 2 = 18", "Is 3x + 1 an expression or an equation?"],
-      "teach": [
-        { "heading": "From words to formula", "bullets": ["Choose letters", "Identify the fixed part and the variable part"], "note": "Model.", "model": { "problem": "A taxi charges £3 plus £1.80 per mile. Write a formula for the cost C (£) for m miles.", "steps": ["Fixed charge: £3", "Rate: £1.80 per mile → 1.8m", "Cost = fixed + rate × miles"], "answer": "C = 3 + 1.8m" } },
-        { "heading": "Using the formula", "bullets": ["Substitute, then evaluate", "Answer in context with units"], "note": "C when m = 12: 3 + 1.8 × 12 = 3 + 21.6 = £24.60. Reverse: if C = £30, 1.8m = 27, m = 15 miles." },
-        { "heading": "Expression, equation or formula?", "bullets": ["Expression: no equals sign", "Equation: true for particular values", "Formula: links quantities, true for all values"], "note": "Sort cards: 3x + 2; 3x + 2 = 11; A = lw; v = u + at.", "compare": { "left": { "title": "Equation", "points": ["3x + 2 = 11", "Solve for x = 3"] }, "right": { "title": "Formula", "points": ["A = lw", "Works for any rectangle"] } } },
-        { "heading": "Check: write a formula", "bullets": [], "note": "Show me on 3.", "check": { "q": "Tickets cost £8 each plus a £2 booking fee per order. Which formula gives the cost C for n tickets?", "options": ["C = 8 + 2n", "C = 8n + 2", "C = 10n", "C = 2(8 + n)"], "answer": 1, "why": "£8 per ticket (8n) and £2 once (+ 2). A swaps the rate and fee; C charges the fee per ticket." } }
-      ],
-      "practice": ["Write a formula: total legs L on c cows and h hens", "A plumber charges £40 call-out plus £30 per hour. Write a formula and find the cost for 3 hours.", "The perimeter P of a regular hexagon with side s"],
-      "independent": ["Core: Write formulae: (a) cost of n pencils at 45p (b) the mean m of three numbers a, b, c (c) the area of a triangle", "Extend: Phone plan A: £10 a month plus 5p a text. Plan B: £15 a month and texts free. Write formulae and find how many texts make plan B cheaper.", "Stretch: Write a formula for the number of matchsticks M needed to make a row of n squares, and explain why it works."],
-      "exit": ["Write a formula for the cost C of n apples at 30p each.", "Use C = 5 + 2t to find C when t = 7.", "What does the 5 represent in C = 5 + 2t if t is hours?"],
-      "homework": "Find a real pricing plan (gym, taxi, phone) and write it as a formula, then work out the cost for three uses.",
-      "send": "Support: word-to-symbol cards. Stretch: two-plan comparison graphs."
-    },
-    {
-      "unit": "Unit 2: Expressions and formulae",
-      "n": 11,
-      "title": "Changing the subject of a formula",
-      "duration": 50,
-      "bigQuestion": "If you know your speed and how far you went, how do you find the time?",
-      "objectives": ["Rearrange a formula to change its subject", "Use inverse operations in the correct order", "Rearrange formulae with powers and roots"],
-      "successCriteria": ["Make x the subject of y = x + 7 and y = 3x", "Rearrange two-step formulae like v = u + at for t", "Rearrange formulae with squares, such as A = πr² for r"],
-      "crossCurricular": "Science: speed, density and Ohm's law formulae",
-      "smsc": "Spiritual: the same relationship seen from different viewpoints",
-      "keywords": [
-        { "term": "subject", "def": "the variable on its own on one side" },
-        { "term": "rearrange", "def": "change the formula so a different variable is the subject" },
-        { "term": "inverse operation", "def": "an operation that undoes another" },
-        { "term": "term", "def": "part of a formula separated by + or −" }
-      ],
-      "starter": ["Solve 3x + 4 = 19", "Write a formula: C = £2 per item n plus £5 delivery", "Find v = u + at with u = 2, a = 3, t = 4", "What is the inverse of squaring?"],
-      "teach": [
-        { "heading": "Like solving an equation", "bullets": ["Do the same to both sides", "Undo operations in reverse order"], "note": "Solve 3x + 4 = 19 next to y = 3x + 4. Same steps: x = (y − 4)/3." },
-        { "heading": "Two-step rearrangement", "bullets": ["Remove added terms first", "Then undo multiplication"], "note": "Model.", "model": { "problem": "Make t the subject of v = u + at", "steps": ["Subtract u from both sides: v − u = at", "Divide both sides by a"], "answer": "t = (v − u)/a" } },
-        { "heading": "Powers and roots", "bullets": ["Undo a square with a square root", "Divide first, then root"], "note": "A = πr². Divide by π: A/π = r². Square root: r = √(A/π).", "misconception": { "wrong": "A = πr² → r = A/π − 2", "right": "r = √(A/π): square root undoes the square" } },
-        { "heading": "Check: rearrange", "bullets": [], "note": "Show me on 3.", "check": { "q": "Make x the subject of y = 5x − 2", "options": ["x = 5y − 2", "x = (y + 2)/5", "x = y/5 − 2", "x = (y − 2)/5"], "answer": 1, "why": "Add 2: y + 2 = 5x, then divide by 5. D uses the wrong inverse for − 2; C divides before adding." } }
-      ],
-      "practice": ["Make a the subject of p = a + 9", "Make w the subject of A = lw", "Make x the subject of y = 2x + 7", "Make r the subject of A = πr²"],
-      "independent": ["Core: Make the letter in brackets the subject: (a) s = d/t [d] (b) P = 2l + 2w [l] (c) y = mx + c [x]", "Extend: Make r the subject of V = πr²h and use it to find r when V = 500 cm³ and h = 10 cm (1 d.p.).", "Stretch: Make u the subject of v² = u² + 2as. Then find u when v = 20, a = 3 and s = 50."],
-      "exit": ["Make b the subject of a = b − 6", "Make t the subject of d = st", "Make x the subject of y = 4x + 1"],
-      "homework": "Rearrange five science formulae (speed, density, pressure, Ohm's law, power) for each of their other variables.",
-      "send": "Support: flow-diagram method (function machines) to reverse. Stretch: subject appears twice (preview)."
-    },
-    {
-      "unit": "Unit 2: Expressions and formulae",
-      "n": 12,
-      "title": "Index laws in algebra",
-      "duration": 50,
-      "bigQuestion": "Do the index laws for numbers also work with letters?",
-      "objectives": ["Simplify products and quotients of algebraic powers", "Simplify powers of algebraic terms", "Simplify terms with coefficients and several letters"],
-      "successCriteria": ["Simplify x³ × x⁴ and y⁷ ÷ y²", "Simplify 3a²b × 4ab³ and (2x³)²", "Find and correct errors in index simplifications"],
-      "crossCurricular": "Science: units like m/s² and m³",
-      "smsc": "Spiritual: one rule that applies everywhere",
-      "keywords": [
-        { "term": "coefficient", "def": "the number in front of a letter, e.g. 5 in 5x²" },
-        { "term": "index law", "def": "a rule for simplifying powers with the same base" },
-        { "term": "simplify", "def": "write in the shortest equivalent form" },
-        { "term": "term", "def": "a single part such as 3x²y" }
-      ],
-      "starter": ["Simplify 5³ × 5⁴", "Simplify 2⁸ ÷ 2³", "Simplify (3²)⁴", "Make x the subject of y = x/4"],
-      "teach": [
-        { "heading": "Same laws, letters for bases", "bullets": ["xᵐ × xⁿ = xᵐ⁺ⁿ", "xᵐ ÷ xⁿ = xᵐ⁻ⁿ", "(xᵐ)ⁿ = xᵐⁿ"], "note": "Answer the big question: yes, because a letter stands for a number." },
-        { "heading": "Coefficients and several letters", "bullets": ["Multiply the numbers", "Add powers of each letter separately"], "note": "Model.", "model": { "problem": "Simplify 3a²b × 4ab³", "steps": ["Numbers: 3 × 4 = 12", "a: a² × a = a³", "b: b × b³ = b⁴"], "answer": "12a³b⁴" } },
-        { "heading": "Powers of terms", "bullets": ["Everything in the bracket is raised", "(2x³)² = 2² × x⁶ = 4x⁶"], "note": "This is the most common mistake on the topic.", "misconception": { "wrong": "(2x³)² = 2x⁶", "right": "(2x³)² = 4x⁶: the 2 is squared too" } },
-        { "heading": "Dividing terms", "bullets": ["Divide the numbers", "Subtract powers of each letter"], "note": "Example: 20x⁵y³ ÷ 4x²y = 5x³y²." },
-        { "heading": "Check: simplify", "bullets": [], "note": "Show me on 3.", "check": { "q": "Simplify (3m⁴)³", "options": ["9m⁷", "27m¹²", "3m¹²", "27m⁷"], "answer": 1, "why": "3³ = 27 and (m⁴)³ = m¹². A and D add the indices; C does not cube the 3." } }
-      ],
-      "practice": ["Simplify x⁵ × x²", "Simplify 6y⁷ ÷ 2y³", "Simplify (a³)⁴", "Simplify 2pq × 5p²q"],
-      "independent": ["Core: Simplify (a) 4x² × 3x⁵ (b) 18a⁶ ÷ 6a² (c) (5y²)² (d) 2ab² × 3a²b", "Extend: Simplify (2x²y)³ ÷ 4x³y", "Stretch: Find the missing expressions: 6x³y² × ? = 30x⁵y⁷; (?)³ = 8a⁶b⁹"],
-      "exit": ["Simplify p⁴ × p⁶", "Simplify 15k⁸ ÷ 5k²", "Simplify (4x²)²"],
-      "homework": "Complete an index-laws pyramid where each brick is the product of the two below it.",
-      "send": "Support: expanded forms beside each question. Stretch: negative and zero indices with letters."
-    },
-    {
-      "unit": "Unit 2: Expressions and formulae",
-      "n": 13,
-      "title": "Expanding single brackets and factorising",
-      "duration": 50,
-      "bigQuestion": "Why are expanding and factorising opposites?",
-      "objectives": ["Expand single brackets including powers and negatives", "Expand and simplify sums of brackets", "Factorise expressions fully"],
-      "successCriteria": ["Expand 3(2x − 5) and x(x + 4)", "Expand and simplify expressions like 3(x + 2) − 2(x − 5)", "Factorise fully, e.g. 6x²y + 9xy²"],
-      "crossCurricular": "Science: rearranging formulae; Computing: simplifying expressions",
-      "smsc": "Spiritual: undoing and doing: two views of the same truth",
-      "keywords": [
-        { "term": "expand", "def": "multiply out brackets" },
-        { "term": "factorise", "def": "put into brackets by taking out a common factor" },
-        { "term": "common factor", "def": "a factor shared by every term" },
-        { "term": "simplify", "def": "collect like terms" }
-      ],
-      "starter": ["Simplify 3x × 4x", "Simplify 5a + 2b − 3a", "HCF of 12 and 18?", "Expand 4(x + 3)"],
-      "teach": [
-        { "heading": "Expanding", "bullets": ["Multiply every term inside by the term outside", "Watch the signs"], "note": "Model.", "model": { "problem": "Expand and simplify 3(x + 2) − 2(x − 5)", "steps": ["3(x + 2) = 3x + 6", "−2(x − 5) = −2x + 10", "Collect: 3x − 2x + 6 + 10"], "answer": "x + 16" } },
-        { "heading": "The negative outside", "bullets": ["−2 × −5 = +10"], "note": "Most errors happen here.", "misconception": { "wrong": "−2(x − 5) = −2x − 10", "right": "−2(x − 5) = −2x + 10" } },
-        { "heading": "Factorising fully", "bullets": ["Find the HCF of the numbers", "Then the highest power of each letter in every term"], "note": "6x²y + 9xy²: HCF of numbers 3, letters xy. So 3xy(2x + 3y). Expand to check.", "compare": { "left": { "title": "Expand", "points": ["3xy(2x + 3y)", "multiply out", "= 6x²y + 9xy²"] }, "right": { "title": "Factorise", "points": ["6x²y + 9xy²", "take out the HCF", "= 3xy(2x + 3y)"] }, "label": "⇄" } },
-        { "heading": "Check: factorise fully", "bullets": [], "note": "Show me on 3.", "check": { "q": "Factorise fully 8a² − 12a", "options": ["2(4a² − 6a)", "4(2a² − 3a)", "4a(2a − 3)", "a(8a − 12)"], "answer": 2, "why": "HCF is 4a. A, B and D are correct but not fully factorised." } }
-      ],
-      "practice": ["Expand 5(2y − 3)", "Expand x(x − 7)", "Expand and simplify 2(3a + 1) + 4(a − 2)", "Factorise 10x + 15"],
-      "independent": ["Core: (a) Expand 4(3m − 2) (b) Expand p(p + 9) (c) Factorise 14y − 21 (d) Factorise x² + 5x", "Extend: Expand and simplify 5(2x − 3) − 3(x − 4) and x(x + 3) − 2(x − 1)", "Stretch: Factorise fully 12a³b² − 18a²b³ + 6a²b², and check by expanding."],
-      "exit": ["Expand −3(x − 4)", "Factorise 6x − 9", "Factorise fully 4x² + 8x"],
-      "homework": "Make five expand-and-factorise pairs on cards for a matching game; include one with a negative outside.",
-      "send": "Support: grid method for expanding. Stretch: factorising with three terms."
-    },
-    {
-      "unit": "Unit 2: Expressions and formulae",
-      "n": 14,
-      "title": "Expanding double brackets",
-      "duration": 50,
-      "bigQuestion": "How does an area model explain multiplying two brackets?",
-      "objectives": ["Multiply out two linear brackets", "Simplify the result by collecting like terms", "Expand brackets with negative terms"],
-      "successCriteria": ["Expand (x + 3)(x + 5)", "Expand brackets with negatives, e.g. (x − 4)(x + 2)", "Expand (2x + 1)(3x − 4) and explain each term with an area model"],
-      "crossCurricular": "Science: area of rectangles in diagrams; Computing: algorithms for multiplication",
-      "smsc": "Spiritual: seeing algebra and geometry as one picture",
-      "keywords": [
-        { "term": "quadratic expression", "def": "an expression whose highest power of x is 2" },
-        { "term": "binomial", "def": "an expression with two terms, such as x + 3" },
-        { "term": "like terms", "def": "terms with the same letters and powers" },
-        { "term": "product", "def": "the result of multiplying" }
-      ],
-      "starter": ["Expand 3(x + 4)", "Expand x(x − 2)", "Simplify 5x − 2x + 3", "Work out (−3) × (+4)"],
-      "teach": [
-        { "heading": "The area model", "bullets": ["Each bracket is a side of a rectangle", "Multiply to fill the four regions", "Add the regions"], "note": "Draw a rectangle split into 4 with sides x + 3 and x + 5.", "table": { "head": ["×", "x", "+5"], "rows": [["x", "x²", "5x"], ["+3", "3x", "15"]] } },
-        { "heading": "Expanding with negatives", "bullets": ["Keep the sign with each term", "Collect like terms at the end"], "note": "Model.", "model": { "problem": "Expand and simplify (x − 4)(x + 2)", "steps": ["x × x = x²", "x × 2 = 2x", "−4 × x = −4x", "−4 × 2 = −8; collect 2x − 4x = −2x"], "answer": "x² − 2x − 8" } },
-        { "heading": "Coefficients", "bullets": ["(2x + 1)(3x − 4)", "= 6x² − 8x + 3x − 4", "= 6x² − 5x − 4"], "note": "Ask pupils to check by substituting x = 1 into both forms: (3)(−1) = −3 and 6 − 5 − 4 = −3. ✓" },
-        { "heading": "Only two terms?", "bullets": ["There are always four products before simplifying"], "note": "The classic error multiplies only first and last terms.", "misconception": { "wrong": "(x + 3)(x + 5) = x² + 15", "right": "(x + 3)(x + 5) = x² + 8x + 15" } },
-        { "heading": "Check: expand", "bullets": [], "note": "Show me on 3.", "check": { "q": "Expand (x + 6)(x − 3)", "options": ["x² − 18", "x² + 3x − 18", "x² − 3x − 18", "x² + 9x − 18"], "answer": 1, "why": "−3x + 6x = 3x, and 6 × −3 = −18. C has the wrong sign; D adds 6 + 3." } }
-      ],
-      "practice": ["Expand (x + 2)(x + 7)", "Expand (x − 5)(x + 1)", "Expand (x − 3)(x − 4)"],
-      "independent": ["Core: Expand and simplify (a) (x + 4)(x + 6) (b) (y − 2)(y + 9) (c) (a − 7)(a − 1)", "Extend: Expand (3x + 2)(x − 5) and (2y − 3)(4y + 1)", "Stretch: Show that (n + 1)(n + 2) − n(n + 3) = 2 for every value of n."],
-      "exit": ["Expand (x + 1)(x + 8)", "Expand (x − 2)(x + 5)", "Check your answer to question 2 by substituting x = 1."],
-      "homework": "Expand ten pairs of brackets from the sheet and check three by substitution.",
-      "send": "Support: grid template for every question. Stretch: triple brackets."
-    },
-    {
-      "unit": "Unit 2: Expressions and formulae",
-      "n": 15,
-      "title": "Squaring brackets and the difference of two squares",
-      "duration": 50,
-      "bigQuestion": "Is (a + b)² ever equal to a² + b²?",
-      "objectives": ["Expand squared brackets", "Recognise and use the difference of two squares", "Use expansions for mental calculations"],
-      "successCriteria": ["Expand (x + 4)² correctly with the middle term", "Expand (x + a)(x − a) and recognise the pattern", "Use 51 × 49 = 50² − 1² style mental methods"],
-      "crossCurricular": "Art: square designs and area; History: al-Khwarizmi's geometric algebra",
-      "smsc": "Cultural: the work of Muslim mathematicians such as al-Khwarizmi on squares and completing the square",
-      "keywords": [
-        { "term": "squared bracket", "def": "a bracket multiplied by itself, e.g. (x + 4)²" },
-        { "term": "difference of two squares", "def": "a² − b² = (a + b)(a − b)" },
-        { "term": "identity", "def": "an equation true for all values, shown by ≡" },
-        { "term": "middle term", "def": "the x term in x² + bx + c" }
-      ],
-      "starter": ["Expand (x + 2)(x + 3)", "Expand (x − 1)(x + 4)", "Work out 50²", "Is (3 + 4)² equal to 3² + 4²?"],
-      "teach": [
-        { "heading": "A squared bracket is two brackets", "bullets": ["(x + 4)² = (x + 4)(x + 4)", "= x² + 4x + 4x + 16", "= x² + 8x + 16"], "note": "The area model shows a big square, two rectangles and a small square.", "misconception": { "wrong": "(x + 4)² = x² + 16", "right": "(x + 4)² = x² + 8x + 16: two middle rectangles" } },
-        { "heading": "Difference of two squares", "bullets": ["(x + 5)(x − 5) = x² − 25", "The middle terms cancel", "a² − b² = (a + b)(a − b)"], "note": "Model.", "model": { "problem": "Expand (2x + 3)(2x − 3)", "steps": ["2x × 2x = 4x²", "2x × −3 = −6x and 3 × 2x = 6x", "Middle terms cancel", "3 × −3 = −9"], "answer": "4x² − 9" } },
-        { "heading": "Mental maths tricks", "bullets": ["51 × 49 = (50 + 1)(50 − 1)", "= 2500 − 1 = 2499"], "note": "Challenge: 102 × 98 (9996), 31² (= 900 + 60 + 1 = 961)." },
-        { "heading": "Check: squared bracket", "bullets": [], "note": "Show me on 3.", "check": { "q": "Expand (x − 6)²", "options": ["x² + 36", "x² − 36", "x² − 12x + 36", "x² − 12x − 36"], "answer": 2, "why": "(x − 6)(x − 6) = x² − 6x − 6x + 36. D gets the sign of −6 × −6 wrong." } }
-      ],
-      "practice": ["Expand (x + 3)²", "Expand (x − 7)²", "Expand (x + 9)(x − 9)", "Work out 41 × 39 mentally"],
-      "independent": ["Core: Expand (a) (y + 5)² (b) (a − 1)² (c) (m + 10)(m − 10)", "Extend: Expand (3x − 2)² and (5 + 2y)(5 − 2y)", "Stretch: Prove that the difference between the squares of two consecutive odd numbers is always a multiple of 8."],
-      "exit": ["Expand (x + 6)²", "Expand (x + 4)(x − 4)", "Work out 99 × 101 mentally"],
-      "homework": "Write five mental calculations that use the difference of two squares, with working.",
-      "send": "Support: area model diagrams. Stretch: factorising using the difference of two squares."
-    },
-    {
-      "unit": "Unit 2: Expressions and formulae",
-      "n": 16,
-      "title": "Algebra problem solving and review",
-      "duration": 50,
-      "bigQuestion": "How confident are you to choose the right algebra skill without being told?",
-      "objectives": ["Select and apply skills from Units 1 and 2", "Solve multi-step problems involving formulae and expressions", "Identify and correct misconceptions"],
-      "successCriteria": ["Answer single-skill questions accurately", "Solve multi-step problems combining skills", "Explain and correct errors in worked solutions"],
-      "crossCurricular": "Science: formula problems; Computing: algorithms",
-      "smsc": "Spiritual: reflection (muhasabah) on progress and next steps",
-      "keywords": [
-        { "term": "identity", "def": "true for all values of the variable" },
-        { "term": "prove", "def": "show something is always true using algebra" },
-        { "term": "strategy", "def": "a plan for solving a problem" },
-        { "term": "misconception", "def": "a wrong idea that leads to errors" }
-      ],
-      "starter": ["Write 0.0004 in standard form", "Simplify (2x²)³", "Expand (x − 3)(x + 5)", "Make x the subject of y = 3x + 1"],
-      "teach": [
-        { "heading": "Which skill?", "bullets": ["Read the command word: expand, factorise, solve, simplify, rearrange"], "note": "Sort ten questions by skill before solving any.", "table": { "head": ["Command word", "What to do"], "rows": [["Expand", "Multiply out brackets"], ["Factorise", "Put into brackets"], ["Solve", "Find the value of the unknown"], ["Simplify", "Collect like terms or use index laws"], ["Rearrange / make … the subject", "Get one letter on its own"]] } },
-        { "heading": "A multi-step problem", "bullets": ["Write an expression", "Form an equation", "Solve and answer in context"], "note": "Model.", "model": { "problem": "A rectangle is (x + 3) cm by (x − 1) cm. Its area is 5 cm more than x². Find x.", "steps": ["Area: (x + 3)(x − 1) = x² + 2x − 3", "Equation: x² + 2x − 3 = x² + 5", "Subtract x²: 2x − 3 = 5", "2x = 8"], "answer": "x = 4 (rectangle 7 cm by 3 cm)" } },
-        { "heading": "Fix the error", "bullets": ["One mistake in each line"], "note": "Show three errors: (x + 2)² = x² + 4; 3⁴ × 3² = 9⁶; 5.2 × 10³ × 2 × 10⁴ = 10.4 × 10⁷. Pupils fix them.", "misconception": { "wrong": "5.2 × 10³ × 2 × 10⁴ = 10.4 × 10⁷", "right": "= 1.04 × 10⁸ (A must be less than 10)" } },
-        { "heading": "Check: identify the skill", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is a correct proof step for 'show (n + 3)² − (n − 3)² = 12n'?", "options": ["Substitute n = 1 and get 12", "Expand: n² + 6n + 9 − (n² − 6n + 9)", "(n + 3 − n − 3)² = 0", "9 − 9 = 0"], "answer": 1, "why": "Expanding both squares works for all n. A only checks one case; C and D misuse brackets." } }
-      ],
-      "practice": ["Simplify 12x⁵y² ÷ 4x²y", "Solve (3x + 1)/2 = 8", "Write 4.5 × 10⁻³ as an ordinary number"],
-      "independent": ["Core: Mixed quiz: (a) 3⁻² (b) expand (x + 7)(x − 2) (c) factorise 9y² − 6y (d) make r the subject of C = 2πr", "Extend: The formula for the area of a trapezium is A = ½(a + b)h. Make a the subject and find a when A = 40, b = 6, h = 5.", "Stretch: Prove that the product of two consecutive even numbers plus 1 is always a square number."],
-      "exit": ["Which skill does 'make t the subject' need?", "Fix: (x − 5)² = x² − 25", "Rate your confidence 1 to 3 for each unit."],
-      "homework": "Complete the Units 1–2 review sheet and write two targets based on your weakest topics.",
-      "send": "Support: skill cards with a worked example each. Stretch: algebraic proof challenges."
+     "term": "evaluate",
+     "def": "work out the value"
     }
-  ]
+   ],
+   "starter": [
+    "Bismillah. Work out 2⁴",
+    "Work out 5 + 2 × 3",
+    "Work out (−2) × (−2) × (−2)",
+    "Work out √49 + 1"
+   ],
+   "teach": [
+    {
+     "heading": "Indices come before × and ÷",
+     "bullets": [
+      "B, then I, then D/M, then A/S",
+      "The index belongs only to the number it touches"
+     ],
+     "note": "Show 3 × 2³ = 24, not 216.",
+     "misconception": {
+      "wrong": "−3² = 9",
+      "right": "−3² = −(3²) = −9, but (−3)² = 9"
+     }
+    },
+    {
+     "heading": "Nested brackets",
+     "bullets": [
+      "Work from the inside out",
+      "Round brackets first, then square"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Evaluate 2 × [20 − (1 + 2)²] + 4³",
+      "steps": [
+       "Inner bracket: 1 + 2 = 3",
+       "3² = 9; square bracket: 20 − 9 = 11",
+       "2 × 11 = 22; 4³ = 64",
+       "22 + 64 = 86"
+      ],
+      "answer": "86"
+     }
+    },
+    {
+     "heading": "Calculator check",
+     "bullets": [
+      "Type (−3)² with brackets",
+      "Without brackets most calculators give −9"
+     ],
+     "note": "Pupils try both on their calculators and report results in the chat."
+    },
+    {
+     "heading": "Check: order",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Evaluate 50 − 2 × 3²",
+      "options": [
+       "432",
+       "32",
+       "14",
+       "−14"
+      ],
+      "answer": 1,
+      "why": "3² = 9, 2 × 9 = 18, 50 − 18 = 32. A does (50 − 2) × 9; C does 50 − 6²."
+     }
+    }
+   ],
+   "practice": [
+    "Evaluate 4 × 5²",
+    "Evaluate (4 × 5)²",
+    "Evaluate −2⁴ and (−2)⁴",
+    "Evaluate [3 + (6 − 4)³] × 2"
+   ],
+   "independent": [
+    "Core: (a) 7 + 3 × 2³ (b) (10 − 7)³ − 5 (c) 6² ÷ (1 + 3)² (d) −5² + 30",
+    "Extend: Insert brackets to make true: 2 + 3² × 4 = 100; 18 − 3² + 1 = 8",
+    "Stretch: Find the value of x² − 2x + 3 when x = −4, showing each step. Then find a negative value of x that gives 18."
+   ],
+   "exit": [
+    "Evaluate 3 × 4²",
+    "Evaluate (−5)²",
+    "Evaluate [2 × (3 + 1)]²"
+   ],
+   "homework": "Write five calculations with powers where removing or moving brackets changes the answer; give both answers.",
+   "send": "Support: BIDMAS step frame with a column per stage. Stretch: create calculations with a target value."
+  },
+  {
+   "unit": "Unit 1: Indices and standard form",
+   "n": 2,
+   "title": "Calculating with powers, roots and fractions",
+   "duration": 50,
+   "bigQuestion": "What does it mean to square a fraction or find its square root?",
+   "objectives": [
+    "Square and cube fractions and decimals",
+    "Find square roots and cube roots of fractions",
+    "Combine powers, roots and fractions in calculations"
+   ],
+   "successCriteria": [
+    "Square a simple fraction",
+    "Find roots of fractions and evaluate mixed calculations",
+    "Explain why squaring a fraction less than 1 makes it smaller"
+   ],
+   "crossCurricular": "Science: scaling areas in diagrams; Art: scaling designs",
+   "smsc": "Spiritual: surprises in maths that challenge intuition",
+   "keywords": [
+    {
+     "term": "numerator",
+     "def": "the top number of a fraction"
+    },
+    {
+     "term": "denominator",
+     "def": "the bottom number of a fraction"
+    },
+    {
+     "term": "reciprocal",
+     "def": "1 divided by the number; the fraction flipped"
+    },
+    {
+     "term": "root",
+     "def": "the inverse of a power"
+    }
+   ],
+   "starter": [
+    "Evaluate 3 × 2²",
+    "Work out ¾ × ½",
+    "What is √64?",
+    "What is 0.5 × 0.5?"
+   ],
+   "teach": [
+    {
+     "heading": "Powers of fractions",
+     "bullets": [
+      "Apply the power to top and bottom",
+      "(2/3)² = 4/9",
+      "Fractions below 1 get smaller when squared"
+     ],
+     "note": "Link to the big question: (1/2)² = 1/4, a quarter is smaller than a half.",
+     "misconception": {
+      "wrong": "(2/3)² = 4/3",
+      "right": "(2/3)² = 2²/3² = 4/9"
+     }
+    },
+    {
+     "heading": "Roots of fractions",
+     "bullets": [
+      "Root the top and the bottom",
+      "√(25/49) = 5/7",
+      "∛(8/27) = 2/3"
+     ],
+     "note": "Practise: √(9/16), ∛(1/64)."
+    },
+    {
+     "heading": "Mixed calculation",
+     "bullets": [
+      "Indices and roots first",
+      "Then multiply, then add"
+     ],
+     "note": "Model and narrate.",
+     "model": {
+      "problem": "Evaluate (3/4)² + √(1/16) × 2",
+      "steps": [
+       "(3/4)² = 9/16",
+       "√(1/16) = 1/4",
+       "1/4 × 2 = 1/2 = 8/16",
+       "9/16 + 8/16 = 17/16"
+      ],
+      "answer": "17/16 = 1 1/16"
+     }
+    },
+    {
+     "heading": "Check: fractions and powers",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Evaluate (2/5)³",
+      "options": [
+       "6/15",
+       "8/125",
+       "8/5",
+       "6/125"
+      ],
+      "answer": 1,
+      "why": "2³ = 8 and 5³ = 125. A multiplies by 3; C cubes only the numerator."
+     }
+    }
+   ],
+   "practice": [
+    "Evaluate (1/3)²",
+    "Evaluate √(36/81)",
+    "Evaluate (0.2)³",
+    "Evaluate (1/2)² + (1/4)"
+   ],
+   "independent": [
+    "Core: (a) (5/6)² (b) ∛(27/1000) (c) (1/2)³ × 16 (d) √(49/100) + 0.3",
+    "Extend: A square has area 81/169 m². Find its perimeter.",
+    "Stretch: Find a fraction whose square is bigger than itself, one whose square is smaller, and one where they are equal. Explain the rule."
+   ],
+   "exit": [
+    "Evaluate (3/5)²",
+    "Evaluate √(4/9)",
+    "Which is bigger: 0.8 or 0.8²?"
+   ],
+   "homework": "Complete a table of x, x², x³ and √x for x = 1/4, 1/2, 0.9, 1, 4 and describe the patterns.",
+   "send": "Support: fraction wall. Stretch: negative indices (preview)."
+  },
+  {
+   "unit": "Unit 1: Indices and standard form",
+   "n": 3,
+   "title": "Estimating calculations",
+   "duration": 50,
+   "bigQuestion": "How do engineers check a calculation before trusting it with real lives?",
+   "objectives": [
+    "Round to 1 significant figure to estimate",
+    "Estimate calculations including powers and roots",
+    "Judge whether an estimate is an over- or underestimate"
+   ],
+   "successCriteria": [
+    "Estimate products and quotients by rounding to 1 s.f.",
+    "Estimate calculations with roots, powers and fractions",
+    "Justify whether the estimate is too big or too small"
+   ],
+   "crossCurricular": "Science: order of magnitude in physics; Geography: estimating resources",
+   "smsc": "Moral: responsibility to check work that affects other people",
+   "keywords": [
+    {
+     "term": "significant figure",
+     "def": "a digit that tells you about the size of a number"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate answer using rounded values"
+    },
+    {
+     "term": "≈",
+     "def": "approximately equal to"
+    },
+    {
+     "term": "underestimate",
+     "def": "an estimate smaller than the exact answer"
+    }
+   ],
+   "starter": [
+    "Round 0.0472 to 1 s.f.",
+    "Evaluate (1/2)³",
+    "Work out 600 ÷ 0.2",
+    "Work out √(100) × 3²"
+   ],
+   "teach": [
+    {
+     "heading": "Rounding roots",
+     "bullets": [
+      "Round to a nearby square or cube",
+      "√47 ≈ √49 = 7",
+      "∛130 ≈ ∛125 = 5"
+     ],
+     "note": "Better to choose a perfect square than to round to 1 s.f. first: √47 rounded to √50 is no easier."
+    },
+    {
+     "heading": "A full estimate",
+     "bullets": [
+      "Round each number",
+      "Choose friendly roots and powers",
+      "Write ≈"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Estimate (9.87 × √62) ÷ 0.198",
+      "steps": [
+       "9.87 ≈ 10; √62 ≈ √64 = 8",
+       "0.198 ≈ 0.2",
+       "10 × 8 = 80",
+       "80 ÷ 0.2 = 400"
+      ],
+      "answer": "≈ 400 (exact 392.5…)"
+     }
+    },
+    {
+     "heading": "Over or under?",
+     "bullets": [
+      "Numbers in the top rounded up: overestimate",
+      "Numbers in the bottom rounded up: underestimate"
+     ],
+     "note": "In the model we rounded 9.87 up (over), √62 up (over), and 0.198 up in the bottom (under). The effects partly cancel.",
+     "compare": {
+      "left": {
+       "title": "Overestimate when…",
+       "points": [
+        "Multiplied numbers rounded up",
+        "Divisor rounded down"
+       ]
+      },
+      "right": {
+       "title": "Underestimate when…",
+       "points": [
+        "Multiplied numbers rounded down",
+        "Divisor rounded up"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Check: estimate",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Best estimate of 4.1³ − √99?",
+      "options": [
+       "54",
+       "64",
+       "74",
+       "21"
+      ],
+      "answer": 0,
+      "why": "4³ = 64 and √100 = 10, so 64 − 10 = 54. B forgets to subtract the root; C adds it instead; D cubes the wrong way (4 × 3 + 9)."
+     }
+    }
+   ],
+   "practice": [
+    "Estimate 312 × 0.49",
+    "Estimate √83 × 21",
+    "Estimate 6.9² ÷ 2.1"
+   ],
+   "independent": [
+    "Core: Estimate (a) 59.6 × 0.31 (b) √(48.5) + 3.9² (c) 812 ÷ 0.39",
+    "Extend: Estimate (21.7 × 3.08²) ÷ √(15.8). Say if it is over or under and why.",
+    "Stretch: The Earth is about 150 million km from the Sun and light travels about 300 000 km per second. Estimate how long sunlight takes to reach us in minutes."
+   ],
+   "exit": [
+    "Estimate √35 × 9.8",
+    "Estimate 4.95 ÷ 0.51",
+    "Is your estimate of 9.8 × 3.1 over or under?"
+   ],
+   "homework": "Estimate then calculate five calculations from science or geography homework, recording the percentage difference.",
+   "send": "Support: list of square and cube numbers. Stretch: order-of-magnitude problems."
+  },
+  {
+   "unit": "Unit 1: Indices and standard form",
+   "n": 4,
+   "title": "Index laws for numbers",
+   "duration": 50,
+   "bigQuestion": "Why do we add indices when we multiply powers?",
+   "objectives": [
+    "Use the laws of indices for multiplying and dividing powers",
+    "Raise a power to a power",
+    "Understand zero and negative indices for numbers"
+   ],
+   "successCriteria": [
+    "Simplify a³ × a⁴ type questions with numbers",
+    "Simplify powers of powers and divisions",
+    "Explain why 5⁰ = 1 and 2⁻³ = 1/8"
+   ],
+   "crossCurricular": "Science: very large and small quantities; Computing: storage sizes (2¹⁰ bytes)",
+   "smsc": "Spiritual: the elegance of short rules that explain a lot",
+   "keywords": [
+    {
+     "term": "index law",
+     "def": "a rule for simplifying powers with the same base"
+    },
+    {
+     "term": "power of a power",
+     "def": "a power raised to another power, e.g. (2³)²"
+    },
+    {
+     "term": "zero index",
+     "def": "any non-zero number to the power 0 equals 1"
+    },
+    {
+     "term": "negative index",
+     "def": "a⁻ⁿ means 1 ÷ aⁿ"
+    }
+   ],
+   "starter": [
+    "Write 2 × 2 × 2 × 2 as a power",
+    "Evaluate 3⁴",
+    "Estimate √50",
+    "Evaluate (1/2)²"
+   ],
+   "teach": [
+    {
+     "heading": "Writing it out",
+     "bullets": [
+      "3² × 3⁴ = (3 × 3) × (3 × 3 × 3 × 3) = 3⁶",
+      "Count the 3s: 2 + 4 = 6"
+     ],
+     "note": "Let pupils discover the rule by expanding three examples."
+    },
+    {
+     "heading": "The three laws",
+     "bullets": [
+      "Same base only"
+     ],
+     "note": "Explain each with an expansion.",
+     "table": {
+      "head": [
+       "Law",
+       "Example"
+      ],
+      "rows": [
+       [
+        "aᵐ × aⁿ = aᵐ⁺ⁿ",
+        "5³ × 5² = 5⁵"
+       ],
+       [
+        "aᵐ ÷ aⁿ = aᵐ⁻ⁿ",
+        "7⁶ ÷ 7² = 7⁴"
+       ],
+       [
+        "(aᵐ)ⁿ = aᵐⁿ",
+        "(2³)⁴ = 2¹²"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Zero and negative indices",
+     "bullets": [
+      "Follow the pattern: 2³ = 8, 2² = 4, 2¹ = 2",
+      "Halve each time: 2⁰ = 1, 2⁻¹ = 1/2"
+     ],
+     "note": "Also: 5³ ÷ 5³ = 5⁰, but anything divided by itself is 1.",
+     "model": {
+      "problem": "Evaluate 4⁻²",
+      "steps": [
+       "Negative index means reciprocal",
+       "4⁻² = 1 ÷ 4²",
+       "4² = 16"
+      ],
+      "answer": "1/16"
+     }
+    },
+    {
+     "heading": "Multiplying the bases",
+     "bullets": [
+      "Do not multiply the bases",
+      "Do not multiply the indices when multiplying"
+     ],
+     "note": "Common errors to spot.",
+     "misconception": {
+      "wrong": "3² × 3⁴ = 9⁸",
+      "right": "3² × 3⁴ = 3⁶ (same base, add the indices)"
+     }
+    },
+    {
+     "heading": "Check: index laws",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Simplify (6⁴)³ ÷ 6⁵",
+      "options": [
+       "6²",
+       "6⁷",
+       "6¹²",
+       "6¹⁷"
+      ],
+      "answer": 1,
+      "why": "(6⁴)³ = 6¹², then 6¹² ÷ 6⁵ = 6⁷. A adds 4 + 3 first; D adds 12 + 5."
+     }
+    }
+   ],
+   "practice": [
+    "Simplify 4³ × 4⁵",
+    "Simplify 9⁸ ÷ 9³",
+    "Simplify (5²)³",
+    "Evaluate 3⁻²"
+   ],
+   "independent": [
+    "Core: Simplify as a single power: (a) 2⁷ × 2³ (b) 10⁹ ÷ 10⁴ (c) (7²)⁵ (d) 8³ × 8 ÷ 8²",
+    "Extend: Find n: (a) 3ⁿ × 3² = 3⁹ (b) 5⁸ ÷ 5ⁿ = 5³ (c) 2ⁿ = 1/32",
+    "Stretch: Write 8² × 4³ as a single power of 2. Then write 27 × 9² ÷ 3⁵ as a single power of 3."
+   ],
+   "exit": [
+    "Simplify 6² × 6⁷",
+    "Simplify (3⁴)²",
+    "Evaluate 7⁰ and 2⁻¹"
+   ],
+   "homework": "Complete the index-laws puzzle grid (each row and column multiplies to the given power).",
+   "send": "Support: expanded forms alongside each question. Stretch: fractional indices preview."
+  },
+  {
+   "unit": "Unit 1: Indices and standard form",
+   "n": 5,
+   "title": "Standard form for large numbers",
+   "duration": 50,
+   "bigQuestion": "How can we write the distance to the nearest star without running out of zeros?",
+   "objectives": [
+    "Write large numbers in standard form",
+    "Convert from standard form to ordinary numbers",
+    "Order numbers in standard form"
+   ],
+   "successCriteria": [
+    "Write numbers like 45 000 in standard form",
+    "Convert both ways and order a list",
+    "Spot numbers that look like standard form but are not"
+   ],
+   "crossCurricular": "Science: astronomy and chemistry; Geography: world population",
+   "smsc": "Spiritual: the vastness of creation (Surah Adh-Dhariyat 51:47, 'We are expanding it')",
+   "keywords": [
+    {
+     "term": "standard form",
+     "def": "A × 10ⁿ where 1 ≤ A < 10 and n is an integer"
+    },
+    {
+     "term": "power of 10",
+     "def": "10 multiplied by itself, e.g. 10³ = 1000"
+    },
+    {
+     "term": "ordinary number",
+     "def": "a number written in full"
+    },
+    {
+     "term": "magnitude",
+     "def": "the size of a number"
+    }
+   ],
+   "starter": [
+    "Evaluate 10⁴",
+    "Simplify 10³ × 10²",
+    "Work out 4.5 × 100",
+    "How many zeros in one million?"
+   ],
+   "teach": [
+    {
+     "heading": "The form A × 10ⁿ",
+     "bullets": [
+      "A is at least 1 and less than 10",
+      "n says how many places the digits move",
+      "Large numbers: n is positive"
+     ],
+     "note": "Show 7 000 000 = 7 × 10⁶. Ask why 70 × 10⁵ is not standard form.",
+     "misconception": {
+      "wrong": "45 000 = 45 × 10³ in standard form",
+      "right": "A must be between 1 and 10: 4.5 × 10⁴"
+     }
+    },
+    {
+     "heading": "Converting to standard form",
+     "bullets": [
+      "Put the point after the first digit",
+      "Count the places it moved"
+     ],
+     "note": "Model with the world population.",
+     "model": {
+      "problem": "Write 8 100 000 000 in standard form",
+      "steps": [
+       "Place the point after the first non-zero digit: 8.1",
+       "Count the place values moved: 9",
+       "Write 8.1 × 10⁹"
+      ],
+      "answer": "8.1 × 10⁹"
+     }
+    },
+    {
+     "heading": "Ordering",
+     "bullets": [
+      "Compare the powers first",
+      "If the powers match, compare A"
+     ],
+     "note": "Planet example: Earth's mass is about 5.97 × 10²⁴ kg; the Moon's about 7.35 × 10²² kg. Which is bigger? Earth: higher power.",
+     "table": {
+      "head": [
+       "Number",
+       "Standard form"
+      ],
+      "rows": [
+       [
+        "340 000",
+        "3.4 × 10⁵"
+       ],
+       [
+        "2 700 000",
+        "2.7 × 10⁶"
+       ],
+       [
+        "910 000",
+        "9.1 × 10⁵"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check: standard form",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is 62 000 000 in standard form?",
+      "options": [
+       "62 × 10⁶",
+       "6.2 × 10⁷",
+       "6.2 × 10⁶",
+       "0.62 × 10⁸"
+      ],
+      "answer": 1,
+      "why": "6.2 with the point moved 7 places. A and D are not standard form; C moves only 6 places."
+     }
+    }
+   ],
+   "practice": [
+    "Write 5 300 in standard form",
+    "Write 7.08 × 10⁵ as an ordinary number",
+    "Order: 4.1 × 10⁶, 9.9 × 10⁵, 4.01 × 10⁶"
+   ],
+   "independent": [
+    "Core: Write in standard form: (a) 600 000 (b) 38 000 (c) 1 250 000 (d) 470 million",
+    "Extend: The Sun is about 1.5 × 10⁸ km from Earth; Neptune about 4.5 × 10⁹ km from the Sun. Write both as ordinary numbers and say how many times further Neptune is.",
+    "Stretch: Write 45 × 10⁶ and 0.3 × 10⁹ correctly in standard form, and explain the rule you used."
+   ],
+   "exit": [
+    "Write 92 000 in standard form",
+    "Write 3.6 × 10⁴ as an ordinary number",
+    "Why is 12 × 10³ not standard form?"
+   ],
+   "homework": "Find five huge numbers (e.g. distances in space, populations) and write each in standard form, ordered from smallest to largest.",
+   "send": "Support: place-value grid to count moves. Stretch: converting non-standard forms."
+  },
+  {
+   "unit": "Unit 1: Indices and standard form",
+   "n": 6,
+   "title": "Standard form for small numbers",
+   "duration": 50,
+   "bigQuestion": "How small is a bacterium, and how can we write it neatly?",
+   "objectives": [
+    "Write small numbers in standard form using negative powers of 10",
+    "Convert from standard form to ordinary numbers",
+    "Order small numbers in standard form"
+   ],
+   "successCriteria": [
+    "Write numbers like 0.004 in standard form",
+    "Convert both ways and order a list of small numbers",
+    "Explain why a negative power means a small number"
+   ],
+   "crossCurricular": "Science: sizes of cells, atoms and wavelengths",
+   "smsc": "Spiritual: the detail of creation down to the tiniest scale",
+   "keywords": [
+    {
+     "term": "negative index",
+     "def": "10⁻ⁿ means 1 ÷ 10ⁿ"
+    },
+    {
+     "term": "standard form",
+     "def": "A × 10ⁿ with 1 ≤ A < 10"
+    },
+    {
+     "term": "micrometre (µm)",
+     "def": "one millionth of a metre, 10⁻⁶ m"
+    },
+    {
+     "term": "decimal place",
+     "def": "a position after the decimal point"
+    }
+   ],
+   "starter": [
+    "Write 72 000 in standard form",
+    "Evaluate 10⁻¹",
+    "Evaluate 10⁻²",
+    "Order 3 × 10⁵, 9 × 10⁴"
+   ],
+   "teach": [
+    {
+     "heading": "Negative powers of 10",
+     "bullets": [
+      "10⁻¹ = 0.1",
+      "10⁻² = 0.01",
+      "10⁻³ = 0.001"
+     ],
+     "note": "Link back to last lesson's index laws pattern."
+    },
+    {
+     "heading": "Converting small numbers",
+     "bullets": [
+      "Move the point to after the first non-zero digit",
+      "Count the moves: the power is negative"
+     ],
+     "note": "Model with a real measurement.",
+     "model": {
+      "problem": "A bacterium is 0.000 002 m long. Write this in standard form.",
+      "steps": [
+       "First non-zero digit: 2",
+       "Move the point 6 places right to get 2",
+       "Small number, so the power is negative"
+      ],
+      "answer": "2 × 10⁻⁶ m"
+     }
+    },
+    {
+     "heading": "Ordering small numbers",
+     "bullets": [
+      "The more negative the power, the smaller the number",
+      "10⁻⁸ is smaller than 10⁻⁵"
+     ],
+     "note": "Ask pupils to order a red blood cell (8 × 10⁻⁶ m), a virus (1 × 10⁻⁷ m) and a grain of sand (5 × 10⁻⁴ m).",
+     "misconception": {
+      "wrong": "4 × 10⁻⁷ is bigger than 4 × 10⁻³ because 7 > 3",
+      "right": "10⁻⁷ is much smaller: 0.000 0004 < 0.004"
+     }
+    },
+    {
+     "heading": "Check: small numbers",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Write 0.000 53 in standard form",
+      "options": [
+       "5.3 × 10⁴",
+       "5.3 × 10⁻⁴",
+       "53 × 10⁻⁵",
+       "5.3 × 10⁻³"
+      ],
+      "answer": 1,
+      "why": "Move the point 4 places to get 5.3, power −4. A uses a positive power; C is not standard form; D miscounts."
+     }
+    }
+   ],
+   "practice": [
+    "Write 0.009 in standard form",
+    "Write 6.2 × 10⁻³ as an ordinary number",
+    "Order: 3 × 10⁻⁴, 7 × 10⁻⁵, 1.2 × 10⁻⁴"
+   ],
+   "independent": [
+    "Core: Write in standard form: (a) 0.07 (b) 0.000 41 (c) 0.000 006 (d) 0.12",
+    "Extend: A human hair is about 8 × 10⁻⁵ m wide. A sheet of paper is about 1 × 10⁻⁴ m thick. Which is thicker, and by how much (ordinary number)?",
+    "Stretch: Write 0.5 × 10⁻³ and 45 × 10⁻⁸ in correct standard form."
+   ],
+   "exit": [
+    "Write 0.0032 in standard form",
+    "Write 9 × 10⁻⁵ as an ordinary number",
+    "Which is smaller: 2 × 10⁻⁶ or 2 × 10⁻⁴?"
+   ],
+   "homework": "Find the sizes of five tiny things (cells, atoms, viruses) and write them in standard form in order.",
+   "send": "Support: place-value grid showing decimals. Stretch: mixed large/small ordering."
+  },
+  {
+   "unit": "Unit 1: Indices and standard form",
+   "n": 7,
+   "title": "Calculating with standard form",
+   "duration": 50,
+   "bigQuestion": "How many times heavier is the Sun than the Earth?",
+   "objectives": [
+    "Multiply and divide numbers in standard form",
+    "Add and subtract numbers in standard form",
+    "Use a calculator with standard form"
+   ],
+   "successCriteria": [
+    "Multiply and divide in standard form using index laws",
+    "Add and subtract by converting to the same power",
+    "Give answers correctly in standard form after adjusting A"
+   ],
+   "crossCurricular": "Science: physics calculations; Geography: global data",
+   "smsc": "Spiritual: scale of the universe as a sign for reflection",
+   "keywords": [
+    {
+     "term": "standard form",
+     "def": "A × 10ⁿ with 1 ≤ A < 10"
+    },
+    {
+     "term": "index law",
+     "def": "10ᵃ × 10ᵇ = 10ᵃ⁺ᵇ"
+    },
+    {
+     "term": "adjust",
+     "def": "rewrite so that A is between 1 and 10"
+    },
+    {
+     "term": "EXP/×10ˣ key",
+     "def": "the calculator key for standard form"
+    }
+   ],
+   "starter": [
+    "Write 0.006 in standard form",
+    "Simplify 10⁵ × 10³",
+    "Simplify 10⁸ ÷ 10²",
+    "Write 4.2 × 10³ as an ordinary number"
+   ],
+   "teach": [
+    {
+     "heading": "Multiplying",
+     "bullets": [
+      "Multiply the A numbers",
+      "Add the powers",
+      "Adjust if A ≥ 10"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Work out (4 × 10⁵) × (6 × 10³)",
+      "steps": [
+       "4 × 6 = 24",
+       "10⁵ × 10³ = 10⁸",
+       "24 × 10⁸ is not standard form",
+       "24 = 2.4 × 10¹, so 2.4 × 10⁹"
+      ],
+      "answer": "2.4 × 10⁹"
+     }
+    },
+    {
+     "heading": "Dividing",
+     "bullets": [
+      "Divide the A numbers",
+      "Subtract the powers",
+      "Adjust if A < 1"
+     ],
+     "note": "Example: (3 × 10⁴) ÷ (6 × 10⁷) = 0.5 × 10⁻³ = 5 × 10⁻⁴."
+    },
+    {
+     "heading": "Adding and subtracting",
+     "bullets": [
+      "Convert to ordinary numbers or the same power",
+      "Then add or subtract"
+     ],
+     "note": "Example: 3.2 × 10⁴ + 5 × 10³ = 32 000 + 5 000 = 37 000 = 3.7 × 10⁴.",
+     "misconception": {
+      "wrong": "3 × 10⁴ + 2 × 10³ = 5 × 10⁷",
+      "right": "30 000 + 2 000 = 32 000 = 3.2 × 10⁴"
+     }
+    },
+    {
+     "heading": "Calculator use",
+     "bullets": [
+      "Use the ×10ˣ key",
+      "Do not type × 10 ^ separately inside divisions"
+     ],
+     "note": "Show the Sun's mass 1.99 × 10³⁰ kg ÷ Earth's 5.97 × 10²⁴ kg ≈ 3.33 × 10⁵. The Sun is about 333 000 times heavier."
+    },
+    {
+     "heading": "Check: multiply",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "(5 × 10⁶) × (3 × 10⁻²) =",
+      "options": [
+       "15 × 10⁴",
+       "1.5 × 10⁵",
+       "1.5 × 10⁴",
+       "8 × 10⁴"
+      ],
+      "answer": 1,
+      "why": "15 × 10⁴ = 1.5 × 10⁵ after adjusting. A is not standard form; C forgets to add 1 to the power."
+     }
+    }
+   ],
+   "practice": [
+    "(2 × 10³) × (4 × 10⁵)",
+    "(9 × 10⁸) ÷ (3 × 10²)",
+    "6 × 10⁵ + 4 × 10⁴"
+   ],
+   "independent": [
+    "Core: (a) (3 × 10⁴) × (2 × 10⁶) (b) (8 × 10⁹) ÷ (4 × 10³) (c) (7 × 10³) × (5 × 10²) (d) 4.5 × 10⁶ − 5 × 10⁵",
+    "Extend: Light travels 3 × 10⁸ m/s. How far does it travel in one minute? Give your answer in standard form.",
+    "Stretch: An atom has a diameter of about 1 × 10⁻¹⁰ m. How many atoms side by side would make 1 mm?"
+   ],
+   "exit": [
+    "(6 × 10³) × (2 × 10⁴)",
+    "(8 × 10⁵) ÷ (2 × 10⁷)",
+    "3 × 10³ + 4 × 10²"
+   ],
+   "homework": "Use standard form to compare the sizes of three planets (diameters) and work out how many times bigger the largest is than the smallest.",
+   "send": "Support: worked-example card. Stretch: problems with mixed units."
+  },
+  {
+   "unit": "Unit 2: Expressions and formulae",
+   "n": 8,
+   "title": "Solving equations with fractions",
+   "duration": 50,
+   "bigQuestion": "How do we 'undo' a fraction in an equation?",
+   "objectives": [
+    "Solve equations where the unknown is divided by a number",
+    "Solve equations with fractions on one or both sides",
+    "Give fractional answers in their simplest form"
+   ],
+   "successCriteria": [
+    "Solve x/4 = 7 and (x + 2)/3 = 5",
+    "Solve equations with two fractions using a common multiple",
+    "Decide when to give answers as fractions or decimals"
+   ],
+   "crossCurricular": "Science: rearranging physics formulae; Business: sharing profits",
+   "smsc": "Moral: keeping both sides balanced, like justice ('adl)",
+   "keywords": [
+    {
+     "term": "equation",
+     "def": "a statement with an equals sign containing an unknown"
+    },
+    {
+     "term": "solve",
+     "def": "find the value of the unknown that makes it true"
+    },
+    {
+     "term": "inverse operation",
+     "def": "the operation that undoes another"
+    },
+    {
+     "term": "common multiple",
+     "def": "a number both denominators divide into"
+    }
+   ],
+   "starter": [
+    "Solve 3x = 21",
+    "Solve x + 7 = 12",
+    "Find the LCM of 3 and 4",
+    "Work out 2 × 10³ × 3"
+   ],
+   "teach": [
+    {
+     "heading": "Undoing division",
+     "bullets": [
+      "x/4 = 7: multiply both sides by 4",
+      "x = 28",
+      "Balance: same to both sides"
+     ],
+     "note": "Use a balance-scales picture."
+    },
+    {
+     "heading": "A bracket on top",
+     "bullets": [
+      "Multiply both sides by the denominator first",
+      "Then solve the linear equation"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Solve (2x + 3)/5 = 7",
+      "steps": [
+       "Multiply both sides by 5: 2x + 3 = 35",
+       "Subtract 3: 2x = 32",
+       "Divide by 2"
+      ],
+      "answer": "x = 16"
+     }
+    },
+    {
+     "heading": "Two fractions",
+     "bullets": [
+      "Multiply every term by the LCM of the denominators",
+      "This clears the fractions"
+     ],
+     "note": "Example: x/3 + x/4 = 14. Multiply by 12: 4x + 3x = 168, so 7x = 168, x = 24.",
+     "misconception": {
+      "wrong": "x/3 + 2 = 5 → x + 2 = 15",
+      "right": "Multiply every term: x + 6 = 15, so x = 9"
+     }
+    },
+    {
+     "heading": "Check: solve",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Solve (x − 4)/3 = 6",
+      "options": [
+       "x = 6",
+       "x = 22",
+       "x = 14",
+       "x = 10"
+      ],
+      "answer": 1,
+      "why": "x − 4 = 18 so x = 22. C subtracts 4 after multiplying; D adds 4 to 6 without multiplying."
+     }
+    }
+   ],
+   "practice": [
+    "Solve x/5 = 9",
+    "Solve (x + 1)/4 = 3",
+    "Solve 2x/3 = 8",
+    "Solve x/2 + x/3 = 10"
+   ],
+   "independent": [
+    "Core: Solve (a) x/6 = 4 (b) (3x − 1)/2 = 7 (c) (x + 5)/4 = 2 (d) 5x/3 = 20",
+    "Extend: Solve x/2 − x/5 = 9 and (x + 1)/3 = (x − 1)/2",
+    "Stretch: Hamza spends a third of his money on a book and a quarter on lunch. He has £20 left. How much did he start with? Write and solve an equation."
+   ],
+   "exit": [
+    "Solve x/7 = 3",
+    "Solve (x + 2)/5 = 4",
+    "Solve x/2 + x/4 = 9"
+   ],
+   "homework": "Write three word problems that lead to equations with fractions and solve them.",
+   "send": "Support: balance diagrams. Stretch: equations with unknowns on both sides and fractions."
+  },
+  {
+   "unit": "Unit 2: Expressions and formulae",
+   "n": 9,
+   "title": "Substituting into expressions",
+   "duration": 50,
+   "bigQuestion": "Why must we be extra careful substituting negative numbers?",
+   "objectives": [
+    "Substitute positive and negative numbers into expressions",
+    "Use the order of operations when substituting",
+    "Substitute into expressions with powers"
+   ],
+   "successCriteria": [
+    "Substitute positive whole numbers into expressions",
+    "Substitute negatives and fractions, using brackets",
+    "Spot and explain common substitution errors"
+   ],
+   "crossCurricular": "Science: using formulae such as v = u + at; Computing: variables",
+   "smsc": "Moral: careful working prevents errors that could harm others (e.g. drug doses)",
+   "keywords": [
+    {
+     "term": "substitute",
+     "def": "replace a letter with a number"
+    },
+    {
+     "term": "expression",
+     "def": "terms combined with operations, without an equals sign"
+    },
+    {
+     "term": "term",
+     "def": "a single number, letter or product such as 3x²"
+    },
+    {
+     "term": "evaluate",
+     "def": "find the value"
+    }
+   ],
+   "starter": [
+    "Solve x/3 = 8",
+    "Evaluate (−4)²",
+    "Evaluate 2 × (−3) + 7",
+    "What does 3x mean?"
+   ],
+   "teach": [
+    {
+     "heading": "Use brackets for negatives",
+     "bullets": [
+      "Replace the letter with (number)",
+      "Then follow BIDMAS"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Find 2x² − 3y when x = −4 and y = −5",
+      "steps": [
+       "2 × (−4)² − 3 × (−5)",
+       "(−4)² = 16, so 2 × 16 = 32",
+       "3 × (−5) = −15",
+       "32 − (−15) = 47"
+      ],
+      "answer": "47"
+     }
+    },
+    {
+     "heading": "Squaring negatives",
+     "bullets": [
+      "(−4)² = 16",
+      "2x² means 2 × x², not (2x)²"
+     ],
+     "note": "Highlight this classic error.",
+     "misconception": {
+      "wrong": "When x = −4, 2x² = (−8)² = 64",
+      "right": "2x² = 2 × (−4)² = 2 × 16 = 32"
+     }
+    },
+    {
+     "heading": "Fractions and decimals",
+     "bullets": [
+      "Same method, take care with arithmetic",
+      "Use a calculator if allowed"
+     ],
+     "note": "Example: a = ½, b = 6: 4a + b² = 2 + 36 = 38."
+    },
+    {
+     "heading": "Check: substitute",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Find 5 − x² when x = −3",
+      "options": [
+       "14",
+       "−4",
+       "−1",
+       "8"
+      ],
+      "answer": 1,
+      "why": "x² = 9, 5 − 9 = −4. A does 5 + 9; D does 5 − (−3)."
+     }
+    }
+   ],
+   "practice": [
+    "Find 3a + 2b when a = 4, b = −1",
+    "Find p² + 2p when p = −3",
+    "Find (x + y)/2 when x = 7, y = −2"
+   ],
+   "independent": [
+    "Core: Find the value when m = 3, n = −2: (a) 4m − n (b) m² + n² (c) mn − 5 (d) 2n³",
+    "Extend: Using v = u + at, find v when u = 12, a = −3 and t = 5. Interpret the answer if v is a velocity in m/s.",
+    "Stretch: Find a value of x that makes x² − 5x + 6 equal to 0. Can you find another?"
+   ],
+   "exit": [
+    "Find 4y − 7 when y = −2",
+    "Find 3x² when x = −2",
+    "Find a² − b when a = 5, b = −5"
+   ],
+   "homework": "Use five science formulae (e.g. speed = distance ÷ time) with given values and substitute to find the answers.",
+   "send": "Support: substitution frame with brackets pre-drawn. Stretch: substitution with standard form."
+  },
+  {
+   "unit": "Unit 2: Expressions and formulae",
+   "n": 10,
+   "title": "Writing and using formulae",
+   "duration": 50,
+   "bigQuestion": "How does a taxi company decide what to charge?",
+   "objectives": [
+    "Write formulae from word descriptions",
+    "Use formulae to find values",
+    "Interpret formulae from real-life contexts"
+   ],
+   "successCriteria": [
+    "Write a simple formula from words",
+    "Write a formula with a fixed charge and a rate",
+    "Explain what each part of a formula represents"
+   ],
+   "crossCurricular": "Business: pricing plans; Science: physics formulae",
+   "smsc": "Moral: transparent, fair pricing",
+   "keywords": [
+    {
+     "term": "formula",
+     "def": "a rule linking two or more variables with an equals sign"
+    },
+    {
+     "term": "variable",
+     "def": "a letter that can take different values"
+    },
+    {
+     "term": "subject",
+     "def": "the variable on its own on one side of a formula"
+    },
+    {
+     "term": "fixed charge",
+     "def": "a cost that does not change"
+    }
+   ],
+   "starter": [
+    "Find 3n + 4 when n = 5",
+    "Find 2a² when a = −3",
+    "Solve 4x − 2 = 18",
+    "Is 3x + 1 an expression or an equation?"
+   ],
+   "teach": [
+    {
+     "heading": "From words to formula",
+     "bullets": [
+      "Choose letters",
+      "Identify the fixed part and the variable part"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A taxi charges £3 plus £1.80 per mile. Write a formula for the cost C (£) for m miles.",
+      "steps": [
+       "Fixed charge: £3",
+       "Rate: £1.80 per mile → 1.8m",
+       "Cost = fixed + rate × miles"
+      ],
+      "answer": "C = 3 + 1.8m"
+     }
+    },
+    {
+     "heading": "Using the formula",
+     "bullets": [
+      "Substitute, then evaluate",
+      "Answer in context with units"
+     ],
+     "note": "C when m = 12: 3 + 1.8 × 12 = 3 + 21.6 = £24.60. Reverse: if C = £30, 1.8m = 27, m = 15 miles."
+    },
+    {
+     "heading": "Expression, equation or formula?",
+     "bullets": [
+      "Expression: no equals sign",
+      "Equation: true for particular values",
+      "Formula: links quantities, true for all values"
+     ],
+     "note": "Sort cards: 3x + 2; 3x + 2 = 11; A = lw; v = u + at.",
+     "compare": {
+      "left": {
+       "title": "Equation",
+       "points": [
+        "3x + 2 = 11",
+        "Solve for x = 3"
+       ]
+      },
+      "right": {
+       "title": "Formula",
+       "points": [
+        "A = lw",
+        "Works for any rectangle"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Check: write a formula",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Tickets cost £8 each plus a £2 booking fee per order. Which formula gives the cost C for n tickets?",
+      "options": [
+       "C = 8 + 2n",
+       "C = 8n + 2",
+       "C = 10n",
+       "C = 2(8 + n)"
+      ],
+      "answer": 1,
+      "why": "£8 per ticket (8n) and £2 once (+ 2). A swaps the rate and fee; C charges the fee per ticket."
+     }
+    }
+   ],
+   "practice": [
+    "Write a formula: total legs L on c cows and h hens",
+    "A plumber charges £40 call-out plus £30 per hour. Write a formula and find the cost for 3 hours.",
+    "The perimeter P of a regular hexagon with side s"
+   ],
+   "independent": [
+    "Core: Write formulae: (a) cost of n pencils at 45p (b) the mean m of three numbers a, b, c (c) the area of a triangle",
+    "Extend: Phone plan A: £10 a month plus 5p a text. Plan B: £15 a month and texts free. Write formulae and find how many texts make plan B cheaper.",
+    "Stretch: Write a formula for the number of matchsticks M needed to make a row of n squares, and explain why it works."
+   ],
+   "exit": [
+    "Write a formula for the cost C of n apples at 30p each.",
+    "Use C = 5 + 2t to find C when t = 7.",
+    "What does the 5 represent in C = 5 + 2t if t is hours?"
+   ],
+   "homework": "Find a real pricing plan (gym, taxi, phone) and write it as a formula, then work out the cost for three uses.",
+   "send": "Support: word-to-symbol cards. Stretch: two-plan comparison graphs."
+  },
+  {
+   "unit": "Unit 2: Expressions and formulae",
+   "n": 11,
+   "title": "Changing the subject of a formula",
+   "duration": 50,
+   "bigQuestion": "If you know your speed and how far you went, how do you find the time?",
+   "objectives": [
+    "Rearrange a formula to change its subject",
+    "Use inverse operations in the correct order",
+    "Rearrange formulae with powers and roots"
+   ],
+   "successCriteria": [
+    "Make x the subject of y = x + 7 and y = 3x",
+    "Rearrange two-step formulae like v = u + at for t",
+    "Rearrange formulae with squares, such as A = πr² for r"
+   ],
+   "crossCurricular": "Science: speed, density and Ohm's law formulae",
+   "smsc": "Spiritual: the same relationship seen from different viewpoints",
+   "keywords": [
+    {
+     "term": "subject",
+     "def": "the variable on its own on one side"
+    },
+    {
+     "term": "rearrange",
+     "def": "change the formula so a different variable is the subject"
+    },
+    {
+     "term": "inverse operation",
+     "def": "an operation that undoes another"
+    },
+    {
+     "term": "term",
+     "def": "part of a formula separated by + or −"
+    }
+   ],
+   "starter": [
+    "Solve 3x + 4 = 19",
+    "Write a formula: C = £2 per item n plus £5 delivery",
+    "Find v = u + at with u = 2, a = 3, t = 4",
+    "What is the inverse of squaring?"
+   ],
+   "teach": [
+    {
+     "heading": "Like solving an equation",
+     "bullets": [
+      "Do the same to both sides",
+      "Undo operations in reverse order"
+     ],
+     "note": "Solve 3x + 4 = 19 next to y = 3x + 4. Same steps: x = (y − 4)/3."
+    },
+    {
+     "heading": "Two-step rearrangement",
+     "bullets": [
+      "Remove added terms first",
+      "Then undo multiplication"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Make t the subject of v = u + at",
+      "steps": [
+       "Subtract u from both sides: v − u = at",
+       "Divide both sides by a"
+      ],
+      "answer": "t = (v − u)/a"
+     }
+    },
+    {
+     "heading": "Powers and roots",
+     "bullets": [
+      "Undo a square with a square root",
+      "Divide first, then root"
+     ],
+     "note": "A = πr². Divide by π: A/π = r². Square root: r = √(A/π).",
+     "misconception": {
+      "wrong": "A = πr² → r = A/π − 2",
+      "right": "r = √(A/π): square root undoes the square"
+     }
+    },
+    {
+     "heading": "Check: rearrange",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Make x the subject of y = 5x − 2",
+      "options": [
+       "x = 5y − 2",
+       "x = (y + 2)/5",
+       "x = y/5 − 2",
+       "x = (y − 2)/5"
+      ],
+      "answer": 1,
+      "why": "Add 2: y + 2 = 5x, then divide by 5. D uses the wrong inverse for − 2; C divides before adding."
+     }
+    }
+   ],
+   "practice": [
+    "Make a the subject of p = a + 9",
+    "Make w the subject of A = lw",
+    "Make x the subject of y = 2x + 7",
+    "Make r the subject of A = πr²"
+   ],
+   "independent": [
+    "Core: Make the letter in brackets the subject: (a) s = d/t [d] (b) P = 2l + 2w [l] (c) y = mx + c [x]",
+    "Extend: Make r the subject of V = πr²h and use it to find r when V = 500 cm³ and h = 10 cm (1 d.p.).",
+    "Stretch: Make u the subject of v² = u² + 2as. Then find u when v = 20, a = 3 and s = 50."
+   ],
+   "exit": [
+    "Make b the subject of a = b − 6",
+    "Make t the subject of d = st",
+    "Make x the subject of y = 4x + 1"
+   ],
+   "homework": "Rearrange five science formulae (speed, density, pressure, Ohm's law, power) for each of their other variables.",
+   "send": "Support: flow-diagram method (function machines) to reverse. Stretch: subject appears twice (preview)."
+  },
+  {
+   "unit": "Unit 2: Expressions and formulae",
+   "n": 12,
+   "title": "Index laws in algebra",
+   "duration": 50,
+   "bigQuestion": "Do the index laws for numbers also work with letters?",
+   "objectives": [
+    "Simplify products and quotients of algebraic powers",
+    "Simplify powers of algebraic terms",
+    "Simplify terms with coefficients and several letters"
+   ],
+   "successCriteria": [
+    "Simplify x³ × x⁴ and y⁷ ÷ y²",
+    "Simplify 3a²b × 4ab³ and (2x³)²",
+    "Find and correct errors in index simplifications"
+   ],
+   "crossCurricular": "Science: units like m/s² and m³",
+   "smsc": "Spiritual: one rule that applies everywhere",
+   "keywords": [
+    {
+     "term": "coefficient",
+     "def": "the number in front of a letter, e.g. 5 in 5x²"
+    },
+    {
+     "term": "index law",
+     "def": "a rule for simplifying powers with the same base"
+    },
+    {
+     "term": "simplify",
+     "def": "write in the shortest equivalent form"
+    },
+    {
+     "term": "term",
+     "def": "a single part such as 3x²y"
+    }
+   ],
+   "starter": [
+    "Simplify 5³ × 5⁴",
+    "Simplify 2⁸ ÷ 2³",
+    "Simplify (3²)⁴",
+    "Make x the subject of y = x/4"
+   ],
+   "teach": [
+    {
+     "heading": "Same laws, letters for bases",
+     "bullets": [
+      "xᵐ × xⁿ = xᵐ⁺ⁿ",
+      "xᵐ ÷ xⁿ = xᵐ⁻ⁿ",
+      "(xᵐ)ⁿ = xᵐⁿ"
+     ],
+     "note": "Answer the big question: yes, because a letter stands for a number."
+    },
+    {
+     "heading": "Coefficients and several letters",
+     "bullets": [
+      "Multiply the numbers",
+      "Add powers of each letter separately"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Simplify 3a²b × 4ab³",
+      "steps": [
+       "Numbers: 3 × 4 = 12",
+       "a: a² × a = a³",
+       "b: b × b³ = b⁴"
+      ],
+      "answer": "12a³b⁴"
+     }
+    },
+    {
+     "heading": "Powers of terms",
+     "bullets": [
+      "Everything in the bracket is raised",
+      "(2x³)² = 2² × x⁶ = 4x⁶"
+     ],
+     "note": "This is the most common mistake on the topic.",
+     "misconception": {
+      "wrong": "(2x³)² = 2x⁶",
+      "right": "(2x³)² = 4x⁶: the 2 is squared too"
+     }
+    },
+    {
+     "heading": "Dividing terms",
+     "bullets": [
+      "Divide the numbers",
+      "Subtract powers of each letter"
+     ],
+     "note": "Example: 20x⁵y³ ÷ 4x²y = 5x³y²."
+    },
+    {
+     "heading": "Check: simplify",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Simplify (3m⁴)³",
+      "options": [
+       "9m⁷",
+       "27m¹²",
+       "3m¹²",
+       "27m⁷"
+      ],
+      "answer": 1,
+      "why": "3³ = 27 and (m⁴)³ = m¹². A and D add the indices; C does not cube the 3."
+     }
+    }
+   ],
+   "practice": [
+    "Simplify x⁵ × x²",
+    "Simplify 6y⁷ ÷ 2y³",
+    "Simplify (a³)⁴",
+    "Simplify 2pq × 5p²q"
+   ],
+   "independent": [
+    "Core: Simplify (a) 4x² × 3x⁵ (b) 18a⁶ ÷ 6a² (c) (5y²)² (d) 2ab² × 3a²b",
+    "Extend: Simplify (2x²y)³ ÷ 4x³y",
+    "Stretch: Find the missing expressions: 6x³y² × ? = 30x⁵y⁷; (?)³ = 8a⁶b⁹"
+   ],
+   "exit": [
+    "Simplify p⁴ × p⁶",
+    "Simplify 15k⁸ ÷ 5k²",
+    "Simplify (4x²)²"
+   ],
+   "homework": "Complete an index-laws pyramid where each brick is the product of the two below it.",
+   "send": "Support: expanded forms beside each question. Stretch: negative and zero indices with letters."
+  },
+  {
+   "unit": "Unit 2: Expressions and formulae",
+   "n": 13,
+   "title": "Expanding single brackets and factorising",
+   "duration": 50,
+   "bigQuestion": "Why are expanding and factorising opposites?",
+   "objectives": [
+    "Expand single brackets including powers and negatives",
+    "Expand and simplify sums of brackets",
+    "Factorise expressions fully"
+   ],
+   "successCriteria": [
+    "Expand 3(2x − 5) and x(x + 4)",
+    "Expand and simplify expressions like 3(x + 2) − 2(x − 5)",
+    "Factorise fully, e.g. 6x²y + 9xy²"
+   ],
+   "crossCurricular": "Science: rearranging formulae; Computing: simplifying expressions",
+   "smsc": "Spiritual: undoing and doing: two views of the same truth",
+   "keywords": [
+    {
+     "term": "expand",
+     "def": "multiply out brackets"
+    },
+    {
+     "term": "factorise",
+     "def": "put into brackets by taking out a common factor"
+    },
+    {
+     "term": "common factor",
+     "def": "a factor shared by every term"
+    },
+    {
+     "term": "simplify",
+     "def": "collect like terms"
+    }
+   ],
+   "starter": [
+    "Simplify 3x × 4x",
+    "Simplify 5a + 2b − 3a",
+    "HCF of 12 and 18?",
+    "Expand 4(x + 3)"
+   ],
+   "teach": [
+    {
+     "heading": "Expanding",
+     "bullets": [
+      "Multiply every term inside by the term outside",
+      "Watch the signs"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Expand and simplify 3(x + 2) − 2(x − 5)",
+      "steps": [
+       "3(x + 2) = 3x + 6",
+       "−2(x − 5) = −2x + 10",
+       "Collect: 3x − 2x + 6 + 10"
+      ],
+      "answer": "x + 16"
+     }
+    },
+    {
+     "heading": "The negative outside",
+     "bullets": [
+      "−2 × −5 = +10"
+     ],
+     "note": "Most errors happen here.",
+     "misconception": {
+      "wrong": "−2(x − 5) = −2x − 10",
+      "right": "−2(x − 5) = −2x + 10"
+     }
+    },
+    {
+     "heading": "Factorising fully",
+     "bullets": [
+      "Find the HCF of the numbers",
+      "Then the highest power of each letter in every term"
+     ],
+     "note": "6x²y + 9xy²: HCF of numbers 3, letters xy. So 3xy(2x + 3y). Expand to check.",
+     "compare": {
+      "left": {
+       "title": "Expand",
+       "points": [
+        "3xy(2x + 3y)",
+        "multiply out",
+        "= 6x²y + 9xy²"
+       ]
+      },
+      "right": {
+       "title": "Factorise",
+       "points": [
+        "6x²y + 9xy²",
+        "take out the HCF",
+        "= 3xy(2x + 3y)"
+       ]
+      },
+      "label": "⇄"
+     }
+    },
+    {
+     "heading": "Check: factorise fully",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Factorise fully 8a² − 12a",
+      "options": [
+       "2(4a² − 6a)",
+       "4(2a² − 3a)",
+       "4a(2a − 3)",
+       "a(8a − 12)"
+      ],
+      "answer": 2,
+      "why": "HCF is 4a. A, B and D are correct but not fully factorised."
+     }
+    }
+   ],
+   "practice": [
+    "Expand 5(2y − 3)",
+    "Expand x(x − 7)",
+    "Expand and simplify 2(3a + 1) + 4(a − 2)",
+    "Factorise 10x + 15"
+   ],
+   "independent": [
+    "Core: (a) Expand 4(3m − 2) (b) Expand p(p + 9) (c) Factorise 14y − 21 (d) Factorise x² + 5x",
+    "Extend: Expand and simplify 5(2x − 3) − 3(x − 4) and x(x + 3) − 2(x − 1)",
+    "Stretch: Factorise fully 12a³b² − 18a²b³ + 6a²b², and check by expanding."
+   ],
+   "exit": [
+    "Expand −3(x − 4)",
+    "Factorise 6x − 9",
+    "Factorise fully 4x² + 8x"
+   ],
+   "homework": "Make five expand-and-factorise pairs on cards for a matching game; include one with a negative outside.",
+   "send": "Support: grid method for expanding. Stretch: factorising with three terms."
+  },
+  {
+   "unit": "Unit 2: Expressions and formulae",
+   "n": 14,
+   "title": "Expanding double brackets",
+   "duration": 50,
+   "bigQuestion": "How does an area model explain multiplying two brackets?",
+   "objectives": [
+    "Multiply out two linear brackets",
+    "Simplify the result by collecting like terms",
+    "Expand brackets with negative terms"
+   ],
+   "successCriteria": [
+    "Expand (x + 3)(x + 5)",
+    "Expand brackets with negatives, e.g. (x − 4)(x + 2)",
+    "Expand (2x + 1)(3x − 4) and explain each term with an area model"
+   ],
+   "crossCurricular": "Science: area of rectangles in diagrams; Computing: algorithms for multiplication",
+   "smsc": "Spiritual: seeing algebra and geometry as one picture",
+   "keywords": [
+    {
+     "term": "quadratic expression",
+     "def": "an expression whose highest power of x is 2"
+    },
+    {
+     "term": "binomial",
+     "def": "an expression with two terms, such as x + 3"
+    },
+    {
+     "term": "like terms",
+     "def": "terms with the same letters and powers"
+    },
+    {
+     "term": "product",
+     "def": "the result of multiplying"
+    }
+   ],
+   "starter": [
+    "Expand 3(x + 4)",
+    "Expand x(x − 2)",
+    "Simplify 5x − 2x + 3",
+    "Work out (−3) × (+4)"
+   ],
+   "teach": [
+    {
+     "heading": "The area model",
+     "bullets": [
+      "Each bracket is a side of a rectangle",
+      "Multiply to fill the four regions",
+      "Add the regions"
+     ],
+     "note": "Draw a rectangle split into 4 with sides x + 3 and x + 5.",
+     "table": {
+      "head": [
+       "×",
+       "x",
+       "+5"
+      ],
+      "rows": [
+       [
+        "x",
+        "x²",
+        "5x"
+       ],
+       [
+        "+3",
+        "3x",
+        "15"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Expanding with negatives",
+     "bullets": [
+      "Keep the sign with each term",
+      "Collect like terms at the end"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Expand and simplify (x − 4)(x + 2)",
+      "steps": [
+       "x × x = x²",
+       "x × 2 = 2x",
+       "−4 × x = −4x",
+       "−4 × 2 = −8; collect 2x − 4x = −2x"
+      ],
+      "answer": "x² − 2x − 8"
+     }
+    },
+    {
+     "heading": "Coefficients",
+     "bullets": [
+      "(2x + 1)(3x − 4)",
+      "= 6x² − 8x + 3x − 4",
+      "= 6x² − 5x − 4"
+     ],
+     "note": "Ask pupils to check by substituting x = 1 into both forms: (3)(−1) = −3 and 6 − 5 − 4 = −3. ✓"
+    },
+    {
+     "heading": "Only two terms?",
+     "bullets": [
+      "There are always four products before simplifying"
+     ],
+     "note": "The classic error multiplies only first and last terms.",
+     "misconception": {
+      "wrong": "(x + 3)(x + 5) = x² + 15",
+      "right": "(x + 3)(x + 5) = x² + 8x + 15"
+     }
+    },
+    {
+     "heading": "Check: expand",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Expand (x + 6)(x − 3)",
+      "options": [
+       "x² − 18",
+       "x² + 3x − 18",
+       "x² − 3x − 18",
+       "x² + 9x − 18"
+      ],
+      "answer": 1,
+      "why": "−3x + 6x = 3x, and 6 × −3 = −18. C has the wrong sign; D adds 6 + 3."
+     }
+    }
+   ],
+   "practice": [
+    "Expand (x + 2)(x + 7)",
+    "Expand (x − 5)(x + 1)",
+    "Expand (x − 3)(x − 4)"
+   ],
+   "independent": [
+    "Core: Expand and simplify (a) (x + 4)(x + 6) (b) (y − 2)(y + 9) (c) (a − 7)(a − 1)",
+    "Extend: Expand (3x + 2)(x − 5) and (2y − 3)(4y + 1)",
+    "Stretch: Show that (n + 1)(n + 2) − n(n + 3) = 2 for every value of n."
+   ],
+   "exit": [
+    "Expand (x + 1)(x + 8)",
+    "Expand (x − 2)(x + 5)",
+    "Check your answer to question 2 by substituting x = 1."
+   ],
+   "homework": "Expand ten pairs of brackets from the sheet and check three by substitution.",
+   "send": "Support: grid template for every question. Stretch: triple brackets."
+  },
+  {
+   "unit": "Unit 2: Expressions and formulae",
+   "n": 15,
+   "title": "Squaring brackets and the difference of two squares",
+   "duration": 50,
+   "bigQuestion": "Is (a + b)² ever equal to a² + b²?",
+   "objectives": [
+    "Expand squared brackets",
+    "Recognise and use the difference of two squares",
+    "Use expansions for mental calculations"
+   ],
+   "successCriteria": [
+    "Expand (x + 4)² correctly with the middle term",
+    "Expand (x + a)(x − a) and recognise the pattern",
+    "Use 51 × 49 = 50² − 1² style mental methods"
+   ],
+   "crossCurricular": "Art: square designs and area; History: al-Khwarizmi's geometric algebra",
+   "smsc": "Cultural: the work of Muslim mathematicians such as al-Khwarizmi on squares and completing the square",
+   "keywords": [
+    {
+     "term": "squared bracket",
+     "def": "a bracket multiplied by itself, e.g. (x + 4)²"
+    },
+    {
+     "term": "difference of two squares",
+     "def": "a² − b² = (a + b)(a − b)"
+    },
+    {
+     "term": "identity",
+     "def": "an equation true for all values, shown by ≡"
+    },
+    {
+     "term": "middle term",
+     "def": "the x term in x² + bx + c"
+    }
+   ],
+   "starter": [
+    "Expand (x + 2)(x + 3)",
+    "Expand (x − 1)(x + 4)",
+    "Work out 50²",
+    "Is (3 + 4)² equal to 3² + 4²?"
+   ],
+   "teach": [
+    {
+     "heading": "A squared bracket is two brackets",
+     "bullets": [
+      "(x + 4)² = (x + 4)(x + 4)",
+      "= x² + 4x + 4x + 16",
+      "= x² + 8x + 16"
+     ],
+     "note": "The area model shows a big square, two rectangles and a small square.",
+     "misconception": {
+      "wrong": "(x + 4)² = x² + 16",
+      "right": "(x + 4)² = x² + 8x + 16: two middle rectangles"
+     }
+    },
+    {
+     "heading": "Difference of two squares",
+     "bullets": [
+      "(x + 5)(x − 5) = x² − 25",
+      "The middle terms cancel",
+      "a² − b² = (a + b)(a − b)"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Expand (2x + 3)(2x − 3)",
+      "steps": [
+       "2x × 2x = 4x²",
+       "2x × −3 = −6x and 3 × 2x = 6x",
+       "Middle terms cancel",
+       "3 × −3 = −9"
+      ],
+      "answer": "4x² − 9"
+     }
+    },
+    {
+     "heading": "Mental maths tricks",
+     "bullets": [
+      "51 × 49 = (50 + 1)(50 − 1)",
+      "= 2500 − 1 = 2499"
+     ],
+     "note": "Challenge: 102 × 98 (9996), 31² (= 900 + 60 + 1 = 961)."
+    },
+    {
+     "heading": "Check: squared bracket",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Expand (x − 6)²",
+      "options": [
+       "x² + 36",
+       "x² − 36",
+       "x² − 12x + 36",
+       "x² − 12x − 36"
+      ],
+      "answer": 2,
+      "why": "(x − 6)(x − 6) = x² − 6x − 6x + 36. D gets the sign of −6 × −6 wrong."
+     }
+    }
+   ],
+   "practice": [
+    "Expand (x + 3)²",
+    "Expand (x − 7)²",
+    "Expand (x + 9)(x − 9)",
+    "Work out 41 × 39 mentally"
+   ],
+   "independent": [
+    "Core: Expand (a) (y + 5)² (b) (a − 1)² (c) (m + 10)(m − 10)",
+    "Extend: Expand (3x − 2)² and (5 + 2y)(5 − 2y)",
+    "Stretch: Prove that the difference between the squares of two consecutive odd numbers is always a multiple of 8."
+   ],
+   "exit": [
+    "Expand (x + 6)²",
+    "Expand (x + 4)(x − 4)",
+    "Work out 99 × 101 mentally"
+   ],
+   "homework": "Write five mental calculations that use the difference of two squares, with working.",
+   "send": "Support: area model diagrams. Stretch: factorising using the difference of two squares."
+  },
+  {
+   "unit": "Unit 2: Expressions and formulae",
+   "n": 16,
+   "title": "Algebra problem solving and review",
+   "duration": 50,
+   "bigQuestion": "How confident are you to choose the right algebra skill without being told?",
+   "objectives": [
+    "Select and apply skills from Units 1 and 2",
+    "Solve multi-step problems involving formulae and expressions",
+    "Identify and correct misconceptions"
+   ],
+   "successCriteria": [
+    "Answer single-skill questions accurately",
+    "Solve multi-step problems combining skills",
+    "Explain and correct errors in worked solutions"
+   ],
+   "crossCurricular": "Science: formula problems; Computing: algorithms",
+   "smsc": "Spiritual: reflection (muhasabah) on progress and next steps",
+   "keywords": [
+    {
+     "term": "identity",
+     "def": "true for all values of the variable"
+    },
+    {
+     "term": "prove",
+     "def": "show something is always true using algebra"
+    },
+    {
+     "term": "strategy",
+     "def": "a plan for solving a problem"
+    },
+    {
+     "term": "misconception",
+     "def": "a wrong idea that leads to errors"
+    }
+   ],
+   "starter": [
+    "Write 0.0004 in standard form",
+    "Simplify (2x²)³",
+    "Expand (x − 3)(x + 5)",
+    "Make x the subject of y = 3x + 1"
+   ],
+   "teach": [
+    {
+     "heading": "Which skill?",
+     "bullets": [
+      "Read the command word: expand, factorise, solve, simplify, rearrange"
+     ],
+     "note": "Sort ten questions by skill before solving any.",
+     "table": {
+      "head": [
+       "Command word",
+       "What to do"
+      ],
+      "rows": [
+       [
+        "Expand",
+        "Multiply out brackets"
+       ],
+       [
+        "Factorise",
+        "Put into brackets"
+       ],
+       [
+        "Solve",
+        "Find the value of the unknown"
+       ],
+       [
+        "Simplify",
+        "Collect like terms or use index laws"
+       ],
+       [
+        "Rearrange / make … the subject",
+        "Get one letter on its own"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "A multi-step problem",
+     "bullets": [
+      "Write an expression",
+      "Form an equation",
+      "Solve and answer in context"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A rectangle is (x + 3) cm by (x − 1) cm. Its area is 5 cm more than x². Find x.",
+      "steps": [
+       "Area: (x + 3)(x − 1) = x² + 2x − 3",
+       "Equation: x² + 2x − 3 = x² + 5",
+       "Subtract x²: 2x − 3 = 5",
+       "2x = 8"
+      ],
+      "answer": "x = 4 (rectangle 7 cm by 3 cm)"
+     }
+    },
+    {
+     "heading": "Fix the error",
+     "bullets": [
+      "One mistake in each line"
+     ],
+     "note": "Show three errors: (x + 2)² = x² + 4; 3⁴ × 3² = 9⁶; 5.2 × 10³ × 2 × 10⁴ = 10.4 × 10⁷. Pupils fix them.",
+     "misconception": {
+      "wrong": "5.2 × 10³ × 2 × 10⁴ = 10.4 × 10⁷",
+      "right": "= 1.04 × 10⁸ (A must be less than 10)"
+     }
+    },
+    {
+     "heading": "Check: identify the skill",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is a correct proof step for 'show (n + 3)² − (n − 3)² = 12n'?",
+      "options": [
+       "Substitute n = 1 and get 12",
+       "Expand: n² + 6n + 9 − (n² − 6n + 9)",
+       "(n + 3 − n − 3)² = 0",
+       "9 − 9 = 0"
+      ],
+      "answer": 1,
+      "why": "Expanding both squares works for all n. A only checks one case; C and D misuse brackets."
+     }
+    }
+   ],
+   "practice": [
+    "Simplify 12x⁵y² ÷ 4x²y",
+    "Solve (3x + 1)/2 = 8",
+    "Write 4.5 × 10⁻³ as an ordinary number"
+   ],
+   "independent": [
+    "Core: Mixed quiz: (a) 3⁻² (b) expand (x + 7)(x − 2) (c) factorise 9y² − 6y (d) make r the subject of C = 2πr",
+    "Extend: The formula for the area of a trapezium is A = ½(a + b)h. Make a the subject and find a when A = 40, b = 6, h = 5.",
+    "Stretch: Prove that the product of two consecutive even numbers plus 1 is always a square number."
+   ],
+   "exit": [
+    "Which skill does 'make t the subject' need?",
+    "Fix: (x − 5)² = x² − 25",
+    "Rate your confidence 1 to 3 for each unit."
+   ],
+   "homework": "Complete the Units 1–2 review sheet and write two targets based on your weakest topics.",
+   "send": "Support: skill cards with a worked example each. Stretch: algebraic proof challenges."
+  }
+ ]
 }

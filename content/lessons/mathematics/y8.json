@@ -1,480 +1,2190 @@
 {
-  "subject": "Mathematics",
-  "year": "y8",
-  "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
-  "boardShort": "KS3 Maths Progress",
-  "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) Year 8 Autumn, Unit 1 Number and Unit 2 Area and volume (ks3_maths_a_p_sow3.xlsx), in the scheme's order; INSET lesson standard.",
-  "lessons": [
+ "subject": "Mathematics",
+ "year": "y8",
+ "board": "Pearson Edexcel (KS3 Maths Progress, building to Edexcel GCSE Mathematics 1MA1)",
+ "boardShort": "KS3 Maths Progress",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) Year 8 Autumn, Unit 1 Number and Unit 2 Area and volume (ks3_maths_a_p_sow3.xlsx), in the scheme's order; INSET lesson standard.",
+ "lessons": [
+  {
+   "unit": "Unit 1: Number",
+   "n": 1,
+   "title": "Written calculations with decimals",
+   "duration": 50,
+   "bigQuestion": "Where does the decimal point go, and how can we be sure?",
+   "objectives": [
+    "Add and subtract decimals using columns",
+    "Choose between mental and written methods",
+    "Check answers using estimation and inverse operations"
+   ],
+   "successCriteria": [
+    "Add and subtract decimals with the points lined up",
+    "Add more than two numbers with different numbers of decimal places",
+    "Explain errors in someone else's working"
+   ],
+   "crossCurricular": "Science: adding measured masses; Business: totals on a receipt",
+   "smsc": "Moral: accuracy and honesty when handling money and measurements",
+   "keywords": [
     {
-      "unit": "Unit 1: Number",
-      "n": 1,
-      "title": "Written calculations with decimals",
-      "duration": 50,
-      "bigQuestion": "Where does the decimal point go, and how can we be sure?",
-      "objectives": ["Add and subtract decimals using columns", "Choose between mental and written methods", "Check answers using estimation and inverse operations"],
-      "successCriteria": ["Add and subtract decimals with the points lined up", "Add more than two numbers with different numbers of decimal places", "Explain errors in someone else's working"],
-      "crossCurricular": "Science: adding measured masses; Business: totals on a receipt",
-      "smsc": "Moral: accuracy and honesty when handling money and measurements",
-      "keywords": [
-        { "term": "decimal place", "def": "a digit position after the decimal point" },
-        { "term": "place holder", "def": "a zero used to keep digits in their correct place" },
-        { "term": "estimate", "def": "an approximate answer from rounded numbers" },
-        { "term": "inverse", "def": "the opposite operation used to check" }
-      ],
-      "starter": ["Bismillah. Work out 7.5 + 2.5", "Round 4.68 to 1 decimal place", "Work out 10 − 3.2", "What is the value of the 4 in 2.648?"],
-      "teach": [
-        { "heading": "Line up the decimal points", "bullets": ["Points in a vertical line", "Fill gaps with zeros", "Then add or subtract as usual"], "note": "Model and narrate each step.", "model": { "problem": "Work out 14.6 + 3.85 + 0.7", "steps": ["Write 14.60, 3.85, 0.70 lined up", "Hundredths: 0 + 5 + 0 = 5", "Tenths: 6 + 8 + 7 = 21, write 1 carry 2", "Ones: 4 + 3 + 0 + 2 = 9; tens: 1"], "answer": "19.15" } },
-        { "heading": "Subtracting with place holders", "bullets": ["Write 12 as 12.00", "Exchange across the point as normal"], "note": "Example: 12 − 4.37 = 7.63. Ask: 'Why must we write 12.00?'", "misconception": { "wrong": "12 − 4.37 = 8.37 (ignoring the decimals)", "right": "12.00 − 4.37 = 7.63" } },
-        { "heading": "Mental or written?", "bullets": ["Compensate: 6.9 + 3.8 = 7 + 3.8 − 0.1", "Make a whole: 2.75 + 1.25 = 4", "Written for awkward numbers"], "note": "Give three calculations and ask pupils to choose a method and justify it." },
-        { "heading": "Estimate, then check", "bullets": ["Round to whole numbers first", "Use the inverse: subtract to check addition"], "note": "14.6 + 3.85 + 0.7 ≈ 15 + 4 + 1 = 20. Our 19.15 is close. Then check 19.15 − 0.7 − 3.85 = 14.6." },
-        { "heading": "Check: decimals", "bullets": [], "note": "Show me on 3.", "check": { "q": "Work out 5.3 + 2.47", "options": ["7.50", "7.77", "2.53", "7.10"], "answer": 1, "why": "5.30 + 2.47 = 7.77 with the points lined up. The other answers come from lining up digits instead of points, or subtracting." } }
-      ],
-      "practice": ["Work out 23.4 + 6.75", "Work out 9 − 2.48", "Work out 3.6 + 12.09 + 0.5"],
-      "independent": ["Core: (a) 45.8 + 7.65 (b) 20 − 6.34 (c) 0.45 + 3.9 + 12", "Extend: A recipe needs 0.75 kg flour, 0.3 kg sugar and 0.125 kg butter. Find the total mass, and how much flour is left from a 2 kg bag.", "Stretch: Find the missing digits: 3.□7 + □.85 = 9.12"],
-      "exit": ["Work out 8.4 + 3.27", "Work out 10 − 7.65", "Estimate 19.8 + 4.1 + 6.9"],
-      "homework": "Use a supermarket receipt (or the sample one) to add up the items with a written method and check against the total.",
-      "send": "Support: place-value columns with the point printed. Stretch: missing-digit problems."
+     "term": "decimal place",
+     "def": "a digit position after the decimal point"
     },
     {
-      "unit": "Unit 1: Number",
-      "n": 2,
-      "title": "Multiplying and dividing decimals",
-      "duration": 50,
-      "bigQuestion": "Does multiplying always make a number bigger?",
-      "objectives": ["Multiply decimals using a whole-number method", "Divide a decimal by a whole number", "Use estimation to place the decimal point"],
-      "successCriteria": ["Multiply a decimal by a whole number", "Multiply two decimals and place the point correctly", "Explain why multiplying by 0.5 makes a number smaller"],
-      "crossCurricular": "Science: calculating with measurements; Business: unit prices",
-      "smsc": "Social: fair sharing of costs between friends",
-      "keywords": [
-        { "term": "decimal point", "def": "separates whole numbers from parts of a whole" },
-        { "term": "product", "def": "the result of a multiplication" },
-        { "term": "quotient", "def": "the result of a division" },
-        { "term": "estimate", "def": "an approximate answer to check against" }
-      ],
-      "starter": ["Work out 12.5 + 3.75", "Work out 24 × 3", "Work out 0.1 × 10", "Round 6.48 to the nearest whole number"],
-      "teach": [
-        { "heading": "Multiply as whole numbers, then adjust", "bullets": ["Remove the points and multiply", "Count decimal places in the question", "The answer has the same number"], "note": "Model and show the estimate as a check.", "model": { "problem": "Work out 3.4 × 2.6", "steps": ["Estimate: 3 × 3 = 9", "Whole numbers: 34 × 26 = 884", "Two decimal places in total", "884 becomes 8.84"], "answer": "8.84 (close to 9)" } },
-        { "heading": "Multiplying by numbers less than 1", "bullets": ["× 0.5 is the same as halving", "× 0.1 is the same as ÷ 10", "The answer gets smaller"], "note": "Answer the big question: multiplying by a number between 0 and 1 makes it smaller.", "misconception": { "wrong": "Multiplying always makes a number bigger", "right": "40 × 0.5 = 20: smaller, because 0.5 is less than 1" } },
-        { "heading": "Dividing a decimal by a whole number", "bullets": ["Use short division", "Keep the point in line", "Add zeros if needed"], "note": "Example: 17.4 ÷ 6 = 2.9. Then 7 ÷ 4 = 1.75 by writing 7.00.", "model": { "problem": "Work out 25.2 ÷ 4", "steps": ["Estimate: 24 ÷ 4 = 6", "25 ÷ 4 = 6 remainder 1", "Carry 1: 12 ÷ 4 = 3", "Point stays above the point"], "answer": "6.3" } },
-        { "heading": "Check: place the point", "bullets": [], "note": "Show me on 3.", "check": { "q": "52 × 18 = 936. What is 5.2 × 1.8?", "options": ["93.6", "9.36", "0.936", "936"], "answer": 1, "why": "Two decimal places in the question, so 9.36. Estimate: 5 × 2 = 10 confirms it." } }
-      ],
-      "practice": ["Work out 4.3 × 6", "Work out 0.7 × 0.8", "Work out 13.5 ÷ 3", "Given 47 × 23 = 1081, write down 4.7 × 2.3"],
-      "independent": ["Core: (a) 2.8 × 7 (b) 1.4 × 3.5 (c) 31.2 ÷ 4 (d) 9 ÷ 8", "Extend: Petrol costs £1.42 per litre. Find the cost of 38.5 litres to the nearest penny.", "Stretch: Find two decimals whose product is 0.24 and whose sum is 1. Find another pair whose product is 1.2."],
-      "exit": ["Work out 0.6 × 0.3", "Work out 18.6 ÷ 3", "Is 50 × 0.9 bigger or smaller than 50? Why?"],
-      "homework": "Calculate the cost of five items bought by weight (e.g. 1.4 kg of apples at £2.35 per kg), estimating first.",
-      "send": "Support: grid method for decimal multiplication. Stretch: dividing by a decimal."
+     "term": "place holder",
+     "def": "a zero used to keep digits in their correct place"
     },
     {
-      "unit": "Unit 1: Number",
-      "n": 3,
-      "title": "Divisibility rules",
-      "duration": 50,
-      "bigQuestion": "How can you tell if 3 744 is divisible by 9 without dividing?",
-      "objectives": ["Know and use divisibility rules for 2, 3, 4, 5, 6, 8, 9 and 10", "Use divisibility to find factors quickly", "Explain why a divisibility rule works"],
-      "successCriteria": ["Use the rules for 2, 3, 5 and 10", "Use the rules for 4, 6, 8 and 9", "Explain why the digit-sum rule works for 3 and 9"],
-      "crossCurricular": "Computing: checking codes such as ISBNs; History: number systems",
-      "smsc": "Spiritual: the order and patterns in numbers",
-      "keywords": [
-        { "term": "divisible", "def": "can be divided exactly with no remainder" },
-        { "term": "digit sum", "def": "the total of a number's digits" },
-        { "term": "factor", "def": "a number that divides exactly into another" },
-        { "term": "rule", "def": "a reliable test that always works" }
-      ],
-      "starter": ["Work out 2.4 × 3", "Is 45 a multiple of 5?", "Add the digits of 5 274", "List the factors of 18"],
-      "teach": [
-        { "heading": "The rules", "bullets": ["Quick tests without dividing"], "note": "Go through the table and test each with 3 744.", "table": { "head": ["Divisible by", "Test"], "rows": [["2", "last digit even"], ["3", "digit sum divisible by 3"], ["4", "last two digits divisible by 4"], ["5", "last digit 0 or 5"], ["6", "passes the tests for 2 and 3"], ["8", "last three digits divisible by 8"], ["9", "digit sum divisible by 9"], ["10", "last digit 0"]] } },
-        { "heading": "Testing a big number", "bullets": ["Apply each rule in turn", "Write yes or no with a reason"], "note": "Model all the tests.", "model": { "problem": "Is 3 744 divisible by 2, 3, 4, 6, 8 and 9?", "steps": ["Even, so by 2: yes", "Digit sum 3 + 7 + 4 + 4 = 18: by 3 and 9, yes", "Last two digits 44 = 4 × 11: by 4, yes", "By 2 and 3, so by 6: yes; 744 = 8 × 93: by 8, yes"], "answer": "Yes to all six" } },
-        { "heading": "Why the digit sum works", "bullets": ["10 = 9 + 1, 100 = 99 + 1", "So 3 744 = 3 × 999 + 7 × 99 + 4 × 9 + (3 + 7 + 4 + 4)", "Only the digit sum decides"], "note": "Higher attainers love this. Show that the multiples of 9 vanish, leaving the digit sum. That is why it works for 3 and 9 only." },
-        { "heading": "The rule for 6", "bullets": ["6 = 2 × 3, so test both"], "note": "Ask: 'Does 'divisible by 3 and 4' mean divisible by 12?' Yes, because 3 and 4 share no factors. But '2 and 4' does not mean 8.", "misconception": { "wrong": "Divisible by 2 and 4, so divisible by 8 (e.g. 12)", "right": "Combine only when the numbers share no factor: 2 and 3 → 6" } },
-        { "heading": "Check: divisibility", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which number is divisible by 9?", "options": ["1 234", "4 518", "6 103", "7 009"], "answer": 1, "why": "4 + 5 + 1 + 8 = 18, which is divisible by 9. The other digit sums are 10, 10 and 16, none divisible by 9." } }
-      ],
-      "practice": ["Is 2 358 divisible by 3? By 9?", "Is 7 316 divisible by 4?", "Find a digit to make 47□ divisible by 6"],
-      "independent": ["Core: Test 5 040 for divisibility by 2, 3, 4, 5, 6, 8, 9 and 10", "Extend: Find the smallest 4-digit number divisible by 2, 3, 4, 5 and 6.", "Stretch: Find all digits d so that the number 52d6 is divisible by 4 and by 9. Explain why there may be none."],
-      "exit": ["Is 846 divisible by 3?", "Is 1 228 divisible by 4?", "Why is 135 divisible by 5 but not by 10?"],
-      "homework": "Write down any five 4-digit numbers (e.g. phone digits) and test each for divisibility by 3, 4, 6 and 9.",
-      "send": "Support: rules card. Stretch: research the rule for 11."
+     "term": "estimate",
+     "def": "an approximate answer from rounded numbers"
     },
     {
-      "unit": "Unit 1: Number",
-      "n": 4,
-      "title": "Calculating with negative integers",
-      "duration": 50,
-      "bigQuestion": "Why is a negative times a negative a positive?",
-      "objectives": ["Add and subtract negative numbers", "Multiply and divide negative numbers", "Use negatives with the priority of operations"],
-      "successCriteria": ["Add and subtract with negatives", "Multiply and divide with negatives using the sign rules", "Explain the sign rules using patterns"],
-      "crossCurricular": "Science: temperature changes; Business: profit and loss",
-      "smsc": "Moral: debt and its effects; why Islam warns against riba (interest) on loans",
-      "keywords": [
-        { "term": "integer", "def": "a whole number: positive, negative or zero" },
-        { "term": "negative", "def": "less than zero" },
-        { "term": "sign", "def": "+ or − in front of a number" },
-        { "term": "product", "def": "the result of multiplying" }
-      ],
-      "starter": ["Is 738 divisible by 9?", "Work out −3 + 8", "Work out 2 − 9", "Work out 4 − (−3)"],
-      "teach": [
-        { "heading": "A pattern explains the rule", "bullets": ["Each step down, the answer falls by 3", "Keep the pattern going past zero"], "note": "Build the table live. Ask pupils to continue it.", "table": { "head": ["Calculation", "Answer"], "rows": [["3 × 3", "9"], ["3 × 0", "0"], ["3 × −1", "−3"], ["−3 × 1", "−3"], ["−3 × 0", "0"], ["−3 × −1", "3"], ["−3 × −2", "6"]] } },
-        { "heading": "The sign rules", "bullets": ["Same signs: positive", "Different signs: negative", "Works for × and ÷"], "note": "Practise quick-fire: −6 × 4, −20 ÷ −5, 18 ÷ −3.", "misconception": { "wrong": "−4 × −5 = −20", "right": "Same signs give a positive: −4 × −5 = 20" } },
-        { "heading": "Negatives with BIDMAS", "bullets": ["Brackets and indices first", "(−3)² = 9 but −3² = −9"], "note": "This trips up calculator users. Show both on screen.", "model": { "problem": "Work out (−2)² × 3 − 10 ÷ (−5)", "steps": ["(−2)² = 4", "4 × 3 = 12", "10 ÷ (−5) = −2", "12 − (−2) = 14"], "answer": "14" } },
-        { "heading": "Check: sign rules", "bullets": [], "note": "Show me on 3.", "check": { "q": "Work out −24 ÷ (−6) × (−2)", "options": ["8", "−8", "2", "−2"], "answer": 1, "why": "−24 ÷ −6 = 4, then 4 × −2 = −8. Left to right for ÷ and ×." } }
-      ],
-      "practice": ["Work out −7 × 6", "Work out −42 ÷ −7", "Work out (−5)²", "Work out −3 × 4 + 10"],
-      "independent": ["Core: (a) −8 × −3 (b) 36 ÷ −4 (c) −2 × −3 × −4 (d) (−6)² − 20", "Extend: A business makes a loss of £350 in each of 4 months, then a profit of £900 in each of 2 months. What is its overall result?", "Stretch: Find two integers whose product is −36 and whose sum is 5. How many pairs have a product of −36?"],
-      "exit": ["Work out −9 × −4", "Work out 30 ÷ −6", "Work out −1 × −1 × −1"],
-      "homework": "Make a negative-number multiplication grid from −5 to 5 and colour the positive and negative answers. Describe the pattern.",
-      "send": "Support: sign-rule card and number line. Stretch: powers of negative numbers."
-    },
-    {
-      "unit": "Unit 1: Number",
-      "n": 5,
-      "title": "Powers and roots",
-      "duration": 50,
-      "bigQuestion": "How quickly do numbers grow when we keep multiplying?",
-      "objectives": ["Calculate squares, cubes, square roots and cube roots", "Know when a square root can be negative", "Use a calculator for powers and roots"],
-      "successCriteria": ["Recall squares to 15² and cubes of 1 to 5 and 10", "Calculate with roots and powers on a calculator", "Explain why √25 has two answers but ∛27 has only one real answer"],
-      "crossCurricular": "Science: area and volume units; Computing: powers of 2 in binary",
-      "smsc": "Spiritual: wonder at fast growth, such as the story of rice on a chessboard",
-      "keywords": [
-        { "term": "power", "def": "how many times a number is multiplied by itself" },
-        { "term": "cube number", "def": "a number multiplied by itself three times" },
-        { "term": "square root", "def": "a number that squares to give the original" },
-        { "term": "cube root", "def": "a number that cubes to give the original" }
-      ],
-      "starter": ["Work out −6 × −7", "Work out 8²", "Work out √81", "Work out 2 × 2 × 2"],
-      "teach": [
-        { "heading": "Squares and cubes", "bullets": ["n² = n × n", "n³ = n × n × n", "Cubes: 1, 8, 27, 64, 125, …, 1000"], "note": "Show a cube made of smaller cubes. 3³ = 27 small cubes.", "table": { "head": ["n", "1", "2", "3", "4", "5", "10"], "rows": [["n²", "1", "4", "9", "16", "25", "100"], ["n³", "1", "8", "27", "64", "125", "1000"]] } },
-        { "heading": "Roots", "bullets": ["√ undoes squaring; ∛ undoes cubing", "5² = 25 and (−5)² = 25", "So 25 has two square roots: ±5"], "note": "The √ sign means the positive root. Ask: 'What is ∛(−8)?' (−2, since −2 × −2 × −2 = −8.)", "misconception": { "wrong": "4³ = 12", "right": "4³ = 4 × 4 × 4 = 64" } },
-        { "heading": "Calculator skills", "bullets": ["x² and x³ keys", "xʸ (or ^) for other powers", "√ and ∛ keys"], "note": "Model on an online scientific calculator on screen.", "model": { "problem": "Work out 2⁵ + ∛343", "steps": ["2⁵ = 2 × 2 × 2 × 2 × 2 = 32", "∛343: 7 × 7 × 7 = 343, so 7", "32 + 7 = 39"], "answer": "39" } },
-        { "heading": "Check: roots", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which number has two square roots, 6 and −6?", "options": ["12", "36", "−36", "216"], "answer": 1, "why": "6² = 36 and (−6)² = 36. −36 has no real square root; 216 = 6³." } }
-      ],
-      "practice": ["Work out 5³", "Work out √144 and ∛64", "Work out 3⁴", "Write both square roots of 49"],
-      "independent": ["Core: (a) 7² + 2³ (b) √100 − ∛125 (c) 10³ ÷ 4² (d) 2⁶", "Extend: A cube has a volume of 512 cm³. Find the length of one edge and the area of one face.", "Stretch: Find a number that is both a square and a cube between 1 and 1000 (other than 1). Find all of them. What do you notice?"],
-      "exit": ["Work out 6³", "Work out ∛1000", "Give both square roots of 81"],
-      "homework": "One grain of rice on square 1 of a chessboard, 2 on square 2, 4 on square 3… Write the number on squares 1 to 12 as powers of 2 and work them out.",
-      "send": "Support: squares and cubes table on screen. Stretch: powers of 2 and binary."
-    },
-    {
-      "unit": "Unit 1: Number",
-      "n": 6,
-      "title": "Powers, roots and brackets",
-      "duration": 50,
-      "bigQuestion": "How do calculators 'know' which part to do first?",
-      "objectives": ["Calculate combinations of powers, roots and brackets", "Use the priority of operations accurately", "Enter calculations correctly into a calculator"],
-      "successCriteria": ["Work out calculations with a power and one other operation", "Work out multi-step calculations with roots, powers and brackets", "Enter fractions and roots correctly into a calculator, using brackets"],
-      "crossCurricular": "Computing: operator precedence in code; Science: formulae such as E = mc²",
-      "smsc": "Social: shared rules let us communicate clearly",
-      "keywords": [
-        { "term": "index", "def": "the small number showing the power" },
-        { "term": "priority of operations", "def": "the order in which operations are done" },
-        { "term": "BIDMAS", "def": "Brackets, Indices, Division and Multiplication, Addition and Subtraction" },
-        { "term": "root", "def": "the inverse of a power" }
-      ],
-      "starter": ["Work out 4³", "Work out ∛27", "Work out 2 + 3 × 5", "Work out (−4)²"],
-      "teach": [
-        { "heading": "Roots count as indices", "bullets": ["√ and ∛ are done at the I stage", "Work inside the root sign first, like a bracket"], "note": "√(9 + 16) means add first: √25 = 5. Compare with √9 + √16 = 7.", "misconception": { "wrong": "√(9 + 16) = 3 + 4 = 7", "right": "√(9 + 16) = √25 = 5" } },
-        { "heading": "A multi-step calculation", "bullets": ["Write one step per line", "Keep the rest of the calculation"], "note": "Model, writing each line.", "model": { "problem": "Work out 5 + (12 − 2³) × √36", "steps": ["Inside the bracket: 2³ = 8, so 12 − 8 = 4", "√36 = 6", "4 × 6 = 24", "5 + 24 = 29"], "answer": "29" } },
-        { "heading": "Fractions on a calculator", "bullets": ["The fraction line is a hidden bracket", "Type (20 + 4) ÷ (2 × 3)"], "note": "Show (20 + 4)/(2 × 3) = 4 but typing 20 + 4 ÷ 2 × 3 gives 26.", "compare": { "left": { "title": "Typed without brackets", "points": ["20 + 4 ÷ 2 × 3", "= 20 + 6", "= 26  ✗"] }, "right": { "title": "Typed with brackets", "points": ["(20 + 4) ÷ (2 × 3)", "= 24 ÷ 6", "= 4  ✓"] } } },
-        { "heading": "Check: order", "bullets": [], "note": "Show me on 3.", "check": { "q": "Work out 3 × 2² + 1", "options": ["37", "13", "25", "48"], "answer": 1, "why": "Indices first: 2² = 4, then 3 × 4 = 12, then + 1 = 13. A works out (3 × 2)² + 1 = 37, ignoring the order of operations." } }
-      ],
-      "practice": ["Work out 4 × 3²", "Work out (4 × 3)²", "Work out √(50 − 1) + 2³", "Work out (5 + 3)² ÷ 4"],
-      "independent": ["Core: (a) 2³ × 5 (b) 100 − 4 × 3² (c) √64 ÷ (6 − 2) (d) (1 + 2)³ − 7", "Extend: Use a calculator: (a) (3.2² + 4.1) ÷ (2.5 − 0.9) (b) √(7.8² − 3.6²) to 2 decimal places", "Stretch: Using 2, 3 and 4 once each with powers, roots and brackets, make the largest and smallest positive numbers you can."],
-      "exit": ["Work out 10 − 2³", "Work out √(36 + 64)", "How would you type (15 + 9) ÷ (2 + 4) into a calculator?"],
-      "homework": "Write five calculations that use a power, a root and brackets with a final answer of 10.",
-      "send": "Support: BIDMAS step frame. Stretch: nested brackets and powers of fractions."
-    },
-    {
-      "unit": "Unit 1: Number",
-      "n": 7,
-      "title": "Index notation and prime factor decomposition",
-      "duration": 50,
-      "bigQuestion": "Is there only one way to build a number from primes?",
-      "objectives": ["Use index notation for repeated factors", "Write a number as a product of its prime factors", "Use a factor tree or repeated division"],
-      "successCriteria": ["Draw a factor tree to find prime factors", "Write the product in index form", "Use the prime factors to tell if a number is a square or cube"],
-      "crossCurricular": "Computing: prime factors in internet security (RSA encryption)",
-      "smsc": "Spiritual: every number has one unique 'fingerprint' of primes",
-      "keywords": [
-        { "term": "prime factor", "def": "a factor that is a prime number" },
-        { "term": "prime factor decomposition", "def": "writing a number as a product of prime factors" },
-        { "term": "index notation", "def": "using powers to show repeated multiplication, e.g. 2³" },
-        { "term": "factor tree", "def": "a diagram splitting a number into factors until all are prime" }
-      ],
-      "starter": ["List the primes under 20", "Work out 2³ × 3", "Is 91 prime?", "Work out 5 + (8 − 2)²"],
-      "teach": [
-        { "heading": "Factor trees", "bullets": ["Split into any factor pair", "Circle primes and stop there", "Keep splitting the rest"], "note": "Show that 2 × 30 and 6 × 10 both give the same primes in the end. That answers the big question: the decomposition is unique.", "model": { "problem": "Write 120 as a product of prime factors", "steps": ["120 = 10 × 12", "10 = 2 × 5; 12 = 2 × 6", "6 = 2 × 3", "Primes: 2 × 2 × 2 × 3 × 5"], "answer": "120 = 2³ × 3 × 5" } },
-        { "heading": "Repeated division", "bullets": ["Divide by the smallest prime that works", "Repeat until you reach 1"], "note": "Show the ladder for 180: ÷2 = 90, ÷2 = 45, ÷3 = 15, ÷3 = 5, ÷5 = 1. So 180 = 2² × 3² × 5." },
-        { "heading": "Index form errors", "bullets": ["Multiply out to check your answer", "Primes only: no 4s, 6s or 9s"], "note": "Ask: 'What is wrong with 72 = 2 × 4 × 9?' (4 and 9 are not prime.)", "misconception": { "wrong": "72 = 2 × 4 × 9", "right": "72 = 2³ × 3²" } },
-        { "heading": "Squares and cubes from primes", "bullets": ["All indices even: a square number", "All indices multiples of 3: a cube number"], "note": "144 = 2⁴ × 3²: all even, so square; √144 = 2² × 3 = 12." },
-        { "heading": "Check: product of primes", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is 84 written as a product of prime factors?", "options": ["2 × 42", "2² × 21", "2² × 3 × 7", "4 × 3 × 7"], "answer": 2, "why": "2 × 2 × 3 × 7 = 84 and all are prime. B and D contain 21 and 4, which are not prime." } }
-      ],
-      "practice": ["Write 36 as a product of prime factors in index form", "Write 150 as a product of prime factors", "Which number is 2² × 3 × 5?"],
-      "independent": ["Core: Write in index form: (a) 60 (b) 98 (c) 200 (d) 252", "Extend: 2ᵃ × 3ᵇ = 432. Find a and b.", "Stretch: Use prime factors to find the smallest number you must multiply 90 by to get a square number, and the smallest to get a cube number."],
-      "exit": ["Write 48 as a product of primes in index form.", "Work out 2³ × 5.", "Is 2² × 3⁴ a square number? How do you know?"],
-      "homework": "Find the prime factor decomposition of your house number, your age multiplied by 10, and the current year.",
-      "send": "Support: list of primes to 50 and partly drawn trees. Stretch: number of factors from the prime decomposition."
-    },
-    {
-      "unit": "Unit 1: Number",
-      "n": 8,
-      "title": "HCF and LCM using prime factors",
-      "duration": 50,
-      "bigQuestion": "When will two buses that leave together next leave together again?",
-      "objectives": ["Find the HCF and LCM using prime factors", "Use a Venn diagram to organise prime factors", "Solve problems involving HCF and LCM"],
-      "successCriteria": ["Find HCF and LCM of two numbers by listing", "Use a Venn diagram of prime factors", "Decide whether a problem needs the HCF or the LCM, and explain why"],
-      "crossCurricular": "Geography: bus and train timetables; Design: tiling a floor",
-      "smsc": "Social: planning fairly shared groups and events",
-      "keywords": [
-        { "term": "highest common factor (HCF)", "def": "the largest number that divides into both numbers" },
-        { "term": "lowest common multiple (LCM)", "def": "the smallest number that both numbers divide into" },
-        { "term": "Venn diagram", "def": "overlapping circles to show shared and unshared items" },
-        { "term": "common", "def": "shared by both" }
-      ],
-      "starter": ["Write 60 as a product of primes", "List the factors of 24", "List the first 5 multiples of 6", "Work out 2² × 3²"],
-      "teach": [
-        { "heading": "Prime factors in a Venn diagram", "bullets": ["Shared primes go in the overlap", "HCF: multiply the overlap", "LCM: multiply everything in the diagram"], "note": "Model 60 = 2² × 3 × 5 and 72 = 2³ × 3². Overlap: 2, 2, 3.", "model": { "problem": "Find the HCF and LCM of 60 and 72", "steps": ["60 = 2 × 2 × 3 × 5; 72 = 2 × 2 × 2 × 3 × 3", "Overlap: 2, 2, 3", "HCF = 2 × 2 × 3 = 12", "LCM = 5 × (2 × 2 × 3) × 2 × 3 = 360"], "answer": "HCF 12, LCM 360" } },
-        { "heading": "Which do I need?", "bullets": ["Split into equal largest groups: HCF", "Happen together again: LCM"], "note": "Sort five problems into HCF or LCM. Read them aloud.", "compare": { "left": { "title": "HCF problems", "points": ["Biggest equal groups", "Largest square tile for a floor", "Cutting ribbons into equal longest lengths"] }, "right": { "title": "LCM problems", "points": ["Buses leaving together again", "Buying equal numbers of rolls and burgers", "Lights flashing together"] } } },
-        { "heading": "HCF and LCM mixed up", "bullets": ["The HCF is never bigger than the smaller number", "The LCM is never smaller than the larger number"], "note": "Use this as a sense check.", "misconception": { "wrong": "HCF of 60 and 72 is 360", "right": "HCF must be ≤ 60; 360 is the LCM" } },
-        { "heading": "Check: HCF or LCM", "bullets": [], "note": "Show me on 3.", "check": { "q": "Bus A leaves every 12 minutes and bus B every 20 minutes. Both leave at 8:00. When do they next leave together?", "options": ["8:04", "8:32", "9:00", "12:00"], "answer": 2, "why": "LCM of 12 and 20 is 60 minutes, so 9:00. A uses the HCF (4); B adds them." } }
-      ],
-      "practice": ["Find the HCF and LCM of 18 and 24 using prime factors", "Find the HCF of 45 and 75", "Is 'largest group' an HCF or LCM question?"],
-      "independent": ["Core: Find the HCF and LCM of (a) 36 and 48 (b) 40 and 56 (c) 126 and 84", "Extend: A floor measures 360 cm by 270 cm. What is the largest square tile that fits exactly? How many tiles are needed?", "Stretch: The HCF of two numbers is 6 and their LCM is 72. Find two possible pairs."],
-      "exit": ["Find the HCF of 30 and 45.", "Find the LCM of 8 and 12.", "Which is needed: 'largest equal bags of sweets'?"],
-      "homework": "Write three real-life problems (one HCF, one LCM, one either) with full solutions.",
-      "send": "Support: Venn diagram template. Stretch: three numbers in a three-circle Venn."
-    },
-    {
-      "unit": "Unit 1: Number",
-      "n": 9,
-      "title": "Estimation and checking",
-      "duration": 50,
-      "bigQuestion": "How can you tell an answer is wrong without working it out?",
-      "objectives": ["Round to 1 significant figure to estimate", "Estimate calculations with several operations", "Use estimates to check calculator answers"],
-      "successCriteria": ["Round numbers to 1 significant figure", "Estimate multi-step calculations including division", "Say whether an estimate is an over- or under-estimate and why"],
-      "crossCurricular": "Science: checking experimental results; Geography: estimating populations",
-      "smsc": "Moral: checking our own work honestly before handing it in",
-      "keywords": [
-        { "term": "significant figure", "def": "a digit that tells you about the size of the number; the first non-zero digit is the first" },
-        { "term": "estimate", "def": "an approximate answer using rounded values" },
-        { "term": "≈", "def": "the symbol for 'approximately equal to'" },
-        { "term": "overestimate", "def": "an estimate bigger than the exact answer" }
-      ],
-      "starter": ["Find the HCF of 12 and 18", "Round 4 682 to the nearest 1000", "Work out 40 × 30", "Work out 600 ÷ 20"],
-      "teach": [
-        { "heading": "1 significant figure", "bullets": ["Find the first non-zero digit", "Round there", "Keep place-holder zeros"], "note": "Examples: 4 682 → 5 000; 0.0371 → 0.04; 38.7 → 40.", "table": { "head": ["Number", "1 s.f."], "rows": [["4 682", "5 000"], ["38.7", "40"], ["0.0371", "0.04"], ["951", "1 000"]] } },
-        { "heading": "Estimating a calculation", "bullets": ["Round every number to 1 s.f.", "Calculate mentally", "Use ≈"], "note": "Model with a fraction calculation.", "model": { "problem": "Estimate (48.7 × 6.2) ÷ 0.51", "steps": ["Round: 50 × 6 ÷ 0.5", "50 × 6 = 300", "300 ÷ 0.5 = 600"], "answer": "≈ 600 (exact: 592.0…)" } },
-        { "heading": "Dividing by a decimal", "bullets": ["÷ 0.5 doubles", "÷ 0.1 multiplies by 10"], "note": "Many pupils halve when dividing by 0.5.", "misconception": { "wrong": "300 ÷ 0.5 = 150", "right": "300 ÷ 0.5 = 600 (how many halves in 300?)" } },
-        { "heading": "Check: estimate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is the best estimate of 31.6 × 0.48?", "options": ["1.5", "15", "150", "60"], "answer": 1, "why": "30 × 0.5 = 15. A and C have the point in the wrong place; D multiplies by 2 instead of halving." } }
-      ],
-      "practice": ["Round 0.00649 to 1 s.f.", "Estimate 297 × 41", "Estimate 8.9 × 3.1 ÷ 0.48"],
-      "independent": ["Core: Estimate (a) 612 ÷ 19 (b) 7.8² (c) (21.4 + 38.9) ÷ 5.8", "Extend: A pupil's calculator says 47.3 × 0.92 = 435.16. Use an estimate to show this is wrong, and suggest what went wrong.", "Stretch: Estimate (3.92 × 0.0517) ÷ 0.198. Is your estimate bigger or smaller than the exact value? Justify without a calculator."],
-      "exit": ["Round 0.0283 to 1 s.f.", "Estimate 52 × 18.", "Estimate 396 ÷ 0.21."],
-      "homework": "Estimate the total cost of a weekly shop of ten items, then compare with the exact total.",
-      "send": "Support: highlight the first significant digit. Stretch: estimating with powers and roots."
-    },
-    {
-      "unit": "Unit 1: Number",
-      "n": 10,
-      "title": "Number problem solving and review",
-      "duration": 50,
-      "bigQuestion": "Which number skill from this unit would you trust yourself with in a real-life emergency?",
-      "objectives": ["Choose and combine number skills to solve problems", "Show working clearly", "Identify and correct own misconceptions"],
-      "successCriteria": ["Solve one-step number problems", "Solve multi-step problems combining several skills", "Explain a strategy and correct errors in worked solutions"],
-      "crossCurricular": "Business: budgeting; Science: data calculations",
-      "smsc": "Spiritual: perseverance (sabr) on hard problems",
-      "keywords": [
-        { "term": "strategy", "def": "a plan for solving a problem" },
-        { "term": "multi-step", "def": "a problem that needs several calculations" },
-        { "term": "justify", "def": "give reasons for your answer" },
-        { "term": "reflect", "def": "think about what went well and what to improve" }
-      ],
-      "starter": ["Work out −6 × −8", "Write 90 as a product of primes", "Find the LCM of 6 and 9", "Estimate 49 × 21"],
-      "teach": [
-        { "heading": "A problem-solving routine", "bullets": ["What do I know? What do I need?", "Which skill fits?", "Estimate, calculate, check"], "note": "Display the routine; pupils use it for every problem today.", "cycle": ["Read and underline", "Choose a skill", "Estimate", "Calculate", "Check and answer in context"] },
-        { "heading": "A multi-step problem", "bullets": ["Break into parts", "Label each step"], "note": "Model and ask pupils to name the skill used at each step.", "model": { "problem": "Plates come in packs of 12, cups in packs of 18. A school wants the same number of each for a dinner and needs at least 100. Cost: plates £3.75 per pack, cups £4.20 per pack. Find the cheapest total.", "steps": ["LCM of 12 and 18 is 36", "Multiples of 36: 36, 72, 108, so 108 of each", "108 ÷ 12 = 9 plate packs; 108 ÷ 18 = 6 cup packs", "9 × 3.75 + 6 × 4.20 = 33.75 + 25.20"], "answer": "£58.95" } },
-        { "heading": "Spot the error", "bullets": ["Each worked answer has one mistake", "Find it and correct it"], "note": "Show three: (−3)² = −9; 2.4 × 0.3 = 7.2; 72 = 2² × 18. Pupils fix them.", "misconception": { "wrong": "2.4 × 0.3 = 7.2", "right": "24 × 3 = 72 with two decimal places: 0.72" } },
-        { "heading": "Check: choose the skill", "bullets": [], "note": "Show me on 3.", "check": { "q": "36 boys and 48 girls are put into the largest possible equal teams with no mixing. What size is each team?", "options": ["144", "12", "6", "84"], "answer": 1, "why": "HCF of 36 and 48 is 12. A is the LCM; D adds them." } }
-      ],
-      "practice": ["Find the cost of 2.5 kg of rice at £1.84 per kg", "The temperature falls from 4 °C by 2.5 °C every hour for 4 hours. What is it now?", "Is 2 862 divisible by 9 and by 6?"],
-      "independent": ["Core: Five mixed questions: (a) 3.6 × 0.4 (b) −45 ÷ −9 (c) 2³ × 3² (d) HCF of 28 and 42 (e) estimate 812 ÷ 39", "Extend: Two lighthouses flash every 15 s and 25 s. They flash together at 21:00:00. How many times do they flash together before 21:10:00?", "Stretch: Write your own multi-step problem that needs at least three skills from this unit, with a full worked solution."],
-      "exit": ["Which skill would you use to find when two events happen together again?", "Correct this: (−4)² = −16.", "Rate your confidence 1 to 3 for: decimals, negatives, primes."],
-      "homework": "Complete the Unit 1 review sheet (10 questions) and highlight the two topics you found hardest.",
-      "send": "Support: problem cards with skill hints. Stretch: open problems with multiple answers."
-    },
-    {
-      "unit": "Unit 2: Area and volume",
-      "n": 11,
-      "title": "Area of a triangle",
-      "duration": 50,
-      "bigQuestion": "Why is the area of a triangle exactly half of a rectangle?",
-      "objectives": ["Derive the formula for the area of a triangle", "Use A = ½ × b × h with the perpendicular height", "Find a missing length given the area"],
-      "successCriteria": ["Find the area of a right-angled triangle", "Find the area of any triangle using the perpendicular height", "Find a missing base or height from the area"],
-      "crossCurricular": "Art: triangles in Islamic geometric design; DT: roof shapes",
-      "smsc": "Cultural: triangular structures in architecture around the world",
-      "keywords": [
-        { "term": "area", "def": "the amount of space inside a 2D shape, in square units" },
-        { "term": "base", "def": "the side the shape stands on" },
-        { "term": "perpendicular height", "def": "the height measured at right angles to the base" },
-        { "term": "formula", "def": "a rule written with letters" }
-      ],
-      "starter": ["Area of a rectangle 6 cm by 4 cm?", "Work out ½ × 10", "What units is area measured in?", "Name a triangle with a right angle"],
-      "teach": [
-        { "heading": "Half a rectangle", "bullets": ["A diagonal cuts a rectangle into 2 equal triangles", "So area = ½ × base × height"], "note": "Animate cutting a rectangle along a diagonal. Then show a non-right triangle fits in a rectangle twice too (cut and move the pieces).", "misconception": { "wrong": "Area = base × slant side", "right": "Use the perpendicular height, at 90° to the base" } },
-        { "heading": "Using the formula", "bullets": ["A = ½ × b × h", "Height is perpendicular to the base", "Units: cm²"], "note": "Model with a triangle base 9 cm, perpendicular height 6 cm, slant side 7 cm.", "model": { "problem": "Base 9 cm, perpendicular height 6 cm, slant side 7 cm. Find the area.", "steps": ["Ignore the slant side (7 cm)", "A = ½ × 9 × 6", "9 × 6 = 54; half of 54 = 27"], "answer": "27 cm²" } },
-        { "heading": "Working backwards", "bullets": ["Put the area into the formula", "Solve for the missing length"], "note": "A = 30 cm², b = 12 cm. 30 = ½ × 12 × h, so 30 = 6h, h = 5 cm." },
-        { "heading": "Check: which height?", "bullets": [], "note": "Show me on 3.", "check": { "q": "A triangle has base 10 cm, sides 8 cm and 7 cm, and perpendicular height 5 cm. What is its area?", "options": ["40 cm²", "25 cm²", "50 cm²", "35 cm²"], "answer": 1, "why": "½ × 10 × 5 = 25. A uses the 8 cm side; C forgets to halve; D uses 7 cm." } }
-      ],
-      "practice": ["Find the area: base 8 cm, height 5 cm", "Find the area: base 7 m, height 3 m", "Area 24 cm², base 8 cm. Find the height."],
-      "independent": ["Core: Find the area of triangles with (a) b = 14 cm, h = 9 cm (b) b = 6.5 m, h = 4 m (c) b = 11 mm, h = 7 mm", "Extend: A triangular sail has a base of 3.2 m and a height of 5.5 m. Sailcloth costs £18 per m². Find the cost.", "Stretch: Draw three different triangles on a grid that each have an area of 12 cm². Explain why there are infinitely many."],
-      "exit": ["Area: base 12 cm, height 5 cm?", "Why do we halve?", "Area 18 cm², height 4 cm. Find the base."],
-      "homework": "Find and measure three triangles at home (e.g. sandwiches, signs) and calculate their areas.",
-      "send": "Support: grid paper and labelled diagrams with the height highlighted. Stretch: triangles on coordinate grids."
-    },
-    {
-      "unit": "Unit 2: Area and volume",
-      "n": 12,
-      "title": "Area of parallelograms and trapezia",
-      "duration": 50,
-      "bigQuestion": "How can cutting and rearranging a shape help us find its area?",
-      "objectives": ["Derive and use the formula for the area of a parallelogram", "Derive and use the formula for the area of a trapezium", "Find areas of compound shapes"],
-      "successCriteria": ["Find the area of a parallelogram", "Find the area of a trapezium", "Find areas of compound shapes using several formulae"],
-      "crossCurricular": "Geography: estimating the area of a field; DT: designing a garden",
-      "smsc": "Spiritual: patterns of tessellating shapes in mosque tilework",
-      "keywords": [
-        { "term": "parallelogram", "def": "a quadrilateral with two pairs of parallel sides" },
-        { "term": "trapezium", "def": "a quadrilateral with exactly one pair of parallel sides" },
-        { "term": "parallel", "def": "always the same distance apart; never meet" },
-        { "term": "compound shape", "def": "a shape made of simpler shapes" }
-      ],
-      "starter": ["Area of a triangle: base 10 cm, height 7 cm", "Area of a rectangle 9 cm by 5 cm", "Work out ½ × (4 + 6)", "How many pairs of parallel sides has a square?"],
-      "teach": [
-        { "heading": "Parallelogram = rectangle", "bullets": ["Cut off a triangle and slide it across", "It becomes a rectangle", "A = b × h"], "note": "Animate the cut and slide. Ask: 'What stays the same?' (Base and perpendicular height.)" },
-        { "heading": "Trapezium formula", "bullets": ["A = ½ (a + b) h", "a and b are the parallel sides", "h is the perpendicular distance between them"], "note": "Show two copies making a parallelogram of base (a + b).", "model": { "problem": "Trapezium: parallel sides 6 cm and 10 cm, height 4 cm. Find the area.", "steps": ["Add parallel sides: 6 + 10 = 16", "Halve: 8", "Multiply by height: 8 × 4"], "answer": "32 cm²" } },
-        { "heading": "Compound shapes", "bullets": ["Split into rectangles, triangles and trapezia", "Find any missing lengths", "Add (or subtract) the areas"], "note": "An L-shaped room: split into two rectangles, or a big rectangle minus a small one. Both give the same answer." },
-        { "heading": "Using the slant side", "bullets": ["Slant sides are not heights"], "note": "Same error as with triangles.", "misconception": { "wrong": "Parallelogram area = base × slant side", "right": "Area = base × perpendicular height" } },
-        { "heading": "Check: trapezium", "bullets": [], "note": "Show me on 3.", "check": { "q": "A trapezium has parallel sides 5 m and 9 m and height 6 m. Its area is…", "options": ["270 m²", "84 m²", "42 m²", "20 m²"], "answer": 2, "why": "½ × (5 + 9) × 6 = 7 × 6 = 42. B forgets the half; A multiplies all three." } }
-      ],
-      "practice": ["Parallelogram: base 12 cm, height 7 cm", "Trapezium: parallel sides 4 m and 8 m, height 5 m", "Area of an L-shape made of a 10 × 4 and a 3 × 6 rectangle"],
-      "independent": ["Core: Find the areas: (a) parallelogram b = 15 cm, h = 8 cm (b) trapezium a = 7 cm, b = 13 cm, h = 6 cm (c) trapezium a = 2.5 m, b = 4.5 m, h = 3 m", "Extend: A garden is a trapezium with parallel sides 12 m and 18 m, 9 m apart. Turf costs £4.50 per m². Find the cost of turfing it.", "Stretch: A trapezium has area 60 cm², height 6 cm and one parallel side of 8 cm. Find the other parallel side."],
-      "exit": ["Area of a parallelogram: base 9 cm, height 4 cm?", "Write the trapezium formula.", "Area of a trapezium: 3 cm, 7 cm, height 2 cm?"],
-      "homework": "Sketch a plan of a room or garden using rectangles and trapezia and calculate its total area.",
-      "send": "Support: formula card and shapes with heights highlighted. Stretch: reverse problems."
-    },
-    {
-      "unit": "Unit 2: Area and volume",
-      "n": 13,
-      "title": "Volume of cubes and cuboids",
-      "duration": 50,
-      "bigQuestion": "How many sugar cubes fit in a shoebox, and how could you find out without filling it?",
-      "objectives": ["Calculate the volume of cubes and cuboids", "Use the correct units for volume", "Find a missing length given the volume"],
-      "successCriteria": ["Find volume by counting cubes", "Use V = l × w × h with units", "Find a missing dimension and convert cm³ to litres"],
-      "crossCurricular": "Science: volume and capacity of containers; DT: packaging design",
-      "smsc": "Moral: avoiding waste by packing efficiently",
-      "keywords": [
-        { "term": "volume", "def": "the amount of space inside a 3D shape" },
-        { "term": "cuboid", "def": "a 3D shape with six rectangular faces" },
-        { "term": "cubic centimetre (cm³)", "def": "a cube with edges 1 cm long" },
-        { "term": "capacity", "def": "how much a container holds; 1 litre = 1000 cm³" }
-      ],
-      "starter": ["Area of a trapezium: 4, 6 and height 3", "Work out 5 × 4 × 3", "Work out 2³", "How many faces does a cube have?"],
-      "teach": [
-        { "heading": "Layers of cubes", "bullets": ["Count the cubes in one layer: l × w", "Multiply by the number of layers: h", "V = l × w × h"], "note": "Show a 4 × 3 layer of 12 cubes, then stack 5 layers: 60 cm³." },
-        { "heading": "Calculating volume", "bullets": ["Same units for every length", "Answer in cubic units"], "note": "Model, then point out converting first.", "model": { "problem": "A box is 25 cm long, 12 cm wide and 0.1 m high. Find its volume.", "steps": ["Convert: 0.1 m = 10 cm", "V = 25 × 12 × 10", "25 × 12 = 300; 300 × 10 = 3000"], "answer": "3000 cm³ (3 litres)" } },
-        { "heading": "Units", "bullets": ["Length cm, area cm², volume cm³", "1 litre = 1000 cm³"], "note": "Ask pupils to say which unit each answer needs.", "misconception": { "wrong": "Volume = 60 cm²", "right": "Volume is in cubic units: 60 cm³" } },
-        { "heading": "Missing lengths", "bullets": ["Put known values in the formula", "Divide to find the missing length"], "note": "V = 240 cm³, l = 10, w = 6: 240 = 60h, h = 4 cm." },
-        { "heading": "Check: volume", "bullets": [], "note": "Show me on 3.", "check": { "q": "A cube has edges of 4 cm. What is its volume?", "options": ["12 cm³", "16 cm³", "64 cm³", "96 cm³"], "answer": 2, "why": "4 × 4 × 4 = 64. A adds; B is a face area; D is the surface area." } }
-      ],
-      "practice": ["Volume of a cuboid 8 cm × 5 cm × 3 cm", "Volume of a cube with edge 6 m", "V = 180 cm³, l = 9 cm, w = 5 cm. Find h."],
-      "independent": ["Core: Find the volumes of cuboids (a) 12 × 4 × 3 cm (b) 7 × 7 × 7 m (c) 2.5 × 4 × 10 cm", "Extend: A fish tank is 60 cm × 30 cm × 40 cm. How many litres does it hold when full to 5 cm below the top?", "Stretch: Find all the cuboids with whole-number edges that have a volume of 36 cm³. Which has the smallest surface area?"],
-      "exit": ["Volume of a cuboid 10 × 3 × 2 cm?", "How many cm³ in 2 litres?", "V = 100 cm³, base 5 × 5 cm. Height?"],
-      "homework": "Measure three boxes at home, calculate their volumes and convert to litres.",
-      "send": "Support: multilink cube models or images. Stretch: compound cuboids."
-    },
-    {
-      "unit": "Unit 2: Area and volume",
-      "n": 14,
-      "title": "Nets, plans and elevations",
-      "duration": 50,
-      "bigQuestion": "How do architects show a 3D building on flat paper?",
-      "objectives": ["Sketch nets of 3D solids", "Draw plans and elevations of 3D shapes", "Identify a solid from its net, plan or elevations"],
-      "successCriteria": ["Recognise nets of a cube and cuboid", "Draw the plan, front and side elevations", "Sketch a 3D solid from its plan and elevations"],
-      "crossCurricular": "DT: technical drawing; Art: perspective",
-      "smsc": "Cultural: the plan of the Ka'bah and the architecture of famous mosques",
-      "keywords": [
-        { "term": "net", "def": "a 2D pattern that folds to make a 3D shape" },
-        { "term": "plan", "def": "the view from directly above" },
-        { "term": "elevation", "def": "the view from the front or side" },
-        { "term": "face, edge, vertex", "def": "flat surface, line where faces meet, corner" }
-      ],
-      "starter": ["Volume of a 5 cm cube?", "How many edges does a cuboid have?", "Name a 3D shape with a triangle face", "Work out 3 × 4 × 2"],
-      "teach": [
-        { "heading": "Nets", "bullets": ["Each face appears once", "Faces must fold without overlapping", "A cube has 11 different nets"], "note": "Show 3 cube nets and 1 that does not fold. Ask pupils to spot which fails and why." },
-        { "heading": "Plans and elevations", "bullets": ["Plan: from above", "Front elevation: from the front", "Side elevation: from the side"], "note": "Use a small 3D 'L' made of cubes. Show the three views.", "compare": { "left": { "title": "3D view", "points": ["Shows depth", "Hard to measure", "Good for seeing the shape"] }, "right": { "title": "Plan and elevations", "points": ["Three flat views", "Exact measurements", "Used by architects and engineers"] } } },
-        { "heading": "Drawing the views", "bullets": ["Use squared paper", "Each cube is one square", "Draw only what you see from that side"], "note": "Model on a grid. Ask pupils to hold up their drawings to the camera.", "model": { "problem": "Draw views of an L-shape: 3 cubes in a row, 1 cube on top of the left end", "steps": ["Plan (above): 3 squares in a row", "Front: 3 squares, plus 1 on top of the left one", "Side (from the right): a column of 2 squares", "Label each view"], "answer": "Three labelled views" } },
-        { "heading": "Hidden cubes", "bullets": ["You cannot always see every cube"], "note": "Ask: 'Could there be a hidden cube?' Discuss when the views prove there isn't.", "misconception": { "wrong": "The plan shows how tall the shape is", "right": "The plan shows only the view from above, not height" } },
-        { "heading": "Check: name the solid", "bullets": [], "note": "Show me on 3.", "check": { "q": "A solid's plan is a circle and its front elevation is a triangle. What is it?", "options": ["Cylinder", "Cone", "Sphere", "Square-based pyramid"], "answer": 1, "why": "A cone looks circular from above and triangular from the front. A cylinder's elevation is a rectangle." } }
-      ],
-      "practice": ["Sketch a net of a cuboid 4 × 2 × 1 cm", "Draw the plan of a cylinder", "Which solid has plan: square; elevation: triangle?"],
-      "independent": ["Core: Draw the plan, front and side elevations of a 2 × 2 × 3 cuboid of cubes", "Extend: Draw a net of a triangular prism and label its dimensions so it would fold correctly.", "Stretch: Given a plan and two elevations (shown), find the smallest and largest number of cubes the solid could contain."],
-      "exit": ["What is a plan?", "Sketch a net of a cube.", "Which solid has a circle for a plan and a rectangle for an elevation?"],
-      "homework": "Draw the plan and front elevation of your bedroom or your house, labelling measurements.",
-      "send": "Support: interactive cube-building tool and printed nets. Stretch: isometric drawing."
-    },
-    {
-      "unit": "Unit 2: Area and volume",
-      "n": 15,
-      "title": "Surface area of cubes and cuboids",
-      "duration": 50,
-      "bigQuestion": "Can two boxes with the same volume need different amounts of cardboard?",
-      "objectives": ["Calculate the surface area of cubes and cuboids", "Use nets to organise surface area", "Compare surface areas of cuboids with the same volume"],
-      "successCriteria": ["Find the surface area of a cube", "Find the surface area of a cuboid using pairs of faces", "Find cuboids with equal volumes but different surface areas"],
-      "crossCurricular": "DT: packaging; Science: surface area and rates of reaction",
-      "smsc": "Moral: reducing packaging waste helps care for the earth (khalifah)",
-      "keywords": [
-        { "term": "surface area", "def": "the total area of all faces of a 3D shape" },
-        { "term": "face", "def": "a flat surface of a 3D shape" },
-        { "term": "pairs of faces", "def": "a cuboid has three pairs of identical opposite faces" },
-        { "term": "net", "def": "a 2D pattern that folds into a 3D shape" }
-      ],
-      "starter": ["Area of a rectangle 7 cm by 3 cm", "Volume of a 2 × 3 × 4 cuboid", "How many faces has a cuboid?", "Work out 2 × (12 + 8 + 6)"],
-      "teach": [
-        { "heading": "Three pairs of faces", "bullets": ["Front and back", "Top and bottom", "Two sides"], "note": "Unfold a box on camera to show the net.", "model": { "problem": "Surface area of a cuboid 5 cm × 4 cm × 3 cm", "steps": ["Top/bottom: 5 × 4 = 20, two of them: 40", "Front/back: 5 × 3 = 15, two: 30", "Sides: 4 × 3 = 12, two: 24", "Total: 40 + 30 + 24"], "answer": "94 cm²" } },
-        { "heading": "Cubes", "bullets": ["Six identical square faces", "SA = 6 × edge²"], "note": "Edge 3 cm: 6 × 9 = 54 cm²." },
-        { "heading": "Volume or surface area?", "bullets": ["Volume: space inside, cm³", "Surface area: covering, cm²"], "note": "Ask: 'Wrapping paper or sand to fill it: which needs which?'", "misconception": { "wrong": "Surface area of a 5 × 4 × 3 cuboid = 60", "right": "60 cm³ is the volume; surface area is 94 cm²" } },
-        { "heading": "Same volume, different surface area", "bullets": ["All have volume 24 cm³", "The most cube-like uses least card"], "note": "This answers the big question.", "table": { "head": ["Cuboid", "Volume", "Surface area"], "rows": [["1 × 1 × 24", "24 cm³", "98 cm²"], ["2 × 3 × 4", "24 cm³", "52 cm²"], ["2 × 2 × 6", "24 cm³", "56 cm²"]] } },
-        { "heading": "Check: surface area", "bullets": [], "note": "Show me on 3.", "check": { "q": "Surface area of a cube with edges 5 cm?", "options": ["125 cm²", "25 cm²", "150 cm²", "30 cm²"], "answer": 2, "why": "6 × 5² = 150. A is the volume; B is one face; D is 6 × 5." } }
-      ],
-      "practice": ["Surface area of a cube with edge 4 cm", "Surface area of a cuboid 6 × 2 × 1 cm", "Volume and surface area of a cuboid 10 × 5 × 2 cm"],
-      "independent": ["Core: Find the surface areas: (a) cube edge 7 cm (b) cuboid 8 × 3 × 2 cm (c) cuboid 12 × 10 × 0.5 cm", "Extend: A cereal box is 30 cm × 20 cm × 7 cm. Find the area of card needed, adding 10% for flaps.", "Stretch: Find the whole-number cuboid with volume 64 cm³ and the smallest surface area. Explain why that shape wins."],
-      "exit": ["Surface area of a 2 cm cube?", "Is 'volume' measured in cm² or cm³?", "Name the three pairs of faces of a cuboid."],
-      "homework": "Measure a box at home and find both its volume and surface area. Suggest a box with the same volume that uses less card.",
-      "send": "Support: net templates with faces labelled. Stretch: surface area of triangular prisms."
-    },
-    {
-      "unit": "Unit 2: Area and volume",
-      "n": 16,
-      "title": "Converting measures and problem solving",
-      "duration": 50,
-      "bigQuestion": "Why are there 10 000 cm² in a square metre and not 100?",
-      "objectives": ["Convert between metric units of length, mass and capacity", "Convert between units of area", "Solve problems involving measures"],
-      "successCriteria": ["Convert km, m, cm, mm and kg, g, litres, ml", "Convert between cm² and m², and cm³ and litres", "Solve multi-step measures problems and justify the units"],
-      "crossCurricular": "Science: units in practical work; Geography: map distances",
-      "smsc": "Moral: honest weights and measures (Surah Al-Mutaffifin warns against cheating in measure)",
-      "keywords": [
-        { "term": "metric", "def": "a system of units based on 10, 100 and 1000" },
-        { "term": "convert", "def": "change a measurement into different units" },
-        { "term": "kilo-", "def": "1000 times" },
-        { "term": "milli-", "def": "one thousandth" }
-      ],
-      "starter": ["Surface area of a 3 cm cube", "How many cm in 1 m?", "How many g in 1 kg?", "Work out 4.5 × 1000"],
-      "teach": [
-        { "heading": "Metric conversions", "bullets": ["Bigger unit to smaller: multiply", "Smaller to bigger: divide"], "note": "Recap and practise quick-fire.", "table": { "head": ["Length", "Mass", "Capacity"], "rows": [["1 km = 1000 m", "1 kg = 1000 g", "1 litre = 1000 ml"], ["1 m = 100 cm", "1 tonne = 1000 kg", "1 litre = 100 cl"], ["1 cm = 10 mm", "", "1 cm³ = 1 ml"]] } },
-        { "heading": "Area units", "bullets": ["1 m = 100 cm", "So 1 m² = 100 × 100 = 10 000 cm²"], "note": "Draw a 1 m square split into 100 × 100 small squares. This answers the big question.", "misconception": { "wrong": "1 m² = 100 cm²", "right": "1 m² = 100 cm × 100 cm = 10 000 cm²" } },
-        { "heading": "A measures problem", "bullets": ["Convert to the same units first", "Answer with the unit asked for"], "note": "Model.", "model": { "problem": "Paint covers 12 m² per litre. A wall is 450 cm by 320 cm. How much paint is needed?", "steps": ["Convert: 4.5 m by 3.2 m", "Area: 4.5 × 3.2 = 14.4 m²", "Paint: 14.4 ÷ 12 = 1.2"], "answer": "1.2 litres" } },
-        { "heading": "Check: units", "bullets": [], "note": "Show me on 3.", "check": { "q": "How many cm² are in 3 m²?", "options": ["300", "3000", "30 000", "300 000"], "answer": 2, "why": "3 × 10 000 = 30 000. A uses 100 instead of 10 000." } }
-      ],
-      "practice": ["Convert 3.4 km to m", "Convert 2500 g to kg", "Convert 5 m² to cm²", "How many litres is 4500 cm³?"],
-      "independent": ["Core: Convert (a) 72 mm to cm (b) 0.65 kg to g (c) 1.8 litres to ml (d) 25 000 cm² to m²", "Extend: A water tank is 1.2 m × 80 cm × 50 cm. How many litres does it hold?", "Stretch: Prove that 1 m³ = 1 000 000 cm³ and use it to find how many 1-litre bottles fill a 2 m × 1.5 m × 1 m tank."],
-      "exit": ["Convert 4.2 m to cm.", "How many cm² in 1 m²?", "How many ml in 0.75 litres?"],
-      "homework": "Find five food labels and convert each mass or volume into a different unit (e.g. 500 g to kg).",
-      "send": "Support: conversion ladder. Stretch: volume unit conversions."
+     "term": "inverse",
+     "def": "the opposite operation used to check"
     }
-  ]
+   ],
+   "starter": [
+    "Bismillah. Work out 7.5 + 2.5",
+    "Round 4.68 to 1 decimal place",
+    "Work out 10 − 3.2",
+    "What is the value of the 4 in 2.648?"
+   ],
+   "teach": [
+    {
+     "heading": "Line up the decimal points",
+     "bullets": [
+      "Points in a vertical line",
+      "Fill gaps with zeros",
+      "Then add or subtract as usual"
+     ],
+     "note": "Model and narrate each step.",
+     "model": {
+      "problem": "Work out 14.6 + 3.85 + 0.7",
+      "steps": [
+       "Write 14.60, 3.85, 0.70 lined up",
+       "Hundredths: 0 + 5 + 0 = 5",
+       "Tenths: 6 + 8 + 7 = 21, write 1 carry 2",
+       "Ones: 4 + 3 + 0 + 2 = 9; tens: 1"
+      ],
+      "answer": "19.15"
+     }
+    },
+    {
+     "heading": "Subtracting with place holders",
+     "bullets": [
+      "Write 12 as 12.00",
+      "Exchange across the point as normal"
+     ],
+     "note": "Example: 12 − 4.37 = 7.63. Ask: 'Why must we write 12.00?'",
+     "misconception": {
+      "wrong": "12 − 4.37 = 8.37 (ignoring the decimals)",
+      "right": "12.00 − 4.37 = 7.63"
+     }
+    },
+    {
+     "heading": "Mental or written?",
+     "bullets": [
+      "Compensate: 6.9 + 3.8 = 7 + 3.8 − 0.1",
+      "Make a whole: 2.75 + 1.25 = 4",
+      "Written for awkward numbers"
+     ],
+     "note": "Give three calculations and ask pupils to choose a method and justify it."
+    },
+    {
+     "heading": "Estimate, then check",
+     "bullets": [
+      "Round to whole numbers first",
+      "Use the inverse: subtract to check addition"
+     ],
+     "note": "14.6 + 3.85 + 0.7 ≈ 15 + 4 + 1 = 20. Our 19.15 is close. Then check 19.15 − 0.7 − 3.85 = 14.6."
+    },
+    {
+     "heading": "Check: decimals",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Work out 5.3 + 2.47",
+      "options": [
+       "7.50",
+       "7.77",
+       "2.53",
+       "7.10"
+      ],
+      "answer": 1,
+      "why": "5.30 + 2.47 = 7.77 with the points lined up. The other answers come from lining up digits instead of points, or subtracting."
+     }
+    }
+   ],
+   "practice": [
+    "Work out 23.4 + 6.75",
+    "Work out 9 − 2.48",
+    "Work out 3.6 + 12.09 + 0.5"
+   ],
+   "independent": [
+    "Core: (a) 45.8 + 7.65 (b) 20 − 6.34 (c) 0.45 + 3.9 + 12",
+    "Extend: A recipe needs 0.75 kg flour, 0.3 kg sugar and 0.125 kg butter. Find the total mass, and how much flour is left from a 2 kg bag.",
+    "Stretch: Find the missing digits: 3.□7 + □.85 = 9.12"
+   ],
+   "exit": [
+    "Work out 8.4 + 3.27",
+    "Work out 10 − 7.65",
+    "Estimate 19.8 + 4.1 + 6.9"
+   ],
+   "homework": "Use a supermarket receipt (or the sample one) to add up the items with a written method and check against the total.",
+   "send": "Support: place-value columns with the point printed. Stretch: missing-digit problems."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 2,
+   "title": "Multiplying and dividing decimals",
+   "duration": 50,
+   "bigQuestion": "Does multiplying always make a number bigger?",
+   "objectives": [
+    "Multiply decimals using a whole-number method",
+    "Divide a decimal by a whole number",
+    "Use estimation to place the decimal point"
+   ],
+   "successCriteria": [
+    "Multiply a decimal by a whole number",
+    "Multiply two decimals and place the point correctly",
+    "Explain why multiplying by 0.5 makes a number smaller"
+   ],
+   "crossCurricular": "Science: calculating with measurements; Business: unit prices",
+   "smsc": "Social: fair sharing of costs between friends",
+   "keywords": [
+    {
+     "term": "decimal point",
+     "def": "separates whole numbers from parts of a whole"
+    },
+    {
+     "term": "product",
+     "def": "the result of a multiplication"
+    },
+    {
+     "term": "quotient",
+     "def": "the result of a division"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate answer to check against"
+    }
+   ],
+   "starter": [
+    "Work out 12.5 + 3.75",
+    "Work out 24 × 3",
+    "Work out 0.1 × 10",
+    "Round 6.48 to the nearest whole number"
+   ],
+   "teach": [
+    {
+     "heading": "Multiply as whole numbers, then adjust",
+     "bullets": [
+      "Remove the points and multiply",
+      "Count decimal places in the question",
+      "The answer has the same number"
+     ],
+     "note": "Model and show the estimate as a check.",
+     "model": {
+      "problem": "Work out 3.4 × 2.6",
+      "steps": [
+       "Estimate: 3 × 3 = 9",
+       "Whole numbers: 34 × 26 = 884",
+       "Two decimal places in total",
+       "884 becomes 8.84"
+      ],
+      "answer": "8.84 (close to 9)"
+     }
+    },
+    {
+     "heading": "Multiplying by numbers less than 1",
+     "bullets": [
+      "× 0.5 is the same as halving",
+      "× 0.1 is the same as ÷ 10",
+      "The answer gets smaller"
+     ],
+     "note": "Answer the big question: multiplying by a number between 0 and 1 makes it smaller.",
+     "misconception": {
+      "wrong": "Multiplying always makes a number bigger",
+      "right": "40 × 0.5 = 20: smaller, because 0.5 is less than 1"
+     }
+    },
+    {
+     "heading": "Dividing a decimal by a whole number",
+     "bullets": [
+      "Use short division",
+      "Keep the point in line",
+      "Add zeros if needed"
+     ],
+     "note": "Example: 17.4 ÷ 6 = 2.9. Then 7 ÷ 4 = 1.75 by writing 7.00.",
+     "model": {
+      "problem": "Work out 25.2 ÷ 4",
+      "steps": [
+       "Estimate: 24 ÷ 4 = 6",
+       "25 ÷ 4 = 6 remainder 1",
+       "Carry 1: 12 ÷ 4 = 3",
+       "Point stays above the point"
+      ],
+      "answer": "6.3"
+     }
+    },
+    {
+     "heading": "Check: place the point",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "52 × 18 = 936. What is 5.2 × 1.8?",
+      "options": [
+       "93.6",
+       "9.36",
+       "0.936",
+       "936"
+      ],
+      "answer": 1,
+      "why": "Two decimal places in the question, so 9.36. Estimate: 5 × 2 = 10 confirms it."
+     }
+    }
+   ],
+   "practice": [
+    "Work out 4.3 × 6",
+    "Work out 0.7 × 0.8",
+    "Work out 13.5 ÷ 3",
+    "Given 47 × 23 = 1081, write down 4.7 × 2.3"
+   ],
+   "independent": [
+    "Core: (a) 2.8 × 7 (b) 1.4 × 3.5 (c) 31.2 ÷ 4 (d) 9 ÷ 8",
+    "Extend: Petrol costs £1.42 per litre. Find the cost of 38.5 litres to the nearest penny.",
+    "Stretch: Find two decimals whose product is 0.24 and whose sum is 1. Find another pair whose product is 1.2."
+   ],
+   "exit": [
+    "Work out 0.6 × 0.3",
+    "Work out 18.6 ÷ 3",
+    "Is 50 × 0.9 bigger or smaller than 50? Why?"
+   ],
+   "homework": "Calculate the cost of five items bought by weight (e.g. 1.4 kg of apples at £2.35 per kg), estimating first.",
+   "send": "Support: grid method for decimal multiplication. Stretch: dividing by a decimal."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 3,
+   "title": "Divisibility rules",
+   "duration": 50,
+   "bigQuestion": "How can you tell if 3 744 is divisible by 9 without dividing?",
+   "objectives": [
+    "Know and use divisibility rules for 2, 3, 4, 5, 6, 8, 9 and 10",
+    "Use divisibility to find factors quickly",
+    "Explain why a divisibility rule works"
+   ],
+   "successCriteria": [
+    "Use the rules for 2, 3, 5 and 10",
+    "Use the rules for 4, 6, 8 and 9",
+    "Explain why the digit-sum rule works for 3 and 9"
+   ],
+   "crossCurricular": "Computing: checking codes such as ISBNs; History: number systems",
+   "smsc": "Spiritual: the order and patterns in numbers",
+   "keywords": [
+    {
+     "term": "divisible",
+     "def": "can be divided exactly with no remainder"
+    },
+    {
+     "term": "digit sum",
+     "def": "the total of a number's digits"
+    },
+    {
+     "term": "factor",
+     "def": "a number that divides exactly into another"
+    },
+    {
+     "term": "rule",
+     "def": "a reliable test that always works"
+    }
+   ],
+   "starter": [
+    "Work out 2.4 × 3",
+    "Is 45 a multiple of 5?",
+    "Add the digits of 5 274",
+    "List the factors of 18"
+   ],
+   "teach": [
+    {
+     "heading": "The rules",
+     "bullets": [
+      "Quick tests without dividing"
+     ],
+     "note": "Go through the table and test each with 3 744.",
+     "table": {
+      "head": [
+       "Divisible by",
+       "Test"
+      ],
+      "rows": [
+       [
+        "2",
+        "last digit even"
+       ],
+       [
+        "3",
+        "digit sum divisible by 3"
+       ],
+       [
+        "4",
+        "last two digits divisible by 4"
+       ],
+       [
+        "5",
+        "last digit 0 or 5"
+       ],
+       [
+        "6",
+        "passes the tests for 2 and 3"
+       ],
+       [
+        "8",
+        "last three digits divisible by 8"
+       ],
+       [
+        "9",
+        "digit sum divisible by 9"
+       ],
+       [
+        "10",
+        "last digit 0"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Testing a big number",
+     "bullets": [
+      "Apply each rule in turn",
+      "Write yes or no with a reason"
+     ],
+     "note": "Model all the tests.",
+     "model": {
+      "problem": "Is 3 744 divisible by 2, 3, 4, 6, 8 and 9?",
+      "steps": [
+       "Even, so by 2: yes",
+       "Digit sum 3 + 7 + 4 + 4 = 18: by 3 and 9, yes",
+       "Last two digits 44 = 4 × 11: by 4, yes",
+       "By 2 and 3, so by 6: yes; 744 = 8 × 93: by 8, yes"
+      ],
+      "answer": "Yes to all six"
+     }
+    },
+    {
+     "heading": "Why the digit sum works",
+     "bullets": [
+      "10 = 9 + 1, 100 = 99 + 1",
+      "So 3 744 = 3 × 999 + 7 × 99 + 4 × 9 + (3 + 7 + 4 + 4)",
+      "Only the digit sum decides"
+     ],
+     "note": "Higher attainers love this. Show that the multiples of 9 vanish, leaving the digit sum. That is why it works for 3 and 9 only."
+    },
+    {
+     "heading": "The rule for 6",
+     "bullets": [
+      "6 = 2 × 3, so test both"
+     ],
+     "note": "Ask: 'Does 'divisible by 3 and 4' mean divisible by 12?' Yes, because 3 and 4 share no factors. But '2 and 4' does not mean 8.",
+     "misconception": {
+      "wrong": "Divisible by 2 and 4, so divisible by 8 (e.g. 12)",
+      "right": "Combine only when the numbers share no factor: 2 and 3 → 6"
+     }
+    },
+    {
+     "heading": "Check: divisibility",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which number is divisible by 9?",
+      "options": [
+       "1 234",
+       "4 518",
+       "6 103",
+       "7 009"
+      ],
+      "answer": 1,
+      "why": "4 + 5 + 1 + 8 = 18, which is divisible by 9. The other digit sums are 10, 10 and 16, none divisible by 9."
+     }
+    }
+   ],
+   "practice": [
+    "Is 2 358 divisible by 3? By 9?",
+    "Is 7 316 divisible by 4?",
+    "Find a digit to make 47□ divisible by 6"
+   ],
+   "independent": [
+    "Core: Test 5 040 for divisibility by 2, 3, 4, 5, 6, 8, 9 and 10",
+    "Extend: Find the smallest 4-digit number divisible by 2, 3, 4, 5 and 6.",
+    "Stretch: Find all digits d so that the number 52d6 is divisible by 4 and by 9. Explain why there may be none."
+   ],
+   "exit": [
+    "Is 846 divisible by 3?",
+    "Is 1 228 divisible by 4?",
+    "Why is 135 divisible by 5 but not by 10?"
+   ],
+   "homework": "Write down any five 4-digit numbers (e.g. phone digits) and test each for divisibility by 3, 4, 6 and 9.",
+   "send": "Support: rules card. Stretch: research the rule for 11."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 4,
+   "title": "Calculating with negative integers",
+   "duration": 50,
+   "bigQuestion": "Why is a negative times a negative a positive?",
+   "objectives": [
+    "Add and subtract negative numbers",
+    "Multiply and divide negative numbers",
+    "Use negatives with the priority of operations"
+   ],
+   "successCriteria": [
+    "Add and subtract with negatives",
+    "Multiply and divide with negatives using the sign rules",
+    "Explain the sign rules using patterns"
+   ],
+   "crossCurricular": "Science: temperature changes; Business: profit and loss",
+   "smsc": "Moral: debt and its effects; why Islam warns against riba (interest) on loans",
+   "keywords": [
+    {
+     "term": "integer",
+     "def": "a whole number: positive, negative or zero"
+    },
+    {
+     "term": "negative",
+     "def": "less than zero"
+    },
+    {
+     "term": "sign",
+     "def": "+ or − in front of a number"
+    },
+    {
+     "term": "product",
+     "def": "the result of multiplying"
+    }
+   ],
+   "starter": [
+    "Is 738 divisible by 9?",
+    "Work out −3 + 8",
+    "Work out 2 − 9",
+    "Work out 4 − (−3)"
+   ],
+   "teach": [
+    {
+     "heading": "A pattern explains the rule",
+     "bullets": [
+      "Each step down, the answer falls by 3",
+      "Keep the pattern going past zero"
+     ],
+     "note": "Build the table live. Ask pupils to continue it.",
+     "table": {
+      "head": [
+       "Calculation",
+       "Answer"
+      ],
+      "rows": [
+       [
+        "3 × 3",
+        "9"
+       ],
+       [
+        "3 × 0",
+        "0"
+       ],
+       [
+        "3 × −1",
+        "−3"
+       ],
+       [
+        "−3 × 1",
+        "−3"
+       ],
+       [
+        "−3 × 0",
+        "0"
+       ],
+       [
+        "−3 × −1",
+        "3"
+       ],
+       [
+        "−3 × −2",
+        "6"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The sign rules",
+     "bullets": [
+      "Same signs: positive",
+      "Different signs: negative",
+      "Works for × and ÷"
+     ],
+     "note": "Practise quick-fire: −6 × 4, −20 ÷ −5, 18 ÷ −3.",
+     "misconception": {
+      "wrong": "−4 × −5 = −20",
+      "right": "Same signs give a positive: −4 × −5 = 20"
+     }
+    },
+    {
+     "heading": "Negatives with BIDMAS",
+     "bullets": [
+      "Brackets and indices first",
+      "(−3)² = 9 but −3² = −9"
+     ],
+     "note": "This trips up calculator users. Show both on screen.",
+     "model": {
+      "problem": "Work out (−2)² × 3 − 10 ÷ (−5)",
+      "steps": [
+       "(−2)² = 4",
+       "4 × 3 = 12",
+       "10 ÷ (−5) = −2",
+       "12 − (−2) = 14"
+      ],
+      "answer": "14"
+     }
+    },
+    {
+     "heading": "Check: sign rules",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Work out −24 ÷ (−6) × (−2)",
+      "options": [
+       "8",
+       "−8",
+       "2",
+       "−2"
+      ],
+      "answer": 1,
+      "why": "−24 ÷ −6 = 4, then 4 × −2 = −8. Left to right for ÷ and ×."
+     }
+    }
+   ],
+   "practice": [
+    "Work out −7 × 6",
+    "Work out −42 ÷ −7",
+    "Work out (−5)²",
+    "Work out −3 × 4 + 10"
+   ],
+   "independent": [
+    "Core: (a) −8 × −3 (b) 36 ÷ −4 (c) −2 × −3 × −4 (d) (−6)² − 20",
+    "Extend: A business makes a loss of £350 in each of 4 months, then a profit of £900 in each of 2 months. What is its overall result?",
+    "Stretch: Find two integers whose product is −36 and whose sum is 5. How many pairs have a product of −36?"
+   ],
+   "exit": [
+    "Work out −9 × −4",
+    "Work out 30 ÷ −6",
+    "Work out −1 × −1 × −1"
+   ],
+   "homework": "Make a negative-number multiplication grid from −5 to 5 and colour the positive and negative answers. Describe the pattern.",
+   "send": "Support: sign-rule card and number line. Stretch: powers of negative numbers."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 5,
+   "title": "Powers and roots",
+   "duration": 50,
+   "bigQuestion": "How quickly do numbers grow when we keep multiplying?",
+   "objectives": [
+    "Calculate squares, cubes, square roots and cube roots",
+    "Know when a square root can be negative",
+    "Use a calculator for powers and roots"
+   ],
+   "successCriteria": [
+    "Recall squares to 15² and cubes of 1 to 5 and 10",
+    "Calculate with roots and powers on a calculator",
+    "Explain why √25 has two answers but ∛27 has only one real answer"
+   ],
+   "crossCurricular": "Science: area and volume units; Computing: powers of 2 in binary",
+   "smsc": "Spiritual: wonder at fast growth, such as the story of rice on a chessboard",
+   "keywords": [
+    {
+     "term": "power",
+     "def": "how many times a number is multiplied by itself"
+    },
+    {
+     "term": "cube number",
+     "def": "a number multiplied by itself three times"
+    },
+    {
+     "term": "square root",
+     "def": "a number that squares to give the original"
+    },
+    {
+     "term": "cube root",
+     "def": "a number that cubes to give the original"
+    }
+   ],
+   "starter": [
+    "Work out −6 × −7",
+    "Work out 8²",
+    "Work out √81",
+    "Work out 2 × 2 × 2"
+   ],
+   "teach": [
+    {
+     "heading": "Squares and cubes",
+     "bullets": [
+      "n² = n × n",
+      "n³ = n × n × n",
+      "Cubes: 1, 8, 27, 64, 125, …, 1000"
+     ],
+     "note": "Show a cube made of smaller cubes. 3³ = 27 small cubes.",
+     "table": {
+      "head": [
+       "n",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "10"
+      ],
+      "rows": [
+       [
+        "n²",
+        "1",
+        "4",
+        "9",
+        "16",
+        "25",
+        "100"
+       ],
+       [
+        "n³",
+        "1",
+        "8",
+        "27",
+        "64",
+        "125",
+        "1000"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Roots",
+     "bullets": [
+      "√ undoes squaring; ∛ undoes cubing",
+      "5² = 25 and (−5)² = 25",
+      "So 25 has two square roots: ±5"
+     ],
+     "note": "The √ sign means the positive root. Ask: 'What is ∛(−8)?' (−2, since −2 × −2 × −2 = −8.)",
+     "misconception": {
+      "wrong": "4³ = 12",
+      "right": "4³ = 4 × 4 × 4 = 64"
+     }
+    },
+    {
+     "heading": "Calculator skills",
+     "bullets": [
+      "x² and x³ keys",
+      "xʸ (or ^) for other powers",
+      "√ and ∛ keys"
+     ],
+     "note": "Model on an online scientific calculator on screen.",
+     "model": {
+      "problem": "Work out 2⁵ + ∛343",
+      "steps": [
+       "2⁵ = 2 × 2 × 2 × 2 × 2 = 32",
+       "∛343: 7 × 7 × 7 = 343, so 7",
+       "32 + 7 = 39"
+      ],
+      "answer": "39"
+     }
+    },
+    {
+     "heading": "Check: roots",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which number has two square roots, 6 and −6?",
+      "options": [
+       "12",
+       "36",
+       "−36",
+       "216"
+      ],
+      "answer": 1,
+      "why": "6² = 36 and (−6)² = 36. −36 has no real square root; 216 = 6³."
+     }
+    }
+   ],
+   "practice": [
+    "Work out 5³",
+    "Work out √144 and ∛64",
+    "Work out 3⁴",
+    "Write both square roots of 49"
+   ],
+   "independent": [
+    "Core: (a) 7² + 2³ (b) √100 − ∛125 (c) 10³ ÷ 4² (d) 2⁶",
+    "Extend: A cube has a volume of 512 cm³. Find the length of one edge and the area of one face.",
+    "Stretch: Find a number that is both a square and a cube between 1 and 1000 (other than 1). Find all of them. What do you notice?"
+   ],
+   "exit": [
+    "Work out 6³",
+    "Work out ∛1000",
+    "Give both square roots of 81"
+   ],
+   "homework": "One grain of rice on square 1 of a chessboard, 2 on square 2, 4 on square 3… Write the number on squares 1 to 12 as powers of 2 and work them out.",
+   "send": "Support: squares and cubes table on screen. Stretch: powers of 2 and binary."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 6,
+   "title": "Powers, roots and brackets",
+   "duration": 50,
+   "bigQuestion": "How do calculators 'know' which part to do first?",
+   "objectives": [
+    "Calculate combinations of powers, roots and brackets",
+    "Use the priority of operations accurately",
+    "Enter calculations correctly into a calculator"
+   ],
+   "successCriteria": [
+    "Work out calculations with a power and one other operation",
+    "Work out multi-step calculations with roots, powers and brackets",
+    "Enter fractions and roots correctly into a calculator, using brackets"
+   ],
+   "crossCurricular": "Computing: operator precedence in code; Science: formulae such as E = mc²",
+   "smsc": "Social: shared rules let us communicate clearly",
+   "keywords": [
+    {
+     "term": "index",
+     "def": "the small number showing the power"
+    },
+    {
+     "term": "priority of operations",
+     "def": "the order in which operations are done"
+    },
+    {
+     "term": "BIDMAS",
+     "def": "Brackets, Indices, Division and Multiplication, Addition and Subtraction"
+    },
+    {
+     "term": "root",
+     "def": "the inverse of a power"
+    }
+   ],
+   "starter": [
+    "Work out 4³",
+    "Work out ∛27",
+    "Work out 2 + 3 × 5",
+    "Work out (−4)²"
+   ],
+   "teach": [
+    {
+     "heading": "Roots count as indices",
+     "bullets": [
+      "√ and ∛ are done at the I stage",
+      "Work inside the root sign first, like a bracket"
+     ],
+     "note": "√(9 + 16) means add first: √25 = 5. Compare with √9 + √16 = 7.",
+     "misconception": {
+      "wrong": "√(9 + 16) = 3 + 4 = 7",
+      "right": "√(9 + 16) = √25 = 5"
+     }
+    },
+    {
+     "heading": "A multi-step calculation",
+     "bullets": [
+      "Write one step per line",
+      "Keep the rest of the calculation"
+     ],
+     "note": "Model, writing each line.",
+     "model": {
+      "problem": "Work out 5 + (12 − 2³) × √36",
+      "steps": [
+       "Inside the bracket: 2³ = 8, so 12 − 8 = 4",
+       "√36 = 6",
+       "4 × 6 = 24",
+       "5 + 24 = 29"
+      ],
+      "answer": "29"
+     }
+    },
+    {
+     "heading": "Fractions on a calculator",
+     "bullets": [
+      "The fraction line is a hidden bracket",
+      "Type (20 + 4) ÷ (2 × 3)"
+     ],
+     "note": "Show (20 + 4)/(2 × 3) = 4 but typing 20 + 4 ÷ 2 × 3 gives 26.",
+     "compare": {
+      "left": {
+       "title": "Typed without brackets",
+       "points": [
+        "20 + 4 ÷ 2 × 3",
+        "= 20 + 6",
+        "= 26  ✗"
+       ]
+      },
+      "right": {
+       "title": "Typed with brackets",
+       "points": [
+        "(20 + 4) ÷ (2 × 3)",
+        "= 24 ÷ 6",
+        "= 4  ✓"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Check: order",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Work out 3 × 2² + 1",
+      "options": [
+       "37",
+       "13",
+       "25",
+       "48"
+      ],
+      "answer": 1,
+      "why": "Indices first: 2² = 4, then 3 × 4 = 12, then + 1 = 13. A works out (3 × 2)² + 1 = 37, ignoring the order of operations."
+     }
+    }
+   ],
+   "practice": [
+    "Work out 4 × 3²",
+    "Work out (4 × 3)²",
+    "Work out √(50 − 1) + 2³",
+    "Work out (5 + 3)² ÷ 4"
+   ],
+   "independent": [
+    "Core: (a) 2³ × 5 (b) 100 − 4 × 3² (c) √64 ÷ (6 − 2) (d) (1 + 2)³ − 7",
+    "Extend: Use a calculator: (a) (3.2² + 4.1) ÷ (2.5 − 0.9) (b) √(7.8² − 3.6²) to 2 decimal places",
+    "Stretch: Using 2, 3 and 4 once each with powers, roots and brackets, make the largest and smallest positive numbers you can."
+   ],
+   "exit": [
+    "Work out 10 − 2³",
+    "Work out √(36 + 64)",
+    "How would you type (15 + 9) ÷ (2 + 4) into a calculator?"
+   ],
+   "homework": "Write five calculations that use a power, a root and brackets with a final answer of 10.",
+   "send": "Support: BIDMAS step frame. Stretch: nested brackets and powers of fractions."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 7,
+   "title": "Index notation and prime factor decomposition",
+   "duration": 50,
+   "bigQuestion": "Is there only one way to build a number from primes?",
+   "objectives": [
+    "Use index notation for repeated factors",
+    "Write a number as a product of its prime factors",
+    "Use a factor tree or repeated division"
+   ],
+   "successCriteria": [
+    "Draw a factor tree to find prime factors",
+    "Write the product in index form",
+    "Use the prime factors to tell if a number is a square or cube"
+   ],
+   "crossCurricular": "Computing: prime factors in internet security (RSA encryption)",
+   "smsc": "Spiritual: every number has one unique 'fingerprint' of primes",
+   "keywords": [
+    {
+     "term": "prime factor",
+     "def": "a factor that is a prime number"
+    },
+    {
+     "term": "prime factor decomposition",
+     "def": "writing a number as a product of prime factors"
+    },
+    {
+     "term": "index notation",
+     "def": "using powers to show repeated multiplication, e.g. 2³"
+    },
+    {
+     "term": "factor tree",
+     "def": "a diagram splitting a number into factors until all are prime"
+    }
+   ],
+   "starter": [
+    "List the primes under 20",
+    "Work out 2³ × 3",
+    "Is 91 prime?",
+    "Work out 5 + (8 − 2)²"
+   ],
+   "teach": [
+    {
+     "heading": "Factor trees",
+     "bullets": [
+      "Split into any factor pair",
+      "Circle primes and stop there",
+      "Keep splitting the rest"
+     ],
+     "note": "Show that 2 × 30 and 6 × 10 both give the same primes in the end. That answers the big question: the decomposition is unique.",
+     "model": {
+      "problem": "Write 120 as a product of prime factors",
+      "steps": [
+       "120 = 10 × 12",
+       "10 = 2 × 5; 12 = 2 × 6",
+       "6 = 2 × 3",
+       "Primes: 2 × 2 × 2 × 3 × 5"
+      ],
+      "answer": "120 = 2³ × 3 × 5"
+     }
+    },
+    {
+     "heading": "Repeated division",
+     "bullets": [
+      "Divide by the smallest prime that works",
+      "Repeat until you reach 1"
+     ],
+     "note": "Show the ladder for 180: ÷2 = 90, ÷2 = 45, ÷3 = 15, ÷3 = 5, ÷5 = 1. So 180 = 2² × 3² × 5."
+    },
+    {
+     "heading": "Index form errors",
+     "bullets": [
+      "Multiply out to check your answer",
+      "Primes only: no 4s, 6s or 9s"
+     ],
+     "note": "Ask: 'What is wrong with 72 = 2 × 4 × 9?' (4 and 9 are not prime.)",
+     "misconception": {
+      "wrong": "72 = 2 × 4 × 9",
+      "right": "72 = 2³ × 3²"
+     }
+    },
+    {
+     "heading": "Squares and cubes from primes",
+     "bullets": [
+      "All indices even: a square number",
+      "All indices multiples of 3: a cube number"
+     ],
+     "note": "144 = 2⁴ × 3²: all even, so square; √144 = 2² × 3 = 12."
+    },
+    {
+     "heading": "Check: product of primes",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is 84 written as a product of prime factors?",
+      "options": [
+       "2 × 42",
+       "2² × 21",
+       "2² × 3 × 7",
+       "4 × 3 × 7"
+      ],
+      "answer": 2,
+      "why": "2 × 2 × 3 × 7 = 84 and all are prime. B and D contain 21 and 4, which are not prime."
+     }
+    }
+   ],
+   "practice": [
+    "Write 36 as a product of prime factors in index form",
+    "Write 150 as a product of prime factors",
+    "Which number is 2² × 3 × 5?"
+   ],
+   "independent": [
+    "Core: Write in index form: (a) 60 (b) 98 (c) 200 (d) 252",
+    "Extend: 2ᵃ × 3ᵇ = 432. Find a and b.",
+    "Stretch: Use prime factors to find the smallest number you must multiply 90 by to get a square number, and the smallest to get a cube number."
+   ],
+   "exit": [
+    "Write 48 as a product of primes in index form.",
+    "Work out 2³ × 5.",
+    "Is 2² × 3⁴ a square number? How do you know?"
+   ],
+   "homework": "Find the prime factor decomposition of your house number, your age multiplied by 10, and the current year.",
+   "send": "Support: list of primes to 50 and partly drawn trees. Stretch: number of factors from the prime decomposition."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 8,
+   "title": "HCF and LCM using prime factors",
+   "duration": 50,
+   "bigQuestion": "When will two buses that leave together next leave together again?",
+   "objectives": [
+    "Find the HCF and LCM using prime factors",
+    "Use a Venn diagram to organise prime factors",
+    "Solve problems involving HCF and LCM"
+   ],
+   "successCriteria": [
+    "Find HCF and LCM of two numbers by listing",
+    "Use a Venn diagram of prime factors",
+    "Decide whether a problem needs the HCF or the LCM, and explain why"
+   ],
+   "crossCurricular": "Geography: bus and train timetables; Design: tiling a floor",
+   "smsc": "Social: planning fairly shared groups and events",
+   "keywords": [
+    {
+     "term": "highest common factor (HCF)",
+     "def": "the largest number that divides into both numbers"
+    },
+    {
+     "term": "lowest common multiple (LCM)",
+     "def": "the smallest number that both numbers divide into"
+    },
+    {
+     "term": "Venn diagram",
+     "def": "overlapping circles to show shared and unshared items"
+    },
+    {
+     "term": "common",
+     "def": "shared by both"
+    }
+   ],
+   "starter": [
+    "Write 60 as a product of primes",
+    "List the factors of 24",
+    "List the first 5 multiples of 6",
+    "Work out 2² × 3²"
+   ],
+   "teach": [
+    {
+     "heading": "Prime factors in a Venn diagram",
+     "bullets": [
+      "Shared primes go in the overlap",
+      "HCF: multiply the overlap",
+      "LCM: multiply everything in the diagram"
+     ],
+     "note": "Model 60 = 2² × 3 × 5 and 72 = 2³ × 3². Overlap: 2, 2, 3.",
+     "model": {
+      "problem": "Find the HCF and LCM of 60 and 72",
+      "steps": [
+       "60 = 2 × 2 × 3 × 5; 72 = 2 × 2 × 2 × 3 × 3",
+       "Overlap: 2, 2, 3",
+       "HCF = 2 × 2 × 3 = 12",
+       "LCM = 5 × (2 × 2 × 3) × 2 × 3 = 360"
+      ],
+      "answer": "HCF 12, LCM 360"
+     }
+    },
+    {
+     "heading": "Which do I need?",
+     "bullets": [
+      "Split into equal largest groups: HCF",
+      "Happen together again: LCM"
+     ],
+     "note": "Sort five problems into HCF or LCM. Read them aloud.",
+     "compare": {
+      "left": {
+       "title": "HCF problems",
+       "points": [
+        "Biggest equal groups",
+        "Largest square tile for a floor",
+        "Cutting ribbons into equal longest lengths"
+       ]
+      },
+      "right": {
+       "title": "LCM problems",
+       "points": [
+        "Buses leaving together again",
+        "Buying equal numbers of rolls and burgers",
+        "Lights flashing together"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "HCF and LCM mixed up",
+     "bullets": [
+      "The HCF is never bigger than the smaller number",
+      "The LCM is never smaller than the larger number"
+     ],
+     "note": "Use this as a sense check.",
+     "misconception": {
+      "wrong": "HCF of 60 and 72 is 360",
+      "right": "HCF must be ≤ 60; 360 is the LCM"
+     }
+    },
+    {
+     "heading": "Check: HCF or LCM",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Bus A leaves every 12 minutes and bus B every 20 minutes. Both leave at 8:00. When do they next leave together?",
+      "options": [
+       "8:04",
+       "8:32",
+       "9:00",
+       "12:00"
+      ],
+      "answer": 2,
+      "why": "LCM of 12 and 20 is 60 minutes, so 9:00. A uses the HCF (4); B adds them."
+     }
+    }
+   ],
+   "practice": [
+    "Find the HCF and LCM of 18 and 24 using prime factors",
+    "Find the HCF of 45 and 75",
+    "Is 'largest group' an HCF or LCM question?"
+   ],
+   "independent": [
+    "Core: Find the HCF and LCM of (a) 36 and 48 (b) 40 and 56 (c) 126 and 84",
+    "Extend: A floor measures 360 cm by 270 cm. What is the largest square tile that fits exactly? How many tiles are needed?",
+    "Stretch: The HCF of two numbers is 6 and their LCM is 72. Find two possible pairs."
+   ],
+   "exit": [
+    "Find the HCF of 30 and 45.",
+    "Find the LCM of 8 and 12.",
+    "Which is needed: 'largest equal bags of sweets'?"
+   ],
+   "homework": "Write three real-life problems (one HCF, one LCM, one either) with full solutions.",
+   "send": "Support: Venn diagram template. Stretch: three numbers in a three-circle Venn."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 9,
+   "title": "Estimation and checking",
+   "duration": 50,
+   "bigQuestion": "How can you tell an answer is wrong without working it out?",
+   "objectives": [
+    "Round to 1 significant figure to estimate",
+    "Estimate calculations with several operations",
+    "Use estimates to check calculator answers"
+   ],
+   "successCriteria": [
+    "Round numbers to 1 significant figure",
+    "Estimate multi-step calculations including division",
+    "Say whether an estimate is an over- or under-estimate and why"
+   ],
+   "crossCurricular": "Science: checking experimental results; Geography: estimating populations",
+   "smsc": "Moral: checking our own work honestly before handing it in",
+   "keywords": [
+    {
+     "term": "significant figure",
+     "def": "a digit that tells you about the size of the number; the first non-zero digit is the first"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate answer using rounded values"
+    },
+    {
+     "term": "≈",
+     "def": "the symbol for 'approximately equal to'"
+    },
+    {
+     "term": "overestimate",
+     "def": "an estimate bigger than the exact answer"
+    }
+   ],
+   "starter": [
+    "Find the HCF of 12 and 18",
+    "Round 4 682 to the nearest 1000",
+    "Work out 40 × 30",
+    "Work out 600 ÷ 20"
+   ],
+   "teach": [
+    {
+     "heading": "1 significant figure",
+     "bullets": [
+      "Find the first non-zero digit",
+      "Round there",
+      "Keep place-holder zeros"
+     ],
+     "note": "Examples: 4 682 → 5 000; 0.0371 → 0.04; 38.7 → 40.",
+     "table": {
+      "head": [
+       "Number",
+       "1 s.f."
+      ],
+      "rows": [
+       [
+        "4 682",
+        "5 000"
+       ],
+       [
+        "38.7",
+        "40"
+       ],
+       [
+        "0.0371",
+        "0.04"
+       ],
+       [
+        "951",
+        "1 000"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Estimating a calculation",
+     "bullets": [
+      "Round every number to 1 s.f.",
+      "Calculate mentally",
+      "Use ≈"
+     ],
+     "note": "Model with a fraction calculation.",
+     "model": {
+      "problem": "Estimate (48.7 × 6.2) ÷ 0.51",
+      "steps": [
+       "Round: 50 × 6 ÷ 0.5",
+       "50 × 6 = 300",
+       "300 ÷ 0.5 = 600"
+      ],
+      "answer": "≈ 600 (exact: 592.0…)"
+     }
+    },
+    {
+     "heading": "Dividing by a decimal",
+     "bullets": [
+      "÷ 0.5 doubles",
+      "÷ 0.1 multiplies by 10"
+     ],
+     "note": "Many pupils halve when dividing by 0.5.",
+     "misconception": {
+      "wrong": "300 ÷ 0.5 = 150",
+      "right": "300 ÷ 0.5 = 600 (how many halves in 300?)"
+     }
+    },
+    {
+     "heading": "Check: estimate",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is the best estimate of 31.6 × 0.48?",
+      "options": [
+       "1.5",
+       "15",
+       "150",
+       "60"
+      ],
+      "answer": 1,
+      "why": "30 × 0.5 = 15. A and C have the point in the wrong place; D multiplies by 2 instead of halving."
+     }
+    }
+   ],
+   "practice": [
+    "Round 0.00649 to 1 s.f.",
+    "Estimate 297 × 41",
+    "Estimate 8.9 × 3.1 ÷ 0.48"
+   ],
+   "independent": [
+    "Core: Estimate (a) 612 ÷ 19 (b) 7.8² (c) (21.4 + 38.9) ÷ 5.8",
+    "Extend: A pupil's calculator says 47.3 × 0.92 = 435.16. Use an estimate to show this is wrong, and suggest what went wrong.",
+    "Stretch: Estimate (3.92 × 0.0517) ÷ 0.198. Is your estimate bigger or smaller than the exact value? Justify without a calculator."
+   ],
+   "exit": [
+    "Round 0.0283 to 1 s.f.",
+    "Estimate 52 × 18.",
+    "Estimate 396 ÷ 0.21."
+   ],
+   "homework": "Estimate the total cost of a weekly shop of ten items, then compare with the exact total.",
+   "send": "Support: highlight the first significant digit. Stretch: estimating with powers and roots."
+  },
+  {
+   "unit": "Unit 1: Number",
+   "n": 10,
+   "title": "Number problem solving and review",
+   "duration": 50,
+   "bigQuestion": "Which number skill from this unit would you trust yourself with in a real-life emergency?",
+   "objectives": [
+    "Choose and combine number skills to solve problems",
+    "Show working clearly",
+    "Identify and correct own misconceptions"
+   ],
+   "successCriteria": [
+    "Solve one-step number problems",
+    "Solve multi-step problems combining several skills",
+    "Explain a strategy and correct errors in worked solutions"
+   ],
+   "crossCurricular": "Business: budgeting; Science: data calculations",
+   "smsc": "Spiritual: perseverance (sabr) on hard problems",
+   "keywords": [
+    {
+     "term": "strategy",
+     "def": "a plan for solving a problem"
+    },
+    {
+     "term": "multi-step",
+     "def": "a problem that needs several calculations"
+    },
+    {
+     "term": "justify",
+     "def": "give reasons for your answer"
+    },
+    {
+     "term": "reflect",
+     "def": "think about what went well and what to improve"
+    }
+   ],
+   "starter": [
+    "Work out −6 × −8",
+    "Write 90 as a product of primes",
+    "Find the LCM of 6 and 9",
+    "Estimate 49 × 21"
+   ],
+   "teach": [
+    {
+     "heading": "A problem-solving routine",
+     "bullets": [
+      "What do I know? What do I need?",
+      "Which skill fits?",
+      "Estimate, calculate, check"
+     ],
+     "note": "Display the routine; pupils use it for every problem today.",
+     "cycle": [
+      "Read and underline",
+      "Choose a skill",
+      "Estimate",
+      "Calculate",
+      "Check and answer in context"
+     ]
+    },
+    {
+     "heading": "A multi-step problem",
+     "bullets": [
+      "Break into parts",
+      "Label each step"
+     ],
+     "note": "Model and ask pupils to name the skill used at each step.",
+     "model": {
+      "problem": "Plates come in packs of 12, cups in packs of 18. A school wants the same number of each for a dinner and needs at least 100. Cost: plates £3.75 per pack, cups £4.20 per pack. Find the cheapest total.",
+      "steps": [
+       "LCM of 12 and 18 is 36",
+       "Multiples of 36: 36, 72, 108, so 108 of each",
+       "108 ÷ 12 = 9 plate packs; 108 ÷ 18 = 6 cup packs",
+       "9 × 3.75 + 6 × 4.20 = 33.75 + 25.20"
+      ],
+      "answer": "£58.95"
+     }
+    },
+    {
+     "heading": "Spot the error",
+     "bullets": [
+      "Each worked answer has one mistake",
+      "Find it and correct it"
+     ],
+     "note": "Show three: (−3)² = −9; 2.4 × 0.3 = 7.2; 72 = 2² × 18. Pupils fix them.",
+     "misconception": {
+      "wrong": "2.4 × 0.3 = 7.2",
+      "right": "24 × 3 = 72 with two decimal places: 0.72"
+     }
+    },
+    {
+     "heading": "Check: choose the skill",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "36 boys and 48 girls are put into the largest possible equal teams with no mixing. What size is each team?",
+      "options": [
+       "144",
+       "12",
+       "6",
+       "84"
+      ],
+      "answer": 1,
+      "why": "HCF of 36 and 48 is 12. A is the LCM; D adds them."
+     }
+    }
+   ],
+   "practice": [
+    "Find the cost of 2.5 kg of rice at £1.84 per kg",
+    "The temperature falls from 4 °C by 2.5 °C every hour for 4 hours. What is it now?",
+    "Is 2 862 divisible by 9 and by 6?"
+   ],
+   "independent": [
+    "Core: Five mixed questions: (a) 3.6 × 0.4 (b) −45 ÷ −9 (c) 2³ × 3² (d) HCF of 28 and 42 (e) estimate 812 ÷ 39",
+    "Extend: Two lighthouses flash every 15 s and 25 s. They flash together at 21:00:00. How many times do they flash together before 21:10:00?",
+    "Stretch: Write your own multi-step problem that needs at least three skills from this unit, with a full worked solution."
+   ],
+   "exit": [
+    "Which skill would you use to find when two events happen together again?",
+    "Correct this: (−4)² = −16.",
+    "Rate your confidence 1 to 3 for: decimals, negatives, primes."
+   ],
+   "homework": "Complete the Unit 1 review sheet (10 questions) and highlight the two topics you found hardest.",
+   "send": "Support: problem cards with skill hints. Stretch: open problems with multiple answers."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 11,
+   "title": "Area of a triangle",
+   "duration": 50,
+   "bigQuestion": "Why is the area of a triangle exactly half of a rectangle?",
+   "objectives": [
+    "Derive the formula for the area of a triangle",
+    "Use A = ½ × b × h with the perpendicular height",
+    "Find a missing length given the area"
+   ],
+   "successCriteria": [
+    "Find the area of a right-angled triangle",
+    "Find the area of any triangle using the perpendicular height",
+    "Find a missing base or height from the area"
+   ],
+   "crossCurricular": "Art: triangles in Islamic geometric design; DT: roof shapes",
+   "smsc": "Cultural: triangular structures in architecture around the world",
+   "keywords": [
+    {
+     "term": "area",
+     "def": "the amount of space inside a 2D shape, in square units"
+    },
+    {
+     "term": "base",
+     "def": "the side the shape stands on"
+    },
+    {
+     "term": "perpendicular height",
+     "def": "the height measured at right angles to the base"
+    },
+    {
+     "term": "formula",
+     "def": "a rule written with letters"
+    }
+   ],
+   "starter": [
+    "Area of a rectangle 6 cm by 4 cm?",
+    "Work out ½ × 10",
+    "What units is area measured in?",
+    "Name a triangle with a right angle"
+   ],
+   "teach": [
+    {
+     "heading": "Half a rectangle",
+     "bullets": [
+      "A diagonal cuts a rectangle into 2 equal triangles",
+      "So area = ½ × base × height"
+     ],
+     "note": "Animate cutting a rectangle along a diagonal. Then show a non-right triangle fits in a rectangle twice too (cut and move the pieces).",
+     "misconception": {
+      "wrong": "Area = base × slant side",
+      "right": "Use the perpendicular height, at 90° to the base"
+     }
+    },
+    {
+     "heading": "Using the formula",
+     "bullets": [
+      "A = ½ × b × h",
+      "Height is perpendicular to the base",
+      "Units: cm²"
+     ],
+     "note": "Model with a triangle base 9 cm, perpendicular height 6 cm, slant side 7 cm.",
+     "model": {
+      "problem": "Base 9 cm, perpendicular height 6 cm, slant side 7 cm. Find the area.",
+      "steps": [
+       "Ignore the slant side (7 cm)",
+       "A = ½ × 9 × 6",
+       "9 × 6 = 54; half of 54 = 27"
+      ],
+      "answer": "27 cm²"
+     }
+    },
+    {
+     "heading": "Working backwards",
+     "bullets": [
+      "Put the area into the formula",
+      "Solve for the missing length"
+     ],
+     "note": "A = 30 cm², b = 12 cm. 30 = ½ × 12 × h, so 30 = 6h, h = 5 cm."
+    },
+    {
+     "heading": "Check: which height?",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A triangle has base 10 cm, sides 8 cm and 7 cm, and perpendicular height 5 cm. What is its area?",
+      "options": [
+       "40 cm²",
+       "25 cm²",
+       "50 cm²",
+       "35 cm²"
+      ],
+      "answer": 1,
+      "why": "½ × 10 × 5 = 25. A uses the 8 cm side; C forgets to halve; D uses 7 cm."
+     }
+    }
+   ],
+   "practice": [
+    "Find the area: base 8 cm, height 5 cm",
+    "Find the area: base 7 m, height 3 m",
+    "Area 24 cm², base 8 cm. Find the height."
+   ],
+   "independent": [
+    "Core: Find the area of triangles with (a) b = 14 cm, h = 9 cm (b) b = 6.5 m, h = 4 m (c) b = 11 mm, h = 7 mm",
+    "Extend: A triangular sail has a base of 3.2 m and a height of 5.5 m. Sailcloth costs £18 per m². Find the cost.",
+    "Stretch: Draw three different triangles on a grid that each have an area of 12 cm². Explain why there are infinitely many."
+   ],
+   "exit": [
+    "Area: base 12 cm, height 5 cm?",
+    "Why do we halve?",
+    "Area 18 cm², height 4 cm. Find the base."
+   ],
+   "homework": "Find and measure three triangles at home (e.g. sandwiches, signs) and calculate their areas.",
+   "send": "Support: grid paper and labelled diagrams with the height highlighted. Stretch: triangles on coordinate grids."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 12,
+   "title": "Area of parallelograms and trapezia",
+   "duration": 50,
+   "bigQuestion": "How can cutting and rearranging a shape help us find its area?",
+   "objectives": [
+    "Derive and use the formula for the area of a parallelogram",
+    "Derive and use the formula for the area of a trapezium",
+    "Find areas of compound shapes"
+   ],
+   "successCriteria": [
+    "Find the area of a parallelogram",
+    "Find the area of a trapezium",
+    "Find areas of compound shapes using several formulae"
+   ],
+   "crossCurricular": "Geography: estimating the area of a field; DT: designing a garden",
+   "smsc": "Spiritual: patterns of tessellating shapes in mosque tilework",
+   "keywords": [
+    {
+     "term": "parallelogram",
+     "def": "a quadrilateral with two pairs of parallel sides"
+    },
+    {
+     "term": "trapezium",
+     "def": "a quadrilateral with exactly one pair of parallel sides"
+    },
+    {
+     "term": "parallel",
+     "def": "always the same distance apart; never meet"
+    },
+    {
+     "term": "compound shape",
+     "def": "a shape made of simpler shapes"
+    }
+   ],
+   "starter": [
+    "Area of a triangle: base 10 cm, height 7 cm",
+    "Area of a rectangle 9 cm by 5 cm",
+    "Work out ½ × (4 + 6)",
+    "How many pairs of parallel sides has a square?"
+   ],
+   "teach": [
+    {
+     "heading": "Parallelogram = rectangle",
+     "bullets": [
+      "Cut off a triangle and slide it across",
+      "It becomes a rectangle",
+      "A = b × h"
+     ],
+     "note": "Animate the cut and slide. Ask: 'What stays the same?' (Base and perpendicular height.)"
+    },
+    {
+     "heading": "Trapezium formula",
+     "bullets": [
+      "A = ½ (a + b) h",
+      "a and b are the parallel sides",
+      "h is the perpendicular distance between them"
+     ],
+     "note": "Show two copies making a parallelogram of base (a + b).",
+     "model": {
+      "problem": "Trapezium: parallel sides 6 cm and 10 cm, height 4 cm. Find the area.",
+      "steps": [
+       "Add parallel sides: 6 + 10 = 16",
+       "Halve: 8",
+       "Multiply by height: 8 × 4"
+      ],
+      "answer": "32 cm²"
+     }
+    },
+    {
+     "heading": "Compound shapes",
+     "bullets": [
+      "Split into rectangles, triangles and trapezia",
+      "Find any missing lengths",
+      "Add (or subtract) the areas"
+     ],
+     "note": "An L-shaped room: split into two rectangles, or a big rectangle minus a small one. Both give the same answer."
+    },
+    {
+     "heading": "Using the slant side",
+     "bullets": [
+      "Slant sides are not heights"
+     ],
+     "note": "Same error as with triangles.",
+     "misconception": {
+      "wrong": "Parallelogram area = base × slant side",
+      "right": "Area = base × perpendicular height"
+     }
+    },
+    {
+     "heading": "Check: trapezium",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A trapezium has parallel sides 5 m and 9 m and height 6 m. Its area is…",
+      "options": [
+       "270 m²",
+       "84 m²",
+       "42 m²",
+       "20 m²"
+      ],
+      "answer": 2,
+      "why": "½ × (5 + 9) × 6 = 7 × 6 = 42. B forgets the half; A multiplies all three."
+     }
+    }
+   ],
+   "practice": [
+    "Parallelogram: base 12 cm, height 7 cm",
+    "Trapezium: parallel sides 4 m and 8 m, height 5 m",
+    "Area of an L-shape made of a 10 × 4 and a 3 × 6 rectangle"
+   ],
+   "independent": [
+    "Core: Find the areas: (a) parallelogram b = 15 cm, h = 8 cm (b) trapezium a = 7 cm, b = 13 cm, h = 6 cm (c) trapezium a = 2.5 m, b = 4.5 m, h = 3 m",
+    "Extend: A garden is a trapezium with parallel sides 12 m and 18 m, 9 m apart. Turf costs £4.50 per m². Find the cost of turfing it.",
+    "Stretch: A trapezium has area 60 cm², height 6 cm and one parallel side of 8 cm. Find the other parallel side."
+   ],
+   "exit": [
+    "Area of a parallelogram: base 9 cm, height 4 cm?",
+    "Write the trapezium formula.",
+    "Area of a trapezium: 3 cm, 7 cm, height 2 cm?"
+   ],
+   "homework": "Sketch a plan of a room or garden using rectangles and trapezia and calculate its total area.",
+   "send": "Support: formula card and shapes with heights highlighted. Stretch: reverse problems."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 13,
+   "title": "Volume of cubes and cuboids",
+   "duration": 50,
+   "bigQuestion": "How many sugar cubes fit in a shoebox, and how could you find out without filling it?",
+   "objectives": [
+    "Calculate the volume of cubes and cuboids",
+    "Use the correct units for volume",
+    "Find a missing length given the volume"
+   ],
+   "successCriteria": [
+    "Find volume by counting cubes",
+    "Use V = l × w × h with units",
+    "Find a missing dimension and convert cm³ to litres"
+   ],
+   "crossCurricular": "Science: volume and capacity of containers; DT: packaging design",
+   "smsc": "Moral: avoiding waste by packing efficiently",
+   "keywords": [
+    {
+     "term": "volume",
+     "def": "the amount of space inside a 3D shape"
+    },
+    {
+     "term": "cuboid",
+     "def": "a 3D shape with six rectangular faces"
+    },
+    {
+     "term": "cubic centimetre (cm³)",
+     "def": "a cube with edges 1 cm long"
+    },
+    {
+     "term": "capacity",
+     "def": "how much a container holds; 1 litre = 1000 cm³"
+    }
+   ],
+   "starter": [
+    "Area of a trapezium: 4, 6 and height 3",
+    "Work out 5 × 4 × 3",
+    "Work out 2³",
+    "How many faces does a cube have?"
+   ],
+   "teach": [
+    {
+     "heading": "Layers of cubes",
+     "bullets": [
+      "Count the cubes in one layer: l × w",
+      "Multiply by the number of layers: h",
+      "V = l × w × h"
+     ],
+     "note": "Show a 4 × 3 layer of 12 cubes, then stack 5 layers: 60 cm³."
+    },
+    {
+     "heading": "Calculating volume",
+     "bullets": [
+      "Same units for every length",
+      "Answer in cubic units"
+     ],
+     "note": "Model, then point out converting first.",
+     "model": {
+      "problem": "A box is 25 cm long, 12 cm wide and 0.1 m high. Find its volume.",
+      "steps": [
+       "Convert: 0.1 m = 10 cm",
+       "V = 25 × 12 × 10",
+       "25 × 12 = 300; 300 × 10 = 3000"
+      ],
+      "answer": "3000 cm³ (3 litres)"
+     }
+    },
+    {
+     "heading": "Units",
+     "bullets": [
+      "Length cm, area cm², volume cm³",
+      "1 litre = 1000 cm³"
+     ],
+     "note": "Ask pupils to say which unit each answer needs.",
+     "misconception": {
+      "wrong": "Volume = 60 cm²",
+      "right": "Volume is in cubic units: 60 cm³"
+     }
+    },
+    {
+     "heading": "Missing lengths",
+     "bullets": [
+      "Put known values in the formula",
+      "Divide to find the missing length"
+     ],
+     "note": "V = 240 cm³, l = 10, w = 6: 240 = 60h, h = 4 cm."
+    },
+    {
+     "heading": "Check: volume",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A cube has edges of 4 cm. What is its volume?",
+      "options": [
+       "12 cm³",
+       "16 cm³",
+       "64 cm³",
+       "96 cm³"
+      ],
+      "answer": 2,
+      "why": "4 × 4 × 4 = 64. A adds; B is a face area; D is the surface area."
+     }
+    }
+   ],
+   "practice": [
+    "Volume of a cuboid 8 cm × 5 cm × 3 cm",
+    "Volume of a cube with edge 6 m",
+    "V = 180 cm³, l = 9 cm, w = 5 cm. Find h."
+   ],
+   "independent": [
+    "Core: Find the volumes of cuboids (a) 12 × 4 × 3 cm (b) 7 × 7 × 7 m (c) 2.5 × 4 × 10 cm",
+    "Extend: A fish tank is 60 cm × 30 cm × 40 cm. How many litres does it hold when full to 5 cm below the top?",
+    "Stretch: Find all the cuboids with whole-number edges that have a volume of 36 cm³. Which has the smallest surface area?"
+   ],
+   "exit": [
+    "Volume of a cuboid 10 × 3 × 2 cm?",
+    "How many cm³ in 2 litres?",
+    "V = 100 cm³, base 5 × 5 cm. Height?"
+   ],
+   "homework": "Measure three boxes at home, calculate their volumes and convert to litres.",
+   "send": "Support: multilink cube models or images. Stretch: compound cuboids."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 14,
+   "title": "Nets, plans and elevations",
+   "duration": 50,
+   "bigQuestion": "How do architects show a 3D building on flat paper?",
+   "objectives": [
+    "Sketch nets of 3D solids",
+    "Draw plans and elevations of 3D shapes",
+    "Identify a solid from its net, plan or elevations"
+   ],
+   "successCriteria": [
+    "Recognise nets of a cube and cuboid",
+    "Draw the plan, front and side elevations",
+    "Sketch a 3D solid from its plan and elevations"
+   ],
+   "crossCurricular": "DT: technical drawing; Art: perspective",
+   "smsc": "Cultural: the plan of the Ka'bah and the architecture of famous mosques",
+   "keywords": [
+    {
+     "term": "net",
+     "def": "a 2D pattern that folds to make a 3D shape"
+    },
+    {
+     "term": "plan",
+     "def": "the view from directly above"
+    },
+    {
+     "term": "elevation",
+     "def": "the view from the front or side"
+    },
+    {
+     "term": "face, edge, vertex",
+     "def": "flat surface, line where faces meet, corner"
+    }
+   ],
+   "starter": [
+    "Volume of a 5 cm cube?",
+    "How many edges does a cuboid have?",
+    "Name a 3D shape with a triangle face",
+    "Work out 3 × 4 × 2"
+   ],
+   "teach": [
+    {
+     "heading": "Nets",
+     "bullets": [
+      "Each face appears once",
+      "Faces must fold without overlapping",
+      "A cube has 11 different nets"
+     ],
+     "note": "Show 3 cube nets and 1 that does not fold. Ask pupils to spot which fails and why."
+    },
+    {
+     "heading": "Plans and elevations",
+     "bullets": [
+      "Plan: from above",
+      "Front elevation: from the front",
+      "Side elevation: from the side"
+     ],
+     "note": "Use a small 3D 'L' made of cubes. Show the three views.",
+     "compare": {
+      "left": {
+       "title": "3D view",
+       "points": [
+        "Shows depth",
+        "Hard to measure",
+        "Good for seeing the shape"
+       ]
+      },
+      "right": {
+       "title": "Plan and elevations",
+       "points": [
+        "Three flat views",
+        "Exact measurements",
+        "Used by architects and engineers"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Drawing the views",
+     "bullets": [
+      "Use squared paper",
+      "Each cube is one square",
+      "Draw only what you see from that side"
+     ],
+     "note": "Model on a grid. Ask pupils to hold up their drawings to the camera.",
+     "model": {
+      "problem": "Draw views of an L-shape: 3 cubes in a row, 1 cube on top of the left end",
+      "steps": [
+       "Plan (above): 3 squares in a row",
+       "Front: 3 squares, plus 1 on top of the left one",
+       "Side (from the right): a column of 2 squares",
+       "Label each view"
+      ],
+      "answer": "Three labelled views"
+     }
+    },
+    {
+     "heading": "Hidden cubes",
+     "bullets": [
+      "You cannot always see every cube"
+     ],
+     "note": "Ask: 'Could there be a hidden cube?' Discuss when the views prove there isn't.",
+     "misconception": {
+      "wrong": "The plan shows how tall the shape is",
+      "right": "The plan shows only the view from above, not height"
+     }
+    },
+    {
+     "heading": "Check: name the solid",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A solid's plan is a circle and its front elevation is a triangle. What is it?",
+      "options": [
+       "Cylinder",
+       "Cone",
+       "Sphere",
+       "Square-based pyramid"
+      ],
+      "answer": 1,
+      "why": "A cone looks circular from above and triangular from the front. A cylinder's elevation is a rectangle."
+     }
+    }
+   ],
+   "practice": [
+    "Sketch a net of a cuboid 4 × 2 × 1 cm",
+    "Draw the plan of a cylinder",
+    "Which solid has plan: square; elevation: triangle?"
+   ],
+   "independent": [
+    "Core: Draw the plan, front and side elevations of a 2 × 2 × 3 cuboid of cubes",
+    "Extend: Draw a net of a triangular prism and label its dimensions so it would fold correctly.",
+    "Stretch: Given a plan and two elevations (shown), find the smallest and largest number of cubes the solid could contain."
+   ],
+   "exit": [
+    "What is a plan?",
+    "Sketch a net of a cube.",
+    "Which solid has a circle for a plan and a rectangle for an elevation?"
+   ],
+   "homework": "Draw the plan and front elevation of your bedroom or your house, labelling measurements.",
+   "send": "Support: interactive cube-building tool and printed nets. Stretch: isometric drawing."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 15,
+   "title": "Surface area of cubes and cuboids",
+   "duration": 50,
+   "bigQuestion": "Can two boxes with the same volume need different amounts of cardboard?",
+   "objectives": [
+    "Calculate the surface area of cubes and cuboids",
+    "Use nets to organise surface area",
+    "Compare surface areas of cuboids with the same volume"
+   ],
+   "successCriteria": [
+    "Find the surface area of a cube",
+    "Find the surface area of a cuboid using pairs of faces",
+    "Find cuboids with equal volumes but different surface areas"
+   ],
+   "crossCurricular": "DT: packaging; Science: surface area and rates of reaction",
+   "smsc": "Moral: reducing packaging waste helps care for the earth (khalifah)",
+   "keywords": [
+    {
+     "term": "surface area",
+     "def": "the total area of all faces of a 3D shape"
+    },
+    {
+     "term": "face",
+     "def": "a flat surface of a 3D shape"
+    },
+    {
+     "term": "pairs of faces",
+     "def": "a cuboid has three pairs of identical opposite faces"
+    },
+    {
+     "term": "net",
+     "def": "a 2D pattern that folds into a 3D shape"
+    }
+   ],
+   "starter": [
+    "Area of a rectangle 7 cm by 3 cm",
+    "Volume of a 2 × 3 × 4 cuboid",
+    "How many faces has a cuboid?",
+    "Work out 2 × (12 + 8 + 6)"
+   ],
+   "teach": [
+    {
+     "heading": "Three pairs of faces",
+     "bullets": [
+      "Front and back",
+      "Top and bottom",
+      "Two sides"
+     ],
+     "note": "Unfold a box on camera to show the net.",
+     "model": {
+      "problem": "Surface area of a cuboid 5 cm × 4 cm × 3 cm",
+      "steps": [
+       "Top/bottom: 5 × 4 = 20, two of them: 40",
+       "Front/back: 5 × 3 = 15, two: 30",
+       "Sides: 4 × 3 = 12, two: 24",
+       "Total: 40 + 30 + 24"
+      ],
+      "answer": "94 cm²"
+     }
+    },
+    {
+     "heading": "Cubes",
+     "bullets": [
+      "Six identical square faces",
+      "SA = 6 × edge²"
+     ],
+     "note": "Edge 3 cm: 6 × 9 = 54 cm²."
+    },
+    {
+     "heading": "Volume or surface area?",
+     "bullets": [
+      "Volume: space inside, cm³",
+      "Surface area: covering, cm²"
+     ],
+     "note": "Ask: 'Wrapping paper or sand to fill it: which needs which?'",
+     "misconception": {
+      "wrong": "Surface area of a 5 × 4 × 3 cuboid = 60",
+      "right": "60 cm³ is the volume; surface area is 94 cm²"
+     }
+    },
+    {
+     "heading": "Same volume, different surface area",
+     "bullets": [
+      "All have volume 24 cm³",
+      "The most cube-like uses least card"
+     ],
+     "note": "This answers the big question.",
+     "table": {
+      "head": [
+       "Cuboid",
+       "Volume",
+       "Surface area"
+      ],
+      "rows": [
+       [
+        "1 × 1 × 24",
+        "24 cm³",
+        "98 cm²"
+       ],
+       [
+        "2 × 3 × 4",
+        "24 cm³",
+        "52 cm²"
+       ],
+       [
+        "2 × 2 × 6",
+        "24 cm³",
+        "56 cm²"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check: surface area",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Surface area of a cube with edges 5 cm?",
+      "options": [
+       "125 cm²",
+       "25 cm²",
+       "150 cm²",
+       "30 cm²"
+      ],
+      "answer": 2,
+      "why": "6 × 5² = 150. A is the volume; B is one face; D is 6 × 5."
+     }
+    }
+   ],
+   "practice": [
+    "Surface area of a cube with edge 4 cm",
+    "Surface area of a cuboid 6 × 2 × 1 cm",
+    "Volume and surface area of a cuboid 10 × 5 × 2 cm"
+   ],
+   "independent": [
+    "Core: Find the surface areas: (a) cube edge 7 cm (b) cuboid 8 × 3 × 2 cm (c) cuboid 12 × 10 × 0.5 cm",
+    "Extend: A cereal box is 30 cm × 20 cm × 7 cm. Find the area of card needed, adding 10% for flaps.",
+    "Stretch: Find the whole-number cuboid with volume 64 cm³ and the smallest surface area. Explain why that shape wins."
+   ],
+   "exit": [
+    "Surface area of a 2 cm cube?",
+    "Is 'volume' measured in cm² or cm³?",
+    "Name the three pairs of faces of a cuboid."
+   ],
+   "homework": "Measure a box at home and find both its volume and surface area. Suggest a box with the same volume that uses less card.",
+   "send": "Support: net templates with faces labelled. Stretch: surface area of triangular prisms."
+  },
+  {
+   "unit": "Unit 2: Area and volume",
+   "n": 16,
+   "title": "Converting measures and problem solving",
+   "duration": 50,
+   "bigQuestion": "Why are there 10 000 cm² in a square metre and not 100?",
+   "objectives": [
+    "Convert between metric units of length, mass and capacity",
+    "Convert between units of area",
+    "Solve problems involving measures"
+   ],
+   "successCriteria": [
+    "Convert km, m, cm, mm and kg, g, litres, ml",
+    "Convert between cm² and m², and cm³ and litres",
+    "Solve multi-step measures problems and justify the units"
+   ],
+   "crossCurricular": "Science: units in practical work; Geography: map distances",
+   "smsc": "Moral: honest weights and measures (Surah Al-Mutaffifin warns against cheating in measure)",
+   "keywords": [
+    {
+     "term": "metric",
+     "def": "a system of units based on 10, 100 and 1000"
+    },
+    {
+     "term": "convert",
+     "def": "change a measurement into different units"
+    },
+    {
+     "term": "kilo-",
+     "def": "1000 times"
+    },
+    {
+     "term": "milli-",
+     "def": "one thousandth"
+    }
+   ],
+   "starter": [
+    "Surface area of a 3 cm cube",
+    "How many cm in 1 m?",
+    "How many g in 1 kg?",
+    "Work out 4.5 × 1000"
+   ],
+   "teach": [
+    {
+     "heading": "Metric conversions",
+     "bullets": [
+      "Bigger unit to smaller: multiply",
+      "Smaller to bigger: divide"
+     ],
+     "note": "Recap and practise quick-fire.",
+     "table": {
+      "head": [
+       "Length",
+       "Mass",
+       "Capacity"
+      ],
+      "rows": [
+       [
+        "1 km = 1000 m",
+        "1 kg = 1000 g",
+        "1 litre = 1000 ml"
+       ],
+       [
+        "1 m = 100 cm",
+        "1 tonne = 1000 kg",
+        "1 litre = 100 cl"
+       ],
+       [
+        "1 cm = 10 mm",
+        "",
+        "1 cm³ = 1 ml"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Area units",
+     "bullets": [
+      "1 m = 100 cm",
+      "So 1 m² = 100 × 100 = 10 000 cm²"
+     ],
+     "note": "Draw a 1 m square split into 100 × 100 small squares. This answers the big question.",
+     "misconception": {
+      "wrong": "1 m² = 100 cm²",
+      "right": "1 m² = 100 cm × 100 cm = 10 000 cm²"
+     }
+    },
+    {
+     "heading": "A measures problem",
+     "bullets": [
+      "Convert to the same units first",
+      "Answer with the unit asked for"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Paint covers 12 m² per litre. A wall is 450 cm by 320 cm. How much paint is needed?",
+      "steps": [
+       "Convert: 4.5 m by 3.2 m",
+       "Area: 4.5 × 3.2 = 14.4 m²",
+       "Paint: 14.4 ÷ 12 = 1.2"
+      ],
+      "answer": "1.2 litres"
+     }
+    },
+    {
+     "heading": "Check: units",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "How many cm² are in 3 m²?",
+      "options": [
+       "300",
+       "3000",
+       "30 000",
+       "300 000"
+      ],
+      "answer": 2,
+      "why": "3 × 10 000 = 30 000. A uses 100 instead of 10 000."
+     }
+    }
+   ],
+   "practice": [
+    "Convert 3.4 km to m",
+    "Convert 2500 g to kg",
+    "Convert 5 m² to cm²",
+    "How many litres is 4500 cm³?"
+   ],
+   "independent": [
+    "Core: Convert (a) 72 mm to cm (b) 0.65 kg to g (c) 1.8 litres to ml (d) 25 000 cm² to m²",
+    "Extend: A water tank is 1.2 m × 80 cm × 50 cm. How many litres does it hold?",
+    "Stretch: Prove that 1 m³ = 1 000 000 cm³ and use it to find how many 1-litre bottles fill a 2 m × 1.5 m × 1 m tank."
+   ],
+   "exit": [
+    "Convert 4.2 m to cm.",
+    "How many cm² in 1 m²?",
+    "How many ml in 0.75 litres?"
+   ],
+   "homework": "Find five food labels and convert each mass or volume into a different unit (e.g. 500 g to kg).",
+   "send": "Support: conversion ladder. Stretch: volume unit conversions."
+  }
+ ]
 }

@@ -1,489 +1,2267 @@
 {
-  "subject": "Science",
-  "year": "y8",
-  "board": "KS3 National Curriculum via Pearson Exploring Science, building to Edexcel International GCSE Biology, Chemistry and Physics",
-  "boardShort": "KS3 Exploring Science",
-  "source": "School Science curriculum journey 2026–27 (Year 8 Term 1: 8A Food and nutrition; 8E Combustion) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 8Aa–8Ae, 8Ea–8Ee) and 8E assessment pack; practicals adapted for online lessons; INSET lesson standard.",
-  "lessons": [
+ "subject": "Science",
+ "year": "y8",
+ "board": "KS3 National Curriculum via Pearson Exploring Science, building to Edexcel GCSE Biology, Chemistry and Physics",
+ "boardShort": "KS3 Exploring Science",
+ "source": "School Science curriculum journey 2026–27 (Year 8 Term 1: 8A Food and nutrition; 8E Combustion) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 8Aa–8Ae, 8Ea–8Ee) and 8E assessment pack; practicals adapted for online lessons; INSET lesson standard.",
+ "lessons": [
+  {
+   "unit": "8A: Food and nutrition",
+   "n": 1,
+   "title": "Nutrients in our food",
+   "duration": 50,
+   "bigQuestion": "Why can't we live on just one food, even a healthy one?",
+   "objectives": [
+    "Name the seven components of a balanced diet",
+    "Identify foods rich in each nutrient",
+    "Explain why we need a variety of foods"
+   ],
+   "successCriteria": [
+    "List the seven components of a diet",
+    "Give two food sources for each",
+    "Explain why no single food provides everything"
+   ],
+   "crossCurricular": "Food technology: menus; Islamic Studies: eating halal and tayyib (good and wholesome) food",
+   "smsc": "Spiritual: gratitude for food (saying bismillah and alhamdulillah); moral: food waste",
+   "keywords": [
     {
-      "unit": "8A: Food and nutrition",
-      "n": 1,
-      "title": "Nutrients in our food",
-      "duration": 50,
-      "bigQuestion": "Why can't we live on just one food, even a healthy one?",
-      "objectives": ["Name the seven components of a balanced diet", "Identify foods rich in each nutrient", "Explain why we need a variety of foods"],
-      "successCriteria": ["List the seven components of a diet", "Give two food sources for each", "Explain why no single food provides everything"],
-      "crossCurricular": "Food technology: menus; Islamic Studies: eating halal and tayyib (good and wholesome) food",
-      "smsc": "Spiritual: gratitude for food (saying bismillah and alhamdulillah); moral: food waste",
-      "keywords": [
-        { "term": "nutrient", "def": "a substance in food that the body needs" },
-        { "term": "carbohydrate", "def": "a nutrient that gives energy, e.g. starch and sugar" },
-        { "term": "protein", "def": "a nutrient for growth and repair" },
-        { "term": "lipid", "def": "fats and oils: store energy and insulate" },
-        { "term": "balanced diet", "def": "eating the right amounts of all the nutrients" }
-      ],
-      "starter": ["Bismillah. What did you eat for breakfast?", "Name a food that gives you energy", "Which organ digests food first?", "What is an organ system?"],
-      "teach": [
-        { "heading": "Seven components", "bullets": ["Carbohydrates, proteins, lipids", "Vitamins, minerals", "Fibre, water"], "note": "Ask pupils to sort their breakfast into components.", "table": { "head": ["Component", "Main use", "Good sources"], "rows": [["Carbohydrate", "energy", "rice, bread, dates"], ["Protein", "growth and repair", "lentils, chicken, eggs"], ["Lipid", "energy store, insulation", "olive oil, butter, nuts"], ["Vitamins", "health (e.g. vitamin C for skin)", "fruit, vegetables"], ["Minerals", "e.g. calcium for bones, iron for blood", "milk, spinach"], ["Fibre", "keeps food moving through the gut", "wholemeal bread, beans"], ["Water", "in cells, blood and reactions", "drinks, fruit"]] } },
-        { "heading": "No perfect single food", "bullets": ["Rice: lots of carbohydrate, little protein", "Milk: protein and calcium, little iron or fibre"], "note": "Answer the big question with these examples." },
-        { "heading": "Fibre and water are components too", "bullets": ["We don't digest fibre", "But we still need it"], "note": "Pupils often leave these out.", "misconception": { "wrong": "Fibre is useless because we can't digest it", "right": "Fibre helps food move through the gut and prevents constipation" } },
-        { "heading": "Check: nutrients", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which nutrient is mainly for growth and repair?", "options": ["Carbohydrate", "Protein", "Fibre", "Lipid"], "answer": 1, "why": "Proteins build and repair tissues. Carbohydrates and lipids are mainly for energy." } }
-      ],
-      "practice": ["Name the seven components", "Which nutrient is in olive oil?", "Give two foods rich in protein"],
-      "independent": ["Core: Analyse a meal (rice, daal, salad, yoghurt): list the nutrients each food provides", "Extend: Design a balanced iftar menu and justify each choice by nutrient", "Stretch: Explain why a vegetarian diet needs careful planning to get enough protein and iron, with examples."],
-      "exit": ["What does fibre do?", "Name a food rich in carbohydrate.", "Why is water a component of a diet?"],
-      "homework": "Keep a one-day food diary and label each food with its main nutrients.",
-      "send": "Support: food picture cards. Stretch: nutrition labels."
+     "term": "nutrient",
+     "def": "a substance in food that the body needs"
     },
     {
-      "unit": "8A: Food and nutrition",
-      "n": 2,
-      "title": "Food tests",
-      "duration": 50,
-      "bigQuestion": "How can we prove what is inside a food without a label?",
-      "objectives": ["Describe tests for starch, sugar, protein and fat", "Interpret positive and negative results", "Use results to identify nutrients in unknown foods"],
-      "successCriteria": ["Name the reagent and positive result for each test", "Interpret results tables", "Plan safe, fair food tests"],
-      "crossCurricular": "Food technology: food analysis; Maths: recording results",
-      "smsc": "Moral: honesty in food labelling",
-      "keywords": [
-        { "term": "reagent", "def": "a chemical used in a test" },
-        { "term": "iodine solution", "def": "turns blue-black with starch" },
-        { "term": "Benedict's solution", "def": "turns from blue to brick red when heated with sugar" },
-        { "term": "biuret solution", "def": "turns purple with protein" },
-        { "term": "positive result", "def": "shows the substance is present" }
-      ],
-      "starter": ["Name the seven components of a diet", "Which nutrient gives energy?", "What colour is iodine solution?", "Name a safety rule in a lab"],
-      "teach": [
-        { "heading": "The four tests", "bullets": ["Each nutrient has its own test"], "note": "Show the teacher demonstration video of each test with clear before/after colours.", "table": { "head": ["Nutrient", "Reagent", "Positive result"], "rows": [["Starch", "iodine solution", "orange-brown → blue-black"], ["Sugar (glucose)", "Benedict's, heated", "blue → green/orange/brick red"], ["Protein", "biuret solution", "blue → purple"], ["Fat", "ethanol, then water (emulsion test)", "cloudy white layer"]] } },
-        { "heading": "Interpreting a results table", "bullets": ["Match each colour to a nutrient"], "note": "Model.", "model": { "problem": "Food X: iodine stays orange; Benedict's turns brick red; biuret stays blue. What does X contain?", "steps": ["Iodine orange: no starch", "Benedict's brick red: lots of sugar", "Biuret blue: no protein"], "answer": "X contains sugar only (e.g. glucose drink)" } },
-        { "heading": "Iodine colours", "bullets": ["Iodine solution starts orange-brown"], "note": "Common confusion.", "misconception": { "wrong": "Iodine turns orange when starch is present", "right": "Iodine turns blue-black with starch; it stays orange-brown without" } },
-        { "heading": "Safety", "bullets": ["Eye protection", "Ethanol is flammable: no flames nearby", "Use a water bath to heat Benedict's"], "note": "Online lessons: watch demos; home versions only for iodine on potato (with an adult, iodine from a pharmacy is an irritant)." },
-        { "heading": "Check: test", "bullets": [], "note": "Show me on 3.", "check": { "q": "Biuret solution turns purple. What is present?", "options": ["Starch", "Sugar", "Protein", "Fat"], "answer": 2, "why": "Biuret detects protein. Iodine detects starch; Benedict's detects sugar." } }
-      ],
-      "practice": ["Which reagent tests for starch?", "What colour shows lots of sugar?", "Describe the fat test"],
-      "independent": ["Core: Interpret a results table for five foods and say which nutrients each contains", "Extend: Plan how to test a sandwich for starch, protein and fat, with safety precautions", "Stretch: Benedict's gives green for one drink and brick red for another. What does this tell you, and how could you make the comparison fair?"],
-      "exit": ["Reagent and positive result for starch?", "Why heat Benedict's in a water bath not a flame?", "What does a purple biuret result mean?"],
-      "homework": "Draw a results table for testing milk, bread, apple and peanuts, predicting each result with reasons.",
-      "send": "Support: colour cards for each test. Stretch: semi-quantitative Benedict's test."
+     "term": "carbohydrate",
+     "def": "a nutrient that gives energy, e.g. starch and sugar"
     },
     {
-      "unit": "8A: Food and nutrition",
-      "n": 3,
-      "title": "Energy in food",
-      "duration": 50,
-      "bigQuestion": "Why does a builder need more food than an office worker?",
-      "objectives": ["Know that food energy is measured in kilojoules", "Compare energy in foods using labels", "Explain why energy needs differ between people"],
-      "successCriteria": ["Read energy values from food labels", "Calculate energy in a portion", "Explain differences in daily energy needs"],
-      "crossCurricular": "Maths: proportion calculations; PE: activity and energy",
-      "smsc": "Moral: moderation in eating (Surah Al-A'raf 7:31, 'eat and drink, but do not waste')",
-      "keywords": [
-        { "term": "kilojoule (kJ)", "def": "unit of energy; 1 kJ = 1000 J" },
-        { "term": "kilocalorie (kcal)", "def": "another energy unit used on labels; 1 kcal ≈ 4.2 kJ" },
-        { "term": "energy requirement", "def": "how much energy a person needs each day" },
-        { "term": "metabolism", "def": "all the chemical reactions in the body" }
-      ],
-      "starter": ["Which nutrients give energy?", "Positive result for sugar?", "Work out 150 × 4", "What unit is energy measured in?"],
-      "teach": [
-        { "heading": "Energy from food", "bullets": ["Carbohydrates and lipids are main energy sources", "Lipids store more energy per gram", "Labels show kJ per 100 g"], "note": "Show labels: oats about 1600 kJ/100 g; butter about 3000 kJ/100 g; apple about 220 kJ/100 g." },
-        { "heading": "Calculating energy in a portion", "bullets": ["Energy per gram × portion size"], "note": "Model.", "model": { "problem": "Cereal has 1500 kJ per 100 g. How much energy is in a 40 g bowl?", "steps": ["Per gram: 1500 ÷ 100 = 15 kJ", "40 g: 15 × 40"], "answer": "600 kJ" } },
-        { "heading": "Different people, different needs", "bullets": ["Activity: more movement, more energy", "Age and growth: teenagers need a lot", "Pregnancy, body size and temperature"], "note": "Answer the big question.", "table": { "head": ["Person", "Approximate daily need"], "rows": [["Girl aged 11–14", "about 7 700 kJ"], ["Boy aged 11–14", "about 9 300 kJ"], ["Office worker (adult man)", "about 10 500 kJ"], ["Builder (adult man)", "about 14 500 kJ"]] } },
-        { "heading": "Energy is not a nutrient", "bullets": ["Nutrients contain energy"], "note": "Clarify the language.", "misconception": { "wrong": "Protein foods have no energy", "right": "Proteins do release energy, but the body mainly uses them for growth and repair" } },
-        { "heading": "Check: calculate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Biscuits: 2000 kJ per 100 g. Energy in 25 g?", "options": ["8000 kJ", "500 kJ", "80 kJ", "2025 kJ"], "answer": 1, "why": "2000 ÷ 100 × 25 = 500. A multiplies by 4 instead of dividing; D adds." } }
-      ],
-      "practice": ["Which has more energy per gram: fat or carbohydrate?", "Bread 1000 kJ/100 g: energy in 60 g?", "Why does a teenager need lots of energy?"],
-      "independent": ["Core: Use five food labels to find the energy in a typical portion of each", "Extend: Plan a day's meals for a 13-year-old that provides about 9 000 kJ, showing calculations", "Stretch: Explain why someone who eats more energy than they use gains mass, linking to respiration and storage of lipids."],
-      "exit": ["Unit of food energy?", "Energy in 50 g of a food with 400 kJ/100 g?", "Give two factors affecting energy needs."],
-      "homework": "Collect three food labels and calculate the energy in your usual portion of each.",
-      "send": "Support: calculation frame. Stretch: kcal to kJ conversions."
+     "term": "protein",
+     "def": "a nutrient for growth and repair"
     },
     {
-      "unit": "8A: Food and nutrition",
-      "n": 4,
-      "title": "Balanced diets and deficiency diseases",
-      "duration": 50,
-      "bigQuestion": "Can you be overweight and malnourished at the same time?",
-      "objectives": ["Explain what malnutrition is", "Describe deficiency diseases", "Explain the effects of eating too much or too little"],
-      "successCriteria": ["Define malnutrition", "Link scurvy, rickets and anaemia to their causes", "Explain how someone can be overweight but malnourished"],
-      "crossCurricular": "History: scurvy on sailing ships; Geography: food security around the world",
-      "smsc": "Moral: food poverty and charity (zakat, sadaqah); social: helping others to eat well",
-      "keywords": [
-        { "term": "malnutrition", "def": "not eating a balanced diet: too much or too little of nutrients" },
-        { "term": "deficiency disease", "def": "an illness caused by lacking a nutrient" },
-        { "term": "obesity", "def": "having so much body fat it harms health" },
-        { "term": "starvation", "def": "eating too little food for a long time" }
-      ],
-      "starter": ["Energy in 30 g of food with 1200 kJ/100 g?", "Which mineral is needed for strong bones?", "Name a source of vitamin C", "What is a balanced diet?"],
-      "teach": [
-        { "heading": "Malnutrition", "bullets": ["Too little: starvation, deficiency", "Too much: obesity", "Wrong balance: both at once"], "note": "Answer the big question: someone eating mostly fried snacks can be overweight but lack vitamins and minerals." },
-        { "heading": "Deficiency diseases", "bullets": ["Each missing nutrient causes particular symptoms"], "note": "Story: sailors got scurvy until lemons and limes were taken on voyages.", "table": { "head": ["Lacking", "Disease", "Symptoms"], "rows": [["Vitamin C", "scurvy", "bleeding gums, poor healing"], ["Vitamin D or calcium", "rickets", "soft, bent bones"], ["Iron", "anaemia", "tiredness, pale skin"], ["Protein", "kwashiorkor", "swollen belly, poor growth"]] } },
-        { "heading": "Getting more vitamin D", "bullets": ["Made in the skin with sunlight", "Also in oily fish and eggs"], "note": "UK guidance: consider a vitamin D supplement in autumn and winter. Links to people who cover their skin or live indoors." },
-        { "heading": "Obesity is malnutrition", "bullets": ["Malnutrition is not only hunger"], "note": "Key misconception.", "misconception": { "wrong": "Malnourished people are always thin", "right": "Malnutrition means an unbalanced diet, which can cause obesity" } },
-        { "heading": "Check: deficiency", "bullets": [], "note": "Show me on 3.", "check": { "q": "A child has soft, bent leg bones. Which is most likely lacking?", "options": ["Vitamin C", "Iron", "Vitamin D", "Fibre"], "answer": 2, "why": "Rickets is caused by too little vitamin D (or calcium). Vitamin C causes scurvy; iron causes anaemia." } }
-      ],
-      "practice": ["Define malnutrition", "What causes scurvy?", "Name two health problems linked to obesity"],
-      "independent": ["Core: Match five deficiency diseases to their causes and a food that prevents each", "Extend: Explain why people in some countries can be malnourished even with enough calories", "Stretch: Evaluate a 'fruit-only diet' for a teenager using the seven diet components."],
-      "exit": ["Which vitamin prevents scurvy?", "What does anaemia make you feel like?", "Can an obese person be malnourished? Explain."],
-      "homework": "Research one charity that tackles malnutrition and summarise what it does in five sentences.",
-      "send": "Support: matching cards. Stretch: global nutrition data."
+     "term": "lipid",
+     "def": "fats and oils: store energy and insulate"
     },
     {
-      "unit": "8A: Food and nutrition",
-      "n": 5,
-      "title": "The digestive system",
-      "duration": 50,
-      "bigQuestion": "What happens to a date from the moment you eat it?",
-      "objectives": ["Name the organs of the digestive system", "Describe the job of each organ", "Explain why digestion is needed"],
-      "successCriteria": ["Label the digestive system", "Describe the path of food in order", "Explain why large molecules must be broken down"],
-      "crossCurricular": "PE: energy for activity; Islamic Studies: sunnah of eating slowly and chewing well",
-      "smsc": "Spiritual: the design of the body; sunnah of eating with the right hand and not overfilling the stomach (hadith in Sunan Ibn Majah: a third for food, a third for drink, a third for air)",
-      "keywords": [
-        { "term": "digestion", "def": "breaking large food molecules into small soluble ones" },
-        { "term": "oesophagus", "def": "tube carrying food from mouth to stomach" },
-        { "term": "small intestine", "def": "where most digestion finishes and food is absorbed" },
-        { "term": "large intestine", "def": "where water is absorbed" },
-        { "term": "rectum", "def": "where faeces are stored before leaving the body" }
-      ],
-      "starter": ["What causes rickets?", "Name the organ that pumps blood", "What is an organ system?", "Why do we chew?"],
-      "teach": [
-        { "heading": "The journey of food", "bullets": ["About 9 metres of tube", "Each organ does a job"], "note": "Answer the big question with the timeline.", "timeline": [{ "label": "Mouth", "text": "teeth chew; saliva starts starch digestion" }, { "label": "Oesophagus", "text": "muscles squeeze food down" }, { "label": "Stomach", "text": "acid and enzymes digest protein; churns" }, { "label": "Small intestine", "text": "digestion finishes; nutrients absorbed" }, { "label": "Large intestine", "text": "water absorbed" }, { "label": "Rectum/anus", "text": "faeces stored, then egested" }] },
-        { "heading": "Why digest?", "bullets": ["Starch, protein and fat molecules are too big", "They must pass into the blood", "Small soluble molecules can"], "note": "Use a model: a 'visking tubing' gut (video). Starch stays in; glucose passes through." },
-        { "heading": "Helper organs", "bullets": ["Liver makes bile", "Pancreas makes enzymes", "Food does not pass through them"], "note": "Common error.", "misconception": { "wrong": "Food passes through the liver and pancreas", "right": "They add bile and enzymes; food stays in the gut tube" } },
-        { "heading": "Check: order", "bullets": [], "note": "Show me on 3.", "check": { "q": "Where is most water absorbed?", "options": ["Stomach", "Small intestine", "Large intestine", "Oesophagus"], "answer": 2, "why": "The large intestine absorbs water. The small intestine absorbs most digested nutrients." } }
-      ],
-      "practice": ["Label the digestive system", "Put in order: stomach, mouth, small intestine, oesophagus", "What does the stomach do?"],
-      "independent": ["Core: Write a 'journey of a date' story, naming each organ and its job", "Extend: Explain why food molecules must be small and soluble to be absorbed", "Stretch: Explain the sunnah guidance on filling the stomach a third with food, a third with drink and a third with air, in terms of digestion."],
-      "exit": ["Name the tube from mouth to stomach.", "What does the large intestine absorb?", "Why must food be digested?"],
-      "homework": "Draw and label the digestive system with one fact about each organ.",
-      "send": "Support: labelled diagram to complete. Stretch: enzyme preview."
-    },
-    {
-      "unit": "8A: Food and nutrition",
-      "n": 6,
-      "title": "Enzymes in digestion",
-      "duration": 50,
-      "bigQuestion": "Why does bread taste sweeter the longer you chew it?",
-      "objectives": ["Describe enzymes as biological catalysts", "Match digestive enzymes to their food molecules and products", "Explain the effect of temperature and pH on enzymes"],
-      "successCriteria": ["Name amylase, protease and lipase and what they digest", "State the products of each enzyme", "Explain why enzymes work best at certain conditions"],
-      "crossCurricular": "Food technology: enzymes in cheese and baking; Chemistry: catalysts",
-      "smsc": "Spiritual: the precision of biological systems",
-      "keywords": [
-        { "term": "enzyme", "def": "a protein that speeds up reactions in living things" },
-        { "term": "catalyst", "def": "speeds up a reaction without being used up" },
-        { "term": "amylase", "def": "enzyme that digests starch into sugars" },
-        { "term": "protease", "def": "enzyme that digests proteins into amino acids" },
-        { "term": "lipase", "def": "enzyme that digests lipids into fatty acids and glycerol" }
-      ],
-      "starter": ["Where does digestion finish?", "Iodine with starch turns…?", "Name the organ that makes bile", "What does 'catalyst' mean?"],
-      "teach": [
-        { "heading": "Three enzymes", "bullets": ["Each enzyme digests one type of molecule"], "note": "Answer the big question: amylase in saliva turns starch into sugar.", "table": { "head": ["Enzyme", "Digests", "Into", "Made in"], "rows": [["Amylase", "starch", "sugars", "salivary glands, pancreas"], ["Protease", "protein", "amino acids", "stomach, pancreas"], ["Lipase", "lipids", "fatty acids + glycerol", "pancreas"]] } },
-        { "heading": "Lock and key", "bullets": ["Each enzyme has an active site", "Only the right molecule fits", "Heat changes the shape (denatured)"], "note": "Use a jigsaw image. Body temperature (37 °C) is ideal for most human enzymes." },
-        { "heading": "Investigating amylase", "bullets": ["Starch + amylase", "Test drops with iodine every minute", "When iodine stays orange, starch has gone"], "note": "Show the demo video. Model reading results.", "model": { "problem": "Iodine stays blue-black for 4 minutes at 20 °C but only 1 minute at 37 °C. Explain.", "steps": ["Starch is broken down faster at 37 °C", "Amylase works fastest near body temperature", "More collisions and enzyme is not denatured"], "answer": "37 °C is closer to amylase's optimum" } },
-        { "heading": "Enzymes are not killed", "bullets": ["Enzymes are not alive"], "note": "Language error.", "misconception": { "wrong": "High temperature kills enzymes", "right": "High temperature denatures enzymes: the active site changes shape" } },
-        { "heading": "Check: enzymes", "bullets": [], "note": "Show me on 3.", "check": { "q": "What does protease produce?", "options": ["Sugars", "Amino acids", "Fatty acids", "Starch"], "answer": 1, "why": "Proteins are chains of amino acids; protease breaks them apart." } }
-      ],
-      "practice": ["What does amylase digest?", "Where is lipase made?", "What does 'denatured' mean?"],
-      "independent": ["Core: Complete an enzyme table: enzyme, substrate, product, location", "Extend: Explain why stomach protease works best at a low pH but amylase in the mouth does not", "Stretch: Plan the amylase–temperature investigation: variables, method, risk assessment and predicted graph."],
-      "exit": ["What is an enzyme?", "Products of lipase?", "Why does bread taste sweeter when chewed?"],
-      "homework": "Chew a small piece of plain bread for two minutes and describe the taste change, explaining it with the word amylase.",
-      "send": "Support: lock-and-key diagram. Stretch: optimum pH graphs."
-    },
-    {
-      "unit": "8A: Food and nutrition",
-      "n": 7,
-      "title": "Absorption and the small intestine",
-      "duration": 50,
-      "bigQuestion": "How does a 6-metre tube absorb enough food to keep you alive?",
-      "objectives": ["Describe how digested food is absorbed", "Explain how villi are adapted for absorption", "Describe the role of bacteria in the gut"],
-      "successCriteria": ["Describe absorption into the blood", "Explain three adaptations of villi", "Explain the importance of gut bacteria"],
-      "crossCurricular": "Maths: surface area; Food tech: probiotic foods",
-      "smsc": "Spiritual: the careful design of the body",
-      "keywords": [
-        { "term": "absorption", "def": "small food molecules passing into the blood" },
-        { "term": "villi", "def": "finger-like projections lining the small intestine" },
-        { "term": "surface area", "def": "the total area of the outside of something" },
-        { "term": "diffusion", "def": "particles spreading from high to low concentration" }
-      ],
-      "starter": ["What does amylase digest?", "Where is water absorbed?", "Why must molecules be small to be absorbed?", "Surface area of a 1 cm cube?"],
-      "teach": [
-        { "heading": "From gut to blood", "bullets": ["Small molecules diffuse into the blood", "Blood carries them to cells", "Cells use them for energy and growth"], "note": "Link to respiration in cells." },
-        { "heading": "Villi: built for absorption", "bullets": ["Huge surface area", "Wall one cell thick", "Rich blood supply"], "note": "Answer the big question. The small intestine's surface area is often compared to a tennis court.", "model": { "problem": "Explain how villi are adapted for absorption (3 marks)", "steps": ["Millions of villi give a large surface area, so more absorption at once", "Thin walls give a short distance for diffusion", "A good blood supply carries molecules away, keeping the concentration gradient"], "answer": "Area + thin + blood supply, each linked to faster absorption" } },
-        { "heading": "Helpful bacteria", "bullets": ["Live in the large intestine", "Make some vitamins (e.g. vitamin K)", "Help digest fibre"], "note": "Antibiotics can kill useful gut bacteria too." },
-        { "heading": "Absorbed where?", "bullets": ["Nutrients: small intestine", "Water: mostly large intestine"], "note": "Common mix-up.", "misconception": { "wrong": "Food is absorbed in the stomach", "right": "Most absorption of nutrients happens in the small intestine" } },
-        { "heading": "Check: villi", "bullets": [], "note": "Show me on 3.", "check": { "q": "Why are villi walls only one cell thick?", "options": ["To make them stronger", "To give a short diffusion distance", "To store fat", "To make enzymes"], "answer": 1, "why": "A thin wall means molecules diffuse a short distance into the blood, so absorption is faster." } }
-      ],
-      "practice": ["What are villi?", "Name one adaptation of villi", "Which organ absorbs most nutrients?"],
-      "independent": ["Core: Draw and label a villus with three adaptations explained", "Extend: Coeliac disease damages villi. Predict and explain the effects on a person", "Stretch: Model surface area: compare a 4 cm cube with eight 2 cm cubes. Link your answer to villi."],
-      "exit": ["What does absorption mean?", "Give two adaptations of villi.", "Name one job of gut bacteria."],
-      "homework": "Make a model of a villus from household items (photo to upload) and label its adaptations.",
-      "send": "Support: diagram with labels. Stretch: coeliac case study."
-    },
-    {
-      "unit": "8A: Food and nutrition",
-      "n": 8,
-      "title": "8A review: food and nutrition",
-      "duration": 50,
-      "bigQuestion": "What advice would you give a friend who eats only crisps and fizzy drinks?",
-      "objectives": ["Retrieve key knowledge from 8A", "Apply knowledge in unfamiliar contexts", "Write a structured extended answer"],
-      "successCriteria": ["Recall nutrients, food tests and digestion facts", "Answer calculation and data questions", "Write a 6-mark answer linking diet and health"],
-      "crossCurricular": "PSHE: healthy lifestyles; English: persuasive writing",
-      "smsc": "Moral: caring for our bodies as an amanah (trust)",
-      "keywords": [
-        { "term": "balanced diet", "def": "correct amounts of all components" },
-        { "term": "enzyme", "def": "biological catalyst" },
-        { "term": "villi", "def": "projections for absorption" },
-        { "term": "deficiency", "def": "lack of a nutrient" }
-      ],
-      "starter": ["Reagent for protein?", "Product of amylase?", "Disease from lack of iron?", "Where is water absorbed?"],
-      "teach": [
-        { "heading": "8A on a page", "bullets": ["Nutrients → tests → energy → balance → digestion → enzymes → absorption"], "note": "Quick-fire recap.", "cycle": ["Eat food", "Digest (enzymes)", "Absorb (villi)", "Transport (blood)", "Use in cells"] },
-        { "heading": "A 6-mark answer", "bullets": ["Identify problems", "Explain effects", "Suggest changes"], "note": "Answer the big question as a model answer.", "model": { "problem": "Evaluate a diet of crisps and fizzy drinks (6 marks)", "steps": ["High in fat, salt and sugar: risk of obesity and tooth decay", "Low in protein: poor growth and repair", "Low in vitamins and minerals: risk of scurvy or anaemia", "Low in fibre: constipation", "Suggest: add fruit, vegetables, wholegrains, lentils or lean meat"], "answer": "Problems + effects + improvements" } },
-        { "heading": "Fix the errors", "bullets": ["Spot the mistake in each answer"], "note": "From the 8A assessment pack.", "misconception": { "wrong": "Enzymes are killed at high temperatures", "right": "Enzymes are denatured: their active site changes shape" } },
-        { "heading": "Check: apply", "bullets": [], "note": "Show me on 3.", "check": { "q": "A food turns iodine blue-black and biuret purple. It contains…", "options": ["Sugar and fat", "Starch and protein", "Starch only", "Protein only"], "answer": 1, "why": "Blue-black iodine shows starch; purple biuret shows protein." } }
-      ],
-      "practice": ["Label the digestive system", "Calculate energy in 80 g of a food with 900 kJ/100 g", "Name the three enzymes and their products"],
-      "independent": ["Core: 8A end-of-unit check", "Extend: 6-mark answer: explain how food is digested and absorbed", "Stretch: Data analysis: interpret a graph of enzyme activity against temperature and explain its shape."],
-      "exit": ["My strongest 8A topic", "My weakest 8A topic", "One question I still have"],
-      "homework": "Revise 8A and complete DIRT corrections on your end-of-unit check.",
-      "send": "Support: knowledge organiser. Stretch: graph interpretation."
-    },
-    {
-      "unit": "8E: Combustion",
-      "n": 9,
-      "title": "Burning fuels",
-      "duration": 50,
-      "bigQuestion": "Where does the mass of a burning candle go?",
-      "objectives": ["Describe combustion as a reaction with oxygen", "Name the products of burning hydrocarbon fuels", "Test for carbon dioxide and water"],
-      "successCriteria": ["Write a word equation for burning methane", "Describe tests for carbon dioxide and water", "Explain why mass seems to disappear when a fuel burns"],
-      "crossCurricular": "Geography: energy resources; Islamic history: oil lamps and early chemistry (al-Razi's work on distillation of petroleum)",
-      "smsc": "Cultural: the role of oil in Gulf economies; moral: responsible energy use",
-      "keywords": [
-        { "term": "combustion", "def": "burning: a reaction with oxygen that releases energy" },
-        { "term": "fuel", "def": "a substance that releases energy when burnt" },
-        { "term": "hydrocarbon", "def": "a compound of hydrogen and carbon only" },
-        { "term": "limewater", "def": "turns milky with carbon dioxide" },
-        { "term": "exothermic", "def": "releases energy to the surroundings" }
-      ],
-      "starter": ["Name the gas we need for respiration", "Name a fuel used at home", "What is a compound?", "What happens to a candle as it burns?"],
-      "teach": [
-        { "heading": "Fuel + oxygen", "bullets": ["Combustion needs oxygen", "Releases heat and light", "Hydrocarbons make carbon dioxide and water"], "note": "Methane (natural gas) in cookers.", "model": { "problem": "Write a word equation for burning methane", "steps": ["Reactants: methane + oxygen", "Products of a hydrocarbon: carbon dioxide + water", "methane + oxygen → carbon dioxide + water"], "answer": "methane + oxygen → carbon dioxide + water" } },
-        { "heading": "Testing the products", "bullets": ["Carbon dioxide: limewater turns milky", "Water: blue cobalt chloride paper turns pink (or anhydrous copper sulfate turns blue)"], "note": "Teacher demo video: candle under a funnel, gases drawn through a cooled tube and limewater." },
-        { "heading": "Where does the mass go?", "bullets": ["Products are gases that escape", "If we collected them, the mass would increase"], "note": "Answer the big question: oxygen from the air is added, so the products weigh more than the wax that burnt.", "misconception": { "wrong": "Burning destroys matter", "right": "Atoms are rearranged into gases; mass is conserved" } },
-        { "heading": "Check: products", "bullets": [], "note": "Show me on 3.", "check": { "q": "A gas turns limewater milky. It is…", "options": ["Oxygen", "Carbon dioxide", "Hydrogen", "Water vapour"], "answer": 1, "why": "Limewater is the test for carbon dioxide. Water is tested with cobalt chloride or copper sulfate." } }
-      ],
-      "practice": ["Name the two products of burning a hydrocarbon", "Test for water?", "Word equation for burning propane"],
-      "independent": ["Core: Write word equations for burning methane, propane and butane", "Extend: Explain why a candle burning in a sealed jar goes out", "Stretch: Design an experiment to show that the products of a burning candle weigh more than the wax used."],
-      "exit": ["What is combustion?", "Test for carbon dioxide?", "Products of burning methane?"],
-      "homework": "List five fuels used in your home or town and say what each is used for.",
-      "send": "Support: word-equation frame. Stretch: balanced symbol equations."
-    },
-    {
-      "unit": "8E: Combustion",
-      "n": 10,
-      "title": "Oxidation reactions",
-      "duration": 50,
-      "bigQuestion": "Is rusting a kind of very slow burning?",
-      "objectives": ["Define oxidation", "Describe how metals and non-metals react with oxygen", "Write word equations for oxidation"],
-      "successCriteria": ["Name oxides formed when elements react with oxygen", "Compare burning and rusting", "Explain why the mass of magnesium increases when it burns"],
-      "crossCurricular": "DT: preventing rust on bridges and cars; History: iron in civilisations",
-      "smsc": "Spiritual: change and decay in all created things",
-      "keywords": [
-        { "term": "oxidation", "def": "a reaction where a substance gains oxygen" },
-        { "term": "oxide", "def": "a compound of an element with oxygen" },
-        { "term": "rusting", "def": "iron reacting slowly with oxygen and water" },
-        { "term": "word equation", "def": "shows reactants and products in words" }
-      ],
-      "starter": ["Test for carbon dioxide?", "Products of burning methane?", "Is rust iron?", "What does 'conserved' mean?"],
-      "teach": [
-        { "heading": "Oxidation", "bullets": ["Gaining oxygen", "Element + oxygen → element oxide", "Burning is fast oxidation"], "note": "Show magnesium ribbon burning (video; bright light, do not look directly)." },
-        { "heading": "Mass increases", "bullets": ["Magnesium gains oxygen atoms", "Magnesium oxide weighs more than magnesium"], "note": "Model.", "model": { "problem": "2.4 g of magnesium burns to make 4.0 g of magnesium oxide. What mass of oxygen reacted?", "steps": ["Mass is conserved", "Oxygen = product − magnesium", "4.0 − 2.4"], "answer": "1.6 g of oxygen" } },
-        { "heading": "Burning vs rusting", "bullets": ["Both are oxidation", "Rusting is slow and needs water too"], "note": "Answer the big question.", "compare": { "left": { "title": "Burning", "points": ["Fast", "Releases heat and light", "Needs heat to start"] }, "right": { "title": "Rusting", "points": ["Slow", "Needs oxygen and water", "Iron → hydrated iron oxide"] } } },
-        { "heading": "Mass after burning", "bullets": ["Metals gain mass when oxidised"], "note": "Contrast with candles.", "misconception": { "wrong": "Magnesium loses mass when it burns, like wood", "right": "It gains oxygen, so the solid product is heavier" } },
-        { "heading": "Check: oxide", "bullets": [], "note": "Show me on 3.", "check": { "q": "What forms when copper is heated in air?", "options": ["Copper carbonate", "Copper oxide", "Copper chloride", "Copper hydroxide"], "answer": 1, "why": "Copper + oxygen → copper oxide. Heating in air supplies oxygen." } }
-      ],
-      "practice": ["Word equation: zinc + oxygen →", "What is oxidation?", "What two things does iron need to rust?"],
-      "independent": ["Core: Write word equations for oxidising five elements (e.g. sulfur, carbon, iron)", "Extend: Explain three ways of preventing rust and how each works", "Stretch: 0.6 g of carbon burns completely to make 2.2 g of carbon dioxide. How much oxygen reacted? What percentage of the product's mass is oxygen?"],
-      "exit": ["Define oxidation.", "Why does magnesium gain mass when it burns?", "Name one way to stop rusting."],
-      "homework": "Find three examples of rusting at home or outside, photograph them and explain how rusting could have been prevented.",
-      "send": "Support: equation frames. Stretch: percentage composition."
-    },
-    {
-      "unit": "8E: Combustion",
-      "n": 11,
-      "title": "The fire triangle and fire safety",
-      "duration": 50,
-      "bigQuestion": "Why must you never throw water on a burning chip pan?",
-      "objectives": ["Describe the fire triangle", "Explain how fire extinguishers work", "Choose the right way to put out different fires"],
-      "successCriteria": ["Name the three parts of the fire triangle", "Explain how removing each part puts a fire out", "Explain why water is dangerous on oil and electrical fires"],
-      "crossCurricular": "PSHE: home safety; Citizenship: the fire service",
-      "smsc": "Moral: responsibility for others' safety; social: what to do in an emergency",
-      "keywords": [
-        { "term": "fire triangle", "def": "fuel, oxygen and heat: all three are needed for fire" },
-        { "term": "extinguish", "def": "put out a fire" },
-        { "term": "fire blanket", "def": "a sheet that smothers a fire by cutting off oxygen" },
-        { "term": "flammable", "def": "catches fire easily" }
-      ],
-      "starter": ["What is combustion?", "What forms when magnesium burns?", "Name three fuels", "What does 'flammable' mean?"],
-      "teach": [
-        { "heading": "The fire triangle", "bullets": ["Remove any side and the fire goes out"], "note": "Draw it.", "cycle": ["Fuel", "Oxygen", "Heat"] },
-        { "heading": "Fighting fires", "bullets": ["Remove fuel: firebreaks, turn off gas", "Remove oxygen: fire blanket, CO₂ or foam", "Remove heat: water"], "note": "Link each method to the triangle.", "table": { "head": ["Method", "Side removed", "Use on"], "rows": [["Water", "heat", "wood, paper, cloth"], ["Fire blanket", "oxygen", "small pan fires, clothing"], ["Carbon dioxide extinguisher", "oxygen", "electrical fires"], ["Turning off gas", "fuel", "gas fires"]] } },
-        { "heading": "Chip-pan fires", "bullets": ["Burning oil is above 100 °C", "Water boils instantly into steam", "Steam throws burning oil into the air"], "note": "Answer the big question with a fire-service video.", "misconception": { "wrong": "Water puts out any fire", "right": "Water on oil causes a fireball; on electrics it conducts electricity" } },
-        { "heading": "What to do at home", "bullets": ["Get out, stay out, call 999", "Smoke alarms save lives", "Do not go back in"], "note": "UK fire service advice. Pupils share their home escape plan." },
-        { "heading": "Check: method", "bullets": [], "note": "Show me on 3.", "check": { "q": "A TV catches fire. What is safest?", "options": ["Throw water", "Turn off the power at the wall if safe, use a CO₂ extinguisher, get out and call 999", "Blow it out", "Cover with paper"], "answer": 1, "why": "Water conducts electricity. Cutting power removes heat source; CO₂ removes oxygen. Safety first: get out and call 999." } }
-      ],
-      "practice": ["Draw the fire triangle", "Which side does a fire blanket remove?", "Why is a firebreak used in forest fires?"],
-      "independent": ["Core: For six fires (bin, chip pan, laptop, forest, clothing, gas hob), choose a method and name the side removed", "Extend: Write a fire-safety leaflet for a family home", "Stretch: Explain why CO₂ extinguishers are safe on electrical fires but dangerous in small closed rooms."],
-      "exit": ["Three sides of the fire triangle?", "Why not use water on a chip-pan fire?", "What number do you call in a UK fire emergency?"],
-      "homework": "Make a home fire-escape plan with your family and check your smoke alarms.",
-      "send": "Support: triangle diagram with icons. Stretch: extinguisher classes."
-    },
-    {
-      "unit": "8E: Combustion",
-      "n": 12,
-      "title": "Incomplete combustion and carbon monoxide",
-      "duration": 50,
-      "bigQuestion": "Why is a yellow flame on a gas cooker a warning sign?",
-      "objectives": ["Compare complete and incomplete combustion", "Name the products of incomplete combustion", "Explain the dangers of carbon monoxide"],
-      "successCriteria": ["Write word equations for complete and incomplete combustion", "Explain why carbon monoxide is toxic", "Explain how to stay safe from carbon monoxide at home"],
-      "crossCurricular": "PSHE: home safety; Biology: haemoglobin and oxygen transport",
-      "smsc": "Moral: protecting family members; checking boilers and alarms",
-      "keywords": [
-        { "term": "complete combustion", "def": "burning with plenty of oxygen; makes CO₂ and water" },
-        { "term": "incomplete combustion", "def": "burning with too little oxygen; makes CO, soot and water" },
-        { "term": "carbon monoxide", "def": "a toxic gas with no colour or smell" },
-        { "term": "soot", "def": "particles of carbon" }
-      ],
-      "starter": ["Sides of the fire triangle?", "Word equation for burning methane", "What carries oxygen in blood?", "Why is a fire blanket used?"],
-      "teach": [
-        { "heading": "Complete vs incomplete", "bullets": ["Plenty of oxygen: blue flame", "Too little oxygen: yellow flame, soot"], "note": "Show a Bunsen with the air hole open and closed (video).", "compare": { "left": { "title": "Complete", "points": ["Plenty of oxygen", "Blue flame", "Carbon dioxide + water", "More energy released"] }, "right": { "title": "Incomplete", "points": ["Limited oxygen", "Yellow, smoky flame", "Carbon monoxide, carbon, water", "Less energy released"] } } },
-        { "heading": "Why carbon monoxide kills", "bullets": ["Binds to haemoglobin in red blood cells", "Blood carries less oxygen", "No colour or smell"], "note": "Symptoms: headaches, dizziness, sickness, tiredness." },
-        { "heading": "Word equations", "bullets": ["Same fuel, different products"], "note": "Model.", "model": { "problem": "Write word equations for methane burning completely and incompletely", "steps": ["Complete: methane + oxygen → carbon dioxide + water", "Incomplete: methane + oxygen → carbon monoxide + water", "Very little oxygen: carbon (soot) can form instead"], "answer": "Products depend on the oxygen supply" } },
-        { "heading": "You can't detect it yourself", "bullets": ["Fit a carbon monoxide alarm"], "note": "Answer the big question: a yellow flame on a gas appliance can mean incomplete combustion; get it checked by a Gas Safe engineer.", "misconception": { "wrong": "You would smell a carbon monoxide leak", "right": "CO has no smell: only an alarm can warn you" } },
-        { "heading": "Check: products", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which product shows incomplete combustion?", "options": ["Carbon dioxide", "Water", "Carbon monoxide", "Oxygen"], "answer": 2, "why": "Carbon monoxide (and soot) form when oxygen is limited. Water forms in both." } }
-      ],
-      "practice": ["Colour of a flame with plenty of oxygen?", "Name two products of incomplete combustion", "Why is carbon monoxide dangerous?"],
-      "independent": ["Core: Explain three ways to prevent carbon monoxide poisoning at home", "Extend: Explain why incomplete combustion releases less energy than complete combustion", "Stretch: A family feel ill only when the boiler is on, and feel better when out. Explain the likely cause and what they should do."],
-      "exit": ["Products of incomplete combustion?", "Why can't you detect CO without an alarm?", "Colour of the flame in incomplete combustion?"],
-      "homework": "Check with your family whether your home has a carbon monoxide alarm and where it is. Write two sentences on why it matters.",
-      "send": "Support: comparison table. Stretch: haemoglobin binding."
-    },
-    {
-      "unit": "8E: Combustion",
-      "n": 13,
-      "title": "Air pollution and acid rain",
-      "duration": 50,
-      "bigQuestion": "How can burning fuel in one country damage forests in another?",
-      "objectives": ["Name pollutants from burning fuels", "Explain how acid rain forms", "Describe effects of pollution on people and the environment"],
-      "successCriteria": ["Name sulfur dioxide, nitrogen oxides and particulates as pollutants", "Explain how acid rain forms and its effects", "Evaluate ways to reduce air pollution"],
-      "crossCurricular": "Geography: pollution across borders; Citizenship: clean air laws",
-      "smsc": "Moral: our duty as khalifah (stewards) of the earth; social: shared air",
-      "keywords": [
-        { "term": "pollutant", "def": "a substance that harms living things or the environment" },
-        { "term": "sulfur dioxide", "def": "gas from burning fuels containing sulfur; causes acid rain" },
-        { "term": "acid rain", "def": "rain made acidic by dissolved pollutant gases" },
-        { "term": "particulates", "def": "tiny solid particles, e.g. soot, that harm lungs" }
-      ],
-      "starter": ["Products of incomplete combustion?", "pH of an acid: above or below 7?", "Name a fossil fuel", "Why is soot harmful?"],
-      "teach": [
-        { "heading": "Pollutants from burning", "bullets": ["Fuels contain impurities such as sulfur"], "note": "Link to car engines and power stations.", "table": { "head": ["Pollutant", "From", "Effect"], "rows": [["Sulfur dioxide", "sulfur impurities in coal and oil", "acid rain, breathing problems"], ["Nitrogen oxides", "high temperatures in engines", "acid rain, asthma"], ["Carbon monoxide", "incomplete combustion", "toxic"], ["Particulates", "diesel engines, fires", "lung and heart disease"]] } },
-        { "heading": "How acid rain forms", "bullets": ["Gases rise into clouds", "Dissolve in water droplets", "Fall as acid rain, maybe far away"], "note": "Answer the big question: wind carries pollution across borders.", "cycle": ["Fuel burns", "SO₂ and NOₓ released", "Gases dissolve in clouds", "Acid rain falls", "Damages lakes, trees, buildings"] },
-        { "heading": "Reducing pollution", "bullets": ["Remove sulfur from fuels", "Catalytic converters on cars", "Use renewable energy, walk and cycle"], "note": "Discuss the Clean Air Act 1956 after London's Great Smog of 1952." },
-        { "heading": "Acid rain vs global warming", "bullets": ["Different gases, different effects"], "note": "Common confusion.", "misconception": { "wrong": "Acid rain is caused by carbon dioxide", "right": "Mainly sulfur dioxide and nitrogen oxides; CO₂ is linked to global warming" } },
-        { "heading": "Check: pollutant", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which gas is the main cause of acid rain?", "options": ["Oxygen", "Sulfur dioxide", "Water vapour", "Nitrogen"], "answer": 1, "why": "Sulfur dioxide dissolves in rain to form acids. Nitrogen gas itself is unreactive." } }
-      ],
-      "practice": ["Name two pollutants from car engines", "How does acid rain form?", "Name one effect of acid rain"],
-      "independent": ["Core: Make a flow diagram explaining acid rain from power station to damaged lake", "Extend: Evaluate three methods of reducing air pollution in a city", "Stretch: Explain why acid rain damages limestone buildings, and write a word equation (calcium carbonate + sulfuric acid →)."],
-      "exit": ["Main cause of acid rain?", "Name a pollutant that harms lungs.", "One way to reduce car pollution?"],
-      "homework": "Look up today's air-quality index for your town and two other cities. Suggest reasons for differences.",
-      "send": "Support: flow-diagram template. Stretch: limestone reaction equations."
-    },
-    {
-      "unit": "8E: Combustion",
-      "n": 14,
-      "title": "Global warming and the greenhouse effect",
-      "duration": 50,
-      "bigQuestion": "If carbon dioxide is only a tiny part of the air, how can it change the climate?",
-      "objectives": ["Describe the greenhouse effect", "Explain how burning fuels increases carbon dioxide", "Describe effects of climate change and responses to it"],
-      "successCriteria": ["Describe the greenhouse effect in steps", "Use data to link CO₂ levels and temperature", "Evaluate actions that individuals and governments can take"],
-      "crossCurricular": "Geography: climate change; Islamic Studies: stewardship (khalifah) and avoiding corruption on earth (Surah Ar-Rum 30:41)",
-      "smsc": "Moral and spiritual: responsibility to future generations and to Allah's creation",
-      "keywords": [
-        { "term": "greenhouse effect", "def": "gases trapping heat in the atmosphere, warming the Earth" },
-        { "term": "greenhouse gas", "def": "a gas that traps heat, e.g. carbon dioxide, methane" },
-        { "term": "global warming", "def": "the rise in Earth's average temperature" },
-        { "term": "climate change", "def": "long-term changes in weather patterns" }
-      ],
-      "starter": ["Main cause of acid rain?", "Products of complete combustion?", "Name a renewable energy source", "What percentage of air is oxygen (roughly)?"],
-      "teach": [
-        { "heading": "The greenhouse effect", "bullets": ["Natural and needed for life", "More greenhouse gases trap more heat"], "note": "Without it, Earth's average would be about −18 °C instead of about 15 °C.", "cycle": ["Sunlight reaches Earth", "Earth warms and gives off heat", "Greenhouse gases absorb some heat", "Heat is re-radiated back down", "Earth stays warm"] },
-        { "heading": "Rising carbon dioxide", "bullets": ["About 280 ppm before 1800", "Over 420 ppm today", "Mainly from burning fossil fuels"], "note": "Answer the big question: tiny amounts still absorb lots of heat energy. Show the Keeling curve.", "table": { "head": ["Year", "CO₂ (ppm, approx.)"], "rows": [["1800", "280"], ["1960", "317"], ["2000", "370"], ["2024", "about 424"]] } },
-        { "heading": "Correlation and cause", "bullets": ["Temperature and CO₂ have risen together", "Scientists have tested the cause carefully"], "note": "The scientific consensus is that human activity is the main cause of recent warming.", "misconception": { "wrong": "The greenhouse effect is the same as the ozone hole", "right": "They are different problems: the ozone layer protects from UV light" } },
-        { "heading": "Responses", "bullets": ["Renewable energy", "Insulate homes, travel less by car", "Plant trees"], "note": "Link to the Islamic principle of moderation and avoiding waste (israf)." },
-        { "heading": "Check: greenhouse", "bullets": [], "note": "Show me on 3.", "check": { "q": "How do greenhouse gases warm the Earth?", "options": ["They make the Sun hotter", "They absorb heat given off by the Earth and re-radiate it", "They make holes in the ozone layer", "They reflect all sunlight"], "answer": 1, "why": "Greenhouse gases absorb infrared from Earth's surface and send some back. C is a different problem." } }
-      ],
-      "practice": ["Name two greenhouse gases", "Describe the greenhouse effect in three steps", "Give one effect of climate change"],
-      "independent": ["Core: Use the CO₂ table to describe the trend and suggest a reason", "Extend: Evaluate three ways a family could reduce its carbon footprint", "Stretch: Explain why some scientists say methane is a bigger short-term problem than CO₂, even though there is less of it."],
-      "exit": ["What is global warming?", "Main source of extra CO₂?", "One thing you could do to reduce emissions?"],
-      "homework": "Calculate your family's approximate carbon footprint with an online calculator and choose two realistic changes.",
-      "send": "Support: diagram with labels. Stretch: feedback loops (ice melting)."
-    },
-    {
-      "unit": "8E: Combustion",
-      "n": 15,
-      "title": "Fuels for the future",
-      "duration": 50,
-      "bigQuestion": "What should power the world when fossil fuels run out?",
-      "objectives": ["Compare fossil fuels and alternatives", "Describe hydrogen as a fuel", "Evaluate fuels using evidence"],
-      "successCriteria": ["List advantages and disadvantages of fossil fuels", "Explain why hydrogen burns cleanly", "Evaluate a fuel choice using several criteria"],
-      "crossCurricular": "Geography: energy resources; Business: energy costs",
-      "smsc": "Moral: fairness to future generations and to poorer countries",
-      "keywords": [
-        { "term": "fossil fuel", "def": "a fuel formed from ancient living things: coal, oil, gas" },
-        { "term": "non-renewable", "def": "will run out; cannot be replaced" },
-        { "term": "biofuel", "def": "a fuel made from plants or animal waste" },
-        { "term": "hydrogen fuel", "def": "burns to make only water" }
-      ],
-      "starter": ["Name two greenhouse gases", "Products of burning methane?", "What is a non-renewable resource?", "Name a renewable energy source"],
-      "teach": [
-        { "heading": "Fossil fuels", "bullets": ["Formed over millions of years", "Release CO₂ when burnt", "Will run out"], "note": "Recap and link to the last lesson." },
-        { "heading": "Hydrogen", "bullets": ["hydrogen + oxygen → water", "No carbon dioxide at the point of use", "Hard to store; often made using fossil fuels"], "note": "Show the 'squeaky pop' test video for hydrogen.", "compare": { "left": { "title": "Hydrogen", "points": ["Only water produced", "Renewable if made with solar power", "Explosive; needs high-pressure tanks"] }, "right": { "title": "Petrol", "points": ["Easy to store and transport", "Releases CO₂ and pollutants", "Will run out"] } } },
-        { "heading": "Evaluating fuels", "bullets": ["Energy released", "Pollution", "Cost and availability", "Safety and storage"], "note": "Model.", "model": { "problem": "Evaluate biofuel (ethanol from sugar cane) for cars", "steps": ["Advantage: renewable; plants absorb CO₂ as they grow", "Disadvantage: needs farmland that could grow food", "Disadvantage: still releases CO₂ when burnt", "Judgement: useful in some countries, but not the full answer"], "answer": "Advantages + disadvantages + a justified conclusion" } },
-        { "heading": "Carbon neutral?", "bullets": ["Biofuels are not automatically zero-carbon"], "note": "Farming and transport also release CO₂.", "misconception": { "wrong": "Biofuels release no carbon dioxide", "right": "They release CO₂ when burnt, partly balanced by plant growth" } },
-        { "heading": "Check: hydrogen", "bullets": [], "note": "Show me on 3.", "check": { "q": "What is the only product when hydrogen burns in oxygen?", "options": ["Carbon dioxide", "Water", "Carbon monoxide", "Sulfur dioxide"], "answer": 1, "why": "Hydrogen contains no carbon, so only water (H₂O) forms." } }
-      ],
-      "practice": ["Name three fossil fuels", "Word equation for burning hydrogen", "One problem with hydrogen cars"],
-      "independent": ["Core: Complete a table comparing coal, natural gas, hydrogen and biofuel", "Extend: Write a reasoned recommendation for a fuel for city buses", "Stretch: Explain why hydrogen made by electrolysis using electricity from coal is not truly 'clean'."],
-      "exit": ["Why are fossil fuels non-renewable?", "Product of burning hydrogen?", "One disadvantage of biofuels?"],
-      "homework": "Research one country's plan to reduce fossil fuel use and summarise it in a paragraph.",
-      "send": "Support: comparison table frame. Stretch: energy density data."
-    },
-    {
-      "unit": "8E: Combustion",
-      "n": 16,
-      "title": "8E review: combustion",
-      "duration": 50,
-      "bigQuestion": "What is the most important thing everyone should know about combustion?",
-      "objectives": ["Retrieve key knowledge from 8E", "Apply it to unfamiliar situations", "Improve answers using feedback"],
-      "successCriteria": ["Recall equations, tests and the fire triangle", "Answer data and safety questions", "Write a 6-mark evaluation"],
-      "crossCurricular": "Geography: climate; PSHE: safety",
-      "smsc": "Moral: personal and global responsibility",
-      "keywords": [
-        { "term": "oxidation", "def": "gaining oxygen" },
-        { "term": "incomplete combustion", "def": "burning with too little oxygen" },
-        { "term": "acid rain", "def": "rain made acidic by pollutants" },
-        { "term": "greenhouse effect", "def": "trapping of heat by gases" }
-      ],
-      "starter": ["Test for CO₂?", "Three sides of the fire triangle?", "Main cause of acid rain?", "Product of burning hydrogen?"],
-      "teach": [
-        { "heading": "8E connections", "bullets": ["Burning is oxidation", "Products affect health and climate"], "note": "Recap map.", "cycle": ["Fuel + oxygen", "Combustion", "CO₂, H₂O (or CO, soot)", "Pollution and warming", "Cleaner fuels"] },
-        { "heading": "A 6-mark evaluation", "bullets": ["Both sides", "Evidence", "Conclusion"], "note": "Model.", "model": { "problem": "Evaluate replacing gas boilers with electric heat pumps (6 marks)", "steps": ["For: no combustion at home, so no CO risk", "For: lower CO₂ if electricity is renewable", "Against: expensive to install", "Against: if electricity comes from fossil fuels, CO₂ is still released", "Conclusion: best long-term option as the grid becomes renewable"], "answer": "Balanced points + a justified conclusion" } },
-        { "heading": "Fix the errors", "bullets": ["From the 8E assessment pack"], "note": "Correct each.", "misconception": { "wrong": "Carbon monoxide smells like gas", "right": "CO has no smell; gas companies add a smell to natural gas, not to CO" } },
-        { "heading": "Check: apply", "bullets": [], "note": "Show me on 3.", "check": { "q": "A Bunsen burner has a yellow flame and blackens a beaker. Why?", "options": ["Too much oxygen", "Incomplete combustion: too little oxygen", "The gas is hydrogen", "The beaker is dirty"], "answer": 1, "why": "Yellow flame and soot show incomplete combustion. Opening the air hole adds oxygen." } }
-      ],
-      "practice": ["Word equations for complete and incomplete burning of methane", "Explain the fire triangle", "Explain acid rain"],
-      "independent": ["Core: 8E end-of-unit check (school 8E assessment pack)", "Extend: 6-mark evaluation of hydrogen-powered cars", "Stretch: Interpret CO₂ and temperature data from 1960 to today and evaluate the evidence for human-caused warming."],
-      "exit": ["My strongest 8E topic", "My weakest 8E topic", "One action I'll take for the environment"],
-      "homework": "Revise 8E and complete DIRT corrections on your end-of-unit check.",
-      "send": "Support: knowledge organiser. Stretch: data evaluation."
+     "term": "balanced diet",
+     "def": "eating the right amounts of all the nutrients"
     }
-  ]
+   ],
+   "starter": [
+    "Bismillah. What did you eat for breakfast?",
+    "Name a food that gives you energy",
+    "Which organ digests food first?",
+    "What is an organ system?"
+   ],
+   "teach": [
+    {
+     "heading": "Seven components",
+     "bullets": [
+      "Carbohydrates, proteins, lipids",
+      "Vitamins, minerals",
+      "Fibre, water"
+     ],
+     "note": "Ask pupils to sort their breakfast into components.",
+     "table": {
+      "head": [
+       "Component",
+       "Main use",
+       "Good sources"
+      ],
+      "rows": [
+       [
+        "Carbohydrate",
+        "energy",
+        "rice, bread, dates"
+       ],
+       [
+        "Protein",
+        "growth and repair",
+        "lentils, chicken, eggs"
+       ],
+       [
+        "Lipid",
+        "energy store, insulation",
+        "olive oil, butter, nuts"
+       ],
+       [
+        "Vitamins",
+        "health (e.g. vitamin C for skin)",
+        "fruit, vegetables"
+       ],
+       [
+        "Minerals",
+        "e.g. calcium for bones, iron for blood",
+        "milk, spinach"
+       ],
+       [
+        "Fibre",
+        "keeps food moving through the gut",
+        "wholemeal bread, beans"
+       ],
+       [
+        "Water",
+        "in cells, blood and reactions",
+        "drinks, fruit"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "No perfect single food",
+     "bullets": [
+      "Rice: lots of carbohydrate, little protein",
+      "Milk: protein and calcium, little iron or fibre"
+     ],
+     "note": "Answer the big question with these examples."
+    },
+    {
+     "heading": "Fibre and water are components too",
+     "bullets": [
+      "We don't digest fibre",
+      "But we still need it"
+     ],
+     "note": "Pupils often leave these out.",
+     "misconception": {
+      "wrong": "Fibre is useless because we can't digest it",
+      "right": "Fibre helps food move through the gut and prevents constipation"
+     }
+    },
+    {
+     "heading": "Check: nutrients",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which nutrient is mainly for growth and repair?",
+      "options": [
+       "Carbohydrate",
+       "Protein",
+       "Fibre",
+       "Lipid"
+      ],
+      "answer": 1,
+      "why": "Proteins build and repair tissues. Carbohydrates and lipids are mainly for energy."
+     }
+    }
+   ],
+   "practice": [
+    "Name the seven components",
+    "Which nutrient is in olive oil?",
+    "Give two foods rich in protein"
+   ],
+   "independent": [
+    "Core: Analyse a meal (rice, daal, salad, yoghurt): list the nutrients each food provides",
+    "Extend: Design a balanced iftar menu and justify each choice by nutrient",
+    "Stretch: Explain why a vegetarian diet needs careful planning to get enough protein and iron, with examples."
+   ],
+   "exit": [
+    "What does fibre do?",
+    "Name a food rich in carbohydrate.",
+    "Why is water a component of a diet?"
+   ],
+   "homework": "Keep a one-day food diary and label each food with its main nutrients.",
+   "send": "Support: food picture cards. Stretch: nutrition labels."
+  },
+  {
+   "unit": "8A: Food and nutrition",
+   "n": 2,
+   "title": "Food tests",
+   "duration": 50,
+   "bigQuestion": "How can we prove what is inside a food without a label?",
+   "objectives": [
+    "Describe tests for starch, sugar, protein and fat",
+    "Interpret positive and negative results",
+    "Use results to identify nutrients in unknown foods"
+   ],
+   "successCriteria": [
+    "Name the reagent and positive result for each test",
+    "Interpret results tables",
+    "Plan safe, fair food tests"
+   ],
+   "crossCurricular": "Food technology: food analysis; Maths: recording results",
+   "smsc": "Moral: honesty in food labelling",
+   "keywords": [
+    {
+     "term": "reagent",
+     "def": "a chemical used in a test"
+    },
+    {
+     "term": "iodine solution",
+     "def": "turns blue-black with starch"
+    },
+    {
+     "term": "Benedict's solution",
+     "def": "turns from blue to brick red when heated with sugar"
+    },
+    {
+     "term": "biuret solution",
+     "def": "turns purple with protein"
+    },
+    {
+     "term": "positive result",
+     "def": "shows the substance is present"
+    }
+   ],
+   "starter": [
+    "Name the seven components of a diet",
+    "Which nutrient gives energy?",
+    "What colour is iodine solution?",
+    "Name a safety rule in a lab"
+   ],
+   "teach": [
+    {
+     "heading": "The four tests",
+     "bullets": [
+      "Each nutrient has its own test"
+     ],
+     "note": "Show the teacher demonstration video of each test with clear before/after colours.",
+     "table": {
+      "head": [
+       "Nutrient",
+       "Reagent",
+       "Positive result"
+      ],
+      "rows": [
+       [
+        "Starch",
+        "iodine solution",
+        "orange-brown → blue-black"
+       ],
+       [
+        "Sugar (glucose)",
+        "Benedict's, heated",
+        "blue → green/orange/brick red"
+       ],
+       [
+        "Protein",
+        "biuret solution",
+        "blue → purple"
+       ],
+       [
+        "Fat",
+        "ethanol, then water (emulsion test)",
+        "cloudy white layer"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Interpreting a results table",
+     "bullets": [
+      "Match each colour to a nutrient"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Food X: iodine stays orange; Benedict's turns brick red; biuret stays blue. What does X contain?",
+      "steps": [
+       "Iodine orange: no starch",
+       "Benedict's brick red: lots of sugar",
+       "Biuret blue: no protein"
+      ],
+      "answer": "X contains sugar only (e.g. glucose drink)"
+     }
+    },
+    {
+     "heading": "Iodine colours",
+     "bullets": [
+      "Iodine solution starts orange-brown"
+     ],
+     "note": "Common confusion.",
+     "misconception": {
+      "wrong": "Iodine turns orange when starch is present",
+      "right": "Iodine turns blue-black with starch; it stays orange-brown without"
+     }
+    },
+    {
+     "heading": "Safety",
+     "bullets": [
+      "Eye protection",
+      "Ethanol is flammable: no flames nearby",
+      "Use a water bath to heat Benedict's"
+     ],
+     "note": "Online lessons: watch demos; home versions only for iodine on potato (with an adult, iodine from a pharmacy is an irritant)."
+    },
+    {
+     "heading": "Check: test",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Biuret solution turns purple. What is present?",
+      "options": [
+       "Starch",
+       "Sugar",
+       "Protein",
+       "Fat"
+      ],
+      "answer": 2,
+      "why": "Biuret detects protein. Iodine detects starch; Benedict's detects sugar."
+     }
+    }
+   ],
+   "practice": [
+    "Which reagent tests for starch?",
+    "What colour shows lots of sugar?",
+    "Describe the fat test"
+   ],
+   "independent": [
+    "Core: Interpret a results table for five foods and say which nutrients each contains",
+    "Extend: Plan how to test a sandwich for starch, protein and fat, with safety precautions",
+    "Stretch: Benedict's gives green for one drink and brick red for another. What does this tell you, and how could you make the comparison fair?"
+   ],
+   "exit": [
+    "Reagent and positive result for starch?",
+    "Why heat Benedict's in a water bath not a flame?",
+    "What does a purple biuret result mean?"
+   ],
+   "homework": "Draw a results table for testing milk, bread, apple and peanuts, predicting each result with reasons.",
+   "send": "Support: colour cards for each test. Stretch: semi-quantitative Benedict's test."
+  },
+  {
+   "unit": "8A: Food and nutrition",
+   "n": 3,
+   "title": "Energy in food",
+   "duration": 50,
+   "bigQuestion": "Why does a builder need more food than an office worker?",
+   "objectives": [
+    "Know that food energy is measured in kilojoules",
+    "Compare energy in foods using labels",
+    "Explain why energy needs differ between people"
+   ],
+   "successCriteria": [
+    "Read energy values from food labels",
+    "Calculate energy in a portion",
+    "Explain differences in daily energy needs"
+   ],
+   "crossCurricular": "Maths: proportion calculations; PE: activity and energy",
+   "smsc": "Moral: moderation in eating (Surah Al-A'raf 7:31, 'eat and drink, but do not waste')",
+   "keywords": [
+    {
+     "term": "kilojoule (kJ)",
+     "def": "unit of energy; 1 kJ = 1000 J"
+    },
+    {
+     "term": "kilocalorie (kcal)",
+     "def": "another energy unit used on labels; 1 kcal ≈ 4.2 kJ"
+    },
+    {
+     "term": "energy requirement",
+     "def": "how much energy a person needs each day"
+    },
+    {
+     "term": "metabolism",
+     "def": "all the chemical reactions in the body"
+    }
+   ],
+   "starter": [
+    "Which nutrients give energy?",
+    "Positive result for sugar?",
+    "Work out 150 × 4",
+    "What unit is energy measured in?"
+   ],
+   "teach": [
+    {
+     "heading": "Energy from food",
+     "bullets": [
+      "Carbohydrates and lipids are main energy sources",
+      "Lipids store more energy per gram",
+      "Labels show kJ per 100 g"
+     ],
+     "note": "Show labels: oats about 1600 kJ/100 g; butter about 3000 kJ/100 g; apple about 220 kJ/100 g."
+    },
+    {
+     "heading": "Calculating energy in a portion",
+     "bullets": [
+      "Energy per gram × portion size"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Cereal has 1500 kJ per 100 g. How much energy is in a 40 g bowl?",
+      "steps": [
+       "Per gram: 1500 ÷ 100 = 15 kJ",
+       "40 g: 15 × 40"
+      ],
+      "answer": "600 kJ"
+     }
+    },
+    {
+     "heading": "Different people, different needs",
+     "bullets": [
+      "Activity: more movement, more energy",
+      "Age and growth: teenagers need a lot",
+      "Pregnancy, body size and temperature"
+     ],
+     "note": "Answer the big question.",
+     "table": {
+      "head": [
+       "Person",
+       "Approximate daily need"
+      ],
+      "rows": [
+       [
+        "Girl aged 11–14",
+        "about 7 700 kJ"
+       ],
+       [
+        "Boy aged 11–14",
+        "about 9 300 kJ"
+       ],
+       [
+        "Office worker (adult man)",
+        "about 10 500 kJ"
+       ],
+       [
+        "Builder (adult man)",
+        "about 14 500 kJ"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Energy is not a nutrient",
+     "bullets": [
+      "Nutrients contain energy"
+     ],
+     "note": "Clarify the language.",
+     "misconception": {
+      "wrong": "Protein foods have no energy",
+      "right": "Proteins do release energy, but the body mainly uses them for growth and repair"
+     }
+    },
+    {
+     "heading": "Check: calculate",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Biscuits: 2000 kJ per 100 g. Energy in 25 g?",
+      "options": [
+       "8000 kJ",
+       "500 kJ",
+       "80 kJ",
+       "2025 kJ"
+      ],
+      "answer": 1,
+      "why": "2000 ÷ 100 × 25 = 500. A multiplies by 4 instead of dividing; D adds."
+     }
+    }
+   ],
+   "practice": [
+    "Which has more energy per gram: fat or carbohydrate?",
+    "Bread 1000 kJ/100 g: energy in 60 g?",
+    "Why does a teenager need lots of energy?"
+   ],
+   "independent": [
+    "Core: Use five food labels to find the energy in a typical portion of each",
+    "Extend: Plan a day's meals for a 13-year-old that provides about 9 000 kJ, showing calculations",
+    "Stretch: Explain why someone who eats more energy than they use gains mass, linking to respiration and storage of lipids."
+   ],
+   "exit": [
+    "Unit of food energy?",
+    "Energy in 50 g of a food with 400 kJ/100 g?",
+    "Give two factors affecting energy needs."
+   ],
+   "homework": "Collect three food labels and calculate the energy in your usual portion of each.",
+   "send": "Support: calculation frame. Stretch: kcal to kJ conversions."
+  },
+  {
+   "unit": "8A: Food and nutrition",
+   "n": 4,
+   "title": "Balanced diets and deficiency diseases",
+   "duration": 50,
+   "bigQuestion": "Can you be overweight and malnourished at the same time?",
+   "objectives": [
+    "Explain what malnutrition is",
+    "Describe deficiency diseases",
+    "Explain the effects of eating too much or too little"
+   ],
+   "successCriteria": [
+    "Define malnutrition",
+    "Link scurvy, rickets and anaemia to their causes",
+    "Explain how someone can be overweight but malnourished"
+   ],
+   "crossCurricular": "History: scurvy on sailing ships; Geography: food security around the world",
+   "smsc": "Moral: food poverty and charity (zakat, sadaqah); social: helping others to eat well",
+   "keywords": [
+    {
+     "term": "malnutrition",
+     "def": "not eating a balanced diet: too much or too little of nutrients"
+    },
+    {
+     "term": "deficiency disease",
+     "def": "an illness caused by lacking a nutrient"
+    },
+    {
+     "term": "obesity",
+     "def": "having so much body fat it harms health"
+    },
+    {
+     "term": "starvation",
+     "def": "eating too little food for a long time"
+    }
+   ],
+   "starter": [
+    "Energy in 30 g of food with 1200 kJ/100 g?",
+    "Which mineral is needed for strong bones?",
+    "Name a source of vitamin C",
+    "What is a balanced diet?"
+   ],
+   "teach": [
+    {
+     "heading": "Malnutrition",
+     "bullets": [
+      "Too little: starvation, deficiency",
+      "Too much: obesity",
+      "Wrong balance: both at once"
+     ],
+     "note": "Answer the big question: someone eating mostly fried snacks can be overweight but lack vitamins and minerals."
+    },
+    {
+     "heading": "Deficiency diseases",
+     "bullets": [
+      "Each missing nutrient causes particular symptoms"
+     ],
+     "note": "Story: sailors got scurvy until lemons and limes were taken on voyages.",
+     "table": {
+      "head": [
+       "Lacking",
+       "Disease",
+       "Symptoms"
+      ],
+      "rows": [
+       [
+        "Vitamin C",
+        "scurvy",
+        "bleeding gums, poor healing"
+       ],
+       [
+        "Vitamin D or calcium",
+        "rickets",
+        "soft, bent bones"
+       ],
+       [
+        "Iron",
+        "anaemia",
+        "tiredness, pale skin"
+       ],
+       [
+        "Protein",
+        "kwashiorkor",
+        "swollen belly, poor growth"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Getting more vitamin D",
+     "bullets": [
+      "Made in the skin with sunlight",
+      "Also in oily fish and eggs"
+     ],
+     "note": "UK guidance: consider a vitamin D supplement in autumn and winter. Links to people who cover their skin or live indoors."
+    },
+    {
+     "heading": "Obesity is malnutrition",
+     "bullets": [
+      "Malnutrition is not only hunger"
+     ],
+     "note": "Key misconception.",
+     "misconception": {
+      "wrong": "Malnourished people are always thin",
+      "right": "Malnutrition means an unbalanced diet, which can cause obesity"
+     }
+    },
+    {
+     "heading": "Check: deficiency",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A child has soft, bent leg bones. Which is most likely lacking?",
+      "options": [
+       "Vitamin C",
+       "Iron",
+       "Vitamin D",
+       "Fibre"
+      ],
+      "answer": 2,
+      "why": "Rickets is caused by too little vitamin D (or calcium). Vitamin C causes scurvy; iron causes anaemia."
+     }
+    }
+   ],
+   "practice": [
+    "Define malnutrition",
+    "What causes scurvy?",
+    "Name two health problems linked to obesity"
+   ],
+   "independent": [
+    "Core: Match five deficiency diseases to their causes and a food that prevents each",
+    "Extend: Explain why people in some countries can be malnourished even with enough calories",
+    "Stretch: Evaluate a 'fruit-only diet' for a teenager using the seven diet components."
+   ],
+   "exit": [
+    "Which vitamin prevents scurvy?",
+    "What does anaemia make you feel like?",
+    "Can an obese person be malnourished? Explain."
+   ],
+   "homework": "Research one charity that tackles malnutrition and summarise what it does in five sentences.",
+   "send": "Support: matching cards. Stretch: global nutrition data."
+  },
+  {
+   "unit": "8A: Food and nutrition",
+   "n": 5,
+   "title": "The digestive system",
+   "duration": 50,
+   "bigQuestion": "What happens to a date from the moment you eat it?",
+   "objectives": [
+    "Name the organs of the digestive system",
+    "Describe the job of each organ",
+    "Explain why digestion is needed"
+   ],
+   "successCriteria": [
+    "Label the digestive system",
+    "Describe the path of food in order",
+    "Explain why large molecules must be broken down"
+   ],
+   "crossCurricular": "PE: energy for activity; Islamic Studies: sunnah of eating slowly and chewing well",
+   "smsc": "Spiritual: the design of the body; sunnah of eating with the right hand and not overfilling the stomach (hadith in Sunan Ibn Majah: a third for food, a third for drink, a third for air)",
+   "keywords": [
+    {
+     "term": "digestion",
+     "def": "breaking large food molecules into small soluble ones"
+    },
+    {
+     "term": "oesophagus",
+     "def": "tube carrying food from mouth to stomach"
+    },
+    {
+     "term": "small intestine",
+     "def": "where most digestion finishes and food is absorbed"
+    },
+    {
+     "term": "large intestine",
+     "def": "where water is absorbed"
+    },
+    {
+     "term": "rectum",
+     "def": "where faeces are stored before leaving the body"
+    }
+   ],
+   "starter": [
+    "What causes rickets?",
+    "Name the organ that pumps blood",
+    "What is an organ system?",
+    "Why do we chew?"
+   ],
+   "teach": [
+    {
+     "heading": "The journey of food",
+     "bullets": [
+      "About 9 metres of tube",
+      "Each organ does a job"
+     ],
+     "note": "Answer the big question with the timeline.",
+     "timeline": [
+      {
+       "label": "Mouth",
+       "text": "teeth chew; saliva starts starch digestion"
+      },
+      {
+       "label": "Oesophagus",
+       "text": "muscles squeeze food down"
+      },
+      {
+       "label": "Stomach",
+       "text": "acid and enzymes digest protein; churns"
+      },
+      {
+       "label": "Small intestine",
+       "text": "digestion finishes; nutrients absorbed"
+      },
+      {
+       "label": "Large intestine",
+       "text": "water absorbed"
+      },
+      {
+       "label": "Rectum/anus",
+       "text": "faeces stored, then egested"
+      }
+     ]
+    },
+    {
+     "heading": "Why digest?",
+     "bullets": [
+      "Starch, protein and fat molecules are too big",
+      "They must pass into the blood",
+      "Small soluble molecules can"
+     ],
+     "note": "Use a model: a 'visking tubing' gut (video). Starch stays in; glucose passes through."
+    },
+    {
+     "heading": "Helper organs",
+     "bullets": [
+      "Liver makes bile",
+      "Pancreas makes enzymes",
+      "Food does not pass through them"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "Food passes through the liver and pancreas",
+      "right": "They add bile and enzymes; food stays in the gut tube"
+     }
+    },
+    {
+     "heading": "Check: order",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Where is most water absorbed?",
+      "options": [
+       "Stomach",
+       "Small intestine",
+       "Large intestine",
+       "Oesophagus"
+      ],
+      "answer": 2,
+      "why": "The large intestine absorbs water. The small intestine absorbs most digested nutrients."
+     }
+    }
+   ],
+   "practice": [
+    "Label the digestive system",
+    "Put in order: stomach, mouth, small intestine, oesophagus",
+    "What does the stomach do?"
+   ],
+   "independent": [
+    "Core: Write a 'journey of a date' story, naming each organ and its job",
+    "Extend: Explain why food molecules must be small and soluble to be absorbed",
+    "Stretch: Explain the sunnah guidance on filling the stomach a third with food, a third with drink and a third with air, in terms of digestion."
+   ],
+   "exit": [
+    "Name the tube from mouth to stomach.",
+    "What does the large intestine absorb?",
+    "Why must food be digested?"
+   ],
+   "homework": "Draw and label the digestive system with one fact about each organ.",
+   "send": "Support: labelled diagram to complete. Stretch: enzyme preview."
+  },
+  {
+   "unit": "8A: Food and nutrition",
+   "n": 6,
+   "title": "Enzymes in digestion",
+   "duration": 50,
+   "bigQuestion": "Why does bread taste sweeter the longer you chew it?",
+   "objectives": [
+    "Describe enzymes as biological catalysts",
+    "Match digestive enzymes to their food molecules and products",
+    "Explain the effect of temperature and pH on enzymes"
+   ],
+   "successCriteria": [
+    "Name amylase, protease and lipase and what they digest",
+    "State the products of each enzyme",
+    "Explain why enzymes work best at certain conditions"
+   ],
+   "crossCurricular": "Food technology: enzymes in cheese and baking; Chemistry: catalysts",
+   "smsc": "Spiritual: the precision of biological systems",
+   "keywords": [
+    {
+     "term": "enzyme",
+     "def": "a protein that speeds up reactions in living things"
+    },
+    {
+     "term": "catalyst",
+     "def": "speeds up a reaction without being used up"
+    },
+    {
+     "term": "amylase",
+     "def": "enzyme that digests starch into sugars"
+    },
+    {
+     "term": "protease",
+     "def": "enzyme that digests proteins into amino acids"
+    },
+    {
+     "term": "lipase",
+     "def": "enzyme that digests lipids into fatty acids and glycerol"
+    }
+   ],
+   "starter": [
+    "Where does digestion finish?",
+    "Iodine with starch turns…?",
+    "Name the organ that makes bile",
+    "What does 'catalyst' mean?"
+   ],
+   "teach": [
+    {
+     "heading": "Three enzymes",
+     "bullets": [
+      "Each enzyme digests one type of molecule"
+     ],
+     "note": "Answer the big question: amylase in saliva turns starch into sugar.",
+     "table": {
+      "head": [
+       "Enzyme",
+       "Digests",
+       "Into",
+       "Made in"
+      ],
+      "rows": [
+       [
+        "Amylase",
+        "starch",
+        "sugars",
+        "salivary glands, pancreas"
+       ],
+       [
+        "Protease",
+        "protein",
+        "amino acids",
+        "stomach, pancreas"
+       ],
+       [
+        "Lipase",
+        "lipids",
+        "fatty acids + glycerol",
+        "pancreas"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Lock and key",
+     "bullets": [
+      "Each enzyme has an active site",
+      "Only the right molecule fits",
+      "Heat changes the shape (denatured)"
+     ],
+     "note": "Use a jigsaw image. Body temperature (37 °C) is ideal for most human enzymes."
+    },
+    {
+     "heading": "Investigating amylase",
+     "bullets": [
+      "Starch + amylase",
+      "Test drops with iodine every minute",
+      "When iodine stays orange, starch has gone"
+     ],
+     "note": "Show the demo video. Model reading results.",
+     "model": {
+      "problem": "Iodine stays blue-black for 4 minutes at 20 °C but only 1 minute at 37 °C. Explain.",
+      "steps": [
+       "Starch is broken down faster at 37 °C",
+       "Amylase works fastest near body temperature",
+       "More collisions and enzyme is not denatured"
+      ],
+      "answer": "37 °C is closer to amylase's optimum"
+     }
+    },
+    {
+     "heading": "Enzymes are not killed",
+     "bullets": [
+      "Enzymes are not alive"
+     ],
+     "note": "Language error.",
+     "misconception": {
+      "wrong": "High temperature kills enzymes",
+      "right": "High temperature denatures enzymes: the active site changes shape"
+     }
+    },
+    {
+     "heading": "Check: enzymes",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What does protease produce?",
+      "options": [
+       "Sugars",
+       "Amino acids",
+       "Fatty acids",
+       "Starch"
+      ],
+      "answer": 1,
+      "why": "Proteins are chains of amino acids; protease breaks them apart."
+     }
+    }
+   ],
+   "practice": [
+    "What does amylase digest?",
+    "Where is lipase made?",
+    "What does 'denatured' mean?"
+   ],
+   "independent": [
+    "Core: Complete an enzyme table: enzyme, substrate, product, location",
+    "Extend: Explain why stomach protease works best at a low pH but amylase in the mouth does not",
+    "Stretch: Plan the amylase–temperature investigation: variables, method, risk assessment and predicted graph."
+   ],
+   "exit": [
+    "What is an enzyme?",
+    "Products of lipase?",
+    "Why does bread taste sweeter when chewed?"
+   ],
+   "homework": "Chew a small piece of plain bread for two minutes and describe the taste change, explaining it with the word amylase.",
+   "send": "Support: lock-and-key diagram. Stretch: optimum pH graphs."
+  },
+  {
+   "unit": "8A: Food and nutrition",
+   "n": 7,
+   "title": "Absorption and the small intestine",
+   "duration": 50,
+   "bigQuestion": "How does a 6-metre tube absorb enough food to keep you alive?",
+   "objectives": [
+    "Describe how digested food is absorbed",
+    "Explain how villi are adapted for absorption",
+    "Describe the role of bacteria in the gut"
+   ],
+   "successCriteria": [
+    "Describe absorption into the blood",
+    "Explain three adaptations of villi",
+    "Explain the importance of gut bacteria"
+   ],
+   "crossCurricular": "Maths: surface area; Food tech: probiotic foods",
+   "smsc": "Spiritual: the careful design of the body",
+   "keywords": [
+    {
+     "term": "absorption",
+     "def": "small food molecules passing into the blood"
+    },
+    {
+     "term": "villi",
+     "def": "finger-like projections lining the small intestine"
+    },
+    {
+     "term": "surface area",
+     "def": "the total area of the outside of something"
+    },
+    {
+     "term": "diffusion",
+     "def": "particles spreading from high to low concentration"
+    }
+   ],
+   "starter": [
+    "What does amylase digest?",
+    "Where is water absorbed?",
+    "Why must molecules be small to be absorbed?",
+    "Surface area of a 1 cm cube?"
+   ],
+   "teach": [
+    {
+     "heading": "From gut to blood",
+     "bullets": [
+      "Small molecules diffuse into the blood",
+      "Blood carries them to cells",
+      "Cells use them for energy and growth"
+     ],
+     "note": "Link to respiration in cells."
+    },
+    {
+     "heading": "Villi: built for absorption",
+     "bullets": [
+      "Huge surface area",
+      "Wall one cell thick",
+      "Rich blood supply"
+     ],
+     "note": "Answer the big question. The small intestine's surface area is often compared to a tennis court.",
+     "model": {
+      "problem": "Explain how villi are adapted for absorption (3 marks)",
+      "steps": [
+       "Millions of villi give a large surface area, so more absorption at once",
+       "Thin walls give a short distance for diffusion",
+       "A good blood supply carries molecules away, keeping the concentration gradient"
+      ],
+      "answer": "Area + thin + blood supply, each linked to faster absorption"
+     }
+    },
+    {
+     "heading": "Helpful bacteria",
+     "bullets": [
+      "Live in the large intestine",
+      "Make some vitamins (e.g. vitamin K)",
+      "Help digest fibre"
+     ],
+     "note": "Antibiotics can kill useful gut bacteria too."
+    },
+    {
+     "heading": "Absorbed where?",
+     "bullets": [
+      "Nutrients: small intestine",
+      "Water: mostly large intestine"
+     ],
+     "note": "Common mix-up.",
+     "misconception": {
+      "wrong": "Food is absorbed in the stomach",
+      "right": "Most absorption of nutrients happens in the small intestine"
+     }
+    },
+    {
+     "heading": "Check: villi",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Why are villi walls only one cell thick?",
+      "options": [
+       "To make them stronger",
+       "To give a short diffusion distance",
+       "To store fat",
+       "To make enzymes"
+      ],
+      "answer": 1,
+      "why": "A thin wall means molecules diffuse a short distance into the blood, so absorption is faster."
+     }
+    }
+   ],
+   "practice": [
+    "What are villi?",
+    "Name one adaptation of villi",
+    "Which organ absorbs most nutrients?"
+   ],
+   "independent": [
+    "Core: Draw and label a villus with three adaptations explained",
+    "Extend: Coeliac disease damages villi. Predict and explain the effects on a person",
+    "Stretch: Model surface area: compare a 4 cm cube with eight 2 cm cubes. Link your answer to villi."
+   ],
+   "exit": [
+    "What does absorption mean?",
+    "Give two adaptations of villi.",
+    "Name one job of gut bacteria."
+   ],
+   "homework": "Make a model of a villus from household items (photo to upload) and label its adaptations.",
+   "send": "Support: diagram with labels. Stretch: coeliac case study."
+  },
+  {
+   "unit": "8A: Food and nutrition",
+   "n": 8,
+   "title": "8A review: food and nutrition",
+   "duration": 50,
+   "bigQuestion": "What advice would you give a friend who eats only crisps and fizzy drinks?",
+   "objectives": [
+    "Retrieve key knowledge from 8A",
+    "Apply knowledge in unfamiliar contexts",
+    "Write a structured extended answer"
+   ],
+   "successCriteria": [
+    "Recall nutrients, food tests and digestion facts",
+    "Answer calculation and data questions",
+    "Write a 6-mark answer linking diet and health"
+   ],
+   "crossCurricular": "PSHE: healthy lifestyles; English: persuasive writing",
+   "smsc": "Moral: caring for our bodies as an amanah (trust)",
+   "keywords": [
+    {
+     "term": "balanced diet",
+     "def": "correct amounts of all components"
+    },
+    {
+     "term": "enzyme",
+     "def": "biological catalyst"
+    },
+    {
+     "term": "villi",
+     "def": "projections for absorption"
+    },
+    {
+     "term": "deficiency",
+     "def": "lack of a nutrient"
+    }
+   ],
+   "starter": [
+    "Reagent for protein?",
+    "Product of amylase?",
+    "Disease from lack of iron?",
+    "Where is water absorbed?"
+   ],
+   "teach": [
+    {
+     "heading": "8A on a page",
+     "bullets": [
+      "Nutrients → tests → energy → balance → digestion → enzymes → absorption"
+     ],
+     "note": "Quick-fire recap.",
+     "cycle": [
+      "Eat food",
+      "Digest (enzymes)",
+      "Absorb (villi)",
+      "Transport (blood)",
+      "Use in cells"
+     ]
+    },
+    {
+     "heading": "A 6-mark answer",
+     "bullets": [
+      "Identify problems",
+      "Explain effects",
+      "Suggest changes"
+     ],
+     "note": "Answer the big question as a model answer.",
+     "model": {
+      "problem": "Evaluate a diet of crisps and fizzy drinks (6 marks)",
+      "steps": [
+       "High in fat, salt and sugar: risk of obesity and tooth decay",
+       "Low in protein: poor growth and repair",
+       "Low in vitamins and minerals: risk of scurvy or anaemia",
+       "Low in fibre: constipation",
+       "Suggest: add fruit, vegetables, wholegrains, lentils or lean meat"
+      ],
+      "answer": "Problems + effects + improvements"
+     }
+    },
+    {
+     "heading": "Fix the errors",
+     "bullets": [
+      "Spot the mistake in each answer"
+     ],
+     "note": "From the 8A assessment pack.",
+     "misconception": {
+      "wrong": "Enzymes are killed at high temperatures",
+      "right": "Enzymes are denatured: their active site changes shape"
+     }
+    },
+    {
+     "heading": "Check: apply",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A food turns iodine blue-black and biuret purple. It contains…",
+      "options": [
+       "Sugar and fat",
+       "Starch and protein",
+       "Starch only",
+       "Protein only"
+      ],
+      "answer": 1,
+      "why": "Blue-black iodine shows starch; purple biuret shows protein."
+     }
+    }
+   ],
+   "practice": [
+    "Label the digestive system",
+    "Calculate energy in 80 g of a food with 900 kJ/100 g",
+    "Name the three enzymes and their products"
+   ],
+   "independent": [
+    "Core: 8A end-of-unit check",
+    "Extend: 6-mark answer: explain how food is digested and absorbed",
+    "Stretch: Data analysis: interpret a graph of enzyme activity against temperature and explain its shape."
+   ],
+   "exit": [
+    "My strongest 8A topic",
+    "My weakest 8A topic",
+    "One question I still have"
+   ],
+   "homework": "Revise 8A and complete DIRT corrections on your end-of-unit check.",
+   "send": "Support: knowledge organiser. Stretch: graph interpretation."
+  },
+  {
+   "unit": "8E: Combustion",
+   "n": 9,
+   "title": "Burning fuels",
+   "duration": 50,
+   "bigQuestion": "Where does the mass of a burning candle go?",
+   "objectives": [
+    "Describe combustion as a reaction with oxygen",
+    "Name the products of burning hydrocarbon fuels",
+    "Test for carbon dioxide and water"
+   ],
+   "successCriteria": [
+    "Write a word equation for burning methane",
+    "Describe tests for carbon dioxide and water",
+    "Explain why mass seems to disappear when a fuel burns"
+   ],
+   "crossCurricular": "Geography: energy resources; Islamic history: oil lamps and early chemistry (al-Razi's work on distillation of petroleum)",
+   "smsc": "Cultural: the role of oil in Gulf economies; moral: responsible energy use",
+   "keywords": [
+    {
+     "term": "combustion",
+     "def": "burning: a reaction with oxygen that releases energy"
+    },
+    {
+     "term": "fuel",
+     "def": "a substance that releases energy when burnt"
+    },
+    {
+     "term": "hydrocarbon",
+     "def": "a compound of hydrogen and carbon only"
+    },
+    {
+     "term": "limewater",
+     "def": "turns milky with carbon dioxide"
+    },
+    {
+     "term": "exothermic",
+     "def": "releases energy to the surroundings"
+    }
+   ],
+   "starter": [
+    "Name the gas we need for respiration",
+    "Name a fuel used at home",
+    "What is a compound?",
+    "What happens to a candle as it burns?"
+   ],
+   "teach": [
+    {
+     "heading": "Fuel + oxygen",
+     "bullets": [
+      "Combustion needs oxygen",
+      "Releases heat and light",
+      "Hydrocarbons make carbon dioxide and water"
+     ],
+     "note": "Methane (natural gas) in cookers.",
+     "model": {
+      "problem": "Write a word equation for burning methane",
+      "steps": [
+       "Reactants: methane + oxygen",
+       "Products of a hydrocarbon: carbon dioxide + water",
+       "methane + oxygen → carbon dioxide + water"
+      ],
+      "answer": "methane + oxygen → carbon dioxide + water"
+     }
+    },
+    {
+     "heading": "Testing the products",
+     "bullets": [
+      "Carbon dioxide: limewater turns milky",
+      "Water: blue cobalt chloride paper turns pink (or anhydrous copper sulfate turns blue)"
+     ],
+     "note": "Teacher demo video: candle under a funnel, gases drawn through a cooled tube and limewater."
+    },
+    {
+     "heading": "Where does the mass go?",
+     "bullets": [
+      "Products are gases that escape",
+      "If we collected them, the mass would increase"
+     ],
+     "note": "Answer the big question: oxygen from the air is added, so the products weigh more than the wax that burnt.",
+     "misconception": {
+      "wrong": "Burning destroys matter",
+      "right": "Atoms are rearranged into gases; mass is conserved"
+     }
+    },
+    {
+     "heading": "Check: products",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A gas turns limewater milky. It is…",
+      "options": [
+       "Oxygen",
+       "Carbon dioxide",
+       "Hydrogen",
+       "Water vapour"
+      ],
+      "answer": 1,
+      "why": "Limewater is the test for carbon dioxide. Water is tested with cobalt chloride or copper sulfate."
+     }
+    }
+   ],
+   "practice": [
+    "Name the two products of burning a hydrocarbon",
+    "Test for water?",
+    "Word equation for burning propane"
+   ],
+   "independent": [
+    "Core: Write word equations for burning methane, propane and butane",
+    "Extend: Explain why a candle burning in a sealed jar goes out",
+    "Stretch: Design an experiment to show that the products of a burning candle weigh more than the wax used."
+   ],
+   "exit": [
+    "What is combustion?",
+    "Test for carbon dioxide?",
+    "Products of burning methane?"
+   ],
+   "homework": "List five fuels used in your home or town and say what each is used for.",
+   "send": "Support: word-equation frame. Stretch: balanced symbol equations."
+  },
+  {
+   "unit": "8E: Combustion",
+   "n": 10,
+   "title": "Oxidation reactions",
+   "duration": 50,
+   "bigQuestion": "Is rusting a kind of very slow burning?",
+   "objectives": [
+    "Define oxidation",
+    "Describe how metals and non-metals react with oxygen",
+    "Write word equations for oxidation"
+   ],
+   "successCriteria": [
+    "Name oxides formed when elements react with oxygen",
+    "Compare burning and rusting",
+    "Explain why the mass of magnesium increases when it burns"
+   ],
+   "crossCurricular": "DT: preventing rust on bridges and cars; History: iron in civilisations",
+   "smsc": "Spiritual: change and decay in all created things",
+   "keywords": [
+    {
+     "term": "oxidation",
+     "def": "a reaction where a substance gains oxygen"
+    },
+    {
+     "term": "oxide",
+     "def": "a compound of an element with oxygen"
+    },
+    {
+     "term": "rusting",
+     "def": "iron reacting slowly with oxygen and water"
+    },
+    {
+     "term": "word equation",
+     "def": "shows reactants and products in words"
+    }
+   ],
+   "starter": [
+    "Test for carbon dioxide?",
+    "Products of burning methane?",
+    "Is rust iron?",
+    "What does 'conserved' mean?"
+   ],
+   "teach": [
+    {
+     "heading": "Oxidation",
+     "bullets": [
+      "Gaining oxygen",
+      "Element + oxygen → element oxide",
+      "Burning is fast oxidation"
+     ],
+     "note": "Show magnesium ribbon burning (video; bright light, do not look directly)."
+    },
+    {
+     "heading": "Mass increases",
+     "bullets": [
+      "Magnesium gains oxygen atoms",
+      "Magnesium oxide weighs more than magnesium"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "2.4 g of magnesium burns to make 4.0 g of magnesium oxide. What mass of oxygen reacted?",
+      "steps": [
+       "Mass is conserved",
+       "Oxygen = product − magnesium",
+       "4.0 − 2.4"
+      ],
+      "answer": "1.6 g of oxygen"
+     }
+    },
+    {
+     "heading": "Burning vs rusting",
+     "bullets": [
+      "Both are oxidation",
+      "Rusting is slow and needs water too"
+     ],
+     "note": "Answer the big question.",
+     "compare": {
+      "left": {
+       "title": "Burning",
+       "points": [
+        "Fast",
+        "Releases heat and light",
+        "Needs heat to start"
+       ]
+      },
+      "right": {
+       "title": "Rusting",
+       "points": [
+        "Slow",
+        "Needs oxygen and water",
+        "Iron → hydrated iron oxide"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Mass after burning",
+     "bullets": [
+      "Metals gain mass when oxidised"
+     ],
+     "note": "Contrast with candles.",
+     "misconception": {
+      "wrong": "Magnesium loses mass when it burns, like wood",
+      "right": "It gains oxygen, so the solid product is heavier"
+     }
+    },
+    {
+     "heading": "Check: oxide",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What forms when copper is heated in air?",
+      "options": [
+       "Copper carbonate",
+       "Copper oxide",
+       "Copper chloride",
+       "Copper hydroxide"
+      ],
+      "answer": 1,
+      "why": "Copper + oxygen → copper oxide. Heating in air supplies oxygen."
+     }
+    }
+   ],
+   "practice": [
+    "Word equation: zinc + oxygen →",
+    "What is oxidation?",
+    "What two things does iron need to rust?"
+   ],
+   "independent": [
+    "Core: Write word equations for oxidising five elements (e.g. sulfur, carbon, iron)",
+    "Extend: Explain three ways of preventing rust and how each works",
+    "Stretch: 0.6 g of carbon burns completely to make 2.2 g of carbon dioxide. How much oxygen reacted? What percentage of the product's mass is oxygen?"
+   ],
+   "exit": [
+    "Define oxidation.",
+    "Why does magnesium gain mass when it burns?",
+    "Name one way to stop rusting."
+   ],
+   "homework": "Find three examples of rusting at home or outside, photograph them and explain how rusting could have been prevented.",
+   "send": "Support: equation frames. Stretch: percentage composition."
+  },
+  {
+   "unit": "8E: Combustion",
+   "n": 11,
+   "title": "The fire triangle and fire safety",
+   "duration": 50,
+   "bigQuestion": "Why must you never throw water on a burning chip pan?",
+   "objectives": [
+    "Describe the fire triangle",
+    "Explain how fire extinguishers work",
+    "Choose the right way to put out different fires"
+   ],
+   "successCriteria": [
+    "Name the three parts of the fire triangle",
+    "Explain how removing each part puts a fire out",
+    "Explain why water is dangerous on oil and electrical fires"
+   ],
+   "crossCurricular": "PSHE: home safety; Citizenship: the fire service",
+   "smsc": "Moral: responsibility for others' safety; social: what to do in an emergency",
+   "keywords": [
+    {
+     "term": "fire triangle",
+     "def": "fuel, oxygen and heat: all three are needed for fire"
+    },
+    {
+     "term": "extinguish",
+     "def": "put out a fire"
+    },
+    {
+     "term": "fire blanket",
+     "def": "a sheet that smothers a fire by cutting off oxygen"
+    },
+    {
+     "term": "flammable",
+     "def": "catches fire easily"
+    }
+   ],
+   "starter": [
+    "What is combustion?",
+    "What forms when magnesium burns?",
+    "Name three fuels",
+    "What does 'flammable' mean?"
+   ],
+   "teach": [
+    {
+     "heading": "The fire triangle",
+     "bullets": [
+      "Remove any side and the fire goes out"
+     ],
+     "note": "Draw it.",
+     "cycle": [
+      "Fuel",
+      "Oxygen",
+      "Heat"
+     ]
+    },
+    {
+     "heading": "Fighting fires",
+     "bullets": [
+      "Remove fuel: firebreaks, turn off gas",
+      "Remove oxygen: fire blanket, CO₂ or foam",
+      "Remove heat: water"
+     ],
+     "note": "Link each method to the triangle.",
+     "table": {
+      "head": [
+       "Method",
+       "Side removed",
+       "Use on"
+      ],
+      "rows": [
+       [
+        "Water",
+        "heat",
+        "wood, paper, cloth"
+       ],
+       [
+        "Fire blanket",
+        "oxygen",
+        "small pan fires, clothing"
+       ],
+       [
+        "Carbon dioxide extinguisher",
+        "oxygen",
+        "electrical fires"
+       ],
+       [
+        "Turning off gas",
+        "fuel",
+        "gas fires"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Chip-pan fires",
+     "bullets": [
+      "Burning oil is above 100 °C",
+      "Water boils instantly into steam",
+      "Steam throws burning oil into the air"
+     ],
+     "note": "Answer the big question with a fire-service video.",
+     "misconception": {
+      "wrong": "Water puts out any fire",
+      "right": "Water on oil causes a fireball; on electrics it conducts electricity"
+     }
+    },
+    {
+     "heading": "What to do at home",
+     "bullets": [
+      "Get out, stay out, call 999",
+      "Smoke alarms save lives",
+      "Do not go back in"
+     ],
+     "note": "UK fire service advice. Pupils share their home escape plan."
+    },
+    {
+     "heading": "Check: method",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A TV catches fire. What is safest?",
+      "options": [
+       "Throw water",
+       "Turn off the power at the wall if safe, use a CO₂ extinguisher, get out and call 999",
+       "Blow it out",
+       "Cover with paper"
+      ],
+      "answer": 1,
+      "why": "Water conducts electricity. Cutting power removes heat source; CO₂ removes oxygen. Safety first: get out and call 999."
+     }
+    }
+   ],
+   "practice": [
+    "Draw the fire triangle",
+    "Which side does a fire blanket remove?",
+    "Why is a firebreak used in forest fires?"
+   ],
+   "independent": [
+    "Core: For six fires (bin, chip pan, laptop, forest, clothing, gas hob), choose a method and name the side removed",
+    "Extend: Write a fire-safety leaflet for a family home",
+    "Stretch: Explain why CO₂ extinguishers are safe on electrical fires but dangerous in small closed rooms."
+   ],
+   "exit": [
+    "Three sides of the fire triangle?",
+    "Why not use water on a chip-pan fire?",
+    "What number do you call in a UK fire emergency?"
+   ],
+   "homework": "Make a home fire-escape plan with your family and check your smoke alarms.",
+   "send": "Support: triangle diagram with icons. Stretch: extinguisher classes."
+  },
+  {
+   "unit": "8E: Combustion",
+   "n": 12,
+   "title": "Incomplete combustion and carbon monoxide",
+   "duration": 50,
+   "bigQuestion": "Why is a yellow flame on a gas cooker a warning sign?",
+   "objectives": [
+    "Compare complete and incomplete combustion",
+    "Name the products of incomplete combustion",
+    "Explain the dangers of carbon monoxide"
+   ],
+   "successCriteria": [
+    "Write word equations for complete and incomplete combustion",
+    "Explain why carbon monoxide is toxic",
+    "Explain how to stay safe from carbon monoxide at home"
+   ],
+   "crossCurricular": "PSHE: home safety; Biology: haemoglobin and oxygen transport",
+   "smsc": "Moral: protecting family members; checking boilers and alarms",
+   "keywords": [
+    {
+     "term": "complete combustion",
+     "def": "burning with plenty of oxygen; makes CO₂ and water"
+    },
+    {
+     "term": "incomplete combustion",
+     "def": "burning with too little oxygen; makes CO, soot and water"
+    },
+    {
+     "term": "carbon monoxide",
+     "def": "a toxic gas with no colour or smell"
+    },
+    {
+     "term": "soot",
+     "def": "particles of carbon"
+    }
+   ],
+   "starter": [
+    "Sides of the fire triangle?",
+    "Word equation for burning methane",
+    "What carries oxygen in blood?",
+    "Why is a fire blanket used?"
+   ],
+   "teach": [
+    {
+     "heading": "Complete vs incomplete",
+     "bullets": [
+      "Plenty of oxygen: blue flame",
+      "Too little oxygen: yellow flame, soot"
+     ],
+     "note": "Show a Bunsen with the air hole open and closed (video).",
+     "compare": {
+      "left": {
+       "title": "Complete",
+       "points": [
+        "Plenty of oxygen",
+        "Blue flame",
+        "Carbon dioxide + water",
+        "More energy released"
+       ]
+      },
+      "right": {
+       "title": "Incomplete",
+       "points": [
+        "Limited oxygen",
+        "Yellow, smoky flame",
+        "Carbon monoxide, carbon, water",
+        "Less energy released"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Why carbon monoxide kills",
+     "bullets": [
+      "Binds to haemoglobin in red blood cells",
+      "Blood carries less oxygen",
+      "No colour or smell"
+     ],
+     "note": "Symptoms: headaches, dizziness, sickness, tiredness."
+    },
+    {
+     "heading": "Word equations",
+     "bullets": [
+      "Same fuel, different products"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Write word equations for methane burning completely and incompletely",
+      "steps": [
+       "Complete: methane + oxygen → carbon dioxide + water",
+       "Incomplete: methane + oxygen → carbon monoxide + water",
+       "Very little oxygen: carbon (soot) can form instead"
+      ],
+      "answer": "Products depend on the oxygen supply"
+     }
+    },
+    {
+     "heading": "You can't detect it yourself",
+     "bullets": [
+      "Fit a carbon monoxide alarm"
+     ],
+     "note": "Answer the big question: a yellow flame on a gas appliance can mean incomplete combustion; get it checked by a Gas Safe engineer.",
+     "misconception": {
+      "wrong": "You would smell a carbon monoxide leak",
+      "right": "CO has no smell: only an alarm can warn you"
+     }
+    },
+    {
+     "heading": "Check: products",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which product shows incomplete combustion?",
+      "options": [
+       "Carbon dioxide",
+       "Water",
+       "Carbon monoxide",
+       "Oxygen"
+      ],
+      "answer": 2,
+      "why": "Carbon monoxide (and soot) form when oxygen is limited. Water forms in both."
+     }
+    }
+   ],
+   "practice": [
+    "Colour of a flame with plenty of oxygen?",
+    "Name two products of incomplete combustion",
+    "Why is carbon monoxide dangerous?"
+   ],
+   "independent": [
+    "Core: Explain three ways to prevent carbon monoxide poisoning at home",
+    "Extend: Explain why incomplete combustion releases less energy than complete combustion",
+    "Stretch: A family feel ill only when the boiler is on, and feel better when out. Explain the likely cause and what they should do."
+   ],
+   "exit": [
+    "Products of incomplete combustion?",
+    "Why can't you detect CO without an alarm?",
+    "Colour of the flame in incomplete combustion?"
+   ],
+   "homework": "Check with your family whether your home has a carbon monoxide alarm and where it is. Write two sentences on why it matters.",
+   "send": "Support: comparison table. Stretch: haemoglobin binding."
+  },
+  {
+   "unit": "8E: Combustion",
+   "n": 13,
+   "title": "Air pollution and acid rain",
+   "duration": 50,
+   "bigQuestion": "How can burning fuel in one country damage forests in another?",
+   "objectives": [
+    "Name pollutants from burning fuels",
+    "Explain how acid rain forms",
+    "Describe effects of pollution on people and the environment"
+   ],
+   "successCriteria": [
+    "Name sulfur dioxide, nitrogen oxides and particulates as pollutants",
+    "Explain how acid rain forms and its effects",
+    "Evaluate ways to reduce air pollution"
+   ],
+   "crossCurricular": "Geography: pollution across borders; Citizenship: clean air laws",
+   "smsc": "Moral: our duty as khalifah (stewards) of the earth; social: shared air",
+   "keywords": [
+    {
+     "term": "pollutant",
+     "def": "a substance that harms living things or the environment"
+    },
+    {
+     "term": "sulfur dioxide",
+     "def": "gas from burning fuels containing sulfur; causes acid rain"
+    },
+    {
+     "term": "acid rain",
+     "def": "rain made acidic by dissolved pollutant gases"
+    },
+    {
+     "term": "particulates",
+     "def": "tiny solid particles, e.g. soot, that harm lungs"
+    }
+   ],
+   "starter": [
+    "Products of incomplete combustion?",
+    "pH of an acid: above or below 7?",
+    "Name a fossil fuel",
+    "Why is soot harmful?"
+   ],
+   "teach": [
+    {
+     "heading": "Pollutants from burning",
+     "bullets": [
+      "Fuels contain impurities such as sulfur"
+     ],
+     "note": "Link to car engines and power stations.",
+     "table": {
+      "head": [
+       "Pollutant",
+       "From",
+       "Effect"
+      ],
+      "rows": [
+       [
+        "Sulfur dioxide",
+        "sulfur impurities in coal and oil",
+        "acid rain, breathing problems"
+       ],
+       [
+        "Nitrogen oxides",
+        "high temperatures in engines",
+        "acid rain, asthma"
+       ],
+       [
+        "Carbon monoxide",
+        "incomplete combustion",
+        "toxic"
+       ],
+       [
+        "Particulates",
+        "diesel engines, fires",
+        "lung and heart disease"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "How acid rain forms",
+     "bullets": [
+      "Gases rise into clouds",
+      "Dissolve in water droplets",
+      "Fall as acid rain, maybe far away"
+     ],
+     "note": "Answer the big question: wind carries pollution across borders.",
+     "cycle": [
+      "Fuel burns",
+      "SO₂ and NOₓ released",
+      "Gases dissolve in clouds",
+      "Acid rain falls",
+      "Damages lakes, trees, buildings"
+     ]
+    },
+    {
+     "heading": "Reducing pollution",
+     "bullets": [
+      "Remove sulfur from fuels",
+      "Catalytic converters on cars",
+      "Use renewable energy, walk and cycle"
+     ],
+     "note": "Discuss the Clean Air Act 1956 after London's Great Smog of 1952."
+    },
+    {
+     "heading": "Acid rain vs global warming",
+     "bullets": [
+      "Different gases, different effects"
+     ],
+     "note": "Common confusion.",
+     "misconception": {
+      "wrong": "Acid rain is caused by carbon dioxide",
+      "right": "Mainly sulfur dioxide and nitrogen oxides; CO₂ is linked to global warming"
+     }
+    },
+    {
+     "heading": "Check: pollutant",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which gas is the main cause of acid rain?",
+      "options": [
+       "Oxygen",
+       "Sulfur dioxide",
+       "Water vapour",
+       "Nitrogen"
+      ],
+      "answer": 1,
+      "why": "Sulfur dioxide dissolves in rain to form acids. Nitrogen gas itself is unreactive."
+     }
+    }
+   ],
+   "practice": [
+    "Name two pollutants from car engines",
+    "How does acid rain form?",
+    "Name one effect of acid rain"
+   ],
+   "independent": [
+    "Core: Make a flow diagram explaining acid rain from power station to damaged lake",
+    "Extend: Evaluate three methods of reducing air pollution in a city",
+    "Stretch: Explain why acid rain damages limestone buildings, and write a word equation (calcium carbonate + sulfuric acid →)."
+   ],
+   "exit": [
+    "Main cause of acid rain?",
+    "Name a pollutant that harms lungs.",
+    "One way to reduce car pollution?"
+   ],
+   "homework": "Look up today's air-quality index for your town and two other cities. Suggest reasons for differences.",
+   "send": "Support: flow-diagram template. Stretch: limestone reaction equations."
+  },
+  {
+   "unit": "8E: Combustion",
+   "n": 14,
+   "title": "Global warming and the greenhouse effect",
+   "duration": 50,
+   "bigQuestion": "If carbon dioxide is only a tiny part of the air, how can it change the climate?",
+   "objectives": [
+    "Describe the greenhouse effect",
+    "Explain how burning fuels increases carbon dioxide",
+    "Describe effects of climate change and responses to it"
+   ],
+   "successCriteria": [
+    "Describe the greenhouse effect in steps",
+    "Use data to link CO₂ levels and temperature",
+    "Evaluate actions that individuals and governments can take"
+   ],
+   "crossCurricular": "Geography: climate change; Islamic Studies: stewardship (khalifah) and avoiding corruption on earth (Surah Ar-Rum 30:41)",
+   "smsc": "Moral and spiritual: responsibility to future generations and to Allah's creation",
+   "keywords": [
+    {
+     "term": "greenhouse effect",
+     "def": "gases trapping heat in the atmosphere, warming the Earth"
+    },
+    {
+     "term": "greenhouse gas",
+     "def": "a gas that traps heat, e.g. carbon dioxide, methane"
+    },
+    {
+     "term": "global warming",
+     "def": "the rise in Earth's average temperature"
+    },
+    {
+     "term": "climate change",
+     "def": "long-term changes in weather patterns"
+    }
+   ],
+   "starter": [
+    "Main cause of acid rain?",
+    "Products of complete combustion?",
+    "Name a renewable energy source",
+    "What percentage of air is oxygen (roughly)?"
+   ],
+   "teach": [
+    {
+     "heading": "The greenhouse effect",
+     "bullets": [
+      "Natural and needed for life",
+      "More greenhouse gases trap more heat"
+     ],
+     "note": "Without it, Earth's average would be about −18 °C instead of about 15 °C.",
+     "cycle": [
+      "Sunlight reaches Earth",
+      "Earth warms and gives off heat",
+      "Greenhouse gases absorb some heat",
+      "Heat is re-radiated back down",
+      "Earth stays warm"
+     ]
+    },
+    {
+     "heading": "Rising carbon dioxide",
+     "bullets": [
+      "About 280 ppm before 1800",
+      "Over 420 ppm today",
+      "Mainly from burning fossil fuels"
+     ],
+     "note": "Answer the big question: tiny amounts still absorb lots of heat energy. Show the Keeling curve.",
+     "table": {
+      "head": [
+       "Year",
+       "CO₂ (ppm, approx.)"
+      ],
+      "rows": [
+       [
+        "1800",
+        "280"
+       ],
+       [
+        "1960",
+        "317"
+       ],
+       [
+        "2000",
+        "370"
+       ],
+       [
+        "2024",
+        "about 424"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Correlation and cause",
+     "bullets": [
+      "Temperature and CO₂ have risen together",
+      "Scientists have tested the cause carefully"
+     ],
+     "note": "The scientific consensus is that human activity is the main cause of recent warming.",
+     "misconception": {
+      "wrong": "The greenhouse effect is the same as the ozone hole",
+      "right": "They are different problems: the ozone layer protects from UV light"
+     }
+    },
+    {
+     "heading": "Responses",
+     "bullets": [
+      "Renewable energy",
+      "Insulate homes, travel less by car",
+      "Plant trees"
+     ],
+     "note": "Link to the Islamic principle of moderation and avoiding waste (israf)."
+    },
+    {
+     "heading": "Check: greenhouse",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "How do greenhouse gases warm the Earth?",
+      "options": [
+       "They make the Sun hotter",
+       "They absorb heat given off by the Earth and re-radiate it",
+       "They make holes in the ozone layer",
+       "They reflect all sunlight"
+      ],
+      "answer": 1,
+      "why": "Greenhouse gases absorb infrared from Earth's surface and send some back. C is a different problem."
+     }
+    }
+   ],
+   "practice": [
+    "Name two greenhouse gases",
+    "Describe the greenhouse effect in three steps",
+    "Give one effect of climate change"
+   ],
+   "independent": [
+    "Core: Use the CO₂ table to describe the trend and suggest a reason",
+    "Extend: Evaluate three ways a family could reduce its carbon footprint",
+    "Stretch: Explain why some scientists say methane is a bigger short-term problem than CO₂, even though there is less of it."
+   ],
+   "exit": [
+    "What is global warming?",
+    "Main source of extra CO₂?",
+    "One thing you could do to reduce emissions?"
+   ],
+   "homework": "Calculate your family's approximate carbon footprint with an online calculator and choose two realistic changes.",
+   "send": "Support: diagram with labels. Stretch: feedback loops (ice melting)."
+  },
+  {
+   "unit": "8E: Combustion",
+   "n": 15,
+   "title": "Fuels for the future",
+   "duration": 50,
+   "bigQuestion": "What should power the world when fossil fuels run out?",
+   "objectives": [
+    "Compare fossil fuels and alternatives",
+    "Describe hydrogen as a fuel",
+    "Evaluate fuels using evidence"
+   ],
+   "successCriteria": [
+    "List advantages and disadvantages of fossil fuels",
+    "Explain why hydrogen burns cleanly",
+    "Evaluate a fuel choice using several criteria"
+   ],
+   "crossCurricular": "Geography: energy resources; Business: energy costs",
+   "smsc": "Moral: fairness to future generations and to poorer countries",
+   "keywords": [
+    {
+     "term": "fossil fuel",
+     "def": "a fuel formed from ancient living things: coal, oil, gas"
+    },
+    {
+     "term": "non-renewable",
+     "def": "will run out; cannot be replaced"
+    },
+    {
+     "term": "biofuel",
+     "def": "a fuel made from plants or animal waste"
+    },
+    {
+     "term": "hydrogen fuel",
+     "def": "burns to make only water"
+    }
+   ],
+   "starter": [
+    "Name two greenhouse gases",
+    "Products of burning methane?",
+    "What is a non-renewable resource?",
+    "Name a renewable energy source"
+   ],
+   "teach": [
+    {
+     "heading": "Fossil fuels",
+     "bullets": [
+      "Formed over millions of years",
+      "Release CO₂ when burnt",
+      "Will run out"
+     ],
+     "note": "Recap and link to the last lesson."
+    },
+    {
+     "heading": "Hydrogen",
+     "bullets": [
+      "hydrogen + oxygen → water",
+      "No carbon dioxide at the point of use",
+      "Hard to store; often made using fossil fuels"
+     ],
+     "note": "Show the 'squeaky pop' test video for hydrogen.",
+     "compare": {
+      "left": {
+       "title": "Hydrogen",
+       "points": [
+        "Only water produced",
+        "Renewable if made with solar power",
+        "Explosive; needs high-pressure tanks"
+       ]
+      },
+      "right": {
+       "title": "Petrol",
+       "points": [
+        "Easy to store and transport",
+        "Releases CO₂ and pollutants",
+        "Will run out"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Evaluating fuels",
+     "bullets": [
+      "Energy released",
+      "Pollution",
+      "Cost and availability",
+      "Safety and storage"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Evaluate biofuel (ethanol from sugar cane) for cars",
+      "steps": [
+       "Advantage: renewable; plants absorb CO₂ as they grow",
+       "Disadvantage: needs farmland that could grow food",
+       "Disadvantage: still releases CO₂ when burnt",
+       "Judgement: useful in some countries, but not the full answer"
+      ],
+      "answer": "Advantages + disadvantages + a justified conclusion"
+     }
+    },
+    {
+     "heading": "Carbon neutral?",
+     "bullets": [
+      "Biofuels are not automatically zero-carbon"
+     ],
+     "note": "Farming and transport also release CO₂.",
+     "misconception": {
+      "wrong": "Biofuels release no carbon dioxide",
+      "right": "They release CO₂ when burnt, partly balanced by plant growth"
+     }
+    },
+    {
+     "heading": "Check: hydrogen",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What is the only product when hydrogen burns in oxygen?",
+      "options": [
+       "Carbon dioxide",
+       "Water",
+       "Carbon monoxide",
+       "Sulfur dioxide"
+      ],
+      "answer": 1,
+      "why": "Hydrogen contains no carbon, so only water (H₂O) forms."
+     }
+    }
+   ],
+   "practice": [
+    "Name three fossil fuels",
+    "Word equation for burning hydrogen",
+    "One problem with hydrogen cars"
+   ],
+   "independent": [
+    "Core: Complete a table comparing coal, natural gas, hydrogen and biofuel",
+    "Extend: Write a reasoned recommendation for a fuel for city buses",
+    "Stretch: Explain why hydrogen made by electrolysis using electricity from coal is not truly 'clean'."
+   ],
+   "exit": [
+    "Why are fossil fuels non-renewable?",
+    "Product of burning hydrogen?",
+    "One disadvantage of biofuels?"
+   ],
+   "homework": "Research one country's plan to reduce fossil fuel use and summarise it in a paragraph.",
+   "send": "Support: comparison table frame. Stretch: energy density data."
+  },
+  {
+   "unit": "8E: Combustion",
+   "n": 16,
+   "title": "8E review: combustion",
+   "duration": 50,
+   "bigQuestion": "What is the most important thing everyone should know about combustion?",
+   "objectives": [
+    "Retrieve key knowledge from 8E",
+    "Apply it to unfamiliar situations",
+    "Improve answers using feedback"
+   ],
+   "successCriteria": [
+    "Recall equations, tests and the fire triangle",
+    "Answer data and safety questions",
+    "Write a 6-mark evaluation"
+   ],
+   "crossCurricular": "Geography: climate; PSHE: safety",
+   "smsc": "Moral: personal and global responsibility",
+   "keywords": [
+    {
+     "term": "oxidation",
+     "def": "gaining oxygen"
+    },
+    {
+     "term": "incomplete combustion",
+     "def": "burning with too little oxygen"
+    },
+    {
+     "term": "acid rain",
+     "def": "rain made acidic by pollutants"
+    },
+    {
+     "term": "greenhouse effect",
+     "def": "trapping of heat by gases"
+    }
+   ],
+   "starter": [
+    "Test for CO₂?",
+    "Three sides of the fire triangle?",
+    "Main cause of acid rain?",
+    "Product of burning hydrogen?"
+   ],
+   "teach": [
+    {
+     "heading": "8E connections",
+     "bullets": [
+      "Burning is oxidation",
+      "Products affect health and climate"
+     ],
+     "note": "Recap map.",
+     "cycle": [
+      "Fuel + oxygen",
+      "Combustion",
+      "CO₂, H₂O (or CO, soot)",
+      "Pollution and warming",
+      "Cleaner fuels"
+     ]
+    },
+    {
+     "heading": "A 6-mark evaluation",
+     "bullets": [
+      "Both sides",
+      "Evidence",
+      "Conclusion"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Evaluate replacing gas boilers with electric heat pumps (6 marks)",
+      "steps": [
+       "For: no combustion at home, so no CO risk",
+       "For: lower CO₂ if electricity is renewable",
+       "Against: expensive to install",
+       "Against: if electricity comes from fossil fuels, CO₂ is still released",
+       "Conclusion: best long-term option as the grid becomes renewable"
+      ],
+      "answer": "Balanced points + a justified conclusion"
+     }
+    },
+    {
+     "heading": "Fix the errors",
+     "bullets": [
+      "From the 8E assessment pack"
+     ],
+     "note": "Correct each.",
+     "misconception": {
+      "wrong": "Carbon monoxide smells like gas",
+      "right": "CO has no smell; gas companies add a smell to natural gas, not to CO"
+     }
+    },
+    {
+     "heading": "Check: apply",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A Bunsen burner has a yellow flame and blackens a beaker. Why?",
+      "options": [
+       "Too much oxygen",
+       "Incomplete combustion: too little oxygen",
+       "The gas is hydrogen",
+       "The beaker is dirty"
+      ],
+      "answer": 1,
+      "why": "Yellow flame and soot show incomplete combustion. Opening the air hole adds oxygen."
+     }
+    }
+   ],
+   "practice": [
+    "Word equations for complete and incomplete burning of methane",
+    "Explain the fire triangle",
+    "Explain acid rain"
+   ],
+   "independent": [
+    "Core: 8E end-of-unit check (school 8E assessment pack)",
+    "Extend: 6-mark evaluation of hydrogen-powered cars",
+    "Stretch: Interpret CO₂ and temperature data from 1960 to today and evaluate the evidence for human-caused warming."
+   ],
+   "exit": [
+    "My strongest 8E topic",
+    "My weakest 8E topic",
+    "One action I'll take for the environment"
+   ],
+   "homework": "Revise 8E and complete DIRT corrections on your end-of-unit check.",
+   "send": "Support: knowledge organiser. Stretch: data evaluation."
+  }
+ ]
 }

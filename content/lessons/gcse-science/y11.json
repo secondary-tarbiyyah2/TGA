@@ -1,606 +1,2827 @@
 {
-  "subject": "Science (IGCSE Biology, Chemistry, Physics)",
-  "year": "y11",
-  "board": "Pearson Edexcel International GCSE (9–1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1",
-  "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1",
-  "source": "School Science curriculum journey 2026–27 (Year 11 Term 1: Chemistry Organic Chemistry; Physics Astrophysics; then past papers and revision) with 4BI1 Section 4 Ecology and the environment for Biology; school 2024 papers 4BI1/1B, 4CH1/1C, 4PH1/1P for exam style; INSET lesson standard.",
-  "lessons": [
+ "subject": "Science (GCSE Biology, Chemistry, Physics)",
+ "year": "y11",
+ "board": "Pearson Edexcel GCSE (9–1) Biology 1BI0, Chemistry 1CH0 and Physics 1PH0",
+ "boardShort": "Edexcel GCSE 1BI0 · 1CH0 · 1PH0",
+ "source": "School Science curriculum journey 2026–27 (Year 11 Term 1: Organic Chemistry; Astrophysics) with Edexcel GCSE Biology Topic 9 (ecosystems and material cycles); school's Pearson Edexcel GCSE 5-year schemes; INSET lesson standard. Orbital-speed, red-shift-equation and HR-diagram content goes beyond GCSE 1PH0 and is marked as stretch.",
+ "lessons": [
+  {
+   "unit": "Biology Topic 9: Ecosystems and material cycles",
+   "n": 1,
+   "title": "Ecosystems and sampling with quadrats",
+   "duration": 50,
+   "bigQuestion": "How can you count the daisies on a football pitch without counting every one?",
+   "objectives": [
+    "Define population, community, habitat and ecosystem",
+    "Describe how to use quadrats to estimate population size",
+    "Calculate population estimates from quadrat data"
+   ],
+   "successCriteria": [
+    "Use the four ecology terms correctly",
+    "Describe random sampling with quadrats",
+    "Calculate a population estimate and suggest how to improve accuracy"
+   ],
+   "crossCurricular": "Geography: fieldwork; Maths: means and scaling",
+   "smsc": "Spiritual: reflection on creation in nature; moral: care for habitats",
+   "keywords": [
     {
-      "unit": "Biology: Ecology and the environment",
-      "n": 1,
-      "title": "Ecosystems and sampling with quadrats",
-      "duration": 50,
-      "bigQuestion": "How can you count the daisies on a football pitch without counting every one?",
-      "objectives": ["Define population, community, habitat and ecosystem", "Describe how to use quadrats to estimate population size", "Calculate population estimates from quadrat data"],
-      "successCriteria": ["Use the four ecology terms correctly", "Describe random sampling with quadrats", "Calculate a population estimate and suggest how to improve accuracy"],
-      "crossCurricular": "Geography: fieldwork; Maths: means and scaling",
-      "smsc": "Spiritual: reflection on creation in nature; moral: care for habitats",
-      "keywords": [
-        { "term": "population", "def": "all the organisms of one species in an area" },
-        { "term": "community", "def": "all the populations of different species in an area" },
-        { "term": "ecosystem", "def": "a community and its physical environment" },
-        { "term": "quadrat", "def": "a square frame used to sample organisms" }
-      ],
-      "starter": ["Bismillah. What is a habitat?", "Mean of 3, 5, 4, 8", "Area of a field 50 m × 80 m", "Name a producer"],
-      "teach": [
-        { "heading": "Key terms", "bullets": ["Population: one species", "Community: all species", "Ecosystem: community + environment", "Habitat: where an organism lives"], "note": "4BI1 definitions must be precise." },
-        { "heading": "Random sampling", "bullets": ["Use random coordinates", "Place quadrats; count organisms", "Repeat many times; calculate mean"], "note": "Show the demo video. Random avoids bias.", "model": { "problem": "Mean of 6 daisies per 0.25 m² quadrat. Field is 1200 m². Estimate the population.", "steps": ["Daisies per m²: 6 ÷ 0.25 = 24", "Total: 24 × 1200", "= 28 800"], "answer": "About 28 800 daisies" } },
-        { "heading": "Transects", "bullets": ["Quadrats along a line", "Show how distribution changes with a factor"], "note": "E.g. from shade into sunlight." },
-        { "heading": "Bias", "bullets": ["Placing quadrats where there are lots of daisies biases the result"], "note": "Answer the big question.", "misconception": { "wrong": "Choose good spots to place quadrats", "right": "Place quadrats randomly to avoid bias" } },
-        { "heading": "Check: estimate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Mean 3 plants per 1 m² quadrat; area 500 m². Estimate?", "options": ["167", "1500", "503", "150"], "answer": 1, "why": "3 × 500 = 1500. A divides; C adds." } }
-      ],
-      "practice": ["Define community", "Why are quadrats placed randomly?", "Estimate: mean 4 per m², area 250 m²"],
-      "independent": ["Core: Calculate population estimates from three data sets", "Extend: Describe how to investigate how buttercup numbers change from a hedge into a field", "Stretch: Evaluate the reliability of an estimate from 5 quadrats versus 20."],
-      "exit": ["Define ecosystem.", "Why repeat quadrats?", "What is a transect used for?"],
-      "homework": "4BI1 Paper 1B/2B-style quadrat practical question (8 marks).",
-      "send": "Support: calculation frame. Stretch: capture–recapture method."
+     "term": "population",
+     "def": "all the organisms of one species in an area"
     },
     {
-      "unit": "Biology: Ecology and the environment",
-      "n": 2,
-      "title": "Biotic and abiotic factors",
-      "duration": 50,
-      "bigQuestion": "Why do some plants grow only in the shade of trees?",
-      "objectives": ["Describe biotic and abiotic factors", "Explain how they affect population size and distribution", "Interpret data on environmental factors"],
-      "successCriteria": ["Classify factors as biotic or abiotic", "Explain how a factor affects a population", "Interpret data linking factors to distribution"],
-      "crossCurricular": "Geography: climate and biomes",
-      "smsc": "Spiritual: the balance of ecosystems",
-      "keywords": [
-        { "term": "abiotic factor", "def": "a non-living factor, e.g. light, temperature, pH" },
-        { "term": "biotic factor", "def": "a living factor, e.g. predators, competition, disease" },
-        { "term": "distribution", "def": "where organisms are found" },
-        { "term": "competition", "def": "organisms needing the same limited resource" }
-      ],
-      "starter": ["Define population", "Estimate: 5 per m² in 300 m²", "Name an abiotic factor", "What do plants compete for?"],
-      "teach": [
-        { "heading": "Two kinds of factor", "bullets": ["Abiotic: non-living", "Biotic: living"], "note": "Classify quickly.", "compare": { "left": { "title": "Abiotic", "points": ["Light intensity", "Temperature", "Water and soil pH", "Oxygen and CO₂ levels"] }, "right": { "title": "Biotic", "points": ["Predators", "Competition", "Disease", "Food availability"] } } },
-        { "heading": "Explaining effects", "bullets": ["Factor → resource or condition → survival/reproduction"], "note": "Model.", "model": { "problem": "Explain why fewer plants grow under a dense tree canopy", "steps": ["Less light reaches the ground (abiotic)", "Less photosynthesis, so less glucose", "Slower growth and fewer seeds", "Only shade-tolerant species survive"], "answer": "Low light limits photosynthesis" } },
-        { "heading": "Predator–prey cycles", "bullets": ["More prey → more predators", "More predators → fewer prey", "Then predators decline"], "note": "Show a lynx–hare graph.", "cycle": ["Prey increase", "Predators increase", "Prey decrease", "Predators decrease"] },
-        { "heading": "Temperature is abiotic", "bullets": ["Even though it affects living things"], "note": "Clarify.", "misconception": { "wrong": "Disease is abiotic because it is not an animal", "right": "Disease is caused by pathogens, which are living: biotic" } },
-        { "heading": "Check: classify", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is a biotic factor?", "options": ["Soil pH", "Rainfall", "Competition from weeds", "Temperature"], "answer": 2, "why": "Weeds are living. The others are non-living conditions." } }
-      ],
-      "practice": ["Classify: light, parasites, salinity, predators", "Explain how temperature affects lizards", "Describe a predator–prey cycle"],
-      "independent": ["Core: Explain the effects of four factors on a pond population", "Extend: Interpret transect data on light intensity and plant percentage cover", "Stretch: Explain the time lag on a predator–prey graph."],
-      "exit": ["Name two abiotic factors.", "Name two biotic factors.", "Why do predator peaks come after prey peaks?"],
-      "homework": "4BI1 data-analysis question on factors affecting distribution.",
-      "send": "Support: sorting cards. Stretch: graph interpretation."
+     "term": "community",
+     "def": "all the populations of different species in an area"
     },
     {
-      "unit": "Biology: Ecology and the environment",
-      "n": 3,
-      "title": "Food chains, food webs and trophic levels",
-      "duration": 50,
-      "bigQuestion": "What happens to a food web when one species disappears?",
-      "objectives": ["Describe food chains and webs using trophic levels", "Draw pyramids of number, biomass and energy", "Predict effects of changes in food webs"],
-      "successCriteria": ["Use producer, primary consumer… decomposer correctly", "Draw and explain the three pyramids", "Predict and explain knock-on effects in a web"],
-      "crossCurricular": "Geography: ecosystems; Maths: scale drawing",
-      "smsc": "Moral: unintended consequences of human actions",
-      "keywords": [
-        { "term": "trophic level", "def": "the position of an organism in a food chain" },
-        { "term": "producer", "def": "an organism that makes its own food by photosynthesis" },
-        { "term": "decomposer", "def": "breaks down dead material and waste" },
-        { "term": "pyramid of biomass", "def": "shows the dry mass of organisms at each level" }
-      ],
-      "starter": ["Biotic or abiotic: light?", "What is a producer?", "Name a decomposer", "What do the arrows in a food chain show?"],
-      "teach": [
-        { "heading": "Trophic levels", "bullets": ["Arrows show energy flow", "Producer → primary → secondary → tertiary consumer"], "note": "Example: grass → rabbit → fox.", "timeline": [{ "label": "Producer", "text": "grass" }, { "label": "Primary", "text": "rabbit (herbivore)" }, { "label": "Secondary", "text": "fox (carnivore)" }, { "label": "Decomposers", "text": "fungi, bacteria at every level" }] },
-        { "heading": "Three pyramids", "bullets": ["Number: can be odd shapes (one tree, many insects)", "Biomass: usually a pyramid", "Energy: always a pyramid"], "note": "4BI1 asks for explanations of shapes.", "compare": { "left": { "title": "Pyramid of numbers", "points": ["Counts organisms", "Can be inverted (one oak tree)", "Ignores size"] }, "right": { "title": "Pyramid of energy", "points": ["Energy per level", "Always pyramid-shaped", "Shows losses at each level"] } } },
-        { "heading": "Changes in webs", "bullets": ["Follow every arrow out of the removed species"], "note": "Answer the big question.", "model": { "problem": "In a web, foxes eat rabbits and voles; owls eat voles. Rabbits die of disease. Predict the effect on voles.", "steps": ["Foxes have fewer rabbits to eat", "Foxes eat more voles", "Vole numbers fall", "Owls may also decline (less food)"], "answer": "Voles decrease; effects spread through the web" } },
-        { "heading": "Arrow direction", "bullets": ["Arrows point to the eater"], "note": "Common error.", "misconception": { "wrong": "Fox → rabbit (fox eats rabbit)", "right": "Rabbit → fox: energy flows to the fox" } },
-        { "heading": "Check: pyramid", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which pyramid is always pyramid-shaped?", "options": ["Numbers", "Biomass", "Energy", "None"], "answer": 2, "why": "Energy is lost at each level, so each level always has less energy than the one below." } }
-      ],
-      "practice": ["Write a food chain with four levels", "Why can a pyramid of numbers be inverted?", "What do decomposers do?"],
-      "independent": ["Core: Draw pyramids of number and biomass for a given chain", "Extend: Predict effects of removing two species from a web", "Stretch: Explain why pyramids of biomass in some oceans can be inverted at certain times."],
-      "exit": ["Define trophic level.", "Direction of arrows?", "Which pyramid shows energy loss?"],
-      "homework": "4BI1 food web questions (8 marks).",
-      "send": "Support: food web templates. Stretch: oceanic pyramids."
+     "term": "ecosystem",
+     "def": "a community and its physical environment"
     },
     {
-      "unit": "Biology: Ecology and the environment",
-      "n": 4,
-      "title": "Energy transfer between trophic levels",
-      "duration": 50,
-      "bigQuestion": "Why are there no lion-eating super predators?",
-      "objectives": ["Explain why energy is lost between trophic levels", "Calculate efficiency of energy transfer", "Explain why food chains are short"],
-      "successCriteria": ["List ways energy is lost", "Calculate percentage efficiency", "Explain the limit on the number of trophic levels"],
-      "crossCurricular": "Maths: percentages; Geography: food security",
-      "smsc": "Moral: implications for diet and feeding the world",
-      "keywords": [
-        { "term": "efficiency", "def": "useful energy transferred ÷ energy in × 100" },
-        { "term": "respiration loss", "def": "energy released by respiration, much lost as heat" },
-        { "term": "egestion", "def": "undigested food passed out as faeces" },
-        { "term": "biomass", "def": "mass of living material" }
-      ],
-      "starter": ["Which pyramid is always pyramid-shaped?", "Work out 150 as a % of 1500", "Name a primary consumer", "Why do mammals need to eat a lot?"],
-      "teach": [
-        { "heading": "Where energy goes", "bullets": ["Respiration: heat", "Movement", "Egestion and excretion", "Parts not eaten (bones, roots)"], "note": "Typically only about 10% passes to the next level." },
-        { "heading": "Efficiency", "bullets": ["(energy at next level ÷ energy at this level) × 100"], "note": "Model.", "model": { "problem": "Grass has 20 000 kJ; rabbits get 1500 kJ. Efficiency?", "steps": ["1500 ÷ 20 000 = 0.075", "× 100"], "answer": "7.5%" } },
-        { "heading": "Why chains are short", "bullets": ["Too little energy left after 4–5 levels"], "note": "Answer the big question." },
-        { "heading": "Energy isn't destroyed", "bullets": ["It is transferred, mostly as heat"], "note": "Clarify.", "misconception": { "wrong": "Energy is used up at each level", "right": "Energy is transferred to the surroundings, mostly as heat" } },
-        { "heading": "Check: efficiency", "bullets": [], "note": "Show me on 3.", "check": { "q": "A level receives 800 kJ and passes on 80 kJ. Efficiency?", "options": ["80%", "10%", "1%", "720%"], "answer": 1, "why": "80 ÷ 800 × 100 = 10%." } }
-      ],
-      "practice": ["Name three ways energy is lost", "Efficiency: 5000 kJ → 400 kJ", "Why are there few top predators?"],
-      "independent": ["Core: Calculate efficiencies along a four-level chain", "Extend: Explain why eating plants feeds more people per hectare than eating meat", "Stretch: Explain why mammals have lower transfer efficiency than fish."],
-      "exit": ["Typical energy transfer percentage?", "Main way energy is lost?", "Why are food chains short?"],
-      "homework": "4BI1 energy-efficiency calculations.",
-      "send": "Support: calculation frame. Stretch: warm- and cold-blooded comparisons."
-    },
-    {
-      "unit": "Biology: Ecology and the environment",
-      "n": 5,
-      "title": "The carbon cycle",
-      "duration": 50,
-      "bigQuestion": "Could a carbon atom in your body once have been part of a dinosaur?",
-      "objectives": ["Describe the processes of the carbon cycle", "Explain the roles of photosynthesis, respiration, decomposition and combustion", "Link the carbon cycle to climate change"],
-      "successCriteria": ["Name processes that add or remove CO₂", "Draw and explain the carbon cycle", "Explain how human activity changes the balance"],
-      "crossCurricular": "Chemistry: combustion; Geography: climate change",
-      "smsc": "Spiritual: renewal in creation; moral: stewardship",
-      "keywords": [
-        { "term": "photosynthesis", "def": "removes CO₂ from the air to make glucose" },
-        { "term": "respiration", "def": "releases CO₂ into the air" },
-        { "term": "decomposition", "def": "decomposers break down dead material, releasing CO₂" },
-        { "term": "fossil fuel", "def": "carbon stored from ancient organisms" }
-      ],
-      "starter": ["Typical energy transfer?", "Products of combustion?", "Word equation for photosynthesis", "What do decomposers do?"],
-      "teach": [
-        { "heading": "The cycle", "bullets": ["Carbon moves between air, organisms and fossil fuels"], "note": "Answer the big question: carbon atoms are recycled endlessly.", "cycle": ["CO₂ in air", "Photosynthesis in plants", "Eaten by animals", "Death and decomposition", "Respiration and combustion return CO₂"] },
-        { "heading": "Adding and removing", "bullets": ["Remove: photosynthesis", "Add: respiration, decomposition, combustion"], "note": "Model.", "model": { "problem": "Explain how deforestation increases atmospheric CO₂ (3 marks)", "steps": ["Fewer trees: less photosynthesis removing CO₂", "Trees are often burnt: combustion releases CO₂", "Decomposing remains release more CO₂"], "answer": "Less removal + more release" } },
-        { "heading": "Fossil fuels", "bullets": ["Carbon locked away for millions of years", "Burning releases it quickly"], "note": "Link to climate change." },
-        { "heading": "Plants respire too", "bullets": ["Respiration happens all the time"], "note": "Common error.", "misconception": { "wrong": "Plants photosynthesise instead of respiring", "right": "Plants respire all the time and photosynthesise in light" } },
-        { "heading": "Check: process", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which process removes carbon dioxide from the air?", "options": ["Respiration", "Combustion", "Photosynthesis", "Decomposition"], "answer": 2, "why": "Photosynthesis uses CO₂. The others release it." } }
-      ],
-      "practice": ["Name three processes that release CO₂", "Draw a simple carbon cycle", "How do decomposers release carbon?"],
-      "independent": ["Core: Draw and label a full carbon cycle", "Extend: Explain how burning fossil fuels changes the carbon cycle", "Stretch: Explain why planting trees is only a partial solution to rising CO₂."],
-      "exit": ["Process that removes CO₂?", "Two processes that release CO₂?", "Where is carbon stored long-term?"],
-      "homework": "4BI1 carbon cycle questions (6 marks).",
-      "send": "Support: cycle diagram with blanks. Stretch: oceans as carbon sinks."
-    },
-    {
-      "unit": "Biology: Ecology and the environment",
-      "n": 6,
-      "title": "The nitrogen cycle",
-      "duration": 50,
-      "bigQuestion": "If the air is 78% nitrogen, why do plants still need fertiliser?",
-      "objectives": ["Describe the stages of the nitrogen cycle", "Name the bacteria involved", "Explain how farmers manage nitrogen"],
-      "successCriteria": ["Describe nitrogen fixation, nitrification, denitrification and decomposition", "Explain the role of each type of bacteria", "Explain why legumes and fertilisers help plants"],
-      "crossCurricular": "Chemistry: nitrates and the Haber process; Geography: farming",
-      "smsc": "Spiritual: the hidden work of tiny organisms in sustaining life",
-      "keywords": [
-        { "term": "nitrogen fixation", "def": "converting nitrogen gas into nitrogen compounds" },
-        { "term": "nitrification", "def": "bacteria converting ammonium to nitrates" },
-        { "term": "denitrification", "def": "bacteria converting nitrates back to nitrogen gas" },
-        { "term": "legume", "def": "plant (e.g. pea, bean) with root nodules containing nitrogen-fixing bacteria" }
-      ],
-      "starter": ["Process that removes CO₂?", "What do plants use nitrates for?", "% of air that is nitrogen?", "What do decomposers do?"],
-      "teach": [
-        { "heading": "Why nitrogen?", "bullets": ["Plants need nitrates to make proteins", "N₂ is unreactive: plants can't use it directly"], "note": "Answer the big question." },
-        { "heading": "The cycle", "bullets": ["Each stage relies on bacteria (except lightning and the Haber process)"], "note": "4BI1 requires the names of processes and bacteria.", "table": { "head": ["Process", "What happens", "Organisms"], "rows": [["Nitrogen fixation", "N₂ → nitrogen compounds", "nitrogen-fixing bacteria (root nodules, soil); also lightning"], ["Decomposition", "proteins in dead matter → ammonium", "decomposers (bacteria, fungi)"], ["Nitrification", "ammonium → nitrites → nitrates", "nitrifying bacteria"], ["Denitrification", "nitrates → N₂", "denitrifying bacteria (waterlogged soil)"]] } },
-        { "heading": "Managing soil", "bullets": ["Plant legumes in crop rotation", "Plough to aerate (helps nitrifying bacteria)", "Drain waterlogged soil"], "note": "Model.", "model": { "problem": "Explain why farmers drain waterlogged fields", "steps": ["Waterlogged soil lacks oxygen", "Denitrifying bacteria thrive in anaerobic conditions", "They turn nitrates into N₂, reducing fertility", "Draining adds oxygen and reduces denitrification"], "answer": "Prevents loss of nitrates" } },
-        { "heading": "Nitrification vs fixation", "bullets": ["Fixation starts with N₂ gas", "Nitrification starts with ammonium"], "note": "Common mix-up.", "misconception": { "wrong": "Nitrifying bacteria take nitrogen from the air", "right": "Nitrogen-fixing bacteria do that; nitrifying bacteria convert ammonium to nitrates" } },
-        { "heading": "Check: process", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which process returns nitrogen gas to the air?", "options": ["Fixation", "Nitrification", "Denitrification", "Decomposition"], "answer": 2, "why": "Denitrifying bacteria convert nitrates to N₂." } }
-      ],
-      "practice": ["What do plants need nitrates for?", "Where are nitrogen-fixing bacteria found?", "Name the process ammonium → nitrate"],
-      "independent": ["Core: Draw and label the nitrogen cycle", "Extend: Explain why peas and beans are used in crop rotation", "Stretch: Compare natural and artificial nitrogen fixation (Haber process) and their environmental effects."],
-      "exit": ["Define nitrification.", "Why can't plants use N₂?", "Why drain waterlogged soil?"],
-      "homework": "4BI1 nitrogen cycle exam question (6 marks).",
-      "send": "Support: labelled cycle with blanks. Stretch: Haber link."
-    },
-    {
-      "unit": "Biology: Ecology and the environment",
-      "n": 7,
-      "title": "Human influences: pollution and eutrophication",
-      "duration": 50,
-      "bigQuestion": "How can fertiliser on a field kill fish in a river?",
-      "objectives": ["Describe air and water pollution", "Explain eutrophication step by step", "Describe the effects of deforestation"],
-      "successCriteria": ["Name pollutants and their effects", "Explain eutrophication in sequence", "Evaluate ways to reduce human impact"],
-      "crossCurricular": "Geography: river pollution; Islamic Studies: stewardship and avoiding corruption on earth (Ar-Rum 30:41)",
-      "smsc": "Moral: our duty as khalifah; the Qur'anic command to eat and drink but not waste (Surah Al-A'raf 7:31)",
-      "keywords": [
-        { "term": "eutrophication", "def": "excess nutrients in water cause algal growth and oxygen loss" },
-        { "term": "algal bloom", "def": "rapid growth of algae on water" },
-        { "term": "greenhouse gas", "def": "traps heat, e.g. CO₂, methane" },
-        { "term": "deforestation", "def": "large-scale removal of forests" }
-      ],
-      "starter": ["Process returning N₂ to air?", "What do fertilisers contain?", "Name a greenhouse gas", "What do fish need from water?"],
-      "teach": [
-        { "heading": "Eutrophication", "bullets": ["A chain of events"], "note": "Answer the big question.", "model": { "problem": "Explain how fertiliser run-off kills fish (6 marks)", "steps": ["Rain washes nitrates into the river", "Algae grow rapidly (algal bloom)", "Algae block light: plants below die", "Decomposers break down dead plants and respire", "Oxygen in water falls", "Fish and other animals suffocate"], "answer": "Six linked steps" } },
-        { "heading": "Air pollution", "bullets": ["SO₂: acid rain", "CO: toxic", "CO₂ and methane: greenhouse gases"], "note": "Link to 4BI1 4.x on air pollution." },
-        { "heading": "Deforestation", "bullets": ["Less photosynthesis: more CO₂", "Soil erosion and flooding", "Loss of habitats and biodiversity"], "note": "Compare causes and effects.", "compare": { "left": { "title": "Causes", "points": ["Timber", "Farmland and cattle", "Palm oil plantations"] }, "right": { "title": "Effects", "points": ["Climate change", "Erosion and floods", "Extinctions"] } } },
-        { "heading": "Order matters", "bullets": ["Algae don't directly kill fish"], "note": "Mark schemes need the decomposer step.", "misconception": { "wrong": "Algae use up all the oxygen", "right": "Decomposers respiring on dead plants use up the oxygen" } },
-        { "heading": "Check: step", "bullets": [], "note": "Show me on 3.", "check": { "q": "In eutrophication, what directly causes oxygen levels to fall?", "options": ["Fertiliser", "Algae photosynthesising", "Decomposers respiring", "Fish swimming faster"], "answer": 2, "why": "Bacteria decomposing dead plants respire aerobically and use up dissolved oxygen." } }
-      ],
-      "practice": ["Explain eutrophication in four steps", "Name two effects of deforestation", "Effect of sulfur dioxide pollution?"],
-      "independent": ["Core: Flow diagram of eutrophication", "Extend: Evaluate three ways farmers can reduce eutrophication", "Stretch: Interpret oxygen-level data downstream of a sewage outlet and explain the pattern."],
-      "exit": ["What causes algal blooms?", "Why do fish die in eutrophication?", "One effect of deforestation?"],
-      "homework": "4BI1 human influences exam questions; begin ecology revision mind map.",
-      "send": "Support: step cards to order. Stretch: data interpretation."
-    },
-    {
-      "unit": "Chemistry: Organic chemistry",
-      "n": 8,
-      "title": "Hydrocarbons and homologous series",
-      "duration": 50,
-      "bigQuestion": "How can just two elements make thousands of different compounds?",
-      "objectives": ["Define hydrocarbon and homologous series", "Write molecular, structural, displayed and general formulae", "Describe trends within a homologous series"],
-      "successCriteria": ["Write formulae for the first four alkanes", "Draw displayed formulae", "Explain the features of a homologous series"],
-      "crossCurricular": "Physics: forces between molecules; Geography: oil resources",
-      "smsc": "Spiritual: complexity from simple rules",
-      "keywords": [
-        { "term": "hydrocarbon", "def": "a compound of hydrogen and carbon only" },
-        { "term": "homologous series", "def": "a family with the same general formula and similar chemical properties" },
-        { "term": "general formula", "def": "e.g. CₙH₂ₙ₊₂ for alkanes" },
-        { "term": "displayed formula", "def": "shows every atom and bond" }
-      ],
-      "starter": ["Bismillah. How many bonds does carbon form?", "Formula of methane?", "What is a compound?", "What is a covalent bond?"],
-      "teach": [
-        { "heading": "Alkanes", "bullets": ["Saturated: single C–C bonds", "General formula CₙH₂ₙ₊₂"], "note": "Answer the big question: carbon forms chains of any length.", "table": { "head": ["Name", "Molecular formula", "Structural formula"], "rows": [["Methane", "CH₄", "CH₄"], ["Ethane", "C₂H₆", "CH₃CH₃"], ["Propane", "C₃H₈", "CH₃CH₂CH₃"], ["Butane", "C₄H₁₀", "CH₃CH₂CH₂CH₃"]] } },
-        { "heading": "Homologous series features", "bullets": ["Same general formula", "Each member differs by CH₂", "Similar chemical properties", "Trend in physical properties (e.g. boiling point)"], "note": "4CH1 definition." },
-        { "heading": "Using the general formula", "bullets": ["Substitute n"], "note": "Model.", "model": { "problem": "Find the formula of the alkane with 8 carbon atoms", "steps": ["CₙH₂ₙ₊₂ with n = 8", "H = 2 × 8 + 2 = 18"], "answer": "C₈H₁₈ (octane)" } },
-        { "heading": "Formula types", "bullets": ["Molecular: atom counts", "Displayed: every bond"], "note": "Exam questions specify which.", "misconception": { "wrong": "CH₃CH₃ is a displayed formula", "right": "That is a structural formula; displayed shows every bond line" } },
-        { "heading": "Check: formula", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is an alkane?", "options": ["C₃H₆", "C₅H₁₂", "C₂H₄", "C₄H₈"], "answer": 1, "why": "C₅H₁₂ fits CₙH₂ₙ₊₂ (2 × 5 + 2 = 12). The others fit CₙH₂ₙ (alkenes)." } }
-      ],
-      "practice": ["Draw the displayed formula of propane", "Formula of the alkane with 6 carbons", "State two features of a homologous series"],
-      "independent": ["Core: Write molecular, structural and displayed formulae for C1–C4 alkanes", "Extend: Explain why boiling point increases along the series", "Stretch: Predict the formula and state at room temperature of the alkane with 20 carbons."],
-      "exit": ["General formula of alkanes?", "Define hydrocarbon.", "Formula of butane?"],
-      "homework": "4CH1 organic formula questions.",
-      "send": "Support: molecular model kit images. Stretch: naming rules."
-    },
-    {
-      "unit": "Chemistry: Organic chemistry",
-      "n": 9,
-      "title": "Isomers and naming",
-      "duration": 50,
-      "bigQuestion": "Can two different substances have exactly the same formula?",
-      "objectives": ["Define structural isomers", "Draw isomers of alkanes and alkenes", "Name simple organic compounds"],
-      "successCriteria": ["Draw two isomers of C₄H₁₀", "Name straight-chain alkanes and alkenes", "Draw isomers of C₅H₁₂ and C₄H₈"],
-      "crossCurricular": "Maths: systematic listing",
-      "smsc": "Spiritual: diversity within the same 'ingredients'",
-      "keywords": [
-        { "term": "structural isomers", "def": "same molecular formula, different structural formulae" },
-        { "term": "branched chain", "def": "a carbon chain with side groups" },
-        { "term": "prefix", "def": "meth- (1), eth- (2), prop- (3), but- (4), pent- (5)" },
-        { "term": "functional group", "def": "the group of atoms that determines the reactions" }
-      ],
-      "starter": ["General formula of alkanes?", "Formula of propane?", "How many carbons in 'but-'?", "Draw ethane"],
-      "teach": [
-        { "heading": "Same formula, different shape", "bullets": ["C₄H₁₀: butane and methylpropane", "Different boiling points"], "note": "Answer the big question.", "compare": { "left": { "title": "Butane", "points": ["Straight chain", "CH₃CH₂CH₂CH₃", "Boils at about −1 °C"] }, "right": { "title": "Methylpropane", "points": ["Branched chain", "CH₃CH(CH₃)CH₃", "Boils at about −12 °C"] } } },
-        { "heading": "Drawing isomers systematically", "bullets": ["Start with the longest chain", "Shorten by one, add a branch", "Check for duplicates"], "note": "Model.", "model": { "problem": "Draw the isomers of C₅H₁₂", "steps": ["Straight chain: pentane", "Four-carbon chain with one CH₃ branch: 2-methylbutane", "Three-carbon chain with two CH₃ branches on C2: 2,2-dimethylpropane", "Check: bending the chain is not a new isomer"], "answer": "Three isomers" } },
-        { "heading": "Bent chains are not isomers", "bullets": ["Rotate before counting"], "note": "Common error.", "misconception": { "wrong": "A bent drawing of pentane is a new isomer", "right": "It's the same molecule: the longest chain is still 5 carbons" } },
-        { "heading": "Check: isomers", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which pair are isomers?", "options": ["Ethane and ethene", "Butane and methylpropane", "Propane and propene", "Methane and ethane"], "answer": 1, "why": "Both are C₄H₁₀ with different structures." } }
-      ],
-      "practice": ["Define structural isomer", "Draw two isomers of C₄H₁₀", "Name CH₃CH₂CH₂CH₂CH₃"],
-      "independent": ["Core: Draw and name isomers of C₄H₁₀ and C₅H₁₂", "Extend: Draw isomers of C₄H₈ that are alkenes (but-1-ene, but-2-ene, methylpropene)", "Stretch: Explain why branched isomers have lower boiling points."],
-      "exit": ["Define isomer.", "How many isomers does C₄H₁₀ have?", "Name C₃H₈."],
-      "homework": "4CH1 isomer drawing questions.",
-      "send": "Support: carbon skeleton templates. Stretch: alkene positional isomers."
-    },
-    {
-      "unit": "Chemistry: Organic chemistry",
-      "n": 10,
-      "title": "Crude oil and fractional distillation",
-      "duration": 50,
-      "bigQuestion": "How does a thick black liquid become petrol, diesel and bitumen?",
-      "objectives": ["Describe crude oil as a mixture of hydrocarbons", "Describe fractional distillation in a column", "Name fractions and their uses"],
-      "successCriteria": ["Explain how the column separates fractions", "Name six fractions and their uses", "Explain trends in boiling point, viscosity and colour"],
-      "crossCurricular": "Geography: oil economies of the Gulf; Physics: changes of state",
-      "smsc": "Cultural and moral: oil wealth in Muslim-majority countries and responsibilities that come with it",
-      "keywords": [
-        { "term": "crude oil", "def": "a mixture of hydrocarbons formed from ancient marine organisms" },
-        { "term": "fraction", "def": "a group of hydrocarbons with similar boiling points" },
-        { "term": "viscosity", "def": "how thick and slow-flowing a liquid is" },
-        { "term": "fractionating column", "def": "tower hot at the bottom and cooler at the top" }
-      ],
-      "starter": ["Define isomer", "Is crude oil a compound or a mixture?", "What is fractional distillation?", "Name a fuel from oil"],
-      "teach": [
-        { "heading": "The column", "bullets": ["Crude oil heated and vaporised", "Vapours rise and cool", "Each fraction condenses at its boiling point"], "note": "Answer the big question." },
-        { "heading": "Fractions and uses", "bullets": ["4CH1 named fractions"], "note": "Learn top to bottom.", "table": { "head": ["Fraction", "Use"], "rows": [["Refinery gases", "bottled gas for heating and cooking"], ["Gasoline (petrol)", "car fuel"], ["Kerosene", "aircraft fuel"], ["Diesel", "lorry and car fuel"], ["Fuel oil", "ships, power stations"], ["Bitumen", "road surfaces, roofs"]] } },
-        { "heading": "Trends", "bullets": ["Bigger molecules: higher boiling point", "More viscous, darker, harder to ignite"], "note": "Model.", "model": { "problem": "Explain why bitumen collects at the bottom of the column", "steps": ["Bitumen has very large molecules", "Stronger forces between molecules", "Very high boiling point", "Does not vaporise; collects at the bottom"], "answer": "Large molecules → high boiling point" } },
-        { "heading": "Bonds aren't broken", "bullets": ["Only intermolecular forces are overcome"], "note": "Clarify.", "misconception": { "wrong": "Boiling breaks covalent bonds in hydrocarbons", "right": "Boiling overcomes forces between molecules; covalent bonds stay intact" } },
-        { "heading": "Check: fraction", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which fraction is used as aircraft fuel?", "options": ["Gasoline", "Kerosene", "Bitumen", "Fuel oil"], "answer": 1, "why": "Kerosene is jet fuel." } }
-      ],
-      "practice": ["Name the fraction used on roads", "Which fraction has the lowest boiling point?", "How does viscosity change down the column?"],
-      "independent": ["Core: Label a fractionating column with six fractions and uses", "Extend: Explain trends in boiling point, viscosity and ease of ignition", "Stretch: Explain why there is more demand for petrol than is produced by distillation (link to cracking)."],
-      "exit": ["What is a fraction?", "Use of diesel?", "Why is the column hot at the bottom?"],
-      "homework": "4CH1 crude oil questions (8 marks).",
-      "send": "Support: column template. Stretch: supply and demand data."
-    },
-    {
-      "unit": "Chemistry: Organic chemistry",
-      "n": 11,
-      "title": "Combustion of fuels and pollutants",
-      "duration": 50,
-      "bigQuestion": "Why do car engines produce gases that aren't in the fuel?",
-      "objectives": ["Write equations for complete and incomplete combustion", "Explain how carbon monoxide, sulfur dioxide and nitrogen oxides form", "Describe their effects"],
-      "successCriteria": ["Write balanced equations for complete combustion of alkanes", "Explain the formation of CO, SO₂ and NOₓ", "Explain their environmental and health effects"],
-      "crossCurricular": "Biology: carbon monoxide and haemoglobin; Geography: acid rain",
-      "smsc": "Moral: health of others and the planet",
-      "keywords": [
-        { "term": "complete combustion", "def": "burning in plenty of oxygen to form CO₂ and H₂O" },
-        { "term": "incomplete combustion", "def": "burning in limited oxygen forming CO or C" },
-        { "term": "nitrogen oxides", "def": "formed when N₂ and O₂ react at high temperatures in engines" },
-        { "term": "acid rain", "def": "rain made acidic by SO₂ and NOₓ" }
-      ],
-      "starter": ["Use of kerosene?", "Products of complete combustion?", "Is N₂ in petrol?", "Test for CO₂?"],
-      "teach": [
-        { "heading": "Balancing combustion", "bullets": ["Balance C, then H, then O"], "note": "Model.", "model": { "problem": "Balance the complete combustion of propane", "steps": ["C₃H₈ + O₂ → CO₂ + H₂O", "Carbon: 3CO₂", "Hydrogen: 4H₂O", "Oxygen: 6 + 4 = 10 atoms → 5O₂"], "answer": "C₃H₈ + 5O₂ → 3CO₂ + 4H₂O" } },
-        { "heading": "Pollutants", "bullets": ["Each has a different origin"], "note": "Answer the big question: NOₓ come from air in the engine.", "table": { "head": ["Pollutant", "Formed by", "Effect"], "rows": [["Carbon monoxide", "incomplete combustion", "toxic: binds haemoglobin"], ["Soot (carbon)", "incomplete combustion", "breathing problems, global dimming"], ["Sulfur dioxide", "sulfur impurities burning", "acid rain"], ["Nitrogen oxides", "N₂ + O₂ at high engine temperatures", "acid rain, smog"]] } },
-        { "heading": "CO toxicity", "bullets": ["Combines with haemoglobin", "Reduces oxygen transport", "Colourless, odourless"], "note": "4CH1 asks for this explanation.", "misconception": { "wrong": "Nitrogen oxides come from nitrogen in the fuel", "right": "They form from nitrogen and oxygen in the air at high temperatures" } },
-        { "heading": "Check: balance", "bullets": [], "note": "Show me on 3.", "check": { "q": "How many O₂ molecules completely burn one CH₄?", "options": ["1", "2", "3", "4"], "answer": 1, "why": "CH₄ + 2O₂ → CO₂ + 2H₂O. Oxygen atoms: 2 + 2 = 4, so 2O₂." } }
-      ],
-      "practice": ["Balance combustion of ethane", "Why is CO toxic?", "Source of SO₂?"],
-      "independent": ["Core: Balance equations for complete combustion of C1–C4 alkanes", "Extend: Write an equation for incomplete combustion of methane producing CO", "Stretch: Explain how catalytic converters reduce CO and NOₓ emissions."],
-      "exit": ["Balanced equation for methane combustion?", "How do NOₓ form?", "Effect of SO₂?"],
-      "homework": "4CH1 combustion equation practice.",
-      "send": "Support: balancing frame. Stretch: catalytic converter equations."
-    },
-    {
-      "unit": "Chemistry: Organic chemistry",
-      "n": 12,
-      "title": "Cracking",
-      "duration": 50,
-      "bigQuestion": "Why break big molecules into smaller ones?",
-      "objectives": ["Describe catalytic cracking", "Write equations for cracking", "Explain why cracking is needed"],
-      "successCriteria": ["State the conditions for cracking", "Balance cracking equations", "Explain cracking using supply and demand data"],
-      "crossCurricular": "Business: supply and demand; Physics: thermal energy",
-      "smsc": "Moral: efficient use of finite resources",
-      "keywords": [
-        { "term": "cracking", "def": "breaking long-chain alkanes into shorter alkanes and alkenes" },
-        { "term": "catalyst", "def": "speeds up a reaction without being used up" },
-        { "term": "alkene", "def": "an unsaturated hydrocarbon with a C=C double bond" },
-        { "term": "unsaturated", "def": "contains a carbon–carbon double bond" }
-      ],
-      "starter": ["Balance CH₄ combustion", "Use of fuel oil?", "Formula of an alkane with 10 carbons?", "What is a catalyst?"],
-      "teach": [
-        { "heading": "Why crack?", "bullets": ["More long chains produced than needed", "High demand for petrol", "Alkenes needed to make polymers"], "note": "Answer the big question with supply/demand chart." },
-        { "heading": "Conditions", "bullets": ["Heat to vaporise", "Silica or alumina catalyst at about 600–700 °C"], "note": "4CH1 conditions." },
-        { "heading": "Equations", "bullets": ["Atoms must balance", "Products: shorter alkane + alkene"], "note": "Model.", "model": { "problem": "C₁₀H₂₂ is cracked into C₈H₁₈ and one other product. What is it?", "steps": ["Carbon: 10 − 8 = 2", "Hydrogen: 22 − 18 = 4", "Product: C₂H₄"], "answer": "Ethene, C₂H₄" } },
-        { "heading": "Cracking isn't combustion", "bullets": ["No oxygen involved"], "note": "Clarify.", "misconception": { "wrong": "Cracking burns the hydrocarbon", "right": "Cracking is thermal decomposition: no oxygen" } },
-        { "heading": "Check: equation", "bullets": [], "note": "Show me on 3.", "check": { "q": "C₁₂H₂₆ → C₈H₁₈ + ?", "options": ["C₄H₈", "C₄H₁₀", "C₂H₄", "C₃H₆"], "answer": 0, "why": "C: 12 − 8 = 4, H: 26 − 18 = 8, so C₄H₈ (an alkene)." } }
-      ],
-      "practice": ["Conditions for cracking?", "Complete: C₆H₁₄ → C₄H₁₀ + ?", "Two reasons for cracking"],
-      "independent": ["Core: Balance five cracking equations", "Extend: Use supply and demand data to explain cracking", "Stretch: C₁₄H₃₀ cracks into C₈H₁₈ and two molecules of the same alkene. Find the alkene."],
-      "exit": ["What is cracking?", "Catalyst used?", "Why is ethene useful?"],
-      "homework": "4CH1 cracking questions (6 marks).",
-      "send": "Support: atom-counting frame. Stretch: multi-product equations."
-    },
-    {
-      "unit": "Chemistry: Organic chemistry",
-      "n": 13,
-      "title": "Alkanes and alkenes: reactions",
-      "duration": 50,
-      "bigQuestion": "How can bromine water tell an alkane from an alkene?",
-      "objectives": ["Describe substitution of alkanes with halogens", "Describe addition reactions of alkenes", "Describe the bromine water test"],
-      "successCriteria": ["Write the equation for methane + bromine in UV light", "Write the addition of bromine to ethene", "Explain the bromine water test using the double bond"],
-      "crossCurricular": "Biology: saturated and unsaturated fats",
-      "smsc": "Spiritual: wonder at how one double bond changes everything",
-      "keywords": [
-        { "term": "substitution", "def": "an atom is swapped for another atom" },
-        { "term": "addition", "def": "atoms add across a double bond" },
-        { "term": "bromine water", "def": "orange solution that decolourises with alkenes" },
-        { "term": "saturated", "def": "only single bonds" }
-      ],
-      "starter": ["C₁₀H₂₂ → C₈H₁₈ + ?", "General formula of alkenes?", "What is unsaturated?", "Formula of ethene?"],
-      "teach": [
-        { "heading": "Alkanes: substitution", "bullets": ["Need UV light", "H replaced by halogen"], "note": "CH₄ + Br₂ → CH₃Br + HBr (UV light)." },
-        { "heading": "Alkenes: addition", "bullets": ["The C=C opens", "Two atoms add across it"], "note": "Model.", "model": { "problem": "Write the equation for ethene reacting with bromine", "steps": ["C₂H₄ + Br₂", "The double bond opens", "One Br adds to each carbon", "Product: 1,2-dibromoethane"], "answer": "C₂H₄ + Br₂ → C₂H₄Br₂" } },
-        { "heading": "The test", "bullets": ["Orange bromine water", "Alkene: decolourises", "Alkane: stays orange (no UV)"], "note": "Answer the big question.", "compare": { "left": { "title": "Alkane + bromine water", "points": ["Stays orange", "No double bond", "Saturated"] }, "right": { "title": "Alkene + bromine water", "points": ["Turns colourless", "Addition across C=C", "Unsaturated"] } } },
-        { "heading": "Colour words", "bullets": ["'Clear' means see-through, not colourless"], "note": "Mark schemes reject 'clear'.", "misconception": { "wrong": "Bromine water turns clear", "right": "Bromine water turns colourless" } },
-        { "heading": "Check: test", "bullets": [], "note": "Show me on 3.", "check": { "q": "A hydrocarbon decolourises bromine water. It is…", "options": ["Saturated", "An alkene", "An alkane", "Methane"], "answer": 1, "why": "Decolourising shows a C=C double bond: an alkene." } }
-      ],
-      "practice": ["Describe the bromine water test", "Product of ethene + bromine?", "Condition for alkane substitution?"],
-      "independent": ["Core: Write equations for substitution and addition reactions", "Extend: Draw displayed formulae for the reaction of propene with bromine", "Stretch: Explain why the reaction of methane and bromine produces a mixture of products."],
-      "exit": ["What colour change shows an alkene?", "Name the reaction type for alkenes with bromine.", "Why don't alkanes react with bromine water in the dark?"],
-      "homework": "4CH1 alkene questions (8 marks).",
-      "send": "Support: colour cards. Stretch: hydrogenation."
-    },
-    {
-      "unit": "Chemistry: Organic chemistry",
-      "n": 14,
-      "title": "Addition polymers",
-      "duration": 50,
-      "bigQuestion": "How does a gas like ethene become a solid plastic bag?",
-      "objectives": ["Describe addition polymerisation", "Draw repeat units from monomers and monomers from repeat units", "Describe problems with disposal of addition polymers"],
-      "successCriteria": ["Draw the repeat unit of poly(ethene)", "Draw repeat units for poly(propene) and poly(chloroethene)", "Evaluate disposal methods for polymers"],
-      "crossCurricular": "Geography: plastic waste; Islamic Studies: avoiding waste (israf)",
-      "smsc": "Moral: responsibility for waste",
-      "keywords": [
-        { "term": "monomer", "def": "small molecule that joins to form a polymer" },
-        { "term": "addition polymer", "def": "polymer formed by monomers with C=C adding together" },
-        { "term": "repeat unit", "def": "the section repeated along the polymer chain" },
-        { "term": "non-biodegradable", "def": "not broken down by microorganisms" }
-      ],
-      "starter": ["Test for an alkene?", "Formula of ethene?", "What is a polymer?", "Name a plastic"],
-      "teach": [
-        { "heading": "Addition polymerisation", "bullets": ["Many alkene monomers", "C=C bonds open", "Join into a long chain"], "note": "Answer the big question.", "model": { "problem": "Draw the repeat unit of poly(propene) from propene, CH₂=CHCH₃", "steps": ["Draw the C=C with its groups: H, H, H, CH₃", "Change C=C to C–C", "Put brackets around the two carbons", "Add bonds out through the brackets and a subscript n"], "answer": "–[CH₂–CH(CH₃)]ₙ–" } },
-        { "heading": "From polymer to monomer", "bullets": ["Take the repeat unit", "Put back the double bond", "Remove the brackets"], "note": "Practise with PVC: repeat unit –CH₂–CHCl– → monomer CH₂=CHCl." },
-        { "heading": "Disposal", "bullets": ["Landfill: non-biodegradable", "Incineration: energy but toxic gases", "Recycling: sorting is difficult"], "note": "4CH1 requires disposal problems.", "table": { "head": ["Method", "Advantage", "Disadvantage"], "rows": [["Landfill", "cheap", "lasts for centuries; uses land"], ["Incineration", "releases energy", "CO₂ and toxic gases (e.g. HCl from PVC)"], ["Recycling", "saves crude oil", "sorting is costly; quality falls"]] } },
-        { "heading": "Repeat-unit errors", "bullets": ["No double bond inside the repeat unit"], "note": "Common.", "misconception": { "wrong": "Repeat unit keeps the C=C", "right": "The double bond opens; the repeat unit has C–C" } },
-        { "heading": "Check: monomer", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which monomer makes poly(chloroethene)?", "options": ["CH₂=CH₂", "CH₂=CHCl", "CH₃CH₂Cl", "CHCl=CHCl"], "answer": 1, "why": "Chloroethene is CH₂=CHCl. C has no double bond, so it can't add-polymerise." } }
-      ],
-      "practice": ["Draw the repeat unit of poly(ethene)", "Draw the monomer of –[CH₂–CH(CH₃)]–", "One problem with incinerating PVC"],
-      "independent": ["Core: Draw repeat units for three polymers from their monomers", "Extend: Draw monomers from three repeat units", "Stretch: Evaluate landfill, incineration and recycling for a city council."],
-      "exit": ["What type of reaction makes poly(ethene)?", "Monomer of PVC?", "Why is landfill a problem for polymers?"],
-      "homework": "4CH1 polymer questions; start organic chemistry revision cards.",
-      "send": "Support: repeat-unit template. Stretch: condensation polymers preview (separate chemistry)."
-    },
-    {
-      "unit": "Physics: Astrophysics",
-      "n": 15,
-      "title": "Gravity and the Solar System",
-      "duration": 50,
-      "bigQuestion": "Why doesn't the Moon fall down to Earth?",
-      "objectives": ["Describe the Solar System", "Explain that gravity causes orbits", "Compare gravitational field strength on different bodies"],
-      "successCriteria": ["Name the bodies in the Solar System", "Explain orbits as gravity providing the centripetal force", "Compare orbits of planets, moons, comets and artificial satellites"],
-      "crossCurricular": "History: Muslim astronomers such as al-Biruni and Ulugh Beg; Islamic Studies: the precise orbits (Surah Ya-Sin 36:40)",
-      "smsc": "Spiritual: 'each is floating in an orbit' (Ya-Sin 36:40); wonder at the heavens",
-      "keywords": [
-        { "term": "orbit", "def": "the curved path of one body around another" },
-        { "term": "gravitational field strength", "def": "force per kg; varies between planets" },
-        { "term": "comet", "def": "icy body with a highly elliptical orbit around the Sun" },
-        { "term": "natural satellite", "def": "a moon orbiting a planet" }
-      ],
-      "starter": ["Bismillah. W = mg: 50 kg on Earth?", "Name the planets in order", "What force keeps us on the ground?", "g on Earth?"],
-      "teach": [
-        { "heading": "The Solar System", "bullets": ["Sun (a star)", "Eight planets", "Moons, dwarf planets, comets, asteroids"], "note": "4PH1 Section 8." },
-        { "heading": "Gravity and orbits", "bullets": ["Gravity pulls towards the centre", "Changes direction, not speed (circular orbit)", "The Moon is always falling, but always missing"], "note": "Answer the big question.", "compare": { "left": { "title": "Planets and moons", "points": ["Nearly circular orbits", "Steady speed", "Planets orbit the Sun"] }, "right": { "title": "Comets", "points": ["Very elliptical orbits", "Fastest near the Sun", "Long periods away"] } } },
-        { "heading": "Different g", "bullets": ["g depends on mass and radius of the planet"], "note": "Model.", "model": { "problem": "A 70 kg astronaut on the Moon (g = 1.6 N/kg) and Mars (g = 3.7 N/kg). Find each weight.", "steps": ["W = mg", "Moon: 70 × 1.6 = 112 N", "Mars: 70 × 3.7 = 259 N"], "answer": "112 N and 259 N" } },
-        { "heading": "Orbit means no gravity?", "bullets": ["Astronauts float because they are falling around Earth"], "note": "Key misconception.", "misconception": { "wrong": "There is no gravity in space", "right": "Gravity still acts; astronauts are in free fall around Earth" } },
-        { "heading": "Check: orbit", "bullets": [], "note": "Show me on 3.", "check": { "q": "What provides the force that keeps Earth in orbit?", "options": ["Magnetism", "The Sun's gravity", "Air resistance", "Earth's spin"], "answer": 1, "why": "The Sun's gravitational pull acts towards the centre of the orbit." } }
-      ],
-      "practice": ["Name a natural satellite", "What shape is a comet's orbit?", "Weight of 10 kg on the Moon?"],
-      "independent": ["Core: Compare orbits of a planet, a moon, a comet and an artificial satellite", "Extend: Explain why a comet speeds up near the Sun", "Stretch: Research al-Biruni's estimate of Earth's radius and explain his method."],
-      "exit": ["What keeps planets in orbit?", "Shape of a comet's orbit?", "Why do astronauts float?"],
-      "homework": "4PH1 Section 8 questions on gravity and orbits.",
-      "send": "Support: Solar System diagram. Stretch: Newton's cannonball."
-    },
-    {
-      "unit": "Physics: Astrophysics",
-      "n": 16,
-      "title": "Orbital speed",
-      "duration": 50,
-      "bigQuestion": "How fast is the International Space Station moving?",
-      "objectives": ["Use orbital speed = (2 × π × orbital radius) ÷ time period", "Convert units for orbital calculations", "Compare orbital speeds"],
-      "successCriteria": ["Calculate orbital speed", "Rearrange to find the period or radius", "Explain why closer satellites move faster"],
-      "crossCurricular": "Maths: circumference and standard form",
-      "smsc": "Spiritual: the precise timing of the heavens (Ar-Rahman 55:5, 'the sun and the moon move by precise calculation')",
-      "keywords": [
-        { "term": "orbital speed", "def": "speed of an object in orbit" },
-        { "term": "orbital radius", "def": "distance from the centre of the body being orbited" },
-        { "term": "time period", "def": "time for one complete orbit" },
-        { "term": "geostationary", "def": "orbit with a 24-hour period above the equator" }
-      ],
-      "starter": ["Circumference of a circle radius 5 m?", "Seconds in a day?", "Write 6 400 000 in standard form", "What keeps satellites in orbit?"],
-      "teach": [
-        { "heading": "The equation", "bullets": ["v = 2πr ÷ T", "r in metres, T in seconds", "Distance round the orbit ÷ time"], "note": "4PH1 formula." },
-        { "heading": "The ISS", "bullets": ["Orbital radius about 6.8 × 10⁶ m", "Period about 92 minutes"], "note": "Answer the big question.", "model": { "problem": "Find the ISS's orbital speed: r = 6.8 × 10⁶ m, T = 92 min", "steps": ["T = 92 × 60 = 5520 s", "Circumference = 2 × π × 6.8 × 10⁶ = 4.27 × 10⁷ m", "v = 4.27 × 10⁷ ÷ 5520"], "answer": "About 7700 m/s (7.7 km/s)" } },
-        { "heading": "Radius from the centre", "bullets": ["Add Earth's radius to the altitude"], "note": "Common error.", "misconception": { "wrong": "Use the satellite's height above the ground as r", "right": "r = Earth's radius + height above the surface" } },
-        { "heading": "Check: units", "bullets": [], "note": "Show me on 3.", "check": { "q": "A moon orbits at r = 4.0 × 10⁸ m with T = 2.4 × 10⁶ s. Speed?", "options": ["170 m/s", "1050 m/s", "333 m/s", "6000 m/s"], "answer": 1, "why": "2π × 4.0 × 10⁸ ÷ 2.4 × 10⁶ ≈ 1050 m/s." } }
-      ],
-      "practice": ["Orbital speed: r = 1.0 × 10⁷ m, T = 1.0 × 10⁴ s", "Rearrange for T", "Why do closer satellites move faster?"],
-      "independent": ["Core: Calculate orbital speeds for three satellites", "Extend: Earth orbits the Sun at r = 1.5 × 10¹¹ m in one year. Find Earth's orbital speed", "Stretch: Calculate the orbital radius of a geostationary satellite moving at 3070 m/s."],
-      "exit": ["Formula for orbital speed?", "Units for T?", "What period does a geostationary satellite have?"],
-      "homework": "4PH1 orbital speed calculations.",
-      "send": "Support: calculation frame. Stretch: Kepler's third law preview."
-    },
-    {
-      "unit": "Physics: Astrophysics",
-      "n": 17,
-      "title": "The life cycle of stars",
-      "duration": 50,
-      "bigQuestion": "Is the iron in your blood made inside a star?",
-      "objectives": ["Describe the life cycle of a Sun-like star", "Describe the life cycle of a massive star", "Explain nuclear fusion in stars"],
-      "successCriteria": ["Order the stages for a Sun-like star", "Order the stages for a massive star", "Explain how heavy elements are formed and spread"],
-      "crossCurricular": "Chemistry: elements and the periodic table",
-      "smsc": "Spiritual: stars as signs and lamps (Surah Al-Mulk 67:5)",
-      "keywords": [
-        { "term": "nebula", "def": "a cloud of dust and gas where stars form" },
-        { "term": "nuclear fusion", "def": "small nuclei join to form larger ones, releasing energy" },
-        { "term": "main sequence", "def": "stable stage where fusion balances gravity" },
-        { "term": "supernova", "def": "the explosion of a massive star" }
-      ],
-      "starter": ["Orbital speed formula?", "What is the Sun?", "Name the lightest element", "What is fusion?"],
-      "teach": [
-        { "heading": "Star birth and main sequence", "bullets": ["Nebula collapses under gravity", "Protostar heats up", "Fusion begins: main sequence", "Outward pressure balances gravity"], "note": "4PH1 terms." },
-        { "heading": "Two paths", "bullets": ["Depends on mass"], "note": "Compare.", "compare": { "left": { "title": "Sun-like star", "points": ["Red giant", "Planetary nebula", "White dwarf"] }, "right": { "title": "Massive star", "points": ["Red supergiant", "Supernova", "Neutron star or black hole"] } } },
-        { "heading": "Making elements", "bullets": ["Fusion makes elements up to iron", "Heavier elements form in supernovae", "Explosions spread elements into space"], "note": "Answer the big question: yes, the iron atoms were made in stars.", "model": { "problem": "Explain how elements heavier than iron reach Earth", "steps": ["Massive stars fuse elements up to iron in their cores", "In a supernova, heavier elements form", "The explosion scatters them into space", "They become part of new nebulae, planets and us"], "answer": "Supernovae make and spread heavy elements" } },
-        { "heading": "Fusion vs fission", "bullets": ["Stars use fusion"], "note": "Common error.", "misconception": { "wrong": "Stars produce energy by fission", "right": "Stars produce energy by fusion of light nuclei" } },
-        { "heading": "Check: sequence", "bullets": [], "note": "Show me on 3.", "check": { "q": "What comes after the red giant stage for a Sun-like star?", "options": ["Supernova", "White dwarf (after a planetary nebula)", "Black hole", "Protostar"], "answer": 1, "why": "Low-mass stars shed outer layers as a planetary nebula, leaving a white dwarf." } }
-      ],
-      "practice": ["Order the stages of the Sun", "What balances gravity in a main-sequence star?", "What forms after a supernova?"],
-      "independent": ["Core: Draw a flow chart of both life cycles", "Extend: Explain why the main sequence is stable", "Stretch: Explain why a massive star has a shorter life than the Sun."],
-      "exit": ["What is a nebula?", "What process powers stars?", "End stage of the most massive stars?"],
-      "homework": "4PH1 star life cycle questions.",
-      "send": "Support: card sort. Stretch: HR diagram preview."
-    },
-    {
-      "unit": "Physics: Astrophysics",
-      "n": 18,
-      "title": "Classifying stars: colour, temperature and brightness",
-      "duration": 50,
-      "bigQuestion": "Why do some stars look red and others blue?",
-      "objectives": ["Relate star colour to surface temperature", "Distinguish absolute and apparent magnitude", "Use a Hertzsprung–Russell diagram"],
-      "successCriteria": ["Order stars by colour and temperature", "Explain absolute vs apparent magnitude", "Locate star types on an HR diagram"],
-      "crossCurricular": "Chemistry: flame colours; History: star names of Arabic origin (Aldebaran, Betelgeuse, Rigel)",
-      "smsc": "Cultural: many star names come from Arabic (e.g. Aldebaran from al-Dabaran)",
-      "keywords": [
-        { "term": "absolute magnitude", "def": "how bright a star would be at a standard distance (10 parsecs)" },
-        { "term": "apparent magnitude", "def": "how bright a star looks from Earth" },
-        { "term": "Hertzsprung–Russell diagram", "def": "plot of absolute magnitude against temperature" },
-        { "term": "surface temperature", "def": "temperature of a star's outer layer" }
-      ],
-      "starter": ["What powers a star?", "Name the end stage of the Sun", "Is a hotter flame red or blue?", "Why does a torch look dimmer far away?"],
-      "teach": [
-        { "heading": "Colour and temperature", "bullets": ["Red: coolest (about 3 000 K)", "Yellow: Sun (about 5 800 K)", "Blue-white: hottest (over 10 000 K)"], "note": "Answer the big question.", "table": { "head": ["Colour", "Approx. temperature", "Example"], "rows": [["Red", "3 000 K", "Betelgeuse"], ["Yellow", "5 800 K", "the Sun"], ["White", "10 000 K", "Sirius"], ["Blue", "20 000 K +", "Rigel"]] } },
-        { "heading": "Brightness", "bullets": ["Apparent: as seen from Earth (depends on distance)", "Absolute: at a standard distance (true output)", "Lower magnitude number = brighter"], "note": "4PH1 terms." },
-        { "heading": "HR diagram", "bullets": ["Temperature decreases to the right", "Main sequence: diagonal band", "Giants top right; white dwarfs bottom left"], "note": "Model.", "model": { "problem": "A star is hot but has a very dim absolute magnitude. Where is it and what is it?", "steps": ["Hot: left side", "Dim: bottom", "Bottom left region"], "answer": "A white dwarf" } },
-        { "heading": "Bright doesn't mean close", "bullets": ["A star can look bright because it is near or very luminous"], "note": "Clarify.", "misconception": { "wrong": "A higher magnitude number means brighter", "right": "Lower (or more negative) magnitude means brighter" } },
-        { "heading": "Check: colour", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which star is hottest?", "options": ["Red", "Orange", "Yellow", "Blue"], "answer": 3, "why": "Blue stars have the highest surface temperatures." } }
-      ],
-      "practice": ["Order: yellow, blue, red stars by temperature", "Define apparent magnitude", "Where are red giants on an HR diagram?"],
-      "independent": ["Core: Plot five stars on a blank HR diagram", "Extend: Explain why apparent magnitude alone can't show true brightness", "Stretch: Trace the Sun's path on the HR diagram through its life."],
-      "exit": ["Colour of the coolest stars?", "What does absolute magnitude measure?", "Where is the main sequence?"],
-      "homework": "4PH1 HR diagram questions.",
-      "send": "Support: labelled HR diagram. Stretch: luminosity calculations."
-    },
-    {
-      "unit": "Physics: Astrophysics",
-      "n": 19,
-      "title": "Red-shift and the expanding universe",
-      "duration": 50,
-      "bigQuestion": "How do we know the universe is expanding?",
-      "objectives": ["Describe red-shift", "Use the red-shift equation", "Explain how red-shift supports the Big Bang"],
-      "successCriteria": ["Explain red-shift in terms of wavelength", "Use Δλ/λ₀ = v/c", "Explain why more distant galaxies show greater red-shift"],
-      "crossCurricular": "Islamic Studies: Surah Adh-Dhariyat 51:47 ('We are expanding it'), often discussed alongside modern cosmology",
-      "smsc": "Spiritual: reflection on the origin of the universe; scientific and faith perspectives in dialogue",
-      "keywords": [
-        { "term": "red-shift", "def": "increase in wavelength of light from a source moving away" },
-        { "term": "Doppler effect", "def": "change in observed wavelength due to motion of the source" },
-        { "term": "Big Bang theory", "def": "the universe began from an extremely hot, dense state and has been expanding" },
-        { "term": "speed of light (c)", "def": "3 × 10⁸ m/s" }
-      ],
-      "starter": ["Hottest star colour?", "Wavelength of red vs blue light?", "What is the Doppler effect for sound?", "Speed of light?"],
-      "teach": [
-        { "heading": "Red-shift", "bullets": ["Galaxies moving away: wavelengths stretched", "Spectral lines shift towards red"], "note": "Compare with an ambulance siren's pitch dropping as it moves away." },
-        { "heading": "The equation", "bullets": ["Δλ ÷ λ₀ = v ÷ c"], "note": "Model.", "model": { "problem": "A line at 656 nm is observed at 669 nm. Find the galaxy's speed.", "steps": ["Δλ = 669 − 656 = 13 nm", "Δλ/λ₀ = 13 ÷ 656 = 0.0198", "v = 0.0198 × 3 × 10⁸"], "answer": "About 5.9 × 10⁶ m/s, moving away" } },
-        { "heading": "Evidence for expansion", "bullets": ["Almost all galaxies are red-shifted", "More distant galaxies: greater red-shift", "So the universe is expanding"], "note": "Answer the big question. Hubble 1929.", "timeline": [{ "label": "1912", "text": "Slipher measures red-shifts of galaxies" }, { "label": "1929", "text": "Hubble links red-shift to distance" }, { "label": "1965", "text": "CMB discovered by Penzias and Wilson" }] },
-        { "heading": "Red-shift isn't colour change", "bullets": ["Galaxies don't look red"], "note": "Clarify.", "misconception": { "wrong": "Red-shifted galaxies appear red", "right": "Spectral lines shift towards longer wavelengths" } },
-        { "heading": "Check: meaning", "bullets": [], "note": "Show me on 3.", "check": { "q": "A galaxy's red-shift is larger than another's. What does this suggest?", "options": ["It is closer", "It is moving away faster and is further away", "It is hotter", "It is smaller"], "answer": 1, "why": "Greater red-shift means faster recession, which correlates with greater distance." } }
-      ],
-      "practice": ["Define red-shift", "Δλ = 4 nm, λ₀ = 400 nm: v?", "What does red-shift show about galaxies?"],
-      "independent": ["Core: Three red-shift calculations", "Extend: Explain how red-shift data supports the Big Bang theory", "Stretch: Explain why some nearby galaxies (e.g. Andromeda) show blue-shift."],
-      "exit": ["What is red-shift?", "Red-shift equation?", "What does red-shift tell us about the universe?"],
-      "homework": "4PH1 red-shift calculation questions.",
-      "send": "Support: equation frame. Stretch: Hubble's law."
-    },
-    {
-      "unit": "Physics: Astrophysics",
-      "n": 20,
-      "title": "Cosmic microwave background and evaluating the Big Bang",
-      "duration": 50,
-      "bigQuestion": "What is the 'afterglow' left in the sky, and what does it prove?",
-      "objectives": ["Describe cosmic microwave background radiation (CMB)", "Explain how the CMB supports the Big Bang", "Evaluate evidence for theories of the universe"],
-      "successCriteria": ["Describe the CMB", "Explain two pieces of evidence for the Big Bang", "Evaluate the Big Bang against the Steady State theory"],
-      "crossCurricular": "Philosophy and Islamic Studies: origins and creation",
-      "smsc": "Spiritual: the relationship between scientific evidence and faith; Muslim scholars hold a range of views",
-      "keywords": [
-        { "term": "cosmic microwave background", "def": "microwave radiation detected from all directions, left over from the early universe" },
-        { "term": "Steady State theory", "def": "an earlier theory that the universe has always existed in the same state" },
-        { "term": "evidence", "def": "observations that support or refute a theory" },
-        { "term": "theory", "def": "a well-tested explanation" }
-      ],
-      "starter": ["Define red-shift", "Speed of light?", "Which part of the EM spectrum has longer wavelengths than light?", "Who discovered expansion?"],
-      "teach": [
-        { "heading": "The CMB", "bullets": ["Detected from every direction", "Microwave radiation", "Originally very high-energy radiation, stretched by expansion"], "note": "Answer the big question." },
-        { "heading": "Two theories", "bullets": ["Big Bang explains both red-shift and the CMB", "Steady State cannot explain the CMB"], "note": "Compare.", "compare": { "left": { "title": "Big Bang", "points": ["Universe began hot and dense", "Explains red-shift", "Explains the CMB"] }, "right": { "title": "Steady State", "points": ["Universe always existed", "Explains red-shift (with new matter)", "Cannot explain the CMB"] } } },
-        { "heading": "A 6-mark evaluation", "bullets": ["Evidence + explanation + conclusion"], "note": "Model.", "model": { "problem": "Evaluate the evidence for the Big Bang theory (6 marks)", "steps": ["Red-shift: galaxies moving away, so the universe is expanding", "Further galaxies recede faster: consistent with expansion from a point", "CMB: predicted leftover radiation, detected from all directions", "Steady State can't explain the CMB", "Conclusion: Big Bang is the best-supported model"], "answer": "Evidence → explanation → judgement" } },
-        { "heading": "A theory isn't a guess", "bullets": ["Scientific theories are tested explanations"], "note": "Clarify.", "misconception": { "wrong": "'Just a theory' means a guess", "right": "A scientific theory is supported by lots of evidence" } },
-        { "heading": "Check: CMB", "bullets": [], "note": "Show me on 3.", "check": { "q": "Why does the CMB support the Big Bang but not Steady State?", "options": ["It is red-shifted visible light", "Big Bang predicts leftover radiation from a hot early universe", "It only comes from the Sun", "Steady State predicts more CMB"], "answer": 1, "why": "The CMB is explained as radiation from the hot early universe, stretched by expansion." } }
-      ],
-      "practice": ["Describe the CMB", "Two pieces of evidence for the Big Bang", "Why was Steady State rejected?"],
-      "independent": ["Core: Summarise the evidence for the Big Bang", "Extend: Write a 6-mark evaluation of the two theories", "Stretch: Explain why scientists still refine the Big Bang model (e.g. dark energy)."],
-      "exit": ["What is the CMB?", "Evidence for expansion?", "Which theory explains the CMB?"],
-      "homework": "4PH1 Section 8 revision: astrophysics past-paper questions.",
-      "send": "Support: evidence cards. Stretch: dark matter."
+     "term": "quadrat",
+     "def": "a square frame used to sample organisms"
     }
-  ]
+   ],
+   "starter": [
+    "Bismillah. What is a habitat?",
+    "Mean of 3, 5, 4, 8",
+    "Area of a field 50 m × 80 m",
+    "Name a producer"
+   ],
+   "teach": [
+    {
+     "heading": "Key terms",
+     "bullets": [
+      "Population: one species",
+      "Community: all species",
+      "Ecosystem: community + environment",
+      "Habitat: where an organism lives"
+     ],
+     "note": "Edexcel GCSE Biology definitions must be precise."
+    },
+    {
+     "heading": "Random sampling",
+     "bullets": [
+      "Use random coordinates",
+      "Place quadrats; count organisms",
+      "Repeat many times; calculate mean"
+     ],
+     "note": "Show the demo video. Random avoids bias.",
+     "model": {
+      "problem": "Mean of 6 daisies per 0.25 m² quadrat. Field is 1200 m². Estimate the population.",
+      "steps": [
+       "Daisies per m²: 6 ÷ 0.25 = 24",
+       "Total: 24 × 1200",
+       "= 28 800"
+      ],
+      "answer": "About 28 800 daisies"
+     }
+    },
+    {
+     "heading": "Transects",
+     "bullets": [
+      "Quadrats along a line",
+      "Show how distribution changes with a factor"
+     ],
+     "note": "E.g. from shade into sunlight."
+    },
+    {
+     "heading": "Bias",
+     "bullets": [
+      "Placing quadrats where there are lots of daisies biases the result"
+     ],
+     "note": "Answer the big question.",
+     "misconception": {
+      "wrong": "Choose good spots to place quadrats",
+      "right": "Place quadrats randomly to avoid bias"
+     }
+    },
+    {
+     "heading": "Check: estimate",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Mean 3 plants per 1 m² quadrat; area 500 m². Estimate?",
+      "options": [
+       "167",
+       "1500",
+       "503",
+       "150"
+      ],
+      "answer": 1,
+      "why": "3 × 500 = 1500. A divides; C adds."
+     }
+    }
+   ],
+   "practice": [
+    "Define community",
+    "Why are quadrats placed randomly?",
+    "Estimate: mean 4 per m², area 250 m²"
+   ],
+   "independent": [
+    "Core: Calculate population estimates from three data sets",
+    "Extend: Describe how to investigate how buttercup numbers change from a hedge into a field",
+    "Stretch: Evaluate the reliability of an estimate from 5 quadrats versus 20."
+   ],
+   "exit": [
+    "Define ecosystem.",
+    "Why repeat quadrats?",
+    "What is a transect used for?"
+   ],
+   "homework": "Edexcel GCSE Biology-style quadrat practical question (8 marks).",
+   "send": "Support: calculation frame. Stretch: capture–recapture method."
+  },
+  {
+   "unit": "Biology Topic 9: Ecosystems and material cycles",
+   "n": 2,
+   "title": "Biotic and abiotic factors",
+   "duration": 50,
+   "bigQuestion": "Why do some plants grow only in the shade of trees?",
+   "objectives": [
+    "Describe biotic and abiotic factors",
+    "Explain how they affect population size and distribution",
+    "Interpret data on environmental factors"
+   ],
+   "successCriteria": [
+    "Classify factors as biotic or abiotic",
+    "Explain how a factor affects a population",
+    "Interpret data linking factors to distribution"
+   ],
+   "crossCurricular": "Geography: climate and biomes",
+   "smsc": "Spiritual: the balance of ecosystems",
+   "keywords": [
+    {
+     "term": "abiotic factor",
+     "def": "a non-living factor, e.g. light, temperature, pH"
+    },
+    {
+     "term": "biotic factor",
+     "def": "a living factor, e.g. predators, competition, disease"
+    },
+    {
+     "term": "distribution",
+     "def": "where organisms are found"
+    },
+    {
+     "term": "competition",
+     "def": "organisms needing the same limited resource"
+    }
+   ],
+   "starter": [
+    "Define population",
+    "Estimate: 5 per m² in 300 m²",
+    "Name an abiotic factor",
+    "What do plants compete for?"
+   ],
+   "teach": [
+    {
+     "heading": "Two kinds of factor",
+     "bullets": [
+      "Abiotic: non-living",
+      "Biotic: living"
+     ],
+     "note": "Classify quickly.",
+     "compare": {
+      "left": {
+       "title": "Abiotic",
+       "points": [
+        "Light intensity",
+        "Temperature",
+        "Water and soil pH",
+        "Oxygen and CO₂ levels"
+       ]
+      },
+      "right": {
+       "title": "Biotic",
+       "points": [
+        "Predators",
+        "Competition",
+        "Disease",
+        "Food availability"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Explaining effects",
+     "bullets": [
+      "Factor → resource or condition → survival/reproduction"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain why fewer plants grow under a dense tree canopy",
+      "steps": [
+       "Less light reaches the ground (abiotic)",
+       "Less photosynthesis, so less glucose",
+       "Slower growth and fewer seeds",
+       "Only shade-tolerant species survive"
+      ],
+      "answer": "Low light limits photosynthesis"
+     }
+    },
+    {
+     "heading": "Predator–prey cycles",
+     "bullets": [
+      "More prey → more predators",
+      "More predators → fewer prey",
+      "Then predators decline"
+     ],
+     "note": "Show a lynx–hare graph.",
+     "cycle": [
+      "Prey increase",
+      "Predators increase",
+      "Prey decrease",
+      "Predators decrease"
+     ]
+    },
+    {
+     "heading": "Temperature is abiotic",
+     "bullets": [
+      "Even though it affects living things"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Disease is abiotic because it is not an animal",
+      "right": "Disease is caused by pathogens, which are living: biotic"
+     }
+    },
+    {
+     "heading": "Check: classify",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is a biotic factor?",
+      "options": [
+       "Soil pH",
+       "Rainfall",
+       "Competition from weeds",
+       "Temperature"
+      ],
+      "answer": 2,
+      "why": "Weeds are living. The others are non-living conditions."
+     }
+    }
+   ],
+   "practice": [
+    "Classify: light, parasites, salinity, predators",
+    "Explain how temperature affects lizards",
+    "Describe a predator–prey cycle"
+   ],
+   "independent": [
+    "Core: Explain the effects of four factors on a pond population",
+    "Extend: Interpret transect data on light intensity and plant percentage cover",
+    "Stretch: Explain the time lag on a predator–prey graph."
+   ],
+   "exit": [
+    "Name two abiotic factors.",
+    "Name two biotic factors.",
+    "Why do predator peaks come after prey peaks?"
+   ],
+   "homework": "Edexcel GCSE Biology data-analysis question on factors affecting distribution.",
+   "send": "Support: sorting cards. Stretch: graph interpretation."
+  },
+  {
+   "unit": "Biology Topic 9: Ecosystems and material cycles",
+   "n": 3,
+   "title": "Food chains, food webs and trophic levels",
+   "duration": 50,
+   "bigQuestion": "What happens to a food web when one species disappears?",
+   "objectives": [
+    "Describe food chains and webs using trophic levels",
+    "Draw pyramids of number, biomass and energy",
+    "Predict effects of changes in food webs"
+   ],
+   "successCriteria": [
+    "Use producer, primary consumer… decomposer correctly",
+    "Draw and explain the three pyramids",
+    "Predict and explain knock-on effects in a web"
+   ],
+   "crossCurricular": "Geography: ecosystems; Maths: scale drawing",
+   "smsc": "Moral: unintended consequences of human actions",
+   "keywords": [
+    {
+     "term": "trophic level",
+     "def": "the position of an organism in a food chain"
+    },
+    {
+     "term": "producer",
+     "def": "an organism that makes its own food by photosynthesis"
+    },
+    {
+     "term": "decomposer",
+     "def": "breaks down dead material and waste"
+    },
+    {
+     "term": "pyramid of biomass",
+     "def": "shows the dry mass of organisms at each level"
+    }
+   ],
+   "starter": [
+    "Biotic or abiotic: light?",
+    "What is a producer?",
+    "Name a decomposer",
+    "What do the arrows in a food chain show?"
+   ],
+   "teach": [
+    {
+     "heading": "Trophic levels",
+     "bullets": [
+      "Arrows show energy flow",
+      "Producer → primary → secondary → tertiary consumer"
+     ],
+     "note": "Example: grass → rabbit → fox.",
+     "timeline": [
+      {
+       "label": "Producer",
+       "text": "grass"
+      },
+      {
+       "label": "Primary",
+       "text": "rabbit (herbivore)"
+      },
+      {
+       "label": "Secondary",
+       "text": "fox (carnivore)"
+      },
+      {
+       "label": "Decomposers",
+       "text": "fungi, bacteria at every level"
+      }
+     ]
+    },
+    {
+     "heading": "Three pyramids",
+     "bullets": [
+      "Number: can be odd shapes (one tree, many insects)",
+      "Biomass: usually a pyramid",
+      "Energy: always a pyramid"
+     ],
+     "note": "Edexcel GCSE Biology asks for explanations of shapes.",
+     "compare": {
+      "left": {
+       "title": "Pyramid of numbers",
+       "points": [
+        "Counts organisms",
+        "Can be inverted (one oak tree)",
+        "Ignores size"
+       ]
+      },
+      "right": {
+       "title": "Pyramid of energy",
+       "points": [
+        "Energy per level",
+        "Always pyramid-shaped",
+        "Shows losses at each level"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Changes in webs",
+     "bullets": [
+      "Follow every arrow out of the removed species"
+     ],
+     "note": "Answer the big question.",
+     "model": {
+      "problem": "In a web, foxes eat rabbits and voles; owls eat voles. Rabbits die of disease. Predict the effect on voles.",
+      "steps": [
+       "Foxes have fewer rabbits to eat",
+       "Foxes eat more voles",
+       "Vole numbers fall",
+       "Owls may also decline (less food)"
+      ],
+      "answer": "Voles decrease; effects spread through the web"
+     }
+    },
+    {
+     "heading": "Arrow direction",
+     "bullets": [
+      "Arrows point to the eater"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "Fox → rabbit (fox eats rabbit)",
+      "right": "Rabbit → fox: energy flows to the fox"
+     }
+    },
+    {
+     "heading": "Check: pyramid",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which pyramid is always pyramid-shaped?",
+      "options": [
+       "Numbers",
+       "Biomass",
+       "Energy",
+       "None"
+      ],
+      "answer": 2,
+      "why": "Energy is lost at each level, so each level always has less energy than the one below."
+     }
+    }
+   ],
+   "practice": [
+    "Write a food chain with four levels",
+    "Why can a pyramid of numbers be inverted?",
+    "What do decomposers do?"
+   ],
+   "independent": [
+    "Core: Draw pyramids of number and biomass for a given chain",
+    "Extend: Predict effects of removing two species from a web",
+    "Stretch: Explain why pyramids of biomass in some oceans can be inverted at certain times."
+   ],
+   "exit": [
+    "Define trophic level.",
+    "Direction of arrows?",
+    "Which pyramid shows energy loss?"
+   ],
+   "homework": "Edexcel GCSE Biology food web questions (8 marks).",
+   "send": "Support: food web templates. Stretch: oceanic pyramids."
+  },
+  {
+   "unit": "Biology Topic 9: Ecosystems and material cycles",
+   "n": 4,
+   "title": "Energy transfer between trophic levels",
+   "duration": 50,
+   "bigQuestion": "Why are there no lion-eating super predators?",
+   "objectives": [
+    "Explain why energy is lost between trophic levels",
+    "Calculate efficiency of energy transfer",
+    "Explain why food chains are short"
+   ],
+   "successCriteria": [
+    "List ways energy is lost",
+    "Calculate percentage efficiency",
+    "Explain the limit on the number of trophic levels"
+   ],
+   "crossCurricular": "Maths: percentages; Geography: food security",
+   "smsc": "Moral: implications for diet and feeding the world",
+   "keywords": [
+    {
+     "term": "efficiency",
+     "def": "useful energy transferred ÷ energy in × 100"
+    },
+    {
+     "term": "respiration loss",
+     "def": "energy released by respiration, much lost as heat"
+    },
+    {
+     "term": "egestion",
+     "def": "undigested food passed out as faeces"
+    },
+    {
+     "term": "biomass",
+     "def": "mass of living material"
+    }
+   ],
+   "starter": [
+    "Which pyramid is always pyramid-shaped?",
+    "Work out 150 as a % of 1500",
+    "Name a primary consumer",
+    "Why do mammals need to eat a lot?"
+   ],
+   "teach": [
+    {
+     "heading": "Where energy goes",
+     "bullets": [
+      "Respiration: heat",
+      "Movement",
+      "Egestion and excretion",
+      "Parts not eaten (bones, roots)"
+     ],
+     "note": "Typically only about 10% passes to the next level."
+    },
+    {
+     "heading": "Efficiency",
+     "bullets": [
+      "(energy at next level ÷ energy at this level) × 100"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Grass has 20 000 kJ; rabbits get 1500 kJ. Efficiency?",
+      "steps": [
+       "1500 ÷ 20 000 = 0.075",
+       "× 100"
+      ],
+      "answer": "7.5%"
+     }
+    },
+    {
+     "heading": "Why chains are short",
+     "bullets": [
+      "Too little energy left after 4–5 levels"
+     ],
+     "note": "Answer the big question."
+    },
+    {
+     "heading": "Energy isn't destroyed",
+     "bullets": [
+      "It is transferred, mostly as heat"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Energy is used up at each level",
+      "right": "Energy is transferred to the surroundings, mostly as heat"
+     }
+    },
+    {
+     "heading": "Check: efficiency",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A level receives 800 kJ and passes on 80 kJ. Efficiency?",
+      "options": [
+       "80%",
+       "10%",
+       "1%",
+       "720%"
+      ],
+      "answer": 1,
+      "why": "80 ÷ 800 × 100 = 10%."
+     }
+    }
+   ],
+   "practice": [
+    "Name three ways energy is lost",
+    "Efficiency: 5000 kJ → 400 kJ",
+    "Why are there few top predators?"
+   ],
+   "independent": [
+    "Core: Calculate efficiencies along a four-level chain",
+    "Extend: Explain why eating plants feeds more people per hectare than eating meat",
+    "Stretch: Explain why mammals have lower transfer efficiency than fish."
+   ],
+   "exit": [
+    "Typical energy transfer percentage?",
+    "Main way energy is lost?",
+    "Why are food chains short?"
+   ],
+   "homework": "Edexcel GCSE Biology energy-efficiency calculations.",
+   "send": "Support: calculation frame. Stretch: warm- and cold-blooded comparisons."
+  },
+  {
+   "unit": "Biology Topic 9: Ecosystems and material cycles",
+   "n": 5,
+   "title": "The carbon cycle",
+   "duration": 50,
+   "bigQuestion": "Could a carbon atom in your body once have been part of a dinosaur?",
+   "objectives": [
+    "Describe the processes of the carbon cycle",
+    "Explain the roles of photosynthesis, respiration, decomposition and combustion",
+    "Link the carbon cycle to climate change"
+   ],
+   "successCriteria": [
+    "Name processes that add or remove CO₂",
+    "Draw and explain the carbon cycle",
+    "Explain how human activity changes the balance"
+   ],
+   "crossCurricular": "Chemistry: combustion; Geography: climate change",
+   "smsc": "Spiritual: renewal in creation; moral: stewardship",
+   "keywords": [
+    {
+     "term": "photosynthesis",
+     "def": "removes CO₂ from the air to make glucose"
+    },
+    {
+     "term": "respiration",
+     "def": "releases CO₂ into the air"
+    },
+    {
+     "term": "decomposition",
+     "def": "decomposers break down dead material, releasing CO₂"
+    },
+    {
+     "term": "fossil fuel",
+     "def": "carbon stored from ancient organisms"
+    }
+   ],
+   "starter": [
+    "Typical energy transfer?",
+    "Products of combustion?",
+    "Word equation for photosynthesis",
+    "What do decomposers do?"
+   ],
+   "teach": [
+    {
+     "heading": "The cycle",
+     "bullets": [
+      "Carbon moves between air, organisms and fossil fuels"
+     ],
+     "note": "Answer the big question: carbon atoms are recycled endlessly.",
+     "cycle": [
+      "CO₂ in air",
+      "Photosynthesis in plants",
+      "Eaten by animals",
+      "Death and decomposition",
+      "Respiration and combustion return CO₂"
+     ]
+    },
+    {
+     "heading": "Adding and removing",
+     "bullets": [
+      "Remove: photosynthesis",
+      "Add: respiration, decomposition, combustion"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain how deforestation increases atmospheric CO₂ (3 marks)",
+      "steps": [
+       "Fewer trees: less photosynthesis removing CO₂",
+       "Trees are often burnt: combustion releases CO₂",
+       "Decomposing remains release more CO₂"
+      ],
+      "answer": "Less removal + more release"
+     }
+    },
+    {
+     "heading": "Fossil fuels",
+     "bullets": [
+      "Carbon locked away for millions of years",
+      "Burning releases it quickly"
+     ],
+     "note": "Link to climate change."
+    },
+    {
+     "heading": "Plants respire too",
+     "bullets": [
+      "Respiration happens all the time"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "Plants photosynthesise instead of respiring",
+      "right": "Plants respire all the time and photosynthesise in light"
+     }
+    },
+    {
+     "heading": "Check: process",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which process removes carbon dioxide from the air?",
+      "options": [
+       "Respiration",
+       "Combustion",
+       "Photosynthesis",
+       "Decomposition"
+      ],
+      "answer": 2,
+      "why": "Photosynthesis uses CO₂. The others release it."
+     }
+    }
+   ],
+   "practice": [
+    "Name three processes that release CO₂",
+    "Draw a simple carbon cycle",
+    "How do decomposers release carbon?"
+   ],
+   "independent": [
+    "Core: Draw and label a full carbon cycle",
+    "Extend: Explain how burning fossil fuels changes the carbon cycle",
+    "Stretch: Explain why planting trees is only a partial solution to rising CO₂."
+   ],
+   "exit": [
+    "Process that removes CO₂?",
+    "Two processes that release CO₂?",
+    "Where is carbon stored long-term?"
+   ],
+   "homework": "Edexcel GCSE Biology carbon cycle questions (6 marks).",
+   "send": "Support: cycle diagram with blanks. Stretch: oceans as carbon sinks."
+  },
+  {
+   "unit": "Biology Topic 9: Ecosystems and material cycles",
+   "n": 6,
+   "title": "The nitrogen cycle",
+   "duration": 50,
+   "bigQuestion": "If the air is 78% nitrogen, why do plants still need fertiliser?",
+   "objectives": [
+    "Describe the stages of the nitrogen cycle",
+    "Name the bacteria involved",
+    "Explain how farmers manage nitrogen"
+   ],
+   "successCriteria": [
+    "Describe nitrogen fixation, nitrification, denitrification and decomposition",
+    "Explain the role of each type of bacteria",
+    "Explain why legumes and fertilisers help plants"
+   ],
+   "crossCurricular": "Chemistry: nitrates and the Haber process; Geography: farming",
+   "smsc": "Spiritual: the hidden work of tiny organisms in sustaining life",
+   "keywords": [
+    {
+     "term": "nitrogen fixation",
+     "def": "converting nitrogen gas into nitrogen compounds"
+    },
+    {
+     "term": "nitrification",
+     "def": "bacteria converting ammonium to nitrates"
+    },
+    {
+     "term": "denitrification",
+     "def": "bacteria converting nitrates back to nitrogen gas"
+    },
+    {
+     "term": "legume",
+     "def": "plant (e.g. pea, bean) with root nodules containing nitrogen-fixing bacteria"
+    }
+   ],
+   "starter": [
+    "Process that removes CO₂?",
+    "What do plants use nitrates for?",
+    "% of air that is nitrogen?",
+    "What do decomposers do?"
+   ],
+   "teach": [
+    {
+     "heading": "Why nitrogen?",
+     "bullets": [
+      "Plants need nitrates to make proteins",
+      "N₂ is unreactive: plants can't use it directly"
+     ],
+     "note": "Answer the big question."
+    },
+    {
+     "heading": "The cycle",
+     "bullets": [
+      "Each stage relies on bacteria (except lightning and the Haber process)"
+     ],
+     "note": "Edexcel GCSE Biology requires the names of processes and bacteria.",
+     "table": {
+      "head": [
+       "Process",
+       "What happens",
+       "Organisms"
+      ],
+      "rows": [
+       [
+        "Nitrogen fixation",
+        "N₂ → nitrogen compounds",
+        "nitrogen-fixing bacteria (root nodules, soil); also lightning"
+       ],
+       [
+        "Decomposition",
+        "proteins in dead matter → ammonium",
+        "decomposers (bacteria, fungi)"
+       ],
+       [
+        "Nitrification",
+        "ammonium → nitrites → nitrates",
+        "nitrifying bacteria"
+       ],
+       [
+        "Denitrification",
+        "nitrates → N₂",
+        "denitrifying bacteria (waterlogged soil)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Managing soil",
+     "bullets": [
+      "Plant legumes in crop rotation",
+      "Plough to aerate (helps nitrifying bacteria)",
+      "Drain waterlogged soil"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain why farmers drain waterlogged fields",
+      "steps": [
+       "Waterlogged soil lacks oxygen",
+       "Denitrifying bacteria thrive in anaerobic conditions",
+       "They turn nitrates into N₂, reducing fertility",
+       "Draining adds oxygen and reduces denitrification"
+      ],
+      "answer": "Prevents loss of nitrates"
+     }
+    },
+    {
+     "heading": "Nitrification vs fixation",
+     "bullets": [
+      "Fixation starts with N₂ gas",
+      "Nitrification starts with ammonium"
+     ],
+     "note": "Common mix-up.",
+     "misconception": {
+      "wrong": "Nitrifying bacteria take nitrogen from the air",
+      "right": "Nitrogen-fixing bacteria do that; nitrifying bacteria convert ammonium to nitrates"
+     }
+    },
+    {
+     "heading": "Check: process",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which process returns nitrogen gas to the air?",
+      "options": [
+       "Fixation",
+       "Nitrification",
+       "Denitrification",
+       "Decomposition"
+      ],
+      "answer": 2,
+      "why": "Denitrifying bacteria convert nitrates to N₂."
+     }
+    }
+   ],
+   "practice": [
+    "What do plants need nitrates for?",
+    "Where are nitrogen-fixing bacteria found?",
+    "Name the process ammonium → nitrate"
+   ],
+   "independent": [
+    "Core: Draw and label the nitrogen cycle",
+    "Extend: Explain why peas and beans are used in crop rotation",
+    "Stretch: Compare natural and artificial nitrogen fixation (Haber process) and their environmental effects."
+   ],
+   "exit": [
+    "Define nitrification.",
+    "Why can't plants use N₂?",
+    "Why drain waterlogged soil?"
+   ],
+   "homework": "Edexcel GCSE Biology nitrogen cycle exam question (6 marks).",
+   "send": "Support: labelled cycle with blanks. Stretch: Haber link."
+  },
+  {
+   "unit": "Biology Topic 9: Ecosystems and material cycles",
+   "n": 7,
+   "title": "Human influences: pollution and eutrophication",
+   "duration": 50,
+   "bigQuestion": "How can fertiliser on a field kill fish in a river?",
+   "objectives": [
+    "Describe air and water pollution",
+    "Explain eutrophication step by step",
+    "Describe the effects of deforestation"
+   ],
+   "successCriteria": [
+    "Name pollutants and their effects",
+    "Explain eutrophication in sequence",
+    "Evaluate ways to reduce human impact"
+   ],
+   "crossCurricular": "Geography: river pollution; Islamic Studies: stewardship and avoiding corruption on earth (Ar-Rum 30:41)",
+   "smsc": "Moral: our duty as khalifah; the Qur'anic command to eat and drink but not waste (Surah Al-A'raf 7:31)",
+   "keywords": [
+    {
+     "term": "eutrophication",
+     "def": "excess nutrients in water cause algal growth and oxygen loss"
+    },
+    {
+     "term": "algal bloom",
+     "def": "rapid growth of algae on water"
+    },
+    {
+     "term": "greenhouse gas",
+     "def": "traps heat, e.g. CO₂, methane"
+    },
+    {
+     "term": "deforestation",
+     "def": "large-scale removal of forests"
+    }
+   ],
+   "starter": [
+    "Process returning N₂ to air?",
+    "What do fertilisers contain?",
+    "Name a greenhouse gas",
+    "What do fish need from water?"
+   ],
+   "teach": [
+    {
+     "heading": "Eutrophication",
+     "bullets": [
+      "A chain of events"
+     ],
+     "note": "Answer the big question.",
+     "model": {
+      "problem": "Explain how fertiliser run-off kills fish (6 marks)",
+      "steps": [
+       "Rain washes nitrates into the river",
+       "Algae grow rapidly (algal bloom)",
+       "Algae block light: plants below die",
+       "Decomposers break down dead plants and respire",
+       "Oxygen in water falls",
+       "Fish and other animals suffocate"
+      ],
+      "answer": "Six linked steps"
+     }
+    },
+    {
+     "heading": "Air pollution",
+     "bullets": [
+      "SO₂: acid rain",
+      "CO: toxic",
+      "CO₂ and methane: greenhouse gases"
+     ],
+     "note": "Link to Edexcel GCSE Biology 4.x on air pollution."
+    },
+    {
+     "heading": "Deforestation",
+     "bullets": [
+      "Less photosynthesis: more CO₂",
+      "Soil erosion and flooding",
+      "Loss of habitats and biodiversity"
+     ],
+     "note": "Compare causes and effects.",
+     "compare": {
+      "left": {
+       "title": "Causes",
+       "points": [
+        "Timber",
+        "Farmland and cattle",
+        "Palm oil plantations"
+       ]
+      },
+      "right": {
+       "title": "Effects",
+       "points": [
+        "Climate change",
+        "Erosion and floods",
+        "Extinctions"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Order matters",
+     "bullets": [
+      "Algae don't directly kill fish"
+     ],
+     "note": "Mark schemes need the decomposer step.",
+     "misconception": {
+      "wrong": "Algae use up all the oxygen",
+      "right": "Decomposers respiring on dead plants use up the oxygen"
+     }
+    },
+    {
+     "heading": "Check: step",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "In eutrophication, what directly causes oxygen levels to fall?",
+      "options": [
+       "Fertiliser",
+       "Algae photosynthesising",
+       "Decomposers respiring",
+       "Fish swimming faster"
+      ],
+      "answer": 2,
+      "why": "Bacteria decomposing dead plants respire aerobically and use up dissolved oxygen."
+     }
+    }
+   ],
+   "practice": [
+    "Explain eutrophication in four steps",
+    "Name two effects of deforestation",
+    "Effect of sulfur dioxide pollution?"
+   ],
+   "independent": [
+    "Core: Flow diagram of eutrophication",
+    "Extend: Evaluate three ways farmers can reduce eutrophication",
+    "Stretch: Interpret oxygen-level data downstream of a sewage outlet and explain the pattern."
+   ],
+   "exit": [
+    "What causes algal blooms?",
+    "Why do fish die in eutrophication?",
+    "One effect of deforestation?"
+   ],
+   "homework": "Edexcel GCSE Biology human influences exam questions; begin ecology revision mind map.",
+   "send": "Support: step cards to order. Stretch: data interpretation."
+  },
+  {
+   "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+   "n": 8,
+   "title": "Hydrocarbons and homologous series",
+   "duration": 50,
+   "bigQuestion": "How can just two elements make thousands of different compounds?",
+   "objectives": [
+    "Define hydrocarbon and homologous series",
+    "Write molecular, structural, displayed and general formulae",
+    "Describe trends within a homologous series"
+   ],
+   "successCriteria": [
+    "Write formulae for the first four alkanes",
+    "Draw displayed formulae",
+    "Explain the features of a homologous series"
+   ],
+   "crossCurricular": "Physics: forces between molecules; Geography: oil resources",
+   "smsc": "Spiritual: complexity from simple rules",
+   "keywords": [
+    {
+     "term": "hydrocarbon",
+     "def": "a compound of hydrogen and carbon only"
+    },
+    {
+     "term": "homologous series",
+     "def": "a family with the same general formula and similar chemical properties"
+    },
+    {
+     "term": "general formula",
+     "def": "e.g. CₙH₂ₙ₊₂ for alkanes"
+    },
+    {
+     "term": "displayed formula",
+     "def": "shows every atom and bond"
+    }
+   ],
+   "starter": [
+    "Bismillah. How many bonds does carbon form?",
+    "Formula of methane?",
+    "What is a compound?",
+    "What is a covalent bond?"
+   ],
+   "teach": [
+    {
+     "heading": "Alkanes",
+     "bullets": [
+      "Saturated: single C–C bonds",
+      "General formula CₙH₂ₙ₊₂"
+     ],
+     "note": "Answer the big question: carbon forms chains of any length.",
+     "table": {
+      "head": [
+       "Name",
+       "Molecular formula",
+       "Structural formula"
+      ],
+      "rows": [
+       [
+        "Methane",
+        "CH₄",
+        "CH₄"
+       ],
+       [
+        "Ethane",
+        "C₂H₆",
+        "CH₃CH₃"
+       ],
+       [
+        "Propane",
+        "C₃H₈",
+        "CH₃CH₂CH₃"
+       ],
+       [
+        "Butane",
+        "C₄H₁₀",
+        "CH₃CH₂CH₂CH₃"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Homologous series features",
+     "bullets": [
+      "Same general formula",
+      "Each member differs by CH₂",
+      "Similar chemical properties",
+      "Trend in physical properties (e.g. boiling point)"
+     ],
+     "note": "Edexcel GCSE Chemistry definition."
+    },
+    {
+     "heading": "Using the general formula",
+     "bullets": [
+      "Substitute n"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Find the formula of the alkane with 8 carbon atoms",
+      "steps": [
+       "CₙH₂ₙ₊₂ with n = 8",
+       "H = 2 × 8 + 2 = 18"
+      ],
+      "answer": "C₈H₁₈ (octane)"
+     }
+    },
+    {
+     "heading": "Formula types",
+     "bullets": [
+      "Molecular: atom counts",
+      "Displayed: every bond"
+     ],
+     "note": "Exam questions specify which.",
+     "misconception": {
+      "wrong": "CH₃CH₃ is a displayed formula",
+      "right": "That is a structural formula; displayed shows every bond line"
+     }
+    },
+    {
+     "heading": "Check: formula",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is an alkane?",
+      "options": [
+       "C₃H₆",
+       "C₅H₁₂",
+       "C₂H₄",
+       "C₄H₈"
+      ],
+      "answer": 1,
+      "why": "C₅H₁₂ fits CₙH₂ₙ₊₂ (2 × 5 + 2 = 12). The others fit CₙH₂ₙ (alkenes)."
+     }
+    }
+   ],
+   "practice": [
+    "Draw the displayed formula of propane",
+    "Formula of the alkane with 6 carbons",
+    "State two features of a homologous series"
+   ],
+   "independent": [
+    "Core: Write molecular, structural and displayed formulae for C1–C4 alkanes",
+    "Extend: Explain why boiling point increases along the series",
+    "Stretch: Predict the formula and state at room temperature of the alkane with 20 carbons."
+   ],
+   "exit": [
+    "General formula of alkanes?",
+    "Define hydrocarbon.",
+    "Formula of butane?"
+   ],
+   "homework": "Edexcel GCSE Chemistry organic formula questions.",
+   "send": "Support: molecular model kit images. Stretch: naming rules."
+  },
+  {
+   "unit": "Chemistry Topic 8: Fuels and Earth science",
+   "title": "The Earth's atmosphere: past and present",
+   "duration": 50,
+   "bigQuestion": "Where did the oxygen we breathe come from?",
+   "objectives": [
+    "Describe how the early atmosphere formed and changed",
+    "Explain how oxygen increased and carbon dioxide decreased",
+    "Describe the test for oxygen"
+   ],
+   "successCriteria": [
+    "Describe the early atmosphere from volcanic activity",
+    "Explain the role of oceans, photosynthesis and sedimentary rocks",
+    "Evaluate the evidence for theories of the early atmosphere"
+   ],
+   "crossCurricular": "Biology: photosynthesis; Geography: climate change",
+   "smsc": "Spiritual: the sky as a protected canopy (Surah Al-Anbiya 21:32)",
+   "keywords": [
+    {
+     "term": "early atmosphere",
+     "def": "mainly carbon dioxide and water vapour from volcanoes, little or no oxygen"
+    },
+    {
+     "term": "photosynthesis",
+     "def": "plants and algae use carbon dioxide and release oxygen"
+    },
+    {
+     "term": "sedimentary rock",
+     "def": "rock that can lock up carbon, e.g. limestone"
+    },
+    {
+     "term": "glowing splint",
+     "def": "relights in oxygen"
+    }
+   ],
+   "starter": [
+    "Products of complete combustion?",
+    "Word equation for photosynthesis?",
+    "What % of air is nitrogen (roughly)?",
+    "Test for carbon dioxide?"
+   ],
+   "teach": [
+    {
+     "heading": "From volcanoes to oxygen",
+     "bullets": [
+      "A long story over billions of years"
+     ],
+     "note": "Answer the big question.",
+     "timeline": [
+      {
+       "label": "Early Earth",
+       "text": "volcanoes release CO₂ and water vapour"
+      },
+      {
+       "label": "Cooling",
+       "text": "water vapour condenses to form oceans"
+      },
+      {
+       "label": "Oceans",
+       "text": "CO₂ dissolves in the oceans"
+      },
+      {
+       "label": "Algae and plants",
+       "text": "photosynthesis adds O₂, removes CO₂"
+      },
+      {
+       "label": "Today",
+       "text": "about 78% N₂, 21% O₂, 0.04% CO₂"
+      }
+     ]
+    },
+    {
+     "heading": "Carbon locked away",
+     "bullets": [
+      "Shells and skeletons form limestone",
+      "Plants become coal; organisms become oil and gas"
+     ],
+     "note": "Link to fossil fuels from the crude oil lessons."
+    },
+    {
+     "heading": "Testing for oxygen",
+     "bullets": [
+      "Glowing splint relights"
+     ],
+     "note": "Edexcel GCSE test. Show video.",
+     "model": {
+      "problem": "Describe how to show a gas is oxygen",
+      "steps": [
+       "Light a wooden splint, then blow it out so it glows",
+       "Place the glowing splint into the gas",
+       "It relights: the gas is oxygen"
+      ],
+      "answer": "Glowing splint relights"
+     }
+    },
+    {
+     "heading": "Evidence is limited",
+     "bullets": [
+      "No one measured air 4 billion years ago"
+     ],
+     "note": "Scientists use rocks, ice cores and modern volcanoes.",
+     "misconception": {
+      "wrong": "Scientists know exactly what the early atmosphere was like",
+      "right": "Theories are based on indirect evidence and are still debated"
+     }
+    },
+    {
+     "heading": "Check: process",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which process increased oxygen in the atmosphere?",
+      "options": [
+       "Volcanic activity",
+       "Photosynthesis by algae and plants",
+       "Combustion",
+       "Dissolving in oceans"
+      ],
+      "answer": 1,
+      "why": "Photosynthesis releases oxygen. Volcanoes released mainly CO₂ and water vapour."
+     }
+    }
+   ],
+   "practice": [
+    "Name two gases in the early atmosphere.",
+    "How did CO₂ levels fall?",
+    "Test for oxygen?"
+   ],
+   "independent": [
+    "Core: Write the story of the atmosphere in five steps.",
+    "Extend: Explain how carbon became locked in sedimentary rocks and fossil fuels.",
+    "Stretch: Evaluate why theories about the early atmosphere are uncertain."
+   ],
+   "exit": [
+    "Main gas in the early atmosphere?",
+    "Two ways CO₂ was removed?",
+    "What does a glowing splint show?"
+   ],
+   "homework": "Edexcel GCSE Chemistry Topic 8 atmosphere questions (8 marks).",
+   "send": "Support: timeline cards. Stretch: ice-core evidence.",
+   "n": 9
+  },
+  {
+   "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+   "n": 10,
+   "title": "Crude oil and fractional distillation",
+   "duration": 50,
+   "bigQuestion": "How does a thick black liquid become petrol, diesel and bitumen?",
+   "objectives": [
+    "Describe crude oil as a mixture of hydrocarbons",
+    "Describe fractional distillation in a column",
+    "Name fractions and their uses"
+   ],
+   "successCriteria": [
+    "Explain how the column separates fractions",
+    "Name six fractions and their uses",
+    "Explain trends in boiling point, viscosity and colour"
+   ],
+   "crossCurricular": "Geography: oil economies of the Gulf; Physics: changes of state",
+   "smsc": "Cultural and moral: oil wealth in Muslim-majority countries and responsibilities that come with it",
+   "keywords": [
+    {
+     "term": "crude oil",
+     "def": "a mixture of hydrocarbons formed from ancient marine organisms"
+    },
+    {
+     "term": "fraction",
+     "def": "a group of hydrocarbons with similar boiling points"
+    },
+    {
+     "term": "viscosity",
+     "def": "how thick and slow-flowing a liquid is"
+    },
+    {
+     "term": "fractionating column",
+     "def": "tower hot at the bottom and cooler at the top"
+    }
+   ],
+   "starter": [
+    "Define isomer",
+    "Is crude oil a compound or a mixture?",
+    "What is fractional distillation?",
+    "Name a fuel from oil"
+   ],
+   "teach": [
+    {
+     "heading": "The column",
+     "bullets": [
+      "Crude oil heated and vaporised",
+      "Vapours rise and cool",
+      "Each fraction condenses at its boiling point"
+     ],
+     "note": "Answer the big question."
+    },
+    {
+     "heading": "Fractions and uses",
+     "bullets": [
+      "Edexcel GCSE Chemistry named fractions"
+     ],
+     "note": "Learn top to bottom.",
+     "table": {
+      "head": [
+       "Fraction",
+       "Use"
+      ],
+      "rows": [
+       [
+        "Refinery gases",
+        "bottled gas for heating and cooking"
+       ],
+       [
+        "Gasoline (petrol)",
+        "car fuel"
+       ],
+       [
+        "Kerosene",
+        "aircraft fuel"
+       ],
+       [
+        "Diesel",
+        "lorry and car fuel"
+       ],
+       [
+        "Fuel oil",
+        "ships, power stations"
+       ],
+       [
+        "Bitumen",
+        "road surfaces, roofs"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Trends",
+     "bullets": [
+      "Bigger molecules: higher boiling point",
+      "More viscous, darker, harder to ignite"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain why bitumen collects at the bottom of the column",
+      "steps": [
+       "Bitumen has very large molecules",
+       "Stronger forces between molecules",
+       "Very high boiling point",
+       "Does not vaporise; collects at the bottom"
+      ],
+      "answer": "Large molecules → high boiling point"
+     }
+    },
+    {
+     "heading": "Bonds aren't broken",
+     "bullets": [
+      "Only intermolecular forces are overcome"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Boiling breaks covalent bonds in hydrocarbons",
+      "right": "Boiling overcomes forces between molecules; covalent bonds stay intact"
+     }
+    },
+    {
+     "heading": "Check: fraction",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which fraction is used as aircraft fuel?",
+      "options": [
+       "Gasoline",
+       "Kerosene",
+       "Bitumen",
+       "Fuel oil"
+      ],
+      "answer": 1,
+      "why": "Kerosene is jet fuel."
+     }
+    }
+   ],
+   "practice": [
+    "Name the fraction used on roads",
+    "Which fraction has the lowest boiling point?",
+    "How does viscosity change down the column?"
+   ],
+   "independent": [
+    "Core: Label a fractionating column with six fractions and uses",
+    "Extend: Explain trends in boiling point, viscosity and ease of ignition",
+    "Stretch: Explain why there is more demand for petrol than is produced by distillation (link to cracking)."
+   ],
+   "exit": [
+    "What is a fraction?",
+    "Use of diesel?",
+    "Why is the column hot at the bottom?"
+   ],
+   "homework": "Edexcel GCSE Chemistry crude oil questions (8 marks).",
+   "send": "Support: column template. Stretch: supply and demand data."
+  },
+  {
+   "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+   "n": 11,
+   "title": "Combustion of fuels and pollutants",
+   "duration": 50,
+   "bigQuestion": "Why do car engines produce gases that aren't in the fuel?",
+   "objectives": [
+    "Write equations for complete and incomplete combustion",
+    "Explain how carbon monoxide, sulfur dioxide and nitrogen oxides form",
+    "Describe their effects"
+   ],
+   "successCriteria": [
+    "Write balanced equations for complete combustion of alkanes",
+    "Explain the formation of CO, SO₂ and NOₓ",
+    "Explain their environmental and health effects"
+   ],
+   "crossCurricular": "Biology: carbon monoxide and haemoglobin; Geography: acid rain",
+   "smsc": "Moral: health of others and the planet",
+   "keywords": [
+    {
+     "term": "complete combustion",
+     "def": "burning in plenty of oxygen to form CO₂ and H₂O"
+    },
+    {
+     "term": "incomplete combustion",
+     "def": "burning in limited oxygen forming CO or C"
+    },
+    {
+     "term": "nitrogen oxides",
+     "def": "formed when N₂ and O₂ react at high temperatures in engines"
+    },
+    {
+     "term": "acid rain",
+     "def": "rain made acidic by SO₂ and NOₓ"
+    }
+   ],
+   "starter": [
+    "Use of kerosene?",
+    "Products of complete combustion?",
+    "Is N₂ in petrol?",
+    "Test for CO₂?"
+   ],
+   "teach": [
+    {
+     "heading": "Balancing combustion",
+     "bullets": [
+      "Balance C, then H, then O"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Balance the complete combustion of propane",
+      "steps": [
+       "C₃H₈ + O₂ → CO₂ + H₂O",
+       "Carbon: 3CO₂",
+       "Hydrogen: 4H₂O",
+       "Oxygen: 6 + 4 = 10 atoms → 5O₂"
+      ],
+      "answer": "C₃H₈ + 5O₂ → 3CO₂ + 4H₂O"
+     }
+    },
+    {
+     "heading": "Pollutants",
+     "bullets": [
+      "Each has a different origin"
+     ],
+     "note": "Answer the big question: NOₓ come from air in the engine.",
+     "table": {
+      "head": [
+       "Pollutant",
+       "Formed by",
+       "Effect"
+      ],
+      "rows": [
+       [
+        "Carbon monoxide",
+        "incomplete combustion",
+        "toxic: binds haemoglobin"
+       ],
+       [
+        "Soot (carbon)",
+        "incomplete combustion",
+        "breathing problems, global dimming"
+       ],
+       [
+        "Sulfur dioxide",
+        "sulfur impurities burning",
+        "acid rain"
+       ],
+       [
+        "Nitrogen oxides",
+        "N₂ + O₂ at high engine temperatures",
+        "acid rain, smog"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "CO toxicity",
+     "bullets": [
+      "Combines with haemoglobin",
+      "Reduces oxygen transport",
+      "Colourless, odourless"
+     ],
+     "note": "Edexcel GCSE Chemistry asks for this explanation.",
+     "misconception": {
+      "wrong": "Nitrogen oxides come from nitrogen in the fuel",
+      "right": "They form from nitrogen and oxygen in the air at high temperatures"
+     }
+    },
+    {
+     "heading": "Check: balance",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "How many O₂ molecules completely burn one CH₄?",
+      "options": [
+       "1",
+       "2",
+       "3",
+       "4"
+      ],
+      "answer": 1,
+      "why": "CH₄ + 2O₂ → CO₂ + 2H₂O. Oxygen atoms: 2 + 2 = 4, so 2O₂."
+     }
+    }
+   ],
+   "practice": [
+    "Balance combustion of ethane",
+    "Why is CO toxic?",
+    "Source of SO₂?"
+   ],
+   "independent": [
+    "Core: Balance equations for complete combustion of C1–C4 alkanes",
+    "Extend: Write an equation for incomplete combustion of methane producing CO",
+    "Stretch: Explain how catalytic converters reduce CO and NOₓ emissions."
+   ],
+   "exit": [
+    "Balanced equation for methane combustion?",
+    "How do NOₓ form?",
+    "Effect of SO₂?"
+   ],
+   "homework": "Edexcel GCSE Chemistry combustion equation practice.",
+   "send": "Support: balancing frame. Stretch: catalytic converter equations."
+  },
+  {
+   "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+   "n": 12,
+   "title": "Cracking",
+   "duration": 50,
+   "bigQuestion": "Why break big molecules into smaller ones?",
+   "objectives": [
+    "Describe catalytic cracking",
+    "Write equations for cracking",
+    "Explain why cracking is needed"
+   ],
+   "successCriteria": [
+    "State the conditions for cracking",
+    "Balance cracking equations",
+    "Explain cracking using supply and demand data"
+   ],
+   "crossCurricular": "Business: supply and demand; Physics: thermal energy",
+   "smsc": "Moral: efficient use of finite resources",
+   "keywords": [
+    {
+     "term": "cracking",
+     "def": "breaking long-chain alkanes into shorter alkanes and alkenes"
+    },
+    {
+     "term": "catalyst",
+     "def": "speeds up a reaction without being used up"
+    },
+    {
+     "term": "alkene",
+     "def": "an unsaturated hydrocarbon with a C=C double bond"
+    },
+    {
+     "term": "unsaturated",
+     "def": "contains a carbon–carbon double bond"
+    }
+   ],
+   "starter": [
+    "Balance CH₄ combustion",
+    "Use of fuel oil?",
+    "Formula of an alkane with 10 carbons?",
+    "What is a catalyst?"
+   ],
+   "teach": [
+    {
+     "heading": "Why crack?",
+     "bullets": [
+      "More long chains produced than needed",
+      "High demand for petrol",
+      "Alkenes needed to make polymers"
+     ],
+     "note": "Answer the big question with supply/demand chart."
+    },
+    {
+     "heading": "Conditions",
+     "bullets": [
+      "Heat to vaporise",
+      "Silica or alumina catalyst at about 600–700 °C"
+     ],
+     "note": "Edexcel GCSE Chemistry conditions."
+    },
+    {
+     "heading": "Equations",
+     "bullets": [
+      "Atoms must balance",
+      "Products: shorter alkane + alkene"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "C₁₀H₂₂ is cracked into C₈H₁₈ and one other product. What is it?",
+      "steps": [
+       "Carbon: 10 − 8 = 2",
+       "Hydrogen: 22 − 18 = 4",
+       "Product: C₂H₄"
+      ],
+      "answer": "Ethene, C₂H₄"
+     }
+    },
+    {
+     "heading": "Cracking isn't combustion",
+     "bullets": [
+      "No oxygen involved"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Cracking burns the hydrocarbon",
+      "right": "Cracking is thermal decomposition: no oxygen"
+     }
+    },
+    {
+     "heading": "Check: equation",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "C₁₂H₂₆ → C₈H₁₈ + ?",
+      "options": [
+       "C₄H₈",
+       "C₄H₁₀",
+       "C₂H₄",
+       "C₃H₆"
+      ],
+      "answer": 0,
+      "why": "C: 12 − 8 = 4, H: 26 − 18 = 8, so C₄H₈ (an alkene)."
+     }
+    }
+   ],
+   "practice": [
+    "Conditions for cracking?",
+    "Complete: C₆H₁₄ → C₄H₁₀ + ?",
+    "Two reasons for cracking"
+   ],
+   "independent": [
+    "Core: Balance five cracking equations",
+    "Extend: Use supply and demand data to explain cracking",
+    "Stretch: C₁₄H₃₀ cracks into C₈H₁₈ and two molecules of the same alkene. Find the alkene."
+   ],
+   "exit": [
+    "What is cracking?",
+    "Catalyst used?",
+    "Why is ethene useful?"
+   ],
+   "homework": "Edexcel GCSE Chemistry cracking questions (6 marks).",
+   "send": "Support: atom-counting frame. Stretch: multi-product equations."
+  },
+  {
+   "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+   "n": 13,
+   "title": "Alkanes and alkenes: reactions",
+   "duration": 50,
+   "bigQuestion": "How can bromine water tell an alkane from an alkene?",
+   "objectives": [
+    "Describe substitution of alkanes with halogens",
+    "Describe addition reactions of alkenes",
+    "Describe the bromine water test"
+   ],
+   "successCriteria": [
+    "Write the equation for methane + bromine in UV light",
+    "Write the addition of bromine to ethene",
+    "Explain the bromine water test using the double bond"
+   ],
+   "crossCurricular": "Biology: saturated and unsaturated fats",
+   "smsc": "Spiritual: wonder at how one double bond changes everything",
+   "keywords": [
+    {
+     "term": "substitution",
+     "def": "an atom is swapped for another atom"
+    },
+    {
+     "term": "addition",
+     "def": "atoms add across a double bond"
+    },
+    {
+     "term": "bromine water",
+     "def": "orange solution that decolourises with alkenes"
+    },
+    {
+     "term": "saturated",
+     "def": "only single bonds"
+    }
+   ],
+   "starter": [
+    "C₁₀H₂₂ → C₈H₁₈ + ?",
+    "General formula of alkenes?",
+    "What is unsaturated?",
+    "Formula of ethene?"
+   ],
+   "teach": [
+    {
+     "heading": "Alkanes: substitution",
+     "bullets": [
+      "Need UV light",
+      "H replaced by halogen"
+     ],
+     "note": "CH₄ + Br₂ → CH₃Br + HBr (UV light)."
+    },
+    {
+     "heading": "Alkenes: addition",
+     "bullets": [
+      "The C=C opens",
+      "Two atoms add across it"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Write the equation for ethene reacting with bromine",
+      "steps": [
+       "C₂H₄ + Br₂",
+       "The double bond opens",
+       "One Br adds to each carbon",
+       "Product: 1,2-dibromoethane"
+      ],
+      "answer": "C₂H₄ + Br₂ → C₂H₄Br₂"
+     }
+    },
+    {
+     "heading": "The test",
+     "bullets": [
+      "Orange bromine water",
+      "Alkene: decolourises",
+      "Alkane: stays orange (no UV)"
+     ],
+     "note": "Answer the big question.",
+     "compare": {
+      "left": {
+       "title": "Alkane + bromine water",
+       "points": [
+        "Stays orange",
+        "No double bond",
+        "Saturated"
+       ]
+      },
+      "right": {
+       "title": "Alkene + bromine water",
+       "points": [
+        "Turns colourless",
+        "Addition across C=C",
+        "Unsaturated"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Colour words",
+     "bullets": [
+      "'Clear' means see-through, not colourless"
+     ],
+     "note": "Mark schemes reject 'clear'.",
+     "misconception": {
+      "wrong": "Bromine water turns clear",
+      "right": "Bromine water turns colourless"
+     }
+    },
+    {
+     "heading": "Check: test",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A hydrocarbon decolourises bromine water. It is…",
+      "options": [
+       "Saturated",
+       "An alkene",
+       "An alkane",
+       "Methane"
+      ],
+      "answer": 1,
+      "why": "Decolourising shows a C=C double bond: an alkene."
+     }
+    }
+   ],
+   "practice": [
+    "Describe the bromine water test",
+    "Product of ethene + bromine?",
+    "Condition for alkane substitution?"
+   ],
+   "independent": [
+    "Core: Write equations for substitution and addition reactions",
+    "Extend: Draw displayed formulae for the reaction of propene with bromine",
+    "Stretch: Explain why the reaction of methane and bromine produces a mixture of products."
+   ],
+   "exit": [
+    "What colour change shows an alkene?",
+    "Name the reaction type for alkenes with bromine.",
+    "Why don't alkanes react with bromine water in the dark?"
+   ],
+   "homework": "Edexcel GCSE Chemistry alkene questions (8 marks).",
+   "send": "Support: colour cards. Stretch: hydrogenation."
+  },
+  {
+   "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+   "n": 14,
+   "title": "Addition polymers",
+   "duration": 50,
+   "bigQuestion": "How does a gas like ethene become a solid plastic bag?",
+   "objectives": [
+    "Describe addition polymerisation",
+    "Draw repeat units from monomers and monomers from repeat units",
+    "Describe problems with disposal of addition polymers"
+   ],
+   "successCriteria": [
+    "Draw the repeat unit of poly(ethene)",
+    "Draw repeat units for poly(propene) and poly(chloroethene)",
+    "Evaluate disposal methods for polymers"
+   ],
+   "crossCurricular": "Geography: plastic waste; Islamic Studies: avoiding waste (israf)",
+   "smsc": "Moral: responsibility for waste",
+   "keywords": [
+    {
+     "term": "monomer",
+     "def": "small molecule that joins to form a polymer"
+    },
+    {
+     "term": "addition polymer",
+     "def": "polymer formed by monomers with C=C adding together"
+    },
+    {
+     "term": "repeat unit",
+     "def": "the section repeated along the polymer chain"
+    },
+    {
+     "term": "non-biodegradable",
+     "def": "not broken down by microorganisms"
+    }
+   ],
+   "starter": [
+    "Test for an alkene?",
+    "Formula of ethene?",
+    "What is a polymer?",
+    "Name a plastic"
+   ],
+   "teach": [
+    {
+     "heading": "Addition polymerisation",
+     "bullets": [
+      "Many alkene monomers",
+      "C=C bonds open",
+      "Join into a long chain"
+     ],
+     "note": "Answer the big question.",
+     "model": {
+      "problem": "Draw the repeat unit of poly(propene) from propene, CH₂=CHCH₃",
+      "steps": [
+       "Draw the C=C with its groups: H, H, H, CH₃",
+       "Change C=C to C–C",
+       "Put brackets around the two carbons",
+       "Add bonds out through the brackets and a subscript n"
+      ],
+      "answer": "–[CH₂–CH(CH₃)]ₙ–"
+     }
+    },
+    {
+     "heading": "From polymer to monomer",
+     "bullets": [
+      "Take the repeat unit",
+      "Put back the double bond",
+      "Remove the brackets"
+     ],
+     "note": "Practise with PVC: repeat unit –CH₂–CHCl– → monomer CH₂=CHCl."
+    },
+    {
+     "heading": "Disposal",
+     "bullets": [
+      "Landfill: non-biodegradable",
+      "Incineration: energy but toxic gases",
+      "Recycling: sorting is difficult"
+     ],
+     "note": "Edexcel GCSE Chemistry requires disposal problems.",
+     "table": {
+      "head": [
+       "Method",
+       "Advantage",
+       "Disadvantage"
+      ],
+      "rows": [
+       [
+        "Landfill",
+        "cheap",
+        "lasts for centuries; uses land"
+       ],
+       [
+        "Incineration",
+        "releases energy",
+        "CO₂ and toxic gases (e.g. HCl from PVC)"
+       ],
+       [
+        "Recycling",
+        "saves crude oil",
+        "sorting is costly; quality falls"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Repeat-unit errors",
+     "bullets": [
+      "No double bond inside the repeat unit"
+     ],
+     "note": "Common.",
+     "misconception": {
+      "wrong": "Repeat unit keeps the C=C",
+      "right": "The double bond opens; the repeat unit has C–C"
+     }
+    },
+    {
+     "heading": "Check: monomer",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which monomer makes poly(chloroethene)?",
+      "options": [
+       "CH₂=CH₂",
+       "CH₂=CHCl",
+       "CH₃CH₂Cl",
+       "CHCl=CHCl"
+      ],
+      "answer": 1,
+      "why": "Chloroethene is CH₂=CHCl. C has no double bond, so it can't add-polymerise."
+     }
+    }
+   ],
+   "practice": [
+    "Draw the repeat unit of poly(ethene)",
+    "Draw the monomer of –[CH₂–CH(CH₃)]–",
+    "One problem with incinerating PVC"
+   ],
+   "independent": [
+    "Core: Draw repeat units for three polymers from their monomers",
+    "Extend: Draw monomers from three repeat units",
+    "Stretch: Evaluate landfill, incineration and recycling for a city council."
+   ],
+   "exit": [
+    "What type of reaction makes poly(ethene)?",
+    "Monomer of PVC?",
+    "Why is landfill a problem for polymers?"
+   ],
+   "homework": "Edexcel GCSE Chemistry polymer questions; start organic chemistry revision cards.",
+   "send": "Support: repeat-unit template. Stretch: condensation polymers preview (separate chemistry)."
+  },
+  {
+   "unit": "Physics Topic 7: Astronomy (Physics only)",
+   "n": 15,
+   "title": "Gravity and the Solar System",
+   "duration": 50,
+   "bigQuestion": "Why doesn't the Moon fall down to Earth?",
+   "objectives": [
+    "Describe the Solar System",
+    "Explain that gravity causes orbits",
+    "Compare gravitational field strength on different bodies"
+   ],
+   "successCriteria": [
+    "Name the bodies in the Solar System",
+    "Explain orbits as gravity providing the centripetal force",
+    "Compare orbits of planets, moons, comets and artificial satellites"
+   ],
+   "crossCurricular": "History: Muslim astronomers such as al-Biruni and Ulugh Beg; Islamic Studies: the precise orbits (Surah Ya-Sin 36:40)",
+   "smsc": "Spiritual: 'each is floating in an orbit' (Ya-Sin 36:40); wonder at the heavens",
+   "keywords": [
+    {
+     "term": "orbit",
+     "def": "the curved path of one body around another"
+    },
+    {
+     "term": "gravitational field strength",
+     "def": "force per kg; varies between planets"
+    },
+    {
+     "term": "comet",
+     "def": "icy body with a highly elliptical orbit around the Sun"
+    },
+    {
+     "term": "natural satellite",
+     "def": "a moon orbiting a planet"
+    }
+   ],
+   "starter": [
+    "Bismillah. W = mg: 50 kg on Earth?",
+    "Name the planets in order",
+    "What force keeps us on the ground?",
+    "g on Earth?"
+   ],
+   "teach": [
+    {
+     "heading": "The Solar System",
+     "bullets": [
+      "Sun (a star)",
+      "Eight planets",
+      "Moons, dwarf planets, comets, asteroids"
+     ],
+     "note": "Edexcel GCSE Physics Section 8."
+    },
+    {
+     "heading": "Gravity and orbits",
+     "bullets": [
+      "Gravity pulls towards the centre",
+      "Changes direction, not speed (circular orbit)",
+      "The Moon is always falling, but always missing"
+     ],
+     "note": "Answer the big question.",
+     "compare": {
+      "left": {
+       "title": "Planets and moons",
+       "points": [
+        "Nearly circular orbits",
+        "Steady speed",
+        "Planets orbit the Sun"
+       ]
+      },
+      "right": {
+       "title": "Comets",
+       "points": [
+        "Very elliptical orbits",
+        "Fastest near the Sun",
+        "Long periods away"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Different g",
+     "bullets": [
+      "g depends on mass and radius of the planet"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A 70 kg astronaut on the Moon (g = 1.6 N/kg) and Mars (g = 3.7 N/kg). Find each weight.",
+      "steps": [
+       "W = mg",
+       "Moon: 70 × 1.6 = 112 N",
+       "Mars: 70 × 3.7 = 259 N"
+      ],
+      "answer": "112 N and 259 N"
+     }
+    },
+    {
+     "heading": "Orbit means no gravity?",
+     "bullets": [
+      "Astronauts float because they are falling around Earth"
+     ],
+     "note": "Key misconception.",
+     "misconception": {
+      "wrong": "There is no gravity in space",
+      "right": "Gravity still acts; astronauts are in free fall around Earth"
+     }
+    },
+    {
+     "heading": "Check: orbit",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What provides the force that keeps Earth in orbit?",
+      "options": [
+       "Magnetism",
+       "The Sun's gravity",
+       "Air resistance",
+       "Earth's spin"
+      ],
+      "answer": 1,
+      "why": "The Sun's gravitational pull acts towards the centre of the orbit."
+     }
+    }
+   ],
+   "practice": [
+    "Name a natural satellite",
+    "What shape is a comet's orbit?",
+    "Weight of 10 kg on the Moon?"
+   ],
+   "independent": [
+    "Core: Compare orbits of a planet, a moon, a comet and an artificial satellite",
+    "Extend: Explain why a comet speeds up near the Sun",
+    "Stretch: Research al-Biruni's estimate of Earth's radius and explain his method."
+   ],
+   "exit": [
+    "What keeps planets in orbit?",
+    "Shape of a comet's orbit?",
+    "Why do astronauts float?"
+   ],
+   "homework": "Edexcel GCSE Physics Section 8 questions on gravity and orbits.",
+   "send": "Support: Solar System diagram. Stretch: Newton's cannonball."
+  },
+  {
+   "unit": "Physics Topic 7: Astronomy (Physics only)",
+   "n": 16,
+   "title": "Orbital speed (stretch beyond GCSE)",
+   "duration": 50,
+   "bigQuestion": "How fast is the International Space Station moving?",
+   "objectives": [
+    "Use orbital speed = (2 × π × orbital radius) ÷ time period",
+    "Convert units for orbital calculations",
+    "Compare orbital speeds"
+   ],
+   "successCriteria": [
+    "Calculate orbital speed",
+    "Rearrange to find the period or radius",
+    "Explain why closer satellites move faster"
+   ],
+   "crossCurricular": "Maths: circumference and standard form",
+   "smsc": "Spiritual: the precise timing of the heavens (Ar-Rahman 55:5, 'the sun and the moon move by precise calculation')",
+   "keywords": [
+    {
+     "term": "orbital speed",
+     "def": "speed of an object in orbit"
+    },
+    {
+     "term": "orbital radius",
+     "def": "distance from the centre of the body being orbited"
+    },
+    {
+     "term": "time period",
+     "def": "time for one complete orbit"
+    },
+    {
+     "term": "geostationary",
+     "def": "orbit with a 24-hour period above the equator"
+    }
+   ],
+   "starter": [
+    "Circumference of a circle radius 5 m?",
+    "Seconds in a day?",
+    "Write 6 400 000 in standard form",
+    "What keeps satellites in orbit?"
+   ],
+   "teach": [
+    {
+     "heading": "The equation",
+     "bullets": [
+      "v = 2πr ÷ T",
+      "r in metres, T in seconds",
+      "Distance round the orbit ÷ time"
+     ],
+     "note": "Edexcel GCSE Physics formula."
+    },
+    {
+     "heading": "The ISS",
+     "bullets": [
+      "Orbital radius about 6.8 × 10⁶ m",
+      "Period about 92 minutes"
+     ],
+     "note": "Answer the big question.",
+     "model": {
+      "problem": "Find the ISS's orbital speed: r = 6.8 × 10⁶ m, T = 92 min",
+      "steps": [
+       "T = 92 × 60 = 5520 s",
+       "Circumference = 2 × π × 6.8 × 10⁶ = 4.27 × 10⁷ m",
+       "v = 4.27 × 10⁷ ÷ 5520"
+      ],
+      "answer": "About 7700 m/s (7.7 km/s)"
+     }
+    },
+    {
+     "heading": "Radius from the centre",
+     "bullets": [
+      "Add Earth's radius to the altitude"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "Use the satellite's height above the ground as r",
+      "right": "r = Earth's radius + height above the surface"
+     }
+    },
+    {
+     "heading": "Check: units",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A moon orbits at r = 4.0 × 10⁸ m with T = 2.4 × 10⁶ s. Speed?",
+      "options": [
+       "170 m/s",
+       "1050 m/s",
+       "333 m/s",
+       "6000 m/s"
+      ],
+      "answer": 1,
+      "why": "2π × 4.0 × 10⁸ ÷ 2.4 × 10⁶ ≈ 1050 m/s."
+     }
+    }
+   ],
+   "practice": [
+    "Orbital speed: r = 1.0 × 10⁷ m, T = 1.0 × 10⁴ s",
+    "Rearrange for T",
+    "Why do closer satellites move faster?"
+   ],
+   "independent": [
+    "Core: Calculate orbital speeds for three satellites",
+    "Extend: Earth orbits the Sun at r = 1.5 × 10¹¹ m in one year. Find Earth's orbital speed",
+    "Stretch: Calculate the orbital radius of a geostationary satellite moving at 3070 m/s."
+   ],
+   "exit": [
+    "Formula for orbital speed?",
+    "Units for T?",
+    "What period does a geostationary satellite have?"
+   ],
+   "homework": "Edexcel GCSE Physics orbital speed calculations.",
+   "send": "Support: calculation frame. Stretch: Kepler's third law preview."
+  },
+  {
+   "unit": "Physics Topic 7: Astronomy (Physics only)",
+   "n": 17,
+   "title": "The life cycle of stars",
+   "duration": 50,
+   "bigQuestion": "Is the iron in your blood made inside a star?",
+   "objectives": [
+    "Describe the life cycle of a Sun-like star",
+    "Describe the life cycle of a massive star",
+    "Explain nuclear fusion in stars"
+   ],
+   "successCriteria": [
+    "Order the stages for a Sun-like star",
+    "Order the stages for a massive star",
+    "Explain how heavy elements are formed and spread"
+   ],
+   "crossCurricular": "Chemistry: elements and the periodic table",
+   "smsc": "Spiritual: stars as signs and lamps (Surah Al-Mulk 67:5)",
+   "keywords": [
+    {
+     "term": "nebula",
+     "def": "a cloud of dust and gas where stars form"
+    },
+    {
+     "term": "nuclear fusion",
+     "def": "small nuclei join to form larger ones, releasing energy"
+    },
+    {
+     "term": "main sequence",
+     "def": "stable stage where fusion balances gravity"
+    },
+    {
+     "term": "supernova",
+     "def": "the explosion of a massive star"
+    }
+   ],
+   "starter": [
+    "Orbital speed formula?",
+    "What is the Sun?",
+    "Name the lightest element",
+    "What is fusion?"
+   ],
+   "teach": [
+    {
+     "heading": "Star birth and main sequence",
+     "bullets": [
+      "Nebula collapses under gravity",
+      "Protostar heats up",
+      "Fusion begins: main sequence",
+      "Outward pressure balances gravity"
+     ],
+     "note": "Edexcel GCSE Physics terms."
+    },
+    {
+     "heading": "Two paths",
+     "bullets": [
+      "Depends on mass"
+     ],
+     "note": "Compare.",
+     "compare": {
+      "left": {
+       "title": "Sun-like star",
+       "points": [
+        "Red giant",
+        "Planetary nebula",
+        "White dwarf"
+       ]
+      },
+      "right": {
+       "title": "Massive star",
+       "points": [
+        "Red supergiant",
+        "Supernova",
+        "Neutron star or black hole"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Making elements",
+     "bullets": [
+      "Fusion makes elements up to iron",
+      "Heavier elements form in supernovae",
+      "Explosions spread elements into space"
+     ],
+     "note": "Answer the big question: yes, the iron atoms were made in stars.",
+     "model": {
+      "problem": "Explain how elements heavier than iron reach Earth",
+      "steps": [
+       "Massive stars fuse elements up to iron in their cores",
+       "In a supernova, heavier elements form",
+       "The explosion scatters them into space",
+       "They become part of new nebulae, planets and us"
+      ],
+      "answer": "Supernovae make and spread heavy elements"
+     }
+    },
+    {
+     "heading": "Fusion vs fission",
+     "bullets": [
+      "Stars use fusion"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "Stars produce energy by fission",
+      "right": "Stars produce energy by fusion of light nuclei"
+     }
+    },
+    {
+     "heading": "Check: sequence",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What comes after the red giant stage for a Sun-like star?",
+      "options": [
+       "Supernova",
+       "White dwarf (after a planetary nebula)",
+       "Black hole",
+       "Protostar"
+      ],
+      "answer": 1,
+      "why": "Low-mass stars shed outer layers as a planetary nebula, leaving a white dwarf."
+     }
+    }
+   ],
+   "practice": [
+    "Order the stages of the Sun",
+    "What balances gravity in a main-sequence star?",
+    "What forms after a supernova?"
+   ],
+   "independent": [
+    "Core: Draw a flow chart of both life cycles",
+    "Extend: Explain why the main sequence is stable",
+    "Stretch: Explain why a massive star has a shorter life than the Sun."
+   ],
+   "exit": [
+    "What is a nebula?",
+    "What process powers stars?",
+    "End stage of the most massive stars?"
+   ],
+   "homework": "Edexcel GCSE Physics star life cycle questions.",
+   "send": "Support: card sort. Stretch: HR diagram preview."
+  },
+  {
+   "unit": "Physics Topic 7: Astronomy (Physics only)",
+   "n": 18,
+   "title": "Classifying stars: colour and temperature",
+   "duration": 50,
+   "bigQuestion": "Why do some stars look red and others blue?",
+   "objectives": [
+    "Relate star colour to surface temperature",
+    "Distinguish absolute and apparent magnitude",
+    "Use a Hertzsprung–Russell diagram"
+   ],
+   "successCriteria": [
+    "Order stars by colour and temperature",
+    "Explain absolute vs apparent magnitude",
+    "Locate star types on an HR diagram"
+   ],
+   "crossCurricular": "Chemistry: flame colours; History: star names of Arabic origin (Aldebaran, Betelgeuse, Rigel)",
+   "smsc": "Cultural: many star names come from Arabic (e.g. Aldebaran from al-Dabaran)",
+   "keywords": [
+    {
+     "term": "absolute magnitude",
+     "def": "how bright a star would be at a standard distance (10 parsecs)"
+    },
+    {
+     "term": "apparent magnitude",
+     "def": "how bright a star looks from Earth"
+    },
+    {
+     "term": "Hertzsprung–Russell diagram",
+     "def": "plot of absolute magnitude against temperature"
+    },
+    {
+     "term": "surface temperature",
+     "def": "temperature of a star's outer layer"
+    }
+   ],
+   "starter": [
+    "What powers a star?",
+    "Name the end stage of the Sun",
+    "Is a hotter flame red or blue?",
+    "Why does a torch look dimmer far away?"
+   ],
+   "teach": [
+    {
+     "heading": "Colour and temperature",
+     "bullets": [
+      "Red: coolest (about 3 000 K)",
+      "Yellow: Sun (about 5 800 K)",
+      "Blue-white: hottest (over 10 000 K)"
+     ],
+     "note": "Answer the big question.",
+     "table": {
+      "head": [
+       "Colour",
+       "Approx. temperature",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Red",
+        "3 000 K",
+        "Betelgeuse"
+       ],
+       [
+        "Yellow",
+        "5 800 K",
+        "the Sun"
+       ],
+       [
+        "White",
+        "10 000 K",
+        "Sirius"
+       ],
+       [
+        "Blue",
+        "20 000 K +",
+        "Rigel"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Brightness",
+     "bullets": [
+      "Apparent: as seen from Earth (depends on distance)",
+      "Absolute: at a standard distance (true output)",
+      "Lower magnitude number = brighter"
+     ],
+     "note": "Edexcel GCSE Physics terms."
+    },
+    {
+     "heading": "HR diagram",
+     "bullets": [
+      "Temperature decreases to the right",
+      "Main sequence: diagonal band",
+      "Giants top right; white dwarfs bottom left"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A star is hot but has a very dim absolute magnitude. Where is it and what is it?",
+      "steps": [
+       "Hot: left side",
+       "Dim: bottom",
+       "Bottom left region"
+      ],
+      "answer": "A white dwarf"
+     }
+    },
+    {
+     "heading": "Bright doesn't mean close",
+     "bullets": [
+      "A star can look bright because it is near or very luminous"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "A higher magnitude number means brighter",
+      "right": "Lower (or more negative) magnitude means brighter"
+     }
+    },
+    {
+     "heading": "Check: colour",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which star is hottest?",
+      "options": [
+       "Red",
+       "Orange",
+       "Yellow",
+       "Blue"
+      ],
+      "answer": 3,
+      "why": "Blue stars have the highest surface temperatures."
+     }
+    }
+   ],
+   "practice": [
+    "Order: yellow, blue, red stars by temperature",
+    "Define apparent magnitude",
+    "Where are red giants on an HR diagram?"
+   ],
+   "independent": [
+    "Core: Plot five stars on a blank HR diagram",
+    "Extend: Explain why apparent magnitude alone can't show true brightness",
+    "Stretch: Trace the Sun's path on the HR diagram through its life."
+   ],
+   "exit": [
+    "Colour of the coolest stars?",
+    "What does absolute magnitude measure?",
+    "Where is the main sequence?"
+   ],
+   "homework": "Edexcel GCSE Physics HR diagram questions.",
+   "send": "Support: labelled HR diagram. Stretch: luminosity calculations."
+  },
+  {
+   "unit": "Physics Topic 7: Astronomy (Physics only)",
+   "n": 19,
+   "title": "Red-shift and the expanding universe",
+   "duration": 50,
+   "bigQuestion": "How do we know the universe is expanding?",
+   "objectives": [
+    "Describe red-shift",
+    "Use the red-shift equation",
+    "Explain how red-shift supports the Big Bang"
+   ],
+   "successCriteria": [
+    "Explain red-shift in terms of wavelength",
+    "Use Δλ/λ₀ = v/c",
+    "Explain why more distant galaxies show greater red-shift"
+   ],
+   "crossCurricular": "Islamic Studies: Surah Adh-Dhariyat 51:47 ('We are expanding it'), often discussed alongside modern cosmology",
+   "smsc": "Spiritual: reflection on the origin of the universe; scientific and faith perspectives in dialogue",
+   "keywords": [
+    {
+     "term": "red-shift",
+     "def": "increase in wavelength of light from a source moving away"
+    },
+    {
+     "term": "Doppler effect",
+     "def": "change in observed wavelength due to motion of the source"
+    },
+    {
+     "term": "Big Bang theory",
+     "def": "the universe began from an extremely hot, dense state and has been expanding"
+    },
+    {
+     "term": "speed of light (c)",
+     "def": "3 × 10⁸ m/s"
+    }
+   ],
+   "starter": [
+    "Hottest star colour?",
+    "Wavelength of red vs blue light?",
+    "What is the Doppler effect for sound?",
+    "Speed of light?"
+   ],
+   "teach": [
+    {
+     "heading": "Red-shift",
+     "bullets": [
+      "Galaxies moving away: wavelengths stretched",
+      "Spectral lines shift towards red"
+     ],
+     "note": "Compare with an ambulance siren's pitch dropping as it moves away."
+    },
+    {
+     "heading": "The equation",
+     "bullets": [
+      "Δλ ÷ λ₀ = v ÷ c"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A line at 656 nm is observed at 669 nm. Find the galaxy's speed.",
+      "steps": [
+       "Δλ = 669 − 656 = 13 nm",
+       "Δλ/λ₀ = 13 ÷ 656 = 0.0198",
+       "v = 0.0198 × 3 × 10⁸"
+      ],
+      "answer": "About 5.9 × 10⁶ m/s, moving away"
+     }
+    },
+    {
+     "heading": "Evidence for expansion",
+     "bullets": [
+      "Almost all galaxies are red-shifted",
+      "More distant galaxies: greater red-shift",
+      "So the universe is expanding"
+     ],
+     "note": "Answer the big question. Hubble 1929.",
+     "timeline": [
+      {
+       "label": "1912",
+       "text": "Slipher measures red-shifts of galaxies"
+      },
+      {
+       "label": "1929",
+       "text": "Hubble links red-shift to distance"
+      },
+      {
+       "label": "1965",
+       "text": "CMB discovered by Penzias and Wilson"
+      }
+     ]
+    },
+    {
+     "heading": "Red-shift isn't colour change",
+     "bullets": [
+      "Galaxies don't look red"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Red-shifted galaxies appear red",
+      "right": "Spectral lines shift towards longer wavelengths"
+     }
+    },
+    {
+     "heading": "Check: meaning",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A galaxy's red-shift is larger than another's. What does this suggest?",
+      "options": [
+       "It is closer",
+       "It is moving away faster and is further away",
+       "It is hotter",
+       "It is smaller"
+      ],
+      "answer": 1,
+      "why": "Greater red-shift means faster recession, which correlates with greater distance."
+     }
+    }
+   ],
+   "practice": [
+    "Define red-shift",
+    "Δλ = 4 nm, λ₀ = 400 nm: v?",
+    "What does red-shift show about galaxies?"
+   ],
+   "independent": [
+    "Core: Three red-shift calculations",
+    "Extend: Explain how red-shift data supports the Big Bang theory",
+    "Stretch: Explain why some nearby galaxies (e.g. Andromeda) show blue-shift."
+   ],
+   "exit": [
+    "What is red-shift?",
+    "Red-shift equation?",
+    "What does red-shift tell us about the universe?"
+   ],
+   "homework": "Edexcel GCSE Physics red-shift calculation questions.",
+   "send": "Support: equation frame. Stretch: Hubble's law."
+  },
+  {
+   "unit": "Physics Topic 7: Astronomy (Physics only)",
+   "n": 20,
+   "title": "Cosmic microwave background and evaluating the Big Bang",
+   "duration": 50,
+   "bigQuestion": "What is the 'afterglow' left in the sky, and what does it prove?",
+   "objectives": [
+    "Describe cosmic microwave background radiation (CMB)",
+    "Explain how the CMB supports the Big Bang",
+    "Evaluate evidence for theories of the universe"
+   ],
+   "successCriteria": [
+    "Describe the CMB",
+    "Explain two pieces of evidence for the Big Bang",
+    "Evaluate the Big Bang against the Steady State theory"
+   ],
+   "crossCurricular": "Philosophy and Islamic Studies: origins and creation",
+   "smsc": "Spiritual: the relationship between scientific evidence and faith; Muslim scholars hold a range of views",
+   "keywords": [
+    {
+     "term": "cosmic microwave background",
+     "def": "microwave radiation detected from all directions, left over from the early universe"
+    },
+    {
+     "term": "Steady State theory",
+     "def": "an earlier theory that the universe has always existed in the same state"
+    },
+    {
+     "term": "evidence",
+     "def": "observations that support or refute a theory"
+    },
+    {
+     "term": "theory",
+     "def": "a well-tested explanation"
+    }
+   ],
+   "starter": [
+    "Define red-shift",
+    "Speed of light?",
+    "Which part of the EM spectrum has longer wavelengths than light?",
+    "Who discovered expansion?"
+   ],
+   "teach": [
+    {
+     "heading": "The CMB",
+     "bullets": [
+      "Detected from every direction",
+      "Microwave radiation",
+      "Originally very high-energy radiation, stretched by expansion"
+     ],
+     "note": "Answer the big question."
+    },
+    {
+     "heading": "Two theories",
+     "bullets": [
+      "Big Bang explains both red-shift and the CMB",
+      "Steady State cannot explain the CMB"
+     ],
+     "note": "Compare.",
+     "compare": {
+      "left": {
+       "title": "Big Bang",
+       "points": [
+        "Universe began hot and dense",
+        "Explains red-shift",
+        "Explains the CMB"
+       ]
+      },
+      "right": {
+       "title": "Steady State",
+       "points": [
+        "Universe always existed",
+        "Explains red-shift (with new matter)",
+        "Cannot explain the CMB"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "A 6-mark evaluation",
+     "bullets": [
+      "Evidence + explanation + conclusion"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Evaluate the evidence for the Big Bang theory (6 marks)",
+      "steps": [
+       "Red-shift: galaxies moving away, so the universe is expanding",
+       "Further galaxies recede faster: consistent with expansion from a point",
+       "CMB: predicted leftover radiation, detected from all directions",
+       "Steady State can't explain the CMB",
+       "Conclusion: Big Bang is the best-supported model"
+      ],
+      "answer": "Evidence → explanation → judgement"
+     }
+    },
+    {
+     "heading": "A theory isn't a guess",
+     "bullets": [
+      "Scientific theories are tested explanations"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "'Just a theory' means a guess",
+      "right": "A scientific theory is supported by lots of evidence"
+     }
+    },
+    {
+     "heading": "Check: CMB",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Why does the CMB support the Big Bang but not Steady State?",
+      "options": [
+       "It is red-shifted visible light",
+       "Big Bang predicts leftover radiation from a hot early universe",
+       "It only comes from the Sun",
+       "Steady State predicts more CMB"
+      ],
+      "answer": 1,
+      "why": "The CMB is explained as radiation from the hot early universe, stretched by expansion."
+     }
+    }
+   ],
+   "practice": [
+    "Describe the CMB",
+    "Two pieces of evidence for the Big Bang",
+    "Why was Steady State rejected?"
+   ],
+   "independent": [
+    "Core: Summarise the evidence for the Big Bang",
+    "Extend: Write a 6-mark evaluation of the two theories",
+    "Stretch: Explain why scientists still refine the Big Bang model (e.g. dark energy)."
+   ],
+   "exit": [
+    "What is the CMB?",
+    "Evidence for expansion?",
+    "Which theory explains the CMB?"
+   ],
+   "homework": "Edexcel GCSE Physics Section 8 revision: astrophysics past-paper questions.",
+   "send": "Support: evidence cards. Stretch: dark matter."
+  }
+ ]
 }

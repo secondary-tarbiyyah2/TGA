@@ -1,479 +1,1965 @@
 {
-  "subject": "Mathematics",
-  "year": "y10",
-  "board": "Pearson Edexcel International GCSE (9–1) Mathematics A (4MA1), Higher tier",
-  "boardShort": "Edexcel IGCSE 4MA1 Higher",
-  "source": "School Maths folder: Pearson International GCSE Mathematics A (4MA1) two-year Scheme of Work, Higher course order (Units 1 Decimals, 2 Special numbers, powers and roots, 9 Algebraic manipulation, 10 Expressions and formulae, 11 Linear equations and inequalities); school 2024 4MA1 Paper 1H and mark scheme for exam style; INSET lesson standard.",
-  "lessons": [
+ "subject": "Mathematics",
+ "year": "y10",
+ "board": "Pearson Edexcel GCSE (9–1) Mathematics (1MA1), Higher tier",
+ "boardShort": "Edexcel GCSE 1MA1 Higher",
+ "source": "School Maths folder: Edexcel GCSE (9–1) Mathematics content, sequenced using the school's two-year scheme order (decimals and recurring decimals, powers and roots, surds, algebraic manipulation, formulae, linear equations and inequalities); Edexcel 1MA1 Higher exam style; INSET lesson standard.",
+ "lessons": [
+  {
+   "unit": "Unit 1: Number: decimals, powers and roots",
+   "n": 1,
+   "title": "Recurring decimals and fractions",
+   "duration": 50,
+   "bigQuestion": "Can every fraction be written as a decimal, and every decimal as a fraction?",
+   "objectives": [
+    "Know which fractions give terminating or recurring decimals",
+    "Convert a fraction to a recurring decimal",
+    "Convert a recurring decimal to a fraction using algebra"
+   ],
+   "successCriteria": [
+    "Write fractions as recurring decimals using dot notation",
+    "Convert simple recurring decimals such as 0.4̇ to fractions",
+    "Convert decimals like 0.12̇7̇ to fractions and show the method in 1MA1 style"
+   ],
+   "crossCurricular": "Computing: why computers store some fractions inexactly",
+   "smsc": "Spiritual: infinity in a finite-looking number; wonder at mathematical structure",
+   "keywords": [
     {
-      "unit": "Unit 1: Number: decimals, powers and roots",
-      "n": 1,
-      "title": "Recurring decimals and fractions",
-      "duration": 50,
-      "bigQuestion": "Can every fraction be written as a decimal, and every decimal as a fraction?",
-      "objectives": ["Know which fractions give terminating or recurring decimals", "Convert a fraction to a recurring decimal", "Convert a recurring decimal to a fraction using algebra"],
-      "successCriteria": ["Write fractions as recurring decimals using dot notation", "Convert simple recurring decimals such as 0.4̇ to fractions", "Convert decimals like 0.12̇7̇ to fractions and show the method in 4MA1 style"],
-      "crossCurricular": "Computing: why computers store some fractions inexactly",
-      "smsc": "Spiritual: infinity in a finite-looking number; wonder at mathematical structure",
-      "keywords": [
-        { "term": "terminating decimal", "def": "a decimal that ends, such as 0.375" },
-        { "term": "recurring decimal", "def": "a decimal with a digit or block of digits repeating forever" },
-        { "term": "dot notation", "def": "dots over the first and last repeating digits" },
-        { "term": "rational number", "def": "a number that can be written as a fraction of two integers" }
-      ],
-      "starter": ["Bismillah. Write 3/8 as a decimal", "Write 0.35 as a fraction in its simplest form", "Work out 1 ÷ 3 on a calculator", "Write 2/9 as a decimal"],
-      "teach": [
-        { "heading": "Terminating or recurring?", "bullets": ["Simplify the fraction first", "Denominator with only prime factors 2 and 5: terminates", "Any other prime factor: recurs"], "note": "Examples: 7/40 (40 = 2³ × 5) terminates; 5/12 (12 = 2² × 3) recurs. Ask pupils to predict before calculating.", "table": { "head": ["Fraction", "Denominator primes", "Decimal"], "rows": [["7/40", "2, 5", "0.175"], ["5/12", "2, 3", "0.416̇"], ["3/11", "11", "0.2̇7̇"]] } },
-        { "heading": "Recurring decimal to fraction", "bullets": ["Let x = the decimal", "Multiply by 10ⁿ to line up the repeats", "Subtract to cancel the recurring part"], "note": "This is the 4MA1 method the mark scheme expects: show both lines and the subtraction.", "model": { "problem": "Write 0.2̇7̇ as a fraction", "steps": ["x = 0.272727…", "100x = 27.272727…", "100x − x: 99x = 27", "x = 27/99"], "answer": "3/11" } },
-        { "heading": "A non-repeating start", "bullets": ["Multiply to move the non-repeating part first", "Then line up the repeats"], "note": "0.13̇: let x = 0.1333…; 10x = 1.333…; 100x = 13.333…; 90x = 12; x = 12/90 = 2/15." },
-        { "heading": "Wrong multiplier", "bullets": ["Two digits repeat: use 100x", "One digit repeats: use 10x"], "note": "Show the error and how the decimals fail to cancel.", "misconception": { "wrong": "0.2̇7̇: 10x − x = 9x = 2.4545…", "right": "Use 100x so the blocks line up: 99x = 27" } },
-        { "heading": "Check: terminate?", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which fraction gives a terminating decimal?", "options": ["5/6", "7/15", "9/20", "4/21"], "answer": 2, "why": "20 = 2² × 5, so 9/20 = 0.45. 6, 15 and 21 each have a factor of 3 (or 7), so they recur." } }
-      ],
-      "practice": ["Write 7/9 as a recurring decimal", "Write 0.5̇ as a fraction", "Write 0.4̇5̇ as a fraction in its simplest form"],
-      "independent": ["Core: Convert to fractions in their simplest form: (a) 0.8̇ (b) 0.3̇6̇ (c) 0.1̇2̇3̇", "Extend: Show that 0.16̇ = 1/6 and that 0.24̇ = 11/45", "Stretch: Prove that 0.9̇ = 1 using algebra, and explain why this is not a rounding error."],
-      "exit": ["Is 11/40 terminating or recurring? Why?", "Write 0.7̇ as a fraction.", "Write 0.0̇9̇ as a fraction."],
-      "homework": "Exam practice: four 4MA1-style 'show that' recurring-decimal questions (3 marks each) from the homework sheet.",
-      "send": "Support: method frame with the two lines to complete. Stretch: proofs about rational and irrational numbers."
+     "term": "terminating decimal",
+     "def": "a decimal that ends, such as 0.375"
     },
     {
-      "unit": "Unit 1: Number: decimals, powers and roots",
-      "n": 2,
-      "title": "Prime factors, HCF and LCM",
-      "duration": 50,
-      "bigQuestion": "How can prime factors solve real problems with timings and sharing?",
-      "objectives": ["Write numbers as products of prime factors in index form", "Find HCF and LCM using prime factors", "Solve HCF and LCM problems, including given in index form"],
-      "successCriteria": ["Write a number as a product of prime factors", "Find HCF and LCM using a Venn diagram", "Find HCF and LCM of numbers given in index form without working them out"],
-      "crossCurricular": "Computing: prime factorisation and encryption",
-      "smsc": "Social: planning fair shares and schedules",
-      "keywords": [
-        { "term": "prime factor decomposition", "def": "a number written as a product of primes" },
-        { "term": "index form", "def": "using powers, e.g. 2³ × 5" },
-        { "term": "HCF", "def": "highest common factor" },
-        { "term": "LCM", "def": "lowest common multiple" }
-      ],
-      "starter": ["Write 0.4̇ as a fraction", "Is 91 prime?", "Work out 2³ × 3²", "List the factors of 36"],
-      "teach": [
-        { "heading": "Product of primes", "bullets": ["Factor tree or repeated division", "Write in index form, in order"], "note": "Model 504 by division: 2, 2, 2, 3, 3, 7 → 2³ × 3² × 7." },
-        { "heading": "HCF and LCM in index form", "bullets": ["HCF: lowest power of each common prime", "LCM: highest power of every prime"], "note": "Model.", "model": { "problem": "A = 2³ × 3² × 5 and B = 2² × 3⁴ × 7. Find the HCF and LCM.", "steps": ["Common primes: 2 and 3", "HCF: 2² × 3² = 36", "LCM: 2³ × 3⁴ × 5 × 7", "= 8 × 81 × 35"], "answer": "HCF 36, LCM 22 680" } },
-        { "heading": "Mixing up highest and lowest", "bullets": ["HCF divides into both, so use the lower powers"], "note": "Ask pupils to check: does 36 divide into A = 360 and B = 2268? Yes: 360 = 36 × 10 and 2268 = 36 × 63.", "misconception": { "wrong": "HCF = 2³ × 3⁴", "right": "HCF uses the lowest powers: 2² × 3²" } },
-        { "heading": "Check: LCM", "bullets": [], "note": "Show me on 3.", "check": { "q": "LCM of 2⁴ × 3 and 2² × 3³ × 5?", "options": ["2² × 3", "2⁴ × 3³ × 5", "2⁶ × 3⁴ × 5", "2⁴ × 3³"], "answer": 1, "why": "Highest power of each prime: 2⁴, 3³ and 5. A is the HCF; C adds the powers; D misses the 5." } }
-      ],
-      "practice": ["Write 360 in index form", "Find the HCF and LCM of 84 and 90", "Find the HCF of 2⁵ × 7 and 2³ × 7²"],
-      "independent": ["Core: Find the HCF and LCM of (a) 120 and 150 (b) 2² × 3 × 5² and 2 × 3³ × 5", "Extend: Two runners lap a track in 72 s and 84 s. They start together. After how many minutes are they next together at the start line?", "Stretch: x = 2ᵃ × 3 and y = 2³ × 3ᵇ. HCF(x, y) = 12 and LCM(x, y) = 216. Find a and b."],
-      "exit": ["Write 252 as a product of primes.", "HCF of 2³ × 5 and 2 × 5²?", "LCM of 2³ × 5 and 2 × 5²?"],
-      "homework": "4MA1 past-paper style: five HCF/LCM questions, including two in index form.",
-      "send": "Support: Venn template. Stretch: number of factors of a number from its prime factors."
+     "term": "recurring decimal",
+     "def": "a decimal with a digit or block of digits repeating forever"
     },
     {
-      "unit": "Unit 1: Number: decimals, powers and roots",
-      "n": 3,
-      "title": "Negative and fractional indices",
-      "duration": 50,
-      "bigQuestion": "What could it mean to raise a number to the power one half?",
-      "objectives": ["Use the laws of indices including zero and negative powers", "Interpret fractional indices as roots", "Evaluate expressions such as 27^(−2/3)"],
-      "successCriteria": ["Evaluate a⁰ and a⁻ⁿ", "Evaluate a^(1/n) and a^(m/n)", "Evaluate negative fractional powers of fractions"],
-      "crossCurricular": "Science: exponential decay and growth; Computing: binary powers",
-      "smsc": "Spiritual: extending a rule logically into new territory",
-      "keywords": [
-        { "term": "reciprocal", "def": "1 divided by the number" },
-        { "term": "fractional index", "def": "a^(1/n) means the nth root of a" },
-        { "term": "root", "def": "the inverse of a power" },
-        { "term": "evaluate", "def": "find the value" }
-      ],
-      "starter": ["Simplify 5³ × 5⁴", "Evaluate 2⁻³", "Evaluate ∛64", "What is any non-zero number to the power 0?"],
-      "teach": [
-        { "heading": "Why a half power is a square root", "bullets": ["9^(1/2) × 9^(1/2) = 9¹ = 9", "So 9^(1/2) is the number that squares to 9", "9^(1/2) = √9 = 3"], "note": "Answer the big question using the multiplication law. Then 8^(1/3) = ∛8 = 2." },
-        { "heading": "The three-step method", "bullets": ["Negative: take the reciprocal", "Denominator: take the root", "Numerator: raise to the power"], "note": "Root first keeps the numbers small.", "model": { "problem": "Evaluate (8/27)^(−2/3)", "steps": ["Reciprocal: (27/8)^(2/3)", "Cube root: 3/2", "Square: (3/2)² = 9/4"], "answer": "9/4" } },
-        { "heading": "Negative index error", "bullets": ["A negative index never makes the answer negative"], "note": "Show 4⁻² = 1/16, not −16 or −8.", "misconception": { "wrong": "4⁻² = −16", "right": "4⁻² = 1/4² = 1/16" } },
-        { "heading": "Writing as a power", "bullets": ["√x = x^(1/2)", "1/x³ = x⁻³", "1/√x = x^(−1/2)"], "note": "Exam questions ask: write 1/√8 as a power of 2: 8 = 2³, √8 = 2^(3/2), so 2^(−3/2)." },
-        { "heading": "Check: evaluate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Evaluate 16^(3/4)", "options": ["12", "8", "64", "1/8"], "answer": 1, "why": "Fourth root of 16 is 2, and 2³ = 8. A multiplies 16 by 3/4; D treats the index as negative." } }
-      ],
-      "practice": ["Evaluate 25^(1/2)", "Evaluate 64^(2/3)", "Evaluate 9^(−1/2)", "Write 1/x⁴ as a power of x"],
-      "independent": ["Core: Evaluate (a) 49^(1/2) (b) 125^(2/3) (c) 32^(−1/5) (d) (1/4)^(−2)", "Extend: Find n: (a) 2ⁿ = √32 (b) 9ⁿ = 1/27 (c) 4ⁿ × 8 = 2¹¹", "Stretch: Write √(2⁷) × 4^(−1/4) as a power of 2."],
-      "exit": ["Evaluate 36^(1/2)", "Evaluate 27^(−1/3)", "Write ∛x² as a power of x"],
-      "homework": "4MA1 style: ten index questions from the sheet, including 'write as a power of 2/3' items.",
-      "send": "Support: three-step card (reciprocal, root, power). Stretch: index equations."
+     "term": "dot notation",
+     "def": "dots over the first and last repeating digits"
     },
     {
-      "unit": "Unit 1: Number: decimals, powers and roots",
-      "n": 4,
-      "title": "Simplifying surds",
-      "duration": 50,
-      "bigQuestion": "Why do mathematicians prefer √8 written as 2√2?",
-      "objectives": ["Understand what a surd is", "Simplify surds using square factors", "Add, subtract and multiply surds"],
-      "successCriteria": ["Simplify √12 and √50", "Add and subtract like surds", "Multiply and simplify expressions such as (3√2)(5√6)"],
-      "crossCurricular": "Science: exact answers in physics; Art: the √2 ratio in A-series paper",
-      "smsc": "Cultural: irrational numbers discovered by the ancient Greeks, developed by Muslim mathematicians such as Abu Kamil",
-      "keywords": [
-        { "term": "surd", "def": "a root that cannot be simplified to a whole number, e.g. √2" },
-        { "term": "irrational", "def": "cannot be written as a fraction of integers" },
-        { "term": "exact form", "def": "an answer left as a surd, not a rounded decimal" },
-        { "term": "square factor", "def": "a factor that is a square number" }
-      ],
-      "starter": ["Evaluate 81^(1/2)", "List the square numbers to 100", "Is √36 rational?", "Work out √4 × √9 and √36"],
-      "teach": [
-        { "heading": "Two rules", "bullets": ["√a × √b = √(ab)", "√a ÷ √b = √(a/b)", "But √a + √b ≠ √(a + b)"], "note": "Test with numbers: √4 + √9 = 5 but √13 ≈ 3.6.", "misconception": { "wrong": "√9 + √16 = √25 = 5", "right": "√9 + √16 = 3 + 4 = 7" } },
-        { "heading": "Simplifying", "bullets": ["Find the largest square factor", "Split and square-root it"], "note": "Model.", "model": { "problem": "Simplify √72", "steps": ["Largest square factor of 72: 36", "√72 = √36 × √2", "= 6√2"], "answer": "6√2" } },
-        { "heading": "Collecting like surds", "bullets": ["Simplify each first", "Then add like terms"], "note": "Example: √50 + √18 = 5√2 + 3√2 = 8√2. Like collecting 5x + 3x." },
-        { "heading": "Multiplying surds", "bullets": ["Multiply whole numbers together", "Multiply surds together", "Simplify"], "note": "(3√2)(5√6) = 15√12 = 15 × 2√3 = 30√3." },
-        { "heading": "Check: simplify", "bullets": [], "note": "Show me on 3.", "check": { "q": "Simplify √48", "options": ["2√12", "4√3", "16√3", "24√2"], "answer": 1, "why": "48 = 16 × 3, so √48 = 4√3. A is not fully simplified; C does not root the 16." } }
-      ],
-      "practice": ["Simplify √20", "Simplify √75", "Simplify √12 + √27", "Simplify √3 × √15"],
-      "independent": ["Core: Simplify (a) √98 (b) √200 (c) 2√5 + √45 (d) √8 × √6", "Extend: A rectangle has sides √18 cm and √8 cm. Find its area and perimeter in exact form.", "Stretch: Show that √(12) + √(75) − √(27) can be written as k√3, and find k."],
-      "exit": ["Simplify √18", "Simplify 3√2 + √32", "Simplify √2 × √10"],
-      "homework": "4MA1 style: exact-form questions on surd simplification (eight questions).",
-      "send": "Support: list of square numbers to 144. Stretch: surds in Pythagoras problems."
-    },
-    {
-      "unit": "Unit 1: Number: decimals, powers and roots",
-      "n": 5,
-      "title": "Expanding brackets with surds and rationalising",
-      "duration": 50,
-      "bigQuestion": "Why would anyone want to remove a surd from the bottom of a fraction?",
-      "objectives": ["Expand brackets containing surds", "Rationalise denominators of the form a/√b", "Rationalise denominators of the form a/(b + √c)"],
-      "successCriteria": ["Expand √2(3 + √2)", "Rationalise 6/√3", "Rationalise 4/(3 − √5) using the conjugate"],
-      "crossCurricular": "Science: exact values in physics formulae",
-      "smsc": "Spiritual: perseverance with multi-step methods",
-      "keywords": [
-        { "term": "rationalise", "def": "remove the surd from the denominator" },
-        { "term": "conjugate", "def": "the same expression with the sign between terms changed, e.g. 3 + √5 → 3 − √5" },
-        { "term": "exact", "def": "not rounded" },
-        { "term": "difference of two squares", "def": "(a + b)(a − b) = a² − b²" }
-      ],
-      "starter": ["Simplify √50", "Expand (x + 3)(x − 3)", "Simplify √3 × √3", "Simplify 2√5 + √20"],
-      "teach": [
-        { "heading": "Expanding surd brackets", "bullets": ["Same as algebra: four products", "√a × √a = a"], "note": "(2 + √3)(4 − √3) = 8 − 2√3 + 4√3 − 3 = 5 + 2√3." },
-        { "heading": "Rationalising a/√b", "bullets": ["Multiply top and bottom by √b", "√b × √b = b"], "note": "6/√3 = 6√3/3 = 2√3. Answer the big question: exact values are easier to compare and add when the denominator is rational." },
-        { "heading": "Using the conjugate", "bullets": ["Multiply top and bottom by the conjugate", "The bottom becomes a difference of two squares"], "note": "Model.", "model": { "problem": "Rationalise 4/(3 − √5)", "steps": ["Multiply by (3 + √5)/(3 + √5)", "Top: 4(3 + √5) = 12 + 4√5", "Bottom: 9 − 5 = 4", "(12 + 4√5)/4"], "answer": "3 + √5" } },
-        { "heading": "Only multiplying the bottom", "bullets": ["Top and bottom must be multiplied together", "Otherwise the value changes"], "note": "Show how multiplying only the denominator changes the number.", "misconception": { "wrong": "5/√2 = 5/2", "right": "5/√2 × √2/√2 = 5√2/2" } },
-        { "heading": "Check: rationalise", "bullets": [], "note": "Show me on 3.", "check": { "q": "Rationalise 10/√5", "options": ["2", "2√5", "10√5", "√2"], "answer": 1, "why": "10√5/5 = 2√5. A forgets the surd on top; C forgets to divide by 5." } }
-      ],
-      "practice": ["Expand √3(4 + √3)", "Expand (1 + √2)²", "Rationalise 8/√2", "Rationalise 1/(2 + √3)"],
-      "independent": ["Core: (a) Expand (5 − √2)(5 + √2) (b) Rationalise 12/√6 (c) Rationalise 3/√7", "Extend: Rationalise 6/(√5 − 1) and simplify.", "Stretch: Show that (√3 + 1)/(√3 − 1) can be written as a + √b where a and b are integers. Find a and b."],
-      "exit": ["Expand (2 + √5)(2 − √5)", "Rationalise 7/√7", "Rationalise 2/(1 + √3)"],
-      "homework": "4MA1 Higher-style surds exam questions (Paper 1H/2H) from the sheet, with full working.",
-      "send": "Support: step-by-step frame for the conjugate. Stretch: surds in quadratic formula answers."
-    },
-    {
-      "unit": "Unit 9: Algebraic manipulation",
-      "n": 6,
-      "title": "Expanding two and three binomials",
-      "duration": 50,
-      "bigQuestion": "What shape does the expansion of three brackets describe?",
-      "objectives": ["Expand the product of two binomials", "Expand the product of three binomials", "Simplify the results"],
-      "successCriteria": ["Expand (2x − 3)(x + 4)", "Expand (x + 1)(x + 2)(x − 3) in two stages", "Expand (2x + 1)³ and check by substitution"],
-      "crossCurricular": "Science: volume formulae; Business: modelling with polynomials",
-      "smsc": "Spiritual: patience with long methods (itqan in work)",
-      "keywords": [
-        { "term": "binomial", "def": "an expression with two terms" },
-        { "term": "cubic", "def": "an expression with highest power 3" },
-        { "term": "expand", "def": "multiply out brackets" },
-        { "term": "like terms", "def": "terms with the same letters and powers" }
-      ],
-      "starter": ["Expand (x + 5)(x − 2)", "Expand (x − 4)²", "Simplify 3x² − 5x² + 4x", "Rationalise 3/√3"],
-      "teach": [
-        { "heading": "Two binomials with coefficients", "bullets": ["Grid or FOIL", "Four products, then collect"], "note": "(2x − 3)(x + 4) = 2x² + 8x − 3x − 12 = 2x² + 5x − 12." },
-        { "heading": "Three binomials: two stages", "bullets": ["Expand two brackets first", "Multiply the result by the third", "Collect carefully"], "note": "Answer the big question: a cubic can describe a volume, e.g. a box with sides (x + 1), (x + 2), (x − 3).", "model": { "problem": "Expand (x + 1)(x + 2)(x − 3)", "steps": ["(x + 1)(x + 2) = x² + 3x + 2", "(x² + 3x + 2)(x − 3)", "= x³ − 3x² + 3x² − 9x + 2x − 6", "Collect: x³ + 0x² − 7x − 6"], "answer": "x³ − 7x − 6" } },
-        { "heading": "Cubing a bracket", "bullets": ["(a + b)³ means three brackets", "Not a³ + b³"], "note": "(2x + 1)³ = (4x² + 4x + 1)(2x + 1) = 8x³ + 12x² + 6x + 1.", "misconception": { "wrong": "(x + 2)³ = x³ + 8", "right": "(x + 2)³ = x³ + 6x² + 12x + 8" } },
-        { "heading": "Check: expand", "bullets": [], "note": "Show me on 3.", "check": { "q": "The x² term of (x + 2)(x − 1)(x + 4) is…", "options": ["x²", "5x²", "3x²", "8x²"], "answer": 1, "why": "Expansion is x³ + 5x² + 2x − 8. The x² coefficient is 2 − 1 + 4 = 5." } }
-      ],
-      "practice": ["Expand (3x + 2)(x − 5)", "Expand (x + 3)(x − 1)(x + 2)", "Expand (x − 1)³"],
-      "independent": ["Core: Expand and simplify (a) (4x − 1)(2x + 3) (b) (x + 4)(x − 2)(x − 1)", "Extend: Show that (x + 3)(2x − 1)(x − 2) = 2x³ + x² − 13x + 6", "Stretch: A box has dimensions (x + 2), (x + 3) and (2x − 1) cm. Expand to find its volume and evaluate it when x = 4. Check by multiplying the dimensions directly."],
-      "exit": ["Expand (2x + 5)(x − 3)", "Expand (x + 1)²(x − 2)", "What is the constant term of (x − 2)(x + 3)(x + 5)?"],
-      "homework": "4MA1 'show that' expansion questions (three binomials) from the sheet.",
-      "send": "Support: grid templates for the second stage. Stretch: Pascal's triangle for (a + b)ⁿ."
-    },
-    {
-      "unit": "Unit 9: Algebraic manipulation",
-      "n": 7,
-      "title": "Factorising quadratics x² + bx + c",
-      "duration": 50,
-      "bigQuestion": "How do we reverse an expansion without guessing blindly?",
-      "objectives": ["Factorise x² + bx + c", "Use sign patterns to guide factorising", "Check factorisations by expanding"],
-      "successCriteria": ["Factorise x² + 7x + 12", "Factorise with negative terms such as x² − 2x − 15", "Factorise expressions with a common factor first, e.g. 3x² − 3x − 18"],
-      "crossCurricular": "Science: projectile motion; Business: profit models",
-      "smsc": "Moral: checking our answers honestly by reversing",
-      "keywords": [
-        { "term": "factorise", "def": "write as a product of factors" },
-        { "term": "quadratic", "def": "an expression with highest power 2" },
-        { "term": "coefficient", "def": "the number multiplying a term" },
-        { "term": "constant term", "def": "the number without a letter" }
-      ],
-      "starter": ["Expand (x + 3)(x + 4)", "Two numbers multiply to 12 and add to 7?", "Two numbers multiply to −10 and add to 3?", "Factorise 5x + 20"],
-      "teach": [
-        { "heading": "The product–sum idea", "bullets": ["(x + p)(x + q) = x² + (p + q)x + pq", "Find p and q: product c, sum b"], "note": "Link to the starter questions." },
-        { "heading": "Using signs", "bullets": ["c positive: same signs (sign of b)", "c negative: different signs"], "note": "Model.", "model": { "problem": "Factorise x² − 2x − 15", "steps": ["Product −15, sum −2", "c is negative: one positive, one negative", "Pairs: 3 and −5 (sum −2)", "Write the brackets"], "answer": "(x + 3)(x − 5)" } },
-        { "heading": "Common factor first", "bullets": ["3x² − 3x − 18 = 3(x² − x − 6)", "= 3(x − 3)(x + 2)"], "note": "4MA1 asks to 'factorise fully'.", "misconception": { "wrong": "3x² − 3x − 18 = (3x − 9)(x + 2) and stop", "right": "Take out 3 first: 3(x − 3)(x + 2)" } },
-        { "heading": "Check: factorise", "bullets": [], "note": "Show me on 3.", "check": { "q": "Factorise x² + x − 12", "options": ["(x + 3)(x − 4)", "(x + 4)(x − 3)", "(x + 6)(x − 2)", "(x − 4)(x − 3)"], "answer": 1, "why": "4 × −3 = −12 and 4 + (−3) = 1. A gives −x; C gives +4x; D gives +12." } }
-      ],
-      "practice": ["Factorise x² + 9x + 20", "Factorise x² − 8x + 15", "Factorise x² + 2x − 24", "Factorise x² − 49"],
-      "independent": ["Core: Factorise (a) x² + 10x + 21 (b) x² − x − 20 (c) x² − 11x + 28", "Extend: Factorise fully 2x² + 6x − 56 and 5x² − 45", "Stretch: Find all integers b so that x² + bx + 24 can be factorised."],
-      "exit": ["Factorise x² + 5x + 6", "Factorise x² − 3x − 10", "Factorise fully 2x² − 8x + 6"],
-      "homework": "4MA1 practice: 12 factorising questions in increasing difficulty.",
-      "send": "Support: factor-pair lists. Stretch: factorising in x and y, e.g. x² + 5xy + 6y²."
-    },
-    {
-      "unit": "Unit 9: Algebraic manipulation",
-      "n": 8,
-      "title": "Factorising ax² + bx + c",
-      "duration": 50,
-      "bigQuestion": "What changes when the x² term has a coefficient?",
-      "objectives": ["Factorise quadratics where a ≠ 1", "Use the splitting-the-middle-term method", "Check by expanding"],
-      "successCriteria": ["Factorise 2x² + 7x + 3", "Factorise with negatives, e.g. 6x² − x − 2", "Factorise fully when there is also a common factor"],
-      "crossCurricular": "Science: quadratic relationships in physics",
-      "smsc": "Spiritual: systematic method over guesswork",
-      "keywords": [
-        { "term": "split the middle term", "def": "rewrite bx as two terms so you can factorise in pairs" },
-        { "term": "ac product", "def": "the product of the x² coefficient and the constant" },
-        { "term": "factorise in pairs", "def": "take common factors from pairs of terms" },
-        { "term": "quadratic", "def": "an expression with highest power 2" }
-      ],
-      "starter": ["Factorise x² + 7x + 10", "Factorise x² − 5x − 14", "Expand (2x + 1)(x + 3)", "Two numbers multiply to 6 and add to 7?"],
-      "teach": [
-        { "heading": "Splitting the middle term", "bullets": ["Find two numbers: product ac, sum b", "Split bx into those two terms", "Factorise in pairs"], "note": "Model.", "model": { "problem": "Factorise 6x² − x − 2", "steps": ["ac = −12, b = −1: numbers 3 and −4", "6x² + 3x − 4x − 2", "3x(2x + 1) − 2(2x + 1)", "Common bracket (2x + 1)"], "answer": "(2x + 1)(3x − 2)" } },
-        { "heading": "Why it works", "bullets": ["Expanding (2x + 1)(3x − 2) gives four terms", "We are rebuilding those four terms"], "note": "Show the grid: 6x², −4x, 3x, −2. The middle split is exactly the two middle cells.", "table": { "head": ["×", "3x", "−2"], "rows": [["2x", "6x²", "−4x"], ["+1", "3x", "−2"]] } },
-        { "heading": "Brackets that don't match", "bullets": ["Signs in the second pair must make the same bracket"], "note": "3x(2x + 1) + 2(−2x − 1) looks stuck. Take out −2 instead.", "misconception": { "wrong": "3x(2x + 1) + 2(−2x − 1)", "right": "3x(2x + 1) − 2(2x + 1) = (2x + 1)(3x − 2)" } },
-        { "heading": "Check: factorise", "bullets": [], "note": "Show me on 3.", "check": { "q": "Factorise 3x² + 10x + 8", "options": ["(3x + 2)(x + 4)", "(3x + 4)(x + 2)", "(3x + 8)(x + 1)", "(3x + 1)(x + 8)"], "answer": 1, "why": "(3x + 4)(x + 2) = 3x² + 6x + 4x + 8 = 3x² + 10x + 8. A gives 14x; C gives 11x; D gives 25x." } }
-      ],
-      "practice": ["Factorise 2x² + 5x + 3", "Factorise 3x² − 7x + 2", "Factorise 4x² + 4x − 3"],
-      "independent": ["Core: Factorise (a) 2x² + 9x + 4 (b) 5x² − 13x − 6 (c) 6x² + 11x + 3", "Extend: Factorise fully 12x² − 2x − 4 and 4x² − 25", "Stretch: Factorise 6x² − xy − 15y² and explain how the method extends to two variables."],
-      "exit": ["Factorise 2x² + 7x + 6", "Factorise 3x² − x − 2", "Check one answer by expanding."],
-      "homework": "4MA1 Higher factorising practice: ten mixed questions (a = 1 and a ≠ 1).",
-      "send": "Support: grid method to find the brackets. Stretch: factorising then solving."
-    },
-    {
-      "unit": "Unit 9: Algebraic manipulation",
-      "n": 9,
-      "title": "The difference of two squares and factorising fully",
-      "duration": 50,
-      "bigQuestion": "How can spotting a pattern turn a hard question into an easy one?",
-      "objectives": ["Recognise and factorise the difference of two squares", "Choose the right factorising method", "Factorise fully in several steps"],
-      "successCriteria": ["Factorise x² − 81", "Factorise 9x² − 16y² and 2x² − 50", "Factorise expressions like x⁴ − 1 fully"],
-      "crossCurricular": "Computing: efficient algorithms; Art: square patterns",
-      "smsc": "Spiritual: seeing hidden structure",
-      "keywords": [
-        { "term": "difference of two squares", "def": "a² − b² = (a + b)(a − b)" },
-        { "term": "factorise fully", "def": "no bracket can be factorised further" },
-        { "term": "perfect square", "def": "a number or term that is a square, e.g. 9x²" },
-        { "term": "common factor", "def": "a factor shared by every term" }
-      ],
-      "starter": ["Expand (x + 7)(x − 7)", "Factorise x² + 4x − 21", "Is 49y² a perfect square?", "Factorise 6x² − 9x"],
-      "teach": [
-        { "heading": "Spot the pattern", "bullets": ["Two terms, both squares, subtracted", "a² − b² = (a + b)(a − b)"], "note": "Factorise x² − 81 = (x + 9)(x − 9); 9x² − 16y² = (3x + 4y)(3x − 4y)." },
-        { "heading": "Choosing a method", "bullets": ["Always take out a common factor first"], "note": "Display the decision flow and refer to it all lesson.", "cycle": ["Common factor?", "Two terms: difference of squares?", "Three terms: product–sum or split", "Check: can any bracket factorise again?"] },
-        { "heading": "Factorising fully", "bullets": ["Keep going until nothing more factorises"], "note": "Model.", "model": { "problem": "Factorise fully 2x⁴ − 32", "steps": ["Common factor: 2(x⁴ − 16)", "Difference of squares: 2(x² + 4)(x² − 4)", "x² − 4 is also a difference of squares", "x² + 4 cannot factorise"], "answer": "2(x² + 4)(x + 2)(x − 2)" } },
-        { "heading": "Sum of two squares", "bullets": ["x² + 9 does not factorise over real numbers"], "note": "Pupils often try (x + 3)(x + 3).", "misconception": { "wrong": "x² + 9 = (x + 3)(x − 3)", "right": "(x + 3)(x − 3) = x² − 9; x² + 9 does not factorise" } },
-        { "heading": "Check: method", "bullets": [], "note": "Show me on 3.", "check": { "q": "Factorise fully 5x² − 45", "options": ["5(x² − 9)", "(5x − 15)(x + 3)", "5(x + 3)(x − 3)", "(x + 9)(5x − 5)"], "answer": 2, "why": "5(x² − 9) then difference of squares. A is not fully factorised; B is correct but not fully factorised; D is wrong." } }
-      ],
-      "practice": ["Factorise y² − 64", "Factorise 25a² − 1", "Factorise fully 3x² − 12"],
-      "independent": ["Core: Factorise fully (a) x² − 100 (b) 4x² − 9 (c) 18 − 2x² (d) x² − 6x − 27", "Extend: Use factorising to work out 87² − 13² without a calculator.", "Stretch: Factorise fully 81x⁴ − y⁴ and (x + 3)² − (x − 1)²."],
-      "exit": ["Factorise x² − 36", "Factorise fully 7x² − 28", "Does x² + 16 factorise?"],
-      "homework": "4MA1 practice: mixed factorising sheet, choosing the method for each.",
-      "send": "Support: decision-flow card. Stretch: factorising cubics with a known factor."
-    },
-    {
-      "unit": "Unit 9: Algebraic manipulation",
-      "n": 10,
-      "title": "Simplifying algebraic fractions",
-      "duration": 50,
-      "bigQuestion": "When can you cancel in a fraction, and when is it a disaster?",
-      "objectives": ["Simplify algebraic fractions by cancelling common factors", "Factorise numerators and denominators before cancelling", "Avoid cancelling terms that are not factors"],
-      "successCriteria": ["Simplify 6x²y/3xy²", "Simplify (x² − 9)/(x + 3)", "Simplify (2x² + 5x − 3)/(4x² − 1)"],
-      "crossCurricular": "Science: simplifying formulae",
-      "smsc": "Moral: shortcuts that break the rules lead to wrong answers",
-      "keywords": [
-        { "term": "algebraic fraction", "def": "a fraction with algebra in the numerator or denominator" },
-        { "term": "cancel", "def": "divide top and bottom by the same factor" },
-        { "term": "factor", "def": "something that multiplies the whole expression" },
-        { "term": "simplest form", "def": "no common factors remain" }
-      ],
-      "starter": ["Simplify 18/24", "Factorise x² − 25", "Factorise 2x² + 7x + 3", "Simplify 8x³ ÷ 2x"],
-      "teach": [
-        { "heading": "Only cancel factors", "bullets": ["Factors multiply the whole top or bottom", "Terms are added: never cancel them"], "note": "Show with numbers: (2 + 6)/2 = 4, not 6.", "misconception": { "wrong": "(x + 6)/x = 6", "right": "x is a term, not a factor; (x + 6)/x does not simplify" } },
-        { "heading": "Factorise first", "bullets": ["Factorise top and bottom fully", "Cancel common brackets"], "note": "Model.", "model": { "problem": "Simplify (2x² + 5x − 3)/(4x² − 1)", "steps": ["Top: (2x − 1)(x + 3)", "Bottom: (2x + 1)(2x − 1)", "Cancel (2x − 1)"], "answer": "(x + 3)/(2x + 1)" } },
-        { "heading": "Monomials", "bullets": ["Cancel numbers and powers separately"], "note": "6x²y/3xy² = 2x/y." },
-        { "heading": "Check: simplify", "bullets": [], "note": "Show me on 3.", "check": { "q": "Simplify (x² − 4x)/(x² − 16)", "options": ["−4x/−16", "x/(x + 4)", "(x − 4)/(x − 4)", "1/4"], "answer": 1, "why": "x(x − 4)/((x + 4)(x − 4)) = x/(x + 4). A cancels terms; D is a guess." } }
-      ],
-      "practice": ["Simplify 12a³b/4ab²", "Simplify (x² + 5x)/(x² − 25)", "Simplify (x² + 3x + 2)/(x² + 4x + 3)"],
-      "independent": ["Core: Simplify (a) (3x + 12)/(x + 4) (b) (x² − 9)/(x² − 3x) (c) (x² − x − 6)/(x² − 9)", "Extend: Simplify (6x² + x − 2)/(9x² − 4)", "Stretch: Show that (x³ − x)/(x² + x) simplifies to x − 1."],
-      "exit": ["Simplify 10x²/5x", "Simplify (x² − 1)/(x − 1)", "Why can't you cancel the x in (x + 2)/x?"],
-      "homework": "4MA1 Higher algebraic fractions sheet (simplifying).",
-      "send": "Support: factorising reminder card. Stretch: fractions with three-term numerators and denominators."
-    },
-    {
-      "unit": "Unit 9: Algebraic manipulation",
-      "n": 11,
-      "title": "Adding, subtracting, multiplying and dividing algebraic fractions",
-      "duration": 50,
-      "bigQuestion": "Do the fraction rules from primary school still work with algebra?",
-      "objectives": ["Add and subtract algebraic fractions using a common denominator", "Multiply and divide algebraic fractions", "Simplify the results fully"],
-      "successCriteria": ["Add x/3 + x/4", "Add or subtract 3/(x + 1) − 2/(x − 2)", "Combine and simplify multi-step algebraic fraction expressions"],
-      "crossCurricular": "Science: combining rates (e.g. resistors in parallel)",
-      "smsc": "Spiritual: old rules holding true in new places",
-      "keywords": [
-        { "term": "common denominator", "def": "a shared denominator for both fractions" },
-        { "term": "reciprocal", "def": "the fraction flipped" },
-        { "term": "numerator", "def": "the top of a fraction" },
-        { "term": "simplify", "def": "factorise and cancel common factors" }
-      ],
-      "starter": ["Work out 2/3 + 1/4", "Work out 2/3 ÷ 4/9", "Simplify (x² − 4)/(x + 2)", "Expand −2(x − 2)"],
-      "teach": [
-        { "heading": "Adding with algebraic denominators", "bullets": ["Common denominator: multiply the denominators", "Use brackets in the numerators"], "note": "Model.", "model": { "problem": "Write 3/(x + 1) − 2/(x − 2) as a single fraction", "steps": ["Common denominator: (x + 1)(x − 2)", "Numerator: 3(x − 2) − 2(x + 1)", "= 3x − 6 − 2x − 2", "= x − 8"], "answer": "(x − 8)/((x + 1)(x − 2))" } },
-        { "heading": "The minus sign", "bullets": ["Subtract the whole second numerator", "Brackets keep the signs right"], "note": "The −2 multiplies both terms.", "misconception": { "wrong": "3(x − 2) − 2(x + 1) = 3x − 6 − 2x + 2", "right": "= 3x − 6 − 2x − 2 = x − 8" } },
-        { "heading": "Multiplying and dividing", "bullets": ["Multiply: tops × tops, bottoms × bottoms", "Divide: multiply by the reciprocal", "Factorise and cancel first"], "note": "(x² − 9)/(2x) ÷ (x + 3)/(4x²) = (x + 3)(x − 3)/(2x) × 4x²/(x + 3) = 2x(x − 3)." },
-        { "heading": "Check: add", "bullets": [], "note": "Show me on 3.", "check": { "q": "x/2 + x/5 =", "options": ["2x/7", "7x/10", "x²/10", "2x/10"], "answer": 1, "why": "5x/10 + 2x/10 = 7x/10. A adds tops and bottoms; C multiplies." } }
-      ],
-      "practice": ["Write x/3 + 2x/5 as a single fraction", "Write 1/x + 1/(x + 2) as a single fraction", "Simplify (x/4) × (8/x²)"],
-      "independent": ["Core: Single fractions: (a) (x + 1)/2 + (x − 3)/3 (b) 5/x − 2/(x + 1) (c) 3x/4 ÷ 9x²/2", "Extend: Show that 2/(x − 1) + 3/(x + 1) = (5x − 1)/(x² − 1)", "Stretch: Solve 2/(x + 1) + 1/(x − 2) = 1 by writing the left side as a single fraction."],
-      "exit": ["Single fraction: x/4 − x/6", "Single fraction: 2/x + 3/(x − 1)", "Simplify (2/x) ÷ (4/x²)"],
-      "homework": "4MA1 Higher algebraic fractions exam questions (Paper 1H/2H).",
-      "send": "Support: worked-example card per operation. Stretch: equations with algebraic fractions."
-    },
-    {
-      "unit": "Unit 10: Expressions, formulae and rearranging",
-      "n": 12,
-      "title": "Rearranging formulae where the subject appears twice",
-      "duration": 50,
-      "bigQuestion": "What do you do when the letter you want appears in two places?",
-      "objectives": ["Rearrange formulae involving powers and roots", "Rearrange formulae where the subject appears twice", "Factorise to isolate the subject"],
-      "successCriteria": ["Make r the subject of V = (4/3)πr³", "Make x the subject of ax + b = cx + d", "Make x the subject of y = (x + 1)/(x − 2)"],
-      "crossCurricular": "Science: rearranging physics equations such as lens and resistor formulae",
-      "smsc": "Spiritual: patience and order when a problem seems tangled",
-      "keywords": [
-        { "term": "subject", "def": "the variable on its own" },
-        { "term": "rearrange", "def": "change the subject of a formula" },
-        { "term": "collect", "def": "gather terms containing the subject on one side" },
-        { "term": "factorise", "def": "take the subject out as a common factor" }
-      ],
-      "starter": ["Make t the subject of v = u + at", "Make r the subject of A = πr²", "Factorise ax − bx", "Solve 3x + 2 = x + 10"],
-      "teach": [
-        { "heading": "Powers and roots", "bullets": ["Undo in reverse order", "Divide, then root"], "note": "V = (4/3)πr³ → 3V = 4πr³ → r³ = 3V/(4π) → r = ∛(3V/(4π))." },
-        { "heading": "Subject appears twice", "bullets": ["Remove fractions", "Collect subject terms on one side", "Factorise the subject out", "Divide"], "note": "Model.", "model": { "problem": "Make x the subject of y = (x + 1)/(x − 2)", "steps": ["y(x − 2) = x + 1", "xy − 2y = x + 1", "xy − x = 2y + 1", "x(y − 1) = 2y + 1"], "answer": "x = (2y + 1)/(y − 1)" } },
-        { "heading": "Not factorising", "bullets": ["x on both sides is not an answer"], "note": "Show the incomplete answer.", "misconception": { "wrong": "x = (2y + 1 + x)/y", "right": "Collect all x terms and factorise: x(y − 1) = 2y + 1" } },
-        { "heading": "Check: rearrange", "bullets": [], "note": "Show me on 3.", "check": { "q": "Make a the subject of 3a + b = ac", "options": ["a = b/(c − 3)", "a = (ac − b)/3", "a = b/(3 − c)", "a = (b − 3)/c"], "answer": 0, "why": "b = ac − 3a = a(c − 3), so a = b/(c − 3). B still has a on both sides; C has the sign flipped." } }
-      ],
-      "practice": ["Make h the subject of V = πr²h", "Make x the subject of ax + 3 = bx − 5", "Make p the subject of q = (p − 1)/p"],
-      "independent": ["Core: (a) Make r the subject of A = 4πr² (b) Make x the subject of 5x − k = 2x + m", "Extend: Make t the subject of s = (3t + 2)/(t − 4)", "Stretch: Make u the subject of 1/f = 1/u + 1/v."],
-      "exit": ["Make r the subject of V = r³", "Make x the subject of ax = bx + c", "Make y the subject of x = (y + 2)/y"],
-      "homework": "4MA1 Higher rearranging questions (subject appears twice), five questions.",
-      "send": "Support: four-step card. Stretch: physics formulae (lens equation)."
-    },
-    {
-      "unit": "Unit 10: Expressions, formulae and rearranging",
-      "n": 13,
-      "title": "Identities and algebraic proof",
-      "duration": 50,
-      "bigQuestion": "How can we be sure something is true for every number, not just the ones we tried?",
-      "objectives": ["Distinguish equations, formulae and identities", "Show that two expressions are identical", "Write simple algebraic proofs about integers"],
-      "successCriteria": ["Use ≡ correctly and identify identities", "Prove an identity by expanding", "Prove statements about odd, even and consecutive numbers"],
-      "crossCurricular": "Computing: testing versus proving algorithms; Philosophy: certainty",
-      "smsc": "Spiritual: certainty and evidence; the difference between examples and proof",
-      "keywords": [
-        { "term": "identity", "def": "true for all values; written with ≡" },
-        { "term": "proof", "def": "a logical argument showing something is always true" },
-        { "term": "even number", "def": "can be written 2n" },
-        { "term": "odd number", "def": "can be written 2n + 1" }
-      ],
-      "starter": ["Expand (n + 1)²", "Is 2n always even when n is an integer?", "Write the next odd number after 2n + 1", "Expand (x + a)(x − a)"],
-      "teach": [
-        { "heading": "Equation, formula or identity?", "bullets": ["Equation: true for some values", "Formula: links quantities", "Identity: true for all values (≡)"], "note": "Sort: 2x + 3 = 11; A = πr²; 2(x + 3) ≡ 2x + 6." },
-        { "heading": "Examples are not proof", "bullets": ["Testing three numbers can't cover all numbers", "Algebra covers every case at once"], "note": "Answer the big question. Show a pattern that works for small cases then fails (e.g. n² + n + 41 is prime for n = 0 to 39, but not n = 40)." },
-        { "heading": "Writing a proof", "bullets": ["Represent the numbers with letters", "Expand and simplify", "Conclude in words"], "note": "Model.", "model": { "problem": "Prove that the sum of three consecutive integers is a multiple of 3", "steps": ["Let the integers be n, n + 1, n + 2", "Sum: n + n + 1 + n + 2", "= 3n + 3 = 3(n + 1)", "3(n + 1) is a multiple of 3"], "answer": "Proved for all integers n" } },
-        { "heading": "Using the same letter twice", "bullets": ["Two different odd numbers need different letters"], "note": "2n + 1 and 2n + 1 are the same number! Use 2n + 1 and 2m + 1.", "misconception": { "wrong": "Two odd numbers: 2n + 1 and 2n + 1", "right": "Use 2n + 1 and 2m + 1 so they can differ" } },
-        { "heading": "Check: identity", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is an identity?", "options": ["3x + 1 = 10", "(x + 2)² ≡ x² + 4x + 4", "v = u + at", "x² = 9"], "answer": 1, "why": "It is true for every x. A and D are equations; C is a formula." } }
-      ],
-      "practice": ["Show that (x + 5)² − (x − 5)² ≡ 20x", "Prove that the sum of two even numbers is even", "Find a and b: (x + a)² ≡ x² + 6x + b"],
-      "independent": ["Core: Prove that the product of two odd numbers is odd", "Extend: Prove that (2n + 1)² − (2n − 1)² is always a multiple of 8", "Stretch: Prove that the difference between the squares of any two consecutive integers is equal to their sum."],
-      "exit": ["Write the next two consecutive integers after n.", "Show that 4(x + 2) − 2(x − 1) ≡ 2x + 10", "Why isn't testing five numbers a proof?"],
-      "homework": "4MA1 Higher 'show that' and proof questions, three items.",
-      "send": "Support: proof template (let…, so…, therefore…). Stretch: proof by contradiction preview."
-    },
-    {
-      "unit": "Unit 11: Linear equations and inequalities",
-      "n": 14,
-      "title": "Solving linear equations",
-      "duration": 50,
-      "bigQuestion": "What does 'balancing' an equation really mean?",
-      "objectives": ["Solve linear equations with unknowns on both sides", "Solve equations with brackets and fractions", "Check solutions by substitution"],
-      "successCriteria": ["Solve 5x − 3 = 2x + 9", "Solve 3(2x − 1) = 4(x + 2)", "Solve (x + 1)/3 − (x − 2)/4 = 2"],
-      "crossCurricular": "Science: solving for unknowns in physics; Business: break-even",
-      "smsc": "Moral: balance and fairness ('adl) — what you do to one side you do to the other",
-      "keywords": [
-        { "term": "linear equation", "def": "an equation where the highest power of x is 1" },
-        { "term": "solve", "def": "find the value(s) that make it true" },
-        { "term": "balance", "def": "do the same to both sides" },
-        { "term": "verify", "def": "check by substituting" }
-      ],
-      "starter": ["Solve 4x = 28", "Solve x/5 + 2 = 6", "Expand 3(2x − 4)", "LCM of 3 and 4?"],
-      "teach": [
-        { "heading": "Unknowns on both sides", "bullets": ["Collect x terms on the side with more x", "Then the numbers"], "note": "5x − 3 = 2x + 9 → 3x = 12 → x = 4. Check: 17 = 17." },
-        { "heading": "Brackets and fractions", "bullets": ["Clear fractions by multiplying by the LCM", "Use brackets around numerators"], "note": "Model.", "model": { "problem": "Solve (x + 1)/3 − (x − 2)/4 = 2", "steps": ["Multiply every term by 12", "4(x + 1) − 3(x − 2) = 24", "4x + 4 − 3x + 6 = 24", "x + 10 = 24"], "answer": "x = 14" } },
-        { "heading": "Forgetting to multiply every term", "bullets": ["The right-hand side is multiplied too"], "note": "Show the error.", "misconception": { "wrong": "4(x + 1) − 3(x − 2) = 2", "right": "Multiply the 2 by 12 as well: = 24" } },
-        { "heading": "Check: solve", "bullets": [], "note": "Show me on 3.", "check": { "q": "Solve 2(3x − 4) = 5x + 1", "options": ["x = 5", "x = 9", "x = −3", "x = 7"], "answer": 1, "why": "6x − 8 = 5x + 1, so x = 9. A forgets to multiply the 4 by 2 (6x − 4)." } }
-      ],
-      "practice": ["Solve 7x + 2 = 3x + 18", "Solve 4(x − 3) = 2(x + 5)", "Solve (2x − 1)/5 = (x + 3)/4"],
-      "independent": ["Core: Solve (a) 9 − 2x = 3x − 11 (b) 5(2x + 1) = 3(x − 4) + 3 (c) (x − 4)/2 + x/3 = 8", "Extend: Solve (3x + 2)/4 − (x − 5)/6 = x", "Stretch: Find the value of k for which 3(x + k) = 2x + 7 has the solution x = −2, and solve 4(x − k) = x + k for that k."],
-      "exit": ["Solve 6x − 5 = 2x + 7", "Solve 3(x + 2) = 21", "Solve x/2 + x/3 = 10"],
-      "homework": "4MA1 linear equations practice: ten questions including fractions.",
-      "send": "Support: balance diagrams. Stretch: equations with algebraic fractions."
-    },
-    {
-      "unit": "Unit 11: Linear equations and inequalities",
-      "n": 15,
-      "title": "Setting up and solving equations from problems",
-      "duration": 50,
-      "bigQuestion": "How can algebra turn a word puzzle into a sum you can solve?",
-      "objectives": ["Form linear equations from written contexts", "Solve and interpret solutions in context", "Use geometry facts to form equations"],
-      "successCriteria": ["Form and solve an equation from a simple word problem", "Form equations from angle and perimeter facts", "Solve multi-step contextual problems and check the answer makes sense"],
-      "crossCurricular": "Science: forming equations from data; Business: costing",
-      "smsc": "Social: sharing inheritance and costs fairly",
-      "keywords": [
-        { "term": "form an equation", "def": "write an equation that represents the problem" },
-        { "term": "unknown", "def": "the quantity you are trying to find" },
-        { "term": "interpret", "def": "explain what the answer means in context" },
-        { "term": "angle sum", "def": "angles in a triangle add to 180°, on a line to 180°" }
-      ],
-      "starter": ["Solve 3x + 5 = x + 17", "Angles in a triangle add up to?", "Write an expression for 'five more than twice n'", "Perimeter of a rectangle 2x by x + 3?"],
-      "teach": [
-        { "heading": "From words to equation", "bullets": ["Choose a letter and define it", "Write each quantity in terms of it", "Find the equality in the question"], "note": "Model.", "model": { "problem": "Aisha is 3 times as old as Bilal. In 8 years she will be twice as old as him. Find their ages.", "steps": ["Let Bilal be b; Aisha is 3b", "In 8 years: 3b + 8 and b + 8", "3b + 8 = 2(b + 8)", "3b + 8 = 2b + 16, so b = 8"], "answer": "Bilal 8, Aisha 24" } },
-        { "heading": "Geometry equations", "bullets": ["Use angle facts or perimeter", "Solve, then find the angles or lengths asked for"], "note": "Triangle angles x, 2x + 10, 3x − 40: 6x − 30 = 180, x = 35; angles 35°, 80°, 65°." },
-        { "heading": "Answering the question asked", "bullets": ["x is rarely the final answer"], "note": "Remind pupils to substitute back.", "misconception": { "wrong": "Final answer: x = 35", "right": "Angles are 35°, 80° and 65°: answer what was asked" } },
-        { "heading": "Check: form the equation", "bullets": [], "note": "Show me on 3.", "check": { "q": "A rectangle is (x + 4) cm long and x cm wide. Its perimeter is 32 cm. Which equation is right?", "options": ["x + 4 + x = 32", "2(x + 4) + 2x = 32", "x(x + 4) = 32", "4x + 4 = 32"], "answer": 1, "why": "Perimeter adds all four sides. A adds two sides; C is the area; D forgets to double the 4." } }
-      ],
-      "practice": ["I think of a number, multiply by 4 and subtract 7. The answer is 29. Find the number.", "Angles on a straight line: 3x and x + 20. Find x.", "Three consecutive integers sum to 84. Find them."],
-      "independent": ["Core: The perimeter of a triangle with sides x, 2x − 3 and x + 7 is 40 cm. Find each side.", "Extend: Adult tickets cost £5 more than child tickets. 3 adult and 4 child tickets cost £71. Find the price of each.", "Stretch: £120 is shared between three brothers. The eldest gets twice the youngest, the middle gets £10 more than the youngest. Form and solve an equation, then check."],
-      "exit": ["Write an equation for: 'twice a number plus 9 is 25'", "Solve it.", "Angles in a quadrilateral: x, x, 2x, 120°. Find x."],
-      "homework": "4MA1 problem-solving: six 'form and solve' questions from the sheet.",
-      "send": "Support: keyword-to-symbol table. Stretch: problems leading to equations with fractions."
-    },
-    {
-      "unit": "Unit 11: Linear equations and inequalities",
-      "n": 16,
-      "title": "Linear inequalities",
-      "duration": 50,
-      "bigQuestion": "Why does multiplying by a negative number flip an inequality?",
-      "objectives": ["Solve linear inequalities", "Represent solutions on a number line and in set notation", "List integer solutions"],
-      "successCriteria": ["Solve 3x − 4 < 11 and show on a number line", "Solve double inequalities such as −3 ≤ 2x + 1 < 9", "Solve inequalities with a negative x coefficient and list integer solutions"],
-      "crossCurricular": "Business: budget limits; Science: safe ranges",
-      "smsc": "Moral: limits and boundaries (hudud) that keep us safe",
-      "keywords": [
-        { "term": "inequality", "def": "a statement using <, >, ≤ or ≥" },
-        { "term": "integer solutions", "def": "whole numbers that satisfy the inequality" },
-        { "term": "open circle", "def": "the end value is not included (< or >)" },
-        { "term": "closed circle", "def": "the end value is included (≤ or ≥)" }
-      ],
-      "starter": ["Solve 3x − 4 = 11", "Is 5 < 3?", "List integers between −2 and 3", "What does ≥ mean?"],
-      "teach": [
-        { "heading": "Solve like an equation", "bullets": ["Same steps as an equation", "Keep the inequality sign"], "note": "3x − 4 < 11 → 3x < 15 → x < 5. Draw an open circle at 5 and arrow left." },
-        { "heading": "The negative flip", "bullets": ["Multiply or divide by a negative: reverse the sign"], "note": "Show with numbers: 2 < 5 but −2 > −5. Answer the big question.", "misconception": { "wrong": "−2x > 6 → x > −3", "right": "Dividing by −2 flips the sign: x < −3" } },
-        { "heading": "Double inequalities", "bullets": ["Do the same to all three parts", "List integers carefully at the ends"], "note": "Model.", "model": { "problem": "Solve −3 ≤ 2x + 1 < 9 and list the integer solutions", "steps": ["Subtract 1: −4 ≤ 2x < 8", "Divide by 2: −2 ≤ x < 4", "Include −2, exclude 4"], "answer": "x = −2, −1, 0, 1, 2, 3" } },
-        { "heading": "Check: integers", "bullets": [], "note": "Show me on 3.", "check": { "q": "How many integers satisfy −1 < x ≤ 4?", "options": ["4", "5", "6", "3"], "answer": 1, "why": "0, 1, 2, 3, 4: five integers. A forgets 4 is included; C includes −1." } }
-      ],
-      "practice": ["Solve 5x + 2 ≥ 17", "Solve 10 − 3x > 4", "Solve 1 < 3x − 2 ≤ 13 and list the integers"],
-      "independent": ["Core: Solve and show on a number line: (a) 4x − 7 < 9 (b) 2(x + 3) ≥ 14 (c) 6 − x > 2", "Extend: Find the integers n such that −5 < 2n − 1 ≤ 7 and 3n > n + 1.", "Stretch: Solve 2x − 5 < 4x + 3 ≤ x + 12 and represent the solution in set notation."],
-      "exit": ["Solve 2x + 3 > 11", "Solve −4x ≤ 12", "List integers satisfying 1 ≤ x < 5"],
-      "homework": "4MA1 inequalities practice, including number-line diagrams and integer lists.",
-      "send": "Support: number lines pre-drawn. Stretch: inequalities on graphs (preview of regions)."
+     "term": "rational number",
+     "def": "a number that can be written as a fraction of two integers"
     }
-  ]
+   ],
+   "starter": [
+    "Bismillah. Write 3/8 as a decimal",
+    "Write 0.35 as a fraction in its simplest form",
+    "Work out 1 ÷ 3 on a calculator",
+    "Write 2/9 as a decimal"
+   ],
+   "teach": [
+    {
+     "heading": "Terminating or recurring?",
+     "bullets": [
+      "Simplify the fraction first",
+      "Denominator with only prime factors 2 and 5: terminates",
+      "Any other prime factor: recurs"
+     ],
+     "note": "Examples: 7/40 (40 = 2³ × 5) terminates; 5/12 (12 = 2² × 3) recurs. Ask pupils to predict before calculating.",
+     "table": {
+      "head": [
+       "Fraction",
+       "Denominator primes",
+       "Decimal"
+      ],
+      "rows": [
+       [
+        "7/40",
+        "2, 5",
+        "0.175"
+       ],
+       [
+        "5/12",
+        "2, 3",
+        "0.416̇"
+       ],
+       [
+        "3/11",
+        "11",
+        "0.2̇7̇"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Recurring decimal to fraction",
+     "bullets": [
+      "Let x = the decimal",
+      "Multiply by 10ⁿ to line up the repeats",
+      "Subtract to cancel the recurring part"
+     ],
+     "note": "This is the method the mark scheme expects: show both lines and the subtraction.",
+     "model": {
+      "problem": "Write 0.2̇7̇ as a fraction",
+      "steps": [
+       "x = 0.272727…",
+       "100x = 27.272727…",
+       "100x − x: 99x = 27",
+       "x = 27/99"
+      ],
+      "answer": "3/11"
+     }
+    },
+    {
+     "heading": "A non-repeating start",
+     "bullets": [
+      "Multiply to move the non-repeating part first",
+      "Then line up the repeats"
+     ],
+     "note": "0.13̇: let x = 0.1333…; 10x = 1.333…; 100x = 13.333…; 90x = 12; x = 12/90 = 2/15."
+    },
+    {
+     "heading": "Wrong multiplier",
+     "bullets": [
+      "Two digits repeat: use 100x",
+      "One digit repeats: use 10x"
+     ],
+     "note": "Show the error and how the decimals fail to cancel.",
+     "misconception": {
+      "wrong": "0.2̇7̇: 10x − x = 9x = 2.4545…",
+      "right": "Use 100x so the blocks line up: 99x = 27"
+     }
+    },
+    {
+     "heading": "Check: terminate?",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which fraction gives a terminating decimal?",
+      "options": [
+       "5/6",
+       "7/15",
+       "9/20",
+       "4/21"
+      ],
+      "answer": 2,
+      "why": "20 = 2² × 5, so 9/20 = 0.45. 6, 15 and 21 each have a factor of 3 (or 7), so they recur."
+     }
+    }
+   ],
+   "practice": [
+    "Write 7/9 as a recurring decimal",
+    "Write 0.5̇ as a fraction",
+    "Write 0.4̇5̇ as a fraction in its simplest form"
+   ],
+   "independent": [
+    "Core: Convert to fractions in their simplest form: (a) 0.8̇ (b) 0.3̇6̇ (c) 0.1̇2̇3̇",
+    "Extend: Show that 0.16̇ = 1/6 and that 0.24̇ = 11/45",
+    "Stretch: Prove that 0.9̇ = 1 using algebra, and explain why this is not a rounding error."
+   ],
+   "exit": [
+    "Is 11/40 terminating or recurring? Why?",
+    "Write 0.7̇ as a fraction.",
+    "Write 0.0̇9̇ as a fraction."
+   ],
+   "homework": "Exam practice: four 1MA1-style 'show that' recurring-decimal questions (3 marks each) from the homework sheet.",
+   "send": "Support: method frame with the two lines to complete. Stretch: proofs about rational and irrational numbers."
+  },
+  {
+   "unit": "Unit 1: Number: decimals, powers and roots",
+   "n": 2,
+   "title": "Prime factors, HCF and LCM",
+   "duration": 50,
+   "bigQuestion": "How can prime factors solve real problems with timings and sharing?",
+   "objectives": [
+    "Write numbers as products of prime factors in index form",
+    "Find HCF and LCM using prime factors",
+    "Solve HCF and LCM problems, including given in index form"
+   ],
+   "successCriteria": [
+    "Write a number as a product of prime factors",
+    "Find HCF and LCM using a Venn diagram",
+    "Find HCF and LCM of numbers given in index form without working them out"
+   ],
+   "crossCurricular": "Computing: prime factorisation and encryption",
+   "smsc": "Social: planning fair shares and schedules",
+   "keywords": [
+    {
+     "term": "prime factor decomposition",
+     "def": "a number written as a product of primes"
+    },
+    {
+     "term": "index form",
+     "def": "using powers, e.g. 2³ × 5"
+    },
+    {
+     "term": "HCF",
+     "def": "highest common factor"
+    },
+    {
+     "term": "LCM",
+     "def": "lowest common multiple"
+    }
+   ],
+   "starter": [
+    "Write 0.4̇ as a fraction",
+    "Is 91 prime?",
+    "Work out 2³ × 3²",
+    "List the factors of 36"
+   ],
+   "teach": [
+    {
+     "heading": "Product of primes",
+     "bullets": [
+      "Factor tree or repeated division",
+      "Write in index form, in order"
+     ],
+     "note": "Model 504 by division: 2, 2, 2, 3, 3, 7 → 2³ × 3² × 7."
+    },
+    {
+     "heading": "HCF and LCM in index form",
+     "bullets": [
+      "HCF: lowest power of each common prime",
+      "LCM: highest power of every prime"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A = 2³ × 3² × 5 and B = 2² × 3⁴ × 7. Find the HCF and LCM.",
+      "steps": [
+       "Common primes: 2 and 3",
+       "HCF: 2² × 3² = 36",
+       "LCM: 2³ × 3⁴ × 5 × 7",
+       "= 8 × 81 × 35"
+      ],
+      "answer": "HCF 36, LCM 22 680"
+     }
+    },
+    {
+     "heading": "Mixing up highest and lowest",
+     "bullets": [
+      "HCF divides into both, so use the lower powers"
+     ],
+     "note": "Ask pupils to check: does 36 divide into A = 360 and B = 2268? Yes: 360 = 36 × 10 and 2268 = 36 × 63.",
+     "misconception": {
+      "wrong": "HCF = 2³ × 3⁴",
+      "right": "HCF uses the lowest powers: 2² × 3²"
+     }
+    },
+    {
+     "heading": "Check: LCM",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "LCM of 2⁴ × 3 and 2² × 3³ × 5?",
+      "options": [
+       "2² × 3",
+       "2⁴ × 3³ × 5",
+       "2⁶ × 3⁴ × 5",
+       "2⁴ × 3³"
+      ],
+      "answer": 1,
+      "why": "Highest power of each prime: 2⁴, 3³ and 5. A is the HCF; C adds the powers; D misses the 5."
+     }
+    }
+   ],
+   "practice": [
+    "Write 360 in index form",
+    "Find the HCF and LCM of 84 and 90",
+    "Find the HCF of 2⁵ × 7 and 2³ × 7²"
+   ],
+   "independent": [
+    "Core: Find the HCF and LCM of (a) 120 and 150 (b) 2² × 3 × 5² and 2 × 3³ × 5",
+    "Extend: Two runners lap a track in 72 s and 84 s. They start together. After how many minutes are they next together at the start line?",
+    "Stretch: x = 2ᵃ × 3 and y = 2³ × 3ᵇ. HCF(x, y) = 12 and LCM(x, y) = 216. Find a and b."
+   ],
+   "exit": [
+    "Write 252 as a product of primes.",
+    "HCF of 2³ × 5 and 2 × 5²?",
+    "LCM of 2³ × 5 and 2 × 5²?"
+   ],
+   "homework": "1MA1 past-paper style: five HCF/LCM questions, including two in index form.",
+   "send": "Support: Venn template. Stretch: number of factors of a number from its prime factors."
+  },
+  {
+   "unit": "Unit 1: Number: decimals, powers and roots",
+   "n": 3,
+   "title": "Negative and fractional indices",
+   "duration": 50,
+   "bigQuestion": "What could it mean to raise a number to the power one half?",
+   "objectives": [
+    "Use the laws of indices including zero and negative powers",
+    "Interpret fractional indices as roots",
+    "Evaluate expressions such as 27^(−2/3)"
+   ],
+   "successCriteria": [
+    "Evaluate a⁰ and a⁻ⁿ",
+    "Evaluate a^(1/n) and a^(m/n)",
+    "Evaluate negative fractional powers of fractions"
+   ],
+   "crossCurricular": "Science: exponential decay and growth; Computing: binary powers",
+   "smsc": "Spiritual: extending a rule logically into new territory",
+   "keywords": [
+    {
+     "term": "reciprocal",
+     "def": "1 divided by the number"
+    },
+    {
+     "term": "fractional index",
+     "def": "a^(1/n) means the nth root of a"
+    },
+    {
+     "term": "root",
+     "def": "the inverse of a power"
+    },
+    {
+     "term": "evaluate",
+     "def": "find the value"
+    }
+   ],
+   "starter": [
+    "Simplify 5³ × 5⁴",
+    "Evaluate 2⁻³",
+    "Evaluate ∛64",
+    "What is any non-zero number to the power 0?"
+   ],
+   "teach": [
+    {
+     "heading": "Why a half power is a square root",
+     "bullets": [
+      "9^(1/2) × 9^(1/2) = 9¹ = 9",
+      "So 9^(1/2) is the number that squares to 9",
+      "9^(1/2) = √9 = 3"
+     ],
+     "note": "Answer the big question using the multiplication law. Then 8^(1/3) = ∛8 = 2."
+    },
+    {
+     "heading": "The three-step method",
+     "bullets": [
+      "Negative: take the reciprocal",
+      "Denominator: take the root",
+      "Numerator: raise to the power"
+     ],
+     "note": "Root first keeps the numbers small.",
+     "model": {
+      "problem": "Evaluate (8/27)^(−2/3)",
+      "steps": [
+       "Reciprocal: (27/8)^(2/3)",
+       "Cube root: 3/2",
+       "Square: (3/2)² = 9/4"
+      ],
+      "answer": "9/4"
+     }
+    },
+    {
+     "heading": "Negative index error",
+     "bullets": [
+      "A negative index never makes the answer negative"
+     ],
+     "note": "Show 4⁻² = 1/16, not −16 or −8.",
+     "misconception": {
+      "wrong": "4⁻² = −16",
+      "right": "4⁻² = 1/4² = 1/16"
+     }
+    },
+    {
+     "heading": "Writing as a power",
+     "bullets": [
+      "√x = x^(1/2)",
+      "1/x³ = x⁻³",
+      "1/√x = x^(−1/2)"
+     ],
+     "note": "Exam questions ask: write 1/√8 as a power of 2: 8 = 2³, √8 = 2^(3/2), so 2^(−3/2)."
+    },
+    {
+     "heading": "Check: evaluate",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Evaluate 16^(3/4)",
+      "options": [
+       "12",
+       "8",
+       "64",
+       "1/8"
+      ],
+      "answer": 1,
+      "why": "Fourth root of 16 is 2, and 2³ = 8. A multiplies 16 by 3/4; D treats the index as negative."
+     }
+    }
+   ],
+   "practice": [
+    "Evaluate 25^(1/2)",
+    "Evaluate 64^(2/3)",
+    "Evaluate 9^(−1/2)",
+    "Write 1/x⁴ as a power of x"
+   ],
+   "independent": [
+    "Core: Evaluate (a) 49^(1/2) (b) 125^(2/3) (c) 32^(−1/5) (d) (1/4)^(−2)",
+    "Extend: Find n: (a) 2ⁿ = √32 (b) 9ⁿ = 1/27 (c) 4ⁿ × 8 = 2¹¹",
+    "Stretch: Write √(2⁷) × 4^(−1/4) as a power of 2."
+   ],
+   "exit": [
+    "Evaluate 36^(1/2)",
+    "Evaluate 27^(−1/3)",
+    "Write ∛x² as a power of x"
+   ],
+   "homework": "1MA1 style: ten index questions from the sheet, including 'write as a power of 2/3' items.",
+   "send": "Support: three-step card (reciprocal, root, power). Stretch: index equations."
+  },
+  {
+   "unit": "Unit 1: Number: decimals, powers and roots",
+   "n": 4,
+   "title": "Simplifying surds",
+   "duration": 50,
+   "bigQuestion": "Why do mathematicians prefer √8 written as 2√2?",
+   "objectives": [
+    "Understand what a surd is",
+    "Simplify surds using square factors",
+    "Add, subtract and multiply surds"
+   ],
+   "successCriteria": [
+    "Simplify √12 and √50",
+    "Add and subtract like surds",
+    "Multiply and simplify expressions such as (3√2)(5√6)"
+   ],
+   "crossCurricular": "Science: exact answers in physics; Art: the √2 ratio in A-series paper",
+   "smsc": "Cultural: irrational numbers discovered by the ancient Greeks, developed by Muslim mathematicians such as Abu Kamil",
+   "keywords": [
+    {
+     "term": "surd",
+     "def": "a root that cannot be simplified to a whole number, e.g. √2"
+    },
+    {
+     "term": "irrational",
+     "def": "cannot be written as a fraction of integers"
+    },
+    {
+     "term": "exact form",
+     "def": "an answer left as a surd, not a rounded decimal"
+    },
+    {
+     "term": "square factor",
+     "def": "a factor that is a square number"
+    }
+   ],
+   "starter": [
+    "Evaluate 81^(1/2)",
+    "List the square numbers to 100",
+    "Is √36 rational?",
+    "Work out √4 × √9 and √36"
+   ],
+   "teach": [
+    {
+     "heading": "Two rules",
+     "bullets": [
+      "√a × √b = √(ab)",
+      "√a ÷ √b = √(a/b)",
+      "But √a + √b ≠ √(a + b)"
+     ],
+     "note": "Test with numbers: √4 + √9 = 5 but √13 ≈ 3.6.",
+     "misconception": {
+      "wrong": "√9 + √16 = √25 = 5",
+      "right": "√9 + √16 = 3 + 4 = 7"
+     }
+    },
+    {
+     "heading": "Simplifying",
+     "bullets": [
+      "Find the largest square factor",
+      "Split and square-root it"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Simplify √72",
+      "steps": [
+       "Largest square factor of 72: 36",
+       "√72 = √36 × √2",
+       "= 6√2"
+      ],
+      "answer": "6√2"
+     }
+    },
+    {
+     "heading": "Collecting like surds",
+     "bullets": [
+      "Simplify each first",
+      "Then add like terms"
+     ],
+     "note": "Example: √50 + √18 = 5√2 + 3√2 = 8√2. Like collecting 5x + 3x."
+    },
+    {
+     "heading": "Multiplying surds",
+     "bullets": [
+      "Multiply whole numbers together",
+      "Multiply surds together",
+      "Simplify"
+     ],
+     "note": "(3√2)(5√6) = 15√12 = 15 × 2√3 = 30√3."
+    },
+    {
+     "heading": "Check: simplify",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Simplify √48",
+      "options": [
+       "2√12",
+       "4√3",
+       "16√3",
+       "24√2"
+      ],
+      "answer": 1,
+      "why": "48 = 16 × 3, so √48 = 4√3. A is not fully simplified; C does not root the 16."
+     }
+    }
+   ],
+   "practice": [
+    "Simplify √20",
+    "Simplify √75",
+    "Simplify √12 + √27",
+    "Simplify √3 × √15"
+   ],
+   "independent": [
+    "Core: Simplify (a) √98 (b) √200 (c) 2√5 + √45 (d) √8 × √6",
+    "Extend: A rectangle has sides √18 cm and √8 cm. Find its area and perimeter in exact form.",
+    "Stretch: Show that √(12) + √(75) − √(27) can be written as k√3, and find k."
+   ],
+   "exit": [
+    "Simplify √18",
+    "Simplify 3√2 + √32",
+    "Simplify √2 × √10"
+   ],
+   "homework": "1MA1 style: exact-form questions on surd simplification (eight questions).",
+   "send": "Support: list of square numbers to 144. Stretch: surds in Pythagoras problems."
+  },
+  {
+   "unit": "Unit 1: Number: decimals, powers and roots",
+   "n": 5,
+   "title": "Expanding brackets with surds and rationalising",
+   "duration": 50,
+   "bigQuestion": "Why would anyone want to remove a surd from the bottom of a fraction?",
+   "objectives": [
+    "Expand brackets containing surds",
+    "Rationalise denominators of the form a/√b",
+    "Rationalise denominators of the form a/(b + √c)"
+   ],
+   "successCriteria": [
+    "Expand √2(3 + √2)",
+    "Rationalise 6/√3",
+    "Rationalise 4/(3 − √5) using the conjugate"
+   ],
+   "crossCurricular": "Science: exact values in physics formulae",
+   "smsc": "Spiritual: perseverance with multi-step methods",
+   "keywords": [
+    {
+     "term": "rationalise",
+     "def": "remove the surd from the denominator"
+    },
+    {
+     "term": "conjugate",
+     "def": "the same expression with the sign between terms changed, e.g. 3 + √5 → 3 − √5"
+    },
+    {
+     "term": "exact",
+     "def": "not rounded"
+    },
+    {
+     "term": "difference of two squares",
+     "def": "(a + b)(a − b) = a² − b²"
+    }
+   ],
+   "starter": [
+    "Simplify √50",
+    "Expand (x + 3)(x − 3)",
+    "Simplify √3 × √3",
+    "Simplify 2√5 + √20"
+   ],
+   "teach": [
+    {
+     "heading": "Expanding surd brackets",
+     "bullets": [
+      "Same as algebra: four products",
+      "√a × √a = a"
+     ],
+     "note": "(2 + √3)(4 − √3) = 8 − 2√3 + 4√3 − 3 = 5 + 2√3."
+    },
+    {
+     "heading": "Rationalising a/√b",
+     "bullets": [
+      "Multiply top and bottom by √b",
+      "√b × √b = b"
+     ],
+     "note": "6/√3 = 6√3/3 = 2√3. Answer the big question: exact values are easier to compare and add when the denominator is rational."
+    },
+    {
+     "heading": "Using the conjugate",
+     "bullets": [
+      "Multiply top and bottom by the conjugate",
+      "The bottom becomes a difference of two squares"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Rationalise 4/(3 − √5)",
+      "steps": [
+       "Multiply by (3 + √5)/(3 + √5)",
+       "Top: 4(3 + √5) = 12 + 4√5",
+       "Bottom: 9 − 5 = 4",
+       "(12 + 4√5)/4"
+      ],
+      "answer": "3 + √5"
+     }
+    },
+    {
+     "heading": "Only multiplying the bottom",
+     "bullets": [
+      "Top and bottom must be multiplied together",
+      "Otherwise the value changes"
+     ],
+     "note": "Show how multiplying only the denominator changes the number.",
+     "misconception": {
+      "wrong": "5/√2 = 5/2",
+      "right": "5/√2 × √2/√2 = 5√2/2"
+     }
+    },
+    {
+     "heading": "Check: rationalise",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Rationalise 10/√5",
+      "options": [
+       "2",
+       "2√5",
+       "10√5",
+       "√2"
+      ],
+      "answer": 1,
+      "why": "10√5/5 = 2√5. A forgets the surd on top; C forgets to divide by 5."
+     }
+    }
+   ],
+   "practice": [
+    "Expand √3(4 + √3)",
+    "Expand (1 + √2)²",
+    "Rationalise 8/√2",
+    "Rationalise 1/(2 + √3)"
+   ],
+   "independent": [
+    "Core: (a) Expand (5 − √2)(5 + √2) (b) Rationalise 12/√6 (c) Rationalise 3/√7",
+    "Extend: Rationalise 6/(√5 − 1) and simplify.",
+    "Stretch: Show that (√3 + 1)/(√3 − 1) can be written as a + √b where a and b are integers. Find a and b."
+   ],
+   "exit": [
+    "Expand (2 + √5)(2 − √5)",
+    "Rationalise 7/√7",
+    "Rationalise 2/(1 + √3)"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher-style surds exam questions (Paper 1H/2H) from the sheet, with full working.",
+   "send": "Support: step-by-step frame for the conjugate. Stretch: surds in quadratic formula answers."
+  },
+  {
+   "unit": "Unit 9: Algebraic manipulation",
+   "n": 6,
+   "title": "Expanding two and three binomials",
+   "duration": 50,
+   "bigQuestion": "What shape does the expansion of three brackets describe?",
+   "objectives": [
+    "Expand the product of two binomials",
+    "Expand the product of three binomials",
+    "Simplify the results"
+   ],
+   "successCriteria": [
+    "Expand (2x − 3)(x + 4)",
+    "Expand (x + 1)(x + 2)(x − 3) in two stages",
+    "Expand (2x + 1)³ and check by substitution"
+   ],
+   "crossCurricular": "Science: volume formulae; Business: modelling with polynomials",
+   "smsc": "Spiritual: patience with long methods (itqan in work)",
+   "keywords": [
+    {
+     "term": "binomial",
+     "def": "an expression with two terms"
+    },
+    {
+     "term": "cubic",
+     "def": "an expression with highest power 3"
+    },
+    {
+     "term": "expand",
+     "def": "multiply out brackets"
+    },
+    {
+     "term": "like terms",
+     "def": "terms with the same letters and powers"
+    }
+   ],
+   "starter": [
+    "Expand (x + 5)(x − 2)",
+    "Expand (x − 4)²",
+    "Simplify 3x² − 5x² + 4x",
+    "Rationalise 3/√3"
+   ],
+   "teach": [
+    {
+     "heading": "Two binomials with coefficients",
+     "bullets": [
+      "Grid or FOIL",
+      "Four products, then collect"
+     ],
+     "note": "(2x − 3)(x + 4) = 2x² + 8x − 3x − 12 = 2x² + 5x − 12."
+    },
+    {
+     "heading": "Three binomials: two stages",
+     "bullets": [
+      "Expand two brackets first",
+      "Multiply the result by the third",
+      "Collect carefully"
+     ],
+     "note": "Answer the big question: a cubic can describe a volume, e.g. a box with sides (x + 1), (x + 2), (x − 3).",
+     "model": {
+      "problem": "Expand (x + 1)(x + 2)(x − 3)",
+      "steps": [
+       "(x + 1)(x + 2) = x² + 3x + 2",
+       "(x² + 3x + 2)(x − 3)",
+       "= x³ − 3x² + 3x² − 9x + 2x − 6",
+       "Collect: x³ + 0x² − 7x − 6"
+      ],
+      "answer": "x³ − 7x − 6"
+     }
+    },
+    {
+     "heading": "Cubing a bracket",
+     "bullets": [
+      "(a + b)³ means three brackets",
+      "Not a³ + b³"
+     ],
+     "note": "(2x + 1)³ = (4x² + 4x + 1)(2x + 1) = 8x³ + 12x² + 6x + 1.",
+     "misconception": {
+      "wrong": "(x + 2)³ = x³ + 8",
+      "right": "(x + 2)³ = x³ + 6x² + 12x + 8"
+     }
+    },
+    {
+     "heading": "Check: expand",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "The x² term of (x + 2)(x − 1)(x + 4) is…",
+      "options": [
+       "x²",
+       "5x²",
+       "3x²",
+       "8x²"
+      ],
+      "answer": 1,
+      "why": "Expansion is x³ + 5x² + 2x − 8. The x² coefficient is 2 − 1 + 4 = 5."
+     }
+    }
+   ],
+   "practice": [
+    "Expand (3x + 2)(x − 5)",
+    "Expand (x + 3)(x − 1)(x + 2)",
+    "Expand (x − 1)³"
+   ],
+   "independent": [
+    "Core: Expand and simplify (a) (4x − 1)(2x + 3) (b) (x + 4)(x − 2)(x − 1)",
+    "Extend: Show that (x + 3)(2x − 1)(x − 2) = 2x³ + x² − 13x + 6",
+    "Stretch: A box has dimensions (x + 2), (x + 3) and (2x − 1) cm. Expand to find its volume and evaluate it when x = 4. Check by multiplying the dimensions directly."
+   ],
+   "exit": [
+    "Expand (2x + 5)(x − 3)",
+    "Expand (x + 1)²(x − 2)",
+    "What is the constant term of (x − 2)(x + 3)(x + 5)?"
+   ],
+   "homework": "1MA1 'show that' expansion questions (three binomials) from the sheet.",
+   "send": "Support: grid templates for the second stage. Stretch: Pascal's triangle for (a + b)ⁿ."
+  },
+  {
+   "unit": "Unit 9: Algebraic manipulation",
+   "n": 7,
+   "title": "Factorising quadratics x² + bx + c",
+   "duration": 50,
+   "bigQuestion": "How do we reverse an expansion without guessing blindly?",
+   "objectives": [
+    "Factorise x² + bx + c",
+    "Use sign patterns to guide factorising",
+    "Check factorisations by expanding"
+   ],
+   "successCriteria": [
+    "Factorise x² + 7x + 12",
+    "Factorise with negative terms such as x² − 2x − 15",
+    "Factorise expressions with a common factor first, e.g. 3x² − 3x − 18"
+   ],
+   "crossCurricular": "Science: projectile motion; Business: profit models",
+   "smsc": "Moral: checking our answers honestly by reversing",
+   "keywords": [
+    {
+     "term": "factorise",
+     "def": "write as a product of factors"
+    },
+    {
+     "term": "quadratic",
+     "def": "an expression with highest power 2"
+    },
+    {
+     "term": "coefficient",
+     "def": "the number multiplying a term"
+    },
+    {
+     "term": "constant term",
+     "def": "the number without a letter"
+    }
+   ],
+   "starter": [
+    "Expand (x + 3)(x + 4)",
+    "Two numbers multiply to 12 and add to 7?",
+    "Two numbers multiply to −10 and add to 3?",
+    "Factorise 5x + 20"
+   ],
+   "teach": [
+    {
+     "heading": "The product–sum idea",
+     "bullets": [
+      "(x + p)(x + q) = x² + (p + q)x + pq",
+      "Find p and q: product c, sum b"
+     ],
+     "note": "Link to the starter questions."
+    },
+    {
+     "heading": "Using signs",
+     "bullets": [
+      "c positive: same signs (sign of b)",
+      "c negative: different signs"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Factorise x² − 2x − 15",
+      "steps": [
+       "Product −15, sum −2",
+       "c is negative: one positive, one negative",
+       "Pairs: 3 and −5 (sum −2)",
+       "Write the brackets"
+      ],
+      "answer": "(x + 3)(x − 5)"
+     }
+    },
+    {
+     "heading": "Common factor first",
+     "bullets": [
+      "3x² − 3x − 18 = 3(x² − x − 6)",
+      "= 3(x − 3)(x + 2)"
+     ],
+     "note": "The exam asks to 'factorise fully'.",
+     "misconception": {
+      "wrong": "3x² − 3x − 18 = (3x − 9)(x + 2) and stop",
+      "right": "Take out 3 first: 3(x − 3)(x + 2)"
+     }
+    },
+    {
+     "heading": "Check: factorise",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Factorise x² + x − 12",
+      "options": [
+       "(x + 3)(x − 4)",
+       "(x + 4)(x − 3)",
+       "(x + 6)(x − 2)",
+       "(x − 4)(x − 3)"
+      ],
+      "answer": 1,
+      "why": "4 × −3 = −12 and 4 + (−3) = 1. A gives −x; C gives +4x; D gives +12."
+     }
+    }
+   ],
+   "practice": [
+    "Factorise x² + 9x + 20",
+    "Factorise x² − 8x + 15",
+    "Factorise x² + 2x − 24",
+    "Factorise x² − 49"
+   ],
+   "independent": [
+    "Core: Factorise (a) x² + 10x + 21 (b) x² − x − 20 (c) x² − 11x + 28",
+    "Extend: Factorise fully 2x² + 6x − 56 and 5x² − 45",
+    "Stretch: Find all integers b so that x² + bx + 24 can be factorised."
+   ],
+   "exit": [
+    "Factorise x² + 5x + 6",
+    "Factorise x² − 3x − 10",
+    "Factorise fully 2x² − 8x + 6"
+   ],
+   "homework": "1MA1 practice: 12 factorising questions in increasing difficulty.",
+   "send": "Support: factor-pair lists. Stretch: factorising in x and y, e.g. x² + 5xy + 6y²."
+  },
+  {
+   "unit": "Unit 9: Algebraic manipulation",
+   "n": 8,
+   "title": "Factorising ax² + bx + c",
+   "duration": 50,
+   "bigQuestion": "What changes when the x² term has a coefficient?",
+   "objectives": [
+    "Factorise quadratics where a ≠ 1",
+    "Use the splitting-the-middle-term method",
+    "Check by expanding"
+   ],
+   "successCriteria": [
+    "Factorise 2x² + 7x + 3",
+    "Factorise with negatives, e.g. 6x² − x − 2",
+    "Factorise fully when there is also a common factor"
+   ],
+   "crossCurricular": "Science: quadratic relationships in physics",
+   "smsc": "Spiritual: systematic method over guesswork",
+   "keywords": [
+    {
+     "term": "split the middle term",
+     "def": "rewrite bx as two terms so you can factorise in pairs"
+    },
+    {
+     "term": "ac product",
+     "def": "the product of the x² coefficient and the constant"
+    },
+    {
+     "term": "factorise in pairs",
+     "def": "take common factors from pairs of terms"
+    },
+    {
+     "term": "quadratic",
+     "def": "an expression with highest power 2"
+    }
+   ],
+   "starter": [
+    "Factorise x² + 7x + 10",
+    "Factorise x² − 5x − 14",
+    "Expand (2x + 1)(x + 3)",
+    "Two numbers multiply to 6 and add to 7?"
+   ],
+   "teach": [
+    {
+     "heading": "Splitting the middle term",
+     "bullets": [
+      "Find two numbers: product ac, sum b",
+      "Split bx into those two terms",
+      "Factorise in pairs"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Factorise 6x² − x − 2",
+      "steps": [
+       "ac = −12, b = −1: numbers 3 and −4",
+       "6x² + 3x − 4x − 2",
+       "3x(2x + 1) − 2(2x + 1)",
+       "Common bracket (2x + 1)"
+      ],
+      "answer": "(2x + 1)(3x − 2)"
+     }
+    },
+    {
+     "heading": "Why it works",
+     "bullets": [
+      "Expanding (2x + 1)(3x − 2) gives four terms",
+      "We are rebuilding those four terms"
+     ],
+     "note": "Show the grid: 6x², −4x, 3x, −2. The middle split is exactly the two middle cells.",
+     "table": {
+      "head": [
+       "×",
+       "3x",
+       "−2"
+      ],
+      "rows": [
+       [
+        "2x",
+        "6x²",
+        "−4x"
+       ],
+       [
+        "+1",
+        "3x",
+        "−2"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Brackets that don't match",
+     "bullets": [
+      "Signs in the second pair must make the same bracket"
+     ],
+     "note": "3x(2x + 1) + 2(−2x − 1) looks stuck. Take out −2 instead.",
+     "misconception": {
+      "wrong": "3x(2x + 1) + 2(−2x − 1)",
+      "right": "3x(2x + 1) − 2(2x + 1) = (2x + 1)(3x − 2)"
+     }
+    },
+    {
+     "heading": "Check: factorise",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Factorise 3x² + 10x + 8",
+      "options": [
+       "(3x + 2)(x + 4)",
+       "(3x + 4)(x + 2)",
+       "(3x + 8)(x + 1)",
+       "(3x + 1)(x + 8)"
+      ],
+      "answer": 1,
+      "why": "(3x + 4)(x + 2) = 3x² + 6x + 4x + 8 = 3x² + 10x + 8. A gives 14x; C gives 11x; D gives 25x."
+     }
+    }
+   ],
+   "practice": [
+    "Factorise 2x² + 5x + 3",
+    "Factorise 3x² − 7x + 2",
+    "Factorise 4x² + 4x − 3"
+   ],
+   "independent": [
+    "Core: Factorise (a) 2x² + 9x + 4 (b) 5x² − 13x − 6 (c) 6x² + 11x + 3",
+    "Extend: Factorise fully 12x² − 2x − 4 and 4x² − 25",
+    "Stretch: Factorise 6x² − xy − 15y² and explain how the method extends to two variables."
+   ],
+   "exit": [
+    "Factorise 2x² + 7x + 6",
+    "Factorise 3x² − x − 2",
+    "Check one answer by expanding."
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher factorising practice: ten mixed questions (a = 1 and a ≠ 1).",
+   "send": "Support: grid method to find the brackets. Stretch: factorising then solving."
+  },
+  {
+   "unit": "Unit 9: Algebraic manipulation",
+   "n": 9,
+   "title": "The difference of two squares and factorising fully",
+   "duration": 50,
+   "bigQuestion": "How can spotting a pattern turn a hard question into an easy one?",
+   "objectives": [
+    "Recognise and factorise the difference of two squares",
+    "Choose the right factorising method",
+    "Factorise fully in several steps"
+   ],
+   "successCriteria": [
+    "Factorise x² − 81",
+    "Factorise 9x² − 16y² and 2x² − 50",
+    "Factorise expressions like x⁴ − 1 fully"
+   ],
+   "crossCurricular": "Computing: efficient algorithms; Art: square patterns",
+   "smsc": "Spiritual: seeing hidden structure",
+   "keywords": [
+    {
+     "term": "difference of two squares",
+     "def": "a² − b² = (a + b)(a − b)"
+    },
+    {
+     "term": "factorise fully",
+     "def": "no bracket can be factorised further"
+    },
+    {
+     "term": "perfect square",
+     "def": "a number or term that is a square, e.g. 9x²"
+    },
+    {
+     "term": "common factor",
+     "def": "a factor shared by every term"
+    }
+   ],
+   "starter": [
+    "Expand (x + 7)(x − 7)",
+    "Factorise x² + 4x − 21",
+    "Is 49y² a perfect square?",
+    "Factorise 6x² − 9x"
+   ],
+   "teach": [
+    {
+     "heading": "Spot the pattern",
+     "bullets": [
+      "Two terms, both squares, subtracted",
+      "a² − b² = (a + b)(a − b)"
+     ],
+     "note": "Factorise x² − 81 = (x + 9)(x − 9); 9x² − 16y² = (3x + 4y)(3x − 4y)."
+    },
+    {
+     "heading": "Choosing a method",
+     "bullets": [
+      "Always take out a common factor first"
+     ],
+     "note": "Display the decision flow and refer to it all lesson.",
+     "cycle": [
+      "Common factor?",
+      "Two terms: difference of squares?",
+      "Three terms: product–sum or split",
+      "Check: can any bracket factorise again?"
+     ]
+    },
+    {
+     "heading": "Factorising fully",
+     "bullets": [
+      "Keep going until nothing more factorises"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Factorise fully 2x⁴ − 32",
+      "steps": [
+       "Common factor: 2(x⁴ − 16)",
+       "Difference of squares: 2(x² + 4)(x² − 4)",
+       "x² − 4 is also a difference of squares",
+       "x² + 4 cannot factorise"
+      ],
+      "answer": "2(x² + 4)(x + 2)(x − 2)"
+     }
+    },
+    {
+     "heading": "Sum of two squares",
+     "bullets": [
+      "x² + 9 does not factorise over real numbers"
+     ],
+     "note": "Pupils often try (x + 3)(x + 3).",
+     "misconception": {
+      "wrong": "x² + 9 = (x + 3)(x − 3)",
+      "right": "(x + 3)(x − 3) = x² − 9; x² + 9 does not factorise"
+     }
+    },
+    {
+     "heading": "Check: method",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Factorise fully 5x² − 45",
+      "options": [
+       "5(x² − 9)",
+       "(5x − 15)(x + 3)",
+       "5(x + 3)(x − 3)",
+       "(x + 9)(5x − 5)"
+      ],
+      "answer": 2,
+      "why": "5(x² − 9) then difference of squares. A is not fully factorised; B is correct but not fully factorised; D is wrong."
+     }
+    }
+   ],
+   "practice": [
+    "Factorise y² − 64",
+    "Factorise 25a² − 1",
+    "Factorise fully 3x² − 12"
+   ],
+   "independent": [
+    "Core: Factorise fully (a) x² − 100 (b) 4x² − 9 (c) 18 − 2x² (d) x² − 6x − 27",
+    "Extend: Use factorising to work out 87² − 13² without a calculator.",
+    "Stretch: Factorise fully 81x⁴ − y⁴ and (x + 3)² − (x − 1)²."
+   ],
+   "exit": [
+    "Factorise x² − 36",
+    "Factorise fully 7x² − 28",
+    "Does x² + 16 factorise?"
+   ],
+   "homework": "1MA1 practice: mixed factorising sheet, choosing the method for each.",
+   "send": "Support: decision-flow card. Stretch: factorising cubics with a known factor."
+  },
+  {
+   "unit": "Unit 9: Algebraic manipulation",
+   "n": 10,
+   "title": "Simplifying algebraic fractions",
+   "duration": 50,
+   "bigQuestion": "When can you cancel in a fraction, and when is it a disaster?",
+   "objectives": [
+    "Simplify algebraic fractions by cancelling common factors",
+    "Factorise numerators and denominators before cancelling",
+    "Avoid cancelling terms that are not factors"
+   ],
+   "successCriteria": [
+    "Simplify 6x²y/3xy²",
+    "Simplify (x² − 9)/(x + 3)",
+    "Simplify (2x² + 5x − 3)/(4x² − 1)"
+   ],
+   "crossCurricular": "Science: simplifying formulae",
+   "smsc": "Moral: shortcuts that break the rules lead to wrong answers",
+   "keywords": [
+    {
+     "term": "algebraic fraction",
+     "def": "a fraction with algebra in the numerator or denominator"
+    },
+    {
+     "term": "cancel",
+     "def": "divide top and bottom by the same factor"
+    },
+    {
+     "term": "factor",
+     "def": "something that multiplies the whole expression"
+    },
+    {
+     "term": "simplest form",
+     "def": "no common factors remain"
+    }
+   ],
+   "starter": [
+    "Simplify 18/24",
+    "Factorise x² − 25",
+    "Factorise 2x² + 7x + 3",
+    "Simplify 8x³ ÷ 2x"
+   ],
+   "teach": [
+    {
+     "heading": "Only cancel factors",
+     "bullets": [
+      "Factors multiply the whole top or bottom",
+      "Terms are added: never cancel them"
+     ],
+     "note": "Show with numbers: (2 + 6)/2 = 4, not 6.",
+     "misconception": {
+      "wrong": "(x + 6)/x = 6",
+      "right": "x is a term, not a factor; (x + 6)/x does not simplify"
+     }
+    },
+    {
+     "heading": "Factorise first",
+     "bullets": [
+      "Factorise top and bottom fully",
+      "Cancel common brackets"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Simplify (2x² + 5x − 3)/(4x² − 1)",
+      "steps": [
+       "Top: (2x − 1)(x + 3)",
+       "Bottom: (2x + 1)(2x − 1)",
+       "Cancel (2x − 1)"
+      ],
+      "answer": "(x + 3)/(2x + 1)"
+     }
+    },
+    {
+     "heading": "Monomials",
+     "bullets": [
+      "Cancel numbers and powers separately"
+     ],
+     "note": "6x²y/3xy² = 2x/y."
+    },
+    {
+     "heading": "Check: simplify",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Simplify (x² − 4x)/(x² − 16)",
+      "options": [
+       "−4x/−16",
+       "x/(x + 4)",
+       "(x − 4)/(x − 4)",
+       "1/4"
+      ],
+      "answer": 1,
+      "why": "x(x − 4)/((x + 4)(x − 4)) = x/(x + 4). A cancels terms; D is a guess."
+     }
+    }
+   ],
+   "practice": [
+    "Simplify 12a³b/4ab²",
+    "Simplify (x² + 5x)/(x² − 25)",
+    "Simplify (x² + 3x + 2)/(x² + 4x + 3)"
+   ],
+   "independent": [
+    "Core: Simplify (a) (3x + 12)/(x + 4) (b) (x² − 9)/(x² − 3x) (c) (x² − x − 6)/(x² − 9)",
+    "Extend: Simplify (6x² + x − 2)/(9x² − 4)",
+    "Stretch: Show that (x³ − x)/(x² + x) simplifies to x − 1."
+   ],
+   "exit": [
+    "Simplify 10x²/5x",
+    "Simplify (x² − 1)/(x − 1)",
+    "Why can't you cancel the x in (x + 2)/x?"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher algebraic fractions sheet (simplifying).",
+   "send": "Support: factorising reminder card. Stretch: fractions with three-term numerators and denominators."
+  },
+  {
+   "unit": "Unit 9: Algebraic manipulation",
+   "n": 11,
+   "title": "Adding, subtracting, multiplying and dividing algebraic fractions",
+   "duration": 50,
+   "bigQuestion": "Do the fraction rules from primary school still work with algebra?",
+   "objectives": [
+    "Add and subtract algebraic fractions using a common denominator",
+    "Multiply and divide algebraic fractions",
+    "Simplify the results fully"
+   ],
+   "successCriteria": [
+    "Add x/3 + x/4",
+    "Add or subtract 3/(x + 1) − 2/(x − 2)",
+    "Combine and simplify multi-step algebraic fraction expressions"
+   ],
+   "crossCurricular": "Science: combining rates (e.g. resistors in parallel)",
+   "smsc": "Spiritual: old rules holding true in new places",
+   "keywords": [
+    {
+     "term": "common denominator",
+     "def": "a shared denominator for both fractions"
+    },
+    {
+     "term": "reciprocal",
+     "def": "the fraction flipped"
+    },
+    {
+     "term": "numerator",
+     "def": "the top of a fraction"
+    },
+    {
+     "term": "simplify",
+     "def": "factorise and cancel common factors"
+    }
+   ],
+   "starter": [
+    "Work out 2/3 + 1/4",
+    "Work out 2/3 ÷ 4/9",
+    "Simplify (x² − 4)/(x + 2)",
+    "Expand −2(x − 2)"
+   ],
+   "teach": [
+    {
+     "heading": "Adding with algebraic denominators",
+     "bullets": [
+      "Common denominator: multiply the denominators",
+      "Use brackets in the numerators"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Write 3/(x + 1) − 2/(x − 2) as a single fraction",
+      "steps": [
+       "Common denominator: (x + 1)(x − 2)",
+       "Numerator: 3(x − 2) − 2(x + 1)",
+       "= 3x − 6 − 2x − 2",
+       "= x − 8"
+      ],
+      "answer": "(x − 8)/((x + 1)(x − 2))"
+     }
+    },
+    {
+     "heading": "The minus sign",
+     "bullets": [
+      "Subtract the whole second numerator",
+      "Brackets keep the signs right"
+     ],
+     "note": "The −2 multiplies both terms.",
+     "misconception": {
+      "wrong": "3(x − 2) − 2(x + 1) = 3x − 6 − 2x + 2",
+      "right": "= 3x − 6 − 2x − 2 = x − 8"
+     }
+    },
+    {
+     "heading": "Multiplying and dividing",
+     "bullets": [
+      "Multiply: tops × tops, bottoms × bottoms",
+      "Divide: multiply by the reciprocal",
+      "Factorise and cancel first"
+     ],
+     "note": "(x² − 9)/(2x) ÷ (x + 3)/(4x²) = (x + 3)(x − 3)/(2x) × 4x²/(x + 3) = 2x(x − 3)."
+    },
+    {
+     "heading": "Check: add",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "x/2 + x/5 =",
+      "options": [
+       "2x/7",
+       "7x/10",
+       "x²/10",
+       "2x/10"
+      ],
+      "answer": 1,
+      "why": "5x/10 + 2x/10 = 7x/10. A adds tops and bottoms; C multiplies."
+     }
+    }
+   ],
+   "practice": [
+    "Write x/3 + 2x/5 as a single fraction",
+    "Write 1/x + 1/(x + 2) as a single fraction",
+    "Simplify (x/4) × (8/x²)"
+   ],
+   "independent": [
+    "Core: Single fractions: (a) (x + 1)/2 + (x − 3)/3 (b) 5/x − 2/(x + 1) (c) 3x/4 ÷ 9x²/2",
+    "Extend: Show that 2/(x − 1) + 3/(x + 1) = (5x − 1)/(x² − 1)",
+    "Stretch: Solve 2/(x + 1) + 1/(x − 2) = 1 by writing the left side as a single fraction."
+   ],
+   "exit": [
+    "Single fraction: x/4 − x/6",
+    "Single fraction: 2/x + 3/(x − 1)",
+    "Simplify (2/x) ÷ (4/x²)"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher algebraic fractions exam questions (Paper 1H/2H).",
+   "send": "Support: worked-example card per operation. Stretch: equations with algebraic fractions."
+  },
+  {
+   "unit": "Unit 10: Expressions, formulae and rearranging",
+   "n": 12,
+   "title": "Rearranging formulae where the subject appears twice",
+   "duration": 50,
+   "bigQuestion": "What do you do when the letter you want appears in two places?",
+   "objectives": [
+    "Rearrange formulae involving powers and roots",
+    "Rearrange formulae where the subject appears twice",
+    "Factorise to isolate the subject"
+   ],
+   "successCriteria": [
+    "Make r the subject of V = (4/3)πr³",
+    "Make x the subject of ax + b = cx + d",
+    "Make x the subject of y = (x + 1)/(x − 2)"
+   ],
+   "crossCurricular": "Science: rearranging physics equations such as lens and resistor formulae",
+   "smsc": "Spiritual: patience and order when a problem seems tangled",
+   "keywords": [
+    {
+     "term": "subject",
+     "def": "the variable on its own"
+    },
+    {
+     "term": "rearrange",
+     "def": "change the subject of a formula"
+    },
+    {
+     "term": "collect",
+     "def": "gather terms containing the subject on one side"
+    },
+    {
+     "term": "factorise",
+     "def": "take the subject out as a common factor"
+    }
+   ],
+   "starter": [
+    "Make t the subject of v = u + at",
+    "Make r the subject of A = πr²",
+    "Factorise ax − bx",
+    "Solve 3x + 2 = x + 10"
+   ],
+   "teach": [
+    {
+     "heading": "Powers and roots",
+     "bullets": [
+      "Undo in reverse order",
+      "Divide, then root"
+     ],
+     "note": "V = (4/3)πr³ → 3V = 4πr³ → r³ = 3V/(4π) → r = ∛(3V/(4π))."
+    },
+    {
+     "heading": "Subject appears twice",
+     "bullets": [
+      "Remove fractions",
+      "Collect subject terms on one side",
+      "Factorise the subject out",
+      "Divide"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Make x the subject of y = (x + 1)/(x − 2)",
+      "steps": [
+       "y(x − 2) = x + 1",
+       "xy − 2y = x + 1",
+       "xy − x = 2y + 1",
+       "x(y − 1) = 2y + 1"
+      ],
+      "answer": "x = (2y + 1)/(y − 1)"
+     }
+    },
+    {
+     "heading": "Not factorising",
+     "bullets": [
+      "x on both sides is not an answer"
+     ],
+     "note": "Show the incomplete answer.",
+     "misconception": {
+      "wrong": "x = (2y + 1 + x)/y",
+      "right": "Collect all x terms and factorise: x(y − 1) = 2y + 1"
+     }
+    },
+    {
+     "heading": "Check: rearrange",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Make a the subject of 3a + b = ac",
+      "options": [
+       "a = b/(c − 3)",
+       "a = (ac − b)/3",
+       "a = b/(3 − c)",
+       "a = (b − 3)/c"
+      ],
+      "answer": 0,
+      "why": "b = ac − 3a = a(c − 3), so a = b/(c − 3). B still has a on both sides; C has the sign flipped."
+     }
+    }
+   ],
+   "practice": [
+    "Make h the subject of V = πr²h",
+    "Make x the subject of ax + 3 = bx − 5",
+    "Make p the subject of q = (p − 1)/p"
+   ],
+   "independent": [
+    "Core: (a) Make r the subject of A = 4πr² (b) Make x the subject of 5x − k = 2x + m",
+    "Extend: Make t the subject of s = (3t + 2)/(t − 4)",
+    "Stretch: Make u the subject of 1/f = 1/u + 1/v."
+   ],
+   "exit": [
+    "Make r the subject of V = r³",
+    "Make x the subject of ax = bx + c",
+    "Make y the subject of x = (y + 2)/y"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher rearranging questions (subject appears twice), five questions.",
+   "send": "Support: four-step card. Stretch: physics formulae (lens equation)."
+  },
+  {
+   "unit": "Unit 10: Expressions, formulae and rearranging",
+   "n": 13,
+   "title": "Identities and algebraic proof",
+   "duration": 50,
+   "bigQuestion": "How can we be sure something is true for every number, not just the ones we tried?",
+   "objectives": [
+    "Distinguish equations, formulae and identities",
+    "Show that two expressions are identical",
+    "Write simple algebraic proofs about integers"
+   ],
+   "successCriteria": [
+    "Use ≡ correctly and identify identities",
+    "Prove an identity by expanding",
+    "Prove statements about odd, even and consecutive numbers"
+   ],
+   "crossCurricular": "Computing: testing versus proving algorithms; Philosophy: certainty",
+   "smsc": "Spiritual: certainty and evidence; the difference between examples and proof",
+   "keywords": [
+    {
+     "term": "identity",
+     "def": "true for all values; written with ≡"
+    },
+    {
+     "term": "proof",
+     "def": "a logical argument showing something is always true"
+    },
+    {
+     "term": "even number",
+     "def": "can be written 2n"
+    },
+    {
+     "term": "odd number",
+     "def": "can be written 2n + 1"
+    }
+   ],
+   "starter": [
+    "Expand (n + 1)²",
+    "Is 2n always even when n is an integer?",
+    "Write the next odd number after 2n + 1",
+    "Expand (x + a)(x − a)"
+   ],
+   "teach": [
+    {
+     "heading": "Equation, formula or identity?",
+     "bullets": [
+      "Equation: true for some values",
+      "Formula: links quantities",
+      "Identity: true for all values (≡)"
+     ],
+     "note": "Sort: 2x + 3 = 11; A = πr²; 2(x + 3) ≡ 2x + 6."
+    },
+    {
+     "heading": "Examples are not proof",
+     "bullets": [
+      "Testing three numbers can't cover all numbers",
+      "Algebra covers every case at once"
+     ],
+     "note": "Answer the big question. Show a pattern that works for small cases then fails (e.g. n² + n + 41 is prime for n = 0 to 39, but not n = 40)."
+    },
+    {
+     "heading": "Writing a proof",
+     "bullets": [
+      "Represent the numbers with letters",
+      "Expand and simplify",
+      "Conclude in words"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Prove that the sum of three consecutive integers is a multiple of 3",
+      "steps": [
+       "Let the integers be n, n + 1, n + 2",
+       "Sum: n + n + 1 + n + 2",
+       "= 3n + 3 = 3(n + 1)",
+       "3(n + 1) is a multiple of 3"
+      ],
+      "answer": "Proved for all integers n"
+     }
+    },
+    {
+     "heading": "Using the same letter twice",
+     "bullets": [
+      "Two different odd numbers need different letters"
+     ],
+     "note": "2n + 1 and 2n + 1 are the same number! Use 2n + 1 and 2m + 1.",
+     "misconception": {
+      "wrong": "Two odd numbers: 2n + 1 and 2n + 1",
+      "right": "Use 2n + 1 and 2m + 1 so they can differ"
+     }
+    },
+    {
+     "heading": "Check: identity",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is an identity?",
+      "options": [
+       "3x + 1 = 10",
+       "(x + 2)² ≡ x² + 4x + 4",
+       "v = u + at",
+       "x² = 9"
+      ],
+      "answer": 1,
+      "why": "It is true for every x. A and D are equations; C is a formula."
+     }
+    }
+   ],
+   "practice": [
+    "Show that (x + 5)² − (x − 5)² ≡ 20x",
+    "Prove that the sum of two even numbers is even",
+    "Find a and b: (x + a)² ≡ x² + 6x + b"
+   ],
+   "independent": [
+    "Core: Prove that the product of two odd numbers is odd",
+    "Extend: Prove that (2n + 1)² − (2n − 1)² is always a multiple of 8",
+    "Stretch: Prove that the difference between the squares of any two consecutive integers is equal to their sum."
+   ],
+   "exit": [
+    "Write the next two consecutive integers after n.",
+    "Show that 4(x + 2) − 2(x − 1) ≡ 2x + 10",
+    "Why isn't testing five numbers a proof?"
+   ],
+   "homework": "Edexcel GCSE 1MA1 Higher 'show that' and proof questions, three items.",
+   "send": "Support: proof template (let…, so…, therefore…). Stretch: proof by contradiction preview."
+  },
+  {
+   "unit": "Unit 11: Linear equations and inequalities",
+   "n": 14,
+   "title": "Solving linear equations",
+   "duration": 50,
+   "bigQuestion": "What does 'balancing' an equation really mean?",
+   "objectives": [
+    "Solve linear equations with unknowns on both sides",
+    "Solve equations with brackets and fractions",
+    "Check solutions by substitution"
+   ],
+   "successCriteria": [
+    "Solve 5x − 3 = 2x + 9",
+    "Solve 3(2x − 1) = 4(x + 2)",
+    "Solve (x + 1)/3 − (x − 2)/4 = 2"
+   ],
+   "crossCurricular": "Science: solving for unknowns in physics; Business: break-even",
+   "smsc": "Moral: balance and fairness ('adl) — what you do to one side you do to the other",
+   "keywords": [
+    {
+     "term": "linear equation",
+     "def": "an equation where the highest power of x is 1"
+    },
+    {
+     "term": "solve",
+     "def": "find the value(s) that make it true"
+    },
+    {
+     "term": "balance",
+     "def": "do the same to both sides"
+    },
+    {
+     "term": "verify",
+     "def": "check by substituting"
+    }
+   ],
+   "starter": [
+    "Solve 4x = 28",
+    "Solve x/5 + 2 = 6",
+    "Expand 3(2x − 4)",
+    "LCM of 3 and 4?"
+   ],
+   "teach": [
+    {
+     "heading": "Unknowns on both sides",
+     "bullets": [
+      "Collect x terms on the side with more x",
+      "Then the numbers"
+     ],
+     "note": "5x − 3 = 2x + 9 → 3x = 12 → x = 4. Check: 17 = 17."
+    },
+    {
+     "heading": "Brackets and fractions",
+     "bullets": [
+      "Clear fractions by multiplying by the LCM",
+      "Use brackets around numerators"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Solve (x + 1)/3 − (x − 2)/4 = 2",
+      "steps": [
+       "Multiply every term by 12",
+       "4(x + 1) − 3(x − 2) = 24",
+       "4x + 4 − 3x + 6 = 24",
+       "x + 10 = 24"
+      ],
+      "answer": "x = 14"
+     }
+    },
+    {
+     "heading": "Forgetting to multiply every term",
+     "bullets": [
+      "The right-hand side is multiplied too"
+     ],
+     "note": "Show the error.",
+     "misconception": {
+      "wrong": "4(x + 1) − 3(x − 2) = 2",
+      "right": "Multiply the 2 by 12 as well: = 24"
+     }
+    },
+    {
+     "heading": "Check: solve",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Solve 2(3x − 4) = 5x + 1",
+      "options": [
+       "x = 5",
+       "x = 9",
+       "x = −3",
+       "x = 7"
+      ],
+      "answer": 1,
+      "why": "6x − 8 = 5x + 1, so x = 9. A forgets to multiply the 4 by 2 (6x − 4)."
+     }
+    }
+   ],
+   "practice": [
+    "Solve 7x + 2 = 3x + 18",
+    "Solve 4(x − 3) = 2(x + 5)",
+    "Solve (2x − 1)/5 = (x + 3)/4"
+   ],
+   "independent": [
+    "Core: Solve (a) 9 − 2x = 3x − 11 (b) 5(2x + 1) = 3(x − 4) + 3 (c) (x − 4)/2 + x/3 = 8",
+    "Extend: Solve (3x + 2)/4 − (x − 5)/6 = x",
+    "Stretch: Find the value of k for which 3(x + k) = 2x + 7 has the solution x = −2, and solve 4(x − k) = x + k for that k."
+   ],
+   "exit": [
+    "Solve 6x − 5 = 2x + 7",
+    "Solve 3(x + 2) = 21",
+    "Solve x/2 + x/3 = 10"
+   ],
+   "homework": "1MA1 linear equations practice: ten questions including fractions.",
+   "send": "Support: balance diagrams. Stretch: equations with algebraic fractions."
+  },
+  {
+   "unit": "Unit 11: Linear equations and inequalities",
+   "n": 15,
+   "title": "Setting up and solving equations from problems",
+   "duration": 50,
+   "bigQuestion": "How can algebra turn a word puzzle into a sum you can solve?",
+   "objectives": [
+    "Form linear equations from written contexts",
+    "Solve and interpret solutions in context",
+    "Use geometry facts to form equations"
+   ],
+   "successCriteria": [
+    "Form and solve an equation from a simple word problem",
+    "Form equations from angle and perimeter facts",
+    "Solve multi-step contextual problems and check the answer makes sense"
+   ],
+   "crossCurricular": "Science: forming equations from data; Business: costing",
+   "smsc": "Social: sharing inheritance and costs fairly",
+   "keywords": [
+    {
+     "term": "form an equation",
+     "def": "write an equation that represents the problem"
+    },
+    {
+     "term": "unknown",
+     "def": "the quantity you are trying to find"
+    },
+    {
+     "term": "interpret",
+     "def": "explain what the answer means in context"
+    },
+    {
+     "term": "angle sum",
+     "def": "angles in a triangle add to 180°, on a line to 180°"
+    }
+   ],
+   "starter": [
+    "Solve 3x + 5 = x + 17",
+    "Angles in a triangle add up to?",
+    "Write an expression for 'five more than twice n'",
+    "Perimeter of a rectangle 2x by x + 3?"
+   ],
+   "teach": [
+    {
+     "heading": "From words to equation",
+     "bullets": [
+      "Choose a letter and define it",
+      "Write each quantity in terms of it",
+      "Find the equality in the question"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Aisha is 3 times as old as Bilal. In 8 years she will be twice as old as him. Find their ages.",
+      "steps": [
+       "Let Bilal be b; Aisha is 3b",
+       "In 8 years: 3b + 8 and b + 8",
+       "3b + 8 = 2(b + 8)",
+       "3b + 8 = 2b + 16, so b = 8"
+      ],
+      "answer": "Bilal 8, Aisha 24"
+     }
+    },
+    {
+     "heading": "Geometry equations",
+     "bullets": [
+      "Use angle facts or perimeter",
+      "Solve, then find the angles or lengths asked for"
+     ],
+     "note": "Triangle angles x, 2x + 10, 3x − 40: 6x − 30 = 180, x = 35; angles 35°, 80°, 65°."
+    },
+    {
+     "heading": "Answering the question asked",
+     "bullets": [
+      "x is rarely the final answer"
+     ],
+     "note": "Remind pupils to substitute back.",
+     "misconception": {
+      "wrong": "Final answer: x = 35",
+      "right": "Angles are 35°, 80° and 65°: answer what was asked"
+     }
+    },
+    {
+     "heading": "Check: form the equation",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A rectangle is (x + 4) cm long and x cm wide. Its perimeter is 32 cm. Which equation is right?",
+      "options": [
+       "x + 4 + x = 32",
+       "2(x + 4) + 2x = 32",
+       "x(x + 4) = 32",
+       "4x + 4 = 32"
+      ],
+      "answer": 1,
+      "why": "Perimeter adds all four sides. A adds two sides; C is the area; D forgets to double the 4."
+     }
+    }
+   ],
+   "practice": [
+    "I think of a number, multiply by 4 and subtract 7. The answer is 29. Find the number.",
+    "Angles on a straight line: 3x and x + 20. Find x.",
+    "Three consecutive integers sum to 84. Find them."
+   ],
+   "independent": [
+    "Core: The perimeter of a triangle with sides x, 2x − 3 and x + 7 is 40 cm. Find each side.",
+    "Extend: Adult tickets cost £5 more than child tickets. 3 adult and 4 child tickets cost £71. Find the price of each.",
+    "Stretch: £120 is shared between three brothers. The eldest gets twice the youngest, the middle gets £10 more than the youngest. Form and solve an equation, then check."
+   ],
+   "exit": [
+    "Write an equation for: 'twice a number plus 9 is 25'",
+    "Solve it.",
+    "Angles in a quadrilateral: x, x, 2x, 120°. Find x."
+   ],
+   "homework": "1MA1 problem-solving: six 'form and solve' questions from the sheet.",
+   "send": "Support: keyword-to-symbol table. Stretch: problems leading to equations with fractions."
+  },
+  {
+   "unit": "Unit 11: Linear equations and inequalities",
+   "n": 16,
+   "title": "Linear inequalities",
+   "duration": 50,
+   "bigQuestion": "Why does multiplying by a negative number flip an inequality?",
+   "objectives": [
+    "Solve linear inequalities",
+    "Represent solutions on a number line and in set notation",
+    "List integer solutions"
+   ],
+   "successCriteria": [
+    "Solve 3x − 4 < 11 and show on a number line",
+    "Solve double inequalities such as −3 ≤ 2x + 1 < 9",
+    "Solve inequalities with a negative x coefficient and list integer solutions"
+   ],
+   "crossCurricular": "Business: budget limits; Science: safe ranges",
+   "smsc": "Moral: limits and boundaries (hudud) that keep us safe",
+   "keywords": [
+    {
+     "term": "inequality",
+     "def": "a statement using <, >, ≤ or ≥"
+    },
+    {
+     "term": "integer solutions",
+     "def": "whole numbers that satisfy the inequality"
+    },
+    {
+     "term": "open circle",
+     "def": "the end value is not included (< or >)"
+    },
+    {
+     "term": "closed circle",
+     "def": "the end value is included (≤ or ≥)"
+    }
+   ],
+   "starter": [
+    "Solve 3x − 4 = 11",
+    "Is 5 < 3?",
+    "List integers between −2 and 3",
+    "What does ≥ mean?"
+   ],
+   "teach": [
+    {
+     "heading": "Solve like an equation",
+     "bullets": [
+      "Same steps as an equation",
+      "Keep the inequality sign"
+     ],
+     "note": "3x − 4 < 11 → 3x < 15 → x < 5. Draw an open circle at 5 and arrow left."
+    },
+    {
+     "heading": "The negative flip",
+     "bullets": [
+      "Multiply or divide by a negative: reverse the sign"
+     ],
+     "note": "Show with numbers: 2 < 5 but −2 > −5. Answer the big question.",
+     "misconception": {
+      "wrong": "−2x > 6 → x > −3",
+      "right": "Dividing by −2 flips the sign: x < −3"
+     }
+    },
+    {
+     "heading": "Double inequalities",
+     "bullets": [
+      "Do the same to all three parts",
+      "List integers carefully at the ends"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Solve −3 ≤ 2x + 1 < 9 and list the integer solutions",
+      "steps": [
+       "Subtract 1: −4 ≤ 2x < 8",
+       "Divide by 2: −2 ≤ x < 4",
+       "Include −2, exclude 4"
+      ],
+      "answer": "x = −2, −1, 0, 1, 2, 3"
+     }
+    },
+    {
+     "heading": "Check: integers",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "How many integers satisfy −1 < x ≤ 4?",
+      "options": [
+       "4",
+       "5",
+       "6",
+       "3"
+      ],
+      "answer": 1,
+      "why": "0, 1, 2, 3, 4: five integers. A forgets 4 is included; C includes −1."
+     }
+    }
+   ],
+   "practice": [
+    "Solve 5x + 2 ≥ 17",
+    "Solve 10 − 3x > 4",
+    "Solve 1 < 3x − 2 ≤ 13 and list the integers"
+   ],
+   "independent": [
+    "Core: Solve and show on a number line: (a) 4x − 7 < 9 (b) 2(x + 3) ≥ 14 (c) 6 − x > 2",
+    "Extend: Find the integers n such that −5 < 2n − 1 ≤ 7 and 3n > n + 1.",
+    "Stretch: Solve 2x − 5 < 4x + 3 ≤ x + 12 and represent the solution in set notation."
+   ],
+   "exit": [
+    "Solve 2x + 3 > 11",
+    "Solve −4x ≤ 12",
+    "List integers satisfying 1 ≤ x < 5"
+   ],
+   "homework": "1MA1 inequalities practice, including number-line diagrams and integer lists.",
+   "send": "Support: number lines pre-drawn. Stretch: inequalities on graphs (preview of regions)."
+  }
+ ]
 }

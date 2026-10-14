@@ -1,609 +1,2963 @@
 {
-  "subject": "Science (IGCSE Biology, Chemistry, Physics)",
-  "year": "y10",
-  "board": "Pearson Edexcel International GCSE (9–1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0 shares Papers 1B/1C/1P)",
-  "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1",
-  "source": "School Science curriculum journey 2026–27 (Year 10 Term 1: Chemistry Principles of Chemistry; Physics Forces and Motion) and the school's Year 10 Term 1 Week 2 Edexcel IGCSE Biology (4BI1) assessment on characteristics of living things, classification and cell biology; school 2024 papers 4BI1/1B, 4CH1/1C, 4PH1/1P for exam style; required practicals shown by demonstration for online delivery; INSET lesson standard.",
-  "lessons": [
+ "subject": "Science (GCSE Biology, Chemistry, Physics)",
+ "year": "y10",
+ "board": "Pearson Edexcel GCSE (9–1) Biology 1BI0, Chemistry 1CH0 and Physics 1PH0",
+ "boardShort": "Edexcel GCSE 1BI0 · 1CH0 · 1PH0",
+ "source": "School Science curriculum journey 2026–27 (Year 10 Term 1: Principles of Chemistry; Forces and Motion) with Edexcel GCSE Biology Topic 1 (key concepts) and the school's Pearson Edexcel GCSE 5-year Biology, Chemistry and Physics schemes; core practicals shown by demonstration for online delivery; INSET lesson standard.",
+ "lessons": [
+  {
+   "n": 1,
+   "unit": "Biology Topic 1: Key concepts in biology",
+   "title": "Animal, plant and bacterial cells",
+   "duration": 50,
+   "bigQuestion": "What do a leaf cell and a muscle cell have in common, and why?",
+   "objectives": [
+    "Describe the sub-cellular structures of animal and plant cells and their functions",
+    "Compare eukaryotic and prokaryotic (bacterial) cells",
+    "Use the levels of organisation"
+   ],
+   "successCriteria": [
+    "Order organelle → organism",
+    "Describe the function of each cell structure",
+    "Explain the differences between plant and animal cells"
+   ],
+   "crossCurricular": "Chemistry: reactions in the cytoplasm; Maths: magnification",
+   "smsc": "Spiritual: order in creation",
+   "keywords": [
     {
-      "unit": "Biology: The nature and variety of living organisms",
-      "n": 1,
-      "title": "Characteristics of living organisms",
-      "duration": 50,
-      "bigQuestion": "What exactly is the difference between living and non-living?",
-      "objectives": ["Recall the eight characteristics of living organisms used at IGCSE", "Apply them to unfamiliar examples", "Explain why viruses are a borderline case"],
-      "successCriteria": ["List the characteristics in IGCSE wording", "Apply them to decide whether something is living", "Evaluate whether viruses are alive"],
-      "crossCurricular": "Islamic Studies: Al-Hayy (the Ever-Living); Chemistry: respiration as a chemical reaction",
-      "smsc": "Spiritual: life as a gift and trust",
-      "keywords": [
-        { "term": "nutrition", "def": "taking in materials for energy, growth and development" },
-        { "term": "respiration", "def": "chemical reactions that release energy from food" },
-        { "term": "excretion", "def": "removal of toxic materials and waste products of metabolism" },
-        { "term": "homeostasis", "def": "keeping internal conditions constant" },
-        { "term": "sensitivity", "def": "detecting and responding to changes in the environment" }
-      ],
-      "starter": ["Bismillah. Recall MRS GREN from KS3", "Name a unicellular organism", "Is a seed alive?", "What is respiration?"],
-      "teach": [
-        { "heading": "IGCSE characteristics", "bullets": ["Eight characteristics used in the 4BI1 specification", "Learn the precise definitions"], "note": "Contrast with KS3 MRS GREN: IGCSE adds control of internal conditions (homeostasis) and growth and development.", "table": { "head": ["Characteristic", "Meaning"], "rows": [["Nutrition", "require nutrition"], ["Respiration", "respire"], ["Excretion", "excrete their waste"], ["Sensitivity", "respond to surroundings"], ["Movement", "move"], ["Homeostasis", "control their internal conditions"], ["Reproduction", "reproduce"], ["Growth and development", "grow and develop"]] } },
-        { "heading": "Excretion vs egestion", "bullets": ["Excretion: waste made by metabolism (CO₂, urea)", "Egestion: undigested food (faeces)"], "note": "A favourite 1-mark exam trap.", "misconception": { "wrong": "Producing faeces is excretion", "right": "Faeces are egested; excretion removes metabolic waste like urea" } },
-        { "heading": "Are viruses alive?", "bullets": ["Not cells; protein coat and genetic material", "Reproduce only inside host cells", "Do not respire or feed"], "note": "Answer the big question as a debate. Exam answers: viruses are not usually classed as living because they cannot carry out life processes outside a host.", "compare": { "left": { "title": "Living-like", "points": ["Contain genetic material", "Reproduce (inside cells)", "Mutate and evolve"] }, "right": { "title": "Non-living-like", "points": ["No cells", "No respiration or nutrition", "Can be crystallised"] } } },
-        { "heading": "Check: characteristic", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is an example of excretion?", "options": ["Egesting faeces", "Removing urea in urine", "Sweating to cool down only", "Moving towards light"], "answer": 1, "why": "Urea is a metabolic waste product removed in urine. Faeces are egested; C is mainly temperature control." } }
-      ],
-      "practice": ["State the eight characteristics", "Define homeostasis", "Why is a car not alive?"],
-      "independent": ["Core: Write the IGCSE definition of each characteristic with a human example", "Extend: Explain whether a plant seed in a packet is alive", "Stretch: Exam question (4 marks): 'Viruses are not living organisms.' Evaluate this statement."],
-      "exit": ["Define excretion.", "What is homeostasis?", "Give one reason viruses are not considered living."],
-      "homework": "Learn the eight characteristics; complete the retrieval quiz on the portal.",
-      "send": "Support: definition cards. Stretch: prions and viroids."
+     "term": "organelle",
+     "def": "a specialised structure inside a cell"
     },
     {
-      "unit": "Biology: The nature and variety of living organisms",
-      "n": 2,
-      "title": "Plants, animals and fungi",
-      "duration": 50,
-      "bigQuestion": "Why are mushrooms not plants?",
-      "objectives": ["Describe the features of plants, animals and fungi", "Give named examples of each", "Compare how they feed and store carbohydrate"],
-      "successCriteria": ["Describe plants (maize, pea), animals (mammals, insects) and fungi (Mucor, yeast)", "Compare cell features and carbohydrate stores", "Classify unfamiliar organisms using these features"],
-      "crossCurricular": "Food technology: yeast in bread; Geography: biomes",
-      "smsc": "Spiritual: the variety of creation",
-      "keywords": [
-        { "term": "eukaryotic", "def": "cells with a nucleus" },
-        { "term": "hyphae", "def": "thread-like structures that make up a fungus" },
-        { "term": "mycelium", "def": "a network of hyphae" },
-        { "term": "saprotrophic nutrition", "def": "secreting enzymes onto food and absorbing the products" },
-        { "term": "glycogen", "def": "carbohydrate stored by animals and fungi" }
-      ],
-      "starter": ["Define homeostasis", "Name two parts only in plant cells", "Is yeast alive?", "What is a eukaryotic cell?"],
-      "teach": [
-        { "heading": "Comparing three kingdoms", "bullets": ["All eukaryotic", "Different nutrition and stores"], "note": "Use 4BI1 named examples: maize, pea; mammals, insects; Mucor, yeast.", "table": { "head": ["Feature", "Plants", "Animals", "Fungi"], "rows": [["Cells", "multicellular; cell wall (cellulose)", "multicellular; no cell wall", "hyphae; cell wall (chitin); yeast single-celled"], ["Nutrition", "photosynthesis", "eat other organisms", "saprotrophic: external digestion"], ["Carbohydrate store", "starch, sucrose", "glycogen", "glycogen"], ["Examples", "maize, pea", "mammals, insects", "Mucor, yeast"]] } },
-        { "heading": "Saprotrophic nutrition", "bullets": ["Fungi secrete enzymes onto food", "Food is digested outside the fungus", "Products absorbed through hyphae"], "note": "Answer the big question.", "model": { "problem": "Describe how Mucor feeds on bread (3 marks)", "steps": ["Hyphae grow into the bread", "They secrete enzymes that digest starch outside the hyphae", "Soluble products (sugars) are absorbed into the hyphae"], "answer": "Extracellular digestion + absorption = saprotrophic" } },
-        { "heading": "Fungi are not plants", "bullets": ["No chlorophyll", "Chitin cell walls", "Store glycogen, not starch"], "note": "Common error.", "misconception": { "wrong": "Mushrooms are plants because they don't move", "right": "Fungi lack chlorophyll and feed saprotrophically" } },
-        { "heading": "Check: kingdom", "bullets": [], "note": "Show me on 3.", "check": { "q": "An organism has hyphae, a chitin cell wall and stores glycogen. It is a…", "options": ["Plant", "Animal", "Fungus", "Bacterium"], "answer": 2, "why": "Hyphae and chitin walls are fungal features. Plants have cellulose walls; animals have no walls." } }
-      ],
-      "practice": ["Name the carbohydrate stored by plants", "Name two fungi", "How do fungi feed?"],
-      "independent": ["Core: Complete a comparison table of plants, animals and fungi", "Extend: Explain why yeast is classed as a fungus even though it is single-celled", "Stretch: 4BI1-style question: Explain why bread goes mouldy faster in a warm, damp kitchen."],
-      "exit": ["Carbohydrate store in fungi?", "Name a plant example from the spec.", "What is saprotrophic nutrition?"],
-      "homework": "Exam practice: 4BI1 Paper 1B-style questions on the variety of organisms (8 marks).",
-      "send": "Support: comparison table frame. Stretch: lichens."
+     "term": "ribosome",
+     "def": "where proteins are made"
     },
     {
-      "unit": "Biology: The nature and variety of living organisms",
-      "n": 3,
-      "title": "Protoctists, bacteria, viruses and pathogens",
-      "duration": 50,
-      "bigQuestion": "How can something too small to see kill a person?",
-      "objectives": ["Describe protoctists, bacteria and viruses", "Give named examples from the specification", "Define pathogen and name examples"],
-      "successCriteria": ["Describe features of Chlorella, Amoeba, Lactobacillus and Pneumococcus", "Describe the structure of viruses (influenza, HIV, tobacco mosaic virus)", "Explain how pathogens cause disease, with examples"],
-      "crossCurricular": "History: pandemics and Ibn Sina's ideas on contagion; Food technology: Lactobacillus in yoghurt",
-      "smsc": "Spiritual and moral: seeking cures (the hadith that Allah has sent a cure for every disease, Sahih al-Bukhari 5678)",
-      "keywords": [
-        { "term": "protoctist", "def": "a mostly microscopic eukaryotic organism, e.g. Amoeba" },
-        { "term": "prokaryotic", "def": "cells with no nucleus, e.g. bacteria" },
-        { "term": "plasmid", "def": "a small ring of DNA in bacteria" },
-        { "term": "virus", "def": "a protein coat around DNA or RNA; reproduces only inside host cells" },
-        { "term": "pathogen", "def": "a microorganism that causes disease" }
-      ],
-      "starter": ["How do fungi feed?", "Name the store of carbohydrate in animals", "What is a eukaryotic cell?", "Name a disease caused by a virus"],
-      "teach": [
-        { "heading": "Protoctists", "bullets": ["Eukaryotic, mostly single-celled", "Chlorella: has chloroplasts (plant-like)", "Amoeba: feeds like an animal", "Plasmodium causes malaria"], "note": "Use 4BI1 named examples." },
-        { "heading": "Bacteria", "bullets": ["Prokaryotic: no nucleus", "Circular chromosome and plasmids", "Cell wall, membrane, cytoplasm; some have flagella"], "note": "Lactobacillus: makes yoghurt. Pneumococcus: causes pneumonia." },
-        { "heading": "Viruses", "bullets": ["Not cells: protein coat with DNA or RNA", "Reproduce only inside living cells", "Examples: influenza, HIV, tobacco mosaic virus"], "note": "Answer the big question: viruses hijack cells and damage them as they multiply.", "compare": { "left": { "title": "Bacterium", "points": ["Prokaryotic cell", "Circular DNA + plasmids", "Killed by antibiotics", "e.g. Pneumococcus"] }, "right": { "title": "Virus", "points": ["Not a cell", "DNA or RNA in a protein coat", "Not killed by antibiotics", "e.g. influenza, HIV"] } } },
-        { "heading": "Pathogens", "bullets": ["Can be fungi, bacteria, protoctists or viruses"], "note": "Exam focus.", "misconception": { "wrong": "Antibiotics cure the flu", "right": "Flu is viral; antibiotics only affect bacteria" } },
-        { "heading": "Check: group", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which organism has a plasmid and no nucleus?", "options": ["Amoeba", "Lactobacillus", "Chlorella", "Yeast"], "answer": 1, "why": "Lactobacillus is a bacterium: prokaryotic, with plasmids. The others are eukaryotic." } }
-      ],
-      "practice": ["Name a protoctist that photosynthesises", "Describe the structure of a virus", "Define pathogen and give two examples"],
-      "independent": ["Core: Draw and label a bacterial cell", "Extend: Compare a virus, a bacterium and a plant cell in a table", "Stretch: 4BI1-style question (5 marks): Explain why antibiotics are not prescribed for colds, and why this matters."],
-      "exit": ["Name a bacterium in the spec.", "Why aren't viruses killed by antibiotics?", "Name a protoctist that causes disease."],
-      "homework": "Complete the school's Term 1 Week 2 biology multiple-choice assessment (30 marks) and self-mark with the answer key.",
-      "send": "Support: labelled diagrams. Stretch: virus replication cycle."
+     "term": "mitochondrion",
+     "def": "site of aerobic respiration"
     },
     {
-      "unit": "Biology: Structures and functions in living organisms",
-      "n": 4,
-      "title": "Levels of organisation and cell structure",
-      "duration": 50,
-      "bigQuestion": "What do a leaf cell and a muscle cell have in common, and why?",
-      "objectives": ["Describe levels of organisation", "Describe the structures in plant and animal cells and their functions", "Compare plant and animal cells"],
-      "successCriteria": ["Order organelle → organism", "Describe the function of each cell structure", "Explain the differences between plant and animal cells"],
-      "crossCurricular": "Chemistry: reactions in the cytoplasm; Maths: magnification",
-      "smsc": "Spiritual: order in creation",
-      "keywords": [
-        { "term": "organelle", "def": "a specialised structure inside a cell" },
-        { "term": "ribosome", "def": "where proteins are made" },
-        { "term": "mitochondrion", "def": "site of aerobic respiration" },
-        { "term": "chloroplast", "def": "site of photosynthesis" },
-        { "term": "cell wall", "def": "cellulose layer that supports plant cells" }
-      ],
-      "starter": ["Name a bacterium", "What is a pathogen?", "Order: tissue, cell, organ", "Name two organelles"],
-      "teach": [
-        { "heading": "Levels of organisation", "bullets": ["Organelles → cells → tissues → organs → organ systems"], "note": "4BI1 requires this exact sequence.", "timeline": [{ "label": "Organelle", "text": "mitochondrion" }, { "label": "Cell", "text": "muscle cell" }, { "label": "Tissue", "text": "muscle tissue" }, { "label": "Organ", "text": "heart" }, { "label": "Organ system", "text": "circulatory system" }] },
-        { "heading": "Cell structures", "bullets": ["Know each structure and its job"], "note": "Answer the big question: both have nucleus, membrane, cytoplasm, mitochondria, ribosomes because all cells need control, exchange, reactions and energy.", "table": { "head": ["Structure", "Function", "Plant", "Animal"], "rows": [["Nucleus", "contains genetic material; controls the cell", "✓", "✓"], ["Cytoplasm", "site of chemical reactions", "✓", "✓"], ["Cell membrane", "controls entry and exit", "✓", "✓"], ["Mitochondria", "aerobic respiration", "✓", "✓"], ["Ribosomes", "protein synthesis", "✓", "✓"], ["Cell wall", "support (cellulose)", "✓", "✗"], ["Chloroplasts", "photosynthesis", "✓", "✗"], ["Vacuole", "cell sap; keeps cell turgid", "✓", "✗ (small, temporary)"]] } },
-        { "heading": "Exam wording", "bullets": ["Mitochondria: site of aerobic respiration", "Not 'make energy'"], "note": "Mark schemes reject 'make energy'.", "misconception": { "wrong": "Mitochondria produce energy", "right": "Mitochondria are the site of aerobic respiration, which releases energy" } },
-        { "heading": "Check: structure", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which structure is found in both plant and animal cells?", "options": ["Cell wall", "Chloroplast", "Ribosome", "Permanent vacuole"], "answer": 2, "why": "Ribosomes make proteins in all cells. The others are plant-only." } }
-      ],
-      "practice": ["Function of ribosomes?", "Three structures only in plant cells", "Order the levels of organisation"],
-      "independent": ["Core: Draw and label plant and animal cells with functions", "Extend: Explain why root cells have no chloroplasts", "Stretch: A cell from a muscle contains many more mitochondria than a skin cell. Explain why."],
-      "exit": ["Function of the cell membrane?", "What is an organelle?", "Name the polysaccharide in plant cell walls."],
-      "homework": "4BI1 exam practice on cell structure (10 marks), including a labelled diagram question.",
-      "send": "Support: labelled diagram templates. Stretch: magnification calculations."
+     "term": "chloroplast",
+     "def": "site of photosynthesis"
     },
     {
-      "unit": "Biology: Structures and functions in living organisms",
-      "n": 5,
-      "title": "Cell differentiation and stem cells",
-      "duration": 50,
-      "bigQuestion": "If every cell has the same DNA, why are cells so different?",
-      "objectives": ["Explain cell differentiation", "Describe stem cells in animals and plants", "Evaluate the use of stem cells in medicine"],
-      "successCriteria": ["Define differentiation and give examples", "Compare embryonic and adult stem cells", "Evaluate stem-cell treatments, including ethical issues"],
-      "crossCurricular": "Islamic Studies: Islamic bioethics and the sanctity of life; Medicine: transplants",
-      "smsc": "Moral and spiritual: ethical debates on embryonic stem cells; differing scholarly views",
-      "keywords": [
-        { "term": "differentiation", "def": "a cell becoming specialised for a particular function" },
-        { "term": "stem cell", "def": "an undifferentiated cell that can divide and become specialised" },
-        { "term": "embryonic stem cell", "def": "can become almost any type of cell" },
-        { "term": "meristem", "def": "plant tissue with stem cells, at root and shoot tips" }
-      ],
-      "starter": ["Function of mitochondria?", "Name a specialised animal cell", "Where are plant growing tips?", "What is DNA?"],
-      "teach": [
-        { "heading": "Differentiation", "bullets": ["All cells have the same genes", "Different genes are switched on", "Cell develops a special structure"], "note": "Answer the big question." },
-        { "heading": "Stem cells", "bullets": ["Embryonic: almost any cell type", "Adult (e.g. bone marrow): limited types", "Plant meristems: any plant cell, throughout life"], "note": "Compare.", "compare": { "left": { "title": "Embryonic stem cells", "points": ["Can form almost any cell", "Taken from early embryos", "Ethical objections"] }, "right": { "title": "Adult stem cells", "points": ["Limited cell types", "From bone marrow, etc.", "Fewer ethical issues"] } } },
-        { "heading": "Evaluating stem-cell treatments", "bullets": ["Benefits and risks and ethics"], "note": "Model a balanced answer. Mention that Muslim scholars hold differing views on embryonic stem-cell research; many permit research on surplus IVF embryos before a certain stage, others do not.", "model": { "problem": "Evaluate using stem cells to treat diabetes (4 marks)", "steps": ["Benefit: could replace damaged insulin-producing cells", "Benefit: may end daily injections", "Risk: cells could divide uncontrollably (tumours) or be rejected", "Ethical: embryonic sources are opposed by some on religious or moral grounds"], "answer": "Benefits + risks + ethics, then a judgement" } },
-        { "heading": "Same DNA, different cells", "bullets": ["Cells don't lose genes when they specialise"], "note": "Clarify.", "misconception": { "wrong": "Nerve cells contain only nerve genes", "right": "Every body cell has the full set of genes; only some are switched on" } },
-        { "heading": "Check: stem cell", "bullets": [], "note": "Show me on 3.", "check": { "q": "Where are stem cells found in plants?", "options": ["Leaves", "Meristems", "Xylem", "Stomata"], "answer": 1, "why": "Meristems at root and shoot tips contain dividing, unspecialised cells." } }
-      ],
-      "practice": ["Define differentiation", "Name a source of adult stem cells", "Why are plant cuttings possible?"],
-      "independent": ["Core: Compare embryonic, adult and plant stem cells in a table", "Extend: Explain why gardeners can grow new plants from cuttings", "Stretch: Write a balanced 6-mark answer on whether embryonic stem-cell research should be allowed."],
-      "exit": ["What is a stem cell?", "One risk of stem-cell treatment?", "Where are meristems?"],
-      "homework": "Research one disease being treated with stem cells and summarise the treatment and its risks.",
-      "send": "Support: comparison frame. Stretch: therapeutic cloning."
-    },
-    {
-      "unit": "Biology: Structures and functions in living organisms",
-      "n": 6,
-      "title": "Biological molecules and food tests",
-      "duration": 50,
-      "bigQuestion": "How can just a few chemical elements build every living thing?",
-      "objectives": ["Identify the elements in carbohydrates, proteins and lipids", "Describe the structure of large biological molecules from smaller units", "Describe practical food tests"],
-      "successCriteria": ["State the chemical elements and building blocks of each molecule", "Describe the four food tests including results", "Interpret food test results in exam questions"],
-      "crossCurricular": "Chemistry: elements and polymers; Food technology: nutrition",
-      "smsc": "Spiritual: complexity built from simplicity",
-      "keywords": [
-        { "term": "carbohydrate", "def": "contains C, H and O; built from simple sugars" },
-        { "term": "protein", "def": "contains C, H, O and N; built from amino acids" },
-        { "term": "lipid", "def": "contains C, H and O; built from fatty acids and glycerol" },
-        { "term": "polymer", "def": "a large molecule made of repeating units" }
-      ],
-      "starter": ["What is differentiation?", "Reagent to test for starch?", "Name the elements in water", "What is a polymer?"],
-      "teach": [
-        { "heading": "Building blocks", "bullets": ["Large molecules are made from small units"], "note": "Answer the big question.", "table": { "head": ["Molecule", "Elements", "Made from"], "rows": [["Starch, glycogen", "C, H, O", "simple sugars (glucose)"], ["Proteins", "C, H, O, N", "amino acids"], ["Lipids", "C, H, O", "fatty acids and glycerol"]] } },
-        { "heading": "Food tests (practical)", "bullets": ["Iodine: starch", "Benedict's (heated): glucose", "Biuret: protein", "Ethanol emulsion: fat"], "note": "Show demo video. 4BI1 asks for the method and result.", "model": { "problem": "Describe how to test a food for glucose (3 marks)", "steps": ["Add Benedict's solution to a sample of the food in water", "Heat in a water bath at about 80 °C for 5 minutes", "A colour change from blue to green/yellow/orange/brick red shows glucose"], "answer": "Reagent + heat + colour change" } },
-        { "heading": "Lipids are not polymers", "bullets": ["Fatty acids + glycerol, not long chains of repeats"], "note": "A subtle point for top marks.", "misconception": { "wrong": "Lipids are polymers of fatty acids", "right": "A lipid is glycerol joined to three fatty acids: not a long repeating chain" } },
-        { "heading": "Check: elements", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which element is in proteins but not in carbohydrates?", "options": ["Carbon", "Hydrogen", "Nitrogen", "Oxygen"], "answer": 2, "why": "Amino acids contain nitrogen (in the amine group). Carbohydrates have only C, H and O." } }
-      ],
-      "practice": ["Building blocks of protein?", "Positive result for biuret?", "Elements in lipids?"],
-      "independent": ["Core: Complete a food-test table for four nutrients (reagent, method, positive result)", "Extend: Interpret results for three unknown foods", "Stretch: Explain why a positive Benedict's result can be green or brick red, and how you could make the test more quantitative."],
-      "exit": ["Monomer of starch?", "How do you test for protein?", "Which nutrient contains nitrogen?"],
-      "homework": "4BI1 Paper 1B-style questions on biological molecules and food tests.",
-      "send": "Support: test cards. Stretch: semi-quantitative tests."
-    },
-    {
-      "unit": "Biology: Structures and functions in living organisms",
-      "n": 7,
-      "title": "Enzymes: temperature and pH",
-      "duration": 50,
-      "bigQuestion": "Why does a high fever become dangerous?",
-      "objectives": ["Describe enzymes as biological catalysts", "Explain the effect of temperature and pH on enzyme activity", "Describe the practical investigation of temperature on enzyme activity"],
-      "successCriteria": ["Explain lock and key and the active site", "Explain the shape of temperature and pH graphs", "Describe the amylase-starch practical with variables"],
-      "crossCurricular": "Chemistry: catalysts and rates; Medicine: fever",
-      "smsc": "Spiritual: precise balance (mizan) in the body",
-      "keywords": [
-        { "term": "enzyme", "def": "a protein that acts as a biological catalyst" },
-        { "term": "active site", "def": "the part of an enzyme where the substrate binds" },
-        { "term": "substrate", "def": "the molecule an enzyme acts on" },
-        { "term": "denatured", "def": "active site changed shape so substrate no longer fits" },
-        { "term": "optimum", "def": "the condition at which an enzyme works fastest" }
-      ],
-      "starter": ["Building blocks of protein?", "What is a catalyst?", "Positive iodine result?", "Normal human body temperature?"],
-      "teach": [
-        { "heading": "Lock and key", "bullets": ["Substrate fits the active site", "Enzyme–substrate complex forms", "Products released; enzyme unchanged"], "note": "Animation of specificity." },
-        { "heading": "Temperature", "bullets": ["Rises to optimum: more collisions", "Above optimum: active site denatured", "Rate falls sharply"], "note": "Answer the big question: above about 40 °C, body enzymes begin to denature.", "model": { "problem": "Explain the shape of an enzyme activity–temperature graph (4 marks)", "steps": ["As temperature rises, molecules have more kinetic energy", "More successful collisions between enzyme and substrate", "Peak at the optimum (about 37 °C for human enzymes)", "Above it, bonds in the enzyme break, active site changes shape: denatured"], "answer": "Rise (collisions) → peak (optimum) → sharp fall (denaturation)" } },
-        { "heading": "pH", "bullets": ["Each enzyme has an optimum pH", "Pepsin (stomach): about pH 2", "Amylase: about pH 7"], "note": "Extremes of pH denature enzymes too." },
-        { "heading": "Practical: amylase and temperature", "bullets": ["Independent: temperature", "Dependent: time for starch to disappear (iodine test)", "Control: volumes, concentrations, pH"], "note": "Show the demo video with a spotting tile.", "misconception": { "wrong": "Enzymes are killed at high temperatures", "right": "Enzymes are proteins, not alive; they are denatured" } },
-        { "heading": "Check: denature", "bullets": [], "note": "Show me on 3.", "check": { "q": "Why does activity fall above the optimum temperature?", "options": ["The enzyme runs out", "The active site changes shape so the substrate no longer fits", "The substrate is denatured", "Collisions stop"], "answer": 1, "why": "Heat breaks bonds holding the enzyme's shape, so the active site no longer matches the substrate." } }
-      ],
-      "practice": ["Define active site", "Optimum pH of pepsin?", "Name the dependent variable in the amylase practical"],
-      "independent": ["Core: Sketch and explain temperature and pH graphs", "Extend: Plan the amylase–temperature practical with variables, method and risk assessment", "Stretch: Calculate the rate (1/time) from data at five temperatures and plot it."],
-      "exit": ["What is a substrate?", "Why do enzymes work faster as temperature rises (below optimum)?", "What does denatured mean?"],
-      "homework": "4BI1 practical-skills question on the enzyme investigation (method, variables, analysis).",
-      "send": "Support: graph-sketch template. Stretch: rate calculations."
-    },
-    {
-      "unit": "Chemistry: Principles of chemistry",
-      "n": 8,
-      "title": "States of matter",
-      "duration": 50,
-      "bigQuestion": "Why does steam scald worse than boiling water at the same temperature?",
-      "objectives": ["Describe the arrangement, movement and energy of particles in solids, liquids and gases", "Describe changes of state using particle theory", "Interpret heating and cooling curves"],
-      "successCriteria": ["Draw and describe particles in each state", "Name changes of state and explain them with forces and energy", "Explain the flat sections of a heating curve"],
-      "crossCurricular": "Physics: specific latent heat (Year 10 physics later); Geography: the water cycle",
-      "smsc": "Spiritual: water in its three states as a sign (e.g. Surah An-Nur 24:43 on clouds and hail)",
-      "keywords": [
-        { "term": "melting", "def": "solid to liquid" },
-        { "term": "sublimation", "def": "solid directly to gas" },
-        { "term": "intermolecular forces", "def": "forces between particles" },
-        { "term": "heating curve", "def": "a graph of temperature against time as a substance is heated" }
-      ],
-      "starter": ["Name the three states of matter", "What is condensation?", "Why do solids keep their shape?", "Boiling point of water?"],
-      "teach": [
-        { "heading": "Particle model", "bullets": ["Solid: regular, vibrate, closest", "Liquid: random, close, move past each other", "Gas: random, far apart, fast"], "note": "4CH1 asks for arrangement, movement and relative energy.", "table": { "head": ["State", "Arrangement", "Movement", "Energy"], "rows": [["Solid", "regular, touching", "vibrate in place", "lowest"], ["Liquid", "random, touching", "slide past each other", "medium"], ["Gas", "random, far apart", "fast, all directions", "highest"]] } },
-        { "heading": "Changes of state", "bullets": ["Energy in: melting, boiling, sublimation", "Energy out: freezing, condensing"], "note": "Answer the big question: steam releases extra energy when it condenses on your skin.", "cycle": ["Solid", "melting → Liquid", "boiling/evaporating → Gas", "condensing → Liquid", "freezing → Solid"] },
-        { "heading": "Heating curves", "bullets": ["Sloping: temperature rising", "Flat: change of state", "Energy breaks forces, not raising temperature"], "note": "Model.", "model": { "problem": "Explain why the temperature stays at 0 °C while ice melts", "steps": ["Energy is still being supplied", "It is used to overcome forces between particles", "Not to increase the particles' kinetic energy", "So the temperature does not rise until all the ice has melted"], "answer": "Energy goes into breaking forces of attraction" } },
-        { "heading": "Particles don't change size", "bullets": ["Particles themselves don't expand or melt"], "note": "Common error.", "misconception": { "wrong": "Particles get bigger when heated", "right": "Particles move faster and further apart; their size is unchanged" } },
-        { "heading": "Check: curve", "bullets": [], "note": "Show me on 3.", "check": { "q": "On a heating curve, what is happening during a flat section at 100 °C?", "options": ["Water is freezing", "Water is boiling", "Ice is melting", "Steam is cooling"], "answer": 1, "why": "100 °C is water's boiling point; the flat section is the liquid turning to gas." } }
-      ],
-      "practice": ["Draw particles in a liquid", "Name the change from gas to liquid", "Why is there a flat section on a heating curve?"],
-      "independent": ["Core: Label a heating curve for water from −20 °C to 120 °C", "Extend: Explain sublimation of iodine using particle theory", "Stretch: Use data to identify the state of five substances at 25 °C from their melting and boiling points."],
-      "exit": ["Particle arrangement in a gas?", "Name the change solid → gas.", "What happens to energy during melting?"],
-      "homework": "4CH1 Paper 1C-style questions on states of matter.",
-      "send": "Support: particle diagram templates. Stretch: data interpretation."
-    },
-    {
-      "unit": "Chemistry: Principles of chemistry",
-      "n": 9,
-      "title": "Diffusion and dilution",
-      "duration": 50,
-      "bigQuestion": "How does the smell of oud spread across a whole room?",
-      "objectives": ["Explain diffusion using particle theory", "Describe experiments showing diffusion and dilution", "Explain why heavier gas particles diffuse more slowly"],
-      "successCriteria": ["Describe diffusion in liquids and gases", "Explain the ammonia and hydrogen chloride experiment", "Explain dilution of potassium manganate(VII) as evidence for particles"],
-      "crossCurricular": "Biology: diffusion in cells; Cultural studies: perfumes (attar) in Muslim cultures",
-      "smsc": "Cultural: the sunnah of wearing perfume (for men) and the tradition of attar",
-      "keywords": [
-        { "term": "diffusion", "def": "net movement of particles from high to low concentration" },
-        { "term": "dilution", "def": "adding solvent to make a solution less concentrated" },
-        { "term": "relative formula mass (Mr)", "def": "sum of the relative atomic masses in a formula" },
-        { "term": "concentration", "def": "how much solute is in a volume of solution" }
-      ],
-      "starter": ["Particle arrangement in a gas?", "Name the change gas → liquid", "What is a solution?", "Why can you smell cooking from another room?"],
-      "teach": [
-        { "heading": "Diffusion", "bullets": ["Particles move randomly", "Net movement from high to low concentration", "Faster in gases than liquids"], "note": "Answer the big question." },
-        { "heading": "Ammonia and hydrogen chloride", "bullets": ["Cotton wool at each end of a tube", "White ring of ammonium chloride forms", "Ring is nearer the HCl end"], "note": "Show the demo video.", "model": { "problem": "Explain why the white ring forms nearer the hydrogen chloride end", "steps": ["NH₃ has Mr 17; HCl has Mr 36.5", "Lighter NH₃ particles move faster", "NH₃ travels further in the same time", "They meet nearer the HCl end"], "answer": "Lower Mr → faster diffusion" } },
-        { "heading": "Dilution evidence", "bullets": ["Potassium manganate(VII) dissolved, then diluted repeatedly", "Colour remains after many dilutions", "So the solid must be made of very many tiny particles"], "note": "Show the purple series video." },
-        { "heading": "Diffusion isn't stirring", "bullets": ["It happens without mixing"], "note": "Clarify.", "misconception": { "wrong": "Particles diffuse because they want to spread out", "right": "Random motion produces a net movement from high to low concentration" } },
-        { "heading": "Check: rate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which gas diffuses fastest at the same temperature?", "options": ["Carbon dioxide (Mr 44)", "Hydrogen (Mr 2)", "Oxygen (Mr 32)", "Chlorine (Mr 71)"], "answer": 1, "why": "Lightest particles move fastest at a given temperature." } }
-      ],
-      "practice": ["Define diffusion", "Why is diffusion faster in gases?", "What does the dilution experiment show?"],
-      "independent": ["Core: Describe and explain the NH₃/HCl experiment with a diagram", "Extend: Predict where the ring would form using hydrogen bromide (Mr 81) instead", "Stretch: Explain how temperature affects the rate of diffusion, using particle energy."],
-      "exit": ["Why does NH₃ diffuse faster than HCl?", "Name the white product.", "What does dilution show about particles?"],
-      "homework": "4CH1 questions on diffusion experiments (6 marks).",
-      "send": "Support: diagram labels. Stretch: Graham's law preview."
-    },
-    {
-      "unit": "Chemistry: Principles of chemistry",
-      "n": 10,
-      "title": "Elements, compounds, mixtures and separation",
-      "duration": 50,
-      "bigQuestion": "How do chemists get pure substances from messy mixtures?",
-      "objectives": ["Distinguish elements, compounds and mixtures", "Describe separation methods", "Choose methods to separate mixtures"],
-      "successCriteria": ["Classify substances", "Describe simple and fractional distillation, filtration and crystallisation", "Plan multi-step separations"],
-      "crossCurricular": "History: Jabir ibn Hayyan and the development of distillation; Geography: crude oil",
-      "smsc": "Cultural: early chemists of the Islamic world who refined laboratory methods",
-      "keywords": [
-        { "term": "element", "def": "a substance made of one type of atom" },
-        { "term": "compound", "def": "two or more elements chemically combined" },
-        { "term": "mixture", "def": "substances not chemically combined" },
-        { "term": "fractional distillation", "def": "separating liquids with different boiling points using a fractionating column" }
-      ],
-      "starter": ["Define diffusion", "Is air an element, compound or mixture?", "Name a separation method", "What is a pure substance?"],
-      "teach": [
-        { "heading": "Element, compound, mixture", "bullets": ["Element: one type of atom", "Compound: fixed ratio, chemically bonded", "Mixture: no fixed ratio, not bonded"], "note": "Classify: O₂, H₂O, air, NaCl, sea water, Fe." },
-        { "heading": "Separation methods", "bullets": ["Choose by property"], "note": "Recap and extend from KS3.", "table": { "head": ["Method", "Separates", "Property used"], "rows": [["Filtration", "insoluble solid from liquid", "particle size/solubility"], ["Crystallisation", "soluble solid from solution", "solubility"], ["Simple distillation", "solvent from solution", "boiling point"], ["Fractional distillation", "miscible liquids", "different boiling points"], ["Chromatography", "dissolved substances", "solubility/attraction to paper"]] } },
-        { "heading": "Fractional distillation", "bullets": ["Column is hotter at the bottom", "Lower boiling point liquid reaches the top first", "Collected separately"], "note": "Example: ethanol (78 °C) and water (100 °C).", "model": { "problem": "Explain how ethanol is separated from water", "steps": ["Heat the mixture", "Both evaporate; vapours rise up the fractionating column", "Water condenses lower down and drips back", "Ethanol vapour reaches the top and condenses in the condenser"], "answer": "Ethanol (lower boiling point) collected first" } },
-        { "heading": "Compound vs mixture", "bullets": ["A compound has different properties from its elements"], "note": "Sodium (reactive metal) + chlorine (toxic gas) → salt.", "misconception": { "wrong": "Salt water is a compound of salt and water", "right": "Salt water is a mixture: no new bonds between salt and water" } },
-        { "heading": "Check: method", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which method separates a mixture of two miscible liquids?", "options": ["Filtration", "Fractional distillation", "Crystallisation", "Magnetism"], "answer": 1, "why": "Miscible liquids have different boiling points; fractional distillation separates them." } }
-      ],
-      "practice": ["Classify: CO₂, brass, Ne, milk", "Method for sand from water?", "Method for pure water from ink?"],
-      "independent": ["Core: Choose and explain methods for five mixtures", "Extend: Plan how to get pure, dry salt from rock salt", "Stretch: Explain why fractional distillation of crude oil works and why the fractions are still mixtures."],
-      "exit": ["Define compound.", "Method for miscible liquids?", "Is brass an element, compound or mixture?"],
-      "homework": "4CH1 separation questions including a diagram of fractional distillation.",
-      "send": "Support: method decision flow. Stretch: crude oil fractions."
-    },
-    {
-      "unit": "Chemistry: Principles of chemistry",
-      "n": 11,
-      "title": "Paper chromatography",
-      "duration": 50,
-      "bigQuestion": "How can a strip of paper prove a food colouring is safe?",
-      "objectives": ["Describe how to carry out paper chromatography", "Calculate and use Rf values", "Interpret chromatograms to identify substances"],
-      "successCriteria": ["Describe the method including the pencil line", "Calculate Rf values accurately", "Use Rf and matching spots to identify components and impurities"],
-      "crossCurricular": "Maths: ratio and division; Food technology: food additives",
-      "smsc": "Moral: honest labelling and food safety",
-      "keywords": [
-        { "term": "chromatogram", "def": "the result of chromatography" },
-        { "term": "Rf value", "def": "distance moved by substance ÷ distance moved by solvent" },
-        { "term": "solvent front", "def": "furthest point reached by the solvent" },
-        { "term": "pure substance", "def": "gives a single spot" }
-      ],
-      "starter": ["Separation for miscible liquids?", "Define mixture", "Work out 4.2 ÷ 7.0", "Why use pencil for labels on paper?"],
-      "teach": [
-        { "heading": "Method", "bullets": ["Pencil base line", "Spots on the line", "Solvent below the line", "Remove before the front reaches the top; mark it"], "note": "4CH1 practical: show demo video." },
-        { "heading": "Rf values", "bullets": ["Rf = spot distance ÷ solvent distance", "Measure to the centre of the spot", "Same substance + same solvent = same Rf"], "note": "Model.", "model": { "problem": "Spot at 3.9 cm, solvent front at 6.5 cm. Find Rf.", "steps": ["Rf = 3.9 ÷ 6.5", "= 0.6"], "answer": "Rf = 0.60" } },
-        { "heading": "Interpreting", "bullets": ["Count spots: number of components", "Match heights with known substances", "Spot at base line: insoluble in that solvent"], "note": "Answer the big question: compare the food colouring with permitted dyes.", "table": { "head": ["Sample", "Spots (Rf)", "Conclusion"], "rows": [["Food colouring X", "0.25, 0.70", "two dyes"], ["Permitted dye P", "0.25", "matches one spot"], ["Permitted dye Q", "0.55", "no match"], ["Banned dye B", "0.70", "X contains banned dye B"]] } },
-        { "heading": "Rf errors", "bullets": ["Rf must be less than 1"], "note": "Check orientation.", "misconception": { "wrong": "Rf = 6.5 ÷ 3.9 = 1.67", "right": "Spot ÷ solvent: Rf is always below 1" } },
-        { "heading": "Check: identify", "bullets": [], "note": "Show me on 3.", "check": { "q": "A sample gives one spot with the same Rf as substance A in two different solvents. What can you conclude?", "options": ["It is a mixture", "It is very likely pure A", "It is insoluble", "It contains A and B"], "answer": 1, "why": "One spot means one component; matching Rf in two solvents strongly suggests it is A." } }
-      ],
-      "practice": ["Why is the start line in pencil?", "Rf: spot 2.4 cm, front 8.0 cm", "How many components in a 3-spot sample?"],
-      "independent": ["Core: Calculate Rf for four spots and identify each from a reference table", "Extend: Explain why a spot stays on the base line", "Stretch: Suggest how to separate two dyes with identical Rf in water."],
-      "exit": ["Rf formula?", "What does a single spot show?", "Why must the solvent be below the line?"],
-      "homework": "4CH1 chromatography exam question with Rf calculation (5 marks).",
-      "send": "Support: Rf calculation frame. Stretch: two-way chromatography."
-    },
-    {
-      "unit": "Chemistry: Principles of chemistry",
-      "n": 12,
-      "title": "Atomic structure and isotopes",
-      "duration": 50,
-      "bigQuestion": "If atoms are mostly empty space, why can't we walk through walls?",
-      "objectives": ["Describe the structure of an atom", "Use atomic number and mass number", "Define isotopes"],
-      "successCriteria": ["State relative mass and charge of protons, neutrons and electrons", "Calculate numbers of subatomic particles", "Explain what isotopes are with examples"],
-      "crossCurricular": "Physics: radioactivity (later); History: models of the atom",
-      "smsc": "Spiritual: Surah Saba 34:3, nothing 'the weight of an atom' escapes Allah's knowledge",
-      "keywords": [
-        { "term": "proton", "def": "positive particle in the nucleus, relative mass 1" },
-        { "term": "neutron", "def": "neutral particle in the nucleus, relative mass 1" },
-        { "term": "electron", "def": "negative particle in shells, very small mass (about 1/1836)" },
-        { "term": "atomic number", "def": "number of protons" },
-        { "term": "isotope", "def": "atoms of an element with different numbers of neutrons" }
-      ],
-      "starter": ["Rf formula?", "Define element", "What charge does a proton have?", "Where is the nucleus?"],
-      "teach": [
-        { "heading": "Subatomic particles", "bullets": ["Nucleus: protons and neutrons", "Electrons in shells", "Atoms are neutral: protons = electrons"], "note": "Answer the big question: electrons in the outer parts of atoms repel each other.", "table": { "head": ["Particle", "Relative mass", "Relative charge", "Location"], "rows": [["Proton", "1", "+1", "nucleus"], ["Neutron", "1", "0", "nucleus"], ["Electron", "1/1836", "−1", "shells"]] } },
-        { "heading": "Atomic and mass numbers", "bullets": ["Atomic number = protons", "Mass number = protons + neutrons", "Neutrons = mass number − atomic number"], "note": "Model.", "model": { "problem": "How many protons, neutrons and electrons in ²³Na (atomic number 11)?", "steps": ["Protons = atomic number = 11", "Electrons = protons (neutral atom) = 11", "Neutrons = 23 − 11 = 12"], "answer": "11 p, 12 n, 11 e" } },
-        { "heading": "Isotopes", "bullets": ["Same protons, different neutrons", "Same chemical properties", "e.g. ¹²C and ¹⁴C; ³⁵Cl and ³⁷Cl"], "note": "Same electrons, so same chemistry." },
-        { "heading": "Mass number confusion", "bullets": ["Mass number ≠ neutrons"], "note": "Common.", "misconception": { "wrong": "³⁷Cl has 37 neutrons", "right": "³⁷Cl has 37 − 17 = 20 neutrons" } },
-        { "heading": "Check: particles", "bullets": [], "note": "Show me on 3.", "check": { "q": "An atom has mass number 40 and atomic number 19. How many neutrons?", "options": ["19", "21", "40", "59"], "answer": 1, "why": "40 − 19 = 21. A is protons; D adds them." } }
-      ],
-      "practice": ["Particles in ¹⁹F (atomic number 9)", "Define isotope", "Charge of a neutron?"],
-      "independent": ["Core: Complete a table of particles for six atoms", "Extend: Explain why isotopes of chlorine react in the same way", "Stretch: An ion ²⁷Al³⁺ has atomic number 13. Find its protons, neutrons and electrons."],
-      "exit": ["What is the atomic number?", "Neutrons in ¹⁶O (atomic number 8)?", "Why do isotopes have the same chemistry?"],
-      "homework": "4CH1 atomic structure questions (8 marks).",
-      "send": "Support: calculation frame. Stretch: ions."
-    },
-    {
-      "unit": "Chemistry: Principles of chemistry",
-      "n": 13,
-      "title": "Relative atomic mass",
-      "duration": 50,
-      "bigQuestion": "Why is chlorine's relative atomic mass 35.5 when no atom weighs half a unit?",
-      "objectives": ["Define relative atomic mass", "Calculate Ar from isotope abundances", "Explain why Ar is not a whole number"],
-      "successCriteria": ["Define Ar relative to carbon-12", "Calculate Ar from percentage abundances", "Calculate an abundance from a given Ar"],
-      "crossCurricular": "Maths: weighted averages and percentages",
-      "smsc": "Spiritual: precision in measurement",
-      "keywords": [
-        { "term": "relative atomic mass (Ar)", "def": "the weighted mean mass of an element's isotopes compared with 1/12 of carbon-12" },
-        { "term": "abundance", "def": "the percentage of atoms that are a given isotope" },
-        { "term": "weighted mean", "def": "an average that accounts for how common each value is" },
-        { "term": "carbon-12", "def": "the standard isotope used for atomic masses" }
-      ],
-      "starter": ["Neutrons in ³⁷Cl?", "Define isotope", "Work out 75% of 35", "Mean of 4 and 8"],
-      "teach": [
-        { "heading": "Weighted mean", "bullets": ["More common isotopes count more", "So Ar is closer to the commonest mass"], "note": "Answer the big question." },
-        { "heading": "Calculating Ar", "bullets": ["Multiply each mass by its abundance", "Add", "Divide by 100"], "note": "Model.", "model": { "problem": "Chlorine is 75% ³⁵Cl and 25% ³⁷Cl. Calculate Ar.", "steps": ["35 × 75 = 2625", "37 × 25 = 925", "Total = 3550", "3550 ÷ 100"], "answer": "Ar = 35.5" } },
-        { "heading": "Finding an abundance", "bullets": ["Let one abundance be x", "The other is 100 − x", "Form and solve an equation"], "note": "Boron: ¹⁰B and ¹¹B, Ar 10.8. 10x + 11(100 − x) = 1080 → x = 20%." },
-        { "heading": "Simple mean error", "bullets": ["Don't just average the masses"], "note": "Common.", "misconception": { "wrong": "Ar of chlorine = (35 + 37) ÷ 2 = 36", "right": "Use abundances: (35 × 75 + 37 × 25) ÷ 100 = 35.5" } },
-        { "heading": "Check: calculate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Copper is 69% ⁶³Cu and 31% ⁶⁵Cu. Ar (1 d.p.)?", "options": ["64.0", "63.6", "63.0", "64.4"], "answer": 1, "why": "(63 × 69 + 65 × 31) ÷ 100 = 63.62 → 63.6. A is a simple mean." } }
-      ],
-      "practice": ["Ar of an element: 90% mass 20, 10% mass 22", "Ar of lithium: 7.5% ⁶Li, 92.5% ⁷Li", "Why is Ar closer to the commonest isotope?"],
-      "independent": ["Core: Calculate Ar for three elements from abundance data", "Extend: Bromine has Ar 79.9 with isotopes ⁷⁹Br and ⁸¹Br. Find the abundances.", "Stretch: Magnesium has three isotopes: ²⁴Mg 79%, ²⁵Mg 10%, ²⁶Mg 11%. Calculate Ar to 1 d.p."],
-      "exit": ["Define Ar.", "Calculate Ar: 60% mass 10, 40% mass 11.", "Why isn't Ar a whole number?"],
-      "homework": "4CH1 Ar calculations (four questions).",
-      "send": "Support: calculation frame. Stretch: mass spectra."
-    },
-    {
-      "unit": "Chemistry: Principles of chemistry",
-      "n": 14,
-      "title": "The Periodic Table and electronic configuration",
-      "duration": 50,
-      "bigQuestion": "How did Mendeleev predict elements nobody had found yet?",
-      "objectives": ["Describe how the Periodic Table is arranged", "Write electronic configurations for the first 20 elements", "Link group and period to electron arrangement"],
-      "successCriteria": ["Identify groups, periods, metals and non-metals", "Write configurations such as 2.8.1", "Explain why elements in a group react similarly"],
-      "crossCurricular": "History: Mendeleev's predictions; Physics: electrons and energy levels",
-      "smsc": "Spiritual: order and pattern in nature",
-      "keywords": [
-        { "term": "group", "def": "a vertical column; same number of outer electrons" },
-        { "term": "period", "def": "a horizontal row; same number of occupied shells" },
-        { "term": "electronic configuration", "def": "the arrangement of electrons in shells, e.g. 2.8.1" },
-        { "term": "noble gas", "def": "Group 0 element with a full outer shell" }
-      ],
-      "starter": ["Ar of Cl?", "Protons in sodium (atomic number 11)?", "Name a noble gas", "What is a period?"],
-      "teach": [
-        { "heading": "The arrangement", "bullets": ["In order of atomic number", "Groups: vertical", "Periods: horizontal", "Metals left, non-metals right"], "note": "Answer the big question: Mendeleev left gaps and predicted properties (e.g. germanium)." },
-        { "heading": "Electron shells", "bullets": ["First shell: 2", "Second and third: up to 8 (for the first 20)", "Fill from the inside out"], "note": "Model.", "model": { "problem": "Write the electronic configuration of calcium (atomic number 20)", "steps": ["20 electrons", "First shell: 2", "Second: 8 (10 so far)", "Third: 8 (18 so far); fourth: 2"], "answer": "2.8.8.2" } },
-        { "heading": "Group and period from configuration", "bullets": ["Outer electrons = group number", "Number of shells = period"], "note": "2.8.1 → Group 1, Period 3 (sodium).", "table": { "head": ["Element", "Configuration", "Group", "Period"], "rows": [["Lithium", "2.1", "1", "2"], ["Oxygen", "2.6", "6", "2"], ["Sodium", "2.8.1", "1", "3"], ["Chlorine", "2.8.7", "7", "3"], ["Argon", "2.8.8", "0", "3"]] } },
-        { "heading": "Group 0 is full", "bullets": ["Full outer shell = unreactive"], "note": "Helium has 2 outer electrons but is in Group 0.", "misconception": { "wrong": "Helium should be in Group 2", "right": "Helium's outer shell (2) is full, so it is a noble gas in Group 0" } },
-        { "heading": "Check: configuration", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which element has configuration 2.8.6?", "options": ["Oxygen", "Sulfur", "Silicon", "Neon"], "answer": 1, "why": "2 + 8 + 6 = 16 electrons: sulfur, Group 6, Period 3." } }
-      ],
-      "practice": ["Configuration of magnesium (12)", "Group and period of 2.8.3", "Why do Group 1 elements react similarly?"],
-      "independent": ["Core: Write configurations for elements 1–20", "Extend: Explain why fluorine and chlorine have similar reactions", "Stretch: Explain how Mendeleev's predictions for 'eka-silicon' (germanium) supported his table."],
-      "exit": ["Configuration of nitrogen (7)?", "Group of an element with 1 outer electron?", "Why are noble gases unreactive?"],
-      "homework": "4CH1 Periodic Table questions (8 marks).",
-      "send": "Support: shell diagrams. Stretch: ions and configurations."
-    },
-    {
-      "unit": "Physics: Forces and motion",
-      "n": 15,
-      "title": "Speed and distance–time graphs",
-      "duration": 50,
-      "bigQuestion": "How can a graph tell the story of a journey?",
-      "objectives": ["Use average speed = distance ÷ time", "Plot and interpret distance–time graphs", "Find speed from the gradient"],
-      "successCriteria": ["Calculate speed with units", "Describe motion from a distance–time graph", "Calculate speed from a gradient, including curved graphs (tangent)"],
-      "crossCurricular": "Maths: gradients and rearranging formulae; Geography: travel times",
-      "smsc": "Spiritual: valuing time (Surah Al-'Asr)",
-      "keywords": [
-        { "term": "speed", "def": "distance travelled per unit time" },
-        { "term": "gradient", "def": "steepness of a line: change in y ÷ change in x" },
-        { "term": "stationary", "def": "not moving" },
-        { "term": "m/s", "def": "metres per second" }
-      ],
-      "starter": ["Bismillah. Gradient of y = 3x + 2?", "Rearrange d = st for t", "Convert 2 km to m", "Convert 3 minutes to seconds"],
-      "teach": [
-        { "heading": "Average speed", "bullets": ["speed = distance ÷ time", "Units: m/s or km/h", "Average because speed may change"], "note": "4PH1 formula.", "model": { "problem": "A cyclist travels 3.6 km in 12 minutes. Find the average speed in m/s.", "steps": ["Convert: 3600 m and 720 s", "speed = 3600 ÷ 720", "= 5"], "answer": "5 m/s" } },
-        { "heading": "Reading distance–time graphs", "bullets": ["Straight sloping line: constant speed", "Flat line: stationary", "Steeper: faster", "Curving up: accelerating"], "note": "Answer the big question with a journey graph to school.", "table": { "head": ["Shape", "Meaning"], "rows": [["Horizontal line", "stationary"], ["Straight line, gentle slope", "slow constant speed"], ["Straight line, steep slope", "fast constant speed"], ["Curve getting steeper", "accelerating"]] } },
-        { "heading": "Speed from gradient", "bullets": ["Gradient = distance ÷ time = speed", "Curves: draw a tangent"], "note": "Practise on a graph." },
-        { "heading": "Flat means stopped", "bullets": ["Not 'constant speed'"], "note": "Common error.", "misconception": { "wrong": "A horizontal line shows constant speed", "right": "On a distance–time graph, horizontal means stationary" } },
-        { "heading": "Check: gradient", "bullets": [], "note": "Show me on 3.", "check": { "q": "A line rises 150 m in 30 s. What is the speed?", "options": ["4500 m/s", "5 m/s", "0.2 m/s", "180 m/s"], "answer": 1, "why": "150 ÷ 30 = 5 m/s. A multiplies; C divides the wrong way." } }
-      ],
-      "practice": ["Speed: 400 m in 50 s", "Time to travel 1.5 km at 3 m/s", "Describe a graph section that is flat"],
-      "independent": ["Core: Plot a distance–time graph from data and describe each section", "Extend: Use a tangent to find the speed at t = 4 s on a curved graph", "Stretch: A car travels 30 km at 60 km/h then 30 km at 30 km/h. Show the average speed is not 45 km/h."],
-      "exit": ["Formula for speed?", "What does a steeper line show?", "Speed: 90 m in 15 s?"],
-      "homework": "4PH1 Paper 1P-style questions on speed and graphs.",
-      "send": "Support: formula triangle and unit conversion card. Stretch: average speed traps."
-    },
-    {
-      "unit": "Physics: Forces and motion",
-      "n": 16,
-      "title": "Acceleration and velocity–time graphs",
-      "duration": 50,
-      "bigQuestion": "What does a sprinter's graph look like compared with a car braking?",
-      "objectives": ["Use acceleration = change in velocity ÷ time", "Interpret velocity–time graphs", "Calculate distance from the area under a velocity–time graph"],
-      "successCriteria": ["Calculate acceleration with units", "Find acceleration from the gradient and distance from the area", "Use v² = u² + 2as"],
-      "crossCurricular": "Maths: area of trapezia and gradients; PE: sprint performance",
-      "smsc": "Social: road safety",
-      "keywords": [
-        { "term": "velocity", "def": "speed in a given direction" },
-        { "term": "acceleration", "def": "rate of change of velocity, m/s²" },
-        { "term": "deceleration", "def": "negative acceleration (slowing down)" },
-        { "term": "area under graph", "def": "on a v–t graph, equals distance travelled" }
-      ],
-      "starter": ["Speed: 1200 m in 4 minutes (m/s)", "Area of a triangle base 10, height 6", "Gradient of a line through (0,0) and (5,20)", "Difference between speed and velocity?"],
-      "teach": [
-        { "heading": "Acceleration", "bullets": ["a = (v − u) ÷ t", "Units: m/s²", "Negative a: decelerating"], "note": "4PH1 formula.", "model": { "problem": "A car goes from 8 m/s to 20 m/s in 4 s. Find its acceleration.", "steps": ["Change in velocity: 20 − 8 = 12 m/s", "a = 12 ÷ 4"], "answer": "3 m/s²" } },
-        { "heading": "Velocity–time graphs", "bullets": ["Gradient = acceleration", "Area = distance", "Horizontal = constant velocity"], "note": "Answer the big question: sprinter's line rises steeply then levels; braking car's line slopes down to zero.", "compare": { "left": { "title": "Distance–time", "points": ["Gradient = speed", "Flat = stationary"] }, "right": { "title": "Velocity–time", "points": ["Gradient = acceleration", "Flat = constant velocity", "Area = distance"] } } },
-        { "heading": "v² = u² + 2as", "bullets": ["Use when time is not given"], "note": "Example: a car at 20 m/s brakes at 5 m/s². Stopping distance: 0 = 400 − 10s → s = 40 m." },
-        { "heading": "Flat on v–t", "bullets": ["Constant velocity, not stopped"], "note": "Mirror image of last lesson's trap.", "misconception": { "wrong": "Flat on a v–t graph means stationary", "right": "Flat means constant velocity; zero velocity is on the axis" } },
-        { "heading": "Check: area", "bullets": [], "note": "Show me on 3.", "check": { "q": "A v–t graph rises from 0 to 10 m/s in 5 s. Distance travelled?", "options": ["50 m", "25 m", "2 m", "15 m"], "answer": 1, "why": "Area of triangle: ½ × 5 × 10 = 25 m. A forgets the half." } }
-      ],
-      "practice": ["Acceleration from 0 to 30 m/s in 6 s", "Distance under a v–t graph: 12 m/s for 8 s", "Find s: u = 0, v = 6 m/s, a = 2 m/s²"],
-      "independent": ["Core: Interpret a v–t graph with three stages: find accelerations and total distance", "Extend: A train decelerates from 25 m/s at 0.5 m/s². How far before it stops?", "Stretch: Sketch the v–t graph for a skydiver from jump to landing and explain each stage."],
-      "exit": ["Units of acceleration?", "What does the area under a v–t graph show?", "a: 5 → 15 m/s in 2 s?"],
-      "homework": "4PH1 v–t graph questions (10 marks).",
-      "send": "Support: graph-reading card. Stretch: equations of motion."
-    },
-    {
-      "unit": "Physics: Forces and motion",
-      "n": 17,
-      "title": "Forces and resultant force",
-      "duration": 50,
-      "bigQuestion": "If forces act on a parked car, why doesn't it move?",
-      "objectives": ["Identify types of forces", "Calculate resultant forces in one dimension", "Describe the effects of balanced and unbalanced forces"],
-      "successCriteria": ["Name and draw forces on free-body diagrams", "Calculate resultant force", "Predict motion from balanced or unbalanced forces"],
-      "crossCurricular": "PE: forces in sport; DT: structures",
-      "smsc": "Spiritual: balance (mizan) in creation (Surah Ar-Rahman 55:7–9)",
-      "keywords": [
-        { "term": "force", "def": "a push or pull, measured in newtons (N)" },
-        { "term": "resultant force", "def": "the single force with the same effect as all the forces" },
-        { "term": "free-body diagram", "def": "shows all forces on an object as arrows" },
-        { "term": "vector", "def": "has size and direction" }
-      ],
-      "starter": ["Units of acceleration?", "Name three forces", "Is speed a vector?", "What is the unit of force?"],
-      "teach": [
-        { "heading": "Types of forces", "bullets": ["Weight, normal reaction, friction, drag, thrust, tension, upthrust", "Contact and non-contact"], "note": "Draw free-body diagrams for a book on a table and a car." },
-        { "heading": "Resultant force", "bullets": ["Same direction: add", "Opposite directions: subtract", "Direction of the larger force"], "note": "Model.", "model": { "problem": "A car's engine gives 1200 N forward; drag is 300 N and friction 200 N. Find the resultant.", "steps": ["Backward forces: 300 + 200 = 500 N", "Resultant = 1200 − 500", "Direction: forwards"], "answer": "700 N forwards" } },
-        { "heading": "Balanced vs unbalanced", "bullets": ["Balanced (resultant 0): stays still or constant velocity", "Unbalanced: accelerates in the direction of the resultant"], "note": "Answer the big question: weight and normal reaction balance.", "misconception": { "wrong": "A moving object needs a resultant force to keep moving", "right": "With zero resultant it keeps moving at constant velocity" } },
-        { "heading": "Check: resultant", "bullets": [], "note": "Show me on 3.", "check": { "q": "A box has 40 N right and 15 N left. Resultant?", "options": ["55 N right", "25 N right", "25 N left", "0 N"], "answer": 1, "why": "40 − 15 = 25 N, in the direction of the larger force: right." } }
-      ],
-      "practice": ["Draw forces on a falling apple", "Resultant: 50 N up, 80 N down", "What happens with balanced forces on a moving bike?"],
-      "independent": ["Core: Calculate resultants for six situations", "Extend: A skydiver reaches terminal velocity. Explain using forces", "Stretch: Explain why a plane flying level at constant speed has a resultant force of zero, naming all four forces."],
-      "exit": ["Define resultant force.", "Resultant of 100 N and 100 N in opposite directions?", "What happens to an object with an unbalanced force?"],
-      "homework": "4PH1 forces questions (8 marks).",
-      "send": "Support: free-body templates. Stretch: forces at angles (scale drawing)."
-    },
-    {
-      "unit": "Physics: Forces and motion",
-      "n": 18,
-      "title": "Force, mass and acceleration; weight",
-      "duration": 50,
-      "bigQuestion": "Why is it harder to push a full trolley than an empty one?",
-      "objectives": ["Use F = m × a", "Use W = m × g", "Distinguish mass and weight"],
-      "successCriteria": ["Calculate force, mass or acceleration", "Calculate weight on Earth and other planets", "Explain the difference between mass and weight"],
-      "crossCurricular": "Maths: rearranging formulae; Geography: space exploration",
-      "smsc": "Spiritual: the vastness and order of the heavens",
-      "keywords": [
-        { "term": "mass", "def": "amount of matter in an object, kg" },
-        { "term": "weight", "def": "the gravitational force on an object, N" },
-        { "term": "gravitational field strength (g)", "def": "force per kg; 10 N/kg on Earth (4PH1 uses 10)" },
-        { "term": "newton", "def": "unit of force" }
-      ],
-      "starter": ["Resultant: 60 N right, 20 N left", "Rearrange F = ma for a", "Units of mass?", "Define acceleration"],
-      "teach": [
-        { "heading": "F = m × a", "bullets": ["Resultant force = mass × acceleration", "Bigger mass: smaller acceleration for the same force"], "note": "Answer the big question.", "model": { "problem": "A 1200 kg car has a resultant force of 3000 N. Find its acceleration.", "steps": ["a = F ÷ m", "a = 3000 ÷ 1200"], "answer": "2.5 m/s²" } },
-        { "heading": "Weight", "bullets": ["W = m × g", "g = 10 N/kg on Earth", "g on the Moon about 1.6 N/kg"], "note": "Example: 60 kg person: Earth 600 N, Moon 96 N.", "compare": { "left": { "title": "Mass", "points": ["kg", "Same everywhere", "Amount of matter"] }, "right": { "title": "Weight", "points": ["N", "Depends on g", "Gravitational force"] } } },
-        { "heading": "Everyday language", "bullets": ["'I weigh 50 kg' is really mass"], "note": "Clarify.", "misconception": { "wrong": "Your weight is the same on the Moon", "right": "Mass is the same; weight is less because g is smaller" } },
-        { "heading": "Check: F = ma", "bullets": [], "note": "Show me on 3.", "check": { "q": "What force gives a 5 kg mass an acceleration of 4 m/s²?", "options": ["1.25 N", "9 N", "20 N", "0.8 N"], "answer": 2, "why": "F = 5 × 4 = 20 N. A and D divide; B adds." } }
-      ],
-      "practice": ["F = ? when m = 70 kg, a = 2 m/s²", "Weight of a 3 kg bag on Earth", "a when F = 500 N, m = 250 kg"],
-      "independent": ["Core: Six F = ma and W = mg calculations", "Extend: A 1500 kg car brakes from 20 m/s to rest in 4 s. Find the braking force", "Stretch: Describe the practical to investigate how force affects acceleration (e.g. trolley and light gates) and how to make it valid."],
-      "exit": ["Formula linking force, mass, acceleration?", "Weight of 8 kg on Earth?", "Units of g?"],
-      "homework": "4PH1 F = ma questions including the required practical.",
-      "send": "Support: formula triangle. Stretch: practical evaluation."
-    },
-    {
-      "unit": "Physics: Forces and motion",
-      "n": 19,
-      "title": "Stopping distances",
-      "duration": 50,
-      "bigQuestion": "Why do speed limits near schools save lives?",
-      "objectives": ["Define thinking, braking and stopping distance", "Describe factors affecting each", "Use data to explain road-safety advice"],
-      "successCriteria": ["Calculate stopping distance from thinking and braking distances", "Explain factors affecting reaction time and braking", "Explain why braking distance increases more than speed"],
-      "crossCurricular": "PSHE: road safety; Maths: interpreting data",
-      "smsc": "Moral: protecting life (hifz an-nafs) and responsibility on the roads",
-      "keywords": [
-        { "term": "thinking distance", "def": "distance travelled during the driver's reaction time" },
-        { "term": "braking distance", "def": "distance travelled once the brakes are applied" },
-        { "term": "stopping distance", "def": "thinking distance + braking distance" },
-        { "term": "reaction time", "def": "time taken to respond to a hazard" }
-      ],
-      "starter": ["F = ma: 1000 kg, 3 m/s²", "Distance at 20 m/s for 0.7 s", "Name something that slows reactions", "What is friction?"],
-      "teach": [
-        { "heading": "Two parts", "bullets": ["Stopping = thinking + braking"], "note": "Highway Code data at 30 mph: thinking 9 m + braking 14 m = 23 m.", "table": { "head": ["Speed", "Thinking", "Braking", "Stopping"], "rows": [["20 mph", "6 m", "6 m", "12 m"], ["30 mph", "9 m", "14 m", "23 m"], ["50 mph", "15 m", "38 m", "53 m"], ["70 mph", "21 m", "75 m", "96 m"]] } },
-        { "heading": "Factors", "bullets": ["Thinking: tiredness, phone use, alcohol, drugs", "Braking: wet or icy roads, worn tyres or brakes, heavy load", "Both: speed"], "note": "Answer the big question: thinking distance doubles with speed; braking distance roughly quadruples." },
-        { "heading": "Calculating thinking distance", "bullets": ["distance = speed × reaction time"], "note": "Model.", "model": { "problem": "A driver at 15 m/s has a reaction time of 0.6 s; braking distance is 18 m. Find the stopping distance.", "steps": ["Thinking distance = 15 × 0.6 = 9 m", "Stopping = 9 + 18"], "answer": "27 m" } },
-        { "heading": "Phones affect thinking, not braking", "bullets": ["Wet roads affect braking, not thinking"], "note": "Classic exam distinction.", "misconception": { "wrong": "Wet roads increase thinking distance", "right": "Wet roads increase braking distance; distractions increase thinking distance" } },
-        { "heading": "Check: factor", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which increases braking distance but not thinking distance?", "options": ["Tiredness", "Using a phone", "Icy road", "Alcohol"], "answer": 2, "why": "Ice reduces friction between tyres and road. The others slow the driver's reactions." } }
-      ],
-      "practice": ["Define stopping distance", "Two factors affecting thinking distance", "Thinking distance at 20 m/s, reaction 0.5 s"],
-      "independent": ["Core: Use the table to explain how speed affects stopping distance", "Extend: Explain why braking distance increases so much with speed (kinetic energy and work done)", "Stretch: Design a reaction-time investigation using a ruler drop and explain how to convert distance to time."],
-      "exit": ["Stopping distance = ?", "Factor that increases thinking distance?", "Why are lower limits used near schools?"],
-      "homework": "Do the ruler-drop reaction test with a family member (10 trials) and calculate the mean reaction time.",
-      "send": "Support: factor sorting cards. Stretch: kinetic-energy explanation."
-    },
-    {
-      "unit": "Physics: Forces and motion",
-      "n": 20,
-      "title": "Hooke's law and elastic behaviour",
-      "duration": 50,
-      "bigQuestion": "How can a spring be used to measure a force?",
-      "objectives": ["Describe Hooke's law", "Describe the practical to investigate extension of a spring", "Identify the limit of proportionality"],
-      "successCriteria": ["Calculate extension from length data", "Plot and interpret force–extension graphs", "Distinguish elastic and plastic deformation and explain the limit of proportionality"],
-      "crossCurricular": "Maths: proportionality and straight-line graphs; DT: springs in products",
-      "smsc": "Spiritual: patterns and laws in the physical world",
-      "keywords": [
-        { "term": "extension", "def": "increase in length from the original length" },
-        { "term": "Hooke's law", "def": "extension is directly proportional to force, up to a limit" },
-        { "term": "limit of proportionality", "def": "point beyond which extension is no longer proportional to force" },
-        { "term": "elastic deformation", "def": "returns to original shape when the force is removed" }
-      ],
-      "starter": ["Weight of 0.5 kg mass?", "What does 'directly proportional' mean?", "Stopping distance = ?", "Gradient of a straight line through the origin"],
-      "teach": [
-        { "heading": "The practical", "bullets": ["Measure original length", "Add 1 N weights one at a time", "Measure new length; calculate extension"], "note": "4PH1 required practical: show the demo video. Read the ruler at eye level.", "model": { "problem": "A spring is 5.0 cm long. With 3 N added it is 8.6 cm. Find the extension.", "steps": ["Extension = new length − original length", "8.6 − 5.0"], "answer": "3.6 cm" } },
-        { "heading": "Force–extension graph", "bullets": ["Straight line through the origin: Hooke's law", "Curves after the limit of proportionality"], "note": "Answer the big question: equal force steps give equal extensions, so the scale on a newtonmeter is even." },
-        { "heading": "Elastic vs plastic", "bullets": ["Elastic: returns to shape", "Plastic: permanently stretched"], "note": "Compare a spring and plasticine.", "compare": { "left": { "title": "Elastic", "points": ["Returns to original shape", "Spring with small loads", "Rubber band"] }, "right": { "title": "Plastic", "points": ["Permanently changed", "Overstretched spring", "Plasticine"] } } },
-        { "heading": "Length vs extension", "bullets": ["Plot extension, not length"], "note": "Common data error.", "misconception": { "wrong": "Plot total length against force", "right": "Plot extension (length − original length) against force" } },
-        { "heading": "Check: Hooke", "bullets": [], "note": "Show me on 3.", "check": { "q": "A spring extends 2 cm for 4 N. Below its limit, what is the extension for 10 N?", "options": ["4 cm", "5 cm", "8 cm", "20 cm"], "answer": 1, "why": "0.5 cm per N, so 10 N gives 5 cm. Extension is proportional to force." } }
-      ],
-      "practice": ["Extension: original 12 cm, new 15.5 cm", "Sketch a force–extension graph with a limit", "Define elastic deformation"],
-      "independent": ["Core: Calculate extensions from a results table and plot the graph", "Extend: Identify the limit of proportionality from data and explain your choice", "Stretch: Evaluate the practical: sources of error and how to reduce them."],
-      "exit": ["State Hooke's law.", "Extension: 20 cm → 23 cm?", "What happens beyond the limit of proportionality?"],
-      "homework": "4PH1 Hooke's law practical question with graph (10 marks).",
-      "send": "Support: results table template. Stretch: spring constant (F = kx)."
+     "term": "cell wall",
+     "def": "cellulose layer that supports plant cells"
     }
-  ]
+   ],
+   "starter": [
+    "Name a bacterium",
+    "What is a pathogen?",
+    "Order: tissue, cell, organ",
+    "Name two organelles"
+   ],
+   "teach": [
+    {
+     "heading": "Levels of organisation",
+     "bullets": [
+      "Organelles → cells → tissues → organs → organ systems"
+     ],
+     "note": "Edexcel GCSE Biology requires this exact sequence.",
+     "timeline": [
+      {
+       "label": "Organelle",
+       "text": "mitochondrion"
+      },
+      {
+       "label": "Cell",
+       "text": "muscle cell"
+      },
+      {
+       "label": "Tissue",
+       "text": "muscle tissue"
+      },
+      {
+       "label": "Organ",
+       "text": "heart"
+      },
+      {
+       "label": "Organ system",
+       "text": "circulatory system"
+      }
+     ]
+    },
+    {
+     "heading": "Cell structures",
+     "bullets": [
+      "Know each structure and its job"
+     ],
+     "note": "Answer the big question: both have nucleus, membrane, cytoplasm, mitochondria, ribosomes because all cells need control, exchange, reactions and energy.",
+     "table": {
+      "head": [
+       "Structure",
+       "Function",
+       "Plant",
+       "Animal"
+      ],
+      "rows": [
+       [
+        "Nucleus",
+        "contains genetic material; controls the cell",
+        "✓",
+        "✓"
+       ],
+       [
+        "Cytoplasm",
+        "site of chemical reactions",
+        "✓",
+        "✓"
+       ],
+       [
+        "Cell membrane",
+        "controls entry and exit",
+        "✓",
+        "✓"
+       ],
+       [
+        "Mitochondria",
+        "aerobic respiration",
+        "✓",
+        "✓"
+       ],
+       [
+        "Ribosomes",
+        "protein synthesis",
+        "✓",
+        "✓"
+       ],
+       [
+        "Cell wall",
+        "support (cellulose)",
+        "✓",
+        "✗"
+       ],
+       [
+        "Chloroplasts",
+        "photosynthesis",
+        "✓",
+        "✗"
+       ],
+       [
+        "Vacuole",
+        "cell sap; keeps cell turgid",
+        "✓",
+        "✗ (small, temporary)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Bacterial cells (prokaryotic)",
+     "bullets": [
+      "No nucleus: chromosomal DNA free in the cytoplasm",
+      "Plasmid DNA: small rings",
+      "Cell wall, membrane, ribosomes; some have a flagellum"
+     ],
+     "note": "Edexcel GCSE 1.1 requires bacterial cells. Bacteria are much smaller (about 1–5 µm) than animal cells (about 10–30 µm).",
+     "compare": {
+      "left": {
+       "title": "Eukaryotic (animal, plant)",
+       "points": [
+        "Nucleus",
+        "Mitochondria",
+        "Larger"
+       ]
+      },
+      "right": {
+       "title": "Prokaryotic (bacteria)",
+       "points": [
+        "No nucleus; chromosomal DNA loose",
+        "Plasmids",
+        "Smaller"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Exam wording",
+     "bullets": [
+      "Mitochondria: site of aerobic respiration",
+      "Not 'make energy'"
+     ],
+     "note": "Mark schemes reject 'make energy'.",
+     "misconception": {
+      "wrong": "Mitochondria produce energy",
+      "right": "Mitochondria are the site of aerobic respiration, which releases energy"
+     }
+    },
+    {
+     "heading": "Check: structure",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which structure is found in both plant and animal cells?",
+      "options": [
+       "Cell wall",
+       "Chloroplast",
+       "Ribosome",
+       "Permanent vacuole"
+      ],
+      "answer": 2,
+      "why": "Ribosomes make proteins in all cells. The others are plant-only."
+     }
+    }
+   ],
+   "practice": [
+    "Function of ribosomes?",
+    "Three structures only in plant cells",
+    "Order the levels of organisation"
+   ],
+   "independent": [
+    "Core: Draw and label plant and animal cells with functions",
+    "Extend: Explain why root cells have no chloroplasts",
+    "Stretch: A cell from a muscle contains many more mitochondria than a skin cell. Explain why."
+   ],
+   "exit": [
+    "Function of the cell membrane?",
+    "What is an organelle?",
+    "Name the polysaccharide in plant cell walls."
+   ],
+   "homework": "Edexcel GCSE Biology exam practice on cell structure (10 marks), including a labelled diagram question.",
+   "send": "Support: labelled diagram templates. Stretch: magnification calculations."
+  },
+  {
+   "n": 2,
+   "unit": "Biology Topic 1: Key concepts in biology",
+   "title": "Specialised cells: sperm, egg and ciliated cells",
+   "duration": 50,
+   "bigQuestion": "How is a sperm cell built for a one-way journey?",
+   "objectives": [
+    "Explain how sperm, egg and ciliated epithelial cells are adapted to their functions",
+    "Link sub-cellular structures to function",
+    "Apply structure–function reasoning to unfamiliar cells"
+   ],
+   "successCriteria": [
+    "State the function of each specialised cell",
+    "Explain two adaptations of each using sub-cellular structures",
+    "Apply the same reasoning to an unfamiliar cell"
+   ],
+   "crossCurricular": "PSHE/RSE: human reproduction; PE: the respiratory system and airways",
+   "smsc": "Spiritual: the creation of each human from a drop (Surah Al-Insan 76:2); reflection on design in the body",
+   "keywords": [
+    {
+     "term": "haploid",
+     "def": "containing one set of chromosomes, as in gametes"
+    },
+    {
+     "term": "acrosome",
+     "def": "the tip of a sperm cell containing enzymes to digest the egg's outer layer"
+    },
+    {
+     "term": "cilia",
+     "def": "tiny hair-like structures that beat to move substances"
+    },
+    {
+     "term": "adaptation",
+     "def": "a feature that helps a cell carry out its function"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the site of aerobic respiration.",
+    "What does the nucleus contain?",
+    "Which cells have no nucleus?",
+    "What is a gamete?"
+   ],
+   "teach": [
+    {
+     "heading": "Three specialised cells (Edexcel GCSE 1.2)",
+     "bullets": [
+      "Learn the cell, its job and its adaptations"
+     ],
+     "note": "These three are named in the specification.",
+     "table": {
+      "head": [
+       "Cell",
+       "Function",
+       "Adaptations"
+      ],
+      "rows": [
+       [
+        "Sperm",
+        "fertilise an egg",
+        "haploid nucleus; acrosome with enzymes; many mitochondria; tail"
+       ],
+       [
+        "Egg",
+        "be fertilised; support early embryo",
+        "haploid nucleus; nutrients in cytoplasm; membrane changes after fertilisation"
+       ],
+       [
+        "Ciliated epithelial",
+        "move mucus out of airways",
+        "cilia on the surface that beat in waves"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Explaining an adaptation",
+     "bullets": [
+      "Structure → what it does → how it helps the function"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain how a sperm cell is adapted to reach and fertilise an egg (4 marks)",
+      "steps": [
+       "Many mitochondria release energy by aerobic respiration",
+       "This powers the tail to swim towards the egg",
+       "The acrosome contains enzymes to digest the egg's outer layer",
+       "The haploid nucleus combines with the egg's nucleus to restore the full number of chromosomes"
+      ],
+      "answer": "Two adaptations, each linked to the function"
+     }
+    },
+    {
+     "heading": "Mitochondria wording",
+     "bullets": [
+      "Mitochondria release energy; they do not make it"
+     ],
+     "note": "Mark schemes reject 'make energy'.",
+     "misconception": {
+      "wrong": "Sperm have many mitochondria to make energy",
+      "right": "Many mitochondria release energy through aerobic respiration for swimming"
+     }
+    },
+    {
+     "heading": "Check: adaptation",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What is the function of the acrosome?",
+      "options": [
+       "Swimming",
+       "Releasing energy",
+       "Digesting the egg's outer layer",
+       "Storing nutrients"
+      ],
+      "answer": 2,
+      "why": "The acrosome holds enzymes. The tail swims, mitochondria release energy and the egg stores nutrients."
+     }
+    }
+   ],
+   "practice": [
+    "State the function of a ciliated epithelial cell.",
+    "Give two adaptations of an egg cell.",
+    "Why are gametes haploid?"
+   ],
+   "independent": [
+    "Core: Complete an adaptation table for the three cells.",
+    "Extend: Explain why smoking, which damages cilia, leads to chest infections.",
+    "Stretch: Root hair cells are not in Topic 1 but follow the same logic. Explain two adaptations using structure → function → benefit."
+   ],
+   "exit": [
+    "Name the part of a sperm containing enzymes.",
+    "Why does an egg cell contain lots of cytoplasm?",
+    "What do cilia do?"
+   ],
+   "homework": "Edexcel GCSE Biology Topic 1 exam questions on specialised cells (8 marks).",
+   "send": "Support: labelled diagrams and adaptation frame. Stretch: compare with plant specialised cells."
+  },
+  {
+   "n": 3,
+   "unit": "Biology Topic 1: Key concepts in biology",
+   "title": "Microscopy, magnification and units",
+   "duration": 50,
+   "bigQuestion": "How did better microscopes change our understanding of cells?",
+   "objectives": [
+    "Compare light and electron microscopes",
+    "Use magnification = image size ÷ real size",
+    "Convert between mm, µm, nm and pm using standard form"
+   ],
+   "successCriteria": [
+    "State the differences between light and electron microscopes",
+    "Calculate magnification, image size or real size",
+    "Convert units and give answers in standard form"
+   ],
+   "crossCurricular": "Maths: standard form and rearranging; History: Hooke, van Leeuwenhoek and the electron microscope (1930s)",
+   "smsc": "Spiritual: 'what you see and what you do not see' (Surah Al-Haqqah 69:38–39)",
+   "keywords": [
+    {
+     "term": "magnification",
+     "def": "how many times bigger the image is than the real object"
+    },
+    {
+     "term": "resolution",
+     "def": "the ability to distinguish two points that are close together"
+    },
+    {
+     "term": "micrometre (µm)",
+     "def": "one thousandth of a millimetre (10⁻⁶ m)"
+    },
+    {
+     "term": "nanometre (nm)",
+     "def": "one thousandth of a micrometre (10⁻⁹ m)"
+    }
+   ],
+   "starter": [
+    "Write 0.004 in standard form.",
+    "How many mm in 1 cm?",
+    "Name the part of a cell that controls it.",
+    "Total magnification: ×10 eyepiece, ×40 objective?"
+   ],
+   "teach": [
+    {
+     "heading": "Light vs electron microscopes",
+     "bullets": [
+      "Electron microscopes: much higher magnification and resolution",
+      "They revealed mitochondria, ribosomes and viruses in detail"
+     ],
+     "note": "Answer the big question.",
+     "compare": {
+      "left": {
+       "title": "Light microscope",
+       "points": [
+        "Up to about ×1500",
+        "Living specimens, colour",
+        "Cheap, portable"
+       ]
+      },
+      "right": {
+       "title": "Electron microscope",
+       "points": [
+        "Up to about ×2 000 000",
+        "Much higher resolution",
+        "Dead specimens; expensive"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Magnification calculations",
+     "bullets": [
+      "magnification = image size ÷ real size",
+      "Same units top and bottom"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A cell is 25 µm across. In a drawing it is 50 mm across. Find the magnification.",
+      "steps": [
+       "Convert to the same units: 50 mm = 50 000 µm",
+       "magnification = 50 000 ÷ 25",
+       "= 2000"
+      ],
+      "answer": "×2000"
+     }
+    },
+    {
+     "heading": "Units ladder",
+     "bullets": [
+      "mm × 1000 = µm",
+      "µm × 1000 = nm",
+      "nm × 1000 = pm"
+     ],
+     "note": "Practise conversions in standard form: 0.002 mm = 2 µm = 2 × 10³ nm."
+    },
+    {
+     "heading": "Mixed units",
+     "bullets": [
+      "Convert before dividing"
+     ],
+     "note": "The most common error.",
+     "misconception": {
+      "wrong": "50 mm ÷ 25 µm = 2",
+      "right": "Convert first: 50 000 µm ÷ 25 µm = 2000"
+     }
+    },
+    {
+     "heading": "Check: real size",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "An image is 12 mm long at ×400. What is the real size?",
+      "options": [
+       "4800 mm",
+       "0.03 mm",
+       "30 mm",
+       "3 mm"
+      ],
+      "answer": 1,
+      "why": "real size = image ÷ magnification = 12 ÷ 400 = 0.03 mm (30 µm). A multiplies."
+     }
+    }
+   ],
+   "practice": [
+    "Magnification: image 40 mm, real 0.1 mm",
+    "Convert 0.5 mm to µm",
+    "Real size: image 20 mm at ×1000 (in µm)"
+   ],
+   "independent": [
+    "Core: Six magnification calculations with unit conversions.",
+    "Extend: Describe the core practical method for viewing onion cells with a light microscope, including the stain.",
+    "Stretch: A mitochondrion is 2 µm long. Write this in metres in standard form, and find its image length at ×25 000."
+   ],
+   "exit": [
+    "Formula for magnification?",
+    "Convert 3 µm to nm.",
+    "Why can electron microscopes show ribosomes but light microscopes cannot?"
+   ],
+   "homework": "Edexcel GCSE Biology magnification and standard form questions (10 marks).",
+   "send": "Support: formula triangle and units ladder. Stretch: resolution and wavelength."
+  },
+  {
+   "n": 4,
+   "unit": "Biology Topic 1: Key concepts in biology",
+   "title": "Enzymes: temperature and pH",
+   "duration": 50,
+   "bigQuestion": "Why does a high fever become dangerous?",
+   "objectives": [
+    "Describe enzymes as biological catalysts",
+    "Explain the effect of temperature and pH on enzyme activity",
+    "Describe the practical investigation of temperature on enzyme activity"
+   ],
+   "successCriteria": [
+    "Explain lock and key and the active site",
+    "Explain the shape of temperature and pH graphs",
+    "Describe the amylase-starch practical with variables"
+   ],
+   "crossCurricular": "Chemistry: catalysts and rates; Medicine: fever",
+   "smsc": "Spiritual: precise balance (mizan) in the body",
+   "keywords": [
+    {
+     "term": "enzyme",
+     "def": "a protein that acts as a biological catalyst"
+    },
+    {
+     "term": "active site",
+     "def": "the part of an enzyme where the substrate binds"
+    },
+    {
+     "term": "substrate",
+     "def": "the molecule an enzyme acts on"
+    },
+    {
+     "term": "denatured",
+     "def": "active site changed shape so substrate no longer fits"
+    },
+    {
+     "term": "optimum",
+     "def": "the condition at which an enzyme works fastest"
+    }
+   ],
+   "starter": [
+    "Building blocks of protein?",
+    "What is a catalyst?",
+    "Positive iodine result?",
+    "Normal human body temperature?"
+   ],
+   "teach": [
+    {
+     "heading": "Lock and key",
+     "bullets": [
+      "Substrate fits the active site",
+      "Enzyme–substrate complex forms",
+      "Products released; enzyme unchanged"
+     ],
+     "note": "Animation of specificity."
+    },
+    {
+     "heading": "Temperature",
+     "bullets": [
+      "Rises to optimum: more collisions",
+      "Above optimum: active site denatured",
+      "Rate falls sharply"
+     ],
+     "note": "Answer the big question: above about 40 °C, body enzymes begin to denature.",
+     "model": {
+      "problem": "Explain the shape of an enzyme activity–temperature graph (4 marks)",
+      "steps": [
+       "As temperature rises, molecules have more kinetic energy",
+       "More successful collisions between enzyme and substrate",
+       "Peak at the optimum (about 37 °C for human enzymes)",
+       "Above it, bonds in the enzyme break, active site changes shape: denatured"
+      ],
+      "answer": "Rise (collisions) → peak (optimum) → sharp fall (denaturation)"
+     }
+    },
+    {
+     "heading": "pH",
+     "bullets": [
+      "Each enzyme has an optimum pH",
+      "Pepsin (stomach): about pH 2",
+      "Amylase: about pH 7"
+     ],
+     "note": "Extremes of pH denature enzymes too."
+    },
+    {
+     "heading": "Practical: amylase and temperature",
+     "bullets": [
+      "Independent: temperature",
+      "Dependent: time for starch to disappear (iodine test)",
+      "Control: volumes, concentrations, pH"
+     ],
+     "note": "Show the demo video with a spotting tile.",
+     "misconception": {
+      "wrong": "Enzymes are killed at high temperatures",
+      "right": "Enzymes are proteins, not alive; they are denatured"
+     }
+    },
+    {
+     "heading": "Check: denature",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Why does activity fall above the optimum temperature?",
+      "options": [
+       "The enzyme runs out",
+       "The active site changes shape so the substrate no longer fits",
+       "The substrate is denatured",
+       "Collisions stop"
+      ],
+      "answer": 1,
+      "why": "Heat breaks bonds holding the enzyme's shape, so the active site no longer matches the substrate."
+     }
+    }
+   ],
+   "practice": [
+    "Define active site",
+    "Optimum pH of pepsin?",
+    "Name the dependent variable in the amylase practical"
+   ],
+   "independent": [
+    "Core: Sketch and explain temperature and pH graphs",
+    "Extend: Plan the amylase–temperature practical with variables, method and risk assessment",
+    "Stretch: Calculate the rate (1/time) from data at five temperatures and plot it."
+   ],
+   "exit": [
+    "What is a substrate?",
+    "Why do enzymes work faster as temperature rises (below optimum)?",
+    "What does denatured mean?"
+   ],
+   "homework": "Edexcel GCSE Biology practical-skills question on the enzyme investigation (method, variables, analysis).",
+   "send": "Support: graph-sketch template. Stretch: rate calculations."
+  },
+  {
+   "n": 5,
+   "unit": "Biology Topic 1: Key concepts in biology",
+   "title": "Biological molecules and food tests",
+   "duration": 50,
+   "bigQuestion": "How can just a few chemical elements build every living thing?",
+   "objectives": [
+    "Identify the elements in carbohydrates, proteins and lipids",
+    "Describe the structure of large biological molecules from smaller units",
+    "Describe practical food tests"
+   ],
+   "successCriteria": [
+    "State the chemical elements and building blocks of each molecule",
+    "Describe the four food tests including results",
+    "Interpret food test results in exam questions"
+   ],
+   "crossCurricular": "Chemistry: elements and polymers; Food technology: nutrition",
+   "smsc": "Spiritual: complexity built from simplicity",
+   "keywords": [
+    {
+     "term": "carbohydrate",
+     "def": "contains C, H and O; built from simple sugars"
+    },
+    {
+     "term": "protein",
+     "def": "contains C, H, O and N; built from amino acids"
+    },
+    {
+     "term": "lipid",
+     "def": "contains C, H and O; built from fatty acids and glycerol"
+    },
+    {
+     "term": "polymer",
+     "def": "a large molecule made of repeating units"
+    }
+   ],
+   "starter": [
+    "What is differentiation?",
+    "Reagent to test for starch?",
+    "Name the elements in water",
+    "What is a polymer?"
+   ],
+   "teach": [
+    {
+     "heading": "Building blocks",
+     "bullets": [
+      "Large molecules are made from small units"
+     ],
+     "note": "Answer the big question.",
+     "table": {
+      "head": [
+       "Molecule",
+       "Elements",
+       "Made from"
+      ],
+      "rows": [
+       [
+        "Starch, glycogen",
+        "C, H, O",
+        "simple sugars (glucose)"
+       ],
+       [
+        "Proteins",
+        "C, H, O, N",
+        "amino acids"
+       ],
+       [
+        "Lipids",
+        "C, H, O",
+        "fatty acids and glycerol"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Food tests (practical)",
+     "bullets": [
+      "Iodine: starch",
+      "Benedict's (heated): glucose",
+      "Biuret: protein",
+      "Ethanol emulsion: fat"
+     ],
+     "note": "Show demo video. Edexcel GCSE Biology asks for the method and result.",
+     "model": {
+      "problem": "Describe how to test a food for glucose (3 marks)",
+      "steps": [
+       "Add Benedict's solution to a sample of the food in water",
+       "Heat in a water bath at about 80 °C for 5 minutes",
+       "A colour change from blue to green/yellow/orange/brick red shows glucose"
+      ],
+      "answer": "Reagent + heat + colour change"
+     }
+    },
+    {
+     "heading": "Lipids are not polymers",
+     "bullets": [
+      "Fatty acids + glycerol, not long chains of repeats"
+     ],
+     "note": "A subtle point for top marks.",
+     "misconception": {
+      "wrong": "Lipids are polymers of fatty acids",
+      "right": "A lipid is glycerol joined to three fatty acids: not a long repeating chain"
+     }
+    },
+    {
+     "heading": "Check: elements",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which element is in proteins but not in carbohydrates?",
+      "options": [
+       "Carbon",
+       "Hydrogen",
+       "Nitrogen",
+       "Oxygen"
+      ],
+      "answer": 2,
+      "why": "Amino acids contain nitrogen (in the amine group). Carbohydrates have only C, H and O."
+     }
+    }
+   ],
+   "practice": [
+    "Building blocks of protein?",
+    "Positive result for biuret?",
+    "Elements in lipids?"
+   ],
+   "independent": [
+    "Core: Complete a food-test table for four nutrients (reagent, method, positive result)",
+    "Extend: Interpret results for three unknown foods",
+    "Stretch: Explain why a positive Benedict's result can be green or brick red, and how you could make the test more quantitative."
+   ],
+   "exit": [
+    "Monomer of starch?",
+    "How do you test for protein?",
+    "Which nutrient contains nitrogen?"
+   ],
+   "homework": "Edexcel GCSE Biology-style questions on biological molecules and food tests.",
+   "send": "Support: test cards. Stretch: semi-quantitative tests."
+  },
+  {
+   "n": 6,
+   "unit": "Biology Topic 1: Key concepts in biology",
+   "title": "Diffusion, osmosis and active transport",
+   "duration": 50,
+   "bigQuestion": "Why do strawberries go soggy in sugar but potatoes go soft in salt water?",
+   "objectives": [
+    "Describe diffusion, osmosis and active transport",
+    "Describe the osmosis core practical using potato",
+    "Calculate percentage change in mass"
+   ],
+   "successCriteria": [
+    "Define the three processes",
+    "Explain osmosis results using water potential/concentration",
+    "Calculate percentage change and use a graph to find the concentration inside cells"
+   ],
+   "crossCurricular": "Chemistry: particles and concentration; Maths: percentage change and graphs",
+   "smsc": "Spiritual: balance in living systems",
+   "keywords": [
+    {
+     "term": "diffusion",
+     "def": "net movement of particles from high to low concentration"
+    },
+    {
+     "term": "osmosis",
+     "def": "net movement of water across a partially permeable membrane from a dilute to a more concentrated solution"
+    },
+    {
+     "term": "active transport",
+     "def": "movement against a concentration gradient using energy from respiration"
+    },
+    {
+     "term": "partially permeable",
+     "def": "lets some molecules through but not others"
+    }
+   ],
+   "starter": [
+    "What is the cell membrane's job?",
+    "Work out the % change from 2.0 g to 2.3 g.",
+    "What does 'concentration' mean?",
+    "Why does perfume spread through a room?"
+   ],
+   "teach": [
+    {
+     "heading": "Three processes",
+     "bullets": [
+      "Compare direction and energy"
+     ],
+     "note": "Display and refer to throughout.",
+     "table": {
+      "head": [
+       "Process",
+       "What moves",
+       "Direction",
+       "Energy?"
+      ],
+      "rows": [
+       [
+        "Diffusion",
+        "any particles",
+        "high → low",
+        "no"
+       ],
+       [
+        "Osmosis",
+        "water",
+        "dilute → concentrated solution",
+        "no"
+       ],
+       [
+        "Active transport",
+        "particles",
+        "low → high",
+        "yes (respiration)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The potato core practical",
+     "bullets": [
+      "Equal potato cylinders in sucrose solutions",
+      "Measure mass before and after",
+      "Calculate % change"
+     ],
+     "note": "Show the demonstration video.",
+     "model": {
+      "problem": "A cylinder goes from 2.50 g to 2.20 g in 0.6 mol/dm³ sucrose. Find the % change and explain.",
+      "steps": [
+       "Change = 2.20 − 2.50 = −0.30 g",
+       "% change = −0.30 ÷ 2.50 × 100 = −12%",
+       "The solution was more concentrated than the cell contents",
+       "Water left the cells by osmosis"
+      ],
+      "answer": "−12%: water moved out by osmosis"
+     }
+    },
+    {
+     "heading": "Finding the cell concentration",
+     "bullets": [
+      "Plot % change against concentration",
+      "Where the line crosses 0%, no net osmosis"
+     ],
+     "note": "That concentration equals the concentration inside the potato cells."
+    },
+    {
+     "heading": "Water moves, not sugar",
+     "bullets": [
+      "In osmosis only water crosses the membrane"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "Sugar moves into the potato, so it gains mass",
+      "right": "Water moves in or out by osmosis; the solute stays outside"
+     }
+    },
+    {
+     "heading": "Check: osmosis",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A potato cylinder gains mass in pure water. Why?",
+      "options": [
+       "Water moves out by osmosis",
+       "Water moves in by osmosis",
+       "Sugar diffuses in",
+       "Active transport of water"
+      ],
+      "answer": 1,
+      "why": "Pure water is more dilute than the cell contents, so water enters by osmosis."
+     }
+    }
+   ],
+   "practice": [
+    "Define osmosis.",
+    "% change: 3.0 g → 3.6 g",
+    "Give one example of active transport in plants."
+   ],
+   "independent": [
+    "Core: Calculate % change for five results and plot the graph.",
+    "Extend: Use your graph to estimate the concentration of the potato cell contents.",
+    "Stretch: Explain why root hair cells use active transport to take in mineral ions."
+   ],
+   "exit": [
+    "What moves in osmosis?",
+    "When does active transport need energy?",
+    "What does a 0% change tell you?"
+   ],
+   "homework": "Edexcel GCSE Biology core practical questions on osmosis (10 marks).",
+   "send": "Support: comparison table and calculation frame. Stretch: surface area to volume ratio."
+  },
+  {
+   "n": 7,
+   "unit": "Biology Topic 1: Key concepts in biology",
+   "title": "Cell differentiation and stem cells",
+   "duration": 50,
+   "bigQuestion": "If every cell has the same DNA, why are cells so different?",
+   "objectives": [
+    "Explain cell differentiation",
+    "Describe stem cells in animals and plants",
+    "Evaluate the use of stem cells in medicine"
+   ],
+   "successCriteria": [
+    "Define differentiation and give examples",
+    "Compare embryonic and adult stem cells",
+    "Evaluate stem-cell treatments, including ethical issues"
+   ],
+   "crossCurricular": "Islamic Studies: Islamic bioethics and the sanctity of life; Medicine: transplants",
+   "smsc": "Moral and spiritual: ethical debates on embryonic stem cells; differing scholarly views",
+   "keywords": [
+    {
+     "term": "differentiation",
+     "def": "a cell becoming specialised for a particular function"
+    },
+    {
+     "term": "stem cell",
+     "def": "an undifferentiated cell that can divide and become specialised"
+    },
+    {
+     "term": "embryonic stem cell",
+     "def": "can become almost any type of cell"
+    },
+    {
+     "term": "meristem",
+     "def": "plant tissue with stem cells, at root and shoot tips"
+    }
+   ],
+   "starter": [
+    "Function of mitochondria?",
+    "Name a specialised animal cell",
+    "Where are plant growing tips?",
+    "What is DNA?"
+   ],
+   "teach": [
+    {
+     "heading": "Differentiation",
+     "bullets": [
+      "All cells have the same genes",
+      "Different genes are switched on",
+      "Cell develops a special structure"
+     ],
+     "note": "Answer the big question."
+    },
+    {
+     "heading": "Stem cells",
+     "bullets": [
+      "Embryonic: almost any cell type",
+      "Adult (e.g. bone marrow): limited types",
+      "Plant meristems: any plant cell, throughout life"
+     ],
+     "note": "Compare.",
+     "compare": {
+      "left": {
+       "title": "Embryonic stem cells",
+       "points": [
+        "Can form almost any cell",
+        "Taken from early embryos",
+        "Ethical objections"
+       ]
+      },
+      "right": {
+       "title": "Adult stem cells",
+       "points": [
+        "Limited cell types",
+        "From bone marrow, etc.",
+        "Fewer ethical issues"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Evaluating stem-cell treatments",
+     "bullets": [
+      "Benefits and risks and ethics"
+     ],
+     "note": "Model a balanced answer. Mention that Muslim scholars hold differing views on embryonic stem-cell research; many permit research on surplus IVF embryos before a certain stage, others do not.",
+     "model": {
+      "problem": "Evaluate using stem cells to treat diabetes (4 marks)",
+      "steps": [
+       "Benefit: could replace damaged insulin-producing cells",
+       "Benefit: may end daily injections",
+       "Risk: cells could divide uncontrollably (tumours) or be rejected",
+       "Ethical: embryonic sources are opposed by some on religious or moral grounds"
+      ],
+      "answer": "Benefits + risks + ethics, then a judgement"
+     }
+    },
+    {
+     "heading": "Same DNA, different cells",
+     "bullets": [
+      "Cells don't lose genes when they specialise"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Nerve cells contain only nerve genes",
+      "right": "Every body cell has the full set of genes; only some are switched on"
+     }
+    },
+    {
+     "heading": "Check: stem cell",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Where are stem cells found in plants?",
+      "options": [
+       "Leaves",
+       "Meristems",
+       "Xylem",
+       "Stomata"
+      ],
+      "answer": 1,
+      "why": "Meristems at root and shoot tips contain dividing, unspecialised cells."
+     }
+    }
+   ],
+   "practice": [
+    "Define differentiation",
+    "Name a source of adult stem cells",
+    "Why are plant cuttings possible?"
+   ],
+   "independent": [
+    "Core: Compare embryonic, adult and plant stem cells in a table",
+    "Extend: Explain why gardeners can grow new plants from cuttings",
+    "Stretch: Write a balanced 6-mark answer on whether embryonic stem-cell research should be allowed."
+   ],
+   "exit": [
+    "What is a stem cell?",
+    "One risk of stem-cell treatment?",
+    "Where are meristems?"
+   ],
+   "homework": "Research one disease being treated with stem cells and summarise the treatment and its risks.",
+   "send": "Support: comparison frame. Stretch: therapeutic cloning."
+  },
+  {
+   "n": 8,
+   "unit": "Chemistry Topics 1–2: Key concepts; states of matter and mixtures",
+   "title": "States of matter",
+   "duration": 50,
+   "bigQuestion": "Why does steam scald worse than boiling water at the same temperature?",
+   "objectives": [
+    "Describe the arrangement, movement and energy of particles in solids, liquids and gases",
+    "Describe changes of state using particle theory",
+    "Interpret heating and cooling curves"
+   ],
+   "successCriteria": [
+    "Draw and describe particles in each state",
+    "Name changes of state and explain them with forces and energy",
+    "Explain the flat sections of a heating curve"
+   ],
+   "crossCurricular": "Physics: specific latent heat (Year 10 physics later); Geography: the water cycle",
+   "smsc": "Spiritual: water in its three states as a sign (e.g. Surah An-Nur 24:43 on clouds and hail)",
+   "keywords": [
+    {
+     "term": "melting",
+     "def": "solid to liquid"
+    },
+    {
+     "term": "sublimation",
+     "def": "solid directly to gas"
+    },
+    {
+     "term": "intermolecular forces",
+     "def": "forces between particles"
+    },
+    {
+     "term": "heating curve",
+     "def": "a graph of temperature against time as a substance is heated"
+    }
+   ],
+   "starter": [
+    "Name the three states of matter",
+    "What is condensation?",
+    "Why do solids keep their shape?",
+    "Boiling point of water?"
+   ],
+   "teach": [
+    {
+     "heading": "Particle model",
+     "bullets": [
+      "Solid: regular, vibrate, closest",
+      "Liquid: random, close, move past each other",
+      "Gas: random, far apart, fast"
+     ],
+     "note": "Edexcel GCSE Chemistry asks for arrangement, movement and relative energy.",
+     "table": {
+      "head": [
+       "State",
+       "Arrangement",
+       "Movement",
+       "Energy"
+      ],
+      "rows": [
+       [
+        "Solid",
+        "regular, touching",
+        "vibrate in place",
+        "lowest"
+       ],
+       [
+        "Liquid",
+        "random, touching",
+        "slide past each other",
+        "medium"
+       ],
+       [
+        "Gas",
+        "random, far apart",
+        "fast, all directions",
+        "highest"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Changes of state",
+     "bullets": [
+      "Energy in: melting, boiling, sublimation",
+      "Energy out: freezing, condensing"
+     ],
+     "note": "Answer the big question: steam releases extra energy when it condenses on your skin.",
+     "cycle": [
+      "Solid",
+      "melting → Liquid",
+      "boiling/evaporating → Gas",
+      "condensing → Liquid",
+      "freezing → Solid"
+     ]
+    },
+    {
+     "heading": "Heating curves",
+     "bullets": [
+      "Sloping: temperature rising",
+      "Flat: change of state",
+      "Energy breaks forces, not raising temperature"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Explain why the temperature stays at 0 °C while ice melts",
+      "steps": [
+       "Energy is still being supplied",
+       "It is used to overcome forces between particles",
+       "Not to increase the particles' kinetic energy",
+       "So the temperature does not rise until all the ice has melted"
+      ],
+      "answer": "Energy goes into breaking forces of attraction"
+     }
+    },
+    {
+     "heading": "Particles don't change size",
+     "bullets": [
+      "Particles themselves don't expand or melt"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "Particles get bigger when heated",
+      "right": "Particles move faster and further apart; their size is unchanged"
+     }
+    },
+    {
+     "heading": "Check: curve",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "On a heating curve, what is happening during a flat section at 100 °C?",
+      "options": [
+       "Water is freezing",
+       "Water is boiling",
+       "Ice is melting",
+       "Steam is cooling"
+      ],
+      "answer": 1,
+      "why": "100 °C is water's boiling point; the flat section is the liquid turning to gas."
+     }
+    }
+   ],
+   "practice": [
+    "Draw particles in a liquid",
+    "Name the change from gas to liquid",
+    "Why is there a flat section on a heating curve?"
+   ],
+   "independent": [
+    "Core: Label a heating curve for water from −20 °C to 120 °C",
+    "Extend: Explain sublimation of iodine using particle theory",
+    "Stretch: Use data to identify the state of five substances at 25 °C from their melting and boiling points."
+   ],
+   "exit": [
+    "Particle arrangement in a gas?",
+    "Name the change solid → gas.",
+    "What happens to energy during melting?"
+   ],
+   "homework": "Edexcel GCSE Chemistry-style questions on states of matter.",
+   "send": "Support: particle diagram templates. Stretch: data interpretation."
+  },
+  {
+   "n": 9,
+   "unit": "Chemistry Topic 2: States of matter and mixtures",
+   "title": "Pure substances and testing purity",
+   "duration": 50,
+   "bigQuestion": "Is the 'pure' orange juice in the shop really pure?",
+   "objectives": [
+    "Explain the scientific meaning of pure",
+    "Use melting and boiling points to test purity",
+    "Interpret melting point data"
+   ],
+   "successCriteria": [
+    "Distinguish everyday and scientific meanings of pure",
+    "Explain why mixtures melt over a range",
+    "Use data to identify pure and impure samples"
+   ],
+   "crossCurricular": "Food technology: labelling; Islamic Studies: purity (taharah) as a different, religious meaning",
+   "smsc": "Moral: honesty in labelling and advertising",
+   "keywords": [
+    {
+     "term": "pure substance",
+     "def": "a single element or compound, not mixed with anything else"
+    },
+    {
+     "term": "mixture",
+     "def": "two or more substances not chemically combined"
+    },
+    {
+     "term": "melting point",
+     "def": "temperature at which a solid melts; sharp for a pure substance"
+    },
+    {
+     "term": "impurity",
+     "def": "an unwanted substance mixed in"
+    }
+   ],
+   "starter": [
+    "Particle arrangement in a liquid?",
+    "Is orange juice one substance?",
+    "Melting point of pure ice?",
+    "Define compound."
+   ],
+   "teach": [
+    {
+     "heading": "Two meanings of pure",
+     "bullets": [
+      "Everyday: nothing added",
+      "Chemistry: one substance only"
+     ],
+     "note": "Answer the big question: orange juice is a mixture of water, sugars, acids and more."
+    },
+    {
+     "heading": "Purity and melting point",
+     "bullets": [
+      "Pure: melts at one sharp temperature",
+      "Impure: melts over a range, usually lower"
+     ],
+     "note": "Edexcel GCSE CC2.",
+     "table": {
+      "head": [
+       "Sample",
+       "Melting point",
+       "Conclusion"
+      ],
+      "rows": [
+       [
+        "Aspirin (pure)",
+        "135–136 °C",
+        "pure"
+       ],
+       [
+        "Aspirin sample A",
+        "128–133 °C",
+        "impure"
+       ],
+       [
+        "Water sample B",
+        "0 °C exactly",
+        "pure water"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Interpreting data",
+     "bullets": [
+      "Compare with the known value",
+      "Look at the range"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A sample of a compound melts from 112 °C to 118 °C. The pure compound melts at 122 °C. Explain.",
+      "steps": [
+       "Pure substances melt at one sharp temperature",
+       "This sample melts over a 6 °C range",
+       "It also melts below 122 °C",
+       "So it contains impurities"
+      ],
+      "answer": "The sample is impure"
+     }
+    },
+    {
+     "heading": "Natural isn't pure",
+     "bullets": [
+      "Mineral water is a mixture"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "Natural spring water is pure",
+      "right": "It contains dissolved minerals, so it is a mixture"
+     }
+    },
+    {
+     "heading": "Check: purity",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which melting result shows a pure substance?",
+      "options": [
+       "78–84 °C",
+       "Exactly 80 °C",
+       "Between 60 and 90 °C",
+       "It melts and boils at once"
+      ],
+      "answer": 1,
+      "why": "Pure substances melt at a single, sharp temperature."
+     }
+    }
+   ],
+   "practice": [
+    "Is sea water pure?",
+    "Explain how melting point shows purity.",
+    "Classify: oxygen, air, salt water, copper."
+   ],
+   "independent": [
+    "Core: Classify ten substances as pure or mixtures.",
+    "Extend: Interpret melting point data for four drug samples.",
+    "Stretch: Explain why impurities usually lower the melting point, using particles."
+   ],
+   "exit": [
+    "Scientific meaning of pure?",
+    "How does an impurity affect melting?",
+    "Is milk pure?"
+   ],
+   "homework": "Edexcel GCSE Chemistry Topic 2 questions on purity (6 marks).",
+   "send": "Support: data table with prompts. Stretch: boiling point elevation."
+  },
+  {
+   "n": 10,
+   "unit": "Chemistry Topics 1–2: Key concepts; states of matter and mixtures",
+   "title": "Elements, compounds, mixtures and separation",
+   "duration": 50,
+   "bigQuestion": "How do chemists get pure substances from messy mixtures?",
+   "objectives": [
+    "Distinguish elements, compounds and mixtures",
+    "Describe separation methods",
+    "Choose methods to separate mixtures"
+   ],
+   "successCriteria": [
+    "Classify substances",
+    "Describe simple and fractional distillation, filtration and crystallisation",
+    "Plan multi-step separations"
+   ],
+   "crossCurricular": "History: Jabir ibn Hayyan and the development of distillation; Geography: crude oil",
+   "smsc": "Cultural: early chemists of the Islamic world who refined laboratory methods",
+   "keywords": [
+    {
+     "term": "element",
+     "def": "a substance made of one type of atom"
+    },
+    {
+     "term": "compound",
+     "def": "two or more elements chemically combined"
+    },
+    {
+     "term": "mixture",
+     "def": "substances not chemically combined"
+    },
+    {
+     "term": "fractional distillation",
+     "def": "separating liquids with different boiling points using a fractionating column"
+    }
+   ],
+   "starter": [
+    "Define diffusion",
+    "Is air an element, compound or mixture?",
+    "Name a separation method",
+    "What is a pure substance?"
+   ],
+   "teach": [
+    {
+     "heading": "Element, compound, mixture",
+     "bullets": [
+      "Element: one type of atom",
+      "Compound: fixed ratio, chemically bonded",
+      "Mixture: no fixed ratio, not bonded"
+     ],
+     "note": "Classify: O₂, H₂O, air, NaCl, sea water, Fe."
+    },
+    {
+     "heading": "Separation methods",
+     "bullets": [
+      "Choose by property"
+     ],
+     "note": "Recap and extend from KS3.",
+     "table": {
+      "head": [
+       "Method",
+       "Separates",
+       "Property used"
+      ],
+      "rows": [
+       [
+        "Filtration",
+        "insoluble solid from liquid",
+        "particle size/solubility"
+       ],
+       [
+        "Crystallisation",
+        "soluble solid from solution",
+        "solubility"
+       ],
+       [
+        "Simple distillation",
+        "solvent from solution",
+        "boiling point"
+       ],
+       [
+        "Fractional distillation",
+        "miscible liquids",
+        "different boiling points"
+       ],
+       [
+        "Chromatography",
+        "dissolved substances",
+        "solubility/attraction to paper"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Fractional distillation",
+     "bullets": [
+      "Column is hotter at the bottom",
+      "Lower boiling point liquid reaches the top first",
+      "Collected separately"
+     ],
+     "note": "Example: ethanol (78 °C) and water (100 °C).",
+     "model": {
+      "problem": "Explain how ethanol is separated from water",
+      "steps": [
+       "Heat the mixture",
+       "Both evaporate; vapours rise up the fractionating column",
+       "Water condenses lower down and drips back",
+       "Ethanol vapour reaches the top and condenses in the condenser"
+      ],
+      "answer": "Ethanol (lower boiling point) collected first"
+     }
+    },
+    {
+     "heading": "Compound vs mixture",
+     "bullets": [
+      "A compound has different properties from its elements"
+     ],
+     "note": "Sodium (reactive metal) + chlorine (toxic gas) → salt.",
+     "misconception": {
+      "wrong": "Salt water is a compound of salt and water",
+      "right": "Salt water is a mixture: no new bonds between salt and water"
+     }
+    },
+    {
+     "heading": "Check: method",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which method separates a mixture of two miscible liquids?",
+      "options": [
+       "Filtration",
+       "Fractional distillation",
+       "Crystallisation",
+       "Magnetism"
+      ],
+      "answer": 1,
+      "why": "Miscible liquids have different boiling points; fractional distillation separates them."
+     }
+    }
+   ],
+   "practice": [
+    "Classify: CO₂, brass, Ne, milk",
+    "Method for sand from water?",
+    "Method for pure water from ink?"
+   ],
+   "independent": [
+    "Core: Choose and explain methods for five mixtures",
+    "Extend: Plan how to get pure, dry salt from rock salt",
+    "Stretch: Explain why fractional distillation of crude oil works and why the fractions are still mixtures."
+   ],
+   "exit": [
+    "Define compound.",
+    "Method for miscible liquids?",
+    "Is brass an element, compound or mixture?"
+   ],
+   "homework": "Edexcel GCSE Chemistry separation questions including a diagram of fractional distillation.",
+   "send": "Support: method decision flow. Stretch: crude oil fractions."
+  },
+  {
+   "n": 11,
+   "unit": "Chemistry Topics 1–2: Key concepts; states of matter and mixtures",
+   "title": "Paper chromatography",
+   "duration": 50,
+   "bigQuestion": "How can a strip of paper prove a food colouring is safe?",
+   "objectives": [
+    "Describe how to carry out paper chromatography",
+    "Calculate and use Rf values",
+    "Interpret chromatograms to identify substances"
+   ],
+   "successCriteria": [
+    "Describe the method including the pencil line",
+    "Calculate Rf values accurately",
+    "Use Rf and matching spots to identify components and impurities"
+   ],
+   "crossCurricular": "Maths: ratio and division; Food technology: food additives",
+   "smsc": "Moral: honest labelling and food safety",
+   "keywords": [
+    {
+     "term": "chromatogram",
+     "def": "the result of chromatography"
+    },
+    {
+     "term": "Rf value",
+     "def": "distance moved by substance ÷ distance moved by solvent"
+    },
+    {
+     "term": "solvent front",
+     "def": "furthest point reached by the solvent"
+    },
+    {
+     "term": "pure substance",
+     "def": "gives a single spot"
+    }
+   ],
+   "starter": [
+    "Separation for miscible liquids?",
+    "Define mixture",
+    "Work out 4.2 ÷ 7.0",
+    "Why use pencil for labels on paper?"
+   ],
+   "teach": [
+    {
+     "heading": "Method",
+     "bullets": [
+      "Pencil base line",
+      "Spots on the line",
+      "Solvent below the line",
+      "Remove before the front reaches the top; mark it"
+     ],
+     "note": "Edexcel GCSE Chemistry practical: show demo video."
+    },
+    {
+     "heading": "Rf values",
+     "bullets": [
+      "Rf = spot distance ÷ solvent distance",
+      "Measure to the centre of the spot",
+      "Same substance + same solvent = same Rf"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Spot at 3.9 cm, solvent front at 6.5 cm. Find Rf.",
+      "steps": [
+       "Rf = 3.9 ÷ 6.5",
+       "= 0.6"
+      ],
+      "answer": "Rf = 0.60"
+     }
+    },
+    {
+     "heading": "Interpreting",
+     "bullets": [
+      "Count spots: number of components",
+      "Match heights with known substances",
+      "Spot at base line: insoluble in that solvent"
+     ],
+     "note": "Answer the big question: compare the food colouring with permitted dyes.",
+     "table": {
+      "head": [
+       "Sample",
+       "Spots (Rf)",
+       "Conclusion"
+      ],
+      "rows": [
+       [
+        "Food colouring X",
+        "0.25, 0.70",
+        "two dyes"
+       ],
+       [
+        "Permitted dye P",
+        "0.25",
+        "matches one spot"
+       ],
+       [
+        "Permitted dye Q",
+        "0.55",
+        "no match"
+       ],
+       [
+        "Banned dye B",
+        "0.70",
+        "X contains banned dye B"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Rf errors",
+     "bullets": [
+      "Rf must be less than 1"
+     ],
+     "note": "Check orientation.",
+     "misconception": {
+      "wrong": "Rf = 6.5 ÷ 3.9 = 1.67",
+      "right": "Spot ÷ solvent: Rf is always below 1"
+     }
+    },
+    {
+     "heading": "Check: identify",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A sample gives one spot with the same Rf as substance A in two different solvents. What can you conclude?",
+      "options": [
+       "It is a mixture",
+       "It is very likely pure A",
+       "It is insoluble",
+       "It contains A and B"
+      ],
+      "answer": 1,
+      "why": "One spot means one component; matching Rf in two solvents strongly suggests it is A."
+     }
+    }
+   ],
+   "practice": [
+    "Why is the start line in pencil?",
+    "Rf: spot 2.4 cm, front 8.0 cm",
+    "How many components in a 3-spot sample?"
+   ],
+   "independent": [
+    "Core: Calculate Rf for four spots and identify each from a reference table",
+    "Extend: Explain why a spot stays on the base line",
+    "Stretch: Suggest how to separate two dyes with identical Rf in water."
+   ],
+   "exit": [
+    "Rf formula?",
+    "What does a single spot show?",
+    "Why must the solvent be below the line?"
+   ],
+   "homework": "Edexcel GCSE Chemistry chromatography exam question with Rf calculation (5 marks).",
+   "send": "Support: Rf calculation frame. Stretch: two-way chromatography."
+  },
+  {
+   "n": 12,
+   "unit": "Chemistry Topics 1–2: Key concepts; states of matter and mixtures",
+   "title": "Atomic structure and isotopes",
+   "duration": 50,
+   "bigQuestion": "If atoms are mostly empty space, why can't we walk through walls?",
+   "objectives": [
+    "Describe the structure of an atom",
+    "Use atomic number and mass number",
+    "Define isotopes"
+   ],
+   "successCriteria": [
+    "State relative mass and charge of protons, neutrons and electrons",
+    "Calculate numbers of subatomic particles",
+    "Explain what isotopes are with examples"
+   ],
+   "crossCurricular": "Physics: radioactivity (later); History: models of the atom",
+   "smsc": "Spiritual: Surah Saba 34:3, nothing 'the weight of an atom' escapes Allah's knowledge",
+   "keywords": [
+    {
+     "term": "proton",
+     "def": "positive particle in the nucleus, relative mass 1"
+    },
+    {
+     "term": "neutron",
+     "def": "neutral particle in the nucleus, relative mass 1"
+    },
+    {
+     "term": "electron",
+     "def": "negative particle in shells, very small mass (about 1/1836)"
+    },
+    {
+     "term": "atomic number",
+     "def": "number of protons"
+    },
+    {
+     "term": "isotope",
+     "def": "atoms of an element with different numbers of neutrons"
+    }
+   ],
+   "starter": [
+    "Rf formula?",
+    "Define element",
+    "What charge does a proton have?",
+    "Where is the nucleus?"
+   ],
+   "teach": [
+    {
+     "heading": "Subatomic particles",
+     "bullets": [
+      "Nucleus: protons and neutrons",
+      "Electrons in shells",
+      "Atoms are neutral: protons = electrons"
+     ],
+     "note": "Answer the big question: electrons in the outer parts of atoms repel each other.",
+     "table": {
+      "head": [
+       "Particle",
+       "Relative mass",
+       "Relative charge",
+       "Location"
+      ],
+      "rows": [
+       [
+        "Proton",
+        "1",
+        "+1",
+        "nucleus"
+       ],
+       [
+        "Neutron",
+        "1",
+        "0",
+        "nucleus"
+       ],
+       [
+        "Electron",
+        "1/1836",
+        "−1",
+        "shells"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Atomic and mass numbers",
+     "bullets": [
+      "Atomic number = protons",
+      "Mass number = protons + neutrons",
+      "Neutrons = mass number − atomic number"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "How many protons, neutrons and electrons in ²³Na (atomic number 11)?",
+      "steps": [
+       "Protons = atomic number = 11",
+       "Electrons = protons (neutral atom) = 11",
+       "Neutrons = 23 − 11 = 12"
+      ],
+      "answer": "11 p, 12 n, 11 e"
+     }
+    },
+    {
+     "heading": "Isotopes",
+     "bullets": [
+      "Same protons, different neutrons",
+      "Same chemical properties",
+      "e.g. ¹²C and ¹⁴C; ³⁵Cl and ³⁷Cl"
+     ],
+     "note": "Same electrons, so same chemistry."
+    },
+    {
+     "heading": "Mass number confusion",
+     "bullets": [
+      "Mass number ≠ neutrons"
+     ],
+     "note": "Common.",
+     "misconception": {
+      "wrong": "³⁷Cl has 37 neutrons",
+      "right": "³⁷Cl has 37 − 17 = 20 neutrons"
+     }
+    },
+    {
+     "heading": "Check: particles",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "An atom has mass number 40 and atomic number 19. How many neutrons?",
+      "options": [
+       "19",
+       "21",
+       "40",
+       "59"
+      ],
+      "answer": 1,
+      "why": "40 − 19 = 21. A is protons; D adds them."
+     }
+    }
+   ],
+   "practice": [
+    "Particles in ¹⁹F (atomic number 9)",
+    "Define isotope",
+    "Charge of a neutron?"
+   ],
+   "independent": [
+    "Core: Complete a table of particles for six atoms",
+    "Extend: Explain why isotopes of chlorine react in the same way",
+    "Stretch: An ion ²⁷Al³⁺ has atomic number 13. Find its protons, neutrons and electrons."
+   ],
+   "exit": [
+    "What is the atomic number?",
+    "Neutrons in ¹⁶O (atomic number 8)?",
+    "Why do isotopes have the same chemistry?"
+   ],
+   "homework": "Edexcel GCSE Chemistry atomic structure questions (8 marks).",
+   "send": "Support: calculation frame. Stretch: ions."
+  },
+  {
+   "n": 13,
+   "unit": "Chemistry Topics 1–2: Key concepts; states of matter and mixtures",
+   "title": "Relative atomic mass",
+   "duration": 50,
+   "bigQuestion": "Why is chlorine's relative atomic mass 35.5 when no atom weighs half a unit?",
+   "objectives": [
+    "Define relative atomic mass",
+    "Calculate Ar from isotope abundances",
+    "Explain why Ar is not a whole number"
+   ],
+   "successCriteria": [
+    "Define Ar relative to carbon-12",
+    "Calculate Ar from percentage abundances",
+    "Calculate an abundance from a given Ar"
+   ],
+   "crossCurricular": "Maths: weighted averages and percentages",
+   "smsc": "Spiritual: precision in measurement",
+   "keywords": [
+    {
+     "term": "relative atomic mass (Ar)",
+     "def": "the weighted mean mass of an element's isotopes compared with 1/12 of carbon-12"
+    },
+    {
+     "term": "abundance",
+     "def": "the percentage of atoms that are a given isotope"
+    },
+    {
+     "term": "weighted mean",
+     "def": "an average that accounts for how common each value is"
+    },
+    {
+     "term": "carbon-12",
+     "def": "the standard isotope used for atomic masses"
+    }
+   ],
+   "starter": [
+    "Neutrons in ³⁷Cl?",
+    "Define isotope",
+    "Work out 75% of 35",
+    "Mean of 4 and 8"
+   ],
+   "teach": [
+    {
+     "heading": "Weighted mean",
+     "bullets": [
+      "More common isotopes count more",
+      "So Ar is closer to the commonest mass"
+     ],
+     "note": "Answer the big question."
+    },
+    {
+     "heading": "Calculating Ar",
+     "bullets": [
+      "Multiply each mass by its abundance",
+      "Add",
+      "Divide by 100"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Chlorine is 75% ³⁵Cl and 25% ³⁷Cl. Calculate Ar.",
+      "steps": [
+       "35 × 75 = 2625",
+       "37 × 25 = 925",
+       "Total = 3550",
+       "3550 ÷ 100"
+      ],
+      "answer": "Ar = 35.5"
+     }
+    },
+    {
+     "heading": "Finding an abundance",
+     "bullets": [
+      "Let one abundance be x",
+      "The other is 100 − x",
+      "Form and solve an equation"
+     ],
+     "note": "Boron: ¹⁰B and ¹¹B, Ar 10.8. 10x + 11(100 − x) = 1080 → x = 20%."
+    },
+    {
+     "heading": "Simple mean error",
+     "bullets": [
+      "Don't just average the masses"
+     ],
+     "note": "Common.",
+     "misconception": {
+      "wrong": "Ar of chlorine = (35 + 37) ÷ 2 = 36",
+      "right": "Use abundances: (35 × 75 + 37 × 25) ÷ 100 = 35.5"
+     }
+    },
+    {
+     "heading": "Check: calculate",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Copper is 69% ⁶³Cu and 31% ⁶⁵Cu. Ar (1 d.p.)?",
+      "options": [
+       "64.0",
+       "63.6",
+       "63.0",
+       "64.4"
+      ],
+      "answer": 1,
+      "why": "(63 × 69 + 65 × 31) ÷ 100 = 63.62 → 63.6. A is a simple mean."
+     }
+    }
+   ],
+   "practice": [
+    "Ar of an element: 90% mass 20, 10% mass 22",
+    "Ar of lithium: 7.5% ⁶Li, 92.5% ⁷Li",
+    "Why is Ar closer to the commonest isotope?"
+   ],
+   "independent": [
+    "Core: Calculate Ar for three elements from abundance data",
+    "Extend: Bromine has Ar 79.9 with isotopes ⁷⁹Br and ⁸¹Br. Find the abundances.",
+    "Stretch: Magnesium has three isotopes: ²⁴Mg 79%, ²⁵Mg 10%, ²⁶Mg 11%. Calculate Ar to 1 d.p."
+   ],
+   "exit": [
+    "Define Ar.",
+    "Calculate Ar: 60% mass 10, 40% mass 11.",
+    "Why isn't Ar a whole number?"
+   ],
+   "homework": "Edexcel GCSE Chemistry Ar calculations (four questions).",
+   "send": "Support: calculation frame. Stretch: mass spectra."
+  },
+  {
+   "n": 14,
+   "unit": "Chemistry Topics 1–2: Key concepts; states of matter and mixtures",
+   "title": "The Periodic Table and electronic configuration",
+   "duration": 50,
+   "bigQuestion": "How did Mendeleev predict elements nobody had found yet?",
+   "objectives": [
+    "Describe how the Periodic Table is arranged",
+    "Write electronic configurations for the first 20 elements",
+    "Link group and period to electron arrangement"
+   ],
+   "successCriteria": [
+    "Identify groups, periods, metals and non-metals",
+    "Write configurations such as 2.8.1",
+    "Explain why elements in a group react similarly"
+   ],
+   "crossCurricular": "History: Mendeleev's predictions; Physics: electrons and energy levels",
+   "smsc": "Spiritual: order and pattern in nature",
+   "keywords": [
+    {
+     "term": "group",
+     "def": "a vertical column; same number of outer electrons"
+    },
+    {
+     "term": "period",
+     "def": "a horizontal row; same number of occupied shells"
+    },
+    {
+     "term": "electronic configuration",
+     "def": "the arrangement of electrons in shells, e.g. 2.8.1"
+    },
+    {
+     "term": "noble gas",
+     "def": "Group 0 element with a full outer shell"
+    }
+   ],
+   "starter": [
+    "Ar of Cl?",
+    "Protons in sodium (atomic number 11)?",
+    "Name a noble gas",
+    "What is a period?"
+   ],
+   "teach": [
+    {
+     "heading": "The arrangement",
+     "bullets": [
+      "In order of atomic number",
+      "Groups: vertical",
+      "Periods: horizontal",
+      "Metals left, non-metals right"
+     ],
+     "note": "Answer the big question: Mendeleev left gaps and predicted properties (e.g. germanium)."
+    },
+    {
+     "heading": "Electron shells",
+     "bullets": [
+      "First shell: 2",
+      "Second and third: up to 8 (for the first 20)",
+      "Fill from the inside out"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "Write the electronic configuration of calcium (atomic number 20)",
+      "steps": [
+       "20 electrons",
+       "First shell: 2",
+       "Second: 8 (10 so far)",
+       "Third: 8 (18 so far); fourth: 2"
+      ],
+      "answer": "2.8.8.2"
+     }
+    },
+    {
+     "heading": "Group and period from configuration",
+     "bullets": [
+      "Outer electrons = group number",
+      "Number of shells = period"
+     ],
+     "note": "2.8.1 → Group 1, Period 3 (sodium).",
+     "table": {
+      "head": [
+       "Element",
+       "Configuration",
+       "Group",
+       "Period"
+      ],
+      "rows": [
+       [
+        "Lithium",
+        "2.1",
+        "1",
+        "2"
+       ],
+       [
+        "Oxygen",
+        "2.6",
+        "6",
+        "2"
+       ],
+       [
+        "Sodium",
+        "2.8.1",
+        "1",
+        "3"
+       ],
+       [
+        "Chlorine",
+        "2.8.7",
+        "7",
+        "3"
+       ],
+       [
+        "Argon",
+        "2.8.8",
+        "0",
+        "3"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Group 0 is full",
+     "bullets": [
+      "Full outer shell = unreactive"
+     ],
+     "note": "Helium has 2 outer electrons but is in Group 0.",
+     "misconception": {
+      "wrong": "Helium should be in Group 2",
+      "right": "Helium's outer shell (2) is full, so it is a noble gas in Group 0"
+     }
+    },
+    {
+     "heading": "Check: configuration",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which element has configuration 2.8.6?",
+      "options": [
+       "Oxygen",
+       "Sulfur",
+       "Silicon",
+       "Neon"
+      ],
+      "answer": 1,
+      "why": "2 + 8 + 6 = 16 electrons: sulfur, Group 6, Period 3."
+     }
+    }
+   ],
+   "practice": [
+    "Configuration of magnesium (12)",
+    "Group and period of 2.8.3",
+    "Why do Group 1 elements react similarly?"
+   ],
+   "independent": [
+    "Core: Write configurations for elements 1–20",
+    "Extend: Explain why fluorine and chlorine have similar reactions",
+    "Stretch: Explain how Mendeleev's predictions for 'eka-silicon' (germanium) supported his table."
+   ],
+   "exit": [
+    "Configuration of nitrogen (7)?",
+    "Group of an element with 1 outer electron?",
+    "Why are noble gases unreactive?"
+   ],
+   "homework": "Edexcel GCSE Chemistry Periodic Table questions (8 marks).",
+   "send": "Support: shell diagrams. Stretch: ions and configurations."
+  },
+  {
+   "n": 15,
+   "unit": "Physics Topic 2: Motion and forces",
+   "title": "Speed and distance–time graphs",
+   "duration": 50,
+   "bigQuestion": "How can a graph tell the story of a journey?",
+   "objectives": [
+    "Use average speed = distance ÷ time",
+    "Plot and interpret distance–time graphs",
+    "Find speed from the gradient"
+   ],
+   "successCriteria": [
+    "Calculate speed with units",
+    "Describe motion from a distance–time graph",
+    "Calculate speed from a gradient, including curved graphs (tangent)"
+   ],
+   "crossCurricular": "Maths: gradients and rearranging formulae; Geography: travel times",
+   "smsc": "Spiritual: valuing time (Surah Al-'Asr)",
+   "keywords": [
+    {
+     "term": "speed",
+     "def": "distance travelled per unit time"
+    },
+    {
+     "term": "gradient",
+     "def": "steepness of a line: change in y ÷ change in x"
+    },
+    {
+     "term": "stationary",
+     "def": "not moving"
+    },
+    {
+     "term": "m/s",
+     "def": "metres per second"
+    }
+   ],
+   "starter": [
+    "Bismillah. Gradient of y = 3x + 2?",
+    "Rearrange d = st for t",
+    "Convert 2 km to m",
+    "Convert 3 minutes to seconds"
+   ],
+   "teach": [
+    {
+     "heading": "Average speed",
+     "bullets": [
+      "speed = distance ÷ time",
+      "Units: m/s or km/h",
+      "Average because speed may change"
+     ],
+     "note": "Edexcel GCSE Physics formula.",
+     "model": {
+      "problem": "A cyclist travels 3.6 km in 12 minutes. Find the average speed in m/s.",
+      "steps": [
+       "Convert: 3600 m and 720 s",
+       "speed = 3600 ÷ 720",
+       "= 5"
+      ],
+      "answer": "5 m/s"
+     }
+    },
+    {
+     "heading": "Reading distance–time graphs",
+     "bullets": [
+      "Straight sloping line: constant speed",
+      "Flat line: stationary",
+      "Steeper: faster",
+      "Curving up: accelerating"
+     ],
+     "note": "Answer the big question with a journey graph to school.",
+     "table": {
+      "head": [
+       "Shape",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "Horizontal line",
+        "stationary"
+       ],
+       [
+        "Straight line, gentle slope",
+        "slow constant speed"
+       ],
+       [
+        "Straight line, steep slope",
+        "fast constant speed"
+       ],
+       [
+        "Curve getting steeper",
+        "accelerating"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Speed from gradient",
+     "bullets": [
+      "Gradient = distance ÷ time = speed",
+      "Curves: draw a tangent"
+     ],
+     "note": "Practise on a graph."
+    },
+    {
+     "heading": "Flat means stopped",
+     "bullets": [
+      "Not 'constant speed'"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "A horizontal line shows constant speed",
+      "right": "On a distance–time graph, horizontal means stationary"
+     }
+    },
+    {
+     "heading": "Check: gradient",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A line rises 150 m in 30 s. What is the speed?",
+      "options": [
+       "4500 m/s",
+       "5 m/s",
+       "0.2 m/s",
+       "180 m/s"
+      ],
+      "answer": 1,
+      "why": "150 ÷ 30 = 5 m/s. A multiplies; C divides the wrong way."
+     }
+    }
+   ],
+   "practice": [
+    "Speed: 400 m in 50 s",
+    "Time to travel 1.5 km at 3 m/s",
+    "Describe a graph section that is flat"
+   ],
+   "independent": [
+    "Core: Plot a distance–time graph from data and describe each section",
+    "Extend: Use a tangent to find the speed at t = 4 s on a curved graph",
+    "Stretch: A car travels 30 km at 60 km/h then 30 km at 30 km/h. Show the average speed is not 45 km/h."
+   ],
+   "exit": [
+    "Formula for speed?",
+    "What does a steeper line show?",
+    "Speed: 90 m in 15 s?"
+   ],
+   "homework": "Edexcel GCSE Physics-style questions on speed and graphs.",
+   "send": "Support: formula triangle and unit conversion card. Stretch: average speed traps."
+  },
+  {
+   "n": 16,
+   "unit": "Physics Topic 2: Motion and forces",
+   "title": "Acceleration and velocity–time graphs",
+   "duration": 50,
+   "bigQuestion": "What does a sprinter's graph look like compared with a car braking?",
+   "objectives": [
+    "Use acceleration = change in velocity ÷ time",
+    "Interpret velocity–time graphs",
+    "Calculate distance from the area under a velocity–time graph"
+   ],
+   "successCriteria": [
+    "Calculate acceleration with units",
+    "Find acceleration from the gradient and distance from the area",
+    "Use v² = u² + 2as"
+   ],
+   "crossCurricular": "Maths: area of trapezia and gradients; PE: sprint performance",
+   "smsc": "Social: road safety",
+   "keywords": [
+    {
+     "term": "velocity",
+     "def": "speed in a given direction"
+    },
+    {
+     "term": "acceleration",
+     "def": "rate of change of velocity, m/s²"
+    },
+    {
+     "term": "deceleration",
+     "def": "negative acceleration (slowing down)"
+    },
+    {
+     "term": "area under graph",
+     "def": "on a v–t graph, equals distance travelled"
+    }
+   ],
+   "starter": [
+    "Speed: 1200 m in 4 minutes (m/s)",
+    "Area of a triangle base 10, height 6",
+    "Gradient of a line through (0,0) and (5,20)",
+    "Difference between speed and velocity?"
+   ],
+   "teach": [
+    {
+     "heading": "Acceleration",
+     "bullets": [
+      "a = (v − u) ÷ t",
+      "Units: m/s²",
+      "Negative a: decelerating"
+     ],
+     "note": "Edexcel GCSE Physics formula.",
+     "model": {
+      "problem": "A car goes from 8 m/s to 20 m/s in 4 s. Find its acceleration.",
+      "steps": [
+       "Change in velocity: 20 − 8 = 12 m/s",
+       "a = 12 ÷ 4"
+      ],
+      "answer": "3 m/s²"
+     }
+    },
+    {
+     "heading": "Velocity–time graphs",
+     "bullets": [
+      "Gradient = acceleration",
+      "Area = distance",
+      "Horizontal = constant velocity"
+     ],
+     "note": "Answer the big question: sprinter's line rises steeply then levels; braking car's line slopes down to zero.",
+     "compare": {
+      "left": {
+       "title": "Distance–time",
+       "points": [
+        "Gradient = speed",
+        "Flat = stationary"
+       ]
+      },
+      "right": {
+       "title": "Velocity–time",
+       "points": [
+        "Gradient = acceleration",
+        "Flat = constant velocity",
+        "Area = distance"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "v² = u² + 2as",
+     "bullets": [
+      "Use when time is not given"
+     ],
+     "note": "Example: a car at 20 m/s brakes at 5 m/s². Stopping distance: 0 = 400 − 10s → s = 40 m."
+    },
+    {
+     "heading": "Flat on v–t",
+     "bullets": [
+      "Constant velocity, not stopped"
+     ],
+     "note": "Mirror image of last lesson's trap.",
+     "misconception": {
+      "wrong": "Flat on a v–t graph means stationary",
+      "right": "Flat means constant velocity; zero velocity is on the axis"
+     }
+    },
+    {
+     "heading": "Check: area",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A v–t graph rises from 0 to 10 m/s in 5 s. Distance travelled?",
+      "options": [
+       "50 m",
+       "25 m",
+       "2 m",
+       "15 m"
+      ],
+      "answer": 1,
+      "why": "Area of triangle: ½ × 5 × 10 = 25 m. A forgets the half."
+     }
+    }
+   ],
+   "practice": [
+    "Acceleration from 0 to 30 m/s in 6 s",
+    "Distance under a v–t graph: 12 m/s for 8 s",
+    "Find s: u = 0, v = 6 m/s, a = 2 m/s²"
+   ],
+   "independent": [
+    "Core: Interpret a v–t graph with three stages: find accelerations and total distance",
+    "Extend: A train decelerates from 25 m/s at 0.5 m/s². How far before it stops?",
+    "Stretch: Sketch the v–t graph for a skydiver from jump to landing and explain each stage."
+   ],
+   "exit": [
+    "Units of acceleration?",
+    "What does the area under a v–t graph show?",
+    "a: 5 → 15 m/s in 2 s?"
+   ],
+   "homework": "Edexcel GCSE Physics v–t graph questions (10 marks).",
+   "send": "Support: graph-reading card. Stretch: equations of motion."
+  },
+  {
+   "n": 17,
+   "unit": "Physics Topic 2: Motion and forces",
+   "title": "Forces and resultant force",
+   "duration": 50,
+   "bigQuestion": "If forces act on a parked car, why doesn't it move?",
+   "objectives": [
+    "Identify types of forces",
+    "Calculate resultant forces in one dimension",
+    "Describe the effects of balanced and unbalanced forces"
+   ],
+   "successCriteria": [
+    "Name and draw forces on free-body diagrams",
+    "Calculate resultant force",
+    "Predict motion from balanced or unbalanced forces"
+   ],
+   "crossCurricular": "PE: forces in sport; DT: structures",
+   "smsc": "Spiritual: balance (mizan) in creation (Surah Ar-Rahman 55:7–9)",
+   "keywords": [
+    {
+     "term": "force",
+     "def": "a push or pull, measured in newtons (N)"
+    },
+    {
+     "term": "resultant force",
+     "def": "the single force with the same effect as all the forces"
+    },
+    {
+     "term": "free-body diagram",
+     "def": "shows all forces on an object as arrows"
+    },
+    {
+     "term": "vector",
+     "def": "has size and direction"
+    }
+   ],
+   "starter": [
+    "Units of acceleration?",
+    "Name three forces",
+    "Is speed a vector?",
+    "What is the unit of force?"
+   ],
+   "teach": [
+    {
+     "heading": "Types of forces",
+     "bullets": [
+      "Weight, normal reaction, friction, drag, thrust, tension, upthrust",
+      "Contact and non-contact"
+     ],
+     "note": "Draw free-body diagrams for a book on a table and a car."
+    },
+    {
+     "heading": "Resultant force",
+     "bullets": [
+      "Same direction: add",
+      "Opposite directions: subtract",
+      "Direction of the larger force"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A car's engine gives 1200 N forward; drag is 300 N and friction 200 N. Find the resultant.",
+      "steps": [
+       "Backward forces: 300 + 200 = 500 N",
+       "Resultant = 1200 − 500",
+       "Direction: forwards"
+      ],
+      "answer": "700 N forwards"
+     }
+    },
+    {
+     "heading": "Balanced vs unbalanced",
+     "bullets": [
+      "Balanced (resultant 0): stays still or constant velocity",
+      "Unbalanced: accelerates in the direction of the resultant"
+     ],
+     "note": "Answer the big question: weight and normal reaction balance.",
+     "misconception": {
+      "wrong": "A moving object needs a resultant force to keep moving",
+      "right": "With zero resultant it keeps moving at constant velocity"
+     }
+    },
+    {
+     "heading": "Check: resultant",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A box has 40 N right and 15 N left. Resultant?",
+      "options": [
+       "55 N right",
+       "25 N right",
+       "25 N left",
+       "0 N"
+      ],
+      "answer": 1,
+      "why": "40 − 15 = 25 N, in the direction of the larger force: right."
+     }
+    }
+   ],
+   "practice": [
+    "Draw forces on a falling apple",
+    "Resultant: 50 N up, 80 N down",
+    "What happens with balanced forces on a moving bike?"
+   ],
+   "independent": [
+    "Core: Calculate resultants for six situations",
+    "Extend: A skydiver reaches terminal velocity. Explain using forces",
+    "Stretch: Explain why a plane flying level at constant speed has a resultant force of zero, naming all four forces."
+   ],
+   "exit": [
+    "Define resultant force.",
+    "Resultant of 100 N and 100 N in opposite directions?",
+    "What happens to an object with an unbalanced force?"
+   ],
+   "homework": "Edexcel GCSE Physics forces questions (8 marks).",
+   "send": "Support: free-body templates. Stretch: forces at angles (scale drawing)."
+  },
+  {
+   "n": 18,
+   "unit": "Physics Topic 2: Motion and forces",
+   "title": "Force, mass and acceleration; weight",
+   "duration": 50,
+   "bigQuestion": "Why is it harder to push a full trolley than an empty one?",
+   "objectives": [
+    "Use F = m × a",
+    "Use W = m × g",
+    "Distinguish mass and weight"
+   ],
+   "successCriteria": [
+    "Calculate force, mass or acceleration",
+    "Calculate weight on Earth and other planets",
+    "Explain the difference between mass and weight"
+   ],
+   "crossCurricular": "Maths: rearranging formulae; Geography: space exploration",
+   "smsc": "Spiritual: the vastness and order of the heavens",
+   "keywords": [
+    {
+     "term": "mass",
+     "def": "amount of matter in an object, kg"
+    },
+    {
+     "term": "weight",
+     "def": "the gravitational force on an object, N"
+    },
+    {
+     "term": "gravitational field strength (g)",
+     "def": "force per kg; 10 N/kg on Earth (Edexcel GCSE Physics uses 10)"
+    },
+    {
+     "term": "newton",
+     "def": "unit of force"
+    }
+   ],
+   "starter": [
+    "Resultant: 60 N right, 20 N left",
+    "Rearrange F = ma for a",
+    "Units of mass?",
+    "Define acceleration"
+   ],
+   "teach": [
+    {
+     "heading": "F = m × a",
+     "bullets": [
+      "Resultant force = mass × acceleration",
+      "Bigger mass: smaller acceleration for the same force"
+     ],
+     "note": "Answer the big question.",
+     "model": {
+      "problem": "A 1200 kg car has a resultant force of 3000 N. Find its acceleration.",
+      "steps": [
+       "a = F ÷ m",
+       "a = 3000 ÷ 1200"
+      ],
+      "answer": "2.5 m/s²"
+     }
+    },
+    {
+     "heading": "Weight",
+     "bullets": [
+      "W = m × g",
+      "g = 10 N/kg on Earth",
+      "g on the Moon about 1.6 N/kg"
+     ],
+     "note": "Example: 60 kg person: Earth 600 N, Moon 96 N.",
+     "compare": {
+      "left": {
+       "title": "Mass",
+       "points": [
+        "kg",
+        "Same everywhere",
+        "Amount of matter"
+       ]
+      },
+      "right": {
+       "title": "Weight",
+       "points": [
+        "N",
+        "Depends on g",
+        "Gravitational force"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Everyday language",
+     "bullets": [
+      "'I weigh 50 kg' is really mass"
+     ],
+     "note": "Clarify.",
+     "misconception": {
+      "wrong": "Your weight is the same on the Moon",
+      "right": "Mass is the same; weight is less because g is smaller"
+     }
+    },
+    {
+     "heading": "Check: F = ma",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What force gives a 5 kg mass an acceleration of 4 m/s²?",
+      "options": [
+       "1.25 N",
+       "9 N",
+       "20 N",
+       "0.8 N"
+      ],
+      "answer": 2,
+      "why": "F = 5 × 4 = 20 N. A and D divide; B adds."
+     }
+    }
+   ],
+   "practice": [
+    "F = ? when m = 70 kg, a = 2 m/s²",
+    "Weight of a 3 kg bag on Earth",
+    "a when F = 500 N, m = 250 kg"
+   ],
+   "independent": [
+    "Core: Six F = ma and W = mg calculations",
+    "Extend: A 1500 kg car brakes from 20 m/s to rest in 4 s. Find the braking force",
+    "Stretch: Describe the practical to investigate how force affects acceleration (e.g. trolley and light gates) and how to make it valid."
+   ],
+   "exit": [
+    "Formula linking force, mass, acceleration?",
+    "Weight of 8 kg on Earth?",
+    "Units of g?"
+   ],
+   "homework": "Edexcel GCSE Physics F = ma questions including the required practical.",
+   "send": "Support: formula triangle. Stretch: practical evaluation."
+  },
+  {
+   "n": 19,
+   "unit": "Physics Topic 2: Motion and forces",
+   "title": "Stopping distances",
+   "duration": 50,
+   "bigQuestion": "Why do speed limits near schools save lives?",
+   "objectives": [
+    "Define thinking, braking and stopping distance",
+    "Describe factors affecting each",
+    "Use data to explain road-safety advice"
+   ],
+   "successCriteria": [
+    "Calculate stopping distance from thinking and braking distances",
+    "Explain factors affecting reaction time and braking",
+    "Explain why braking distance increases more than speed"
+   ],
+   "crossCurricular": "PSHE: road safety; Maths: interpreting data",
+   "smsc": "Moral: protecting life (hifz an-nafs) and responsibility on the roads",
+   "keywords": [
+    {
+     "term": "thinking distance",
+     "def": "distance travelled during the driver's reaction time"
+    },
+    {
+     "term": "braking distance",
+     "def": "distance travelled once the brakes are applied"
+    },
+    {
+     "term": "stopping distance",
+     "def": "thinking distance + braking distance"
+    },
+    {
+     "term": "reaction time",
+     "def": "time taken to respond to a hazard"
+    }
+   ],
+   "starter": [
+    "F = ma: 1000 kg, 3 m/s²",
+    "Distance at 20 m/s for 0.7 s",
+    "Name something that slows reactions",
+    "What is friction?"
+   ],
+   "teach": [
+    {
+     "heading": "Two parts",
+     "bullets": [
+      "Stopping = thinking + braking"
+     ],
+     "note": "Highway Code data at 30 mph: thinking 9 m + braking 14 m = 23 m.",
+     "table": {
+      "head": [
+       "Speed",
+       "Thinking",
+       "Braking",
+       "Stopping"
+      ],
+      "rows": [
+       [
+        "20 mph",
+        "6 m",
+        "6 m",
+        "12 m"
+       ],
+       [
+        "30 mph",
+        "9 m",
+        "14 m",
+        "23 m"
+       ],
+       [
+        "50 mph",
+        "15 m",
+        "38 m",
+        "53 m"
+       ],
+       [
+        "70 mph",
+        "21 m",
+        "75 m",
+        "96 m"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Factors",
+     "bullets": [
+      "Thinking: tiredness, phone use, alcohol, drugs",
+      "Braking: wet or icy roads, worn tyres or brakes, heavy load",
+      "Both: speed"
+     ],
+     "note": "Answer the big question: thinking distance doubles with speed; braking distance roughly quadruples."
+    },
+    {
+     "heading": "Calculating thinking distance",
+     "bullets": [
+      "distance = speed × reaction time"
+     ],
+     "note": "Model.",
+     "model": {
+      "problem": "A driver at 15 m/s has a reaction time of 0.6 s; braking distance is 18 m. Find the stopping distance.",
+      "steps": [
+       "Thinking distance = 15 × 0.6 = 9 m",
+       "Stopping = 9 + 18"
+      ],
+      "answer": "27 m"
+     }
+    },
+    {
+     "heading": "Phones affect thinking, not braking",
+     "bullets": [
+      "Wet roads affect braking, not thinking"
+     ],
+     "note": "Classic exam distinction.",
+     "misconception": {
+      "wrong": "Wet roads increase thinking distance",
+      "right": "Wet roads increase braking distance; distractions increase thinking distance"
+     }
+    },
+    {
+     "heading": "Check: factor",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which increases braking distance but not thinking distance?",
+      "options": [
+       "Tiredness",
+       "Using a phone",
+       "Icy road",
+       "Alcohol"
+      ],
+      "answer": 2,
+      "why": "Ice reduces friction between tyres and road. The others slow the driver's reactions."
+     }
+    }
+   ],
+   "practice": [
+    "Define stopping distance",
+    "Two factors affecting thinking distance",
+    "Thinking distance at 20 m/s, reaction 0.5 s"
+   ],
+   "independent": [
+    "Core: Use the table to explain how speed affects stopping distance",
+    "Extend: Explain why braking distance increases so much with speed (kinetic energy and work done)",
+    "Stretch: Design a reaction-time investigation using a ruler drop and explain how to convert distance to time."
+   ],
+   "exit": [
+    "Stopping distance = ?",
+    "Factor that increases thinking distance?",
+    "Why are lower limits used near schools?"
+   ],
+   "homework": "Do the ruler-drop reaction test with a family member (10 trials) and calculate the mean reaction time.",
+   "send": "Support: factor sorting cards. Stretch: kinetic-energy explanation."
+  },
+  {
+   "n": 20,
+   "unit": "Physics Topic 14: Forces and matter",
+   "title": "Hooke's law and elastic behaviour",
+   "duration": 50,
+   "bigQuestion": "How can a spring be used to measure a force?",
+   "objectives": [
+    "Describe Hooke's law",
+    "Describe the practical to investigate extension of a spring",
+    "Identify the limit of proportionality"
+   ],
+   "successCriteria": [
+    "Calculate extension from length data",
+    "Plot and interpret force–extension graphs",
+    "Distinguish elastic and plastic deformation and explain the limit of proportionality"
+   ],
+   "crossCurricular": "Maths: proportionality and straight-line graphs; DT: springs in products",
+   "smsc": "Spiritual: patterns and laws in the physical world",
+   "keywords": [
+    {
+     "term": "extension",
+     "def": "increase in length from the original length"
+    },
+    {
+     "term": "Hooke's law",
+     "def": "extension is directly proportional to force, up to a limit"
+    },
+    {
+     "term": "limit of proportionality",
+     "def": "point beyond which extension is no longer proportional to force"
+    },
+    {
+     "term": "elastic deformation",
+     "def": "returns to original shape when the force is removed"
+    }
+   ],
+   "starter": [
+    "Weight of 0.5 kg mass?",
+    "What does 'directly proportional' mean?",
+    "Stopping distance = ?",
+    "Gradient of a straight line through the origin"
+   ],
+   "teach": [
+    {
+     "heading": "The practical",
+     "bullets": [
+      "Measure original length",
+      "Add 1 N weights one at a time",
+      "Measure new length; calculate extension"
+     ],
+     "note": "Edexcel GCSE Physics required practical: show the demo video. Read the ruler at eye level.",
+     "model": {
+      "problem": "A spring is 5.0 cm long. With 3 N added it is 8.6 cm. Find the extension.",
+      "steps": [
+       "Extension = new length − original length",
+       "8.6 − 5.0"
+      ],
+      "answer": "3.6 cm"
+     }
+    },
+    {
+     "heading": "Force–extension graph",
+     "bullets": [
+      "Straight line through the origin: Hooke's law",
+      "Curves after the limit of proportionality"
+     ],
+     "note": "Answer the big question: equal force steps give equal extensions, so the scale on a newtonmeter is even."
+    },
+    {
+     "heading": "Elastic vs plastic",
+     "bullets": [
+      "Elastic: returns to shape",
+      "Plastic: permanently stretched"
+     ],
+     "note": "Compare a spring and plasticine.",
+     "compare": {
+      "left": {
+       "title": "Elastic",
+       "points": [
+        "Returns to original shape",
+        "Spring with small loads",
+        "Rubber band"
+       ]
+      },
+      "right": {
+       "title": "Plastic",
+       "points": [
+        "Permanently changed",
+        "Overstretched spring",
+        "Plasticine"
+       ]
+      }
+     }
+    },
+    {
+     "heading": "Length vs extension",
+     "bullets": [
+      "Plot extension, not length"
+     ],
+     "note": "Common data error.",
+     "misconception": {
+      "wrong": "Plot total length against force",
+      "right": "Plot extension (length − original length) against force"
+     }
+    },
+    {
+     "heading": "Check: Hooke",
+     "bullets": [],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A spring extends 2 cm for 4 N. Below its limit, what is the extension for 10 N?",
+      "options": [
+       "4 cm",
+       "5 cm",
+       "8 cm",
+       "20 cm"
+      ],
+      "answer": 1,
+      "why": "0.5 cm per N, so 10 N gives 5 cm. Extension is proportional to force."
+     }
+    }
+   ],
+   "practice": [
+    "Extension: original 12 cm, new 15.5 cm",
+    "Sketch a force–extension graph with a limit",
+    "Define elastic deformation"
+   ],
+   "independent": [
+    "Core: Calculate extensions from a results table and plot the graph",
+    "Extend: Identify the limit of proportionality from data and explain your choice",
+    "Stretch: Evaluate the practical: sources of error and how to reduce them."
+   ],
+   "exit": [
+    "State Hooke's law.",
+    "Extension: 20 cm → 23 cm?",
+    "What happens beyond the limit of proportionality?"
+   ],
+   "homework": "Edexcel GCSE Physics Hooke's law practical question with graph (10 marks).",
+   "send": "Support: results table template. Stretch: spring constant (F = kx)."
+  }
+ ]
 }
