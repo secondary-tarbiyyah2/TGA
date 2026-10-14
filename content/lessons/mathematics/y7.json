@@ -1,1214 +1,491 @@
 {
   "subject": "Mathematics",
   "year": "y7",
-  "board": "Edexcel-aligned KS3",
-  "source": "Drive: Maths folder, Year 7 Maths LTP (Autumn sequence: factors and multiples, sequences, perimeter and area, negative numbers) and SOW Maths (Year 7 scheme); aligned to the National Curriculum KS3 and Edexcel GCSE (9-1) foundation/higher content",
+  "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
+  "boardShort": "KS3 Maths Progress",
+  "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) Year 7 Autumn, Unit 1 Analysing and displaying data and Unit 2 Number skills (ks3_maths_a_p_sow3.xlsx), in the scheme's order; INSET lesson standard (10 steps, success criteria, AfL).",
   "lessons": [
     {
-      "unit": "Unit 1: Factors, multiples and primes",
+      "unit": "Unit 1: Analysing and displaying data",
       "n": 1,
-      "title": "Factors and highest common factor",
+      "title": "Mode, median and range",
       "duration": 50,
-      "objectives": [
-        "List all factors of a number systematically",
-        "Find the highest common factor (HCF) of two numbers"
-      ],
+      "bigQuestion": "What is the 'typical' number of brothers and sisters in our class, and how could we prove it?",
+      "objectives": ["Find the mode of numerical and non-numerical data", "Find the median of an odd or even number of values", "Find the range and say what it tells us"],
+      "successCriteria": ["Find the mode and range of a list", "Find the median, including when there are two middle values", "Choose which average best describes a set of data and explain why"],
+      "crossCurricular": "Science: repeated measurements in experiments; Geography: rainfall data",
+      "smsc": "Social: listening to everyone's data with respect; every pupil's answer counts",
       "keywords": [
-        { "term": "factor", "def": "a whole number that divides exactly into another number" },
-        { "term": "common factor", "def": "a factor shared by two or more numbers" },
-        { "term": "highest common factor (HCF)", "def": "the largest number that is a factor of two or more numbers" },
-        { "term": "divisible", "def": "can be divided exactly with no remainder" }
+        { "term": "mode", "def": "the value that appears most often" },
+        { "term": "median", "def": "the middle value when the data is in order" },
+        { "term": "range", "def": "largest value minus smallest value; it measures spread" },
+        { "term": "average", "def": "a single value that represents a typical value in the data" },
+        { "term": "data", "def": "a collection of facts or numbers" }
       ],
-      "starter": [
-        "Say Bismillah and settle. Work out 7 x 8 and 63 ÷ 9.",
-        "List the factors of 12.",
-        "Is 91 a multiple of 7? Explain how you know."
-      ],
+      "starter": ["Bismillah. Put these in order, smallest first: 12, 7, 19, 3, 7", "What is 23 − 8?", "Which number is exactly halfway between 14 and 20?", "Write down a number that appears twice in this list: 4, 9, 2, 9, 5"],
       "teach": [
-        {
-          "heading": "Finding all the factors",
-          "bullets": [
-            "Test 1, 2, 3, ... in order and write factor pairs.",
-            "48: 1x48, 2x24, 3x16, 4x12, 6x8.",
-            "Stop when the pairs meet."
-          ],
-          "note": "Stress systematic working: it is the only way to be sure no factor is missed. Ask pupils to say how they know they have finished (the next number up has already appeared as a partner). The factors of 48 are 1, 2, 3, 4, 6, 8, 12, 16, 24, 48."
-        },
-        {
-          "heading": "Divisibility tests",
-          "bullets": [
-            "By 3: the digit sum is divisible by 3.",
-            "By 4: the last two digits are divisible by 4.",
-            "By 9: the digit sum is divisible by 9."
-          ],
-          "note": "Test 756: 7 + 5 + 6 = 18, so divisible by 3 and 9; 56 ÷ 4 = 14, so divisible by 4. 756 ÷ 9 = 84. Remind pupils of 2, 5 and 10 from primary and add 6 (divisible by 2 and 3)."
-        },
-        {
-          "heading": "Common factors",
-          "bullets": [
-            "48: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48.",
-            "60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60.",
-            "Common factors: 1, 2, 3, 4, 6, 12."
-          ],
-          "note": "Write the two lists one above the other and circle the matches. The highest common factor of 48 and 60 is 12. Draw a Venn diagram to show the shared factors in the overlap."
-        },
-        {
-          "heading": "HCF in context",
-          "bullets": [
-            "48 dates and 60 figs go into identical bags.",
-            "No fruit left over: the most bags is HCF = 12.",
-            "Each bag has 4 dates and 5 figs."
-          ],
-          "note": "Check: 48 ÷ 12 = 4 and 60 ÷ 12 = 5. Link to sharing food parcels fairly, a Ramadan-style charity project. Ask: why can there not be 24 bags?"
-        }
+        { "heading": "Three ways to describe data", "bullets": ["Mode: the most common value", "Median: the middle value, in order", "Range: biggest minus smallest", "Mode and median are averages; range is a spread"], "note": "Say bismillah and welcome the class. Ask: 'If I said the typical Year 7 has 2 siblings, what would I mean?' Take answers in the chat. Introduce the three words. Stress that range is NOT an average: it tells us how spread out the data is. Misconception: pupils give the range as '3 to 19' instead of 16." },
+        { "heading": "Finding the median", "bullets": ["Always order the data first", "Odd count: one middle value", "Even count: halfway between the two middle values"], "note": "Model slowly. Cover the answer and ask pupils to predict each step.", "model": { "problem": "Find the median of 8, 3, 11, 5, 9, 4", "steps": ["Order: 3, 4, 5, 8, 9, 11", "There are 6 values, an even number", "The middle two are 5 and 8", "Halfway between 5 and 8: (5 + 8) ÷ 2 = 6.5"], "answer": "Median = 6.5" } },
+        { "heading": "Mode with words and numbers", "bullets": ["Data can be words: favourite fruit", "There can be two modes (bimodal)", "If every value appears once, there is no mode"], "note": "Show: apple, date, apple, banana, date, apple. Mode = apple. Then: 2, 4, 4, 7, 7 has two modes, 4 and 7. Ask: 'Can a set of words have a median?' (Not usually: words cannot be put in numerical order.)", "table": { "head": ["Data", "Mode", "Why"], "rows": [["apple, date, apple, banana", "apple", "appears twice"], ["2, 4, 4, 7, 7", "4 and 7", "both appear twice"], ["1, 5, 6, 9", "no mode", "each appears once"]] } },
+        { "heading": "Range is a spread, not a span", "bullets": ["Range is one number", "Bigger range means less consistent data"], "note": "Use two batters' scores to bring this alive: Ali 30, 32, 31 (range 2) and Bilal 5, 70, 18 (range 65). Who is more consistent? Ali.", "misconception": { "wrong": "Range of 3, 7, 19 is '3 to 19'", "right": "Range = 19 − 3 = 16" } },
+        { "heading": "Check: which is the median?", "bullets": [], "note": "Everyone answers on a mini-whiteboard or in the chat at the same time.", "check": { "q": "What is the median of 6, 2, 9, 4, 7?", "options": ["9", "6", "4", "5.6"], "answer": 1, "why": "In order: 2, 4, 6, 7, 9, so the middle value is 6. A chose the middle of the unordered list; D is the mean." } }
       ],
-      "practice": [
-        "List all the factors of 36.",
-        "Find the HCF of 24 and 40.",
-        "Is 4,248 divisible by 9? Show your test."
-      ],
-      "independent": [
-        "List all factors of 54, 72 and 100.",
-        "Find the HCF of: 18 and 30; 36 and 54; 45 and 75.",
-        "A teacher has 72 pencils and 90 rubbers to share into identical packs. What is the greatest number of packs? What is in each?",
-        "Without dividing, decide which of 3,126; 4,572; 8,019 are divisible by 3 and which by 9."
-      ],
-      "exit": [
-        "Find the HCF of 28 and 42.",
-        "Explain how to test whether 5,274 is divisible by 9."
-      ],
-      "homework": "Choose three numbers under 100. List all their factors and find the HCF of each pair.",
-      "send": "SEND: multiplication grid and factor-pair arrays. EAL: pre-teach factor/divisible/common. Stretch: find the HCF of three numbers."
+      "practice": ["Find the mode, median and range of 5, 8, 2, 8, 6", "Find the median of 12, 15, 11, 19, 14, 10", "The ages of five cousins are 9, 11, 9, 14 and 12. Find the range and the mode."],
+      "independent": ["Core: Find the mode, median and range of 23, 18, 30, 18, 26, 21, 25", "Extend: Five numbers have a median of 7, a mode of 4 and a range of 10. Find a possible set of numbers.", "Stretch: Add one number to 3, 5, 8, 9 so that the median becomes 8. Is there more than one answer? Explain."],
+      "exit": ["Find the median of 4, 10, 7, 1", "The range of a set of data is 12. The smallest value is 9. What is the largest value?", "Which average can you use for 'favourite colour' data, and why?"],
+      "homework": "Record how many minutes you spend reading each day for a week, then find the mode, median and range.",
+      "send": "Support: give data cards to physically order and a highlighter for the middle. Stretch: create data sets that meet given averages and range."
     },
     {
-      "unit": "Unit 1: Factors, multiples and primes",
+      "unit": "Unit 1: Analysing and displaying data",
       "n": 2,
-      "title": "Multiples and lowest common multiple",
+      "title": "Pictograms, bar charts and bar-line charts",
       "duration": 50,
-      "objectives": [
-        "List multiples and recognise common multiples",
-        "Find the lowest common multiple (LCM) of two numbers"
-      ],
+      "bigQuestion": "Why do newspapers use charts instead of just printing the numbers?",
+      "objectives": ["Read and draw pictograms using a key", "Draw bar charts and bar-line charts with labelled axes", "Find the mode and range from a chart"],
+      "successCriteria": ["Read values from a pictogram and a bar chart", "Draw an accurate bar chart with a title, labels and equal gaps", "Choose the best chart for a set of data and justify it"],
+      "crossCurricular": "Geography: climate graphs; English: reading charts in non-fiction texts",
+      "smsc": "Moral: charts should be honest and not mislead the reader",
       "keywords": [
-        { "term": "multiple", "def": "a number in the times table of another number" },
-        { "term": "common multiple", "def": "a multiple shared by two or more numbers" },
-        { "term": "lowest common multiple (LCM)", "def": "the smallest number that is a multiple of two or more numbers" }
+        { "term": "pictogram", "def": "a chart that uses symbols to show frequency" },
+        { "term": "key", "def": "explains what one symbol represents" },
+        { "term": "frequency", "def": "how many times something happens" },
+        { "term": "bar chart", "def": "a chart of bars whose heights show frequency" },
+        { "term": "axis", "def": "a labelled line used to read values on a chart" }
       ],
-      "starter": [
-        "Say Bismillah. List the first six multiples of 7.",
-        "Find the HCF of 24 and 36.",
-        "Is 150 a multiple of 12? Explain."
-      ],
+      "starter": ["Find the median of 3, 9, 4, 8, 6", "Find the range of 15, 27, 19, 22", "What is half of 6?", "A symbol stands for 4 people. How many people do 3 symbols show?"],
       "teach": [
-        {
-          "heading": "Listing multiples",
-          "bullets": [
-            "Multiples of 6: 6, 12, 18, 24, 30, 36.",
-            "Multiples of 8: 8, 16, 24, 32, 40, 48.",
-            "First match: 24. LCM of 6 and 8 = 24."
-          ],
-          "note": "Common mistake: confusing multiples with factors. A multiple is at least as big as the number; a factor is no bigger. Use the memory aid: Multiples are Many and get bigger, factors are Few and Fit inside."
-        },
-        {
-          "heading": "A bigger LCM",
-          "bullets": [
-            "Multiples of 12: 12, 24, 36, 48.",
-            "Multiples of 18: 18, 36, 54.",
-            "LCM of 12 and 18 = 36."
-          ],
-          "note": "Ask: could 72 also be a common multiple? Yes, but it is not the lowest. All common multiples are multiples of the LCM: 36, 72, 108."
-        },
-        {
-          "heading": "Repeating patterns",
-          "bullets": [
-            "A light flashes every 12 s and another every 20 s.",
-            "They flash together every LCM seconds.",
-            "LCM of 12 and 20 = 60 s."
-          ],
-          "note": "Check: 12 x 5 = 60 and 20 x 3 = 60. Context: two alarms, two buses or two rotas. Ask pupils to invent their own."
-        },
-        {
-          "heading": "Choosing HCF or LCM",
-          "bullets": [
-            "Splitting into equal groups usually means HCF.",
-            "Events lining up again usually means LCM.",
-            "Read the problem carefully."
-          ],
-          "note": "Give two short problems and ask the class to vote HCF or LCM before solving: 'two buses leave together then every 15 and 25 minutes' (LCM 75 min) and 'share 30 and 45 sweets into equal bags' (HCF 15)."
-        }
+        { "heading": "Reading a pictogram", "bullets": ["Always read the key first", "Half a symbol means half the value", "Count whole symbols, then add parts"], "note": "Show a pictogram of books read: key 1 book symbol = 4 books. Monday 3½ symbols. Ask: 'How many books?' (14). Misconception: counting symbols as single items and ignoring the key.", "model": { "problem": "Key: one star = 6 pupils. Friday shows 2½ stars. How many pupils?", "steps": ["Two whole stars: 2 × 6 = 12", "Half a star: 6 ÷ 2 = 3", "Add: 12 + 3 = 15"], "answer": "15 pupils" } },
+        { "heading": "Drawing a bar chart", "bullets": ["Title and labels on both axes", "Equal-width bars with equal gaps", "Even scale starting at 0"], "note": "Model on the shared whiteboard with this data: walk 9, car 6, bus 4, bike 2. Show why the scale must go up in equal steps. Ask: 'What scale would you choose if the biggest value was 45?'", "model": { "problem": "Draw a bar chart: walk 9, car 6, bus 4, bike 2", "steps": ["Write a title: How pupils travel to school", "Horizontal axis: type of travel; vertical: frequency", "Scale 0 to 10 in steps of 1", "Draw bars of equal width with equal gaps"], "answer": "Tallest bar = walk, so mode = walk" } },
+        { "heading": "Bar-line charts", "bullets": ["Lines instead of bars", "Useful for numerical data, e.g. goals scored", "Read the height of each line"], "note": "Show goals per match: 0 goals 3 times, 1 goal 5 times, 2 goals 4 times, 3 goals 1 time. Ask for the mode (1 goal) and the range (3 − 0 = 3). Point out range uses the goals values, not the frequencies.", "compare": { "left": { "title": "Bar chart", "points": ["Thick bars", "Categories such as transport or fruit", "Gaps between bars"] }, "right": { "title": "Bar-line chart", "points": ["Thin lines", "Numbers such as goals or siblings", "Easy to read exact heights"] } } },
+        { "heading": "Mode and range from a chart", "bullets": ["Mode: the tallest bar or line", "Range uses the data values, not the frequencies"], "note": "This is the most common error on this topic. Repeat it with a second example.", "misconception": { "wrong": "Range = biggest frequency − smallest frequency", "right": "Range = biggest data value − smallest data value" } },
+        { "heading": "Check: read the key", "bullets": [], "note": "Show me on 3.", "check": { "q": "One circle = 8 cars. A row has 3 circles and a quarter of a circle. How many cars?", "options": ["3.25", "26", "32", "24"], "answer": 1, "why": "3 × 8 = 24 and ¼ of 8 = 2, so 26. A forgets the key; D ignores the quarter." } }
       ],
-      "practice": [
-        "Find the LCM of 4 and 10.",
-        "Find the LCM of 9 and 12.",
-        "Buses leave a stop every 15 and 25 minutes. They leave together at 8:00 am. When do they next leave together?"
-      ],
-      "independent": [
-        "Find the LCM of: 5 and 7; 8 and 12; 14 and 21.",
-        "Two lights flash every 18 s and 30 s. After how many seconds do they flash together?",
-        "Pens come in packs of 8 and pads in packs of 6. What is the smallest number of each so that the numbers are equal?",
-        "State whether each is HCF or LCM, then solve: 40 and 60 stickers shared into equal packs; two planets line up every 4 and 6 years."
-      ],
-      "exit": [
-        "Find the LCM of 6 and 15.",
-        "Find the HCF of 18 and 24."
-      ],
-      "homework": "Make up two word problems, one needing HCF and one needing LCM. Solve them both.",
-      "send": "SEND: multiples highlighted on a number grid. EAL: pre-teach multiple/factor/common. Stretch: LCM of three numbers."
+      "practice": ["Key: one square = 10 votes. How many squares show 35 votes?", "Draw a bar chart for favourite subject: maths 7, science 5, English 4, art 3", "From a bar-line chart: 0 pets × 6, 1 pet × 9, 2 pets × 4, 3 pets × 2. Find the mode and range."],
+      "independent": ["Core: Draw a pictogram for books borrowed: Mon 12, Tue 8, Wed 14, Thu 6 using one symbol = 4 books", "Extend: A pictogram uses one symbol = 5. Explain how you would show 23, and why this key makes it awkward. Suggest a better key.", "Stretch: Design a misleading bar chart of the same data by changing the scale. Explain how it misleads."],
+      "exit": ["Key: one symbol = 6. How many symbols show 21?", "Name two things every bar chart must have.", "A bar chart's tallest bar is 'red' with frequency 12. What is the mode?"],
+      "homework": "Find a chart in a newspaper or website, sketch it and write two facts it shows and one question it leaves unanswered.",
+      "send": "Support: pre-drawn axes with the scale marked. EAL: label bank for title/axis words. Stretch: compare two charts of the same data."
     },
     {
-      "unit": "Unit 1: Factors, multiples and primes",
+      "unit": "Unit 1: Analysing and displaying data",
       "n": 3,
-      "title": "Prime numbers and prime factor decomposition",
+      "title": "Tally charts and frequency tables",
       "duration": 50,
-      "objectives": [
-        "Recognise primes and write a number as a product of its prime factors",
-        "Use index notation for repeated prime factors"
-      ],
+      "bigQuestion": "What is the most efficient way to count a lot of data quickly and accurately?",
+      "objectives": ["Record data in a tally chart", "Complete a frequency table", "Find the mode and total frequency from a table"],
+      "successCriteria": ["Use tally marks in fives correctly", "Complete a frequency table and check the total", "Spot and fix errors in someone else's tally chart"],
+      "crossCurricular": "Science: recording results; PE: recording scores",
+      "smsc": "Social: careful, honest recording is a form of amanah (trust)",
       "keywords": [
-        { "term": "prime number", "def": "a number with exactly two factors: 1 and itself" },
-        { "term": "prime factor", "def": "a factor that is also a prime number" },
-        { "term": "index (power)", "def": "the small number showing how many times a number is multiplied by itself" },
-        { "term": "factor tree", "def": "a diagram that splits a number into smaller factors" }
+        { "term": "tally", "def": "a mark used to count; every fifth mark crosses the four" },
+        { "term": "frequency table", "def": "a table showing each value and how often it occurs" },
+        { "term": "total frequency", "def": "the sum of all the frequencies" },
+        { "term": "category", "def": "a group that data can be sorted into" }
       ],
-      "starter": [
-        "Say Bismillah. List the prime numbers below 30.",
-        "Work out 2 x 2 x 3 x 5.",
-        "Is 91 prime? Test it."
-      ],
+      "starter": ["What is the mode of 4, 6, 6, 2, 6, 4?", "Key: one symbol = 4. How many does 2½ symbols show?", "Work out 5 + 5 + 5 + 3", "Name the two axes on a bar chart."],
       "teach": [
-        {
-          "heading": "Primes",
-          "bullets": [
-            "A prime has exactly two factors.",
-            "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31...",
-            "1 is not prime. 2 is the only even prime."
-          ],
-          "note": "Test a number by dividing by primes up to its square root. Is 91 prime? 91 = 7 x 13, so no. Is 97 prime? Not divisible by 2, 3, 5 or 7, so yes."
-        },
-        {
-          "heading": "Factor trees",
-          "bullets": [
-            "60 = 2×30, 30 = 2×15, 15 = 3×5.",
-            "Keep splitting until every branch is prime.",
-            "Order the primes smallest to largest."
-          ],
-          "note": "Build the tree live. Reassure pupils that different first splits (6 x 10, 4 x 15) lead to the same final primes. This is the fundamental theorem of arithmetic in simple form."
-        },
-        {
-          "heading": "Index notation",
-          "bullets": [
-            "60 = 2² x 3 x 5.",
-            "84 = 2² x 3 x 7.",
-            "180 = 2² x 3² x 5."
-          ],
-          "note": "Check each by multiplying back: 4 x 3 x 5 = 60; 4 x 3 x 7 = 84; 4 x 9 x 5 = 180. The index tells us how many times the prime appears."
-        },
-        {
-          "heading": "Repeated division",
-          "bullets": [
-            "Divide by the smallest prime that works.",
-            "180, 90, 45, 15, 5 after dividing by 2, 2, 3, 3.",
-            "So 180 = 2² x 3² x 5."
-          ],
-          "note": "Show the ladder method alongside the tree. Ask which method pupils prefer and why."
-        }
+        { "heading": "Tallying in fives", "bullets": ["Four upright marks, the fifth crosses them", "Gates of five are quick to count", "Tick off each item as you go"], "note": "Model counting the shoe sizes of 20 people from a list, ticking each one off. Ask: 'Why cross the fifth mark?' (Fast counting in fives.)", "model": { "problem": "Tally: 3, 4, 3, 5, 3, 4, 3, 6, 3, 4", "steps": ["Size 3 appears 5 times: one gate of five", "Size 4 appears 3 times: three marks", "Size 5 once, size 6 once", "Check: 5 + 3 + 1 + 1 = 10 values"], "answer": "Mode = size 3" } },
+        { "heading": "From tally to frequency", "bullets": ["Frequency column: write the number", "Add a total row", "Total must equal the number of data items"], "note": "The total row is a self-check. If it doesn't match, something was missed.", "table": { "head": ["Shoe size", "Tally", "Frequency"], "rows": [["3", "IIII with a line through", "5"], ["4", "III", "3"], ["5", "I", "1"], ["6", "I", "1"], ["Total", "", "10"]] } },
+        { "heading": "Common slip", "bullets": ["Count the gates, then the single marks"], "note": "Show a tally drawn with six upright lines and ask what went wrong.", "misconception": { "wrong": "Drawing IIIIII for six", "right": "A gate of five plus one: easier to count" } },
+        { "heading": "Reading a frequency table", "bullets": ["Mode: the value with the highest frequency", "Total: add the frequency column", "Do not confuse values and frequencies"], "note": "Ask: 'In a table of pets per family, what is the difference between the value 2 and the frequency 2?' Take two answers." },
+        { "heading": "Check: total frequency", "bullets": [], "note": "Answer on whiteboards.", "check": { "q": "A table has frequencies 7, 12, 9 and 2. How many data items were collected?", "options": ["4", "12", "30", "28"], "answer": 2, "why": "7 + 12 + 9 + 2 = 30. A counts the rows; B is the biggest frequency (that gives the mode)." } }
       ],
-      "practice": [
-        "Write 36 as a product of prime factors, using indices.",
-        "Write 90 as a product of prime factors.",
-        "Is 87 prime? Explain."
-      ],
-      "independent": [
-        "Write as products of prime factors: 48; 72; 150; 252.",
-        "Which number is 2³ x 3 x 5? Which is 2 x 3² x 7?",
-        "Circle the primes: 41, 51, 53, 57, 59, 61, 63, 67.",
-        "Explain why 1 is not a prime number."
-      ],
-      "exit": [
-        "Write 56 as a product of prime factors.",
-        "Is 57 prime? Explain."
-      ],
-      "homework": "Make a prime factor tree for each of 40, 63, 100 and 198, and write each using index notation.",
-      "send": "SEND: pre-drawn factor trees to complete, prime list card. EAL: pre-teach product/index. Stretch: explain why every number has only one prime factor decomposition."
+      "practice": ["Make a tally chart for: red, blue, red, green, red, blue, yellow, red", "Complete the frequency column and total for your tally", "What is the mode colour?"],
+      "independent": ["Core: Make a tally and frequency table for these dice scores: 1, 4, 6, 6, 2, 3, 6, 4, 5, 1, 6, 2, 4, 6, 3", "Extend: A frequency table of 40 pupils has one frequency missing: 8, 11, ?, 9. Find it and explain your method.", "Stretch: Two pupils tallied the same 25 results and got different totals. List three mistakes that could cause this and how to prevent each."],
+      "exit": ["Draw the tally for 12.", "Frequencies are 4, 9, 6. What is the total frequency?", "Which value is the mode: A (freq 4), B (freq 9) or C (freq 6)?"],
+      "homework": "Roll a dice (or use an online dice) 30 times and record the results in a tally and frequency table. Which score was the mode?",
+      "send": "Support: data printed on cut-out cards to sort first. EAL: word bank tally/frequency/total. Stretch: design your own data-collection sheet."
     },
     {
-      "unit": "Unit 1: Factors, multiples and primes",
+      "unit": "Unit 1: Analysing and displaying data",
       "n": 4,
-      "title": "HCF and LCM using prime factors",
+      "title": "Grouping data into class intervals",
       "duration": 50,
-      "objectives": [
-        "Find HCF and LCM from prime factor decompositions",
-        "Use Venn diagrams to organise prime factors"
-      ],
+      "bigQuestion": "How can we make sense of 30 different test scores without listing every one?",
+      "objectives": ["Group data into equal class intervals", "Construct a grouped frequency table", "Find the modal class"],
+      "successCriteria": ["Put each value into the correct class", "Build a grouped frequency table with equal classes that do not overlap", "Explain what grouping gains and loses"],
+      "crossCurricular": "Science: grouping heights or masses of plants; Geography: population by age group",
+      "smsc": "Spiritual: wonder at how patterns appear when we organise information",
       "keywords": [
-        { "term": "prime factor decomposition", "def": "writing a number as a product of primes" },
-        { "term": "Venn diagram", "def": "a diagram of overlapping circles showing what is shared" },
-        { "term": "HCF", "def": "highest common factor" },
-        { "term": "LCM", "def": "lowest common multiple" }
+        { "term": "class interval", "def": "a group that data is sorted into, such as 10–19" },
+        { "term": "grouped data", "def": "data sorted into class intervals" },
+        { "term": "modal class", "def": "the class interval with the highest frequency" },
+        { "term": "discrete data", "def": "data that can only take certain values, such as whole numbers" }
       ],
-      "starter": [
-        "Say Bismillah. Write 24 as a product of prime factors.",
-        "Find the HCF of 12 and 18 by listing factors.",
-        "Work out 2² x 3² x 5."
-      ],
+      "starter": ["Draw a tally for 8.", "Frequencies 5, 3, 7: what is the total?", "Is 19 between 10 and 20?", "Find the range of 41, 12, 37, 25."],
       "teach": [
-        {
-          "heading": "Decompose both numbers",
-          "bullets": [
-            "60 = 2² x 3 x 5.",
-            "84 = 2² x 3 x 7.",
-            "Compare the prime factors."
-          ],
-          "note": "Recall the work from last lesson. Write the two decompositions one below the other, aligning the primes in columns."
-        },
-        {
-          "heading": "HCF: the shared primes",
-          "bullets": [
-            "Both contain 2² and 3.",
-            "HCF = 2² x 3 = 12.",
-            "Take the smaller index of each shared prime."
-          ],
-          "note": "Check: 12 divides 60 five times and 84 seven times. Venn diagram: shared primes in the overlap (2, 2, 3); 5 only in 60's circle; 7 only in 84's."
-        },
-        {
-          "heading": "LCM: all the primes",
-          "bullets": [
-            "Take every prime, with the larger index.",
-            "LCM = 2² x 3 x 5 x 7 = 420.",
-            "Check: 420 ÷ 60 = 7 and 420 ÷ 84 = 5."
-          ],
-          "note": "In the Venn diagram, LCM is the product of every number in both circles, with the overlap counted once. Confirm 420 is a multiple of both."
-        },
-        {
-          "heading": "Bigger indices",
-          "bullets": [
-            "72 = 2³ x 3². 90 = 2 x 3² x 5.",
-            "HCF = 2 x 3² = 18.",
-            "LCM = 2³ x 3² x 5 = 360."
-          ],
-          "note": "Check 8 x 9 x 5 = 360. HCF smaller index, LCM larger index. Ask: how can you tell the answers are sensible (HCF divides both; LCM is a multiple of both)?"
-        }
+        { "heading": "Why group data?", "bullets": ["Too many different values to tally separately", "Groups show the overall shape", "We lose the exact values"], "note": "Show 20 test scores out of 50: 12, 25, 31, 44, 38, 27, 19, 33, 41, 36, 22, 29, 47, 35, 28, 16, 39, 30, 24, 33. Ask: 'Would a tally of every single score help?' (No: almost every score appears once.)" },
+        { "heading": "Choosing class intervals", "bullets": ["Equal widths: 10–19, 20–29, 30–39…", "No gaps and no overlaps", "Usually 4 to 6 classes"], "note": "Ask: 'Which class does 20 go in if the classes were 10–20 and 20–30?' Show why overlapping classes cause problems.", "misconception": { "wrong": "Classes 10–20, 20–30, 30–40", "right": "Classes 10–19, 20–29, 30–39" } },
+        { "heading": "Building the table", "bullets": ["Tick off each value as you tally", "Total must be 20"], "note": "Work through the scores together. Pupils call out the class for each score.", "table": { "head": ["Score", "Tally", "Frequency"], "rows": [["10–19", "III", "3"], ["20–29", "IIII I (gate + 1)", "6"], ["30–39", "IIII III (gate + 3)", "8"], ["40–49", "III", "3"], ["Total", "", "20"]] } },
+        { "heading": "The modal class", "bullets": ["The class with the highest frequency", "Here: 30–39", "It is a class, not a single number"], "note": "Ask: 'Can we say the mode is 33 from the table alone?' No: once grouped, we only know the class." },
+        { "heading": "Check: which class?", "bullets": [], "note": "Show me on 3.", "check": { "q": "Classes are 0–9, 10–19, 20–29. Which class does 20 belong in?", "options": ["10–19", "20–29", "Both", "Neither"], "answer": 1, "why": "20 lies from 20 to 29. A comes from thinking 'up to 20'; C is why classes must not overlap." } }
       ],
-      "practice": [
-        "Given 36 = 2² x 3² and 48 = 2⁴ x 3, find the HCF and LCM.",
-        "Write 28 and 42 as products of primes, then find their HCF and LCM.",
-        "Draw a Venn diagram for 12 and 20."
-      ],
-      "independent": [
-        "Find the HCF and LCM of: 30 and 42; 54 and 90; 100 and 150.",
-        "A = 2³ x 5 x 7 and B = 2² x 3 x 5. Find the HCF and the LCM of A and B, leaving answers in index form.",
-        "Two bells ring every 36 s and 48 s. After how many seconds will they next ring together?",
-        "Show that 14 is the HCF of 70 and 98 using prime factors."
-      ],
-      "exit": [
-        "Find the HCF of 40 and 60 using prime factors.",
-        "Find the LCM of 20 and 30 using prime factors."
-      ],
-      "homework": "Choose two numbers between 50 and 100. Use prime factors to find their HCF and LCM and check your answers.",
-      "send": "SEND: Venn diagram templates with prime factors on cards. EAL: pre-teach product/shared/overlap. Stretch: HCF and LCM of three numbers."
+      "practice": ["Put 7, 15, 23, 18, 9, 26, 14, 11 into classes 0–9, 10–19, 20–29", "Find the modal class", "How many values are less than 20?"],
+      "independent": ["Core: Group these heights (cm) into 140–149, 150–159, 160–169: 152, 147, 163, 158, 151, 149, 166, 155, 160, 143", "Extend: Choose your own class intervals for 3, 18, 27, 41, 45, 52, 9, 33, 38, 47, 21, 56. Justify your choice.", "Stretch: Explain why you cannot find the exact range from a grouped table, and find the largest possible range for the heights table."],
+      "exit": ["Which class does 30 go in: 20–29 or 30–39?", "Frequencies are 3, 9, 5 for classes A, B, C. Which is the modal class?", "Give one disadvantage of grouping data."],
+      "homework": "Ask 15 family members or friends their age (or use a list of ages provided), group them into classes of width 10 and find the modal class.",
+      "send": "Support: class labels pre-written in the table. Stretch: compare two different groupings of the same data."
     },
     {
-      "unit": "Unit 2: Sequences",
+      "unit": "Unit 1: Analysing and displaying data",
       "n": 5,
-      "title": "Sequences and term-to-term rules",
+      "title": "Grouped bar charts for discrete and continuous data",
       "duration": 50,
-      "objectives": [
-        "Describe a sequence using a term-to-term rule",
-        "Generate terms from a rule and extend sequences"
-      ],
+      "bigQuestion": "Should there be gaps between bars, and does it matter?",
+      "objectives": ["Distinguish discrete and continuous data", "Draw a bar chart for grouped discrete data", "Draw a frequency diagram for continuous data with no gaps"],
+      "successCriteria": ["Say whether data is discrete or continuous", "Draw a grouped bar chart with labelled class intervals", "Explain why continuous data has no gaps between bars"],
+      "crossCurricular": "Science: measuring time, length and mass is continuous; PE: race times",
+      "smsc": "Cultural: comparing data from different countries fairly",
       "keywords": [
-        { "term": "sequence", "def": "a list of numbers that follow a rule" },
-        { "term": "term", "def": "one number in a sequence" },
-        { "term": "term-to-term rule", "def": "the rule to get from one term to the next" },
-        { "term": "ascending/descending", "def": "getting bigger / getting smaller" }
+        { "term": "discrete data", "def": "data that can only take particular values, often counted" },
+        { "term": "continuous data", "def": "data that can take any value in a range, usually measured" },
+        { "term": "frequency diagram", "def": "a bar chart for grouped continuous data with no gaps" },
+        { "term": "inequality", "def": "a statement such as 10 ≤ t < 20 showing a range of values" }
       ],
-      "starter": [
-        "Say Bismillah. Continue: 5, 10, 15, 20, ...",
-        "Work out 3 x 5 + 2.",
-        "What is -4 + 7?"
-      ],
+      "starter": ["What is the modal class? 0–9: 4, 10–19: 7, 20–29: 2", "Which class does 19 go in: 10–19 or 20–29?", "Is 'number of brothers' something you count or measure?", "Write a number between 2.5 and 2.6."],
       "teach": [
-        {
-          "heading": "What is a sequence?",
-          "bullets": [
-            "A sequence is a list of numbers following a rule.",
-            "3, 7, 11, 15, ... is an ascending sequence.",
-            "Each number is a term."
-          ],
-          "note": "Show patterns from life: days of the week, prayer-time numbers in a day, matchstick patterns. Introduce the words first term, second term and so on."
-        },
-        {
-          "heading": "Term-to-term rules",
-          "bullets": [
-            "3, 7, 11, 15: add 4 each time.",
-            "50, 45, 40, 35: subtract 5 each time.",
-            "2, 6, 18, 54: multiply by 3."
-          ],
-          "note": "Ask pupils to find the rule by looking at the gap between neighbouring terms. Next terms: 19, 23 / 30, 25 / 162, 486."
-        },
-        {
-          "heading": "Decimals and negatives",
-          "bullets": [
-            "0.5, 1.2, 1.9, 2.6: add 0.7.",
-            "10, 6, 2, -2: subtract 4.",
-            "Sequences can cross zero."
-          ],
-          "note": "Continue: next terms 3.3, 4.0 and -6, -10. Make sure pupils can count back through zero."
-        },
-        {
-          "heading": "Two-step rules",
-          "bullets": [
-            "Start at 5. Rule: multiply by 2, then add 1.",
-            "5, 11, 23, 47, ...",
-            "5 x 2 + 1 = 11; 11 x 2 + 1 = 23."
-          ],
-          "note": "Next term: 47 x 2 + 1 = 95. Emphasise that the rule is applied to the previous term only."
-        }
+        { "heading": "Counted or measured?", "bullets": ["Discrete: counted, exact values", "Continuous: measured, any value", "Shoe size is discrete; foot length is continuous"], "note": "Run a quick vote: number of pets, height, time to run 100 m, number of goals. Ask pupils to justify. Misconception: age is often treated as discrete, but age is continuous (we round it).", "compare": { "left": { "title": "Discrete", "points": ["Number of pets", "Goals scored", "Shoe size"] }, "right": { "title": "Continuous", "points": ["Height", "Time", "Mass"] } } },
+        { "heading": "Writing continuous classes", "bullets": ["10 ≤ t < 20 means from 10 up to but not including 20", "No gaps between classes", "Every value fits in exactly one class"], "note": "Read the inequality aloud: 't is greater than or equal to 10 and less than 20'. Ask where 19.9 goes (10 ≤ t < 20) and where 20 goes (20 ≤ t < 30)." },
+        { "heading": "Drawing a frequency diagram", "bullets": ["Continuous scale on the horizontal axis", "Bars touch: no gaps", "Label the axis with the unit"], "note": "Model on the shared screen.", "model": { "problem": "Times (s): 10 ≤ t < 20: 4; 20 ≤ t < 30: 9; 30 ≤ t < 40: 6", "steps": ["Horizontal axis: time in seconds, scale 10 to 40", "Vertical axis: frequency, 0 to 10", "Bar from 10 to 20, height 4", "Bars from 20 to 30 (height 9) and 30 to 40 (height 6), touching"], "answer": "Modal class: 20 ≤ t < 30" } },
+        { "heading": "Gaps or no gaps?", "bullets": ["Gaps: discrete or categorical data", "No gaps: continuous data"], "note": "Ask: 'Why would a gap be wrong for time data?' Because a time of 19.99 s is still in the data: there is no value missing between bars.", "misconception": { "wrong": "Gaps between bars of a height chart", "right": "Bars touch, because heights can take any value" } },
+        { "heading": "Check: discrete or continuous?", "bullets": [], "note": "Whiteboards up.", "check": { "q": "Which of these is continuous data?", "options": ["Number of letters in a name", "Mass of an apple", "Number of cars in a car park", "Dress size"], "answer": 1, "why": "Mass is measured and can be any value. The others are counted or fixed sizes." } }
       ],
-      "practice": [
-        "Write the next two terms and the rule: 8, 14, 20, 26, ...",
-        "Write the first four terms: first term 3, rule add 5.",
-        "Describe the rule: 81, 27, 9, 3, ..."
-      ],
-      "independent": [
-        "Find the rule and the next two terms: 7, 13, 19; 100, 90, 80; 1, 4, 16; 0.2, 0.5, 0.8.",
-        "Write the first five terms: first term 2, rule multiply by 3 then subtract 1.",
-        "A sequence starts 6, 11, 16, 21. Will 100 be in the sequence? Explain.",
-        "Write a sequence of your own with a term-to-term rule and give it to a partner."
-      ],
-      "exit": [
-        "Write the next two terms: 9, 13, 17, 21, ...",
-        "A sequence starts at 4 and the rule is double then subtract 1. Write the first four terms."
-      ],
-      "homework": "Find three sequences from real life (for example saving £5 each week) and write down their term-to-term rules.",
-      "send": "SEND: sequence strips with gaps to fill. EAL: pre-teach term/rule/next. Stretch: write a rule for a sequence that alternates."
+      "practice": ["Discrete or continuous: temperature, number of siblings, length of a leaf?", "Write the class for 15 kg using classes 10 ≤ m < 20, 20 ≤ m < 30", "Sketch the axes for a frequency diagram of times from 0 to 60 seconds."],
+      "independent": ["Core: Draw a frequency diagram: 0 ≤ h < 10: 3, 10 ≤ h < 20: 8, 20 ≤ h < 30: 5, 30 ≤ h < 40: 2 (h = hours of screen time per week)", "Extend: Draw a grouped bar chart (with gaps) for goals per season: 0–4: 2 teams, 5–9: 6, 10–14: 9, 15–19: 3. Explain why this one has gaps.", "Stretch: A pupil writes classes 1–2 m, 2–3 m, 3–4 m for jump distances. Explain the problem and rewrite them correctly."],
+      "exit": ["Is 'time to finish a race' discrete or continuous?", "What does 20 ≤ t < 30 mean in words?", "Should a chart of heights have gaps between the bars?"],
+      "homework": "Time how long 10 activities take you (to the nearest second), group the times into classes of 10 seconds and draw a frequency diagram.",
+      "send": "Support: sorting cards for discrete/continuous before the chart. EAL: inequality phrases with examples. Stretch: classes of unequal width (and why they need care)."
     },
     {
-      "unit": "Unit 2: Sequences",
+      "unit": "Unit 1: Analysing and displaying data",
       "n": 6,
-      "title": "Missing terms and special sequences",
+      "title": "The mean and comparing data sets",
       "duration": 50,
-      "objectives": [
-        "Find missing terms in a sequence",
-        "Recognise square, cube, triangular and Fibonacci sequences"
-      ],
+      "bigQuestion": "Which of two cricketers is better, and how can averages help us decide fairly?",
+      "objectives": ["Calculate the mean of a set of data", "Compare two sets of data using an average and the range", "Decide which average is most appropriate"],
+      "successCriteria": ["Calculate the mean accurately", "Compare two data sets with one average and the range, in a sentence", "Choose and justify the best average, including when there is an outlier"],
+      "crossCurricular": "PE: comparing performances; Science: mean of repeat readings",
+      "smsc": "Moral: fairness; judging people on evidence, not first impressions",
       "keywords": [
-        { "term": "square numbers", "def": "1, 4, 9, 16, 25: numbers multiplied by themselves" },
-        { "term": "triangular numbers", "def": "1, 3, 6, 10, 15: dots that make triangles" },
-        { "term": "Fibonacci sequence", "def": "each term is the sum of the previous two" },
-        { "term": "difference", "def": "the amount between consecutive terms" }
+        { "term": "mean", "def": "total of the values divided by the number of values" },
+        { "term": "outlier", "def": "a value much bigger or smaller than the rest" },
+        { "term": "consistent", "def": "values are close together: a small range" },
+        { "term": "compare", "def": "say what is similar or different, using evidence" }
       ],
-      "starter": [
-        "Say Bismillah. Work out 6², 3³ and 2⁵.",
-        "Find the rule: 12, 19, 26, 33.",
-        "Continue: 1, 4, 9, 16, ..."
-      ],
+      "starter": ["Find the median of 4, 9, 2, 7, 5", "Find the range of 18, 11, 25, 14", "Work out 36 ÷ 4", "What is the modal class: 0–9: 2, 10–19: 6, 20–29: 3?"],
       "teach": [
-        {
-          "heading": "Missing terms",
-          "bullets": [
-            "4, __, __, 19. There are 3 steps from 4 to 19.",
-            "Total change 15, so 15 ÷ 3 = 5 each step.",
-            "The sequence is 4, 9, 14, 19."
-          ],
-          "note": "Also try 3, __, 11, __: step = 4, so the missing terms are 7 and 15. Check the pattern works from the start."
-        },
-        {
-          "heading": "Square and cube numbers",
-          "bullets": [
-            "Squares: 1, 4, 9, 16, 25, 36, 49.",
-            "Cubes: 1, 8, 27, 64, 125.",
-            "Powers of 2: 2, 4, 8, 16, 32."
-          ],
-          "note": "Draw dot squares. Learn squares to 15² and cubes to 5³ and 10³. Common error: 3² = 6. Differences between consecutive squares are the odd numbers 3, 5, 7, 9."
-        },
-        {
-          "heading": "Triangular and Fibonacci",
-          "bullets": [
-            "Triangular: 1, 3, 6, 10, 15, 21.",
-            "Differences are 2, 3, 4, 5, 6.",
-            "Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21."
-          ],
-          "note": "Build triangles with counters. Fibonacci: add the previous two terms. 8 + 13 = 21. Optional: Fibonacci helped spread the Hindu-Arabic numerals in Europe through his book Liber Abaci (1202), having learned them from Arabic-speaking mathematicians in North Africa."
-        },
-        {
-          "heading": "Is it in the sequence?",
-          "bullets": [
-            "Sequence 3, 7, 11, 15, ... adds 4.",
-            "Is 99 in it? 99 - 3 = 96 = 4 x 24. Yes.",
-            "Is 100 in it? 97 is not a multiple of 4. No."
-          ],
-          "note": "This leads towards the nth term next lesson. Ask: what do all terms have in common? (remainder 3 when divided by 4)."
-        }
+        { "heading": "The mean", "bullets": ["Add all the values", "Divide by how many values there are", "The mean shares the total out equally"], "note": "Use the 'levelling' idea: towers of cubes 2, 5, 8 levelled out to 5, 5, 5.", "model": { "problem": "Find the mean of 6, 9, 4, 11, 5", "steps": ["Add: 6 + 9 + 4 + 11 + 5 = 35", "Count: 5 values", "Divide: 35 ÷ 5 = 7"], "answer": "Mean = 7" } },
+        { "heading": "Outliers change the mean", "bullets": ["One extreme value pulls the mean", "The median is hardly affected", "Use the median when there is an outlier"], "note": "Salaries example: £20k, £22k, £25k, £21k, £200k. Mean £57.6k (misleading), median £22k. Ask: 'Which better describes a typical worker?'", "table": { "head": ["Data", "Mean", "Median"], "rows": [["20, 22, 25, 21", "22", "21.5"], ["20, 22, 25, 21, 200", "57.6", "22"]] } },
+        { "heading": "Comparing two sets", "bullets": ["Compare an average: who is higher overall?", "Compare the range: who is more consistent?", "Write in context, with numbers"], "note": "Model the sentence: 'Sara's mean score (7) is higher than Musa's (5), so Sara scored more on average. Musa's range (4) is smaller than Sara's (8), so Musa is more consistent.'", "compare": { "left": { "title": "Sara: 2, 10, 9, 7, 7", "points": ["Mean 7", "Range 8", "Higher on average"] }, "right": { "title": "Musa: 4, 6, 5, 3, 7", "points": ["Mean 5", "Range 4", "More consistent"] }, "label": "vs" } },
+        { "heading": "Writing a comparison", "bullets": ["Not enough: 'Sara is better'", "Good: give the average, the range and what they mean"], "note": "Show weak vs strong comparison. Ask pupils to improve a weak sentence in the chat.", "misconception": { "wrong": "Sara's range is bigger so she is better", "right": "A bigger range means less consistent, not better" } },
+        { "heading": "Check: the mean", "bullets": [], "note": "Show me on 3.", "check": { "q": "The mean of 3, 8, 10 and 7 is…", "options": ["7.5", "28", "7", "8"], "answer": 2, "why": "3 + 8 + 10 + 7 = 28 and 28 ÷ 4 = 7. B forgets to divide; A is the median." } }
       ],
-      "practice": [
-        "Find the missing terms: 2, __, __, __, 22.",
-        "Write the next three triangular numbers after 21.",
-        "Is 50 a term in the sequence 6, 11, 16, 21, ...? Explain."
-      ],
-      "independent": [
-        "Find the missing terms: __, 7, 13, __, 25; 40, __, 28, __, 16.",
-        "Write the next two terms: 1, 8, 27, 64; 1, 1, 2, 3, 5, 8; 2, 5, 10, 17, 26.",
-        "Which of 144, 150, 169 are square numbers? Which are cube numbers? Check 125 and 216.",
-        "In the sequence 5, 8, 11, 14, ..., will 100 be a term? Will 101?"
-      ],
-      "exit": [
-        "Find the missing terms: 3, __, __, 18.",
-        "Write the first six triangular numbers."
-      ],
-      "homework": "Draw the first five triangular numbers as dot patterns and find a rule for the differences between terms.",
-      "send": "SEND: counters and dot patterns, sequence strips. EAL: pre-teach square/cube/triangular. Stretch: explain why the differences in a square sequence are odd numbers."
+      "practice": ["Find the mean of 12, 15, 9, 14", "Find the mean and median of 2, 3, 3, 4, 28. Which is more typical?", "Two runners' times (s): A 14, 15, 16; B 12, 18, 15. Compare them."],
+      "independent": ["Core: Find the mean, median, mode and range of 8, 12, 5, 12, 9, 14", "Extend: Compare these two classes' quiz scores using the mean and range: Class P 6, 8, 7, 9, 5; Class Q 3, 10, 9, 4, 9", "Stretch: Four numbers have a mean of 6. Three of them are 4, 7 and 9. Find the fourth. Then change one number so the mean becomes 7."],
+      "exit": ["Find the mean of 10, 4, 7.", "Which average would you use for house prices in a street with one mansion? Why?", "What does a smaller range tell you?"],
+      "homework": "Find the mean, median and range of your last five scores in any quiz or game, then write two sentences comparing them with a friend's or family member's.",
+      "send": "Support: calculator allowed for the totals, with a step frame. Stretch: reverse-mean problems."
     },
     {
-      "unit": "Unit 2: Sequences",
+      "unit": "Unit 1: Analysing and displaying data",
       "n": 7,
-      "title": "Position-to-term rules and the nth term",
+      "title": "Line graphs",
       "duration": 50,
-      "objectives": [
-        "Use a position-to-term rule to find terms",
-        "Understand the meaning of the nth term"
-      ],
+      "bigQuestion": "When does joining the points on a graph make sense, and when is it wrong?",
+      "objectives": ["Read values from a line graph", "Draw a line graph for data over time", "Describe trends using precise language"],
+      "successCriteria": ["Read values and differences from a line graph", "Plot a line graph accurately with time on the horizontal axis", "Describe and explain a trend, and say when joining points is not valid"],
+      "crossCurricular": "Geography: temperature and rainfall over a year; Science: cooling curves",
+      "smsc": "Spiritual: the changing seasons and the signs of Allah in creation",
       "keywords": [
-        { "term": "position", "def": "the place of a term in the sequence: 1st, 2nd, 3rd and so on" },
-        { "term": "nth term", "def": "a formula that gives any term in a sequence from its position n" },
-        { "term": "linear sequence", "def": "a sequence with a constant difference between terms" }
+        { "term": "line graph", "def": "points joined by straight lines to show change over time" },
+        { "term": "trend", "def": "the general direction the data is moving" },
+        { "term": "increase", "def": "go up" },
+        { "term": "fluctuate", "def": "go up and down without a clear pattern" }
       ],
-      "starter": [
-        "Say Bismillah. Find the rule: 5, 8, 11, 14.",
-        "Work out 3 x 7 + 2.",
-        "Work out 4 x 10 - 3."
-      ],
+      "starter": ["Find the mean of 5, 9, 7", "Read this scale: halfway between 20 and 30 is…", "Which is continuous: time or number of pets?", "Plot the point (3, 5): which axis first?"],
       "teach": [
-        {
-          "heading": "Position and term",
-          "bullets": [
-            "The position n tells us which term.",
-            "Sequence: 5, 8, 11, 14, ...",
-            "n = 1 gives 5, n = 2 gives 8."
-          ],
-          "note": "Draw a table: position n in the top row, term in the bottom. Ask why we need a position-to-term rule: to find the 100th term without listing 99 others."
-        },
-        {
-          "heading": "A rule from n",
-          "bullets": [
-            "Rule: 3n + 2 means multiply n by 3, then add 2.",
-            "n = 1: 3 x 1 + 2 = 5.",
-            "n = 4: 3 x 4 + 2 = 14."
-          ],
-          "note": "Check that the rule matches 8 for n = 2 and 11 for n = 3. Then use n = 10: 3 x 10 + 2 = 32. Stress that the nth term is a formula, not a single number."
-        },
-        {
-          "heading": "Why the number in front of n?",
-          "bullets": [
-            "The sequence goes up by 3 each time.",
-            "So the rule starts with 3n.",
-            "The multiples of 3 are 3, 6, 9, 12."
-          ],
-          "note": "Compare 3, 6, 9, 12 with the sequence 5, 8, 11, 14: each term is 2 more. That 2 is the constant. This sets up the finding method next lesson."
-        },
-        {
-          "heading": "Using the nth term",
-          "bullets": [
-            "nth term = 4n - 1.",
-            "10th term: 4 x 10 - 1 = 39.",
-            "100th term: 4 x 100 - 1 = 399."
-          ],
-          "note": "Ask pupils to find the first four terms (3, 7, 11, 15) and the difference (4). Highlight the link between the coefficient of n and the common difference."
-        }
+        { "heading": "What a line graph shows", "bullets": ["Change over time", "Time always on the horizontal axis", "Joined points show the values in between"], "note": "Show a temperature graph for London from January to December. Ask: 'In which month was it warmest? When did it rise fastest?'" },
+        { "heading": "Reading the graph", "bullets": ["Go up from the time, across to the value", "Difference: subtract two readings"], "note": "Model with average monthly temperatures in London: Jan 5 °C, Apr 11 °C, Jul 19 °C, Oct 12 °C.", "model": { "problem": "By how much did the temperature rise from January (5 °C) to July (19 °C)?", "steps": ["Read January from the graph: 5 °C", "Read July from the graph: 19 °C", "Difference: 19 − 5 = 14"], "answer": "It rose by 14 °C" } },
+        { "heading": "Describing trends", "bullets": ["Overall trend first: increases, decreases", "Then detail: the steepest part, peak, lowest point", "Use numbers from the graph"], "note": "Model a sentence: 'The temperature increases from January to a peak of 19 °C in July, then decreases to 6 °C in December.'", "timeline": [{ "label": "Jan", "text": "5 °C: the coldest" }, { "label": "Apr", "text": "11 °C: rising" }, { "label": "Jul", "text": "19 °C: the peak" }, { "label": "Oct", "text": "12 °C: falling" }] },
+        { "heading": "When not to join points", "bullets": ["Joining points suggests values in between", "Categories (like favourite fruit) cannot be joined"], "note": "Ask: 'What would a line between apple and banana mean?' Nothing: so use a bar chart.", "misconception": { "wrong": "Line graph of favourite fruits", "right": "Bar chart for categories; line graph for change over time" } },
+        { "heading": "Check: read the graph", "bullets": [], "note": "Show me on 3.", "check": { "q": "A graph shows 120 visitors on Monday and 85 on Tuesday. What is the change?", "options": ["An increase of 35", "A decrease of 35", "A decrease of 205", "85"], "answer": 1, "why": "120 − 85 = 35 and it went down, so a decrease of 35. A has the wrong direction; C adds instead of subtracting." } }
       ],
-      "practice": [
-        "The nth term is 2n + 5. Find the first four terms.",
-        "The nth term is 5n - 3. Find the 10th term.",
-        "The nth term is 3n + 1. Is 40 a term?"
-      ],
-      "independent": [
-        "Find the first four terms and the 20th term for: 6n; n + 8; 4n - 3; 10 - n.",
-        "Find the 50th term of 7n + 2 and of 3n - 4.",
-        "The nth term is 6n + 1. Is 85 a term? Is 91?",
-        "Write down the nth term of the sequence of multiples of 9."
-      ],
-      "exit": [
-        "The nth term is 3n + 4. Find the 5th term.",
-        "What is the common difference in the sequence with nth term 7n - 2?"
-      ],
-      "homework": "Choose four different nth term rules, write the first five terms of each, and describe what the number in front of n does.",
-      "send": "SEND: position-term table templates. EAL: pre-teach nth term/formula. Stretch: find which term first exceeds 1,000."
+      "practice": ["Plot a line graph of a plant's height: week 1 2 cm, week 2 3.5 cm, week 3 5 cm, week 4 7 cm", "Read the height at week 3", "Describe the trend in one sentence."],
+      "independent": ["Core: Draw a line graph of a city's temperature: 6 am 8 °C, 9 am 12 °C, 12 pm 17 °C, 3 pm 18 °C, 6 pm 14 °C, 9 pm 10 °C", "Extend: Estimate the temperature at 10:30 am from your graph and explain why it is only an estimate.", "Stretch: Draw a dual line graph comparing two cities' temperatures and write three comparison sentences with numbers."],
+      "exit": ["Which axis does time go on?", "Write one sentence describing a graph that goes 10, 14, 19, 17.", "Would you use a line graph for favourite sports? Why?"],
+      "homework": "Record the temperature (or use a weather site) at the same time each day for a week and draw a line graph with a trend sentence.",
+      "send": "Support: pre-drawn axes and plotted points to join. EAL: trend vocabulary mat (rise, fall, peak, steady). Stretch: dual line graphs."
     },
     {
-      "unit": "Unit 2: Sequences",
+      "unit": "Unit 1: Analysing and displaying data",
       "n": 8,
-      "title": "Finding the nth term of a linear sequence",
+      "title": "Dual and compound bar charts",
       "duration": 50,
-      "objectives": [
-        "Find the nth term of a linear sequence",
-        "Use the nth term to check whether a number is in a sequence"
-      ],
+      "bigQuestion": "How can one chart compare two groups at the same time?",
+      "objectives": ["Read and draw dual bar charts", "Read and draw compound (stacked) bar charts", "Choose a chart to suit a purpose"],
+      "successCriteria": ["Read values from dual and compound bar charts", "Draw a dual bar chart with a key", "Choose the best chart for a question and justify the choice"],
+      "crossCurricular": "Geography: comparing two countries; Business: sales of two products",
+      "smsc": "Social: comparing groups respectfully, without stereotyping",
       "keywords": [
-        { "term": "common difference", "def": "the constant amount added or subtracted between terms" },
-        { "term": "nth term", "def": "a formula giving the term at position n" },
-        { "term": "coefficient", "def": "the number multiplying a letter, such as 3 in 3n" }
+        { "term": "dual bar chart", "def": "two bars side by side for each category to compare two groups" },
+        { "term": "compound bar chart", "def": "bars split into sections stacked on top of each other" },
+        { "term": "key", "def": "shows which colour or shading belongs to which group" },
+        { "term": "proportion", "def": "a part compared with the whole" }
       ],
-      "starter": [
-        "Say Bismillah. Find the 10th term of 3n - 2.",
-        "What is the common difference in 8, 13, 18, 23?",
-        "Write the first four multiples of 4."
-      ],
+      "starter": ["Describe the trend: 3, 5, 8, 12", "What must every chart have?", "Find the mean of 4, 6, 11", "Gaps or no gaps for a chart of heights?"],
       "teach": [
-        {
-          "heading": "Step 1: common difference",
-          "bullets": [
-            "Sequence: 7, 11, 15, 19.",
-            "Difference = 4, so the rule starts 4n.",
-            "4n gives 4, 8, 12, 16."
-          ],
-          "note": "Write the multiples of 4 underneath the sequence. Ask what the difference is between each term and the matching multiple."
-        },
-        {
-          "heading": "Step 2: adjust",
-          "bullets": [
-            "Compare with 4n: 7 - 4 = 3, 11 - 8 = 3.",
-            "Every term is 3 more than 4n.",
-            "nth term = 4n + 3."
-          ],
-          "note": "Check with n = 1: 4 + 3 = 7 and n = 4: 16 + 3 = 19. Always check with at least two terms."
-        },
-        {
-          "heading": "Decreasing sequences",
-          "bullets": [
-            "20, 17, 14, 11: difference -3.",
-            "-3n gives -3, -6, -9, -12.",
-            "nth term = -3n + 23, or 23 - 3n."
-          ],
-          "note": "Compare the sequence with -3n: 20 - (-3) = 23. Check n = 2: 23 - 6 = 17 and n = 4: 23 - 12 = 11."
-        },
-        {
-          "heading": "Is a number in the sequence?",
-          "bullets": [
-            "nth term = 4n + 3. Is 103 a term?",
-            "4n + 3 = 103 gives 4n = 100, n = 25. Yes.",
-            "Is 150 a term? 4n = 147, n = 36.75. No."
-          ],
-          "note": "n must be a positive whole number. Also find a term: the 100th term of 3n - 1 is 299."
-        }
+        { "heading": "Dual bar charts", "bullets": ["Two bars per category, side by side", "A key shows which group is which", "Best for comparing groups category by category"], "note": "Show boys and girls' favourite sport. Ask: 'Which sport had the biggest difference between groups?'", "model": { "problem": "Draw a dual bar chart: Year 7 / Year 8 reading hours: Mon 3/2, Tue 4/5, Wed 2/4", "steps": ["Draw axes: day, and hours from 0 to 6", "For Monday, draw Year 7 bar (3) and Year 8 bar (2) touching", "Repeat for Tuesday and Wednesday, leaving gaps between days", "Add a key and a title"], "answer": "Year 8 read more on Tuesday and Wednesday" } },
+        { "heading": "Compound bar charts", "bullets": ["Each bar shows the total", "Sections show the parts", "Read a section: top minus bottom"], "note": "Model reading a stacked bar: Tuesday bar has walk 0–6, bus 6–10, car 10–13. So bus = 10 − 6 = 4.", "misconception": { "wrong": "Bus section reads 10", "right": "Bus = 10 − 6 = 4 (top minus bottom of the section)" } },
+        { "heading": "Which chart for which question?", "bullets": ["Compare groups: dual", "Compare totals and parts: compound", "Change over time: line graph"], "note": "Give three questions and ask which chart fits each.", "table": { "head": ["Question", "Best chart"], "rows": [["Did boys or girls prefer cricket more?", "Dual bar chart"], ["What fraction of each day's travel was by bus?", "Compound bar chart"], ["How did sales change over a year?", "Line graph"]] } },
+        { "heading": "Check: read a compound bar", "bullets": [], "note": "Whiteboards up.", "check": { "q": "A stacked bar has sections ending at 5, 12 and 20. How big is the middle section?", "options": ["12", "7", "8", "17"], "answer": 1, "why": "12 − 5 = 7. A reads the top of the section; C is the top section (20 − 12)." } }
       ],
-      "practice": [
-        "Find the nth term: 5, 8, 11, 14, ...",
-        "Find the nth term: 2, 6, 10, 14, ...",
-        "Find the nth term: 30, 26, 22, 18, ..."
-      ],
-      "independent": [
-        "Find the nth term: 4, 9, 14, 19; 1, 8, 15, 22; 12, 10, 8, 6; 3, 3.5, 4, 4.5.",
-        "Is 77 a term in the sequence 5, 12, 19, 26, ...? Show working.",
-        "The nth term is 6n - 5. Which term is equal to 115?",
-        "Match patterns: matchsticks 4, 7, 10, 13 for 1, 2, 3, 4 squares in a row. Write the nth term and the number of matches for 25 squares."
-      ],
-      "exit": [
-        "Find the nth term: 6, 10, 14, 18, ...",
-        "Is 52 a term of 3n + 1? Show how you know."
-      ],
-      "homework": "Make up three linear sequences, one increasing, one decreasing and one with decimals, and find the nth term of each.",
-      "send": "SEND: step-by-step frame (difference, multiples, adjust). EAL: model the sentence 'the nth term is'. Stretch: find the nth term of a quadratic sequence like 2, 5, 10, 17."
+      "practice": ["From a dual bar chart: Class A 8 and Class B 11 chose football. What is the difference?", "From a compound bar: sections end at 4, 9, 15. Find each section.", "Which chart would you use to compare rainfall in Lahore and London each month?"],
+      "independent": ["Core: Draw a dual bar chart for votes for school trip destinations: Zoo Y7 12 / Y8 9, Museum Y7 7 / Y8 10, Park Y7 6 / Y8 8", "Extend: Draw a compound bar chart for the same data and say which question each chart answers more easily.", "Stretch: Write a short report (three sentences with numbers) comparing Year 7 and Year 8 choices, and suggest which trip to book and why."],
+      "exit": ["What does a key do?", "A section of a stacked bar goes from 6 to 14. What is its value?", "Which chart compares two groups side by side?"],
+      "homework": "Ask two groups (e.g. adults and children at home or in your family) the same question and present the results in a dual bar chart.",
+      "send": "Support: partly drawn charts to complete. Stretch: percentage compound bar charts where every bar is 100%."
     },
     {
-      "unit": "Unit 3: Perimeter and area",
+      "unit": "Unit 2: Number skills",
       "n": 9,
-      "title": "Perimeter and area of rectangles",
+      "title": "Mental maths and the priority of operations",
       "duration": 50,
-      "objectives": [
-        "Calculate the perimeter and area of rectangles and squares",
-        "Use area and perimeter to find missing lengths"
-      ],
+      "bigQuestion": "Why do two people sometimes get different answers to the same calculation?",
+      "objectives": ["Use the priority of operations, including brackets", "Use mental strategies for multiplication and division", "Use inverse operations to check answers"],
+      "successCriteria": ["Calculate with two operations in the correct order", "Calculate with brackets, powers and several operations", "Insert brackets to make a calculation true"],
+      "crossCurricular": "Computing: computers follow operator precedence; Science: using formulae",
+      "smsc": "Moral: agreed rules let everyone reach the same truth",
       "keywords": [
-        { "term": "perimeter", "def": "the total distance around the outside of a shape" },
-        { "term": "area", "def": "the amount of surface inside a 2D shape, in square units" },
-        { "term": "square centimetre (cm²)", "def": "the area of a square with sides 1 cm" }
+        { "term": "priority of operations", "def": "the agreed order: brackets, indices, ÷ and ×, then + and −" },
+        { "term": "BIDMAS", "def": "a reminder: Brackets, Indices, Division and Multiplication, Addition and Subtraction" },
+        { "term": "inverse", "def": "the operation that undoes another, such as ÷ undoes ×" },
+        { "term": "product", "def": "the result of multiplying" }
       ],
-      "starter": [
-        "Say Bismillah. Work out 12 x 7 and 8 x 6.",
-        "How many centimetres in a metre?",
-        "Draw a rectangle 4 cm by 3 cm. What is its perimeter?"
-      ],
+      "starter": ["Work out 7 × 8", "Work out 63 ÷ 9", "What is 2 squared?", "Which chart would compare two groups side by side?"],
       "teach": [
-        {
-          "heading": "Perimeter",
-          "bullets": [
-            "Add the lengths of all the sides.",
-            "Rectangle: P = 2(l + w).",
-            "12 cm by 7 cm: P = 2 x 19 = 38 cm."
-          ],
-          "note": "Walk the perimeter on a diagram with a finger. Units are cm, m and so on (length). Common error: forgetting two sides."
-        },
-        {
-          "heading": "Area",
-          "bullets": [
-            "Rectangle: A = l x w.",
-            "12 cm by 7 cm: A = 84 cm².",
-            "Area is measured in square units."
-          ],
-          "note": "Show 12 by 7 squares on squared paper to prove 84. Explain cm²: squares 1 cm by 1 cm. A square of side 9 cm has perimeter 36 cm and area 81 cm²."
-        },
-        {
-          "heading": "Working backwards",
-          "bullets": [
-            "Area 72 cm², length 12 cm.",
-            "Width = 72 ÷ 12 = 6 cm.",
-            "Perimeter = 2(12 + 6) = 36 cm."
-          ],
-          "note": "Ask: could another rectangle have the same area but a different perimeter? 9 by 8 gives area 72 and perimeter 34."
-        },
-        {
-          "heading": "Different units",
-          "bullets": [
-            "1 m = 100 cm. 1 m² = 10,000 cm².",
-            "Room 8 m by 6 m has area 48 m².",
-            "Tiles 0.5 m by 0.5 m cover 0.25 m² each."
-          ],
-          "note": "48 ÷ 0.25 = 192 tiles. Context: carpeting a prayer room or tiling a school corridor. Ask why the units must match before multiplying."
-        }
+        { "heading": "The order matters", "bullets": ["2 + 3 × 4 has one correct answer", "× and ÷ before + and −", "Brackets first of all"], "note": "Poll: 2 + 3 × 4 = 20 or 14? Reveal 14 and explain that mathematicians agreed this rule so everyone gets the same answer. Calculators follow it too.", "misconception": { "wrong": "2 + 3 × 4 = 5 × 4 = 20", "right": "2 + 3 × 4 = 2 + 12 = 14" } },
+        { "heading": "BIDMAS", "bullets": ["Brackets", "Indices (powers)", "Division and Multiplication: left to right", "Addition and Subtraction: left to right"], "note": "Stress that D and M are equal partners, as are A and S: work left to right. 20 ÷ 4 × 5 = 25, not 1.", "model": { "problem": "Work out 18 − (2 + 4)² ÷ 4", "steps": ["Brackets: 2 + 4 = 6", "Indices: 6² = 36", "Division: 36 ÷ 4 = 9", "Subtraction: 18 − 9 = 9"], "answer": "9" } },
+        { "heading": "Mental multiplication tricks", "bullets": ["Double and halve: 25 × 16 = 50 × 8 = 400", "Partition: 7 × 23 = 7 × 20 + 7 × 3 = 161", "Use near tens: 9 × 46 = 460 − 46 = 414"], "note": "Ask pupils to explain each trick in their own words. Have them pick their favourite for 15 × 12." },
+        { "heading": "Left to right for equal partners", "bullets": ["÷ and × have the same priority", "So do + and −"], "note": "Show 20 − 8 + 3 = 15, not 9.", "misconception": { "wrong": "20 ÷ 4 × 5 = 20 ÷ 20 = 1", "right": "20 ÷ 4 × 5 = 5 × 5 = 25" } },
+        { "heading": "Check: BIDMAS", "bullets": [], "note": "Show me on 3.", "check": { "q": "Work out 10 − 2 × 3 + 1", "options": ["25", "5", "3", "−4"], "answer": 1, "why": "2 × 3 = 6, then 10 − 6 + 1 = 5 working left to right. A works left to right ignoring BIDMAS; C adds 6 + 1 first." } }
       ],
-      "practice": [
-        "A rectangle is 15 cm by 8 cm. Find its perimeter and area.",
-        "A square has perimeter 44 cm. Find its side and area.",
-        "A rectangle has area 54 cm² and width 6 cm. Find its length and perimeter."
-      ],
-      "independent": [
-        "Find the perimeter and area: 9 m by 4 m; 2.5 cm by 6 cm; 13 mm by 20 mm.",
-        "A playground is 40 m by 25 m. A fence goes round it. How long is the fence? What is the area?",
-        "A rectangle has perimeter 30 cm and one side 9 cm. Find the other side and the area.",
-        "A prayer hall is 12 m by 8 m. Carpet tiles are 0.5 m by 0.5 m. How many tiles are needed?"
-      ],
-      "exit": [
-        "Find the perimeter and area of a rectangle 11 cm by 6 cm.",
-        "A rectangle has area 60 cm² and length 12 cm. What is its width?"
-      ],
-      "homework": "Measure the length and width of two rectangular things at home (a table, a door). Calculate their perimeter and area.",
-      "send": "SEND: squared paper, counting squares first. EAL: pre-teach perimeter/area with diagrams. Stretch: find all rectangles with whole-number sides and area 36 cm² and compare their perimeters."
+      "practice": ["Work out 5 + 6 × 2", "Work out (5 + 6) × 2", "Work out 3² + 4 × 2", "Work out 40 ÷ (2 + 3) − 1"],
+      "independent": ["Core: Work out (a) 12 − 4 ÷ 2 (b) (12 − 4) ÷ 2 (c) 3 × 4² (d) 50 − 6 × 7", "Extend: Insert brackets to make each true: 4 + 6 × 3 = 30; 20 − 8 ÷ 2 = 6; 5 × 4 − 1 + 2 = 17", "Stretch: Use the numbers 2, 3, 4 and 5 once each, with any operations and brackets, to make every whole number from 1 to 10."],
+      "exit": ["Work out 8 + 2 × 5", "Work out (8 + 2) × 5", "Use a mental strategy for 25 × 12 and show it."],
+      "homework": "Make up five calculations that give different answers if you ignore BIDMAS, with both answers, and test them on someone at home.",
+      "send": "Support: a BIDMAS checklist to tick through each step. Stretch: the four-fours challenge."
     },
     {
-      "unit": "Unit 3: Perimeter and area",
+      "unit": "Unit 2: Number skills",
       "n": 10,
-      "title": "Compound shapes",
+      "title": "Rounding, adding and subtracting large numbers",
       "duration": 50,
-      "objectives": [
-        "Find the area and perimeter of compound shapes made from rectangles",
-        "Choose an efficient way to split a shape"
-      ],
+      "bigQuestion": "When is an estimate more useful than an exact answer?",
+      "objectives": ["Round whole numbers to the nearest 10, 100, 1000 and beyond", "Add and subtract using the column method", "Estimate to check answers"],
+      "successCriteria": ["Round to the nearest 10, 100 and 1000", "Add and subtract large numbers with carrying and exchanging", "Estimate first and use the estimate to spot errors"],
+      "crossCurricular": "Geography: populations of cities; History: dates and time spans",
+      "smsc": "Cultural: comparing populations of world cities",
       "keywords": [
-        { "term": "compound shape", "def": "a shape made by joining simpler shapes" },
-        { "term": "composite", "def": "made up of several parts" },
-        { "term": "L-shape", "def": "a compound shape made from two rectangles" }
+        { "term": "round", "def": "write a number to a simpler nearby value" },
+        { "term": "estimate", "def": "an approximate answer using rounded numbers" },
+        { "term": "place value", "def": "the value of a digit because of its position" },
+        { "term": "exchange", "def": "swap one of a higher place value for ten of the next place down" }
       ],
-      "starter": [
-        "Say Bismillah. A rectangle is 14 cm by 5 cm. Find the area.",
-        "What is the perimeter of a square with side 8 cm?",
-        "Find the missing side: area 48 cm², length 8 cm."
-      ],
+      "starter": ["Work out 6 + 4 × 3", "Work out (6 + 4) × 3", "What is the value of the 7 in 4720?", "Work out 1000 − 1"],
       "teach": [
-        {
-          "heading": "Split into rectangles",
-          "bullets": [
-            "Draw a line to split the shape into rectangles.",
-            "Find each area, then add.",
-            "Write down any missing side lengths first."
-          ],
-          "note": "Pupils label every side before calculating. Missing lengths are found by adding or subtracting known sides on the opposite edge."
-        },
-        {
-          "heading": "Worked L-shape",
-          "bullets": [
-            "Bottom rectangle: 12 cm by 4 cm = 48 cm².",
-            "Top block: 5 cm by 6 cm = 30 cm².",
-            "Total area = 48 + 30 = 78 cm²."
-          ],
-          "note": "Shape: the bottom rectangle is 12 wide and 4 tall; the top block is 5 wide and 6 tall, sitting on the left. Total height is 10 cm. Show alternative splits to confirm: left strip 5 by 10 = 50, right strip 7 by 4 = 28, total 78."
-        },
-        {
-          "heading": "Perimeter of the L-shape",
-          "bullets": [
-            "Right side 4 cm, step in 7 cm.",
-            "Then 6 cm up, 5 cm across, 10 cm down.",
-            "Sides: 12, 4, 7, 6, 5, 10. Total 44 cm."
-          ],
-          "note": "Notice 44 = 2(12 + 10): the perimeter equals that of the bounding rectangle when the missing piece is a corner. Pupils should work out the missing side 12 - 5 = 7 first."
-        },
-        {
-          "heading": "Subtracting a corner",
-          "bullets": [
-            "Big rectangle 10 cm by 8 cm = 80 cm².",
-            "Cut-out corner 4 cm by 3 cm = 12 cm².",
-            "Area of shape = 80 - 12 = 68 cm²."
-          ],
-          "note": "Compare adding pieces and subtracting a piece. The cut-out method is often quicker. Perimeter of this shape is still 2(10 + 8) = 36 cm."
-        }
+        { "heading": "Rounding large numbers", "bullets": ["Look at the digit to the right", "5 or more: round up", "4 or less: round down"], "note": "Use a number line between 37 000 and 38 000 to show 37 482 is nearer 37 000.", "model": { "problem": "Round 2 647 380 to the nearest 10 000", "steps": ["Ten-thousands digit: 4 (2 640 000)", "Look right: 7 (in the thousands place)", "7 is 5 or more, so round up", "2 640 000 becomes 2 650 000"], "answer": "2 650 000" } },
+        { "heading": "Column addition and subtraction", "bullets": ["Line up the place values", "Carry when a column passes 9", "Exchange when the top digit is smaller"], "note": "Model 6203 − 2758, exchanging across a zero. Narrate each exchange.", "model": { "problem": "Work out 6203 − 2758", "steps": ["Ones: 3 − 8 fails; tens is 0, so exchange via the hundreds", "Now 13 − 8 = 5; tens 9 − 5 = 4", "Hundreds: 1 − 7 fails; exchange a thousand: 11 − 7 = 4", "Thousands: 5 − 2 = 3"], "answer": "3445" } },
+        { "heading": "Estimate to check", "bullets": ["Round each number first", "Calculate mentally", "Compare with your exact answer"], "note": "6203 − 2758 ≈ 6000 − 3000 = 3000, and 3445 is close, so it is sensible. Show an error case: if someone got 4545, the estimate warns them." },
+        { "heading": "Rounding up or down?", "bullets": ["The 5 rule applies only to the next digit", "Do not round in steps"], "note": "Show 3449 to the nearest 100.", "misconception": { "wrong": "3449 → 3450 → 3500", "right": "3449 to the nearest 100 is 3400" } },
+        { "heading": "Check: rounding", "bullets": [], "note": "Show me on 3.", "check": { "q": "Round 48 513 to the nearest 1000", "options": ["48 000", "49 000", "48 500", "50 000"], "answer": 1, "why": "The hundreds digit is 5, so round up to 49 000. A rounds down; C rounds to the nearest 100." } }
       ],
-      "practice": [
-        "An L-shape is made from a 9 cm by 3 cm rectangle and a 4 cm by 5 cm rectangle joined. Find the area.",
-        "A 14 cm by 10 cm rectangle has a 5 cm by 4 cm corner removed. Find the area.",
-        "Find the perimeter of the shape in question 2."
-      ],
-      "independent": [
-        "An L-shape has outer lengths 15 cm and 11 cm. The cut-out corner is 6 cm by 5 cm. Find its area and perimeter.",
-        "A garden is 20 m by 12 m with a 6 m by 4 m patio in one corner. Find the area of grass.",
-        "A T-shape is made of a 10 cm by 3 cm bar and a 3 cm by 7 cm stem below the middle. Find its area.",
-        "A school floor plan is two rectangles, 8 m by 5 m and 6 m by 4 m. Find the total floor area and the paint needed at 1 litre per 6 m² (round up)."
-      ],
-      "exit": [
-        "Find the area of an L-shape made of a 10 cm by 2 cm and a 3 cm by 5 cm rectangle.",
-        "A 12 cm by 9 cm rectangle has a 4 cm by 3 cm corner removed. What is the area?"
-      ],
-      "homework": "Sketch an L-shaped room (a classroom, a garden) and measure or estimate its area and perimeter.",
-      "send": "SEND: shapes on squared paper to cut and split; label sides first. EAL: pre-teach compound/split. Stretch: shapes with a notch in the middle of a side."
+      "practice": ["Round 7385 to the nearest 10, 100 and 1000", "Work out 4867 + 3758", "Work out 9000 − 3647", "Estimate 5912 + 2087"],
+      "independent": ["Core: Work out (a) 27 638 + 45 495 (b) 50 000 − 18 742; estimate first each time", "Extend: The 2021 Census recorded 1 144 919 people in Birmingham and 551 938 in Manchester. Round each to the nearest 10 000, estimate the difference, then calculate it exactly.", "Stretch: Find the smallest whole number that rounds to 5000 to the nearest 1000 and the largest. Explain your answers."],
+      "exit": ["Round 6549 to the nearest 100.", "Work out 3006 − 1489.", "Estimate 4987 + 3012."],
+      "homework": "Find the populations of three cities, round each to the nearest 1000 and work out the difference between the largest and smallest.",
+      "send": "Support: place-value grid for columns. Stretch: rounding with bounds."
     },
     {
-      "unit": "Unit 3: Perimeter and area",
+      "unit": "Unit 2: Number skills",
       "n": 11,
-      "title": "Area of a triangle",
+      "title": "Written multiplication",
       "duration": 50,
-      "objectives": [
-        "Use the formula A = ½ x base x height for a triangle",
-        "Find a missing base or height"
-      ],
+      "bigQuestion": "Why does long multiplication work?",
+      "objectives": ["Multiply whole numbers using a written method", "Use an estimate to check a product", "Solve word problems involving multiplication"],
+      "successCriteria": ["Multiply a 3-digit number by a 1-digit number", "Multiply a 3-digit number by a 2-digit number using column or grid method", "Explain why the method works using place value"],
+      "crossCurricular": "Business: costing orders; Science: calculating totals in experiments",
+      "smsc": "Spiritual: the value of patience and accuracy in work (itqan)",
       "keywords": [
-        { "term": "base", "def": "the side of a triangle used to measure its height from" },
-        { "term": "perpendicular height", "def": "the height measured at a right angle to the base" },
-        { "term": "hypotenuse", "def": "the longest side of a right-angled triangle" }
+        { "term": "product", "def": "the result of multiplying" },
+        { "term": "partition", "def": "split a number into parts, such as 47 = 40 + 7" },
+        { "term": "long multiplication", "def": "a column method for multiplying by a number with two or more digits" },
+        { "term": "estimate", "def": "an approximate answer using rounded numbers" }
       ],
-      "starter": [
-        "Say Bismillah. What is half of 36?",
-        "Find the area of a 9 cm by 6 cm rectangle.",
-        "What do we call an angle of 90 degrees?"
-      ],
+      "starter": ["Round 4762 to the nearest 100", "Work out 8 × 7", "Work out 40 × 6", "Estimate 298 + 403"],
       "teach": [
-        {
-          "heading": "Half a rectangle",
-          "bullets": [
-            "A right-angled triangle is half a rectangle.",
-            "Rectangle 10 cm by 6 cm has area 60 cm².",
-            "Triangle area = 30 cm²."
-          ],
-          "note": "Draw a rectangle and its diagonal. Cut and show two congruent triangles. Extend to any triangle by drawing its perpendicular height."
-        },
-        {
-          "heading": "The formula",
-          "bullets": [
-            "Area = ½ x base x perpendicular height.",
-            "Base 10, height 6: A = ½ x 10 x 6 = 30 cm².",
-            "Use the height at right angles to the base."
-          ],
-          "note": "The slanted side is not the height unless the triangle is right-angled at the base. Common error: using the sloping side. Show an obtuse and an acute triangle with the height marked."
-        },
-        {
-          "heading": "Examples",
-          "bullets": [
-            "Base 9, height 8: A = ½ x 9 x 8 = 36 cm².",
-            "Base 7.5 cm, height 4 cm: A = 15 cm².",
-            "5-12-13 triangle: A = ½ x 5 x 12 = 30 cm²."
-          ],
-          "note": "In the 5-12-13 right-angled triangle, the 5 and 12 are perpendicular, so use them as base and height. The 13 is the hypotenuse and is not used."
-        },
-        {
-          "heading": "Working backwards",
-          "bullets": [
-            "Area 24 cm², base 8 cm.",
-            "½ x 8 x h = 24, so 4h = 24.",
-            "Height h = 6 cm."
-          ],
-          "note": "Alternative: double the area (48) and divide by the base (8). Check: ½ x 8 x 6 = 24."
-        }
+        { "heading": "The grid method", "bullets": ["Partition each number", "Multiply each part", "Add the parts"], "note": "Grid first, so the place value is visible.", "table": { "head": ["×", "300", "40", "6"], "rows": [["20", "6000", "800", "120"], ["7", "2100", "280", "42"]] } },
+        { "heading": "Column method", "bullets": ["Multiply by the ones, then the tens", "The zero holds the tens place", "Add the two rows"], "note": "Show the same product with the column method and point to where each grid number appears.", "model": { "problem": "Work out 346 × 27", "steps": ["Estimate: 350 × 30 = 10 500", "346 × 7 = 2422", "346 × 20 = 6920 (write 0, then 346 × 2)", "Add: 2422 + 6920 = 9342"], "answer": "9342" } },
+        { "heading": "Forgetting the zero", "bullets": ["The second row is × tens, not × ones"], "note": "Show the wrong answer and ask pupils to use the estimate to spot that it's far too small.", "misconception": { "wrong": "346 × 27: 2422 + 692 = 3114", "right": "Second row is 346 × 20 = 6920, so 9342" } },
+        { "heading": "Word problems", "bullets": ["Underline the numbers", "Decide the operation", "Answer in context with units"], "note": "Example: A school orders 36 boxes of 144 pencils. 144 × 36 = 5184 pencils. Ask: 'How do you know it's multiplication?'" },
+        { "heading": "Check: estimate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which is the best estimate for 412 × 39?", "options": ["1600", "16 000", "160 000", "12 000"], "answer": 1, "why": "400 × 40 = 16 000. A and C have the wrong number of zeros; D uses 400 × 30." } }
       ],
-      "practice": [
-        "Find the area of a triangle with base 12 cm and height 5 cm.",
-        "A triangle has area 35 cm² and base 10 cm. Find its height.",
-        "A right-angled triangle has shorter sides 6 cm and 8 cm and hypotenuse 10 cm. Find its area."
-      ],
-      "independent": [
-        "Find the area: base 14 cm, height 9 cm; base 6.4 cm, height 5 cm; base 3 m, height 2.5 m.",
-        "A triangular flag has base 80 cm and height 50 cm. Find its area.",
-        "A triangle has area 48 cm² and height 8 cm. Find the base.",
-        "A rectangle 12 cm by 8 cm has one corner cut off along a diagonal. Find the area of the triangle that remains and the area cut off."
-      ],
-      "exit": [
-        "Find the area of a triangle with base 16 cm and height 7 cm.",
-        "A triangle has area 20 cm² and height 5 cm. Find its base."
-      ],
-      "homework": "Draw three different triangles on squared paper. Measure the base and height of each and calculate the area.",
-      "send": "SEND: triangles on squared paper with height drawn; cut-out rectangle to show half. EAL: pre-teach base/height/perpendicular. Stretch: composite shapes with triangles."
+      "practice": ["Work out 238 × 6", "Work out 125 × 34", "A coach holds 53 people. How many people do 18 coaches hold?"],
+      "independent": ["Core: Work out (a) 427 × 8 (b) 316 × 25 (c) 509 × 43, estimating first", "Extend: Tickets cost £17. 286 people buy one. How much money is taken? Check with an estimate.", "Stretch: Using the digits 2, 3, 4, 5 once each, make the largest possible product of a 2-digit number and a 2-digit number. Prove it is the largest."],
+      "exit": ["Work out 214 × 6.", "Work out 52 × 47.", "Estimate 389 × 21."],
+      "homework": "Work out five multiplications from a menu or shop (e.g. 24 cans at 85p) and check each with an estimate.",
+      "send": "Support: grid method with times-table square. Stretch: digit puzzles."
     },
     {
-      "unit": "Unit 3: Perimeter and area",
+      "unit": "Unit 2: Number skills",
       "n": 12,
-      "title": "Area of a parallelogram",
+      "title": "Written division and remainders",
       "duration": 50,
-      "objectives": [
-        "Use the formula A = base x perpendicular height for a parallelogram",
-        "Distinguish perpendicular height from the slant side"
-      ],
+      "bigQuestion": "What should we do with a remainder in real life?",
+      "objectives": ["Divide whole numbers using short division", "Interpret remainders in context", "Check division using multiplication"],
+      "successCriteria": ["Divide a 3- or 4-digit number by a 1-digit number", "Decide whether to round up, round down or give the remainder in a problem", "Divide by a 2-digit number using multiples"],
+      "crossCurricular": "Islamic Studies: dividing zakah or inheritance shares fairly; PE: forming teams",
+      "smsc": "Moral: sharing fairly between people",
       "keywords": [
-        { "term": "parallelogram", "def": "a four-sided shape with two pairs of parallel sides" },
-        { "term": "perpendicular height", "def": "the height measured at a right angle to the base" },
-        { "term": "slant side", "def": "the sloping side, which is not the height" }
+        { "term": "dividend", "def": "the number being divided" },
+        { "term": "divisor", "def": "the number you divide by" },
+        { "term": "quotient", "def": "the answer to a division" },
+        { "term": "remainder", "def": "the amount left over" }
       ],
-      "starter": [
-        "Say Bismillah. Find the area of a triangle with base 8 cm and height 5 cm.",
-        "What is the area of a rectangle 7 cm by 6 cm?",
-        "Name two properties of a parallelogram."
-      ],
+      "starter": ["Work out 56 ÷ 7", "Work out 23 × 4", "What is the inverse of × 6?", "Estimate 612 × 18"],
       "teach": [
-        {
-          "heading": "Turn it into a rectangle",
-          "bullets": [
-            "Cut a right-angled triangle from one end.",
-            "Move it to the other end.",
-            "The parallelogram becomes a rectangle."
-          ],
-          "note": "Demonstrate with paper: cut and slide. The base and perpendicular height stay the same, so the area is unchanged."
-        },
-        {
-          "heading": "The formula",
-          "bullets": [
-            "Area = base x perpendicular height.",
-            "Base 9 cm, height 5 cm: A = 45 cm².",
-            "The slant side of 6 cm is not used."
-          ],
-          "note": "Show a diagram with a dotted height. Common error: multiplying base by slant side (9 x 6 = 54). Ask why that is not the area."
-        },
-        {
-          "heading": "Missing lengths",
-          "bullets": [
-            "Area 56 cm², base 8 cm.",
-            "8 x h = 56, so h = 7 cm.",
-            "Check: 8 x 7 = 56."
-          ],
-          "note": "Practise rearranging. Link to the triangle: a triangle on the same base and height has half the area."
-        },
-        {
-          "heading": "Parallelogram or triangle?",
-          "bullets": [
-            "Parallelogram: base x height.",
-            "Triangle: ½ x base x height.",
-            "Check which formula you need."
-          ],
-          "note": "Give a quick quiz: show shapes and ask which formula applies. Finish with a compound shape: parallelogram 10 by 4 plus triangle with base 10 and height 3 on top: 40 + 15 = 55."
-        }
+        { "heading": "Short division (bus stop)", "bullets": ["Divide each digit from the left", "Carry the remainder to the next digit", "Check with multiplication"], "note": "Model and say it aloud: 'How many 7s in 9? One, remainder 2.'", "model": { "problem": "Work out 952 ÷ 7", "steps": ["9 ÷ 7 = 1 remainder 2; carry 2", "25 ÷ 7 = 3 remainder 4; carry 4", "42 ÷ 7 = 6", "Check: 136 × 7 = 952"], "answer": "136" } },
+        { "heading": "Remainders in context", "bullets": ["Round up: buses, boxes needed", "Round down: whole items you can buy", "Sometimes the remainder is the answer"], "note": "Three questions all with 100 ÷ 30 = 3 r 10.", "table": { "head": ["Question", "Answer", "Why"], "rows": [["100 pupils, coaches seat 30. How many coaches?", "4", "round up: no one is left behind"], ["£100, tickets £30. How many tickets?", "3", "round down: cannot buy part of one"], ["How much money is left?", "£10", "the remainder is the answer"]] } },
+        { "heading": "Dividing by a 2-digit number", "bullets": ["Write out multiples first", "Then use short or long division"], "note": "Example: 846 ÷ 18. Multiples of 18: 18, 36, 54, 72, 90, 108, 126, 144, 162. 84 ÷ 18 = 4 r 12; 126 ÷ 18 = 7. Answer 47." },
+        { "heading": "Remainder slip", "bullets": ["A remainder is not a decimal digit"], "note": "Explain why 3 r 2 for 17 ÷ 5 is 3.4, not 3.2.", "misconception": { "wrong": "17 ÷ 5 = 3 r 2 = 3.2", "right": "17 ÷ 5 = 3 r 2 = 3 and 2/5 = 3.4" } },
+        { "heading": "Check: remainders in context", "bullets": [], "note": "Show me on 3.", "check": { "q": "Eggs come in boxes of 6. How many boxes are needed for 75 eggs?", "options": ["12", "12.5", "13", "12 r 3"], "answer": 2, "why": "75 ÷ 6 = 12 r 3, and the 3 leftover eggs still need a box, so 13. A ignores the remainder." } }
       ],
-      "practice": [
-        "Find the area of a parallelogram with base 12 cm and height 7 cm.",
-        "A parallelogram has area 63 cm² and height 9 cm. Find its base.",
-        "A parallelogram has sides 10 cm and 6 cm and perpendicular height 5 cm to the 10 cm base. Find its area."
-      ],
-      "independent": [
-        "Find the area: base 15 cm, height 8 cm; base 4.5 m, height 3 m; base 20 mm, height 13 mm.",
-        "A parallelogram has area 96 cm² and base 12 cm. Find its height.",
-        "A tile is a parallelogram with base 24 cm and height 10 cm. How many tiles cover 2.4 m²? (1 m² = 10,000 cm²)",
-        "Find the area of a shape made from a parallelogram (base 10 cm, height 4 cm) with a triangle (base 10 cm, height 3 cm) on top."
-      ],
-      "exit": [
-        "Find the area of a parallelogram with base 14 cm and height 6 cm.",
-        "Explain why we do not use the slant side when finding area."
-      ],
-      "homework": "Draw two different parallelograms with the same base and height on squared paper. Show they have the same area.",
-      "send": "SEND: paper cut-outs to rearrange; squared paper. EAL: pre-teach parallel/perpendicular. Stretch: prove the triangle formula from the parallelogram formula."
+      "practice": ["Work out 784 ÷ 4", "Work out 1236 ÷ 6", "A minibus seats 14. How many minibuses for 100 pupils?"],
+      "independent": ["Core: Work out (a) 945 ÷ 5 (b) 2448 ÷ 8 (c) 3129 ÷ 7", "Extend: £500 is shared equally between 12 charities to the nearest penny. How much does each get, and how much is left over?", "Stretch: Work out 4352 ÷ 17 using a list of multiples, and check your answer by multiplying."],
+      "exit": ["Work out 672 ÷ 3.", "Pencils come in packs of 8. How many packs give 50 pencils?", "Check 736 ÷ 8 = 92 using multiplication."],
+      "homework": "Plan a trip for 135 people with coaches of 52 seats and tickets of £14: how many coaches, total ticket cost and cost per person if the coaches cost £780 in total.",
+      "send": "Support: multiples list provided for each divisor. Stretch: long division with decimals."
     },
     {
-      "unit": "Unit 3: Perimeter and area",
+      "unit": "Unit 2: Number skills",
       "n": 13,
-      "title": "Area of a trapezium",
+      "title": "Calculating with money and time",
       "duration": 50,
-      "objectives": [
-        "Use the formula A = ½(a + b)h for a trapezium",
-        "Find a missing length from the area"
-      ],
+      "bigQuestion": "Why do people get time calculations wrong when they use a calculator?",
+      "objectives": ["Round money to the nearest pound or penny", "Calculate with money in pounds and pence", "Calculate time intervals and convert between hours and minutes"],
+      "successCriteria": ["Add and subtract money and give change", "Work out durations across the hour", "Interpret calculator answers for money and time correctly"],
+      "crossCurricular": "Islamic Studies: salah timetables; Business: costs and profit",
+      "smsc": "Moral: honesty with money; spiritual: valuing time (al-'Asr)",
       "keywords": [
-        { "term": "trapezium", "def": "a four-sided shape with one pair of parallel sides" },
-        { "term": "parallel sides", "def": "sides that stay the same distance apart" },
-        { "term": "perpendicular height", "def": "the distance between the parallel sides at right angles" }
+        { "term": "pence", "def": "100 pence make £1" },
+        { "term": "duration", "def": "how long something lasts" },
+        { "term": "24-hour clock", "def": "times written from 00:00 to 23:59" },
+        { "term": "interval", "def": "the time between two times" }
       ],
-      "starter": [
-        "Say Bismillah. Work out ½ x (6 + 10) x 4.",
-        "Find the area of a parallelogram with base 8 cm and height 5 cm.",
-        "Find the area of a triangle with base 10 cm and height 4 cm."
-      ],
+      "starter": ["Work out 425 ÷ 5", "How many minutes in 1 hour?", "Round 3.47 to the nearest whole number", "Write 6:30 pm in the 24-hour clock"],
       "teach": [
-        {
-          "heading": "Two copies make a parallelogram",
-          "bullets": [
-            "Rotate a copy of the trapezium and join it.",
-            "The base is a + b; the height is h.",
-            "Parallelogram area = (a + b) x h."
-          ],
-          "note": "Demonstrate with paper trapezia. The trapezium is half of the parallelogram, which gives the formula."
-        },
-        {
-          "heading": "The formula",
-          "bullets": [
-            "Area = ½ x (a + b) x h.",
-            "a and b are the parallel sides.",
-            "h is the perpendicular height between them."
-          ],
-          "note": "Common errors: using the slant side as h, or forgetting the half. Mark a, b and h in different colours."
-        },
-        {
-          "heading": "Worked examples",
-          "bullets": [
-            "Sides 6, 10, height 4: A = ½ x 16 x 4 = 32.",
-            "Sides 8, 14, height 5: A = ½ x 22 x 5 = 55.",
-            "Always brackets first."
-          ],
-          "note": "Show the working in lines: add the parallel sides, halve, then multiply by the height. 22 ÷ 2 = 11, 11 x 5 = 55."
-        },
-        {
-          "heading": "Missing height",
-          "bullets": [
-            "Area 54 cm², parallel sides 7 and 11.",
-            "½ x 18 x h = 9h = 54.",
-            "Height h = 6 cm."
-          ],
-          "note": "Check: ½ x (7 + 11) x 6 = 9 x 6 = 54. Ask pupils to create their own trapezium with area 40 cm²."
-        }
+        { "heading": "Money on a calculator", "bullets": ["4.5 on a calculator means £4.50", "Always write money with 2 decimal places", "Round to the nearest penny"], "note": "Ask: 'A calculator shows 12.3. How do you write that in pounds?' (£12.30). Show 7.456 → £7.46." },
+        { "heading": "Time is not decimal", "bullets": ["60 minutes in an hour, not 100", "2.5 hours = 2 hours 30 minutes", "1.3 hours is not 1 hour 30 minutes"], "note": "This is the single biggest error in time questions.", "misconception": { "wrong": "1.3 hours = 1 hour 30 minutes", "right": "0.3 × 60 = 18, so 1.3 hours = 1 hour 18 minutes" } },
+        { "heading": "Counting on to find a duration", "bullets": ["Count to the next hour", "Then whole hours", "Then the minutes"], "note": "Model with a number line, linking to salah times.", "model": { "problem": "Dhuhr is at 12:47. Asr is at 15:22. How long is it between them?", "steps": ["12:47 to 13:00 = 13 minutes", "13:00 to 15:00 = 2 hours", "15:00 to 15:22 = 22 minutes", "Total: 2 hours + 13 + 22 minutes"], "answer": "2 hours 35 minutes" } },
+        { "heading": "Shopping problems", "bullets": ["Total the costs", "Change = money given − total", "Check with an estimate"], "note": "Example: 3 notebooks at £1.85 and a pen at 99p. 3 × 1.85 = 5.55, + 0.99 = £6.54. Change from £10 = £3.46." },
+        { "heading": "Check: time", "bullets": [], "note": "Show me on 3.", "check": { "q": "A film starts at 18:45 and lasts 1 hour 50 minutes. When does it end?", "options": ["19:95", "20:35", "20:95", "19:35"], "answer": 1, "why": "18:45 + 1 h = 19:45, + 50 min = 20:35. A and C treat minutes as decimals." } }
       ],
-      "practice": [
-        "Find the area of a trapezium with parallel sides 5 cm and 9 cm and height 6 cm.",
-        "Find the area with parallel sides 12 cm and 18 cm and height 10 cm.",
-        "A trapezium has area 48 cm², parallel sides 5 cm and 7 cm. Find its height."
-      ],
-      "independent": [
-        "Find the area: sides 4 and 10, height 5; sides 9 and 15, height 8; sides 3.5 and 6.5, height 4.",
-        "A field is a trapezium with parallel sides 60 m and 100 m and distance 40 m between them. Find its area.",
-        "A trapezium has area 70 cm² and height 7 cm. One parallel side is 6 cm. Find the other.",
-        "Choose the correct formula and find each area: rectangle 9 cm by 4 cm; triangle base 10 cm, height 6 cm; parallelogram base 7 cm, height 5 cm; trapezium sides 4 cm and 8 cm, height 3 cm."
-      ],
-      "exit": [
-        "Find the area of a trapezium with parallel sides 8 cm and 12 cm and height 5 cm.",
-        "A trapezium has area 36 cm² and height 4 cm. The sum of the parallel sides is?"
-      ],
-      "homework": "Find a trapezium in the real world (a bag, a table end, a roof) and estimate its area using the formula.",
-      "send": "SEND: formula cards with colour-coded a, b and h. EAL: pre-teach trapezium/parallel. Stretch: split a trapezium into a rectangle and two triangles and verify the formula."
+      "practice": ["Write 3.7 on a calculator as money", "How long is it from 09:35 to 11:10?", "Find the change from £20 for items costing £4.65 and £7.89"],
+      "independent": ["Core: (a) Convert 2.25 hours to hours and minutes (b) How long from 07:48 to 13:15? (c) 4 drinks at £1.35: total and change from £10", "Extend: A train leaves at 16:52 and arrives at 19:07. Another leaves at 17:15 and takes 1 hour 58 minutes. Which arrives first, and by how many minutes?", "Stretch: Ramadan fast: suhoor ends at 04:12 and iftar is at 20:48. Work out the length of the fast in hours and minutes, and as a decimal number of hours to 2 dp."],
+      "exit": ["Write 1.75 hours in hours and minutes.", "How long from 10:40 to 12:15?", "Round £6.348 to the nearest penny."],
+      "homework": "Use today's salah timetable to work out the time between each prayer and the next.",
+      "send": "Support: blank time number lines. EAL: time vocabulary with clocks. Stretch: timetable puzzles with changes."
     },
     {
-      "unit": "Unit 4: Negative numbers",
+      "unit": "Unit 2: Number skills",
       "n": 14,
-      "title": "The number line, ordering and adding with negatives",
+      "title": "Negative numbers",
       "duration": 50,
-      "objectives": [
-        "Order positive and negative numbers using inequality symbols",
-        "Add and subtract positive numbers from negative numbers"
-      ],
+      "bigQuestion": "Can a temperature fall below nothing?",
+      "objectives": ["Order positive and negative numbers", "Add and subtract with negative numbers using a number line", "Solve problems with temperature and money"],
+      "successCriteria": ["Order a list including negative numbers", "Add and subtract with negatives, using a number line", "Explain why subtracting a negative is the same as adding"],
+      "crossCurricular": "Geography: temperatures and sea level; Science: freezing points",
+      "smsc": "Cultural: climates of different countries, from Norway to Saudi Arabia",
       "keywords": [
         { "term": "negative number", "def": "a number less than zero" },
-        { "term": "inequality", "def": "a statement using < or > to compare numbers" },
-        { "term": "directed number", "def": "a number with a positive or negative sign" }
+        { "term": "integer", "def": "a whole number, positive, negative or zero" },
+        { "term": "number line", "def": "a line with numbers in order, used to calculate" },
+        { "term": "difference", "def": "how far apart two numbers are" }
       ],
-      "starter": [
-        "Say Bismillah. Which is colder: -6 degrees or -2 degrees?",
-        "Work out 5 - 8.",
-        "Order smallest first: 3, -1, 0, -7."
-      ],
+      "starter": ["Work out 15 − 9", "How long from 14:50 to 16:05?", "Which is bigger: 0 or 3?", "Write 2.5 hours in hours and minutes"],
       "teach": [
-        {
-          "heading": "Ordering negatives",
-          "bullets": [
-            "Order -7, 3, -2, 0, -10, 5.",
-            "-10 < -7 < -2 < 0 < 3 < 5.",
-            "The further left on the number line, the smaller."
-          ],
-          "note": "Draw the number line from -10 to 10. Misconception: -10 is bigger than -2 because 10 > 2. Use temperatures or debts: owing £10 is worse than owing £2."
-        },
-        {
-          "heading": "Adding positives",
-          "bullets": [
-            "Move right on the number line.",
-            "-3 + 5 = 2.",
-            "-7 + 4 = -3."
-          ],
-          "note": "Count on from the negative number: -3, -2, -1, 0, 1, 2. For -7 + 4 we land at -3, still negative. Use a thermometer to model."
-        },
-        {
-          "heading": "Subtracting positives",
-          "bullets": [
-            "Move left on the number line.",
-            "2 - 6 = -4.",
-            "-4 - 3 = -7."
-          ],
-          "note": "Subtracting makes the number smaller. Use a bank account balance: balance -£40 and a payment of £25 makes -£65, and a deposit of £25 makes -£15."
-        },
-        {
-          "heading": "Contexts",
-          "bullets": [
-            "Balance -£40, deposit £25: -£15.",
-            "Lift at floor -2 goes up 6: floor 4.",
-            "Temperature 3 falls 8: -5."
-          ],
-          "note": "Ask pupils to write the calculation each time: -40 + 25 = -15; -2 + 6 = 4; 3 - 8 = -5. Stress saying the calculation in words."
-        }
+        { "heading": "Ordering negatives", "bullets": ["Further left = smaller", "−8 is smaller than −3", "Zero is neither positive nor negative"], "note": "Use a vertical thermometer. Ask: 'Which is colder, −8 °C or −3 °C?'", "misconception": { "wrong": "−8 is bigger than −3 because 8 > 3", "right": "−8 < −3: it is further below zero" } },
+        { "heading": "Adding and subtracting on a line", "bullets": ["Start at the first number", "+ move right, − move left"], "note": "Model on a number line.", "model": { "problem": "The temperature is −4 °C. It rises 9 °C, then falls 7 °C. What is it now?", "steps": ["Start at −4", "Rise 9: −4 + 9 = 5", "Fall 7: 5 − 7 = −2"], "answer": "−2 °C" } },
+        { "heading": "Subtracting a negative", "bullets": ["Taking away a debt makes you richer", "5 − (−3) = 5 + 3 = 8", "Two signs next to each other: same → +, different → −"], "note": "Story: Yusuf owes £3 (−3). If that debt is cancelled (taken away), he is £3 better off. So subtracting −3 adds 3.", "table": { "head": ["Calculation", "Becomes", "Answer"], "rows": [["6 + (−2)", "6 − 2", "4"], ["6 − (−2)", "6 + 2", "8"], ["−6 − 2", "−6 − 2", "−8"], ["−6 − (−2)", "−6 + 2", "−4"]] } },
+        { "heading": "Finding a difference", "bullets": ["Count the gap on the number line", "Difference between −5 and 7 is 12"], "note": "Ask: 'The temperature in Moscow is −11 °C and in Riyadh 24 °C. What is the difference?' (35 °C)" },
+        { "heading": "Check: negatives", "bullets": [], "note": "Show me on 3.", "check": { "q": "Work out −3 − (−8)", "options": ["−11", "5", "−5", "11"], "answer": 1, "why": "−3 − (−8) = −3 + 8 = 5. A ignores the double negative; C reverses the subtraction." } }
       ],
-      "practice": [
-        "Put in order, smallest first: 5, -8, 0, -3, 2, -6.",
-        "Work out: -2 + 9; 4 - 7; -5 - 3.",
-        "The temperature is -4 degrees and rises by 11 degrees. What is it now?"
-      ],
-      "independent": [
-        "Write < or > : -9 ___ -4; -2 ___ -20; 0 ___ -1.",
-        "Work out: -8 + 3; -6 + 10; 5 - 12; -9 - 4; -15 + 15.",
-        "A submarine is at -120 m, rises 45 m, then dives 70 m. Where is it now?",
-        "Find the missing numbers: -5 + ? = 8; 3 - ? = -4; ? + 9 = 2."
-      ],
-      "exit": [
-        "Work out -6 + 10 and 4 - 9.",
-        "Write < or > : -3 ___ -8."
-      ],
-      "homework": "Record the overnight temperatures for a week using a weather website (some places will be negative) and order them.",
-      "send": "SEND: number line on desk, counters for jumps. EAL: pre-teach negative/rise/fall. Stretch: add and subtract decimals such as -2.5 + 1.75."
+      "practice": ["Order: 4, −7, 0, −2, 9, −10", "Work out −5 + 8 and 3 − 9", "Work out 7 − (−4)", "Find the difference between −6 and 5"],
+      "independent": ["Core: Work out (a) −8 + 3 (b) −2 − 6 (c) 4 − (−5) (d) −7 + (−3)", "Extend: A diver is at −18 m. She rises 7 m, then dives 12 m. Where is she? How far is she from a boat at +2 m?", "Stretch: Fill in the missing numbers: ? − (−4) = −1; −6 + ? = −13; ? − 9 = −15. Make up a puzzle like this for a partner."],
+      "exit": ["Which is smaller, −9 or −4?", "Work out −2 − 5.", "Work out 3 − (−6)."],
+      "homework": "Find the minimum temperatures of five cities around the world today, order them and find the difference between the warmest and coldest.",
+      "send": "Support: vertical number line on every question. Stretch: multiplying negatives (preview)."
     },
     {
-      "unit": "Unit 4: Negative numbers",
+      "unit": "Unit 2: Number skills",
       "n": 15,
-      "title": "Adding and subtracting negative numbers",
+      "title": "Factors, multiples and primes",
       "duration": 50,
-      "objectives": [
-        "Add and subtract negative numbers",
-        "Explain the rule for subtracting a negative"
-      ],
+      "bigQuestion": "Why are prime numbers called the 'building blocks' of all numbers?",
+      "objectives": ["Find all the factor pairs of a whole number", "List multiples and find the lowest common multiple", "Identify prime numbers up to 100"],
+      "successCriteria": ["List factors and multiples of a number", "Find the HCF and LCM of two numbers by listing", "Explain why 1 is not prime and why 2 is the only even prime"],
+      "crossCurricular": "Computing: primes in encryption; Art: patterns in arrays",
+      "smsc": "Spiritual: wonder at patterns in numbers that people still study today",
       "keywords": [
-        { "term": "negative", "def": "less than zero" },
-        { "term": "double negative", "def": "two minus signs in a row, which make a plus" },
-        { "term": "zero pair", "def": "a +1 and -1 together, which make 0" }
+        { "term": "factor", "def": "a number that divides exactly into another number" },
+        { "term": "multiple", "def": "the result of multiplying a number by a whole number" },
+        { "term": "prime number", "def": "a number with exactly two factors: 1 and itself" },
+        { "term": "highest common factor (HCF)", "def": "the largest factor shared by two numbers" },
+        { "term": "lowest common multiple (LCM)", "def": "the smallest multiple shared by two numbers" }
       ],
-      "starter": [
-        "Say Bismillah. Work out -3 + 8 and 4 - 9.",
-        "Write < or > : -5 ___ -12.",
-        "Work out 7 - 7."
-      ],
+      "starter": ["Work out −4 + 9", "Work out 6 × 8", "Is 51 ÷ 3 a whole number?", "List the first five multiples of 7"],
       "teach": [
-        {
-          "heading": "Adding a negative",
-          "bullets": [
-            "3 + (-5) means add -5.",
-            "It has the same effect as 3 - 5.",
-            "3 + (-5) = -2."
-          ],
-          "note": "Think of debts: if you have £3 and then take on a debt of £5, you are £2 in debt. Draw the number line: add a negative means move left."
-        },
-        {
-          "heading": "Subtracting a negative",
-          "bullets": [
-            "5 - (-3) means take away a debt of 3.",
-            "Taking away a negative makes you better off.",
-            "5 - (-3) = 5 + 3 = 8."
-          ],
-          "note": "Use zero pairs with counters: to take away -3 from 5, add zero pairs until three negatives can be removed. Or temperature difference: from -3 up to 5 is 8 degrees."
-        },
-        {
-          "heading": "The signs rule",
-          "bullets": [
-            "Two same signs in a row make +.",
-            "Two different signs in a row make -.",
-            "Simplify the signs, then calculate."
-          ],
-          "note": "Examples: -4 - (-6) = -4 + 6 = 2; 3 + (-5) = -2; -2 - (-2) = 0. Ask pupils to describe each step in words."
-        },
-        {
-          "heading": "Temperature difference",
-          "bullets": [
-            "Highest 7 degrees, lowest -5 degrees.",
-            "Difference = 7 - (-5).",
-            "7 + 5 = 12 degrees."
-          ],
-          "note": "Link to the distance across zero from last year. Both methods give 12. Ask: why do we get a bigger answer when subtracting a negative?"
-        }
+        { "heading": "Factor pairs", "bullets": ["Work in pairs from 1 upwards", "Stop when the pairs meet", "Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36"], "note": "Show the 'rainbow' method linking pairs. Ask: 'Why does 36 have an odd number of factors?' (6 × 6: a square number.)", "model": { "problem": "Find all the factors of 48", "steps": ["1 × 48", "2 × 24", "3 × 16", "4 × 12", "6 × 8 (5 is not a factor; the next would be 8 × 6, so stop)"], "answer": "1, 2, 3, 4, 6, 8, 12, 16, 24, 48" } },
+        { "heading": "Prime numbers", "bullets": ["Exactly two factors", "1 is not prime: it has one factor", "2 is the only even prime"], "note": "Mention the Sieve of Eratosthenes and that the search for very large primes continues today. List primes to 50: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47.", "misconception": { "wrong": "1 is a prime number", "right": "1 has only one factor, so it is not prime" } },
+        { "heading": "HCF and LCM by listing", "bullets": ["HCF: list factors, find the biggest shared", "LCM: list multiples, find the smallest shared"], "note": "Model with 12 and 18. Ask: 'Which one will be bigger, the HCF or LCM?'", "compare": { "left": { "title": "HCF of 12 and 18", "points": ["12: 1, 2, 3, 4, 6, 12", "18: 1, 2, 3, 6, 9, 18", "HCF = 6"] }, "right": { "title": "LCM of 12 and 18", "points": ["12: 12, 24, 36, 48", "18: 18, 36, 54", "LCM = 36"] } } },
+        { "heading": "Using HCF and LCM", "bullets": ["Sharing into equal groups: HCF", "When things happen together again: LCM"], "note": "Problem: One light flashes every 12 seconds, another every 18 seconds. They flash together now. When next? (LCM = 36 s.)" },
+        { "heading": "Check: primes", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which of these is a prime number?", "options": ["21", "27", "29", "39"], "answer": 2, "why": "29 has only factors 1 and 29. 21 = 3 × 7, 27 = 3 × 9, 39 = 3 × 13." } }
       ],
-      "practice": [
-        "Work out 6 + (-2) and 6 - (-2).",
-        "Work out -4 - (-9).",
-        "Work out -3 + (-5)."
-      ],
-      "independent": [
-        "Work out: 8 + (-3); -7 + (-2); 5 - (-4); -6 - (-6); -10 - (-3).",
-        "Highest 9 degrees and lowest -13 degrees. Find the difference.",
-        "Fill in with + or -: 4 ___ (-3) = 7; -2 ___ (-5) = -7; -8 ___ (-1) = -7.",
-        "Work out -2 - (-5) + (-4) - 3."
-      ],
-      "exit": [
-        "Work out 3 - (-7).",
-        "Work out -5 + (-4)."
-      ],
-      "homework": "Write six calculations with double signs, such as 7 - (-2), solve them and describe each in words.",
-      "send": "SEND: coloured counters for positive and negative; zero pairs. EAL: say 'minus negative'. Stretch: decimals and fractions."
+      "practice": ["List all the factors of 30", "Write the first six multiples of 8", "Which numbers between 30 and 40 are prime?", "Find the HCF and LCM of 8 and 12"],
+      "independent": ["Core: (a) Factors of 60 (b) the HCF of 24 and 36 (c) the LCM of 6 and 10", "Extend: Bread rolls come in packs of 8 and burgers in packs of 6. What is the smallest number of each you can buy to have the same number?", "Stretch: Find a number between 50 and 100 with exactly 3 factors. What do all numbers with exactly 3 factors have in common?"],
+      "exit": ["List the factors of 20.", "Is 17 prime? Explain.", "Find the LCM of 4 and 6."],
+      "homework": "Find all the prime numbers between 1 and 100 using the Sieve of Eratosthenes, and count how many there are.",
+      "send": "Support: multiplication square to find factors. Stretch: perfect numbers (6, 28)."
     },
     {
-      "unit": "Unit 4: Negative numbers",
+      "unit": "Unit 2: Number skills",
       "n": 16,
-      "title": "Multiplying and dividing negative numbers",
+      "title": "Square numbers and square roots",
       "duration": 50,
-      "objectives": [
-        "Multiply and divide positive and negative numbers",
-        "Carry out mixed calculations with negatives"
-      ],
+      "bigQuestion": "Why are some numbers called 'square'?",
+      "objectives": ["Recognise square numbers up to 15 × 15", "Find square roots of square numbers", "Estimate square roots of other numbers"],
+      "successCriteria": ["Recall square numbers to 144", "Find square roots and use squares in calculations with BIDMAS", "Estimate a square root between two whole numbers"],
+      "crossCurricular": "Art and Design: square tiling patterns in Islamic art; Geography: area of land",
+      "smsc": "Cultural: square geometric patterns in mosques and gardens",
       "keywords": [
-        { "term": "product", "def": "the result of a multiplication" },
-        { "term": "quotient", "def": "the result of a division" },
-        { "term": "like signs", "def": "two numbers with the same sign (both + or both -)" },
-        { "term": "unlike signs", "def": "two numbers with different signs" }
+        { "term": "square number", "def": "the result of multiplying a whole number by itself" },
+        { "term": "squared", "def": "multiplied by itself, written as a small 2, e.g. 5²" },
+        { "term": "square root", "def": "the number that was squared, written √" },
+        { "term": "estimate", "def": "a sensible approximate answer" }
       ],
-      "starter": [
-        "Say Bismillah. Work out 5 - (-2) and -6 + (-3).",
-        "Work out 3 x 4 and 12 ÷ 3.",
-        "Continue the pattern: 3 x 2 = 6, 2 x 2 = 4, 1 x 2 = 2, 0 x 2 = ..."
-      ],
+      "starter": ["Is 37 prime?", "Find the HCF of 12 and 20", "Work out 9 × 9", "Work out 5 + 3 × 2"],
       "teach": [
-        {
-          "heading": "A pattern to follow",
-          "bullets": [
-            "3×(-2) = -6; 2×(-2) = -4; 1×(-2) = -2.",
-            "0 x (-2) = 0.",
-            "-1 x (-2) = 2 follows the pattern."
-          ],
-          "note": "Each step the answer goes up by 2. Continue: (-2) x (-2) = 4. This convinces pupils that two negatives give a positive, not just a rule to memorise."
-        },
-        {
-          "heading": "The rule for multiplying",
-          "bullets": [
-            "Like signs give a positive answer.",
-            "Unlike signs give a negative answer.",
-            "(-3) x 4 = -12 and (-3) x (-4) = 12."
-          ],
-          "note": "Check -3 x 4 as repeated addition: -3 + -3 + -3 + -3 = -12. Summary: positive x positive = positive; negative x negative = positive; mixed = negative."
-        },
-        {
-          "heading": "Dividing the same way",
-          "bullets": [
-            "20 ÷ (-5) = -4.",
-            "(-18) ÷ (-6) = 3.",
-            "Division follows the same sign rule."
-          ],
-          "note": "Link to multiplication: -4 x -5 = 20 so 20 ÷ (-5) = -4. Missing number: ? x (-4) = 28 gives ? = -7."
-        },
-        {
-          "heading": "Mixed calculations",
-          "bullets": [
-            "(-5) x 3 - 4 = -15 - 4 = -19.",
-            "(-8 + 2) x (-3) = (-6) x (-3) = 18.",
-            "Use BIDMAS: brackets, then multiply."
-          ],
-          "note": "Common error: thinking (-3) x (-3) is -9. Like signs give a positive, so it is 9."
-        }
+        { "heading": "What makes a number square", "bullets": ["Dots arranged in a square", "1, 4, 9, 16, 25, 36, 49…", "n² means n × n"], "note": "Show dot squares for 1, 4, 9, 16. Ask: 'What do you add each time?' (3, 5, 7: the odd numbers.)", "misconception": { "wrong": "6² = 12", "right": "6² = 6 × 6 = 36" } },
+        { "heading": "Square roots", "bullets": ["√ undoes squaring", "√49 = 7 because 7² = 49", "Square and square root are inverses"], "note": "Practise quick-fire: √81, √121, √144.", "table": { "head": ["n", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], "rows": [["n²", "1", "4", "9", "16", "25", "36", "49", "64", "81", "100", "121", "144"]] } },
+        { "heading": "Estimating a square root", "bullets": ["Find the square numbers either side", "√50 is between 7 and 8", "It is closer to 7 because 50 is close to 49"], "note": "Model on a number line.", "model": { "problem": "Estimate √90 to 1 decimal place", "steps": ["81 < 90 < 100, so 9 < √90 < 10", "90 is just under halfway from 81 to 100", "Try 9.5² = 90.25: just too big", "Try 9.4² = 88.36: too small, so √90 ≈ 9.5"], "answer": "√90 ≈ 9.5 (calculator: 9.486…)" } },
+        { "heading": "Squares with BIDMAS", "bullets": ["Indices come before × and ÷", "(3 + 4)² is not 3² + 4²"], "note": "Work out (3 + 4)² = 49 and 3² + 4² = 25. Ask why they are different." },
+        { "heading": "Check: square roots", "bullets": [], "note": "Show me on 3.", "check": { "q": "Between which two whole numbers is √30?", "options": ["15 and 16", "5 and 6", "4 and 5", "29 and 31"], "answer": 1, "why": "25 < 30 < 36, so √30 is between 5 and 6. A halves 30; D confuses the root with the number." } }
       ],
-      "practice": [
-        "Work out: 6 x (-3); (-4) x (-5); (-24) ÷ 6.",
-        "Work out: (-36) ÷ (-9) and 15 ÷ (-3).",
-        "Find the missing number: ? x (-6) = 42."
-      ],
-      "independent": [
-        "Work out: (-7) x 4; (-8) x (-3); 45 ÷ (-9); (-56) ÷ (-7); (-2) x 5 x (-3).",
-        "Work out: (-4) x 3 + 5; 10 - 2 x (-6); (-12 + 4) x (-2).",
-        "Fill in the missing numbers: (-5) x ? = 35; ? ÷ (-4) = -9; (-3) x ? = -27.",
-        "Explain in your own words why (-3) x (-4) = 12, using a pattern."
-      ],
-      "exit": [
-        "Work out (-6) x (-7) and (-48) ÷ 8.",
-        "Work out (-2) x 9 + 3."
-      ],
-      "homework": "Make a one-page summary of the sign rules for all four operations with a worked example of each.",
-      "send": "SEND: sign-rule card and the multiplication pattern table. EAL: say 'negative times negative equals positive' together. Stretch: powers of negative numbers such as (-2)³."
+      "practice": ["Write down the first 12 square numbers", "Work out √64 and √144", "Work out 3² + 4²", "Estimate √20"],
+      "independent": ["Core: Work out (a) 13² (b) √169 (c) 2 × 5² (d) (2 × 5)²", "Extend: A square garden has an area of 200 m². Estimate the length of one side to 1 decimal place.", "Stretch: Find two square numbers that add up to another square number (e.g. 9 + 16 = 25). Find two more examples."],
+      "exit": ["What is 11²?", "What is √100?", "Between which two whole numbers is √70?"],
+      "homework": "Learn the squares from 1² to 15² and their square roots; test yourself in a 2-minute challenge.",
+      "send": "Support: squares table on screen. Stretch: cube numbers and cube roots."
     }
   ]
 }

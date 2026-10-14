@@ -1,752 +1,243 @@
 {
   "subject": "Mathematics",
   "year": "y11",
-  "board": "Edexcel GCSE (1MA1)",
-  "source": "Drive: Maths folder (SoW Maths, GCSE Maths folder and revision materials); Edexcel GCSE Mathematics (1MA1) specification, Higher tier content",
+  "board": "Pearson Edexcel International GCSE (9–1) Mathematics A (4MA1), Higher tier",
+  "boardShort": "Edexcel IGCSE 4MA1 Higher",
+  "source": "School Maths folder: Pearson International GCSE Mathematics A (4MA1) two-year Scheme of Work, Higher course order (Unit 16 Harder graphs and transformations of graphs; Unit 17 Simultaneous equations); 2024 4MA1 Paper 1H for exam style; INSET lesson standard.",
   "lessons": [
     {
-      "unit": "Unit 1: Higher algebra and number",
+      "unit": "Unit 16: Harder graphs and transformations of graphs",
       "n": 1,
-      "title": "Completing the square",
+      "title": "Quadratic graphs: roots, turning points and symmetry",
       "duration": 50,
-      "objectives": [
-        "Write x² + bx + c in the form (x + p)² + q",
-        "Complete the square when the coefficient of x² is not 1",
-        "Check answers by expanding"
-      ],
+      "bigQuestion": "What can the shape of a quadratic graph tell us without plotting every point?",
+      "objectives": ["Plot quadratic graphs from a table of values", "Identify roots, y-intercept, turning point and line of symmetry", "Use a graph to solve a quadratic equation"],
+      "successCriteria": ["Complete a table and plot y = x² − 2x − 3", "Read roots, turning point and line of symmetry from the graph", "Find the turning point by completing the square and compare with the graph"],
+      "crossCurricular": "Physics: the path of a projectile; Business: maximising profit",
+      "smsc": "Spiritual: the symmetry in the arc of a thrown ball, water from a fountain",
       "keywords": [
-        {
-          "term": "completing the square",
-          "def": "rewriting a quadratic in the form (x + p)² + q"
-        },
-        {
-          "term": "perfect square",
-          "def": "an expression that is a bracket squared, such as (x + 3)²"
-        },
-        {
-          "term": "coefficient",
-          "def": "the number in front of a letter"
-        }
+        { "term": "parabola", "def": "the U-shaped curve of a quadratic graph" },
+        { "term": "root", "def": "where the graph crosses the x-axis: a solution of y = 0" },
+        { "term": "turning point", "def": "the minimum or maximum point of the curve" },
+        { "term": "line of symmetry", "def": "the vertical line through the turning point" }
       ],
-      "starter": [
-        "Bismillah. Expand (x + 3)².",
-        "Expand (x − 5)².",
-        "Work out 6 ÷ 2 and (−8) ÷ 2."
-      ],
+      "starter": ["Bismillah. Factorise x² − 2x − 3", "Evaluate x² − 2x − 3 when x = −2", "Solve (x − 3)(x + 1) = 0", "What is the y-intercept of y = 2x + 5?"],
       "teach": [
-        {
-          "heading": "Why completing the square?",
-          "bullets": [
-            "Writes a quadratic using one x only.",
-            "Shows the turning point.",
-            "Solves equations that do not factorise."
-          ],
-          "note": "Recall that (x + 3)² = x² + 6x + 9. So x² + 6x is 'nearly' a perfect square: it needs +9. Draw an x by x square plus two 3 by x rectangles; the missing corner is 3 by 3."
-        },
-        {
-          "heading": "The method",
-          "bullets": [
-            "Halve the coefficient of x.",
-            "x² + 6x + 7 = (x + 3)² − 9 + 7.",
-            "= (x + 3)² − 2."
-          ],
-          "note": "Write (x + 3)² and then subtract the extra 9 that the bracket creates. Check by expanding: (x + 3)² − 2 = x² + 6x + 9 − 2 = x² + 6x + 7 ✓."
-        },
-        {
-          "heading": "Negative middle term",
-          "bullets": [
-            "x² − 8x + 3 = (x − 4)² − 16 + 3.",
-            "= (x − 4)² − 13.",
-            "The bracket sign matches the sign of b."
-          ],
-          "note": "Half of −8 is −4. Subtract 16, not −16. Check at x = 0: left 3; right 16 − 13 = 3 ✓. Misconception: writing (x − 4)² + 13."
-        },
-        {
-          "heading": "Odd coefficient",
-          "bullets": [
-            "x² + 5x = (x + 5/2)² − 25/4.",
-            "Half of 5 is 2.5 or 5/2.",
-            "(5/2)² = 25/4."
-          ],
-          "note": "Fractions are fine. Alternative decimal form: (x + 2.5)² − 6.25. Ask: why is the subtracted amount always the square of the halved number?"
-        },
-        {
-          "heading": "Coefficient of x² not 1 (Higher)",
-          "bullets": [
-            "2x² + 12x + 5: factor 2 from the x terms.",
-            "= 2(x² + 6x) + 5 = 2[(x + 3)² − 9] + 5.",
-            "= 2(x + 3)² − 13."
-          ],
-          "note": "Take out the 2 from x² and x terms only, complete the square inside, then multiply the −9 by 2: −18 + 5 = −13. Check at x = 0: 2 × 9 − 13 = 5 ✓."
-        }
+        { "heading": "Table of values", "bullets": ["Substitute each x carefully", "Use brackets for negative x", "Plot and join with a smooth curve"], "note": "Model on graph paper on screen. Stress: never join with straight lines or a pointed bottom.", "table": { "head": ["x", "−2", "−1", "0", "1", "2", "3", "4"], "rows": [["y = x² − 2x − 3", "5", "0", "−3", "−4", "−3", "0", "5"]] } },
+        { "heading": "Reading key features", "bullets": ["Roots: x = −1 and x = 3", "y-intercept: (0, −3)", "Line of symmetry: x = 1, halfway between the roots", "Turning point: (1, −4), a minimum"], "note": "Ask: 'Why is the line of symmetry halfway between the roots?' Because the parabola is symmetrical." },
+        { "heading": "Turning point by completing the square", "bullets": ["(x + p)² + q has turning point (−p, q)"], "note": "Model.", "model": { "problem": "Find the turning point of y = x² − 2x − 3", "steps": ["Halve the x coefficient: −1", "x² − 2x − 3 = (x − 1)² − 1 − 3", "= (x − 1)² − 4", "Turning point: (1, −4)"], "answer": "(1, −4), matching the graph" } },
+        { "heading": "Sign error with negative x", "bullets": ["(−2)² is +4"], "note": "Most table errors come from this.", "misconception": { "wrong": "x = −2: x² − 2x − 3 = −4 + 4 − 3 = −3", "right": "(−2)² − 2(−2) − 3 = 4 + 4 − 3 = 5" } },
+        { "heading": "Check: features", "bullets": [], "note": "Show me on 3.", "check": { "q": "A parabola has roots at x = −4 and x = 2. What is its line of symmetry?", "options": ["x = −2", "x = −1", "x = 1", "x = 3"], "answer": 1, "why": "Halfway between −4 and 2: (−4 + 2)/2 = −1. A halves −4; C uses (4 − 2)/2." } }
       ],
-      "practice": [
-        "Write x² + 10x + 3 in the form (x + a)² + b.",
-        "Write x² − 4x + 9 in the form (x + a)² + b.",
-        "Write x² + 3x + 1 in the form (x + a)² + b."
-      ],
-      "independent": [
-        "Complete the square: x² + 12x + 40 and x² − 6x − 7.",
-        "Complete the square: x² − x + 1.",
-        "Higher: write 3x² − 12x + 5 in the form a(x + p)² + q."
-      ],
-      "exit": [
-        "Complete the square: x² + 8x + 5.",
-        "Check your answer by expanding."
-      ],
-      "homework": "Complete the square for six quadratics of your choice and check each by expanding.",
-      "send": "SEND/EAL: area model with algebra tiles and a template for (x + p)² + q. Stretch: write 2x² − 8x + 3 in completed-square form."
+      "practice": ["Complete a table for y = x² + x − 6 for −4 ≤ x ≤ 3", "Find the roots from your graph", "Write down the y-intercept and line of symmetry"],
+      "independent": ["Core: Plot y = x² − 4x + 1 for −1 ≤ x ≤ 5. Use it to solve x² − 4x + 1 = 0 to 1 d.p.", "Extend: Write x² − 6x + 5 in the form (x − p)² − q, state the turning point, and sketch the graph showing all intercepts.", "Stretch: A ball's height is h = 20t − 5t². Find when it lands and its maximum height. Show the maximum height using completing the square."],
+      "exit": ["Roots of y = (x − 2)(x + 6)?", "Line of symmetry of that graph?", "Turning point of y = (x + 3)² − 7?"],
+      "homework": "4MA1 Higher graph questions: complete the table, draw the graph and use it to solve two equations.",
+      "send": "Support: tables partly completed. Stretch: maximum-value problems."
     },
     {
-      "unit": "Unit 1: Higher algebra and number",
+      "unit": "Unit 16: Harder graphs and transformations of graphs",
       "n": 2,
-      "title": "Completed square form: solving and turning points",
+      "title": "Cubic and reciprocal graphs",
       "duration": 50,
-      "objectives": [
-        "Solve quadratic equations by completing the square",
-        "Find the turning point of a quadratic graph",
-        "State the line of symmetry"
-      ],
+      "bigQuestion": "Why does the graph of y = 1/x never touch the axes?",
+      "objectives": ["Plot and recognise cubic graphs", "Plot and recognise reciprocal graphs", "Match equations to graph shapes"],
+      "successCriteria": ["Complete tables and plot y = x³ − 3x", "Plot y = 1/x and describe its asymptotes", "Sketch and match graphs of linear, quadratic, cubic and reciprocal functions"],
+      "crossCurricular": "Science: Boyle's law (pressure and volume) is a reciprocal relationship",
+      "smsc": "Spiritual: approaching but never reaching: a picture of infinity",
       "keywords": [
-        {
-          "term": "turning point",
-          "def": "the minimum or maximum point of a quadratic graph"
-        },
-        {
-          "term": "line of symmetry",
-          "def": "the vertical line through the turning point"
-        },
-        {
-          "term": "surd",
-          "def": "a root that cannot be written as an exact fraction, such as √2"
-        }
+        { "term": "cubic", "def": "a function whose highest power is x³" },
+        { "term": "reciprocal", "def": "a function of the form y = k/x" },
+        { "term": "asymptote", "def": "a line the graph gets closer and closer to but never meets" },
+        { "term": "sketch", "def": "a neat graph showing the shape and key points, not to scale" }
       ],
-      "starter": [
-        "Complete the square for x² + 6x + 7.",
-        "Solve (x + 3)² = 2.",
-        "Write √2 to 2 decimal places."
-      ],
+      "starter": ["Evaluate x³ − 3x at x = −2", "Evaluate 1/x at x = 0.5", "Roots of y = x(x − 4)?", "Turning point of y = (x − 1)² + 2?"],
       "teach": [
-        {
-          "heading": "Solving by completing the square",
-          "bullets": [
-            "x² + 6x + 7 = 0 gives (x + 3)² − 2 = 0.",
-            "(x + 3)² = 2, so x + 3 = ±√2.",
-            "x = −3 ± √2."
-          ],
-          "note": "Square-root both sides, remembering ±. In decimals: x = −3 + 1.414 = −1.59 and x = −3 − 1.414 = −4.41 (2 d.p.). Leave answers as surds when asked for an exact answer."
-        },
-        {
-          "heading": "Another example",
-          "bullets": [
-            "x² − 4x − 1 = 0.",
-            "(x − 2)² − 4 − 1 = 0, so (x − 2)² = 5.",
-            "x = 2 ± √5 = 4.24 or −0.24."
-          ],
-          "note": "Check using the quadratic formula: (4 ± √20) ÷ 2 = 2 ± √5 ✓. Compare methods: completing the square always works and gives the formula."
-        },
-        {
-          "heading": "Turning point",
-          "bullets": [
-            "y = (x + p)² + q has turning point (−p, q).",
-            "y = x² − 8x + 3 = (x − 4)² − 13.",
-            "Minimum at (4, −13)."
-          ],
-          "note": "A squared bracket is at least 0, so the smallest value is q when x + p = 0. Note the sign change in p. The line of symmetry is x = 4."
-        },
-        {
-          "heading": "Negative x² term",
-          "bullets": [
-            "y = 5 − 4x − x² = 9 − (x + 2)².",
-            "The bracket term is subtracted, so there is a maximum.",
-            "Maximum at (−2, 9)."
-          ],
-          "note": "Show the steps: −(x² + 4x) + 5 = −[(x + 2)² − 4] + 5 = −(x + 2)² + 9. Check at x = 0: 9 − 4 = 5 ✓. The graph is an upside-down U shape."
-        },
-        {
-          "heading": "Sketching",
-          "bullets": [
-            "Plot the turning point.",
-            "Find the y-intercept: set x = 0.",
-            "Draw a symmetrical curve."
-          ],
-          "note": "For y = x² − 8x + 3: y-intercept 3, turning point (4, −13). The curve crosses the x-axis at 4 ± √13 ≈ 0.39 and 7.61. Ask pupils to check using the quadratic formula."
-        }
+        { "heading": "Cubic graphs", "bullets": ["Positive x³: rises, wiggles, rises", "Up to two turning points", "Up to three roots"], "note": "Plot y = x³ − 3x from x = −2 to 2: y = −2, 2, 0, −2, 2.", "table": { "head": ["x", "−2", "−1", "0", "1", "2"], "rows": [["y = x³ − 3x", "−2", "2", "0", "−2", "2"]] } },
+        { "heading": "Reciprocal graphs", "bullets": ["y = 1/x: two separate branches", "Asymptotes: x = 0 and y = 0", "Cannot divide by zero"], "note": "Answer the big question: x can never be 0, and 1/x is never exactly 0 however large x gets.", "misconception": { "wrong": "y = 1/x passes through (0, 0)", "right": "x = 0 is undefined: the graph never touches the axes" } },
+        { "heading": "Matching shapes", "bullets": ["Recognise the family by its highest power or x in the denominator"], "note": "Display four sketches and match: straight line, U-shape, S-shape, two branches.", "compare": { "left": { "title": "Quadratic y = x²", "points": ["U or ∩ shape", "One turning point", "Line of symmetry"] }, "right": { "title": "Cubic y = x³", "points": ["S-shape", "Up to two turning points", "Rotational symmetry for y = x³"] } } },
+        { "heading": "Check: identify the graph", "bullets": [], "note": "Show me on 3.", "check": { "q": "A graph has two branches, in the first and third quadrants, and never meets the axes. Its equation could be…", "options": ["y = x²", "y = 4/x", "y = x³", "y = −2x"], "answer": 1, "why": "Reciprocal graphs y = k/x with k > 0 lie in quadrants 1 and 3. The others are continuous curves or lines through the origin." } }
       ],
-      "practice": [
-        "Solve x² + 6x − 4 = 0 by completing the square (2 d.p.).",
-        "Find the turning point of y = x² + 10x + 3.",
-        "State the line of symmetry of y = (x − 4)² − 13."
-      ],
-      "independent": [
-        "Solve x² − 8x + 5 = 0 exactly, then to 2 d.p.",
-        "Find the turning point of y = x² − 2x − 5 and state if it is a maximum or minimum.",
-        "Find the maximum value of y = 7 + 6x − x²."
-      ],
-      "exit": [
-        "Write x² + 4x + 9 in the form (x + a)² + b.",
-        "State the turning point of y = x² + 4x + 9."
-      ],
-      "homework": "Sketch the graphs of two quadratics, marking the turning points and intercepts, using completed-square form.",
-      "send": "SEND/EAL: worked example template. Stretch: find the equation of the quadratic with minimum point (3, −2) passing through (0, 7)."
+      "practice": ["Complete a table for y = x³ for −3 ≤ x ≤ 3", "Complete a table for y = 6/x for x = 1, 2, 3, 6", "Sketch y = −1/x"],
+      "independent": ["Core: Plot y = x³ − 4x for −3 ≤ x ≤ 3 and find its roots", "Extend: Plot y = 12/x for 1 ≤ x ≤ 12 and use it to estimate x when y = 5. Check by calculation.", "Stretch: Sketch y = x³ − x² − 6x by factorising first. Show where it crosses the axes."],
+      "exit": ["Name the shape of y = 2x³", "Write the asymptotes of y = 5/x", "Sketch y = x² and y = x³ on the same axes"],
+      "homework": "4MA1 Higher: match ten equations to sketches, and plot one reciprocal graph.",
+      "send": "Support: graph-family cards. Stretch: exponential graphs y = aˣ."
     },
     {
-      "unit": "Unit 1: Higher algebra and number",
+      "unit": "Unit 16: Harder graphs and transformations of graphs",
       "n": 3,
-      "title": "Algebraic fractions",
+      "title": "Using graphs to solve equations",
       "duration": 50,
-      "objectives": [
-        "Simplify algebraic fractions by factorising",
-        "Multiply and divide algebraic fractions",
-        "Add and subtract algebraic fractions"
-      ],
+      "bigQuestion": "How can drawing one straight line solve a hard equation?",
+      "objectives": ["Solve equations using the intersection of two graphs", "Rearrange an equation to find the line to draw", "Estimate solutions from graphs"],
+      "successCriteria": ["Solve x² − 2x − 3 = 0 from a graph", "Solve x² − 2x − 3 = 2 using y = 2", "Find the line to draw to solve x² − 4x + 1 = 0 using the graph of y = x² − 3x"],
+      "crossCurricular": "Science: graphical analysis of experimental data",
+      "smsc": "Spiritual: two different paths meeting at one truth",
       "keywords": [
-        {
-          "term": "algebraic fraction",
-          "def": "a fraction with algebra in the numerator or denominator"
-        },
-        {
-          "term": "cancel",
-          "def": "divide the top and bottom by the same factor"
-        },
-        {
-          "term": "common denominator",
-          "def": "a shared multiple of the denominators"
-        }
+        { "term": "intersection", "def": "the point where two graphs cross" },
+        { "term": "solution", "def": "a value that makes the equation true" },
+        { "term": "estimate", "def": "an approximate reading from a graph" },
+        { "term": "rearrange", "def": "change the form of the equation" }
       ],
-      "starter": [
-        "Simplify 12/18.",
-        "Factorise x² + 5x + 6.",
-        "Factorise x² − 9."
-      ],
+      "starter": ["Where does y = x² − 4 cross the x-axis?", "Solve x² = 9", "Rearrange x² − 3x = 5 to equal zero", "Sketch y = 2"],
       "teach": [
-        {
-          "heading": "Simplifying",
-          "bullets": [
-            "Factorise top and bottom, then cancel.",
-            "(6x² + 3x) ÷ 3x = 2x + 1.",
-            "(x² − 4)/(x + 2) = (x − 2)(x + 2)/(x + 2) = x − 2."
-          ],
-          "note": "Only cancel factors, never terms. Misconception: (x + 3)/3 = x. Test with x = 6: 9/3 = 3, not 6. Cancel brackets only if they are multiplied."
-        },
-        {
-          "heading": "Quadratic fractions",
-          "bullets": [
-            "(x² + 5x + 6)/(x² − 9).",
-            "= (x + 2)(x + 3)/((x + 3)(x − 3)).",
-            "= (x + 2)/(x − 3)."
-          ],
-          "note": "Factorise both numerator and denominator fully. The difference of two squares in the denominator is key. Check with x = 5: the original is (25 + 25 + 6)/(25 − 9) = 56/16 = 3.5 and (x + 2)/(x − 3) = 7/2 = 3.5 ✓."
-        },
-        {
-          "heading": "Multiplying and dividing",
-          "bullets": [
-            "Multiply tops and bottoms after factorising.",
-            "x/(x + 2) × (x + 2)/(x − 1) = x/(x − 1).",
-            "To divide, multiply by the reciprocal."
-          ],
-          "note": "Cancel across numerators and denominators before multiplying. Example for division: (x² − 1)/(x + 3) ÷ (x + 1)/(x + 3) = (x − 1)(x + 1)/(x + 3) × (x + 3)/(x + 1) = x − 1."
-        },
-        {
-          "heading": "Adding and subtracting",
-          "bullets": [
-            "(x + 1)/3 + (x − 2)/4: common denominator 12.",
-            "= (4(x + 1) + 3(x − 2))/12.",
-            "= (7x − 2)/12."
-          ],
-          "note": "Expand the numerators carefully: 4x + 4 + 3x − 6 = 7x − 2. Check with x = 2: 1 + 0 = 1 and 12/12 = 1 ✓."
-        },
-        {
-          "heading": "Different linear denominators",
-          "bullets": [
-            "2/x + 3/(x + 1).",
-            "Common denominator x(x + 1).",
-            "= (2(x + 1) + 3x)/(x(x + 1)) = (5x + 2)/(x(x + 1))."
-          ],
-          "note": "Multiply each fraction by the missing factor. Check with x = 1: 2 + 1.5 = 3.5 and 7/2 = 3.5 ✓. Leave the denominator factorised."
-        }
+        { "heading": "Reading solutions", "bullets": ["f(x) = 0: where the curve meets the x-axis", "f(x) = k: where it meets the line y = k"], "note": "On the y = x² − 2x − 3 graph, draw y = 2. Read x ≈ −1.4 and 3.4." },
+        { "heading": "Finding the line to draw", "bullets": ["Rearrange so one side is the plotted graph", "The other side is the line"], "note": "Model.", "model": { "problem": "The graph of y = x² − 3x is drawn. What line solves x² − 4x + 1 = 0?", "steps": ["We want x² − 3x on the left", "x² − 4x + 1 = 0 → x² − 3x = x − 1", "Draw y = x − 1", "Read the x-values where the line meets the curve"], "answer": "y = x − 1 (solutions x ≈ 0.3 and 3.7)" } },
+        { "heading": "Reading y instead of x", "bullets": ["Solutions are x-values"], "note": "Pupils often give the y-coordinate of the intersection.", "misconception": { "wrong": "Solution: y = 2", "right": "Solutions are the x-coordinates: x ≈ −1.4 and 3.4" } },
+        { "heading": "Check: which line?", "bullets": [], "note": "Show me on 3.", "check": { "q": "The graph of y = x² is drawn. Which line solves x² − 2x − 1 = 0?", "options": ["y = 2x + 1", "y = −2x − 1", "y = 1", "y = 2x − 1"], "answer": 0, "why": "x² = 2x + 1. B has the signs reversed; D gets the constant wrong." } }
       ],
-      "practice": [
-        "Simplify (2x² + 6x)/(4x).",
-        "Simplify (x² − x − 12)/(x² − 16).",
-        "Add (x + 2)/3 + (x − 1)/6."
-      ],
-      "independent": [
-        "Simplify (x² + 4x)/(x² − 16).",
-        "Add and simplify 3/(x − 1) + 2/(x + 2).",
-        "Multiply and simplify (x² − 9)/(x + 4) × (x + 4)/(x + 3)."
-      ],
-      "exit": [
-        "Simplify (x² − 25)/(x + 5).",
-        "Write (x + 1)/2 + (x − 1)/4 as a single fraction."
-      ],
-      "homework": "Check each of your answers by substituting x = 2 or x = 3 into the original and simplified forms.",
-      "send": "SEND/EAL: factorising prompts and a cancelling checklist. Stretch: solve 3/(x − 1) + 2/(x + 2) = 1."
+      "practice": ["From the y = x² − 2x − 3 graph, solve x² − 2x − 3 = −3", "Which line solves x² − 2x − 3 = x?", "Read the solutions from the graph"],
+      "independent": ["Core: Draw y = x² − x − 2 for −2 ≤ x ≤ 3 and solve (a) x² − x − 2 = 0 (b) x² − x − 2 = 3", "Extend: Using the graph of y = x³ − 3x, solve x³ − 3x = 1 to 1 d.p.", "Stretch: Using the graph of y = x² + 2x, find the line to draw to solve 2x² + x − 5 = 0, and solve it."],
+      "exit": ["What do the solutions of f(x) = 0 look like on a graph?", "Graph y = x² drawn. Which line solves x² − 5 = 0?", "Give the solutions as x or y values?"],
+      "homework": "4MA1 Higher 'use your graph to solve' questions (four items) with full workings.",
+      "send": "Support: pre-drawn graphs. Stretch: simultaneous equations by graph."
     },
     {
-      "unit": "Unit 1: Higher algebra and number",
+      "unit": "Unit 16: Harder graphs and transformations of graphs",
       "n": 4,
-      "title": "Surds",
+      "title": "Transformations of graphs: translations",
       "duration": 50,
-      "objectives": [
-        "Simplify surds",
-        "Expand brackets containing surds",
-        "Rationalise the denominator"
-      ],
+      "bigQuestion": "Why does f(x + 2) move a graph to the left, not the right?",
+      "objectives": ["Use function notation f(x)", "Sketch y = f(x) + a and y = f(x + a)", "Describe translations using vectors"],
+      "successCriteria": ["Sketch y = f(x) + 3 from y = f(x)", "Sketch y = f(x − 2) and describe the translation as a vector", "Find the new coordinates of a turning point after a translation"],
+      "crossCurricular": "Computing: moving sprites by coordinates; Art: transforming designs",
+      "smsc": "Spiritual: the same shape in a new place; constancy amid change",
       "keywords": [
-        {
-          "term": "surd",
-          "def": "an irrational root that cannot be written exactly as a fraction"
-        },
-        {
-          "term": "rationalise",
-          "def": "remove the surd from the denominator"
-        },
-        {
-          "term": "irrational number",
-          "def": "a number that cannot be written as a fraction of two integers"
-        }
+        { "term": "function notation", "def": "f(x) means the output of function f for input x" },
+        { "term": "translation", "def": "a slide without turning or resizing" },
+        { "term": "vector", "def": "a column showing a movement (right/left over up/down)" },
+        { "term": "invariant", "def": "unchanged by a transformation" }
       ],
-      "starter": [
-        "Write √16 and √100.",
-        "List the square numbers up to 100.",
-        "Expand (x + 2)(x − 2)."
-      ],
+      "starter": ["f(x) = x². Find f(3)", "Find f(x + 1) for f(x) = x²", "Translate (2, 5) by the vector (3, −1)", "Turning point of y = (x − 2)²?"],
       "teach": [
-        {
-          "heading": "What is a surd?",
-          "bullets": [
-            "√2, √3 and √5 are surds.",
-            "√9 = 3 is not a surd.",
-            "Surds keep answers exact."
-          ],
-          "note": "A calculator shows √2 = 1.41421... which goes on without repeating, so the exact value is √2. Ask: is √16 a surd? Why not? Rules: √a × √b = √(ab) and (√a)² = a."
-        },
-        {
-          "heading": "Simplifying",
-          "bullets": [
-            "√12 = √4 × √3 = 2√3.",
-            "√50 = √25 × √2 = 5√2.",
-            "Find the largest square factor."
-          ],
-          "note": "List square factors: 4, 9, 16, 25, 36... √72 has factor 36: √72 = 6√2. Ask: why not 2√18 or 3√8? They are not fully simplified."
-        },
-        {
-          "heading": "Adding and multiplying",
-          "bullets": [
-            "√18 + √2 = 3√2 + √2 = 4√2.",
-            "√8 × √2 = √16 = 4.",
-            "(√3)² = 3."
-          ],
-          "note": "Only add surds with the same surd part, like like terms. Simplify first. Misconception: √2 + √3 = √5."
-        },
-        {
-          "heading": "Expanding brackets",
-          "bullets": [
-            "(2 + √3)(2 − √3) = 4 − 3 = 1.",
-            "(3 + √2)² = 9 + 6√2 + 2.",
-            "= 11 + 6√2."
-          ],
-          "note": "Use the grid method as with algebra. The first example is a difference of two squares, so the surd terms cancel. Check numerically: (3 + 1.414)² = 19.485 and 11 + 8.485 = 19.485 ✓."
-        },
-        {
-          "heading": "Rationalising",
-          "bullets": [
-            "6/√3 = 6√3/3 = 2√3.",
-            "Multiply top and bottom by √3.",
-            "1/(√5 + 2): multiply top and bottom by (√5 − 2)."
-          ],
-          "note": "For a two-term denominator, multiply by the conjugate (change the sign). (√5 + 2)(√5 − 2) = 5 − 4 = 1. Check: 1/4.236 = 0.236 and √5 − 2 = 0.236 ✓."
-        }
+        { "heading": "Up and down: f(x) + a", "bullets": ["Every y-value increases by a", "Translation by vector (0, a)"], "note": "Show y = x² and y = x² + 3 on the same axes. Turning point (0, 0) → (0, 3)." },
+        { "heading": "Left and right: f(x + a)", "bullets": ["Translation by vector (−a, 0)", "f(x + 2) moves left 2"], "note": "Answer the big question: for f(x + 2) to equal f(0), x must be −2. The input arrives 2 earlier.", "misconception": { "wrong": "y = f(x + 2) moves the graph 2 right", "right": "f(x + 2): 2 left, vector (−2, 0)" } },
+        { "heading": "Coordinates after a translation", "bullets": ["Apply to the key point"], "note": "Model.", "model": { "problem": "y = f(x) has a turning point at (3, −1). Find the turning point of y = f(x − 4) + 2.", "steps": ["f(x − 4): move 4 right: (7, −1)", "+ 2: move 2 up: (7, 1)", "Vector: (4, 2)"], "answer": "(7, 1)" } },
+        { "heading": "Check: describe", "bullets": [], "note": "Show me on 3.", "check": { "q": "Which vector describes y = f(x) → y = f(x + 5)?", "options": ["(5, 0)", "(−5, 0)", "(0, 5)", "(0, −5)"], "answer": 1, "why": "Inside the bracket moves horizontally in the opposite direction: 5 left. C is f(x) + 5." } }
       ],
-      "practice": [
-        "Simplify √75 and √45.",
-        "Simplify √48 + √12.",
-        "Rationalise 10/√5."
-      ],
-      "independent": [
-        "Expand and simplify (1 + √5)(3 − √5).",
-        "Rationalise 4/(3 − √5).",
-        "A square has area 98 cm². Write its side length in the form a√b."
-      ],
-      "exit": [
-        "Simplify √98.",
-        "Rationalise 8/√2."
-      ],
-      "homework": "Write down six surds, simplify them, then check each simplification with a calculator.",
-      "send": "SEND/EAL: square number list and factor tree support. Stretch: show that (√5 + √2)² − 2√10 is rational."
+      "practice": ["Sketch y = x² − 4", "Sketch y = (x + 3)²", "Write the vector for y = f(x) − 6"],
+      "independent": ["Core: The point (2, 7) lies on y = f(x). Write the image on (a) y = f(x) + 4 (b) y = f(x − 1) (c) y = f(x + 3) − 2", "Extend: Describe fully the transformation that maps y = x² onto y = x² + 6x + 9.", "Stretch: y = x² − 8x + 10 is a translation of y = x². Find the translation vector by completing the square."],
+      "exit": ["Vector for y = f(x) + 7?", "Vector for y = f(x − 3)?", "Turning point (1, 4) on f. Where on y = f(x + 2)?"],
+      "homework": "4MA1 Higher transformations of graphs: six questions on translations.",
+      "send": "Support: tracing-paper style overlays (online graphing tool). Stretch: combined transformations."
     },
     {
-      "unit": "Unit 2: Trigonometry in any triangle",
+      "unit": "Unit 16: Harder graphs and transformations of graphs",
       "n": 5,
-      "title": "The sine rule",
+      "title": "Transformations of graphs: reflections and stretches",
       "duration": 50,
-      "objectives": [
-        "Label a non-right-angled triangle with sides a, b, c and angles A, B, C",
-        "Use the sine rule to find a missing side",
-        "Use the sine rule to find a missing angle"
-      ],
+      "bigQuestion": "What happens to a graph when we put a minus sign inside or outside the function?",
+      "objectives": ["Sketch y = −f(x) and y = f(−x)", "Sketch y = af(x) and y = f(ax)", "Find images of key points"],
+      "successCriteria": ["Reflect a graph in the x-axis or y-axis", "Apply a vertical stretch y = 2f(x)", "Apply a horizontal stretch y = f(2x) and find the image of a point"],
+      "crossCurricular": "Science: waves and their amplitude and frequency",
+      "smsc": "Cultural: reflections and stretches in Islamic geometric art",
       "keywords": [
-        {
-          "term": "sine rule",
-          "def": "a ÷ sin A = b ÷ sin B = c ÷ sin C"
-        },
-        {
-          "term": "opposite",
-          "def": "side a is opposite angle A, and so on"
-        },
-        {
-          "term": "bearing",
-          "def": "an angle measured clockwise from north"
-        }
+        { "term": "reflection", "def": "a mirror image in a line" },
+        { "term": "stretch", "def": "an enlargement in one direction only" },
+        { "term": "scale factor", "def": "how much the graph is stretched" },
+        { "term": "invariant point", "def": "a point that does not move" }
       ],
-      "starter": [
-        "Bismillah. Calculate 8 × sin 65°.",
-        "Find θ if sin θ = 0.7 (1 d.p.).",
-        "Angles in a triangle add to what?"
-      ],
+      "starter": ["Image of (3, 4) under y = f(x − 2)", "Reflect (2, 5) in the x-axis", "Reflect (2, 5) in the y-axis", "Vector for y = f(x) − 1"],
       "teach": [
-        {
-          "heading": "Labelling",
-          "bullets": [
-            "Capital letters are angles; small letters are sides.",
-            "Side a is opposite angle A.",
-            "Use for triangles without a right angle."
-          ],
-          "note": "Draw a scalene triangle and label it. SOH CAH TOA only works with a right angle; the sine and cosine rules work in any triangle. Check calculator mode is degrees."
-        },
-        {
-          "heading": "The sine rule",
-          "bullets": [
-            "a ÷ sin A = b ÷ sin B.",
-            "Use it when you know a side and its opposite angle.",
-            "For angles, flip: sin A ÷ a = sin B ÷ b."
-          ],
-          "note": "You need a matching pair: a side with its opposite angle. Without a pair, use the cosine rule. Third angle: subtract the others from 180° if needed."
-        },
-        {
-          "heading": "Finding a side",
-          "bullets": [
-            "A = 40°, B = 65°, a = 8 cm.",
-            "b ÷ sin 65° = 8 ÷ sin 40°.",
-            "b = 8 × sin 65° ÷ sin 40° = 11.28 cm."
-          ],
-          "note": "Larger angle opposite the larger side: 65° > 40° so b > a ✓. Second example: A = 55°, B = 70°, a = 10: b = 10 × sin 70° ÷ sin 55° = 11.47."
-        },
-        {
-          "heading": "Finding an angle",
-          "bullets": [
-            "a = 9, b = 7, A = 65°.",
-            "sin B ÷ 7 = sin 65° ÷ 9.",
-            "sin B = 0.7049, so B = 44.8°."
-          ],
-          "note": "Check: since b < a, B is smaller than A ✓. Calculate: 7 × sin 65° ÷ 9 = 0.7049. Higher note: if the given angle is opposite the shorter side, two triangles may be possible (the ambiguous case)."
-        },
-        {
-          "heading": "Choosing a rule",
-          "bullets": [
-            "Right angle: SOH CAH TOA or Pythagoras.",
-            "Side and opposite angle known: sine rule.",
-            "Otherwise: cosine rule (next lesson)."
-          ],
-          "note": "Give pupils five triangle diagrams and ask them to choose the rule only. This decision is the harder skill."
-        }
+        { "heading": "Reflections", "bullets": ["−f(x): reflect in the x-axis, (x, y) → (x, −y)", "f(−x): reflect in the y-axis, (x, y) → (−x, y)"], "note": "Show y = x³ − 3x: −f(x) and f(−x) happen to give the same graph (odd function).", "compare": { "left": { "title": "y = −f(x)", "points": ["Minus outside", "Reflect in the x-axis", "y-values change sign"] }, "right": { "title": "y = f(−x)", "points": ["Minus inside", "Reflect in the y-axis", "x-values change sign"] } } },
+        { "heading": "Stretches", "bullets": ["af(x): vertical stretch, scale factor a", "f(ax): horizontal stretch, scale factor 1/a"], "note": "Inside again works 'backwards': f(2x) squashes horizontally by ½.", "misconception": { "wrong": "y = f(2x) stretches horizontally by scale factor 2", "right": "f(2x) is a horizontal stretch by scale factor ½" } },
+        { "heading": "Images of points", "bullets": ["Apply the rule to the coordinates"], "note": "Model.", "model": { "problem": "(4, 6) lies on y = f(x). Find its image on y = 3f(x), y = f(2x) and y = −f(x)", "steps": ["3f(x): y × 3 → (4, 18)", "f(2x): x × ½ → (2, 6)", "−f(x): y × −1 → (4, −6)"], "answer": "(4, 18), (2, 6), (4, −6)" } },
+        { "heading": "Check: which transformation?", "bullets": [], "note": "Show me on 3.", "check": { "q": "(2, −3) lies on y = f(x). Which point lies on y = f(−x)?", "options": ["(2, 3)", "(−2, −3)", "(−2, 3)", "(−3, 2)"], "answer": 1, "why": "Reflect in the y-axis: x changes sign. A is −f(x); C changes both." } }
       ],
-      "practice": [
-        "A = 40°, B = 65°, a = 8 cm. Find b to 2 d.p.",
-        "A = 50°, C = 70°, c = 12 cm. Find a.",
-        "a = 9, b = 7, A = 65°. Find B."
-      ],
-      "independent": [
-        "Find b if A = 55°, B = 70° and a = 10.",
-        "In triangle ABC, a = 12, b = 9 and A = 80°. Find B.",
-        "In triangle PQR, P = 38°, Q = 77° and p = 9 cm. Find q."
-      ],
-      "exit": [
-        "State the sine rule.",
-        "A = 30°, B = 50°, a = 5. Find b."
-      ],
-      "homework": "Draw and label four non-right-angled triangles, decide which rule applies to each, and solve two of them.",
-      "send": "SEND/EAL: labelled triangle templates with a matching-pair checklist. Stretch: investigate when two different triangles satisfy the same sine rule data."
+      "practice": ["Sketch y = −x²", "Sketch y = 2x²", "(6, 2) lies on f. Image on y = f(3x)?"],
+      "independent": ["Core: (3, 8) lies on y = f(x). Find its image on (a) y = −f(x) (b) y = f(−x) (c) y = ½f(x) (d) y = f(x/2)", "Extend: The graph y = sin x (or any curve given) has a maximum at (90, 1). Find the maximum of y = 2f(x) and of y = f(2x).", "Stretch: Describe the single transformation mapping y = x² onto y = 4x², and explain why it can be described as either a vertical or a horizontal stretch."],
+      "exit": ["What does y = −f(x) do?", "(1, 5) on f. Image on y = f(−x)?", "Scale factor of y = f(4x)?"],
+      "homework": "4MA1 Higher: graph transformation sketches from the sheet, labelling images of the turning points.",
+      "send": "Support: rule card (inside: x opposite; outside: y as written). Stretch: combined transformations."
     },
     {
-      "unit": "Unit 2: Trigonometry in any triangle",
+      "unit": "Unit 17: Simultaneous equations",
       "n": 6,
-      "title": "The cosine rule",
+      "title": "Simultaneous linear equations by elimination",
       "duration": 50,
-      "objectives": [
-        "Use the cosine rule to find a side",
-        "Rearrange it to find an angle",
-        "Choose between sine and cosine rules"
-      ],
+      "bigQuestion": "How can two pieces of information pin down two unknowns?",
+      "objectives": ["Solve simultaneous equations by elimination", "Multiply one or both equations to match coefficients", "Check solutions in both equations"],
+      "successCriteria": ["Solve when a coefficient already matches", "Solve after multiplying one equation", "Solve after multiplying both equations and interpret graphically"],
+      "crossCurricular": "Business: two pricing equations; Science: two unknowns in chemistry",
+      "smsc": "Moral: using two witnesses to establish truth (as in Islamic law)",
       "keywords": [
-        {
-          "term": "cosine rule",
-          "def": "a² = b² + c² − 2bc cos A"
-        },
-        {
-          "term": "included angle",
-          "def": "the angle between two known sides"
-        },
-        {
-          "term": "obtuse",
-          "def": "an angle greater than 90° and less than 180°"
-        }
+        { "term": "simultaneous equations", "def": "two equations that are true at the same time" },
+        { "term": "eliminate", "def": "remove one unknown by adding or subtracting equations" },
+        { "term": "coefficient", "def": "the number in front of a letter" },
+        { "term": "substitute", "def": "put a known value into an equation" }
       ],
-      "starter": [
-        "Calculate 7² + 9².",
-        "Calculate 2 × 7 × 9 × cos 60°.",
-        "Find θ if cos θ = 0.2 (1 d.p.)."
-      ],
+      "starter": ["Solve 3x = 12", "If x = 2, find y in x + y = 7", "Multiply 2x + 3y = 5 by 3", "Work out 7 − (−2)"],
       "teach": [
-        {
-          "heading": "When to use it",
-          "bullets": [
-            "Two sides and the angle between them.",
-            "Or all three sides and you want an angle.",
-            "No matching side-angle pair."
-          ],
-          "note": "If you know two sides and the included angle there is no pair for the sine rule. Compare with the sine rule list. The cosine rule is Pythagoras with a correction: when A = 90°, cos A = 0."
-        },
-        {
-          "heading": "Finding a side",
-          "bullets": [
-            "b = 7, c = 9, A = 60°.",
-            "a² = 7² + 9² − 2 × 7 × 9 × cos 60°.",
-            "a² = 130 − 63 = 67, so a = 8.19."
-          ],
-          "note": "Calculate the whole right-hand side before square rooting. Common error: working out 49 + 81 − 2 × 7 × 9 first and then multiplying by cos 60°. Use BIDMAS: 2 × 7 × 9 × cos 60° = 126 × 0.5 = 63."
-        },
-        {
-          "heading": "Finding an angle",
-          "bullets": [
-            "cos A = (b² + c² − a²) ÷ 2bc.",
-            "Sides 5, 6, 7: cos C = (25 + 36 − 49) ÷ 60 = 0.2.",
-            "C = 78.5°."
-          ],
-          "note": "Take the angle opposite the side that is squared on its own: C is opposite c = 7. A negative cosine means the angle is obtuse; for sides 8, 10, 13: cos = (64 + 100 − 169) ÷ 160 = −0.03125, so 91.8°."
-        },
-        {
-          "heading": "Which rule?",
-          "bullets": [
-            "SAS or SSS: cosine rule.",
-            "AAS or ASA, or a side-angle pair: sine rule.",
-            "Right angle: SOH CAH TOA."
-          ],
-          "note": "Practise decisions again with five examples. Ask: can we use the sine rule for 5, 6, 7 triangle? No pair exists."
-        },
-        {
-          "heading": "Applying",
-          "bullets": [
-            "Two paths of 12 m and 15 m meet at 40°.",
-            "a² = 144 + 225 − 360 cos 40° = 369 − 275.8.",
-            "a = 9.66 m."
-          ],
-          "note": "360 × cos 40° = 275.78. 369 − 275.78 = 93.22, √93.22 = 9.655, so 9.66 m. Link: surveying and navigation use these rules; the Muslim scholar al-Biruni used trigonometry to estimate the radius of the Earth."
-        }
+        { "heading": "Same sign: subtract, different signs: add", "bullets": ["Line up x, y and constants", "Match one coefficient", "SSS: same signs subtract"], "note": "3x + 2y = 16 and x + 2y = 8: subtract → 2x = 8, x = 4, then y = 2." },
+        { "heading": "Multiplying to match", "bullets": ["Multiply one or both equations", "Then eliminate"], "note": "Model.", "model": { "problem": "Solve 3x + 4y = 5 and 2x − 3y = 26", "steps": ["× 2 and × 3: 6x + 8y = 10, 6x − 9y = 78", "Subtract: 17y = −68, y = −4", "3x + 4(−4) = 5: 3x = 21, x = 7", "Check: 2(7) − 3(−4) = 26 ✓"], "answer": "x = 7, y = −4" } },
+        { "heading": "Subtracting negatives", "bullets": ["8y − (−9y) = 17y"], "note": "Most errors happen here.", "misconception": { "wrong": "8y − (−9y) = −y", "right": "8y − (−9y) = 17y" } },
+        { "heading": "The graphical meaning", "bullets": ["Each equation is a straight line", "The solution is the intersection point"], "note": "Show both lines crossing at (7, −4) on a graphing tool." },
+        { "heading": "Check: eliminate", "bullets": [], "note": "Show me on 3.", "check": { "q": "Solve x + y = 10 and x − y = 4", "options": ["x = 7, y = 3", "x = 3, y = 7", "x = 6, y = 4", "x = 14, y = −4"], "answer": 0, "why": "Add: 2x = 14, x = 7, y = 3. B swaps them; check both equations." } }
       ],
-      "practice": [
-        "Find a: b = 7, c = 9, A = 60°.",
-        "Find C in a triangle with sides 5, 6 and 7.",
-        "Find the third side if two sides are 12 and 15 and the angle between them is 40°."
-      ],
-      "independent": [
-        "Find the side opposite 110° when the other sides are 6 and 8.",
-        "Find the largest angle in a triangle with sides 9, 11 and 14.",
-        "In triangle ABC, a = 8, b = 5 and c = 10. Find angle A."
-      ],
-      "exit": [
-        "State the cosine rule.",
-        "Find x if b = 4, c = 5 and A = 90°. What do you notice?"
-      ],
-      "homework": "Complete five mixed sine and cosine rule problems, writing which rule you chose and why.",
-      "send": "SEND/EAL: formula card with a decision flow chart. Stretch: prove that cosine rule becomes Pythagoras' theorem when A = 90°."
+      "practice": ["Solve 2x + y = 11, x − y = 1", "Solve 3x + 2y = 18, x + 2y = 10", "Solve 4x + 3y = 25, 2x + y = 11"],
+      "independent": ["Core: Solve (a) 5x + 2y = 20, 3x + 2y = 14 (b) 2x + 3y = 13, 4x − y = 5", "Extend: Solve 5x − 2y = 24, 3x + 5y = 2", "Stretch: 3 apples and 2 bananas cost £1.95; 2 apples and 5 bananas cost £2.40. Find the cost of each, then check."],
+      "exit": ["Solve x + 2y = 9, x − y = 3", "What do you multiply to eliminate y in 2x + 3y = 7 and 5x − 2y = 8?", "What does the solution represent on a graph?"],
+      "homework": "4MA1 simultaneous equations practice: six questions including two word problems.",
+      "send": "Support: SSS reminder and a column layout. Stretch: three equations, three unknowns."
     },
     {
-      "unit": "Unit 2: Trigonometry in any triangle",
+      "unit": "Unit 17: Simultaneous equations",
       "n": 7,
-      "title": "Area of a triangle: ½ab sin C",
+      "title": "Simultaneous equations by substitution and from contexts",
       "duration": 50,
-      "objectives": [
-        "Use area = ½ab sin C",
-        "Find an angle from an area",
-        "Solve combined problems with sine or cosine rule"
-      ],
+      "bigQuestion": "When is substitution quicker than elimination?",
+      "objectives": ["Solve simultaneous equations by substitution", "Form simultaneous equations from contexts", "Interpret solutions in context"],
+      "successCriteria": ["Solve when one equation gives y = …", "Form and solve equations from a word problem", "Choose the most efficient method and justify it"],
+      "crossCurricular": "Business: break-even; Geography: two-variable problems",
+      "smsc": "Social: fair pricing and transparent costs",
       "keywords": [
-        {
-          "term": "area",
-          "def": "the amount of surface inside a shape, in square units"
-        },
-        {
-          "term": "included angle",
-          "def": "the angle between the two known sides"
-        },
-        {
-          "term": "perpendicular height",
-          "def": "the height measured at 90° to the base"
-        }
+        { "term": "substitution", "def": "replacing one variable with an expression for it" },
+        { "term": "form", "def": "write equations from information" },
+        { "term": "interpret", "def": "explain the meaning in context" },
+        { "term": "efficient", "def": "using the fewest, simplest steps" }
       ],
-      "starter": [
-        "Calculate the area of a triangle with base 10 cm and height 6 cm.",
-        "Calculate sin 30°.",
-        "Find θ if sin θ = 0.5."
-      ],
+      "starter": ["Solve x + y = 12, x − y = 2", "If y = 2x − 1, find y when x = 4", "Expand 3(2x − 1)", "Solve 5x − 3 = 12"],
       "teach": [
-        {
-          "heading": "Where it comes from",
-          "bullets": [
-            "Area = ½ × base × height.",
-            "Height = b sin C.",
-            "So area = ½ab sin C."
-          ],
-          "note": "Draw a triangle with side a as base and drop a perpendicular. The height is b sin C. This formula is useful when height is not given. The angle must be between the two sides used."
-        },
-        {
-          "heading": "Worked example",
-          "bullets": [
-            "a = 8 cm, b = 11 cm, C = 40°.",
-            "Area = ½ × 8 × 11 × sin 40°.",
-            "= 28.3 cm² (3 s.f.)."
-          ],
-          "note": "½ × 8 × 11 = 44, then 44 × sin 40° = 28.28. Units are squared. Check: a triangle with base 8 and height under 11 should have area less than 44 ✓."
-        },
-        {
-          "heading": "Exact value",
-          "bullets": [
-            "Sides 9 and 12, included angle 30°.",
-            "Area = ½ × 9 × 12 × sin 30° = 54 × 0.5.",
-            "Area = 27 cm²."
-          ],
-          "note": "When the angle is 30°, 45° or 60°, use the exact value of sin. Link to the next lesson on exact values. For 60° with sides 8 and 6 the area is 24 × √3/2 = 12√3."
-        },
-        {
-          "heading": "Finding an angle",
-          "bullets": [
-            "Area 30 cm², sides 10 cm and 12 cm.",
-            "30 = ½ × 10 × 12 × sin C = 60 sin C.",
-            "sin C = 0.5, so C = 30°."
-          ],
-          "note": "If C could be obtuse, there is a second solution 150°. Ask: what are the two angles whose sine is 0.5? (30° and 150°.) The diagram tells you which."
-        },
-        {
-          "heading": "A field",
-          "bullets": [
-            "Field with sides 120 m and 150 m, angle 70°.",
-            "Area = ½ × 120 × 150 × sin 70°.",
-            "= 8,457 m² ≈ 8,460 m² (3 s.f.)."
-          ],
-          "note": "9,000 × 0.9397 = 8,457. Convert to hectares: 0.85 ha (1 ha = 10,000 m²). Surveyors use this formula to find the area of land from measured sides and angles."
-        }
+        { "heading": "Substitution", "bullets": ["Make one variable the subject", "Substitute into the other equation", "Solve, then back-substitute"], "note": "Model.", "model": { "problem": "Solve y = 2x − 1 and 3x + 2y = 12", "steps": ["Substitute: 3x + 2(2x − 1) = 12", "3x + 4x − 2 = 12", "7x = 14, x = 2", "y = 2(2) − 1 = 3"], "answer": "x = 2, y = 3" } },
+        { "heading": "Choosing a method", "bullets": ["y = … or x = … already: substitution", "Both in the form ax + by = c: elimination"], "note": "Sort five pairs by best method." },
+        { "heading": "Forming equations", "bullets": ["Define both letters with units", "Write one equation per fact"], "note": "Example: 4 adult and 3 child tickets cost £47; 2 adult and 5 child cost £41. Let a, c be prices in £: 4a + 3c = 47, 2a + 5c = 41 → a = 8, c = 5.", "misconception": { "wrong": "Final answer: a = 8, c = 5", "right": "Adult tickets cost £8 and child tickets £5: answer in context" } },
+        { "heading": "Check: which method?", "bullets": [], "note": "Show me on 3.", "check": { "q": "Best first step for x = 3y + 2 and 2x − 5y = 7?", "options": ["Multiply both by 5", "Substitute x = 3y + 2", "Add the equations", "Square both"], "answer": 1, "why": "x is already the subject, so substitute: 2(3y + 2) − 5y = 7 gives y = 3, x = 11." } }
       ],
-      "practice": [
-        "Find the area: sides 8 and 11 with included angle 40°.",
-        "Find the area: sides 9 and 12 with included angle 30°.",
-        "Area 30 cm², sides 10 cm and 12 cm. Find angle C."
-      ],
-      "independent": [
-        "Find the area of a triangle with sides 14 cm and 20 cm and included angle 125°.",
-        "A triangle has area 45 cm² and sides 15 cm and 8 cm. Find the acute angle between them.",
-        "Find the exact area of a triangle with sides 8 and 6 and included angle 60°."
-      ],
-      "exit": [
-        "State the formula for the area of a triangle using two sides and the included angle.",
-        "Find the area with sides 7 cm and 10 cm and angle 50°."
-      ],
-      "homework": "Create and solve a triangle area problem for a field or garden with sides you choose.",
-      "send": "SEND/EAL: labelled diagrams with the included angle highlighted. Stretch: find the area of a regular hexagon with side 6 cm by splitting into triangles."
+      "practice": ["Solve y = x + 4 and 2x + y = 13", "Solve x = 2y and 3x − y = 10", "Form equations: two numbers sum to 30 and differ by 8"],
+      "independent": ["Core: Solve (a) y = 3x − 5, x + y = 11 (b) x = 4 − y, 2x + 3y = 11", "Extend: A cafe sells tea and coffee. 3 teas and 2 coffees cost £8.70; 2 teas and 3 coffees cost £9.30. Find the price of each.", "Stretch: A two-digit number's digits add to 11. Reversing the digits increases the number by 27. Find the number."],
+      "exit": ["Solve y = 2x, x + y = 9", "Form equations: 2 pens and a ruler cost £3.10; 1 pen and a ruler cost £2.20", "Solve your equations"],
+      "homework": "4MA1 problem-solving: four word problems leading to simultaneous equations.",
+      "send": "Support: method decision card. Stretch: digit problems."
     },
     {
-      "unit": "Unit 2: Trigonometry in any triangle",
+      "unit": "Unit 17: Simultaneous equations",
       "n": 8,
-      "title": "Exact values of trigonometric functions",
+      "title": "Simultaneous equations: one linear and one quadratic",
       "duration": 50,
-      "objectives": [
-        "Recall exact values of sin, cos and tan for 0°, 30°, 45°, 60° and 90°",
-        "Derive them from equilateral and right-isosceles triangles",
-        "Use exact values in calculations without a calculator"
-      ],
+      "bigQuestion": "How many times can a straight line cross a curve?",
+      "objectives": ["Solve a linear and a quadratic equation simultaneously", "Interpret solutions as intersection points", "Pair x and y values correctly"],
+      "successCriteria": ["Solve y = x² and y = x + 6", "Solve x² + y² = 25 and y = x + 1", "Explain 0, 1 or 2 solutions using the discriminant or a sketch"],
+      "crossCurricular": "Physics: when a moving object reaches a curved path; Computing: collision detection in games",
+      "smsc": "Spiritual: meeting points and choices",
       "keywords": [
-        {
-          "term": "exact value",
-          "def": "an answer written using surds or fractions, not decimals"
-        },
-        {
-          "term": "equilateral triangle",
-          "def": "a triangle with three equal sides and three 60° angles"
-        },
-        {
-          "term": "surd",
-          "def": "an irrational root such as √3"
-        }
+        { "term": "intersection", "def": "where two graphs meet" },
+        { "term": "substitute", "def": "replace a variable with an expression" },
+        { "term": "solution pair", "def": "an x-value with its matching y-value" },
+        { "term": "tangent", "def": "a line that touches a curve at exactly one point" }
       ],
-      "starter": [
-        "Simplify √12.",
-        "Rationalise 1/√3.",
-        "Draw an equilateral triangle and state each angle."
-      ],
+      "starter": ["Solve x² − x − 6 = 0", "Expand (x + 1)²", "Solve y = 2x + 1, y = x + 4", "What shape is x² + y² = 25?"],
       "teach": [
-        {
-          "heading": "The triangles",
-          "bullets": [
-            "Equilateral triangle, side 2, cut in half.",
-            "Right-angled triangle with sides 1, √3 and 2.",
-            "Right-isosceles triangle with sides 1, 1 and √2."
-          ],
-          "note": "Height of the equilateral triangle: √(2² − 1²) = √3. The 30-60-90 triangle has sides 1, √3, 2. The 45-45-90 triangle has sides 1, 1, √2 by Pythagoras."
-        },
-        {
-          "heading": "30° and 60°",
-          "bullets": [
-            "sin 30° = 1/2; cos 30° = √3/2; tan 30° = 1/√3.",
-            "sin 60° = √3/2; cos 60° = 1/2; tan 60° = √3.",
-            "sin 30° = cos 60°."
-          ],
-          "note": "Read the ratios off the 1, √3, 2 triangle. tan 30° = 1/√3 = √3/3 after rationalising. Ask: why is sin 30° = cos 60°? The opposite side to 30° is the adjacent side to 60°."
-        },
-        {
-          "heading": "45°, 0° and 90°",
-          "bullets": [
-            "sin 45° = cos 45° = √2/2; tan 45° = 1.",
-            "sin 0° = 0, cos 0° = 1, tan 0° = 0.",
-            "sin 90° = 1, cos 90° = 0."
-          ],
-          "note": "1/√2 = √2/2 after rationalising. Build a table on the board for pupils to learn. Tan 90° is undefined. A memory aid: sin counts up through 0, 1/2, √2/2, √3/2, 1 (written as √0/2, √1/2, √2/2, √3/2, √4/2)."
-        },
-        {
-          "heading": "Exact lengths",
-          "bullets": [
-            "Hypotenuse 10, angle 30°: opposite = 10 sin 30° = 5.",
-            "Adjacent = 10 cos 30° = 5√3.",
-            "Adjacent 6, angle 45°: opposite = 6, hypotenuse = 6√2."
-          ],
-          "note": "Check the 45° hypotenuse: 6 ÷ cos 45° = 6 ÷ (√2/2) = 12/√2 = 6√2. Verify with Pythagoras: 6² + 6² = 72 = (6√2)² ✓."
-        },
-        {
-          "heading": "Evaluating expressions",
-          "bullets": [
-            "sin 60° × tan 30° = (√3/2) × (1/√3) = 1/2.",
-            "(sin 30°)² + (cos 30°)² = 1/4 + 3/4 = 1.",
-            "cos 45° × sin 30° = √2/4."
-          ],
-          "note": "No calculator. Show steps. The identity sin² + cos² = 1 is true for every angle. Exact area link: ½ × 8 × 6 × sin 60° = 12√3."
-        }
+        { "heading": "Substitute the linear into the quadratic", "bullets": ["Get a quadratic in one variable", "Solve by factorising or formula", "Find the matching y for each x"], "note": "Model.", "model": { "problem": "Solve x² + y² = 25 and y = x + 1", "steps": ["x² + (x + 1)² = 25", "2x² + 2x + 1 = 25 → x² + x − 12 = 0", "(x + 4)(x − 3) = 0: x = −4 or 3", "y = −3 or 4"], "answer": "(−4, −3) and (3, 4)" } },
+        { "heading": "Pairing values", "bullets": ["Each x has its own y", "Write the solutions as coordinate pairs"], "note": "The 4MA1 mark scheme requires correct pairs.", "misconception": { "wrong": "x = −4 or 3, y = −3 or 4 (unpaired)", "right": "x = −4, y = −3 and x = 3, y = 4" } },
+        { "heading": "How many solutions?", "bullets": ["Two crossings: two solutions", "Touches (tangent): one", "Misses: none"], "note": "Answer the big question with sketches.", "table": { "head": ["Line and curve", "Quadratic", "Solutions"], "rows": [["Crosses twice", "b² − 4ac > 0", "2"], ["Touches (tangent)", "b² − 4ac = 0", "1"], ["Misses", "b² − 4ac < 0", "0"]] } },
+        { "heading": "Check: solve", "bullets": [], "note": "Show me on 3.", "check": { "q": "Solve y = x² and y = x + 6", "options": ["(3, 9) and (−2, 4)", "(3, 9) only", "(−3, 9) and (2, 4)", "(9, 3) and (4, −2)"], "answer": 0, "why": "x² = x + 6, x² − x − 6 = 0, (x − 3)(x + 2) = 0. Then y = 9 or 4. C has the wrong signs; D swaps x and y." } }
       ],
-      "practice": [
-        "Write down the exact value of sin 60°, cos 45° and tan 30°.",
-        "Find the exact height of an equilateral triangle with side 8 cm.",
-        "Calculate the exact value of tan 60° × tan 30°."
-      ],
-      "independent": [
-        "Find the exact length of the side opposite the 60° angle when the hypotenuse is 12.",
-        "Calculate the exact value of cos 30° × sin 60° − sin 30°.",
-        "Solve sin θ = √3/2 for 0° < θ < 90°."
-      ],
-      "exit": [
-        "Write the exact value of cos 45° × sin 30°.",
-        "A right-angled isosceles triangle has hypotenuse 10 cm. Find the equal side exactly."
-      ],
-      "homework": "Draw the two special triangles and make a revision table of the exact values.",
-      "send": "SEND/EAL: pre-drawn triangles and a blank table of values to complete. Stretch: show that sin 60° = 2 sin 30° cos 30°."
+      "practice": ["Solve y = x² − 3 and y = 2x", "Solve y = x² + 1 and y = 3x − 1", "Solve x² + y² = 10 and y = x + 2"],
+      "independent": ["Core: Solve (a) y = x² + 2x and y = x + 2 (b) x² + y² = 13 and y = x − 1", "Extend: Solve 2x² − y² = 7 and y = x + 1 (give exact answers if needed).", "Stretch: Find the value of c for which y = 2x + c is a tangent to y = x² + 3. Explain using the discriminant."],
+      "exit": ["Solve y = x² and y = 4", "Solve y = x² − 2x and y = x", "How many points does y = 5 meet y = x² + 7?"],
+      "homework": "4MA1 Higher Paper 1H/2H past-paper style: three linear–quadratic simultaneous questions (5 marks each).",
+      "send": "Support: substitution steps frame. Stretch: circles and tangents."
     }
   ]
 }
