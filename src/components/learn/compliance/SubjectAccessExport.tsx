@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
+import { useNow } from "@/lib/learn/useNow";
 
 type SubjectType = "pupil" | "parent";
 type Candidate = { id: string; label: string; detail: string };
@@ -41,6 +42,7 @@ export function SubjectAccessExport() {
   const isSafeguardingLead = useLearnPermission("safeguarding_lead");
   const canSeeSafeguarding = isSafeguardingLead || roles.some((r) => r.role === "head_teacher");
 
+  const now = useNow();
   const [type, setType] = useState<SubjectType>("pupil");
   const [term, setTerm] = useState("");
   const [candidates, setCandidates] = useState<Candidate[] | null>(null);
@@ -215,7 +217,7 @@ export function SubjectAccessExport() {
           <li key={l.id} className="text-sm text-ink/70">
             {fmt(l.created_at)} · {l.subject_type === "pupil" ? "Pupil" : "Parent"} {l.subject_label}
             {l.include_safeguarding ? " · with safeguarding" : ""}
-            {l.include_child_records ? " · with child records" : ""} · {l.files_deleted_at || new Date(l.expires_at).getTime() < Date.now() ? "link expired" : `link live until ${fmt(l.expires_at)}`}
+            {l.include_child_records ? " · with child records" : ""} · {l.files_deleted_at || new Date(l.expires_at).getTime() < now ? "link expired" : `link live until ${fmt(l.expires_at)}`}
           </li>
         ))}
         {log?.length === 0 && <li className="text-sm text-ink/60">No exports yet.</li>}

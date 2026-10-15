@@ -8,6 +8,7 @@ import { attachmentsOf, describeAllowed, formatEdited, type Homework } from "@/l
 import { FeedbackStatusChip, FeedbackView } from "@/components/learn/homework/SubmissionFeedback";
 import { FileLinks } from "@/components/learn/homework/FileViewer";
 import { SubmitWork, type ExistingSubmission } from "@/components/learn/homework/SubmitWork";
+import { useNow } from "@/lib/learn/useNow";
 
 type HomeworkInfo = Pick<
   Homework,
@@ -54,6 +55,7 @@ function HomeworkItem({
   onChanged: () => void;
 }) {
   const supabase = getSupabaseClient();
+  const now = useNow();
   const [submission, setSubmission] = useState<Submission | null>(null);
   const [mark, setMark] = useState<Mark | null>(null);
   const [expanded, setExpanded] = useState(false);
@@ -86,7 +88,7 @@ function HomeworkItem({
 
   const awaitingResubmission = feedback?.status === "resubmission_requested";
   const statusMeta = STATUS_LABEL[row.status] || STATUS_LABEL.not_yet_due;
-  const closed = hw?.late_policy === "block" && new Date(row.due_at).getTime() < Date.now();
+  const closed = hw?.late_policy === "block" && new Date(row.due_at).getTime() < now;
   const attachments = hw ? attachmentsOf(hw) : [];
   const existing: ExistingSubmission | null = submission
     ? { id: submission.id, response_text: submission.response_text, link_url: submission.link_url, files: submissionFiles(submission) }

@@ -138,6 +138,7 @@ function StaffAttendanceContent() {
   useEffect(() => {
     try {
       const v = window.localStorage.getItem(START_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- restore the saved start time from this browser after mount
       if (v && /^\d{2}:\d{2}$/.test(v)) setExpected(v);
     } catch {
       /* storage unavailable: keep default */
@@ -185,6 +186,7 @@ function StaffAttendanceContent() {
   }, [from, to]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- load clock-ins when the page opens or the dates change
     load();
     const onChange = () => {
       load();

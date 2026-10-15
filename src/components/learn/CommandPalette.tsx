@@ -87,6 +87,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
   useEffect(() => {
     if (!open) return;
     inputRef.current?.focus();
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- read recent pages from this browser when the palette opens
     setRecent(
       readRecentPages(`/${area}/`).map((p) => ({ id: `recent:${p.href}`, group: "Recent", label: p.title, hint: p.subtitle, href: p.href }))
     );
@@ -108,6 +109,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
   useEffect(() => {
     const term = query.replace(/[%,()*\\]/g, " ").trim();
     if (!open || !canSearchPeople || term.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- clear people results when the search is too short
       setPeople([]);
       return;
     }
@@ -150,6 +152,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
   }, [query, area, roles, classes, people, recent]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reset the highlighted result when the search text changes
     setActive(0);
   }, [query]);
 

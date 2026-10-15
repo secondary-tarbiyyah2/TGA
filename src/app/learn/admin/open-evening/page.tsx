@@ -14,6 +14,7 @@ import {
   type OpenEveningBooking,
   type OpenEveningSession,
 } from "@/lib/learn/openEvening";
+import { useNow } from "@/lib/learn/useNow";
 
 type Draft = {
   title: string;
@@ -31,6 +32,7 @@ const inputCls = "mt-1 block w-full rounded-lg border border-gold-light px-3 py-
 function OpenEveningContent() {
   const { session } = useLearnSession();
   const supabase = getSupabaseClient();
+  const now = useNow();
   const [sessions, setSessions] = useState<OpenEveningSession[] | null>(null);
   const [bookings, setBookings] = useState<OpenEveningBooking[]>([]);
   const [editingId, setEditingId] = useState<string | "new" | null>(null);
@@ -145,8 +147,6 @@ function OpenEveningContent() {
     const rows = list.flatMap((s) => bookings.filter((b) => b.session_id === s.id).map((b) => ({ session: s, booking: b })));
     downloadCsv(filename, bookingsCsv(rows));
   };
-
-  const now = Date.now();
 
   const form = (
     <div className="space-y-3 rounded-2xl border border-gold-light bg-cream/40 p-4">

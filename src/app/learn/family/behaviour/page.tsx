@@ -65,6 +65,7 @@ function FamilyBehaviourContent() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- load the chosen child's records when the selection changes
     if (selected) load(selected);
   }, [selected, load]);
 

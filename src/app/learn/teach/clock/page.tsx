@@ -47,6 +47,7 @@ function MyHoursContent() {
   }, [userId]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- load this week's clock-ins when the page opens
     load();
     const onChange = () => {
       load();

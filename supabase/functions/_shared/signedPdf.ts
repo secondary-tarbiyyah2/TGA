@@ -14,8 +14,10 @@ const SIGNATURE_BUCKET = "signature-images";
 const SITE_URL = (Deno.env.get("PUBLIC_SITE_URL") || "https://globalacademy.tarbiyyah.co.uk").replace(/\/$/, "");
 const MAX_ORIGINAL_BYTES = 20 * 1024 * 1024;
 
+/* eslint-disable @typescript-eslint/no-explicit-any -- Deno edge code: the Supabase client and rows are untyped here, matching the deno-lint-ignore below */
 // deno-lint-ignore no-explicit-any
 type Service = any;
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 const METHOD_LABEL: Record<string, string> = {
   portal: "Signed online",
