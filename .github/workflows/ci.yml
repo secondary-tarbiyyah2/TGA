@@ -40,8 +40,11 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Lint
-        run: npm run lint
+        run: |
+          npx eslint -f json -o eslint.json || true
+          node scripts/ci/eslint-annotate.mjs eslint.json
       - name: Type check
+        if: always()
         run: npx tsc --noEmit
 
   a11y:
