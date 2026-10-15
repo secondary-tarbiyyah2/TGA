@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Tabs } from "@/components/learn/Tabs";
 import { downloadDeck } from "@/lib/learn/curriculum";
 import { QuestionCard } from "@/components/learn/revision/QuestionCard";
+import { WithArabic } from "@/components/learn/WithArabic";
 import {
   TONE,
   answerQuestion,
@@ -272,11 +273,13 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
               </p>
             )}
             <h3 className="text-xl font-semibold text-ink">{s.title}</h3>
-            {s.transliteration && <p className="text-sm text-ink/60">{s.transliteration}</p>}
+            {s.transliteration && <p className="text-sm italic text-ink/70">{s.transliteration}</p>}
           </div>
           <ul className="list-disc space-y-2 pl-5 text-base text-ink">
             {s.points.map((p) => (
-              <li key={p}>{p}</li>
+              <li key={p}>
+                <WithArabic text={p} />
+              </li>
             ))}
           </ul>
           {s.quote && (
@@ -288,8 +291,8 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
           {!!s.keywords?.length && (
             <div className="flex flex-wrap gap-1.5" aria-label="Key words">
               {s.keywords.map((k) => (
-                <span key={k} className="rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-medium text-teal-900">
-                  {k}
+                <span key={k} className="rounded-full bg-teal-100 px-2.5 py-0.5 text-sm font-medium text-teal-900">
+                  <WithArabic text={k} />
                 </span>
               ))}
             </div>

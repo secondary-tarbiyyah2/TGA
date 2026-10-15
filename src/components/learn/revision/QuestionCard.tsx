@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { displayOrder, type AnswerResult, type PupilQuestion } from "@/lib/learn/revision";
+import { WithArabic } from "@/components/learn/WithArabic";
 
 const LETTERS = "ABCDEF";
 
@@ -45,7 +46,7 @@ export function QuestionCard({
 
   return (
     <div className="space-y-4">
-      <p className="text-lg font-semibold leading-snug text-ink sm:text-xl">{q.question}</p>
+      <p className="text-lg font-semibold leading-snug text-ink sm:text-xl"><WithArabic text={q.question} /></p>
       <div className="grid gap-2 sm:grid-cols-2" role="group" aria-label="Answers">
         {order.map((original, pos) => {
           const isAnswer = result && original === result.answer;
@@ -69,7 +70,7 @@ export function QuestionCard({
                 {LETTERS[pos]}
               </span>
               <span className="min-w-0">
-                {q.options[original]}
+                <WithArabic text={q.options[original]} />
                 {isAnswer && <span className="sr-only"> (correct answer)</span>}
                 {isWrongPick && <span className="sr-only"> (your answer, incorrect)</span>}
               </span>
@@ -82,7 +83,7 @@ export function QuestionCard({
         hint ? (
           <p className="rounded-xl bg-amber-50 px-3 py-2 text-sm text-amber-900">
             <strong className="block">Hint</strong>
-            {q.hint}
+            <WithArabic text={q.hint} />
           </p>
         ) : (
           <button type="button" onClick={() => setHint(true)} className="rounded-md border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
@@ -104,8 +105,12 @@ export function QuestionCard({
               {result.correct ? (hint ? "Correct, with a hint" : "Correct") : `Not quite. The answer is ${LETTERS[order.indexOf(result.answer)]}.`}
             </strong>
             <span className="text-ink">
-              {!result.correct && result.note ? `${result.note} ` : ""}
-              {result.explanation}
+              {!result.correct && result.note ? (
+                <>
+                  <WithArabic text={result.note} />{" "}
+                </>
+              ) : null}
+              {result.explanation && <WithArabic text={result.explanation} />}
             </span>
           </div>
         )}

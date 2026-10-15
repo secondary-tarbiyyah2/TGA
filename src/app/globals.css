@@ -416,3 +416,16 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
 .portal-tabbar {
   padding-bottom: env(safe-area-inset-bottom);
 }
+
+/* Any Arabic text (marked lang="ar") uses the Arabic font, wherever it is. */
+:lang(ar) {
+  font-family: var(--font-arabic), "Noto Naskh Arabic", "Geeza Pro", "Traditional Arabic", serif;
+}
+/* An Arabic word shown next to its transliteration (WithArabic). */
+.ar-gloss {
+  font-size: 1.2em;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--color-teal-700);
+  unicode-bidi: isolate;
+}
