@@ -14,7 +14,7 @@ const errors = [];
 for (const r of results) {
   for (const m of r.messages) {
     if (m.severity !== 2) continue;
-    errors.push({ file: path.relative(process.cwd(), r.filePath), line: m.line || 1, col: m.column || 1, rule: m.ruleId || "parse", msg: m.message });
+    errors.push({ file: path.relative(process.cwd(), r.filePath), line: m.line || 1, col: m.column || 1, rule: m.ruleId || "parse", msg: String(m.message).split("\n")[0] });
   }
 }
 errors.slice(0, 9).forEach((e) => console.log(`::error file=${e.file},line=${e.line},col=${e.col},title=${e.rule}::${enc(e.msg)}`));
