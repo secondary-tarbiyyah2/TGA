@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
-import { AREA_SUBTITLE, isSidebarItemActive, sidebarLayout, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
+import { AREA_SUBTITLE, MOBILE_TABS, isSidebarItemActive, sidebarLayout, withoutPages, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
 import { Icon } from "@/components/learn/Icon";
 
 const AREA_NAMES: Record<string, string> = {
@@ -158,6 +158,7 @@ function SidebarBody({
   onNavigate,
   collapsed = false,
   onToggle,
+  hidePages = [],
 }: {
   area: PortalArea;
   session: Session;
@@ -165,13 +166,18 @@ function SidebarBody({
   onNavigate?: () => void;
   collapsed?: boolean;
   onToggle?: () => void;
+  /** Pages to leave out: the phone menu hides the ones already in the tab bar. */
+  hidePages?: string[];
 }) {
   const pathname = usePathname();
   const signOut = useLearnSignOut();
   const [fullName, setFullName] = useState<string | null>(null);
-  const entries = sidebarLayout(
-    area,
-    roles.map((r) => r.role),
+  const entries = withoutPages(
+    sidebarLayout(
+      area,
+      roles.map((r) => r.role),
+    ),
+    hidePages,
   );
   const firstSection = entries.findIndex((e) => e.kind === "section" || !!e.item.group);
   const sections = entries.flatMap((e) => (e.kind === "section" ? [e.section] : []));
@@ -327,17 +333,16 @@ export function PortalSidebarDrawer(props: { area: PortalArea; session: Session;
     };
   }, [open]);
 
+  // No menu button of its own: on phones the tab bar is the navigation, and
+  // its "More" button opens this drawer with the tab-bar pages left out.
   return (
     <div className="lg:hidden">
-      <button type="button" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)} className="portal-icon-btn">
-        <Icon name="menu" className="h-5 w-5" />
-      </button>
       {open &&
         createPortal(
-          <div className="portal fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
-            <button type="button" aria-label="Close menu" className="absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
+          <div className="portal fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true" aria-label="More">
+            <button type="button" aria-label="Close" className="absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
             <div className="absolute inset-y-0 left-0 w-[85%] max-w-[300px] bg-white shadow-xl">
-              <SidebarBody {...props} onNavigate={() => setOpen(false)} />
+              <SidebarBody {...props} hidePages={MOBILE_TABS[props.area]} onNavigate={() => setOpen(false)} />
             </div>
           </div>,
           document.body,
