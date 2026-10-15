@@ -2,18 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SIDEBAR_NAV, isSidebarItemActive, type PortalArea, type SidebarItem } from "@/lib/learn/nav";
+import { MOBILE_TABS, SIDEBAR_NAV, isSidebarItemActive, type PortalArea, type SidebarItem } from "@/lib/learn/nav";
 import { Icon } from "@/components/learn/Icon";
 
 // The four places each kind of user goes most, one tap away at the bottom
-// of the screen on phones and small tablets. Everything else is under
-// "Menu", which opens the full sidebar.
-const TABS: Record<PortalArea, string[]> = {
-  student: ["/student/dashboard", "/student/classes", "/student/todo", "/student/calendar"],
-  family: ["/family/dashboard", "/family/classes", "/family/todo", "/family/messages"],
-  teach: ["/teach/today", "/teach/classes", "/teach/review", "/teach/messages"],
-  admin: ["/admin/dashboard", "/admin/attendance", "/admin/messages", "/admin/calendar"],
-};
+// of the screen on phones and small tablets (MOBILE_TABS in nav.ts).
+// Everything else is under "More", which leaves these four out.
 const SHORT: Record<string, string> = {
   Home: "Home",
   "My classes": "Classes",
@@ -31,7 +25,7 @@ export const OPEN_MENU_EVENT = "tga-open-menu";
 export function MobileTabBar({ area, roles }: { area: PortalArea; roles: string[] }) {
   const pathname = usePathname();
   const isHead = roles.some((r) => r === "head_teacher" || r === "admin");
-  const items = TABS[area]
+  const items = MOBILE_TABS[area]
     .map((href) => SIDEBAR_NAV[area].find((i) => i.href === href))
     .filter((i): i is SidebarItem => !!i && (isHead || !i.headOnly))
     .slice(0, 4);
@@ -57,7 +51,7 @@ export function MobileTabBar({ area, roles }: { area: PortalArea; roles: string[
             <span className="flex h-7 w-12 items-center justify-center rounded-full">
               <Icon name="menu" className="h-5 w-5" />
             </span>
-            Menu
+            More
           </button>
         </li>
       </ul>

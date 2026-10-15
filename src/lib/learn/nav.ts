@@ -259,3 +259,31 @@ export const AREA_SUBTITLE: Record<PortalArea, string> = {
   family: "Parent portal",
   student: "Student portal",
 };
+
+
+/** The four pages each kind of user goes to most: the phone tab bar shows
+ * these, and the phone "More" menu leaves them out so nothing appears twice. */
+export const MOBILE_TABS: Record<PortalArea, string[]> = {
+  student: ["/student/dashboard", "/student/classes", "/student/todo", "/student/calendar"],
+  family: ["/family/dashboard", "/family/classes", "/family/todo", "/family/messages"],
+  teach: ["/teach/today", "/teach/classes", "/teach/review", "/teach/messages"],
+  admin: ["/admin/dashboard", "/admin/attendance", "/admin/messages", "/admin/calendar"],
+};
+
+/** The sidebar layout without the given pages. A section left empty is
+ * dropped, and one left with a single page becomes a plain link. */
+export function withoutPages(entries: SidebarEntry[], hrefs: string[]): SidebarEntry[] {
+  if (!hrefs.length) return entries;
+  const hide = new Set(hrefs);
+  const out: SidebarEntry[] = [];
+  for (const e of entries) {
+    if (e.kind === "link") {
+      if (!hide.has(e.item.href)) out.push(e);
+      continue;
+    }
+    const items = e.section.items.filter((i) => !hide.has(i.href));
+    if (items.length === 1) out.push({ kind: "link", item: items[0] });
+    else if (items.length > 1) out.push({ kind: "section", section: { ...e.section, items } });
+  }
+  return out;
+}
