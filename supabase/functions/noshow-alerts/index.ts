@@ -61,7 +61,7 @@ type SlotRow = {
   class_id: string;
   start_time: string;
   end_time: string;
-  classes: { name: string } | null;
+  classes: { name: string; is_test?: boolean } | null;
   subjects: { name: string } | null;
 };
 type LessonRow = { id: string; date: string; timetable_slots: SlotRow | null };
@@ -87,13 +87,15 @@ Deno.serve(async (req) => {
   const now = schoolNow();
   const { data: lessonData, error: lessonErr } = await supabase
     .from("lesson_instances")
-    .select("id, date, timetable_slots!inner(class_id, start_time, end_time, classes(name), subjects(name))")
+    .select("id, date, timetable_slots!inner(class_id, start_time, end_time, classes(name, is_test), subjects(name))")
     .eq("date", now.date);
   if (lessonErr) return jsonResponse({ ok: false, error: "query_failed", detail: lessonErr.message }, 500);
 
   const due = ((lessonData as unknown as LessonRow[]) || []).filter((l) => {
     const s = l.timetable_slots;
     if (!s) return false;
+    // Test classes (scripts/test-data.mjs) never raise no-show alerts.
+    if (s.classes?.is_test) return false;
     return now.minutes >= minutesOf(s.start_time) + GRACE_MINUTES && now.minutes < minutesOf(s.end_time);
   });
 

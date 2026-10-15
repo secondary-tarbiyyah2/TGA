@@ -99,7 +99,7 @@ const windowStart = new Date(now - delayMinutes * 60 * 1000 - 26 * 60 * 60 * 100
 // client-side; the candidate set (last ~27h) is always small.
 const { data: candidates, error: candidatesErr } = await supabase
   .from("lesson_instances")
-  .select("id, date, timetable_slot_id, timetable_slots(class_id, end_time, classes(name))")
+  .select("id, date, timetable_slot_id, timetable_slots(class_id, end_time, classes(name, is_test))")
   .gte("date", windowStart.slice(0, 10))
   .lte("date", windowEnd.slice(0, 10));
 if (candidatesErr) {
@@ -110,6 +110,8 @@ if (candidatesErr) {
 const dueLessons = (candidates || []).filter((li) => {
   const slot = li.timetable_slots;
   if (!slot?.end_time) return false;
+  // Test classes (scripts/test-data.mjs) never raise absence alerts.
+  if (slot.classes?.is_test) return false;
   const scheduledEnd = new Date(`${li.date}T${slot.end_time}`).getTime();
   return scheduledEnd + delayMinutes * 60 * 1000 <= now && scheduledEnd >= new Date(windowStart).getTime() - 24 * 60 * 60 * 1000;
 });
