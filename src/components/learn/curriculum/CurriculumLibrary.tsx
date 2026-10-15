@@ -5,7 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { uploadClassFile } from "@/components/learn/class/Attachments";
 import { Tabs } from "@/components/learn/Tabs";
 import { makeZip, type ZipEntry } from "@/lib/learn/zip";
-import { mediaUrl, unitsForYear, type StaffUnit } from "@/lib/learn/revision";
+import { mediaUrl, unitsForYear, type StaffUnit, type SummarySlide } from "@/lib/learn/revision";
 import { UnitResults } from "@/components/learn/revision/UnitResults";
 import {
   LESSON_COLUMNS,
@@ -590,7 +590,10 @@ type PackQuestion = { id: string; topic: string; lesson_no: number | null; quest
 function RevisionPackPanel({ pack, onChanged }: { pack: StaffUnit | undefined; onChanged: () => void }) {
   const supabase = getSupabaseClient();
   const [qs, setQs] = useState<PackQuestion[] | null>(null);
-  const [video, setVideo] = useState<string | null>(null);
+  // The pack's videos: one per chapter for chaptered packs, otherwise the unit video.
+  const [videos, setVideos] = useState<{ path: string; label: string }[]>([]);
+  const [chapter, setChapter] = useState(0);
+  const [loaded, setLoaded] = useState<{ path: string; url: string | null } | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -600,17 +603,30 @@ function RevisionPackPanel({ pack, onChanged }: { pack: StaffUnit | undefined; o
     (async () => {
       const [{ data }, { data: unit }] = await Promise.all([
         supabase.from("revision_questions").select("id, topic, lesson_no, question, options, answer, explanation, in_quiz").eq("unit_id", pack.id).eq("active", true).order("lesson_no").order("qkey"),
-        supabase.from("revision_units").select("video_path").eq("id", pack.id).maybeSingle(),
+        supabase.from("revision_units").select("video_path, summary").eq("id", pack.id).maybeSingle(),
       ]);
       if (!alive) return;
       setQs((data as PackQuestion[]) || []);
-      const vp = (unit as { video_path: string | null } | null)?.video_path;
-      if (vp) mediaUrl(vp).then((u) => alive && setVideo(u));
+      const u = unit as { video_path: string | null; summary: SummarySlide[] | null } | null;
+      const chapters = (u?.summary || []).flatMap((x, k) => (x.video_path ? [{ path: x.video_path, label: `Chapter ${k + 1}: ${x.title}${x.length ? ` (${x.length})` : ""}` }] : []));
+      setVideos(chapters.length ? chapters : u?.video_path ? [{ path: u.video_path, label: "Unit video" }] : []);
+      setChapter(0);
     })();
     return () => {
       alive = false;
     };
   }, [supabase, pack]);
+
+  const videoPath = videos[chapter]?.path || null;
+  useEffect(() => {
+    if (!videoPath) return;
+    let alive = true;
+    mediaUrl(videoPath).then((url) => alive && setLoaded({ path: videoPath, url }));
+    return () => {
+      alive = false;
+    };
+  }, [videoPath]);
+  const video = loaded && loaded.path === videoPath ? loaded.url : null;
 
   if (!pack)
     return (
@@ -664,9 +680,27 @@ function RevisionPackPanel({ pack, onChanged }: { pack: StaffUnit | undefined; o
           server, so answers never reach their browser early), then the practice coach works on their weakest topics with hints. No AI is involved; every question comes from the teacher-checked lessons.
         </p>
       </div>
-      {video && (
-        <div className="rounded-2xl border border-gold-light bg-white p-3">
-          <video src={video} controls playsInline preload="metadata" className="aspect-video w-full rounded-lg bg-ink" />
+      {videos.length > 0 && (
+        <div className="space-y-2 rounded-2xl border border-gold-light bg-white p-3">
+          {videos.length > 1 && (
+            <label className="flex flex-wrap items-center gap-2 text-sm font-medium text-ink">
+              Video
+              <select value={chapter} onChange={(e) => setChapter(Number(e.target.value))} className="min-w-0 flex-1 rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm">
+                {videos.map((v, k) => (
+                  <option key={v.path} value={k}>
+                    {v.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
+          {video ? (
+            <video key={videoPath} src={video} controls playsInline preload="metadata" className="aspect-video w-full rounded-lg bg-ink" />
+          ) : (
+            <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/60">
+              Loading the video…
+            </div>
+          )}
         </div>
       )}
       {qs === null ? (
