@@ -177,7 +177,8 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
     window.setTimeout(() => document.querySelector<HTMLElement>(`[data-day="${next}"]`)?.focus(), 30);
   };
 
-  const upcoming = useMemo(() => {
+  // Cheap to work out, so it is computed on each render rather than memoised.
+  const upcoming = (() => {
     const out: { key: string; date: string; label: string }[] = [];
     for (const t of terms || []) {
       if (t.starts_on >= todayKey) out.push({ key: `s-${t.id}`, date: t.starts_on, label: `${t.name} starts` });
@@ -187,7 +188,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
     for (const c of closures) if (c.ends_on >= todayKey) out.push({ key: `c-${c.id}`, date: c.starts_on, label: `${c.name} (${CLOSURE_LABEL[c.kind]})` });
     for (const e of items) if (e.kind === "homework" && e.date >= todayKey) out.push({ key: e.id, date: e.date, label: `Homework due: ${e.title} (${e.className})${e.childName ? ` · ${e.childName}` : ""}` });
     return out.sort((a, b) => a.date.localeCompare(b.date));
-  }, [terms, closures, items, todayKey]);
+  })();
 
   const panel = (onClose?: () => void) => (
     <DayPanel

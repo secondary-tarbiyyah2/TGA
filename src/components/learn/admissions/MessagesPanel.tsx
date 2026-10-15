@@ -44,7 +44,8 @@ export function MessagesPanel({ app, ctx, staffNames }: { app: ApplicationRow; c
 
   function pick(t: TemplateKey) {
     const built = buildTemplate(t, app, ctx);
-    setComposing({ key: t, subject: built.subject, body: built.body, n: Date.now() });
+    // n only needs to change each time, so the composer remounts with a fresh draft.
+    setComposing((prev) => ({ key: t, subject: built.subject, body: built.body, n: (prev?.n ?? 0) + 1 }));
     setResult(null);
   }
 

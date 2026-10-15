@@ -1,0 +1,68 @@
+name: CI
+
+# The safety net from step 1 of the "TGA Portal: Accessibility & Structure
+# Audit" (Oct 2026). Runs on every pull request (and on pushes to main) so
+# lint errors and accessibility regressions are caught before they reach the
+# live site — deploy-site.yml only builds and uploads, it never checks.
+#
+# Two jobs:
+#   lint — `npm run lint` (ESLint with next/core-web-vitals + TypeScript)
+#          and a TypeScript type check.
+#   a11y — builds the static export with no secrets (the public pages don't
+#          need Supabase at build time) and runs scripts/a11y-check.mjs:
+#          axe (WCAG 2.2 AA) on every public page, plus a 360px
+#          phone-width "no sideways scroll" check.
+#
+# Neither job deploys anything or touches any secret, so it's safe to run on
+# pull requests from any branch.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Lint
+        run: |
+          npx eslint -f json -o eslint.json || true
+          node scripts/ci/eslint-annotate.mjs eslint.json
+      - name: Type check
+        if: always()
+        run: |
+          npx next typegen
+          npx tsc --noEmit
+
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build static export
+        run: npm run build
+      - name: Install the accessibility checker
+        run: |
+          npm i --no-save playwright @axe-core/playwright
+          npx playwright install --with-deps chromium
+      - name: Check public pages (WCAG 2.2 AA, 360px width)
+        run: node scripts/a11y-check.mjs out

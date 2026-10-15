@@ -63,6 +63,7 @@ function useClockState(userId: string, roles: RoleGrant[]) {
   }, [userId, isStaff]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- load the clock-in state when the page opens
     load();
     const onChange = () => {
       load();

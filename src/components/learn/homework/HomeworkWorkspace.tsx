@@ -8,6 +8,7 @@ import { LateMissingView } from "@/components/learn/homework/LateMissingView";
 import { Switch } from "@/components/learn/homework/Switch";
 import type { Homework } from "@/lib/learn/homework";
 import { Tabs } from "@/components/learn/Tabs";
+import { useNow } from "@/lib/learn/useNow";
 
 type ClassOpt = { id: string; name: string };
 
@@ -37,6 +38,7 @@ export function HomeworkWorkspace({
   onShowDeleted: (v: boolean) => void;
   onReload: () => void;
 }) {
+  const now = useNow();
   const [tab, setTab] = useState<"set" | "late">("set");
   const [classId, setClassId] = useState("");
   const [composing, setComposing] = useState(false);
@@ -45,11 +47,10 @@ export function HomeworkWorkspace({
 
   const shown = useMemo(() => (homework || []).filter((h) => !classId || h.class_id === classId), [homework, classId]);
   const { upcoming, past } = useMemo(() => {
-    const now = Date.now();
     const up = shown.filter((h) => new Date(h.due_at).getTime() >= now).sort((a, b) => +new Date(a.due_at) - +new Date(b.due_at));
     const pa = shown.filter((h) => new Date(h.due_at).getTime() < now).sort((a, b) => +new Date(b.due_at) - +new Date(a.due_at));
     return { upcoming: up, past: pa };
-  }, [shown]);
+  }, [shown, now]);
 
   const formOpen = composing || editing !== null;
   const closeForm = () => {

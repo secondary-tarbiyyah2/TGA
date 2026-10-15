@@ -55,6 +55,7 @@ function TeachBehaviourContent() {
   }, [classes, classIds]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- load behaviour records when the page opens
     load();
   }, [load]);
 

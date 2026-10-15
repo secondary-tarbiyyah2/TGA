@@ -68,7 +68,9 @@ export function TeacherMatrix({ classes, yearGroups, subjects, teachers, classTe
     }
     return out;
   }, [classes, subjectTeachers]);
-  const load = useMemo(() => {
+  // teacherLoad returns a new Map that is then added to, so this is computed
+  // on each render rather than memoised.
+  const load = (() => {
     const l = teacherLoad(pairs, subjectTeachers, today);
     // legacy class teachers with no mapping row yet
     for (const c of classes) {
@@ -78,7 +80,7 @@ export function TeacherMatrix({ classes, yearGroups, subjects, teachers, classTe
       }
     }
     return l;
-  }, [pairs, subjectTeachers, today, classes, classTeachers]);
+  })();
   const loadRows = [...load.entries()].map(([id, n]) => ({ id, n })).sort((a, b) => b.n - a.n);
 
   // Problems worth a warning

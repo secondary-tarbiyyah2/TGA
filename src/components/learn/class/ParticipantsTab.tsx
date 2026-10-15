@@ -158,6 +158,7 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
   }, [classId]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- load the class members when the tab opens
     load();
   }, [load]);
 

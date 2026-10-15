@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { useNow } from "@/lib/learn/useNow";
 
 type Item = {
   submission_id: string;
@@ -25,6 +26,7 @@ const fmt = (iso: string) => new Date(iso).toLocaleString("en-GB", { weekday: "s
  * only reads (homework_review_queue); marking happens on the Homework page.
  */
 export function ReviewQueue() {
+  const now = useNow();
   const [items, setItems] = useState<Item[] | null>(null);
   const [classId, setClassId] = useState("");
   const [error, setError] = useState(false);
@@ -50,7 +52,7 @@ export function ReviewQueue() {
   }, [items]);
 
   const shown = (items || []).filter((i) => !classId || i.class_id === classId);
-  const waitingDays = (iso: string) => Math.floor((Date.now() - new Date(iso).getTime()) / 86_400_000);
+  const waitingDays = (iso: string) => Math.floor((now - new Date(iso).getTime()) / 86_400_000);
 
   return (
     <div className="rounded-2xl border border-gold-light bg-white">

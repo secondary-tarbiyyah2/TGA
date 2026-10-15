@@ -9,10 +9,12 @@
 // without scolding.
 import { emailShell } from "./resend.ts";
 
+/* eslint-disable @typescript-eslint/no-explicit-any -- Deno edge code: the Supabase client and rows are untyped here, matching the deno-lint-ignore below */
 // deno-lint-ignore no-explicit-any
 type Service = any;
 // deno-lint-ignore no-explicit-any
 type Row = any;
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 const LEARN_SITE_URL = (Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk").replace(/\/$/, "");
 const TZ = "Europe/London";

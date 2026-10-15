@@ -22,6 +22,7 @@ import {
   type ApplicationRow,
   type ApplicationStatus,
 } from "@/components/admissions/applicationShared";
+import { useNow } from "@/lib/learn/useNow";
 
 const FORM_URL = `${MAIN_SITE_ORIGIN}/admissions/apply`;
 
@@ -65,7 +66,7 @@ function ApplicationCard({
   const next = idx >= 0 && idx < PIPELINE_STATUSES.length - 1 ? PIPELINE_STATUSES[idx + 1] : null;
   const name = `${app.child_first_name} ${app.child_last_name}`;
   const pips = processPips(app);
-  const nowMs = Date.now();
+  const nowMs = useNow();
   const upcoming: { label: string; at: string }[] = [];
   if (app.assessment_at && new Date(app.assessment_at).getTime() > nowMs) upcoming.push({ label: "Assessment", at: app.assessment_at });
   if (app.interview_at && new Date(app.interview_at).getTime() > nowMs) upcoming.push({ label: "Conversation", at: app.interview_at });

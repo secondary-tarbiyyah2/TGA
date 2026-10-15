@@ -9,6 +9,7 @@ import { DEFAULT_CLASS_SETTINGS, fetchClassSettings, type ClassSettings } from "
 import { AttachmentList, cleanAttachments, type Attachment } from "@/components/learn/class/Attachments";
 import { AnnouncementComposer } from "@/components/learn/class/AnnouncementComposer";
 import { RecordingChip, useRecordingLinks } from "@/components/learn/class/LessonRecordingLinks";
+import { useNow } from "@/lib/learn/useNow";
 
 type AnnRow = {
   id: string;
@@ -135,6 +136,7 @@ function CommentThread({
  */
 export function StreamTab({ classId, viewer, area, classHref }: { classId: string; viewer: ClassViewer; area: string; classHref: (tab: string) => string }) {
   const isStaff = viewer.kind === "teacher" || viewer.kind === "staff";
+  const now = useNow();
   const [settings, setSettings] = useState<ClassSettings>(DEFAULT_CLASS_SETTINGS);
   const [items, setItems] = useState<FeedItem[] | null>(null);
   const [comments, setComments] = useState<Comment[]>([]);
@@ -271,7 +273,7 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
           const mine = comments.filter((c) => (isAnn ? c.announcement_id === item.row.id : c.material_id === item.row.id));
           const live = mine.filter((c) => !c.deleted_at).length;
           const recalled = isAnn && (item.row as AnnRow).recalled_at;
-          const scheduled = isAnn && (item.row as AnnRow).publish_at && new Date((item.row as AnnRow).publish_at as string).getTime() > Date.now();
+          const scheduled = isAnn && (item.row as AnnRow).publish_at && new Date((item.row as AnnRow).publish_at as string).getTime() > now;
           const audience = isAnn ? (item.row as AnnRow).audience_child_ids : null;
           return (
             <article key={key} className={`rounded-2xl border border-gold-light bg-white p-5 ${recalled ? "opacity-60" : ""}`}>

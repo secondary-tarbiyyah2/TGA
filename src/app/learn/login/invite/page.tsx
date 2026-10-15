@@ -37,6 +37,7 @@ export default function LearnInvitePage() {
     const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
     const hashCode = hash.get("error_code") || hash.get("error");
     if (hashCode) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- read the error from the invite link's URL after mount
       setLinkError(friendlyPasswordError({ code: hash.get("error_code") || undefined, message: hash.get("error_description") || "" }, "set"));
       return;
     }

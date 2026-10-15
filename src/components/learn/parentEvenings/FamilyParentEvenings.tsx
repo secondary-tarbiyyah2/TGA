@@ -13,6 +13,7 @@ import {
   slotKey,
   type ParentEvening,
 } from "@/lib/learn/parentEvenings";
+import { useNow } from "@/lib/learn/useNow";
 
 type Option = { evening_id: string; child_id: string; child_name: string; teacher_id: string; teacher_name: string; class_names: string[] | null };
 type MyBooking = {
@@ -46,6 +47,7 @@ function SlotPicker({
   busy: boolean;
 }) {
   const supabase = getSupabaseClient();
+  const now = useNow();
   const [taken, setTaken] = useState<Taken[] | null>(null);
 
   useEffect(() => {
@@ -70,7 +72,6 @@ function SlotPicker({
   if (taken === null) return <p className="mt-2 text-sm text-ink/60">Loading times…</p>;
   if (slots.length === 0) return <p className="mt-2 text-sm text-ink/60">No times are available.</p>;
 
-  const now = Date.now();
   return (
     <div className="mt-2">
       <p className="text-xs text-ink/60">{formatDay(evening.starts_at)} · {evening.slot_minutes}-minute meetings (UK time)</p>
