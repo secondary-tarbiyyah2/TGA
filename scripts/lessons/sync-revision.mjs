@@ -164,7 +164,9 @@ function summaryPacks() {
       unit: j.unit,
       title: j.title || j.unit,
       kind: "summary",
-      summary: slides.map(({ keywords, hint, ...s }) => ({ ...s, keywords: (keywords || []).map((k) => k.t) })),
+      // A slide's own chapter video ("video": path under this folder) is uploaded by
+      // sync() and stored on the slide as video_path.
+      summary: slides.map(({ keywords, hint, video, ...s }) => ({ ...s, keywords: (keywords || []).map((k) => k.t), ...(video ? { video: path.join(REVISION, video) } : {}) })),
       sort_order: j.sort_order ?? 0,
       questions,
       video: j.video ? path.join(REVISION, j.video) : null,
@@ -185,6 +187,7 @@ export function buildPacks() {
       if (q.answer < 0 || q.answer >= q.options.length) throw new Error(`${p.unit} ${q.qkey}: answer out of range`);
     }
     if (p.video && !fs.existsSync(p.video)) throw new Error(`${p.unit}: video file missing (${p.video})`);
+    for (const s of p.summary || []) if (s.video && !fs.existsSync(s.video)) throw new Error(`${p.unit}, ${s.title}: chapter video missing (${s.video})`);
   }
   return packs;
 }
@@ -207,6 +210,19 @@ async function sync(packs) {
       const up = await supabase.storage.from(MEDIA_BUCKET).upload(videoPath, fs.readFileSync(p.video), { contentType: "video/mp4", upsert: false });
       if (up.error && !/exists|duplicate/i.test(up.error.message)) throw new Error(`Video upload for ${p.unit}: ${up.error.message}`);
     }
+    // Chapter videos: one per summary slide, uploaded next to the unit video.
+    const summary = [];
+    for (const s of p.summary || []) {
+      if (!s.video) {
+        summary.push(s);
+        continue;
+      }
+      const { video, ...rest } = s;
+      const chapterPath = `${p.subject_slug}/${p.year}/${slug(p.unit)}/${path.basename(video)}`;
+      const up = await supabase.storage.from(MEDIA_BUCKET).upload(chapterPath, fs.readFileSync(video), { contentType: "video/mp4", upsert: false });
+      if (up.error && !/exists|duplicate/i.test(up.error.message)) throw new Error(`Chapter video for ${p.unit}: ${up.error.message}`);
+      summary.push({ ...rest, video_path: chapterPath });
+    }
     const row = {
       subject_slug: p.subject_slug,
       subject: p.subject,
@@ -214,7 +230,7 @@ async function sync(packs) {
       unit: p.unit,
       title: p.title,
       kind: p.kind,
-      summary: p.summary,
+      summary,
       sort_order: p.sort_order,
       updated_at: new Date().toISOString(),
       ...(videoPath ? { video_path: videoPath } : {}),

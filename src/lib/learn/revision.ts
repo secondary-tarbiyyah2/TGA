@@ -6,7 +6,12 @@ export const MEDIA_BUCKET = "revision-media";
 
 export type SummarySlide = {
   title: string;
+  /** Where this slide starts in the unit's single video (older packs). */
   time?: string | null;
+  /** This slide's own chapter video, in the revision-media bucket. */
+  video_path?: string | null;
+  /** The chapter video's length, e.g. "2:37". */
+  length?: string | null;
   term?: string | null;
   transliteration?: string | null;
   points: string[];

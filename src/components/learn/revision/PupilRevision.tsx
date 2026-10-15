@@ -197,18 +197,24 @@ function UnitView({ id, onBack }: { id: string; onBack: () => void }) {
 function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) {
   const slides = unit.summary;
   const [i, setI] = useState(0);
-  const [video, setVideo] = useState<string | null>(null);
   const ref = useRef<HTMLVideoElement>(null);
+  const keepPlaying = useRef(false);
   const s = slides[i];
+  // Newer packs give each slide its own chapter video; older ones have one
+  // video for the unit, with a start time per slide.
+  const chapters = slides.some((x) => x.video_path);
+  const videoPath = chapters ? s?.video_path || null : unit.video_path;
+  const [loaded, setLoaded] = useState<{ path: string; url: string | null } | null>(null);
+  const video = loaded && loaded.path === videoPath ? loaded.url : null;
 
   useEffect(() => {
-    if (!unit.video_path) return;
+    if (!videoPath) return;
     let alive = true;
-    mediaUrl(unit.video_path).then((u) => alive && setVideo(u));
+    mediaUrl(videoPath).then((url) => alive && setLoaded({ path: videoPath, url }));
     return () => {
       alive = false;
     };
-  }, [unit.video_path]);
+  }, [videoPath]);
 
   const seek = (t: string | null | undefined, play = true) => {
     const v = ref.current;
@@ -217,10 +223,19 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
     if (play) v.play().catch(() => {});
   };
 
-  const go = (k: number) => {
-    setI(k);
+  const playChapter = () => {
     const v = ref.current;
-    if (v && !v.paused) seek(slides[k]?.time);
+    if (!v) return;
+    v.currentTime = 0;
+    v.play().catch(() => {});
+  };
+
+  const go = (k: number) => {
+    const v = ref.current;
+    const playing = !!v && !v.paused;
+    setI(k);
+    if (chapters) keepPlaying.current = playing;
+    else if (playing) seek(slides[k]?.time);
   };
 
   if (!slides.length) return <p className="text-sm text-ink/65">No summary for this unit yet.</p>;
@@ -239,20 +254,58 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-cream text-xs font-semibold text-ink">{k + 1}</span>
             <span className="min-w-0">
               <span className="block font-medium">{x.title}</span>
-              {x.time && <span className="block text-xs text-ink/60">Video {x.time}</span>}
+              {chapters ? (
+                x.video_path && (
+                  <span className="block text-xs text-ink/60">
+                    Chapter {k + 1}
+                    {x.length ? ` · ${x.length}` : ""}
+                  </span>
+                )
+              ) : (
+                x.time && <span className="block text-xs text-ink/60">Video {x.time}</span>
+              )}
             </span>
           </button>
         ))}
       </nav>
       <div className="min-w-0 space-y-4">
-        {unit.video_path && (
+        {videoPath && (
           <div className="space-y-2 rounded-2xl border border-gold-light bg-white p-3">
             {video ? (
-              <video ref={ref} src={video} controls playsInline preload="metadata" className="aspect-video w-full rounded-lg bg-ink" />
+              <video
+                key={videoPath}
+                ref={ref}
+                src={video}
+                controls
+                playsInline
+                preload="metadata"
+                onLoadedMetadata={(e) => {
+                  // Moving to the next chapter while one was playing carries on playing.
+                  if (keepPlaying.current) e.currentTarget.play().catch(() => {});
+                  keepPlaying.current = false;
+                }}
+                className="aspect-video w-full rounded-lg bg-ink"
+              />
             ) : (
-              <div className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/60">Loading the video…</div>
+              <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/60">
+                Loading the video…
+              </div>
             )}
-            <p className="text-xs text-ink/60">Tap a slide&apos;s video time to jump to that part.</p>
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink/65">
+              {chapters ? (
+                <>
+                  <span>
+                    Chapter {i + 1} of {slides.length}
+                    {s?.length ? ` · ${s.length}` : ""} · {s?.title}
+                  </span>
+                  <button type="button" onClick={playChapter} className="rounded-full bg-gold-100 px-2.5 py-1 font-semibold text-gold-900 hover:bg-gold-300">
+                    ▶ Play chapter {i + 1}
+                  </button>
+                </>
+              ) : (
+                <span>Tap a slide&apos;s video time to jump to that part.</span>
+              )}
+            </div>
           </div>
         )}
         <article className="space-y-4 rounded-2xl border-t-4 border-teal-700 bg-white p-5 shadow-sm ring-1 ring-gold-light">
@@ -260,7 +313,7 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
             <span className="rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-semibold text-teal-900">
               Slide {i + 1} of {slides.length}
             </span>
-            {s.time && unit.video_path && (
+            {!chapters && s.time && unit.video_path && (
               <button type="button" onClick={() => seek(s.time)} className="rounded-full bg-gold-100 px-2.5 py-0.5 text-xs font-semibold text-gold-900 hover:bg-gold-300">
                 ▶ Watch from {s.time}
               </button>
