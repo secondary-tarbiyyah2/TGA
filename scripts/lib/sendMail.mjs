@@ -100,6 +100,8 @@ async function sendViaResend(to, subject, html) {
 export async function sendMail(to, subject, html) {
   if (!to) return { ok: false, detail: "no recipient" };
   if (/\.internal$/i.test(String(to).trim())) return { ok: false, detail: "internal student sign-in address, not a mailbox" };
+  // Test accounts (scripts/test-data.mjs) use the reserved .test domain, which has no mailboxes.
+  if (/\.test$/i.test(String(to).trim())) return { ok: false, detail: "Not sent: test account (.test address)" };
   const failures = [];
   if (sesConfigured()) {
     try {
