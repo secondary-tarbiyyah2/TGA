@@ -204,6 +204,12 @@ async function sync(packs) {
   let qs = 0;
   let retired = 0;
   for (const p of packs) {
+    // A pack a teacher made in the portal for this unit wins; never overwrite it.
+    const { data: own } = await supabase.from("revision_units").select("source").eq("subject_slug", p.subject_slug).eq("year", p.year).eq("unit", p.unit).maybeSingle();
+    if (own?.source === "staff") {
+      console.log(`Skipping ${p.unit} (${p.year}): a teacher made this pack in the portal.`);
+      continue;
+    }
     let videoPath = null;
     if (p.video) {
       videoPath = `${p.subject_slug}/${p.year}/${slug(p.unit)}/${path.basename(p.video)}`;

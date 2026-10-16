@@ -7,6 +7,7 @@ import { Tabs } from "@/components/learn/Tabs";
 import { makeZip, type ZipEntry } from "@/lib/learn/zip";
 import { mediaUrl, unitsForYear, type StaffUnit, type SummarySlide } from "@/lib/learn/revision";
 import { UnitResults } from "@/components/learn/revision/UnitResults";
+import { PackBuilder, QuestionEditor } from "@/components/learn/revision/PackBuilder";
 import {
   LESSON_COLUMNS,
   YEARS,
@@ -147,6 +148,8 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const [viewing, setViewing] = useState<{ lesson: CurriculumLesson; kind: "slides-pdf" | "plan-pdf"; url: string | null } | null>(null);
   const [openLesson, setOpenLesson] = useState<string | null>(null);
   const [wanted, setWanted] = useState<{ subject: string | null; unit: string } | null>(linked.unit ? { subject: linked.subject, unit: linked.unit } : null);
+  // Making or editing a revision pack (PackBuilder) takes over the main area.
+  const [building, setBuilding] = useState<{ packId?: string; initial?: { subject_slug?: string; subject?: string; unit?: string } } | null>(null);
 
   const setYear = (y: string) => {
     setYearState(y);
@@ -390,8 +393,32 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           <p className="text-sm text-ink/65" aria-live="polite">
             {!lessons ? "Loading…" : results ? `${results.length} match${results.length === 1 ? "" : "es"}` : `${lessons.length} lessons · ${allUnits.length} units`}
           </p>
+          {year && !building && (
+            <button type="button" className={btn} onClick={() => setBuilding({})}>
+              + New revision pack
+            </button>
+          )}
         </div>
       </div>
+
+      {building && year && (
+        <PackBuilder
+          key={building.packId || "new"}
+          year={year}
+          yearLabel={yearLabel(year)}
+          subjects={subjects.map((x) => ({ slug: x.slug, name: x.name }))}
+          initial={building.initial}
+          packId={building.packId}
+          onCancel={() => {
+            setBuilding(null);
+            load();
+          }}
+          onDone={() => {
+            setBuilding(null);
+            load();
+          }}
+        />
+      )}
 
       {message && (
         <p role="status" className="rounded-lg border border-gold-light bg-cream px-3 py-2 text-sm text-ink/80">
@@ -400,9 +427,9 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       )}
 
       {lessons === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
-      {lessons && allUnits.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No lessons for this year yet.</p>}
+      {!building && lessons && allUnits.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No lessons for this year yet.</p>}
 
-      {lessons && allUnits.length > 0 && (
+      {!building && lessons && allUnits.length > 0 && (
         <div className="grid gap-4 lg:grid-cols-[17rem_minmax(0,1fr)]">
           {/* Units: a list on wide screens, a drop-down on phones. */}
           <div className="lg:hidden">
@@ -511,7 +538,15 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     ) : (
                       <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit is a revision pack only; its summary and video are on the Revision pack tab.</p>
                     ))}
-                  {tab === "revision" && <RevisionPackPanel pack={currentPack} onChanged={load} />}
+                  {tab === "revision" && (
+                    <RevisionPackPanel
+                      pack={currentPack}
+                      onChanged={load}
+                      onBuild={() =>
+                        setBuilding(currentPack ? { packId: currentPack.id } : { initial: { subject_slug: current.subject_slug, subject: current.subject, unit: current.unit } })
+                      }
+                    />
+                  )}
                   {tab === "results" &&
                     (currentPack ? (
                       <UnitResults key={currentPack.id} unitId={currentPack.id} />
@@ -587,7 +622,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
 type PackQuestion = { id: string; topic: string; lesson_no: number | null; question: string; options: string[]; answer: number; explanation: string | null; in_quiz: boolean };
 
 /** What pupils revise from for this unit: status, the quiz questions with answers, and a switch to hide it. */
-function RevisionPackPanel({ pack, onChanged }: { pack: StaffUnit | undefined; onChanged: () => void }) {
+function RevisionPackPanel({ pack, onChanged, onBuild }: { pack: StaffUnit | undefined; onChanged: () => void; onBuild: () => void }) {
   const supabase = getSupabaseClient();
   const [qs, setQs] = useState<PackQuestion[] | null>(null);
   // The pack's videos: one per chapter for chaptered packs, otherwise the unit video.
@@ -633,9 +668,12 @@ function RevisionPackPanel({ pack, onChanged }: { pack: StaffUnit | undefined; o
       <div className="space-y-2 rounded-2xl border border-dashed border-gold-light bg-white p-6 text-sm text-ink/75">
         <p className="font-semibold text-ink">No revision pack for this unit yet.</p>
         <p>
-          A pack is made automatically once the unit&apos;s lessons have at least four hinge questions (the “check” slides), or when a summary pack is added for it. Ask the head of department or the
-          portal admin to add one.
+          A pack is made automatically once the unit&apos;s lessons have at least four hinge questions (the “check” slides). Or make one yourself: upload a summary video, mark its chapters and add
+          quiz questions.
         </p>
+        <button type="button" className={btnPrimary} onClick={onBuild}>
+          Make a revision pack
+        </button>
       </div>
     );
 
@@ -664,9 +702,15 @@ function RevisionPackPanel({ pack, onChanged }: { pack: StaffUnit | undefined; o
           {pack.has_video ? " · video" : ""} · {pack.questions} quiz questions · {pack.practice_questions} extra practice questions from the key words
         </span>
         <span className="flex-1" />
-        <button type="button" className={btn} disabled={busy} onClick={togglePublished}>
-          {pack.published ? "Hide from pupils" : "Show to pupils"}
-        </button>
+        {pack.source === "staff" ? (
+          <button type="button" className={btnPrimary} onClick={onBuild}>
+            Edit pack
+          </button>
+        ) : (
+          <button type="button" className={btn} disabled={busy} onClick={togglePublished}>
+            {pack.published ? "Hide from pupils" : "Show to pupils"}
+          </button>
+        )}
       </div>
       {error && (
         <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
@@ -702,6 +746,15 @@ function RevisionPackPanel({ pack, onChanged }: { pack: StaffUnit | undefined; o
             </div>
           )}
         </div>
+      )}
+      {pack.source !== "staff" && (
+        <details className="rounded-2xl border border-gold-light bg-white p-4">
+          <summary className="cursor-pointer text-sm font-semibold text-ink">Add your own question to this pack</summary>
+          <p className="mt-1 text-sm text-ink/70">Questions you add here are kept when the pack is updated.</p>
+          <div className="mt-3">
+            <QuestionEditor unitId={pack.id} topics={topics} questions={[]} onChange={() => onChanged()} onError={setError} />
+          </div>
+        </details>
       )}
       {qs === null ? (
         <div className="h-32 animate-pulse rounded-2xl bg-white" />

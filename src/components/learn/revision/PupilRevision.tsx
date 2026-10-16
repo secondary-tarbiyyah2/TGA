@@ -16,6 +16,8 @@ import {
   pupilUnits,
   startRound,
   toSeconds,
+  clock,
+  chapterEnd,
   type AnswerResult,
   type PupilQuestion,
   type PupilUnit,
@@ -200,12 +202,21 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
   const ref = useRef<HTMLVideoElement>(null);
   const keepPlaying = useRef(false);
   const s = slides[i];
-  // Newer packs give each slide its own chapter video; older ones have one
-  // video for the unit, with a start time per slide.
+  // Three kinds of pack: each slide has its own chapter video (chapters);
+  // one video cut into chapters by start/end seconds (ranged, teacher-made
+  // packs); or one video with a "watch from" time per slide (older packs).
   const chapters = slides.some((x) => x.video_path);
+  const ranged = !chapters && !!unit.video_path && slides.some((x) => typeof x.start === "number");
+  const chaptered = chapters || ranged;
   const videoPath = chapters ? s?.video_path || null : unit.video_path;
   const [loaded, setLoaded] = useState<{ path: string; url: string | null } | null>(null);
   const video = loaded && loaded.path === videoPath ? loaded.url : null;
+  const [duration, setDuration] = useState(0);
+  // Shown when a chapter reaches its end, so it never runs on into the next one.
+  const [ended, setEnded] = useState(false);
+  const startOf = (k: number) => (ranged ? slides[k]?.start || 0 : 0);
+  const endOf = (k: number) => chapterEnd(slides, k, duration);
+  const lengthOf = (k: number) => (ranged ? (duration || slides[k]?.end ? clock(endOf(k) - startOf(k)) : null) : slides[k]?.length || null);
 
   useEffect(() => {
     if (!videoPath) return;
@@ -223,10 +234,11 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
     if (play) v.play().catch(() => {});
   };
 
-  const playChapter = () => {
+  const playChapter = (k = i) => {
     const v = ref.current;
     if (!v) return;
-    v.currentTime = 0;
+    setEnded(false);
+    v.currentTime = startOf(k);
     v.play().catch(() => {});
   };
 
@@ -234,8 +246,35 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
     const v = ref.current;
     const playing = !!v && !v.paused;
     setI(k);
+    setEnded(false);
     if (chapters) keepPlaying.current = playing;
-    else if (playing) seek(slides[k]?.time);
+    else if (ranged && v) {
+      v.currentTime = startOf(k);
+      if (playing) v.play().catch(() => {});
+    } else if (playing) seek(slides[k]?.time);
+  };
+
+  // Ranged packs: stop exactly at the chapter's end.
+  const onTime = () => {
+    const v = ref.current;
+    if (!ranged || !v || v.paused) return;
+    if (v.currentTime >= endOf(i) - 0.12) {
+      v.pause();
+      v.currentTime = Math.max(startOf(i), endOf(i) - 0.12);
+      setEnded(true);
+    }
+  };
+  // If a pupil drags the scrubber into another chapter, follow them there.
+  const onSeeked = () => {
+    const v = ref.current;
+    if (!ranged || !v) return;
+    const t = v.currentTime;
+    if (t >= startOf(i) - 0.5 && t < endOf(i) - 0.2) return;
+    const k = slides.findIndex((_, n) => t >= startOf(n) - 0.05 && t < endOf(n) - 0.05);
+    if (k >= 0 && k !== i) {
+      setI(k);
+      setEnded(false);
+    }
   };
 
   if (!slides.length) return <p className="text-sm text-ink/65">No summary for this unit yet.</p>;
@@ -254,11 +293,11 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-cream text-xs font-semibold text-ink">{k + 1}</span>
             <span className="min-w-0">
               <span className="block font-medium">{x.title}</span>
-              {chapters ? (
-                x.video_path && (
+              {chaptered ? (
+                (chapters ? x.video_path : true) && (
                   <span className="block text-xs text-ink/60">
                     Chapter {k + 1}
-                    {x.length ? ` · ${x.length}` : ""}
+                    {lengthOf(k) ? ` · ${lengthOf(k)}` : ""}
                   </span>
                 )
               ) : (
@@ -272,33 +311,76 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
         {videoPath && (
           <div className="space-y-2 rounded-2xl border border-gold-light bg-white p-3">
             {video ? (
-              <video
-                key={videoPath}
-                ref={ref}
-                src={video}
-                controls
-                playsInline
-                preload="metadata"
-                onLoadedMetadata={(e) => {
-                  // Moving to the next chapter while one was playing carries on playing.
-                  if (keepPlaying.current) e.currentTarget.play().catch(() => {});
-                  keepPlaying.current = false;
-                }}
-                className="aspect-video w-full rounded-lg bg-ink"
-              />
+              <div className="relative">
+                <video
+                  key={videoPath}
+                  ref={ref}
+                  src={video}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  onLoadedMetadata={(e) => {
+                    setDuration(e.currentTarget.duration || 0);
+                    if (ranged) e.currentTarget.currentTime = startOf(i);
+                    // Moving to the next chapter while one was playing carries on playing.
+                    if (keepPlaying.current) e.currentTarget.play().catch(() => {});
+                    keepPlaying.current = false;
+                  }}
+                  onTimeUpdate={onTime}
+                  onSeeked={onSeeked}
+                  onPlay={() => setEnded(false)}
+                  onEnded={() => chaptered && setEnded(true)}
+                  className="aspect-video w-full rounded-lg bg-ink"
+                />
+                {ended && (
+                  <div role="status" className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-lg bg-ink-900/90 p-4 text-center text-white">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">End of chapter {i + 1}</p>
+                    <p className="font-serif text-xl font-semibold">{s?.title}</p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      <button type="button" onClick={() => playChapter(i)} className="rounded-full border border-white/40 px-4 py-2 text-sm font-semibold hover:bg-white/10">
+                        ↺ Watch again
+                      </button>
+                      {i < slides.length - 1 ? (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const k = i + 1;
+                            if (chapters) {
+                              // A new chapter file loads; it starts playing once ready.
+                              keepPlaying.current = true;
+                              setEnded(false);
+                              setI(k);
+                            } else {
+                              setI(k);
+                              playChapter(k);
+                            }
+                          }}
+                          className="rounded-full bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 hover:brightness-95"
+                        >
+                          Next: {slides[i + 1].title} ›
+                        </button>
+                      ) : (
+                        <button type="button" onClick={onQuiz} className="rounded-full bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 hover:brightness-95">
+                          Take the quiz ›
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
             ) : (
               <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/60">
                 Loading the video…
               </div>
             )}
             <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-ink/65">
-              {chapters ? (
+              {chaptered ? (
                 <>
                   <span>
                     Chapter {i + 1} of {slides.length}
-                    {s?.length ? ` · ${s.length}` : ""} · {s?.title}
+                    {lengthOf(i) ? ` · ${lengthOf(i)}` : ""} · {s?.title}
                   </span>
-                  <button type="button" onClick={playChapter} className="rounded-full bg-gold-100 px-2.5 py-1 font-semibold text-gold-900 hover:bg-gold-300">
+                  <button type="button" onClick={() => playChapter(i)} className="rounded-full bg-gold-100 px-2.5 py-1 font-semibold text-gold-900 hover:bg-gold-300">
                     ▶ Play chapter {i + 1}
                   </button>
                 </>
@@ -313,7 +395,7 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
             <span className="rounded-full bg-teal-100 px-2.5 py-0.5 text-xs font-semibold text-teal-900">
               Slide {i + 1} of {slides.length}
             </span>
-            {!chapters && s.time && unit.video_path && (
+            {!chaptered && s.time && unit.video_path && (
               <button type="button" onClick={() => seek(s.time)} className="rounded-full bg-gold-100 px-2.5 py-0.5 text-xs font-semibold text-gold-900 hover:bg-gold-300">
                 ▶ Watch from {s.time}
               </button>

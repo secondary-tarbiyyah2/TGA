@@ -12,6 +12,9 @@ export type SummarySlide = {
   video_path?: string | null;
   /** The chapter video's length, e.g. "2:37". */
   length?: string | null;
+  /** Teacher-made packs: this chapter is seconds start–end of the unit's one video. */
+  start?: number | null;
+  end?: number | null;
   term?: string | null;
   transliteration?: string | null;
   points: string[];
@@ -90,6 +93,9 @@ export type StaffUnit = {
   questions: number;
   practice_questions: number;
   takers: number;
+  /** 'staff': made in the portal (editable there); 'content': loaded from the repo. */
+  source?: "content" | "staff";
+  checked_at?: string | null;
 };
 
 export type OverviewRow = {
@@ -140,6 +146,24 @@ export async function mediaUrl(path: string): Promise<string | null> {
   if (!supabase) return null;
   const { data, error } = await supabase.storage.from(MEDIA_BUCKET).createSignedUrl(path, 60 * 60 * 3);
   return error ? null : data.signedUrl;
+}
+
+/** 476.4 -> "7:56". */
+export function clock(sec: number | null | undefined): string {
+  const t = Math.max(0, Math.floor(sec || 0));
+  const h = Math.floor(t / 3600);
+  const m = Math.floor((t % 3600) / 60);
+  const s = String(t % 60).padStart(2, "0");
+  return h ? `${h}:${String(m).padStart(2, "0")}:${s}` : `${m}:${s}`;
+}
+
+/** Where chapter k of a time-ranged pack ends: its own end, the next start, or the video's end. */
+export function chapterEnd(slides: SummarySlide[], k: number, duration: number): number {
+  const own = slides[k]?.end;
+  if (typeof own === "number" && own > 0) return own;
+  const next = slides[k + 1]?.start;
+  if (typeof next === "number") return next;
+  return duration || Number.MAX_SAFE_INTEGER;
 }
 
 /** "7:56" -> 476. */
