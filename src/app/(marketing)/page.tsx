@@ -7,13 +7,14 @@ import { Kicker } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { FaqPreview } from "@/components/FaqPreview";
-import { HubCards } from "@/components/HubCards";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { getDifferentiators, getFaqEntries, getHomepageContent, getSiteSettings, getTestimonials } from "@/lib/content";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { admissionsProcessSteps } from "@/components/admissions/applicationShared";
 import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
 import { TarbiyahNoteShowcase } from "@/components/TarbiyahNoteShowcase";
+import { PortalPreview } from "@/components/home/PortalPreview";
+import { RecipeValues } from "@/components/home/RecipeValues";
 
 /**
  * Reads public.bursary_seats_public (migration 0020) — only returns a row
@@ -163,28 +164,6 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="geo-texture bg-cream section-pad">
-        <Container>
-          <Kicker>Admissions in {stepCount} steps</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">{howItWorksHeading}</h2>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {howItWorks.map((s, i) => (
-              <div key={s.step} className="relative">
-                {i < howItWorks.length - 1 && (i + 1) % 3 !== 0 && (
-                  <span aria-hidden="true" className="absolute top-6 left-[calc(100%-0.5rem)] hidden h-px w-8 bg-gold-300 lg:block" />
-                )}
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 font-serif text-lg font-bold text-ink-900">
-                  {s.step}
-                </span>
-                <h3 className="mt-4 font-semibold text-ink">{s.title}</h3>
-                <p className="mt-1 text-sm text-ink/70">{s.body}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       {/* STAGES OF SCHOOL */}
       <section className="section-pad">
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
@@ -210,6 +189,34 @@ export default async function HomePage() {
         </Container>
       </section>
 
+      {/* PARENT PORTAL — the website and the portal as one school. */}
+      <PortalPreview />
+
+      {/* RECIPE — our character framework (policy 23). */}
+      <RecipeValues />
+
+      {/* HOW IT WORKS */}
+      <section className="geo-texture bg-cream section-pad">
+        <Container>
+          <Kicker>Admissions in {stepCount} steps</Kicker>
+          <h2 className="text-h2 font-serif font-semibold text-ink">{howItWorksHeading}</h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {howItWorks.map((s, i) => (
+              <div key={s.step} className="relative">
+                {i < howItWorks.length - 1 && (i + 1) % 3 !== 0 && (
+                  <span aria-hidden="true" className="absolute top-6 left-[calc(100%-0.5rem)] hidden h-px w-8 bg-gold-300 lg:block" />
+                )}
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 font-serif text-lg font-bold text-ink-900">
+                  {s.step}
+                </span>
+                <h3 className="mt-4 font-semibold text-ink">{s.title}</h3>
+                <p className="mt-1 text-sm text-ink/70">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* WHAT MAKES US DIFFERENT — was a repeated 3-card grid identical to
           five other sections on this page; a comparison table says the
           same thing more usefully (and reads differently), with the CMS's
@@ -217,7 +224,7 @@ export default async function HomePage() {
           rather than dropped. Only confirmed commitments ever appear
           publicly — draft/concept ideas stay in the CMS until confirmed,
           per ground rule 3. */}
-      <section className="geo-texture bg-cream section-pad">
+      <section className="section-pad">
         <Container>
           <Kicker>What makes us different</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Distinctive, not just online.</h2>
@@ -261,21 +268,14 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* MORE — compact links replacing the former fee table, safeguarding
-          and team sections; detail lives on those pages. */}
-      <section className="section-pad">
-        <Container>
-          <Kicker>Good to know</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h2>
-          <div className="mt-8">
-            <HubCards
-              cards={[
-                { href: "/fees", title: "Fees & payment plans", body: content.feeTeaserBody || 'Every fee is published on our website — nothing shared only "on enquiry." Annual, termly and monthly plans are available for every year group.' },
-                { href: "/safeguarding", title: content.safeHeading || "Safe, open and accountable.", body: "Every member of staff is DBS-checked, and a named Designated Safeguarding Lead is responsible for keeping children safe." },
-                { href: "/team", title: "Meet the team", body: "Qualifications and intro videos for the teachers of Tarbiyyah Global Academy." },
-              ]}
-            />
+      {/* FEES — one line, with the detail on /fees. */}
+      <section className="border-y border-gold-light/50 bg-white">
+        <Container className="flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="font-serif text-2xl font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h2>
+            <p className="mt-2 text-ink/75">{content.feeTeaserBody || 'Every fee is published on our website — nothing shared only "on enquiry." Annual, termly and monthly plans are available for every year group.'}</p>
           </div>
+          <Button href="/fees" variant="secondary" className="shrink-0">See fees &amp; payment plans</Button>
         </Container>
       </section>
 
