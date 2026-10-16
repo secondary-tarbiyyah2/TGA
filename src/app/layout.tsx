@@ -27,10 +27,20 @@ export const metadata: Metadata = {
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Tarbiyyah Global Academy" }],
   },
   twitter: { card: "summary_large_image", images: ["/og-image.jpg"] },
+  // Google shows the site icon next to search results. It wants a square icon
+  // in a multiple of 48px, and also checks /favicon.ico, so all are provided
+  // (all the gold Global Academy mark, never the Trust's green logo).
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.png", type: "image/png", sizes: "256x256" }],
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-96.png", type: "image/png", sizes: "96x96" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+    ],
     apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
 };
 
 // ink-900 — matches the brand's deep-ink token, not the old burgundy.
@@ -58,7 +68,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     description:
       "A specialist online school by the Tarbiyyah Education Trust — live, timetabled lessons with qualified UK teachers on the full British curriculum, Reception to Year 11, taught with tarbiyyah at its heart.",
     url: siteUrl,
-    logo: `${siteUrl}/brand/ga-wordmark.png`,
+    logo: { "@type": "ImageObject", url: `${siteUrl}/brand/ga-logo-square.png`, width: 512, height: 512 },
+    image: `${siteUrl}/brand/ga-wordmark.png`,
     email: settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk",
     ...(settings.contactPhone && { telephone: settings.contactPhone }),
     ...(settings.contactAddress && { address: { "@type": "PostalAddress", streetAddress: settings.contactAddress } }),
@@ -66,10 +77,21 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     parentOrganization: { "@type": "EducationalOrganization", name: "Tarbiyyah Education Trust", url: "https://tarbiyyaheducationtrust.com" },
   };
 
+  // Tells Google the site's own name, so results read "Tarbiyyah Global
+  // Academy" rather than the parent domain "tarbiyyah.co.uk".
+  const websiteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Tarbiyyah Global Academy",
+    alternateName: ["Global Academy", "TGA"],
+    url: siteUrl,
+  };
+
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${amiri.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-ink">
         <JsonLd data={jsonLd} />
+        <JsonLd data={websiteLd} />
         <a href="#main" className="skip-link">Skip to content</a>
         {/* The `#main` skip-link target is rendered by the nested layout
             below (the public (marketing) group's <main id="main"> around

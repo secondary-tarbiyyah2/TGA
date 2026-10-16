@@ -44,7 +44,7 @@ const learnSourceDir = path.join(outDir, "learn");
 // metadata.icons). Kept as an explicit list, not "copy everything", so a
 // stray marketing-only asset doesn't quietly end up served from the portal
 // subdomain too.
-const SHARED_ASSET_PATHS = ["_next", "brand", "favicon.svg", "favicon.png", "apple-touch-icon.png"];
+const SHARED_ASSET_PATHS = ["_next", "brand", "favicon.svg", "favicon.png", "favicon.ico", "icon-48.png", "icon-96.png", "icon-192.png", "icon-512.png", "site.webmanifest", "apple-touch-icon.png"];
 
 async function main() {
   if (!existsSync(outDir)) {
