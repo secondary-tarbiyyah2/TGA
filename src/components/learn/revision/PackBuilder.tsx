@@ -644,7 +644,7 @@ export function QuestionEditor({
     setBusy(true);
     const row = {
       unit_id: unitId,
-      qkey: `staff-${Date.now().toString(36)}`,
+      qkey: `staff-${newKey()}`,
       lesson_no: Math.max(1, topics.indexOf(draft.topic) + 1),
       topic: draft.topic.trim(),
       question: draft.question.trim(),
