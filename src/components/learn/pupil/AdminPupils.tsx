@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { DataTable, type Column } from "@/components/learn/DataTable";
 import { ProgressBar, MISSING_CHIP, type MissingKey } from "./data";
 import { usePupils } from "./usePupils";
 
@@ -20,7 +21,6 @@ const CHIPS: { key: Chip; label: string }[] = [
 
 export function AdminPupils() {
   const { pupils, yearGroups, error } = usePupils();
-  const [q, setQ] = useState("");
   const [year, setYear] = useState("");
   const [cls, setCls] = useState("");
   const [chip, setChip] = useState<Chip>("all");
@@ -44,9 +44,7 @@ export function AdminPupils() {
   }, [pupils]);
 
   const rows = useMemo(() => {
-    const needle = q.trim().toLowerCase();
     return (pupils || []).filter((p) => {
-      if (needle && !p.name.toLowerCase().includes(needle)) return false;
       if (year && p.yearGroupId !== year) return false;
       if (cls && !p.classes.some((c) => c.id === cls)) return false;
       if (chip === "complete") return !!p.details?.completed_at;
@@ -55,9 +53,62 @@ export function AdminPupils() {
       if (chip !== "all") return p.missing.includes(chip);
       return true;
     });
-  }, [pupils, q, year, cls, chip]);
+  }, [pupils, year, cls, chip]);
 
   const selectCls = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink";
+
+  type Pupil = (typeof rows)[number];
+  const columns: Column<Pupil>[] = [
+    {
+      key: "pupil",
+      header: "Pupil",
+      sort: (p) => p.name,
+      csv: (p) => p.name,
+      cell: (p) => (
+        <Link href={`/admin/pupils?id=${p.id}`} className="font-medium text-teal-800 hover:underline">
+          {p.name}
+        </Link>
+      ),
+    },
+    { key: "year", header: "Year group", sort: (p) => p.yearGroup || "", csv: (p) => p.yearGroup || "", cell: (p) => p.yearGroup || "–" },
+    { key: "class", header: "Class", sort: (p) => p.classes.map((c) => c.name).join(", "), csv: (p) => p.classes.map((c) => c.name).join("; "), cell: (p) => <span className="text-ink/75">{p.classes.map((c) => c.name).join(", ") || "None"}</span> },
+    {
+      key: "record",
+      header: "Record",
+      sort: (p) => p.percent,
+      csv: (p) => (p.details?.completed_at ? "Complete" : `${p.percent}%`),
+      className: "w-40",
+      cell: (p) => (
+        <>
+          <ProgressBar percent={p.percent} />
+          <p className="mt-1 text-xs text-ink/65">{p.details?.completed_at ? "Complete" : `${p.percent}%`}</p>
+        </>
+      ),
+    },
+    {
+      key: "flags",
+      header: "Flags",
+      sort: (p) => p.alerts.length * 10 + p.missing.length,
+      csv: (p) => [...p.alerts, ...p.missing.map((m) => MISSING_CHIP[m])].join("; "),
+      cell: (p) =>
+        p.alerts.length + p.missing.length === 0 ? (
+          <span className="text-ink/65">None</span>
+        ) : (
+          <div className="flex flex-wrap gap-1.5">
+            {p.alerts.map((a) => (
+              <span key={a} className="rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-800">
+                {a}
+              </span>
+            ))}
+            {p.missing.map((m) => (
+              <span key={m} className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900">
+                {MISSING_CHIP[m]}
+              </span>
+            ))}
+          </div>
+        ),
+    },
+  ];
 
   return (
     <>
@@ -75,26 +126,6 @@ export function AdminPupils() {
             </button>
           </div>
         )}
-        <div className="flex flex-wrap gap-2">
-          <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className={`${selectCls} min-w-[12rem] flex-1`} />
-          <select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className={selectCls}>
-            <option value="">All year groups</option>
-            {yearGroups.map((y) => (
-              <option key={y.id} value={y.id}>
-                {y.name}
-              </option>
-            ))}
-          </select>
-          <select value={cls} onChange={(e) => setCls(e.target.value)} aria-label="Class" className={selectCls}>
-            <option value="">All classes</option>
-            {classOptions.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
         <div className="flex flex-wrap gap-2" role="group" aria-label="Completeness">
           {CHIPS.map((c) => (
             <button
@@ -109,55 +140,37 @@ export function AdminPupils() {
           ))}
         </div>
 
-        {pupils === null ? (
-          <p className="text-sm text-ink/60">Loading…</p>
-        ) : rows.length === 0 ? (
-          <p className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/60">No pupils match.</p>
-        ) : (
-          <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
-            <table className="w-full min-w-[40rem] text-left text-sm">
-              <thead className="border-b border-gold-light/60 text-xs uppercase tracking-wide text-ink/65">
-                <tr>
-                  <th className="px-4 py-3 font-medium">Pupil</th>
-                  <th className="px-4 py-3 font-medium">Class</th>
-                  <th className="px-4 py-3 font-medium">Record</th>
-                  <th className="px-4 py-3 font-medium">Flags</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((p) => (
-                  <tr key={p.id} className="border-t border-gold-light/40 align-top">
-                    <td className="px-4 py-3">
-                      <Link href={`/admin/pupils?id=${p.id}`} className="font-medium text-teal-800 hover:underline">
-                        {p.name}
-                      </Link>
-                      {p.yearGroup && <p className="text-xs text-ink/65">{p.yearGroup}</p>}
-                    </td>
-                    <td className="px-4 py-3 text-ink/75">{p.classes.map((c) => c.name).join(", ") || "None"}</td>
-                    <td className="w-40 px-4 py-3">
-                      <ProgressBar percent={p.percent} />
-                      <p className="mt-1 text-xs text-ink/55">{p.details?.completed_at ? "Complete" : `${p.percent}%`}</p>
-                    </td>
-                    <td className="px-4 py-3">
-                      <div className="flex flex-wrap gap-1.5">
-                        {p.alerts.map((a) => (
-                          <span key={a} className="rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-800">
-                            {a}
-                          </span>
-                        ))}
-                        {p.missing.map((m) => (
-                          <span key={m} className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900">
-                            {MISSING_CHIP[m]}
-                          </span>
-                        ))}
-                      </div>
-                    </td>
-                  </tr>
+        <DataTable
+          caption="Pupils"
+          rows={pupils === null ? null : rows}
+          rowKey={(p) => p.id}
+          columns={columns}
+          search={{ text: (p) => `${p.name} ${p.yearGroup || ""}`, placeholder: "Search by name" }}
+          filters={
+            <>
+              <select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className={selectCls}>
+                <option value="">All year groups</option>
+                {yearGroups.map((y) => (
+                  <option key={y.id} value={y.id}>
+                    {y.name}
+                  </option>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+              </select>
+              <select value={cls} onChange={(e) => setCls(e.target.value)} aria-label="Class" className={selectCls}>
+                <option value="">All classes</option>
+                {classOptions.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+            </>
+          }
+          initialSort={{ key: "pupil", dir: "asc" }}
+          csvName="pupils"
+          empty="No pupils yet."
+          emptyFiltered="No pupils match."
+        />
       </div>
     </>
   );

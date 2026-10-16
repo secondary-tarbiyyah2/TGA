@@ -152,7 +152,7 @@ function TeachBehaviourContent() {
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
             <h3 className="mb-3 text-base font-semibold text-ink">Recent records</h3>
-            <RecordsTable records={visibleRecords.slice(0, 50)} onVoid={voidRecord} empty="Nothing logged yet. Catch someone doing something good and give them a merit." />
+            <RecordsTable records={visibleRecords} onVoid={voidRecord} csvName="behaviour-records" empty="Nothing logged yet. Catch someone doing something good and give them a merit." />
           </section>
 
           <AwardBadgeForm students={visibleStudents} onAwarded={load} />
