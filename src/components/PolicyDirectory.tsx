@@ -31,7 +31,7 @@ const PARENT_QUESTION_GROUPS: { key: ParentQuestionCategory; heading: string }[]
 
 // A small, prominent set of the policies parents most often need — picked by
 // matching against the existing seeded policy numbers/titles, not new facts.
-const KEY_DOCUMENT_NUMBERS = ["01", "27", "25", "26", "29"];
+const KEY_DOCUMENT_NUMBERS = ["01", "26", "24", "25", "28"];
 
 function CategoryBadge({ category }: { category: PolicyLink["category"] }) {
   return (

@@ -41,6 +41,15 @@ RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 # portal and falls back to the PDF bundled in /policies/ — so a policy edit
 # is live immediately, with no rebuild, on an address that stays on this
 # domain. See deploy/policy.php.
+# Policies were renumbered in September 2026 (SMSC folded into others), so
+# old addresses forward to the same policy's new one.
+RewriteRule ^policies/17-rshe\.pdf$ /policies/17-relationships-sex-and-health-education.pdf [R=301,L]
+RewriteRule ^policies/19-careers\.pdf$ /policies/18-careers-education-and-guidance.pdf [R=301,L]
+RewriteRule ^policies/25-admissions\.pdf$ /policies/24-admissions.pdf [R=301,L]
+RewriteRule ^policies/26-fees\.pdf$ /policies/25-fees.pdf [R=301,L]
+RewriteRule ^policies/27-concerns-and-complaints\.pdf$ /policies/26-concerns-and-complaints.pdf [R=301,L]
+RewriteRule ^policies/29-data-protection\.pdf$ /policies/28-data-protection.pdf [R=301,L]
+RewriteRule ^policies/30-equality-diversity-and-accessibility\.pdf$ /policies/29-equality-diversity-and-accessibility.pdf [R=301,L]
 RewriteRule ^policies/([a-z0-9][a-z0-9-]*)\.(pdf|docx)$ /policy.php?slug=$1&ext=$2 [L,QSA]
 
 # Sanity Studio (out/studio, built separately by `npm run sanity:build` — see
