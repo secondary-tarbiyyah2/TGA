@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { Register } from "@/components/learn/attendance/Register";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { DataTable } from "@/components/learn/DataTable";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { localDateKey } from "@/lib/learn/calendar";
@@ -433,72 +434,71 @@ function ReportsContent() {
                   </Section>
 
                   <Section title="By student" hint="Most absences first. Click a student to filter.">
-                    <div className="max-h-96 overflow-auto">
-                      <table className="w-full min-w-[420px] border-collapse text-left text-sm">
-                        <thead>
-                          <tr>
-                            <th className={th}>Student</th>
-                            <th className={`${th} text-right`}>P</th>
-                            <th className={`${th} text-right`}>L</th>
-                            <th className={`${th} text-right`}>A</th>
-                            <th className={`${th} text-right`}>E</th>
-                            <th className={`${th} text-right`}>Rate</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {byStudent.map((s) => (
-                            <tr key={s.id} className="hover:bg-cream/50">
-                              <td className={td}>
-                                <button type="button" onClick={() => setSearch(s.name)} className="text-left font-medium text-ink hover:text-teal-700 hover:underline">
-                                  {s.name}
-                                </button>
-                              </td>
-                              <td className={`${td} text-right tabular-nums text-ink/70`}>{s.counts.present}</td>
-                              <td className={`${td} text-right tabular-nums text-ink/70`}>{s.counts.late}</td>
-                              <td className={`${td} text-right tabular-nums ${s.counts.absent > 0 ? "font-medium text-red-700" : "text-ink/70"}`}>{s.counts.absent}</td>
-                              <td className={`${td} text-right tabular-nums text-ink/70`}>{s.counts.excused}</td>
-                              <td className={`${td} text-right font-semibold tabular-nums text-ink`}>{rate(s.counts)}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                    <div className="p-4">
+                      <DataTable
+                        caption="Attendance by student"
+                        rows={byStudent}
+                        rowKey={(st) => st.id}
+                        initialSort={{ key: "absent", dir: "desc" }}
+                        pageSize={25}
+                        columns={[
+                          {
+                            key: "student",
+                            header: "Student",
+                            sort: (st) => st.name,
+                            cell: (st) => (
+                              <button type="button" onClick={() => setSearch(st.name)} className="text-left font-medium text-ink hover:text-teal-700 hover:underline">
+                                {st.name}
+                              </button>
+                            ),
+                          },
+                          { key: "present", header: "P", align: "right", sort: (st) => st.counts.present, className: "tabular-nums text-ink/70", cell: (st) => st.counts.present },
+                          { key: "late", header: "L", align: "right", sort: (st) => st.counts.late, className: "tabular-nums text-ink/70", cell: (st) => st.counts.late },
+                          {
+                            key: "absent",
+                            header: "A",
+                            align: "right",
+                            sort: (st) => st.counts.absent,
+                            className: "tabular-nums",
+                            cell: (st) => <span className={st.counts.absent > 0 ? "font-medium text-red-700" : "text-ink/70"}>{st.counts.absent}</span>,
+                          },
+                          { key: "excused", header: "E", align: "right", sort: (st) => st.counts.excused, className: "tabular-nums text-ink/70", cell: (st) => st.counts.excused },
+                          { key: "rate", header: "Rate", align: "right", sort: (st) => rate(st.counts), className: "font-semibold tabular-nums", cell: (st) => rate(st.counts) },
+                        ]}
+                      />
                     </div>
                     <p className="px-4 py-2 text-xs text-ink/65">P present, L late, A absent, E excused. Rate = (present + late) / (present + late + absent); excused is not counted against attendance.</p>
                   </Section>
                 </div>
 
                 <Section title="Register" hint={`${total} record${total === 1 ? "" : "s"}, newest lesson first.`}>
-                  <div className="max-h-[32rem] overflow-auto">
-                    <table className="w-full min-w-[520px] border-collapse text-left text-sm">
-                      <thead className="sticky top-0 bg-white">
-                        <tr>
-                          <th className={th}>Date</th>
-                          <th className={th}>Class</th>
-                          <th className={th}>Student</th>
-                          <th className={th}>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {filtered.slice(0, 1000).map((r) => {
-                          const s = STATUSES.find((x) => x.value === r.status);
-                          return (
-                            <tr key={r.id}>
-                              <td className={`${td} whitespace-nowrap text-ink/70`}>{r.date}</td>
-                              <td className={`${td} text-ink/70`}>{r.className}</td>
-                              <td className={`${td} font-medium text-ink`}>{r.child}</td>
-                              <td className={td}>
-                                <span className="inline-flex items-center gap-1.5 text-ink/80">
-                                  <span aria-hidden="true" className={`h-2 w-2 rounded-full ${s?.dot || "bg-ink/30"}`} />
-                                  {s?.label || r.status}
-                                </span>
-                              </td>
-                            </tr>
-                          );
-                        })}
-                      </tbody>
-                    </table>
+                  <div className="p-4">
+                    <DataTable
+                      caption="Register"
+                      rows={filtered}
+                      rowKey={(r) => r.id}
+                      initialSort={{ key: "date", dir: "desc" }}
+                      columns={[
+                        { key: "date", header: "Date", sort: (r) => r.date, className: "whitespace-nowrap text-ink/70", cell: (r) => r.date },
+                        { key: "class", header: "Class", sort: (r) => r.className, className: "text-ink/70", cell: (r) => r.className },
+                        { key: "student", header: "Student", sort: (r) => r.child, cell: (r) => <span className="font-medium">{r.child}</span> },
+                        {
+                          key: "status",
+                          header: "Status",
+                          sort: (r) => r.status,
+                          cell: (r) => {
+                            const st = STATUSES.find((x) => x.value === r.status);
+                            return (
+                              <span className="inline-flex items-center gap-1.5 text-ink/80">
+                                <span aria-hidden="true" className={`h-2 w-2 rounded-full ${st?.dot || "bg-ink/30"}`} />
+                                {st?.label || r.status}
+                              </span>
+                            );
+                          },
+                        },
+                      ]}
+                    />
                   </div>
-                  {filtered.length > 1000 && <p className="px-4 py-2 text-xs text-ink/65">Showing the first 1,000 rows. Export CSV includes all {filtered.length.toLocaleString()}.</p>}
                 </Section>
               </>
             )}

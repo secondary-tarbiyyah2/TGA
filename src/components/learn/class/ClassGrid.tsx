@@ -79,8 +79,35 @@ export function ClassCard({ cls, href, progress }: { cls: ClassSummary; href: st
   );
 }
 
+/** One class as a compact row: Moodle's "List" view of My courses. */
+function ClassRow({ cls, href, progress }: { cls: ClassSummary; href: string; progress?: Progress }) {
+  const meta = [cls.subject, cls.yearGroup].filter(Boolean).join(" · ");
+  return (
+    <li>
+      <Link href={href} className="group flex items-center gap-4 rounded-2xl border border-gold-light bg-white p-3 hover:bg-cream/60">
+        <span className="h-12 w-16 shrink-0 rounded-lg" style={classBannerStyle(cls.id)} aria-hidden="true" />
+        <span className="min-w-0 flex-1">
+          <span className="block truncate font-semibold text-ink group-hover:text-teal-700">{cls.name}</span>
+          {meta && <span className="block truncate text-xs text-ink/65">{meta}</span>}
+        </span>
+        <span className="hidden w-48 shrink-0 sm:block">
+          {progress?.percent != null && (
+            <span className="mb-1 block h-1.5 overflow-hidden rounded-full bg-cream" role="progressbar" aria-valuenow={progress.percent} aria-valuemin={0} aria-valuemax={100} aria-label={progress.label}>
+              <span className="block h-full rounded-full bg-teal-500" style={{ width: `${progress.percent}%` }} />
+            </span>
+          )}
+          <span className="block text-xs text-ink/65">{progress?.label ?? " "}</span>
+        </span>
+      </Link>
+    </li>
+  );
+}
+
+const VIEW_KEY = "tga-classes-view";
+
 /**
- * Moodle's "My courses" card grid, with the same search/sort controls.
+ * Moodle's "My courses" overview: search, sort, and a Cards / List switch
+ * (remembered in this browser).
  * `hrefFor` builds each card's class-page link (role-specific route).
  */
 export function ClassGrid({
@@ -98,13 +125,37 @@ export function ClassGrid({
   controls?: boolean;
 }) {
   const [query, setQuery] = useState("");
-  const [sort, setSort] = useState<"name" | "subject">("name");
+  const [sort, setSort] = useState<"name" | "subject" | "year">("name");
+  const [view, setView] = useState<"cards" | "list">("cards");
   const progress = useCardProgress(viewer, classes || []);
+
+  useEffect(() => {
+    try {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- restore this browser's saved view after mount
+      if (window.localStorage.getItem(VIEW_KEY) === "list") setView("list");
+    } catch {
+      /* storage unavailable: cards */
+    }
+  }, []);
+  const chooseView = (v: "cards" | "list") => {
+    setView(v);
+    try {
+      window.localStorage.setItem(VIEW_KEY, v);
+    } catch {
+      /* ignore */
+    }
+  };
 
   const shown = useMemo(() => {
     const q = query.trim().toLowerCase();
     const list = (classes || []).filter((c) => !q || [c.name, c.subject, c.yearGroup].some((v) => v?.toLowerCase().includes(q)));
-    return [...list].sort((a, b) => (sort === "name" ? a.name.localeCompare(b.name) : (a.subject || "").localeCompare(b.subject || "") || a.name.localeCompare(b.name)));
+    const by = (a: ClassSummary, b: ClassSummary) =>
+      sort === "subject"
+        ? (a.subject || "").localeCompare(b.subject || "") || a.name.localeCompare(b.name)
+        : sort === "year"
+          ? (a.yearGroup || "").localeCompare(b.yearGroup || "", "en-GB", { numeric: true }) || a.name.localeCompare(b.name)
+          : a.name.localeCompare(b.name);
+    return [...list].sort(by);
   }, [classes, query, sort]);
 
   if (classes === null) {
@@ -123,7 +174,7 @@ export function ClassGrid({
 
   return (
     <div>
-      {controls && classes.length > 3 && (
+      {controls && classes.length > 1 && (
         <div className="mb-4 flex flex-wrap items-center gap-2">
           <input
             type="search"
@@ -133,14 +184,34 @@ export function ClassGrid({
             aria-label="Search classes"
             className="w-full max-w-xs border border-gold-light px-3 py-2 text-sm"
           />
-          <select value={sort} onChange={(e) => setSort(e.target.value as "name" | "subject")} aria-label="Sort classes" className="border border-gold-light px-3 py-2 text-sm">
+          <select value={sort} onChange={(e) => setSort(e.target.value as "name" | "subject" | "year")} aria-label="Sort classes" className="border border-gold-light px-3 py-2 text-sm">
             <option value="name">Sort by class name</option>
             <option value="subject">Sort by subject</option>
+            <option value="year">Sort by year group</option>
           </select>
+          <div role="group" aria-label="View" className="ml-auto flex overflow-hidden rounded-lg border border-gold-light">
+            {(["cards", "list"] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                aria-pressed={view === v}
+                onClick={() => chooseView(v)}
+                className={`px-3 py-2 text-sm font-medium ${view === v ? "bg-teal-700 text-white" : "bg-white text-ink/75 hover:bg-cream"}`}
+              >
+                {v === "cards" ? "Cards" : "List"}
+              </button>
+            ))}
+          </div>
         </div>
       )}
       {shown.length === 0 ? (
         <p className="text-sm text-ink/60">No classes match &ldquo;{query}&rdquo;.</p>
+      ) : view === "list" && controls ? (
+        <ul className="space-y-2">
+          {shown.map((c) => (
+            <ClassRow key={c.id} cls={c} href={hrefFor(c)} progress={progress[c.id]} />
+          ))}
+        </ul>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {shown.map((c) => (

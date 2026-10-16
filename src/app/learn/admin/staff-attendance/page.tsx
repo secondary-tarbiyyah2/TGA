@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { DataTable } from "@/components/learn/DataTable";
 import { formatDuration, formatHours, CLOCK_EVENT } from "@/components/learn/ClockInGate";
 import { learnRoleLabel, STAFF_ROLES, useLearnPermission, useLearnSession, type LearnRole } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -262,8 +263,6 @@ function StaffAttendanceContent() {
   };
 
   const card = "rounded-2xl border border-gold-light bg-white";
-  const th = "px-4 py-2 text-left text-xs font-semibold uppercase tracking-wide text-ink/55";
-  const td = "px-4 py-2.5 text-sm text-ink";
 
   return (
     <div className="space-y-6">
@@ -353,74 +352,71 @@ function StaffAttendanceContent() {
           )}
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full min-w-[560px]">
-            <thead>
-              <tr className="border-b border-gold-light">
-                <th className={th}>Staff</th>
-                <th className={th}>Hours</th>
-                <th className={th}>Days</th>
-                <th className={th}>Avg start</th>
-                <th className={th}>Late</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gold-light">
-              {totals.length === 0 ? (
-                <tr>
-                  <td className={`${td} text-ink/60`} colSpan={5}>
-                    No shifts in this period.
-                  </td>
-                </tr>
-              ) : (
-                totals.map((t) => (
-                  <tr key={t.uid}>
-                    <td className={`${td} font-medium`}>{t.name}</td>
-                    <td className={td}>{formatHours(t.ms)}</td>
-                    <td className={td}>{t.days}</td>
-                    <td className={td}>{hhmm(t.avg)}</td>
-                    <td className={td}>{t.late > 0 ? <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900">{t.late} late</span> : <span className="text-ink/65">-</span>}</td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
+        <div className="p-4">
+          <DataTable
+            caption="Hours by staff member"
+            rows={totals}
+            rowKey={(t) => t.uid}
+            initialSort={{ key: "name", dir: "asc" }}
+            empty="No shifts in this period."
+            columns={[
+              { key: "name", header: "Staff", sort: (t) => t.name, cell: (t) => <span className="font-medium">{t.name}</span> },
+              { key: "hours", header: "Hours", align: "right", sort: (t) => t.ms, cell: (t) => formatHours(t.ms) },
+              { key: "days", header: "Days", align: "right", sort: (t) => t.days, cell: (t) => t.days },
+              { key: "avg", header: "Avg start", sort: (t) => t.avg, cell: (t) => hhmm(t.avg) },
+              {
+                key: "late",
+                header: "Late",
+                sort: (t) => t.late,
+                cell: (t) => (t.late > 0 ? <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900">{t.late} late</span> : <span className="text-ink/65">–</span>),
+              },
+            ]}
+          />
         </div>
 
-        <div className="overflow-x-auto border-t border-gold-light">
-          <table className="w-full min-w-[640px]">
-            <thead>
-              <tr className="border-b border-gold-light">
-                <th className={th}>Staff</th>
-                <th className={th}>Date</th>
-                <th className={th}>In</th>
-                <th className={th}>Out</th>
-                <th className={th}>Hours</th>
-                <th className={th}>Note</th>
-                <th className={th}></th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gold-light">
-              {history.map((s) => (
-                <tr key={s.id}>
-                  <td className={`${td} font-medium`}>{nameOf(s.user_id)}</td>
-                  <td className={td}>{dayOf(s.clocked_in_at)}</td>
-                  <td className={td}>{timeOf(s.clocked_in_at)}</td>
-                  <td className={td}>
+        <div className="border-t border-gold-light p-4">
+          <DataTable
+            caption="Every clock-in"
+            rows={history}
+            rowKey={(s) => s.id}
+            initialSort={{ key: "date", dir: "desc" }}
+            search={{ text: (s) => `${nameOf(s.user_id)} ${s.note || ""}`, placeholder: "Search staff or note" }}
+            empty="No shifts in this period."
+            columns={[
+              { key: "name", header: "Staff", sort: (s) => nameOf(s.user_id), cell: (s) => <span className="font-medium">{nameOf(s.user_id)}</span> },
+              { key: "date", header: "Date", sort: (s) => s.clocked_in_at, cell: (s) => dayOf(s.clocked_in_at) },
+              { key: "in", header: "In", cell: (s) => timeOf(s.clocked_in_at) },
+              {
+                key: "out",
+                header: "Out",
+                cell: (s) => (
+                  <>
                     {s.clocked_out_at ? timeOf(s.clocked_out_at) : <span className="text-teal-700">On shift</span>}
                     {s.auto_closed && <span className="ml-1 text-xs text-amber-800">(auto)</span>}
                     {s.clocked_out_by && <span className="ml-1 text-xs text-ink/65">(by admin)</span>}
-                  </td>
-                  <td className={td}>{formatHours(new Date(s.clocked_out_at || now.toISOString()).getTime() - new Date(s.clocked_in_at).getTime())}</td>
-                  <td className={`${td} max-w-[200px] truncate text-ink/60`}>{s.note || ""}</td>
-                  <td className={td}>
-                    <button type="button" onClick={() => setEditing(s)} className="text-sm font-medium text-teal-700 hover:underline">
-                      Edit
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  </>
+                ),
+              },
+              {
+                key: "hours",
+                header: "Hours",
+                align: "right",
+                sort: (s) => new Date(s.clocked_out_at || now.toISOString()).getTime() - new Date(s.clocked_in_at).getTime(),
+                cell: (s) => formatHours(new Date(s.clocked_out_at || now.toISOString()).getTime() - new Date(s.clocked_in_at).getTime()),
+              },
+              { key: "note", header: "Note", className: "max-w-[200px] truncate text-ink/70", cell: (s) => s.note || "" },
+              {
+                key: "edit",
+                header: "",
+                align: "right",
+                cell: (s) => (
+                  <button type="button" onClick={() => setEditing(s)} className="text-sm font-medium text-teal-700 hover:underline">
+                    Edit
+                  </button>
+                ),
+              },
+            ]}
+          />
         </div>
       </section>
 
