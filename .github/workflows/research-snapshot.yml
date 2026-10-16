@@ -1,0 +1,31 @@
+name: Research snapshot (branch only)
+
+# Pushed to a research/* branch only, never merged: renders a public site's
+# pages with a real browser and commits text + screenshots back to the same
+# branch (job logs and artifacts live on hosts the editing sandbox can't reach).
+on:
+  push:
+    branches: ["research/**"]
+    paths: ["research/request.json"]
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          npm install --no-save playwright@1
+          npx playwright install --with-deps chromium
+      - run: node research/snapshot.mjs
+      - run: |
+          git config user.name "research-bot"
+          git config user.email "research-bot@users.noreply.github.com"
+          git add research/out
+          git commit -m "Research snapshot output" || true
+          git push
