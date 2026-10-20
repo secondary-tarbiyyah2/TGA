@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { ui } from "@/components/learn/ui";
 
 export type GbPupil = { id: string; name: string };
 type Type = { id: string; name: string };
@@ -24,9 +25,9 @@ type Column = { key: string; title: string; date: string; typeId: string; scheme
 
 const STATUS_SHORT: Record<Exclude<Status, "marked">, string> = { absent: "Absent", exempt: "Exempt", not_submitted: "Not handed in" };
 const colKey = (r: { title: string; date: string; assessment_type_id: string }) => `${r.title}\u0000${r.date}\u0000${r.assessment_type_id}`;
-const input = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm";
-const btn = "rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink hover:bg-cream disabled:opacity-40";
-const btnPrimary = "rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-40";
+const input = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700";
+const btn = ui.btnSecondary;
+const btnPrimary = ui.btnPrimary;
 
 type Entry = { score: string; status: Status | "" };
 

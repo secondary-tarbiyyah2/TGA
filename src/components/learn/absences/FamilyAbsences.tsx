@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { localDateKey } from "@/lib/learn/calendar";
 import { STATUS_LABEL, dateKeyDaysAgo, fetchAbsences, fetchNotes, formatDay, formatRange, type Absence, type AbsenceNote, type NoteStatus } from "./data";
+import { ui } from "@/components/learn/ui";
 
 type Child = { id: string; name: string };
 const CHIP: Record<NoteStatus, string> = {
@@ -12,7 +13,7 @@ const CHIP: Record<NoteStatus, string> = {
   authorised: "bg-green-50 text-green-800",
   unauthorised: "bg-red-50 text-red-800",
 };
-const fieldCls = "mt-1 w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500";
+const fieldCls = `mt-1 ${ui.input}`;
 
 export function FamilyAbsences() {
   const [children, setChildren] = useState<Child[] | null>(null);

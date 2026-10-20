@@ -6,6 +6,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { learnRoleLabel, STAFF_ROLES } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { ui } from "@/components/learn/ui";
 
 type LmsSettings = {
   recording_retention_days: number;
@@ -57,7 +58,7 @@ function Field({ label, help, children }: { label: string; help?: string; childr
   );
 }
 
-const inputCls = "w-full rounded-lg border border-gold-light px-3 py-2 text-sm";
+const inputCls = ui.input;
 
 function SchoolDetails() {
   const [s, setS] = useState<SchoolSettings | null>(null);

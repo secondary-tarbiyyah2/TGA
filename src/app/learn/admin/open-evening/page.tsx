@@ -15,6 +15,7 @@ import {
   type OpenEveningSession,
 } from "@/lib/learn/openEvening";
 import { useNow } from "@/lib/learn/useNow";
+import { ui } from "@/components/learn/ui";
 
 type Draft = {
   title: string;
@@ -27,7 +28,7 @@ type Draft = {
 };
 
 const BLANK: Draft = { title: "Virtual open evening", description: "", start: "", minutes: 60, capacity: 50, joinUrl: "", published: true };
-const inputCls = "mt-1 block w-full rounded-lg border border-gold-light px-3 py-2 text-sm";
+const inputCls = `mt-1 ${ui.input}`;
 
 function OpenEveningContent() {
   const { session } = useLearnSession();

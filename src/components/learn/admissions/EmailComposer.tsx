@@ -5,11 +5,12 @@ import type { ApplicationRow } from "@/components/admissions/applicationShared";
 import { sendAdmissionsEmail, type SendOutcome } from "@/components/learn/admissions/admissionsData";
 import { findUnresolvedTokens } from "@/components/learn/admissions/messageTemplates";
 import { TokenEditor } from "@/components/learn/admissions/TokenEditor";
+import { ui } from "@/components/learn/ui";
 
 export { sendAdmissionsEmail };
 export type { SendOutcome };
 
-const fieldCls = "mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm";
+const fieldCls = `mt-1 ${ui.input}`;
 
 /** Editable email (subject + body) with a confirm-and-send button. Used for assessment, interview, offer, payment and the Messages tab. */
 export function EmailComposer({

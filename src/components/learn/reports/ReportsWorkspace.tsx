@@ -7,6 +7,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { ReportDocument, PrintStyles, StatusBadge, fmtPct } from "./ReportDocument";
 import { asNarrative, buildClassSummaries, mergeNarrative, termRange, type ClassSummary, type ReportNarrative, type TermOption } from "./summary";
+import { ui } from "@/components/learn/ui";
 
 type Mode = "admin" | "teach";
 type Child = { id: string; name: string };
@@ -23,9 +24,9 @@ type ListRow = {
 };
 type CommentSnippet = { id: string; text: string };
 
-const btnPrimary = "rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50";
-const btnGhost = "rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:bg-cream disabled:opacity-50";
-const card = "rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6";
+const btnPrimary = ui.btnPrimary;
+const btnGhost = ui.btnSecondary;
+const card = ui.card;
 
 function fmtDate(iso: string | null): string {
   return iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "–";

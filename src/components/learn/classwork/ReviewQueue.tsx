@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useNow } from "@/lib/learn/useNow";
 import { MarkRow } from "@/components/learn/homework/HomeworkCards";
+import { ui } from "@/components/learn/ui";
 
 type Item = {
   submission_id: string;
@@ -22,8 +23,8 @@ type Group = { homework_id: string; title: string; class_name: string | null; cl
 
 const DAY = 86_400_000;
 const fmtDay = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
-const btn = "rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink hover:bg-cream disabled:opacity-40";
-const btnPrimary = "rounded-lg bg-teal-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-40";
+const btn = ui.btnSecondary;
+const btnPrimary = ui.btnPrimary;
 
 /**
  * The teacher's marking queue: every piece of work handed in and not yet

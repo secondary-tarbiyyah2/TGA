@@ -20,10 +20,11 @@ import {
   type SubmissionType,
 } from "@/lib/learn/homeworkFiles";
 import { attachmentsOf, fileTypesOf, submissionTypesOf, toLocalInput, type Homework } from "@/lib/learn/homework";
+import { ui } from "@/components/learn/ui";
 
 export type ClassOption = { id: string; name: string };
 
-const inputCls = "w-full rounded-md border border-gold-light/60 bg-white px-3 py-2 text-sm";
+const inputCls = ui.input;
 const MAX_ATTACHMENTS = 10;
 
 function friendlyError(message: string): string {

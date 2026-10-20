@@ -16,13 +16,14 @@ import {
   type EveningStatus,
   type ParentEvening,
 } from "@/lib/learn/parentEvenings";
+import { ui } from "@/components/learn/ui";
 
 type Teacher = { id: string; name: string; cover: boolean };
 type TeacherOption = { user_id: string; full_name: string; role: string };
 type EveningRow = ParentEvening & { parent_evening_teachers: { teacher_id: string }[] };
 type AdminBooking = { booking_id: string; teacher_id: string; teacher_name: string; child_name: string; parent_name: string; slot_start: string; slot_end: string };
 
-const inputCls = "w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm";
+const inputCls = ui.input;
 
 function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teachers: Teacher[]; onChanged: () => Promise<void> }) {
   const supabase = getSupabaseClient();

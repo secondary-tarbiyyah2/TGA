@@ -5,6 +5,7 @@ import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { localDateKey } from "@/lib/learn/calendar";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchTimetablePeriods, getPublishedRunId, timeLabel, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
+import { ui } from "@/components/learn/ui";
 
 type Staff = { id: string; name: string; isCoverStaff: boolean };
 type Absence = { id: string; teacher_user_id: string; starts_on: string; ends_on: string; reason: string | null };
@@ -13,8 +14,8 @@ type SubjectLink = { teacher_id: string; subject_id: string };
 type Need = { key: string; slot: TimetableSlot; date: string };
 type Suggestion = { staff: Staff; why: string; sameSubject: boolean };
 
-const fieldCls = "mt-1 w-full rounded-lg border border-gold-light/70 bg-white px-3 py-2 text-sm text-ink";
-const btn = "rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-900 disabled:opacity-50";
+const fieldCls = `mt-1 ${ui.input}`;
+const btn = ui.btnPrimary;
 const small = "rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50";
 
 const MAX_DAYS = 31;
