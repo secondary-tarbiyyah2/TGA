@@ -288,7 +288,7 @@ export function PolicyEditor() {
           <input type="date" value={draft.next_review || ""} onChange={(e) => set("next_review", e.target.value || null)} className={inputCls} />
         </label>
         <label className="text-sm text-ink">Display order
-          <input type="number" value={draft.order_index} onChange={(e) => set("order_index", Number(e.target.value))} className={inputCls} />
+          <input type="text" inputMode="decimal" value={draft.order_index} onChange={(e) => set("order_index", Number(e.target.value))} className={inputCls} />
         </label>
       </div>
       <div className="flex gap-2">

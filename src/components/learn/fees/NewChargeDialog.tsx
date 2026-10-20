@@ -182,7 +182,7 @@ export function NewChargeDialog({
           <div className="grid grid-cols-2 gap-3">
             <label className="block">
               <span className="text-ink/70">Amount (£)</span>
-              <input type="number" min="0" step="0.01" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} className={field} />
+              <input type="text" min="0" step="0.01" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} className={field} />
             </label>
             <label className="block">
               <span className="text-ink/70">Due date</span>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { classColour, readRecentPages, type RecentPage } from "@/lib/learn/classes";
+import { classColour } from "@/lib/learn/classes";
 import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
 import { MiniCalendar } from "@/components/learn/CalendarView";
 import type { CalendarScope } from "@/lib/learn/calendar";
@@ -147,32 +147,6 @@ function useTimeline(viewer: Viewer): TimelineItem[] | null {
   return items;
 }
 
-// ── Recently accessed ─────────────────────────────────────────────────
-function Recent({ prefix }: { prefix: string }) {
-  const [pages, setPages] = useState<RecentPage[] | null>(null);
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- reads browser storage, only available after mount
-    setPages(readRecentPages(prefix));
-  }, [prefix]);
-  if (pages === null) return null;
-  if (pages.length === 0) return <p className="text-sm text-ink/55">Classes you open will show up here.</p>;
-  return (
-    <ul className="space-y-1">
-      {pages.slice(0, 5).map((p) => (
-        <li key={p.href}>
-          <Link href={p.href} className="flex items-center gap-2.5 rounded-lg px-2 py-1.5 hover:bg-cream">
-            <span aria-hidden="true" className="h-7 w-7 shrink-0 rounded-md" style={{ backgroundColor: p.colourId ? classColour(p.colourId) : "#6b7178" }} />
-            <span className="min-w-0">
-              <span className="block truncate text-sm font-medium text-ink">{p.title}</span>
-              {p.subtitle && <span className="block truncate text-xs text-ink/55">{p.subtitle}</span>}
-            </span>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 const PANEL_KEY = "tga:side-panel-hidden";
 
 /**
@@ -184,7 +158,7 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
   const [hidden, setHidden] = useState(false);
   const timeline = useTimeline(viewer);
   const area = viewer.kind === "staff" ? "/admin" : viewer.kind === "teacher" ? "/teach" : viewer.kind === "student" ? "/student" : "/family";
-  const lessonClassIds = viewer.kind === "teacher" || viewer.kind === "student" ? viewer.classIds : [];
+  const lessonClassIds = viewer.kind === "student" ? viewer.classIds : [];
   const calendarScope = useMemo<CalendarScope>(
     () =>
       viewer.kind === "staff"
@@ -238,7 +212,7 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
           <Block title="Timeline">
             <Timeline items={timeline} />
           </Block>
-          {(viewer.kind === "teacher" || viewer.kind === "student") && (
+          {viewer.kind === "student" && (
             <Block title="Upcoming lessons">
               <UpcomingLessons
                 classIds={lessonClassIds}
@@ -247,9 +221,6 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
               />
             </Block>
           )}
-          <Block title="Recently accessed">
-            <Recent prefix={area} />
-          </Block>
           <div className="hidden justify-end xl:flex">
             <button type="button" onClick={toggle} className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink/65 hover:bg-white hover:text-ink">
               Hide side panel

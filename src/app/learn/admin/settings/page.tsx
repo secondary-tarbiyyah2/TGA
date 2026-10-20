@@ -163,16 +163,16 @@ function LessonSettings() {
     <Section title="Lessons & attendance" hint="When parents are told about absences, and how long recordings are kept." onSave={save} busy={busy} message={msg}>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Recording retention (days)" help="Older recordings are deleted automatically each night.">
-          <input type="number" min={1} className={inputCls} value={s.recording_retention_days} onChange={num("recording_retention_days")} />
+          <input type="text" inputMode="decimal" min={1} className={inputCls} value={s.recording_retention_days} onChange={num("recording_retention_days")} />
         </Field>
         <Field label="Absence alert delay (minutes)" help="After a lesson ends with no register, parents are emailed.">
-          <input type="number" min={0} className={inputCls} value={s.absence_alert_delay_minutes} onChange={num("absence_alert_delay_minutes")} />
+          <input type="text" inputMode="decimal" min={0} className={inputCls} value={s.absence_alert_delay_minutes} onChange={num("absence_alert_delay_minutes")} />
         </Field>
         <Field label="Unexplained absences before an alert" help="The Safeguarding Lead is alerted at this number…">
-          <input type="number" min={1} className={inputCls} value={s.unexplained_absence_threshold} onChange={num("unexplained_absence_threshold")} />
+          <input type="text" inputMode="decimal" min={1} className={inputCls} value={s.unexplained_absence_threshold} onChange={num("unexplained_absence_threshold")} />
         </Field>
         <Field label="…within this many days">
-          <input type="number" min={1} className={inputCls} value={s.unexplained_absence_period_days} onChange={num("unexplained_absence_period_days")} />
+          <input type="text" inputMode="decimal" min={1} className={inputCls} value={s.unexplained_absence_period_days} onChange={num("unexplained_absence_period_days")} />
         </Field>
       </div>
     </Section>
@@ -209,7 +209,7 @@ function MessagingSettings() {
   return (
     <Section title="Messages" hint="Staff and parents can message each other. Students have no private messaging." onSave={save} busy={busy} message={msg}>
       <Field label="Keep messages for (days)" help="Conversations with no new messages for this long are deleted automatically. 730 days is about two school years.">
-        <input type="number" min={30} className={`${inputCls} max-w-xs`} value={days} onChange={(e) => setDays(Number(e.target.value))} />
+        <input type="text" inputMode="decimal" min={30} className={`${inputCls} max-w-xs`} value={days} onChange={(e) => setDays(Number(e.target.value))} />
       </Field>
     </Section>
   );
@@ -268,7 +268,7 @@ function ClockInSettingsSection() {
           </div>
         </fieldset>
         <Field label="Auto clock-out after (hours)" help="A shift left open this long is closed automatically at that length, so a forgotten clock-out doesn't run on.">
-          <input type="number" min={1} max={48} className={`${inputCls} max-w-xs`} value={s.auto_clock_out_hours} onChange={(e) => setS({ ...s, auto_clock_out_hours: Number(e.target.value) })} />
+          <input type="text" inputMode="decimal" min={1} max={48} className={`${inputCls} max-w-xs`} value={s.auto_clock_out_hours} onChange={(e) => setS({ ...s, auto_clock_out_hours: Number(e.target.value) })} />
         </Field>
       </div>
     </Section>

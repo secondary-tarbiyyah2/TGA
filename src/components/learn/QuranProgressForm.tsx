@@ -118,9 +118,9 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         {type === "quran_memorisation" ? (
           <>
-            <input type="number" min={1} max={114} value={surahFrom} onChange={(e) => setSurahFrom(e.target.value)} placeholder="Surah from (1-114)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-            <input type="number" min={1} max={114} value={surahTo} onChange={(e) => setSurahTo(e.target.value)} placeholder="Surah to (1-114)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-            <input type="number" min={1} max={30} value={juz} onChange={(e) => setJuz(e.target.value)} placeholder="Juz (optional, 1-30)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+            <input type="text" inputMode="decimal" min={1} max={114} value={surahFrom} onChange={(e) => setSurahFrom(e.target.value)} placeholder="Surah from (1-114)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+            <input type="text" inputMode="decimal" min={1} max={114} value={surahTo} onChange={(e) => setSurahTo(e.target.value)} placeholder="Surah to (1-114)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+            <input type="text" inputMode="decimal" min={1} max={30} value={juz} onChange={(e) => setJuz(e.target.value)} placeholder="Juz (optional, 1-30)" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
           </>
         ) : (
           <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} placeholder="Topic / unit" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm sm:col-span-2" />
@@ -145,7 +145,7 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
             <label className="block text-xs font-medium text-ink/70" htmlFor="quran-pages">
               Pages covered (optional)
             </label>
-            <input id="quran-pages" type="number" min={0} max={604} value={pages} onChange={(e) => setPages(e.target.value)} placeholder="e.g. 2" className="mt-1 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+            <input id="quran-pages" type="text" inputMode="decimal" min={0} max={604} value={pages} onChange={(e) => setPages(e.target.value)} placeholder="e.g. 2" className="mt-1 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
           </div>
         )}
       </div>

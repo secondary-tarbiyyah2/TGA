@@ -122,7 +122,7 @@ export function IncidentBreachLog() {
             <option value="high">High</option>
             <option value="critical">Critical</option>
           </select>
-          <input value={form.affected_count} onChange={(e) => setForm({ ...form, affected_count: e.target.value })} placeholder="Number of people affected (count only)" type="number" min="0" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm sm:col-span-2" />
+          <input value={form.affected_count} onChange={(e) => setForm({ ...form, affected_count: e.target.value })} placeholder="Number of people affected (count only)" type="text" inputMode="decimal" min="0" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm sm:col-span-2" />
           <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="What happened" rows={2} className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm sm:col-span-2" />
         </div>
         <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">Log incident</button>

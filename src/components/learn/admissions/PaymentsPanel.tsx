@@ -283,7 +283,7 @@ export function PaymentsPanel({
                 <div className="mt-3 space-y-2 rounded-lg bg-cream/60 p-3">
                   <label className="block text-sm font-medium text-ink">
                     Amount seen on the proof (£)
-                    <input type="number" min="0" step="0.01" inputMode="decimal" value={verifying.amount} onChange={(e) => setVerifying({ ...verifying, amount: e.target.value })} className={fieldCls} />
+                    <input type="text" min="0" step="0.01" inputMode="decimal" value={verifying.amount} onChange={(e) => setVerifying({ ...verifying, amount: e.target.value })} className={fieldCls} />
                   </label>
                   <label className="flex items-center gap-2 text-sm text-ink">
                     <input type="checkbox" checked={verifying.email} onChange={(e) => setVerifying({ ...verifying, email: e.target.checked })} />

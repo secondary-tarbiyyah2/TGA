@@ -194,7 +194,7 @@ function OfferSection({
           </label>
           <label className="block text-sm font-medium text-ink sm:col-span-2">
             Annual fee override (£)
-            <input type="number" min="0" step="0.01" inputMode="decimal" value={d.annualOverride} onChange={(e) => set("annualOverride", e.target.value)} placeholder={fees.annualFee !== null ? `Fee band: ${fees.annualFee}` : "No fee band matched this year group"} className={fieldCls} />
+            <input type="text" min="0" step="0.01" inputMode="decimal" value={d.annualOverride} onChange={(e) => set("annualOverride", e.target.value)} placeholder={fees.annualFee !== null ? `Fee band: ${fees.annualFee}` : "No fee band matched this year group"} className={fieldCls} />
           </label>
         </div>
 
@@ -219,7 +219,7 @@ function OfferSection({
             <div key={r.amountKey} className="rounded-lg border border-gold-light/50 bg-white p-3">
               <label className="block text-sm font-medium text-ink">
                 {r.label}
-                <input type="number" min="0" step="0.01" inputMode="decimal" value={d[r.amountKey]} onChange={(e) => set(r.amountKey, e.target.value)} placeholder={r.placeholder ? `Default ${r.placeholder}` : "Set when a plan is chosen"} className={fieldCls} />
+                <input type="text" min="0" step="0.01" inputMode="decimal" value={d[r.amountKey]} onChange={(e) => set(r.amountKey, e.target.value)} placeholder={r.placeholder ? `Default ${r.placeholder}` : "Set when a plan is chosen"} className={fieldCls} />
               </label>
               <label className="mt-2 flex items-center gap-2 text-sm text-ink">
                 <input

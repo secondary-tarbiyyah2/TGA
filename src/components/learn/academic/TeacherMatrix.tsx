@@ -305,7 +305,7 @@ function CellDialog({ cls, subject, teachers, rows, load, legacyTeacher, onClose
         <div className="mt-3 space-y-2">
           <label className="block text-xs font-medium text-ink/70">
             Lessons a week{isOwn ? " (blank = the class setting, " + cls.weekly_lessons + ")" : ""}
-            <input type="number" min={1} className={`${inputCls} mt-1`} value={lessons} onChange={(e) => setLessons(e.target.value)} />
+            <input type="text" inputMode="decimal" min={1} className={`${inputCls} mt-1`} value={lessons} onChange={(e) => setLessons(e.target.value)} />
           </label>
           <p className="text-xs font-medium text-ink/70">Usual teacher{dflt ? `: ${name(dflt.teacher_id)}` : legacyTeacher ? `: ${name(legacyTeacher)} (from People, not yet saved here)` : ""}</p>
           <input className={inputCls} placeholder="Search teachers" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search teachers" autoFocus />

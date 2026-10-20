@@ -159,10 +159,10 @@ function OpenEveningContent() {
           <input type="datetime-local" value={draft.start} onChange={(e) => set("start", e.target.value)} className={inputCls} />
         </label>
         <label className="text-sm text-ink">Length (minutes)
-          <input type="number" min={5} max={480} value={draft.minutes} onChange={(e) => set("minutes", Number(e.target.value))} className={inputCls} />
+          <input type="text" inputMode="decimal" min={5} max={480} value={draft.minutes} onChange={(e) => set("minutes", Number(e.target.value))} className={inputCls} />
         </label>
         <label className="text-sm text-ink">Places (total people)
-          <input type="number" min={1} max={1000} value={draft.capacity} onChange={(e) => set("capacity", Number(e.target.value))} className={inputCls} />
+          <input type="text" inputMode="decimal" min={1} max={1000} value={draft.capacity} onChange={(e) => set("capacity", Number(e.target.value))} className={inputCls} />
         </label>
         <label className="text-sm text-ink">Joining link
           <input value={draft.joinUrl} onChange={(e) => set("joinUrl", e.target.value)} placeholder="https://…" className={inputCls} />

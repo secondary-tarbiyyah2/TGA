@@ -76,6 +76,31 @@ function useClockState(userId: string, roles: RoleGrant[]) {
     };
   }, [load]);
 
+  // While a shift is open, tell the server every minute that the portal is
+  // still open (0099). Closing the last tab stops this, and the shift is then
+  // closed at the last heartbeat; a refresh or a second tab changes nothing.
+  const shiftId = shift?.id || null;
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase || !shiftId) return;
+    const beat = () => {
+      void supabase.rpc("shift_heartbeat");
+    };
+    beat();
+    const t = window.setInterval(beat, 60 * 1000);
+    const onVisible = () => {
+      if (document.visibilityState === "visible") {
+        beat();
+        load();
+      }
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.clearInterval(t);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [shiftId, load]);
+
   const myRoles: LearnRole[] = roles.map((r) => r.role);
   const required = !!policy && policy.require_clock_in && myRoles.some((r) => policy.clock_in_roles.includes(r));
   return { loaded, isStaff, policy, shift, failed, required, reload: load };
@@ -283,7 +308,7 @@ export function ClockChip({ userId, roles }: { userId: string; roles: RoleGrant[
             <p className="text-sm font-medium text-ink">
               Clocked in at {new Date(shift.clocked_in_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}
             </p>
-            <p className="text-xs text-ink/55">{elapsed} so far. Clocking out will lock the portal until you clock in again.</p>
+            <p className="text-xs text-ink/55">{elapsed} so far. Closing the portal clocks you out automatically within a few minutes. Clocking out locks the portal until you clock in again.</p>
             <input
               value={note}
               onChange={(e) => setNote(e.target.value)}

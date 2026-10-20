@@ -61,7 +61,7 @@ function useTodayLessons() {
   return lessons;
 }
 
-function LessonCard({ lesson }: { lesson: TodayLesson }) {
+function LessonCard({ lesson, open, onToggle }: { lesson: TodayLesson; open: boolean; onToggle: () => void }) {
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const now = new Date().toTimeString().slice(0, 5);
@@ -116,19 +116,37 @@ function LessonCard({ lesson }: { lesson: TodayLesson }) {
         </div>
       </div>
       {message && <p className="border-t border-gold-light/70 bg-red-50 px-5 py-2 text-sm text-red-800">{message}</p>}
-      <div className="border-t border-gold-light">
-        <Register lessonId={lesson.id} classId={lesson.slot.class_id} />
-      </div>
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        className="flex w-full items-center justify-between border-t border-gold-light px-5 py-2.5 text-left text-sm font-semibold text-ink hover:bg-cream/60"
+      >
+        {open ? "Hide register" : "Register"}
+        <span aria-hidden="true" className={`transition-transform ${open ? "rotate-180" : ""}`}>
+          ▾
+        </span>
+      </button>
+      {open && (
+        <div className="border-t border-gold-light">
+          <Register lessonId={lesson.id} classId={lesson.slot.class_id} />
+        </div>
+      )}
     </section>
   );
 }
 
 function TodayContent() {
   const lessons = useTodayLessons();
+  // Only one register is open at a time, so the page stays short: the lesson
+  // happening now (or the next one) opens by itself; press another to switch.
+  const [openId, setOpenId] = useState<string | null>(null);
+  const nowHm = new Date().toTimeString().slice(0, 5);
+  const current = (lessons || []).find((l) => nowHm <= l.slot.end_time.slice(0, 5))?.id || lessons?.[lessons.length - 1]?.id || null;
   const dateLabel = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
   return (
     <>
-      <PageHeader title="Today" subtitle={`${dateLabel}: your lessons, with the register underneath each one.`} />
+      <PageHeader title="Today" subtitle={`${dateLabel}: your lessons. The register for the lesson on now is open; press Register on any other.`} />
       {lessons === null ? (
         <div className="h-48 animate-pulse rounded-2xl bg-white" />
       ) : lessons.length === 0 ? (
@@ -139,9 +157,9 @@ function TodayContent() {
           </p>
         </div>
       ) : (
-        <div className="space-y-5">
+        <div className="space-y-3">
           {lessons.map((l) => (
-            <LessonCard key={l.id} lesson={l} />
+            <LessonCard key={l.id} lesson={l} open={(openId ?? current) === l.id} onToggle={() => setOpenId((openId ?? current) === l.id ? "" : l.id)} />
           ))}
         </div>
       )}

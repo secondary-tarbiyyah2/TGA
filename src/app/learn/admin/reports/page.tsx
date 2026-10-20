@@ -190,7 +190,7 @@ function MarkSchemesAdmin() {
         <div className="mt-3">
           <div className="flex flex-wrap gap-2">
             <input value={label} onChange={(e) => setLabel(e.target.value)} placeholder="Grade label (e.g. B)" className="w-28 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-            <input value={minPercent} onChange={(e) => setMinPercent(e.target.value)} type="number" placeholder="Min %" className="w-28 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+            <input value={minPercent} onChange={(e) => setMinPercent(e.target.value)} type="text" inputMode="decimal" placeholder="Min %" className="w-28 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
             <button type="button" onClick={addBoundary} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white hover:bg-gold-900 font-medium transition-colors">
               Add boundary
             </button>

@@ -97,7 +97,7 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
       <div className="mt-3 grid gap-2 sm:grid-cols-4">
         <label className="text-xs text-ink/70">
           Keep for (months)
-          <input type="number" min={1} max={600} value={months} onChange={(e) => setMonths(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+          <input type="text" inputMode="decimal" min={1} max={600} value={months} onChange={(e) => setMonths(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
         </label>
         <label className="text-xs text-ink/70">
           Then

@@ -153,7 +153,7 @@ export function QuranTargetsPanel({ childId, classId, entries, canEdit }: { chil
             <option value="juz">Juz secure</option>
             <option value="surah">Surahs secure</option>
           </select>
-          <input type="number" min={1} max={max} value={amount} onChange={(e) => setAmount(e.target.value)} placeholder={`How many (1-${max})`} aria-label="Target amount" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
+          <input type="text" inputMode="decimal" min={1} max={max} value={amount} onChange={(e) => setAmount(e.target.value)} placeholder={`How many (1-${max})`} aria-label="Target amount" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
           <div className="sm:col-span-2">
             <label className="block text-xs font-medium text-ink/70" htmlFor={`quran-target-due-${childId}`}>
               Due date

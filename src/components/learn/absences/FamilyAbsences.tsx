@@ -22,7 +22,10 @@ export function FamilyAbsences() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [tick, setTick] = useState(0);
 
-  const [childId, setChildId] = useState("");
+  // One note can cover several children (e.g. a family trip or everyone unwell).
+  const [childIds, setChildIds] = useState<string[]>([]);
+  const [when, setWhen] = useState<"today" | "tomorrow" | "dates">("today");
+  const [category, setCategory] = useState("");
   const [fromDate, setFromDate] = useState(localDateKey(new Date()));
   const [toDate, setToDate] = useState(localDateKey(new Date()));
   const [reason, setReason] = useState("");
@@ -41,7 +44,7 @@ export function FamilyAbsences() {
       const list = (kids.data as unknown as Child[]) || [];
       setChildren(list);
       setNotes(n.notes);
-      setChildId((cur) => cur || (list.length === 1 ? list[0].id : ""));
+      setChildIds((cur) => (cur.length ? cur : list.length === 1 ? [list[0].id] : []));
       const a = await fetchAbsences(dateKeyDaysAgo(30), localDateKey(new Date()), n.notes);
       if (cancelled) return;
       setUnexplained(a.absences.filter((x) => x.kind === "unexplained"));
@@ -64,7 +67,8 @@ export function FamilyAbsences() {
   }, [unexplained]);
 
   const prefill = (a: Absence) => {
-    setChildId(a.childId);
+    setChildIds([a.childId]);
+    setWhen("dates");
     setFromDate(a.date);
     setToDate(a.date);
     setSent(false);
@@ -75,14 +79,21 @@ export function FamilyAbsences() {
     e.preventDefault();
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!childId) return setFormError("Please choose which child this is for.");
-    if (!fromDate || !toDate || toDate < fromDate) return setFormError("Please check the dates. The last day can't be before the first.");
-    if (!reason.trim()) return setFormError("A few words about why is all we need.");
+    if (!childIds.length) return setFormError("Please choose which child this is for.");
+    const today = localDateKey(new Date());
+    const tmw = new Date();
+    tmw.setDate(tmw.getDate() + 1);
+    const [from, to] = when === "today" ? [today, today] : when === "tomorrow" ? [localDateKey(tmw), localDateKey(tmw)] : [fromDate, toDate];
+    if (!from || !to || to < from) return setFormError("Please check the dates. The last day can't be before the first.");
+    if (!category) return setFormError("Please choose a reason.");
+    if (category === "Other" && !reason.trim()) return setFormError("Please tell us a little about why.");
+    const text = reason.trim() ? `${category}: ${reason.trim()}` : category;
     setBusy(true);
     setFormError(null);
-    const { error } = await supabase.from("absence_notes").insert({ child_id: childId, from_date: fromDate, to_date: toDate, reason: reason.trim() });
+    const { error } = await supabase.from("absence_notes").insert(childIds.map((id) => ({ child_id: id, from_date: from, to_date: to, reason: text })));
     setBusy(false);
     if (error) return setFormError("We couldn't send that just now. Please try again.");
+    setCategory("");
     setReason("");
     setSent(true);
     setTick((t) => t + 1);
@@ -122,40 +133,70 @@ export function FamilyAbsences() {
 
       <div className="grid gap-5 lg:grid-cols-2">
         <form ref={formRef} onSubmit={submit} className="space-y-4 rounded-2xl border border-gold-light bg-white p-4">
-          <h2 className="text-base font-semibold text-ink">Send a note</h2>
+          <h2 className="text-base font-semibold text-ink">Tell us about an absence</h2>
           {children !== null && children.length === 0 ? (
             <p className="text-sm text-ink/60">There are no children on your account yet. Once your child is enrolled you can send notes here.</p>
           ) : (
             <>
-              <label className="block text-sm font-medium text-ink">
-                Child
-                <select value={childId} onChange={(e) => setChildId(e.target.value)} className={fieldCls}>
-                  <option value="">Choose…</option>
-                  {(children || []).map((c) => (
-                    <option key={c.id} value={c.id}>
-                      {c.name}
-                    </option>
+              <fieldset>
+                <legend className="text-sm font-medium text-ink">Who will be away?</legend>
+                <div className="mt-1.5 flex flex-wrap gap-2">
+                  {(children || []).map((c) => {
+                    const on = childIds.includes(c.id);
+                    return (
+                      <button key={c.id} type="button" aria-pressed={on} onClick={() => setChildIds((ids) => (on ? ids.filter((x) => x !== c.id) : [...ids, c.id]))} className={on ? ui.chipOn : ui.chip}>
+                        {c.name}
+                      </button>
+                    );
+                  })}
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend className="text-sm font-medium text-ink">When?</legend>
+                <div className="mt-1.5 flex flex-wrap gap-2">
+                  {(
+                    [
+                      ["today", "Today"],
+                      ["tomorrow", "Tomorrow"],
+                      ["dates", "Other dates"],
+                    ] as const
+                  ).map(([k, label]) => (
+                    <button key={k} type="button" aria-pressed={when === k} onClick={() => setWhen(k)} className={when === k ? ui.chipOn : ui.chip}>
+                      {label}
+                    </button>
                   ))}
-                </select>
-              </label>
-              <div className="grid gap-3 sm:grid-cols-2">
-                <label className="block text-sm font-medium text-ink">
-                  First day away
-                  <input type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)} className={fieldCls} />
-                </label>
-                <label className="block text-sm font-medium text-ink">
-                  Last day away
-                  <input type="date" value={toDate} min={fromDate} onChange={(e) => setToDate(e.target.value)} className={fieldCls} />
-                </label>
-              </div>
+                </div>
+                {when === "dates" && (
+                  <div className="mt-2 grid gap-3 sm:grid-cols-2">
+                    <label className="block text-sm text-ink">
+                      First day away
+                      <input type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)} className={fieldCls} />
+                    </label>
+                    <label className="block text-sm text-ink">
+                      Last day away
+                      <input type="date" value={toDate} min={fromDate} onChange={(e) => setToDate(e.target.value)} className={fieldCls} />
+                    </label>
+                  </div>
+                )}
+              </fieldset>
+              <fieldset>
+                <legend className="text-sm font-medium text-ink">Why?</legend>
+                <div className="mt-1.5 flex flex-wrap gap-2">
+                  {["Unwell", "Medical or dental appointment", "Family emergency", "Religious observance", "Other"].map((c) => (
+                    <button key={c} type="button" aria-pressed={category === c} onClick={() => setCategory(c)} className={category === c ? ui.chipOn : ui.chip}>
+                      {c}
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
               <label className="block text-sm font-medium text-ink">
-                What happened?
-                <textarea rows={4} value={reason} onChange={(e) => setReason(e.target.value)} placeholder="e.g. A temperature since last night, back on Thursday." className={fieldCls} />
+                {category === "Other" ? "Tell us why" : "Anything else? (optional)"}
+                <textarea rows={3} value={reason} onChange={(e) => setReason(e.target.value)} placeholder="e.g. A temperature since last night, back on Thursday." className={fieldCls} />
               </label>
               {formError && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{formError}</p>}
-              {sent && <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-800">Thank you. We&apos;ve got your note and a member of staff will look at it.</p>}
+              {sent && <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-800">Thank you. Your child&apos;s teachers can see the reason, and the office will be in touch only if they need anything else.</p>}
               <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50 sm:w-auto">
-                {busy ? "Sending…" : "Send note"}
+                {busy ? "Sending…" : "Send"}
               </button>
             </>
           )}

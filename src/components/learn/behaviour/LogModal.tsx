@@ -226,7 +226,7 @@ export function LogModal({
               <label className="mt-3 block">
                 <span className="font-medium text-ink">Points</span>
                 <input
-                  type="number"
+                  type="text" inputMode="decimal"
                   min={1}
                   max={10}
                   value={Math.abs(points) || ""}
@@ -261,7 +261,7 @@ export function LogModal({
                   </label>
                   <label>
                     <span className="block text-xs text-ink/60">Minutes</span>
-                    <input type="number" min={5} max={120} step={5} value={detMinutes} onChange={(e) => setDetMinutes(Math.max(5, Number(e.target.value) || 30))} className="w-24 rounded-lg border border-gold-light px-3 py-1.5 text-sm" />
+                    <input type="text" inputMode="decimal" min={5} max={120} step={5} value={detMinutes} onChange={(e) => setDetMinutes(Math.max(5, Number(e.target.value) || 30))} className="w-24 rounded-lg border border-gold-light px-3 py-1.5 text-sm" />
                   </label>
                 </div>
               )}

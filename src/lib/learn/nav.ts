@@ -186,7 +186,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/teach/announcements", label: "Announcements", icon: "megaphone", group: "Communication" },
     { href: "/teach/profile", label: "My profile", icon: "userRound", group: "My staff area" },
     { href: "/teach/clock", label: "My hours", icon: "clock", group: "My staff area" },
-    { href: "/teach/absences", label: "Absences", icon: "calendarX", group: "My staff area" },
+    { href: "/teach/absences", label: "Pupil absences", icon: "calendarX", group: "Pupils" },
   ],
   family: [
     { href: "/family/dashboard", label: "Home", icon: "house" },
@@ -194,6 +194,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/family/todo", label: "To do", icon: "listChecks", group: "Learning", matchPrefixes: ["/family/homework"] },
     { href: "/family/behaviour", label: "Behaviour", icon: "heartHandshake", group: "Progress" },
     { href: "/family/reports", label: "Reports", icon: "fileText", group: "Progress" },
+    { href: "/family/revision", label: "Revision", icon: "bookOpenCheck", group: "Progress" },
     { href: "/family/calendar", label: "Calendar", icon: "calendarDays", group: "Calendar" },
     { href: "/family/parent-evenings", label: "Parent evenings", icon: "users", group: "Calendar" },
     { href: "/family/messages", label: "Messages", icon: "messageSquare", group: "Communication" },

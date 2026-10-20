@@ -47,8 +47,8 @@ function ClassFields({ d, set, props }: { d: Draft; set: (f: (s: Draft) => Draft
           {props.years.map((y) => <option key={y.id} value={y.id}>{y.label}</option>)}
         </select>
       </Field>
-      <Field label="Lessons per week"><input type="number" min={1} className={inputCls} value={d.weekly_lessons} onChange={(e) => set((s) => ({ ...s, weekly_lessons: e.target.value }))} /></Field>
-      <Field label="Lesson length (minutes)"><input type="number" min={15} step={5} className={inputCls} value={d.lesson_length_minutes} onChange={(e) => set((s) => ({ ...s, lesson_length_minutes: e.target.value }))} /></Field>
+      <Field label="Lessons per week"><input type="text" inputMode="decimal" min={1} className={inputCls} value={d.weekly_lessons} onChange={(e) => set((s) => ({ ...s, weekly_lessons: e.target.value }))} /></Field>
+      <Field label="Lesson length (minutes)"><input type="text" inputMode="decimal" min={15} step={5} className={inputCls} value={d.lesson_length_minutes} onChange={(e) => set((s) => ({ ...s, lesson_length_minutes: e.target.value }))} /></Field>
       <Field label="Lesson meeting link (optional)" hint={MEETING_HELP} className="sm:col-span-2 lg:col-span-3">
         <input type="url" inputMode="url" className={inputCls} placeholder="https://teams.microsoft.com/l/meetup-join/…" value={d.meeting_url} onChange={(e) => set((s) => ({ ...s, meeting_url: e.target.value }))} />
       </Field>

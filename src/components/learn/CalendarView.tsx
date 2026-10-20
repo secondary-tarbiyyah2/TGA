@@ -94,7 +94,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
   // ?tab=terms opens a section directly (links from Academic setup and Reports).
   const [tab, setTab] = useState<Tab>(() => {
     const t = typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("tab");
-    return t === "terms" || t === "dates" ? t : "month";
+    return canManageTerms && (t === "terms" || t === "dates") ? t : "month";
   });
   const [mode, setMode] = useState<Mode>("month");
   const [hm, setHm] = useState<HMonth>(() => {
@@ -223,7 +223,8 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-3">
         <h2 className="mr-auto font-serif text-h3 font-semibold text-ink">Academic Calendar</h2>
-        <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Calendar sections" />
+        {/* Term setup and date overrides are for the people who manage them; everyone else just sees the calendar. */}
+        {canManageTerms && <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Calendar sections" />}
       </div>
 
       {toast && (

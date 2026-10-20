@@ -27,13 +27,24 @@ type Tab = "basics" | "health" | "contacts" | "consents" | "acks";
  * log. `showAcks` adds the teacher acknowledgements tab (Headteacher/admin).
  * Every section is also rendered when printing, whichever tab is open.
  */
-export function PupilRecord({ child, showAcks = false, onLoaded }: { child: RecordChild; showAcks?: boolean; onLoaded?: (d: PupilDetails | null, contacts: EmergencyContact[]) => void }) {
+export function PupilRecord({
+  child,
+  showAcks = false,
+  teacherView = false,
+  onLoaded,
+}: {
+  child: RecordChild;
+  showAcks?: boolean;
+  /** Teachers see health, needs and consents only (0098); the office holds the rest. */
+  teacherView?: boolean;
+  onLoaded?: (d: PupilDetails | null, contacts: EmergencyContact[]) => void;
+}) {
   const [details, setDetails] = useState<PupilDetails | null>(null);
   const [contacts, setContacts] = useState<EmergencyContact[]>([]);
   const [acks, setAcks] = useState<Acknowledgement[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [tab, setTab] = useState<Tab>("basics");
+  const [tab, setTab] = useState<Tab>(teacherView ? "health" : "basics");
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -41,8 +52,12 @@ export function PupilRecord({ child, showAcks = false, onLoaded }: { child: Reco
     let cancelled = false;
     (async () => {
       const [d, c, a] = await Promise.all([
-        supabase.from("pupil_details").select(DETAILS_SELECT).eq("child_id", child.id).maybeSingle(),
-        supabase.from("pupil_emergency_contacts").select(CONTACT_SELECT).eq("child_id", child.id).order("priority"),
+        teacherView
+          ? supabase
+              .rpc("teacher_pupil_health")
+              .then((r) => ({ data: ((r.data as unknown as PupilDetails[]) || []).find((x) => x.child_id === child.id) || null, error: r.error }))
+          : supabase.from("pupil_details").select(DETAILS_SELECT).eq("child_id", child.id).maybeSingle(),
+        teacherView ? Promise.resolve({ data: [], error: null }) : supabase.from("pupil_emergency_contacts").select(CONTACT_SELECT).eq("child_id", child.id).order("priority"),
         showAcks
           ? supabase.from("pupil_detail_acknowledgements").select("id, child_id, teacher_id, acknowledged_at, details_updated_at, profiles(full_name)").eq("child_id", child.id).order("acknowledged_at", { ascending: false })
           : Promise.resolve({ data: [], error: null }),
@@ -63,16 +78,16 @@ export function PupilRecord({ child, showAcks = false, onLoaded }: { child: Reco
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps -- load once per pupil
-  }, [child.id, showAcks]);
+  }, [child.id, showAcks, teacherView]);
 
   if (!loaded) return <p className="text-sm text-ink/60">Loading…</p>;
 
   const progress = completeness(details, contacts.length);
   const alerts = medicalAlerts(details);
   const tabs: { key: Tab; label: string }[] = [
-    { key: "basics", label: "Basics" },
-    { key: "health", label: "Health" },
-    { key: "contacts", label: `Emergency contacts (${contacts.length})` },
+    ...(teacherView ? [] : [{ key: "basics" as Tab, label: "Basics" }]),
+    { key: "health", label: teacherView ? "Health and needs" : "Health" },
+    ...(teacherView ? [] : [{ key: "contacts" as Tab, label: `Emergency contacts (${contacts.length})` }]),
     { key: "consents", label: "Consents" },
     ...(showAcks ? [{ key: "acks" as Tab, label: `Teacher acknowledgements (${acks.length})` }] : []),
   ];
@@ -99,17 +114,22 @@ export function PupilRecord({ child, showAcks = false, onLoaded }: { child: Reco
             ))}
           </div>
         </div>
+        {teacherView ? (
+          <p className="mt-2 text-xs text-ink/65">Home address and emergency contacts are held by the office. In an emergency, contact the office or the safeguarding lead.</p>
+        ) : (
         <div className="mt-3 flex items-center gap-3">
           <div className="flex-1">
             <ProgressBar percent={progress.percent} />
           </div>
           <p className="text-xs text-ink/60">{details?.completed_at ? `Complete · ${formatStamp(details.completed_at)}` : `${progress.percent}% complete`}</p>
         </div>
+        )}
         {!details && <p className="mt-2 text-sm text-amber-800">The family hasn&apos;t started this record yet.</p>}
       </div>
 
       <Tabs items={tabs} value={tab} onChange={setTab} label="Pupil record sections" className="print:hidden" />
 
+      {!teacherView && (
       <Section title="Basics" className={vis("basics")}>
         <Row label="Gender" value={details?.gender === "male" ? "Male" : details?.gender === "female" ? "Female" : ""} />
         <Row label="Home address" value={[details?.address_line1, details?.address_line2, details?.town, details?.postcode].filter(Boolean).join(", ")} />
@@ -118,9 +138,10 @@ export function PupilRecord({ child, showAcks = false, onLoaded }: { child: Reco
         <Row label="Previous school" value={details?.previous_school} />
         <Row label="Siblings at the school" value={details?.siblings_at_school} />
       </Section>
+      )}
 
       <Section title="Health" className={vis("health")}>
-        <Row label="GP" value={[details?.gp_name, details?.gp_phone].filter(Boolean).join(" · ")} />
+        {!teacherView && <Row label="GP" value={[details?.gp_name, details?.gp_phone].filter(Boolean).join(" · ")} />}
         <Row label="Medical conditions" value={details?.medical_conditions} alert={meaningful(details?.medical_conditions)} />
         <Row label="Allergies" value={details?.allergies} alert={meaningful(details?.allergies)} />
         <Row label="Medication" value={details?.medication} alert={meaningful(details?.medication)} />
@@ -129,6 +150,7 @@ export function PupilRecord({ child, showAcks = false, onLoaded }: { child: Reco
         <Row label="Parent confirmed" value={details?.health_confirmed ? "Yes" : "No"} />
       </Section>
 
+      {!teacherView && (
       <Section title="Emergency contacts" className={vis("contacts")}>
         {contacts.length === 0 ? (
           <p className="text-sm text-amber-800">No emergency contacts yet.</p>
@@ -155,6 +177,7 @@ export function PupilRecord({ child, showAcks = false, onLoaded }: { child: Reco
           </ol>
         )}
       </Section>
+      )}
 
       <Section title="Consents" className={vis("consents")}>
         <Row label="Photographs" value={details?.photo_consent == null ? "" : details.photo_consent ? "Yes" : "No"} />

@@ -629,7 +629,53 @@ export function QuestionEditor({
   const blank = { topic: topics[0] || "", question: "", options: ["", "", "", ""], answer: 0, explanation: "", hint: "" };
   const [draft, setDraft] = useState(blank);
   const [busy, setBusy] = useState(false);
+  const [paste, setPaste] = useState("");
   const letters = "ABCDEF";
+
+  /**
+   * Many questions at once, typed or pasted like this (blank line between):
+   *   What does tawhid mean?
+   *   - Praying five times a day
+   *   * Singling out Allah alone      <- the star marks the right answer
+   *   - Giving charity
+   *   Why: Tawhid means making Allah one in worship.   (optional)
+   */
+  async function addPasted() {
+    if (!supabase) return;
+    const topic = draft.topic.trim();
+    if (!topic) return onError("Choose which chapter these questions are about.");
+    const blocks = paste.split(/\n\s*\n/).map((b) => b.split("\n").map((l) => l.trim()).filter(Boolean)).filter((b) => b.length);
+    const rows = [];
+    for (const [n, b] of blocks.entries()) {
+      const question = b[0].replace(/^\d+[.)]\s*/, "");
+      const opts = b.slice(1).filter((l) => /^[-*•]/.test(l));
+      const why = b.find((l) => /^why:/i.test(l));
+      const options = opts.map((l) => l.replace(/^[-*•]\s*/, ""));
+      const answer = opts.findIndex((l) => l.startsWith("*"));
+      if (question.length < 3 || options.length < 2 || answer < 0) return onError(`Question ${n + 1} needs at least two answers starting with "-", and the right one starting with "*".`);
+      rows.push({
+        unit_id: unitId,
+        qkey: `staff-${newKey()}`,
+        lesson_no: Math.max(1, topics.indexOf(topic) + 1),
+        topic,
+        question,
+        options,
+        answer,
+        explanation: why ? why.replace(/^why:\s*/i, "") : null,
+        hint: null,
+        source: "staff",
+        in_quiz: true,
+        active: true,
+      });
+    }
+    if (!rows.length) return onError("Paste at least one question.");
+    setBusy(true);
+    const { data, error } = await supabase.from("revision_questions").insert(rows).select("id, topic, question, options, answer, explanation, hint, source");
+    setBusy(false);
+    if (error) return onError(`Couldn't add the questions: ${error.message}`);
+    onChange([...questions, ...((data as StaffQ[]) || [])]);
+    setPaste("");
+  }
 
   async function add() {
     if (!supabase) return;
@@ -698,6 +744,23 @@ export function QuestionEditor({
           ))}
         </ol>
       )}
+      <details className="rounded-xl border border-gold-light/70 bg-white p-3">
+        <summary className="cursor-pointer text-sm font-semibold text-ink">Add several questions at once</summary>
+        <p className="mt-2 text-xs text-ink/70">
+          One question per block, a blank line between them. Start each answer with <code>-</code> and the right answer with <code>*</code>. An optional line starting <code>Why:</code> is shown after answering. They go into the chapter chosen below.
+        </p>
+        <textarea
+          value={paste}
+          onChange={(e) => setPaste(e.target.value)}
+          rows={7}
+          aria-label="Questions to add"
+          className={`mt-2 ${input} font-mono text-xs`}
+          placeholder={"What does tawhid mean?\n- Praying five times a day\n* Singling out Allah alone\n- Giving charity\nWhy: Tawhid is making Allah one in worship.\n\nWhich surah is called the essence of tawhid?\n* Al-Ikhlas\n- Al-Fatihah\n- Al-Kawthar"}
+        />
+        <button type="button" className={`mt-2 ${btnPrimary}`} disabled={busy || !paste.trim()} onClick={addPasted}>
+          {busy ? "Adding…" : "Add these questions"}
+        </button>
+      </details>
       <fieldset className="space-y-2 rounded-xl bg-cream/70 p-3">
         <legend className="px-1 text-sm font-semibold text-ink">Add a question</legend>
         <label className="block text-sm font-medium text-ink">

@@ -216,7 +216,7 @@ export function HomeworkEditor({
       </label>
       <label className="block text-sm sm:w-48">
         <span className="mb-1 block text-xs font-medium text-ink/70">Marks available (optional)</span>
-        <input type="number" inputMode="decimal" min={0} step="any" value={maxPoints} onChange={(e) => setMaxPoints(e.target.value)} placeholder="e.g. 10" className={inputCls} />
+        <input type="text" inputMode="decimal" min={0} step="any" value={maxPoints} onChange={(e) => setMaxPoints(e.target.value)} placeholder="e.g. 10" className={inputCls} />
       </label>
 
       <div className="space-y-3 rounded-lg border border-gold-light/40 p-3">
