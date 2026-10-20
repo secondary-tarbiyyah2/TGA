@@ -2,32 +2,109 @@
   "subject": "Business",
   "year": "y10",
   "board": "Edexcel",
-  "source": "Edexcel GCSE Business (1BS0) specification, Theme 1: Investigating small business (1.1 Enterprise and entrepreneurship, 1.2 Spotting a business opportunity, start of 1.3 Putting a business idea into practice). The school Drive holds only an AQA 8132 scheme of work and legacy topic folders, used for activity ideas only; all content written to the Edexcel specification and subject knowledge. Business examples are fictional unless stated",
+  "source": "Edexcel GCSE Business (1BS0) specification, Theme 1: Investigating small business (1.1 Enterprise and entrepreneurship, 1.2 Spotting a business opportunity, start of 1.3 Putting a business idea into practice). The school Drive holds only an AQA 8132 scheme of work and legacy topic folders, used for activity ideas only; all content written to the Edexcel specification and subject knowledge. Business examples are fictional unless stated | Edexcel 4BS1 specification (headline content for units 1.1-1.4, 4.1-4.3, 2.1-2.2). The older UK GCSE 1BS0 lessons in content/lessons/business/y10.json were checked: they cover aims, market research, segmentation and revenue/cost/profit for the old board; this set re-teaches those topics only where they appear as separate 4BS1 units (1.1, 4.1, 4.2) with new fictional contexts and IGCSE-style questions. No Drive material adapted.",
   "lessons": [
     {
       "unit": "Unit 1: Enterprise and entrepreneurship",
       "n": 1,
       "title": "Why businesses exist: needs, wants and enterprise",
       "duration": 50,
-      "objectives": ["Explain the purpose of a business and distinguish needs from wants and goods from services", "Define enterprise and entrepreneur and describe what an entrepreneur does"],
+      "objectives": [
+        "Explain the purpose of a business and distinguish needs from wants and goods from services",
+        "Define enterprise and entrepreneur and describe what an entrepreneur does"
+      ],
       "keywords": [
-        { "term": "business enterprise", "def": "an organisation that provides goods or services to meet customer needs and wants" },
-        { "term": "entrepreneur", "def": "a person who takes the risk of starting and running a business" },
-        { "term": "need", "def": "something a person must have to live, such as food, water and shelter" },
-        { "term": "want", "def": "something a person would like but could live without" },
-        { "term": "enterprise", "def": "the skill of seeing an opportunity and organising resources to use it" }
+        {
+          "term": "business enterprise",
+          "def": "an organisation that provides goods or services to meet customer needs and wants"
+        },
+        {
+          "term": "entrepreneur",
+          "def": "a person who takes the risk of starting and running a business"
+        },
+        {
+          "term": "need",
+          "def": "something a person must have to live, such as food, water and shelter"
+        },
+        {
+          "term": "want",
+          "def": "something a person would like but could live without"
+        },
+        {
+          "term": "enterprise",
+          "def": "the skill of seeing an opportunity and organising resources to use it"
+        }
       ],
-      "starter": ["Name two things you bought or used this week. Who made or supplied each one?", "Is a coat in winter a need or a want? Explain.", "Give one difference between a good and a service."],
+      "starter": [
+        "Name two things you bought or used this week. Who made or supplied each one?",
+        "Is a coat in winter a need or a want? Explain.",
+        "Give one difference between a good and a service."
+      ],
       "teach": [
-        { "heading": "Bismillah: business as halal earning", "bullets": ["Trade is encouraged in Islam when done honestly", "The Prophet (peace be upon him) was a trader", "We study business to understand how money and work connect"], "note": "Begin with bismillah. Point out that Qur'an 2:275 says Allah has permitted trade, and that the Prophet (peace be upon him) worked as a merchant before prophethood. A reported saying in Sahih al-Bukhari is that no one has eaten better food than what he earned by the work of his own hands. Set the tone: we learn business skills so we can earn honestly and serve people well." },
-        { "heading": "The purpose of business", "bullets": ["Businesses meet customers' needs and wants", "They produce goods or provide services", "They add value to resources", "They aim to earn a reward for the owner"], "note": "Ask: what is the point of a business? Draw out that it takes inputs (resources) and turns them into something people will pay for. Goods are physical (a loaf of bread); services are not (a haircut). Many businesses sell both, such as a restaurant." },
-        { "heading": "Needs and wants", "bullets": ["Needs: food, water, shelter, clothing", "Wants: designer trainers, the latest phone", "Wants change; needs stay similar", "Scarcity forces people to choose"], "note": "Common misconception: the same item cannot be both. A phone may be a want for one person but close to a need for a person who runs a business from it. Introduce scarcity: resources are limited, so choices must be made, and businesses compete to be chosen." },
-        { "heading": "Enterprise and entrepreneurs", "bullets": ["Enterprise: spotting and acting on an opportunity", "An entrepreneur organises the resources", "They make decisions and take risks", "They hope to earn profit as a reward"], "note": "Link to the four things an entrepreneur brings together: land, labour, capital and enterprise (the factors of production, though the Edexcel spec focuses on the entrepreneur's role). Ask pupils to name a young entrepreneur they know of. Stress that entrepreneurs are not only huge names; a market stall owner is one." },
-        { "heading": "Worked example: Bilal's tutoring service", "bullets": ["Bilal sees pupils struggling with GCSE maths", "He organises a room, resources and himself", "He sells a service at 12 pounds an hour", "He takes the risk that pupils may not come"], "note": "Walk through each bullet and label it: opportunity, resources, service not good, price, risk. Ask: what would Bilal's want or need be for his customers? (Parents want grades; pupils need to pass.) This models the 'identify, apply' skill for later exam answers." }
+        {
+          "heading": "Bismillah: business as halal earning",
+          "bullets": [
+            "Trade is encouraged in Islam when done honestly",
+            "The Prophet (peace be upon him) was a trader",
+            "We study business to understand how money and work connect"
+          ],
+          "note": "Begin with bismillah. Point out that Qur'an 2:275 says Allah has permitted trade, and that the Prophet (peace be upon him) worked as a merchant before prophethood. A reported saying in Sahih al-Bukhari is that no one has eaten better food than what he earned by the work of his own hands. Set the tone: we learn business skills so we can earn honestly and serve people well."
+        },
+        {
+          "heading": "The purpose of business",
+          "bullets": [
+            "Businesses meet customers' needs and wants",
+            "They produce goods or provide services",
+            "They add value to resources",
+            "They aim to earn a reward for the owner"
+          ],
+          "note": "Ask: what is the point of a business? Draw out that it takes inputs (resources) and turns them into something people will pay for. Goods are physical (a loaf of bread); services are not (a haircut). Many businesses sell both, such as a restaurant."
+        },
+        {
+          "heading": "Needs and wants",
+          "bullets": [
+            "Needs: food, water, shelter, clothing",
+            "Wants: designer trainers, the latest phone",
+            "Wants change; needs stay similar",
+            "Scarcity forces people to choose"
+          ],
+          "note": "Common misconception: the same item cannot be both. A phone may be a want for one person but close to a need for a person who runs a business from it. Introduce scarcity: resources are limited, so choices must be made, and businesses compete to be chosen."
+        },
+        {
+          "heading": "Enterprise and entrepreneurs",
+          "bullets": [
+            "Enterprise: spotting and acting on an opportunity",
+            "An entrepreneur organises the resources",
+            "They make decisions and take risks",
+            "They hope to earn profit as a reward"
+          ],
+          "note": "Link to the four things an entrepreneur brings together: land, labour, capital and enterprise (the factors of production, though the Edexcel spec focuses on the entrepreneur's role). Ask pupils to name a young entrepreneur they know of. Stress that entrepreneurs are not only huge names; a market stall owner is one."
+        },
+        {
+          "heading": "Worked example: Bilal's tutoring service",
+          "bullets": [
+            "Bilal sees pupils struggling with GCSE maths",
+            "He organises a room, resources and himself",
+            "He sells a service at 12 pounds an hour",
+            "He takes the risk that pupils may not come"
+          ],
+          "note": "Walk through each bullet and label it: opportunity, resources, service not good, price, risk. Ask: what would Bilal's want or need be for his customers? (Parents want grades; pupils need to pass.) This models the 'identify, apply' skill for later exam answers."
+        }
       ],
-      "practice": ["Sort into needs or wants and goods or services: bottled water, a mobile phone contract, a plumber's visit, a pair of football boots.", "Explain in two sentences what an entrepreneur does, using the words 'risk' and 'resources'.", "A halal bakery sells bread and also offers cake-decorating classes. Identify one good and one service it provides."],
-      "independent": ["Make a table of five local businesses, stating the need or want each meets and whether it sells goods, services or both.", "Explain why a business needs customers in order to survive (4 marks style: identify, then explain two linked points).", "Write a short paragraph on whether a market stall owner counts as an entrepreneur. Justify your answer."],
-      "exit": ["Define 'entrepreneur' in one sentence.", "Give one example of a want and one of a need that a business could meet."],
+      "practice": [
+        "Sort into needs or wants and goods or services: bottled water, a mobile phone contract, a plumber's visit, a pair of football boots.",
+        "Explain in two sentences what an entrepreneur does, using the words 'risk' and 'resources'.",
+        "A halal bakery sells bread and also offers cake-decorating classes. Identify one good and one service it provides."
+      ],
+      "independent": [
+        "Make a table of five local businesses, stating the need or want each meets and whether it sells goods, services or both.",
+        "Explain why a business needs customers in order to survive (4 marks style: identify, then explain two linked points).",
+        "Write a short paragraph on whether a market stall owner counts as an entrepreneur. Justify your answer."
+      ],
+      "exit": [
+        "Define 'entrepreneur' in one sentence.",
+        "Give one example of a want and one of a need that a business could meet."
+      ],
       "homework": "Interview a family member or neighbour who runs or has run a business and write five sentences on why they started it.",
       "send": "SEND/EAL: card sort of needs/wants and goods/services with picture support and a word bank. Stretch: explain why the same product could be a need for one customer and a want for another."
     },
@@ -36,25 +113,103 @@
       "n": 2,
       "title": "Risk and reward: the entrepreneur's decision",
       "duration": 50,
-      "objectives": ["Describe the risks and rewards of starting a business", "Analyse why entrepreneurs start a business and the qualities they need"],
+      "objectives": [
+        "Describe the risks and rewards of starting a business",
+        "Analyse why entrepreneurs start a business and the qualities they need"
+      ],
       "keywords": [
-        { "term": "risk", "def": "the chance that something goes wrong, such as losing money" },
-        { "term": "reward", "def": "the benefit an entrepreneur gains from running a business" },
-        { "term": "profit", "def": "revenue minus total costs" },
-        { "term": "business failure", "def": "when a business cannot pay its debts and has to close" },
-        { "term": "independence", "def": "being your own boss and making your own decisions" }
+        {
+          "term": "risk",
+          "def": "the chance that something goes wrong, such as losing money"
+        },
+        {
+          "term": "reward",
+          "def": "the benefit an entrepreneur gains from running a business"
+        },
+        {
+          "term": "profit",
+          "def": "revenue minus total costs"
+        },
+        {
+          "term": "business failure",
+          "def": "when a business cannot pay its debts and has to close"
+        },
+        {
+          "term": "independence",
+          "def": "being your own boss and making your own decisions"
+        }
       ],
-      "starter": ["Define 'entrepreneur'.", "Give one example of a want a new business could meet.", "What is the difference between a good and a service?"],
+      "starter": [
+        "Define 'entrepreneur'.",
+        "Give one example of a want a new business could meet.",
+        "What is the difference between a good and a service?"
+      ],
       "teach": [
-        { "heading": "Why start a business?", "bullets": ["To earn profit and financial security", "To be your own boss", "To follow a passion or idea", "To meet a need in the community"], "note": "Ask pupils to rank these motives. Stress that profit is not the only reason: many entrepreneurs want independence or to help others. In Islam, a business that serves the community's genuine needs with honest dealing is a form of worship when the intention is right." },
-        { "heading": "The risks of starting up", "bullets": ["Losing the money you invested", "No guaranteed wage or sick pay", "Long working hours and stress", "Business failure and debt"], "note": "Most new businesses do not last for many years; do not quote a precise statistic unless you have the source. Ask: why is a regular job less risky? (Fixed wage, holiday pay, employer takes the risk.)" },
-        { "heading": "The rewards of success", "bullets": ["Profit, which belongs to the owner", "Independence and control", "Personal satisfaction and pride", "Business success and growth"], "note": "Reward is not guaranteed. Link risk and reward: usually the higher the risk, the higher the possible reward. Connect to the principle that profit in Islam should come from real trade and shared risk, not from guaranteed gains." },
-        { "heading": "Entrepreneurial qualities", "bullets": ["Willingness to take risks", "Creativity and new ideas", "Determination and hard work", "Good communication and honesty"], "note": "Edexcel questions often ask you to identify a quality from a case study. Practice quoting: 'Aisha keeps trying after her first order was refused, showing determination'. Add honesty (sidq and amanah) as a key quality of a trusted trader." },
-        { "heading": "Worked example: Aisha's cupcake business", "bullets": ["She spends 600 pounds on equipment", "She earns 1,500 pounds in her first month", "Costs are 900 pounds, so profit is 600 pounds", "A bad month could mean a loss"], "note": "Work out: profit = revenue minus costs = 1,500 - 900 = 600 pounds. Then ask: what would she have if sales were 700 pounds? (A loss of 200 pounds.) Show that the same decision can give profit or loss, which is risk." }
+        {
+          "heading": "Why start a business?",
+          "bullets": [
+            "To earn profit and financial security",
+            "To be your own boss",
+            "To follow a passion or idea",
+            "To meet a need in the community"
+          ],
+          "note": "Ask pupils to rank these motives. Stress that profit is not the only reason: many entrepreneurs want independence or to help others. In Islam, a business that serves the community's genuine needs with honest dealing is a form of worship when the intention is right."
+        },
+        {
+          "heading": "The risks of starting up",
+          "bullets": [
+            "Losing the money you invested",
+            "No guaranteed wage or sick pay",
+            "Long working hours and stress",
+            "Business failure and debt"
+          ],
+          "note": "Most new businesses do not last for many years; do not quote a precise statistic unless you have the source. Ask: why is a regular job less risky? (Fixed wage, holiday pay, employer takes the risk.)"
+        },
+        {
+          "heading": "The rewards of success",
+          "bullets": [
+            "Profit, which belongs to the owner",
+            "Independence and control",
+            "Personal satisfaction and pride",
+            "Business success and growth"
+          ],
+          "note": "Reward is not guaranteed. Link risk and reward: usually the higher the risk, the higher the possible reward. Connect to the principle that profit in Islam should come from real trade and shared risk, not from guaranteed gains."
+        },
+        {
+          "heading": "Entrepreneurial qualities",
+          "bullets": [
+            "Willingness to take risks",
+            "Creativity and new ideas",
+            "Determination and hard work",
+            "Good communication and honesty"
+          ],
+          "note": "Edexcel questions often ask you to identify a quality from a case study. Practice quoting: 'Aisha keeps trying after her first order was refused, showing determination'. Add honesty (sidq and amanah) as a key quality of a trusted trader."
+        },
+        {
+          "heading": "Worked example: Aisha's cupcake business",
+          "bullets": [
+            "She spends 600 pounds on equipment",
+            "She earns 1,500 pounds in her first month",
+            "Costs are 900 pounds, so profit is 600 pounds",
+            "A bad month could mean a loss"
+          ],
+          "note": "Work out: profit = revenue minus costs = 1,500 - 900 = 600 pounds. Then ask: what would she have if sales were 700 pounds? (A loss of 200 pounds.) Show that the same decision can give profit or loss, which is risk."
+        }
       ],
-      "practice": ["List two risks and two rewards for someone leaving a job to open a halal grocery shop.", "Aisha's revenue is 1,200 pounds and her costs are 1,350 pounds. Calculate her profit or loss.", "Which entrepreneurial quality does a person show if they redesign a product after customer complaints? Explain."],
-      "independent": ["Explain two reasons why someone might start their own business instead of working for an employer.", "Explain one way risk and reward are connected for a new business (4 marks style).", "Write a paragraph assessing whether the rewards of owning a business outweigh the risks for a school leaver."],
-      "exit": ["State two risks of starting a business.", "Calculate profit if revenue is 2,000 pounds and costs are 1,450 pounds."],
+      "practice": [
+        "List two risks and two rewards for someone leaving a job to open a halal grocery shop.",
+        "Aisha's revenue is 1,200 pounds and her costs are 1,350 pounds. Calculate her profit or loss.",
+        "Which entrepreneurial quality does a person show if they redesign a product after customer complaints? Explain."
+      ],
+      "independent": [
+        "Explain two reasons why someone might start their own business instead of working for an employer.",
+        "Explain one way risk and reward are connected for a new business (4 marks style).",
+        "Write a paragraph assessing whether the rewards of owning a business outweigh the risks for a school leaver."
+      ],
+      "exit": [
+        "State two risks of starting a business.",
+        "Calculate profit if revenue is 2,000 pounds and costs are 1,450 pounds."
+      ],
       "homework": "Choose a real small business you know and write six sentences on its likely risks and rewards for the owner.",
       "send": "SEND/EAL: risk and reward sorting cards with symbols; sentence starter 'A risk is... A reward is...'. Stretch: evaluate whether profit is always the main reward."
     },
@@ -63,25 +218,103 @@
       "n": 3,
       "title": "The dynamic business world: new ideas and adding value",
       "duration": 50,
-      "objectives": ["Explain why business ideas come from changes in technology and consumer wants", "Describe ways a business can add value to compete"],
+      "objectives": [
+        "Explain why business ideas come from changes in technology and consumer wants",
+        "Describe ways a business can add value to compete"
+      ],
       "keywords": [
-        { "term": "dynamic", "def": "always changing" },
-        { "term": "obsolete", "def": "no longer wanted or used because something better has replaced it" },
-        { "term": "added value", "def": "the difference between the cost of inputs and the selling price of the product" },
-        { "term": "unique selling point (USP)", "def": "a feature that makes a product different from competitors" },
-        { "term": "brand", "def": "a name, logo or image that identifies a business and its products" }
+        {
+          "term": "dynamic",
+          "def": "always changing"
+        },
+        {
+          "term": "obsolete",
+          "def": "no longer wanted or used because something better has replaced it"
+        },
+        {
+          "term": "added value",
+          "def": "the difference between the cost of inputs and the selling price of the product"
+        },
+        {
+          "term": "unique selling point (USP)",
+          "def": "a feature that makes a product different from competitors"
+        },
+        {
+          "term": "brand",
+          "def": "a name, logo or image that identifies a business and its products"
+        }
       ],
-      "starter": ["State two risks of starting a business.", "State two rewards of starting a business.", "Name one quality of a successful entrepreneur."],
+      "starter": [
+        "State two risks of starting a business.",
+        "State two rewards of starting a business.",
+        "Name one quality of a successful entrepreneur."
+      ],
       "teach": [
-        { "heading": "Business never stands still", "bullets": ["Customer tastes change", "Technology creates new options", "Old products can become obsolete", "Businesses must adapt or lose customers"], "note": "Ask pupils: how did people listen to music 20 years ago compared with today? Use this to show products becoming obsolete and new markets appearing. Keep examples general to avoid factual error." },
-        { "heading": "Where new ideas come from", "bullets": ["New technology: apps, online selling", "Changing lifestyles: busy people want convenience", "Gaps in the market", "Improving an existing product"], "note": "Misconception: ideas must be completely new. Most successful ideas are improvements or new combinations. Ask pupils to spot a gap at school or in their community, such as a quick halal breakfast option." },
-        { "heading": "Adding value", "bullets": ["Added value = selling price minus cost of inputs", "Convenience, quality, design", "Branding and customer service", "Higher value allows higher prices or more sales"], "note": "Show a worked example: a baker spends 0.40 pounds on ingredients per loaf and sells it for 2.20 pounds. Added value is 1.80 pounds. Ask how they could raise it (better packaging, a local brand, home delivery)." },
-        { "heading": "Unique selling point", "bullets": ["A USP is what makes you different", "It can be price, quality or service", "It should matter to customers", "It must be honest, not exaggerated"], "note": "Stress the honesty point: Islam condemns deception in trade. A reported saying in Sahih Muslim states that whoever cheats us is not one of us. A USP must be true; false claims also break consumer law." },
-        { "heading": "Why businesses fail", "bullets": ["Not enough customers", "Poor cash management", "Poor quality or service", "Failing to change with the market"], "note": "Link back to dynamic markets. Ask pupils to pick the most likely reason for failure for a new bookshop. Accept different answers if they justify them with business reasoning." }
+        {
+          "heading": "Business never stands still",
+          "bullets": [
+            "Customer tastes change",
+            "Technology creates new options",
+            "Old products can become obsolete",
+            "Businesses must adapt or lose customers"
+          ],
+          "note": "Ask pupils: how did people listen to music 20 years ago compared with today? Use this to show products becoming obsolete and new markets appearing. Keep examples general to avoid factual error."
+        },
+        {
+          "heading": "Where new ideas come from",
+          "bullets": [
+            "New technology: apps, online selling",
+            "Changing lifestyles: busy people want convenience",
+            "Gaps in the market",
+            "Improving an existing product"
+          ],
+          "note": "Misconception: ideas must be completely new. Most successful ideas are improvements or new combinations. Ask pupils to spot a gap at school or in their community, such as a quick halal breakfast option."
+        },
+        {
+          "heading": "Adding value",
+          "bullets": [
+            "Added value = selling price minus cost of inputs",
+            "Convenience, quality, design",
+            "Branding and customer service",
+            "Higher value allows higher prices or more sales"
+          ],
+          "note": "Show a worked example: a baker spends 0.40 pounds on ingredients per loaf and sells it for 2.20 pounds. Added value is 1.80 pounds. Ask how they could raise it (better packaging, a local brand, home delivery)."
+        },
+        {
+          "heading": "Unique selling point",
+          "bullets": [
+            "A USP is what makes you different",
+            "It can be price, quality or service",
+            "It should matter to customers",
+            "It must be honest, not exaggerated"
+          ],
+          "note": "Stress the honesty point: Islam condemns deception in trade. A reported saying in Sahih Muslim states that whoever cheats us is not one of us. A USP must be true; false claims also break consumer law."
+        },
+        {
+          "heading": "Why businesses fail",
+          "bullets": [
+            "Not enough customers",
+            "Poor cash management",
+            "Poor quality or service",
+            "Failing to change with the market"
+          ],
+          "note": "Link back to dynamic markets. Ask pupils to pick the most likely reason for failure for a new bookshop. Accept different answers if they justify them with business reasoning."
+        }
       ],
-      "practice": ["A café buys ingredients for 1.10 pounds and sells a smoothie for 3.60 pounds. Calculate the added value.", "Give two ways a trainer shop could add value without cutting its price.", "Explain what makes a product obsolete, with one example."],
-      "independent": ["Choose a product and list three changes in consumer wants or technology that could make it obsolete.", "Explain two ways a new business could create a unique selling point (4 marks style).", "Write a paragraph: is adding value more important than low prices for a new small business? Justify your view."],
-      "exit": ["Define 'added value'.", "State one way a business can add value to its product."],
+      "practice": [
+        "A café buys ingredients for 1.10 pounds and sells a smoothie for 3.60 pounds. Calculate the added value.",
+        "Give two ways a trainer shop could add value without cutting its price.",
+        "Explain what makes a product obsolete, with one example."
+      ],
+      "independent": [
+        "Choose a product and list three changes in consumer wants or technology that could make it obsolete.",
+        "Explain two ways a new business could create a unique selling point (4 marks style).",
+        "Write a paragraph: is adding value more important than low prices for a new small business? Justify your view."
+      ],
+      "exit": [
+        "Define 'added value'.",
+        "State one way a business can add value to its product."
+      ],
       "homework": "Pick a local shop or online seller and write a short note on its USP and two ways it adds value.",
       "send": "SEND/EAL: add-value calculation scaffold with ready-made subtraction frames. Stretch: explain how added value affects both price and profit."
     },
@@ -90,25 +323,103 @@
       "n": 4,
       "title": "Customer needs and market segmentation",
       "duration": 50,
-      "objectives": ["Explain why understanding customer needs is vital for a new business", "Describe market segmentation and the main ways of segmenting a market"],
+      "objectives": [
+        "Explain why understanding customer needs is vital for a new business",
+        "Describe market segmentation and the main ways of segmenting a market"
+      ],
       "keywords": [
-        { "term": "customer needs", "def": "the things customers require from a product, such as price, quality and choice" },
-        { "term": "market", "def": "where buyers and sellers meet to trade a good or service" },
-        { "term": "market segmentation", "def": "dividing a market into groups of customers with similar characteristics" },
-        { "term": "demographics", "def": "characteristics of a population such as age, gender and income" },
-        { "term": "target market", "def": "the group of customers a business aims its product at" }
+        {
+          "term": "customer needs",
+          "def": "the things customers require from a product, such as price, quality and choice"
+        },
+        {
+          "term": "market",
+          "def": "where buyers and sellers meet to trade a good or service"
+        },
+        {
+          "term": "market segmentation",
+          "def": "dividing a market into groups of customers with similar characteristics"
+        },
+        {
+          "term": "demographics",
+          "def": "characteristics of a population such as age, gender and income"
+        },
+        {
+          "term": "target market",
+          "def": "the group of customers a business aims its product at"
+        }
       ],
-      "starter": ["Define 'added value'.", "What is a USP?", "Give one reason why products become obsolete."],
+      "starter": [
+        "Define 'added value'.",
+        "What is a USP?",
+        "Give one reason why products become obsolete."
+      ],
       "teach": [
-        { "heading": "What do customers want?", "bullets": ["Price: is it affordable?", "Quality: does it last and work?", "Choice: are there options?", "Convenience: is it easy to buy and use?"], "note": "Make clear these are the Edexcel customer needs. Ask pupils to rank them for a school lunch and then for a laptop to see priorities change. Add that for Muslim customers, halal certification can be an essential need, not an optional extra." },
-        { "heading": "Why identify customers?", "bullets": ["Avoid wasting money on the wrong product", "Match the product to customers' needs", "Decide price and promotion sensibly", "Build loyalty and repeat sales"], "note": "A common error is saying 'everyone is a customer'. Explain that small businesses have limited money, so they must focus. Ask what would happen if a modest-fashion shop advertised to everyone in the country." },
-        { "heading": "Market segmentation", "bullets": ["Split a market into groups", "Each group has similar needs", "A business can then target the right group", "More effective than selling to everyone"], "note": "Define segmentation clearly, then target market. A segment is one part; the target market is the segment(s) chosen." },
-        { "heading": "Ways to segment", "bullets": ["Demographics: age, gender, income, family size", "Location: urban, rural, region", "Lifestyle: sports fans, busy parents, vegetarians", "Income: budget, mid-range, premium"], "note": "Give a worked example: a gym could segment by age (teenagers, adults, over 60s), lifestyle (competitive athletes or relaxers) and location. Ask pupils to produce a segment for a halal ready-meal brand: busy professionals aged 25 to 40 in cities." },
-        { "heading": "Worked example: Zayd's sportswear", "bullets": ["Segment: boys aged 11 to 16 who play football", "Need: affordable, hard-wearing kit", "Place: online and school team orders", "Promotion: social media and local clubs"], "note": "Use this to model a short analysis answer: identify segment, give reason, link to marketing choice. Ask pupils to find a second segment Zayd could add and why." }
+        {
+          "heading": "What do customers want?",
+          "bullets": [
+            "Price: is it affordable?",
+            "Quality: does it last and work?",
+            "Choice: are there options?",
+            "Convenience: is it easy to buy and use?"
+          ],
+          "note": "Make clear these are the Edexcel customer needs. Ask pupils to rank them for a school lunch and then for a laptop to see priorities change. Add that for Muslim customers, halal certification can be an essential need, not an optional extra."
+        },
+        {
+          "heading": "Why identify customers?",
+          "bullets": [
+            "Avoid wasting money on the wrong product",
+            "Match the product to customers' needs",
+            "Decide price and promotion sensibly",
+            "Build loyalty and repeat sales"
+          ],
+          "note": "A common error is saying 'everyone is a customer'. Explain that small businesses have limited money, so they must focus. Ask what would happen if a modest-fashion shop advertised to everyone in the country."
+        },
+        {
+          "heading": "Market segmentation",
+          "bullets": [
+            "Split a market into groups",
+            "Each group has similar needs",
+            "A business can then target the right group",
+            "More effective than selling to everyone"
+          ],
+          "note": "Define segmentation clearly, then target market. A segment is one part; the target market is the segment(s) chosen."
+        },
+        {
+          "heading": "Ways to segment",
+          "bullets": [
+            "Demographics: age, gender, income, family size",
+            "Location: urban, rural, region",
+            "Lifestyle: sports fans, busy parents, vegetarians",
+            "Income: budget, mid-range, premium"
+          ],
+          "note": "Give a worked example: a gym could segment by age (teenagers, adults, over 60s), lifestyle (competitive athletes or relaxers) and location. Ask pupils to produce a segment for a halal ready-meal brand: busy professionals aged 25 to 40 in cities."
+        },
+        {
+          "heading": "Worked example: Zayd's sportswear",
+          "bullets": [
+            "Segment: boys aged 11 to 16 who play football",
+            "Need: affordable, hard-wearing kit",
+            "Place: online and school team orders",
+            "Promotion: social media and local clubs"
+          ],
+          "note": "Use this to model a short analysis answer: identify segment, give reason, link to marketing choice. Ask pupils to find a second segment Zayd could add and why."
+        }
       ],
-      "practice": ["Name two customer needs a family would consider when choosing a restaurant.", "A business sells prayer mats online. Identify two ways it could segment its market.", "Explain why a bookshop might target students rather than the whole population."],
-      "independent": ["Choose a product of your own and describe its target market using at least three types of segmentation.", "Explain two benefits to a small business of segmenting its market (4 marks style).", "Write a paragraph assessing whether price or quality is more important to customers of a school uniform supplier."],
-      "exit": ["Define 'market segmentation'.", "Give two ways a market can be segmented."],
+      "practice": [
+        "Name two customer needs a family would consider when choosing a restaurant.",
+        "A business sells prayer mats online. Identify two ways it could segment its market.",
+        "Explain why a bookshop might target students rather than the whole population."
+      ],
+      "independent": [
+        "Choose a product of your own and describe its target market using at least three types of segmentation.",
+        "Explain two benefits to a small business of segmenting its market (4 marks style).",
+        "Write a paragraph assessing whether price or quality is more important to customers of a school uniform supplier."
+      ],
+      "exit": [
+        "Define 'market segmentation'.",
+        "Give two ways a market can be segmented."
+      ],
       "homework": "Look at an advert and write five sentences identifying its target market and the evidence for it.",
       "send": "SEND/EAL: matching cards for segment type and example. Stretch: explain why segments can overlap and how a business decides which one to prioritise."
     },
@@ -117,25 +428,103 @@
       "n": 5,
       "title": "Market research: finding out what customers want",
       "duration": 50,
-      "objectives": ["Explain the purpose of market research and distinguish primary from secondary research", "Evaluate the usefulness of research methods and data types for a small business"],
+      "objectives": [
+        "Explain the purpose of market research and distinguish primary from secondary research",
+        "Evaluate the usefulness of research methods and data types for a small business"
+      ],
       "keywords": [
-        { "term": "market research", "def": "collecting information about customers, competitors and the market" },
-        { "term": "primary research", "def": "new information collected first-hand for a specific purpose" },
-        { "term": "secondary research", "def": "information that already exists, collected by someone else" },
-        { "term": "qualitative data", "def": "opinions and feelings that are not numbers" },
-        { "term": "quantitative data", "def": "numerical data that can be counted and analysed" }
+        {
+          "term": "market research",
+          "def": "collecting information about customers, competitors and the market"
+        },
+        {
+          "term": "primary research",
+          "def": "new information collected first-hand for a specific purpose"
+        },
+        {
+          "term": "secondary research",
+          "def": "information that already exists, collected by someone else"
+        },
+        {
+          "term": "qualitative data",
+          "def": "opinions and feelings that are not numbers"
+        },
+        {
+          "term": "quantitative data",
+          "def": "numerical data that can be counted and analysed"
+        }
       ],
-      "starter": ["Define 'target market'.", "List three ways to segment a market.", "Why is it risky to sell to 'everyone'?"],
+      "starter": [
+        "Define 'target market'.",
+        "List three ways to segment a market.",
+        "Why is it risky to sell to 'everyone'?"
+      ],
       "teach": [
-        { "heading": "Why do market research?", "bullets": ["Find out what customers want", "Reduce the risk of failure", "Learn about competitors", "Decide on price and location"], "note": "Link to risk from lesson 2. Ask: would you open a shop without knowing if anybody wants what you sell? Research cannot remove risk but it reduces it." },
-        { "heading": "Primary research", "bullets": ["Surveys and questionnaires", "Interviews and focus groups", "Observation and product trials", "Specific to your needs but costs time and money"], "note": "Explain each method with a quick example. Teach that a good questionnaire has clear, unbiased questions. Misconception: online surveys are always cheap; they are, but responses may not represent the target market." },
-        { "heading": "Secondary research", "bullets": ["Government statistics and reports", "Market reports and trade magazines", "Websites and social media", "Cheaper and quicker but may be out of date"], "note": "Emphasise that secondary data was collected for another purpose, so it may not fit. Ask pupils how a new halal food company could use government population data on where Muslims live (as an indicator of demand)." },
-        { "heading": "Qualitative or quantitative?", "bullets": ["Quantitative: 62 percent prefer delivery", "Qualitative: 'I like the friendly service'", "Numbers show scale; opinions show why", "Most businesses use both"], "note": "Practise classification with quick examples. Tell pupils that quantitative data is easier to analyse and compare but does not explain why people think as they do." },
-        { "heading": "Sampling and reliability", "bullets": ["A sample is a smaller group from the target market", "A larger, random sample is more reliable", "Biased questions give poor results", "Check how recent the data is"], "note": "Worked example: a café asks 20 friends and 18 love the idea. Why is that unreliable? (Too small, friends are biased, not representative.) A better sample: 200 people selected at random from the target area." }
+        {
+          "heading": "Why do market research?",
+          "bullets": [
+            "Find out what customers want",
+            "Reduce the risk of failure",
+            "Learn about competitors",
+            "Decide on price and location"
+          ],
+          "note": "Link to risk from lesson 2. Ask: would you open a shop without knowing if anybody wants what you sell? Research cannot remove risk but it reduces it."
+        },
+        {
+          "heading": "Primary research",
+          "bullets": [
+            "Surveys and questionnaires",
+            "Interviews and focus groups",
+            "Observation and product trials",
+            "Specific to your needs but costs time and money"
+          ],
+          "note": "Explain each method with a quick example. Teach that a good questionnaire has clear, unbiased questions. Misconception: online surveys are always cheap; they are, but responses may not represent the target market."
+        },
+        {
+          "heading": "Secondary research",
+          "bullets": [
+            "Government statistics and reports",
+            "Market reports and trade magazines",
+            "Websites and social media",
+            "Cheaper and quicker but may be out of date"
+          ],
+          "note": "Emphasise that secondary data was collected for another purpose, so it may not fit. Ask pupils how a new halal food company could use government population data on where Muslims live (as an indicator of demand)."
+        },
+        {
+          "heading": "Qualitative or quantitative?",
+          "bullets": [
+            "Quantitative: 62 percent prefer delivery",
+            "Qualitative: 'I like the friendly service'",
+            "Numbers show scale; opinions show why",
+            "Most businesses use both"
+          ],
+          "note": "Practise classification with quick examples. Tell pupils that quantitative data is easier to analyse and compare but does not explain why people think as they do."
+        },
+        {
+          "heading": "Sampling and reliability",
+          "bullets": [
+            "A sample is a smaller group from the target market",
+            "A larger, random sample is more reliable",
+            "Biased questions give poor results",
+            "Check how recent the data is"
+          ],
+          "note": "Worked example: a café asks 20 friends and 18 love the idea. Why is that unreliable? (Too small, friends are biased, not representative.) A better sample: 200 people selected at random from the target area."
+        }
       ],
-      "practice": ["Classify each as primary or secondary: a survey of 50 students, a government census report, a trade magazine article, a focus group.", "A new halal pizza takeaway wants to know prices customers will pay. Suggest one primary method and explain why.", "Explain why asking only friends and family may lead to poor research results."],
-      "independent": ["Write five questions for a questionnaire for a new hijab and modest-fashion brand, including at least one qualitative and one quantitative question.", "Explain one advantage and one disadvantage of secondary research for a start-up (4 marks style).", "Write a paragraph: should a new business rely on primary or secondary research? Justify your recommendation."],
-      "exit": ["State the difference between primary and secondary research.", "Give one example of quantitative data."],
+      "practice": [
+        "Classify each as primary or secondary: a survey of 50 students, a government census report, a trade magazine article, a focus group.",
+        "A new halal pizza takeaway wants to know prices customers will pay. Suggest one primary method and explain why.",
+        "Explain why asking only friends and family may lead to poor research results."
+      ],
+      "independent": [
+        "Write five questions for a questionnaire for a new hijab and modest-fashion brand, including at least one qualitative and one quantitative question.",
+        "Explain one advantage and one disadvantage of secondary research for a start-up (4 marks style).",
+        "Write a paragraph: should a new business rely on primary or secondary research? Justify your recommendation."
+      ],
+      "exit": [
+        "State the difference between primary and secondary research.",
+        "Give one example of quantitative data."
+      ],
       "homework": "Design a short survey of five questions for your family about a product idea and write a brief note on how you would use the results.",
       "send": "SEND/EAL: pre-written survey question frames. Stretch: evaluate how sample size and bias affect decision-making."
     },
@@ -144,25 +533,103 @@
       "n": 6,
       "title": "Competition and market mapping",
       "duration": 50,
-      "objectives": ["Explain how competition affects a small business", "Interpret a market map to identify a gap in the market"],
+      "objectives": [
+        "Explain how competition affects a small business",
+        "Interpret a market map to identify a gap in the market"
+      ],
       "keywords": [
-        { "term": "competitor", "def": "a business selling similar products to the same customers" },
-        { "term": "market map", "def": "a diagram showing where competing products sit, for example on price and quality" },
-        { "term": "gap in the market", "def": "an unmet customer need that no business is yet supplying" },
-        { "term": "competitive advantage", "def": "something that lets a business perform better than its rivals" },
-        { "term": "market share", "def": "a business's sales as a percentage of total sales in the market" }
+        {
+          "term": "competitor",
+          "def": "a business selling similar products to the same customers"
+        },
+        {
+          "term": "market map",
+          "def": "a diagram showing where competing products sit, for example on price and quality"
+        },
+        {
+          "term": "gap in the market",
+          "def": "an unmet customer need that no business is yet supplying"
+        },
+        {
+          "term": "competitive advantage",
+          "def": "something that lets a business perform better than its rivals"
+        },
+        {
+          "term": "market share",
+          "def": "a business's sales as a percentage of total sales in the market"
+        }
       ],
-      "starter": ["Define primary research.", "Give an example of qualitative data.", "State one problem with a very small sample."],
+      "starter": [
+        "Define primary research.",
+        "Give an example of qualitative data.",
+        "State one problem with a very small sample."
+      ],
       "teach": [
-        { "heading": "Understanding competition", "bullets": ["Rivals sell to the same customers", "Direct and indirect competitors", "Competition can lower prices", "Competition can force higher quality"], "note": "Distinguish direct competitors (another halal burger kiosk) from indirect (a sandwich shop). Ask whether competition is good for customers. Usually yes, but it makes survival harder for small firms." },
-        { "heading": "Effects on small businesses", "bullets": ["Lower profits if prices are cut", "Need to stand out with a USP", "Risk of losing customers", "May push the business to improve"], "note": "Edexcel often asks for the impact of competition on a business. Model a chain of reasoning: new rival opens, customers switch, sales fall, profit falls, owner must cut costs or add value." },
-        { "heading": "Market mapping", "bullets": ["A grid with two features, e.g. price and quality", "Each competitor is plotted as a point", "Gaps show unmet needs", "Crowded areas show strong competition"], "note": "Draw a 2 by 2 grid: price (low to high) on one axis, quality (low to high) on the other. Plot four sandwich shops. Ask: where is the gap? Misconception: a gap always means opportunity. It may mean there are no customers there." },
-        { "heading": "Using the map", "bullets": ["Spot a gap such as high quality at low price", "Check there is demand through research", "Position your product clearly", "Review as competitors change"], "note": "Emphasise that the gap must be tested. Link to market research. Competition should be fair; Islam supports healthy competition in good deeds, and honest rivalry, not spreading false rumours about a competitor." },
-        { "heading": "Worked example: Maryam's bakery", "bullets": ["Rivals: supermarket (low price, medium quality), artisan bakery (high price, high quality)", "Gap: medium price, high quality, halal", "Maryam positions her bakery in that gap", "She tests demand with a survey"], "note": "Plot the three businesses on the board and show the gap. Ask what could go wrong (e.g. customers may not pay medium price for high quality) and how she can find out." }
+        {
+          "heading": "Understanding competition",
+          "bullets": [
+            "Rivals sell to the same customers",
+            "Direct and indirect competitors",
+            "Competition can lower prices",
+            "Competition can force higher quality"
+          ],
+          "note": "Distinguish direct competitors (another halal burger kiosk) from indirect (a sandwich shop). Ask whether competition is good for customers. Usually yes, but it makes survival harder for small firms."
+        },
+        {
+          "heading": "Effects on small businesses",
+          "bullets": [
+            "Lower profits if prices are cut",
+            "Need to stand out with a USP",
+            "Risk of losing customers",
+            "May push the business to improve"
+          ],
+          "note": "Edexcel often asks for the impact of competition on a business. Model a chain of reasoning: new rival opens, customers switch, sales fall, profit falls, owner must cut costs or add value."
+        },
+        {
+          "heading": "Market mapping",
+          "bullets": [
+            "A grid with two features, e.g. price and quality",
+            "Each competitor is plotted as a point",
+            "Gaps show unmet needs",
+            "Crowded areas show strong competition"
+          ],
+          "note": "Draw a 2 by 2 grid: price (low to high) on one axis, quality (low to high) on the other. Plot four sandwich shops. Ask: where is the gap? Misconception: a gap always means opportunity. It may mean there are no customers there."
+        },
+        {
+          "heading": "Using the map",
+          "bullets": [
+            "Spot a gap such as high quality at low price",
+            "Check there is demand through research",
+            "Position your product clearly",
+            "Review as competitors change"
+          ],
+          "note": "Emphasise that the gap must be tested. Link to market research. Competition should be fair; Islam supports healthy competition in good deeds, and honest rivalry, not spreading false rumours about a competitor."
+        },
+        {
+          "heading": "Worked example: Maryam's bakery",
+          "bullets": [
+            "Rivals: supermarket (low price, medium quality), artisan bakery (high price, high quality)",
+            "Gap: medium price, high quality, halal",
+            "Maryam positions her bakery in that gap",
+            "She tests demand with a survey"
+          ],
+          "note": "Plot the three businesses on the board and show the gap. Ask what could go wrong (e.g. customers may not pay medium price for high quality) and how she can find out."
+        }
       ],
-      "practice": ["Name one direct and one indirect competitor for a halal fast-food kiosk.", "On a price/quality grid, a business has high price and low quality. Why is this likely to struggle?", "Give two ways a small business can compete without lowering price."],
-      "independent": ["Draw a market map for four local food outlets and identify a possible gap.", "Explain two ways a new competitor could affect an existing small shop (4 marks style).", "Write a paragraph assessing whether competition is more of a threat or an opportunity for a start-up."],
-      "exit": ["Define 'gap in the market'.", "State one way competition can affect a small business."],
+      "practice": [
+        "Name one direct and one indirect competitor for a halal fast-food kiosk.",
+        "On a price/quality grid, a business has high price and low quality. Why is this likely to struggle?",
+        "Give two ways a small business can compete without lowering price."
+      ],
+      "independent": [
+        "Draw a market map for four local food outlets and identify a possible gap.",
+        "Explain two ways a new competitor could affect an existing small shop (4 marks style).",
+        "Write a paragraph assessing whether competition is more of a threat or an opportunity for a start-up."
+      ],
+      "exit": [
+        "Define 'gap in the market'.",
+        "State one way competition can affect a small business."
+      ],
       "homework": "Choose a product and plot at least five competing brands on a price/quality market map; label any gaps.",
       "send": "SEND/EAL: pre-drawn grid and cut-out business cards to position. Stretch: assess why a gap in the market may not be profitable."
     },
@@ -171,25 +638,103 @@
       "n": 7,
       "title": "Business aims and objectives",
       "duration": 50,
-      "objectives": ["Distinguish between business aims and objectives", "Explain financial and non-financial aims of a new business and why they differ"],
+      "objectives": [
+        "Distinguish between business aims and objectives",
+        "Explain financial and non-financial aims of a new business and why they differ"
+      ],
       "keywords": [
-        { "term": "aim", "def": "the long-term goal a business wants to achieve" },
-        { "term": "objective", "def": "a specific target that helps achieve an aim, often with a number and a date" },
-        { "term": "survival", "def": "keeping the business going, especially in the first year" },
-        { "term": "social objective", "def": "a goal to benefit people or the community, not only to make profit" },
-        { "term": "financial security", "def": "having enough stable income to pay bills with confidence" }
+        {
+          "term": "aim",
+          "def": "the long-term goal a business wants to achieve"
+        },
+        {
+          "term": "objective",
+          "def": "a specific target that helps achieve an aim, often with a number and a date"
+        },
+        {
+          "term": "survival",
+          "def": "keeping the business going, especially in the first year"
+        },
+        {
+          "term": "social objective",
+          "def": "a goal to benefit people or the community, not only to make profit"
+        },
+        {
+          "term": "financial security",
+          "def": "having enough stable income to pay bills with confidence"
+        }
       ],
-      "starter": ["What is a market map?", "State two effects of competition on a business.", "Define 'competitive advantage'."],
+      "starter": [
+        "What is a market map?",
+        "State two effects of competition on a business.",
+        "Define 'competitive advantage'."
+      ],
       "teach": [
-        { "heading": "Aims versus objectives", "bullets": ["Aim: where the business wants to be", "Objective: a specific step to get there", "Objectives are measurable", "Objectives have a time limit"], "note": "Give an example: Aim: become the favourite local halal bakery. Objective: sell 500 loaves a week by next June. Ask pupils to turn a vague aim into an objective with a number and a date." },
-        { "heading": "Financial aims", "bullets": ["Survival, especially for new firms", "Profit", "Sales and sales growth", "Market share and financial security"], "note": "Explain that survival is the first aim for most start-ups. Profit comes later. Show that sales growth is not the same as profit; selling more at a loss does not help." },
-        { "heading": "Non-financial aims", "bullets": ["Social objectives: helping the community", "Personal satisfaction and challenge", "Independence and control", "Ethical aims, such as fair treatment of staff"], "note": "Link to Islamic ethics: Qur'an 4:29 permits trade based on mutual consent, and honest dealing is part of faith. A business with social objectives, such as donating a percentage to a local food bank, can still make a profit. Ask whether social aims reduce profit." },
-        { "heading": "Why aims differ", "bullets": ["Owner's personality and motives", "Age and stage of the business", "Competition and the economy", "Size: sole trader or larger firm"], "note": "Use two cases: a new sole trader (survival and independence) and an established firm (growth and market share). Ask why a start-up cannot easily aim for 30 percent market share." },
-        { "heading": "SMART objectives", "bullets": ["Specific, Measurable, Achievable", "Realistic and Time-bound", "Helps judge success", "Motivates staff and owner"], "note": "Work through a SMART objective: 'Increase monthly sales from 2,000 to 2,400 pounds within six months' (that is a 20 percent increase). Check pupils can calculate 20 percent of 2,000." }
+        {
+          "heading": "Aims versus objectives",
+          "bullets": [
+            "Aim: where the business wants to be",
+            "Objective: a specific step to get there",
+            "Objectives are measurable",
+            "Objectives have a time limit"
+          ],
+          "note": "Give an example: Aim: become the favourite local halal bakery. Objective: sell 500 loaves a week by next June. Ask pupils to turn a vague aim into an objective with a number and a date."
+        },
+        {
+          "heading": "Financial aims",
+          "bullets": [
+            "Survival, especially for new firms",
+            "Profit",
+            "Sales and sales growth",
+            "Market share and financial security"
+          ],
+          "note": "Explain that survival is the first aim for most start-ups. Profit comes later. Show that sales growth is not the same as profit; selling more at a loss does not help."
+        },
+        {
+          "heading": "Non-financial aims",
+          "bullets": [
+            "Social objectives: helping the community",
+            "Personal satisfaction and challenge",
+            "Independence and control",
+            "Ethical aims, such as fair treatment of staff"
+          ],
+          "note": "Link to Islamic ethics: Qur'an 4:29 permits trade based on mutual consent, and honest dealing is part of faith. A business with social objectives, such as donating a percentage to a local food bank, can still make a profit. Ask whether social aims reduce profit."
+        },
+        {
+          "heading": "Why aims differ",
+          "bullets": [
+            "Owner's personality and motives",
+            "Age and stage of the business",
+            "Competition and the economy",
+            "Size: sole trader or larger firm"
+          ],
+          "note": "Use two cases: a new sole trader (survival and independence) and an established firm (growth and market share). Ask why a start-up cannot easily aim for 30 percent market share."
+        },
+        {
+          "heading": "SMART objectives",
+          "bullets": [
+            "Specific, Measurable, Achievable",
+            "Realistic and Time-bound",
+            "Helps judge success",
+            "Motivates staff and owner"
+          ],
+          "note": "Work through a SMART objective: 'Increase monthly sales from 2,000 to 2,400 pounds within six months' (that is a 20 percent increase). Check pupils can calculate 20 percent of 2,000."
+        }
       ],
-      "practice": ["Turn this aim into an objective: 'We want to be well known in our area.'", "Sort into financial or non-financial: survival, helping the community, profit, independence.", "Explain why a new business might choose survival as its first aim."],
-      "independent": ["Write one aim and two SMART objectives for a new halal catering company.", "Explain two reasons why aims may differ between a new sole trader and a large company (4 marks style).", "Write a paragraph assessing whether profit should be the most important aim for a small business."],
-      "exit": ["State the difference between an aim and an objective.", "Give one financial and one non-financial aim."],
+      "practice": [
+        "Turn this aim into an objective: 'We want to be well known in our area.'",
+        "Sort into financial or non-financial: survival, helping the community, profit, independence.",
+        "Explain why a new business might choose survival as its first aim."
+      ],
+      "independent": [
+        "Write one aim and two SMART objectives for a new halal catering company.",
+        "Explain two reasons why aims may differ between a new sole trader and a large company (4 marks style).",
+        "Write a paragraph assessing whether profit should be the most important aim for a small business."
+      ],
+      "exit": [
+        "State the difference between an aim and an objective.",
+        "Give one financial and one non-financial aim."
+      ],
       "homework": "Research a small business online and write five sentences on its likely aims and how you can tell.",
       "send": "SEND/EAL: aim/objective sorting activity and SMART checklist. Stretch: evaluate whether non-financial aims could harm a business's survival."
     },
@@ -198,27 +743,2227 @@
       "n": 8,
       "title": "Revenue, costs and profit",
       "duration": 50,
-      "objectives": ["Calculate revenue, total costs and profit or loss", "Distinguish fixed from variable costs and explain how interest affects a business"],
+      "objectives": [
+        "Calculate revenue, total costs and profit or loss",
+        "Distinguish fixed from variable costs and explain how interest affects a business"
+      ],
       "keywords": [
-        { "term": "revenue", "def": "the money a business receives from selling goods or services (price x quantity)" },
-        { "term": "fixed costs", "def": "costs that stay the same however much is produced, such as rent" },
-        { "term": "variable costs", "def": "costs that change with output, such as ingredients" },
-        { "term": "total costs", "def": "fixed costs plus variable costs" },
-        { "term": "profit", "def": "revenue minus total costs; if negative it is a loss" }
+        {
+          "term": "revenue",
+          "def": "the money a business receives from selling goods or services (price x quantity)"
+        },
+        {
+          "term": "fixed costs",
+          "def": "costs that stay the same however much is produced, such as rent"
+        },
+        {
+          "term": "variable costs",
+          "def": "costs that change with output, such as ingredients"
+        },
+        {
+          "term": "total costs",
+          "def": "fixed costs plus variable costs"
+        },
+        {
+          "term": "profit",
+          "def": "revenue minus total costs; if negative it is a loss"
+        }
       ],
-      "starter": ["Define a SMART objective.", "Give one financial aim and one non-financial aim.", "Why is survival important for a new business?"],
+      "starter": [
+        "Define a SMART objective.",
+        "Give one financial aim and one non-financial aim.",
+        "Why is survival important for a new business?"
+      ],
       "teach": [
-        { "heading": "Revenue", "bullets": ["Revenue = price x quantity sold", "Also called turnover or sales revenue", "Revenue is not profit", "Example: 400 bars at 3 pounds = 1,200 pounds"], "note": "Misconception: revenue and profit are the same. Ask: if you sell 400 bars for 3 pounds each and spend 1,300 pounds, did you profit? (No, a loss of 100 pounds.)" },
-        { "heading": "Fixed and variable costs", "bullets": ["Fixed: rent, insurance, salaries", "Variable: ingredients, packaging", "Total costs = fixed + variable", "Variable costs rise with output"], "note": "Hold up a cup: its cup and ingredients are variable costs; the café rent is fixed. Ask pupils to classify more examples. Variable cost = variable cost per unit x number of units." },
-        { "heading": "Calculating profit", "bullets": ["Profit = revenue - total costs", "Negative profit is a loss", "Check units and months match", "Show working in exams"], "note": "Present the worked example fully on the board." },
-        { "heading": "Worked example: Yusuf's date-and-oat bars", "bullets": ["Price 3 pounds, 400 bars sold", "Revenue = 3 x 400 = 1,200 pounds", "Variable cost 1.20 per bar = 480 pounds", "Fixed costs 240; total 720; profit 480 pounds"], "note": "Write out each step. Check: 240 + 480 = 720; 1,200 - 720 = 480. Ask: what happens if Yusuf sells only 150 bars? Revenue 450, variable 180, total 420, profit 30. Show that costs do not fall in proportion." },
-        { "heading": "Interest and honest pricing", "bullets": ["Interest is the cost of borrowing money", "Higher borrowing raises costs", "Muslim entrepreneurs avoid riba (interest)", "Halal options: savings, partners, profit-sharing"], "note": "Present as a note, not exam content. Qur'an 2:275 states that Allah has permitted trade and forbidden riba. Many Muslim business owners start with savings or partners sharing risk and profit. Also tie to honest pricing: a fair price and accurate weights and measures (Qur'an 83:1-3 warns against cheating in measure)." }
+        {
+          "heading": "Revenue",
+          "bullets": [
+            "Revenue = price x quantity sold",
+            "Also called turnover or sales revenue",
+            "Revenue is not profit",
+            "Example: 400 bars at 3 pounds = 1,200 pounds"
+          ],
+          "note": "Misconception: revenue and profit are the same. Ask: if you sell 400 bars for 3 pounds each and spend 1,300 pounds, did you profit? (No, a loss of 100 pounds.)"
+        },
+        {
+          "heading": "Fixed and variable costs",
+          "bullets": [
+            "Fixed: rent, insurance, salaries",
+            "Variable: ingredients, packaging",
+            "Total costs = fixed + variable",
+            "Variable costs rise with output"
+          ],
+          "note": "Hold up a cup: its cup and ingredients are variable costs; the café rent is fixed. Ask pupils to classify more examples. Variable cost = variable cost per unit x number of units."
+        },
+        {
+          "heading": "Calculating profit",
+          "bullets": [
+            "Profit = revenue - total costs",
+            "Negative profit is a loss",
+            "Check units and months match",
+            "Show working in exams"
+          ],
+          "note": "Present the worked example fully on the board."
+        },
+        {
+          "heading": "Worked example: Yusuf's date-and-oat bars",
+          "bullets": [
+            "Price 3 pounds, 400 bars sold",
+            "Revenue = 3 x 400 = 1,200 pounds",
+            "Variable cost 1.20 per bar = 480 pounds",
+            "Fixed costs 240; total 720; profit 480 pounds"
+          ],
+          "note": "Write out each step. Check: 240 + 480 = 720; 1,200 - 720 = 480. Ask: what happens if Yusuf sells only 150 bars? Revenue 450, variable 180, total 420, profit 30. Show that costs do not fall in proportion."
+        },
+        {
+          "heading": "Interest and honest pricing",
+          "bullets": [
+            "Interest is the cost of borrowing money",
+            "Higher borrowing raises costs",
+            "Muslim entrepreneurs avoid riba (interest)",
+            "Halal options: savings, partners, profit-sharing"
+          ],
+          "note": "Present as a note, not exam content. Qur'an 2:275 states that Allah has permitted trade and forbidden riba. Many Muslim business owners start with savings or partners sharing risk and profit. Also tie to honest pricing: a fair price and accurate weights and measures (Qur'an 83:1-3 warns against cheating in measure)."
+        }
       ],
-      "practice": ["Calculate revenue: a stall sells 250 scarves at 8 pounds each.", "A café has rent of 500 pounds a month and variable costs of 2 pounds per drink. Calculate total costs for 600 drinks.", "Using your answers, calculate the profit if the café sells 600 drinks at 3.50 pounds."],
-      "independent": ["A business sells 300 notebooks at 4 pounds. Fixed costs 350 pounds, variable cost 1.50 per notebook. Calculate revenue, total costs and profit.", "Explain two reasons why a business might make a loss even if sales are high (4 marks style).", "Write a paragraph assessing whether a start-up should focus on cutting costs or increasing revenue."],
-      "exit": ["Calculate revenue: 120 items sold at 15 pounds each.", "Give one fixed cost and one variable cost for a bakery."],
+      "practice": [
+        "Calculate revenue: a stall sells 250 scarves at 8 pounds each.",
+        "A café has rent of 500 pounds a month and variable costs of 2 pounds per drink. Calculate total costs for 600 drinks.",
+        "Using your answers, calculate the profit if the café sells 600 drinks at 3.50 pounds."
+      ],
+      "independent": [
+        "A business sells 300 notebooks at 4 pounds. Fixed costs 350 pounds, variable cost 1.50 per notebook. Calculate revenue, total costs and profit.",
+        "Explain two reasons why a business might make a loss even if sales are high (4 marks style).",
+        "Write a paragraph assessing whether a start-up should focus on cutting costs or increasing revenue."
+      ],
+      "exit": [
+        "Calculate revenue: 120 items sold at 15 pounds each.",
+        "Give one fixed cost and one variable cost for a bakery."
+      ],
       "homework": "Create your own business with a price and costs, and calculate its revenue, total costs and profit for one month.",
       "send": "SEND/EAL: worked calculation frames with boxes to fill. Stretch: calculate profit if price rises 10 percent and sales fall 5 percent."
+    },
+    {
+      "unit": "Unit 1.1: Business objectives",
+      "n": 9,
+      "title": "Business aims and objectives: why a business exists and where it is heading",
+      "duration": 50,
+      "bigQuestion": "If a business makes no profit, has it failed?",
+      "objectives": [
+        "Distinguish an aim from an objective",
+        "Describe financial aims: survival, profit, sales, market share, financial security",
+        "Describe non-financial aims and explain why objectives change over time"
+      ],
+      "successCriteria": [
+        "All: define aim and objective and name three aims",
+        "Most: match an aim to a business and say whether it is financial",
+        "Some: explain how a change in market conditions or legislation would change an objective"
+      ],
+      "crossCurricular": "Maths: percentage market share and percentage change in sales",
+      "smsc": "Moral: honesty and fairness as part of how success is measured; halal earning as a purpose beyond profit",
+      "keywords": [
+        {
+          "term": "aim",
+          "def": "the long-term goal of a business"
+        },
+        {
+          "term": "objective",
+          "def": "a measurable target that helps a business reach its aim"
+        },
+        {
+          "term": "survival",
+          "def": "staying in business, the main aim of most new firms"
+        },
+        {
+          "term": "profit",
+          "def": "revenue minus total costs"
+        },
+        {
+          "term": "market share",
+          "def": "a firm's sales as a percentage of total sales in the market"
+        },
+        {
+          "term": "financial security",
+          "def": "having enough money to keep going through hard times"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name two businesses on your road. What do you think each one wants to achieve?",
+        "What is the difference between a good and a service? Give one example of each.",
+        "A shop sold 400 items at 5 pounds each. Calculate its revenue."
+      ],
+      "teach": [
+        {
+          "heading": "Aims versus objectives",
+          "bullets": [
+            "An aim is the long-term goal",
+            "An objective is a measurable target",
+            "Objectives are the steps towards the aim",
+            "Good objectives have a number and a date"
+          ],
+          "note": "Begin with bismillah. Use a running example: Noor's Bakery in a fictional town. Aim: to be the best-known bakery in the town. Objective: to sell 1,200 loaves a week by next March. Ask pupils which is the aim and which is the objective, and why the objective is easier to check. Misconception: the two words are not interchangeable in the exam; an aim is broad, an objective is specific and measurable."
+        },
+        {
+          "heading": "Financial aims",
+          "bullets": [
+            "Survival: vital for a new business",
+            "Profit: revenue minus costs",
+            "Sales: revenue and sales volume growth",
+            "Market share: share of total market sales",
+            "Financial security: a cash cushion for hard times"
+          ],
+          "note": "Go through each aim with a fictional example. Survival: the first-year coffee kiosk. Profit: a firm that wants 20,000 pounds a year. Sales growth: a clothes shop wants sales up 10 per cent. Market share: if the market is worth 2 million pounds and Noor's sells 200,000 pounds, its share is 10 per cent. Financial security: owner can pay wages for three months even if sales fall. Ask: which aim matters most to a business in its first six months? Most pupils will say survival; push on why."
+        },
+        {
+          "heading": "Worked example: market share",
+          "note": "Model the calculation slowly. Emphasise that market share needs the total market figure, which the exam will give. Then ask what a rise from 10 to 12 per cent would mean for the firm. Remind pupils that this is a quantitative skill: show the working, include the percentage sign.",
+          "model": {
+            "problem": "Noor's Bakery sold 240,000 pounds of bread in a year. All bakeries in the town sold 1,600,000 pounds. Calculate Noor's market share.",
+            "steps": [
+              "Write the formula: market share = firm's sales divided by total market sales, times 100",
+              "Substitute: 240,000 divided by 1,600,000",
+              "Calculate: 0.15",
+              "Multiply by 100 to give a percentage"
+            ],
+            "answer": "Market share = 15%"
+          }
+        },
+        {
+          "heading": "Non-financial aims",
+          "bullets": [
+            "Social objectives: help the community or environment",
+            "Personal satisfaction: enjoying the work",
+            "Challenge: testing yourself in a new venture",
+            "Independence and control: being your own boss"
+          ],
+          "note": "Explain that not every owner chases the highest profit. A charity-minded business might give some of its earnings to a local school. Link to the Islamic ethos: many Muslim business owners aim to earn halal income and deal honestly, and may give charity from profit. Do not state rulings; invite the class to discuss and the teacher can expand. Ask: can a business have both financial and non-financial aims? Draw out that it usually does."
+        },
+        {
+          "heading": "Check: financial or non-financial?",
+          "note": "Hinge question on mini-whiteboards. Show answer letters at once. The trap is option C: sales growth is financial. Option B is a non-financial social aim.",
+          "check": {
+            "q": "Hamza opens a fictional garden centre. He says, 'My first aim is to still be trading in two years.' Which aim is this?",
+            "options": [
+              "Market share",
+              "Survival",
+              "Social objective",
+              "Personal satisfaction"
+            ],
+            "answer": 1,
+            "why": "Staying in business is survival, a financial aim. Market share needs a percentage of the market; a social objective helps the community."
+          }
+        },
+        {
+          "heading": "Why objectives change",
+          "bullets": [
+            "Market conditions: new competitors or falling demand",
+            "Technology: online selling changes what is possible",
+            "Performance: beating or missing targets",
+            "Legislation: new laws, such as a higher minimum wage",
+            "Internal reasons: new owner or new managers"
+          ],
+          "note": "Give the Noor's Bakery story: a supermarket opens next door (market conditions), so the objective moves from growing sales to keeping loyal customers. Then a new law raises minimum wage (legislation) so profit objective is lowered. Ask pupils to give an example for each of the five reasons. Note that the exam can ask them to explain why a given objective might change in the context of a given firm."
+        }
+      ],
+      "practice": [
+        "Hamza's garden centre had revenue of 90,000 pounds. The whole market in the area was 600,000 pounds. Calculate his market share.",
+        "Write one aim and one measurable objective for a fictional school uniform shop opening in September.",
+        "State two reasons why Noor's Bakery might change its objective from growth to survival."
+      ],
+      "independent": [
+        "Core: Sort ten aims (for example: to be the largest, to enjoy the work, to help local people, to survive, to earn 30,000 pounds) into financial and non-financial.",
+        "Extend: Explain two reasons why a new coffee kiosk might change its objectives after six months.",
+        "Stretch: Exam style (6 marks, Explain): 'A new business should always make survival its main aim.' Explain two reasons for and one against, and give a short conclusion."
+      ],
+      "exit": [
+        "Define the term market share.",
+        "Give one financial and one non-financial aim for a business of your choice.",
+        "Big question: if a business makes no profit, has it failed? Answer in two sentences."
+      ],
+      "homework": "Find a real small business near you and write its likely aim and one objective, saying whether each is financial.",
+      "send": "SEND: give a card sort with aims already labelled as financial or non-financial for support. EAL: pre-teach aim, objective, survival with images. Stretch: ask pupils to rank five aims for a start-up and justify the order.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 1.2: Types of organisation",
+      "n": 10,
+      "title": "Sole traders and partnerships: owning a small business",
+      "duration": 50,
+      "bigQuestion": "Would you start a business alone or with a partner?",
+      "objectives": [
+        "Describe a sole trader and a partnership",
+        "Compare them by risk, ownership, limited liability, control, finance and use of profits",
+        "Judge which suits a small business"
+      ],
+      "successCriteria": [
+        "All: define sole trader and partnership and state one advantage of each",
+        "Most: explain unlimited liability and why it is a risk",
+        "Some: justify the better form for a given business"
+      ],
+      "crossCurricular": "Maths: sharing profit in a ratio",
+      "smsc": "Moral: trust and honest dealing between partners; keeping promises (amanah) in a partnership agreement",
+      "keywords": [
+        {
+          "term": "sole trader",
+          "def": "a business owned and run by one person"
+        },
+        {
+          "term": "partnership",
+          "def": "a business owned by two to twenty people who share risk and profit"
+        },
+        {
+          "term": "unlimited liability",
+          "def": "owners are personally responsible for all the debts of the business"
+        },
+        {
+          "term": "deed of partnership",
+          "def": "a written agreement setting out how partners share profit and decisions"
+        }
+      ],
+      "starter": [
+        "Define the terms aim and objective.",
+        "Give one financial and one non-financial business aim.",
+        "Noor's Bakery has 18% market share. Total market sales are 500,000 pounds. How much did Noor's sell?"
+      ],
+      "teach": [
+        {
+          "heading": "Sole traders",
+          "bullets": [
+            "One owner, often the only worker",
+            "Keeps all the profit",
+            "Makes decisions without consulting others",
+            "Unlimited liability: personal assets at risk",
+            "Finance usually comes from own savings or loans"
+          ],
+          "note": "Use fictional Sami, a mobile phone repairer. He decides everything, keeps all profit, and can start quickly. Risk: if he owes 15,000 pounds and the business cannot pay, creditors can take his car and savings. Ask: why is it hard for him to grow? Draw out limited finance and one pair of hands. Point out that sole traders are very common among small businesses."
+        },
+        {
+          "heading": "Partnerships",
+          "bullets": [
+            "Two or more owners, usually up to 20",
+            "Profits shared as agreed, often in a ratio",
+            "More skills and more capital than one person",
+            "Unlimited liability, and each partner can be liable for the others' debts",
+            "A deed of partnership prevents arguments"
+          ],
+          "note": "Sami joins Yusuf, a web designer, to make a repair-and-web shop. Discuss benefits: two lots of savings, two skills, shared workload. Drawbacks: disagreements, sharing profit, and being responsible for the other's mistakes. Stress the written agreement. Link to trust: Muslims are encouraged to honour agreements; invite pupils to say why a clear written agreement shows honesty and prevents harm. Avoid quoting any text."
+        },
+        {
+          "heading": "Worked example: sharing partnership profit",
+          "note": "Walk through the ratio calculation. Check that pupils add the ratio parts first. Ask what happens to each partner's share if profit falls to 18,000 pounds. Then discuss fairness: is a 3:2 split fair if both work the same hours? Pupils should say the deed of partnership decides.",
+          "model": {
+            "problem": "Sami and Yusuf share profit in the ratio 3:2. Their profit is 30,000 pounds. How much does each receive?",
+            "steps": [
+              "Add the ratio parts: 3 + 2 = 5",
+              "Find one part: 30,000 divided by 5 = 6,000",
+              "Sami: 3 x 6,000 = 18,000",
+              "Yusuf: 2 x 6,000 = 12,000"
+            ],
+            "answer": "Sami 18,000 pounds, Yusuf 12,000 pounds"
+          }
+        },
+        {
+          "heading": "Compare: sole trader and partnership",
+          "note": "Use as a revision grid. Ask pupils to cover one column and recall the other. Note control: a sole trader has full control; partners must agree. Neither has limited liability. Exam tip: when asked which is better, refer to the business in the question, not generic points.",
+          "table": {
+            "head": [
+              "Feature",
+              "Sole trader",
+              "Partnership"
+            ],
+            "rows": [
+              [
+                "Owners",
+                "One",
+                "Two to twenty"
+              ],
+              [
+                "Liability",
+                "Unlimited",
+                "Unlimited"
+              ],
+              [
+                "Control",
+                "Complete",
+                "Shared"
+              ],
+              [
+                "Finance",
+                "Own savings, loans",
+                "More savings from partners"
+              ],
+              [
+                "Profit",
+                "Kept by the owner",
+                "Shared as agreed"
+              ],
+              [
+                "Risk",
+                "All on one person",
+                "Shared but still personal"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check: liability",
+          "note": "Mini-whiteboards. Answer B. Distractor A is the limited-liability idea that belongs to companies; C is a confusion with control.",
+          "check": {
+            "q": "Sami's business owes 8,000 pounds and cannot pay. What does unlimited liability mean for him?",
+            "options": [
+              "He only loses the money he put in",
+              "His own possessions could be used to pay the debt",
+              "His customers must pay the debt",
+              "The debt is cancelled"
+            ],
+            "answer": 1,
+            "why": "Unlimited liability means the owner is personally responsible. Only limited-liability owners lose just their investment."
+          }
+        },
+        {
+          "heading": "Which form suits which business?",
+          "bullets": [
+            "A one-person market stall: sole trader",
+            "A two-dentist surgery needing equipment: partnership",
+            "Ask: how much capital? how much risk?",
+            "Ask: does the owner want control?"
+          ],
+          "note": "Practise judging. Give three quick scenarios and take votes. Emphasise that the correct answer depends on size, finance needed and the owner's preference. In an exam justification answer pupils must use the context and reach a clear decision."
+        }
+      ],
+      "practice": [
+        "Maryam and Aisha share profit in the ratio 1:3. Profit is 24,000 pounds. Calculate each share.",
+        "State two advantages of a partnership over a sole trader.",
+        "Explain why a deed of partnership is useful."
+      ],
+      "independent": [
+        "Core: Complete a table comparing a sole trader and partnership for a fictional hair salon.",
+        "Extend: Explain two risks for a sole trader who owns a fictional bicycle repair shop.",
+        "Stretch: Justify (6 marks): Sami has 6,000 pounds savings and wants to open a computer shop needing 25,000 pounds. Should he stay a sole trader or form a partnership? Use the figures."
+      ],
+      "exit": [
+        "Define unlimited liability.",
+        "Give one benefit and one drawback of a partnership.",
+        "Big question: would you start alone or with a partner? One reason."
+      ],
+      "homework": "Interview someone you know who runs a small business and note what ownership form it has and why.",
+      "send": "SEND: give the ratio sharing steps as a prompt card. EAL: pair 'liable' with 'responsible for debts'. Stretch: compare the position if a partner disappears and leaves debts.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 1.2: Types of organisation",
+      "n": 11,
+      "title": "Companies and public corporations: limited liability",
+      "duration": 50,
+      "bigQuestion": "Why would an owner want their house protected from business debts?",
+      "objectives": [
+        "Describe private limited companies, public limited companies and public corporations",
+        "Explain limited liability and shares",
+        "Compare forms by risk, control, finance and use of profit"
+      ],
+      "successCriteria": [
+        "All: define limited liability and name three business forms",
+        "Most: compare a private and public limited company",
+        "Some: explain why a growing business might change its form"
+      ],
+      "crossCurricular": "Maths: dividends as a share of profit; percentage ownership",
+      "smsc": "Moral: transparency and honest accounts when the public can buy shares",
+      "keywords": [
+        {
+          "term": "limited liability",
+          "def": "owners can lose only the money they invested"
+        },
+        {
+          "term": "private limited company (Ltd)",
+          "def": "shares sold privately, not to the public; has limited liability"
+        },
+        {
+          "term": "public limited company (plc)",
+          "def": "can sell shares to the public on a stock exchange"
+        },
+        {
+          "term": "shareholder",
+          "def": "an owner of a company who holds shares"
+        },
+        {
+          "term": "dividend",
+          "def": "a share of profit paid to shareholders"
+        },
+        {
+          "term": "public corporation",
+          "def": "a business owned and controlled by the government"
+        }
+      ],
+      "starter": [
+        "Define unlimited liability.",
+        "Give two features of a partnership.",
+        "Sami and Yusuf's business owes 20,000 pounds. Who is responsible?"
+      ],
+      "teach": [
+        {
+          "heading": "Limited liability and shares",
+          "bullets": [
+            "A company is a separate legal person from its owners",
+            "Owners (shareholders) can lose only what they invested",
+            "Money is raised by selling shares",
+            "Profits are paid as dividends"
+          ],
+          "note": "Use the fictional Zayn's Solar Ltd. Four shareholders invest 10,000 each. If it owes 100,000 and collapses, each can lose only the 10,000 invested, not house or savings. Contrast with sole trader. Do not teach company accounts; stay at concept level. For Muslim pupils, note that investing in a company by buying shares is discussed by scholars, and the teacher may expand on which businesses and structures are considered permissible; do not give rulings."
+        },
+        {
+          "heading": "Private and public limited companies",
+          "note": "Compare table. Key facts: Ltd shares are not for sale to the general public and are sold only with the agreement of existing owners, so owners keep control. A plc may sell shares to the public, raising big sums but risking takeover and has to publish more information. Ask: why might Zayn's Solar stay a Ltd? Answer: keeps control, avoids disclosure.",
+          "compare": {
+            "left": {
+              "title": "Private limited (Ltd)",
+              "points": [
+                "Shares sold privately",
+                "Owners keep control",
+                "Raise less finance",
+                "Less public information"
+              ]
+            },
+            "right": {
+              "title": "Public limited (plc)",
+              "points": [
+                "Shares sold to the public",
+                "Control spread among many",
+                "Can raise very large sums",
+                "Must publish accounts; takeover risk"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Public corporations",
+          "bullets": [
+            "Owned by the government",
+            "Run for public benefit, not only profit",
+            "Funded by taxes and its own sales",
+            "Example: a fictional national railway corporation"
+          ],
+          "note": "A public corporation is owned by the state and run by appointed managers; objectives are often public service. Avoid stating that a specific current organisation is or is not one unless sure; use the fictional Nile Valley Railways Corporation as the model. Ask: why might a government keep a railway public? Draw out service to everyone, jobs and national importance."
+        },
+        {
+          "heading": "Worked example: dividends",
+          "note": "Take pupils through the dividend per share method. Ask what happens to dividend per share if profit distributed doubles. Check they can find the percentage owned: Zainab holds 2,000 of 10,000 shares = 20 per cent.",
+          "model": {
+            "problem": "Zayn's Solar Ltd has 10,000 shares. It pays 15,000 pounds in total dividends. Zainab owns 2,000 shares. How much does she receive?",
+            "steps": [
+              "Dividend per share = 15,000 divided by 10,000 = 1.50 pounds",
+              "Zainab's shares: 2,000",
+              "Multiply: 2,000 x 1.50",
+              "Check: she owns 20 per cent and 20 per cent of 15,000 is 3,000"
+            ],
+            "answer": "3,000 pounds"
+          }
+        },
+        {
+          "heading": "Check: which form?",
+          "note": "Answer C. A is wrong because public limited companies sell shares to the public; B because limited liability protects personal assets; D because a sole trader cannot sell shares.",
+          "check": {
+            "q": "A business wants to raise 5 million pounds by selling shares on the stock exchange. Which form must it be?",
+            "options": [
+              "Sole trader",
+              "Partnership",
+              "Public limited company",
+              "Private limited company"
+            ],
+            "answer": 2,
+            "why": "Only a plc can sell shares to the public on a stock exchange."
+          }
+        },
+        {
+          "heading": "Choosing the right form",
+          "bullets": [
+            "Small, low risk, one owner: sole trader",
+            "Two professionals: partnership",
+            "Wants protection from debt: limited company",
+            "Large, needs big capital: plc"
+          ],
+          "note": "Run a decision tree activity. Pupils decide for three scenarios. Evaluate: limited liability protects owners but a company has more legal paperwork. In the exam, use evidence from the given business."
+        }
+      ],
+      "practice": [
+        "Eight friends each invest 5,000 pounds in a Ltd. It collapses owing 200,000 pounds. What is the most each friend can lose?",
+        "State two differences between a Ltd and a plc.",
+        "Explain one reason a government might run a business as a public corporation."
+      ],
+      "independent": [
+        "Core: Match six features (for example 'owned by the state', 'shares sold on the stock exchange') to the correct form.",
+        "Extend: Explain two advantages of limited liability for the owner of Zayn's Solar.",
+        "Stretch: Evaluate (8 marks): 'Becoming a plc is always the best way for a successful Ltd to grow.' Use pros, cons and a judgement."
+      ],
+      "exit": [
+        "Define limited liability in one sentence.",
+        "Name the form of business owned by the government.",
+        "Big question answer: why would an owner want protection from business debts?"
+      ],
+      "homework": "Choose a business you know and decide whether it is more likely a sole trader, Ltd or plc; give two reasons.",
+      "send": "SEND: provide a flowchart for choosing the form. EAL: create a glossary for shares, dividend, liability. Stretch: investigate the reasons a family firm might refuse to float.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 1.2: Types of organisation",
+      "n": 12,
+      "title": "Stakeholders, franchises, social enterprises and multinationals",
+      "duration": 50,
+      "bigQuestion": "Who else cares whether a business succeeds, apart from the owner?",
+      "objectives": [
+        "Identify stakeholders and shareholders and their interests",
+        "Describe franchises, social enterprises and multinationals",
+        "Judge which ownership form suits a business"
+      ],
+      "successCriteria": [
+        "All: name three stakeholders and what each wants",
+        "Most: describe a franchise and a social enterprise",
+        "Some: justify a franchise or social enterprise for a given situation"
+      ],
+      "crossCurricular": "Geography: multinationals and host countries",
+      "smsc": "Social: community responsibility; Moral: fair dealing with all stakeholders",
+      "keywords": [
+        {
+          "term": "stakeholder",
+          "def": "any person or group affected by or interested in a business"
+        },
+        {
+          "term": "shareholder",
+          "def": "an owner of shares in a company"
+        },
+        {
+          "term": "franchise",
+          "def": "a business using another firm's brand and system in return for fees"
+        },
+        {
+          "term": "franchisor",
+          "def": "the owner of the brand who sells the franchise"
+        },
+        {
+          "term": "franchisee",
+          "def": "the person who buys and runs the franchise"
+        },
+        {
+          "term": "social enterprise",
+          "def": "a business run to achieve a social aim, with profits mainly reinvested"
+        },
+        {
+          "term": "multinational",
+          "def": "a business operating in more than one country"
+        }
+      ],
+      "starter": [
+        "Name the form of business that can sell shares to the public.",
+        "Define limited liability.",
+        "State one advantage of being a sole trader."
+      ],
+      "teach": [
+        {
+          "heading": "Stakeholders",
+          "bullets": [
+            "Owners and shareholders: profit and dividends",
+            "Employees: pay, security and good conditions",
+            "Customers: quality and fair prices",
+            "Suppliers: prompt payment",
+            "Community and government: jobs, tax and safety"
+          ],
+          "note": "Use the fictional Al-Noor Bakery Ltd. Ask pupils to say what each group wants and where interests clash: higher wages for workers versus higher dividends for shareholders. Stress that a shareholder is a type of stakeholder but not every stakeholder is a shareholder. Link to ethics: treating customers, workers and suppliers fairly and honestly is something Islamic teaching emphasises; the teacher may expand with the class's own knowledge."
+        },
+        {
+          "heading": "Franchises",
+          "bullets": [
+            "Franchisee pays a fee and a share of sales",
+            "Uses the franchisor's brand, products and training",
+            "Lower risk because the idea is proven",
+            "Less freedom and profit shared with the franchisor"
+          ],
+          "note": "Use the fictional Burger Barn franchise. Franchisee pays 20,000 pounds to start and 5 per cent of sales. Ask: who benefits? The franchisor expands with less capital; the franchisee gets a known brand. Drawbacks: rules on menu and prices, fees reduce profit. Misconception: a franchisee is not an employee; they own and run their own business."
+        },
+        {
+          "heading": "Worked example: franchise fees",
+          "note": "Model the calculation, then ask whether the franchise is worthwhile. Link to risk and the proven brand. Many pupils forget to subtract fees from profit.",
+          "model": {
+            "problem": "Layla runs a Burger Barn franchise. Annual sales are 240,000 pounds. She pays 5% of sales to the franchisor. Her other costs are 190,000 pounds. Calculate her profit.",
+            "steps": [
+              "Fee = 5% of 240,000 = 12,000",
+              "Total costs = 190,000 + 12,000 = 202,000",
+              "Profit = revenue minus total costs",
+              "240,000 - 202,000"
+            ],
+            "answer": "Profit = 38,000 pounds"
+          }
+        },
+        {
+          "heading": "Social enterprises and multinationals",
+          "note": "Contrast. A social enterprise is a business with a social purpose: for example the fictional Bright Start Cafe trains young unemployed people and reinvests profit. It still has to cover its costs. A multinational has operations in several countries: the fictional Orion Foods has factories in four countries. Benefits to the firm: new markets, cheaper labour; drawbacks: complex management. Detailed host-country effects come in Unit 1.5.",
+          "compare": {
+            "left": {
+              "title": "Social enterprise",
+              "points": [
+                "Social or environmental aim",
+                "Profits mainly reinvested",
+                "Still must cover costs",
+                "Example: training cafe"
+              ]
+            },
+            "right": {
+              "title": "Multinational",
+              "points": [
+                "Operates in several countries",
+                "Large, often a plc",
+                "Gains new markets and lower costs",
+                "Can influence host economies"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check: stakeholder or franchise?",
+          "note": "Answer C. Distractor A confuses a franchisor with a franchisee; B confuses with a shareholder.",
+          "check": {
+            "q": "Which statement about a franchisee is correct?",
+            "options": [
+              "Owns the brand and sells licences",
+              "Is an employee of the franchisor",
+              "Pays fees to use a brand and runs the outlet",
+              "Is always a shareholder"
+            ],
+            "answer": 2,
+            "why": "A franchisee runs the outlet using the franchisor's brand in return for fees."
+          }
+        },
+        {
+          "heading": "Which ownership form fits?",
+          "bullets": [
+            "Wants proven brand: franchise",
+            "Wants to help the community: social enterprise",
+            "Wants world markets: multinational",
+            "Match the choice to the owner's aims"
+          ],
+          "note": "Use a quick-fire scenario set so pupils practise justification. For each ask for one benefit and one drawback. Remind them that in the exam, a recommendation needs a reason linked to the context."
+        }
+      ],
+      "practice": [
+        "List three stakeholders of a school uniform shop and what each wants.",
+        "Burger Barn charges 6% of sales. A franchisee has sales of 150,000 pounds. Calculate the fee.",
+        "Describe one difference between a franchise and a social enterprise."
+      ],
+      "independent": [
+        "Core: Complete a stakeholder grid for Al-Noor Bakery Ltd with two interests per group.",
+        "Extend: Explain how the interests of employees and shareholders may conflict.",
+        "Stretch: Justify (6 marks): Khalid has 30,000 pounds and wants to open a cafe. Should he start his own brand or buy a franchise costing 20,000 pounds plus 5% of sales?"
+      ],
+      "exit": [
+        "Define franchise.",
+        "Give one benefit of franchising to the franchisor.",
+        "Big question: name one stakeholder who is not the owner and what they want."
+      ],
+      "homework": "Research a franchise business near you and note who the franchisor and franchisee are.",
+      "send": "SEND: provide a stakeholder sorting grid. EAL: show examples of well-known franchises. Stretch: analyse why a social enterprise might struggle to grow.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 1.3: Classification of businesses",
+      "n": 13,
+      "title": "Business sectors: primary, secondary and tertiary",
+      "duration": 50,
+      "bigQuestion": "Where does the cost of a loaf of bread begin?",
+      "objectives": [
+        "Classify businesses as primary, secondary or tertiary",
+        "Explain how the sectors depend on each other",
+        "Describe how the importance of sectors changes over time"
+      ],
+      "successCriteria": [
+        "All: name the three sectors with an example each",
+        "Most: classify mixed businesses correctly",
+        "Some: explain how the sectors form a chain"
+      ],
+      "crossCurricular": "Geography: employment structure and development",
+      "smsc": "Social: respect for all kinds of work (dignity of labour)",
+      "keywords": [
+        {
+          "term": "primary sector",
+          "def": "businesses that extract or grow natural resources"
+        },
+        {
+          "term": "secondary sector",
+          "def": "businesses that make or build goods from raw materials"
+        },
+        {
+          "term": "tertiary sector",
+          "def": "businesses that provide services"
+        },
+        {
+          "term": "raw materials",
+          "def": "unprocessed resources used to make goods"
+        },
+        {
+          "term": "chain of production",
+          "def": "the stages from raw material to the consumer"
+        }
+      ],
+      "starter": [
+        "Name two types of business ownership.",
+        "What is a franchise?",
+        "Name one stakeholder of a school."
+      ],
+      "teach": [
+        {
+          "heading": "Three sectors",
+          "bullets": [
+            "Primary: farming, fishing, mining, oil extraction",
+            "Secondary: manufacturing, construction, food processing",
+            "Tertiary: shops, banks, schools, transport"
+          ],
+          "note": "Begin with bismillah. Give the bread chain: wheat grown by a fictional Delta Farm (primary), flour milled and bread baked by Golden Crust Bakery (secondary), sold by a supermarket (tertiary). Ask pupils to classify their own family's jobs. Misconception: a baker who also sells in the same shop is both secondary and tertiary."
+        },
+        {
+          "heading": "Classify: sort the businesses",
+          "note": "Use as a quick sort. Pupils tick the sector for each. Point out the mixed cases (the garage and the bakery) to prompt discussion. Tell them classification depends on the main activity.",
+          "table": {
+            "head": [
+              "Business (fictional)",
+              "What it does",
+              "Sector"
+            ],
+            "rows": [
+              [
+                "Sahara Salt Works",
+                "Extracts salt from salt pans",
+                "Primary"
+              ],
+              [
+                "Cairo Chairs Ltd",
+                "Makes wooden chairs",
+                "Secondary"
+              ],
+              [
+                "Safe Journey Taxis",
+                "Carries passengers",
+                "Tertiary"
+              ],
+              [
+                "Hilltop Orchard",
+                "Grows and sells apples",
+                "Primary"
+              ],
+              [
+                "BuildRight Ltd",
+                "Constructs houses",
+                "Secondary"
+              ],
+              [
+                "Sunrise Dental",
+                "Provides dental care",
+                "Tertiary"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The chain of production",
+          "bullets": [
+            "Each sector depends on the others",
+            "Primary supplies raw materials to secondary",
+            "Secondary supplies finished goods to tertiary",
+            "Tertiary delivers goods and services to customers"
+          ],
+          "note": "Draw the chain with arrows. Ask what happens if the primary sector fails, for example a bad harvest. Link to price rises and shortages. Link to supply chains: a business is part of a chain, so its prices and quality depend on its suppliers."
+        },
+        {
+          "heading": "Worked example: sector shares",
+          "note": "Model a simple sector calculation. Ask pupils what the figures suggest about a country's economy (mostly services). Remind them to give percentages with the working.",
+          "model": {
+            "problem": "Fictional Country Zeta has 2,000,000 workers: 200,000 primary, 400,000 secondary and the rest tertiary. Calculate the percentage in the tertiary sector.",
+            "steps": [
+              "Tertiary workers = 2,000,000 - 200,000 - 400,000",
+              "= 1,400,000",
+              "Percentage = 1,400,000 divided by 2,000,000 x 100",
+              "= 70%"
+            ],
+            "answer": "70% of workers are in the tertiary sector"
+          }
+        },
+        {
+          "heading": "Check: classify",
+          "note": "Answer B. A mining firm extracts resources and is primary, a car factory secondary, a bank tertiary.",
+          "check": {
+            "q": "Which activity belongs to the secondary sector?",
+            "options": [
+              "Extracting oil",
+              "Turning flour into bread in a factory",
+              "Providing bank loans",
+              "Growing wheat"
+            ],
+            "answer": 1,
+            "why": "Converting materials into goods is secondary; extracting and growing are primary; services are tertiary."
+          }
+        },
+        {
+          "heading": "Changing importance of sectors",
+          "bullets": [
+            "Richer countries have large tertiary sectors",
+            "Developing economies often rely more on primary",
+            "Technology moves jobs from secondary to tertiary",
+            "Businesses may move between sectors as they grow"
+          ],
+          "note": "Discuss why the tertiary sector has grown: rising incomes, demand for services, machines doing factory work. Warn pupils not to state countries' exact percentages without data. A business can change: a fruit farm that starts a jam factory moves into secondary. Ask why a firm might do that (add value, higher prices)."
+        }
+      ],
+      "practice": [
+        "Classify: a gold mine, a furniture workshop, a hairdresser, a fishing boat.",
+        "Explain how a secondary sector business depends on the primary sector.",
+        "Name a business that operates in more than one sector and explain why."
+      ],
+      "independent": [
+        "Core: Classify twelve fictional businesses and complete the chain for a cup of tea.",
+        "Extend: Explain one reason why a country's tertiary sector grows as its income rises.",
+        "Stretch: Analyse (6 marks): Hilltop Orchard grows apples (primary) and plans to open a jam factory and a cafe. Explain how this would change its sectors and risk."
+      ],
+      "exit": [
+        "Name the three sectors.",
+        "Which sector is a bank in?",
+        "Big question: where does the cost of a loaf of bread begin?"
+      ],
+      "homework": "Trace the supply chain for one item you own (for example a pair of trainers) and label each sector.",
+      "send": "SEND: use picture cards for sorting. EAL: pair each sector word with an action (extract, make, serve). Stretch: investigate why a country's main sector changes as it develops.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 1.4: Location decisions",
+      "n": 14,
+      "title": "Location decisions: where should a business open?",
+      "duration": 50,
+      "bigQuestion": "Would you open a bakery on a busy high street or an online shop from your home?",
+      "objectives": [
+        "Describe the factors in location: market, labour, materials, competitors",
+        "Explain how the nature of the activity affects location",
+        "Explain the effect of the internet, legal controls and trade blocs on location"
+      ],
+      "successCriteria": [
+        "All: name four location factors",
+        "Most: explain how two factors would influence a given business",
+        "Some: justify a location and recommend one using evidence"
+      ],
+      "crossCurricular": "Geography: industrial location and trade blocs",
+      "smsc": "Social: the effect of a business on a local community and fair competition",
+      "keywords": [
+        {
+          "term": "proximity",
+          "def": "nearness to something, such as customers or suppliers"
+        },
+        {
+          "term": "e-commerce",
+          "def": "buying and selling over the internet"
+        },
+        {
+          "term": "trade bloc",
+          "def": "a group of countries with agreed trading rules, often with reduced tariffs"
+        },
+        {
+          "term": "labour",
+          "def": "the workers a business employs"
+        },
+        {
+          "term": "planning permission",
+          "def": "legal approval needed to build or use premises"
+        },
+        {
+          "term": "competitors",
+          "def": "other firms selling similar goods or services"
+        }
+      ],
+      "starter": [
+        "Name the three business sectors.",
+        "Give an example of a secondary business.",
+        "What does a stakeholder want from a business? Give one example."
+      ],
+      "teach": [
+        {
+          "heading": "Key location factors",
+          "bullets": [
+            "Market: close to customers",
+            "Labour: availability and skill, wage levels",
+            "Materials: near suppliers, especially heavy ones",
+            "Competitors: avoid or cluster"
+          ],
+          "note": "Bismillah. Use fictional Greenway Furniture Ltd, planning a factory. Heavy materials (timber) mean being near suppliers cuts transport costs. A restaurant needs footfall. Ask: why do some businesses locate next to competitors? (Customers compare, for example a street of car showrooms.) Ask why a business might avoid competitors."
+        },
+        {
+          "heading": "Nature of the activity",
+          "bullets": [
+            "Retail: busy streets, customers nearby",
+            "Manufacturing: space, transport links, cheaper rent",
+            "Services: access to clients or work from home",
+            "Extraction: where the resource is"
+          ],
+          "note": "Link to sector knowledge from last lesson. A fishing business must be near the sea, a call centre can be anywhere with staff and internet, a hairdresser needs customers on foot. Ask pupils to place five fictional businesses (a bakery, a mine, a dentist, a web designer, a warehouse) and justify. Misconception: the cheapest location is not always best; compare cost against revenue."
+        },
+        {
+          "heading": "Worked example: comparing locations",
+          "note": "Show a simple decision. Pupils should see cost is not the only variable. Ask what other factors might matter (parking, staff travel, competitors). Introduce weighting if time.",
+          "model": {
+            "problem": "Greenway Furniture compares two sites. Site A: rent 4,000 pounds a month, transport cost to customers 1,500 pounds. Site B: rent 2,500 pounds a month, transport cost 3,800 pounds. Which is cheaper per month?",
+            "steps": [
+              "Site A total = 4,000 + 1,500",
+              "Site A = 5,500",
+              "Site B total = 2,500 + 3,800",
+              "Site B = 6,300"
+            ],
+            "answer": "Site A is 800 pounds a month cheaper"
+          }
+        },
+        {
+          "heading": "The internet and e-commerce",
+          "bullets": [
+            "Online shops need less high-street space",
+            "Can sell nationally or globally from anywhere",
+            "Need a warehouse, delivery and a good website",
+            "Customers cannot touch or try products"
+          ],
+          "note": "Ask: which businesses are hardest to move online? Haircuts, dentists, restaurants. E-commerce means a business can choose a cheap location, but delivery cost and trust matter. Ask pupils to explain why a bakery may still want a shop even though it sells online."
+        },
+        {
+          "heading": "Legal controls and trade blocs",
+          "bullets": [
+            "Planning permission and zoning limit where firms build",
+            "Environmental and safety laws affect sites",
+            "Trade blocs allow easier trade between members",
+            "Firms may locate inside a bloc to avoid tariffs"
+          ],
+          "note": "Keep it conceptual. A government may refuse planning permission for a noisy factory near homes. A trade bloc lets members trade with lower tariffs, so a firm outside may build a factory inside to sell freely. Use a fictional bloc: the Blue Sea Trade Union. Ask: how does this help a firm? Cheaper, easier sales. Do not name real bloc membership details."
+        },
+        {
+          "heading": "Check: location",
+          "note": "Answer D. Heavy bulky materials lead to locating near the source; A and B are not about materials.",
+          "check": {
+            "q": "A firm makes cement from heavy limestone and sells to builders nationwide. Which factor is likely most important?",
+            "options": [
+              "Close to shoppers",
+              "Close to competitors",
+              "Near an airport",
+              "Near the limestone supply"
+            ],
+            "answer": 3,
+            "why": "Heavy, bulky raw materials are expensive to move, so firms tend to locate near them."
+          }
+        }
+      ],
+      "practice": [
+        "A bakery pays rent of 3,200 pounds and delivery costs 900 pounds a month at site A, or rent 2,000 pounds and delivery 2,400 pounds at site B. Which is cheaper and by how much?",
+        "State two reasons a hairdresser should locate on a busy street.",
+        "Explain how e-commerce changes a business's location choice."
+      ],
+      "independent": [
+        "Core: Choose a location for fictional Zam Zam Cafe from three given sites using market, rent and competitors.",
+        "Extend: Explain two ways a trade bloc could influence where a clothes manufacturer locates.",
+        "Stretch: Justify (6 marks): Should an online toy business rent a warehouse near the capital, where rent is high, or in a smaller town with low rent but poor transport? Use 1,200 orders a week in your reasoning."
+      ],
+      "exit": [
+        "Give two location factors.",
+        "Define e-commerce.",
+        "Big question: for a bakery, one reason for a high-street shop and one for online only."
+      ],
+      "homework": "Look at three shops near your home and decide which location factor best explains where each is.",
+      "send": "SEND: provide a factor checklist with pictures. EAL: pre-teach footfall, proximity. Stretch: weigh factors using a scoring grid and explain the weighting.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 4.1: Market research",
+      "n": 15,
+      "title": "Market research: finding out before you spend",
+      "duration": 50,
+      "bigQuestion": "How can a business find out what customers want without guessing?",
+      "objectives": [
+        "Explain why businesses carry out market research",
+        "Describe primary and secondary research methods",
+        "Distinguish qualitative from quantitative data and judge reliability"
+      ],
+      "successCriteria": [
+        "All: define primary and secondary research and name two methods of each",
+        "Most: choose a suitable method for a given business and say why",
+        "Some: evaluate the reliability of a survey sample"
+      ],
+      "crossCurricular": "Maths: sampling, percentages and averages from survey results",
+      "smsc": "Moral: honesty and consent when collecting information from people",
+      "keywords": [
+        {
+          "term": "market research",
+          "def": "collecting and analysing information about customers and the market"
+        },
+        {
+          "term": "primary research",
+          "def": "new information collected first-hand for a specific purpose"
+        },
+        {
+          "term": "secondary research",
+          "def": "existing information collected by someone else"
+        },
+        {
+          "term": "qualitative data",
+          "def": "descriptive opinions and feelings"
+        },
+        {
+          "term": "quantitative data",
+          "def": "numerical data that can be counted"
+        },
+        {
+          "term": "test marketing",
+          "def": "selling a product in a small area first to gauge reaction"
+        },
+        {
+          "term": "sample",
+          "def": "a small group chosen to represent the whole market"
+        }
+      ],
+      "starter": [
+        "Name two location factors.",
+        "Define e-commerce.",
+        "Why might a business choose a cheaper location even if it is further from customers?"
+      ],
+      "teach": [
+        {
+          "heading": "Why research?",
+          "bullets": [
+            "Finds customer needs and gaps in the market",
+            "Reduces the risk of failure",
+            "Helps set price, product and promotion",
+            "Checks reactions to a new idea"
+          ],
+          "note": "Bismillah. Use fictional Layla's Lunchbox, a healthy school-meal start-up. She plans to spend 15,000 pounds; asking 200 parents first could save that if nobody wants it. Ask: what could go wrong if she only asks friends? Introduce risk. Ensure pupils see research reduces risk but does not remove it."
+        },
+        {
+          "heading": "Primary research methods",
+          "bullets": [
+            "Surveys and questionnaires",
+            "Focus groups: a small group discusses the product",
+            "Observation: watching how customers behave",
+            "Test marketing: a trial in a small area"
+          ],
+          "note": "Match each with Layla's. Questionnaire: 150 parents asked about price. Focus group: eight parents taste samples. Observation: counting how many pupils buy the snacks at the tuck shop. Test marketing: sells at one school for a month. Discuss benefit: relevant and up to date; limitation: expensive and slow."
+        },
+        {
+          "heading": "Secondary research and types of data",
+          "note": "Compare. Secondary sources: internet, market reports, government reports. Cheaper and fast but may be out of date or not specific. Then link qualitative (a parent says the meals look dull) and quantitative (62 per cent would pay 3 pounds). Ask which data is easier to chart. Note social media can provide both, but opinions on it may not represent all customers.",
+          "compare": {
+            "left": {
+              "title": "Primary research",
+              "points": [
+                "Collected first-hand",
+                "Specific to the business",
+                "Costs more and takes longer",
+                "Examples: survey, focus group"
+              ]
+            },
+            "right": {
+              "title": "Secondary research",
+              "points": [
+                "Already exists",
+                "Cheaper and quick",
+                "May be out of date or general",
+                "Examples: government reports, internet"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Worked example: reading survey results",
+          "note": "Model the percentage and the judgement of reliability. Ask whether 40 parents at one school gate is a good sample. Draw out sample size and bias: only one area. Remind pupils that percentages should be calculated from the sample total.",
+          "model": {
+            "problem": "Layla surveys 250 parents. 175 say they would buy her lunchbox at 3 pounds. What percentage would buy, and how reliable is it?",
+            "steps": [
+              "Percentage = 175 divided by 250",
+              "= 0.7, so 70%",
+              "Check the sample: 250 parents is reasonably large",
+              "But if all came from one school the result may be biased"
+            ],
+            "answer": "70% would buy; reliable only if the sample is varied"
+          }
+        },
+        {
+          "heading": "Check: method",
+          "note": "Answer C. Question gives a group discussing opinions - focus group. Distractor B is a trial sale.",
+          "check": {
+            "q": "Eight parents try Layla's meals and discuss them with a researcher. Which method is this?",
+            "options": [
+              "Test marketing",
+              "Questionnaire",
+              "Focus group",
+              "Secondary research"
+            ],
+            "answer": 2,
+            "why": "A small group discussing a product with a facilitator is a focus group."
+          }
+        },
+        {
+          "heading": "Reliability and social media",
+          "bullets": [
+            "Large, random samples are more reliable",
+            "Biased questions give biased answers",
+            "Old data may no longer be true",
+            "Social media comments are opinions of those who post"
+          ],
+          "note": "Ask pupils to spot the bias in 'Don't you agree our delicious meals are great value?' Discuss leading questions. Discuss honesty: Islamic ethics emphasise truthfulness, so a business should report results honestly even if they disappoint. Say that the teacher may expand with class discussion."
+        }
+      ],
+      "practice": [
+        "Layla's survey: 90 of 120 parents like the idea. Calculate the percentage.",
+        "State two advantages of secondary research.",
+        "Explain one limitation of a focus group."
+      ],
+      "independent": [
+        "Core: Design five questions for a questionnaire for a fictional school uniform shop, including one quantitative and one qualitative.",
+        "Extend: Explain why test marketing is useful before a national launch.",
+        "Stretch: Evaluate (8 marks): Layla can spend 800 pounds on a survey or use free government reports. Which should she use? Give a judgement."
+      ],
+      "exit": [
+        "Define primary research.",
+        "Give one qualitative and one quantitative example.",
+        "Big question: one way to find out what customers want without guessing."
+      ],
+      "homework": "Write a short, fair, three-question survey for a business of your choice and ask five people.",
+      "send": "SEND: provide sentence starters for survey questions. EAL: use pictures for focus group and observation. Stretch: discuss sample bias with examples.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 4.2: The market",
+      "n": 16,
+      "title": "The market: customers, segments and competition",
+      "duration": 50,
+      "bigQuestion": "Is it better to sell a little to everybody or a lot to a few?",
+      "objectives": [
+        "Explain what marketing is and why customer relationships matter",
+        "Compare market orientation with product orientation and niche with mass marketing",
+        "Describe market segmentation by location, demographics, lifestyle, income and age"
+      ],
+      "successCriteria": [
+        "All: define marketing and name three ways to segment a market",
+        "Most: explain niche and mass marketing with an example",
+        "Some: judge whether a business should target a niche or mass market"
+      ],
+      "crossCurricular": "Maths: market share and percentage change",
+      "smsc": "Moral: serving customers' real needs honestly, without exploiting them",
+      "keywords": [
+        {
+          "term": "marketing",
+          "def": "identifying and meeting customer needs profitably"
+        },
+        {
+          "term": "market segment",
+          "def": "a group of customers with similar characteristics"
+        },
+        {
+          "term": "niche market",
+          "def": "a small, specialised part of a market"
+        },
+        {
+          "term": "mass market",
+          "def": "a very large market with many customers"
+        },
+        {
+          "term": "market orientation",
+          "def": "designing products around what research says customers want"
+        },
+        {
+          "term": "product orientation",
+          "def": "making a product first, then trying to sell it"
+        },
+        {
+          "term": "customer loyalty",
+          "def": "customers who keep buying from one business"
+        }
+      ],
+      "starter": [
+        "Name one primary research method.",
+        "What is a qualitative result?",
+        "Why does a business do market research?"
+      ],
+      "teach": [
+        {
+          "heading": "What marketing does",
+          "bullets": [
+            "Identifies customer needs",
+            "Meets them with the right product",
+            "Builds relationships and loyalty",
+            "Responds to changing tastes and spending"
+          ],
+          "note": "Bismillah. Use the fictional Tahir's Trainers. Ask: what does marketing mean? Pupils often say adverts; stress it covers research, product, price, place and promotion. Loyalty: a customer who returns costs less than winning a new one. Link to changes: a fall in incomes may mean customers want cheaper shoes, and competition may force a response."
+        },
+        {
+          "heading": "Market orientation and product orientation",
+          "note": "Show the difference. A market-orientated firm researches first. A product-orientated firm invents then sells. Ask which is riskier. Product orientation can work with a new invention, but only if people want it. Misconception: market orientation does not mean copying competitors; it means responding to customers.",
+          "compare": {
+            "left": {
+              "title": "Market orientation",
+              "points": [
+                "Research first",
+                "Product fits customer needs",
+                "Lower risk of flop",
+                "Needs ongoing research cost"
+              ]
+            },
+            "right": {
+              "title": "Product orientation",
+              "points": [
+                "Product made first",
+                "Based on the firm's own idea",
+                "Higher risk if nobody wants it",
+                "Can lead to new inventions"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Segmentation",
+          "bullets": [
+            "Location: city, town, region",
+            "Demographics: gender, family, occupation",
+            "Lifestyle: sporty, quiet, adventurous",
+            "Income: budget or luxury",
+            "Age: teenagers, adults, over 60s"
+          ],
+          "note": "Take Tahir's Trainers and design a plan for each segment. Teenagers who want fashion; over 60s who want comfort; low-income families who need cheap. Ask why segmentation helps: messages, prices and products fit each group. Note the exam may give data by segment and ask which to target."
+        },
+        {
+          "heading": "Niche and mass marketing",
+          "note": "Table. Niche: small market, higher prices possible, less competition, but limited sales. Mass: many customers, lower prices, economies of scale, but big competitors. Ask which suits a small firm. Ask which would suit a multinational. Evaluate with context.",
+          "table": {
+            "head": [
+              "Feature",
+              "Niche",
+              "Mass"
+            ],
+            "rows": [
+              [
+                "Market size",
+                "Small",
+                "Large"
+              ],
+              [
+                "Price",
+                "Often higher",
+                "Often lower"
+              ],
+              [
+                "Competition",
+                "Few rivals",
+                "Strong rivals"
+              ],
+              [
+                "Example (fictional)",
+                "Hand-made modest-wear label",
+                "Budget T-shirt chain"
+              ],
+              [
+                "Risk",
+                "Depends on a few customers",
+                "Price wars"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Worked example: share change",
+          "note": "Show percentage change as 'change over original'. Note the common error of dividing by the new figure. Then ask whether the firm should be pleased and what else they would want to know (market growth).",
+          "model": {
+            "problem": "Tahir's sales rose from 80,000 pounds to 92,000 pounds. The market total stayed at 800,000. Calculate the percentage change in sales and the new market share.",
+            "steps": [
+              "Change = 92,000 - 80,000 = 12,000",
+              "Percentage change = 12,000 divided by 80,000 x 100 = 15%",
+              "New share = 92,000 divided by 800,000 x 100",
+              "= 11.5%"
+            ],
+            "answer": "Sales up 15%; market share 11.5%"
+          }
+        },
+        {
+          "heading": "Check: segment",
+          "note": "Answer B. A is location; C is age; D is income.",
+          "check": {
+            "q": "A gym offers evening classes for people who like outdoor sports and healthy eating. Which segmentation is this?",
+            "options": [
+              "Location",
+              "Lifestyle",
+              "Age",
+              "Income"
+            ],
+            "answer": 1,
+            "why": "Interest in outdoor sport and healthy eating describes lifestyle."
+          }
+        }
+      ],
+      "practice": [
+        "Tahir's sales were 50,000 pounds in a market worth 500,000. Calculate market share.",
+        "Give three ways to segment the market for a bicycle shop.",
+        "Explain one benefit of a niche market."
+      ],
+      "independent": [
+        "Core: Segment the market for a fictional cafe by age and income and say what to offer each group.",
+        "Extend: Explain why a market-orientated business is less likely to fail.",
+        "Stretch: Justify (6 marks): A new bakery with 25,000 pounds of capital can target either the mass market or a niche market for gluten-free cakes. Which should it choose?"
+      ],
+      "exit": [
+        "Define niche market.",
+        "Give two forms of segmentation.",
+        "Big question: a little to everyone or a lot to a few? One reason."
+      ],
+      "homework": "Choose a brand and write which segment it targets and how you know.",
+      "send": "SEND: use a segment picture sort. EAL: define demographics with examples. Stretch: link segment choice to price and promotion.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 4.3: Marketing mix",
+      "n": 17,
+      "title": "The marketing mix: product, life cycle and the Boston matrix",
+      "duration": 50,
+      "bigQuestion": "Why do some products last for decades while others vanish within a year?",
+      "objectives": [
+        "Describe the product element of the mix: new product development, goods and services, packaging",
+        "Describe the product life cycle and extension strategies",
+        "Use the Boston matrix to make portfolio decisions"
+      ],
+      "successCriteria": [
+        "All: name the four Ps and the stages of the life cycle",
+        "Most: describe each Boston matrix category",
+        "Some: recommend extension strategies for a product in decline"
+      ],
+      "crossCurricular": "Art and Design: packaging and branding",
+      "smsc": "Moral: honest labelling and packaging; avoiding misleading claims",
+      "keywords": [
+        {
+          "term": "marketing mix",
+          "def": "the combination of product, price, place and promotion"
+        },
+        {
+          "term": "product life cycle",
+          "def": "the stages a product passes through from launch to decline"
+        },
+        {
+          "term": "extension strategy",
+          "def": "action to lengthen a product's life"
+        },
+        {
+          "term": "Boston matrix",
+          "def": "a tool that classifies products by market share and market growth"
+        },
+        {
+          "term": "star",
+          "def": "high market share in a fast-growing market"
+        },
+        {
+          "term": "cash cow",
+          "def": "high market share in a slow-growing market"
+        },
+        {
+          "term": "problem child",
+          "def": "low market share in a fast-growing market"
+        },
+        {
+          "term": "dog",
+          "def": "low market share in a slow-growing market"
+        }
+      ],
+      "starter": [
+        "Define market segmentation.",
+        "Name one niche market.",
+        "What is market orientation?"
+      ],
+      "teach": [
+        {
+          "heading": "The four Ps and the product",
+          "bullets": [
+            "Product, price, place, promotion",
+            "Product: goods or services, design, packaging",
+            "New product development: idea, research, testing, launch",
+            "Packaging protects, informs and attracts"
+          ],
+          "note": "Bismillah. Use fictional Sunrise Juices. Ask pupils to list the four Ps. Then go deep on product: a good must be safe and as described. Packaging must be honest; Islamic ethics value honesty in trade, and the teacher can expand without quoting. New product development: idea, market research, prototype, testing, launch. Many ideas fail: ask why testing saves money."
+        },
+        {
+          "heading": "The product life cycle",
+          "note": "Use the cycle. Stages: development (cost, no sales), introduction (low sales), growth (rising), maturity (sales peak and level), decline (falling). Ask pupils to place Sunrise's Mango Boost. Extension strategies: new flavours, new packaging, new markets, price cuts, advertising. Misconception: every product reaches decline at a different speed; fashion fast, salt slow.",
+          "cycle": [
+            "Development",
+            "Introduction",
+            "Growth",
+            "Maturity",
+            "Decline"
+          ]
+        },
+        {
+          "heading": "Extension strategies",
+          "bullets": [
+            "New packaging or design",
+            "New flavour or version",
+            "Sell in a new market or country",
+            "Fresh advertising or a promotion"
+          ],
+          "note": "Give Mango Boost, in maturity, sales stuck at 40,000 bottles a month. Ask pupils to choose two strategies and say what each costs. Draw out that extension can reverse falling sales, but costs money and may not work."
+        },
+        {
+          "heading": "Boston matrix",
+          "note": "Explain axes: market share across, market growth up. Stars need investment, cash cows fund others, problem children could become stars or dogs, dogs may be dropped. Misconception: a dog is not always loss-making, but its prospects are poor. Ask pupils to classify Sunrise's four products with the table.",
+          "table": {
+            "head": [
+              "Product (fictional)",
+              "Market share",
+              "Market growth",
+              "Category"
+            ],
+            "rows": [
+              [
+                "Mango Boost",
+                "High",
+                "Low",
+                "Cash cow"
+              ],
+              [
+                "Green Detox",
+                "High",
+                "High",
+                "Star"
+              ],
+              [
+                "Chia Shot",
+                "Low",
+                "High",
+                "Problem child"
+              ],
+              [
+                "Plain Apple",
+                "Low",
+                "Low",
+                "Dog"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check: life cycle",
+          "note": "Answer A. Sales rising quickly with rising profit is growth. Maturity is level sales.",
+          "check": {
+            "q": "Sunrise's Green Detox drink has sales rising fast and new retailers stocking it. Which stage is this?",
+            "options": [
+              "Growth",
+              "Maturity",
+              "Decline",
+              "Introduction"
+            ],
+            "answer": 0,
+            "why": "Quickly rising sales as more retailers stock the product is the growth stage."
+          }
+        },
+        {
+          "heading": "Worked example: using the matrix",
+          "note": "Model a decision from numbers. Ask: what would you do with a dog? Answer options: drop, or reposition. Remind that the matrix is a snapshot and needs updating.",
+          "model": {
+            "problem": "Sunrise's Plain Apple has 3% market share in a market growing 1% a year, and costs 12,000 pounds to make. What should the firm consider?",
+            "steps": [
+              "Low share and low growth: this is a dog",
+              "Dogs rarely earn much profit",
+              "Option: stop selling and use the money elsewhere",
+              "Option: check whether it helps the sales of other products before dropping"
+            ],
+            "answer": "Likely to drop it, unless it supports other sales"
+          }
+        }
+      ],
+      "practice": [
+        "Place a product with falling sales and fewer shops stocking it in the life cycle.",
+        "Give two extension strategies for a snack in maturity.",
+        "Explain what a business should do with a star product."
+      ],
+      "independent": [
+        "Core: Draw a life cycle graph and label each stage for a fictional phone.",
+        "Extend: Explain how packaging can add value to a product.",
+        "Stretch: Evaluate (8 marks): A firm with one cash cow, two stars and two dogs has 100,000 pounds to invest. How should it allocate it?"
+      ],
+      "exit": [
+        "Name the stages of the life cycle.",
+        "What is a cash cow?",
+        "Big question: one reason products last for decades."
+      ],
+      "homework": "Choose a product you know and place it on the life cycle and the Boston matrix with reasons.",
+      "send": "SEND: give a labelled life-cycle diagram. EAL: use images for star, cash cow, dog. Stretch: investigate how extension strategies changed a real product.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 4.3: Marketing mix",
+      "n": 18,
+      "title": "The marketing mix: pricing strategies",
+      "duration": 50,
+      "bigQuestion": "How low can you price a product before it stops paying?",
+      "objectives": [
+        "Describe cost-plus, penetration, competition, skimming and promotional pricing",
+        "Calculate a cost-plus price",
+        "Choose a pricing strategy for a given situation"
+      ],
+      "successCriteria": [
+        "All: name five pricing strategies",
+        "Most: calculate a cost-plus selling price",
+        "Some: justify a pricing strategy using evidence"
+      ],
+      "crossCurricular": "Maths: percentages, markup and profit",
+      "smsc": "Moral: fair pricing and avoiding unfair profiteering; the teacher may draw on class discussion of fairness in trade",
+      "keywords": [
+        {
+          "term": "cost-plus pricing",
+          "def": "adding a fixed percentage or amount to unit cost"
+        },
+        {
+          "term": "penetration pricing",
+          "def": "a low launch price to win customers"
+        },
+        {
+          "term": "price skimming",
+          "def": "a high launch price for a new, desirable product"
+        },
+        {
+          "term": "competitive pricing",
+          "def": "setting price in line with rivals"
+        },
+        {
+          "term": "promotional pricing",
+          "def": "temporary price cuts such as sales and offers"
+        },
+        {
+          "term": "unit cost",
+          "def": "the cost of making one item"
+        }
+      ],
+      "starter": [
+        "Name the four Ps.",
+        "What is a niche market?",
+        "Name the five stages of the life cycle."
+      ],
+      "teach": [
+        {
+          "heading": "Why price matters",
+          "bullets": [
+            "Price affects sales, profit and image",
+            "Too high loses customers",
+            "Too low may not cover costs",
+            "Must fit target customers"
+          ],
+          "note": "Bismillah. Use fictional Zahra's Bags. If the bag costs 18 pounds to make and sells for 15, the business loses. Ask pupils what else price signals: quality. Fairness: a business that raises prices unfairly because customers have no other choice can damage trust; teachers can expand on ethics in trade without quoting."
+        },
+        {
+          "heading": "Five strategies",
+          "bullets": [
+            "Cost-plus: unit cost plus a markup",
+            "Penetration: low price to enter the market",
+            "Skimming: high price for a new, exciting product",
+            "Competitive: match rivals' prices",
+            "Promotional: short-term offers"
+          ],
+          "note": "Give each a quick scenario. Zahra's: cost-plus to ensure profit. A new smartwatch uses skimming to earn from early adopters. A cafe next to rivals uses competitive pricing. A launch sale uses promotional pricing. Penetration requires being able to bear lower profit early; risk of customers leaving when price rises."
+        },
+        {
+          "heading": "Worked example: cost-plus",
+          "note": "Ask pupils to add markup to cost. Check that 40 per cent markup is of cost, not of selling price. Extend: profit per bag = 7.20; for 500 bags sold profit 3,600.",
+          "model": {
+            "problem": "A bag costs 18 pounds to make. Zahra adds a 40% markup. Find the selling price, and the profit on 500 bags.",
+            "steps": [
+              "Markup = 40% of 18 = 7.20",
+              "Selling price = 18 + 7.20 = 25.20",
+              "Profit per bag = 7.20",
+              "Profit on 500 = 500 x 7.20"
+            ],
+            "answer": "Price 25.20 pounds; profit 3,600 pounds"
+          }
+        },
+        {
+          "heading": "Choosing a strategy",
+          "note": "Use table to link strategy to situation. Pupils practise matching. Drive the point that the best strategy depends on the market, product and aims. Skimming is risky if copied quickly.",
+          "table": {
+            "head": [
+              "Strategy",
+              "Best when",
+              "Risk"
+            ],
+            "rows": [
+              [
+                "Cost-plus",
+                "Costs are clear",
+                "Ignores rivals"
+              ],
+              [
+                "Penetration",
+                "New brand needs customers",
+                "Low profit, hard to raise price"
+              ],
+              [
+                "Skimming",
+                "Unique, new product",
+                "Competitors enter, price falls"
+              ],
+              [
+                "Competitive",
+                "Many similar rivals",
+                "Little differentiation"
+              ],
+              [
+                "Promotional",
+                "Clearing stock or attracting visitors",
+                "Customers wait for sales"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check: strategy",
+          "note": "Answer B. Setting a low launch price to win customers quickly is penetration.",
+          "check": {
+            "q": "A new streaming app sets a very low price in its first three months to gain subscribers. Which strategy is this?",
+            "options": [
+              "Skimming",
+              "Penetration",
+              "Cost-plus",
+              "Promotional"
+            ],
+            "answer": 1,
+            "why": "A low price to enter a market and win customers fast is penetration pricing. Promotional pricing is also temporary, but its aim is short-term sales on established products."
+          }
+        },
+        {
+          "heading": "Evaluating price decisions",
+          "bullets": [
+            "Look at costs, competitors and customers",
+            "Consider the product's life cycle stage",
+            "Think about the image the price creates",
+            "Judge short-term versus long-term effect"
+          ],
+          "note": "Tell pupils that in evaluation questions, they should weigh up at least two factors and make a decision. Give an example: Zahra's has 30 rivals selling at 22 pounds. Cost-plus at 25.20 might lose customers; competitive pricing may reduce profit but keep sales."
+        }
+      ],
+      "practice": [
+        "A cake costs 6 pounds. Add a 50% markup. What is the price?",
+        "Explain one risk of penetration pricing.",
+        "State two reasons a business might use promotional pricing."
+      ],
+      "independent": [
+        "Core: Calculate cost-plus prices for five items with different markups.",
+        "Extend: Explain why price skimming suits a new gadget but not a loaf of bread.",
+        "Stretch: Justify (6 marks): Zahra's Bags can use cost-plus at 25.20 pounds or match rivals at 22 pounds. Which, and why? Use unit cost 18 pounds."
+      ],
+      "exit": [
+        "Define price skimming.",
+        "Calculate selling price with cost 40 pounds and markup 25%.",
+        "Big question: how low before it stops paying?"
+      ],
+      "homework": "Compare the prices of one product at three shops and say which strategy each seems to use.",
+      "send": "SEND: give a markup calculation template. EAL: define penetration and skimming with images. Stretch: link pricing strategies to the product life cycle.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 4.3: Marketing mix",
+      "n": 19,
+      "title": "The marketing mix: place and promotion",
+      "duration": 50,
+      "bigQuestion": "Does a good product sell itself?",
+      "objectives": [
+        "Describe retailers and e-tailers as places to sell",
+        "Describe advertising, sponsorship, trials, offers, branding and public relations",
+        "Distinguish above-the-line from below-the-line promotion and explain online promotion"
+      ],
+      "successCriteria": [
+        "All: name two routes to market and four promotion methods",
+        "Most: classify promotion as above or below the line",
+        "Some: justify a promotion mix for a given business"
+      ],
+      "crossCurricular": "English: persuasive and advertising language; Computer Science: e-commerce",
+      "smsc": "Moral: truthful advertising; avoiding misleading or manipulative claims",
+      "keywords": [
+        {
+          "term": "retailer",
+          "def": "a business that sells goods to the public from shops"
+        },
+        {
+          "term": "e-tailer",
+          "def": "a retailer that sells online"
+        },
+        {
+          "term": "branding",
+          "def": "creating a name and identity that customers recognise"
+        },
+        {
+          "term": "above the line",
+          "def": "promotion in media for a mass audience, such as TV and press"
+        },
+        {
+          "term": "below the line",
+          "def": "direct promotion, such as offers and trials"
+        },
+        {
+          "term": "public relations (PR)",
+          "def": "managing the image a business has with the public"
+        },
+        {
+          "term": "viral marketing",
+          "def": "content shared quickly between users on social media"
+        }
+      ],
+      "starter": [
+        "Define penetration pricing.",
+        "Calculate cost 20 pounds plus markup 30%.",
+        "Name a stage of the product life cycle."
+      ],
+      "teach": [
+        {
+          "heading": "Place: how goods reach customers",
+          "bullets": [
+            "Retailers: shops, supermarkets, markets",
+            "E-tailers: websites and apps",
+            "Direct from producer to customer",
+            "Choice depends on product and customers"
+          ],
+          "note": "Bismillah. Use fictional Noor's Notebooks. Compare shop: customers can see the product, immediate sale, high rent. Online: wider reach, lower rent, delivery cost, returns. Ask: which suits a product that must be tried on? Shop. Link to location lesson on e-commerce."
+        },
+        {
+          "heading": "Promotion methods",
+          "bullets": [
+            "Advertising: TV, radio, press, posters",
+            "Sponsorship: paying to be linked with an event",
+            "Trials: free samples to try",
+            "Offers: discounts, buy one get one free",
+            "Branding and PR: build image and trust"
+          ],
+          "note": "Ask for an example of each from pupils' lives. Add honesty: adverts must not lie; misleading claims can break the law and the trust of customers. Ask which methods cost most. TV is expensive for a small firm; a free sample may suit a local business."
+        },
+        {
+          "heading": "Above and below the line",
+          "note": "Table. Teachers: stress above the line is mass media and below the line is direct to customers. Common error: sponsorship is often placed above the line; accept with explanation. PR sits in its own category in many courses; treat it as separate if the class prefers.",
+          "table": {
+            "head": [
+              "Type",
+              "Meaning",
+              "Examples",
+              "Cost and reach"
+            ],
+            "rows": [
+              [
+                "Above the line",
+                "Mass media for a wide audience",
+                "TV, radio, national press",
+                "Expensive, wide reach"
+              ],
+              [
+                "Below the line",
+                "Direct to likely customers",
+                "Free samples, discount vouchers, direct mail",
+                "Cheaper, targeted"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Online promotion",
+          "bullets": [
+            "Targeted adverts based on interests",
+            "Viral social media posts shared by users",
+            "E-newsletters to subscribers",
+            "Cheaper and measurable, but needs managing"
+          ],
+          "note": "Show how targeted adverts can reach only 15 to 18 year olds, reducing waste. Viral: one funny video shared by 20,000 users. E-newsletters: low cost, only reach people who signed up. Risks: negative comments spread as quickly. Ask pupils to suggest a viral idea for Noor's Notebooks and then discuss honesty and respect in content."
+        },
+        {
+          "heading": "Worked example: promotion cost per sale",
+          "note": "Model cost-effectiveness. Ask which is better value and what else to consider (reach and long-term brand).",
+          "model": {
+            "problem": "Noor's Notebooks spends 600 pounds on a radio advert and gains 150 sales. It spends 240 pounds on targeted online adverts and gains 120 sales. Which cost less per sale?",
+            "steps": [
+              "Radio: 600 divided by 150 = 4 pounds",
+              "Online: 240 divided by 120 = 2 pounds",
+              "Compare the two",
+              "Online is half the cost per sale"
+            ],
+            "answer": "Online adverts: 2 pounds per sale against 4 pounds"
+          }
+        },
+        {
+          "heading": "Check: classify",
+          "note": "Answer C. Free samples are direct promotion to customers: below the line.",
+          "check": {
+            "q": "A juice company hands out free samples outside a school. Which type of promotion is this?",
+            "options": [
+              "Above the line advertising",
+              "Sponsorship",
+              "Below the line trial",
+              "Branding"
+            ],
+            "answer": 2,
+            "why": "Free samples are a trial and are below the line. TV or national press would be above the line."
+          }
+        }
+      ],
+      "practice": [
+        "Noor's spends 900 pounds on an advert that gains 300 sales. Calculate the cost per sale.",
+        "State two benefits of selling through an e-tailer.",
+        "Explain why a small business might use below-the-line promotion."
+      ],
+      "independent": [
+        "Core: Match ten promotion examples to above or below the line.",
+        "Extend: Explain two risks of viral social media marketing.",
+        "Stretch: Evaluate (8 marks): With 2,000 pounds, should a new local cafe use a radio advert or social media and free samples? Give a reasoned judgement."
+      ],
+      "exit": [
+        "Define branding.",
+        "Give one difference between a retailer and an e-tailer.",
+        "Big question: does a good product sell itself? One reason it needs promotion."
+      ],
+      "homework": "Collect two adverts you see this week and classify the type of promotion.",
+      "send": "SEND: use a sorting card set. EAL: show brand logos for branding. Stretch: design a promotion mix for 500 pounds.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 2.1: Communication",
+      "n": 20,
+      "title": "Communication in business: methods, barriers and IT",
+      "duration": 50,
+      "bigQuestion": "Why can one unclear message cost a business thousands?",
+      "objectives": [
+        "Explain why good communication matters",
+        "Describe communication methods, including IT, with benefits and limitations",
+        "Identify barriers to communication and ways to remove them"
+      ],
+      "successCriteria": [
+        "All: name three communication methods and two barriers",
+        "Most: explain benefits and limitations of email and meetings",
+        "Some: choose and justify a method for a given message"
+      ],
+      "crossCurricular": "English: formal and informal writing; Computer Science: digital communication",
+      "smsc": "Moral: truthful, respectful communication (adab) with colleagues and customers",
+      "keywords": [
+        {
+          "term": "communication",
+          "def": "passing information from a sender to a receiver and getting feedback"
+        },
+        {
+          "term": "channel",
+          "def": "the method used to send a message"
+        },
+        {
+          "term": "barrier",
+          "def": "anything that stops a message being understood"
+        },
+        {
+          "term": "feedback",
+          "def": "the receiver's response confirming the message was understood"
+        },
+        {
+          "term": "jargon",
+          "def": "specialist words that others may not understand"
+        }
+      ],
+      "starter": [
+        "Define above the line promotion.",
+        "Give one benefit of an e-tailer.",
+        "State one promotion method."
+      ],
+      "teach": [
+        {
+          "heading": "Why communication matters",
+          "bullets": [
+            "Staff know what to do and when",
+            "Fewer mistakes and wasted costs",
+            "Customers get accurate information",
+            "Better teamwork and morale"
+          ],
+          "note": "Bismillah. Use fictional Lantern Logistics: a manager emails 'deliver the order tomorrow' but not which address, and 3,000 pounds of goods go to the wrong place. Ask pupils to calculate the cost of a mistake. Then link to adab: polite, clear, truthful speech in the workplace."
+        },
+        {
+          "heading": "Methods and IT",
+          "note": "Table. Stress the exam wants benefits and limitations in context. Choose the channel to fit the message: urgent, private, formal, many people. Ask pupils which method for dismissal (face to face, with a letter), a team update (email), an urgent change (phone or messaging app).",
+          "table": {
+            "head": [
+              "Method",
+              "Benefit",
+              "Limitation"
+            ],
+            "rows": [
+              [
+                "Face to face meeting",
+                "Immediate feedback, tone",
+                "Time and travel"
+              ],
+              [
+                "Email",
+                "Fast, written record, many receivers",
+                "Can be unread or misread"
+              ],
+              [
+                "Messaging apps",
+                "Instant, informal",
+                "Distracting, no formal record"
+              ],
+              [
+                "Video call",
+                "Face to face from far away",
+                "Needs internet and equipment"
+              ],
+              [
+                "Notice board or letter",
+                "Everyone sees, formal",
+                "Slow, no feedback"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Barriers to communication",
+          "bullets": [
+            "Jargon and unclear language",
+            "Too many layers of management",
+            "Language or cultural differences",
+            "Technology failure or information overload",
+            "Poor listening or no feedback"
+          ],
+          "note": "Ask pupils for an example of each in Lantern Logistics. Discuss how much more difficult communication becomes in a large business with sites in many countries and time zones. Ask for solutions: simple language, fewer layers, translation, backup systems, checking understanding."
+        },
+        {
+          "heading": "Removing barriers",
+          "bullets": [
+            "Use plain language and short messages",
+            "Check understanding with feedback",
+            "Train staff to listen",
+            "Use the right channel for the message"
+          ],
+          "note": "Make the solution part of each barrier. Misconception: IT removes all barriers; it can create new ones, such as too many emails. Ask: how do you check understanding? Ask the receiver to repeat the task in their own words."
+        },
+        {
+          "heading": "Worked example: choosing a channel",
+          "note": "Model the reasoning. Ask pupils to give a different choice and justify it. The point is that justification, not the answer, earns marks.",
+          "model": {
+            "problem": "Lantern Logistics must tell 40 drivers that a road is closed from 6am tomorrow. Choose a channel and justify.",
+            "steps": [
+              "Message is urgent and short",
+              "40 receivers across different places",
+              "A group messaging app reaches everyone quickly",
+              "Limitation: some may not read it, so ask for a reply to confirm"
+            ],
+            "answer": "Group messaging app with confirmation replies"
+          }
+        },
+        {
+          "heading": "Check: barrier",
+          "note": "Answer A. Jargon is a language barrier. B and C are solutions, not barriers.",
+          "check": {
+            "q": "A manager fills an instruction with technical abbreviations the new staff do not know. What is this barrier?",
+            "options": [
+              "Jargon",
+              "Feedback",
+              "Short messages",
+              "Face to face contact"
+            ],
+            "answer": 0,
+            "why": "Specialist words the receiver does not know are jargon, a common barrier."
+          }
+        }
+      ],
+      "practice": [
+        "Give one benefit and one limitation of email.",
+        "Lantern's mistake cost 3,000 pounds on each of 4 wrong deliveries. Calculate the total cost.",
+        "Suggest two ways to remove a language barrier."
+      ],
+      "independent": [
+        "Core: Match six messages to the best channel and explain each.",
+        "Extend: Explain two ways IT has changed communication for a business with sites in three countries.",
+        "Stretch: Analyse (6 marks): A manager communicates only by email with a team of fifteen. Analyse two problems and recommend improvements."
+      ],
+      "exit": [
+        "Define barrier to communication.",
+        "Name one communication method and one limitation.",
+        "Big question: how can one unclear message cost thousands? Answer in a sentence."
+      ],
+      "homework": "Rewrite a confusing instruction in plain language and say which barrier you removed.",
+      "send": "SEND: provide a sentence frame for choosing a channel. EAL: pre-teach jargon with examples. Stretch: discuss communication in large multinational teams.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 2.2: Recruitment and selection",
+      "n": 21,
+      "title": "Recruitment and selection: finding the right person",
+      "duration": 50,
+      "bigQuestion": "What makes the right person for the job?",
+      "objectives": [
+        "Describe types of employment and recruitment documents",
+        "Compare internal and external recruitment and describe the process",
+        "Explain legal controls: equal opportunities and minimum wage"
+      ],
+      "successCriteria": [
+        "All: define job description and person specification and name three employment types",
+        "Most: compare internal and external recruitment",
+        "Some: justify a recruitment method and explain legal controls"
+      ],
+      "crossCurricular": "English: CV and application writing; PSHE: careers",
+      "smsc": "Moral: justice and equal treatment in hiring; fair pay and honest dealing",
+      "keywords": [
+        {
+          "term": "job description",
+          "def": "a document listing the duties of a job"
+        },
+        {
+          "term": "person specification",
+          "def": "the skills, qualities and experience needed in the post holder"
+        },
+        {
+          "term": "shortlisting",
+          "def": "narrowing applicants to those who best match the specification"
+        },
+        {
+          "term": "internal recruitment",
+          "def": "filling a post from existing staff"
+        },
+        {
+          "term": "external recruitment",
+          "def": "filling a post from outside the business"
+        },
+        {
+          "term": "minimum wage",
+          "def": "the lowest hourly pay the law allows"
+        },
+        {
+          "term": "equal opportunities",
+          "def": "laws and policies preventing unfair discrimination at work"
+        }
+      ],
+      "starter": [
+        "Name two communication barriers.",
+        "Give one benefit of face to face communication.",
+        "Define jargon."
+      ],
+      "teach": [
+        {
+          "heading": "Types of employment",
+          "bullets": [
+            "Full-time and part-time",
+            "Job share: two people share one job",
+            "Casual, temporary and seasonal",
+            "Choice depends on demand and cost"
+          ],
+          "note": "Bismillah. Use fictional Seaside Ice Cream, busy in summer only. Ask which type fits. Seasonal staff in summer; casual cover for busy weekends; a full-time manager all year. Benefits to the firm: flexibility, lower cost. Drawbacks: less commitment, need to train again each year."
+        },
+        {
+          "heading": "Recruitment documents",
+          "bullets": [
+            "Job description: duties and conditions",
+            "Person specification: skills and qualities needed",
+            "Application form or CV from applicants",
+            "References from past employers"
+          ],
+          "note": "Show a short job description and person specification for a shop assistant. Pupils decide which statement belongs in each. Misconception: the two are often confused: one describes the job, the other describes the person."
+        },
+        {
+          "heading": "The process",
+          "note": "Use cycle. At shortlisting, the firm compares each application to the person specification. At interview it asks questions and may add tests. Honesty: applicants should be honest on CVs, and employers honest about the job, which links to trust and truthfulness in dealing.",
+          "cycle": [
+            "Identify the vacancy",
+            "Write job description and person specification",
+            "Advertise the post",
+            "Shortlist applicants",
+            "Interview and select",
+            "Offer the job"
+          ]
+        },
+        {
+          "heading": "Internal and external recruitment",
+          "note": "Compare. Internal: cheaper, quicker, motivates staff, who know the firm, but a smaller choice and creates a gap elsewhere. External: new ideas and bigger choice, but costly and slower, and new staff need induction. Ask pupils which they would choose for a manager role.",
+          "compare": {
+            "left": {
+              "title": "Internal",
+              "points": [
+                "Cheaper and faster",
+                "Staff already know the firm",
+                "Motivates others to work hard",
+                "Small choice; leaves another vacancy"
+              ]
+            },
+            "right": {
+              "title": "External",
+              "points": [
+                "Wider choice and new skills",
+                "Fresh ideas",
+                "Costs of advertising",
+                "Slower; needs induction"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Legal controls",
+          "bullets": [
+            "Equal opportunities: no unfair discrimination",
+            "Minimum wage: lowest legal hourly rate",
+            "Firms must follow the law in every country they operate in",
+            "Breaking the law risks fines and a poor reputation"
+          ],
+          "note": "Keep it factual: do not quote specific current wage figures unless given in a question. Use fictional numbers. Equal opportunities: choose by skills, not by unrelated personal characteristics. Fair treatment of workers is also a theme in Islamic ethics; the teacher may expand and invite pupils to discuss."
+        },
+        {
+          "heading": "Check: document",
+          "note": "Answer B. The person specification describes the person; the job description describes the duties.",
+          "check": {
+            "q": "Which document lists the skills and qualities a successful applicant should have?",
+            "options": [
+              "Job description",
+              "Person specification",
+              "Application form",
+              "Reference"
+            ],
+            "answer": 1,
+            "why": "The person specification describes the ideal person. The job description lists duties; confusing the two is the usual error."
+          }
+        },
+        {
+          "heading": "Worked example: cost of a recruitment",
+          "note": "Model the calculation and then the evaluation: cheaper does not always mean better. Ask what else matters: skills and fit with the specification.",
+          "model": {
+            "problem": "Seaside Ice Cream pays 450 pounds to advertise a post externally. Internal recruitment would cost 100 pounds of manager time. The new employee will be paid 9 pounds an hour for 30 hours a week. Find the extra cost of external recruitment and the weekly wage.",
+            "steps": [
+              "Extra cost = 450 - 100 = 350 pounds",
+              "Weekly wage = 9 x 30",
+              "= 270 pounds",
+              "Compare: the extra cost equals more than one week's wage"
+            ],
+            "answer": "350 pounds extra; wage 270 pounds a week"
+          }
+        }
+      ],
+      "practice": [
+        "Seaside needs 6 seasonal staff for 12 weeks at 8 pounds an hour for 20 hours a week. Calculate the total wage bill.",
+        "State one benefit and one drawback of internal recruitment.",
+        "Explain why a person specification helps with shortlisting."
+      ],
+      "independent": [
+        "Core: Write a job description and a person specification for a fictional shop assistant.",
+        "Extend: Explain two reasons why Seaside Ice Cream might use seasonal staff.",
+        "Stretch: Justify (6 marks): A cafe needs a new manager. Should it promote its supervisor or recruit externally? Use the information that the supervisor has two years' experience and the cafe needs new ideas."
+      ],
+      "exit": [
+        "Define equal opportunities.",
+        "Name two types of employment.",
+        "Big question: what makes the right person for the job?"
+      ],
+      "homework": "Find a real job advert and identify one duty and one skill required.",
+      "send": "SEND: provide labelled examples of job description and person specification. EAL: pre-teach vacancy, shortlist. Stretch: investigate why job sharing might help some workers.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
     }
   ]
 }

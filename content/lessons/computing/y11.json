@@ -2,7 +2,7 @@
   "subject": "Computing",
   "year": "y11",
   "board": "Edexcel",
-  "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 3 Computers, Topic 4 Networks); sequence follows the school's Drive Y10-11 scheme of work topics (cyber security, networks) and the Computer Science 9-1 folder; Python practice retained for Paper 2 skills",
+  "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 3 Computers, Topic 4 Networks); sequence follows the school's Drive Y10-11 scheme of work topics (cyber security, networks) and the Computer Science 9-1 folder; Python practice retained for Paper 2 skills | Edexcel GCSE Computer Science 1CP2 specification (syllabus file content/syllabus/ks4/computing.json: units 3.1 to 3.3, 4.1, 4.2, 5.1 to 5.3). Original lessons. The existing y11 set (content/lessons/computing/y11.json) already gives an overview of the CPU and fetch-decode-execute, memory and storage, operating systems and utilities, translators, LAN/WAN, star and mesh topologies, common protocols, malware and network threats, and prevention; these lessons do not re-teach that overview and instead cover the remaining spec points (buses, von Neumann, embedded systems, robust software, internet structure, latency, transmission calculations, TCP/IP layers, bus topology, ethical issues, intellectual property, environmental impact) with deeper, exam-style treatment.",
   "lessons": [
     {
       "unit": "Unit 1: Computers (Topic 3)",
@@ -15,11 +15,26 @@
         "Explain how clock speed, cores and cache affect performance"
       ],
       "keywords": [
-        { "term": "CPU", "def": "the central processing unit which carries out program instructions" },
-        { "term": "ALU", "def": "arithmetic logic unit: does calculations and logical comparisons" },
-        { "term": "control unit", "def": "directs the flow of data and instructions in the CPU" },
-        { "term": "register", "def": "a very small, very fast storage location inside the CPU" },
-        { "term": "cache", "def": "fast memory close to the CPU which holds frequently used data" }
+        {
+          "term": "CPU",
+          "def": "the central processing unit which carries out program instructions"
+        },
+        {
+          "term": "ALU",
+          "def": "arithmetic logic unit: does calculations and logical comparisons"
+        },
+        {
+          "term": "control unit",
+          "def": "directs the flow of data and instructions in the CPU"
+        },
+        {
+          "term": "register",
+          "def": "a very small, very fast storage location inside the CPU"
+        },
+        {
+          "term": "cache",
+          "def": "fast memory close to the CPU which holds frequently used data"
+        }
       ],
       "starter": [
         "Bismillah. State two input devices and two output devices.",
@@ -29,22 +44,41 @@
       "teach": [
         {
           "heading": "Inside the CPU",
-          "bullets": ["ALU: arithmetic and logic.", "Control unit: manages instructions.", "Registers: tiny, fast storage.", "Cache: fast memory near the CPU."],
+          "bullets": [
+            "ALU: arithmetic and logic.",
+            "Control unit: manages instructions.",
+            "Registers: tiny, fast storage.",
+            "Cache: fast memory near the CPU."
+          ],
           "note": "Draw a block diagram with the CPU connected to main memory by buses. Explain that the CPU follows the stored program idea of Von Neumann architecture: instructions and data are stored in the same main memory. Pupils sketch the diagram."
         },
         {
           "heading": "Registers",
-          "bullets": ["PC: address of the next instruction.", "MAR: address to read or write.", "MDR: data being transferred.", "ACC: results of calculations."],
+          "bullets": [
+            "PC: address of the next instruction.",
+            "MAR: address to read or write.",
+            "MDR: data being transferred.",
+            "ACC: results of calculations."
+          ],
           "note": "Walk through what each register holds. A common mistake is to say the PC holds the instruction; it holds the address of the next instruction. Learners should be able to say what each register stores."
         },
         {
           "heading": "Fetch-decode-execute",
-          "bullets": ["Fetch: instruction copied from memory to CPU.", "Decode: control unit works out what it means.", "Execute: instruction is carried out.", "Repeat for the next instruction."],
+          "bullets": [
+            "Fetch: instruction copied from memory to CPU.",
+            "Decode: control unit works out what it means.",
+            "Execute: instruction is carried out.",
+            "Repeat for the next instruction."
+          ],
           "note": "Trace a simple instruction 'ADD 5': PC address goes to MAR, the instruction is fetched into MDR, the PC increases, the control unit decodes, the ALU executes and the ACC stores the result. Use the cycle as a loop."
         },
         {
           "heading": "Performance factors",
-          "bullets": ["Clock speed: cycles per second (GHz).", "More cores: tasks run in parallel.", "Bigger cache: fewer slow memory trips."],
+          "bullets": [
+            "Clock speed: cycles per second (GHz).",
+            "More cores: tasks run in parallel.",
+            "Bigger cache: fewer slow memory trips."
+          ],
           "note": "Explain each factor with consequences. Misconception: more cores always means faster; it only helps when the software can use multiple cores. Embedded systems (in washing machines, cars) have a CPU dedicated to one function; ask for examples."
         }
       ],
@@ -76,11 +110,26 @@
         "Compare magnetic, solid-state and optical storage"
       ],
       "keywords": [
-        { "term": "RAM", "def": "volatile main memory that holds programs and data in use" },
-        { "term": "ROM", "def": "non-volatile memory holding start-up instructions" },
-        { "term": "volatile", "def": "loses its contents when power is switched off" },
-        { "term": "secondary storage", "def": "non-volatile storage for programs and files for the long term" },
-        { "term": "virtual memory", "def": "part of secondary storage used as extra RAM when RAM is full" }
+        {
+          "term": "RAM",
+          "def": "volatile main memory that holds programs and data in use"
+        },
+        {
+          "term": "ROM",
+          "def": "non-volatile memory holding start-up instructions"
+        },
+        {
+          "term": "volatile",
+          "def": "loses its contents when power is switched off"
+        },
+        {
+          "term": "secondary storage",
+          "def": "non-volatile storage for programs and files for the long term"
+        },
+        {
+          "term": "virtual memory",
+          "def": "part of secondary storage used as extra RAM when RAM is full"
+        }
       ],
       "starter": [
         "Bismillah. Describe the fetch stage of the fetch-decode-execute cycle.",
@@ -90,22 +139,38 @@
       "teach": [
         {
           "heading": "Primary memory",
-          "bullets": ["RAM: volatile, read and write, programs in use.", "ROM: non-volatile, holds boot instructions.", "Cache: very fast, small, near the CPU."],
+          "bullets": [
+            "RAM: volatile, read and write, programs in use.",
+            "ROM: non-volatile, holds boot instructions.",
+            "Cache: very fast, small, near the CPU."
+          ],
           "note": "Link to the CPU lesson: CPU only works with data in main memory. Use the desk analogy: RAM is your desk (fast access but small and cleared), storage is a filing cabinet. Ask pupils what happens when RAM fills up."
         },
         {
           "heading": "Virtual memory",
-          "bullets": ["RAM full? Move some data to secondary storage.", "Swap data back when needed.", "Slower than RAM."],
+          "bullets": [
+            "RAM full? Move some data to secondary storage.",
+            "Swap data back when needed.",
+            "Slower than RAM."
+          ],
           "note": "Explain that virtual memory prevents crashes when RAM is full but slows the computer down because storage is much slower than RAM. Ask pupils to explain why adding more RAM helps."
         },
         {
           "heading": "Secondary storage",
-          "bullets": ["Magnetic: hard disk drives, cheap, large, moving parts.", "Solid state: SSD, flash, fast, durable, costly.", "Optical: CD, DVD, Blu-ray, portable, slower."],
+          "bullets": [
+            "Magnetic: hard disk drives, cheap, large, moving parts.",
+            "Solid state: SSD, flash, fast, durable, costly.",
+            "Optical: CD, DVD, Blu-ray, portable, slower."
+          ],
           "note": "Teach by characteristics: capacity, speed, portability, durability, cost, reliability. Hard disks have moving parts, so are more easily damaged by knocks. Solid state storage has no moving parts. Pupils should always relate their choice to the scenario in the question."
         },
         {
           "heading": "Units of data",
-          "bullets": ["8 bits = 1 byte; 4 bits = 1 nibble.", "Kilobyte, megabyte, gigabyte, terabyte.", "Each step up is a factor of 1000 (as used in the specification)."],
+          "bullets": [
+            "8 bits = 1 byte; 4 bits = 1 nibble.",
+            "Kilobyte, megabyte, gigabyte, terabyte.",
+            "Each step up is a factor of 1000 (as used in the specification)."
+          ],
           "note": "Practise conversions: 3 GB = 3000 MB; 4500 KB = 4.5 MB. Before the lesson, check the unit convention (1000) in the Edexcel specification and be consistent. Ask pupils to estimate how many 5 MB photos fit on a 64 GB card (12,800)."
         }
       ],
@@ -137,10 +202,22 @@
         "Describe the purpose of utility software"
       ],
       "keywords": [
-        { "term": "operating system", "def": "software which manages the hardware and runs other programs" },
-        { "term": "application software", "def": "programs which carry out tasks for users, such as a word processor" },
-        { "term": "utility software", "def": "programs which maintain or protect a computer" },
-        { "term": "device driver", "def": "software that lets the operating system communicate with a hardware device" }
+        {
+          "term": "operating system",
+          "def": "software which manages the hardware and runs other programs"
+        },
+        {
+          "term": "application software",
+          "def": "programs which carry out tasks for users, such as a word processor"
+        },
+        {
+          "term": "utility software",
+          "def": "programs which maintain or protect a computer"
+        },
+        {
+          "term": "device driver",
+          "def": "software that lets the operating system communicate with a hardware device"
+        }
       ],
       "starter": [
         "Bismillah. Name one type of secondary storage and give one advantage.",
@@ -150,22 +227,40 @@
       "teach": [
         {
           "heading": "Types of software",
-          "bullets": ["System software: OS and utilities.", "Application software: tasks for users.", "Applications need an OS to run."],
+          "bullets": [
+            "System software: OS and utilities.",
+            "Application software: tasks for users.",
+            "Applications need an OS to run."
+          ],
           "note": "Give examples for each type and ask pupils to classify unfamiliar ones: Windows, an antivirus, a spreadsheet, a web browser. Misconception: a web browser is part of the operating system; it is an application."
         },
         {
           "heading": "Operating system functions",
-          "bullets": ["User interface.", "Memory management and multitasking.", "Managing peripherals and drivers.", "File management and security."],
+          "bullets": [
+            "User interface.",
+            "Memory management and multitasking.",
+            "Managing peripherals and drivers.",
+            "File management and security."
+          ],
           "note": "Link each function to an example: a window system for the interface; sharing RAM among apps; a printer driver; folders; user accounts and passwords. A strong exam answer states the function and explains what the OS does."
         },
         {
           "heading": "Utility software",
-          "bullets": ["Antivirus: finds and removes malware.", "Firewall: filters network traffic.", "Backup: copies data for safety.", "Compression: makes files smaller."],
+          "bullets": [
+            "Antivirus: finds and removes malware.",
+            "Firewall: filters network traffic.",
+            "Backup: copies data for safety.",
+            "Compression: makes files smaller."
+          ],
           "note": "Add disk defragmentation for hard disks (reorders fragmented files) and encryption software. Explain why backups matter: protect against hardware failure, accidental deletion and ransomware. Link to amanah: we look after people's data."
         },
         {
           "heading": "Exam-style link",
-          "bullets": ["Scenario: a school with 1000 pupils.", "Which OS functions are needed?", "Which utilities are essential?"],
+          "bullets": [
+            "Scenario: a school with 1000 pupils.",
+            "Which OS functions are needed?",
+            "Which utilities are essential?"
+          ],
           "note": "Practise applying knowledge to a context. For example, multi-user accounts and file permissions are important so pupils cannot see teachers' files. Ask them to justify the importance of regular updates."
         }
       ],
@@ -197,11 +292,26 @@
         "Choose a suitable language or translator for a situation"
       ],
       "keywords": [
-        { "term": "high-level language", "def": "a language close to human language, such as Python" },
-        { "term": "low-level language", "def": "a language close to the machine: machine code or assembly" },
-        { "term": "compiler", "def": "translates the whole program into machine code before it runs" },
-        { "term": "interpreter", "def": "translates and runs a program one line at a time" },
-        { "term": "assembler", "def": "translates assembly language into machine code" }
+        {
+          "term": "high-level language",
+          "def": "a language close to human language, such as Python"
+        },
+        {
+          "term": "low-level language",
+          "def": "a language close to the machine: machine code or assembly"
+        },
+        {
+          "term": "compiler",
+          "def": "translates the whole program into machine code before it runs"
+        },
+        {
+          "term": "interpreter",
+          "def": "translates and runs a program one line at a time"
+        },
+        {
+          "term": "assembler",
+          "def": "translates assembly language into machine code"
+        }
       ],
       "starter": [
         "Bismillah. Name two functions of an operating system.",
@@ -211,22 +321,41 @@
       "teach": [
         {
           "heading": "High-level languages",
-          "bullets": ["Examples: Python, Java, C#.", "Easier to read, write and debug.", "Not tied to one type of CPU.", "Must be translated before the CPU runs it."],
+          "bullets": [
+            "Examples: Python, Java, C#.",
+            "Easier to read, write and debug.",
+            "Not tied to one type of CPU.",
+            "Must be translated before the CPU runs it."
+          ],
           "note": "Show the same task in Python and in assembly pseudocode to illustrate the difference. Emphasise portability of high-level code. Misconception: Python is not 'run directly by the computer'."
         },
         {
           "heading": "Low-level languages",
-          "bullets": ["Machine code: binary instructions for the CPU.", "Assembly: short mnemonics like ADD, LDA.", "Hard to write; specific to the CPU.", "Used where speed and hardware control matter."],
+          "bullets": [
+            "Machine code: binary instructions for the CPU.",
+            "Assembly: short mnemonics like ADD, LDA.",
+            "Hard to write; specific to the CPU.",
+            "Used where speed and hardware control matter."
+          ],
           "note": "Give uses: embedded systems, device drivers, parts of operating systems. The CPU only understands machine code in binary. Assembly needs an assembler."
         },
         {
           "heading": "Compiler vs interpreter",
-          "bullets": ["Compiler: translates all code first, creates a file to run.", "Interpreter: translates one line at a time.", "Compiled programs run faster.", "Interpreters help find errors line by line."],
+          "bullets": [
+            "Compiler: translates all code first, creates a file to run.",
+            "Interpreter: translates one line at a time.",
+            "Compiled programs run faster.",
+            "Interpreters help find errors line by line."
+          ],
           "note": "Use the analogy of translating a whole book beforehand (compiler) versus a live interpreter in a meeting. Python is usually interpreted when run in a shell. The source code is not needed once a program is compiled, which helps protect it."
         },
         {
           "heading": "Choosing",
-          "bullets": ["Learning to program: high-level + interpreter.", "Games with high speed: compiled language.", "Tiny embedded device: low-level language."],
+          "bullets": [
+            "Learning to program: high-level + interpreter.",
+            "Games with high speed: compiled language.",
+            "Tiny embedded device: low-level language."
+          ],
           "note": "Practise exam-style scenario questions: they require a choice and a reason. Remind pupils that 'it is faster' alone is a weak answer; they should link to the context."
         }
       ],
@@ -258,10 +387,22 @@
         "Explain factors that affect network performance"
       ],
       "keywords": [
-        { "term": "LAN", "def": "local area network covering a small area such as a school" },
-        { "term": "WAN", "def": "wide area network covering a large geographical area" },
-        { "term": "topology", "def": "the layout of devices and connections in a network" },
-        { "term": "bandwidth", "def": "the amount of data that can be sent in a given time" }
+        {
+          "term": "LAN",
+          "def": "local area network covering a small area such as a school"
+        },
+        {
+          "term": "WAN",
+          "def": "wide area network covering a large geographical area"
+        },
+        {
+          "term": "topology",
+          "def": "the layout of devices and connections in a network"
+        },
+        {
+          "term": "bandwidth",
+          "def": "the amount of data that can be sent in a given time"
+        }
       ],
       "starter": [
         "Bismillah. Name one compiler or interpreter and say what it does.",
@@ -271,22 +412,41 @@
       "teach": [
         {
           "heading": "LANs and WANs",
-          "bullets": ["LAN: small area, owned by one organisation.", "WAN: large area, often uses third-party links.", "The internet is the largest WAN."],
+          "bullets": [
+            "LAN: small area, owned by one organisation.",
+            "WAN: large area, often uses third-party links.",
+            "The internet is the largest WAN."
+          ],
           "note": "Give examples: a school network (LAN), a bank linking branches across the UK (WAN). Ask pupils which type they use at home. A common error is to say WAN is 'wireless'; it is about size, not wireless."
         },
         {
           "heading": "Star topology",
-          "bullets": ["Every device connects to a central switch.", "A cable failure affects only one device.", "Easy to add devices.", "If the switch fails, the whole network fails."],
+          "bullets": [
+            "Every device connects to a central switch.",
+            "A cable failure affects only one device.",
+            "Easy to add devices.",
+            "If the switch fails, the whole network fails."
+          ],
           "note": "Draw the star and tick the advantages. Collisions are reduced because the switch sends data only to the intended device. Cost: more cable and a switch."
         },
         {
           "heading": "Mesh topology",
-          "bullets": ["Devices connect to many others.", "Data has alternative routes.", "Very reliable.", "Expensive and complex."],
+          "bullets": [
+            "Devices connect to many others.",
+            "Data has alternative routes.",
+            "Very reliable.",
+            "Expensive and complex."
+          ],
           "note": "Explain full mesh versus partial mesh and why the internet is mesh-like, giving resilience. Compare the number of connections needed as devices increase. Exam answers compare in context."
         },
         {
           "heading": "Performance factors",
-          "bullets": ["Bandwidth.", "Number of users.", "Transmission media: copper, fibre, wireless.", "Interference and distance."],
+          "bullets": [
+            "Bandwidth.",
+            "Number of users.",
+            "Transmission media: copper, fibre, wireless.",
+            "Interference and distance."
+          ],
           "note": "Link each factor to an effect on speed: many users share bandwidth; fibre is faster than copper; Wi-Fi suffers from interference and walls. Compare wired and wireless: wired is more stable and secure, wireless is more convenient and mobile."
         }
       ],
@@ -318,11 +478,26 @@
         "Describe the role of network hardware"
       ],
       "keywords": [
-        { "term": "protocol", "def": "a set of rules for how devices communicate" },
-        { "term": "IP address", "def": "a number identifying a device on a network" },
-        { "term": "DNS", "def": "domain name system: converts website names into IP addresses" },
-        { "term": "router", "def": "a device that forwards packets between networks" },
-        { "term": "switch", "def": "a device that connects devices in a LAN and sends data to the correct one" }
+        {
+          "term": "protocol",
+          "def": "a set of rules for how devices communicate"
+        },
+        {
+          "term": "IP address",
+          "def": "a number identifying a device on a network"
+        },
+        {
+          "term": "DNS",
+          "def": "domain name system: converts website names into IP addresses"
+        },
+        {
+          "term": "router",
+          "def": "a device that forwards packets between networks"
+        },
+        {
+          "term": "switch",
+          "def": "a device that connects devices in a LAN and sends data to the correct one"
+        }
       ],
       "starter": [
         "Bismillah. Name two topologies and state one advantage of each.",
@@ -332,22 +507,42 @@
       "teach": [
         {
           "heading": "Why protocols?",
-          "bullets": ["Devices from different makers must understand each other.", "Protocols set the rules.", "Each protocol has a job."],
+          "bullets": [
+            "Devices from different makers must understand each other.",
+            "Protocols set the rules.",
+            "Each protocol has a job."
+          ],
           "note": "Use the analogy of languages and postal rules. Without agreed rules, communication fails. Link to the Y4 packet activity: packets have addresses and are reassembled."
         },
         {
           "heading": "Common protocols",
-          "bullets": ["HTTP/HTTPS: web pages (HTTPS is encrypted).", "FTP: transferring files.", "SMTP: sending email.", "IMAP/POP: receiving email.", "TCP/IP: sending packets across the internet."],
+          "bullets": [
+            "HTTP/HTTPS: web pages (HTTPS is encrypted).",
+            "FTP: transferring files.",
+            "SMTP: sending email.",
+            "IMAP/POP: receiving email.",
+            "TCP/IP: sending packets across the internet."
+          ],
           "note": "Learners should match each protocol with its purpose. Misconception: HTTPS means a site is trustworthy; it only means the connection is encrypted. Check the specification for the exact list required."
         },
         {
           "heading": "Packets and addresses",
-          "bullets": ["Data is split into packets.", "Each packet has source and destination IP addresses.", "Packets can take different routes.", "TCP reassembles them in order."],
+          "bullets": [
+            "Data is split into packets.",
+            "Each packet has source and destination IP addresses.",
+            "Packets can take different routes.",
+            "TCP reassembles them in order."
+          ],
           "note": "Explain that IP addresses are logical and can change, whereas MAC addresses are fixed to a device's network card. DNS works like a phone book converting names to IP addresses. Walk through the sequence from typing a URL to receiving a page."
         },
         {
           "heading": "Network hardware",
-          "bullets": ["NIC: connects a device to a network.", "Switch: connects devices in a LAN.", "Router: connects networks.", "WAP: wireless access point."],
+          "bullets": [
+            "NIC: connects a device to a network.",
+            "Switch: connects devices in a LAN.",
+            "Router: connects networks.",
+            "WAP: wireless access point."
+          ],
           "note": "Draw a home network: a router with built-in switch and WAP. Ask what each does. A router uses IP addresses to forward packets; a switch uses MAC addresses on a LAN."
         }
       ],
@@ -379,11 +574,26 @@
         "Describe the impact of attacks on organisations"
       ],
       "keywords": [
-        { "term": "malware", "def": "malicious software designed to damage or gain access to a system" },
-        { "term": "phishing", "def": "fake emails or messages used to trick people into giving information" },
-        { "term": "social engineering", "def": "manipulating people into giving away information or access" },
-        { "term": "DoS attack", "def": "flooding a server with requests so legitimate users cannot access it" },
-        { "term": "brute force", "def": "trying many passwords until the correct one is found" }
+        {
+          "term": "malware",
+          "def": "malicious software designed to damage or gain access to a system"
+        },
+        {
+          "term": "phishing",
+          "def": "fake emails or messages used to trick people into giving information"
+        },
+        {
+          "term": "social engineering",
+          "def": "manipulating people into giving away information or access"
+        },
+        {
+          "term": "DoS attack",
+          "def": "flooding a server with requests so legitimate users cannot access it"
+        },
+        {
+          "term": "brute force",
+          "def": "trying many passwords until the correct one is found"
+        }
       ],
       "starter": [
         "Bismillah. State the purpose of a router.",
@@ -393,22 +603,43 @@
       "teach": [
         {
           "heading": "Malware",
-          "bullets": ["Virus: attaches to files and spreads when they are run.", "Worm: spreads itself across networks.", "Trojan: pretends to be useful software.", "Ransomware: locks files and demands payment.", "Spyware: records activity."],
+          "bullets": [
+            "Virus: attaches to files and spreads when they are run.",
+            "Worm: spreads itself across networks.",
+            "Trojan: pretends to be useful software.",
+            "Ransomware: locks files and demands payment.",
+            "Spyware: records activity."
+          ],
           "note": "Distinguish carefully: viruses need a host file and user action; worms replicate on their own. Misconception: a Trojan is a virus; it is distinguished by disguise. Mention that paying a ransom is never guaranteed to restore files."
         },
         {
           "heading": "Attacks on networks",
-          "bullets": ["Brute force: guessing passwords.", "Denial of service: overwhelming a server.", "Data interception: stealing data in transit.", "SQL injection: harmful code typed into a form."],
+          "bullets": [
+            "Brute force: guessing passwords.",
+            "Denial of service: overwhelming a server.",
+            "Data interception: stealing data in transit.",
+            "SQL injection: harmful code typed into a form."
+          ],
           "note": "Explain each simply. SQL injection happens when a web form allows database commands to be entered. A DoS uses one source; DDoS uses many. Show how long, complex passwords make brute force harder."
         },
         {
           "heading": "Social engineering",
-          "bullets": ["Phishing emails and texts.", "Pretending to be IT support.", "Shoulder surfing: watching someone type a password.", "People are the weakest link."],
+          "bullets": [
+            "Phishing emails and texts.",
+            "Pretending to be IT support.",
+            "Shoulder surfing: watching someone type a password.",
+            "People are the weakest link."
+          ],
           "note": "Show a phishing example with clues: urgent tone, strange sender, link that does not match, requests for private data. Link to honesty and amanah: attackers exploit trust, and we protect trust by being careful."
         },
         {
           "heading": "Impact",
-          "bullets": ["Lost or stolen data.", "Financial loss and fines.", "Damaged reputation.", "Downtime."],
+          "bullets": [
+            "Lost or stolen data.",
+            "Financial loss and fines.",
+            "Damaged reputation.",
+            "Downtime."
+          ],
           "note": "Use a scenario of a hospital or school being hit by ransomware. Ask pupils to name stakeholders affected. Exam answers describe the cause and the effect in context."
         }
       ],
@@ -440,10 +671,22 @@
         "State the purpose of the Computer Misuse Act 1990"
       ],
       "keywords": [
-        { "term": "firewall", "def": "filters incoming and outgoing network traffic using rules" },
-        { "term": "encryption", "def": "scrambling data so only authorised people can read it" },
-        { "term": "authentication", "def": "proving who you are, such as with a password or fingerprint" },
-        { "term": "penetration testing", "def": "authorised attempts to break into a system to find weaknesses" }
+        {
+          "term": "firewall",
+          "def": "filters incoming and outgoing network traffic using rules"
+        },
+        {
+          "term": "encryption",
+          "def": "scrambling data so only authorised people can read it"
+        },
+        {
+          "term": "authentication",
+          "def": "proving who you are, such as with a password or fingerprint"
+        },
+        {
+          "term": "penetration testing",
+          "def": "authorised attempts to break into a system to find weaknesses"
+        }
       ],
       "starter": [
         "Bismillah. Name three types of malware and give one feature of each.",
@@ -453,22 +696,41 @@
       "teach": [
         {
           "heading": "Protecting systems",
-          "bullets": ["Anti-malware software.", "Firewalls.", "Software updates and patches.", "Backups."],
+          "bullets": [
+            "Anti-malware software.",
+            "Firewalls.",
+            "Software updates and patches.",
+            "Backups."
+          ],
           "note": "Link each prevention to the threat it stops. Anti-malware finds known malware; updates fix vulnerabilities; firewalls block unwanted traffic; backups allow recovery. Prevention is layered: no single method is enough."
         },
         {
           "heading": "Authentication and access",
-          "bullets": ["Strong passwords and two-factor authentication.", "Biometrics: fingerprints, face.", "Access levels: different rights for different users.", "Physical security: locks, ID cards."],
+          "bullets": [
+            "Strong passwords and two-factor authentication.",
+            "Biometrics: fingerprints, face.",
+            "Access levels: different rights for different users.",
+            "Physical security: locks, ID cards."
+          ],
           "note": "Explain access levels: pupils can read some folders, teachers can write, administrators control everything. Biometrics are hard to copy but can raise privacy concerns. Add CAPTCHA only if the spec lists it."
         },
         {
           "heading": "Encryption",
-          "bullets": ["Plain text is scrambled to cipher text.", "A key is used to scramble and unscramble.", "Protects data in transit and storage.", "HTTPS uses encryption."],
+          "bullets": [
+            "Plain text is scrambled to cipher text.",
+            "A key is used to scramble and unscramble.",
+            "Protects data in transit and storage.",
+            "HTTPS uses encryption."
+          ],
           "note": "Demonstrate a Caesar shift of 3: 'ILM' becomes 'LOP'. Show decryption with the key. Explain that modern encryption is far stronger but follows the same idea: algorithm plus key. Misconception: encryption stops hackers from intercepting data; it stops them reading it."
         },
         {
           "heading": "Testing and the law",
-          "bullets": ["Penetration testing finds weaknesses.", "Computer Misuse Act 1990: unauthorised access is illegal.", "Data Protection Act 2018: protect personal data."],
+          "bullets": [
+            "Penetration testing finds weaknesses.",
+            "Computer Misuse Act 1990: unauthorised access is illegal.",
+            "Data Protection Act 2018: protect personal data."
+          ],
           "note": "Explain ethical hackers have permission, which makes their testing legal. The Computer Misuse Act covers unauthorised access, access with intent to commit further offences and unauthorised modification of data. Link to the Islamic value of keeping trusts (amanah) when handling others' data."
         }
       ],
@@ -488,6 +750,3035 @@
       ],
       "homework": "Review your own online security. List three improvements you or your family could make and which threat each would reduce.",
       "send": "SEND/EAL: provide a matching grid of threats and defences with icons. Stretch: write a Python function that encrypts a message with a Caesar shift of a given key."
+    },
+    {
+      "unit": "Unit 3.1: Computers: architecture, memory and storage",
+      "n": 9,
+      "title": "Von Neumann architecture and the fetch-decode-execute cycle",
+      "duration": 50,
+      "bigQuestion": "How does a computer carry out a program one tiny step at a time?",
+      "objectives": [
+        "Describe the von Neumann stored-program concept, RAM, CPU components, clock and buses (3.1.1)",
+        "Trace the fetch-decode-execute cycle through the registers",
+        "Explain how clock speed, cores and cache affect performance"
+      ],
+      "successCriteria": [
+        "All: name the main CPU components and state their jobs",
+        "Most: describe the fetch-decode-execute cycle using register names",
+        "Some: trace a short program and explain how architecture affects performance"
+      ],
+      "crossCurricular": "Physics: electrical signals and timing",
+      "smsc": "Cultural: admiration for the ingenuity of people who made a general machine from simple parts",
+      "keywords": [
+        {
+          "term": "stored-program concept",
+          "def": "instructions and data are held in the same memory and fetched by the CPU"
+        },
+        {
+          "term": "register",
+          "def": "a very small, very fast storage location inside the CPU"
+        },
+        {
+          "term": "bus",
+          "def": "a set of wires that carries data, addresses or control signals"
+        },
+        {
+          "term": "clock",
+          "def": "a signal that sets the speed at which the CPU works, measured in hertz"
+        },
+        {
+          "term": "fetch-decode-execute",
+          "def": "the cycle in which the CPU gets, understands and carries out an instruction"
+        }
+      ],
+      "starter": [
+        "Bismillah. What is the difference between RAM and ROM?",
+        "State what the control unit does.",
+        "Write 3 GHz in cycles per second."
+      ],
+      "teach": [
+        {
+          "heading": "Stored-program concept",
+          "bullets": [
+            "Program and data are in the same memory (RAM)",
+            "The CPU fetches instructions one at a time",
+            "Changing the program means changing memory, not rewiring"
+          ],
+          "note": "Explain that before this idea computers were rewired for each task. RAM is volatile: it holds the programs and data in use and is lost when power is off. Ask pupils why a general-purpose computer is possible with this idea. The existing y11 lesson 1 introduces the CPU parts; here we link them through buses and the cycle.",
+          "table": {
+            "head": [
+              "Part",
+              "Job"
+            ],
+            "rows": [
+              [
+                "ALU",
+                "Arithmetic and logic operations"
+              ],
+              [
+                "Control unit",
+                "Fetches, decodes and coordinates execution"
+              ],
+              [
+                "Registers (PC, MAR, MDR, CIR, ACC)",
+                "Tiny fast storage for addresses, data, instruction and results"
+              ],
+              [
+                "Cache",
+                "Fast memory holding frequently used instructions and data"
+              ],
+              [
+                "Clock",
+                "Sets the pace: one cycle per tick"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Buses",
+          "bullets": [
+            "Address bus: carries the memory address (one way)",
+            "Data bus: carries data and instructions (two ways)",
+            "Control bus: carries commands such as read or write"
+          ],
+          "note": "Link each bus to the registers: the MAR places an address on the address bus; the MDR receives or sends data on the data bus. Use an analogy of a postal system with addresses, parcels and instructions. Pupils often say the address bus is two-way; it is one-way, from the CPU to memory.",
+          "compare": {
+            "left": {
+              "title": "Address bus",
+              "points": [
+                "One way: CPU to memory",
+                "Says where to read or write",
+                "Width limits the memory that can be addressed"
+              ]
+            },
+            "right": {
+              "title": "Data bus",
+              "points": [
+                "Two ways",
+                "Carries the data or instruction itself",
+                "Width sets how many bits move at once"
+              ]
+            },
+            "label": "Two key buses"
+          }
+        },
+        {
+          "heading": "Fetch-decode-execute in code",
+          "bullets": [
+            "PC holds the address of the next instruction",
+            "Fetch it into CIR and add 1 to PC",
+            "Decode it, then execute it"
+          ],
+          "note": "Trace the simulation with the class: the program is stored as text so you can see the fetch step. At each pass, PC goes up by one before the instruction is carried out. Ask pupils which line is the fetch (cir = program[pc]) and which the decode (split) and which the execute (the if chain). It is a simplified model that ignores MAR and MDR.",
+          "code": {
+            "lang": "python",
+            "text": "program = [\"LOAD 5\", \"ADD 3\", \"ADD 4\"]\nacc = 0\npc = 0\nwhile pc < len(program):\n    cir = program[pc]\n    pc = pc + 1\n    op, value = cir.split()\n    if op == \"LOAD\":\n        acc = int(value)\n    elif op == \"ADD\":\n        acc = acc + int(value)\n    print(\"PC\", pc, \"CIR\", cir, \"ACC\", acc)",
+            "output": "PC 1 CIR LOAD 5 ACC 5\nPC 2 CIR ADD 3 ACC 8\nPC 3 CIR ADD 4 ACC 12"
+          }
+        },
+        {
+          "heading": "Worked example: one cycle in registers",
+          "note": "Model with registers on the board as boxes. Say each transfer aloud. Pupils should use the register names in exam answers. Add that the cycle then repeats for the next instruction, millions of times per second.",
+          "model": {
+            "problem": "The PC holds 2 and memory address 2 holds the instruction ADD 3. Describe the fetch stage in terms of registers.",
+            "steps": [
+              "The address in the PC (2) is copied to the MAR",
+              "The control unit sends a read signal on the control bus",
+              "The instruction at address 2 travels on the data bus to the MDR, then is copied to the CIR",
+              "The PC is increased by 1, so it holds 3 and points to the next instruction"
+            ],
+            "answer": "After the fetch, the CIR holds ADD 3 and the PC holds 3. The instruction is then decoded and executed."
+          }
+        },
+        {
+          "heading": "Check: performance factors",
+          "note": "Answer D. Cache holds recently used data close to the CPU, so fewer slow trips to RAM. A would need a bigger hard drive, which is not the CPU. B (a bigger monitor) does not affect speed and C describes a different factor.",
+          "check": {
+            "q": "Which change would most directly reduce the number of slow trips the CPU makes to RAM?",
+            "options": [
+              "A larger hard drive",
+              "A larger monitor",
+              "A longer power cable",
+              "A larger cache"
+            ],
+            "answer": 3,
+            "why": "A larger cache stores more frequently used instructions and data next to the CPU. Hard drive size (A), screen size (B) and the cable (C) do not affect how often the CPU goes to RAM."
+          }
+        }
+      ],
+      "practice": [
+        "State one difference between the address bus and the data bus.",
+        "A CPU has a clock speed of 2 GHz. State how many cycles it completes each second.",
+        "Name the register that stores the address of the next instruction and the register that holds the instruction being decoded."
+      ],
+      "independent": [
+        "Core: Write the three stages of the fetch-decode-execute cycle and, for each, say what happens in the CPU.",
+        "Extend: Trace the simulation program for program = ['LOAD 2', 'ADD 9', 'ADD 10'] and state the final ACC.",
+        "Stretch: Explain why a dual-core CPU with a lower clock speed can still be faster than a single-core CPU with a higher clock speed, and when it would not be."
+      ],
+      "exit": [
+        "What does the stored-program concept mean?",
+        "Name two registers and state the job of each."
+      ],
+      "homework": "Draw a labelled diagram of the CPU, RAM and the three buses, and use arrows to show what travels on each when an instruction is fetched.",
+      "send": "SEND/EAL: provide a diagram with boxes for CPU parts and a word bank. Stretch: ask for an explanation of how the width of the address bus limits RAM.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 3.1: Computers: architecture, memory and storage",
+      "n": 10,
+      "title": "Secondary storage and embedded systems",
+      "duration": 50,
+      "bigQuestion": "Where does data live when the power goes off, and where are computers hidden in plain sight?",
+      "objectives": [
+        "Explain how magnetic, optical and solid-state secondary storage store data (3.1.2)",
+        "Compare the three types for a given scenario",
+        "Describe embedded systems and their uses (3.1.3)"
+      ],
+      "successCriteria": [
+        "All: name the three types of secondary storage and give an example of each",
+        "Most: explain how each stores data and compare them",
+        "Some: recommend a storage type and justify it with capacity, speed, durability, cost and portability"
+      ],
+      "crossCurricular": "Science: magnetism, light and electrical charge",
+      "smsc": "Moral: stewardship: choosing durable devices and not discarding them lightly",
+      "keywords": [
+        {
+          "term": "secondary storage",
+          "def": "non-volatile storage that keeps data when the power is off"
+        },
+        {
+          "term": "magnetic storage",
+          "def": "stores data as magnetised areas on a spinning disk"
+        },
+        {
+          "term": "optical storage",
+          "def": "stores data as pits and lands read by a laser"
+        },
+        {
+          "term": "solid-state storage",
+          "def": "stores data in flash memory with no moving parts"
+        },
+        {
+          "term": "embedded system",
+          "def": "a computer built into a larger device to do a dedicated job"
+        }
+      ],
+      "starter": [
+        "Bismillah. State why RAM is not used to keep your homework saved.",
+        "What does non-volatile mean?",
+        "Name two examples of devices with a computer inside that are not laptops."
+      ],
+      "teach": [
+        {
+          "heading": "How each type stores data",
+          "bullets": [
+            "Magnetic: platters, magnetised areas, read/write head",
+            "Optical: laser reflects differently from pits and lands",
+            "Solid state: flash cells trap an electrical charge"
+          ],
+          "note": "Describe each mechanism in one sentence and have pupils say the key word: magnetised, reflected, charge. Hard disks spin and the head moves across the platter, so they have moving parts. In an optical disc, a pit scatters the laser light and a land reflects it, giving 0 and 1. SSDs have no moving parts, so are faster and silent.",
+          "table": {
+            "head": [
+              "Type",
+              "How data is stored",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Magnetic",
+                "Magnetised areas on a spinning platter",
+                "Hard disk drive"
+              ],
+              [
+                "Optical",
+                "Pits and lands read by a laser",
+                "DVD, Blu-ray"
+              ],
+              [
+                "Solid state",
+                "Flash memory cells trapping charge",
+                "SSD, USB stick"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Comparing the types",
+          "bullets": [
+            "Magnetic: large and cheap per GB, slower, fragile",
+            "Optical: portable and cheap discs, low capacity",
+            "Solid state: fast, durable, quiet, costs more per GB"
+          ],
+          "note": "Draw a comparison table with rows capacity, speed, durability, cost, portability. In exam answers pupils must link the feature to the scenario. Avoid vague words such as 'better'; use specific comparisons (for example 'faster to read and write').",
+          "table": {
+            "head": [
+              "Feature",
+              "Magnetic",
+              "Optical",
+              "Solid state"
+            ],
+            "rows": [
+              [
+                "Capacity",
+                "Very large",
+                "Small (up to about 100 GB)",
+                "Large"
+              ],
+              [
+                "Speed",
+                "Medium",
+                "Slow",
+                "Fast"
+              ],
+              [
+                "Durability",
+                "Low (moving parts)",
+                "Scratches",
+                "High"
+              ],
+              [
+                "Cost per GB",
+                "Low",
+                "Low per disc",
+                "Higher"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Embedded systems",
+          "bullets": [
+            "A computer inside a larger device",
+            "Does one dedicated job, often in real time",
+            "Examples: washing machine, car engine, pacemaker, smart meter"
+          ],
+          "note": "Contrast with a laptop: general purpose, many programs, user installs software. An embedded system has a single fixed purpose, a small processor, little memory, low power and is often reliable and cheap. The program is stored in ROM or flash. Ask pupils to find five embedded systems at home.",
+          "compare": {
+            "left": {
+              "title": "General-purpose computer",
+              "points": [
+                "Many different tasks",
+                "User installs software",
+                "Large memory and storage"
+              ]
+            },
+            "right": {
+              "title": "Embedded system",
+              "points": [
+                "One dedicated task",
+                "Program fixed in ROM or flash",
+                "Small, low power, reliable"
+              ]
+            },
+            "label": "Compare"
+          }
+        },
+        {
+          "heading": "Worked example: recommend storage",
+          "note": "Model: identify the key requirement in the scenario (cost per GB, durability, size), then match it and give a reason. A good answer states one limitation of the choice. Check understanding by asking what would change if the data were needed hourly.",
+          "model": {
+            "problem": "A madrasah wants to store 8 TiB of recorded lessons as a cheap archive that is rarely used. Recommend a type of secondary storage and justify it.",
+            "steps": [
+              "Requirement: very large capacity at a low cost per GB",
+              "Magnetic hard disks give large capacity cheaply",
+              "Speed is not important because the archive is rarely used",
+              "Limitation: moving parts are fragile, so keep a backup"
+            ],
+            "answer": "Magnetic hard disk drives, because they give the most capacity per pound for rarely accessed data."
+          }
+        },
+        {
+          "heading": "Check: embedded or not?",
+          "note": "Answer B. A microwave oven has a processor built in for one dedicated job: an embedded system. A laptop, a games console and a desktop PC are general-purpose or multi-purpose. Some pupils think a games console is embedded; it runs many programs.",
+          "check": {
+            "q": "Which of these is an embedded system?",
+            "options": [
+              "A laptop used for homework",
+              "The controller inside a microwave oven",
+              "A desktop PC in a computer room",
+              "A tablet used to browse the web"
+            ],
+            "answer": 1,
+            "why": "The microwave controller is built into the device and does one dedicated job. The laptop, desktop and tablet run many different programs chosen by the user."
+          }
+        }
+      ],
+      "practice": [
+        "Explain how an optical disc stores a binary 1 and a 0.",
+        "Give two reasons why an SSD is better than a hard disk drive in a school laptop.",
+        "State two features that make a controller in a heart pacemaker an embedded system."
+      ],
+      "independent": [
+        "Core: Complete a table comparing magnetic, optical and solid-state storage for capacity, speed, durability and cost.",
+        "Extend: A photographer needs a portable store that survives being dropped in a bag. Recommend a type and justify it in three sentences.",
+        "Stretch: A car has about 80 embedded systems. Explain why using embedded systems rather than one general-purpose computer is a sensible design, giving two benefits and one drawback."
+      ],
+      "exit": [
+        "Name the type of storage that uses a laser.",
+        "Give one example of an embedded system and its dedicated job."
+      ],
+      "homework": "List ten things in your home that contain an embedded system. For three of them, say what the system does and why it needs no keyboard.",
+      "send": "SEND/EAL: give labelled pictures of each storage type for matching to the key word. Stretch: ask for an evaluation of cloud storage against local storage. This lesson builds on y11 lesson 2 (memory and storage) by adding the mechanisms and embedded systems.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 3.2: Computers: operating systems, utilities and robust software",
+      "n": 11,
+      "title": "Operating systems and utility software",
+      "duration": 50,
+      "bigQuestion": "What does the software you never see do to keep a computer working?",
+      "objectives": [
+        "Describe the functions of an operating system: file, process, peripheral and user management (3.2.1)",
+        "Describe utility software: repair, backup, compression, defragmentation and anti-malware (3.2.2)",
+        "Match functions and utilities to a scenario"
+      ],
+      "successCriteria": [
+        "All: name four functions of an operating system",
+        "Most: describe the job of each utility",
+        "Some: recommend which OS functions and utilities a given organisation needs and why"
+      ],
+      "crossCurricular": "Business: managing users and data in an organisation",
+      "smsc": "Moral: amanah in managing other people's accounts and files fairly and securely",
+      "keywords": [
+        {
+          "term": "operating system",
+          "def": "system software that manages the hardware and runs other programs"
+        },
+        {
+          "term": "process",
+          "def": "a program in execution"
+        },
+        {
+          "term": "driver",
+          "def": "software that lets the operating system control a peripheral"
+        },
+        {
+          "term": "utility software",
+          "def": "programs that maintain, protect or tidy a computer system"
+        },
+        {
+          "term": "defragmentation",
+          "def": "rearranging file pieces on a hard disk so they are stored together"
+        }
+      ],
+      "starter": [
+        "Bismillah. State the difference between system software and application software.",
+        "Name two utility programs you have used.",
+        "Why can many programs seem to run at the same time on one CPU?"
+      ],
+      "teach": [
+        {
+          "heading": "Four jobs of the operating system",
+          "bullets": [
+            "File management: names, folders, access",
+            "Process management: share the CPU and memory",
+            "Peripheral management: drivers and buffers",
+            "User management: accounts and permissions"
+          ],
+          "note": "The existing y11 lesson 3 gives an overview; this lesson gives the detail needed for the longer answers. Process management: the OS decides which program runs in each tiny slice of time (multitasking) and gives each its own memory so they do not overwrite each other. Peripheral management: a driver translates between OS and device. User management: log in, permissions, quotas.",
+          "table": {
+            "head": [
+              "Function",
+              "Detail",
+              "Example"
+            ],
+            "rows": [
+              [
+                "File management",
+                "Create, name, move, delete, organise in folders; set permissions",
+                "Saving a document into a folder"
+              ],
+              [
+                "Process management",
+                "Schedule processes; allocate memory",
+                "Music plays while you browse"
+              ],
+              [
+                "Peripheral management",
+                "Control devices using drivers; buffer data",
+                "Sending a document to a printer"
+              ],
+              [
+                "User management",
+                "Accounts, passwords, access rights",
+                "A pupil cannot open teachers' files"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Utility software",
+          "bullets": [
+            "Repair: fixes errors in files or the system",
+            "Backup: copies data for recovery",
+            "Compression: makes files smaller",
+            "Defragmentation and anti-malware"
+          ],
+          "note": "Defragmentation applies to hard disk drives: files get split into fragments scattered over the disk and the utility rearranges them. It is not needed on SSDs, which have no moving head to travel. Show the before and after table on the next slide. Anti-malware scans for and removes harmful software.",
+          "compare": {
+            "left": {
+              "title": "Maintain the system",
+              "points": [
+                "Repair: fix corrupt files and settings",
+                "Defragmentation: group file fragments (hard disks)",
+                "Compression: reduce file size"
+              ]
+            },
+            "right": {
+              "title": "Protect the data",
+              "points": [
+                "Backup: second copy for recovery",
+                "Anti-malware: detect and remove malicious software",
+                "Keep definitions up to date"
+              ]
+            },
+            "label": "Two purposes"
+          }
+        },
+        {
+          "heading": "Defragmentation",
+          "bullets": [
+            "Before: pieces of each file scattered",
+            "After: each file stored together",
+            "Fewer head movements, so faster reading"
+          ],
+          "note": "Read the blocks out loud: A is a file stored in three pieces. After the utility runs, A is stored in blocks 1 to 3. The read head on a hard disk no longer has to jump around. Ask why it would be pointless on an SSD.",
+          "table": {
+            "head": [
+              "Block",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "rows": [
+              [
+                "Before",
+                "A",
+                "B",
+                "A",
+                "C",
+                "B",
+                "A"
+              ],
+              [
+                "After",
+                "A",
+                "A",
+                "A",
+                "B",
+                "B",
+                "C"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Worked example: match to a scenario",
+          "note": "Model by underlining the need in the scenario and naming the function or utility, then the reason. Remind pupils that anti-malware does not replace a backup. Ask which function of the OS lets two staff share one computer without seeing each other's files.",
+          "model": {
+            "problem": "A madrasah office computer has a slow hard disk, is shared by three staff and holds the only copy of the fee records. Name suitable OS functions and utilities.",
+            "steps": [
+              "Slow hard disk with scattered files: defragmentation",
+              "Three staff sharing: user management (separate accounts and permissions)",
+              "Only copy of the fee records: backup utility",
+              "Protection from harmful files: anti-malware"
+            ],
+            "answer": "User management, defragmentation, backup and anti-malware, each linked to its need."
+          }
+        },
+        {
+          "heading": "Check: which function?",
+          "note": "Answer C. A driver is software that lets the OS communicate with a device, so this is peripheral management. A concerns folders and files; B concerns time slices; D concerns accounts.",
+          "check": {
+            "q": "A new printer will not work until a driver is installed. Which operating system function is this part of?",
+            "options": [
+              "File management",
+              "Process management",
+              "Peripheral management",
+              "User management"
+            ],
+            "answer": 2,
+            "why": "Drivers and device communication belong to peripheral management. File management (A) concerns files and folders; process management (B) concerns running programs; user management (D) concerns accounts and permissions."
+          }
+        }
+      ],
+      "practice": [
+        "Give two examples of what the operating system does in process management.",
+        "Explain what defragmentation does and why it helps a hard disk drive.",
+        "State one reason why compression utility software is useful when emailing files."
+      ],
+      "independent": [
+        "Core: Complete a table with five utilities and one sentence on the purpose of each.",
+        "Extend: A school has 600 pupils sharing 40 computers. Describe four operating system functions it relies on, with an example for each.",
+        "Stretch: A pupil says 'I do not need a backup because I have anti-malware.' Explain why they are wrong, with two different ways in which data could be lost."
+      ],
+      "exit": [
+        "Name the four functions of an operating system covered today.",
+        "State which type of drive benefits from defragmentation."
+      ],
+      "homework": "Write 150 words on what would happen to a school if its operating system had no user management.",
+      "send": "SEND/EAL: provide a sorting task: cards with functions and cards with examples. Stretch: ask for a comparison of full and incremental backup.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 3.2: Computers: operating systems, utilities and robust software",
+      "n": 12,
+      "title": "Robust software, audit trails and code reviews",
+      "duration": 50,
+      "bigQuestion": "How do we build software that does not break, and find its weak points before an attacker does?",
+      "objectives": [
+        "Explain what makes software robust (3.2.3)",
+        "Describe how audit trails help to find vulnerabilities",
+        "Describe how code reviews find faults and weaknesses"
+      ],
+      "successCriteria": [
+        "All: define robust software and give two features of it",
+        "Most: explain how audit trails and code reviews each find problems",
+        "Some: analyse a log or a piece of code and identify the weakness"
+      ],
+      "crossCurricular": "Business: quality assurance and risk management",
+      "smsc": "Moral: amanah and honesty: building software people can safely trust, and reporting faults you find",
+      "keywords": [
+        {
+          "term": "robust software",
+          "def": "software that keeps working correctly even with unexpected input or errors"
+        },
+        {
+          "term": "vulnerability",
+          "def": "a weakness that could be exploited to cause harm"
+        },
+        {
+          "term": "audit trail",
+          "def": "a record of who did what and when on a system"
+        },
+        {
+          "term": "code review",
+          "def": "examining source code, usually by another person, to find faults and weaknesses"
+        }
+      ],
+      "starter": [
+        "Bismillah. What does validation check?",
+        "Give one example of boundary test data.",
+        "State what a log file is."
+      ],
+      "teach": [
+        {
+          "heading": "Robust software",
+          "bullets": [
+            "Handles unexpected input without crashing",
+            "Validates data and checks for errors",
+            "Is well structured, tested and maintained"
+          ],
+          "note": "Robust is not the same as bug-free; it means that faults and strange input do not cause failure or a security hole. Show the function: bad input gets a safe response. Ask what would happen if the function used int(text) directly. A crash or a vulnerability.",
+          "code": {
+            "lang": "python",
+            "text": "def safe_int(text):\n    if text.isdigit():\n        return int(text)\n    return -1\n\nfor value in [\"42\", \"4 2\", \"abc\", \"\"]:\n    print(repr(value), safe_int(value))",
+            "output": "'42' 42\n'4 2' -1\n'abc' -1\n'' -1"
+          }
+        },
+        {
+          "heading": "Features of robust design",
+          "bullets": [
+            "Validate every input",
+            "Break the program into tested subprograms",
+            "Handle errors with safe messages",
+            "Update and patch known flaws"
+          ],
+          "note": "Tie each feature to a threat: validation stops bad input; subprograms are easier to test; error handling avoids leaking system details; patching closes known holes. Common exam error: 'robust means it never crashes'. Stress 'continues to work correctly or fails safely'.",
+          "compare": {
+            "left": {
+              "title": "Fragile software",
+              "points": [
+                "Assumes the user types sensible input",
+                "Crashes on the unexpected",
+                "Error messages reveal details"
+              ]
+            },
+            "right": {
+              "title": "Robust software",
+              "points": [
+                "Checks all input",
+                "Fails safely and recovers",
+                "Messages helpful but not revealing"
+              ]
+            },
+            "label": "Contrast"
+          }
+        },
+        {
+          "heading": "Audit trails",
+          "bullets": [
+            "A log of actions: who, what, when",
+            "Used to find suspicious behaviour",
+            "Also used to trace how a fault happened"
+          ],
+          "note": "Read the log as a class. Ask what looks suspicious (five failed logins from one account at 02:14 then a success). An audit trail does not stop an attack; it helps to detect it and investigate afterwards. Link to accountability and to Data Protection duties.",
+          "table": {
+            "head": [
+              "Time",
+              "User",
+              "Action",
+              "Result"
+            ],
+            "rows": [
+              [
+                "02:14:01",
+                "hana",
+                "Login",
+                "Failed"
+              ],
+              [
+                "02:14:09",
+                "hana",
+                "Login",
+                "Failed"
+              ],
+              [
+                "02:14:17",
+                "hana",
+                "Login",
+                "Failed"
+              ],
+              [
+                "02:14:26",
+                "hana",
+                "Login",
+                "Success"
+              ],
+              [
+                "02:15:03",
+                "hana",
+                "Download fee records",
+                "Success"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Worked example: audit trail and code review",
+          "note": "Model the two methods side by side. Emphasise that a code review is done before release, by someone other than the author, who looks for faults and for vulnerabilities such as missing validation. The audit trail is evidence after the event. Point out that both are needed.",
+          "model": {
+            "problem": "Use the log above to explain what an audit trail shows, and describe what a code review of the login code might find.",
+            "steps": [
+              "Log: three failed logins in 25 seconds, then success, then a download of fee records",
+              "Suggests guessing a password; it shows when and which account",
+              "Code review: a second programmer reads the login code",
+              "Might find no limit on attempts and no lock-out, so the weakness can be fixed before release"
+            ],
+            "answer": "The audit trail shows evidence of a possible attack; the code review finds the weakness that allowed it."
+          }
+        },
+        {
+          "heading": "Check: audit trail or code review?",
+          "note": "Answer A. An audit trail records events as they happen, so it can be examined afterwards. B describes a code review. C is testing, D is validation. Make the point that pupils must name the right method for the right job.",
+          "check": {
+            "q": "Which statement correctly describes an audit trail?",
+            "options": [
+              "A record of user actions that can be examined to find suspicious activity",
+              "A programmer reading source code to find weaknesses before release",
+              "A set of test data used to check a program",
+              "A check that a value lies within a range"
+            ],
+            "answer": 0,
+            "why": "An audit trail logs who did what and when. Reading code before release is a code review (B); test data (C) and range checks (D) are different ideas."
+          }
+        }
+      ],
+      "practice": [
+        "State two features of robust software.",
+        "Explain how a code review helps to make software more secure.",
+        "A log shows 200 failed login attempts from one account in a minute. State what this suggests and what the school should do."
+      ],
+      "independent": [
+        "Core: Write a short definition of each: robust software, audit trail, code review.",
+        "Extend: Write a Python function that returns True only if a string is exactly 6 digits, and list the test data you would use to prove it is robust.",
+        "Stretch: A bank's mobile app crashes when a user enters a negative amount. Discuss, in 100 words, how robust design, a code review and an audit trail would each help."
+      ],
+      "exit": [
+        "Define robust software.",
+        "State one thing an audit trail records."
+      ],
+      "homework": "Look up an example of a software failure in the news (a bug or a data breach). Write 100 words on which robust-software practice might have prevented it.",
+      "send": "SEND/EAL: provide the log table with the suspicious rows highlighted and a sentence frame. Stretch: ask for a comparison of a code review with automated testing.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 3.3: Computers: programming languages and translators",
+      "n": 13,
+      "title": "Programming languages and translators: comparing and choosing",
+      "duration": 50,
+      "bigQuestion": "Why do we write in one language but the computer runs another?",
+      "objectives": [
+        "Compare the characteristics and purposes of low-level and high-level languages (3.3.1)",
+        "Explain how interpreters and compilers translate high-level code differently (3.3.2)",
+        "Choose a language and translator for a scenario, with reasons"
+      ],
+      "successCriteria": [
+        "All: state one difference between high-level and low-level languages",
+        "Most: compare a compiler and an interpreter on four points",
+        "Some: justify a choice of language and translator for a scenario"
+      ],
+      "crossCurricular": "Mathematics: the idea of a precise symbolic language",
+      "smsc": "Moral: accuracy and precision in expressing instructions",
+      "keywords": [
+        {
+          "term": "machine code",
+          "def": "binary instructions that the CPU can run directly"
+        },
+        {
+          "term": "assembly language",
+          "def": "a low-level language using mnemonics, one for each machine instruction"
+        },
+        {
+          "term": "assembler",
+          "def": "translates assembly language into machine code"
+        },
+        {
+          "term": "compiler",
+          "def": "translates the whole program into machine code before it runs"
+        },
+        {
+          "term": "interpreter",
+          "def": "translates and runs a program one statement at a time"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name one high-level language.",
+        "What is machine code made of?",
+        "State what a translator does."
+      ],
+      "teach": [
+        {
+          "heading": "Levels of language",
+          "bullets": [
+            "High-level: close to English, easy to learn",
+            "Assembly: short codes, one per machine instruction",
+            "Machine code: binary the CPU runs directly"
+          ],
+          "note": "The existing y11 lesson 4 introduces these; today we compare them precisely. Show one high-level statement against its low-level steps. Note that one high-level line becomes many machine instructions. Assembly and machine code are specific to a type of processor; high-level code is portable once translated.",
+          "table": {
+            "head": [
+              "Level",
+              "Example",
+              "Translated by"
+            ],
+            "rows": [
+              [
+                "High-level (Python)",
+                "total = a + b",
+                "Interpreter or compiler"
+              ],
+              [
+                "Assembly",
+                "LDA a / ADD b / STA total",
+                "Assembler"
+              ],
+              [
+                "Machine code",
+                "1010 0001 0010 ...",
+                "Not translated: the CPU runs it"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Compare the language types",
+          "bullets": [
+            "High-level: portable, easier to write and debug",
+            "Low-level: fast, small, direct control of hardware",
+            "Low-level suits device drivers and embedded systems"
+          ],
+          "note": "Exam answers need purposes as well as characteristics: for example drivers or tiny embedded controllers use low-level because of memory limits and direct hardware access. Ask pupils which they would use for a web app (high-level).",
+          "compare": {
+            "left": {
+              "title": "High-level",
+              "points": [
+                "One statement, many instructions",
+                "Not tied to one processor",
+                "Easier to read and maintain"
+              ]
+            },
+            "right": {
+              "title": "Low-level",
+              "points": [
+                "Close to the hardware",
+                "Specific to one processor",
+                "Efficient use of memory and speed"
+              ]
+            },
+            "label": "Languages"
+          }
+        },
+        {
+          "heading": "Compiler and interpreter",
+          "bullets": [
+            "Compiler: translates everything first, then runs",
+            "Interpreter: translates and runs line by line",
+            "Interpreter stops at the first error it reaches"
+          ],
+          "note": "The program prints two lines, then crashes at the third. An interpreter shows the earlier output because it had already run those lines. A compiler would report errors before producing anything to run, and the compiled file runs without the compiler. The Python used in this course is usually interpreted, although in practice it first compiles to a simplified form: say this is a simplification for the exam.",
+          "code": {
+            "lang": "python",
+            "text": "print(\"Line 1 runs\")\nprint(\"Line 2 runs\")\nprint(1 / 0)\nprint(\"Line 4 never runs\")",
+            "output": "Line 1 runs\nLine 2 runs\nZeroDivisionError: division by zero"
+          }
+        },
+        {
+          "heading": "Worked example: choose a translator",
+          "note": "Model the structure: need, then choice, then reason. Add the drawback so the answer is balanced. A compiler gives a standalone file so the source code is not given away; an interpreter is quicker for testing.",
+          "model": {
+            "problem": "A company will sell a game to thousands of customers and does not want to share its source code. Which translator should it use, and why?",
+            "steps": [
+              "The game is released to customers who do not have the source code",
+              "A compiler produces a standalone executable file",
+              "The compiled file runs quickly and keeps the source code private",
+              "Drawback: it must be recompiled for each type of computer"
+            ],
+            "answer": "A compiler: it produces fast machine code and does not reveal the source code."
+          }
+        },
+        {
+          "heading": "Check: interpreter",
+          "note": "Answer B. An interpreter translates and runs one line at a time, so it reaches an error in a later line only after running the earlier ones. A compiler (A, C) translates the whole program first. D mixes up an assembler and an interpreter.",
+          "check": {
+            "q": "Which translator would show output from the first lines of a program before it hits an error on line 40?",
+            "options": [
+              "A compiler",
+              "An interpreter",
+              "An assembler for high-level code",
+              "Machine code"
+            ],
+            "answer": 1,
+            "why": "An interpreter translates and runs line by line, so earlier lines have already run. A compiler translates everything before running (A). An assembler translates assembly, not high-level code (C). Machine code is not a translator (D)."
+          }
+        }
+      ],
+      "practice": [
+        "State two advantages of high-level languages over low-level languages.",
+        "Explain one advantage of a compiler over an interpreter and one advantage of an interpreter over a compiler.",
+        "Name the translator for assembly language."
+      ],
+      "independent": [
+        "Core: Complete a table comparing compiler and interpreter on how they translate, speed, error reporting and distribution.",
+        "Extend: A student is learning to program and testing small changes many times an hour. Choose a translator and justify.",
+        "Stretch: A washing machine controller has 2 KiB of memory. Discuss whether it should be programmed in a high-level or low-level language."
+      ],
+      "exit": [
+        "What does an assembler translate?",
+        "Why is machine code described as processor-specific?"
+      ],
+      "homework": "Make a poster comparing high-level language, assembly and machine code with an example of each and a use for each.",
+      "send": "SEND/EAL: give a two-column sort of statements 'compiler' and 'interpreter'. Stretch: ask pupils to explain what a bytecode interpreter is.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 4.1: Networks: types, protocols and connections",
+      "n": 14,
+      "title": "Why network? LANs, WANs, the internet, IP addresses and routers",
+      "duration": 50,
+      "bigQuestion": "How does a request from your device cross the world and come back in a fraction of a second?",
+      "objectives": [
+        "Give reasons for connecting computers in networks (4.1.1)",
+        "Distinguish LAN and WAN (4.1.2)",
+        "Describe internet structure, including IP addressing and routers (4.1.3)"
+      ],
+      "successCriteria": [
+        "All: state two reasons for networking and distinguish a LAN from a WAN",
+        "Most: explain what an IP address is and what a router does",
+        "Some: describe how a packet travels across the internet and validate an IPv4 address"
+      ],
+      "crossCurricular": "Geography: global connections and infrastructure",
+      "smsc": "Cultural: the internet allows learning communities, like this online school, to meet across distance; with that comes responsibility for how we use it",
+      "keywords": [
+        {
+          "term": "network",
+          "def": "two or more devices connected so that they can share data and resources"
+        },
+        {
+          "term": "LAN",
+          "def": "local area network: covers a small area and is owned by one organisation"
+        },
+        {
+          "term": "WAN",
+          "def": "wide area network: covers a large area, often using leased lines"
+        },
+        {
+          "term": "IP address",
+          "def": "a number that identifies a device on a network"
+        },
+        {
+          "term": "router",
+          "def": "a device that forwards packets between networks"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name a piece of hardware that connects devices in a LAN.",
+        "How many values can 8 bits hold?",
+        "Name one device in your home that is connected to a network."
+      ],
+      "teach": [
+        {
+          "heading": "Why connect computers?",
+          "bullets": [
+            "Share files, printers and an internet connection",
+            "Communicate by email, messaging and calls",
+            "Manage users, software and backups centrally"
+          ],
+          "note": "Pupils usually say 'to go on the internet'; push them to name sharing resources, communication and central control. Link to the school: one printer for many pupils, one login on any computer. Give one drawback: if the network fails or is attacked, many users are affected.",
+          "compare": {
+            "left": {
+              "title": "LAN",
+              "points": [
+                "Small area: a building or campus",
+                "Owned and managed by one organisation",
+                "Cables and Wi-Fi it owns",
+                "High speed, low cost"
+              ]
+            },
+            "right": {
+              "title": "WAN",
+              "points": [
+                "Large area: towns, countries, worldwide",
+                "Uses links leased from telecoms companies",
+                "Slower and more costly",
+                "The internet is the largest WAN"
+              ]
+            },
+            "label": "LAN vs WAN"
+          }
+        },
+        {
+          "heading": "IP addresses",
+          "bullets": [
+            "Every device on a network has an IP address",
+            "IPv4: four numbers from 0 to 255, such as 192.168.1.20",
+            "IPv6 has longer addresses so we do not run out"
+          ],
+          "note": "Each IPv4 number is 8 bits, so 0 to 255, and four numbers give 32 bits. Link to 2.1: this is why 256 is invalid. IPv6 uses 128 bits and is written in hexadecimal. Run the validator: it checks four parts and that each is a number up to 255. A domain name is easier to remember; a system called DNS looks up the IP address for it.",
+          "code": {
+            "lang": "python",
+            "text": "def valid_ipv4(address):\n    parts = address.split(\".\")\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit() or int(part) > 255:\n            return False\n    return True\n\nprint(valid_ipv4(\"192.168.1.20\"), valid_ipv4(\"192.168.1.256\"))\nprint(valid_ipv4(\"10.0.1\"))",
+            "output": "True False\nFalse"
+          }
+        },
+        {
+          "heading": "Routers and the structure of the internet",
+          "bullets": [
+            "The internet is a network of networks",
+            "Routers read the destination IP address",
+            "Each router passes the packet on towards its destination"
+          ],
+          "note": "Draw a home network connected to an ISP, which connects to larger networks. A packet hops from router to router; no single router knows the whole route; each chooses the next hop. Packets in the same message may take different routes. Add that a home router also connects the LAN to the internet.",
+          "cycle": [
+            "Device sends a packet with the destination IP address",
+            "Home router passes it to the ISP",
+            "Routers along the way choose the next hop",
+            "The last router delivers it to the destination network",
+            "The destination device receives and reassembles the packets"
+          ]
+        },
+        {
+          "heading": "Worked example: explain a journey",
+          "note": "Model the language of the mark scheme: IP address, router, next hop, packets. Notice that the answer says what each does, not just names them. Ask pupils which step fails if the router is switched off at home (no link to the internet).",
+          "model": {
+            "problem": "Explain how a page request from a laptop in a school LAN reaches a web server abroad.",
+            "steps": [
+              "The laptop puts the server's IP address on each packet as the destination",
+              "The packets go to the school router, which forwards them to the internet service provider",
+              "Each router on the way reads the destination IP address and passes the packet to the next router",
+              "The last router delivers it to the web server's network, and the server replies in the same way"
+            ],
+            "answer": "Packets are forwarded across several routers, using IP addresses, to the server and back."
+          }
+        },
+        {
+          "heading": "Check: IP address",
+          "note": "Answer C. Each of the four numbers is 8 bits (0 to 255), so 300 is not valid. A is valid. B is valid. D has five parts. Pupils are asked to apply the 0 to 255 rule from binary.",
+          "check": {
+            "q": "Which of these is not a valid IPv4 address?",
+            "options": [
+              "172.16.0.9",
+              "8.8.4.4",
+              "192.168.300.1",
+              "10.0.0.255"
+            ],
+            "answer": 2,
+            "why": "Each part must be between 0 and 255 (8 bits). 300 is too big. The other addresses all have four parts between 0 and 255."
+          }
+        }
+      ],
+      "practice": [
+        "Give two reasons why a school connects its computers into a LAN.",
+        "State two differences between a LAN and a WAN.",
+        "Write the number of bits in an IPv4 address and explain why 256 cannot appear in one."
+      ],
+      "independent": [
+        "Core: Draw a diagram of a home network connected to the internet, labelling the router, the ISP and a web server.",
+        "Extend: Use the validator code to say whether 192.168.1.0, 256.1.1.1 and 1.2.3.4.5 are valid IPv4 addresses and why.",
+        "Stretch: A packet from London to Cairo might travel through several routers by a different route each time. Explain two advantages of the internet working this way."
+      ],
+      "exit": [
+        "What does a router do?",
+        "Write one valid and one invalid IPv4 address."
+      ],
+      "homework": "Find your device's IP address (or use the pretend address 192.168.1.15) and write 100 words explaining what the number tells a network and what it does not tell.",
+      "send": "SEND/EAL: give a labelled map of the internet with arrows to follow and a word bank. Stretch: ask for a comparison of IPv4 and IPv6 with the number of addresses (2^32 and 2^128). The existing y11 lessons 5 and 6 introduce LAN, WAN and addresses; this lesson adds the reasons for networks and internet structure.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 4.1: Networks: types, protocols and connections",
+      "n": 15,
+      "title": "Wired and wireless connections: speed, range, latency and bandwidth",
+      "duration": 50,
+      "bigQuestion": "Why does a video call freeze in one room and run smoothly in another?",
+      "objectives": [
+        "Explain how wired and wireless connections affect speed, range, latency and bandwidth (4.1.4)",
+        "Define bandwidth and latency and explain the difference",
+        "Recommend a connection type for a scenario"
+      ],
+      "successCriteria": [
+        "All: define bandwidth and latency",
+        "Most: compare wired and wireless connections on four factors",
+        "Some: justify the best connection for a scenario using the four factors and the number of users"
+      ],
+      "crossCurricular": "Physics: waves, interference and signals in cables",
+      "smsc": "Moral: fairness (adl) in sharing a connection: one user's large download can slow others down",
+      "keywords": [
+        {
+          "term": "bandwidth",
+          "def": "the maximum amount of data that can be sent each second"
+        },
+        {
+          "term": "latency",
+          "def": "the delay between sending data and it arriving"
+        },
+        {
+          "term": "range",
+          "def": "the distance over which a connection works"
+        },
+        {
+          "term": "interference",
+          "def": "signals from other sources that disrupt a transmission"
+        },
+        {
+          "term": "fibre optic cable",
+          "def": "a cable that carries data as pulses of light"
+        }
+      ],
+      "starter": [
+        "Bismillah. What does LAN stand for?",
+        "Give one benefit of Wi-Fi in a school.",
+        "Name one device that uses a cable to connect to a network."
+      ],
+      "teach": [
+        {
+          "heading": "Bandwidth and latency",
+          "bullets": [
+            "Bandwidth: how much per second (bits/s)",
+            "Latency: how long a signal takes to arrive",
+            "A fast connection needs both high bandwidth and low latency"
+          ],
+          "note": "Use the analogy of a road: bandwidth is the number of lanes, latency is the time for one car to get from A to B. Many pupils say 'speed' for both; insist they use the precise terms. Gaming and video calls are sensitive to latency; large downloads need bandwidth.",
+          "compare": {
+            "left": {
+              "title": "Bandwidth",
+              "points": [
+                "Capacity of the link",
+                "Measured in bits per second",
+                "Shared by all users",
+                "Matters for downloads and streaming"
+              ]
+            },
+            "right": {
+              "title": "Latency",
+              "points": [
+                "Delay of the link",
+                "Measured in milliseconds",
+                "Affected by distance and congestion",
+                "Matters for calls and games"
+              ]
+            },
+            "label": "Two different ideas"
+          }
+        },
+        {
+          "heading": "Wired and wireless",
+          "bullets": [
+            "Wired: Ethernet cable or fibre",
+            "Wireless: Wi-Fi uses radio waves",
+            "Each affects speed, range, security and mobility"
+          ],
+          "note": "Fibre uses pulses of light, so it has very high bandwidth and long range and is not affected by electrical interference. Copper Ethernet is cheaper, with a range limit of about 100 metres. Wi-Fi is convenient, but slower, shared and affected by walls, distance and other signals; its range and speed fall as you move away. Use the table for the comparison.",
+          "table": {
+            "head": [
+              "Factor",
+              "Copper cable (Ethernet)",
+              "Fibre optic",
+              "Wi-Fi"
+            ],
+            "rows": [
+              [
+                "Speed (bandwidth)",
+                "High",
+                "Very high",
+                "Lower, shared"
+              ],
+              [
+                "Latency",
+                "Low",
+                "Very low",
+                "Higher, varies"
+              ],
+              [
+                "Range",
+                "Up to about 100 m per cable",
+                "Many kilometres",
+                "Short, falls through walls"
+              ],
+              [
+                "Other",
+                "Needs cabling",
+                "Costly to install",
+                "Mobile; interference; easier to intercept"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Worked example: choose a connection",
+          "note": "Model by listing the needs first, then choosing. Show that both can be used in one network (wired for fixed devices, wireless for visitors). Note the common error of choosing wireless 'because it is faster': it is rarely faster than a good cable.",
+          "model": {
+            "problem": "A madrasah office has four fixed computers that stream live lessons, and visitors who use phones. Recommend connections.",
+            "steps": [
+              "Fixed computers streaming live lessons need high bandwidth and low latency: use Ethernet cables",
+              "Cables are also more reliable and not shared with the air, so less interference",
+              "Visitors with phones need mobility: provide Wi-Fi",
+              "Keep the visitors' Wi-Fi separate so it does not slow the lessons"
+            ],
+            "answer": "Wired Ethernet for the four computers; Wi-Fi for visitors."
+          }
+        },
+        {
+          "heading": "Check: latency",
+          "note": "Answer B. Latency is the delay. A is bandwidth. C describes range, D describes interference. Ask why a download can be fast but a video call still lags (high bandwidth, high latency).",
+          "check": {
+            "q": "A pupil's online game lags even though the connection is advertised as 100 Mbit/s. Which measure is most likely the problem?",
+            "options": [
+              "High bandwidth",
+              "High latency",
+              "Long range",
+              "Wired connection"
+            ],
+            "answer": 1,
+            "why": "Lag in a game is caused by delay, high latency. High bandwidth (A) and wired connections (D) do not cause lag; range (C) is a different measure."
+          }
+        }
+      ],
+      "practice": [
+        "Define bandwidth and latency.",
+        "State two reasons why Wi-Fi may be slower than an Ethernet cable.",
+        "Explain why fibre optic cable is used for long-distance links."
+      ],
+      "independent": [
+        "Core: Complete a table comparing wired and wireless connections on speed, range, latency and security.",
+        "Extend: A library has 30 tablets and 6 fixed PCs. Recommend a connection for each and justify.",
+        "Stretch: Ten people in one house start streaming video at the same time and each notices buffering. Explain what is happening in terms of bandwidth and how it could be improved."
+      ],
+      "exit": [
+        "Give one situation where low latency matters more than high bandwidth.",
+        "State one advantage of wireless over wired."
+      ],
+      "homework": "Test the connection in two different rooms (or use a speed test) and record download speed and latency. Explain the difference in 100 words.",
+      "send": "SEND/EAL: give a picture of the road analogy with labels. Stretch: ask for an evaluation of the drawbacks of each choice. The existing y11 lesson 5 mentions bandwidth and media; this lesson separates latency and compares connection types in detail.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 4.1: Networks: types, protocols and connections",
+      "n": 16,
+      "title": "Calculating transmission time, speed and file size",
+      "duration": 50,
+      "bigQuestion": "How long will this download take, and can we send it in time?",
+      "objectives": [
+        "Calculate transmission time, rate and file size from network speed in bits per second (4.1.5)",
+        "Convert between bytes and bits correctly",
+        "Use the three-way relationship to solve problems"
+      ],
+      "successCriteria": [
+        "All: calculate the time to send a file given its size in bits and the speed",
+        "Most: convert bytes to bits first and give the time",
+        "Some: rearrange the formula to find speed or file size and compare two connections"
+      ],
+      "crossCurricular": "Mathematics: rates, units and standard form",
+      "smsc": "Moral: careful, honest calculation: neither exaggerating nor underestimating what a system can do",
+      "keywords": [
+        {
+          "term": "bit per second",
+          "def": "the unit of network speed (bit/s); 1 Mbit/s is 1 000 000 bit/s"
+        },
+        {
+          "term": "transmission time",
+          "def": "how long it takes to send data"
+        },
+        {
+          "term": "file size",
+          "def": "the amount of data in a file"
+        },
+        {
+          "term": "rate",
+          "def": "the speed of a connection"
+        }
+      ],
+      "starter": [
+        "Bismillah. How many bits are in 500 bytes?",
+        "Calculate 4 000 000 / 2 000 000.",
+        "State the formula: speed = distance / time. What is time in terms of distance and speed?"
+      ],
+      "teach": [
+        {
+          "heading": "The relationship",
+          "bullets": [
+            "time = file size / speed",
+            "speed = file size / time",
+            "file size = speed x time"
+          ],
+          "note": "Draw the triangle: size on top, speed and time below. Units must match: file size in bits and speed in bits per second give time in seconds. In this course, network speeds are given in bits per second with the decimal prefixes of megabits (1 000 000) unless the question says otherwise; check what the paper states. File sizes are often given in bytes, so multiply by 8.",
+          "table": {
+            "head": [
+              "Quantity",
+              "Unit",
+              "Convert"
+            ],
+            "rows": [
+              [
+                "File size",
+                "bits (or bytes)",
+                "bytes x 8 = bits"
+              ],
+              [
+                "Speed",
+                "bit/s, Mbit/s",
+                "1 Mbit/s = 1 000 000 bit/s"
+              ],
+              [
+                "Time",
+                "seconds",
+                "minutes x 60"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Calculating in Python",
+          "bullets": [
+            "Convert the size to bits first",
+            "Divide by the speed in bit/s",
+            "Check the unit of the answer"
+          ],
+          "note": "Run the code: 500 000 bytes is 4 000 000 bits; at 2 000 000 bit/s it takes 2 seconds. The second line finds file size: 20 Mbit/s for 30 seconds is 600 000 000 bits, which is 75 000 000 bytes. Python helps us check but the exam is on paper, so pupils need to be able to do it with a pencil.",
+          "code": {
+            "lang": "python",
+            "text": "size_bytes = 500000\nspeed = 2000000\nprint(size_bytes * 8 / speed, \"seconds\")\nprint(20 * 1000000 * 30 / 8, \"bytes\")",
+            "output": "2.0 seconds\n75000000.0 bytes"
+          }
+        },
+        {
+          "heading": "Worked example: time and speed",
+          "note": "Model by writing the formula, then substituting with units. Show the conversion line explicitly. Ask pupils what happens to the time if the speed doubles (it halves). Warn about the trap of leaving the file in bytes.",
+          "model": {
+            "problem": "A 3 MB file (3 000 000 bytes) is sent over a 6 Mbit/s connection. How long does it take?",
+            "steps": [
+              "Convert bytes to bits: 3 000 000 x 8 = 24 000 000 bits",
+              "Convert the speed: 6 Mbit/s = 6 000 000 bit/s",
+              "time = size / speed = 24 000 000 / 6 000 000",
+              "Check units: bits divided by bit/s gives seconds"
+            ],
+            "answer": "The transfer takes 4 seconds."
+          }
+        },
+        {
+          "heading": "Check: finding speed",
+          "note": "Answer C. 40 Mbit is sent in 8 seconds: 40 / 8 = 5 Mbit/s. A divides the wrong way round. B multiplies, D forgets to convert from the size in megabits. Ask for the units of each wrong answer.",
+          "check": {
+            "q": "A file of 40 Mbit is sent in 8 seconds. What is the speed?",
+            "options": [
+              "0.2 Mbit/s",
+              "320 Mbit/s",
+              "5 Mbit/s",
+              "48 Mbit/s"
+            ],
+            "answer": 2,
+            "why": "speed = size / time = 40 / 8 = 5 Mbit/s. 0.2 comes from dividing the wrong way (A); 320 from multiplying (B); 48 from adding (D)."
+          }
+        }
+      ],
+      "practice": [
+        "How many bits are in a file of 250 000 bytes?",
+        "A 12 000 000 bit file is downloaded at 3 000 000 bit/s. How long does it take?",
+        "A connection runs at 8 Mbit/s. How many bits can it send in 10 seconds, and how many bytes is that?"
+      ],
+      "independent": [
+        "Core: Calculate the time to send a 1 500 000 byte file at 4 Mbit/s.",
+        "Extend: A video is 90 000 000 bytes. Compare the download time at 12 Mbit/s with 60 Mbit/s and state the ratio.",
+        "Stretch: A school needs to send a 2.4 GB (2 400 000 000 bytes) backup overnight in no more than 4 hours. Calculate the minimum speed in Mbit/s."
+      ],
+      "exit": [
+        "State the formula for transmission time.",
+        "Convert 6 MB (6 000 000 bytes) to bits."
+      ],
+      "homework": "Time how long a real download takes, use its size and your answer to work out the speed in Mbit/s, and compare with a speed test.",
+      "send": "SEND/EAL: give a formula triangle and a conversion ladder, with the first step filled in. Stretch: ask for calculations with minutes and with mebibytes, noting the effect of the unit. Check the paper's own definition of M for network questions.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 4.1: Networks: types, protocols and connections",
+      "n": 17,
+      "title": "Protocols: Ethernet, Wi-Fi, TCP/IP, HTTP(S), FTP and email",
+      "duration": 50,
+      "bigQuestion": "Who decides how two computers made by different companies talk to each other?",
+      "objectives": [
+        "Describe the purpose of Ethernet, Wi-Fi, TCP/IP, HTTP, HTTPS, FTP, POP3, SMTP and IMAP (4.1.6)",
+        "Explain why protocols are needed",
+        "Choose the correct protocol for a task"
+      ],
+      "successCriteria": [
+        "All: say what a protocol is and give three examples",
+        "Most: match each protocol to its purpose",
+        "Some: explain the difference between POP3 and IMAP and between HTTP and HTTPS for a scenario"
+      ],
+      "crossCurricular": "English: rules of conversation and register",
+      "smsc": "Moral: honesty and trust: HTTPS protects people's information when sent",
+      "keywords": [
+        {
+          "term": "protocol",
+          "def": "an agreed set of rules for communication between devices"
+        },
+        {
+          "term": "HTTPS",
+          "def": "HTTP with encryption"
+        },
+        {
+          "term": "SMTP",
+          "def": "protocol for sending email"
+        },
+        {
+          "term": "IMAP",
+          "def": "protocol that reads email on the server, keeping messages in sync across devices"
+        },
+        {
+          "term": "POP3",
+          "def": "protocol that downloads email to one device"
+        }
+      ],
+      "starter": [
+        "Bismillah. What is a packet?",
+        "What does a router use to decide where to send a packet?",
+        "Name one use of encryption."
+      ],
+      "teach": [
+        {
+          "heading": "Why protocols?",
+          "bullets": [
+            "Devices from different makers must understand each other",
+            "Rules say the format, order and checks",
+            "Each protocol has a job"
+          ],
+          "note": "Use the analogy of language: without a shared language, the message cannot be understood. The existing y11 lesson 6 lists the common protocols; today we assign each a precise job. Introduce the first group: Ethernet and Wi-Fi manage how devices in a LAN transmit data; TCP/IP manages the delivery across networks.",
+          "table": {
+            "head": [
+              "Protocol",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "Ethernet",
+                "Sends data over wired LANs"
+              ],
+              [
+                "Wi-Fi",
+                "Sends data over wireless LANs"
+              ],
+              [
+                "TCP/IP",
+                "Splits data into packets, addresses them and delivers them reliably"
+              ],
+              [
+                "HTTP",
+                "Requests and sends web pages"
+              ],
+              [
+                "HTTPS",
+                "As HTTP but encrypted, so others cannot read it"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Files and email",
+          "bullets": [
+            "FTP: transfers files between computers",
+            "SMTP: sends email to the mail server and between servers",
+            "POP3 and IMAP: receive email"
+          ],
+          "note": "POP3 downloads messages to one device, usually removing them from the server; IMAP leaves them on the server so every device shows the same mailbox. For a phone and a laptop, IMAP is the better choice. SMTP is only for sending. A common error: using POP3 to send mail.",
+          "compare": {
+            "left": {
+              "title": "POP3",
+              "points": [
+                "Downloads email to one device",
+                "Usually deletes from the server",
+                "Messages not synced across devices"
+              ]
+            },
+            "right": {
+              "title": "IMAP",
+              "points": [
+                "Reads email on the server",
+                "Messages stay on the server",
+                "Same mailbox on every device"
+              ]
+            },
+            "label": "Receiving email"
+          }
+        },
+        {
+          "heading": "Worked example: which protocol?",
+          "note": "Model: identify the job in the scenario, then name the protocol and give the reason. The same scenario can use several protocols together: HTTPS for the page, TCP/IP for delivery. Keep the answer short and exact.",
+          "model": {
+            "problem": "Name the protocol used for each task: (a) sending a report to a teacher's email server; (b) viewing a bank's website securely; (c) reading the same inbox on a phone and a laptop; (d) uploading a 200 MB video to a web server.",
+            "steps": [
+              "(a) Sending email: SMTP",
+              "(b) Secure web page: HTTPS, because the data is encrypted",
+              "(c) Same inbox on two devices: IMAP, which keeps messages on the server",
+              "(d) Transferring a file: FTP"
+            ],
+            "answer": "(a) SMTP, (b) HTTPS, (c) IMAP, (d) FTP."
+          }
+        },
+        {
+          "heading": "Misconception: HTTPS makes a site safe",
+          "bullets": [
+            "HTTPS encrypts the data in transit",
+            "It does not prove the site is honest",
+            "Check the address and be careful"
+          ],
+          "note": "A criminal can also use HTTPS on a fake site. The padlock tells you the connection is encrypted, not that the owner is trustworthy. Link to phishing in unit 5.3.",
+          "misconception": {
+            "wrong": "A website that uses HTTPS is always safe to give my details to.",
+            "right": "HTTPS only means the data is encrypted between you and the site. A fraudulent site can also use HTTPS, so you still check who runs it."
+          }
+        },
+        {
+          "heading": "Check: protocol selection",
+          "note": "Answer D. SMTP is used to send email. A is for receiving, B for web pages and C for files. Another way: ask 'which protocols receive' to build the full list.",
+          "check": {
+            "q": "Which protocol is used to send an email from your device to the mail server?",
+            "options": [
+              "IMAP",
+              "HTTP",
+              "FTP",
+              "SMTP"
+            ],
+            "answer": 3,
+            "why": "SMTP sends email. IMAP receives it and keeps it on the server (A). HTTP is for web pages (B) and FTP transfers files (C)."
+          }
+        }
+      ],
+      "practice": [
+        "State why protocols are needed.",
+        "Give one difference between HTTP and HTTPS.",
+        "A pupil reads email on a phone, a laptop and a tablet. Recommend POP3 or IMAP and explain."
+      ],
+      "independent": [
+        "Core: Match nine protocols to their purposes in a table.",
+        "Extend: Describe, using at least three protocols, what happens when you send a photo by email and then view it on the web.",
+        "Stretch: Explain why a bank must use HTTPS, and why HTTPS alone is not enough to protect its customers."
+      ],
+      "exit": [
+        "Which protocol sends email?",
+        "Which protocol is used to transfer a file to a server?"
+      ],
+      "homework": "Make a quick-reference card for all nine protocols with a one-line purpose and an everyday example for each.",
+      "send": "SEND/EAL: give a matching task with protocol cards and picture cards. Stretch: ask for a protocol choice for five new scenarios with reasons.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 4.1: Networks: types, protocols and connections",
+      "n": 18,
+      "title": "The four-layer TCP/IP model and packet switching",
+      "duration": 50,
+      "bigQuestion": "How is a message wrapped, sent in pieces and put back together?",
+      "objectives": [
+        "Describe the four-layer TCP/IP model (4.1.7)",
+        "Describe what each layer does and which protocols belong to it",
+        "Explain how data is split into packets, sent and reassembled"
+      ],
+      "successCriteria": [
+        "All: name the four layers in order",
+        "Most: state the job of each layer and give a protocol for each",
+        "Some: trace a message through the layers on sending and receiving"
+      ],
+      "crossCurricular": "English: structure and layers of communication",
+      "smsc": "Moral: order and care in communicating (the message arrives complete)",
+      "keywords": [
+        {
+          "term": "layer",
+          "def": "one level of the network model with its own job"
+        },
+        {
+          "term": "packet",
+          "def": "a small chunk of data with a header holding addresses and a sequence number"
+        },
+        {
+          "term": "header",
+          "def": "extra data at the front of a packet, such as addresses"
+        },
+        {
+          "term": "packet switching",
+          "def": "splitting data into packets that may take different routes"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name two protocols and what they do.",
+        "What does a router read on a packet?",
+        "State why a long message is divided into smaller parts."
+      ],
+      "teach": [
+        {
+          "heading": "Four layers",
+          "bullets": [
+            "Application: the program's protocol (HTTP, SMTP, FTP)",
+            "Transport: splits data and checks delivery (TCP)",
+            "Internet: addresses and routes (IP)",
+            "Link: sends on the local network (Ethernet, Wi-Fi)"
+          ],
+          "note": "Say the layers top to bottom: application, transport, internet, link. Naming varies between textbooks (link is sometimes called network access): check the board's wording. Each layer only talks to the layer above and below, so a layer can be changed without changing the rest. Use a postal analogy: letter, envelope, sorting office, delivery van.",
+          "table": {
+            "head": [
+              "Layer",
+              "Job",
+              "Examples"
+            ],
+            "rows": [
+              [
+                "Application",
+                "Provides the service the user wants",
+                "HTTP, HTTPS, FTP, SMTP, IMAP"
+              ],
+              [
+                "Transport",
+                "Splits data into numbered packets; checks and resends",
+                "TCP"
+              ],
+              [
+                "Internet",
+                "Adds source and destination IP addresses; routes packets",
+                "IP"
+              ],
+              [
+                "Link",
+                "Sends the bits over the local connection",
+                "Ethernet, Wi-Fi"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Packets in code",
+          "bullets": [
+            "Split the message into numbered packets",
+            "Packets can arrive in any order",
+            "The receiver sorts by number and rebuilds"
+          ],
+          "note": "Run the simulation: four packets with sequence numbers. In real networks the sort step is done by the transport layer. Ask what happens if packet 2 never arrives (TCP asks for it to be sent again).",
+          "code": {
+            "lang": "python",
+            "text": "message = \"ASSALAMU ALAYKUM\"\nsize = 4\npackets = []\nfor i in range(0, len(message), size):\n    packets.append((i // size, message[i:i + size]))\nprint(packets)\npackets.reverse()\npackets.sort()\nresult = \"\"\nfor number, text in packets:\n    result = result + text\nprint(result)",
+            "output": "[(0, 'ASSA'), (1, 'LAMU'), (2, ' ALA'), (3, 'YKUM')]\nASSALAMU ALAYKUM"
+          }
+        },
+        {
+          "heading": "Worked example: layers in action",
+          "note": "Model going down the layers on the sender's side and up on the receiver's side. Pupils should use the layer names and the verbs: splits, addresses, sends. The packet gains a header at each layer on the way down and loses it on the way up.",
+          "model": {
+            "problem": "Describe what happens at each layer when a laptop requests a web page using HTTPS.",
+            "steps": [
+              "Application: the browser makes the request using HTTPS",
+              "Transport: TCP splits the data into numbered packets",
+              "Internet: IP adds the source and destination IP addresses",
+              "Link: Ethernet or Wi-Fi sends the packets across the local network, then the server reverses the steps"
+            ],
+            "answer": "Application, then transport, internet and link on the way out; the server reassembles on the way back up."
+          }
+        },
+        {
+          "heading": "Check: which layer?",
+          "note": "Answer B. IP addressing belongs to the internet layer. A (application) provides services, C (transport) splits and numbers packets, D (link) sends over the physical connection.",
+          "check": {
+            "q": "At which TCP/IP layer are the source and destination IP addresses added to each packet?",
+            "options": [
+              "Application",
+              "Internet",
+              "Transport",
+              "Link"
+            ],
+            "answer": 1,
+            "why": "The internet layer (IP) adds addresses and routes packets. The application layer provides the service (A), the transport layer numbers and checks packets (C), and the link layer sends them over the local connection (D)."
+          }
+        }
+      ],
+      "practice": [
+        "List the four layers of the TCP/IP model from top to bottom.",
+        "State two things TCP does when sending a large file.",
+        "Explain why packets might arrive out of order and how the receiver fixes this."
+      ],
+      "independent": [
+        "Core: Draw a four-layer diagram and add a protocol and a job to each layer.",
+        "Extend: Write about 80 words describing the journey of an email, naming the layer at each stage.",
+        "Stretch: Explain two advantages of a layered model, for example when Wi-Fi is replaced with Ethernet."
+      ],
+      "exit": [
+        "Which layer is TCP in?",
+        "Why are packets numbered?"
+      ],
+      "homework": "Create an analogy (not the postal one) for the four layers and explain each part.",
+      "send": "SEND/EAL: give a four-layer template with pictures and a word bank. Stretch: ask for the effect on the model if a new protocol replaces Wi-Fi.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 4.1: Networks: types, protocols and connections",
+      "n": 19,
+      "title": "Network topologies: bus, star and mesh",
+      "duration": 50,
+      "bigQuestion": "How should we arrange the cables so the network keeps working when something fails?",
+      "objectives": [
+        "Compare bus, star and mesh topologies (4.1.8)",
+        "Draw each topology and describe how data flows",
+        "Recommend a topology for a given situation, with reasons"
+      ],
+      "successCriteria": [
+        "All: draw and name the three topologies",
+        "Most: state one advantage and one disadvantage of each",
+        "Some: recommend and justify a topology for a scenario, including cost and reliability"
+      ],
+      "crossCurricular": "Design and Technology: planning layout and infrastructure",
+      "smsc": "Moral: resilience: preparing so that the whole community is not harmed by one failure",
+      "keywords": [
+        {
+          "term": "topology",
+          "def": "the layout of devices and connections in a network"
+        },
+        {
+          "term": "bus",
+          "def": "all devices connected to one shared main cable"
+        },
+        {
+          "term": "star",
+          "def": "every device connected to a central switch"
+        },
+        {
+          "term": "mesh",
+          "def": "devices connected to many other devices, giving multiple routes"
+        },
+        {
+          "term": "switch",
+          "def": "a device that sends data only to the device it is intended for"
+        }
+      ],
+      "starter": [
+        "Bismillah. What device connects devices in a LAN?",
+        "Give one disadvantage of relying on a single cable.",
+        "Name the layer where Ethernet works."
+      ],
+      "teach": [
+        {
+          "heading": "Three layouts",
+          "bullets": [
+            "Bus: one shared backbone cable",
+            "Star: all devices to a central switch",
+            "Mesh: many links between devices"
+          ],
+          "note": "Draw all three on the board. In a bus, all data travels on one cable and every device sees it; collisions rise as more devices join. A star is the standard LAN design today because failures only affect one device. A mesh gives alternative routes; full mesh has a link between every pair of devices, so the number of links rises rapidly.",
+          "compare": {
+            "left": {
+              "title": "Bus",
+              "points": [
+                "One backbone cable",
+                "Cheap, little cabling",
+                "Backbone fault stops the network",
+                "Slows as devices are added"
+              ]
+            },
+            "right": {
+              "title": "Star",
+              "points": [
+                "Central switch",
+                "One cable fault affects one device",
+                "Easy to add devices",
+                "Switch fault stops the network"
+              ]
+            },
+            "label": "Two layouts"
+          }
+        },
+        {
+          "heading": "Mesh and the comparison",
+          "bullets": [
+            "Mesh: data can take alternative routes",
+            "Very reliable, but costly and complex",
+            "Wireless mesh is used for internet backbones and some homes"
+          ],
+          "note": "A full mesh of n devices needs n(n-1)/2 links: 10 devices need 45 links. This is the reason for the cost. The table summarises. Ask which topology a school should choose for a computer room, then check against the table.",
+          "table": {
+            "head": [
+              "Feature",
+              "Bus",
+              "Star",
+              "Mesh"
+            ],
+            "rows": [
+              [
+                "Cabling",
+                "Least",
+                "A cable per device",
+                "Most"
+              ],
+              [
+                "If a cable fails",
+                "Whole bus affected",
+                "One device affected",
+                "Data reroutes"
+              ],
+              [
+                "Performance with many devices",
+                "Poor (shared)",
+                "Good",
+                "Very good"
+              ],
+              [
+                "Cost and complexity",
+                "Low",
+                "Medium",
+                "High"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Worked example: recommend a topology",
+          "note": "Model by listing requirements then comparing. Show that the answer links features to the scenario. Add that a star with a switch also isolates traffic, which helps performance.",
+          "model": {
+            "problem": "A madrasah is setting up a computer room with 20 computers. It needs the network to keep working if one cable is damaged, and it has a modest budget. Recommend a topology.",
+            "steps": [
+              "Requirement 1: a damaged cable must not stop everyone",
+              "Bus: a break in the backbone could stop all 20 computers",
+              "Mesh: very reliable but needs many links, so too costly",
+              "Star: a cable fault affects only one computer, and cabling cost is moderate"
+            ],
+            "answer": "A star topology, because it limits the effect of a cable fault at a reasonable cost."
+          }
+        },
+        {
+          "heading": "Check: failure",
+          "note": "Answer C. In a bus, the one shared backbone is a single point of failure for the whole network. A and B describe mesh and star behaviour. D is a common mix-up between star and bus.",
+          "check": {
+            "q": "What happens if the main backbone cable of a bus network is cut?",
+            "options": [
+              "Data is rerouted automatically",
+              "Only one computer loses its connection",
+              "The network is split and may stop working",
+              "Nothing happens because there is a switch"
+            ],
+            "answer": 2,
+            "why": "All devices share the backbone, so a break can disconnect the network. Rerouting (A) is a feature of a mesh. Only one computer being affected (B) describes a star."
+          }
+        }
+      ],
+      "practice": [
+        "Draw a star topology with six computers.",
+        "State one advantage and one disadvantage of a bus topology.",
+        "How many links does a full mesh of 6 devices have? (use n(n-1)/2)"
+      ],
+      "independent": [
+        "Core: Complete a table with advantages and disadvantages for bus, star and mesh.",
+        "Extend: A hospital needs a network that never goes down. Recommend a topology and justify, mentioning cost.",
+        "Stretch: A company with five offices connects each office to every other. Calculate the number of links, then compare with a star layout and discuss which to use."
+      ],
+      "exit": [
+        "Name the central device in a star network.",
+        "Why is a mesh network more reliable?"
+      ],
+      "homework": "Draw the network in your home or school as a topology diagram and say which topology it is closest to and why.",
+      "send": "SEND/EAL: give outline diagrams to label and a table to complete with key words. Stretch: ask for a calculation of the links for 12 devices. Existing y11 lesson 5 covers star and mesh; this lesson adds bus and a full three-way comparison.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 4.2: Networks: network security",
+      "n": 20,
+      "title": "Network security: penetration testing, access control, physical security and firewalls",
+      "duration": 50,
+      "bigQuestion": "How do organisations test and defend their networks without breaking the law?",
+      "objectives": [
+        "Identify network vulnerabilities through penetration testing and ethical hacking (4.2.1)",
+        "Explain access control and physical security (4.2.1)",
+        "Explain how a firewall protects a network (4.2.1)"
+      ],
+      "successCriteria": [
+        "All: define penetration testing and give two network protections",
+        "Most: explain how each protection works and what it prevents",
+        "Some: recommend a combination of protections for a scenario and explain how they work together"
+      ],
+      "crossCurricular": "Citizenship: law and responsibility online",
+      "smsc": "Moral: amanah and permission: testing a system is lawful and ethical only with the owner's agreement; entering one without it is a crime and a breach of trust",
+      "keywords": [
+        {
+          "term": "penetration testing",
+          "def": "authorised, simulated attacks on a system to find weaknesses"
+        },
+        {
+          "term": "ethical hacking",
+          "def": "hacking with the owner's permission, to improve security"
+        },
+        {
+          "term": "access control",
+          "def": "limiting who can reach data and what they can do"
+        },
+        {
+          "term": "firewall",
+          "def": "filters traffic in and out of a network using rules"
+        },
+        {
+          "term": "physical security",
+          "def": "locks, guards and other measures that protect hardware"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name two types of malware.",
+        "State the purpose of a password.",
+        "What is the Computer Misuse Act 1990 about?"
+      ],
+      "teach": [
+        {
+          "heading": "Finding weaknesses",
+          "bullets": [
+            "Penetration testing: authorised, simulated attack",
+            "Ethical hacker has written permission from the owner",
+            "A report lists weaknesses to fix, then tests again"
+          ],
+          "note": "An ethical hacker's actions are legal because the owner has agreed to a defined scope; unauthorised access breaks the Computer Misuse Act 1990. Contrast with a malicious hacker. The test finds weak passwords, unpatched software and badly configured devices. Ask: why test a system that seems fine? (You find the problem before a criminal does.)",
+          "cycle": [
+            "Agree scope and permission in writing",
+            "Simulate attacks to find weaknesses",
+            "Record what was found",
+            "Report to the owner",
+            "Fix the faults and test again"
+          ]
+        },
+        {
+          "heading": "Access control and physical security",
+          "bullets": [
+            "Access control: accounts, passwords, access levels, biometrics",
+            "Physical security: locks, ID cards, CCTV, secure server room",
+            "Both protect data: one online, one in the building"
+          ],
+          "note": "Access levels follow the principle of least privilege: each user gets only the rights needed for their job (pupils cannot open staff records). Strong password plus a second factor is stronger than a password alone. Physical measures matter because stolen hardware can leak data directly. Pupils often forget physical security in network answers.",
+          "compare": {
+            "left": {
+              "title": "Access control",
+              "points": [
+                "Usernames and strong passwords",
+                "Different access levels per user",
+                "Biometrics, two-factor authentication"
+              ]
+            },
+            "right": {
+              "title": "Physical security",
+              "points": [
+                "Locked server room",
+                "ID cards and door entry",
+                "CCTV and alarms"
+              ]
+            },
+            "label": "Two kinds of protection"
+          }
+        },
+        {
+          "heading": "Firewalls",
+          "bullets": [
+            "Sit between a network and the internet",
+            "Check each packet against rules",
+            "Block unauthorised traffic; allow permitted traffic"
+          ],
+          "note": "Run the program: it is a simplified firewall with a block list of source addresses (the addresses are in a range reserved for examples). Real firewalls use many kinds of rule and can also watch traffic leaving the network. A firewall does not stop a user opening a malicious attachment, so it is one layer of defence.",
+          "code": {
+            "lang": "python",
+            "text": "blocked = [\"203.0.113.5\", \"198.51.100.9\"]\nsources = [\"192.0.2.10\", \"203.0.113.5\", \"192.0.2.77\"]\nfor source in sources:\n    if source in blocked:\n        print(source, \"blocked\")\n    else:\n        print(source, \"allowed\")",
+            "output": "192.0.2.10 allowed\n203.0.113.5 blocked\n192.0.2.77 allowed"
+          }
+        },
+        {
+          "heading": "Worked example: a layered plan",
+          "note": "Model the idea of defence in depth: no single measure is enough. Pupils should name the measure, say how it works and what it prevents. Add a short evaluation at the end to earn the highest marks.",
+          "model": {
+            "problem": "A madrasah stores pupils' records on a server connected to the internet. Recommend four protections and explain each.",
+            "steps": [
+              "Firewall: filters traffic and blocks unauthorised connections from the internet",
+              "Access control: staff have accounts with passwords and access levels, so only authorised staff open records",
+              "Physical security: the server is in a locked room with door entry, so no one can steal or tamper with it",
+              "Penetration testing: an ethical hacker, with permission, finds weaknesses to fix before criminals do"
+            ],
+            "answer": "A firewall, access control, physical security and penetration testing, working together as layers."
+          }
+        },
+        {
+          "heading": "Check: ethical hacking",
+          "note": "Answer B. The key difference is permission. A is false, because the methods may be the same. C is not true, and D is a description of a malicious attacker. Stress the word authorised.",
+          "check": {
+            "q": "What makes the work of an ethical hacker different from that of a criminal hacker?",
+            "options": [
+              "They use different techniques",
+              "They have the owner's permission and report problems",
+              "They only attack small organisations",
+              "They always keep the information they find"
+            ],
+            "answer": 1,
+            "why": "An ethical hacker works with the owner's permission, within an agreed scope, and reports weaknesses so that they can be fixed. The techniques may be the same (A)."
+          }
+        }
+      ],
+      "practice": [
+        "Define penetration testing.",
+        "Give two examples of physical security measures for a server room.",
+        "Explain what a firewall does."
+      ],
+      "independent": [
+        "Core: Complete a table: protection, how it works, one threat it reduces, for four protections.",
+        "Extend: Explain why a firewall alone does not protect a network, using two examples of threats it does not stop.",
+        "Stretch: Evaluate (6 marks) the statement 'A small school does not need to pay for penetration testing.' Give arguments for both sides and reach a conclusion."
+      ],
+      "exit": [
+        "What does an ethical hacker need before starting a test?",
+        "State one access control method."
+      ],
+      "homework": "Write a security checklist for a mosque office computer containing donor records, using at least four measures from this lesson.",
+      "send": "SEND/EAL: provide a matching task (measure, how it works, threat) and the cycle as a picture. Stretch: ask for a discussion of the Computer Misuse Act 1990 and ethical hacking permission.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 5.1: Issues and impact: environmental effects",
+      "n": 21,
+      "title": "The environmental impact of computing",
+      "duration": 50,
+      "bigQuestion": "Do the benefits of our devices outweigh their cost to the planet?",
+      "objectives": [
+        "Discuss environmental impacts of computing: energy use, manufacture, replacement cycles and disposal (5.1.1)",
+        "Weigh the costs of devices against their benefits to give a reasoned view (5.1.1)",
+        "Structure a six-mark discussion answer"
+      ],
+      "successCriteria": [
+        "All: give impacts at manufacture, use and disposal",
+        "Most: explain how the impacts could be reduced",
+        "Some: write a balanced discussion with a justified conclusion"
+      ],
+      "crossCurricular": "Geography: resource use, pollution and sustainability",
+      "smsc": "Spiritual and moral: stewardship of the earth (khalifah); the Qur'an (7:31) warns against wastefulness",
+      "keywords": [
+        {
+          "term": "e-waste",
+          "def": "discarded electrical and electronic equipment"
+        },
+        {
+          "term": "energy consumption",
+          "def": "the amount of electricity used, measured in kilowatt-hours (kWh)"
+        },
+        {
+          "term": "sustainability",
+          "def": "meeting present needs without harming the ability of future generations to meet theirs"
+        },
+        {
+          "term": "replacement cycle",
+          "def": "how often devices are replaced, often every few years"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name one resource used to make a smartphone.",
+        "State what a data centre is.",
+        "Give one way a computer saves paper."
+      ],
+      "teach": [
+        {
+          "heading": "The life of a device",
+          "bullets": [
+            "Manufacture: mining, materials, energy, water",
+            "Use: electricity for devices, networks and data centres",
+            "Disposal: e-waste, toxic materials, landfill, recycling"
+          ],
+          "note": "Walk through the life cycle: this structure makes a good frame for a discussion answer. Manufacture uses metals such as copper and rare earths, and a lot of energy before the device is even switched on. Data centres use electricity for servers and for cooling. Old devices contain materials that can leak into soil and water if not disposed of properly, and valuable materials that can be recovered through recycling.",
+          "table": {
+            "head": [
+              "Stage",
+              "Environmental impact",
+              "Reduction"
+            ],
+            "rows": [
+              [
+                "Manufacture",
+                "Mining, energy, water, pollution",
+                "Recycled materials, efficient factories"
+              ],
+              [
+                "Use",
+                "Electricity, cooling of data centres",
+                "Energy-efficient devices, renewable power, sleep modes"
+              ],
+              [
+                "Replacement",
+                "Short cycles create demand",
+                "Repair, upgrade, keep devices longer"
+              ],
+              [
+                "Disposal",
+                "E-waste, toxic substances",
+                "Recycling schemes, reuse, donation"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Calculating energy use",
+          "bullets": [
+            "Energy (kWh) = power (kW) x hours",
+            "Power in watts divided by 1000 gives kW",
+            "Multiply by days to find yearly use"
+          ],
+          "note": "Run the code: a 150 W desktop used 8 hours a day for 365 days. A laptop of 50 W would use a third as much. Ask pupils how switching off at night and using a more efficient device change the total. Note that most of the cost to the planet may be in manufacture rather than use for devices replaced often.",
+          "code": {
+            "lang": "python",
+            "text": "watts = 150\nhours_per_day = 8\ndays = 365\nkwh = watts * hours_per_day * days / 1000\nprint(kwh, \"kWh per year\")\nprint(50 * hours_per_day * days / 1000, \"kWh for a 50 W laptop\")",
+            "output": "438.0 kWh per year\n146.0 kWh for a 50 W laptop"
+          }
+        },
+        {
+          "heading": "Benefits as well as costs",
+          "bullets": [
+            "Video calls and remote work cut travel",
+            "Smart meters and sensors reduce energy waste",
+            "Online learning and digital documents save paper and journeys"
+          ],
+          "note": "A discussion needs both sides. For example, an online school such as TGA reduces journeys, but its pupils use devices and servers. Encourage pupils to weigh up: how big is each effect, and who decides? A strong answer reaches a conclusion that depends on how the technology is used.",
+          "compare": {
+            "left": {
+              "title": "Harm",
+              "points": [
+                "Energy for data centres and devices",
+                "Mining and manufacture",
+                "E-waste and short replacement cycles"
+              ]
+            },
+            "right": {
+              "title": "Benefit",
+              "points": [
+                "Less travel and paper",
+                "Efficiency through smart systems",
+                "Access to education and services"
+              ]
+            },
+            "label": "Weigh both"
+          }
+        },
+        {
+          "heading": "Worked example: plan a discussion answer",
+          "note": "Model the plan on the board before writing: claim, point, evidence, link to the question, then a conclusion with a judgement. The best answers give two sides and a reasoned view. In the exam this is worth six marks, so aim for three developed points.",
+          "model": {
+            "problem": "Discuss the environmental impact of schools replacing all laptops every two years. (Plan, 6 marks)",
+            "steps": [
+              "Point 1 (harm): manufacture of 1000 laptops uses minerals and energy and creates waste",
+              "Point 2 (harm): old laptops become e-waste; toxic substances if not recycled",
+              "Point 3 (benefit): newer laptops are often more energy efficient and may suit new software",
+              "Counter: repair or upgrade, or a longer cycle, keeps the benefits with less harm",
+              "Conclusion: replacing every two years is hard to justify; four years with upgrades is better"
+            ],
+            "answer": "A balanced answer with developed points on both sides and a justified conclusion."
+          }
+        },
+        {
+          "heading": "Check: reducing impact",
+          "note": "Answer C. Repairing and reusing a device reduces both manufacture and waste. A increases manufacture, B increases electricity, and D increases waste. Link to the idea of the replacement cycle.",
+          "check": {
+            "q": "Which action would most reduce the environmental impact of a school's computers?",
+            "options": [
+              "Replacing all computers every year",
+              "Leaving computers on overnight",
+              "Repairing and upgrading computers so they last longer",
+              "Throwing old computers into general waste"
+            ],
+            "answer": 2,
+            "why": "Keeping devices longer reduces manufacture and e-waste. Replacing every year (A), leaving machines on (B) and general-waste disposal (D) all increase the harm."
+          }
+        }
+      ],
+      "practice": [
+        "State two environmental harms caused by the manufacture of devices.",
+        "A projector uses 300 W for 5 hours a day for 200 school days. Calculate the energy used in kWh.",
+        "Give one way a data centre could reduce its environmental impact."
+      ],
+      "independent": [
+        "Core: Complete a table of impacts and reductions for manufacture, use and disposal.",
+        "Extend: Calculate the yearly energy use of 30 computers at 120 W for 6 hours a day for 190 days.",
+        "Stretch: Write a six-mark discussion: 'Online lessons are better for the environment than travelling to a school.'"
+      ],
+      "exit": [
+        "Define e-waste.",
+        "Give one environmental benefit of computers and one harm."
+      ],
+      "homework": "Interview family members about what they do with old phones or computers. Write 150 words on what happens to them and how it could be improved.",
+      "send": "SEND/EAL: give a life-cycle diagram to label and sentence starters ('This harms the environment because...'). Stretch: ask for a conclusion that weighs the scale of each impact.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 5.2: Issues and impact: ethical, legal and ownership issues",
+      "n": 22,
+      "title": "Personal data: privacy, consent, ownership and data protection",
+      "duration": 50,
+      "bigQuestion": "Who owns information about you, and what must organisations do to protect it?",
+      "objectives": [
+        "Discuss privacy, consent, ownership and misuse of personal data (5.2.1)",
+        "Describe the main principles and rights in UK data protection law (5.2.1)",
+        "Apply the principles to a scenario and reach a reasoned view"
+      ],
+      "successCriteria": [
+        "All: define personal data and state two principles of data protection",
+        "Most: explain consent and give examples of misuse",
+        "Some: evaluate a scenario against the principles and recommend changes"
+      ],
+      "crossCurricular": "PSHE and Citizenship: rights, privacy and online safety",
+      "smsc": "Moral: amanah: the Qur'an (4:58) tells believers to return trusts to those they are due; personal data is a trust",
+      "keywords": [
+        {
+          "term": "personal data",
+          "def": "information that identifies a living person"
+        },
+        {
+          "term": "consent",
+          "def": "a person's free, informed agreement to something"
+        },
+        {
+          "term": "data protection",
+          "def": "laws and practices that keep personal data safe and fairly used"
+        },
+        {
+          "term": "privacy",
+          "def": "the right to keep personal information to yourself"
+        },
+        {
+          "term": "data subject",
+          "def": "the person the data is about"
+        }
+      ],
+      "starter": [
+        "Bismillah. Give three examples of personal data.",
+        "State what is meant by encryption.",
+        "Why might a company want data about its customers?"
+      ],
+      "teach": [
+        {
+          "heading": "Privacy, consent, ownership, misuse",
+          "bullets": [
+            "Privacy: keeping personal information to yourself",
+            "Consent: free, informed agreement to data use",
+            "Misuse: selling, sharing or using it without permission"
+          ],
+          "note": "Start with a concrete case: a free app collecting your location. Ask who owns the data, you or the company? Under data protection law you keep rights over data about you. Consent must be clear, not hidden in long terms. Misuse includes identity theft, discrimination and unwanted advertising.",
+          "table": {
+            "head": [
+              "Idea",
+              "Meaning",
+              "Example of a breach"
+            ],
+            "rows": [
+              [
+                "Privacy",
+                "Control over personal information",
+                "A child's photo published without permission"
+              ],
+              [
+                "Consent",
+                "Agreement freely given and informed",
+                "Pre-ticked boxes that join a mailing list"
+              ],
+              [
+                "Ownership",
+                "Rights over data about you",
+                "A company sells your details and refuses to delete them"
+              ],
+              [
+                "Misuse",
+                "Using data for harm or unfair purposes",
+                "Selling health data to advertisers"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "UK data protection principles",
+          "bullets": [
+            "Fair, lawful, transparent use",
+            "Collect only what is needed, for a stated purpose",
+            "Keep it accurate, secure and no longer than necessary"
+          ],
+          "note": "Name the law: the Data Protection Act 2018 and UK GDPR. Pupils do not need section numbers but should know the principles. Rights include to see data held about you, to have errors corrected and, in some cases, erased. Organisations that break the law can be fined by the Information Commissioner's Office. Run the code to show data minimisation.",
+          "code": {
+            "lang": "python",
+            "text": "record = {\"name\": \"Amina Khan\", \"age\": 15, \"postcode\": \"AB1 2CD\"}\npublic = {\"age_group\": \"11-16\", \"area\": record[\"postcode\"].split(\" \")[0]}\nprint(public)",
+            "output": "{'age_group': '11-16', 'area': 'AB1'}"
+          }
+        },
+        {
+          "heading": "Worked example: evaluate a scenario",
+          "note": "Model by listing the principles and checking each against the scenario. The conclusion should recommend specific changes. Contrast what is lawful with what is ethical: even if the terms say yes, an unfair or hidden use may not be ethical.",
+          "model": {
+            "problem": "A fitness app collects users' heart rate, location and age, and sells the data to an advertising company without telling users clearly. Identify the problems and recommend changes.",
+            "steps": [
+              "Consent: users were not clearly told, so their agreement is not informed",
+              "Purpose: the data was collected for fitness but used for advertising",
+              "Minimisation: location may not be needed for the service",
+              "Recommend: clear opt-in consent, collect only necessary data, never sell without permission, let users delete their data"
+            ],
+            "answer": "The app breaks the principles of fairness, purpose and consent, and should change to clear opt-in and minimal data."
+          }
+        },
+        {
+          "heading": "Check: principle",
+          "note": "Answer D. Collecting only what is necessary is data minimisation. A concerns accuracy, B storage and C security. Practise naming the principle from the description.",
+          "check": {
+            "q": "A school's online form asks only for the information needed to book a place on a trip. Which data protection principle does this follow?",
+            "options": [
+              "Keeping data accurate",
+              "Keeping data for no longer than needed",
+              "Keeping data secure",
+              "Collecting only what is needed"
+            ],
+            "answer": 3,
+            "why": "Asking only for what is needed is data minimisation. The other principles concern accuracy (A), how long data is kept (B) and security (C)."
+          }
+        }
+      ],
+      "practice": [
+        "Define consent and give one example of consent that is not valid.",
+        "State three rights that a person has over their data.",
+        "Explain why selling customer data without telling them is both unethical and illegal."
+      ],
+      "independent": [
+        "Core: Write each of the principles in your own words, with an example from school.",
+        "Extend: A shop keeps customers' addresses for ten years after their last order. Identify the principle it breaks and say what it should do.",
+        "Stretch: Discuss (6 marks): 'Companies should be allowed to collect as much data as they like if users agree to the terms.'"
+      ],
+      "exit": [
+        "State what 'data minimisation' means.",
+        "Give one misuse of personal data."
+      ],
+      "homework": "Read the privacy settings of one app you use. List what it collects, how you could limit it, and whether you think consent is clear.",
+      "send": "SEND/EAL: give principle cards and example cards to pair. Stretch: ask for a comparison of what is legal and what is ethical.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 5.2: Issues and impact: ethical, legal and ownership issues",
+      "n": 23,
+      "title": "Artificial intelligence, machine learning and robotics: accountability, safety, bias and liability",
+      "duration": 50,
+      "bigQuestion": "When a machine makes a mistake that harms someone, who is responsible?",
+      "objectives": [
+        "Discuss the issues of AI, machine learning and robotics (5.2.2)",
+        "Explain how algorithmic bias arises from data",
+        "Discuss accountability, safety and liability for automated decisions"
+      ],
+      "successCriteria": [
+        "All: define machine learning and give one example",
+        "Most: explain how bias arises and its effects",
+        "Some: evaluate who is accountable in a scenario and reach a justified conclusion"
+      ],
+      "crossCurricular": "Philosophy and RE: responsibility and fairness",
+      "smsc": "Moral: justice ('adl): the Qur'an (4:135) calls on believers to stand firmly for justice; unfair algorithms can treat groups unjustly",
+      "keywords": [
+        {
+          "term": "machine learning",
+          "def": "a system that learns patterns from data instead of following only fixed rules"
+        },
+        {
+          "term": "algorithmic bias",
+          "def": "systematically unfair results because of biased data or design"
+        },
+        {
+          "term": "accountability",
+          "def": "being answerable for what a system does"
+        },
+        {
+          "term": "liability",
+          "def": "legal responsibility for harm"
+        },
+        {
+          "term": "robot",
+          "def": "a machine that can carry out tasks automatically"
+        }
+      ],
+      "starter": [
+        "Bismillah. What is an algorithm?",
+        "Give one example of a decision a computer makes for you.",
+        "State one advantage of automation."
+      ],
+      "teach": [
+        {
+          "heading": "How machine learning works",
+          "bullets": [
+            "Learns patterns from lots of example data",
+            "Uses those patterns to predict on new cases",
+            "The quality of the data decides the quality of the result"
+          ],
+          "note": "Give examples: spam filters, medical image analysis, recommendations. The system is only as good as its training data. Explain that the programmer does not write rules for each case; the system adjusts itself based on examples. This is why unexpected results can occur and why explanations are hard.",
+          "table": {
+            "head": [
+              "Use",
+              "Benefit",
+              "Risk"
+            ],
+            "rows": [
+              [
+                "Medical scans",
+                "Spots patterns quickly",
+                "A missed diagnosis; who is responsible?"
+              ],
+              [
+                "Self-driving car",
+                "No tired drivers",
+                "Accidents; safety in unusual situations"
+              ],
+              [
+                "Recruitment",
+                "Quick shortlisting",
+                "Unfair treatment of some groups"
+              ],
+              [
+                "Facial recognition",
+                "Fast identification",
+                "Privacy and wrong identification"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Where bias comes from",
+          "bullets": [
+            "Learning from past decisions copies their unfairness",
+            "Missing groups in the data lead to poor results for them",
+            "Programmers' assumptions can be built in"
+          ],
+          "note": "Run the code: in the past data, group A was approved 90 percent of the time and group B 10 percent. A model trained on this would learn to favour group A even if the groups are equally able. Emphasise that the computer is not 'neutral' just because it is a computer. Bias can be reduced by checking results for different groups and by using more balanced data.",
+          "code": {
+            "lang": "python",
+            "text": "history = [(\"A\", True)] * 9 + [(\"A\", False)] + [(\"B\", True)] + [(\"B\", False)] * 9\nfor group in (\"A\", \"B\"):\n    approved = 0\n    total = 0\n    for g, ok in history:\n        if g == group:\n            total = total + 1\n            if ok:\n                approved = approved + 1\n    print(group, approved / total)",
+            "output": "A 0.9\nB 0.1"
+          }
+        },
+        {
+          "heading": "Accountability, safety and liability",
+          "bullets": [
+            "Accountability: who is answerable for the decision?",
+            "Safety: robots and AI must be tested and controlled",
+            "Liability: who pays if harm is caused?"
+          ],
+          "note": "There may be several parties: the programmer, the company, the owner and the user. The law is still developing in some areas, so pupils should discuss options rather than state one answer. Safety includes keeping a human able to override, testing in realistic conditions and reporting failures.",
+          "compare": {
+            "left": {
+              "title": "Arguments for automation",
+              "points": [
+                "Consistent and tireless",
+                "Can be safer in dangerous jobs",
+                "Frees people for other work"
+              ]
+            },
+            "right": {
+              "title": "Concerns",
+              "points": [
+                "Hard to say who is responsible",
+                "Jobs may be lost",
+                "Bias and lack of transparency"
+              ]
+            },
+            "label": "Weigh"
+          }
+        },
+        {
+          "heading": "Worked example: who is responsible?",
+          "note": "Model considering each party and the evidence, then reaching a view while accepting that it may depend on the facts. Mention that a human should be able to check important decisions. Encourage pupils to use phrases such as 'it depends on whether...'.",
+          "model": {
+            "problem": "A self-driving taxi hits a pedestrian because its software misread a road sign. Discuss who should be held accountable.",
+            "steps": [
+              "The company that designed and sold the software: it was responsible for testing and safety",
+              "The programmers: they could have written and tested the code more carefully",
+              "The owner or passenger: only if they misused the vehicle",
+              "Overall: the company should usually be liable because it controls the design and profits from it"
+            ],
+            "answer": "The manufacturer is most likely to be accountable, though responsibility may be shared depending on the facts."
+          }
+        },
+        {
+          "heading": "Check: bias",
+          "note": "Answer B. Learning from biased past data copies that bias. A, C and D describe things that are not causes of bias. Ask: what would you do to reduce bias? (Balanced data, testing for different groups, human review.)",
+          "check": {
+            "q": "A loan system trained on past decisions rejects most applicants from one area. What is the most likely cause?",
+            "options": [
+              "The computer dislikes the area",
+              "The training data contained biased past decisions",
+              "The computer is too fast",
+              "The applicants used old devices"
+            ],
+            "answer": 1,
+            "why": "A system that learns from past decisions will copy any unfairness in them. Computers have no feelings (A), and speed (C) or device age (D) are irrelevant."
+          }
+        }
+      ],
+      "practice": [
+        "Define machine learning in your own words.",
+        "Give two examples of algorithmic bias and their effects.",
+        "Name two parties who might be responsible when an automated system causes harm."
+      ],
+      "independent": [
+        "Core: Complete a table of three uses of AI with one benefit and one risk for each.",
+        "Extend: Explain how a facial recognition system trained mostly on one group could treat other groups unfairly.",
+        "Stretch: Discuss (6 marks): 'Doctors should always be able to overrule an AI diagnosis.'"
+      ],
+      "exit": [
+        "What is algorithmic bias?",
+        "State one safety measure for an AI-controlled robot."
+      ],
+      "homework": "Find a news story about AI. Write 150 words on the benefit, the risk and who should be accountable.",
+      "send": "SEND/EAL: provide a table with benefit, risk and sentence starters. Stretch: ask for a proposal for how to test a system for bias before it is used.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 5.2: Issues and impact: ethical, legal and ownership issues",
+      "n": 24,
+      "title": "Intellectual property: copyright, patents, trademarks and licensing",
+      "duration": 50,
+      "bigQuestion": "Who owns an idea, a song or a program, and what are you allowed to do with it?",
+      "objectives": [
+        "Explain intellectual property: copyright, patents, trademarks and licensing (5.2.3)",
+        "Distinguish the protections and what each covers",
+        "Apply licensing rules to everyday use of software and media"
+      ],
+      "successCriteria": [
+        "All: name the four types of protection",
+        "Most: state what each protects and for whom",
+        "Some: advise on whether a use of someone's work is allowed and what to do"
+      ],
+      "crossCurricular": "Art and Design: credit and permission for creative work",
+      "smsc": "Moral: honesty and fairness in dealings; the Qur'an (2:188) forbids taking others' property unjustly, which includes respecting the work others have made",
+      "keywords": [
+        {
+          "term": "intellectual property",
+          "def": "creations of the mind that are legally owned, such as writing, music, inventions and brands"
+        },
+        {
+          "term": "copyright",
+          "def": "automatic legal protection for original creative work"
+        },
+        {
+          "term": "patent",
+          "def": "protection for an invention, which must be applied for"
+        },
+        {
+          "term": "trademark",
+          "def": "protection for a name, logo or sign that identifies a brand"
+        },
+        {
+          "term": "licence",
+          "def": "permission to use something under stated terms"
+        }
+      ],
+      "starter": [
+        "Bismillah. What is software piracy?",
+        "Give one example of a program that is free to use.",
+        "State why it is wrong to copy someone else's homework."
+      ],
+      "teach": [
+        {
+          "heading": "Four protections",
+          "bullets": [
+            "Copyright: written work, music, images, code",
+            "Patent: a new invention or process",
+            "Trademark: names, logos, slogans"
+          ],
+          "note": "Pupils confuse these. Ask which would protect a poem (copyright), a new design of battery (patent) and a shop's logo (trademark). Copyright is automatic when the work is created; patents and registered trademarks must be applied for. Copyright lasts a long time (generally the life of the author plus many years); a patent usually lasts up to twenty years.",
+          "table": {
+            "head": [
+              "Protection",
+              "Protects",
+              "How obtained",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Copyright",
+                "Original creative work",
+                "Automatic",
+                "A song, a photograph, a program"
+              ],
+              [
+                "Patent",
+                "A new invention",
+                "Applied for and granted",
+                "A new type of touchscreen"
+              ],
+              [
+                "Trademark",
+                "A brand identifier",
+                "Registered",
+                "A company logo"
+              ],
+              [
+                "Licence",
+                "Terms for use of the work",
+                "Granted by the owner",
+                "A software licence agreement"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Licensing",
+          "bullets": [
+            "Proprietary: you pay and may not copy or modify",
+            "Open source: source code available to use and change",
+            "Creative Commons: owner states how it may be reused"
+          ],
+          "note": "Open source does not mean 'no rules': licences still say what you can do, for example you may need to share changes. Free to download does not mean free to copy and sell. A licence is the owner's permission, so using work without one is infringement. Pupils should know the consequences: fines, legal action and removal of content.",
+          "compare": {
+            "left": {
+              "title": "Proprietary licence",
+              "points": [
+                "You buy a licence to use it",
+                "No copying or sharing",
+                "Source code kept private"
+              ]
+            },
+            "right": {
+              "title": "Open-source licence",
+              "points": [
+                "Source code can be seen and changed",
+                "Often free to use",
+                "Licence conditions still apply"
+              ]
+            },
+            "label": "Two kinds of software licence"
+          }
+        },
+        {
+          "heading": "Worked example: using someone else's work",
+          "note": "Model the question as a decision: is it protected, whose is it, what is the licence, what must you do? The right action is to ask or choose a work you may use. Ask pupils why crediting is not the same as permission.",
+          "model": {
+            "problem": "A pupil downloads a photo from a website and uses it on the school's public website without asking. Explain the problem and what they should do.",
+            "steps": [
+              "The photo is protected by copyright automatically; the photographer owns it",
+              "Using it publicly without permission or a licence infringes the copyright",
+              "Giving credit is not the same as permission",
+              "They should ask the owner, use a photo with a licence that allows it, or take their own"
+            ],
+            "answer": "This is copyright infringement; the pupil should get permission or use a licensed or original image."
+          }
+        },
+        {
+          "heading": "Check: choosing protection",
+          "note": "Answer C. A brand logo is protected by trademark. A (copyright) would protect the artwork of the logo, but the identification of a brand is a trademark. B protects an invention and D is not a protection.",
+          "check": {
+            "q": "A new company wants to stop others using its name and logo to sell products. Which protection should it register?",
+            "options": [
+              "Copyright",
+              "A patent",
+              "A trademark",
+              "An open-source licence"
+            ],
+            "answer": 2,
+            "why": "Trademarks protect names and logos that identify a brand. A patent (B) protects an invention. Copyright (A) is automatic for creative work, and an open-source licence (D) would allow others to reuse."
+          }
+        }
+      ],
+      "practice": [
+        "State what copyright protects and how it is obtained.",
+        "Give one difference between a patent and a trademark.",
+        "Explain one risk of using software without a valid licence."
+      ],
+      "independent": [
+        "Core: Complete a table of the four protections with an example for each.",
+        "Extend: A student wants to use a song in a video they post online. Describe what they should check and do.",
+        "Stretch: Discuss (6 marks): 'Open-source software is better for schools than proprietary software.'"
+      ],
+      "exit": [
+        "Name the type of protection for an invention.",
+        "State one condition that an open-source licence might impose."
+      ],
+      "homework": "Find a Creative Commons image, record the licence terms and write how you would credit it.",
+      "send": "SEND/EAL: give cards with works (poem, logo, invention) to match to protections. Stretch: ask for a comparison of the length and cost of each protection.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 5.3: Issues and impact: cybersecurity",
+      "n": 25,
+      "title": "Cybersecurity threats: malware, technical vulnerabilities and social engineering",
+      "duration": 50,
+      "bigQuestion": "Why is it often easier to trick a person than to break into a computer?",
+      "objectives": [
+        "Describe malware types, technical vulnerabilities and social engineering (5.3.1)",
+        "Explain how each type of threat works and its effects",
+        "Identify the threat in a scenario"
+      ],
+      "successCriteria": [
+        "All: name three types of malware and what they do",
+        "Most: describe technical vulnerabilities and social engineering methods",
+        "Some: analyse a scenario and identify the weaknesses an attacker exploits"
+      ],
+      "crossCurricular": "PSHE: staying safe online",
+      "smsc": "Moral: honesty (sidq): deceiving people to get their information is wrong, and we help protect others by reporting scams",
+      "keywords": [
+        {
+          "term": "malware",
+          "def": "software designed to harm a system or steal data"
+        },
+        {
+          "term": "vulnerability",
+          "def": "a weakness in a system that can be exploited"
+        },
+        {
+          "term": "phishing",
+          "def": "fake messages that trick people into giving information"
+        },
+        {
+          "term": "social engineering",
+          "def": "manipulating people into giving access or information"
+        },
+        {
+          "term": "ransomware",
+          "def": "malware that locks files and demands payment"
+        }
+      ],
+      "starter": [
+        "Bismillah. What does a firewall do?",
+        "State the purpose of an audit trail.",
+        "Name one way to make a password stronger."
+      ],
+      "teach": [
+        {
+          "heading": "Malware",
+          "bullets": [
+            "Virus: attaches to a file and spreads when it is run",
+            "Worm: spreads by itself across a network",
+            "Trojan: disguised as useful software",
+            "Ransomware, spyware, keylogger"
+          ],
+          "note": "The existing y11 lesson 7 lists malware; here we compare how each spreads and what it does. Ask the question 'does it need a host and does it need the user to run it?' to separate them. Spyware and keyloggers record activity and send it to an attacker; ransomware encrypts files and asks for payment.",
+          "table": {
+            "head": [
+              "Malware",
+              "How it spreads",
+              "Effect"
+            ],
+            "rows": [
+              [
+                "Virus",
+                "Attached to files; needs the user to run it",
+                "Corrupts or deletes files"
+              ],
+              [
+                "Worm",
+                "Copies itself across networks without help",
+                "Slows networks, installs other malware"
+              ],
+              [
+                "Trojan",
+                "Looks like useful software",
+                "Opens a back door for the attacker"
+              ],
+              [
+                "Ransomware",
+                "Email attachments, downloads",
+                "Encrypts files and demands payment"
+              ],
+              [
+                "Spyware / keylogger",
+                "Hidden in other software",
+                "Records activity and passwords"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Technical vulnerabilities",
+          "bullets": [
+            "Out-of-date software with known flaws",
+            "Weak or default passwords",
+            "Unvalidated input, such as SQL injection"
+          ],
+          "note": "Unvalidated input is the one pupils find hardest, so show it in code. The program builds a database query from what the user typed. An attacker types text that changes the meaning of the query: the condition '1'='1' is always true. This is why input is validated and queries are built safely. Also mention unpatched systems and weak passwords.",
+          "code": {
+            "lang": "python",
+            "text": "username = \"x' OR '1'='1\"\nquery = \"SELECT * FROM users WHERE name = '\" + username + \"'\"\nprint(query)",
+            "output": "SELECT * FROM users WHERE name = 'x' OR '1'='1'"
+          }
+        },
+        {
+          "heading": "Social engineering",
+          "bullets": [
+            "Phishing: fake emails or texts",
+            "Pretending to be someone trusted (blagging)",
+            "Shouldering: watching someone type a password"
+          ],
+          "note": "Show how a simple filter could spot urgency words. It is not reliable, but it makes the point: attackers use urgency and fear. In real life, check the sender address, do not click links, and contact the organisation using a number you already trust. Phishing is the most common cause of data breaches.",
+          "code": {
+            "lang": "python",
+            "text": "urgent_words = [\"urgent\", \"verify\", \"password\", \"suspended\"]\n\ndef risk(email_text):\n    score = 0\n    for word in urgent_words:\n        if word in email_text.lower():\n            score = score + 1\n    return score\n\nprint(risk(\"Your account is suspended. Verify your password now\"))\nprint(risk(\"Lesson moved to 4pm on Tuesday\"))",
+            "output": "3\n0"
+          }
+        },
+        {
+          "heading": "Worked example: spot the threat",
+          "note": "Model by underlining the clue words in the scenario and naming the threat for each. Pupils should say how each works and one thing the user could have done. Add that more than one threat can be involved in one attack.",
+          "model": {
+            "problem": "An office worker receives an email that appears to be from IT: 'Your account is suspended. Click here and enter your password now.' After they do, files on the network become locked and a payment is demanded. Identify the threats.",
+            "steps": [
+              "The fake email using urgency to get a password is phishing, a social engineering attack",
+              "The attacker uses the stolen password to get in",
+              "Files locked with a payment demand is ransomware, a type of malware",
+              "Weakness exploited: a trusting user; a second factor and training could have helped"
+            ],
+            "answer": "Phishing (social engineering) followed by ransomware (malware)."
+          }
+        },
+        {
+          "heading": "Check: malware type",
+          "note": "Answer A. A worm copies itself across a network without needing the user to run it. B (virus) needs a host file. C (trojan) disguises itself. D (spyware) records activity. Ask which of the four needs the user to be tricked.",
+          "check": {
+            "q": "Malware spreads from computer to computer across a school network with no action from any user. What is it?",
+            "options": [
+              "A worm",
+              "A virus",
+              "A trojan",
+              "Spyware"
+            ],
+            "answer": 0,
+            "why": "A worm copies itself across networks on its own. A virus needs a host file to be run (B), a trojan relies on the user installing it (C), and spyware gathers information (D)."
+          }
+        }
+      ],
+      "practice": [
+        "Give one difference between a virus and a worm.",
+        "Explain how phishing works.",
+        "State two technical vulnerabilities that a network manager should fix."
+      ],
+      "independent": [
+        "Core: Complete a table with five threats, how each works and one effect.",
+        "Extend: Explain how SQL injection could let an attacker log in without a password, using the code example.",
+        "Stretch: Evaluate (6 marks) whether technical measures or staff training is more important in protecting a school from cyber attacks."
+      ],
+      "exit": [
+        "Name one type of social engineering.",
+        "What does ransomware do?"
+      ],
+      "homework": "Collect three examples of scam messages (real or described). For each, identify the clues and the type of attack.",
+      "send": "SEND/EAL: give a sort of threat cards by definition and example. Stretch: ask for an incident report analysing how an attack succeeded. Existing y11 lesson 7 introduces threats; this lesson adds technical vulnerabilities and compares the malware types.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 5.3: Issues and impact: cybersecurity",
+      "n": 26,
+      "title": "Protecting systems: anti-malware, encryption, policies and backup",
+      "duration": 50,
+      "bigQuestion": "If an attack succeeds, how do we limit the damage and recover?",
+      "objectives": [
+        "Explain protection methods: anti-malware, encryption, acceptable use policies, backup and recovery (5.3.2)",
+        "Describe how encryption turns plaintext into ciphertext",
+        "Design a backup and recovery plan"
+      ],
+      "successCriteria": [
+        "All: name four protection methods",
+        "Most: explain how each protects a system or data",
+        "Some: design a layered plan and justify each measure"
+      ],
+      "crossCurricular": "Mathematics: modular arithmetic and cipher shifts",
+      "smsc": "Moral: amanah: keeping other people's data safe is a duty, and backup guards against losing what others rely on us for",
+      "keywords": [
+        {
+          "term": "encryption",
+          "def": "scrambling data so that only someone with the key can read it"
+        },
+        {
+          "term": "plaintext",
+          "def": "readable data before encryption"
+        },
+        {
+          "term": "ciphertext",
+          "def": "the scrambled data after encryption"
+        },
+        {
+          "term": "acceptable use policy",
+          "def": "rules about how a system may and may not be used"
+        },
+        {
+          "term": "backup",
+          "def": "a copy of data stored separately so it can be recovered"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name two types of malware.",
+        "What is the purpose of a utility such as a firewall?",
+        "Calculate (24 + 5) mod 26."
+      ],
+      "teach": [
+        {
+          "heading": "Encryption",
+          "bullets": [
+            "Plaintext is scrambled into ciphertext with a key",
+            "Without the key the data is unreadable",
+            "Used for HTTPS, messages and stored files"
+          ],
+          "note": "The simple Caesar cipher shifts each letter along the alphabet. It is easy to break and not used for real security, but it shows the ideas of plaintext, ciphertext and a key (here the shift of 3). Modern encryption uses far more complex mathematics. Encryption does not stop theft; it makes stolen data useless without the key.",
+          "code": {
+            "lang": "python",
+            "text": "def shift(text, key):\n    result = \"\"\n    for ch in text:\n        if ch.isalpha():\n            result = result + chr((ord(ch) - 65 + key) % 26 + 65)\n        else:\n            result = result + ch\n    return result\n\nsecret = shift(\"MEET AT FAJR\", 3)\nprint(secret)\nprint(shift(secret, -3))",
+            "output": "PHHW DW IDMU\nMEET AT FAJR"
+          }
+        },
+        {
+          "heading": "Anti-malware and acceptable use",
+          "bullets": [
+            "Anti-malware scans for and removes malicious software",
+            "Keep it and the system up to date",
+            "An acceptable use policy sets rules for users"
+          ],
+          "note": "Anti-malware compares files with known patterns and watches behaviour; it only knows about threats it has seen, so updates are essential. An acceptable use policy tells users what they may do on the school or work network and the consequences of misuse; it protects both users and the organisation. Add other methods: updates, strong and unique passwords, two-factor authentication, firewalls.",
+          "compare": {
+            "left": {
+              "title": "Technical protection",
+              "points": [
+                "Anti-malware and firewall",
+                "Encryption of data",
+                "Updates and strong authentication"
+              ]
+            },
+            "right": {
+              "title": "Human protection",
+              "points": [
+                "Acceptable use policy",
+                "Training on phishing",
+                "Reporting concerns"
+              ]
+            },
+            "label": "Layers"
+          }
+        },
+        {
+          "heading": "Backup and recovery",
+          "bullets": [
+            "Copy data regularly to a separate place",
+            "Store a copy off-site or in the cloud",
+            "Test that the backup can be restored"
+          ],
+          "note": "A backup only protects you if you can restore from it, so recovery needs to be tested. A full backup copies everything; an incremental backup copies only what has changed since the last backup, so is quicker. Keeping a copy away from the original protects against fire, theft and ransomware. Ask: why is a backup on the same computer not enough?",
+          "table": {
+            "head": [
+              "Method",
+              "What is copied",
+              "Advantage",
+              "Disadvantage"
+            ],
+            "rows": [
+              [
+                "Full backup",
+                "All data",
+                "Simple to restore",
+                "Slow and large"
+              ],
+              [
+                "Incremental backup",
+                "Only changes since last backup",
+                "Quick and small",
+                "Restore needs several copies"
+              ],
+              [
+                "Off-site / cloud copy",
+                "A copy held elsewhere",
+                "Survives fire or theft",
+                "Needs access and security"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Worked example: a recovery plan",
+          "note": "Model by combining prevention, detection and recovery. Link each choice to a risk. A complete answer includes testing and security of the backup itself (encrypted, access controlled).",
+          "model": {
+            "problem": "A madrasah stores pupils' records on one office computer. Describe a plan to protect against ransomware and hardware failure.",
+            "steps": [
+              "Prevent: anti-malware kept up to date, software updates, an acceptable use policy and phishing training for staff",
+              "Back up: a daily incremental and a weekly full backup",
+              "Store a copy off-site or in the cloud, with the backup encrypted so that it cannot be read if stolen",
+              "Test: restore a sample regularly to prove that recovery works"
+            ],
+            "answer": "Layered protection plus regular, tested, encrypted, off-site backups."
+          }
+        },
+        {
+          "heading": "Check: why encrypt?",
+          "note": "Answer B. Encryption does not stop a thief taking the data but makes it unreadable without the key. A is wrong because encryption does not stop access. C is wrong as encrypted data is still copied; D describes a backup.",
+          "check": {
+            "q": "A laptop containing pupils' records is stolen. The data on it was encrypted. What is the main benefit?",
+            "options": [
+              "The thief cannot take the laptop",
+              "The data is unreadable without the key",
+              "The records are automatically backed up",
+              "The thief will be traced"
+            ],
+            "answer": 1,
+            "why": "Encryption turns the data into ciphertext that cannot be read without the key. It does not prevent theft (A), create a backup (C) or trace the thief (D)."
+          }
+        }
+      ],
+      "practice": [
+        "State two ways to keep anti-malware effective.",
+        "Use the Caesar cipher with key 3 to encrypt the word SALAM (S becomes V).",
+        "Explain why backups should be kept in a different place from the original data."
+      ],
+      "independent": [
+        "Core: Complete a table with four protection methods, how each works and the threat it reduces.",
+        "Extend: Decode the ciphertext KHOOR with key 3, then explain why this cipher is not secure for real use.",
+        "Stretch: Write a recovery plan for a small business hit by ransomware, with what to do in the first hour and over the next week."
+      ],
+      "exit": [
+        "Define plaintext and ciphertext.",
+        "State one purpose of an acceptable use policy."
+      ],
+      "homework": "Write a clear acceptable use policy of five rules for pupils using school computers, with a reason for each.",
+      "send": "SEND/EAL: give a cipher wheel or alphabet strip to use for the Caesar cipher. Stretch: ask for a comparison of symmetric and asymmetric encryption in 100 words.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE CS 1CP2"
     }
   ]
 }
