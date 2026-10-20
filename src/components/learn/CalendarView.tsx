@@ -91,7 +91,11 @@ const TABS: { id: Tab; label: string }[] = [
  */
 export function CalendarView({ scope, canManageTerms = false }: { scope: CalendarScope | null; canManageTerms?: boolean }) {
   const [ver, setVer] = useState(0); // bumped by "Sync Islamic dates"
-  const [tab, setTab] = useState<Tab>("month");
+  // ?tab=terms opens a section directly (links from Academic setup and Reports).
+  const [tab, setTab] = useState<Tab>(() => {
+    const t = typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("tab");
+    return t === "terms" || t === "dates" ? t : "month";
+  });
   const [mode, setMode] = useState<Mode>("month");
   const [hm, setHm] = useState<HMonth>(() => {
     const t = todayHijri();
@@ -423,7 +427,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
             </section>
 
             {mode !== "day" && isDesktop && (
-              <aside aria-labelledby={headingId} className="overflow-hidden rounded-2xl border border-gold-light bg-white xl:sticky xl:top-4 xl:max-h-[calc(100vh-2rem)] xl:self-start">
+              <aside aria-labelledby={headingId} className="overflow-hidden rounded-2xl border border-gold-light bg-white xl:sticky xl:top-[76px] xl:max-h-[calc(100vh-6rem)] xl:self-start">
                 {panel()}
               </aside>
             )}

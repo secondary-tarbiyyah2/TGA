@@ -137,7 +137,7 @@ export function HouseBoard({
       </div>
 
       {selected.size > 0 && (
-        <div role="region" aria-label="Selected children" className="sticky top-2 z-10 mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-teal-200 bg-teal-50 px-3 py-2 text-sm shadow-sm">
+        <div role="region" aria-label="Selected children" className="sticky top-[68px] z-10 mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-teal-200 bg-teal-50 px-3 py-2 text-sm shadow-sm">
           <strong className="text-teal-900">{selected.size} selected</strong>
           <label className="flex items-center gap-1.5 text-xs text-ink/70">
             Move selected to

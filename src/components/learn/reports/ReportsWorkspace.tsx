@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { myTeachingClasses } from "@/lib/learn/classes";
 import { ReportDocument, PrintStyles, StatusBadge, fmtPct } from "./ReportDocument";
 import { asNarrative, buildClassSummaries, mergeNarrative, termRange, type ClassSummary, type ReportNarrative, type TermOption } from "./summary";
 
@@ -77,8 +78,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
       let ids: string[] | null = null;
       if (mode === "teach") {
         if (!uid) return setClasses([]);
-        const { data: roleRows } = await supabase.from("user_roles").select("scope_id").eq("user_id", uid).eq("scope_type", "class");
-        ids = ((roleRows as { scope_id: string | null }[]) || []).map((r) => r.scope_id).filter((x): x is string => !!x);
+        ids = (await myTeachingClasses()).map((c) => c.id);
         if (ids.length === 0) return setClasses([]);
       }
       let q = supabase.from("classes").select("id, name, year_groups(name, sort_order)");
@@ -335,14 +335,13 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
             <p className="mt-2 text-sm text-ink/60">
               {mode === "admin" ? (
                 <>
-                  Add a term under{" "}
-                  <Link href="/admin/academic" className="font-medium text-teal-700 underline">
-                    Academic setup
+                  <Link href="/admin/calendar?tab=terms" className="font-medium text-teal-700 underline">
+                    Add this year&apos;s terms
                   </Link>{" "}
-                  first, or reports will cover all time.
+                  (Calendar › Terms) so each report covers one term. Until then reports cover all time.
                 </>
               ) : (
-                "No terms are set up yet, so reports will cover all time. Ask the office to add one under Academic setup."
+                "No terms are set up yet, so reports cover all time. The head or office can add terms under Calendar › Terms."
               )}
             </p>
           )}

@@ -63,7 +63,7 @@ export function YearsSection({ years, terms, reload }: Common & { years: Academi
   };
 
   return (
-    <StepCard step={1} id="years" done={years.length > 0} title="Academic years & terms" help="The school year the timetable is built for. Add the year here; term dates come from the website's Term Dates and appear automatically.">
+    <StepCard step={1} id="years" done={years.length > 0} title="Academic years & terms" help="The school year the timetable is built for. Add the year here, then its terms under Calendar › Terms.">
       {years.length === 0 && <EmptyState>No academic year yet. Add one below (for example &quot;2026/27&quot;, 1 Sep 2026 to 31 Aug 2027). The timetable can&apos;t be built without it.</EmptyState>}
       <div className="space-y-3">
         {years.map((y) => {
@@ -93,7 +93,15 @@ export function YearsSection({ years, terms, reload }: Common & { years: Academi
                 {yTerms.map((t) => (
                   <li key={t.id} className="rounded-full bg-cream px-2.5 py-1">{t.name}: {t.starts_on} to {t.ends_on}</li>
                 ))}
-                {yTerms.length === 0 && <li className="text-ink/65">No terms synced for this year yet. Add them as Term Dates in the website editor (Sanity).</li>}
+                {yTerms.length === 0 && (
+                  <li className="text-ink/65">
+                    No terms for this year yet. Reports and attendance summaries need them:{" "}
+                    <a href="/admin/calendar?tab=terms" className="font-medium text-teal-700 underline">
+                      add this year&apos;s terms in Calendar
+                    </a>
+                    .
+                  </li>
+                )}
               </ul>
             </div>
           );

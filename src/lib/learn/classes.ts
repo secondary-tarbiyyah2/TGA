@@ -47,24 +47,25 @@ function byName(a: ClassSummary, b: ClassSummary) {
   return a.name.localeCompare(b.name);
 }
 
-export async function fetchTeacherClasses(): Promise<ClassSummary[]> {
+export type TeachingClass = { id: string; name: string; subject_id: string | null; subject_name: string | null; year_group: string | null; year_group_name: string | null; pupils: number };
+
+/**
+ * The signed-in teacher's classes: the database's single answer (0096
+ * my_teaching_classes: class role, subject mapping or published timetable),
+ * the same rule its permissions use, so My classes, Today and every class
+ * picker agree.
+ */
+export async function myTeachingClasses(): Promise<TeachingClass[]> {
   const supabase = getSupabaseClient();
   if (!supabase) return [];
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return [];
-  const { data } = await supabase
-    .from("user_roles")
-    .select(`scope_id, classes(${CLASS_COLUMNS})`)
-    .eq("user_id", user.id)
-    .eq("scope_type", "class")
-    .in("role", ["teacher", "teaching_assistant_cover"]);
-  const rows = ((data as unknown as { classes: ClassRow | null }[]) || []).map((r) => r.classes).filter(Boolean) as ClassRow[];
-  // One class can appear twice (teacher + cover role rows) — dedupe by id.
-  const seen = new Map<string, ClassSummary>();
-  rows.forEach((r) => seen.set(r.id, toSummary(r)));
-  return [...seen.values()].sort(byName);
+  const { data, error } = await supabase.rpc("my_teaching_classes");
+  if (error) return [];
+  return (data as TeachingClass[]) || [];
+}
+
+export async function fetchTeacherClasses(): Promise<ClassSummary[]> {
+  const rows = await myTeachingClasses();
+  return rows.map((r) => ({ id: r.id, name: r.name, subject: r.subject_name, yearGroup: r.year_group_name || r.year_group })).sort(byName);
 }
 
 /** Every class staff can read (RLS: manage_academic), demo classes last. */

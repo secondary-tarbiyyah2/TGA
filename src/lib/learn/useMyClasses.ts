@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { myTeachingClasses } from "@/lib/learn/classes";
 
 export type MyClassOption = { id: string; name: string; subject_id: string | null };
 
 /**
- * The signed-in teacher/TA's own classes, from their class-scoped
- * user_roles rows — the same query that was previously copy-pasted (with
+ * The signed-in teacher/TA's own classes (myTeachingClasses: role,
+ * subject mapping or published timetable) — the same query that was previously copy-pasted (with
  * small drifts) across /teach/homework, /teach/assessment and
  * /teach/reports. Centralised here so the three pickers stay in sync
  * instead of quietly diverging.
@@ -25,19 +26,8 @@ export function useMyClasses(autoSelectFirst: (firstId: string) => void = () => 
     if (!supabase) return;
     let cancelled = false;
     (async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user || cancelled) return;
-      const { data: roleRows } = await supabase
-        .from("user_roles")
-        .select("scope_id, classes(id, name, subject_id)")
-        .eq("user_id", user.id)
-        .eq("scope_type", "class");
+      const opts: MyClassOption[] = (await myTeachingClasses()).map((c) => ({ id: c.id, name: c.name, subject_id: c.subject_id }));
       if (cancelled) return;
-      const opts = ((roleRows as unknown as { scope_id: string; classes: MyClassOption | null }[]) || [])
-        .map((r) => r.classes)
-        .filter(Boolean) as MyClassOption[];
       setClasses(opts);
       if (opts[0]) autoSelectFirst(opts[0].id);
     })();
