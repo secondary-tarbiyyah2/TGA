@@ -2,259 +2,411 @@
   "kind": "spec",
   "subject": "English Literature",
   "slug": "english-literature",
-  "board": "AQA",
-  "qualification": "GCSE English Literature (9-1)",
-  "code": "8702",
-  "specVersion": "Version 1.3, 28 September 2022 (first teaching September 2015; first exams 2017)",
+  "board": "Pearson Edexcel (International GCSE)",
+  "qualification": "Pearson Edexcel International GCSE (9-1) in English Literature",
+  "code": "4ET1",
+  "specVersion": "Specification Issue 3, August 2025 (first teaching September 2016; first examination June 2018)",
   "status": "Provisional",
-  "statusNote": "Papers, durations, marks, weightings, AOs, section structure and the set-text lists were read from the AQA 8702 specification PDF; the Paper 1 question stems and AO4 marks from AQA specimen material. Not opened: the individual poem titles in each anthology cluster, section mark splits for Paper 2, and mark schemes. The Y10/Y11 placement is a recommended sequence; AQA allows flexible ordering. The school's own text choices are recorded as separate units flagged SCHOOL CHOICE.",
+  "statusNote": "Code, component structure, durations, marks, weightings, AOs and every text list were read from the Pearson 4ET1 specification PDF (Issue 3, August 2025) via a fetch tool that returns summaries, and the 4ET1/01 June 2025 examiners' report was read for question styles. Not read first-hand in full: the PDF in its entirety, the anthology itself, command-word and grade-descriptor sections, and mark schemes. Year and term placement is a recommended sequence. Replaces the earlier AQA 8702 file; the school's lesson files are still AQA 8702 based.",
   "sources": [
-    { "title": "AQA GCSE English Literature 8702 specification (PDF, v1.3)", "url": "https://filestore.aqa.org.uk/resources/english/specifications/AQA-8702-SP-2015.PDF" },
-    { "title": "AQA 8702 specification at a glance (introduction page)", "url": "https://www.aqa.org.uk/subjects/english/gcse/english-literature-8702/specification-at-a-glance" },
-    { "title": "AQA 8702/1 Specimen material 1 (Paper 1)", "url": "https://filestore.aqa.org.uk/resources/english/AQA-87021-SMS.PDF" }
-  ],
-  "years": "Years 10 to 11",
-  "tiers": "None (untiered, closed book; graded 9 to 1)",
-  "assessment": [
     {
-      "paper": "Paper 1",
-      "title": "Shakespeare and the 19th-century novel",
-      "duration": "1 hour 45 minutes",
-      "marks": 64,
-      "weight": "40%",
-      "content": "Section A: one question on a chosen Shakespeare play. Section B: one question on a chosen 19th-century novel.",
-      "format": "Each question gives an extract to analyse in detail, then asks about the text as a whole. Section A carries 30 marks (AO1, AO2, AO3) plus 4 marks for AO4; Section B carries 30 marks."
+      "title": "Pearson Edexcel International GCSE English Literature (2016) qualification page",
+      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-english-literature-2016.html"
     },
     {
-      "paper": "Paper 2",
-      "title": "Modern texts and poetry",
-      "duration": "2 hours 15 minutes",
-      "marks": 96,
-      "weight": "60%",
-      "content": "Section A: modern prose or drama. Section B: Poems Past and Present anthology cluster. Section C: unseen poetry.",
-      "format": "Section A: one essay from a choice of two. Section B: one comparative question on a printed named poem and one other poem from the studied cluster. Section C: one question on an unseen poem and one comparing it with a second unseen poem."
+      "title": "Pearson Edexcel International GCSE English Literature 4ET1 specification (Issue 3)",
+      "url": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/English%20Literature/2016/Specification%20and%20sample%20assessments/international-gcse-english-literature-specification.pdf"
+    },
+    {
+      "title": "Pearson 4ET1/01 Examiners' Report, June 2025",
+      "url": "https://qualifications.pearson.com/content/dam/pdf/International-GCSE/English-Literature/2016/Exam-materials/4et1-01-pef-20250821.pdf"
     }
   ],
-  "nonExam": "None. Closed book: texts are not allowed in the exam; any extract or poem needed is printed on the paper.",
+  "years": "Years 10 to 11",
+  "tiers": "None (single tier, graded 9 to 1; individual components are not graded)",
+  "assessment": [
+    {
+      "paper": "Component 1 (4ET1/01)",
+      "title": "Poetry and Modern Prose",
+      "duration": "2 hours",
+      "marks": 90,
+      "weight": "60%",
+      "content": "Section A unseen poetry; Section B anthology poetry (16 poems); Section C modern prose (one text).",
+      "format": "Externally assessed, closed book (clean anthology copy supplied). A: one 20-mark essay (AO2). B: one 30-mark question from two (AO2, AO3). C: one 40-mark question from two (AO1, AO4). Available June and November."
+    },
+    {
+      "paper": "Component 2 (4ET1/02)",
+      "title": "Modern Drama and Literary Heritage Texts",
+      "duration": "1 hour 30 minutes",
+      "marks": 60,
+      "weight": "40%",
+      "content": "Section A modern drama; Section B literary heritage text.",
+      "format": "Externally assessed, open book. A: one 30-mark question from two (AO1, AO2). B: one 30-mark question from two (AO1, AO2, AO4). Taken instead of Component 3."
+    },
+    {
+      "paper": "Component 3 (4ET1/03)",
+      "title": "Modern Drama and Literary Heritage Texts (coursework)",
+      "duration": "Not timed (non-examined)",
+      "marks": 60,
+      "weight": "40%",
+      "content": "Assignment A modern drama; Assignment B literary heritage text.",
+      "format": "Internally assessed, externally moderated. A: 30 marks (15 AO1, 15 AO2). B: 30 marks (10 AO1, 10 AO2, 10 AO4). Alternative to Component 2."
+    }
+  ],
+  "nonExam": "Component 3 is an optional non-examined coursework route (two assignments, 60 marks, 40%), internally assessed and externally moderated, taken instead of Component 2. Candidates take Component 1 plus either Component 2 or Component 3. Linear: all assessment at the end of the course. Whether TGA would run Component 2 or 3 is not decided.",
   "aos": [
-    { "code": "AO1", "desc": "Read, understand and respond to texts: maintain a critical style, develop an informed personal response, use textual references including quotations.", "weight": "37.5% (Paper 1 15%, Paper 2 22.5%)" },
-    { "code": "AO2", "desc": "Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.", "weight": "42.5% (Paper 1 15%, Paper 2 27.5%)" },
-    { "code": "AO3", "desc": "Show understanding of the relationships between texts and the contexts in which they were written.", "weight": "15% (Paper 1 7.5%, Paper 2 7.5%)" },
-    { "code": "AO4", "desc": "Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.", "weight": "5% (Paper 1 2.5%, Paper 2 2.5%)" }
+    {
+      "code": "AO1",
+      "desc": "Show close knowledge of texts, with a critical style and informed personal engagement.",
+      "weight": "30%"
+    },
+    {
+      "code": "AO2",
+      "desc": "Analyse the writer's language, form and structure and the meanings and effects they create.",
+      "weight": "40%"
+    },
+    {
+      "code": "AO3",
+      "desc": "Explore links and connections between texts.",
+      "weight": "10%"
+    },
+    {
+      "code": "AO4",
+      "desc": "Show understanding of relationships between texts and the contexts in which they were written.",
+      "weight": "20%"
+    }
   ],
   "units": [
     {
-      "ref": "P1-A",
-      "title": "Paper 1 Section A: Shakespeare (choose one play)",
-      "paper": "Paper 1",
-      "year": "Y11",
-      "term": "Autumn",
+      "ref": "1A",
+      "title": "Component 1 Section A: Unseen poetry",
+      "paper": "Component 1",
+      "year": "Y10",
+      "term": "Spring",
       "points": [
-        "One question on the play studied; the paper offers a question on each of the six plays.",
-        "Students first write in detail about a printed extract, then about the play as a whole.",
-        "Marks: 30 for AO1, AO2 and AO3 (about 12, 12 and 6) plus 4 for AO4 on this section only (per specimen).",
-        "Context (AO3) is credited where it is linked to the question, not as a separate block.",
-        "Extract questions focus on one theme or character, such as power, ambition or attitudes."
+        "One 20-mark essay question on a poem not seen before, assessed for AO2.",
+        "Candidates also study a selection of modern poetry to prepare for it.",
+        "Focus is language, form and structure and the effects they create.",
+        "Closed-book paper, so no prepared quotations are possible for this section."
       ],
-      "keyTerms": ["extract", "whole text", "context", "tragedy", "soliloquy", "dramatic structure"]
+      "keyTerms": [
+        "unseen",
+        "imagery",
+        "tone",
+        "structure",
+        "form"
+      ]
     },
     {
-      "ref": "P1-A-OPT",
-      "title": "Shakespeare options listed by AQA",
-      "paper": "Paper 1",
-      "year": "Y11",
-      "term": "Autumn",
-      "points": [
-        "Macbeth.",
-        "Romeo and Juliet.",
-        "The Tempest.",
-        "The Merchant of Venice.",
-        "Much Ado About Nothing.",
-        "Julius Caesar."
-      ],
-      "keyTerms": ["set text", "choice of play"]
-    },
-    {
-      "ref": "P1-A-SCH",
-      "title": "SCHOOL CHOICE: Macbeth (Shakespeare, Section A)",
-      "paper": "Paper 1",
-      "year": "Y11",
-      "term": "Autumn",
-      "points": [
-        "The school teaches Macbeth, one of the six plays AQA allows.",
-        "Taught in Year 11: context and the witches, then tyranny, guilt and downfall.",
-        "Exam skill: respond to a printed extract, then range across the whole play.",
-        "Theme work linked to the Section A question style: power, ambition, kingship, conscience.",
-        "Section A response writing is the final taught unit."
-      ],
-      "keyTerms": ["Macbeth", "Lady Macbeth", "kingship", "ambition", "the supernatural", "Jacobean context"]
-    },
-    {
-      "ref": "P1-B",
-      "title": "Paper 1 Section B: the 19th-century novel (choose one)",
-      "paper": "Paper 1",
+      "ref": "1B",
+      "title": "Component 1 Section B: Anthology poetry (16 poems)",
+      "paper": "Component 1",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "One question on the novel studied; the paper offers a question on each of the seven novels.",
-        "Same structure as Section A: detailed extract analysis, then the text as a whole.",
-        "30 marks across AO1, AO2 and AO3; AO4 is not separately credited in Section B (per specimen).",
-        "Context credit relates to Victorian or Regency society as it bears on the question.",
-        "Extract questions focus on a character, relationship or idea, such as outsiders or class."
+        "Part 3 of the Pearson Edexcel International GCSE English Anthology; all 16 poems are studied.",
+        "One 30-mark question from a choice of two, assessed for AO2 and AO3.",
+        "Questions ask candidates to compare poems; a clean copy of the poems is supplied.",
+        "Poems come from different periods and cultures, so links and connections between texts are credited."
       ],
-      "keyTerms": ["extract", "novel", "context", "narrator", "class", "morality"]
+      "keyTerms": [
+        "compare",
+        "theme",
+        "voice",
+        "perspective",
+        "form"
+      ]
     },
     {
-      "ref": "P1-B-OPT",
-      "title": "19th-century novel options listed by AQA",
-      "paper": "Paper 1",
+      "ref": "1B-P1",
+      "title": "Anthology poems 1 to 8",
+      "paper": "Component 1",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "The Strange Case of Dr Jekyll and Mr Hyde (Robert Louis Stevenson).",
-        "A Christmas Carol (Charles Dickens).",
-        "Great Expectations (Charles Dickens, 1867).",
-        "Jane Eyre (Charlotte Bronte).",
-        "Frankenstein (Mary Shelley, 1831 edition).",
-        "Pride and Prejudice (Jane Austen).",
-        "The Sign of Four (Sir Arthur Conan Doyle)."
-      ],
-      "keyTerms": ["set text", "choice of novel"]
+        "If- (Rudyard Kipling).",
+        "Prayer Before Birth (Louis MacNeice).",
+        "Blessing (Imtiaz Dharker).",
+        "Search For My Tongue (Sujata Bhatt).",
+        "Half-past Two (U A Fanthorpe).",
+        "Piano (D H Lawrence).",
+        "Hide and Seek (Vernon Scannell).",
+        "Sonnet 116: Let me not to the marriage of true minds (William Shakespeare)."
+      ]
     },
     {
-      "ref": "P1-B-SCH",
-      "title": "SCHOOL CHOICE: A Christmas Carol (19th-century novel, Section B)",
-      "paper": "Paper 1",
+      "ref": "1B-P2",
+      "title": "Anthology poems 9 to 16",
+      "paper": "Component 1",
       "year": "Y10",
-      "term": "Autumn",
-      "points": [
-        "The school teaches A Christmas Carol, one of the seven novels AQA allows.",
-        "Taught in Year 10: Victorian context and Stave 1, then the Spirits and redemption.",
-        "Exam skill: analyse an extract, then use the rest of the novella in the answer.",
-        "Themes studied include social responsibility, poverty, redemption and being an outsider.",
-        "A dedicated lesson covers writing the exam response."
-      ],
-      "keyTerms": ["Stave", "redemption", "social responsibility", "Victorian context", "Scrooge"]
-    },
-    {
-      "ref": "P2-A",
-      "title": "Paper 2 Section A: Modern prose or drama text (choose one)",
-      "paper": "Paper 2",
-      "year": "Y11",
       "term": "Spring",
       "points": [
-        "One essay question, chosen from a choice of two, on the text studied.",
-        "No printed extract: the answer draws on knowledge of the whole text.",
-        "Assessed for AO1, AO2 and AO3, with AO4 credited on the written accuracy of this essay.",
-        "Context (AO3) is credited when it supports the argument."
-      ],
-      "keyTerms": ["essay", "theme", "character", "dramatic or narrative method", "context"]
+        "La Belle Dame sans Merci (John Keats).",
+        "Poem at Thirty-Nine (Alice Walker).",
+        "War Photographer (Carol Ann Duffy).",
+        "The Tyger (William Blake).",
+        "My Last Duchess (Robert Browning).",
+        "Half-caste (John Agard).",
+        "Do not go gentle into that good night (Dylan Thomas).",
+        "Remember (Christina Rossetti)."
+      ]
     },
     {
-      "ref": "P2-A-OPT",
-      "title": "Modern text options listed by AQA",
-      "paper": "Paper 2",
-      "year": "Y11",
-      "term": "Spring",
-      "points": [
-        "Drama: An Inspector Calls, Blood Brothers (musical version), DNA, A Taste of Honey.",
-        "Drama, newer: Princess and the Hustler, Leave Taking (first exam 2025).",
-        "Drama, last exam 2024: The History Boys, The Curious Incident of the Dog in the Night-Time (play script).",
-        "Prose: Lord of the Flies, Animal Farm, Anita and Me, Pigeon English, AQA Anthology: Telling Tales.",
-        "Prose, newer: My Name is Leon (first exam 2025).",
-        "Prose, last exam 2024: Never Let Me Go."
-      ],
-      "keyTerms": ["set text", "choice of modern text"]
-    },
-    {
-      "ref": "P2-B",
-      "title": "Paper 2 Section B: Poetry, Poems Past and Present (one cluster)",
-      "paper": "Paper 2",
-      "year": "Y11",
-      "term": "Spring",
-      "points": [
-        "Study one cluster of 15 poems, written between 1789 and the present day.",
-        "Clusters: Love and Relationships; Power and Conflict; Worlds and Lives (first exam 2025).",
-        "One comparative question: a named poem printed on the paper and one other poem from the cluster.",
-        "The second poem is chosen from memory, so all 15 must be known well.",
-        "Compare ideas, methods and context across the two poems."
-      ],
-      "keyTerms": ["anthology", "cluster", "comparison", "form", "voice", "imagery"]
-    },
-    {
-      "ref": "P2-C",
-      "title": "Paper 2 Section C: Unseen poetry",
-      "paper": "Paper 2",
-      "year": "Y11",
+      "ref": "1C",
+      "title": "Component 1 Section C: Modern prose (choose one text)",
+      "paper": "Component 1",
+      "year": "Y10",
       "term": "Summer",
       "points": [
-        "Two printed poems the student has not studied.",
-        "One question on the first poem, then one comparing it with the second.",
-        "Students compare content, theme, structure and language.",
-        "Wide reading of poetry is expected as preparation; no poems are prescribed."
+        "One 40-mark question from a choice of two on the chosen prose text.",
+        "Assessed for AO1 (knowledge and personal engagement) and AO4 (context).",
+        "Closed book; the examiner report shows questions on theme, character and significance.",
+        "Context is credited where it relates to how the text was written and received."
       ],
-      "keyTerms": ["unseen", "theme", "structure", "language", "compare"]
+      "keyTerms": [
+        "theme",
+        "character",
+        "narrative voice",
+        "context",
+        "setting"
+      ]
     },
     {
-      "ref": "P2-SCH",
-      "title": "SCHOOL CHOICE: Paper 2 texts and poetry cluster not yet recorded",
-      "paper": "Paper 2",
+      "ref": "1C-OPT",
+      "title": "Modern prose options listed by Pearson Edexcel",
+      "paper": "Component 1",
+      "year": "Y10",
+      "term": "Summer",
+      "points": [
+        "To Kill a Mockingbird (Harper Lee).",
+        "Of Mice and Men (John Steinbeck).",
+        "The Whale Rider (Witi Ihimaera).",
+        "The Joy Luck Club (Amy Tan).",
+        "Things Fall Apart (Chinua Achebe).",
+        "Klara and the Sun (Kazuo Ishiguro): new, first assessment May 2026.",
+        "Western Lane (Chetna Maroo): new, first assessment May 2026."
+      ]
+    },
+    {
+      "ref": "2A",
+      "title": "Component 2 or 3 Section A / Assignment A: Modern drama (choose one)",
+      "paper": "Component 2 or 3",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "Component 2: one 30-mark question from a choice of two, open book, assessed for AO1 and AO2.",
+        "Component 3: internally assessed assignment of 30 marks (15 AO1, 15 AO2), externally moderated.",
+        "Drama is studied as a script for performance as well as a printed text."
+      ],
+      "keyTerms": [
+        "stage directions",
+        "dramatic method",
+        "character",
+        "theme",
+        "audience"
+      ]
+    },
+    {
+      "ref": "2A-OPT",
+      "title": "Modern drama options listed by Pearson Edexcel",
+      "paper": "Component 2 or 3",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "A View from the Bridge (Arthur Miller).",
+        "An Inspector Calls (J B Priestley).",
+        "The Curious Incident of the Dog in the Night-time (Mark Haddon, adapted by Simon Stephens).",
+        "Kindertransport (Diane Samuels).",
+        "Death and the King's Horseman (Wole Soyinka)."
+      ]
+    },
+    {
+      "ref": "2B",
+      "title": "Component 2 or 3 Section B / Assignment B: Literary heritage texts (choose one)",
+      "paper": "Component 2 or 3",
       "year": "Y11",
       "term": "Spring",
       "points": [
-        "Modern text, anthology cluster and unseen poetry lessons are not in the school's Year 10 or 11 material.",
-        "The school's current lessons cover Paper 1 only (A Christmas Carol and Macbeth).",
-        "Year 8 War poetry and Year 9 Of Mice and Men are bridge units, not AQA set texts."
+        "Component 2: one 30-mark question from a choice of two, open book, assessed for AO1, AO2 and AO4.",
+        "Component 3: assignment of 30 marks (10 each for AO1, AO2 and AO4), internally assessed.",
+        "Non-examined marks from both assignments combine into one mark out of 60.",
+        "Candidates relate the text to the context in which it was written."
       ],
-      "keyTerms": ["bridge text"]
+      "keyTerms": [
+        "context",
+        "language",
+        "structure",
+        "theme",
+        "character"
+      ]
+    },
+    {
+      "ref": "2B-OPT",
+      "title": "Literary heritage options listed by Pearson Edexcel",
+      "paper": "Component 2 or 3",
+      "year": "Y11",
+      "term": "Spring",
+      "points": [
+        "Romeo and Juliet (William Shakespeare).",
+        "Macbeth (William Shakespeare).",
+        "The Merchant of Venice (William Shakespeare).",
+        "Pride and Prejudice (Jane Austen).",
+        "Great Expectations (Charles Dickens).",
+        "The Scarlet Letter (Nathaniel Hawthorne)."
+      ]
+    },
+    {
+      "ref": "2B-SCH",
+      "title": "SCHOOL CHOICE: Macbeth (literary heritage text)",
+      "paper": "Component 2 or 3",
+      "year": "Y11",
+      "term": "Spring",
+      "points": [
+        "Macbeth is on the Pearson Edexcel literary heritage list, so the school text is permitted.",
+        "Existing Y11 lessons teach it as context and witches, then tyranny, guilt and downfall.",
+        "Existing lessons are written to the AQA 8702 exam format and need re-mapping.",
+        "Open-book Component 2 allows the text to be used, so quotation recall matters less.",
+        "Marks differ: 30 marks on AO1, AO2 and AO4 rather than extract plus whole-text format."
+      ],
+      "keyTerms": [
+        "Macbeth",
+        "ambition",
+        "kingship",
+        "supernatural",
+        "Jacobean context"
+      ]
+    },
+    {
+      "ref": "2B-SCH-X",
+      "title": "SCHOOL CHOICE: A Christmas Carol (not on the Pearson list)",
+      "paper": "Component 2 or 3",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "A Christmas Carol does not appear in the Pearson Edexcel 4ET1 text lists.",
+        "Existing Y10 lessons on it are AQA 8702 material and cannot be assessed here.",
+        "It could remain as wider reading on Victorian society and Dickens, not as a set text.",
+        "Closest Pearson option for Dickens: Great Expectations in the literary heritage list."
+      ],
+      "keyTerms": [
+        "Dickens",
+        "Victorian context"
+      ]
     }
   ],
   "commandWords": [
-    { "word": "Starting with this extract, explain how...", "meaning": "Paper 1 stem pattern (paraphrased from specimen): analyse the printed extract first, then widen to the whole text." },
-    { "word": "Write about how ... presents ...", "meaning": "Paper 1 stem pattern: show how the writer presents the named character, idea or relationship, in the extract and across the text." },
-    { "word": "How far do you agree?", "meaning": "Where used, give a supported judgement on a statement about a character or theme." },
-    { "word": "Compare how poets present...", "meaning": "Paper 2 Section B pattern: compare the named poem with another from the cluster, covering ideas and methods." },
-    { "word": "In this poem, how does the poet present...", "meaning": "Paper 2 Section C question on the first unseen poem: analyse methods and ideas." },
-    { "word": "In both poems, how is ... presented?", "meaning": "Paper 2 Section C comparison question across the two unseen poems." }
+    {
+      "word": "Compare",
+      "meaning": "Anthology Section B: set two poems side by side on ideas and methods (per 2025 report question wording)."
+    },
+    {
+      "word": "Explore",
+      "meaning": "Examine how a writer presents a theme, character or relationship; used in Section C and Component 2 stems (to be confirmed)."
+    }
   ],
   "skills": [
-    "Close analysis of an extract, then relating it to the whole text.",
-    "Using short, precise quotations to support an argument.",
-    "Analysing language, form and structure with subject terminology.",
-    "Linking writers' ideas to context without bolting on facts.",
-    "Writing a sustained, conceptual essay with an argument.",
-    "Comparing two poems on ideas and methods.",
-    "Responding to an unseen poem with confidence.",
-    "Accurate spelling, punctuation and varied sentences (AO4).",
-    "Planning and timing an extended response in a closed-book exam."
+    "Analysing language, form and structure in poems and prose.",
+    "Responding to an unseen poem without preparation.",
+    "Comparing two poems from different periods and cultures.",
+    "Writing an extended, personal and critical response to a modern prose text.",
+    "Using the text in the open-book drama or heritage response.",
+    "Relating a text to its context without bolting on facts.",
+    "Planning and timing: about 40 minutes on the anthology and 45 on prose (examiner guide)."
   ],
   "prerequisites": [
-    { "from": "KS3 Shakespeare study (National Curriculum requires two plays across KS3)", "to": "P1-A" },
-    { "from": "KS3 reading of pre-1914 prose; Year 7 novel study", "to": "P1-B" },
-    { "from": "Year 9 Of Mice and Men: context, character, theme essay", "to": "P2-A" },
-    { "from": "Year 8 War poetry: context, language, comparison", "to": "P2-B" },
-    { "from": "Year 5 poetry (The Eagle) and Year 8 poem analysis", "to": "P2-C" },
-    { "from": "English Language Paper 1 Q2 and Q3 (language and structure)", "to": "P1-A" },
-    { "from": "English Language Paper 2 Q4 (comparison)", "to": "P2-B" }
+    {
+      "from": "KS3 poetry reading and annotation",
+      "to": "1A"
+    },
+    {
+      "from": "KS3 poetry from different cultures and periods",
+      "to": "1B"
+    },
+    {
+      "from": "Year 9 Of Mice and Men (if used)",
+      "to": "1C"
+    },
+    {
+      "from": "KS3 Shakespeare plays",
+      "to": "2B-SCH"
+    },
+    {
+      "from": "Unit 1B anthology comparison",
+      "to": "2A"
+    }
   ],
   "links": [
-    { "with": "History", "topic": "Victorian society: poverty, the Poor Law, industrial Britain", "unitRef": "P1-B", "how": "History gives the Victorian social picture; Literature uses it as AO3 context for the novel." },
-    { "with": "History", "topic": "Jacobean England: kingship, James I, the Gunpowder Plot", "unitRef": "P1-A", "how": "History explains beliefs about monarchy; Literature uses them for Shakespeare's context." },
-    { "with": "History", "topic": "20th-century Britain: class and the world wars", "unitRef": "P2-A", "how": "History supplies the period background for modern texts such as An Inspector Calls." },
-    { "with": "English Language", "topic": "Language and structure analysis (AO2) and extended writing", "unitRef": "P1-A", "how": "Language trains the analytical method; Literature applies it to set texts." },
-    { "with": "Science", "topic": "Scientific ambition and ethics in Frankenstein and Jekyll and Hyde", "unitRef": "P1-B", "how": "Science supplies the ideas of experiment and consequence; Literature analyses how writers present them." },
-    { "with": "PSHE", "topic": "Responsibility, relationships and conflict in modern texts and poetry", "unitRef": "P2-A", "how": "PSHE explores the issues; Literature studies how writers present them." },
-    { "with": "Geography", "topic": "Place, environment and nature in poems (Worlds and Lives, Power and Conflict)", "unitRef": "P2-B", "how": "Geography provides place knowledge; Literature analyses poets' response to landscape." },
-    { "with": "Islamic Studies", "topic": "Charity, justice and repentance as moral themes in A Christmas Carol", "unitRef": "P1-B-SCH", "how": "Islamic Studies gives ethical vocabulary for discussion; Literature stays focused on the writer's methods." },
-    { "with": "Art", "topic": "Visual imagery and period illustration for Victorian and Gothic texts", "unitRef": "P1-B", "how": "Art analyses visual methods; Literature applies the idea of imagery to language." }
+    {
+      "with": "English Language",
+      "topic": "Language and structure analysis, extended writing",
+      "unitRef": "1A",
+      "how": "Language builds the analytical method; Literature applies it to poems and set texts."
+    },
+    {
+      "with": "English Language",
+      "topic": "Pearson International GCSE English Language A (4EA1) uses poetry and prose texts",
+      "unitRef": "1B",
+      "how": "4EA1 Components 2 and 3 also study anthology texts, so texts and teaching could be shared."
+    },
+    {
+      "with": "History",
+      "topic": "Jacobean England: kingship, James I, the Gunpowder Plot",
+      "unitRef": "2B-SCH",
+      "how": "History explains beliefs about monarchy; Literature uses them as context for Macbeth."
+    },
+    {
+      "with": "History",
+      "topic": "Great Depression and the 1930s American South",
+      "unitRef": "1C-OPT",
+      "how": "History gives background for Of Mice and Men and To Kill a Mockingbird."
+    },
+    {
+      "with": "History",
+      "topic": "Britain in 1945 and class: An Inspector Calls",
+      "unitRef": "2A-OPT",
+      "how": "History supplies the period setting that Priestley's play criticises."
+    },
+    {
+      "with": "History",
+      "topic": "Colonialism in Africa: Things Fall Apart",
+      "unitRef": "1C-OPT",
+      "how": "History explains the colonial and missionary context of Achebe's novel."
+    },
+    {
+      "with": "Islamic Studies",
+      "topic": "Justice, mercy and moral responsibility as shared themes",
+      "unitRef": "1B",
+      "how": "Islamic Studies gives ethical vocabulary for discussion; Literature stays on the writers' methods."
+    },
+    {
+      "with": "Arabic",
+      "topic": "Poetic form, voice and identity in translation",
+      "unitRef": "1B",
+      "how": "Poems on language and identity (Search For My Tongue, Half-caste) invite comparison with Arabic poetry study."
+    },
+    {
+      "with": "Geography",
+      "topic": "Place and environment in poetry and prose",
+      "unitRef": "1C",
+      "how": "Geography provides place knowledge; Literature analyses how settings are created."
+    },
+    {
+      "with": "Art",
+      "topic": "Visual imagery for Romantic and Victorian poems",
+      "unitRef": "1B-P2",
+      "how": "Art analyses visual methods; Literature applies imagery to language."
+    }
   ],
-  "contextNote": "AO3 requires understanding of the contexts in which each text was written and received. Teach historical, social and literary contexts accurately and link them to the writer's choices; context is credited when it supports the response to the question.",
+  "contextNote": "AO4 requires context to be taught accurately and linked to the writer's choices (for example colonial history in Things Fall Apart, or Jacobean kingship in Macbeth). Teach what the context was; keep discussion text-focused.",
   "gaps": [
-    "Poem titles within the three anthology clusters were not opened.",
-    "Section-by-section mark totals for Paper 2 (A, B, C) were not opened; only the paper totals of 96 marks and 60% are verified.",
-    "AO4 marks: 4 marks on Paper 1 Section A confirmed from the specimen; Paper 2 AO4 marks are not stated in the pages opened (weighting 2.5% of 160 implies 4). The AO4 total of 8 across both papers is derived, not read as a figure.",
-    "AQA's page said 12 modern set texts but listed 15 (including last-exam-2024 and new 2025 texts); check the live list before choosing a text.",
-    "Exact question stems for Paper 2 were not opened; command-word patterns are paraphrased.",
-    "Mark schemes and levels of response were not read."
+    "Full specification PDF not read directly: read via a summarising fetch tool, so Verified is not claimed.",
+    "Paper-level AO mark splits for Component 1 Section B (AO2 versus AO3) not found.",
+    "Official command words and assessment glossary not stated on pages read.",
+    "Grade boundaries, mark schemes and level descriptors not opened.",
+    "Anthology poem order and any teaching notes not opened (poem titles taken from the spec list).",
+    "Prescribed editions of set texts exist (Pearson guidance) but were not opened.",
+    "Modular specification (code YET01) exists separately; not documented here.",
+    "School lessons: Macbeth is on the Pearson list; A Christmas Carol is NOT. Lesson files y10.json and y11.json are written to AQA 8702 and need re-mapping.",
+    "Which of Component 2 or Component 3 the school will enter is not decided; also which prose and drama texts are chosen."
   ]
 }

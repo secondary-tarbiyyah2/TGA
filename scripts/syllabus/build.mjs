@@ -104,8 +104,8 @@ await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix
     ["Science", "Documented as Edexcel International GCSE Biology 4BI1, Chemistry 4CH1, Physics 4PH1 and Double Award 4SD0. Confirm separate or double award, and that Year 11 is on this course."],
     ["Business", "Documented as Edexcel International GCSE 4BS1. Existing lesson files follow the UK GCSE titles and need re-mapping."],
     ["Islamic Studies", "Documented as Edexcel International GCSE 4IS1. Confirm it is current for 2026-27."],
-    ["English", "English Language is documented as AQA 8700 (UK GCSE). Confirm the course if you enter an international version."],
-    ["English Literature", "Documented as Edexcel; see the deck's open items for texts and any unconfirmed marks."],
+    ["English Language", "Documented as AQA 8700 (UK GCSE). If you enter the international version, that is OxfordAQA International GCSE English Language (9270): tell me and I will switch it."],
+    ["English Literature", "Documented as Edexcel International GCSE 4ET1. A Christmas Carol is not on Pearson's list (Macbeth is), and the lesson files still follow AQA 8702."],
   ];
 
   const bx = gridBoxes(6, { x: MX, y: 1.8, w: W - 2 * MX, h: 5.05 }, 2, 0.2);
