@@ -8,6 +8,8 @@ import { asNarrative } from "./summary";
 
 type Row = {
   id: string;
+  report_id: string;
+  version: number;
   overall_comment: string | null;
   subject_comments: Record<string, string> | null;
   narrative: unknown;
@@ -16,7 +18,7 @@ type Row = {
   terms?: { name: string } | null;
 };
 
-/** Released progress reports for the signed-in parent/student. RLS limits rows to the caller's own released reports. */
+/** Issued progress reports for the signed-in parent/student (latest issued version of each). RLS limits rows to the caller's own child. */
 export function ReleasedReports() {
   const supabase = getSupabaseClient();
   const [rows, setRows] = useState<Row[] | null>(null);
@@ -24,12 +26,20 @@ export function ReleasedReports() {
 
   useEffect(() => {
     if (!supabase) return;
+    // The issued copies (0097): a report reopened for a correction keeps
+    // showing its last issued version here until it is issued again.
     supabase
-      .from("term_reports")
-      .select("id, overall_comment, subject_comments, narrative, released_at, children(name), terms(name)")
-      .eq("status", "released")
+      .from("term_report_versions")
+      .select("id, report_id, version, overall_comment, subject_comments, narrative, released_at, children(name), terms(name)")
       .order("released_at", { ascending: false })
-      .then(({ data }) => setRows((data as unknown as Row[]) || []));
+      .then(({ data }) => {
+        const latest = new Map<string, Row>();
+        for (const r of (data as unknown as Row[]) || []) {
+          const cur = latest.get(r.report_id);
+          if (!cur || r.version > cur.version) latest.set(r.report_id, r);
+        }
+        setRows([...latest.values()].sort((a, b) => (b.released_at || "").localeCompare(a.released_at || "")));
+      });
   }, [supabase]);
 
   const print = (id: string) => {

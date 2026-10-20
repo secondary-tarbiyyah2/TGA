@@ -5,13 +5,15 @@ name: CI
 # lint errors and accessibility regressions are caught before they reach the
 # live site — deploy-site.yml only builds and uploads, it never checks.
 #
-# Two jobs:
+# Three jobs:
 #   lint — `npm run lint` (ESLint with next/core-web-vitals + TypeScript)
 #          and a TypeScript type check.
 #   a11y — builds the static export with no secrets (the public pages don't
 #          need Supabase at build time) and runs scripts/a11y-check.mjs:
 #          axe (WCAG 2.2 AA) on every public page, plus a 360px
 #          phone-width "no sideways scroll" check.
+#   db-tests — the pgTAP database tests (permissions and workflow rules)
+#          on a throwaway local Supabase.
 #
 # Neither job deploys anything or touches any secret, so it's safe to run on
 # pull requests from any branch.
@@ -66,3 +68,28 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Check public pages (WCAG 2.2 AA, 360px width)
         run: node scripts/a11y-check.mjs out
+
+  # Database tests (supabase/tests/database, pgTAP) against a throwaway local
+  # Supabase on the runner — no project credentials. Runs on every pull
+  # request so a failing permission or workflow rule is caught before merge,
+  # rather than first blocking deploy-supabase.yml on main.
+  db-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - run: supabase start
+      - name: Run database tests
+        run: |
+          set +e
+          supabase test db > /tmp/dbtest.txt 2>&1
+          code=$?
+          if [ $code -ne 0 ]; then
+            grep -E "not ok|Failed|ERROR|expected|got|have:|want:|Parse errors|Result" /tmp/dbtest.txt | head -25 | while IFS= read -r line; do echo "::error::${line:0:400}"; done
+          fi
+          exit $code
+      - if: always()
+        run: supabase stop
