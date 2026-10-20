@@ -1,0 +1,4411 @@
+{
+ "subject": "Mathematics",
+ "year": "y10",
+ "board": "Pearson Edexcel GCSE (9–1) Mathematics (1MA1), Higher tier",
+ "boardShort": "Edexcel GCSE 1MA1 Higher",
+ "source": "Pearson Edexcel 1MA1 specification as recorded in content/syllabus/ks4/mathematics.json (units N and A only), Higher tier with Foundation-accessible starts; Edexcel 1MA1 Higher exam style; INSET lesson standard. Skipped as already taught well in the school's existing mathematics lessons: N4 primes/HCF/LCM, N7 fractional and negative indices, N8 surds, N10 recurring decimals (existing Year 10 lessons 1-5); A4 binomials and quadratic factorising, A5 subject appearing twice, A6 identities and proof, A17 linear equations, A21 forming equations, A22 linear inequalities (existing Year 10 lessons 6-16); A11/A12 quadratic, cubic and reciprocal graphs, A13 translations and reflections of graphs, A17 solving by graphs, A19 algebraic simultaneous equations (existing Year 11 lessons 1-8).",
+ "lessons": [
+  {
+   "unit": "N1-N9 Number: structure and calculation",
+   "n": 1,
+   "title": "Ordering numbers and calculating with negatives and decimals",
+   "duration": 50,
+   "bigQuestion": "Is −3.5 bigger or smaller than −3.45, and how do you know?",
+   "objectives": [
+    "Order integers, decimals and fractions, including negatives, using < > ≤ ≥",
+    "Add, subtract, multiply and divide with negative numbers",
+    "Multiply and divide decimals using place value"
+   ],
+   "successCriteria": [
+    "All: order positive and negative decimals on a number line",
+    "Most: calculate with negatives and decimals without a calculator",
+    "Some: use place value to justify answers such as 4.8 ÷ 0.06"
+   ],
+   "crossCurricular": "Geography and science: temperatures below zero, altitude and depth",
+   "smsc": "Social: careful, honest working; checking an answer is part of adab in learning",
+   "keywords": [
+    {
+     "term": "integer",
+     "def": "a whole number, positive, negative or zero"
+    },
+    {
+     "term": "place value",
+     "def": "the value of a digit because of its position"
+    },
+    {
+     "term": "inequality symbol",
+     "def": "< > ≤ ≥ compare two numbers"
+    },
+    {
+     "term": "ascending",
+     "def": "from smallest to largest"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write 0.4, 0.38 and 0.045 in ascending order.",
+    "Work out 15 × 4.",
+    "What is 3/4 as a decimal?",
+    "What is the value of the 7 in 3.072?"
+   ],
+   "teach": [
+    {
+     "heading": "Comparing and the symbols",
+     "bullets": [
+      "< means less than, > means greater than",
+      "≤ and ≥ include equal to",
+      "Further left on a number line is smaller",
+      "−3.5 is left of −3.45, so −3.5 < −3.45"
+     ],
+     "note": "Draw a number line from −4 to −3. Ask which is colder, −3.5 or −3.45 degrees. Answer the big question: with negatives, the number with the bigger digits is smaller. Foundation start: order only positives first, then add negatives."
+    },
+    {
+     "heading": "Ordering mixed fractions and decimals",
+     "bullets": [
+      "Convert everything to decimals",
+      "Or use a common denominator",
+      "Negatives: bigger digits means smaller number"
+     ],
+     "note": "Convert fractions by dividing. Insist pupils write the decimal beside each number before ordering.",
+     "model": {
+      "problem": "Write in ascending order: 3/5, 0.55, 5/8, −0.7, −3/4",
+      "steps": [
+       "Decimals: 0.6, 0.55, 0.625, −0.7, −0.75",
+       "Negatives first: −0.75 is less than −0.7",
+       "Positives: 0.55 < 0.6 < 0.625",
+       "Order: −3/4, −0.7, 0.55, 3/5, 5/8"
+      ],
+      "answer": "−3/4, −0.7, 0.55, 3/5, 5/8"
+     }
+    },
+    {
+     "heading": "Negative number rules",
+     "bullets": [
+      "Subtracting a negative: same as adding",
+      "Same signs multiply or divide to give positive",
+      "Different signs give negative",
+      "Use a number line for + and −"
+     ],
+     "note": "Rehearse: 5 − (−3) = 8. Link to debts: removing a debt of 3 makes you 3 richer.",
+     "misconception": {
+      "wrong": "5 − (−3) = 2",
+      "right": "5 − (−3) = 5 + 3 = 8. Subtracting a negative adds."
+     }
+    },
+    {
+     "heading": "Decimals by place value",
+     "bullets": [
+      "0.6 × 0.04: do 6 × 4 = 24",
+      "Count decimal places: 1 + 2 = 3",
+      "So 0.6 × 0.04 = 0.024",
+      "Division: make the divisor whole by × 10 or × 100 on both numbers"
+     ],
+     "note": "Model 4.8 ÷ 0.06: multiply both by 100 to get 480 ÷ 6 = 80. Stress that the same operation is done to both numbers so the answer is unchanged."
+    },
+    {
+     "heading": "Check: decimal multiplication",
+     "bullets": [],
+     "note": "Show me on 3 whiteboards. Count the decimal places in the question first.",
+     "check": {
+      "q": "Work out 0.3 × 0.2",
+      "options": [
+       "0.6",
+       "0.06",
+       "0.5",
+       "0.006"
+      ],
+      "answer": 1,
+      "why": "3 × 2 = 6, with two decimal places gives 0.06. A is the common error of ignoring the point; D counts three places."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate (a) −7 + 12 (b) 3 − (−9) (c) (−4) × (−2.5)",
+    "Calculate 7.2 ÷ 0.9 and 0.07 × 0.3",
+    "Put in order, smallest first: −1.2, −1.02, −1/5, 0.2, 1/4",
+    "Insert < or > : −0.35 ___ −0.3"
+   ],
+   "independent": [
+    "Core: (a) −6 × 7 (b) −18 ÷ (−3) (c) −5 − 8 (d) 0.4 × 0.05 (e) 3.6 ÷ 0.04",
+    "Extend: The temperature at 6 am is −4.5°C and rises 2.75°C each hour. Find it at 9 am, and the first hour it is above 0°C.",
+    "Stretch: Two numbers have sum −2 and product −15. Find them, then find two numbers with sum −2 and product −24."
+   ],
+   "exit": [
+    "Order −0.6, −0.65, −0.5, smallest first, and explain using the big question.",
+    "Work out −2.4 ÷ 0.08",
+    "Work out 4 − (−1.5) × 2"
+   ],
+   "homework": "Ten mixed questions on ordering and negative and decimal arithmetic, including three in context (temperature, bank balance, depth).",
+   "send": "SEND/EAL: keep a vertical number line and colour-code signs; sentence frame 'the number further left is ___'. Stretch: justify the rules for multiplying negatives using patterns."
+  },
+  {
+   "unit": "N1-N9 Number: structure and calculation",
+   "n": 2,
+   "title": "Fractions: the four operations",
+   "duration": 50,
+   "bigQuestion": "How can a field be shared fairly in fractions, and what is left over?",
+   "objectives": [
+    "Add and subtract fractions and mixed numbers",
+    "Multiply and divide fractions and mixed numbers",
+    "Give answers in simplest form"
+   ],
+   "successCriteria": [
+    "All: add and subtract fractions with different denominators",
+    "Most: multiply and divide mixed numbers",
+    "Some: solve multi-step fraction problems with exact answers"
+   ],
+   "crossCurricular": "Food technology and business: scaling recipes and shares",
+   "smsc": "Moral: fairness ('adl) in dividing a shared amount",
+   "keywords": [
+    {
+     "term": "numerator",
+     "def": "the top of a fraction"
+    },
+    {
+     "term": "denominator",
+     "def": "the bottom of a fraction"
+    },
+    {
+     "term": "mixed number",
+     "def": "a whole number and a fraction, such as 2 3/4"
+    },
+    {
+     "term": "reciprocal",
+     "def": "what you multiply by to get 1; flip the fraction"
+    }
+   ],
+   "starter": [
+    "Simplify 18/24.",
+    "Write 17/5 as a mixed number.",
+    "Find the lowest common multiple of 4 and 6.",
+    "Work out 3/4 of 20."
+   ],
+   "teach": [
+    {
+     "heading": "Add and subtract: common denominators",
+     "bullets": [
+      "Find the LCM of the denominators",
+      "Make equivalent fractions",
+      "Add or subtract the numerators only",
+      "Convert mixed numbers to improper fractions"
+     ],
+     "note": "Insist the denominator is not added. Use fraction walls for Foundation access.",
+     "model": {
+      "problem": "Work out 5 1/3 − 2 3/4",
+      "steps": [
+       "Improper: 16/3 − 11/4",
+       "Common denominator 12: 64/12 − 33/12",
+       "Subtract numerators: 31/12",
+       "Mixed number: 2 7/12"
+      ],
+      "answer": "2 7/12"
+     }
+    },
+    {
+     "heading": "A common mistake",
+     "bullets": [
+      "Never add the denominators"
+     ],
+     "note": "Draw 1/2 + 1/3 on a pizza picture to show 2/5 is smaller than 1/2 so cannot be right.",
+     "misconception": {
+      "wrong": "1/2 + 1/3 = 2/5",
+      "right": "1/2 + 1/3 = 3/6 + 2/6 = 5/6"
+     }
+    },
+    {
+     "heading": "Multiply and divide",
+     "bullets": [
+      "Multiply: top × top, bottom × bottom",
+      "Cancel common factors first",
+      "Divide: keep, flip, multiply",
+      "Always convert mixed numbers first"
+     ],
+     "note": "Worked on board: 2 1/4 × 1 1/3 = 9/4 × 4/3 = 3 by cancelling 4. 3/5 ÷ 9/10 = 3/5 × 10/9 = 30/45 = 2/3. Ask why flipping works: how many 9/10s fit into 3/5?"
+    },
+    {
+     "heading": "Check: dividing a fraction by a whole number",
+     "bullets": [],
+     "note": "Whiteboards. Ask pupils to say which answer must be smaller than 2/3 first.",
+     "check": {
+      "q": "Work out 2/3 ÷ 4",
+      "options": [
+       "8/3",
+       "1/6",
+       "2/7",
+       "6"
+      ],
+      "answer": 1,
+      "why": "2/3 ÷ 4 = 2/3 × 1/4 = 2/12 = 1/6. A multiplies by 4 and flips the wrong fraction; the result of dividing must be smaller."
+     }
+    },
+    {
+     "heading": "Multi-step problem",
+     "bullets": [
+      "Add the shares",
+      "Subtract from 1 whole",
+      "Use a common denominator of 15"
+     ],
+     "note": "Worked: a field is shared: 1/3 to the eldest, 2/5 to the second. 1 − 1/3 − 2/5 = 15/15 − 5/15 − 6/15 = 4/15 remains. Discuss fairness: do equal shares have to be fractions of the same size?"
+    }
+   ],
+   "practice": [
+    "Work out 2 3/4 + 1 5/6",
+    "Work out 2 1/4 × 1 1/3",
+    "Work out 3/5 ÷ 9/10",
+    "Work out 5/6 − 3/8"
+   ],
+   "independent": [
+    "Core: (a) 3/4 + 2/5 (b) 7/8 − 1/3 (c) 2/3 × 9/10 (d) 4/5 ÷ 2/3",
+    "Extend: (a) 3 1/2 − 1 7/8 (b) 2 2/5 ÷ 1 1/5 (c) A tin holds 3 3/4 kg; 2/5 is used. How much is left?",
+    "Stretch: A recipe needs 2 1/4 cups of flour per batch. How many batches from 9 cups? How much flour is left after 3 1/2 batches?"
+   ],
+   "exit": [
+    "Work out 5/6 + 3/4",
+    "Work out 1 1/2 × 2 2/3",
+    "Answer the big question: a plot is split 3/8 and 1/4; what fraction remains?"
+   ],
+   "homework": "Eight fraction operation questions with mixed numbers, plus one worded problem about sharing a quantity fairly.",
+   "send": "SEND/EAL: fraction wall and a method card for each operation; vocabulary numerator/denominator in a glossary. Stretch: algebraic fractions preview 1/x + 1/y."
+  },
+  {
+   "unit": "N1-N9 Number: structure and calculation",
+   "n": 3,
+   "title": "Order of operations, inverses and reciprocals",
+   "duration": 50,
+   "bigQuestion": "Why must everyone agree on the order in which we calculate?",
+   "objectives": [
+    "Apply the order of operations including powers, roots and brackets",
+    "Use inverse operations to check and undo calculations",
+    "Find reciprocals and use cancellation"
+   ],
+   "successCriteria": [
+    "All: use BIDMAS with powers and brackets",
+    "Most: use fraction bars and roots correctly",
+    "Some: simplify and cancel products before calculating"
+   ],
+   "crossCurricular": "Computing: operator precedence in programming languages",
+   "smsc": "Social: shared conventions make communication fair and clear",
+   "keywords": [
+    {
+     "term": "BIDMAS",
+     "def": "order: brackets, indices, division/multiplication, addition/subtraction"
+    },
+    {
+     "term": "inverse operation",
+     "def": "an operation that undoes another"
+    },
+    {
+     "term": "reciprocal",
+     "def": "1 divided by the number"
+    },
+    {
+     "term": "cancel",
+     "def": "divide top and bottom by a common factor"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 2 + 3 × 4.",
+    "Work out 5².",
+    "What is √49?",
+    "What is the inverse of 'multiply by 7'?"
+   ],
+   "teach": [
+    {
+     "heading": "The order",
+     "bullets": [
+      "Brackets (and fraction bars, roots)",
+      "Indices (powers, roots)",
+      "Division and multiplication, left to right",
+      "Addition and subtraction, left to right"
+     ],
+     "note": "Stress that × and ÷ share a level. Show 24 ÷ 4 × 3 = 18, not 2.",
+     "model": {
+      "problem": "Work out (18 − 3²) ÷ √9 + 2³",
+      "steps": [
+       "Brackets: 3² = 9, so 18 − 9 = 9",
+       "Root: √9 = 3",
+       "Division: 9 ÷ 3 = 3",
+       "Index: 2³ = 8, then 3 + 8 = 11"
+      ],
+      "answer": "11"
+     }
+    },
+    {
+     "heading": "Left to right",
+     "bullets": [
+      "24 ÷ 4 × 3: do ÷ first, then ×",
+      "Same level: work from the left"
+     ],
+     "note": "Common error check: pupils who multiply first get 2.",
+     "misconception": {
+      "wrong": "24 ÷ 4 × 3 = 24 ÷ 12 = 2",
+      "right": "24 ÷ 4 × 3 = 6 × 3 = 18"
+     }
+    },
+    {
+     "heading": "Fraction bars and calculators",
+     "bullets": [
+      "The bar acts like brackets top and bottom",
+      "(5 + 7)/(2 × 3) = 12/6 = 2",
+      "On a calculator, use brackets or the fraction key"
+     ],
+     "note": "Demonstrate the keystrokes. Common error: entering 5 + 7 ÷ 2 × 3."
+    },
+    {
+     "heading": "Reciprocals and inverses",
+     "bullets": [
+      "Reciprocal of 2/5 is 5/2",
+      "Reciprocal of 0.2 is 5",
+      "Reciprocal of 2 1/2 is 2/5",
+      "Inverse of squaring is square root"
+     ],
+     "note": "Use the inverse to check: if 8.4 × 5 = 42, then 42 ÷ 5 should give 8.4. Show cancellation: (12 × 35)/(14 × 15): 12/15 = 4/5, 35/14 = 5/2, product 4/5 × 5/2 = 2."
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Mini-whiteboards. Ask pupils to do each step on paper.",
+     "check": {
+      "q": "Work out 3 + 4 × 2² − 1",
+      "options": [
+       "27",
+       "18",
+       "19",
+       "13"
+      ],
+      "answer": 1,
+      "why": "Index first: 2² = 4. Then 4 × 4 = 16. Then 3 + 16 − 1 = 18. A adds 3 + 4 before multiplying; C forgets the − 1."
+     }
+    }
+   ],
+   "practice": [
+    "Work out 20 − 3 × 4 + 2²",
+    "Work out (7 + 5)/(2² − 1)",
+    "Write the reciprocal of 3/7, 0.25 and 3",
+    "Cancel and work out (14 × 9)/(6 × 21)"
+   ],
+   "independent": [
+    "Core: (a) 5 + 6 × 2 (b) (5 + 6) × 2 (c) 3³ − 2 × 4 (d) 36 ÷ 6 × 3",
+    "Extend: (a) (√64 + 3²) ÷ 5 (b) 1 ÷ (1/4 + 1/8) (c) Insert brackets to make 2 + 3 × 4 − 1 equal 19",
+    "Stretch: Using each of 1, 2, 3, 4 exactly once with + − × ÷ and brackets, make as many whole numbers 1 to 10 as you can."
+   ],
+   "exit": [
+    "Work out 4 + 18 ÷ 3²",
+    "Reciprocal of 5/8",
+    "Cancel (15 × 8)/(12 × 10)"
+   ],
+   "homework": "Eight BIDMAS and reciprocal questions, plus two calculator-entry error spotting questions.",
+   "send": "SEND/EAL: colour each step and write the operation name beside it. Stretch: negative indices and roots inside brackets."
+  },
+  {
+   "unit": "N1-N9 Number: structure and calculation",
+   "n": 4,
+   "title": "Systematic listing and the product rule for counting",
+   "duration": 50,
+   "bigQuestion": "How many different iftar boxes can be made from a small menu, and how do we count without listing them all?",
+   "objectives": [
+    "List outcomes systematically so none are missed or repeated",
+    "Use the product rule to count combinations (Higher)",
+    "Decide when repeats are or are not allowed"
+   ],
+   "successCriteria": [
+    "All: list outcomes in a sensible order",
+    "Most: use the product rule for independent choices",
+    "Some: count arrangements where repeats are not allowed or there is a condition"
+   ],
+   "crossCurricular": "Computing: passwords and combinations; Business: menu and product choices",
+   "smsc": "Moral: order and care in work so that nothing is overlooked",
+   "keywords": [
+    {
+     "term": "outcome",
+     "def": "one possible result"
+    },
+    {
+     "term": "systematic",
+     "def": "done in an organised order"
+    },
+    {
+     "term": "product rule",
+     "def": "multiply the number of choices at each stage"
+    },
+    {
+     "term": "combination",
+     "def": "a selected set of choices"
+    }
+   ],
+   "starter": [
+    "Bismillah. List the factors of 12.",
+    "Work out 3 × 4 × 2.",
+    "Work out 10 × 9 × 8.",
+    "How many outcomes when a coin is flipped once?"
+   ],
+   "teach": [
+    {
+     "heading": "Systematic listing",
+     "bullets": [
+      "Fix the first item, then vary the next",
+      "Write outcomes in order",
+      "Check the total at the end",
+      "Foundation: list all three-digit numbers from the digits 1, 2, 3 without repeats"
+     ],
+     "note": "List: 123, 132, 213, 231, 312, 321 = 6. Show that fixing the first digit gives 2 each time. Pupils compare unorganised lists to see how items are missed."
+    },
+    {
+     "heading": "The product rule",
+     "bullets": [
+      "Number of choices at each stage",
+      "Multiply the numbers",
+      "3 starters × 4 mains × 2 desserts = 24",
+      "It works when choices are independent"
+     ],
+     "note": "Use an iftar box: 3 types of samosa, 4 drinks, 2 desserts. Ask why we do not add: every starter can be paired with every main.",
+     "model": {
+      "problem": "A code is 4 digits from 0–9. How many codes if digits can repeat, and if they cannot?",
+      "steps": [
+       "Repeats allowed: 10 × 10 × 10 × 10 = 10 000",
+       "No repeats: choices fall 10, 9, 8, 7",
+       "10 × 9 × 8 × 7 = 5040",
+       "Compare: repeats allowed gives more"
+      ],
+      "answer": "10 000 and 5040"
+     }
+    },
+    {
+     "heading": "Adding instead of multiplying",
+     "bullets": [
+      "Choices at different stages multiply, they do not add"
+     ],
+     "note": "Ask pupils to list a small case (2 shirts, 3 scarves) to see 6 outfits, not 5.",
+     "misconception": {
+      "wrong": "3 starters and 4 mains gives 3 + 4 = 7 meals",
+      "right": "3 × 4 = 12 meals, one starter with one main each time"
+     }
+    },
+    {
+     "heading": "Conditions and constraints",
+     "bullets": [
+      "Deal with the restricted place first",
+      "Even number: last digit must be even",
+      "Example: 3-digit even numbers from 1–5, no repeats",
+      "Last digit 2 or 4: 2 ways; first 4 ways; second 3 ways"
+     ],
+     "note": "Answer: 2 × 4 × 3 = 24. Emphasise choosing the most restricted position first."
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards. Pupils must show the multiplication.",
+     "check": {
+      "q": "How many four-digit numbers can be made from 1, 2, 3, 4 using each digit exactly once?",
+      "options": [
+       "4",
+       "16",
+       "24",
+       "256"
+      ],
+      "answer": 2,
+      "why": "4 × 3 × 2 × 1 = 24. D allows repeats (4⁴); B is 4 × 4."
+     }
+    }
+   ],
+   "practice": [
+    "List all the two-letter codes from A, B, C where repeats are allowed. How many?",
+    "A café has 5 sandwiches and 3 drinks. How many meal deals?",
+    "How many 3-digit numbers from 1–9 have no repeated digit?"
+   ],
+   "independent": [
+    "Core: (a) 6 trousers × 4 tops (b) list the outcomes when two coins are flipped",
+    "Extend: A plate has 2 letters then 3 digits. How many plates (letters A–Z, digits 0–9, repeats allowed)? How many with no repeats at all?",
+    "Stretch: How many 3-digit odd numbers use only digits 1–6 with no repeats? Show a structured method."
+   ],
+   "exit": [
+    "How many outfits from 4 scarves and 3 coats?",
+    "List all arrangements of the letters X, Y, Z.",
+    "Return to the big question: 3 samosas, 4 drinks, 2 desserts."
+   ],
+   "homework": "Six counting questions, two requiring systematic lists and four using the product rule, including a contextual question about a PIN.",
+   "send": "SEND/EAL: tree diagrams and highlighted fixed items; stretch: factorial notation n! and arrangements of letters with repeats."
+  },
+  {
+   "unit": "N1-N9 Number: structure and calculation",
+   "n": 5,
+   "title": "Powers, roots, estimating and the laws of indices",
+   "duration": 50,
+   "bigQuestion": "How can you estimate a square root without a calculator?",
+   "objectives": [
+    "Recall squares, cubes and their roots",
+    "Estimate roots and powers",
+    "Use the laws of indices with positive integers"
+   ],
+   "successCriteria": [
+    "All: recall squares to 15² and cubes",
+    "Most: estimate surds between two integers",
+    "Some: simplify expressions using index laws including brackets"
+   ],
+   "crossCurricular": "Science: area, volume and scale; Computing: powers of 2",
+   "smsc": "Spiritual: patterns in numbers show order and design",
+   "keywords": [
+    {
+     "term": "power",
+     "def": "how many times a number is multiplied by itself"
+    },
+    {
+     "term": "root",
+     "def": "the inverse of a power"
+    },
+    {
+     "term": "index laws",
+     "def": "rules for combining powers of the same base"
+    },
+    {
+     "term": "estimate",
+     "def": "find an approximate answer"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 12² and 5³.",
+    "What is √81 and ∛27?",
+    "Between which two whole numbers does 40 lie, relative to square numbers?",
+    "Simplify x × x."
+   ],
+   "teach": [
+    {
+     "heading": "Know your squares and cubes",
+     "bullets": [
+      "Squares: 1, 4, 9 … up to 15² = 225",
+      "Cubes: 1, 8, 27, 64, 125, 1000",
+      "Roots reverse powers",
+      "Recall speeds up all index work"
+     ],
+     "note": "Use a rapid-fire quiz. Ask: what is the difference between 2³ and 3²? (8 and 9)."
+    },
+    {
+     "heading": "Estimating roots",
+     "bullets": [
+      "Find the squares either side",
+      "49 < 50 < 64, so 7 < √50 < 8",
+      "√50 is just over 7",
+      "Refine by testing 7.1² = 50.41"
+     ],
+     "note": "Say why √50 is close to 7: 50 is close to 49. Then model on √72.",
+     "model": {
+      "problem": "Estimate √72 to one decimal place",
+      "steps": [
+       "8² = 64 and 9² = 81, so between 8 and 9",
+       "72 is closer to 81 than 64",
+       "Try 8.5² = 72.25, slightly too big",
+       "So √72 ≈ 8.5 (8.485…)"
+      ],
+      "answer": "≈ 8.5"
+     }
+    },
+    {
+     "heading": "Index laws (positive integers)",
+     "bullets": [
+      "a^m × a^n = a^(m+n)",
+      "a^m ÷ a^n = a^(m−n)",
+      "(a^m)^n = a^(mn)",
+      "Apply to numbers and to letters"
+     ],
+     "note": "Examples: (2³ × 2⁵)/2⁴ = 2⁴ = 16; (3²)³ = 3⁶ = 729; 3x²y × 4xy³ = 12x³y⁴. Separate the coefficient work from the letters."
+    },
+    {
+     "heading": "Brackets and powers",
+     "bullets": [
+      "(2a)³ means 2a × 2a × 2a",
+      "Every factor inside is cubed",
+      "(2a³)³ = 8a⁹"
+     ],
+     "note": "A very common error is to leave the coefficient uncubed.",
+     "misconception": {
+      "wrong": "(2a)³ = 2a³",
+      "right": "(2a)³ = 2³ × a³ = 8a³"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Which is closest to √72?",
+      "options": [
+       "7.5",
+       "8.5",
+       "9.5",
+       "36"
+      ],
+      "answer": 1,
+      "why": "8.5² = 72.25. D halves 72 rather than rooting; A and C are too far from 72 when squared (56.25 and 90.25)."
+     }
+    }
+   ],
+   "practice": [
+    "Simplify 5⁴ × 5² and 7⁸ ÷ 7⁵",
+    "Estimate √90 between two integers, then to 1 d.p.",
+    "Simplify (2x³)³ and 4a²b × 3ab⁴",
+    "Work out (2⁵ × 2³)/2⁶"
+   ],
+   "independent": [
+    "Core: (a) 9² (b) ∛125 (c) 2³ × 2⁴ (d) y⁵ ÷ y² (e) (x²)⁴",
+    "Extend: Between which consecutive integers is ∛100? Estimate it to 1 d.p. without a calculator.",
+    "Stretch: Solve 2ⁿ × 4³ = 2¹¹ and (3ⁿ)² ÷ 3⁴ = 27."
+   ],
+   "exit": [
+    "Simplify a⁴ × a³",
+    "Simplify (3b²)²",
+    "Estimate √30 to 1 d.p."
+   ],
+   "homework": "Ten index-law and estimating-root questions; include (2x²)³ and one problem on estimating a cube root.",
+   "send": "SEND/EAL: laws card with one numerical example each. Stretch: show a⁰ = 1 using the division law."
+  },
+  {
+   "unit": "N1-N9 Number: structure and calculation",
+   "n": 6,
+   "title": "Exact calculations with π",
+   "duration": 50,
+   "bigQuestion": "Why do mathematicians often leave π in an answer rather than using 3.14?",
+   "objectives": [
+    "Give answers in terms of π",
+    "Find exact areas, circumferences and volumes",
+    "Work backwards from an area or circumference in terms of π"
+   ],
+   "successCriteria": [
+    "All: calculate the area and circumference of a circle in terms of π",
+    "Most: calculate semicircles, compound shapes and cylinders exactly",
+    "Some: work backwards and use π in ratios"
+   ],
+   "crossCurricular": "Science: circular motion, astronomy and engineering design",
+   "smsc": "Spiritual: awe at a number with no end that perfectly describes every circle",
+   "keywords": [
+    {
+     "term": "exact",
+     "def": "not rounded; kept in terms of π or a surd"
+    },
+    {
+     "term": "circumference",
+     "def": "the distance around a circle, C = πd = 2πr"
+    },
+    {
+     "term": "area of a circle",
+     "def": "A = πr²"
+    },
+    {
+     "term": "radius",
+     "def": "distance from centre to the edge"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is the diameter of a circle with radius 7?",
+    "Write the formula for the area of a circle.",
+    "Work out 6².",
+    "Simplify 3π + 4π."
+   ],
+   "teach": [
+    {
+     "heading": "Why leave π?",
+     "bullets": [
+      "π is irrational: its decimals never end",
+      "3.14 is only an approximation",
+      "Leave π in the answer for an exact value",
+      "Round only at the very end"
+     ],
+     "note": "Show that 12π is exact but 37.7 is rounded. Mention that the exact value is better for further calculations."
+    },
+    {
+     "heading": "Area and circumference",
+     "bullets": [
+      "Area: A = πr²",
+      "Circumference: C = 2πr",
+      "Radius 6: A = 36π, C = 12π",
+      "Do not multiply by π unless asked"
+     ],
+     "note": "Hinge: radius 6, so r² = 36 gives 36π cm².",
+     "model": {
+      "problem": "Find the perimeter of a semicircle of radius 5 cm, exactly",
+      "steps": [
+       "Curved part: half of 2π × 5 = 5π",
+       "Straight edge is the diameter = 10",
+       "Perimeter = 5π + 10",
+       "Leave exact"
+      ],
+      "answer": "5π + 10 cm"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Area is πr², not 2πr²",
+      "Square r first, then multiply by π"
+     ],
+     "note": "Compare doubling and squaring.",
+     "misconception": {
+      "wrong": "Circle radius 4: area = 8π",
+      "right": "Area = π × 4² = 16π"
+     }
+    },
+    {
+     "heading": "Working backwards",
+     "bullets": [
+      "Circumference 20π: 2πr = 20π",
+      "So r = 10",
+      "Area = 100π",
+      "Area 49π: r² = 49, r = 7"
+     ],
+     "note": "Pupils divide by π before solving. Extension: ratio of the areas of two circles with radius 3 and 6 is 1 : 4."
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "A circle has circumference 16π. What is its radius?",
+      "options": [
+       "4",
+       "8",
+       "16",
+       "32"
+      ],
+      "answer": 1,
+      "why": "2πr = 16π gives r = 8. A halves the radius again; C is just the number 16 in 16π; D doubles it."
+     }
+    }
+   ],
+   "practice": [
+    "Exact area and circumference of a circle of radius 9 cm",
+    "Exact area of a semicircle of diameter 10 cm",
+    "A cylinder has radius 3 cm and height 10 cm. Find its volume in terms of π.",
+    "A circle has area 64π. Find its circumference in terms of π."
+   ],
+   "independent": [
+    "Core: Exact area and perimeter of a circle of radius 12 and of diameter 7.",
+    "Extend: A square of side 10 cm contains a quarter circle of radius 10 cm. Find the shaded area outside the quarter circle in exact form. Find the exact volume of a sphere of radius 6 using V = 4/3 πr³.",
+    "Stretch: Two circles have areas in ratio 4 : 9. Find the ratio of their circumferences and explain."
+   ],
+   "exit": [
+    "Exact area of a circle with diameter 12 cm",
+    "Perimeter of a semicircle with radius 4 cm, exact",
+    "A circle has circumference 18π. Find the area, exactly."
+   ],
+   "homework": "Six exact-answer questions on circles and cylinders, plus one question where answers are given as a multiple of π and then rounded to 3 s.f.",
+   "send": "SEND/EAL: formula card with worked radius 6 example. Stretch: arcs and sectors in terms of π."
+  },
+  {
+   "unit": "N1-N9 Number: structure and calculation",
+   "n": 7,
+   "title": "Standard form: writing and converting",
+   "duration": 50,
+   "bigQuestion": "How can scientists write the distance to the Sun without a page of zeros?",
+   "objectives": [
+    "Write large and small numbers in standard form",
+    "Convert standard form to ordinary numbers",
+    "Order numbers in standard form"
+   ],
+   "successCriteria": [
+    "All: write numbers such as 450 000 in standard form",
+    "Most: write numbers such as 0.00032 and convert back",
+    "Some: identify and correct numbers wrongly written in standard form"
+   ],
+   "crossCurricular": "Science: astronomy, atomic sizes; Computing: data storage",
+   "smsc": "Spiritual: reflection on the vast and the tiny scales of creation",
+   "keywords": [
+    {
+     "term": "standard form",
+     "def": "a × 10ⁿ with 1 ≤ a < 10 and n an integer"
+    },
+    {
+     "term": "index",
+     "def": "the power n in 10ⁿ"
+    },
+    {
+     "term": "significant",
+     "def": "the digits that carry value"
+    },
+    {
+     "term": "order of magnitude",
+     "def": "a rough size, the power of 10"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 10³ and 10⁻²",
+    "Multiply 3.2 × 100",
+    "Divide 5400 by 1000",
+    "Write 0.003 as a fraction."
+   ],
+   "teach": [
+    {
+     "heading": "The form a × 10ⁿ",
+     "bullets": [
+      "a is between 1 and 10 (1 ≤ a < 10)",
+      "n is a whole number, positive for large numbers, negative for small",
+      "650 000 = 6.5 × 10⁵",
+      "0.00032 = 3.2 × 10⁻⁴"
+     ],
+     "note": "Method: place the decimal point after the first non-zero digit, count the moves. Moves left give positive n, moves right negative n.",
+     "model": {
+      "problem": "Write 0.00072 in standard form",
+      "steps": [
+       "First non-zero digit is 7",
+       "Move the point 4 places right to get 7.2",
+       "Moving right means the index is negative",
+       "0.00072 = 7.2 × 10⁻⁴"
+      ],
+      "answer": "7.2 × 10⁻⁴"
+     }
+    },
+    {
+     "heading": "Standard or not?",
+     "bullets": [
+      "0.5 × 10³: a is too small",
+      "12 × 10²: a is too large",
+      "4.8 × 10⁻³: valid",
+      "Fix by adjusting a and n together"
+     ],
+     "note": "Convert 52.4 × 10³ to 5.24 × 10⁴. Ask why one decimal place movement changes the index by one."
+    },
+    {
+     "heading": "Converting back",
+     "bullets": [
+      "× 10⁵: move point 5 places right",
+      "× 10⁻³: move point 3 places left",
+      "3.5 × 10⁴ = 35 000",
+      "6 × 10⁻² = 0.06"
+     ],
+     "note": "Use zeros as placeholders. Check by estimating: does the answer feel large or small?"
+    },
+    {
+     "heading": "A common error",
+     "bullets": [
+      "A negative index does not make the number negative"
+     ],
+     "note": "Contrast 10⁻³ with −1000.",
+     "misconception": {
+      "wrong": "2.5 × 10⁻³ = −2500",
+      "right": "2.5 × 10⁻³ = 0.0025"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards: show a letter.",
+     "check": {
+      "q": "Which number is written in standard form?",
+      "options": [
+       "0.5 × 10³",
+       "12 × 10²",
+       "4.8 × 10⁻³",
+       "48 × 10⁻⁴"
+      ],
+      "answer": 2,
+      "why": "Only 4.8 × 10⁻³ has 1 ≤ a < 10. A has a below 1; B and D have a above 10."
+     }
+    }
+   ],
+   "practice": [
+    "Write 4 500 000 and 0.0063 in standard form",
+    "Write 7.2 × 10⁴ and 3 × 10⁻⁵ as ordinary numbers",
+    "Write 52.4 × 10³ in standard form",
+    "Put in order, smallest first: 3.1 × 10⁻², 2.9 × 10⁻³, 4.5 × 10⁻²"
+   ],
+   "independent": [
+    "Core: Write in standard form: 90 000, 0.07, 1 200 000, 0.000045.",
+    "Extend: The speed of light is about 3 × 10⁸ m/s. Write this as an ordinary number. A virus has width 1.2 × 10⁻⁷ m. Write this in ordinary form.",
+    "Stretch: Which is bigger, 6.2 × 10⁻⁵ or 0.00007? By how many times is 8 × 10⁶ bigger than 4 × 10³?"
+   ],
+   "exit": [
+    "Write 0.000038 in standard form",
+    "Write 2.4 × 10⁵ as an ordinary number",
+    "Is 14 × 10⁻³ in standard form? Correct it if not."
+   ],
+   "homework": "Ten conversion questions, including at least four with negative indices and three in a scientific context.",
+   "send": "SEND/EAL: place-value grid with decimal point arrows; word bank for 'standard form'. Stretch: ordering numbers across mixed indices."
+  },
+  {
+   "unit": "N1-N9 Number: structure and calculation",
+   "n": 8,
+   "title": "Calculating with standard form",
+   "duration": 50,
+   "bigQuestion": "Can we multiply the Earth's mass by a million without writing all those zeros?",
+   "objectives": [
+    "Multiply and divide numbers in standard form",
+    "Add and subtract numbers in standard form",
+    "Use a calculator and interpret standard form in context"
+   ],
+   "successCriteria": [
+    "All: multiply numbers in standard form",
+    "Most: divide, and add or subtract using ordinary numbers or common powers",
+    "Some: interpret answers in context and give them to suitable accuracy"
+   ],
+   "crossCurricular": "Science: astronomical distances and atomic scales",
+   "smsc": "Social: honesty in reporting calculations to a sensible accuracy",
+   "keywords": [
+    {
+     "term": "standard form",
+     "def": "a × 10ⁿ with 1 ≤ a < 10"
+    },
+    {
+     "term": "light year",
+     "def": "the distance light travels in one year, about 9.5 × 10¹² km"
+    },
+    {
+     "term": "index laws",
+     "def": "10ᵐ × 10ⁿ = 10ᵐ⁺ⁿ"
+    },
+    {
+     "term": "significant figures",
+     "def": "digits counted from the first non-zero digit"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write 360 000 in standard form.",
+    "Work out 10⁴ × 10³.",
+    "Write 0.0008 in standard form.",
+    "Work out 4 × 5."
+   ],
+   "teach": [
+    {
+     "heading": "Multiply and divide",
+     "bullets": [
+      "Multiply the numbers, add the indices",
+      "Divide the numbers, subtract the indices",
+      "Adjust the result so a is between 1 and 10",
+      "(3 × 10⁴) × (2.5 × 10³) = 7.5 × 10⁷"
+     ],
+     "note": "Slow the model down: separate the number parts and the powers of ten.",
+     "model": {
+      "problem": "Work out (6 × 10⁵) × (5 × 10³), giving a standard form answer",
+      "steps": [
+       "6 × 5 = 30",
+       "10⁵ × 10³ = 10⁸",
+       "30 × 10⁸ is not standard form",
+       "30 × 10⁸ = 3 × 10⁹"
+      ],
+      "answer": "3 × 10⁹"
+     }
+    },
+    {
+     "heading": "Dividing and small numbers",
+     "bullets": [
+      "(8.4 × 10⁷) ÷ (2 × 10³) = 4.2 × 10⁴",
+      "(3.2 × 10⁻³) ÷ (8 × 10⁵): 0.4 × 10⁻⁸",
+      "0.4 × 10⁻⁸ = 4 × 10⁻⁹"
+     ],
+     "note": "Negative indices: −3 − 5 = −8. Re-normalise 0.4 into 4 with one lower index."
+    },
+    {
+     "heading": "Adding and subtracting",
+     "bullets": [
+      "Make the powers of ten the same",
+      "3.4 × 10⁵ + 5.2 × 10⁴",
+      "= 3.4 × 10⁵ + 0.52 × 10⁵",
+      "= 3.92 × 10⁵"
+     ],
+     "note": "Alternative: convert to ordinary numbers: 340 000 + 52 000 = 392 000. Warn that you cannot just add the indices.",
+     "misconception": {
+      "wrong": "3 × 10⁴ + 2 × 10⁴ = 5 × 10⁸",
+      "right": "3 × 10⁴ + 2 × 10⁴ = 5 × 10⁴; the power stays the same"
+     }
+    },
+    {
+     "heading": "In context",
+     "bullets": [
+      "Star at 4.2 × 10¹³ km; light travels 9.5 × 10¹² km per year",
+      "Divide: 4.2 × 10¹³ ÷ 9.5 × 10¹² ≈ 4.42",
+      "About 4.4 years"
+     ],
+     "note": "Give the answer to 2 or 3 significant figures. Use the calculator's EXP key and check by estimation."
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Work out (4 × 10³) × (5 × 10⁶) in standard form",
+      "options": [
+       "20 × 10⁹",
+       "2 × 10¹⁰",
+       "2 × 10⁹",
+       "9 × 10⁹"
+      ],
+      "answer": 1,
+      "why": "4 × 5 = 20, 10³ × 10⁶ = 10⁹ so 20 × 10⁹ = 2 × 10¹⁰. A is not standard form; D adds the numbers."
+     }
+    }
+   ],
+   "practice": [
+    "Work out (2 × 10⁴) × (3.5 × 10²)",
+    "Work out (9 × 10⁶) ÷ (3 × 10²)",
+    "Work out 6.1 × 10⁴ + 3.9 × 10³",
+    "Work out (5 × 10⁻³) × (4 × 10⁻²)"
+   ],
+   "independent": [
+    "Core: (a) (3 × 10⁵) × (2 × 10²) (b) (8 × 10⁹) ÷ (4 × 10⁵) (c) (1.5 × 10³) + (2 × 10³)",
+    "Extend: A virus has width 1.2 × 10⁻⁷ m. How many fit across 3 × 10⁻³ m? Give your answer in standard form.",
+    "Stretch: A star is 4.2 × 10¹³ km away. A probe travels at 2.8 × 10⁵ km/h. Find the journey time in years (1 year = 8.76 × 10³ hours) to 2 s.f."
+   ],
+   "exit": [
+    "Work out (3 × 10⁷) × (4 × 10³)",
+    "Work out (6 × 10⁹) ÷ (3 × 10⁴)",
+    "Work out 5.5 × 10⁵ − 5 × 10⁴"
+   ],
+   "homework": "Eight standard form calculations, including addition and subtraction, and a worded problem with an answer to 3 s.f.",
+   "send": "SEND/EAL: two-column method card 'numbers / powers'; calculator EXP key demo. Stretch: surd and standard form mixed problems."
+  },
+  {
+   "unit": "N10-N12 Number: fractions, decimals and percentages",
+   "n": 9,
+   "title": "Terminating decimals and fractions",
+   "duration": 50,
+   "bigQuestion": "How can you tell, before dividing, whether a fraction will have a decimal that ends?",
+   "objectives": [
+    "Convert terminating decimals to fractions in simplest form",
+    "Convert fractions to terminating decimals",
+    "Decide whether a fraction gives a terminating decimal from its denominator"
+   ],
+   "successCriteria": [
+    "All: convert simple decimals and fractions",
+    "Most: convert decimals such as 0.375 to fractions and divide to find 7/16",
+    "Some: use prime factors of the denominator to predict termination"
+   ],
+   "crossCurricular": "Science: measurements and data; Finance: prices and discounts",
+   "smsc": "Social: precision and honesty in reporting measurements",
+   "keywords": [
+    {
+     "term": "terminating decimal",
+     "def": "a decimal that ends after a finite number of digits"
+    },
+    {
+     "term": "recurring decimal",
+     "def": "a decimal with a repeating pattern that never ends"
+    },
+    {
+     "term": "equivalent fraction",
+     "def": "a fraction with the same value"
+    },
+    {
+     "term": "simplest form",
+     "def": "the numerator and denominator have no common factor"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write 3/4 as a decimal.",
+    "Simplify 18/45.",
+    "Write 0.07 as a fraction.",
+    "Write 80 as a product of prime factors."
+   ],
+   "teach": [
+    {
+     "heading": "Decimal to fraction",
+     "bullets": [
+      "Use the place value of the last digit",
+      "0.65 = 65/100 = 13/20",
+      "0.375 = 375/1000 = 3/8",
+      "Always simplify"
+     ],
+     "note": "Link to place value columns: tenths, hundredths, thousandths. 2.4 = 2 4/10 = 2 2/5 = 12/5.",
+     "model": {
+      "problem": "Write 0.375 as a fraction in its simplest form",
+      "steps": [
+       "Three decimal places: 375/1000",
+       "Divide by 125: 3/8",
+       "Check 3 ÷ 8 = 0.375"
+      ],
+      "answer": "3/8"
+     }
+    },
+    {
+     "heading": "Fraction to decimal",
+     "bullets": [
+      "Divide the numerator by the denominator",
+      "3/8 = 3 ÷ 8 = 0.375",
+      "7/16 = 0.4375",
+      "9/25 = 36/100 = 0.36"
+     ],
+     "note": "Show short division with bus stop for 7 ÷ 16. For 9/25 scale to hundredths by multiplying top and bottom by 4."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Do not read 3/8 as 0.38"
+     ],
+     "note": "Ask for 1/8 first: 0.125, so 3/8 is three of them, 0.375.",
+     "misconception": {
+      "wrong": "3/8 = 0.38",
+      "right": "3/8 = 3 ÷ 8 = 0.375"
+     }
+    },
+    {
+     "heading": "Will it terminate?",
+     "bullets": [
+      "Write the fraction in simplest form",
+      "Prime factors of the denominator only 2s and 5s: terminates",
+      "Any other prime factor: recurring",
+      "13/80: 80 = 2⁴ × 5, terminates; 11/30: factor 3, recurring"
+     ],
+     "note": "Why: a terminating decimal is a fraction over 10, 100, 1000 …, and these only have 2 and 5 as prime factors. Recurring-decimal conversion is covered in the school's Year 10 'Recurring decimals and fractions' lesson."
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Which fraction gives a terminating decimal?",
+      "options": [
+       "7/12",
+       "4/15",
+       "9/40",
+       "5/18"
+      ],
+      "answer": 2,
+      "why": "40 = 2³ × 5 so 9/40 terminates (0.225). 12, 15 and 18 each have a factor of 3 that is not cancelled."
+     }
+    }
+   ],
+   "practice": [
+    "Write 0.45, 0.0125 and 3.6 as fractions in simplest form",
+    "Write 5/8, 7/20 and 11/16 as decimals",
+    "Without dividing, which of 3/7, 11/20, 7/30 terminate?",
+    "Show that 21/70 gives a terminating decimal."
+   ],
+   "independent": [
+    "Core: Convert 0.8, 0.35, 0.125 to fractions and 1/5, 3/4, 5/8 to decimals.",
+    "Extend: Write 2.64 as an improper fraction and explain whether 17/48 terminates.",
+    "Stretch: Find three fractions between 1/3 and 1/2 that give terminating decimals."
+   ],
+   "exit": [
+    "Write 0.56 as a simplest fraction",
+    "Write 7/16 as a decimal",
+    "Will 5/12 terminate? Explain."
+   ],
+   "homework": "Eight conversions plus two 'terminate or not?' questions with explanations using prime factors.",
+   "send": "SEND/EAL: place-value chart and bus-stop division frame. Stretch: predict the length of decimal for 1/7."
+  },
+  {
+   "unit": "N10-N12 Number: fractions, decimals and percentages",
+   "n": 10,
+   "title": "Fractions within ratio problems",
+   "duration": 50,
+   "bigQuestion": "If a group shares in the ratio 3 : 2, what fraction does each person get?",
+   "objectives": [
+    "Link ratios and fractions",
+    "Solve ratio problems that use fractions",
+    "Combine fractions of fractions"
+   ],
+   "successCriteria": [
+    "All: convert a ratio to fractions of the whole",
+    "Most: compare quantities given as fractions of each other",
+    "Some: solve multi-stage ratio and fraction problems"
+   ],
+   "crossCurricular": "Business: sharing profits; Science: mixtures and concentrations",
+   "smsc": "Moral: fairness ('adl) when sharing between people",
+   "keywords": [
+    {
+     "term": "ratio",
+     "def": "a comparison of quantities in order"
+    },
+    {
+     "term": "share",
+     "def": "divide in a given ratio"
+    },
+    {
+     "term": "fraction of",
+     "def": "multiply by that fraction"
+    },
+    {
+     "term": "simplify",
+     "def": "write with the smallest whole numbers"
+    }
+   ],
+   "starter": [
+    "Bismillah. Simplify the ratio 24 : 36.",
+    "Work out 2/5 of 60.",
+    "Share £40 in the ratio 3 : 5.",
+    "Work out 3/5 × 3/5."
+   ],
+   "teach": [
+    {
+     "heading": "Ratio to fraction",
+     "bullets": [
+      "Boys : girls = 3 : 5",
+      "Total parts = 8",
+      "Girls are 5/8 of the class",
+      "Boys are 3/8 of the class"
+     ],
+     "note": "Emphasise: the fraction uses the total number of parts, not the other part."
+    },
+    {
+     "heading": "Ratio from fractions",
+     "bullets": [
+      "Write both as equivalent fractions with the same denominator",
+      "2/3 : 3/4 = 8/12 : 9/12",
+      "Ratio is 8 : 9"
+     ],
+     "note": "Alternative: multiply both by the LCM 12.",
+     "model": {
+      "problem": "Find A : B if 2/5 of A equals 1/3 of B",
+      "steps": [
+       "2A/5 = B/3",
+       "Multiply both sides by 15: 6A = 5B",
+       "A/B = 5/6",
+       "So A : B = 5 : 6"
+      ],
+      "answer": "5 : 6"
+     }
+    },
+    {
+     "heading": "Fractions of fractions",
+     "bullets": [
+      "3/5 take bus or bike in the ratio 3 : 2",
+      "Bus is 3/5 of this: 3/5 × 3/5 = 9/25",
+      "Bike is 3/5 × 2/5 = 6/25",
+      "Check: 9/25 + 6/25 = 15/25 = 3/5"
+     ],
+     "note": "Draw a bar model with 5 parts, shade 3, then split the shaded part into 5 again."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Add the parts to find the total number of parts"
+     ],
+     "note": "1 : 3 means 1/4 and 3/4 of the whole.",
+     "misconception": {
+      "wrong": "In the ratio 1 : 3 the first part is 1/3 of the total",
+      "right": "In the ratio 1 : 3 the first part is 1/4 of the total (4 parts in all)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "In a bag, 3/7 of counters are red. The rest are blue and green in the ratio 1 : 3. What fraction of the bag is green?",
+      "options": [
+       "3/7",
+       "1/7",
+       "3/4",
+       "12/7"
+      ],
+      "answer": 0,
+      "why": "Blue and green make 4/7. Green is 3/4 of that: 3/4 × 4/7 = 3/7. B is the blue fraction; C ignores the 4/7."
+     }
+    }
+   ],
+   "practice": [
+    "Write the fractions of the whole in the ratio 4 : 7",
+    "Find the ratio 3/5 : 1/2",
+    "A bag has red and blue counters in the ratio 3 : 4. What fraction is blue? 14 are red: how many counters in total?",
+    "Of a class, 2/5 walk. The rest bus or cycle in the ratio 3 : 1. What fraction cycle?"
+   ],
+   "independent": [
+    "Core: (a) 2/3 : 5/6 (b) the fraction of 3 : 7 for each part (c) share £90 in ratio 2 : 3",
+    "Extend: A is 3/4 of B and B is 2/3 of C. Find A : B : C.",
+    "Stretch: In a school 3/5 of pupils are girls. 1/4 of the girls and 1/3 of the boys walk. What fraction of the school walks?"
+   ],
+   "exit": [
+    "Write 2 : 3 as fractions of the total",
+    "Simplify 1/4 : 2/3",
+    "Return to the big question: 3 : 2 gives what fractions?"
+   ],
+   "homework": "Six problems that mix ratio and fraction, including one three-stage problem in context (a mixed bag, a class).",
+   "send": "SEND/EAL: bar models and part-whole diagrams; vocabulary 'of the total'. Stretch: algebraic ratio with fractions."
+  },
+  {
+   "unit": "N10-N12 Number: fractions, decimals and percentages",
+   "n": 11,
+   "title": "Fractions and percentages as operators",
+   "duration": 50,
+   "bigQuestion": "How can one multiplication increase a price by 15%?",
+   "objectives": [
+    "Find a fraction or percentage of an amount",
+    "Use multipliers for percentage increase and decrease",
+    "Express one quantity as a fraction or percentage of another"
+   ],
+   "successCriteria": [
+    "All: find fractions and percentages of amounts",
+    "Most: use multipliers such as 1.15 and 0.92",
+    "Some: use multipliers fluently in multi-step problems"
+   ],
+   "crossCurricular": "Business: pricing and profit; Citizenship: taxes and sales",
+   "smsc": "Moral: honesty in pricing; giving charity as a fixed proportion",
+   "keywords": [
+    {
+     "term": "operator",
+     "def": "a number or fraction that acts on a quantity"
+    },
+    {
+     "term": "multiplier",
+     "def": "the number you multiply by to apply a change"
+    },
+    {
+     "term": "percentage",
+     "def": "a fraction out of 100"
+    },
+    {
+     "term": "increase",
+     "def": "make bigger"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 10% of 350.",
+    "Work out 3/4 of 24.",
+    "Write 0.35 as a percentage.",
+    "Write 45% as a decimal."
+   ],
+   "teach": [
+    {
+     "heading": "Fractions and percentages of amounts",
+     "bullets": [
+      "Fraction: divide by the denominator, multiply by the numerator",
+      "7/12 of £840 = £70 × 7 = £490",
+      "35% of 240: 10% = 24, 5% = 12; 24 × 3 + 12 = 84",
+      "Or 0.35 × 240"
+     ],
+     "note": "Show both the building-block method and the decimal multiplier."
+    },
+    {
+     "heading": "Multipliers for change",
+     "bullets": [
+      "Increase by 15%: multiply by 1.15",
+      "Decrease by 8%: multiply by 0.92",
+      "Increase by 2.5%: multiply by 1.025",
+      "The multiplier is 100% ± the change, as a decimal"
+     ],
+     "note": "A short route: 100% + 15% = 115% = 1.15.",
+     "model": {
+      "problem": "A coat costs £260. The price rises by 15%. Find the new price.",
+      "steps": [
+       "100% + 15% = 115%",
+       "Multiplier = 1.15",
+       "260 × 1.15 = 299",
+       "New price £299"
+      ],
+      "answer": "£299"
+     }
+    },
+    {
+     "heading": "One as a percentage of another",
+     "bullets": [
+      "Write as a fraction, then × 100",
+      "£18 out of £75: 18/75 = 0.24 = 24%",
+      "Units must match"
+     ],
+     "note": "A trader sets aside 2.5% of £4800 profit for sadaqah: 0.025 × 4800 = £120."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Decreasing by 8% is not multiplying by 0.08"
+     ],
+     "note": "Ask why multiplying by 0.08 gives just 8% of the amount.",
+     "misconception": {
+      "wrong": "Decrease £50 by 8%: 50 × 0.08 = £4",
+      "right": "Decrease means keep 92%: 50 × 0.92 = £46"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "What is the multiplier for a decrease of 8%?",
+      "options": [
+       "0.08",
+       "0.92",
+       "1.08",
+       "8"
+      ],
+      "answer": 1,
+      "why": "100% − 8% = 92% = 0.92. A is just 8%; C is an increase."
+     }
+    }
+   ],
+   "practice": [
+    "Find 5/8 of £320 and 35% of £240",
+    "Increase £260 by 15% and decrease £64 by 12.5%",
+    "Write 18 out of 75 as a percentage",
+    "A shop discounts a £48 item by 25%. Find the sale price."
+   ],
+   "independent": [
+    "Core: (a) 3/5 of 45 (b) 12% of 150 (c) increase 80 by 10% (d) decrease 200 by 5%",
+    "Extend: Salaries rise by 3.5%. A salary is £28 000. New salary? Express a rise from £28 000 to £29 400 as a percentage.",
+    "Stretch: A price goes up 20%, then the new price goes down 20%. Is it back to the original? Calculate for £100."
+   ],
+   "exit": [
+    "Increase £90 by 20%",
+    "Decrease £120 by 15%",
+    "Write 14 out of 56 as a percentage"
+   ],
+   "homework": "Eight multiplier questions including one two-step problem and one expressing a quantity as a percentage.",
+   "send": "SEND/EAL: percentage bar model; multiplier table. Stretch: compound multipliers like 1.1 × 0.9."
+  },
+  {
+   "unit": "N10-N12 Number: fractions, decimals and percentages",
+   "n": 12,
+   "title": "Percentage change, reverse percentages and repeated change",
+   "duration": 50,
+   "bigQuestion": "A coat costs £68 after a 15% sale. What was the original price?",
+   "objectives": [
+    "Calculate percentage change",
+    "Reverse a percentage change to find the original amount",
+    "Use powers of a multiplier for repeated change"
+   ],
+   "successCriteria": [
+    "All: calculate percentage increase and decrease",
+    "Most: find an original value using a reverse percentage",
+    "Some: solve growth and depreciation problems using a power of the multiplier"
+   ],
+   "crossCurricular": "Economics: inflation and depreciation; Geography: population growth",
+   "smsc": "Moral: fair pricing; being aware of how discounts and markup work",
+   "keywords": [
+    {
+     "term": "percentage change",
+     "def": "change ÷ original × 100"
+    },
+    {
+     "term": "reverse percentage",
+     "def": "working back from the final amount to the original"
+    },
+    {
+     "term": "depreciation",
+     "def": "fall in value over time"
+    },
+    {
+     "term": "growth",
+     "def": "increase over time"
+    }
+   ],
+   "starter": [
+    "Bismillah. Increase 80 by 25%.",
+    "Decrease 50 by 10%.",
+    "What is the multiplier for a 12% rise?",
+    "Work out 1.1 × 1.1."
+   ],
+   "teach": [
+    {
+     "heading": "Percentage change",
+     "bullets": [
+      "Change = new − original",
+      "Percentage change = change ÷ original × 100",
+      "125 to 140: 15/125 = 0.12",
+      "So a 12% increase"
+     ],
+     "note": "Stress dividing by the original, not the new value."
+    },
+    {
+     "heading": "Reverse percentages",
+     "bullets": [
+      "Original is 100%",
+      "After a 20% increase, the new price is 120%",
+      "Divide by the multiplier to go back",
+      "£90 ÷ 1.2 = £75"
+     ],
+     "note": "Draw the double number line 120% = £90, 100% = ?",
+     "model": {
+      "problem": "In a sale, 15% is taken off. The sale price is £68. Find the original price.",
+      "steps": [
+       "Sale price is 85% of the original",
+       "Multiplier 0.85",
+       "Original = 68 ÷ 0.85",
+       "Original = £80"
+      ],
+      "answer": "£80"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Do not take 15% off the sale price"
+     ],
+     "note": "Show 68 × 1.15 = 78.2 which is not £80.",
+     "misconception": {
+      "wrong": "Original = 68 + 15% of 68 = £78.20",
+      "right": "Original = 68 ÷ 0.85 = £80"
+     }
+    },
+    {
+     "heading": "Repeated percentage change",
+     "bullets": [
+      "Use the multiplier to the power of the number of periods",
+      "A car worth £12 000 loses 15% a year for 2 years",
+      "12 000 × 0.85² = 12 000 × 0.7225",
+      "= £8670"
+     ],
+     "note": "Context choice: growth and depreciation are used here rather than bank interest, which some families avoid. Practise growth with populations, for example 8000 × 1.03⁴."
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "A price rises 20% to £90. What was the original price?",
+      "options": [
+       "£72",
+       "£75",
+       "£108",
+       "£70"
+      ],
+      "answer": 1,
+      "why": "£90 ÷ 1.2 = £75. A takes 20% off £90; C adds 20%."
+     }
+    }
+   ],
+   "practice": [
+    "Find the percentage change from £250 to £290",
+    "After a 12% increase a phone costs £84. Original price?",
+    "A population of 8000 grows 3% a year for 4 years. Find it.",
+    "A £500 machine loses 20% of value each year. Find its value after 3 years."
+   ],
+   "independent": [
+    "Core: (a) 40 to 46 percentage increase (b) 60 to 51 percentage decrease (c) 20% off gives £56, find the original",
+    "Extend: Compare a 10% rise followed by a 10% fall with the original; find the overall percentage change.",
+    "Stretch: A quantity grows by r% a year. After two years it has increased by 21%. Find r."
+   ],
+   "exit": [
+    "Percentage change from 200 to 250",
+    "After 20% off, a sofa costs £320. Original price?",
+    "Value £5000 falls by 10% a year. Value after 2 years?"
+   ],
+   "homework": "Six problems (percentage change, reverse, repeated), with working that shows the multiplier each time.",
+   "send": "SEND/EAL: ratio table linking 100% to the original and 85% to the sale price. Stretch: finding an unknown percentage rate from the total change."
+  },
+  {
+   "unit": "A1-A7 Algebra: notation, vocabulary and manipulation",
+   "n": 13,
+   "title": "Algebraic notation and vocabulary",
+   "duration": 50,
+   "bigQuestion": "Why do mathematicians agree on one language for algebra?",
+   "objectives": [
+    "Write algebra using correct notation",
+    "Use the words expression, equation, formula, identity and inequality",
+    "Simplify by collecting like terms"
+   ],
+   "successCriteria": [
+    "All: write and simplify simple expressions",
+    "Most: classify an item as an expression, equation, formula, identity or inequality",
+    "Some: form and simplify expressions from words and diagrams"
+   ],
+   "crossCurricular": "Computing: variables and expressions in code",
+   "smsc": "Social: shared conventions let people from many places understand the same mathematics",
+   "keywords": [
+    {
+     "term": "expression",
+     "def": "terms combined with no equals sign, such as 3x + 2"
+    },
+    {
+     "term": "equation",
+     "def": "a statement that two expressions are equal for particular values"
+    },
+    {
+     "term": "formula",
+     "def": "a rule linking quantities, such as A = πr²"
+    },
+    {
+     "term": "identity",
+     "def": "true for every value of the variable, written ≡"
+    },
+    {
+     "term": "inequality",
+     "def": "compares using < > ≤ ≥"
+    },
+    {
+     "term": "term",
+     "def": "a part of an expression separated by + or −"
+    }
+   ],
+   "starter": [
+    "Bismillah. Simplify 5a + 3a.",
+    "Work out 3 × (−4).",
+    "What is the next term in 3, 7, 11, 15?",
+    "Write 'three more than a number' as a calculation."
+   ],
+   "teach": [
+    {
+     "heading": "Notation rules",
+     "bullets": [
+      "3 × a is written 3a",
+      "a × a is a², a × a × a is a³",
+      "a ÷ b is written a/b",
+      "½ x or x/2; 2a × 3b = 6ab"
+     ],
+     "note": "Stress that we omit × signs and put the number first. Ask: what is the difference between 3a and a³?",
+     "model": {
+      "problem": "Write as simply as possible: 5 × a × b × 2 + a × a × 3",
+      "steps": [
+       "5 × a × b × 2 = 10ab",
+       "a × a × 3 = 3a²",
+       "The terms are unlike so cannot combine",
+       "Result: 10ab + 3a²"
+      ],
+      "answer": "10ab + 3a²"
+     }
+    },
+    {
+     "heading": "Words of algebra",
+     "bullets": [
+      "Expression: 3x + 2 (no equals sign)",
+      "Equation: 3x + 2 = 11",
+      "Formula: A = πr²",
+      "Identity: 2(x + 3) ≡ 2x + 6 for all x"
+     ],
+     "note": "Use a sorting task with five cards. Inequality: x > 4. Point out that a formula is also an equation with several letters."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Unlike terms cannot be combined: a and a² are different"
+     ],
+     "note": "Test with a = 5: a + a = 10 but a² = 25.",
+     "misconception": {
+      "wrong": "a + a = a²",
+      "right": "a + a = 2a, while a × a = a²"
+     }
+    },
+    {
+     "heading": "Forming expressions",
+     "bullets": [
+      "Adult ticket £x, child ticket £y",
+      "3 adults and 2 children: 3x + 2y",
+      "Perimeter of a rectangle with sides 2a and b: 4a + 2b",
+      "Check units make sense"
+     ],
+     "note": "Ask pupils to say each expression in words before writing it."
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards: show a letter.",
+     "check": {
+      "q": "Which of these is an identity?",
+      "options": [
+       "3x + 2 = 11",
+       "2(x + 3) ≡ 2x + 6",
+       "x² > 9",
+       "A = πr²"
+      ],
+      "answer": 1,
+      "why": "2(x + 3) = 2x + 6 is true for every x. A is an equation true only for x = 3; C is an inequality; D is a formula."
+     }
+    }
+   ],
+   "practice": [
+    "Simplify 4a + 3b − a + 5b",
+    "Simplify 3x × 4y and 2a × a × 5",
+    "Classify: (i) 5x − 1 (ii) 5x − 1 = 14 (iii) v = u + at (iv) y < 7",
+    "Write an expression for the cost of 4 notebooks at £n and 3 pens at £p."
+   ],
+   "independent": [
+    "Core: Simplify (a) 7x + 2x (b) 3a + 4b − a (c) 5ab + 2ba",
+    "Extend: Write expressions for the area and the perimeter of a rectangle with sides (x + 3) and 2x. Simplify.",
+    "Stretch: Explain, with examples, why 3(x + 2) = 3x + 6 is an identity but 3(x + 2) = 15 is an equation."
+   ],
+   "exit": [
+    "Simplify 6p + 2q − 4p + q",
+    "Classify x² + 1, x² + 1 = 10, x² ≥ 1",
+    "Return to the big question in one sentence."
+   ],
+   "homework": "Eight questions on notation and vocabulary, including two worded 'form an expression' tasks.",
+   "send": "SEND/EAL: vocabulary card with example for each term; colour-code like terms. Stretch: the identity sign ≡ in context. Note: algebraic proof (A6) is taught in the school's 'Identities and algebraic proof' lesson."
+  },
+  {
+   "unit": "A1-A7 Algebra: notation, vocabulary and manipulation",
+   "n": 14,
+   "title": "Substituting into expressions and scientific formulae",
+   "duration": 50,
+   "bigQuestion": "How do scientists use a formula to predict something that has not happened yet?",
+   "objectives": [
+    "Substitute positive and negative numbers into expressions",
+    "Use formulae from science such as v = u + at and E = ½mv²",
+    "Follow the order of operations when substituting"
+   ],
+   "successCriteria": [
+    "All: substitute positive integers",
+    "Most: substitute negatives and powers correctly",
+    "Some: substitute into multi-variable formulae and interpret units"
+   ],
+   "crossCurricular": "Science: physics formulae for speed, force and energy",
+   "smsc": "Spiritual: patterns and laws in nature expressed by formulae",
+   "keywords": [
+    {
+     "term": "substitute",
+     "def": "replace letters with numbers"
+    },
+    {
+     "term": "formula",
+     "def": "a rule using letters for quantities"
+    },
+    {
+     "term": "evaluate",
+     "def": "work out the value"
+    },
+    {
+     "term": "variable",
+     "def": "a letter that stands for a number that can change"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out (−3)².",
+    "Work out −3².",
+    "Work out 5 + 4 × 2.",
+    "Work out ½ × 6 × 5."
+   ],
+   "teach": [
+    {
+     "heading": "Substituting carefully",
+     "bullets": [
+      "Replace each letter with the number in brackets",
+      "Use order of operations",
+      "3x² when x = −2: 3 × (−2)² = 12",
+      "Brackets stop sign errors"
+     ],
+     "note": "Write the substitution with brackets around negatives every time.",
+     "model": {
+      "problem": "Find the value of 2x² − x + 5 when x = −3",
+      "steps": [
+       "2 × (−3)² = 2 × 9 = 18",
+       "− x = −(−3) = +3",
+       "18 + 3 + 5",
+       "= 26"
+      ],
+      "answer": "26"
+     }
+    },
+    {
+     "heading": "Scientific formulae",
+     "bullets": [
+      "v = u + at: u = 5, a = 2, t = 6 → v = 17",
+      "E = ½mv²: m = 4, v = 3 → E = 18",
+      "s = ut + ½at²: u = 3, a = 4, t = 2 → s = 14",
+      "State the unit in the answer"
+     ],
+     "note": "Show the formula, substitution, answer layout. Square v before multiplying by ½m."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Square the number with its sign, not just the digit"
+     ],
+     "note": "In calculators, enter (−3)² with brackets.",
+     "misconception": {
+      "wrong": "(−3)² = −9",
+      "right": "(−3)² = (−3) × (−3) = 9, whereas −3² = −9"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Find 3x² when x = −2",
+      "options": [
+       "36",
+       "12",
+       "−12",
+       "−36"
+      ],
+      "answer": 1,
+      "why": "x² = 4 first; then 3 × 4 = 12. A squares 3x; C treats the square as negative."
+     }
+    }
+   ],
+   "practice": [
+    "Evaluate 3a + 2b when a = 4, b = −5",
+    "Evaluate x² − 2x + 1 when x = −4",
+    "F = ma. Find F when m = 12 and a = 3.5",
+    "s = ut + ½at². Find s when u = 3, a = 4, t = 2."
+   ],
+   "independent": [
+    "Core: Evaluate (a) 5x − 2 for x = 3 (b) x² + 4 for x = −2 (c) 2x³ for x = 3",
+    "Extend: v² = u² + 2as. Find v when u = 6, a = 3 and s = 10, and when u = 6, a = −2 and s = 8.",
+    "Stretch: C = 5(F − 32)/9. Find C when F = 77 and find F when C = −40."
+   ],
+   "exit": [
+    "Evaluate 3x − 4 when x = −2",
+    "Evaluate x² + 2x when x = −3",
+    "E = ½mv². Find E when m = 10 and v = 4."
+   ],
+   "homework": "Ten substitutions including six scientific formulae from physics and chemistry class.",
+   "send": "SEND/EAL: substitution frame 'formula / replace / calculate / units'. Stretch: substitute algebraic expressions into formulae."
+  },
+  {
+   "unit": "A1-A7 Algebra: notation, vocabulary and manipulation",
+   "n": 15,
+   "title": "Expanding single brackets and factorising common factors",
+   "duration": 50,
+   "bigQuestion": "Can you tell whether two different-looking expressions are the same?",
+   "objectives": [
+    "Expand and simplify expressions with single brackets",
+    "Factorise expressions with a common factor",
+    "Factorise fully including letters"
+   ],
+   "successCriteria": [
+    "All: expand single brackets",
+    "Most: expand and simplify two brackets added or subtracted",
+    "Some: factorise fully expressions with powers and two letters"
+   ],
+   "crossCurricular": "Business: finding total costs; Computing: simplifying expressions",
+   "smsc": "Social: working carefully so another person can follow your method",
+   "keywords": [
+    {
+     "term": "expand",
+     "def": "multiply out brackets"
+    },
+    {
+     "term": "factorise",
+     "def": "write as a product, putting common factors outside brackets"
+    },
+    {
+     "term": "common factor",
+     "def": "a factor shared by every term"
+    },
+    {
+     "term": "highest common factor",
+     "def": "the largest common factor"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out −2 × (−5).",
+    "Find the HCF of 12 and 18.",
+    "Simplify x × x².",
+    "Expand 3(x + 4) mentally."
+   ],
+   "teach": [
+    {
+     "heading": "Expanding",
+     "bullets": [
+      "Multiply every term inside by the term outside",
+      "3(2x − 5) = 6x − 15",
+      "−2(x − 4) = −2x + 8",
+      "Watch the signs"
+     ],
+     "note": "Use area models. Negative outside changes both signs inside.",
+     "model": {
+      "problem": "Expand and simplify 4(x + 3) − 2(x − 5)",
+      "steps": [
+       "4(x + 3) = 4x + 12",
+       "−2(x − 5) = −2x + 10",
+       "Combine: 4x − 2x = 2x and 12 + 10 = 22",
+       "2x + 22"
+      ],
+      "answer": "2x + 22"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "A negative outside the bracket multiplies every term"
+     ],
+     "note": "Check by substituting x = 2: left 4×5 − 2×(−3)=26. Right 2×2+22=26 ✓. The wrong version gives 4x + 12 − 2x − 10 = 2x + 2 which is 6.",
+     "misconception": {
+      "wrong": "−2(x − 5) = −2x − 10",
+      "right": "−2(x − 5) = −2x + 10"
+     }
+    },
+    {
+     "heading": "Factorising",
+     "bullets": [
+      "Find the highest common factor of all terms",
+      "Put it outside, work out what is left",
+      "12x + 18 = 6(2x + 3)",
+      "6x² − 9x = 3x(2x − 3)"
+     ],
+     "note": "Expand your answer to check. Fully factorised means no common factor remains inside.",
+     "model": {
+      "problem": "Factorise fully 8a²b + 12ab²",
+      "steps": [
+       "HCF of 8 and 12 is 4",
+       "a is common, b is common: 4ab",
+       "8a²b ÷ 4ab = 2a; 12ab² ÷ 4ab = 3b",
+       "4ab(2a + 3b)"
+      ],
+      "answer": "4ab(2a + 3b)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Factorise fully 10x² + 15x",
+      "options": [
+       "5(2x² + 3x)",
+       "5x(2x + 3)",
+       "10x(x + 1.5)",
+       "5x(2x + 15)"
+      ],
+      "answer": 1,
+      "why": "HCF is 5x. A leaves an x common; C is not integer coefficients; D multiplies wrongly."
+     }
+    }
+   ],
+   "practice": [
+    "Expand 5(2x − 3) and −3(4 − x)",
+    "Expand and simplify 3(2x + 1) + 2(x − 4)",
+    "Factorise 14x + 21 and 9y² − 6y",
+    "Factorise fully 12a²b − 18ab²"
+   ],
+   "independent": [
+    "Core: (a) expand 4(x + 7) (b) factorise 10x − 25 (c) expand and simplify 2(x + 3) + 5(x − 1)",
+    "Extend: Expand and simplify x(x + 4) − 3(x − 2). Factorise 15x³ − 20x².",
+    "Stretch: Show that 3(2x − 1) − 2(3x − 4) is a constant for any value of x."
+   ],
+   "exit": [
+    "Expand −4(2x − 3)",
+    "Factorise 6x² + 9x",
+    "Expand and simplify 5(x + 2) − 3(x − 1)"
+   ],
+   "homework": "Ten questions to expand, simplify and factorise, including a 'spot the error' on bracket signs.",
+   "send": "SEND/EAL: grid or area model for expansion; factor tree for HCF. Stretch: expanding double brackets is covered in the school's Year 10 'Expanding two and three binomials' lesson."
+  },
+  {
+   "unit": "A1-A7 Algebra: notation, vocabulary and manipulation",
+   "n": 16,
+   "title": "Using standard formulae and changing the subject",
+   "duration": 50,
+   "bigQuestion": "If you know the area of a circle, how do you work back to its radius?",
+   "objectives": [
+    "Recall and use standard formulae",
+    "Rearrange formulae to change the subject",
+    "Rearrange formulae involving squares and roots"
+   ],
+   "successCriteria": [
+    "All: rearrange one-step and two-step formulae",
+    "Most: change the subject when the subject is squared or a fraction",
+    "Some: rearrange formulae with fractions and roots"
+   ],
+   "crossCurricular": "Science: rearranging formulae in physics and chemistry",
+   "smsc": "Social: learning from the structure of a method rather than guessing",
+   "keywords": [
+    {
+     "term": "subject",
+     "def": "the letter on its own on one side of a formula"
+    },
+    {
+     "term": "rearrange",
+     "def": "change the form of a formula"
+    },
+    {
+     "term": "inverse operation",
+     "def": "undoes another operation"
+    },
+    {
+     "term": "standard formula",
+     "def": "a known formula such as speed = distance ÷ time"
+    }
+   ],
+   "starter": [
+    "Bismillah. Solve 3x + 5 = 20.",
+    "What is the inverse of squaring?",
+    "Write the formula for the area of a circle.",
+    "Solve x/4 = 7."
+   ],
+   "teach": [
+    {
+     "heading": "Standard formulae to know",
+     "bullets": [
+      "Area of circle: A = πr²",
+      "Speed = distance ÷ time",
+      "Pythagoras: a² + b² = c²",
+      "Density = mass ÷ volume"
+     ],
+     "note": "Quick fire recall. Ask which letter is the subject in each."
+    },
+    {
+     "heading": "Change the subject: undo in reverse order",
+     "bullets": [
+      "y = 3x − 5: add 5, then divide by 3",
+      "x = (y + 5)/3",
+      "Do the same to both sides",
+      "Undo operations in the reverse order of BIDMAS"
+     ],
+     "note": "Foundation access: use the flow diagram. Show that the order of operations done to x is multiply by 3, then subtract 5.",
+     "model": {
+      "problem": "Make v the subject of E = ½mv²",
+      "steps": [
+       "Multiply both sides by 2: 2E = mv²",
+       "Divide by m: 2E/m = v²",
+       "Square root: v = √(2E/m)",
+       "Both roots are possible but v > 0 here"
+      ],
+      "answer": "v = √(2E/m)"
+     }
+    },
+    {
+     "heading": "Fractions and brackets",
+     "bullets": [
+      "C = 5(F − 32)/9: multiply by 9 then divide by 5",
+      "9C/5 = F − 32, so F = 9C/5 + 32",
+      "y = (x + 2)/5 gives x = 5y − 2"
+     ],
+     "note": "Check by substituting a number: C = 100 gives F = 212."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Do the same to every term on both sides"
+     ],
+     "note": "Show 2E = mv²: divide whole side by m.",
+     "misconception": {
+      "wrong": "From y = 3x − 5, x = y/3 − 5",
+      "right": "x = (y + 5)/3, because the whole of y + 5 is divided by 3"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Make x the subject of y = (x + 2)/5",
+      "options": [
+       "x = 5y − 2",
+       "x = 5y + 2",
+       "x = y/5 − 2",
+       "x = (y − 2)/5"
+      ],
+      "answer": 0,
+      "why": "Multiply by 5: 5y = x + 2, then subtract 2. B forgets to subtract; C divides by 5 instead of multiplying."
+     }
+    }
+   ],
+   "practice": [
+    "Make x the subject of y = 4x + 7",
+    "Make r the subject of A = πr²",
+    "Make t the subject of v = u + at",
+    "Make F the subject of C = 5(F − 32)/9"
+   ],
+   "independent": [
+    "Core: (a) make a the subject of P = 3a + 2 (b) make x the subject of y = (x − 1)/4 (c) v = s/t, make t the subject",
+    "Extend: Make r the subject of V = (1/3)πr²h. Make u the subject of v² = u² + 2as.",
+    "Stretch: The cost C of a taxi trip is C = 3 + 0.5d. Make d the subject and find d when C = £11."
+   ],
+   "exit": [
+    "Make x the subject of y = 5x − 3",
+    "Make r the subject of C = 2πr",
+    "Make m the subject of E = ½mv²."
+   ],
+   "homework": "Eight rearrangement questions including two from physics and one from geometry. The subject-appearing-twice case is taught in the school's Year 10 'Rearranging formulae where the subject appears twice'.",
+   "send": "SEND/EAL: flow diagrams to undo steps; sentence frame 'to undo ___, I ___'. Stretch: formulae with the subject in a denominator."
+  },
+  {
+   "unit": "A1-A7 Algebra: notation, vocabulary and manipulation",
+   "n": 17,
+   "title": "Functions and function notation",
+   "duration": 50,
+   "bigQuestion": "How is a function like a machine with one input and one output?",
+   "objectives": [
+    "Use function notation f(x) and f: x → …",
+    "Evaluate functions for given inputs",
+    "Solve f(x) = a to find inputs"
+   ],
+   "successCriteria": [
+    "All: evaluate f(x) for a number",
+    "Most: evaluate functions with squares and negatives",
+    "Some: solve equations of the form f(x) = k"
+   ],
+   "crossCurricular": "Computing: functions with an input and a return value",
+   "smsc": "Social: clear definitions make mathematical communication reliable",
+   "keywords": [
+    {
+     "term": "function",
+     "def": "a rule that gives one output for each input"
+    },
+    {
+     "term": "input",
+     "def": "the number put into the function"
+    },
+    {
+     "term": "output",
+     "def": "the result of the function"
+    },
+    {
+     "term": "f(x)",
+     "def": "the output of function f for input x"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 3 × 4 − 2.",
+    "Evaluate 2x² when x = 3.",
+    "Evaluate 5 − 2x when x = −1.",
+    "Solve 3x + 2 = 17."
+   ],
+   "teach": [
+    {
+     "heading": "Function machines",
+     "bullets": [
+      "Input → rule → output",
+      "f(x) = 3x + 2 means multiply by 3, then add 2",
+      "f(4) = 3 × 4 + 2 = 14",
+      "f(−2) = −6 + 2 = −4"
+     ],
+     "note": "Draw a flow diagram. Say 'f of 4' as 'the function f applied to 4'. Note this notation is used again when transforming graphs.",
+     "model": {
+      "problem": "f(x) = 2x² − 3. Find f(−3).",
+      "steps": [
+       "Replace x with −3 in brackets",
+       "2 × (−3)² − 3",
+       "= 2 × 9 − 3 = 18 − 3",
+       "= 15"
+      ],
+      "answer": "15"
+     }
+    },
+    {
+     "heading": "Solving f(x) = k",
+     "bullets": [
+      "f(x) = 3x + 2, solve f(x) = 17",
+      "3x + 2 = 17",
+      "3x = 15 so x = 5",
+      "Check: f(5) = 17"
+     ],
+     "note": "Distinguish 'find f(5)' from 'find x when f(x) = 5'."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "f(x) does not mean f times x"
+     ],
+     "note": "Compare f(4) with 4f. For f(x) = 2x − 3, f(4) = 2(4) − 3 = 5.",
+     "misconception": {
+      "wrong": "f(3) means f × 3",
+      "right": "f(3) means the output of the function when the input is 3"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "f(x) = 2x² − 3. What is f(−3)?",
+      "options": [
+       "15",
+       "33",
+       "−21",
+       "−9"
+      ],
+      "answer": 0,
+      "why": "(−3)² = 9 so 2 × 9 − 3 = 15. B squares 2x first; C makes the square negative."
+     }
+    }
+   ],
+   "practice": [
+    "f(x) = 5x − 4. Find f(3) and f(−2).",
+    "g(x) = x² + 1. Find g(4) and g(−3).",
+    "f(x) = 4x − 7. Solve f(x) = 13.",
+    "h(x) = x² − 5. Solve h(x) = 20."
+   ],
+   "independent": [
+    "Core: f(x) = 3x + 1. Find f(2), f(0), f(−4) and solve f(x) = 19.",
+    "Extend: g(x) = (x + 3)/2. Find g(5) and g(−7). Solve g(x) = 6.",
+    "Stretch: f(x) = x² − 4x. Find all x with f(x) = 5. Find f(a + 1) in simplest form."
+   ],
+   "exit": [
+    "f(x) = 4x − 1. Find f(5).",
+    "g(x) = x² − 2. Find g(−3).",
+    "Solve 3x + 2 = 20 using f(x) notation."
+   ],
+   "homework": "Eight function evaluations, three of them solving f(x) = k, in the f: x → format as well.",
+   "send": "SEND/EAL: function machine diagrams; read the notation aloud. Stretch: the smallest value a quadratic function can take."
+  },
+  {
+   "unit": "A1-A7 Algebra: notation, vocabulary and manipulation",
+   "n": 18,
+   "title": "Composite and inverse functions",
+   "duration": 50,
+   "bigQuestion": "Can every function be undone?",
+   "objectives": [
+    "Find composite functions fg(x) and gf(x)",
+    "Find the inverse function f⁻¹(x)",
+    "Evaluate composite and inverse functions for a given input"
+   ],
+   "successCriteria": [
+    "All: evaluate a composite function for a value",
+    "Most: write a composite function algebraically",
+    "Some: find inverses including those with fractions"
+   ],
+   "crossCurricular": "Computing: chaining functions in programs",
+   "smsc": "Spiritual: reflection on order and reversal in everyday processes",
+   "keywords": [
+    {
+     "term": "composite function",
+     "def": "a function applied after another, fg(x) = f(g(x))"
+    },
+    {
+     "term": "inverse function",
+     "def": "undoes the original, f⁻¹"
+    },
+    {
+     "term": "input",
+     "def": "a value substituted into a function"
+    },
+    {
+     "term": "output",
+     "def": "the value the function gives"
+    }
+   ],
+   "starter": [
+    "Bismillah. f(x) = 3x − 4. Find f(2).",
+    "Solve 3x − 4 = 11.",
+    "Make x the subject of y = 3x − 4.",
+    "Expand (x + 1)²."
+   ],
+   "teach": [
+    {
+     "heading": "Composite functions",
+     "bullets": [
+      "fg(x) means do g first, then f",
+      "f(x) = x + 3, g(x) = 2x",
+      "fg(x) = f(2x) = 2x + 3",
+      "gf(x) = g(x + 3) = 2(x + 3) = 2x + 6"
+     ],
+     "note": "Emphasise the order: the function closest to x acts first. Show fg ≠ gf in general.",
+     "model": {
+      "problem": "f(x) = 2x + 1, g(x) = x². Find fg(3) and gf(x).",
+      "steps": [
+       "g(3) = 9, then f(9) = 2 × 9 + 1 = 19",
+       "gf(x) = g(2x + 1)",
+       "= (2x + 1)²",
+       "= 4x² + 4x + 1"
+      ],
+      "answer": "fg(3) = 19; gf(x) = 4x² + 4x + 1"
+     }
+    },
+    {
+     "heading": "Inverse functions",
+     "bullets": [
+      "Swap input and output, then rearrange",
+      "f(x) = 3x − 4: write y = 3x − 4",
+      "x = (y + 4)/3",
+      "f⁻¹(x) = (x + 4)/3"
+     ],
+     "note": "Check: f(f⁻¹(x)) = x. The inverse of f(x) = (x + 5)/2 is f⁻¹(x) = 2x − 5."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "fg means g is applied first"
+     ],
+     "note": "Show with numbers.",
+     "misconception": {
+      "wrong": "fg(x) = f(x) × g(x), so fg(x) = (x + 3)(2x)",
+      "right": "fg(x) = f(g(x)); the function g acts first"
+     }
+    },
+    {
+     "heading": "Harder inverse",
+     "bullets": [
+      "f(x) = (x + 1)/(x − 2)",
+      "y(x − 2) = x + 1, so yx − 2y = x + 1",
+      "x(y − 1) = 2y + 1",
+      "f⁻¹(x) = (2x + 1)/(x − 1)"
+     ],
+     "note": "Higher only. Collect x terms on one side then factorise."
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "f(x) = x + 3 and g(x) = 2x. What is fg(x)?",
+      "options": [
+       "2x + 6",
+       "2x + 3",
+       "3x",
+       "x + 6"
+      ],
+      "answer": 1,
+      "why": "g first: 2x, then add 3: 2x + 3. A is gf(x)."
+     }
+    }
+   ],
+   "practice": [
+    "f(x) = 3x, g(x) = x − 2. Find fg(x) and gf(x).",
+    "f(x) = x² and g(x) = x + 5. Find fg(2) and gf(2).",
+    "Find the inverse of f(x) = 4x + 7.",
+    "Find the inverse of g(x) = (x − 3)/5."
+   ],
+   "independent": [
+    "Core: f(x) = x + 4, g(x) = 3x. (a) fg(2) (b) gf(2) (c) find f⁻¹(x)",
+    "Extend: f(x) = 2x − 5. Find f⁻¹(x) and ff(x). Solve f(x) = f⁻¹(x).",
+    "Stretch: f(x) = x + 2 and g(x) = x². Find x when fg(x) = gf(x)."
+   ],
+   "exit": [
+    "f(x) = x − 1, g(x) = 3x. Find fg(x).",
+    "Find the inverse of f(x) = 5x − 2.",
+    "Return to the big question: give a function with no inverse."
+   ],
+   "homework": "Eight questions on composite functions, inverses, and ff(x), including one Higher-only fraction inverse.",
+   "send": "SEND/EAL: function machine chains with arrows backwards for inverses. Higher only: inverse of fractional functions."
+  },
+  {
+   "unit": "A8-A12 Algebra: graphs (linear, quadratic and standard curves)",
+   "n": 19,
+   "title": "Coordinates in four quadrants and plotting straight lines",
+   "duration": 50,
+   "bigQuestion": "How can an equation be drawn as a picture?",
+   "objectives": [
+    "Use coordinates in all four quadrants",
+    "Complete a table of values and plot a straight-line graph",
+    "Recognise lines such as x = a, y = b, y = x and y = −x"
+   ],
+   "successCriteria": [
+    "All: plot and read coordinates in four quadrants",
+    "Most: complete a table of values and draw a line",
+    "Some: decide whether a point lies on a line and find the midpoint of two points"
+   ],
+   "crossCurricular": "Geography: map grid references; Computing: screen coordinates",
+   "smsc": "Social: shared conventions let us locate places precisely",
+   "keywords": [
+    {
+     "term": "coordinates",
+     "def": "an ordered pair (x, y) giving a position"
+    },
+    {
+     "term": "quadrant",
+     "def": "one of the four regions made by the axes"
+    },
+    {
+     "term": "table of values",
+     "def": "inputs and outputs used to plot a graph"
+    },
+    {
+     "term": "origin",
+     "def": "the point (0, 0)"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 3 × (−2) + 1.",
+    "Which axis is horizontal?",
+    "Write down the coordinates of the origin.",
+    "Substitute x = 4 into 2x − 3."
+   ],
+   "teach": [
+    {
+     "heading": "Four quadrants",
+     "bullets": [
+      "x first (across), then y (up or down)",
+      "Quadrant 1: (+, +); 2: (−, +)",
+      "Quadrant 3: (−, −); 4: (+, −)",
+      "The axes meet at the origin (0, 0)"
+     ],
+     "note": "Ask pupils to place (−3, 2) and (2, −3) and see why order matters. Midpoint of (−2, 5) and (4, −1) is (1, 2): add and halve each coordinate."
+    },
+    {
+     "heading": "Table of values",
+     "bullets": [
+      "Choose x values, including negatives",
+      "Substitute into the rule",
+      "Plot the points and join with a ruler",
+      "Three points are enough; a fourth is a check"
+     ],
+     "note": "Check that points lie in a straight line before drawing it.",
+     "model": {
+      "problem": "Draw y = 3x − 2 for x from −1 to 2",
+      "steps": [
+       "x = −1: 3(−1) − 2 = −5",
+       "x = 0: −2",
+       "x = 1: 1",
+       "x = 2: 4. Plot (−1, −5), (0, −2), (1, 1), (2, 4) and join"
+      ],
+      "answer": "A straight line through (0, −2) rising steeply"
+     }
+    },
+    {
+     "heading": "Special lines",
+     "bullets": [
+      "x = 3 is vertical, every point has x = 3",
+      "y = −2 is horizontal",
+      "y = x passes through (0, 0), (1, 1), (2, 2)",
+      "y = −x passes through (1, −1), (2, −2)"
+     ],
+     "note": "Use a graph tool to show each. The equation tells you what is true of every point on the line."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Order matters in coordinates: (x, y)"
+     ],
+     "note": "Compare (4, 1) and (1, 4).",
+     "misconception": {
+      "wrong": "The point (−3, 2) is 2 across and 3 down",
+      "right": "(−3, 2) means 3 to the left, then 2 up"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Which point lies on y = 2x − 3?",
+      "options": [
+       "(4, 5)",
+       "(3, 4)",
+       "(0, 3)",
+       "(1, 1)"
+      ],
+      "answer": 0,
+      "why": "2 × 4 − 3 = 5. B gives 3, C gives −3, D gives −1."
+     }
+    }
+   ],
+   "practice": [
+    "Write the coordinates of A, B, C if A is 2 right and 3 up from the origin, B is 4 left and 1 down, C is 3 right and 2 down.",
+    "Complete a table and plot y = 2x + 1 for x from −2 to 3",
+    "Find the midpoint of (−2, 5) and (4, −1)",
+    "Does (5, 12) lie on y = 2x + 1?"
+   ],
+   "independent": [
+    "Core: Plot y = x + 2 and y = −x on the same axes. Where do they cross?",
+    "Extend: Plot y = 2x − 3 and x + y = 6. Read the intersection.",
+    "Stretch: A(−3, 1), B(5, 1), C(5, 7) are three corners of a rectangle. Find D, the centre and the area."
+   ],
+   "exit": [
+    "Complete a table for y = x − 3 with x = −2, 0, 3",
+    "Is (−1, −5) on y = 2x − 3? Show why.",
+    "Describe the line x = −4."
+   ],
+   "homework": "Plot three lines on one set of axes and write down any shared points; two coordinate-geometry questions.",
+   "send": "SEND/EAL: pre-drawn grids and a table template; the phrase 'along the corridor, up the stairs' for (x, y). Stretch: midpoint formula and length of a line segment."
+  },
+  {
+   "unit": "A8-A12 Algebra: graphs (linear, quadratic and standard curves)",
+   "n": 20,
+   "title": "Gradient and y = mx + c",
+   "duration": 50,
+   "bigQuestion": "What does the number in front of x tell you about a line?",
+   "objectives": [
+    "Calculate the gradient from two points",
+    "Read gradient and y-intercept from y = mx + c",
+    "Rearrange equations into y = mx + c"
+   ],
+   "successCriteria": [
+    "All: find the gradient from a graph",
+    "Most: identify m and c from an equation",
+    "Some: rearrange to y = mx + c and write an equation from a description"
+   ],
+   "crossCurricular": "Geography: steepness of slopes; Engineering: roof pitch",
+   "smsc": "Social: accuracy in a drawing so that others read it correctly",
+   "keywords": [
+    {
+     "term": "gradient",
+     "def": "steepness: change in y ÷ change in x"
+    },
+    {
+     "term": "y-intercept",
+     "def": "where the line crosses the y-axis"
+    },
+    {
+     "term": "rearrange",
+     "def": "change the form of an equation"
+    },
+    {
+     "term": "linear",
+     "def": "gives a straight-line graph"
+    }
+   ],
+   "starter": [
+    "Bismillah. Plot (1, 2) and (3, 6) mentally and describe the move between them.",
+    "Make y the subject of 2y = 8x.",
+    "Work out (10 − 2) ÷ (5 − 1).",
+    "Substitute x = 0 into 3x + 4."
+   ],
+   "teach": [
+    {
+     "heading": "Gradient = rise ÷ run",
+     "bullets": [
+      "Gradient = change in y ÷ change in x",
+      "(1, 2) to (5, 10): rise 8, run 4",
+      "Gradient = 2",
+      "Uphill is positive, downhill is negative"
+     ],
+     "note": "Draw the triangle. Subtract coordinates in the same order top and bottom.",
+     "model": {
+      "problem": "Find the gradient of the line through (1, 2) and (5, 10)",
+      "steps": [
+       "Change in y = 10 − 2 = 8",
+       "Change in x = 5 − 1 = 4",
+       "Gradient = 8 ÷ 4",
+       "= 2"
+      ],
+      "answer": "2"
+     }
+    },
+    {
+     "heading": "y = mx + c",
+     "bullets": [
+      "m is the gradient",
+      "c is the y-intercept (0, c)",
+      "y = 3x + 2: gradient 3, crosses at (0, 2)",
+      "y = −2x + 5: gradient −2, crosses at (0, 5)"
+     ],
+     "note": "Link to the table: c is y when x = 0."
+    },
+    {
+     "heading": "Rearranging first",
+     "bullets": [
+      "2y = 6x + 4: divide everything by 2: y = 3x + 2",
+      "x + y = 5: y = −x + 5, gradient −1",
+      "4x + 2y = 10: y = −2x + 5",
+      "Gradient is the coefficient of x once y is alone"
+     ],
+     "note": "Common slip: dividing only one term by the number."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The gradient is not the number on its own"
+     ],
+     "note": "Pick y = 5x + 1: c is 1.",
+     "misconception": {
+      "wrong": "In 4x + 2y = 10 the gradient is 4",
+      "right": "Rearrange: y = −2x + 5, so the gradient is −2"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "What is the gradient of 3y − 6x = 9?",
+      "options": [
+       "−2",
+       "2",
+       "3",
+       "9"
+      ],
+      "answer": 1,
+      "why": "3y = 6x + 9, so y = 2x + 3. A has the wrong sign; C and D read a number from the equation."
+     }
+    }
+   ],
+   "practice": [
+    "Find the gradient between (2, 3) and (6, 11)",
+    "State the gradient and intercept of y = −x + 4",
+    "Rearrange 3y = 12x − 6 and give m and c",
+    "Write the equation of the line with gradient −2 through (0, 3)"
+   ],
+   "independent": [
+    "Core: (a) gradient between (0, 1) and (4, 9) (b) gradient and intercept of y = ½x − 2 (c) write the equation with m = 4, c = −1",
+    "Extend: Rearrange 4x + 2y = 10 and 5y − 10x = 15; compare the lines.",
+    "Stretch: A line passes through (2, 5) and has gradient 3. Find its equation and where it meets the x-axis."
+   ],
+   "exit": [
+    "Gradient between (1, 4) and (3, 10)",
+    "Gradient and intercept of y = 5 − 2x",
+    "Rearrange 2y = 6x + 8."
+   ],
+   "homework": "Eight questions on gradients and y = mx + c, two with rearranging and one matching lines to graphs.",
+   "send": "SEND/EAL: the 'rise over run' staircase picture and sentence frame 'up ___ across ___'. Stretch: gradients as ratios of lengths."
+  },
+  {
+   "unit": "A8-A12 Algebra: graphs (linear, quadratic and standard curves)",
+   "n": 21,
+   "title": "Parallel lines and finding the equation of a line",
+   "duration": 50,
+   "bigQuestion": "How many pieces of information do you need to fix one straight line?",
+   "objectives": [
+    "Know that parallel lines have equal gradients",
+    "Find the equation of a line through a point with a given gradient",
+    "Find the equation of a line through two points"
+   ],
+   "successCriteria": [
+    "All: identify parallel lines from their equations",
+    "Most: find an equation through a point with a given gradient",
+    "Some: find an equation through two points with a fractional or negative gradient"
+   ],
+   "crossCurricular": "Engineering: parallel supports and slopes",
+   "smsc": "Moral: reasoning from evidence, not guesswork",
+   "keywords": [
+    {
+     "term": "parallel",
+     "def": "never meeting; same gradient"
+    },
+    {
+     "term": "gradient",
+     "def": "change in y ÷ change in x"
+    },
+    {
+     "term": "substitute",
+     "def": "put numbers in place of letters"
+    },
+    {
+     "term": "equation of a line",
+     "def": "the rule y = mx + c linking x and y on it"
+    }
+   ],
+   "starter": [
+    "Bismillah. Gradient between (1, 3) and (4, 9)?",
+    "Solve 7 = 2×3 + c.",
+    "Rearrange 2y = 4x + 5 to make y the subject.",
+    "State the gradient of y = −x + 3."
+   ],
+   "teach": [
+    {
+     "heading": "Parallel lines",
+     "bullets": [
+      "Parallel lines have the same gradient",
+      "y = 2x + 5 and y = 2x − 7 are parallel",
+      "2y = 4x + 5 has gradient 2: rearrange first",
+      "They never meet"
+     ],
+     "note": "Ask pupils how they would show two lines are parallel without drawing them."
+    },
+    {
+     "heading": "Through a point with a given gradient",
+     "bullets": [
+      "Write y = mx + c, put in m",
+      "Substitute the point to find c",
+      "Parallel to y = 3x − 1, through (2, 7)",
+      "7 = 6 + c, so c = 1: y = 3x + 1"
+     ],
+     "note": "Check that the point works in the final equation.",
+     "model": {
+      "problem": "Find the equation of the line through (−2, 5) and (2, −3)",
+      "steps": [
+       "Gradient = (−3 − 5)/(2 − (−2)) = −8/4 = −2",
+       "y = −2x + c; use (2, −3) or (−2, 5)",
+       "5 = −2(−2) + c, so 5 = 4 + c",
+       "c = 1, so y = −2x + 1"
+      ],
+      "answer": "y = −2x + 1"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Do not use the gradient of the original line unrearranged"
+     ],
+     "note": "Rearrange y first.",
+     "misconception": {
+      "wrong": "2y = 4x + 5 has gradient 4",
+      "right": "y = 2x + 2.5, so the gradient is 2"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Which line is parallel to 2y = 4x + 5?",
+      "options": [
+       "y = 4x + 5",
+       "y = 2x − 7",
+       "y = ½x + 1",
+       "y = −2x"
+      ],
+      "answer": 1,
+      "why": "2y = 4x + 5 gives y = 2x + 2.5, gradient 2. A reads 4 straight from the equation."
+     }
+    }
+   ],
+   "practice": [
+    "Find the equation of the line parallel to y = 3x − 1 through (2, 7)",
+    "Find the equation of the line through (1, 3) and (4, 9)",
+    "Are y = 5x + 1 and 10x − 2y = 8 parallel?",
+    "Find the equation of the line parallel to 2x + y = 7 through (0, 4)"
+   ],
+   "independent": [
+    "Core: (a) parallel to y = 2x + 3 through (1, 5) (b) through (0, 2) and (3, 8)",
+    "Extend: through (−1, 4) and (3, −4); and parallel to y = −½x through (4, 1)",
+    "Stretch: Find k so that the line through (1, k) and (5, 9) is parallel to y = 2x − 3."
+   ],
+   "exit": [
+    "Equation of the line through (0, 1) and (2, 7)",
+    "Is y = 3x + 4 parallel to 6x − 2y = 5?",
+    "Parallel to y = 4x − 3 through (1, 6)."
+   ],
+   "homework": "Six questions: two on parallel lines, two on a point and gradient, two on two points.",
+   "send": "SEND/EAL: step card (gradient, substitute, check). Stretch: finding where two lines meet."
+  },
+  {
+   "unit": "A8-A12 Algebra: graphs (linear, quadratic and standard curves)",
+   "n": 22,
+   "title": "Perpendicular lines",
+   "duration": 50,
+   "bigQuestion": "If one line is steep and uphill, what must a line at right angles to it look like?",
+   "objectives": [
+    "Know that perpendicular gradients multiply to −1",
+    "Find the gradient perpendicular to a given line",
+    "Find the equation of a perpendicular line and a perpendicular bisector"
+   ],
+   "successCriteria": [
+    "All: identify perpendicular lines from their gradients (Higher only)",
+    "Most: find a perpendicular gradient and equation through a point",
+    "Some: find a perpendicular bisector of two points"
+   ],
+   "crossCurricular": "Engineering and architecture: right angles in design",
+   "smsc": "Social: working with precision so that structures are sound and safe",
+   "keywords": [
+    {
+     "term": "perpendicular",
+     "def": "at right angles"
+    },
+    {
+     "term": "negative reciprocal",
+     "def": "flip the fraction and change the sign"
+    },
+    {
+     "term": "midpoint",
+     "def": "the point halfway along a line segment"
+    },
+    {
+     "term": "perpendicular bisector",
+     "def": "a line at right angles through the midpoint"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the reciprocal of 3/4.",
+    "Gradient between (1, 2) and (7, 6)?",
+    "Find the midpoint of (1, 2) and (7, 6).",
+    "Rearrange 3y = x + 6 into y = mx + c."
+   ],
+   "teach": [
+    {
+     "heading": "The rule",
+     "bullets": [
+      "Perpendicular gradients: m₁ × m₂ = −1",
+      "Gradient 2: perpendicular gradient −1/2",
+      "Gradient −3/4: perpendicular 4/3",
+      "Higher tier only"
+     ],
+     "note": "Show the rule with a rotated square on a grid: gradient 2 becomes −1/2.",
+     "model": {
+      "problem": "Find the line through (4, 1) perpendicular to y = 2x + 3",
+      "steps": [
+       "Gradient of y = 2x + 3 is 2",
+       "Perpendicular gradient −1/2",
+       "1 = −½(4) + c, so 1 = −2 + c",
+       "c = 3, so y = −½x + 3"
+      ],
+      "answer": "y = −½x + 3"
+     }
+    },
+    {
+     "heading": "Perpendicular bisector",
+     "bullets": [
+      "A(1, 2), B(7, 6)",
+      "Gradient AB = 4/6 = 2/3",
+      "Midpoint (4, 4)",
+      "Perpendicular gradient −3/2: y = −1.5x + 10"
+     ],
+     "note": "Check using the midpoint: −1.5 × 4 + 10 = 4 ✓."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Take the negative reciprocal, not just flip or negate"
+     ],
+     "note": "Gradient 2 gives −1/2, not 1/2 or −2.",
+     "misconception": {
+      "wrong": "Perpendicular to gradient 2 is gradient −2",
+      "right": "Perpendicular to gradient 2 is gradient −1/2"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "A line has gradient −2/3. What is the gradient of a line perpendicular to it?",
+      "options": [
+       "2/3",
+       "−3/2",
+       "3/2",
+       "−2/3"
+      ],
+      "answer": 2,
+      "why": "Flip to 3/2 and change the sign from − to +. B only flips; A only changes the sign."
+     }
+    }
+   ],
+   "practice": [
+    "Perpendicular gradient to y = 2x + 3 and to y = −4x + 1",
+    "Are y = x/3 and y = −3x + 2 perpendicular?",
+    "Line through (4, 1) perpendicular to y = 2x + 3",
+    "Perpendicular bisector of A(1, 2) and B(7, 6)"
+   ],
+   "independent": [
+    "Core: perpendicular gradients to 5, −1/4, 2/3 and to y = −3x + 7",
+    "Extend: Perpendicular to 2y = 4x − 6 through (0, 5). Perpendicular bisector of (2, 3) and (6, −1).",
+    "Stretch: Show that the triangle with vertices A(0, 0), B(4, 2), C(2, −4) has a right angle at A."
+   ],
+   "exit": [
+    "Gradient perpendicular to y = 5x − 2",
+    "Are y = 3x + 1 and 3y = −x + 6 perpendicular?",
+    "Midpoint of (2, 6) and (8, 2)"
+   ],
+   "homework": "Six questions on perpendicular gradients, equations and a bisector, with a sketch for each.",
+   "send": "Higher only. SEND/EAL: rotation on squared paper to see the rule. Stretch: proofs about right-angled triangles on a grid."
+  },
+  {
+   "unit": "A8-A12 Algebra: graphs (linear, quadratic and standard curves)",
+   "n": 23,
+   "title": "Interpreting gradients and intercepts in context",
+   "duration": 50,
+   "bigQuestion": "What does a gradient mean when the axes are about money, time or temperature?",
+   "objectives": [
+    "Interpret gradient and intercept of a linear graph in context",
+    "Form linear equations from real situations",
+    "Use units correctly"
+   ],
+   "successCriteria": [
+    "All: read a gradient and intercept in a context",
+    "Most: write y = mx + c from a context",
+    "Some: find the linear model from a table and make predictions"
+   ],
+   "crossCurricular": "Business: pricing; Science: temperature conversion",
+   "smsc": "Moral: transparent fees and fair pricing",
+   "keywords": [
+    {
+     "term": "rate of change",
+     "def": "how quickly one quantity changes compared with another"
+    },
+    {
+     "term": "fixed charge",
+     "def": "an amount paid whatever the use"
+    },
+    {
+     "term": "gradient",
+     "def": "change in y per unit change in x"
+    },
+    {
+     "term": "intercept",
+     "def": "where the graph crosses an axis"
+    }
+   ],
+   "starter": [
+    "Bismillah. Gradient between (0, 15) and (4, 55)?",
+    "Write the equation y = 25x + 40 in words.",
+    "Substitute x = 3 into 25x + 40.",
+    "Plot (0, 40) and (2, 90) mentally."
+   ],
+   "teach": [
+    {
+     "heading": "Gradient is a rate",
+     "bullets": [
+      "Gradient: change in y per 1 unit of x",
+      "A plumber charges £40 plus £25 an hour",
+      "C = 25h + 40",
+      "Gradient 25 means £25 per hour; intercept 40 is the call-out fee"
+     ],
+     "note": "Units of the gradient are the y unit per x unit.",
+     "model": {
+      "problem": "A table shows x = 2, y = 35 and x = 6, y = 75 for a linear relationship. Find y in terms of x.",
+      "steps": [
+       "Gradient = (75 − 35)/(6 − 2) = 10",
+       "y = 10x + c",
+       "35 = 20 + c, so c = 15",
+       "y = 10x + 15"
+      ],
+      "answer": "y = 10x + 15"
+     }
+    },
+    {
+     "heading": "Meaning in context",
+     "bullets": [
+      "F = 1.8C + 32: each degree Celsius adds 1.8 degrees Fahrenheit",
+      "32 is the Fahrenheit value at 0°C",
+      "Intercepts show the start, gradient the rate",
+      "Predict from the line within the data range"
+     ],
+     "note": "Discuss interpolation versus extrapolation."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The intercept is not the value at x = 1"
+     ],
+     "note": "Substitute x = 0.",
+     "misconception": {
+      "wrong": "In C = 25h + 40 the price for 1 hour is £40",
+      "right": "The £40 is the price at 0 hours; at 1 hour the cost is £65"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "A taxi costs C = 2 + 1.5d pounds for d km. What does 1.5 mean?",
+      "options": [
+       "The starting charge",
+       "£1.5 per km",
+       "The cost of 2 km",
+       "The total cost"
+      ],
+      "answer": 1,
+      "why": "The gradient is the extra cost for each km. 2 is the starting charge."
+     }
+    }
+   ],
+   "practice": [
+    "A gym charges £15 joining fee plus £12 a month. Write the equation for the cost after m months. What does 12 mean?",
+    "Convert F = 1.8C + 32 for C = 25 and C = −10",
+    "A candle is 20 cm tall and burns 2 cm per hour. Write the equation for height h after t hours and say when it reaches 0.",
+    "A linear graph passes through (1, 7) and (4, 16). Find the equation."
+   ],
+   "independent": [
+    "Core: A taxi charges £3 plus £2 per km. Write C in terms of d and find the cost of 7 km.",
+    "Extend: Two phone plans: A is £10 plus £2 per GB; B is £4 plus £3.5 per GB. Find when they cost the same.",
+    "Stretch: A water tank has 80 litres and loses water steadily; after 5 minutes it has 55 litres. Write a formula, state its meaning and say when it empties."
+   ],
+   "exit": [
+    "In y = 30x + 50 explain the 30 and the 50",
+    "Find the line through (0, 4) and (3, 13)",
+    "A candle: h = 20 − 2t. What does −2 mean?"
+   ],
+   "homework": "Six real-life linear models with interpretation sentences, including one table-to-equation question.",
+   "send": "SEND/EAL: sentence frame 'for every extra ___, the ___ increases by ___'. Stretch: break-even between two plans."
+  },
+  {
+   "unit": "A8-A12 Algebra: graphs (linear, quadratic and standard curves)",
+   "n": 24,
+   "title": "Completing the square and turning points of quadratics",
+   "duration": 50,
+   "bigQuestion": "How can you find the lowest point of a parabola without drawing it?",
+   "objectives": [
+    "Write x² + bx + c in the form (x + p)² + q",
+    "Write ax² + bx + c in completed-square form",
+    "Find the turning point from the completed-square form"
+   ],
+   "successCriteria": [
+    "All: recognise the shape and symmetry of a quadratic graph",
+    "Most: complete the square when a = 1",
+    "Some: complete the square when a ≠ 1 or a is negative and state the turning point"
+   ],
+   "crossCurricular": "Physics: height of a thrown object; Business: maximising profit",
+   "smsc": "Spiritual: reflecting on maxima and minima as limits within a pattern",
+   "keywords": [
+    {
+     "term": "completing the square",
+     "def": "writing a quadratic as (x + p)² + q"
+    },
+    {
+     "term": "turning point",
+     "def": "the minimum or maximum point of a parabola"
+    },
+    {
+     "term": "line of symmetry",
+     "def": "the vertical line through the turning point"
+    },
+    {
+     "term": "parabola",
+     "def": "the curve of a quadratic function"
+    }
+   ],
+   "starter": [
+    "Bismillah. Expand (x + 3)².",
+    "Expand (x − 4)².",
+    "Why can (x + 5)² never be negative?",
+    "Work out half of 6 and half of −8."
+   ],
+   "teach": [
+    {
+     "heading": "The idea",
+     "bullets": [
+      "(x + p)² + q has a minimum when the bracket is 0",
+      "Minimum value is q at x = −p",
+      "Turning point (−p, q)",
+      "The line of symmetry is x = −p"
+     ],
+     "note": "Recall roots and symmetry from the school's Year 11 'Quadratic graphs' lesson. Here we find the turning point algebraically.",
+     "model": {
+      "problem": "Write x² + 6x + 5 in the form (x + p)² + q and state the turning point",
+      "steps": [
+       "Half of 6 is 3: (x + 3)²",
+       "(x + 3)² = x² + 6x + 9",
+       "We need +5, so subtract 4: (x + 3)² − 4",
+       "Turning point (−3, −4)"
+      ],
+      "answer": "(x + 3)² − 4; (−3, −4)"
+     }
+    },
+    {
+     "heading": "When a is not 1",
+     "bullets": [
+      "2x² + 12x + 7 = 2(x² + 6x) + 7",
+      "= 2[(x + 3)² − 9] + 7",
+      "= 2(x + 3)² − 11",
+      "Turning point (−3, −11)"
+     ],
+     "note": "Factor a from the x² and x terms only. Check by expanding."
+    },
+    {
+     "heading": "Negative x²",
+     "bullets": [
+      "−x² + 6x − 4 = −(x² − 6x) − 4",
+      "= −[(x − 3)² − 9] − 4",
+      "= −(x − 3)² + 5",
+      "Maximum point (3, 5)"
+     ],
+     "note": "The curve is an upside-down parabola so the turning point is a maximum."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The sign in the turning point is opposite to the number in the bracket"
+     ],
+     "note": "(x + 3)² is zero when x = −3.",
+     "misconception": {
+      "wrong": "(x − 4)² − 13 has turning point (−4, −13)",
+      "right": "(x − 4)² − 13 has turning point (4, −13)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Write x² + 10x + 3 in completed-square form",
+      "options": [
+       "(x + 5)² − 22",
+       "(x + 5)² + 3",
+       "(x + 10)² − 97",
+       "(x + 5)² − 28"
+      ],
+      "answer": 0,
+      "why": "(x + 5)² = x² + 10x + 25 so subtract 22. B forgets the 25; C forgets to halve the 10."
+     }
+    }
+   ],
+   "practice": [
+    "Write x² − 8x + 3 in the form (x + p)² + q",
+    "Write x² + 4x − 1 in completed-square form",
+    "Write 2x² + 12x + 7 in the form a(x + p)² + q",
+    "State the turning point of y = x² − 8x + 3"
+   ],
+   "independent": [
+    "Core: complete the square for x² + 6x, x² − 10x and x² + 2x + 7",
+    "Extend: Find the turning point of y = x² − 6x + 11 and of y = 3x² + 12x + 5.",
+    "Stretch: Show that x² + 6x + 10 is always positive and find its least value. Find a maximum for 7 + 4x − x²."
+   ],
+   "exit": [
+    "Complete the square for x² + 8x + 1",
+    "State the turning point of y = (x − 2)² + 5",
+    "Write 2x² + 8x + 3 in the form a(x + p)² + q"
+   ],
+   "homework": "Eight completing-the-square questions with turning point and one 'find the minimum value' problem.",
+   "send": "Higher only. SEND/EAL: algebra tiles or area diagrams for the square; sentence frame 'half the coefficient of x is ___'. Stretch: equations from graphs with a given turning point."
+  },
+  {
+   "unit": "A8-A12 Algebra: graphs (linear, quadratic and standard curves)",
+   "n": 25,
+   "title": "Exponential and trigonometric graphs",
+   "duration": 50,
+   "bigQuestion": "What shape does steady doubling make, and what shape do repeating waves make?",
+   "objectives": [
+    "Sketch exponential graphs y = aˣ",
+    "Recognise the sine, cosine and tangent graphs and their key features",
+    "Use symmetry of the graphs to read values"
+   ],
+   "successCriteria": [
+    "All: recognise a graph that grows by doubling",
+    "Most: sketch y = 2ˣ and y = (1/2)ˣ with their key point",
+    "Some: sketch y = sin x, y = cos x, y = tan x for 0° to 360° and read off solutions"
+   ],
+   "crossCurricular": "Biology: bacterial growth; Physics: waves and oscillations",
+   "smsc": "Spiritual: patterns that repeat in nature, the day and night, waves and tides",
+   "keywords": [
+    {
+     "term": "exponential",
+     "def": "growth by repeated multiplication, y = aˣ"
+    },
+    {
+     "term": "asymptote",
+     "def": "a line a curve approaches but never touches"
+    },
+    {
+     "term": "period",
+     "def": "the length of one repeat of a wave graph"
+    },
+    {
+     "term": "amplitude",
+     "def": "the maximum height of a wave from the middle"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 2⁻¹, 2⁰ and 2⁴.",
+    "Work out 3⁻² .",
+    "What is sin 90°, from your calculator?",
+    "Describe a graph of y = x²."
+   ],
+   "teach": [
+    {
+     "heading": "Exponential graphs y = aˣ",
+     "bullets": [
+      "y = 3ˣ: x = −1, 0, 1, 2 gives 1/3, 1, 3, 9",
+      "Always passes through (0, 1)",
+      "Never touches the x-axis: y = 0 is an asymptote",
+      "a > 1 growth; 0 < a < 1 decay"
+     ],
+     "note": "Make a table and plot. Ask: why does the graph never go below zero?",
+     "model": {
+      "problem": "y = a × 2ˣ passes through (0, 3) and (2, 12). Find a and show the model fits.",
+      "steps": [
+       "At x = 0: a × 1 = 3, so a = 3",
+       "Check x = 2: 3 × 2² = 12 ✓",
+       "So y = 3 × 2ˣ",
+       "Doubles each time x increases by 1"
+      ],
+      "answer": "y = 3 × 2ˣ"
+     }
+    },
+    {
+     "heading": "Decay and growth",
+     "bullets": [
+      "y = (1/2)ˣ falls, mirror image of 2ˣ in the y-axis",
+      "Growth: values double each step",
+      "Decay: values halve each step",
+      "Both pass through (0, 1)"
+     ],
+     "note": "Connect to real contexts: populations, depreciation (later in A14)."
+    },
+    {
+     "heading": "Sine, cosine, tangent",
+     "bullets": [
+      "sin x: 0 at 0°, 1 at 90°, 0 at 180°, −1 at 270°",
+      "cos x: 1 at 0°, 0 at 90°, −1 at 180°",
+      "tan x: 0 at 0°, 1 at 45°, asymptotes at 90° and 270°",
+      "sin and cos repeat every 360°; tan every 180°"
+     ],
+     "note": "Draw using a calculator table at 30° steps. Use symmetry: sin x = 0.5 has solutions 30° and 150° for 0° to 360°."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Exponential graphs never cross the x-axis"
+     ],
+     "note": "Contrast with quadratics.",
+     "misconception": {
+      "wrong": "y = 2ˣ crosses the x-axis at x = −1",
+      "right": "y = 2ˣ is always positive and has the asymptote y = 0"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Where does y = 5ˣ cross the y-axis?",
+      "options": [
+       "(0, 0)",
+       "(0, 1)",
+       "(0, 5)",
+       "(1, 0)"
+      ],
+      "answer": 1,
+      "why": "5⁰ = 1 for any base. C mixes up the base with the intercept."
+     }
+    }
+   ],
+   "practice": [
+    "Complete a table for y = 3ˣ for x from −2 to 2 and sketch it",
+    "y = (1/2)ˣ: find y at x = −2, 0, 3",
+    "Sketch y = sin x for 0° to 360° labelling the max and min",
+    "Solve sin x = 0.5 for 0° ≤ x ≤ 360° using symmetry"
+   ],
+   "independent": [
+    "Core: (a) sketch y = 2ˣ (b) state the y-intercept and the asymptote (c) y at x = 5",
+    "Extend: A culture of 500 bacteria doubles each hour. Write N = 500 × 2ᵗ and find N when t = 3. Find when it first exceeds 10 000.",
+    "Stretch: Sketch y = cos x and y = sin x for 0° to 360° and solve sin x = cos x. State the period of tan x."
+   ],
+   "exit": [
+    "State the coordinates of the point where y = 4ˣ meets the y-axis",
+    "State the value of sin 90° and cos 180°",
+    "Sketch y = tan x between 0° and 180°, marking the asymptote."
+   ],
+   "homework": "Sketch and annotate y = 2ˣ, y = (1/2)ˣ, y = sin x, y = tan x; two questions finding a in y = a × 2ˣ.",
+   "send": "Higher only. SEND/EAL: calculator table support; vocabulary card for asymptote and period. Stretch: transformations of trigonometric graphs."
+  },
+  {
+   "unit": "A17-A18 Algebra: linear and quadratic equations",
+   "n": 26,
+   "title": "Solving quadratic equations by factorising",
+   "duration": 50,
+   "bigQuestion": "Why must a quadratic equation equal zero before you factorise it?",
+   "objectives": [
+    "Rearrange a quadratic into the form ax² + bx + c = 0",
+    "Solve by factorising",
+    "Use a quadratic equation in a context and reject impossible solutions"
+   ],
+   "successCriteria": [
+    "All: solve x² + bx + c = 0 by factorising",
+    "Most: rearrange first, and solve when a ≠ 1",
+    "Some: form and solve a quadratic from a context and reject an invalid root"
+   ],
+   "crossCurricular": "Physics: projectile motion; Design: area of a plot",
+   "smsc": "Moral: honesty about which answers truly satisfy the problem",
+   "keywords": [
+    {
+     "term": "quadratic equation",
+     "def": "an equation with x² as its highest power"
+    },
+    {
+     "term": "root",
+     "def": "a solution of an equation"
+    },
+    {
+     "term": "factorise",
+     "def": "write as a product of brackets"
+    },
+    {
+     "term": "zero product rule",
+     "def": "if A × B = 0 then A = 0 or B = 0"
+    }
+   ],
+   "starter": [
+    "Bismillah. Factorise x² + 7x + 12.",
+    "Factorise x² − 49.",
+    "Factorise 2x² + 5x − 3.",
+    "Solve 3x − 6 = 0."
+   ],
+   "teach": [
+    {
+     "heading": "The zero product rule",
+     "bullets": [
+      "If A × B = 0 then A = 0 or B = 0",
+      "(x + 2)(x + 3) = 0 gives x = −2 or x = −3",
+      "Roots change sign from the brackets",
+      "Only works when the product equals 0"
+     ],
+     "note": "The factorising skill is taught in the school's Year 10 algebraic manipulation lessons; here we use it to solve.",
+     "model": {
+      "problem": "Solve x² = 7x − 12",
+      "steps": [
+       "Rearrange to equal zero: x² − 7x + 12 = 0",
+       "Factorise: (x − 3)(x − 4) = 0",
+       "x − 3 = 0 or x − 4 = 0",
+       "x = 3 or x = 4"
+      ],
+      "answer": "x = 3 or x = 4"
+     }
+    },
+    {
+     "heading": "Other cases",
+     "bullets": [
+      "Missing term: x² = 5x gives x(x − 5) = 0, so x = 0 or 5",
+      "Difference of two squares: x² − 49 = 0 gives x = ±7",
+      "2x² + 5x − 3 = (2x − 1)(x + 3) = 0",
+      "x = ½ or x = −3"
+     ],
+     "note": "Warn against dividing both sides by x, which loses the root x = 0."
+    },
+    {
+     "heading": "A common error",
+     "bullets": [
+      "(x − 2)(x + 3) = 6 does not mean each bracket equals 6 or 0"
+     ],
+     "note": "Show by testing x = 2: it gives 0, not 6.",
+     "misconception": {
+      "wrong": "(x − 2)(x + 3) = 6 so x = 2 or x = −3",
+      "right": "Expand: x² + x − 6 = 6, so x² + x − 12 = 0, (x + 4)(x − 3) = 0"
+     }
+    },
+    {
+     "heading": "Context",
+     "bullets": [
+      "A rectangle has width x and length x + 3, area 40",
+      "x(x + 3) = 40, so x² + 3x − 40 = 0",
+      "(x + 8)(x − 5) = 0",
+      "x = 5 (reject −8: length cannot be negative)"
+     ],
+     "note": "Pupils must say why x = −8 is rejected."
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Solve (x − 3)(x + 5) = 0",
+      "options": [
+       "x = 3 or x = −5",
+       "x = −3 or x = 5",
+       "x = 3 or x = 5",
+       "x = −3 or x = −5"
+      ],
+      "answer": 0,
+      "why": "Set each bracket to zero: x = 3 or x = −5. B reverses the signs."
+     }
+    }
+   ],
+   "practice": [
+    "Solve x² + 5x + 6 = 0",
+    "Solve x² − 9x + 20 = 0 and x² = 5x",
+    "Solve 2x² + 5x − 3 = 0",
+    "Solve x² + x = 12"
+   ],
+   "independent": [
+    "Core: Solve (a) x² − 3x − 10 = 0 (b) x² − 16 = 0 (c) x² + 6x = 0",
+    "Extend: Solve 3x² − 11x − 4 = 0 and x² + 2x = 15.",
+    "Stretch: A rectangular garden has length 3 m more than its width and area 54 m². Find its dimensions. A ball's height h = 20t − 5t²: find when it returns to the ground."
+   ],
+   "exit": [
+    "Solve x² + 3x − 10 = 0",
+    "Solve x² = 2x",
+    "Rectangle sides x and x + 2 with area 35: find x."
+   ],
+   "homework": "Eight quadratics to solve, two in context with a sentence to justify the accepted root.",
+   "send": "SEND/EAL: factor-pair table for the product; sentence frame 'either ___ = 0 or ___ = 0'. Stretch: the discriminant. Linear equations (A17) and solving by graphs are covered by the school's Year 10 'Solving linear equations' and Year 11 'Using graphs to solve equations' lessons."
+  },
+  {
+   "unit": "A17-A18 Algebra: linear and quadratic equations",
+   "n": 27,
+   "title": "The quadratic formula and the discriminant",
+   "duration": 50,
+   "bigQuestion": "What if a quadratic will not factorise: is there a method that always works?",
+   "objectives": [
+    "Use the quadratic formula to solve ax² + bx + c = 0",
+    "Give answers as surds or to a given accuracy",
+    "Use the discriminant to say how many real roots there are"
+   ],
+   "successCriteria": [
+    "All: identify a, b and c",
+    "Most: use the formula and round answers sensibly",
+    "Some: use the discriminant to find the number of roots and an unknown value"
+   ],
+   "crossCurricular": "Engineering: vibration and structural design",
+   "smsc": "Social: a general method works for everyone in every situation",
+   "keywords": [
+    {
+     "term": "quadratic formula",
+     "def": "x = (−b ± √(b² − 4ac)) / 2a"
+    },
+    {
+     "term": "discriminant",
+     "def": "b² − 4ac"
+    },
+    {
+     "term": "real roots",
+     "def": "solutions that are real numbers"
+    },
+    {
+     "term": "surd",
+     "def": "an irrational root such as √7"
+    }
+   ],
+   "starter": [
+    "Bismillah. Evaluate (−4)² and −4².",
+    "Evaluate √(36 − 8).",
+    "Identify a, b, c in 3x² − 4x − 5.",
+    "Simplify √28 into a√b form."
+   ],
+   "teach": [
+    {
+     "heading": "The formula",
+     "bullets": [
+      "For ax² + bx + c = 0: x = (−b ± √(b² − 4ac)) / 2a",
+      "Write a, b, c first with signs",
+      "Substitute in brackets",
+      "Two answers from ±"
+     ],
+     "note": "The formula is not given in the exam, so pupils must memorise it. A chant helps.",
+     "model": {
+      "problem": "Solve 2x² + 3x − 4 = 0 to 3 significant figures",
+      "steps": [
+       "a = 2, b = 3, c = −4",
+       "b² − 4ac = 9 + 32 = 41",
+       "x = (−3 ± √41) / 4",
+       "x = 0.851 or x = −2.35"
+      ],
+      "answer": "x = 0.851 or x = −2.35"
+     }
+    },
+    {
+     "heading": "Exact answers",
+     "bullets": [
+      "x² − 6x + 2 = 0: a = 1, b = −6, c = 2",
+      "Discriminant = 36 − 8 = 28",
+      "x = (6 ± √28) / 2 = 3 ± √7",
+      "Decimals: 5.65 and 0.354"
+     ],
+     "note": "Show √28 = 2√7 so the fraction simplifies."
+    },
+    {
+     "heading": "The discriminant",
+     "bullets": [
+      "b² − 4ac > 0: two real roots",
+      "= 0: one repeated root",
+      "< 0: no real roots",
+      "x² + 2x + 5 has 4 − 20 = −16: no real roots"
+     ],
+     "note": "For repeated roots, find k when x² + 6x + k has one root: 36 − 4k = 0, k = 9."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "b² when b is negative is positive"
+     ],
+     "note": "For b = −4: b² = 16.",
+     "misconception": {
+      "wrong": "For b = −4, b² = −16",
+      "right": "b² = (−4)² = 16 and −b = 4"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "What is b² − 4ac for 3x² − 4x − 5 = 0?",
+      "options": [
+       "−44",
+       "76",
+       "16 − 60",
+       "−76"
+      ],
+      "answer": 1,
+      "why": "16 − 4(3)(−5) = 16 + 60 = 76. A forgets that c is negative; D makes the whole thing negative."
+     }
+    }
+   ],
+   "practice": [
+    "Use the formula for x² + 5x + 1 = 0 (3 s.f.)",
+    "Solve x² − 4x − 1 = 0, leaving surds",
+    "How many real roots does x² + 2x + 5 = 0 have?",
+    "Find k so x² + 6x + k = 0 has one repeated root."
+   ],
+   "independent": [
+    "Core: Solve (a) x² + 3x − 2 = 0 (b) 2x² − 5x − 1 = 0 to 2 d.p.",
+    "Extend: Show 3x² + x + 2 = 0 has no real roots. Solve 5x² + 3x − 1 = 0 to 3 s.f.",
+    "Stretch: For what values of k does x² + kx + 4 = 0 have real roots?"
+   ],
+   "exit": [
+    "a, b, c for 2x² − 7x + 1 = 0",
+    "Discriminant of x² − 4x + 4",
+    "Solve x² − 2x − 5 = 0 to 2 d.p."
+   ],
+   "homework": "Eight formula questions (decimals and surds) and two discriminant questions.",
+   "send": "SEND/EAL: boxed formula template with empty slots for a, b, c and the discriminant. Stretch: proof of the quadratic formula."
+  },
+  {
+   "unit": "A17-A18 Algebra: linear and quadratic equations",
+   "n": 28,
+   "title": "Solving quadratics by completing the square",
+   "duration": 50,
+   "bigQuestion": "Why does completing the square give an exact answer when factorising fails?",
+   "objectives": [
+    "Solve quadratics by completing the square",
+    "Leave answers in surd form",
+    "Write the quadratic as a completed square for odd coefficients"
+   ],
+   "successCriteria": [
+    "All: complete the square when a = 1 and b is even",
+    "Most: solve and give exact answers",
+    "Some: deal with a ≠ 1 and odd b using fractions"
+   ],
+   "crossCurricular": "History of mathematics: geometric methods for solving quadratics",
+   "smsc": "Spiritual: appreciation of the long history of algebra, including contributions from scholars of the Islamic world, such as al-Khwarizmi",
+   "keywords": [
+    {
+     "term": "completing the square",
+     "def": "(x + p)² + q form"
+    },
+    {
+     "term": "surd",
+     "def": "an irrational root such as √11"
+    },
+    {
+     "term": "exact",
+     "def": "left in surd form"
+    },
+    {
+     "term": "±",
+     "def": "plus or minus"
+    }
+   ],
+   "starter": [
+    "Bismillah. Expand (x + 5)².",
+    "Write x² + 8x + 3 as (x + 4)² − ?",
+    "Simplify √18.",
+    "Solve (x + 2)² = 9."
+   ],
+   "teach": [
+    {
+     "heading": "The method",
+     "bullets": [
+      "Write x² + bx + c as (x + b/2)² − (b/2)² + c",
+      "Make the bracket equal to a number",
+      "Square root both sides, ±",
+      "Rearrange for x"
+     ],
+     "note": "Link to the previous lesson on turning points and to the formula.",
+     "model": {
+      "problem": "Solve x² + 6x − 2 = 0, leaving your answer in surd form",
+      "steps": [
+       "(x + 3)² − 9 − 2 = 0",
+       "(x + 3)² = 11",
+       "x + 3 = ±√11",
+       "x = −3 ± √11"
+      ],
+      "answer": "x = −3 ± √11"
+     }
+    },
+    {
+     "heading": "Another example",
+     "bullets": [
+      "x² − 10x + 7 = 0",
+      "(x − 5)² − 25 + 7 = 0",
+      "(x − 5)² = 18",
+      "x = 5 ± √18 = 5 ± 3√2"
+     ],
+     "note": "Simplify √18 = 3√2."
+    },
+    {
+     "heading": "When a is not 1 or b is odd",
+     "bullets": [
+      "2x² − 12x + 5 = 2(x − 3)² − 13 = 0",
+      "(x − 3)² = 13/2",
+      "x = 3 ± √6.5 ≈ 5.55 or 0.450",
+      "x² + 3x − 1 = (x + 3/2)² − 13/4 = 0, so x = −3/2 ± √13/2"
+     ],
+     "note": "Check one root by substituting in the original equation or using the formula."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Remember ± when you take the square root"
+     ],
+     "note": "Missing ± loses a root.",
+     "misconception": {
+      "wrong": "(x + 3)² = 11 so x = √11 − 3 only",
+      "right": "(x + 3)² = 11 so x = −3 + √11 or x = −3 − √11"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Solve (x − 4)² = 25",
+      "options": [
+       "x = 9 only",
+       "x = 9 or x = −1",
+       "x = 29 or x = −21",
+       "x = 21 or x = −21"
+      ],
+      "answer": 1,
+      "why": "x − 4 = ±5 so x = 9 or x = −1. A forgets the negative root."
+     }
+    }
+   ],
+   "practice": [
+    "Solve x² + 4x − 3 = 0, exact answers",
+    "Solve x² − 8x + 5 = 0 to 2 d.p.",
+    "Solve x² + 3x − 1 = 0 exactly",
+    "Solve 2x² − 12x + 5 = 0 to 3 s.f."
+   ],
+   "independent": [
+    "Core: Write x² + 8x + 1 in the form (x + p)² + q and solve x² + 8x + 1 = 0.",
+    "Extend: Solve x² − 6x − 5 = 0 and 2x² + 8x − 3 = 0, exact.",
+    "Stretch: Prove that x² + bx + c = 0 has solutions x = −b/2 ± √(b²/4 − c)."
+   ],
+   "exit": [
+    "Solve (x + 2)² = 7",
+    "Solve x² + 6x + 4 = 0 exactly",
+    "Why does completing the square not need factorising?"
+   ],
+   "homework": "Six equations to solve by completing the square, each with a check using the quadratic formula for one root.",
+   "send": "Higher only. SEND/EAL: area-model diagram of a square being completed. Teacher note: the name al-Khwarizmi, 9th-century Baghdad, is linked with the early systematic treatment of solving quadratics; keep the historical remark brief."
+  },
+  {
+   "unit": "A21-A22 Algebra: forming equations and inequalities",
+   "n": 29,
+   "title": "Quadratic inequalities and set notation",
+   "duration": 50,
+   "bigQuestion": "For which values of x is a quadratic expression negative?",
+   "objectives": [
+    "Solve quadratic inequalities",
+    "Show and write solutions in inequality and set notation",
+    "List integer values that satisfy an inequality"
+   ],
+   "successCriteria": [
+    "All: represent an inequality on a number line",
+    "Most: solve a quadratic inequality using a sketch",
+    "Some: use set notation including intersections and integer lists"
+   ],
+   "crossCurricular": "Business: ranges of profit or loss; Science: acceptable tolerance",
+   "smsc": "Moral: stating exactly which values are allowed",
+   "keywords": [
+    {
+     "term": "inequality",
+     "def": "a statement using < > ≤ ≥"
+    },
+    {
+     "term": "set notation",
+     "def": "{x : x > 2} meaning the set of x such that x > 2"
+    },
+    {
+     "term": "integer",
+     "def": "a whole number, positive, negative or zero"
+    },
+    {
+     "term": "intersection",
+     "def": "values satisfying both conditions, ∩"
+    }
+   ],
+   "starter": [
+    "Bismillah. Solve x − 3 > 4.",
+    "Solve x² − 5x + 6 = 0.",
+    "Represent x ≥ 2 on a number line.",
+    "List integers satisfying −2 ≤ x < 3."
+   ],
+   "teach": [
+    {
+     "heading": "Set notation",
+     "bullets": [
+      "{x : x > 2} is 'the set of x such that x is greater than 2'",
+      "{x : −2 ≤ x < 5}",
+      "x ∈ ℤ means x is an integer",
+      "−2 ≤ x < 5 gives −2, −1, 0, 1, 2, 3, 4"
+     ],
+     "note": "Linear inequalities and the number line are covered in the school's Year 10 'Linear inequalities' lesson; here we extend to set notation."
+    },
+    {
+     "heading": "Solving quadratic inequalities",
+     "bullets": [
+      "Solve the equation to find the roots",
+      "Sketch the parabola",
+      "Below the axis: less than zero",
+      "Above the axis: greater than zero"
+     ],
+     "note": "Sketch is essential.",
+     "model": {
+      "problem": "Solve x² − x − 12 > 0",
+      "steps": [
+       "Factorise: (x − 4)(x + 3) = 0, roots 4 and −3",
+       "Sketch: upward parabola crossing at −3 and 4",
+       "Above the x-axis outside the roots",
+       "x < −3 or x > 4"
+      ],
+      "answer": "x < −3 or x > 4"
+     }
+    },
+    {
+     "heading": "Another example",
+     "bullets": [
+      "x² − 5x + 6 < 0 gives (x − 2)(x − 3) < 0",
+      "Below the axis between the roots: 2 < x < 3",
+      "x² ≥ 9 gives x ≤ −3 or x ≥ 3",
+      "In set notation: {x : x ≤ −3} ∪ {x : x ≥ 3}"
+     ],
+     "note": "Two separate regions need 'or'; between the roots needs one joined statement."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "x² > 9 does not mean x > 3 only"
+     ],
+     "note": "Test x = −5: (−5)² = 25 > 9.",
+     "misconception": {
+      "wrong": "x² > 9 so x > 3",
+      "right": "x² > 9 so x < −3 or x > 3"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Solve x² − 4 ≤ 0",
+      "options": [
+       "x ≤ 2",
+       "−2 ≤ x ≤ 2",
+       "x ≤ −2 or x ≥ 2",
+       "x ≥ −2"
+      ],
+      "answer": 1,
+      "why": "The upward parabola is on or below the axis between −2 and 2."
+     }
+    }
+   ],
+   "practice": [
+    "Solve x² − 5x + 6 < 0",
+    "Solve x² ≥ 9",
+    "Write {x : −2 ≤ x < 5, x ∈ ℤ} as a list",
+    "Solve x² + 2x − 8 ≤ 0"
+   ],
+   "independent": [
+    "Core: Solve (a) x² − 9 < 0 (b) x² − 3x − 4 > 0 (c) list the integers in −3 < x ≤ 2",
+    "Extend: Solve 2x² − 5x − 3 ≥ 0 and 6 − x − x² > 0. State the integers that satisfy both x² < 16 and x > 1.",
+    "Stretch: For what values of k does x² − kx + 4 > 0 for all x? Explain with the discriminant."
+   ],
+   "exit": [
+    "Solve x² − 16 < 0",
+    "Solve x² − x − 6 ≥ 0",
+    "List the integers in {x : −1 < x ≤ 3}"
+   ],
+   "homework": "Six quadratic inequalities with sketches and number-line or set notation answers.",
+   "send": "Higher only. SEND/EAL: always sketch first, label roots, shade the correct region. Stretch: link the discriminant to inequalities."
+  },
+  {
+   "unit": "A21-A22 Algebra: forming equations and inequalities",
+   "n": 30,
+   "title": "Inequalities in two variables: regions on graphs",
+   "duration": 50,
+   "bigQuestion": "How can a shaded region show every allowed combination at once?",
+   "objectives": [
+    "Draw the lines for inequalities and shade the required region",
+    "Test a point to decide which side to shade",
+    "Write inequalities that define a region"
+   ],
+   "successCriteria": [
+    "All: draw a line with the correct solid or dashed style",
+    "Most: identify the region satisfying several inequalities",
+    "Some: write the inequalities for a given region and count integer points inside"
+   ],
+   "crossCurricular": "Business: constraints on resources; Computing: boundaries in games",
+   "smsc": "Moral: working within limits and boundaries responsibly",
+   "keywords": [
+    {
+     "term": "region",
+     "def": "an area of the graph satisfying inequalities"
+    },
+    {
+     "term": "boundary line",
+     "def": "the line that separates the region"
+    },
+    {
+     "term": "solid line",
+     "def": "drawn for ≤ or ≥, boundary included"
+    },
+    {
+     "term": "dashed line",
+     "def": "drawn for < or >, boundary not included"
+    }
+   ],
+   "starter": [
+    "Bismillah. Draw y = 2x − 1 using two points.",
+    "Is (0, 0) above or below y = x + 1?",
+    "Solve 3x < 12.",
+    "Write the equation of the line through (0, 2) and (2, 0)."
+   ],
+   "teach": [
+    {
+     "heading": "Boundary and test point",
+     "bullets": [
+      "Draw the line as if it were an equation",
+      "≤ or ≥ gives a solid line",
+      "< or > gives a dashed line",
+      "Substitute (0, 0) to find the side to shade"
+     ],
+     "note": "Use a graphing tool for live demonstration. If (0, 0) is on the line choose another point.",
+     "model": {
+      "problem": "Show the region y > 2x − 1 and x + y ≤ 6, with x ≥ 0",
+      "steps": [
+       "Dashed line y = 2x − 1, solid line x + y = 6, solid line x = 0",
+       "Test (0, 0) in y > 2x − 1: 0 > −1 is true, so shade above",
+       "Test (0, 0) in x + y ≤ 6: true, so shade below",
+       "The overlapping region is the answer"
+      ],
+      "answer": "The region satisfying all three conditions"
+     }
+    },
+    {
+     "heading": "Writing inequalities from a region",
+     "bullets": [
+      "Find each boundary line's equation",
+      "Decide solid or dashed",
+      "Decide which side",
+      "R satisfies x ≥ 1, y ≥ 2, x + y ≤ 7"
+     ],
+     "note": "Triangle vertices: (1, 2), (1, 6), (5, 2). Count integer points: x = 1: y from 2 to 6, 5 points; x = 2: 4; x = 3: 3; x = 4: 2; x = 5: 1; total 15 including the boundary."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Dashed lines for strict inequalities"
+     ],
+     "note": "Points on a dashed line are not included.",
+     "misconception": {
+      "wrong": "x < 3 is drawn as a solid line",
+      "right": "x < 3 is dashed because points with x = 3 are not allowed"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "The point (2, 3) is tested in y ≥ x + 2. Which is correct?",
+      "options": [
+       "True, shade the side containing (2, 3)",
+       "False, shade the opposite side",
+       "True only for the dashed line",
+       "It cannot be tested"
+      ],
+      "answer": 1,
+      "why": "3 ≥ 4 is false, so (2, 3) is on the wrong side. Shade the opposite side."
+     }
+    }
+   ],
+   "practice": [
+    "Shade the region y ≤ x + 2",
+    "Shade the region where x ≥ 1, y ≥ 2 and x + y ≤ 7",
+    "State whether (3, 3) lies in the region y > x",
+    "How many integer points lie in the region x ≥ 1, y ≥ 2 and x + y ≤ 7 (boundary included)?"
+   ],
+   "independent": [
+    "Core: Draw and shade y < 3, x ≥ −1",
+    "Extend: Region R is y ≥ x, y ≤ 6 − x, x ≥ 0. Draw it and list the integer points inside it.",
+    "Stretch: A caterer makes x small boxes and y large boxes with x + y ≤ 40, x ≥ 5 and y ≥ 2x. Show the region and find the greatest number of large boxes."
+   ],
+   "exit": [
+    "Is (1, 5) in the region y > 2x + 1?",
+    "Draw x + y < 4",
+    "Write two inequalities for the region below y = 3 and right of x = 1."
+   ],
+   "homework": "Three graph-region questions on squared paper, one with a written explanation of how a test point is used.",
+   "send": "Higher only. SEND/EAL: pre-drawn axes; colour shading or hatching; the phrase 'unwanted region shaded' for exam style. Stretch: linear programming."
+  },
+  {
+   "unit": "A23-A25 Algebra: sequences",
+   "n": 31,
+   "title": "Term-to-term and position-to-term rules",
+   "duration": 50,
+   "bigQuestion": "If you know a pattern's rule, can you find the 100th term without listing 99 terms?",
+   "objectives": [
+    "Generate terms from a term-to-term rule",
+    "Generate terms from a position-to-term rule (nth term)",
+    "Decide whether a number is a term of a sequence"
+   ],
+   "successCriteria": [
+    "All: continue a sequence using a rule",
+    "Most: use an nth term formula including n²",
+    "Some: test whether a number belongs to a sequence"
+   ],
+   "crossCurricular": "Computing: loops and iteration; Art: pattern-making",
+   "smsc": "Spiritual: pattern and order observed in nature and design",
+   "keywords": [
+    {
+     "term": "sequence",
+     "def": "an ordered list of numbers following a rule"
+    },
+    {
+     "term": "term",
+     "def": "one number in a sequence"
+    },
+    {
+     "term": "term-to-term rule",
+     "def": "how to get the next term from the previous"
+    },
+    {
+     "term": "position-to-term rule",
+     "def": "uses the position n to find the term"
+    }
+   ],
+   "starter": [
+    "Bismillah. Continue 2, 5, 8, 11, ...",
+    "Evaluate 3n + 2 for n = 4.",
+    "Evaluate n² for n = 6.",
+    "Evaluate 2n² − 1 when n = 3."
+   ],
+   "teach": [
+    {
+     "heading": "Term-to-term rule",
+     "bullets": [
+      "Start with the first term",
+      "Apply the rule repeatedly",
+      "Rule: multiply by 2 then subtract 1, start 3",
+      "3, 5, 9, 17, 33"
+     ],
+     "note": "Compute each step visibly. Slow, careful work.",
+     "model": {
+      "problem": "The nth term of a sequence is 3n + 2. Is 77 a term?",
+      "steps": [
+       "Set 3n + 2 = 77",
+       "3n = 75",
+       "n = 25, a whole number",
+       "So 77 is the 25th term"
+      ],
+      "answer": "Yes, the 25th term"
+     }
+    },
+    {
+     "heading": "Position-to-term rule",
+     "bullets": [
+      "nth term 3n + 2: n = 1, 2, 3 gives 5, 8, 11",
+      "nth term n² − 2n: −1, 0, 3",
+      "Substitute n directly",
+      "100th term of 3n + 2 is 302"
+     ],
+     "note": "Highlight the difference between n (position) and the term itself."
+    },
+    {
+     "heading": "Is it in the sequence?",
+     "bullets": [
+      "Solve nth term = given number",
+      "n must be a positive integer",
+      "99 in 3n + 2: n = 97/3, not an integer",
+      "So 99 is not a term"
+     ],
+     "note": "This is a standard exam check; say the conclusion in a sentence."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "n² means n × n, not 2n"
+     ],
+     "note": "For n = 5: n² = 25.",
+     "misconception": {
+      "wrong": "The 5th term of n² is 10",
+      "right": "The 5th term of n² is 5 × 5 = 25"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "The nth term is n² − 2n. What is the 3rd term?",
+      "options": [
+       "3",
+       "9",
+       "−3",
+       "15"
+      ],
+      "answer": 0,
+      "why": "3² − 2(3) = 9 − 6 = 3. B squares only."
+     }
+    }
+   ],
+   "practice": [
+    "First four terms of 4n − 1",
+    "First four terms when u₁ = 2 and the rule is 'double and subtract 3'",
+    "Is 50 a term of 4n − 2?",
+    "Find the 20th term of n² + 3"
+   ],
+   "independent": [
+    "Core: (a) terms 1 to 4 of 5n + 1 (b) term-to-term: start 4, add 7 (c) the 10th term of 2n − 3",
+    "Extend: Is 100 in 3n + 2? Is 100 in n² + 1? Which is the first term of n² − 5 to exceed 200?",
+    "Stretch: A sequence has u₁ = 3 and uₙ₊₁ = 2uₙ − 5. Find the first five terms."
+   ],
+   "exit": [
+    "First three terms of 6n − 4",
+    "Is 41 a term of 5n + 1?",
+    "Start 2, rule 'multiply by 3': first four terms."
+   ],
+   "homework": "Eight questions on generating terms and testing membership, including one with n².",
+   "send": "SEND/EAL: tabular layout n / working / term; vocabulary glossary. Stretch: sequences defined by recurrence relations."
+  },
+  {
+   "unit": "A23-A25 Algebra: sequences",
+   "n": 32,
+   "title": "Special sequences: triangular, square, cube, Fibonacci-type and geometric",
+   "duration": 50,
+   "bigQuestion": "What is the difference between adding the same amount each time and multiplying by the same amount each time?",
+   "objectives": [
+    "Recognise triangular, square, cube, arithmetic, geometric and Fibonacci-type sequences",
+    "Continue geometric sequences and find a common ratio, including surd ratios (Higher)",
+    "Find missing terms in Fibonacci-type sequences"
+   ],
+   "successCriteria": [
+    "All: continue arithmetic and special sequences",
+    "Most: find the common ratio and continue a geometric sequence",
+    "Some: find unknowns in Fibonacci-type and geometric sequences including surds"
+   ],
+   "crossCurricular": "Biology: growth patterns; Art: spirals",
+   "smsc": "Spiritual: patterns in creation and in human-made designs",
+   "keywords": [
+    {
+     "term": "arithmetic sequence",
+     "def": "a constant difference between terms"
+    },
+    {
+     "term": "geometric sequence",
+     "def": "a constant ratio between terms"
+    },
+    {
+     "term": "Fibonacci-type",
+     "def": "each term is the sum of the two before it"
+    },
+    {
+     "term": "common ratio",
+     "def": "the multiplier between successive terms"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the first five square numbers.",
+    "Write the first four cube numbers.",
+    "Continue 2, 6, 18, ...",
+    "What is the common difference in 7, 11, 15, ...?"
+   ],
+   "teach": [
+    {
+     "heading": "Spot the type",
+     "bullets": [
+      "2, 5, 8, 11: arithmetic, add 3",
+      "2, 6, 18, 54: geometric, multiply by 3",
+      "1, 3, 6, 10, 15: triangular",
+      "1, 1, 2, 3, 5, 8: Fibonacci"
+     ],
+     "note": "Triangular nth term n(n + 1)/2, so the 10th is 55. Squares n², cubes n³.",
+     "table": {
+      "head": [
+       "Sequence",
+       "Type",
+       "Rule"
+      ],
+      "rows": [
+       [
+        "3, 7, 11, 15",
+        "Arithmetic",
+        "+4"
+       ],
+       [
+        "2, 6, 18, 54",
+        "Geometric",
+        "× 3"
+       ],
+       [
+        "1, 4, 9, 16",
+        "Square",
+        "n²"
+       ],
+       [
+        "1, 8, 27, 64",
+        "Cube",
+        "n³"
+       ],
+       [
+        "1, 3, 6, 10",
+        "Triangular",
+        "n(n + 1)/2"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Geometric sequences",
+     "bullets": [
+      "Common ratio r: divide a term by the one before",
+      "2, −6, 18, −54 has r = −3",
+      "Surd ratio: 2, 2√2, 4, 4√2, 8 has r = √2",
+      "If the 2nd term is 6 and the 4th is 54, r² = 9"
+     ],
+     "note": "Link r² when two steps apart: r = 3 gives first term 2 or r = −3 gives first term −2.",
+     "model": {
+      "problem": "A geometric sequence has second term 6 and fourth term 54, with positive terms. Find the first term.",
+      "steps": [
+       "Two steps apart: r² = 54 ÷ 6 = 9",
+       "r = 3 for positive terms",
+       "First term = 6 ÷ 3",
+       "= 2"
+      ],
+      "answer": "2"
+     }
+    },
+    {
+     "heading": "Fibonacci-type",
+     "bullets": [
+      "Each term = the sum of the previous two",
+      "3, x, 3 + x, 3 + 2x, 6 + 3x",
+      "If the 5th term is 21: 6 + 3x = 21, so x = 5",
+      "3, 5, 8, 13, 21"
+     ],
+     "note": "Show the algebraic route to a missing term."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Ratio is found by dividing, not subtracting"
+     ],
+     "note": "Differences do not work for geometric sequences.",
+     "misconception": {
+      "wrong": "2, 6, 18 has common difference 4, so next is 22",
+      "right": "2, 6, 18 has common ratio 3, so next is 54"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "What is the next term of 5, 10, 20, 40?",
+      "options": [
+       "50",
+       "60",
+       "80",
+       "45"
+      ],
+      "answer": 2,
+      "why": "The common ratio is 2 so the next term is 80. A and B continue by adding 10 and 20."
+     }
+    }
+   ],
+   "practice": [
+    "Classify 3, 7, 11, 15; 3, 6, 12, 24; 2, 3, 5, 8, 13",
+    "Find r and the next two terms: 81, 27, 9, 3",
+    "Find missing terms of 1, ?, 4, 7, 11",
+    "A Fibonacci-type sequence starts 3, x, ... and the 5th term is 21. Find x."
+   ],
+   "independent": [
+    "Core: (a) continue 4, 12, 36 (b) list the first six triangular numbers (c) write the first five cube numbers",
+    "Extend: Find the 10th triangular number and the sum of the first 4 cube numbers. Find r for 2, 2√2, 4 and the next term.",
+    "Stretch: A geometric sequence has second term 6 and fourth term 54. Find both possible first terms."
+   ],
+   "exit": [
+    "Classify 2, 4, 8, 16",
+    "Continue 3, 3√3, 9, ...",
+    "Fibonacci-type: 2, 5, 7, 12: next term?"
+   ],
+   "homework": "Six classification and continuation questions, one with a surd ratio.",
+   "send": "SEND/EAL: table to record differences and ratios; Higher only for surd ratios. Stretch: sum of the first n triangular numbers."
+  },
+  {
+   "unit": "A23-A25 Algebra: sequences",
+   "n": 33,
+   "title": "The nth term of a linear sequence",
+   "duration": 50,
+   "bigQuestion": "How can one formula describe every term of a pattern?",
+   "objectives": [
+    "Find the nth term of an arithmetic sequence",
+    "Use the nth term to find any term or test membership",
+    "Find the nth term from a pattern of shapes"
+   ],
+   "successCriteria": [
+    "All: find the nth term of a sequence with a positive common difference",
+    "Most: handle a negative common difference",
+    "Some: use nth terms in context such as matchstick patterns and find the first term over a limit"
+   ],
+   "crossCurricular": "Art and design: tile patterns; Computing: loops",
+   "smsc": "Spiritual: order and pattern in design traditions, such as geometric tiling",
+   "keywords": [
+    {
+     "term": "nth term",
+     "def": "a formula giving the term in position n"
+    },
+    {
+     "term": "common difference",
+     "def": "the constant amount added each time"
+    },
+    {
+     "term": "linear sequence",
+     "def": "has a constant first difference"
+    },
+    {
+     "term": "coefficient",
+     "def": "the number multiplying n"
+    }
+   ],
+   "starter": [
+    "Bismillah. Continue 7, 11, 15, 19, ...",
+    "Find the difference in 20, 17, 14, ...",
+    "Evaluate 4n + 1 for n = 1, 2, 3.",
+    "Solve 3n + 2 = 77."
+   ],
+   "teach": [
+    {
+     "heading": "The method",
+     "bullets": [
+      "Common difference d gives dn",
+      "5, 8, 11, 14: d = 3 so 3n",
+      "3n gives 3, 6, 9, 12; add 2",
+      "nth term = 3n + 2"
+     ],
+     "note": "Compare the sequence with the d times table, then adjust.",
+     "model": {
+      "problem": "Find the nth term of 20, 17, 14, 11",
+      "steps": [
+       "Common difference −3, so −3n",
+       "−3n gives −3, −6, −9, −12",
+       "To get 20 from −3 add 23",
+       "nth term = −3n + 23"
+      ],
+      "answer": "−3n + 23"
+     }
+    },
+    {
+     "heading": "Using the formula",
+     "bullets": [
+      "100th term of 3n + 2 is 302",
+      "Which term is 77? n = 25",
+      "First term over 200: 3n + 2 > 200, n > 66, n = 67",
+      "The 67th term is 203"
+     ],
+     "note": "Explain the 'first term exceeding' method with an inequality."
+    },
+    {
+     "heading": "Patterns",
+     "bullets": [
+      "Matchstick patterns: 5, 9, 13",
+      "d = 4, so 4n + 1",
+      "Pattern 10 has 41 sticks",
+      "Explain: 4 per square plus 1"
+     ],
+     "note": "Show the structure in the picture."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The nth term is not 'n + d'"
+     ],
+     "note": "For 5, 8, 11: d = 3 means 3n + 2.",
+     "misconception": {
+      "wrong": "5, 8, 11, 14 has nth term n + 3",
+      "right": "The nth term is 3n + 2: the coefficient of n is the common difference"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "What is the nth term of 7, 11, 15, 19?",
+      "options": [
+       "4n + 3",
+       "4n + 7",
+       "3n + 4",
+       "n + 4"
+      ],
+      "answer": 0,
+      "why": "d = 4, so 4n; 4n gives 4, 8, 12, 16 so add 3. B adds the first term."
+     }
+    }
+   ],
+   "practice": [
+    "Find the nth term of 5, 8, 11, 14",
+    "Find the nth term of 20, 17, 14",
+    "Is 77 a term of 3n + 2?",
+    "Which is the first term of 4n − 1 over 150?"
+   ],
+   "independent": [
+    "Core: nth term of (a) 3, 7, 11, 15 (b) 2, 9, 16, 23 (c) 10, 7, 4",
+    "Extend: A pattern of tiles uses 7, 12, 17 tiles. Find the nth term and how many tiles in pattern 30.",
+    "Stretch: The 5th term of a linear sequence is 23 and the 9th term is 39. Find the nth term."
+   ],
+   "exit": [
+    "nth term of 6, 11, 16, 21",
+    "Is 100 a term of 4n + 1?",
+    "nth term of 9, 7, 5, 3"
+   ],
+   "homework": "Eight nth term questions including one matchstick pattern and one 'first term greater than' question.",
+   "send": "SEND/EAL: times-table comparison table; colour the common difference. Stretch: finding the nth term from two non-adjacent terms."
+  },
+  {
+   "unit": "A23-A25 Algebra: sequences",
+   "n": 34,
+   "title": "The nth term of a quadratic sequence",
+   "duration": 50,
+   "bigQuestion": "What happens when the differences are not constant but their differences are?",
+   "objectives": [
+    "Recognise a quadratic sequence from second differences",
+    "Find the nth term an² + bn + c",
+    "Check the formula and use it"
+   ],
+   "successCriteria": [
+    "All: find first and second differences",
+    "Most: find a quadratic nth term when a is a whole number",
+    "Some: handle a = 1.5 and remainders that are linear"
+   ],
+   "crossCurricular": "Physics: distance under constant acceleration",
+   "smsc": "Social: checking a general result against known cases",
+   "keywords": [
+    {
+     "term": "second difference",
+     "def": "the difference of the first differences"
+    },
+    {
+     "term": "quadratic sequence",
+     "def": "has a constant second difference"
+    },
+    {
+     "term": "nth term",
+     "def": "formula for the term in position n"
+    },
+    {
+     "term": "remainder",
+     "def": "what is left after subtracting an²"
+    }
+   ],
+   "starter": [
+    "Bismillah. Find the differences between consecutive terms of 2, 5, 10, 17.",
+    "List the first five square numbers.",
+    "Evaluate 2n² for n = 1 to 4.",
+    "Find the nth term of 4, 7, 10, 13."
+   ],
+   "teach": [
+    {
+     "heading": "Second differences",
+     "bullets": [
+      "3, 9, 19, 33, 51",
+      "First differences: 6, 10, 14, 18",
+      "Second differences: 4, 4, 4",
+      "Constant second difference, so quadratic"
+     ],
+     "note": "Half of the second difference is the coefficient a: 4 ÷ 2 = 2, so 2n².",
+     "model": {
+      "problem": "Find the nth term of 3, 9, 19, 33, 51",
+      "steps": [
+       "Second difference 4, so a = 2",
+       "2n²: 2, 8, 18, 32, 50",
+       "Subtract: 3 − 2, 9 − 8, 19 − 18 ... = 1, 1, 1, 1",
+       "nth term = 2n² + 1"
+      ],
+      "answer": "2n² + 1"
+     }
+    },
+    {
+     "heading": "Linear remainder",
+     "bullets": [
+      "2, 9, 20, 35",
+      "First differences 7, 11, 15; second 4, so 2n²",
+      "2n² gives 2, 8, 18, 32; remainder 0, 1, 2, 3",
+      "Remainder n − 1: nth term 2n² + n − 1"
+     ],
+     "note": "Check with n = 4: 32 + 4 − 1 = 35 ✓."
+    },
+    {
+     "heading": "Halves",
+     "bullets": [
+      "1.5n² + n gives 2.5, 8, 16.5",
+      "First differences 5.5, 8.5; second 3",
+      "a = 3 ÷ 2 = 1.5",
+      "Beware of decimals"
+     ],
+     "note": "Show the second difference 3 gives a = 1.5."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "a is half the second difference"
+     ],
+     "note": "For second difference 4, a = 2 not 4.",
+     "misconception": {
+      "wrong": "Second difference 6 means 6n²",
+      "right": "Second difference 6 means 3n²"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "A sequence has a constant second difference of 6. What is a in an² + bn + c?",
+      "options": [
+       "6",
+       "3",
+       "12",
+       "2"
+      ],
+      "answer": 1,
+      "why": "a = 6 ÷ 2 = 3."
+     }
+    }
+   ],
+   "practice": [
+    "Find the nth term of 4, 7, 12, 19, 28",
+    "Find the nth term of 3, 9, 19, 33",
+    "Find the nth term of 2, 9, 20, 35",
+    "State the 10th term of n² + 3"
+   ],
+   "independent": [
+    "Core: (a) second differences of 2, 5, 10, 17 (b) nth term",
+    "Extend: nth term of 5, 14, 29, 50 and of 0, 6, 16, 30",
+    "Stretch: A sequence has nth term 1.5n² + n. Find the first three terms and the first differences, and explain why the second difference is 3."
+   ],
+   "exit": [
+    "nth term of 2, 8, 18, 32",
+    "nth term of 5, 8, 13, 20",
+    "Second difference of 4n² + 1"
+   ],
+   "homework": "Six quadratic nth term problems, two with a ≠ 1 and one worded about a pattern of dots.",
+   "send": "Higher only. SEND/EAL: difference table template; Stretch: cubic sequences."
+  }
+ ]
+}

@@ -1,0 +1,1657 @@
+{
+ "subject": "Mathematics",
+ "year": "y11",
+ "board": "Pearson Edexcel GCSE (9–1) Mathematics (1MA1), Higher tier",
+ "boardShort": "Edexcel GCSE 1MA1 Higher",
+ "source": "Pearson Edexcel 1MA1 specification as recorded in content/syllabus/ks4/mathematics.json (units N and A only), Higher tier with Foundation-accessible starts; Edexcel 1MA1 Higher exam style; INSET lesson standard. Skipped as already taught well in the school's existing mathematics lessons: N4 primes/HCF/LCM, N7 fractional and negative indices, N8 surds, N10 recurring decimals (existing Year 10 lessons 1-5); A4 binomials and quadratic factorising, A5 subject appearing twice, A6 identities and proof, A17 linear equations, A21 forming equations, A22 linear inequalities (existing Year 10 lessons 6-16); A11/A12 quadratic, cubic and reciprocal graphs, A13 translations and reflections of graphs, A17 solving by graphs, A19 algebraic simultaneous equations (existing Year 11 lessons 1-8).",
+ "lessons": [
+  {
+   "unit": "N13-N16 Number: measures and accuracy",
+   "n": 1,
+   "title": "Units and compound measures",
+   "duration": 50,
+   "bigQuestion": "Why does the unit matter as much as the number?",
+   "objectives": [
+    "Convert between metric units of length, area, volume, mass and time",
+    "Use compound measures: speed, density and pressure",
+    "Convert compound units such as km/h to m/s"
+   ],
+   "successCriteria": [
+    "All: convert simple metric units",
+    "Most: convert area and volume units and use speed, density and pressure formulae",
+    "Some: convert compound units and solve multi-step problems"
+   ],
+   "crossCurricular": "Science: density, pressure and speed; Geography: map and journey data",
+   "smsc": "Moral: accuracy and honest units in measurement and trade",
+   "keywords": [
+    {
+     "term": "compound measure",
+     "def": "a measure made from two units, such as speed in km/h"
+    },
+    {
+     "term": "density",
+     "def": "mass ÷ volume"
+    },
+    {
+     "term": "pressure",
+     "def": "force ÷ area"
+    },
+    {
+     "term": "speed",
+     "def": "distance ÷ time"
+    }
+   ],
+   "starter": [
+    "Bismillah. Convert 2.5 km to metres.",
+    "Work out 150 ÷ 2.5.",
+    "Convert 3.2 kg to grams.",
+    "Write the formula for speed."
+   ],
+   "teach": [
+    {
+     "heading": "Metric conversions",
+     "bullets": [
+      "1 m = 100 cm, but 1 m² = 10 000 cm²",
+      "1 m³ = 1 000 000 cm³",
+      "1 cm³ = 1 ml; 1000 cm³ = 1 litre",
+      "Area units multiply the length factor twice"
+     ],
+     "note": "Draw a 1 m square split into 100 cm by 100 cm. 3.5 m² = 35 000 cm².",
+     "model": {
+      "problem": "Convert 72 km/h to m/s",
+      "steps": [
+       "72 km = 72 000 m",
+       "1 hour = 3600 seconds",
+       "72 000 ÷ 3600",
+       "= 20 m/s"
+      ],
+      "answer": "20 m/s"
+     }
+    },
+    {
+     "heading": "Speed, density, pressure",
+     "bullets": [
+      "Speed = distance ÷ time",
+      "Density = mass ÷ volume: 540 g in 200 cm³ is 2.7 g/cm³",
+      "Pressure = force ÷ area: 600 N on 0.3 m² is 2000 N/m²",
+      "Average speed uses total distance ÷ total time"
+     ],
+     "note": "Use a triangle diagram for rearranging. 150 km in 2 h 30 min: 150 ÷ 2.5 = 60 km/h; write 2 h 30 as 2.5, not 2.3."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Area and volume conversions do not use the length factor once"
+     ],
+     "note": "Compare 100 and 10 000.",
+     "misconception": {
+      "wrong": "1 m² = 100 cm²",
+      "right": "1 m² = 100 × 100 = 10 000 cm²"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Convert 5 m² to cm²",
+      "options": [
+       "500",
+       "5000",
+       "50 000",
+       "500 000"
+      ],
+      "answer": 2,
+      "why": "5 × 10 000 = 50 000. A uses the length factor once."
+     }
+    }
+   ],
+   "practice": [
+    "Convert 3.5 m² to cm² and 2.4 litres to cm³",
+    "A car travels 150 km in 2 h 30. Find its average speed.",
+    "A block has mass 540 g and volume 200 cm³. Find its density.",
+    "Convert 1.2 g/cm³ to kg/m³."
+   ],
+   "independent": [
+    "Core: (a) 4500 g in kg (b) 2 h 15 min in hours (c) speed of 90 km in 1.5 h",
+    "Extend: A force of 600 N acts on an area of 0.3 m². Find the pressure. Convert 20 m/s to km/h.",
+    "Stretch: A solid has density 8.5 g/cm³ and mass 2.38 kg. Find its volume in cm³ and in m³."
+   ],
+   "exit": [
+    "Convert 2 m² to cm²",
+    "Speed for 45 km in 30 minutes, in km/h",
+    "Density of 90 g in 36 cm³"
+   ],
+   "homework": "Eight conversion and compound-measure questions from science and geography contexts.",
+   "send": "SEND/EAL: formula triangles; unit-conversion table. Stretch: unit conversions with density in kg/m³."
+  },
+  {
+   "unit": "N13-N16 Number: measures and accuracy",
+   "n": 2,
+   "title": "Estimating and checking calculations",
+   "duration": 50,
+   "bigQuestion": "How can you know a calculator answer is sensible before you trust it?",
+   "objectives": [
+    "Estimate answers by rounding to 1 significant figure",
+    "Decide whether an estimate is an over- or under-estimate",
+    "Check calculations using inverse operations and technology sensibly"
+   ],
+   "successCriteria": [
+    "All: estimate by rounding to 1 s.f.",
+    "Most: estimate with fractions and roots and say if it is an over-estimate or under-estimate",
+    "Some: detect calculator slips from an estimate"
+   ],
+   "crossCurricular": "Science: sense-checking experimental results",
+   "smsc": "Moral: taking responsibility to check one's own work before relying on it",
+   "keywords": [
+    {
+     "term": "estimate",
+     "def": "an approximate answer from simple numbers"
+    },
+    {
+     "term": "significant figure",
+     "def": "a digit counted from the first non-zero digit"
+    },
+    {
+     "term": "over-estimate",
+     "def": "bigger than the true value"
+    },
+    {
+     "term": "inverse check",
+     "def": "undo the calculation to check it"
+    }
+   ],
+   "starter": [
+    "Bismillah. Round 4.82 to 1 s.f.",
+    "Round 0.0486 to 1 s.f.",
+    "Round 31.8 to 1 s.f.",
+    "Work out 6 × 30 ÷ 0.5."
+   ],
+   "teach": [
+    {
+     "heading": "Round, then calculate",
+     "bullets": [
+      "Round each number to 1 s.f.",
+      "Calculate with the rounded numbers",
+      "19.7 × 4.8 ≈ 20 × 5 = 100",
+      "The calculator gives 94.56: sensible"
+     ],
+     "note": "Show an inverse check: 94.56 ÷ 4.8 = 19.7.",
+     "model": {
+      "problem": "Estimate (6.12 × 31.8) ÷ 0.49 and say if it is an over- or under-estimate",
+      "steps": [
+       "Round: 6, 30 and 0.5",
+       "6 × 30 = 180; 180 ÷ 0.5 = 360",
+       "Numerator rounded down, denominator rounded up",
+       "So the estimate is an under-estimate (true value 397.2)"
+      ],
+      "answer": "360, an under-estimate"
+     }
+    },
+    {
+     "heading": "Rounding direction",
+     "bullets": [
+      "Rounding the numerator down makes the fraction smaller",
+      "Rounding the denominator up makes the fraction smaller",
+      "Both changes: under-estimate",
+      "Mixed changes: the effect may be unclear"
+     ],
+     "note": "Ask pupils to predict before calculating."
+    },
+    {
+     "heading": "Catching mistakes",
+     "bullets": [
+      "Estimate: 3.2 + 4 × 2.5 is about 3 + 4 × 3 = 15",
+      "A display of 13.2 is plausible",
+      "A display of 18 is a warning: (3.2 + 4) × 2.5 was entered",
+      "Always do an estimate first"
+     ],
+     "note": "Typical errors: missing brackets, wrong key, wrong power of ten."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Do not round to 1 s.f. in the final answer unless asked"
+     ],
+     "note": "Estimates are not answers.",
+     "misconception": {
+      "wrong": "Estimate of 0.0486 × 31.8 is 0.05 × 30 = 15",
+      "right": "0.05 × 30 = 1.5; the decimal point is easy to lose"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Which is the best estimate for 49.6 × 2.1 ÷ 0.52?",
+      "options": [
+       "50 × 2 ÷ 0.5 = 200",
+       "50 × 2 ÷ 5 = 20",
+       "5 × 2 ÷ 0.5 = 20",
+       "50 × 2 × 0.5 = 50"
+      ],
+      "answer": 0,
+      "why": "Round to 50, 2 and 0.5: 100 ÷ 0.5 = 200. B changes 0.5 into 5."
+     }
+    }
+   ],
+   "practice": [
+    "Estimate 19.7 × 4.8",
+    "Estimate (6.12 × 31.8) ÷ 0.49 and say if it is over or under",
+    "Estimate √(40.3 + 8.9)",
+    "A calculator shows 3.8 × 5.2 = 19.76. Check using an estimate."
+   ],
+   "independent": [
+    "Core: Estimate (a) 48 × 9.8 (b) 307 ÷ 5.9 (c) 0.48 × 215",
+    "Extend: Estimate (8.7 + 12.4) ÷ 0.46 and decide if it is an over- or under-estimate. Estimate √(63 × 4.1).",
+    "Stretch: A pupil says 5 + 3 ÷ 0.5 = 16. Decide if this is right and say what error was made."
+   ],
+   "exit": [
+    "Estimate 38.2 × 0.92",
+    "Estimate 401 ÷ 7.9",
+    "Is 5 × 10 an over- or under-estimate of 4.8 × 9.7?"
+   ],
+   "homework": "Eight estimation questions and two 'is the calculator answer sensible?' tasks.",
+   "send": "SEND/EAL: rounding to 1 s.f. flow chart. Stretch: effects of rounding on products and quotients."
+  },
+  {
+   "unit": "N13-N16 Number: measures and accuracy",
+   "n": 3,
+   "title": "Rounding, significant figures and error intervals",
+   "duration": 50,
+   "bigQuestion": "If a length is given as 3.4 cm, what could the real length be?",
+   "objectives": [
+    "Round to decimal places and significant figures",
+    "Write error intervals using inequality notation",
+    "Understand truncation and rounding in context"
+   ],
+   "successCriteria": [
+    "All: round to d.p. and s.f.",
+    "Most: write error intervals for rounded values",
+    "Some: write error intervals for truncated values and for s.f. rounding of large numbers"
+   ],
+   "crossCurricular": "Science: reporting measurements; Computing: truncation in integer division",
+   "smsc": "Moral: honesty about the accuracy of a measurement",
+   "keywords": [
+    {
+     "term": "decimal places",
+     "def": "digits after the decimal point"
+    },
+    {
+     "term": "significant figures",
+     "def": "digits counted from the first non-zero digit"
+    },
+    {
+     "term": "error interval",
+     "def": "range of values that round or truncate to a given number"
+    },
+    {
+     "term": "truncate",
+     "def": "cut off digits without rounding"
+    }
+   ],
+   "starter": [
+    "Bismillah. Round 4.678 to 1 d.p.",
+    "Round 0.004567 to 2 s.f.",
+    "Round 25 487 to 3 s.f.",
+    "Which is larger, 3.35 or 3.4?"
+   ],
+   "teach": [
+    {
+     "heading": "Rounding rules",
+     "bullets": [
+      "Look at the next digit: 5 or more rounds up",
+      "s.f.: start at the first non-zero digit",
+      "0.004567 to 2 s.f. = 0.0046",
+      "25 487 to 3 s.f. = 25 500"
+     ],
+     "note": "Include placeholder zeros."
+    },
+    {
+     "heading": "Error intervals",
+     "bullets": [
+      "x = 3.4 to 1 d.p.: 3.35 ≤ x < 3.45",
+      "520 to 2 s.f.: 515 ≤ x < 525",
+      "Lower bound included, upper bound not included",
+      "Truncated 0.7: 0.7 ≤ x < 0.8"
+     ],
+     "note": "Use a number line with half the rounding unit either side.",
+     "model": {
+      "problem": "A length is 520 cm to 2 significant figures. Write the error interval.",
+      "steps": [
+       "Rounded to the nearest 10",
+       "Half of 10 is 5",
+       "Lower: 520 − 5 = 515; upper: 520 + 5 = 525",
+       "515 ≤ L < 525"
+      ],
+      "answer": "515 ≤ L < 525"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The upper bound uses <, not ≤"
+     ],
+     "note": "525 would round up to 530.",
+     "misconception": {
+      "wrong": "515 ≤ L ≤ 525",
+      "right": "515 ≤ L < 525 because 525 rounds to 530"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "x = 4000 to 1 significant figure. The error interval is:",
+      "options": [
+       "3950 ≤ x < 4050",
+       "3500 ≤ x < 4500",
+       "3999 ≤ x < 4001",
+       "4000 ≤ x < 4500"
+      ],
+      "answer": 1,
+      "why": "The rounding unit is 1000; half is 500. A uses the 2 s.f. interval."
+     }
+    }
+   ],
+   "practice": [
+    "Round 0.004567 to 2 s.f. and 25 487 to 3 s.f.",
+    "Write the error interval for 3.4 to 1 d.p.",
+    "Write the error interval for 0.7 truncated to 1 d.p.",
+    "A bus holds 52 people. How many buses for 413 pupils?"
+   ],
+   "independent": [
+    "Core: Error intervals for (a) 8.5 to 1 d.p. (b) 60 to 1 s.f. (c) 0.35 to 2 d.p.",
+    "Extend: x rounds to 4.5 to 1 d.p.; y rounds to 4.50 to 2 d.p. Write both intervals and compare.",
+    "Stretch: 3.2 is a truncation to 1 d.p. of x. Write the error interval and a value of x for which rounding would give a different answer."
+   ],
+   "exit": [
+    "Round 7.0449 to 3 s.f.",
+    "Error interval for 6.3 to 1 d.p.",
+    "Error interval for 1500 to 2 s.f."
+   ],
+   "homework": "Eight rounding and error-interval questions, including two in a measurement context.",
+   "send": "SEND/EAL: number-line template with half-unit marks. Stretch: error intervals for s.f. with leading zeros."
+  },
+  {
+   "unit": "N13-N16 Number: measures and accuracy",
+   "n": 4,
+   "title": "Upper and lower bounds: measurements and calculations",
+   "duration": 50,
+   "bigQuestion": "If every measurement is rounded, how accurate can a calculated answer be?",
+   "objectives": [
+    "Find upper and lower bounds of a rounded value",
+    "Calculate bounds of sums, differences and products",
+    "Choose which bound to use in each calculation"
+   ],
+   "successCriteria": [
+    "All: state bounds of a rounded measurement (Higher only)",
+    "Most: find bounds for sums and products",
+    "Some: find bounds for differences and compound problems"
+   ],
+   "crossCurricular": "Engineering: tolerance in manufacturing; Science: measurement uncertainty",
+   "smsc": "Moral: trustworthy reporting of uncertainty",
+   "keywords": [
+    {
+     "term": "upper bound",
+     "def": "the top of the interval, just too large to round to the given number"
+    },
+    {
+     "term": "lower bound",
+     "def": "the smallest value that rounds to the given number"
+    },
+    {
+     "term": "bounds",
+     "def": "upper and lower limits of a rounded value"
+    },
+    {
+     "term": "nearest",
+     "def": "the unit of rounding"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write 3.4 to 1 d.p. as an error interval.",
+    "Work out 12.5 × 8.5.",
+    "Work out 11.5 × 7.5.",
+    "Work out 9.45 − 3.15."
+   ],
+   "teach": [
+    {
+     "heading": "Bounds of one measurement",
+     "bullets": [
+      "4.5 cm to 1 d.p.: lower bound 4.45, upper bound 4.55",
+      "12 to the nearest whole: 11.5 ≤ x < 12.5",
+      "The upper bound is the limit of the interval",
+      "Use the upper bound, not 4.549999…"
+     ],
+     "note": "Treat the upper bound as 12.5 even though the value is strictly below. Make a rule: half a unit each side."
+    },
+    {
+     "heading": "Calculating with bounds",
+     "bullets": [
+      "Maximum a + b: upper a + upper b",
+      "Maximum a − b: upper a − lower b",
+      "Maximum a × b: upper × upper",
+      "Minimum a × b: lower × lower"
+     ],
+     "note": "Rectangle 12 cm by 8 cm to the nearest cm.",
+     "model": {
+      "problem": "A rectangle is 12 cm by 8 cm, both to the nearest cm. Find the bounds of the area.",
+      "steps": [
+       "Lengths: 11.5 ≤ L < 12.5; 7.5 ≤ W < 8.5",
+       "Upper bound: 12.5 × 8.5 = 106.25",
+       "Lower bound: 11.5 × 7.5 = 86.25",
+       "86.25 ≤ A < 106.25"
+      ],
+      "answer": "86.25 ≤ A < 106.25 cm²"
+     }
+    },
+    {
+     "heading": "Subtraction",
+     "bullets": [
+      "a = 9.4, b = 3.2 (both 1 d.p.)",
+      "Maximum a − b: 9.45 − 3.15 = 6.30",
+      "Minimum a − b: 9.35 − 3.25 = 6.10",
+      "Subtraction uses opposite bounds"
+     ],
+     "note": "Check with the numbers: biggest difference needs the biggest a and smallest b."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The upper bound of 4.5 to 1 d.p. is 4.55, not 4.54"
+     ],
+     "note": "We use the boundary value.",
+     "misconception": {
+      "wrong": "Upper bound of 4.5 is 4.54",
+      "right": "Upper bound is 4.55"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "a = 9.4 and b = 3.2, both to 1 d.p. What is the maximum value of a − b?",
+      "options": [
+       "6.2",
+       "6.3",
+       "6.1",
+       "6.4"
+      ],
+      "answer": 1,
+      "why": "9.45 − 3.15 = 6.30. C is the minimum; A is the unrounded difference."
+     }
+    }
+   ],
+   "practice": [
+    "Bounds of 4.5 cm (1 d.p.) and 12 kg (nearest kg)",
+    "Bounds of the area of a 12 cm by 8 cm rectangle, to the nearest cm",
+    "Maximum and minimum of a − b where a = 9.4 and b = 3.2",
+    "A mass is 85 g to the nearest g. State its bounds."
+   ],
+   "independent": [
+    "Core: (a) bounds of 7.2 (1 d.p.) (b) bounds of 250 to 2 s.f. (c) maximum a + b where a = 5.1, b = 2.3 (1 d.p.)",
+    "Extend: A rectangle is 15.4 cm by 6.2 cm, 1 d.p. Find the bounds of its perimeter and area.",
+    "Stretch: Two planks of 2.4 m and 1.8 m (1 d.p.) are cut from one 4.5 m board (1 d.p.). Is it certain that the offcut is at least 0.2 m?"
+   ],
+   "exit": [
+    "Bounds of 6.8 to 1 d.p.",
+    "Upper bound of the area of a 5 cm by 9 cm rectangle, each to the nearest cm",
+    "Maximum of a − b if a = 20, b = 8 (nearest integer)"
+   ],
+   "homework": "Six bounds questions: single measurements, a product and a difference, with a clear 'use upper / use lower' annotation.",
+   "send": "Higher only. SEND/EAL: table recording 'use upper' or 'use lower' for each operation. Stretch: bounds of expressions with several operations."
+  },
+  {
+   "unit": "N13-N16 Number: measures and accuracy",
+   "n": 5,
+   "title": "Bounds: division, formulae and sensible accuracy",
+   "duration": 50,
+   "bigQuestion": "How do we decide how many figures to give in a final answer?",
+   "objectives": [
+    "Find bounds for quotients and formulae",
+    "Use bounds in speed and density problems",
+    "Decide the accuracy to which an answer can be given"
+   ],
+   "successCriteria": [
+    "All: find bounds of a quotient (Higher only)",
+    "Most: apply bounds to speed and density formulae",
+    "Some: decide the sensible accuracy so that both bounds agree"
+   ],
+   "crossCurricular": "Science: precision of measurements in practical work",
+   "smsc": "Moral: not claiming more accuracy than the data supports",
+   "keywords": [
+    {
+     "term": "upper bound",
+     "def": "the top of an interval"
+    },
+    {
+     "term": "lower bound",
+     "def": "the bottom of an interval"
+    },
+    {
+     "term": "quotient",
+     "def": "the result of a division"
+    },
+    {
+     "term": "degree of accuracy",
+     "def": "how many significant figures an answer can honestly have"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 245 ÷ 2.5.",
+    "Work out 235 ÷ 3.5 to 1 d.p.",
+    "Write bounds of 240 to the nearest 10.",
+    "Write bounds of 3 to the nearest whole."
+   ],
+   "teach": [
+    {
+     "heading": "Dividing",
+     "bullets": [
+      "Maximum a ÷ b: upper a ÷ lower b",
+      "Minimum a ÷ b: lower a ÷ upper b",
+      "The biggest quotient needs the biggest top and the smallest bottom",
+      "Same idea for any formula with a fraction"
+     ],
+     "note": "Use a diagram of a fraction: the denominator reduces the value.",
+     "model": {
+      "problem": "A distance is 240 km (nearest 10 km) and a time is 3 hours (nearest hour). Find the bounds of the speed.",
+      "steps": [
+       "Distance: 235 ≤ d < 245; time: 2.5 ≤ t < 3.5",
+       "Maximum speed = 245 ÷ 2.5 = 98",
+       "Minimum speed = 235 ÷ 3.5 = 67.14…",
+       "67.1 ≤ speed < 98 km/h (approx)"
+      ],
+      "answer": "about 67.1 to 98 km/h"
+     }
+    },
+    {
+     "heading": "Sensible accuracy",
+     "bullets": [
+      "Density = mass ÷ volume: 85 g and 12 cm³ (nearest)",
+      "Upper bound: 85.5 ÷ 11.5 = 7.43…",
+      "Lower bound: 84.5 ÷ 12.5 = 6.76",
+      "Both round to 7 to 1 s.f., so density = 7 g/cm³ (1 s.f.)"
+     ],
+     "note": "Explain that quoting 7.08 would claim more accuracy than the data allows."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Using the upper bound of both numbers in a quotient gives a value that is not the maximum"
+     ],
+     "note": "Maximum needs upper top and lower bottom.",
+     "misconception": {
+      "wrong": "Maximum of 240 ÷ 3 uses 245 ÷ 3.5",
+      "right": "Maximum uses 245 ÷ 2.5"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "The mass is 85 g and volume 12 cm³ (nearest whole numbers). What is the lower bound for the density?",
+      "options": [
+       "84.5 ÷ 12.5",
+       "84.5 ÷ 11.5",
+       "85.5 ÷ 12.5",
+       "85.5 ÷ 11.5"
+      ],
+      "answer": 0,
+      "why": "Lower bound: lower mass ÷ upper volume. B is the lower mass with the lower volume, which is not the minimum."
+     }
+    }
+   ],
+   "practice": [
+    "Speed: 240 km (nearest 10 km) in 3 hours (nearest hour). Find the greatest and least speed.",
+    "Density: 85 g and 12 cm³ (nearest whole). Bounds, and value to a suitable accuracy.",
+    "Find the upper bound of 8.4 ÷ 2.1 (1 d.p. each).",
+    "A car uses 40 litres (nearest litre) over 520 km (nearest 10 km). Greatest and least km per litre."
+   ],
+   "independent": [
+    "Core: (a) upper bound of 12.5 ÷ 2.5 (1 d.p.) (b) lower bound of 150 ÷ 6 (nearest integer)",
+    "Extend: A pupil walks 1.2 km (1 d.p.) in 15 minutes (nearest minute). Bounds of speed in km/h.",
+    "Stretch: v = u + at with u = 5.0, a = 2.0, t = 3.0 (all 1 d.p.). Find bounds of v and give v to a sensible accuracy."
+   ],
+   "exit": [
+    "Upper bound of 60 ÷ 4 (nearest integer)",
+    "Lower bound of 9.5 ÷ 1.5 (1 d.p. each)",
+    "A density answer has bounds 6.76 and 7.43: to how many s.f. can you quote it?"
+   ],
+   "homework": "Six bounds problems with a sentence stating the sensible accuracy.",
+   "send": "Higher only. SEND/EAL: tick-box table for upper/lower. Stretch: formula-based bounds including squares."
+  },
+  {
+   "unit": "A13-A16 Algebra: Higher graph work and real-life graphs",
+   "n": 6,
+   "title": "Distance-time and velocity-time graphs",
+   "duration": 50,
+   "bigQuestion": "What can the slope of a graph and the area under it tell you about a journey?",
+   "objectives": [
+    "Read and draw distance-time graphs and find speed from the gradient",
+    "Read and draw velocity-time graphs and find acceleration from the gradient",
+    "Find distance from the area under a velocity-time graph"
+   ],
+   "successCriteria": [
+    "All: describe a journey from a distance-time graph",
+    "Most: find speeds and accelerations from gradients",
+    "Some: find distance from an area under a velocity-time graph made of trapeziums"
+   ],
+   "crossCurricular": "Physics: motion; Geography: journey planning",
+   "smsc": "Social: planning journeys with care for safe and punctual travel",
+   "keywords": [
+    {
+     "term": "gradient",
+     "def": "change in the y-value ÷ change in the x-value"
+    },
+    {
+     "term": "acceleration",
+     "def": "rate of change of velocity, in m/s²"
+    },
+    {
+     "term": "velocity-time graph",
+     "def": "speed in a direction against time"
+    },
+    {
+     "term": "area under a graph",
+     "def": "here, the distance travelled"
+    }
+   ],
+   "starter": [
+    "Bismillah. Find the gradient between (0, 0) and (2, 80).",
+    "Find the area of a trapezium with parallel sides 20 and 40 and height 20.",
+    "What are the units of speed?",
+    "Convert 90 minutes to hours."
+   ],
+   "teach": [
+    {
+     "heading": "Distance-time graphs",
+     "bullets": [
+      "Gradient = speed",
+      "Flat line: stationary",
+      "Steeper line: faster",
+      "Return journey: distance decreases"
+     ],
+     "note": "Journey with points (0, 0), (1, 40), (1.5, 40), (3, 100), (5, 0). Speeds: 40 km/h, 0, 40 km/h, then 50 km/h back. Total distance travelled 200 km in 5 h gives an average speed of 40 km/h.",
+     "table": {
+      "head": [
+       "Time (h)",
+       "Distance from home (km)"
+      ],
+      "rows": [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "1",
+        "40"
+       ],
+       [
+        "1.5",
+        "40"
+       ],
+       [
+        "3",
+        "100"
+       ],
+       [
+        "5",
+        "0"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Velocity-time graphs",
+     "bullets": [
+      "Gradient = acceleration",
+      "Flat line: constant velocity",
+      "Area under the graph = distance travelled",
+      "Negative gradient: deceleration"
+     ],
+     "note": "Points (0, 0), (10, 20), (30, 20), (40, 0): acceleration 2 m/s², then constant 20 m/s, then deceleration of 2 m/s².",
+     "model": {
+      "problem": "A velocity-time graph passes through (0, 0), (10, 20), (30, 20), (40, 0). Find the distance travelled.",
+      "steps": [
+       "Shape is a trapezium with parallel sides 40 (base) and 20 (top)",
+       "Height is 20 m/s",
+       "Area = ½ × (40 + 20) × 20",
+       "= 600 m"
+      ],
+      "answer": "600 m"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "A flat line on a velocity-time graph is not 'stopped'"
+     ],
+     "note": "Flat on distance-time is stopped; flat on velocity-time is constant speed.",
+     "misconception": {
+      "wrong": "A horizontal line on a v-t graph means the object is stationary",
+      "right": "A horizontal line on a v-t graph means constant velocity; velocity 0 means stationary"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "On a distance-time graph, which feature shows the fastest part of a journey?",
+      "options": [
+       "The longest line",
+       "The steepest line",
+       "The highest point",
+       "The flat part"
+      ],
+      "answer": 1,
+      "why": "Gradient is speed, so the steepest line is the fastest. D is stationary."
+     }
+    }
+   ],
+   "practice": [
+    "A journey has (time h, distance km) points (0, 0), (1, 40), (1.5, 40), (3, 100), (5, 0). Describe each stage and find the speed in each.",
+    "Find the average speed over the whole journey",
+    "Find the acceleration in the first 10 seconds and the deceleration at the end",
+    "Find the total distance for the velocity-time graph (0, 0), (10, 20), (30, 20), (40, 0)"
+   ],
+   "independent": [
+    "Core: A cyclist goes 12 km in 45 minutes. What is her speed in km/h? Draw her graph.",
+    "Extend: A train accelerates from 0 to 30 m/s in 15 s, travels at 30 m/s for 60 s, then slows to a stop in 25 s. Draw the graph and find the distance.",
+    "Stretch: A car accelerates uniformly from rest to 24 m/s in 8 s, then travels at 24 m/s for 12 s. Find the total distance and the average speed over the 20 s."
+   ],
+   "exit": [
+    "What does the gradient of a distance-time graph represent?",
+    "Find the area under v-t points (0, 0), (5, 10), (15, 10).",
+    "Find the average speed: 200 km in 5 hours."
+   ],
+   "homework": "Two graph-interpretation questions and one drawing task, with units written in every answer.",
+   "send": "SEND/EAL: annotated graph with colour for gradient and area; vocabulary: stationary, constant, decelerate. Stretch: graphs with curved sections."
+  },
+  {
+   "unit": "A13-A16 Algebra: Higher graph work and real-life graphs",
+   "n": 7,
+   "title": "Reciprocal and exponential graphs in real contexts",
+   "duration": 50,
+   "bigQuestion": "When does a quantity halve as another doubles, and when does it keep multiplying?",
+   "objectives": [
+    "Interpret reciprocal graphs in contexts such as shared costs",
+    "Interpret exponential growth and decay graphs and tables",
+    "Use a graph or table to solve a real problem"
+   ],
+   "successCriteria": [
+    "All: read values from a context graph",
+    "Most: form y = k/x and y = a × bˣ from context",
+    "Some: use trial or graph to find when a quantity crosses a value"
+   ],
+   "crossCurricular": "Business: shared costs; Biology and finance: growth and depreciation",
+   "smsc": "Social: sharing a cost fairly between more people",
+   "keywords": [
+    {
+     "term": "reciprocal graph",
+     "def": "y = k/x, a curve that falls as x rises"
+    },
+    {
+     "term": "exponential growth",
+     "def": "repeated multiplication by a factor greater than 1"
+    },
+    {
+     "term": "exponential decay",
+     "def": "repeated multiplication by a factor between 0 and 1"
+    },
+    {
+     "term": "asymptote",
+     "def": "a line a curve approaches but never reaches"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 600 ÷ 12 and 600 ÷ 20.",
+    "Work out 500 × 2³.",
+    "Work out 12 000 × 0.85².",
+    "Describe the shape of y = 1/x."
+   ],
+   "teach": [
+    {
+     "heading": "Reciprocal relationships",
+     "bullets": [
+      "A coach costs £600, shared by n people",
+      "Cost per person C = 600/n",
+      "n = 12 gives £50; n = 20 gives £30",
+      "The more people, the smaller the share, but never zero"
+     ],
+     "note": "Discuss fairness in sharing. Compare with y = k/x: graph never touches the axes.",
+     "model": {
+      "problem": "A coach costs £600 shared equally. Find C for n = 12, and how many people for C = £25.",
+      "steps": [
+       "C = 600/n",
+       "n = 12: C = 600 ÷ 12 = 50",
+       "C = 25: 600/n = 25",
+       "n = 600 ÷ 25 = 24"
+      ],
+      "answer": "£50; 24 people"
+     }
+    },
+    {
+     "heading": "Exponential growth and decay",
+     "bullets": [
+      "N = 500 × 2ᵗ: t = 3 gives N = 4000",
+      "Doubling each hour",
+      "V = 12 000 × 0.85ᵗ: t = 3 gives £7369.50",
+      "Decay: the value falls by 15% a year"
+     ],
+     "note": "Value of an item falls by multiplying by 0.85 each year. Depreciation is used here rather than interest-based contexts."
+    },
+    {
+     "heading": "When does it cross a value?",
+     "bullets": [
+      "V < £6000: 12 000 × 0.85ᵗ < 6000",
+      "Try t = 4: 12 000 × 0.522… = £6261",
+      "Try t = 5: 12 000 × 0.4437… = £5324",
+      "During the fifth year the value falls below £6000"
+     ],
+     "note": "Use a table of trial values or read the graph at £6000."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Exponential change is not linear: equal multiplications, not equal additions"
+     ],
+     "note": "Show 500, 1000, 2000, 4000 against 500, 1000, 1500, 2000.",
+     "misconception": {
+      "wrong": "N = 500 × 2ᵗ adds 500 each hour",
+      "right": "N = 500 × 2ᵗ doubles each hour: 500, 1000, 2000, 4000"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "A population is P = 200 × 3ᵗ. What is P when t = 2?",
+      "options": [
+       "1200",
+       "1800",
+       "600",
+       "400"
+      ],
+      "answer": 1,
+      "why": "3² = 9 and 200 × 9 = 1800. A multiplies by 6."
+     }
+    }
+   ],
+   "practice": [
+    "Coach cost £600 shared by 12, then 20 people. Find each share.",
+    "Find N = 500 × 2ᵗ for t = 0 to 4 and plot the points",
+    "A car is worth £12 000 and loses 15% a year. Find its value after 3 years.",
+    "When does the car's value first fall below £6000?"
+   ],
+   "independent": [
+    "Core: (a) y = 12/x, find y when x = 3 and when x = 8 (b) 2ᵗ values for t = 0 to 5",
+    "Extend: Bacteria numbers: 800 at t = 0 and 1600 at t = 1. Find the formula and when 10 000 is first exceeded.",
+    "Stretch: Two plans: A, £40 fixed; B costs £600/n per person for n people. Find n where B is cheaper than £40."
+   ],
+   "exit": [
+    "Share £480 between 8 people",
+    "N = 100 × 2ᵗ when t = 4",
+    "State the asymptote of y = 1/x."
+   ],
+   "homework": "Six real-life questions: two reciprocal, two exponential growth, two decay, each with a sentence interpreting the graph.",
+   "send": "Higher only. SEND/EAL: table of values scaffold; sentence frame 'every hour the number ___'. Stretch: fitting y = a × bˣ to two points."
+  },
+  {
+   "unit": "A13-A16 Algebra: Higher graph work and real-life graphs",
+   "n": 8,
+   "title": "Gradients of curves and rates of change",
+   "duration": 50,
+   "bigQuestion": "How fast is something changing at one exact moment?",
+   "objectives": [
+    "Estimate the gradient of a curve at a point by drawing a tangent",
+    "Estimate a gradient using chords that get closer to a point",
+    "Interpret the gradient of a curve as a rate of change"
+   ],
+   "successCriteria": [
+    "All: draw a tangent and read its gradient (Higher only)",
+    "Most: use chords to estimate the gradient at a point",
+    "Some: interpret the gradient with units in context"
+   ],
+   "crossCurricular": "Physics: instantaneous speed; Biology: growth rates",
+   "smsc": "Spiritual: patient refinement of an estimate towards the truth",
+   "keywords": [
+    {
+     "term": "tangent",
+     "def": "a straight line that touches a curve at one point"
+    },
+    {
+     "term": "chord",
+     "def": "a straight line joining two points on a curve"
+    },
+    {
+     "term": "rate of change",
+     "def": "how quickly one quantity changes with another"
+    },
+    {
+     "term": "instantaneous",
+     "def": "at one exact moment"
+    }
+   ],
+   "starter": [
+    "Bismillah. Find the gradient between (3, 9) and (4, 16).",
+    "Find the gradient between (3, 9) and (3.5, 12.25).",
+    "Square 3.1.",
+    "Gradient of the line y = 6x − 9?"
+   ],
+   "teach": [
+    {
+     "heading": "Tangents",
+     "bullets": [
+      "Place a ruler so it touches the curve at one point",
+      "The line should not cross the curve there",
+      "Choose two far-apart points on the tangent",
+      "Gradient = change in y ÷ change in x"
+     ],
+     "note": "On y = t², the tangent at t = 3 passes through (2, 3) and (4, 15): gradient 12 ÷ 2 = 6. Say: the speed at t = 3 is about 6 m/s.",
+     "model": {
+      "problem": "Estimate the gradient of s = t² at t = 3 using chords from (3, 9)",
+      "steps": [
+       "To (4, 16): (16 − 9)/(4 − 3) = 7",
+       "To (3.5, 12.25): 3.25/0.5 = 6.5",
+       "To (3.1, 9.61): 0.61/0.1 = 6.1",
+       "Gradients approach 6"
+      ],
+      "answer": "About 6 m/s"
+     }
+    },
+    {
+     "heading": "Chords approach the tangent",
+     "bullets": [
+      "As the second point moves closer, the chord looks like the tangent",
+      "7, 6.5, 6.1 tends to 6",
+      "This is the idea behind differentiation",
+      "Not needed algebraically at GCSE"
+     ],
+     "note": "Show the picture with a graphing tool."
+    },
+    {
+     "heading": "Rates of change",
+     "bullets": [
+      "Gradient units: y unit per x unit",
+      "Population against days: people per day",
+      "Height against time: m/s",
+      "A steeper tangent means a faster rate"
+     ],
+     "note": "Interpret in a sentence: 'At t = 3 s the distance is increasing at about 6 m per second.'"
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "A tangent touches the curve; it should not cut through it"
+     ],
+     "note": "Check the ruler's angle.",
+     "misconception": {
+      "wrong": "The gradient of a curve at a point is the gradient between the point and the origin",
+      "right": "Draw the tangent at that point and use two points on the tangent"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "A tangent to a distance-time curve passes through (2, 4) and (6, 16). What does the tangent's gradient represent?",
+      "options": [
+       "3 m/s, the speed at that moment",
+       "4 m, the distance",
+       "12 m/s",
+       "3 m, the distance"
+      ],
+      "answer": 0,
+      "why": "Gradient = 12 ÷ 4 = 3. Units: m per second."
+     }
+    }
+   ],
+   "practice": [
+    "Estimate the gradient of y = x² at x = 2 using chords to x = 3, 2.5 and 2.1",
+    "Draw a tangent to y = x² at x = 1.5 and find its gradient",
+    "The tangent to a curve at t = 4 passes through (2, 5) and (6, 25). State the gradient and units.",
+    "Explain why chords give an estimate, not an exact value."
+   ],
+   "independent": [
+    "Core: Use the chord method for y = x² at x = 1",
+    "Extend: From a table of s = 5t² − t at t = 2, 2.1, 2.5, 3, estimate the speed at t = 2.",
+    "Stretch: A cooling-curve tangent at 10 minutes has gradient −1.5 °C per minute. Interpret and predict the temperature change in the next 30 seconds (with a caution)."
+   ],
+   "exit": [
+    "What is a tangent?",
+    "Estimate the gradient from chords: 5, 4.5, 4.1 approaches ?",
+    "A tangent has gradient 8 m/s. What does it mean?"
+   ],
+   "homework": "Two graph-sketching tasks with tangents and one chord table; units in each answer.",
+   "send": "Higher only. SEND/EAL: pre-printed curve and ruler, tangent drawn together. Stretch: gradient of y = x³ at x = 2."
+  },
+  {
+   "unit": "A13-A16 Algebra: Higher graph work and real-life graphs",
+   "n": 9,
+   "title": "Area under a curve and its meaning",
+   "duration": 50,
+   "bigQuestion": "If speed is graphed against time, what does the area underneath mean?",
+   "objectives": [
+    "Estimate the area under a graph using trapezia",
+    "Interpret the area under a graph in context",
+    "Decide whether an estimate is an over- or under-estimate"
+   ],
+   "successCriteria": [
+    "All: find areas under straight-line graphs (Higher only)",
+    "Most: estimate the area under a curve using strips",
+    "Some: interpret the area with units and judge over/under-estimate"
+   ],
+   "crossCurricular": "Physics: distance from speed; Water supply: volume from flow rate",
+   "smsc": "Social: estimating resource use responsibly (water and energy)",
+   "keywords": [
+    {
+     "term": "area under a graph",
+     "def": "a quantity found by multiplying the y and x units"
+    },
+    {
+     "term": "trapezium rule",
+     "def": "adds the areas of trapezia drawn under a curve"
+    },
+    {
+     "term": "strip",
+     "def": "a vertical slice used to approximate area"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate answer"
+    }
+   ],
+   "starter": [
+    "Bismillah. Area of a trapezium with parallel sides 6 and 10 and height 2.",
+    "Area of a trapezium with sides 0 and 6, height 2.",
+    "What do you get from multiplying m/s by s?",
+    "Sketch a curve that rises quickly and then levels off."
+   ],
+   "teach": [
+    {
+     "heading": "Strips and trapezia",
+     "bullets": [
+      "Split the area into vertical strips of equal width",
+      "Each strip: ½ × width × (left height + right height)",
+      "Add them all",
+      "More strips improve the estimate"
+     ],
+     "note": "v readings at t = 0, 2, 4, 6, 8: 0, 6, 10, 12, 13 m/s.",
+     "model": {
+      "problem": "A speed is measured every 2 s: 0, 6, 10, 12, 13 m/s at t = 0, 2, 4, 6, 8. Estimate the distance travelled.",
+      "steps": [
+       "Strip 1: ½ × 2 × (0 + 6) = 6",
+       "Strip 2: ½ × 2 × (6 + 10) = 16",
+       "Strip 3: ½ × 2 × (10 + 12) = 22; strip 4: ½ × 2 × (12 + 13) = 25",
+       "Total = 69 m"
+      ],
+      "answer": "About 69 m"
+     }
+    },
+    {
+     "heading": "Over or under?",
+     "bullets": [
+      "Differences 6, 4, 2, 1: the graph is flattening (concave)",
+      "Chords lie below a concave curve",
+      "Trapezia give an under-estimate",
+      "For a convex curve, over-estimate"
+     ],
+     "note": "Explain with a sketch."
+    },
+    {
+     "heading": "Meaning of area",
+     "bullets": [
+      "Area of velocity-time graph: distance",
+      "Area of flow rate (litres/min) against minutes: litres",
+      "Area of £ per hour against hours: £",
+      "Units: multiply the axis units"
+     ],
+     "note": "Flow readings 4, 6, 5 l/min at t = 0, 5, 10: area = ½·5(4 + 6) + ½·5(6 + 5) = 52.5 litres."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Use the height as the trapezium's width"
+     ],
+     "note": "The width is along the x-axis.",
+     "misconception": {
+      "wrong": "Area of the strip = (y₁ + y₂) × width",
+      "right": "Area of the strip = ½ × width × (y₁ + y₂)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Speed readings are 0 and 8 m/s at t = 0 and t = 2 s. The area of the trapezium is:",
+      "options": [
+       "8 m",
+       "16 m",
+       "4 m",
+       "10 m"
+      ],
+      "answer": 0,
+      "why": "½ × 2 × (0 + 8) = 8. B forgets the half."
+     }
+    }
+   ],
+   "practice": [
+    "Estimate the area under the curve for the readings 0, 6, 10, 12, 13 at 2-second intervals",
+    "Flow rates of 4, 6, 5 l/min at 0, 5, 10 minutes. Estimate the litres.",
+    "Explain whether the first estimate is an over- or under-estimate",
+    "What is represented by the area under a graph of £ per hour against hours?"
+   ],
+   "independent": [
+    "Core: Find the area under the line through (0, 2) and (6, 8), between t = 0 and 6.",
+    "Extend: Using trapezia, estimate the area under a curve with heights 2, 5, 7, 8 at x = 0, 1, 2, 3.",
+    "Stretch: Estimate with 3 strips and 6 strips for a curve with heights 0, 4, 6, 7, 7.5, 7.8, 8 at 0 to 6 and compare."
+   ],
+   "exit": [
+    "Area of trapezium: parallel sides 5 and 9, height 2",
+    "What does the area under a speed-time graph represent?",
+    "Is the trapezium estimate for a rising, flattening curve too big or too small?"
+   ],
+   "homework": "Two estimates with trapezia, one with units and an over/under comment.",
+   "send": "Higher only. SEND/EAL: pre-drawn strips on the graph; formula card for trapezium. Stretch: error reduction with narrower strips."
+  },
+  {
+   "unit": "A13-A16 Algebra: Higher graph work and real-life graphs",
+   "n": 10,
+   "title": "The equation of a circle and tangents to a circle",
+   "duration": 50,
+   "bigQuestion": "How does Pythagoras describe every point on a circle?",
+   "objectives": [
+    "Write the equation of a circle with centre the origin",
+    "Test whether a point lies on a circle",
+    "Find the equation of a tangent to a circle at a given point"
+   ],
+   "successCriteria": [
+    "All: recall x² + y² = r² (Higher only)",
+    "Most: test points and find r",
+    "Some: find the equation of a tangent using perpendicular gradients"
+   ],
+   "crossCurricular": "Physics: circular motion; Design: circular plans",
+   "smsc": "Spiritual: reflecting on how geometry describes a perfectly symmetrical shape",
+   "keywords": [
+    {
+     "term": "circle equation",
+     "def": "x² + y² = r² for centre (0, 0) and radius r"
+    },
+    {
+     "term": "tangent",
+     "def": "touches the circle at one point and is perpendicular to the radius"
+    },
+    {
+     "term": "radius",
+     "def": "the distance from the centre to the circle"
+    },
+    {
+     "term": "perpendicular",
+     "def": "at right angles"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 3² + 4².",
+    "Find the gradient between (0, 0) and (3, 4).",
+    "What is the perpendicular gradient to 4/3?",
+    "Rearrange 4y − 3x = 25 for y."
+   ],
+   "teach": [
+    {
+     "heading": "Why x² + y² = r²",
+     "bullets": [
+      "A point (x, y) at distance r from the origin",
+      "Right-angled triangle with sides x and y",
+      "Pythagoras: x² + y² = r²",
+      "Radius 5: x² + y² = 25"
+     ],
+     "note": "Test (3, 4): 9 + 16 = 25 ✓. Test (4, −3): 16 + 9 = 25 ✓. (6, −8) lies on x² + y² = 100.",
+     "model": {
+      "problem": "Find the tangent to x² + y² = 25 at (3, 4)",
+      "steps": [
+       "Gradient of radius = 4/3",
+       "Tangent is perpendicular: gradient −3/4",
+       "y − 4 = −3/4 (x − 3)",
+       "4y + 3x = 25"
+      ],
+      "answer": "y = −¾x + 25/4 (3x + 4y = 25)"
+     }
+    },
+    {
+     "heading": "Another tangent",
+     "bullets": [
+      "Circle x² + y² = 169, point (−5, 12)",
+      "Radius gradient 12/(−5) = −12/5",
+      "Tangent gradient 5/12",
+      "12y = 5x + 169"
+     ],
+     "note": "Check: 12 × 12 = 144 and 5(−5) + 169 = 144 ✓. The radius and tangent meet at 90° at the point of contact."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "r² is on the right-hand side, not r"
+     ],
+     "note": "The equation x² + y² = 25 has radius 5, not 25.",
+     "misconception": {
+      "wrong": "x² + y² = 36 has radius 36",
+      "right": "x² + y² = 36 has radius √36 = 6"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Which point lies on x² + y² = 100?",
+      "options": [
+       "(6, 8)",
+       "(5, 5)",
+       "(10, 10)",
+       "(7, 7)"
+      ],
+      "answer": 0,
+      "why": "6² + 8² = 36 + 64 = 100. The others give 50, 200 and 98."
+     }
+    }
+   ],
+   "practice": [
+    "State the equation of a circle with radius 7, centre the origin",
+    "Does (5, 12) lie on x² + y² = 169?",
+    "Find the radius of x² + y² = 50 leaving a surd",
+    "Find the tangent to x² + y² = 25 at (3, 4)"
+   ],
+   "independent": [
+    "Core: (a) equation with r = 3 (b) is (2, 3) on x² + y² = 13? (c) the radius of x² + y² = 81",
+    "Extend: Tangent at (−5, 12) to x² + y² = 169. Tangent at (8, −6) to x² + y² = 100.",
+    "Stretch: Where does y = x meet x² + y² = 18? Find the tangent at each point."
+   ],
+   "exit": [
+    "Equation of a circle with radius 4",
+    "Is (4, 3) on x² + y² = 25?",
+    "Perpendicular gradient to 3/5"
+   ],
+   "homework": "Six questions, two with tangents; include a sketch with the radius and tangent on each.",
+   "send": "Higher only. SEND/EAL: Pythagoras triangle diagram on the circle; step card for tangent. Stretch: circle and line intersections."
+  },
+  {
+   "unit": "A19-A20 Algebra: simultaneous equations and iteration",
+   "n": 11,
+   "title": "Simultaneous equations by graphs",
+   "duration": 50,
+   "bigQuestion": "What does it mean when two lines cross?",
+   "objectives": [
+    "Solve two linear simultaneous equations by drawing graphs",
+    "Check the solution in both equations",
+    "Identify when there is no solution"
+   ],
+   "successCriteria": [
+    "All: read the intersection point of two graphs",
+    "Most: draw both lines accurately and state the solution",
+    "Some: use graphs to estimate then confirm algebraically, and explain parallel lines"
+   ],
+   "crossCurricular": "Business: break-even points; Science: meeting points of two moving objects",
+   "smsc": "Moral: checking solutions is part of careful work",
+   "keywords": [
+    {
+     "term": "simultaneous equations",
+     "def": "two equations true at the same time"
+    },
+    {
+     "term": "intersection",
+     "def": "the point where two graphs cross"
+    },
+    {
+     "term": "solution",
+     "def": "the pair of values satisfying both equations"
+    },
+    {
+     "term": "parallel",
+     "def": "never cross; same gradient"
+    }
+   ],
+   "starter": [
+    "Bismillah. Find y when x = 3 for y = 2x − 1.",
+    "Find y when x = 3 for x + y = 8.",
+    "Rearrange x + y = 8 to make y the subject.",
+    "Write the gradient of y = 2x − 1."
+   ],
+   "teach": [
+    {
+     "heading": "Intersection = solution",
+     "bullets": [
+      "Each point on a line satisfies its equation",
+      "The crossing point satisfies both",
+      "y = 2x − 1 and x + y = 8 cross at (3, 5)",
+      "Check: 5 = 6 − 1 ✓ and 3 + 5 = 8 ✓"
+     ],
+     "note": "Linear equations by algebra are taught in the school's Year 11 'Simultaneous linear equations' lessons; here pupils see the geometry.",
+     "model": {
+      "problem": "Solve y = 2x − 1 and x + y = 8 using graphs",
+      "steps": [
+       "Table for y = 2x − 1: (0, −1), (3, 5)",
+       "x + y = 8: (0, 8), (8, 0), (3, 5)",
+       "The lines cross at (3, 5)",
+       "x = 3 and y = 5"
+      ],
+      "answer": "x = 3, y = 5"
+     }
+    },
+    {
+     "heading": "Estimating then checking",
+     "bullets": [
+      "y = 2x + 1 and 3x + 2y = 12",
+      "Graphs cross near (1.4, 3.9)",
+      "Algebra: 3x + 4x + 2 = 12, x = 10/7 ≈ 1.43",
+      "y = 27/7 ≈ 3.86"
+     ],
+     "note": "Use graphs to estimate. Substitution gives the exact answer."
+    },
+    {
+     "heading": "No solution",
+     "bullets": [
+      "y = x + 2 and y = x − 1 are parallel",
+      "Same gradient, different intercepts",
+      "They never cross",
+      "So there is no solution"
+     ],
+     "note": "Link to the algebra: subtracting gives 0 = 3."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Write the answer as x = ... and y = ..., not as a single number"
+     ],
+     "note": "The coordinates (3, 5) mean x = 3, y = 5.",
+     "misconception": {
+      "wrong": "The solution is 3",
+      "right": "x = 3 and y = 5"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "Lines cross at (2, −1). What is the solution to the simultaneous equations?",
+      "options": [
+       "x = 2, y = −1",
+       "x = −1, y = 2",
+       "x = 1, y = 2",
+       "x = −2, y = 1"
+      ],
+      "answer": 0,
+      "why": "The coordinates are (x, y). B swaps them."
+     }
+    }
+   ],
+   "practice": [
+    "Draw y = 2x − 1 and x + y = 8 and read the solution",
+    "Solve y = x + 1 and x + y = 7 graphically",
+    "Explain why y = 2x + 3 and y = 2x − 5 have no solution",
+    "Confirm the solution to x + 2y = 8 and 3x − y = 3 is (2, 3)"
+   ],
+   "independent": [
+    "Core: Draw y = 3x − 2 and x + y = 6; give the solution",
+    "Extend: Solve x + 2y = 8 and y = 3x − 3 by graph then check by substitution.",
+    "Stretch: A taxi firm charges £4 plus £1.50 a km; another charges £1 plus £2 a km. Show the graphs and when they cost the same."
+   ],
+   "exit": [
+    "Lines cross at (−2, 4): state x and y",
+    "Why can two parallel lines have no solution?",
+    "Solve y = x and x + y = 10 graphically."
+   ],
+   "homework": "Three graphical simultaneous problems and one where the lines are parallel.",
+   "send": "SEND/EAL: pre-drawn grids; sentence frame 'the lines cross at (_, _), so x = _ and y = _'. Algebraic methods are in the school's Year 11 Unit 17 lessons."
+  },
+  {
+   "unit": "A19-A20 Algebra: simultaneous equations and iteration",
+   "n": 12,
+   "title": "Iteration: using formulae to approximate solutions",
+   "duration": 50,
+   "bigQuestion": "Can repeating a simple calculation lead you to the solution of an equation you cannot solve exactly?",
+   "objectives": [
+    "Rearrange an equation into the form x = g(x)",
+    "Use xₙ₊₁ = g(xₙ) repeatedly with a calculator",
+    "Recognise when an iteration converges and when it does not"
+   ],
+   "successCriteria": [
+    "All: use xₙ₊₁ = g(xₙ) to find the next terms (Higher only)",
+    "Most: rearrange an equation to form an iteration formula",
+    "Some: compare two rearrangements and explain which converges"
+   ],
+   "crossCurricular": "Computing: loops and algorithms; Science: numerical methods",
+   "smsc": "Spiritual: perseverance — getting closer with each repetition",
+   "keywords": [
+    {
+     "term": "iteration",
+     "def": "repeating a process to approach a solution"
+    },
+    {
+     "term": "iteration formula",
+     "def": "xₙ₊₁ = g(xₙ)"
+    },
+    {
+     "term": "converge",
+     "def": "get closer to a value"
+    },
+    {
+     "term": "Ans",
+     "def": "the calculator's key for the previous answer"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out ∛1.7401 to 4 d.p.",
+    "Rearrange x³ + x − 3 = 0 to make x³ the subject.",
+    "Work out 3 − 1³.",
+    "Work out ∛(3 − 1.26) to 3 d.p."
+   ],
+   "teach": [
+    {
+     "heading": "The idea",
+     "bullets": [
+      "x³ + x − 3 = 0 cannot be solved by factorising",
+      "Rearrange: x³ = 3 − x, so x = ∛(3 − x)",
+      "Iteration formula: xₙ₊₁ = ∛(3 − xₙ)",
+      "Start with x₀ = 1"
+     ],
+     "note": "Demonstrate using the Ans key: type 1 then ∛(3 − Ans) and press equals repeatedly.",
+     "model": {
+      "problem": "Use xₙ₊₁ = ∛(3 − xₙ) with x₀ = 1",
+      "steps": [
+       "x₁ = ∛(3 − 1) = ∛2 = 1.2599",
+       "x₂ = ∛(3 − 1.2599) = 1.2028",
+       "x₃ = 1.2158; x₄ = 1.2129",
+       "x₅ = 1.2135; x₆ = 1.2134: converging to about 1.213"
+      ],
+      "answer": "The values settle near 1.213"
+     }
+    },
+    {
+     "heading": "Does it always work?",
+     "bullets": [
+      "Another rearrangement: xₙ₊₁ = 3 − xₙ³",
+      "x₀ = 1 gives x₁ = 2",
+      "x₂ = 3 − 8 = −5",
+      "x₃ = 3 + 125 = 128: diverges"
+     ],
+     "note": "Not every rearrangement converges. Pupils try both with a calculator."
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Use the previous answer, not the starting value, each time"
+     ],
+     "note": "Show x₂ using x₁, not x₀.",
+     "misconception": {
+      "wrong": "x₂ = ∛(3 − x₀) every time",
+      "right": "x₂ = ∛(3 − x₁), then x₃ = ∛(3 − x₂)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "xₙ₊₁ = ∛(3 − xₙ) and x₁ = 1.2599. What is x₂ to 4 d.p.?",
+      "options": [
+       "1.2599",
+       "1.2028",
+       "1.2158",
+       "1.7401"
+      ],
+      "answer": 1,
+      "why": "3 − 1.2599 = 1.7401, and ∛1.7401 = 1.2028. D forgets the cube root."
+     }
+    }
+   ],
+   "practice": [
+    "Use xₙ₊₁ = ∛(3 − xₙ) with x₀ = 1 to find x₁, x₂, x₃",
+    "Show that x³ + x − 3 = 0 can be written x = ∛(3 − x)",
+    "Try xₙ₊₁ = 3 − xₙ³ from x₀ = 1 and describe what happens",
+    "Show that x³ + 2x − 5 = 0 can be rearranged to x = ∛(5 − 2x)"
+   ],
+   "independent": [
+    "Core: xₙ₊₁ = √(2xₙ + 3), x₀ = 2: find x₁ to x₄",
+    "Extend: For x³ + 2x − 5 = 0 use xₙ₊₁ = ∛(5 − 2xₙ) from x₀ = 1.3 to find a solution to 3 d.p.",
+    "Stretch: For x² − x − 1 = 0, try xₙ₊₁ = 1 + 1/xₙ and xₙ₊₁ = xₙ² − 1; find which converges from x₀ = 1.5, and explain."
+   ],
+   "exit": [
+    "Rearrange x³ = 7 − 2x to x = ∛(7 − 2x)",
+    "x₀ = 2, xₙ₊₁ = √(xₙ + 6). Find x₁ and x₂.",
+    "Do repeated values that settle near one number show convergence?"
+   ],
+   "homework": "Four iteration tasks on the calculator, one with a divergent rearrangement; record each xₙ.",
+   "send": "Higher only. SEND/EAL: Ans-key step cards; table template for n and xₙ. Stretch: staircase and cobweb diagrams."
+  },
+  {
+   "unit": "A19-A20 Algebra: simultaneous equations and iteration",
+   "n": 13,
+   "title": "Locating roots: sign change and decimal search",
+   "duration": 50,
+   "bigQuestion": "How can you be certain that a solution lies in a particular interval?",
+   "objectives": [
+    "Show a root lies in an interval using a change of sign",
+    "Narrow an interval by decimal search",
+    "Give a root to a required accuracy and justify it"
+   ],
+   "successCriteria": [
+    "All: evaluate f(x) at two values and compare signs (Higher only)",
+    "Most: use a change of sign to show a root lies between two values",
+    "Some: prove a root to 2 decimal places using bounds on f"
+   ],
+   "crossCurricular": "Computing: bisection and numerical methods",
+   "smsc": "Moral: proving a claim rather than asserting it",
+   "keywords": [
+    {
+     "term": "change of sign",
+     "def": "f(a) and f(b) have opposite signs"
+    },
+    {
+     "term": "root",
+     "def": "a value where f(x) = 0"
+    },
+    {
+     "term": "continuous",
+     "def": "an unbroken graph with no jumps"
+    },
+    {
+     "term": "decimal search",
+     "def": "testing smaller intervals"
+    }
+   ],
+   "starter": [
+    "Bismillah. Evaluate x³ + x − 3 at x = 1 and x = 2.",
+    "Evaluate 1.2³.",
+    "Is −0.072 positive or negative?",
+    "Round 1.2134 to 2 d.p."
+   ],
+   "teach": [
+    {
+     "heading": "Sign change means a root",
+     "bullets": [
+      "f(x) = x³ + x − 3",
+      "f(1) = −1 and f(2) = 7",
+      "Opposite signs: a root lies between 1 and 2",
+      "The graph is continuous so it must cross y = 0"
+     ],
+     "note": "State both conditions: change of sign and continuous. Pupils write this as a sentence.",
+     "model": {
+      "problem": "Show x³ + x − 3 = 0 has a root between 1.2 and 1.25",
+      "steps": [
+       "f(1.2) = 1.728 + 1.2 − 3 = −0.072",
+       "f(1.25) = 1.953 + 1.25 − 3 = 0.203",
+       "Signs differ, f is continuous",
+       "Root between 1.2 and 1.25"
+      ],
+      "answer": "A root lies between 1.2 and 1.25"
+     }
+    },
+    {
+     "heading": "Proving to 2 d.p.",
+     "bullets": [
+      "Test the boundaries: 1.205 and 1.215",
+      "f(1.205) = −0.0453",
+      "f(1.215) = 0.0086",
+      "Change of sign: root is in (1.205, 1.215), so root = 1.21 to 2 d.p."
+     ],
+     "note": "Use the calculator's table or Ans. This is how an exam asks 'show that the root is 1.21 to 2 d.p.'"
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The values must be tested with a sign, not just 'close to zero'"
+     ],
+     "note": "Close to zero is not enough.",
+     "misconception": {
+      "wrong": "f(1.2) = −0.072 is close to 0 so x = 1.2 is the root",
+      "right": "The sign change between 1.2 and 1.25 shows the root lies between them"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [],
+     "note": "Whiteboards.",
+     "check": {
+      "q": "f(1.3) = −0.2 and f(1.4) = 0.5. What can you say?",
+      "options": [
+       "The root is exactly 1.35",
+       "A root lies between 1.3 and 1.4",
+       "There is no root",
+       "The root is 1.3"
+      ],
+      "answer": 1,
+      "why": "The sign change in a continuous function shows a root lies between 1.3 and 1.4. A needs more evidence."
+     }
+    }
+   ],
+   "practice": [
+    "Show that x³ + 2x − 5 = 0 has a root between 1 and 2",
+    "Show that the root is between 1.3 and 1.4",
+    "Show x³ + x − 3 = 0 has root 1.21 to 2 d.p.",
+    "State why f needs to be continuous"
+   ],
+   "independent": [
+    "Core: f(x) = x³ − 4x − 1: find f(2) and f(3) and state what you can say; then f(2.1), f(2.2).",
+    "Extend: For x³ + 2x − 5 = 0 use xₙ₊₁ = ∛(5 − 2xₙ) from x₀ = 1.3, then prove the root to 2 d.p.",
+    "Stretch: Explain why f(x) = 1/x has f(−1) < 0 < f(1) but no root between −1 and 1."
+   ],
+   "exit": [
+    "Show x³ − 3x + 1 = 0 has a root between 1 and 2 (f(1) = −1, f(2) = 3)",
+    "What does a change of sign show?",
+    "What must be true of f for the change-of-sign argument to work?"
+   ],
+   "homework": "Three 'show that a root lies between' questions and one iteration then bounds proof.",
+   "send": "Higher only. SEND/EAL: template 'f(a) = __, f(b) = __, signs differ, so root between a and b'. Stretch: bisection to 3 d.p."
+  }
+ ]
+}

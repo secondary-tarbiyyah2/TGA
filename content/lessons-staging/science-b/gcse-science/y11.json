@@ -1,0 +1,2831 @@
+{
+ "subject": "Science",
+ "year": "y11",
+ "board": "Pearson Edexcel International GCSE Physics (4PH1)",
+ "boardShort": "Edexcel IGCSE",
+ "source": "Edexcel IGCSE Physics 4PH1 specification (units Physics 5-8, Y11). Existing UK-GCSE lessons in content/lessons/gcse-science/y11.json already cover Physics 8 gravity and the Solar System, g on other bodies, orbital speed (v = 2 pi r / T), life cycles of stars, colour and temperature, absolute magnitude and the HR diagram, red-shift and the CMB, so Physics 8 here adds orbits of comets and satellites and one consolidation lesson in exam terms.",
+ "lessons": [
+  {
+   "unit": "Physics 5: Solids, liquids and gases",
+   "n": 1,
+   "title": "Density and how to measure it",
+   "duration": 50,
+   "bigQuestion": "How can a steel ship float when a steel nail sinks?",
+   "objectives": [
+    "Calculate density using ρ = m ÷ V",
+    "Describe how to measure the density of regular solids, irregular solids and liquids",
+    "Use density to predict floating and sinking"
+   ],
+   "successCriteria": [
+    "All: use ρ = m ÷ V with consistent units",
+    "Most: describe a practical method for a regular and an irregular solid",
+    "Some: convert units between g/cm³ and kg/m³ and evaluate sources of error"
+   ],
+   "crossCurricular": "Maths: volume formulae and unit conversions; Chemistry: properties of materials",
+   "smsc": "Spiritual: appreciating Archimedes-style discoveries as part of humanity's shared scientific heritage",
+   "keywords": [
+    {
+     "term": "density",
+     "def": "mass per unit volume, ρ = m ÷ V"
+    },
+    {
+     "term": "displacement",
+     "def": "water pushed aside by a submerged object, equal to its volume"
+    },
+    {
+     "term": "volume",
+     "def": "the space an object takes up"
+    },
+    {
+     "term": "irregular solid",
+     "def": "a solid with no simple formula for its volume"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the volume of a cuboid 5.0 cm by 4.0 cm by 2.0 cm.",
+    "Convert 2500 g to kg.",
+    "State what the unit cm³ measures."
+   ],
+   "teach": [
+    {
+     "heading": "Density",
+     "bullets": [
+      "Density = mass ÷ volume",
+      "ρ = m ÷ V",
+      "Units: g/cm³ or kg/m³",
+      "1 g/cm³ = 1000 kg/m³"
+     ],
+     "note": "Show a cube of aluminium and a cube of wood with the same size, and ask which has more mass. Density is how closely packed the matter is. Water is 1.0 g/cm³ (1000 kg/m³); stress conversion before comparison.",
+     "model": {
+      "problem": "An aluminium block measures 5.0 cm by 4.0 cm by 2.0 cm and has mass 108 g. Calculate its density in g/cm³ and in kg/m³.",
+      "steps": [
+       "V = 5.0 × 4.0 × 2.0 = 40 cm³",
+       "ρ = m ÷ V = 108 ÷ 40 = 2.7 g/cm³",
+       "1 g/cm³ = 1000 kg/m³",
+       "So 2.7 g/cm³ = 2700 kg/m³"
+      ],
+      "answer": "Density = 2.7 g/cm³ = 2700 kg/m³"
+     }
+    },
+    {
+     "heading": "Core practical: finding density",
+     "bullets": [
+      "Regular solid: measure length, width and height; find mass on a balance",
+      "Irregular solid: fill a displacement (eureka) can; collect water displaced",
+      "Liquid: measure mass of an empty measuring cylinder, then with liquid",
+      "Calculate ρ = m ÷ V each time"
+     ],
+     "note": "Pupils do at least two methods. Variables: independent: material; dependent: density; control: temperature. Reduce error by reading the meniscus at eye level, taking repeats, and zeroing the balance. Safety: do not drop heavy blocks; wipe up spills.",
+     "model": {
+      "problem": "A stone has mass 156 g. It is lowered into a measuring cylinder, and the water level rises from 50 cm³ to 110 cm³. Calculate its density.",
+      "steps": [
+       "Volume of stone = 110 - 50 = 60 cm³",
+       "ρ = m ÷ V = 156 ÷ 60",
+       "ρ = 2.6 g/cm³ (2600 kg/m³)"
+      ],
+      "answer": "Density = 2.6 g/cm³"
+     }
+    },
+    {
+     "heading": "Floating and sinking",
+     "bullets": [
+      "Less dense than the fluid: floats",
+      "More dense than the fluid: sinks",
+      "Ships are hollow: average density less than water"
+     ],
+     "note": "Ask pupils to explain the big question: a steel ship contains a large volume of air so its average density is below that of water. Use plasticine in a ball and in a boat shape to demonstrate.",
+     "misconception": {
+      "wrong": "Heavy objects always sink and light objects always float.",
+      "right": "Whether an object floats depends on its density compared with the fluid. A huge ship floats; a small coin sinks."
+     }
+    },
+    {
+     "heading": "Check: units",
+     "bullets": [
+      "Choose the right answer"
+     ],
+     "note": "Option A forgets to convert; B inverts the formula. Ask pupils to show the conversion line.",
+     "check": {
+      "q": "A 500 g object has a volume of 250 cm³. What is its density?",
+      "options": [
+       "0.5 g/cm³",
+       "2.0 g/cm³",
+       "125 000 g/cm³",
+       "2000 g/cm³"
+      ],
+      "answer": 1,
+      "why": "ρ = 500 ÷ 250 = 2.0 g/cm³ (2000 kg/m³). 0.5 is volume ÷ mass."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the density of a block of mass 480 g and volume 600 cm³.",
+    "A liquid has density 0.80 g/cm³. Calculate the mass of 250 cm³ of it.",
+    "A metal sphere of mass 0.27 kg displaces 100 cm³ of water. Calculate its density in kg/m³."
+   ],
+   "independent": [
+    "Core: Describe how to find the density of a small irregular stone.",
+    "Extend: A 2.0 m³ tank holds oil of density 900 kg/m³. Calculate the mass of the oil.",
+    "Stretch: A student gets a density of 8.4 g/cm³ for a metal known to be 8.9 g/cm³. Suggest two possible errors and say which direction each would push the result."
+   ],
+   "exit": [
+    "State the equation for density.",
+    "Explain why a steel ship floats."
+   ],
+   "homework": "Write the method for finding the density of a liquid, including a table headed with units and a way to improve accuracy.",
+   "send": "SEND: give a formula triangle and a unit conversion card. EAL: pre-teach displace, meniscus. Stretch: use density to identify a metal."
+  },
+  {
+   "unit": "Physics 5: Solids, liquids and gases",
+   "n": 2,
+   "title": "Pressure in solids and fluids: p = F ÷ A and p = hρg",
+   "duration": 50,
+   "bigQuestion": "Why do snowshoes stop you sinking in snow, and why do divers feel more pressure the deeper they go?",
+   "objectives": [
+    "Calculate pressure using p = F ÷ A",
+    "Explain pressure in a fluid and its variation with depth",
+    "Calculate pressure difference using Δp = hρg"
+   ],
+   "successCriteria": [
+    "All: use p = F ÷ A",
+    "Most: explain why pressure increases with depth",
+    "Some: calculate pressure difference in a liquid"
+   ],
+   "crossCurricular": "Geography: ocean depth; Engineering: dams and submarines",
+   "smsc": "Spiritual: wonder at the huge forces within the oceans",
+   "keywords": [
+    {
+     "term": "pressure",
+     "def": "force acting per unit area, p = F ÷ A, measured in pascals (Pa)"
+    },
+    {
+     "term": "pascal",
+     "def": "one newton per square metre"
+    },
+    {
+     "term": "depth",
+     "def": "distance below the surface of a fluid"
+    },
+    {
+     "term": "fluid",
+     "def": "a liquid or a gas"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the weight of a 60 kg person (g = 10 N/kg).",
+    "State the equation for density.",
+    "Calculate the area of a rectangle 0.30 m by 0.20 m."
+   ],
+   "teach": [
+    {
+     "heading": "Pressure on a surface",
+     "bullets": [
+      "Pressure = force ÷ area",
+      "p = F ÷ A",
+      "Unit: pascal (Pa) = N/m²",
+      "Large area: small pressure; small area: large pressure"
+     ],
+     "note": "Hold up a drawing pin: why is it pushed in more easily from the sharp side? Ask pupils to explain snowshoes and knife blades. Insist on area in m² (1 m² = 10 000 cm²).",
+     "model": {
+      "problem": "A person weighing 600 N stands on two feet of total area 0.040 m². Calculate the pressure on the ground. What is it on one foot?",
+      "steps": [
+       "p = F ÷ A = 600 ÷ 0.040",
+       "p = 15 000 Pa",
+       "On one foot A = 0.020 m²",
+       "p = 600 ÷ 0.020 = 30 000 Pa"
+      ],
+      "answer": "15 000 Pa on two feet; 30 000 Pa on one foot"
+     }
+    },
+    {
+     "heading": "Pressure in a fluid",
+     "bullets": [
+      "Particles in a fluid collide with surfaces, causing pressure",
+      "Pressure acts equally in all directions at the same depth",
+      "Pressure increases with depth",
+      "Pressure also increases with density of the fluid"
+     ],
+     "note": "Use a plastic bottle with three holes at different heights; water spurts farthest from the bottom hole. Explain that the deeper fluid carries the weight of the fluid above it. Dams are thicker at the bottom.",
+     "table": {
+      "head": [
+       "Depth",
+       "What changes",
+       "Why"
+      ],
+      "rows": [
+       [
+        "Greater",
+        "pressure increases",
+        "more fluid above"
+       ],
+       [
+        "Same depth",
+        "same pressure in all directions",
+        "fluid particles hit surfaces at random"
+       ],
+       [
+        "Denser fluid",
+        "pressure increases",
+        "more mass above for the same depth"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Pressure difference in a liquid",
+     "bullets": [
+      "Δp = h × ρ × g",
+      "h: depth difference (m); ρ: density (kg/m³)",
+      "g = 10 N/kg",
+      "This is the extra pressure above the surface pressure"
+     ],
+     "note": "Derive quickly: pressure = weight ÷ area = (ρ × A × h × g) ÷ A, and A cancels. Mention that total pressure includes atmospheric pressure (about 100 000 Pa) in addition.",
+     "model": {
+      "problem": "A diver is 10 m below the surface of seawater (density 1030 kg/m³). Calculate the pressure due to the water. (g = 10 N/kg)",
+      "steps": [
+       "Δp = hρg",
+       "= 10 × 1030 × 10",
+       "= 103 000 Pa (about 1 atmosphere)"
+      ],
+      "answer": "Pressure due to the water = 103 000 Pa"
+     }
+    },
+    {
+     "heading": "Check: depth",
+     "bullets": [
+      "Choose the answer"
+     ],
+     "note": "Option A reverses the relationship between depth and pressure. Option D is the common misconception that pressure depends on container width.",
+     "check": {
+      "q": "A submarine dives from 50 m to 150 m below the surface. Compared with 50 m, the pressure due to the water is...",
+      "options": [
+       "lower",
+       "three times the pressure at 50 m due to water",
+       "unchanged",
+       "the same as at the surface"
+      ],
+      "answer": 1,
+      "why": "Pressure due to the liquid is proportional to depth. 150 m is three times 50 m. (Total pressure includes atmospheric pressure.)"
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the pressure when a force of 200 N acts on an area of 0.50 m².",
+    "Calculate the pressure at the bottom of a 2.0 m deep swimming pool of water (1000 kg/m³).",
+    "A box exerts 120 N on 0.030 m². Calculate the pressure."
+   ],
+   "independent": [
+    "Core: Explain why sharp knives cut better than blunt ones.",
+    "Extend: A 1500 kg car rests on four tyres each in contact with 0.020 m² of road. Calculate the pressure under each tyre. (g = 10 N/kg)",
+    "Stretch: A reservoir wall is 30 m below the surface at the base. Calculate the pressure difference between the top and base of the wall and explain why the wall is thicker at the bottom."
+   ],
+   "exit": [
+    "State the equation for pressure in a liquid.",
+    "Explain why pressure increases with depth."
+   ],
+   "homework": "Explain in four sentences why camel feet or snowshoes spread weight, using the equation p = F ÷ A.",
+   "send": "SEND: give a worked-example frame with units. EAL: pre-teach pascal, area, depth. Stretch: calculate total pressure including the atmosphere."
+  },
+  {
+   "unit": "Physics 5: Solids, liquids and gases",
+   "n": 3,
+   "title": "States of matter, changes of state and latent energy",
+   "duration": 50,
+   "bigQuestion": "Why does a pan of boiling water stay at 100 °C even though the hob keeps supplying energy?",
+   "objectives": [
+    "Describe the arrangement and motion of particles in solids, liquids and gases",
+    "Describe changes of state",
+    "Interpret a heating curve using the idea of latent energy"
+   ],
+   "successCriteria": [
+    "All: describe particle arrangements in each state",
+    "Most: label a heating curve and name each change",
+    "Some: explain the plateau in terms of energy changing potential energy, not temperature"
+   ],
+   "crossCurricular": "Chemistry: particle model; Geography: the water cycle",
+   "smsc": "Spiritual: reflecting on the ordered behaviour of matter",
+   "keywords": [
+    {
+     "term": "melting",
+     "def": "solid becomes liquid at the melting point"
+    },
+    {
+     "term": "boiling",
+     "def": "liquid becomes gas throughout the liquid at the boiling point"
+    },
+    {
+     "term": "evaporation",
+     "def": "liquid becomes gas at the surface at any temperature"
+    },
+    {
+     "term": "latent energy",
+     "def": "energy absorbed or released during a change of state without a change in temperature"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the three states of matter.",
+    "State the equation for density.",
+    "Explain why gases are easy to compress."
+   ],
+   "teach": [
+    {
+     "heading": "Particle models",
+     "bullets": [
+      "Solid: fixed positions, vibrate, strong forces",
+      "Liquid: close together, slide past each other",
+      "Gas: far apart, move randomly at high speed",
+      "Density: solid and liquid high; gas low"
+     ],
+     "note": "Use ball-bearing or marble diagrams. Ask which state has most kinetic energy and why gases have low density: particles are far apart. Link to compressibility of gases.",
+     "table": {
+      "head": [
+       "State",
+       "Arrangement",
+       "Movement"
+      ],
+      "rows": [
+       [
+        "Solid",
+        "regular, close",
+        "vibrate about fixed positions"
+       ],
+       [
+        "Liquid",
+        "irregular, close",
+        "move around each other"
+       ],
+       [
+        "Gas",
+        "far apart",
+        "random, fast, free"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Changes of state",
+     "bullets": [
+      "Melting and freezing at the melting point",
+      "Boiling and condensing at the boiling point",
+      "Sublimation: solid to gas directly",
+      "Energy is transferred, but the particle number stays the same"
+     ],
+     "note": "Pupils use arrows to show transfers: heating gives energy in, cooling takes energy out. Mass is conserved in changes of state since only the arrangement changes.",
+     "cycle": [
+      "Solid melts to liquid (energy in)",
+      "Liquid boils to gas (energy in)",
+      "Gas condenses to liquid (energy out)",
+      "Liquid freezes to solid (energy out)"
+     ]
+    },
+    {
+     "heading": "Heating curve and latent energy",
+     "bullets": [
+      "Temperature rises: particles gain kinetic energy",
+      "Plateau: energy breaks bonds (potential energy rises)",
+      "Temperature stays constant during a change of state",
+      "Cooling curves are the reverse"
+     ],
+     "note": "Sketch a heating curve for ice at -20°C to steam. Ask: what happens to the energy input on the plateau? It increases the potential energy of the particles as they separate, so average kinetic energy and temperature are unchanged. Write 'latent' as 'hidden'.",
+     "model": {
+      "problem": "Describe and explain the shape of a heating curve for ice taken from -10°C to 120°C.",
+      "steps": [
+       "Ice warms to 0°C: temperature rises, kinetic energy rises",
+       "Plateau at 0°C: melting; energy breaks bonds, no temperature change",
+       "Water warms to 100°C: temperature rises again",
+       "Plateau at 100°C: boiling; then steam warms above 100°C"
+      ],
+      "answer": "Two plateaus appear at the melting and boiling points; the flat sections are latent energy and the sloping sections are temperature rises"
+     }
+    },
+    {
+     "heading": "Check: boiling",
+     "bullets": [
+      "Choose the best explanation"
+     ],
+     "note": "Option A is the misconception that the energy disappears. Ask pupils to say where the energy goes.",
+     "check": {
+      "q": "During boiling, the temperature of water stays at 100°C because the energy supplied...",
+      "options": [
+       "is lost to the surroundings",
+       "is used to separate the particles",
+       "stops the particles moving",
+       "makes the particles heavier"
+      ],
+      "answer": 1,
+      "why": "The energy increases the potential energy as particles separate. The kinetic energy and temperature stay the same."
+     }
+    }
+   ],
+   "practice": [
+    "Describe the arrangement of particles in a liquid.",
+    "State the difference between evaporation and boiling.",
+    "Explain why steam at 100°C causes worse burns than water at 100°C."
+   ],
+   "independent": [
+    "Core: Draw and label a heating curve for water.",
+    "Extend: Describe how the particle model explains why a gas fills its container.",
+    "Stretch: Explain, using ideas of kinetic energy and potential energy, why evaporation cools a liquid."
+   ],
+   "exit": [
+    "State what latent energy means.",
+    "Explain why the temperature does not change while a solid melts."
+   ],
+   "homework": "Draw a flow diagram of the changes of state, annotated with the energy transfers, and write a paragraph on the plateau.",
+   "send": "SEND: label-the-curve template with word bank. EAL: pre-teach latent, plateau, sublimation. Stretch: E = mL for latent heat calculations (check against the specification)."
+  },
+  {
+   "unit": "Physics 5: Solids, liquids and gases",
+   "n": 4,
+   "title": "Specific heat capacity",
+   "duration": 50,
+   "bigQuestion": "Why does the sea stay cool on a hot day while the sand burns your feet?",
+   "objectives": [
+    "Define specific heat capacity",
+    "Use ΔQ = mcΔθ",
+    "Describe an experiment to measure specific heat capacity"
+   ],
+   "successCriteria": [
+    "All: state what specific heat capacity means",
+    "Most: use ΔQ = mcΔθ to find energy, mass or temperature change",
+    "Some: analyse experimental data and evaluate heat losses"
+   ],
+   "crossCurricular": "Geography: sea breezes and climate; Maths: rearranging",
+   "smsc": "Moral: careful and honest evaluation of experimental error",
+   "keywords": [
+    {
+     "term": "specific heat capacity",
+     "def": "the energy needed to raise the temperature of 1 kg of a material by 1 °C"
+    },
+    {
+     "term": "thermal energy",
+     "def": "energy transferred because of a temperature difference"
+    },
+    {
+     "term": "temperature change",
+     "def": "final temperature minus initial temperature, Δθ"
+    },
+    {
+     "term": "insulation",
+     "def": "material used to reduce heat loss"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the energy transferred by a 60 W heater in 5.0 minutes.",
+    "Convert 500 g to kg.",
+    "Explain what temperature measures."
+   ],
+   "teach": [
+    {
+     "heading": "What is specific heat capacity?",
+     "bullets": [
+      "Different materials need different energy to warm up",
+      "c is the energy per kg per °C",
+      "Water: about 4200 J/kg°C; aluminium about 900 J/kg°C",
+      "High c: heats up slowly, cools slowly"
+     ],
+     "note": "Link to the big question: water has a high c and also mixes and evaporates, so the sea warms slowly. Sand has a low c. Ask pupils to use units to remember: J per kg per °C.",
+     "model": {
+      "problem": "Calculate the energy needed to heat 2.0 kg of water from 20°C to 40°C (c = 4200 J/kg°C).",
+      "steps": [
+       "ΔQ = m × c × Δθ",
+       "Δθ = 40 - 20 = 20°C",
+       "ΔQ = 2.0 × 4200 × 20",
+       "ΔQ = 168 000 J"
+      ],
+      "answer": "Energy = 168 000 J (168 kJ)"
+     }
+    },
+    {
+     "heading": "Core practical: finding c for a metal block",
+     "bullets": [
+      "Insulated block with a heater and a thermometer in drilled holes",
+      "Record the starting temperature",
+      "Heat for 5 minutes with a joulemeter or measure V, I and t",
+      "Calculate c = E ÷ (m × Δθ)"
+     ],
+     "note": "Independent variable: heating time; dependent: temperature; controls: mass of the block, insulation. Energy by E = IVt. Expected: temperature rises roughly linearly with energy; the gradient is 1/(mc). Heat losses mean the measured c is higher than the true value. Safety: the heater and block get hot; do not touch.",
+     "model": {
+      "problem": "A 0.50 kg aluminium block is heated by a 60 W heater for 5.0 minutes and its temperature rises by 40°C. Calculate its specific heat capacity.",
+      "steps": [
+       "E = P × t = 60 × 300 = 18 000 J",
+       "c = E ÷ (m × Δθ)",
+       "c = 18 000 ÷ (0.50 × 40)",
+       "c = 900 J/kg°C"
+      ],
+      "answer": "c = 900 J/kg°C"
+     }
+    },
+    {
+     "heading": "Improving the experiment",
+     "bullets": [
+      "Insulate the block to reduce losses",
+      "Add a little oil in the thermometer hole for good contact",
+      "Take the maximum temperature reached",
+      "Plot temperature against energy and use the gradient"
+     ],
+     "note": "Ask pupils to explain what the result would be if a lot of heat was lost to the room: more energy was supplied than the block gained, so the calculated c is too high. Ask for improvements and their effect.",
+     "misconception": {
+      "wrong": "A material with a high specific heat capacity heats up quickly.",
+      "right": "A high specific heat capacity means a lot of energy is needed for each degree, so it heats up slowly."
+     }
+    },
+    {
+     "heading": "Check: rearranging",
+     "bullets": [
+      "Select the answer"
+     ],
+     "note": "Option B forgets mass. Option C multiplies where division is needed.",
+     "check": {
+      "q": "The energy needed to heat 0.50 kg of a liquid by 10°C is 10 500 J. What is c?",
+      "options": [
+       "2100 J/kg°C",
+       "1050 J/kg°C",
+       "52 500 J/kg°C",
+       "21 J/kg°C"
+      ],
+      "answer": 0,
+      "why": "c = 10 500 ÷ (0.50 × 10) = 2100 J/kg°C. 1050 forgets that mass is 0.50 kg."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the energy needed to heat 1.5 kg of water by 30°C (c = 4200 J/kg°C).",
+    "A 2.0 kg copper block (c = 390 J/kg°C) cools by 50°C. Calculate the energy released.",
+    "A 3.0 kW kettle heats 1.0 kg of water from 20°C. How long does it take to reach 80°C, ignoring heat loss?"
+   ],
+   "independent": [
+    "Core: State why a metal pan is made of a material with a low specific heat capacity.",
+    "Extend: 4.2 kJ heats a 0.20 kg block by 21°C. Calculate its specific heat capacity.",
+    "Stretch: A student finds c for a block is 1100 J/kg°C when the book value is 900. Explain the cause and suggest two improvements."
+   ],
+   "exit": [
+    "Write the equation for the energy needed to change a temperature.",
+    "State what the units J/kg°C tell you."
+   ],
+   "homework": "Write up the specific-heat-capacity experiment with a results table, an energy-temperature graph and an evaluation.",
+   "send": "SEND: give a rearrangement triangle for ΔQ, m, c and Δθ. EAL: pre-teach capacity, insulate. Stretch: connect c to the particle model."
+  },
+  {
+   "unit": "Physics 5: Solids, liquids and gases",
+   "n": 5,
+   "title": "Gases: pressure, temperature and the Kelvin scale",
+   "duration": 50,
+   "bigQuestion": "Why is it dangerous to put an aerosol can in a fire?",
+   "objectives": [
+    "Explain gas pressure using the kinetic model",
+    "State absolute zero and convert between °C and K",
+    "Use p₁ ÷ T₁ = p₂ ÷ T₂ at constant volume"
+   ],
+   "successCriteria": [
+    "All: explain gas pressure by particle collisions",
+    "Most: convert °C to K and calculate pressure changes",
+    "Some: explain the temperature effect using particle speed and collision rate"
+   ],
+   "crossCurricular": "Chemistry: kinetic theory; DT: pressure vessels",
+   "smsc": "Moral: safe handling of pressurised containers and aerosols",
+   "keywords": [
+    {
+     "term": "kinetic theory",
+     "def": "gases are made of particles in constant random motion"
+    },
+    {
+     "term": "absolute zero",
+     "def": "the lowest possible temperature, 0 K or -273 °C"
+    },
+    {
+     "term": "kelvin",
+     "def": "SI unit of temperature, T (K) = θ (°C) + 273"
+    },
+    {
+     "term": "gas pressure",
+     "def": "force per unit area from particles colliding with the walls"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the equation for pressure.",
+    "Describe the motion of particles in a gas.",
+    "Convert 25°C into kelvin."
+   ],
+   "teach": [
+    {
+     "heading": "Why gases exert pressure",
+     "bullets": [
+      "Particles move randomly and collide with the walls",
+      "Each collision gives a tiny force",
+      "Many collisions per second: steady pressure",
+      "Heating makes particles faster: more frequent, harder collisions"
+     ],
+     "note": "Use a trolley or a model with ball bearings in a shaking tray. Ask: if you double the number of particles in the same volume, what happens to pressure? It increases. The container is not 'pushing outwards'; it is particles hitting walls.",
+     "cycle": [
+      "Gas heated: particles gain kinetic energy",
+      "Particles move faster",
+      "They hit the walls more often",
+      "Each collision exerts a greater force",
+      "Pressure rises (fixed volume)"
+     ]
+    },
+    {
+     "heading": "Absolute zero and the Kelvin scale",
+     "bullets": [
+      "Lowest possible temperature: -273°C = 0 K",
+      "Particles have minimum kinetic energy",
+      "T (K) = θ (°C) + 273",
+      "A change of 1 K equals a change of 1°C"
+     ],
+     "note": "Pressure falls linearly with temperature in a sealed container, and extrapolates to zero at -273°C. Stress that gas law calculations need kelvin, not Celsius. Typical error: using Celsius.",
+     "table": {
+      "head": [
+       "Celsius (°C)",
+       "Kelvin (K)"
+      ],
+      "rows": [
+       [
+        "-273",
+        "0"
+       ],
+       [
+        "0",
+        "273"
+       ],
+       [
+        "20",
+        "293"
+       ],
+       [
+        "100",
+        "373"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Pressure and temperature at constant volume",
+     "bullets": [
+      "p₁ ÷ T₁ = p₂ ÷ T₂",
+      "Use kelvin for T",
+      "Pressure is proportional to the kelvin temperature",
+      "Volume and amount of gas are fixed"
+     ],
+     "note": "Show a sealed flask with a pressure gauge in water baths. A graph of p against T (K) is a straight line through the origin. State it as p ∝ T.",
+     "model": {
+      "problem": "A sealed container of gas is at 1.0 × 10⁵ Pa and 27°C. It is heated to 87°C. Calculate the new pressure.",
+      "steps": [
+       "T₁ = 27 + 273 = 300 K",
+       "T₂ = 87 + 273 = 360 K",
+       "p₂ = p₁ × T₂ ÷ T₁ = 1.0 × 10⁵ × 360 ÷ 300",
+       "p₂ = 1.2 × 10⁵ Pa"
+      ],
+      "answer": "New pressure = 1.2 × 10⁵ Pa"
+     }
+    },
+    {
+     "heading": "Check: Celsius trap",
+     "bullets": [
+      "Pick the right method"
+     ],
+     "note": "Option A is the typical error of using Celsius. Option B adds instead of using a ratio.",
+     "check": {
+      "q": "A gas at 20°C is heated to 40°C at constant volume. Which statement about its pressure is correct?",
+      "options": [
+       "It doubles",
+       "It increases by about 7% because 313 ÷ 293 = 1.07",
+       "It stays the same",
+       "It increases by 20 Pa"
+      ],
+      "answer": 1,
+      "why": "Use kelvin: 20°C = 293 K, 40°C = 313 K. The ratio is 1.07, so pressure increases about 7%, not 100%."
+     }
+    }
+   ],
+   "practice": [
+    "Convert -73°C and 127°C to kelvin.",
+    "A gas at 2.0 × 10⁵ Pa and 300 K is cooled to 150 K at constant volume. Calculate the new pressure.",
+    "Explain in terms of particles why a heated gas in a sealed container has a higher pressure."
+   ],
+   "independent": [
+    "Core: Explain why an aerosol can must not be heated.",
+    "Extend: A car tyre has an air pressure of 2.2 × 10⁵ Pa at 10°C. After a long drive the temperature is 40°C. Calculate the new pressure, assuming a constant volume.",
+    "Stretch: Explain why the p-T graph for a gas extrapolates to zero pressure at -273°C, and why no real gas can reach absolute zero."
+   ],
+   "exit": [
+    "State the value of absolute zero in °C and K.",
+    "State why temperatures must be in kelvin for p₁ ÷ T₁ = p₂ ÷ T₂."
+   ],
+   "homework": "Make a leaflet warning about the dangers of leaving aerosol cans in a hot car, with the particle explanation and one calculation.",
+   "send": "SEND: give a conversion card and a step table (convert, substitute, rearrange). EAL: pre-teach random, collide, absolute. Stretch: the link between temperature and average kinetic energy."
+  },
+  {
+   "unit": "Physics 5: Solids, liquids and gases",
+   "n": 6,
+   "title": "Gases: pressure and volume (Boyle's law)",
+   "duration": 50,
+   "bigQuestion": "Why does a bubble get bigger as it rises from the bottom of a pool to the surface?",
+   "objectives": [
+    "Explain why pressure increases when the volume of a gas decreases",
+    "Use p₁V₁ = p₂V₂ at constant temperature",
+    "Describe an experiment to investigate pressure and volume"
+   ],
+   "successCriteria": [
+    "All: explain the effect of compressing a gas",
+    "Most: use p₁V₁ = p₂V₂",
+    "Some: analyse p-V and p against 1/V graphs"
+   ],
+   "crossCurricular": "Maths: inverse proportion; Diving: gas laws",
+   "smsc": "Spiritual: appreciating how consistent patterns in nature allow safe technology such as diving and pumps",
+   "keywords": [
+    {
+     "term": "Boyle's law",
+     "def": "at constant temperature, pressure × volume is constant for a fixed mass of gas"
+    },
+    {
+     "term": "compression",
+     "def": "squeezing a gas into a smaller volume"
+    },
+    {
+     "term": "inverse proportion",
+     "def": "as one quantity increases, the other decreases at the same rate"
+    },
+    {
+     "term": "constant temperature",
+     "def": "temperature that stays the same during an investigation"
+    }
+   ],
+   "starter": [
+    "Bismillah. State why a heated gas in a sealed container has greater pressure.",
+    "Convert 100°C to kelvin.",
+    "Calculate 4.0 × 10⁵ ÷ 2.0."
+   ],
+   "teach": [
+    {
+     "heading": "Smaller volume, greater pressure",
+     "bullets": [
+      "Same number of particles in a smaller space",
+      "Particles hit the walls more often",
+      "Pressure increases",
+      "At constant temperature, p × V = constant"
+     ],
+     "note": "Use a syringe with the end sealed: pushing the plunger is harder as volume decreases. Ask pupils to say it in terms of collisions per second per unit area. Temperature must stay constant: compress slowly.",
+     "model": {
+      "problem": "A gas of volume 120 cm³ is at 1.0 × 10⁵ Pa. It is compressed to 40 cm³ at constant temperature. Calculate the new pressure.",
+      "steps": [
+       "p₁V₁ = p₂V₂",
+       "1.0 × 10⁵ × 120 = p₂ × 40",
+       "p₂ = 1.2 × 10⁷ ÷ 40",
+       "p₂ = 3.0 × 10⁵ Pa"
+      ],
+      "answer": "New pressure = 3.0 × 10⁵ Pa"
+     }
+    },
+    {
+     "heading": "Core practical: pressure and volume",
+     "bullets": [
+      "Syringe connected to a pressure gauge",
+      "Trapped air: record volume and pressure",
+      "Compress or expand slowly in steps; wait for temperature to settle",
+      "Plot p against 1/V: a straight line through the origin"
+     ],
+     "note": "Independent variable: volume; dependent: pressure; control: temperature and mass of gas. Expected: p ∝ 1/V; pV roughly constant. Safety: keep within the syringe's pressure limit; eye protection is advisable. Slow movements keep the temperature constant.",
+     "check": {
+      "q": "In a syringe experiment, a student plots p against 1/V. What shape should the graph be?",
+      "options": [
+       "a curve falling to zero",
+       "a straight line through the origin",
+       "a horizontal line",
+       "a straight line with a negative gradient"
+      ],
+      "answer": 1,
+      "why": "p ∝ 1/V, so p against 1/V is a straight line through the origin. A p-V graph is a curve."
+     }
+    },
+    {
+     "heading": "Rising bubbles",
+     "bullets": [
+      "Pressure falls as the bubble rises",
+      "So its volume increases",
+      "Using p₁V₁ = p₂V₂ gives the new volume",
+      "Pressure at depth includes atmospheric pressure"
+     ],
+     "note": "Use absolute pressure: at 10 m under water the pressure is about 2 atmospheres (2.0 × 10⁵ Pa). Link back to the big question. Safety link: divers must exhale on ascent to avoid lung over-expansion.",
+     "model": {
+      "problem": "A bubble of 2.0 cm³ at the bottom of a pool has pressure 2.0 × 10⁵ Pa. At the surface the pressure is 1.0 × 10⁵ Pa. Calculate its volume there, assuming constant temperature.",
+      "steps": [
+       "p₁V₁ = p₂V₂",
+       "2.0 × 10⁵ × 2.0 = 1.0 × 10⁵ × V₂",
+       "V₂ = 4.0 × 10⁵ ÷ 1.0 × 10⁵",
+       "V₂ = 4.0 cm³"
+      ],
+      "answer": "Volume at the surface = 4.0 cm³"
+     }
+    },
+    {
+     "heading": "Common errors",
+     "bullets": [
+      "Using Celsius values or mixing units",
+      "Forgetting that the temperature must be constant",
+      "Using gauge pressure instead of total pressure"
+     ],
+     "note": "Remind pupils that Boyle's law needs constant temperature and mass; the Kelvin law needs constant volume. Ask them to label each law with its constants.",
+     "misconception": {
+      "wrong": "When a gas is compressed, its pressure doubles whenever the volume is halved, whatever the temperature.",
+      "right": "Pressure doubles when the volume halves only if the temperature and amount of gas stay constant."
+     }
+    }
+   ],
+   "practice": [
+    "A gas has pressure 1.0 × 10⁵ Pa and volume 600 cm³. It is compressed to 150 cm³. Calculate the new pressure.",
+    "A gas of volume 2.0 m³ at 5.0 × 10⁴ Pa expands to 5.0 m³. Calculate the new pressure.",
+    "Explain in terms of particles why the pressure rises when a gas is compressed."
+   ],
+   "independent": [
+    "Core: Describe how to investigate how the pressure of a gas varies with volume.",
+    "Extend: A bicycle pump holds 400 cm³ of air at 1.0 × 10⁵ Pa. The air is compressed into 50 cm³ in the tyre. Calculate the pressure.",
+    "Stretch: A diver breathes out a bubble of 5.0 cm³ at 20 m depth where p = 3.0 × 10⁵ Pa. Calculate its volume at the surface and explain the safety lesson for ascent."
+   ],
+   "exit": [
+    "State the equation for Boyle's law.",
+    "State the condition needed for Boyle's law."
+   ],
+   "homework": "Complete a summary table of the two gas laws: variables kept constant, equation, graph shape and particle explanation.",
+   "send": "SEND: give the two-law summary table with gaps. EAL: pre-teach compress, expand, constant. Stretch: combine laws as p₁V₁ ÷ T₁ = p₂V₂ ÷ T₂."
+  },
+  {
+   "unit": "Physics 6: Magnetism and electromagnetism",
+   "n": 7,
+   "title": "Magnets and magnetic fields",
+   "duration": 50,
+   "bigQuestion": "How does a compass find north, and why does a magnet attract a paperclip but not a plastic ruler?",
+   "objectives": [
+    "Describe the forces between magnetic poles and the shape of magnetic fields",
+    "Distinguish magnetically hard and soft materials",
+    "Explain induced magnetism"
+   ],
+   "successCriteria": [
+    "All: draw the field around a bar magnet with arrows",
+    "Most: describe how to plot a field with a compass and distinguish hard from soft",
+    "Some: explain induced magnetism and why a magnet always attracts iron"
+   ],
+   "crossCurricular": "Geography: navigation and the Earth's field; History: the compass in Muslim and world navigation",
+   "smsc": "Spiritual: the invisible order of the world around us",
+   "keywords": [
+    {
+     "term": "magnetic field",
+     "def": "the region around a magnet where a magnetic material feels a force"
+    },
+    {
+     "term": "magnetically soft",
+     "def": "easily magnetised and demagnetised, e.g. iron"
+    },
+    {
+     "term": "magnetically hard",
+     "def": "hard to magnetise but keeps its magnetism, e.g. steel"
+    },
+    {
+     "term": "induced magnetism",
+     "def": "a magnetic material becomes a magnet when placed in a magnetic field"
+    }
+   ],
+   "starter": [
+    "Bismillah. State two properties of a magnet that you know.",
+    "Name the particles that carry current in a wire.",
+    "State what is meant by like charges repel."
+   ],
+   "teach": [
+    {
+     "heading": "Poles and fields",
+     "bullets": [
+      "Like poles repel; unlike poles attract",
+      "Field lines leave the north pole and enter the south pole",
+      "Closer lines mean a stronger field",
+      "Between two unlike poles: nearly uniform field"
+     ],
+     "note": "Show iron filings and plotting compasses. Draw the pattern for a bar magnet, two unlike poles facing each other and two like poles. Explain the neutral point between like poles where the field is zero. The only certain test for a magnet is repulsion.",
+     "table": {
+      "head": [
+       "Arrangement",
+       "Field pattern"
+      ],
+      "rows": [
+       [
+        "Bar magnet",
+        "curved lines from N to S, strongest at the poles"
+       ],
+       [
+        "Unlike poles facing",
+        "straight parallel lines between: uniform field"
+       ],
+       [
+        "Like poles facing",
+        "lines pushed apart; a neutral point in the middle"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Core practical: plotting a field",
+     "bullets": [
+      "Place a bar magnet on paper",
+      "Put a small plotting compass near the north pole",
+      "Mark both ends of the compass needle, then move it along",
+      "Join the marks to draw a field line"
+     ],
+     "note": "Pupils draw at least four field lines. Variables: not an investigation of variables, but a technique: keep the magnet fixed, and keep other magnets and iron away. Earth's field makes a compass needle align north-south; the Earth's geographic north is near a magnetic south pole.",
+     "model": {
+      "problem": "Describe how to plot a magnetic field line of a bar magnet using a plotting compass.",
+      "steps": [
+       "Place the magnet on paper; put the compass near the north pole",
+       "Mark dots at both ends of the compass needle",
+       "Move the compass so its tail sits on the previous front dot; mark again",
+       "Repeat until you reach the south pole, then join the dots with a smooth line"
+      ],
+      "answer": "A smooth curve from the north pole to the south pole shows one field line; repeat from other starting points"
+     }
+    },
+    {
+     "heading": "Hard and soft materials; induced magnetism",
+     "bullets": [
+      "Soft (iron): magnetised easily, loses magnetism quickly: electromagnets",
+      "Hard (steel): keeps its magnetism: permanent magnets",
+      "Iron near a magnet becomes a temporary magnet",
+      "The induced pole nearest is opposite: so always attracted"
+     ],
+     "note": "Show a paperclip chain hanging from a magnet: each clip is magnetised by induction. Ask why a magnet attracts both ends of a paperclip: it creates an opposite pole nearest to it. Only iron, steel, nickel and cobalt are magnetic; plastics, wood and aluminium are not.",
+     "misconception": {
+      "wrong": "A magnet can attract and repel an unmagnetised iron bar.",
+      "right": "A magnet only attracts unmagnetised iron, because it induces an opposite pole nearest to the magnet. Repulsion only happens with another magnet."
+     }
+    },
+    {
+     "heading": "Check: testing for a magnet",
+     "bullets": [
+      "Select the best test"
+     ],
+     "note": "Option A confuses attraction with magnetism, as induced magnetism also attracts. Pupils should justify the answer.",
+     "check": {
+      "q": "A rod is attracted to the north pole of a magnet and also attracted to the south pole. What can you conclude?",
+      "options": [
+       "The rod is a magnet",
+       "The rod is unmagnetised iron or steel",
+       "The rod is made of plastic",
+       "The rod is a south pole"
+      ],
+      "answer": 1,
+      "why": "A magnet would repel one of the poles. Attraction to both means the rod is a magnetic material, but not a magnet."
+     }
+    }
+   ],
+   "practice": [
+    "Draw the field around a bar magnet, using arrows.",
+    "Explain why steel is used for permanent magnets and iron for electromagnets.",
+    "A student brings a magnet near an iron nail and the nail picks up paperclips. Explain why."
+   ],
+   "independent": [
+    "Core: Describe how to plot the magnetic field of a bar magnet.",
+    "Extend: Sketch the field between the north pole of one magnet and the north pole of another and mark the neutral point.",
+    "Stretch: Explain, using induced magnetism, why a magnet can lift a chain of paperclips and why the chain collapses when the magnet is removed."
+   ],
+   "exit": [
+    "State the direction of field lines outside a magnet.",
+    "Define magnetically soft."
+   ],
+   "homework": "Draw and label three field patterns (bar magnet, two unlike poles, two like poles) and write one sentence under each.",
+   "send": "SEND: use a pre-drawn dot grid for field plotting. EAL: pre-teach pole, attract, repel, induced. Stretch: describe the Earth's magnetic field and how it protects against charged particles."
+  },
+  {
+   "unit": "Physics 6: Magnetism and electromagnetism",
+   "n": 8,
+   "title": "Electromagnets: the magnetic field of a current",
+   "duration": 50,
+   "bigQuestion": "How can a magnet be switched on and off, and why is that useful for lifting scrap metal?",
+   "objectives": [
+    "Describe the magnetic field around a current-carrying wire and a solenoid",
+    "State factors that affect the strength of an electromagnet",
+    "Describe uses of electromagnets including a relay"
+   ],
+   "successCriteria": [
+    "All: state that a current produces a magnetic field",
+    "Most: describe the field patterns and the factors affecting strength",
+    "Some: explain how a relay or electric bell works"
+   ],
+   "crossCurricular": "DT: electromagnetic devices; Engineering: recycling plants",
+   "smsc": "Moral: using science to improve everyday safety",
+   "keywords": [
+    {
+     "term": "solenoid",
+     "def": "a long coil of wire carrying a current, with a field like a bar magnet"
+    },
+    {
+     "term": "electromagnet",
+     "def": "a solenoid with an iron core that can be switched on and off"
+    },
+    {
+     "term": "relay",
+     "def": "a switch operated by an electromagnet"
+    },
+    {
+     "term": "core",
+     "def": "the iron placed inside a solenoid to strengthen the field"
+    }
+   ],
+   "starter": [
+    "Bismillah. Describe the field pattern of a bar magnet.",
+    "Explain what magnetically soft means.",
+    "State two uses of magnets."
+   ],
+   "teach": [
+    {
+     "heading": "Current produces a magnetic field",
+     "bullets": [
+      "A current in a wire makes a circular field around the wire",
+      "Reversing the current reverses the field direction",
+      "The field is stronger with greater current and nearer the wire",
+      "A solenoid gives a field like a bar magnet"
+     ],
+     "note": "Demonstrate with a vertical wire through card and plotting compasses, or iron filings. Direction of the field around a wire can be found with the right-hand grip rule (thumb along the current, fingers curl along the field). Check the specification for how the direction is examined.",
+     "compare": {
+      "left": {
+       "title": "Straight wire",
+       "points": [
+        "Concentric circles around the wire",
+        "Field weaker further away",
+        "Reverse the current: reverses the field"
+       ]
+      },
+      "right": {
+       "title": "Solenoid",
+       "points": [
+        "Field inside is strong and uniform",
+        "Outside resembles a bar magnet",
+        "Ends act as north and south poles"
+       ]
+      },
+      "label": "field patterns"
+     }
+    },
+    {
+     "heading": "Strengthening an electromagnet",
+     "bullets": [
+      "Increase the current",
+      "Add more turns of wire",
+      "Insert a soft iron core",
+      "Soft iron loses magnetism when the current stops"
+     ],
+     "note": "Practical: electromagnet picking up paperclips; independent variable: current (or turns); dependent: number of paperclips; controls: core, turns, same clips. Safety: wires and coils warm up; switch off between readings. Expected: more current and more turns lift more clips.",
+     "model": {
+      "problem": "Describe how you would investigate how the strength of an electromagnet depends on the number of turns.",
+      "steps": [
+       "Wind the wire round an iron nail; use 10 turns",
+       "Connect it to a fixed current from a power supply",
+       "Count the paperclips the nail can pick up",
+       "Repeat with 20, 30, 40 turns and plot clips against turns"
+      ],
+      "answer": "The number of paperclips should increase as the number of turns increases, for a constant current"
+     }
+    },
+    {
+     "heading": "Uses: relay and bell",
+     "bullets": [
+      "A small current switches a large current",
+      "Relay: electromagnet pulls an iron armature to close a second circuit",
+      "Electric bell: the armature breaks the circuit, so it vibrates repeatedly",
+      "Scrapyard crane: strong electromagnet switched off to release the load"
+     ],
+     "note": "Walk through the relay on the board: control circuit, electromagnet, soft iron armature, switch contacts, high-current circuit. Ask pupils why a relay is useful for safety: a low-voltage switch can control a mains device.",
+     "cycle": [
+      "Small current switches on the electromagnet in the control circuit",
+      "The electromagnet attracts the iron armature",
+      "The armature closes the contacts of the second circuit",
+      "A large current flows through the device",
+      "Current off: armature springs back and the circuit opens"
+     ]
+    },
+    {
+     "heading": "Check: electromagnet",
+     "bullets": [
+      "Choose the factor"
+     ],
+     "note": "Option C is the common misconception that the current direction affects the strength. Option D is not a factor for strength.",
+     "check": {
+      "q": "Which change would NOT make an electromagnet stronger?",
+      "options": [
+       "more turns of wire",
+       "a soft iron core",
+       "a bigger current",
+       "reversing the direction of the current"
+      ],
+      "answer": 3,
+      "why": "Reversing the current reverses the poles but does not change the strength."
+     }
+    }
+   ],
+   "practice": [
+    "State three ways to increase the strength of an electromagnet.",
+    "Explain why soft iron rather than steel is used for the core of an electromagnet in a crane.",
+    "Describe the field pattern around a solenoid."
+   ],
+   "independent": [
+    "Core: Describe how a relay allows a small current to switch a large current.",
+    "Extend: Explain how an electric bell works using an electromagnet and a spring contact.",
+    "Stretch: Explain why a coil with an iron core still lifts paperclips after the current is switched off if the core is steel, but not if it is iron."
+   ],
+   "exit": [
+    "State what happens to the field when the current is reversed.",
+    "Name one use of an electromagnet."
+   ],
+   "homework": "Draw a labelled diagram of a relay and write the numbered steps showing how it works.",
+   "send": "SEND: give a relay diagram with a word bank. EAL: pre-teach solenoid, armature, core. Stretch: investigate how field strength inside a solenoid varies with current."
+  },
+  {
+   "unit": "Physics 6: Magnetism and electromagnetism",
+   "n": 9,
+   "title": "The motor effect, d.c. motors and loudspeakers",
+   "duration": 50,
+   "bigQuestion": "How does a flowing current make a motor spin and a loudspeaker produce sound?",
+   "objectives": [
+    "Describe the force on a current-carrying wire in a magnetic field and use the left-hand rule",
+    "Explain how a d.c. motor works",
+    "Explain how a loudspeaker works"
+   ],
+   "successCriteria": [
+    "All: state that a force acts on a wire carrying current in a field",
+    "Most: use the left-hand rule and list ways to change the force",
+    "Some: explain the commutator and the loudspeaker in detail"
+   ],
+   "crossCurricular": "Engineering: electric vehicles; Music: loudspeakers and headphones",
+   "smsc": "Spiritual: the wonder of invisible forces that power our daily lives",
+   "keywords": [
+    {
+     "term": "motor effect",
+     "def": "a force on a current-carrying wire in a magnetic field"
+    },
+    {
+     "term": "left-hand rule",
+     "def": "a rule to find force direction from field and current direction"
+    },
+    {
+     "term": "commutator",
+     "def": "a split ring that reverses the current every half turn"
+    },
+    {
+     "term": "loudspeaker",
+     "def": "a device that uses the motor effect to make a cone vibrate"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the direction of field lines outside a magnet.",
+    "Name two ways to strengthen an electromagnet.",
+    "State the direction of conventional current."
+   ],
+   "teach": [
+    {
+     "heading": "The motor effect",
+     "bullets": [
+      "A wire carrying current in a magnetic field feels a force",
+      "Force is greatest when the wire is at 90° to the field",
+      "No force when the wire is parallel to the field",
+      "Reversing the current or the field reverses the force"
+     ],
+     "note": "Use a wire on a rail between magnets, or a jumping wire. The interaction is between the wire's field and the magnet's field. Increase the force: bigger current, stronger magnets.",
+     "model": {
+      "problem": "A wire carrying current out of the page lies in a field pointing from left to right. Use the left-hand rule to find the direction of the force.",
+      "steps": [
+       "First finger: field, pointing to the right",
+       "Second finger: conventional current, pointing out of the page towards you",
+       "The thumb is at right angles to both",
+       "Thumb points upwards: the force is up the page"
+      ],
+      "answer": "The force on the wire is upwards"
+     }
+    },
+    {
+     "heading": "The d.c. motor",
+     "bullets": [
+      "A coil in a magnetic field with current",
+      "Forces on opposite sides act in opposite directions",
+      "Coil rotates; commutator reverses the current each half turn",
+      "Keeps the rotation continuing in one direction"
+     ],
+     "note": "Draw the coil, magnets, split-ring commutator and carbon brushes. Ask what would happen without the commutator: the coil would flip back and forth and stop. To change speed: more current, stronger magnets, more turns. Reverse direction: swap the battery or magnets.",
+     "table": {
+      "head": [
+       "Part",
+       "Job"
+      ],
+      "rows": [
+       [
+        "Coil",
+        "carries the current and rotates"
+       ],
+       [
+        "Magnets",
+        "produce the field"
+       ],
+       [
+        "Split-ring commutator",
+        "reverses current every half turn"
+       ],
+       [
+        "Brushes",
+        "keep contact with the rotating commutator"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The loudspeaker",
+     "bullets": [
+      "Coil attached to a paper cone sits in a permanent magnet's field",
+      "Alternating current from the amplifier flows in the coil",
+      "Force on the coil moves it in and out",
+      "The cone vibrates the air, producing sound of the same frequency"
+     ],
+     "note": "Show a speaker with the cover removed. Ask: how does a higher-frequency signal change the sound? (Faster vibration, higher pitch; larger current gives larger amplitude, louder.)",
+     "misconception": {
+      "wrong": "The loudspeaker cone is moved by static electricity.",
+      "right": "A loudspeaker uses the motor effect: alternating current in the coil in a magnetic field makes the cone vibrate at the signal's frequency."
+     }
+    },
+    {
+     "heading": "Check: left-hand rule",
+     "bullets": [
+      "Pick the answer"
+     ],
+     "note": "Remind pupils that the second finger is the current direction. The most common error is mixing the field and current.",
+     "check": {
+      "q": "What happens to the force on a wire if both the current and the field are reversed?",
+      "options": [
+       "It reverses",
+       "It stays in the same direction",
+       "It doubles",
+       "It becomes zero"
+      ],
+      "answer": 1,
+      "why": "Each reversal reverses the force, so reversing both gives the original direction."
+     }
+    }
+   ],
+   "practice": [
+    "State three ways to increase the speed of a d.c. motor.",
+    "Explain why a motor needs a commutator.",
+    "Explain what happens to a loudspeaker cone when the signal's frequency increases."
+   ],
+   "independent": [
+    "Core: Describe how to show the motor effect using a wire and a magnet.",
+    "Extend: Describe how the left-hand rule predicts the force when current is towards you and the field is downwards.",
+    "Stretch: A motor spins slowly at 3.0 V and faster at 6.0 V. Explain, in terms of force and current, why."
+   ],
+   "exit": [
+    "State the left-hand rule fingers.",
+    "State the job of the split-ring commutator."
+   ],
+   "homework": "Draw a labelled d.c. motor and number the steps of a half rotation.",
+   "send": "SEND: use a printed left-hand-rule fingers card. EAL: pre-teach commutator, brush, coil. Stretch: link F = BIL qualitatively to motor design (check the specification)."
+  },
+  {
+   "unit": "Physics 6: Magnetism and electromagnetism",
+   "n": 10,
+   "title": "Electromagnetic induction and generators",
+   "duration": 50,
+   "bigQuestion": "How can moving a magnet near a coil make electricity without any battery?",
+   "objectives": [
+    "Describe electromagnetic induction",
+    "State what affects the size and direction of the induced voltage",
+    "Explain how an a.c. generator works"
+   ],
+   "successCriteria": [
+    "All: state that relative motion of a magnet and coil induces a voltage",
+    "Most: state factors increasing induced voltage",
+    "Some: explain the output graph of a simple a.c. generator"
+   ],
+   "crossCurricular": "Geography: power stations; DT: dynamos on bicycles",
+   "smsc": "Moral: appreciating those whose discoveries benefit all of humanity",
+   "keywords": [
+    {
+     "term": "electromagnetic induction",
+     "def": "generating a voltage in a conductor when it cuts magnetic field lines or the field changes"
+    },
+    {
+     "term": "generator",
+     "def": "a device that transfers kinetic energy to electrical energy"
+    },
+    {
+     "term": "slip rings",
+     "def": "rings that keep contact with a rotating coil to give a.c. output"
+    },
+    {
+     "term": "dynamo",
+     "def": "a small generator, such as on a bicycle"
+    }
+   ],
+   "starter": [
+    "Bismillah. State two ways to increase the speed of a motor.",
+    "State the difference between a.c. and d.c.",
+    "Name the energy transfer in a generator."
+   ],
+   "teach": [
+    {
+     "heading": "Induced voltage",
+     "bullets": [
+      "Move a magnet into or out of a coil: a voltage is induced",
+      "No movement: no voltage",
+      "Reverse the movement: voltage reverses",
+      "Same effect if the wire moves across the field"
+     ],
+     "note": "Use a coil connected to a sensitive voltmeter or galvanometer. Move the magnet in, hold, out. The needle deflects only while the magnet moves. Ask: what if the coil moves instead? Same result. Voltage is induced when the field lines are cut.",
+     "model": {
+      "problem": "A bar magnet is pushed into a coil connected to a sensitive voltmeter and then pulled out. Describe what you see.",
+      "steps": [
+       "Magnet moves in: the voltmeter deflects one way",
+       "Magnet stationary in the coil: no reading",
+       "Magnet pulled out: the voltmeter deflects the opposite way",
+       "Faster movement: bigger deflection"
+      ],
+      "answer": "A voltage appears only when the magnet moves, and reverses when the direction of movement reverses"
+     }
+    },
+    {
+     "heading": "Increasing the induced voltage",
+     "bullets": [
+      "Move the magnet or coil faster",
+      "Use a stronger magnet",
+      "Use more turns of wire",
+      "Use a coil with a larger area"
+     ],
+     "note": "Pupils recall these with a mnemonic. Link to energy: the energy comes from the work done moving the magnet against the opposing field. Ask pupils to design an experiment to test one factor.",
+     "timeline": [
+      {
+       "label": "Speed",
+       "text": "faster movement increases voltage"
+      },
+      {
+       "label": "Strength",
+       "text": "stronger magnet increases voltage"
+      },
+      {
+       "label": "Turns",
+       "text": "more turns increases voltage"
+      },
+      {
+       "label": "Area",
+       "text": "bigger coil area increases voltage"
+      }
+     ]
+    },
+    {
+     "heading": "The a.c. generator",
+     "bullets": [
+      "A coil spins in a magnetic field",
+      "Slip rings and brushes connect it to the outside circuit",
+      "Voltage reverses every half turn: a.c.",
+      "Faster rotation: higher frequency and bigger amplitude"
+     ],
+     "note": "Sketch the output graph as a sine curve. At the vertical position the coil cuts the field fastest, so the voltage is at its peak; when horizontal, no lines are cut and the voltage is zero. A power station generator is the same idea with electromagnets and many turns.",
+     "check": {
+      "q": "A generator's coil is rotated twice as fast. The output voltage has...",
+      "options": [
+       "the same frequency and same peak",
+       "a higher frequency and a higher peak voltage",
+       "a lower frequency and a higher peak voltage",
+       "the same frequency and a higher peak"
+      ],
+      "answer": 1,
+      "why": "Faster rotation cuts field lines faster, so the peak voltage rises, and more cycles occur each second, so the frequency rises."
+     }
+    },
+    {
+     "heading": "Motor effect versus induction",
+     "bullets": [
+      "Motor: current and field give movement",
+      "Generator: movement and field give current",
+      "Same components, opposite energy transfer"
+     ],
+     "note": "Ask pupils to complete the sentence: a motor transfers ___ energy to ___ energy; a generator transfers ___ to ___. Misconception: mixing the two devices.",
+     "misconception": {
+      "wrong": "A generator needs a battery to produce electricity.",
+      "right": "A generator needs motion. Moving a coil in a magnetic field, such as by a turbine, induces a voltage with no battery."
+     }
+    }
+   ],
+   "practice": [
+    "List three ways to increase the voltage induced in a coil by a moving magnet.",
+    "State what happens to the reading when a magnet is held still inside a coil.",
+    "Explain why a bicycle dynamo lamp gets brighter as the cyclist speeds up."
+   ],
+   "independent": [
+    "Core: Describe the main parts of an a.c. generator.",
+    "Extend: Sketch a voltage-time graph for a generator, then sketch the effect of doubling the rotation speed.",
+    "Stretch: Explain, using energy ideas, why it is harder to pedal when a bicycle dynamo is connected to a lamp."
+   ],
+   "exit": [
+    "State the energy transfer in a generator.",
+    "State how the induced voltage changes when the magnet moves faster."
+   ],
+   "homework": "Draw a labelled diagram of an a.c. generator and write the steps to produce one cycle of output.",
+   "send": "SEND: give a labelled generator diagram to cut and sequence. EAL: pre-teach induced, slip rings, cut field lines. Stretch: explain Lenz's law qualitatively."
+  },
+  {
+   "unit": "Physics 6: Magnetism and electromagnetism",
+   "n": 11,
+   "title": "Transformers and the National Grid",
+   "duration": 50,
+   "bigQuestion": "Why is electricity sent across the country at hundreds of thousands of volts when our homes use 230 V?",
+   "objectives": [
+    "Describe how a transformer works",
+    "Use Vₚ ÷ Vₛ = nₚ ÷ nₛ and Vₚ × Iₚ = Vₛ × Iₛ",
+    "Explain why the National Grid uses high voltage transmission"
+   ],
+   "successCriteria": [
+    "All: state the parts of a transformer and that it needs a.c.",
+    "Most: use the turns-ratio equation",
+    "Some: explain energy losses in transmission lines using power equations"
+   ],
+   "crossCurricular": "Geography: energy supply networks; Maths: ratios",
+   "smsc": "Moral: using resources efficiently for the benefit of communities",
+   "keywords": [
+    {
+     "term": "transformer",
+     "def": "a device that changes the voltage of an a.c. supply"
+    },
+    {
+     "term": "step-up transformer",
+     "def": "has more turns on the secondary coil, so increases voltage"
+    },
+    {
+     "term": "step-down transformer",
+     "def": "has fewer turns on the secondary coil, so decreases voltage"
+    },
+    {
+     "term": "National Grid",
+     "def": "the network of cables and transformers that carries electricity across the UK"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the power of a device with 230 V and 5.0 A.",
+    "State what electromagnetic induction is.",
+    "State why a transformer cannot use d.c."
+   ],
+   "teach": [
+    {
+     "heading": "How a transformer works",
+     "bullets": [
+      "Primary coil and secondary coil on a soft iron core",
+      "a.c. in the primary makes a changing magnetic field in the core",
+      "The changing field induces a voltage in the secondary",
+      "d.c. does not work: the field does not change"
+     ],
+     "note": "Draw the core as a closed loop of soft iron with two coils. Ask: why does a d.c. supply give no output? (The field is constant so there is no induction.) Remind pupils that transformers change voltage, not power.",
+     "model": {
+      "problem": "A transformer has 1000 turns on its primary coil and 50 turns on its secondary. The primary voltage is 230 V. Calculate the secondary voltage.",
+      "steps": [
+       "Vₚ ÷ Vₛ = nₚ ÷ nₛ",
+       "230 ÷ Vₛ = 1000 ÷ 50 = 20",
+       "Vₛ = 230 ÷ 20",
+       "Vₛ = 11.5 V (a step-down transformer)"
+      ],
+      "answer": "Secondary voltage = 11.5 V"
+     }
+    },
+    {
+     "heading": "Power in an ideal transformer",
+     "bullets": [
+      "No energy lost: power in = power out",
+      "Vₚ × Iₚ = Vₛ × Iₛ",
+      "Step up the voltage: the current is stepped down",
+      "Real transformers are 90% to 99% efficient"
+     ],
+     "note": "Link to the conservation of energy. Ask: if the voltage goes up 20 times, what happens to the current? It falls by a factor of 20.",
+     "model": {
+      "problem": "An ideal transformer steps 230 V down to 11.5 V. The secondary current is 2.0 A. Calculate the primary current.",
+      "steps": [
+       "Vₚ × Iₚ = Vₛ × Iₛ",
+       "230 × Iₚ = 11.5 × 2.0 = 23",
+       "Iₚ = 23 ÷ 230",
+       "Iₚ = 0.10 A"
+      ],
+      "answer": "Primary current = 0.10 A"
+     }
+    },
+    {
+     "heading": "The National Grid",
+     "bullets": [
+      "Power stations generate at about 25 kV",
+      "Step-up transformers raise the voltage (up to 400 kV)",
+      "High voltage means low current for the same power",
+      "Low current: less heating in the cables, so less energy wasted",
+      "Step-down transformers near homes reduce the voltage to 230 V"
+     ],
+     "note": "Use the power-loss calculation: P(loss) = I²R, derived from P = IV and V = IR (I × IR). Make the comparison explicit with the numbers in the model. Ask: why not just use thick cables? Cost and weight of copper.",
+     "model": {
+      "problem": "A power line delivers 100 kW. The cable resistance is 2.0 Ω. Compare the power lost as heat when transmitting at 1000 V and at 10 000 V.",
+      "steps": [
+       "At 1000 V: I = P ÷ V = 100 000 ÷ 1000 = 100 A",
+       "Loss = I²R = 100² × 2.0 = 20 000 W",
+       "At 10 000 V: I = 10 A, loss = 10² × 2.0 = 200 W",
+       "Ten times the voltage means 100 times less power lost"
+      ],
+      "answer": "Loss = 20 kW at 1000 V but only 200 W at 10 000 V"
+     }
+    },
+    {
+     "heading": "Check: step-up",
+     "bullets": [
+      "Select the correct answer"
+     ],
+     "note": "Option A reverses the coils. Option C ignores the effect on current.",
+     "check": {
+      "q": "A step-up transformer used in the National Grid...",
+      "options": [
+       "has more turns on the primary than the secondary",
+       "increases the voltage and decreases the current",
+       "increases the voltage and the current",
+       "works with d.c. only"
+      ],
+      "answer": 1,
+      "why": "A step-up transformer has more turns on the secondary, so the voltage rises while the current falls, keeping power almost constant."
+     }
+    }
+   ],
+   "practice": [
+    "A transformer has 200 turns on the primary and 800 on the secondary. The input is 12 V. Calculate the output voltage.",
+    "A 24 V to 6.0 V transformer has a primary current of 0.50 A. Calculate the secondary current (ideal transformer).",
+    "Explain why transformers do not work with d.c."
+   ],
+   "independent": [
+    "Core: Explain why electricity is transmitted at high voltage.",
+    "Extend: A transformer has 500 turns on the primary and 25 on the secondary. Calculate the output when the input is 230 V, and the secondary current if the primary current is 0.20 A.",
+    "Stretch: A 5.0 MW supply is transmitted down a line of total resistance 4.0 Ω at 250 kV. Calculate the current and the percentage of power lost."
+   ],
+   "exit": [
+    "State the turns-ratio equation.",
+    "State one reason for using step-down transformers near homes."
+   ],
+   "homework": "Draw the National Grid flow diagram from power station to home and explain the voltage changes at each stage.",
+   "send": "SEND: give a flow-diagram template for the National Grid with sentence starters. EAL: pre-teach primary, secondary, transmit. Stretch: explain why real transformers are not perfectly efficient (eddy currents, resistance)."
+  },
+  {
+   "unit": "Physics 7: Radioactivity and particles",
+   "n": 12,
+   "title": "Atomic structure, nuclear notation and isotopes",
+   "duration": 50,
+   "bigQuestion": "What makes carbon-12 and carbon-14 the same element but different atoms?",
+   "objectives": [
+    "Describe the structure of the atom and the properties of protons, neutrons and electrons",
+    "Use atomic number, mass number and nuclear notation",
+    "Define isotopes and compare their structure"
+   ],
+   "successCriteria": [
+    "All: label protons, neutrons and electrons",
+    "Most: work out numbers of each particle from nuclear notation",
+    "Some: compare isotopes and explain why they have the same chemical properties"
+   ],
+   "crossCurricular": "Chemistry: atoms and the Periodic Table; History of science: developing the model of the atom",
+   "smsc": "Spiritual: the order found even at the smallest scales of creation",
+   "keywords": [
+    {
+     "term": "atomic number",
+     "def": "the number of protons in the nucleus (Z)"
+    },
+    {
+     "term": "mass number",
+     "def": "the total number of protons and neutrons in the nucleus (A)"
+    },
+    {
+     "term": "isotopes",
+     "def": "atoms of the same element with the same number of protons but different numbers of neutrons"
+    },
+    {
+     "term": "nucleon",
+     "def": "a proton or a neutron"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the charge of a proton, a neutron and an electron.",
+    "Describe the particles in the nucleus.",
+    "Explain what an element is."
+   ],
+   "teach": [
+    {
+     "heading": "Inside the atom",
+     "bullets": [
+      "Tiny dense nucleus of protons and neutrons",
+      "Electrons orbit the nucleus",
+      "Relative charges: proton +1, neutron 0, electron -1",
+      "Relative masses: proton 1, neutron 1, electron about 1/1840",
+      "Atoms are neutral: protons = electrons"
+     ],
+     "note": "Draw a nuclear atom. Stress the scale: an atom is about 10⁻¹⁰ m across, the nucleus around 10⁻¹⁵ m, so most of the atom is empty space. Link to the Rutherford scattering model if time allows. Atoms are neutral because the number of protons equals the number of electrons.",
+     "table": {
+      "head": [
+       "Particle",
+       "Relative charge",
+       "Relative mass"
+      ],
+      "rows": [
+       [
+        "Proton",
+        "+1",
+        "1"
+       ],
+       [
+        "Neutron",
+        "0",
+        "1"
+       ],
+       [
+        "Electron",
+        "-1",
+        "about 1/1840"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Nuclear notation",
+     "bullets": [
+      "Written as ᴬ_Z X",
+      "A = mass number (protons + neutrons)",
+      "Z = atomic number (protons)",
+      "Neutrons = A - Z"
+     ],
+     "note": "Write ¹⁴₆C on the board and read it aloud: carbon with atomic number 6 and mass number 14. Check that pupils find neutrons as A − Z. The element symbol alone tells you Z, but is written for clarity.",
+     "model": {
+      "problem": "Carbon-14 is written ¹⁴₆C. State the number of protons, neutrons and electrons in a neutral atom.",
+      "steps": [
+       "Protons = atomic number = 6",
+       "Neutrons = A - Z = 14 - 6 = 8",
+       "Neutral atom: electrons = protons = 6"
+      ],
+      "answer": "6 protons, 8 neutrons, 6 electrons"
+     }
+    },
+    {
+     "heading": "Isotopes",
+     "bullets": [
+      "Same number of protons, different numbers of neutrons",
+      "Same chemical properties (same electrons)",
+      "Different masses and sometimes different stability",
+      "Some isotopes are radioactive"
+     ],
+     "note": "Compare carbon-12 and carbon-14 using a table. Ask: why do they react the same way? Because chemistry depends on the electrons. Nuclei with the wrong neutron-to-proton balance are unstable and decay.",
+     "compare": {
+      "left": {
+       "title": "Carbon-12 (¹²₆C)",
+       "points": [
+        "6 protons",
+        "6 neutrons",
+        "6 electrons",
+        "Stable"
+       ]
+      },
+      "right": {
+       "title": "Carbon-14 (¹⁴₆C)",
+       "points": [
+        "6 protons",
+        "8 neutrons",
+        "6 electrons",
+        "Radioactive"
+       ]
+      },
+      "label": "isotopes"
+     }
+    },
+    {
+     "heading": "Check: isotopes",
+     "bullets": [
+      "Choose the best answer"
+     ],
+     "note": "Option A confuses isotopes and ions. Option D is the common slip: mass number versus atomic number.",
+     "check": {
+      "q": "Which statement about isotopes of the same element is correct?",
+      "options": [
+       "They have different numbers of protons",
+       "They have different numbers of neutrons",
+       "They have different numbers of electrons",
+       "They have different atomic numbers"
+      ],
+      "answer": 1,
+      "why": "Isotopes have the same atomic number (protons) but a different number of neutrons, and hence a different mass number."
+     }
+    }
+   ],
+   "practice": [
+    "State the number of protons, neutrons and electrons in ²³₁₁Na.",
+    "Uranium-235 and uranium-238 both have 92 protons. State the number of neutrons in each.",
+    "Explain why isotopes of an element have the same chemical properties."
+   ],
+   "independent": [
+    "Core: Copy and complete: particle / relative charge / relative mass for protons, neutrons and electrons.",
+    "Extend: An ion has 17 protons, 18 neutrons and 18 electrons. Write its nuclear notation, mass number and charge.",
+    "Stretch: Explain why alpha particles in the Rutherford experiment were mostly undeflected but a few bounced back, linking to the structure of the atom."
+   ],
+   "exit": [
+    "Define atomic number and mass number.",
+    "State the number of neutrons in ¹⁴₆C."
+   ],
+   "homework": "Make a table of three elements with their protons, neutrons, electrons and symbols using nuclear notation, plus one isotope for each.",
+   "send": "SEND: give a notation template with arrows pointing to A, Z, symbol. EAL: pre-teach nucleus, nucleon, isotope. Stretch: explain why nuclei with too many neutrons are unstable."
+  },
+  {
+   "unit": "Physics 7: Radioactivity and particles",
+   "n": 13,
+   "title": "Alpha, beta and gamma radiation: properties, detection and background",
+   "duration": 50,
+   "bigQuestion": "How can we tell which kind of radiation a source gives out, and where does background radiation come from?",
+   "objectives": [
+    "Compare alpha, beta and gamma radiation: nature, ionisation and penetration",
+    "Describe how radiation is detected",
+    "Describe sources of background radiation"
+   ],
+   "successCriteria": [
+    "All: name the three types and their penetration",
+    "Most: identify radiation types from absorption data",
+    "Some: explain ionisation and background correction"
+   ],
+   "crossCurricular": "Geography: radon and geology; Chemistry: ionisation",
+   "smsc": "Moral: honesty and care when handling hazardous materials",
+   "keywords": [
+    {
+     "term": "ionisation",
+     "def": "removing electrons from atoms to make ions"
+    },
+    {
+     "term": "penetration",
+     "def": "how far radiation passes through a material"
+    },
+    {
+     "term": "Geiger-Müller tube",
+     "def": "a detector that clicks or counts when radiation passes through"
+    },
+    {
+     "term": "background radiation",
+     "def": "low-level radiation around us all the time"
+    }
+   ],
+   "starter": [
+    "Bismillah. State what the nucleus of an atom contains.",
+    "Define isotope.",
+    "Name the EM wave with the highest frequency."
+   ],
+   "teach": [
+    {
+     "heading": "Three types of radiation",
+     "bullets": [
+      "Alpha (α): a helium nucleus, 2 protons and 2 neutrons",
+      "Beta (β): a fast electron from the nucleus",
+      "Gamma (γ): electromagnetic radiation from the nucleus",
+      "Unstable nuclei emit radiation randomly"
+     ],
+     "note": "Link the idea of radioactive decay to unstable nuclei, which cannot be predicted individually. Alpha is deflected least by magnetic and electric fields (it is heavy and positive); beta is deflected the other way; gamma is not deflected.",
+     "table": {
+      "head": [
+       "Type",
+       "Charge",
+       "Ionising",
+       "Stopped by"
+      ],
+      "rows": [
+       [
+        "Alpha",
+        "+2",
+        "very strong",
+        "paper or a few cm of air"
+       ],
+       [
+        "Beta",
+        "-1",
+        "moderate",
+        "a few mm of aluminium"
+       ],
+       [
+        "Gamma",
+        "0",
+        "weak",
+        "thick lead or concrete reduces it"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Detecting radiation",
+     "bullets": [
+      "Geiger-Müller tube and counter: counts per second or minute",
+      "Photographic film: darkens when exposed",
+      "Count rate must be corrected for background",
+      "Net count = measured count - background"
+     ],
+     "note": "Describe the GM tube: radiation ionises gas inside, causing a pulse that is counted. Film badges are used by workers. Pupils should know the correction by subtracting the background count measured with no source present.",
+     "model": {
+      "problem": "A student measures a background count of 20 counts/min. With a source and different absorbers, she records: no absorber 420; paper 415; 3 mm aluminium 160; thick lead 22. Which radiations does the source emit?",
+      "steps": [
+       "Net counts: none 400; paper 395; aluminium 140; lead 2",
+       "Paper makes almost no difference: no alpha",
+       "Aluminium reduces the count a lot but not to zero: beta is blocked, something else remains",
+       "Lead reduces to about background: remaining radiation is gamma"
+      ],
+      "answer": "The source emits beta and gamma radiation"
+     }
+    },
+    {
+     "heading": "Background radiation",
+     "bullets": [
+      "Radon gas from rocks (the largest natural source)",
+      "Cosmic rays from space",
+      "Rocks and soil, buildings",
+      "Food and drink",
+      "Medical sources and a small fraction from nuclear industry"
+     ],
+     "note": "Show a pie chart. Emphasise that background varies with location (granite areas have more radon). Ask: how does a student correct experimental results for it? Many living things are exposed to a tiny dose throughout their lives; the issue is the higher dose from strong sources.",
+     "misconception": {
+      "wrong": "Background radiation comes mainly from nuclear power stations.",
+      "right": "Most background radiation is natural: radon from rocks, cosmic rays, food and the ground. Nuclear power contributes only a tiny part."
+     }
+    },
+    {
+     "heading": "Check: penetration",
+     "bullets": [
+      "Choose the best answer"
+     ],
+     "note": "Option B is a typical confusion between ionisation and penetration: the most ionising radiation is the least penetrating.",
+     "check": {
+      "q": "Which radiation is the most ionising but the least penetrating?",
+      "options": [
+       "gamma",
+       "alpha",
+       "beta",
+       "X-rays"
+      ],
+      "answer": 1,
+      "why": "Alpha particles are large and highly charged, so they ionise strongly but are stopped by a sheet of paper or a few centimetres of air."
+     }
+    }
+   ],
+   "practice": [
+    "State two differences between alpha and beta radiation.",
+    "Explain why a student must measure the background count before an experiment.",
+    "A source's count falls from 900 per minute to 300 when a thin metal sheet is inserted. Background is 30. What might the source be emitting?"
+   ],
+   "independent": [
+    "Core: Name three sources of natural background radiation.",
+    "Extend: Explain the process of ionisation and why alpha radiation is more ionising than gamma.",
+    "Stretch: A sample gives counts of 360 per minute with no absorber, 358 with paper, 355 with 3 mm aluminium and 150 with 5 cm of lead. The background is 40. Deduce the radiation emitted and justify it."
+   ],
+   "exit": [
+    "State what gamma radiation is.",
+    "State what a GM tube detects."
+   ],
+   "homework": "Draw a chart showing which absorber stops each type of radiation, and write a short caption explaining ionisation.",
+   "send": "SEND: give a penetration diagram with the absorbers to label. EAL: pre-teach penetration, ionise, absorb. Stretch: explain deflection in electric and magnetic fields."
+  },
+  {
+   "unit": "Physics 7: Radioactivity and particles",
+   "n": 14,
+   "title": "Nuclear equations: alpha and beta decay",
+   "duration": 50,
+   "bigQuestion": "What happens to the nucleus when it emits an alpha or a beta particle?",
+   "objectives": [
+    "Write and balance nuclear equations for alpha and beta decay",
+    "State the changes in mass number and atomic number",
+    "Identify the daughter nucleus"
+   ],
+   "successCriteria": [
+    "All: state that alpha decay changes mass number by 4 and atomic number by 2",
+    "Most: balance nuclear equations for alpha and beta decay",
+    "Some: complete a decay series with several steps"
+   ],
+   "crossCurricular": "Chemistry: atomic structure; Maths: balancing sums",
+   "smsc": "Moral: precision and accuracy in scientific reasoning",
+   "keywords": [
+    {
+     "term": "alpha decay",
+     "def": "a nucleus emits a helium nucleus, ⁴₂He"
+    },
+    {
+     "term": "beta decay",
+     "def": "a neutron changes into a proton and an electron is emitted"
+    },
+    {
+     "term": "daughter nucleus",
+     "def": "the new nucleus formed after decay"
+    },
+    {
+     "term": "nuclear equation",
+     "def": "an equation that balances mass number and atomic number"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the number of protons and neutrons in ²³⁸₉₂U.",
+    "Describe the nature of an alpha particle.",
+    "State the charge on a beta particle."
+   ],
+   "teach": [
+    {
+     "heading": "Balancing rules",
+     "bullets": [
+      "Total mass number is the same on both sides",
+      "Total atomic number (charge) is the same on both sides",
+      "Alpha: A decreases by 4, Z decreases by 2",
+      "Beta: A unchanged, Z increases by 1"
+     ],
+     "note": "Write the generic equations. In beta decay a neutron changes to a proton, so Z increases by one. The electron emitted is written ⁰₋₁e. Gamma emission changes neither A nor Z.",
+     "table": {
+      "head": [
+       "Decay",
+       "Mass number A",
+       "Atomic number Z"
+      ],
+      "rows": [
+       [
+        "Alpha",
+        "-4",
+        "-2"
+       ],
+       [
+        "Beta",
+        "no change",
+        "+1"
+       ],
+       [
+        "Gamma",
+        "no change",
+        "no change"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Alpha decay example",
+     "bullets": [
+      "Radium-226 decays by alpha emission",
+      "Daughter: radon",
+      "Check the sums"
+     ],
+     "note": "Pupils write down the A and Z of the parent, subtract those of the alpha particle, then use the Periodic Table to identify the element from Z. Check: total A before = after; total Z before = after.",
+     "model": {
+      "problem": "Radium-226 (²²⁶₈₈Ra) decays by emitting an alpha particle. Write the equation.",
+      "steps": [
+       "Alpha particle = ⁴₂He",
+       "Daughter A = 226 - 4 = 222",
+       "Daughter Z = 88 - 2 = 86 (radon, Rn)",
+       "²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He"
+      ],
+      "answer": "²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He"
+     }
+    },
+    {
+     "heading": "Beta decay example",
+     "bullets": [
+      "Carbon-14 decays by beta emission",
+      "Mass number stays at 14",
+      "Atomic number increases to 7: nitrogen"
+     ],
+     "note": "Explain: a neutron changes into a proton and an electron; the electron leaves at high speed. Because the proton count rises by one, the element changes.",
+     "model": {
+      "problem": "Carbon-14 (¹⁴₆C) decays by beta emission. Write the equation.",
+      "steps": [
+       "Beta particle = ⁰₋₁e",
+       "Daughter A = 14",
+       "Daughter Z = 6 + 1 = 7 (nitrogen, N)",
+       "¹⁴₆C → ¹⁴₇N + ⁰₋₁e"
+      ],
+      "answer": "¹⁴₆C → ¹⁴₇N + ⁰₋₁e"
+     }
+    },
+    {
+     "heading": "Check: balancing",
+     "bullets": [
+      "Select the missing nucleus"
+     ],
+     "note": "Option A forgets to adjust Z; option D confuses alpha with beta. Ask pupils to show the sums.",
+     "check": {
+      "q": "²³⁸₉₂U decays by alpha emission. The daughter nucleus is...",
+      "options": [
+       "²³⁴₉₀Th",
+       "²³⁸₉₃Np",
+       "²³⁴₉₂U",
+       "²³⁶₉₀Th"
+      ],
+      "answer": 0,
+      "why": "A: 238 - 4 = 234; Z: 92 - 2 = 90, so thorium-234. Beta decay would give neptunium."
+     }
+    }
+   ],
+   "practice": [
+    "Write the equation for uranium-238 decaying by alpha emission.",
+    "Complete: ⁶⁰₂₇Co → ⁶⁰₂₈Ni + ?",
+    "Polonium-210 (Z = 84) emits an alpha particle. Write the daughter nucleus."
+   ],
+   "independent": [
+    "Core: State what happens to the mass number and atomic number in beta decay.",
+    "Extend: Complete the chain: ²³⁸₉₂U alpha → X, then X beta → Y. Identify X and Y by A and Z.",
+    "Stretch: Thorium-232 (Z = 90) decays by alpha, then beta, then beta. Find A and Z of the final nucleus and explain whether it is an isotope of thorium."
+   ],
+   "exit": [
+    "State the changes in A and Z in alpha decay.",
+    "Complete: ¹⁴₆C → ¹⁴₇N + ?"
+   ],
+   "homework": "Write three balanced nuclear equations (alpha, beta, gamma) and check the sums for each.",
+   "send": "SEND: give a balancing grid with A and Z columns. EAL: pre-teach daughter, emit, parent. Stretch: explain why beta emission needs an antineutrino (beyond the specification)."
+  },
+  {
+   "unit": "Physics 7: Radioactivity and particles",
+   "n": 15,
+   "title": "Activity and half-life",
+   "duration": 50,
+   "bigQuestion": "Why can some radioactive materials be handled safely after days, while others stay dangerous for thousands of years?",
+   "objectives": [
+    "Define activity and half-life",
+    "Calculate remaining activity or mass after several half-lives",
+    "Find half-life from tables and graphs"
+   ],
+   "successCriteria": [
+    "All: define half-life",
+    "Most: calculate activity after a number of half-lives",
+    "Some: find half-life from a decay curve, correcting for background"
+   ],
+   "crossCurricular": "Maths: exponential decay and halving; Geology: dating rocks",
+   "smsc": "Moral: responsibility for long-lived waste affecting future generations",
+   "keywords": [
+    {
+     "term": "activity",
+     "def": "the number of nuclei that decay each second, measured in becquerels (Bq)"
+    },
+    {
+     "term": "becquerel",
+     "def": "one decay per second"
+    },
+    {
+     "term": "half-life",
+     "def": "the time for the activity (or number of unstable nuclei) to halve"
+    },
+    {
+     "term": "random",
+     "def": "cannot be predicted for an individual nucleus"
+    }
+   ],
+   "starter": [
+    "Bismillah. Complete: ²²⁶₈₈Ra → ²²²₈₆Rn + ?",
+    "State what ionisation means.",
+    "Halve 640 four times."
+   ],
+   "teach": [
+    {
+     "heading": "Activity and randomness",
+     "bullets": [
+      "Decay is random: we cannot say when a given nucleus decays",
+      "Activity: decays per second, in becquerels (Bq)",
+      "The activity falls over time as fewer nuclei remain",
+      "Half-life: time for the activity to halve"
+     ],
+     "note": "Use a dice simulation: roll 100 dice, remove sixes, repeat. The numbers fall approximately exponentially. Stress random for each nucleus, but predictable for a large number. Half-life values range from fractions of a second to billions of years.",
+     "timeline": [
+      {
+       "label": "Start",
+       "text": "800 Bq"
+      },
+      {
+       "label": "After 1 half-life",
+       "text": "400 Bq"
+      },
+      {
+       "label": "After 2 half-lives",
+       "text": "200 Bq"
+      },
+      {
+       "label": "After 3 half-lives",
+       "text": "100 Bq"
+      },
+      {
+       "label": "After 4 half-lives",
+       "text": "50 Bq"
+      }
+     ]
+    },
+    {
+     "heading": "Half-life calculation",
+     "bullets": [
+      "Number of half-lives = time ÷ half-life",
+      "Halve the activity that many times",
+      "Activity never reaches exactly zero"
+     ],
+     "note": "Do the steps visibly. Typical pitfall: halving the time instead of the activity. Another: taking two half-lives as 'all gone'.",
+     "model": {
+      "problem": "A source has an activity of 800 Bq. Its half-life is 6.0 hours. Find its activity after 24 hours.",
+      "steps": [
+       "Number of half-lives = 24 ÷ 6.0 = 4",
+       "800 → 400 → 200 → 100 → 50",
+       "Activity = 50 Bq"
+      ],
+      "answer": "Activity after 24 hours = 50 Bq"
+     }
+    },
+    {
+     "heading": "Finding half-life from data",
+     "bullets": [
+      "Read the time for the activity to fall to half",
+      "Subtract background first",
+      "Check with a second half to be sure"
+     ],
+     "note": "Use a graph with a decay curve. Show the method: draw lines from 640 to 320 and from 320 to 160; the time between each halving is the same. The count rates need background correction.",
+     "model": {
+      "problem": "The activity of a sample is 640 Bq at 0 min and 320 Bq at 15 min. Find its half-life and its activity at 45 min.",
+      "steps": [
+       "Activity halves in 15 min, so half-life = 15 min",
+       "45 ÷ 15 = 3 half-lives",
+       "640 → 320 → 160 → 80",
+       "Activity at 45 min = 80 Bq"
+      ],
+      "answer": "Half-life = 15 min; activity at 45 min = 80 Bq"
+     }
+    },
+    {
+     "heading": "Check: half-life",
+     "bullets": [
+      "Choose the best answer"
+     ],
+     "note": "Option C confuses half-life with total decay time. Option D halves the half-life. Ask for justification.",
+     "check": {
+      "q": "A sample has a half-life of 10 days. What fraction of the unstable nuclei remain after 30 days?",
+      "options": [
+       "one half",
+       "one quarter",
+       "one eighth",
+       "nothing"
+      ],
+      "answer": 2,
+      "why": "30 days is 3 half-lives, so (1/2)³ = 1/8 remain. It does not reach zero."
+     }
+    }
+   ],
+   "practice": [
+    "A source has an initial activity of 1200 Bq and a half-life of 2.0 minutes. Find its activity after 8.0 minutes.",
+    "A sample's count rate falls from 480 per minute to 60 per minute in 18 hours. Find its half-life.",
+    "Explain why a source with a half-life of 5 seconds is no use for checking pipes underground."
+   ],
+   "independent": [
+    "Core: Define half-life in your own words.",
+    "Extend: A measured count rate of 84/min includes a background of 4/min. After 20 minutes the measured count is 24/min. Find the half-life.",
+    "Stretch: A nuclear waste has half-life 30 years and activity 4000 Bq. How many years until it falls below 100 Bq? Give your answer to the nearest 10 years."
+   ],
+   "exit": [
+    "State the unit of activity.",
+    "Calculate activity after 3 half-lives if it starts at 960 Bq."
+   ],
+   "homework": "Draw a decay graph for a sample of 1000 Bq with a half-life of 10 minutes for 0 to 50 minutes, labelling each half-life on the graph.",
+   "send": "SEND: give a halving table to complete. EAL: pre-teach decay, halve, background. Stretch: link random decay to the exponential equation."
+  },
+  {
+   "unit": "Physics 7: Radioactivity and particles",
+   "n": 16,
+   "title": "Uses and dangers of radiation: irradiation and contamination",
+   "duration": 50,
+   "bigQuestion": "How can the same kind of radiation save a life in hospital and also be dangerous?",
+   "objectives": [
+    "Describe uses of radiation in smoke detectors, thickness monitoring, tracers, sterilisation and cancer treatment",
+    "Distinguish contamination from irradiation",
+    "Describe the dangers of ionising radiation and precautions"
+   ],
+   "successCriteria": [
+    "All: give two uses of radiation",
+    "Most: justify the type and half-life of a source for a given use",
+    "Some: compare contamination and irradiation risks for alpha, beta and gamma"
+   ],
+   "crossCurricular": "Medicine: imaging and radiotherapy; Food technology: sterilising",
+   "smsc": "Moral: weighing benefit and harm; protecting patients and workers",
+   "keywords": [
+    {
+     "term": "irradiation",
+     "def": "exposure to radiation from a source outside the body; the object does not become radioactive"
+    },
+    {
+     "term": "contamination",
+     "def": "unwanted presence of radioactive atoms on or in an object or body"
+    },
+    {
+     "term": "tracer",
+     "def": "a radioactive isotope followed through a system to detect leaks or flow"
+    },
+    {
+     "term": "radiotherapy",
+     "def": "treating cancer using radiation to kill tumour cells"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the activity of 480 Bq after 3 half-lives.",
+    "Name the three types of radiation.",
+    "State what ionisation does to cells."
+   ],
+   "teach": [
+    {
+     "heading": "Uses of radiation",
+     "bullets": [
+      "Smoke detector: americium-241 emits alpha particles",
+      "Thickness monitoring: beta passes through paper or foil",
+      "Tracers: gamma emitters followed in the body or pipes",
+      "Sterilising: gamma kills bacteria on food and equipment",
+      "Radiotherapy: focused gamma beams destroy cancer cells"
+     ],
+     "note": "Ask: why do we choose each type? Smoke detector: alpha ionises air, giving a small current that drops when smoke absorbs alpha. Medical tracers need short half-life so the patient has less exposure.",
+     "table": {
+      "head": [
+       "Use",
+       "Radiation and half-life",
+       "Reason"
+      ],
+      "rows": [
+       [
+        "Smoke detector",
+        "alpha, long half-life",
+        "ionises air; absorbed by smoke; safe in a sealed case"
+       ],
+       [
+        "Paper thickness",
+        "beta, long half-life",
+        "passes through paper, partly absorbed; count changes with thickness"
+       ],
+       [
+        "Medical tracer",
+        "gamma, short half-life",
+        "leaves the body; little exposure"
+       ],
+       [
+        "Sterilising food",
+        "gamma",
+        "penetrates and kills bacteria; the food does not become radioactive"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Choosing the source",
+     "bullets": [
+      "Match the radiation penetration to the task",
+      "Short half-life for the body; long half-life for monitoring",
+      "Sealed sources reduce contamination risk"
+     ],
+     "note": "Use the model as a template for exam answers. A detail: for monitoring thickness, alpha would be completely stopped and gamma would hardly change, so beta is best.",
+     "model": {
+      "problem": "Explain why beta radiation is used to monitor the thickness of aluminium foil, but alpha and gamma are not.",
+      "steps": [
+       "Alpha is stopped by even thin foil, so no change would be detected",
+       "Gamma passes through almost all of it, so thickness changes hardly alter the count",
+       "Beta is partly absorbed, so its count changes with thickness",
+       "Long half-life means the source needs little replacement"
+      ],
+      "answer": "Beta is the only radiation whose count changes noticeably with the foil thickness"
+     }
+    },
+    {
+     "heading": "Irradiation, contamination and safety",
+     "bullets": [
+      "Irradiation: outside exposure; stops when the source is removed",
+      "Contamination: radioactive material on or in you; keeps irradiating",
+      "Alpha is most dangerous inside the body",
+      "Protection: tongs, lead shielding, distance, short time, sealed storage"
+     ],
+     "note": "Radiation workers wear film badges and use gloves, tongs, shielding and distance. Stress that radiation dose affects health through damage to DNA, causing cancer, and high doses cause radiation sickness. Discuss benefits versus risks in medicine, which are carefully controlled.",
+     "misconception": {
+      "wrong": "A food that has been irradiated with gamma rays becomes radioactive.",
+      "right": "Irradiated food is exposed to radiation but nothing radioactive is transferred, so it is not radioactive. Contamination would require radioactive atoms to get on or in the food."
+     }
+    },
+    {
+     "heading": "Check: contamination",
+     "bullets": [
+      "Choose the best answer"
+     ],
+     "note": "Option A is the common mix-up. Option D confuses 'dangerous outside' and 'dangerous inside'.",
+     "check": {
+      "q": "Which statement describes contamination?",
+      "options": [
+       "Radiation passes through a patient from an X-ray tube",
+       "Radioactive atoms get on the skin or are swallowed",
+       "A source is kept in a lead box",
+       "A film badge turns dark"
+      ],
+      "answer": 1,
+      "why": "Contamination means radioactive material is on or in the body. Option A describes irradiation."
+     }
+    }
+   ],
+   "practice": [
+    "Explain why a smoke detector contains an alpha source.",
+    "Give two precautions for someone handling a radioactive source.",
+    "Explain why a tracer injected into a patient should have a short half-life."
+   ],
+   "independent": [
+    "Core: State the difference between irradiation and contamination.",
+    "Extend: A hospital uses a gamma source for sterilising instruments. Explain why gamma is used and why the instruments are not radioactive afterwards.",
+    "Stretch: Evaluate the use of radiotherapy for cancer, considering benefits, risks and how risks are reduced."
+   ],
+   "exit": [
+    "Give one use of gamma radiation.",
+    "State why alpha is most dangerous when inside the body."
+   ],
+   "homework": "Write a fact file on one use of radioactivity, covering radiation type, half-life, why it is suitable and safety precautions.",
+   "send": "SEND: give a table with use / radiation / reason to match. EAL: pre-teach irradiate, contaminate, tracer. Stretch: explain the ALARA principle."
+  },
+  {
+   "unit": "Physics 7: Radioactivity and particles",
+   "n": 17,
+   "title": "Nuclear fission and fusion",
+   "duration": 50,
+   "bigQuestion": "How can a tiny amount of uranium release so much energy, and why is fusion so hard to achieve on Earth?",
+   "objectives": [
+    "Describe nuclear fission and the chain reaction",
+    "Describe the parts of a fission reactor and their functions",
+    "Describe nuclear fusion and the conditions needed"
+   ],
+   "successCriteria": [
+    "All: state what fission and fusion are",
+    "Most: explain a chain reaction and the roles of the control rods and moderator",
+    "Some: compare fission and fusion and explain the conditions for fusion"
+   ],
+   "crossCurricular": "Chemistry: energy changes; Geography: energy supply",
+   "smsc": "Moral: weighing great benefit and great risk with responsibility",
+   "keywords": [
+    {
+     "term": "fission",
+     "def": "a large nucleus splits into two smaller nuclei, releasing energy and neutrons"
+    },
+    {
+     "term": "chain reaction",
+     "def": "neutrons from fission cause further fissions"
+    },
+    {
+     "term": "fusion",
+     "def": "two small nuclei join to form a larger nucleus, releasing energy"
+    },
+    {
+     "term": "moderator",
+     "def": "material that slows neutrons so they can cause fission"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the number of protons and neutrons in ²³⁵₉₂U.",
+    "State what alpha decay is.",
+    "State one advantage of nuclear power."
+   ],
+   "teach": [
+    {
+     "heading": "Fission and the chain reaction",
+     "bullets": [
+      "A slow neutron hits a uranium-235 nucleus",
+      "The nucleus splits into two smaller nuclei and 2 or 3 neutrons",
+      "Energy is released as kinetic energy of the fragments",
+      "The new neutrons go on to cause more fissions: a chain reaction"
+     ],
+     "note": "Draw the chain reaction as a tree of arrows. Unchecked, it is explosive: a nuclear weapon. In a reactor the rate is controlled. The energy comes from conversion of nuclear potential energy to kinetic energy and then thermal energy.",
+     "model": {
+      "problem": "Check this fission equation is balanced: ²³⁵₉₂U + ¹₀n → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + 3 ¹₀n.",
+      "steps": [
+       "Mass numbers left: 235 + 1 = 236",
+       "Mass numbers right: 141 + 92 + 3 = 236",
+       "Atomic numbers left: 92 + 0 = 92",
+       "Atomic numbers right: 56 + 36 + 0 = 92"
+      ],
+      "answer": "The equation is balanced for mass number and atomic number"
+     }
+    },
+    {
+     "heading": "Inside a nuclear reactor",
+     "bullets": [
+      "Fuel rods: uranium-235 undergoes fission",
+      "Control rods (boron): absorb neutrons to control the rate",
+      "Moderator (water or graphite): slows neutrons",
+      "Coolant: carries thermal energy to make steam for the turbines",
+      "Thick concrete shielding absorbs radiation"
+     ],
+     "note": "Draw the reactor core. Ask: what happens if the control rods are lowered? (More neutrons absorbed: slower reaction.) The moderator slows the neutrons because fast neutrons are less likely to cause fission. Emphasise the reactor produces heat, the rest is the same as a normal power station.",
+     "table": {
+      "head": [
+       "Part",
+       "Function"
+      ],
+      "rows": [
+       [
+        "Fuel rods",
+        "contain uranium-235 for fission"
+       ],
+       [
+        "Control rods",
+        "absorb neutrons: raised or lowered to control the rate"
+       ],
+       [
+        "Moderator",
+        "slows neutrons so fission is more likely"
+       ],
+       [
+        "Coolant",
+        "removes the heat to make steam"
+       ],
+       [
+        "Shielding",
+        "absorbs radiation to protect workers"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Nuclear fusion",
+     "bullets": [
+      "Two light nuclei join to make a heavier nucleus",
+      "Energy is released",
+      "Needs very high temperature and pressure to overcome repulsion of positive nuclei",
+      "Occurs in stars, including the Sun"
+     ],
+     "note": "Link to Physics 8 stellar evolution. Fusion happens in the cores of stars because the temperature and pressure are huge (millions of degrees). On Earth, containing the very hot plasma is a challenge, which is why fusion power stations are still experimental.",
+     "compare": {
+      "left": {
+       "title": "Fission",
+       "points": [
+        "Large nucleus splits",
+        "Triggered by a neutron",
+        "Used in power stations today",
+        "Produces radioactive waste"
+       ]
+      },
+      "right": {
+       "title": "Fusion",
+       "points": [
+        "Small nuclei join",
+        "Needs very high temperature and pressure",
+        "Powers stars",
+        "Little long-lived waste but hard to achieve"
+       ]
+      },
+      "label": "compare"
+     }
+    },
+    {
+     "heading": "Check: control rods",
+     "bullets": [
+      "Choose the best answer"
+     ],
+     "note": "Option C is a typical error: control rods do not slow neutrons; that is the moderator's job.",
+     "check": {
+      "q": "What is the job of the control rods in a nuclear reactor?",
+      "options": [
+       "to slow down neutrons",
+       "to absorb neutrons and control the reaction rate",
+       "to carry heat away",
+       "to hold the uranium fuel"
+      ],
+      "answer": 1,
+      "why": "Control rods absorb neutrons. Lowering them in decreases the rate of fission. The moderator slows neutrons; the coolant carries heat away."
+     }
+    }
+   ],
+   "practice": [
+    "Explain what is meant by a chain reaction.",
+    "State two differences between nuclear fission and nuclear fusion.",
+    "Explain why a nuclear reactor has thick concrete walls."
+   ],
+   "independent": [
+    "Core: Describe the function of the moderator and control rods.",
+    "Extend: Complete and balance: ²H + ³H → ⁴He + ¹n by checking mass numbers and atomic numbers (Z = 1 for each hydrogen isotope).",
+    "Stretch: Evaluate nuclear fission as the main source of electricity for a country, giving two advantages and two disadvantages and a conclusion."
+   ],
+   "exit": [
+    "State what fusion is.",
+    "State why fusion needs very high temperature."
+   ],
+   "homework": "Draw and label a diagram of a nuclear reactor and write a sentence for the function of each part.",
+   "send": "SEND: give a labelled reactor diagram and a function matching task. EAL: pre-teach split, join, moderator, absorb. Stretch: explain mass defect qualitatively."
+  },
+  {
+   "unit": "Physics 8: Astrophysics",
+   "n": 18,
+   "title": "Orbits: planets, moons, satellites and comets",
+   "duration": 50,
+   "bigQuestion": "Why does a comet speed up as it swings in towards the Sun, and why can a satellite stay above one place on Earth?",
+   "objectives": [
+    "Explain how gravity keeps bodies in orbit",
+    "Compare circular and elliptical orbits for planets and comets",
+    "Describe types of satellite orbit and use v = 2πr ÷ T"
+   ],
+   "successCriteria": [
+    "All: state that gravity provides the force for orbits",
+    "Most: describe how speed and period vary with orbit radius and describe different satellite orbits",
+    "Some: calculate orbital speed and explain comet motion"
+   ],
+   "crossCurricular": "Geography: satellites in weather and mapping; Maths: circumference",
+   "smsc": "Spiritual: the order and regularity of heavenly bodies, studied by Muslim astronomers such as Ibn al-Haytham, al-Battani and al-Biruni",
+   "keywords": [
+    {
+     "term": "orbit",
+     "def": "the curved path of one body around another due to gravity"
+    },
+    {
+     "term": "satellite",
+     "def": "an object that orbits a larger body, natural (Moon) or artificial"
+    },
+    {
+     "term": "comet",
+     "def": "an icy body in a very elliptical orbit around the Sun"
+    },
+    {
+     "term": "geostationary orbit",
+     "def": "orbit above the equator with period 24 hours, so the satellite stays above one point"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the circumference of a circle of radius 5.0 m.",
+    "State what gravity does between two masses.",
+    "State the speed equation."
+   ],
+   "teach": [
+    {
+     "heading": "Gravity and orbits",
+     "bullets": [
+      "Gravity provides the force that keeps a body in orbit",
+      "The body is always changing direction: its velocity is changing",
+      "Closer orbits: faster speed and shorter period",
+      "Planets: nearly circular orbits around the Sun"
+     ],
+     "note": "The existing lessons already introduce gravity and the Solar System; this lesson extends to varied orbits. Use a ball on a string to show the need for a force towards the centre. Ask: what would happen if gravity switched off? (The body moves off in a straight line.)",
+     "cycle": [
+      "Gravity pulls the satellite towards the planet",
+      "The satellite moves sideways at high speed",
+      "The path curves round the planet",
+      "The speed and radius must match to keep a stable orbit"
+     ]
+    },
+    {
+     "heading": "Orbital speed",
+     "bullets": [
+      "Speed = distance ÷ time",
+      "Orbital speed v = 2πr ÷ T",
+      "r from the centre of the body being orbited",
+      "T = time for one orbit in seconds"
+     ],
+     "note": "Convert days or years into seconds with care. Link to the circumference 2πr. The result is average speed along the orbit.",
+     "model": {
+      "problem": "The Earth orbits the Sun at an average radius of 1.5 × 10¹¹ m in one year (3.15 × 10⁷ s). Calculate its orbital speed.",
+      "steps": [
+       "v = 2πr ÷ T",
+       "= 2 × 3.14 × 1.5 × 10¹¹ ÷ 3.15 × 10⁷",
+       "= 9.42 × 10¹¹ ÷ 3.15 × 10⁷",
+       "= 3.0 × 10⁴ m/s (30 km/s)"
+      ],
+      "answer": "Orbital speed ≈ 3.0 × 10⁴ m/s"
+     }
+    },
+    {
+     "heading": "Comets and elliptical orbits",
+     "bullets": [
+      "Comets have very elliptical orbits",
+      "Fastest close to the Sun, slowest when far away",
+      "Gravity is stronger when near, so the comet speeds up",
+      "The tail forms as the Sun heats the ice and gas"
+     ],
+     "note": "Draw the ellipse with the Sun at one focus. Halley's comet has a period of about 76 years. Ask: where has the comet the greatest kinetic energy? (Closest to the Sun.) Planets also have elliptical orbits, but they are almost circular.",
+     "misconception": {
+      "wrong": "A comet's tail trails behind it as it moves.",
+      "right": "The tail always points away from the Sun, because it is blown away by the Sun's radiation and the solar wind, even when the comet moves towards the Sun."
+     }
+    },
+    {
+     "heading": "Artificial satellites",
+     "bullets": [
+      "Low polar orbit: period about 90 min, passes over poles; monitoring and mapping",
+      "Geostationary: 24 h period, above the equator; TV and communications",
+      "Geostationary orbits are far higher than low orbits",
+      "Higher orbit: slower speed and longer period"
+     ],
+     "note": "Use the model to calculate the speed of a geostationary satellite. Remind pupils that all geostationary satellites orbit above the equator at the same height.",
+     "model": {
+      "problem": "A geostationary satellite orbits at a radius of 4.2 × 10⁷ m from the Earth's centre with a period of 24 hours (86 400 s). Calculate its orbital speed.",
+      "steps": [
+       "v = 2πr ÷ T",
+       "= 2 × 3.14 × 4.2 × 10⁷ ÷ 86 400",
+       "= 2.64 × 10⁸ ÷ 86 400",
+       "≈ 3.1 × 10³ m/s"
+      ],
+      "answer": "Orbital speed ≈ 3.1 × 10³ m/s (about 3.1 km/s)"
+     }
+    },
+    {
+     "heading": "Check: orbit change",
+     "bullets": [
+      "Choose the best answer"
+     ],
+     "note": "Option A is the common idea that satellites are beyond gravity. Option C reverses the relationship.",
+     "check": {
+      "q": "Compared with a satellite in a low orbit, a satellite in a higher orbit has...",
+      "options": [
+       "greater speed and shorter period",
+       "smaller speed and longer period",
+       "no gravity acting on it",
+       "the same speed and period"
+      ],
+      "answer": 1,
+      "why": "Higher orbits have weaker gravity, so the satellite moves more slowly and takes longer for one orbit."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the orbital speed of the Moon, at 3.8 × 10⁸ m radius, with period 2.4 × 10⁶ s.",
+    "Explain why a geostationary satellite is useful for TV broadcasting.",
+    "Describe how the speed of a comet changes in its orbit and explain why."
+   ],
+   "independent": [
+    "Core: Describe the difference between a low polar orbit and a geostationary orbit.",
+    "Extend: The ISS orbits at 6.8 × 10⁶ m from Earth's centre in 92 minutes. Calculate its speed in m/s.",
+    "Stretch: Explain why a satellite can't be geostationary above London."
+   ],
+   "exit": [
+    "State the source of the force that keeps a planet in orbit.",
+    "State where a comet moves fastest."
+   ],
+   "homework": "Draw an elliptical orbit for a comet with the Sun marked and annotate the speed at three positions.",
+   "send": "SEND: give an orbit diagram to annotate with arrows. EAL: pre-teach elliptical, geostationary, period. Stretch: derive the orbital speed from gravitational force (beyond the specification)."
+  },
+  {
+   "unit": "Physics 8: Astrophysics",
+   "n": 19,
+   "title": "From stars to the Big Bang: explaining the universe in exam terms",
+   "duration": 50,
+   "bigQuestion": "What evidence do scientists use to describe how stars form and how the universe developed?",
+   "objectives": [
+    "Describe the scale of the universe and the order of stellar life cycles",
+    "Use an HR diagram and absolute magnitude to compare stars",
+    "Explain how red-shift and the cosmic microwave background are used as evidence for the Big Bang model"
+   ],
+   "successCriteria": [
+    "All: order the stages in the life cycle of a star",
+    "Most: explain how the evidence supports the Big Bang model",
+    "Some: write a developed six-mark explanation using evidence and reasoning"
+   ],
+   "crossCurricular": "Maths: standard form and ratios; History of science: how models change with evidence",
+   "smsc": "Spiritual: reflection on the vastness of the universe and the care taken in testing ideas against evidence",
+   "keywords": [
+    {
+     "term": "light-year",
+     "def": "the distance light travels in one year, about 9.5 × 10¹⁵ m"
+    },
+    {
+     "term": "absolute magnitude",
+     "def": "a measure of the true brightness of a star, as it would appear from a standard distance"
+    },
+    {
+     "term": "red-shift",
+     "def": "the stretching of light from distant galaxies towards longer wavelengths"
+    },
+    {
+     "term": "cosmic microwave background (CMB)",
+     "def": "microwave radiation arriving from all directions, the remnant of the early universe"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the two main fusion fuels in stars (hydrogen and helium).",
+    "State the order of colours of stars from hottest to coolest.",
+    "State the equation speed = distance ÷ time."
+   ],
+   "teach": [
+    {
+     "heading": "Scale of the universe",
+     "bullets": [
+      "Solar System: the Sun and objects orbiting it",
+      "Galaxy: billions of stars held together by gravity",
+      "The Milky Way is about 100 000 light-years across",
+      "The universe contains billions of galaxies"
+     ],
+     "note": "This consolidates Physics 8 content that earlier lessons cover. Do the light-year calculation: the light-year is a distance, not a time. The nearest star after the Sun, Proxima Centauri, is about 4.2 light-years away.",
+     "model": {
+      "problem": "Calculate the distance in metres of one light-year. (Speed of light 3.0 × 10⁸ m/s; 1 year = 3.15 × 10⁷ s.)",
+      "steps": [
+       "distance = speed × time",
+       "= 3.0 × 10⁸ × 3.15 × 10⁷",
+       "≈ 9.5 × 10¹⁵ m"
+      ],
+      "answer": "1 light-year ≈ 9.5 × 10¹⁵ m"
+     }
+    },
+    {
+     "heading": "Life cycles of stars",
+     "bullets": [
+      "Nebula collapses under gravity to form a protostar",
+      "Main sequence: hydrogen fuses to helium for most of the star's life",
+      "Sun-like star: red giant, then white dwarf",
+      "Massive star: red supergiant, supernova, then neutron star or black hole"
+     ],
+     "note": "Pupils should be able to state each sequence in order, give the cause of each change (fuel running out and balance of forces changing), and explain that heavier elements are made in stars and scattered by supernovae. Link to the HR diagram.",
+     "compare": {
+      "left": {
+       "title": "Sun-like star",
+       "points": [
+        "Protostar",
+        "Main sequence",
+        "Red giant",
+        "White dwarf"
+       ]
+      },
+      "right": {
+       "title": "Massive star",
+       "points": [
+        "Protostar",
+        "Main sequence",
+        "Red supergiant",
+        "Supernova",
+        "Neutron star or black hole"
+       ]
+      },
+      "label": "life cycles"
+     }
+    },
+    {
+     "heading": "Reading the HR diagram",
+     "bullets": [
+      "x-axis: surface temperature, hotter to the left",
+      "y-axis: absolute magnitude or luminosity; brighter to the top",
+      "Main sequence: a diagonal band",
+      "Red giants: top right; white dwarfs: bottom left"
+     ],
+     "note": "Say that lower (more negative) absolute magnitude means brighter. Ask: a star is cool but very bright; where is it and what size? (Top right: red giant, very large.) Compare absolute magnitude (true brightness) with apparent brightness, which depends on distance.",
+     "table": {
+      "head": [
+       "Star type",
+       "Temperature",
+       "Brightness",
+       "Position"
+      ],
+      "rows": [
+       [
+        "Main sequence (Sun)",
+        "medium",
+        "medium",
+        "diagonal band"
+       ],
+       [
+        "Red giant",
+        "cool",
+        "very bright",
+        "top right"
+       ],
+       [
+        "White dwarf",
+        "hot",
+        "dim",
+        "bottom left"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Big Bang: the evidence",
+     "bullets": [
+      "Model: universe began small, hot, dense about 13.8 billion years ago, and expands",
+      "Red-shift: light from distant galaxies is shifted to longer wavelengths",
+      "More distant galaxies show greater red-shift, so move away faster",
+      "CMB: microwave radiation from all directions, the cooled remnant of the early universe"
+     ],
+     "note": "Teach this as the model the specification requires pupils to know and use, with its evidence. Do not editorialise. Evidence: red-shift tells us space is expanding; the CMB was predicted by the model and observed, which supports it. Ask: what would different observations have meant for the model?",
+     "model": {
+      "problem": "Explain how red-shift provides evidence for the Big Bang model.",
+      "steps": [
+       "Light from distant galaxies has longer wavelengths than expected",
+       "Longer wavelength means the galaxies are moving away from us",
+       "Farther galaxies show greater red-shift, so they move away faster",
+       "Everything moving apart suggests the universe is expanding from a common starting point"
+      ],
+      "answer": "Red-shift shows the universe is expanding, which supports the Big Bang model"
+     }
+    },
+    {
+     "heading": "Check: the CMB",
+     "bullets": [
+      "Choose the best answer"
+     ],
+     "note": "Option C confuses red-shift and CMB. Option A is a typical statement but not a reason. Ask for the link between evidence and model.",
+     "check": {
+      "q": "Why does the cosmic microwave background support the Big Bang model?",
+      "options": [
+       "It shows galaxies are moving apart",
+       "It is radiation from the hot early universe, stretched by expansion into microwaves",
+       "It is produced by stars",
+       "It proves the universe is infinite"
+      ],
+      "answer": 1,
+      "why": "The Big Bang model predicts radiation left over from the hot early universe, observed today as microwaves from all directions."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the distance to a star 8.0 light-years away in metres.",
+    "State the order of the stages of a massive star's life cycle.",
+    "Describe how red-shift evidence shows the universe is expanding."
+   ],
+   "independent": [
+    "Core: Complete a table of star types with temperature, brightness and HR position.",
+    "Extend: Explain why a red giant is brighter than the Sun even though its surface is cooler.",
+    "Stretch: Write a six-mark answer: 'Explain how the evidence from red-shift and the cosmic microwave background supports the Big Bang model.' Use at least two linked statements for each piece of evidence."
+   ],
+   "exit": [
+    "State two pieces of evidence for the Big Bang model.",
+    "State what becomes of the Sun at the end of its life."
+   ],
+   "homework": "Create a revision poster showing the life cycle of a Sun-like star and a massive star, with one sentence on the forces involved at each stage.",
+   "send": "SEND: sequencing cards for the life cycle and sentence starters for the six-mark answer. EAL: pre-teach galaxy, red-shift, evidence. Stretch: use the red-shift equation z = Δλ ÷ λ = v ÷ c."
+  }
+ ]
+}
