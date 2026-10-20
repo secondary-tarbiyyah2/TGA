@@ -5,7 +5,7 @@ import { leadRef, readRegisterInterest, type StoredRegisterInterest } from "@/li
 import { COUNTRIES } from "@/lib/countries";
 
 const YEAR_GROUPS = [
-  "Reception (age 4–5)", "Year 1 (age 5–6)", "Year 2 (age 6–7)", "Year 3 (age 7–8)", "Year 4 (age 8–9)",
+  "Year 1 (age 5–6)", "Year 2 (age 6–7)", "Year 3 (age 7–8)", "Year 4 (age 8–9)",
   "Year 5 (age 9–10)", "Year 6 (age 10–11)", "Year 7 (age 11–12)", "Year 8 (age 12–13)", "Year 9 (age 13–14)",
   "Year 10 (age 14–15)", "Year 11 (age 15–16)", "Not sure yet",
 ];

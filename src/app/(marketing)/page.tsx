@@ -15,7 +15,7 @@ import { RecipeValues } from "@/components/home/RecipeValues";
 
 export const metadata: Metadata = pageMetadata({
   title: "A specialist, quality education, rooted in faith",
-  description: "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified teachers on the full British curriculum, from Reception to Year 11, taught with tarbiyyah at its heart.",
+  description: "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified teachers on the full British curriculum, from Year 1 to Year 11, taught with tarbiyyah at its heart.",
   path: "",
 });
 
@@ -31,7 +31,7 @@ const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 // Live lessons a week and their length, from the Curriculum Policy (12).
 const stages = [
-  { stage: "Reception – Year 2", href: "/curriculum/reception-year-2", week: "Short daily live sessions (Reception) · 15 lessons of 30 min (Years 1–2)" },
+  { stage: "Year 1 – Year 2", href: "/curriculum/reception-year-2", week: "15 lessons of 30 min a week" },
   { stage: "Year 3 – Year 6", href: "/curriculum/year-3-6", week: "20 live lessons a week, 45 minutes each" },
   { stage: "Year 7 – Year 9", href: "/curriculum/year-7-9", week: "25 live lessons a week, 50 minutes each" },
   { stage: "Year 10 – Year 11 (GCSE)", href: "/curriculum/year-10-11", week: "25 live lessons a week, GCSE and International GCSE" },
@@ -72,7 +72,7 @@ export default async function HomePage() {
             ) : (
               <p className="mt-6 max-w-xl text-lg text-ink/75">
                 Live, timetabled lessons with qualified teachers on the full British curriculum, taught with{" "}
-                <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Reception to Year 11, live
+                <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Year 1 to Year 11, live
                 lessons launching January 2027.
               </p>
             )}
@@ -81,7 +81,7 @@ export default async function HomePage() {
               <Button href="/book-a-call" variant="secondary">Book a free call</Button>
             </div>
             <p className="mt-6 text-sm font-medium text-ink/70">
-              Part of the Tarbiyyah Education Trust · 10+ years · Classes of up to 15 · Reception–Year 11
+              Part of the Tarbiyyah Education Trust · 10+ years · Classes of up to 15 · Year 1–Year 11
             </p>
             <p className="mt-3 text-sm text-ink/70">
               Not sure yet?{" "}
@@ -121,7 +121,7 @@ export default async function HomePage() {
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div>
             <Kicker>Curriculum</Kicker>
-            <h2 className="text-h2 font-serif font-semibold text-ink">{content.stagesHeading || "A specialist curriculum, from Reception to GCSE."}</h2>
+            <h2 className="text-h2 font-serif font-semibold text-ink">{content.stagesHeading || "A specialist curriculum, from Year 1 to GCSE."}</h2>
             <p className="mt-4 text-ink/75">
               {content.stagesBody ||
                 "The full British curriculum, live-timetabled and taught by qualified teachers — with Qur'an, Islamic Studies and Arabic woven through every key stage, not bolted on."}

@@ -23,8 +23,8 @@ export const SCHOOL_WEEK_NOTE =
 export const keyStages: KeyStage[] = [
   {
     slug: "reception-year-2",
-    range: "Reception – Year 2",
-    title: "Early Years & Key Stage 1",
+    range: "Year 1 – Year 2",
+    title: "Key Stage 1",
     subjects: [
       "Phonics and early reading (a systematic synthetic phonics programme)",
       "English",
@@ -46,7 +46,7 @@ export const keyStages: KeyStage[] = [
     ],
     lessonLength: "30 minutes",
     totalLessons: "15 live lessons a week (Years 1–2)",
-    note: "Reception follows the Early Years Foundation Stage through short daily live sessions (about 1.5 hours a day) with guided activities at home. A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is also available for Reception to Year 9.",
+    note: "Years 1–2 have short daily live sessions (about 2 hours a day) with guided activities at home. A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is also available for Year 1 to Year 9.",
   },
   {
     slug: "year-3-6",
@@ -65,7 +65,7 @@ export const keyStages: KeyStage[] = [
     ],
     lessonLength: "45 minutes",
     totalLessons: "20 live lessons a week",
-    note: "A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is available for Reception to Year 9.",
+    note: "A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is available for Year 1 to Year 9.",
   },
   {
     slug: "year-7-9",
@@ -97,7 +97,7 @@ export const keyStages: KeyStage[] = [
     ],
     lessonLength: "50 minutes",
     totalLessons: "25 live lessons a week",
-    note: "A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is available for Reception to Year 9.",
+    note: "A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is available for Year 1 to Year 9.",
   },
   {
     slug: "year-10-11",

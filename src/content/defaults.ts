@@ -21,7 +21,7 @@ export const homepageDefaults = {
   // Saving it unchanged keeps the styled version.
   hero_heading: "A specialist, quality education, rooted in faith — wherever home is.",
   hero_body:
-    "Live, timetabled lessons with qualified teachers on the full British curriculum, taught with tarbiyyah — the nurturing of character and faith — at its heart. Reception to Year 11, live lessons launching January 2027.",
+    "Live, timetabled lessons with qualified teachers on the full British curriculum, taught with tarbiyyah — the nurturing of character and faith — at its heart. Year 1 to Year 11, live lessons launching January 2027.",
   pillars: [
     { title: "Specialist curriculum", body: "The full British national curriculum, live-timetabled, taught to GCSE by qualified teachers." },
     { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage — not an add-on." },
@@ -36,7 +36,7 @@ export const homepageDefaults = {
     { title: "Offer", body: "We email the offer; send proof of payment to confirm your place." },
     { title: "Welcome", body: "Accounts created and onboarding ahead of live lessons in January 2027." },
   ] as TitleBody[],
-  stages_heading: "A specialist curriculum, from Reception to GCSE.",
+  stages_heading: "A specialist curriculum, from Year 1 to GCSE.",
   stages_body:
     "The full British curriculum, live-timetabled and taught by qualified teachers — with Qur'an, Islamic Studies and Arabic woven through every key stage, not bolted on.",
   fee_teaser_heading: "Transparent fees, no surprises.",

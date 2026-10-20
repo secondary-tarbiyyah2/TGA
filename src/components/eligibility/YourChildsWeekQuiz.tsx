@@ -19,7 +19,7 @@ import { generateId, recordQuizEvent, upsertQuizSession } from "@/lib/quiz/sessi
 
 type YearGroupOption = { id: string; name: string };
 
-const FALLBACK_YEAR_GROUPS = ["Reception", "Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6", "Year 7", "Year 8", "Year 9", "Year 10", "Year 11"];
+const FALLBACK_YEAR_GROUPS = ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6", "Year 7", "Year 8", "Year 9", "Year 10", "Year 11"];
 
 function capitaliseName(name: string): string {
   return name

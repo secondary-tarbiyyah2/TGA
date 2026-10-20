@@ -22,7 +22,6 @@ export const SIDELINE_STATUSES: ApplicationStatus[] = ["waitlisted", "declined",
 // Same names as public.year_groups (migration 0018) and the existing
 // application form; the label adds the age band shown elsewhere on the site.
 export const YEAR_GROUP_OPTIONS: { value: string; label: string }[] = [
-  { value: "Reception", label: "Reception (age 4–5)" },
   { value: "Year 1", label: "Year 1 (age 5–6)" },
   { value: "Year 2", label: "Year 2 (age 6–7)" },
   { value: "Year 3", label: "Year 3 (age 7–8)" },

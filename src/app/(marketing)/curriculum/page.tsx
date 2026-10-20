@@ -10,7 +10,7 @@ import { CurriculumSampleWeek } from "@/components/CurriculumSampleWeek";
 
 export const metadata: Metadata = pageMetadata({
   title: "Curriculum",
-  description: "A specialist curriculum — the full British national curriculum plus Islamic Studies, by key stage, Reception to GCSE.",
+  description: "A specialist curriculum — the full British national curriculum plus Islamic Studies, by key stage, Year 1 to GCSE.",
   path: "/curriculum",
 });
 

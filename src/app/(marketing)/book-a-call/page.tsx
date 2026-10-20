@@ -26,7 +26,7 @@ const afterBooking = [
 ];
 
 export default async function BookACallPage() {
-  // Fee bands are ordered Reception→Y11 by `order` (see
+  // Fee bands are ordered Y1→Y11 by `order` (see
   // src/lib/quiz/feeBand.ts's same assumption elsewhere) — the first band
   // is the school's actual cheapest, so this is a real "from" figure, not
   // a guess. Hidden entirely if no fee bands are configured yet, rather

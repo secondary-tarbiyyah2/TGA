@@ -10,7 +10,7 @@ type Staff = { id: string; display_name: string; role_title: string };
 type Status = "idle" | "submitting" | "success" | "error";
 
 const YEAR_GROUPS = [
-  "Reception", "Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6",
+  "Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6",
   "Year 7", "Year 8", "Year 9", "Year 10", "Year 11", "Not sure yet",
 ];
 

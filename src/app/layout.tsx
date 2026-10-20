@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Tarbiyyah Global Academy — A specialist, quality education, rooted in faith", template: "%s — Tarbiyyah Global Academy" },
   description:
-    "An online school by the Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons and Islamic Studies with qualified teachers on the full British curriculum, Reception to Year 11, launching January 2027.",
+    "An online school by the Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons and Islamic Studies with qualified teachers on the full British curriculum, Year 1 to Year 11, launching January 2027.",
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -66,7 +66,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     "@type": "EducationalOrganization",
     name: "Tarbiyyah Global Academy",
     description:
-      "A specialist online school by the Tarbiyyah Education Trust — live, timetabled lessons with qualified teachers on the full British curriculum, Reception to Year 11, taught with tarbiyyah at its heart.",
+      "A specialist online school by the Tarbiyyah Education Trust — live, timetabled lessons with qualified teachers on the full British curriculum, Year 1 to Year 11, taught with tarbiyyah at its heart.",
     url: siteUrl,
     logo: { "@type": "ImageObject", url: `${siteUrl}/brand/ga-logo-square.png`, width: 512, height: 512 },
     image: `${siteUrl}/brand/ga-wordmark.png`,
