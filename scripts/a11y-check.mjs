@@ -162,6 +162,8 @@ for (const p of pages) {
     failures++;
     console.log(`✗ ${p}`);
     for (const line of problems) console.log(`  ${line}`);
+    // GitHub annotation, so the failure is readable from the PR page.
+    if (process.env.GITHUB_ACTIONS) console.log(`::error title=a11y ${p}::${problems.join(" | ").slice(0, 900)}`);
   } else {
     console.log(`✓ ${p}`);
   }
