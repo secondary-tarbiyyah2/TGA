@@ -4,11 +4,11 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { AdmissionsStrip } from "@/components/AdmissionsStrip";
-import { getStaffMembers } from "@/lib/content";
+import { getStaffMembers, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Meet the Team",
-  description: "Qualifications and intro videos for the teachers of Tarbiyyah Global Academy.",
+  description: "The teachers of Tarbiyyah Global Academy, with their qualifications and introductions.",
   path: "/team",
 });
 
@@ -16,7 +16,8 @@ export default async function TeamPage() {
   // Unconfirmed entries never render publicly — no visible "bio to follow"
   // placeholder; a staff member simply appears once an admin has real
   // details for them, per the no-visible-placeholder rule.
-  const staff = (await getStaffMembers()).filter((s) => !s.isPlaceholder);
+  const [all, settings] = await Promise.all([getStaffMembers(), getSiteSettings()]);
+  const staff = all.filter((s) => !s.isPlaceholder);
 
   return (
     <>
@@ -25,7 +26,9 @@ export default async function TeamPage() {
           <Kicker>Meet the Team</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">The people teaching your child.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            Every teacher is public on our website — qualifications and a short intro video, before you ever apply.
+            {staff.length > 0
+              ? "Every teacher is introduced here, with their qualifications and a short video."
+              : "Each teacher will be introduced here, with their qualifications and a short video, ahead of live lessons in January 2027."}
           </p>
         </Container>
       </section>
@@ -48,7 +51,9 @@ export default async function TeamPage() {
             </div>
           ))}
           {staff.length === 0 && (
-            <p className="text-ink/70 sm:col-span-2 lg:col-span-3">Team profiles will appear here as they&apos;re confirmed.</p>
+            <p className="text-ink/70 sm:col-span-2 lg:col-span-3">
+              Teacher profiles will appear here as appointments are confirmed.{settings.headteacherName ? ` The Academy is led by ${settings.headteacherName}, Headteacher.` : ""}
+            </p>
           )}
         </Container>
       </section>

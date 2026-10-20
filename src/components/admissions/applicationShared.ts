@@ -204,7 +204,7 @@ export function admissionsProcessSteps(fees: { applicationFee?: number; registra
       title: "We review your application",
       owner: "us",
       short: "We check your details and documents.",
-      body: "The admissions team reviews your application and documents, and tells you if anything else is needed.",
+      body: "The admissions team reviews your application and documents, asks your child's current school for a confidential report, and tells you if anything else is needed.",
     },
     {
       title: "Remote assessment",
@@ -213,16 +213,16 @@ export function admissionsProcessSteps(fees: { applicationFee?: number; registra
       body: "Your child sits an age-appropriate assessment online, supervised with the camera on. We email you the date, time and what to prepare.",
     },
     {
-      title: "Interview",
+      title: "Family video call",
       owner: "together",
-      short: "A video conversation with you and your child.",
-      body: "A video interview with you (the parent or guardian) and your child, about learning goals, values and any support needs.",
+      short: "A conversation with you and your child. We decide within ten working days.",
+      body: "A video call with a member of the leadership team, you (the parent or guardian) and your child, about learning goals, values and any support needs. We normally give you our decision within ten working days of a complete application.",
     },
     {
       title: "Offer and securing your place",
       owner: "you",
-      short: `We email the offer. Send proof of payment (${app} application fee if unpaid, ${reg} registration fee and your first payment) to confirm your place.`,
-      body: `We email you the offer. You then send proof of payment (a screenshot or receipt) for the ${app} application fee (if not already paid), the ${reg} registration fee, and your first payment: a minimum of the first month, or the first term, or the whole year, depending on your plan. Your place is confirmed once we receive them.`,
+      short: `We email the offer. Accept within five working days and pay the ${reg} registration fee to secure your place.`,
+      body: `We email you a conditional offer with the terms and conditions. To accept, reply within five working days and pay the ${reg} registration fee (and the ${app} application fee, if not already paid), sending proof of payment. Tuition is then paid on the dates in the Fees Policy: annually or the first termly payment by 19 December 2026, or monthly from 28 December 2026. You can cancel within 14 days of accepting, as the Fees Policy explains.`,
     },
     {
       title: "Welcome",

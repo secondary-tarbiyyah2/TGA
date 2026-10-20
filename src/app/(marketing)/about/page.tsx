@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { aboutDefaults } from "@/content/defaults";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
@@ -14,14 +15,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/about",
 });
 
-const defaultRecipe = [
-  { letter: "R", word: "Respect", body: "For Allah, for others, and for oneself." },
-  { letter: "E", word: "Excellence", body: "In academic work and in character alike." },
-  { letter: "C", word: "Compassion", body: "Kindness modelled and expected, every day." },
-  { letter: "I", word: "Integrity", body: "Doing right when no one is watching." },
-  { letter: "P", word: "Purpose", body: "Learning connected to a life of meaning and worship." },
-  { letter: "E", word: "Etiquette (Adab)", body: "Manners and conduct as the foundation of learning." },
-];
+const defaultRecipe = aboutDefaults.recipe_items;
 
 export default async function AboutPage() {
   const [content, settings] = await Promise.all([getAboutContent(), getSiteSettings()]);
@@ -55,7 +49,7 @@ export default async function AboutPage() {
             <Kicker>Safeguarding</Kicker>
             <p className="text-ink/75">
               {content.safeguardingBody || (
-                <>The safety and wellbeing of every child is our first responsibility, with vetted, DBS-checked staff and a named Designated Safeguarding Lead.</>
+                <>The safety and wellbeing of every child is our first responsibility, with safer-recruitment vetting for every member of staff (enhanced DBS in the UK, overseas checks abroad) and a named Designated Safeguarding Lead.</>
               )}{" "}
               Read our full approach, including how to raise a concern, on the{" "}
               <a href="/safeguarding" className="text-gold-700 underline">Safeguarding</a> page.

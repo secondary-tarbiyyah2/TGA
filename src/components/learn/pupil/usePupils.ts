@@ -39,10 +39,10 @@ export function usePupils(withOwnAcks = false) {
       const [kids, enrols, det, cons, acks, yg] = await Promise.all([
         supabase.from("children").select("id, name, dob, year_group_id, year_groups(name)").order("name"),
         supabase.from("enrolments").select("child_id, class_id, classes(name)"),
-        // Teachers get only health, needs and consents (0098 teacher_pupil_health);
-        // the office sees the whole record and the emergency contacts.
+        // Teachers get health, needs, consents and the home address (0100
+        // teacher_pupil_health, Policy 09); the office sees the whole record.
         withOwnAcks ? supabase.rpc("teacher_pupil_health") : supabase.from("pupil_details").select(SUMMARY_SELECT),
-        withOwnAcks ? Promise.resolve({ data: [], error: null }) : supabase.from("pupil_emergency_contacts").select("child_id"),
+        supabase.from("pupil_emergency_contacts").select("child_id"),
         withOwnAcks && uid
           ? supabase.from("pupil_detail_acknowledgements").select("id, child_id, teacher_id, acknowledged_at, details_updated_at").eq("teacher_id", uid)
           : Promise.resolve({ data: [], error: null }),

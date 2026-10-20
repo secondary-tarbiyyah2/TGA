@@ -28,7 +28,7 @@ export default async function SafeguardingPage() {
           <p className="mt-6 text-lg text-ink/75">
             The safety and wellbeing of every child is our first responsibility. Tarbiyyah Global Academy follows the
             same safeguarding standards as Tarbiyyah Primary, Tarbiyyah Secondary and Tarbiyyah Al-Banaat, including
-            vetted, DBS-checked staff, a named Designated Safeguarding Lead, and clear reporting routes for any
+            vetted staff (enhanced DBS in the UK, overseas checks for staff abroad), a named Designated Safeguarding Lead, and clear reporting routes for any
             concern.
           </p>
         </Container>

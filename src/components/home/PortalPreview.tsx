@@ -9,7 +9,7 @@ import { portalCta } from "@/lib/nav";
  * real pupil's data — and is labelled as such.
  */
 const FEATURES = [
-  { title: "Today's lessons", body: "The live timetable in your own time zone, with one tap to join." },
+  { title: "Today's lessons", body: "The day's live lessons (UK time), with one tap to join." },
   { title: "Registers & attendance", body: "Every lesson's register, so you know straight away if your child was missed." },
   { title: "Homework & grades", body: "What's due, what's been marked, and the feedback that came with it." },
   { title: "Qur'an progress", body: "Hifz and recitation targets tracked alongside every other subject." },
@@ -79,7 +79,7 @@ export function PortalPreview() {
             <div className="mt-3 grid grid-cols-2 gap-3">
               <div className="rounded-2xl border border-gold-light/60 bg-white p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">This week</p>
-                <p className="mt-1 text-2xl font-semibold tabular-nums text-teal-700">18/18</p>
+                <p className="mt-1 text-2xl font-semibold tabular-nums text-teal-700">20/20</p>
                 <p className="text-xs text-ink/70">lessons attended</p>
               </div>
               <div className="rounded-2xl border border-gold-light/60 bg-white p-4">

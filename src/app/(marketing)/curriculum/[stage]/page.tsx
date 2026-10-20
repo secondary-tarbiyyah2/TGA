@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { keyStages } from "@/content/curriculum";
+import { WeeklyLessons } from "@/components/CurriculumSampleWeek";
 import { getCurriculumDocuments } from "@/lib/content";
 
 const TERM_LABEL: Record<string, string> = { autumn: "Autumn", spring: "Spring", summer: "Summer" };
@@ -60,16 +61,8 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
             </ul>
           </div>
           <div>
-            <Kicker>Sample weekly timetable</Kicker>
-            <div className="mt-4 divide-y divide-gold-light/40 overflow-hidden rounded-2xl border border-gold-light/50">
-              {ks.sampleWeek.map((d) => (
-                <div key={d.day} className="flex justify-between bg-white px-4 py-3 text-sm">
-                  <span className="font-semibold text-ink">{d.day}</span>
-                  <span className="text-ink/70">{d.focus}</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-3 text-xs text-ink/70">Illustrative sample — the confirmed timetable is published ahead of enrolment.</p>
+            <Kicker>Live lessons each week</Kicker>
+            <WeeklyLessons ks={ks} />
           </div>
         </Container>
       </section>

@@ -28,7 +28,7 @@ export const DEFAULT_PAYMENT_SCHEDULE_TEXT =
 /** Non-schedule fee defaults from the Fees Policy PDF (all editable in the admin Fees editor). */
 export const FEE_POLICY_DEFAULTS = {
   applicationFee: 100,
-  registrationFee: 150,
+  registrationFee: 550,
   /** % off the annual total when the annual option is paid in full by the due date (19 Dec 2026). */
   annualDiscountPercent: 2,
   paymentScheduleText: DEFAULT_PAYMENT_SCHEDULE_TEXT,

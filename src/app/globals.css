@@ -73,6 +73,14 @@
   --color-gold-dark: var(--color-gold-dark);
 }
 
+/* Nothing may push the page sideways: a too-wide element is clipped rather
+   than letting the whole page (header and menu included) slide left. `clip`
+   (unlike `hidden`) keeps sticky headers working. */
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

@@ -57,7 +57,7 @@ export function PupilRecord({
               .rpc("teacher_pupil_health")
               .then((r) => ({ data: ((r.data as unknown as PupilDetails[]) || []).find((x) => x.child_id === child.id) || null, error: r.error }))
           : supabase.from("pupil_details").select(DETAILS_SELECT).eq("child_id", child.id).maybeSingle(),
-        teacherView ? Promise.resolve({ data: [], error: null }) : supabase.from("pupil_emergency_contacts").select(CONTACT_SELECT).eq("child_id", child.id).order("priority"),
+        supabase.from("pupil_emergency_contacts").select(CONTACT_SELECT).eq("child_id", child.id).order("priority"),
         showAcks
           ? supabase.from("pupil_detail_acknowledgements").select("id, child_id, teacher_id, acknowledged_at, details_updated_at, profiles(full_name)").eq("child_id", child.id).order("acknowledged_at", { ascending: false })
           : Promise.resolve({ data: [], error: null }),
@@ -87,7 +87,7 @@ export function PupilRecord({
   const tabs: { key: Tab; label: string }[] = [
     ...(teacherView ? [] : [{ key: "basics" as Tab, label: "Basics" }]),
     { key: "health", label: teacherView ? "Health and needs" : "Health" },
-    ...(teacherView ? [] : [{ key: "contacts" as Tab, label: `Emergency contacts (${contacts.length})` }]),
+    { key: "contacts" as Tab, label: `Address and emergency contacts (${contacts.length})` },
     { key: "consents", label: "Consents" },
     ...(showAcks ? [{ key: "acks" as Tab, label: `Teacher acknowledgements (${acks.length})` }] : []),
   ];
@@ -115,7 +115,9 @@ export function PupilRecord({
           </div>
         </div>
         {teacherView ? (
-          <p className="mt-2 text-xs text-ink/65">Home address and emergency contacts are held by the office. In an emergency, contact the office or the safeguarding lead.</p>
+          <p className="mt-2 text-xs text-ink/65">
+            In an emergency during a lesson: stay with the pupil on screen, call the emergency services for their address (UK 999), ask a colleague to ring the parents, then tell the DSL. See the Supporting Pupils with Medical Conditions Policy.
+          </p>
         ) : (
         <div className="mt-3 flex items-center gap-3">
           <div className="flex-1">
@@ -150,8 +152,9 @@ export function PupilRecord({
         <Row label="Parent confirmed" value={details?.health_confirmed ? "Yes" : "No"} />
       </Section>
 
-      {!teacherView && (
-      <Section title="Emergency contacts" className={vis("contacts")}>
+      {(
+      <Section title={teacherView ? "Address and emergency contacts" : "Emergency contacts"} className={vis("contacts")}>
+        {teacherView && <Row label="Home address" value={[details?.address_line1, details?.address_line2, details?.town, details?.postcode].filter(Boolean).join(", ")} />}
         {contacts.length === 0 ? (
           <p className="text-sm text-amber-800">No emergency contacts yet.</p>
         ) : (

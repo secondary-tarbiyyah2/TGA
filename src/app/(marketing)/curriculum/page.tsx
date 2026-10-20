@@ -28,7 +28,7 @@ export default async function CurriculumPage() {
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             {content.heroBody || (
               <>
-                The full British curriculum, live-timetabled and taught by qualified UK teachers, through to GCSE —
+                The full British curriculum, live-timetabled and taught by qualified teachers, through to GCSE —
                 with Qur&apos;an, Islamic Studies and Arabic on the timetable at every key stage.
               </>
             )}
