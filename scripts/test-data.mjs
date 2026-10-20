@@ -107,7 +107,14 @@ async function clearReferences(ids) {
   for (const fk of fks) {
     const q = fk.notnull ? `delete from ${fk.tbl} where ${fk.col} in (${list})` : `update ${fk.tbl} set ${fk.col} = null where ${fk.col} in (${list})`;
     try {
-      await sql(q);
+      try {
+        await sql(q);
+      } catch (e) {
+        // A column that can't be null by a table rule (e.g. a conversation
+        // needs both people): remove the test activity row instead.
+        if (fk.notnull) throw e;
+        await sql(`delete from ${fk.tbl} where ${fk.col} in (${list})`);
+      }
     } catch (e) {
       clearNotes.push(`${fk.tbl}.${fk.col}: ${e.message.slice(0, 120)}`);
     }
