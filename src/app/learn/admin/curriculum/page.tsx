@@ -3,6 +3,7 @@
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { CurriculumLibrary } from "@/components/learn/curriculum/CurriculumLibrary";
+import { SyllabusPack } from "@/components/learn/curriculum/SyllabusPack";
 
 export default function AdminCurriculumPage() {
   return (
@@ -14,6 +15,7 @@ export default function AdminCurriculumPage() {
           subtitle="Pick a year, then a unit. Each unit has its lessons (slides and plans, with version history), its revision pack for pupils, and pupil results."
         />
         <CurriculumLibrary area="admin" />
+          <SyllabusPack />
       </LearnGate>
     </section>
   );

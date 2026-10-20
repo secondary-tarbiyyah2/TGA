@@ -1,0 +1,303 @@
+{
+  "kind": "spec",
+  "subject": "English Language",
+  "slug": "english-language",
+  "board": "AQA",
+  "qualification": "GCSE English Language (9-1)",
+  "code": "8700",
+  "specVersion": "Version 1.5, 14 October 2021 (first teaching September 2015; first exams 2017)",
+  "status": "Verified",
+  "statusNote": "Structure (papers, durations, marks, weightings, AOs, spoken language endorsement) and subject content were read from the AQA 8700 specification PDF and the AQA Prepare-to-teach exam information; Paper 2 question stems from AQA specimen material 1. The Y10/Y11 placement is the recommended sequence only: AQA allows any order and flexible two-year teaching. Per-question timings are not stated by AQA in the documents opened.",
+  "sources": [
+    { "title": "AQA GCSE English Language 8700 specification (PDF, v1.5)", "url": "https://filestore.aqa.org.uk/resources/english/specifications/AQA-8700-SP-2015.PDF" },
+    { "title": "AQA 8700 specification at a glance (introduction page)", "url": "https://www.aqa.org.uk/subjects/english/gcse/english-language-8700/specification-at-a-glance" },
+    { "title": "AQA 8700 scheme of assessment page", "url": "https://www.aqa.org.uk/subjects/english/gcse/english-language-8700/scheme-of-assessment" },
+    { "title": "AQA 8700 Prepare to teach: exam information", "url": "https://filestore.aqa.org.uk/resources/english/AQA_8700_EXAM_EXAM_INFO_TN.PDF" },
+    { "title": "AQA 8700/2 Specimen material 1 (Paper 2)", "url": "https://filestore.aqa.org.uk/resources/english/AQA-87002-SMS.PDF" }
+  ],
+  "years": "Years 10 to 11",
+  "tiers": "None (untiered, all students sit the same papers; graded 9 to 1)",
+  "assessment": [
+    {
+      "paper": "Paper 1",
+      "title": "Explorations in Creative Reading and Writing",
+      "duration": "1 hour 45 minutes (includes a notional 15 minutes of reading time)",
+      "marks": 80,
+      "weight": "50%",
+      "content": "Section A: one 20th or 21st century prose fiction extract (reading, 40 marks, AO1, AO2, AO4). Section B: one descriptive or narrative writing task (40 marks, AO5, AO6).",
+      "format": "Section A: Q1 short form (4), Q2 (8), Q3 (8), Q4 extended (20). Section B: Q5 one extended piece from a prompt or image (24 content and organisation, 16 technical accuracy)."
+    },
+    {
+      "paper": "Paper 2",
+      "title": "Writers' Viewpoints and Perspectives",
+      "duration": "1 hour 45 minutes (includes a notional 15 minutes of reading time)",
+      "marks": 80,
+      "weight": "50%",
+      "content": "Section A: two linked non-fiction or literary non-fiction sources from different periods, one from the 19th century (reading, 40 marks, AO1, AO2, AO3). Section B: one viewpoint writing task (40 marks, AO5, AO6).",
+      "format": "Section A: Q1 short form (4), Q2 (8), Q3 (12), Q4 extended (16). Section B: Q5 one extended piece giving a personal viewpoint for a stated audience, purpose and form (24 content and organisation, 16 technical accuracy)."
+    },
+    {
+      "paper": "Spoken Language endorsement",
+      "title": "Presenting, responding and Standard English",
+      "duration": "Teacher-set; presentation guide of no more than about ten minutes",
+      "marks": 0,
+      "weight": "0% (reported separately)",
+      "content": "Assesses AO7, AO8 and AO9 through a formal presentation and responses to questions and feedback.",
+      "format": "Teacher-marked on a competency basis; reported as Distinction, Merit, Pass or Not Classified. No marks. Does not count towards the 9 to 1 grade."
+    }
+  ],
+  "nonExam": "Spoken Language endorsement (AO7 to AO9): a teacher-assessed formal presentation with questions, reported as a separate grade (Distinction, Merit, Pass or Not Classified), 0% of the GCSE grade.",
+  "aos": [
+    { "code": "AO1", "desc": "Identify and interpret explicit and implicit information and ideas; select and synthesise evidence from different texts.", "weight": "10% (Paper 1 2.5%, Paper 2 7.5%)" },
+    { "code": "AO2", "desc": "Explain how writers use language and structure to create effects and influence readers, using subject terminology.", "weight": "17.5% (Paper 1 10%, Paper 2 7.5%)" },
+    { "code": "AO3", "desc": "Compare writers' ideas and perspectives, and how these are conveyed, across two or more texts.", "weight": "10% (Paper 2 only)" },
+    { "code": "AO4", "desc": "Evaluate texts critically, supporting the view with appropriate textual references.", "weight": "12.5% (Paper 1 only)" },
+    { "code": "AO5", "desc": "Communicate clearly, effectively and imaginatively; adapt tone, style and register; organise for coherence and cohesion.", "weight": "30% (15% on each paper)" },
+    { "code": "AO6", "desc": "Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.", "weight": "20% (10% on each paper)" },
+    { "code": "AO7", "desc": "Demonstrate presentation skills in a formal setting (Spoken Language).", "weight": "Endorsement only, 0%" },
+    { "code": "AO8", "desc": "Listen and respond appropriately to spoken language, including questions and feedback (Spoken Language).", "weight": "Endorsement only, 0%" },
+    { "code": "AO9", "desc": "Use spoken Standard English effectively in speeches and presentations (Spoken Language).", "weight": "Endorsement only, 0%" }
+  ],
+  "units": [
+    {
+      "ref": "P1-A-Q1",
+      "title": "Paper 1 Section A: Question 1, retrieval",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "Short-form question worth 4 marks, based on a stated range of lines in the extract.",
+        "Skill: identify and interpret explicit information and ideas (AO1).",
+        "Answers may quote or paraphrase; copying out a long section earns no credit.",
+        "Reading is of one 20th or 21st century prose fiction extract, printed on the paper."
+      ],
+      "keyTerms": ["explicit information", "implicit information", "paraphrase", "quotation"]
+    },
+    {
+      "ref": "P1-A-Q2",
+      "title": "Paper 1 Section A: Question 2, language",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "8 marks, on a short stated part of the extract.",
+        "Skill: explain how the writer uses language to create effects (AO2).",
+        "Bullet points on the paper are guidance only and carry no marks.",
+        "Subject terminology is credited, from simple to sophisticated use, but analysis of effect matters most.",
+        "The same skill is assessed again in Paper 2 Q3."
+      ],
+      "keyTerms": ["word choice", "imagery", "simile", "metaphor", "connotation", "effect", "subject terminology"]
+    },
+    {
+      "ref": "P1-A-Q3",
+      "title": "Paper 1 Section A: Question 3, structure",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "8 marks, on the structure of the whole extract.",
+        "Skill: analyse how the writer has organised the text for effect (AO2).",
+        "Advice: write in detail about two or three well-chosen structural features.",
+        "Sentence-level analysis counts only where it helps explain the structure of the whole text."
+      ],
+      "keyTerms": ["structure", "shift of focus", "narrative viewpoint", "pace", "sequencing", "zoom in and out"]
+    },
+    {
+      "ref": "P1-A-Q4",
+      "title": "Paper 1 Section A: Question 4, evaluation",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "Extended question worth 20 marks, the largest reading question on Paper 1.",
+        "Skill: evaluate the text critically, supported by textual references (AO4).",
+        "A statement is given and students decide how far they agree with it.",
+        "Marks reward the quality of evaluation, not which position is taken.",
+        "Responses may cover the writer's methods and the reader's response, with evidence."
+      ],
+      "keyTerms": ["evaluate", "to what extent", "statement", "critical judgement", "reader's response"]
+    },
+    {
+      "ref": "P1-B-Q5",
+      "title": "Paper 1 Section B: Question 5, descriptive or narrative writing",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Spring",
+      "points": [
+        "40 marks: 24 for content and organisation (AO5), 16 for technical accuracy (AO6).",
+        "One extended task: describe or narrate, from a written prompt or an image.",
+        "The statement before the task sets the audience and purpose.",
+        "Marked on tone, style and register, plus organisation for coherence and cohesion.",
+        "Marked on vocabulary range, sentence variety, spelling and punctuation.",
+        "Notional 15 minutes of reading time is built into the 1 hour 45 minutes; leave time to check."
+      ],
+      "keyTerms": ["narrative", "description", "tone", "register", "cohesion", "sentence variety", "punctuation"]
+    },
+    {
+      "ref": "P2-A-Q1",
+      "title": "Paper 2 Section A: Question 1, true statements",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "4 marks: choose the four true statements from a list that mixes true and false ones.",
+        "Skill: identify explicit and implicit information (AO1) in a stated part of Source A.",
+        "If more than four are chosen, only the first four in order are marked.",
+        "Two linked sources: one non-fiction and one literary non-fiction, from different periods including the 19th century."
+      ],
+      "keyTerms": ["true", "false", "explicit", "implicit", "Source A", "Source B"]
+    },
+    {
+      "ref": "P2-A-Q2",
+      "title": "Paper 2 Section A: Question 2, summary",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "8 marks: a summary of the differences or similarities between the two sources, on a stated focus.",
+        "Skill: select relevant information and synthesise it across both texts (AO1).",
+        "Write in continuous prose, drawing inferences rather than listing quotations.",
+        "Use only material that answers the specific focus given in the question."
+      ],
+      "keyTerms": ["summarise", "synthesise", "infer", "differences", "similarities"]
+    },
+    {
+      "ref": "P2-A-Q3",
+      "title": "Paper 2 Section A: Question 3, language",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "12 marks, on one source only (in the specimen, the 19th-century letter).",
+        "Skill: explain how the writer uses language to influence the reader (AO2).",
+        "Same skill as Paper 1 Q2, applied to non-fiction and literary non-fiction.",
+        "Subject terminology supports analysis of effect but does not replace it."
+      ],
+      "keyTerms": ["tone", "persuasive language", "address", "rhetoric", "formal and informal register", "effect"]
+    },
+    {
+      "ref": "P2-A-Q4",
+      "title": "Paper 2 Section A: Question 4, comparison of perspectives",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "Extended question worth 16 marks, using the whole of both sources.",
+        "Skill: compare writers' ideas and perspectives and how they are conveyed (AO3).",
+        "Comparison should go beyond basic comprehension to methods: language and structure.",
+        "Both sources need balanced, supported coverage, with linking comparative language."
+      ],
+      "keyTerms": ["compare", "perspective", "attitude", "viewpoint", "methods", "comparative connective"]
+    },
+    {
+      "ref": "P2-B-Q5",
+      "title": "Paper 2 Section B: Question 5, viewpoint writing",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Spring",
+      "points": [
+        "40 marks: 24 for content and organisation (AO5), 16 for technical accuracy (AO6).",
+        "One extended piece presenting the student's own view on a statement or theme linked to Section A.",
+        "Audience, purpose and form are stated (the specimen asks for a newspaper article).",
+        "Material from Section A may be used, but as the student's own view of it.",
+        "Rewards persuasive organisation, controlled register, varied sentences and accurate spelling and punctuation."
+      ],
+      "keyTerms": ["viewpoint", "article", "speech", "letter", "audience", "purpose", "form", "rhetorical devices"]
+    },
+    {
+      "ref": "SL",
+      "title": "Spoken Language endorsement (AO7 to AO9)",
+      "paper": "Spoken Language endorsement",
+      "year": "Y11",
+      "term": "Summer",
+      "points": [
+        "A formal presentation of no more than about ten minutes, on a topic agreed with the teacher.",
+        "Students respond to questions and feedback from the audience (AO8).",
+        "Spoken Standard English must be used effectively and be audible and intelligible (AO9).",
+        "Graded Pass, Merit or Distinction on a competency basis; all criteria for a grade must be met.",
+        "Reported separately on the certificate; carries no marks and no weighting in the GCSE grade."
+      ],
+      "keyTerms": ["presentation", "Standard English", "audience", "questions and feedback", "Pass, Merit, Distinction"]
+    },
+    {
+      "ref": "SC-R",
+      "title": "Subject content: reading across the course",
+      "paper": "Both papers",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "Read fluently and critically a wide range of 19th, 20th and 21st century texts.",
+        "Texts include literature, literary non-fiction, reviews and journalism.",
+        "Evaluate and compare texts, and summarise and synthesise ideas across them.",
+        "Use reading to inform the student's own writing."
+      ],
+      "keyTerms": ["literary non-fiction", "journalism", "synthesis", "critical reading"]
+    },
+    {
+      "ref": "SC-W",
+      "title": "Subject content: writing across the course",
+      "paper": "Both papers",
+      "year": "Y10",
+      "term": "Spring",
+      "points": [
+        "Write clearly and coherently in Standard English for different purposes and audiences.",
+        "Purposes named: describing, narrating, explaining, instructing, informing, arguing.",
+        "Use accurate grammar, punctuation and spelling, and a wide vocabulary.",
+        "Use rhetorical and creative techniques for impact."
+      ],
+      "keyTerms": ["Standard English", "purpose", "audience", "grammar", "rhetoric"]
+    }
+  ],
+  "commandWords": [
+    { "word": "List four things", "meaning": "Paper 1 Q1 stem: retrieve four pieces of information from the stated lines." },
+    { "word": "Choose four statements which are true", "meaning": "Paper 2 Q1 stem: select the correct statements from a list of true and false ones." },
+    { "word": "Write a summary of the differences", "meaning": "Paper 2 Q2 stem: gather relevant points from both sources and explain them in prose." },
+    { "word": "How does the writer use language to...", "meaning": "Q2 (Paper 1) and Q3 (Paper 2) stem: explain the effect of word and phrase choices." },
+    { "word": "How has the writer structured the text to...", "meaning": "Paper 1 Q3 stem: explain how the order, shifts and focus of the whole extract create effects." },
+    { "word": "To what extent do you agree?", "meaning": "Paper 1 Q4 stem: evaluate a given statement, with agreement, partial agreement or disagreement, supported by evidence." },
+    { "word": "Compare how the two writers convey...", "meaning": "Paper 2 Q4 stem: compare ideas and perspectives and the methods used in both sources." },
+    { "word": "Write (an article, a speech, a letter) explaining your point of view", "meaning": "Paper 2 Q5 stem pattern: write in the named form for the stated audience and purpose." },
+    { "word": "Write a description / Write the opening / Write a story", "meaning": "Paper 1 Q5 task pattern: a descriptive or narrative response to a prompt or image." }
+  ],
+  "skills": [
+    "Retrieving and interpreting explicit and implicit information with brief evidence.",
+    "Analysing word, phrase and sentence choices, and the effect on the reader.",
+    "Analysing structure across a whole text: shifts of focus, pace, sequencing.",
+    "Evaluating a text against a given statement with a supported, critical judgement.",
+    "Summarising and synthesising information from two sources in continuous prose.",
+    "Comparing ideas, attitudes and methods across texts from different periods.",
+    "Descriptive and narrative writing with deliberate crafting of language and structure.",
+    "Viewpoint writing in a stated form, for a stated audience and purpose.",
+    "Technical accuracy: sentence variety, punctuation, spelling, paragraphing.",
+    "Formal spoken presentation in Standard English, and responding to questions."
+  ],
+  "prerequisites": [
+    { "from": "KS3 inference and retrieval from fiction (Years 7 to 9)", "to": "P1-A-Q1" },
+    { "from": "KS3 language analysis: word choice, imagery, effect (Year 8 War poetry, Year 9 Of Mice and Men)", "to": "P1-A-Q2" },
+    { "from": "KS3 narrative structure: openings, shifts, endings (Year 7 and Year 9 novels)", "to": "P1-A-Q3" },
+    { "from": "KS3 evaluation of writers' choices and reader response", "to": "P1-A-Q4" },
+    { "from": "KS3 descriptive and suspense writing, Year 5 and Year 6 sentence control", "to": "P1-B-Q5" },
+    { "from": "KS3 reading of non-fiction and persuasive texts; Year 8 war propaganda and persuasion", "to": "P2-A-Q2" },
+    { "from": "Paper 1 Q2 language analysis", "to": "P2-A-Q3" },
+    { "from": "KS3 comparison of poems (Year 8 War poetry)", "to": "P2-A-Q4" },
+    { "from": "KS3 persuasive and formal writing; Year 6 formal writing", "to": "P2-B-Q5" },
+    { "from": "KS3 spoken English: presentations and debates", "to": "SL" }
+  ],
+  "links": [
+    { "with": "History", "topic": "19th-century sources and viewpoints on events and reform", "unitRef": "P2-A-Q4", "how": "History supplies period context; English Language compares how writers convey attitude." },
+    { "with": "Science", "topic": "Scientific controversies and public debate (e.g. vaccination, climate)", "unitRef": "P2-A-Q2", "how": "Science supplies accurate content; English Language summarises and compares how writers present evidence." },
+    { "with": "Geography", "topic": "Environmental issues and competing viewpoints on resources", "unitRef": "P2-B-Q5", "how": "Geography provides case-study evidence; English Language shapes it into a persuasive piece." },
+    { "with": "English Literature", "topic": "Shared analysis of language and structure (AO2) and 19th-century writing", "unitRef": "P1-A-Q2", "how": "Literature applies analysis to set texts; Language applies it to unseen extracts." },
+    { "with": "Art", "topic": "Images as prompts for descriptive writing", "unitRef": "P1-B-Q5", "how": "Art builds visual observation; English turns it into vivid description." },
+    { "with": "PSHE", "topic": "Debating social issues and presenting a considered view", "unitRef": "SL", "how": "PSHE gives topics for discussion; English teaches formal delivery and responding to questions." },
+    { "with": "Business", "topic": "Formal reports, letters and persuasive communication for an audience", "unitRef": "P2-B-Q5", "how": "Business models real audiences and forms; English teaches register and organisation." },
+    { "with": "Computing", "topic": "Online persuasion, bias and ethical debate about technology", "unitRef": "P2-A-Q3", "how": "Computing provides the topic; English analyses how language influences readers." },
+    { "with": "Islamic Studies", "topic": "Structured argument and presenting a reasoned viewpoint in formal speech", "unitRef": "SL", "how": "Islamic Studies gives discussion topics; English teaches argument structure and Standard English delivery." }
+  ],
+  "gaps": [
+    "Per-question timing advice is not stated in the AQA documents opened (only 15 minutes notional reading time per paper); the AQA Prepare-to-teach timing sheet was not opened.",
+    "Paper 1 mark splits (Q1 4, Q2 8, Q3 8, Q4 20, Q5 40) come from the specification; AQA mark schemes and levels descriptors were not read.",
+    "Paper 2 Q2 to Q4 focus wording is from the specimen paper and the AQA exam information note; live papers may vary the focus.",
+    "Spoken Language task options and the full Pass, Merit, Distinction criteria were summarised, not read line by line."
+  ]
+}

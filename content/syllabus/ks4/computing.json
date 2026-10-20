@@ -1,0 +1,288 @@
+{
+  "kind": "spec",
+  "subject": "Computer Science",
+  "slug": "computing",
+  "board": "Pearson Edexcel",
+  "qualification": "Level 1/Level 2 GCSE (9-1) in Computer Science",
+  "code": "1CP2",
+  "specVersion": "Issue 1, January 2020 (topic detail); Pearson getting started guide Version 4.0, October 2025 (structure). First teaching September 2020, first certification 2022.",
+  "status": "Provisional",
+  "statusNote": "The code 1CP2 is confirmed by Pearson's own sample assessment materials and getting started guide. Paper structure, marks and the six topics were confirmed on Pearson-hosted documents. The section-level reference list (1.1.1 to 6.6.3), command words and AO weightings were read from a copy of the specification hosted on a school website (Issue 1, January 2020), because the Pearson specification PDF address could not be opened. Statements are paraphrased. Year placement is a recommended sequence.",
+  "sources": [
+    { "title": "Pearson Edexcel GCSE Computer Science (2020) qualification page", "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/computer-science-2020.html" },
+    { "title": "Pearson GCSE (9-1) Computer Science getting started guide 2020 (Version 4.0, Oct 2025)", "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Computer%20Science/2020/teaching-and-learning-materials/gcse-9-1-computer-science-getting-started-guide-2020.pdf" },
+    { "title": "Pearson GCSE L1/L2 Computer Science 2020 collated sample assessment materials", "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Computer%20Science/2020/specification-and-sample-assessments/GCSE_L1_L2_Computer_Science_2020_collated_SAMs.pdf" },
+    { "title": "GCSE Computer Science Specification (Pearson 1CP2, Issue 1) as hosted by a school", "url": "https://flhs.org.uk/Media/Docs/Opt/GCSE-Computer-Science-Specification.pdf" }
+  ],
+  "years": "Years 10 to 11",
+  "tiers": "None. One untiered paper set for all students, graded 9 to 1 on the total mark.",
+  "assessment": [
+    {
+      "paper": "Paper 1 (1CP2/01)",
+      "title": "Principles of Computer Science",
+      "duration": "1 hour 30 minutes",
+      "marks": 75,
+      "weight": "50%",
+      "content": "Topics 1 to 5: Computational thinking, Data, Computers, Networks, Issues and impact",
+      "format": "Written paper, no calculator. Five compulsory questions, one per topic; multiple-choice, short, medium and extended open-response, tabular and diagrammatic questions."
+    },
+    {
+      "paper": "Paper 2 (1CP2/02)",
+      "title": "Application of Computational Thinking",
+      "duration": "2 hours",
+      "marks": 75,
+      "weight": "50%",
+      "content": "Topic 6: Problem solving with programming",
+      "format": "On-screen practical exam in Python 3, no internet access. Six compulsory programming tasks of increasing difficulty; the last requires a program written from scratch."
+    }
+  ],
+  "nonExam": "No coursework or programming project. Centres must submit a Practical Programming Statement (completed by a senior leader) by 31 May of the exam year, confirming students had reasonable opportunity to design, write, test and refine Python programs. Programming language: Python 3, with the Pearson Programming Language Subset (PLS) supplied to students in the exam. Level 2 maths and computer-related maths are assessed in both papers.",
+  "aos": [
+    { "code": "AO1", "desc": "Demonstrate knowledge and understanding of the key concepts and principles of computer science.", "weight": "30% overall (Paper 1 only)" },
+    { "code": "AO2", "desc": "Apply knowledge and understanding of computer science to solve problems and write programs.", "weight": "40% overall (20% in each paper)" },
+    { "code": "AO3", "desc": "Analyse problems, then design, program, evaluate and refine solutions.", "weight": "30% overall (Paper 2 only)" }
+  ],
+  "units": [
+    {
+      "ref": "1.1", "title": "Computational thinking: decomposition, abstraction and subprograms", "paper": "Paper 1", "year": "Y10", "term": "Autumn",
+      "points": [
+        "Explain how decomposition and abstraction help model and solve problems (1.1.1).",
+        "Explain the benefits of using subprograms (1.1.2)."
+      ],
+      "keyTerms": ["decomposition", "abstraction", "subprogram", "model"]
+    },
+    {
+      "ref": "1.2", "title": "Computational thinking: algorithms, data structures and testing", "paper": "Paper 1", "year": "Y10", "term": "Autumn",
+      "points": [
+        "Follow and write algorithms with sequence, selection, repetition and iteration over data structures (1.2.1).",
+        "Use variables, constants, strings, records and one- and two-dimensional arrays (1.2.2).",
+        "Use arithmetic, relational and logical operators (1.2.3).",
+        "Work out outputs and variable values using trace tables (1.2.4).",
+        "Identify syntax, logic and runtime errors and correct logic errors (1.2.5).",
+        "Explain how bubble sort, merge sort, linear search and binary search work (1.2.6).",
+        "Judge fitness for purpose and efficiency using test data (1.2.7)."
+      ],
+      "keyTerms": ["algorithm", "flowchart", "pseudocode", "trace table", "bubble sort", "merge sort", "binary search", "logic error"]
+    },
+    {
+      "ref": "1.3", "title": "Computational thinking: logic and truth tables", "paper": "Paper 1", "year": "Y10", "term": "Spring",
+      "points": [
+        "Complete and interpret truth tables using AND, OR and NOT, with up to three inputs (1.3.1).",
+        "Write and read logic expressions and relate them to program conditions (1.3.1)."
+      ],
+      "keyTerms": ["AND", "OR", "NOT", "truth table", "Boolean"]
+    },
+    {
+      "ref": "2.1", "title": "Data: binary and number representation", "paper": "Paper 1", "year": "Y10", "term": "Spring",
+      "points": [
+        "Binary represents data and instructions; count the states available for a given number of bits (2.1.1).",
+        "Represent unsigned integers and signed integers using two's complement (2.1.2).",
+        "Convert between denary and 8-bit binary: 0 to 255, and -128 to +127 (2.1.3).",
+        "Add positive binary numbers and apply logical and arithmetic shifts (2.1.4).",
+        "Explain overflow when a result exceeds the available bits (2.1.5).",
+        "Explain why hexadecimal is used and convert between hex and binary (2.1.6)."
+      ],
+      "keyTerms": ["bit", "byte", "denary", "two's complement", "hexadecimal", "overflow", "shift"]
+    },
+    {
+      "ref": "2.2", "title": "Data: representing text, images and sound", "paper": "Paper 1", "year": "Y10", "term": "Spring",
+      "points": [
+        "Represent characters using 7-bit ASCII (2.2.1).",
+        "Describe bitmap images using pixels, resolution and colour depth (2.2.2).",
+        "Describe sound sampling using amplitude, sample rate, bit depth and sample interval (2.2.3).",
+        "Explain the limits of binary representation when the number of bits is fixed (2.2.4)."
+      ],
+      "keyTerms": ["ASCII", "pixel", "resolution", "colour depth", "sample rate", "bit depth"]
+    },
+    {
+      "ref": "2.3", "title": "Data: storage units and compression", "paper": "Paper 1", "year": "Y10", "term": "Summer",
+      "points": [
+        "Use binary storage units from bit to tebibyte; calculate file sizes and capacities (2.3.1).",
+        "Explain why compression is needed and compare lossless and lossy methods (2.3.2)."
+      ],
+      "keyTerms": ["kibibyte", "mebibyte", "file size", "lossless", "lossy", "compression"]
+    },
+    {
+      "ref": "3.1", "title": "Computers: architecture, memory and storage", "paper": "Paper 1", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Describe the von Neumann stored-program concept, RAM, CPU components, clock, buses and the fetch-decode-execute cycle (3.1.1).",
+        "Explain how magnetic, optical and solid-state secondary storage store data (3.1.2).",
+        "Describe embedded systems and their uses (3.1.3)."
+      ],
+      "keyTerms": ["CPU", "ALU", "control unit", "register", "bus", "fetch-decode-execute", "solid-state", "embedded system"]
+    },
+    {
+      "ref": "3.2", "title": "Computers: operating systems, utilities and robust software", "paper": "Paper 1", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Describe operating system functions: file, process, peripheral and user management (3.2.1).",
+        "Describe utility software: repair, backup, compression, defragmentation and anti-malware (3.2.2).",
+        "Explain robust software and finding vulnerabilities through audit trails and code reviews (3.2.3)."
+      ],
+      "keyTerms": ["operating system", "utility software", "audit trail", "code review", "defragmentation"]
+    },
+    {
+      "ref": "3.3", "title": "Computers: programming languages and translators", "paper": "Paper 1", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Compare the characteristics and purposes of low-level and high-level languages (3.3.1).",
+        "Explain how interpreters and compilers translate high-level code differently (3.3.2)."
+      ],
+      "keyTerms": ["machine code", "assembly", "high-level language", "compiler", "interpreter"]
+    },
+    {
+      "ref": "4.1", "title": "Networks: types, protocols and connections", "paper": "Paper 1", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Give reasons for connecting computers in networks (4.1.1).",
+        "Distinguish LAN and WAN (4.1.2).",
+        "Describe internet structure, including IP addressing and routers (4.1.3).",
+        "Explain how wired and wireless connections affect speed, range, latency and bandwidth (4.1.4).",
+        "Calculate transmission time, rate and file size from network speed in bits per second (4.1.5).",
+        "Describe protocols: Ethernet, Wi-Fi, TCP/IP, HTTP, HTTPS, FTP, POP3, SMTP and IMAP (4.1.6).",
+        "Describe the four-layer TCP/IP model (4.1.7).",
+        "Compare bus, star and mesh topologies (4.1.8)."
+      ],
+      "keyTerms": ["LAN", "WAN", "router", "IP address", "bandwidth", "latency", "protocol", "TCP/IP", "topology"]
+    },
+    {
+      "ref": "4.2", "title": "Networks: network security", "paper": "Paper 1", "year": "Y11", "term": "Spring",
+      "points": [
+        "Identify network vulnerabilities through penetration testing and ethical hacking (4.2.1).",
+        "Explain protections: access control, physical security and firewalls (4.2.1)."
+      ],
+      "keyTerms": ["penetration testing", "ethical hacking", "firewall", "access control"]
+    },
+    {
+      "ref": "5.1", "title": "Issues and impact: environmental effects", "paper": "Paper 1", "year": "Y11", "term": "Spring",
+      "points": [
+        "Discuss environmental impacts of computing: energy use, manufacture, replacement cycles and disposal (5.1.1).",
+        "Weigh the environmental costs of devices against their benefits when giving a reasoned view (5.1.1)."
+      ],
+      "keyTerms": ["e-waste", "energy consumption", "sustainability"]
+    },
+    {
+      "ref": "5.2", "title": "Issues and impact: ethical, legal and ownership issues", "paper": "Paper 1", "year": "Y11", "term": "Spring",
+      "points": [
+        "Discuss ethics and law of personal data: privacy, consent, ownership, misuse and data protection (5.2.1).",
+        "Discuss AI, machine learning and robotics: accountability, safety, algorithmic bias and liability (5.2.2).",
+        "Explain intellectual property: copyright, patents, trademarks and licensing (5.2.3)."
+      ],
+      "keyTerms": ["privacy", "consent", "bias", "machine learning", "copyright", "licence", "data protection"]
+    },
+    {
+      "ref": "5.3", "title": "Issues and impact: cybersecurity", "paper": "Paper 1", "year": "Y11", "term": "Spring",
+      "points": [
+        "Describe malware types, technical vulnerabilities and social engineering (5.3.1).",
+        "Explain protection methods: anti-malware, encryption, acceptable use policies, backup and recovery (5.3.2)."
+      ],
+      "keyTerms": ["malware", "phishing", "social engineering", "encryption", "backup"]
+    },
+    {
+      "ref": "6.1", "title": "Problem solving with programming: designing, reading and refining programs", "paper": "Paper 2", "year": "Y10", "term": "Autumn",
+      "points": [
+        "Use decomposition and abstraction to solve problems (6.1.1).",
+        "Read, write, analyse and refine high-level programs (6.1.2).",
+        "Convert flowcharts and pseudocode into programs (6.1.3).",
+        "Write readable code: layout, indentation, comments, meaningful names and whitespace (6.1.4).",
+        "Find and correct logic, syntax and runtime errors (6.1.5).",
+        "Evaluate fitness for purpose and efficiency using test data (6.1.6)."
+      ],
+      "keyTerms": ["identifier", "comment", "indentation", "debugging", "test data"]
+    },
+    {
+      "ref": "6.2", "title": "Problem solving with programming: program structure and control", "paper": "Paper 2", "year": "Y10", "term": "Autumn",
+      "points": [
+        "Identify the structural components of a program (6.2.1).",
+        "Use sequence, selection, repetition and iteration, each with a single entry and exit point (6.2.2)."
+      ],
+      "keyTerms": ["sequence", "selection", "iteration", "count-controlled", "condition-controlled"]
+    },
+    {
+      "ref": "6.3", "title": "Problem solving with programming: data types, variables and strings", "paper": "Paper 2", "year": "Y10", "term": "Spring",
+      "points": [
+        "Use primitive types (integer, real, Boolean, character) and one- and two-dimensional structures (6.3.1).",
+        "Use variables and constants (6.3.2).",
+        "Manipulate strings: length, position, substrings and case conversion (6.3.3)."
+      ],
+      "keyTerms": ["integer", "real", "Boolean", "string", "array", "record", "constant"]
+    },
+    {
+      "ref": "6.4", "title": "Problem solving with programming: input, files, validation and authentication", "paper": "Paper 2", "year": "Y10", "term": "Spring",
+      "points": [
+        "Accept and respond to user input (6.4.1).",
+        "Read from and write to CSV text files (6.4.2).",
+        "Apply validation: length, presence, range and pattern checks (6.4.3).",
+        "Apply authentication: ID and password, and lookup (6.4.4)."
+      ],
+      "keyTerms": ["input", "CSV", "validation", "authentication", "range check"]
+    },
+    {
+      "ref": "6.5", "title": "Problem solving with programming: operators", "paper": "Paper 2", "year": "Y10", "term": "Summer",
+      "points": [
+        "Use arithmetic operators, including modulus, integer division and exponentiation (6.5.1).",
+        "Use relational operators (6.5.2).",
+        "Use logical operators AND, OR and NOT (6.5.3)."
+      ],
+      "keyTerms": ["modulus", "integer division", "exponentiation", "relational operator"]
+    },
+    {
+      "ref": "6.6", "title": "Problem solving with programming: subprograms and scope", "paper": "Paper 2", "year": "Y10", "term": "Summer",
+      "points": [
+        "Use built-in, library and user-defined subprograms (6.6.1).",
+        "Know that functions return values and procedures do not (6.6.2).",
+        "Use global and local variables appropriately (6.6.3)."
+      ],
+      "keyTerms": ["function", "procedure", "parameter", "return value", "local variable", "global variable"]
+    }
+  ],
+  "commandWords": [
+    { "word": "Amend", "meaning": "Change, add, delete or rearrange code (Paper 1 and Paper 2)." },
+    { "word": "Write", "meaning": "Create or manipulate an algorithm or program in the required notation or language." },
+    { "word": "Calculate", "meaning": "Give a numerical answer with working and units." },
+    { "word": "Complete", "meaning": "Fill in a table, diagram or algorithm." },
+    { "word": "Construct", "meaning": "Create an artefact such as a truth table using the subject's notation." },
+    { "word": "Convert", "meaning": "Change from one representation to another, for example denary to binary." },
+    { "word": "Define / State / Give / Name / Identify", "meaning": "Recall or select a fact, meaning or term." },
+    { "word": "Describe", "meaning": "Give an account with developed points." },
+    { "word": "Explain", "meaning": "Justify or exemplify a point with reasoning." },
+    { "word": "Discuss", "meaning": "Consider all sides of an issue and reach a reasoned view (6 marks)." },
+    { "word": "Draw", "meaning": "Produce a diagram, labelled where needed." }
+  ],
+  "skills": [
+    "Writing, tracing and debugging Python 3 programs under timed, on-screen conditions with no internet.",
+    "Converting between flowcharts, pseudocode and code.",
+    "Number conversions and calculations: denary, binary, hexadecimal, file sizes and transmission times.",
+    "Building truth tables and logic expressions up to three inputs.",
+    "Extended written discussion of ethical, legal, environmental and security issues (6-mark questions).",
+    "Level 2 mathematics used in both papers, for example powers of 2, ratios and units."
+  ],
+  "prerequisites": [
+    { "from": "KS3 programming in a text-based language such as Python (selection, iteration, variables)", "to": "6.2" },
+    { "from": "KS3 algorithms: decomposition, flowcharts, sorting and searching", "to": "1.2" },
+    { "from": "KS3 binary numbers and conversions", "to": "2.1" },
+    { "from": "KS3 representation of text, images and sound", "to": "2.2" },
+    { "from": "KS3 Boolean logic", "to": "1.3" },
+    { "from": "KS3 hardware, software and how programs run", "to": "3.1" },
+    { "from": "KS3 networks and the internet", "to": "4.1" },
+    { "from": "KS3 digital literacy: online safety, security and responsible use", "to": "5.3" },
+    { "from": "KS3 functions and procedures in programming", "to": "6.6" }
+  ],
+  "links": [
+    { "with": "Mathematics", "topic": "Powers of 2, indices and standard form", "unitRef": "2.1", "how": "Maths supplies indices and place value; Computing applies them to bit patterns, hexadecimal and storage units." },
+    { "with": "Mathematics", "topic": "Ratio, units and compound measures", "unitRef": "2.3", "how": "Maths supplies unit conversion and rates; Computing applies them to file sizes and transmission times (4.1.5)." },
+    { "with": "Mathematics", "topic": "Algebraic substitution and formulae", "unitRef": "6.5", "how": "Maths supplies substitution and operator precedence; Computing applies them in arithmetic, modulus and exponentiation." },
+    { "with": "Mathematics", "topic": "Sequences, functions and iteration", "unitRef": "1.2", "how": "Maths defines sequences and iterative formulae; Computing expresses them as loops and traces them." },
+    { "with": "Mathematics", "topic": "Sets, Venn diagrams and probability logic", "unitRef": "1.3", "how": "Maths uses AND, OR and NOT in set and Venn work; Computing uses them in truth tables and conditions." },
+    { "with": "Science (Physics)", "topic": "Electrical circuits, logic and sound waves", "unitRef": "2.2", "how": "Physics explains waves and signals; Computing explains how sound is sampled and stored in binary." },
+    { "with": "Science", "topic": "Data logging, sensors and embedded control", "unitRef": "3.1", "how": "Science collects data with sensors; Computing explains embedded systems and how programs process the readings." },
+    { "with": "Geography", "topic": "Environmental impact and sustainability", "unitRef": "5.1", "how": "Geography studies resource use and waste; Computing examines energy use and e-waste from devices and data centres." },
+    { "with": "Citizenship / PSHE", "topic": "Privacy, data protection and online safety", "unitRef": "5.2", "how": "PSHE covers rights and responsible behaviour; Computing covers the legal and ethical use of personal data and AI." },
+    { "with": "Design and Technology", "topic": "Embedded systems and product design", "unitRef": "3.1", "how": "Design and Technology designs products; Computing explains the embedded processors that control them." }
+  ],
+  "contextNote": "",
+  "gaps": [
+    "Pearson's own specification PDF (Issue 1 or the current issue) was not opened: its address returned page-not-found and the Pearson qualification page does not carry the text. Section references, command words and AO weightings come from a school-hosted copy of Issue 1 (January 2020); structure and topic names were cross-checked with Pearson's getting started guide (Version 4.0, October 2025) and sample assessment materials.",
+    "Check the current issue of the Pearson specification for any change to section references since January 2020.",
+    "The Programming Language Subset (PLS) document was not opened; only its role is recorded.",
+    "Paper 1 calculator rule (no calculator) is from the sample assessment materials; Paper 2 calculator use was not stated in the sources opened.",
+    "Mark allocations per topic in Paper 1 were not recorded."
+  ]
+}

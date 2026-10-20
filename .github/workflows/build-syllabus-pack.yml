@@ -1,0 +1,75 @@
+name: Build syllabus pack
+
+# Turns content/syllabus/**.json (official specification and National Curriculum
+# content, one file per subject) into branded PowerPoint decks plus PDF copies,
+# organised by level and subject, and uploads them to the portal's storage
+# bucket lesson-decks under syllabus-pack/ (staff-only, same RLS as the lesson
+# library). The same pack is attached to the run as a downloadable artifact.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/syllabus/**"
+      - "scripts/syllabus/**"
+      - "scripts/lessons/deck-parts.mjs"
+      - ".github/workflows/build-syllabus-pack.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: build-syllabus-pack
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate syllabus data
+        run: node scripts/syllabus/validate.mjs
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install --no-save pptxgenjs@4.0.1
+
+      - name: Install LibreOffice (for PDF copies)
+        run: |
+          if ! command -v soffice >/dev/null; then
+            sudo apt-get update -y
+            sudo apt-get install -y --no-install-recommends libreoffice-impress fonts-liberation fonts-crosextra-carlito fonts-noto-core fonts-noto-naskh-arabic || sudo apt-get install -y libreoffice
+          fi
+
+      - name: Build the pack (PPTX and PDF)
+        run: node scripts/syllabus/build.mjs --out dist/syllabus-pack --pdf
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TGA_Syllabus_Pack
+          path: dist/syllabus-pack
+          retention-days: 30
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Upload to the portal
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            if [ "$(echo "$PROJECTS" | jq 'length')" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then echo "::error::Could not find the Supabase project."; exit 1; fi
+          KEY=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$KEY" ] || [ "$KEY" = "null" ]; then echo "::error::Could not find a service_role/secret key."; exit 1; fi
+          echo "::add-mask::$KEY"
+          SUPABASE_URL="https://$REF.supabase.co" SUPABASE_SERVICE_ROLE_KEY="$KEY" node scripts/syllabus/upload.mjs dist/syllabus-pack

@@ -1,0 +1,455 @@
+{
+  "kind": "spec",
+  "subject": "Business",
+  "slug": "business",
+  "board": "Pearson Edexcel",
+  "qualification": "GCSE (9-1) Business",
+  "code": "1BS0",
+  "specVersion": "Issue 2 (July 2022) as shown on the specification PDF opened; first teaching 2017, first assessment 2019",
+  "status": "Verified",
+  "statusNote": "Qualification matched to the school's lesson content: the Year 10 and Year 11 lesson files cite Edexcel GCSE Business (1BS0) and use the 1BS0 unit titles (Theme 1 Investigating small business, 1.1 to 1.3; Theme 2 Building a business, 2.1), so 1BS0 is documented here. Paper structure, marks, weightings, AOs, Theme 1 and Theme 2 topics and sub-topic content were read from the Pearson 1BS0 specification PDF (read through a page-summarising fetch tool, not a manual page-by-page read). The International GCSE Business 4BS1 structure was also read and is recorded under gaps; the school's Year 11 parent presentation says 'IGCSE Edexcel', so the qualification entered must be CONFIRMED with the board and the exams officer before entries. Year allocation (Theme 1 in Year 10, Theme 2 in Year 11) is a recommended sequence, not a board requirement.",
+  "sources": [
+    {
+      "title": "Pearson Edexcel GCSE (9-1) Business (2017) qualification page",
+      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/business-2017.html"
+    },
+    {
+      "title": "Pearson Edexcel GCSE (9-1) Business 1BS0 specification (PDF)",
+      "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Business/2017/specification-and-sample-assessments/gcse-business-spec-2017.pdf"
+    },
+    {
+      "title": "Pearson Edexcel International GCSE (9-1) Business 4BS1 specification (PDF), read for comparison only",
+      "url": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Business%20Studies/2017/specification-and-sample-assessment/9781446942765-international-gcse-business-specification.pdf"
+    }
+  ],
+  "years": "Years 10 to 11",
+  "tiers": "None (single tier of entry; no foundation or higher papers)",
+  "assessment": [
+    {
+      "paper": "Paper 1",
+      "title": "Investigating small business (1BS0/01)",
+      "duration": "1 hour 45 minutes",
+      "marks": 90,
+      "weight": "50%",
+      "content": "Theme 1: topics 1.1 to 1.5",
+      "format": "Three sections (A 35 marks, B 30 marks, C 25 marks); calculations, multiple choice, short answer and extended writing; Sections B and C use a source booklet"
+    },
+    {
+      "paper": "Paper 2",
+      "title": "Building a business (1BS0/02)",
+      "duration": "1 hour 45 minutes",
+      "marks": 90,
+      "weight": "50%",
+      "content": "Theme 2: topics 2.1 to 2.5",
+      "format": "Three sections (A 35 marks, B 30 marks, C 25 marks); calculations, multiple choice, short answer and extended writing; Sections B and C use a source booklet"
+    }
+  ],
+  "nonExam": "None: assessed entirely by two externally marked written papers. Quantitative skills make up 10% of total marks and are assessed on both papers; calculators allowed, formulae not provided.",
+  "aos": [
+    {
+      "code": "AO1",
+      "desc": "Demonstrate knowledge and understanding of business concepts and issues",
+      "weight": "35%"
+    },
+    {
+      "code": "AO2",
+      "desc": "Apply knowledge and understanding to a variety of business contexts",
+      "weight": "35%"
+    },
+    {
+      "code": "AO3",
+      "desc": "Analyse and evaluate business information and issues to make judgements",
+      "weight": "30%"
+    }
+  ],
+  "units": [
+    {
+      "ref": "1.1",
+      "title": "Enterprise and entrepreneurship",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "New business ideas arise from changing technology, changing wants and products becoming obsolete (1.1.1)",
+        "Ideas may be wholly original or adapt existing products, services or ideas (1.1.1)",
+        "Risk covers business failure, financial loss and lack of security; reward covers profit, success and independence (1.1.2)",
+        "Enterprise meets customer needs by producing goods or services (1.1.3)",
+        "Businesses add value through convenience, branding, quality, design and a unique selling point (1.1.3)",
+        "Entrepreneurs organise resources, make decisions and take risks (1.1.3)"
+      ],
+      "keyTerms": [
+        "enterprise",
+        "entrepreneur",
+        "risk",
+        "reward",
+        "added value",
+        "USP"
+      ]
+    },
+    {
+      "ref": "1.2",
+      "title": "Spotting a business opportunity",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "Customers typically need price, quality, choice and convenience; meeting needs supports sales and survival (1.2.1)",
+        "Market research finds needs and gaps in the market and reduces risk (1.2.2)",
+        "Primary methods (surveys, questionnaires, focus groups, observation) versus secondary sources (internet, market and government reports) (1.2.2)",
+        "Qualitative and quantitative data; reliability of research findings (1.2.2)",
+        "Segmentation by location, demographics, lifestyle, income and age; market mapping shows gaps and competitors (1.2.3)",
+        "Assessing competitors on price, quality, location, range and service (1.2.4)"
+      ],
+      "keyTerms": [
+        "primary research",
+        "secondary research",
+        "qualitative",
+        "quantitative",
+        "market segmentation",
+        "target market",
+        "market mapping"
+      ]
+    },
+    {
+      "ref": "1.3",
+      "title": "Putting a business idea into practice",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Spring",
+      "points": [
+        "Aims are broad goals; objectives are specific, measurable targets; both may be financial or non-financial (1.3.1)",
+        "Revenue, fixed and variable costs, total costs, profit and loss, interest, break-even and margin of safety (1.3.2)",
+        "Calculations: revenue = price x quantity; total costs = fixed + variable; break-even units; margin of safety (1.3.2)",
+        "Interpret break-even diagrams for changes in costs, revenue and profit (1.3.2)",
+        "Cash and profit differ; cash-flow forecasts show inflows, outflows, net cash flow and balances (1.3.3)",
+        "Short-term finance: overdraft, trade credit. Long-term: savings, venture capital, share capital, loans, retained profit, crowdfunding (1.3.4)"
+      ],
+      "keyTerms": [
+        "aim",
+        "objective",
+        "fixed cost",
+        "variable cost",
+        "break-even",
+        "margin of safety",
+        "net cash flow",
+        "overdraft",
+        "crowdfunding"
+      ]
+    },
+    {
+      "ref": "1.4",
+      "title": "Making the business effective",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Summer",
+      "points": [
+        "Limited and unlimited liability and what each means for owners (1.4.1)",
+        "Sole trader, partnership, private limited company and franchise: advantages and disadvantages (1.4.1)",
+        "Location depends on proximity to market, labour, materials and competitors, and on e-commerce (1.4.2)",
+        "The marketing mix of price, product, promotion and place must work together (1.4.3)",
+        "Technology such as e-commerce and digital communication affects the mix (1.4.3)",
+        "A business plan covers idea, aims, target market, forecasts, finance, location and mix; it reduces risk and helps secure finance (1.4.4)"
+      ],
+      "keyTerms": [
+        "limited liability",
+        "sole trader",
+        "partnership",
+        "private limited company",
+        "franchise",
+        "business plan",
+        "marketing mix"
+      ]
+    },
+    {
+      "ref": "1.5",
+      "title": "Understanding external influences on business",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Summer",
+      "points": [
+        "Stakeholders include shareholders, employees, customers, managers, suppliers, community, pressure groups and government (1.5.1)",
+        "Stakeholder interests can conflict; business activity and stakeholders affect each other (1.5.1)",
+        "Technology: e-commerce, social media, digital communication and payment systems affect sales, costs and marketing (1.5.2)",
+        "Consumer law and employment law; compliance costs and consequences of breaking the law (1.5.3)",
+        "Economic climate: unemployment, consumer income, inflation, interest rates, taxation and exchange rates (1.5.4)",
+        "Businesses respond to changes in external influences by adapting products, prices or operations (1.5.5)"
+      ],
+      "keyTerms": [
+        "stakeholder",
+        "pressure group",
+        "consumer law",
+        "employment law",
+        "inflation",
+        "interest rate",
+        "exchange rate"
+      ]
+    },
+    {
+      "ref": "2.1",
+      "title": "Growing the business",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "Organic growth through new products or new markets; external growth through mergers and takeovers (2.1.1)",
+        "Growing businesses may become public limited companies and float on the stock market (2.1.1)",
+        "Finance for growth: retained profit and asset sales (internal); loans and share capital (external) (2.1.1)",
+        "Aims and objectives change with market conditions, technology, performance and legislation (2.1.2)",
+        "Imports, exports, multinationals, tariffs and trade blocs affect international business (2.1.3)",
+        "Competing internationally via the internet, e-commerce and the marketing mix (2.1.3)",
+        "Ethical and environmental considerations can involve trade-offs with profit; pressure groups can affect the mix (2.1.4)"
+      ],
+      "keyTerms": [
+        "organic growth",
+        "merger",
+        "takeover",
+        "flotation",
+        "tariff",
+        "trade bloc",
+        "multinational",
+        "ethics",
+        "sustainability"
+      ]
+    },
+    {
+      "ref": "2.2",
+      "title": "Making marketing decisions",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "Product: design mix of function, aesthetics and cost; product life cycle and extension strategies; differentiation (2.2.1)",
+        "Price: pricing strategies and influences such as competition, segments, technology and life cycle (2.2.2)",
+        "Promotion: advertising, sponsorship, trials, offers, branding and technology-based promotion (2.2.3)",
+        "Place: retailers, e-tailers and choosing a distribution method for the target market (2.2.4)",
+        "Elements of the mix influence each other and build competitive advantage when integrated (2.2.5)"
+      ],
+      "keyTerms": [
+        "product life cycle",
+        "extension strategy",
+        "differentiation",
+        "branding",
+        "e-tailer",
+        "competitive advantage"
+      ]
+    },
+    {
+      "ref": "2.3",
+      "title": "Making operational decisions",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Spring",
+      "points": [
+        "Production types: job, batch and flow, and their effect on productivity, costs and pricing (2.3.1)",
+        "Technology in production: balancing cost, productivity, quality and flexibility (2.3.1)",
+        "Stock management, interpreting stock-level graphs and just-in-time (JIT) control (2.3.2)",
+        "Procurement: supplier choice by quality, delivery, availability, cost and trust; effects of logistics (2.3.2)",
+        "Quality control and quality assurance help control costs and gain advantage (2.3.3)",
+        "The sales process: product knowledge, speed, engagement, feedback and after-sales service (2.3.4)"
+      ],
+      "keyTerms": [
+        "job production",
+        "batch production",
+        "flow production",
+        "JIT",
+        "procurement",
+        "logistics",
+        "quality assurance"
+      ]
+    },
+    {
+      "ref": "2.4",
+      "title": "Making financial decisions",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Spring",
+      "points": [
+        "Gross profit = sales revenue minus cost of sales; net profit = gross profit minus expenses and interest (2.4.1)",
+        "Gross and net profit margins as percentages of sales revenue (2.4.1)",
+        "Average rate of return = average annual profit divided by cost of investment, as a percentage (2.4.1)",
+        "Formulae are not given in the exam and must be learned (2.4.1)",
+        "Use quantitative data (graphs, financial and market data) to support decisions (2.4.2)",
+        "Judge the uses and limitations of financial information (2.4.2)"
+      ],
+      "keyTerms": [
+        "gross profit",
+        "net profit",
+        "profit margin",
+        "average rate of return",
+        "cost of sales"
+      ]
+    },
+    {
+      "ref": "2.5",
+      "title": "Making human resource decisions",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Summer",
+      "points": [
+        "Hierarchical and flat structures; centralised and decentralised decision-making (2.5.1)",
+        "Communication effects and barriers; part-time, full-time, flexible, temporary and freelance working (2.5.1)",
+        "Job roles, job description, person specification, application form, CV; internal and external recruitment (2.5.2)",
+        "Training methods, performance reviews and the link to motivation and retention (2.5.3)",
+        "Financial motivation: pay, bonuses, commission, promotion, fringe benefits (2.5.4)",
+        "Non-financial motivation: job rotation, job enrichment, autonomy (2.5.4)"
+      ],
+      "keyTerms": [
+        "hierarchy",
+        "delegation",
+        "job description",
+        "person specification",
+        "induction",
+        "motivation",
+        "retention"
+      ]
+    }
+  ],
+  "commandWords": [
+    {
+      "word": "Define",
+      "meaning": "Give the meaning of a term from the specification"
+    },
+    {
+      "word": "State",
+      "meaning": "Give a one-sentence answer drawn from the context"
+    },
+    {
+      "word": "Calculate",
+      "meaning": "Use maths on given data; show working"
+    },
+    {
+      "word": "Outline",
+      "meaning": "Give two linked points about a concept in context"
+    },
+    {
+      "word": "Explain",
+      "meaning": "Give a statement with two expansion points (no context needed)"
+    },
+    {
+      "word": "Analyse",
+      "meaning": "Extended answer exploring a concept in the context given"
+    },
+    {
+      "word": "Discuss",
+      "meaning": "Extended answer exploring an issue; context optional"
+    },
+    {
+      "word": "Justify",
+      "meaning": "Use the information given to recommend one of two options"
+    },
+    {
+      "word": "Evaluate",
+      "meaning": "Use knowledge to reach a supported judgement or conclusion"
+    }
+  ],
+  "skills": [
+    "Business calculations: revenue, costs, profit, break-even, margin of safety, profit margins, average rate of return",
+    "Cash-flow forecasts: net cash flow, opening and closing balances",
+    "Percentages, percentage change and averages (minimum KS3 mathematics)",
+    "Reading graphs, charts, break-even diagrams and stock-level graphs",
+    "Applying knowledge to a source booklet or case study",
+    "Extended writing: analysis, justification and evaluation with a reasoned conclusion"
+  ],
+  "prerequisites": [
+    {
+      "from": "KS3 Mathematics: percentages, ratio and averages",
+      "to": "2.4"
+    },
+    {
+      "from": "KS3 Mathematics: algebraic substitution and graphs",
+      "to": "1.3"
+    },
+    {
+      "from": "1.1 Enterprise and entrepreneurship",
+      "to": "1.2"
+    },
+    {
+      "from": "1.3 Business finance basics",
+      "to": "2.4"
+    },
+    {
+      "from": "1.4 Marketing mix (introduction)",
+      "to": "2.2"
+    },
+    {
+      "from": "1.5 External influences",
+      "to": "2.1"
+    },
+    {
+      "from": "1.1 Risk and reward; 1.3.4 Sources of finance",
+      "to": "2.1"
+    }
+  ],
+  "links": [
+    {
+      "with": "Mathematics",
+      "topic": "Percentages, percentage change and ratio",
+      "unitRef": "2.4",
+      "how": "Maths provides the methods; Business applies them to profit margins and average rate of return"
+    },
+    {
+      "with": "Mathematics",
+      "topic": "Substitution, linear graphs and averages",
+      "unitRef": "1.3",
+      "how": "Break-even and margin of safety use formulae and straight-line graphs; Maths supplies the technique"
+    },
+    {
+      "with": "English",
+      "topic": "Persuasive writing and audience",
+      "unitRef": "2.2",
+      "how": "Promotion and branding use persuasive language; English develops the analysis of purpose and audience"
+    },
+    {
+      "with": "English",
+      "topic": "Extended argument and evaluation",
+      "unitRef": "2.1",
+      "how": "Evaluate questions need a structured argument with a justified conclusion"
+    },
+    {
+      "with": "Geography",
+      "topic": "Globalisation, trade and multinational companies",
+      "unitRef": "2.1",
+      "how": "Geography covers where and why trade and production locate; Business covers the decisions firms make"
+    },
+    {
+      "with": "Islamic Studies",
+      "topic": "Honest trade and avoiding riba (interest)",
+      "unitRef": "1.3",
+      "how": "Sources of finance such as loans and interest can be discussed alongside Islamic principles of lawful trade, kept factual and accurate"
+    },
+    {
+      "with": "Islamic Studies",
+      "topic": "Ethical conduct and zakat",
+      "unitRef": "2.1",
+      "how": "Ethical business decisions and social responsibility can be compared with Islamic teaching on fair dealing and charity, taught accurately and separately from the specification"
+    },
+    {
+      "with": "Computer Science / ICT",
+      "topic": "E-commerce, digital communication and payment systems",
+      "unitRef": "1.5",
+      "how": "Computing explains how the technology works; Business assesses its effect on sales, costs and marketing"
+    },
+    {
+      "with": "PSHE and Citizenship",
+      "topic": "Personal finance, careers and employment rights",
+      "unitRef": "2.5",
+      "how": "Employment law, recruitment and pay in Business support PSHE work on work and money"
+    },
+    {
+      "with": "Science",
+      "topic": "Sustainability and environmental impact",
+      "unitRef": "2.1",
+      "how": "Science gives evidence on environmental effects; Business weighs these against cost and profit"
+    }
+  ],
+  "contextNote": "Specification topics 2.1.4 (ethics, environment and sustainability) require pupils to weigh ethical and environmental considerations against profit; teach the range of business viewpoints accurately and let pupils evaluate. Islamic perspectives in the links are enrichment and are not examined.",
+  "gaps": [
+    "BOARD CONFIRMATION NEEDED: the school's Year 11 parent presentation says 'IGCSE Edexcel' for Business Studies, but the lesson content follows GCSE (9-1) Business 1BS0. Confirm which qualification candidates will be entered for.",
+    "For comparison, International GCSE (9-1) Business 4BS1 (Issue 2, February 2026 on the PDF opened): Paper 1 Investigating small businesses (4BS1/01) 1 hour 30 minutes, 80 marks, 50%; Paper 2 Investigating large businesses (4BS1/02) 1 hour 30 minutes, 80 marks, 50%; four compulsory 20-mark questions each; single tier; AO1 27-28%, AO2 38-39%, AO3 22-23%, AO4 11-12%; quantitative skills 10%.",
+    "4BS1 sections read at title level only: 1 Business activity and influences on business (1.1 to 1.8), 2 People in business (2.1 to 2.5), 3 Business finance (3.1 to 3.5), 4 Marketing (4.1 to 4.3), 5 Business operations (5.1 to 5.4). Bullet-level 4BS1 content was not read, so units are not mapped to it.",
+    "If the entry is 4BS1 the unit list, papers, durations, marks, assessment objectives and sequencing in this file would need replacing; lesson unit titles do not match 4BS1.",
+    "The school's lesson files currently cover 1.1, 1.2, the start of 1.3 (Year 10) and 2.1 (Year 11) only; topics 1.3 (cash flow, finance), 1.4, 1.5 and 2.2 to 2.5 are not yet written as lessons.",
+    "Sample assessment materials and mark schemes were not opened; command word meanings come from the specification PDF summary.",
+    "Spec issue number was taken from the PDF text as read; check Pearson's site for any later issue before entries."
+  ]
+}

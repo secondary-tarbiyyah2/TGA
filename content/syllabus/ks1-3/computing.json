@@ -1,0 +1,190 @@
+{
+  "kind": "syllabus",
+  "subject": "Computing",
+  "slug": "computing",
+  "framework": "National Curriculum in England (2014): Computing programmes of study (Key Stages 1 to 3), with an early-years technology foundation for Reception",
+  "status": "Verified",
+  "statusNote": "Key stage statements were read and paraphrased from the gov.uk National Curriculum computing programmes of study. The EYFS statutory framework (September 2026 version) has no technology-specific early learning goal, so the Reception year map is a recommended early-skills sequence, not statutory content. Statutory content is set by key stage, not by year; the year allocation is a recommended sequence aligned to the school's existing unit names.",
+  "sources": [
+    { "title": "National Curriculum in England: computing programmes of study (gov.uk)", "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-computing-programmes-of-study/national-curriculum-in-england-computing-programmes-of-study" },
+    { "title": "Early years foundation stage statutory framework, group and school-based providers (from September 2026)", "url": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf" },
+    { "title": "Pearson GCSE (9-1) Computer Science 1CP2 getting started guide (topic overview)", "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Computer%20Science/2020/teaching-and-learning-materials/gcse-9-1-computer-science-getting-started-guide-2020.pdf" }
+  ],
+  "purpose": [
+    "Computing education builds computational thinking and creativity, with links to mathematics, science, and design and technology.",
+    "It rests on three strands: computer science, information technology and digital literacy.",
+    "Pupils learn to write programs, solve problems by breaking them into parts, and understand how computers work.",
+    "Pupils become responsible, confident and creative users of digital technology."
+  ],
+  "keyStages": [
+    {
+      "ks": "EYFS (Reception)",
+      "years": "Reception",
+      "strands": [
+        { "strand": "Early technology skills (recommended, not statutory)", "statements": [
+          "Follow and give simple step-by-step instructions, in unplugged and floor-robot activities.",
+          "Use simple devices with adult guidance to look at, make and save pictures and sounds.",
+          "Talk about everyday technology and begin to know how to ask for help."
+        ] }
+      ]
+    },
+    {
+      "ks": "KS1",
+      "years": "Years 1 to 2",
+      "strands": [
+        { "strand": "Computer science", "statements": [
+          "Understand what algorithms are and that programs follow exact, unambiguous instructions.",
+          "Create and debug simple programs.",
+          "Use logical reasoning to predict the behaviour of simple programs."
+        ] },
+        { "strand": "Information technology", "statements": [
+          "Use technology purposefully to create, organise, store, manipulate and retrieve digital content."
+        ] },
+        { "strand": "Digital literacy", "statements": [
+          "Recognise common uses of information technology beyond school.",
+          "Use technology safely and respectfully, keep personal information private, and know where to get help."
+        ] }
+      ]
+    },
+    {
+      "ks": "KS2",
+      "years": "Years 3 to 6",
+      "strands": [
+        { "strand": "Computer science", "statements": [
+          "Design, write and debug programs for goals, including controlling or simulating physical systems.",
+          "Solve problems by decomposing them into smaller parts.",
+          "Use sequence, selection, repetition, variables and input and output in programs.",
+          "Use logical reasoning to explain algorithms and to detect and correct errors.",
+          "Understand computer networks, including the internet, and the services they provide."
+        ] },
+        { "strand": "Information technology", "statements": [
+          "Select, use and combine software and online services to create programs, systems and content.",
+          "Collect, analyse, evaluate and present data and information."
+        ] },
+        { "strand": "Digital literacy", "statements": [
+          "Use search technologies effectively and understand how results are selected and ranked.",
+          "Judge the reliability of digital content and be discerning in evaluating it.",
+          "Use technology safely, respectfully and responsibly; recognise unacceptable behaviour and know how to report concerns."
+        ] }
+      ]
+    },
+    {
+      "ks": "KS3",
+      "years": "Years 7 to 9",
+      "strands": [
+        { "strand": "Computer science: abstraction and algorithms", "statements": [
+          "Design, use and evaluate computational abstractions that model real-world problems and systems.",
+          "Understand key algorithms, such as sorting and searching, and compare their suitability."
+        ] },
+        { "strand": "Computer science: programming", "statements": [
+          "Use two or more programming languages, at least one text-based, to solve problems.",
+          "Use data structures such as lists and tables, and modular code with procedures or functions.",
+          "Design and develop modular programs and understand how to test and evaluate them."
+        ] },
+        { "strand": "Computer science: data and computers", "statements": [
+          "Understand simple Boolean logic and its use in circuits and programming.",
+          "Understand binary numbers and perform simple binary conversions and calculations.",
+          "Understand hardware and software, and how instructions are stored and executed.",
+          "Understand how text, sounds and pictures are represented as binary data."
+        ] },
+        { "strand": "Information technology", "statements": [
+          "Undertake creative projects that combine applications, selecting and using them for known users.",
+          "Create, reuse, revise and repurpose digital artefacts for an audience, considering trust, design and usability."
+        ] },
+        { "strand": "Digital literacy", "statements": [
+          "Use technology safely, respectfully, responsibly and securely, protecting online identity and privacy.",
+          "Recognise inappropriate content, contact and conduct, and know how to report concerns."
+        ] }
+      ]
+    }
+  ],
+  "yearMap": {
+    "reception": [
+      { "unit": "Following instructions", "focus": ["Giving and following step-by-step instructions", "Floor-robot or programmable-toy directions", "Spotting when instructions go wrong", "Simple sequences in play"], "skills": ["Sequencing", "Listening and speaking"], "keyTerms": ["instruction", "forwards", "turn", "order"], "assess": "Observation of practical activities.", "prereq": "Nursery routines and early language.", "leadsTo": "Year 1: Algorithms and instructions (unplugged)." },
+      { "unit": "Using devices safely", "focus": ["Holding and using a tablet or computer with care", "Tapping, dragging and drawing", "Taking and looking at photos", "Asking an adult for help"], "skills": ["Basic device handling", "Safe habits"], "keyTerms": ["screen", "tablet", "keyboard", "mouse"], "assess": "Observation.", "prereq": "None.", "leadsTo": "Year 1: using technology purposefully." },
+      { "unit": "Technology around us", "focus": ["Finding technology at home and school", "Which devices follow instructions", "Safe and kind use"], "skills": ["Observing", "Talking about technology"], "keyTerms": ["device", "button", "switch"], "assess": "Class discussion.", "prereq": "None.", "leadsTo": "Year 2: Technology around us and staying safe." }
+    ],
+    "y1": [
+      { "unit": "Unit 1: Algorithms and instructions (unplugged)", "focus": ["What an algorithm is", "Giving exact instructions", "Sequencing steps in a routine", "Finding and fixing mistakes (debugging)"], "skills": ["Sequencing", "Predicting", "Debugging"], "keyTerms": ["algorithm", "instruction", "sequence", "debug"], "assess": "Practical tasks and short quiz.", "prereq": "Reception: following instructions.", "leadsTo": "Year 2: Programs and sequences." },
+      { "unit": "Programming a floor robot or on-screen character", "focus": ["Moving a robot with directions and turns", "Planning a route", "Predicting the result before running", "Correcting errors"], "skills": ["Planning", "Debugging"], "keyTerms": ["program", "forward", "turn", "route"], "assess": "Practical activity.", "prereq": "Algorithms and instructions.", "leadsTo": "Year 2: Programs and sequences." },
+      { "unit": "Using technology to create and organise", "focus": ["Typing and keyboard basics", "Drawing and simple word processing", "Saving and opening files", "Taking and arranging photos"], "skills": ["Keyboard and mouse", "File handling"], "keyTerms": ["file", "save", "open", "folder"], "assess": "Digital artefact.", "prereq": "Reception: using devices safely.", "leadsTo": "Year 2: digital content." },
+      { "unit": "Keeping safe and being kind online", "focus": ["Keeping personal information private", "Asking a trusted adult for help", "Being kind when using technology"], "skills": ["Safe behaviour"], "keyTerms": ["private", "trusted adult", "kind"], "assess": "Discussion and short quiz.", "prereq": "Reception: technology around us.", "leadsTo": "Year 2: staying safe." }
+    ],
+    "y2": [
+      { "unit": "Unit 1: Technology around us and staying safe", "focus": ["Uses of technology beyond school", "Keeping personal information private", "Being respectful online", "Where to get help"], "skills": ["Safe and responsible use"], "keyTerms": ["private information", "report", "respect"], "assess": "Discussion and short quiz.", "prereq": "Year 1: keeping safe.", "leadsTo": "Year 4: networks and searching; Year 6: being responsible online." },
+      { "unit": "Unit 2: Programs and sequences", "focus": ["Programs are algorithms run on a device", "Block-based sequences", "Predicting what a program will do", "Debugging simple programs"], "skills": ["Sequencing", "Logical reasoning", "Debugging"], "keyTerms": ["program", "sequence", "bug", "predict"], "assess": "Practical programs and quiz.", "prereq": "Year 1: algorithms.", "leadsTo": "Year 3: sequence and repetition." },
+      { "unit": "Creating digital content", "focus": ["Creating a short text, picture or sound project", "Organising and storing files", "Finding saved work"], "skills": ["Creating", "Organising"], "keyTerms": ["document", "image", "store", "retrieve"], "assess": "Digital artefact.", "prereq": "Year 1: using technology.", "leadsTo": "Year 3: combining software." },
+      { "unit": "Collecting and sorting simple data", "focus": ["Sorting objects and pictures", "Tally charts and pictograms on a computer", "Asking questions of data"], "skills": ["Sorting", "Presenting data"], "keyTerms": ["data", "chart", "sort"], "assess": "Simple data task.", "prereq": "Year 1: using technology to create.", "leadsTo": "Year 6: Collecting and presenting data." }
+    ],
+    "y3": [
+      { "unit": "Unit 1: Programming with sequence and repetition", "focus": ["Writing programs with sequences", "Repeat loops", "Decomposing a task into parts", "Testing and debugging"], "skills": ["Decomposition", "Debugging", "Tracing"], "keyTerms": ["repeat", "loop", "decompose", "debug"], "assess": "Practical programming task.", "prereq": "Year 2: programs and sequences.", "leadsTo": "Year 4: Selection in programs." },
+      { "unit": "Combining software to make content", "focus": ["Combining text, images and sound", "Presentation or simple animation", "Saving, naming and sharing work"], "skills": ["Digital creativity", "Planning for an audience"], "keyTerms": ["animation", "presentation", "audience"], "assess": "Digital artefact.", "prereq": "Year 2: creating digital content.", "leadsTo": "Year 5: multi-application projects." },
+      { "unit": "Searching and online safety", "focus": ["Using a search engine with good keywords", "Keeping safe when searching", "Reporting concerns"], "skills": ["Searching", "Safe behaviour"], "keyTerms": ["search engine", "keyword", "report"], "assess": "Short quiz.", "prereq": "Year 2: staying safe.", "leadsTo": "Year 4: networks and searching." }
+    ],
+    "y4": [
+      { "unit": "Unit 1: Networks, the internet and searching", "focus": ["What a network is", "How the internet connects networks", "Services such as the web and email", "How search results are chosen and ranked"], "skills": ["Explaining systems", "Evaluating results"], "keyTerms": ["network", "internet", "web", "search ranking"], "assess": "Quiz and short explanation.", "prereq": "Year 3: searching and online safety.", "leadsTo": "Year 6: being responsible online; GCSE 4.1." },
+      { "unit": "Unit 2: Selection in programs", "focus": ["If and if-else decisions", "Conditions and comparisons", "Combining selection with loops", "Debugging with logical reasoning"], "skills": ["Logical reasoning", "Tracing"], "keyTerms": ["selection", "condition", "if", "else"], "assess": "Practical programming task.", "prereq": "Year 3: sequence and repetition.", "leadsTo": "Year 5: variables and game programming." },
+      { "unit": "Writing and presenting digital content", "focus": ["Word processing and layout", "Mixed media presentation", "Checking and improving work"], "skills": ["Drafting", "Editing"], "keyTerms": ["format", "edit", "layout"], "assess": "Digital artefact.", "prereq": "Year 3: combining software.", "leadsTo": "Year 5: multi-application projects." },
+      { "unit": "Judging what we find online", "focus": ["Telling reliable from unreliable sources", "Respectful online communication", "Reporting inappropriate content"], "skills": ["Evaluating", "Responsible communication"], "keyTerms": ["reliable", "source", "respectful"], "assess": "Discussion and quiz.", "prereq": "Year 3: searching.", "leadsTo": "Year 6: being responsible online." }
+    ],
+    "y5": [
+      { "unit": "Unit 1: Variables and game programming", "focus": ["Variables to store scores and values", "User input and output", "Selection and repetition in a game", "Testing and improving a game"], "skills": ["Design", "Debugging", "Using variables"], "keyTerms": ["variable", "input", "output", "score"], "assess": "Game project.", "prereq": "Year 4: selection.", "leadsTo": "Year 6: larger programs; Year 7: Scratch." },
+      { "unit": "Modelling and simulating with programs", "focus": ["Controlling a physical or simulated system", "Using sensors or inputs", "Planning and decomposing a task"], "skills": ["Decomposition", "Modelling"], "keyTerms": ["sensor", "simulation", "control"], "assess": "Practical project.", "prereq": "Year 4: selection.", "leadsTo": "Year 7: abstraction and modelling." },
+      { "unit": "Spreadsheets and databases (introduction)", "focus": ["Entering data in a spreadsheet", "Simple formulae", "Sorting and filtering", "Charts"], "skills": ["Using formulae", "Presenting data"], "keyTerms": ["cell", "formula", "sort", "filter"], "assess": "Digital artefact.", "prereq": "Year 2: collecting and sorting data.", "leadsTo": "Year 6: Collecting and presenting data." },
+      { "unit": "Online safety and digital footprint", "focus": ["Passwords and privacy", "Digital footprint", "Cyberbullying and reporting"], "skills": ["Safe and secure behaviour"], "keyTerms": ["password", "privacy", "footprint"], "assess": "Quiz and discussion.", "prereq": "Year 4: judging what we find online.", "leadsTo": "Year 6: being responsible online." }
+    ],
+    "y6": [
+      { "unit": "Unit 1: Being responsible online", "focus": ["Respectful and responsible behaviour online", "Spotting unacceptable behaviour", "Reporting concerns", "Reliability of online information"], "skills": ["Evaluating", "Responsible communication"], "keyTerms": ["responsible", "respectful", "reliable", "report"], "assess": "Discussion and quiz.", "prereq": "Year 5: online safety and digital footprint.", "leadsTo": "Year 7: using technology safely and securely." },
+      { "unit": "Unit 2: Collecting and presenting data", "focus": ["Planning a data investigation", "Entering data into a spreadsheet", "Charts and graphs", "Drawing conclusions"], "skills": ["Analysing data", "Presenting"], "keyTerms": ["data", "spreadsheet", "chart", "conclusion"], "assess": "Digital artefact.", "prereq": "Year 5: spreadsheets.", "leadsTo": "Year 8: My Digital World." },
+      { "unit": "Programming a larger project", "focus": ["Decomposing a project", "Using sequence, selection, repetition and variables together", "Testing and debugging", "Sharing and evaluating"], "skills": ["Design", "Debugging", "Evaluating"], "keyTerms": ["decompose", "test", "evaluate"], "assess": "Project.", "prereq": "Year 5: variables and game programming.", "leadsTo": "Year 7: Introduction to Scratch." },
+      { "unit": "How computers and networks work", "focus": ["Inputs, processing and outputs", "Networks and the internet", "How information travels"], "skills": ["Explaining systems"], "keyTerms": ["input", "output", "network", "internet"], "assess": "Quiz.", "prereq": "Year 4: networks.", "leadsTo": "Year 7: hardware and software." }
+    ],
+    "y7": [
+      { "unit": "Unit 1: Introduction to Scratch", "focus": ["Sequence, selection and repetition in Scratch", "Variables and events", "Planning and decomposing a project", "Testing and debugging"], "skills": ["Programming", "Debugging", "Decomposition"], "keyTerms": ["sprite", "event", "variable", "loop"], "assess": "Project and end-of-unit test.", "prereq": "Year 6: programming a larger project.", "leadsTo": "Year 9: Python programming revisited." },
+      { "unit": "Hardware, software and how computers work", "focus": ["Components of a computer system", "Input, output and storage", "Operating systems and applications", "How instructions are stored and run"], "skills": ["Explaining", "Classifying"], "keyTerms": ["CPU", "memory", "storage", "operating system"], "assess": "End-of-unit test.", "prereq": "Year 6: how computers and networks work.", "leadsTo": "GCSE 3.1." },
+      { "unit": "Using technology safely, securely and responsibly", "focus": ["Protecting identity and privacy", "Passwords and secure habits", "Recognising inappropriate content and contact", "Reporting concerns"], "skills": ["Safe and secure behaviour"], "keyTerms": ["privacy", "secure", "report"], "assess": "Quiz and discussion.", "prereq": "Year 6: being responsible online.", "leadsTo": "GCSE 5.3." },
+      { "unit": "Algorithms and flowcharts", "focus": ["Writing algorithms in flowcharts and pseudocode", "Abstraction and decomposition", "Tracing algorithms by hand"], "skills": ["Logical reasoning", "Tracing"], "keyTerms": ["flowchart", "pseudocode", "abstraction"], "assess": "End-of-unit test.", "prereq": "Year 6: programming.", "leadsTo": "Year 8-9: searching, sorting; GCSE 1.1 and 1.2." }
+    ],
+    "y8": [
+      { "unit": "Unit 1: My Digital World", "focus": ["Combining several applications in one project", "Designing for an audience", "Trust, design and usability", "Reusing and revising digital work"], "skills": ["Creating", "Evaluating for an audience"], "keyTerms": ["audience", "usability", "template", "revise"], "assess": "Project.", "prereq": "Year 7: using technology safely; Year 6: collecting and presenting data.", "leadsTo": "Year 9: data projects." },
+      { "unit": "Binary and data representation", "focus": ["Binary and denary conversion", "Adding binary numbers", "How text, sound and images are stored as bits", "File sizes"], "skills": ["Converting", "Calculating"], "keyTerms": ["binary", "bit", "byte", "pixel", "ASCII"], "assess": "End-of-unit test.", "prereq": "Year 7: how computers work.", "leadsTo": "GCSE 2.1 to 2.3." },
+      { "unit": "Boolean logic and logic gates", "focus": ["AND, OR and NOT", "Truth tables", "Using Boolean conditions in programs"], "skills": ["Logical reasoning"], "keyTerms": ["Boolean", "truth table", "logic gate"], "assess": "End-of-unit test.", "prereq": "Year 7: algorithms; Year 4: selection.", "leadsTo": "GCSE 1.3." },
+      { "unit": "Networks and the web", "focus": ["LANs, WANs and the internet", "How web pages are delivered", "IP addresses and protocols (introduction)", "Cybersecurity basics"], "skills": ["Explaining systems"], "keyTerms": ["router", "IP address", "protocol", "malware"], "assess": "End-of-unit test.", "prereq": "Year 4: networks.", "leadsTo": "GCSE 4.1 and 5.3." },
+      { "unit": "Text-based programming: first steps", "focus": ["Writing simple programs in a text language", "Variables, selection and iteration in text", "Reading error messages"], "skills": ["Programming", "Debugging"], "keyTerms": ["syntax", "variable", "error message"], "assess": "Practical task.", "prereq": "Year 7: Scratch.", "leadsTo": "Year 9: Python programming revisited." }
+    ],
+    "y9": [
+      { "unit": "Unit 1: Python programming revisited", "focus": ["Variables, input and data types", "Selection and iteration", "Lists and strings", "Functions and procedures", "Testing and debugging"], "skills": ["Programming", "Debugging", "Modular design"], "keyTerms": ["function", "list", "string", "loop"], "assess": "Programming project and test.", "prereq": "Year 8: text-based programming; Year 7: Scratch.", "leadsTo": "GCSE 6.1 to 6.6." },
+      { "unit": "Searching and sorting algorithms", "focus": ["Linear and binary search", "Bubble sort and merge sort", "Comparing algorithms", "Tracing algorithms"], "skills": ["Analysing", "Tracing"], "keyTerms": ["linear search", "binary search", "bubble sort", "merge sort"], "assess": "End-of-unit test.", "prereq": "Year 7: algorithms and flowcharts.", "leadsTo": "GCSE 1.2." },
+      { "unit": "Computer systems and architecture", "focus": ["CPU and fetch-decode-execute (introduction)", "Memory and storage", "Operating systems and utilities", "Low-level and high-level languages"], "skills": ["Explaining", "Comparing"], "keyTerms": ["fetch-decode-execute", "RAM", "compiler", "interpreter"], "assess": "End-of-unit test.", "prereq": "Year 7: hardware and software.", "leadsTo": "GCSE 3.1 to 3.3." },
+      { "unit": "Data handling and spreadsheets", "focus": ["Spreadsheet formulae and functions", "Sorting, filtering and charts", "Using data to answer questions", "Introduction to databases"], "skills": ["Data analysis", "Presenting"], "keyTerms": ["formula", "function", "database", "field"], "assess": "Digital artefact.", "prereq": "Year 8: My Digital World.", "leadsTo": "GCSE 6.4 (files and data)." },
+      { "unit": "Impact of technology and cybersecurity", "focus": ["Legal and ethical use of data and AI", "Environmental impact of technology", "Cyber threats and protection", "Copyright and licensing"], "skills": ["Discussing issues", "Evaluating"], "keyTerms": ["bias", "copyright", "encryption", "phishing", "e-waste"], "assess": "Extended-answer task.", "prereq": "Year 8: networks and the web.", "leadsTo": "GCSE 5.1 to 5.3." }
+    ]
+  },
+  "progression": [
+    { "thread": "Programming and algorithms", "steps": { "Reception": "Following and giving instructions", "Y1": "Algorithms unplugged; floor robot", "Y3": "Sequence and repetition", "Y4": "Selection", "Y5": "Variables and games", "Y7": "Scratch projects", "Y9": "Python with functions and lists" } },
+    { "thread": "Data representation and Boolean logic", "steps": { "Y2": "Sorting and pictograms", "Y6": "Inputs, processing, outputs", "Y8": "Binary, images, sound and logic gates", "Y9": "File sizes and hexadecimal readiness" } },
+    { "thread": "Computer systems and networks", "steps": { "Y2": "Technology around us", "Y4": "Networks and the internet", "Y6": "How computers and networks work", "Y7": "Hardware and software", "Y8": "LANs, WANs, protocols", "Y9": "CPU, memory and translators" } },
+    { "thread": "Information technology and data", "steps": { "Y1": "Creating and saving files", "Y2": "Collecting simple data", "Y5": "Spreadsheets", "Y6": "Collecting and presenting data", "Y8": "Multi-application projects", "Y9": "Spreadsheet functions and databases" } },
+    { "thread": "Digital literacy and online safety", "steps": { "Y1": "Keeping safe and being kind", "Y2": "Staying safe", "Y4": "Reliable sources, searching", "Y6": "Being responsible online", "Y7": "Privacy and security", "Y9": "Ethics, law and cybersecurity" } }
+  ],
+  "toKS4": "Key Stage 3 prepares pupils for Pearson Edexcel GCSE Computer Science 1CP2 (Paper 1 Topics 1 to 5, Paper 2 Topic 6 in Python 3). Algorithms, flowcharts, searching and sorting set up Topic 1 (1.1 to 1.3). Binary, data representation and file sizes set up Topic 2. Hardware, software and translators set up Topic 3. Networks and protocols set up Topic 4. Online safety, ethics, law and the environment set up Topic 5. Scratch then Python, with functions, lists and strings, set up Topic 6 (6.1 to 6.6), which is assessed by an on-screen programming exam.",
+  "links": [
+    { "with": "Mathematics", "topic": "Binary numbers, place value and number bases", "years": "Y7-Y9", "how": "Maths supplies place value and powers; Computing applies them to binary, hexadecimal and file sizes." },
+    { "with": "Mathematics", "topic": "Algorithms, sequences and functions", "years": "Y3-Y9", "how": "Maths develops number patterns and algebra; Computing expresses them as algorithms, loops and functions." },
+    { "with": "Mathematics", "topic": "Boolean logic, sets and Venn diagrams", "years": "Y7-Y9", "how": "Maths uses AND, OR and NOT in Venn diagrams; Computing uses them in conditions and truth tables." },
+    { "with": "Mathematics", "topic": "Data handling: averages, charts and spreadsheets", "years": "Y2-Y9", "how": "Maths teaches averages and charts; Computing uses spreadsheets to calculate and present them." },
+    { "with": "Science", "topic": "Sensors, data logging and control", "years": "Y5-Y9", "how": "Science collects measurements; Computing writes programs that read sensors and control systems." },
+    { "with": "Science (Physics)", "topic": "Electrical circuits and logic gates", "years": "Y8-Y9", "how": "Physics studies circuits and switches; Computing models them as logic gates and Boolean expressions." },
+    { "with": "Design and Technology", "topic": "Control systems and designing products", "years": "Y5-Y9", "how": "Design and Technology designs products; Computing programs the control systems inside them." },
+    { "with": "Geography", "topic": "Data and mapping tools", "years": "Y6-Y9", "how": "Geography gathers fieldwork data; Computing uses spreadsheets and online maps to analyse and present it." },
+    { "with": "English", "topic": "Writing for an audience and evaluating sources", "years": "Y4-Y9", "how": "English teaches drafting and judging sources; Computing applies them to digital content and online searching." },
+    { "with": "PSHE", "topic": "Online safety, privacy and respect", "years": "Y1-Y9", "how": "PSHE teaches respect and wellbeing; Computing teaches privacy, security and how to report online concerns." },
+    { "with": "Art", "topic": "Digital images, animation and sound", "years": "Y3-Y9", "how": "Art teaches composition; Computing teaches how digital images and sound are created and stored." }
+  ],
+  "gaps": [
+    "The EYFS framework has no technology-specific early learning goal; the Reception year map is a recommended sequence and not statutory content.",
+    "Year-by-year allocation of units is a recommended sequence aligned to the school's existing unit names; the National Curriculum fixes content by key stage, not by year.",
+    "Links to GCSE 1CP2 section numbers come from the Pearson getting started guide and a school-hosted copy of the specification; the Pearson specification PDF itself was not opened (see ks4/computing.json).",
+    "Hexadecimal and file-size work in Year 9 is a recommended extension beyond the statutory binary requirement."
+  ]
+}

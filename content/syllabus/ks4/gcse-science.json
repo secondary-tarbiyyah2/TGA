@@ -1,0 +1,445 @@
+{
+  "kind": "spec",
+  "subject": "Science",
+  "slug": "gcse-science",
+  "board": "Pearson Edexcel",
+  "qualification": "GCSE (9-1) Biology, Chemistry, Physics (separate sciences) and Combined Science (2016 specifications)",
+  "code": "Biology 1BI0; Chemistry 1CH0; Physics 1PH0; Combined Science 1SC0",
+  "specVersion": "Biology, Chemistry and Physics: Issue 4, March 2024 (first teaching September 2016, first certification 2018). Combined Science 1SC0: issue date not stated in the extract read.",
+  "status": "Provisional",
+  "statusNote": "Board, codes, paper structure (durations, marks, weights, topics per paper), tiers, core practical lists and topic content were read from the four official Pearson specification PDFs (Biology, Chemistry, Physics, Combined Science) via a page-reading tool that returns summaries, not the raw PDFs, so section statements below are paraphrased from those summaries and spec numbers should be checked against the PDFs before print. Combined Science assessment objective weightings were not stated in the extract read. The exact exam board for the school's Science is UNCONFIRMED (see gaps): this pack documents Edexcel GCSE because the portal's lesson content is written for it. Year placement (Y10/Y11) is a recommended sequence; the board allows flexible two-year sequencing.",
+  "sources": [
+    { "title": "Pearson Edexcel GCSE (9-1) Sciences 2016 - qualification page (links to the four specifications)", "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/sciences-2016.html" },
+    { "title": "Pearson Edexcel GCSE (9-1) Biology (1BI0) specification PDF", "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Science/2016/Specification/gcse-biology-spec.pdf" },
+    { "title": "Pearson Edexcel GCSE (9-1) Chemistry (1CH0) specification PDF", "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Science/2016/Specification/gcse-chemistry-spec.pdf" },
+    { "title": "Pearson Edexcel GCSE (9-1) Physics (1PH0) specification PDF", "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Science/2016/Specification/gcse-physics-spec.pdf" },
+    { "title": "Pearson Edexcel GCSE (9-1) Combined Science (1SC0) specification PDF", "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Science/2016/Specification/gcse-combinedscience-spec.pdf" }
+  ],
+  "years": "Years 10 to 11",
+  "tiers": "Foundation (grades 1-5) / Higher (grades 4-9); all papers of a qualification must be taken at the same tier; 27 marks per separate-science paper are common to both tiers",
+  "assessment": [
+    { "paper": "Biology Paper 1", "title": "Biology Paper 1 (1BI0/1F, 1BI0/1H)", "duration": "1 hour 45 minutes", "marks": 100, "weight": "50%", "content": "Topic 1 Key concepts in biology; Topic 2 Cells and control; Topic 3 Genetics; Topic 4 Natural selection and genetic modification; Topic 5 Health, disease and the development of medicines", "format": "Ten compulsory questions: multiple choice, short answer, calculations and extended open response; calculators allowed" },
+    { "paper": "Biology Paper 2", "title": "Biology Paper 2 (1BI0/2F, 1BI0/2H)", "duration": "1 hour 45 minutes", "marks": 100, "weight": "50%", "content": "Topic 1 Key concepts in biology; Topic 6 Plant structures and their functions; Topic 7 Animal coordination, control and homeostasis; Topic 8 Exchange and transport in animals; Topic 9 Ecosystems and material cycles", "format": "As Biology Paper 1" },
+    { "paper": "Chemistry Paper 1", "title": "Chemistry Paper 1 (1CH0/1F, 1CH0/1H)", "duration": "1 hour 45 minutes", "marks": 100, "weight": "50%", "content": "Topics 1 to 5: Key concepts in chemistry; States of matter and mixtures; Chemical changes; Extracting metals and equilibria; Separate chemistry 1", "format": "Ten compulsory questions: multiple choice, short answer, calculations and extended open response; calculators allowed" },
+    { "paper": "Chemistry Paper 2", "title": "Chemistry Paper 2 (1CH0/2F, 1CH0/2H)", "duration": "1 hour 45 minutes", "marks": 100, "weight": "50%", "content": "Topic 1; Topics 6 to 9: Groups in the periodic table; Rates of reaction and energy changes; Fuels and Earth science; Separate chemistry 2", "format": "As Chemistry Paper 1" },
+    { "paper": "Physics Paper 1", "title": "Physics Paper 1 (1PH0/1F, 1PH0/1H)", "duration": "1 hour 45 minutes", "marks": 100, "weight": "50%", "content": "Topics 1 to 7: Key concepts of physics; Motion and forces; Conservation of energy; Waves; Light and the electromagnetic spectrum; Radioactivity; Astronomy", "format": "Ten compulsory questions: multiple choice, short answer, calculations and extended open response; calculators allowed" },
+    { "paper": "Physics Paper 2", "title": "Physics Paper 2 (1PH0/2F, 1PH0/2H)", "duration": "1 hour 45 minutes", "marks": 100, "weight": "50%", "content": "Topic 1; Topics 8 to 15: Energy - forces doing work; Forces and their effects; Electricity and circuits; Static electricity; Magnetism and the motor effect; Electromagnetic induction; Particle model; Forces and matter", "format": "As Physics Paper 1" },
+    { "paper": "Combined Science Paper 1 (Biology 1)", "title": "Combined Science Biology 1 (1SC0/1BF, 1SC0/1BH)", "duration": "1 hour 10 minutes", "marks": 60, "weight": "16.67%", "content": "Biology Topics 1 to 5 (Combined Science content only)", "format": "Multiple choice, short answer, calculations and extended open response; calculators allowed" },
+    { "paper": "Combined Science Paper 2 (Biology 2)", "title": "Combined Science Biology 2 (1SC0/2BF, 1SC0/2BH)", "duration": "1 hour 10 minutes", "marks": 60, "weight": "16.67%", "content": "Biology Topic 1 and Topics 6 to 9 (Combined Science content only)", "format": "As Combined Science Paper 1" },
+    { "paper": "Combined Science Paper 3 (Chemistry 1)", "title": "Combined Science Chemistry 1 (1SC0/1CF, 1SC0/1CH)", "duration": "1 hour 10 minutes", "marks": 60, "weight": "16.67%", "content": "Chemistry Topics 1 to 4", "format": "As Combined Science Paper 1" },
+    { "paper": "Combined Science Paper 4 (Chemistry 2)", "title": "Combined Science Chemistry 2 (1SC0/2CF, 1SC0/2CH)", "duration": "1 hour 10 minutes", "marks": 60, "weight": "16.67%", "content": "Chemistry Topic 1 and Topics 6 to 8", "format": "As Combined Science Paper 1" },
+    { "paper": "Combined Science Paper 5 (Physics 1)", "title": "Combined Science Physics 1 (1SC0/1PF, 1SC0/1PH)", "duration": "1 hour 10 minutes", "marks": 60, "weight": "16.67%", "content": "Physics Topics 1 to 6", "format": "As Combined Science Paper 1" },
+    { "paper": "Combined Science Paper 6 (Physics 2)", "title": "Combined Science Physics 2 (1SC0/2PF, 1SC0/2PH)", "duration": "1 hour 10 minutes", "marks": 60, "weight": "16.67%", "content": "Physics Topic 1 and Topics 8 to 10, 12 to 15", "format": "As Combined Science Paper 1" }
+  ],
+  "nonExam": "No coursework or non-exam assessment. Practical work is assessed through the written papers. Core practicals: Biology 8, Chemistry 8, Physics 8, Combined Science 18 (6 biology, 5 chemistry, 7 physics); centres submit a Practical Science Statement by 15 April of the exam year. BIOLOGY core practicals: (1.6) microscopy with magnification and labelled drawings; (1.10) effect of pH on enzyme activity; (1.13B) food tests with chemical reagents; (1.16) osmosis in potatoes; (5.18B) antiseptics, antibiotics or plant extracts on microbial cultures; (6.5) light intensity and rate of photosynthesis; (8.11) rate of respiration; (9.5) field work with quadrats and belt transects. CHEMISTRY core practicals: (2.11) inks by simple distillation and paper chromatography; (3.6) pH change adding calcium hydroxide or oxide to dilute hydrochloric acid; (3.17) pure dry hydrated copper sulfate crystals from copper oxide; (3.31) electrolysis of copper sulfate solution; (5.9C) acid-alkali titration; (7.1) rate of reaction by gas production and by colour change; (9.6C) identify ions in unknown salts; (9.28C) temperature rise from burning alcohols. PHYSICS core practicals: (2.19) force, mass and acceleration; (4.17) wave speed, frequency and wavelength in a solid and a fluid; (5.9) refraction in rectangular glass blocks; (5.19P) surface nature and thermal radiation; (10.17) V-I relationships and series and parallel circuits; (14.3) densities of solids and liquids; (14.11) specific heat capacity of water and melting ice graph; (15.6) extension and work done on a spring. COMBINED SCIENCE core practicals (18): the biology ones 1.6, 1.10, 1.16, 6.5, 8.11, 9.5; chemistry 2.11, 3.6, 3.17, 3.31, 7.1; physics 2.19, 4.17, 5.9, 10.17, 14.3, 14.11, 15.6.",
+  "aos": [
+    { "code": "AO1", "desc": "Demonstrate knowledge and understanding of scientific ideas and techniques", "weight": "40% (plus or minus 3) overall; 20 marks per 100-mark separate-science paper" },
+    { "code": "AO2", "desc": "Apply knowledge and understanding of scientific ideas and enquiry", "weight": "40% (plus or minus 3) overall; 20 marks per 100-mark separate-science paper" },
+    { "code": "AO3", "desc": "Analyse information and ideas to interpret, evaluate, make judgements and draw conclusions", "weight": "20% (plus or minus 3) overall; 10 marks per 100-mark separate-science paper" }
+  ],
+  "units": [
+    { "ref": "Biology Topic 1", "title": "Key concepts in biology", "paper": "Biology Paper 1 and Paper 2; Combined Science Paper 1 and Paper 2", "year": "Y10", "term": "Autumn",
+      "points": [
+        "Eukaryotic and prokaryotic cell structures and functions; adaptations of sperm, egg and ciliated cells.",
+        "How advances in microscopy changed knowledge of cells; magnification calculations and labelled drawings (core practical 1.6).",
+        "Number, size and scale: milli to pico prefixes and standard form.",
+        "Enzymes: active site, specificity and denaturation; effects of temperature, substrate concentration and pH (core practical 1.10).",
+        "Enzymes building and breaking down carbohydrates, proteins and lipids; food tests and calorimetry for food energy.",
+        "Diffusion, osmosis and active transport; potato osmosis practical and percentage mass change (1.16)."
+      ],
+      "keyTerms": ["eukaryote", "prokaryote", "magnification", "active site", "denaturation", "diffusion", "osmosis", "active transport"] },
+    { "ref": "Biology Topic 2", "title": "Cells and control", "paper": "Biology Paper 1; Combined Science Paper 1", "year": "Y10", "term": "Autumn",
+      "points": [
+        "Mitosis stages and cytokinesis; roles in growth, repair and asexual reproduction.",
+        "Cancer as uncontrolled cell division; growth by division, elongation and differentiation.",
+        "Percentile charts to monitor growth.",
+        "Stem cells and plant meristems: functions, benefits and risks of use.",
+        "Neurone types, synapses and neurotransmitters; reflex arc structure.",
+        "Brain structure and function; CT and PET scanning; limits of treating nervous system damage (GCSE Biology only).",
+        "Eye structure and function; eye defects and their correction (GCSE Biology only)."
+      ],
+      "keyTerms": ["mitosis", "differentiation", "stem cell", "meristem", "synapse", "reflex arc"] },
+    { "ref": "Biology Topic 3", "title": "Genetics", "paper": "Biology Paper 1; Combined Science Paper 1", "year": "Y10", "term": "Spring",
+      "points": [
+        "Asexual and sexual reproduction compared; meiosis makes genetically different haploid gametes.",
+        "DNA structure: double helix, base pairing, nucleotides; genome and gene definitions; extracting DNA from fruit.",
+        "Base sequence determines amino acid order and protein shape; transcription and translation (GCSE Biology only).",
+        "Mendel's work and why inheritance was hard to explain before the mechanism of DNA was known.",
+        "Genetic terms: allele, dominant, recessive, genotype, phenotype, homozygous, heterozygous.",
+        "Monohybrid crosses, Punnett squares and pedigrees; probabilities, ratios and percentages.",
+        "Sex determination, ABO blood groups (codominance, multiple alleles) and sex-linked disorders.",
+        "Most characteristics involve many genes; genetic versus environmental variation.",
+        "Human Genome Project and its medical uses; mutation as a source of variation with effects from none to rarely significant."
+      ],
+      "keyTerms": ["gamete", "meiosis", "allele", "genotype", "phenotype", "Punnett square", "mutation", "genome"] },
+    { "ref": "Biology Topic 4", "title": "Natural selection and genetic modification", "paper": "Biology Paper 1; Combined Science Paper 1", "year": "Y10", "term": "Spring",
+      "points": [
+        "Work of Charles Darwin and Alfred Wallace; evolution by natural selection and its impact on biology.",
+        "Antibiotic resistance in bacteria as evidence for natural selection.",
+        "Fossil evidence for human evolution (for example Ardi, Lucy) and the development and dating of stone tools.",
+        "Pentadactyl limb anatomy as evidence for evolution; three-domain system compared with five kingdoms.",
+        "Selective breeding and its effects on food plants and animals; tissue culture in medicine and plant breeding.",
+        "Genetic engineering stages: restriction enzymes, ligase, sticky ends and vectors.",
+        "Advantages and disadvantages of GM crops, for example Bt insect resistance; fertilisers and biological control for food supply.",
+        "Evaluate benefits, risks and ethics of genetic engineering and selective breeding."
+      ],
+      "keyTerms": ["natural selection", "evolution", "variation", "fossil", "speciation", "antibiotic resistance", "selective breeding", "genetic engineering"] },
+    { "ref": "Biology Topic 5", "title": "Health, disease and the development of medicines", "paper": "Biology Paper 1; Combined Science Paper 1", "year": "Y10", "term": "Summer",
+      "points": [
+        "WHO definition of health; communicable versus non-communicable disease; one disease raising susceptibility to others.",
+        "Pathogen types, named infections, how they spread and how spread is prevented.",
+        "Viral life cycles and sexually transmitted infections (GCSE Biology only content for lysogenic and lytic cycles).",
+        "Plant defences and identifying plant diseases (GCSE Biology only).",
+        "Human physical and chemical barriers; specific immune response; vaccination and herd immunity.",
+        "Antibiotics act on bacteria only; aseptic technique and antimicrobial practical (core practical 5.18B).",
+        "Drug development stages; monoclonal antibodies (GCSE Biology only).",
+        "Causes of non-communicable disease; lifestyle effects, BMI and waist-to-hip ratio; evaluating cardiovascular treatments."
+      ],
+      "keyTerms": ["pathogen", "vaccination", "herd immunity", "antibody", "antibiotic", "clinical trial", "BMI"] },
+    { "ref": "Biology Topic 6", "title": "Plant structures and their functions", "paper": "Biology Paper 2; Combined Science Paper 2", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Photosynthetic organisms as producers; photosynthesis as an endothermic reaction.",
+        "Limiting factors: temperature, light intensity and carbon dioxide; light intensity practical (6.5) and inverse square law.",
+        "Root hair adaptations; xylem and phloem structure and function.",
+        "Transpiration and stomata; translocation; calculating transpiration rate and factors affecting water uptake.",
+        "Leaf adaptations for photosynthesis and gas exchange; plant adaptations to extreme environments (GCSE Biology only).",
+        "Plant hormones: auxins and tropisms; commercial uses of auxins, gibberellins and ethene (GCSE Biology only)."
+      ],
+      "keyTerms": ["limiting factor", "xylem", "phloem", "transpiration", "stomata", "translocation", "auxin"] },
+    { "ref": "Biology Topic 7", "title": "Animal coordination, control and homeostasis", "paper": "Biology Paper 2; Combined Science Paper 2", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Endocrine glands and hormone transport; adrenaline and the fight-or-flight response.",
+        "Thyroxine and negative feedback; hormones in the menstrual cycle; hormonal contraception and its evaluation.",
+        "Hormones in assisted reproduction, including IVF and clomifene.",
+        "Homeostasis; thermoregulation involving skin, hypothalamus, shivering, vasoconstriction and vasodilation (GCSE Biology only detail).",
+        "Blood glucose control by insulin and glucagon; type 1 and type 2 diabetes and links to body mass.",
+        "Urinary system, nephron filtration and reabsorption, ADH, urea and kidney failure treatments (GCSE Biology only)."
+      ],
+      "keyTerms": ["hormone", "negative feedback", "homeostasis", "insulin", "glucagon", "ADH", "nephron"] },
+    { "ref": "Biology Topic 8", "title": "Exchange and transport in animals", "paper": "Biology Paper 2; Combined Science Paper 2", "year": "Y11", "term": "Spring",
+      "points": [
+        "Why organisms need exchange surfaces and transport systems; surface area to volume ratio.",
+        "Alveolar adaptations; factors affecting diffusion and Fick's law calculations (GCSE Biology only).",
+        "Functions of blood components and blood vessels.",
+        "Structure and function of the heart and circulatory system.",
+        "Aerobic and anaerobic respiration compared; respiration as an exothermic process.",
+        "Respiration rate practical (8.11); heart rate, stroke volume and cardiac output calculations."
+      ],
+      "keyTerms": ["surface area to volume ratio", "alveolus", "aerobic respiration", "anaerobic respiration", "cardiac output"] },
+    { "ref": "Biology Topic 9", "title": "Ecosystems and material cycles", "paper": "Biology Paper 2; Combined Science Paper 2", "year": "Y11", "term": "Spring",
+      "points": [
+        "Levels of organisation; abiotic and biotic factors; interdependence, parasitism and mutualism.",
+        "Field work with quadrats and belt transects; estimating populations from raw data (core practical 9.5).",
+        "Energy loss between trophic levels; biomass pyramids; efficiency and biomass calculations (GCSE Biology only).",
+        "Human impacts: fish farming, non-indigenous species, eutrophication; benefits of biodiversity and reforestation.",
+        "Biological factors affecting food security (GCSE Biology only).",
+        "Material cycles: carbon, water (including desalination) and nitrogen cycles; decomposers, fertilisers, crop rotation.",
+        "Indicator species for water and air pollution (GCSE Biology only).",
+        "Factors affecting decomposition in food preservation and composting; rate-of-change calculations (GCSE Biology only)."
+      ],
+      "keyTerms": ["ecosystem", "biodiversity", "trophic level", "biomass", "decomposer", "eutrophication", "quadrat", "transect"] },
+
+    { "ref": "Chemistry Topic 1", "title": "Key concepts in chemistry", "paper": "Chemistry Paper 1 and Paper 2; Combined Science Paper 3 and Paper 4", "year": "Y10", "term": "Autumn",
+      "points": [
+        "Development of the atomic model; subatomic particles, relative charges and masses; mass and atomic number.",
+        "Isotopes and calculating relative atomic mass from abundances.",
+        "Periodic table history (Mendeleev) and arrangement by atomic number; metals and non-metals; electronic configurations of the first 20 elements.",
+        "Ionic bonding, ion formation and lattice structure; covalent bonding and dot-and-cross diagrams.",
+        "Properties of ionic, simple molecular, giant covalent and metallic substances.",
+        "Relative formula mass, percentage composition, empirical and molecular formulae.",
+        "Conservation of mass, reacting masses, moles, Avogadro constant and stoichiometry."
+      ],
+      "keyTerms": ["isotope", "ion", "lattice", "covalent bond", "mole", "relative formula mass", "empirical formula"] },
+    { "ref": "Chemistry Topic 2", "title": "States of matter and mixtures", "paper": "Chemistry Paper 1; Combined Science Paper 3", "year": "Y10", "term": "Autumn",
+      "points": [
+        "Particle arrangement, movement and energy in solids, liquids and gases; predicting state from data.",
+        "Meaning of pure in chemistry; melting point as a test of purity.",
+        "Separation techniques: distillation, fractional distillation, filtration, crystallisation, chromatography.",
+        "Paper chromatography, interpreting chromatograms and calculating Rf values.",
+        "Core practical 2.11: composition of inks using simple distillation and paper chromatography.",
+        "Making water potable and the need for pure water in analysis."
+      ],
+      "keyTerms": ["pure substance", "mixture", "Rf value", "distillation", "chromatography", "potable"] },
+    { "ref": "Chemistry Topic 3", "title": "Chemical changes", "paper": "Chemistry Paper 1; Combined Science Paper 3", "year": "Y10", "term": "Spring",
+      "points": [
+        "Acids, alkalis, pH scale and indicators; dilute versus concentrated, weak versus strong acids.",
+        "Reactions of acids with metals, oxides, hydroxides and carbonates; tests for hydrogen and carbon dioxide.",
+        "Preparing soluble salts and insoluble salts; solubility rules and predicting precipitates.",
+        "Electrolysis: electrolytes, ion migration, products at electrodes, half equations, oxidation and reduction.",
+        "Core practicals: pH change with calcium hydroxide or oxide (3.6), copper sulfate crystals (3.17), electrolysis of copper sulfate (3.31)."
+      ],
+      "keyTerms": ["neutralisation", "salt", "precipitate", "electrolysis", "electrode", "oxidation", "reduction"] },
+    { "ref": "Chemistry Topic 4", "title": "Extracting metals and equilibria", "paper": "Chemistry Paper 1; Combined Science Paper 3", "year": "Y10", "term": "Summer",
+      "points": [
+        "Reactivity series from reactions with water, acids and salt solutions; displacement as redox.",
+        "Metal extraction by carbon or electrolysis, linked to reactivity and cost; biological extraction methods.",
+        "Recycling and life-cycle assessment, with environmental and economic implications.",
+        "Reversible reactions and dynamic equilibrium.",
+        "Haber process: reaction, conditions and catalyst.",
+        "Predicting effects of temperature, pressure and concentration on equilibrium position."
+      ],
+      "keyTerms": ["reactivity series", "displacement", "ore", "reversible reaction", "equilibrium", "Haber process"] },
+    { "ref": "Chemistry Topic 5", "title": "Separate chemistry 1", "paper": "Chemistry Paper 1 (separate Chemistry only)", "year": "Y10", "term": "Summer",
+      "points": [
+        "Transition metals: coloured compounds and catalytic activity.",
+        "Corrosion and rust prevention; sacrificial protection; electroplating.",
+        "Alloys: structure, strength and uses of iron alloys, aluminium, copper and gold.",
+        "Concentration in mol per dm cubed; titration calculations (core practical 5.9C).",
+        "Percentage yield, atom economy and reasons yields fall short.",
+        "Molar volume of gases and gas volume calculations.",
+        "Haber process industrial conditions and fertiliser production, including ammonium sulfate.",
+        "Chemical and hydrogen-oxygen fuel cells and their evaluation."
+      ],
+      "keyTerms": ["alloy", "titration", "concentration", "percentage yield", "atom economy", "fuel cell"] },
+    { "ref": "Chemistry Topic 6", "title": "Groups in the periodic table", "paper": "Chemistry Paper 2; Combined Science Paper 4", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Group 1 alkali metals: physical properties, reactions with water, trends and electronic explanation.",
+        "Group 7 halogens: colours and states, trends in physical properties, test for chlorine.",
+        "Halogen reactions with metals and hydrogen; displacement reactions as redox.",
+        "Group 0 noble gases: inertness explained by electronic configuration; uses and trends."
+      ],
+      "keyTerms": ["alkali metal", "halogen", "noble gas", "displacement", "group", "trend"] },
+    { "ref": "Chemistry Topic 7", "title": "Rates of reaction and energy changes", "paper": "Chemistry Paper 2; Combined Science Paper 4", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Core practical 7.1: effects of reaction conditions on rate by gas production and by colour change.",
+        "Methods for measuring rate; interpreting graphs against time and using gradient as rate.",
+        "Collision theory; effects of temperature, concentration, surface area and pressure.",
+        "Catalysts, activation energy and enzymes.",
+        "Exothermic and endothermic reactions; bond breaking and making; bond energy calculations.",
+        "Reaction profile diagrams showing activation energy."
+      ],
+      "keyTerms": ["collision theory", "activation energy", "catalyst", "exothermic", "endothermic", "bond energy"] },
+    { "ref": "Chemistry Topic 8", "title": "Fuels and Earth science", "paper": "Chemistry Paper 2; Combined Science Paper 4", "year": "Y11", "term": "Spring",
+      "points": [
+        "Crude oil as a finite mixture of hydrocarbons; fractional distillation and uses of fractions.",
+        "Trends in boiling point, ignition and viscosity; homologous series and general formula.",
+        "Complete and incomplete combustion; pollutants (carbon monoxide, soot, sulfur dioxide, nitrogen oxides) and acid rain.",
+        "Hydrogen as a fuel for cars: advantages and disadvantages.",
+        "Cracking and why it is needed.",
+        "Early atmosphere and the evidence for it; formation of oceans; rise of oxygen through photosynthesis.",
+        "Greenhouse effect; evidence for human-caused climate change; mitigation."
+      ],
+      "keyTerms": ["hydrocarbon", "fractional distillation", "cracking", "homologous series", "greenhouse effect", "acid rain"] },
+    { "ref": "Chemistry Topic 9", "title": "Separate chemistry 2", "paper": "Chemistry Paper 2 (separate Chemistry only)", "year": "Y11", "term": "Spring",
+      "points": [
+        "Flame tests for lithium, sodium, potassium, calcium and copper ions.",
+        "Precipitate and ammonia tests for metal and ammonium ions; tests for carbonate, sulfate and halide ions (core practical 9.6C).",
+        "Instrumental methods such as flame photometry and calibration curves.",
+        "Alkanes and alkenes: formulae, saturation, bromine water test and addition reactions.",
+        "Addition polymerisation, polymer structures and uses, disposal problems and recycling.",
+        "Alcohols and carboxylic acids: functional groups, oxidation and fermentation (core practical 9.28C on burning alcohols).",
+        "Nanoparticles: size, surface area to volume ratio, uses, risks and comparison with bulk materials."
+      ],
+      "keyTerms": ["flame test", "alkene", "polymer", "monomer", "functional group", "nanoparticle"] },
+
+    { "ref": "Physics Topic 1", "title": "Key concepts of physics", "paper": "Physics Paper 1 and Paper 2; Combined Science Paper 5 and Paper 6", "year": "Y10", "term": "Autumn",
+      "points": [
+        "SI units for physical quantities.",
+        "Multiples and sub-multiples, from giga to nano.",
+        "Converting between units, for example hours to seconds.",
+        "Significant figures and standard form."
+      ],
+      "keyTerms": ["SI unit", "standard form", "significant figures", "prefix"] },
+    { "ref": "Physics Topic 2", "title": "Motion and forces", "paper": "Physics Paper 1; Combined Science Paper 5", "year": "Y10", "term": "Autumn",
+      "points": [
+        "Scalars and vectors; speed, velocity and acceleration.",
+        "Distance-time and velocity-time graphs; equations of motion including v squared minus u squared equals 2ax.",
+        "Newton's laws; weight and mass; g taken as 10 m/s squared; core practical 2.19 force, mass and acceleration.",
+        "Momentum and collisions.",
+        "Reaction time, stopping distance and braking; extra detail on braking is GCSE Physics only."
+      ],
+      "keyTerms": ["vector", "resultant force", "acceleration", "momentum", "inertia", "stopping distance"] },
+    { "ref": "Physics Topic 3", "title": "Conservation of energy", "paper": "Physics Paper 1; Combined Science Paper 5", "year": "Y10", "term": "Spring",
+      "points": [
+        "Gravitational potential energy and kinetic energy calculations.",
+        "Energy transfer diagrams and conservation of energy.",
+        "Energy dissipation and wasteful processes.",
+        "Efficiency and ways of increasing it.",
+        "Energy resources and trends in their use."
+      ],
+      "keyTerms": ["kinetic energy", "gravitational potential energy", "dissipation", "efficiency", "renewable"] },
+    { "ref": "Physics Topic 4", "title": "Waves", "paper": "Physics Paper 1; Combined Science Paper 5", "year": "Y10", "term": "Spring",
+      "points": [
+        "Waves transfer energy without transferring matter; transverse and longitudinal waves.",
+        "Frequency, wavelength, amplitude, period and wavefronts; wave equations v = f lambda and v = x/t.",
+        "Measuring the speed of sound and ripples; echo depth calculations (core practical 4.17).",
+        "Reflection, refraction and absorption of waves.",
+        "Hearing range, ultrasound and infrasound and their uses (some detail GCSE Physics only)."
+      ],
+      "keyTerms": ["frequency", "wavelength", "amplitude", "transverse", "longitudinal", "ultrasound"] },
+    { "ref": "Physics Topic 5", "title": "Light and the electromagnetic spectrum", "paper": "Physics Paper 1; Combined Science Paper 5", "year": "Y10", "term": "Spring",
+      "points": [
+        "Reflection and refraction; refraction in glass blocks (core practical 5.9); total internal reflection and critical angle (GCSE Physics only).",
+        "Lenses, power, real and virtual images (GCSE Physics only).",
+        "Electromagnetic waves are transverse and travel at the same speed in a vacuum.",
+        "Order of the electromagnetic spectrum and the limits of the eye.",
+        "Thermal radiation and energy balance of bodies and the Earth; surface practical 5.19P (GCSE Physics only).",
+        "Hazards and uses of electromagnetic radiation."
+      ],
+      "keyTerms": ["refraction", "critical angle", "electromagnetic spectrum", "infrared", "ultraviolet", "lens"] },
+    { "ref": "Physics Topic 6", "title": "Radioactivity", "paper": "Physics Paper 1; Combined Science Paper 5", "year": "Y10", "term": "Summer",
+      "points": [
+        "Atomic structure and isotope notation; models of the atom including Rutherford and Bohr.",
+        "Alpha, beta and gamma radiation: ionising power, penetration and background radiation.",
+        "Decay and balancing nuclear equations.",
+        "Activity and half-life, including calculations.",
+        "Uses, hazards and safety of radiation, including medical uses.",
+        "Nuclear power, fission and fusion (extension points are GCSE Physics only)."
+      ],
+      "keyTerms": ["isotope", "half-life", "ionising", "background radiation", "fission", "fusion"] },
+    { "ref": "Physics Topic 7", "title": "Astronomy (GCSE Physics only)", "paper": "Physics Paper 1 (separate Physics only)", "year": "Y11", "term": "Spring",
+      "points": [
+        "Weight and gravitational field strength on other bodies.",
+        "Structure of the Solar System and planetary order.",
+        "Orbits and changing velocity in circular orbits.",
+        "Steady State and Big Bang theories; red-shift and cosmic microwave background.",
+        "Stellar evolution for stars of different masses.",
+        "Observing the Universe and telescope locations."
+      ],
+      "keyTerms": ["red-shift", "Big Bang", "cosmic microwave background", "main sequence", "supernova", "orbit"] },
+    { "ref": "Physics Topic 8", "title": "Energy - forces doing work", "paper": "Physics Paper 2; Combined Science Paper 6", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Energy stores and transfers; work done as energy transfer by force.",
+        "Gravitational potential energy and kinetic energy calculations.",
+        "Dissipation of energy and power calculations.",
+        "Efficiency calculations."
+      ],
+      "keyTerms": ["work done", "power", "joule", "watt", "efficiency"] },
+    { "ref": "Physics Topic 9", "title": "Forces and their effects", "paper": "Physics Paper 2; Combined Science Paper 6", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Forces acting at a distance and by contact.",
+        "Vector diagrams, free-body diagrams, resultant and balanced forces.",
+        "Moments and the principle of moments (GCSE Physics only).",
+        "Levers, gears and lubrication."
+      ],
+      "keyTerms": ["resultant force", "moment", "lever", "gear", "free-body diagram"] },
+    { "ref": "Physics Topic 10", "title": "Electricity and circuits", "paper": "Physics Paper 2; Combined Science Paper 6", "year": "Y11", "term": "Autumn",
+      "points": [
+        "Circuit symbols; potential difference, current and resistance in series and parallel circuits.",
+        "Core practical 10.17: V-I relationship for a resistor and filament lamp; series and parallel circuits.",
+        "Behaviour of lamps, diodes, thermistors and light-dependent resistors.",
+        "Heating effect of current and electrical power calculations.",
+        "Mains electricity, safety, wiring, fuses and earthing."
+      ],
+      "keyTerms": ["current", "potential difference", "resistance", "series", "parallel", "thermistor", "earthing"] },
+    { "ref": "Physics Topic 11", "title": "Static electricity (GCSE Physics only)", "paper": "Physics Paper 2 (separate Physics only)", "year": "Y11", "term": "Spring",
+      "points": [
+        "Charging by friction through electron transfer.",
+        "Electrostatic phenomena, attraction and repulsion, and earthing.",
+        "Electric fields and the force on charges within them."
+      ],
+      "keyTerms": ["electrostatic", "earthing", "electric field", "induced charge"] },
+    { "ref": "Physics Topic 12", "title": "Magnetism and the motor effect", "paper": "Physics Paper 2; Combined Science Paper 6", "year": "Y11", "term": "Spring",
+      "points": [
+        "Magnetic poles and magnetic materials.",
+        "Magnetic fields of bar magnets, current-carrying wires and solenoids.",
+        "Force on a current-carrying conductor in a field; Fleming's left-hand rule.",
+        "Electric motors (GCSE Physics only)."
+      ],
+      "keyTerms": ["magnetic field", "solenoid", "motor effect", "Fleming's left-hand rule"] },
+    { "ref": "Physics Topic 13", "title": "Electromagnetic induction", "paper": "Physics Paper 2; Combined Science Paper 6", "year": "Y11", "term": "Spring",
+      "points": [
+        "Induced current and generators (GCSE Physics only).",
+        "Microphones and loudspeakers.",
+        "Transformers and the turns ratio.",
+        "National grid and high-voltage transmission."
+      ],
+      "keyTerms": ["induction", "generator", "transformer", "national grid", "step-up"] },
+    { "ref": "Physics Topic 14", "title": "Particle model", "paper": "Physics Paper 2; Combined Science Paper 6", "year": "Y10", "term": "Summer",
+      "points": [
+        "States of matter and density; core practical 14.3 densities of solids and liquids.",
+        "Changes of state and energy; core practical 14.11 specific heat capacity and melting ice graph.",
+        "Gas pressure, absolute zero and kelvin conversion.",
+        "Gas laws including P1V1 = P2V2 (GCSE Physics only)."
+      ],
+      "keyTerms": ["density", "specific heat capacity", "latent heat", "absolute zero", "kelvin"] },
+    { "ref": "Physics Topic 15", "title": "Forces and matter", "paper": "Physics Paper 2; Combined Science Paper 6", "year": "Y10", "term": "Summer",
+      "points": [
+        "Elastic and inelastic distortion; Hooke's law and energy stored in a spring.",
+        "Core practical 15.6: extension and work done when stretching a spring.",
+        "Atmospheric and fluid pressure (extension points GCSE Physics only).",
+        "Upthrust and floating or sinking (GCSE Physics only)."
+      ],
+      "keyTerms": ["Hooke's law", "elastic", "spring constant", "pressure", "upthrust"] }
+  ],
+  "commandWords": [
+    { "word": "Add / Label", "meaning": "Add or label information on a given diagram or table" },
+    { "word": "Assess", "meaning": "Weigh up the factors, identify the most important and reach a judgement" },
+    { "word": "Calculate", "meaning": "Work out a numerical answer, showing working and units" },
+    { "word": "Comment on", "meaning": "Combine several variables or data points to form a judgement" },
+    { "word": "Compare", "meaning": "Give similarities or differences between two or more things" },
+    { "word": "Compare and contrast", "meaning": "Give at least one similarity and one difference" },
+    { "word": "Complete", "meaning": "Fill in a table or diagram" },
+    { "word": "Deduce", "meaning": "Reach a conclusion from the information given" },
+    { "word": "Describe", "meaning": "Give an account with developed statements; no justification needed" },
+    { "word": "Determine", "meaning": "Give an answer with a quantitative element, or show how to get one" },
+    { "word": "Devise", "meaning": "Plan or invent a procedure from existing principles" },
+    { "word": "Discuss", "meaning": "Explore the aspects of an issue, reasoning through its arguments" },
+    { "word": "Draw", "meaning": "Produce a diagram, with a ruler or freehand as appropriate" },
+    { "word": "Estimate", "meaning": "Find an approximate value from data, a diagram or a calculation" },
+    { "word": "Evaluate", "meaning": "Weigh strengths and weaknesses and reach a supported conclusion" },
+    { "word": "Explain", "meaning": "Give reasoning or justification for a point" },
+    { "word": "Give / State / Name", "meaning": "Recall one or more pieces of information" },
+    { "word": "Give a reason(s)", "meaning": "Give reasons for a statement already made" },
+    { "word": "Identify", "meaning": "Select key information from a given source" },
+    { "word": "Justify", "meaning": "Provide evidence that supports a statement or earlier answer" },
+    { "word": "Measure", "meaning": "Determine lengths or angles from a diagram using a ruler or protractor" },
+    { "word": "Plot", "meaning": "Mark points accurately on a grid and draw a line of best fit with suitable scales" },
+    { "word": "Predict", "meaning": "Give an expected result" },
+    { "word": "Show that", "meaning": "Verify a statement given in the question" },
+    { "word": "Sketch", "meaning": "Draw freehand with labelled axes; graphs need not be to scale" },
+    { "word": "State and explain", "meaning": "Make a point and link ideas to justify it" },
+    { "word": "State what is meant by", "meaning": "Give the meaning of a term" },
+    { "word": "Write", "meaning": "Give an equation when asked" },
+    { "word": "Suggest", "meaning": "Propose an explanation or description" }
+  ],
+  "skills": [
+    "Maths skills (Appendix 1, from DfE 2014 subject content): arithmetic and numerical computation; handling data; algebra; graphs; geometry and trigonometry.",
+    "Arithmetic: decimals, standard form, ratios, fractions, percentages, estimates and order of magnitude.",
+    "Handling data: significant figures, means, frequency tables and charts, sampling, probability, scatter diagrams.",
+    "Algebra: substituting into and rearranging equations; graphs: plotting, gradients, tangents and areas under graphs.",
+    "Foundation papers need at least Key Stage 3 maths; Higher papers need at least Foundation GCSE maths.",
+    "Practical skills: planning, variables and control, measuring accurately, recording data, drawing conclusions and evaluating methods across the core practicals.",
+    "Synoptic questions draw together different parts of a science in each qualification."
+  ],
+  "prerequisites": [
+    { "from": "KS3 Cells, tissues, organs and systems (Y7)", "to": "Biology Topic 1" },
+    { "from": "KS3 Food and nutrition, enzymes in digestion (Y8)", "to": "Biology Topic 1" },
+    { "from": "KS3 Genetics and evolution: variation, DNA, natural selection (Y9)", "to": "Biology Topic 3" },
+    { "from": "KS3 Genetics and evolution: natural selection, extinction (Y9)", "to": "Biology Topic 4" },
+    { "from": "KS3 Photosynthesis, respiration and ecosystems", "to": "Biology Topic 9" },
+    { "from": "KS3 Particle model, mixtures and separation (Y7)", "to": "Chemistry Topic 2" },
+    { "from": "KS3 Atoms, elements, compounds and the periodic table", "to": "Chemistry Topic 1" },
+    { "from": "KS3 Combustion, atmosphere and climate (Y8)", "to": "Chemistry Topic 8" },
+    { "from": "KS3 Reactions: acids and alkalis, displacement, reactivity series", "to": "Chemistry Topic 3" },
+    { "from": "KS3 Speed, forces and balanced and unbalanced forces", "to": "Physics Topic 2" },
+    { "from": "KS3 Energy transfers and waves (light, sound)", "to": "Physics Topic 4" },
+    { "from": "KS3 Current electricity and magnetism", "to": "Physics Topic 10" },
+    { "from": "KS3 Space physics: gravity, Sun as a star, light year", "to": "Physics Topic 7" }
+  ],
+  "links": [
+    { "with": "Geography", "topic": "Disease transmission and public health (John Snow, cholera in Soho 1854)", "unitRef": "Biology Topic 5", "how": "Science explains pathogens and transmission; Geography and History map the 1854 outbreak and water supply." },
+    { "with": "History", "topic": "Medicine through time: vaccination, germ theory, antibiotics", "unitRef": "Biology Topic 5", "how": "History traces discoveries and their impact; Science explains the immune response and drug development." },
+    { "with": "Geography", "topic": "Ecosystems, biodiversity and human impacts", "unitRef": "Biology Topic 9", "how": "Shared fieldwork techniques (quadrats, transects) and study of eutrophication and deforestation." },
+    { "with": "Geography", "topic": "Earthquake waves and the structure of the Earth", "unitRef": "Physics Topic 4", "how": "Physics gives wave types, speeds and reflection; Geography applies P and S waves to Earth's layers." },
+    { "with": "Geography", "topic": "Atmosphere, climate change and the greenhouse effect", "unitRef": "Chemistry Topic 8", "how": "Chemistry explains the early atmosphere and greenhouse gases; Geography studies causes, impacts and management." },
+    { "with": "Geography", "topic": "Energy resources and sustainability", "unitRef": "Physics Topic 3", "how": "Physics compares efficiency and resource trends; Geography studies energy supply and use." },
+    { "with": "Mathematics", "topic": "Rearranging equations, graphs, standard form, ratios and statistics", "unitRef": "Physics Topic 2", "how": "Maths supplies the techniques; Science applies them to data, gradients and unit conversions." },
+    { "with": "Mathematics", "topic": "Proportion, percentages and probability in genetics and chemistry", "unitRef": "Biology Topic 3", "how": "Punnett square probabilities and ratios; moles and percentage yield in Chemistry." },
+    { "with": "Computer Science", "topic": "Data logging, spreadsheets and modelling", "unitRef": "Physics Topic 14", "how": "Computing handles data capture and graphs; Science uses them in core practicals." },
+    { "with": "English", "topic": "Extended open-response answers and scientific argument", "unitRef": "Biology Topic 4", "how": "English supports structured written explanation; Science supplies evidence-based argument and command-word precision." },
+    { "with": "Design and Technology", "topic": "Materials, alloys, polymers and electrical circuits", "unitRef": "Chemistry Topic 5", "how": "Properties of alloys and polymers and circuit design connect to making and product choice." },
+    { "with": "Physical Education", "topic": "Respiration, heart rate and circulation during exercise", "unitRef": "Biology Topic 8", "how": "Science explains aerobic and anaerobic respiration and cardiac output; PE applies them to training." }
+  ],
+  "contextNote": "Evolution and natural selection (Biology Topic 4, building on Topic 3 genetics and Topic 9 ecosystems) is required content: the board's content on evolution and natural selection must be taught accurately and examined in the board's terms.",
+  "gaps": [
+    "EXAM BOARD UNCONFIRMED: the school's Year 11 parent presentation names 'IGCSE Edexcel' for Science, and some Drive science folders hold AQA GCSE material. The pack documents Pearson Edexcel GCSE (9-1) because the portal's lesson content is written for it. The school must confirm the actual board and qualification.",
+    "International GCSE (IGCSE) codes could not be verified: the Pearson International GCSE sciences page could not be opened, so no IGCSE codes are given here. Do not use any unverified code.",
+    "Official PDFs were read through a summarising page tool, not as raw files: spec point numbers, bold higher-tier-only points and exact 'Biology only' tags should be checked against the PDFs before printing.",
+    "Combined Science assessment objective weightings and spec issue date were not stated in the extract read.",
+    "Maths skills percentage minimum per science was not found in the extract read and is not stated here.",
+    "Lesson content labels the Hooke's law lesson 'Physics Topic 14: Forces and matter'; in the specification read, Hooke's law is in Topic 15 Forces and matter and Topic 14 is Particle model.",
+    "Year 10 and Year 11 placement and terms are a recommended sequence, not set by the board.",
+    "Which Biology-only or Physics-only points apply to Combined Science is summarised from the Combined Science specification and should be checked point by point."
+  ]
+}

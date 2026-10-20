@@ -1,0 +1,405 @@
+{
+  "kind": "hubs",
+  "note": "Teaching hubs. Each hub is one real-world idea that several subjects can teach in the same fortnight. Nodes point at real unit refs in the KS4 spec files. A hub is a teaching link, not extra examined content; the examined content is whatever the linked unit says.",
+  "hubs": [
+    {
+      "id": "h01",
+      "title": "John Snow and the 1854 cholera outbreak",
+      "hook": "Mapping deaths around one pump shows how a pattern in data can point to a cause.",
+      "nodes": [
+        {
+          "subject": "Science",
+          "ref": "Biology Topic 5",
+          "note": "Communicable disease and how it spreads; link to evidence for a cause."
+        },
+        {
+          "subject": "Mathematics",
+          "ref": "S1-S6",
+          "note": "Plot and interpret data; spot a pattern and ask what it does and does not prove."
+        },
+        {
+          "subject": "Geography",
+          "ref": "3.2.1",
+          "note": "Rapid urban growth and the pressure on water and sanitation."
+        },
+        {
+          "subject": "History",
+          "ref": "10-T3",
+          "note": "Public health and the state's response in the 1700 to 1900 period."
+        },
+        {
+          "subject": "English Language",
+          "ref": "P2-A-Q4",
+          "note": "Compare how two 19th-century sources describe the same problem."
+        }
+      ]
+    },
+    {
+      "id": "h02",
+      "title": "The Great Stink of 1858 and the Thames",
+      "hook": "A smelly river forced a city to build the infrastructure that still carries its waste.",
+      "nodes": [
+        {
+          "subject": "Geography",
+          "ref": "3.1.3.3",
+          "note": "River processes and how people manage a polluted, flood-prone river."
+        },
+        {
+          "subject": "Science",
+          "ref": "Chemistry Topic 2",
+          "note": "Mixtures and separation as the science behind cleaning water."
+        },
+        {
+          "subject": "History",
+          "ref": "10-H",
+          "note": "Living conditions and public order in a crowded Victorian district."
+        },
+        {
+          "subject": "English Literature",
+          "ref": "P1-B",
+          "note": "The 19th-century novel as a witness to city life and poverty."
+        },
+        {
+          "subject": "Business",
+          "ref": "2.4",
+          "note": "Funding a large public project: costs, borrowing and return."
+        }
+      ]
+    },
+    {
+      "id": "h03",
+      "title": "Typhoon Haiyan and disaster response",
+      "hook": "One storm in 2013 ties weather physics, human geography, aid and economics together.",
+      "nodes": [
+        {
+          "subject": "Geography",
+          "ref": "3.1.1.3",
+          "note": "How tropical storms form and what shapes their effects and responses."
+        },
+        {
+          "subject": "Science",
+          "ref": "Physics Topic 4",
+          "note": "Energy transfer in waves, relevant to storm surge."
+        },
+        {
+          "subject": "Mathematics",
+          "ref": "R1-R8",
+          "note": "Rates, scale and proportion applied to relief supplies and population."
+        },
+        {
+          "subject": "Business",
+          "ref": "1.5",
+          "note": "External shocks to businesses: supply chains and recovery."
+        },
+        {
+          "subject": "Islamic Studies",
+          "ref": "3.4",
+          "note": "Charity and obligation to those in need as a lens on aid."
+        },
+        {
+          "subject": "English Language",
+          "ref": "P1-B-Q5",
+          "note": "Descriptive writing about a place changed overnight."
+        }
+      ]
+    },
+    {
+      "id": "h04",
+      "title": "Vaccination and herd immunity",
+      "hook": "How a population is protected when enough individuals are, and who decides.",
+      "nodes": [
+        {
+          "subject": "Science",
+          "ref": "Biology Topic 5",
+          "note": "Immunity, vaccination and the development of medicines."
+        },
+        {
+          "subject": "Mathematics",
+          "ref": "P1-P9",
+          "note": "Probability of infection and the effect of coverage."
+        },
+        {
+          "subject": "History",
+          "ref": "10-T4",
+          "note": "Medicine and public health from c1900 to the present."
+        },
+        {
+          "subject": "Islamic Studies",
+          "ref": "2.8",
+          "note": "Manners and responsibility to the wider community."
+        }
+      ]
+    },
+    {
+      "id": "h05",
+      "title": "Climate change: evidence, cause and response",
+      "hook": "One question, five ways of knowing: measure it, explain it, price it, write about it, act on it.",
+      "nodes": [
+        {
+          "subject": "Geography",
+          "ref": "3.1.1.4",
+          "note": "Evidence, causes and effects of climate change, and management."
+        },
+        {
+          "subject": "Science",
+          "ref": "Chemistry Topic 8",
+          "note": "Fuels, combustion and the atmosphere."
+        },
+        {
+          "subject": "Science",
+          "ref": "Physics Topic 5",
+          "note": "Radiation and the greenhouse effect."
+        },
+        {
+          "subject": "Mathematics",
+          "ref": "S1-S6",
+          "note": "Reading graphs of change over time, and spotting misleading axes."
+        },
+        {
+          "subject": "Business",
+          "ref": "1.5",
+          "note": "Regulation and consumer pressure on firms."
+        },
+        {
+          "subject": "Computing",
+          "ref": "5.1",
+          "note": "The environmental footprint of devices and data."
+        },
+        {
+          "subject": "Arabic",
+          "ref": "5.2",
+          "note": "Talk and write about environmental issues in Arabic."
+        }
+      ]
+    },
+    {
+      "id": "h06",
+      "title": "The Cold War and nuclear weapons",
+      "hook": "A political standoff built on a physics discovery.",
+      "nodes": [
+        {
+          "subject": "History",
+          "ref": "P4-1",
+          "note": "Origins of the superpower rivalry."
+        },
+        {
+          "subject": "History",
+          "ref": "P4-2",
+          "note": "The crises of the period."
+        },
+        {
+          "subject": "Science",
+          "ref": "Physics Topic 6",
+          "note": "Radioactivity, fission and half-life."
+        },
+        {
+          "subject": "English Language",
+          "ref": "P2-A-Q3",
+          "note": "How propaganda language is built to persuade."
+        },
+        {
+          "subject": "Computing",
+          "ref": "5.2",
+          "note": "Ethical questions raised by powerful technologies."
+        }
+      ]
+    },
+    {
+      "id": "h07",
+      "title": "Victorian cities and the Industrial Revolution",
+      "hook": "Factories, railways and slums: one era seen as place, people, power and story.",
+      "nodes": [
+        {
+          "subject": "Geography",
+          "ref": "3.2.1",
+          "note": "Urbanisation as a continuing process, then and now."
+        },
+        {
+          "subject": "History",
+          "ref": "10-T3",
+          "note": "Crime and policing in industrial Britain."
+        },
+        {
+          "subject": "English Literature",
+          "ref": "P1-B-SCH",
+          "note": "The school's chosen 19th-century novel in its setting."
+        },
+        {
+          "subject": "Business",
+          "ref": "2.1",
+          "note": "How firms grow, and the effects of scale."
+        },
+        {
+          "subject": "Science",
+          "ref": "Chemistry Topic 4",
+          "note": "Extracting metals that powered the era."
+        }
+      ]
+    },
+    {
+      "id": "h08",
+      "title": "Energy: from fuel to household bill",
+      "hook": "Follow one unit of energy from source to meter and out into the economy.",
+      "nodes": [
+        {
+          "subject": "Geography",
+          "ref": "3.2.3.4",
+          "note": "Energy resources and their management."
+        },
+        {
+          "subject": "Science",
+          "ref": "Physics Topic 3",
+          "note": "Conservation, dissipation and efficiency."
+        },
+        {
+          "subject": "Science",
+          "ref": "Chemistry Topic 8",
+          "note": "Fuels and their products."
+        },
+        {
+          "subject": "Mathematics",
+          "ref": "R9-R12",
+          "note": "Percentage change and efficiency calculations."
+        },
+        {
+          "subject": "Business",
+          "ref": "2.3",
+          "note": "Operational decisions where energy is a cost."
+        }
+      ]
+    },
+    {
+      "id": "h09",
+      "title": "Propaganda, persuasion and marketing",
+      "hook": "The same techniques sell a regime and a trainer; learn to spot both.",
+      "nodes": [
+        {
+          "subject": "History",
+          "ref": "31-3",
+          "note": "Control of media and ideas under the Nazi regime."
+        },
+        {
+          "subject": "English Language",
+          "ref": "P2-B-Q5",
+          "note": "Writing to argue or persuade for a purpose."
+        },
+        {
+          "subject": "Business",
+          "ref": "2.2",
+          "note": "Marketing decisions and persuasion of customers."
+        },
+        {
+          "subject": "Computing",
+          "ref": "5.2",
+          "note": "Data, targeting and ethical limits on persuasion."
+        },
+        {
+          "subject": "Islamic Studies",
+          "ref": "2.8",
+          "note": "Honesty and conduct in speech."
+        }
+      ]
+    },
+    {
+      "id": "h10",
+      "title": "Water: scarce, clean, shared",
+      "hook": "Water links the tap, the aquifer, the wudu and the balance sheet.",
+      "nodes": [
+        {
+          "subject": "Geography",
+          "ref": "3.2.3.3",
+          "note": "Water supply and management."
+        },
+        {
+          "subject": "Science",
+          "ref": "Chemistry Topic 2",
+          "note": "Purification: filtration and distillation."
+        },
+        {
+          "subject": "Science",
+          "ref": "Biology Topic 9",
+          "note": "Water cycle and ecosystems."
+        },
+        {
+          "subject": "Mathematics",
+          "ref": "G15-G19",
+          "note": "Volume and capacity calculations."
+        },
+        {
+          "subject": "Islamic Studies",
+          "ref": "3.2",
+          "note": "Purification for prayer as part of the worship unit."
+        },
+        {
+          "subject": "Arabic",
+          "ref": "5.2",
+          "note": "Vocabulary for natural resources and the environment."
+        }
+      ]
+    },
+    {
+      "id": "h11",
+      "title": "Cities, migration and belonging",
+      "hook": "Why people move, what they find, and how a place changes when they arrive.",
+      "nodes": [
+        {
+          "subject": "Geography",
+          "ref": "3.2.1",
+          "note": "Urban change, migration and social and economic opportunity."
+        },
+        {
+          "subject": "History",
+          "ref": "10-H",
+          "note": "A migrant-rich district and its community pressures."
+        },
+        {
+          "subject": "English Literature",
+          "ref": "P2-A",
+          "note": "A modern text's treatment of place and identity."
+        },
+        {
+          "subject": "Arabic",
+          "ref": "2.3",
+          "note": "Describe your town, region and country."
+        },
+        {
+          "subject": "Islamic Studies",
+          "ref": "3.9",
+          "note": "Citizenship and living as a Muslim in a diverse society."
+        }
+      ]
+    },
+    {
+      "id": "h12",
+      "title": "Knowledge as a tradition: scholars and the sciences",
+      "hook": "Where algebra, optics and measurement came from, and how knowledge was passed on.",
+      "nodes": [
+        {
+          "subject": "Mathematics",
+          "ref": "A1-A7",
+          "note": "Algebraic notation and manipulation; the history of the word 'algebra'."
+        },
+        {
+          "subject": "Science",
+          "ref": "Physics Topic 5",
+          "note": "Light and reflection; the history of the study of vision."
+        },
+        {
+          "subject": "Geography",
+          "ref": "3.4",
+          "note": "Geographical skills: measurement and mapping."
+        },
+        {
+          "subject": "Islamic Studies",
+          "ref": "1.2",
+          "note": "The Qur'an's call to read and reflect."
+        },
+        {
+          "subject": "Arabic",
+          "ref": "1.3",
+          "note": "Cultural life and heritage in the language."
+        }
+      ]
+    }
+  ]
+}
