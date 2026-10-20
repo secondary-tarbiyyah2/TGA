@@ -7,6 +7,7 @@ import { StatTile } from "@/components/learn/Card";
 import { METHOD_LABEL, STATUS_LABEL, STATUS_STYLE, chargeStatus, formatDate, round2, type ChargeStatus, type FeeCharge, type FeePayment } from "@/components/learn/fees/shared";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
+import { FamilyWithdrawal } from "@/components/learn/fees/FamilyWithdrawal";
 
 type Row = { charge: FeeCharge; childName: string; payments: FeePayment[]; paid: number; balance: number; status: ChargeStatus };
 
@@ -113,6 +114,7 @@ function FamilyFeesContent() {
           <p className="mt-4 text-xs text-ink/65">Paid by bank transfer, cash or card? It appears here once the school office has recorded it. Contact the office with any billing query.</p>
         </>
       )}
+      <FamilyWithdrawal />
     </>
   );
 }

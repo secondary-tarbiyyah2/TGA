@@ -9,7 +9,7 @@ import { portalCta } from "@/lib/nav";
  * real pupil's data — and is labelled as such.
  */
 const FEATURES = [
-  { title: "Today's lessons", body: "The day's live lessons (UK time), with one tap to join." },
+  { title: "Today's lessons", body: "The day's live lessons (UK time), with one tap to join on Microsoft Teams." },
   { title: "Registers & attendance", body: "Every lesson's register, so you know straight away if your child was missed." },
   { title: "Homework & grades", body: "What's due, what's been marked, and the feedback that came with it." },
   { title: "Qur'an progress", body: "Hifz and recitation targets tracked alongside every other subject." },

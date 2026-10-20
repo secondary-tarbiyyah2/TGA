@@ -89,7 +89,7 @@ const testimonials = [
 ];
 
 const staffMembers = [
-  { _id: "staffMember-sm1", _type: "staffMember", isPlaceholder: true, order: 1, name: "Hardeep Sandhar", roleTitle: "Headteacher", qualifications: "Full bio to follow." },
+  { _id: "staffMember-sm1", _type: "staffMember", isPlaceholder: true, order: 1, name: "Ustadh Abu Zayn Haneef Sandhar", roleTitle: "Headteacher", qualifications: "Full bio to follow." },
   { _id: "staffMember-sm2", _type: "staffMember", isPlaceholder: true, order: 2, name: "Teacher name TBC", roleTitle: "Subject TBC", qualifications: "Teacher bios and photos are being finalised ahead of launch." },
 ];
 

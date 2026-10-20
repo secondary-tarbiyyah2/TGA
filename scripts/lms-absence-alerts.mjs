@@ -134,7 +134,8 @@ for (const li of dueLessons) {
 
   for (const e of enrolments || []) {
     const status = attendanceByChild.get(e.child_id);
-    if (status === "present" || status === "late") continue;
+    // Attended, or the teacher recorded that the pupil tried but couldn't connect.
+    if (status === "present" || status === "late" || status === "not_engaged" || status === "technical") continue;
     if (noticedChildIds.has(e.child_id)) continue; // parent gave advance notice — explained, not alerted
 
     const alertKey = `${li.id}:${e.child_id}`;

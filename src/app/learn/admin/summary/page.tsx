@@ -214,8 +214,8 @@ function SummaryContent() {
     let attended = 0;
     let marked = 0;
     raw.attendance.forEach((r) => {
-      if (r.status === "excused") return;
-      const ok = r.status === "present" || r.status === "late";
+      if (r.status === "excused" || r.status === "technical") return;
+      const ok = r.status === "present" || r.status === "late" || r.status === "not_engaged";
       marked += 1;
       if (ok) attended += 1;
       const cid = r.lesson_instances?.timetable_slots?.class_id;

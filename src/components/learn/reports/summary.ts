@@ -174,9 +174,11 @@ export async function buildClassSummaries(
   for (const r of att) {
     const s = result[r.child_id];
     if (!s) continue;
-    if (r.status === "present" || r.status === "late") s.attendance.attended += 1;
+    // "Present but not engaged" counts as attended; "couldn't connect" is
+    // recorded separately and, like excused, not held against the rate.
+    if (r.status === "present" || r.status === "late" || r.status === "not_engaged") s.attendance.attended += 1;
     else if (r.status === "absent") s.attendance.absent += 1;
-    else if (r.status === "excused") s.attendance.excused += 1;
+    else if (r.status === "excused" || r.status === "technical") s.attendance.excused += 1;
   }
   for (const id of childIds) {
     const a = result[id].attendance;

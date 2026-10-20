@@ -3,19 +3,37 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { REASONS, saveReason } from "@/components/learn/absences/data";
+import { useLearnSession } from "@/lib/learn/session";
 
-export type Status = "present" | "late" | "absent" | "excused";
+export type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
+/** The four marks used every lesson, as one-tap buttons. */
 export const STATUSES: { value: Status; label: string; on: string }[] = [
   { value: "present", label: "Present", on: "bg-green-600 text-white" },
   { value: "late", label: "Late", on: "bg-amber-500 text-white" },
   { value: "absent", label: "Absent", on: "bg-red-600 text-white" },
   { value: "excused", label: "Excused", on: "bg-slate-500 text-white" },
 ];
+/** The two less common marks from the Attendance Policy, under "Other". */
+export const OTHER_STATUSES: { value: Status; label: string; hint: string }[] = [
+  { value: "not_engaged", label: "Present, not engaged", hint: "Logged in but no camera or response after a check. Counts as present; the form tutor sees it." },
+  { value: "technical", label: "Couldn't connect", hint: "Tried but couldn't connect. Recorded separately; it doesn't count against attendance." },
+];
+export const STATUS_LABEL: Record<Status, string> = {
+  present: "Present",
+  late: "Late",
+  absent: "Absent",
+  excused: "Excused",
+  not_engaged: "Present, not engaged",
+  technical: "Couldn't connect",
+};
 
 /** One-click register: everyone shows as Present until you change them;
  * every tap saves straight away. "Mark everyone else present" saves the
  * untouched rows in one go. */
 export function Register({ lessonId, classId, onProgress }: { lessonId: string; classId: string; onProgress?: (taken: number, total: number) => void }) {
+  const { roles } = useLearnSession();
+  // Recording absence reasons is the office's job (0098); teachers see them.
+  const canRecordReason = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
   const [children, setChildren] = useState<{ id: string; name: string }[] | null>(null);
   const [marks, setMarks] = useState<Record<string, Status>>({});
   const marksRef = useRef<Record<string, Status>>({});
@@ -170,7 +188,25 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                   );
                 })}
               </div>
-              {current === "absent" && lessonDate && (
+              <select
+                aria-label={`Other mark for ${c.name}`}
+                value={current === "not_engaged" || current === "technical" ? current : ""}
+                onChange={(e) => e.target.value && save([{ childId: c.id, status: e.target.value as Status }])}
+                className={`rounded-lg border px-2 py-1.5 text-sm ${current === "not_engaged" ? "border-amber-500 bg-amber-50 font-medium text-amber-900" : current === "technical" ? "border-slate-500 bg-slate-100 font-medium text-slate-800" : "border-gold-light bg-white text-ink/60"}`}
+              >
+                <option value="">Other…</option>
+                {OTHER_STATUSES.map((o) => (
+                  <option key={o.value} value={o.value} title={o.hint}>
+                    {o.label}
+                  </option>
+                ))}
+              </select>
+              {current === "absent" && lessonDate && !canRecordReason && (
+                <p className="w-full text-xs text-ink/60">
+                  Reason: {reasons[c.id] ? REASONS.find((r) => r.value === reasons[c.id])?.label || "Recorded" : "not given yet (the office follows this up)"}
+                </p>
+              )}
+              {current === "absent" && lessonDate && canRecordReason && (
                 <label className="flex w-full items-center gap-2 text-xs text-ink/60">
                   Reason
                   <select value={reasons[c.id] || ""} onChange={(e) => setReason(c.id, e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
