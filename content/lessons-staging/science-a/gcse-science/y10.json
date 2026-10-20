@@ -1,0 +1,5038 @@
+{
+ "subject": "Science",
+ "year": "y10",
+ "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
+ "boardShort": "Edexcel IGCSE",
+ "source": "Edexcel IGCSE 4BI1/4CH1 specification summary (content/syllabus/ks4/gcse-science.json), Y10 units Biology 1, Biology 2, Chemistry 1, Chemistry 2. Drive material not used. Not re-taught because covered by the existing UK-GCSE-based lessons in content/lessons/gcse-science/y10.json: animal, plant and bacterial cell structure and levels of organisation, specialised cells, differentiation and stem cells, enzymes with temperature and pH and the active site, food tests, diffusion, osmosis and active transport (Biology 2 points 1-3 mostly); states of matter and changes of state, purity and melting points, mixtures and separation, chromatography and Rf, atomic structure and isotopes, relative atomic mass, Periodic Table groups, periods and electronic configurations (Chemistry 1 points 1-4 mostly). Gaps remain in solubility curves and gas diffusion, which are taught here.",
+ "lessons": [
+  {
+   "unit": "Biology 1: The nature and variety of living organisms",
+   "n": 1,
+   "title": "Characteristics of living organisms and the eukaryote groups",
+   "duration": 50,
+   "bigQuestion": "What makes something alive, and how do biologists sort the living world?",
+   "objectives": [
+    "State the eight characteristics of living organisms",
+    "Describe the features of plants, animals, fungi and protoctists",
+    "Classify an organism from a description of its cells and nutrition"
+   ],
+   "successCriteria": [
+    "All: name the characteristics and the four eukaryote groups",
+    "Most: describe the key features of each group with an example",
+    "Some: classify an unfamiliar organism and justify using evidence"
+   ],
+   "crossCurricular": "Geography: biodiversity across habitats",
+   "smsc": "Spiritual: wonder at the variety of life; stewardship (khilafah) means caring for what we classify",
+   "keywords": [
+    {
+     "term": "eukaryote",
+     "def": "organism whose cells have a nucleus and membrane-bound organelles"
+    },
+    {
+     "term": "protoctist",
+     "def": "mostly single-celled eukaryote that is not a plant, animal or fungus, e.g. Amoeba"
+    },
+    {
+     "term": "excretion",
+     "def": "removal of toxic waste and substances in excess of requirements"
+    },
+    {
+     "term": "nutrition",
+     "def": "taking in materials for energy, growth and development"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name two structures found in plant cells but not animal cells.",
+    "What is the function of the nucleus?",
+    "In which organelle does aerobic respiration take place?"
+   ],
+   "teach": [
+    {
+     "heading": "Eight characteristics of life",
+     "bullets": [
+      "Every living thing shows all eight, at some point",
+      "Use them as a checklist for 'alive or not?'"
+     ],
+     "note": "Ask pupils to shout out a verb for each: move, respire, sense, control, grow, reproduce, excrete, feed. Stress that excretion is not the same as egestion (removing undigested food). Check against the specification wording for the eighth characteristic (control of internal conditions) before printing.",
+     "table": {
+      "head": [
+       "Characteristic",
+       "Meaning",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Movement",
+        "action causing a change of position or place",
+        "a plant leaf turning to the light"
+       ],
+       [
+        "Respiration",
+        "chemical reactions in cells releasing energy from nutrients",
+        "yeast breaking down glucose"
+       ],
+       [
+        "Sensitivity",
+        "detecting stimuli and responding",
+        "pupil narrowing in bright light"
+       ],
+       [
+        "Control of internal conditions",
+        "keeping conditions in the body steady",
+        "sweating when hot"
+       ],
+       [
+        "Growth",
+        "permanent increase in size and dry mass",
+        "seedling becoming a plant"
+       ],
+       [
+        "Reproduction",
+        "making more of the same kind",
+        "a bacterium dividing"
+       ],
+       [
+        "Excretion",
+        "removing toxic waste or excess substances",
+        "CO₂ from the lungs"
+       ],
+       [
+        "Nutrition",
+        "taking in materials for energy and growth",
+        "a plant making glucose"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The four eukaryote groups",
+     "bullets": [
+      "All eukaryote cells have a nucleus",
+      "Groups differ in cell walls, chloroplasts and feeding"
+     ],
+     "note": "Walk across the table row by row. Ask: which feature separates fungi from plants? (chitin walls, no chloroplasts, absorb food). Point out that protoctists are a mixed group and that Chlorella has chloroplasts but is not a plant because it is single-celled.",
+     "table": {
+      "head": [
+       "Group",
+       "Cell wall",
+       "Chloroplasts",
+       "Nutrition",
+       "Examples"
+      ],
+      "rows": [
+       [
+        "Plants",
+        "cellulose",
+        "yes",
+        "photosynthesis; store starch",
+        "maize, pea plant"
+       ],
+       [
+        "Animals",
+        "none",
+        "no",
+        "feed on other organisms; store glycogen",
+        "humans, housefly"
+       ],
+       [
+        "Fungi",
+        "chitin",
+        "no",
+        "absorb nutrients from dead or living matter",
+        "yeast (single-celled), Mucor (hyphae)"
+       ],
+       [
+        "Protoctists",
+        "varies",
+        "some",
+        "vary: feed or photosynthesise",
+        "Amoeba, Chlorella"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: classify the organism",
+     "bullets": [
+      "Look for cell wall material first",
+      "Then chloroplasts, then how it feeds"
+     ],
+     "note": "Think aloud: match each clue to the table. Ask pupils which single clue would be enough to rule out 'plant' (no chloroplasts).",
+     "model": {
+      "problem": "Organism X is multicellular. Its cells have nuclei and cell walls made of chitin, no chloroplasts. It grows as thread-like hyphae through stale bread and absorbs nutrients. Which group is it?",
+      "steps": [
+       "Nuclei, so it is a eukaryote",
+       "Chitin wall and no chloroplasts rules out plants",
+       "Hyphae and absorbing nutrients is typical of fungi",
+       "Mucor is a fungus that grows on bread"
+      ],
+      "answer": "Fungus (e.g. Mucor)"
+     }
+    },
+    {
+     "heading": "Common error: fungi are plants",
+     "bullets": [
+      "Fungi were once grouped with plants",
+      "They do not photosynthesise"
+     ],
+     "note": "Ask where a mushroom gets its energy. Many pupils think fungi 'grow in soil like plants'.",
+     "misconception": {
+      "wrong": "A mushroom is a plant because it grows from the ground.",
+      "right": "Fungi have chitin cell walls and no chloroplasts, and absorb nutrients from dead matter, so they are not plants."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards",
+      "Show on three, then explain"
+     ],
+     "note": "Answer B. Trap: pupils see 'chloroplasts' and say plant. Chlorella is single-celled and classified as a protoctist.",
+     "check": {
+      "q": "Chlorella is a single-celled organism with a nucleus and chloroplasts. It is best classified as:",
+      "options": [
+       "a plant",
+       "a protoctist",
+       "a prokaryote",
+       "a fungus"
+      ],
+      "answer": 1,
+      "why": "It has a nucleus, so it is a eukaryote; being single-celled with chloroplasts places it with the protoctists. Plants are multicellular and prokaryotes have no nucleus."
+     }
+    }
+   ],
+   "practice": [
+    "A mushroom grows on a log, takes in nutrients, releases spores and grows larger over a week. Which characteristics of life does it show?",
+    "Mucor has hyphae and no chloroplasts. Amoeba is single-celled and moves by pseudopodia. State one feature that is the same and one that is different.",
+    "Explain why a flame is not classed as living even though it grows and uses oxygen. [3 marks]"
+   ],
+   "independent": [
+    "Core: Copy and complete a table giving cell wall, chloroplast and nutrition for plants, animals, fungi and protoctists.",
+    "Extend: Yeast is a single-celled fungus. Explain why it is not a protoctist. [3 marks]",
+    "Stretch: A student says a crystal growing in a saturated solution is alive because it grows. Evaluate this using all eight characteristics."
+   ],
+   "exit": [
+    "Name the four groups of eukaryotes. [2 marks]",
+    "Return to the big question: give two characteristics a car engine shows and two that it does not."
+   ],
+   "homework": "Revise the table of eukaryote groups; make 8 flashcards for the characteristics.",
+   "send": "SEND/EAL: colour-coded characteristic cards with picture prompts. Stretch: ask why viruses are debated as living."
+  },
+  {
+   "unit": "Biology 1: The nature and variety of living organisms",
+   "n": 2,
+   "title": "Prokaryotes, pathogens and viruses",
+   "duration": 50,
+   "bigQuestion": "Why can a medicine kill bacteria but not a virus?",
+   "objectives": [
+    "Describe the features of bacteria as prokaryotes",
+    "Name the four types of pathogen with an example disease each",
+    "Describe viruses as non-living particles"
+   ],
+   "successCriteria": [
+    "All: name pathogen types and a disease each",
+    "Most: describe bacterial and viral structure",
+    "Some: compare sizes and explain why antibiotics fail against viruses"
+   ],
+   "crossCurricular": "PSHE: hygiene and preventing infection",
+   "smsc": "Spiritual: tahara (cleanliness) as protection of health; gratitude for the body's defences",
+   "keywords": [
+    {
+     "term": "prokaryote",
+     "def": "single-celled organism with no nucleus; DNA free in the cytoplasm"
+    },
+    {
+     "term": "pathogen",
+     "def": "organism that causes disease"
+    },
+    {
+     "term": "plasmid",
+     "def": "small circle of DNA found in bacteria"
+    },
+    {
+     "term": "virus",
+     "def": "non-living particle with genetic material in a protein coat; reproduces only inside host cells"
+    }
+   ],
+   "starter": [
+    "Bismillah. List the four eukaryote groups.",
+    "State two features of a eukaryotic cell.",
+    "Convert 3 mm to micrometres."
+   ],
+   "teach": [
+    {
+     "heading": "Bacteria: prokaryotes",
+     "bullets": [
+      "Single-celled, no nucleus",
+      "Circular chromosome plus small plasmids",
+      "Cell wall, cytoplasm, cell membrane"
+     ],
+     "note": "Show a labelled bacterium. Ask what is missing compared with an animal cell (nucleus, mitochondria). Mention that some bacteria are useful (Lactobacillus makes yoghurt) and some harmful (Pneumococcus causes pneumonia).",
+     "compare": {
+      "left": {
+       "title": "Bacterium (e.g. Lactobacillus, rod-shaped)",
+       "points": [
+        "No nucleus; DNA loose in cytoplasm",
+        "Circular DNA and plasmids",
+        "About 1 to 5 µm long",
+        "Single-celled"
+       ]
+      },
+      "right": {
+       "title": "Animal cell",
+       "points": [
+        "Nucleus holds the DNA",
+        "Linear chromosomes",
+        "Usually 10 to 100 µm",
+        "Mitochondria present"
+       ]
+      },
+      "label": "compare"
+     }
+    },
+    {
+     "heading": "Four types of pathogen",
+     "bullets": [
+      "A pathogen is anything that causes disease",
+      "Each type can infect humans"
+     ],
+     "note": "Ask pupils to guess how each spreads. Malaria: the pathogen Plasmodium is carried by Anopheles mosquitoes (the vector).",
+     "table": {
+      "head": [
+       "Type",
+       "Example",
+       "Disease"
+      ],
+      "rows": [
+       [
+        "Fungus",
+        "Tinea (athlete's foot fungus)",
+        "athlete's foot"
+       ],
+       [
+        "Bacterium",
+        "Pneumococcus (spherical)",
+        "pneumonia"
+       ],
+       [
+        "Protoctist",
+        "Plasmodium",
+        "malaria"
+       ],
+       [
+        "Virus",
+        "influenza virus; HIV",
+        "flu; AIDS"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Viruses are not cells",
+     "bullets": [
+      "Genetic material inside a protein coat",
+      "No cytoplasm, no nucleus, no respiration",
+      "Only reproduce inside a host cell"
+     ],
+     "note": "A virus shows reproduction only when inside a host, so it is described as non-living. Examples: tobacco mosaic virus (plants), influenza, HIV.",
+     "model": {
+      "problem": "A bacterium is 2 µm long. An influenza virus is 100 nm across. How many times longer is the bacterium?",
+      "steps": [
+       "Convert to the same unit: 2 µm = 2000 nm",
+       "Divide: 2000 ÷ 100",
+       "= 20"
+      ],
+      "answer": "20 times"
+     }
+    },
+    {
+     "heading": "Why antibiotics do not work on viruses",
+     "bullets": [
+      "Antibiotics target bacterial cell processes",
+      "Viruses live inside our own cells and have none"
+     ],
+     "note": "Link forward to the antibiotic resistance lesson in Year 11. Pupils often say antibiotics 'fight infections'; be precise.",
+     "misconception": {
+      "wrong": "Antibiotics cure all infections, including colds and flu.",
+      "right": "Antibiotics kill bacteria only. Colds and flu are caused by viruses, which have no bacterial structures to target."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: 'reproduces on its own' sounds alive; insist that a virus has no cell and replicates only in a host.",
+     "check": {
+      "q": "Which statement about viruses is correct?",
+      "options": [
+       "They reproduce on their own in water",
+       "They have a cell wall and cytoplasm",
+       "They reproduce only inside host cells",
+       "They contain a nucleus"
+      ],
+      "answer": 2,
+      "why": "Viruses have no cellular structure and replicate only in a host cell, so they are described as non-living particles."
+     }
+    }
+   ],
+   "practice": [
+    "Name the pathogen type for malaria and for athlete's foot.",
+    "Draw and label a bacterium with four parts.",
+    "A bacterium is 3 µm long and a virus is 60 nm. How many times longer is the bacterium?"
+   ],
+   "independent": [
+    "Core: Make a table of the four pathogen types with an example and disease.",
+    "Extend: Compare a bacterial cell and a virus in four points. [4 marks]",
+    "Stretch: Explain why an antibiotic given for a viral infection would be harmful as well as useless."
+   ],
+   "exit": [
+    "Why are viruses not classed as living organisms? [2 marks]",
+    "Return to the big question in one sentence."
+   ],
+   "homework": "Write a 100-word explanation for a younger pupil of why viruses are not living cells.",
+   "send": "SEND/EAL: labelled diagram bank. Stretch: research how TMV was discovered."
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 3,
+   "title": "Photosynthesis and limiting factors",
+   "duration": 50,
+   "bigQuestion": "What stops a plant from photosynthesising faster?",
+   "objectives": [
+    "Write word and balanced equations for photosynthesis",
+    "Describe how light, CO₂ and temperature limit the rate",
+    "Describe an investigation using pondweed"
+   ],
+   "successCriteria": [
+    "All: write the word equation",
+    "Most: balanced equation and explain limiting factors",
+    "Some: design and evaluate the pondweed investigation and read graphs"
+   ],
+   "crossCurricular": "Chemistry: balancing equations; Geography: food security",
+   "smsc": "Spiritual: reflection on how plants turn sunlight into food for all life; stewardship of crops",
+   "keywords": [
+    {
+     "term": "photosynthesis",
+     "def": "process in which plants use light energy to make glucose from CO₂ and water"
+    },
+    {
+     "term": "chlorophyll",
+     "def": "green pigment that absorbs light energy"
+    },
+    {
+     "term": "limiting factor",
+     "def": "the factor in shortest supply that restricts the rate of a process"
+    },
+    {
+     "term": "rate",
+     "def": "how quickly something happens, e.g. bubbles per minute"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the green pigment in chloroplasts.",
+    "What is the formula for carbon dioxide?",
+    "What is an enzyme?"
+   ],
+   "teach": [
+    {
+     "heading": "The equations",
+     "bullets": [
+      "Carbon dioxide + water → glucose + oxygen",
+      "Light energy absorbed by chlorophyll",
+      "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂"
+     ],
+     "note": "Say that light energy is not a reactant but it is written over the arrow. Check balancing: 6 C, 12 H, 18 O on each side. Ask what happens to the glucose: respiration, starch for storage, cellulose for cell walls, lipids in seeds, amino acids with nitrate.",
+     "cycle": [
+      "CO₂ enters leaf through stomata",
+      "Water arrives from roots via xylem",
+      "Chlorophyll absorbs light",
+      "Glucose and oxygen are made",
+      "Oxygen leaves; glucose is used or stored"
+     ]
+    },
+    {
+     "heading": "Limiting factors",
+     "bullets": [
+      "Light intensity, CO₂ concentration, temperature",
+      "The factor in shortest supply sets the rate",
+      "At high temperatures enzymes denature"
+     ],
+     "note": "Use the 'queue at the till' analogy: more tills do not help if you are waiting on a stock-check. Temperature beyond about 45 degrees Celsius denatures the enzymes of photosynthesis, so the rate falls.",
+     "table": {
+      "head": [
+       "Factor",
+       "Effect when increased",
+       "Why the rate levels off"
+      ],
+      "rows": [
+       [
+        "Light intensity",
+        "rate rises",
+        "CO₂ or temperature becomes limiting"
+       ],
+       [
+        "CO₂ concentration",
+        "rate rises",
+        "light or temperature becomes limiting"
+       ],
+       [
+        "Temperature",
+        "rises, then falls above about 45 °C",
+        "enzymes denature"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: pondweed data",
+     "bullets": [
+      "Count bubbles per minute at set distances",
+      "Control temperature with a water-bath screen"
+     ],
+     "note": "Method: pondweed in sodium hydrogencarbonate solution, lamp at measured distance, wait 2 minutes, count bubbles for 1 minute, repeat three times and average. Variables: independent is distance; dependent is bubbles per minute; control CO₂, temperature, same piece of weed. Safety: keep the lamp and mains away from water.",
+     "model": {
+      "problem": "Mean bubbles per minute at lamp distances: 10 cm: 48, 20 cm: 30, 30 cm: 18, 40 cm: 10. Describe the trend and give a reason.",
+      "steps": [
+       "Read the values as the lamp moves away",
+       "Rate falls from 48 to 10 as distance increases",
+       "Greater distance means lower light intensity",
+       "Light is the limiting factor, so photosynthesis slows"
+      ],
+      "answer": "As the lamp moves further away, light intensity falls and the rate of photosynthesis decreases."
+     }
+    },
+    {
+     "heading": "Reading limiting-factor graphs",
+     "bullets": [
+      "Rising section: the plotted factor is limiting",
+      "Flat section: another factor is limiting"
+     ],
+     "note": "Ask: at the plateau, what could you change to raise the rate? Pupils must name a different factor from the one on the x-axis.",
+     "misconception": {
+      "wrong": "At the flat part of the graph, adding more of the plotted factor will keep raising the rate.",
+      "right": "At the plateau another factor is limiting, so only changing that factor will raise the rate."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. At the plateau in bright light, light is not limiting and CO₂ has stopped limiting; at 10 °C enzymes are slow, so temperature is. Pupils who pick light have misread 'bright'.",
+     "check": {
+      "q": "A plant in bright light at 10 °C has a photosynthesis rate that levels off as CO₂ concentration rises above 0.10%. What is probably limiting the rate now?",
+      "options": [
+       "Light intensity",
+       "CO₂ concentration",
+       "Temperature",
+       "Oxygen concentration"
+      ],
+      "answer": 2,
+      "why": "Light is already bright and CO₂ is no longer limiting at the plateau, so the low temperature (slow enzymes) is limiting."
+     }
+    }
+   ],
+   "practice": [
+    "Write the balanced symbol equation for photosynthesis and count atoms on each side.",
+    "Why does the pondweed need sodium hydrogencarbonate in the water?",
+    "Name three control variables for the lamp-distance investigation."
+   ],
+   "independent": [
+    "Core: Use the data to plot rate against distance and describe the pattern.",
+    "Extend: A grower raises CO₂ in a glasshouse but yield does not rise. Give two possible reasons. [2 marks]",
+    "Stretch: Design a plan to find out whether green light is used as well as red light. [4 marks]"
+   ],
+   "exit": [
+    "State the three limiting factors. [3 marks]",
+    "Return to the big question: how could a farmer decide which factor to raise?"
+   ],
+   "homework": "Learn the word and symbol equations; do 6 questions on limiting factor graphs.",
+   "send": "SEND/EAL: equation strips to sequence. Stretch: explain light intensity and distance using the inverse relationship."
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 4,
+   "title": "Leaf structure, gas exchange in plants and mineral ions",
+   "duration": 50,
+   "bigQuestion": "How is a leaf built like a tiny factory?",
+   "objectives": [
+    "Describe the structure of a leaf and link it to function",
+    "Explain gas exchange in plants in light and dark",
+    "State the roles of nitrate and magnesium ions and the effects of deficiency"
+   ],
+   "successCriteria": [
+    "All: label a leaf section",
+    "Most: explain adaptations and net gas exchange",
+    "Some: interpret hydrogencarbonate indicator results and starch tests"
+   ],
+   "crossCurricular": "Chemistry: pH indicators; Agriculture: fertilisers",
+   "smsc": "Spiritual: the quiet design of a leaf; moderation in fertiliser use as part of stewardship",
+   "keywords": [
+    {
+     "term": "stomata",
+     "def": "pores in the leaf surface that let gases in and out"
+    },
+    {
+     "term": "palisade mesophyll",
+     "def": "tightly packed cells at the top of a leaf with many chloroplasts"
+    },
+    {
+     "term": "guard cell",
+     "def": "cell that opens and closes a stoma"
+    },
+    {
+     "term": "magnesium ions",
+     "def": "needed to make chlorophyll"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the word equation for photosynthesis.",
+    "Name two limiting factors of photosynthesis.",
+    "What does a xylem vessel carry?"
+   ],
+   "teach": [
+    {
+     "heading": "Inside a leaf",
+     "bullets": [
+      "Waxy cuticle reduces water loss",
+      "Palisade layer is near the light and full of chloroplasts",
+      "Spongy mesophyll has air spaces for gas diffusion"
+     ],
+     "note": "Draw on the board a cross-section top to bottom: cuticle, upper epidermis, palisade mesophyll, spongy mesophyll with air spaces, lower epidermis with stomata and guard cells; xylem and phloem in the vein. Ask why most stomata are on the lower surface (cooler, less water loss).",
+     "table": {
+      "head": [
+       "Part",
+       "Adaptation",
+       "Function"
+      ],
+      "rows": [
+       [
+        "Upper epidermis",
+        "thin and transparent",
+        "lets light reach the palisade layer"
+       ],
+       [
+        "Palisade mesophyll",
+        "many chloroplasts, packed closely",
+        "most photosynthesis"
+       ],
+       [
+        "Spongy mesophyll",
+        "air spaces, large surface",
+        "gas diffusion to cells"
+       ],
+       [
+        "Stomata and guard cells",
+        "pores that open and close",
+        "CO₂ in, O₂ and water vapour out"
+       ],
+       [
+        "Xylem",
+        "hollow tubes",
+        "brings water to the leaf"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Gas exchange in light and dark",
+     "bullets": [
+      "Day: photosynthesis is faster than respiration",
+      "Net result: CO₂ taken in, O₂ released",
+      "Night: only respiration, so O₂ in, CO₂ out"
+     ],
+     "note": "Emphasise that plants respire all the time. Hydrogencarbonate indicator: red at normal CO₂, yellow if CO₂ rises, purple if CO₂ falls. Leaf in light turns purple; leaf in dark turns yellow; tube with no leaf stays red (control).",
+     "table": {
+      "head": [
+       "Tube",
+       "Conditions",
+       "Colour after 2 hours"
+      ],
+      "rows": [
+       [
+        "A",
+        "leaf in bright light",
+        "purple"
+       ],
+       [
+        "B",
+        "leaf wrapped in foil",
+        "yellow"
+       ],
+       [
+        "C",
+        "no leaf (control)",
+        "red"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: explain an adaptation",
+     "bullets": [
+      "Name the feature",
+      "Say what it does",
+      "Link to the function"
+     ],
+     "note": "Model the three-part pattern: feature, effect, link. Pupils then reuse it in practice.",
+     "model": {
+      "problem": "Explain how the palisade layer is adapted for photosynthesis. [3 marks]",
+      "steps": [
+       "Feature: cells are tightly packed at the top of the leaf",
+       "Effect: they absorb the most light as it enters",
+       "Feature: they contain many chloroplasts with chlorophyll",
+       "Link: so more light energy is absorbed for photosynthesis"
+      ],
+      "answer": "Packed near the surface with many chloroplasts, they absorb most light, so the rate of photosynthesis is high."
+     }
+    },
+    {
+     "heading": "Mineral ions and the starch test",
+     "bullets": [
+      "Nitrate makes amino acids and proteins",
+      "Magnesium makes chlorophyll",
+      "Deficiency: yellow leaves; nitrate also gives stunted growth"
+     ],
+     "note": "Starch test: boil leaf 1 minute (stops reactions), hot ethanol in a water bath with no naked flame (removes chlorophyll), rinse in warm water, add iodine. Blue-black means starch. Variegated and foil-covered leaves show chlorophyll and light are needed.",
+     "table": {
+      "head": [
+       "Ion",
+       "Used to make",
+       "Deficiency symptom"
+      ],
+      "rows": [
+       [
+        "Nitrate",
+        "amino acids, proteins",
+        "stunted growth, yellow older leaves"
+       ],
+       [
+        "Magnesium",
+        "chlorophyll",
+        "yellow leaves (chlorosis)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils choose red ('no change') or purple ('it is a leaf'). In the dark there is only respiration, so CO₂ builds up and the indicator goes yellow.",
+     "check": {
+      "q": "A leaf in a tube with hydrogencarbonate indicator is wrapped in foil for 2 hours. The indicator is most likely to turn:",
+      "options": [
+       "purple",
+       "red",
+       "yellow",
+       "blue"
+      ],
+      "answer": 2,
+      "why": "With no light there is no photosynthesis. Respiration releases CO₂, so the indicator turns yellow."
+     }
+    }
+   ],
+   "practice": [
+    "Label the layers of a leaf from top to bottom.",
+    "Why does a leaf in the dark still use oxygen?",
+    "A farmer sees yellow leaves and stunted growth. Which ion might be short?"
+   ],
+   "independent": [
+    "Core: Explain how the leaf is adapted for gas exchange. [3 marks]",
+    "Extend: Explain why a variegated leaf with a white edge shows no starch there. [2 marks]",
+    "Stretch: A plant in a sealed bottle stays alive for months in light. Explain, using gas exchange. [4 marks]"
+   ],
+   "exit": [
+    "State the function of stomata and of guard cells. [2 marks]",
+    "Return to the big question: pick one part of the leaf factory and justify its design."
+   ],
+   "homework": "Draw and annotate a leaf cross-section from memory.",
+   "send": "SEND/EAL: annotate a pre-drawn diagram. Stretch: how does a guard cell open the stoma?"
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 5,
+   "title": "Transport in plants: xylem, phloem and transpiration",
+   "duration": 50,
+   "bigQuestion": "How does water climb a 50-metre tree with no pump?",
+   "objectives": [
+    "Describe the roles of xylem and phloem",
+    "Explain transpiration and the factors that affect it",
+    "Describe the potometer investigation and calculate a rate"
+   ],
+   "successCriteria": [
+    "All: state what xylem and phloem carry",
+    "Most: explain transpiration and its factors",
+    "Some: calculate the volume of water lost using a potometer"
+   ],
+   "crossCurricular": "Physics: evaporation; Maths: volume of a cylinder",
+   "smsc": "Spiritual: wonder at unseen processes; stewardship of water",
+   "keywords": [
+    {
+     "term": "xylem",
+     "def": "dead hollow tubes carrying water and mineral ions up the plant"
+    },
+    {
+     "term": "phloem",
+     "def": "living tubes carrying sucrose and amino acids to where needed"
+    },
+    {
+     "term": "transpiration",
+     "def": "loss of water vapour from the leaves, mainly through the stomata"
+    },
+    {
+     "term": "potometer",
+     "def": "apparatus that measures water uptake by a shoot"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is osmosis?",
+    "Name the process by which mineral ions enter root hair cells against a gradient.",
+    "What do guard cells control?"
+   ],
+   "teach": [
+    {
+     "heading": "Two transport tissues",
+     "bullets": [
+      "Xylem: water and mineral ions, root to leaf",
+      "Phloem: sucrose and amino acids, to growing and storage regions",
+      "Xylem is dead with lignin; phloem is living"
+     ],
+     "note": "Distinguish translocation (phloem) from transpiration (water loss). Pupils frequently swap the two vessels. Root hair cells have a large surface area; water enters by osmosis and mineral ions by active transport.",
+     "compare": {
+      "left": {
+       "title": "Xylem",
+       "points": [
+        "Water and mineral ions",
+        "One way: roots to leaves",
+        "Hollow, dead cells strengthened with lignin"
+       ]
+      },
+      "right": {
+       "title": "Phloem",
+       "points": [
+        "Sucrose and amino acids",
+        "Both directions (source to sink)",
+        "Living cells with sieve plates"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Transpiration",
+     "bullets": [
+      "Water evaporates from leaf cells into air spaces",
+      "Water vapour diffuses out through open stomata",
+      "Water is pulled up the xylem to replace it"
+     ],
+     "note": "This is the transpiration stream. Benefits: brings minerals, cools the leaf, keeps cells turgid. If water loss exceeds uptake the plant wilts.",
+     "table": {
+      "head": [
+       "Factor",
+       "Effect on transpiration",
+       "Reason"
+      ],
+      "rows": [
+       [
+        "Higher temperature",
+        "increases",
+        "faster evaporation and diffusion"
+       ],
+       [
+        "Higher humidity",
+        "decreases",
+        "smaller concentration gradient"
+       ],
+       [
+        "Greater wind speed",
+        "increases",
+        "removes humid air at the leaf"
+       ],
+       [
+        "Brighter light",
+        "increases",
+        "stomata open for photosynthesis"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: potometer calculation",
+     "bullets": [
+      "Volume = π × r² × distance",
+      "Rate = volume ÷ time"
+     ],
+     "note": "Reinforce: measure the bubble position at the start and after a fixed time; cut the shoot under water to avoid air locks; make joints airtight; allow the shoot to equilibrate. Repeat for different conditions with a fan, or in the dark.",
+     "model": {
+      "problem": "In a potometer a bubble moves 24 mm in 10 minutes. The capillary tube has radius 0.5 mm. Calculate the rate of water uptake in mm³ per minute.",
+      "steps": [
+       "Volume = π × 0.5² × 24",
+       "= π × 0.25 × 24 = 18.8 mm³",
+       "Rate = 18.8 ÷ 10",
+       "= 1.9 mm³ per minute (2 s.f.)"
+      ],
+      "answer": "1.9 mm³ per minute"
+     }
+    },
+    {
+     "heading": "Water uptake is not the same as transpiration",
+     "bullets": [
+      "Most water absorbed is lost",
+      "A little is used in photosynthesis and for turgor"
+     ],
+     "note": "Tell pupils a potometer measures uptake, a close estimate of transpiration. Always state this assumption when evaluating.",
+     "misconception": {
+      "wrong": "A potometer measures the exact rate of transpiration.",
+      "right": "It measures water uptake, which is only an estimate of transpiration because some water is used in photosynthesis and cell turgor."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils think humid air speeds transpiration; high humidity shrinks the concentration gradient and slows it.",
+     "check": {
+      "q": "Which conditions give the highest rate of transpiration?",
+      "options": [
+       "Cool, humid, still",
+       "Hot, dry, windy",
+       "Cool, dry, windy",
+       "Hot, humid, still"
+      ],
+      "answer": 1,
+      "why": "Heat speeds evaporation, dry air keeps a steep concentration gradient, and wind removes humid air around the leaf."
+     }
+    }
+   ],
+   "practice": [
+    "State which tissue transports sucrose and which transports water.",
+    "Explain why a plant wilts on a hot, windy day.",
+    "A bubble moves 30 mm in 15 minutes in a capillary of radius 0.5 mm. Calculate the rate in mm³ per minute."
+   ],
+   "independent": [
+    "Core: Describe how you would test the effect of wind on transpiration with a potometer.",
+    "Extend: Explain why the volume of water lost is not an exact measure of transpiration. [2 marks]",
+    "Stretch: Explain, with reference to stomata, why plants lose less water at night. [3 marks]"
+   ],
+   "exit": [
+    "Give two differences between xylem and phloem. [2 marks]",
+    "Return to the big question: explain how water reaches the top of a tree."
+   ],
+   "homework": "Draw a flow diagram of the transpiration stream and add three factors.",
+   "send": "SEND/EAL: sentence starters for the stream. Stretch: why is a plant with a thick cuticle better suited to a desert?"
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 6,
+   "title": "Human diet, digestion, bile and the villus",
+   "duration": 50,
+   "bigQuestion": "How does a sandwich become part of you?",
+   "objectives": [
+    "Describe a balanced diet and the roles of nutrients",
+    "Describe the action of digestive enzymes and bile",
+    "Explain how the villus is adapted for absorption"
+   ],
+   "successCriteria": [
+    "All: list nutrients and the enzymes",
+    "Most: explain bile and enzyme action",
+    "Some: explain absorption using surface area and concentration gradients"
+   ],
+   "crossCurricular": "PE: nutrition and performance; Chemistry: pH",
+   "smsc": "Moral: halal, tayyib and moderation in eating; gratitude for food",
+   "keywords": [
+    {
+     "term": "balanced diet",
+     "def": "diet containing the right amounts of all nutrients for health"
+    },
+    {
+     "term": "emulsify",
+     "def": "break fat into small droplets, increasing surface area"
+    },
+    {
+     "term": "villus",
+     "def": "finger-like projection of the small intestine wall that absorbs food"
+    },
+    {
+     "term": "peristalsis",
+     "def": "wave of muscle contraction that pushes food along the gut"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the food test for starch and the colour for a positive result.",
+    "What is an enzyme?",
+    "State the effect of high temperature on an enzyme."
+   ],
+   "teach": [
+    {
+     "heading": "A balanced diet",
+     "bullets": [
+      "Carbohydrates and lipids give energy",
+      "Protein for growth and repair",
+      "Vitamins and minerals for health; fibre; water"
+     ],
+     "note": "Link to the Year 10 food tests lesson. Keep deficiencies concrete: vitamin C (scurvy), vitamin D with calcium (rickets, weak bones), iron (anaemia, low haemoglobin), fibre (prevents constipation). Energy needs vary with age, activity and pregnancy.",
+     "table": {
+      "head": [
+       "Nutrient",
+       "Use in the body",
+       "Example source"
+      ],
+      "rows": [
+       [
+        "Protein",
+        "growth and repair",
+        "fish, beans"
+       ],
+       [
+        "Calcium",
+        "strong bones and teeth",
+        "milk, sardines"
+       ],
+       [
+        "Iron",
+        "makes haemoglobin",
+        "red meat, spinach"
+       ],
+       [
+        "Vitamin C",
+        "healthy skin and gums",
+        "citrus fruit"
+       ],
+       [
+        "Vitamin D",
+        "absorbing calcium",
+        "sunlight, oily fish"
+       ],
+       [
+        "Fibre",
+        "keeps food moving through gut",
+        "wholemeal bread"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Enzymes of digestion",
+     "bullets": [
+      "Amylase: starch → maltose, then maltase → glucose",
+      "Protease: protein → amino acids",
+      "Lipase: lipid → fatty acids + glycerol"
+     ],
+     "note": "Amylase is made in the salivary glands and pancreas; protease (pepsin) works in the stomach at about pH 2; lipase and other enzymes work in the small intestine at about pH 8. Ask why the optimum pH differs.",
+     "table": {
+      "head": [
+       "Enzyme",
+       "Substrate",
+       "Products",
+       "Site"
+      ],
+      "rows": [
+       [
+        "Amylase",
+        "starch",
+        "maltose",
+        "mouth, small intestine"
+       ],
+       [
+        "Protease",
+        "protein",
+        "amino acids",
+        "stomach, small intestine"
+       ],
+       [
+        "Lipase",
+        "lipid",
+        "fatty acids and glycerol",
+        "small intestine"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Bile",
+     "bullets": [
+      "Made in the liver, stored in the gall bladder",
+      "Alkaline: neutralises stomach acid",
+      "Emulsifies fat: more surface area for lipase"
+     ],
+     "note": "Bile contains no enzymes. It does not digest fat chemically; it breaks it into droplets so lipase can work faster.",
+     "model": {
+      "problem": "Explain the role of bile in digestion. [3 marks]",
+      "steps": [
+       "Bile is alkaline so it neutralises acid from the stomach",
+       "This gives the right pH for enzymes in the small intestine",
+       "It emulsifies fats into small droplets",
+       "So a larger surface area is available for lipase"
+      ],
+      "answer": "Neutralises acid and emulsifies fats, speeding up fat digestion."
+     }
+    },
+    {
+     "heading": "The villus",
+     "bullets": [
+      "Thin wall one cell thick",
+      "Rich capillary network and a lacteal",
+      "Large surface area from villi and microvilli"
+     ],
+     "note": "Link to diffusion and active transport: glucose and amino acids move into blood by diffusion and active transport; fatty acids and glycerol enter the lacteal. A steep concentration gradient is kept by blood flow carrying nutrients away.",
+     "misconception": {
+      "wrong": "Nutrients are absorbed by diffusion only, so no energy is needed.",
+      "right": "Glucose and amino acids also use active transport, which needs energy from respiration, especially when the gut concentration is lower than in the blood."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils pick the stomach because of acid. Bile is made in the liver and only stored in the gall bladder.",
+     "check": {
+      "q": "Where is bile made?",
+      "options": [
+       "Stomach",
+       "Pancreas",
+       "Liver",
+       "Gall bladder"
+      ],
+      "answer": 2,
+      "why": "Bile is made in the liver and stored in the gall bladder."
+     }
+    }
+   ],
+   "practice": [
+    "Name the enzyme that digests starch and the product.",
+    "Explain why protease in the stomach has a different optimum pH from lipase in the small intestine.",
+    "State two adaptations of a villus."
+   ],
+   "independent": [
+    "Core: Make a flow chart of the digestive system with an enzyme at each site.",
+    "Extend: A patient has their gall bladder removed. Predict and explain the effect on fat digestion. [3 marks]",
+    "Stretch: Explain why a lacteal and a capillary network are both needed in a villus. [3 marks]"
+   ],
+   "exit": [
+    "Name one nutrient, its use and a deficiency effect. [3 marks]",
+    "Return to the big question: describe the journey of one slice of bread."
+   ],
+   "homework": "Design a balanced menu for a day with two nutrients identified per meal.",
+   "send": "SEND/EAL: diagram labelling with word bank. Stretch: compare absorption by diffusion and active transport."
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 7,
+   "title": "Respiration: ATP, aerobic and anaerobic",
+   "duration": 50,
+   "bigQuestion": "Why do your muscles burn when you sprint, and why does bread rise?",
+   "objectives": [
+    "Describe respiration as the release of energy to make ATP",
+    "Write equations for aerobic and anaerobic respiration",
+    "Describe a yeast investigation and explain results"
+   ],
+   "successCriteria": [
+    "All: write the word equation for aerobic respiration",
+    "Most: compare aerobic and anaerobic respiration in muscle and yeast",
+    "Some: analyse temperature data from the yeast practical"
+   ],
+   "crossCurricular": "Chemistry: exothermic reactions; Food technology: bread and brewing",
+   "smsc": "Spiritual: gratitude for the energy that sustains the body; moderation in exertion",
+   "keywords": [
+    {
+     "term": "respiration",
+     "def": "chemical reactions in cells that release energy from nutrient molecules"
+    },
+    {
+     "term": "ATP",
+     "def": "molecule that stores and transfers energy for cell processes"
+    },
+    {
+     "term": "anaerobic respiration",
+     "def": "release of energy from glucose without oxygen"
+    },
+    {
+     "term": "fermentation",
+     "def": "anaerobic respiration in yeast giving ethanol and carbon dioxide"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the organelle where aerobic respiration happens.",
+    "State two uses of glucose in a plant.",
+    "Write the formula of oxygen and of carbon dioxide."
+   ],
+   "teach": [
+    {
+     "heading": "Why respire?",
+     "bullets": [
+      "Respiration is not breathing",
+      "It transfers energy from glucose to ATP",
+      "ATP is used for movement, growth, active transport, heat"
+     ],
+     "note": "Ask: is breathing the same as respiration? Break the misconception early. Think of ATP as the small change of the cell: glucose is the banknote, ATP the coins you can spend anywhere in the cell.",
+     "compare": {
+      "left": {
+       "title": "Aerobic",
+       "points": [
+        "Needs oxygen",
+        "Glucose + oxygen → carbon dioxide + water",
+        "Releases a lot of energy (about 30 ATP per glucose)",
+        "Mainly in mitochondria"
+       ]
+      },
+      "right": {
+       "title": "Anaerobic",
+       "points": [
+        "No oxygen needed",
+        "Muscle: glucose → lactic acid",
+        "Yeast: glucose → ethanol + carbon dioxide",
+        "Releases far less energy (2 ATP per glucose)"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Equations",
+     "bullets": [
+      "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O",
+      "Yeast: glucose → ethanol + carbon dioxide",
+      "Muscle: glucose → lactic acid"
+     ],
+     "note": "Compare with photosynthesis: aerobic respiration is almost the reverse. Ethanol is C₂H₅OH. Yeast fermentation makes bread rise (CO₂ bubbles) and is the basis of brewing, which pupils may meet in food science.",
+     "cycle": [
+      "Glucose from food",
+      "Reacts with oxygen in mitochondria",
+      "Energy transferred to ATP",
+      "CO₂ and water released",
+      "ATP used by the cell"
+     ]
+    },
+    {
+     "heading": "Model: oxygen debt",
+     "bullets": [
+      "Link observation to anaerobic respiration",
+      "Say why breathing stays fast afterwards"
+     ],
+     "note": "Elicit that lactic acid is toxic in large amounts and is broken down in the liver using oxygen. This extra oxygen is the oxygen debt.",
+     "model": {
+      "problem": "A sprinter breathes heavily for 5 minutes after a race. Explain why. [3 marks]",
+      "steps": [
+       "During the sprint, muscles respire anaerobically as oxygen supply is too slow",
+       "Lactic acid builds up",
+       "After the race extra oxygen is needed to break down the lactic acid",
+       "So breathing rate and depth stay high until it is removed"
+      ],
+      "answer": "Extra oxygen is needed to remove lactic acid built up by anaerobic respiration."
+     }
+    },
+    {
+     "heading": "Practical: yeast and temperature",
+     "bullets": [
+      "Yeast, glucose solution and a gas syringe",
+      "Count bubbles or measure CO₂ volume in 5 minutes",
+      "Change the temperature of the water bath"
+     ],
+     "note": "Variables: independent is temperature (20, 30, 40, 50, 60 °C); dependent is bubbles per minute; control yeast mass, glucose concentration, volume. Example mean results (bubbles per minute): 20 °C: 14; 30 °C: 32; 40 °C: 55; 50 °C: 20; 60 °C: 0. Ask pupils to explain the peak at 40 and zero at 60 (enzymes denature). Safety: hot water, goggles.",
+     "table": {
+      "head": [
+       "Temperature (°C)",
+       "Bubbles per minute"
+      ],
+      "rows": [
+       [
+        "20",
+        "14"
+       ],
+       [
+        "30",
+        "32"
+       ],
+       [
+        "40",
+        "55"
+       ],
+       [
+        "50",
+        "20"
+       ],
+       [
+        "60",
+        "0"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: lactic acid is the product in human muscle, not in yeast.",
+     "check": {
+      "q": "Which products are made when yeast respires anaerobically?",
+      "options": [
+       "Lactic acid only",
+       "Ethanol and carbon dioxide",
+       "Carbon dioxide and water",
+       "Ethanol and oxygen"
+      ],
+      "answer": 1,
+      "why": "Yeast fermentation gives ethanol and carbon dioxide. Lactic acid is produced in animal muscle."
+     }
+    }
+   ],
+   "practice": [
+    "Write the word equation for aerobic respiration.",
+    "State where lactic acid is made.",
+    "Why does bread dough rise when yeast is added?"
+   ],
+   "independent": [
+    "Core: Plot the yeast data and describe the trend.",
+    "Extend: Explain the shape of the graph using enzymes. [4 marks]",
+    "Stretch: Explain why anaerobic respiration releases much less energy per glucose than aerobic. [2 marks]"
+   ],
+   "exit": [
+    "State two differences between aerobic and anaerobic respiration. [2 marks]",
+    "Return to the big question in two sentences."
+   ],
+   "homework": "Make a comparison table of aerobic respiration, muscle anaerobic respiration and yeast fermentation.",
+   "send": "SEND/EAL: matching cards for products. Stretch: describe how a respirometer with soda lime measures oxygen uptake of germinating seeds."
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 8,
+   "title": "Breathing and gas exchange in humans",
+   "duration": 50,
+   "bigQuestion": "How does air get from the nose to the blood, and why is the lung built like a tree?",
+   "objectives": [
+    "Explain inhalation and exhalation using ribs, intercostal muscles and diaphragm",
+    "Describe how alveoli are adapted for gas exchange",
+    "Compare inhaled and exhaled air and describe a breathing investigation"
+   ],
+   "successCriteria": [
+    "All: label the thorax and say what the diaphragm does",
+    "Most: explain pressure and volume changes",
+    "Some: calculate ventilation rate and analyse exercise data"
+   ],
+   "crossCurricular": "Physics: pressure and volume; PE: exercise",
+   "smsc": "Moral: caring for the body as an amanah (trust), avoiding harm such as smoking",
+   "keywords": [
+    {
+     "term": "alveolus",
+     "def": "tiny air sac in the lung where gas exchange takes place"
+    },
+    {
+     "term": "diaphragm",
+     "def": "sheet of muscle below the lungs that helps breathing"
+    },
+    {
+     "term": "intercostal muscles",
+     "def": "muscles between the ribs"
+    },
+    {
+     "term": "ventilation rate",
+     "def": "volume of air breathed per minute"
+    }
+   ],
+   "starter": [
+    "Bismillah. What process releases energy from glucose?",
+    "Which gas is produced in respiration?",
+    "Define diffusion."
+   ],
+   "teach": [
+    {
+     "heading": "Breathing in and out",
+     "bullets": [
+      "Inhale: intercostals and diaphragm contract",
+      "Rib cage up and out, diaphragm flattens",
+      "Volume rises, pressure falls, air flows in"
+     ],
+     "note": "Use a bell jar model if available. On exhaling the muscles relax, volume falls, pressure rises, air is pushed out. Forced exhalation uses internal intercostals. Pupils often say the lungs 'suck' air; air moves because of a pressure difference.",
+     "table": {
+      "head": [
+       "Feature",
+       "Inhalation",
+       "Exhalation"
+      ],
+      "rows": [
+       [
+        "Intercostal muscles",
+        "contract",
+        "relax"
+       ],
+       [
+        "Diaphragm",
+        "contracts, flattens",
+        "relaxes, domes up"
+       ],
+       [
+        "Ribs",
+        "move up and out",
+        "move down and in"
+       ],
+       [
+        "Chest volume",
+        "increases",
+        "decreases"
+       ],
+       [
+        "Pressure",
+        "falls below atmospheric",
+        "rises above atmospheric"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Alveoli",
+     "bullets": [
+      "Walls one cell thick; moist lining",
+      "Surrounded by a dense capillary network",
+      "Huge surface area; ventilation keeps gradient steep"
+     ],
+     "note": "Oxygen diffuses from alveolus to blood; carbon dioxide diffuses the other way. Blood flow carries oxygen away to keep the gradient. About 300 million alveoli per lung gives a surface area close to the size of a tennis court. Smoking: tar damages alveoli and cilia (optional).",
+     "table": {
+      "head": [
+       "Gas",
+       "Inhaled air (%)",
+       "Exhaled air (%)"
+      ],
+      "rows": [
+       [
+        "Oxygen",
+        "21",
+        "16"
+       ],
+       [
+        "Carbon dioxide",
+        "0.04",
+        "4"
+       ],
+       [
+        "Nitrogen",
+        "78",
+        "78"
+       ],
+       [
+        "Water vapour",
+        "varies",
+        "higher, saturated"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: ventilation rate",
+     "bullets": [
+      "Ventilation rate = breaths per minute × tidal volume",
+      "Compare rest and exercise"
+     ],
+     "note": "Remind pupils that tidal volume is the volume per breath (about 500 cm³ at rest). Core practical idea: count breaths in 1 minute at rest, then after 2 minutes of step-ups, then time how long to return to resting rate; repeat three times.",
+     "model": {
+      "problem": "At rest a pupil breathes 15 times per minute with a tidal volume of 500 cm³. After exercise: 28 breaths per minute, 1100 cm³. How many times greater is the ventilation rate after exercise?",
+      "steps": [
+       "Rest: 15 × 500 = 7500 cm³ per minute",
+       "Exercise: 28 × 1100 = 30 800 cm³ per minute",
+       "Ratio = 30 800 ÷ 7500",
+       "= 4.1"
+      ],
+      "answer": "About 4.1 times greater"
+     }
+    },
+    {
+     "heading": "Exhaled air test",
+     "bullets": [
+      "Limewater turns milky with more CO₂",
+      "Compare breathing through two bottles"
+     ],
+     "note": "Set up two boiler tubes of limewater with valves so that you inhale through one and exhale through the other. The exhaled-air tube goes milky faster. Safety: use clean mouthpieces; do not suck up limewater; wash hands.",
+     "misconception": {
+      "wrong": "We breathe out only carbon dioxide and breathe in only oxygen.",
+      "right": "Inhaled air has 21% oxygen and exhaled air still has 16%; carbon dioxide rises from 0.04% to about 4%."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils say pressure rises as volume rises. Air moves from high to low pressure, so pressure must fall for air to enter.",
+     "check": {
+      "q": "During inhalation, what happens to the pressure in the chest?",
+      "options": [
+       "It rises as volume rises",
+       "It falls as volume rises",
+       "It falls as volume falls",
+       "It stays constant"
+      ],
+      "answer": 1,
+      "why": "The chest volume increases so the pressure falls below atmospheric pressure and air flows in."
+     }
+    }
+   ],
+   "practice": [
+    "List the steps of exhalation in order.",
+    "Give three adaptations of alveoli.",
+    "A pupil breathes 12 times a minute with a tidal volume of 450 cm³. Calculate the ventilation rate."
+   ],
+   "independent": [
+    "Core: Describe how you would investigate the effect of exercise on breathing rate.",
+    "Extend: Explain why breathing rate stays high for several minutes after exercise. [3 marks]",
+    "Stretch: Emphysema destroys alveolar walls. Explain the effect on gas exchange. [3 marks]"
+   ],
+   "exit": [
+    "Compare inhaled and exhaled air in one sentence for oxygen and for CO₂. [2 marks]",
+    "Return to the big question: link tree-like branching to surface area."
+   ],
+   "homework": "Annotate a diagram of the thorax; learn the table of inhalation and exhalation.",
+   "send": "SEND/EAL: act out the rib movements; label cards. Stretch: why is breathing at altitude harder?"
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 9,
+   "title": "Blood and the immune system",
+   "duration": 50,
+   "bigQuestion": "How does your body remember an illness it has met only once?",
+   "objectives": [
+    "State the functions of the four components of blood",
+    "Explain how white blood cells defend the body",
+    "Explain how vaccination gives immunity"
+   ],
+   "successCriteria": [
+    "All: name blood components and functions",
+    "Most: describe phagocytes, antibodies and vaccination",
+    "Some: interpret primary and secondary response graphs"
+   ],
+   "crossCurricular": "PSHE: public health; History: smallpox",
+   "smsc": "Moral: protecting others through vaccination; trust in medical science and care for the community (hifz al-nafs)",
+   "keywords": [
+    {
+     "term": "antigen",
+     "def": "molecule on a pathogen that triggers an immune response"
+    },
+    {
+     "term": "antibody",
+     "def": "protein made by lymphocytes that binds to a specific antigen"
+    },
+    {
+     "term": "phagocyte",
+     "def": "white blood cell that engulfs pathogens"
+    },
+    {
+     "term": "vaccination",
+     "def": "giving a harmless form of antigen so the body makes memory cells"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the four types of pathogen.",
+    "State one adaptation of a red blood cell.",
+    "What does a virus need to reproduce?"
+   ],
+   "teach": [
+    {
+     "heading": "What is in blood?",
+     "bullets": [
+      "Plasma carries CO₂, nutrients, urea, hormones and heat",
+      "Red cells carry oxygen as oxyhaemoglobin",
+      "Platelets help clots form"
+     ],
+     "note": "Red cells: biconcave disc (large surface area), no nucleus (more room for haemoglobin). White cells: phagocytes and lymphocytes. Platelets form a clot and scab, sealing wounds and keeping microbes out.",
+     "table": {
+      "head": [
+       "Component",
+       "Function",
+       "Key feature"
+      ],
+      "rows": [
+       [
+        "Plasma",
+        "transport of substances and heat",
+        "straw-coloured liquid, about 55% of blood"
+       ],
+       [
+        "Red blood cells",
+        "carry oxygen",
+        "haemoglobin, no nucleus, biconcave"
+       ],
+       [
+        "White blood cells",
+        "defence against pathogens",
+        "phagocytes, lymphocytes"
+       ],
+       [
+        "Platelets",
+        "clotting",
+        "cell fragments"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "How white blood cells defend",
+     "bullets": [
+      "Phagocytes engulf and digest pathogens",
+      "Lymphocytes make antibodies specific to an antigen",
+      "Antitoxins neutralise toxins released by pathogens"
+     ],
+     "note": "Use a lock-and-key analogy: each antibody has a shape that fits one antigen only. After infection, memory lymphocytes remain, so a second infection by the same pathogen is dealt with faster.",
+     "compare": {
+      "left": {
+       "title": "Phagocytosis",
+       "points": [
+        "Phagocyte engulfs the pathogen",
+        "Digested inside the cell",
+        "Not specific to one pathogen"
+       ]
+      },
+      "right": {
+       "title": "Antibody response",
+       "points": [
+        "Lymphocytes make specific antibodies",
+        "Antibodies bind antigens, marking pathogens",
+        "Memory cells remain"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Model: vaccination graph",
+     "bullets": [
+      "Read the first and second peaks",
+      "State the difference in speed and size"
+     ],
+     "note": "Take the data from a case: first injection at day 0, peak 20 units at day 14. Booster at day 28, peak 180 units at day 33. Ask what has changed (memory cells, faster, bigger).",
+     "model": {
+      "problem": "Antibody level after a first injection peaks at 20 units on day 14. After a booster on day 28 it peaks at 180 units on day 33. Compare the two responses.",
+      "steps": [
+       "First response: 14 days to reach peak, 20 units",
+       "Second response: 5 days to reach peak, 180 units",
+       "180 ÷ 20 = 9 times higher",
+       "Memory cells made the second response faster and larger"
+      ],
+      "answer": "The second response is 9 times larger and 9 days faster because of memory cells."
+     }
+    },
+    {
+     "heading": "Vaccination: what and why",
+     "bullets": [
+      "Dead or weakened pathogen, or just antigens",
+      "Body makes antibodies and memory cells",
+      "Future infection is stopped quickly"
+     ],
+     "note": "Be accurate: a vaccine contains antigens, not antibodies. The person does not get ill because the pathogen is harmless. Many parents ask about safety; refer to NHS guidance and the school nurse for questions.",
+     "misconception": {
+      "wrong": "A vaccine gives you antibodies straight away.",
+      "right": "A vaccine contains harmless antigens. Your own lymphocytes make antibodies and memory cells."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer D. Trap: pupils pick phagocytes because they 'fight' pathogens; phagocytes engulf, lymphocytes make antibodies.",
+     "check": {
+      "q": "Which cells make antibodies?",
+      "options": [
+       "Phagocytes",
+       "Red blood cells",
+       "Platelets",
+       "Lymphocytes"
+      ],
+      "answer": 3,
+      "why": "Lymphocytes make antibodies. Phagocytes engulf pathogens; red cells carry oxygen; platelets clot blood."
+     }
+    }
+   ],
+   "practice": [
+    "State the function of each of the four blood components.",
+    "Why are red blood cells biconcave?",
+    "Explain why antibodies for one disease do not work on another pathogen."
+   ],
+   "independent": [
+    "Core: Describe in order what happens when pathogens enter a cut.",
+    "Extend: Explain why a person is rarely ill twice from the same chickenpox virus. [3 marks]",
+    "Stretch: Explain why a vaccine is less effective if the pathogen mutates its antigens. [3 marks]"
+   ],
+   "exit": [
+    "Define antigen and antibody. [2 marks]",
+    "Return to the big question: use the term memory cell."
+   ],
+   "homework": "Draw a storyboard (6 frames) for how a vaccine gives immunity.",
+   "send": "SEND/EAL: glossary cards with images. Stretch: compare active and passive immunity."
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 10,
+   "title": "The heart, blood vessels and coronary heart disease",
+   "duration": 50,
+   "bigQuestion": "Why can a blocked artery as small as a pencil lead stop the heart?",
+   "objectives": [
+    "Describe the structure of the heart and double circulation",
+    "Compare arteries, veins and capillaries",
+    "Explain the causes and risk factors of coronary heart disease"
+   ],
+   "successCriteria": [
+    "All: label the heart and name the vessels",
+    "Most: link vessel structure to function",
+    "Some: explain coronary heart disease and evaluate risk factors"
+   ],
+   "crossCurricular": "PE: exercise and heart rate; Maths: rates",
+   "smsc": "Moral: caring for health; moderation (wasatiyyah) in diet and lifestyle",
+   "keywords": [
+    {
+     "term": "double circulation",
+     "def": "blood passes through the heart twice on each complete circuit"
+    },
+    {
+     "term": "artery",
+     "def": "vessel carrying blood away from the heart at high pressure"
+    },
+    {
+     "term": "vein",
+     "def": "vessel carrying blood towards the heart; has valves"
+    },
+    {
+     "term": "coronary artery",
+     "def": "artery supplying the heart muscle with oxygenated blood"
+    }
+   ],
+   "starter": [
+    "Bismillah. Which blood component carries oxygen?",
+    "Where does gas exchange take place in the lungs?",
+    "What does the diaphragm do in inhalation?"
+   ],
+   "teach": [
+    {
+     "heading": "The heart and double circulation",
+     "bullets": [
+      "Right side: deoxygenated blood to the lungs",
+      "Left side: oxygenated blood to the body",
+      "Valves stop backflow; left ventricle wall is thickest"
+     ],
+     "note": "Trace one drop of blood: vena cava → right atrium → right ventricle → pulmonary artery → lungs → pulmonary vein → left atrium → left ventricle → aorta. Show a labelled diagram. Heart rate rises with exercise because adrenaline and the brain signal the heart.",
+     "cycle": [
+      "Vena cava brings blood from the body",
+      "Right atrium then right ventricle",
+      "Pulmonary artery to the lungs",
+      "Pulmonary vein returns to left atrium",
+      "Left ventricle pumps blood out through the aorta"
+     ]
+    },
+    {
+     "heading": "Three kinds of vessel",
+     "bullets": [
+      "Arteries: thick, muscular, elastic walls; narrow lumen",
+      "Veins: thin walls, wide lumen, valves",
+      "Capillaries: one cell thick for exchange"
+     ],
+     "note": "Pupils often say all arteries carry oxygenated blood. Pulmonary artery carries deoxygenated blood, and the pulmonary vein carries oxygenated blood.",
+     "table": {
+      "head": [
+       "Vessel",
+       "Wall",
+       "Lumen",
+       "Pressure",
+       "Valves"
+      ],
+      "rows": [
+       [
+        "Artery",
+        "thick, muscle and elastic",
+        "narrow",
+        "high",
+        "no"
+       ],
+       [
+        "Vein",
+        "thin",
+        "wide",
+        "low",
+        "yes"
+       ],
+       [
+        "Capillary",
+        "one cell thick",
+        "very narrow",
+        "falling",
+        "no"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: structure to function",
+     "bullets": [
+      "Name the feature, the function, then the link",
+      "Use data: wall thickness"
+     ],
+     "note": "Practice phrasing: the left ventricle pumps to the whole body, the right only to the lungs next door.",
+     "model": {
+      "problem": "Explain why the wall of the left ventricle is thicker than the right. [2 marks]",
+      "steps": [
+       "The left ventricle pumps blood to the whole body, a long way",
+       "This needs a higher pressure than pumping to the nearby lungs",
+       "A thicker muscular wall contracts more strongly to give that pressure"
+      ],
+      "answer": "A thicker wall generates the greater pressure needed to pump blood around the body."
+     }
+    },
+    {
+     "heading": "Coronary heart disease",
+     "bullets": [
+      "Fatty deposits narrow coronary arteries",
+      "Less oxygen reaches heart muscle: chest pain, heart attack",
+      "Risk: diet high in saturated fat, smoking, stress, genetics"
+     ],
+     "note": "Distinguish risk factors that can be changed (diet, smoking, exercise, stress) from those that cannot (genes, age, sex). Explain that correlation shows association, not proof of cause; link to evaluating data in exam questions.",
+     "misconception": {
+      "wrong": "Veins carry deoxygenated blood and arteries carry oxygenated blood, always.",
+      "right": "Direction relative to the heart defines them. The pulmonary artery carries deoxygenated blood; the pulmonary vein carries oxygenated blood."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer D. Trap: the rule 'arteries carry oxygenated blood' leads pupils to pick the pulmonary artery.",
+     "check": {
+      "q": "Which vessel carries oxygenated blood from the lungs to the heart?",
+      "options": [
+       "Pulmonary artery",
+       "Vena cava",
+       "Aorta",
+       "Pulmonary vein"
+      ],
+      "answer": 3,
+      "why": "The pulmonary vein carries oxygenated blood from the lungs to the left atrium."
+     }
+    }
+   ],
+   "practice": [
+    "List the heart chambers in the order blood flows through them.",
+    "State two adaptations of veins.",
+    "Why does the heart muscle need its own blood supply?"
+   ],
+   "independent": [
+    "Core: Compare the structure of an artery and a vein.",
+    "Extend: Heart rate was 68 beats per minute at rest and 142 after exercise. Calculate the percentage increase. [2 marks]",
+    "Stretch: Evaluate the claim that stress alone causes coronary heart disease. [4 marks]"
+   ],
+   "exit": [
+    "Describe what happens in the coronary arteries in coronary heart disease. [3 marks]",
+    "Return to the big question: link a narrow artery to oxygen and heart muscle."
+   ],
+   "homework": "Draw a flow diagram of double circulation using two colours for oxygenated and deoxygenated blood.",
+   "send": "SEND/EAL: colour-coded diagram. Stretch: how do stents and statins reduce risk?"
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 11,
+   "title": "Excretion: lungs, skin and the kidney nephron",
+   "duration": 50,
+   "bigQuestion": "How do the kidneys clean 180 litres of fluid a day and keep what you need?",
+   "objectives": [
+    "Name excretory organs and the substances they remove",
+    "Describe ultrafiltration and selective reabsorption in the nephron",
+    "Explain how ADH controls the concentration of urine"
+   ],
+   "successCriteria": [
+    "All: name organs and waste products",
+    "Most: describe the stages of the nephron",
+    "Some: interpret filtrate and urine data and ADH feedback"
+   ],
+   "crossCurricular": "Chemistry: solutes; PE: hydration",
+   "smsc": "Moral: gratitude; avoiding excess; fasting and hydration awareness as health discussion",
+   "keywords": [
+    {
+     "term": "excretion",
+     "def": "removal of toxic waste and excess substances from the body"
+    },
+    {
+     "term": "urea",
+     "def": "waste made in the liver from excess amino acids"
+    },
+    {
+     "term": "ultrafiltration",
+     "def": "filtering of small molecules from blood under high pressure"
+    },
+    {
+     "term": "ADH",
+     "def": "hormone that makes the kidney reabsorb more water"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the gas produced by respiration that the lungs remove.",
+    "What does the pituitary gland make?",
+    "Define osmosis."
+   ],
+   "teach": [
+    {
+     "heading": "Excretory organs",
+     "bullets": [
+      "Lungs: carbon dioxide and some water vapour",
+      "Skin: sweat has water, salts and a little urea",
+      "Kidneys: urea, excess water and ions"
+     ],
+     "note": "Urea is made in the liver by deamination (breaking down excess amino acids) and carried in blood plasma to the kidneys. Not the same as egestion (faeces). Typical adult urine output is about 1 to 1.5 litres a day.",
+     "table": {
+      "head": [
+       "Organ",
+       "Substance removed",
+       "Source"
+      ],
+      "rows": [
+       [
+        "Lungs",
+        "carbon dioxide",
+        "respiration"
+       ],
+       [
+        "Skin",
+        "water, salts, urea",
+        "sweat"
+       ],
+       [
+        "Kidneys",
+        "urea, excess water, excess ions",
+        "liver and diet"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Inside the nephron",
+     "bullets": [
+      "Ultrafiltration: water, glucose, urea, ions forced out",
+      "Selective reabsorption: all glucose, some water and ions",
+      "Remaining fluid is urine"
+     ],
+     "note": "Ask: why do proteins and blood cells stay in the blood? (too large to pass through). Glucose is reabsorbed by active transport in the proximal tubule, which is why mitochondria are abundant there. A healthy person has no glucose in the urine.",
+     "cycle": [
+      "Blood enters the glomerulus at high pressure",
+      "Small molecules filter into the Bowman's capsule",
+      "Glucose reabsorbed by active transport",
+      "Water and some ions reabsorbed",
+      "Urea and extra water leave as urine"
+     ]
+    },
+    {
+     "heading": "Model: interpret data",
+     "bullets": [
+      "Compare plasma, filtrate and urine",
+      "Explain each difference"
+     ],
+     "note": "Data in g per 100 cm³. Plasma protein 8.0, filtrate 0, urine 0. Glucose 0.10, 0.10, 0. Urea 0.03, 0.03, 2.0.",
+     "model": {
+      "problem": "Using the data (protein: 8.0 / 0 / 0; glucose: 0.10 / 0.10 / 0; urea: 0.03 / 0.03 / 2.0 g per 100 cm³ in plasma / filtrate / urine), explain each pattern.",
+      "steps": [
+       "Protein is in plasma only: too large to be filtered",
+       "Glucose is in the filtrate but not urine: all reabsorbed by active transport",
+       "Urea rises from 0.03 to 2.0: water reabsorbed, so urea is concentrated",
+       "Urea is not reabsorbed, so it leaves in urine"
+      ],
+      "answer": "Large molecules stay in blood; glucose is reabsorbed; urea becomes concentrated in urine."
+     }
+    },
+    {
+     "heading": "ADH and water balance",
+     "bullets": [
+      "Dehydrated: more ADH released by the pituitary",
+      "Collecting duct becomes more permeable to water",
+      "Small volume of concentrated urine",
+      "Plenty of water: less ADH, large volume of dilute urine"
+     ],
+     "note": "This is negative feedback. Walk through a hot day with no drinks. The blood is more concentrated, so the brain detects this and signals the pituitary gland. Mention dialysis and kidney transplants as treatments for kidney failure; keep it factual and sensitive.",
+     "misconception": {
+      "wrong": "ADH makes the body make more urine.",
+      "right": "ADH reduces urine volume by making the kidney reabsorb more water, so the urine is more concentrated."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils think more ADH means more urine. Dehydration raises ADH, which increases water reabsorption.",
+     "check": {
+      "q": "A student has not drunk for 10 hours. What happens to ADH and urine?",
+      "options": [
+       "ADH falls; dilute urine",
+       "ADH falls; concentrated urine",
+       "ADH rises; concentrated urine",
+       "ADH rises; dilute urine"
+      ],
+      "answer": 2,
+      "why": "Dehydration raises ADH, so more water is reabsorbed and urine is concentrated and small in volume."
+     }
+    }
+   ],
+   "practice": [
+    "Name the waste product made in the liver from amino acids.",
+    "State where ultrafiltration occurs.",
+    "Why is there no glucose in the urine of a healthy person?"
+   ],
+   "independent": [
+    "Core: Describe the path of a molecule of urea from blood to urine.",
+    "Extend: A person drinks 1.5 litres of water quickly. Explain the change in ADH and urine. [3 marks]",
+    "Stretch: Explain why glucose appears in the urine of an untreated person with diabetes. [3 marks]"
+   ],
+   "exit": [
+    "Name two excretory organs and one substance each excretes. [2 marks]",
+    "Return to the big question: where is the cleaning done and where is the keeping done?"
+   ],
+   "homework": "Make a labelled nephron diagram with the four steps in colour.",
+   "send": "SEND/EAL: flow-chart cards in order. Stretch: how does a dialysis machine mimic the nephron?"
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 12,
+   "title": "Co-ordination: reflex arc and the eye",
+   "duration": 50,
+   "bigQuestion": "Why do you pull your hand away before you feel the pain?",
+   "objectives": [
+    "Describe the stimulus, receptor, co-ordinator, effector and response chain",
+    "Explain the reflex arc and compare it with a voluntary response",
+    "Describe the structure and function of the eye and the pupil reflex"
+   ],
+   "successCriteria": [
+    "All: sequence a reflex arc",
+    "Most: link the structure of the eye to its function",
+    "Some: explain the pupil reflex and accommodation"
+   ],
+   "crossCurricular": "Physics: light and lenses; PE: reaction times",
+   "smsc": "Spiritual: reflection on the body's design and gratitude for sight",
+   "keywords": [
+    {
+     "term": "stimulus",
+     "def": "a change in the environment that is detected"
+    },
+    {
+     "term": "receptor",
+     "def": "cell or organ that detects a stimulus"
+    },
+    {
+     "term": "effector",
+     "def": "muscle or gland that produces a response"
+    },
+    {
+     "term": "reflex arc",
+     "def": "pathway from receptor to effector for a rapid automatic response"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the organ systems in the body that you know.",
+    "Which hormone is released from the adrenal glands in danger?",
+    "What is the function of a motor neurone?"
+   ],
+   "teach": [
+    {
+     "heading": "The nervous pathway",
+     "bullets": [
+      "Stimulus, receptor, co-ordinator, effector, response",
+      "Co-ordinator: brain or spinal cord",
+      "Neurones carry electrical impulses"
+     ],
+     "note": "Walk through touching a hot pan. Introduce sensory, relay and motor neurones. At a synapse, a chemical (neurotransmitter) diffuses across the gap. Reflexes are fast, automatic, and protect the body.",
+     "cycle": [
+      "Stimulus: heat on the finger",
+      "Receptor in the skin",
+      "Sensory neurone to spinal cord",
+      "Relay neurone, motor neurone",
+      "Effector: biceps contracts, hand withdrawn"
+     ]
+    },
+    {
+     "heading": "Structure of the eye",
+     "bullets": [
+      "Cornea and lens focus light on the retina",
+      "Iris controls the size of the pupil",
+      "Optic nerve carries impulses to the brain"
+     ],
+     "note": "Labelled diagram on the board. Retina has rod cells (dim light, no colour) and cone cells (colour). The fovea is the most sensitive point. Accommodation: viewing near objects, ciliary muscles contract, suspensory ligaments slacken, lens becomes thicker and more curved; for distant objects the reverse. Check specification level for accommodation.",
+     "table": {
+      "head": [
+       "Part",
+       "Function"
+      ],
+      "rows": [
+       [
+        "Cornea",
+        "refracts light as it enters the eye"
+       ],
+       [
+        "Iris",
+        "controls how much light enters"
+       ],
+       [
+        "Lens",
+        "focuses light onto the retina"
+       ],
+       [
+        "Retina",
+        "contains receptors (rods and cones)"
+       ],
+       [
+        "Optic nerve",
+        "carries impulses to the brain"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: the pupil reflex",
+     "bullets": [
+      "Receptors in the retina detect brightness",
+      "Muscles in the iris respond"
+     ],
+     "note": "Check: circular muscles contract and radial muscles relax in bright light. In dim light the pupil dilates. This protects the retina yet allows vision in the dark.",
+     "model": {
+      "problem": "Explain what happens to the pupil when a person walks from a dark room into bright sunlight. [3 marks]",
+      "steps": [
+       "Light receptors in the retina detect the bright light",
+       "Impulses go to the brain and back to the iris muscles",
+       "Circular muscles contract, radial muscles relax",
+       "The pupil gets smaller, reducing light that reaches the retina and avoiding damage"
+      ],
+      "answer": "The pupil constricts to protect the retina."
+     }
+    },
+    {
+     "heading": "Reaction time practice",
+     "bullets": [
+      "Ruler-drop test",
+      "Distance dropped gives time: t = √(2d ÷ g)"
+     ],
+     "note": "Example: a mean drop of 18 cm gives t = √(2 × 0.18 ÷ 9.8) = 0.19 s. Variables: same ruler, hand, no warning. A voluntary response involves the brain deciding; a reflex does not, so it is faster.",
+     "misconception": {
+      "wrong": "Reflexes are controlled by the brain.",
+      "right": "Reflex responses are coordinated by the spinal cord (or lower brain) without conscious thought, so they are faster."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils pick the sensory neurone because it starts the reflex; the motor neurone reaches the effector.",
+     "check": {
+      "q": "In a reflex arc, which neurone carries the impulse to the muscle?",
+      "options": [
+       "Sensory neurone",
+       "Relay neurone",
+       "Motor neurone",
+       "Optic nerve"
+      ],
+      "answer": 2,
+      "why": "Motor neurones carry impulses to effectors. Sensory neurones go to the spinal cord and relay neurones link them."
+     }
+    }
+   ],
+   "practice": [
+    "Put the five terms of the nervous pathway in order.",
+    "State the function of the retina.",
+    "Name the effector in the hot-pan reflex."
+   ],
+   "independent": [
+    "Core: Label a diagram of the eye and write one function for each part.",
+    "Extend: Explain why a reflex is faster than a voluntary action. [2 marks]",
+    "Stretch: Explain what happens in the eye when focusing on a book after looking at a distant tree. [4 marks]"
+   ],
+   "exit": [
+    "State what happens at a synapse. [2 marks]",
+    "Return to the big question using the reflex arc."
+   ],
+   "homework": "Write a short story of a reflex using all six key terms.",
+   "send": "SEND/EAL: sequencing cards. Stretch: how does colour vision work through cone cells?"
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 13,
+   "title": "Hormones and plant responses",
+   "duration": 50,
+   "bigQuestion": "How do chemical messengers in plants and people coordinate responses?",
+   "objectives": [
+    "Describe hormones and compare nervous and hormonal control",
+    "State the roles of adrenaline, insulin, testosterone, oestrogen and progesterone",
+    "Explain phototropism and gravitropism using auxin"
+   ],
+   "successCriteria": [
+    "All: name hormones and glands",
+    "Most: explain adrenaline's effects and compare with nerves",
+    "Some: explain tropisms with auxin and interpret experiments"
+   ],
+   "crossCurricular": "Chemistry: chemical messengers; Geography: farming practice",
+   "smsc": "Spiritual: unseen messengers in plants and people as signs of order",
+   "keywords": [
+    {
+     "term": "hormone",
+     "def": "chemical messenger made in a gland and carried in the blood"
+    },
+    {
+     "term": "target organ",
+     "def": "organ that responds to a particular hormone"
+    },
+    {
+     "term": "auxin",
+     "def": "plant hormone controlling growth by cell elongation"
+    },
+    {
+     "term": "tropism",
+     "def": "growth response of a plant to a directional stimulus"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the three neurones in a reflex arc.",
+    "What is a gland?",
+    "Define stimulus."
+   ],
+   "teach": [
+    {
+     "heading": "Hormones in humans",
+     "bullets": [
+      "Made in endocrine glands, carried in the blood",
+      "Act on target organs",
+      "Slower and longer lasting than nerves"
+     ],
+     "note": "Compare with the nervous system: electrical, very fast, short-lived, precise. Adrenaline (adrenal glands) prepares for fight or flight: increased heart rate, more glucose released, wider airways, pupils dilate.",
+     "table": {
+      "head": [
+       "Hormone",
+       "Gland",
+       "Main effect"
+      ],
+      "rows": [
+       [
+        "Adrenaline",
+        "adrenal glands",
+        "raises heart rate, releases glucose"
+       ],
+       [
+        "Insulin",
+        "pancreas",
+        "lowers blood glucose"
+       ],
+       [
+        "Testosterone",
+        "testes",
+        "male secondary sexual characteristics"
+       ],
+       [
+        "Oestrogen",
+        "ovaries",
+        "female secondary characteristics; cycle"
+       ],
+       [
+        "Progesterone",
+        "ovaries",
+        "maintains the uterus lining"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Nerves versus hormones",
+     "bullets": [
+      "Speed of response is very different",
+      "Duration of effect differs",
+      "Route: neurones or blood"
+     ],
+     "note": "Hinge idea: choose a stimulus (hot pan, exam stress) and ask which system is used.",
+     "compare": {
+      "left": {
+       "title": "Nervous system",
+       "points": [
+        "Electrical impulses",
+        "Fast response",
+        "Short-lived",
+        "Along neurones"
+       ]
+      },
+      "right": {
+       "title": "Endocrine system",
+       "points": [
+        "Chemical hormones",
+        "Slower response",
+        "Longer-lasting",
+        "In the blood"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Model: phototropism",
+     "bullets": [
+      "Auxin is made in the shoot tip",
+      "Light causes auxin to move to the shaded side",
+      "Cells there elongate more, so the shoot bends towards light"
+     ],
+     "note": "Experiments: cover the tip with foil (no bending), remove the tip (no growth), light from one side with an intact tip (bends). In gravitropism shoots grow upwards, roots grow downwards. Auxin is unequally distributed.",
+     "model": {
+      "problem": "A seedling with its tip removed is lit from the right. Predict and explain the result. [3 marks]",
+      "steps": [
+       "The tip makes auxin",
+       "With the tip gone, no auxin is made",
+       "No auxin to elongate cells, so little or no growth",
+       "No bending toward light"
+      ],
+      "answer": "It does not grow or bend, because no auxin is produced."
+     }
+    },
+    {
+     "heading": "Why plants matter to farmers",
+     "bullets": [
+      "Auxin used in rooting powders",
+      "Tropisms keep shoots in light and roots in soil"
+     ],
+     "note": "Make the link to farming. Some pupils say plants 'know' where light is; stress that unequal auxin distribution is the mechanism.",
+     "misconception": {
+      "wrong": "Plants bend towards light because the cells on the lit side grow more.",
+      "right": "Auxin moves to the shaded side, where cells elongate more, so the shoot bends towards the light."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: shoots grow against gravity (negative gravitropism); roots grow with gravity. No light is involved here.",
+     "check": {
+      "q": "A seedling is laid on its side in the dark. The shoot grows upwards. This is called:",
+      "options": [
+       "positive phototropism",
+       "negative gravitropism",
+       "positive gravitropism",
+       "negative phototropism"
+      ],
+      "answer": 1,
+      "why": "The shoot grows against the direction of gravity, so this is negative gravitropism."
+     }
+    }
+   ],
+   "practice": [
+    "Name the gland that makes insulin and the hormone released in fear.",
+    "Give two differences between nervous and hormonal control.",
+    "Where is auxin made in a shoot?"
+   ],
+   "independent": [
+    "Core: Make a table of five hormones, their glands and effects.",
+    "Extend: Explain why a fox that sees a hunter has a faster heart rate in seconds yet needs minutes to calm down. [3 marks]",
+    "Stretch: Design an experiment to show the shoot tip detects light. [4 marks]"
+   ],
+   "exit": [
+    "State two effects of adrenaline. [2 marks]",
+    "Return to the big question: one example in a plant and one in a person."
+   ],
+   "homework": "Draw a labelled diagram showing auxin movement in a shoot lit from the left.",
+   "send": "SEND/EAL: matching hormone-effect cards. Stretch: why do roots respond differently to auxin?"
+  },
+  {
+   "unit": "Biology 2: Structure and functions in living organisms",
+   "n": 14,
+   "title": "Homeostasis: blood glucose and body temperature",
+   "duration": 50,
+   "bigQuestion": "How does your body keep inside the same when outside changes?",
+   "objectives": [
+    "Define homeostasis and negative feedback",
+    "Explain how insulin controls blood glucose and what goes wrong in diabetes",
+    "Explain skin responses to heat and cold"
+   ],
+   "successCriteria": [
+    "All: define homeostasis",
+    "Most: explain the control of blood glucose and temperature",
+    "Some: interpret graphs and avoid common errors about capillaries"
+   ],
+   "crossCurricular": "PE: exercise and heat; Physics: heat transfer",
+   "smsc": "Moral: the amanah of the body; moderation in sugar intake",
+   "keywords": [
+    {
+     "term": "homeostasis",
+     "def": "maintaining a constant internal environment"
+    },
+    {
+     "term": "negative feedback",
+     "def": "change is detected and the response reverses it"
+    },
+    {
+     "term": "vasodilation",
+     "def": "widening of arterioles supplying skin capillaries"
+    },
+    {
+     "term": "vasoconstriction",
+     "def": "narrowing of arterioles supplying skin capillaries"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name two hormones and their glands.",
+    "What is the normal core body temperature?",
+    "What does the pancreas make?"
+   ],
+   "teach": [
+    {
+     "heading": "Negative feedback",
+     "bullets": [
+      "Receptor detects a change from the set point",
+      "Control centre triggers an effector",
+      "The response reverses the change"
+     ],
+     "note": "Use the thermostat analogy. Body core temperature is about 37 °C; the brain monitors blood temperature, and skin receptors detect external conditions.",
+     "cycle": [
+      "Body temperature rises above 37 °C",
+      "Receptors in skin and brain detect it",
+      "Brain signals effectors",
+      "Sweating and vasodilation occur",
+      "Temperature returns to normal"
+     ]
+    },
+    {
+     "heading": "Blood glucose",
+     "bullets": [
+      "After a meal glucose rises; pancreas releases insulin",
+      "Liver converts glucose to glycogen",
+      "Blood glucose returns to normal"
+     ],
+     "note": "Type 1 diabetes: the pancreas makes little or no insulin; treatment is insulin injections, diet and monitoring. Type 2: body cells respond poorly to insulin; managed by diet and exercise. Glucagon (stretch): released when glucose is low, converts glycogen to glucose.",
+     "table": {
+      "head": [
+       "Time (min)",
+       "Blood glucose, normal person (mmol/dm³)",
+       "Blood glucose, untreated diabetic (mmol/dm³)"
+      ],
+      "rows": [
+       [
+        "0",
+        "5",
+        "12"
+       ],
+       [
+        "30",
+        "8",
+        "18"
+       ],
+       [
+        "60",
+        "6",
+        "19"
+       ],
+       [
+        "120",
+        "5",
+        "17"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: skin and temperature",
+     "bullets": [
+      "Name the response",
+      "Say what it changes",
+      "Say why this restores temperature"
+     ],
+     "note": "Use the misconception to follow. Capillaries cannot move; arterioles widen or narrow. Shivering is rapid muscle contraction releasing heat from respiration. Hair erect traps a layer of air, though pupils will rightly note humans have little body hair.",
+     "model": {
+      "problem": "Explain why a person's skin looks red and sweaty after running. [3 marks]",
+      "steps": [
+       "Body temperature rises during exercise",
+       "Arterioles in the skin widen (vasodilation), more blood flows near the surface",
+       "More heat is lost by radiation, so the skin looks red",
+       "Sweat evaporates and removes heat from the skin"
+      ],
+      "answer": "Vasodilation and sweating lose heat to bring temperature down."
+     }
+    },
+    {
+     "heading": "A very common mistake",
+     "bullets": [
+      "Skin blood vessels do not move",
+      "Arterioles change their diameter"
+     ],
+     "note": "Say this slowly: the vessels do not move towards or away from the surface.",
+     "misconception": {
+      "wrong": "When hot, capillaries move closer to the skin surface.",
+      "right": "Capillaries cannot move. Arterioles supplying them widen (vasodilation), so more blood flows through skin capillaries."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils think shivering cools you. It releases heat from muscle respiration.",
+     "check": {
+      "q": "Which response helps warm a cold person?",
+      "options": [
+       "Vasodilation",
+       "Sweating",
+       "Shivering",
+       "Hairs lie flat"
+      ],
+      "answer": 2,
+      "why": "Shivering releases heat from respiration in muscle; vasodilation and sweating cool the body."
+     }
+    }
+   ],
+   "practice": [
+    "Define negative feedback.",
+    "State what insulin does.",
+    "Describe two responses when body temperature falls."
+   ],
+   "independent": [
+    "Core: Use the glucose data to describe differences between the two people.",
+    "Extend: Explain why an insulin injection must be matched to food intake. [3 marks]",
+    "Stretch: Compare the control of blood glucose with the control of temperature, identifying receptor, effector, response. [4 marks]"
+   ],
+   "exit": [
+    "Define homeostasis. [1 mark]",
+    "Return to the big question: choose one variable and explain how it is kept steady."
+   ],
+   "homework": "Draw a negative feedback loop for blood glucose and one for temperature.",
+   "send": "SEND/EAL: sentence frames for feedback loops. Stretch: how do continuous glucose monitors work?"
+  },
+  {
+   "unit": "Chemistry 1: Principles of chemistry",
+   "n": 15,
+   "title": "Solutions, solubility curves and diffusion of gases",
+   "duration": 50,
+   "bigQuestion": "Why does a hot drink dissolve more sugar than a cold one, and what happens when it cools?",
+   "objectives": [
+    "Use the terms solute, solvent, solution and saturated solution",
+    "Read and use solubility curves",
+    "Explain gas diffusion using particles and relative molecular mass"
+   ],
+   "successCriteria": [
+    "All: define the key terms",
+    "Most: read a solubility curve",
+    "Some: calculate the mass that crystallises on cooling and explain diffusion rates"
+   ],
+   "crossCurricular": "Biology: diffusion in cells; Geography: salt and sea water",
+   "smsc": "Spiritual: wonder at the properties of water; stewardship of water",
+   "keywords": [
+    {
+     "term": "solute",
+     "def": "substance that dissolves in a solvent"
+    },
+    {
+     "term": "solvent",
+     "def": "liquid in which a solute dissolves"
+    },
+    {
+     "term": "saturated solution",
+     "def": "solution that holds the maximum solute at a given temperature"
+    },
+    {
+     "term": "solubility",
+     "def": "mass of solute that dissolves in 100 g of solvent at a given temperature"
+    }
+   ],
+   "starter": [
+    "Bismillah. Describe the arrangement of particles in a gas.",
+    "What is the change of state from liquid to gas?",
+    "Name a method to separate a soluble solid from a solution."
+   ],
+   "teach": [
+    {
+     "heading": "Key terms",
+     "bullets": [
+      "Solute + solvent = solution",
+      "Saturated: no more solute will dissolve at that temperature",
+      "Solubility is given in g per 100 g of water"
+     ],
+     "note": "Use sugar in tea. Pupils often say dissolved sugar has 'disappeared'. The mass is conserved: the particles are spread between solvent particles.",
+     "table": {
+      "head": [
+       "Temperature (°C)",
+       "Solubility of potassium nitrate (g per 100 g water)"
+      ],
+      "rows": [
+       [
+        "0",
+        "13"
+       ],
+       [
+        "20",
+        "32"
+       ],
+       [
+        "40",
+        "64"
+       ],
+       [
+        "60",
+        "110"
+       ],
+       [
+        "80",
+        "169"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Reading the curve",
+     "bullets": [
+      "Most solids are more soluble when hot",
+      "A point below the curve is unsaturated",
+      "A point on the curve is saturated"
+     ],
+     "note": "Show the curve plotted from the table. Gases are different: solubility falls as temperature rises, which is why warm lakes carry less dissolved oxygen for fish. Practical idea: add potassium nitrate in measured portions to 10 cm³ water, warm until it dissolves, then cool and record the temperature at which crystals first appear.",
+     "model": {
+      "problem": "A saturated solution of potassium nitrate is made with 100 g of water at 60 °C. It is cooled to 20 °C. What mass of crystals forms?",
+      "steps": [
+       "Solubility at 60 °C = 110 g",
+       "Solubility at 20 °C = 32 g",
+       "Difference: 110 − 32",
+       "= 78 g"
+      ],
+      "answer": "78 g of potassium nitrate crystallises"
+     }
+    },
+    {
+     "heading": "Diffusion in gases",
+     "bullets": [
+      "Particles spread from high to low concentration",
+      "Lighter molecules move faster at the same temperature",
+      "Ammonia (Mr 17) diffuses faster than hydrogen chloride (Mr 36.5)"
+     ],
+     "note": "Demonstration: cotton wool soaked in ammonia solution at one end of a glass tube and in concentrated hydrochloric acid at the other. A white ring of ammonium chloride forms nearer the HCl end. Do this in a fume cupboard or well-ventilated room with goggles. Link back to the Biology lesson on diffusion.",
+     "misconception": {
+      "wrong": "The white ring forms in the middle of the tube because both gases travel at the same speed.",
+      "right": "Ammonia is lighter so it diffuses faster; the ring forms nearer the hydrochloric acid end."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: the full 100 g value is not halved by pupils who forget that 50 g is half the water.",
+     "check": {
+      "q": "Using the table, what mass of potassium nitrate dissolves in 50 g of water at 40 °C?",
+      "options": [
+       "64 g",
+       "32 g",
+       "16 g",
+       "128 g"
+      ],
+      "answer": 1,
+      "why": "At 40 °C 64 g dissolve in 100 g, so 50 g of water holds half: 32 g."
+     }
+    }
+   ],
+   "practice": [
+    "State the difference between a solute and a solution.",
+    "At 80 °C, what mass of potassium nitrate dissolves in 200 g of water?",
+    "Explain why the white ring forms nearer the hydrochloric acid end."
+   ],
+   "independent": [
+    "Core: Plot the solubility data and read the solubility at 50 °C.",
+    "Extend: A saturated solution containing 100 g of water at 80 °C is cooled to 40 °C. Calculate the mass of crystals. [2 marks]",
+    "Stretch: Explain why fish may die in warm weather using gas solubility. [3 marks]"
+   ],
+   "exit": [
+    "Define saturated solution. [1 mark]",
+    "Return to the big question using the solubility curve."
+   ],
+   "homework": "Complete a solubility-curve worksheet using the data table; write three questions of your own with answers.",
+   "send": "SEND/EAL: use a word bank and sentence starters. Stretch: compare with the solubility of sodium chloride (about 36 g per 100 g at 20 °C)."
+  },
+  {
+   "unit": "Chemistry 1: Principles of chemistry",
+   "n": 16,
+   "title": "Equations, relative formula mass and the mole",
+   "duration": 50,
+   "bigQuestion": "How can a chemist weigh out an exact number of atoms?",
+   "objectives": [
+    "Write balanced equations with state symbols",
+    "Calculate relative formula mass (Mr)",
+    "Calculate moles and use equations to find reacting masses"
+   ],
+   "successCriteria": [
+    "All: balance simple equations and use state symbols",
+    "Most: calculate Mr and moles from mass",
+    "Some: calculate reacting masses from an equation"
+   ],
+   "crossCurricular": "Maths: ratio and proportion; Physics: conservation",
+   "smsc": "Moral: honesty and accuracy (amanah) in measurement",
+   "keywords": [
+    {
+     "term": "mole",
+     "def": "amount of substance containing 6.02 × 10²³ particles"
+    },
+    {
+     "term": "relative formula mass (Mr)",
+     "def": "sum of the relative atomic masses in a formula"
+    },
+    {
+     "term": "state symbol",
+     "def": "(s), (l), (g) or (aq) after a formula in an equation"
+    },
+    {
+     "term": "conservation of mass",
+     "def": "total mass of reactants equals total mass of products"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the formula of carbon dioxide and of water.",
+    "State the relative atomic mass of oxygen and of hydrogen.",
+    "What is the law of conservation of mass?"
+   ],
+   "teach": [
+    {
+     "heading": "Balanced equations",
+     "bullets": [
+      "Same number of each atom on both sides",
+      "Change big numbers only, never small subscripts",
+      "State symbols: (s) solid, (l) liquid, (g) gas, (aq) aqueous"
+     ],
+     "note": "Example: Mg(s) + 2HCl(aq) → MgCl₂(aq) + H₂(g). Check atoms: Mg 1/1, H 2/2, Cl 2/2. Model for them: 2Fe + 3Cl₂ → 2FeCl₃. Ask: why can we not write FeCl₆?",
+     "table": {
+      "head": [
+       "Unbalanced",
+       "Balanced"
+      ],
+      "rows": [
+       [
+        "Na + H₂O → NaOH + H₂",
+        "2Na + 2H₂O → 2NaOH + H₂"
+       ],
+       [
+        "Al + O₂ → Al₂O₃",
+        "4Al + 3O₂ → 2Al₂O₃"
+       ],
+       [
+        "C₃H₈ + O₂ → CO₂ + H₂O",
+        "C₃H₈ + 5O₂ → 3CO₂ + 4H₂O"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Mr and the mole",
+     "bullets": [
+      "Use Ar: H 1, C 12, N 14, O 16, Mg 24, Ca 40",
+      "Mr = add the Ar values in the formula",
+      "moles = mass (g) ÷ Mr"
+     ],
+     "note": "Make the idea of the mole concrete: 12 g of carbon, 18 g of water and 58.5 g of sodium chloride each contain the same number of formula units, 6.02 × 10²³ (the Avogadro constant). Show how to find Mr of Ca(OH)₂: 40 + 2 × (16 + 1) = 74.",
+     "model": {
+      "problem": "Calculate the Mr of calcium carbonate, CaCO₃, and the moles in 25 g.",
+      "steps": [
+       "Ar: Ca 40, C 12, O 16",
+       "Mr = 40 + 12 + (3 × 16) = 100",
+       "Moles = 25 ÷ 100"
+      ],
+      "answer": "Mr = 100; 0.25 mol"
+     }
+    },
+    {
+     "heading": "Reacting masses",
+     "bullets": [
+      "Convert the known mass to moles",
+      "Use the equation ratio",
+      "Convert moles of the unknown to mass"
+     ],
+     "note": "Write the three-step plan on the board and have pupils use it every time. Worked: 4.8 g Mg burns. 2Mg + O₂ → 2MgO. n(Mg) = 4.8 ÷ 24 = 0.20 mol. Ratio 2:2 so n(MgO) = 0.20 mol. Mr(MgO) = 40, mass = 0.20 × 40 = 8.0 g. Check: the mass has increased by 3.2 g, the mass of oxygen gained.",
+     "misconception": {
+      "wrong": "Reacting masses are in the same ratio as the numbers in the equation.",
+      "right": "The equation ratio is for moles. Convert grams to moles first, then use the ratio."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: doubling only the H (42) or only counting one OH (41). Brackets mean the whole group is doubled.",
+     "check": {
+      "q": "What is the Mr of magnesium hydroxide, Mg(OH)₂? (Ar: Mg 24, O 16, H 1)",
+      "options": [
+       "41",
+       "42",
+       "58",
+       "75"
+      ],
+      "answer": 2,
+      "why": "Mr = 24 + 2 × (16 + 1) = 58. Doubling only the H gives 42, and counting one OH gives 41."
+     }
+    }
+   ],
+   "practice": [
+    "Balance: Al + HCl → AlCl₃ + H₂.",
+    "Calculate the Mr of (NH₄)₂SO₄. (Ar: N 14, H 1, S 32, O 16)",
+    "Calculate the moles in 9.0 g of water."
+   ],
+   "independent": [
+    "Core: 2Mg + O₂ → 2MgO. Calculate the mass of MgO formed from 12 g of Mg.",
+    "Extend: 10.0 g of CaCO₃ is heated. CaCO₃ → CaO + CO₂. Calculate the mass of CaO. [3 marks]",
+    "Stretch: Calculate the mass of oxygen needed to burn 1.0 g of propane, C₃H₈ (equation: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O)."
+   ],
+   "exit": [
+    "Calculate moles in 8.0 g of NaOH (Ar: Na 23, O 16, H 1). [2 marks]",
+    "Return to the big question: explain how moles let us count atoms by weighing."
+   ],
+   "homework": "Ten mixed questions: Mr, moles and one reacting-mass calculation.",
+   "send": "SEND/EAL: step-by-step grid for calculations. Stretch: how many particles in 0.25 mol of water?"
+  },
+  {
+   "unit": "Chemistry 1: Principles of chemistry",
+   "n": 17,
+   "title": "Percentage yield and empirical and molecular formulae",
+   "duration": 50,
+   "bigQuestion": "How can you work out a formula nobody has told you?",
+   "objectives": [
+    "Calculate percentage yield",
+    "Determine empirical and molecular formulae from masses or percentages",
+    "Describe the practical to find the formula of a metal oxide"
+   ],
+   "successCriteria": [
+    "All: use the yield formula",
+    "Most: calculate an empirical formula",
+    "Some: find a molecular formula and evaluate the metal oxide practical"
+   ],
+   "crossCurricular": "Industry: waste and cost; Maths: ratios",
+   "smsc": "Moral: avoiding waste (israf) in industry and the lab",
+   "keywords": [
+    {
+     "term": "percentage yield",
+     "def": "actual mass obtained ÷ theoretical mass × 100"
+    },
+    {
+     "term": "empirical formula",
+     "def": "simplest whole-number ratio of atoms in a compound"
+    },
+    {
+     "term": "molecular formula",
+     "def": "actual number of each atom in a molecule"
+    },
+    {
+     "term": "theoretical yield",
+     "def": "maximum mass the equation predicts"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate Mr of Fe₂O₃ (Fe 56, O 16).",
+    "State the formula that links mass, moles and Mr.",
+    "Balance: H₂ + O₂ → H₂O."
+   ],
+   "teach": [
+    {
+     "heading": "Percentage yield",
+     "bullets": [
+      "Yield is always below 100% in practice",
+      "Reasons: incomplete reaction, loss in transfer, side reactions",
+      "% yield = actual ÷ theoretical × 100"
+     ],
+     "note": "Industry cares: low yield is wasted money and resources. Stress that you must find the theoretical yield from the equation first.",
+     "model": {
+      "problem": "25.0 g of CaCO₃ is heated and 11.2 g of CaO is collected. Calculate the percentage yield. (CaCO₃ → CaO + CO₂; Mr CaCO₃ = 100, CaO = 56)",
+      "steps": [
+       "n(CaCO₃) = 25.0 ÷ 100 = 0.25 mol",
+       "n(CaO) = 0.25 mol, theoretical mass = 0.25 × 56 = 14.0 g",
+       "% yield = 11.2 ÷ 14.0 × 100"
+      ],
+      "answer": "80%"
+     }
+    },
+    {
+     "heading": "Empirical formula method",
+     "bullets": [
+      "Divide each mass by its Ar",
+      "Divide all by the smallest answer",
+      "Multiply to get whole numbers if needed"
+     ],
+     "note": "Teach it as a four-column table: element, mass, moles, ratio. Example below is iron oxide; keep working visible. Ratio 0.2:0.3 gives 2:3 after multiplying by 10 (or dividing by 0.1).",
+     "model": {
+      "problem": "An iron oxide contains 11.2 g of iron and 4.8 g of oxygen. Find its empirical formula. (Ar: Fe 56, O 16)",
+      "steps": [
+       "Moles Fe = 11.2 ÷ 56 = 0.20",
+       "Moles O = 4.8 ÷ 16 = 0.30",
+       "Ratio Fe : O = 0.20 : 0.30 = 2 : 3"
+      ],
+      "answer": "Fe₂O₃"
+     }
+    },
+    {
+     "heading": "Molecular formula",
+     "bullets": [
+      "Find Mr of the empirical formula",
+      "Divide the given Mr by that",
+      "Multiply all subscripts by the result"
+     ],
+     "note": "Examples: empirical CH₂, Mr 56; mass of CH₂ is 14; 56 ÷ 14 = 4; molecular formula C₄H₈. Percentage composition works the same way: 85.7% C and 14.3% H gives 7.14 : 14.3 = 1 : 2, so CH₂.",
+     "table": {
+      "head": [
+       "Empirical formula",
+       "Mr of compound",
+       "Mass of empirical unit",
+       "Molecular formula"
+      ],
+      "rows": [
+       [
+        "CH₂",
+        "56",
+        "14",
+        "C₄H₈"
+       ],
+       [
+        "CH₂O",
+        "180",
+        "30",
+        "C₆H₁₂O₆"
+       ],
+       [
+        "CH",
+        "78",
+        "13",
+        "C₆H₆"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Practical: formula of a metal oxide",
+     "bullets": [
+      "Heat magnesium in a crucible with a lid",
+      "Weigh before and after",
+      "Mass gained is oxygen"
+     ],
+     "note": "Method: weigh empty crucible and lid; add 10 cm magnesium ribbon (coiled), weigh; heat strongly, lifting the lid briefly to let air in without letting smoke escape; cool, reweigh until constant mass. Example: Mg 0.24 g gives MgO 0.40 g, so O 0.16 g; ratio 0.01 : 0.01 gives MgO. Errors: loss of white smoke makes oxygen mass too low; incomplete burning. Safety: goggles, do not look at the bright light, use tongs. Reduction of copper(II) oxide in hydrogen is an alternative route.",
+     "misconception": {
+      "wrong": "The empirical formula tells you how many atoms are in one molecule.",
+      "right": "It is only the simplest ratio. The molecular formula gives the actual number of atoms in a molecule."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: using the mass ratio 6 : 1 without dividing by Ar gives C₆H.",
+     "check": {
+      "q": "A compound contains 6.0 g carbon and 1.0 g hydrogen. What is its empirical formula? (Ar: C 12, H 1)",
+      "options": [
+       "CH",
+       "CH₂",
+       "C₆H",
+       "CH₄"
+      ],
+      "answer": 1,
+      "why": "C: 6 ÷ 12 = 0.5 mol; H: 1 ÷ 1 = 1.0 mol. Ratio 1:2, giving CH₂."
+     }
+    }
+   ],
+   "practice": [
+    "A reaction should give 8.0 g of product and gives 6.4 g. Calculate the percentage yield.",
+    "Calculate the empirical formula of a compound with 3.2 g Cu and 0.8 g O. (Ar Cu 63.5, O 16)",
+    "State two reasons for a yield below 100%."
+   ],
+   "independent": [
+    "Core: Find the empirical formula of a compound of 40.0% Ca, 12.0% C and 48.0% O. (Ar: Ca 40, C 12, O 16)",
+    "Extend: A hydrocarbon has empirical formula CH and Mr 78. Find its molecular formula. [3 marks]",
+    "Stretch: In the magnesium experiment, some white smoke escapes. Explain how this alters the calculated formula. [3 marks]"
+   ],
+   "exit": [
+    "Define empirical formula. [1 mark]",
+    "Return to the big question: how did a mass measurement tell us a formula?"
+   ],
+   "homework": "Three empirical formula questions plus one percentage yield question.",
+   "send": "SEND/EAL: four-column table scaffold. Stretch: link yield to cost in the Haber process."
+  },
+  {
+   "unit": "Chemistry 1: Principles of chemistry",
+   "n": 18,
+   "title": "Concentration and molar gas volume",
+   "duration": 50,
+   "bigQuestion": "How strong is a solution, and how much gas does a reaction make?",
+   "objectives": [
+    "Calculate concentration in g/dm³ and mol/dm³",
+    "Convert between cm³ and dm³",
+    "Use the molar gas volume of 24 dm³ at room temperature and pressure"
+   ],
+   "successCriteria": [
+    "All: convert units",
+    "Most: calculate concentration from mass and volume",
+    "Some: use gas volumes in reacting-mass problems"
+   ],
+   "crossCurricular": "Maths: units and conversions; Medicine: dosage",
+   "smsc": "Moral: accuracy in measuring; avoiding harm in preparing solutions",
+   "keywords": [
+    {
+     "term": "concentration",
+     "def": "amount of solute in a given volume of solution, e.g. mol/dm³"
+    },
+    {
+     "term": "molar gas volume",
+     "def": "24 dm³ per mole of any gas at room temperature and pressure"
+    },
+    {
+     "term": "dm³",
+     "def": "cubic decimetre, 1000 cm³"
+    },
+    {
+     "term": "excess",
+     "def": "more of a reactant than is needed"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the Mr of NaOH.",
+    "Convert 250 cm³ to dm³.",
+    "Calculate moles in 6.0 g of carbon (Ar 12)."
+   ],
+   "teach": [
+    {
+     "heading": "Concentration",
+     "bullets": [
+      "g/dm³ = mass ÷ volume in dm³",
+      "mol/dm³ = moles ÷ volume in dm³",
+      "Always convert cm³ to dm³: divide by 1000"
+     ],
+     "note": "Triangle on the board. Ask: why is cm³ not allowed? Because the units are per dm³. Common slip: using 250 instead of 0.250.",
+     "model": {
+      "problem": "4.0 g of sodium hydroxide is dissolved in water and made up to 250 cm³. Calculate the concentration in mol/dm³ and g/dm³. (Mr NaOH = 40)",
+      "steps": [
+       "Moles = 4.0 ÷ 40 = 0.10 mol",
+       "Volume = 250 ÷ 1000 = 0.250 dm³",
+       "mol/dm³ = 0.10 ÷ 0.250 = 0.40",
+       "g/dm³ = 4.0 ÷ 0.250 = 16"
+      ],
+      "answer": "0.40 mol/dm³ (16 g/dm³)"
+     }
+    },
+    {
+     "heading": "Moles from concentration",
+     "bullets": [
+      "moles = concentration × volume (dm³)",
+      "Rearrange for volume or concentration",
+      "Used heavily in titration"
+     ],
+     "note": "Worked: 25.0 cm³ of 2.0 mol/dm³ HCl contains 2.0 × 0.025 = 0.050 mol. A second check: 5.85 g NaCl (Mr 58.5) in 500 cm³ is 0.10 mol in 0.500 dm³, concentration 0.20 mol/dm³.",
+     "table": {
+      "head": [
+       "Quantity",
+       "Rearranged formula",
+       "Units"
+      ],
+      "rows": [
+       [
+        "moles",
+        "conc. × volume",
+        "mol"
+       ],
+       [
+        "concentration",
+        "moles ÷ volume",
+        "mol/dm³"
+       ],
+       [
+        "volume",
+        "moles ÷ concentration",
+        "dm³"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Molar gas volume",
+     "bullets": [
+      "1 mol of any gas occupies 24 dm³ at room temperature and pressure",
+      "volume (dm³) = moles × 24",
+      "24 dm³ = 24 000 cm³"
+     ],
+     "note": "Why the same volume for all gases? Gas particles are far apart, so volume depends on the number of particles, not their size. Worked: 1.2 g Mg with excess HCl. Mg + 2HCl → MgCl₂ + H₂. n(Mg) = 1.2 ÷ 24 = 0.050 mol; n(H₂) = 0.050; volume = 0.050 × 24 = 1.2 dm³ (1200 cm³). Check that a 100 cm³ syringe is too small.",
+     "model": {
+      "problem": "Calculate the volume of hydrogen at room temperature and pressure made when 1.2 g of magnesium reacts with excess hydrochloric acid.",
+      "steps": [
+       "n(Mg) = 1.2 ÷ 24 = 0.050 mol",
+       "Equation ratio Mg : H₂ = 1 : 1",
+       "n(H₂) = 0.050 mol",
+       "Volume = 0.050 × 24"
+      ],
+      "answer": "1.2 dm³ (1200 cm³)"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: forgetting to convert cm³ to dm³ (0.10 ÷ 500 gives 0.0002).",
+     "check": {
+      "q": "What is the concentration of a solution with 0.10 mol in 500 cm³?",
+      "options": [
+       "0.0002 mol/dm³",
+       "0.20 mol/dm³",
+       "0.050 mol/dm³",
+       "5.0 mol/dm³"
+      ],
+      "answer": 1,
+      "why": "Volume = 0.500 dm³ so concentration = 0.10 ÷ 0.500 = 0.20 mol/dm³."
+     }
+    }
+   ],
+   "practice": [
+    "Convert 75 cm³ to dm³ and 3.2 dm³ to cm³.",
+    "Calculate the moles of solute in 50 cm³ of 0.20 mol/dm³ solution.",
+    "Calculate the volume of 0.50 mol of carbon dioxide at room temperature and pressure."
+   ],
+   "independent": [
+    "Core: Calculate the concentration in g/dm³ of 5.0 g of NaCl in 250 cm³.",
+    "Extend: 5.0 g of CaCO₃ reacts with excess acid. CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. Calculate the volume of CO₂. [3 marks]",
+    "Stretch: 25.0 cm³ of 0.10 mol/dm³ sodium hydroxide fully reacts with hydrochloric acid of volume 20.0 cm³. Calculate the acid concentration (1:1 ratio)."
+   ],
+   "exit": [
+    "Write the formula for moles from concentration and volume. [1 mark]",
+    "Return to the big question: describe how you would make 250 cm³ of a 0.40 mol/dm³ sodium hydroxide solution."
+   ],
+   "homework": "Six concentration questions and two gas-volume questions.",
+   "send": "SEND/EAL: formula triangles and conversion arrows. Stretch: why does molar volume change with temperature?"
+  },
+  {
+   "unit": "Chemistry 1: Principles of chemistry",
+   "n": 19,
+   "title": "Ionic bonding",
+   "duration": 50,
+   "bigQuestion": "Why is salt a hard crystal that melts only at 801 °C?",
+   "objectives": [
+    "Predict ion charges from the Periodic Table and write ionic formulae",
+    "Draw dot-and-cross diagrams for ionic compounds",
+    "Explain the properties of ionic compounds"
+   ],
+   "successCriteria": [
+    "All: describe electron transfer",
+    "Most: write formulae and draw diagrams",
+    "Some: explain melting points and conductivity using charge and the lattice"
+   ],
+   "crossCurricular": "Physics: electrostatics; Geography: salt deposits",
+   "smsc": "Spiritual: order in matter; the discovery that simple rules explain many substances",
+   "keywords": [
+    {
+     "term": "ion",
+     "def": "charged particle formed by loss or gain of electrons"
+    },
+    {
+     "term": "ionic bond",
+     "def": "strong electrostatic attraction between oppositely charged ions"
+    },
+    {
+     "term": "lattice",
+     "def": "regular repeating arrangement of ions"
+    },
+    {
+     "term": "electrolyte",
+     "def": "ionic compound that conducts when molten or dissolved"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the electronic configuration of sodium (atomic number 11) and chlorine (17).",
+    "What is the charge on a proton and an electron?",
+    "Define a compound."
+   ],
+   "teach": [
+    {
+     "heading": "Electron transfer",
+     "bullets": [
+      "Metal atoms lose electrons to become positive ions",
+      "Non-metal atoms gain electrons to become negative ions",
+      "Full outer shell: noble-gas configuration"
+     ],
+     "note": "Na (2,8,1) → Na⁺ (2,8) by losing one electron; Cl (2,8,7) → Cl⁻ (2,8,8) by gaining one. Magnesium oxide: Mg (2,8,2) gives two electrons to O (2,6). Dot-and-cross diagrams show outer shells only, with brackets and charges. Practise drawing on the board.",
+     "table": {
+      "head": [
+       "Group",
+       "Typical ion",
+       "Examples"
+      ],
+      "rows": [
+       [
+        "1",
+        "+1",
+        "Li⁺, Na⁺, K⁺"
+       ],
+       [
+        "2",
+        "+2",
+        "Mg²⁺, Ca²⁺"
+       ],
+       [
+        "3",
+        "+3",
+        "Al³⁺"
+       ],
+       [
+        "6",
+        "−2",
+        "O²⁻, S²⁻"
+       ],
+       [
+        "7",
+        "−1",
+        "F⁻, Cl⁻, Br⁻"
+       ],
+       [
+        "Others",
+        "fixed",
+        "Zn²⁺, Ag⁺, NH₄⁺, OH⁻, NO₃⁻, CO₃²⁻, SO₄²⁻"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Writing formulae",
+     "bullets": [
+      "Balance the total positive and negative charge",
+      "Brackets around polyatomic ions when more than one",
+      "The compound has no overall charge"
+     ],
+     "note": "Show the criss-cross trick but insist on checking charges: Al³⁺ and O²⁻ need 2 Al (+6) and 3 O (−6), so Al₂O₃. Ca²⁺ and NO₃⁻ gives Ca(NO₃)₂. Cu²⁺ with SO₄²⁻ gives CuSO₄.",
+     "model": {
+      "problem": "Write the formula of aluminium oxide and of ammonium sulfate.",
+      "steps": [
+       "Al³⁺ and O²⁻: lowest common multiple of charge is 6",
+       "2 × (+3) = +6 and 3 × (−2) = −6, so Al₂O₃",
+       "NH₄⁺ and SO₄²⁻: need 2 NH₄⁺ for each SO₄²⁻",
+       "(NH₄)₂SO₄"
+      ],
+      "answer": "Al₂O₃ and (NH₄)₂SO₄"
+     }
+    },
+    {
+     "heading": "Properties and why",
+     "bullets": [
+      "High melting point: strong attractions in the giant lattice",
+      "Do not conduct when solid; ions fixed in place",
+      "Conduct when molten or dissolved: ions free to move"
+     ],
+     "note": "Data: sodium chloride melts at 801 °C and magnesium oxide at about 2850 °C. MgO ions have charges of 2+ and 2−, so stronger attractions need more energy to separate. Many ionic compounds dissolve in water.",
+     "table": {
+      "head": [
+       "Compound",
+       "Ions",
+       "Melting point (°C)"
+      ],
+      "rows": [
+       [
+        "Sodium chloride",
+        "Na⁺, Cl⁻",
+        "801"
+       ],
+       [
+        "Magnesium oxide",
+        "Mg²⁺, O²⁻",
+        "about 2850"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils say free electrons carry the current in molten NaCl. Ions carry charge in the liquid.",
+     "check": {
+      "q": "Why does molten sodium chloride conduct electricity?",
+      "options": [
+       "Free electrons move",
+       "Ions are free to move",
+       "Atoms are free to move",
+       "Molecules move"
+      ],
+      "answer": 1,
+      "why": "In the molten state the ions are free to move and carry charge. In the solid the ions are fixed in the lattice."
+     }
+    }
+   ],
+   "practice": [
+    "Describe what happens to the electrons when magnesium reacts with oxygen.",
+    "Write the formulae for calcium chloride and lithium oxide.",
+    "Why does solid sodium chloride not conduct?"
+   ],
+   "independent": [
+    "Core: Draw dot-and-cross diagrams (outer shells) for NaCl and MgO.",
+    "Extend: Explain why magnesium oxide has a much higher melting point than sodium chloride. [3 marks]",
+    "Stretch: Explain why ionic compounds are brittle when hit with a hammer. [2 marks]"
+   ],
+   "exit": [
+    "Give the formula of aluminium sulfate. [1 mark]",
+    "Return to the big question using the word lattice."
+   ],
+   "homework": "Draw and label a giant ionic lattice and write six formulae of ionic compounds.",
+   "send": "SEND/EAL: charge-balance cards. Stretch: how does lattice enthalpy relate to melting point?"
+  },
+  {
+   "unit": "Chemistry 1: Principles of chemistry",
+   "n": 20,
+   "title": "Covalent bonding and simple molecules",
+   "duration": 50,
+   "bigQuestion": "Why is methane a gas but sodium chloride a solid when both are 'compounds'?",
+   "objectives": [
+    "Describe a covalent bond as a shared pair of electrons",
+    "Draw dot-and-cross diagrams for simple molecules",
+    "Explain the properties of simple molecular substances"
+   ],
+   "successCriteria": [
+    "All: explain a covalent bond",
+    "Most: draw dot-and-cross diagrams for common molecules",
+    "Some: explain boiling point trends and conductivity"
+   ],
+   "crossCurricular": "Biology: molecules of life; Physics: forces",
+   "smsc": "Spiritual: wonder at the small scale of creation",
+   "keywords": [
+    {
+     "term": "covalent bond",
+     "def": "shared pair of electrons between two non-metal atoms"
+    },
+    {
+     "term": "molecule",
+     "def": "group of atoms joined by covalent bonds"
+    },
+    {
+     "term": "intermolecular force",
+     "def": "weak force between molecules"
+    },
+    {
+     "term": "simple molecular",
+     "def": "substance made of small molecules with weak forces between them"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the electronic configuration of carbon and oxygen.",
+    "Define an ionic bond.",
+    "State the formula of ammonia."
+   ],
+   "teach": [
+    {
+     "heading": "Sharing electrons",
+     "bullets": [
+      "Non-metal atoms share pairs to fill outer shells",
+      "Each shared pair is one covalent bond",
+      "Double bond: two shared pairs (O₂, CO₂)"
+     ],
+     "note": "Examples to draw: H₂, Cl₂, HCl, H₂O, NH₃, CH₄, O₂, N₂ (triple bond), CO₂. Count outer electrons first, then share. Unshared outer pairs are lone pairs.",
+     "table": {
+      "head": [
+       "Molecule",
+       "Bonds",
+       "Shared pairs"
+      ],
+      "rows": [
+       [
+        "H₂",
+        "H–H",
+        "1"
+       ],
+       [
+        "H₂O",
+        "2 × O–H",
+        "2"
+       ],
+       [
+        "NH₃",
+        "3 × N–H",
+        "3"
+       ],
+       [
+        "CH₄",
+        "4 × C–H",
+        "4"
+       ],
+       [
+        "O₂",
+        "O=O",
+        "2"
+       ],
+       [
+        "N₂",
+        "N≡N",
+        "3"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: draw ammonia",
+     "bullets": [
+      "Count outer electrons",
+      "Share to complete the shells",
+      "Show lone pairs"
+     ],
+     "note": "Talk through drawing three hydrogen electrons (crosses) shared with N (dots): N has five outer electrons, needs three more for eight; each H needs one to fill its shell of two.",
+     "model": {
+      "problem": "Draw (describe) a dot-and-cross diagram for ammonia, NH₃.",
+      "steps": [
+       "N has 5 outer electrons, H has 1 each",
+       "N shares one pair with each of three H atoms",
+       "Each H has 2 electrons, N has 3 shared pairs + 1 lone pair = 8",
+       "Total: 3 covalent bonds and one lone pair on N"
+      ],
+      "answer": "N with three shared pairs to H atoms and one lone pair"
+     }
+    },
+    {
+     "heading": "Properties of simple molecules",
+     "bullets": [
+      "Low melting and boiling points",
+      "Weak intermolecular forces broken, not covalent bonds",
+      "No charged particles, so no conduction"
+     ],
+     "note": "Trend: bigger molecules have stronger intermolecular forces, so higher boiling points. Data: CH₄ −162 °C, Cl₂ −34 °C, Br₂ 59 °C.",
+     "misconception": {
+      "wrong": "When ice melts or ethanol boils, covalent bonds inside the molecules break.",
+      "right": "Only the weak forces between molecules are overcome; the covalent bonds inside each molecule stay intact."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils recall 'strong bonds' and choose ionic or lattice explanations. Remember that it is the intermolecular forces that matter.",
+     "check": {
+      "q": "Which statement best explains the low boiling point of methane?",
+      "options": [
+       "It has strong ionic bonds",
+       "It has weak intermolecular forces",
+       "It has delocalised electrons",
+       "It has a giant lattice"
+      ],
+      "answer": 1,
+      "why": "Methane is a small molecule held by weak forces between molecules, so little energy is needed to separate them."
+     }
+    }
+   ],
+   "practice": [
+    "Draw dot-and-cross diagrams for HCl and Cl₂.",
+    "How many shared pairs are in a nitrogen molecule?",
+    "Why do covalent substances like methane not conduct?"
+   ],
+   "independent": [
+    "Core: Draw dot-and-cross diagrams for water and methane.",
+    "Extend: Draw CO₂ and explain why the carbon–oxygen bonds are double bonds. [3 marks]",
+    "Stretch: Explain why the boiling points rise from chlorine to bromine to iodine. [3 marks]"
+   ],
+   "exit": [
+    "Describe what a covalent bond is. [2 marks]",
+    "Return to the big question in two sentences."
+   ],
+   "homework": "Make a poster comparing ionic and covalent bonding with a worked example of each.",
+   "send": "SEND/EAL: pre-drawn outlines to add electrons. Stretch: how are coordinate (dative) bonds different?"
+  },
+  {
+   "unit": "Chemistry 1: Principles of chemistry",
+   "n": 21,
+   "title": "Giant covalent structures and metallic bonding",
+   "duration": 50,
+   "bigQuestion": "Why is diamond hard but pencil lead slippery when both are carbon?",
+   "objectives": [
+    "Describe the structures of diamond, graphite, silicon dioxide and C60",
+    "Explain properties from bonding and structure",
+    "Describe metallic bonding and explain properties of metals"
+   ],
+   "successCriteria": [
+    "All: name the structures and a use",
+    "Most: link structure to properties",
+    "Some: explain why graphite conducts and compare allotropes"
+   ],
+   "crossCurricular": "Engineering: materials; Art: pencils and jewellery",
+   "smsc": "Moral: responsible mining and use of materials",
+   "keywords": [
+    {
+     "term": "allotrope",
+     "def": "different structural forms of the same element"
+    },
+    {
+     "term": "giant covalent",
+     "def": "millions of atoms joined by covalent bonds in a lattice"
+    },
+    {
+     "term": "delocalised electron",
+     "def": "electron free to move through a structure"
+    },
+    {
+     "term": "metallic bond",
+     "def": "attraction between metal ions and delocalised electrons"
+    }
+   ],
+   "starter": [
+    "Bismillah. State two properties of simple molecular substances.",
+    "Name the group that carbon is in.",
+    "What is a covalent bond?"
+   ],
+   "teach": [
+    {
+     "heading": "Carbon allotropes",
+     "bullets": [
+      "Diamond: each C bonded to four others",
+      "Graphite: each C bonded to three, in layers",
+      "C60 fullerene: a hollow ball of 60 carbon atoms"
+     ],
+     "note": "Diamond: very hard, very high melting point, no conduction (no free electrons). Graphite: soft and slippery as layers slide (weak forces between layers), conducts because the fourth electron per atom is delocalised. C60 is a simple molecular substance, so it has weak forces between molecules and is soft.",
+     "table": {
+      "head": [
+       "Substance",
+       "Bonds per C",
+       "Hardness",
+       "Conducts?",
+       "Use"
+      ],
+      "rows": [
+       [
+        "Diamond",
+        "4",
+        "very hard",
+        "no",
+        "cutting tools"
+       ],
+       [
+        "Graphite",
+        "3",
+        "soft",
+        "yes",
+        "electrodes, pencils"
+       ],
+       [
+        "C60",
+        "3",
+        "soft",
+        "poorly",
+        "research, nanotechnology"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Silicon dioxide",
+     "bullets": [
+      "Giant lattice of Si and O",
+      "Each Si bonded to four O",
+      "Very high melting point, hard, does not conduct"
+     ],
+     "note": "Sand and quartz. Melting point about 1700 °C because many strong covalent bonds must be broken.",
+     "model": {
+      "problem": "Explain why graphite conducts electricity but diamond does not. [3 marks]",
+      "steps": [
+       "In graphite each carbon uses three of its four outer electrons for bonds",
+       "The fourth electron is delocalised and free to move",
+       "Delocalised electrons carry charge through the layers",
+       "In diamond all four electrons are used in bonds, so none are free"
+      ],
+      "answer": "Graphite has delocalised electrons; diamond does not."
+     }
+    },
+    {
+     "heading": "Metallic bonding",
+     "bullets": [
+      "Positive ions in a regular lattice",
+      "Sea of delocalised electrons",
+      "Strong attraction between ions and electrons"
+     ],
+     "note": "Properties: conduct electricity and heat because electrons move; malleable and ductile as layers of ions slide over each other while the electrons hold them together; high melting points. Alloys are harder because different-sized atoms disrupt the layers.",
+     "compare": {
+      "left": {
+       "title": "Metals",
+       "points": [
+        "Conduct as solids",
+        "Malleable, ductile",
+        "High melting points"
+       ]
+      },
+      "right": {
+       "title": "Ionic compounds",
+       "points": [
+        "Conduct only when molten or dissolved",
+        "Brittle",
+        "High melting points"
+       ]
+      },
+      "label": "compare"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils think C60 is giant covalent because it is made of carbon only.",
+     "check": {
+      "q": "Which substance is made of small molecules with weak forces between them?",
+      "options": [
+       "Diamond",
+       "C60 fullerene",
+       "Silicon dioxide",
+       "Graphite"
+      ],
+      "answer": 1,
+      "why": "C60 is a simple molecular substance. The other three are giant covalent."
+     }
+    }
+   ],
+   "practice": [
+    "List the number of bonds per carbon atom in diamond and in graphite.",
+    "Explain why metals can be hammered into shape.",
+    "State one use of graphite and one of diamond."
+   ],
+   "independent": [
+    "Core: Make a table comparing diamond, graphite and silicon dioxide.",
+    "Extend: Explain why graphite is used as a lubricant. [2 marks]",
+    "Stretch: Compare the bonding and properties of copper and sodium chloride. [4 marks]"
+   ],
+   "exit": [
+    "Name the particles that move in a metal when it conducts. [1 mark]",
+    "Return to the big question: explain the difference between diamond and graphite."
+   ],
+   "homework": "Draw labelled diagrams of diamond, graphite and a metallic lattice.",
+   "send": "SEND/EAL: structure models with building bricks; word banks. Stretch: why do alloys resist corrosion differently?"
+  },
+  {
+   "unit": "Chemistry 1: Principles of chemistry",
+   "n": 22,
+   "title": "Electrolysis of molten and aqueous electrolytes",
+   "duration": 50,
+   "bigQuestion": "How does electricity pull a metal out of a liquid?",
+   "objectives": [
+    "Describe electrolysis and name the electrodes",
+    "Predict the products of molten and aqueous electrolytes",
+    "Write half-equations and identify oxidation and reduction"
+   ],
+   "successCriteria": [
+    "All: describe electrolysis and name the electrodes",
+    "Most: predict products and test the gases",
+    "Some: write half-equations and interpret oxidation and reduction"
+   ],
+   "crossCurricular": "Physics: electric current; Industry: extraction and plating",
+   "smsc": "Moral: using energy responsibly in industry",
+   "keywords": [
+    {
+     "term": "electrolysis",
+     "def": "breaking down an ionic compound using electricity"
+    },
+    {
+     "term": "anode",
+     "def": "positive electrode"
+    },
+    {
+     "term": "cathode",
+     "def": "negative electrode"
+    },
+    {
+     "term": "half-equation",
+     "def": "equation showing electron transfer at one electrode"
+    }
+   ],
+   "starter": [
+    "Bismillah. Why do molten ionic compounds conduct?",
+    "Write the formula of lead(II) bromide.",
+    "What is an ion?"
+   ],
+   "teach": [
+    {
+     "heading": "Electrolysis set-up",
+     "bullets": [
+      "Electrolyte is molten or dissolved ionic compound",
+      "Positive ions go to the cathode (negative)",
+      "Negative ions go to the anode (positive)"
+     ],
+     "note": "Use an inert electrode (graphite or platinum). Electrons flow in the wires; ions carry charge through the electrolyte. Molten lead(II) bromide: lead at the cathode, bromine at the anode (do this as a teacher demonstration in a fume cupboard only).",
+     "table": {
+      "head": [
+       "Electrolyte",
+       "Cathode product",
+       "Anode product"
+      ],
+      "rows": [
+       [
+        "Molten lead(II) bromide",
+        "lead",
+        "bromine"
+       ],
+       [
+        "Aqueous sodium chloride",
+        "hydrogen",
+        "chlorine"
+       ],
+       [
+        "Aqueous copper(II) sulfate",
+        "copper",
+        "oxygen"
+       ],
+       [
+        "Dilute sulfuric acid",
+        "hydrogen",
+        "oxygen"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Half-equations",
+     "bullets": [
+      "Cathode: reduction (gain of electrons)",
+      "Anode: oxidation (loss of electrons)",
+      "OIL RIG"
+     ],
+     "note": "At the cathode: Pb²⁺ + 2e⁻ → Pb; 2H⁺ + 2e⁻ → H₂; Cu²⁺ + 2e⁻ → Cu. At the anode: 2Br⁻ → Br₂ + 2e⁻; 2Cl⁻ → Cl₂ + 2e⁻; 4OH⁻ → 2H₂O + O₂ + 4e⁻. Gas tests: H₂ squeaky pop; O₂ relights glowing splint; Cl₂ bleaches damp litmus.",
+     "model": {
+      "problem": "Predict the products of electrolysing aqueous sodium chloride with inert electrodes. Explain. [4 marks]",
+      "steps": [
+       "Ions present: Na⁺, Cl⁻, H⁺, OH⁻",
+       "Cathode: hydrogen forms because sodium is more reactive than hydrogen",
+       "Anode: chloride is discharged to give chlorine (concentrated solution)",
+       "Sodium and hydroxide ions remain, forming sodium hydroxide solution"
+      ],
+      "answer": "Hydrogen at the cathode, chlorine at the anode, sodium hydroxide in solution"
+     }
+    },
+    {
+     "heading": "Rules for aqueous solutions",
+     "bullets": [
+      "Cathode: metal if less reactive than hydrogen, else hydrogen",
+      "Anode: halogen from halide ions, else oxygen",
+      "Practical: test gases and observe changes"
+     ],
+     "note": "Core practical: electrolyse copper(II) sulfate solution with graphite electrodes: copper deposited on the cathode, bubbles of oxygen at the anode, blue colour fades as Cu²⁺ is used. With copper electrodes the anode dissolves and the cathode grows (copper refining).",
+     "misconception": {
+      "wrong": "Electrons travel through the electrolyte to complete the circuit.",
+      "right": "Electrons travel through the wires. In the electrolyte the circuit is completed by moving ions."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer D. Trap: pupils say sodium forms at the cathode. Sodium is more reactive than hydrogen, so hydrogen is discharged.",
+     "check": {
+      "q": "What forms at the cathode when aqueous sodium chloride is electrolysed?",
+      "options": [
+       "Chlorine",
+       "Sodium",
+       "Oxygen",
+       "Hydrogen"
+      ],
+      "answer": 3,
+      "why": "Sodium is more reactive than hydrogen, so hydrogen ions are discharged at the cathode."
+     }
+    }
+   ],
+   "practice": [
+    "Name the electrode where positive ions go.",
+    "Write the half-equation for copper ions at the cathode.",
+    "How do you test for chlorine?"
+   ],
+   "independent": [
+    "Core: Draw and label the electrolysis of molten lead(II) bromide.",
+    "Extend: Predict the products from dilute sulfuric acid with inert electrodes and write the half-equations. [4 marks]",
+    "Stretch: A student electrolyses copper(II) sulfate with copper electrodes. Describe and explain what happens to the electrodes. [4 marks]"
+   ],
+   "exit": [
+    "Define oxidation and reduction in terms of electrons. [2 marks]",
+    "Return to the big question: explain how electricity pulls a metal from a liquid."
+   ],
+   "homework": "Make a summary table for four electrolytes and write the cathode half-equations.",
+   "send": "SEND/EAL: half-equation scaffolds. Stretch: how would you electroplate a spoon with silver?"
+  },
+  {
+   "unit": "Chemistry 2: Inorganic chemistry",
+   "n": 23,
+   "title": "Group 1: the alkali metals",
+   "duration": 50,
+   "bigQuestion": "Why is potassium kept under oil but gold can sit on a shelf for centuries?",
+   "objectives": [
+    "Describe the physical properties and trends of Group 1",
+    "Describe reactions with water and air and write equations",
+    "Explain the trend in reactivity using electron structure"
+   ],
+   "successCriteria": [
+    "All: describe the reactions of lithium, sodium and potassium with water",
+    "Most: write equations and predict rubidium and caesium",
+    "Some: explain the reactivity trend using atomic structure"
+   ],
+   "crossCurricular": "Physics: atomic size; Geography: alkali lakes",
+   "smsc": "Spiritual: respect for hazards; trust in careful method (ihsan in the laboratory)",
+   "keywords": [
+    {
+     "term": "alkali metal",
+     "def": "a Group 1 metal"
+    },
+    {
+     "term": "reactivity",
+     "def": "how readily a substance reacts"
+    },
+    {
+     "term": "shielding",
+     "def": "inner electron shells reduce the nuclear attraction felt by the outer electron"
+    },
+    {
+     "term": "hydroxide",
+     "def": "compound containing OH⁻ ions, alkaline in water"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the electronic configuration of sodium.",
+    "What is the test for hydrogen gas?",
+    "Write the formula of sodium hydroxide."
+   ],
+   "teach": [
+    {
+     "heading": "Group 1 reactions with water",
+     "bullets": [
+      "Metal floats, fizzes, moves and forms an alkaline solution",
+      "Lithium slow; sodium melts into a ball; potassium burns lilac",
+      "Hydrogen gas is made"
+     ],
+     "note": "Teacher demonstration behind a safety screen with small pieces (rice-grain size). Pupils record observations. Equation: 2Na + 2H₂O → 2NaOH + H₂. Universal indicator turns purple, pH 13 to 14. Never let pupils handle the metals.",
+     "table": {
+      "head": [
+       "Metal",
+       "Observations in water",
+       "Melting point (°C)"
+      ],
+      "rows": [
+       [
+        "Lithium",
+        "steady fizzing, floats, dissolves slowly",
+        "181"
+       ],
+       [
+        "Sodium",
+        "melts to a ball, fizzes quickly, moves",
+        "98"
+       ],
+       [
+        "Potassium",
+        "very fast, lilac flame, may spark",
+        "63"
+       ],
+       [
+        "Rubidium",
+        "predicted: explosive",
+        "39"
+       ],
+       [
+        "Caesium",
+        "predicted: more explosive",
+        "28"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Trends in the group",
+     "bullets": [
+      "Softer and lower melting point down the group",
+      "More reactive down the group",
+      "Reaction with air: tarnish to oxide, stored under oil"
+     ],
+     "note": "Ask pupils to extrapolate: predict the melting point of rubidium between 63 and 28 (about 39 in reality). Show: 4Na + O₂ → 2Na₂O. Group 1 compounds are white or colourless and dissolve in water.",
+     "model": {
+      "problem": "Predict how rubidium reacts with water and write the equation.",
+      "steps": [
+       "Rubidium is below potassium, so more reactive",
+       "Reaction is more violent than potassium, with a flame or explosion",
+       "Products: rubidium hydroxide solution and hydrogen",
+       "2Rb + 2H₂O → 2RbOH + H₂"
+      ],
+      "answer": "2Rb + 2H₂O → 2RbOH + H₂; more violent than potassium"
+     }
+    },
+    {
+     "heading": "Why reactivity increases",
+     "bullets": [
+      "Group 1 atoms lose one outer electron",
+      "Larger atoms: outer electron is further from the nucleus",
+      "More shielding, weaker attraction, easier to lose"
+     ],
+     "note": "This is the Chemistry-only electron explanation. Compare Li (2,1) with K (2,8,8,1). Pupils often say larger atoms have 'more electrons so more reactive'; the key idea is distance and shielding.",
+     "misconception": {
+      "wrong": "Potassium is more reactive because it has more electrons in its outer shell.",
+      "right": "All Group 1 atoms have one outer electron. Potassium's is further from the nucleus and more shielded, so it is lost more easily."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: 'more electrons' or 'more protons' without distance and shielding.",
+     "check": {
+      "q": "Which statement best explains why caesium is more reactive than sodium?",
+      "options": [
+       "Caesium has more outer electrons",
+       "Caesium's outer electron is further from the nucleus and more shielded",
+       "Caesium has fewer protons",
+       "Caesium atoms are smaller"
+      ],
+      "answer": 1,
+      "why": "A bigger atom with more shielding holds its single outer electron less tightly, so it is lost more easily."
+     }
+    }
+   ],
+   "practice": [
+    "Write the equation for lithium reacting with water.",
+    "Why are Group 1 metals stored under oil?",
+    "What colour does universal indicator turn in the solution?"
+   ],
+   "independent": [
+    "Core: Make a table of the reactions of Li, Na and K with water.",
+    "Extend: Predict and justify the melting point and reactivity of francium relative to caesium. [3 marks]",
+    "Stretch: Explain why the reaction of potassium with water produces a flame, referring to energy and hydrogen. [3 marks]"
+   ],
+   "exit": [
+    "State two trends going down Group 1. [2 marks]",
+    "Return to the big question: what does storage under oil tell us about the metal?"
+   ],
+   "homework": "Write a risk assessment for the sodium and water demonstration.",
+   "send": "SEND/EAL: video of the reactions with sentence frames. Stretch: explain flame colours."
+  },
+  {
+   "unit": "Chemistry 2: Inorganic chemistry",
+   "n": 24,
+   "title": "Group 7: the halogens and displacement reactions",
+   "duration": 50,
+   "bigQuestion": "Why can one halogen push another out of its compound?",
+   "objectives": [
+    "Describe colour, state and trends of the halogens",
+    "Explain the trend in reactivity",
+    "Predict displacement reactions and write ionic equations"
+   ],
+   "successCriteria": [
+    "All: describe the colours and states",
+    "Most: predict displacement reactions",
+    "Some: write ionic equations and explain oxidation and reduction"
+   ],
+   "crossCurricular": "Health: disinfection of water; Industry: bleach",
+   "smsc": "Moral: safe use of chemicals; protecting water supplies (public health)",
+   "keywords": [
+    {
+     "term": "halogen",
+     "def": "Group 7 element"
+    },
+    {
+     "term": "displacement reaction",
+     "def": "a more reactive element takes the place of a less reactive one in a compound"
+    },
+    {
+     "term": "diatomic",
+     "def": "made of molecules with two atoms, e.g. Cl₂"
+    },
+    {
+     "term": "halide",
+     "def": "compound containing a halogen ion, e.g. Br⁻"
+    }
+   ],
+   "starter": [
+    "Bismillah. What type of bonding is in a chlorine molecule?",
+    "Write the charge on a chloride ion.",
+    "Define oxidation as loss of electrons."
+   ],
+   "teach": [
+    {
+     "heading": "Properties of the halogens",
+     "bullets": [
+      "Diatomic non-metals",
+      "Melting and boiling points increase down the group",
+      "Colour gets darker down the group"
+     ],
+     "note": "At room temperature: chlorine is a green gas, bromine a red-brown liquid, iodine a grey-black solid (purple vapour). Fluorine is a pale yellow gas, astatine a black solid (predicted). Chlorine and bromine are toxic; use only in a fume cupboard. Dissolved hydrogen halides such as HCl form acidic solutions.",
+     "table": {
+      "head": [
+       "Halogen",
+       "Colour",
+       "State at room temperature",
+       "Boiling point (°C)"
+      ],
+      "rows": [
+       [
+        "Fluorine",
+        "pale yellow",
+        "gas",
+        "−188"
+       ],
+       [
+        "Chlorine",
+        "pale green",
+        "gas",
+        "−34"
+       ],
+       [
+        "Bromine",
+        "red-brown",
+        "liquid",
+        "59"
+       ],
+       [
+        "Iodine",
+        "grey-black",
+        "solid",
+        "184"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Displacement reactions",
+     "bullets": [
+      "A more reactive halogen displaces a less reactive halide",
+      "Reactivity decreases down the group",
+      "Colour changes show what is formed"
+     ],
+     "note": "Practical: add chlorine water to potassium bromide and potassium iodide solutions (use dilute solutions and test tubes in a rack, teacher dispenses chlorine water). Results: bromide turns orange; iodide turns brown. Add bromine water to potassium iodide: brown. Reverse reactions do not happen.",
+     "table": {
+      "head": [
+       "Mixture",
+       "Result",
+       "Reason"
+      ],
+      "rows": [
+       [
+        "Cl₂(aq) + KBr(aq)",
+        "orange solution",
+        "Cl₂ displaces bromine"
+       ],
+       [
+        "Cl₂(aq) + KI(aq)",
+        "brown solution",
+        "Cl₂ displaces iodine"
+       ],
+       [
+        "Br₂(aq) + KI(aq)",
+        "brown solution",
+        "Br₂ displaces iodine"
+       ],
+       [
+        "I₂(aq) + KBr(aq)",
+        "no reaction",
+        "iodine less reactive than bromine"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: ionic equation",
+     "bullets": [
+      "Write the full equation",
+      "Cancel spectator ions",
+      "Label oxidation and reduction"
+     ],
+     "note": "Spectator ions (K⁺) appear on both sides. Chlorine gains electrons, so it is reduced; bromide ions lose electrons, so they are oxidised. Use OIL RIG.",
+     "model": {
+      "problem": "Chlorine is added to potassium bromide solution. Write the full and ionic equations.",
+      "steps": [
+       "Full: Cl₂ + 2KBr → 2KCl + Br₂",
+       "Write ions: Cl₂ + 2K⁺ + 2Br⁻ → 2K⁺ + 2Cl⁻ + Br₂",
+       "Cancel K⁺ on both sides",
+       "Ionic: Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂"
+      ],
+      "answer": "Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂; chlorine is reduced and bromide is oxidised"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer D. Trap: pupils think any halogen displaces any halide; only a more reactive halogen can displace.",
+     "check": {
+      "q": "Which mixture produces a reaction?",
+      "options": [
+       "Iodine + potassium chloride",
+       "Bromine + potassium chloride",
+       "Iodine + potassium bromide",
+       "Chlorine + potassium iodide"
+      ],
+      "answer": 3,
+      "why": "Chlorine is more reactive than iodine, so it displaces it. In the other mixtures the added halogen is less reactive than the halide present."
+     }
+    }
+   ],
+   "practice": [
+    "State the colour and state of bromine at room temperature.",
+    "Predict whether bromine displaces chlorine from sodium chloride. Explain.",
+    "Write the ionic equation for chlorine and potassium iodide."
+   ],
+   "independent": [
+    "Core: Complete a table of the displacement results for chlorine, bromine and iodine.",
+    "Extend: Predict the properties of astatine and whether it displaces iodine from potassium iodide. [3 marks]",
+    "Stretch: Explain why reactivity falls down Group 7 but rises down Group 1. [4 marks]"
+   ],
+   "exit": [
+    "State the trend in boiling point down Group 7. [1 mark]",
+    "Return to the big question using the term more reactive."
+   ],
+   "homework": "Create a flow chart to predict displacement results.",
+   "send": "SEND/EAL: colour swatches for observations. Stretch: explain reactivity of halogens in terms of electron capture."
+  },
+  {
+   "unit": "Chemistry 2: Inorganic chemistry",
+   "n": 25,
+   "title": "Gases in air, carbonates and carbon dioxide",
+   "duration": 50,
+   "bigQuestion": "What is air made of, and what happens when its carbon dioxide rises?",
+   "objectives": [
+    "State the percentage composition of dry air",
+    "Describe how to find the percentage of oxygen in air",
+    "Describe thermal decomposition of metal carbonates and the greenhouse effect"
+   ],
+   "successCriteria": [
+    "All: state the composition of air",
+    "Most: calculate the percentage of oxygen from data",
+    "Some: explain the greenhouse effect and decomposition of carbonates"
+   ],
+   "crossCurricular": "Geography: climate; Biology: photosynthesis",
+   "smsc": "Stewardship (khilafah): responsibility for the atmosphere we share",
+   "keywords": [
+    {
+     "term": "thermal decomposition",
+     "def": "breakdown of a compound by heating"
+    },
+    {
+     "term": "greenhouse gas",
+     "def": "gas that absorbs infrared radiation and warms the atmosphere"
+    },
+    {
+     "term": "limewater",
+     "def": "calcium hydroxide solution used to test for CO₂"
+    },
+    {
+     "term": "percentage composition",
+     "def": "proportion of each gas in a mixture"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the word equation for photosynthesis.",
+    "What is the test for carbon dioxide?",
+    "Name a fossil fuel."
+   ],
+   "teach": [
+    {
+     "heading": "Composition of dry air",
+     "bullets": [
+      "Nitrogen about 78%",
+      "Oxygen about 21%",
+      "Argon about 0.9%, carbon dioxide about 0.04%"
+     ],
+     "note": "Air is a mixture, so gases are not chemically combined. Water vapour is variable and is left out in dry air. Ask: which gas supports combustion? (oxygen) Which is unreactive? (nitrogen, argon).",
+     "table": {
+      "head": [
+       "Gas",
+       "Percentage by volume"
+      ],
+      "rows": [
+       [
+        "Nitrogen",
+        "78"
+       ],
+       [
+        "Oxygen",
+        "21"
+       ],
+       [
+        "Argon",
+        "0.9"
+       ],
+       [
+        "Carbon dioxide",
+        "0.04"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Finding the oxygen content",
+     "bullets": [
+      "Heat excess copper in a fixed volume of air",
+      "Copper reacts with the oxygen: 2Cu + O₂ → 2CuO",
+      "Measure the fall in gas volume"
+     ],
+     "note": "Two gas syringes joined by a tube of hot copper turnings. Push the gas back and forth until the volume is constant, cool to room temperature, and read the final volume. Alternative: iron wool in a measuring cylinder over water.",
+     "model": {
+      "problem": "80 cm³ of air is passed over hot copper until the volume is constant at 63 cm³. Calculate the percentage of oxygen.",
+      "steps": [
+       "Volume of oxygen used = 80 − 63 = 17 cm³",
+       "Percentage = 17 ÷ 80 × 100",
+       "= 21.25%",
+       "Approximately 21%"
+      ],
+      "answer": "About 21%"
+     }
+    },
+    {
+     "heading": "Metal carbonates and carbon dioxide",
+     "bullets": [
+      "Copper(II) carbonate: green to black on heating",
+      "CuCO₃ → CuO + CO₂",
+      "Test for CO₂: limewater turns milky"
+     ],
+     "note": "Practical: heat copper(II) carbonate in a boiling tube with a delivery tube into limewater. Ask what the colour change tells us. Group 1 carbonates (except lithium) do not decompose at Bunsen temperatures.",
+     "cycle": [
+      "Heat the carbonate",
+      "Carbon dioxide gas is released",
+      "Gas bubbles into limewater",
+      "Limewater turns milky",
+      "A metal oxide remains"
+     ]
+    },
+    {
+     "heading": "Greenhouse effect",
+     "bullets": [
+      "CO₂ and methane absorb infrared radiation from Earth",
+      "Some is re-emitted back to Earth, warming the atmosphere",
+      "CO₂ was about 280 ppm before industry and is above 420 ppm today"
+     ],
+     "note": "Be accurate and neutral: the greenhouse effect is natural and keeps Earth habitable. The enhanced effect arises from the increased amounts of greenhouse gases. Sources: burning fossil fuels, deforestation. Sinks: photosynthesis, oceans.",
+     "misconception": {
+      "wrong": "The greenhouse effect is the same thing as the hole in the ozone layer.",
+      "right": "They are separate: the greenhouse effect involves infrared radiation absorbed by gases such as CO₂ and methane."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: a green-to-black colour change alone does not identify the gas; the limewater test does.",
+     "check": {
+      "q": "Which observation shows carbon dioxide is released when copper(II) carbonate is heated?",
+      "options": [
+       "The solid turns from green to black",
+       "Limewater turns milky",
+       "A gas bubbles through the liquid",
+       "The tube gets hot"
+      ],
+      "answer": 1,
+      "why": "The limewater test is specific to carbon dioxide. A colour change shows a new substance formed but not which gas."
+     }
+    }
+   ],
+   "practice": [
+    "State the percentage of nitrogen and of argon in air.",
+    "Write the equation for the thermal decomposition of calcium carbonate.",
+    "Name two sources of carbon dioxide."
+   ],
+   "independent": [
+    "Core: In an experiment 100 cm³ of air falls to 79 cm³. Calculate the percentage of oxygen.",
+    "Extend: Explain why the apparatus must be cooled before the final volume is read. [2 marks]",
+    "Stretch: Explain how the greenhouse effect warms the Earth. [4 marks]"
+   ],
+   "exit": [
+    "Give the test and positive result for carbon dioxide. [2 marks]",
+    "Return to the big question: describe both the composition of air and the effect of CO₂."
+   ],
+   "homework": "Draw a pie chart of the composition of air and write three sentences on the greenhouse effect.",
+   "send": "SEND/EAL: test and result cards. Stretch: why is argon used in lamps?"
+  },
+  {
+   "unit": "Chemistry 2: Inorganic chemistry",
+   "n": 26,
+   "title": "The reactivity series, rusting and redox",
+   "duration": 50,
+   "bigQuestion": "Why does iron rust but gold stay shiny, and how can zinc save a ship?",
+   "objectives": [
+    "Order metals by reactivity from reactions with water, acid and displacement",
+    "Describe rusting and rust prevention",
+    "Define oxidation and reduction in terms of electrons and oxygen"
+   ],
+   "successCriteria": [
+    "All: recall the reactivity order",
+    "Most: predict displacement and describe rusting",
+    "Some: write ionic equations and identify oxidising and reducing agents"
+   ],
+   "crossCurricular": "Engineering: corrosion; History: iron and bronze ages",
+   "smsc": "Stewardship: making things last reduces waste",
+   "keywords": [
+    {
+     "term": "reactivity series",
+     "def": "list of metals in order of reactivity"
+    },
+    {
+     "term": "displacement",
+     "def": "more reactive metal takes the place of a less reactive metal in a compound"
+    },
+    {
+     "term": "oxidation",
+     "def": "loss of electrons (or gain of oxygen)"
+    },
+    {
+     "term": "sacrificial protection",
+     "def": "protecting iron by attaching a more reactive metal that corrodes instead"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name two metals that react with cold water.",
+    "Write the equation for magnesium burning in oxygen.",
+    "What does 'ion' mean?"
+   ],
+   "teach": [
+    {
+     "heading": "Ordering metals",
+     "bullets": [
+      "Observe reactions with water and dilute acid",
+      "Displacement shows relative reactivity",
+      "Order: K, Na, Ca, Mg, Al, (C), Zn, Fe, (H), Cu, Ag, Au"
+     ],
+     "note": "Practical: add small pieces of Mg, Zn, Fe and Cu to dilute hydrochloric acid and record the bubbling rate. Magnesium is most vigorous, zinc moderate, iron slow, copper no reaction. Gold is found as the element. Reactivity series teaches 'who wins' in displacement.",
+     "table": {
+      "head": [
+       "Metal",
+       "Dilute HCl",
+       "Reactivity"
+      ],
+      "rows": [
+       [
+        "Magnesium",
+        "vigorous bubbling",
+        "high"
+       ],
+       [
+        "Zinc",
+        "steady bubbling",
+        "medium"
+       ],
+       [
+        "Iron",
+        "very slow bubbling",
+        "low"
+       ],
+       [
+        "Copper",
+        "no reaction",
+        "very low"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Displacement and redox",
+     "bullets": [
+      "Mg + CuSO₄ → MgSO₄ + Cu",
+      "Ionic: Mg + Cu²⁺ → Mg²⁺ + Cu",
+      "Mg loses electrons (oxidised); Cu²⁺ gains (reduced)"
+     ],
+     "note": "Observations: blue colour fades, brown copper solid, temperature rises. A reaction with both oxidation and reduction is a redox reaction. Oxidising agent gains electrons (Cu²⁺); reducing agent loses electrons (Mg).",
+     "model": {
+      "problem": "Zinc is added to copper(II) sulfate solution. Write the ionic equation and identify what is oxidised.",
+      "steps": [
+       "Zinc is more reactive than copper so it displaces it",
+       "Zn + Cu²⁺ → Zn²⁺ + Cu",
+       "Zn → Zn²⁺ + 2e⁻: zinc loses electrons",
+       "Zinc is oxidised; Cu²⁺ is reduced"
+      ],
+      "answer": "Zn + Cu²⁺ → Zn²⁺ + Cu; zinc is oxidised"
+     }
+    },
+    {
+     "heading": "Rusting and prevention",
+     "bullets": [
+      "Iron + oxygen + water → hydrated iron(III) oxide",
+      "Both air and water are needed",
+      "Salt speeds up rusting"
+     ],
+     "note": "Experiment: nails in four tubes: dry (calcium chloride), boiled water with oil, air and water, salt water. Only the last two rust, and salt water rusts fastest. Prevention: barrier (paint, oil, plastic), galvanising (zinc coat), sacrificial protection (magnesium or zinc blocks on ship hulls). Tin plating protects only while unscratched; zinc continues to protect even when scratched.",
+     "table": {
+      "head": [
+       "Method",
+       "How it works",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Painting or oiling",
+        "barrier to air and water",
+        "car body, chains"
+       ],
+       [
+        "Galvanising",
+        "zinc coat; zinc also sacrificial",
+        "dustbins, fences"
+       ],
+       [
+        "Sacrificial anodes",
+        "more reactive metal corrodes first",
+        "ship hulls, pipelines"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils confuse sacrificial protection with a barrier layer.",
+     "check": {
+      "q": "Why is a block of magnesium bolted to a steel ship hull?",
+      "options": [
+       "It makes a waterproof layer",
+       "It is more reactive than iron so it corrodes instead",
+       "It is less reactive than iron",
+       "It makes the steel heavier"
+      ],
+      "answer": 1,
+      "why": "Magnesium is more reactive than iron, so it loses electrons and corrodes first, protecting the iron."
+     }
+    }
+   ],
+   "practice": [
+    "List four metals in order of reactivity.",
+    "Write the word equation for rusting.",
+    "Predict whether copper displaces zinc from zinc sulfate."
+   ],
+   "independent": [
+    "Core: Complete a table of predicted displacement results for Mg, Zn, Fe and Cu with their sulfates.",
+    "Extend: Write ionic equations for iron with copper sulfate and label oxidation and reduction. [3 marks]",
+    "Stretch: Explain why zinc coating still protects scratched iron but tin does not. [3 marks]"
+   ],
+   "exit": [
+    "Define oxidation in terms of electrons. [1 mark]",
+    "Return to the big question: explain sacrificial protection."
+   ],
+   "homework": "Revise the series and design a poster on rust prevention.",
+   "send": "SEND/EAL: colour-coded series with a mnemonic. Stretch: why does aluminium resist corrosion despite being reactive?"
+  },
+  {
+   "unit": "Chemistry 2: Inorganic chemistry",
+   "n": 27,
+   "title": "Extracting metals, uses and alloys",
+   "duration": 50,
+   "bigQuestion": "Why was iron used for thousands of years before aluminium became common?",
+   "objectives": [
+    "Link the method of extraction to the position in the reactivity series",
+    "Describe the extraction of iron and aluminium",
+    "State uses of metals and alloys and explain alloy properties"
+   ],
+   "successCriteria": [
+    "All: link method to reactivity",
+    "Most: describe the blast furnace and electrolysis of aluminium oxide",
+    "Some: explain alloy hardness and evaluate recycling"
+   ],
+   "crossCurricular": "Engineering: materials; Economics: energy costs",
+   "smsc": "Stewardship: recycling metals and avoiding waste",
+   "keywords": [
+    {
+     "term": "ore",
+     "def": "rock containing enough metal to be extracted profitably"
+    },
+    {
+     "term": "reduction",
+     "def": "loss of oxygen (or gain of electrons)"
+    },
+    {
+     "term": "alloy",
+     "def": "mixture of a metal with other elements"
+    },
+    {
+     "term": "cryolite",
+     "def": "compound used to lower the melting point of aluminium oxide"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the order of reactivity of Mg, Fe, Cu and C.",
+    "What is the cathode?",
+    "Define oxidation and reduction."
+   ],
+   "teach": [
+    {
+     "heading": "Method follows reactivity",
+     "bullets": [
+      "Unreactive metals: found native or heated",
+      "Metals less reactive than carbon: reduce with carbon",
+      "Metals more reactive than carbon: electrolysis"
+     ],
+     "note": "Remind pupils of the series. Gold is found uncombined; iron oxide is reduced by carbon; aluminium oxide needs electrolysis because aluminium holds oxygen more strongly than carbon does.",
+     "table": {
+      "head": [
+       "Metal",
+       "Position",
+       "Method"
+      ],
+      "rows": [
+       [
+        "Gold",
+        "very low",
+        "found as the element"
+       ],
+       [
+        "Iron, zinc",
+        "below carbon",
+        "reduction with carbon"
+       ],
+       [
+        "Aluminium",
+        "above carbon",
+        "electrolysis"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The blast furnace",
+     "bullets": [
+      "Carbon burns to make heat and carbon monoxide",
+      "Carbon monoxide reduces iron(III) oxide",
+      "Limestone removes sand as slag"
+     ],
+     "note": "Equations: C + O₂ → CO₂; CO₂ + C → 2CO; Fe₂O₃ + 3CO → 2Fe + 3CO₂; CaCO₃ → CaO + CO₂; CaO + SiO₂ → CaSiO₃ (slag). Molten iron sinks, slag floats on top.",
+     "model": {
+      "problem": "Fe₂O₃ + 3CO → 2Fe + 3CO₂. State what is reduced and what is oxidised.",
+      "steps": [
+       "Iron(III) oxide loses oxygen, so it is reduced",
+       "Carbon monoxide gains oxygen to form CO₂, so it is oxidised",
+       "CO is the reducing agent",
+       "Result: molten iron"
+      ],
+      "answer": "Fe₂O₃ is reduced; CO is oxidised"
+     }
+    },
+    {
+     "heading": "Aluminium by electrolysis",
+     "bullets": [
+      "Bauxite purified to aluminium oxide",
+      "Dissolved in molten cryolite at about 950 °C",
+      "Cathode: Al³⁺ + 3e⁻ → Al",
+      "Anode: 2O²⁻ → O₂ + 4e⁻"
+     ],
+     "note": "Cryolite lowers the temperature from about 2000 °C, saving energy. The oxygen reacts with the hot carbon anodes to make CO₂, so the anodes burn away and must be replaced. Recycling aluminium uses about 5% of the energy of making new metal.",
+     "compare": {
+      "left": {
+       "title": "Pure metals",
+       "points": [
+        "Soft, easily bent",
+        "Layers of identical ions slide",
+        "Copper wire; aluminium foil"
+       ]
+      },
+      "right": {
+       "title": "Alloys",
+       "points": [
+        "Harder and stronger",
+        "Different-sized atoms stop layers sliding",
+        "Brass (Cu + Zn); steel (Fe + C); stainless steel"
+       ]
+      },
+      "label": "compare"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer D. Trap: pupils say zinc needs electrolysis because it is reactive; it is below carbon so carbon works.",
+     "check": {
+      "q": "Which metal is extracted from its oxide by electrolysis?",
+      "options": [
+       "Iron",
+       "Zinc",
+       "Copper",
+       "Aluminium"
+      ],
+      "answer": 3,
+      "why": "Aluminium is more reactive than carbon. Iron, zinc and copper can be reduced using carbon."
+     }
+    }
+   ],
+   "practice": [
+    "Why is cryolite used in the extraction of aluminium?",
+    "Explain why aluminium cannot be extracted by heating with carbon.",
+    "Give one use of brass and one of stainless steel."
+   ],
+   "independent": [
+    "Core: Draw a flow chart for extracting iron in the blast furnace.",
+    "Extend: Explain why carbon anodes need replacing in aluminium extraction. [2 marks]",
+    "Stretch: Evaluate the claim that recycling aluminium is always better than extracting it. [4 marks]"
+   ],
+   "exit": [
+    "Name the method used for a metal above carbon in the reactivity series. [1 mark]",
+    "Return to the big question: explain the order of discovery."
+   ],
+   "homework": "Revision card: methods of extraction for iron, aluminium and gold.",
+   "send": "SEND/EAL: labelled blast-furnace diagram. Stretch: why does steel contain carbon?"
+  },
+  {
+   "unit": "Chemistry 2: Inorganic chemistry",
+   "n": 28,
+   "title": "Acids, alkalis, pH, indicators and titration",
+   "duration": 50,
+   "bigQuestion": "How can you measure exactly how much acid is needed to neutralise an alkali?",
+   "objectives": [
+    "Describe the pH scale and common indicators",
+    "Write the neutralisation reaction as H⁺ + OH⁻ → H₂O",
+    "Describe a titration and calculate an unknown concentration"
+   ],
+   "successCriteria": [
+    "All: use the pH scale and indicators",
+    "Most: describe titration",
+    "Some: calculate concentration from titration results"
+   ],
+   "crossCurricular": "Biology: pH and enzymes; Home: antacids",
+   "smsc": "Moral: precision and honesty in results",
+   "keywords": [
+    {
+     "term": "alkali",
+     "def": "soluble base that forms OH⁻ ions in water"
+    },
+    {
+     "term": "pH",
+     "def": "scale of 0 to 14 measuring acidity"
+    },
+    {
+     "term": "neutralisation",
+     "def": "reaction of an acid with a base to form a salt and water"
+    },
+    {
+     "term": "titre",
+     "def": "volume of solution added from a burette"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the acid in the stomach.",
+    "Write the formula for hydrochloric acid.",
+    "Convert 21.4 cm³ to dm³."
+   ],
+   "teach": [
+    {
+     "heading": "pH and indicators",
+     "bullets": [
+      "pH below 7 acid, 7 neutral, above 7 alkaline",
+      "Universal indicator gives a range of colours",
+      "Litmus, methyl orange, phenolphthalein show end points"
+     ],
+     "note": "Colour table below. Universal indicator: red (strong acid) to violet (strong alkali). An acid produces H⁺ ions in water; an alkali produces OH⁻ ions.",
+     "table": {
+      "head": [
+       "Indicator",
+       "In acid",
+       "In alkali"
+      ],
+      "rows": [
+       [
+        "Litmus",
+        "red",
+        "blue"
+       ],
+       [
+        "Methyl orange",
+        "red",
+        "yellow"
+       ],
+       [
+        "Phenolphthalein",
+        "colourless",
+        "pink"
+       ],
+       [
+        "Universal indicator",
+        "red/orange (pH 1–3)",
+        "blue/purple (pH 11–14)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Neutralisation",
+     "bullets": [
+      "Acid + alkali → salt + water",
+      "Ionic equation: H⁺(aq) + OH⁻(aq) → H₂O(l)",
+      "HCl gives chlorides, H₂SO₄ sulfates, HNO₃ nitrates"
+     ],
+     "note": "Write NaOH + HCl → NaCl + H₂O. Neutralisation is exothermic. Point out the spectator ions (Na⁺, Cl⁻).",
+     "cycle": [
+      "Fill burette with acid",
+      "Pipette 25.0 cm³ of alkali into a flask",
+      "Add indicator",
+      "Add acid until the colour just changes",
+      "Repeat until results agree"
+     ]
+    },
+    {
+     "heading": "Model: titration calculation",
+     "bullets": [
+      "moles of acid = concentration × volume (dm³)",
+      "Use the 1:1 ratio",
+      "Concentration of alkali = moles ÷ 25.0 cm³ in dm³"
+     ],
+     "note": "Method points: rinse apparatus with the solutions to be used, read the burette at eye level to the bottom of the meniscus, add dropwise near the end point, concordant results within 0.10 cm³. Titres 21.45, 21.40, 21.35 give mean 21.40 cm³.",
+     "model": {
+      "problem": "25.0 cm³ of sodium hydroxide needs a mean of 21.40 cm³ of 0.100 mol/dm³ hydrochloric acid. Calculate the concentration of the NaOH.",
+      "steps": [
+       "n(HCl) = 0.100 × 21.40 ÷ 1000 = 0.00214 mol",
+       "Ratio HCl : NaOH = 1 : 1, so n(NaOH) = 0.00214 mol",
+       "Volume NaOH = 0.0250 dm³",
+       "Concentration = 0.00214 ÷ 0.0250"
+      ],
+      "answer": "0.0856 mol/dm³"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: universal indicator changes colour gradually, so it is poor for finding a sharp end point.",
+     "check": {
+      "q": "Which indicator is most suitable for finding the end point of a titration?",
+      "options": [
+       "Litmus paper",
+       "Universal indicator",
+       "Methyl orange",
+       "pH paper"
+      ],
+      "answer": 2,
+      "why": "Methyl orange gives a sharp colour change at the end point. Universal indicator and pH paper change gradually."
+     }
+    }
+   ],
+   "practice": [
+    "Give the colour of methyl orange in acid and in alkali.",
+    "Write the ionic equation for neutralisation.",
+    "Calculate the moles in 18.0 cm³ of 0.200 mol/dm³ acid."
+   ],
+   "independent": [
+    "Core: Explain how to carry out a titration using a burette and pipette.",
+    "Extend: 25.0 cm³ of KOH needs 18.50 cm³ of 0.200 mol/dm³ HCl. Calculate the concentration of KOH. [3 marks]",
+    "Stretch: 25.0 cm³ of sodium hydroxide reacts with sulfuric acid in a 2:1 ratio. Mean titre 12.50 cm³ of 0.100 mol/dm³ H₂SO₄. Calculate the NaOH concentration. [4 marks]"
+   ],
+   "exit": [
+    "State why concordant results are needed. [1 mark]",
+    "Return to the big question: summarise how you know how much acid is enough."
+   ],
+   "homework": "Practise two titration calculations and describe the method in order.",
+   "send": "SEND/EAL: method step cards. Stretch: strong versus weak acids."
+  },
+  {
+   "unit": "Chemistry 2: Inorganic chemistry",
+   "n": 29,
+   "title": "Acids and bases as proton transfer; preparing salts",
+   "duration": 50,
+   "bigQuestion": "How do you make a pure blue crystal from a black powder?",
+   "objectives": [
+    "Apply solubility rules to common salts",
+    "Describe acids as proton donors and bases as proton acceptors",
+    "Describe preparing soluble salts and insoluble salts"
+   ],
+   "successCriteria": [
+    "All: use solubility rules",
+    "Most: describe how to make copper(II) sulfate crystals",
+    "Some: choose a method for any salt and write ionic equations"
+   ],
+   "crossCurricular": "Industry: fertilisers; Geography: mineral deposits",
+   "smsc": "Moral: safe handling of toxic substances such as lead compounds",
+   "keywords": [
+    {
+     "term": "proton donor",
+     "def": "species that gives H⁺: an acid"
+    },
+    {
+     "term": "proton acceptor",
+     "def": "species that accepts H⁺: a base"
+    },
+    {
+     "term": "precipitate",
+     "def": "insoluble solid formed in a reaction between solutions"
+    },
+    {
+     "term": "crystallise",
+     "def": "form crystals as a solution cools or evaporates"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the equation for neutralisation of HCl with NaOH.",
+    "State the formula of sulfuric acid.",
+    "What is filtration?"
+   ],
+   "teach": [
+    {
+     "heading": "Solubility rules and proton transfer",
+     "bullets": [
+      "All nitrates, and sodium, potassium and ammonium salts, are soluble",
+      "Chlorides soluble except silver and lead",
+      "Sulfates soluble except lead, barium and calcium"
+     ],
+     "note": "Carbonates and hydroxides are insoluble except those of sodium, potassium and ammonium. In HCl + H₂O → H₃O⁺ + Cl⁻, HCl donates a proton, so is an acid. NH₃ + H⁺ → NH₄⁺, ammonia accepts a proton, so is a base.",
+     "table": {
+      "head": [
+       "Salt type",
+       "Soluble?",
+       "Exceptions"
+      ],
+      "rows": [
+       [
+        "Nitrates",
+        "yes",
+        "none"
+       ],
+       [
+        "Chlorides",
+        "yes",
+        "silver, lead"
+       ],
+       [
+        "Sulfates",
+        "yes",
+        "lead, barium, calcium"
+       ],
+       [
+        "Carbonates",
+        "no",
+        "sodium, potassium, ammonium"
+       ],
+       [
+        "Hydroxides",
+        "no",
+        "sodium, potassium, ammonium"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Making a soluble salt: copper(II) sulfate",
+     "bullets": [
+      "Warm dilute sulfuric acid",
+      "Add excess copper(II) oxide, stirring",
+      "Filter off the excess solid",
+      "Evaporate partially and crystallise"
+     ],
+     "note": "Equation: CuO + H₂SO₄ → CuSO₄ + H₂O. Excess black copper oxide ensures all acid reacts; the unreacted solid is filtered. Heat the filtrate until a drop on a glass rod crystallises, then leave to cool. Dry the crystals between filter papers. Safety: goggles; do not boil dry. For an alkali plus acid a titration is needed to find the exact amounts, then repeat without indicator.",
+     "cycle": [
+      "Warm acid",
+      "Add excess base",
+      "Filter",
+      "Heat to crystallisation point",
+      "Cool and dry crystals"
+     ]
+    },
+    {
+     "heading": "Model: choose a method",
+     "bullets": [
+      "Is the salt soluble or insoluble?",
+      "Soluble: acid + metal, base or carbonate",
+      "Insoluble: precipitation by mixing solutions"
+     ],
+     "note": "Example: lead(II) sulfate. Mix lead(II) nitrate and sodium sulfate solutions: Pb(NO₃)₂ + Na₂SO₄ → PbSO₄ + 2NaNO₃. Ionic: Pb²⁺ + SO₄²⁻ → PbSO₄(s). Filter, wash with distilled water, dry in a warm oven. Lead compounds are toxic: wear gloves, wash hands.",
+     "model": {
+      "problem": "Describe how to make a pure, dry sample of barium sulfate.",
+      "steps": [
+       "Barium sulfate is insoluble, so use precipitation",
+       "Mix barium chloride solution with sodium sulfate solution",
+       "Filter to collect the solid and wash with distilled water",
+       "Dry in a warm oven"
+      ],
+      "answer": "Precipitation, filtration, washing and drying"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils pick evaporation for a salt that is insoluble.",
+     "check": {
+      "q": "Which method makes a pure sample of zinc sulfate crystals?",
+      "options": [
+       "Mix zinc nitrate and sodium sulfate",
+       "Add excess zinc oxide to dilute sulfuric acid, filter, crystallise",
+       "Heat zinc with sulfur",
+       "Electrolyse zinc chloride"
+      ],
+      "answer": 1,
+      "why": "Zinc sulfate is soluble, so react zinc oxide with sulfuric acid in excess, filter, then crystallise."
+     }
+    }
+   ],
+   "practice": [
+    "State two soluble and two insoluble salts.",
+    "Why is excess copper oxide added in the preparation?",
+    "Write the ionic equation for the formation of lead(II) sulfate."
+   ],
+   "independent": [
+    "Core: Describe how to make sodium chloride crystals from sodium hydroxide and hydrochloric acid.",
+    "Extend: Use solubility rules to predict if a precipitate forms when silver nitrate is mixed with sodium chloride. Write the ionic equation. [3 marks]",
+    "Stretch: Explain, with a proton-transfer equation, why ammonia is a base. [2 marks]"
+   ],
+   "exit": [
+    "Name two methods of making salts and when each is used. [2 marks]",
+    "Return to the big question: what makes the blue crystal appear?"
+   ],
+   "homework": "Write a risk assessment and method for making a salt of your choice.",
+   "send": "SEND/EAL: method cards in order. Stretch: why is ammonium nitrate a good fertiliser?"
+  },
+  {
+   "unit": "Chemistry 2: Inorganic chemistry",
+   "n": 30,
+   "title": "Identifying gases, ions and water",
+   "duration": 50,
+   "bigQuestion": "How can a chemist identify an unknown substance without tasting or guessing?",
+   "objectives": [
+    "Describe tests for common gases and for water",
+    "Carry out flame tests and tests for cations",
+    "Describe tests for halides, sulfate and carbonate"
+   ],
+   "successCriteria": [
+    "All: recall gas tests",
+    "Most: identify cations and anions from observations",
+    "Some: deduce the identity of an unknown from several results"
+   ],
+   "crossCurricular": "Forensic science; Biology: testing water quality",
+   "smsc": "Moral: truthfulness in evidence; careful and ethical observation",
+   "keywords": [
+    {
+     "term": "flame test",
+     "def": "test for metal ions using the colour a compound gives a flame"
+    },
+    {
+     "term": "precipitate",
+     "def": "insoluble solid formed in a solution"
+    },
+    {
+     "term": "anion",
+     "def": "negative ion"
+    },
+    {
+     "term": "cation",
+     "def": "positive ion"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is the test for oxygen?",
+    "Write the formula of the sulfate ion.",
+    "What is a precipitate?"
+   ],
+   "teach": [
+    {
+     "heading": "Gases and water",
+     "bullets": [
+      "H₂: lit splint, squeaky pop",
+      "O₂: glowing splint relights",
+      "CO₂: limewater milky; Cl₂: damp litmus bleached; NH₃: damp red litmus blue"
+     ],
+     "note": "Water: anhydrous copper(II) sulfate turns from white to blue; cobalt chloride paper turns blue to pink. Pure water boils at 100 °C and freezes at 0 °C at standard pressure. These tests check for water, but only the boiling point shows purity.",
+     "table": {
+      "head": [
+       "Gas",
+       "Test",
+       "Positive result"
+      ],
+      "rows": [
+       [
+        "Hydrogen",
+        "lit splint",
+        "squeaky pop"
+       ],
+       [
+        "Oxygen",
+        "glowing splint",
+        "relights"
+       ],
+       [
+        "Carbon dioxide",
+        "limewater",
+        "turns milky"
+       ],
+       [
+        "Chlorine",
+        "damp litmus",
+        "bleaches"
+       ],
+       [
+        "Ammonia",
+        "damp red litmus",
+        "turns blue"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Cations",
+     "bullets": [
+      "Flame: Li⁺ red, Na⁺ yellow, K⁺ lilac, Cu²⁺ blue-green",
+      "Add NaOH: Cu²⁺ blue, Fe²⁺ green, Fe³⁺ red-brown precipitate",
+      "NH₄⁺: warm with NaOH, ammonia turns damp litmus blue"
+     ],
+     "note": "Flame test method: clean a nichrome wire in acid, dip in the sample, hold in a blue Bunsen flame. Calcium gives orange-red. The precipitate colours below are the key evidence.",
+     "table": {
+      "head": [
+       "Ion",
+       "Result with sodium hydroxide solution"
+      ],
+      "rows": [
+       [
+        "Cu²⁺",
+        "blue precipitate"
+       ],
+       [
+        "Fe²⁺",
+        "green precipitate"
+       ],
+       [
+        "Fe³⁺",
+        "red-brown precipitate"
+       ],
+       [
+        "NH₄⁺",
+        "warm: ammonia gas given off"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Anions",
+     "bullets": [
+      "Halides: add dilute nitric acid then silver nitrate",
+      "Sulfate: add dilute HCl then barium chloride, white precipitate",
+      "Carbonate: add dilute acid, effervescence, CO₂ turns limewater milky"
+     ],
+     "note": "Halide colours: chloride white, bromide cream, iodide yellow. The acid is added first to remove carbonates and hydroxides that would interfere.",
+     "model": {
+      "problem": "A white solid gives a lilac flame. A solution of it with dilute HCl and barium chloride gives a white precipitate. Identify the compound.",
+      "steps": [
+       "Lilac flame means potassium ions",
+       "White precipitate with HCl and BaCl₂ means sulfate ions",
+       "Combine cation and anion",
+       "Formula K₂SO₄"
+      ],
+      "answer": "Potassium sulfate, K₂SO₄"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils say 'blue' for any copper test; both the flame colour and hydroxide precipitate are different.",
+     "check": {
+      "q": "A solution forms a green precipitate with sodium hydroxide solution. Which ion is present?",
+      "options": [
+       "Cu²⁺",
+       "Fe³⁺",
+       "Fe²⁺",
+       "Na⁺"
+      ],
+      "answer": 2,
+      "why": "Fe²⁺ gives a green precipitate. Cu²⁺ gives blue and Fe³⁺ gives red-brown."
+     }
+    }
+   ],
+   "practice": [
+    "Give the test and result for hydrogen.",
+    "State the flame colour of lithium and of potassium ions.",
+    "Why is dilute nitric acid added before silver nitrate?"
+   ],
+   "independent": [
+    "Core: Complete a table of tests for chloride, bromide, iodide, sulfate and carbonate.",
+    "Extend: Tube A gives a yellow precipitate with silver nitrate and nitric acid. A flame test gives yellow. Identify the compound. [3 marks]",
+    "Stretch: Design a plan to identify an unlabelled white solid that could be calcium carbonate or sodium chloride. [4 marks]"
+   ],
+   "exit": [
+    "Give the test for water. [1 mark]",
+    "Return to the big question: choose one unknown and explain how you would identify it."
+   ],
+   "homework": "Make a test summary sheet (one table: cations, anions, gases).",
+   "send": "SEND/EAL: colour cards and a decision tree. Stretch: ethical reasons for evidence in testing."
+  }
+ ]
+}

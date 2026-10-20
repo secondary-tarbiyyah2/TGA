@@ -1,0 +1,3671 @@
+{
+ "subject": "Science",
+ "year": "y11",
+ "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
+ "boardShort": "Edexcel IGCSE",
+ "source": "Edexcel IGCSE 4BI1/4CH1 specification summary (content/syllabus/ks4/gcse-science.json), Y11 units Biology 3, Biology 4, Biology 5, Chemistry 3, Chemistry 4. Drive material not used. Not re-taught because covered by the existing lessons in content/lessons/gcse-science/y11.json: population, community, habitat, ecosystem and quadrats; biotic and abiotic factors; food chains, webs and pyramids and 10% energy transfer; carbon cycle; nitrogen cycle with named bacteria; pollution (sulfur dioxide, carbon monoxide, greenhouse gases, sewage and eutrophication) and deforestation (Biology 4 points 1, 3-7); hydrocarbons, formulae and homologous series, crude oil and fractional distillation, complete and incomplete combustion and acid rain, catalytic cracking, alkane and alkene reactions with the bromine water test, addition polymers (Chemistry 4 points 1 partly, 2-6, 8). Biology 4 biodiversity and distribution (point 2) and Chemistry 4 naming and isomers (point 1) are taught here.",
+ "lessons": [
+  {
+   "unit": "Biology 3: Reproduction and inheritance",
+   "n": 1,
+   "title": "Sexual and asexual reproduction and artificial propagation",
+   "duration": 50,
+   "bigQuestion": "Why can one cutting grow into a plant identical to its parent, while children are never exact copies?",
+   "objectives": [
+    "Compare sexual and asexual reproduction",
+    "Describe examples of asexual reproduction in plants and microorganisms",
+    "Describe how cuttings are used for artificial propagation"
+   ],
+   "successCriteria": [
+    "All: define sexual and asexual reproduction",
+    "Most: compare advantages and disadvantages",
+    "Some: evaluate propagation methods for a grower"
+   ],
+   "crossCurricular": "Agriculture: crop production; Geography: farming",
+   "smsc": "Stewardship: caring for crops and food security",
+   "keywords": [
+    {
+     "term": "asexual reproduction",
+     "def": "one parent produces genetically identical offspring by mitosis"
+    },
+    {
+     "term": "sexual reproduction",
+     "def": "fusion of male and female gametes producing genetically different offspring"
+    },
+    {
+     "term": "clone",
+     "def": "genetically identical organism"
+    },
+    {
+     "term": "gamete",
+     "def": "sex cell, e.g. sperm or egg"
+    }
+   ],
+   "starter": [
+    "Bismillah. What does mitosis produce?",
+    "Define gamete.",
+    "Name the process by which a bacterium reproduces."
+   ],
+   "teach": [
+    {
+     "heading": "Two types of reproduction",
+     "bullets": [
+      "Asexual: one parent, no gametes, identical offspring",
+      "Sexual: two gametes fuse, offspring are different",
+      "Both are found in plants and animals"
+     ],
+     "note": "Introduce the terms gamete, zygote, clone. Asexual examples: bacteria dividing by binary fission, potato tubers, strawberry runners, fungal spores. Sexual: flowering plants and humans.",
+     "compare": {
+      "left": {
+       "title": "Asexual",
+       "points": [
+        "One parent only",
+        "Offspring genetically identical",
+        "Fast; no mate needed",
+        "No variation to adapt to change"
+       ]
+      },
+      "right": {
+       "title": "Sexual",
+       "points": [
+        "Two parents, gametes fuse",
+        "Offspring show variation",
+        "Slower, needs a mate",
+        "Variation helps species survive change"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Evaluating the two",
+     "bullets": [
+      "Asexual: stable in a good environment",
+      "Sexual: variation protects against disease",
+      "A single disease can destroy identical clones"
+     ],
+     "note": "Real example: Cavendish bananas are propagated as clones; they have little genetic variation, so a single disease can threaten the whole crop. Ask: is asexual reproduction better? Pupils should answer 'it depends'.",
+     "model": {
+      "problem": "Explain one advantage and one disadvantage of using cuttings to grow a new apple tree. [2 marks]",
+      "steps": [
+       "Advantage: the new tree has the same desirable traits (fruit quality) as the parent",
+       "Disadvantage: all the trees are genetically identical",
+       "So a single disease could infect all of them",
+       "No variation to select better trees"
+      ],
+      "answer": "Identical copies keep a good trait but one disease can affect all"
+     }
+    },
+    {
+     "heading": "Artificial propagation: cuttings",
+     "bullets": [
+      "Cut a healthy shoot below a node",
+      "Remove lower leaves; dip in rooting powder (auxin)",
+      "Plant in moist compost; cover to keep humid"
+     ],
+     "note": "Rooting powder contains plant hormone that stimulates root growth. Cover with a polythene bag to reduce water loss until roots grow. The result is a clone.",
+     "cycle": [
+      "Cut healthy stem below a node",
+      "Remove lower leaves",
+      "Dip in rooting powder",
+      "Plant in moist compost",
+      "Cover with polythene until roots form"
+     ]
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils think asexual reproduction happens only in simple organisms or that offspring still vary a little.",
+     "check": {
+      "q": "Which is a feature of asexual reproduction?",
+      "options": [
+       "Two parents",
+       "Gametes fuse",
+       "Genetically identical offspring",
+       "High genetic variation"
+      ],
+      "answer": 2,
+      "why": "Asexual reproduction involves mitosis from one parent, so offspring are genetically identical."
+     }
+    }
+   ],
+   "practice": [
+    "Define clone.",
+    "State two advantages of asexual reproduction for a farmer.",
+    "Why is rooting powder used with cuttings?"
+   ],
+   "independent": [
+    "Core: Make a table comparing sexual and asexual reproduction.",
+    "Extend: Explain why a field of genetically identical plants is at greater risk from one pest. [3 marks]",
+    "Stretch: Evaluate whether a grower should use seeds or cuttings for a new apple orchard. [4 marks]"
+   ],
+   "exit": [
+    "State two differences between sexual and asexual reproduction. [2 marks]",
+    "Return to the big question in two sentences."
+   ],
+   "homework": "Find two examples of asexual reproduction in organisms and write one sentence on each.",
+   "send": "SEND/EAL: pictures of runners, tubers and cuttings. Stretch: link to the future lesson on micropropagation."
+  },
+  {
+   "unit": "Biology 3: Reproduction and inheritance",
+   "n": 2,
+   "title": "Flowers, pollination, fertilisation and germination",
+   "duration": 50,
+   "bigQuestion": "How does a pollen grain become a seed, and what does a seed need to wake up?",
+   "objectives": [
+    "Label the parts of an insect-pollinated flower and state their functions",
+    "Distinguish pollination from fertilisation",
+    "Describe germination and its conditions"
+   ],
+   "successCriteria": [
+    "All: label a flower",
+    "Most: describe pollination and fertilisation in order",
+    "Some: compare insect and wind pollination; plan the germination practical"
+   ],
+   "crossCurricular": "Geography: crops; Biology: enzymes",
+   "smsc": "Spiritual: wonder at the unseen cycles of life; gratitude for seeds as provision",
+   "keywords": [
+    {
+     "term": "pollination",
+     "def": "transfer of pollen from anther to stigma"
+    },
+    {
+     "term": "fertilisation",
+     "def": "fusion of male and female gametes"
+    },
+    {
+     "term": "germination",
+     "def": "growth of a seed into a seedling"
+    },
+    {
+     "term": "ovule",
+     "def": "structure in the ovary that becomes a seed"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is a gamete?",
+    "What does diffusion mean?",
+    "Name the stored food in many seeds."
+   ],
+   "teach": [
+    {
+     "heading": "Parts of the flower",
+     "bullets": [
+      "Stamen: anther makes pollen; filament holds it",
+      "Carpel: stigma, style, ovary containing ovules",
+      "Petals attract insects; sepals protect the bud"
+     ],
+     "note": "Draw a half-flower. Insect-pollinated flowers have large coloured petals, nectar, sticky or spiky pollen and stigma inside the flower. Wind-pollinated flowers have small dull petals, feathery stigma outside and loose anthers with lightweight pollen in large amounts.",
+     "table": {
+      "head": [
+       "Feature",
+       "Insect-pollinated",
+       "Wind-pollinated"
+      ],
+      "rows": [
+       [
+        "Petals",
+        "large, colourful, scented",
+        "small, dull"
+       ],
+       [
+        "Pollen",
+        "sticky or spiky, less",
+        "smooth, light, lots"
+       ],
+       [
+        "Anthers",
+        "inside the flower",
+        "hang outside"
+       ],
+       [
+        "Stigma",
+        "sticky, inside",
+        "feathery, outside"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "From pollination to seed",
+     "bullets": [
+      "Pollen lands on the stigma: pollination",
+      "Pollen tube grows down the style to the ovule",
+      "Male nucleus fuses with female nucleus: fertilisation",
+      "Ovule becomes seed; ovary becomes fruit"
+     ],
+     "note": "Pupils often say pollination and fertilisation are the same. Pollination is transfer; fertilisation is fusion of nuclei. Link: self-pollination uses the same plant; cross-pollination uses different plants and increases variation.",
+     "model": {
+      "problem": "Describe the events from pollination to seed formation. [4 marks]",
+      "steps": [
+       "Pollen is transferred from anther to stigma (pollination)",
+       "A pollen tube grows down the style to the ovary",
+       "The male gamete nucleus fuses with the egg nucleus in the ovule (fertilisation)",
+       "The fertilised ovule becomes the seed and the ovary becomes the fruit"
+      ],
+      "answer": "Pollination, pollen tube growth, fertilisation, seed formation"
+     }
+    },
+    {
+     "heading": "Germination",
+     "bullets": [
+      "Conditions: water, oxygen, suitable temperature",
+      "Light is not needed for germination",
+      "Enzymes break stored starch into sugars for growth"
+     ],
+     "note": "Practical: four tubes of cress seeds: damp cotton wool at 25 °C (germinates), dry cotton wool (does not), damp at 4 °C in a fridge (slow or none), seeds covered with boiled cooled water plus a layer of oil (no oxygen, no germination). Control: same number of seeds, same time. Only change one variable. Water activates enzymes; oxygen is needed for respiration.",
+     "misconception": {
+      "wrong": "Seeds need light and soil to germinate.",
+      "right": "Seeds need water, oxygen and a suitable temperature. Light and soil are not required until the seedling starts photosynthesis."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pollination and fertilisation are often swapped.",
+     "check": {
+      "q": "What happens during fertilisation in a flowering plant?",
+      "options": [
+       "Pollen lands on the stigma",
+       "A male nucleus fuses with a female nucleus in the ovule",
+       "The ovary becomes the fruit",
+       "The pollen tube leaves the anther"
+      ],
+      "answer": 1,
+      "why": "Fertilisation is the fusion of male and female gamete nuclei. Landing on the stigma is pollination."
+     }
+    }
+   ],
+   "practice": [
+    "Name the male and female parts of a flower.",
+    "List three differences between wind- and insect-pollinated flowers.",
+    "State the three conditions needed for germination."
+   ],
+   "independent": [
+    "Core: Draw and label a flower.",
+    "Extend: Design an investigation into the effect of temperature on germination. [4 marks]",
+    "Stretch: Explain why wind-pollinated plants produce more pollen than insect-pollinated plants. [2 marks]"
+   ],
+   "exit": [
+    "Define pollination and fertilisation. [2 marks]",
+    "Return to the big question: summarise how a seed forms and wakes up."
+   ],
+   "homework": "Draw a labelled flower and add arrows for pollen's path.",
+   "send": "SEND/EAL: model flowers with labels. Stretch: describe how seeds are dispersed."
+  },
+  {
+   "unit": "Biology 3: Reproduction and inheritance",
+   "n": 3,
+   "title": "Human reproduction, the menstrual cycle and the placenta",
+   "duration": 50,
+   "bigQuestion": "How does the body prepare, protect and nourish a new life?",
+   "objectives": [
+    "Describe the structure and functions of the male and female reproductive systems",
+    "Describe the roles of oestrogen and progesterone and the menstrual cycle",
+    "Describe the placenta and the secondary sexual characteristics"
+   ],
+   "successCriteria": [
+    "All: name parts of the reproductive systems and their functions",
+    "Most: describe the menstrual cycle and placenta",
+    "Some: interpret hormone graphs and explain pregnancy"
+   ],
+   "crossCurricular": "PSHE: relationships and sex education (follow the school's RSE policy)",
+   "smsc": "Moral: modesty (haya), respect, responsibility; gratitude for the gift of life",
+   "keywords": [
+    {
+     "term": "ovulation",
+     "def": "release of an egg from the ovary"
+    },
+    {
+     "term": "placenta",
+     "def": "organ where substances are exchanged between mother and fetus"
+    },
+    {
+     "term": "implantation",
+     "def": "attachment of the embryo to the uterus lining"
+    },
+    {
+     "term": "secondary sexual characteristics",
+     "def": "features that develop at puberty, controlled by sex hormones"
+    }
+   ],
+   "starter": [
+    "Bismillah. What does a hormone do?",
+    "Name the process by which a sperm and egg join.",
+    "State two functions of blood."
+   ],
+   "teach": [
+    {
+     "heading": "The systems",
+     "bullets": [
+      "Male: testes make sperm and testosterone",
+      "Female: ovaries make eggs, oestrogen, progesterone",
+      "Sperm travel in the sperm duct; egg moves along the oviduct"
+     ],
+     "note": "Teach factually and respectfully; follow the school's RSE guidance and the parental policy. Fertilisation takes place in the oviduct. The zygote divides to form an embryo that implants in the uterus lining. Gestation is about 40 weeks.",
+     "table": {
+      "head": [
+       "Part",
+       "Function"
+      ],
+      "rows": [
+       [
+        "Testis",
+        "makes sperm and testosterone"
+       ],
+       [
+        "Sperm duct",
+        "carries sperm to the urethra"
+       ],
+       [
+        "Ovary",
+        "makes and releases eggs; oestrogen and progesterone"
+       ],
+       [
+        "Oviduct",
+        "carries the egg; fertilisation happens here"
+       ],
+       [
+        "Uterus",
+        "where the embryo implants and develops"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The menstrual cycle",
+     "bullets": [
+      "About 28 days; ovulation around day 14",
+      "Oestrogen rebuilds the uterus lining",
+      "Progesterone maintains the lining after ovulation"
+     ],
+     "note": "If no fertilisation occurs, progesterone falls and the lining breaks down (menstruation, days 1 to 5). If fertilisation occurs the lining is kept and the cycle pauses. Other hormones (FSH, LH) control the ovary; they are not required for all pupils, so check the specification.",
+     "table": {
+      "head": [
+       "Days",
+       "Event",
+       "Hormone"
+      ],
+      "rows": [
+       [
+        "1–5",
+        "menstruation",
+        "low oestrogen and progesterone"
+       ],
+       [
+        "6–13",
+        "lining rebuilds; egg develops",
+        "oestrogen rises"
+       ],
+       [
+        "14",
+        "ovulation",
+        "oestrogen peak"
+       ],
+       [
+        "15–28",
+        "lining maintained",
+        "progesterone high"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Placenta and pregnancy",
+     "bullets": [
+      "Large surface area with villi; thin barrier",
+      "Oxygen and nutrients to fetus; CO₂ and urea to mother",
+      "Blood of mother and fetus do not mix"
+     ],
+     "note": "Amniotic fluid cushions the fetus. The placenta is selective, but alcohol, nicotine and some viruses (e.g. rubella) can cross it; this is why pregnant women are advised to avoid these.",
+     "model": {
+      "problem": "Explain why progesterone stays high in early pregnancy. [2 marks]",
+      "steps": [
+       "Progesterone maintains the thick lining of the uterus",
+       "If it fell, the lining would break down",
+       "The embryo would be lost"
+      ],
+      "answer": "It keeps the uterus lining in place so the embryo can develop"
+     }
+    },
+    {
+     "heading": "Puberty and hormones",
+     "bullets": [
+      "Testosterone: deeper voice, facial hair, muscle",
+      "Oestrogen: breast development, wider hips, periods",
+      "Controlled by the pituitary gland sending signals"
+     ],
+     "note": "Keep language age-appropriate and accurate. These are secondary sexual characteristics; the primary sexual characteristics are the sex organs.",
+     "misconception": {
+      "wrong": "Hormones travel along nerves to reach the target organ.",
+      "right": "Hormones are carried in the blood plasma to their target organs."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils think fertilisation happens in the uterus.",
+     "check": {
+      "q": "Where does fertilisation normally take place in humans?",
+      "options": [
+       "Uterus",
+       "Cervix",
+       "Oviduct",
+       "Ovary"
+      ],
+      "answer": 2,
+      "why": "The sperm meets the egg in the oviduct. The embryo then moves to the uterus to implant."
+     }
+    }
+   ],
+   "practice": [
+    "Name the hormone made in the testes.",
+    "State two substances that pass from fetus to mother across the placenta.",
+    "What happens to the uterus lining if no fertilisation occurs?"
+   ],
+   "independent": [
+    "Core: Draw the menstrual cycle as a timeline with the events and hormones.",
+    "Extend: Explain why the placenta has a large surface area. [2 marks]",
+    "Stretch: Explain why a pregnant woman should avoid alcohol and smoking. [3 marks]"
+   ],
+   "exit": [
+    "State the roles of oestrogen and progesterone. [2 marks]",
+    "Return to the big question: describe how the fetus is nourished."
+   ],
+   "homework": "Complete a summary sheet of the male and female systems and the cycle.",
+   "send": "SEND/EAL: labelled diagrams with a glossary; offer a teacher-led alternative if families request it. Stretch: how does the contraceptive pill use hormones?"
+  },
+  {
+   "unit": "Biology 3: Reproduction and inheritance",
+   "n": 4,
+   "title": "DNA, genes, the genome and protein synthesis",
+   "duration": 50,
+   "bigQuestion": "How does a four-letter code build every protein in your body?",
+   "objectives": [
+    "Describe the structure of DNA and the terms genome, gene, chromosome",
+    "Describe RNA and complementary base pairing",
+    "Describe transcription and translation in protein synthesis"
+   ],
+   "successCriteria": [
+    "All: describe the double helix and base pairing",
+    "Most: use base pairing to write complementary strands",
+    "Some: explain transcription and translation and how mutations affect proteins"
+   ],
+   "crossCurricular": "Chemistry: bonding and polymers; Computing: coding",
+   "smsc": "Spiritual: wonder at the order in the code of life",
+   "keywords": [
+    {
+     "term": "genome",
+     "def": "all the genetic material of an organism"
+    },
+    {
+     "term": "gene",
+     "def": "section of DNA that codes for a protein"
+    },
+    {
+     "term": "codon",
+     "def": "three bases that code for one amino acid"
+    },
+    {
+     "term": "mRNA",
+     "def": "messenger RNA copied from DNA that carries the code to the ribosome"
+    }
+   ],
+   "starter": [
+    "Bismillah. Where is DNA found in a human cell?",
+    "What are proteins made of?",
+    "What is an enzyme?"
+   ],
+   "teach": [
+    {
+     "heading": "DNA and chromosomes",
+     "bullets": [
+      "DNA is a double helix of two strands",
+      "Bases pair: A with T, C with G",
+      "The genome is all of an organism's DNA"
+     ],
+     "note": "Each nucleotide has a phosphate, sugar and base. The human genome has about 3 billion base pairs and about 20 000 protein-coding genes. Humans have 23 pairs of chromosomes in the nucleus. Chromosomes are long coiled DNA with many genes.",
+     "model": {
+      "problem": "One DNA strand reads ATG CCA GTT. Write the complementary strand. If 20% of bases in a DNA sample are adenine, what are the percentages of the others?",
+      "steps": [
+       "A pairs with T, C pairs with G",
+       "ATG CCA GTT pairs with TAC GGT CAA",
+       "A = 20% so T = 20%",
+       "C + G = 60%, so C = 30% and G = 30%"
+      ],
+      "answer": "TAC GGT CAA; T 20%, C 30%, G 30%"
+     }
+    },
+    {
+     "heading": "RNA",
+     "bullets": [
+      "Single-stranded, shorter than DNA",
+      "Sugar is ribose; uracil (U) replaces thymine",
+      "Types include messenger RNA (mRNA)"
+     ],
+     "note": "Compare with DNA: DNA double-stranded in the nucleus; RNA single-stranded and can leave the nucleus. U pairs with A.",
+     "compare": {
+      "left": {
+       "title": "DNA",
+       "points": [
+        "Two strands (double helix)",
+        "Bases A, T, C, G",
+        "Stays in the nucleus"
+       ]
+      },
+      "right": {
+       "title": "RNA",
+       "points": [
+        "One strand",
+        "Bases A, U, C, G",
+        "mRNA leaves the nucleus"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Making a protein",
+     "bullets": [
+      "Transcription: mRNA copies a gene in the nucleus",
+      "mRNA moves to a ribosome",
+      "Translation: amino acids joined in the order coded by codons"
+     ],
+     "note": "Transfer RNA brings amino acids. Each codon codes for one amino acid, e.g. UUU for phenylalanine. The order of amino acids decides the folding and shape, and shape decides function (enzyme active site).",
+     "cycle": [
+      "Gene unwinds in the nucleus",
+      "mRNA copy made (transcription)",
+      "mRNA leaves the nucleus",
+      "Ribosome reads codons (translation)",
+      "Amino acids join to make a protein"
+     ]
+    },
+    {
+     "heading": "A mistake in the code",
+     "bullets": [
+      "A mutation changes the DNA base sequence",
+      "May change amino acid order",
+      "Protein shape and function may change"
+     ],
+     "note": "Link to enzymes and cystic fibrosis: a change in one gene may lead to an enzyme or transport protein that does not fold correctly. Not every mutation changes the protein (the code has some redundancy).",
+     "misconception": {
+      "wrong": "Each gene makes a whole cell.",
+      "right": "A gene codes for one protein. The cell's features come from many proteins working together."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils say T pairs with A in RNA; in RNA uracil pairs with A.",
+     "check": {
+      "q": "Which base is found in RNA but not in DNA?",
+      "options": [
+       "Thymine",
+       "Uracil",
+       "Adenine",
+       "Cytosine"
+      ],
+      "answer": 1,
+      "why": "RNA has uracil (U) instead of thymine (T)."
+     }
+    }
+   ],
+   "practice": [
+    "Write the complementary DNA strand to CGA TTC.",
+    "State where translation takes place.",
+    "Define gene and genome."
+   ],
+   "independent": [
+    "Core: Draw a flow chart of protein synthesis.",
+    "Extend: The mRNA sequence is AUG CCA GUU. Write the DNA template strand that formed it. [2 marks]",
+    "Stretch: Explain how a mutation in a gene could cause an enzyme to stop working. [4 marks]"
+   ],
+   "exit": [
+    "State two differences between DNA and RNA. [2 marks]",
+    "Return to the big question: describe how the code becomes a protein."
+   ],
+   "homework": "Write a short paragraph on how a gene becomes a protein, using at least six key terms.",
+   "send": "SEND/EAL: base-pair cards to physically match. Stretch: explain why the genetic code is described as universal."
+  },
+  {
+   "unit": "Biology 3: Reproduction and inheritance",
+   "n": 5,
+   "title": "Alleles and monohybrid crosses",
+   "duration": 50,
+   "bigQuestion": "If both parents are tall, can a child be short?",
+   "objectives": [
+    "Use the terms allele, dominant, recessive, homozygous, heterozygous, genotype and phenotype",
+    "Complete Punnett squares for monohybrid crosses",
+    "Describe codominance (Biology only)"
+   ],
+   "successCriteria": [
+    "All: define the key terms",
+    "Most: complete crosses and give ratios and probabilities",
+    "Some: explain codominance and work out parent genotypes from offspring"
+   ],
+   "crossCurricular": "Maths: probability and ratio",
+   "smsc": "Moral: fairness and respect for the diversity in people",
+   "keywords": [
+    {
+     "term": "allele",
+     "def": "a different version of a gene"
+    },
+    {
+     "term": "genotype",
+     "def": "combination of alleles an organism has"
+    },
+    {
+     "term": "phenotype",
+     "def": "the observable characteristic"
+    },
+    {
+     "term": "codominance",
+     "def": "both alleles are expressed in the heterozygote"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is a gene?",
+    "State the number of chromosomes in a human gamete.",
+    "What does meiosis produce?"
+   ],
+   "teach": [
+    {
+     "heading": "Genetic vocabulary",
+     "bullets": [
+      "Dominant allele shows in the heterozygote",
+      "Recessive allele shows only if there are two copies",
+      "Homozygous: two identical alleles; heterozygous: two different"
+     ],
+     "note": "Use capital letter for dominant (T) and lower case for recessive (t). Genotype is the letters, phenotype is the visible trait. A pea plant Tt is tall; tt is dwarf.",
+     "table": {
+      "head": [
+       "Genotype",
+       "Description",
+       "Phenotype"
+      ],
+      "rows": [
+       [
+        "TT",
+        "homozygous dominant",
+        "tall"
+       ],
+       [
+        "Tt",
+        "heterozygous",
+        "tall"
+       ],
+       [
+        "tt",
+        "homozygous recessive",
+        "dwarf"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: monohybrid cross",
+     "bullets": [
+      "Write parent genotypes and gametes",
+      "Fill the Punnett square",
+      "State ratio and probability"
+     ],
+     "note": "Tt × Tt: gametes T, t from each parent. Offspring: TT, Tt, Tt, tt. Phenotypes 3 tall : 1 dwarf. Probability of dwarf = 1 in 4 (25%). Also show Tt × tt giving 1 : 1.",
+     "model": {
+      "problem": "Two heterozygous tall pea plants (Tt) are crossed. Give the genotype ratio, phenotype ratio and probability of a dwarf plant.",
+      "steps": [
+       "Gametes: T or t from each parent",
+       "Square gives TT, Tt, Tt, tt",
+       "Genotypes 1 TT : 2 Tt : 1 tt",
+       "Phenotypes 3 tall : 1 dwarf, probability 0.25"
+      ],
+      "answer": "1 : 2 : 1; 3 tall : 1 dwarf; 25%"
+     }
+    },
+    {
+     "heading": "Codominance (Biology only)",
+     "bullets": [
+      "Both alleles are fully expressed",
+      "ABO blood group: Iᴬ and Iᴮ are codominant",
+      "Iᴼ is recessive to both"
+     ],
+     "note": "Use letters I with superscripts A, B and O. Genotype IAIB gives group AB. Example: IAIO × IBIO gives A, B, AB or O in equal 1 in 4 chances.",
+     "misconception": {
+      "wrong": "The dominant allele is always the more common allele in a population.",
+      "right": "Dominant means it shows in the heterozygote. It need not be the most common."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils say 100% because both parents are dominant phenotype; heterozygous parents can have recessive offspring.",
+     "check": {
+      "q": "Two heterozygous parents (Bb) have a child. What is the probability the child is bb?",
+      "options": [
+       "0",
+       "1 in 4",
+       "1 in 2",
+       "3 in 4"
+      ],
+      "answer": 1,
+      "why": "Bb × Bb gives BB, Bb, Bb, bb, so one in four is bb."
+     }
+    }
+   ],
+   "practice": [
+    "Define homozygous and heterozygous.",
+    "Give the phenotype of Tt where T is tall and dominant.",
+    "Complete a cross between Tt and tt."
+   ],
+   "independent": [
+    "Core: Complete a Punnett square for Bb × Bb where B = brown eyes and b = blue eyes.",
+    "Extend: Parents with blood groups IAIO and IBIO: list the possible groups of their children. [3 marks]",
+    "Stretch: A tall plant crossed with a dwarf produces 48 tall and 52 dwarf offspring. Deduce the parent genotypes. [3 marks]"
+   ],
+   "exit": [
+    "Explain why two tall parents can have a short child. [3 marks]",
+    "Return to the big question using genotype language."
+   ],
+   "homework": "Complete three crosses with Punnett squares and ratios.",
+   "send": "SEND/EAL: gamete cards to physically build squares. Stretch: what is a test cross?"
+  },
+  {
+   "unit": "Biology 3: Reproduction and inheritance",
+   "n": 6,
+   "title": "Pedigrees, inherited disorders and sex determination",
+   "duration": 50,
+   "bigQuestion": "Can we predict who will inherit a family condition?",
+   "objectives": [
+    "Interpret family pedigrees and deduce genotypes",
+    "Explain inheritance of cystic fibrosis and Huntington's disease",
+    "Explain sex determination with XX and XY"
+   ],
+   "successCriteria": [
+    "All: describe sex determination",
+    "Most: interpret a simple pedigree",
+    "Some: calculate probabilities for carriers and future children"
+   ],
+   "crossCurricular": "Maths: probability",
+   "smsc": "Moral: compassion and respect for people with genetic conditions",
+   "keywords": [
+    {
+     "term": "carrier",
+     "def": "a person who has one copy of a recessive allele but does not show the condition"
+    },
+    {
+     "term": "pedigree",
+     "def": "family tree showing inheritance of a trait"
+    },
+    {
+     "term": "sex chromosomes",
+     "def": "X and Y chromosomes that determine sex"
+    },
+    {
+     "term": "cystic fibrosis",
+     "def": "recessive disorder causing thick mucus in the lungs"
+    }
+   ],
+   "starter": [
+    "Bismillah. Cross Aa × Aa and give the ratio.",
+    "What is a recessive allele?",
+    "How many chromosomes in a human body cell?"
+   ],
+   "teach": [
+    {
+     "heading": "Sex determination",
+     "bullets": [
+      "Females XX, males XY",
+      "Egg always carries X",
+      "Sperm carries X or Y: the sperm decides the sex"
+     ],
+     "note": "A Punnett square gives 50% female and 50% male on average. Each pregnancy is independent, so a family with three girls has a 50% chance of a boy next. Probability of three girls in a row is 1/2 × 1/2 × 1/2 = 1/8.",
+     "table": {
+      "head": [
+       "Parent",
+       "Gametes"
+      ],
+      "rows": [
+       [
+        "Mother XX",
+        "X, X"
+       ],
+       [
+        "Father XY",
+        "X, Y"
+       ],
+       [
+        "Children",
+        "XX (girl) : XY (boy) = 1 : 1"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Reading a pedigree",
+     "bullets": [
+      "Squares male, circles female; shaded affected",
+      "Two unaffected parents with an affected child: recessive",
+      "Affected parents with unaffected child: dominant"
+     ],
+     "note": "Describe: Parents are unaffected; of their four children, one daughter and one son have cystic fibrosis. Each unaffected parent must carry one recessive allele (Cc). A third unaffected child has a 2 in 3 chance of being a carrier.",
+     "model": {
+      "problem": "Both parents are unaffected. Their first child has cystic fibrosis (cc). Explain the parents' genotypes and the probability that their next child is affected.",
+      "steps": [
+       "The child has cc: one c from each parent",
+       "Parents are unaffected so they must be Cc (carriers)",
+       "Cc × Cc gives CC, Cc, Cc, cc",
+       "Probability of cc = 1 in 4 (25%)"
+      ],
+      "answer": "Both parents are Cc; 25% chance"
+     }
+    },
+    {
+     "heading": "Two inherited disorders",
+     "bullets": [
+      "Cystic fibrosis: recessive, thick mucus in lungs and gut",
+      "Huntington's disease: dominant, nerve damage later in life",
+      "Only one H allele is needed to be affected"
+     ],
+     "note": "For Huntington's, Hh × hh gives 50% chance of an affected child. Mention genetic counselling kindly; do not make pupils feel their own families are being analysed. Link to protein shape from the previous lesson.",
+     "misconception": {
+      "wrong": "A carrier of cystic fibrosis has the disease.",
+      "right": "A carrier has one recessive allele and does not have the disease. Two copies are needed."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils think a family with three girls is 'due' a boy.",
+     "check": {
+      "q": "A couple already have three daughters. What is the probability that their fourth child is a boy?",
+      "options": [
+       "1 in 8",
+       "1 in 4",
+       "1 in 2",
+       "1 in 16"
+      ],
+      "answer": 2,
+      "why": "Each birth is independent, so the probability is 1 in 2."
+     }
+    }
+   ],
+   "practice": [
+    "State which parent decides the sex of a child.",
+    "Explain what is meant by a carrier.",
+    "Give the genotype of someone with Huntington's disease who has one affected parent."
+   ],
+   "independent": [
+    "Core: Draw a Punnett square for XX × XY and give the ratio.",
+    "Extend: A man with Huntington's disease (Hh) and an unaffected woman (hh) have a child. Give the probability of the child being affected. [2 marks]",
+    "Stretch: Draw a pedigree for a family where two unaffected parents have two affected children and one unaffected child; label genotypes. [4 marks]"
+   ],
+   "exit": [
+    "Define phenotype and genotype. [2 marks]",
+    "Return to the big question: what can a pedigree predict and what can it not?"
+   ],
+   "homework": "Design and solve two pedigree problems for a partner.",
+   "send": "SEND/EAL: colour-coded pedigree symbols. Stretch: sex-linked inheritance of red–green colour blindness."
+  },
+  {
+   "unit": "Biology 3: Reproduction and inheritance",
+   "n": 7,
+   "title": "Mitosis, meiosis and chromosome numbers",
+   "duration": 50,
+   "bigQuestion": "Why do you keep 46 chromosomes in every body cell but make gametes with only 23?",
+   "objectives": [
+    "Describe mitosis and its roles",
+    "Describe meiosis and why it produces genetically different haploid gametes",
+    "Use chromosome numbers in diploid and haploid cells"
+   ],
+   "successCriteria": [
+    "All: state the outcomes of mitosis and meiosis",
+    "Most: compare the two processes and give chromosome numbers",
+    "Some: explain how meiosis and fertilisation create variation"
+   ],
+   "crossCurricular": "Maths: powers of two",
+   "smsc": "Spiritual: reflection on the order in cell division and life's continuity",
+   "keywords": [
+    {
+     "term": "diploid",
+     "def": "cell with two sets of chromosomes (46 in humans)"
+    },
+    {
+     "term": "haploid",
+     "def": "cell with one set of chromosomes (23 in humans)"
+    },
+    {
+     "term": "mitosis",
+     "def": "cell division that produces two genetically identical diploid cells"
+    },
+    {
+     "term": "meiosis",
+     "def": "cell division that produces four genetically different haploid gametes"
+    }
+   ],
+   "starter": [
+    "Bismillah. What does a gamete contain?",
+    "State where DNA is stored in a human cell.",
+    "What is a clone?"
+   ],
+   "teach": [
+    {
+     "heading": "Mitosis",
+     "bullets": [
+      "One division produces two identical daughter cells",
+      "Same chromosome number as the parent cell",
+      "Used for growth, repair and asexual reproduction"
+     ],
+     "note": "DNA is copied first so each daughter cell gets a full set. Uncontrolled mitosis forms tumours (cancer).",
+     "compare": {
+      "left": {
+       "title": "Mitosis",
+       "points": [
+        "Body cells",
+        "One division",
+        "Two cells, identical, diploid",
+        "Growth, repair, asexual reproduction"
+       ]
+      },
+      "right": {
+       "title": "Meiosis",
+       "points": [
+        "Gonads (testes, ovaries)",
+        "Two divisions",
+        "Four cells, different, haploid",
+        "Makes gametes"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Meiosis and variation",
+     "bullets": [
+      "Halves the chromosome number: 46 to 23",
+      "Daughter cells are genetically different",
+      "Fertilisation restores diploid number"
+     ],
+     "note": "Reasons for difference: chromosomes shuffle into gametes randomly. With 23 pairs there are over 8 million possible combinations in a single gamete (2²³). This is a stretch idea. Fertilisation joins two gametes, giving 46 chromosomes again, and increases variation.",
+     "model": {
+      "problem": "A horse body cell has 64 chromosomes. How many chromosomes in (a) a daughter cell after mitosis, (b) a horse gamete, (c) a zygote?",
+      "steps": [
+       "Mitosis keeps the number: 64",
+       "Meiosis halves it: 64 ÷ 2 = 32",
+       "Fertilisation joins two gametes: 32 + 32",
+       "= 64"
+      ],
+      "answer": "(a) 64 (b) 32 (c) 64"
+     }
+    },
+    {
+     "heading": "Checks and common errors",
+     "bullets": [
+      "Mitosis makes identical cells",
+      "Meiosis makes unique gametes",
+      "Chromosome number halves only in meiosis"
+     ],
+     "note": "Ask pupils to hold up 1 finger for mitosis, 2 for meiosis for each statement read aloud.",
+     "misconception": {
+      "wrong": "Meiosis produces gametes identical to each other and to the parent cell.",
+      "right": "Meiosis produces four genetically different haploid cells, each with half the chromosome number."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils recall mitosis for 'growth' but forget gametes need meiosis.",
+     "check": {
+      "q": "Which process makes sperm cells in the testes?",
+      "options": [
+       "Mitosis",
+       "Fertilisation",
+       "Meiosis",
+       "Respiration"
+      ],
+      "answer": 2,
+      "why": "Gametes are made by meiosis, which halves the chromosome number."
+     }
+    }
+   ],
+   "practice": [
+    "How many chromosomes in a human skin cell and sperm cell?",
+    "Explain why gametes must be haploid.",
+    "State two uses of mitosis."
+   ],
+   "independent": [
+    "Core: Make a comparison table of mitosis and meiosis.",
+    "Extend: A fruit fly has 8 chromosomes in a body cell. State the number in a gamete and zygote. [2 marks]",
+    "Stretch: Explain why siblings (other than identical twins) are not genetically identical. [3 marks]"
+   ],
+   "exit": [
+    "Define diploid and haploid. [2 marks]",
+    "Return to the big question: explain with numbers."
+   ],
+   "homework": "Draw a diagram of a cell with 4 chromosomes dividing by mitosis and by meiosis.",
+   "send": "SEND/EAL: chromosome cards to physically sort. Stretch: how does non-disjunction cause Down syndrome?"
+  },
+  {
+   "unit": "Biology 3: Reproduction and inheritance",
+   "n": 8,
+   "title": "Variation and mutation",
+   "duration": 50,
+   "bigQuestion": "Why are no two people identical, even twins who share all their genes?",
+   "objectives": [
+    "Distinguish genetic and environmental causes of variation",
+    "Describe continuous and discontinuous variation",
+    "Describe mutation as rare, random and inheritable and state what mutagens are"
+   ],
+   "successCriteria": [
+    "All: give examples of genetic and environmental variation",
+    "Most: describe mutation and mutagens",
+    "Some: explain the consequences of a mutation and interpret data"
+   ],
+   "crossCurricular": "Maths: data handling and distributions",
+   "smsc": "Moral: respect for human difference; avoiding unnecessary exposure to harm",
+   "keywords": [
+    {
+     "term": "variation",
+     "def": "differences between individuals of the same species"
+    },
+    {
+     "term": "mutation",
+     "def": "random change in the DNA sequence"
+    },
+    {
+     "term": "mutagen",
+     "def": "agent that increases the rate of mutation, e.g. ionising radiation"
+    },
+    {
+     "term": "inheritable",
+     "def": "passed on to offspring if the mutation is in the gametes"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the molecule that carries genetic information.",
+    "What is an allele?",
+    "State the number of chromosomes in a human gamete."
+   ],
+   "teach": [
+    {
+     "heading": "Causes of variation",
+     "bullets": [
+      "Genetic: different alleles from the parents",
+      "Environmental: diet, climate, accidents",
+      "Most features are influenced by both"
+     ],
+     "note": "Examples: eye colour (genetic), scar (environmental), height (genes plus nutrition), skin tone (genes plus sunlight). Identical twins share genes, so differences between them are environmental. Illustrative class data: height of identical twins differs by about 1 cm, mass by 3 kg.",
+     "compare": {
+      "left": {
+       "title": "Continuous variation",
+       "points": [
+        "A range of values",
+        "e.g. height, mass",
+        "Genes and environment",
+        "Normal distribution graph"
+       ]
+      },
+      "right": {
+       "title": "Discontinuous variation",
+       "points": [
+        "Distinct categories",
+        "e.g. blood group, tongue rolling",
+        "Mostly genes",
+        "Bar chart"
+       ]
+      },
+      "label": "compare"
+     }
+    },
+    {
+     "heading": "Mutation",
+     "bullets": [
+      "A mutation changes the base sequence of a gene",
+      "Rare and random",
+      "Inherited only if it occurs in a gamete or the cell that forms gametes"
+     ],
+     "note": "Most mutations are harmless or harmful; a few are beneficial. Mutagens raise the rate: ionising radiation (X-rays, gamma rays, UV) and chemicals in tobacco smoke (Biology only). Link to cancer if mutations affect cell division genes.",
+     "model": {
+      "problem": "Explain how a mutation in the gene for an enzyme could stop the enzyme working. [3 marks]",
+      "steps": [
+       "The DNA base sequence changes",
+       "A different amino acid may be placed in the protein chain",
+       "The protein folds into a different shape",
+       "The active site no longer fits the substrate"
+      ],
+      "answer": "A changed base sequence can alter the active site shape"
+     }
+    },
+    {
+     "heading": "Interpreting variation data",
+     "bullets": [
+      "Use mean, range and graphs",
+      "Look for overlapping distributions",
+      "Cause cannot be proved by a correlation alone"
+     ],
+     "note": "Give a table of leaf lengths of ivy from sun and shade: e.g. sun mean 4.8 cm, shade mean 6.1 cm. Use as an environmental effect when plants are genetically identical.",
+     "misconception": {
+      "wrong": "A mutation is always harmful.",
+      "right": "Most are neutral or harmful, but some are beneficial and can spread through a population."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils tick 'hair colour' for environmental because of dye.",
+     "check": {
+      "q": "Which is an example of discontinuous variation?",
+      "options": [
+       "Height",
+       "Mass",
+       "ABO blood group",
+       "Foot length"
+      ],
+      "answer": 2,
+      "why": "Blood group falls into distinct categories. Height, mass and foot length vary across a range."
+     }
+    }
+   ],
+   "practice": [
+    "Give one genetic and one environmental cause of variation.",
+    "State two mutagens.",
+    "Explain why a mutation in a skin cell is not inherited."
+   ],
+   "independent": [
+    "Core: Sort ten features into genetic, environmental or both.",
+    "Extend: Explain why identical twins raised apart can differ in mass but not blood group. [3 marks]",
+    "Stretch: Evaluate the statement 'all mutations are harmful'. [4 marks]"
+   ],
+   "exit": [
+    "Define mutation. [1 mark]",
+    "Return to the big question using the terms genes and environment."
+   ],
+   "homework": "Collect data on a continuous and a discontinuous feature in your family (with permission) and present it.",
+   "send": "SEND/EAL: sorting cards with pictures. Stretch: why might a mutation be beneficial in a changing environment?"
+  },
+  {
+   "unit": "Biology 3: Reproduction and inheritance",
+   "n": 9,
+   "title": "Natural selection and antibiotic resistance",
+   "duration": 50,
+   "bigQuestion": "How can a population change over generations, and why do some infections stop responding to treatment?",
+   "objectives": [
+    "Describe Darwin's theory of natural selection in the stages the specification requires",
+    "Apply the theory to the peppered moth",
+    "Explain how antibiotic resistance develops in bacteria"
+   ],
+   "successCriteria": [
+    "All: list the stages of natural selection",
+    "Most: apply them to a population and to bacteria",
+    "Some: explain how data support selection and calculate bacterial growth"
+   ],
+   "crossCurricular": "Medicine: antibiotics; History of science",
+   "smsc": "Intellectual honesty: describe the scientific theory accurately as the examination requires, weigh evidence, and respect differing views",
+   "keywords": [
+    {
+     "term": "natural selection",
+     "def": "process in which better-adapted individuals survive and pass on their alleles more often"
+    },
+    {
+     "term": "adaptation",
+     "def": "feature that helps an organism survive in its environment"
+    },
+    {
+     "term": "antibiotic resistance",
+     "def": "ability of bacteria to survive an antibiotic"
+    },
+    {
+     "term": "MRSA",
+     "def": "strain of bacteria resistant to many antibiotics"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is a mutation?",
+    "What is variation?",
+    "Name the process by which bacteria reproduce."
+   ],
+   "teach": [
+    {
+     "heading": "Darwin's theory: stages",
+     "bullets": [
+      "Individuals in a species show variation",
+      "More offspring are born than survive",
+      "Better-adapted individuals survive and reproduce, passing on their alleles"
+     ],
+     "note": "Be exact: this is what the specification requires pupils to know and explain, and they must use these terms in the exam. Darwin proposed natural selection after observations and the work of others; the modern understanding adds genes and mutation as the source of new alleles. Teach the theory and its supporting evidence precisely; pupils may hold their own views and this lesson is about describing and explaining the scientific theory.",
+     "cycle": [
+      "Variation in a population",
+      "Competition: more offspring than survive",
+      "Better-adapted individuals survive",
+      "They reproduce and pass on alleles",
+      "Allele frequency changes over generations"
+     ]
+    },
+    {
+     "heading": "Example: peppered moth",
+     "bullets": [
+      "Pale and dark forms of Biston betularia",
+      "Industrial areas: soot darkened tree bark",
+      "Dark moths survived better; their allele became more common"
+     ],
+     "note": "Records from Manchester show dark forms rose from rare in the mid-1800s to about 98% by 1895. After clean-air laws in the 20th century the pale form became common again. Predation by birds acted as the selective pressure.",
+     "model": {
+      "problem": "Explain how the dark form of the peppered moth became more common near industrial cities. [4 marks]",
+      "steps": [
+       "There was variation: some moths were dark, some pale",
+       "Soot-covered bark made pale moths easier for birds to see",
+       "Dark moths survived and reproduced more",
+       "They passed on the dark allele, so it became more common"
+      ],
+      "answer": "Dark moths were better camouflaged, survived and passed on their allele"
+     }
+    },
+    {
+     "heading": "Antibiotic resistance",
+     "bullets": [
+      "Bacteria vary because of random mutation",
+      "Antibiotic kills most bacteria; resistant ones survive",
+      "Survivors reproduce; population becomes resistant"
+     ],
+     "note": "Maths: a bacterium divides every 20 minutes. After 2 hours there are 2⁶ = 64 cells; after 6 hours 2¹⁸ = 262 144. Resistance spreads because bacteria multiply quickly. Reduce risk: complete the course, do not use antibiotics for viral infections, avoid overuse.",
+     "misconception": {
+      "wrong": "Bacteria become resistant because the antibiotic makes them change on purpose.",
+      "right": "Resistant bacteria arise by random mutation. The antibiotic selects them, because the others die."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: 'the bacteria got used to it' is the commonest wrong idea.",
+     "check": {
+      "q": "Which statement best explains why a population of bacteria becomes resistant to an antibiotic?",
+      "options": [
+       "Bacteria learn to resist the drug",
+       "The drug causes mutations in all bacteria",
+       "Resistant bacteria survive and reproduce",
+       "Antibiotics make bacteria multiply more slowly"
+      ],
+      "answer": 2,
+      "why": "Random mutation produces some resistant bacteria; the antibiotic kills the rest, so the resistant ones reproduce and pass on the allele."
+     }
+    }
+   ],
+   "practice": [
+    "List the steps of natural selection in order.",
+    "State two ways to reduce antibiotic resistance.",
+    "Calculate the bacterial number after 3 hours if one cell divides every 20 minutes."
+   ],
+   "independent": [
+    "Core: Describe the peppered moth case in five sentences using the terms variation, selection and allele.",
+    "Extend: Explain why MRSA is difficult to treat in hospitals. [3 marks]",
+    "Stretch: Evaluate the evidence for natural selection from the peppered moth. [4 marks]"
+   ],
+   "exit": [
+    "Define natural selection. [2 marks]",
+    "Return to the big question in your own words."
+   ],
+   "homework": "Write a 150-word exam-style explanation of antibiotic resistance.",
+   "send": "SEND/EAL: sequence cards of the stages. Stretch: why must people finish an antibiotic course even if they feel well?"
+  },
+  {
+   "unit": "Biology 4: Ecology and the environment",
+   "n": 10,
+   "title": "Biodiversity, distribution and sampling",
+   "duration": 50,
+   "bigQuestion": "How do we count the living world, and what does a number of species tell us?",
+   "objectives": [
+    "Define biodiversity and describe how it is measured with quadrats",
+    "Estimate a population from quadrat data",
+    "Describe how abiotic gradients explain the distribution of organisms along a transect"
+   ],
+   "successCriteria": [
+    "All: define biodiversity",
+    "Most: calculate a population estimate and compare habitats",
+    "Some: interpret transect data and evaluate conclusions"
+   ],
+   "crossCurricular": "Geography: fieldwork and human impact; Maths: sampling",
+   "smsc": "Stewardship (khilafah): protecting the variety of species as an amanah",
+   "keywords": [
+    {
+     "term": "biodiversity",
+     "def": "the number and variety of different species in an area"
+    },
+    {
+     "term": "transect",
+     "def": "line across a habitat along which organisms are sampled"
+    },
+    {
+     "term": "random sampling",
+     "def": "choosing sample positions by chance to avoid bias"
+    },
+    {
+     "term": "distribution",
+     "def": "where organisms are found"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define population and community.",
+    "Name two abiotic factors.",
+    "What is a food chain?"
+   ],
+   "teach": [
+    {
+     "heading": "Biodiversity",
+     "bullets": [
+      "More species means higher biodiversity",
+      "Species-rich habitats are usually more stable",
+      "Damage to a habitat often reduces species number"
+     ],
+     "note": "Say clearly: this lesson extends the earlier quadrat lesson to biodiversity (Biology only) and distribution. Contrast a mown lawn (about 3 species) and an unmown meadow (over 12). Link back to food webs: more species gives more feeding links.",
+     "table": {
+      "head": [
+       "Habitat",
+       "Species found in ten quadrats"
+      ],
+      "rows": [
+       [
+        "Mown lawn",
+        "3"
+       ],
+       [
+        "Unmown meadow",
+        "12"
+       ],
+       [
+        "Hedgerow",
+        "18"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Sampling with quadrats",
+     "bullets": [
+      "Place quadrats at random using coordinates",
+      "Count each species in every quadrat",
+      "Estimate = mean per quadrat × (total area ÷ quadrat area)"
+     ],
+     "note": "Random coordinates from a random number table or generator avoid choosing 'nice' spots. More quadrats make the mean more reliable. Biodiversity is the number of species found.",
+     "model": {
+      "problem": "A field has area 600 m². Ten quadrats of 0.25 m² contain these daisy counts: 4, 2, 5, 3, 6, 4, 3, 5, 2, 6. Estimate the population of daisies.",
+      "steps": [
+       "Total = 40; mean = 4.0 per 0.25 m²",
+       "Density = 4.0 ÷ 0.25 = 16 per m²",
+       "Population = 16 × 600"
+      ],
+      "answer": "9600 daisies"
+     }
+    },
+    {
+     "heading": "Distribution along a transect",
+     "bullets": [
+      "Lay a tape from woodland edge into open grass",
+      "Quadrat every 5 m; measure light each time",
+      "Compare abundance with the abiotic factor"
+     ],
+     "note": "Sample data: distance 0, 5, 10, 15, 20 m; shade-loving fern per m²: 22, 15, 8, 2, 0; relative light: 12, 25, 48, 80, 100. Pattern: fern decreases as light rises. Correlation suggests but does not prove cause; check soil moisture and pH as well.",
+     "table": {
+      "head": [
+       "Distance (m)",
+       "Fern per m²",
+       "Relative light"
+      ],
+      "rows": [
+       [
+        "0",
+        "22",
+        "12"
+       ],
+       [
+        "5",
+        "15",
+        "25"
+       ],
+       [
+        "10",
+        "8",
+        "48"
+       ],
+       [
+        "15",
+        "2",
+        "80"
+       ],
+       [
+        "20",
+        "0",
+        "100"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils pick a link as proof; other abiotic factors might also change along the transect.",
+     "check": {
+      "q": "Fern numbers fall as light increases along a transect. What is the best conclusion?",
+      "options": [
+       "Light causes the decrease",
+       "Light could be a factor, but other factors should be checked",
+       "Ferns cannot live in the light",
+       "Light has no effect"
+      ],
+      "answer": 1,
+      "why": "Correlation is not proof of cause. Moisture, soil and temperature may also vary along the transect."
+     }
+    }
+   ],
+   "practice": [
+    "Define biodiversity.",
+    "Why are quadrat positions chosen at random?",
+    "A field of 400 m² has a mean of 5 plants per 1 m² quadrat. Estimate the population."
+   ],
+   "independent": [
+    "Core: Calculate the mean and population estimate from the data your teacher gives for a 0.5 m² quadrat.",
+    "Extend: Explain why the meadow has higher biodiversity than the lawn. [3 marks]",
+    "Stretch: Evaluate how reliable your fern conclusion is and suggest two improvements. [4 marks]"
+   ],
+   "exit": [
+    "State two ways to make quadrat data more reliable. [2 marks]",
+    "Return to the big question in one sentence."
+   ],
+   "homework": "Plan a biodiversity survey of a school garden: method, variables and a risk assessment.",
+   "send": "SEND/EAL: photographs of species with name cards. Stretch: name another measure such as an index of diversity."
+  },
+  {
+   "unit": "Biology 5: Use of biological resources",
+   "n": 11,
+   "title": "Crop yield, pest control and fish farming",
+   "duration": 50,
+   "bigQuestion": "How can farmers grow more food without wasting the Earth's resources?",
+   "objectives": [
+    "Explain how glasshouses, polythene tunnels, carbon dioxide, temperature, fertilisers and pest control increase crop yield",
+    "Compare chemical and biological pest control",
+    "Describe fish-farming methods and their problems (Biology only)"
+   ],
+   "successCriteria": [
+    "All: list ways to raise crop yield",
+    "Most: explain reasons and compare pest control",
+    "Some: evaluate cost and environmental impact using data"
+   ],
+   "crossCurricular": "Geography: food security; Economics: cost-benefit",
+   "smsc": "Stewardship: using resources without waste (israf); providing halal and tayyib food",
+   "keywords": [
+    {
+     "term": "yield",
+     "def": "amount of crop produced per unit area"
+    },
+    {
+     "term": "biological control",
+     "def": "using a living organism to control a pest"
+    },
+    {
+     "term": "fertiliser",
+     "def": "substance supplying mineral ions to plants"
+    },
+    {
+     "term": "stocking density",
+     "def": "number of fish per unit volume of water"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name three limiting factors of photosynthesis.",
+    "What do plants use nitrate for?",
+    "Define eutrophication."
+   ],
+   "teach": [
+    {
+     "heading": "Raising crop yield",
+     "bullets": [
+      "Glasshouses and polythene tunnels keep warmth, light and humidity",
+      "Extra CO₂ and warmth speed photosynthesis",
+      "Fertilisers (N, P, K) supply mineral ions"
+     ],
+     "note": "Link to limiting factors. A glasshouse traps heat and shelters from wind and pests. Some growers burn paraffin for heat and CO₂. Nitrates make amino acids, phosphates help roots and energy transfer, potassium helps enzymes.",
+     "table": {
+      "head": [
+       "Growing method",
+       "Yield (kg tomatoes per m²)",
+       "Cost (£ per m²)"
+      ],
+      "rows": [
+       [
+        "Open field",
+        "6",
+        "1.50"
+       ],
+       [
+        "Glasshouse at 25 °C",
+        "22",
+        "8.00"
+       ],
+       [
+        "Glasshouse + CO₂",
+        "28",
+        "9.50"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: evaluate using data",
+     "bullets": [
+      "Calculate value (kg × £2)",
+      "Subtract cost for profit",
+      "Comment on trade-offs beyond cost"
+     ],
+     "note": "Value: field 6 × 2 = £12, glasshouse 22 × 2 = £44, glasshouse + CO₂ 28 × 2 = £56. Profit after cost: £10.50, £36.00, £46.50. Real farms also count energy use and carbon footprint.",
+     "model": {
+      "problem": "Using the table and tomatoes selling at £2 per kg, calculate the profit per m² for the glasshouse with CO₂ and compare with the open field.",
+      "steps": [
+       "Value = 28 × 2 = £56",
+       "Profit = 56 − 9.50 = £46.50",
+       "Field: 6 × 2 = £12; profit = £10.50",
+       "Glasshouse + CO₂ profit is about 4.4 times greater"
+      ],
+      "answer": "£46.50 per m², about 4.4 times the field profit"
+     }
+    },
+    {
+     "heading": "Pest control and fish farming",
+     "bullets": [
+      "Pesticides kill pests but can harm other organisms",
+      "Biological control: ladybirds eat aphids; no chemical residue",
+      "Fish farms: control predators, disease, water quality, feeding"
+     ],
+     "note": "Chemical: fast but can spread through food chains and pests may evolve resistance. Biological: slower, specific, but the agent may become a pest itself. Fish farming (Biology only): benefits include protecting wild stocks and reliable supply; problems include waste and uneaten food polluting water, disease and parasites spreading to wild fish, escaped fish breeding with wild fish, and fishmeal from wild catch.",
+     "compare": {
+      "left": {
+       "title": "Chemical pesticide",
+       "points": [
+        "Quick and effective",
+        "Can kill non-target species",
+        "May build up in food chains",
+        "Pests can become resistant"
+       ]
+      },
+      "right": {
+       "title": "Biological control",
+       "points": [
+        "Natural predator or parasite",
+        "Little chemical pollution",
+        "Slower to act",
+        "Must be well chosen"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils think the biggest yield is always best; cost and environmental effects matter.",
+     "check": {
+      "q": "Which is a disadvantage of using chemical pesticides?",
+      "options": [
+       "They kill pests quickly",
+       "They may harm useful insects and enter food chains",
+       "They are always cheaper",
+       "They increase CO₂ concentration"
+      ],
+      "answer": 1,
+      "why": "Pesticides can kill non-target organisms such as bees and can be passed along food chains."
+     }
+    }
+   ],
+   "practice": [
+    "State two ways a glasshouse increases yield.",
+    "Why can fertiliser run-off cause problems?",
+    "Give one problem of fish farming."
+   ],
+   "independent": [
+    "Core: Make a table of advantages and disadvantages of biological control.",
+    "Extend: Explain why adding CO₂ to a glasshouse increases yield only if light and temperature are high enough. [3 marks]",
+    "Stretch: Evaluate the use of a glasshouse and chemical pesticide for producing tomatoes in the UK. [4 marks]"
+   ],
+   "exit": [
+    "Name three factors a grower can control in a glasshouse. [3 marks]",
+    "Return to the big question: balance yield and the environment in two sentences."
+   ],
+   "homework": "Write a short plan for a school glasshouse to grow cucumbers, justifying each control.",
+   "send": "SEND/EAL: pictures of glasshouse controls. Stretch: calculate cost-benefit if CO₂ enrichment costs £3 more."
+  },
+  {
+   "unit": "Biology 5: Use of biological resources",
+   "n": 12,
+   "title": "Yeast, Lactobacillus and industrial fermenters",
+   "duration": 50,
+   "bigQuestion": "How can tiny organisms make bread, yoghurt and medicines?",
+   "objectives": [
+    "Describe the use of yeast in bread making and Lactobacillus in yoghurt",
+    "Describe the structure and conditions of an industrial fermenter",
+    "Explain the need for aseptic conditions"
+   ],
+   "successCriteria": [
+    "All: name the organisms and products",
+    "Most: describe the conditions of a fermenter",
+    "Some: explain why each condition is controlled"
+   ],
+   "crossCurricular": "Food technology: baking and dairy; Chemistry: fermentation",
+   "smsc": "Gratitude for provision; careful, clean food preparation (tahara, tayyib)",
+   "keywords": [
+    {
+     "term": "fermenter",
+     "def": "vessel for growing microorganisms on a large scale"
+    },
+    {
+     "term": "aseptic",
+     "def": "free from unwanted microorganisms"
+    },
+    {
+     "term": "lactic acid",
+     "def": "acid made by Lactobacillus when fermenting lactose"
+    },
+    {
+     "term": "mycoprotein",
+     "def": "protein-rich food made from a fungus"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the equation for anaerobic respiration in yeast.",
+    "State the optimum conditions for enzymes.",
+    "Name the gas that makes bread rise."
+   ],
+   "teach": [
+    {
+     "heading": "Bread and yoghurt",
+     "bullets": [
+      "Yeast respires sugar, releasing CO₂ to make dough rise",
+      "Ethanol evaporates when the bread is baked",
+      "Lactobacillus changes lactose into lactic acid"
+     ],
+     "note": "Yoghurt method: heat milk to about 72 °C for 15 seconds to kill unwanted microbes, cool to about 43 °C, add Lactobacillus starter culture, incubate for several hours. The falling pH makes milk protein clot, thickening and giving the sour taste.",
+     "cycle": [
+      "Heat milk to kill unwanted microbes",
+      "Cool to about 43 °C",
+      "Add Lactobacillus culture",
+      "Incubate in warm conditions",
+      "Lactic acid thickens the milk into yoghurt"
+     ]
+    },
+    {
+     "heading": "The industrial fermenter",
+     "bullets": [
+      "Sterile nutrients and sterile air",
+      "Stirrer mixes; water jacket removes heat",
+      "Probes monitor pH and temperature"
+     ],
+     "note": "Fermenters make antibiotics such as penicillin (from the fungus Penicillium) and mycoprotein (from the fungus Fusarium). Respiration releases heat, so cooling is necessary. A stirrer spreads nutrients and oxygen and keeps temperature even.",
+     "table": {
+      "head": [
+       "Control",
+       "Reason"
+      ],
+      "rows": [
+       [
+        "Temperature",
+        "keeps enzymes at optimum"
+       ],
+       [
+        "pH",
+        "optimum for the microorganism's enzymes"
+       ],
+       [
+        "Sterile conditions",
+        "stops competitors and toxins"
+       ],
+       [
+        "Oxygen supply",
+        "for aerobic respiration"
+       ],
+       [
+        "Stirring",
+        "even mixing of nutrients and heat"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: explain controls",
+     "bullets": [
+      "Name the feature",
+      "State its function",
+      "Link to yield"
+     ],
+     "note": "Practice phrase: conditions, enzymes, optimum, yield. Contamination can ruin a whole batch costing thousands of pounds.",
+     "model": {
+      "problem": "Explain why a fermenter has a water jacket and a stirrer. [4 marks]",
+      "steps": [
+       "Respiration releases heat, which could denature enzymes",
+       "The water jacket removes heat to keep optimum temperature",
+       "The stirrer mixes nutrients and oxygen through the culture",
+       "So all microorganisms get nutrients and growth is fast"
+      ],
+      "answer": "Cooling keeps enzymes working and stirring spreads nutrients and oxygen"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils think Lactobacillus uses glucose to make ethanol; it produces lactic acid.",
+     "check": {
+      "q": "Which organism and product are used to make yoghurt?",
+      "options": [
+       "Yeast and ethanol",
+       "Lactobacillus and lactic acid",
+       "Penicillium and penicillin",
+       "Fusarium and mycoprotein"
+      ],
+      "answer": 1,
+      "why": "Lactobacillus ferments lactose into lactic acid, which thickens milk."
+     }
+    }
+   ],
+   "practice": [
+    "Name the organism used in bread making.",
+    "Why is milk heated before making yoghurt?",
+    "State two controlled conditions in a fermenter."
+   ],
+   "independent": [
+    "Core: Draw and label a fermenter with five features.",
+    "Extend: Explain why sterile air is pumped into a fermenter used for penicillin. [3 marks]",
+    "Stretch: Evaluate making food protein using a fungus compared with raising animals. [4 marks]"
+   ],
+   "exit": [
+    "State why aseptic conditions are needed. [2 marks]",
+    "Return to the big question: pick one product and explain the process."
+   ],
+   "homework": "Make a flow chart of yoghurt production with controlled conditions beside each step.",
+   "send": "SEND/EAL: flow cards in order. Stretch: why do bakers add sugar to dough?"
+  },
+  {
+   "unit": "Biology 5: Use of biological resources",
+   "n": 13,
+   "title": "Selective breeding of plants and animals",
+   "duration": 50,
+   "bigQuestion": "How did one wild plant become cabbage, broccoli and cauliflower?",
+   "objectives": [
+    "Describe the process of selective breeding",
+    "Give examples of traits selected in crops and animals",
+    "Evaluate the benefits and problems"
+   ],
+   "successCriteria": [
+    "All: describe the steps",
+    "Most: give examples and benefits",
+    "Some: explain reduced genetic diversity and evaluate"
+   ],
+   "crossCurricular": "History: early agriculture; Economics: farming",
+   "smsc": "Stewardship: caring for animals with kindness while meeting human needs",
+   "keywords": [
+    {
+     "term": "selective breeding",
+     "def": "choosing parents with desired traits to breed over generations"
+    },
+    {
+     "term": "trait",
+     "def": "characteristic"
+    },
+    {
+     "term": "inbreeding",
+     "def": "breeding closely related individuals"
+    },
+    {
+     "term": "genetic diversity",
+     "def": "range of alleles in a population"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define variation.",
+    "What is an allele?",
+    "State the difference between a gene and an allele."
+   ],
+   "teach": [
+    {
+     "heading": "The process",
+     "bullets": [
+      "Choose parents with the desired trait",
+      "Breed them and select the best offspring",
+      "Repeat for many generations"
+     ],
+     "note": "Choice is made by humans (artificial selection), unlike natural selection. Examples: cows with high milk yield, wheat with disease resistance, dogs with certain temperaments, crops with larger fruit, hens with more eggs.",
+     "cycle": [
+      "Choose parents with desired traits",
+      "Breed them together",
+      "Select best offspring",
+      "Breed those offspring",
+      "Repeat over generations"
+     ]
+    },
+    {
+     "heading": "Example: milk yield",
+     "bullets": [
+      "Average yield per cow has risen steeply",
+      "Yield about 4000 litres a year in the 1970s",
+      "Over 7500 litres a year today (UK average, approximate)"
+     ],
+     "note": "Part of the rise is better feeding and care; selection for milk yield also contributed. Ask: what might the cow's welfare costs be? (more lameness, udder infections).",
+     "model": {
+      "problem": "Describe how a farmer could produce a variety of wheat with high yield and resistance to a fungal disease. [4 marks]",
+      "steps": [
+       "Choose wheat plants with the highest yield and plants resistant to the disease",
+       "Cross-pollinate them",
+       "Grow the seeds and select offspring that show both traits",
+       "Repeat over many generations"
+      ],
+      "answer": "Select, cross, select offspring, repeat"
+     }
+    },
+    {
+     "heading": "Benefits and drawbacks",
+     "bullets": [
+      "Benefit: higher yield, better quality, disease resistance",
+      "Drawback: reduced genetic diversity",
+      "Inbreeding can increase harmful recessive disorders"
+     ],
+     "note": "Real example: the Irish potato famine of the 1840s involved a heavily clonal, near-uniform potato crop affected by blight. A population with little variation may have no resistant individuals when a new disease arrives.",
+     "misconception": {
+      "wrong": "Selective breeding is genetic engineering.",
+      "right": "In selective breeding whole organisms with desired alleles are bred over generations. Genetic engineering moves specific genes directly."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils say the cow changes during its life; selection acts across generations.",
+     "check": {
+      "q": "Which is a problem of selective breeding?",
+      "options": [
+       "Offspring are completely different from parents",
+       "Reduced genetic diversity",
+       "It uses restriction enzymes",
+       "It is impossible in plants"
+      ],
+      "answer": 1,
+      "why": "Repeated selection from a small group lowers variation, so a disease can affect the whole population."
+     }
+    }
+   ],
+   "practice": [
+    "Define selective breeding.",
+    "Give two traits that may be selected in cattle.",
+    "Why is it slower than genetic engineering?"
+   ],
+   "independent": [
+    "Core: Write the steps of selective breeding for tomatoes with bigger fruit.",
+    "Extend: Explain how selective breeding differs from natural selection. [3 marks]",
+    "Stretch: Evaluate whether selective breeding of dogs for appearance is acceptable. [4 marks]"
+   ],
+   "exit": [
+    "State one benefit and one drawback of selective breeding. [2 marks]",
+    "Return to the big question: explain it in three steps."
+   ],
+   "homework": "Research one crop or animal that has been selectively bred and summarise the changes.",
+   "send": "SEND/EAL: before/after pictures of crops. Stretch: how does inbreeding increase recessive disorders?"
+  },
+  {
+   "unit": "Biology 5: Use of biological resources",
+   "n": 14,
+   "title": "Genetic engineering and human insulin",
+   "duration": 50,
+   "bigQuestion": "How can bacteria be programmed to make human medicine?",
+   "objectives": [
+    "Describe the steps of genetic engineering",
+    "Explain the roles of restriction enzymes, ligase and vectors",
+    "Describe how GM bacteria make human insulin"
+   ],
+   "successCriteria": [
+    "All: define genetic engineering",
+    "Most: sequence the steps and name enzymes",
+    "Some: explain the benefits and issues of GM insulin"
+   ],
+   "crossCurricular": "Medicine: diabetes; Chemistry: enzymes",
+   "smsc": "Moral: weighing benefit and risk; responsibility in applying science for healing",
+   "keywords": [
+    {
+     "term": "genetic engineering",
+     "def": "changing an organism's genes by moving DNA from one organism to another"
+    },
+    {
+     "term": "restriction enzyme",
+     "def": "enzyme that cuts DNA at a specific sequence"
+    },
+    {
+     "term": "ligase",
+     "def": "enzyme that joins DNA pieces together"
+    },
+    {
+     "term": "vector",
+     "def": "carrier (plasmid or virus) used to transfer DNA into cells"
+    }
+   ],
+   "starter": [
+    "Bismillah. What does insulin do?",
+    "Define plasmid.",
+    "What is an enzyme's active site?"
+   ],
+   "teach": [
+    {
+     "heading": "The steps",
+     "bullets": [
+      "Cut the human insulin gene out with a restriction enzyme",
+      "Cut a plasmid with the same enzyme",
+      "Join the gene into the plasmid with ligase",
+      "Put the plasmid into bacteria",
+      "Grow the bacteria in a fermenter"
+     ],
+     "note": "Restriction enzymes leave 'sticky ends' that match; ligase seals the joins. Viruses can also be vectors. Bacteria then copy the plasmid and make insulin. Extract and purify.",
+     "cycle": [
+      "Isolate the human insulin gene",
+      "Cut with a restriction enzyme",
+      "Insert into a plasmid with ligase",
+      "Place into bacteria",
+      "Bacteria make insulin in a fermenter"
+     ]
+    },
+    {
+     "heading": "Why GM insulin",
+     "bullets": [
+      "Insulin controls blood glucose in diabetes",
+      "Previously extracted from pig and cow pancreases",
+      "GM human insulin is cheaper, plentiful, and suits more patients"
+     ],
+     "note": "GM insulin was first approved in the early 1980s. Bacteria reproduce quickly in fermenters, so supply is large.",
+     "model": {
+      "problem": "Explain the roles of restriction enzymes and ligase in making GM bacteria. [4 marks]",
+      "steps": [
+       "Restriction enzyme cuts DNA at a specific base sequence",
+       "It cuts both the gene and plasmid, leaving sticky ends",
+       "Ligase joins the gene into the plasmid backbone",
+       "This makes a recombinant plasmid that bacteria can take up"
+      ],
+      "answer": "Restriction enzymes cut; ligase joins; the plasmid carries the gene"
+     }
+    },
+    {
+     "heading": "Plasmid or virus as vector",
+     "bullets": [
+      "A vector carries DNA into a cell",
+      "Plasmids: from bacteria, circular DNA",
+      "Viruses insert their genetic material into host cells"
+     ],
+     "note": "Link to bacteria: plasmids are small circles of DNA in addition to the main chromosome.",
+     "misconception": {
+      "wrong": "Genetic engineering and selective breeding are the same thing.",
+      "right": "Genetic engineering moves specific genes directly using enzymes and vectors. Selective breeding works across generations by choosing parents."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: confusing restriction enzyme with ligase because both 'work on DNA'.",
+     "check": {
+      "q": "Which enzyme joins a gene into a plasmid?",
+      "options": [
+       "Restriction enzyme",
+       "Amylase",
+       "Ligase",
+       "Protease"
+      ],
+      "answer": 2,
+      "why": "Ligase joins DNA fragments. Restriction enzymes cut DNA."
+     }
+    }
+   ],
+   "practice": [
+    "List the steps to produce GM bacteria for insulin.",
+    "What is a vector?",
+    "Name the enzyme that cuts DNA."
+   ],
+   "independent": [
+    "Core: Draw the steps of genetic engineering using a flow chart.",
+    "Extend: Explain why bacteria are used to make human insulin. [3 marks]",
+    "Stretch: Evaluate the benefits and risks of genetic engineering in medicine. [4 marks]"
+   ],
+   "exit": [
+    "Define genetic engineering. [1 mark]",
+    "Return to the big question: describe in a sentence how bacteria become insulin factories."
+   ],
+   "homework": "Write a short paragraph explaining GM insulin to a person with diabetes.",
+   "send": "SEND/EAL: step cards with diagrams. Stretch: how can the gene be made from mRNA?"
+  },
+  {
+   "unit": "Biology 5: Use of biological resources",
+   "n": 15,
+   "title": "Transgenic organisms, GM crops and cloning",
+   "duration": 50,
+   "bigQuestion": "Should we move genes between species, and can we copy a whole animal?",
+   "objectives": [
+    "Describe transgenic organisms and GM crops with examples",
+    "Evaluate benefits and concerns of GM food production",
+    "Describe micropropagation and nuclear transfer including Dolly the sheep (Biology only)"
+   ],
+   "successCriteria": [
+    "All: define transgenic and cloning",
+    "Most: describe examples and the Dolly process",
+    "Some: evaluate GM crops and cloning from several perspectives"
+   ],
+   "crossCurricular": "Geography: food security; Ethics",
+   "smsc": "Moral: weighing benefit, risk, justice and care for creation; respect for different considered views",
+   "keywords": [
+    {
+     "term": "transgenic",
+     "def": "containing a gene from a different species"
+    },
+    {
+     "term": "micropropagation",
+     "def": "growing many plants from small pieces of tissue in sterile culture"
+    },
+    {
+     "term": "nuclear transfer",
+     "def": "putting a nucleus from a body cell into an egg cell with its nucleus removed"
+    },
+    {
+     "term": "clone",
+     "def": "genetically identical organism"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define clone.",
+    "State the role of ligase.",
+    "What does mitosis produce?"
+   ],
+   "teach": [
+    {
+     "heading": "GM crops",
+     "bullets": [
+      "Transgenic plants carry a gene from another species",
+      "Golden rice: genes for beta-carotene (makes vitamin A)",
+      "Bt crops: bacterial gene gives resistance to insect pests"
+     ],
+     "note": "Golden rice was developed to help reduce vitamin A deficiency. Bt maize and cotton contain a toxin gene from the bacterium Bacillus thuringiensis. Herbicide-resistant crops are also grown. State both advantages and the controversy fairly.",
+     "table": {
+      "head": [
+       "Possible benefit",
+       "Possible concern"
+      ],
+      "rows": [
+       [
+        "higher yield; less pesticide",
+        "gene flow to wild relatives"
+       ],
+       [
+        "added nutrients",
+        "long-term effects debated and tested"
+       ],
+       [
+        "grow in harsher conditions",
+        "seed cost and company control"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Micropropagation",
+     "bullets": [
+      "Take tiny pieces from the shoot tip",
+      "Grow on sterile nutrient agar with plant hormones",
+      "Transfer plantlets to compost"
+     ],
+     "note": "Used for orchids and banana plants. Advantages: many identical plants quickly, disease-free stock. Disadvantages: expensive, plants are genetically identical.",
+     "cycle": [
+      "Cut small tissue sample",
+      "Sterilise and place on agar",
+      "Hormones stimulate shoots and roots",
+      "Transfer plantlets to compost",
+      "Grow on to mature plants"
+     ]
+    },
+    {
+     "heading": "Dolly the sheep: nuclear transfer",
+     "bullets": [
+      "Nucleus from an adult udder cell of a Finn Dorset sheep",
+      "Placed into an egg cell with its nucleus removed",
+      "Embryo implanted into a surrogate",
+      "Dolly born in 1996, genetically identical to the donor"
+     ],
+     "note": "The egg came from a Scottish Blackface ewe; the surrogate was also a Scottish Blackface. An electric pulse made the cell divide. Dolly lived to age 6; discuss welfare and the ethical debate respectfully.",
+     "model": {
+      "problem": "Describe how Dolly was produced. [4 marks]",
+      "steps": [
+       "A nucleus was removed from an unfertilised egg cell",
+       "The nucleus from a udder cell of another sheep was inserted",
+       "The cell was stimulated to divide, making an embryo",
+       "The embryo was implanted into a surrogate mother"
+      ],
+      "answer": "Nuclear transfer into an enucleated egg, then implantation"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Dolly was not made by fertilisation",
+      "No sperm was involved",
+      "The DNA came from one donor"
+     ],
+     "note": "Ask: which parent does Dolly resemble? (the udder-cell donor).",
+     "misconception": {
+      "wrong": "Dolly was produced by fertilising an egg with sperm in a laboratory.",
+      "right": "Dolly came from nuclear transfer, with no sperm. She was genetically identical to the donor of the nucleus."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: transgenic means a gene from another species, not any genetic change.",
+     "check": {
+      "q": "A plant with a gene from a bacterium is:",
+      "options": [
+       "selectively bred",
+       "a clone",
+       "transgenic",
+       "haploid"
+      ],
+      "answer": 2,
+      "why": "Transgenic organisms contain a gene from a different species."
+     }
+    }
+   ],
+   "practice": [
+    "Define transgenic.",
+    "State two advantages of micropropagation.",
+    "Why is Dolly genetically identical to the sheep that donated the nucleus?"
+   ],
+   "independent": [
+    "Core: Make a table of benefits and risks of GM crops.",
+    "Extend: Explain why plants produced by micropropagation are at risk from a single disease. [3 marks]",
+    "Stretch: Discuss whether human societies should clone farm animals. [5 marks]"
+   ],
+   "exit": [
+    "Describe the stages of micropropagation. [3 marks]",
+    "Return to the big question: present one view for and one against with evidence."
+   ],
+   "homework": "Write a balanced 150-word evaluation of GM crops.",
+   "send": "SEND/EAL: diagrams with caption matching. Stretch: how are mitochondria DNA inherited in Dolly?"
+  },
+  {
+   "unit": "Chemistry 3: Physical chemistry",
+   "n": 16,
+   "title": "Exothermic and endothermic reactions and calorimetry",
+   "duration": 50,
+   "bigQuestion": "How much energy does a reaction release, and how can you measure it with a cup and a thermometer?",
+   "objectives": [
+    "Distinguish exothermic and endothermic reactions with examples",
+    "Use Q = m × c × ΔT",
+    "Calculate molar enthalpy change from calorimetry data"
+   ],
+   "successCriteria": [
+    "All: classify reactions by temperature change",
+    "Most: calculate Q",
+    "Some: calculate molar enthalpy change and evaluate the method"
+   ],
+   "crossCurricular": "Physics: energy transfer; Food technology: hand warmers",
+   "smsc": "Stewardship: understanding energy use and heat loss",
+   "keywords": [
+    {
+     "term": "exothermic",
+     "def": "reaction that transfers energy to the surroundings; temperature rises"
+    },
+    {
+     "term": "endothermic",
+     "def": "reaction that takes in energy from the surroundings; temperature falls"
+    },
+    {
+     "term": "enthalpy change ΔH",
+     "def": "energy change in a reaction measured in kJ/mol"
+    },
+    {
+     "term": "calorimetry",
+     "def": "measuring energy changes by the temperature change of water"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the specific heat capacity of water (4.18 J/g/°C).",
+    "Calculate moles in 4.0 g of NaOH (Mr 40).",
+    "Define neutralisation."
+   ],
+   "teach": [
+    {
+     "heading": "Exo and endo",
+     "bullets": [
+      "Exothermic: temperature rises, ΔH negative",
+      "Endothermic: temperature falls, ΔH positive",
+      "Energy is conserved; it moves between system and surroundings"
+     ],
+     "note": "Examples: exothermic: combustion, neutralisation, respiration, metals in acid; endothermic: thermal decomposition of calcium carbonate, photosynthesis, citric acid with sodium hydrogencarbonate. Practical: measure temperature change when sodium hydroxide neutralises hydrochloric acid, and when ammonium nitrate dissolves in water, in a polystyrene cup with a lid. Safety: goggles; corrosive solutions.",
+     "table": {
+      "head": [
+       "Reaction",
+       "Type",
+       "Evidence"
+      ],
+      "rows": [
+       [
+        "Burning methane",
+        "exothermic",
+        "flame, heat"
+       ],
+       [
+        "Neutralising HCl with NaOH",
+        "exothermic",
+        "temperature rises"
+       ],
+       [
+        "Dissolving ammonium nitrate",
+        "endothermic",
+        "temperature falls"
+       ],
+       [
+        "Heating calcium carbonate",
+        "endothermic",
+        "needs continuous heating"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Calorimetry: Q = m c ΔT",
+     "bullets": [
+      "Q = energy in J; m = mass of water in g",
+      "c = 4.18 J/g/°C; ΔT = change in temperature",
+      "Molar enthalpy: ΔH = −Q ÷ moles (in J then kJ/mol)"
+     ],
+     "note": "Treat 1 cm³ of dilute solution as 1 g. Exothermic ΔH is negative. Use sign to match the temperature change.",
+     "model": {
+      "problem": "50 cm³ of 1.0 mol/dm³ HCl and 50 cm³ of 1.0 mol/dm³ NaOH are mixed. The temperature rises by 6.5 °C. Calculate Q and the molar enthalpy change of neutralisation.",
+      "steps": [
+       "Mass = 100 g; Q = 100 × 4.18 × 6.5 = 2717 J",
+       "Moles HCl = 1.0 × 0.050 = 0.050 mol",
+       "ΔH = − 2717 ÷ 0.050 = −54 340 J/mol",
+       "= −54.3 kJ/mol"
+      ],
+      "answer": "ΔH = −54.3 kJ/mol"
+     }
+    },
+    {
+     "heading": "Evaluating the experiment",
+     "bullets": [
+      "Heat is lost to surroundings",
+      "Use a lid and insulation",
+      "Accepted value is about −57 kJ/mol"
+     ],
+     "note": "Because heat is lost, the measured temperature rise is smaller and the ΔH is less negative than the data book. For combustion of ethanol with a spirit burner, heat loss is much larger: 0.46 g ethanol heating 100 g water by 25 °C gives −1045 kJ/mol against a data book value of about −1367 kJ/mol.",
+     "misconception": {
+      "wrong": "In an exothermic reaction the reaction gets cold because energy is lost.",
+      "right": "The reaction releases energy to the surroundings, so the surroundings (and the thermometer) get hotter."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils use the total volume of mixture mass incorrectly or miss the minus sign.",
+     "check": {
+      "q": "A reaction in water raises the temperature of 100 g of water by 10 °C. What is Q? (c = 4.18 J/g/°C)",
+      "options": [
+       "418 J",
+       "4180 J",
+       "41.8 J",
+       "10 J"
+      ],
+      "answer": 1,
+      "why": "Q = 100 × 4.18 × 10 = 4180 J."
+     }
+    }
+   ],
+   "practice": [
+    "Classify: respiration, photosynthesis, dissolving ammonium nitrate.",
+    "Calculate Q for 200 g of water rising by 8.0 °C.",
+    "State why a lid is used on the cup."
+   ],
+   "independent": [
+    "Core: Describe the practical to measure the temperature change on neutralisation.",
+    "Extend: 0.46 g ethanol (Mr 46) heats 100 g water by 25 °C. Calculate the molar enthalpy change. [4 marks]",
+    "Stretch: Give three reasons the answer for ethanol is lower than the data book and suggest improvements. [4 marks]"
+   ],
+   "exit": [
+    "Define exothermic and endothermic. [2 marks]",
+    "Return to the big question: describe how you would measure the energy of a reaction."
+   ],
+   "homework": "Write a method for finding the energy change on dissolving a salt, with a table of results.",
+   "send": "SEND/EAL: formula triangle for Q; practice with small numbers. Stretch: compare the enthalpy values of different fuels."
+  },
+  {
+   "unit": "Chemistry 3: Physical chemistry",
+   "n": 17,
+   "title": "Energy level diagrams and bond energies",
+   "duration": 50,
+   "bigQuestion": "Why does breaking bonds take energy but making them give it out?",
+   "objectives": [
+    "Draw and interpret energy level diagrams",
+    "Explain energy changes in terms of bond breaking and making",
+    "Calculate ΔH from bond energies"
+   ],
+   "successCriteria": [
+    "All: identify exo and endothermic from a diagram",
+    "Most: explain bond breaking and making",
+    "Some: calculate ΔH from bond energy data"
+   ],
+   "crossCurricular": "Physics: energy conservation",
+   "smsc": "Reflection: energy is conserved and transformed (amanah in use of resources)",
+   "keywords": [
+    {
+     "term": "bond energy",
+     "def": "energy needed to break one mole of a given bond"
+    },
+    {
+     "term": "activation energy",
+     "def": "minimum energy needed for reaction"
+    },
+    {
+     "term": "energy level diagram",
+     "def": "graph of energy of reactants and products"
+    },
+    {
+     "term": "ΔH",
+     "def": "overall energy change"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define exothermic.",
+    "Write the equation for methane burning.",
+    "What does ΔH negative mean?"
+   ],
+   "teach": [
+    {
+     "heading": "Energy level diagrams",
+     "bullets": [
+      "Exothermic: products lower than reactants",
+      "Endothermic: products higher than reactants",
+      "ΔH is the difference in energy"
+     ],
+     "note": "Draw both on the board. Label energy axis and progress of reaction. In reaction profile diagrams a hump shows the activation energy.",
+     "compare": {
+      "left": {
+       "title": "Exothermic",
+       "points": [
+        "Products below reactants",
+        "ΔH negative",
+        "Energy released to surroundings"
+       ]
+      },
+      "right": {
+       "title": "Endothermic",
+       "points": [
+        "Products above reactants",
+        "ΔH positive",
+        "Energy taken from surroundings"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Bond breaking and making",
+     "bullets": [
+      "Breaking bonds takes in energy (endothermic)",
+      "Making bonds releases energy (exothermic)",
+      "ΔH = energy in − energy out"
+     ],
+     "note": "Use data: H–H 436, Cl–Cl 243, H–Cl 432 kJ/mol. Check signs carefully; pupils often subtract the wrong way.",
+     "model": {
+      "problem": "H₂ + Cl₂ → 2HCl. Bond energies: H–H 436, Cl–Cl 243, H–Cl 432 kJ/mol. Calculate ΔH.",
+      "steps": [
+       "Bonds broken: 436 + 243 = 679 kJ",
+       "Bonds made: 2 × 432 = 864 kJ",
+       "ΔH = 679 − 864",
+       "= −185 kJ/mol"
+      ],
+      "answer": "ΔH = −185 kJ/mol (exothermic)"
+     }
+    },
+    {
+     "heading": "A second example: methane",
+     "bullets": [
+      "CH₄ + 2O₂ → CO₂ + 2H₂O",
+      "Break 4 C–H and 2 O=O",
+      "Make 2 C=O and 4 O–H"
+     ],
+     "note": "Data: C–H 413, O=O 498, C=O 805, O–H 464. Break: 4 × 413 + 2 × 498 = 2648. Make: 2 × 805 + 4 × 464 = 3466. ΔH = −818 kJ/mol. Why is the result not exactly the same as data book values? Bond energies are averages.",
+     "table": {
+      "head": [
+       "Bond",
+       "Energy (kJ/mol)"
+      ],
+      "rows": [
+       [
+        "C–H",
+        "413"
+       ],
+       [
+        "O=O",
+        "498"
+       ],
+       [
+        "C=O (in CO₂)",
+        "805"
+       ],
+       [
+        "O–H",
+        "464"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils reverse the subtraction and give a positive value.",
+     "check": {
+      "q": "Energy to break bonds is 800 kJ and energy released making bonds is 950 kJ. What is ΔH?",
+      "options": [
+       "+150 kJ",
+       "−150 kJ",
+       "+1750 kJ",
+       "−800 kJ"
+      ],
+      "answer": 1,
+      "why": "ΔH = 800 − 950 = −150 kJ. The reaction is exothermic."
+     }
+    }
+   ],
+   "practice": [
+    "Sketch an exothermic energy level diagram.",
+    "State whether breaking bonds is endothermic or exothermic.",
+    "Calculate ΔH if bonds broken = 1200 kJ and bonds made = 1000 kJ."
+   ],
+   "independent": [
+    "Core: Use bond energies to calculate ΔH for H₂ + Br₂ → 2HBr (H–H 436, Br–Br 193, H–Br 366).",
+    "Extend: Calculate ΔH for the combustion of hydrogen: 2H₂ + O₂ → 2H₂O (H–H 436, O=O 498, O–H 464). [3 marks]",
+    "Stretch: Explain why bond energy calculations are only approximate. [2 marks]"
+   ],
+   "exit": [
+    "Define activation energy. [1 mark]",
+    "Return to the big question: link bond breaking, bond making and ΔH."
+   ],
+   "homework": "Complete three bond-energy calculations and draw their energy diagrams.",
+   "send": "SEND/EAL: step table for calculation (broken, made, difference). Stretch: effect of a catalyst on the diagram."
+  },
+  {
+   "unit": "Chemistry 3: Physical chemistry",
+   "n": 18,
+   "title": "Rates of reaction and collision theory",
+   "duration": 50,
+   "bigQuestion": "Why does a crushed tablet dissolve faster, and food spoil faster in the heat?",
+   "objectives": [
+    "Describe how concentration, surface area, pressure and temperature affect rate",
+    "Explain each factor using collision theory",
+    "Describe and analyse the marble chips and acid investigation"
+   ],
+   "successCriteria": [
+    "All: list the factors that change rate",
+    "Most: explain using collision theory",
+    "Some: calculate rates and interpret graphs"
+   ],
+   "crossCurricular": "Biology: enzymes; Food science: preservation",
+   "smsc": "Moral: waste reduction by understanding spoilage",
+   "keywords": [
+    {
+     "term": "rate of reaction",
+     "def": "how fast reactants are used or products formed"
+    },
+    {
+     "term": "collision theory",
+     "def": "particles must collide with enough energy to react"
+    },
+    {
+     "term": "surface area",
+     "def": "total area of solid exposed to reactants"
+    },
+    {
+     "term": "activation energy",
+     "def": "minimum energy for a successful collision"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the equation for calcium carbonate with hydrochloric acid.",
+    "State the volume of 1 mol of gas.",
+    "Define exothermic."
+   ],
+   "teach": [
+    {
+     "heading": "Collision theory",
+     "bullets": [
+      "Particles must collide",
+      "With enough energy (activation energy)",
+      "In the right orientation; successful collisions give a reaction"
+     ],
+     "note": "Increase the frequency of successful collisions to raise the rate. Use particle diagrams.",
+     "table": {
+      "head": [
+       "Factor",
+       "Change",
+       "Effect on collisions"
+      ],
+      "rows": [
+       [
+        "Concentration",
+        "higher",
+        "more particles per volume, more collisions"
+       ],
+       [
+        "Pressure (gases)",
+        "higher",
+        "particles closer together"
+       ],
+       [
+        "Surface area",
+        "greater",
+        "more exposed particles"
+       ],
+       [
+        "Temperature",
+        "higher",
+        "faster particles: more collisions and more with energy above activation energy"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Marble chips practical",
+     "bullets": [
+      "CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂",
+      "Measure CO₂ volume or loss of mass over time",
+      "Change one factor, e.g. chip size"
+     ],
+     "note": "Variables: independent chip size; dependent volume of gas every 20 s; control acid concentration, volume, mass of chips, temperature. A gas syringe or an upturned measuring cylinder over water works; or use a balance with cotton wool in the flask neck. Safety: goggles; spill risk. Use sodium thiosulfate with HCl for temperature; time for a cross to disappear; rate = 1 ÷ time.",
+     "table": {
+      "head": [
+       "Time (s)",
+       "Large chips: CO₂ (cm³)",
+       "Small chips: CO₂ (cm³)"
+      ],
+      "rows": [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "20",
+        "10",
+        "18"
+       ],
+       [
+        "40",
+        "18",
+        "28"
+       ],
+       [
+        "60",
+        "24",
+        "30"
+       ],
+       [
+        "80",
+        "28",
+        "30"
+       ],
+       [
+        "100",
+        "30",
+        "30"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: using the data",
+     "bullets": [
+      "Mean rate = volume ÷ time",
+      "Steeper gradient means faster",
+      "Both finish at the same volume: same mass of CaCO₃"
+     ],
+     "note": "Large chips take 100 s to reach 30 cm³: mean rate 0.30 cm³/s. Small chips take 60 s: mean rate 0.50 cm³/s. Initial rates (0–20 s): 0.50 and 0.90 cm³/s.",
+     "model": {
+      "problem": "Using the table, calculate the mean rate for each size of chip and explain the difference.",
+      "steps": [
+       "Large chips: 30 ÷ 100 = 0.30 cm³/s",
+       "Small chips: 30 ÷ 60 = 0.50 cm³/s",
+       "Small chips have a greater surface area",
+       "More collisions per second, so a faster rate"
+      ],
+      "answer": "0.30 and 0.50 cm³/s; greater surface area gives more frequent collisions"
+     }
+    },
+    {
+     "heading": "Temperature and collisions",
+     "bullets": [
+      "Higher temperature: particles move faster",
+      "More frequent collisions",
+      "A greater proportion have energy above the activation energy"
+     ],
+     "note": "Both effects matter, the second is bigger. Pupils usually give only the first. Rule of thumb: a 10 °C rise roughly doubles the rate for many reactions.",
+     "misconception": {
+      "wrong": "Temperature increases the rate only because particles collide more often.",
+      "right": "Collisions are more frequent and, more importantly, more of them have energy above the activation energy."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: 'more collisions' alone is incomplete for temperature.",
+     "check": {
+      "q": "Why does increasing temperature increase the rate of reaction?",
+      "options": [
+       "Particles collide more often only",
+       "Particles are larger",
+       "Collisions are more frequent and more have energy above activation energy",
+       "The activation energy decreases"
+      ],
+      "answer": 2,
+      "why": "Faster particles collide more often and a greater proportion have enough energy. Activation energy is unchanged by temperature."
+     }
+    }
+   ],
+   "practice": [
+    "List four factors that affect reaction rate.",
+    "Explain why powdered marble reacts faster than lumps.",
+    "Calculate the mean rate: 40 cm³ in 80 s."
+   ],
+   "independent": [
+    "Core: Plot the data and add curves for large and small chips.",
+    "Extend: Sketch the graph for the same reaction at higher temperature and explain. [3 marks]",
+    "Stretch: Explain why increasing pressure increases rate for gases but not liquids. [3 marks]"
+   ],
+   "exit": [
+    "State what collision theory says. [2 marks]",
+    "Return to the big question: explain one everyday example."
+   ],
+   "homework": "Explain in 100 words why food spoils faster in summer using collision theory.",
+   "send": "SEND/EAL: particle diagrams for each factor. Stretch: use the initial gradient to find the initial rate."
+  },
+  {
+   "unit": "Chemistry 3: Physical chemistry",
+   "n": 19,
+   "title": "Catalysts and reaction profiles",
+   "duration": 50,
+   "bigQuestion": "How can a substance speed up a reaction without being used up?",
+   "objectives": [
+    "Describe how a catalyst works",
+    "Draw and interpret reaction profile diagrams (Chemistry only)",
+    "Describe an investigation of catalysts with hydrogen peroxide"
+   ],
+   "successCriteria": [
+    "All: describe a catalyst",
+    "Most: sketch a reaction profile with and without a catalyst",
+    "Some: calculate activation energy and ΔH from a profile"
+   ],
+   "crossCurricular": "Industry: catalytic converters; Biology: enzymes",
+   "smsc": "Stewardship: catalysts reduce energy use and pollution",
+   "keywords": [
+    {
+     "term": "catalyst",
+     "def": "substance that speeds up a reaction and is not used up"
+    },
+    {
+     "term": "activation energy (Ea)",
+     "def": "minimum energy needed for a collision to react"
+    },
+    {
+     "term": "reaction profile",
+     "def": "energy diagram showing the path from reactants to products"
+    },
+    {
+     "term": "alternative pathway",
+     "def": "different route with lower Ea"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name a biological catalyst.",
+    "What is activation energy?",
+    "State how surface area affects rate."
+   ],
+   "teach": [
+    {
+     "heading": "What a catalyst does",
+     "bullets": [
+      "Provides an alternative pathway with a lower Ea",
+      "More collisions have enough energy",
+      "Not used up; may be reused; can be specific"
+     ],
+     "note": "Examples: manganese(IV) oxide for hydrogen peroxide; iron in the Haber process; platinum and rhodium in catalytic converters; enzymes in cells. A catalyst does not change the products or ΔH.",
+     "table": {
+      "head": [
+       "Catalyst",
+       "Reaction"
+      ],
+      "rows": [
+       [
+        "manganese(IV) oxide",
+        "2H₂O₂ → 2H₂O + O₂"
+       ],
+       [
+        "iron",
+        "N₂ + 3H₂ ⇌ 2NH₃ (Haber)"
+       ],
+       [
+        "platinum, rhodium",
+        "pollutant gases in a car exhaust"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Reaction profiles",
+     "bullets": [
+      "Reactants at one level, products at another",
+      "The peak shows activation energy",
+      "A catalyst lowers the peak; ΔH unchanged"
+     ],
+     "note": "Draw the diagram and mark Ea and ΔH. Example data: reactants at 0 kJ, peak +150 kJ, products at −80 kJ; Ea = 150 kJ, ΔH = −80 kJ. With a catalyst the peak is +70 kJ: Ea = 70 kJ; ΔH remains −80 kJ.",
+     "model": {
+      "problem": "A reaction profile has reactants at 0 kJ, a peak at +150 kJ and products at −80 kJ. A catalyst lowers the peak to +70 kJ. State Ea and ΔH with and without the catalyst.",
+      "steps": [
+       "Without catalyst: Ea = 150 − 0 = 150 kJ",
+       "ΔH = −80 − 0 = −80 kJ",
+       "With catalyst: Ea = 70 kJ",
+       "ΔH is still −80 kJ"
+      ],
+      "answer": "Ea 150 → 70 kJ; ΔH = −80 kJ in both cases"
+     }
+    },
+    {
+     "heading": "Practical: hydrogen peroxide",
+     "bullets": [
+      "Measure oxygen volume in a gas syringe every 20 s",
+      "Catalysts: MnO₂, CuO, liver",
+      "Keep mass of catalyst, volume and concentration of peroxide the same"
+     ],
+     "note": "Data: with MnO₂, 60 cm³ in 40 s (1.5 cm³/s); with CuO, 40 cm³ in 80 s (0.50 cm³/s); no catalyst only 4 cm³ in 120 s (0.03 cm³/s). Recover the catalyst by filtering, drying and weighing: the mass is unchanged. Safety: goggles; hydrogen peroxide can bleach skin.",
+     "misconception": {
+      "wrong": "A catalyst gives the reactants extra energy so the reaction goes faster.",
+      "right": "A catalyst gives a different pathway with a lower activation energy; the energy of reactants and products does not change."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils think the catalyst changes ΔH or is used up.",
+     "check": {
+      "q": "What effect does a catalyst have on a reaction?",
+      "options": [
+       "Increases ΔH",
+       "Lowers the activation energy",
+       "Increases the mass of products",
+       "Is converted into products"
+      ],
+      "answer": 1,
+      "why": "A catalyst lowers the activation energy; ΔH and the products are unchanged."
+     }
+    }
+   ],
+   "practice": [
+    "State what a catalyst is.",
+    "Name the catalyst for hydrogen peroxide decomposition.",
+    "State how you would show the catalyst is not used up."
+   ],
+   "independent": [
+    "Core: Sketch a reaction profile with and without a catalyst for an exothermic reaction.",
+    "Extend: Using the data, rank the catalysts and calculate their mean rates. [3 marks]",
+    "Stretch: Explain why enzymes are often described as highly specific catalysts. [3 marks]"
+   ],
+   "exit": [
+    "Define catalyst. [1 mark]",
+    "Return to the big question using activation energy."
+   ],
+   "homework": "Annotate two reaction profiles: one exothermic, one endothermic, each with and without catalyst.",
+   "send": "SEND/EAL: pre-drawn axes to label. Stretch: why is platinum used in catalytic converters?"
+  },
+  {
+   "unit": "Chemistry 3: Physical chemistry",
+   "n": 20,
+   "title": "Reversible reactions and dynamic equilibrium",
+   "duration": 50,
+   "bigQuestion": "Can a reaction run backwards, and when do forward and backward reactions balance?",
+   "objectives": [
+    "Describe reversible reactions with examples",
+    "Describe dynamic equilibrium (Chemistry only)",
+    "Predict the effect of temperature and pressure on the position of equilibrium"
+   ],
+   "successCriteria": [
+    "All: use the reversible symbol with examples",
+    "Most: describe dynamic equilibrium",
+    "Some: predict changes in position and apply to the Haber process"
+   ],
+   "crossCurricular": "Industry: ammonia and fertiliser; Biology: haemoglobin",
+   "smsc": "Stewardship: efficient industry reduces energy waste",
+   "keywords": [
+    {
+     "term": "reversible reaction",
+     "def": "reaction that can go in both directions, shown by ⇌"
+    },
+    {
+     "term": "dynamic equilibrium",
+     "def": "forward and backward rates equal; concentrations constant"
+    },
+    {
+     "term": "position of equilibrium",
+     "def": "relative amounts of reactants and products"
+    },
+    {
+     "term": "closed system",
+     "def": "no substances enter or leave"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define exothermic.",
+    "What is a catalyst?",
+    "Name the product of the Haber process."
+   ],
+   "teach": [
+    {
+     "heading": "Reversible reactions",
+     "bullets": [
+      "Written with ⇌",
+      "Hydrated copper sulfate: blue ⇌ white + water",
+      "Ammonium chloride ⇌ ammonia + hydrogen chloride"
+     ],
+     "note": "Heat blue hydrated copper(II) sulfate: it turns white, water is driven off; add water and it turns blue again, getting warm. One direction is endothermic, the reverse is exothermic by the same amount of energy.",
+     "table": {
+      "head": [
+       "Reaction",
+       "Forward",
+       "Reverse"
+      ],
+      "rows": [
+       [
+        "CuSO₄·5H₂O ⇌ CuSO₄ + 5H₂O",
+        "heat: white",
+        "add water: blue"
+       ],
+       [
+        "NH₄Cl ⇌ NH₃ + HCl",
+        "heating",
+        "cooling"
+       ],
+       [
+        "N₂O₄ ⇌ 2NO₂",
+        "colourless to brown (heat)",
+        "brown to colourless (cool)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Dynamic equilibrium",
+     "bullets": [
+      "In a closed system the rates become equal",
+      "Concentrations stay constant",
+      "Reactions are still happening in both directions"
+     ],
+     "note": "Use the analogy of an escalator with people walking down at the same rate as it carries them up: the person stays at the same height, but is still moving. Equilibrium is reached only in a closed system.",
+     "compare": {
+      "left": {
+       "title": "Not at equilibrium",
+       "points": [
+        "Forward rate higher than backward",
+        "Concentrations are changing"
+       ]
+      },
+      "right": {
+       "title": "At equilibrium",
+       "points": [
+        "Forward rate equals backward rate",
+        "Concentrations constant; reaction continues"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Changing conditions",
+     "bullets": [
+      "Higher temperature favours the endothermic direction",
+      "Higher pressure favours the side with fewer gas moles",
+      "Catalysts do not change the position"
+     ],
+     "note": "N₂ + 3H₂ ⇌ 2NH₃ is exothermic forwards, with 4 moles of gas on the left and 2 on the right. High pressure moves the position to the right; high temperature moves it left but speeds up the rate. Industrial compromise: about 450 °C, 200 atmospheres and an iron catalyst.",
+     "model": {
+      "problem": "N₂(g) + 3H₂(g) ⇌ 2NH₃(g) is exothermic. Predict and explain the effect of increased pressure and of higher temperature on the yield of ammonia.",
+      "steps": [
+       "Left side 4 moles of gas, right side 2 moles",
+       "Higher pressure favours fewer moles, so more ammonia",
+       "Forward reaction is exothermic",
+       "Higher temperature favours the endothermic (reverse) direction, so less ammonia"
+      ],
+      "answer": "More ammonia at higher pressure; less at higher temperature"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: 'nothing is happening' is the typical misconception of dynamic equilibrium.",
+     "check": {
+      "q": "In a dynamic equilibrium:",
+      "options": [
+       "The reaction has stopped",
+       "Forward and backward rates are equal",
+       "All reactants are used up",
+       "The concentrations are always equal"
+      ],
+      "answer": 1,
+      "why": "At dynamic equilibrium the forward and backward reactions continue at equal rates, so concentrations are constant (not necessarily equal)."
+     }
+    }
+   ],
+   "practice": [
+    "Write the equation for hydrated copper sulfate as a reversible reaction.",
+    "Why must the system be closed?",
+    "Which side has fewer gas moles in N₂ + 3H₂ ⇌ 2NH₃?"
+   ],
+   "independent": [
+    "Core: Describe how to show that heating blue copper sulfate is reversible.",
+    "Extend: In N₂O₄ ⇌ 2NO₂ the mixture turns darker when heated. Is the forward reaction exothermic or endothermic? Explain. [3 marks]",
+    "Stretch: Explain why industry uses a compromise temperature in the Haber process. [4 marks]"
+   ],
+   "exit": [
+    "Define dynamic equilibrium. [2 marks]",
+    "Return to the big question: where does the 'dynamic' come from?"
+   ],
+   "homework": "Write a summary table of the factors that change the position of equilibrium.",
+   "send": "SEND/EAL: escalator analogy diagram; sentence frames. Stretch: link to Le Chatelier's principle."
+  },
+  {
+   "unit": "Chemistry 4: Organic chemistry",
+   "n": 21,
+   "title": "Naming organic compounds, functional groups and isomers",
+   "duration": 50,
+   "bigQuestion": "How can one molecular formula describe more than one real substance?",
+   "objectives": [
+    "Name alkanes, alkenes, alcohols and carboxylic acids with up to six carbons",
+    "Identify functional groups",
+    "Draw and name isomers"
+   ],
+   "successCriteria": [
+    "All: name straight-chain alkanes and alkenes",
+    "Most: name using the functional group and position",
+    "Some: draw and name all isomers of C₅H₁₂ and C₄H₈"
+   ],
+   "crossCurricular": "Computing: systematic naming; Biology: biological molecules",
+   "smsc": "Spiritual: order in naming, as in all branches of knowledge",
+   "keywords": [
+    {
+     "term": "functional group",
+     "def": "atom or group giving a compound its characteristic reactions"
+    },
+    {
+     "term": "isomers",
+     "def": "compounds with the same molecular formula but different structures"
+    },
+    {
+     "term": "IUPAC naming",
+     "def": "internationally agreed system for naming compounds"
+    },
+    {
+     "term": "structural formula",
+     "def": "formula showing how the atoms are arranged, e.g. CH₃CH₂CH₃"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define hydrocarbon.",
+    "State the general formula of alkanes.",
+    "What does homologous series mean?"
+   ],
+   "teach": [
+    {
+     "heading": "Stems and functional groups",
+     "bullets": [
+      "Stems: meth 1, eth 2, prop 3, but 4, pent 5, hex 6",
+      "Alkane: single bonds, ends -ane",
+      "Alkene: C=C, ends -ene; alcohol -OH, -ol; acid -COOH, -oic acid"
+     ],
+     "note": "Earlier lessons covered hydrocarbon formulae and homologous series; this lesson focuses on naming and isomers (including positions of double bonds). Position numbers are required for chains from C₄ up (but-1-ene, but-2-ene).",
+     "table": {
+      "head": [
+       "Series",
+       "Functional group",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Alkane",
+        "C–C",
+        "propane C₃H₈"
+       ],
+       [
+        "Alkene",
+        "C=C",
+        "ethene C₂H₄"
+       ],
+       [
+        "Alcohol",
+        "–OH",
+        "ethanol C₂H₅OH"
+       ],
+       [
+        "Carboxylic acid",
+        "–COOH",
+        "ethanoic acid CH₃COOH"
+       ],
+       [
+        "Ester",
+        "–COO–",
+        "methyl ethanoate CH₃COOCH₃"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model: naming a branched alkane",
+     "bullets": [
+      "Find the longest carbon chain",
+      "Name branches (methyl) and number them",
+      "Number from the end giving lowest numbers"
+     ],
+     "note": "Example CH₃CH(CH₃)CH₃: the longest chain is 3 carbons (propane) with one methyl branch at carbon 2, so 2-methylpropane. Write structural formulae in text if no diagram is available.",
+     "model": {
+      "problem": "Name CH₃CH(CH₃)CH₂CH₃.",
+      "steps": [
+       "Longest chain: 4 carbons, so butane",
+       "One CH₃ branch on carbon 2 (count from either end: the lowest is 2)",
+       "Branch is methyl",
+       "Name: 2-methylbutane (this is a C₅H₁₂ isomer)"
+      ],
+      "answer": "2-methylbutane"
+     }
+    },
+    {
+     "heading": "Isomers",
+     "bullets": [
+      "Same molecular formula, different structure",
+      "C₄H₁₀: butane and 2-methylpropane",
+      "C₄H₈ alkenes: but-1-ene, but-2-ene, 2-methylpropene"
+     ],
+     "note": "C₅H₁₂ has three isomers: pentane, 2-methylbutane, 2,2-dimethylpropane. Isomers have different physical properties, such as boiling points (branched isomers boil at lower temperature).",
+     "table": {
+      "head": [
+       "Formula",
+       "Isomers",
+       "Notes"
+      ],
+      "rows": [
+       [
+        "C₄H₁₀",
+        "butane; 2-methylpropane",
+        "straight and branched"
+       ],
+       [
+        "C₅H₁₂",
+        "pentane; 2-methylbutane; 2,2-dimethylpropane",
+        "three"
+       ],
+       [
+        "C₄H₈",
+        "but-1-ene; but-2-ene; 2-methylpropene",
+        "double bond position and branching"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils call all C₄H₁₀ drawings different when they are the same chain bent differently.",
+     "check": {
+      "q": "Which pair are isomers?",
+      "options": [
+       "Ethane and ethene",
+       "Butane and 2-methylpropane",
+       "Methanol and ethanol",
+       "Propane and propene"
+      ],
+      "answer": 1,
+      "why": "Both are C₄H₁₀ with different structures. The other pairs have different molecular formulae."
+     }
+    }
+   ],
+   "practice": [
+    "Name the alkane with 5 carbons and the alkene with 4 carbons.",
+    "Write the structural formula for propan-1-ol.",
+    "Name CH₃CH₂COOH."
+   ],
+   "independent": [
+    "Core: Draw and name the isomers of C₄H₁₀.",
+    "Extend: Draw and name all isomers of C₅H₁₂. [3 marks]",
+    "Stretch: Explain why but-1-ene and but-2-ene are isomers but ethene and propene are not. [2 marks]"
+   ],
+   "exit": [
+    "Define isomers. [1 mark]",
+    "Return to the big question: show one formula with two names."
+   ],
+   "homework": "Complete a naming worksheet for 10 compounds (alkanes, alkenes, alcohols, acids).",
+   "send": "SEND/EAL: stem cards (meth, eth, prop...). Stretch: name a branched alkene."
+  },
+  {
+   "unit": "Chemistry 4: Organic chemistry",
+   "n": 22,
+   "title": "Alcohols: manufacture, oxidation and uses",
+   "duration": 50,
+   "bigQuestion": "Ethanol can come from sugar cane or from crude oil: which source is better?",
+   "objectives": [
+    "Describe the structure and combustion of alcohols",
+    "Compare manufacture of ethanol by fermentation and by hydration of ethene",
+    "Describe oxidation of ethanol to ethanoic acid"
+   ],
+   "successCriteria": [
+    "All: state the functional group and an example",
+    "Most: compare the two manufacturing methods",
+    "Some: evaluate the methods and write equations"
+   ],
+   "crossCurricular": "Geography: biofuels; Economics: sustainability",
+   "smsc": "Moral: ethanol is used industrially as fuel and solvent; drinking alcohol is prohibited in Islam, and the lesson discusses industrial chemistry only",
+   "keywords": [
+    {
+     "term": "alcohol",
+     "def": "organic compound containing the –OH group"
+    },
+    {
+     "term": "fermentation",
+     "def": "anaerobic respiration of glucose by yeast producing ethanol"
+    },
+    {
+     "term": "hydration",
+     "def": "adding water, e.g. to ethene"
+    },
+    {
+     "term": "oxidation",
+     "def": "here, converting an alcohol to a carboxylic acid"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the functional group of alkenes.",
+    "Write the formula of ethene.",
+    "What is anaerobic respiration in yeast?"
+   ],
+   "teach": [
+    {
+     "heading": "Alcohols",
+     "bullets": [
+      "General formula CₙH₂ₙ₊₁OH",
+      "Methanol, ethanol, propan-1-ol, butan-1-ol",
+      "Burn to form CO₂ and H₂O"
+     ],
+     "note": "Combustion: C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O. Uses: fuels, solvents, antiseptics, industrial feedstock. Higher alcohols are less volatile.",
+     "table": {
+      "head": [
+       "Alcohol",
+       "Formula",
+       "Boiling point (°C)"
+      ],
+      "rows": [
+       [
+        "Methanol",
+        "CH₃OH",
+        "65"
+       ],
+       [
+        "Ethanol",
+        "C₂H₅OH",
+        "78"
+       ],
+       [
+        "Propan-1-ol",
+        "C₃H₇OH",
+        "97"
+       ],
+       [
+        "Butan-1-ol",
+        "C₄H₉OH",
+        "118"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Two ways to make ethanol",
+     "bullets": [
+      "Fermentation: C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂",
+      "Hydration: C₂H₄ + H₂O ⇌ C₂H₅OH",
+      "Hydration uses 300 °C, 60–70 atm, phosphoric acid catalyst"
+     ],
+     "note": "Fermentation uses yeast at about 30 °C without air, then fractional distillation to concentrate. Hydration uses steam and ethene from cracked crude oil in a continuous process.",
+     "compare": {
+      "left": {
+       "title": "Fermentation",
+       "points": [
+        "Renewable sugar from plants",
+        "Low temperature, low energy",
+        "Batch, slow",
+        "Impure, dilute; needs distillation"
+       ]
+      },
+      "right": {
+       "title": "Hydration of ethene",
+       "points": [
+        "Uses ethene from crude oil (finite)",
+        "High temperature and pressure",
+        "Continuous, fast",
+        "Pure ethanol"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Model: evaluating methods",
+     "bullets": [
+      "Rate, purity and cost",
+      "Resource and renewability",
+      "Link to the context"
+     ],
+     "note": "Frame the answer: one advantage, one disadvantage for each, then a conclusion tied to context (e.g. a country with plentiful sugar cane and little oil).",
+     "model": {
+      "problem": "A country has a lot of sugar cane but no oil. Evaluate fermentation for making ethanol fuel there. [4 marks]",
+      "steps": [
+       "Sugar cane is a local renewable raw material",
+       "Fermentation needs low temperature, so energy costs are lower",
+       "It is a slow batch process and gives dilute ethanol needing distillation",
+       "Overall suitable because raw materials are cheap and renewable"
+      ],
+      "answer": "Fermentation suits that country: local renewable feedstock and lower energy use"
+     }
+    },
+    {
+     "heading": "Oxidation of ethanol",
+     "bullets": [
+      "Acidified potassium dichromate(VI) turns orange to green",
+      "Product is ethanoic acid, CH₃COOH",
+      "Wine left open becomes vinegar by microbial oxidation"
+     ],
+     "note": "Oxidation by heating with acidified potassium dichromate(VI): ethanol → ethanoic acid. Safety: dichromate is toxic and carcinogenic (teacher demonstration).",
+     "misconception": {
+      "wrong": "Ethanol is made only by fermentation.",
+      "right": "Ethanol is made by fermentation and by hydration of ethene."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: confusing fermentation conditions with hydration conditions.",
+     "check": {
+      "q": "Which is an advantage of making ethanol by fermentation?",
+      "options": [
+       "It is a fast continuous process",
+       "It uses a renewable raw material",
+       "It gives pure ethanol",
+       "It uses high temperature and pressure"
+      ],
+      "answer": 1,
+      "why": "Fermentation uses renewable sugar from plants. It is slower and gives dilute product."
+     }
+    }
+   ],
+   "practice": [
+    "Write the equation for the combustion of ethanol.",
+    "State the catalyst in hydration of ethene.",
+    "What colour change shows oxidation by acidified dichromate(VI)?"
+   ],
+   "independent": [
+    "Core: Make a table comparing fermentation and hydration of ethene.",
+    "Extend: Write the equation for fermentation and calculate the mass of ethanol from 90 g glucose (Mr glucose 180, ethanol 46). [3 marks]",
+    "Stretch: Evaluate whether producing ethanol fuel from sugar cane is sustainable. [4 marks]"
+   ],
+   "exit": [
+    "Name the functional group in alcohols. [1 mark]",
+    "Return to the big question: choose a source and justify it."
+   ],
+   "homework": "Write a risk assessment for burning alcohols in a spirit burner.",
+   "send": "SEND/EAL: comparison table scaffolds. Stretch: why does the boiling point increase with chain length?"
+  },
+  {
+   "unit": "Chemistry 4: Organic chemistry",
+   "n": 23,
+   "title": "Carboxylic acids and esters",
+   "duration": 50,
+   "bigQuestion": "Where does the smell of pear drops and perfume come from?",
+   "objectives": [
+    "Describe the properties and reactions of carboxylic acids",
+    "Describe how esters are made from alcohols and acids",
+    "Describe the practical preparation of an ester"
+   ],
+   "successCriteria": [
+    "All: name acids and describe their reactions",
+    "Most: write the equation for ester formation",
+    "Some: name esters and evaluate the preparation method"
+   ],
+   "crossCurricular": "Food technology: flavourings; Chemistry: acids",
+   "smsc": "Moral: safe handling in preparation; observation and care",
+   "keywords": [
+    {
+     "term": "carboxylic acid",
+     "def": "organic compound containing –COOH"
+    },
+    {
+     "term": "ester",
+     "def": "compound formed from an alcohol and carboxylic acid; contains –COO–"
+    },
+    {
+     "term": "weak acid",
+     "def": "acid that is only partially ionised in water"
+    },
+    {
+     "term": "esterification",
+     "def": "reaction of an alcohol with a carboxylic acid to form an ester and water"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the functional group in alcohols.",
+    "State the products of an acid with a carbonate.",
+    "Write the formula of ethanol."
+   ],
+   "teach": [
+    {
+     "heading": "Carboxylic acids",
+     "bullets": [
+      "Methanoic, ethanoic, propanoic, butanoic acids",
+      "Weak acids; ethanoic acid pH about 3 (0.1 mol/dm³)",
+      "React with metals, carbonates, alkalis like other acids"
+     ],
+     "note": "CH₃COOH ⇌ CH₃COO⁻ + H⁺ is only partly ionised. Compare 0.1 mol/dm³ HCl (pH 1) with ethanoic acid (pH 3) and note fizzing with magnesium is slower. Reaction: 2CH₃COOH + Mg → (CH₃COO)₂Mg + H₂; with sodium carbonate they give CO₂.",
+     "table": {
+      "head": [
+       "Reaction",
+       "Products"
+      ],
+      "rows": [
+       [
+        "acid + metal (Mg)",
+        "magnesium ethanoate + hydrogen"
+       ],
+       [
+        "acid + carbonate",
+        "salt + water + CO₂"
+       ],
+       [
+        "acid + alkali",
+        "salt + water"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Making esters",
+     "bullets": [
+      "Alcohol + carboxylic acid ⇌ ester + water",
+      "Concentrated sulfuric acid catalyst; warm",
+      "Ethanol + ethanoic acid → ethyl ethanoate"
+     ],
+     "note": "Naming: the alcohol part gives the first word (ethyl), the acid gives the second (ethanoate). Practical: 2 cm³ ethanol, 2 cm³ ethanoic acid and a few drops of concentrated sulfuric acid in a test tube; warm in a hot-water bath for about 5 minutes (no naked flames: ethanol is flammable); pour into sodium carbonate solution to neutralise excess acid; smell carefully by wafting. Safety: goggles; concentrated acid is corrosive.",
+     "model": {
+      "problem": "Write the name and equation for the ester formed from methanol and ethanoic acid.",
+      "steps": [
+       "Alcohol part: methyl; acid part: ethanoate",
+       "Name: methyl ethanoate",
+       "CH₃COOH + CH₃OH ⇌ CH₃COOCH₃ + H₂O",
+       "Catalyst: concentrated H₂SO₄"
+      ],
+      "answer": "Methyl ethanoate: CH₃COOH + CH₃OH ⇌ CH₃COOCH₃ + H₂O"
+     }
+    },
+    {
+     "heading": "Properties and uses",
+     "bullets": [
+      "Esters have sweet fruity smells",
+      "Used in flavourings, perfumes, solvents",
+      "Volatile, insoluble or slightly soluble in water"
+     ],
+     "note": "Pear drops contain an ester called pentyl ethanoate (amyl acetate). Naming more esters: ethyl methanoate, propyl ethanoate.",
+     "misconception": {
+      "wrong": "Esters form from two acids reacting together.",
+      "right": "Esters form when an alcohol reacts with a carboxylic acid, releasing water."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer B. Trap: pupils reverse the order of the name.",
+     "check": {
+      "q": "Which ester is made from propanol and methanoic acid?",
+      "options": [
+       "Methyl propanoate",
+       "Propyl methanoate",
+       "Propyl ethanoate",
+       "Methyl ethanoate"
+      ],
+      "answer": 1,
+      "why": "Alcohol part first (propyl), then the acid stem with -oate (methanoate)."
+     }
+    }
+   ],
+   "practice": [
+    "Write the formula of ethanoic acid.",
+    "Name the ester from ethanol and propanoic acid.",
+    "Why is sodium carbonate added at the end of the practical?"
+   ],
+   "independent": [
+    "Core: Describe the method for making ethyl ethanoate.",
+    "Extend: Explain why ethanoic acid is a weak acid. [2 marks]",
+    "Stretch: Compare the reaction of ethanoic acid and hydrochloric acid of the same concentration with magnesium. [3 marks]"
+   ],
+   "exit": [
+    "Define ester. [1 mark]",
+    "Return to the big question: name one ester and its use."
+   ],
+   "homework": "Write an equation for making any ester and name all species.",
+   "send": "SEND/EAL: flash cards for names (stem + yl/oate). Stretch: why does the reaction use an acid catalyst?"
+  },
+  {
+   "unit": "Chemistry 4: Organic chemistry",
+   "n": 24,
+   "title": "Condensation polymers and biopolyesters",
+   "duration": 50,
+   "bigQuestion": "How is nylon different from poly(ethene), and why do we want plastics that rot?",
+   "objectives": [
+    "Describe condensation polymerisation for polyamides and polyesters",
+    "Compare condensation and addition polymerisation",
+    "Describe biopolyesters and the issues with disposal"
+   ],
+   "successCriteria": [
+    "All: define condensation polymerisation",
+    "Most: draw block diagrams of the repeat units",
+    "Some: evaluate biopolyesters and recycling"
+   ],
+   "crossCurricular": "Technology: textiles; Environmental science: plastic waste",
+   "smsc": "Stewardship: reducing plastic waste and caring for the environment",
+   "keywords": [
+    {
+     "term": "condensation polymer",
+     "def": "polymer formed when monomers join and lose a small molecule, such as water"
+    },
+    {
+     "term": "polyamide",
+     "def": "polymer containing amide links, e.g. nylon"
+    },
+    {
+     "term": "polyester",
+     "def": "polymer containing ester links, e.g. PET"
+    },
+    {
+     "term": "biopolyester",
+     "def": "biodegradable polyester made by microorganisms"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define monomer and polymer.",
+    "What is formed when ethene polymerises?",
+    "State the functional group in an ester."
+   ],
+   "teach": [
+    {
+     "heading": "Condensation polymerisation",
+     "bullets": [
+      "Two different monomers, each with two functional groups",
+      "Monomers join; a small molecule (water) is lost",
+      "Link types: amide (–CONH–) and ester (–COO–)"
+     ],
+     "note": "Contrast with addition polymers: only one product and monomers have C=C. Use block diagrams: HO–[ ]–OH (diol) with HOOC–[ ]–COOH (diacid) → …–OOC–[ ]–COO–[ ]–… + H₂O. Nylon: diamine + dicarboxylic acid.",
+     "table": {
+      "head": [
+       "Polymer",
+       "Monomers",
+       "Link",
+       "By-product"
+      ],
+      "rows": [
+       [
+        "Nylon (polyamide)",
+        "diamine + dicarboxylic acid",
+        "amide",
+        "water"
+       ],
+       [
+        "PET (polyester)",
+        "diol + dicarboxylic acid",
+        "ester",
+        "water"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Addition v condensation",
+     "bullets": [
+      "Addition: one monomer type with C=C; only polymer forms",
+      "Condensation: two functional groups per monomer; polymer + water",
+      "Properties vary with monomers"
+     ],
+     "note": "PET, from ethane-1,2-diol and benzene-1,4-dicarboxylic acid, is used in drinks bottles and polyester fabric.",
+     "compare": {
+      "left": {
+       "title": "Addition polymer",
+       "points": [
+        "Monomers contain C=C",
+        "Only product is polymer",
+        "e.g. poly(ethene)"
+       ]
+      },
+      "right": {
+       "title": "Condensation polymer",
+       "points": [
+        "Two functional groups per monomer",
+        "Polymer and small molecule (H₂O)",
+        "e.g. nylon, PET"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Model: block diagram of a polyester",
+     "bullets": [
+      "Represent diol as HO–[ ]–OH",
+      "Represent diacid as HOOC–[ ]–COOH",
+      "Join with an ester link, remove H₂O"
+     ],
+     "note": "Ask which atoms are lost: the –OH from the acid and the H from the alcohol, together forming water.",
+     "model": {
+      "problem": "Show how a polyester forms from a diol and a dicarboxylic acid.",
+      "steps": [
+       "Diol: HO–[ ]–OH; diacid: HOOC–[ ]–COOH",
+       "–OH of the acid and H of the alcohol are removed as H₂O",
+       "The monomers join by the ester link –COO–",
+       "Repeat unit: –OOC–[ ]–COO–[ ]–"
+      ],
+      "answer": "Repeat unit with ester link; water released each time"
+     }
+    },
+    {
+     "heading": "Biopolyesters and disposal",
+     "bullets": [
+      "Made by bacteria from sugars",
+      "Biodegradable; made from renewable resources",
+      "More expensive than oil-based plastics"
+     ],
+     "note": "Many plastics persist in landfill and oceans. Recycling PET into new bottles or fibres reduces waste; sorting is needed. Biopolyesters (e.g. PHB) break down by microorganisms but may not degrade in all conditions. Proteins are natural polyamides made from amino acids.",
+     "misconception": {
+      "wrong": "All condensation polymers are biodegradable.",
+      "right": "Nylon and PET resist rotting; only biopolyesters are designed to be broken down by microorganisms."
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "bullets": [
+      "Answer on mini-whiteboards"
+     ],
+     "note": "Answer C. Trap: pupils say hydrogen or carbon dioxide because water is the usual product of other reactions they know.",
+     "check": {
+      "q": "What small molecule is released when nylon forms from a diamine and a dicarboxylic acid?",
+      "options": [
+       "Hydrogen",
+       "Carbon dioxide",
+       "Water",
+       "Ammonia"
+      ],
+      "answer": 2,
+      "why": "Each amide link forms with the loss of one water molecule."
+     }
+    }
+   ],
+   "practice": [
+    "State two differences between addition and condensation polymerisation.",
+    "Name the link in a polyester.",
+    "State one advantage of a biopolyester."
+   ],
+   "independent": [
+    "Core: Draw a block diagram for the formation of nylon.",
+    "Extend: Explain why PET is called a condensation polymer. [2 marks]",
+    "Stretch: Evaluate biopolyesters as a replacement for oil-based plastic bags. [4 marks]"
+   ],
+   "exit": [
+    "Define condensation polymer. [2 marks]",
+    "Return to the big question: nylon versus poly(ethene) and plastics that rot."
+   ],
+   "homework": "Make a summary diagram of polymers: addition, condensation and biopolymers.",
+   "send": "SEND/EAL: colour-coded blocks on cards. Stretch: why does nylon have strong intermolecular forces?"
+  }
+ ]
+}
