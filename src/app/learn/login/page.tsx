@@ -228,7 +228,7 @@ export default function LearnLoginPage() {
           <p className="mt-6 border-t border-gold-light/60 pt-4 text-xs text-ink/70">
             Not a family with us yet?{" "}
             <a href={`${MAIN_SITE_ORIGIN}/admissions/`} className="font-semibold text-gold-700 underline">
-              Apply for January 2027
+              Apply for December 2026
             </a>
           </p>
         </div>

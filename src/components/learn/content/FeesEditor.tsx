@@ -208,7 +208,7 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Number of terms
             <input type="text" inputMode="decimal" min={1} max={MAX_TERMS} step={1} value={settings.fee_terms} onChange={(e) => setSettings({ ...settings, fee_terms: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.terms} (Fees Policy: 19 Dec 2026 and 28 Mar 2027). Termly fee = annual fee ÷ terms.</span>
+            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.terms} (Fees Policy: 4 Dec 2026 and 28 Mar 2027). Termly fee = annual fee ÷ terms.</span>
           </label>
           <label className="text-sm text-ink">
             Number of monthly instalments
@@ -225,7 +225,7 @@ export function FeesEditor() {
             <datalist id="fee-instalment-choices">
               {INSTALMENT_CHOICES.map((n) => <option key={n} value={n} />)}
             </datalist>
-            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.instalments} (28 Dec 2026 to 28 Jun 2027). Monthly fee = annual fee ÷ instalments.</span>
+            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.instalments} (4 Dec 2026, then 28 Dec 2026 to 28 Jun 2027). Monthly fee = annual fee ÷ instalments.</span>
           </label>
           <label className="text-sm text-ink">
             Application fee (£, non-refundable)
@@ -235,7 +235,7 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Annual payment discount (%)
             <input type="text" inputMode="decimal" min={0} max={100} step="0.1" value={settings.annual_discount_percent} onChange={(e) => setSettings({ ...settings, annual_discount_percent: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 19 Dec 2026. Applied automatically in the fee estimator.</span>
+            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 4 Dec 2026. Applied automatically in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink">
             Registration fee (£, one-time, per child)

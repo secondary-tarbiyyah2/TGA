@@ -73,7 +73,7 @@ export default async function HomePage() {
               <p className="mt-6 max-w-xl text-lg text-ink/75">
                 Live, timetabled lessons with qualified teachers on the full British curriculum, taught with{" "}
                 <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Year 1 to Year 11, live
-                lessons launching January 2027.
+                lessons launching December 2026.
               </p>
             )}
             <div className="mt-8 flex flex-wrap gap-4">
@@ -95,7 +95,7 @@ export default async function HomePage() {
               <Image src="/hero.webp" alt="An open notebook and pen on a warm wooden desk — calm, focused learning" fill className="object-cover" priority sizes="(min-width: 1024px) 24rem, 80vw" />
             </div>
             <div className="shadow-warm absolute -bottom-4 -left-4 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-gold-700">
-              Live lessons from Jan 2027
+              Live lessons from Dec 2026
             </div>
           </div>
         </Container>
@@ -160,7 +160,7 @@ export default async function HomePage() {
           <div className="rounded-2xl border border-gold-light/60 bg-white p-6">
             <h2 className="font-serif text-2xl font-semibold text-ink">{howItWorksHeading}</h2>
             <p className="mt-2 text-ink/75">
-              {howItWorks.map((st) => st.title).join(" → ")}. Places are offered for live lessons from January 2027.
+              {howItWorks.map((st) => st.title).join(" → ")}. Places are offered for live lessons from December 2026.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Button href="/admissions">How to apply</Button>
@@ -229,7 +229,7 @@ export default async function HomePage() {
 
       <CtaBand
         heading="Be among the first families to join."
-        body="Tell us a little about your child and we'll be in touch as places open for January 2027. No obligation."
+        body="Tell us a little about your child and we'll be in touch as places open for December 2026. No obligation."
       />
     </>
   );

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Tarbiyyah Global Academy — A specialist, quality education, rooted in faith", template: "%s — Tarbiyyah Global Academy" },
   description:
-    "An online school by the Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons and Islamic Studies with qualified teachers on the full British curriculum, Year 1 to Year 11, launching January 2027.",
+    "An online school by the Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons and Islamic Studies with qualified teachers on the full British curriculum, Year 1 to Year 11, launching December 2026.",
   openGraph: {
     type: "website",
     locale: "en_GB",

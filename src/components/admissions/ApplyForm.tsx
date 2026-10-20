@@ -720,7 +720,7 @@ export function ApplyForm({
               </Field>
             </div>
             <Field id="f-preferredStart" label="Preferred start" optional>
-              <input {...props("preferredStart")} type="text" maxLength={120} placeholder="e.g. January 2027" className={inputCls} />
+              <input {...props("preferredStart")} type="text" maxLength={120} placeholder="e.g. December 2026" className={inputCls} />
             </Field>
             <Field id="f-howHeard" label="How did you hear about us?" optional>
               <input {...props("howHeard")} type="text" maxLength={300} className={inputCls} />

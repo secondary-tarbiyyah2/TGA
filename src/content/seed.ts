@@ -27,13 +27,13 @@ export type FeeBand = {
 
 // Annual fees are the owner's published figures. Termly / monthly amounts are
 // derived from them (see src/lib/fees.ts) using the site-wide number of terms
-// and monthly instalments (defaults: 2 terms, 7 instalments - Fees Policy, Jan-Jul 2027, editable in
+// and monthly instalments (defaults: 2 terms, 8 instalments - Fees Policy, Dec 2026-Jul 2027, editable in
 // /learn/admin/content -> Fees) so the instalments always add up exactly.
 const seedFeeBandsAnnual: { _id: string; yearGroupRange: string; order: number; annualFee: number; notes?: string }[] = [
-  { _id: "fb1", yearGroupRange: "Year 1 – Year 2", order: 1, annualFee: 1596 },
-  { _id: "fb2", yearGroupRange: "Year 3 – Year 6", order: 2, annualFee: 2130 },
-  { _id: "fb3", yearGroupRange: "Year 7 – Year 9", order: 3, annualFee: 2796 },
-  { _id: "fb4", yearGroupRange: "Year 10 – Year 11", order: 4, annualFee: 3000, notes: "GCSE exam entry fees are billed separately by the exam centre." },
+  { _id: "fb1", yearGroupRange: "Year 1 – Year 2", order: 1, annualFee: 1710 },
+  { _id: "fb2", yearGroupRange: "Year 3 – Year 6", order: 2, annualFee: 2282 },
+  { _id: "fb3", yearGroupRange: "Year 7 – Year 9", order: 3, annualFee: 2996 },
+  { _id: "fb4", yearGroupRange: "Year 10 – Year 11", order: 4, annualFee: 3214, notes: "GCSE exam entry fees are billed separately by the exam centre." },
 ];
 export const feeBands: FeeBand[] = seedFeeBandsAnnual.map((b) => withDerivedFees(b, FEE_DEFAULTS));
 
@@ -153,15 +153,15 @@ export type FaqEntry = { _id: string; question: string; answer: string; category
 export const faqEntries: FaqEntry[] = [
   { _id: "f1", category: "Admissions", order: 1, question: "How do I apply for a place?", answer: "Start by registering your interest, then complete the multi-step application form on the Admissions page. We'll confirm receipt, arrange an entry assessment where relevant, and follow up with next steps." },
   { _id: "f2", category: "Admissions", order: 2, question: "Is there an entry assessment?", answer: "Yes — a short, age-appropriate assessment helps us understand where your child is and how best to support them from day one. Details are shared once your application is received." },
-  { _id: "f3", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers the baseline assessment and administrative review. It is separate from the one-time {{registrationFee}} registration fee, which is payable on acceptance of a place and no later than 19 December 2026." },
-  { _id: "f4", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. Fees are for the shortened January–July 2027 period. You can pay annually (with a {{annualDiscount}} discount if paid in full by 19 December 2026), termly ({{terms}} payments) or monthly ({{instalments}} payments) for every year group band. The instalments always add up exactly to the annual fee — see the Fees page for the full table and payment dates." },
+  { _id: "f3", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers the baseline assessment and administrative review. It is separate from the one-time {{registrationFee}} registration fee, which is payable on acceptance of a place and no later than 4 December 2026." },
+  { _id: "f4", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. Fees are for the shortened December 2026–July 2027 period. You can pay annually (with a {{annualDiscount}} discount if paid in full by 4 December 2026), termly ({{terms}} payments) or monthly ({{instalments}} payments) for every year group band. The instalments always add up exactly to the annual fee — see the Fees page for the full table and payment dates." },
   { _id: "f5", category: "Curriculum", order: 1, question: "Is this the full British curriculum?", answer: "Yes. It is taught live by qualified teachers in classes of no more than 15, alongside Qur'an, Arabic and Islamic Studies, through to GCSE and International GCSE in Years 10 and 11." },
   { _id: "f6", category: "Technology", order: 1, question: "What equipment does my child need?", answer: "A laptop or desktop computer (Windows or Mac) or an iPad, with a working webcam, microphone and headset, and Microsoft Teams installed (free); a reliable broadband connection; and a quiet space to study. For secure tests the device must run Safe Exam Browser (Windows, Mac or iPad). We do a device check with you before your child starts." },
   { _id: "f7", category: "Islamic Studies", order: 1, question: "How is Qur'an memorisation (hifz) taught?", answer: "Qur'an recitation, Tajweed and memorisation are taught live every week (two or three lessons, depending on the key stage), in groups set by ability after the entry assessment, with progress tracked alongside every other subject." },
   { _id: "f8", category: "SEND", order: 1, question: "Do you support children with additional needs?", answer: "We aim to support a range of additional needs within our online setting. Please tell us about your child's needs during the application so we can discuss what's possible together." },
 
   { _id: "f9", category: "Admissions", order: 3, question: "What year groups do you accept?", answer: "We accept children from Year 1 through to Year 11 — Key Stage 1 through to GCSE (Key Stage 4)." },
-  { _id: "f10", category: "Admissions", order: 4, question: "When does Tarbiyyah Global Academy launch, and can I apply now?", answer: "Live lessons launch in January 2027. Applications are open now — you can register your interest or start the full application at any time before then." },
+  { _id: "f10", category: "Admissions", order: 4, question: "When does Tarbiyyah Global Academy launch, and can I apply now?", answer: "Live lessons launch in December 2026. Applications are open now — you can register your interest or start the full application at any time before then." },
   { _id: "f11", category: "Admissions", order: 5, question: "What's the difference between registering interest and applying?", answer: "Registering interest is a short, no-obligation form so we can keep you updated as places open. Applying is the full multi-step application, including your child's year group, and starts the formal admissions process." },
   { _id: "f12", category: "Admissions", order: 6, question: "What happens after I submit my application?", answer: "We confirm receipt, arrange an entry assessment where relevant, and follow up with next steps. Places are offered subject to assessment and availability, and confirmed once the one-time registration fee is paid." },
   { _id: "f13", category: "Admissions", order: 7, question: "Can my family apply from outside the UK?", answer: "Yes. Tarbiyyah Global Academy is an online school for families anywhere in the world, bringing the same ethos and standard of care as our established UK schools to wherever home is." },
@@ -192,12 +192,12 @@ export const faqCategories = ["Admissions", "Fees", "Curriculum", "Technology", 
 
 export type TermDate = { _id: string; label: string; kind: string; date: string; endDate?: string; notes?: string; confirmed?: boolean };
 
-// No confirmed term dates / admissions calendar exist yet for the Jan 2027
+// No confirmed term dates / admissions calendar exist yet for the Dec 2026
 // launch. confirmed: false means the Term Dates page hides these entirely
 // rather than showing unconfirmed dates as if real — see ground rule 3/4.
 export const termDates: TermDate[] = [
   { _id: "t1", label: "Applications open", kind: "Admissions deadline", date: "2026-09-01", confirmed: false },
-  { _id: "t2", label: "Spring Term begins (launch)", kind: "Term date", date: "2027-01-06", confirmed: false },
+  { _id: "t2", label: "Live lessons begin (launch)", kind: "Term date", date: "2026-12-07", confirmed: false },
 ];
 
 export type Testimonial = { _id: string; quote: string; attribution: string; role: "Parent" | "Student"; isPlaceholder: boolean; order?: number };

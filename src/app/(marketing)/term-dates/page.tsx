@@ -6,7 +6,7 @@ import { getTermDates } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Term Dates",
-  description: "Term dates and the admissions calendar for the January 2027 launch.",
+  description: "Term dates and the admissions calendar for the December 2026 launch.",
   path: "/term-dates",
 });
 

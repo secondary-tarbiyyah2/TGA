@@ -24,7 +24,7 @@ export default async function AdmissionsPage() {
           <Kicker>Admissions</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">How to apply.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            A straightforward, six-step process, from your online application to your child&apos;s first lesson, including a supervised remote assessment and an interview with you and your child. Applications for the January 2027 launch are open now.
+            A straightforward, six-step process, from your online application to your child&apos;s first lesson, including a supervised remote assessment and an interview with you and your child. Applications for the December 2026 launch are open now.
           </p>
           <div className="mt-8">
             <Button href="/admissions/apply">Apply now</Button>
@@ -63,7 +63,7 @@ export default async function AdmissionsPage() {
             </div>
           )}
           <p className="text-sm text-ink/70 sm:col-span-2">
-            Tuition is then paid on the dates in our Fees Policy: the whole year (with {settings.annualDiscountPercent ? `${settings.annualDiscountPercent}% off` : "a discount"}) or the first termly payment by 19 December 2026, or monthly from 28 December 2026. See the{" "}
+            Tuition is then paid on the dates in our Fees Policy: the whole year (with {settings.annualDiscountPercent ? `${settings.annualDiscountPercent}% off` : "a discount"}) or the first termly payment by 4 December 2026, or monthly from 28 December 2026. See the{" "}
             <Link href="/fees#estimator" className="font-semibold text-gold-700 underline">fee estimator</Link> for your family&apos;s figures.
           </p>
         </Container>
@@ -80,7 +80,7 @@ export default async function AdmissionsPage() {
             <Button href="/admissions/apply">Apply now</Button>
           </div>
           <p className="mt-4 text-xs text-ink/70">
-            Key admissions dates for the January 2027 launch will be published on our{" "}
+            Key admissions dates for the December 2026 launch will be published on our{" "}
             <a href="/term-dates" className="underline">Term Dates</a> page once confirmed.
           </p>
         </Container>

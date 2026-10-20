@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const covers = [
   "The full British curriculum and Islamic Studies, at your child's key stage",
   "Live-lesson timing and how it works from your timezone",
-  "Fees, payment plans and next steps for the January 2027 launch",
+  "Fees, payment plans and next steps for the December 2026 launch",
   "Any questions about admissions, assessment or your child's needs",
 ];
 

@@ -39,7 +39,7 @@ export default async function FeesPage() {
             payment for any year group.
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/70">
-            Live lessons launch in January 2027, so the fees below are for the shortened January–July 2027 period.
+            Live lessons launch in December 2026, so the fees below are for the shortened December 2026–July 2027 period.
             Choose to pay annually, termly ({terms} payments) or monthly ({instalments} payments). All fees are
             inclusive of VAT. Examination fees are not included and are paid directly to the examination centre.
           </p>
@@ -59,7 +59,7 @@ export default async function FeesPage() {
               <thead className="bg-cream text-ink/70">
                 <tr>
                   <th scope="col" className="px-4 py-3 font-semibold">Year group</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Annual (Jan–Jul 2027)</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Annual (Dec 2026–Jul 2027)</th>
                   <th scope="col" className="px-4 py-3 font-semibold">Termly ({terms} payments)</th>
                   <th scope="col" className="px-4 py-3 font-semibold">Monthly ({instalments} payments)</th>
                 </tr>
@@ -92,7 +92,7 @@ export default async function FeesPage() {
             Every payment plan adds up to exactly the annual total: each instalment is the annual fee divided by{" "}
             {terms} termly or {instalments} monthly payments, and if the division leaves a few pence over they are
             added to the final instalment. A {discountPercent}% discount applies when the annual option is chosen and
-            paid in full by 19 December 2026.
+            paid in full by 4 December 2026.
           </p>
           {rows.some((r) => roundingNote(r.sched.monthly)) && (
             <p className="mt-1 text-xs text-ink/70">
@@ -109,7 +109,7 @@ export default async function FeesPage() {
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
-              <p className="mt-1 text-sm text-ink/70">One-time, per child, due on acceptance of a place and no later than 19 December 2026.</p>
+              <p className="mt-1 text-sm text-ink/70">One-time, per child, due on acceptance of a place and no later than 4 December 2026.</p>
             </div>
             {settings.siblingDiscountPercent != null && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">

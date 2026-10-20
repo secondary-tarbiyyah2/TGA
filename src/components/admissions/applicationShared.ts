@@ -221,13 +221,13 @@ export function admissionsProcessSteps(fees: { applicationFee?: number; registra
       title: "Offer and securing your place",
       owner: "you",
       short: `We email the offer. Accept within five working days and pay the ${reg} registration fee to secure your place.`,
-      body: `We email you a conditional offer with the terms and conditions. To accept, reply within five working days and pay the ${reg} registration fee (and the ${app} application fee, if not already paid), sending proof of payment. Tuition is then paid on the dates in the Fees Policy: annually or the first termly payment by 19 December 2026, or monthly from 28 December 2026. You can cancel within 14 days of accepting, as the Fees Policy explains.`,
+      body: `We email you a conditional offer with the terms and conditions. To accept, reply within five working days and pay the ${reg} registration fee (and the ${app} application fee, if not already paid), sending proof of payment. Tuition is then paid on the dates in the Fees Policy: annually or the first termly payment by 4 December 2026, or monthly from 28 December 2026. You can cancel within 14 days of accepting, as the Fees Policy explains.`,
     },
     {
       title: "Welcome",
       owner: "us",
       short: "We create your accounts and take you through onboarding.",
-      body: "We create your parent and pupil accounts, email you the sign-in details, and take you through onboarding ahead of live lessons in January 2027.",
+      body: "We create your parent and pupil accounts, email you the sign-in details, and take you through onboarding ahead of live lessons in December 2026.",
     },
   ];
 }
