@@ -7,6 +7,7 @@ import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { localDateKey } from "@/lib/learn/calendar";
 import { AdminLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
 import { StatTile } from "@/components/learn/Card";
+import { WithdrawalNoticesAdmin } from "@/components/learn/fees/WithdrawalNoticesAdmin";
 import { DashboardHero } from "@/components/learn/DashboardHero";
 import { useLearnPermission, useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -294,6 +295,8 @@ function DashboardContent() {
           )}
         </div>
       </section>
+
+      {isHead && <WithdrawalNoticesAdmin compact />}
 
       {isHead && <AdminLeaderboard />}
 

@@ -13,12 +13,14 @@ import { classBannerStyle } from "@/lib/learn/classes";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { ui } from "@/components/learn/ui";
 
-type Status = "present" | "late" | "absent" | "excused";
+type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
 const STATUSES: { value: Status; label: string; dot: string }[] = [
   { value: "present", label: "Present", dot: "bg-green-600" },
   { value: "late", label: "Late", dot: "bg-amber-500" },
   { value: "absent", label: "Absent", dot: "bg-red-600" },
   { value: "excused", label: "Excused", dot: "bg-slate-500" },
+  { value: "not_engaged", label: "Not engaged", dot: "bg-amber-800" },
+  { value: "technical", label: "Couldn't connect", dot: "bg-slate-300" },
 ];
 
 const PAGE_SIZE = 1000;
@@ -68,14 +70,16 @@ function pct(part: number, whole: number): string {
   return whole === 0 ? "–" : `${Math.round((part / whole) * 100)}%`;
 }
 
-/** Attendance rate counts present + late as attended; excused is left out of
- * the denominator because the absence is authorised. */
+/** Attendance rate counts present, late and "present but not engaged" as
+ * attended; excused and couldn't-connect are left out of the denominator
+ * (authorised, and recorded separately, per the Attendance Policy). */
 function rate(c: Counts): string {
-  return pct(c.present + c.late, c.present + c.late + c.absent);
+  const attended = c.present + c.late + c.not_engaged;
+  return pct(attended, attended + c.absent);
 }
 
 type Counts = Record<Status, number>;
-const zero = (): Counts => ({ present: 0, late: 0, absent: 0, excused: 0 });
+const zero = (): Counts => ({ present: 0, late: 0, absent: 0, excused: 0, not_engaged: 0, technical: 0 });
 
 function toCsv(rows: Row[]): string {
   const header = ["Date", "Class", "Student", "Status", "Marked at"];
@@ -387,7 +391,7 @@ function ReportsContent() {
 
         {rows !== null && (
           <>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-7">
               <StatTile label="Attendance rate" value={rate(totals)} sub={`${total} record${total === 1 ? "" : "s"}`} />
               {STATUSES.map((s) => (
                 <StatTile key={s.value} label={s.label} value={totals[s.value]} dot={s.dot} />
@@ -464,11 +468,13 @@ function ReportsContent() {
                             cell: (st) => <span className={st.counts.absent > 0 ? "font-medium text-red-700" : "text-ink/70"}>{st.counts.absent}</span>,
                           },
                           { key: "excused", header: "E", align: "right", sort: (st) => st.counts.excused, className: "tabular-nums text-ink/70", cell: (st) => st.counts.excused },
+                          { key: "not_engaged", header: "NE", align: "right", sort: (st) => st.counts.not_engaged, className: "tabular-nums text-ink/70", cell: (st) => st.counts.not_engaged },
+                          { key: "technical", header: "T", align: "right", sort: (st) => st.counts.technical, className: "tabular-nums text-ink/70", cell: (st) => st.counts.technical },
                           { key: "rate", header: "Rate", align: "right", sort: (st) => rate(st.counts), className: "font-semibold tabular-nums", cell: (st) => rate(st.counts) },
                         ]}
                       />
                     </div>
-                    <p className="px-4 py-2 text-xs text-ink/65">P present, L late, A absent, E excused. Rate = (present + late) / (present + late + absent); excused is not counted against attendance.</p>
+                    <p className="px-4 py-2 text-xs text-ink/65">P present, L late, A absent, E excused, NE present but not engaged, T couldn&apos;t connect. Rate = (present + late + not engaged) / (those + absent); excused and couldn&apos;t connect are not counted against attendance.</p>
                   </Section>
                 </div>
 

@@ -40,8 +40,8 @@ function usePupilSignals(ids: string[]): Record<string, Signals> | null {
       for (const r of (att.data as unknown as { child_id: string; status: string; lesson_instances: { date: string } | null }[]) || []) {
         const x = (m[r.child_id] ||= { seen: 0, there: 0, absentToday: false });
         x.seen++;
-        if (r.status === "present" || r.status === "late") x.there++;
-        if (r.lesson_instances?.date === today && (r.status === "absent" || r.status === "excused")) x.absentToday = true;
+        if (r.status === "present" || r.status === "late" || r.status === "not_engaged") x.there++;
+        if (r.lesson_instances?.date === today && (r.status === "absent" || r.status === "excused" || r.status === "technical")) x.absentToday = true;
       }
       const noteBy = new Map(((notes.data as { child_id: string; reason: string }[]) || []).map((n) => [n.child_id, n.reason]));
       const codeBy = new Map(((reasons.data as { child_id: string; reason_code: string }[]) || []).map((r) => [r.child_id, r.reason_code]));
