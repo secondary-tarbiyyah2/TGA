@@ -11,7 +11,7 @@ import { asNarrative, buildClassSummaries, mergeNarrative, termRange, type Class
 type Mode = "admin" | "teach";
 type Child = { id: string; name: string };
 type ClassTile = { id: string; name: string; group: string; sort: number; teacher: string | null };
-type ReportRow = { id: string; child_id: string; status: string; overall_comment: string | null; narrative: unknown; written_by: string | null };
+type ReportRow = { id: string; child_id: string; status: string; overall_comment: string | null; narrative: unknown; written_by: string | null; returned_reason: string | null; version: number };
 type ListRow = {
   id: string;
   status: string;
@@ -52,6 +52,8 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
   const [selected, setSelected] = useState<string[]>([]);
   const [recent, setRecent] = useState<ListRow[]>([]);
   const [busy, setBusy] = useState(false);
+  // Sending a report back to its teacher: which one, and the reason being typed.
+  const [returning, setReturning] = useState<{ id: string; reason: string } | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
   const reqRef = useRef(0);
 
@@ -144,7 +146,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
     const repMap: Record<string, ReportRow> = {};
     let sums: Record<string, ClassSummary> = {};
     if (ids.length > 0) {
-      let rq = supabase.from("term_reports").select("id, child_id, status, overall_comment, narrative, written_by").in("child_id", ids);
+      let rq = supabase.from("term_reports").select("id, child_id, status, overall_comment, narrative, written_by, returned_reason, version").in("child_id", ids);
       rq = term ? rq.eq("term_id", term.id) : rq.is("term_id", null);
       const [{ data: repRows }, built] = await Promise.all([rq, buildClassSummaries(supabase, { id: cls.id, name: cls.name }, ids, termRange(term))]);
       for (const r of (repRows as ReportRow[]) || []) repMap[r.child_id] = r;
@@ -255,14 +257,16 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
 
   const submitAllDrafts = async () => {
     if (!supabase) return;
-    const ids = roster.filter((k) => reports[k.id]?.status === "draft" && (reports[k.id]?.overall_comment || "").trim()).map((k) => reports[k.id].id);
-    if (ids.length === 0) return setMsg("No saved drafts with a comment to submit. Save a comment on each student first.");
+    const ready = roster.filter((k) => reports[k.id]?.status === "draft" && (reports[k.id]?.overall_comment || "").trim() && asNarrative(reports[k.id]?.narrative));
+    const ids = ready.map((k) => reports[k.id].id);
+    const notReady = roster.filter((k) => reports[k.id]?.status === "draft").length - ready.length;
+    if (ids.length === 0) return setMsg("No drafts are ready to submit. Each needs a saved comment and the generated summary.");
     setBusy(true);
     setMsg(null);
     try {
       const { error } = await supabase.from("term_reports").update({ status: "pending_approval" }).in("id", ids);
       if (fail("Submitting", error)) return;
-      setMsg(`Submitted ${ids.length} report${ids.length === 1 ? "" : "s"} for approval.`);
+      setMsg(`Submitted ${ids.length} report${ids.length === 1 ? "" : "s"} for approval.${notReady > 0 ? ` ${notReady} still need${notReady === 1 ? "s" : ""} a comment or summary.` : ""}`);
       await refresh();
     } finally {
       setBusy(false);
@@ -290,6 +294,47 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
     } finally {
       setBusy(false);
     }
+  };
+
+  /** Head/admin: back to the teacher as a draft, with a reason they will see. */
+  const sendBack = async (id: string, reason: string) => {
+    if (!supabase) return;
+    if (!reason.trim()) return setMsg("Say what needs changing, so the teacher knows.");
+    setBusy(true);
+    setMsg(null);
+    try {
+      const { error } = await supabase.from("term_reports").update({ status: "draft", returned_reason: reason.trim() }).eq("id", id);
+      if (fail("Sending back", error)) return;
+      setMsg("Sent back to the teacher with your note.");
+      setReturning(null);
+      setSelected((s) => s.filter((x) => x !== id));
+      await refresh();
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  /** Head/admin: reopen an issued report for a correction. The family keeps the issued copy until it is issued again. */
+  const reopen = async (id: string) => {
+    if (!supabase) return;
+    setBusy(true);
+    setMsg(null);
+    try {
+      const { error } = await supabase.from("term_reports").update({ status: "draft", returned_reason: "Reopened for a correction." }).eq("id", id);
+      if (fail("Reopening", error)) return;
+      setMsg("Reopened. Families still see the issued copy until you issue it again.");
+      await refresh();
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  /** What still stops a report being submitted or issued. */
+  const missing = (childId: string): string[] => {
+    const out: string[] = [];
+    if (!commentFor(childId).trim()) out.push("a comment");
+    if (!narrativeFor(childId)) out.push("the attendance, homework and grades summary (press Generate)");
+    return out;
   };
 
   const print = (childId: string) => {
@@ -368,7 +413,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
             </div>
             <ul className="mt-3 divide-y divide-gold-light/30">
               {awaiting.map((a) => (
-                <li key={a.id} className="flex items-start gap-3 py-2 text-sm">
+                <li key={a.id} className="flex flex-wrap items-start gap-3 py-2 text-sm">
                   <input
                     type="checkbox"
                     aria-label={`Select ${a.children?.name || "report"}`}
@@ -383,9 +428,31 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                     {a.overall_comment && <p className="line-clamp-2 text-ink/70">{a.overall_comment}</p>}
                   </div>
                   <StatusBadge status={a.status} />
+                  <button type="button" disabled={busy} onClick={() => setReturning(returning?.id === a.id ? null : { id: a.id, reason: "" })} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
+                    Send back
+                  </button>
                   <button type="button" disabled={busy} onClick={() => releaseIds([a.id], false)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
                     Release
                   </button>
+                  {returning?.id === a.id && (
+                    <div className="basis-full pl-7">
+                      <label htmlFor={`return-${a.id}`} className="block text-xs font-medium text-ink">
+                        What needs changing? The teacher sees this.
+                      </label>
+                      <div className="mt-1 flex flex-wrap gap-2">
+                        <input
+                          id={`return-${a.id}`}
+                          value={returning.reason}
+                          onChange={(e) => setReturning({ id: a.id, reason: e.target.value })}
+                          className="min-w-0 flex-1 rounded-md border border-gold-light/60 px-3 py-1.5 text-sm"
+                          placeholder="e.g. Please mention his progress in Qur'an recitation."
+                        />
+                        <button type="button" disabled={busy} onClick={() => sendBack(a.id, returning.reason)} className={btnPrimary}>
+                          Send back
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
@@ -493,11 +560,18 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                               <span>Avg {fmtPct(s.assessments.average_percent)}</span>
                             </>
                           )}
+                          {rep?.status === "draft" && rep.returned_reason && <span className="rounded-full bg-amber-50 px-2 py-0.5 font-medium text-amber-900">Sent back</span>}
                           {rep ? <StatusBadge status={rep.status} /> : <span className="rounded-full bg-cream px-2 py-0.5 font-medium text-ink/60">Not started</span>}
+                          {rep?.status === "released" && rep.version > 1 && <span className="text-ink/60">version {rep.version}</span>}
                         </span>
                       </button>
                       {isOpen && (
                         <div className="space-y-3 border-t border-gold-light/30 bg-cream/20 p-3 sm:p-4">
+                          {rep?.status === "draft" && rep.returned_reason && (
+                            <p role="status" className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950 print:hidden">
+                              <span className="font-semibold">Sent back:</span> {rep.returned_reason}
+                            </p>
+                          )}
                           <ReportDocument
                             childName={k.name}
                             termLabel={termLabel}
@@ -534,6 +608,9 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                                 ))}
                               </div>
                             )}
+                            {canEdit && missing(k.id).length > 0 && (
+                              <p className="mt-2 text-xs text-ink/70">Before it can be {mode === "admin" ? "issued" : "submitted"}, this report needs {missing(k.id).join(" and ")}.</p>
+                            )}
                             <div className="mt-3 flex flex-wrap gap-2">
                               {canEdit && (
                                 <button type="button" disabled={busy} onClick={() => writeReport(k, rep?.status || "draft")} className={btnGhost}>
@@ -541,13 +618,18 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                                 </button>
                               )}
                               {mode === "teach" && canEdit && (
-                                <button type="button" disabled={busy || !commentFor(k.id).trim() || rep?.status === "pending_approval"} onClick={() => writeReport(k, "pending_approval")} className={btnPrimary}>
+                                <button type="button" disabled={busy || missing(k.id).length > 0 || rep?.status === "pending_approval"} onClick={() => writeReport(k, "pending_approval")} className={btnPrimary}>
                                   Submit for approval
                                 </button>
                               )}
                               {mode === "admin" && canEdit && (
-                                <button type="button" disabled={busy} onClick={() => writeReport(k, "released")} className={btnPrimary}>
+                                <button type="button" disabled={busy || missing(k.id).length > 0} onClick={() => writeReport(k, "released")} className={btnPrimary}>
                                   Approve &amp; release
+                                </button>
+                              )}
+                              {mode === "admin" && rep?.status === "released" && (
+                                <button type="button" disabled={busy} onClick={() => reopen(rep.id)} className={btnGhost}>
+                                  Reopen for a correction
                                 </button>
                               )}
                               <button type="button" onClick={() => print(k.id)} className={btnGhost}>
