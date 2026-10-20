@@ -134,6 +134,8 @@ for (const p of pages) {
         if (!r.width || !r.height) continue;
         const cs = getComputedStyle(el);
         if (cs.position === "fixed" || cs.visibility === "hidden") continue;
+        // Parked off-screen on purpose until focused (the skip link).
+        if (el.classList.contains("skip-link") || r.right < 0) continue;
         // Inside a horizontal scroller (e.g. a wide table) is fine.
         let p = el.parentElement;
         let scrolls = false;
