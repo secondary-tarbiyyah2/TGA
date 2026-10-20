@@ -31,5 +31,20 @@ await Promise.all(Array.from({ length: 4 }, async () => {
     if (error) { failed++; console.error(`FAILED ${rel}: ${error.message}`); } else done++;
   }
 }));
+// Remove files in syllabus-pack/ that this build no longer produces (e.g. a dropped subject).
+if (!failed) {
+  const keep = new Set(files.map((f) => "syllabus-pack/" + path.relative(dir, f).split(path.sep).join("/")));
+  const stale = [];
+  async function scan(prefix) {
+    const { data, error } = await supabase.storage.from("lesson-decks").list(prefix, { limit: 1000 });
+    if (error) throw error;
+    for (const e of data) (e.id ? (keep.has(`${prefix}/${e.name}`) || stale.push(`${prefix}/${e.name}`)) : await scan(`${prefix}/${e.name}`));
+  }
+  await scan("syllabus-pack");
+  if (stale.length) {
+    const { error } = await supabase.storage.from("lesson-decks").remove(stale);
+    console.log(error ? `Could not remove stale files: ${error.message}` : `Removed ${stale.length} stale files: ${stale.join(", ")}`);
+  }
+}
 console.log(`Uploaded ${done} of ${files.length} files to lesson-decks/syllabus-pack/`);
 process.exit(failed ? 1 : 0);
