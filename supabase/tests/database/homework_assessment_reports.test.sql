@@ -153,7 +153,8 @@ set local "request.jwt.claims" to '{"sub": "e2000000-0000-0000-0000-000000000003
 select is((select count(*)::int from public.term_reports where child_id = 'f2000000-0000-0000-0000-000000000005'), 0, 'parent cannot see a draft (unreleased) term report');
 
 reset role;
-update public.term_reports set status = 'approved', approved_by = 'e2000000-0000-0000-0000-000000000001', approved_at = now() where id = 'f200000a-0000-0000-0000-000000000005';
+-- 0097: issuing needs the generated summary as well as the comment.
+update public.term_reports set status = 'approved', approved_by = 'e2000000-0000-0000-0000-000000000001', approved_at = now(), narrative = '{}'::jsonb where id = 'f200000a-0000-0000-0000-000000000005';
 
 set local role authenticated;
 set local "request.jwt.claims" to '{"sub": "e2000000-0000-0000-0000-000000000003"}';
