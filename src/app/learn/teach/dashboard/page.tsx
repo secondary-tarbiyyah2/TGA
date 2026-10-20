@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { DashboardHero } from "@/components/learn/DashboardHero";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
-import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
+import { myTeachingClasses, useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { TeachNow } from "@/components/learn/teach/TeachNow";
@@ -82,11 +82,11 @@ function TeachContent() {
           .gte("cover_date", localDateKey(new Date()))
           .order("cover_date", { ascending: true })
           .limit(20),
-        supabase.from("user_roles").select("scope_id").eq("user_id", user.id).eq("scope_type", "class").in("role", ["teacher", "teaching_assistant_cover"]),
+        myTeachingClasses(),
       ]);
       setSlots((slotRes.data as unknown as TimetableSlot[]) || []);
       setCovers((coverRes.data as unknown as Cover[]) || []);
-      setClassIds((roleRes.data || []).map((r) => r.scope_id as string).filter(Boolean));
+      setClassIds(roleRes.map((c) => c.id));
     })();
   }, [supabase]);
 

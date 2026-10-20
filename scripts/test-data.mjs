@@ -201,6 +201,9 @@ async function generate() {
   // Families, children and pupil logins.
   const children = [];
   const usedUsernames = new Set();
+  // Two different pupils called "Huda Bello" in one register looks like a
+  // duplicate record, so every test pupil gets a full name of their own.
+  const pupilNames = new Set();
   for (let f = 0; f < families; f++) {
     const surname = SURNAMES[f % SURNAMES.length];
     const parentFirst = pick(rand() < 0.5 ? GIRLS : BOYS);
@@ -210,7 +213,10 @@ async function generate() {
     const kids = rand() < 0.45 ? 1 : rand() < 0.8 ? 2 : 3;
     for (let k = 0; k < kids; k++) {
       const yg = pick(yearGroups);
-      const first = pick(rand() < 0.5 ? BOYS : GIRLS);
+      let first = pick(rand() < 0.5 ? BOYS : GIRLS);
+      for (let tries = 0; pupilNames.has(`${first} ${surname}`) && tries < 40; tries++) first = pick(rand() < 0.5 ? BOYS : GIRLS);
+      if (pupilNames.has(`${first} ${surname}`)) continue;
+      pupilNames.add(`${first} ${surname}`);
       const yearNo = Number(yg.name.replace(/\D/g, "")) || 5;
       const dob = new Date(Date.UTC(today.getUTCFullYear() - yearNo - 5 - (today.getUTCMonth() < 8 ? 1 : 0), between(0, 11), between(1, 28)));
       const child = must(

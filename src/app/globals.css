@@ -429,3 +429,9 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
   color: var(--color-teal-700);
   unicode-bidi: isolate;
 }
+
+/* Portal: the sticky 60px top bar must never cover what a link or a sticky
+   panel scrolls to. Sticky panels inside the portal use top-[76px]. */
+html:has(.portal-topbar) {
+  scroll-padding-top: 76px;
+}

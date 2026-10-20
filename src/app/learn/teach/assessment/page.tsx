@@ -10,214 +10,81 @@ import { GcseClassPanel } from "@/components/learn/GcseTracker";
 import { WeeklyTarbiyahNoteForm } from "@/components/learn/WeeklyTarbiyahNoteForm";
 import { useMyClasses } from "@/lib/learn/useMyClasses";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { ClassGradebook } from "@/components/learn/assessment/ClassGradebook";
 
 type Child = { id: string; name: string };
-type AssessmentType = { id: string; name: string };
-type MarkScheme = { id: string; scale_name: string };
-type Assessment = {
-  id: string;
-  child_id: string;
-  title: string;
-  date: string;
-  raw_score: number | null;
-  max_score: number | null;
-  percent: number | null;
-  grade_label: string | null;
-  moderation_notes: string | null;
-};
 
 function AssessmentContent() {
   const supabase = getSupabaseClient();
   const isAssessmentLead = useLearnPermission("assessment_lead");
   const [classId, setClassId] = useState("");
   const classes = useMyClasses((firstId) => setClassId((current) => current || firstId));
-  const [children, setChildren] = useState<Child[]>([]);
-  const [types, setTypes] = useState<AssessmentType[]>([]);
-  const [schemes, setSchemes] = useState<MarkScheme[]>([]);
-  const [assessments, setAssessments] = useState<Assessment[]>([]);
-
+  const [children, setChildren] = useState<{ classId: string; list: Child[] } | null>(null);
   const [childId, setChildId] = useState("");
-  const [typeId, setTypeId] = useState("");
-  const [schemeId, setSchemeId] = useState("");
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
-  const [rawScore, setRawScore] = useState("");
-  const [maxScore, setMaxScore] = useState("");
-  const [notes, setNotes] = useState("");
-  const [busy, setBusy] = useState(false);
-
-  useEffect(() => {
-    if (!supabase) return;
-    supabase
-      .from("assessment_types")
-      .select("id, name")
-      .order("name")
-      .then(({ data }) => setTypes((data as AssessmentType[]) || []));
-  }, [supabase]);
 
   useEffect(() => {
     if (!supabase || !classId) return;
+    let alive = true;
     supabase
       .from("enrolments")
       .select("child_id, children(id, name)")
       .eq("class_id", classId)
       .then(({ data }) => {
+        if (!alive) return;
         const kids = ((data as unknown as { children: Child | null }[]) || []).map((r) => r.children).filter(Boolean) as Child[];
-        setChildren(kids);
+        kids.sort((a, b) => a.name.localeCompare(b.name));
+        setChildren({ classId, list: kids });
       });
-    const cls = (classes || []).find((c) => c.id === classId);
-    if (cls?.subject_id) {
-      supabase
-        .from("mark_schemes")
-        .select("id, scale_name")
-        .eq("subject_id", cls.subject_id)
-        .then(({ data }) => setSchemes((data as MarkScheme[]) || []));
-    } else {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- resetting derived state, not a render-cycle sync
-      setSchemes([]);
-    }
-  }, [supabase, classId, classes]);
+    return () => {
+      alive = false;
+    };
+  }, [supabase, classId]);
 
-  const loadAssessments = async () => {
-    if (!supabase || !childId) return;
-    const { data } = await supabase
-      .from("assessments")
-      .select("id, child_id, title, date, raw_score, max_score, percent, grade_label, moderation_notes")
-      .eq("class_id", classId)
-      .eq("child_id", childId)
-      .order("date", { ascending: false });
-    setAssessments((data as Assessment[]) || []);
-  };
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
-    loadAssessments();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [supabase, classId, childId]);
-
-  const save = async () => {
-    if (!supabase || !classId || !childId || !typeId || !title.trim() || !date) return;
-    setBusy(true);
-    try {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!user) return;
-      const raw = rawScore ? Number(rawScore) : null;
-      const max = maxScore ? Number(maxScore) : null;
-      let gradeLabel: string | null = null;
-      if (schemeId && raw !== null && max) {
-        const { data } = await supabase.rpc("grade_for_percent", { p_mark_scheme_id: schemeId, p_percent: (raw / max) * 100 });
-        gradeLabel = (data as string) || null;
-      }
-      const { error } = await supabase.from("assessments").insert({
-        class_id: classId,
-        child_id: childId,
-        assessment_type_id: typeId,
-        mark_scheme_id: schemeId || null,
-        title: title.trim(),
-        date,
-        raw_score: raw,
-        max_score: max,
-        grade_label: gradeLabel,
-        moderation_notes: notes.trim() || null,
-        entered_by: user.id,
-      });
-      if (!error) {
-        setTitle("");
-        setRawScore("");
-        setMaxScore("");
-        setNotes("");
-        await loadAssessments();
-      }
-    } finally {
-      setBusy(false);
-    }
-  };
+  const pupils = children && children.classId === classId ? children.list : null;
+  const cls = (classes || []).find((c) => c.id === classId);
+  const child = pupils?.find((c) => c.id === childId);
 
   return (
     <div className="space-y-6">
-      <PageHeader crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Assessment and grades" }]} title="Assessment and grades" subtitle="Record marks and grades for each class, and see how pupils are doing." />
-      <div className="rounded-2xl border border-gold-light bg-white p-6">
-        <div className="flex flex-wrap gap-3">
-          <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
-            {(classes || []).map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-          <select value={childId} onChange={(e) => setChildId(e.target.value)} aria-label="Student" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
-            <option value="">Select a student…</option>
-            {children.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      {childId && (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-          <h2 className="font-serif text-h3 font-semibold text-ink">Record a new assessment</h2>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            <select value={typeId} onChange={(e) => setTypeId(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
-              <option value="">Assessment type…</option>
-              {types.map((t) => (
-                <option key={t.id} value={t.id}>
-                  {t.name}
+      <PageHeader crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Assessment and grades" }]} title="Assessment and grades" subtitle="Enter a whole class's results at once, and see how every pupil is doing." />
+      {classes !== null && classes.length === 0 ? (
+        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
+          You don&apos;t teach any classes yet. Once the office gives you a class (or the published timetable does), it appears here.
+        </p>
+      ) : (
+        <div className="flex flex-wrap items-center gap-3">
+          <label className="text-sm font-semibold text-ink">
+            Class{" "}
+            <select
+              value={classId}
+              onChange={(e) => {
+                setClassId(e.target.value);
+                setChildId("");
+              }}
+              className="ml-1 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-normal"
+            >
+              {(classes || []).map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
                 </option>
               ))}
             </select>
-            {schemes.length > 0 && (
-              <select value={schemeId} onChange={(e) => setSchemeId(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
-                <option value="">No mark scheme</option>
-                {schemes.map((s) => (
-                  <option key={s.id} value={s.id}>
-                    {s.scale_name}
-                  </option>
-                ))}
-              </select>
-            )}
-            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-            <input type="number" value={rawScore} onChange={(e) => setRawScore(e.target.value)} placeholder="Score" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-            <input type="number" value={maxScore} onChange={(e) => setMaxScore(e.target.value)} placeholder="Out of" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-          </div>
-          <textarea
-            value={notes}
-            onChange={(e) => setNotes(e.target.value)}
-            placeholder="Moderation notes (staff only — never seen by parents/students)"
-            rows={2}
-            className="mt-3 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm"
-          />
-          <button type="button" disabled={busy || !typeId || !title.trim() || !date} onClick={save} className="mt-3 rounded-lg bg-gold-700 px-4 py-2 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors">
-            Save assessment
-          </button>
-
-          <div className="mt-6 border-t border-gold-light/30 pt-4">
-            <h3 className="text-sm font-medium text-ink">Previous assessments</h3>
-            <ul className="mt-2 space-y-2">
-              {assessments.map((a) => (
-                <li key={a.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
-                  <div className="flex items-center justify-between">
-                    <span>{a.title}</span>
-                    <span className="text-ink/60">
-                      {a.grade_label || (a.percent !== null ? `${a.percent}%` : "—")} · {new Date(a.date).toLocaleDateString("en-GB")}
-                    </span>
-                  </div>
-                  {a.moderation_notes && <p className="mt-1 text-xs text-ink/65">Moderation: {a.moderation_notes}</p>}
-                </li>
-              ))}
-            </ul>
-          </div>
+          </label>
+          {pupils && <span className="text-sm text-ink/65">{pupils.length} pupils</span>}
         </div>
       )}
 
+      {classId && <ClassGradebook key={classId} classId={classId} subjectId={cls?.subject_id || null} pupils={pupils} selected={childId} onSelect={(id) => setChildId(id === childId ? "" : id)} />}
+
+      {child && (
+        <section aria-label={`${child.name}: progress and notes`} className="space-y-4">
+          <h2 className="font-serif text-h3 font-semibold text-ink">{child.name}</h2>
+          {isAssessmentLead && <QuranProgressForm childId={child.id} classId={classId || null} />}
+          <WeeklyTarbiyahNoteForm childId={child.id} classId={classId} />
+        </section>
+      )}
+
       {classId && <GcseClassPanel classId={classId} />}
-      {isAssessmentLead && childId && <QuranProgressForm childId={childId} classId={classId || null} />}
-      {childId && classId && <WeeklyTarbiyahNoteForm childId={childId} classId={classId} />}
     </div>
   );
 }

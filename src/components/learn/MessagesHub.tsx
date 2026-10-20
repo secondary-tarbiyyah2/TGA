@@ -222,7 +222,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
                 const last = lasts[t.id];
                 const name = other?.full_name || "Conversation";
                 const unreadN = active === t.id ? 0 : unread[t.id] || 0;
-                const context = t.kind === "parent_teacher" && t.children?.name ? `About ${t.children.name}` : other ? roleText(other.roles) : "";
+                const context = t.kind === "parent_teacher" && t.children?.name ? `About ${t.children.name}` : other ? [roleText(other.roles), other.detail].filter(Boolean).join(" · ") : "";
                 return (
                   <li key={t.id}>
                     <button

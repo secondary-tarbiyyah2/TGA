@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { myTeachingClasses } from "@/lib/learn/classes";
 import { uploadClassFile } from "@/components/learn/class/Attachments";
 import { Tabs } from "@/components/learn/Tabs";
 import { makeZip, type ZipEntry } from "@/lib/learn/zip";
@@ -181,8 +182,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       } = await supabase.auth.getUser();
       let mine: string[] = [];
       if (user) {
-        const { data } = await supabase.from("user_roles").select("classes(year_group)").eq("user_id", user.id).eq("scope_type", "class");
-        mine = [...new Set(((data as unknown as { classes: { year_group: string | null } | null }[]) || []).map((r) => yearFromName(r.classes?.year_group)).filter(Boolean) as string[])];
+        mine = [...new Set((await myTeachingClasses()).map((c) => yearFromName(c.year_group_name || c.year_group)).filter(Boolean) as string[])];
         mine.sort((a, b) => YEARS.indexOf(a) - YEARS.indexOf(b));
       }
       if (!alive) return;
@@ -448,7 +448,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               </select>
             </label>
           </div>
-          <nav aria-label="Units" className="hidden max-h-[75vh] space-y-4 self-start overflow-y-auto rounded-2xl border border-gold-light bg-white p-3 lg:sticky lg:top-4 lg:block">
+          <nav aria-label="Units" className="hidden max-h-[75vh] space-y-4 self-start overflow-y-auto rounded-2xl border border-gold-light bg-white p-3 lg:sticky lg:top-[76px] lg:block">
             {subjects.map((s) => (
               <div key={s.slug}>
                 <p className="px-2 pb-1 text-xs font-semibold uppercase tracking-wide text-ink/55">{s.name}</p>
@@ -908,8 +908,7 @@ function ShareDialog({ lesson, area, onClose, onDone }: { lesson: CurriculumLess
         data: { user },
       } = await supabase.auth.getUser();
       if (!user) return;
-      const { data } = await supabase.from("user_roles").select("scope_id, classes(id, name)").eq("user_id", user.id).eq("scope_type", "class");
-      const opts = ((data as unknown as { classes: ClassOpt | null }[]) || []).map((r) => r.classes).filter(Boolean) as ClassOpt[];
+      const opts: ClassOpt[] = (await myTeachingClasses()).map((c) => ({ id: c.id, name: c.name }));
       setClasses(opts);
       if (opts[0]) setClassId(opts[0].id);
     })();

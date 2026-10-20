@@ -36,20 +36,23 @@ function useTodayLessons() {
       const published = ((slots as unknown as { id: string; class_id: string; start_time: string; end_time: string; classes?: { name: string } | null; timetable_runs?: { status: string } | null }[]) || []).filter(
         (s) => s.timetable_runs?.status === "published",
       );
-      if (published.length === 0) return setLessons([]);
-      const { data } = await supabase
-        .from("lesson_instances")
-        .select("id, date, bbb_status, objectives, timetable_slot_id")
-        .in(
-          "timetable_slot_id",
-          published.map((s) => s.id),
-        )
-        .eq("date", localDateKey(new Date()));
-      const bySlot = new Map(published.map((s) => [s.id, s]));
-      const rows = ((data as { id: string; date: string; bbb_status: string; objectives: string | null; timetable_slot_id: string }[]) || [])
+      const today = localDateKey(new Date());
+      type Raw = { id: string; date: string; bbb_status: string; objectives: string | null; timetable_slot_id: string; timetable_slots?: { class_id: string; start_time: string; end_time: string; classes?: { name: string } | null } | null };
+      const cols = "id, date, bbb_status, objectives, timetable_slot_id, timetable_slots(class_id, start_time, end_time, classes(name))";
+      // Your timetabled lessons, plus any lesson given to you directly (cover).
+      const [bySlotRes, ownRes] = await Promise.all([
+        published.length ? supabase.from("lesson_instances").select(cols).in("timetable_slot_id", published.map((s) => s.id)).eq("date", today) : Promise.resolve({ data: [] }),
+        supabase.from("lesson_instances").select(cols).eq("teacher_user_id", user.id).eq("date", today),
+      ]);
+      const all = new Map<string, Raw>();
+      for (const l of [...((bySlotRes.data as unknown as Raw[]) || []), ...((ownRes.data as unknown as Raw[]) || [])]) all.set(l.id, l);
+      const slotMap = new Map(published.map((s) => [s.id, s]));
+      const slotOf = (l: Raw) => l.timetable_slots || slotMap.get(l.timetable_slot_id) || null;
+      const rows = [...all.values()]
+        .filter((l) => slotOf(l))
         .map((l) => {
-          const s = bySlot.get(l.timetable_slot_id)!;
-          return { ...l, slot: { start_time: s.start_time, end_time: s.end_time, class_id: s.class_id, className: s.classes?.name || "Class" } };
+          const s = slotOf(l)!;
+          return { id: l.id, date: l.date, bbb_status: l.bbb_status, objectives: l.objectives, slot: { start_time: s.start_time, end_time: s.end_time, class_id: s.class_id, className: s.classes?.name || "Class" } };
         })
         .sort((a, b) => a.slot.start_time.localeCompare(b.slot.start_time));
       setLessons(rows);
