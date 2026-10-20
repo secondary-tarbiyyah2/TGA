@@ -100,13 +100,14 @@ await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix
 
   const s4 = contentSlide(pres, ctx, "Needs your confirmation", "Board and code questions the school must settle");
   const items = [
-    ["Science", "Lesson files use Edexcel GCSE 1BI0, 1CH0, 1PH0; the Year 11 deck says International GCSE; one brief says AQA. The pack documents the GCSE codes."],
-    ["Business", "Lessons follow GCSE 1BS0; a parent presentation says International GCSE (4BS1)."],
-    ["Islamic Studies", "The pack documents Pearson 4IS1 (Islamic Studies). Confirm it is the qualification entered and that it is current for 2026-27."],
-    ["Arabic", "Pearson 1AA0 recorded; assessment objective weights and word lists were not opened."],
-    ["History", "Lesson files number two options one place off the Pearson specification (Crime and punishment, Weimar). Correct the lesson files."],
-    ["English Literature", "Paper 2 mark splits and the Paper 2 AO4 figure are unconfirmed; poetry cluster titles not opened."],
+    ["Arabic", "The Edexcel International GCSE Arabic course (4AA1) is a first-language qualification. Beginner Arabic in Years 3 to 9 does not lead into it. Confirm which Arabic course Years 10 and 11 sit."],
+    ["Science", "Documented as Edexcel International GCSE Biology 4BI1, Chemistry 4CH1, Physics 4PH1 and Double Award 4SD0. Confirm separate or double award, and that Year 11 is on this course."],
+    ["Business", "Documented as Edexcel International GCSE 4BS1. Existing lesson files follow the UK GCSE titles and need re-mapping."],
+    ["Islamic Studies", "Documented as Edexcel International GCSE 4IS1. Confirm it is current for 2026-27."],
+    ["English", "English Language is documented as AQA 8700 (UK GCSE). Confirm the course if you enter an international version."],
+    ["English Literature", "Documented as Edexcel; see the deck's open items for texts and any unconfirmed marks."],
   ];
+
   const bx = gridBoxes(6, { x: MX, y: 1.8, w: W - 2 * MX, h: 5.05 }, 2, 0.2);
   items.forEach(([k, v], i) => {
     const b = bx[i];
