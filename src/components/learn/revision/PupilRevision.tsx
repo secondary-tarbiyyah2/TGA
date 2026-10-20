@@ -23,9 +23,10 @@ import {
   type PupilUnit,
   type PupilUnitCard,
 } from "@/lib/learn/revision";
+import { ui } from "@/components/learn/ui";
 
-const btn = "rounded-md border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50";
-const btnPrimary = "rounded-md bg-teal-700 px-3.5 py-2 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50";
+const btn = ui.btnSecondary;
+const btnPrimary = ui.btnPrimary;
 
 function MasteryDots({ level, label }: { level: number; label?: string }) {
   return (

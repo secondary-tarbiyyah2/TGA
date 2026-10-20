@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
+import { ui } from "@/components/learn/ui";
 
-export const fieldCls = "mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm";
-export const primaryBtn = "rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50";
-export const ghostBtn = "rounded-lg border border-gold-light px-3 py-1.5 text-sm font-semibold text-ink/80 hover:bg-cream disabled:opacity-50";
+export const fieldCls = `mt-1 ${ui.input}`;
+export const primaryBtn = ui.btnPrimary;
+export const ghostBtn = ui.btnSecondary;
 
 export function Group({ title, help, children }: { title: string; help?: ReactNode; children: ReactNode }) {
   return (

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { MEDIA_BUCKET, chapterEnd, clock, mediaUrl, toSeconds, type SummarySlide } from "@/lib/learn/revision";
+import { ui } from "@/components/learn/ui";
 
 /**
  * Make (or edit) a revision pack in the portal, the way Aqeedah 1 was made:
@@ -21,9 +22,9 @@ import { MEDIA_BUCKET, chapterEnd, clock, mediaUrl, toSeconds, type SummarySlide
  */
 
 const MAX_MB = 200; // the revision-media bucket limit (0094)
-const input = "mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm";
-const btn = "rounded-md border border-gold-light px-2.5 py-1 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50";
-const btnPrimary = "rounded-md bg-teal-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-teal-900 disabled:opacity-50";
+const input = `mt-1 ${ui.input}`;
+const btn = ui.btnSecondary;
+const btnPrimary = ui.btnPrimary;
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "unit";
 
 type Chapter = {

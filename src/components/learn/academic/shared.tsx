@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { ui } from "@/components/learn/ui";
 
 export type AcademicYear = { id: string; label: string; starts_on: string; ends_on: string; is_test: boolean };
 export type Term = { id: string; name: string; starts_on: string; ends_on: string; academic_year_id: string; sanity_document_id: string | null };
@@ -21,9 +22,9 @@ export type Enrolment = { id: string; class_id: string; child_id: string };
 export type Teacher = { id: string; full_name: string };
 export type ClassTeacher = { id: number; user_id: string; scope_id: string };
 
-export const inputCls = "w-full rounded-lg border border-gold-light/70 bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/35";
-export const primaryBtn = "rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gold-900 disabled:opacity-50";
-export const ghostBtn = "rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 transition-colors hover:bg-cream disabled:opacity-50";
+export const inputCls = ui.input;
+export const primaryBtn = ui.btnPrimary;
+export const ghostBtn = `${ui.btnSecondary} ${ui.sm}`;
 export const dangerBtn = "rounded-lg px-2 py-1.5 text-xs font-medium text-red-700 hover:bg-red-50";
 
 export function Field({ label, hint, children, className = "" }: { label: string; hint?: string; children: ReactNode; className?: string }) {

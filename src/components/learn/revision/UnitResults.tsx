@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { TONE, band, pct, unitInsights, type Insights } from "@/lib/learn/revision";
+import { ui } from "@/components/learn/ui";
 
-const btn = "rounded-md border border-gold-light px-2.5 py-1 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50";
+const btn = `${ui.btnSecondary} ${ui.sm}`;
 
 type TopicStat = { topic: string; right: number; total: number; p: number };
 

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatHijri, toHijri } from "@/lib/learn/hijri";
 import { CLOSURE_LABEL, type ClosureKind, type ClosureRow, type TermRow, type YearRow } from "./useCalendarTerms";
+import { ui } from "@/components/learn/ui";
 
 const GREG = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
@@ -78,8 +79,8 @@ function checkTerm(d: Draft): string | null {
 }
 
 const field = "w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-gold-700 focus:outline-none focus:ring-2 focus:ring-gold-300/60";
-const btn = "rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50";
-const btnPrimary = "rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50";
+const btn = ui.btnSecondary;
+const btnPrimary = ui.btnPrimary;
 
 function Lbl({ text, children }: { text: string; children: React.ReactNode }) {
   return (

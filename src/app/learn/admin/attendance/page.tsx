@@ -11,6 +11,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { localDateKey } from "@/lib/learn/calendar";
 import { classBannerStyle } from "@/lib/learn/classes";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
+import { ui } from "@/components/learn/ui";
 
 type Status = "present" | "late" | "absent" | "excused";
 const STATUSES: { value: Status; label: string; dot: string }[] = [
@@ -84,7 +85,7 @@ function toCsv(rows: Row[]): string {
   return [header.join(","), ...lines].join("\n");
 }
 
-const fieldCls = "w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500";
+const fieldCls = ui.input;
 
 function StatTile({ label, value, sub, dot }: { label: string; value: string | number; sub?: string; dot?: string }) {
   return (

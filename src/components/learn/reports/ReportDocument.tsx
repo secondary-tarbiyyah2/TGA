@@ -1,4 +1,5 @@
 import { PrintSheet } from "@/components/learn/print";
+import { StatusChip, type Tone } from "@/components/learn/ui";
 import { PRINT_AREA } from "./printArea";
 import type { ClassSummary, ReportNarrative } from "./summary";
 
@@ -15,19 +16,15 @@ const STATUS_LABEL: Record<string, string> = {
   approved: "Approved",
   released: "Issued",
 };
-const STATUS_STYLE: Record<string, string> = {
-  draft: "bg-cream text-ink/70",
-  pending_approval: "bg-amber-100 text-amber-800",
-  approved: "bg-sky-100 text-sky-800",
-  released: "bg-emerald-100 text-emerald-800",
+const STATUS_TONE: Record<string, Tone> = {
+  draft: "neutral",
+  pending_approval: "warn",
+  approved: "info",
+  released: "good",
 };
 
 export function StatusBadge({ status }: { status: string }) {
-  return (
-    <span className={`inline-block whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-medium ${STATUS_STYLE[status] || "bg-cream text-ink/70"}`}>
-      {STATUS_LABEL[status] || status}
-    </span>
-  );
+  return <StatusChip tone={STATUS_TONE[status] || "neutral"}>{STATUS_LABEL[status] || status}</StatusChip>;
 }
 
 export function fmtPct(v: number | null): string {
