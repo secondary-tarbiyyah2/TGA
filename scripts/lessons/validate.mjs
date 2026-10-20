@@ -3,7 +3,7 @@
 // slide blocks (model, check, quote, …) defined in deck-parts.mjs.
 import fs from "node:fs";
 import path from "node:path";
-const root = new URL("../../content/lessons/", import.meta.url).pathname;
+const root = process.env.LESSONS_DIR ? new URL(process.env.LESSONS_DIR.replace(/\/?$/, "/"), "file://" + process.cwd() + "/").pathname : new URL("../../content/lessons/", import.meta.url).pathname;
 const YEARS = ["reception", ...Array.from({ length: 11 }, (_, i) => `y${i + 1}`)];
 const BLOCKS = ["model", "check", "quote", "compare", "timeline", "table", "code", "misconception", "cycle"];
 let bad = 0, files = 0, lessons = 0;

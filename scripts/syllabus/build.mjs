@@ -7,6 +7,7 @@ import { ROOT, W, MX, INK, MUTED, GOLD, GOLD_SOFT, LINE, WHITE, FONT, H, LOGO_WH
 import { buildSpecDeck, buildSyllabusDeck } from "./decks.mjs";
 import { loadPack, buildMatrixDeck, groupOf } from "./matrix.mjs";
 import { buildUnitDeck } from "./unit-decks.mjs";
+import { specDocument, syllabusDocument, writeDoc } from "./specdoc.mjs";
 import { loadChapters, videoMapFor } from "./video-links.mjs";
 
 const args = process.argv.slice(2);
@@ -31,23 +32,24 @@ async function save(pres, rel, meta) {
   add({ ...meta, file: rel, pptx: rel, pdf: PDF ? rel.replace(/\.pptx$/, ".pdf") : null });
 }
 
+async function saveDoc(doc, rel, meta) {
+  await writeDoc(doc, path.join(OUT, rel));
+  add({ ...meta, file: rel, pptx: null, docx: rel, pdf: PDF ? rel.replace(/\.docx$/, ".pdf") : null });
+}
 for (const d of pack.ks4) {
   const code = (clean(d.code).match(/\b\d[A-Z]{2}\d{1,2}\b|\b[A-Z]{2,3}\d\b|\b\d{4}\b/g) || []).filter((v, i, a) => a.indexOf(v) === i).slice(0, 4).join("-") || "spec";
   const sub = short(d.subject);
   const bd = /AQA/i.test(d.board) ? "AQA" : /edexcel|pearson/i.test(d.board) ? "Edexcel" : short(d.board).slice(0, 12);
-  const rel = `${F.ks4}/${sub}/KS4_${sub}_${bd}-${code}_Specification.pptx`;
   const vm = videoMapFor(d, chapters);
   vm.forEach((list, ref) => list.forEach((v) => videoLinks.push({ subject: d.subject, unitRef: ref, ...v })));
-  await save(buildUnitDeck(d, vm), rel.replace("_Specification.pptx", "_Unit_Teaching_Deck.pptx"), { kind: "unit", level: "KS4 (Y10-Y11)", subject: d.subject, board: d.board, code: d.code, status: d.status, units: d.units.length });
-  await save(buildSpecDeck(d, vm), rel, { kind: "spec", level: "KS4 (Y10-Y11)", subject: d.subject, board: d.board, code: d.code, status: d.status, units: d.units.length });
+  await saveDoc(specDocument(d, { internationalNote: d.internationalNote }), `${F.ks4}/${sub}/KS4_${sub}_${bd}-${code}_Specification.docx`, { kind: "spec", level: "KS4 (Y10-Y11)", subject: d.subject, board: d.board, code: d.code, status: d.status, units: d.units.length });
 }
 for (const d of pack.ks13) {
   const sub = short(d.subject);
   const yrs = Object.keys(d.yearMap || {});
   const first = yrs[0] === "reception" ? "Rec" : String(yrs[0]).toUpperCase();
   const last = String(yrs[yrs.length - 1]).toUpperCase();
-  const rel = `${F.ks13}/${sub}/KS1-3_${sub}_Syllabus_${first}-${last}.pptx`;
-  await save(buildSyllabusDeck(d), rel, { kind: "syllabus", level: `${first} to ${last}`, subject: d.subject, board: d.framework, status: d.status, units: Object.values(d.yearMap).reduce((a, u) => a + u.length, 0) });
+  await saveDoc(syllabusDocument(d), `${F.ks13}/${sub}/KS1-3_${sub}_Syllabus_${first}-${last}.docx`, { kind: "syllabus", level: `${first} to ${last}`, subject: d.subject, board: d.framework, status: d.status, units: Object.values(d.yearMap).reduce((a, u) => a + u.length, 0) });
 }
 const mx = buildMatrixDeck(pack);
 await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix", level: "All years", subject: "All subjects", board: "Cross-curricular", status: "Provisional" });
@@ -70,8 +72,8 @@ await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix
   const rows = [
     [F.start, "This guide and the file register."],
     [F.mx, "Link heatmaps, 12 teaching hubs, year-by-year maps, spiral threads."],
-    [F.ks4, "Per examined subject: the specification deck (how it is examined) and the unit teaching deck (each unit as lessons)."],
-    [F.ks13, "One deck per subject, Reception to Year 9: framework content, year-by-year units, progression."],
+    [F.ks4, "One specification document per examined subject (Word and PDF): how it is examined and what each unit requires."],
+    [F.ks13, "One syllabus document per subject, Reception to Year 9 (Word and PDF): framework content, year-by-year units, progression."],
     [F.src, "Sources opened, verification status and open items for every subject."],
   ];
   rows.forEach(([a, b], i) => {
@@ -99,7 +101,7 @@ await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix
   const mk = (txt, o = {}) => ({ text: clean(txt), options: { fontFace: FONT, fontSize: 10, color: INK, valign: "middle", ...o } });
   const reg = manifest.filter((m) => m.kind === "spec" || m.kind === "syllabus");
   for (let p = 0; p * 11 < reg.length; p++) {
-    const s = contentSlide(pres, ctx, "File register", `All decks in the pack (${p + 1} of ${Math.ceil(reg.length / 11)})`);
+    const s = contentSlide(pres, ctx, "File register", `All documents in the pack (${p + 1} of ${Math.ceil(reg.length / 11)})`);
     const data = [["Level", "Subject", "Board or framework", "Status", "Units"].map((h) => mk(h, { bold: true, color: WHITE, fill: { color: theme.accent } }))];
     reg.slice(p * 11, p * 11 + 11).forEach((m, i) => data.push([m.level, m.subject, m.kind === "spec" ? `${m.board} ${m.code}` : m.board.slice(0, 80), m.status, String(m.units)].map((x, j) => mk(x, { fill: { color: i % 2 ? WHITE : tint(theme.accent, 0.92) }, bold: j === 3, color: j === 3 ? (m.status === "Verified" ? "1E5B36" : "7A4B00") : INK }))));
     s.addTable(data, { x: MX, y: 1.8, w: W - 2 * MX, colW: [1.7, 2.4, 5.2, 1.4, W - 2 * MX - 10.7], border: { type: "solid", color: LINE, pt: 0.75 }, margin: [0.06, 0.08, 0.06, 0.08] });
@@ -161,10 +163,10 @@ fs.writeFileSync(path.join(OUT, F.mx, "video_chapter_links.json"), JSON.stringif
 fs.writeFileSync(path.join(OUT, F.mx, "link_register.json"), JSON.stringify(mx.rows, null, 2));
 
 if (PDF) {
-  const dirs = [...new Set(manifest.map((m) => path.dirname(path.join(OUT, m.pptx))))];
+  const dirs = [...new Set(manifest.map((m) => path.dirname(path.join(OUT, m.file))))];
   for (const d of dirs) {
-    const files = fs.readdirSync(d).filter((f) => f.endsWith(".pptx")).map((f) => path.join(d, f));
+    const files = fs.readdirSync(d).filter((f) => f.endsWith(".pptx") || f.endsWith(".docx")).map((f) => path.join(d, f));
     if (files.length) execFileSync("soffice", ["--headless", "--convert-to", "pdf", "--outdir", d, ...files], { stdio: "ignore" });
   }
 }
-console.log(`Built ${manifest.length} decks into ${OUT}`);
+console.log(`Built ${manifest.length} files into ${OUT}`);
