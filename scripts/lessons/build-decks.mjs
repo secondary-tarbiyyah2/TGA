@@ -508,7 +508,7 @@ function buildDeck(file, lesson, nextLesson) {
       parts.motif(s, theme, { x: 9.0, y: 1.65, w: 4.0, h: 4.85 });
       s.addImage({ path: LOGO_WHITE, x: 1.0, y: 0.6, w: 0.8 * LOGO_RATIO, h: 0.8 });
       s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: "Arial", fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
-      const chip = band === "junior" ? `MISSION ${lesson.n}  ·  ${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}` : `${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}${ks4 && (file.boardShort || file.board) ? `  ·  ${clean(file.boardShort || file.board).toUpperCase()}` : ""}`;
+      const chip = band === "junior" ? `MISSION ${lesson.n}  ·  ${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}` : `${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}${ks4 && (lesson.boardShort || lesson.board || file.boardShort || file.board) ? `  ·  ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board).toUpperCase()}` : ""}`;
       s.addText(chip, { x: 1.0, y: 2.2, w: 7.9, h: 0.45, fontFace: FONT, fontSize: Math.min(16, fitSize(chip, 7.0, 0.42, 16, 9)), bold: true, color: "E3C98F", charSpacing: 3, fit: "shrink" });
       s.addText(lesson.title, { x: 1.0, y: 2.75, w: 7.8, h: 2.0, fontFace: theme.head, fontSize: fitSize(lesson.title, fw(7.8, theme.head), 2.0, 46, 22), bold: true, color: "FFFFFF", valign: "top" });
       s.addText(clean(lesson.unit), { x: 1.0, y: 4.9, w: 7.8, h: 0.5, fontFace: FONT, fontSize: fitSize(lesson.unit, 7.8, 0.5, 20, 12), color: "D9D4C7" });
@@ -575,7 +575,7 @@ function buildDeck(file, lesson, nextLesson) {
       s.addShape("roundRect", { x: 9.6, y: 2.15, w: 3.0, h: 4.6, rectRadius: 0.12, fill: { color: TEAL_SOFT }, line: { color: TEAL_SOFT, width: 0 } });
       s.addText("THE BIG PICTURE", { x: 9.85, y: 2.35, w: 2.5, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 2 });
       s.addText(clean(lesson.unit), { x: 9.85, y: 2.75, w: 2.5, h: 1.9, fontFace: FONT, fontSize: fitSize(lesson.unit, 2.5, 1.9, 20, 12), bold: true, color: INK, valign: "top" });
-      s.addText(ks4 && file.board ? `Exam board: ${clean(file.boardShort || file.board)}` : `${duration}-minute lesson`, { x: 9.85, y: 4.8, w: 2.5, h: 0.4, fontFace: FONT, fontSize: 14, color: TEAL, bold: true });
+      s.addText(ks4 && (lesson.board || file.board) ? `Exam board: ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board)}` : `${duration}-minute lesson`, { x: 9.85, y: 4.8, w: 2.5, h: 0.4, fontFace: FONT, fontSize: 14, color: TEAL, bold: true });
       s.addText(nextLesson ? `Builds towards: ${clean(nextLesson.title)}` : "End of this sequence", { x: 9.85, y: 5.25, w: 2.5, h: 1.3, fontFace: FONT, fontSize: fitSize(nextLesson ? nextLesson.title + "Builds towards: " : "x", 2.5, 1.3, 14, 10), color: MUTED, valign: "top" });
     }
     const extras = [lesson.crossCurricular ? `Cross-curricular links: ${clean(lesson.crossCurricular)}` : "", lesson.smsc ? `SMSC: ${clean(lesson.smsc)}` : ""].filter(Boolean).join(" ");
@@ -825,7 +825,7 @@ for (const f of walk(LESSONS).sort()) {
       subject_slug: subjectSlug,
       subject: data.subject,
       year,
-      board: data.board || null,
+      board: lesson.board || data.board || null,
       unit: lesson.unit,
       lesson_no: lesson.n,
       title: lesson.title,
