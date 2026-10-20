@@ -24,6 +24,7 @@ import {
   type CurriculumVersion,
 } from "@/lib/learn/curriculum";
 import { StatusChip, ui } from "@/components/learn/ui";
+import { hubsForSubject, matchSpecUnits, sameSubject, specFor, specStatus } from "@/lib/learn/syllabusIndex";
 
 type ClassOpt = { id: string; name: string };
 
@@ -119,7 +120,8 @@ function ActionMenu({ label, items, align = "right" }: { label: React.ReactNode;
 }
 
 type UnitGroup = { key: string; subject_slug: string; subject: string; board: string | null; unit: string; lessons: CurriculumLesson[] };
-type UnitTab = "lessons" | "revision" | "results";
+type UnitTab = "lessons" | "spec" | "connections" | "revision" | "results";
+const FILTER_KEY = "tga-library-filters";
 const unitKey = (subjectSlug: string, unit: string) => `${subjectSlug}::${unit}`;
 
 /**
@@ -141,10 +143,32 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const [linked] = useState(() => {
     const p = new URLSearchParams(typeof window === "undefined" ? "" : window.location.search);
     const t = p.get("tab");
-    return { year: p.get("year"), subject: p.get("subject"), unit: p.get("unit"), tab: (t === "revision" || t === "results" ? t : "lessons") as UnitTab };
+    return { year: p.get("year"), subject: p.get("subject"), unit: p.get("unit"), tab: (t === "revision" || t === "results" || t === "spec" || t === "connections" ? t : "lessons") as UnitTab };
   });
   const [tab, setTab] = useState<UnitTab>(linked.tab);
   const [message, setMessage] = useState<string | null>(null);
+  // Filters, remembered on this device.
+  const [subjectFilter, setSubjectFilter] = useState("all");
+  const [boardFilter, setBoardFilter] = useState("all");
+  const [verifiedOnly, setVerifiedOnly] = useState(false);
+  useEffect(() => {
+    try {
+      const f = JSON.parse(window.localStorage.getItem(FILTER_KEY) || "{}");
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- restore saved filters once on load
+      if (typeof f.subject === "string") setSubjectFilter(f.subject);
+      if (typeof f.board === "string") setBoardFilter(f.board);
+      if (typeof f.verified === "boolean") setVerifiedOnly(f.verified);
+    } catch {
+      /* ignore */
+    }
+  }, []);
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(FILTER_KEY, JSON.stringify({ subject: subjectFilter, board: boardFilter, verified: verifiedOnly }));
+    } catch {
+      /* ignore */
+    }
+  }, [subjectFilter, boardFilter, verifiedOnly]);
   const [busyId, setBusyId] = useState<string | null>(null);
   const [replacing, setReplacing] = useState<CurriculumLesson | null>(null);
   const [history, setHistory] = useState<CurriculumLesson | null>(null);
@@ -222,7 +246,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   }, [load]);
 
   // Subjects, each with its units in teaching order.
-  const subjects = useMemo(() => {
+  const allSubjects = useMemo(() => {
     const bySubject = new Map<string, { slug: string; name: string; units: Map<string, UnitGroup> }>();
     (lessons || []).forEach((l) => {
       const s = bySubject.get(l.subject_slug) || { slug: l.subject_slug, name: l.subject, units: new Map() };
@@ -244,6 +268,17 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       .map((s) => ({ ...s, units: [...s.units.values()].sort((a, b) => (a.lessons[0]?.lesson_no ?? 0) - (b.lessons[0]?.lesson_no ?? 0)) }));
   }, [lessons, packs]);
 
+  const boards = useMemo(() => [...new Set(allSubjects.flatMap((s) => s.units.map((u) => u.board).filter(Boolean) as string[]))].sort(), [allSubjects]);
+  const subjects = useMemo(
+    () =>
+      allSubjects
+        .filter((s) => subjectFilter === "all" || s.slug === subjectFilter)
+        .filter((s) => !verifiedOnly || specStatus(s.slug) === "Verified")
+        .map((s) => ({ ...s, units: s.units.filter((u) => boardFilter === "all" || u.board === boardFilter) }))
+        .filter((s) => s.units.length > 0),
+    [allSubjects, subjectFilter, boardFilter, verifiedOnly],
+  );
+  const filtersOn = subjectFilter !== "all" || boardFilter !== "all" || verifiedOnly;
   const allUnits = useMemo(() => subjects.flatMap((s) => s.units), [subjects]);
   const packFor = useCallback((g: UnitGroup | undefined) => (g ? packs.find((p) => p.subject_slug === g.subject_slug && p.unit === g.unit) : undefined), [packs]);
 
@@ -408,6 +443,44 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
         </div>
       </div>
 
+      {(allSubjects.length > 1 || boards.length > 1) && (
+        <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-gold-light bg-white px-4 py-3" role="group" aria-label="Filters">
+          <label className="flex items-center gap-2 text-sm font-semibold text-ink">
+            Subject
+            <select value={subjectFilter} onChange={(e) => { setSubjectFilter(e.target.value); setSelected(null); setWanted(null); }} className="rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm font-normal">
+              <option value="all">All subjects</option>
+              {allSubjects.map((s) => (
+                <option key={s.slug} value={s.slug}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          {boards.length > 1 && (
+            <label className="flex items-center gap-2 text-sm font-semibold text-ink">
+              Exam board
+              <select value={boardFilter} onChange={(e) => { setBoardFilter(e.target.value); setSelected(null); setWanted(null); }} className="max-w-[16rem] rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm font-normal">
+                <option value="all">All boards</option>
+                {boards.map((b) => (
+                  <option key={b} value={b}>
+                    {b}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
+          <label className="flex items-center gap-2 text-sm text-ink">
+            <input type="checkbox" checked={verifiedOnly} onChange={(e) => { setVerifiedOnly(e.target.checked); setSelected(null); setWanted(null); }} />
+            Only subjects with a verified specification
+          </label>
+          {filtersOn && (
+            <button type="button" className={ui.btnLink} onClick={() => { setSubjectFilter("all"); setBoardFilter("all"); setVerifiedOnly(false); }}>
+              Clear filters
+            </button>
+          )}
+        </div>
+      )}
+
       {building && year && (
         <PackBuilder
           key={building.packId || "new"}
@@ -560,6 +633,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     <p className="text-xs text-ink/60">
                       {current.subject}
                       {current.board ? ` · ${current.board}` : ""}
+                      {specStatus(current.subject_slug) ? ` · specification ${specStatus(current.subject_slug)}` : ""}
                     </p>
                     <h2 className="text-h3 font-semibold text-ink">{current.unit}</h2>
                     <div className="mt-2 flex flex-wrap items-center gap-2">
@@ -587,6 +661,8 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                   <Tabs
                     items={[
                       { key: "lessons" as UnitTab, label: "Lessons", count: current.lessons.length },
+                      { key: "spec" as UnitTab, label: "Spec points" },
+                      { key: "connections" as UnitTab, label: "Connections" },
                       { key: "revision" as UnitTab, label: "Revision pack" },
                       { key: "results" as UnitTab, label: "Pupil results", count: currentPack?.takers || undefined },
                     ]}
@@ -600,6 +676,8 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     ) : (
                       <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit is a revision pack only; its summary and video are on the Revision pack tab.</p>
                     ))}
+                  {tab === "spec" && <SpecPanel slug={current.subject_slug} unit={current.unit} />}
+                  {tab === "connections" && <ConnectionsPanel subject={current.subject} unit={current.unit} />}
                   {tab === "revision" && (
                     <RevisionPackPanel
                       pack={currentPack}
@@ -682,6 +760,77 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
 }
 
 type PackQuestion = { id: string; topic: string; lesson_no: number | null; question: string; options: string[]; answer: number; explanation: string | null; in_quiz: boolean };
+
+/** The exam-board spec points this unit appears to cover. Matched by reference and title, so treat it as a suggestion. */
+function SpecPanel({ slug, unit }: { slug: string; unit: string }) {
+  const spec = specFor(slug);
+  const matches = useMemo(() => matchSpecUnits(slug, unit), [slug, unit]);
+  if (!spec) return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No specification is loaded for this subject yet. KS4 subjects have one; KS1 to KS3 syllabuses are in the Syllabus and specification pack.</p>;
+  return (
+    <div className="space-y-3">
+      <p className="rounded-xl border border-gold-light bg-cream px-3 py-2 text-xs text-ink/75">
+        {spec.board} {spec.code} · status: <strong>{spec.status}</strong>. Spec points are paraphrased, and the match to this unit is suggested from its name, so confirm before relying on it.
+      </p>
+      {matches.length === 0 ? (
+        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No spec unit matched this unit's name. Open the full specification in the Syllabus and specification pack.</p>
+      ) : (
+        matches.map((u) => (
+          <section key={u.ref} className="rounded-2xl border border-gold-light bg-white p-4">
+            <h3 className="text-sm font-semibold text-ink">
+              {u.ref} · {u.title}
+            </h3>
+            <p className="text-xs text-ink/60">{[u.paper, u.year].filter(Boolean).join(" · ")}</p>
+            <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-ink/85">
+              {u.points.map((p) => (
+                <li key={p}>{p}</li>
+              ))}
+            </ol>
+          </section>
+        ))
+      )}
+    </div>
+  );
+}
+
+/** Cross-curricular teaching hubs that involve this subject, with the other subjects' links. */
+function ConnectionsPanel({ subject, unit }: { subject: string; unit: string }) {
+  const hubs = useMemo(() => hubsForSubject(subject), [subject]);
+  const uw = useMemo(() => new Set(unit.toLowerCase().split(/\W+/).filter((w) => w.length > 3)), [unit]);
+  const ranked = useMemo(() => {
+    const score = (h: (typeof hubs)[number]) => h.nodes.filter((n) => sameSubject(n.subject, subject)).reduce((t, n) => t + `${n.ref} ${n.note}`.toLowerCase().split(/\W+/).filter((w) => uw.has(w)).length, 0);
+    return [...hubs].sort((a, b) => score(b) - score(a));
+  }, [hubs, subject, uw]);
+  const [open, setOpen] = useState<string | null>(null);
+  if (!ranked.length) return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No cross-curricular hubs include this subject yet.</p>;
+  return (
+    <div className="space-y-2">
+      <p className="text-xs text-ink/65">Teaching hubs where {subject} meets other subjects. Most relevant to this unit first.</p>
+      {ranked.map((h) => (
+        <section key={h.id} className="rounded-2xl border border-gold-light bg-white">
+          <button type="button" aria-expanded={open === h.id} onClick={() => setOpen(open === h.id ? null : h.id)} className="flex w-full items-start gap-3 px-4 py-3 text-left">
+            <span className="min-w-0 flex-1">
+              <span className="block font-semibold text-ink">{h.title}</span>
+              <span className="block text-sm text-ink/70">{h.hook}</span>
+            </span>
+            <span aria-hidden="true" className="pt-1 text-ink/50">{open === h.id ? "–" : "+"}</span>
+          </button>
+          {open === h.id && (
+            <ul className="space-y-2 border-t border-gold-light/70 px-4 py-3">
+              {h.nodes.map((n) => (
+                <li key={`${n.subject}-${n.ref}`} className={`rounded-lg px-3 py-2 text-sm ${sameSubject(n.subject, subject) ? "bg-teal-50" : "bg-cream"}`}>
+                  <span className="font-semibold text-ink">
+                    {n.subject} <span className="font-normal text-ink/60">({n.ref})</span>
+                  </span>
+                  <span className="block text-ink/80">{n.note}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))}
+    </div>
+  );
+}
 
 /** What pupils revise from for this unit: status, the quiz questions with answers, and a switch to hide it. */
 function RevisionPackPanel({ pack, onChanged, onBuild }: { pack: StaffUnit | undefined; onChanged: () => void; onBuild: () => void }) {
