@@ -1,0 +1,3298 @@
+{
+ "subject": "Science",
+ "year": "y10",
+ "board": "Pearson Edexcel International GCSE Physics (4PH1)",
+ "boardShort": "Edexcel IGCSE",
+ "source": "Edexcel IGCSE Physics 4PH1 specification (units Physics 1-4, Y10). Existing UK-GCSE lessons in content/lessons/gcse-science/y10.json already cover Physics 1 points on distance-time and velocity-time graphs, average speed, acceleration and v² = u² + 2as, resultant force, F = ma and W = mg, stopping distance and Hooke's law, so those points are not re-taught here; this file adds vectors/scalars, terminal velocity, momentum and moments.",
+ "lessons": [
+  {
+   "unit": "Physics 1: Forces and motion",
+   "n": 1,
+   "title": "Vectors, scalars and resultant forces in two dimensions",
+   "duration": 50,
+   "bigQuestion": "Why does a runner who completes a 400 m lap have a distance of 400 m but a displacement of zero?",
+   "objectives": [
+    "Distinguish vector from scalar quantities and give SI units",
+    "Calculate the resultant of two perpendicular forces",
+    "Use a scale drawing to find a resultant"
+   ],
+   "successCriteria": [
+    "All: classify quantities as vector or scalar",
+    "Most: find a resultant of two perpendicular forces by Pythagoras",
+    "Some: find its direction using trigonometry or a scale drawing"
+   ],
+   "crossCurricular": "Maths: Pythagoras, trigonometry and scale drawing",
+   "smsc": "Moral: precision in measurement and honest reporting of results",
+   "keywords": [
+    {
+     "term": "scalar",
+     "def": "a quantity with magnitude (size) only"
+    },
+    {
+     "term": "vector",
+     "def": "a quantity with magnitude and direction"
+    },
+    {
+     "term": "displacement",
+     "def": "distance in a straight line from start to finish, with direction"
+    },
+    {
+     "term": "resultant force",
+     "def": "the single force that has the same effect as all the forces acting together"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the SI unit of force, mass, time and energy.",
+    "A car travels 90 km in 1.5 hours. Calculate its average speed in km/h.",
+    "A 4 kg trolley has a resultant force of 12 N. Calculate its acceleration."
+   ],
+   "teach": [
+    {
+     "heading": "Scalars and vectors",
+     "bullets": [
+      "Scalar: size only, e.g. mass, distance, speed, time, energy",
+      "Vector: size and direction, e.g. force, velocity, displacement",
+      "Vectors are drawn as arrows: length shows size"
+     ],
+     "note": "Ask pupils to sort ten quantities onto mini-whiteboards. Recall SI base units here: metre, kilogram, second; newton (N) and joule (J) are derived units. Stress that in one dimension direction can be shown by a sign (+/-).",
+     "table": {
+      "head": [
+       "Scalar",
+       "Vector"
+      ],
+      "rows": [
+       [
+        "distance (m)",
+        "displacement (m)"
+       ],
+       [
+        "speed (m/s)",
+        "velocity (m/s)"
+       ],
+       [
+        "mass (kg)",
+        "weight (N)"
+       ],
+       [
+        "energy (J)",
+        "force (N)"
+       ],
+       [
+        "time (s)",
+        "acceleration (m/s²)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Forces at right angles",
+     "bullets": [
+      "Forces that do not line up cannot simply be added",
+      "For perpendicular forces use Pythagoras: R² = F₁² + F₂²",
+      "Direction: tan θ = opposite ÷ adjacent"
+     ],
+     "note": "Draw the force triangle head-to-tail on the board. Walk through why 6 N and 8 N do not make 14 N. Show that a scale drawing (1 cm = 1 kN) gives the same answer, as examiners may ask for either method.",
+     "model": {
+      "problem": "Two tugboats pull a ship. One pulls 6.0 kN due east, the other 8.0 kN due north. Find the size and direction of the resultant.",
+      "steps": [
+       "Draw the forces head to tail as a right-angled triangle",
+       "R² = 6.0² + 8.0² = 36 + 64 = 100",
+       "R = √100 = 10 kN",
+       "tan θ = 8.0 ÷ 6.0 = 1.33, so θ = 53° north of east"
+      ],
+      "answer": "Resultant = 10 kN at 53° north of east"
+     }
+    },
+    {
+     "heading": "Distance and displacement",
+     "bullets": [
+      "Distance is how far you travelled along the path",
+      "Displacement is the straight-line distance from the start, with direction",
+      "Speed is a scalar; velocity is a vector"
+     ],
+     "note": "Return to the big question: a full lap gives displacement 0, so average velocity is 0 even though average speed is not. Ask: can an object move at constant speed but changing velocity? (Yes: circular motion.)",
+     "misconception": {
+      "wrong": "A negative velocity means the object is slowing down.",
+      "right": "A negative velocity only means the direction is opposite to the one chosen as positive. Slowing down means the acceleration is opposite to the velocity."
+     }
+    },
+    {
+     "heading": "Check: scalar or vector?",
+     "bullets": [
+      "Decide, then show your whiteboards"
+     ],
+     "note": "Hinge question. Pupils choosing B are thinking only of size. Pupils choosing C or D have mixed up vectors and scalars, for example thinking weight and mass are the same.",
+     "check": {
+      "q": "Which list contains only vector quantities?",
+      "options": [
+       "force, displacement, acceleration",
+       "speed, mass, time",
+       "velocity, energy, distance",
+       "weight, speed, force"
+      ],
+      "answer": 0,
+      "why": "Force, displacement and acceleration all have direction. Speed (B, D), mass, time, energy and distance are scalars."
+     }
+    }
+   ],
+   "practice": [
+    "A boat is pushed 9 N east by the engine and 12 N north by the current. Calculate the size of the resultant force.",
+    "A hiker walks 3 km east then 4 km north. State her distance and her displacement.",
+    "Draw a scale diagram (1 cm = 2 N) to find the resultant of 10 N west and 4 N south."
+   ],
+   "independent": [
+    "Core: Classify each as scalar or vector: temperature, momentum, volume, acceleration, speed, displacement.",
+    "Extend: Forces of 5.0 N and 12 N act at right angles on a 2.0 kg trolley. Calculate the resultant and the magnitude of the acceleration.",
+    "Stretch: A swimmer aims directly across a 60 m wide river at 1.5 m/s. The river flows at 2.0 m/s. Calculate the swimmer's resultant speed and how far downstream she lands."
+   ],
+   "exit": [
+    "Explain the difference between speed and velocity.",
+    "A force of 3 N and a force of 4 N act at right angles. Show that the resultant is 5 N."
+   ],
+   "homework": "Find three everyday situations where two forces act at an angle and write one sentence about each. Then complete five resultant-force calculations from the worksheet.",
+   "send": "SEND: give a pre-drawn right-angled triangle template and a Pythagoras triples card (3-4-5, 5-12-13). EAL: pair 'scalar' and 'vector' with drawn arrows. Stretch: resolve a force into horizontal and vertical components."
+  },
+  {
+   "unit": "Physics 1: Forces and motion",
+   "n": 2,
+   "title": "Falling objects, drag and terminal velocity",
+   "duration": 50,
+   "bigQuestion": "Why does a skydiver stop speeding up even though gravity never switches off?",
+   "objectives": [
+    "Describe the forces on a falling object",
+    "Explain terminal velocity in terms of balanced forces",
+    "Interpret a velocity-time graph for a skydiver"
+   ],
+   "successCriteria": [
+    "All: state that terminal velocity is reached when forces balance",
+    "Most: explain each stage of a skydive using resultant force",
+    "Some: calculate acceleration at a given instant from weight and drag"
+   ],
+   "crossCurricular": "PE/Geography: skydiving; DT: parachute shapes",
+   "smsc": "Spiritual: wonder at the laws that govern ordinary things",
+   "keywords": [
+    {
+     "term": "drag",
+     "def": "resistive force on an object moving through a fluid, such as air resistance"
+    },
+    {
+     "term": "terminal velocity",
+     "def": "the constant maximum speed reached when drag equals the driving force"
+    },
+    {
+     "term": "weight",
+     "def": "the force of gravity on an object, W = mg"
+    },
+    {
+     "term": "resultant force",
+     "def": "the overall force after adding forces with direction"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the weight of a 60 kg person (g = 10 N/kg).",
+    "State Newton's second law as an equation.",
+    "Describe a velocity-time graph showing constant acceleration."
+   ],
+   "teach": [
+    {
+     "heading": "Two forces on a falling object",
+     "bullets": [
+      "Weight acts downwards and stays constant",
+      "Drag acts upwards and increases with speed",
+      "Resultant force = weight - drag"
+     ],
+     "note": "Begin with a coin dropped in air: it feels weight and a very small drag. Ask pupils how drag would differ for a feather. Emphasise that weight does not change as the object falls, but drag does.",
+     "cycle": [
+      "Start: speed zero, drag zero, resultant = weight",
+      "Speed rises, drag rises, acceleration falls",
+      "Drag becomes equal to weight",
+      "Resultant force zero: constant speed (terminal velocity)"
+     ]
+    },
+    {
+     "heading": "Worked example: the skydiver",
+     "bullets": [
+      "Mass 80 kg; use g = 10 N/kg",
+      "Find weight, resultant and acceleration when drag is 300 N",
+      "Find drag at terminal velocity"
+     ],
+     "note": "Model aloud: always draw a free-body diagram first, label weight down and drag up. Note that at terminal velocity the object still moves; it just stops accelerating.",
+     "model": {
+      "problem": "An 80 kg skydiver falls. At one instant drag is 300 N. Calculate his acceleration. What is the drag at terminal velocity?",
+      "steps": [
+       "Weight W = mg = 80 × 10 = 800 N",
+       "Resultant force = 800 - 300 = 500 N downwards",
+       "a = F ÷ m = 500 ÷ 80 = 6.25 m/s²",
+       "At terminal velocity the resultant is zero, so drag = weight = 800 N"
+      ],
+      "answer": "a = 6.25 m/s² downwards; drag at terminal velocity = 800 N"
+     }
+    },
+    {
+     "heading": "The skydive on a velocity-time graph",
+     "bullets": [
+      "Steep curve: large acceleration at the start",
+      "Curve flattens as drag grows",
+      "Horizontal line: terminal velocity",
+      "Parachute opens: speed drops, then a lower terminal velocity"
+     ],
+     "note": "Sketch the graph live. Ask: what does the gradient show at each point? Why does opening the parachute make the resultant force point upwards for a moment? The numbers on the timeline are illustrative, not exact.",
+     "timeline": [
+      {
+       "label": "0 s",
+       "text": "Jumps: a = g = 10 m/s²"
+      },
+      {
+       "label": "10 s",
+       "text": "Drag rising, a falling"
+      },
+      {
+       "label": "15 s",
+       "text": "Terminal velocity, a = 0"
+      },
+      {
+       "label": "Chute opens",
+       "text": "Drag greater than weight, slows down"
+      },
+      {
+       "label": "Landing",
+       "text": "Low terminal velocity reached"
+      }
+     ]
+    },
+    {
+     "heading": "Common errors",
+     "bullets": [
+      "Heavier does not always mean faster in air",
+      "In a vacuum all objects fall with the same acceleration",
+      "Terminal velocity depends on shape and area as well as weight"
+     ],
+     "note": "Mention the Apollo 15 hammer and feather demonstration on the Moon (1971). Contrast with a feather and coin in air. Link back: a = F/m, so a heavier object has more weight but also more mass.",
+     "misconception": {
+      "wrong": "At terminal velocity there are no forces acting on the object.",
+      "right": "At terminal velocity two forces act, weight and drag, but they are equal and opposite, so the resultant force is zero."
+     }
+    },
+    {
+     "heading": "Check: balanced forces",
+     "bullets": [
+      "Choose the best statement"
+     ],
+     "note": "Distractor A is the classic misconception that gravity stops. B has the forces the wrong way round. D confuses constant speed with no drag.",
+     "check": {
+      "q": "A parachutist falls at constant speed. Which statement is correct?",
+      "options": [
+       "Gravity has stopped acting",
+       "Weight is greater than drag",
+       "Weight is equal to drag",
+       "Drag is zero"
+      ],
+      "answer": 2,
+      "why": "Constant speed means zero resultant force, so drag equals weight. Gravity always acts (A) and drag is not zero (D)."
+     }
+    }
+   ],
+   "practice": [
+    "A 0.050 kg ball bearing is dropped in oil. Weight is 0.50 N and drag is 0.20 N. Calculate the resultant force and acceleration.",
+    "Explain why a skydiver reaches a higher terminal velocity falling head-first than spread out.",
+    "A 70 kg parachutist falls at terminal velocity. State the drag force."
+   ],
+   "independent": [
+    "Core: Describe in order the forces and motion of a skydiver from jumping to landing with a parachute.",
+    "Extend: Sketch a velocity-time graph for a parachutist who opens the parachute at 10 s. Label the terminal velocities and explain each section.",
+    "Stretch: Explain, using resultant force, why a raindrop falling from a high cloud does not hit the ground at very high speed."
+   ],
+   "exit": [
+    "Define terminal velocity.",
+    "A 60 kg skydiver has drag 450 N. Calculate the acceleration (g = 10 N/kg)."
+   ],
+   "homework": "Design a parachute test using coffee filters: list the independent, dependent and control variables and one safety point.",
+   "send": "SEND: provide the four-stage cycle as a card sort and a labelled free-body diagram. EAL: pre-teach drag, resistive, constant. Stretch: explain why terminal velocity depends on cross-sectional area."
+  },
+  {
+   "unit": "Physics 1: Forces and motion",
+   "n": 3,
+   "title": "Momentum and the conservation of momentum",
+   "duration": 50,
+   "bigQuestion": "Why does a small bullet fired from a gun make the gun kick back?",
+   "objectives": [
+    "Calculate momentum using p = mv",
+    "State and apply the conservation of momentum in collisions and explosions"
+   ],
+   "successCriteria": [
+    "All: calculate momentum",
+    "Most: use conservation of momentum for two objects sticking together",
+    "Some: solve explosion and recoil problems"
+   ],
+   "crossCurricular": "Maths: rearranging equations; PE: collisions in rugby",
+   "smsc": "Moral: responsibility for the safe handling of equipment",
+   "keywords": [
+    {
+     "term": "momentum",
+     "def": "mass multiplied by velocity, a vector measured in kg m/s"
+    },
+    {
+     "term": "conservation of momentum",
+     "def": "total momentum before = total momentum after, if no external force acts"
+    },
+    {
+     "term": "collision",
+     "def": "two objects interacting briefly with large forces"
+    },
+    {
+     "term": "explosion",
+     "def": "objects pushed apart from rest"
+    }
+   ],
+   "starter": [
+    "Bismillah. A 1500 kg car moves at 20 m/s. Calculate its kinetic energy.",
+    "Which of these is a vector: speed, mass, velocity?",
+    "State Newton's first law."
+   ],
+   "teach": [
+    {
+     "heading": "Momentum",
+     "bullets": [
+      "p = m × v",
+      "Unit: kg m/s",
+      "Vector: direction matters, so choose a positive direction"
+     ],
+     "note": "Compare a lorry and a cyclist at the same speed. Pupils feel why the lorry is harder to stop. Emphasise that momentum has the direction of velocity, so +/- signs are essential.",
+     "model": {
+      "problem": "Calculate the momentum of a 1200 kg car moving at 15 m/s, and of a 0.15 kg cricket ball at 30 m/s.",
+      "steps": [
+       "Car: p = mv = 1200 × 15 = 18 000 kg m/s",
+       "Ball: p = 0.15 × 30 = 4.5 kg m/s",
+       "Same formula; unit is kg m/s"
+      ],
+      "answer": "Car 18 000 kg m/s; ball 4.5 kg m/s"
+     }
+    },
+    {
+     "heading": "Conservation of momentum",
+     "bullets": [
+      "In a closed system, total momentum before = total momentum after",
+      "Applies to all collisions and explosions",
+      "Kinetic energy may not be conserved (inelastic collision)"
+     ],
+     "note": "Use trolleys on a track with light gates if available. Method: 1) choose a positive direction, 2) write total p before, 3) write total p after, 4) equate. 'Closed' means no external forces such as friction.",
+     "model": {
+      "problem": "A 2.0 kg trolley moving at 3.0 m/s collides with a stationary 1.0 kg trolley. They stick together. Find their common velocity.",
+      "steps": [
+       "Momentum before = 2.0 × 3.0 + 1.0 × 0 = 6.0 kg m/s",
+       "Momentum after = (2.0 + 1.0) × v = 3.0v",
+       "3.0v = 6.0",
+       "v = 6.0 ÷ 3.0 = 2.0 m/s"
+      ],
+      "answer": "Common velocity = 2.0 m/s in the original direction"
+     }
+    },
+    {
+     "heading": "Explosions and recoil",
+     "bullets": [
+      "Before: at rest, so total momentum = 0",
+      "After: momenta equal in size and opposite in direction",
+      "The lighter object gets the higher speed"
+     ],
+     "note": "Demonstrate with two spring-loaded trolleys pushed apart. Ask why the bullet gets a much greater speed than the gun: the momenta are equal and opposite, the bullet has far less mass, so its velocity is greater.",
+     "model": {
+      "problem": "A 4.0 kg rifle fires a 0.010 kg bullet at 400 m/s. Find the recoil velocity of the rifle.",
+      "steps": [
+       "Total momentum before = 0",
+       "Bullet: p = 0.010 × 400 = +4.0 kg m/s",
+       "Rifle: 4.0 × v = -4.0 so that the total is 0",
+       "v = -4.0 ÷ 4.0 = -1.0 m/s"
+      ],
+      "answer": "Rifle recoils at 1.0 m/s opposite to the bullet"
+     }
+    },
+    {
+     "heading": "Check: collision",
+     "bullets": [
+      "Use conservation of momentum"
+     ],
+     "note": "Distractor A forgets the extra mass. C multiplies instead of conserving. Ask pupils to show their working on whiteboards.",
+     "check": {
+      "q": "A 3 kg trolley at 4 m/s hits and sticks to a stationary 1 kg trolley. What is the speed after?",
+      "options": [
+       "4 m/s",
+       "3 m/s",
+       "12 m/s",
+       "1 m/s"
+      ],
+      "answer": 1,
+      "why": "Momentum before = 12 kg m/s. After: 4 kg × v = 12, so v = 3 m/s. A ignores the extra mass."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the momentum of a 65 kg runner at 8.0 m/s.",
+    "A 0.50 kg trolley at 2.0 m/s hits a stationary 1.5 kg trolley and they stick together. Calculate their velocity.",
+    "A 60 kg skater at rest throws a 2 kg ball at 6 m/s. Calculate the skater's recoil velocity."
+   ],
+   "independent": [
+    "Core: A 1000 kg car at 12 m/s hits a stationary 800 kg car and they lock together. Find the velocity after.",
+    "Extend: A 2 kg trolley moves right at 5 m/s and collides with a 3 kg trolley moving left at 2 m/s. They stick together. Find the velocity.",
+    "Stretch: A 0.20 kg ball at 6 m/s hits a 0.80 kg stationary ball, which moves off at 2.0 m/s. Find the velocity of the first ball and decide whether kinetic energy was conserved."
+   ],
+   "exit": [
+    "State the principle of conservation of momentum.",
+    "A 5 kg cannon fires a 0.5 kg shell at 40 m/s. Calculate the cannon's recoil velocity."
+   ],
+   "homework": "Write a half-page explanation of why a bullet gets a larger velocity than the gun, using the word 'momentum' at least four times.",
+   "send": "SEND: provide a before/after momentum table for each object. EAL: sentence frames 'The momentum before is...'. Stretch: consider why kinetic energy is lost in sticking collisions."
+  },
+  {
+   "unit": "Physics 1: Forces and motion",
+   "n": 4,
+   "title": "Force as rate of change of momentum; Newton's third law",
+   "duration": 50,
+   "bigQuestion": "How do crumple zones and airbags protect the people inside a car?",
+   "objectives": [
+    "Use F = (mv - mu) ÷ t",
+    "Explain safety features in terms of change of momentum",
+    "State and apply Newton's third law"
+   ],
+   "successCriteria": [
+    "All: state Newton's third law",
+    "Most: calculate force from change in momentum and time",
+    "Some: explain safety features and identify third-law pairs correctly"
+   ],
+   "crossCurricular": "Engineering: vehicle safety; Maths: substitution and rearranging",
+   "smsc": "Moral: protecting human life through careful design",
+   "keywords": [
+    {
+     "term": "impulse",
+     "def": "change in momentum, equal to force × time"
+    },
+    {
+     "term": "rate of change of momentum",
+     "def": "change in momentum divided by time taken, equal to force"
+    },
+    {
+     "term": "Newton's third law",
+     "def": "when A pushes on B, B pushes on A with an equal and opposite force"
+    },
+    {
+     "term": "crumple zone",
+     "def": "part of a car designed to collapse and lengthen the collision time"
+    }
+   ],
+   "starter": [
+    "Bismillah. A 2 kg trolley at 3 m/s has what momentum?",
+    "A 5 kg object has a resultant force of 20 N. Find its acceleration.",
+    "State the unit of momentum."
+   ],
+   "teach": [
+    {
+     "heading": "Force as rate of change of momentum",
+     "bullets": [
+      "Newton's second law: F = Δp ÷ t",
+      "F = (mv - mu) ÷ t",
+      "Longer time means smaller force for the same change in momentum"
+     ],
+     "note": "Link to F = ma: substitute a = (v - u)/t into F = ma and show it matches. Pupils practise on whiteboards with simple numbers first.",
+     "model": {
+      "problem": "A 1200 kg car travelling at 20 m/s stops in 0.80 s in a crash. Calculate the average force on the car. Repeat for 2.0 s.",
+      "steps": [
+       "Change in momentum = 1200 × 0 - 1200 × 20 = -24 000 kg m/s",
+       "F = Δp ÷ t = 24 000 ÷ 0.80 = 30 000 N (opposing the motion)",
+       "With 2.0 s: F = 24 000 ÷ 2.0 = 12 000 N"
+      ],
+      "answer": "30 000 N in 0.80 s; 12 000 N in 2.0 s"
+     }
+    },
+    {
+     "heading": "Safety features",
+     "bullets": [
+      "Crumple zones, airbags and seat belts increase the stopping time",
+      "Same change in momentum, so smaller force",
+      "Smaller force means less injury",
+      "Gymnastics mats and cycle helmets work in the same way"
+     ],
+     "note": "Ask pupils to explain crumple zones in a three-part sentence: increases time, reduces rate of change of momentum, so force is smaller. Use a raw egg dropped onto a pillow versus the floor as a thought experiment.",
+     "table": {
+      "head": [
+       "Feature",
+       "How it helps"
+      ],
+      "rows": [
+       [
+        "Crumple zone",
+        "collapses, lengthening the collision time"
+       ],
+       [
+        "Airbag",
+        "slows the head over a longer time and spreads the force"
+       ],
+       [
+        "Seat belt",
+        "stretches slightly and stops the body with the car"
+       ],
+       [
+        "Helmet",
+        "foam compresses, increasing stopping time"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Newton's third law",
+     "bullets": [
+      "Forces always come in pairs between two objects",
+      "Equal in size, opposite in direction, same type of force",
+      "The pair act on different objects"
+     ],
+     "note": "Use the example of a book on a table. The Earth pulling the book down pairs with the book pulling the Earth up, not with the contact force from the table. Ask pupils to name the pair for a rocket and for a swimmer pushing off the wall.",
+     "misconception": {
+      "wrong": "The two forces in a third-law pair cancel out, so nothing can ever move.",
+      "right": "The forces act on different objects so they cannot cancel. A swimmer pushes the wall; the wall pushes the swimmer, who accelerates."
+     }
+    },
+    {
+     "heading": "Check: crash force",
+     "bullets": [
+      "Think about time and momentum"
+     ],
+     "note": "A and D wrongly say momentum or mass changes. C is the opposite of the real effect.",
+     "check": {
+      "q": "A cyclist's helmet reduces injury because it...",
+      "options": [
+       "decreases the cyclist's momentum",
+       "increases the time taken to stop, reducing force",
+       "makes the cyclist heavier",
+       "reduces the cyclist's mass"
+      ],
+      "answer": 1,
+      "why": "The change in momentum is fixed, so a longer stopping time gives a smaller force. The helmet does not change momentum or mass."
+     }
+    }
+   ],
+   "practice": [
+    "A 0.057 kg tennis ball hits a racket at 40 m/s and leaves at 20 m/s in the opposite direction in 0.0050 s. Calculate the average force on the ball.",
+    "A 70 kg driver at 15 m/s is stopped by a seat belt in 0.30 s. Calculate the force.",
+    "Identify the third-law pair when a footballer kicks a ball."
+   ],
+   "independent": [
+    "Core: Explain why a long jumper bends their knees on landing.",
+    "Extend: A 0.40 kg ball falls onto a floor at 6 m/s and rebounds at 4 m/s. Contact time is 0.020 s. Calculate the average force on the ball.",
+    "Stretch: A hose sprays 2.0 kg of water per second at 8 m/s on to a wall and stops it. Calculate the force on the wall."
+   ],
+   "exit": [
+    "Show that a force of 24 N is needed to change the momentum of a trolley by 12 kg m/s in 0.50 s.",
+    "State the third-law partner of the Earth's pull on you."
+   ],
+   "homework": "Write a short advert for a child car seat explaining, using momentum, why it is safer than a rigid seat.",
+   "send": "SEND: sentence frame 'Same change in momentum, longer time, so smaller force'. EAL: pre-teach crumple, rebound. Stretch: derive F = Δp/t from F = ma."
+  },
+  {
+   "unit": "Physics 1: Forces and motion",
+   "n": 5,
+   "title": "Moments, centre of gravity and the principle of moments",
+   "duration": 50,
+   "bigQuestion": "How can a small child balance an adult on a seesaw?",
+   "objectives": [
+    "Calculate the moment of a force",
+    "Apply the principle of moments to a balanced object",
+    "Find the centre of gravity of a lamina and explain stability"
+   ],
+   "successCriteria": [
+    "All: calculate a moment",
+    "Most: use the principle of moments to find an unknown force or distance",
+    "Some: use a non-central pivot including the weight of a uniform beam"
+   ],
+   "crossCurricular": "Maths: rearranging equations; DT: levers and tools; PE: balance",
+   "smsc": "Spiritual: balance and proportion in nature and in life",
+   "keywords": [
+    {
+     "term": "moment",
+     "def": "turning effect of a force: force × perpendicular distance from the pivot"
+    },
+    {
+     "term": "pivot",
+     "def": "the point about which an object turns"
+    },
+    {
+     "term": "principle of moments",
+     "def": "for balance, total clockwise moment = total anticlockwise moment"
+    },
+    {
+     "term": "centre of gravity",
+     "def": "the point where the whole weight of an object seems to act"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the weight of a 40 kg child (g = 10 N/kg).",
+    "State the unit of force.",
+    "Explain what a resultant force of zero means for an object."
+   ],
+   "teach": [
+    {
+     "heading": "The moment of a force",
+     "bullets": [
+      "Moment = force × perpendicular distance from the pivot",
+      "Unit: newton metre (N m)",
+      "A longer spanner gives a larger moment for the same force"
+     ],
+     "note": "Demonstrate with a door: push near the hinge, then near the handle. Stress 'perpendicular' distance and convert cm to m before calculating.",
+     "model": {
+      "problem": "A mechanic pushes with 80 N on a spanner at 0.25 m from the nut. Find the moment. What force is needed at 0.40 m for the same moment?",
+      "steps": [
+       "Moment = F × d = 80 × 0.25 = 20 N m",
+       "Same moment at 0.40 m: F = M ÷ d",
+       "F = 20 ÷ 0.40 = 50 N"
+      ],
+      "answer": "20 N m; 50 N at 0.40 m"
+     }
+    },
+    {
+     "heading": "The principle of moments",
+     "bullets": [
+      "Balanced: clockwise moments = anticlockwise moments",
+      "The resultant moment is zero",
+      "Take moments about the pivot"
+     ],
+     "note": "Practical: balance a metre rule on a pivot using 100 g masses; record the distances; check that W1 × d1 = W2 × d2 within experimental error. Independent variable: position of one mass; dependent: position of the other that balances. Safety: keep feet clear of falling masses.",
+     "model": {
+      "problem": "A child weighs 300 N and sits 2.0 m from the pivot of a seesaw. An adult weighs 600 N. Where must the adult sit to balance it?",
+      "steps": [
+       "Anticlockwise moment = 300 × 2.0 = 600 N m",
+       "Clockwise moment = 600 × d",
+       "Balance: 600 × d = 600",
+       "d = 600 ÷ 600 = 1.0 m"
+      ],
+      "answer": "The adult sits 1.0 m from the pivot on the opposite side"
+     }
+    },
+    {
+     "heading": "Centre of gravity of a lamina",
+     "bullets": [
+      "Centre of gravity: the point where the weight seems to act",
+      "Hang the lamina from a pin, with a plumb line",
+      "Mark the vertical line, repeat from two more holes",
+      "The lines cross at the centre of gravity"
+     ],
+     "note": "Do the plumb-line practical in pairs. The lamina hangs freely so its centre of gravity ends directly below the pin. Safety: care with pins and loose plumb bobs. Three lines should cross at one point; a small triangle shows measurement error.",
+     "cycle": [
+      "Make three holes near the edge of the card",
+      "Hang from hole 1 on a pin; hang a plumb line",
+      "Draw the vertical line along the string",
+      "Repeat with holes 2 and 3; lines cross at the centre of gravity"
+     ]
+    },
+    {
+     "heading": "A beam with its own weight",
+     "bullets": [
+      "A uniform beam's weight acts at its centre",
+      "Take moments about the pivot",
+      "Include the weight of the beam as a force"
+     ],
+     "note": "Draw the ruler, label the pivot at 30 cm and the centre of gravity at 50 cm. Ask: which side does the beam's weight turn it? The upward force at the pivot has no moment about the pivot.",
+     "model": {
+      "problem": "A uniform metre rule weighs 1.2 N and is pivoted at the 30 cm mark. A weight hangs at the 5 cm mark to balance it. Find the weight.",
+      "steps": [
+       "Rule's weight acts at 50 cm: distance from pivot = 20 cm = 0.20 m",
+       "Clockwise moment = 1.2 × 0.20 = 0.24 N m",
+       "Hung weight is at 25 cm = 0.25 m from the pivot",
+       "W × 0.25 = 0.24, so W = 0.96 N"
+      ],
+      "answer": "The hung weight is 0.96 N"
+     }
+    },
+    {
+     "heading": "Stability",
+     "bullets": [
+      "Stable: low centre of gravity and wide base",
+      "Tips when the weight line falls outside the base",
+      "Check: choose the correct reason"
+     ],
+     "note": "Link to double-decker buses, which are tilt-tested, and racing cars. Ask pupils to tilt a box with a heavy base versus heavy top. Check using the options on the slide.",
+     "check": {
+      "q": "Why is a racing car with a low centre of gravity and wide wheelbase more stable?",
+      "options": [
+       "It weighs less",
+       "The weight line stays inside the base until a larger tilt",
+       "It has more momentum",
+       "It has less air resistance"
+      ],
+      "answer": 1,
+      "why": "The car can tilt further before the weight acts outside its base. Weight, momentum and drag are not the reason."
+     }
+    }
+   ],
+   "practice": [
+    "A 25 N force acts 0.60 m from a pivot. Calculate the moment.",
+    "A 500 N boy sits 1.5 m from the pivot of a seesaw. Where must a 300 N girl sit to balance it?",
+    "Describe how to find the centre of gravity of an irregular piece of card."
+   ],
+   "independent": [
+    "Core: A 40 N weight hangs 0.30 m left of a pivot. What force at 0.20 m on the right balances it?",
+    "Extend: A uniform 2.0 m plank weighs 80 N, pivoted at its centre. A 400 N person stands 0.50 m from one end. Where must a 600 N person stand to balance it?",
+    "Stretch: A 1.0 m uniform beam weighs 6.0 N and is pivoted at 0.20 m from one end. A 10 N weight hangs at the short end. Calculate the force needed 0.80 m from the pivot on the other side to keep it level, then the reaction force at the pivot."
+   ],
+   "exit": [
+    "State the principle of moments.",
+    "A 50 N force acts 0.40 m from a pivot. Calculate the moment and give the unit."
+   ],
+   "homework": "Write a method to find the centre of gravity of a lamina, listing the equipment and one safety precaution. Then complete four principle-of-moments problems.",
+   "send": "SEND: give a labelled seesaw template: anticlockwise column and clockwise column. EAL: pre-teach pivot, clockwise, perpendicular. Stretch: include the pivot reaction force in the equilibrium of forces."
+  },
+  {
+   "unit": "Physics 2: Electricity",
+   "n": 6,
+   "title": "Mains electricity and safety: a.c., d.c., fuses and earthing",
+   "duration": 50,
+   "bigQuestion": "How does a three-pin plug protect us when something goes wrong inside an appliance?",
+   "objectives": [
+    "Compare a.c. and d.c.",
+    "Describe the live, neutral and earth wires of a plug",
+    "Explain how fuses, earthing, circuit breakers and insulation keep people safe"
+   ],
+   "successCriteria": [
+    "All: name the wires and their colours",
+    "Most: explain what a fuse and an earth wire do",
+    "Some: explain a fault sequence in a metal-cased appliance"
+   ],
+   "crossCurricular": "DT: product safety; Citizenship: electrical safety regulations",
+   "smsc": "Moral: protecting life and property through care and responsibility",
+   "keywords": [
+    {
+     "term": "alternating current (a.c.)",
+     "def": "current that repeatedly reverses direction, as in UK mains (50 Hz)"
+    },
+    {
+     "term": "direct current (d.c.)",
+     "def": "current that flows in one direction only"
+    },
+    {
+     "term": "fuse",
+     "def": "a thin wire that melts if the current is too large, breaking the circuit"
+    },
+    {
+     "term": "earth wire",
+     "def": "a safety wire that carries fault current safely to the ground"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the SI unit of current and of potential difference.",
+    "Name the particles that carry current in a metal wire.",
+    "State the equation linking charge, current and time."
+   ],
+   "teach": [
+    {
+     "heading": "a.c. and d.c.",
+     "bullets": [
+      "d.c.: flows one way (cells and batteries)",
+      "a.c.: reverses direction repeatedly",
+      "UK mains: about 230 V a.c., frequency 50 Hz",
+      "On an oscilloscope: d.c. is a flat line, a.c. is a wave"
+     ],
+     "note": "Sketch both traces. Explain frequency 50 Hz means 50 complete reversals per second, so the period is 0.02 s. Ask pupils which type is used in their phone and which at the wall socket.",
+     "compare": {
+      "left": {
+       "title": "d.c.",
+       "points": [
+        "Constant direction",
+        "Cells, batteries, solar cells",
+        "Flat line on a voltage-time trace"
+       ]
+      },
+      "right": {
+       "title": "a.c.",
+       "points": [
+        "Direction keeps changing",
+        "Mains supply, 230 V, 50 Hz",
+        "Sine-shaped trace"
+       ]
+      },
+      "label": "compare"
+     }
+    },
+    {
+     "heading": "Inside a three-pin plug",
+     "bullets": [
+      "Live (brown): carries the supply voltage",
+      "Neutral (blue): completes the circuit",
+      "Earth (green and yellow): safety connection to the case",
+      "Fuse in the live wire"
+     ],
+     "note": "Use a real plug or a labelled diagram. Ask why the fuse must be in the live wire: when it blows, the appliance is cut off from the 230 V. If it were in the neutral, the appliance would remain live. Switches also go in the live wire.",
+     "table": {
+      "head": [
+       "Part",
+       "Job"
+      ],
+      "rows": [
+       [
+        "Live wire",
+        "brings 230 V to the appliance"
+       ],
+       [
+        "Neutral wire",
+        "returns current to the supply"
+       ],
+       [
+        "Earth wire",
+        "connects metal case to earth"
+       ],
+       [
+        "Fuse",
+        "melts when current is too high"
+       ],
+       [
+        "Cable grip",
+        "stops the wires being pulled loose"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "What happens in a fault",
+     "bullets": [
+      "A loose live wire touches the metal case",
+      "Case becomes live: a shock risk",
+      "Earth wire gives a low-resistance path to earth",
+      "Large current flows, fuse melts, appliance is isolated"
+     ],
+     "note": "Walk through the steps slowly, and make clear that the earth wire only carries current when there is a fault. Mention circuit breakers (trip quickly, can be reset) and double-insulated appliances (plastic case, no earth wire needed).",
+     "model": {
+      "problem": "A toaster has a metal case. The live wire comes loose and touches the case. Explain how the earth wire and fuse protect the user.",
+      "steps": [
+       "The earth wire connects the case to the ground",
+       "The live wire touching the case causes a large current through the earth wire",
+       "The large current heats and melts the fuse",
+       "The fuse breaks the live connection so the case is no longer live"
+      ],
+      "answer": "The fuse blows and isolates the toaster, so the case cannot give a shock"
+     }
+    },
+    {
+     "heading": "Danger zones",
+     "bullets": [
+      "Damp conditions lower the body's resistance",
+      "Frayed cables expose live wires",
+      "Overloaded sockets can overheat",
+      "Wrong fuse rating is dangerous"
+     ],
+     "note": "Stress practical safety: never use a plug with a damaged cable; never touch switches with wet hands; a fuse of too high a rating will not blow when it should. Discuss why protecting others from harm is part of good character.",
+     "misconception": {
+      "wrong": "The earth wire carries the current to make the appliance work.",
+      "right": "The live and neutral wires carry the working current. The earth wire carries current only in a fault."
+     }
+    },
+    {
+     "heading": "Check: where does the fuse go?",
+     "bullets": [
+      "Select your answer"
+     ],
+     "note": "Distractor B is a common error. Ask pupils to justify with a fault sequence.",
+     "check": {
+      "q": "In a three-pin plug the fuse is placed in the...",
+      "options": [
+       "earth wire",
+       "neutral wire",
+       "live wire",
+       "outer casing"
+      ],
+      "answer": 2,
+      "why": "A fuse in the live wire disconnects the appliance from the 230 V supply when it blows. In the neutral wire, the appliance would stay connected to the live supply."
+     }
+    }
+   ],
+   "practice": [
+    "State two differences between a.c. and d.c.",
+    "A plastic-cased hairdryer has no earth wire. Explain why it is still safe.",
+    "Explain why a fuse is placed in the live wire and not the neutral wire."
+   ],
+   "independent": [
+    "Core: Label a diagram of a three-pin plug with wire colours and the fuse.",
+    "Extend: Explain why a person with wet hands is at greater risk of an electric shock.",
+    "Stretch: An a.c. supply has a period of 0.020 s. Calculate its frequency and say what happens to the direction of the current in 0.020 s."
+   ],
+   "exit": [
+    "Name the three wires in a UK plug and their colours.",
+    "Explain what happens to an earthed metal appliance if the live wire touches the case."
+   ],
+   "homework": "Make an electrical-safety poster for the home that includes three hazards and how a fuse, earth or circuit breaker protects against them.",
+   "send": "SEND: colour-coded wire matching card and plug diagram. EAL: pre-teach live, neutral, fuse, earth. Stretch: explain residual current devices that compare live and neutral currents."
+  },
+  {
+   "unit": "Physics 2: Electricity",
+   "n": 7,
+   "title": "Electrical power and energy: P = IV, E = IVt and choosing fuses",
+   "duration": 50,
+   "bigQuestion": "How do we know which fuse to put in the plug of a kettle?",
+   "objectives": [
+    "Calculate electrical power using P = IV",
+    "Calculate energy transferred using E = IVt",
+    "Choose a suitable fuse"
+   ],
+   "successCriteria": [
+    "All: use P = IV",
+    "Most: use E = IVt, converting minutes to seconds",
+    "Some: choose a fuse and explain the choice"
+   ],
+   "crossCurricular": "Maths: rearranging; Economics: cost of electricity",
+   "smsc": "Moral: avoiding waste (israf) in the use of energy",
+   "keywords": [
+    {
+     "term": "power",
+     "def": "rate of energy transfer, measured in watts (W)"
+    },
+    {
+     "term": "watt",
+     "def": "one joule of energy transferred per second"
+    },
+    {
+     "term": "fuse rating",
+     "def": "the current at which the fuse is designed to melt"
+    },
+    {
+     "term": "kilowatt",
+     "def": "1000 watts"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the voltage across a 4 Ω resistor carrying 3 A.",
+    "Convert 5 minutes to seconds.",
+    "Explain what a fuse does."
+   ],
+   "teach": [
+    {
+     "heading": "Electrical power",
+     "bullets": [
+      "Power = current × potential difference",
+      "P = I × V",
+      "Watts = amps × volts",
+      "1 kW = 1000 W"
+     ],
+     "note": "Link to prior knowledge: power is the energy per second. A 2.3 kW kettle transfers 2300 J each second. Show the rating labels on appliances. Pupils should write unit symbols in every line of working.",
+     "model": {
+      "problem": "A kettle works from the 230 V mains and draws a current of 10 A. Calculate its power.",
+      "steps": [
+       "P = I × V",
+       "P = 10 × 230",
+       "P = 2300 W"
+      ],
+      "answer": "Power = 2300 W (2.3 kW)"
+     }
+    },
+    {
+     "heading": "Energy transferred",
+     "bullets": [
+      "E = I × V × t",
+      "Also E = P × t",
+      "Time must be in seconds",
+      "Energy in joules"
+     ],
+     "note": "Derive: energy = power × time, and power = IV. Common error: using minutes. Do one example with a calculator-free number first.",
+     "model": {
+      "problem": "A 12 V motor draws 3.0 A for 5.0 minutes. Calculate the energy transferred.",
+      "steps": [
+       "t = 5.0 × 60 = 300 s",
+       "E = I × V × t",
+       "E = 3.0 × 12 × 300 = 10 800 J"
+      ],
+      "answer": "Energy = 10 800 J (10.8 kJ)"
+     }
+    },
+    {
+     "heading": "Choosing a fuse",
+     "bullets": [
+      "Calculate the normal current: I = P ÷ V",
+      "Choose the next fuse rating above it",
+      "Common ratings: 3 A, 5 A, 13 A"
+     ],
+     "note": "Ask: why not use the nearest rating below? It would blow every time. Why not 13 A for everything? A fault current of 8 A in a 5 A appliance would not blow a 13 A fuse and the wire could overheat.",
+     "model": {
+      "problem": "A 920 W toaster uses the 230 V mains. Which fuse should be fitted: 3 A, 5 A or 13 A?",
+      "steps": [
+       "I = P ÷ V",
+       "I = 920 ÷ 230 = 4.0 A",
+       "Fuse must be just above 4.0 A"
+      ],
+      "answer": "Use the 5 A fuse"
+     }
+    },
+    {
+     "heading": "Cost of electricity (extension)",
+     "bullets": [
+      "kilowatt-hour (kWh) = 1 kW for 1 hour",
+      "Energy (kWh) = power (kW) × time (h)",
+      "Cost = energy in kWh × price per kWh"
+     ],
+     "note": "Show a bill excerpt. Example: a 2 kW heater for 3 h uses 6 kWh; at 30p/kWh that costs £1.80. Link to avoiding waste when a device is not needed.",
+     "misconception": {
+      "wrong": "A 13 A fuse is the safest for every appliance.",
+      "right": "The fuse should have a rating just above the normal current. Too large a rating will not melt in a fault, so the wire may overheat."
+     }
+    },
+    {
+     "heading": "Check: fuse choice",
+     "bullets": [
+      "Calculate, then choose"
+     ],
+     "note": "The normal current is 1000 ÷ 230 = 4.3 A. A is the nearest below, so it would blow in normal use. C and D are too high.",
+     "check": {
+      "q": "A 1000 W appliance runs from 230 V mains. Which fuse is best?",
+      "options": [
+       "3 A",
+       "5 A",
+       "13 A",
+       "30 A"
+      ],
+      "answer": 1,
+      "why": "I = 1000 ÷ 230 = 4.3 A. A 3 A fuse would blow in normal use; 13 A or 30 A are too high for protection."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the power of a lamp using 0.26 A at 230 V.",
+    "A 6.0 V bulb transfers 36 J in 6.0 s. Calculate the power and the current.",
+    "A 3.0 kW heater works at 230 V. Calculate the current and choose from 3 A, 5 A and 13 A fuses."
+   ],
+   "independent": [
+    "Core: A hairdryer is rated 1800 W at 230 V. Calculate the current and recommend a fuse.",
+    "Extend: A 230 V, 2.0 A drill runs for 15 minutes. Calculate the energy transferred in joules and in kWh.",
+    "Stretch: A 2.4 kW immersion heater runs for 25 minutes. The cost is 28p per kWh. Calculate the cost to the nearest penny."
+   ],
+   "exit": [
+    "Write the equation linking energy, current, potential difference and time.",
+    "A 1.5 kW heater is on for 2 hours. How many kWh does it use?"
+   ],
+   "homework": "Find the power rating of five appliances at home, calculate each current at 230 V and say which fuse would be suitable.",
+   "send": "SEND: use a three-step template: write the formula, substitute, answer with unit. EAL: pre-teach rating, fuse, kWh. Stretch: explain why power cables are rated by current."
+  },
+  {
+   "unit": "Physics 2: Electricity",
+   "n": 8,
+   "title": "Series and parallel circuits: current, voltage, resistance and charge",
+   "duration": 50,
+   "bigQuestion": "Why do Christmas lights in an old string go out together, but the lights in a house do not?",
+   "objectives": [
+    "Describe current and voltage rules in series and parallel circuits",
+    "Use V = IR and Q = It",
+    "Explain why current is conserved at junctions"
+   ],
+   "successCriteria": [
+    "All: state the series and parallel rules",
+    "Most: calculate current and voltage using V = IR",
+    "Some: solve combined series and parallel problems"
+   ],
+   "crossCurricular": "Maths: rearranging; DT: circuit design",
+   "smsc": "Spiritual: order and design in systems we rely on",
+   "keywords": [
+    {
+     "term": "potential difference",
+     "def": "energy transferred per unit charge, measured in volts"
+    },
+    {
+     "term": "resistance",
+     "def": "opposition to current, measured in ohms (Ω)"
+    },
+    {
+     "term": "series circuit",
+     "def": "components in a single loop"
+    },
+    {
+     "term": "parallel circuit",
+     "def": "components on separate branches"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the equation for electrical power.",
+    "Name the instrument that measures current and say how it is connected.",
+    "State what the unit of resistance is."
+   ],
+   "teach": [
+    {
+     "heading": "Series circuits",
+     "bullets": [
+      "One loop: same current everywhere",
+      "Supply voltage is shared across components",
+      "Total resistance = R₁ + R₂",
+      "If one component fails, all stop"
+     ],
+     "note": "Build a series circuit from cells and bulbs. Pupils predict ammeter readings in different places. Voltmeters go in parallel with the component, ammeters in series.",
+     "model": {
+      "problem": "A 12 V supply is connected to a 4 Ω and an 8 Ω resistor in series. Find the current and the voltage across each resistor.",
+      "steps": [
+       "R = 4 + 8 = 12 Ω",
+       "I = V ÷ R = 12 ÷ 12 = 1.0 A",
+       "V₁ = IR = 1.0 × 4 = 4.0 V",
+       "V₂ = 1.0 × 8 = 8.0 V (4 + 8 = 12 V)"
+      ],
+      "answer": "I = 1.0 A; 4.0 V and 8.0 V"
+     }
+    },
+    {
+     "heading": "Parallel circuits",
+     "bullets": [
+      "Branches: voltage across each branch equals the supply",
+      "Current splits at a junction and recombines",
+      "Current into a junction = current out",
+      "Each branch works independently"
+     ],
+     "note": "Draw the junction as a river splitting. Ask: where has the current gone? (Nowhere: charge is conserved.) The branch with lower resistance carries more current. This is why household sockets are in parallel.",
+     "model": {
+      "problem": "A 6.0 V supply is connected to a 12 Ω and a 6.0 Ω resistor in parallel. Find the current in each branch and the total current.",
+      "steps": [
+       "Voltage across each = 6.0 V",
+       "I₁ = V ÷ R = 6.0 ÷ 12 = 0.50 A",
+       "I₂ = 6.0 ÷ 6.0 = 1.0 A",
+       "Total I = 0.50 + 1.0 = 1.5 A"
+      ],
+      "answer": "0.50 A and 1.0 A; total 1.5 A"
+     }
+    },
+    {
+     "heading": "Charge, current and time",
+     "bullets": [
+      "Q = I × t",
+      "Charge in coulombs (C)",
+      "Current is rate of flow of charge: 1 A = 1 C per second"
+     ],
+     "note": "Link back to the ammeter reading: an ammeter measures how much charge passes each second. Ask: how much charge passes a point at 2.5 A for 40 s?",
+     "model": {
+      "problem": "A current of 2.5 A flows through a lamp for 40 s. Calculate the charge that flows.",
+      "steps": [
+       "Q = I × t",
+       "Q = 2.5 × 40",
+       "Q = 100 C"
+      ],
+      "answer": "Charge = 100 C"
+     }
+    },
+    {
+     "heading": "Series versus parallel",
+     "bullets": [
+      "Series: same current, voltages add",
+      "Parallel: same voltage, currents add",
+      "Check: use the right rule"
+     ],
+     "note": "Use the check as a hinge. Ask for reasons; the common error is mixing current and voltage rules.",
+     "check": {
+      "q": "Two identical bulbs are in parallel across a 6 V cell. What is the voltage across each bulb?",
+      "options": [
+       "3 V",
+       "6 V",
+       "12 V",
+       "0 V"
+      ],
+      "answer": 1,
+      "why": "Each parallel branch has the full supply voltage of 6 V. 3 V would be the share in series."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the current through a 15 Ω resistor connected to a 3.0 V cell.",
+    "Three resistors of 2 Ω, 3 Ω and 5 Ω are in series with a 20 V supply. Calculate the current and the voltage across the 5 Ω resistor.",
+    "A current of 0.80 A flows for 2.0 minutes. Calculate the charge."
+   ],
+   "independent": [
+    "Core: In a series circuit the ammeter reads 0.40 A and a voltmeter across one resistor reads 2.0 V. Calculate its resistance.",
+    "Extend: A 12 V battery supplies two parallel branches of 24 Ω and 8.0 Ω. Calculate the current from the battery.",
+    "Stretch: A 12 V supply is connected to a 6 Ω resistor in series with two 12 Ω resistors in parallel. Calculate the total current from the supply. (Parallel pair: 1/R = 1/12 + 1/12.)"
+   ],
+   "exit": [
+    "State the rule for current at a junction.",
+    "Calculate the charge when 3.0 A flows for 20 s."
+   ],
+   "homework": "Draw one series and one parallel circuit with a cell, two lamps, an ammeter and a voltmeter. Label the readings you would predict for 6 V and lamps of equal resistance.",
+   "send": "SEND: coloured series and parallel summary card with rules; EAL: key terms in L1 and L2 glossary. Stretch: derive the parallel resistance formula."
+  },
+  {
+   "unit": "Physics 2: Electricity",
+   "n": 9,
+   "title": "Current-voltage characteristics: resistors, lamps, diodes, LDRs and thermistors",
+   "duration": 50,
+   "bigQuestion": "Why does a lamp's resistance change when it is switched on, but a fixed resistor's does not?",
+   "objectives": [
+    "Describe the I-V graphs for a resistor, filament lamp and diode",
+    "Describe how an LDR and a thermistor behave",
+    "Plan an investigation to find I-V characteristics"
+   ],
+   "successCriteria": [
+    "All: recognise the I-V graph shapes",
+    "Most: explain each shape and calculate resistance at a point",
+    "Some: plan a safe investigation and evaluate results"
+   ],
+   "crossCurricular": "Maths: gradients and graphs; Computing: sensors",
+   "smsc": "Moral: honest recording and reporting of results",
+   "keywords": [
+    {
+     "term": "ohmic conductor",
+     "def": "a conductor whose resistance stays constant, so I is proportional to V"
+    },
+    {
+     "term": "diode",
+     "def": "a component that conducts in one direction only"
+    },
+    {
+     "term": "LDR",
+     "def": "light-dependent resistor: resistance falls as light intensity rises"
+    },
+    {
+     "term": "thermistor",
+     "def": "resistor whose resistance falls as temperature rises (NTC)"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the resistance when 6.0 V gives a current of 0.30 A.",
+    "Explain why a voltmeter is connected in parallel.",
+    "Sketch a straight line through the origin and state what it shows."
+   ],
+   "teach": [
+    {
+     "heading": "Core practical: investigating I-V",
+     "bullets": [
+      "Series circuit with component, ammeter, variable resistor",
+      "Voltmeter in parallel across the component",
+      "Change the voltage in steps; record V and I",
+      "Repeat with reversed battery for a diode"
+     ],
+     "note": "Pupils set up circuits in pairs. Independent variable: potential difference; dependent: current; controls: temperature (keep currents small for the resistor), same component. Safety: lamp and resistor can get hot; do not exceed the rated voltage. Take repeat readings and plot I (y-axis) against V (x-axis).",
+     "cycle": [
+      "Set up the circuit with the component, ammeter and variable resistor",
+      "Place the voltmeter across the component",
+      "Adjust the variable resistor to get a set of V and I readings",
+      "Reverse the cell connections and repeat",
+      "Plot I against V and draw a smooth line"
+     ]
+    },
+    {
+     "heading": "The graphs",
+     "bullets": [
+      "Resistor at constant temperature: straight line through the origin",
+      "Filament lamp: curve flattens as V rises",
+      "Diode: no current in reverse; conducts above about 0.6 V forward",
+      "Resistance = V ÷ I at each point"
+     ],
+     "note": "Sketch each on the board. The lamp filament heats up; ions vibrate more, collisions with electrons increase, so resistance increases. The gradient of an I-V graph is 1/R, so a shallower gradient means higher resistance.",
+     "table": {
+      "head": [
+       "Component",
+       "I-V shape",
+       "Reason"
+      ],
+      "rows": [
+       [
+        "Fixed resistor",
+        "straight line through origin",
+        "resistance is constant"
+       ],
+       [
+        "Filament lamp",
+        "S-shaped curve, flattening",
+        "resistance rises as the filament heats"
+       ],
+       [
+        "Diode",
+        "zero current in reverse, steep rise forward",
+        "conducts in one direction only"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Worked example: resistance of a lamp",
+     "bullets": [
+      "Resistance is V ÷ I at that point",
+      "Not the gradient of the curve",
+      "Resistance changes along the curve"
+     ],
+     "note": "Use data from a practical. Pupils often treat the gradient as the resistance; the correct statement is that R = V/I at each point.",
+     "model": {
+      "problem": "A filament lamp has a current of 0.40 A at 2.0 V and 1.5 A at 12 V. Calculate the resistance at each point and explain the change.",
+      "steps": [
+       "At 2.0 V: R = 2.0 ÷ 0.40 = 5.0 Ω",
+       "At 12 V: R = 12 ÷ 1.5 = 8.0 Ω",
+       "The higher current heats the filament",
+       "Hotter filament: more collisions, so higher resistance"
+      ],
+      "answer": "5.0 Ω at 2.0 V and 8.0 Ω at 12 V; resistance rises as the filament gets hotter"
+     }
+    },
+    {
+     "heading": "LDRs and thermistors",
+     "bullets": [
+      "LDR: resistance falls as light gets brighter",
+      "Thermistor: resistance falls as temperature rises",
+      "Uses: automatic lights, fire alarms, thermostats"
+     ],
+     "note": "Link to a street-light circuit: dark means high LDR resistance. Practical idea: use a lamp at different distances from an LDR and measure resistance. Many thermistors in GCSE questions are NTC types.",
+     "misconception": {
+      "wrong": "Resistance of every component is constant, so I-V graphs are always straight lines.",
+      "right": "Only an ohmic conductor at constant temperature has a straight line. Lamps, diodes, LDRs and thermistors have changing resistance."
+     }
+    },
+    {
+     "heading": "Check: diode",
+     "bullets": [
+      "Pick the correct statement"
+     ],
+     "note": "Option A confuses a diode with a resistor. D describes the lamp.",
+     "check": {
+      "q": "A diode is connected in reverse. The current is...",
+      "options": [
+       "proportional to voltage",
+       "very small, almost zero",
+       "very large",
+       "constant at 1 A"
+      ],
+      "answer": 1,
+      "why": "A diode has a very high resistance in the reverse direction, so almost no current flows."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the resistance of a resistor that carries 0.25 A when the p.d. across it is 5.0 V.",
+    "Explain the shape of the I-V graph for a filament lamp.",
+    "A thermistor has a resistance of 2000 Ω at 20°C. State what happens to its resistance when warmed."
+   ],
+   "independent": [
+    "Core: Describe how you would obtain data to plot an I-V graph for a resistor, including the circuit symbols to use.",
+    "Extend: Sketch the I-V graph for a diode and explain why current only flows in one direction (forward bias).",
+    "Stretch: An LDR is in a circuit. Its resistance is 800 Ω in bright light and 40 000 Ω in the dark, at 6 V. Calculate the current in each case and explain how this could switch on a street lamp."
+   ],
+   "exit": [
+    "Which component has an I-V graph that is a straight line through the origin?",
+    "State what happens to the resistance of an LDR when light intensity increases."
+   ],
+   "homework": "Draw labelled I-V sketches for a resistor, filament lamp and diode and write one sentence under each to explain its shape.",
+   "send": "SEND: give pre-drawn axes and sketches to match to components. EAL: key terms in pairs (ohmic, filament, diode). Stretch: use thermistor and resistor as a potential divider."
+  },
+  {
+   "unit": "Physics 2: Electricity",
+   "n": 10,
+   "title": "Potential difference, charge and the flow of electrons",
+   "duration": 50,
+   "bigQuestion": "What actually moves in a wire when we switch on a light?",
+   "objectives": [
+    "Define potential difference as energy transferred per unit charge",
+    "Use E = QV",
+    "Explain current as a flow of electrons and distinguish it from conventional current"
+   ],
+   "successCriteria": [
+    "All: describe current as flow of charge",
+    "Most: calculate charge and energy using Q = It and E = QV",
+    "Some: explain why current is the same everywhere in a series circuit"
+   ],
+   "crossCurricular": "Chemistry: metallic bonding; Maths: standard form",
+   "smsc": "Spiritual: wonder at unseen particles which explain everyday things",
+   "keywords": [
+    {
+     "term": "charge",
+     "def": "a property of matter measured in coulombs (C)"
+    },
+    {
+     "term": "electron",
+     "def": "negatively charged particle that carries current in metals"
+    },
+    {
+     "term": "conventional current",
+     "def": "direction of flow from positive to negative terminal"
+    },
+    {
+     "term": "potential difference",
+     "def": "energy transferred per coulomb of charge, E = QV"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the charge passing when 2.0 A flows for 30 s.",
+    "State the charge on an electron: positive or negative?",
+    "Calculate the power of a 12 V, 3 A motor."
+   ],
+   "teach": [
+    {
+     "heading": "Current is flow of charge",
+     "bullets": [
+      "Metals contain free (delocalised) electrons",
+      "The cell makes the electrons drift through the wire",
+      "Current = rate of flow of charge: Q = I × t",
+      "Electrons are not used up"
+     ],
+     "note": "Show the wire as a lattice of positive ions with a sea of electrons. The electrons drift slowly but a push travels fast, like a full pipe of water. Ask: if the electrons were used up in the bulb, how would the current at the far end differ? (It would be smaller; it is not.)",
+     "compare": {
+      "left": {
+       "title": "Conventional current",
+       "points": [
+        "Drawn from + to -",
+        "Used in circuit diagrams",
+        "Used for the left-hand rule later"
+       ]
+      },
+      "right": {
+       "title": "Electron flow",
+       "points": [
+        "Actual direction: - to +",
+        "Electrons are negatively charged",
+        "Opposite to conventional current"
+       ]
+      },
+      "label": "opposite"
+     }
+    },
+    {
+     "heading": "Potential difference",
+     "bullets": [
+      "Potential difference is energy transferred per unit charge",
+      "E = Q × V",
+      "1 volt = 1 joule per coulomb",
+      "A 12 V battery gives 12 J to each coulomb"
+     ],
+     "note": "Treat potential difference as a measure of the 'push' each coulomb gets from a cell and the energy each coulomb loses in a component. Avoid the word 'voltage used up': the energy is transferred, the charge continues.",
+     "model": {
+      "problem": "A current of 3.0 A flows for 20 s through a 12 V motor. Calculate the charge and the energy transferred.",
+      "steps": [
+       "Q = I × t = 3.0 × 20 = 60 C",
+       "E = Q × V = 60 × 12 = 720 J",
+       "Check: E = IVt = 3.0 × 12 × 20 = 720 J"
+      ],
+      "answer": "Charge 60 C; energy 720 J"
+     }
+    },
+    {
+     "heading": "Same current everywhere in series",
+     "bullets": [
+      "Charge cannot disappear",
+      "What flows into a bulb flows out",
+      "Same ammeter reading either side of a lamp"
+     ],
+     "note": "Pupils often think the bulb uses up the current. Use a water-wheel analogy: the water arrives and leaves at the same rate, but loses energy on the way.",
+     "misconception": {
+      "wrong": "A bulb uses up the current, so the ammeter after it reads less.",
+      "right": "The current is the same before and after the bulb. The bulb transfers energy from each coulomb, so the potential difference falls but the charge keeps flowing."
+     }
+    },
+    {
+     "heading": "Check: energy per coulomb",
+     "bullets": [
+      "Choose one answer"
+     ],
+     "note": "Distractor A is the definition of current. C and D mix up quantities.",
+     "check": {
+      "q": "A 9.0 V battery transfers 54 J of energy. How much charge has passed?",
+      "options": [
+       "6.0 C",
+       "486 C",
+       "0.17 C",
+       "63 C"
+      ],
+      "answer": 0,
+      "why": "Q = E ÷ V = 54 ÷ 9.0 = 6.0 C. 486 comes from multiplying instead of dividing."
+     }
+    }
+   ],
+   "practice": [
+    "A lamp passes 0.50 A for 2.0 minutes. Calculate the charge that flows.",
+    "How much energy is transferred when 40 C of charge passes through a potential difference of 6.0 V?",
+    "A battery transfers 360 J to 30 C of charge. Calculate its potential difference."
+   ],
+   "independent": [
+    "Core: Explain the difference between conventional current and electron flow.",
+    "Extend: A kettle element passes 10 A for 3.0 minutes at 230 V. Calculate the charge and the energy transferred.",
+    "Stretch: The charge on one electron is 1.6 × 10⁻¹⁹ C. Calculate how many electrons pass a point when a current of 0.80 A flows for 10 s."
+   ],
+   "exit": [
+    "Define potential difference using the words energy and charge.",
+    "State why the ammeter reading is the same on both sides of a lamp in a series circuit."
+   ],
+   "homework": "Write a 100-word explanation for a younger pupil of what moves in a wire and what the battery does, avoiding the phrase 'used up'.",
+   "send": "SEND: bar-model diagram for E = QV. EAL: pre-teach drift, delocalised, conventional. Stretch: derive E = IVt from Q = It and E = QV."
+  },
+  {
+   "unit": "Physics 2: Electricity",
+   "n": 11,
+   "title": "Static electricity: charging by friction, uses and dangers",
+   "duration": 50,
+   "bigQuestion": "Why can a balloon rubbed on a jumper stick to a wall?",
+   "objectives": [
+    "Explain charging by friction using electron transfer",
+    "Describe attraction and repulsion between charges",
+    "Describe uses and dangers of static electricity"
+   ],
+   "successCriteria": [
+    "All: state that like charges repel and unlike attract",
+    "Most: explain how an insulator becomes charged by rubbing",
+    "Some: explain an application or danger of static in detail, including earthing"
+   ],
+   "crossCurricular": "Chemistry: atoms and electrons; Geography: lightning",
+   "smsc": "Spiritual: awe at natural forces such as lightning, and humility before them",
+   "keywords": [
+    {
+     "term": "static electricity",
+     "def": "charge that builds up on an insulator and stays there"
+    },
+    {
+     "term": "friction",
+     "def": "rubbing, which can transfer electrons between surfaces"
+    },
+    {
+     "term": "insulator",
+     "def": "a material that does not let charge flow through it"
+    },
+    {
+     "term": "earthing",
+     "def": "connecting a charged object to the ground so charge flows away"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the charge on a proton, neutron and electron.",
+    "Which particles move when current flows in a metal wire?",
+    "Give one use of an insulator."
+   ],
+   "teach": [
+    {
+     "heading": "Charging by friction",
+     "bullets": [
+      "Rubbing transfers electrons from one insulator to another",
+      "The surface that gains electrons becomes negative",
+      "The surface that loses electrons becomes positive",
+      "Only electrons move, never protons"
+     ],
+     "note": "Demonstrate with a polythene rod and cloth, using a hanging charged rod and a paper strip. Ask which gains electrons for polythene rubbed with a cloth: the rod gains electrons (negative), the cloth loses them (positive). Both end up with equal and opposite charges.",
+     "model": {
+      "problem": "A polythene rod is rubbed with a dry cloth. The rod becomes negatively charged. Explain how.",
+      "steps": [
+       "Both begin with equal positive and negative charges",
+       "Friction transfers electrons from the cloth to the rod",
+       "The rod has gained extra electrons so has a negative charge",
+       "The cloth has lost electrons so is positively charged"
+      ],
+      "answer": "Electrons move from the cloth to the rod; the rod is negative and the cloth positive"
+     }
+    },
+    {
+     "heading": "Forces between charges",
+     "bullets": [
+      "Like charges repel",
+      "Unlike charges attract",
+      "A charged insulator attracts small neutral objects",
+      "The force is greater when the charges are closer"
+     ],
+     "note": "Show two hanging charged rods repelling and a rod with a cloth attracting. Explain how a charged object attracts neutral paper: charges in the paper redistribute, so the near side has opposite charge and is attracted.",
+     "check": {
+      "q": "Two negatively charged balloons are brought close together. What happens?",
+      "options": [
+       "They attract",
+       "They repel",
+       "Nothing, as the charges cancel",
+       "They both become neutral"
+      ],
+      "answer": 1,
+      "why": "Like charges repel. Option A is unlike charges; C and D are not correct because both carry negative charge."
+     }
+    },
+    {
+     "heading": "Uses of static",
+     "bullets": [
+      "Electrostatic spraying: paint droplets repel and coat evenly",
+      "Electrostatic precipitators remove smoke particles in chimneys",
+      "Photocopiers and laser printers use charged drums"
+     ],
+     "note": "Explain the spray gun: the droplets all gain the same charge so repel and spread evenly; the object is oppositely charged or earthed so attracts the paint, wrapping around the back. This is a typical exam scenario.",
+     "table": {
+      "head": [
+       "Use",
+       "How it works"
+      ],
+      "rows": [
+       [
+        "Paint spraying",
+        "droplets charged by the gun repel; attracted to earthed object"
+       ],
+       [
+        "Smoke precipitator",
+        "charged plates attract charged smoke particles"
+       ],
+       [
+        "Photocopier",
+        "charged drum attracts oppositely charged toner"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Dangers and earthing",
+     "bullets": [
+      "Sparks can ignite fuel vapour or flammable gases",
+      "Lightning is a large discharge",
+      "Aircraft and tankers are earthed when refuelling",
+      "Earthing lets charge flow safely to the ground"
+     ],
+     "note": "Explain how a fuel tanker is earthed to stop a spark. Also clothes crackling and small shocks from car doors. Remind pupils that the safest response to lightning is to shelter, not stand under tall trees, which is common-sense safety.",
+     "misconception": {
+      "wrong": "Charging by friction creates new charge from nothing.",
+      "right": "Charge is not created. Electrons are transferred from one object to another, so total charge stays the same."
+     }
+    }
+   ],
+   "practice": [
+    "Describe how a balloon becomes charged when rubbed on hair.",
+    "Explain why car refuelling hoses are earthed.",
+    "A positively charged rod is brought near a hanging negatively charged ball. State what happens and why."
+   ],
+   "independent": [
+    "Core: Explain how an electrostatic precipitator removes smoke particles.",
+    "Extend: A rod charged negatively touches an uncharged metal sphere on an insulating stand. Describe what happens to the electrons and the final charge on the sphere.",
+    "Stretch: Explain, in terms of charge movement, why a charged plastic comb picks up small pieces of neutral paper."
+   ],
+   "exit": [
+    "State which particle is transferred when an insulator is charged by friction.",
+    "Give one use and one danger of static electricity."
+   ],
+   "homework": "Research one real application of static electricity and write a paragraph explaining how charge makes it work.",
+   "send": "SEND: step cards for electron transfer with drawings. EAL: pre-teach attract, repel, discharge. Stretch: explain charging by induction using an earthed sphere."
+  },
+  {
+   "unit": "Physics 3: Waves",
+   "n": 12,
+   "title": "Wave basics: types of wave, v = fλ and f = 1/T",
+   "duration": 50,
+   "bigQuestion": "What is the same, and what is different, about a ripple on a pond and a sound from a speaker?",
+   "objectives": [
+    "Describe transverse and longitudinal waves",
+    "Define amplitude, wavelength, frequency and period",
+    "Use v = fλ and f = 1/T"
+   ],
+   "successCriteria": [
+    "All: label amplitude and wavelength on a wave",
+    "Most: calculate wave speed, frequency or period",
+    "Some: rearrange and use both equations in multi-step problems"
+   ],
+   "crossCurricular": "Maths: rearranging, standard form; Music: pitch and frequency",
+   "smsc": "Spiritual: wonder at the patterns found in nature",
+   "keywords": [
+    {
+     "term": "wavelength",
+     "def": "the distance between two matching points on neighbouring waves (m)"
+    },
+    {
+     "term": "frequency",
+     "def": "the number of complete waves passing a point each second (Hz)"
+    },
+    {
+     "term": "amplitude",
+     "def": "maximum displacement from the rest position"
+    },
+    {
+     "term": "period",
+     "def": "the time for one complete wave, T = 1 ÷ f"
+    }
+   ],
+   "starter": [
+    "Bismillah. Rearrange v = d ÷ t to make t the subject.",
+    "Convert 2.5 kHz to Hz.",
+    "Convert 0.040 s to milliseconds."
+   ],
+   "teach": [
+    {
+     "heading": "Two kinds of wave",
+     "bullets": [
+      "Transverse: vibrations at right angles to the direction of travel",
+      "Longitudinal: vibrations parallel to the direction of travel",
+      "Longitudinal waves have compressions and rarefactions"
+     ],
+     "note": "Demonstrate with a slinky: push-pull for longitudinal, side-to-side for transverse. Examples: water, light and all EM waves are transverse; sound and pressure waves in a spring are longitudinal.",
+     "compare": {
+      "left": {
+       "title": "Transverse",
+       "points": [
+        "Vibration at 90° to the wave direction",
+        "Peaks and troughs",
+        "e.g. light, water ripples, EM waves"
+       ]
+      },
+      "right": {
+       "title": "Longitudinal",
+       "points": [
+        "Vibration along the wave direction",
+        "Compressions and rarefactions",
+        "e.g. sound, ultrasound"
+       ]
+      },
+      "label": "compare"
+     }
+    },
+    {
+     "heading": "Describing a wave",
+     "bullets": [
+      "Amplitude: maximum displacement from the middle",
+      "Wavelength λ: peak to peak (m)",
+      "Frequency f: waves per second (Hz)",
+      "Period T: time for one wave (s)"
+     ],
+     "note": "Draw a displacement-distance graph and label. Emphasise that amplitude is measured from the rest line, not peak to trough. The period uses a displacement-time graph.",
+     "model": {
+      "problem": "A wave has a frequency of 50 Hz and a wavelength of 0.20 m. Calculate its speed and its period.",
+      "steps": [
+       "v = f × λ",
+       "v = 50 × 0.20 = 10 m/s",
+       "T = 1 ÷ f = 1 ÷ 50 = 0.020 s"
+      ],
+      "answer": "Speed = 10 m/s; period = 0.020 s"
+     }
+    },
+    {
+     "heading": "Core practical idea: speed of water waves",
+     "bullets": [
+      "Ripple tank with a vibrating dipper at a known frequency",
+      "Freeze the pattern with a strobe or a camera",
+      "Measure the wavelength over several waves, then divide",
+      "Calculate v = fλ"
+     ],
+     "note": "Method: measure the distance across 10 wavelengths and divide by 10 to reduce error. Independent variable: frequency of the dipper; dependent: wavelength; controls: depth of water. Expected result: higher frequency, shorter wavelength; speed stays constant in the same depth. Safety: keep mains equipment away from water spills.",
+     "model": {
+      "problem": "In a ripple tank, 8 wavelengths span 0.24 m. The dipper vibrates at 5.0 Hz. Find the wave speed.",
+      "steps": [
+       "λ = 0.24 ÷ 8 = 0.030 m",
+       "v = fλ = 5.0 × 0.030",
+       "v = 0.15 m/s"
+      ],
+      "answer": "Wave speed = 0.15 m/s"
+     }
+    },
+    {
+     "heading": "Check: rearranging",
+     "bullets": [
+      "Choose the correct answer"
+     ],
+     "note": "Option A is a division error; C has multiplied instead of dividing. Ask for the rearranged equation first.",
+     "check": {
+      "q": "Sound travels at 340 m/s. A note has a wavelength of 0.68 m. What is its frequency?",
+      "options": [
+       "500 Hz",
+       "231 Hz",
+       "0.002 Hz",
+       "20 000 Hz"
+      ],
+      "answer": 0,
+      "why": "f = v ÷ λ = 340 ÷ 0.68 = 500 Hz. 231 comes from 340 × 0.68; 0.002 inverts the equation."
+     }
+    }
+   ],
+   "practice": [
+    "A wave has a frequency of 2.0 Hz and a wavelength of 1.5 m. Calculate the speed.",
+    "A wave has a period of 0.040 s. Calculate its frequency.",
+    "Light travels at 3.0 × 10⁸ m/s. Calculate the wavelength of light of frequency 6.0 × 10¹⁴ Hz."
+   ],
+   "independent": [
+    "Core: Describe the difference between a transverse and a longitudinal wave, with one example of each.",
+    "Extend: A wave on a rope travels at 4.0 m/s with a wavelength of 0.50 m. Calculate the frequency and the period.",
+    "Stretch: Waves on a lake travel at 2.4 m/s. A boat meets a wave crest every 1.5 s. Calculate the wavelength and explain what changes if the boat moves towards the waves."
+   ],
+   "exit": [
+    "State the equation linking wave speed, frequency and wavelength.",
+    "A wave has a frequency of 25 Hz. State its period."
+   ],
+   "homework": "Draw a transverse wave and label amplitude and wavelength. Then complete four wave-speed calculations including one that needs standard form.",
+   "send": "SEND: give labelled wave templates and a triangle for v = fλ. EAL: pre-teach crest, trough, compression. Stretch: explain why the wave speed remains constant when frequency changes."
+  },
+  {
+   "unit": "Physics 3: Waves",
+   "n": 13,
+   "title": "Wave properties: energy transfer, reflection, refraction and the Doppler effect",
+   "duration": 50,
+   "bigQuestion": "Why does an ambulance siren seem to change pitch as it passes you?",
+   "objectives": [
+    "Explain that waves transfer energy without transferring matter",
+    "Describe reflection and refraction of waves using wavefronts",
+    "Describe the Doppler effect"
+   ],
+   "successCriteria": [
+    "All: state that waves transfer energy, not matter",
+    "Most: describe what happens to speed, wavelength and frequency in refraction",
+    "Some: explain the Doppler effect in terms of wavefronts"
+   ],
+   "crossCurricular": "Geography: tsunamis; Music: the pitch of sirens",
+   "smsc": "Spiritual: wonder at the unseen energy travelling through the world",
+   "keywords": [
+    {
+     "term": "reflection",
+     "def": "a wave bouncing off a surface"
+    },
+    {
+     "term": "refraction",
+     "def": "a change in direction when a wave changes speed entering a different medium"
+    },
+    {
+     "term": "wavefront",
+     "def": "a line joining points of the same phase of a wave"
+    },
+    {
+     "term": "Doppler effect",
+     "def": "the change in observed frequency when source and observer move relative to each other"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the speed of a wave with f = 12 Hz and λ = 0.50 m.",
+    "Is sound transverse or longitudinal?",
+    "State the unit of frequency."
+   ],
+   "teach": [
+    {
+     "heading": "Energy, not matter",
+     "bullets": [
+      "A wave moves energy from place to place",
+      "The particles of the medium only vibrate about their position",
+      "A floating cork bobs up and down but is not carried along"
+     ],
+     "note": "Place a cork in a ripple tank. Ask what travels and what stays. Link to tsunami energy and a Mexican wave crowd. Ask: how can sound waves move across a room if the air only vibrates?",
+     "misconception": {
+      "wrong": "Water waves carry the water along with them to the shore.",
+      "right": "Waves transfer energy. The water mostly moves in small circles or up and down; the wave pattern travels, not the water itself."
+     }
+    },
+    {
+     "heading": "Reflection and refraction of waves",
+     "bullets": [
+      "Reflection: angle of incidence = angle of reflection",
+      "Refraction: wave changes speed when it enters a new medium",
+      "Frequency stays the same; speed and wavelength change",
+      "Slower medium: shorter wavelength and bends towards the normal"
+     ],
+     "note": "Use a ripple tank with a glass plate to create a shallow region. Ask why the wavefronts bend: the part entering the shallow region first slows first. The frequency is set by the source and cannot change at the boundary.",
+     "model": {
+      "problem": "Water waves of frequency 5.0 Hz travel at 0.20 m/s in deep water. They enter shallow water with wavelength 0.024 m. Find the wavelength in deep water and the speed in shallow water.",
+      "steps": [
+       "Deep: λ = v ÷ f = 0.20 ÷ 5.0 = 0.040 m",
+       "Frequency stays 5.0 Hz",
+       "Shallow: v = fλ = 5.0 × 0.024",
+       "v = 0.12 m/s"
+      ],
+      "answer": "Deep λ = 0.040 m; shallow speed = 0.12 m/s"
+     }
+    },
+    {
+     "heading": "The Doppler effect",
+     "bullets": [
+      "Source moving towards you: waves squashed, higher frequency",
+      "Source moving away: waves stretched, lower frequency",
+      "Speed of the wave in the medium does not change"
+     ],
+     "note": "Draw circular wavefronts from a moving source: bunched ahead and spread behind. Use an ambulance siren or a speeding car. Link to red-shift of light from distant galaxies in Physics 8.",
+     "timeline": [
+      {
+       "label": "Approaching",
+       "text": "Wavefronts bunched, short wavelength, high pitch"
+      },
+      {
+       "label": "Passing",
+       "text": "Pitch falls rapidly"
+      },
+      {
+       "label": "Receding",
+       "text": "Wavefronts stretched, long wavelength, low pitch"
+      }
+     ]
+    },
+    {
+     "heading": "Check: refraction",
+     "bullets": [
+      "Pick the correct statement"
+     ],
+     "note": "Option B is the common mistake; frequency is set by the source. A and D confuse speed with direction.",
+     "check": {
+      "q": "A wave slows down when it enters a new medium. Which quantity stays the same?",
+      "options": [
+       "wavelength",
+       "frequency",
+       "wave speed",
+       "direction"
+      ],
+      "answer": 1,
+      "why": "Frequency depends on the source, so it stays the same. Speed and wavelength decrease; direction may change."
+     }
+    }
+   ],
+   "practice": [
+    "Explain why a cork bobs up and down but does not move across a pond as waves pass.",
+    "A police car siren sounds higher as it approaches than as it moves away. Explain this.",
+    "Waves in a ripple tank slow down when they enter a shallow region. State what happens to wavelength and frequency."
+   ],
+   "independent": [
+    "Core: Draw wavefronts bending when they enter a shallow region.",
+    "Extend: Waves of frequency 4.0 Hz have wavelength 0.050 m in deep water and 0.030 m in shallow water. Calculate the speed in each region.",
+    "Stretch: Explain why the Doppler effect for a moving source changes wavelength but not wave speed, using wavefront diagrams."
+   ],
+   "exit": [
+    "State what a wave transfers.",
+    "State what happens to the pitch of a source as it moves away from you."
+   ],
+   "homework": "Draw two diagrams of wavefronts from a moving source and annotate how an observer hears the pitch change.",
+   "send": "SEND: provide printed wavefront diagrams to annotate. EAL: pre-teach reflect, refract, observer. Stretch: use the relative-speed approach to compute frequencies."
+  },
+  {
+   "unit": "Physics 3: Waves",
+   "n": 14,
+   "title": "The electromagnetic spectrum: uses and hazards",
+   "duration": 50,
+   "bigQuestion": "Why can radio waves pass through a wall and X-rays pass through a hand, but light cannot?",
+   "objectives": [
+    "Order the regions of the electromagnetic spectrum",
+    "State that all EM waves travel at the same speed in a vacuum",
+    "Describe uses and hazards of each region"
+   ],
+   "successCriteria": [
+    "All: order the EM spectrum",
+    "Most: give a use and a hazard for each region",
+    "Some: calculate wavelength or frequency using c = fλ and justify a use"
+   ],
+   "crossCurricular": "Biology: UV and skin cancer; Technology: communications",
+   "smsc": "Moral: using technology wisely, with consideration of safety",
+   "keywords": [
+    {
+     "term": "electromagnetic wave",
+     "def": "a transverse wave that can travel through a vacuum at 3.0 × 10⁸ m/s"
+    },
+    {
+     "term": "ionising radiation",
+     "def": "radiation that can remove electrons from atoms, damaging cells"
+    },
+    {
+     "term": "infrared",
+     "def": "heat radiation, between visible light and microwaves"
+    },
+    {
+     "term": "gamma ray",
+     "def": "very high-frequency EM radiation from the nucleus"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the frequency of a wave with speed 340 m/s and wavelength 0.34 m.",
+    "State whether light is longitudinal or transverse.",
+    "Name two colours of the visible spectrum."
+   ],
+   "teach": [
+    {
+     "heading": "The spectrum in order",
+     "bullets": [
+      "Radio, microwave, infrared, visible, ultraviolet, X-ray, gamma",
+      "From left to right: frequency and energy increase",
+      "Wavelength decreases",
+      "All are transverse and travel at 3.0 × 10⁸ m/s in a vacuum"
+     ],
+     "note": "Give a mnemonic and let pupils create their own. Draw an arrow showing the direction of increasing frequency. Within visible light: red has the longest wavelength, violet the shortest.",
+     "timeline": [
+      {
+       "label": "Radio",
+       "text": "longest wavelength"
+      },
+      {
+       "label": "Microwave & IR",
+       "text": "heating, communications"
+      },
+      {
+       "label": "Visible light",
+       "text": "what we see"
+      },
+      {
+       "label": "UV",
+       "text": "tanning, sterilising"
+      },
+      {
+       "label": "X-ray & gamma",
+       "text": "shortest wavelength, ionising"
+      }
+     ]
+    },
+    {
+     "heading": "Uses and hazards",
+     "bullets": [
+      "Match each wave to its property",
+      "Higher-frequency waves carry more energy",
+      "UV, X-rays and gamma can damage cells"
+     ],
+     "note": "Pupils fill in the table from memory first, then correct. The hazard is linked to energy: microwaves heat tissue; infrared causes burns; UV causes sunburn, eye damage and skin cancer; X-rays and gamma ionise cells, causing mutation and cancer.",
+     "table": {
+      "head": [
+       "Wave",
+       "Use",
+       "Hazard"
+      ],
+      "rows": [
+       [
+        "Radio",
+        "broadcasting, communications",
+        "none significant at low power"
+       ],
+       [
+        "Microwave",
+        "cooking, satellite links",
+        "heating of body tissue"
+       ],
+       [
+        "Infrared",
+        "grills, remote controls, thermal imaging",
+        "skin burns"
+       ],
+       [
+        "Visible",
+        "vision, photography, optical fibres",
+        "bright light damages the eye"
+       ],
+       [
+        "Ultraviolet",
+        "sterilising water, security marking",
+        "skin cancer, eye damage"
+       ],
+       [
+        "X-ray",
+        "medical imaging, airport scanners",
+        "cell damage, cancer"
+       ],
+       [
+        "Gamma",
+        "sterilising food, treating cancer",
+        "cell damage, mutation, cancer"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Using c = fλ",
+     "bullets": [
+      "All EM waves: c = 3.0 × 10⁸ m/s in a vacuum",
+      "c = f × λ",
+      "Short wavelength means high frequency"
+     ],
+     "note": "Remind pupils of standard form on the calculator (EXP key). Typical radio-frequency questions use MHz; convert to Hz first (1 MHz = 10⁶ Hz).",
+     "model": {
+      "problem": "A radio station broadcasts with wavelength 3.0 m. Calculate the frequency. (c = 3.0 × 10⁸ m/s)",
+      "steps": [
+       "f = c ÷ λ",
+       "f = 3.0 × 10⁸ ÷ 3.0",
+       "f = 1.0 × 10⁸ Hz = 100 MHz"
+      ],
+      "answer": "Frequency = 1.0 × 10⁸ Hz (100 MHz)"
+     }
+    },
+    {
+     "heading": "Check: hazard and energy",
+     "bullets": [
+      "Choose one"
+     ],
+     "note": "Option A is the common misconception that microwave ovens make food radioactive. Ask for the link between frequency and energy.",
+     "check": {
+      "q": "Which wave has the highest frequency and can damage living cells by ionisation?",
+      "options": [
+       "microwaves",
+       "infrared",
+       "gamma rays",
+       "radio waves"
+      ],
+      "answer": 2,
+      "why": "Gamma rays have the highest frequency and energy in the spectrum, and they ionise atoms. Microwaves and infrared mainly heat tissue."
+     }
+    }
+   ],
+   "practice": [
+    "List the seven regions of the EM spectrum in order of increasing frequency.",
+    "Calculate the wavelength of an EM wave of frequency 5.0 × 10¹⁴ Hz.",
+    "Explain why UV radiation is harmful to skin but radio waves are not."
+   ],
+   "independent": [
+    "Core: Match uses to waves: sterilising food, TV remote control, mobile phone signals, security marking.",
+    "Extend: A mobile phone signal has frequency 900 MHz. Calculate its wavelength in m.",
+    "Stretch: A radiographer wears a lead apron and stands behind a screen. Explain, using properties of X-rays, why these precautions are needed and why the patient accepts the risk."
+   ],
+   "exit": [
+    "State the speed of all EM waves in a vacuum.",
+    "State one hazard of ultraviolet radiation."
+   ],
+   "homework": "Create a one-page fact file for one region of the EM spectrum covering a use, a hazard, a precaution and an example calculation using c = fλ.",
+   "send": "SEND: provide a labelled spectrum strip with arrows for frequency and wavelength. EAL: pre-teach ionise, sterilise. Stretch: justify risk-benefit for X-ray imaging."
+  },
+  {
+   "unit": "Physics 3: Waves",
+   "n": 15,
+   "title": "Reflection and refraction of light: ray diagrams and refractive index",
+   "duration": 50,
+   "bigQuestion": "Why does a straw look broken in a glass of water?",
+   "objectives": [
+    "State and use the law of reflection",
+    "Draw ray diagrams for reflection in a plane mirror and refraction in glass",
+    "Calculate refractive index using n = sin i ÷ sin r"
+   ],
+   "successCriteria": [
+    "All: use the law of reflection and describe the image in a plane mirror",
+    "Most: describe refraction and draw rays correctly",
+    "Some: calculate n and the angle of refraction and plan the glass-block practical"
+   ],
+   "crossCurricular": "Maths: trigonometry; Art: perspective and reflections",
+   "smsc": "Spiritual: appreciating the scholars of the Islamic Golden Age; Ibn al-Haytham (about 965-1040) wrote the Book of Optics and used experiments to study light",
+   "keywords": [
+    {
+     "term": "normal",
+     "def": "a line at 90° to the surface where a ray meets it"
+    },
+    {
+     "term": "angle of incidence",
+     "def": "angle between the incident ray and the normal"
+    },
+    {
+     "term": "refractive index",
+     "def": "n = sin i ÷ sin r, a measure of how much a material bends light"
+    },
+    {
+     "term": "virtual image",
+     "def": "an image that cannot be projected onto a screen"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the speed of light in a vacuum.",
+    "Name two other EM waves besides light.",
+    "Calculate sin 30° using your calculator."
+   ],
+   "teach": [
+    {
+     "heading": "Reflection",
+     "bullets": [
+      "Angles are measured from the normal",
+      "Angle of incidence = angle of reflection",
+      "Plane mirror image: virtual, same size, same distance behind the mirror",
+      "Left and right appear swapped"
+     ],
+     "note": "Use ray boxes and plane mirrors. Insist on dashed lines for virtual rays and arrows on real rays. Ask: where is the image if you stand 2 m from the mirror? (2 m behind it, so 4 m from you.)",
+     "check": {
+      "q": "A ray hits a plane mirror at 35° to the normal. What is the angle between the incident and reflected rays?",
+      "options": [
+       "35°",
+       "70°",
+       "55°",
+       "110°"
+      ],
+      "answer": 1,
+      "why": "Angle of incidence = angle of reflection = 35°, so the angle between the rays is 70°. 55° is the angle to the mirror surface."
+     }
+    },
+    {
+     "heading": "Refraction in glass",
+     "bullets": [
+      "Light changes speed at a boundary and bends",
+      "Into a denser medium: bends towards the normal",
+      "Out of a denser medium: bends away from the normal",
+      "No bending if the ray is along the normal"
+     ],
+     "note": "Show a ray passing through a rectangular glass block: the emerging ray is parallel to the incident ray but shifted sideways. Explain the straw: light from the straw bends at the water surface and the brain traces it back in a straight line.",
+     "cycle": [
+      "Ray enters glass: slows and bends towards the normal",
+      "Ray travels straight through the glass",
+      "Ray leaves glass: speeds up and bends away from the normal",
+      "Emerging ray is parallel to the original but displaced"
+     ]
+    },
+    {
+     "heading": "Core practical: refraction through a glass block",
+     "bullets": [
+      "Place the block on paper; draw its outline and a normal",
+      "Shine a ray at different angles of incidence i",
+      "Mark the ray in and out, and measure i and r",
+      "Plot sin i against sin r: gradient = n"
+     ],
+     "note": "Independent variable: angle of incidence; dependent: angle of refraction; controls: same block, same wavelength (single-colour ray). Use a sharp pencil and protractor to ±1°. Safety: ray-box lamps get hot. Expected: a straight line through the origin; gradient about 1.5 for glass.",
+     "model": {
+      "problem": "A ray hits a glass block at i = 40° and refracts at r = 25°. Calculate the refractive index.",
+      "steps": [
+       "n = sin i ÷ sin r",
+       "n = sin 40° ÷ sin 25°",
+       "n = 0.643 ÷ 0.423",
+       "n = 1.52"
+      ],
+      "answer": "n = 1.5 (to 2 s.f.)"
+     }
+    },
+    {
+     "heading": "Finding the angle of refraction",
+     "bullets": [
+      "Rearrange: sin r = sin i ÷ n",
+      "Use the inverse sine key",
+      "Check that r < i going into glass"
+     ],
+     "note": "Show the rearrangement carefully. A frequent error is using the calculator in radian mode. Pupils check that the answer is smaller than the incident angle going into a denser medium.",
+     "model": {
+      "problem": "A ray hits glass (n = 1.5) at an angle of incidence of 30°. Calculate the angle of refraction.",
+      "steps": [
+       "sin r = sin i ÷ n",
+       "sin r = sin 30° ÷ 1.5 = 0.500 ÷ 1.5 = 0.333",
+       "r = sin⁻¹(0.333)",
+       "r = 19.5°"
+      ],
+      "answer": "r = 19° to 2 s.f. (19.5°)"
+     }
+    }
+   ],
+   "practice": [
+    "A ray hits a plane mirror with an angle of incidence of 25°. State the angle of reflection and the angle between the ray and the mirror surface.",
+    "Calculate the refractive index of a material when i = 50° and r = 30°.",
+    "A ray enters water (n = 1.33) at 45°. Calculate the angle of refraction."
+   ],
+   "independent": [
+    "Core: Draw a ray diagram showing a ray passing through a rectangular glass block, labelling normals, i and r.",
+    "Extend: Describe how you would find the refractive index of a glass block and how you would use a graph to improve accuracy.",
+    "Stretch: Explain why an object at the bottom of a swimming pool looks closer to the surface than it is."
+   ],
+   "exit": [
+    "State the law of reflection.",
+    "Explain why a ray entering glass bends towards the normal."
+   ],
+   "homework": "Complete a practical write-up for the glass-block investigation using a table of results for i = 10°, 20°, 30°, 40°, 50° with your own measurements or sample data.",
+   "send": "SEND: use a printed protractor guide and a calculator key sequence card for sin and sin⁻¹. EAL: pre-teach normal, incident, refract. Stretch: derive n = speed in vacuum ÷ speed in material."
+  },
+  {
+   "unit": "Physics 3: Waves",
+   "n": 16,
+   "title": "Total internal reflection, critical angle and optical fibres",
+   "duration": 50,
+   "bigQuestion": "How can a thin glass fibre carry a phone call or an internet video across an ocean?",
+   "objectives": [
+    "Explain total internal reflection (TIR)",
+    "Use sin c = 1 ÷ n",
+    "Describe how optical fibres and endoscopes work"
+   ],
+   "successCriteria": [
+    "All: state the conditions for TIR",
+    "Most: calculate the critical angle",
+    "Some: explain how light is guided along an optical fibre and compare fibres with copper cables"
+   ],
+   "crossCurricular": "Medicine: endoscopes; Computing: broadband",
+   "smsc": "Moral: using technology for the good of others in medicine and communication",
+   "keywords": [
+    {
+     "term": "critical angle",
+     "def": "the angle of incidence in the denser medium at which the refracted ray travels along the boundary (c)"
+    },
+    {
+     "term": "total internal reflection",
+     "def": "all the light is reflected back inside the denser medium"
+    },
+    {
+     "term": "optical fibre",
+     "def": "a thin glass or plastic strand that carries light by repeated TIR"
+    },
+    {
+     "term": "cladding",
+     "def": "outer layer with a lower refractive index than the core"
+    }
+   ],
+   "starter": [
+    "Bismillah. A ray enters glass at 30°. Does it bend towards or away from the normal?",
+    "Calculate n when i = 45° and r = 28°.",
+    "State the law of reflection."
+   ],
+   "teach": [
+    {
+     "heading": "When light cannot escape",
+     "bullets": [
+      "Light goes from a dense to a less dense medium (e.g. glass to air)",
+      "Below the critical angle: refraction and a weak reflection",
+      "At the critical angle: refracted ray along the surface",
+      "Above the critical angle: total internal reflection"
+     ],
+     "note": "Use a semicircular block: aim the ray at the curved side along a radius so it is not bent on entering. Increase the angle of incidence inside the block until the emerging ray skims the surface: that angle is c. Safety: hot lamps; avoid looking into the beam.",
+     "cycle": [
+      "Small angle: most light refracts out, a little reflects",
+      "Increase i: refracted ray bends further from the normal",
+      "At i = c: refracted ray runs along the surface (90°)",
+      "For i > c: all the light reflects inside: TIR"
+     ]
+    },
+    {
+     "heading": "Critical angle calculations",
+     "bullets": [
+      "sin c = 1 ÷ n",
+      "Higher n gives a smaller critical angle",
+      "TIR happens only from denser to less dense"
+     ],
+     "note": "Derive from n = sin i/sin r with r = 90° and sin 90° = 1. Compare glass, water and diamond; ask why diamonds sparkle (a small critical angle means light is trapped and reflected many times).",
+     "model": {
+      "problem": "Glass has a refractive index of 1.5. Calculate the critical angle for a glass-air boundary.",
+      "steps": [
+       "sin c = 1 ÷ n",
+       "sin c = 1 ÷ 1.5 = 0.667",
+       "c = sin⁻¹(0.667)",
+       "c = 41.8° (42°)"
+      ],
+      "answer": "Critical angle = 42°"
+     }
+    },
+    {
+     "heading": "Optical fibres",
+     "bullets": [
+      "Core of glass with a lower-index cladding",
+      "Light enters and hits the boundary above the critical angle",
+      "TIR repeats, guiding light along, even round bends",
+      "Uses: endoscopes, broadband, telephone cables"
+     ],
+     "note": "Endoscope: one bundle carries light in, another returns the image, so doctors can look inside the body without major surgery. In telecommunications, pulses of light (infrared) carry digital signals. Fibres lose less signal and carry more data than copper wire.",
+     "table": {
+      "head": [
+       "Use",
+       "Why a fibre is suitable"
+      ],
+      "rows": [
+       [
+        "Endoscope",
+        "flexible; carries light and an image without surgery"
+       ],
+       [
+        "Broadband and phone lines",
+        "fast, carries lots of data, little signal loss"
+       ],
+       [
+        "Decorative lights",
+        "light is guided to the tip by TIR"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check: TIR",
+     "bullets": [
+      "Select the best answer"
+     ],
+     "note": "Option B reverses the direction. Option C is a common slip: TIR does not depend on colour. Ask for the two conditions.",
+     "check": {
+      "q": "Which conditions are needed for total internal reflection?",
+      "options": [
+       "Light going from air to glass at any angle",
+       "Light going from glass to air at an angle above the critical angle",
+       "Light going from glass to air at an angle below the critical angle",
+       "Light going from air to water at 90°"
+      ],
+      "answer": 1,
+      "why": "TIR needs light in the denser medium reaching the boundary at an angle greater than c. Option C gives refraction."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the critical angle for water (n = 1.33).",
+    "Diamond has n = 2.42. Calculate its critical angle and explain why it sparkles.",
+    "Explain why a ray in a glass fibre does not escape through the sides."
+   ],
+   "independent": [
+    "Core: Describe two uses of optical fibres.",
+    "Extend: A ray in glass (n = 1.50) hits the glass-air boundary at 38°, then 45°. State whether it refracts or reflects in each case, giving reasons.",
+    "Stretch: An optical fibre has a core with n = 1.52 and cladding with n = 1.48. Calculate the critical angle at the core-cladding boundary and explain why a cladding is better than bare glass."
+   ],
+   "exit": [
+    "State the equation for the critical angle.",
+    "Explain why TIR cannot occur when light goes from air into glass."
+   ],
+   "homework": "Draw a ray diagram showing light travelling along an optical fibre and write four labelled steps explaining how an endoscope works.",
+   "send": "SEND: diagram with the three cases (below c, at c, above c) to label. EAL: pre-teach critical, internal, cladding. Stretch: compare step-index and graded-index fibres."
+  },
+  {
+   "unit": "Physics 3: Waves",
+   "n": 17,
+   "title": "Sound waves: hearing range, speed of sound, pitch and loudness",
+   "duration": 50,
+   "bigQuestion": "How can an oscilloscope help us see the difference between a quiet low note and a loud high note?",
+   "objectives": [
+    "Describe sound as a longitudinal wave needing a medium",
+    "State the human hearing range and typical speeds of sound",
+    "Interpret oscilloscope traces for pitch and loudness"
+   ],
+   "successCriteria": [
+    "All: state the range of human hearing and that sound needs a medium",
+    "Most: calculate distance using the speed of sound and echoes",
+    "Some: calculate frequency from an oscilloscope trace and design a speed-of-sound experiment"
+   ],
+   "crossCurricular": "Music: pitch, loudness; Maths: speed = distance ÷ time",
+   "smsc": "Spiritual: the beauty of sound in recitation and the care taken to protect our hearing",
+   "keywords": [
+    {
+     "term": "compression",
+     "def": "region where the air particles are close together, high pressure"
+    },
+    {
+     "term": "rarefaction",
+     "def": "region where particles are spread out, low pressure"
+    },
+    {
+     "term": "ultrasound",
+     "def": "sound above 20 000 Hz"
+    },
+    {
+     "term": "pitch",
+     "def": "how high or low a note sounds: depends on frequency"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the speed of a wave with f = 250 Hz and λ = 1.36 m.",
+    "Is sound longitudinal or transverse?",
+    "Convert 20 kHz to Hz."
+   ],
+   "teach": [
+    {
+     "heading": "How sound travels",
+     "bullets": [
+      "Source vibrates and pushes particles: compressions and rarefactions",
+      "Needs a medium: no sound in a vacuum",
+      "Faster in solids than liquids than gases",
+      "Human hearing: about 20 Hz to 20 000 Hz"
+     ],
+     "note": "Bell jar demonstration: sound fades as air is removed. Particles are closer in solids so vibrations pass more quickly. Typical speeds: air about 340 m/s, water about 1500 m/s, steel about 5000 m/s.",
+     "table": {
+      "head": [
+       "Medium",
+       "Approximate speed (m/s)"
+      ],
+      "rows": [
+       [
+        "Air",
+        "340"
+       ],
+       [
+        "Water",
+        "1500"
+       ],
+       [
+        "Steel",
+        "5000"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Echoes and the speed of sound",
+     "bullets": [
+      "Echo: reflection of sound",
+      "d = v × t, but the sound travels there and back",
+      "Distance to the wall = ½ × v × t"
+     ],
+     "note": "Practical idea: two pupils stand 100 m from a large wall; one claps, the other starts a stopwatch on each echo, timing 20 echoes to reduce error. Alternatively use two microphones connected to a timer. Safety: keep away from roads. Use the 340 m/s value unless the question gives another.",
+     "model": {
+      "problem": "A pupil claps and hears the echo from a cliff 0.50 s later. The speed of sound is 340 m/s. How far away is the cliff?",
+      "steps": [
+       "Distance there and back = v × t = 340 × 0.50 = 170 m",
+       "One way = 170 ÷ 2",
+       "= 85 m"
+      ],
+      "answer": "The cliff is 85 m away"
+     }
+    },
+    {
+     "heading": "Pitch and loudness on an oscilloscope",
+     "bullets": [
+      "Higher pitch means higher frequency: more waves on the screen",
+      "Louder means larger amplitude: taller waves",
+      "Period from the time base: T = divisions × time per division",
+      "f = 1 ÷ T"
+     ],
+     "note": "Show traces of a quiet low note, a loud low note and a quiet high note. The vertical axis shows voltage (amplitude), the horizontal shows time. Read off the time for one complete wave.",
+     "model": {
+      "problem": "On an oscilloscope, one complete wave takes 4.0 divisions. The time base is set to 2.5 ms per division. Calculate the frequency.",
+      "steps": [
+       "T = 4.0 × 2.5 ms = 10 ms = 0.010 s",
+       "f = 1 ÷ T",
+       "f = 1 ÷ 0.010 = 100 Hz"
+      ],
+      "answer": "Frequency = 100 Hz"
+     }
+    },
+    {
+     "heading": "Check: trace comparison",
+     "bullets": [
+      "Compare two traces"
+     ],
+     "note": "Option A reverses amplitude and frequency. Ask pupils which feature of the trace is the pitch and which is the loudness.",
+     "check": {
+      "q": "Trace B has the same height as trace A but twice as many waves across the screen. Compared with A, the sound in B is...",
+      "options": [
+       "louder and higher pitched",
+       "the same loudness and higher pitched",
+       "quieter and lower pitched",
+       "the same loudness and lower pitched"
+      ],
+      "answer": 1,
+      "why": "Same height means the same amplitude, so the same loudness. More waves in the same time means a higher frequency, so a higher pitch."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the wavelength of a 400 Hz note in air, speed 340 m/s.",
+    "A ship's sonar sends a pulse and detects the echo from the sea bed after 0.80 s. The speed of sound in water is 1500 m/s. Calculate the depth.",
+    "A trace has a period of 5.0 ms. Calculate the frequency."
+   ],
+   "independent": [
+    "Core: State two differences between a loud, low-pitched sound and a quiet, high-pitched sound.",
+    "Extend: Lightning is seen, and thunder heard 6.0 s later. Estimate the distance to the lightning (speed of sound 340 m/s).",
+    "Stretch: Design an experiment to measure the speed of sound in air, listing the equipment, measurements, calculation and one way to reduce uncertainty."
+   ],
+   "exit": [
+    "State the range of human hearing.",
+    "Explain why sound cannot travel through a vacuum."
+   ],
+   "homework": "Write a short explanation of why a space film showing explosions with sound is not realistic, using the idea of a medium.",
+   "send": "SEND: give an oscilloscope grid with annotated example traces. EAL: pre-teach amplitude, pitch, echo. Stretch: explain why sound speeds differ in terms of particle spacing."
+  },
+  {
+   "unit": "Physics 4: Energy resources and energy transfers",
+   "n": 18,
+   "title": "Energy stores, transfers, conservation and efficiency",
+   "duration": 50,
+   "bigQuestion": "Where does the energy go when a light bulb is switched on, and can it ever be destroyed?",
+   "objectives": [
+    "Describe energy stores and transfers",
+    "State the principle of conservation of energy",
+    "Calculate efficiency and interpret Sankey diagrams"
+   ],
+   "successCriteria": [
+    "All: name energy stores and transfers in a system",
+    "Most: calculate efficiency",
+    "Some: draw and interpret a Sankey diagram with correct arrow widths"
+   ],
+   "crossCurricular": "Chemistry: energy changes; Maths: percentages and ratios",
+   "smsc": "Moral: avoiding waste (israf) of resources, including energy",
+   "keywords": [
+    {
+     "term": "energy store",
+     "def": "a way energy is kept, such as chemical, kinetic or gravitational potential"
+    },
+    {
+     "term": "conservation of energy",
+     "def": "energy cannot be created or destroyed, only transferred or dissipated"
+    },
+    {
+     "term": "efficiency",
+     "def": "useful energy output ÷ total energy input (× 100%)"
+    },
+    {
+     "term": "dissipated",
+     "def": "spread out to the surroundings, usually as thermal energy"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the power of a device transferring 600 J in 20 s.",
+    "Name two renewable and two non-renewable energy resources.",
+    "Calculate 18 as a percentage of 24."
+   ],
+   "teach": [
+    {
+     "heading": "Stores and transfers",
+     "bullets": [
+      "Stores: chemical, kinetic, gravitational, elastic, thermal, nuclear",
+      "Transfers: mechanical work, electrical work, heating, radiation (light, sound)",
+      "Total energy is always conserved"
+     ],
+     "note": "Describe a few systems on the board: a boiling kettle, a falling ball, a speaker. Ask pupils to name the stores and transfers. Energy is conserved, but much becomes less useful thermal energy in the surroundings.",
+     "table": {
+      "head": [
+       "Device",
+       "Input",
+       "Useful output",
+       "Wasted"
+      ],
+      "rows": [
+       [
+        "Filament lamp",
+        "electrical",
+        "light",
+        "thermal"
+       ],
+       [
+        "Electric motor",
+        "electrical",
+        "kinetic",
+        "thermal and sound"
+       ],
+       [
+        "Loudspeaker",
+        "electrical",
+        "sound",
+        "thermal"
+       ],
+       [
+        "Petrol engine",
+        "chemical",
+        "kinetic",
+        "thermal and sound"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Efficiency",
+     "bullets": [
+      "Efficiency = useful energy output ÷ total energy input",
+      "Multiply by 100 for a percentage",
+      "Never more than 100%",
+      "Wasted energy = input - useful output"
+     ],
+     "note": "Say clearly that energy is not 'lost'; it dissipates. Efficiency may also be written using power: useful power output ÷ total power input. Do a quick check: can a device be 120% efficient?",
+     "model": {
+      "problem": "A motor takes in 200 J of electrical energy and lifts a load, gaining 150 J of gravitational potential energy. Calculate its efficiency and the energy wasted.",
+      "steps": [
+       "Efficiency = useful output ÷ total input",
+       "= 150 ÷ 200 = 0.75",
+       "= 75%",
+       "Wasted energy = 200 - 150 = 50 J"
+      ],
+      "answer": "Efficiency = 75%; wasted energy = 50 J"
+     }
+    },
+    {
+     "heading": "Sankey diagrams",
+     "bullets": [
+      "Arrow width shows the amount of energy",
+      "Input arrow splits into useful and wasted arrows",
+      "The widths add up to the input",
+      "Use a scale, e.g. 1 mm = 1 J"
+     ],
+     "note": "Draw a Sankey for a 100 J lamp: 10 J light and 90 J thermal. Ask pupils to draw the arrow widths to scale on squared paper. The input arrow and the output arrows must balance.",
+     "model": {
+      "problem": "A kettle transfers 2000 J of electrical energy. 1800 J heats the water and 200 J heats the surroundings. Describe the Sankey diagram and calculate the efficiency.",
+      "steps": [
+       "Input arrow: width 20 mm (1 mm = 100 J)",
+       "Useful arrow: width 18 mm (heating the water)",
+       "Wasted arrow: width 2 mm (surroundings)",
+       "Efficiency = 1800 ÷ 2000 = 0.90 = 90%"
+      ],
+      "answer": "Efficiency = 90%"
+     }
+    },
+    {
+     "heading": "Check: efficiency",
+     "bullets": [
+      "Choose the answer"
+     ],
+     "note": "Option A uses the wasted fraction. Option D is an impossible value. Ask how to check the answer is sensible.",
+     "check": {
+      "q": "A device wastes 30 J of every 120 J supplied. Its efficiency is...",
+      "options": [
+       "25%",
+       "75%",
+       "30%",
+       "400%"
+      ],
+      "answer": 1,
+      "why": "Useful output = 120 - 30 = 90 J, so efficiency = 90 ÷ 120 = 75%. 25% is the wasted fraction."
+     }
+    }
+   ],
+   "practice": [
+    "A lamp takes in 60 J and gives out 6 J of light. Calculate its efficiency and the wasted energy.",
+    "Name the energy stores before and after a ball is dropped and hits the floor.",
+    "Draw a Sankey diagram for a 400 J input with 300 J useful output."
+   ],
+   "independent": [
+    "Core: A toaster transfers 1000 J electrically: 800 J heats the bread. Calculate the efficiency.",
+    "Extend: A machine is 40% efficient and wastes 90 J. Calculate the input energy.",
+    "Stretch: Two light bulbs give the same light. Bulb A has efficiency 8% and bulb B 40%. Compare the energy input needed from each to produce 20 J of light."
+   ],
+   "exit": [
+    "State the principle of conservation of energy.",
+    "A motor has an efficiency of 60%. Calculate its useful output if the input is 500 J."
+   ],
+   "homework": "Choose two household devices, identify the energy transfers and draw a Sankey diagram for each using realistic percentages.",
+   "send": "SEND: give squared-paper Sankey templates with scales. EAL: pre-teach waste, dissipate, efficient. Stretch: efficiency of energy chains such as power stations."
+  },
+  {
+   "unit": "Physics 4: Energy resources and energy transfers",
+   "n": 19,
+   "title": "Thermal energy transfer: conduction, convection and radiation",
+   "duration": 50,
+   "bigQuestion": "Why does a vacuum flask keep tea hot for hours?",
+   "objectives": [
+    "Describe conduction, convection and radiation",
+    "Explain how to reduce unwanted thermal transfer",
+    "Plan an investigation of heat transfer using cooling"
+   ],
+   "successCriteria": [
+    "All: name the three methods of thermal transfer",
+    "Most: explain each in terms of particles or waves",
+    "Some: explain how a design reduces all three and plan a fair test"
+   ],
+   "crossCurricular": "Design and Technology: insulation; Geography: weather",
+   "smsc": "Moral: caring for the environment through reducing energy waste in homes",
+   "keywords": [
+    {
+     "term": "conduction",
+     "def": "transfer of thermal energy through a solid by vibrating particles and free electrons"
+    },
+    {
+     "term": "convection",
+     "def": "transfer of thermal energy by the movement of a heated fluid"
+    },
+    {
+     "term": "radiation",
+     "def": "transfer of thermal energy as infrared waves, needing no medium"
+    },
+    {
+     "term": "insulator",
+     "def": "a material that is a poor conductor of thermal energy"
+    }
+   ],
+   "starter": [
+    "Bismillah. State two ways to improve the efficiency of a device.",
+    "Calculate the efficiency when 45 J of 60 J is useful.",
+    "State the speed of infrared radiation in a vacuum."
+   ],
+   "teach": [
+    {
+     "heading": "Conduction",
+     "bullets": [
+      "In solids, particles vibrate and pass energy on",
+      "Metals conduct best: free electrons carry energy quickly",
+      "Gases and liquids conduct poorly",
+      "Trapped air is a good insulator"
+     ],
+     "note": "Demonstrate with metal rods coated in wax, heated at one end. Link to why a metal spoon feels colder than a wooden one at the same temperature: it conducts heat away from your hand faster.",
+     "compare": {
+      "left": {
+       "title": "Metals",
+       "points": [
+        "Free electrons carry energy",
+        "Particles also vibrate",
+        "Good conductors"
+       ]
+      },
+      "right": {
+       "title": "Non-metals",
+       "points": [
+        "Only particle vibrations",
+        "Energy passes slowly",
+        "Poor conductors (insulators)"
+       ]
+      },
+      "label": "compare"
+     }
+    },
+    {
+     "heading": "Convection and radiation",
+     "bullets": [
+      "Convection: hot fluid expands, becomes less dense and rises",
+      "Cooler, denser fluid sinks, setting up a convection current",
+      "Radiation: infrared; no particles needed",
+      "Dark matt surfaces absorb and emit best; shiny surfaces are poor"
+     ],
+     "note": "Show a convection current with potassium permanganate crystals in water over a heat source, or a heater in a room. For radiation ask how the Sun's energy reaches us: through a vacuum, so it is not conduction or convection.",
+     "cycle": [
+      "Fluid is heated at the bottom",
+      "It expands and becomes less dense",
+      "The warm fluid rises",
+      "It cools at the top, becomes denser and sinks",
+      "The cycle continues as a convection current"
+     ]
+    },
+    {
+     "heading": "Core practical idea: surfaces and cooling",
+     "bullets": [
+      "Four identical cans: matt black, shiny silver, white, and shiny with a lid",
+      "Fill each with the same volume of hot water",
+      "Record the temperature every minute for 10 minutes",
+      "Plot temperature against time for each can"
+     ],
+     "note": "Independent variable: surface colour or finish; dependent: temperature fall over 10 min; controls: starting temperature, volume of water, room, thermometer. Expected result: the matt black can cools fastest as it emits the most radiation. Safety: hot water, scald risk; use a kettle with care and keep spills away from sockets.",
+     "model": {
+      "problem": "Explain how a vacuum flask reduces heat loss by conduction, convection and radiation.",
+      "steps": [
+       "Vacuum between the walls: no particles, so no conduction or convection",
+       "Silvered (shiny) surfaces: reflect infrared radiation back",
+       "Plastic stopper: poor conductor and traps air to reduce convection",
+       "Result: the tea stays hot for a long time"
+      ],
+      "answer": "The flask reduces all three methods of transfer"
+     }
+    },
+    {
+     "heading": "Reducing unwanted transfers at home",
+     "bullets": [
+      "Loft insulation: traps air, reduces conduction and convection",
+      "Cavity wall insulation: stops convection in the gap",
+      "Double glazing: trapped air or vacuum reduces conduction",
+      "Reflective foil behind radiators reflects radiation"
+     ],
+     "note": "Link back to energy efficiency. Ask pupils which measure would be most cost-effective and why: payback time = cost ÷ yearly saving. Check the hinge question on the next section.",
+     "check": {
+      "q": "Why is a layer of trapped air a good insulator?",
+      "options": [
+       "Air is a good conductor and convection stops",
+       "Air is a poor conductor and cannot circulate easily when trapped",
+       "Air reflects infrared radiation",
+       "Air is lighter than most solids"
+      ],
+      "answer": 1,
+      "why": "Air is a poor conductor, and in small trapped pockets it cannot form convection currents. The other statements are not the reason."
+     }
+    }
+   ],
+   "practice": [
+    "Explain why metal feels colder than wood at the same temperature.",
+    "State how thermal energy from the Sun reaches the Earth.",
+    "Explain why the cooling coil of a fridge is at the back and painted black."
+   ],
+   "independent": [
+    "Core: Describe how a convection current forms in a pan of water heated from below.",
+    "Extend: A householder installs loft insulation costing £400, saving £80 per year. Calculate the payback time and comment on its value.",
+    "Stretch: Explain, with reference to particles and electrons, why copper is a better conductor than glass."
+   ],
+   "exit": [
+    "Name the three methods of thermal energy transfer.",
+    "Explain why shiny surfaces are used on vacuum flasks."
+   ],
+   "homework": "Design a fair test to compare two different insulating materials around a beaker of hot water. State the variables, equipment and a safety point.",
+   "send": "SEND: give a table to complete: method / medium needed / example. EAL: pre-teach insulate, current, trap. Stretch: investigate rate of cooling and Newton's law of cooling qualitatively."
+  },
+  {
+   "unit": "Physics 4: Energy resources and energy transfers",
+   "n": 20,
+   "title": "Work done, gravitational potential energy and kinetic energy",
+   "duration": 50,
+   "bigQuestion": "How much energy does it take to climb a hill, and where does it go when you roll down?",
+   "objectives": [
+    "Calculate work done using W = Fd",
+    "Calculate gravitational potential and kinetic energy",
+    "Use conservation of energy to find speed or height"
+   ],
+   "successCriteria": [
+    "All: use W = Fd",
+    "Most: use ΔGPE = mgh and KE = ½mv²",
+    "Some: combine GPE and KE in conservation problems"
+   ],
+   "crossCurricular": "Maths: squaring and square roots; PE: energy in sport",
+   "smsc": "Spiritual: observing how effort transfers energy",
+   "keywords": [
+    {
+     "term": "work done",
+     "def": "energy transferred when a force moves an object, W = F × d"
+    },
+    {
+     "term": "gravitational potential energy",
+     "def": "energy stored in an object due to its height, mgh"
+    },
+    {
+     "term": "kinetic energy",
+     "def": "energy of a moving object, ½mv²"
+    },
+    {
+     "term": "joule",
+     "def": "the unit of energy and work: 1 N m"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the weight of a 5.0 kg bag (g = 10 N/kg).",
+    "Calculate the efficiency when 80 J of 200 J is useful.",
+    "State the unit of energy."
+   ],
+   "teach": [
+    {
+     "heading": "Work done",
+     "bullets": [
+      "Work done = force × distance moved in the direction of the force",
+      "W = F × d",
+      "Work done equals the energy transferred",
+      "1 joule = 1 newton metre"
+     ],
+     "note": "Link to energy transfer: pushing a box increases its kinetic energy or heats surfaces through friction. A common error is using the wrong distance, or a force at 90° to the motion that does no work.",
+     "model": {
+      "problem": "A man pushes a box with a force of 50 N for 4.0 m across the floor. Calculate the work done.",
+      "steps": [
+       "W = F × d",
+       "W = 50 × 4.0",
+       "W = 200 J"
+      ],
+      "answer": "Work done = 200 J"
+     }
+    },
+    {
+     "heading": "Gravitational potential energy",
+     "bullets": [
+      "GPE = m × g × h",
+      "Change in GPE when lifted through height h",
+      "g = 10 N/kg unless the question gives a different value"
+     ],
+     "note": "Lifting a mass needs a force equal to its weight, so work done = mg × h. That is the link between work and GPE. Use a ball lifted onto a table as a visual.",
+     "model": {
+      "problem": "A 60 kg climber ascends a 3.0 m wall. Calculate the gain in gravitational potential energy.",
+      "steps": [
+       "ΔGPE = mgh",
+       "ΔGPE = 60 × 10 × 3.0",
+       "ΔGPE = 1800 J"
+      ],
+      "answer": "Gain in GPE = 1800 J"
+     }
+    },
+    {
+     "heading": "Kinetic energy",
+     "bullets": [
+      "KE = ½ × m × v²",
+      "Speed is squared: double the speed means four times the KE",
+      "Energy in joules, mass in kg, speed in m/s"
+     ],
+     "note": "Insist on squaring v before multiplying. Ask pupils: why is speed so important in crash energy? Link to Physics 1 stopping distances.",
+     "model": {
+      "problem": "A 1200 kg car travels at 15 m/s. Calculate its kinetic energy.",
+      "steps": [
+       "KE = ½mv²",
+       "KE = 0.5 × 1200 × 15²",
+       "KE = 0.5 × 1200 × 225",
+       "KE = 135 000 J"
+      ],
+      "answer": "KE = 135 000 J (135 kJ)"
+     }
+    },
+    {
+     "heading": "Energy conservation: falling objects",
+     "bullets": [
+      "A falling object transfers GPE to KE",
+      "If drag is ignored: mgh = ½mv²",
+      "v = √(2gh)",
+      "Mass cancels"
+     ],
+     "note": "Do the example and ask: would a heavier ball land faster in a vacuum? (No, mass cancels.) Remind pupils that with air resistance some energy becomes thermal.",
+     "model": {
+      "problem": "A ball is dropped from rest from 5.0 m. Ignoring air resistance, calculate its speed just before hitting the ground.",
+      "steps": [
+       "GPE lost = KE gained: mgh = ½mv²",
+       "gh = ½v²",
+       "v² = 2gh = 2 × 10 × 5.0 = 100",
+       "v = √100 = 10 m/s"
+      ],
+      "answer": "Speed = 10 m/s"
+     }
+    },
+    {
+     "heading": "Check: kinetic energy",
+     "bullets": [
+      "Choose the best answer"
+     ],
+     "note": "Option A is the common error of doubling KE when speed doubles. Ask pupils to calculate to check.",
+     "check": {
+      "q": "A cyclist doubles her speed. Her kinetic energy becomes...",
+      "options": [
+       "twice as large",
+       "four times as large",
+       "half as large",
+       "the same"
+      ],
+      "answer": 1,
+      "why": "KE depends on v², so doubling the speed gives 2² = 4 times the KE."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the work done by a 15 N force moving an object 6.0 m.",
+    "Calculate the KE of a 0.50 kg ball moving at 12 m/s.",
+    "A 2.0 kg book is lifted 1.5 m. Calculate the gain in GPE."
+   ],
+   "independent": [
+    "Core: A 70 kg person climbs 20 stairs of height 0.18 m each. Calculate the work done against gravity.",
+    "Extend: A 0.20 kg ball is thrown upwards at 15 m/s. Calculate the maximum height, ignoring air resistance.",
+    "Stretch: A 1000 kg car travelling at 20 m/s brakes to rest using a constant 5000 N braking force. Calculate the braking distance and discuss what happens to the energy."
+   ],
+   "exit": [
+    "State the equation for kinetic energy.",
+    "Calculate the work done when a 40 N force moves a trolley 3.0 m."
+   ],
+   "homework": "Complete a table of five energy calculations (work, GPE, KE) with units and write one sentence on where the energy goes in each.",
+   "send": "SEND: use a formula triangle card and a squared number reminder. EAL: pre-teach gravitational, kinetic. Stretch: explain why braking distance is proportional to v²."
+  },
+  {
+   "unit": "Physics 4: Energy resources and energy transfers",
+   "n": 21,
+   "title": "Power as the rate of energy transfer",
+   "duration": 50,
+   "bigQuestion": "Two students climb the same stairs; why can one of them be more powerful?",
+   "objectives": [
+    "Define power as the rate of doing work or transferring energy",
+    "Use P = W ÷ t and P = E ÷ t",
+    "Plan an experiment to measure the power of a person climbing stairs"
+   ],
+   "successCriteria": [
+    "All: use P = E ÷ t",
+    "Most: combine W = Fd or mgh with power",
+    "Some: plan a stair-climb power investigation and evaluate it"
+   ],
+   "crossCurricular": "PE: fitness and performance; Maths: rearranging",
+   "smsc": "Moral: honest measurement, working with a partner safely",
+   "keywords": [
+    {
+     "term": "power",
+     "def": "the rate of transferring energy or doing work, in watts"
+    },
+    {
+     "term": "watt",
+     "def": "one joule per second"
+    },
+    {
+     "term": "work done",
+     "def": "energy transferred by a force over a distance"
+    },
+    {
+     "term": "rate",
+     "def": "how much per unit of time"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the GPE of a 50 kg student on a 4.0 m balcony.",
+    "Calculate the work done when 20 N moves an object 5.0 m.",
+    "Convert 3 kW to W."
+   ],
+   "teach": [
+    {
+     "heading": "Power",
+     "bullets": [
+      "Power = work done ÷ time taken",
+      "P = W ÷ t or P = E ÷ t",
+      "Unit: watt (W): 1 W = 1 J/s",
+      "A more powerful device transfers energy faster"
+     ],
+     "note": "Compare two motors lifting the same load: both do the same work, but the more powerful one does it in less time. Link to power ratings on appliances (P = IV).",
+     "model": {
+      "problem": "A motor lifts a 20 kg load through 2.0 m in 4.0 s. Calculate the power. (g = 10 N/kg)",
+      "steps": [
+       "Weight = 20 × 10 = 200 N",
+       "Work done = F × d = 200 × 2.0 = 400 J",
+       "P = W ÷ t = 400 ÷ 4.0",
+       "P = 100 W"
+      ],
+      "answer": "Power = 100 W"
+     }
+    },
+    {
+     "heading": "Power and efficiency",
+     "bullets": [
+      "Useful power output ÷ total power input",
+      "Same as energy ratio",
+      "Waste power is dissipated"
+     ],
+     "note": "Remind pupils that efficiency compares powers equally well because time cancels. A 500 W motor that gives 350 W of useful output is 70% efficient.",
+     "model": {
+      "problem": "A pump has an input power of 800 W and lifts water, gaining GPE at 600 J every second. Calculate its efficiency and the wasted power.",
+      "steps": [
+       "Useful power = 600 W",
+       "Efficiency = 600 ÷ 800 = 0.75 = 75%",
+       "Wasted power = 800 - 600 = 200 W"
+      ],
+      "answer": "Efficiency = 75%; wasted power = 200 W"
+     }
+    },
+    {
+     "heading": "Core practical idea: your power on the stairs",
+     "bullets": [
+      "Measure your mass and the vertical height of the stairs",
+      "Time how long you take to climb them",
+      "Calculate the work: mgh",
+      "Power = work ÷ time"
+     ],
+     "note": "Variables: independent: speed of climbing or person; dependent: power; control: same stairs. Measure height with a metre rule or from step height × number of steps. Take repeats. Safety: do not run on stairs; stop if breathless. Expect 150 to 300 W for a short climb. Discuss errors: reaction time, not exact vertical height.",
+     "model": {
+      "problem": "A 55 kg student climbs stairs of vertical height 3.0 m in 5.0 s. Calculate the power.",
+      "steps": [
+       "Work done = mgh = 55 × 10 × 3.0 = 1650 J",
+       "P = W ÷ t = 1650 ÷ 5.0",
+       "P = 330 W"
+      ],
+      "answer": "Power = 330 W"
+     }
+    },
+    {
+     "heading": "Check: power calculation",
+     "bullets": [
+      "Choose the best answer"
+     ],
+     "note": "Option A divides the wrong way round. Option C forgets time. Ask for units.",
+     "check": {
+      "q": "A machine does 600 J of work in 15 s. Its power is...",
+      "options": [
+       "9000 W",
+       "40 W",
+       "600 W",
+       "0.025 W"
+      ],
+      "answer": 1,
+      "why": "P = W ÷ t = 600 ÷ 15 = 40 W. 9000 comes from multiplying; 0.025 from inverting."
+     }
+    }
+   ],
+   "practice": [
+    "Calculate the power of a crane that lifts a 500 N load through 6.0 m in 10 s.",
+    "A 2.0 kW heater runs for 5.0 minutes. Calculate the energy transferred.",
+    "A motor transfers 3000 J in 20 s. Calculate its power."
+   ],
+   "independent": [
+    "Core: Write a method to measure the power of a student climbing stairs, with the equipment and the calculation.",
+    "Extend: A 60 W lamp is 5% efficient. Calculate the useful light power and the thermal power.",
+    "Stretch: A 1500 kg car accelerates from rest to 20 m/s in 8.0 s. Calculate the average useful power."
+   ],
+   "exit": [
+    "State the unit of power and what it means.",
+    "A 3.0 kW kettle runs for 2.0 minutes. Calculate the energy transferred."
+   ],
+   "homework": "Measure your own stair-climb power at home (with a safe set of stairs) and write up the method, results and one improvement.",
+   "send": "SEND: use a three-row table: work, time, power. EAL: pre-teach rate, per second. Stretch: compare maximum human power with machines."
+  },
+  {
+   "unit": "Physics 4: Energy resources and energy transfers",
+   "n": 22,
+   "title": "Generating electricity: fuels, nuclear and renewable resources",
+   "duration": 50,
+   "bigQuestion": "Which energy sources should a country use to keep the lights on for the next fifty years?",
+   "objectives": [
+    "Describe how electricity is generated in power stations",
+    "Compare renewable and non-renewable resources",
+    "Evaluate advantages and disadvantages of each resource"
+   ],
+   "successCriteria": [
+    "All: describe a basic power station and name sources",
+    "Most: give an advantage and a disadvantage for each source",
+    "Some: evaluate a choice of resource for a given location"
+   ],
+   "crossCurricular": "Geography: energy supply and sustainability; Citizenship: environmental policy",
+   "smsc": "Moral: stewardship (khalifah) of the Earth and fairness to future generations",
+   "keywords": [
+    {
+     "term": "renewable",
+     "def": "a resource that is replaced as fast as it is used, or will not run out"
+    },
+    {
+     "term": "non-renewable",
+     "def": "a resource that will run out, such as coal, oil, gas and uranium"
+    },
+    {
+     "term": "generator",
+     "def": "a device that transfers kinetic energy to electrical energy"
+    },
+    {
+     "term": "turbine",
+     "def": "a rotor turned by steam, wind or water"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the efficiency when 90 J of 360 J is useful.",
+    "State the energy transfer in a wind turbine.",
+    "State what is meant by a fossil fuel."
+   ],
+   "teach": [
+    {
+     "heading": "How most power stations work",
+     "bullets": [
+      "Fuel releases thermal energy (burning or nuclear fission)",
+      "Water boils to steam",
+      "Steam turns a turbine",
+      "Turbine spins a generator, producing electricity"
+     ],
+     "note": "Draw the energy chain. Note that wind, water and tidal power skip the boiler and drive the turbine directly; solar cells produce electricity directly. Geothermal uses hot rocks to make steam.",
+     "cycle": [
+      "Chemical or nuclear energy released as thermal energy",
+      "Water heated to make steam",
+      "Steam turns the turbine",
+      "Turbine turns the generator",
+      "Electricity transferred to the grid"
+     ]
+    },
+    {
+     "heading": "Comparing the resources",
+     "bullets": [
+      "Fossil fuels: reliable but release CO₂ and are finite",
+      "Nuclear: no CO₂, but produces radioactive waste",
+      "Wind, solar, hydro, tidal, geothermal: renewable, no fuel cost",
+      "Intermittent supply is a limit for wind and solar"
+     ],
+     "note": "Pupils annotate the table with one extra point each from memory, for example wind: no fuel; visual impact; works only when the wind blows. Ask which sources can be switched on quickly to meet demand. Gas and hydro are quick.",
+     "table": {
+      "head": [
+       "Source",
+       "Advantage",
+       "Disadvantage"
+      ],
+      "rows": [
+       [
+        "Coal, oil, gas",
+        "reliable, on demand",
+        "CO₂, acid rain (sulphur), finite"
+       ],
+       [
+        "Nuclear",
+        "no CO₂, small amount of fuel",
+        "radioactive waste, costly decommissioning"
+       ],
+       [
+        "Wind",
+        "renewable, no emissions",
+        "depends on wind, visual and noise impact"
+       ],
+       [
+        "Hydroelectric",
+        "renewable, quick to start",
+        "habitat flooding, suitable sites needed"
+       ],
+       [
+        "Geothermal",
+        "reliable, renewable",
+        "only in certain places"
+       ],
+       [
+        "Solar cells",
+        "no emissions, quiet",
+        "only by day, high initial cost"
+       ],
+       [
+        "Tidal",
+        "predictable, renewable",
+        "barrage damages habitats, high cost"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Evaluating a choice",
+     "bullets": [
+      "State the context and criteria",
+      "Give advantages and disadvantages",
+      "Weigh them up and reach a judgement",
+      "Use evidence: reliability, cost, pollution, location"
+     ],
+     "note": "Use the model as a template for 6-mark answers. Pupils should use connecting words (however, therefore). Do not push a particular view; teach the structure of an evaluation.",
+     "model": {
+      "problem": "A remote island needs electricity. Evaluate using wind turbines compared with a diesel generator.",
+      "steps": [
+       "Wind: renewable, no fuel deliveries and no CO₂",
+       "Wind: variable supply, needs backup or storage",
+       "Diesel: reliable on demand but fuel must be shipped; CO₂ and noise",
+       "Judgement: combine wind with storage or a small diesel generator for reliability"
+      ],
+      "answer": "A mix of wind with backup is likely best: it cuts fuel use but still gives a reliable supply"
+     }
+    },
+    {
+     "heading": "Check: renewable",
+     "bullets": [
+      "Select the best option"
+     ],
+     "note": "Option B is a typical error (nuclear fuel is not replaced). Ask why 'renewable' does not mean 'no disadvantage'.",
+     "check": {
+      "q": "Which of these is a renewable energy resource?",
+      "options": [
+       "uranium",
+       "tidal power",
+       "natural gas",
+       "coal"
+      ],
+      "answer": 1,
+      "why": "Tidal energy is replenished by the Moon's pull and the Sun. Uranium, gas and coal are finite."
+     }
+    }
+   ],
+   "practice": [
+    "Describe how a coal-fired power station produces electricity.",
+    "Give one advantage and one disadvantage of nuclear power.",
+    "Explain why solar cells are not suitable as the only source of electricity for a UK city."
+   ],
+   "independent": [
+    "Core: Make a table of three renewable and three non-renewable resources with one advantage each.",
+    "Extend: Explain why hydroelectric power can respond more quickly to demand than coal.",
+    "Stretch: Evaluate whether a country with high sun and little rain should invest in solar farms or in importing gas, giving a reasoned conclusion."
+   ],
+   "exit": [
+    "State what is meant by a renewable resource.",
+    "Explain why a wind farm may not always provide electricity."
+   ],
+   "homework": "Write a 6-mark evaluation: 'Should the UK build more nuclear power stations or more wind farms?' using the structure from the lesson.",
+   "send": "SEND: give the energy chain cards to order and annotate. EAL: pre-teach renewable, finite, generate. Stretch: discuss grid storage and demand management."
+  }
+ ]
+}
