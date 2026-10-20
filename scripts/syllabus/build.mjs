@@ -6,6 +6,8 @@ import { execFileSync } from "node:child_process";
 import { ROOT, W, MX, INK, MUTED, GOLD, GOLD_SOFT, LINE, WHITE, FONT, H, LOGO_WHITE, LOGO_RATIO, clean, slugify, ensureDir, makeTheme, tint, newDeck, contentSlide, chip, card, gridBoxes, STATUS, fitSize } from "./lib.mjs";
 import { buildSpecDeck, buildSyllabusDeck } from "./decks.mjs";
 import { loadPack, buildMatrixDeck, groupOf } from "./matrix.mjs";
+import { buildUnitDeck } from "./unit-decks.mjs";
+import { loadChapters, videoMapFor } from "./video-links.mjs";
 
 const args = process.argv.slice(2);
 const arg = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
@@ -17,6 +19,8 @@ for (const f of Object.values(F)) ensureDir(path.join(OUT, f));
 
 const pack = loadPack();
 const manifest = [];
+const chapters = loadChapters();
+const videoLinks = [];
 const short = (s) => clean(s).replace(/[^A-Za-z0-9 ]+/g, "").replace(/\s+/g, "_");
 const add = (m) => manifest.push(m);
 
@@ -32,7 +36,10 @@ for (const d of pack.ks4) {
   const sub = short(d.subject);
   const bd = /AQA/i.test(d.board) ? "AQA" : /edexcel|pearson/i.test(d.board) ? "Edexcel" : short(d.board).slice(0, 12);
   const rel = `${F.ks4}/${sub}/KS4_${sub}_${bd}-${code}_Specification.pptx`;
-  await save(buildSpecDeck(d), rel, { kind: "spec", level: "KS4 (Y10-Y11)", subject: d.subject, board: d.board, code: d.code, status: d.status, units: d.units.length });
+  const vm = videoMapFor(d, chapters);
+  vm.forEach((list, ref) => list.forEach((v) => videoLinks.push({ subject: d.subject, unitRef: ref, ...v })));
+  await save(buildUnitDeck(d, vm), rel.replace("_Specification.pptx", "_Unit_Teaching_Deck.pptx"), { kind: "unit", level: "KS4 (Y10-Y11)", subject: d.subject, board: d.board, code: d.code, status: d.status, units: d.units.length });
+  await save(buildSpecDeck(d, vm), rel, { kind: "spec", level: "KS4 (Y10-Y11)", subject: d.subject, board: d.board, code: d.code, status: d.status, units: d.units.length });
 }
 for (const d of pack.ks13) {
   const sub = short(d.subject);
@@ -63,7 +70,7 @@ await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix
   const rows = [
     [F.start, "This guide and the file register."],
     [F.mx, "Link heatmaps, 12 teaching hubs, year-by-year maps, spiral threads."],
-    [F.ks4, "One deck per examined subject, Years 10 and 11: assessment, units, command words, links."],
+    [F.ks4, "Per examined subject: the specification deck (how it is examined) and the unit teaching deck (each unit as lessons)."],
     [F.ks13, "One deck per subject, Reception to Year 9: framework content, year-by-year units, progression."],
     [F.src, "Sources opened, verification status and open items for every subject."],
   ];
@@ -90,7 +97,7 @@ await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix
 
   // register
   const mk = (txt, o = {}) => ({ text: clean(txt), options: { fontFace: FONT, fontSize: 10, color: INK, valign: "middle", ...o } });
-  const reg = manifest.filter((m) => m.kind !== "matrix");
+  const reg = manifest.filter((m) => m.kind === "spec" || m.kind === "syllabus");
   for (let p = 0; p * 11 < reg.length; p++) {
     const s = contentSlide(pres, ctx, "File register", `All decks in the pack (${p + 1} of ${Math.ceil(reg.length / 11)})`);
     const data = [["Level", "Subject", "Board or framework", "Status", "Units"].map((h) => mk(h, { bold: true, color: WHITE, fill: { color: theme.accent } }))];
@@ -150,6 +157,7 @@ Specification wording is paraphrased. Teach from the awarding body's own documen
 }
 
 fs.writeFileSync(path.join(OUT, "manifest.json"), JSON.stringify({ generated: new Date().toISOString().slice(0, 10), files: manifest }, null, 2));
+fs.writeFileSync(path.join(OUT, F.mx, "video_chapter_links.json"), JSON.stringify(videoLinks, null, 2));
 fs.writeFileSync(path.join(OUT, F.mx, "link_register.json"), JSON.stringify(mx.rows, null, 2));
 
 if (PDF) {

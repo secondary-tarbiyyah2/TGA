@@ -1,6 +1,7 @@
 // Deck builders for the Syllabus & Specification pack.
 //   buildSpecDeck(d)      KS4 examination specification (kind "spec")
 //   buildSyllabusDeck(d)  Reception to Year 9 programme (kind "syllabus")
+import { lessonsFor } from "./unit-decks.mjs";
 import {
   W, H, MX, INK, MUTED, GOLD, GOLD_DARK, GOLD_SOFT, CREAM, LINE, WHITE, FONT, LOGO_WHITE, LOGO_RATIO, STATUS,
   clean, fitSize, makeTheme, tint, newDeck, contentSlide, chip, card, bullets, sourcesAndGaps, gridBoxes, yearLabel,
@@ -50,7 +51,7 @@ function weightNum(w) {
 }
 
 // ───────────────────────────── KS4 SPEC DECK ──────────────────────────────
-export function buildSpecDeck(d) {
+export function buildSpecDeck(d, videoMap) {
   const theme = makeTheme(d.slug);
   const ctx = { theme, status: d.status, page: 1, footerLeft: `${d.subject} · ${d.board} ${d.code} · Specification` };
   const pres = newDeck(`${d.subject} specification: ${d.board} ${d.code}`, d.subject);
@@ -156,6 +157,23 @@ export function buildSpecDeck(d) {
         s.addText(`${clean(u.paper)} · ${u.year}`, { x: b.x + 0.15, y: b.y + b.h - 0.34, w: b.w - 0.3, h: 0.26, fontFace: FONT, fontSize: 9, color: MUTED, margin: 0 });
       });
       s.addText("Blue tint = recommended Year 10   ·   Gold tint = recommended Year 11", { x: MX, y: 6.62, w: 8, h: 0.28, fontFace: FONT, fontSize: 10, color: MUTED, italic: true, margin: 0 });
+    });
+  }
+
+  // Coverage matrix (how boards tabulate content against papers)
+  {
+    const units = d.units || [];
+    const pages = chunk(units, 12);
+    pages.forEach((pg, pi) => {
+      const s = contentSlide(pres, ctx, "Coverage matrix", pages.length > 1 ? `Units against papers, years and pacing (${pi + 1} of ${pages.length})` : "Units against papers, years and pacing");
+      const mk = (t, o = {}) => ({ text: clean(t), options: { fontFace: FONT, fontSize: 10, color: INK, valign: "middle", ...o } });
+      const head = ["Ref", "Unit", "Paper", "Year", "Term", "Points", "Lessons", "Video"];
+      const data = [head.map((h) => mk(h, { bold: true, color: WHITE, fill: { color: theme.accent } }))];
+      pg.forEach((u, i) => {
+        const v = videoMap && videoMap.get(u.ref);
+        data.push([u.ref, u.title, u.paper, u.year, u.term || "", String((u.points || []).length), String(lessonsFor(u).length), v && v.length ? "Linked" : "—"].map((x, j) => mk(x, { fill: { color: i % 2 ? WHITE : tint(theme.accent, 0.92) }, bold: j === 0, align: j >= 5 ? "center" : "left" })));
+      });
+      s.addTable(data, { x: MX, y: 1.8, w: W - 2 * MX, colW: [1.1, 4.6, 1.7, 0.8, 1.1, 0.8, 0.9, W - 2 * MX - 11], border: { type: "solid", color: LINE, pt: 0.75 }, margin: [0.05, 0.08, 0.05, 0.08] });
     });
   }
 
