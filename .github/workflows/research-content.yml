@@ -1,0 +1,35 @@
+name: Research content snapshot (branch only)
+on:
+  push:
+    branches: ["research/content"]
+    paths: ["research/dump-content.mjs"]
+permissions:
+  contents: write
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - id: k
+        run: |
+          set -euo pipefail
+          REF=$(supabase projects list -o json | jq -r '.[0].id')
+          KEY=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          echo "::add-mask::$KEY"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "key=$KEY" >> "$GITHUB_OUTPUT"
+      - run: npm ci && node research/dump-content.mjs
+        env:
+          SUPABASE_URL: https://${{ steps.k.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.k.outputs.key }}
+      - run: |
+          git config user.name research-bot; git config user.email research-bot@users.noreply.github.com
+          git add research/out && git commit -m "content snapshot" && git push
