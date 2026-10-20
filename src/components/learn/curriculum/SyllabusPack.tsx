@@ -28,6 +28,7 @@ export function SyllabusPack() {
     (async () => {
       try {
         const sb = getSupabaseClient();
+        if (!sb) throw new Error("Not connected.");
         const list = async (prefix: string) => {
           const { data, error: e } = await sb.storage.from(BUCKET).list(prefix, { limit: 200, sortBy: { column: "name", order: "asc" } });
           if (e) throw e;
@@ -59,7 +60,9 @@ export function SyllabusPack() {
   const open = async (path: string, download: boolean) => {
     setBusy(path);
     try {
-      const { data, error: e } = await getSupabaseClient().storage.from(BUCKET).createSignedUrl(path, 600, download ? { download: path.split("/").pop() } : undefined);
+      const sb = getSupabaseClient();
+      if (!sb) throw new Error("Not connected.");
+      const { data, error: e } = await sb.storage.from(BUCKET).createSignedUrl(path, 600, download ? { download: path.split("/").pop() } : undefined);
       if (e || !data) throw e || new Error("No link");
       window.open(data.signedUrl, "_blank", "noopener");
     } catch {

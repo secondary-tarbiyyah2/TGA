@@ -63,15 +63,20 @@ export function FamilyWithdrawal() {
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ tone: "good" | "bad"; text: string } | null>(null);
 
-  const load = useCallback(async () => {
-    if (!supabase) return;
-    const { data, error } = await supabase.from("withdrawal_notices").select(NOTICE_COLUMNS).order("created_at", { ascending: false });
-    setNotices(error ? [] : ((data as unknown as WithdrawalNotice[]) || []));
-  }, [supabase]);
+  const [tick, setTick] = useState(0);
+  const load = useCallback(() => setTick((t) => t + 1), []);
 
   useEffect(() => {
-    void load();
-  }, [load]);
+    if (!supabase) return;
+    let live = true;
+    (async () => {
+      const { data, error } = await supabase.from("withdrawal_notices").select(NOTICE_COLUMNS).order("created_at", { ascending: false });
+      if (live) setNotices(error ? [] : ((data as unknown as WithdrawalNotice[]) || []));
+    })();
+    return () => {
+      live = false;
+    };
+  }, [supabase, tick]);
 
   if (!kids || kids.length === 0) return null;
   const childId = f.childId || kids[0].id;
@@ -109,14 +114,14 @@ export function FamilyWithdrawal() {
     setMsg({ tone: "good", text: `Notice sent for ${nameOf(childId)}. The office will confirm the leaving date and any fees still due.` });
     setOpen(false);
     setF(empty(childId, noticeEnds));
-    void load();
+    load();
   };
 
   const cancel = async (n: WithdrawalNotice) => {
     if (!supabase) return;
     const { error } = await supabase.rpc("cancel_my_withdrawal_notice", { p_id: n.id });
     setMsg(error ? { tone: "bad", text: error.message } : { tone: "good", text: "Notice cancelled." });
-    void load();
+    load();
   };
 
   const field = "mt-1";

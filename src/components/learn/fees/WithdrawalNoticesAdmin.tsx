@@ -21,15 +21,20 @@ export function WithdrawalNoticesAdmin({ compact = false }: { compact?: boolean 
   const [edit, setEdit] = useState<Edit>({ eligible: "", fees: "", invoice: "", notes: "" });
   const [msg, setMsg] = useState<{ tone: "good" | "bad"; text: string } | null>(null);
 
-  const load = useCallback(async () => {
-    if (!supabase) return;
-    const { data, error } = await supabase.from("withdrawal_notices").select(`${NOTICE_COLUMNS}, children(name)`).order("created_at", { ascending: false });
-    setRows(error ? [] : ((data as unknown as Row[]) || []));
-  }, [supabase]);
+  const [tick, setTick] = useState(0);
+  const load = useCallback(() => setTick((t) => t + 1), []);
 
   useEffect(() => {
-    void load();
-  }, [load]);
+    if (!supabase) return;
+    let live = true;
+    (async () => {
+      const { data, error } = await supabase.from("withdrawal_notices").select(`${NOTICE_COLUMNS}, children(name)`).order("created_at", { ascending: false });
+      if (live) setRows(error ? [] : ((data as unknown as Row[]) || []));
+    })();
+    return () => {
+      live = false;
+    };
+  }, [supabase, tick]);
 
   if (!rows) return null;
   const open = rows.filter((r) => r.status === "submitted" || r.status === "acknowledged");
@@ -64,7 +69,7 @@ export function WithdrawalNoticesAdmin({ compact = false }: { compact?: boolean 
       .eq("id", r.id);
     setMsg(error ? { tone: "bad", text: "Not saved. Please try again." } : { tone: "good", text: status === "completed" ? "Marked as completed. Remember to end the pupil's enrolments in Pupil records." : "Saved." });
     if (!error) setEditing(null);
-    void load();
+    load();
   };
 
   return (
