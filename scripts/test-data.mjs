@@ -69,6 +69,28 @@ async function sql(query) {
  * makes deleting the account fail. Clear those references first: a nullable
  * column is set to null, otherwise the row (test activity) is deleted.
  */
+const clearNotes = [];
+
+/** For a failed delete: which tables still point at this account, and why. */
+async function stillReferencing(id) {
+  try {
+    const fks = await sql(`
+      select c.conrelid::regclass::text as tbl, a.attname as col
+      from pg_constraint c
+      join pg_attribute a on a.attrelid = c.conrelid and a.attnum = c.conkey[1]
+      where c.contype = 'f' and array_length(c.conkey, 1) = 1
+        and c.confrelid in ('public.profiles'::regclass, 'auth.users'::regclass)`);
+    const hits = [];
+    for (const fk of fks) {
+      const r = await sql(`select count(*)::int as n from ${fk.tbl} where ${fk.col} = '${id}'`);
+      if (r[0]?.n) hits.push(`${fk.tbl}.${fk.col}=${r[0].n}`);
+    }
+    return hits.join(", ") || "no rows";
+  } catch (e) {
+    return `diagnosis failed: ${e.message.slice(0, 200)}`;
+  }
+}
+
 async function clearReferences(ids) {
   if (!ids.length) return;
   const fks = await sql(`
@@ -81,12 +103,13 @@ async function clearReferences(ids) {
       and c.conrelid::regclass::text not like 'auth.%'
       and c.conrelid::regclass::text <> 'public.profiles'`);
   const list = ids.map((i) => `'${i}'`).join(",");
+  clearNotes.push(`${fks.length} references checked`);
   for (const fk of fks) {
     const q = fk.notnull ? `delete from ${fk.tbl} where ${fk.col} in (${list})` : `update ${fk.tbl} set ${fk.col} = null where ${fk.col} in (${list})`;
     try {
       await sql(q);
     } catch (e) {
-      console.log(`(couldn't clear ${fk.tbl}.${fk.col}: ${e.message.slice(0, 160)})`);
+      clearNotes.push(`${fk.tbl}.${fk.col}: ${e.message.slice(0, 120)}`);
     }
   }
 }
@@ -149,7 +172,9 @@ async function remove() {
   await clearReferences(ids); // a second pass catches rows that pointed at rows the first pass removed
   for (const u of users) {
     const { error } = await sb.auth.admin.deleteUser(u.id);
-    if (error && !/not found/i.test(error.message)) throw new Error(`remove account ${u.email}: ${error.message}`);
+    if (error && !/not found/i.test(error.message)) {
+      throw new Error(`remove account ${u.email}: ${error.message}. Still referenced by: ${await stillReferencing(u.id)}. Cleanup notes: ${clearNotes.slice(0, 6).join(" | ")}`);
+    }
   }
   // Year groups and subjects this script had to add (it reuses real ones when they exist).
   const yg = await sb.from("year_groups").delete().eq("is_test", true).in("name", YEAR_GROUPS);
