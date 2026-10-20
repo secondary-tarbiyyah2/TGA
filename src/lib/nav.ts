@@ -60,7 +60,7 @@ export const parentsHub: HubCard[] = [
 ];
 
 export const aboutHub: HubCard[] = [
-  { href: "/team", title: "Meet the team", body: "Qualifications and intro videos for our teachers." },
+  { href: "/team", title: "Meet the team", body: "Who teaches at the Academy, as appointments are confirmed." },
   { href: "/testimonials", title: "Testimonials", body: "What parents and students say about the Academy." },
   { href: "/safeguarding", title: "Safeguarding", body: "Our commitment to every child's safety." },
   { href: "/pastoral-care", title: "Pastoral care", body: "How we nurture wellbeing and character." },

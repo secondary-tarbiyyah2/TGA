@@ -21,11 +21,11 @@ export const homepageDefaults = {
   // Saving it unchanged keeps the styled version.
   hero_heading: "A specialist, quality education, rooted in faith — wherever home is.",
   hero_body:
-    "Live, timetabled lessons with qualified UK teachers on the full British curriculum, taught with tarbiyyah — the nurturing of character and faith — at its heart. Reception to Year 11, live lessons launching January 2027.",
+    "Live, timetabled lessons with qualified teachers on the full British curriculum, taught with tarbiyyah — the nurturing of character and faith — at its heart. Reception to Year 11, live lessons launching January 2027.",
   pillars: [
-    { title: "Specialist curriculum", body: "The full British national curriculum, live-timetabled, taught to GCSE by qualified UK teachers." },
+    { title: "Specialist curriculum", body: "The full British national curriculum, live-timetabled, taught to GCSE by qualified teachers." },
     { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage — not an add-on." },
-    { title: "Live, small classes", body: "Real-time lessons with real teachers, sized to keep every child known and supported." },
+    { title: "Live, small classes", body: "Real-time lessons with no more than 15 pupils in a class, so every child is known and supported." },
   ] as TitleBody[],
   how_it_works_heading: "Six steps to a place at TGA.",
   how_it_works_steps: [
@@ -38,13 +38,13 @@ export const homepageDefaults = {
   ] as TitleBody[],
   stages_heading: "A specialist curriculum, from Reception to GCSE.",
   stages_body:
-    "The full British curriculum, live-timetabled and taught by qualified UK teachers — with Qur'an, Islamic Studies and Arabic woven through every key stage, not bolted on.",
+    "The full British curriculum, live-timetabled and taught by qualified teachers — with Qur'an, Islamic Studies and Arabic woven through every key stage, not bolted on.",
   fee_teaser_heading: "Transparent fees, no surprises.",
   fee_teaser_body:
     'Every fee is published on our website — nothing shared only "on enquiry." Annual, termly and monthly plans are available for every year group.',
   safe_heading: "Safe, open and accountable.",
   safe_body:
-    "Every member of staff is DBS-checked, and a named Designated Safeguarding Lead is responsible for keeping children safe.",
+    "Every member of staff is vetted before they start (an enhanced DBS check in the UK, an overseas criminal record check for staff abroad), and a named Designated Safeguarding Lead is responsible for keeping children safe.",
 };
 
 export const aboutDefaults = {
@@ -54,15 +54,16 @@ export const aboutDefaults = {
   mission_body:
     "To nurture confident, compassionate and capable Muslims who excel academically, lead with integrity and make a positive impact.",
   safeguarding_body:
-    "The safety and wellbeing of every child is our first responsibility, with vetted, DBS-checked staff and a named Designated Safeguarding Lead.",
+    "The safety and wellbeing of every child is our first responsibility, with safer-recruitment vetting for every member of staff (enhanced DBS in the UK, overseas checks abroad) and a named Designated Safeguarding Lead.",
   recipe_intro: "Building akhlaq alongside attainment.",
+  // The six values exactly as the RECIPE Character Framework (policy 23) names them.
   recipe_items: [
-    { letter: "R", word: "Respect", body: "For Allah, for others, and for oneself." },
-    { letter: "E", word: "Excellence", body: "In academic work and in character alike." },
-    { letter: "C", word: "Compassion", body: "Kindness modelled and expected, every day." },
-    { letter: "I", word: "Integrity", body: "Doing right when no one is watching." },
-    { letter: "P", word: "Purpose", body: "Learning connected to a life of meaning and worship." },
-    { letter: "E", word: "Etiquette (Adab)", body: "Manners and conduct as the foundation of learning." },
+    { letter: "R", word: "Resilience", body: "Persevering through difficulty with patience (sabr)." },
+    { letter: "E", word: "Eeman", body: "Faith that shapes action." },
+    { letter: "C", word: "Contentment", body: "Gratitude (shukr) and inner peace." },
+    { letter: "I", word: "Integrity", body: "Honesty and trustworthiness (amanah)." },
+    { letter: "P", word: "Progress", body: "Always seeking to improve." },
+    { letter: "E", word: "Excellence", body: "Ihsan: doing everything as well as possible." },
   ] as RecipeItem[],
   family_heading: "10+ years, three established schools.",
   family_body:
@@ -72,7 +73,7 @@ export const aboutDefaults = {
 export const curriculumDefaults = {
   hero_heading: "A specialist curriculum, academic and Islamic together.",
   hero_body:
-    "The full British curriculum, live-timetabled and taught by qualified UK teachers, through to GCSE — with Qur'an, Islamic Studies and Arabic on the timetable at every key stage.",
+    "The full British curriculum, live-timetabled and taught by qualified teachers, through to GCSE — with Qur'an, Islamic Studies and Arabic on the timetable at every key stage.",
 };
 
 /** Site-settings fields that have a built-in fallback on the public site. */

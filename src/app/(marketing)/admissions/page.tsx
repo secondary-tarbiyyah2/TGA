@@ -52,7 +52,7 @@ export default async function AdmissionsPage() {
             <div className="rounded-2xl bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application and assessment fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">{formatGBP(settings.applicationFee)}</p>
-              <p className="mt-1 text-sm text-ink/60">Non-refundable. Covers the baseline assessment and the administrative review. Send proof of payment with your offer acceptance if you have not already paid it.</p>
+              <p className="mt-1 text-sm text-ink/60">Non-refundable. Covers the baseline assessment and the administrative review. Paid when you apply.</p>
             </div>
           )}
           {settings.registrationFee != null && (
@@ -63,7 +63,7 @@ export default async function AdmissionsPage() {
             </div>
           )}
           <p className="text-sm text-ink/70 sm:col-span-2">
-            Your first tuition payment is also sent with your proof of payment: at least the first month on a monthly plan, or the first term, or the whole year {settings.annualDiscountPercent ? `(${settings.annualDiscountPercent}% off if paid in full)` : ""}. See the{" "}
+            Tuition is then paid on the dates in our Fees Policy: the whole year (with {settings.annualDiscountPercent ? `${settings.annualDiscountPercent}% off` : "a discount"}) or the first termly payment by 19 December 2026, or monthly from 28 December 2026. See the{" "}
             <Link href="/fees#estimator" className="font-semibold text-gold-700 underline">fee estimator</Link> for your family&apos;s figures.
           </p>
         </Container>

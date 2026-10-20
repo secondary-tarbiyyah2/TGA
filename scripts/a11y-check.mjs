@@ -105,6 +105,7 @@ async function newPage(width, height) {
 let failures = 0;
 const desktop = await newPage(1280, 900);
 const phone = await newPage(360, 740);
+const tablet = await newPage(820, 1000);
 
 for (const p of pages) {
   const url = origin + p;
@@ -120,16 +121,51 @@ for (const p of pages) {
     for (const n of v.nodes.slice(0, 3)) problems.push(`    ${n.target.join(" ")}`);
   }
 
-  await phone.goto(url, { waitUntil: "load" });
-  const overflow = await phone.evaluate(
-    () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
-  );
-  if (overflow > 1) problems.push(`scrolls sideways by ${overflow}px at 360px wide`);
+  // Phone (360px) and small-laptop/tablet (820px) widths: nothing may stick
+  // out past the right edge. The page clips sideways overflow (globals.css),
+  // so check the elements themselves rather than the scroll width.
+  for (const [pg, w] of [[phone, 360], [tablet, 820]]) {
+    await pg.goto(url, { waitUntil: "load" });
+    const wide = await pg.evaluate(() => {
+      const vw = document.documentElement.clientWidth;
+      const out = [];
+      for (const el of document.querySelectorAll("body *")) {
+        const r = el.getBoundingClientRect();
+        if (!r.width || !r.height) continue;
+        const cs = getComputedStyle(el);
+        if (cs.position === "fixed" || cs.visibility === "hidden") continue;
+        // Parked off-screen on purpose until focused (the skip link).
+        if (el.classList.contains("skip-link") || r.right < 0) continue;
+        // Inside a horizontal scroller (e.g. a wide table) is fine.
+        let p = el.parentElement;
+        let scrolls = false;
+        while (p && p !== document.body) {
+          const o = getComputedStyle(p).overflowX;
+          if (o === "auto" || o === "scroll" || o === "hidden" || o === "clip") {
+            scrolls = true;
+            break;
+          }
+          p = p.parentElement;
+        }
+        if (scrolls) continue;
+        if (r.right > vw + 1 || r.left < -1) {
+          const id = el.id ? `#${el.id}` : "";
+          const cls = typeof el.className === "string" ? `.${el.className.trim().split(/\s+/).slice(0, 3).join(".")}` : "";
+          out.push(`${el.tagName.toLowerCase()}${id}${cls} (${Math.round(r.left)}–${Math.round(r.right)}px)`);
+          if (out.length >= 3) break;
+        }
+      }
+      return out;
+    });
+    for (const wEl of wide) problems.push(`sticks out sideways at ${w}px wide: ${wEl}`);
+  }
 
   if (problems.length) {
     failures++;
     console.log(`✗ ${p}`);
     for (const line of problems) console.log(`  ${line}`);
+    // GitHub annotation, so the failure is readable from the PR page.
+    if (process.env.GITHUB_ACTIONS) console.log(`::error title=a11y ${p}::${problems.join(" | ").slice(0, 900)}`);
   } else {
     console.log(`✓ ${p}`);
   }
