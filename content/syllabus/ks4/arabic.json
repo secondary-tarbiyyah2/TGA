@@ -3,410 +3,325 @@
   "subject": "Arabic",
   "slug": "arabic",
   "board": "Pearson Edexcel",
-  "qualification": "Level 1/Level 2 GCSE (9-1) in Arabic",
-  "code": "1AA0",
-  "specVersion": "Issue 5, October 2022 (read from the Pearson PDF)",
+  "qualification": "International GCSE (9-1) Arabic (First Language)",
+  "code": "4AA1",
+  "specVersion": "Issue 1, April 2017 (as stated in the specification PDF text read); first teaching September 2017, first assessment June 2019",
   "status": "Provisional",
-  "statusNote": "Papers, durations, marks, weightings, tiers and the five themes with all sub-topics were read from Pearson's Issue 5 specification PDF. Assessment-objective weightings, the grammar list (Appendix 2) and vocabulary list (Appendix 3) could not be read, and no end date was found on the pages opened, so status is Provisional. Year placement is a recommended sequence.",
+  "statusNote": "Replaces the earlier UK GCSE 1AA0 (foreign-language) file. The correct qualification is Pearson Edexcel International GCSE Arabic 4AA1, which is a FIRST LANGUAGE qualification: all work is in Arabic and candidates must already read and write Arabic at first-language level. It is not a foreign-language course, so the KS3 Arabic programme (beginner level) does not prepare pupils directly for it. Opened: the 4AA1 specification PDF only, read through a page-summarising fetch tool, not page by page. The Pearson qualification page, sample assessment materials, mark schemes and the current exam-materials listing were not opened. Search results showed 4AA1 exam papers dated up to August 2025, which suggests the qualification is current, but this was not confirmed. Year and term allocation is a recommended sequence.",
   "sources": [
     {
-      "title": "Pearson Edexcel GCSE Arabic (2017): qualification page",
-      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/arabic-2017.html"
-    },
-    {
-      "title": "Pearson GCSE (9-1) Arabic specification, Issue 5 (1AA0)",
-      "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Arabic/2017/specification-and-sample-assessments/specification-gcse2017-l12-arabic-issue5.pdf"
-    },
-    {
-      "title": "Pearson GCSE Arabic sample assessment materials, Issue 3 (2022)",
-      "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Arabic/2017/specification-and-sample-assessments/sams-gcse-arabic-2022-issue-3.pdf"
+      "title": "Pearson Edexcel International GCSE Arabic (First Language) 4AA1 specification (PDF)",
+      "url": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Arabic%20as%20a%20first%20language/2017/specification-and-sample-assessments/International-GCSE-Arabic-Spec.pdf"
     }
   ],
-  "years": "Years 10 to 11",
-  "tiers": "Foundation/Higher (one tier for all four papers)",
+  "years": "Years 10 to 11 (linear two-year course, all papers at the end)",
+  "tiers": "None stated",
   "assessment": [
     {
-      "paper": "Paper 1 (1AA0/1F, 1H)",
-      "title": "Listening and understanding in Arabic",
-      "duration": "Foundation 35 min; Higher 45 min (each includes 5 min reading time)",
+      "paper": "Paper 1 (4AA1/01)",
+      "title": "Reading, Summary and Grammar",
+      "duration": "2 hours 15 minutes",
+      "marks": 75,
+      "weight": "60%",
+      "content": "All ten topics; Part One Reading 49 marks, Part Two Summary 6 marks, Part Three Grammar 20 marks",
+      "format": "Part One: two text extracts with four questions each, then a comparison of the texts (Q4 and Q8 worth 10, Q9 worth 15). Part Two: summarise a third text (6 marks). Part Three: grammar questions (20 marks)."
+    },
+    {
+      "paper": "Paper 2 (4AA1/02)",
+      "title": "Writing",
+      "duration": "1 hour 30 minutes",
       "marks": 50,
-      "weight": "25%",
-      "content": "All five themes.",
-      "format": "Multiple-response and short open-response. Foundation: Section A 12 questions in English, Section B two in Arabic. Higher: Section A two in Arabic, Section B eight in English. No dictionaries."
-    },
-    {
-      "paper": "Paper 2 (1AA0/2F, 2H)",
-      "title": "Speaking in Arabic",
-      "duration": "Foundation 7 to 9 min; Higher 10 to 12 min; plus 12 min supervised preparation",
-      "marks": 70,
-      "weight": "25%",
-      "content": "All five themes; conversation uses two themes.",
-      "format": "Role play (10 marks), picture-based task (24), conversation (36). Student chooses the first conversation topic two weeks ahead; Pearson sets the second theme. Internally conducted, externally assessed, April/May window."
-    },
-    {
-      "paper": "Paper 3 (1AA0/3F, 3H)",
-      "title": "Reading and understanding in Arabic",
-      "duration": "Foundation 50 min; Higher 1 hour 5 min",
-      "marks": 50,
-      "weight": "25%",
-      "content": "All five themes.",
-      "format": "Ten questions in three sections: A in English, B in Arabic, C a translation from Arabic into English. Texts include advertisements, emails, letters, articles and literary texts."
-    },
-    {
-      "paper": "Paper 4 (1AA0/4F, 4H)",
-      "title": "Writing in Arabic",
-      "duration": "Foundation 1 hour 20 min; Higher 1 hour 25 min",
-      "marks": 60,
-      "weight": "25%",
-      "content": "All five themes.",
-      "format": "Foundation: three open-response questions and one translation into Arabic. Higher: two open-response questions and one translation into Arabic. Instructions in Arabic; vocalisation not expected."
+      "weight": "40%",
+      "content": "All ten topics",
+      "format": "Choose two of three titles, 25 marks each (15 for communication and content, 10 for application and accuracy of language); about 300 words each is advised, not enforced"
     }
   ],
-  "nonExam": "Speaking (Paper 2) is conducted in the centre by teachers, recorded and marked externally. No coursework.",
+  "nonExam": "None: 100% external assessment. There is no speaking or listening component. Papers are in Arabic only, with January and June series.",
   "aos": [
     {
-      "code": "Listening",
-      "desc": "Understand and respond to spoken Arabic (Paper 1). AO codes and weightings were not read.",
-      "weight": "Paper weighting 25%"
+      "code": "AO1",
+      "desc": "Read and understand texts; interpret ideas; explain writers' techniques; compare texts; summarise",
+      "weight": "44%"
     },
     {
-      "code": "Speaking",
-      "desc": "Communicate and interact in spoken Arabic (Paper 2). AO codes and weightings were not read.",
-      "weight": "Paper weighting 25%"
+      "code": "AO2",
+      "desc": "Write effectively and imaginatively for purpose and audience; organise text; spell accurately",
+      "weight": "40%"
     },
     {
-      "code": "Reading",
-      "desc": "Understand written Arabic, including translation into English (Paper 3). AO codes and weightings were not read.",
-      "weight": "Paper weighting 25%"
-    },
-    {
-      "code": "Writing",
-      "desc": "Write accurately in Arabic, including translation into Arabic (Paper 4). AO codes and weightings were not read.",
-      "weight": "Paper weighting 25%"
+      "code": "AO3",
+      "desc": "Show understanding of grammatical terms and structures; manipulate and analyse language",
+      "weight": "16%"
     }
   ],
   "units": [
     {
-      "ref": "1.1",
-      "title": "Who am I?",
-      "paper": "Papers 1 to 4, Theme 1: Identity and culture",
+      "ref": "T1",
+      "title": "Youth matters",
+      "paper": "Papers 1 and 2 (topic 1 of 10)",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Relationships, and what I was like when I was younger.",
-        "What friends and family are like; what makes a good friend.",
-        "Interests and socialising with friends and family.",
-        "Role models.",
-        "Study in the context of both the home country and Arabic-speaking communities."
+        "Reading, summary and writing tasks are linked to this topic",
+        "Read varied texts such as articles, speeches and journals on the theme",
+        "Write discursive, narrative or descriptive pieces on the theme"
       ],
-      "keyTerms": [
-        "أنا (I)",
-        "صديق (friend)",
-        "عائلة (family)"
-      ]
+      "keyTerms": ["شباب (youth)"]
     },
     {
-      "ref": "1.2",
-      "title": "Daily life",
-      "paper": "Papers 1 to 4, Theme 1: Identity and culture",
+      "ref": "T2",
+      "title": "Education",
+      "paper": "Papers 1 and 2 (topic 2 of 10)",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Customs and everyday life.",
-        "Food and drink.",
-        "Shopping.",
-        "Social media and technology: use, advantages and disadvantages."
+        "Reading, summary and writing tasks are linked to this topic",
+        "Practise comparing two texts on the theme",
+        "Write letters, articles or speeches on the theme"
       ],
-      "keyTerms": [
-        "طعام (food)",
-        "تسوق (shopping)",
-        "تكنولوجيا (technology)"
-      ]
+      "keyTerms": ["تعليم (education)"]
     },
     {
-      "ref": "1.3",
-      "title": "Cultural life",
-      "paper": "Papers 1 to 4, Theme 1: Identity and culture",
+      "ref": "T3",
+      "title": "Media",
+      "paper": "Papers 1 and 2 (topic 3 of 10)",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Celebrations and festivals.",
-        "Reading and music.",
-        "Sport.",
-        "Film and television."
+        "Reading, summary and writing tasks are linked to this topic",
+        "Analyse how writers create effect in reviews and articles",
+        "Write persuasive or informative pieces on the theme"
       ],
-      "keyTerms": [
-        "عيد (festival, Eid)",
-        "رياضة (sport)",
-        "موسيقى (music)"
-      ]
+      "keyTerms": ["إعلام (media)"]
     },
     {
-      "ref": "2.1",
-      "title": "Holidays",
-      "paper": "Papers 1 to 4, Theme 2: Local area, holiday and travel",
+      "ref": "T4",
+      "title": "Culture",
+      "paper": "Papers 1 and 2 (topic 4 of 10)",
       "year": "Y10",
       "term": "Spring",
       "points": [
-        "Holiday preferences.",
-        "Holiday experiences.",
-        "Holiday destinations."
+        "Reading, summary and writing tasks are linked to this topic",
+        "Read literary non-fiction such as autobiography, letters and travel writing",
+        "Write descriptive and narrative pieces on the theme"
       ],
-      "keyTerms": [
-        "عطلة (holiday)",
-        "سفر (travel)"
-      ]
+      "keyTerms": ["ثقافة (culture)"]
     },
     {
-      "ref": "2.2",
-      "title": "Travel and tourist transactions",
-      "paper": "Papers 1 to 4, Theme 2: Local area, holiday and travel",
+      "ref": "T5",
+      "title": "Sport and leisure",
+      "paper": "Papers 1 and 2 (topic 5 of 10)",
       "year": "Y10",
       "term": "Spring",
       "points": [
-        "Travel and accommodation.",
-        "Asking for help and dealing with problems.",
-        "Directions.",
-        "Eating out and shopping."
+        "Reading, summary and writing tasks are linked to this topic",
+        "Practise summarising the main points of a short text",
+        "Write articles, emails or leaflets on the theme"
       ],
-      "keyTerms": [
-        "فندق (hotel)",
-        "مطعم (restaurant)"
-      ]
+      "keyTerms": ["رياضة (sport)", "ترفيه (leisure)"]
     },
     {
-      "ref": "2.3",
-      "title": "Town, region and country",
-      "paper": "Papers 1 to 4, Theme 2: Local area, holiday and travel",
+      "ref": "T6",
+      "title": "Travel and tourism",
+      "paper": "Papers 1 and 2 (topic 6 of 10)",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "Reading, summary and writing tasks are linked to this topic",
+        "Read travel writing and reference-book extracts",
+        "Write descriptive and informative pieces on the theme"
+      ],
+      "keyTerms": ["سفر (travel)", "سياحة (tourism)"]
+    },
+    {
+      "ref": "T7",
+      "title": "Business, work and employment",
+      "paper": "Papers 1 and 2 (topic 7 of 10)",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "Reading, summary and writing tasks are linked to this topic",
+        "Write formal letters, emails and speeches on the theme",
+        "Compare writers' views of work and employment"
+      ],
+      "keyTerms": ["عمل (work)", "وظيفة (employment)"]
+    },
+    {
+      "ref": "T8",
+      "title": "Environment",
+      "paper": "Papers 1 and 2 (topic 8 of 10)",
+      "year": "Y11",
+      "term": "Spring",
+      "points": [
+        "Reading, summary and writing tasks are linked to this topic",
+        "Write discursive essays arguing a case on the theme",
+        "Identify structural techniques that writers use for effect"
+      ],
+      "keyTerms": ["بيئة (environment)"]
+    },
+    {
+      "ref": "T9",
+      "title": "Health",
+      "paper": "Papers 1 and 2 (topic 9 of 10)",
+      "year": "Y11",
+      "term": "Spring",
+      "points": [
+        "Reading, summary and writing tasks are linked to this topic",
+        "Write information leaflets and explanations on the theme",
+        "Select textual evidence to support interpretation"
+      ],
+      "keyTerms": ["صحة (health)"]
+    },
+    {
+      "ref": "T10",
+      "title": "Technology",
+      "paper": "Papers 1 and 2 (topic 10 of 10)",
+      "year": "Y11",
+      "term": "Spring",
+      "points": [
+        "Reading, summary and writing tasks are linked to this topic",
+        "Write balanced arguments and persuasive pieces on the theme",
+        "Revise across all ten topics for the final papers"
+      ],
+      "keyTerms": ["تكنولوجيا (technology)"]
+    },
+    {
+      "ref": "G1",
+      "title": "Grammar: nouns, case and the noun phrase",
+      "paper": "Paper 1 Part Three (Appendix 5)",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "Nominative, accusative and genitive case",
+        "Noun declension, definiteness, gender and number including dual and broken or weak plurals",
+        "Diptotes, Idafa, apposition, la of absolute negation, the five nouns",
+        "Adjective agreement and position; comparative and superlative"
+      ],
+      "keyTerms": ["إعراب (case endings)", "إضافة (idafa)", "ممنوع من الصرف (diptote)"]
+    },
+    {
+      "ref": "G2",
+      "title": "Grammar: sentences, pronouns and particles",
+      "paper": "Paper 1 Part Three (Appendix 5)",
       "year": "Y10",
       "term": "Summer",
       "points": [
-        "Weather.",
-        "Places to see.",
-        "Things to do."
+        "Equational sentences; kana and its sisters; inna and its sisters",
+        "Demonstratives, relative and emphatic pronouns, place and time adverbs",
+        "Prepositions, coordinating and subordinating conjunctions, interrogatives",
+        "Vocative, kam, exception particle, hamza of inna and anna"
       ],
-      "keyTerms": [
-        "مدينة (city, town)",
-        "طقس (weather)"
-      ]
+      "keyTerms": ["جملة اسمية (nominal sentence)", "كان وأخواتها", "إن وأخواتها"]
     },
     {
-      "ref": "3.1",
-      "title": "What school is like",
-      "paper": "Papers 1 to 4, Theme 3: School",
-      "year": "Y11",
-      "term": "Autumn",
-      "points": [
-        "School types and the school day.",
-        "Subjects.",
-        "Rules and pressures.",
-        "Celebrating success."
-      ],
-      "keyTerms": [
-        "مدرسة (school)",
-        "مادة (subject)"
-      ]
-    },
-    {
-      "ref": "3.2",
-      "title": "School activities",
-      "paper": "Papers 1 to 4, Theme 3: School",
-      "year": "Y11",
-      "term": "Autumn",
-      "points": [
-        "School trips.",
-        "Events and exchanges."
-      ],
-      "keyTerms": [
-        "رحلة (trip)",
-        "نشاط (activity)"
-      ]
-    },
-    {
-      "ref": "4.1",
-      "title": "Using languages beyond the classroom",
-      "paper": "Papers 1 to 4, Theme 4: Future aspirations, study and work",
-      "year": "Y11",
-      "term": "Spring",
-      "points": [
-        "Forming relationships through language.",
-        "Travel.",
-        "Employment."
-      ],
-      "keyTerms": [
-        "لغة (language)"
-      ]
-    },
-    {
-      "ref": "4.2",
-      "title": "Ambitions",
-      "paper": "Papers 1 to 4, Theme 4: Future aspirations, study and work",
-      "year": "Y11",
-      "term": "Spring",
-      "points": [
-        "Further study.",
-        "Volunteering.",
-        "Training."
-      ],
-      "keyTerms": [
-        "طموح (ambition)",
-        "تطوع (volunteering)"
-      ]
-    },
-    {
-      "ref": "4.3",
-      "title": "Work",
-      "paper": "Papers 1 to 4, Theme 4: Future aspirations, study and work",
-      "year": "Y11",
-      "term": "Spring",
-      "points": [
-        "Jobs.",
-        "Careers and professions."
-      ],
-      "keyTerms": [
-        "مهنة (profession)",
-        "عمل (work)"
-      ]
-    },
-    {
-      "ref": "5.1",
-      "title": "Bringing the world together",
-      "paper": "Papers 1 to 4, Theme 5: International and global dimension",
+      "ref": "G3",
+      "title": "Grammar: verbs and numbers",
+      "paper": "Paper 1 Part Three (Appendix 5)",
       "year": "Y11",
       "term": "Summer",
       "points": [
-        "Sports events.",
-        "Music events.",
-        "Campaigns and good causes."
+        "Verb conjugation across strong, doubled, weak, hamzated and impersonal verbs",
+        "Perfect and imperfect moods; active and passive voice; imperative; conditional",
+        "Participles, verbal nouns, verbs of praise and criticism, emotion and beginning",
+        "Cardinal and ordinal numbers, agreement with nouns, months and calendars"
       ],
-      "keyTerms": [
-        "حملة (campaign)"
-      ]
-    },
-    {
-      "ref": "5.2",
-      "title": "Environmental issues",
-      "paper": "Papers 1 to 4, Theme 5: International and global dimension",
-      "year": "Y11",
-      "term": "Summer",
-      "points": [
-        "Being 'green'.",
-        "Access to natural resources."
-      ],
-      "keyTerms": [
-        "بيئة (environment)",
-        "موارد (resources)"
-      ]
+      "keyTerms": ["فعل (verb)", "مبني للمجهول (passive)", "مصدر (verbal noun)"]
     }
   ],
   "commandWords": [
     {
-      "word": "Not recorded",
-      "meaning": "Papers use task-based instructions (role play, picture task, conversation, translation); no command-word table was read"
+      "word": "Not defined",
+      "meaning": "The specification read does not give a command-word table; questions use Arabic task wording"
     }
   ],
   "skills": [
-    "Listening for gist and detail in standard spoken Arabic, each extract heard twice",
-    "Speaking: role play, picture description and two-theme conversation",
-    "Reading authentic text types and translating a passage into English",
-    "Writing to specified word counts and translating into Arabic",
-    "Using present, past and (Higher) more complex structures accurately",
-    "Working without dictionaries in every paper",
-    "Preparing for an unpredictable question in speaking tasks"
+    "Reading: scan, interpret and infer explicit and implicit meaning, select textual evidence",
+    "Analyse how writers use linguistic and structural techniques for effect (Q4 and Q8, 10 marks each)",
+    "Compare two texts on ideas and techniques (Q9, 15 marks)",
+    "Summarise the main points of a short text clearly",
+    "Grammar: decline nouns and adjectives, conjugate verbs, parse, rewrite keeping meaning",
+    "Writing for purpose and audience: argue, narrate, describe, persuade, inform, explain",
+    "Writing forms: discursive essay, narrative, description, letter, article, email, speech, leaflet",
+    "Accurate spelling, wide vocabulary and varied basic and complex structures (for example cognate accusative, tamyiz, hal)"
   ],
   "prerequisites": [
-    {
-      "from": "KS3 Arabic Y7: meeting people, my family, free time",
-      "to": "1.1"
-    },
-    {
-      "from": "KS3 Arabic Y8: home, time, daily routine, past tense",
-      "to": "1.2"
-    },
-    {
-      "from": "KS3 Arabic Y9: future tense with sa- and sawfa, plans, invitations",
-      "to": "2.1"
-    },
-    {
-      "from": "KS3 Arabic Y9: food and shopping, prices",
-      "to": "2.2"
-    },
-    {
-      "from": "KS3 Arabic Y9: my school and opinions",
-      "to": "3.1"
-    },
-    {
-      "from": "KS3 Arabic Y9: plans for the future",
-      "to": "4.2"
-    },
-    {
-      "from": "KS3 Arabic Y8 to Y9: prepositions, adjectives, plurals and the dual",
-      "to": "2.3"
-    }
+    { "from": "First-language Arabic reading and writing fluency (no beginner pathway)", "to": "T1" },
+    { "from": "G1 Nouns, case and the noun phrase", "to": "G2" },
+    { "from": "G2 Sentences, pronouns and particles", "to": "G3" },
+    { "from": "Reading practice across T1 to T5", "to": "T6" }
   ],
   "links": [
     {
       "with": "Islamic Studies",
-      "topic": "Vocabulary of worship, festivals and belief (Ramadan, Eid)",
-      "unitRef": "1.3",
-      "how": "Arabic supplies the language for festivals; Islamic Studies explains their meaning."
+      "topic": "Reading Arabic texts, classical vocabulary and register",
+      "unitRef": "T4",
+      "how": "Islamic Studies builds familiarity with classical Arabic vocabulary; Arabic analyses language and technique"
     },
     {
       "with": "Qur'an and Tajweed",
-      "topic": "Reading Arabic script, vowels and sounds",
-      "unitRef": "1.1",
-      "how": "Qur'an lessons secure letter shapes and pronunciation that carry over to Arabic reading and speaking."
+      "topic": "Fluent reading, vowelling and case endings",
+      "unitRef": "G1",
+      "how": "Tajweed and Qur'an reading reinforce vowelled case endings and sound patterns used in grammar"
     },
     {
       "with": "English",
-      "topic": "Grammar terminology and translation technique",
-      "unitRef": "3.1",
-      "how": "English grammar terms (tense, agreement, plural) help pupils analyse Arabic; translation builds precision in both."
+      "topic": "Comparing texts, analysing writer's craft, summary skills",
+      "unitRef": "T3",
+      "how": "English teaches the same analysis and summary skills that Arabic Paper 1 assesses"
+    },
+    {
+      "with": "English",
+      "topic": "Writing for purpose and audience",
+      "unitRef": "T2",
+      "how": "Shared techniques for discursive, narrative and persuasive writing across both languages"
+    },
+    {
+      "with": "Business",
+      "topic": "Work, employment and recruitment",
+      "unitRef": "T7",
+      "how": "Business content on jobs and recruitment gives pupils material to write about in Arabic"
     },
     {
       "with": "Geography",
-      "topic": "Weather, places, regions and tourism",
-      "unitRef": "2.3",
-      "how": "Geography supplies place and climate content that pupils describe in Arabic."
+      "topic": "Environmental issues and tourism",
+      "unitRef": "T8",
+      "how": "Geography supplies evidence on environmental change that pupils can argue about in Arabic"
     },
     {
       "with": "Geography",
-      "topic": "Environmental issues and resources",
-      "unitRef": "5.2",
-      "how": "Pupils discuss green living and resources in Arabic, drawing on Geography knowledge."
+      "topic": "Tourism and travel",
+      "unitRef": "T6",
+      "how": "Geography gives place knowledge for descriptive and informative writing"
+    },
+    {
+      "with": "Science",
+      "topic": "Health, body systems and lifestyle",
+      "unitRef": "T9",
+      "how": "Science supplies facts for informative leaflets and explanations on health"
+    },
+    {
+      "with": "Computer Science / ICT",
+      "topic": "Digital technology and its effects",
+      "unitRef": "T10",
+      "how": "Computing gives the subject matter for balanced arguments on technology"
     },
     {
       "with": "PSHE",
-      "topic": "Healthy eating, technology and social media, friendship",
-      "unitRef": "1.2",
-      "how": "PSHE gives the issues; Arabic gives the vocabulary for opinions and advantages and disadvantages."
-    },
-    {
-      "with": "Careers and Business Studies",
-      "topic": "Jobs, careers and volunteering",
-      "unitRef": "4.3",
-      "how": "Careers content is the context for describing ambitions and professions in Arabic."
-    },
-    {
-      "with": "History",
-      "topic": "Arabic-speaking communities and cultural heritage",
-      "unitRef": "1.3",
-      "how": "Cultural context for the spec's requirement to study topics in Arabic-speaking communities."
-    },
-    {
-      "with": "Music and Drama",
-      "topic": "Music, film and performance",
-      "unitRef": "1.3",
-      "how": "Listening to Arabic songs and drama builds listening skills and cultural knowledge."
+      "topic": "Young people, media and wellbeing",
+      "unitRef": "T1",
+      "how": "PSHE issues provide topics for discursive and narrative writing"
     }
   ],
+  "contextNote": "4AA1 is a first-language qualification taken in Arabic only, so pupils need first-language reading and writing fluency before starting. If the school's pupils are learners of Arabic as a foreign language, the board's International GCSE does not offer a matching foreign-language Arabic route in the pages opened; confirm entry options with Pearson.",
   "gaps": [
-    "Assessment objective codes and weightings were not read (the spec contents page places them near page 62).",
-    "Grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read. The spec says the vocabulary lists are a non-exhaustive guide; no word count was seen.",
-    "Whether the qualification is still current for teaching in 2026-27 is unconfirmed. The pages opened give no end or withdrawal date, and Pearson exam materials dated August 2025 appeared in search results. Check with Pearson.",
-    "Papers 1 to 4 detail for the Higher tier was read from the specification only; sample assessment materials were read only for Foundation Papers 1 and 2.",
-    "The school's Drive holds a Pearson 2017 GCSE Arabic scheme of work. It was not opened for this file.",
-    "Year placement follows the school's Year 10 lesson content (Theme 1 in Y10) and is otherwise a recommended sequence; the school has no Year 11 Arabic lesson file yet.",
-    "Command-word taxonomy, mark grids for Paper 4 and the dialect policy were not recorded. The spec refers only to standard Arabic."
+    "Only the specification PDF was opened, via a page-summarising fetch tool; wording of topic descriptors and grammar appendix detail were not read page by page.",
+    "The ten topics are listed by the board without sub-topics; the points under each topic are generic task descriptions based on the skills and text-type requirements, not board sub-topic statements.",
+    "Sequencing of topics into Y10 and Y11 is a recommended order only.",
+    "The specification text is inconsistent on Paper 1 Part Three (an overview described two 10-mark questions, the table four 5-mark questions); question marks seen were Q4 10, Q8 10, Q9 15. Check the PDF and sample papers.",
+    "Command-word table not found; no Arabic task-word glossary recorded.",
+    "No set texts are named in the specification read; confirm no set-work list exists.",
+    "Specification dated Issue 1, April 2017; confirm any later issue, current series dates and whether the qualification is still on offer in 2027-28 (4AA1 exam papers up to August 2025 appeared in search results).",
+    "Sample assessment materials and mark schemes were not opened.",
+    "No foreign-language International GCSE Arabic was found; none was verified to exist or not exist."
   ]
 }
