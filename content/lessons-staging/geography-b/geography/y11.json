@@ -1,0 +1,2239 @@
+{
+ "subject": "Geography",
+ "year": "y11",
+ "board": "AQA GCSE (9-1) Geography 8035",
+ "boardShort": "AQA GCSE Geography 8035",
+ "source": "AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.2, 3.2.3.1 (UK demand and provision only), 3.2.3.2 (food option), 3.2.3.4 (energy option) and 3.3.1. Existing Y11 lessons already cover 3.2.3.1 global importance and inequality and the whole water option (3.2.3.3), so those are not re-taught. Case-study figures are approximate and flagged for teacher verification.",
+ "lessons": [
+  {
+   "unit": "Unit 1: The changing economic world (AQA 3.2.2)",
+   "n": 1,
+   "title": "Measuring development and the Demographic Transition Model",
+   "duration": 50,
+   "bigQuestion": "How do we decide whether a country is developed, and how does population change fit?",
+   "objectives": [
+    "Classify countries by level of development and quality of life",
+    "Evaluate economic and social measures of development, including GNI, HDI and life expectancy",
+    "Link the Demographic Transition Model to development"
+   ],
+   "successCriteria": [
+    "All: define development and name three measures",
+    "Most: explain what GNI and HDI show and their limits",
+    "Some: link each DTM stage to development with examples"
+   ],
+   "crossCurricular": "Mathematics: rates, averages and graphs; Science: population and health",
+   "smsc": "Social: concern for the wellbeing of all people (rahmah)",
+   "keywords": [
+    {
+     "term": "development",
+     "def": "the improvement in people's standard of living and quality of life"
+    },
+    {
+     "term": "GNI per capita",
+     "def": "gross national income divided by population: the average income per person"
+    },
+    {
+     "term": "HDI",
+     "def": "Human Development Index: combines life expectancy, education and income, scored from 0 to 1"
+    },
+    {
+     "term": "birth rate",
+     "def": "number of live births per 1,000 people per year"
+    },
+    {
+     "term": "death rate",
+     "def": "number of deaths per 1,000 people per year"
+    },
+    {
+     "term": "infant mortality",
+     "def": "deaths of babies under 1 per 1,000 live births"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define resource and give an example.",
+    "Which is more densely populated: a city or a rural area? Why?",
+    "Name one country you think is a high-income country and one a low-income country."
+   ],
+   "teach": [
+    {
+     "heading": "Classifying countries",
+     "table": {
+      "head": [
+       "Group",
+       "Meaning",
+       "Example"
+      ],
+      "rows": [
+       [
+        "HIC",
+        "High-income country: high GNI per person, advanced services",
+        "UK, Switzerland"
+       ],
+       [
+        "NEE",
+        "Newly emerging economy: rapid growth, industrialising",
+        "India, Nigeria, Brazil"
+       ],
+       [
+        "LIC",
+        "Low-income country: low GNI, mainly primary industry",
+        "Niger, Somalia"
+       ]
+      ]
+     },
+     "note": "Explain that the old terms 'developed/developing' are replaced by HIC, LIC and NEE. World Bank income groups use GNI per capita; thresholds change each year (approx. FY2025: low income about $1,145 or less; high income above about $14,005; teacher to check current). NEE: fast-growing industrial economy, for example China, India, Nigeria, Brazil. Misconception: development is only money."
+    },
+    {
+     "heading": "Measures of development",
+     "table": {
+      "head": [
+       "Measure",
+       "What it shows",
+       "Limit"
+      ],
+      "rows": [
+       [
+        "GNI per capita",
+        "Average income per person",
+        "Hides inequality; ignores unpaid work"
+       ],
+       [
+        "Life expectancy",
+        "Health and living conditions",
+        "Averages hide variation"
+       ],
+       [
+        "Infant mortality",
+        "Healthcare and sanitation",
+        "Data may be unreliable"
+       ],
+       [
+        "Literacy rate",
+        "Education level",
+        "Does not measure quality"
+       ],
+       [
+        "HDI",
+        "Income, health and education combined",
+        "Excludes environment and freedom"
+       ]
+      ]
+     },
+     "note": "Ask pupils which measure tells most about quality of life and which is easiest to compare. GNI per capita is an average that hides inequality. HDI mixes income, education and health, ranges 0 to 1. Teacher: update HDI figures from the UNDP annual report. As a guide, Switzerland and Norway are near 0.97 and Somalia and South Sudan below 0.4 (approx.)."
+    },
+    {
+     "heading": "The Demographic Transition Model",
+     "timeline": [
+      {
+       "label": "Stage 1",
+       "text": "High birth and death rates; population low and steady"
+      },
+      {
+       "label": "Stage 2",
+       "text": "Death rate falls, birth rate stays high; rapid growth"
+      },
+      {
+       "label": "Stage 3",
+       "text": "Birth rate falls; growth slows"
+      },
+      {
+       "label": "Stage 4",
+       "text": "Low birth and death rates; population high and stable"
+      },
+      {
+       "label": "Stage 5",
+       "text": "Birth rate below death rate; population may fall"
+      }
+     ],
+     "note": "Describe each stage and give examples (stage 2 and 3: many NEEs, such as Nigeria which is early stage 2 to 3 in birth rate, flagged as approx.; stage 4: UK; stage 5: Japan, Germany). Explain: death rates fall first (medicine, sanitation, food), birth rates fall later (contraception, women's education, urbanisation). Misconception: the DTM predicts exactly the same path for every country."
+    },
+    {
+     "heading": "Check understanding",
+     "check": {
+      "q": "In which DTM stage does the death rate fall while the birth rate remains high?",
+      "options": [
+       "Stage 1",
+       "Stage 3",
+       "Stage 2",
+       "Stage 4"
+      ],
+      "answer": 2,
+      "why": "Stage 2 is the rapid growth stage: death rates fall due to better health and food, but birth rates stay high. Stage 3 has falling births."
+     },
+     "note": "Answer C. A is stage 1; B is stage 2; D is stage 4 with some fall. Watch for pupils selecting B because a wide pyramid base suggests growth; they must note falling birth rate."
+    },
+    {
+     "heading": "Linking DTM to development",
+     "model": {
+      "problem": "Explain why birth rates fall as a country develops. (4 marks)",
+      "steps": [
+       "Better healthcare means fewer children die, so parents need fewer births.",
+       "More girls attend school and women enter work, delaying marriage and childbearing.",
+       "Contraception becomes available.",
+       "Urban living makes children costly rather than farm helpers."
+      ],
+      "answer": "Development improves health, education and women's choices, so birth rates fall."
+     },
+     "note": "Show the link: as a country develops, healthcare, education and women's rights improve, so birth rates fall. Ask: why do some LICs stay in stage 2 for longer? (Poverty, cultural views of family size, lack of education.) Model the reasoning chain."
+    }
+   ],
+   "practice": [
+    "State two measures of development and give one limitation of each. (4 marks)",
+    "Describe the difference between an LIC and an NEE. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain why GNI per capita alone is not a good measure of development. (3 marks)",
+    "Extend: Explain why death rates fall before birth rates in the DTM. (4 marks)",
+    "Stretch: Evaluate which measure gives the best picture of a country's quality of life. (6 marks)"
+   ],
+   "exit": [
+    "What does HDI combine?",
+    "Which DTM stage has a falling death rate and high birth rate?"
+   ],
+   "homework": "Choose two countries, find GNI per capita, life expectancy and HDI, and write which is more developed and why.",
+   "send": "SEND: matching cards for measures and meaning. EAL: bilingual glossary. Stretch: construct your own development index."
+  },
+  {
+   "unit": "Unit 1: The changing economic world (AQA 3.2.2)",
+   "n": 2,
+   "title": "Why is development uneven? Causes and consequences",
+   "duration": 50,
+   "bigQuestion": "What holds some countries back, and what are the effects?",
+   "objectives": [
+    "Explain physical, economic and historical causes of uneven development",
+    "Explain the social, economic and political consequences",
+    "Describe the link between development and migration"
+   ],
+   "successCriteria": [
+    "All: name two causes and one consequence",
+    "Most: explain physical, economic and historical causes",
+    "Some: evaluate which cause is most important"
+   ],
+   "crossCurricular": "History: colonialism and trade; Science: tropical disease",
+   "smsc": "Moral: justice and fair trade (adl)",
+   "keywords": [
+    {
+     "term": "primary product",
+     "def": "a raw material such as crops or minerals"
+    },
+    {
+     "term": "colonialism",
+     "def": "control of one country by another, often taking its resources"
+    },
+    {
+     "term": "debt",
+     "def": "money owed to other countries or banks"
+    },
+    {
+     "term": "trade barrier",
+     "def": "a rule, tax or quota limiting imports"
+    },
+    {
+     "term": "landlocked",
+     "def": "a country with no coastline"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name three measures of development.",
+    "What is DTM stage 2?",
+    "Define primary industry."
+   ],
+   "teach": [
+    {
+     "heading": "Physical causes",
+     "bullets": [
+      "Landlocked countries have higher trade costs.",
+      "Tropical diseases such as malaria reduce productivity.",
+      "Droughts, floods and earthquakes damage economies.",
+      "Few natural resources or poor soils."
+     ],
+     "compare": {
+      "left": {
+       "title": "Disadvantages",
+       "points": [
+        "Landlocked: Chad, Mali",
+        "Malaria-prone tropics",
+        "Drought-prone Sahel",
+        "Hazard-prone areas"
+       ]
+      },
+      "right": {
+       "title": "But not destiny",
+       "points": [
+        "Switzerland: landlocked and wealthy",
+        "Singapore: few natural resources",
+        "Good governance can offset geography",
+        "Technology can reduce hazard risk"
+       ]
+      },
+      "label": "physical causes"
+     },
+     "note": "Be careful of determinism: geography matters but is not destiny. Singapore has few natural resources but is rich. Ask pupils to find counter-examples of landlocked rich countries (Switzerland)."
+    },
+    {
+     "heading": "Economic causes",
+     "bullets": [
+      "Reliance on exporting low-value primary products.",
+      "Prices for raw materials fluctuate.",
+      "Debt payments take money from health and schools.",
+      "Trade barriers and subsidies in HICs limit LIC exports."
+     ],
+     "cycle": [
+      "Poor country exports raw materials",
+      "Prices fall or fluctuate",
+      "Low income and borrowing",
+      "Debt payments reduce spending on health and schools",
+      "Low productivity: little to invest in industry"
+     ],
+     "note": "Use the multiplier idea: processed goods earn more than raw ones (e.g. coffee beans versus roasted coffee). Many LICs spend more on debt payments than on health (state as general; teacher to quote Jubilee Debt Campaign data). Ask: why are manufacturing and services more reliable than primary exports?"
+    },
+    {
+     "heading": "Historical causes",
+     "timeline": [
+      {
+       "label": "1500s-1800s",
+       "text": "Slave trade and colonisation shape Africa, Asia and the Americas"
+      },
+      {
+       "label": "1800s",
+       "text": "Colonies supply raw materials for industries in Europe"
+      },
+      {
+       "label": "1950s-60s",
+       "text": "Many countries gain independence, often with weak infrastructure"
+      },
+      {
+       "label": "1980s",
+       "text": "Debt crises across Africa and Latin America"
+      },
+      {
+       "label": "Today",
+       "text": "Uneven trade and debt still shape development"
+      }
+     ],
+     "note": "Teach with care and evidence. Colonialism: many countries were governed to supply raw materials, and borders were drawn by colonial powers. The transatlantic slave trade removed millions of people from Africa. Conflict after independence often slowed growth. Pupils should state factors without blaming individuals. Link to Islamic ethics of justice (adl) and fair dealing."
+    },
+    {
+     "heading": "Consequences of uneven development",
+     "table": {
+      "head": [
+       "Type",
+       "Consequence",
+       "Example link"
+      ],
+      "rows": [
+       [
+        "Economic",
+        "Low incomes, low tax, few services",
+        "Unemployment rises"
+       ],
+       [
+        "Social",
+        "Poorer health, lower education",
+        "Higher infant mortality"
+       ],
+       [
+        "Political",
+        "Weak governments, conflict",
+        "Reduces investment"
+       ],
+       [
+        "Migration",
+        "Brain drain and remittances",
+        "Nurses leaving for HICs"
+       ]
+      ]
+     },
+     "note": "Use the table, and ask pupils to explain the links (e.g. poor health reduces workforce). Migration: skilled workers (nurses, doctors) leave an LIC (brain drain), while remittances send money back. Ask: is migration a cause or consequence? (Both.) Good examples: remittances are a major part of income for several countries (teacher to quote World Bank data)."
+    },
+    {
+     "heading": "Check and apply",
+     "check": {
+      "q": "Which is an economic cause of uneven development?",
+      "options": [
+       "Large earthquake",
+       "Dependence on exporting raw materials with unstable prices",
+       "Being landlocked",
+       "A colonial boundary"
+      ],
+      "answer": 1,
+      "why": "Dependence on primary exports is an economic cause. An earthquake and being landlocked are physical; colonial boundaries are historical."
+     },
+     "note": "Answer B. Use C to discuss: aid may help but is not a cause. Ask pupils for a historical factor."
+    },
+    {
+     "heading": "Model: explain a cycle",
+     "model": {
+      "problem": "Explain how debt can keep a country poor. (4 marks)",
+      "steps": [
+       "Low-income countries borrow money to build infrastructure.",
+       "Debt repayments take a large share of government income.",
+       "Less money is left for schools, health and roads.",
+       "With a weaker workforce and poor infrastructure, growth is slow, so more borrowing is needed."
+      ],
+      "answer": "Debt repayments reduce spending on development, creating a cycle of poverty."
+     },
+     "note": "Model writing a developed answer in three sentences, then ask pupils to improve it with a place name."
+    }
+   ],
+   "practice": [
+    "Give two physical and two economic causes of uneven development. (4 marks)",
+    "Explain one consequence of uneven development for health. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain how historical factors have affected development in one region. (4 marks)",
+    "Extend: Explain how migration can be both good and bad for an LIC. (4 marks)",
+    "Stretch: Assess which factor (physical, economic or historical) is most important in explaining uneven development. (6 marks)"
+   ],
+   "exit": [
+    "Name one physical cause.",
+    "What is the brain drain?"
+   ],
+   "homework": "Research the main exports of one LIC and write why this might limit development.",
+   "send": "SEND: cause-effect sort. EAL: key word cards. Stretch: research the Jubilee 2000 campaign."
+  },
+  {
+   "unit": "Unit 1: The changing economic world (AQA 3.2.2)",
+   "n": 3,
+   "title": "Reducing the development gap: strategies and tourism in Jamaica",
+   "duration": 50,
+   "bigQuestion": "Which strategies work best to reduce the gap, and can tourism help?",
+   "objectives": [
+    "Describe and evaluate strategies: investment, aid, Fairtrade, debt relief, microfinance, intermediate technology",
+    "Explain how tourism growth in an LIC/NEE can reduce the development gap",
+    "Evaluate benefits and costs using Jamaica"
+   ],
+   "successCriteria": [
+    "All: describe three strategies",
+    "Most: explain advantages and disadvantages",
+    "Some: evaluate tourism's contribution to reducing the gap"
+   ],
+   "crossCurricular": "Business: trade and enterprise; Economics: multipliers",
+   "smsc": "Moral: charity and fair trade; sadaqah as benefit to the poor",
+   "keywords": [
+    {
+     "term": "aid",
+     "def": "help given to a country by governments or organisations, such as money, goods or expertise"
+    },
+    {
+     "term": "Fairtrade",
+     "def": "a scheme that guarantees farmers a minimum price and a premium for community projects"
+    },
+    {
+     "term": "debt relief",
+     "def": "cancelling or reducing a country's debt"
+    },
+    {
+     "term": "microfinance",
+     "def": "very small loans to poor people to start small businesses"
+    },
+    {
+     "term": "intermediate technology",
+     "def": "simple, affordable technology that suits local needs"
+    },
+    {
+     "term": "multiplier effect",
+     "def": "when money spent in one place creates more jobs and income elsewhere"
+    }
+   ],
+   "starter": [
+    "Bismillah. Give two causes of uneven development.",
+    "Define debt.",
+    "What is tourism?"
+   ],
+   "teach": [
+    {
+     "heading": "Strategies to close the gap",
+     "table": {
+      "head": [
+       "Strategy",
+       "How it helps",
+       "Limit"
+      ],
+      "rows": [
+       [
+        "Investment (FDI)",
+        "Jobs, technology, tax income",
+        "Profits may leave the country"
+       ],
+       [
+        "Aid",
+        "Money, food, expertise",
+        "Dependency; may be tied to donor goods"
+       ],
+       [
+        "Fairtrade",
+        "Fair prices and community premium",
+        "Only helps some farmers"
+       ],
+       [
+        "Debt relief",
+        "More money for services",
+        "May come with conditions"
+       ],
+       [
+        "Microfinance",
+        "Small loans for local businesses",
+        "Loans small; repayments risk"
+       ],
+       [
+        "Intermediate technology",
+        "Cheap, local, easy to maintain",
+        "Small scale"
+       ]
+      ]
+     },
+     "note": "Work through the table. Ask pupils to rank by effectiveness and justify. Real examples: Grameen Bank (Bangladesh) microfinance, whose founder Muhammad Yunus won the Nobel Peace Prize in 2006; Jubilee 2000 campaign and later G8 debt cancellation (2005); Practical Action intermediate technology (for example pedal-powered or hand-operated pumps). Misconception: aid always helps. Tied aid and corruption can limit benefits."
+    },
+    {
+     "heading": "Check: match the strategy",
+     "check": {
+      "q": "A woman in Bangladesh borrows a small sum to buy a sewing machine. Which strategy is this?",
+      "options": [
+       "Debt relief",
+       "Foreign direct investment",
+       "Microfinance",
+       "Tied aid"
+      ],
+      "answer": 2,
+      "why": "Microfinance gives very small loans to people who cannot access banks. The other strategies work at national or company level."
+     },
+     "note": "Answer C. A is aid; B is investment; D debt relief. Ask pupils to justify why microfinance fits the description."
+    },
+    {
+     "heading": "Tourism in Jamaica",
+     "bullets": [
+      "Jamaica: Caribbean island, an upper-middle-income NEE.",
+      "Tourism is one of its largest earners and employers.",
+      "About 2.7 million stopover visitors in 2019 (approx.)."
+     ],
+     "timeline": [
+      {
+       "label": "1960s",
+       "text": "Tourism grows after independence in 1962"
+      },
+      {
+       "label": "1980s",
+       "text": "All-inclusive resorts expand"
+      },
+      {
+       "label": "2019",
+       "text": "About 2.7 million stopover visitors (approx.)"
+      },
+      {
+       "label": "2020",
+       "text": "COVID-19 collapses tourist numbers"
+      },
+      {
+       "label": "After 2021",
+       "text": "Recovery, but storms remain a risk"
+      }
+     ],
+     "note": "State that figures are approximate and the teacher should update from the Jamaica Tourist Board. Draw out multiplier: hotels need food, laundry, taxis, craft sellers. Ask: what attracts tourists? (Beaches, music, culture.) Jamaica lies in the hurricane belt (Hurricane Beryl passed close in July 2024; verify), so storms are a recurring risk to tourism."
+    },
+    {
+     "heading": "Evaluating tourism",
+     "compare": {
+      "left": {
+       "title": "Benefits",
+       "points": [
+        "Foreign currency and tax income",
+        "Jobs in hotels, transport, crafts",
+        "Multiplier effect: farms, taxis, guides",
+        "Investment in airports and roads"
+       ]
+      },
+      "right": {
+       "title": "Costs",
+       "points": [
+        "Seasonal and low-paid jobs",
+        "Leakage: profits to foreign firms",
+        "Damage to reefs and coast",
+        "Vulnerable to hurricanes and recession"
+       ]
+      },
+      "label": "tourism"
+     },
+     "note": "Use the compare to build a 6-mark judgement. Draw out leakage: profits of foreign-owned resorts leave Jamaica. Environmental costs: coral damage, waste. Ask pupils: how could ecotourism reduce costs? Model the judgement."
+    },
+    {
+     "heading": "Model: how tourism reduces the gap",
+     "model": {
+      "problem": "Explain how tourism growth can reduce the development gap in an LIC or NEE. (4 marks)",
+      "steps": [
+       "Tourists spend money on hotels, food and excursions: income for the country.",
+       "This creates jobs, so more people have wages and pay tax.",
+       "Governments use taxes to improve roads, schools and clinics.",
+       "The multiplier effect: workers spend wages locally, creating more jobs."
+      ],
+      "answer": "Tourism brings money, jobs and tax, which pay for services that improve development."
+     },
+     "note": "Write along, emphasising chain reasoning."
+    }
+   ],
+   "practice": [
+    "Describe two strategies used to reduce the development gap. (2 marks)",
+    "Give one disadvantage of aid. (1 mark)"
+   ],
+   "independent": [
+    "Core: Explain how Fairtrade helps farmers. (3 marks)",
+    "Extend: Explain one cost of tourism for an NEE. (3 marks)",
+    "Stretch: Evaluate how far tourism has reduced the development gap in Jamaica. (6 marks)"
+   ],
+   "exit": [
+    "Define microfinance.",
+    "Name one benefit and one cost of tourism."
+   ],
+   "homework": "Write a short advert for ecotourism in an LIC or NEE explaining how it helps local people.",
+   "send": "SEND: matching cards and a pre-structured table. EAL: key words with images. Stretch: compare Jamaica with a country where tourism is a smaller part of the economy."
+  },
+  {
+   "unit": "Unit 1: The changing economic world (AQA 3.2.2)",
+   "n": 4,
+   "title": "Nigeria: an NEE case study of context, economy and quality of life",
+   "duration": 50,
+   "bigQuestion": "How is Nigeria changing, and who benefits?",
+   "objectives": [
+    "Locate Nigeria and explain its importance",
+    "Describe its economy, TNCs, aid and environmental impacts",
+    "Evaluate changes in quality of life"
+   ],
+   "successCriteria": [
+    "All: locate Nigeria and give two facts",
+    "Most: explain how industry, TNCs and aid affect Nigeria",
+    "Some: evaluate economic growth against environmental and social costs"
+   ],
+   "crossCurricular": "Economics: resources and trade; Citizenship: global links",
+   "smsc": "Moral: stewardship of the environment and fairness in sharing wealth",
+   "keywords": [
+    {
+     "term": "TNC",
+     "def": "transnational corporation: a company operating in several countries"
+    },
+    {
+     "term": "oil spill",
+     "def": "oil released into the environment, damaging land and water"
+    },
+    {
+     "term": "remittance",
+     "def": "money sent home by migrants working abroad"
+    },
+    {
+     "term": "GDP",
+     "def": "gross domestic product: total value of goods and services produced"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define NEE.",
+    "Name one measure of development.",
+    "Name two TNCs you know."
+   ],
+   "teach": [
+    {
+     "heading": "Context: where and what",
+     "bullets": [
+      "West Africa, on the Gulf of Guinea; borders Benin, Niger, Chad and Cameroon.",
+      "Population over 200 million (approx.): Africa's most populous country.",
+      "Capital Abuja; largest city Lagos."
+     ],
+     "table": {
+      "head": [
+       "Fact",
+       "Detail (approx.)"
+      ],
+      "rows": [
+       [
+        "Population",
+        "Over 200 million"
+       ],
+       [
+        "Independence",
+        "1960 (from Britain)"
+       ],
+       [
+        "Main export",
+        "Crude oil (historically about 90% of export earnings)"
+       ],
+       [
+        "Largest city",
+        "Lagos"
+       ],
+       [
+        "Languages",
+        "English official; Hausa, Yoruba, Igbo widely spoken"
+       ]
+      ]
+     },
+     "note": "Use an atlas. State that Nigeria has about 220 million people (approx. 2023, check UN). Ask: why is Nigeria important in Africa? (Population, economy, oil, culture.) Mention colonial history: British control until independence in 1960. Ask pupils to locate neighbouring countries and the Niger Delta."
+    },
+    {
+     "heading": "Economy and TNCs",
+     "compare": {
+      "left": {
+       "title": "TNC benefits",
+       "points": [
+        "Jobs and training",
+        "Tax and royalties to government",
+        "Technology and infrastructure",
+        "Higher exports"
+       ]
+      },
+      "right": {
+       "title": "TNC costs",
+       "points": [
+        "Profits sent abroad",
+        "Oil spills in the Niger Delta",
+        "Low-skilled jobs kept for locals",
+        "Government depends on oil prices"
+       ]
+      },
+      "label": "TNCs"
+     },
+     "note": "Explain: oil drives export earnings and government revenue, but employs few people. Manufacturing and services (telecoms, banking, film, tech) are growing. TNCs: Shell has operated in the Niger Delta for decades, and others such as Unilever, Nestle, Guinness and MTN operate there (teacher to verify current ownership; Shell has been selling onshore assets). Benefits: jobs, tax, technology. Costs: profits leave the country, environmental damage, weak local ownership."
+    },
+    {
+     "heading": "Aid and environment",
+     "timeline": [
+      {
+       "label": "1958",
+       "text": "Oil discovered in the Niger Delta"
+      },
+      {
+       "label": "1960",
+       "text": "Independence from Britain"
+      },
+      {
+       "label": "1991",
+       "text": "Capital moved from Lagos to Abuja"
+      },
+      {
+       "label": "2011",
+       "text": "UNEP Ogoniland report on oil pollution"
+      },
+      {
+       "label": "2020",
+       "text": "Nigeria declared free of wild polio (check)"
+      }
+     ],
+     "note": "Aid: Nigeria receives aid from UK and other donors, and NGO health and education projects, e.g. polio eradication campaigns (Nigeria was declared free of wild polio in 2020, approx. verify). Environment: the UNEP 2011 assessment of Ogoniland found widespread oil pollution and said a clean-up could take 25 to 30 years. Pupils should explain the link between oil pollution, fishing and farming incomes."
+    },
+    {
+     "heading": "Quality of life",
+     "check": {
+      "q": "Which statement best describes Nigeria as an NEE?",
+      "options": [
+       "It has no industry",
+       "It is growing economically but with inequality and environmental costs",
+       "It has the highest HDI in Africa",
+       "It has no TNCs"
+      ],
+      "answer": 1,
+      "why": "Nigeria is growing but with large inequalities and pollution. The other statements are false."
+     },
+     "note": "Show a mixed picture: HDI roughly 0.55 (approx., UNDP; low human development band), life expectancy around 53 to 54 years (approx.), and large differences between north and south and rich and poor. Pupils should avoid single stories: Nigeria has world-famous music, film and technology firms. Use the check to test understanding of NEEs."
+    },
+    {
+     "heading": "Model: a 6-mark evaluation",
+     "model": {
+      "problem": "Assess the impact of TNCs on Nigeria. (6 marks)",
+      "steps": [
+       "Positive: TNCs such as oil and telecom companies provide jobs, taxes and technology.",
+       "Positive: foreign investment can fund roads and power projects.",
+       "Negative: oil spills in the Niger Delta damaged fishing and farming; the UNEP Ogoniland report said clean-up could take 25 to 30 years.",
+       "Negative: profits leave Nigeria and the economy is exposed to oil price falls.",
+       "Judgement: TNCs contribute to growth, but benefits are uneven and environmental costs fall on local people."
+      ],
+      "answer": "A balanced judgement referring to both benefits and costs."
+     },
+     "note": "Show the three-part structure: advantages, disadvantages, judgement."
+    }
+   ],
+   "practice": [
+    "Describe the location of Nigeria. (2 marks)",
+    "State two ways TNCs can benefit Nigeria. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain how oil extraction has caused environmental problems in Nigeria. (4 marks)",
+    "Extend: Explain how aid can improve quality of life in Nigeria. (3 marks)",
+    "Stretch: Assess the extent to which quality of life has improved in Nigeria. (6 marks)"
+   ],
+   "exit": [
+    "Name one TNC operating in Nigeria.",
+    "What is the main export of Nigeria?"
+   ],
+   "homework": "Prepare a fact file on Nigeria with five facts and a source for each.",
+   "send": "SEND: fact file template. EAL: bilingual keywords. Stretch: compare Nigeria with another NEE (India)."
+  },
+  {
+   "unit": "Unit 1: The changing economic world (AQA 3.2.2)",
+   "n": 5,
+   "title": "UK economic change: de-industrialisation, globalisation and a post-industrial economy",
+   "duration": 50,
+   "bigQuestion": "How and why has the UK's economy changed since 1950?",
+   "objectives": [
+    "Explain de-industrialisation, globalisation and the rise of the post-industrial economy",
+    "Describe the role of science parks, business parks and policy",
+    "Explain how modern industry can be more environmentally sustainable"
+   ],
+   "successCriteria": [
+    "All: define de-industrialisation and name two causes",
+    "Most: explain the growth of the post-industrial economy",
+    "Some: evaluate the impact of change and the sustainability of modern industry"
+   ],
+   "crossCurricular": "History: Industrial Revolution and Thatcher-era change; Business Studies: industry sectors",
+   "smsc": "Moral: stewardship in industry (khalifah)",
+   "keywords": [
+    {
+     "term": "de-industrialisation",
+     "def": "the decline of traditional manufacturing industry"
+    },
+    {
+     "term": "globalisation",
+     "def": "growing connections between countries through trade, investment and technology"
+    },
+    {
+     "term": "post-industrial economy",
+     "def": "an economy based mainly on services and technology rather than manufacturing"
+    },
+    {
+     "term": "quaternary industry",
+     "def": "knowledge-based industries such as research and IT"
+    },
+    {
+     "term": "science park",
+     "def": "a group of high-tech firms working together near a university"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the four sectors of industry.",
+    "What does TNC stand for?",
+    "Give one example of a service job."
+   ],
+   "teach": [
+    {
+     "heading": "De-industrialisation: causes",
+     "bullets": [
+      "Cheaper manufacturing overseas, especially in NEEs.",
+      "Closure of coal mines and heavy industry.",
+      "Lack of investment in older factories.",
+      "Automation reduced jobs."
+     ],
+     "timeline": [
+      {
+       "label": "1950s",
+       "text": "Manufacturing is a third of jobs (approx.)"
+      },
+      {
+       "label": "1970s-80s",
+       "text": "Closures in steel, shipbuilding and coal"
+      },
+      {
+       "label": "1984-85",
+       "text": "Miners' strike and pit closures"
+      },
+      {
+       "label": "1990s",
+       "text": "Service sector and call centres grow"
+      },
+      {
+       "label": "Today",
+       "text": "Services are around 80% of jobs (approx.)"
+      }
+     ],
+     "note": "Place on timeline. Teacher: manufacturing was about a third of UK employment in the 1950s and is now under 10% (approx., ONS). Ask: which regions lost most? (North of England, South Wales, central Scotland.) Misconception: manufacturing has disappeared; the UK still manufactures high-value goods (aerospace, pharmaceuticals)."
+    },
+    {
+     "heading": "Globalisation and the post-industrial economy",
+     "table": {
+      "head": [
+       "Change",
+       "Example",
+       "Effect on UK"
+      ],
+      "rows": [
+       [
+        "Offshoring of manufacturing",
+        "Clothes and electronics made abroad",
+        "Jobs lost in UK factories"
+       ],
+       [
+        "Growth of services",
+        "Finance in the City, call centres",
+        "Jobs in cities, mainly south"
+       ],
+       [
+        "Growth of quaternary industry",
+        "Cambridge Science Park (established 1970)",
+        "High-skilled jobs and innovation"
+       ],
+       [
+        "Foreign investment",
+        "Nissan in Sunderland",
+        "Jobs from TNCs"
+       ]
+      ]
+     },
+     "note": "Link globalisation to TNCs and improved transport and communications: 'shrinking world'. UK services include finance, law, creative industries and education. Use the table. Ask pupils: why is London's financial role helped by time zones? (Between Asia and the Americas.)"
+    },
+    {
+     "heading": "Science parks, business parks and policy",
+     "bullets": [
+      "Science parks: high-tech research linked to universities, such as Cambridge.",
+      "Business parks: offices on edge-of-city sites, good for road links.",
+      "Policy: enterprise zones, regional investment and devolved city regions."
+     ],
+     "check": {
+      "q": "Which best describes a post-industrial economy?",
+      "options": [
+       "Based mainly on mining",
+       "Based mainly on services and technology rather than manufacturing",
+       "Based only on farming",
+       "Without any industry"
+      ],
+      "answer": 1,
+      "why": "A post-industrial economy relies mainly on services and high-tech industry. It still has some manufacturing."
+     },
+     "note": "Mention regeneration in Salford (MediaCityUK, BBC relocated from 2011) and the Northern Powerhouse idea (2014). Be neutral: policy effects are debated. Ask: why locate near a motorway and a university? Check understanding."
+    },
+    {
+     "heading": "Making modern industry more sustainable",
+     "compare": {
+      "left": {
+       "title": "Sustainable practice",
+       "points": [
+        "Renewable energy on site",
+        "Recycling of waste and water",
+        "Electric vehicle production",
+        "Landscaping and wildlife areas"
+       ]
+      },
+      "right": {
+       "title": "Benefits",
+       "points": [
+        "Lower carbon emissions",
+        "Lower running costs",
+        "Better public image",
+        "Jobs in clean industries"
+       ]
+      },
+      "label": "practice and benefit"
+     },
+     "note": "Use Nissan Sunderland as an example (teacher to verify current details): electric vehicle production including battery manufacturing, on-site solar panels and wind turbines, recycling of materials. Siemens Gamesa's blade factory in Hull (opened 2016) is another example of green manufacturing. Ask pupils to apply: reduce, reuse, recycle, renew."
+    },
+    {
+     "heading": "Model: explain the change",
+     "model": {
+      "problem": "Explain how globalisation led to de-industrialisation in the UK. (4 marks)",
+      "steps": [
+       "Transport and communication improved, so firms could produce anywhere.",
+       "TNCs moved production to NEEs where wages are lower.",
+       "UK factories closed because they could not compete on cost.",
+       "Jobs were lost in traditional manufacturing areas such as the North."
+      ],
+      "answer": "Globalisation lets TNCs move production overseas, causing factory closures and job loss in the UK."
+     },
+     "note": "Pupils copy the chain and then substitute their own example."
+    }
+   ],
+   "practice": [
+    "Describe two features of the post-industrial economy. (2 marks)",
+    "Give two causes of de-industrialisation in the UK. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain how a science park supports economic growth. (3 marks)",
+    "Extend: Explain how modern industry can be more sustainable. (4 marks)",
+    "Stretch: Assess the impact of de-industrialisation on one region of the UK. (6 marks)"
+   ],
+   "exit": [
+    "Define post-industrial economy.",
+    "Name one TNC that has invested in the UK."
+   ],
+   "homework": "Research one UK city that has been transformed since de-industrialisation and write a short summary.",
+   "send": "SEND: sorting cards for causes and effects. EAL: glossary. Stretch: compare UK change with South Korea."
+  },
+  {
+   "unit": "Unit 1: The changing economic world (AQA 3.2.2)",
+   "n": 6,
+   "title": "Rural change, the north-south divide and the UK's links with the world",
+   "duration": 50,
+   "bigQuestion": "How is the UK countryside changing, and what links the UK to the world?",
+   "objectives": [
+    "Describe rural change and explain the causes in an accessible and a remote area",
+    "Explain the north-south divide and strategies to reduce it",
+    "Describe the UK's trade, cultural and political links"
+   ],
+   "successCriteria": [
+    "All: describe two rural changes",
+    "Most: explain the north-south divide with evidence",
+    "Some: evaluate the importance of the UK's links with the wider world"
+   ],
+   "crossCurricular": "History: Commonwealth and the EU; Citizenship: UK in the world",
+   "smsc": "Social: good neighbourliness in communities (jiwar)",
+   "keywords": [
+    {
+     "term": "counterurbanisation",
+     "def": "movement of people from cities to the countryside"
+    },
+    {
+     "term": "north-south divide",
+     "def": "the economic and social differences between the north and south of the UK"
+    },
+    {
+     "term": "Commonwealth",
+     "def": "a group of 56 countries, mostly former British colonies"
+    },
+    {
+     "term": "devolution",
+     "def": "passing power from national to regional governments"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define counterurbanisation.",
+    "Give one UK region hit by de-industrialisation.",
+    "Name one type of service industry."
+   ],
+   "teach": [
+    {
+     "heading": "Rural change in the UK",
+     "compare": {
+      "left": {
+       "title": "Accessible rural area",
+       "points": [
+        "Commuters move in; population grows",
+        "House prices rise: young locals priced out",
+        "Science and business parks, for example near Cambridge",
+        "Pressure on services and roads"
+       ]
+      },
+      "right": {
+       "title": "Remote rural area",
+       "points": [
+        "Ageing population and out-migration",
+        "Loss of shops, schools and buses",
+        "Farming and tourism are main jobs",
+        "Slow internet; fewer jobs"
+       ]
+      },
+      "label": "rural change"
+     },
+     "note": "Contrast an accessible rural area (for example South Cambridgeshire, with commuting to Cambridge) and a remote rural area (for example the Scottish Highlands). Teacher to choose and verify a named example. Accessible: population grows, house prices rise, villages become dormitory settlements. Remote: ageing population, loss of services (bus, school, shop) and slower growth. Ask: is counterurbanisation good for everyone?"
+    },
+    {
+     "heading": "The north-south divide",
+     "table": {
+      "head": [
+       "Indicator",
+       "South East / London",
+       "North East / North West"
+      ],
+      "rows": [
+       [
+        "Average earnings",
+        "Higher",
+        "Lower on average"
+       ],
+       [
+        "House prices",
+        "Much higher",
+        "Lower"
+       ],
+       [
+        "Employment",
+        "Services and finance",
+        "More manufacturing and public sector"
+       ],
+       [
+        "Life expectancy",
+        "Usually higher",
+        "Usually lower in deprived areas"
+       ]
+      ]
+     },
+     "note": "Describe the pattern: higher incomes, house prices and productivity in London and the South East; lower in parts of the North and Wales, with exceptions. Causes: de-industrialisation, concentration of finance and government in the South, transport and investment differences. Use data from the ONS (teacher to insert the latest GVA per head and life expectancy figures). Warn against stereotypes."
+    },
+    {
+     "heading": "Reducing the divide",
+     "check": {
+      "q": "Which strategy aims to reduce the north-south divide?",
+      "options": [
+       "Closing northern railways",
+       "Locating media and public jobs in northern cities",
+       "Banning new housing in the north",
+       "Cutting all investment"
+      ],
+      "answer": 1,
+      "why": "Relocating media and public bodies, such as the BBC to Salford, brings jobs to the North. The other options would widen the gap."
+     },
+     "note": "Strategies: devolution (combined authorities), investment in transport and broadband, enterprise zones, relocating public bodies and media (BBC to Salford in 2011). Criticism: results are slow and uneven. Ask: how could technology reduce the gap? (Remote work.) Check."
+    },
+    {
+     "heading": "The UK's links with the wider world",
+     "table": {
+      "head": [
+       "Link",
+       "Examples"
+      ],
+      "rows": [
+       [
+        "Trade",
+        "EU, USA, China; services (finance, education) and cars exported"
+       ],
+       [
+        "Cultural",
+        "Commonwealth migration, English language, global media and sport"
+       ],
+       [
+        "Political",
+        "UN Security Council, NATO, G7, Commonwealth"
+       ],
+       [
+        "Investment",
+        "TNC investment in and from the UK"
+       ]
+      ]
+     },
+     "note": "Cover trade, cultural and political links in a table. State trade shares as approx.: the EU remained the UK's largest trading partner after Brexit (31 January 2020 exit; transition ended 31 December 2020), with around 40+% of exports (approx., ONS). The UK is a permanent member of the UN Security Council, a member of NATO, the G7 and the Commonwealth. Culture: English language, music, Premier League, universities."
+    },
+    {
+     "heading": "Model: write a judgement",
+     "model": {
+      "problem": "Assess the importance of the UK's links with other countries. (6 marks)",
+      "steps": [
+       "Trade: exports of cars and services bring income and jobs.",
+       "Investment: foreign firms like Nissan employ UK workers.",
+       "Political: UN, NATO and the Commonwealth give influence and security.",
+       "Cultural: migration and languages enrich the economy and society.",
+       "Limit: dependence on others can cause risks, for example supply chain disruption.",
+       "Judgement: links are vital to the economy, but resilience needs diverse partners."
+      ],
+      "answer": "Links are important for trade and influence, though dependence brings risk."
+     },
+     "note": "Model an answer showing how two sides are weighed."
+    }
+   ],
+   "practice": [
+    "Describe two changes in a rural area you have studied. (2 marks)",
+    "State two UK political links with other countries. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain why house prices are higher in the south than in the north. (3 marks)",
+    "Extend: Explain why some remote rural areas have an ageing population. (3 marks)",
+    "Stretch: Evaluate the success of one strategy to reduce the north-south divide. (6 marks)"
+   ],
+   "exit": [
+    "Define north-south divide.",
+    "Name one Commonwealth link."
+   ],
+   "homework": "Make a table of three UK links with one example each and rank them by importance.",
+   "send": "SEND: guided table. EAL: key words with pictures. Stretch: research the Northern Powerhouse or a combined authority."
+  },
+  {
+   "unit": "Unit 2: Resource management: UK demand and provision (AQA 3.2.3.1)",
+   "n": 7,
+   "title": "The UK's changing demand and provision of food, water and energy",
+   "duration": 50,
+   "bigQuestion": "How is the UK feeding, watering and powering itself, and how is this changing?",
+   "objectives": [
+    "Explain changing UK demand for food, water and energy",
+    "Describe food imports, food miles, organic and local food, and agribusiness",
+    "Describe water supply matching and the changing energy mix"
+   ],
+   "successCriteria": [
+    "All: describe one change in UK food, water or energy",
+    "Most: explain two changes with data",
+    "Some: evaluate how sustainable UK provision is"
+   ],
+   "crossCurricular": "Science: energy sources; Business: supply chains",
+   "smsc": "Moral: avoiding waste (israf) and gratitude for provision; Qur'an 7:31 warns against wastefulness",
+   "keywords": [
+    {
+     "term": "food miles",
+     "def": "the distance food travels from where it is produced to where it is eaten"
+    },
+    {
+     "term": "agribusiness",
+     "def": "large-scale, commercial, industrialised farming run like a business"
+    },
+    {
+     "term": "energy mix",
+     "def": "the proportion of energy supplied from each source"
+    },
+    {
+     "term": "water transfer",
+     "def": "moving water from an area of surplus to an area of deficit"
+    },
+    {
+     "term": "organic",
+     "def": "farming without artificial chemical fertilisers and pesticides"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name three reasons why food, water and energy matter.",
+    "Define energy mix.",
+    "Give one example of a renewable energy source."
+   ],
+   "teach": [
+    {
+     "heading": "Food: imports, miles and choices",
+     "bullets": [
+      "The UK produces about 60% of the food it consumes (approx.).",
+      "Year-round demand for seasonal foods such as strawberries and green beans increases imports.",
+      "Organic and local food sales have grown, but remain a small share."
+     ],
+     "compare": {
+      "left": {
+       "title": "Imported and agribusiness",
+       "points": [
+        "Cheap, wide choice all year",
+        "Higher food miles and carbon footprint",
+        "Large farms increase efficiency",
+        "May reduce hedgerows and wildlife"
+       ]
+      },
+      "right": {
+       "title": "Local, seasonal and organic",
+       "points": [
+        "Lower food miles",
+        "Supports local farmers",
+        "Organic: fewer chemicals but lower yield",
+        "Often more expensive"
+       ]
+      },
+      "label": "UK food"
+     },
+     "note": "Teacher to check DEFRA figures. Food miles are not the whole story: food flown in has high emissions, but heated UK greenhouses can also have a high footprint. Agribusiness: large farms in East Anglia and the Fens using machinery, fertilisers and migrant labour. Ask: should we buy local or seasonal first? Link to Qur'an 7:31 on avoiding wastefulness."
+    },
+    {
+     "heading": "Water: demand and supply",
+     "table": {
+      "head": [
+       "Problem",
+       "Explanation",
+       "Management"
+      ],
+      "rows": [
+       [
+        "Demand rising",
+        "Population growth and appliances",
+        "Metering, water-saving devices"
+       ],
+       [
+        "Mismatch",
+        "Wet north and west, dry and populated south east",
+        "Reservoirs, aqueducts, transfers"
+       ],
+       [
+        "Quality",
+        "Pollution from farms and storm overflows",
+        "Regulation and investment in treatment"
+       ]
+      ]
+     },
+     "note": "UK average use is around 140 to 145 litres per person per day (approx.). Demand rises with population and appliances. Supply: rainfall is highest in the north and west (Wales, Lake District, Scotland) while demand is highest in the south east, so water must be transferred: Elan Valley reservoirs (opened 1904) supply Birmingham by aqueduct; Kielder Water in Northumberland supports north-east England and can transfer to other rivers (verify). Quality issues: sewage overflows and farm run-off."
+    },
+    {
+     "heading": "Energy: the changing mix",
+     "timeline": [
+      {
+       "label": "1990",
+       "text": "Coal supplies about two-thirds of electricity (approx.)"
+      },
+      {
+       "label": "1999",
+       "text": "North Sea oil production peaks"
+      },
+      {
+       "label": "2008",
+       "text": "Climate Change Act passed"
+      },
+      {
+       "label": "2012",
+       "text": "Coal still about 40% of electricity (approx.)"
+      },
+      {
+       "label": "2024",
+       "text": "Last UK coal power station closes; wind and other renewables around 40% (approx.)"
+      }
+     ],
+     "note": "Use the timeline. Coal supplied about two-thirds of UK electricity in 1990 (approx.) and the last coal power station (Ratcliffe-on-Soar) closed on 30 September 2024. North Sea oil production peaked in 1999. Renewables, especially wind, supply around two-fifths of electricity (approx. 2023). The Climate Change Act (2008) set legally binding targets, later strengthened to net zero by 2050. Teacher to verify current percentages."
+    },
+    {
+     "heading": "Check understanding",
+     "check": {
+      "q": "Which statement best describes the change in the UK energy mix since 1990?",
+      "options": [
+       "Coal has increased",
+       "Coal has declined and renewables such as wind have grown",
+       "Renewables have disappeared",
+       "The UK uses no gas"
+      ],
+      "answer": 1,
+      "why": "Coal use has fallen to zero in power stations while wind and other renewables have grown. Gas remains important."
+     },
+     "note": "Answer B. Check by asking why A is wrong: coal has declined. D is false; the UK still imports gas."
+    },
+    {
+     "heading": "Model: explain a change",
+     "model": {
+      "problem": "Explain why the UK imports a large amount of food. (4 marks)",
+      "steps": [
+       "Demand for foods that cannot grow in the UK climate, such as bananas, is high.",
+       "Consumers want seasonal foods such as strawberries all year round.",
+       "Supermarkets import from cheaper, warmer countries.",
+       "The UK population is too large to be fed only by home production, so imports fill the gap."
+      ],
+      "answer": "Climate, year-round demand, supermarket buying and population size lead to imports."
+     },
+     "note": "Show the cause-and-effect chain. Ask pupils to find a similar chain for water demand."
+    }
+   ],
+   "practice": [
+    "State what is meant by food miles. (1 mark)",
+    "Describe two changes in the UK energy mix since 1990. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain why water must be transferred from the north and west to the south east. (3 marks)",
+    "Extend: Explain one advantage and one disadvantage of buying local food. (4 marks)",
+    "Stretch: Assess how sustainable the UK's energy mix is today. (6 marks)"
+   ],
+   "exit": [
+    "Define agribusiness.",
+    "Which part of the UK has the greatest water surplus?"
+   ],
+   "homework": "Look at your family's weekly food shopping: list five items, where they came from and the likely food miles.",
+   "send": "SEND: sorting cards for local and imported items. EAL: key vocabulary. Stretch: calculate the carbon footprint of a local and an imported item using a footprint calculator."
+  },
+  {
+   "unit": "Unit 3: Food option (AQA 3.2.3.2; option, one of food, water or energy)",
+   "n": 8,
+   "title": "OPTION: Food. Global supply, consumption and the impacts of food insecurity",
+   "duration": 50,
+   "bigQuestion": "Why do some people have too much food while others go hungry?",
+   "objectives": [
+    "Describe global food surplus, deficit and calorie supply",
+    "Explain rising food consumption and the factors affecting supply",
+    "Assess the impacts of food insecurity"
+   ],
+   "successCriteria": [
+    "All: describe the global pattern of calorie supply",
+    "Most: explain why consumption rises and supply varies",
+    "Some: assess the impacts of insecurity with examples"
+   ],
+   "crossCurricular": "Science: nutrition and photosynthesis; Economics: price and demand",
+   "smsc": "Moral: sharing food with those in need and avoiding waste (Qur'an 7:31)",
+   "keywords": [
+    {
+     "term": "food security",
+     "def": "when people have reliable access to enough safe, nutritious food"
+    },
+    {
+     "term": "undernutrition",
+     "def": "not getting enough food or nutrients for health"
+    },
+    {
+     "term": "famine",
+     "def": "an extreme food shortage causing widespread starvation and death"
+    },
+    {
+     "term": "calorie",
+     "def": "a unit of energy in food; average adult needs about 2,000 to 2,500 per day"
+    },
+    {
+     "term": "soil erosion",
+     "def": "removal of topsoil by wind or water"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define resource management.",
+    "Give two ways the UK imports food.",
+    "What is a calorie?"
+   ],
+   "teach": [
+    {
+     "heading": "Surplus and deficit",
+     "bullets": [
+      "HICs and NEEs often have surplus calories per person.",
+      "Many LICs, especially in Sub-Saharan Africa and South Asia, have deficits.",
+      "About 733 million people faced hunger in 2023 (FAO, approx.)."
+     ],
+     "table": {
+      "head": [
+       "Region",
+       "Calorie supply (approx.)",
+       "Pattern"
+      ],
+      "rows": [
+       [
+        "North America",
+        "Over 3,500 kcal",
+        "Surplus; waste and obesity"
+       ],
+       [
+        "Europe",
+        "About 3,300 kcal",
+        "Surplus"
+       ],
+       [
+        "South Asia",
+        "About 2,500 kcal",
+        "Mixed; undernutrition in places"
+       ],
+       [
+        "Sub-Saharan Africa",
+        "About 2,400 kcal or below in many countries",
+        "Deficit and high undernutrition"
+       ]
+      ]
+     },
+     "note": "Show a world map of daily calories per person. Typical figures: the USA over 3,500 kcal per person per day (approx.) while some low-income countries are around 2,000 or below. Teacher to verify with FAO. Emphasise average supply masks inequality within countries. Hunger affects about 1 in 5 people in Africa (approx., FAO 2024)."
+    },
+    {
+     "heading": "Why is consumption rising?",
+     "bullets": [
+      "World population passed 8 billion in 2022.",
+      "Rising incomes lead to more meat and dairy.",
+      "Meat uses much more land and water than crops.",
+      "Urban lifestyles raise demand for processed food."
+     ],
+     "cycle": [
+      "Population grows",
+      "Incomes rise in NEEs",
+      "Diets shift to meat and dairy",
+      "More land, water and feed needed",
+      "Pressure on supply and prices"
+     ],
+     "note": "Ask pupils to connect: more people, more money, different diet. Teacher to introduce the idea of food chains: producing 1 kg of beef takes many kilograms of feed. Check the demand side before moving to supply."
+    },
+    {
+     "heading": "Supply factors",
+     "table": {
+      "head": [
+       "Factor",
+       "Effect on supply"
+      ],
+      "rows": [
+       [
+        "Climate and drought",
+        "Crop failure and lower yields"
+       ],
+       [
+        "Pests and disease",
+        "Reduced harvests"
+       ],
+       [
+        "Conflict",
+        "Farmers displaced and food routes blocked"
+       ],
+       [
+        "Poverty and technology",
+        "Little access to fertiliser and irrigation"
+       ],
+       [
+        "Poor storage and transport",
+        "Food rots before reaching markets"
+       ],
+       [
+        "Prices and trade",
+        "Costs rise; imports unaffordable"
+       ]
+      ]
+     },
+     "note": "Use the table. Link physical (climate change, drought, pests and disease), human (conflict, poverty, poor storage and transport) and economic factors (prices, trade). Example: locust swarms in East Africa in 2019-2020 damaged crops (approx.). Mention that around a third of food produced is wasted globally (FAO, approx.)."
+    },
+    {
+     "heading": "Impacts of food insecurity",
+     "quote": {
+      "text": "Eat and drink, but do not be wasteful.",
+      "source": "Qur'an 7:31 (meaning paraphrased; use the school's approved translation)"
+     },
+     "note": "Use the Ethiopia famine of 1984-85 as an example: drought and civil war led to an estimated one million deaths (approx.). In 2007-08 and 2010-11 world food prices spiked and were linked to protests and unrest in several countries (the 2011 Arab uprisings had multiple causes). Soil erosion follows overgrazing and deforestation. A teacher may use the quote to link ethics."
+    },
+    {
+     "heading": "Check and model",
+     "check": {
+      "q": "Which is an impact of rising food prices in LICs?",
+      "options": [
+       "Obesity falls",
+       "Farmers become richer",
+       "Poorer households eat less and unrest may increase",
+       "Imports become cheaper"
+      ],
+      "answer": 2,
+      "why": "Higher prices hit poor families who spend most income on food and can trigger unrest. Farmers do not always benefit, and imports become dearer."
+     },
+     "note": "Answer C. Then use the model to practise the structure."
+    },
+    {
+     "heading": "Model: assess the impacts",
+     "model": {
+      "problem": "Assess the impacts of food insecurity. (6 marks)",
+      "steps": [
+       "People: undernutrition weakens children and adults, and famine kills.",
+       "Economy: weak workers and high prices reduce output and income.",
+       "Environment: desperate farmers over-graze and cause soil erosion.",
+       "Society: price spikes can lead to unrest, as in 2007-08.",
+       "Judgement: the most serious impact is on health because it limits future development."
+      ],
+      "answer": "Food insecurity affects people, economy and environment; the health impact is most serious."
+     },
+     "note": "Teach the pattern: impacts on people, environment, economy."
+    }
+   ],
+   "practice": [
+    "Describe the global pattern of calorie supply shown in the table. (2 marks)",
+    "Explain two reasons for rising food consumption. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain two factors that reduce food supply in an LIC. (4 marks)",
+    "Extend: Explain how food insecurity can cause soil erosion. (3 marks)",
+    "Stretch: Assess the impacts of food insecurity. (6 marks)"
+   ],
+   "exit": [
+    "Define food security.",
+    "Give two causes of famine."
+   ],
+   "homework": "Find one current news story on food insecurity and summarise causes and effects in 100 words.",
+   "send": "SEND: cause-effect matching. EAL: key vocabulary with images. Stretch: link food prices to energy prices."
+  },
+  {
+   "unit": "Unit 3: Food option (AQA 3.2.3.2; option, one of food, water or energy)",
+   "n": 9,
+   "title": "OPTION: Food. Increasing supply: strategies, Almeria and sustainable local schemes",
+   "duration": 50,
+   "bigQuestion": "How can the world produce more food without damaging the planet?",
+   "objectives": [
+    "Evaluate strategies to increase food supply",
+    "Describe and evaluate a large-scale agricultural development: Almeria, Spain",
+    "Explain sustainable options and a local scheme in an LIC/NEE"
+   ],
+   "successCriteria": [
+    "All: name three strategies to increase food supply",
+    "Most: explain advantages and disadvantages of Almeria",
+    "Some: evaluate sustainable options and a local scheme"
+   ],
+   "crossCurricular": "Science: plant growth and genetic modification; Design Technology: hydroponics",
+   "smsc": "Moral: stewardship of land and water (khalifah)",
+   "keywords": [
+    {
+     "term": "irrigation",
+     "def": "supplying water to crops by pipes, channels or sprinklers"
+    },
+    {
+     "term": "hydroponics",
+     "def": "growing plants in nutrient-rich water without soil"
+    },
+    {
+     "term": "new green revolution",
+     "def": "using improved seeds, biotechnology and sustainable methods to raise yields"
+    },
+    {
+     "term": "biotechnology",
+     "def": "using living organisms or genetic modification to improve crops"
+    },
+    {
+     "term": "permaculture",
+     "def": "designing farming systems that mimic natural ecosystems"
+    },
+    {
+     "term": "appropriate technology",
+     "def": "simple, affordable technology suited to local needs"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name two impacts of food insecurity.",
+    "Define food security.",
+    "What is irrigation?"
+   ],
+   "teach": [
+    {
+     "heading": "Strategies to increase supply",
+     "table": {
+      "head": [
+       "Strategy",
+       "How it works",
+       "Pros and cons"
+      ],
+      "rows": [
+       [
+        "Irrigation",
+        "Water brought to crops",
+        "More yield; can lower water tables and cause salt build-up"
+       ],
+       [
+        "Hydroponics",
+        "Plants grown in nutrient water",
+        "High yield and little land; high energy and set-up cost"
+       ],
+       [
+        "New green revolution",
+        "High-yield seeds, fertiliser and better methods",
+        "Higher output; chemical use and cost"
+       ],
+       [
+        "Biotechnology (GM)",
+        "Crops modified for yield or resistance",
+        "Higher yields; ethical and ownership concerns"
+       ],
+       [
+        "Appropriate technology",
+        "Hand pumps, drip kits, simple tools",
+        "Affordable and local; small scale"
+       ]
+      ]
+     },
+     "note": "Use the table and ask pupils to rank them by cost, scale and sustainability. The new green revolution builds on the 1960s green revolution (high-yielding varieties, for example IR8 rice, with fertiliser and irrigation) but aims to reduce environmental damage. GM crops are debated: Golden Rice was approved in the Philippines in 2021 but its approval was later suspended by a court in 2024 (verify)."
+    },
+    {
+     "heading": "Large-scale development: Almeria, Spain",
+     "bullets": [
+      "South-east Spain, an area with very low rainfall.",
+      "About 30,000 hectares of plastic greenhouses (approx.).",
+      "Grows tomatoes, peppers and cucumbers for export to northern Europe."
+     ],
+     "compare": {
+      "left": {
+       "title": "Advantages",
+       "points": [
+        "Year-round production and exports",
+        "Thousands of jobs and local income",
+        "Drip irrigation uses water efficiently",
+        "High yields on little land"
+       ]
+      },
+      "right": {
+       "title": "Disadvantages",
+       "points": [
+        "Aquifers over-abstracted",
+        "Plastic waste and pesticide use",
+        "Low pay and poor conditions for some migrant workers",
+        "Reliance on export markets"
+       ]
+      },
+      "label": "Almeria"
+     },
+     "note": "Teacher to verify area and tonnage (reports vary). Use imagery of the 'sea of plastic'. Ask pupils: why is a dry area good for greenhouses? (Abundant sunshine, mild winters.) Water comes from groundwater and desalination, drip irrigation reduces waste."
+    },
+    {
+     "heading": "Check and model",
+     "check": {
+      "q": "Why is Almeria suitable for large-scale greenhouse farming?",
+      "options": [
+       "It has heavy rainfall",
+       "It has plenty of sunshine and mild winters",
+       "It has fertile river floodplains",
+       "It has no groundwater"
+      ],
+      "answer": 1,
+      "why": "Almeria has high sunshine and mild winters, so growing continues all year. It is dry, which causes water problems."
+     },
+     "note": "Answer B. Use the model to build a case-study paragraph."
+    },
+    {
+     "heading": "Model: evaluate a development",
+     "model": {
+      "problem": "Evaluate a large-scale agricultural development you have studied. (6 marks)",
+      "steps": [
+       "Positive: Almeria's greenhouses produce vegetables year-round for export, creating jobs.",
+       "Positive: drip irrigation and high yields use water and land efficiently.",
+       "Negative: groundwater has been over-abstracted, and desalination is needed.",
+       "Negative: plastic waste and low-paid migrant labour create environmental and social costs.",
+       "Judgement: the scheme is economically successful but not fully sustainable because water and social issues remain."
+      ],
+      "answer": "A balanced judgement with place detail."
+     },
+     "note": "Model use of place-specific detail."
+    },
+    {
+     "heading": "Sustainable options and a local scheme",
+     "table": {
+      "head": [
+       "Option",
+       "Idea",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Organic farming",
+        "No synthetic chemicals",
+        "Lower yield, higher price"
+       ],
+       [
+        "Permaculture",
+        "Mimic natural ecosystems",
+        "Mixed perennial food gardens"
+       ],
+       [
+        "Urban farming",
+        "Rooftop and vertical farms",
+        "Growing Underground, London"
+       ],
+       [
+        "Waste reduction",
+        "Less food thrown away",
+        "Love Food Hate Waste, UK"
+       ],
+       [
+        "Local LIC scheme",
+        "Floating gardens, Bangladesh",
+        "Vegetables during floods"
+       ]
+      ]
+     },
+     "note": "Organic farming, permaculture, urban farming (for example Growing Underground in disused tunnels beneath Clapham, London) and food-waste reduction (UK households throw away around 6 million tonnes of food a year; approx., WRAP). Local scheme: floating gardens in Bangladesh, where flood-prone communities grow vegetables on rafts of water hyacinth and bamboo; NGOs such as Practical Action have supported them (teacher to verify districts and statistics). Benefits: food in the flood season, low cost, organic compost; limits: small scale."
+    }
+   ],
+   "practice": [
+    "Describe two strategies for increasing food supply. (2 marks)",
+    "Give one advantage and one disadvantage of hydroponics. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain how the new green revolution can increase food supply. (3 marks)",
+    "Extend: Explain one benefit and one cost of Almeria's greenhouses. (4 marks)",
+    "Stretch: Evaluate the success of a local scheme in an LIC or NEE in increasing sustainable food supply. (6 marks)"
+   ],
+   "exit": [
+    "Define hydroponics.",
+    "Name one sustainable food option."
+   ],
+   "homework": "Design a poster explaining how a school could reduce food waste, with three actions and expected results.",
+   "send": "SEND: pre-labelled comparison grid. EAL: images for keywords. Stretch: calculate the area of Almeria's greenhouses as a percentage of Spain or of your local area."
+  },
+  {
+   "unit": "Unit 4: Energy option (AQA 3.2.3.4; option, one of food, water or energy)",
+   "n": 10,
+   "title": "OPTION: Energy. Global supply and consumption, energy security and energy sources",
+   "duration": 50,
+   "bigQuestion": "Who has energy, who does not, and what happens when supply is uncertain?",
+   "objectives": [
+    "Describe the global distribution of energy consumption and supply",
+    "Explain rising consumption and the factors affecting supply",
+    "Assess impacts of insecurity and compare energy sources"
+   ],
+   "successCriteria": [
+    "All: describe global energy consumption",
+    "Most: explain why consumption rises and supply varies",
+    "Some: compare renewable and non-renewable sources with evidence"
+   ],
+   "crossCurricular": "Science: energy resources; Physics: efficiency",
+   "smsc": "Moral: gratitude and avoiding waste; fairness in access (adl)",
+   "keywords": [
+    {
+     "term": "energy security",
+     "def": "reliable and affordable access to enough energy"
+    },
+    {
+     "term": "non-renewable",
+     "def": "energy sources that will run out, such as coal, oil and gas"
+    },
+    {
+     "term": "renewable",
+     "def": "energy sources that are naturally replenished, such as wind and solar"
+    },
+    {
+     "term": "fossil fuel",
+     "def": "fuel formed from ancient organisms, such as coal, oil and gas"
+    },
+    {
+     "term": "carbon footprint",
+     "def": "the total greenhouse gases produced by a person, product or activity"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name three fossil fuels.",
+    "What is the energy mix?",
+    "Name two renewable sources."
+   ],
+   "teach": [
+    {
+     "heading": "Global distribution",
+     "bullets": [
+      "China and the USA are the biggest total consumers.",
+      "Per person, HICs and oil-rich states use far more than LICs.",
+      "About 80% of world energy is still from fossil fuels (approx.)."
+     ],
+     "table": {
+      "head": [
+       "Pattern",
+       "Detail (approx.)"
+      ],
+      "rows": [
+       [
+        "Largest total consumers",
+        "China, USA, India"
+       ],
+       [
+        "Highest per person",
+        "Canada, USA, Gulf states"
+       ],
+       [
+        "Lowest per person",
+        "Many LICs in Sub-Saharan Africa"
+       ],
+       [
+        "Main sources",
+        "Oil, coal and gas still about 80%"
+       ]
+      ]
+     },
+     "note": "Teacher to verify with the Energy Institute and IEA. Show a map of energy use per person: Canada, USA and Gulf states high; Sub-Saharan Africa low; about 750 million people lack electricity (IEA, approx. 2022). Distinguish total and per capita. Ask pupils to explain why a populous NEE consumes a lot in total but little per person."
+    },
+    {
+     "heading": "Why consumption is rising",
+     "cycle": [
+      "Population and incomes grow",
+      "More factories, cars and appliances",
+      "Demand for electricity and fuel rises",
+      "Pressure on supplies and prices",
+      "Need for new sources or efficiency"
+     ],
+     "note": "Make a causal chain with three drivers: population, industrialisation of NEEs and rising wealth (more cars, appliances, air conditioning). Ask: how can efficiency offset growth? Check."
+    },
+    {
+     "heading": "Supply factors",
+     "table": {
+      "head": [
+       "Factor",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Geography",
+        "Oil concentrated in the Middle East"
+       ],
+       [
+        "Cost",
+        "Offshore wind and nuclear are expensive to build"
+       ],
+       [
+        "Technology",
+        "Fracking opened new gas supply in the USA"
+       ],
+       [
+        "Politics",
+        "2022 gas crisis after the war in Ukraine"
+       ]
+      ]
+     },
+     "note": "Link geography (location of reserves, e.g. oil in the Middle East, coal in China), cost (extraction and building new plants), technology (fracking, offshore wind) and politics (OPEC, wars). Example: Russia's invasion of Ukraine in 2022 reduced gas supplies to Europe and raised prices, leading to the UK Energy Price Guarantee (approx.). Ask pupils to classify each factor."
+    },
+    {
+     "heading": "Impacts of energy insecurity",
+     "check": {
+      "q": "Which is an impact of energy insecurity on an economy?",
+      "options": [
+       "Lower energy prices",
+       "Higher costs for businesses and households",
+       "More reliable supply",
+       "No effect on jobs"
+      ],
+      "answer": 1,
+      "why": "Insecurity raises prices and costs, reducing output and household budgets. The other options describe secure supply."
+     },
+     "note": "Sensitive areas: drilling in the Arctic or rainforest risks spills (the 2010 Deepwater Horizon spill released about 4 million barrels of oil; approx.). Economies: rising bills push families into fuel poverty and reduce industrial output. Conflict: competition for oil and gas. Pupils should give specific examples. Use the check."
+    },
+    {
+     "heading": "Comparing energy sources",
+     "table": {
+      "head": [
+       "Source",
+       "Type",
+       "Advantages",
+       "Disadvantages"
+      ],
+      "rows": [
+       [
+        "Coal",
+        "Fossil, non-renewable",
+        "Cheap, reliable",
+        "Highest CO2 and air pollution"
+       ],
+       [
+        "Oil and gas",
+        "Fossil, non-renewable",
+        "Flexible fuel; gas cleaner than coal",
+        "CO2; price and supply risk"
+       ],
+       [
+        "Nuclear",
+        "Non-renewable, low carbon",
+        "Large and reliable output",
+        "High cost; radioactive waste"
+       ],
+       [
+        "Wind and solar",
+        "Renewable",
+        "Low carbon; falling cost",
+        "Intermittent; visual impact"
+       ],
+       [
+        "Hydro",
+        "Renewable",
+        "Reliable and storable",
+        "Dams flood land and displace people"
+       ]
+      ]
+     },
+     "note": "Ask pupils to use the table to judge each source on cost, reliability and environmental impact. Nuclear low-carbon but costly with waste storage issues. Wind and solar are intermittent. Hydro is reliable but dams alter ecosystems. Misconception: renewables have no impact: they affect wildlife and land."
+    }
+   ],
+   "practice": [
+    "Describe the global pattern of energy consumption. (2 marks)",
+    "Explain two reasons why global energy demand is increasing. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain how politics can affect energy supply. (3 marks)",
+    "Extend: Compare one renewable and one non-renewable energy source. (4 marks)",
+    "Stretch: Assess the impacts of energy insecurity. (6 marks)"
+   ],
+   "exit": [
+    "Define energy security.",
+    "Give one advantage of nuclear power."
+   ],
+   "homework": "Create a table of three energy sources with one advantage and one disadvantage each.",
+   "send": "SEND: pre-filled energy table. EAL: key terms with images. Stretch: link energy insecurity to a recent news event."
+  },
+  {
+   "unit": "Unit 4: Energy option (AQA 3.2.3.4; option, one of food, water or energy)",
+   "n": 11,
+   "title": "OPTION: Energy. Fossil fuel extraction (Alberta), sustainable options and a local renewable scheme",
+   "duration": 50,
+   "bigQuestion": "Can we meet energy needs without harming people or the planet?",
+   "objectives": [
+    "Describe and evaluate the extraction of a fossil fuel: the Alberta oil sands",
+    "Explain sustainable options: conservation, design, demand reduction and cleaner fossil fuels",
+    "Describe a local renewable scheme in an LIC/NEE"
+   ],
+   "successCriteria": [
+    "All: describe the Alberta oil sands and one advantage and disadvantage",
+    "Most: explain sustainable energy options",
+    "Some: evaluate a local renewable scheme"
+   ],
+   "crossCurricular": "Science: fuels and carbon; Design Technology: efficient buildings",
+   "smsc": "Moral: stewardship of the Earth (khalifah) and avoiding waste (Qur'an 7:31)",
+   "keywords": [
+    {
+     "term": "oil sands",
+     "def": "sand or clay containing thick oil called bitumen, which must be separated before use"
+    },
+    {
+     "term": "carbon capture and storage",
+     "def": "capturing carbon dioxide from power plants and storing it underground"
+    },
+    {
+     "term": "demand reduction",
+     "def": "using less energy through efficiency and behaviour"
+    },
+    {
+     "term": "micro-hydro",
+     "def": "a small hydroelectric scheme generating power for a village"
+    },
+    {
+     "term": "sustainable design",
+     "def": "building and product design that uses less energy and resources"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name two impacts of energy insecurity.",
+    "Define non-renewable.",
+    "Why is renewable energy not always fully sustainable?"
+   ],
+   "teach": [
+    {
+     "heading": "Alberta oil sands",
+     "bullets": [
+      "Northern Alberta, Canada, around Fort McMurray.",
+      "Canada has the world's third-largest proven oil reserves, mostly oil sands (approx.).",
+      "Production around 3 to 3.5 million barrels a day (approx.)."
+     ],
+     "compare": {
+      "left": {
+       "title": "Advantages",
+       "points": [
+        "Jobs in Fort McMurray and across Canada",
+        "Tax and export income",
+        "Energy security for North America",
+        "Reserves would last for decades"
+       ]
+      },
+      "right": {
+       "title": "Disadvantages",
+       "points": [
+        "Boreal forest cleared and tailings ponds",
+        "High carbon emissions per barrel",
+        "Heavy water and energy use",
+        "Risks to Indigenous communities and wildlife"
+       ]
+      },
+      "label": "oil sands"
+     },
+     "note": "Teacher to verify with the Alberta Energy Regulator and Natural Resources Canada. Methods: open-pit mining and in situ steam drilling (SAGD). Ask pupils to describe the scale of change in the boreal forest. Mention Indigenous communities such as Fort Chipewyan living downstream; concerns about water and health continue."
+    },
+    {
+     "heading": "Model: weigh up an example",
+     "model": {
+      "problem": "Evaluate the extraction of a fossil fuel you have studied. (6 marks)",
+      "steps": [
+       "Economic: the Alberta oil sands support thousands of jobs and large export income.",
+       "Social: Fort McMurray grew rapidly, but the 2016 wildfire forced about 88,000 people to leave (approx.).",
+       "Environmental: forest loss, tailings ponds and high carbon emissions per barrel.",
+       "Counter: technology such as carbon capture and land reclamation can reduce impacts.",
+       "Judgement: economic benefits are large but environmental costs are serious, so the case for extraction depends on stricter controls."
+      ],
+      "answer": "A balanced judgement with detail and conclusion."
+     },
+     "note": "Show how to give a balanced paragraph with place detail."
+    },
+    {
+     "heading": "Sustainable energy options",
+     "table": {
+      "head": [
+       "Option",
+       "How it works",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Energy conservation",
+        "Use less: insulation, LEDs",
+        "Double glazing, switching off"
+       ],
+       [
+        "Sustainable design",
+        "Passive heating, solar gain",
+        "BedZED, Sutton"
+       ],
+       [
+        "Demand reduction",
+        "Efficiency, smart meters",
+        "Efficient appliances"
+       ],
+       [
+        "Cleaner fossil fuel",
+        "CCS, gas instead of coal",
+        "Boundary Dam, Canada"
+       ]
+      ]
+     },
+     "note": "Use the table to link each option to action at home, school and government level. Examples: UK building regulations, LED bulbs, insulation, smart meters. Carbon capture: Boundary Dam in Saskatchewan (2014) was an early coal power station fitted with CCS (verify performance). Ask: which option is cheapest per unit saved? (Usually conservation.) Link to Islam: avoid israf (waste), Qur'an 7:31."
+    },
+    {
+     "heading": "Local renewable scheme: micro-hydro in Nepal",
+     "cycle": [
+      "Water diverted from a stream",
+      "Falls through a pipe to a turbine",
+      "Turbine drives a generator",
+      "Village gets electricity for lights and mills",
+      "Schools, health posts and small businesses benefit"
+     ],
+     "note": "Use a small village scheme to show appropriate technology: a stream is diverted through a pipe to a turbine producing electricity for lights, phone charging, mills and small businesses. Many hundreds to thousands of micro-hydro plants exist in Nepal (approx.), supported by the government's Alternative Energy Promotion Centre and NGOs such as Practical Action. Teacher to choose and verify a named village scheme. Ask: how does electricity change quality of life?"
+    },
+    {
+     "heading": "Check understanding",
+     "check": {
+      "q": "Which is an example of demand reduction?",
+      "options": [
+       "Building a new coal power station",
+       "Insulating a home to cut heating needs",
+       "Drilling more oil wells",
+       "Importing more gas"
+      ],
+      "answer": 1,
+      "why": "Insulation reduces the amount of energy needed. The others increase supply, not reduce demand."
+     },
+     "note": "Answer B. Ask why C is wrong (it does not reduce demand)."
+    }
+   ],
+   "practice": [
+    "Describe two methods of extracting oil from the Alberta oil sands. (2 marks)",
+    "Give one advantage and one disadvantage of the oil sands. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain two ways energy use can be reduced in homes. (4 marks)",
+    "Extend: Explain how a micro-hydro scheme improves quality of life in a village. (4 marks)",
+    "Stretch: Evaluate how sustainable a local renewable scheme in an LIC or NEE is. (6 marks)"
+   ],
+   "exit": [
+    "Name one sustainable energy option.",
+    "What is carbon capture?"
+   ],
+   "homework": "Make an energy-saving plan for your household with five actions and estimated results.",
+   "send": "SEND: scaffolded comparison grid. EAL: images for terms. Stretch: calculate cost savings from LED bulbs."
+  },
+  {
+   "unit": "Unit 5: Issue evaluation (AQA 3.3.1)",
+   "n": 12,
+   "title": "Issue evaluation: working with a pre-release booklet and making a justified decision",
+   "duration": 50,
+   "bigQuestion": "How do geographers weigh evidence from many sources to reach a decision?",
+   "objectives": [
+    "Explain the structure of the issue evaluation paper and the pre-release booklet",
+    "Interpret mixed sources, linking physical and human geography at several scales",
+    "Weigh stakeholders' views and make and justify a decision"
+   ],
+   "successCriteria": [
+    "All: annotate a source and state a stakeholder's view",
+    "Most: compare options using evidence",
+    "Some: write a justified, balanced decision with a final recommendation"
+   ],
+   "crossCurricular": "English: argument writing; Citizenship: decision-making and democracy",
+   "smsc": "Moral: fairness, consultation (shura) and justice for those affected",
+   "keywords": [
+    {
+     "term": "stakeholder",
+     "def": "a person or group with an interest in a decision"
+    },
+    {
+     "term": "pre-release booklet",
+     "def": "the resource booklet on a geographical issue issued before the exam"
+    },
+    {
+     "term": "evaluate",
+     "def": "judge strengths and weaknesses and reach a conclusion"
+    },
+    {
+     "term": "synoptic",
+     "def": "drawing together knowledge from different topics"
+    },
+    {
+     "term": "justify",
+     "def": "give reasons or evidence in support of a decision"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define stakeholder.",
+    "Name two sources of evidence a geographer might use.",
+    "What does 'evaluate' mean?"
+   ],
+   "teach": [
+    {
+     "heading": "What the paper asks",
+     "bullets": [
+      "Paper 3, Section A: issue evaluation (37 marks).",
+      "Pre-release booklet issued 12 weeks before the exam.",
+      "Sources include maps, graphs, photographs, satellite images and statements.",
+      "A clean booklet is given in the exam."
+     ],
+     "table": {
+      "head": [
+       "Feature",
+       "Detail"
+      ],
+      "rows": [
+       [
+        "Paper",
+        "Paper 3: Geographical applications"
+       ],
+       [
+        "Section A",
+        "Issue evaluation (37 marks)"
+       ],
+       [
+        "Booklet",
+        "Issued 12 weeks before the exam"
+       ],
+       [
+        "Themes",
+        "Physical and human links at several scales"
+       ],
+       [
+        "Final task",
+        "Extended evaluative answer with a decision"
+       ]
+      ]
+     },
+     "note": "Check dates and format with the latest AQA paper and arrangements; the pack records these from the specification summaries. The issue draws on content from 3.1 and 3.2, such as an issue about flood management, resources or urban change. Emphasise that no new content is needed: pupils apply what they know to the booklet."
+    },
+    {
+     "heading": "Preparing the booklet",
+     "cycle": [
+      "Read the whole booklet",
+      "Annotate evidence, figures and anomalies",
+      "List stakeholders and their views",
+      "Link to course knowledge",
+      "Weigh options and decide"
+     ],
+     "note": "Teach the method: read the sources once for the story; then annotate for evidence for and against; build a stakeholder table; relate each option to cost, benefit, who and where. Pupils should use own knowledge from the course, such as flood management or regeneration. Ask: which stakeholder is hardest to satisfy?"
+    },
+    {
+     "heading": "Practice issue: Marlow Bay (fictional)",
+     "quote": {
+      "text": "My family has lived here for 40 years. A sea wall protects our homes, and the town's shops depend on tourists.",
+      "source": "Invented statement: a Marlow Bay resident (practice resource)"
+     },
+     "note": "The scenario is invented for practice. Marlow Bay is a fictional coastal town with 8,000 residents; options are (A) a hard sea wall costing 20 million pounds, (B) managed retreat with relocation costing 8 million pounds, (C) a do-nothing option. Use the quotes as fictional stakeholder statements. Ask pupils to rank each option against cost, protection and fairness."
+    },
+    {
+     "heading": "Weighing the options",
+     "compare": {
+      "left": {
+       "title": "Option A: sea wall",
+       "points": [
+        "Protects homes and businesses",
+        "High cost: 20 million (fictional)",
+        "Needs maintenance and may cause erosion elsewhere",
+        "Residents stay"
+       ]
+      },
+      "right": {
+       "title": "Option B: managed retreat",
+       "points": [
+        "Lower cost: 8 million (fictional)",
+        "Homes lost, residents relocated",
+        "Creates new wetland habitat",
+        "Community split"
+       ]
+      },
+      "label": "options"
+     },
+     "note": "Ask pupils to complete the compare as a class on the board, adding at least one data point from the (fictional) booklet each. Remind them that cost-benefit and fairness differ: who gains and who loses?"
+    },
+    {
+     "heading": "Check understanding",
+     "check": {
+      "q": "What is the best way to end an evaluation answer?",
+      "options": [
+       "A list of facts",
+       "A clear judgement supported by evidence and a reason for rejecting the alternative",
+       "A repeat of the question",
+       "A personal story with no evidence"
+      ],
+      "answer": 1,
+      "why": "A decision must be justified using evidence and show why other options were less suitable. Lists and repetition earn little credit."
+     },
+     "note": "Answer B. Pupils should note that a balanced answer includes counter-arguments."
+    },
+    {
+     "heading": "Model: a decision paragraph",
+     "model": {
+      "problem": "Using the booklet and your own knowledge, decide which option is best for Marlow Bay and justify your choice. (9 marks)",
+      "steps": [
+       "State the decision: managed retreat (option B) is best overall.",
+       "Evidence: cost is 8 million compared with 20 million for the wall (fictional data).",
+       "Link to knowledge: hard engineering can increase erosion elsewhere and needs maintenance.",
+       "Stakeholders: residents lose homes, but compensation and relocation reduce harm.",
+       "Counter: the sea wall protects the town in the short term, but may not be sustainable as sea level rises.",
+       "Conclusion: B is more sustainable and affordable, provided fair compensation is given."
+      ],
+      "answer": "A justified decision with evidence, counter-argument and conclusion."
+     },
+     "note": "Model using the starter 'On balance'. Pupils write a similar paragraph in their own words."
+    }
+   ],
+   "practice": [
+    "Annotate the resident statement: identify two pieces of evidence and one value judgement. (3 marks)",
+    "Suggest why different stakeholders reach different decisions. (2 marks)"
+   ],
+   "independent": [
+    "Core: Compare options A and B using data from the booklet. (4 marks)",
+    "Extend: Explain how one stakeholder's view could change if new evidence was given. (3 marks)",
+    "Stretch: Make and justify a decision for Marlow Bay. (9 marks, plus SPaG)"
+   ],
+   "exit": [
+    "State three features of the issue evaluation paper.",
+    "What makes a decision 'justified'?"
+   ],
+   "homework": "Choose one contemporary geographical issue from the news and build a stakeholder table with three stakeholders and their views.",
+   "send": "SEND: stakeholder grid and sentence starters. EAL: glossary for evaluation terms. Stretch: write for two different stakeholder audiences. Teacher to adapt to the actual pre-release booklet when issued (12 weeks before the exam); the Marlow Bay scenario is invented."
+  }
+ ]
+}

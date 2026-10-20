@@ -1,0 +1,4027 @@
+{
+ "subject": "Computing",
+ "year": "y10",
+ "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+ "boardShort": "Edexcel GCSE CS 1CP2",
+ "source": "Edexcel GCSE Computer Science 1CP2 specification (syllabus file content/syllabus/ks4/computing.json: units 1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 6.1 to 6.6; Python 3). Original lessons. The existing y10 set (content/lessons/computing/y10.json) already introduces decomposition and abstraction, flowcharts, pseudo-code and trace tables, linear and binary search, bubble and merge sort, and Python variables, validation, lists and strings; these lessons do not re-teach those and instead cover the remaining spec points, add code tracing, efficiency and exam-style practice.",
+ "lessons": [
+  {
+   "unit": "Unit 1.1: Computational thinking: decomposition, abstraction and subprograms",
+   "n": 1,
+   "title": "Decomposition, abstraction and subprograms: modelling a problem",
+   "duration": 50,
+   "bigQuestion": "How do programmers solve a problem that is too big to hold in one head?",
+   "objectives": [
+    "Explain how decomposition and abstraction are used to model a problem (1.1.1)",
+    "Decompose a scenario into sub-problems with inputs and outputs",
+    "Explain the benefits of using subprograms (1.1.2)"
+   ],
+   "successCriteria": [
+    "All: define decomposition and abstraction and give one example of each",
+    "Most: decompose a scenario and say which details a model keeps and ignores",
+    "Some: justify the use of subprograms in a given program using three distinct benefits"
+   ],
+   "crossCurricular": "Geography: maps and models leave out detail on purpose",
+   "smsc": "Moral: amanah (trust) in building software others will rely on: a well-structured program is easier to check and keep honest",
+   "keywords": [
+    {
+     "term": "decomposition",
+     "def": "breaking a problem into smaller parts that can be solved separately"
+    },
+    {
+     "term": "abstraction",
+     "def": "removing detail that is not needed so you focus on what matters"
+    },
+    {
+     "term": "model",
+     "def": "a simplified representation of a real system, built using abstraction"
+    },
+    {
+     "term": "subprogram",
+     "def": "a named block of code that does one job and can be called many times"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the three skills of computational thinking.",
+    "A Tube map ignores real distances. State one reason that is helpful to passengers.",
+    "In Python, what does def do?"
+   ],
+   "teach": [
+    {
+     "heading": "Decomposition: divide the problem",
+     "bullets": [
+      "Break a big problem into smaller sub-problems",
+      "Solve and test each part on its own",
+      "Then join the parts together"
+     ],
+     "note": "Use a prayer-times app as the running scenario. Ask pupils to shout out tasks; group them on the board. Stress that each sub-problem should be small enough to describe in one sentence. Pupils often list features; push them to say what goes in and what comes out of each part.",
+     "table": {
+      "head": [
+       "Sub-problem",
+       "Input",
+       "Output"
+      ],
+      "rows": [
+       [
+        "Find the user's location",
+        "GPS reading",
+        "City name"
+       ],
+       [
+        "Look up today's times",
+        "City name, date",
+        "Five prayer times"
+       ],
+       [
+        "Work out the next prayer",
+        "Prayer times, current time",
+        "Name and time of next prayer"
+       ],
+       [
+        "Show the result",
+        "Name and time",
+        "Message on screen"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Abstraction: keep what matters",
+     "bullets": [
+      "Decide which details the solution needs",
+      "Ignore the rest",
+      "The result is a simpler model"
+     ],
+     "note": "Define a model as a simplified version of the real thing. The key exam skill is to name specific details kept and ignored in the scenario, not to write general sentences. Note that abstraction is not hiding code from users; it is leaving detail out of the problem description.",
+     "compare": {
+      "left": {
+       "title": "Kept in the model",
+       "points": [
+        "Number of free spaces",
+        "Ticket price per hour",
+        "Time of entry"
+       ]
+      },
+      "right": {
+       "title": "Ignored by the model",
+       "points": [
+        "Colour of each car",
+        "Weather",
+        "Names of the drivers"
+       ]
+      },
+      "label": "Car park ticket machine"
+     }
+    },
+    {
+     "heading": "Worked example: model a lift",
+     "note": "Model aloud (I do). Show that decomposition splits the job and abstraction chooses the data. Ask: what would we add if the lift must carry a stretcher? Link to 'fitness for purpose'.",
+     "model": {
+      "problem": "A programmer is asked to write the control program for a lift in a three-storey school. Decompose the problem and state what the model leaves out.",
+      "steps": [
+       "Sub-problem 1: read which floor button was pressed (input: button number)",
+       "Sub-problem 2: decide direction (input: current floor and target floor; output: up or down)",
+       "Sub-problem 3: move the lift and stop at the floor (output: motor command)",
+       "Sub-problem 4: open and close the doors",
+       "Model keeps: current floor, target floor, door state. It ignores: the colour of the lift, who is inside, the music"
+      ],
+      "answer": "Four sub-problems, each with clear inputs and outputs, and a model that stores only the data the control program needs."
+     }
+    },
+    {
+     "heading": "Subprograms: name it once, use it often",
+     "bullets": [
+      "A subprogram is a named block with one job",
+      "Call it whenever you need that job done",
+      "Place the logic in one place only"
+     ],
+     "note": "Trace the code with pupils: the function vat is defined once, then called twice. Ask what would change if the VAT rate changed: only one line. List benefits: avoids repeating code, shorter programs, easier to test and debug, easier to maintain, parts can be shared by a team, and can be reused in other programs.",
+     "code": {
+      "lang": "python",
+      "text": "def vat(price):\n    return price * 0.2\n\ndef show_line(item, price):\n    print(item, price, vat(price))\n\nshow_line(\"Book\", 10)\nshow_line(\"Pen\", 2)",
+      "output": "Book 10 2.0\nPen 2 0.4"
+     }
+    },
+    {
+     "heading": "Check: benefits of subprograms",
+     "note": "Whiteboards up on the count of three. Option C is the trap: subprograms do not make code run faster in themselves. Option A describes a benefit that is about repetition. Ask pupils why D is true but not the best answer here.",
+     "check": {
+      "q": "A program calculates VAT in five different places. Which is the best reason to move the calculation into one subprogram?",
+      "options": [
+       "It stops the program having any errors",
+       "A change to the VAT rule is made in one place only",
+       "It makes the program run much faster",
+       "It means the program no longer needs variables"
+      ],
+      "answer": 1,
+      "why": "Reuse and easier maintenance: changing the rule once fixes every call. A subprogram does not remove errors (A), does not by itself speed the code up (C) and variables are still needed (D)."
+     }
+    }
+   ],
+   "practice": [
+    "A mosque wants a program to manage its weekly rota for volunteers. Write four sub-problems and, for each, one input and one output.",
+    "A satnav model of a road network keeps road names, lengths and speed limits. State two details it ignores and say why that is acceptable.",
+    "A game draws an enemy character in eight different places. Explain how a subprogram would help."
+   ],
+   "independent": [
+    "Core: Decompose the problem 'a school canteen till' into at least four sub-problems. Next to each, name the data it needs.",
+    "Extend: Write two examples of abstraction in a model of a school timetable. For each, say what is kept and what is ignored.",
+    "Stretch: A team of three writes a library loans program. Use decomposition and subprograms to explain how the work could be shared and tested, in about 100 words."
+   ],
+   "exit": [
+    "Define abstraction and give one example not used today.",
+    "Give two benefits of using subprograms in a large program."
+   ],
+   "homework": "Choose a program you use (a bus app, a game or a banking app). Write 120 words on how it could be decomposed and what abstraction its model uses.",
+   "send": "SEND/EAL: give a blank three-column table (sub-problem, input, output) and sentence stems such as 'The model ignores ... because ...'. Stretch: evaluate a model that has ignored too much detail and say what to add. Builds on y10 lesson 1, which introduced the terms; this lesson applies them to modelling and adds subprograms (1.1.2)."
+  },
+  {
+   "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
+   "n": 2,
+   "title": "Algorithm building blocks: sequence, selection, repetition and iteration",
+   "duration": 50,
+   "bigQuestion": "Which three ideas are enough to build almost any algorithm?",
+   "objectives": [
+    "Identify sequence, selection and repetition in an algorithm (1.2.1)",
+    "Distinguish count-controlled and condition-controlled repetition",
+    "Write an algorithm that iterates over a data structure"
+   ],
+   "successCriteria": [
+    "All: name the construct used in a short algorithm",
+    "Most: write a loop that processes every item of a list",
+    "Some: combine selection inside a loop to count or total items meeting a rule"
+   ],
+   "crossCurricular": "Mathematics: sequences, repeated calculation and conditions",
+   "smsc": "Moral: honesty and care in checking work step by step",
+   "keywords": [
+    {
+     "term": "sequence",
+     "def": "instructions carried out one after another in order"
+    },
+    {
+     "term": "selection",
+     "def": "choosing which instructions to run, based on a condition"
+    },
+    {
+     "term": "repetition",
+     "def": "running instructions more than once, in a loop"
+    },
+    {
+     "term": "iteration",
+     "def": "going through each item of a data structure, one at a time"
+    }
+   ],
+   "starter": [
+    "Bismillah. What does a diamond mean in a flowchart?",
+    "Write one line of Python that stores your name in a variable.",
+    "Say in words what for i in range(3): print(i) prints."
+   ],
+   "teach": [
+    {
+     "heading": "Three constructs",
+     "bullets": [
+      "Sequence: step after step, in order",
+      "Selection: if / elif / else chooses a path",
+      "Repetition: a loop runs steps again"
+     ],
+     "note": "Every algorithm in the course, from bubble sort to a login check, is made from these. Show each as a flowchart shape: a straight line, a diamond with two exits, a diamond with a line looping back. Point out that each block has one entry and one exit.",
+     "table": {
+      "head": [
+       "Construct",
+       "Flowchart clue",
+       "Python clue"
+      ],
+      "rows": [
+       [
+        "Sequence",
+        "Boxes in a line",
+        "Lines one after another"
+       ],
+       [
+        "Selection",
+        "Diamond, Yes and No exits",
+        "if / else"
+       ],
+       [
+        "Repetition",
+        "Arrow loops back up",
+        "for / while"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Two kinds of repetition",
+     "bullets": [
+      "Count-controlled: repeat a set number of times",
+      "Condition-controlled: repeat until a test is met",
+      "Choose for when the count is known, while when it is not"
+     ],
+     "note": "Run both programs. The for loop knows it will run 4 times; the while loop stops when the total reaches 10 or more, and that depends on the values. Ask pupils what happens if the condition never becomes false: an infinite loop.",
+     "code": {
+      "lang": "python",
+      "text": "total = 0\nfor n in range(1, 5):\n    total = total + n\nprint(total)\n\nstock = 20\nweeks = 0\nwhile stock > 0:\n    stock = stock - 6\n    weeks = weeks + 1\nprint(weeks)",
+      "output": "10\n4"
+     }
+    },
+    {
+     "heading": "Iteration over a data structure",
+     "bullets": [
+      "Visit every item of a list in turn",
+      "Selection inside the loop filters items",
+      "Variables such as count store the result"
+     ],
+     "note": "The loop variable takes each value of the list in turn; there is no index to manage. Point out that the if is inside the loop because it must be asked about every item. Pupils often put count = 0 inside the loop; show why that resets it each time.",
+     "code": {
+      "lang": "python",
+      "text": "marks = [45, 72, 50, 38, 90]\ncount = 0\nfor m in marks:\n    if m >= 50:\n        count = count + 1\nprint(count, \"passed\")",
+      "output": "3 passed"
+     }
+    },
+    {
+     "heading": "Worked example: highest mark",
+     "note": "Model the thinking: set the first item as the highest so far, then compare each other item. Check with the trace: 45 -> 72 -> 72 -> 72 -> 90. Ask pupils why we do not start the highest at 0 (it fails for negative data, and starting with an item in the list is safer).",
+     "model": {
+      "problem": "Write pseudocode that outputs the highest value in the list temps = [14, 19, 11, 22, 17].",
+      "steps": [
+       "Set highest to the first item, temps[0] (14)",
+       "FOR each t IN temps: compare t with highest",
+       "IF t > highest THEN set highest to t",
+       "After the loop ends, OUTPUT highest"
+      ],
+      "answer": "highest = 14, 19, 19, 22, 22, so the output is 22. It uses sequence, iteration over the list and selection inside it."
+     }
+    },
+    {
+     "heading": "Check: which construct?",
+     "note": "Answer B. A is selection, C sequence, D a count-controlled loop. Ask pupils to say what the output is when the loop has run (the running total each time). A common slip is to call any loop 'selection' because it has a condition.",
+     "check": {
+      "q": "An algorithm asks for passwords until the user types the correct one. Which construct repeats the question?",
+      "options": [
+       "Sequence",
+       "Condition-controlled repetition",
+       "Selection only",
+       "Count-controlled repetition"
+      ],
+      "answer": 1,
+      "why": "The number of attempts is unknown in advance, so the loop is controlled by a condition. A count-controlled loop (D) needs a known number of repeats; selection (C) chooses but does not repeat."
+     }
+    }
+   ],
+   "practice": [
+    "Name the construct in each: (a) IF age >= 18 THEN OUTPUT 'adult'; (b) FOR 1 TO 7 OUTPUT 'Salam'; (c) SET a TO 3 then SET b TO a + 2.",
+    "Write pseudocode that totals the prices in the list [2.50, 1.20, 0.80] using iteration.",
+    "Rewrite the while loop in the lesson (stock = 20, minus 6 each week) as a flowchart description with a decision diamond."
+   ],
+   "independent": [
+    "Core: Write pseudocode to count how many names in a list of ten begin with the letter A.",
+    "Extend: Write a Python program that loops over a list of marks, outputs the mean and the number of marks above the mean.",
+    "Stretch: Describe an algorithm that checks whether every number in a list is bigger than the one before it. State which constructs you used."
+   ],
+   "exit": [
+    "State the difference between count-controlled and condition-controlled repetition.",
+    "Which construct is used when a program chooses between two outputs? Give an example."
+   ],
+   "homework": "Write an algorithm in pseudocode for a till that adds the prices in a list until the total passes 20 pounds. State which constructs you used.",
+   "send": "SEND/EAL: give colour-coded cards (sequence blue, selection green, repetition orange) to sort lines of an algorithm. Stretch: write the loop in two ways, with for and with while."
+  },
+  {
+   "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
+   "n": 3,
+   "title": "Variables, constants, strings, records and arrays",
+   "duration": 50,
+   "bigQuestion": "How do we store many pieces of related data so a program can find them again?",
+   "objectives": [
+    "Use variables, constants and strings in algorithms (1.2.2)",
+    "Describe and use records",
+    "Read and write values in one- and two-dimensional arrays"
+   ],
+   "successCriteria": [
+    "All: explain the difference between a variable and a constant",
+    "Most: use an index to read an item from a 1D array and from a 2D array",
+    "Some: choose between a record and an array for a given set of data and justify it"
+   ],
+   "crossCurricular": "Mathematics: coordinates and tables of data",
+   "smsc": "Moral: amanah in keeping data about people accurate and organised",
+   "keywords": [
+    {
+     "term": "constant",
+     "def": "a named value that cannot change while the program runs"
+    },
+    {
+     "term": "record",
+     "def": "a group of related fields, possibly of different types, about one thing"
+    },
+    {
+     "term": "array",
+     "def": "a fixed-size collection of items of the same type, accessed by index"
+    },
+    {
+     "term": "index",
+     "def": "the position number of an item in an array, starting at 0"
+    },
+    {
+     "term": "2D array",
+     "def": "an array of arrays, accessed with a row and a column index"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is the output of 7 // 2 in Python?",
+    "What is the data type of '25' with the quotation marks?",
+    "Name the two parts of a linear search loop: what is compared, and when does it stop?"
+   ],
+   "teach": [
+    {
+     "heading": "Variables, constants and strings",
+     "bullets": [
+      "Variable: named storage whose value can change",
+      "Constant: a fixed value, such as VAT_RATE",
+      "String: a sequence of characters, such as a name"
+     ],
+     "note": "Ask why a constant is better than typing 0.2 each time: one change updates everywhere, and the name explains the number. Python has no true constants; by convention we write the name in capitals. Strings: remind pupils that quotation marks make a string, and that numbers inside quotes cannot be added.",
+     "code": {
+      "lang": "python",
+      "text": "VAT_RATE = 0.2\nprice = 30\nname = \"Amina\"\nprice = price + price * VAT_RATE\nprint(name, \"pays\", price)",
+      "output": "Amina pays 36.0"
+     }
+    },
+    {
+     "heading": "Records",
+     "bullets": [
+      "A record groups related fields about one item",
+      "Fields can have different data types",
+      "Use a name for each field"
+     ],
+     "note": "Contrast with arrays: one student has a string name, an integer age and a Boolean. In Python we can store a record as a dictionary. Show how record['name'] reads one field. Ask what a list of records would look like (one record per student).",
+     "code": {
+      "lang": "python",
+      "text": "student = {\"name\": \"Yusuf\", \"age\": 15, \"member\": True}\nprint(student[\"name\"])\nprint(student[\"age\"] + 1)",
+      "output": "Yusuf\n16"
+     }
+    },
+    {
+     "heading": "Arrays and 2D arrays",
+     "bullets": [
+      "1D array: one row of items, index from 0",
+      "2D array: rows and columns, two indexes",
+      "Write grid[row][column]"
+     ],
+     "note": "Draw the grid on the board and number rows and columns from 0. Pupils reverse row and column constantly: say 'row first, then column' as a chant. Note an array is fixed-size and holds one type, and that Python lists are used to implement arrays.",
+     "table": {
+      "head": [
+       "Index",
+       "col 0",
+       "col 1",
+       "col 2"
+      ],
+      "rows": [
+       [
+        "row 0",
+        "12",
+        "7",
+        "9"
+       ],
+       [
+        "row 1",
+        "5",
+        "14",
+        "3"
+       ],
+       [
+        "row 2",
+        "8",
+        "6",
+        "11"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Worked example: reading and changing a 2D array",
+     "note": "Model with the grid from the previous slide as scores = [[12,7,9],[5,14,3],[8,6,11]]. Insist on the order row, column. Afterwards ask a pupil what scores[2][0] is (8).",
+     "model": {
+      "problem": "scores is the 2D array in the table: row 0 is 12, 7, 9; row 1 is 5, 14, 3; row 2 is 8, 6, 11. State scores[1][2], then show the statement that changes the 14 to 20.",
+      "steps": [
+       "scores[1][2]: row 1 is [5, 14, 3]",
+       "Column 2 of that row is the third item, 3",
+       "The 14 is in row 1, column 1",
+       "Assign: scores[1][1] = 20"
+      ],
+      "answer": "scores[1][2] is 3. The change is scores[1][1] = 20."
+     }
+    },
+    {
+     "heading": "Check: array index",
+     "note": "Answer C. The index starts at 0, so the fourth item is index 3. A is the usual error (counting from 1). D tests whether pupils think the length is a valid index: with 5 items the last index is 4.",
+     "check": {
+      "q": "names = ['Sara', 'Bilal', 'Omar', 'Hana', 'Zayd']. Which statement outputs 'Hana'?",
+      "options": [
+       "print(names[4])",
+       "print(names[2])",
+       "print(names[3])",
+       "print(names[5])"
+      ],
+      "answer": 2,
+      "why": "Hana is the fourth item, so its index is 3. names[4] is Zayd (A), names[2] is Omar (B) and names[5] is out of range (D)."
+     }
+    }
+   ],
+   "practice": [
+    "Give one advantage of using the constant PI = 3.14 rather than typing 3.14 each time.",
+    "Design a record for a library book with three fields, giving the data type of each.",
+    "grid = [[1,2,3],[4,5,6]]. State grid[1][0] and write the statement that sets the last item to 0."
+   ],
+   "independent": [
+    "Core: A teacher stores five test scores in a 1D array. Write statements to read the third score and to change the first score to 18.",
+    "Extend: A 2D array holds the number of books borrowed on each day (columns) for three weeks (rows). Write code to output week 2, day 3 and the total for week 1.",
+    "Stretch: Explain when a record is a better choice than an array and when a 2D array is better. Use a school example for each."
+   ],
+   "exit": [
+    "State one difference between a record and an array.",
+    "In a 2D array, which index comes first, the row or the column?"
+   ],
+   "homework": "Draw a 3 by 4 array holding a weekly prayer timetable of your choosing and write five statements that read or change cells.",
+   "send": "SEND/EAL: provide a printed grid with numbered rows and columns and a word bank (row, column, index, field). Stretch: write a loop to total every cell of a 2D array."
+  },
+  {
+   "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
+   "n": 4,
+   "title": "Operators and trace tables",
+   "duration": 50,
+   "bigQuestion": "How can we find out what an algorithm does without running it?",
+   "objectives": [
+    "Use arithmetic, relational and logical operators in algorithms (1.2.3)",
+    "Complete a trace table to work out outputs and variable values (1.2.4)",
+    "Describe what an algorithm does from its trace"
+   ],
+   "successCriteria": [
+    "All: evaluate expressions with arithmetic and relational operators",
+    "Most: complete a trace table for a loop",
+    "Some: use the trace to state the purpose of an unfamiliar algorithm"
+   ],
+   "crossCurricular": "Mathematics: order of operations and iterative formulae",
+   "smsc": "Moral: patience and accuracy (itqan) in checking each step",
+   "keywords": [
+    {
+     "term": "operator",
+     "def": "a symbol that carries out an operation on values"
+    },
+    {
+     "term": "relational operator",
+     "def": "compares two values and gives True or False"
+    },
+    {
+     "term": "logical operator",
+     "def": "combines conditions: AND, OR, NOT"
+    },
+    {
+     "term": "trace table",
+     "def": "a table that records the value of each variable as an algorithm runs"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate 17 MOD 5 and 17 DIV 5.",
+    "What does the diamond in a flowchart do?",
+    "Name the three types of repetition or loop shown in the previous lesson."
+   ],
+   "teach": [
+    {
+     "heading": "Operators",
+     "bullets": [
+      "Arithmetic: + - * / DIV MOD and powers",
+      "Relational: = != < > <= >=",
+      "Logical: AND, OR, NOT"
+     ],
+     "note": "In Python DIV is // and MOD is %. Exam pseudocode may use either style; the paper always defines what it uses. Note that brackets and BIDMAS apply: * and / before + and -. Ask: what is 2 + 3 * 4? (14, not 20).",
+     "table": {
+      "head": [
+       "Expression",
+       "Result",
+       "Type"
+      ],
+      "rows": [
+       [
+        "17 // 5",
+        "3",
+        "Arithmetic (integer division)"
+       ],
+       [
+        "17 % 5",
+        "2",
+        "Arithmetic (remainder)"
+       ],
+       [
+        "2 ** 3",
+        "8",
+        "Arithmetic (power)"
+       ],
+       [
+        "7 >= 7",
+        "True",
+        "Relational"
+       ],
+       [
+        "(3 < 5) and (2 > 4)",
+        "False",
+        "Logical"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Trace table: record every change",
+     "bullets": [
+      "One column per variable, plus output",
+      "Add a row each time a value changes",
+      "Follow the code exactly, do not guess"
+     ],
+     "note": "Run the program with the class first without showing the output, then reveal it. Draw the trace table as pupils dictate. Point out that i is a variable too. The most common error is to skip the row where the loop condition fails.",
+     "code": {
+      "lang": "python",
+      "text": "total = 0\nfor i in range(1, 5):\n    if i % 2 == 0:\n        total = total + i\n    print(i, total)",
+      "output": "1 0\n2 2\n3 2\n4 6"
+     }
+    },
+    {
+     "heading": "Worked example: a while loop trace",
+     "note": "Model slowly, writing each row, and say the condition aloud each time. Ask pupils what the loop seems to calculate: it counts subtractions of 3, which is 8 DIV 3 plus one because the loop subtracts once more after n reaches 2. Stress that a trace tells you what the algorithm really does, which may differ from what you expected.",
+     "model": {
+      "problem": "Trace: n = 8, count = 0, WHILE n >= 0: n = n - 3, count = count + 1. Then OUTPUT count.",
+      "steps": [
+       "Start: n = 8, count = 0. Condition 8 >= 0 is True",
+       "Row 1: n = 5, count = 1 (5 >= 0 True)",
+       "Row 2: n = 2, count = 2 (2 >= 0 True)",
+       "Row 3: n = -1, count = 3 (-1 >= 0 False, so the loop stops)",
+       "OUTPUT count"
+      ],
+      "answer": "The output is 3. The final n is -1. Note this is 8 DIV 3 plus one, because the loop subtracts once more after n reaches 2."
+     }
+    },
+    {
+     "heading": "Answer: trace of the earlier program",
+     "note": "Pupils first complete their own trace of the program from the earlier slide, then you reveal this table. Only even values of i are added, so total goes 0, 2, 2, 6. Check they have a row for every pass of the loop.",
+     "table": {
+      "head": [
+       "i",
+       "i % 2 == 0",
+       "total",
+       "Output"
+      ],
+      "rows": [
+       [
+        "1",
+        "False",
+        "0",
+        "1 0"
+       ],
+       [
+        "2",
+        "True",
+        "2",
+        "2 2"
+       ],
+       [
+        "3",
+        "False",
+        "2",
+        "3 2"
+       ],
+       [
+        "4",
+        "True",
+        "6",
+        "4 6"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check: relational and logical operators",
+     "note": "Answer B. x > 3 is True, y < 10 is False, so True AND False is False; but the question uses OR. Work it through: x = 5, y = 12: x > 3 True; y < 10 False; OR gives True. Ask why option C (False) is the AND answer.",
+     "check": {
+      "q": "x = 5 and y = 12. What is the value of (x > 3) OR (y < 10)?",
+      "options": [
+       "False",
+       "True",
+       "5",
+       "12"
+      ],
+      "answer": 1,
+      "why": "x > 3 is True. y < 10 is False. With OR, one True is enough, so the result is True. False would be the result of AND (A). The result of a relational test is a Boolean, not a number (C, D)."
+     }
+    }
+   ],
+   "practice": [
+    "Evaluate: (a) 23 // 4; (b) 23 % 4; (c) 3 ** 2 + 1; (d) 10 != 10.",
+    "Trace: a = 1, b = 1; repeat 4 times: c = a + b, a = b, b = c. Complete the table and give the final b.",
+    "State the purpose of this algorithm: SET s TO 0, FOR each digit d IN [4, 8, 1]: SET s TO s + d, OUTPUT s / 3."
+   ],
+   "independent": [
+    "Core: Trace the program total = 1; for i in range(1, 4): total = total * 2; print(total). Show every row.",
+    "Extend: Write an algorithm using MOD to output 'even' or 'odd' for each number in [3, 10, 7, 12] and trace it.",
+    "Stretch: A trace of an unknown algorithm gives x: 1, 3, 7, 15, 31. Describe the pattern, write the loop that produced it and state the next value."
+   ],
+   "exit": [
+    "Calculate 29 MOD 6 and 29 DIV 6.",
+    "State why a trace table has a column for every variable."
+   ],
+   "homework": "Write a short algorithm using a loop and one IF. Swap with a partner (or ask someone at home), trace it for the input 6 and write down what it does.",
+   "send": "SEND/EAL: give a pre-drawn trace table with column headings and the first row filled. Stretch: ask for the trace of a nested loop."
+  },
+  {
+   "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
+   "n": 5,
+   "title": "Errors and test data: finding and fixing faults",
+   "duration": 50,
+   "bigQuestion": "How can you prove a program works, and what do you do when it does not?",
+   "objectives": [
+    "Identify syntax, logic and runtime errors (1.2.5)",
+    "Correct logic errors in an algorithm",
+    "Choose normal, boundary and erroneous test data and judge fitness for purpose (1.2.7)"
+   ],
+   "successCriteria": [
+    "All: name the three types of error and give an example of each",
+    "Most: spot and fix a logic error using a trace",
+    "Some: design a test plan with expected outcomes and judge whether a program is fit for purpose"
+   ],
+   "crossCurricular": "Science: fair testing and repeatable results",
+   "smsc": "Moral: honesty (sidq) in reporting that something is broken, rather than hiding it",
+   "keywords": [
+    {
+     "term": "syntax error",
+     "def": "code that breaks the rules of the language, so it cannot run"
+    },
+    {
+     "term": "logic error",
+     "def": "the program runs but gives wrong results because of faulty reasoning"
+    },
+    {
+     "term": "runtime error",
+     "def": "an error that happens while the program is running and stops it"
+    },
+    {
+     "term": "test data",
+     "def": "chosen inputs used to check a program, with the expected results"
+    },
+    {
+     "term": "fit for purpose",
+     "def": "does the job it was designed for, correctly and efficiently"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is a trace table used for?",
+    "Calculate 90 / 3 + 10 and 90 / (3 + 10) on paper, to 1 decimal place.",
+    "Why do we use meaningful variable names?"
+   ],
+   "teach": [
+    {
+     "heading": "Three kinds of error",
+     "bullets": [
+      "Syntax: rules broken, program will not start",
+      "Logic: runs, but the answer is wrong",
+      "Runtime: crashes while running"
+     ],
+     "note": "Run all three programs on the next slides in turn if you have a computer. Ask pupils which type is hardest to find and why: logic errors give no error message. Emphasise that only the logic error needs a trace table to find.",
+     "table": {
+      "head": [
+       "Type",
+       "When detected",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Syntax",
+        "Before or as the program starts",
+        "Missing bracket or colon"
+       ],
+       [
+        "Logic",
+        "Never by the computer; found by testing",
+        "Wrong operator or order of operations"
+       ],
+       [
+        "Runtime",
+        "While running",
+        "Dividing by zero, index out of range"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Syntax error",
+     "bullets": [
+      "The translator reports the line",
+      "Fix: add the missing bracket",
+      "The program cannot run until fixed"
+     ],
+     "note": "Read the message aloud and find the cause. In exams a syntax error is often a missing colon, bracket, quotation mark or misspelled keyword. Ask pupils to say how the translator helped them.",
+     "code": {
+      "lang": "python",
+      "text": "print(\"Salam\"",
+      "output": "SyntaxError: '(' was never closed"
+     }
+    },
+    {
+     "heading": "Logic error",
+     "bullets": [
+      "No error message appears",
+      "Output is 190.0, not the mean 90.0",
+      "Fix: brackets around the sum"
+     ],
+     "note": "Pupils should calculate the correct mean first (60 + 90 + 120 = 270, divided by 3 is 90), then compare. The fault is the order of operations: division happens before addition. Show the fix: mean = (a + b + c) / 3. Link to the trace table: trace the faulty line to see where it diverges.",
+     "code": {
+      "lang": "python",
+      "text": "a = 60\nb = 90\nc = 120\nmean = a + b + c / 3\nprint(mean)",
+      "output": "190.0"
+     }
+    },
+    {
+     "heading": "Worked example: find and fix",
+     "note": "Model the method: run with simple data you can predict, compare with the expected value, then trace to find the line. Point out that the logic error here is also an off-by-one, a very common exam error. The range stops before the second number.",
+     "model": {
+      "problem": "This code should output the sum of 1 to 5 (15) but outputs 10: total = 0; for i in range(1, 5): total = total + i; print(total). Find and fix the error.",
+      "steps": [
+       "Expected output: 1 + 2 + 3 + 4 + 5 = 15",
+       "Trace: i takes 1, 2, 3, 4 only, so total is 10",
+       "range(1, 5) stops before 5",
+       "Change to range(1, 6)"
+      ],
+      "answer": "A logic error (off by one). The corrected loop is for i in range(1, 6), which outputs 15."
+     }
+    },
+    {
+     "heading": "Runtime error and test data",
+     "bullets": [
+      "Runtime: 10 / 0 stops the program",
+      "Normal data: typical valid values",
+      "Boundary data: the edges; erroneous data: invalid input"
+     ],
+     "note": "Run the code to show the crash. Then introduce a test plan for a program that accepts ages from 11 to 16. Boundaries are both sides of each limit: 10, 11, 16, 17. Erroneous data includes the wrong type, such as 'abc'. Testing shows the presence of faults, not their absence.",
+     "code": {
+      "lang": "python",
+      "text": "nums = [4, 0]\nprint(10 / nums[0])\nprint(10 / nums[1])",
+      "output": "2.5\nZeroDivisionError: division by zero"
+     }
+    },
+    {
+     "heading": "Check: type of error",
+     "note": "Answer C. The program runs and prints something, so it is not a syntax error; it does not crash, so it is not a runtime error; the result is wrong. Discuss why D is not an error type at all: bad style is not an error.",
+     "check": {
+      "q": "A program to find the area of a rectangle outputs 14 for width 3 and height 4, instead of 12. It runs without crashing. What type of error is this?",
+      "options": [
+       "Syntax error",
+       "Runtime error",
+       "Logic error",
+       "Presentation error"
+      ],
+      "answer": 2,
+      "why": "The program runs to the end but the result is wrong, so the logic is faulty (it added 3 + 4 instead of multiplying). A syntax error stops the program starting (A); a runtime error crashes it (B)."
+     }
+    }
+   ],
+   "practice": [
+    "Classify each fault: (a) a missing colon after if; (b) a program that adds VAT twice; (c) asking for list[10] in a list of 5 items.",
+    "A program accepts exam marks from 0 to 100. Give one normal, two boundary and one erroneous test value for the valid range.",
+    "Explain how a trace table helps find a logic error."
+   ],
+   "independent": [
+    "Core: Fix the error and state its type: for i in range(3) print(i).",
+    "Extend: Write a test plan table (input, type of data, expected result) for a program that accepts a password of 8 to 12 characters.",
+    "Stretch: A program to find the largest of three numbers always outputs the first number. Describe how you would test it, what data you would choose and how you would find the line at fault."
+   ],
+   "exit": [
+    "Name the three types of error. Which one does the computer never report?",
+    "Give one example of boundary data for a program that accepts numbers from 1 to 50."
+   ],
+   "homework": "Write a short program in Python containing one syntax, one logic and one runtime error (in three separate versions). Annotate each with the type and the fix.",
+   "send": "SEND/EAL: provide a sorting task with the three error types as cards and example snippets. Stretch: ask for a test plan with 8 rows covering every kind of test data."
+  },
+  {
+   "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
+   "n": 6,
+   "title": "Efficiency of searches and sorts",
+   "duration": 50,
+   "bigQuestion": "How do we decide which algorithm is better when they all give the right answer?",
+   "objectives": [
+    "Explain how bubble sort, merge sort, linear search and binary search work (1.2.6)",
+    "Compare algorithms by counting passes and comparisons (1.2.7)",
+    "Choose a suitable algorithm for a given situation"
+   ],
+   "successCriteria": [
+    "All: describe each algorithm in one sentence",
+    "Most: carry out a merge sort and count binary search checks",
+    "Some: justify an algorithm choice by comparing the number of comparisons as the list grows"
+   ],
+   "crossCurricular": "Mathematics: powers of 2 and halving",
+   "smsc": "Moral: ihsan (excellence) in choosing the best method, not just the first one",
+   "keywords": [
+    {
+     "term": "efficiency",
+     "def": "how little time or memory an algorithm needs for a job"
+    },
+    {
+     "term": "comparison",
+     "def": "checking two values against each other"
+    },
+    {
+     "term": "pass",
+     "def": "one complete run through the list in a sort"
+    },
+    {
+     "term": "sorted",
+     "def": "arranged in a given order, such as ascending"
+    }
+   ],
+   "starter": [
+    "Bismillah. Why must a list be sorted before a binary search?",
+    "Sort 4, 9, 2 using bubble sort and show the list after the first pass.",
+    "Write the middle item of 2, 5, 8, 11, 14."
+   ],
+   "teach": [
+    {
+     "heading": "Bubble sort in code",
+     "bullets": [
+      "Compare neighbours, swap if out of order",
+      "Repeat passes until a pass has no swaps",
+      "Output shows the list after each pass"
+     ],
+     "note": "Pupils have met bubble sort in lesson 5 of the existing unit; here we trace the code and count passes. Point out the swapped flag: it lets the algorithm stop early. Ask how many passes an already sorted list needs (one, to confirm no swaps).",
+     "code": {
+      "lang": "python",
+      "text": "data = [5, 3, 8, 1]\npasses = 0\nswapped = True\nwhile swapped:\n    swapped = False\n    for i in range(len(data) - 1):\n        if data[i] > data[i + 1]:\n            data[i], data[i + 1] = data[i + 1], data[i]\n            swapped = True\n    passes = passes + 1\n    print(passes, data)",
+      "output": "1 [3, 5, 1, 8]\n2 [3, 1, 5, 8]\n3 [1, 3, 5, 8]\n4 [1, 3, 5, 8]"
+     }
+    },
+    {
+     "heading": "Binary search in code",
+     "bullets": [
+      "Check the middle item each time",
+      "Discard half the list after every check",
+      "Count the checks to compare efficiency"
+     ],
+     "note": "Trace the code with the whole class, drawing low, mid and high. The list is sorted, which is essential. Compare: a linear search would take 6 checks to reach 27, binary took fewer. Pupils should state the result in words using 'checks'.",
+     "code": {
+      "lang": "python",
+      "text": "nums = [3, 8, 12, 15, 21, 27, 34, 40, 52]\ntarget = 27\nlow = 0\nhigh = len(nums) - 1\nchecks = 0\nwhile low <= high:\n    mid = (low + high) // 2\n    checks = checks + 1\n    if nums[mid] == target:\n        print(\"found at\", mid, \"after\", checks, \"checks\")\n        break\n    elif nums[mid] < target:\n        low = mid + 1\n    else:\n        high = mid - 1",
+      "output": "found at 5 after 3 checks"
+     }
+    },
+    {
+     "heading": "How the work grows",
+     "bullets": [
+      "Linear search: up to n checks",
+      "Binary search: halves each time, about log2 n",
+      "Merge sort splits then merges; bubble sort needs many passes"
+     ],
+     "note": "Let pupils notice that doubling the list adds only one extra check for binary search. This is the key idea for 'efficiency' answers. Merge sort needs extra memory for the merged lists; bubble sort sorts in place. Do not ask for formulae beyond this table.",
+     "table": {
+      "head": [
+       "Items in list",
+       "Linear search, worst case",
+       "Binary search, worst case"
+      ],
+      "rows": [
+       [
+        "8",
+        "8 checks",
+        "4 checks"
+       ],
+       [
+        "1000",
+        "1000 checks",
+        "10 checks"
+       ],
+       [
+        "1 000 000",
+        "1 000 000 checks",
+        "20 checks"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Worked example: merge sort",
+     "note": "Model on the board in two colours: splits in one, merges in another. Emphasise that in the merge step the first items of each list are compared and the smaller is moved. Say the stages aloud: split, split, merge, merge. Link to the cost: the extra lists use more memory.",
+     "model": {
+      "problem": "Use a merge sort on 7, 2, 9, 4. Show every stage.",
+      "steps": [
+       "Split into halves: [7, 2] and [9, 4]",
+       "Split again: [7] [2] [9] [4]",
+       "Merge pairs: [2, 7] and [4, 9]",
+       "Merge the two lists: compare 2 and 4 (take 2), 7 and 4 (take 4), 7 and 9 (take 7), then 9"
+      ],
+      "answer": "The sorted list is [2, 4, 7, 9]."
+     }
+    },
+    {
+     "heading": "Check: choosing an algorithm",
+     "note": "Answer B. The list is unsorted, so binary search would give wrong results (D, the trap). Sorting first just to search once is slow for a single lookup. Ask why the answer would change if the contacts list was searched thousands of times.",
+     "check": {
+      "q": "A teacher has an unsorted list of 40 names and wants to find one name once. Which is the best choice?",
+      "options": [
+       "Merge sort, then binary search",
+       "Linear search",
+       "Bubble sort, then linear search",
+       "Binary search on the list as it is"
+      ],
+      "answer": 1,
+      "why": "With one search on an unsorted list, a linear search needs at most 40 checks and no sorting. Binary search only works on a sorted list (D), and sorting first (A, C) costs extra work for a single lookup."
+     }
+    }
+   ],
+   "practice": [
+    "Give one advantage and one disadvantage of merge sort compared with bubble sort.",
+    "Write the first pass of a bubble sort on [6, 2, 9, 1].",
+    "A sorted list has 16 items. State the most checks a binary search could need (hint: halve 16 repeatedly to 1)."
+   ],
+   "independent": [
+    "Core: Carry out a merge sort on 5, 1, 4, 8, 2, 7, 3, 6, showing every split and merge.",
+    "Extend: Trace the binary search code for target = 8 in the same list and give the number of checks.",
+    "Stretch: A website sorts 1 000 000 prices once and then answers many searches. Explain, using the number of checks, why sorting first is worth it."
+   ],
+   "exit": [
+    "Why is binary search faster than linear search on a large sorted list?",
+    "State one fact that makes merge sort better than bubble sort for large lists."
+   ],
+   "homework": "Write a half-page comparing linear and binary search using a library catalogue as the example. Include the checks needed for 1000 books.",
+   "send": "SEND/EAL: give cut-up cards of a merge sort to rearrange into order. Stretch: ask for the most checks for 1000 items and the reasoning. Existing y10 lessons 4 to 6 teach how the algorithms work; this lesson adds code tracing and efficiency comparison."
+  },
+  {
+   "unit": "Unit 1.3: Computational thinking: logic and truth tables",
+   "n": 7,
+   "title": "Logic gates and truth tables: AND, OR and NOT",
+   "duration": 50,
+   "bigQuestion": "How can a computer decide yes or no from several pieces of information?",
+   "objectives": [
+    "Complete truth tables for AND, OR and NOT (1.3.1)",
+    "Write and read logic expressions with up to two inputs",
+    "Relate logic expressions to conditions in programs"
+   ],
+   "successCriteria": [
+    "All: complete the truth tables for AND, OR and NOT",
+    "Most: complete a truth table for a combined two-input expression",
+    "Some: write an expression from a description and show two expressions are not the same"
+   ],
+   "crossCurricular": "Mathematics: Venn diagrams and set logic (AND is intersection, OR is union)",
+   "smsc": "Moral: sound judgement uses all the evidence, as logic combines inputs fairly",
+   "keywords": [
+    {
+     "term": "Boolean",
+     "def": "a value that is either True or False (1 or 0)"
+    },
+    {
+     "term": "AND",
+     "def": "output is True only if both inputs are True"
+    },
+    {
+     "term": "OR",
+     "def": "output is True if at least one input is True"
+    },
+    {
+     "term": "NOT",
+     "def": "reverses the input: True becomes False"
+    },
+    {
+     "term": "truth table",
+     "def": "lists every combination of inputs and the output for each"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is the output of 5 > 3 in Python?",
+    "Name the data type that holds True or False.",
+    "How many different combinations of two inputs, each 0 or 1, are there?"
+   ],
+   "teach": [
+    {
+     "heading": "The three operators",
+     "bullets": [
+      "AND: both must be 1",
+      "OR: at least one is 1",
+      "NOT: flips the value"
+     ],
+     "note": "Link to real life: you can enter the exam hall if you have a pen AND your ID. Rows in a truth table go in counting order, 00, 01, 10, 11. Say that the same rules apply in Python with and, or and not. Pupils often confuse OR with 'exactly one': in computing OR includes both.",
+     "table": {
+      "head": [
+       "A",
+       "B",
+       "A AND B",
+       "A OR B",
+       "NOT A"
+      ],
+      "rows": [
+       [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+       ],
+       [
+        "0",
+        "1",
+        "0",
+        "1",
+        "1"
+       ],
+       [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0"
+       ],
+       [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Same thing in Python",
+     "bullets": [
+      "Booleans are True and False",
+      "and, or, not work on them",
+      "Loop through every combination"
+     ],
+     "note": "Run the program: the output columns mirror the table (with True and False instead of 1 and 0). Ask pupils to match each column to the table. This shows that a truth table is just a record of every possible input.",
+     "code": {
+      "lang": "python",
+      "text": "for a in (False, True):\n    for b in (False, True):\n        print(a, b, a and b, a or b, not a)",
+      "output": "False False False False True\nFalse True False True True\nTrue False False True False\nTrue True True True False"
+     }
+    },
+    {
+     "heading": "Worked example: a combined expression",
+     "note": "Model by working out the middle column first: the bracket is evaluated before the final operator. Build the table row by row. Emphasise writing the intermediate column; marks are often given for it.",
+     "model": {
+      "problem": "Complete the truth table for the expression A OR (NOT B).",
+      "steps": [
+       "Four rows for the inputs A and B: 00, 01, 10, 11",
+       "Work out NOT B: 1, 0, 1, 0",
+       "Combine with A using OR: row 00 -> 0 OR 1 = 1; row 01 -> 0 OR 0 = 0",
+       "Row 10 -> 1 OR 1 = 1; row 11 -> 1 OR 0 = 1"
+      ],
+      "answer": "Output column: 1, 0, 1, 1."
+     }
+    },
+    {
+     "heading": "Misconception: NOT over brackets",
+     "bullets": [
+      "NOT (A AND B) gives 1, 1, 1, 0",
+      "NOT A AND NOT B gives 1, 0, 0, 0",
+      "The expressions are different"
+     ],
+     "note": "Ask pupils to build both columns to prove it. The brackets matter: NOT applies to the whole bracket. This is useful when writing conditions such as not (a and b).",
+     "misconception": {
+      "wrong": "NOT (A AND B) is the same as (NOT A) AND (NOT B).",
+      "right": "They are different. NOT (A AND B) is 1 unless both inputs are 1; (NOT A) AND (NOT B) is 1 only when both are 0."
+     }
+    },
+    {
+     "heading": "Check: AND or OR?",
+     "note": "Answer D. 'Either' here means at least one, which is OR; then the output is 1 for rows with a 1 in A or B. Option A is the AND column. Ask how the table would change if the rule were: A AND NOT B.",
+     "check": {
+      "q": "A garden light switches on if the sensor detects movement (A) or the manual switch is on (B). For A = 1 and B = 0, what is the output?",
+      "options": [
+       "0, because both must be on",
+       "0, because the switch is off",
+       "1, because NOT A is 0",
+       "1, because one input is 1"
+      ],
+      "answer": 3,
+      "why": "The rule is OR, so one input at 1 is enough. The AND rule would give 0 (A, B). NOT A is not part of the rule (C)."
+     }
+    }
+   ],
+   "practice": [
+    "Complete the truth table for NOT A AND B (inputs A and B).",
+    "Write a Python condition that is True if age >= 11 and age <= 16.",
+    "Write the logic expression: a door alarm sounds if the door is open (D) AND the system is armed (S)."
+   ],
+   "independent": [
+    "Core: Complete the truth tables for A AND B, A OR B and NOT (A OR B).",
+    "Extend: Write a logic expression and truth table for: a school gate stays locked if it is after 4 pm (P) OR the key is not in the office (K).",
+    "Stretch: Show, using truth tables, that NOT (A OR B) is the same as (NOT A) AND (NOT B)."
+   ],
+   "exit": [
+    "Complete: 1 AND 0 = ?, 1 OR 0 = ?, NOT 1 = ?",
+    "Write the Python form of the expression 'A OR NOT B'."
+   ],
+   "homework": "Find two real conditions from home or the masjid (for example 'open if it is Friday and before 2 pm') and write each as a logic expression with a truth table.",
+   "send": "SEND/EAL: give a blank truth table with the inputs filled in and a key (1 = true). Stretch: ask for expressions with a hidden NOT and justify the output."
+  },
+  {
+   "unit": "Unit 1.3: Computational thinking: logic and truth tables",
+   "n": 8,
+   "title": "Three-input logic and conditions in programs",
+   "duration": 50,
+   "bigQuestion": "How do real systems combine three or more conditions?",
+   "objectives": [
+    "Complete truth tables with three inputs (1.3.1)",
+    "Write logic expressions from a description and read them back",
+    "Relate expressions to conditions in Python programs"
+   ],
+   "successCriteria": [
+    "All: list all eight combinations of three inputs",
+    "Most: complete a three-input truth table for a bracketed expression",
+    "Some: write an expression from a scenario and use the truth table to test a program condition"
+   ],
+   "crossCurricular": "Design and Technology: control systems with several sensors",
+   "smsc": "Moral: caution and care (taqwa in action): safety systems must consider every case",
+   "keywords": [
+    {
+     "term": "input",
+     "def": "a value fed into a logic expression"
+    },
+    {
+     "term": "expression",
+     "def": "a combination of inputs and operators, such as (A AND B) OR C"
+    },
+    {
+     "term": "bracket",
+     "def": "groups part of an expression to be worked out first"
+    },
+    {
+     "term": "condition",
+     "def": "a Boolean test in a program, such as age > 16"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the truth table for A OR B.",
+    "What is the value of NOT (1 AND 0)?",
+    "Write a Python condition for 'x is between 1 and 9'."
+   ],
+   "teach": [
+    {
+     "heading": "Eight rows",
+     "bullets": [
+      "Three inputs give 2 x 2 x 2 = 8 rows",
+      "Write rows in counting order, 000 to 111",
+      "Work out brackets in a helper column"
+     ],
+     "note": "Show the pattern: C alternates every row, B every two, A every four. Ask what four inputs would need (16 rows). Pupils lose marks by missing rows or writing them out of order.",
+     "table": {
+      "head": [
+       "A",
+       "B",
+       "C",
+       "(A AND B) OR C"
+      ],
+      "rows": [
+       [
+        "0",
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1",
+        "1"
+       ],
+       [
+        "0",
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "1",
+        "1",
+        "1"
+       ],
+       [
+        "1",
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "1",
+        "0",
+        "1",
+        "1"
+       ],
+       [
+        "1",
+        "1",
+        "0",
+        "1"
+       ],
+       [
+        "1",
+        "1",
+        "1",
+        "1"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "From scenario to expression",
+     "bullets": [
+      "Underline the words AND, OR, NOT",
+      "Give each condition a letter",
+      "Use brackets to match the meaning"
+     ],
+     "note": "Work through: an alarm sounds if the door is open and it is night or the owner is away. Pupils must decide where the bracket goes; 'open AND (night OR away)'. Compare with (open AND night) OR away and ask when they differ.",
+     "code": {
+      "lang": "python",
+      "text": "door_open = True\nnight = False\naway = True\nalarm = door_open and (night or away)\nprint(alarm)\nalarm2 = (door_open and night) or away\nprint(alarm2)\ndoor_open = False\nprint(door_open and (night or away))",
+      "output": "True\nTrue\nFalse"
+     }
+    },
+    {
+     "heading": "Worked example: three-input table",
+     "note": "Model using a helper column for the bracket B OR C first. Remind pupils that NOT A AND (B OR C) is only 1 when A is 0 and at least one of B, C is 1. Let pupils check the table by reading out the rows that equal 1: there are three.",
+     "model": {
+      "problem": "Complete the truth table for NOT A AND (B OR C).",
+      "steps": [
+       "List the eight rows from 000 to 111",
+       "Helper column B OR C: 0, 1, 1, 1, 0, 1, 1, 1",
+       "Column NOT A: 1, 1, 1, 1, 0, 0, 0, 0",
+       "AND the two columns together row by row"
+      ],
+      "answer": "Output column: 0, 1, 1, 1, 0, 0, 0, 0."
+     }
+    },
+    {
+     "heading": "Check: reading an expression",
+     "note": "Answer A. Rows where A = 1 and B = 1 give 1 for A AND B regardless of C. The only row for which the bracketed expression is 1 with C = 0 is 110. Option C is the trap of reading the expression as A OR B.",
+     "check": {
+      "q": "Which input row gives an output of 1 for the expression (A AND B) AND NOT C?",
+      "options": [
+       "A = 1, B = 1, C = 0",
+       "A = 1, B = 0, C = 0",
+       "A = 0, B = 1, C = 0",
+       "A = 1, B = 1, C = 1"
+      ],
+      "answer": 0,
+      "why": "Both A and B must be 1 and C must be 0 so that NOT C is 1. The other rows each break one of those three requirements."
+     }
+    }
+   ],
+   "practice": [
+    "Complete the truth table for (A OR B) AND C.",
+    "Write an expression for: a heater runs if it is cold (C) and the window is closed (W) or the override switch (O) is on.",
+    "Write the Python statement that stores the result of the expression in the previous question in the variable heater_on."
+   ],
+   "independent": [
+    "Core: Complete the truth table for A AND (NOT B) AND C.",
+    "Extend: A lift moves only if the door is closed (D), the lift is not overloaded (O) and a button is pressed (B). Write the expression, build the table and state in how many of the eight rows the lift moves.",
+    "Stretch: Write a Python function with three Boolean parameters that returns True only if exactly one of them is True. Give its truth table."
+   ],
+   "exit": [
+    "How many rows has a truth table with three inputs?",
+    "Write the expression 'A or B, and C' with brackets correctly placed."
+   ],
+   "homework": "Choose a safety system (a car seatbelt warning, an oven door lock). Write its logic as an expression with three inputs and a truth table.",
+   "send": "SEND/EAL: give a pre-filled template with the eight input rows and the helper column labelled. Stretch: show the expression can be rewritten without brackets and test it with a truth table."
+  },
+  {
+   "unit": "Unit 2.1: Data: binary and number representation",
+   "n": 9,
+   "title": "Bits, states and unsigned binary",
+   "duration": 50,
+   "bigQuestion": "How can a computer store anything at all using only on and off?",
+   "objectives": [
+    "Explain that binary represents data and instructions and count the states for n bits (2.1.1)",
+    "Convert between denary and 8-bit unsigned binary, 0 to 255 (2.1.2, 2.1.3)",
+    "State the largest value for a given number of bits"
+   ],
+   "successCriteria": [
+    "All: convert a small denary number to binary and back",
+    "Most: convert any value 0 to 255 in both directions",
+    "Some: work out the number of bits needed for a given number of values and justify it"
+   ],
+   "crossCurricular": "Mathematics: powers of 2 and place value",
+   "smsc": "Cultural: the idea of simple, reliable building blocks combining into something vast",
+   "keywords": [
+    {
+     "term": "bit",
+     "def": "a binary digit, 0 or 1"
+    },
+    {
+     "term": "byte",
+     "def": "8 bits"
+    },
+    {
+     "term": "denary",
+     "def": "base 10, the number system we normally use"
+    },
+    {
+     "term": "binary",
+     "def": "base 2, using only the digits 0 and 1"
+    },
+    {
+     "term": "state",
+     "def": "one possible pattern of a group of bits"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write the first eight powers of 2 (1, 2, 4 ...).",
+    "What is 2 x 2 x 2 x 2 x 2?",
+    "Convert 13 into a sum of 8, 4, 2 and 1 (for example 13 = 8 + 4 + 1)."
+   ],
+   "teach": [
+    {
+     "heading": "Why binary?",
+     "bullets": [
+      "Computers use switches that are on or off",
+      "Data and instructions are both stored as bits",
+      "A bit is 0 or 1; a byte is 8 bits"
+     ],
+     "note": "Explain that circuits are made of transistors with two reliable states; two states are easy to tell apart and resist noise. Stress that program instructions are stored as binary just as data is; the computer cannot tell which it is without context. Ask pupils what a pattern like 01000001 could mean (the number 65 or the letter A).",
+     "table": {
+      "head": [
+       "Bits",
+       "Patterns (states)",
+       "Calculation"
+      ],
+      "rows": [
+       [
+        "1",
+        "2",
+        "2"
+       ],
+       [
+        "2",
+        "4",
+        "2 x 2"
+       ],
+       [
+        "3",
+        "8",
+        "2 x 2 x 2"
+       ],
+       [
+        "4",
+        "16",
+        "2^4"
+       ],
+       [
+        "8",
+        "256",
+        "2^8"
+       ],
+       [
+        "n",
+        "2^n",
+        "n twos multiplied"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Place values",
+     "bullets": [
+      "Each place is double the place on its right",
+      "8 bits: 128 64 32 16 8 4 2 1",
+      "Largest 8-bit value is 255, not 256"
+     ],
+     "note": "Draw the place-value headings on the board and keep them there all lesson. Note that 8 bits give 256 states but the values run from 0 to 255 because 0 is a state. Pupils often write 256 as the maximum.",
+     "table": {
+      "head": [
+       "128",
+       "64",
+       "32",
+       "16",
+       "8",
+       "4",
+       "2",
+       "1"
+      ],
+      "rows": [
+       [
+        "0",
+        "1",
+        "0",
+        "0",
+        "1",
+        "1",
+        "0",
+        "1"
+       ],
+       [
+        "1",
+        "0",
+        "1",
+        "1",
+        "0",
+        "0",
+        "1",
+        "0"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Worked example: denary to binary",
+     "note": "Model by subtracting place values from the left: if the place value fits, write 1 and subtract; if not, write 0. Check by adding the place values back. Say the check aloud so pupils see it as part of the method.",
+     "model": {
+      "problem": "Convert 77 to 8-bit binary.",
+      "steps": [
+       "128 does not fit (0). 64 fits: 77 - 64 = 13 (1)",
+       "32 no (0). 16 no (0). 8 fits: 13 - 8 = 5 (1)",
+       "4 fits: 5 - 4 = 1 (1). 2 no (0). 1 fits (1)",
+       "Write the bits in order: 0 1 0 0 1 1 0 1",
+       "Check: 64 + 8 + 4 + 1 = 77"
+      ],
+      "answer": "77 in binary is 01001101."
+     }
+    },
+    {
+     "heading": "Binary to denary, and the checker",
+     "bullets": [
+      "Add the place values where there is a 1",
+      "10110010 = 128 + 32 + 16 + 2 = 178",
+      "Python can check your working"
+     ],
+     "note": "Pupils should work out 10110010 first. Python's int(text, 2) and format() are only for checking; in the exam, conversions are done by hand. Ask why the leading zero in 01001101 must be kept when we say '8-bit'.",
+     "code": {
+      "lang": "python",
+      "text": "print(format(77, \"08b\"))\nprint(int(\"10110010\", 2))\nprint(2 ** 8, 2 ** 8 - 1)",
+      "output": "01001101\n178\n256 255"
+     }
+    },
+    {
+     "heading": "Check: how many values?",
+     "note": "Answer C. With n bits there are 2^n states: 2^6 = 64. A doubles instead of using the power. B is 6 x 6; D confuses the number of states with the largest value (63).",
+     "check": {
+      "q": "A sensor sends a 6-bit binary pattern. How many different patterns can it send?",
+      "options": [
+       "12",
+       "36",
+       "64",
+       "63"
+      ],
+      "answer": 2,
+      "why": "6 bits give 2^6 = 64 patterns (0 to 63). 12 is 6 x 2 (A), 36 is 6 x 6 (B) and 63 is the largest value, not the number of patterns (D)."
+     }
+    }
+   ],
+   "practice": [
+    "Convert 45 to 8-bit binary and show a check.",
+    "Convert 11001001 to denary.",
+    "How many bits are needed to give a different pattern to each of 100 pupils? Explain."
+   ],
+   "independent": [
+    "Core: Convert 19, 100 and 255 to 8-bit binary.",
+    "Extend: Convert 01101110, 10000001 and 11111110 to denary, and state the largest number that can be stored in 10 bits.",
+    "Stretch: A game has 300 different items. Work out the minimum number of bits to give each item its own code and say how many spare codes there are."
+   ],
+   "exit": [
+    "State the number of values that 5 bits can represent.",
+    "Convert 00010110 to denary."
+   ],
+   "homework": "Write your age, your house number and the number of letters in your name in 8-bit binary. Show working for each.",
+   "send": "SEND/EAL: keep the place-value strip visible and provide a template with the 8 columns. Stretch: ask for conversions using 12-bit binary and the number of states."
+  },
+  {
+   "unit": "Unit 2.1: Data: binary and number representation",
+   "n": 10,
+   "title": "Signed integers and two's complement",
+   "duration": 50,
+   "bigQuestion": "How can a computer store negative numbers using only 0s and 1s?",
+   "objectives": [
+    "Represent signed integers using two's complement (2.1.2)",
+    "Convert between denary and 8-bit two's complement, -128 to +127 (2.1.3)",
+    "Explain the range of signed and unsigned 8-bit integers"
+   ],
+   "successCriteria": [
+    "All: state the range of 8-bit signed integers",
+    "Most: convert positive and negative numbers in both directions",
+    "Some: explain why two's complement is useful and spot an invalid conversion"
+   ],
+   "crossCurricular": "Mathematics: negative numbers and number lines",
+   "smsc": "Moral: fairness in treating negative values as seriously as positive ones",
+   "keywords": [
+    {
+     "term": "unsigned",
+     "def": "a binary number with no sign: all bits are used for the value"
+    },
+    {
+     "term": "signed",
+     "def": "a binary number that can be positive or negative"
+    },
+    {
+     "term": "two's complement",
+     "def": "a way of storing signed numbers where the leftmost bit has a negative place value"
+    },
+    {
+     "term": "most significant bit",
+     "def": "the leftmost bit, with the largest place value"
+    }
+   ],
+   "starter": [
+    "Bismillah. Convert 52 to 8-bit binary.",
+    "What is the largest unsigned 8-bit value?",
+    "What is -128 + 64?"
+   ],
+   "teach": [
+    {
+     "heading": "The idea",
+     "bullets": [
+      "Leftmost bit has a negative value: -128",
+      "Other bits keep their positive values",
+      "Range is -128 to +127"
+     ],
+     "note": "The idea is the same place-value method with one change. Show that with a leading 1 the number starts at -128 and the other bits add back. The number is negative if and only if the leading bit is 1. Compare unsigned 255 with signed -1 for the same pattern.",
+     "table": {
+      "head": [
+       "Pattern",
+       "Unsigned",
+       "Signed (two's complement)"
+      ],
+      "rows": [
+       [
+        "00000001",
+        "1",
+        "1"
+       ],
+       [
+        "01111111",
+        "127",
+        "127"
+       ],
+       [
+        "10000000",
+        "128",
+        "-128"
+       ],
+       [
+        "11111111",
+        "255",
+        "-1"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Binary to denary",
+     "bullets": [
+      "Place values: -128 64 32 16 8 4 2 1",
+      "11110110 = -128 + 64 + 32 + 16 + 4 + 2",
+      "= -10"
+     ],
+     "note": "Work through the sum aloud: 64 + 32 + 16 + 4 + 2 = 118, and -128 + 118 = -10. Point out that a leading 1 means the answer is at most -1. Pupils like to ignore the first bit and read the rest; correct that now.",
+     "code": {
+      "lang": "python",
+      "text": "print(-128 + 64 + 32 + 16 + 4 + 2)\nprint(format(-10 & 255, \"08b\"))\nprint(format(-45 & 255, \"08b\"))",
+      "output": "-10\n11110110\n11010011"
+     }
+    },
+    {
+     "heading": "Worked example: negative to binary",
+     "note": "Model the method of 'write the positive number, flip the bits, add 1'. Then check using the place values. Both methods lead to the same answer; pupils may use either as long as they check. Emphasise that the number of bits must be fixed at 8 so the leading zeros matter.",
+     "model": {
+      "problem": "Write -45 as an 8-bit two's complement number.",
+      "steps": [
+       "Write +45 in 8 bits: 00101101",
+       "Flip every bit: 11010010",
+       "Add 1: 11010011",
+       "Check: -128 + 64 + 16 + 2 + 1 = -45"
+      ],
+      "answer": "-45 is 11010011."
+     }
+    },
+    {
+     "heading": "Misconception: sign and magnitude",
+     "bullets": [
+      "Not just a minus sign bit",
+      "10000101 is -123, not -5",
+      "The leading bit is worth -128"
+     ],
+     "note": "Pupils often think the leading 1 just means 'negative' and the rest is the size. Test it: -128 + 4 + 1 = -123. Sign-and-magnitude is a different system and is not the one used in this course.",
+     "misconception": {
+      "wrong": "In 8-bit two's complement, 10000101 is -5 (a minus sign then 0000101).",
+      "right": "The leading bit is worth -128, so 10000101 = -128 + 4 + 1 = -123."
+     }
+    },
+    {
+     "heading": "Check: convert",
+     "note": "Answer B. The leading 1 means the number is negative: -128 + 64 + 8 + 4 + 2 = -50. Option A is the unsigned value, 206. C comes from reading the other seven bits as 78 and just adding a minus sign. D has the right size but the wrong sign.",
+     "check": {
+      "q": "What is 11001110 as an 8-bit two's complement number?",
+      "options": [
+       "206",
+       "-50",
+       "-78",
+       "50"
+      ],
+      "answer": 1,
+      "why": "-128 + 64 + 8 + 4 + 2 = -50. The unsigned value is 206 (A). C wrongly treats the leading 1 as just a minus sign in front of 78; 50 has the wrong sign (D)."
+     }
+    }
+   ],
+   "practice": [
+    "State the smallest and largest 8-bit two's complement integers.",
+    "Write -1 and -128 in 8-bit two's complement.",
+    "Convert 10100000 to denary."
+   ],
+   "independent": [
+    "Core: Convert 00111100 and 11000100 to denary (two's complement).",
+    "Extend: Write -20, -75 and 99 in 8-bit two's complement.",
+    "Stretch: Explain why the range is -128 to +127 and not -127 to +128, using the number of patterns available for positive numbers, zero and negative numbers."
+   ],
+   "exit": [
+    "Write -3 in 8-bit two's complement.",
+    "What is the smallest number that 8-bit two's complement can store?"
+   ],
+   "homework": "Make a conversion chart for the numbers -8 to +7 in 4-bit two's complement (place values -8, 4, 2, 1).",
+   "send": "SEND/EAL: provide a place-value strip with -128 in a different colour. Stretch: ask for 16-bit extreme values (-32 768 to +32 767) with reasoning."
+  },
+  {
+   "unit": "Unit 2.1: Data: binary and number representation",
+   "n": 11,
+   "title": "Binary addition, shifts and overflow",
+   "duration": 50,
+   "bigQuestion": "What happens when a calculation produces a number too big for the bits available?",
+   "objectives": [
+    "Add positive binary numbers (2.1.4)",
+    "Apply logical and arithmetic shifts and state their effect (2.1.4)",
+    "Explain overflow when a result exceeds the available bits (2.1.5)"
+   ],
+   "successCriteria": [
+    "All: add two small binary numbers using carries",
+    "Most: shift a pattern left or right and give the effect on its value",
+    "Some: identify overflow, give the stored result and explain the consequence"
+   ],
+   "crossCurricular": "Mathematics: multiplying and dividing by powers of 2",
+   "smsc": "Moral: honesty about the limits of a system, reporting an error instead of hiding it",
+   "keywords": [
+    {
+     "term": "carry",
+     "def": "the 1 moved to the next column when a column adds to more than 1"
+    },
+    {
+     "term": "logical shift",
+     "def": "moves all bits left or right and fills the gap with 0"
+    },
+    {
+     "term": "arithmetic shift",
+     "def": "a shift that keeps the sign bit, so signed numbers keep their sign"
+    },
+    {
+     "term": "overflow",
+     "def": "a result too large for the number of bits available"
+    }
+   ],
+   "starter": [
+    "Bismillah. Convert 00011010 to denary.",
+    "How many different values can 8 bits hold?",
+    "What is 6 x 2 and 6 x 4?"
+   ],
+   "teach": [
+    {
+     "heading": "Adding binary",
+     "bullets": [
+      "0+0=0, 0+1=1, 1+1=10 (write 0, carry 1)",
+      "1+1+1=11 (write 1, carry 1)",
+      "Work from the right, column by column"
+     ],
+     "note": "Practise the four rules orally before any sums. Pupils must write the carries above the next column. Most errors come from forgetting the carry into a column with two 1s. Remind pupils that after adding they should convert to denary to check.",
+     "table": {
+      "head": [
+       "Column sum",
+       "Write",
+       "Carry"
+      ],
+      "rows": [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "1",
+        "1",
+        "0"
+       ],
+       [
+        "2 (1+1)",
+        "0",
+        "1"
+       ],
+       [
+        "3 (1+1+carry)",
+        "1",
+        "1"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Worked example: add two bytes",
+     "note": "Model column by column from the right with the carry written above. After finishing, convert both inputs and the answer to denary: 53 + 27 = 80. This builds the habit of checking.",
+     "model": {
+      "problem": "Add 00110101 and 00011011, giving the answer in 8 bits.",
+      "steps": [
+       "Rightmost: 1 + 1 = 10, write 0, carry 1",
+       "Next: 0 + 1 + 1 = 10, write 0, carry 1",
+       "Next: 1 + 0 + 1 = 10, write 0, carry 1. Next: 0 + 1 + 1 = 10, write 0, carry 1",
+       "Next: 1 + 1 + 1 = 11, write 1, carry 1. Next: 1 + 0 + 1 = 10, write 0, carry 1. Then 0 + 0 + 1 = 1, and 0 + 0 = 0",
+       "Check: 53 + 27 = 80 = 01010000"
+      ],
+      "answer": "00110101 + 00011011 = 01010000 (80)."
+     }
+    },
+    {
+     "heading": "Shifts",
+     "bullets": [
+      "Left shift by 1 doubles the value",
+      "Right shift by 1 halves it, losing a remainder",
+      "Arithmetic right shift copies the sign bit"
+     ],
+     "note": "Show the Python output as confirmation: shifting left by 1 gives 44 (22 x 2) and shifting right by 2 gives 5 (22 divided by 4, remainder lost). The last line shifts 11 left by 3 places to give 88, a multiplication by 8. For a logical shift, the vacated bits are filled with zeros. For an arithmetic right shift on a signed number the sign bit is copied so that a negative number stays negative: 11110100 (-12) becomes 11111010 (-6). A logical right shift would give 01111010, which is 122 and wrong. Pupils should always state the effect as multiplying or dividing by a power of 2.",
+     "code": {
+      "lang": "python",
+      "text": "a = 22\nprint(format(a << 1, \"08b\"), a << 1)\nprint(format(a >> 2, \"08b\"), a >> 2)\nprint(format(11, \"08b\"), format((11 << 3) % 256, \"08b\"))",
+      "output": "00101100 44\n00000101 5\n00001011 01011000"
+     }
+    },
+    {
+     "heading": "Overflow",
+     "bullets": [
+      "The result needs more than 8 bits",
+      "The extra bit is lost, so the stored value is wrong",
+      "Example: 150 + 110 = 260, stored as 4"
+     ],
+     "note": "Run the code. Python integers are unbounded, so we simulate an 8-bit register with % 256. Consequences: wrong results, crashes or security holes. Emphasise that overflow is about the fixed number of bits, not about the computer being slow or broken.",
+     "code": {
+      "lang": "python",
+      "text": "total = 150 + 110\nprint(total)\nprint(total % 256)\nprint(format(total % 256, \"08b\"))",
+      "output": "260\n4\n00000100"
+     }
+    },
+    {
+     "heading": "Check: shifts",
+     "note": "Answer D. A left shift of 2 multiplies by 4: 12 x 4 = 48 = 00110000. A is a right shift. B moves only one place. C is 00001100 shifted the wrong way and read incorrectly. Ask what would happen to 11000000 shifted left by 1: a 1 falls off the end, a logical overflow.",
+     "check": {
+      "q": "The 8-bit pattern 00001100 (12) is shifted left by two places. What is the new value?",
+      "options": [
+       "3",
+       "24",
+       "12",
+       "48"
+      ],
+      "answer": 3,
+      "why": "Each left shift doubles the value: 12 x 2 x 2 = 48 (00110000). A is a right shift by 2, B is a shift by one place, and C is unchanged."
+     }
+    }
+   ],
+   "practice": [
+    "Add 00101101 and 00010110 and check in denary.",
+    "Shift 00010100 right by 2 and state the denary value before and after.",
+    "Add 11001000 and 01100100. Is there overflow? State the stored 8-bit result."
+   ],
+   "independent": [
+    "Core: Add 01000111 and 00101010; convert all three to denary to check.",
+    "Extend: A byte holds 00000110. Show the effect of left shifts by 1, 2 and 3 and relate each to multiplication.",
+    "Stretch: Explain why a logical right shift gives the wrong answer for a negative two's complement number and how an arithmetic shift fixes it, using -16 as the example."
+   ],
+   "exit": [
+    "What does a left shift of 3 places do to the value (if no 1 falls off)?",
+    "Define overflow in your own words and give one effect."
+   ],
+   "homework": "Make a table of every addition from 100 + 100 to 100 + 160 (in steps of 20) and mark which ones overflow an 8-bit unsigned register.",
+   "send": "SEND/EAL: give a column-addition template with carry boxes. Stretch: ask for an arithmetic shift of a negative number."
+  },
+  {
+   "unit": "Unit 2.1: Data: binary and number representation",
+   "n": 12,
+   "title": "Hexadecimal",
+   "duration": 50,
+   "bigQuestion": "Why do programmers write 'FF' when the computer stores 11111111?",
+   "objectives": [
+    "Explain why hexadecimal is used (2.1.6)",
+    "Convert between hexadecimal and binary",
+    "Convert between hexadecimal and denary"
+   ],
+   "successCriteria": [
+    "All: state two reasons for using hexadecimal",
+    "Most: convert between binary and hex using nibbles",
+    "Some: convert denary to hex and justify use of hex in a given context"
+   ],
+   "crossCurricular": "Art and Design: web colour codes",
+   "smsc": "Cultural: people create notation that is easier for humans to read",
+   "keywords": [
+    {
+     "term": "hexadecimal",
+     "def": "base 16, using digits 0 to 9 and letters A to F"
+    },
+    {
+     "term": "nibble",
+     "def": "4 bits, which is one hexadecimal digit"
+    },
+    {
+     "term": "base",
+     "def": "the number of different digits a number system uses"
+    }
+   ],
+   "starter": [
+    "Bismillah. Convert 11010110 to denary.",
+    "How many values can 4 bits hold?",
+    "What is 12 x 16?"
+   ],
+   "teach": [
+    {
+     "heading": "Why hex?",
+     "bullets": [
+      "Shorter: one hex digit for 4 bits",
+      "Easier to read, write and remember",
+      "Easier to spot mistakes than a string of 1s and 0s"
+     ],
+     "note": "Show a long binary string and its hex form side by side. Hexadecimal does not make computers faster; it is for people. Real uses: web colours, MAC addresses, memory addresses, error codes. Ask pupils why 'F' appears (15 needs one digit).",
+     "table": {
+      "head": [
+       "Hex",
+       "Denary",
+       "Binary"
+      ],
+      "rows": [
+       [
+        "0",
+        "0",
+        "0000"
+       ],
+       [
+        "5",
+        "5",
+        "0101"
+       ],
+       [
+        "9",
+        "9",
+        "1001"
+       ],
+       [
+        "A",
+        "10",
+        "1010"
+       ],
+       [
+        "B",
+        "11",
+        "1011"
+       ],
+       [
+        "C",
+        "12",
+        "1100"
+       ],
+       [
+        "E",
+        "14",
+        "1110"
+       ],
+       [
+        "F",
+        "15",
+        "1111"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Binary to hex and back",
+     "bullets": [
+      "Split into nibbles from the right",
+      "Convert each nibble to one hex digit",
+      "Reverse the steps to go from hex to binary"
+     ],
+     "note": "Model 10111100: nibbles 1011 and 1100, which are B and C, so BC. Practise reading the table the other way. Stress writing out four bits for each digit, including leading zeros: hex 3 is 0011, not 11.",
+     "code": {
+      "lang": "python",
+      "text": "print(format(0b10111100, \"X\"))\nprint(format(0xC3, \"08b\"))\nprint(int(\"C3\", 16))",
+      "output": "BC\n11000011\n195"
+     }
+    },
+    {
+     "heading": "Worked example: hex to denary and denary to hex",
+     "note": "Model both directions and the check. For hex to denary: first digit x 16 plus second digit. For denary to hex: divide by 16; the quotient is the first digit and the remainder is the second. Pupils must remember that C is 12, not 3.",
+     "model": {
+      "problem": "(a) Convert 3A to binary and denary. (b) Convert denary 200 to hex.",
+      "steps": [
+       "(a) 3 = 0011 and A = 1010, so 3A = 00111010",
+       "Denary: 3 x 16 + 10 = 58 (check 32 + 16 + 8 + 2 = 58)",
+       "(b) 200 / 16 = 12 remainder 8",
+       "12 is C, remainder 8, so the hex is C8 (check: 12 x 16 + 8 = 200)"
+      ],
+      "answer": "3A = 00111010 = 58, and 200 = C8."
+     }
+    },
+    {
+     "heading": "Misconception: adding the digits of FF",
+     "bullets": [
+      "A to F stand for 10 to 15",
+      "FF is 255, not 30",
+      "Hex digits are worth 16s, not 10s"
+     ],
+     "note": "Pupils add F + F as 15 + 15 = 30. Show that FF = 15 x 16 + 15 = 255, the biggest byte. Link to the colour code #FF0000 (maximum red, no green or blue).",
+     "misconception": {
+      "wrong": "FF in hexadecimal is 30, because F + F = 15 + 15.",
+      "right": "FF = 15 x 16 + 15 = 255. The first digit is worth 16 times its value."
+     }
+    },
+    {
+     "heading": "Check: bits in hex",
+     "note": "Answer A. Each hex digit stands for 4 bits so 2 digits stand for 8 bits, one byte. B would be 16 bits, 4 digits. C and D confuse digits and bits.",
+     "check": {
+      "q": "How many bits are represented by the hexadecimal number 7F?",
+      "options": [
+       "8",
+       "4",
+       "2",
+       "16"
+      ],
+      "answer": 0,
+      "why": "Each hex digit represents a nibble of 4 bits, so two digits represent 8 bits. 4 bits is one digit (B), 2 is the number of digits (C) and 16 bits would need 4 digits (D)."
+     }
+    }
+   ],
+   "practice": [
+    "Convert 11100101 to hexadecimal.",
+    "Convert 9D to 8-bit binary and to denary.",
+    "State two reasons for using hexadecimal rather than binary when displaying memory addresses."
+   ],
+   "independent": [
+    "Core: Convert 00101111, 11111110 and 10010001 to hexadecimal.",
+    "Extend: Convert 6B, F0 and A5 to denary; convert 100 and 255 to hexadecimal.",
+    "Stretch: The web colour #1E90FF has red 1E, green 90 and blue FF. Convert each part to denary and describe the colour in terms of how much of each primary there is."
+   ],
+   "exit": [
+    "Write 15 and 16 in hexadecimal.",
+    "Explain in one sentence why hex is more convenient than binary for humans."
+   ],
+   "homework": "Find the hex colour codes of three colours used on a website you know. Convert each of the red, green and blue values to denary.",
+   "send": "SEND/EAL: give the table of 16 hex digits with binary as a reference card. Stretch: ask for a three-byte colour value to be written in binary."
+  },
+  {
+   "unit": "Unit 2.2: Data: representing text, images and sound",
+   "n": 13,
+   "title": "Representing text: ASCII and the limits of fixed bits",
+   "duration": 50,
+   "bigQuestion": "If every letter is a number, what happens when the alphabet does not fit?",
+   "objectives": [
+    "Represent characters using 7-bit ASCII (2.2.1)",
+    "Work out the code for a character from its position in the alphabet",
+    "Explain the limits of binary representation when the number of bits is fixed (2.2.4)"
+   ],
+   "successCriteria": [
+    "All: state how many characters 7-bit ASCII can represent",
+    "Most: find the ASCII code of a letter or word given one reference code",
+    "Some: explain how a fixed number of bits limits characters, numbers and quality"
+   ],
+   "crossCurricular": "Arabic and RE: why writing systems such as Arabic needed more than ASCII",
+   "smsc": "Spiritual and cultural: digital respect for the Arabic script; the Qur'an and other texts can be stored accurately using Unicode, which goes beyond ASCII",
+   "keywords": [
+    {
+     "term": "character set",
+     "def": "the list of characters a computer can represent and the code for each"
+    },
+    {
+     "term": "ASCII",
+     "def": "a 7-bit character set with 128 codes"
+    },
+    {
+     "term": "code",
+     "def": "the number given to a character"
+    },
+    {
+     "term": "fixed number of bits",
+     "def": "the system uses the same number of bits each time, which limits what it can store"
+    }
+   ],
+   "starter": [
+    "Bismillah. How many patterns can 7 bits give?",
+    "Convert 65 to binary.",
+    "What does the letter H have as the next letter in the alphabet?"
+   ],
+   "teach": [
+    {
+     "heading": "ASCII",
+     "bullets": [
+      "Each character has a 7-bit code",
+      "128 characters: letters, digits, punctuation, control codes",
+      "Capital letters, small letters and digits are in order"
+     ],
+     "note": "Show the table. The codes are consecutive, so you can work out C from A. Note: capital A is 65 and small a is 97, a gap of 32; the digit '0' is code 48, not zero. Pupils often confuse the character '5' with the number 5.",
+     "table": {
+      "head": [
+       "Character",
+       "Denary code",
+       "7-bit binary"
+      ],
+      "rows": [
+       [
+        "space",
+        "32",
+        "0100000"
+       ],
+       [
+        "0",
+        "48",
+        "0110000"
+       ],
+       [
+        "A",
+        "65",
+        "1000001"
+       ],
+       [
+        "B",
+        "66",
+        "1000010"
+       ],
+       [
+        "a",
+        "97",
+        "1100001"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Working with codes",
+     "bullets": [
+      "Count along the alphabet from a known code",
+      "ord gives the code, chr gives the character",
+      "Each letter is stored in one 7-bit pattern"
+     ],
+     "note": "Run the code and compare with the table. Pupils see that D is A + 3 and that the codes are stored as binary. Ask what 'Salam' looks like in memory (five 7-bit patterns). Point out that Python uses its own larger character set but the first 128 codes are the same.",
+     "code": {
+      "lang": "python",
+      "text": "word = \"Salam\"\nfor ch in word:\n    print(ch, ord(ch), format(ord(ch), \"07b\"))\nprint(chr(ord(\"A\") + 3))",
+      "output": "S 83 1010011\na 97 1100001\nl 108 1101100\na 97 1100001\nm 109 1101101\nD"
+     }
+    },
+    {
+     "heading": "Worked example: encode a word",
+     "note": "Model step by step: use the reference code and count. Then convert to 7-bit binary using place values 64 32 16 8 4 2 1. Check each against a known reference such as 'A is 1000001'. Ask what the code for 'i' would be if you only knew that 'a' is 97 (97 + 8 = 105).",
+     "model": {
+      "problem": "Given that A is 65, write the ASCII codes for the letters D and H in denary and 7-bit binary.",
+      "steps": [
+       "D is 3 after A: 65 + 3 = 68",
+       "H is 7 after A: 65 + 7 = 72",
+       "68 = 64 + 4 = 1000100",
+       "72 = 64 + 8 = 1001000"
+      ],
+      "answer": "D = 68 = 1000100 and H = 72 = 1001000."
+     }
+    },
+    {
+     "heading": "Limits of a fixed number of bits",
+     "bullets": [
+      "7 bits: only 128 characters, mostly English",
+      "Arabic letters and emoji do not fit in ASCII",
+      "8 bits: 0 to 255 only; 8-bit images: 256 colours"
+     ],
+     "note": "Draw the general rule: n bits give 2^n values, so a fixed n always has a limit. More bits means a wider range or more detail but more storage. Unicode is a larger character set that uses more bits and includes Arabic and many other scripts; knowing the name is useful, but the exam asks for the limits idea. Link to overflow and sound quality.",
+     "compare": {
+      "left": {
+       "title": "7-bit ASCII",
+       "points": [
+        "128 characters",
+        "English letters, digits, symbols",
+        "Small: 7 bits per character"
+       ]
+      },
+      "right": {
+       "title": "More bits per character",
+       "points": [
+        "Many more characters",
+        "Includes Arabic and other scripts",
+        "Larger files"
+       ]
+      },
+      "label": "Fixed bits"
+     }
+    },
+    {
+     "heading": "Check: how many?",
+     "note": "Answer B. 7 bits give 2^7 = 128 different codes. C is the 8-bit count. D is the largest 7-bit value. Link to the limit idea: the number of characters is fixed by the number of bits.",
+     "check": {
+      "q": "How many different characters can 7-bit ASCII represent?",
+      "options": [
+       "64",
+       "128",
+       "256",
+       "127"
+      ],
+      "answer": 1,
+      "why": "2^7 = 128 codes (0 to 127). 256 would need 8 bits (C), 64 is 6 bits (A), and 127 is the largest code, not the number of characters (D)."
+     }
+    }
+   ],
+   "practice": [
+    "Given that a is 97, write the ASCII codes for c and f in denary.",
+    "Convert the word 'Hi' (H = 72, i = 105) into 7-bit binary.",
+    "Explain one limit of ASCII for a school with pupils who write in Arabic."
+   ],
+   "independent": [
+    "Core: Using A = 65, write the denary codes for the letters of 'FAITH' and the 7-bit binary for the first letter.",
+    "Extend: A text file has 250 characters in 7-bit ASCII. Calculate the number of bits and bytes needed.",
+    "Stretch: A system stores each character in 6 bits. State how many characters it can represent and what could go wrong if a new character is added."
+   ],
+   "exit": [
+    "State the number of ASCII characters and the number of bits for each.",
+    "Give one limit of using a fixed number of bits."
+   ],
+   "homework": "Write your first name and your mother's name in ASCII denary codes, with a short note on any characters that could not be shown.",
+   "send": "SEND/EAL: provide the ASCII reference table with codes for A, a and 0 marked. Stretch: build a short substitution cipher with chr and ord."
+  },
+  {
+   "unit": "Unit 2.2: Data: representing text, images and sound",
+   "n": 14,
+   "title": "Representing images and sound",
+   "duration": 50,
+   "bigQuestion": "How can a picture or a voice be turned into numbers and rebuilt later?",
+   "objectives": [
+    "Describe bitmap images using pixels, resolution and colour depth (2.2.2)",
+    "Describe sound sampling using amplitude, sample rate, bit depth and sample interval (2.2.3)",
+    "Explain how changing these properties changes quality and file size"
+   ],
+   "successCriteria": [
+    "All: define pixel, resolution and colour depth",
+    "Most: calculate the number of colours and the sample interval",
+    "Some: explain the trade-off between quality and file size for both images and sound"
+   ],
+   "crossCurricular": "Physics: waves, amplitude and frequency",
+   "smsc": "Cultural: recording a recitation faithfully (amanah) so that it can be heard again clearly",
+   "keywords": [
+    {
+     "term": "pixel",
+     "def": "the smallest single dot of colour in a bitmap image"
+    },
+    {
+     "term": "resolution",
+     "def": "the number of pixels in the image (width x height)"
+    },
+    {
+     "term": "colour depth",
+     "def": "the number of bits used for each pixel"
+    },
+    {
+     "term": "sample rate",
+     "def": "the number of sound samples taken each second, in hertz"
+    },
+    {
+     "term": "bit depth",
+     "def": "the number of bits used for each sound sample"
+    },
+    {
+     "term": "sample interval",
+     "def": "the time between samples, equal to 1 divided by the sample rate"
+    },
+    {
+     "term": "amplitude",
+     "def": "the height of a sound wave, which sets how loud it is"
+    }
+   ],
+   "starter": [
+    "Bismillah. How many colours can 3 bits represent?",
+    "Convert 10100 to denary.",
+    "Convert 2 minutes into seconds."
+   ],
+   "teach": [
+    {
+     "heading": "Bitmap images",
+     "bullets": [
+      "The image is a grid of pixels",
+      "Each pixel stores a binary colour code",
+      "Resolution = width x height of the grid"
+     ],
+     "note": "Show the 5 x 5 grid for the letter T. 1 means black and 0 means white, so one bit per pixel. Each row can be read out as a binary number. Pupils should write each row as binary. In exams, they must state that the image is stored as binary values for each pixel.",
+     "table": {
+      "head": [
+       "1",
+       "2",
+       "3",
+       "4",
+       "5"
+      ],
+      "rows": [
+       [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+       ],
+       [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Colour depth",
+     "bullets": [
+      "More bits per pixel means more colours",
+      "Colours = 2 to the power of the colour depth",
+      "More pixels or more depth means a bigger file"
+     ],
+     "note": "Run the code. Show the colours doubling with each extra bit. 24-bit colour uses 8 bits each for red, green and blue. Link to hexadecimal colour codes from the previous lesson if pupils have studied it.",
+     "code": {
+      "lang": "python",
+      "text": "for depth in (1, 2, 8, 24):\n    print(depth, \"bit:\", 2 ** depth, \"colours\")",
+      "output": "1 bit: 2 colours\n2 bit: 4 colours\n8 bit: 256 colours\n24 bit: 16777216 colours"
+     }
+    },
+    {
+     "heading": "Sound sampling",
+     "bullets": [
+      "Analogue sound is a continuous wave",
+      "Measure the amplitude at regular intervals",
+      "Each measurement is stored as a binary number"
+     ],
+     "note": "Draw a wave and mark equal vertical lines: each is one sample. The sample rate in Hz is samples per second, and the interval is the gap between them. A higher sample rate or bit depth gives a closer copy but a larger file. Pupils confuse sample rate with bit depth: rate is how often, depth is how precisely.",
+     "code": {
+      "lang": "python",
+      "text": "rate = 8000\nprint(\"interval:\", 1 / rate, \"seconds\")\nprint(\"levels with 8 bits:\", 2 ** 8)\nprint(\"levels with 16 bits:\", 2 ** 16)",
+      "output": "interval: 0.000125 seconds\nlevels with 8 bits: 256\nlevels with 16 bits: 65536"
+     }
+    },
+    {
+     "heading": "Worked example: image and sound properties",
+     "note": "Model with a calculation of the colours first, then the stored size in bits and bytes. Link to the next unit on file sizes. Sound: the interval is the reciprocal of the sample rate. Make the point that both the resolution and the depth are chosen by the designer, balancing quality against file size.",
+     "model": {
+      "problem": "An image is 16 pixels wide and 16 pixels high with a colour depth of 4 bits. State the number of colours and the data needed for the image in bits and bytes.",
+      "steps": [
+       "Colours = 2^4 = 16",
+       "Number of pixels = 16 x 16 = 256",
+       "Bits = 256 x 4 = 1024",
+       "Bytes = 1024 / 8 = 128"
+      ],
+      "answer": "16 colours; 1024 bits, which is 128 bytes."
+     }
+    },
+    {
+     "heading": "Check: effect of changing a property",
+     "note": "Answer C. Doubling both width and height gives four times as many pixels, so four times the data. A is the double-width only. D forgets that file size follows from the number of pixels. Ask: what would doubling just the colour depth do?",
+     "check": {
+      "q": "A bitmap's width and height are both doubled. The colour depth stays the same. What happens to the file size (before any compression)?",
+      "options": [
+       "It doubles",
+       "It stays the same",
+       "It becomes four times bigger",
+       "It halves"
+      ],
+      "answer": 2,
+      "why": "Doubling both width and height gives 2 x 2 = 4 times as many pixels, so 4 times the data. Doubling only one dimension would double it (A)."
+     }
+    }
+   ],
+   "practice": [
+    "A 1-bit image has 8 x 8 pixels. How many bits does it need and how many colours can it show?",
+    "State the sample interval for a sample rate of 4000 Hz.",
+    "Explain two ways to make a recording of a recitation sound closer to the original."
+   ],
+   "independent": [
+    "Core: A 32 x 32 image uses 8-bit colour depth. State the number of colours and the number of bytes needed.",
+    "Extend: Compare a sound recorded at 8000 Hz, 8 bits with one at 16 000 Hz, 16 bits. Explain the effect on quality and on file size.",
+    "Stretch: A designer wants to halve the file size of an image without changing its resolution. State what could be changed and what the cost would be."
+   ],
+   "exit": [
+    "Define colour depth.",
+    "What does a higher sample rate do to the sound and the file size?"
+   ],
+   "homework": "Make a 6 x 6 pixel image of a simple shape as a grid of 0s and 1s and write the binary for each row.",
+   "send": "SEND/EAL: provide a ready-drawn 5 x 5 grid and a labelled diagram of a sampled wave. Stretch: ask for the quality-size trade-off to be evaluated."
+  },
+  {
+   "unit": "Unit 2.3: Data: storage units and compression",
+   "n": 15,
+   "title": "Storage units and file sizes",
+   "duration": 50,
+   "bigQuestion": "How big is a file, and will it fit on the device?",
+   "objectives": [
+    "Use binary storage units from bit to tebibyte (2.3.1)",
+    "Calculate image, sound and text file sizes",
+    "Calculate how many files fit in a given capacity"
+   ],
+   "successCriteria": [
+    "All: order the storage units and state the factor between them",
+    "Most: calculate an image or a sound file size in bytes and KiB",
+    "Some: calculate capacities and choose the right unit with correct conversion"
+   ],
+   "crossCurricular": "Mathematics: powers, standard units and rates",
+   "smsc": "Moral: avoiding waste (israf) of resources by storing only what is needed",
+   "keywords": [
+    {
+     "term": "kibibyte (KiB)",
+     "def": "1024 bytes"
+    },
+    {
+     "term": "mebibyte (MiB)",
+     "def": "1024 kibibytes"
+    },
+    {
+     "term": "gibibyte (GiB)",
+     "def": "1024 mebibytes"
+    },
+    {
+     "term": "tebibyte (TiB)",
+     "def": "1024 gibibytes"
+    },
+    {
+     "term": "file size",
+     "def": "the amount of storage a file needs, measured in bits or bytes"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is 2 to the power of 10?",
+    "How many bits are in 6 bytes?",
+    "Calculate 16 x 1024."
+   ],
+   "teach": [
+    {
+     "heading": "The units",
+     "bullets": [
+      "Nibble: 4 bits. Byte: 8 bits",
+      "Each unit is 1024 times the one before",
+      "Bit, byte, KiB, MiB, GiB, TiB"
+     ],
+     "note": "Say that 1024 is 2^10, so the binary units go up in powers of 2. Many devices and shops use kilobyte, megabyte and so on with factors of 1000, but this specification uses the binary names with factor 1024. Be ready for questions: always divide by 1024 when asked in KiB, MiB.",
+     "table": {
+      "head": [
+       "Unit",
+       "Size",
+       "Compared with the previous"
+      ],
+      "rows": [
+       [
+        "Nibble",
+        "4 bits",
+        "half a byte"
+       ],
+       [
+        "Byte",
+        "8 bits",
+        "2 nibbles"
+       ],
+       [
+        "Kibibyte (KiB)",
+        "1024 bytes",
+        "x 1024"
+       ],
+       [
+        "Mebibyte (MiB)",
+        "1024 KiB",
+        "x 1024"
+       ],
+       [
+        "Gibibyte (GiB)",
+        "1024 MiB",
+        "x 1024"
+       ],
+       [
+        "Tebibyte (TiB)",
+        "1024 GiB",
+        "x 1024"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "File size formulae",
+     "bullets": [
+      "Image: width x height x colour depth (bits)",
+      "Sound: sample rate x bit depth x seconds (bits)",
+      "Divide bits by 8 for bytes; by 1024 for each larger unit"
+     ],
+     "note": "Write the three-step routine on the board: calculate bits, convert to bytes, then to the unit asked for. State that for a mono recording we ignore channels unless the question says otherwise. Check units at the end.",
+     "code": {
+      "lang": "python",
+      "text": "bits = 640 * 480 * 8\nprint(bits, \"bits\")\nprint(bits // 8, \"bytes\")\nprint(bits // 8 / 1024, \"KiB\")",
+      "output": "2457600 bits\n307200 bytes\n300.0 KiB"
+     }
+    },
+    {
+     "heading": "Worked example: sound file",
+     "note": "Model the calculation using seconds and the formula. Notice how the numbers are chosen so that the answer works out exactly at 1000 KiB. Then ask pupils what would happen to the size if the bit depth were halved.",
+     "model": {
+      "problem": "A mono sound is recorded for 32 seconds at 16 000 Hz with a bit depth of 16. Calculate the file size in KiB.",
+      "steps": [
+       "Bits = 16 000 x 16 x 32 = 8 192 000",
+       "Bytes = 8 192 000 / 8 = 1 024 000",
+       "KiB = 1 024 000 / 1024 = 1000"
+      ],
+      "answer": "The file is 1000 KiB (a little under 1 MiB)."
+     }
+    },
+    {
+     "heading": "Capacity calculations",
+     "bullets": [
+      "Capacity divided by file size gives the number of files",
+      "Convert both to the same unit first",
+      "Round down: you cannot store part of a file"
+     ],
+     "note": "Work an example: how many 4 MiB photos fit in 16 GiB? Convert 16 GiB to MiB (16 x 1024 = 16 384) then divide by 4. Pupils often forget the conversion or round up.",
+     "code": {
+      "lang": "python",
+      "text": "capacity_mib = 16 * 1024\nphoto_mib = 4\nprint(capacity_mib // photo_mib, \"photos\")\nprint(2048 / 1024, \"MiB in 2048 KiB\")",
+      "output": "4096 photos\n2.0 MiB in 2048 KiB"
+     }
+    },
+    {
+     "heading": "Check: units",
+     "note": "Answer D. 3 MiB = 3 x 1024 KiB = 3072 KiB. A uses 1000. B and C divide instead of multiplying: a larger unit is made of many of the smaller ones, so going to the smaller unit we multiply.",
+     "check": {
+      "q": "How many kibibytes are in 3 mebibytes?",
+      "options": [
+       "3000",
+       "3",
+       "0.003",
+       "3072"
+      ],
+      "answer": 3,
+      "why": "1 MiB = 1024 KiB, so 3 MiB = 3 x 1024 = 3072 KiB. 3000 uses a factor of 1000 (A); dividing instead of multiplying gives B or C."
+     }
+    }
+   ],
+   "practice": [
+    "State how many bytes are in 5 KiB.",
+    "A 1-bit image is 100 x 80 pixels. Calculate its size in bytes.",
+    "How many 2 MiB songs fit on a 1 GiB memory card?"
+   ],
+   "independent": [
+    "Core: A photo is 1024 x 768 pixels with 24-bit colour. Calculate its size in bytes and in KiB.",
+    "Extend: A mono recording lasts 3 minutes at 8000 Hz with 8-bit samples. Calculate the size in KiB.",
+    "Stretch: A phone has 128 GiB of storage and 14 GiB is used by the system. How many 5 MiB photos fit in the rest? Show every conversion."
+   ],
+   "exit": [
+    "Convert 4 GiB to MiB.",
+    "State the formula for the size of an uncompressed image."
+   ],
+   "homework": "Find the file sizes of three files on a device and find how many of each would fit on a 32 GiB drive. Show conversions.",
+   "send": "SEND/EAL: give a conversion ladder diagram (multiply down, divide up by 1024). Stretch: ask for calculations with several unit changes. Note: y11 lesson 2 of the existing set uses 1000 for unit steps; this lesson follows the specification's binary units."
+  },
+  {
+   "unit": "Unit 2.3: Data: storage units and compression",
+   "n": 16,
+   "title": "Compression: lossless and lossy",
+   "duration": 50,
+   "bigQuestion": "How can we make a file smaller without ruining it?",
+   "objectives": [
+    "Explain why compression is needed (2.3.2)",
+    "Compare lossless and lossy methods",
+    "Apply run-length encoding as an example of lossless compression"
+   ],
+   "successCriteria": [
+    "All: state two reasons for compressing data",
+    "Most: compare lossless and lossy with an example of each",
+    "Some: encode data with RLE and justify which type to use for a given file"
+   ],
+   "crossCurricular": "Mathematics: ratio, percentages and compression ratio",
+   "smsc": "Moral: fair use of shared bandwidth and storage; being careful not to lose information others rely on",
+   "keywords": [
+    {
+     "term": "compression",
+     "def": "making a file smaller so it uses less storage or is quicker to send"
+    },
+    {
+     "term": "lossless",
+     "def": "compression where no data is lost and the original can be rebuilt exactly"
+    },
+    {
+     "term": "lossy",
+     "def": "compression that permanently removes some data to save more space"
+    },
+    {
+     "term": "run-length encoding (RLE)",
+     "def": "a lossless method that stores a repeated value once with a count"
+    }
+   ],
+   "starter": [
+    "Bismillah. Calculate the file size in bytes of a 100 x 100 image with an 8-bit colour depth.",
+    "Convert 5 MiB into KiB.",
+    "Name one file format you know that uses compression."
+   ],
+   "teach": [
+    {
+     "heading": "Why compress?",
+     "bullets": [
+      "Less storage space used",
+      "Quicker to upload, download and stream",
+      "Less bandwidth, so lower cost"
+     ],
+     "note": "Relate to everyday: a video call, a school email attachment, a streaming video. Pupils say 'it makes it better quality', which is wrong: compression makes files smaller. Note that compressed files must usually be decompressed before use.",
+     "compare": {
+      "left": {
+       "title": "Lossless",
+       "points": [
+        "Nothing is lost",
+        "Original rebuilt exactly",
+        "Smaller files, but not very small"
+       ]
+      },
+      "right": {
+       "title": "Lossy",
+       "points": [
+        "Some data is permanently removed",
+        "Cannot recover the original",
+        "Much smaller files"
+       ]
+      },
+      "label": "Two types"
+     }
+    },
+    {
+     "heading": "Which to use?",
+     "bullets": [
+      "Lossless: documents, program files, medical scans",
+      "Lossy: photos, music, video for viewing or listening",
+      "Lossy quality drops if compressed too much"
+     ],
+     "note": "Ask: what happens if a spreadsheet is compressed with a lossy method? Numbers would change. Photos and music have detail that humans barely notice, so lossy methods remove that. Examples: ZIP and PNG are lossless; JPEG and MP3 are lossy. The exam asks for reasons, so link the method to the purpose.",
+     "table": {
+      "head": [
+       "File",
+       "Better choice",
+       "Reason"
+      ],
+      "rows": [
+       [
+        "Exam results spreadsheet",
+        "Lossless",
+        "Every digit must be exact"
+       ],
+       [
+        "Holiday photo for a web page",
+        "Lossy",
+        "Small size, minor detail not noticed"
+       ],
+       [
+        "Program installer",
+        "Lossless",
+        "A single changed bit can break it"
+       ],
+       [
+        "Streamed lecture video",
+        "Lossy",
+        "Needs to fit within the bandwidth"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Run-length encoding",
+     "bullets": [
+      "Replace runs of the same value with count and value",
+      "Works best when there are long runs",
+      "Lossless: decode to get the original back"
+     ],
+     "note": "Trace the code: WWWWBBBWWW becomes 4W3B3W, 10 characters reduced to 6. For AAAABBBCCD the result 4A3B2C1D saves only two characters, and ABCD becomes 1A1B1C1D, which is twice as long. Make the point that RLE can make data bigger if there are few repeats. Confirm against the spec whether RLE is the named example for your cohort.",
+     "code": {
+      "lang": "python",
+      "text": "def rle(text):\n    result = \"\"\n    count = 1\n    for i in range(1, len(text)):\n        if text[i] == text[i - 1]:\n            count = count + 1\n        else:\n            result = result + str(count) + text[i - 1]\n            count = 1\n    return result + str(count) + text[-1]\n\nprint(rle(\"WWWWBBBWWW\"))\nprint(rle(\"AAAABBBCCD\"))\nprint(rle(\"ABCD\"))",
+      "output": "4W3B3W\n4A3B2C1D\n1A1B1C1D"
+     }
+    },
+    {
+     "heading": "Worked example: compression saving",
+     "note": "Model with a percentage saving. 6 MiB compressed to 1.5 MiB is a quarter of the size, so 4.5 MiB is saved, 75%. Remind pupils to say whether the method is lossy or lossless in the explanation, and give a reason for choosing it.",
+     "model": {
+      "problem": "A 6 MiB photo is saved as a 1.5 MiB JPEG. Calculate the percentage saved and state the type of compression, with a reason it is suitable.",
+      "steps": [
+       "Saving = 6 - 1.5 = 4.5 MiB",
+       "Percentage saved = 4.5 / 6 x 100 = 75%",
+       "JPEG is lossy: some detail is permanently removed",
+       "Suitable because small loss of detail in a photo is hard to notice"
+      ],
+      "answer": "75% saved; lossy compression, suitable for a photo for viewing."
+     }
+    },
+    {
+     "heading": "Check: choosing the method",
+     "note": "Answer B. A medical scan must be recovered exactly, so lossless. A is wrong because lossy removes detail. C has the right idea but 'no compression at all' misses the point of the question. D mixes up the two terms.",
+     "check": {
+      "q": "A hospital stores X-ray images. Which type of compression is most suitable and why?",
+      "options": [
+       "Lossy, because it gives the smallest files",
+       "Lossless, because no detail may be lost",
+       "None, because compression always loses detail",
+       "Lossy, because the images can be rebuilt exactly"
+      ],
+      "answer": 1,
+      "why": "A medical image must be reproduced exactly, so lossless is the right choice. Lossy removes data permanently (A, D); compression need not lose detail (C)."
+     }
+    }
+   ],
+   "practice": [
+    "Give two benefits of compressing a video before sending it.",
+    "Apply run-length encoding to AAAAABBBB and state the number of characters before and after.",
+    "Explain why a ZIP file of a document can be turned back into the exact document but a heavily compressed JPEG cannot be turned back into the original photo."
+   ],
+   "independent": [
+    "Core: Compress a row of pixels BBBBBWWWWWWWWBB with RLE and decode 3R2G4R.",
+    "Extend: A 2.4 MiB MP3 was made from a 20 MiB recording. Calculate the percentage reduction and explain what has been lost.",
+    "Stretch: Describe a row of 12 pixels where RLE makes the data longer, and explain why this happens."
+   ],
+   "exit": [
+    "Define lossless compression.",
+    "State one reason to use lossy compression for a streamed video."
+   ],
+   "homework": "Look at the file sizes of a photo as a PNG and as a JPEG (or find the sizes online). Write 100 words on which you would use for a website and why.",
+   "send": "SEND/EAL: give a decoding worksheet with RLE pairs boxed. Stretch: ask for an evaluation of RLE on text with few repeated characters."
+  },
+  {
+   "unit": "Unit 6.1: Problem solving with programming: designing, reading and refining programs",
+   "n": 17,
+   "title": "From problem to program: decomposing, reading and converting designs",
+   "duration": 50,
+   "bigQuestion": "How do you turn a written problem into a working Python program?",
+   "objectives": [
+    "Use decomposition and abstraction to plan a program (6.1.1)",
+    "Read, analyse and refine a high-level program (6.1.2)",
+    "Convert pseudocode and flowcharts into Python (6.1.3)"
+   ],
+   "successCriteria": [
+    "All: identify the inputs, processes and outputs of a problem",
+    "Most: convert pseudocode or a flowchart into a working program",
+    "Some: refine a working program so that it is shorter, clearer or more general"
+   ],
+   "crossCurricular": "Mathematics: formulae and problem solving",
+   "smsc": "Moral: planning before acting (a habit of care) leads to better results",
+   "keywords": [
+    {
+     "term": "pseudocode",
+     "def": "a structured, language-independent way of writing an algorithm"
+    },
+    {
+     "term": "flowchart",
+     "def": "a diagram of an algorithm using standard symbols"
+    },
+    {
+     "term": "refine",
+     "def": "improve a working program, for example to make it shorter, clearer or faster"
+    },
+    {
+     "term": "input-process-output",
+     "def": "a way of planning: what goes in, what is done, what comes out"
+    }
+   ],
+   "starter": [
+    "Bismillah. What are the three constructs used in every algorithm?",
+    "State a decomposition of the problem: a program that totals a shopping basket.",
+    "In a flowchart, what shape holds a decision?"
+   ],
+   "teach": [
+    {
+     "heading": "Plan before you type",
+     "bullets": [
+      "Decompose: what are the sub-tasks?",
+      "Abstract: which data do we need?",
+      "Write inputs, processes, outputs"
+     ],
+     "note": "Paper 2 tasks are marked on whether the program works, so the plan is a short list: inputs, processes, outputs. Ask pupils what a till program for a canteen needs and what it can ignore. Link back to unit 1.1 for the vocabulary.",
+     "table": {
+      "head": [
+       "Part",
+       "Canteen till example"
+      ],
+      "rows": [
+       [
+        "Inputs",
+        "Price of each item, number of items"
+       ],
+       [
+        "Processes",
+        "Add prices, apply 10% staff discount if staff"
+       ],
+       [
+        "Outputs",
+        "Total to pay"
+       ],
+       [
+        "Ignored (abstraction)",
+        "Item colour, brand, shelf location"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Pseudocode to Python",
+     "bullets": [
+      "SET becomes =",
+      "FOR ... FROM becomes for ... in range",
+      "SEND ... TO DISPLAY becomes print"
+     ],
+     "note": "Show the pseudocode first, then the Python on the next slide. Exam papers define their own notation, so make sure pupils can read both. Common translation errors: forgetting that range stops before the end value, and forgetting the colon and indentation.",
+     "code": {
+      "lang": "text",
+      "text": "SET total TO 0\nFOR i FROM 1 TO 3\n    SET price TO prices[i]\n    SET total TO total + price\nEND FOR\nSEND total TO DISPLAY"
+     }
+    },
+    {
+     "heading": "The Python version",
+     "bullets": [
+      "Lists start at index 0",
+      "range(3) gives 0, 1, 2",
+      "Iterating over the list is simpler"
+     ],
+     "note": "Trace the program. Highlight that the pseudocode counts from 1 but Python lists start from 0, so a direct translation needs care. The simplest refinement is to loop over the list itself. Ask pupils which version is easier to read.",
+     "code": {
+      "lang": "python",
+      "text": "prices = [2.50, 1.20, 0.80]\ntotal = 0\nfor price in prices:\n    total = total + price\nprint(total)",
+      "output": "4.5"
+     }
+    },
+    {
+     "heading": "Worked example: read, analyse, refine",
+     "note": "Model the three stages as separate steps: first trace to understand, then name the purpose, then refine. The refined version is shorter, easier to extend and uses a function; mention that refinement must not change the output. Point out that analysing code is a skill tested in Paper 2.",
+     "model": {
+      "problem": "Read: n = 4; a = n * 1; b = n * 2; c = n * 3; print(a + b + c). Describe what it does and refine it.",
+      "steps": [
+       "Trace: a = 4, b = 8, c = 12, total 24",
+       "Purpose: adds the first three multiples of n (n x 1, n x 2, n x 3)",
+       "Refine: use a loop, so that any number of multiples can be added",
+       "Code: total = 0; for k in range(1, 4): total = total + n * k"
+      ],
+      "answer": "Output 24 both ways. The refined loop is shorter and the 3 can be changed to any number."
+     }
+    },
+    {
+     "heading": "Check: converting a loop",
+     "note": "Answer B. range(1, 6) gives 1 to 5, so the program prints 5 lines. A would be range(5) which gives 0 to 4. C forgets that the end is excluded; D is a common mistake of thinking range includes the last number.",
+     "check": {
+      "q": "Pseudocode: FOR i FROM 1 TO 5 SEND i TO DISPLAY. Which Python is the correct translation?",
+      "options": [
+       "for i in range(5): print(i)",
+       "for i in range(1, 6): print(i)",
+       "for i in range(1, 5): print(i)",
+       "for i in range(6): print(i)"
+      ],
+      "answer": 1,
+      "why": "range(1, 6) gives 1, 2, 3, 4, 5. range(5) starts at 0 and stops at 4 (A); range(1, 5) stops at 4 (C); range(6) includes 0 and stops at 5 (D)."
+     }
+    }
+   ],
+   "practice": [
+    "Write inputs, processes and outputs for a program that converts a temperature from Celsius to Fahrenheit.",
+    "Translate into Python: SET count TO 0, WHILE count < 3, SEND count TO DISPLAY, SET count TO count + 1.",
+    "Read: total = 0; for n in [3, 6, 9]: total = total + n; print(total / 3). State what it calculates and its output."
+   ],
+   "independent": [
+    "Core: Write Python for: SET total TO 0; FOR each mark IN [55, 70, 85]; SET total TO total + mark; SEND total TO DISPLAY.",
+    "Extend: Convert a flowchart described as: Start, SET n TO 1, decision n > 5, No: print n x n and add 1 to n then loop back, Yes: End. Write the Python and its output.",
+    "Stretch: Refine this code so that it works for any length of list: a = marks[0]; b = marks[1]; c = marks[2]; print((a + b + c) / 3)."
+   ],
+   "exit": [
+    "State one thing a programmer plans before writing code.",
+    "Why does range(1, 4) not include 4?"
+   ],
+   "homework": "Choose a short problem (for example calculating the cost of a taxi ride). Write inputs, processes and outputs, then the Python program for it.",
+   "send": "SEND/EAL: give a translation table (SET, FOR, WHILE, SEND) next to each statement in Python. Stretch: ask for a refined version with a function. This lesson focuses on Paper 2 programming; the flowchart and pseudocode basics are in the existing y10 lessons 2 and 3."
+  },
+  {
+   "unit": "Unit 6.1: Problem solving with programming: designing, reading and refining programs",
+   "n": 18,
+   "title": "Readable code, debugging and evaluating programs",
+   "duration": 50,
+   "bigQuestion": "How do you make code that other people can read, test and trust?",
+   "objectives": [
+    "Write readable code with layout, indentation, comments, meaningful names and whitespace (6.1.4)",
+    "Find and correct logic, syntax and runtime errors in Python (6.1.5)",
+    "Evaluate fitness for purpose and efficiency using test data (6.1.6)"
+   ],
+   "successCriteria": [
+    "All: add comments and good names to a short program",
+    "Most: debug a program using the error message and a trace",
+    "Some: write a test table and evaluate whether a program is fit for purpose"
+   ],
+   "crossCurricular": "English: clarity of writing for a reader",
+   "smsc": "Moral: amanah (trust) towards the next programmer and the user by writing honest, clear code",
+   "keywords": [
+    {
+     "term": "identifier",
+     "def": "the name of a variable, constant or subprogram"
+    },
+    {
+     "term": "comment",
+     "def": "a note in code, starting with #, ignored by the computer"
+    },
+    {
+     "term": "indentation",
+     "def": "spaces at the start of a line that show which block it belongs to"
+    },
+    {
+     "term": "debugging",
+     "def": "finding and fixing errors in a program"
+    },
+    {
+     "term": "test data",
+     "def": "chosen inputs with expected results"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name the three types of error.",
+    "What kind of error is caused by a missing colon after if?",
+    "Give an example of boundary test data for a number between 1 and 10."
+   ],
+   "teach": [
+    {
+     "heading": "Readable code",
+     "bullets": [
+      "Meaningful names: mean_mark, not x",
+      "Comments explain why, not just what",
+      "Indentation shows structure; blank lines separate parts"
+     ],
+     "note": "Compare the two versions of the same code. In Python, indentation is part of the syntax, but names, comments and spacing are about the human reader. Ask pupils which version they would rather mark. In an exam, comments help the examiner follow partial answers.",
+     "compare": {
+      "left": {
+       "title": "Hard to read",
+       "points": [
+        "Names a, t, x",
+        "No comments",
+        "No spacing",
+        "Reader must guess the purpose"
+       ]
+      },
+      "right": {
+       "title": "Easy to read",
+       "points": [
+        "Names marks, total",
+        "Comment on purpose",
+        "Blank lines between parts",
+        "Purpose is clear at a glance"
+       ]
+      },
+      "label": "Style"
+     }
+    },
+    {
+     "heading": "Same program, tidy",
+     "bullets": [
+      "Same output as before",
+      "Comments say what and why",
+      "Names tell the reader the data"
+     ],
+     "note": "Run it. The output is the same as the untidy version, 5.33, which shows that readability does not change behaviour. Point out the comment above each block. Note that too many comments for obvious lines are not helpful either.",
+     "code": {
+      "lang": "python",
+      "text": "# mean of a list of marks\nmarks = [3, 9, 4]\ntotal = 0\n\nfor mark in marks:\n    total = total + mark\n\nmean = total / len(marks)\nprint(round(mean, 2))",
+      "output": "5.33"
+     }
+    },
+    {
+     "heading": "Debugging method",
+     "bullets": [
+      "Read the error message and line number",
+      "Predict the output, then compare",
+      "Use print statements or a trace table"
+     ],
+     "note": "Show the run: the error appears at the last line of the traceback and gives the type and a clue. Ask pupils how to fix it (change the index to 2, or loop through the list). The skill is reading the message, not guessing.",
+     "code": {
+      "lang": "python",
+      "text": "marks = [3, 9, 4]\nfor i in range(1, 4):\n    print(marks[i])",
+      "output": "9\n4\nIndexError: list index out of range"
+     }
+    },
+    {
+     "heading": "Worked example: test and evaluate",
+     "note": "Model creating a test table with expected results BEFORE running the program. Then evaluate against the requirements: fit for purpose means it does what it was asked, including for boundaries and invalid data. Efficiency: does it avoid needless repeated work?",
+     "model": {
+      "problem": "A program should accept an exam mark from 0 to 100 and output 'pass' for 50 or more. Design test data and judge whether if mark > 50 is fit for purpose.",
+      "steps": [
+       "Normal: 72 -> pass",
+       "Boundary: 50 -> pass (expected), 49 -> fail, 0 -> fail, 100 -> pass",
+       "Erroneous: -5 and 'abc' should be rejected",
+       "Running the code with 50: it prints fail, which does not match the expected pass"
+      ],
+      "answer": "Not fit for purpose: the boundary value 50 fails. Fix: use >= 50, and add validation for invalid marks."
+     }
+    },
+    {
+     "heading": "Check: spotting the logic error",
+     "note": "Answer C. The loop never reaches the last item because range(len(marks) - 1) stops one short; the program runs without an error message, so it is a logic error. A syntax error (A) would stop the program starting and a runtime error (B) would crash it, but this program runs to the end.",
+     "check": {
+      "q": "for i in range(len(marks) - 1): total = total + marks[i]. The program is meant to total every mark but gives too low an answer. What is wrong?",
+      "options": [
+       "A syntax error: the brackets are wrong",
+       "A runtime error: marks[i] does not exist",
+       "A logic error: the loop stops one item early",
+       "No error: the answer is correct"
+      ],
+      "answer": 2,
+      "why": "The loop misses the last item, so the answer is too small, but the program still runs: a logic error. It is not a syntax (A) or runtime error (B)."
+     }
+    }
+   ],
+   "practice": [
+    "Rewrite x=[4,5];y=0 with readable names, a comment and good layout.",
+    "Give two reasons why meaningful variable names matter.",
+    "A program that checks a password length of 8 to 12 characters uses len(pw) > 8 and len(pw) < 12. Give two test values that show the fault."
+   ],
+   "independent": [
+    "Core: Rewrite this with good names, comments and spacing, and check the output is unchanged: a=[3,9,4];t=0;for x in a: t=t+x;print(round(t/len(a),2)) (set out as separate lines).",
+    "Extend: Debug this program and name each error type: marks = [3, 9, 4], then for i in range(1, 4) with no colon, then print(marks[i]) inside the loop. There are two errors.",
+    "Stretch: Write a test table with at least eight rows (normal, boundary, erroneous) for a program that accepts an age from 11 to 16. Include expected results, then evaluate a program whose condition is age > 11 and age < 16."
+   ],
+   "exit": [
+    "Give two ways to make code more readable.",
+    "What is the purpose of test data with expected results?"
+   ],
+   "homework": "Write a short Python program that totals a list of numbers. Deliberately introduce one bug of each type in three copies and note how Python reports (or does not report) each.",
+   "send": "SEND/EAL: provide a debugging checklist (read message, find the line, predict, fix) and a word bank. Stretch: ask pupils to review a classmate's code for readability. Existing y10 lesson 7 introduced validation and testing; this lesson adds style, debugging and evaluation."
+  },
+  {
+   "unit": "Unit 6.2: Problem solving with programming: program structure and control",
+   "n": 19,
+   "title": "Program structure and control: sequence, selection, repetition and iteration",
+   "duration": 50,
+   "bigQuestion": "How do the parts of a program fit together so it does what you intend?",
+   "objectives": [
+    "Identify the structural components of a program (6.2.1)",
+    "Use sequence, selection, repetition and iteration in Python (6.2.2)",
+    "Explain the idea of a single entry and a single exit point"
+   ],
+   "successCriteria": [
+    "All: identify the main parts of a program",
+    "Most: write programs using if/elif/else, for and while",
+    "Some: nest structures correctly and justify the choice of loop"
+   ],
+   "crossCurricular": "Mathematics: conditions and iterative procedures",
+   "smsc": "Moral: discipline and order (nidham) in organising work",
+   "keywords": [
+    {
+     "term": "count-controlled",
+     "def": "a loop that runs a set number of times, such as for"
+    },
+    {
+     "term": "condition-controlled",
+     "def": "a loop that runs while a condition is true, such as while"
+    },
+    {
+     "term": "nested",
+     "def": "one structure placed inside another"
+    },
+    {
+     "term": "single entry and exit",
+     "def": "each block of code is entered at the top and left at the bottom"
+    }
+   ],
+   "starter": [
+    "Bismillah. What does the % operator do in Python?",
+    "Write an if statement that prints 'adult' when age is 18 or more.",
+    "What is the difference between for and while?"
+   ],
+   "teach": [
+    {
+     "heading": "Parts of a program",
+     "bullets": [
+      "Libraries imported at the top",
+      "Constants and global data",
+      "Subprogram definitions, then the main program"
+     ],
+     "note": "Show the labelled program. A typical order: imports, constants, subprograms, main code. Comments label each part. The same structure scales from 10 lines to 10 000. Pupils often put definitions after the code that calls them, which fails in Python.",
+     "code": {
+      "lang": "python",
+      "text": "import math                      # library\n\nVAT = 0.2                        # constant\n\ndef gross(net):                  # subprogram\n    return net * (1 + VAT)\n\ndef main():                      # main program\n    prices = [10, 20, 35]\n    for p in prices:\n        print(p, math.ceil(gross(p)))\n\nmain()",
+      "output": "10 12\n20 24\n35 42"
+     }
+    },
+    {
+     "heading": "Selection and repetition in Python",
+     "bullets": [
+      "if / elif / else chooses one path",
+      "for repeats a known number of times",
+      "while repeats until a condition is false"
+     ],
+     "note": "Trace the program: the first matching branch runs and the rest are skipped. Check that pupils see why 6 gives six and not even: the order of conditions matters. Ask what would happen if the % 2 test came first.",
+     "code": {
+      "lang": "python",
+      "text": "for n in range(1, 7):\n    if n % 6 == 0:\n        label = \"six\"\n    elif n % 2 == 0:\n        label = \"even\"\n    else:\n        label = \"odd\"\n    print(n, label)",
+      "output": "1 odd\n2 even\n3 odd\n4 even\n5 odd\n6 six"
+     }
+    },
+    {
+     "heading": "Single entry and exit",
+     "bullets": [
+      "Every structure is entered at the top",
+      "And left at the bottom",
+      "Nested structures sit completely inside others"
+     ],
+     "note": "Draw boxes around the loop and the if inside it to show nesting. Structured programs are easier to read, test and prove correct. Avoid jumping out of the middle with extra exits where a condition would do. The while loop below has one entry and one exit and the condition is the only way out.",
+     "code": {
+      "lang": "python",
+      "text": "attempts = 0\ncorrect = False\nguesses = [4, 9, 7]\nwhile not correct and attempts < len(guesses):\n    if guesses[attempts] == 7:\n        correct = True\n    attempts = attempts + 1\nprint(correct, attempts)",
+      "output": "True 3"
+     }
+    },
+    {
+     "heading": "Worked example: choose the right loop",
+     "note": "Model the decision: ask 'do we know how many times in advance?' If yes, for; if not, while. Link 'iteration over data' with for item in list. Keep the focus on the choice and the justification, because Paper 2 and Paper 1 both ask pupils to explain why a loop is suitable.",
+     "model": {
+      "problem": "Choose a loop for each task and justify: (a) print the 12 times table; (b) keep asking for a password until it is correct; (c) total the marks in a list.",
+      "steps": [
+       "(a) 12 repeats is known: count-controlled, for i in range(1, 13)",
+       "(b) Number of attempts is unknown: condition-controlled, while not correct",
+       "(c) Visit every item: iteration over a data structure, for mark in marks",
+       "Check that each loop has one entry point and one exit point"
+      ],
+      "answer": "(a) for, (b) while, (c) for over the list."
+     }
+    },
+    {
+     "heading": "Check: order of conditions",
+     "note": "Answer C. In an if/elif chain the first true branch is the only one that runs, so 6 gets 'six' because that test is first. If the % 2 test came first, 6 would be labelled 'even'.",
+     "check": {
+      "q": "In the program with n % 6 == 0 first, which label is printed for n = 6?",
+      "options": [
+       "even",
+       "odd",
+       "six",
+       "six and even"
+      ],
+      "answer": 2,
+      "why": "The first condition, n % 6 == 0, is true so 'six' is chosen and the elif branches are skipped. 'even' (A) would be printed only if the even test came first."
+     }
+    }
+   ],
+   "practice": [
+    "List four structural parts of a program in the order they usually appear.",
+    "Write a for loop that prints the numbers 10, 20, 30, 40, 50.",
+    "Write a while loop that doubles a variable starting at 1 until it is more than 100, then prints it."
+   ],
+   "independent": [
+    "Core: Write a program that prints 'fizz' for each multiple of 3 from 1 to 15 and the number otherwise.",
+    "Extend: Write a program with a list of five marks and use iteration and selection to print the number of marks of 60 or more.",
+    "Stretch: Extend the guessing loop so that it also prints 'not found' if no guess was 7, still with one entry and one exit. Explain why a single exit makes the program easier to test."
+   ],
+   "exit": [
+    "Which loop is used when you do not know how many times to repeat?",
+    "What is meant by nested selection inside a loop?"
+   ],
+   "homework": "Write a program with a library import, a constant, a function and a main loop, and label each structural part with a comment.",
+   "send": "SEND/EAL: give a program with sections cut apart to reorder and label. Stretch: ask for a nested loop program printing a multiplication grid."
+  },
+  {
+   "unit": "Unit 6.3: Problem solving with programming: data types, variables and strings",
+   "n": 20,
+   "title": "Data types, variables, constants and arrays in Python",
+   "duration": 50,
+   "bigQuestion": "How do you choose the right container and type for each piece of data?",
+   "objectives": [
+    "Use integer, real, Boolean and character types, and convert between them (6.3.1)",
+    "Use one- and two-dimensional structures in Python (6.3.1)",
+    "Use variables and constants appropriately (6.3.2)"
+   ],
+   "successCriteria": [
+    "All: name the data type of a value and use a variable",
+    "Most: choose a suitable type for given data and use casting",
+    "Some: process a 2D structure with nested loops and justify a choice of constant"
+   ],
+   "crossCurricular": "Mathematics: integers, decimals and number types",
+   "smsc": "Moral: accuracy with personal data (amanah): choosing the right type avoids errors in people's records",
+   "keywords": [
+    {
+     "term": "integer",
+     "def": "a whole number"
+    },
+    {
+     "term": "real (float)",
+     "def": "a number with a decimal part"
+    },
+    {
+     "term": "Boolean",
+     "def": "True or False"
+    },
+    {
+     "term": "character",
+     "def": "a single letter, digit or symbol (a string of length 1 in Python)"
+    },
+    {
+     "term": "casting",
+     "def": "converting a value from one data type to another"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is a constant?",
+    "Give the output of 17 // 5 and 17 % 5.",
+    "Give an example of a record with three fields."
+   ],
+   "teach": [
+    {
+     "heading": "Primitive types",
+     "bullets": [
+      "Integer: 12. Real (float): 3.5",
+      "Boolean: True / False",
+      "Character / string: 'A', 'Salam'"
+     ],
+     "note": "Run the code and read the type names. Python has no separate character type, so a character is a string of length 1; mention that exams may say 'character' where Python says str. A phone number must be a string: leading zeros would be lost as an integer and we never add phone numbers.",
+     "code": {
+      "lang": "python",
+      "text": "count = 12\nprice = 3.5\nis_open = True\ninitial = \"A\"\nprint(type(count), type(price))\nprint(type(is_open), type(initial))",
+      "output": "<class 'int'> <class 'float'>\n<class 'bool'> <class 'str'>"
+     }
+    },
+    {
+     "heading": "Casting",
+     "bullets": [
+      "int() removes the decimal part",
+      "float() makes a real; str() makes text",
+      "input() always gives a string"
+     ],
+     "note": "Show that int(3.9) is 3, not 4: it truncates. A string of digits must be cast before arithmetic; '12' + 1 gives an error and '12' + '1' gives '121'. Link to input in the next lesson.",
+     "code": {
+      "lang": "python",
+      "text": "print(int(3.9), int(\"12\") + 1)\nprint(\"12\" + \"1\")\nprint(float(7), str(7) + \"!\")\nprint(round(3.9))",
+      "output": "3 13\n121\n7.0 7!\n4"
+     }
+    },
+    {
+     "heading": "Constants and one- and two-dimensional structures",
+     "bullets": [
+      "Constants: names in capitals, never changed",
+      "1D list: one row. 2D list: rows of rows",
+      "Nested loops visit every cell"
+     ],
+     "note": "Constants make the program easy to update: VAT_RATE appears once. Draw the 2D list as a grid and say 'row first'. Pupils often use one loop for a 2D list: show that for row in grid gives whole rows, so a second loop is needed to reach each value.",
+     "code": {
+      "lang": "python",
+      "text": "grid = [[3, 5, 2], [4, 1, 6]]\ntotal = 0\nfor row in grid:\n    for value in row:\n        total = total + value\nprint(total, grid[1][2])",
+      "output": "21 6"
+     }
+    },
+    {
+     "heading": "Worked example: choose the types",
+     "note": "Model by asking for each field: is it a number we calculate with? could it include a decimal? is it yes/no? Phone numbers and postcodes are strings. The grade is a character. Link the choices to what operations will be applied.",
+     "model": {
+      "problem": "A school record holds: name, age in years, fees owed in pounds and pence, whether the fees are paid, and a one-letter grade. Choose a data type for each and justify.",
+      "steps": [
+       "Name: string, as text",
+       "Age in years: integer, a whole number",
+       "Fees: real (float), because pence are decimals",
+       "Paid: Boolean, since it is only yes or no",
+       "Grade: character, a single letter"
+      ],
+      "answer": "string, integer, real, Boolean, character."
+     }
+    },
+    {
+     "heading": "Check: data types",
+     "note": "Answer C. A phone number is never used in arithmetic and may start with 0, so a string. A would drop the leading 0. B is wrong because we do not add phone numbers. D is not suitable as there is no yes/no.",
+     "check": {
+      "q": "Which data type is most suitable for storing the telephone number 07712 345678?",
+      "options": [
+       "Integer",
+       "Real",
+       "String",
+       "Boolean"
+      ],
+      "answer": 2,
+      "why": "A telephone number has a leading zero and spaces and we never calculate with it, so a string. An integer (A) would lose the leading zero; real (B) and Boolean (D) are unsuitable."
+     }
+    }
+   ],
+   "practice": [
+    "State the data type of each: 'Hello', 25, 2.75, True.",
+    "Write a statement that stores 20% as a constant called DISCOUNT and another that uses it to reduce a price of 50.",
+    "grid = [[1, 2], [3, 4], [5, 6]]. State grid[2][0] and the number of rows."
+   ],
+   "independent": [
+    "Core: Write Python to store a pupil's name, age, height in metres and whether they are a prefect, using suitable types.",
+    "Extend: A 2D list stores three pupils' marks in four tests. Write nested loops to output each pupil's total.",
+    "Stretch: Explain what happens if you add the strings '15' and '5', and if you add the integer 15 and the string '5'. Write the code that makes the two numbers add correctly."
+   ],
+   "exit": [
+    "State one difference between a variable and a constant.",
+    "Why is a phone number stored as a string?"
+   ],
+   "homework": "Write a short program with at least four variables of different types (including one constant) and print the type of each.",
+   "send": "SEND/EAL: provide a card sort of values and their type names. Stretch: ask for a 2D structure holding a timetable and a loop that prints each day's lessons."
+  },
+  {
+   "unit": "Unit 6.3: Problem solving with programming: data types, variables and strings",
+   "n": 21,
+   "title": "Manipulating strings",
+   "duration": 50,
+   "bigQuestion": "How can a program search inside text and change it?",
+   "objectives": [
+    "Find the length of a string and use positions (6.3.3)",
+    "Extract substrings with slicing",
+    "Change case and search for text"
+   ],
+   "successCriteria": [
+    "All: use len and position to read a character",
+    "Most: slice a string and convert case",
+    "Some: combine find and slicing to extract a part of a string"
+   ],
+   "crossCurricular": "English: spelling, word patterns and text analysis",
+   "smsc": "Cultural: handling names respectfully, including capital letters and spelling, shows adab to the person",
+   "keywords": [
+    {
+     "term": "string",
+     "def": "a sequence of characters"
+    },
+    {
+     "term": "length",
+     "def": "the number of characters in a string"
+    },
+    {
+     "term": "index",
+     "def": "position of a character, starting from 0"
+    },
+    {
+     "term": "substring",
+     "def": "a part of a string"
+    },
+    {
+     "term": "slice",
+     "def": "a way of taking a substring, such as word[0:3]"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is the index of the first item of a list?",
+    "How do you make a for loop visit every item in a list?",
+    "State the type of 'A'."
+   ],
+   "teach": [
+    {
+     "heading": "Length and position",
+     "bullets": [
+      "len(word) is the number of characters",
+      "word[0] is the first; word[-1] is the last",
+      "Indexes run from 0 to len - 1"
+     ],
+     "note": "Write 'Bismillah' with an index above each letter so pupils can see it. The positions are the key idea: the last index is len - 1. Pupils get an 'index out of range' error by using len(word) as an index.",
+     "code": {
+      "lang": "python",
+      "text": "word = \"Bismillah\"\nprint(len(word))\nprint(word[0], word[-1])\nprint(word[0:3])\nprint(word.upper(), word.lower())\nprint(word.find(\"mil\"))",
+      "output": "9\nB h\nBis\nBISMILLAH bismillah\n3"
+     }
+    },
+    {
+     "heading": "Slices, case and find",
+     "bullets": [
+      "word[a:b] starts at a and stops before b",
+      "upper() and lower() convert case",
+      "find returns the position or -1"
+     ],
+     "note": "In the run above, word[0:3] is 'Bis': positions 0, 1, 2. find gives the position where the substring starts, 3. If not found it returns -1: ask what that is useful for. Strings cannot be changed in place; we build new strings.",
+     "table": {
+      "head": [
+       "Expression",
+       "Result",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "word[2:5]",
+        "smi",
+        "positions 2, 3, 4"
+       ],
+       [
+        "word[:3]",
+        "Bis",
+        "start to position 2"
+       ],
+       [
+        "word[6:]",
+        "lah",
+        "position 6 to end"
+       ],
+       [
+        "word.find('xyz')",
+        "-1",
+        "not found"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Looping over characters",
+     "bullets": [
+      "for ch in text visits each character",
+      "Use in to test whether a letter is in a set",
+      "Convert to lower case before comparing"
+     ],
+     "note": "Trace the vowel counter with 'Tarbiyyah': a, i, a is 3 vowels. Ask pupils why we lower-case first (so 'A' counts too). This pattern appears in Paper 2 tasks.",
+     "code": {
+      "lang": "python",
+      "text": "text = \"Tarbiyyah\"\nvowels = 0\nfor ch in text.lower():\n    if ch in \"aeiou\":\n        vowels = vowels + 1\nprint(vowels)",
+      "output": "3"
+     }
+    },
+    {
+     "heading": "Worked example: extract the username",
+     "note": "Model by combining find and slicing. Ask where the at sign is (position 5 in 'amina@school.org'), so the username is the slice from 0 up to that position. Ask what the domain slice would be (from position 6).",
+     "model": {
+      "problem": "An email address is stored as email = 'amina@school.org'. Write code to output the part before the @ in capitals.",
+      "steps": [
+       "Find the position of the @: at = email.find('@') gives 5",
+       "Slice from the start up to but not including position 5: email[0:at]",
+       "Convert to capitals with .upper()",
+       "print(email[0:at].upper())"
+      ],
+      "answer": "The output is AMINA."
+     }
+    },
+    {
+     "heading": "Check: slicing",
+     "note": "Answer B. keyboard has k0 e1 y2 b3 o4 a5 r6 d7, so [2:5] is positions 2, 3 and 4: 'ybo'. A is [1:4] and C is [2:6]; D is what you get by counting from 1.",
+     "check": {
+      "q": "word = 'keyboard'. What is word[2:5]?",
+      "options": [
+       "eyb",
+       "ybo",
+       "yboa",
+       "eybo"
+      ],
+      "answer": 1,
+      "why": "Positions 2, 3 and 4 are y, b, o. The slice stops before position 5. 'eyb' starts at 1 (A); 'yboa' includes position 5 (C)."
+     }
+    }
+   ],
+   "practice": [
+    "For name = 'Zainab', state len(name), name[0] and name[1:4].",
+    "Write code to print a word in capitals and its length.",
+    "Write code that prints how many times the letter 'a' appears in 'Alhamdulillah'."
+   ],
+   "independent": [
+    "Core: Write a program that prints the first and last letters of 'Madrasah' and its length.",
+    "Extend: Store 'Surname,Forename' as a string and use find and slicing to print Forename Surname.",
+    "Stretch: Write a program that checks whether a word is a palindrome (reads the same backwards), using slicing. Test with 'level' and 'salam'."
+   ],
+   "exit": [
+    "What is the index of the last character of a 6-letter string?",
+    "State the difference between upper() and lower()."
+   ],
+   "homework": "Write a program that takes the sentence 'Learning is a path to Jannah' and prints the number of letters, the first word and the sentence in capitals.",
+   "send": "SEND/EAL: give an indexed strip of letters for each example. Stretch: ask for a function that counts any given letter."
+  },
+  {
+   "unit": "Unit 6.4: Problem solving with programming: input, files, validation and authentication",
+   "n": 22,
+   "title": "Input and CSV files",
+   "duration": 50,
+   "bigQuestion": "How does a program get data from a person, and keep it after it closes?",
+   "objectives": [
+    "Accept and respond to user input (6.4.1)",
+    "Read from and write to CSV text files (6.4.2)",
+    "Process the lines of a file using split and casting"
+   ],
+   "successCriteria": [
+    "All: write a program that asks for input and responds",
+    "Most: write records to a CSV file and read them back",
+    "Some: process a CSV file to calculate a result such as a total or a highest value"
+   ],
+   "crossCurricular": "Mathematics: data handling and tables",
+   "smsc": "Moral: amanah with other people's data: only keep what is needed and keep it safe",
+   "keywords": [
+    {
+     "term": "input",
+     "def": "data entered into a program by the user"
+    },
+    {
+     "term": "CSV",
+     "def": "comma-separated values: a text file with fields separated by commas"
+    },
+    {
+     "term": "file",
+     "def": "data stored permanently on secondary storage"
+    },
+    {
+     "term": "split",
+     "def": "a string method that breaks a string into a list at a chosen character"
+    }
+   ],
+   "starter": [
+    "Bismillah. What data type does input() return?",
+    "Write a Python statement to convert the string '25' to an integer.",
+    "What is a record?"
+   ],
+   "teach": [
+    {
+     "heading": "User input",
+     "bullets": [
+      "input shows a prompt and returns a string",
+      "Cast the string to a number before arithmetic",
+      "Respond to what was entered"
+     ],
+     "note": "Pupils type the line into Python; you may show the interaction on the table. The program cannot do arithmetic on a string, so int() is essential. Ask what happens if the user types 'abc' (a runtime error; validation comes in the next lesson).",
+     "table": {
+      "head": [
+       "Python",
+       "User types",
+       "Result"
+      ],
+      "rows": [
+       [
+        "name = input('Name: ')",
+        "Hana",
+        "name holds 'Hana'"
+       ],
+       [
+        "age = int(input('Age: '))",
+        "15",
+        "age holds 15"
+       ],
+       [
+        "print('Next year', age + 1)",
+        "-",
+        "Next year 16"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Writing a CSV file",
+     "bullets": [
+      "Open with 'w' to write (replaces the old file)",
+      "Each record is one line; fields are separated by commas",
+      "End each line with \\n and close the file"
+     ],
+     "note": "Show that a CSV file is just text. Mode 'a' adds to the end instead of replacing: ask what would happen if we used 'w' each time in a loop. Always close the file, or the data may not be saved. Note: the exam may supply its own file-handling pattern; check what the paper uses.",
+     "code": {
+      "lang": "python",
+      "text": "file = open(\"scores.csv\", \"w\")\nfile.write(\"Amina,72\\n\")\nfile.write(\"Bilal,58\\n\")\nfile.close()\n\nfile = open(\"scores.csv\", \"r\")\nfor line in file:\n    name, score = line.strip().split(\",\")\n    print(name, int(score) + 5)\nfile.close()",
+      "output": "Amina 77\nBilal 63"
+     }
+    },
+    {
+     "heading": "Reading and splitting",
+     "bullets": [
+      "strip removes the newline at the end",
+      "split(',') makes a list of fields",
+      "Fields are strings: cast the numbers"
+     ],
+     "note": "Walk through the read half of the program. Pupils forget strip (the \\n stays on the last field) and forget to cast. Ask what name and score hold on the first line: 'Amina' and '72'.",
+     "table": {
+      "head": [
+       "Line from file",
+       "After strip()",
+       "After split(',')"
+      ],
+      "rows": [
+       [
+        "Amina,72\\n",
+        "Amina,72",
+        "['Amina', '72']"
+       ],
+       [
+        "Bilal,58\\n",
+        "Bilal,58",
+        "['Bilal', '58']"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Worked example: highest score",
+     "note": "Model the loop with a running maximum. Emphasise casting the score to an integer: otherwise '9' > '58' compares as text and is True. Trace with the two records: Amina 72, then Bilal 58 is smaller.",
+     "model": {
+      "problem": "scores.csv has the lines Amina,72 and Bilal,58 and Sara,91. Describe the steps to output the name with the highest score.",
+      "steps": [
+       "Open the file for reading",
+       "Set best_score to 0 and best_name to an empty string",
+       "For each line: strip, split on the comma, convert the score with int()",
+       "If the score is higher than best_score, update both variables",
+       "Close the file and print best_name"
+      ],
+      "answer": "The program outputs Sara, with 91."
+     }
+    },
+    {
+     "heading": "Check: types after splitting",
+     "note": "Answer C. split always gives strings, even for digits. A and B would be correct only after int(). D is the whole line, which is before the split.",
+     "check": {
+      "q": "The line 'Sara,15,Y10' is read from a file and stored in line. After parts = line.split(','), what is parts[1]?",
+      "options": [
+       "The integer 15",
+       "The real number 15.0",
+       "The string '15'",
+       "The string 'Sara,15,Y10'"
+      ],
+      "answer": 2,
+      "why": "split gives a list of strings, so parts[1] is the string '15'. It becomes a number only after int(parts[1]). The whole line (D) is the value before splitting."
+     }
+    }
+   ],
+   "practice": [
+    "Write two lines of Python that ask for a pupil's name and greet them.",
+    "Write the CSV line for a record: name Omar, age 14, form 9A.",
+    "Explain why the 'w' mode would delete earlier records if used each time you save one."
+   ],
+   "independent": [
+    "Core: Write a program that asks for a name and a mark, then writes them to a CSV file on one line.",
+    "Extend: Write a program that reads scores.csv and outputs the total of all the scores.",
+    "Stretch: Write a program that reads a CSV file of name and score and writes a second file containing only the pupils with 60 or more."
+   ],
+   "exit": [
+    "State what 'csv' stands for.",
+    "Why do we use strip() when reading lines?"
+   ],
+   "homework": "Create a small CSV (on paper) of five classmates' favourite numbers, then write the Python that reads it and prints the mean.",
+   "send": "SEND/EAL: provide the file program with gaps to fill. Stretch: ask for error handling when the file is missing."
+  },
+  {
+   "unit": "Unit 6.4: Problem solving with programming: input, files, validation and authentication",
+   "n": 23,
+   "title": "Validation and authentication",
+   "duration": 50,
+   "bigQuestion": "How do we stop bad data and bad users from getting into a program?",
+   "objectives": [
+    "Apply validation: length, presence, range and pattern checks (6.4.3)",
+    "Apply authentication: ID and password, and lookup (6.4.4)",
+    "Explain the difference between validation and checking correctness"
+   ],
+   "successCriteria": [
+    "All: name the four validation checks",
+    "Most: write a function for each type of validation check",
+    "Some: write a login routine with a lookup and limited attempts"
+   ],
+   "crossCurricular": "PSHE: online safety and strong passwords",
+   "smsc": "Moral: amanah and honesty: protect people's accounts and never store or share passwords carelessly",
+   "keywords": [
+    {
+     "term": "validation",
+     "def": "an automatic check that data is sensible and in the right form"
+    },
+    {
+     "term": "range check",
+     "def": "tests that a value lies between a minimum and a maximum"
+    },
+    {
+     "term": "length check",
+     "def": "tests the number of characters"
+    },
+    {
+     "term": "presence check",
+     "def": "tests that something was entered"
+    },
+    {
+     "term": "authentication",
+     "def": "proving who you are, for example with an ID and password"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is the difference between a syntax error and a logic error?",
+    "Write the condition: x is between 5 and 10 inclusive.",
+    "What does len('Salam') return?"
+   ],
+   "teach": [
+    {
+     "heading": "Four validation checks",
+     "bullets": [
+      "Presence: something was entered",
+      "Length: the right number of characters",
+      "Range: between a minimum and a maximum"
+     ],
+     "note": "Pattern (format) check: the data follows a layout such as one letter then three digits. Validation tells us that data is reasonable, not that it is correct: a pupil aged 14 entered as 15 passes. Give pupils the table of checks and an example each.",
+     "table": {
+      "head": [
+       "Check",
+       "Test",
+       "Passes",
+       "Fails"
+      ],
+      "rows": [
+       [
+        "Presence",
+        "text != ''",
+        "'Amina'",
+        "''"
+       ],
+       [
+        "Length",
+        "8 <= len(pw) <= 12",
+        "'tarbiyyah1'",
+        "'salam'"
+       ],
+       [
+        "Range",
+        "0 <= mark <= 100",
+        "100",
+        "101"
+       ],
+       [
+        "Pattern",
+        "letter then 3 digits",
+        "A123",
+        "123A"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Validation as functions",
+     "bullets": [
+      "Each check returns True or False",
+      "Combine checks with and",
+      "Reuse them wherever data is entered"
+     ],
+     "note": "Run the code and read the output in pairs. The pattern check uses string methods: isalpha and isdigit. Each function is short, testable and reusable (link to subprograms). Pupils often forget that the function returns a Boolean rather than printing.",
+     "code": {
+      "lang": "python",
+      "text": "def valid_length(pw):\n    return 8 <= len(pw) <= 12\n\ndef valid_range(mark):\n    return 0 <= mark <= 100\n\ndef valid_code(code):\n    return len(code) == 4 and code[0].isalpha() and code[1:].isdigit()\n\nprint(valid_length(\"salam\"), valid_length(\"tarbiyyah1\"))\nprint(valid_range(101), valid_range(100))\nprint(valid_code(\"A123\"), valid_code(\"123A\"))",
+      "output": "False True\nFalse True\nTrue False"
+     }
+    },
+    {
+     "heading": "Authentication by lookup",
+     "bullets": [
+      "Look the user ID up in stored data",
+      "Compare the password for that ID",
+      "Limit the number of attempts"
+     ],
+     "note": "Trace the program: the first attempt has the right ID and a wrong password, the second succeeds. Real systems never store plain passwords: they store a protected form (a hash). That is beyond this course, but the habit of never writing a password in plain text is a matter of amanah.",
+     "code": {
+      "lang": "python",
+      "text": "users = {\"amina\": \"Sun123\", \"bilal\": \"Moon456\"}\ntries = [(\"amina\", \"wrong\"), (\"amina\", \"Sun123\")]\ni = 0\nlogged_in = False\nwhile i < len(tries) and not logged_in:\n    name, pw = tries[i]\n    if name in users and users[name] == pw:\n        logged_in = True\n    i = i + 1\nprint(logged_in, i)",
+      "output": "True 2"
+     }
+    },
+    {
+     "heading": "Worked example: validate and re-ask",
+     "note": "Model the loop pattern: ask, check, repeat while invalid. In an exam the structure matters more than the exact messages. Test with boundary data: 0 and 100 pass, -1 and 101 fail.",
+     "model": {
+      "problem": "Describe a program that asks for a mark from 0 to 100 and keeps asking until it is valid.",
+      "steps": [
+       "Ask for the mark and convert it with int()",
+       "While the mark is below 0 or above 100: print an error message",
+       "Ask again inside the loop and convert again",
+       "After the loop ends, the mark is valid and can be used"
+      ],
+      "answer": "Code: mark = int(input('Mark: ')); while mark < 0 or mark > 100: print('Invalid'); mark = int(input('Mark: '))"
+     }
+    },
+    {
+     "heading": "Check: what validation can and cannot do",
+     "note": "Answer A. A range check can show the value is within limits but cannot know it is true. B would need the name to be a real person; C is verification; D is not a type of validation. Discuss why double entry (verification) is a separate idea.",
+     "check": {
+      "q": "A user enters their age as 51 instead of 15. The program has a range check from 11 to 16. What happens?",
+      "options": [
+       "The program rejects it, because the value is outside the range",
+       "The program accepts it as correct",
+       "The program accepts it, but the data is wrong",
+       "The program rejects it, because it fails a pattern check"
+      ],
+      "answer": 0,
+      "why": "51 is outside 11 to 16, so the range check rejects it. A range check would not catch 14 typed instead of 15, because validation tests that data is sensible, not that it is correct. A pattern check (D) tests layout, not size."
+     }
+    }
+   ],
+   "practice": [
+    "Name the validation check that stops an empty username.",
+    "Write a Python function that returns True if a password is at least 8 characters.",
+    "Explain one reason why validated data may still be incorrect."
+   ],
+   "independent": [
+    "Core: Write a validation routine for an age between 11 and 16 that keeps asking until valid.",
+    "Extend: Write a function valid_postcode that returns True if a string has length 6, begins with a letter and ends with a digit. Test it with three values.",
+    "Stretch: Write a login routine that allows three attempts, using a dictionary of users, and prints a message after a successful or failed login."
+   ],
+   "exit": [
+    "List the four types of validation check.",
+    "State what authentication proves."
+   ],
+   "homework": "Choose a form you use (a library card or school login). List every field and say which validation check you would use for each.",
+   "send": "SEND/EAL: give a matching task for check and example (and a function template). Stretch: ask for a function that combines several checks."
+  },
+  {
+   "unit": "Unit 6.5: Problem solving with programming: operators",
+   "n": 24,
+   "title": "Arithmetic, relational and logical operators in Python",
+   "duration": 50,
+   "bigQuestion": "How do small operators like % and // solve big problems?",
+   "objectives": [
+    "Use arithmetic operators including modulus, integer division and exponentiation (6.5.1)",
+    "Use relational operators (6.5.2)",
+    "Use logical operators AND, OR and NOT in conditions (6.5.3)"
+   ],
+   "successCriteria": [
+    "All: evaluate expressions using each operator",
+    "Most: use % and // to solve problems such as even/odd and time conversion",
+    "Some: combine operators with correct precedence in conditions"
+   ],
+   "crossCurricular": "Mathematics: order of operations, remainders and indices",
+   "smsc": "Cultural: the Arabic roots of the word algorithm (from al-Khwarizmi) and of algebra: a link between mathematics and computing",
+   "keywords": [
+    {
+     "term": "modulus",
+     "def": "the remainder after division (% in Python)"
+    },
+    {
+     "term": "integer division",
+     "def": "division that discards the remainder (// in Python)"
+    },
+    {
+     "term": "exponentiation",
+     "def": "raising to a power (** in Python)"
+    },
+    {
+     "term": "relational operator",
+     "def": "compares two values: ==, !=, <, >, <=, >="
+    },
+    {
+     "term": "precedence",
+     "def": "the order in which operators are worked out"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 3 + 4 x 2 and (3 + 4) x 2.",
+    "Complete the truth table row for True AND False.",
+    "What does == test in Python?"
+   ],
+   "teach": [
+    {
+     "heading": "Arithmetic operators",
+     "bullets": [
+      "+ - * / as usual; / gives a real",
+      "// integer division, % remainder",
+      "** for powers, such as 2 ** 5"
+     ],
+     "note": "Run the program. 17 // 5 is 3 (how many whole fives) and 17 % 5 is 2 (what is left over). Show 7 / 2 gives 3.5 but 7 // 2 gives 3. Brackets then ** then * / // % then + - is the order of precedence.",
+     "code": {
+      "lang": "python",
+      "text": "print(17 // 5, 17 % 5, 2 ** 5)\nprint(7 / 2, 7 // 2)\nprint(2 + 3 ** 2 * 2)\nprint((2 + 3) ** 2 * 2)",
+      "output": "3 2 32\n3.5 3\n20\n50"
+     }
+    },
+    {
+     "heading": "What % and // are used for",
+     "bullets": [
+      "Even or odd: n % 2",
+      "Digits: n % 10 is the last digit",
+      "Time: // for whole units, % for the rest"
+     ],
+     "note": "Model the time example below as a worked problem. Add: use % for 'every third' loops and for wrapping around (clock, days of week). Ask pupils to find the last digit of 4827 (7) and the number without it (482).",
+     "code": {
+      "lang": "python",
+      "text": "seconds = 4000\nhours = seconds // 3600\nrest = seconds % 3600\nminutes = rest // 60\nsecs = rest % 60\nprint(hours, minutes, secs)\nprint(4827 % 10, 4827 // 10)",
+      "output": "1 6 40\n7 482"
+     }
+    },
+    {
+     "heading": "Worked example: even and odd with %",
+     "note": "Model the idea: a remainder of 0 when dividing by 2 means even. The program is the heart of many Paper 2 tasks. Then add the relational and logical operators: and, or, not combine conditions. Note that and is worked out before or.",
+     "model": {
+      "problem": "Write a condition that is True when n is even and greater than 10, and trace it for n = 14 and n = 8.",
+      "steps": [
+       "Even: n % 2 == 0",
+       "Greater than 10: n > 10",
+       "Combine with and: n % 2 == 0 and n > 10",
+       "n = 14: 14 % 2 = 0 (True) and 14 > 10 (True), so True",
+       "n = 8: 8 % 2 = 0 (True) but 8 > 10 is False, so False"
+      ],
+      "answer": "The condition is n % 2 == 0 and n > 10. It is True for 14 and False for 8."
+     }
+    },
+    {
+     "heading": "Misconception: and before or",
+     "bullets": [
+      "and is worked out before or",
+      "True or False and False is True",
+      "Use brackets to show what you mean"
+     ],
+     "note": "Run this in Python: print(True or False and False) gives True, because False and False is False and then True or False is True. With brackets (True or False) and False the answer is False. Brackets save marks.",
+     "misconception": {
+      "wrong": "True or False and False is False, because it is worked out left to right.",
+      "right": "and is worked out first: False and False is False, then True or False is True. Brackets, (True or False) and False, would give False."
+     }
+    },
+    {
+     "heading": "Check: evaluate",
+     "note": "Answer A. 3 ** 2 is 9, then 9 * 2 is 18, then plus 2 is 20. B ignores precedence (2 + 3) ** 2 * 2. C and D confuse ** with * or evaluate left to right.",
+     "check": {
+      "q": "What is the value of 2 + 3 ** 2 * 2 in Python?",
+      "options": [
+       "20",
+       "50",
+       "14",
+       "18"
+      ],
+      "answer": 0,
+      "why": "** is first: 3 ** 2 = 9, then 9 * 2 = 18, then 2 + 18 = 20. 50 comes from adding first, (2 + 3) ** 2 * 2 (B); 18 forgets to add the 2 (D)."
+     }
+    }
+   ],
+   "practice": [
+    "Evaluate: 29 // 6, 29 % 6, 4 ** 3, 10 != 10.",
+    "Write a condition that is True if a mark is between 40 and 60 inclusive.",
+    "Write Python code to convert 135 minutes into hours and minutes."
+   ],
+   "independent": [
+    "Core: Write a program that loops from 1 to 20 and prints only the multiples of 4.",
+    "Extend: Write a program that takes a three-digit number such as 472 and prints its digits separately using // and %.",
+    "Stretch: A leap year is divisible by 4 but not by 100, unless divisible by 400. Write the condition with logical operators and test 1900, 2000 and 2024."
+   ],
+   "exit": [
+    "What does 25 % 7 give?",
+    "State one use of integer division in a program."
+   ],
+   "homework": "Write five different expressions that use %, // and ** and work out the results by hand. Check with Python.",
+   "send": "SEND/EAL: give an operator card with symbol, name and example for each. Stretch: ask for the digit-sum of a four-digit number using a loop."
+  },
+  {
+   "unit": "Unit 6.6: Problem solving with programming: subprograms and scope",
+   "n": 25,
+   "title": "Subprograms: functions, procedures and scope",
+   "duration": 50,
+   "bigQuestion": "How do you build a program from small, reusable pieces without them interfering?",
+   "objectives": [
+    "Use built-in, library and user-defined subprograms (6.6.1)",
+    "Know that functions return values and procedures do not (6.6.2)",
+    "Use local and global variables appropriately (6.6.3)"
+   ],
+   "successCriteria": [
+    "All: name a built-in and a library subprogram and call a function",
+    "Most: write a function with parameters and a return value, and a procedure",
+    "Some: explain scope and predict the effect of local and global variables"
+   ],
+   "crossCurricular": "Mathematics: functions with inputs and outputs",
+   "smsc": "Moral: responsibility: each part of a program looks after its own job (amanah)",
+   "keywords": [
+    {
+     "term": "function",
+     "def": "a subprogram that returns a value"
+    },
+    {
+     "term": "procedure",
+     "def": "a subprogram that does a job but does not return a value"
+    },
+    {
+     "term": "parameter",
+     "def": "a variable in the subprogram definition that receives a value"
+    },
+    {
+     "term": "local variable",
+     "def": "a variable that exists only inside the subprogram"
+    },
+    {
+     "term": "global variable",
+     "def": "a variable declared outside subprograms that can be seen everywhere"
+    }
+   ],
+   "starter": [
+    "Bismillah. State two benefits of subprograms.",
+    "What does len('Salam') return?",
+    "What does the keyword def do?"
+   ],
+   "teach": [
+    {
+     "heading": "Three kinds of subprogram",
+     "bullets": [
+      "Built-in: print, len, int, round",
+      "Library: import math, then math.sqrt(49)",
+      "User-defined: written by the programmer with def"
+     ],
+     "note": "Show that the library must be imported before use. Libraries save writing code that experts have already tested; mention random (random numbers, not predictable, so no output here). The programmer decides when to write their own: when no existing one does the job.",
+     "code": {
+      "lang": "python",
+      "text": "import math\nprint(len(\"Salam\"), round(3.14159, 2))\nprint(math.sqrt(49), math.ceil(4.2))",
+      "output": "5 3.14\n7.0 5"
+     }
+    },
+    {
+     "heading": "Functions and procedures",
+     "bullets": [
+      "Function: returns a value to the caller",
+      "Procedure: carries out a task, returns nothing",
+      "Parameters pass data in"
+     ],
+     "note": "Run the program and discuss each line of output. The last line shows that a procedure has no useful return value (Python shows None). In the exam a function is called in an expression or assigned to a variable; a procedure is called on its own line.",
+     "code": {
+      "lang": "python",
+      "text": "def area(w, h):\n    return w * h\n\ndef show(w, h):\n    print(\"Area is\", area(w, h))\n\nresult = area(3, 4)\nprint(result)\nshow(5, 2)\nprint(show(1, 1))",
+      "output": "12\nArea is 10\nArea is 1\nNone"
+     }
+    },
+    {
+     "heading": "Local and global scope",
+     "bullets": [
+      "Local: created inside, gone when it ends",
+      "Global: declared outside, visible everywhere",
+      "Prefer parameters and return to global variables"
+     ],
+     "note": "Run the code: the error shows that bonus does not exist outside the function. Global variables can be changed from anywhere, which makes faults hard to find; passing values in through parameters is safer. Ask pupils why two subprograms can both have a local variable called i without clashing.",
+     "code": {
+      "lang": "python",
+      "text": "total = 100\n\ndef add_bonus(points):\n    bonus = 5\n    return points + bonus\n\nscore = add_bonus(total)\nprint(score)\nprint(bonus)",
+      "output": "105\nNameError: name 'bonus' is not defined"
+     }
+    },
+    {
+     "heading": "Worked example: write a function",
+     "note": "Model naming, parameters, return and a call. Show that the function has no input or print inside: it does one job, and the caller decides what to do with the result. Test with the values given: 45 out of 60 is 75.0.",
+     "model": {
+      "problem": "Write a function percentage that takes a score and a total and returns the percentage rounded to one decimal place. Show a call for 45 out of 60.",
+      "steps": [
+       "Define it: def percentage(score, total):",
+       "Calculate inside: result = score / total * 100",
+       "Return the rounded result: return round(result, 1)",
+       "Call it: print(percentage(45, 60))"
+      ],
+      "answer": "The call outputs 75.0."
+     }
+    },
+    {
+     "heading": "Check: function or procedure?",
+     "note": "Answer D. The subprogram returns a value that is used in an expression, so it is a function. A and B describe a procedure. C is wrong: parameters do not decide the type.",
+     "check": {
+      "q": "def double(n): return n * 2. The statement y = double(8) is run. What is double?",
+      "options": [
+       "A procedure, because it has a parameter",
+       "A procedure, because it is user-defined",
+       "A local variable",
+       "A function, because it returns a value"
+      ],
+      "answer": 3,
+      "why": "It returns n * 2 to the caller, which is stored in y, so it is a function. Having a parameter (A) or being user-defined (B) does not make something a procedure. It is not a variable (C)."
+     }
+    }
+   ],
+   "practice": [
+    "State one built-in and one library subprogram you have used.",
+    "Write a procedure that prints a greeting for a name passed in as a parameter.",
+    "State what happens if you print a local variable outside its function."
+   ],
+   "independent": [
+    "Core: Write a function that returns the square of a number and call it for 9.",
+    "Extend: Write a function is_even(n) that returns True or False, and use it in a loop over 1 to 10 to print the even numbers.",
+    "Stretch: Explain, with a short example, why changing a global variable inside many subprograms makes errors hard to find, and rewrite it using parameters and return."
+   ],
+   "exit": [
+    "State the difference between a function and a procedure.",
+    "Define a local variable."
+   ],
+   "homework": "Write a program with two functions and one procedure for a task of your choice (for example a canteen bill). Label each as a function or procedure.",
+   "send": "SEND/EAL: provide a template with def, parameters and return highlighted. Stretch: ask for a function that calls another function."
+  }
+ ]
+}
