@@ -46,6 +46,51 @@ const STUDENT_PREFIX = "test.";
 const YEAR_GROUPS = ["Year 3", "Year 5", "Year 7", "Year 8", "Year 10"];
 const SUBJECTS = ["Maths", "English", "Qur'an", "Islamic Studies"];
 
+// Runs SQL through the Supabase Management API (needs SUPABASE_ACCESS_TOKEN,
+// which the workflow has). Used only to clear rows that still point at a test
+// account before it is deleted.
+async function sql(query) {
+  const token = process.env.SUPABASE_ACCESS_TOKEN;
+  const ref = new URL(url).hostname.split(".")[0];
+  if (!token) throw new Error("SUPABASE_ACCESS_TOKEN is needed to clear references to test accounts.");
+  const res = await fetch(`https://api.supabase.com/v1/projects/${ref}/database/query`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ query }),
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`SQL failed (${res.status}): ${text.slice(0, 300)}`);
+  return text ? JSON.parse(text) : [];
+}
+
+/**
+ * Whatever a test account did in the portal (messages, clock-ins, feedback,
+ * audit entries…) can point at its profile with no ON DELETE rule, which
+ * makes deleting the account fail. Clear those references first: a nullable
+ * column is set to null, otherwise the row (test activity) is deleted.
+ */
+async function clearReferences(ids) {
+  if (!ids.length) return;
+  const fks = await sql(`
+    select c.conrelid::regclass::text as tbl, a.attname as col, a.attnotnull as notnull
+    from pg_constraint c
+    join pg_attribute a on a.attrelid = c.conrelid and a.attnum = c.conkey[1]
+    where c.contype = 'f' and array_length(c.conkey, 1) = 1
+      and c.confrelid in ('public.profiles'::regclass, 'auth.users'::regclass)
+      and c.confdeltype in ('a', 'r')
+      and c.conrelid::regclass::text not like 'auth.%'
+      and c.conrelid::regclass::text <> 'public.profiles'`);
+  const list = ids.map((i) => `'${i}'`).join(",");
+  for (const fk of fks) {
+    const q = fk.notnull ? `delete from ${fk.tbl} where ${fk.col} in (${list})` : `update ${fk.tbl} set ${fk.col} = null where ${fk.col} in (${list})`;
+    try {
+      await sql(q);
+    } catch (e) {
+      console.log(`(couldn't clear ${fk.tbl}.${fk.col}: ${e.message.slice(0, 160)})`);
+    }
+  }
+}
+
 function must(res, what) {
   if (res.error) throw new Error(`${what}: ${res.error.message}`);
   return res.data;
@@ -100,6 +145,8 @@ async function remove() {
     const chunk = ids.slice(i, i + 100);
     must(await sb.from("user_roles").delete().in("user_id", chunk), "remove test roles");
   }
+  await clearReferences(ids);
+  await clearReferences(ids); // a second pass catches rows that pointed at rows the first pass removed
   for (const u of users) {
     const { error } = await sb.auth.admin.deleteUser(u.id);
     if (error && !/not found/i.test(error.message)) throw new Error(`remove account ${u.email}: ${error.message}`);
