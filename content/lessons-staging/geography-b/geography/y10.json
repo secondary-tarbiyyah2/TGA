@@ -1,0 +1,2400 @@
+{
+ "subject": "Geography",
+ "year": "y10",
+ "board": "AQA GCSE (9-1) Geography 8035",
+ "boardShort": "AQA GCSE Geography 8035",
+ "source": "AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data.",
+ "lessons": [
+  {
+   "unit": "Unit 1: Geographical skills (AQA 3.4)",
+   "n": 1,
+   "title": "Cartographic skills: OS maps, grid references, scale, relief and gradient",
+   "duration": 50,
+   "bigQuestion": "How do geographers read a map to find, measure and describe places?",
+   "objectives": [
+    "Give four- and six-figure grid references",
+    "Measure distance using scale and describe direction",
+    "Describe relief and calculate gradient"
+   ],
+   "successCriteria": [
+    "All: give a four-figure reference and use a scale line",
+    "Most: give six-figure references and calculate distance",
+    "Some: calculate gradient and describe relief from contours"
+   ],
+   "crossCurricular": "Mathematics: ratio, scale and gradient",
+   "smsc": "Practical: using maps for travel (khalifah as responsible travellers)",
+   "keywords": [
+    {
+     "term": "grid reference",
+     "def": "a number code to find a place on a map; eastings first, then northings"
+    },
+    {
+     "term": "scale",
+     "def": "the relationship between distance on the map and distance on the ground"
+    },
+    {
+     "term": "contour",
+     "def": "a line joining places of equal height"
+    },
+    {
+     "term": "gradient",
+     "def": "how steep a slope is: vertical change divided by horizontal distance"
+    },
+    {
+     "term": "relief",
+     "def": "the shape and height of the land"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is the meaning of 1:50 000?",
+    "Name the eight compass points.",
+    "What does a contour line show?"
+   ],
+   "teach": [
+    {
+     "heading": "Grid references",
+     "bullets": [
+      "Eastings (along) come first, then northings (up).",
+      "Four-figure reference gives a grid square.",
+      "Six-figure reference gives a point inside the square."
+     ],
+     "model": {
+      "problem": "Give a six-figure grid reference for a church in square 34 87, three tenths across and seven tenths up.",
+      "steps": [
+       "Eastings: 34 then 3 tenths = 343.",
+       "Northings: 87 then 7 tenths = 877.",
+       "Write eastings first: 343877."
+      ],
+      "answer": "343877"
+     },
+     "note": "Use the phrase 'along the corridor and up the stairs'. For a six-figure reference, divide each square into tenths by eye. A common error is reversing eastings and northings. Use an OS Explorer map for practice or the free online OS maps."
+    },
+    {
+     "heading": "Scale and distance",
+     "check": {
+      "q": "On a 1:50 000 map, a straight-line distance measures 7.4 cm. What is the real distance?",
+      "options": [
+       "0.74 km",
+       "3.7 km",
+       "7.4 km",
+       "37 km"
+      ],
+      "answer": 1,
+      "why": "1 cm represents 0.5 km at 1:50 000, so 7.4 x 0.5 = 3.7 km. 7.4 km would mean 1 cm = 1 km; others are decimal-place errors."
+     },
+     "note": "At 1:50 000, 1 cm = 500 m, so 2 cm = 1 km. Method: measure with a string for curved routes, then use the scale line. Worked: 7.4 cm x 0.5 km = 3.7 km. Misconception: forgetting to convert units. Ask pupils how scale 1:25 000 changes (1 cm = 250 m)."
+    },
+    {
+     "heading": "Direction and relief",
+     "bullets": [
+      "Use eight compass points; bearings are measured clockwise from north.",
+      "Closely spaced contours: steep slope.",
+      "Widely spaced contours: gentle slope.",
+      "Contour interval on OS 1:50 000 is usually 10 m."
+     ],
+     "compare": {
+      "left": {
+       "title": "Steep slope",
+       "points": [
+        "Contours close together",
+        "Fast run-off",
+        "Higher chance of erosion",
+        "Hard to build on"
+       ]
+      },
+      "right": {
+       "title": "Gentle slope",
+       "points": [
+        "Contours far apart",
+        "Slower run-off",
+        "Easier to farm and build",
+        "Wider valley floors"
+       ]
+      },
+      "label": "contours"
+     },
+     "note": "Ask pupils to describe a landscape using height, shape and slope: high ground in the north-west, a valley running south-east, steep slopes where contours are close. Relief descriptions need heights and place names. Caution: 'steep' needs evidence."
+    },
+    {
+     "heading": "Gradient",
+     "model": {
+      "problem": "A path climbs from 120 m to 220 m over 2 km. Calculate the gradient.",
+      "steps": [
+       "Vertical change = 220 - 120 = 100 m.",
+       "Convert horizontal distance: 2 km = 2000 m.",
+       "Gradient = 100 / 2000 = 1/20.",
+       "State as 1:20."
+      ],
+      "answer": "1:20"
+     },
+     "note": "Gradient = vertical rise / horizontal distance, in the same units. Show both ratio (1:20) and fraction. Example: a rise of 100 m over 2 km: 100 / 2000 = 1/20, gradient 1:20. A common error is mixing metres and kilometres."
+    },
+    {
+     "heading": "Other map and image skills",
+     "table": {
+      "head": [
+       "Skill",
+       "Key points"
+      ],
+      "rows": [
+       [
+        "Sketch map",
+        "Simple outline, labels, title, key, north arrow"
+       ],
+       [
+        "Photograph",
+        "Foreground, middle ground, background; evidence"
+       ],
+       [
+        "Atlas",
+        "Use index, grid and latitude/longitude"
+       ],
+       [
+        "Cross-section",
+        "Mark heights from contours on a strip and join"
+       ]
+      ]
+     },
+     "note": "Sketch maps need a title, key, north arrow, frame and annotations. Photographs: describe foreground, middle ground and background, then annotate human and physical features. Link to fieldwork: field sketches record features. Ask pupils to draw a quick sketch map of a local route."
+    }
+   ],
+   "practice": [
+    "Give the six-figure reference for a point 7 tenths across and 2 tenths up square 12 45. (1 mark)",
+    "A path rises 60 m over 1.5 km. Calculate the gradient. (2 marks)"
+   ],
+   "independent": [
+    "Core: Use scale to find the real length of a 9.2 cm route on a 1:50 000 map. (2 marks)",
+    "Extend: Describe the relief in a section of an OS map you are given. (3 marks)",
+    "Stretch: Explain how contours and gradient affect land use. (4 marks)"
+   ],
+   "exit": [
+    "Which comes first in a grid reference?",
+    "What is 1 cm on a 1:25 000 map in metres?"
+   ],
+   "homework": "Use an online OS map to give a six-figure reference for your local mosque or park and describe the relief.",
+   "send": "SEND: enlarged maps and grid overlay. EAL: key words with images. Stretch: use trigonometry to calculate true slope."
+  },
+  {
+   "unit": "Unit 1: Geographical skills (AQA 3.4)",
+   "n": 2,
+   "title": "Graphical skills: choosing and interpreting graphs and thematic maps",
+   "duration": 50,
+   "bigQuestion": "Which graph or map shows the data best, and what does it tell us?",
+   "objectives": [
+    "Choose a suitable graph or map for a data set",
+    "Read and describe bar, line, pie, histogram, scatter, pyramid, choropleth, isoline and flow-line maps",
+    "Describe patterns using data"
+   ],
+   "successCriteria": [
+    "All: name the right graph for simple data",
+    "Most: describe a population pyramid and a choropleth",
+    "Some: evaluate whether a graph is suitable and spot weaknesses"
+   ],
+   "crossCurricular": "Mathematics: statistics and data; Science: graphs",
+   "smsc": "Moral: presenting information honestly",
+   "keywords": [
+    {
+     "term": "choropleth map",
+     "def": "a map using shades of one colour to show quantities in areas"
+    },
+    {
+     "term": "isoline map",
+     "def": "a map with lines joining places of equal value, such as contours"
+    },
+    {
+     "term": "flow line map",
+     "def": "a map using arrows or lines whose width shows the size of movement"
+    },
+    {
+     "term": "population pyramid",
+     "def": "a bar graph showing numbers or percentages by age and sex"
+    },
+    {
+     "term": "histogram",
+     "def": "a bar chart for continuous data with bars touching"
+    }
+   ],
+   "starter": [
+    "Bismillah. What is the difference between discrete and continuous data?",
+    "Name two types of graph.",
+    "What is a scatter graph used for?"
+   ],
+   "teach": [
+    {
+     "heading": "Choosing the right graph",
+     "table": {
+      "head": [
+       "Graph or map",
+       "Best for",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Bar chart",
+        "Compare categories",
+        "Energy use by country"
+       ],
+       [
+        "Line graph",
+        "Change over time",
+        "Urban population 1950-2050"
+       ],
+       [
+        "Pie chart",
+        "Parts of a whole",
+        "UK energy mix"
+       ],
+       [
+        "Histogram",
+        "Frequency of continuous data",
+        "Pebble sizes"
+       ],
+       [
+        "Scatter graph",
+        "Relationship between two variables",
+        "Distance from centre vs quality score"
+       ],
+       [
+        "Pyramid",
+        "Age and sex structure",
+        "Population of Nigeria"
+       ]
+      ]
+     },
+     "note": "Go through each choice with an example from geography. The key question: what is the data and what do I want to show? Misconception: pie charts for time. Check understanding with the question."
+    },
+    {
+     "heading": "Population pyramids",
+     "bullets": [
+      "Wide base: high birth rate and young population.",
+      "Narrow top: few elderly people, low life expectancy.",
+      "Narrow base and wide top: ageing population."
+     ],
+     "check": {
+      "q": "A population pyramid has a very wide base and a very narrow top. What does it suggest?",
+      "options": [
+       "Low birth rate and long life expectancy",
+       "High birth rate and shorter life expectancy",
+       "No migration",
+       "An ageing population"
+      ],
+      "answer": 1,
+      "why": "A wide base means many children (high birth rate) and a narrow top means few older people (shorter life expectancy). Options A and D describe the opposite shape."
+     },
+     "note": "Describe the shape, then evidence, then explain. For example, a pyramid for Nigeria has a wide base (about 40% under 15; approx., verify) while the UK has a more even shape with a bulge in middle age. Link to DTM stages in Y11."
+    },
+    {
+     "heading": "Choropleth, isoline and flow-line maps",
+     "compare": {
+      "left": {
+       "title": "Choropleth",
+       "points": [
+        "Colour shades show values per area",
+        "Easy to see patterns",
+        "Hides variation within areas",
+        "Key must be graduated"
+       ]
+      },
+      "right": {
+       "title": "Isoline and flow-line",
+       "points": [
+        "Isoline: lines join equal values (contours, isotherms)",
+        "Flow-line: arrow width shows quantity",
+        "Both show spatial patterns",
+        "Isolines need enough points"
+       ]
+      },
+      "label": "maps"
+     },
+     "note": "Use real examples: choropleth of GDP per person, isoline of rainfall or temperature, flow-line of migration. Teach reading a key. Misconception: shading in a choropleth shows the density of dots; it shows an average for the area. Remind that darker shading is usually higher value."
+    },
+    {
+     "heading": "Describing a graph or map",
+     "model": {
+      "problem": "Describe the trend shown in a line graph of world urban population (30% in 1950, 55% in 2018). (2 marks)",
+      "steps": [
+       "State the overall trend: it increases.",
+       "Quote data with units: from about 30% in 1950 to about 55% in 2018.",
+       "Add detail: the rise is steady across the period.",
+       "Do not explain causes: the question says describe."
+      ],
+      "answer": "Urban population increased steadily from approx. 30% to approx. 55%."
+     },
+     "note": "Teach the structure: overall trend, specific data with units, anomalies. Avoid explaining unless asked. Model with a line graph of urban population: 'increases from about 30% in 1950 to about 55% in 2018, rising most quickly after 1990.'"
+    }
+   ],
+   "practice": [
+    "State the best graph for showing the percentage of energy from each source in the UK. (1 mark)",
+    "Describe the pyramid shape of a country with a high birth rate. (2 marks)"
+   ],
+   "independent": [
+    "Core: Describe the pattern shown on a choropleth map of life expectancy. (3 marks)",
+    "Extend: Explain why a flow-line map is suitable to show migration. (2 marks)",
+    "Stretch: Evaluate how suitable a pie chart is for showing change over time. (4 marks)"
+   ],
+   "exit": [
+    "Give one use for a scatter graph.",
+    "What does a wide base on a pyramid show?"
+   ],
+   "homework": "Find one graph or map in a news article and write a description and evaluation of it.",
+   "send": "SEND: graph templates. EAL: labelled diagrams. Stretch: draw a pyramid from census data for your local area."
+  },
+  {
+   "unit": "Unit 1: Geographical skills (AQA 3.4)",
+   "n": 3,
+   "title": "Numerical and statistical skills: averages, spread, percentage change and cumulative frequency",
+   "duration": 50,
+   "bigQuestion": "How do geographers use numbers to be accurate, and how can data mislead?",
+   "objectives": [
+    "Calculate mean, median, mode, range, interquartile range and percentage change",
+    "Use cumulative frequency and percentiles",
+    "Identify misleading presentation of data"
+   ],
+   "successCriteria": [
+    "All: calculate mean, median and range",
+    "Most: find the interquartile range and percentage change",
+    "Some: use cumulative frequency and evaluate a misleading graph"
+   ],
+   "crossCurricular": "Mathematics: statistics, ratio, proportion",
+   "smsc": "Moral: honesty and fairness in presenting data (sidq)",
+   "keywords": [
+    {
+     "term": "mean",
+     "def": "the sum of all values divided by the number of values"
+    },
+    {
+     "term": "median",
+     "def": "the middle value in ordered data"
+    },
+    {
+     "term": "interquartile range",
+     "def": "upper quartile minus lower quartile: the spread of the middle 50%"
+    },
+    {
+     "term": "cumulative frequency",
+     "def": "a running total of frequencies"
+    },
+    {
+     "term": "percentage change",
+     "def": "the change divided by the original value, multiplied by 100"
+    },
+    {
+     "term": "outlier",
+     "def": "a value far from the others"
+    }
+   ],
+   "starter": [
+    "Bismillah. Find the median of 4, 7, 9, 12, 13.",
+    "What does range show?",
+    "Convert 3/20 into a percentage."
+   ],
+   "teach": [
+    {
+     "heading": "Averages and spread",
+     "model": {
+      "problem": "Find the median, quartiles and interquartile range of: 7, 9, 11, 12, 14, 15, 16, 18, 20, 23, 29.",
+      "steps": [
+       "Median is the 6th value of 11: 15.",
+       "Lower half: 7, 9, 11, 12, 14. Lower quartile = 11.",
+       "Upper half: 16, 18, 20, 23, 29. Upper quartile = 20.",
+       "IQR = 20 - 11 = 9."
+      ],
+      "answer": "Median 15, quartiles 11 and 20, IQR 9."
+     },
+     "note": "Data: pebble lengths in cm: 7, 9, 11, 12, 14, 15, 16, 18, 20, 23, 29 (n = 11). Sum 174, mean 15.8 (to 1 d.p.), median 15, range 22. Lower quartile = median of 7, 9, 11, 12, 14 = 11. Upper quartile = median of 16, 18, 20, 23, 29 = 20. IQR = 20 - 11 = 9. The outlier 29 pulls the mean above the median."
+    },
+    {
+     "heading": "Percentage change",
+     "check": {
+      "q": "A city grows from 2.4 million to 3.0 million people. What is the percentage increase?",
+      "options": [
+       "20%",
+       "25%",
+       "60%",
+       "0.6%"
+      ],
+      "answer": 1,
+      "why": "Change is 0.6 million; 0.6 / 2.4 = 0.25 = 25%. 20% divides by the new value; 60% is the raw difference of 0.6 as a percentage; 0.6% is incorrect."
+     },
+     "note": "Method: (new - old) / old x 100. Example: city population 2.4 million to 3.0 million. Change 0.6, 0.6 / 2.4 = 0.25, so 25% increase. Decrease: negative. Common error: dividing by the new figure. Ask pupils to calculate a decrease from 50 to 40 (20% decrease)."
+    },
+    {
+     "heading": "Cumulative frequency and percentiles",
+     "bullets": [
+      "Add each frequency to the running total.",
+      "Plot against the upper class boundary.",
+      "Read the median at half the total; quartiles at 25% and 75%."
+     ],
+     "cycle": [
+      "Tally data in classes",
+      "Add running total",
+      "Plot the points (upper boundary, cumulative total)",
+      "Join with a smooth curve",
+      "Read median and quartiles"
+     ],
+     "note": "Use a quick example: 40 pupils' journey times; the median is at the 20th value (20/40), the lower quartile at 10, the upper quartile at 30. Percentile: the value below which a given percentage falls, so the 90th percentile means 90% fall below. Ask: what use is this for pebble sizes or river data? (Compare sites.)"
+    },
+    {
+     "heading": "Number, ratio and area",
+     "table": {
+      "head": [
+       "Skill",
+       "Example"
+      ],
+      "rows": [
+       [
+        "Ratio",
+        "3:1 means 3 of every 4 = 75%"
+       ],
+       [
+        "Area",
+        "2.5 km x 4 km = 10 km2"
+       ],
+       [
+        "Proportion",
+        "60 out of 150 = 40%"
+       ],
+       [
+        "Standard form",
+        "Population 14 000 000 = 1.4 x 10^7"
+       ]
+      ]
+     },
+     "note": "Show how ratio and proportion appear: 'a ratio of 3:1 urban to rural means 75% urban'. Area: a map square at 1:50 000 is 1 km x 1 km = 1 km2. Frequency tables and data sheets need clear headings, units and space for the collectors' initials. Give pupils a data sheet design task."
+    },
+    {
+     "heading": "Misleading data",
+     "misconception": {
+      "wrong": "A bar chart that starts its y-axis at 90 shows a small difference accurately.",
+      "right": "A truncated axis exaggerates differences; always check the scale, the sample size and the source."
+     },
+     "note": "Present a graph with a truncated y-axis, an uneven time scale or an unfair sample. Ask: who could be misled and how? Link to honesty and amanah. Remind pupils that exam questions ask to evaluate data."
+    }
+   ],
+   "practice": [
+    "Calculate the mean of 6, 8, 10, 12, 14. (1 mark)",
+    "A town's population falls from 50 000 to 45 000. Calculate the percentage decrease. (2 marks)"
+   ],
+   "independent": [
+    "Core: Calculate the median and range for the data set 3, 5, 8, 9, 14, 20, 22. (3 marks)",
+    "Extend: Calculate the interquartile range of the same data. (3 marks)",
+    "Stretch: Explain two ways a graph of river data could be misleading. (4 marks)"
+   ],
+   "exit": [
+    "What is the formula for percentage change?",
+    "Which average is least affected by an outlier?"
+   ],
+   "homework": "Use rainfall data for a place of your choice for twelve months: calculate the mean, median and range.",
+   "send": "SEND: step-by-step calculation frame. EAL: key terms with worked numeric examples. Stretch: draw a cumulative frequency curve and estimate the 90th percentile."
+  },
+  {
+   "unit": "Unit 1: Geographical skills (AQA 3.4)",
+   "n": 4,
+   "title": "Using data, GIS and satellite images; enquiry, argument and geographical writing",
+   "duration": 50,
+   "bigQuestion": "How do geographers use different data and write convincing answers?",
+   "objectives": [
+    "Distinguish qualitative and quantitative data and use GIS and satellite imagery",
+    "Frame questions and build evidenced conclusions",
+    "Write clearly for different audiences with accurate SPaG"
+   ],
+   "successCriteria": [
+    "All: classify data as qualitative or quantitative",
+    "Most: interpret a satellite image or GIS layer",
+    "Some: write an evidence-based argument with correct SPaG"
+   ],
+   "crossCurricular": "English: writing and argument; Computing: data and mapping tools",
+   "smsc": "Moral: speaking with truth and clarity (sidq)",
+   "keywords": [
+    {
+     "term": "qualitative data",
+     "def": "descriptive data such as opinions, sketches and photos"
+    },
+    {
+     "term": "quantitative data",
+     "def": "numerical data such as counts and measurements"
+    },
+    {
+     "term": "GIS",
+     "def": "Geographical Information System: software that layers maps and data"
+    },
+    {
+     "term": "satellite image",
+     "def": "a picture of the Earth taken from space"
+    },
+    {
+     "term": "evidence",
+     "def": "facts or data used to support a point"
+    }
+   ],
+   "starter": [
+    "Bismillah. Give one quantitative and one qualitative example from a river study.",
+    "What does GIS stand for?",
+    "What does 'justify' mean?"
+   ],
+   "teach": [
+    {
+     "heading": "Qualitative and quantitative data",
+     "table": {
+      "head": [
+       "Type",
+       "Examples",
+       "Strengths",
+       "Weaknesses"
+      ],
+      "rows": [
+       [
+        "Quantitative",
+        "Counts, measurements, census data",
+        "Can be graphed and compared",
+        "May miss reasons"
+       ],
+       [
+        "Qualitative",
+        "Interviews, photos, field sketches",
+        "Gives detail and opinions",
+        "Subjective and harder to compare"
+       ]
+      ]
+     },
+     "note": "Distinguish between them using fieldwork examples. Ask pupils to place each example in the table and say how each could be used together: interviews explain why numbers look as they do. Misconception: qualitative is 'worse'; both are useful. Strengths: quantitative can be graphed; qualitative explains experiences."
+    },
+    {
+     "heading": "GIS and satellite imagery",
+     "bullets": [
+      "GIS stacks map layers: roads, flood zones, population.",
+      "Satellite images show land use, settlement growth and hazards.",
+      "Compare images from different years to see change."
+     ],
+     "check": {
+      "q": "What is the main advantage of GIS for a geographer?",
+      "options": [
+       "It collects data in the field",
+       "It layers different data sets on maps to compare patterns",
+       "It replaces all fieldwork",
+       "It only shows satellite photos"
+      ],
+      "answer": 1,
+      "why": "GIS combines layers so patterns can be compared, for example flood zones and housing. It does not replace fieldwork."
+     },
+     "note": "Show a satellite image of a city (for example Lagos lagoon) and compare with an older one. Ask pupils to identify land use. Model how to use GIS: choose layers, switch on and compare. Useful free tools: Google Earth, ArcGIS Online, NASA Worldview. Limitation: resolution, cloud, date."
+    },
+    {
+     "heading": "Framing questions and building arguments",
+     "model": {
+      "problem": "Write a PEEL paragraph: 'Rapid growth creates problems in Lagos.'",
+      "steps": [
+       "Point: rapid growth creates challenges for housing.",
+       "Evidence: informal settlements like Makoko hold large numbers of people without proper services.",
+       "Explanation: this happens because migration is faster than the supply of homes and sewers.",
+       "Link: so growth must be matched by planning to improve quality of life."
+      ],
+      "answer": "A paragraph using point, evidence, explanation and link."
+     },
+     "note": "Model an argument: Point, Evidence, Explanation, Link. Show how to move from a descriptive to an evaluative question. Ask pupils to turn 'Describe Lagos' into 'To what extent does Lagos offer opportunity?' Stress that conclusions must follow from evidence."
+    },
+    {
+     "heading": "Writing for different audiences",
+     "compare": {
+      "left": {
+       "title": "Exam answer",
+       "points": [
+        "Formal tone",
+        "Key terms and place names",
+        "Evidence and explanation",
+        "Judgement at the end"
+       ]
+      },
+      "right": {
+       "title": "Public leaflet",
+       "points": [
+        "Simple language",
+        "Short sentences and headings",
+        "Facts and visuals",
+        "Calls to action"
+       ]
+      },
+      "label": "audience"
+     },
+     "note": "Show two versions: a formal exam answer and a short summary for a local council. Teach exam answers: clear, precise, correct terminology, use connectives like 'therefore', 'as a result'. SPaG: capital letters for named places, consistent tense, accurate spelling of key words. Ask pupils to improve a weak sentence."
+    }
+   ],
+   "practice": [
+    "Classify each as qualitative or quantitative: a questionnaire score, a photograph, a traffic count, an interview opinion. (2 marks)",
+    "Explain one limitation of satellite images. (2 marks)"
+   ],
+   "independent": [
+    "Core: Describe how GIS could be used to plan a flood defence scheme. (3 marks)",
+    "Extend: Write a PEEL paragraph on why informal settlements grow. (4 marks)",
+    "Stretch: Rewrite your paragraph for a council leaflet. Explain how and why it differs. (4 marks)"
+   ],
+   "exit": [
+    "Give one example of qualitative data.",
+    "What does PEEL stand for?"
+   ],
+   "homework": "Write a short geographical argument (about 120 words) on a local issue, using one piece of quantitative evidence.",
+   "send": "SEND: sentence starters and a PEEL frame. EAL: word bank and bilingual glossary. Stretch: write for two audiences and compare tone."
+  },
+  {
+   "unit": "Unit 2: Urban issues and challenges (AQA 3.2.1)",
+   "n": 5,
+   "title": "Global urban change, urbanisation and megacities",
+   "duration": 50,
+   "bigQuestion": "Why are more people living in cities than ever before, and where is it happening fastest?",
+   "objectives": [
+    "Describe global patterns of urban change since 1950",
+    "Explain how migration and natural increase drive urbanisation",
+    "Explain the rise of megacities and compare urban trends in HICs and LICs/NEEs"
+   ],
+   "successCriteria": [
+    "All: define urbanisation and give two causes",
+    "Most: explain push and pull factors and natural increase, with figures",
+    "Some: compare urban trends in HICs with LICs/NEEs and explain the differences"
+   ],
+   "crossCurricular": "Mathematics: percentages and reading line graphs",
+   "smsc": "Social: community and neighbourliness (jiwar) when large numbers of people live close together",
+   "keywords": [
+    {
+     "term": "urbanisation",
+     "def": "the increase in the proportion of a country's population living in towns and cities"
+    },
+    {
+     "term": "megacity",
+     "def": "a city with a population of over 10 million people"
+    },
+    {
+     "term": "rural-urban migration",
+     "def": "the movement of people from the countryside to cities"
+    },
+    {
+     "term": "natural increase",
+     "def": "births minus deaths; the growth of a population without migration"
+    },
+    {
+     "term": "push factor",
+     "def": "something that encourages people to leave a place"
+    },
+    {
+     "term": "pull factor",
+     "def": "something that attracts people to a place"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define 'population density' and name one densely populated country.",
+    "What is the difference between a rural and an urban settlement?",
+    "Which continent has the largest population? Estimate its share of the world total."
+   ],
+   "teach": [
+    {
+     "heading": "The world has gone urban",
+     "timeline": [
+      {
+       "label": "1950",
+       "text": "About 30% of the world lived in cities (approx.)"
+      },
+      {
+       "label": "2007",
+       "text": "For the first time, over half of people were urban"
+      },
+      {
+       "label": "2018",
+       "text": "About 55% urban, around 4.2 billion people (approx.)"
+      },
+      {
+       "label": "2050",
+       "text": "Projected about 68% urban, with most growth in Asia and Africa"
+      }
+     ],
+     "note": "Say that the UN (World Urbanization Prospects) estimates 2007 was the first year when more than half of people lived in cities. Ask pupils to predict the 2050 figure before revealing it. Stress that figures are approximate and projections. Ask: which part of the world was most urban in 1950 and which is changing fastest now? (Africa and Asia.)"
+    },
+    {
+     "heading": "Why do cities grow? Two drivers",
+     "bullets": [
+      "Migration: people move from rural areas to cities.",
+      "Natural increase: young migrants have children, so births exceed deaths.",
+      "Both together make growth rapid and self-reinforcing."
+     ],
+     "cycle": [
+      "Young adults migrate to the city for work",
+      "They have children in the city",
+      "Better healthcare lowers death rates",
+      "Births exceed deaths: city grows",
+      "Larger city attracts more migrants"
+     ],
+     "note": "Introduce the cycle as a feedback loop. Common misconception: pupils think urbanisation is only migration. Point out that in many LIC cities natural increase now accounts for a large share of growth. Ask: why do migrants tend to be young adults? (They seek work and are able to move.)"
+    },
+    {
+     "heading": "Push and pull factors",
+     "compare": {
+      "left": {
+       "title": "Push (rural area)",
+       "points": [
+        "Farm jobs lost as farming is mechanised",
+        "Drought, flood or soil exhaustion",
+        "Few schools, clinics and services",
+        "Conflict or poverty"
+       ]
+      },
+      "right": {
+       "title": "Pull (city)",
+       "points": [
+        "More jobs and higher wages",
+        "Schools, hospitals and electricity",
+        "Family and friends already there",
+        "Hope of a better quality of life"
+       ]
+      },
+      "label": "push vs pull"
+     },
+     "note": "Ask pupils to sort each point into economic, social or environmental. Link to places they know of: drought and mechanisation of farming push people out; jobs, schools and clinics pull them in. Remind pupils that pull factors can be perceived, not real: migrants can end up in a slum, not the job they expected."
+    },
+    {
+     "heading": "Megacities: where are they?",
+     "bullets": [
+      "Megacity means 10 million or more people.",
+      "In 1950 there were two; by 2018 about 33 (UN).",
+      "Most new megacities are in Asia, Africa and Latin America."
+     ],
+     "table": {
+      "head": [
+       "Megacity",
+       "Country",
+       "Approx. population 2018 (million)"
+      ],
+      "rows": [
+       [
+        "Tokyo",
+        "Japan (HIC)",
+        "37"
+       ],
+       [
+        "Delhi",
+        "India (NEE)",
+        "29"
+       ],
+       [
+        "Shanghai",
+        "China (NEE)",
+        "26"
+       ],
+       [
+        "Sao Paulo",
+        "Brazil (NEE)",
+        "22"
+       ],
+       [
+        "Mexico City",
+        "Mexico (NEE)",
+        "22"
+       ],
+       [
+        "Cairo",
+        "Egypt (LIC/NEE)",
+        "20"
+       ]
+      ]
+     },
+     "note": "Use the table; say figures are approximate (UN 2018, rounded) and teacher should confirm the latest edition. Ask: which cities are in HICs? (Tokyo, and Osaka.) Which are in LICs/NEEs? Most of the rest. Note the table is about city size, not wealth."
+    },
+    {
+     "heading": "HICs and LICs/NEEs: different trends",
+     "bullets": [
+      "HICs urbanised in the 1800s and 1900s with industry.",
+      "LICs/NEEs are urbanising now, far more quickly.",
+      "In HICs some people now leave cities: counterurbanisation."
+     ],
+     "model": {
+      "problem": "Explain why urban growth is faster in Nigeria than in the UK. (4 marks)",
+      "steps": [
+       "Point: Nigeria is at an earlier stage of urbanisation (about half urban, approx.).",
+       "Evidence: millions of rural people migrate to Lagos for jobs in services and industry.",
+       "Point: Nigeria has high natural increase.",
+       "Evidence: young migrants have large families, so births exceed deaths.",
+       "Contrast: the UK urbanised in the 1800s, so few rural people are left to migrate."
+      ],
+      "answer": "Nigeria is still urbanising through rural-urban migration and high natural increase; the UK completed most of this change over a century ago."
+     },
+     "note": "Check understanding with the model. The UK is about 83% urban (approx., World Bank) and growing slowly; Nigeria roughly half urban (approx.) and growing quickly. Misconception: 'HIC cities have stopped growing'. Many, like London, still grow, mainly by migration and natural increase, but the pace is much slower."
+    },
+    {
+     "heading": "Check your understanding",
+     "check": {
+      "q": "Which is a PUSH factor for rural-urban migration?",
+      "options": [
+       "A hospital opening in the city",
+       "Farmland losing fertility after drought",
+       "A new factory in the city",
+       "More schools in the city"
+      ],
+      "answer": 1,
+      "why": "Drought and poor farmland push people away from the countryside. The other three are pull factors: they attract people to the city."
+     },
+     "note": "Hinge on whiteboards. Answer is B. A is natural increase; C describes counterurbanisation; D is a pull factor but wrong choice as it would be a push factor for a rural area. Look for pupils choosing D."
+    }
+   ],
+   "practice": [
+    "Describe the trend shown for the proportion of the world living in cities between 1950 and 2018. Use figures. (2 marks)",
+    "State two reasons why megacities are growing fastest in Asia and Africa."
+   ],
+   "independent": [
+    "Core: Explain two push and two pull factors that cause rural-urban migration. (4 marks)",
+    "Extend: Explain how natural increase adds to urban growth. (3 marks)",
+    "Stretch: Compare urban trends in a HIC and a LIC/NEE. Use the words 'counterurbanisation' and 'rural-urban migration'. (6 marks)"
+   ],
+   "exit": [
+    "Define urbanisation in your own words.",
+    "Give one reason why Delhi has grown into a megacity."
+   ],
+   "homework": "Research the current population of one megacity from the table and write three sentences on why it grew.",
+   "send": "SEND: sort push and pull cards before writing. EAL: word bank with pictures. Stretch: draw an urban growth graph from UN data and describe anomalies."
+  },
+  {
+   "unit": "Unit 2: Urban issues and challenges (AQA 3.2.1)",
+   "n": 6,
+   "title": "Lagos: a major city in an NEE: location, growth and opportunities",
+   "duration": 50,
+   "bigQuestion": "Why has Lagos grown so fast, and what does it offer the people who move there?",
+   "objectives": [
+    "Locate Lagos and explain its importance nationally and internationally",
+    "Explain the causes of its rapid growth",
+    "Assess the economic and social opportunities it offers"
+   ],
+   "successCriteria": [
+    "All: locate Lagos and state two reasons for growth",
+    "Most: explain how migration and natural increase led to growth, with data",
+    "Some: assess how far opportunities are shared by all residents"
+   ],
+   "crossCurricular": "History: colonial trade and the Nigerian economy",
+   "smsc": "Social: economic opportunity and responsibility to the poor (zakat and sadaqah as a principle of sharing wealth)",
+   "keywords": [
+    {
+     "term": "NEE",
+     "def": "newly emerging economy: a country with rapid economic growth, such as Nigeria"
+    },
+    {
+     "term": "informal economy",
+     "def": "jobs with no contracts, tax or regulation, such as street trading"
+    },
+    {
+     "term": "port",
+     "def": "a coastal place where goods are loaded and unloaded from ships"
+    },
+    {
+     "term": "formal economy",
+     "def": "regulated jobs with contracts and tax, such as banking"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name two of the megacities from last lesson.",
+    "Explain one push factor and one pull factor.",
+    "What does NEE stand for?"
+   ],
+   "teach": [
+    {
+     "heading": "Where is Lagos?",
+     "bullets": [
+      "South-west Nigeria, on the Gulf of Guinea coast.",
+      "Built around the Lagos Lagoon and islands.",
+      "Nigeria's biggest city and former capital (capital moved to Abuja in 1991)."
+     ],
+     "table": {
+      "head": [
+       "Fact",
+       "Detail"
+      ],
+      "rows": [
+       [
+        "Country and region",
+        "Nigeria, West Africa, Gulf of Guinea coast"
+       ],
+       [
+        "Site",
+        "Lagoon, islands and mainland; major port"
+       ],
+       [
+        "Population",
+        "Approx. 15 million+ (estimates vary by boundary)"
+       ],
+       [
+        "Status",
+        "Largest city in Nigeria; capital until 1991"
+       ]
+      ]
+     },
+     "note": "Use an atlas. Ask pupils to describe location at three scales: Africa, West Africa, Nigeria. Note Lagos is a port with the largest container terminals in the country (Apapa and Tin Can). The population is approx. 15 million+ depending on boundary definition (city and metro estimates vary widely); flag the figure for the teacher to update."
+    },
+    {
+     "heading": "A city that grew very fast",
+     "timeline": [
+      {
+       "label": "1950",
+       "text": "Population around 0.3 million (approx.)"
+      },
+      {
+       "label": "1991",
+       "text": "Capital moves to Abuja, but Lagos keeps its economic role"
+      },
+      {
+       "label": "2008",
+       "text": "BRT-Lite bus system opens, one of Africa's first"
+      },
+      {
+       "label": "2015",
+       "text": "Around 13 to 15 million people (approx., definitions vary)"
+      },
+      {
+       "label": "2023",
+       "text": "Blue Line light rail opens and Dangote refinery starts production (verify)"
+      }
+     ],
+     "note": "Use the timeline; all figures approx. Ask pupils to calculate growth: from about 0.3 million to over 14 million. Draw out that migration brought young adults and natural increase followed. Ask: what is the 'multiplier' effect of a large port and oil money? (Jobs, services, further migration.) Be explicit that Lagos is not the world's largest city; it is the fastest-growing example in the NEE category."
+    },
+    {
+     "heading": "Why did it grow?",
+     "bullets": [
+      "Port trade: oil and goods exports and imports.",
+      "Migration from rural areas of Nigeria and neighbouring countries.",
+      "High natural increase among young migrants.",
+      "Industry, banking, media and the Nollywood film industry."
+     ],
+     "check": {
+      "q": "Which best explains why Lagos continues to attract migrants?",
+      "options": [
+       "Government orders people to move there",
+       "It offers jobs in port, industry and services",
+       "Rural areas of Nigeria have no people left",
+       "It is the capital city of Nigeria"
+      ],
+      "answer": 1,
+      "why": "Jobs and services are the main pull. Lagos has not been the capital since 1991, and rural areas still hold millions of people, so the other options are false."
+     },
+     "note": "Prompt pupils to build a causal chain rather than list factors. Misconception: 'Lagos grows because the government told people to move.' Actually people moved for opportunity: push factors (poverty, conflict in the north-east, falling farm incomes) and pull factors (jobs, services). The Nollywood film industry is among the largest in the world by volume (verify exact ranking)."
+    },
+    {
+     "heading": "Opportunities in Lagos",
+     "table": {
+      "head": [
+       "Type",
+       "Examples in Lagos"
+      ],
+      "rows": [
+       [
+        "Economic: formal",
+        "Banking, port, Lekki Free Zone, Dangote refinery (opened 2023-24), Nollywood"
+       ],
+       [
+        "Economic: informal",
+        "Street trading, transport, recycling, small workshops"
+       ],
+       [
+        "Social: education",
+        "Universities such as the University of Lagos, more schools than rural areas"
+       ],
+       [
+        "Social: health",
+        "More hospitals and clinics than in the countryside"
+       ],
+       [
+        "Social: services",
+        "Better chance of electricity and mobile phone access"
+       ]
+      ]
+     },
+     "note": "Table gives sorting categories. Ask pupils to rank which are most important for a young migrant. Draw out that many jobs are informal (street trading, transport, recycling) and give income but not security. The Lekki Free Zone and Dangote refinery are examples of large-scale formal investment (state dates as approx.). Emphasise equity: opportunities are not equally shared."
+    },
+    {
+     "heading": "Model: a 6-mark answer plan",
+     "model": {
+      "problem": "Assess how far Lagos offers opportunities for people living there. (6 marks)",
+      "steps": [
+       "Opportunity: formal jobs in port, banking and manufacturing pay more than farming.",
+       "Evidence: Dangote refinery and Lekki Free Zone attract investment.",
+       "Opportunity: education and health services are better than in rural Nigeria.",
+       "Limit: many people work informally with low and uncertain income.",
+       "Limit: opportunities are often not available to people living in slums.",
+       "Judgement: Lagos offers genuine opportunity, but mainly to those with skills, capital or contacts."
+      ],
+      "answer": "Opportunities are real but unevenly shared, so they are limited for the poorest."
+     },
+     "note": "Show how to structure evidence, explanation and judgement. Remind pupils that 'assess' needs a judgement of importance or extent. Ask them to underline the judgement phrase."
+    }
+   ],
+   "practice": [
+    "Describe the location of Lagos using two of: coast, lagoon, port, Nigeria, Gulf of Guinea. (2 marks)",
+    "Explain one economic and one social opportunity in Lagos. (4 marks)"
+   ],
+   "independent": [
+    "Core: Explain why Lagos has grown so rapidly. (4 marks)",
+    "Extend: Suggest why informal work is an opportunity and a problem for migrants. (3 marks)",
+    "Stretch: Assess how far Lagos offers opportunities for people living there. (6 marks)"
+   ],
+   "exit": [
+    "Give two reasons Lagos has grown.",
+    "Name one formal and one informal job in Lagos."
+   ],
+   "homework": "Find a recent news article about Lagos, then write 100 words saying whether it shows an opportunity or a challenge.",
+   "send": "SEND: causal chain scaffold. EAL: translate keywords. Stretch: calculate growth from 0.3 to about 14 million as a multiple."
+  },
+  {
+   "unit": "Unit 2: Urban issues and challenges (AQA 3.2.1)",
+   "n": 7,
+   "title": "Lagos: challenges of rapid growth, slums and services",
+   "duration": 50,
+   "bigQuestion": "What problems does rapid urban growth create, and who suffers most?",
+   "objectives": [
+    "Describe the challenges of rapid growth in Lagos",
+    "Explain why slums and informal settlements form",
+    "Evaluate the impact on quality of life"
+   ],
+   "successCriteria": [
+    "All: name three challenges in Lagos",
+    "Most: explain how each challenge arises from rapid growth",
+    "Some: evaluate which challenge is most serious and for whom"
+   ],
+   "crossCurricular": "Science: sanitation, waste and disease",
+   "smsc": "Moral: dignity (karamah) of every person, including residents of informal settlements",
+   "keywords": [
+    {
+     "term": "squatter settlement",
+     "def": "an area of makeshift housing built without legal permission, also called a slum or informal settlement"
+    },
+    {
+     "term": "congestion",
+     "def": "too much traffic making travel slow"
+    },
+    {
+     "term": "informal settlement",
+     "def": "housing built without planning permission, often lacking services"
+    }
+   ],
+   "starter": [
+    "Bismillah. State two opportunities in Lagos.",
+    "Define 'informal economy'.",
+    "What is the difference between the formal and informal economy?"
+   ],
+   "teach": [
+    {
+     "heading": "Housing: slums and informal settlements",
+     "bullets": [
+      "Housing cannot be built as fast as the city grows.",
+      "Many people live in informal settlements like Makoko.",
+      "Houses are built from wood and scrap on stilts or any free land."
+     ],
+     "compare": {
+      "left": {
+       "title": "Why slums form",
+       "points": [
+        "Migration is faster than house building",
+        "Formal housing is too expensive for low earners",
+        "Land is scarce on islands and lagoon edges",
+        "Weak planning enforcement"
+       ]
+      },
+      "right": {
+       "title": "Life in a slum",
+       "points": [
+        "Overcrowding and weak building quality",
+        "Little clean water or sanitation",
+        "Risk of flood, fire and eviction",
+        "Strong community and local jobs"
+       ]
+      },
+      "label": "causes vs effects"
+     },
+     "note": "Makoko, on the Lagos Lagoon, is a floating community of stilted homes; population estimates vary widely (approx. 100,000 or more; verify). Residents are fishers and traders. Stress dignity: slums are communities with people's work and social life. Discuss the 2012 and 2017 eviction threats (state as flagged). Ask: why can't poor people simply rent formal housing? (Cost, rules, shortage.)"
+    },
+    {
+     "heading": "Services, jobs and the environment",
+     "table": {
+      "head": [
+       "Challenge",
+       "What happens in Lagos",
+       "Why"
+      ],
+      "rows": [
+       [
+        "Services",
+        "Many homes lack piped water and sewers",
+        "Infrastructure cannot keep up with growth"
+       ],
+       [
+        "Unemployment",
+        "Many work informally, with low pay and no security",
+        "More workers than formal jobs"
+       ],
+       [
+        "Traffic",
+        "Long delays; 'go-slows' on main roads",
+        "Many cars, few roads, limited public transport"
+       ],
+       [
+        "Pollution",
+        "Air pollution from traffic and generators",
+        "Unreliable electricity supply"
+       ],
+       [
+        "Waste",
+        "Rubbish in drains and lagoons; large landfills",
+        "Collection services are inadequate"
+       ]
+      ]
+     },
+     "note": "Use the table to sort challenges. Ask pupils to pair a cause with each effect. Emphasise the link between lack of clean water and disease (cholera). Waste: the Olusosun landfill is among the largest in Africa (verify details). Pollution: traffic and generators produce air pollution because grid electricity is unreliable."
+    },
+    {
+     "heading": "Traffic and pollution",
+     "bullets": [
+      "Travel across the city can take hours at peak times.",
+      "Diesel generators and old vehicles pollute the air.",
+      "Flooding is worse where drains are blocked with rubbish."
+     ],
+     "check": {
+      "q": "Which statement best explains why slums form in Lagos?",
+      "options": [
+       "Planners want people to live there",
+       "Migration is faster than affordable housing can be built",
+       "Lagos has no space for any housing",
+       "Slum residents prefer poor housing"
+      ],
+      "answer": 1,
+      "why": "Slums form because housing supply does not keep pace with migration. Other statements are not supported by evidence."
+     },
+     "note": "Link to quality of life: long commutes cost money and time. Note the Lagos BRT and Blue Line rail (2023) are responses; they appear in the next lesson. Ask for one effect on health and one on the economy."
+    },
+    {
+     "heading": "Model: explain a challenge",
+     "model": {
+      "problem": "Explain how rapid growth can lead to health problems in Lagos slums. (4 marks)",
+      "steps": [
+       "Rapid migration means more people than houses and services.",
+       "Many informal homes have no piped water or sewers.",
+       "Waste and dirty water spread infectious diseases such as cholera.",
+       "Overcrowding helps diseases spread and healthcare is hard to reach."
+      ],
+      "answer": "Rapid growth outpaces services, so poor sanitation and crowding spread disease."
+     },
+     "note": "Walk through the chain: cause, effect, consequence. Say aloud the connective words. Ask pupils to apply the same chain to waste."
+    }
+   ],
+   "practice": [
+    "Describe two features of the informal settlement of Makoko. (2 marks)",
+    "Explain why unemployment and underemployment occur in Lagos. (3 marks)"
+   ],
+   "independent": [
+    "Core: Explain two challenges caused by rapid urban growth in Lagos. (4 marks)",
+    "Extend: Suggest why slum residents are often reluctant to move even if housing is poor. (3 marks)",
+    "Stretch: Evaluate which challenge in Lagos is the most serious. (6 marks)"
+   ],
+   "exit": [
+    "Name three challenges in Lagos.",
+    "Why do slums form?"
+   ],
+   "homework": "Draw a labelled sketch of a squatter settlement and annotate three challenges.",
+   "send": "SEND: cause-effect cards. EAL: key vocabulary sheet. Stretch: compare Lagos and Mumbai's slum problems."
+  },
+  {
+   "unit": "Unit 2: Urban issues and challenges (AQA 3.2.1)",
+   "n": 8,
+   "title": "Urban planning for the urban poor: Rio de Janeiro's Favela Bairro",
+   "duration": 50,
+   "bigQuestion": "Can planning make life better for people living in informal settlements?",
+   "objectives": [
+    "Describe the Favela Bairro project in Rio de Janeiro",
+    "Explain how it improved quality of life",
+    "Evaluate its strengths and limitations as urban planning"
+   ],
+   "successCriteria": [
+    "All: name two things Favela Bairro changed",
+    "Most: explain why upgrading is better than demolition",
+    "Some: evaluate how successful the project was"
+   ],
+   "crossCurricular": "History: Brazil's urban development and Portuguese colonial legacy",
+   "smsc": "Moral: justice and care for the poor (ihsan)",
+   "keywords": [
+    {
+     "term": "favela",
+     "def": "a Brazilian informal settlement or slum, often on steep hillsides"
+    },
+    {
+     "term": "self-help scheme",
+     "def": "a project where residents build or improve their own homes with materials or training from authorities"
+    },
+    {
+     "term": "upgrading",
+     "def": "improving services and housing in an existing settlement rather than demolishing it"
+    },
+    {
+     "term": "sustainable",
+     "def": "meeting present needs without harming future generations"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define squatter settlement.",
+    "Name two challenges in Lagos.",
+    "What is a sustainable city?"
+   ],
+   "teach": [
+    {
+     "heading": "Rio and its favelas",
+     "bullets": [
+      "Rio de Janeiro is Brazil's second-largest city.",
+      "Many favelas grew on steep hillsides near jobs.",
+      "Rocinha is among the largest, with about 70,000 people officially (2010 census; verify)."
+     ],
+     "table": {
+      "head": [
+       "Fact",
+       "Detail"
+      ],
+      "rows": [
+       [
+        "City",
+        "Rio de Janeiro, south-east Brazil, on the Atlantic coast"
+       ],
+       [
+        "Favela setting",
+        "Steep hillsides close to jobs and wealthy districts"
+       ],
+       [
+        "Rocinha",
+        "About 70,000 official residents (2010 census; verify)"
+       ],
+       [
+        "Problems before upgrading",
+        "No sewers, narrow paths, poor water, no land titles"
+       ]
+      ]
+     },
+     "note": "Show the contrast of favelas beside wealthy neighbourhoods. State that census undercounts exist and unofficial estimates are higher. Ask: why would people build on steep hillsides? (Land is unclaimed and near jobs.) Avoid stereotypes: favelas contain businesses, schools and strong communities."
+    },
+    {
+     "heading": "What was Favela Bairro?",
+     "bullets": [
+      "Launched in 1994 by Rio's city government.",
+      "Upgraded existing favelas instead of demolishing them.",
+      "Aimed to turn favelas into normal neighbourhoods ('bairros')."
+     ],
+     "timeline": [
+      {
+       "label": "1980s",
+       "text": "Evictions and demolition were common"
+      },
+      {
+       "label": "1994",
+       "text": "Favela Bairro begins: pave, drain, light and connect"
+      },
+      {
+       "label": "1990s",
+       "text": "Water, sewers, electricity, paved streets and community centres built"
+      },
+      {
+       "label": "2010",
+       "text": "Morar Carioca plans to extend upgrading"
+      },
+      {
+       "label": "2011",
+       "text": "Cable car links Complexo do Alemao to the train network"
+      }
+     ],
+     "note": "Dates are approximate; the main programme began in the mid-1990s and was followed by Morar Carioca (2010). Ask: why is upgrading cheaper and more acceptable than demolition? (Keeps community, jobs, and cost lower.) Mention the Complexo do Alemao cable car (2011) as a related transport project."
+    },
+    {
+     "heading": "What changed?",
+     "table": {
+      "head": [
+       "Improvement",
+       "Effect on residents"
+      ],
+      "rows": [
+       [
+        "Paved streets and steps",
+        "Easier access for ambulances and buses"
+       ],
+       [
+        "Sewers and drains",
+        "Fewer diseases and less flooding"
+       ],
+       [
+        "Piped water and electricity",
+        "Safer, healthier homes and study at night"
+       ],
+       [
+        "Community centres, nurseries",
+        "Social support and jobs"
+       ],
+       [
+        "Legal land titles",
+        "Security against eviction; houses can be improved"
+       ]
+      ]
+     },
+     "note": "Ask pupils to rank improvements by importance for health. Point out residents were consulted in some projects, and legal ownership (title) gave security. Link to sustainable development: the project is social and economic, but not environmentally complete."
+    },
+    {
+     "heading": "Strengths and limits",
+     "compare": {
+      "left": {
+       "title": "Strengths",
+       "points": [
+        "Improved health and services",
+        "Kept communities together",
+        "Cheaper than rebuilding",
+        "Increased security of ownership"
+       ]
+      },
+      "right": {
+       "title": "Limitations",
+       "points": [
+        "Only some favelas upgraded",
+        "Services not always maintained",
+        "Crime and violence remained",
+        "Rising costs may force poorer people out"
+       ]
+      },
+      "label": "judgement"
+     },
+     "note": "Prompt pupils to judge, not describe. Criticisms: not all favelas included; crime and drug gangs remain; maintenance of services is weak; some residents moved out as property values rose. State that evaluations differ."
+    },
+    {
+     "heading": "Check your understanding",
+     "check": {
+      "q": "Why did planners choose to upgrade favelas rather than demolish them?",
+      "options": [
+       "It destroys the community",
+       "It is cheaper and keeps communities and jobs in place",
+       "It is illegal to rebuild",
+       "Residents do not want services"
+      ],
+      "answer": 1,
+      "why": "Upgrading is cheaper and keeps social networks and work close. Demolition forces people to move and often creates new slums."
+     },
+     "note": "Use the check to ensure pupils see why upgrading helps. Answer B; watch for pupils choosing A because they assume all slum change harms people."
+    },
+    {
+     "heading": "Model: evaluating a scheme",
+     "model": {
+      "problem": "Evaluate the success of Favela Bairro. (6 marks)",
+      "steps": [
+       "Strength: sewers, water and paved streets improved health and access.",
+       "Strength: legal titles gave people security and encouraged home improvement.",
+       "Limit: only some favelas were upgraded, and services were not always maintained.",
+       "Limit: crime remained and rising property values could push poorer people out.",
+       "Judgement: it was largely successful in improving daily life, but not complete or permanent."
+      ],
+      "answer": "Judgement: mostly successful for those included, because services improved, but limited by scale and upkeep."
+     },
+     "note": "Model the judgement sentence on the board. Pupils then copy the structure for the independent task: strength, limit, overall verdict with a reason."
+    }
+   ],
+   "practice": [
+    "Describe two ways Favela Bairro improved the lives of favela residents. (2 marks)",
+    "Explain why legal ownership of homes matters. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain how urban planning in Rio has improved life for the urban poor. (4 marks)",
+    "Extend: Suggest one reason the project did not solve every problem. (2 marks)",
+    "Stretch: Evaluate the success of Favela Bairro. (6 marks)"
+   ],
+   "exit": [
+    "Give two features of Favela Bairro.",
+    "What does 'upgrading' mean?"
+   ],
+   "homework": "Write a 100-word speech from a favela resident explaining what changed after the scheme.",
+   "send": "SEND: matching cards. EAL: glossary. Stretch: compare with self-help schemes such as Dharavi in Mumbai."
+  },
+  {
+   "unit": "Unit 2: Urban issues and challenges (AQA 3.2.1)",
+   "n": 9,
+   "title": "A major UK city: London's migration, opportunities, inequalities and sprawl",
+   "duration": 50,
+   "bigQuestion": "What makes London both a city of opportunity and a city of inequality?",
+   "objectives": [
+    "Locate London and explain its national and global importance",
+    "Explain the effects of migration on its character",
+    "Describe inequalities and urban sprawl, including commuter settlements"
+   ],
+   "successCriteria": [
+    "All: describe London's location and one effect of migration",
+    "Most: explain the opportunities and inequalities",
+    "Some: assess how sprawl and commuter settlements affect land and people"
+   ],
+   "crossCurricular": "Citizenship: communities and diversity",
+   "smsc": "Social: respecting neighbours and different traditions (adab)",
+   "keywords": [
+    {
+     "term": "inequality",
+     "def": "unequal distribution of wealth, income, health or opportunities"
+    },
+    {
+     "term": "urban sprawl",
+     "def": "unplanned outward growth of a city into surrounding countryside"
+    },
+    {
+     "term": "commuter settlement",
+     "def": "a town or village where many residents travel to work in the nearby city"
+    },
+    {
+     "term": "green belt",
+     "def": "land around a city where building is restricted"
+    },
+    {
+     "term": "multicultural",
+     "def": "having people of many cultures and ethnic groups"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define urban sprawl.",
+    "Name one challenge of urban growth in Lagos.",
+    "What is a commuter?"
+   ],
+   "teach": [
+    {
+     "heading": "Why London matters",
+     "bullets": [
+      "On the River Thames in south-east England.",
+      "Population about 8.8 million (2021 Census).",
+      "Capital, financial centre, port and global city."
+     ],
+     "table": {
+      "head": [
+       "Role",
+       "Evidence"
+      ],
+      "rows": [
+       [
+        "Financial centre",
+        "The City and Canary Wharf; many global banks"
+       ],
+       [
+        "Transport hub",
+        "Heathrow, rail termini, the Elizabeth line (opened 2022)"
+       ],
+       [
+        "Cultural centre",
+        "Museums, theatres, media and universities"
+       ],
+       [
+        "Seat of government",
+        "Parliament and national institutions in Westminster"
+       ]
+      ]
+     },
+     "note": "Use the figure 8.8 million (2021 Census, England and Wales); about 40% of London residents were born outside the UK (2021 Census approx.). Ask pupils for national and international roles. Mention Heathrow, the City, and universities. Verify the latest data if repeating the lesson."
+    },
+    {
+     "heading": "Migration shapes London",
+     "bullets": [
+      "International migration since Roman times; large waves after 1945.",
+      "Roughly 40% of residents were born abroad (2021, approx.).",
+      "Migrants bring skills, businesses and cultural diversity."
+     ],
+     "compare": {
+      "left": {
+       "title": "Opportunities",
+       "points": [
+        "Workers for NHS, transport and construction",
+        "New businesses and global links",
+        "Cultural variety: food, festivals, languages",
+        "Younger workforce"
+       ]
+      },
+      "right": {
+       "title": "Challenges",
+       "points": [
+        "Pressure on housing and rents",
+        "Pressure on schools and GP services",
+        "Segregation or language barriers in some areas",
+        "Some migrants in low-paid insecure jobs"
+       ]
+      },
+      "label": "effects of migration"
+     },
+     "note": "Teach neutrally: describe effects, not people. Opportunities include filling skills gaps (NHS, construction), new businesses and food and festivals. Challenges include pressure on housing and school places and language barriers. Ask pupils to avoid generalisations. Draw out national migration: young graduates move to London for work."
+    },
+    {
+     "heading": "Inequality within London",
+     "model": {
+      "problem": "Describe the inequality shown by a choropleth of deprivation in London. (2 marks)",
+      "steps": [
+       "State the pattern: the most deprived areas are concentrated in inner east and some outer boroughs.",
+       "Support with data: name a borough and its rank or percentage.",
+       "Add contrast: wealthier areas lie mainly in the west and south-west and outer edges."
+      ],
+      "answer": "Deprivation is clustered in parts of east London, with wealth in west and south-west; always quote a place and data."
+     },
+     "note": "Use the model to practise data language. Say that boroughs differ sharply in income, housing and life expectancy; for example some inner east London boroughs such as Tower Hamlets have among the highest child poverty rates in the UK while others nearby are wealthy (verify current figures with the Indices of Multiple Deprivation or London Datastore). Ask: why does inequality persist? (Housing costs, wages, education, inherited wealth.)"
+    },
+    {
+     "heading": "Sprawl and commuter settlements",
+     "bullets": [
+      "London grew outwards in the 1900s as railways and cars arrived.",
+      "The green belt (1947 planning law) limits outward growth.",
+      "Commuter towns in Kent, Essex and Hertfordshire house workers."
+     ],
+     "check": {
+      "q": "Which best defines a commuter settlement?",
+      "options": [
+       "A village where nobody works",
+       "A settlement where many residents travel to a nearby city for work",
+       "A city centre business district",
+       "A settlement in the green belt that bans homes"
+      ],
+      "answer": 1,
+      "why": "Commuter settlements house people whose jobs are in the city. The other options are inaccurate."
+     },
+     "note": "Ask: what are the benefits of the green belt? (Protects farmland, recreation, limits sprawl.) Drawbacks: pushes development to beyond-green-belt commuter towns, raises house prices. Check understanding with the whiteboard question."
+    },
+    {
+     "heading": "Putting it together",
+     "timeline": [
+      {
+       "label": "1800s",
+       "text": "Railways and industry expand London rapidly"
+      },
+      {
+       "label": "1930s",
+       "text": "Suburbs spread, growth of commuter belts"
+      },
+      {
+       "label": "1947",
+       "text": "Town and Country Planning Act and the green belt idea"
+      },
+      {
+       "label": "2012",
+       "text": "Olympic Games and East London regeneration"
+      },
+      {
+       "label": "2022",
+       "text": "Elizabeth line opens, linking commuter towns to the centre"
+      }
+     ],
+     "note": "Recap with the three-word summary: 'diverse, unequal, spreading'. Ask pupils to connect: inequality leads to some commuters being wealthy and some low earners living in expensive inner areas. Prepare for next lesson on regeneration."
+    }
+   ],
+   "practice": [
+    "Describe two ways migration has changed London. (2 marks)",
+    "Explain one reason inequality exists between London boroughs. (2 marks)"
+   ],
+   "independent": [
+    "Core: Explain how migration has created opportunities and challenges in London. (4 marks)",
+    "Extend: Describe the effects of urban sprawl on the countryside. (3 marks)",
+    "Stretch: Assess how far London is a city of opportunity for all of its residents. (6 marks)"
+   ],
+   "exit": [
+    "Define commuter settlement.",
+    "State two opportunities from migration."
+   ],
+   "homework": "Use an online map to compare two London boroughs on house price, income or deprivation, and write a paragraph on what you find.",
+   "send": "SEND: borough fact cards. EAL: key vocabulary. Stretch: link inequality with transport access (PTAL)."
+  },
+  {
+   "unit": "Unit 2: Urban issues and challenges (AQA 3.2.1)",
+   "n": 10,
+   "title": "Regeneration and sustainable urban living: Stratford and the Olympic Park",
+   "duration": 50,
+   "bigQuestion": "How can a city repair neglected land, and how can it be made sustainable?",
+   "objectives": [
+    "Explain why regeneration was needed in East London and describe the Olympic Park project",
+    "Evaluate its impact on people, economy and environment",
+    "Describe sustainable urban living and traffic management strategies"
+   ],
+   "successCriteria": [
+    "All: describe one change from the Olympic regeneration",
+    "Most: explain reasons for regeneration and two benefits",
+    "Some: evaluate success and compare traffic management strategies"
+   ],
+   "crossCurricular": "Design and Technology: sustainable design; PE: Olympic legacy",
+   "smsc": "Moral: stewardship (khalifah) of the Earth; avoiding waste (Qur'an 7:31 forbids wastefulness)",
+   "keywords": [
+    {
+     "term": "regeneration",
+     "def": "investment to improve a run-down area by bringing in jobs, homes and services"
+    },
+    {
+     "term": "brownfield site",
+     "def": "land that has been built on before and is available for reuse"
+    },
+    {
+     "term": "legacy",
+     "def": "the long-term effects of an event after it has ended"
+    },
+    {
+     "term": "sustainable city",
+     "def": "a city that meets its needs without harming future generations"
+    },
+    {
+     "term": "congestion charge",
+     "def": "a fee to drive in a central city zone to reduce traffic"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define urban sprawl.",
+    "What is a brownfield site?",
+    "Name two problems of congestion."
+   ],
+   "teach": [
+    {
+     "heading": "Why regenerate Stratford?",
+     "bullets": [
+      "Lower Lea Valley in East London had old industry and derelict land.",
+      "High unemployment and deprivation compared with London average.",
+      "Polluted land and poor transport links."
+     ],
+     "cycle": [
+      "Decline: industry closes, land derelict",
+      "Bid and plan: Games awarded 2005",
+      "Clean land, build venues and transport",
+      "2012 Games held",
+      "Legacy: homes, jobs and parkland"
+     ],
+     "note": "Show a before picture if available. State that the area was previously heavily industrial, with contaminated land. The 2012 Olympics gave a deadline and funding. The public sector funding for the Games was around £9 billion (approx.; verify). Ask pupils: why choose a brownfield site rather than green belt? (Reuse, stops sprawl.)"
+    },
+    {
+     "heading": "What was built?",
+     "table": {
+      "head": [
+       "Change",
+       "Type of benefit"
+      ],
+      "rows": [
+       [
+        "East Village homes, some affordable",
+        "Social: housing"
+       ],
+       [
+        "Westfield Stratford City and offices",
+        "Economic: jobs"
+       ],
+       [
+        "Stratford International, Jubilee line and DLR upgrades",
+        "Economic: transport links"
+       ],
+       [
+        "Queen Elizabeth Olympic Park, wetlands, cleaned river",
+        "Environmental"
+       ],
+       [
+        "Aquatics Centre and Velodrome open to the public",
+        "Social: sport and health"
+       ]
+      ]
+     },
+     "note": "Ask pupils to categorise by economic, social, environmental. Mention East Village (the athletes' village) was converted into about 2,800 homes (approx.; verify), including affordable housing, and Westfield Stratford City opened 2011. Queen Elizabeth Olympic Park reopened in 2013 with a mix of venues, parkland and wetland."
+    },
+    {
+     "heading": "Success or failure?",
+     "compare": {
+      "left": {
+       "title": "Successes",
+       "points": [
+        "Derelict land reused and cleaned",
+        "Thousands of jobs and homes",
+        "Transport improved",
+        "Sports venues and parkland for all"
+       ]
+      },
+      "right": {
+       "title": "Criticisms",
+       "points": [
+        "House prices and rents rose",
+        "Not enough affordable homes",
+        "Local people did not always get the jobs",
+        "High cost to taxpayers"
+       ]
+      },
+      "label": "evaluation"
+     },
+     "note": "Encourage balanced evaluation. Evidence of success: new jobs, new homes, regenerated land. Criticisms: rising house prices, affordable homes shortage, jobs often went to people from outside the area, and construction cost overruns. Avoid claiming figures you cannot verify. Link to the 6-mark pattern."
+    },
+    {
+     "heading": "Sustainable urban living",
+     "bullets": [
+      "Water and energy conservation: smart meters, green roofs.",
+      "More green space and urban farming.",
+      "Waste reduction and recycling in homes and businesses.",
+      "Eco-design: BedZED in Sutton (2002)."
+     ],
+     "check": {
+      "q": "Which is an example of sustainable urban living?",
+      "options": [
+       "Building on green belt land",
+       "Recycling and green roofs on new housing",
+       "Longer car commutes",
+       "Using more fossil fuel power"
+      ],
+      "answer": 1,
+      "why": "Recycling and green roofs reduce waste and energy use. The other options increase resource use or damage land."
+     },
+     "note": "BedZED (Beddington Zero Energy Development) in Sutton, London was an early eco-housing scheme. Mention that sustainability has three aspects: economic, social, environmental. Ask: how can a household help? Link to Islamic principle of avoiding israf (waste), Qur'an 7:31 forbids extravagance."
+    },
+    {
+     "heading": "Managing traffic",
+     "table": {
+      "head": [
+       "Strategy",
+       "How it works",
+       "Possible drawback"
+      ],
+      "rows": [
+       [
+        "Congestion charge / ULEZ",
+        "Pay to drive in central zone",
+        "Costs low-income drivers"
+       ],
+       [
+        "Park and ride",
+        "Park outside, use bus or tram",
+        "Needs enough car parks"
+       ],
+       [
+        "Bus lanes and cycle lanes",
+        "Faster buses and safer cycling",
+        "Less road space for cars"
+       ],
+       [
+        "Integrated ticketing (Oyster)",
+        "One card for tube, bus and rail",
+        "Set-up cost"
+       ],
+       [
+        "Pedestrianisation",
+        "Closed streets are safer",
+        "Reduces access to shops"
+       ]
+      ]
+     },
+     "note": "Match each strategy to its problem. London Congestion Charge started in 2003 and the ULEZ (ultra-low emission zone) was introduced in central London in 2019 and expanded to all boroughs in 2023; charge levels change so teacher should verify. Ask: who is helped and who is disadvantaged by a charge? (Low-income drivers.)"
+    },
+    {
+     "heading": "Model: a 9-mark judgement paragraph",
+     "model": {
+      "problem": "One paragraph: To what extent was the regeneration of Stratford successful?",
+      "steps": [
+       "Economic: derelict land became Westfield Stratford City and offices, creating jobs.",
+       "Social: East Village added homes, but affordable housing was limited and prices rose.",
+       "Environmental: contaminated brownfield land was cleaned and parkland and wetland created.",
+       "Counter: some local residents did not get the new jobs or could not afford the homes.",
+       "Judgement: largely successful for the area's image and environment, partly successful for local people."
+      ],
+      "answer": "A balanced judgement which weighs evidence from three themes and reaches a reasoned verdict."
+     },
+     "note": "Show how to build a judgement across social, economic and environmental criteria. Pupils highlight evidence, explanation and verdict in three colours."
+    }
+   ],
+   "practice": [
+    "Describe two features of the Olympic Park regeneration. (2 marks)",
+    "Explain why regeneration of Stratford was needed. (3 marks)"
+   ],
+   "independent": [
+    "Core: Explain how traffic management strategies can reduce congestion in cities. (4 marks)",
+    "Extend: Suggest one reason the benefits of the Olympic regeneration may not reach all local people. (3 marks)",
+    "Stretch: To what extent was the regeneration of Stratford successful? (9 marks, plus 3 SPaG marks)"
+   ],
+   "exit": [
+    "Define regeneration.",
+    "Name one traffic management strategy and one drawback."
+   ],
+   "homework": "Design a sustainable neighbourhood: sketch it and label five features with reasons.",
+   "send": "SEND: sorting cards for benefits and criticisms. EAL: glossary. Stretch: compare Stratford with Detroit or Manchester's Salford Quays."
+  },
+  {
+   "unit": "Unit 3: Fieldwork enquiries (AQA 3.3.2)",
+   "n": 11,
+   "title": "Planning a geographical enquiry: the six stages, hypotheses, sampling and risk",
+   "duration": 50,
+   "bigQuestion": "How do geographers plan an investigation that gives reliable answers?",
+   "objectives": [
+    "Describe the six stages of a geographical enquiry",
+    "Write an enquiry question and a testable hypothesis",
+    "Choose and justify a sampling method and assess risk"
+   ],
+   "successCriteria": [
+    "All: name the six stages and write a question",
+    "Most: write a hypothesis and justify a sampling method",
+    "Some: evaluate how sampling and risk planning affect reliability"
+   ],
+   "crossCurricular": "Mathematics: sampling and data handling; Science: working scientifically and risk assessment",
+   "smsc": "Moral: trustworthiness (amanah) in recording data honestly",
+   "keywords": [
+    {
+     "term": "primary data",
+     "def": "information collected first-hand by the investigator in the field"
+    },
+    {
+     "term": "secondary data",
+     "def": "information collected by someone else, such as the census or Environment Agency data"
+    },
+    {
+     "term": "hypothesis",
+     "def": "a testable statement predicting a relationship, such as 'velocity increases downstream'"
+    },
+    {
+     "term": "sampling",
+     "def": "choosing a smaller group of sites or people to represent the whole"
+    },
+    {
+     "term": "reliability",
+     "def": "how far the same results would be found if the enquiry were repeated"
+    },
+    {
+     "term": "anomaly",
+     "def": "a result that does not fit the pattern"
+    }
+   ],
+   "starter": [
+    "Bismillah. Define primary and secondary data.",
+    "Give one advantage of collecting your own data.",
+    "What is a hypothesis?"
+   ],
+   "teach": [
+    {
+     "heading": "What the specification requires",
+     "table": {
+      "head": [
+       "Requirement",
+       "Detail"
+      ],
+      "rows": [
+       [
+        "Number",
+        "Two enquiries"
+       ],
+       [
+        "Environments",
+        "Two contrasting (for example river and urban)"
+       ],
+       [
+        "Geography",
+        "Physical and human; at least one shows interaction"
+       ],
+       [
+        "Visits",
+        "At least two outside-school visits"
+       ],
+       [
+        "Data",
+        "Primary data collected in the field"
+       ],
+       [
+        "Paper",
+        "Examined in Paper 3, Section A"
+       ]
+      ]
+     },
+     "note": "Read this slide carefully with the class. AQA requires two enquiries in two contrasting environments, human and physical, with at least one showing their interaction, on at least two outside-school visits. The school submits a signed fieldwork statement. As an online school the route must be agreed: see the `send` line and clarify with AQA. In this course we use secondary data to teach and practise the method; it does not replace primary collection."
+    },
+    {
+     "heading": "The six enquiry stages",
+     "bullets": [
+      "Every enquiry follows the same cycle.",
+      "Each stage must link back to the question.",
+      "You must be able to justify choices at each stage."
+     ],
+     "cycle": [
+      "Question or hypothesis",
+      "Data collection",
+      "Data presentation",
+      "Data analysis",
+      "Conclusions",
+      "Evaluation"
+     ],
+     "note": "Walk through the cycle with a running example: 'Does a river get wider and faster downstream?'. Emphasise that exam questions ask pupils to explain choices at any stage, so they should be able to say why."
+    },
+    {
+     "heading": "Writing questions and hypotheses",
+     "model": {
+      "problem": "Turn the topic 'rivers' into a focused enquiry question and hypothesis.",
+      "steps": [
+       "Narrow the topic: how does the river change as it flows downstream?",
+       "Write a question: How do channel width and velocity change downstream along the River Dee?",
+       "Write a hypothesis: channel width and velocity increase with distance from the source.",
+       "State the data needed: width, depth and velocity at several sites at measured distances."
+      ],
+      "answer": "A good hypothesis predicts a relationship that can be measured and tested."
+     },
+     "note": "Model turning a broad topic into a testable question, then a hypothesis, then a null statement. Pupils should be able to say what data would test it. Misconception: a hypothesis is a hunch with no evidence; it should be based on geographical theory (the Bradshaw model for rivers, for example)."
+    },
+    {
+     "heading": "Sampling: choosing sites and people",
+     "check": {
+      "q": "A pupil asks every 10th person leaving a shop to complete a questionnaire. What is this sampling method?",
+      "options": [
+       "Random",
+       "Systematic",
+       "Stratified",
+       "Opportunistic"
+      ],
+      "answer": 1,
+      "why": "Choosing every nth person is systematic sampling. Random uses chance such as random numbers; stratified selects in proportion to groups; opportunistic uses whoever is convenient and is more biased."
+     },
+     "note": "Use the table to ask: which method is best for a questionnaire of shoppers? (Systematic or stratified.) For river sites? (Systematic at regular distance.) Pupils must justify with reference to bias, cost and time. Check on whiteboards."
+    },
+    {
+     "heading": "Sampling methods compared",
+     "compare": {
+      "left": {
+       "title": "Random / systematic",
+       "points": [
+        "Random: use random numbers; avoids bias",
+        "Systematic: every nth site or person; quick, even coverage",
+        "May miss important groups or features",
+        "Needs a clear list or route"
+       ]
+      },
+      "right": {
+       "title": "Stratified / opportunistic",
+       "points": [
+        "Stratified: match sample to groups in proportion",
+        "Opportunistic: ask whoever is available; easy but biased",
+        "Stratified needs good background data",
+        "Opportunistic is least reliable"
+       ]
+      },
+      "label": "sampling"
+     },
+     "note": "Ask which is the least biased and which is easiest. Link to reliability: bigger samples are more reliable, but cost time. Use real examples from planned enquiries."
+    },
+    {
+     "heading": "Assessing risk",
+     "table": {
+      "head": [
+       "Hazard",
+       "Risk",
+       "Control"
+      ],
+      "rows": [
+       [
+        "Fast or deep river",
+        "Slipping or drowning",
+        "Wellies, pairs, avoid after heavy rain, adult supervision"
+       ],
+       [
+        "Busy road (urban)",
+        "Traffic accident",
+        "Use crossings; never collect data in the road"
+       ],
+       [
+        "Weather",
+        "Cold or heat",
+        "Layers, hats, sun cream, water bottle"
+       ],
+       [
+        "Strangers (questionnaires)",
+        "Personal safety",
+        "Work in groups in public places; parent nearby"
+       ]
+      ]
+     },
+     "note": "Teach risk assessment as: hazard, risk, who is affected, control. Online route: a home or local enquiry needs a parent or tutor, a plan and check-ins. Ask: what is the hazard in a river? (Deep fast water, slipping, weather.) Control: wear life jackets, work in pairs, avoid high river levels."
+    }
+   ],
+   "practice": [
+    "Write a question and hypothesis for an enquiry about house price and distance from the city centre. (2 marks)",
+    "Explain one risk of collecting river data and one way to reduce it. (2 marks)"
+   ],
+   "independent": [
+    "Core: Describe the six stages of a geographical enquiry using an example. (4 marks)",
+    "Extend: Explain why a systematic sample may be better than opportunistic sampling for a questionnaire. (3 marks)",
+    "Stretch: Suggest and justify an enquiry that shows the interaction of physical and human geography. (4 marks)"
+   ],
+   "exit": [
+    "List the six enquiry stages in order.",
+    "State one advantage of random sampling."
+   ],
+   "homework": "Plan an enquiry about one local park or river: write a question, hypothesis, sampling method and risk table.",
+   "send": "SEND: step-by-step enquiry checklist. EAL: keyword cards. FLAG FOR TEACHER: AQA requires two fieldwork enquiries (one physical, one human, in two contrasting environments, with primary data collected on at least two outside-school occasions) and a signed centre fieldwork statement; the spec pack states secondary data alone does not meet this. An online cohort might meet it through supervised local fieldwork with a parent or tutor using a standard data pack, a partner centre or a residential day; the school must confirm this with AQA before relying on it. This lesson uses secondary data to teach the method only."
+  },
+  {
+   "unit": "Unit 3: Fieldwork enquiries (AQA 3.3.2)",
+   "n": 12,
+   "title": "A physical enquiry using secondary data: how does a river change downstream?",
+   "duration": 50,
+   "bigQuestion": "Does the evidence support the hypothesis that rivers become wider, deeper and faster downstream?",
+   "objectives": [
+    "Present secondary river data using suitable graphs",
+    "Analyse patterns, anomalies and use percentage change",
+    "Reach a conclusion linked to the hypothesis"
+   ],
+   "successCriteria": [
+    "All: plot data on a graph",
+    "Most: describe and explain patterns with figures",
+    "Some: calculate percentage change and write an evaluated conclusion"
+   ],
+   "crossCurricular": "Mathematics: scatter graphs, line of best fit, percentage change",
+   "smsc": "Moral: honest reporting of results, including results that do not fit (sidq)",
+   "keywords": [
+    {
+     "term": "channel width",
+     "def": "distance across the river from bank to bank"
+    },
+    {
+     "term": "velocity",
+     "def": "speed of water flow, measured in metres per second"
+    },
+    {
+     "term": "scatter graph",
+     "def": "a graph plotting two variables to show a relationship"
+    },
+    {
+     "term": "line of best fit",
+     "def": "a line drawn through points to show the overall trend"
+    },
+    {
+     "term": "secondary data",
+     "def": "data collected by others, for example by the Environment Agency"
+    }
+   ],
+   "starter": [
+    "Bismillah. State the six enquiry stages.",
+    "Write a hypothesis about river width.",
+    "Define secondary data."
+   ],
+   "teach": [
+    {
+     "heading": "Where secondary data comes from",
+     "bullets": [
+      "Environment Agency river levels and flow data.",
+      "National River Flow Archive (NRFA).",
+      "Published fieldwork datasets and OS maps."
+     ],
+     "table": {
+      "head": [
+       "Site",
+       "Distance from source (km)",
+       "Width (m)",
+       "Depth (m)",
+       "Velocity (m/s)"
+      ],
+      "rows": [
+       [
+        "1",
+        "1",
+        "1.2",
+        "0.10",
+        "0.15"
+       ],
+       [
+        "2",
+        "3",
+        "2.5",
+        "0.18",
+        "0.22"
+       ],
+       [
+        "3",
+        "5",
+        "4.1",
+        "0.27",
+        "0.31"
+       ],
+       [
+        "4",
+        "7",
+        "6.0",
+        "0.35",
+        "0.40"
+       ],
+       [
+        "5",
+        "9",
+        "8.4",
+        "0.46",
+        "0.52"
+       ]
+      ]
+     },
+     "note": "Tell pupils that teaching data below is illustrative data constructed for practice, not measured on a real river. Real datasets are available free from the Environment Agency and NRFA (teacher should select a river with several gauging stations, for example the River Dee in Wales). Primary data will still be needed for AQA."
+    },
+    {
+     "heading": "Presenting: choose the right graph",
+     "model": {
+      "problem": "Show the relationship between distance from source and channel width.",
+      "steps": [
+       "Choose a scatter graph: both variables are continuous.",
+       "Put distance (independent) on the x-axis and width on the y-axis, with units.",
+       "Plot the five points: (1, 1.2), (3, 2.5), (5, 4.1), (7, 6.0), (9, 8.4).",
+       "Draw a line of best fit through the trend, not joining each point."
+      ],
+      "answer": "A scatter graph with a rising line of best fit shows a positive relationship."
+     },
+     "note": "Ask pupils why a scatter graph with line of best fit suits two continuous variables. Show how to scale axes, label with units and plot width against distance. Misconception: joining dots instead of drawing a best-fit line."
+    },
+    {
+     "heading": "Analysing: describe, then quantify",
+     "check": {
+      "q": "Width rises from 1.2 m to 8.4 m. What is the percentage increase?",
+      "options": [
+       "86%",
+       "600%",
+       "700%",
+       "7.2%"
+      ],
+      "answer": 1,
+      "why": "(8.4 - 1.2) / 1.2 x 100 = 600%. 86% divides by the new value; 700% uses the ratio 7 instead of the increase; 7.2 is the raw difference."
+     },
+     "note": "Percentage change = (new - old) / old x 100. Width: (8.4 - 1.2) / 1.2 = 6, so 600%. Velocity: (0.52 - 0.15) / 0.15 = 2.47, so about 247%. Ask: why does velocity increase when friction might be expected to slow the water? (The channel becomes more efficient: larger hydraulic radius and less friction relative to volume.) Common error: dividing by the new value."
+    },
+    {
+     "heading": "Explaining the pattern",
+     "bullets": [
+      "More tributaries add water, so discharge increases downstream.",
+      "The channel becomes larger and smoother, so friction falls.",
+      "Erosion widens and deepens the channel downstream."
+     ],
+     "cycle": [
+      "More tributaries join",
+      "Discharge increases",
+      "Channel enlarges",
+      "Friction relative to flow falls",
+      "Velocity rises"
+     ],
+     "note": "Link to the Bradshaw model: width, depth, velocity and discharge rise; load size and gradient fall. Ask pupils which results would be anomalies. A narrow, slow section near a bend or weir, or after a tributary, can break the pattern. Anomalies should be explained, not ignored."
+    },
+    {
+     "heading": "Conclusion and evaluation",
+     "compare": {
+      "left": {
+       "title": "Strengths of this approach",
+       "points": [
+        "Large, accurate datasets from official sources",
+        "Safe and low cost",
+        "Allows long-term comparisons",
+        "Can be repeated for any river"
+       ]
+      },
+      "right": {
+       "title": "Limitations",
+       "points": [
+        "Not collected for your question",
+        "Unknown methods and errors",
+        "Fewer sites than you may need",
+        "No direct experience of the site"
+       ]
+      },
+      "label": "secondary data"
+     },
+     "note": "Teach the paragraph frame: 'The data supports the hypothesis because ... (figures). The relationship is ... (strong). However ... (limits).' Limits of secondary data: collected for other purposes, different methods or dates, cannot check accuracy, only a few sites. Secondary data also gives wider coverage and saves time."
+    }
+   ],
+   "practice": [
+    "Plot the five points from the table on a scatter graph and draw a line of best fit.",
+    "Calculate the percentage increase in depth from site 1 to site 5. (2 marks)"
+   ],
+   "independent": [
+    "Core: Describe the pattern shown by the river data. (3 marks)",
+    "Extend: Explain why velocity increases downstream. (4 marks)",
+    "Stretch: Write a conclusion and evaluation for the hypothesis 'width, depth and velocity increase downstream'. (6 marks)"
+   ],
+   "exit": [
+    "Give the formula for percentage change.",
+    "State one limitation of secondary data."
+   ],
+   "homework": "Find river data from the NRFA or Environment Agency for two gauging stations and describe the difference in discharge.",
+   "send": "SEND: step-by-step enquiry checklist. EAL: keyword cards. FLAG FOR TEACHER: AQA requires two fieldwork enquiries (one physical, one human, in two contrasting environments, with primary data collected on at least two outside-school occasions) and a signed centre fieldwork statement; the spec pack states secondary data alone does not meet this. An online cohort might meet it through supervised local fieldwork with a parent or tutor using a standard data pack, a partner centre or a residential day; the school must confirm this with AQA before relying on it. This lesson uses secondary data to teach the method only."
+  },
+  {
+   "unit": "Unit 3: Fieldwork enquiries (AQA 3.3.2)",
+   "n": 13,
+   "title": "A human enquiry and evaluating fieldwork: quality of life along a transect",
+   "duration": 50,
+   "bigQuestion": "How reliable are our conclusions, and what are the limits of an enquiry?",
+   "objectives": [
+    "Present and analyse human geography data using averages and range",
+    "Identify anomalies and suggest explanations",
+    "Evaluate method, reliability and the limits of conclusions"
+   ],
+   "successCriteria": [
+    "All: calculate mean, median and range",
+    "Most: describe the pattern and identify an anomaly",
+    "Some: evaluate reliability and suggest improvements"
+   ],
+   "crossCurricular": "Mathematics: averages and range; PSHE: wellbeing and community",
+   "smsc": "Social: caring for the local environment as a shared trust",
+   "keywords": [
+    {
+     "term": "environmental quality survey",
+     "def": "a scored assessment of an area's appearance, noise, litter and safety"
+    },
+    {
+     "term": "transect",
+     "def": "a line along which data is collected at regular intervals"
+    },
+    {
+     "term": "mean",
+     "def": "the sum of values divided by the number of values"
+    },
+    {
+     "term": "median",
+     "def": "the middle value when data is in order"
+    },
+    {
+     "term": "range",
+     "def": "the difference between the highest and lowest values"
+    },
+    {
+     "term": "anomaly",
+     "def": "a value that does not fit the overall pattern"
+    }
+   ],
+   "starter": [
+    "Bismillah. Name two sampling methods.",
+    "Define reliability.",
+    "What is a transect?"
+   ],
+   "teach": [
+    {
+     "heading": "The enquiry",
+     "bullets": [
+      "Question: how does environmental quality change with distance from the centre of a town?",
+      "Hypothesis: quality improves with distance from the centre.",
+      "Method: environmental quality survey at 6 sites, scored out of 30."
+     ],
+     "table": {
+      "head": [
+       "Site",
+       "Distance from centre (km)",
+       "Environmental quality score (out of 30)"
+      ],
+      "rows": [
+       [
+        "1",
+        "0.5",
+        "9"
+       ],
+       [
+        "2",
+        "1",
+        "12"
+       ],
+       [
+        "3",
+        "2",
+        "15"
+       ],
+       [
+        "4",
+        "3",
+        "21"
+       ],
+       [
+        "5",
+        "4",
+        "24"
+       ],
+       [
+        "6",
+        "5",
+        "12"
+       ]
+      ]
+     },
+     "note": "Say clearly that the dataset is invented for teaching, to model how real data would look. For online learners real data can be obtained from published town surveys; AQA still requires primary data for at least two enquiries. Link to urban unit: regeneration and quality of life. Ask: what could count as human-physical interaction in this enquiry? (River flooding of low-lying central areas.)"
+    },
+    {
+     "heading": "Calculate and present",
+     "model": {
+      "problem": "Calculate the mean, median and range of the environmental quality scores.",
+      "steps": [
+       "Add the scores: 9 + 12 + 15 + 21 + 24 + 12 = 93.",
+       "Mean = 93 / 6 = 15.5.",
+       "Order: 9, 12, 12, 15, 21, 24. Median = (12 + 15) / 2 = 13.5.",
+       "Range = 24 - 9 = 15."
+      ],
+      "answer": "Mean 15.5, median 13.5, range 15."
+     },
+     "note": "Model the calculation aloud: sum 9 + 12 + 15 + 21 + 24 + 12 = 93, mean 93 / 6 = 15.5. Order data: 9, 12, 12, 15, 21, 24, so median = (12 + 15) / 2 = 13.5. Range = 24 - 9 = 15. The mean is pulled up by the high scores; the median is less affected. Suggest displaying as a bar chart or a radar graph, with sites on the x-axis."
+    },
+    {
+     "heading": "Analyse and find the anomaly",
+     "check": {
+      "q": "Which result is an anomaly in the transect data?",
+      "options": [
+       "Site 1, score 9",
+       "Site 4, score 21",
+       "Site 6, score 12",
+       "Site 5, score 24"
+      ],
+      "answer": 2,
+      "why": "Quality rises with distance until site 6, which drops to 12. The others fit the rising trend. Ignoring the anomaly would misrepresent the data."
+     },
+     "note": "Use the check. Site 6 is the anomaly, scoring 12 at 5 km. Possible explanations: next to a busy ring road, a retail park or a landfill. Teach pupils never to ignore anomalies: explain and consider repeating. Link to reliability."
+    },
+    {
+     "heading": "Conclusions",
+     "bullets": [
+      "State whether the hypothesis is supported and why.",
+      "Use figures from the data.",
+      "Give a possible geographical reason for the pattern."
+     ],
+     "timeline": [
+      {
+       "label": "Step 1",
+       "text": "Restate the hypothesis"
+      },
+      {
+       "label": "Step 2",
+       "text": "Describe the main trend with figures"
+      },
+      {
+       "label": "Step 3",
+       "text": "Explain using geographical ideas"
+      },
+      {
+       "label": "Step 4",
+       "text": "Mention anomalies and limits"
+      }
+     ],
+     "note": "Model an example: 'The data mostly supports the hypothesis: quality rose from 9 at 0.5 km to 24 at 4 km. Inner areas have traffic, litter and older housing. However site 6 breaks the trend.' Remind pupils to avoid claims the data cannot support."
+    },
+    {
+     "heading": "Evaluating the enquiry",
+     "table": {
+      "head": [
+       "Issue",
+       "Effect on reliability",
+       "Improvement"
+      ],
+      "rows": [
+       [
+        "Subjective scoring",
+        "Different surveyors score differently",
+        "Use one scoring guide and two surveyors"
+       ],
+       [
+        "Few sites (6)",
+        "Pattern may be chance",
+        "Add more sites or transects"
+       ],
+       [
+        "One day only",
+        "Weather and time affect results",
+        "Repeat on different days"
+       ],
+       [
+        "One direction only",
+        "May not represent the town",
+        "Add a second transect"
+       ]
+      ]
+     },
+     "note": "Prompt pupils: what would improve it? More sites, repeat on different days, more than one surveyor to reduce bias, include areas other than one transect. Distinguish reliability (repeatable) from validity (does it measure what we want). Link to exam: 'evaluate' needs strengths, weaknesses and a judgement."
+    }
+   ],
+   "practice": [
+    "Calculate the mean score for sites 1 to 5 only. (2 marks)",
+    "Suggest why site 6 is an anomaly. (2 marks)"
+   ],
+   "independent": [
+    "Core: Describe the pattern in the data. (3 marks)",
+    "Extend: Explain how the enquiry could be made more reliable. (4 marks)",
+    "Stretch: Evaluate how far the data supports the hypothesis and the limits of the conclusion. (6 marks)"
+   ],
+   "exit": [
+    "Which is more affected by an anomaly: mean or median?",
+    "Name one way to make an enquiry more reliable."
+   ],
+   "homework": "Write the evaluation section for a fieldwork enquiry you plan to carry out locally.",
+   "send": "SEND: step-by-step enquiry checklist. EAL: keyword cards. FLAG FOR TEACHER: AQA requires two fieldwork enquiries (one physical, one human, in two contrasting environments, with primary data collected on at least two outside-school occasions) and a signed centre fieldwork statement; the spec pack states secondary data alone does not meet this. An online cohort might meet it through supervised local fieldwork with a parent or tutor using a standard data pack, a partner centre or a residential day; the school must confirm this with AQA before relying on it. This lesson uses secondary data to teach the method only."
+  }
+ ]
+}
