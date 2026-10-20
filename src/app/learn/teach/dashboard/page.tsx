@@ -4,23 +4,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { DashboardHero } from "@/components/learn/DashboardHero";
-import { ClassGrid } from "@/components/learn/class/ClassGrid";
-import { myTeachingClasses, useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
+import { myTeachingClasses } from "@/lib/learn/classes";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { TeachNow } from "@/components/learn/teach/TeachNow";
-import { TimetableGrid } from "@/components/learn/TimetableGrid";
-import { PrintButton } from "@/components/learn/PrintButton";
-import { PrintScope } from "@/components/learn/printScope";
-import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 import { EnrichmentSupervisorLink } from "@/components/learn/enrichment/SupervisorLink";
-import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
-import { TeacherLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
-import { TeacherRewards } from "@/components/learn/rewards/RewardsCards";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 import { localDateKey } from "@/lib/learn/calendar";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 
@@ -32,24 +23,6 @@ type Cover = {
   covering_teacher_user_id: string;
   timetable_slots?: { classes?: { name: string } | null; subjects?: { name: string } | null } | null;
 };
-
-const TEACHER: ClassViewer = { kind: "teacher" };
-
-/** Moodle's "Course overview" block: the first few class cards, linking to all. */
-function MyClassesStrip() {
-  const classes = useViewerClasses(TEACHER);
-  return (
-    <section>
-      <div className="mb-3 flex items-center justify-between">
-        <h2 className="text-sm font-semibold text-ink">My classes</h2>
-        <Link href="/teach/classes" className="text-sm font-medium text-teal-700 hover:underline">
-          View all
-        </Link>
-      </div>
-      <ClassGrid viewer={TEACHER} classes={classes ? classes.slice(0, 4) : null} hrefFor={(c) => `/teach/class?id=${c.id}`} emptyLabel="You haven't been assigned to any classes yet." controls={false} />
-    </section>
-  );
-}
 
 function TeachContent() {
   const supabase = getSupabaseClient();
@@ -90,60 +63,47 @@ function TeachContent() {
     })();
   }, [supabase]);
 
+  // Home answers "what do I need to do today?" and nothing else: the counts,
+  // today's lessons and quick actions (TeachNow), anything to sign, cover,
+  // and the latest few announcements. Timetable, classes and house points
+  // live on their own pages (Calendar, My classes, Houses and stars).
   return (
     <DashboardWithPanel viewer={{ kind: "teacher", classIds }}>
-    <div className="space-y-5">
-      <DashboardHero subtitle="Your day at a glance" chips={[{ label: "Lessons a week", value: slots === null ? "…" : slots.length, tone: "yellow" }, { label: "My classes", value: classIds.length, tone: "white" }]} />
-      <JoinLessonCard who={{ kind: "teacher" }} />
+      <div className="space-y-5">
+        <DashboardHero subtitle="What needs doing today" chips={[{ label: "Lessons this week", value: slots === null ? "…" : slots.length, tone: "yellow" }, { label: "My classes", value: classIds.length, tone: "white" }]} />
 
-      <TeachNow slots={slots} />
+        <TeachNow slots={slots} />
 
-      <SignaturePrompts />
+        <SignaturePrompts />
 
-      {covers && covers.length > 0 && (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-          <h2 className="text-h3 font-semibold text-ink">Upcoming cover</h2>
-          <ul className="mt-3 space-y-2 text-sm">
-            {covers.map((c) => (
-              <li key={c.id} className="rounded-lg border border-gold-light/40 p-3">
-                <span className="font-medium">{new Date(c.cover_date).toLocaleDateString("en-GB")}</span> —{" "}
-                {c.timetable_slots?.subjects?.name} ({c.timetable_slots?.classes?.name}) —{" "}
-                {c.covering_teacher_user_id === userId ? "you are covering" : "you are being covered"}
-                {c.reason ? <span className="text-ink/60"> · {c.reason}</span> : null}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+        {covers && covers.length > 0 && (
+          <section className="rounded-2xl border border-gold-light bg-white px-5 py-4" aria-labelledby="cover-heading">
+            <h2 id="cover-heading" className="text-sm font-semibold text-ink">
+              Cover coming up
+            </h2>
+            <ul className="mt-2 space-y-1.5 text-sm">
+              {covers.slice(0, 3).map((c) => (
+                <li key={c.id} className="flex flex-wrap gap-x-2">
+                  <span className="font-medium">{new Date(c.cover_date).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })}</span>
+                  <span>
+                    {c.timetable_slots?.subjects?.name} ({c.timetable_slots?.classes?.name})
+                  </span>
+                  <span className="text-ink/65">{c.covering_teacher_user_id === userId ? "you are covering" : "you are being covered"}</span>
+                </li>
+              ))}
+            </ul>
+            {covers.length > 3 && (
+              <Link href="/teach/calendar" className="mt-2 inline-block text-sm font-medium text-teal-700 hover:underline">
+                {covers.length - 3} more on the calendar
+              </Link>
+            )}
+          </section>
+        )}
 
-      <EnrichmentSupervisorLink />
+        <EnrichmentSupervisorLink />
 
-      <MyClassesStrip />
-
-      <details className="group rounded-2xl border border-gold-light bg-white">
-        <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-3">
-          <span className="text-h3 font-semibold text-ink">My timetable</span>
-          <span className="text-sm text-ink/55">{slots === null ? "" : `${slots.length} lessons a week`}</span>
-        </summary>
-        <div className="border-t border-gold-light p-5">
-          <div className="print:hidden mb-3 flex items-center justify-end gap-2">
-            <PrintButton />
-            <ReportConcernLink />
-          </div>
-          <PrintScope title="My timetable">
-            {slots === null ? <div className="h-40 animate-pulse rounded-lg bg-cream" /> : <TimetableGrid slots={slots} showClassLabel />}
-          </PrintScope>
-        </div>
-      </details>
-
-      <TeacherLeaderboard />
-      <TeacherRewards />
-
-      <AnnouncementsFeed classIds={classIds} canPost={classIds.length > 0} postClassId={classIds[0]} postScope="class" />
-
-
-      <IcsFeedLink />
-    </div>
+        <AnnouncementsFeed classIds={classIds} canPost={classIds.length > 0} postClassId={classIds[0]} postScope="class" limit={3} viewAllHref="/teach/announcements" />
+      </div>
     </DashboardWithPanel>
   );
 }

@@ -195,7 +195,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
           <label className="flex items-center gap-2 text-sm text-ink">
             Draft grade for missing work
             <input
-              type="number"
+              type="text" inputMode="decimal"
               min={0}
               max={100}
               value={s.autoDraftPercent}
@@ -233,7 +233,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
                 </select>
                 <label className="flex items-center gap-1 text-sm text-ink/70">
                   <input
-                    type="number"
+                    type="text" inputMode="decimal"
                     min={0}
                     max={100}
                     defaultValue={c.weight}
@@ -255,7 +255,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
           {cats.length > 0 && <p className={`mt-2 text-xs ${Math.round(total) === 100 ? "text-green-800" : "text-amber-800"}`}>Weights add up to {Math.round(total * 10) / 10}%{Math.round(total) === 100 ? "." : " (they do not have to reach 100; they are scaled)."}</p>}
           <div className="mt-3 flex flex-wrap gap-2">
             <input type="text" value={newCat.name} onChange={(e) => setNewCat({ ...newCat, name: e.target.value })} placeholder="Category, e.g. Tests" aria-label="Category name" maxLength={60} className="min-w-0 flex-1 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm" />
-            <input type="number" min={0} max={100} value={newCat.weight} onChange={(e) => setNewCat({ ...newCat, weight: e.target.value })} placeholder="Weight %" aria-label="Category weight" className="w-28 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm" />
+            <input type="text" inputMode="decimal" min={0} max={100} value={newCat.weight} onChange={(e) => setNewCat({ ...newCat, weight: e.target.value })} placeholder="Weight %" aria-label="Category weight" className="w-28 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm" />
             <button type="button" onClick={addCat} className="rounded-lg border border-gold-light px-4 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
               Add category
             </button>

@@ -23,7 +23,7 @@ type EnrolRaw = { child_id: string; class_id: string; classes?: { name: string }
 const SUMMARY_SELECT =
   "id, child_id, gender, address_line1, address_line2, town, postcode, home_language, ethnicity, previous_school, siblings_at_school, gp_name, gp_phone, medical_conditions, allergies, medication, dietary_needs, sen_notes, health_confirmed, photo_consent, trip_consent, completed_at, completed_by, updated_at";
 
-/** Everything the signed-in staff member may see, joined client-side. RLS scopes it (teachers: their own classes only). */
+/** Everything the signed-in staff member may see, joined client-side. `withOwnAcks` = the teacher view: their own classes, health and needs only. */
 export function usePupils(withOwnAcks = false) {
   const [pupils, setPupils] = useState<PupilRow[] | null>(null);
   const [yearGroups, setYearGroups] = useState<{ id: string; name: string }[]>([]);
@@ -39,8 +39,10 @@ export function usePupils(withOwnAcks = false) {
       const [kids, enrols, det, cons, acks, yg] = await Promise.all([
         supabase.from("children").select("id, name, dob, year_group_id, year_groups(name)").order("name"),
         supabase.from("enrolments").select("child_id, class_id, classes(name)"),
-        supabase.from("pupil_details").select(SUMMARY_SELECT),
-        supabase.from("pupil_emergency_contacts").select("child_id"),
+        // Teachers get only health, needs and consents (0098 teacher_pupil_health);
+        // the office sees the whole record and the emergency contacts.
+        withOwnAcks ? supabase.rpc("teacher_pupil_health") : supabase.from("pupil_details").select(SUMMARY_SELECT),
+        withOwnAcks ? Promise.resolve({ data: [], error: null }) : supabase.from("pupil_emergency_contacts").select("child_id"),
         withOwnAcks && uid
           ? supabase.from("pupil_detail_acknowledgements").select("id, child_id, teacher_id, acknowledged_at, details_updated_at").eq("teacher_id", uid)
           : Promise.resolve({ data: [], error: null }),

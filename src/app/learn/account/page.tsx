@@ -8,6 +8,7 @@ import { friendlyPasswordError, passwordProblem } from "@/lib/learn/passwordRule
 import { PasswordChecklist } from "@/components/learn/PasswordChecklist";
 import { PasswordInput } from "@/components/learn/PasswordInput";
 import { ParentPinSettings } from "@/components/learn/pin/ParentPinSettings";
+import { DigestPreference } from "@/components/learn/rewards/DigestPreference";
 import { MessageSettings } from "@/components/learn/messages/MessageSettings";
 import { PageHeader } from "@/components/learn/PageHeader";
 
@@ -98,6 +99,7 @@ function AccountContent() {
       <ChangePassword />
       {session && session !== "loading" && !roles.every((r) => r.role === "student") && <MessageSettings userId={session.user.id} />}
       {session && session !== "loading" && roles.some((r) => r.role === "parent") && <ParentPinSettings userId={session.user.id} />}
+      {roles.some((r) => r.role === "parent") && <DigestPreference />}
       <Link href="/feedback" className="flex items-center justify-between gap-3 rounded-2xl border border-gold-light bg-white p-6 hover:bg-cream">
         <span>
           <span className="block text-h3 font-semibold text-ink">Your feedback</span>

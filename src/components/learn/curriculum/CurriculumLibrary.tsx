@@ -2,11 +2,11 @@
 
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { myTeachingClasses } from "@/lib/learn/classes";
+import { classColour, myTeachingClasses } from "@/lib/learn/classes";
 import { uploadClassFile } from "@/components/learn/class/Attachments";
 import { Tabs } from "@/components/learn/Tabs";
 import { makeZip, type ZipEntry } from "@/lib/learn/zip";
-import { mediaUrl, unitsForYear, type StaffUnit, type SummarySlide } from "@/lib/learn/revision";
+import { mediaUrl, revisionOverview, unitsForYear, type StaffUnit, type SummarySlide } from "@/lib/learn/revision";
 import { UnitResults } from "@/components/learn/revision/UnitResults";
 import { PackBuilder, QuestionEditor } from "@/components/learn/revision/PackBuilder";
 import {
@@ -23,7 +23,7 @@ import {
   type CurriculumLesson,
   type CurriculumVersion,
 } from "@/lib/learn/curriculum";
-import { ui } from "@/components/learn/ui";
+import { StatusChip, ui } from "@/components/learn/ui";
 
 type ClassOpt = { id: string; name: string };
 
@@ -134,6 +134,8 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const [search, setSearch] = useState("");
   const [lessons, setLessons] = useState<CurriculumLesson[] | null>(null);
   const [packs, setPacks] = useState<StaffUnit[]>([]);
+  // Average latest quiz score per revision pack (from revision_overview).
+  const [scores, setScores] = useState<Record<string, number | null>>({});
   const [selected, setSelected] = useState<string | null>(null);
   // A link can open a particular unit and tab: ?year=y10&subject=…&unit=…&tab=results
   const [linked] = useState(() => {
@@ -203,6 +205,9 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       unitsForYear(year).catch(() => [] as StaffUnit[]),
     ]);
     setPacks(packList);
+    revisionOverview()
+      .then((rows) => setScores(Object.fromEntries(rows.map((r) => [r.unit_id, r.avg_pct ?? null]))))
+      .catch(() => setScores({}));
     if (error) {
       setMessage("Couldn't load the Lesson library. Refresh to try again.");
       setLessons([]);
@@ -244,7 +249,8 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
 
   // The unit on show: the one you picked, else the linked one, else the first.
   const wantedKey = wanted ? allUnits.find((u) => u.unit === wanted.unit && (!wanted.subject || u.subject_slug === wanted.subject))?.key : undefined;
-  const activeKey = selected && allUnits.some((u) => u.key === selected) ? selected : wantedKey || allUnits[0]?.key || null;
+  // Nothing chosen yet: the library opens on the overview of every unit.
+  const activeKey = selected && allUnits.some((u) => u.key === selected) ? selected : wantedKey || null;
   const current = allUnits.find((u) => u.key === activeKey);
   const currentPack = packFor(current);
 
@@ -430,10 +436,62 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       {lessons === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
       {!building && lessons && allUnits.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No lessons for this year yet.</p>}
 
-      {!building && lessons && allUnits.length > 0 && (
+      {!building && lessons && allUnits.length > 0 && !activeKey && !results && (
+        <div className="space-y-6">
+          {subjects.map((sub) => (
+            <section key={sub.slug} aria-labelledby={`subj-${sub.slug}`}>
+              <h2 id={`subj-${sub.slug}`} className="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-ink/70">
+                <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: classColour(sub.slug) }} />
+                {sub.name}
+              </h2>
+              <ul className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                {sub.units.map((u) => {
+                  const p = packFor(u);
+                  const avg = p ? scores[p.id] : undefined;
+                  return (
+                    <li key={u.key} className="flex flex-col overflow-hidden rounded-2xl border border-gold-light bg-white transition hover:shadow-sm">
+                      <span aria-hidden="true" className="h-1.5" style={{ backgroundColor: classColour(sub.slug) }} />
+                      <button type="button" onClick={() => openUnit(u.key)} className="flex-1 px-4 pb-2 pt-3 text-left">
+                        <span className="block font-semibold text-ink">{u.unit}</span>
+                        <span className="mt-0.5 block text-xs text-ink/65">
+                          {u.lessons.length ? `${u.lessons.length} lesson${u.lessons.length === 1 ? "" : "s"}` : "Revision only"}
+                          {u.board ? ` · ${u.board}` : ""}
+                        </span>
+                      </button>
+                      <div className="flex flex-wrap items-center gap-2 border-t border-gold-light/60 px-4 py-2.5">
+                        {p ? (
+                          <>
+                            <StatusChip tone={p.published ? "good" : "neutral"}>{p.published ? "Revision live" : "Revision hidden"}</StatusChip>
+                            <span className="text-xs text-ink/65">
+                              {p.questions} questions
+                              {p.takers ? ` · ${p.takers} pupils · avg ${avg ?? "–"}%` : ""}
+                            </span>
+                            <button type="button" onClick={() => openUnit(u.key, p.takers ? "results" : "revision")} className={`ml-auto ${ui.btnLink}`}>
+                              {p.takers ? "Results" : "Open"}
+                            </button>
+                          </>
+                        ) : (
+                          <button type="button" onClick={() => setBuilding({ initial: { subject_slug: u.subject_slug, subject: u.subject, unit: u.unit } })} className={`${ui.btnSecondary} ${ui.sm}`}>
+                            + Add summary and quiz
+                          </button>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          ))}
+        </div>
+      )}
+
+      {!building && lessons && allUnits.length > 0 && (activeKey || results) && (
         <div className="grid gap-4 lg:grid-cols-[17rem_minmax(0,1fr)]">
           {/* Units: a list on wide screens, a drop-down on phones. */}
           <div className="lg:hidden">
+            <button type="button" onClick={() => { setSelected(null); setWanted(null); setSearch(""); }} className={`mb-2 ${ui.btnLink}`}>
+              ‹ All units
+            </button>
             <label className="block text-sm font-semibold text-ink">
               Unit
               <select value={activeKey || ""} onChange={(e) => openUnit(e.target.value, tab)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm">
@@ -450,6 +508,9 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             </label>
           </div>
           <nav aria-label="Units" className="hidden max-h-[75vh] space-y-4 self-start overflow-y-auto rounded-2xl border border-gold-light bg-white p-3 lg:sticky lg:top-[76px] lg:block">
+            <button type="button" onClick={() => { setSelected(null); setWanted(null); setSearch(""); }} className={`px-2 ${ui.btnLink}`}>
+              ‹ All units
+            </button>
             {subjects.map((s) => (
               <div key={s.slug}>
                 <p className="px-2 pb-1 text-xs font-semibold uppercase tracking-wide text-ink/55">{s.name}</p>

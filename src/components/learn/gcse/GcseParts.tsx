@@ -107,7 +107,7 @@ export function BoundaryEditor({ boundaries, onChange, onReset }: { boundaries: 
           <label key={g} className="text-[11px] font-medium text-ink/70">
             Grade {g}
             <input
-              type="number"
+              type="text" inputMode="decimal"
               min={0}
               max={100}
               step={1}
@@ -147,11 +147,11 @@ export function BoundaryCalculator() {
         <div className="flex flex-wrap items-end gap-3 text-xs text-ink/70">
           <label>
             Mark
-            <input type="number" min={0} value={mark} onChange={(e) => setMark(e.target.value)} className="mt-1 block w-20 rounded-md border border-gold-light/60 px-2 py-1.5 text-sm" />
+            <input type="text" inputMode="decimal" min={0} value={mark} onChange={(e) => setMark(e.target.value)} className="mt-1 block w-20 rounded-md border border-gold-light/60 px-2 py-1.5 text-sm" />
           </label>
           <label>
             Out of
-            <input type="number" min={1} value={outOf} onChange={(e) => setOutOf(e.target.value)} className="mt-1 block w-20 rounded-md border border-gold-light/60 px-2 py-1.5 text-sm" />
+            <input type="text" inputMode="decimal" min={1} value={outOf} onChange={(e) => setOutOf(e.target.value)} className="mt-1 block w-20 rounded-md border border-gold-light/60 px-2 py-1.5 text-sm" />
           </label>
           <p role="status" className="pb-1.5 text-sm text-ink">
             {pct === null ? "Enter a mark to see the grade." : grade === null ? `${pct.toFixed(1)}%: below grade 1.` : `${pct.toFixed(1)}% is grade ${grade}.`}

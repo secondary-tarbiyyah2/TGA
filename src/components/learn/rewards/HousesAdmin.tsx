@@ -351,7 +351,7 @@ export function HousesAdmin() {
               )}
               <label className="text-xs font-medium text-ink/70">
                 {awardTarget === "class" ? "Points per pupil" : "Points"}
-                <input type="number" min={1} max={100} value={awardPoints} onChange={(e) => setAwardPoints(e.target.value)} className="mt-1 block w-20 rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
+                <input type="text" inputMode="decimal" min={1} max={100} value={awardPoints} onChange={(e) => setAwardPoints(e.target.value)} className="mt-1 block w-20 rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
               </label>
               <label className="min-w-[12rem] flex-1 text-xs font-medium text-ink/70">
                 Reason

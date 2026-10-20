@@ -171,8 +171,8 @@ export function YearGroupsSection({ yearGroups, classes, enrolments, reload }: C
             {editId === y.id ? (
               <div className="grid gap-2 sm:grid-cols-4 sm:items-end">
                 <Field label="Name"><input className={inputCls} value={draft.name} onChange={(e) => setDraft((s) => ({ ...s, name: e.target.value }))} /></Field>
-                <Field label="Order"><input type="number" className={inputCls} value={draft.sort_order} onChange={(e) => setDraft((s) => ({ ...s, sort_order: e.target.value }))} /></Field>
-                <Field label="Capacity"><input type="number" min={1} inputMode="numeric" className={inputCls} placeholder="Unset" value={draft.capacity} onChange={(e) => setDraft((s) => ({ ...s, capacity: e.target.value }))} /></Field>
+                <Field label="Order"><input type="text" inputMode="decimal" className={inputCls} value={draft.sort_order} onChange={(e) => setDraft((s) => ({ ...s, sort_order: e.target.value }))} /></Field>
+                <Field label="Capacity"><input type="text" min={1} inputMode="numeric" className={inputCls} placeholder="Unset" value={draft.capacity} onChange={(e) => setDraft((s) => ({ ...s, capacity: e.target.value }))} /></Field>
                 <div className="flex gap-2">
                   <button type="button" className={primaryBtn} disabled={busy} onClick={() => save(y.id)}>Save</button>
                   <button type="button" className={ghostBtn} onClick={() => setEditId(null)}>Cancel</button>
@@ -193,7 +193,7 @@ export function YearGroupsSection({ yearGroups, classes, enrolments, reload }: C
       </ul>
       <div className="mt-4 grid gap-2 sm:grid-cols-3 sm:items-end">
         <Field label="New year group"><input className={inputCls} placeholder="Year 7" value={name} onChange={(e) => setName(e.target.value)} /></Field>
-        <Field label="Capacity (optional)"><input type="number" min={1} inputMode="numeric" className={inputCls} value={capacity} onChange={(e) => setCapacity(e.target.value)} /></Field>
+        <Field label="Capacity (optional)"><input type="text" min={1} inputMode="numeric" className={inputCls} value={capacity} onChange={(e) => setCapacity(e.target.value)} /></Field>
         <div><button type="button" className={`${primaryBtn} w-full sm:w-auto`} disabled={busy} onClick={add}>Add year group</button></div>
       </div>
       {error && <div className="mt-3"><Notice tone="error">{error}</Notice></div>}

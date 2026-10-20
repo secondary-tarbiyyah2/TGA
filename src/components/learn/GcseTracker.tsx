@@ -69,6 +69,8 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
   const [pasteOpen, setPasteOpen] = useState(false);
   const [pasteText, setPasteText] = useState("");
   const [pasteInfo, setPasteInfo] = useState<string[]>([]);
+  // Read the grades at a glance; drop-downs only appear once you choose to edit.
+  const [editMode, setEditMode] = useState(false);
 
   const load = useCallback(async () => {
     if (!supabase || !classId) return;
@@ -265,17 +267,36 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h2 className="font-serif text-h3 font-semibold text-ink">GCSE grades — {cls.subjects?.name || cls.name}</h2>
-          <p className="mt-1 max-w-2xl text-sm text-ink/60">
-            Target, predicted and actual grade on the 1–9 scale. Behind or on track compares the actual grade with the prediction (the target if there is no prediction). Pupils and parents see these grades and a plain-English explanation.
-          </p>
+          <p className="mt-1 max-w-2xl text-sm text-ink/65">Target, predicted and actual grades (1–9). Pupils and parents see them with a plain-English explanation.</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
             Export CSV
           </button>
-          <button type="button" disabled={saving || dirtyIds.length === 0} onClick={saveAll} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
-            {saving ? "Saving…" : dirtyIds.length > 0 ? `Save changes (${dirtyIds.length})` : "Saved"}
-          </button>
+          {editMode ? (
+            <>
+              <button type="button" disabled={saving || dirtyIds.length === 0} onClick={saveAll} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
+                {saving ? "Saving…" : dirtyIds.length > 0 ? `Save changes (${dirtyIds.length})` : "Saved"}
+              </button>
+              <button
+                type="button"
+                disabled={saving}
+                onClick={() => {
+                  setEdits(base);
+                  setEditMode(false);
+                }}
+                className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream"
+              >
+                {dirtyIds.length ? "Cancel" : "Done"}
+              </button>
+            </>
+          ) : (
+            pupils.length > 0 && (
+              <button type="button" onClick={() => setEditMode(true)} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-gold-900">
+                Edit grades
+              </button>
+            )
+          )}
         </div>
       </div>
 
@@ -297,7 +318,10 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
             )}
           </div>
 
-          <div className="mt-4 space-y-3 rounded-xl border border-gold-light/40 bg-cream/40 p-3 text-xs text-ink/70">
+          {editMode && (
+          <details className="mt-4 rounded-xl border border-gold-light/40 bg-cream/40 p-3 text-xs text-ink/70">
+          <summary className="cursor-pointer text-sm font-medium text-ink">Quicker ways to fill in (fill down, paste, from assessments, grade boundaries)</summary>
+          <div className="mt-3 space-y-3">
             <div className="flex flex-wrap items-end gap-2">
               <span className="pb-1.5 font-medium text-ink">Fill down</span>
               <label>
@@ -352,10 +376,13 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
                 )}
               </div>
             )}
+            <BoundaryCalculator />
           </div>
+          </details>
+          )}
 
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[40rem] text-left text-sm">
+            <table className={`w-full text-left text-sm ${editMode ? "min-w-[40rem]" : ""}`}>
               <thead>
                 <tr className="text-xs text-ink/60">
                   <th className="py-1.5 pr-3 font-medium">Pupil</th>
@@ -364,7 +391,7 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
                   <th className="py-1.5 pr-3 font-medium">Actual</th>
                   <th className="py-1.5 pr-3 font-medium">Status</th>
                   <th className="py-1.5 pr-3 font-medium">Trend</th>
-                  <th className="py-1.5 pr-3 font-medium">Comment</th>
+                  {editMode && <th className="py-1.5 pr-3 font-medium">Comment</th>}
                   <th className="py-1.5 font-medium"><span className="sr-only">History</span></th>
                 </tr>
               </thead>
@@ -384,13 +411,13 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
                         {dirty && <span className="ml-1.5 text-[10px] font-semibold uppercase text-amber-700">edited</span>}
                       </td>
                       <td className="py-1.5 pr-2">
-                        <GradeSelect value={e.target} onChange={(v) => patch(p.id, { target: v })} label={`${p.name} target grade`} />
+                        {editMode ? <GradeSelect value={e.target} onChange={(v) => patch(p.id, { target: v })} label={`${p.name} target grade`} /> : <span className="tabular-nums">{e.target || "–"}</span>}
                       </td>
                       <td className="py-1.5 pr-2">
-                        <GradeSelect value={e.predicted} onChange={(v) => patch(p.id, { predicted: v })} label={`${p.name} predicted grade`} />
+                        {editMode ? <GradeSelect value={e.predicted} onChange={(v) => patch(p.id, { predicted: v })} label={`${p.name} predicted grade`} /> : <span className="tabular-nums">{e.predicted || "–"}</span>}
                       </td>
                       <td className="py-1.5 pr-3">
-                        <GradeSelect value={e.actual} onChange={(v) => patch(p.id, { actual: v, assessmentId: null })} label={`${p.name} actual grade`} />
+                        {editMode ? <GradeSelect value={e.actual} onChange={(v) => patch(p.id, { actual: v, assessmentId: null })} label={`${p.name} actual grade`} /> : <span className="font-semibold tabular-nums">{e.actual || "–"}</span>}
                       </td>
                       <td className="py-1.5 pr-3">
                         <GcseStatusChip row={row} />
@@ -404,7 +431,7 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
                           </span>
                         </span>
                       </td>
-                      <td className="py-1.5 pr-3">
+                      {editMode && <td className="py-1.5 pr-3">
                         <input
                           type="text"
                           value={e.comment}
@@ -414,7 +441,7 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
                           aria-label={`${p.name} comment`}
                           className="w-full min-w-[9rem] rounded-md border border-gold-light/60 px-2 py-1 text-sm"
                         />
-                      </td>
+                      </td>}
                       <td className="py-1.5">
                         <button
                           type="button"
@@ -432,10 +459,7 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
               </tbody>
             </table>
           </div>
-          <p className="mt-2 text-[11px] text-ink/65">Trend line: solid = actual grade over time (gold dot = mock exam), dashed = target, dotted = predicted.</p>
-          <div className="mt-3">
-            <BoundaryCalculator />
-          </div>
+          <p className="mt-2 text-[11px] text-ink/65">Trend: solid line = actual grade over time (gold dot = mock exam), dashed = target, dotted = predicted.</p>
         </>
       )}
       {msg && (

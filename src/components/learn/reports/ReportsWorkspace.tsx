@@ -7,7 +7,8 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { ReportDocument, PrintStyles, StatusBadge, fmtPct } from "./ReportDocument";
 import { asNarrative, buildClassSummaries, mergeNarrative, termRange, type ClassSummary, type ReportNarrative, type TermOption } from "./summary";
-import { ui } from "@/components/learn/ui";
+import { EmptyState, Notice, StatusChip, ui } from "@/components/learn/ui";
+import { Tabs } from "@/components/learn/Tabs";
 
 type Mode = "admin" | "teach";
 type Child = { id: string; name: string };
@@ -53,6 +54,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
   const [selected, setSelected] = useState<string[]>([]);
   const [recent, setRecent] = useState<ListRow[]>([]);
   const [busy, setBusy] = useState(false);
+  const [view, setView] = useState<"classes" | "awaiting" | "recent">("classes");
   // Sending a report back to its teacher: which one, and the reason being typed.
   const [returning, setReturning] = useState<{ id: string; reason: string } | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
@@ -158,7 +160,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
     setReports(repMap);
     setSummaries(sums);
     setDrafts({});
-    setOpenChild(null);
+    // The open report stays open after saving or refreshing figures.
     setRosterLoading(false);
   }, [supabase, cls, term]);
 
@@ -356,308 +358,227 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
 
   const releasableInRoster = roster.map((k) => reports[k.id]).filter((r): r is ReportRow => !!r && (r.status === "pending_approval" || r.status === "approved")).map((r) => r.id);
 
+  const ordered = roster;
+  const openIdx = openChild ? ordered.findIndex((k) => k.id === openChild) : -1;
+  const openKid = openIdx >= 0 ? ordered[openIdx] : null;
+  const counts = {
+    notStarted: roster.filter((k) => !reports[k.id]).length,
+    draft: roster.filter((k) => reports[k.id]?.status === "draft").length,
+    waiting: roster.filter((k) => reports[k.id]?.status === "pending_approval" || reports[k.id]?.status === "approved").length,
+    issued: roster.filter((k) => reports[k.id]?.status === "released").length,
+  };
+  const viewTabs =
+    mode === "admin"
+      ? [
+          { key: "classes" as const, label: "Write and review" },
+          { key: "awaiting" as const, label: "Awaiting approval", count: awaiting.length, countAlert: awaiting.length > 0 },
+          { key: "recent" as const, label: "Recently issued" },
+        ]
+      : [
+          { key: "classes" as const, label: "My classes" },
+          { key: "recent" as const, label: "Recent" },
+        ];
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <PrintStyles />
-      <PageHeader
-        title="Progress Reports"
-        subtitle="Built from Qur'an progress, attendance, homework and grades already recorded, with your comment added. Safeguarding records never appear."
-      />
+      <PageHeader title="Progress reports" subtitle="Built from the attendance, homework, grades and Qur'an progress already recorded. Add a comment, then submit or issue." />
 
-      <div className="space-y-6">
-        <div className={card}>
-          <label htmlFor="report-term" className="block text-sm font-medium text-ink">
-            Term
-          </label>
-          <select id="report-term" value={termId} onChange={(e) => setTermId(e.target.value)} className="mt-1 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm sm:w-72">
-            <option value="">All time</option>
-            {(terms || []).map((t) => (
-              <option key={t.id} value={t.id}>
-                {t.name}
-              </option>
-            ))}
-          </select>
-          {terms !== null && terms.length === 0 && (
-            <p className="mt-2 text-sm text-ink/60">
-              {mode === "admin" ? (
-                <>
-                  <Link href="/admin/calendar?tab=terms" className="font-medium text-teal-700 underline">
-                    Add this year&apos;s terms
-                  </Link>{" "}
-                  (Calendar › Terms) so each report covers one term. Until then reports cover all time.
-                </>
-              ) : (
-                "No terms are set up yet, so reports cover all time. The head or office can add terms under Calendar › Terms."
-              )}
-            </p>
-          )}
-        </div>
+      <Tabs variant="switch" items={viewTabs} value={view} onChange={setView} label="Reports" />
 
-        {msg && (
-          <p role="status" className="rounded-lg border border-gold-light/60 bg-cream px-4 py-2 text-sm text-ink/80">
-            {msg}
-          </p>
-        )}
+      {msg && (
+        <p role="status" className="rounded-lg border border-gold-light/60 bg-cream px-4 py-2 text-sm text-ink/80">
+          {msg}
+        </p>
+      )}
 
-        {mode === "admin" && awaiting.length > 0 && (
-          <div className={card}>
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <h2 className="font-serif text-h3 font-semibold text-ink">Awaiting approval ({awaiting.length})</h2>
-              <div className="flex flex-wrap gap-2">
-                <button type="button" disabled={busy || selected.length === 0} onClick={() => releaseIds(selected, false)} className={btnPrimary}>
-                  Approve &amp; release selected ({selected.length})
-                </button>
-                <button type="button" disabled={busy} onClick={() => releaseIds(awaiting.map((a) => a.id), false)} className={btnGhost}>
-                  Release all
-                </button>
-              </div>
-            </div>
-            <ul className="mt-3 divide-y divide-gold-light/30">
-              {awaiting.map((a) => (
-                <li key={a.id} className="flex flex-wrap items-start gap-3 py-2 text-sm">
-                  <input
-                    type="checkbox"
-                    aria-label={`Select ${a.children?.name || "report"}`}
-                    checked={selected.includes(a.id)}
-                    onChange={(e) => setSelected((s) => (e.target.checked ? [...s, a.id] : s.filter((x) => x !== a.id)))}
-                    className="mt-1"
-                  />
-                  <div className="min-w-0 flex-1">
-                    <p className="font-medium text-ink">
-                      {a.children?.name || "Student"} <span className="font-normal text-ink/60">· {a.terms?.name || "All time"}</span>
-                    </p>
-                    {a.overall_comment && <p className="line-clamp-2 text-ink/70">{a.overall_comment}</p>}
-                  </div>
-                  <StatusBadge status={a.status} />
-                  <button type="button" disabled={busy} onClick={() => setReturning(returning?.id === a.id ? null : { id: a.id, reason: "" })} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
-                    Send back
-                  </button>
-                  <button type="button" disabled={busy} onClick={() => releaseIds([a.id], false)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
-                    Release
-                  </button>
-                  {returning?.id === a.id && (
-                    <div className="basis-full pl-7">
-                      <label htmlFor={`return-${a.id}`} className="block text-xs font-medium text-ink">
-                        What needs changing? The teacher sees this.
-                      </label>
-                      <div className="mt-1 flex flex-wrap gap-2">
-                        <input
-                          id={`return-${a.id}`}
-                          value={returning.reason}
-                          onChange={(e) => setReturning({ id: a.id, reason: e.target.value })}
-                          className="min-w-0 flex-1 rounded-md border border-gold-light/60 px-3 py-1.5 text-sm"
-                          placeholder="e.g. Please mention his progress in Qur'an recitation."
-                        />
-                        <button type="button" disabled={busy} onClick={() => sendBack(a.id, returning.reason)} className={btnPrimary}>
-                          Send back
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        <div className={card}>
-          <h2 className="font-serif text-h3 font-semibold text-ink">{mode === "admin" ? "Classes" : "Your classes"}</h2>
-          {classes === null ? (
-            <p className="mt-2 text-sm text-ink/60">Loading…</p>
-          ) : classes.length === 0 ? (
-            <p className="mt-2 text-sm text-ink/60">
-              {mode === "admin" ? (
-                <>
-                  No classes yet. Set them up under{" "}
-                  <Link href="/admin/academic" className="font-medium text-teal-700 underline">
-                    Academic setup
-                  </Link>
-                  .
-                </>
-              ) : (
-                "You are not assigned to any classes yet."
-              )}
-            </p>
-          ) : (
-            <div className="mt-3 space-y-3">
-              {groups.map(([name, g]) => (
-                <details key={name} open className="rounded-xl border border-gold-light/40">
-                  <summary className="cursor-pointer select-none px-4 py-3 text-sm font-medium text-ink">
-                    {name} · {g.items.length} class{g.items.length === 1 ? "" : "es"}
-                  </summary>
-                  <div className="grid gap-2 px-4 pb-4 sm:grid-cols-2 lg:grid-cols-3">
+      {view === "classes" && (
+        <>
+          <div className={`${card} grid gap-3 sm:grid-cols-2`}>
+            <label className={ui.label}>
+              Class
+              <select value={classId} onChange={(e) => setClassId(e.target.value)} className={`mt-1 ${ui.input}`}>
+                <option value="">{classes === null ? "Loading…" : classes.length === 0 ? "No classes yet" : "Choose a class…"}</option>
+                {groups.map(([name, g]) => (
+                  <optgroup key={name} label={name}>
                     {g.items.map((c) => (
-                      <button
-                        key={c.id}
-                        type="button"
-                        aria-pressed={c.id === classId}
-                        onClick={() => setClassId(c.id)}
-                        className={`rounded-xl border p-3 text-left transition-colors ${c.id === classId ? "border-teal-700 bg-teal-50 ring-1 ring-teal-700" : "border-gold-light/60 bg-white hover:bg-cream"}`}
-                      >
-                        <span className="block text-sm font-semibold text-ink">{c.name}</span>
-                        {c.teacher && <span className="block text-xs text-ink/60">{c.teacher}</span>}
-                      </button>
+                      <option key={c.id} value={c.id}>
+                        {c.name}
+                        {c.teacher ? ` (${c.teacher})` : ""}
+                      </option>
                     ))}
-                  </div>
-                </details>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {cls && (
-          <div className={card}>
-            <div className="flex flex-wrap items-start justify-between gap-3">
-              <div className="min-w-0">
-                <h2 className="font-serif text-h3 font-semibold text-ink">{cls.name}</h2>
-                <p className="text-sm text-ink/60">
-                  {termLabel} · {roster.length} student{roster.length === 1 ? "" : "s"}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <button type="button" disabled={busy || rosterLoading || roster.length === 0} onClick={generateAll} className={btnPrimary}>
-                  Generate for whole class
-                </button>
-                {mode === "teach" && (
-                  <button type="button" disabled={busy || rosterLoading} onClick={submitAllDrafts} className={btnGhost}>
-                    Submit all drafts
-                  </button>
-                )}
-                {mode === "admin" && (
-                  <button type="button" disabled={busy || releasableInRoster.length === 0} onClick={() => releaseIds(releasableInRoster, true)} className={btnGhost}>
-                    Release class ({releasableInRoster.length})
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {rosterLoading ? (
-              <p className="mt-4 text-sm text-ink/60">Building summaries…</p>
-            ) : roster.length === 0 ? (
-              <p className="mt-4 text-sm text-ink/60">No students are enrolled in this class yet.</p>
-            ) : (
-              <ul className="mt-4 divide-y divide-gold-light/30 rounded-xl border border-gold-light/40">
-                {roster.map((k) => {
-                  const rep = reports[k.id];
-                  const s = summaries[k.id];
-                  const isOpen = openChild === k.id;
-                  const canEdit = !rep || editable(rep.status);
-                  return (
-                    <li key={k.id}>
-                      <button
-                        type="button"
-                        aria-expanded={isOpen}
-                        onClick={() => setOpenChild(isOpen ? null : k.id)}
-                        className="flex w-full flex-wrap items-center justify-between gap-2 px-4 py-3 text-left hover:bg-cream/50"
-                      >
-                        <span className="min-w-0 font-medium text-ink">{k.name}</span>
-                        <span className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ink/60">
-                          {s && (
-                            <>
-                              <span>Attendance {fmtPct(s.attendance.rate)}</span>
-                              <span>
-                                Homework {s.homework.done}/{s.homework.total}
-                              </span>
-                              <span>Avg {fmtPct(s.assessments.average_percent)}</span>
-                            </>
-                          )}
-                          {rep?.status === "draft" && rep.returned_reason && <span className="rounded-full bg-amber-50 px-2 py-0.5 font-medium text-amber-900">Sent back</span>}
-                          {rep ? <StatusBadge status={rep.status} /> : <span className="rounded-full bg-cream px-2 py-0.5 font-medium text-ink/60">Not started</span>}
-                          {rep?.status === "released" && rep.version > 1 && <span className="text-ink/60">version {rep.version}</span>}
-                        </span>
-                      </button>
-                      {isOpen && (
-                        <div className="space-y-3 border-t border-gold-light/30 bg-cream/20 p-3 sm:p-4">
-                          {rep?.status === "draft" && rep.returned_reason && (
-                            <p role="status" className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950 print:hidden">
-                              <span className="font-semibold">Sent back:</span> {rep.returned_reason}
-                            </p>
-                          )}
-                          <ReportDocument
-                            childName={k.name}
-                            termLabel={termLabel}
-                            status={rep?.status}
-                            narrative={narrativeFor(k.id)}
-                            comment={commentFor(k.id) || null}
-                            printing={printId === k.id}
-                            live={!rep || editable(rep.status)}
-                          />
-                          <div className="print:hidden">
-                            <label htmlFor={`comment-${k.id}`} className="block text-sm font-medium text-ink">
-                              Comment for {k.name}
-                            </label>
-                            <textarea
-                              id={`comment-${k.id}`}
-                              rows={4}
-                              disabled={!canEdit}
-                              value={commentFor(k.id)}
-                              onChange={(e) => setDrafts((d) => ({ ...d, [k.id]: e.target.value }))}
-                              className="mt-1 w-full rounded-md border border-gold-light/60 px-3 py-2 text-sm disabled:bg-cream"
-                            />
-                            {canEdit && snippets.length > 0 && (
-                              <div className="mt-2 flex flex-wrap gap-2">
-                                {snippets.map((c) => (
-                                  <button
-                                    key={c.id}
-                                    type="button"
-                                    onClick={() => setDrafts((d) => ({ ...d, [k.id]: commentFor(k.id) ? `${commentFor(k.id)} ${c.text}` : c.text }))}
-                                    className="rounded-lg border border-gold-light bg-white px-2 py-1.5 text-xs font-medium text-ink/80 transition-colors hover:bg-cream"
-                                  >
-                                    + {c.text.slice(0, 30)}
-                                    {c.text.length > 30 ? "…" : ""}
-                                  </button>
-                                ))}
-                              </div>
-                            )}
-                            {canEdit && missing(k.id).length > 0 && (
-                              <p className="mt-2 text-xs text-ink/70">Before it can be {mode === "admin" ? "issued" : "submitted"}, this report needs {missing(k.id).join(" and ")}.</p>
-                            )}
-                            <div className="mt-3 flex flex-wrap gap-2">
-                              {canEdit && (
-                                <button type="button" disabled={busy} onClick={() => writeReport(k, rep?.status || "draft")} className={btnGhost}>
-                                  {rep ? "Save" : "Generate report"}
-                                </button>
-                              )}
-                              {mode === "teach" && canEdit && (
-                                <button type="button" disabled={busy || missing(k.id).length > 0 || rep?.status === "pending_approval"} onClick={() => writeReport(k, "pending_approval")} className={btnPrimary}>
-                                  Submit for approval
-                                </button>
-                              )}
-                              {mode === "admin" && canEdit && (
-                                <button type="button" disabled={busy || missing(k.id).length > 0} onClick={() => writeReport(k, "released")} className={btnPrimary}>
-                                  Approve &amp; release
-                                </button>
-                              )}
-                              {mode === "admin" && rep?.status === "released" && (
-                                <button type="button" disabled={busy} onClick={() => reopen(rep.id)} className={btnGhost}>
-                                  Reopen for a correction
-                                </button>
-                              )}
-                              <button type="button" onClick={() => print(k.id)} className={btnGhost}>
-                                Print / Save as PDF
-                              </button>
-                            </div>
-                            {mode === "teach" && <p className="mt-2 text-xs text-ink/65">Once submitted, only the Headteacher or an admin can approve and release it to the family.</p>}
-                          </div>
-                        </div>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
+                  </optgroup>
+                ))}
+              </select>
+            </label>
+            <label className={ui.label}>
+              Term
+              <select value={termId} onChange={(e) => setTermId(e.target.value)} className={`mt-1 ${ui.input}`}>
+                <option value="">All time</option>
+                {(terms || []).map((t) => (
+                  <option key={t.id} value={t.id}>
+                    {t.name}
+                  </option>
+                ))}
+              </select>
+              {terms !== null && terms.length === 0 && (
+                <span className="mt-1 block text-xs font-normal text-ink/65">
+                  {mode === "admin" ? (
+                    <>
+                      No terms yet:{" "}
+                      <Link href="/admin/calendar?tab=terms" className="font-medium text-teal-700 underline">
+                        add them
+                      </Link>{" "}
+                      so each report covers one term.
+                    </>
+                  ) : (
+                    "No terms yet, so reports cover all time."
+                  )}
+                </span>
+              )}
+            </label>
           </div>
-        )}
 
-        <div className={card}>
-          <h2 className="font-serif text-h3 font-semibold text-ink">{mode === "admin" ? "Recently issued" : "Recent reports"}</h2>
-          {recent.length === 0 ? (
-            <p className="mt-2 text-sm text-ink/60">{mode === "admin" ? "Nothing has been issued yet." : "You haven't started any reports yet. Pick a class above."}</p>
+          {cls && (
+            <section className="rounded-2xl border border-gold-light bg-white" aria-labelledby="roster-heading">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gold-light px-4 py-3">
+                <div>
+                  <h2 id="roster-heading" className="font-serif text-h3 font-semibold text-ink">
+                    {cls.name}
+                  </h2>
+                  <p className="text-sm text-ink/65">
+                    {termLabel} · {roster.length} pupils
+                    {roster.length > 0 && ` · ${counts.issued} issued, ${counts.waiting} awaiting approval, ${counts.draft} drafts, ${counts.notStarted} not started`}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <button type="button" disabled={busy || rosterLoading || roster.length === 0} onClick={generateAll} className={btnPrimary}>
+                    {counts.notStarted === roster.length ? "Create reports for the class" : "Refresh the figures"}
+                  </button>
+                  {mode === "teach" && counts.draft > 0 && (
+                    <button type="button" disabled={busy || rosterLoading} onClick={submitAllDrafts} className={btnGhost}>
+                      Submit ready drafts
+                    </button>
+                  )}
+                  {mode === "admin" && releasableInRoster.length > 0 && (
+                    <button type="button" disabled={busy} onClick={() => releaseIds(releasableInRoster, true)} className={btnGhost}>
+                      Issue to families ({releasableInRoster.length})
+                    </button>
+                  )}
+                </div>
+              </div>
+              {rosterLoading ? (
+                <div className="m-4 h-24 animate-pulse rounded-lg bg-cream" />
+              ) : roster.length === 0 ? (
+                <p className="p-4 text-sm text-ink/65">No pupils are enrolled in this class yet.</p>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <caption className="sr-only">Reports for {cls.name}</caption>
+                    <thead>
+                      <tr className="border-b border-gold-light text-left text-xs uppercase tracking-wide text-ink/65">
+                        <th scope="col" className="px-4 py-2 font-semibold">Pupil</th>
+                        <th scope="col" className="hidden px-2 py-2 font-semibold sm:table-cell">Attendance</th>
+                        <th scope="col" className="hidden px-2 py-2 font-semibold sm:table-cell">Homework</th>
+                        <th scope="col" className="hidden px-2 py-2 font-semibold md:table-cell">Average</th>
+                        <th scope="col" className="px-2 py-2 font-semibold">Comment</th>
+                        <th scope="col" className="px-4 py-2 text-right font-semibold">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {roster.map((k) => {
+                        const rep = reports[k.id];
+                        const sm = summaries[k.id];
+                        return (
+                          <tr key={k.id} className="border-b border-gold-light/50 last:border-0 hover:bg-cream/50">
+                            <th scope="row" className="px-4 py-2.5 text-left font-medium">
+                              <button type="button" onClick={() => setOpenChild(k.id)} className="text-ink hover:text-teal-800 hover:underline">
+                                {k.name}
+                              </button>
+                            </th>
+                            <td className="hidden px-2 py-2.5 tabular-nums sm:table-cell">{sm ? fmtPct(sm.attendance.rate) : "–"}</td>
+                            <td className="hidden px-2 py-2.5 tabular-nums sm:table-cell">{sm ? `${sm.homework.done}/${sm.homework.total}` : "–"}</td>
+                            <td className="hidden px-2 py-2.5 tabular-nums md:table-cell">{sm ? fmtPct(sm.assessments.average_percent) : "–"}</td>
+                            <td className="px-2 py-2.5">{(rep?.overall_comment || "").trim() ? <span className="text-green-800">Written</span> : <span className="text-ink/55">Not yet</span>}</td>
+                            <td className="px-4 py-2.5 text-right">
+                              <span className="inline-flex flex-wrap justify-end gap-1">
+                                {rep?.status === "draft" && rep.returned_reason && <StatusChip tone="warn">Sent back</StatusChip>}
+                                {rep ? <StatusBadge status={rep.status} /> : <StatusChip>Not started</StatusChip>}
+                              </span>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                  <p className="px-4 py-2 text-xs text-ink/60">Choose a pupil to see their report and write the comment.</p>
+                </div>
+              )}
+            </section>
+          )}
+        </>
+      )}
+
+      {view === "awaiting" && mode === "admin" && (
+        <section className={card} aria-label="Awaiting approval">
+          {awaiting.length === 0 ? (
+            <EmptyState title="Nothing is waiting for approval." />
           ) : (
-            <ul className="mt-3 divide-y divide-gold-light/30">
+            <>
+              <div className="flex flex-wrap items-center justify-end gap-2">
+                <button type="button" disabled={busy || selected.length === 0} onClick={() => releaseIds(selected, false)} className={btnPrimary}>
+                  Approve and issue selected ({selected.length})
+                </button>
+                <button type="button" disabled={busy} onClick={() => releaseIds(awaiting.map((x) => x.id), false)} className={btnGhost}>
+                  Issue all
+                </button>
+              </div>
+              <ul className="mt-3 divide-y divide-gold-light/30">
+                {awaiting.map((x) => (
+                  <li key={x.id} className="flex flex-wrap items-start gap-3 py-2.5 text-sm">
+                    <input type="checkbox" aria-label={`Select ${x.children?.name || "report"}`} checked={selected.includes(x.id)} onChange={(e) => setSelected((sl) => (e.target.checked ? [...sl, x.id] : sl.filter((y) => y !== x.id)))} className="mt-1" />
+                    <div className="min-w-0 flex-1">
+                      <p className="font-medium text-ink">
+                        {x.children?.name || "Pupil"} <span className="font-normal text-ink/60">· {x.terms?.name || "All time"}</span>
+                      </p>
+                      {x.overall_comment && <p className="line-clamp-2 text-ink/70">{x.overall_comment}</p>}
+                    </div>
+                    <button type="button" disabled={busy} onClick={() => setReturning(returning?.id === x.id ? null : { id: x.id, reason: "" })} className={`${btnGhost} ${ui.sm}`}>
+                      Send back
+                    </button>
+                    <button type="button" disabled={busy} onClick={() => releaseIds([x.id], false)} className={`${btnPrimary} ${ui.sm}`}>
+                      Issue
+                    </button>
+                    {returning?.id === x.id && (
+                      <div className="basis-full pl-7">
+                        <label htmlFor={`return-${x.id}`} className="block text-xs font-medium text-ink">
+                          What needs changing? The teacher sees this.
+                        </label>
+                        <div className="mt-1 flex flex-wrap gap-2">
+                          <input id={`return-${x.id}`} value={returning.reason} onChange={(e) => setReturning({ id: x.id, reason: e.target.value })} className={`min-w-0 flex-1 ${ui.input}`} placeholder="e.g. Please mention his progress in Qur'an recitation." />
+                          <button type="button" disabled={busy} onClick={() => sendBack(x.id, returning.reason)} className={btnPrimary}>
+                            Send back
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </section>
+      )}
+
+      {view === "recent" && (
+        <section className={card} aria-label={mode === "admin" ? "Recently issued" : "Recent reports"}>
+          {recent.length === 0 ? (
+            <EmptyState title={mode === "admin" ? "Nothing has been issued yet." : "You haven't started any reports yet."} />
+          ) : (
+            <ul className="divide-y divide-gold-light/30">
               {recent.map((r) => (
                 <li key={r.id} className="flex flex-wrap items-center justify-between gap-2 py-2 text-sm">
-                  <span className="min-w-0 font-medium text-ink">{r.children?.name || "Student"}</span>
+                  <span className="min-w-0 font-medium text-ink">{r.children?.name || "Pupil"}</span>
                   <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink/60">
                     <span>{r.terms?.name || "All time"}</span>
                     <span>{fmtDate(mode === "admin" ? r.released_at : r.updated_at)}</span>
@@ -667,8 +588,93 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
               ))}
             </ul>
           )}
+        </section>
+      )}
+
+      {/* One pupil's report in a side panel: the report as the family will see it, the comment, and the next step. */}
+      {openKid && (
+        <div className="fixed inset-0 z-50 flex justify-end bg-ink/40 print:static print:bg-transparent" role="dialog" aria-modal="true" aria-label={`${openKid.name}: progress report`}>
+          <button type="button" aria-label="Close" className="flex-1 cursor-default print:hidden" onClick={() => setOpenChild(null)} />
+          <div className="flex h-full w-full max-w-3xl flex-col bg-cream shadow-2xl print:max-w-none print:shadow-none">
+            <div className="flex items-center gap-2 border-b border-gold-light bg-white px-4 py-3 print:hidden">
+              <button type="button" className={`${btnGhost} ${ui.sm}`} disabled={openIdx <= 0} onClick={() => setOpenChild(ordered[openIdx - 1].id)}>
+                ‹ Previous
+              </button>
+              <p className="min-w-0 flex-1 truncate text-center text-sm font-semibold text-ink">
+                {openKid.name} <span className="font-normal text-ink/60">· {openIdx + 1} of {ordered.length}</span>
+              </p>
+              <button type="button" className={`${btnGhost} ${ui.sm}`} disabled={openIdx >= ordered.length - 1} onClick={() => setOpenChild(ordered[openIdx + 1].id)}>
+                Next ›
+              </button>
+              <button type="button" className={`${btnGhost} ${ui.sm}`} onClick={() => setOpenChild(null)}>
+                Close
+              </button>
+            </div>
+            {(() => {
+              const k = openKid;
+              const rep = reports[k.id];
+              const canEdit = !rep || editable(rep.status);
+              const need = missing(k.id);
+              return (
+                <div className="flex-1 space-y-4 overflow-y-auto p-4">
+                  {rep?.status === "draft" && rep.returned_reason && (
+                    <Notice tone="warn">
+                      <span className="font-semibold">Sent back:</span> {rep.returned_reason}
+                    </Notice>
+                  )}
+                  <ReportDocument childName={k.name} termLabel={termLabel} status={rep?.status} narrative={narrativeFor(k.id)} comment={commentFor(k.id) || null} printing={printId === k.id} live={!rep || editable(rep.status)} />
+                  <div className={`${card} print:hidden`}>
+                    <label htmlFor={`comment-${k.id}`} className={ui.label}>
+                      Comment for {k.name}
+                    </label>
+                    <textarea id={`comment-${k.id}`} rows={5} disabled={!canEdit} value={commentFor(k.id)} onChange={(e) => setDrafts((d) => ({ ...d, [k.id]: e.target.value }))} className={`mt-1 ${ui.input}`} />
+                    {canEdit && snippets.length > 0 && (
+                      <details className="mt-2">
+                        <summary className="cursor-pointer text-xs font-medium text-teal-700">Add a sentence from the comment bank</summary>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {snippets.map((c) => (
+                            <button key={c.id} type="button" onClick={() => setDrafts((d) => ({ ...d, [k.id]: commentFor(k.id) ? `${commentFor(k.id)} ${c.text}` : c.text }))} className={ui.chip}>
+                              + {c.text.slice(0, 40)}
+                              {c.text.length > 40 ? "…" : ""}
+                            </button>
+                          ))}
+                        </div>
+                      </details>
+                    )}
+                    {canEdit && need.length > 0 && <p className="mt-2 text-xs text-ink/70">Before it can be {mode === "admin" ? "issued" : "submitted"}, this report needs {need.join(" and ")}.</p>}
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {canEdit && (
+                        <button type="button" disabled={busy} onClick={() => writeReport(k, rep?.status || "draft")} className={btnGhost}>
+                          Save
+                        </button>
+                      )}
+                      {mode === "teach" && canEdit && (
+                        <button type="button" disabled={busy || need.length > 0 || rep?.status === "pending_approval"} onClick={() => writeReport(k, "pending_approval")} className={btnPrimary}>
+                          Submit for approval
+                        </button>
+                      )}
+                      {mode === "admin" && canEdit && (
+                        <button type="button" disabled={busy || need.length > 0} onClick={() => writeReport(k, "released")} className={btnPrimary}>
+                          Approve and issue
+                        </button>
+                      )}
+                      {mode === "admin" && rep?.status === "released" && (
+                        <button type="button" disabled={busy} onClick={() => reopen(rep.id)} className={btnGhost}>
+                          Reopen for a correction
+                        </button>
+                      )}
+                      <button type="button" onClick={() => print(k.id)} className={btnGhost}>
+                        Print or save as PDF
+                      </button>
+                    </div>
+                    {mode === "teach" && <p className="mt-2 text-xs text-ink/65">Once submitted, the Headteacher approves it and issues it to the family.</p>}
+                  </div>
+                </div>
+              );
+            })()}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

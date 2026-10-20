@@ -148,20 +148,28 @@ export function ReportDocument({
   const classes = narrative ? Object.values(narrative.classes) : [];
   const legacy = Object.entries(subjectComments || {});
   return (
-    <article className={`rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6 ${printing ? PRINT_AREA : ""}`}>
-      <p className="mb-2 hidden text-[10pt] font-semibold uppercase tracking-wider print:block">Tarbiyyah Global Academy</p>
-      <header className="flex flex-wrap items-start justify-between gap-2 border-b border-gold-light/40 pb-3">
-        <div className="min-w-0">
-          <p className="text-xs uppercase tracking-wide text-ink/65">Progress Report</p>
-          <h2 className="font-serif text-xl font-semibold text-ink">{childName}</h2>
-          <p className="text-sm text-ink/60">
-            {termLabel}
-            {issuedAt ? ` · Issued ${new Date(issuedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}` : ""}
-            {live ? " · Live preview" : ""}
-          </p>
+    <article className={`overflow-hidden rounded-2xl border border-gold-light/60 bg-white ${printing ? PRINT_AREA : ""}`}>
+      {/* Letterhead: the Academy's mark, then who and when. */}
+      <header className="border-b-4 border-gold-500 bg-cream/60 px-5 pb-4 pt-5 sm:px-7">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          {/* eslint-disable-next-line @next/next/no-img-element -- plain img so it also prints */}
+          <img src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={180} height={56} className="h-11 w-auto" />
+          <div className="text-right">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-700">Progress report</p>
+            <p className="text-sm text-ink/70">{termLabel}</p>
+          </div>
         </div>
-        {status && <StatusBadge status={status} />}
+        <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
+          <div className="min-w-0">
+            <h2 className="font-serif text-2xl font-semibold text-ink">{childName}</h2>
+            <p className="text-sm text-ink/65">
+              {issuedAt ? `Issued ${new Date(issuedAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}` : live ? "Live preview, built from what is recorded now" : "Not issued yet"}
+            </p>
+          </div>
+          {status && <StatusBadge status={status} />}
+        </div>
       </header>
+      <div className="p-4 sm:p-6">
       <div className="mt-4 space-y-3">
         {classes.length === 0 && legacy.length === 0 && <p className="text-sm text-ink/60">No recorded attendance, homework or grades for this period.</p>}
         {classes.map((c) => (
@@ -180,6 +188,11 @@ export function ReportDocument({
             </ul>
           )}
         </section>
+      </div>
+      <footer className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-gold-light/50 pt-3 text-[11px] text-ink/60">
+        <span>Tarbiyyah Global Academy · part of the Tarbiyyah Education Trust</span>
+        <span>globalacademy@tarbiyyah.co.uk</span>
+      </footer>
       </div>
     </article>
   );

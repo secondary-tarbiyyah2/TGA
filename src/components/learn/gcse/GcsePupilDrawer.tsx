@@ -239,11 +239,11 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
                 </label>
                 <label>
                   Mark
-                  <input type="number" min={0} step="0.5" value={mark} onChange={(e) => setMark(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+                  <input type="text" inputMode="decimal" min={0} step="0.5" value={mark} onChange={(e) => setMark(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
                 </label>
                 <label>
                   Out of
-                  <input type="number" min={1} step="0.5" value={outOf} onChange={(e) => setOutOf(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+                  <input type="text" inputMode="decimal" min={1} step="0.5" value={outOf} onChange={(e) => setOutOf(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
                 </label>
               </div>
               <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-ink">

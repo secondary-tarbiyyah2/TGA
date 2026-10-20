@@ -64,7 +64,7 @@ export function PaymentDialog({
         <div className="mt-4 space-y-3 text-sm">
           <label className="block">
             <span className="text-ink/70">Amount (£)</span>
-            <input type="number" min="0" step="0.01" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
+            <input type="text" min="0" step="0.01" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
             {value > balance && <span className="mt-1 block text-xs text-red-700">More than the {formatGBP(balance)} outstanding.</span>}
           </label>
           <div>

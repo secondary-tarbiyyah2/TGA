@@ -13,7 +13,6 @@ import { PrintButton } from "@/components/learn/PrintButton";
 import { PrintScope } from "@/components/learn/printScope";
 import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
 import { ChildDetailsBanner } from "@/components/learn/pupil/ChildDetailsBanner";
-import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { FamilyFees } from "@/components/learn/FamilyFees";
 import { UpcomingLessons } from "@/components/learn/UpcomingLessons";
 import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
@@ -22,9 +21,8 @@ import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
 import { GcseProgressWidget } from "@/components/learn/GcseTracker";
 import { HomeworkFeedbackWidget } from "@/components/learn/homework/HomeworkFeedbackWidget";
 import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
-import { FamilyLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
 import { FamilyRewards } from "@/components/learn/rewards/RewardsCards";
-import { DigestPreference } from "@/components/learn/rewards/DigestPreference";
+import { ui } from "@/components/learn/ui";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -196,11 +194,24 @@ function FamilyContent() {
           <ChildCard key={child.id} child={child} />
         ))}
 
+        {hasChildren && (
+          <nav aria-label="Quick actions" className="flex flex-wrap gap-2">
+            <Link href="/family/absences" className={ui.btnPrimary}>
+              Report an absence
+            </Link>
+            <Link href="/family/messages" className={ui.btnSecondary}>
+              Message a teacher
+            </Link>
+            <Link href="/family/revision" className={ui.btnSecondary}>
+              Revision progress
+            </Link>
+          </nav>
+        )}
+
         {hasChildren && <FamilyRewards childIds={children.map((c) => c.id)} />}
-        {hasChildren && <FamilyLeaderboard kids={children} />}
         {hasChildren && <FamilyFees familyChildren={children} />}
 
-        <AnnouncementsFeed />
+        <AnnouncementsFeed limit={3} />
 
         <details className="group rounded-2xl border border-gold-light bg-white print:hidden" open={children !== null && !hasChildren ? true : undefined}>
           <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-3">
@@ -229,8 +240,6 @@ function FamilyContent() {
           </div>
         </details>
 
-        {hasChildren && <DigestPreference />}
-        <IcsFeedLink />
       </div>
     </DashboardWithPanel>
   );

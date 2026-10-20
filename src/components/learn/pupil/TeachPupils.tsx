@@ -1,12 +1,69 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatStamp } from "./data";
 import { PupilRecord } from "./PupilRecord";
 import { ackState, usePupils, type PupilRow } from "./usePupils";
+import { Tabs } from "@/components/learn/Tabs";
+import { localDateKey } from "@/lib/learn/calendar";
+import { reasonLabel } from "@/components/learn/absences/data";
+
+type Signals = { rate: number | null; lessons: number; awayToday: string | null };
+
+/**
+ * What a teacher needs to know about each pupil at a glance, from records the
+ * portal already keeps: attendance over the last 30 days, and whether they
+ * are away today with the reason the family or office gave. RLS limits all
+ * of it to the teacher's own classes.
+ */
+function usePupilSignals(ids: string[]): Record<string, Signals> | null {
+  const [out, setOut] = useState<Record<string, Signals> | null>(null);
+  const key = ids.join(",");
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase || !key) return;
+    let alive = true;
+    (async () => {
+      const today = localDateKey(new Date());
+      const from = new Date();
+      from.setDate(from.getDate() - 30);
+      const [att, notes, reasons] = await Promise.all([
+        supabase.from("attendance_records").select("child_id, status, lesson_instances!inner(date)").gte("lesson_instances.date", localDateKey(from)).lte("lesson_instances.date", today).limit(5000),
+        supabase.from("absence_notes").select("child_id, reason, from_date, to_date, status").lte("from_date", today).gte("to_date", today),
+        supabase.from("absence_reasons").select("child_id, reason_code").eq("absence_date", today),
+      ]);
+      if (!alive) return;
+      const m: Record<string, { seen: number; there: number; absentToday: boolean }> = {};
+      for (const r of (att.data as unknown as { child_id: string; status: string; lesson_instances: { date: string } | null }[]) || []) {
+        const x = (m[r.child_id] ||= { seen: 0, there: 0, absentToday: false });
+        x.seen++;
+        if (r.status === "present" || r.status === "late") x.there++;
+        if (r.lesson_instances?.date === today && (r.status === "absent" || r.status === "excused")) x.absentToday = true;
+      }
+      const noteBy = new Map(((notes.data as { child_id: string; reason: string }[]) || []).map((n) => [n.child_id, n.reason]));
+      const codeBy = new Map(((reasons.data as { child_id: string; reason_code: string }[]) || []).map((r) => [r.child_id, r.reason_code]));
+      const res: Record<string, Signals> = {};
+      for (const id of key.split(",")) {
+        const x = m[id];
+        const note = noteBy.get(id);
+        const code = codeBy.get(id);
+        res[id] = {
+          rate: x && x.seen ? Math.round((x.there / x.seen) * 100) : null,
+          lessons: x?.seen || 0,
+          awayToday: note ? note : code ? reasonLabel(code) || "Away" : x?.absentToday ? "No reason given yet" : null,
+        };
+      }
+      setOut(res);
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [key]);
+  return out;
+}
 
 const ACK_BADGE = {
   none: { label: "Not acknowledged", cls: "bg-amber-50 text-amber-900" },
@@ -20,10 +77,13 @@ export function TeachPupils() {
   const canAcknowledge = roles.some((r) => r.role === "teacher" || r.role === "teaching_assistant_cover");
   const [q, setQ] = useState("");
   const [cls, setCls] = useState("");
-  const [only, setOnly] = useState<"all" | "alerts" | "todo">("all");
+  const [only, setOnly] = useState<"all" | "alerts" | "away" | "todo">("all");
   const [open, setOpen] = useState<PupilRow | null>(null);
   const [busy, setBusy] = useState(false);
   const [ackError, setAckError] = useState<string | null>(null);
+
+  const taught = useMemo(() => (pupils || []).filter((p) => p.classes.length > 0), [pupils]);
+  const signals = usePupilSignals(taught.map((p) => p.id));
 
   const classOptions = useMemo(() => {
     const m = new Map<string, string>();
@@ -38,10 +98,11 @@ export function TeachPupils() {
       if (needle && !p.name.toLowerCase().includes(needle)) return false;
       if (cls && !p.classes.some((c) => c.id === cls)) return false;
       if (only === "alerts") return p.alerts.length > 0;
+      if (only === "away") return !!signals?.[p.id]?.awayToday;
       if (only === "todo") return ackState(p) !== "current";
       return true;
     });
-  }, [pupils, q, cls, only]);
+  }, [pupils, q, cls, only, signals]);
 
   const todo = (pupils || []).filter((p) => p.classes.length > 0 && ackState(p) !== "current").length;
 
@@ -64,16 +125,11 @@ export function TeachPupils() {
       <PageHeader
         crumbs={[{ label: "Dashboard", href: "/teach/dashboard" }, { label: "Pupils" }]}
         title="Pupils"
-        subtitle="Medical, allergy and emergency information for the pupils you teach. Please read it and mark it as read."
+        subtitle="Everyone you teach: who is away today and why, attendance, and the medical and additional-needs information to read."
       />
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
 
       <div className="space-y-4">
-        {canAcknowledge && todo > 0 && pupils && (
-          <p className="rounded-xl border border-amber-200 bg-amber-50/60 px-4 py-2 text-sm text-amber-950">
-            {todo} {todo === 1 ? "pupil" : "pupils"} still to read.
-          </p>
-        )}
         <div className="flex flex-wrap gap-2">
           <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className={`${selectCls} min-w-[12rem] flex-1`} />
           <select value={cls} onChange={(e) => setCls(e.target.value)} aria-label="Class" className={selectCls}>
@@ -85,25 +141,18 @@ export function TeachPupils() {
             ))}
           </select>
         </div>
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Show">
-          {(
-            [
-              ["all", "Everyone"],
-              ["alerts", "Medical alerts"],
-              ...(canAcknowledge ? ([["todo", "Still to read"]] as const) : []),
-            ] as readonly (readonly ["all" | "alerts" | "todo", string])[]
-          ).map(([k, label]) => (
-            <button
-              key={k}
-              type="button"
-              aria-pressed={only === k}
-              onClick={() => setOnly(k)}
-              className={`rounded-full border px-3 py-1.5 text-sm font-medium ${only === k ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+        <Tabs
+          variant="switch"
+          label="Show"
+          value={only}
+          onChange={setOnly}
+          items={[
+            { key: "all" as const, label: "Everyone", count: taught.length },
+            { key: "away" as const, label: "Away today", count: signals ? taught.filter((p) => signals[p.id]?.awayToday).length : undefined },
+            { key: "alerts" as const, label: "Medical alerts", count: taught.filter((p) => p.alerts.length > 0).length },
+            ...(canAcknowledge ? [{ key: "todo" as const, label: "Still to read", count: todo, countAlert: todo > 0 }] : []),
+          ]}
+        />
 
         {pupils === null ? (
           <p className="text-sm text-ink/60">Loading…</p>
@@ -113,21 +162,32 @@ export function TeachPupils() {
           <ul className="divide-y divide-gold-light/50 rounded-2xl border border-gold-light bg-white">
             {rows.map((p) => {
               const st = ackState(p);
+              const sig = signals?.[p.id];
+              const initials = p.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
               return (
                 <li key={p.id}>
-                  <button type="button" onClick={() => { setAckError(null); setOpen(p); }} className="flex w-full flex-wrap items-center justify-between gap-2 px-4 py-3 text-left hover:bg-cream/50">
-                    <span className="min-w-0">
+                  <button type="button" onClick={() => { setAckError(null); setOpen(p); }} className="flex w-full flex-wrap items-center gap-3 px-4 py-3 text-left hover:bg-cream/50">
+                    <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials}</span>
+                    <span className="min-w-0 flex-1">
                       <span className="block font-medium text-ink">{p.name}</span>
-                      <span className="block text-xs text-ink/55">{[p.yearGroup, p.classes.map((c) => c.name).join(", ")].filter(Boolean).join(" · ")}</span>
+                      <span className="block truncate text-xs text-ink/65">{[p.yearGroup, p.classes.map((c) => c.name).join(", ")].filter(Boolean).join(" · ")}</span>
+                      {sig?.awayToday && (
+                        <span className="mt-1 block text-xs font-medium text-amber-900">
+                          Away today: <span className="font-normal">{sig.awayToday}</span>
+                        </span>
+                      )}
                     </span>
-                    <span className="flex flex-wrap items-center gap-1.5">
+                    <span className="w-24 shrink-0 text-right">
+                      <span className={`block text-sm font-semibold tabular-nums ${sig?.rate != null && sig.rate < 90 ? "text-amber-800" : "text-ink"}`}>{sig?.rate != null ? `${sig.rate}%` : "–"}</span>
+                      <span className="block text-[11px] text-ink/60">attendance, 30 days</span>
+                    </span>
+                    <span className="flex basis-full flex-wrap items-center gap-1.5 sm:basis-auto">
                       {p.alerts.map((a) => (
                         <span key={a} className="rounded-full bg-red-50 px-2 py-0.5 text-xs font-semibold text-red-800">
                           {a}
                         </span>
                       ))}
-                      {!p.details?.completed_at && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/60">Family still completing</span>}
-                      {canAcknowledge && <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${ACK_BADGE[st].cls}`}>{ACK_BADGE[st].label}</span>}
+                      {canAcknowledge && st !== "current" && <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${ACK_BADGE[st].cls}`}>{ACK_BADGE[st].label}</span>}
                     </span>
                   </button>
                 </li>
@@ -147,7 +207,7 @@ export function TeachPupils() {
               </button>
             </div>
             <div className="overflow-y-auto p-4">
-              <PupilRecord child={{ id: open.id, name: open.name, dob: open.dob, yearGroup: open.yearGroup, classes: open.classes.map((c) => c.name) }} />
+              <PupilRecord teacherView child={{ id: open.id, name: open.name, dob: open.dob, yearGroup: open.yearGroup, classes: open.classes.map((c) => c.name) }} />
             </div>
             {canAcknowledge && (
               <div className="border-t border-gold-light/60 bg-white px-4 py-3">
@@ -158,11 +218,11 @@ export function TeachPupils() {
                       ? `You acknowledged this on ${formatStamp(open.ack.acknowledged_at)}.`
                       : ackState(open) === "stale"
                         ? "This record has changed since you last read it."
-                        : "Tick this off once you have read the medical and emergency information."}
+                        : "Tick this off once you have read the health and needs information."}
                   </p>
                   {ackState(open) !== "current" && (
                     <button type="button" disabled={busy} onClick={() => acknowledge(open)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
-                      {busy ? "Saving…" : "I've read the medical and emergency information"}
+                      {busy ? "Saving…" : "I've read this"}
                     </button>
                   )}
                 </div>

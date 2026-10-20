@@ -20,8 +20,8 @@ let pendingLock: ReturnType<typeof setTimeout> | null = null;
  * children on a shared device, not a server security boundary (RLS still
  * guards the data).
  *
- *  - The PIN is compulsory: a parent without one must create a 6-digit PIN
- *    before the family area opens (no "not now").
+ *  - The PIN is optional: children have their own logins, so it is only for
+ *    parents who share a device with them. Turned on/off in Account.
  *  - An older 4-5 digit PIN is accepted once, then must be replaced by a
  *    6-digit one before entry.
  *  - Every time the user switches into the family area the PIN is asked
@@ -35,7 +35,7 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
   const user = session && session !== "loading" ? session.user : null;
   const uid = user?.id ?? null;
   const isParent = roles.some((r) => r.role === "parent");
-  const { has, status, error: hasErr, loaded, reload } = useHasPin(uid, !!uid && rolesLoaded && isParent);
+  const { has, error: hasErr, loaded, reload } = useHasPin(uid, !!uid && rolesLoaded && isParent);
   const [unlocked, setUnlocked] = useState(false);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
@@ -140,16 +140,8 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
   if (!user || !rolesLoaded || !isParent) return <>{children}</>;
   if (!loaded) return <p className="py-10 text-center text-sm text-ink/60">Loading…</p>;
 
-  // Compulsory: no PIN yet means create one before anything else.
-  if (has === false && status === "none") {
-    return (
-      <PinSetup
-        title="Create your Parent PIN"
-        intro="A 6-digit PIN protects the family area when you share this device with your children. It's required."
-        save={(pin) => savePin(pin, null)}
-      />
-    );
-  }
+  // Optional (since Oct 2026): with no PIN the family area simply opens. Parents
+  // who share a device with their children can turn one on in Account.
 
   if (legacyPin !== null) {
     return (

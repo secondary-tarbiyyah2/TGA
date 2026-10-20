@@ -207,13 +207,13 @@ export function FeesEditor() {
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="text-sm text-ink">
             Number of terms
-            <input type="number" min={1} max={MAX_TERMS} step={1} value={settings.fee_terms} onChange={(e) => setSettings({ ...settings, fee_terms: e.target.value })} className={input} />
+            <input type="text" inputMode="decimal" min={1} max={MAX_TERMS} step={1} value={settings.fee_terms} onChange={(e) => setSettings({ ...settings, fee_terms: e.target.value })} className={input} />
             <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.terms} (Fees Policy: 19 Dec 2026 and 28 Mar 2027). Termly fee = annual fee ÷ terms.</span>
           </label>
           <label className="text-sm text-ink">
             Number of monthly instalments
             <input
-              type="number"
+              type="text" inputMode="decimal"
               list="fee-instalment-choices"
               min={1}
               max={MAX_INSTALMENTS}
@@ -229,17 +229,17 @@ export function FeesEditor() {
           </label>
           <label className="text-sm text-ink">
             Application fee (£, non-refundable)
-            <input type="number" min={0} step="0.01" value={settings.application_fee} onChange={(e) => setSettings({ ...settings, application_fee: e.target.value })} className={input} />
+            <input type="text" inputMode="decimal" min={0} step="0.01" value={settings.application_fee} onChange={(e) => setSettings({ ...settings, application_fee: e.target.value })} className={input} />
             <span className="mt-0.5 block text-xs text-ink/60">Default £{FEE_POLICY_DEFAULTS.applicationFee} (Fees Policy). Covers the baseline assessment and admin review. Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink">
             Annual payment discount (%)
-            <input type="number" min={0} max={100} step="0.1" value={settings.annual_discount_percent} onChange={(e) => setSettings({ ...settings, annual_discount_percent: e.target.value })} className={input} />
+            <input type="text" inputMode="decimal" min={0} max={100} step="0.1" value={settings.annual_discount_percent} onChange={(e) => setSettings({ ...settings, annual_discount_percent: e.target.value })} className={input} />
             <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 19 Dec 2026. Applied automatically in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink">
             Registration fee (£, one-time, per child)
-            <input type="number" min={0} step="0.01" value={settings.registration_fee} onChange={(e) => setSettings({ ...settings, registration_fee: e.target.value })} className={input} />
+            <input type="text" inputMode="decimal" min={0} step="0.01" value={settings.registration_fee} onChange={(e) => setSettings({ ...settings, registration_fee: e.target.value })} className={input} />
             <span className="mt-0.5 block text-xs text-ink/60">Default £{FEE_POLICY_DEFAULTS.registrationFee} (Fees Policy). Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink sm:col-span-2">
@@ -249,7 +249,7 @@ export function FeesEditor() {
           </label>
           <label className="text-sm text-ink">
             Deposit (£, default amount)
-            <input type="number" min={0} step="0.01" value={settings.admissions_deposit_amount} onChange={(e) => setSettings({ ...settings, admissions_deposit_amount: e.target.value })} className={input} />
+            <input type="text" inputMode="decimal" min={0} step="0.01" value={settings.admissions_deposit_amount} onChange={(e) => setSettings({ ...settings, admissions_deposit_amount: e.target.value })} className={input} />
             <span className="mt-0.5 block text-xs text-ink/60">Default deposit used by the admissions process. Leave blank for none.</span>
           </label>
         </div>
@@ -259,7 +259,7 @@ export function FeesEditor() {
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="text-sm text-ink">
             Sibling discount (%)
-            <input type="number" min={0} max={100} step="0.1" value={settings.sibling_discount_percent} onChange={(e) => setSettings({ ...settings, sibling_discount_percent: e.target.value })} className={input} />
+            <input type="text" inputMode="decimal" min={0} max={100} step="0.1" value={settings.sibling_discount_percent} onChange={(e) => setSettings({ ...settings, sibling_discount_percent: e.target.value })} className={input} />
             <span className="mt-0.5 block text-xs text-ink/60">Leave blank for no sibling discount.</span>
           </label>
           <label className="text-sm text-ink">
@@ -286,7 +286,7 @@ export function FeesEditor() {
                   </label>
                   <label className="text-sm text-ink">
                     {d.type === "percent" ? "Percent" : "Amount (£)"}
-                    <input type="number" min={0} step="0.01" value={d.value} onChange={(e) => patchD({ value: e.target.value })} className={input} />
+                    <input type="text" inputMode="decimal" min={0} step="0.01" value={d.value} onChange={(e) => patchD({ value: e.target.value })} className={input} />
                   </label>
                 </div>
                 <label className="text-sm text-ink">
@@ -329,7 +329,7 @@ export function FeesEditor() {
                 </label>
                 <label className="text-sm text-ink">
                   Annual fee (£)
-                  <input type="number" min={0} step="0.01" value={b.annual_fee} onChange={(e) => patch(b.key, { annual_fee: e.target.value })} className={input} />
+                  <input type="text" inputMode="decimal" min={0} step="0.01" value={b.annual_fee} onChange={(e) => patch(b.key, { annual_fee: e.target.value })} className={input} />
                 </label>
                 <label className="text-sm text-ink sm:col-span-2">
                   Note (optional)

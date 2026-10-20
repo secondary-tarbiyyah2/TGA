@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useNow } from "@/lib/learn/useNow";
 import { MarkRow } from "@/components/learn/homework/HomeworkCards";
+import { Tabs } from "@/components/learn/Tabs";
 import { ui } from "@/components/learn/ui";
 
 type Item = {
@@ -95,7 +96,6 @@ export function ReviewQueue() {
   }, [shown]);
 
   const stillWaiting = useMemo(() => new Set((items || []).map((i) => i.submission_id)), [items]);
-  const overWeek = (items || []).filter((i) => waiting(i.submitted_at) >= 7).length;
 
   // Open a homework's marking view from a link (?homework=<id>).
   useEffect(() => {
@@ -181,50 +181,66 @@ export function ReviewQueue() {
     );
   }
 
-  const chip = (k: typeof only, label: string, n?: number) => (
-    <button
-      key={k}
-      type="button"
-      aria-pressed={only === k}
-      onClick={() => setOnly(k)}
-      className={`rounded-full border px-3 py-1.5 text-sm font-medium ${only === k ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/75 hover:bg-cream"}`}
-    >
-      {label}
-      {n !== undefined ? ` (${n})` : ""}
-    </button>
-  );
+  const inClass = (items || []).filter((i) => !classId || i.class_id === classId);
+  const statusTabs = [
+    { key: "all" as const, label: "Everything", count: inClass.length },
+    { key: "week" as const, label: "Waiting 7+ days", count: inClass.filter((i) => waiting(i.submitted_at) >= 7).length },
+    { key: "late" as const, label: "Handed in late", count: inClass.filter((i) => i.is_late).length },
+  ];
+  const classCounts = classes.map(([id, name]) => {
+    const list = (items || []).filter((i) => i.class_id === id);
+    return { id, name, n: list.length, old: list.some((i) => waiting(i.submitted_at) >= 7) };
+  });
 
   return (
-    <div className="rounded-2xl border border-gold-light bg-white">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gold-light px-5 py-4">
-        <div>
-          <h1 className="font-serif text-h2 font-semibold text-ink">To review</h1>
-          <p className="text-sm text-ink/65">Work handed in and waiting to be marked, by assignment, oldest first.</p>
-        </div>
-        {classes.length > 1 && (
-          <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Filter by class" className="rounded-lg border border-gold-light/70 px-3 py-2 text-sm">
-            <option value="">All classes</option>
-            {classes.map(([id, name]) => (
-              <option key={id} value={id}>
-                {name}
-              </option>
-            ))}
-          </select>
-        )}
+    <div className="space-y-4">
+      <div>
+        <h1 className="font-serif text-h2 font-semibold text-ink">To review</h1>
+        <p className="text-sm text-ink/65">Work handed in and waiting to be marked, by assignment, oldest first.</p>
       </div>
       {items === null ? (
-        <div className="m-5 h-24 animate-pulse rounded-lg bg-cream" />
+        <div className="h-24 animate-pulse rounded-2xl bg-white" />
       ) : error ? (
-        <p className="p-5 text-sm text-red-800">The review list could not be loaded. Refresh to try again.</p>
+        <p className="rounded-2xl bg-white p-5 text-sm text-red-800">The review list could not be loaded. Refresh to try again.</p>
       ) : items.length === 0 ? (
-        <p className="p-8 text-center text-sm text-ink/65">Nothing to review. You are all caught up.</p>
+        <p className="rounded-2xl border border-gold-light bg-white p-8 text-center text-sm text-ink/65">Nothing to review. You are all caught up.</p>
       ) : (
-        <>
-          <div className="flex flex-wrap items-center gap-2 px-5 pt-4" role="group" aria-label="Show">
-            {chip("all", "Everything", items.length)}
-            {chip("week", "Waiting a week or more", overWeek)}
-            {chip("late", "Handed in late", items.filter((i) => i.is_late).length)}
-          </div>
+        <div className="grid gap-4 lg:grid-cols-[15rem_minmax(0,1fr)]">
+          {/* Classes: a list with counts on wide screens, a drop-down on phones. */}
+          <label className="block text-sm font-semibold text-ink lg:hidden">
+            Class
+            <select value={classId} onChange={(e) => setClassId(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-normal">
+              <option value="">All classes ({items.length})</option>
+              {classCounts.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name} ({c.n})
+                </option>
+              ))}
+            </select>
+          </label>
+          <nav aria-label="Classes" className="hidden self-start rounded-2xl border border-gold-light bg-white p-2 lg:sticky lg:top-[76px] lg:block">
+            <ul className="space-y-0.5">
+              {[{ id: "", name: "All classes", n: items.length, old: false }, ...classCounts].map((c) => (
+                <li key={c.id || "all"}>
+                  <button
+                    type="button"
+                    onClick={() => setClassId(c.id)}
+                    aria-current={classId === c.id ? "true" : undefined}
+                    className={`flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm ${classId === c.id ? "bg-teal-100 font-semibold text-teal-900" : "text-ink hover:bg-cream"}`}
+                  >
+                    <span className="min-w-0 flex-1 truncate">{c.name}</span>
+                    {c.old && <span className="h-2 w-2 shrink-0 rounded-full bg-red-600" title="Something has waited a week or more" />}
+                    <span className="tabular-nums text-ink/65">{c.n}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="min-w-0 rounded-2xl border border-gold-light bg-white">
+            <div className="border-b border-gold-light px-4 py-3">
+              <Tabs variant="switch" items={statusTabs} value={only} onChange={setOnly} label="Show" />
+            </div>
           {groups.length === 0 ? (
             <p className="p-8 text-center text-sm text-ink/65">Nothing matches this filter.</p>
           ) : (
@@ -256,7 +272,8 @@ export function ReviewQueue() {
               })}
             </ul>
           )}
-        </>
+          </div>
+        </div>
       )}
     </div>
   );

@@ -269,7 +269,7 @@ export function ClassGradebook({
           </label>
           <label className="text-sm font-medium text-ink">
             Out of
-            <input type="number" min={1} inputMode="decimal" className={`${input} mt-1 block w-full`} value={editing.max} onChange={(e) => set({ max: e.target.value })} placeholder="e.g. 40" />
+            <input type="text" min={1} inputMode="decimal" className={`${input} mt-1 block w-full`} value={editing.max} onChange={(e) => set({ max: e.target.value })} placeholder="e.g. 40" />
           </label>
           {schemes.length > 0 && (
             <label className="text-sm font-medium text-ink lg:col-span-2">
@@ -305,7 +305,7 @@ export function ClassGradebook({
                   </th>
                   <td className="py-1.5 pr-3">
                     <input
-                      type="number"
+                      type="text"
                       min={0}
                       inputMode="decimal"
                       aria-label={`${p.name}: score`}

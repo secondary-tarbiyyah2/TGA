@@ -20,6 +20,28 @@ import { MobileTabBar } from "@/components/learn/MobileTabBar";
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
 /**
+ * Number fields are plain text fields with a number keyboard (so the browser
+ * never shows them in Arabic-Indic digits on an Arabic-language computer).
+ * If someone types Arabic-Indic or Persian digits anyway, turn them into
+ * 0-9 before the page reads the field, so marks and amounts still save.
+ */
+function useWesternDigits() {
+  useEffect(() => {
+    const fix = (e: Event) => {
+      const el = e.target;
+      if (!(el instanceof HTMLInputElement)) return;
+      const mode = el.inputMode;
+      if (mode !== "decimal" && mode !== "numeric" && el.type !== "tel") return;
+      const v = el.value;
+      const fixed = v.replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x0660)).replace(/[\u06f0-\u06f9]/g, (d) => String(d.charCodeAt(0) - 0x06f0)).replace(/\u066b/g, ".");
+      if (fixed !== v) el.value = fixed;
+    };
+    document.addEventListener("input", fix, true);
+    return () => document.removeEventListener("input", fix, true);
+  }, []);
+}
+
+/**
  * The shared shell for every /learn route (it replaces the public site's
  * Header/Footer, see src/app/(marketing)/layout.tsx).
  *
@@ -33,6 +55,7 @@ const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
  * Signed out (login, invite, forgot password): just the logo bar.
  */
 export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
+  useWesternDigits();
   const pathname = usePathname();
   const { session, roles, rolesLoaded } = useLearnSession();
   // Desktop sidebar: open (full) or closed (icon rail). Remembered per browser.
