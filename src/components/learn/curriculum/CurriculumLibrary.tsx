@@ -24,7 +24,7 @@ import {
   type CurriculumVersion,
 } from "@/lib/learn/curriculum";
 import { StatusChip, ui } from "@/components/learn/ui";
-import { allHubs, boardLabel, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, specStatus, syllabusFor } from "@/lib/learn/syllabusIndex";
+import { allHubs, boardLabel, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, syllabusFor } from "@/lib/learn/syllabusIndex";
 
 type ClassOpt = { id: string; name: string };
 
@@ -159,7 +159,7 @@ function SignoffDialog({ target, current, onClose, onDone }: { target: { slug: s
     <Modal title={`Sign off: ${target.label}`} onClose={onClose}>
       <div className="space-y-3 p-4">
         <p className="text-sm text-ink/75">
-          {target.scope === "spec" ? "Confirm the specification points for this unit match the board's own document." : "Confirm this lesson is accurate, teaches the spec points it claims, and is ready to use."} Your name and today's date are recorded.
+          {target.scope === "spec" ? "Record that the specification points for this unit match the board's own document." : "Record that this lesson is accurate, teaches the spec points it claims, and is ready to use."} Your name and today's date are recorded.
         </p>
         <fieldset className="space-y-1">
           <legend className="text-sm font-semibold text-ink">Result</legend>
@@ -232,25 +232,23 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   // Filters, remembered on this device.
   const [subjectFilter, setSubjectFilter] = useState("all");
   const [boardFilter, setBoardFilter] = useState("all");
-  const [verifiedOnly, setVerifiedOnly] = useState(false);
   useEffect(() => {
     try {
       const f = JSON.parse(window.localStorage.getItem(FILTER_KEY) || "{}");
       // eslint-disable-next-line react-hooks/set-state-in-effect -- restore saved filters once on load
       if (typeof f.subject === "string") setSubjectFilter(f.subject);
       if (typeof f.board === "string") setBoardFilter(f.board);
-      if (typeof f.verified === "boolean") setVerifiedOnly(f.verified);
     } catch {
       /* ignore */
     }
   }, []);
   useEffect(() => {
     try {
-      window.localStorage.setItem(FILTER_KEY, JSON.stringify({ subject: subjectFilter, board: boardFilter, verified: verifiedOnly }));
+      window.localStorage.setItem(FILTER_KEY, JSON.stringify({ subject: subjectFilter, board: boardFilter }));
     } catch {
       /* ignore */
     }
-  }, [subjectFilter, boardFilter, verifiedOnly]);
+  }, [subjectFilter, boardFilter]);
   const [busyId, setBusyId] = useState<string | null>(null);
   const [replacing, setReplacing] = useState<CurriculumLesson | null>(null);
   const [history, setHistory] = useState<CurriculumLesson | null>(null);
@@ -356,12 +354,11 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     () =>
       allSubjects
         .filter((s) => subjectFilter === "all" || s.slug === subjectFilter)
-        .filter((s) => !verifiedOnly || specStatus(s.slug) === "Verified")
         .map((s) => ({ ...s, units: s.units.filter((u) => boardFilter === "all" || u.board === boardFilter) }))
         .filter((s) => s.units.length > 0),
-    [allSubjects, subjectFilter, boardFilter, verifiedOnly],
+    [allSubjects, subjectFilter, boardFilter],
   );
-  const filtersOn = subjectFilter !== "all" || boardFilter !== "all" || verifiedOnly || approvedOnly;
+  const filtersOn = subjectFilter !== "all" || boardFilter !== "all" || approvedOnly;
   const allUnits = useMemo(() => subjects.flatMap((s) => s.units), [subjects]);
   const packFor = useCallback((g: UnitGroup | undefined) => (g ? packs.find((p) => p.subject_slug === g.subject_slug && p.unit === g.unit) : undefined), [packs]);
 
@@ -440,6 +437,17 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   };
 
   const yearTabs = YEARS.map((y) => ({ key: y, label: myYears.includes(y) ? `${yearLabel(y).replace("Year ", "Y")} •` : yearLabel(y).replace("Year ", "Y") }));
+
+  // Jump from a spec point to the lesson that teaches it (its slides and plan are on the lesson row).
+  const openLessonById = (id: string) => {
+    const [y, n] = id.split("/");
+    const l = (lessons || []).find((x) => String(x.year).toLowerCase() === y && String(x.lesson_no) === n);
+    if (!l) return;
+    setSelected(unitKey(l.subject_slug, l.unit || "Lessons"));
+    setWanted(null);
+    setTab("lessons");
+    setOpenLesson(l.id);
+  };
 
   const lessonRow = (l: CurriculumLesson, showUnit = false) => {
     const expanded = openLesson === l.id;
@@ -582,22 +590,6 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                 )}
               </div>
             )}
-            <button
-              type="button"
-              role="switch"
-              aria-checked={verifiedOnly}
-              onClick={() => {
-                setVerifiedOnly(!verifiedOnly);
-                setSelected(null);
-                setWanted(null);
-              }}
-              className="inline-flex items-center gap-2 text-sm text-ink"
-            >
-              <span aria-hidden="true" className={`relative inline-block h-5 w-9 rounded-full transition ${verifiedOnly ? "bg-teal-700" : "bg-ink/25"}`}>
-                <span className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-all ${verifiedOnly ? "left-[1.1rem]" : "left-0.5"}`} />
-              </span>
-              Verified specifications only
-            </button>
             <button type="button" role="switch" aria-checked={approvedOnly} onClick={() => { setApprovedOnly(!approvedOnly); setSelected(null); setWanted(null); }} className="inline-flex items-center gap-2 text-sm text-ink">
               <span aria-hidden="true" className={`relative inline-block h-5 w-9 rounded-full transition ${approvedOnly ? "bg-teal-700" : "bg-ink/25"}`}>
                 <span className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-all ${approvedOnly ? "left-[1.1rem]" : "left-0.5"}`} />
@@ -611,7 +603,6 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                 onClick={() => {
                   setSubjectFilter("all");
                   setBoardFilter("all");
-                  setVerifiedOnly(false);
                   setApprovedOnly(false);
                 }}
               >
@@ -774,7 +765,6 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     <p className="text-xs text-ink/60">
                       {current.subject}
                       {current.board ? ` · ${current.board}` : ""}
-                      {specStatus(current.subject_slug) ? ` · specification ${specStatus(current.subject_slug)}` : ""}
                     </p>
                     <h2 className="text-h3 font-semibold text-ink">{current.unit}</h2>
                     <div className="mt-2 flex flex-wrap items-center gap-2">
@@ -817,7 +807,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     ) : (
                       <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit is a revision pack only; its summary and video are on the Revision pack tab.</p>
                     ))}
-                  {tab === "spec" && <SpecPanel slug={current.subject_slug} unit={current.unit} year={year || ""} signoffs={signoffs} onSign={(ref, label) => setSigning({ slug: current.subject_slug, scope: "spec", ref, label })} />}
+                  {tab === "spec" && <SpecPanel slug={current.subject_slug} unit={current.unit} year={year || ""} signoffs={signoffs} onSign={(ref, label) => setSigning({ slug: current.subject_slug, scope: "spec", ref, label })} onOpenLesson={openLessonById} />}
                   {tab === "connections" && <ConnectionsPanel subject={current.subject} unit={current.unit} />}
                   {tab === "revision" && (
                     <RevisionPackPanel
@@ -915,7 +905,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
 type PackQuestion = { id: string; topic: string; lesson_no: number | null; question: string; options: string[]; answer: number; explanation: string | null; in_quiz: boolean };
 
 /** The whole specification for this subject, laid out like the board's own document, with the units this lesson unit seems to cover opened first. Matching is by name, so treat it as a suggestion. */
-function SpecPanel({ slug, unit, year, signoffs, onSign }: { slug: string; unit: string; year: string; signoffs: Record<string, Signoff>; onSign: (ref: string, label: string) => void }) {
+function SpecPanel({ slug, unit, year, signoffs, onSign, onOpenLesson }: { slug: string; unit: string; year: string; signoffs: Record<string, Signoff>; onSign: (ref: string, label: string) => void; onOpenLesson: (id: string) => void }) {
   const spec = specFor(slug);
   const syl = syllabusFor(slug);
   const matches = useMemo(() => matchSpecUnits(slug, unit), [slug, unit]);
@@ -931,7 +921,7 @@ function SpecPanel({ slug, unit, year, signoffs, onSign }: { slug: string; unit:
     return (
       <div className="space-y-3">
         <p className="rounded-xl border border-gold-light bg-cream px-3 py-2 text-xs text-ink/75">
-          {syl.framework} · status: <strong>{syl.status}</strong>. {view === "unit" && here.length ? "Suggested match for this unit." : `All ${yearLabel(year)} units.`}
+          {syl.framework} · {view === "unit" && here.length ? "Units for this lesson unit." : `All ${yearLabel(year)} units.`}
         </p>
         {here.length > 0 && <Tabs variant="switch" items={[{ key: "unit", label: "This unit" }, { key: "all", label: `All ${yearLabel(year)}` }]} value={view} onChange={(k) => setView(k as "unit" | "all")} label="Show" />}
         {list.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No syllabus units for {yearLabel(year)} in this subject.</p>}
@@ -975,18 +965,8 @@ function SpecPanel({ slug, unit, year, signoffs, onSign }: { slug: string; unit:
         <strong>
           {spec.board} {spec.code}
         </strong>{" "}
-        · {spec.qualification} · status: <strong>{spec.status}</strong>
-        {spec.tiers ? ` · ${spec.tiers}` : ""}. Points are paraphrased. The units opened for this lesson unit are suggested from its name.
-        {spec.status !== "Verified" && spec.gaps.length > 0 && (
-          <details className="mt-1">
-            <summary className="cursor-pointer font-semibold">Not yet checked against the official document ({spec.gaps.length})</summary>
-            <ul className="mt-1 list-disc space-y-0.5 pl-5">
-              {spec.gaps.map((g) => (
-                <li key={g}>{g}</li>
-              ))}
-            </ul>
-          </details>
-        )}
+        · {spec.qualification}
+        {spec.tiers ? ` · ${spec.tiers}` : ""}
       </div>
 
       <details className="rounded-2xl border border-gold-light bg-white p-3">
@@ -1046,7 +1026,7 @@ function SpecPanel({ slug, unit, year, signoffs, onSign }: { slug: string; unit:
       </div>
       {matches.length > 0 && !ql && (
         <p className="text-xs text-ink/65">
-          Suggested for this unit: {matches.map((m) => m.ref).join(", ")}
+          Opened for this unit: {matches.map((m) => m.ref).join(", ")}
         </p>
       )}
       {visible.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-6 text-center text-sm text-ink/70">Nothing in the specification matches “{q}”.</p>}
@@ -1065,7 +1045,7 @@ function SpecPanel({ slug, unit, year, signoffs, onSign }: { slug: string; unit:
                     <span className="w-14 shrink-0 font-mono text-xs font-semibold text-ink/70">{u.ref}</span>
                     <span className="min-w-0 flex-1 text-sm font-semibold text-ink">
                       {u.title}
-                      {hit && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 text-[11px] font-semibold text-teal-900">suggested</span>}
+                      {hit && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 text-[11px] font-semibold text-teal-900">this unit</span>}
                       <span className="block text-xs font-normal text-ink/60">
                         {[u.year, `${u.points.length} points`, u.pl?.length ? `${u.pl.filter((x) => x.length).length}/${u.points.length} have a lesson` : ""].filter(Boolean).join(" · ")}
                       </span>
@@ -1088,11 +1068,15 @@ function SpecPanel({ slug, unit, year, signoffs, onSign }: { slug: string; unit:
                             </span>
                             <span className="min-w-0 flex-1">{p}</span>
                             {u.pl?.[i]?.length ? (
-                              <span className="shrink-0 text-xs text-teal-800" title="Lessons that teach this point">
-                                {u.pl[i].map((id) => `${id.replace("y", "Y").replace("/", " L")}`).join(", ")}
+                              <span className="shrink-0 text-xs text-teal-800" title="Open the lesson and its slides">
+                                {u.pl[i].map((id) => (
+                                  <button key={id} type="button" onClick={() => onOpenLesson(id)} className="mr-1.5 underline decoration-teal-700/40 underline-offset-2 hover:text-teal-950">
+                                    {id.replace("y", "Y").replace("/", " L")}
+                                  </button>
+                                ))}
                               </span>
                             ) : (
-                              <span className="shrink-0 rounded-full bg-red-50 px-2 text-xs text-red-800" title="No lesson matched this point yet">
+                              <span className="shrink-0 rounded-full bg-red-50 px-2 text-xs text-red-800" title="No lesson yet">
                                 no lesson yet
                               </span>
                             )}
