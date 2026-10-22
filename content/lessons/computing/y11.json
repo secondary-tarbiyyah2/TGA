@@ -3493,7 +3493,7 @@
             "Trojan: disguised as useful software",
             "Ransomware, spyware, keylogger"
           ],
-          "note": "The existing y11 lesson 7 lists malware; here we compare how each spreads and what it does. Ask the question 'does it need a host and does it need the user to run it?' to separate them. Spyware and keyloggers record activity and send it to an attacker; ransomware encrypts files and asks for payment.",
+          "note": "The existing y11 lesson 7 lists malware; here we compare how each spreads and what it does. Ask the question 'does it need a host and does it need the user to run it?' to separate them. Spyware and keyloggers record activity and send it to an attacker; ransomware encrypts files and asks for payment. Check before use: urgent_words = [\"urgent\", \"verify\", \"password\", \"suspended\"] def risk(email_text): score = 0 for word in urgent_words: if word in email_text.lower(): score = score + 1 re",
           "table": {
             "head": [
               "Malware",
@@ -3553,7 +3553,7 @@
           "note": "Show how a simple filter could spot urgency words. It is not reliable, but it makes the point: attackers use urgency and fear. In real life, check the sender address, do not click links, and contact the organisation using a number you already trust. Phishing is the most common cause of data breaches.",
           "code": {
             "lang": "python",
-            "text": "urgent_words = [\"urgent\", \"verify\", \"password\", \"suspended\"]\n\ndef risk(email_text):\n    score = 0\n    for word in urgent_words:\n        if word in email_text.lower():\n            score = score + 1\n    return score\n\nprint(risk(\"Your account is suspended. Verify your password now\"))\nprint(risk(\"Lesson moved to 4pm on Tuesday\"))",
+            "text": "urgent_words = [\"urgent\", \"verify\", \"password\", \"suspended\"]\n\ndef risk(email_text):\n    score = 0\n    for word in urgent_words:\n        if word in email_text.lower():\n            score = score + 1\n    return score\n\nprint(risk)\nprint(risk(\"Lesson moved to 4pm on Tuesday\"))",
             "output": "3\n0"
           }
         },

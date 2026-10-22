@@ -433,6 +433,16 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     if (missing) setMessage(`Downloaded the unit, but ${missing} file${missing === 1 ? "" : "s"} couldn't be fetched.`);
   };
 
+  const downloadBooklet = async (ls: CurriculumLesson[], unit: string) => {
+    const slug = unit.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 70) || "unit";
+    setBusyId(`booklet:${unit}`);
+    setMessage(null);
+    const blob = await downloadDeck(`revision-booklets/${ls[0].subject_slug}/${String(ls[0].year).toLowerCase()}/${slug}.pdf`);
+    setBusyId(null);
+    if (!blob) return setMessage("The revision booklet for this unit isn't ready yet. It is built automatically after lessons change, so try again shortly.");
+    saveBlob(new Blob([blob], { type: "application/pdf" }), `${slug}-revision-booklet.pdf`);
+  };
+
   const openUnit = (key: string, t: UnitTab = "lessons") => {
     setSelected(key);
     setTab(t);
@@ -790,6 +800,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                         <ActionMenu
                           label={busyId === `unit:${current.subject}:${current.unit}` ? "Preparing…" : "Download unit"}
                           items={[
+                            { label: "Revision booklet (PDF)", onClick: () => downloadBooklet(current.lessons, current.unit) },
                             { label: "PDFs: slides + lesson plans (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pdf", "plan-pdf"]) },
                             { label: "PDFs: slides only (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pdf"]) },
                             { label: "PDFs: lesson plans only (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["plan-pdf"]) },
