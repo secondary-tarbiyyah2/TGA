@@ -24,7 +24,7 @@ import {
   type CurriculumVersion,
 } from "@/lib/learn/curriculum";
 import { StatusChip, ui } from "@/components/learn/ui";
-import { allHubs, boardLabel, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, syllabusFor } from "@/lib/learn/syllabusIndex";
+import { allHubs, boardLabel, hubNodeLessons, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, syllabusFor } from "@/lib/learn/syllabusIndex";
 
 type ClassOpt = { id: string; name: string };
 
@@ -404,12 +404,11 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     setViewing(null);
   };
 
-  const downloadUnit = async (subjectName: string, unit: string, ls: CurriculumLesson[], withEditable: boolean) => {
+  const downloadUnit = async (subjectName: string, unit: string, ls: CurriculumLesson[], kinds: LessonFileKind[]) => {
     const key = `unit:${subjectName}:${unit}`;
     setBusyId(key);
     setMessage(null);
     const folder = unitFolderName(ls[0].year, subjectName, unit);
-    const kinds: LessonFileKind[] = withEditable ? ["slides-pdf", "plan-pdf", "slides-pptx", "plan-docx"] : ["slides-pdf", "plan-pdf"];
     const entries: ZipEntry[] = [];
     let missing = 0;
     for (const l of ls) {
@@ -439,9 +438,9 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const yearTabs = YEARS.map((y) => ({ key: y, label: myYears.includes(y) ? `${yearLabel(y).replace("Year ", "Y")} •` : yearLabel(y).replace("Year ", "Y") }));
 
   // Jump from a spec point to the lesson that teaches it (its slides and plan are on the lesson row).
-  const openLessonById = (id: string) => {
+  const openLessonById = (id: string, slug?: string) => {
     const [y, n] = id.split("/");
-    const l = (lessons || []).find((x) => String(x.year).toLowerCase() === y && String(x.lesson_no) === n);
+    const l = (lessons || []).find((x) => String(x.year).toLowerCase() === y && String(x.lesson_no) === n && (!slug || x.subject_slug === slug));
     if (!l) return;
     setSelected(unitKey(l.subject_slug, l.unit || "Lessons"));
     setWanted(null);
@@ -459,8 +458,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             <span className="block text-sm font-semibold text-ink">{l.title}</span>
             <span className="block text-xs text-ink/65">
               {showUnit ? `${l.subject} · ${l.unit || "Lessons"}` : ""}
-              {!showUnit && l.duration ? `${l.duration} min` : ""}
-              {!showUnit && (l.objectives || []).length ? ` · ${l.objectives.length} objective${l.objectives.length === 1 ? "" : "s"}` : ""}
+              {!showUnit && (l.objectives || []).length ? `${l.objectives.length} objective${l.objectives.length === 1 ? "" : "s"}` : ""}
               {l.version > 1 && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 font-medium text-teal-900">Edited · v{l.version}</span>}
             </span>
           </button>
@@ -590,11 +588,17 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                 )}
               </div>
             )}
-            <button type="button" role="switch" aria-checked={approvedOnly} onClick={() => { setApprovedOnly(!approvedOnly); setSelected(null); setWanted(null); }} className="inline-flex items-center gap-2 text-sm text-ink">
-              <span aria-hidden="true" className={`relative inline-block h-5 w-9 rounded-full transition ${approvedOnly ? "bg-teal-700" : "bg-ink/25"}`}>
-                <span className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-all ${approvedOnly ? "left-[1.1rem]" : "left-0.5"}`} />
-              </span>
-              Signed-off lessons only
+            <button
+              type="button"
+              aria-pressed={approvedOnly}
+              onClick={() => {
+                setApprovedOnly(!approvedOnly);
+                setSelected(null);
+                setWanted(null);
+              }}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition ${approvedOnly ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink hover:border-teal-700"}`}
+            >
+              {approvedOnly ? "✓ " : ""}Signed-off lessons
             </button>
             {filtersOn && (
               <button
@@ -770,7 +774,6 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     <div className="mt-2 flex flex-wrap items-center gap-2">
                       <span className="text-xs text-ink/65">
                         {current.lessons.length} lesson{current.lessons.length === 1 ? "" : "s"}
-                        {current.lessons.length ? ` · ${Math.round((current.lessons.reduce((n, l) => n + (l.duration || 0), 0) / 60) * 10) / 10} h` : ""}
                       </span>
                       {currentPack && (
                         <span className="rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900">
@@ -782,8 +785,11 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                         <ActionMenu
                           label={busyId === `unit:${current.subject}:${current.unit}` ? "Preparing…" : "Download unit"}
                           items={[
-                            { label: "Slides + plans (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, false) },
-                            { label: "Include editable files (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, true) },
+                            { label: "PDFs: slides + lesson plans (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pdf", "plan-pdf"]) },
+                            { label: "PDFs: slides only (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pdf"]) },
+                            { label: "PDFs: lesson plans only (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["plan-pdf"]) },
+                            { label: "Editable: PowerPoint + Word (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pptx", "plan-docx"]) },
+                            { label: "Everything: PDFs + editable (ZIP)", onClick: () => downloadUnit(current.subject, current.unit, current.lessons, ["slides-pdf", "plan-pdf", "slides-pptx", "plan-docx"]) },
                           ]}
                         />
                       )}
@@ -808,7 +814,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                       <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit is a revision pack only; its summary and video are on the Revision pack tab.</p>
                     ))}
                   {tab === "spec" && <SpecPanel slug={current.subject_slug} unit={current.unit} year={year || ""} signoffs={signoffs} onSign={(ref, label) => setSigning({ slug: current.subject_slug, scope: "spec", ref, label })} onOpenLesson={openLessonById} />}
-                  {tab === "connections" && <ConnectionsPanel subject={current.subject} unit={current.unit} />}
+                  {tab === "connections" && <ConnectionsPanel subject={current.subject} unit={current.unit} onOpenLesson={(id, slug) => openLessonById(id, slug)} />}
                   {tab === "revision" && (
                     <RevisionPackPanel
                       pack={currentPack}
@@ -1099,7 +1105,7 @@ function SpecPanel({ slug, unit, year, signoffs, onSign, onOpenLesson }: { slug:
  * Cross-curricular links as a map: subjects sit round a circle, a line joins two subjects for every teaching hub they share,
  * and picking a subject lists just the hubs that join it to this one.
  */
-function ConnectionsPanel({ subject, unit }: { subject: string; unit: string }) {
+function ConnectionsPanel({ subject, unit, onOpenLesson }: { subject: string; unit: string; onOpenLesson: (id: string, slug: string) => void }) {
   const hubs = allHubs();
   const names = useMemo(() => {
     const m = new Map<string, string>();
@@ -1119,6 +1125,7 @@ function ConnectionsPanel({ subject, unit }: { subject: string; unit: string }) 
   const uw = useMemo(() => new Set(unit.toLowerCase().split(/\W+/).filter((w) => w.length > 3)), [unit]);
   const score = (h: (typeof hubs)[number]) => h.nodes.filter((n) => home && n.subject === home).reduce((t, n) => t + `${n.ref} ${n.note}`.toLowerCase().split(/\W+/).filter((w) => uw.has(w)).length, 0);
   if (!home) return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No cross-curricular hubs include this subject yet.</p>;
+  const openHub = hubs.find((h) => h.id === open) || null;
   const list = (pick ? shared(home, pick) : hubs.filter((h) => h.nodes.some((n) => n.subject === home))).sort((a, b) => score(b) - score(a));
   const edges: { a: number; b: number; n: number; on: boolean }[] = [];
   names.forEach((a, i) =>
@@ -1166,9 +1173,46 @@ function ConnectionsPanel({ subject, unit }: { subject: string; unit: string }) 
         <p className="text-sm font-semibold text-ink">
           {pick ? `${home} + ${pick}` : `Hubs involving ${home}`} · {list.length}
         </p>
-        {list.map((h) => (
-          <section key={h.id} className="rounded-2xl border border-gold-light bg-white">
-            <button type="button" aria-expanded={open === h.id} onClick={() => setOpen(open === h.id ? null : h.id)} className="flex w-full items-start gap-3 px-4 py-3 text-left">
+        {openHub ? (
+          <div className="space-y-3">
+            <button type="button" className={ui.btnLink} onClick={() => setOpen(null)}>
+              ← All hubs
+            </button>
+            <div className="rounded-2xl bg-teal-900 p-5 text-white">
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-gold-light">Big idea for pupils</p>
+              <h3 className="mt-1 font-serif text-xl font-semibold">{openHub.title}</h3>
+              <p className="mt-1 text-sm text-white/85">{openHub.hook}</p>
+              <p className="mt-3 rounded-xl bg-white/10 px-3 py-2 text-sm">
+                <strong>Challenge:</strong> find one fact about this idea in each subject below, then explain in two sentences how they fit together.
+              </p>
+            </div>
+            <ul className="space-y-2">
+              {openHub.nodes.map((n) => {
+                const hl = hubNodeLessons(n.subject, n.ref);
+                return (
+                  <li key={`${n.subject}-${n.ref}`} className={`rounded-xl border px-4 py-3 text-sm ${n.subject === home ? "border-teal-700 bg-teal-50" : "border-gold-light bg-white"}`}>
+                    <span className="font-semibold text-ink">
+                      {n.subject} <span className="font-normal text-ink/60">({n.ref})</span>
+                    </span>
+                    <span className="block text-ink/80">{n.note}</span>
+                    <span className="mt-1 block text-xs italic text-ink/65">Ask pupils: what does {n.subject} add to the story of “{openHub.title}”?</span>
+                    {hl && hl.ids.length > 0 && (
+                      <span className="mt-2 flex flex-wrap gap-1.5">
+                        {hl.ids.slice(0, 6).map((id) => (
+                          <button key={id} type="button" className="rounded-full border border-teal-700/40 bg-white px-2.5 py-0.5 text-xs font-medium text-teal-900 hover:bg-teal-50" onClick={() => onOpenLesson(id, hl.slug)}>
+                            {id.replace("y", "Y").replace("/", " L")}
+                          </button>
+                        ))}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ) : (
+          list.map((h) => (
+            <button key={h.id} type="button" onClick={() => setOpen(h.id)} className="flex w-full items-start gap-3 rounded-2xl border border-gold-light bg-white px-4 py-3 text-left hover:border-teal-700">
               <span className="min-w-0 flex-1">
                 <span className="block font-semibold text-ink">{h.title}</span>
                 <span className="block text-sm text-ink/70">{h.hook}</span>
@@ -1180,22 +1224,10 @@ function ConnectionsPanel({ subject, unit }: { subject: string; unit: string }) 
                   ))}
                 </span>
               </span>
-              <span aria-hidden="true" className="pt-1 text-ink/50">{open === h.id ? "–" : "+"}</span>
+              <span aria-hidden="true" className="pt-1 text-sm font-semibold text-teal-800">Open →</span>
             </button>
-            {open === h.id && (
-              <ul className="space-y-2 border-t border-gold-light/70 px-4 py-3">
-                {h.nodes.map((n) => (
-                  <li key={`${n.subject}-${n.ref}`} className={`rounded-lg px-3 py-2 text-sm ${n.subject === home ? "bg-teal-50" : "bg-cream"}`}>
-                    <span className="font-semibold text-ink">
-                      {n.subject} <span className="font-normal text-ink/60">({n.ref})</span>
-                    </span>
-                    <span className="block text-ink/80">{n.note}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

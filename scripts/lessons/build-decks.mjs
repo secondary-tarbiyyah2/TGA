@@ -24,6 +24,31 @@ import { createRequire } from "node:module";
 import { buildPlan } from "./lesson-plan.mjs";
 import { themeFor, makeParts } from "./deck-parts.mjs";
 
+// Cross-curricular hubs: lessons that teach a hub's spec unit get a "Connect it" slide (see content/syllabus/matrices/hubs.json).
+const HUBS_BY_LESSON = (() => {
+  const out = new Map();
+  try {
+    const idx = JSON.parse(fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), "../../src/lib/learn/syllabusIndex.json"), "utf8"));
+    const norm = (x) => String(x).toLowerCase().replace(/[^a-z]/g, "");
+    for (const hub of idx.hubs || []) {
+      for (const node of hub.nodes) {
+        const slug = Object.keys(idx.specs).find((k) => norm(idx.specs[k].subject) === norm(node.subject));
+        const unit = slug && idx.specs[slug].units.find((u) => u.ref === node.ref);
+        if (!unit) continue;
+        for (const id of unit.lessons || []) {
+          const key = `${slug}/${id}`;
+          const list = out.get(key) || [];
+          if (!list.some((h) => h.id === hub.id)) list.push({ id: hub.id, title: hub.title, hook: hub.hook, others: hub.nodes.filter((n) => n !== node) });
+          out.set(key, list);
+        }
+      }
+    }
+  } catch {
+    /* hubs are optional */
+  }
+  return out;
+})();
+
 const require = createRequire(import.meta.url);
 const PptxGenJS = require("pptxgenjs");
 
@@ -514,7 +539,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       najm(s, 8.9, 2.1, 3.3);
       s.addShape("wedgeRoundRectCallout", { x: 8.6, y: 5.55, w: 3.9, h: 0.95, rectRadius: 0.2, fill: { color: "FFFFFF" }, line: { color: "F2B33D", width: 2 } });
       s.addText("Hello! I'm Najm. Let's learn!", { x: 8.75, y: 5.6, w: 3.6, h: 0.85, fontFace: FONT, fontSize: 18, bold: true, color: INK, align: "center", valign: "middle" });
-      s.addText(`Lesson ${lesson.n}  ·  ${duration} minutes`, { x: 1.0, y: 5.4, w: 7, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
+      s.addText(`Lesson ${lesson.n}`, { x: 1.0, y: 5.4, w: 7, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
     } else {
       s.background = { color: theme.dark };
       s.addShape("rect", { x: 0, y: 0, w: 0.5, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
@@ -526,7 +551,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       s.addText(chip, { x: 1.0, y: 2.2, w: 7.9, h: 0.45, fontFace: FONT, fontSize: Math.min(16, fitSize(chip, 7.0, 0.42, 16, 9)), bold: true, color: "E3C98F", charSpacing: 3, fit: "shrink" });
       s.addText(lesson.title, { x: 1.0, y: 2.75, w: 7.8, h: 2.0, fontFace: theme.head, fontSize: fitSize(lesson.title, fw(7.8, theme.head), 2.0, 46, 22), bold: true, color: "FFFFFF", valign: "top" });
       s.addText(clean(lesson.unit), { x: 1.0, y: 4.9, w: 7.8, h: 0.5, fontFace: FONT, fontSize: fitSize(lesson.unit, 7.8, 0.5, 20, 12), color: "D9D4C7" });
-      s.addText(`Lesson ${lesson.n}  ·  ${duration} minutes`, { x: 1.0, y: 5.45, w: 7.8, h: 0.4, fontFace: FONT, fontSize: 15, color: "B9B3A5" });
+      s.addText(`Lesson ${lesson.n}`, { x: 1.0, y: 5.45, w: 7.8, h: 0.4, fontFace: FONT, fontSize: 15, color: "B9B3A5" });
       s.addText("Tarbiyyah Global Academy  ·  A British education, rooted in faith", { x: 1.0, y: 6.7, w: 7.8, h: 0.35, fontFace: FONT, fontSize: 13, color: "B9B3A5" });
     }
     s.addNotes(`Lesson ${lesson.n}: ${clean(lesson.title)}. ${clean(lesson.unit)}.`);
@@ -618,7 +643,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       s.addShape("roundRect", { x: 9.6, y: 2.15, w: 3.0, h: 4.6, rectRadius: 0.12, fill: { color: TEAL_SOFT }, line: { color: TEAL_SOFT, width: 0 } });
       s.addText("THE BIG PICTURE", { x: 9.85, y: 2.35, w: 2.5, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 2 });
       s.addText(clean(lesson.unit), { x: 9.85, y: 2.75, w: 2.5, h: 1.9, fontFace: FONT, fontSize: fitSize(lesson.unit, 2.5, 1.9, 20, 12), bold: true, color: INK, valign: "top" });
-      s.addText(ks4 && (lesson.board || file.board) ? `Exam board: ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board)}` : `${duration}-minute lesson`, { x: 9.85, y: 4.8, w: 2.5, h: 0.4, fontFace: FONT, fontSize: 14, color: TEAL, bold: true });
+      s.addText(ks4 && (lesson.board || file.board) ? `Exam board: ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board)}` : `Lesson ${lesson.n}`, { x: 9.85, y: 4.8, w: 2.5, h: 0.4, fontFace: FONT, fontSize: 14, color: TEAL, bold: true });
       s.addText(nextLesson ? `Builds towards: ${clean(nextLesson.title)}` : "End of this sequence", { x: 9.85, y: 5.25, w: 2.5, h: 1.3, fontFace: FONT, fontSize: fitSize(nextLesson ? nextLesson.title + "Builds towards: " : "x", 2.5, 1.3, 14, 10), color: MUTED, valign: "top" });
     }
     const extras = [lesson.crossCurricular ? `Cross-curricular links: ${clean(lesson.crossCurricular)}` : "", lesson.smsc ? `SMSC: ${clean(lesson.smsc)}` : ""].filter(Boolean).join(" ");
@@ -655,7 +680,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
   {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     S.starter = slideCount;
-    header(s, ctx, B.starterTitle, B.starterKicker, 0, band === "early" ? null : 5);
+    header(s, ctx, B.starterTitle, B.starterKicker, 0);
     const items = (lesson.starter || []).slice(0, 4);
     if (band === "early") {
       najm(s, 0.9, 2.5, 2.4);
@@ -743,9 +768,8 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     const items = (lesson.independent || []).slice(0, 4);
     const tiered = band !== "early" && items.length >= 3;
-    const mins = Math.max(5, Math.round((duration * 0.3) / 5) * 5);
     S.independent = slideCount;
-    header(s, ctx, B.independentTitle, B.independentKicker, 3, band === "early" ? null : mins);
+    header(s, ctx, B.independentTitle, B.independentKicker, 3);
     if (tiered) {
       const tiers =
         band === "junior"
@@ -772,6 +796,42 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: 11.8, h: 4.65 });
     }
     s.addNotes(`${tiered ? "Pupils choose a starting level; most should reach the middle column. " : ""}${lesson.send ? `Adaptation (SEND / EAL / stretch): ${clean(lesson.send)}` : ""}`.trim());
+  }
+
+  // 7b. Connect it ----------------------------------------------------------------
+  {
+    const yearKey = path.basename(file.path, ".json");
+    const hub = (HUBS_BY_LESSON.get(`${subjectSlug}/${yearKey}/${lesson.n}`) || [])[0];
+    const links = (lesson.crossCurricular ? clean(lesson.crossCurricular).split(/;\s*/) : []).filter(Boolean).slice(0, 3).map((t) => {
+      const m = t.match(/^([^:]{2,30}):\s*(.+)$/);
+      return m ? { head: m[1], text: m[2] } : { head: "Link", text: t };
+    });
+    const cards = hub ? hub.others.slice(0, 3).map((n) => ({ head: n.subject, text: n.note })) : links;
+    if (band !== "early" && cards.length) {
+      const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
+      header(s, ctx, "Where else will you meet this idea?", "Connect it", 3);
+      let y = 2.15;
+      if (hub) {
+        s.addShape("roundRect", { x: 0.8, y, w: 11.8, h: 1.1, rectRadius: 0.12, fill: { color: theme.dark }, line: { color: theme.dark, width: 0 } });
+        s.addText([{ text: "BIG IDEA   ", options: { bold: true, color: "E3C98F", fontSize: 12, charSpacing: 2 } }, { text: clean(hub.title), options: { bold: true, color: "FFFFFF", fontSize: 22, breakLine: true } }, { text: clean(hub.hook), options: { color: "E8E4D8", fontSize: 14 } }], { x: 1.05, y, w: 11.3, h: 1.1, fontFace: FONT, valign: "middle", fit: "shrink" });
+        y += 1.3;
+      }
+      const n = cards.length;
+      const gap = 0.3;
+      const w = (11.8 - gap * (n - 1)) / n;
+      const h = hub ? 2.3 : 3.6;
+      cards.forEach((c, i) => {
+        const x = 0.8 + i * (w + gap);
+        s.addShape("roundRect", { x, y, w, h, rectRadius: 0.12, fill: { color: "FFFFFF" }, line: { color: ctx.accent, width: 2 } });
+        s.addShape("rect", { x, y, w, h: 0.62, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
+        s.addText(clean(c.head), { x: x + 0.2, y, w: w - 0.4, h: 0.62, fontFace: FONT, fontSize: 18, bold: true, color: "FFFFFF", valign: "middle" });
+        s.addText(clean(c.text), { x: x + 0.2, y: y + 0.72, w: w - 0.4, h: h - 0.85, fontFace: FONT, fontSize: fitSize(clean(c.text), w - 0.4, h - 0.85, 18, 11), color: INK, valign: "top" });
+      });
+      y += h + 0.25;
+      s.addShape("roundRect", { x: 0.8, y, w: 11.8, h: Math.min(0.8, 6.85 - y), rectRadius: 0.1, fill: { color: "FBF3DC" }, line: { color: GOLD, width: 1.5 } });
+      s.addText([{ text: "YOUR CHALLENGE   ", options: { bold: true, color: GOLD_DARK, fontSize: 12, charSpacing: 2 } }, { text: hub ? "Tell a partner one fact from each subject, then say how they fit together." : "Pick one link and explain in two sentences how today's idea shows up there.", options: { color: INK } }], { x: 1.05, y, w: 11.3, h: Math.min(0.8, 6.85 - y), fontFace: FONT, fontSize: 15, valign: "middle" });
+      s.addNotes(`Connections make ideas stick. ${hub ? `Hub: ${clean(hub.title)}. ` : ""}Give pupils a minute to talk, then take two or three examples. Ask: where else have you met this?`);
+    }
   }
 
   // 8. Exit -------------------------------------------------------------------

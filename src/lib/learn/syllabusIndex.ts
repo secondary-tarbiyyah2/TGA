@@ -103,3 +103,11 @@ export function boardLabel(slug: string, board: string | null, year: string): st
   const agrees = !b || codes.length === 0 ? true : codes.every((c) => specCodes.includes(c));
   return agrees ? spec.label : b;
 }
+
+/** The lessons that teach a hub node's spec unit, as "y10/12" ids, with the subject's slug. */
+export function hubNodeLessons(subject: string, ref: string): { slug: string; ids: string[] } | null {
+  const slug = Object.keys(data.specs).find((k) => sameSubject(data.specs[k].subject, subject));
+  if (!slug) return null;
+  const unit = data.specs[slug].units.find((u: SpecUnit) => u.ref === ref);
+  return { slug, ids: unit ? unit.lessons : [] };
+}

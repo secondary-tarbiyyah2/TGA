@@ -109,9 +109,31 @@ function lessonPacks() {
                 in_quiz: true,
               }),
             );
+          // Common mistakes become true/false checks: pupils judge the wrong statement, then see the right one.
+          mis.forEach((m, i) => {
+            if (!m || !m.wrong || !m.right) return;
+            questions.push({
+              qkey: `L${l.n}-m${i + 1}`,
+              lesson_no: l.n,
+              topic: l.title,
+              question: `Is this statement correct? “${String(m.wrong).trim()}”`,
+              options: ["Correct", "Not correct"],
+              answer: 1,
+              explanation: `Not correct. ${String(m.right).trim()}`,
+              hint,
+              wrong: {},
+              in_quiz: true,
+            });
+          });
           questions.push(...keywordQuestions(`L${l.n}`, l.title, l.n, (l.keywords || []).map((k) => ({ t: k.term, d: k.def })), pool));
         }
-        if (questions.filter((q) => q.in_quiz).length < MIN_QUIZ) continue;
+        // Units with few hinge questions still get a pack: key-word questions fill the quiz up to the minimum.
+        const quizCount = () => questions.filter((q) => q.in_quiz).length;
+        for (const q of questions) {
+          if (quizCount() >= MIN_QUIZ + 2) break;
+          if (!q.in_quiz) q.in_quiz = true;
+        }
+        if (quizCount() < MIN_QUIZ) continue;
         packs.push({
           subject_slug: subjectSlug,
           subject: j.subject,
