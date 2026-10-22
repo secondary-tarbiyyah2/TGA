@@ -7,6 +7,7 @@ import type { Session } from "@supabase/supabase-js";
 import { useLearnSignOut, learnRoleLabel, dashboardPathForRole, type RoleGrant } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { normalisePortalPath } from "@/lib/learn/nav";
+import { ViewSettingsPanel, useRestoreView } from "@/components/ViewSettings";
 import { lockPin, useHasPin } from "@/components/learn/pin/pinState";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
@@ -37,6 +38,7 @@ function MenuLink({ href, children, onClick }: { href: string; children: React.R
  * role (e.g. a teacher who is also a parent) can switch area from here.
  */
 export function LearnAccountMenu({ session, roles }: { session: Session; roles: RoleGrant[] }) {
+  useRestoreView();
   const supabase = getSupabaseClient();
   const signOut = useLearnSignOut();
   const pathname = normalisePortalPath(usePathname());
@@ -141,6 +143,11 @@ export function LearnAccountMenu({ session, roles }: { session: Session; roles: 
             <MenuLink href="/report-concern" onClick={close}>
               <span className="text-red-700">Report a concern</span>
             </MenuLink>
+          </div>
+
+          <div className="border-t border-gold-light/70 p-1.5">
+            <p className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/65">View</p>
+            <ViewSettingsPanel />
           </div>
 
           <div className="border-t border-gold-light/70 p-1.5">

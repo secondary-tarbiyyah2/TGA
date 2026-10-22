@@ -443,3 +443,41 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
 html:has(.portal-topbar) {
   scroll-padding-top: 76px;
 }
+
+/* ── View settings (components/ViewSettings.tsx): larger text, easy reading, high contrast.
+   Chosen by the visitor and remembered on their device. Set as attributes on <html>. */
+html[data-large-text] body {
+  font-size: 19px;
+}
+html[data-large-text] .portal {
+  font-size: 17px;
+}
+html[data-reading] body,
+html[data-reading] .portal:not(.fixed) {
+  background: #fbf6e9;
+  letter-spacing: 0.02em;
+  word-spacing: 0.08em;
+  line-height: 1.8;
+}
+html[data-reading] :is(p, li, td, label) {
+  text-align: left;
+  max-width: 72ch;
+}
+html[data-reading] :is(td, th, label) {
+  max-width: none;
+}
+html[data-contrast] {
+  --color-ink-500: #3a3f45;
+  --color-gold-light: #8a8575;
+  --color-ink: #000;
+  --foreground: #000;
+}
+html[data-contrast] .portal {
+  --color-gold-light: #7a7566;
+}
+html[data-contrast] :is(.text-ink\/60, .text-ink\/65, .text-ink\/70, .text-ink\/75) {
+  color: #1b1e21;
+}
+html[data-contrast] a:not([class]) {
+  text-decoration: underline;
+}

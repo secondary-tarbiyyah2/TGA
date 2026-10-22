@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
+import { Icon, type IconName } from "@/components/learn/Icon";
 
 const BUCKET = "lesson-decks";
 const ROOT = "syllabus-pack";
@@ -12,6 +13,16 @@ type Group = { folder: string; subjects: { subject: string; files: Entry[] }[] }
 
 const niceFolder = (n: string) => n.replace(/^\d+_/, "").replace(/_/g, " ").replace(/-/g, " to ");
 const niceSubject = (n: string) => n.replace(/_/g, " ");
+
+/** One tile per subject: related documents are merged (Computer Science with Computing, the English parts together). */
+const CANON: Record<string, string> = { "computer science": "Computing", computing: "Computing", english: "English", "english language": "English", "english literature": "English" };
+const canon = (n: string) => CANON[niceSubject(n).toLowerCase()] || niceSubject(n);
+const SUBJECT_ICON: Record<string, IconName> = {
+  Arabic: "languages", "Art and Design": "palette", Business: "briefcase", Computing: "monitor", English: "notebookPen", Geography: "globe", History: "hourglass",
+  "Islamic Studies": "moon", Mathematics: "calculator", "Physical Education": "activity", "PSHE RSHE and Citizenship": "heartHandshake", "Quran and Tajweed": "bookMarked", Science: "flask",
+};
+const iconFor = (n: string): IconName => SUBJECT_ICON[n] || "bookOpen";
+const fileKind = (name: string) => (name.split(".").pop() || "").toUpperCase();
 
 const FILTER_KEY = "tga-syllabus-filter";
 const FILE_LABEL: Record<string, string> = { pptx: "Download PowerPoint", docx: "Download Word", xlsx: "Download spreadsheet" };
@@ -34,7 +45,7 @@ export function SyllabusPack() {
     try {
       const f = JSON.parse(window.localStorage.getItem(FILTER_KEY) || "{}");
       // eslint-disable-next-line react-hooks/set-state-in-effect -- restore the saved filter once after mount
-      if (typeof f.subject === "string") setSubject(f.subject);
+      if (typeof f.subject === "string") setSubject(canon(f.subject));
       if (typeof f.level === "string") setLevel(f.level);
     } catch {
       /* private mode: start unfiltered */
@@ -101,7 +112,8 @@ export function SyllabusPack() {
     }
   };
 
-  const subjects = useMemo(() => [...new Set((groups || []).flatMap((g) => g.subjects.map((s) => s.subject)).filter(Boolean))].sort((a, b) => a.localeCompare(b)), [groups]);
+  const subjects = useMemo(() => [...new Set((groups || []).flatMap((g) => g.subjects.map((s) => s.subject)).filter(Boolean).map(canon))].sort((a, b) => a.localeCompare(b)), [groups]);
+  const countFor = (sb: string) => (groups || []).reduce((n, g) => n + g.subjects.filter((x) => x.subject && canon(x.subject) === sb).reduce((m, x) => m + x.files.filter((f) => f.name.endsWith(".pdf")).length, 0), 0);
   const levels = useMemo(() => (groups || []).filter((g) => g.subjects.some((s) => s.subject)).map((g) => g.folder), [groups]);
   const intro = (groups || []).filter((g) => g.subjects.some((s) => !s.subject));
   const btn = `${ui.btnSecondary} ${ui.sm}`;
@@ -114,18 +126,19 @@ export function SyllabusPack() {
     return (
       <li key={name} className="flex flex-wrap items-center justify-between gap-2 px-4 py-3">
         <span className="min-w-0 text-sm text-ink">
+          <span className="mr-2 inline-flex items-center rounded bg-cream px-1.5 py-0.5 align-middle text-[10px] font-semibold tracking-wide text-ink/65">{fileKind(files.find((f) => /\.(pptx|docx|xlsx)$/.test(f.name))?.name || files[0]?.name || "")}</span>
           <span className="font-medium">{label}</span>
           {sub && <span className="ml-2 text-xs text-ink/65">{sub}</span>}
         </span>
         <span className="flex gap-2">
           {pdf && (
             <button type="button" className={btn} disabled={busy === pdf.path} onClick={() => open(pdf.path, false)}>
-              View PDF
+              <Icon name="file" className="h-3.5 w-3.5" /> View PDF
             </button>
           )}
           {editable && (
             <button type="button" className={btn} disabled={busy === editable.path} onClick={() => open(editable.path, true)}>
-              {FILE_LABEL[ext] || "Download"}
+              <Icon name="download" className="h-3.5 w-3.5" /> {FILE_LABEL[ext] || "Download"}
             </button>
           )}
         </span>
@@ -161,17 +174,29 @@ export function SyllabusPack() {
 
       {groups && subjects.length > 0 && (
         <div className="rounded-2xl border border-gold-light bg-white p-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Subject</p>
-          <div className="mt-2 flex flex-wrap gap-2">
+          <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Choose a subject</p>
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
             {subjects.map((sb) => (
-              <button key={sb} type="button" aria-pressed={subject === sb} onClick={() => setSubject(subject === sb ? "" : sb)} className={chip(subject === sb)}>
-                {niceSubject(sb)}
+              <button
+                key={sb}
+                type="button"
+                aria-pressed={subject === sb}
+                onClick={() => setSubject(subject === sb ? "" : sb)}
+                className={`group flex items-center gap-3 rounded-xl border p-3 text-left transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 ${subject === sb ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink hover:border-teal-700 hover:bg-cream"}`}
+              >
+                <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${subject === sb ? "bg-white/15 text-white" : "bg-teal-100 text-teal-700"}`}>
+                  <Icon name={iconFor(sb)} className="h-5 w-5" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-sm font-semibold leading-tight">{sb}</span>
+                  <span className={`block text-xs ${subject === sb ? "text-white/80" : "text-ink/60"}`}>{countFor(sb)} document{countFor(sb) === 1 ? "" : "s"}</span>
+                </span>
               </button>
             ))}
           </div>
           {levels.length > 1 && (
             <>
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/65">Level</p>
+              <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-ink/65">Show</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <button type="button" aria-pressed={level === "all"} onClick={() => setLevel("all")} className={chip(level === "all")}>
                   All levels
@@ -188,13 +213,13 @@ export function SyllabusPack() {
       )}
 
       {groups && subjects.length > 0 && !subject && (
-        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">Pick a subject to see its specification and syllabus documents.</p>
+        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">Pick a subject above to see its specification and syllabus documents.</p>
       )}
 
       {subject &&
         (groups || [])
           .filter((g) => level === "all" || g.folder === level)
-          .map((g) => ({ g, subs: g.subjects.filter((s) => s.subject === subject) }))
+          .map((g) => ({ g, subs: g.subjects.filter((s) => s.subject && canon(s.subject) === subject) }))
           .filter((x) => x.subs.length > 0)
           .map(({ g, subs }) => (
             <section key={g.folder} aria-label={niceFolder(g.folder)} className="rounded-2xl border border-gold-light bg-white">

@@ -103,6 +103,7 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
     links: [
       { href: "/legal/privacy", label: "Privacy policy" },
       { href: "/legal/cookies", label: "Cookie policy" },
+      { href: "/accessibility", label: "Accessibility" },
       { href: "/legal/terms", label: "Terms" },
       { href: "/contact", label: "Contact" },
     ],

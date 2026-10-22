@@ -8,7 +8,7 @@ const siteUrl = "https://globalacademy.tarbiyyah.co.uk";
 const routes = [
   "", "about", "curriculum", "admissions", "eligibility", "fees", "pastoral-care", "team",
   "testimonials", "faqs", "contact", "term-dates", "open-evening", "policies", "safeguarding", "book-a-call", "learning", "parents", "admissions/apply",
-  "legal/privacy", "legal/cookies", "legal/terms",
+  "legal/privacy", "legal/cookies", "legal/terms", "accessibility",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
