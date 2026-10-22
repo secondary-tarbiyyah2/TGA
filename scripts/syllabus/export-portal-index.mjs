@@ -6,6 +6,12 @@ import path from "node:path";
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
 const dir = path.join(root, "content/syllabus/ks4");
+const LABELS = {
+  "gcse-science": "Pearson Edexcel IGCSE 4BI1 / 4CH1 / 4PH1 / 4SD0",
+  "english-literature": "Pearson Edexcel IGCSE 4ET1",
+  business: "Pearson Edexcel IGCSE 4BS1",
+  "islamic-studies": "Pearson Edexcel IGCSE 4IS1",
+};
 const specs = {};
 for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
   const d = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
@@ -13,6 +19,7 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
     subject: d.subject,
     board: d.board,
     code: d.code,
+    label: LABELS[d.slug] || `${d.board} ${d.code}`,
     status: d.status,
     statusNote: d.statusNote || "",
     qualification: d.qualification || "",

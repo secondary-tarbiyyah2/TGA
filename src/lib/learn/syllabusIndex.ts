@@ -6,6 +6,7 @@ export type SpecInfo = {
   subject: string;
   board: string;
   code: string;
+  label: string;
   status: string;
   statusNote: string;
   qualification: string;
@@ -87,3 +88,17 @@ export const sameSubject = (a: string, b: string) => {
   const y = norm(b);
   return x === y || x.startsWith(y) || y.startsWith(x);
 };
+
+/**
+ * One consistent board label per KS4 subject ("Pearson Edexcel 4BS1"). A lesson's own board text is replaced only when it
+ * agrees with the specification (no code, or the spec's code). A different code, e.g. an older AQA or UK GCSE lesson, is left as written.
+ */
+export function boardLabel(slug: string, board: string | null, year: string): string | null {
+  const spec = data.specs[slug];
+  const b = (board || "").trim();
+  if (!spec || (year !== "y10" && year !== "y11")) return b || null;
+  const codes = b.match(/\b\d[A-Z0-9]{3,4}\b|\b8\d{3}\b/g) || [];
+  const specCodes = spec.code.match(/\b\d[A-Z0-9]{3,4}\b|\b8\d{3}\b/g) || [];
+  const agrees = !b || codes.length === 0 ? true : codes.every((c) => specCodes.includes(c));
+  return agrees ? spec.label : b;
+}

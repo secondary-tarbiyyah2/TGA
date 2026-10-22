@@ -24,7 +24,7 @@ import {
   type CurriculumVersion,
 } from "@/lib/learn/curriculum";
 import { StatusChip, ui } from "@/components/learn/ui";
-import { allHubs, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, specStatus, syllabusFor } from "@/lib/learn/syllabusIndex";
+import { allHubs, boardLabel, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, specStatus, syllabusFor } from "@/lib/learn/syllabusIndex";
 
 type ClassOpt = { id: string; name: string };
 
@@ -252,7 +252,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       const s = bySubject.get(l.subject_slug) || { slug: l.subject_slug, name: l.subject, units: new Map() };
       const u = l.unit || "Lessons";
       const k = unitKey(l.subject_slug, u);
-      const g = s.units.get(u) || { key: k, subject_slug: l.subject_slug, subject: l.subject, board: l.board, unit: u, lessons: [] };
+      const g = s.units.get(u) || { key: k, subject_slug: l.subject_slug, subject: l.subject, board: boardLabel(l.subject_slug, l.board, l.year), unit: u, lessons: [] };
       g.lessons.push(l);
       s.units.set(u, g);
       bySubject.set(l.subject_slug, s);
@@ -445,40 +445,85 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       </div>
 
       {(allSubjects.length > 1 || boards.length > 1) && (
-        <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-gold-light bg-white px-4 py-3" role="group" aria-label="Filters">
-          <label className="flex items-center gap-2 text-sm font-semibold text-ink">
-            Subject
-            <select value={subjectFilter} onChange={(e) => { setSubjectFilter(e.target.value); setBoardFilter("all"); setSelected(null); setWanted(null); }} className="rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm font-normal">
-              <option value="all">All subjects</option>
-              {allSubjects.map((s) => (
-                <option key={s.slug} value={s.slug}>
-                  {s.name}
-                </option>
-              ))}
-            </select>
-          </label>
-          {boards.length > 1 && (
-            <label className="flex items-center gap-2 text-sm font-semibold text-ink">
-              Exam board
-              <select value={boardFilter} onChange={(e) => { setBoardFilter(e.target.value); setSelected(null); setWanted(null); }} className="max-w-[16rem] rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm font-normal">
-                <option value="all">All boards</option>
-                {boards.map((b) => (
-                  <option key={b} value={b}>
-                    {b}
-                  </option>
-                ))}
-              </select>
-            </label>
-          )}
-          <label className="flex items-center gap-2 text-sm text-ink">
-            <input type="checkbox" checked={verifiedOnly} onChange={(e) => { setVerifiedOnly(e.target.checked); setSelected(null); setWanted(null); }} />
-            Only subjects with a verified specification
-          </label>
-          {filtersOn && (
-            <button type="button" className={ui.btnLink} onClick={() => { setSubjectFilter("all"); setBoardFilter("all"); setVerifiedOnly(false); }}>
-              Clear filters
+        <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4" role="group" aria-label="Filters">
+          <div>
+            <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink/60">Subject</p>
+            <div className="flex flex-wrap gap-2">
+              {[{ slug: "all", name: "All subjects", n: allSubjects.reduce((t, x) => t + x.units.length, 0) }, ...allSubjects.map((x) => ({ slug: x.slug, name: x.name, n: x.units.length }))].map((x) => {
+                const on = subjectFilter === x.slug;
+                return (
+                  <button
+                    key={x.slug}
+                    type="button"
+                    aria-pressed={on}
+                    onClick={() => {
+                      setSubjectFilter(x.slug);
+                      setBoardFilter("all");
+                      setSelected(null);
+                      setWanted(null);
+                    }}
+                    className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${on ? "border-teal-700 bg-teal-700 font-semibold text-white" : "border-gold-light bg-white text-ink hover:bg-cream"}`}
+                  >
+                    {x.slug !== "all" && <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full ring-1 ring-white/70" style={{ backgroundColor: classColour(x.slug) }} />}
+                    {x.name}
+                    <span className={`rounded-full px-1.5 text-xs tabular-nums ${on ? "bg-white/25" : "bg-cream text-ink/65"}`}>{x.n}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            {boards.length > 0 && (
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-semibold uppercase tracking-wide text-ink/60">Exam board</span>
+                {subjectFilter === "all" && boards.length > 1 && (
+                  <>
+                    <button type="button" aria-pressed={boardFilter === "all"} onClick={() => setBoardFilter("all")} className={`rounded-full border px-3 py-1 text-sm ${boardFilter === "all" ? "border-gold-500 bg-gold-100 font-semibold text-gold-900" : "border-gold-light text-ink hover:bg-cream"}`}>
+                      Any
+                    </button>
+                  </>
+                )}
+                {boards.length > 1 || subjectFilter === "all" ? (
+                  boards.map((bd) => (
+                    <button key={bd} type="button" aria-pressed={boardFilter === bd} onClick={() => setBoardFilter(boardFilter === bd ? "all" : bd)} className={`max-w-[18rem] truncate rounded-full border px-3 py-1 text-sm ${boardFilter === bd ? "border-gold-500 bg-gold-100 font-semibold text-gold-900" : "border-gold-light text-ink hover:bg-cream"}`} title={bd}>
+                      {bd}
+                    </button>
+                  ))
+                ) : (
+                  <span className="rounded-full bg-gold-100 px-3 py-1 text-sm font-semibold text-gold-900">{boards[0]}</span>
+                )}
+              </div>
+            )}
+            <button
+              type="button"
+              role="switch"
+              aria-checked={verifiedOnly}
+              onClick={() => {
+                setVerifiedOnly(!verifiedOnly);
+                setSelected(null);
+                setWanted(null);
+              }}
+              className="inline-flex items-center gap-2 text-sm text-ink"
+            >
+              <span aria-hidden="true" className={`relative inline-block h-5 w-9 rounded-full transition ${verifiedOnly ? "bg-teal-700" : "bg-ink/25"}`}>
+                <span className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-all ${verifiedOnly ? "left-[1.1rem]" : "left-0.5"}`} />
+              </span>
+              Verified specifications only
             </button>
-          )}
+            {filtersOn && (
+              <button
+                type="button"
+                className={`ml-auto ${ui.btnLink}`}
+                onClick={() => {
+                  setSubjectFilter("all");
+                  setBoardFilter("all");
+                  setVerifiedOnly(false);
+                }}
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
         </div>
       )}
 
