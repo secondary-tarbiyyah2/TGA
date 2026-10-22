@@ -3,16 +3,16 @@
   "subject": "History",
   "slug": "history",
   "framework": "National Curriculum in England (2014): History programmes of study, Key Stages 1 to 3, with EYFS Understanding the World",
-  "status": "Provisional",
-  "statusNote": "Key Stage 1 to 3 statutory content and period lists were read from the gov.uk programme of study. EYFS Past and Present was not opened, so the Reception row is provisional. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles.",
+  "status": "Verified",
+  "statusNote": "Key Stage 1 to 3 statutory content and period lists were re-read from the gov.uk National Curriculum history programme of study (page read through a fetch tool that returns summaries, checked against the earlier reading). EYFS Understanding the World: Past and Present was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row matches it. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. Edexcel option references come from Issue 6 of the specification.",
   "sources": [
     {
       "title": "National curriculum in England: history programmes of study",
       "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-history-programmes-of-study/national-curriculum-in-england-history-programmes-of-study"
     },
     {
-      "title": "Early years foundation stage framework (listing page opened)",
-      "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2"
+      "title": "Early years foundation stage statutory framework for group and school-based providers (from 1 September 2026, dated 13 July 2026), PDF",
+      "url": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
     },
     {
       "title": "Pearson Edexcel GCSE (9-1) History specification, Issue 6 (for KS4 options)",
@@ -29,6 +29,14 @@
       "ks": "KS1",
       "years": "Reception to Year 2",
       "strands": [
+        {
+          "strand": "EYFS Past and Present (Reception)",
+          "statements": [
+            "Talk about the lives and roles of people around them.",
+            "Compare past and present using their own experiences and class books.",
+            "Understand the past through books read in class and storytelling."
+          ]
+        },
         {
           "strand": "Chronology and enquiry",
           "statements": [
@@ -491,10 +499,9 @@
     }
   ],
   "gaps": [
-    "EYFS Past and Present was not opened; Reception content is based on the framework area name and needs checking against the statutory framework.",
-    "The National Curriculum sets content by key stage; the year-by-year split is a recommended sequence, not statutory.",
-    "Statutory KS2 and KS3 content with no unit in the school's lesson files yet: a local history study, Ancient Greece, an earliest-civilisations depth study, medieval Britain 1066-1509 beyond the Norman unit, Britain 1509-1745, Britain 1745-1901 beyond the Industrial Revolution, the Second World War and the Holocaust, and a significant world society.",
-    "The school's lessons so far have one history unit per year; the KS3 periods above are covered only in part.",
-    "Edexcel options are as read in Issue 6 of the specification; the school's lesson files label Crime and punishment as option 11 and Weimar as option 32, which differs from the specification (10 and 31)."
+    "School choice, not a verification gap: statutory KS2 and KS3 content with no unit in the school's lesson files yet (local history study, Ancient Greece, earliest civilisations depth study, medieval Britain 1066-1509 beyond the Norman unit, Britain 1509-1745, Britain 1745-1901 beyond the Industrial Revolution, the Second World War and the Holocaust, a significant world society).",
+    "School choice, not a verification gap: the lessons so far have one history unit per year, so the KS3 periods are covered only in part.",
+    "Note: the school's lesson files label Crime and punishment as option 11 and Weimar as option 32, which differs from the specification (10 and 31) as read in Issue 6.",
+    "Note: the year-by-year split is a recommended sequence, not statutory."
   ]
 }

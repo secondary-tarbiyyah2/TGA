@@ -3,12 +3,21 @@
   "subject": "Science",
   "slug": "science",
   "framework": "National Curriculum in England (2014): Science programmes of study (Key Stages 1 to 3); Reception aligned to EYFS Understanding the World: The Natural World",
-  "status": "Provisional",
-  "statusNote": "Key stage 1, 2 and 3 statements were read from the gov.uk National Curriculum science programmes of study (via a page-reading tool; the final few thousand characters, covering Key Stage 4, were not read and are not used here). Statutory content is set by key stage and by named year for KS1 and KS2; the Year 7 to Year 9 year allocation and all unit titles are a recommended sequence, because the National Curriculum sets Key Stage 3 content as a whole. The Reception row follows EYFS Understanding the World: The Natural World, but the EYFS statutory framework text could not be opened, so Reception statements are provisional (see gaps).",
+  "status": "Verified",
+  "statusNote": "Key Stage 1, 2 and 3 statements were read from the gov.uk National Curriculum science programme of study; the whole page, including the end of the Key Stage 4 section, has now been read, and a sample of Year 2 to Year 6 statements was re-checked against the official primary PDF with no errors found. EYFS Understanding the World: The Natural World was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row is consistent with it. Statutory content is set by key stage and by named year for KS1 and KS2; the Year 7 to Year 9 allocation and all unit titles are a recommended sequence because the National Curriculum sets Key Stage 3 content as a whole. Pages were read through a fetch tool that summarises text.",
   "sources": [
-    { "title": "National Curriculum in England: science programmes of study (gov.uk)", "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study/national-curriculum-in-england-science-programmes-of-study" },
-    { "title": "Early years foundation stage framework (gov.uk landing page, opened; statutory text not read)", "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2" },
-    { "title": "Pearson Edexcel GCSE (9-1) Sciences 2016 qualification page (for KS4 topic references)", "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/sciences-2016.html" }
+    {
+      "title": "National Curriculum in England: science programmes of study (gov.uk)",
+      "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study/national-curriculum-in-england-science-programmes-of-study"
+    },
+    {
+      "title": "Early years foundation stage statutory framework for group and school-based providers (from 1 September 2026, dated 13 July 2026), PDF",
+      "url": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "title": "Pearson Edexcel GCSE (9-1) Sciences 2016 qualification page (for KS4 topic references)",
+      "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/sciences-2016.html"
+    }
   ],
   "purpose": [
     "Science builds understanding of the world through biology, chemistry and physics, with core knowledge, methods and uses.",
@@ -21,248 +30,1416 @@
       "ks": "KS1",
       "years": "Reception to Year 2",
       "strands": [
-        { "strand": "Working scientifically", "statements": [
-          "Ask simple questions that can be answered in different ways.",
-          "Observe closely using simple equipment and perform simple tests.",
-          "Identify and classify; use observations to suggest answers.",
-          "Gather and record data to help answer questions."
-        ] },
-        { "strand": "Biology: plants, animals and habitats", "statements": [
-          "Name common wild and garden plants, including deciduous and evergreen trees; describe the basic structure of plants.",
-          "Name common fish, amphibians, reptiles, birds and mammals; classify carnivores, herbivores and omnivores.",
-          "Name and label human body parts and link them to the senses.",
-          "Distinguish living, dead and never-alive things; link habitats to the organisms in them.",
-          "Describe simple food chains and how organisms depend on each other.",
-          "Describe how seeds and bulbs grow; plants need water, light and suitable temperature.",
-          "Offspring grow into adults; animals need water, food and air; humans need exercise, diet and hygiene."
-        ] },
-        { "strand": "Chemistry: materials and seasons", "statements": [
-          "Distinguish an object from its material; name common materials and describe their simple properties.",
-          "Compare the suitability of materials for different uses.",
-          "Explore how solid objects change shape when squashed, bent, twisted or stretched.",
-          "Observe seasonal changes and describe weather and day length across the four seasons."
-        ] }
+        {
+          "strand": "EYFS The Natural World (Reception)",
+          "statements": [
+            "Explore the natural world, observe it and draw animals and plants.",
+            "Compare the natural world with contrasting environments.",
+            "Understand the seasons and changes in states of matter."
+          ]
+        },
+        {
+          "strand": "Working scientifically",
+          "statements": [
+            "Ask simple questions that can be answered in different ways.",
+            "Observe closely using simple equipment and perform simple tests.",
+            "Identify and classify; use observations to suggest answers.",
+            "Gather and record data to help answer questions."
+          ]
+        },
+        {
+          "strand": "Biology: plants, animals and habitats",
+          "statements": [
+            "Name common wild and garden plants, including deciduous and evergreen trees; describe the basic structure of plants.",
+            "Name common fish, amphibians, reptiles, birds and mammals; classify carnivores, herbivores and omnivores.",
+            "Name and label human body parts and link them to the senses.",
+            "Distinguish living, dead and never-alive things; link habitats to the organisms in them.",
+            "Describe simple food chains and how organisms depend on each other.",
+            "Describe how seeds and bulbs grow; plants need water, light and suitable temperature.",
+            "Offspring grow into adults; animals need water, food and air; humans need exercise, diet and hygiene."
+          ]
+        },
+        {
+          "strand": "Chemistry: materials and seasons",
+          "statements": [
+            "Distinguish an object from its material; name common materials and describe their simple properties.",
+            "Compare the suitability of materials for different uses.",
+            "Explore how solid objects change shape when squashed, bent, twisted or stretched.",
+            "Observe seasonal changes and describe weather and day length across the four seasons."
+          ]
+        }
       ]
     },
     {
       "ks": "Lower KS2",
       "years": "Years 3 and 4",
       "strands": [
-        { "strand": "Working scientifically", "statements": [
-          "Ask relevant questions and use different types of enquiry, including simple fair tests.",
-          "Make careful observations and take accurate measurements in standard units.",
-          "Gather, record, classify and present data using keys, charts, tables and diagrams.",
-          "Report findings, draw simple conclusions, make predictions and suggest improvements."
-        ] },
-        { "strand": "Biology: plants, animals and living things", "statements": [
-          "Describe the functions of roots, stems, leaves and flowers; investigate how water moves through plants.",
-          "Explain the flower's role in pollination, seed formation and dispersal.",
-          "Animals need the right nutrition and cannot make their own food; skeletons and muscles support and move the body.",
-          "Group living things in different ways and use classification keys.",
-          "Recognise that changing environments can endanger living things.",
-          "Describe the human digestive system and teeth; build and interpret food chains with producers, predators and prey."
-        ] },
-        { "strand": "Chemistry: rocks and states of matter", "statements": [
-          "Compare and group rocks by appearance and properties; describe how fossils form; soil is rock and organic matter.",
-          "Group materials as solids, liquids and gases; observe changes of state when heated or cooled.",
-          "Describe evaporation and condensation in the water cycle and link evaporation rate to temperature."
-        ] },
-        { "strand": "Physics: light, forces, sound and electricity", "statements": [
-          "Light is needed to see; understand reflection, dangers of sunlight and how shadows form.",
-          "Compare how things move on different surfaces; distinguish contact forces from magnetic forces at a distance.",
-          "Describe magnets attracting and repelling, magnetic poles and magnetic materials.",
-          "Sounds come from vibrations travelling through a medium to the ear; link pitch and volume to the source.",
-          "Build series circuits, name their parts and predict whether a lamp will light.",
-          "Recognise that switches open and close circuits; identify conductors and insulators."
-        ] }
+        {
+          "strand": "Working scientifically",
+          "statements": [
+            "Ask relevant questions and use different types of enquiry, including simple fair tests.",
+            "Make careful observations and take accurate measurements in standard units.",
+            "Gather, record, classify and present data using keys, charts, tables and diagrams.",
+            "Report findings, draw simple conclusions, make predictions and suggest improvements."
+          ]
+        },
+        {
+          "strand": "Biology: plants, animals and living things",
+          "statements": [
+            "Describe the functions of roots, stems, leaves and flowers; investigate how water moves through plants.",
+            "Explain the flower's role in pollination, seed formation and dispersal.",
+            "Animals need the right nutrition and cannot make their own food; skeletons and muscles support and move the body.",
+            "Group living things in different ways and use classification keys.",
+            "Recognise that changing environments can endanger living things.",
+            "Describe the human digestive system and teeth; build and interpret food chains with producers, predators and prey."
+          ]
+        },
+        {
+          "strand": "Chemistry: rocks and states of matter",
+          "statements": [
+            "Compare and group rocks by appearance and properties; describe how fossils form; soil is rock and organic matter.",
+            "Group materials as solids, liquids and gases; observe changes of state when heated or cooled.",
+            "Describe evaporation and condensation in the water cycle and link evaporation rate to temperature."
+          ]
+        },
+        {
+          "strand": "Physics: light, forces, sound and electricity",
+          "statements": [
+            "Light is needed to see; understand reflection, dangers of sunlight and how shadows form.",
+            "Compare how things move on different surfaces; distinguish contact forces from magnetic forces at a distance.",
+            "Describe magnets attracting and repelling, magnetic poles and magnetic materials.",
+            "Sounds come from vibrations travelling through a medium to the ear; link pitch and volume to the source.",
+            "Build series circuits, name their parts and predict whether a lamp will light.",
+            "Recognise that switches open and close circuits; identify conductors and insulators."
+          ]
+        }
       ]
     },
     {
       "ks": "Upper KS2",
       "years": "Years 5 and 6",
       "strands": [
-        { "strand": "Working scientifically", "statements": [
-          "Plan different enquiries, identifying and controlling variables.",
-          "Measure with increasing accuracy and precision, repeating readings where appropriate.",
-          "Record complex data using tables and scatter, bar and line graphs.",
-          "Use results to predict outcomes, design further tests and report causal links and confidence."
-        ] },
-        { "strand": "Biology: life cycles, circulation and evolution", "statements": [
-          "Compare life cycles of a mammal, amphibian, insect and bird; describe plant and animal reproduction.",
-          "Describe human development from birth to old age, including puberty.",
-          "Classify living things into broad groups using observable features and give reasons.",
-          "Name parts of the circulatory system and describe the heart, blood vessels and blood.",
-          "Explain how diet, exercise, drugs and lifestyle affect the body.",
-          "Living things change over time; fossils reveal ancient life; adaptation can lead to evolution.",
-          "Offspring resemble but vary from their parents."
-        ] },
-        { "strand": "Chemistry: properties and changes of materials", "statements": [
-          "Compare and group materials by hardness, solubility, transparency, conductivity and magnetic response.",
-          "Explain dissolving and recover dissolved substances; choose separation methods such as filtering, sieving and evaporating.",
-          "Dissolving, mixing and changes of state are reversible.",
-          "Burning and reacting acid with bicarbonate make new materials and are usually not reversible."
-        ] },
-        { "strand": "Physics: Earth and space, forces, light and electricity", "statements": [
-          "Describe the movement of Earth and planets around the Sun and the Moon around Earth.",
-          "Use Earth's rotation to explain day and night and the Sun's apparent movement.",
-          "Gravity pulls unsupported objects towards Earth; describe air resistance, water resistance and friction.",
-          "Explain how levers, pulleys and gears let a small force have a greater effect.",
-          "Light appears to travel in straight lines; we see things by light they emit or reflect.",
-          "Shadows match the shape of the object casting them.",
-          "Link lamp brightness and buzzer volume to cells and voltage; use standard circuit symbols."
-        ] }
+        {
+          "strand": "Working scientifically",
+          "statements": [
+            "Plan different enquiries, identifying and controlling variables.",
+            "Measure with increasing accuracy and precision, repeating readings where appropriate.",
+            "Record complex data using tables and scatter, bar and line graphs.",
+            "Use results to predict outcomes, design further tests and report causal links and confidence."
+          ]
+        },
+        {
+          "strand": "Biology: life cycles, circulation and evolution",
+          "statements": [
+            "Compare life cycles of a mammal, amphibian, insect and bird; describe plant and animal reproduction.",
+            "Describe human development from birth to old age, including puberty.",
+            "Classify living things into broad groups using observable features and give reasons.",
+            "Name parts of the circulatory system and describe the heart, blood vessels and blood.",
+            "Explain how diet, exercise, drugs and lifestyle affect the body.",
+            "Living things change over time; fossils reveal ancient life; adaptation can lead to evolution.",
+            "Offspring resemble but vary from their parents."
+          ]
+        },
+        {
+          "strand": "Chemistry: properties and changes of materials",
+          "statements": [
+            "Compare and group materials by hardness, solubility, transparency, conductivity and magnetic response.",
+            "Explain dissolving and recover dissolved substances; choose separation methods such as filtering, sieving and evaporating.",
+            "Dissolving, mixing and changes of state are reversible.",
+            "Burning and reacting acid with bicarbonate make new materials and are usually not reversible."
+          ]
+        },
+        {
+          "strand": "Physics: Earth and space, forces, light and electricity",
+          "statements": [
+            "Describe the movement of Earth and planets around the Sun and the Moon around Earth.",
+            "Use Earth's rotation to explain day and night and the Sun's apparent movement.",
+            "Gravity pulls unsupported objects towards Earth; describe air resistance, water resistance and friction.",
+            "Explain how levers, pulleys and gears let a small force have a greater effect.",
+            "Light appears to travel in straight lines; we see things by light they emit or reflect.",
+            "Shadows match the shape of the object casting them.",
+            "Link lamp brightness and buzzer volume to cells and voltage; use standard circuit symbols."
+          ]
+        }
       ]
     },
     {
       "ks": "KS3",
       "years": "Years 7 to 9",
       "strands": [
-        { "strand": "Working scientifically", "statements": [
-          "Value objectivity, accuracy, precision, repeatability and reproducibility; understand that theories change with new evidence and peer review.",
-          "Evaluate risks and plan tests with independent, dependent and control variables.",
-          "Use apparatus safely, record data, assess method reliability and apply sampling techniques.",
-          "Present data in tables and graphs, interpret patterns and evaluate random and systematic error.",
-          "Use SI units and IUPAC chemical nomenclature; use and derive equations; carry out simple statistics."
-        ] },
-        { "strand": "Biology: structure and function of living organisms", "statements": [
-          "Cells are the basic units of life; use a light microscope; compare plant and animal cells.",
-          "Organisation from cells to tissues, organs, systems and organisms; adaptations of single-celled organisms.",
-          "Diffusion moves materials in and between cells.",
-          "Skeletal and muscular systems: support, protection, movement and antagonistic muscles.",
-          "Healthy diet, energy requirements, dietary imbalance and deficiency disease; digestion and enzymes.",
-          "Gas exchange system, breathing model, effects of exercise, asthma and smoking; stomata in plants.",
-          "Human and plant reproduction; role of the placenta; effects of recreational drugs."
-        ] },
-        { "strand": "Biology: material cycles, interdependence, genetics and evolution", "statements": [
-          "Photosynthesis: reactants, products, leaf adaptations and importance for life and atmosphere.",
-          "Aerobic and anaerobic respiration release energy; compare reactants and products, including fermentation.",
-          "Organisms depend on each other in food webs; toxins can accumulate; insect pollination supports food security.",
-          "Heredity; chromosomes, genes and DNA, including contributions of Watson, Crick, Wilkins and Franklin.",
-          "Continuous and discontinuous variation; variation drives natural selection.",
-          "Environmental change can lead to extinction; biodiversity and gene banks matter."
-        ] },
-        { "strand": "Chemistry", "statements": [
-          "Particle model explains solids, liquids, gases, gas pressure, changes of state and diffusion.",
-          "Atoms, elements and compounds; symbols and formulae; conservation of mass.",
-          "Pure and impure substances; separation by filtration, evaporation, distillation and chromatography.",
-          "Reactions rearrange atoms; word and symbol equations; combustion, thermal decomposition, oxidation and displacement.",
-          "Acids, alkalis, neutralisation, pH and indicators; acid and metal, acid and alkali reactions; catalysts.",
-          "Exothermic and endothermic changes (qualitative); periodic table, groups, periods and Mendeleev.",
-          "Reactivity series and extraction with carbon; properties of ceramics, polymers and composites.",
-          "Structure of the Earth, rock cycle, limited resources and recycling; atmosphere composition and carbon dioxide impact on climate."
-        ] },
-        { "strand": "Physics: energy, motion and forces", "statements": [
-          "Energy: compare food, fuel, appliance and household energy values; units J, kJ, W, kW and kWh.",
-          "Energy transfers by conduction, radiation and other processes; energy is conserved; simple machines trade force and distance.",
-          "Speed equals distance divided by time; distance-time graphs; relative motion.",
-          "Forces as interactions; balanced and unbalanced forces; moments; friction; air and water resistance; Hooke's law as a special case.",
-          "Non-contact forces: gravity, magnetism and static electricity.",
-          "Pressure in fluids: pressure equals force divided by area; atmospheric and liquid pressure; upthrust, floating and sinking."
-        ] },
-        { "strand": "Physics: waves, electricity, matter and space", "statements": [
-          "Waves: water waves are transverse; sound is a longitudinal vibration needing a medium; hearing ranges.",
-          "Light: ray model, reflection, refraction, lenses, the eye, colour and white light (qualitative).",
-          "Current electricity: current, potential difference, resistance, series and parallel circuits; resistance equals p.d. divided by current.",
-          "Static electricity and electric fields; magnetic fields, Earth's magnetism, electromagnets and motors (principles).",
-          "Matter: density, conservation of mass, Brownian motion, diffusion and internal energy.",
-          "Space physics: weight equals mass times gravitational field strength; seasons from Earth's tilt; stars, galaxies and light years."
-        ] }
+        {
+          "strand": "Working scientifically",
+          "statements": [
+            "Value objectivity, accuracy, precision, repeatability and reproducibility; understand that theories change with new evidence and peer review.",
+            "Evaluate risks and plan tests with independent, dependent and control variables.",
+            "Use apparatus safely, record data, assess method reliability and apply sampling techniques.",
+            "Present data in tables and graphs, interpret patterns and evaluate random and systematic error.",
+            "Use SI units and IUPAC chemical nomenclature; use and derive equations; carry out simple statistics."
+          ]
+        },
+        {
+          "strand": "Biology: structure and function of living organisms",
+          "statements": [
+            "Cells are the basic units of life; use a light microscope; compare plant and animal cells.",
+            "Organisation from cells to tissues, organs, systems and organisms; adaptations of single-celled organisms.",
+            "Diffusion moves materials in and between cells.",
+            "Skeletal and muscular systems: support, protection, movement and antagonistic muscles.",
+            "Healthy diet, energy requirements, dietary imbalance and deficiency disease; digestion and enzymes.",
+            "Gas exchange system, breathing model, effects of exercise, asthma and smoking; stomata in plants.",
+            "Human and plant reproduction; role of the placenta; effects of recreational drugs."
+          ]
+        },
+        {
+          "strand": "Biology: material cycles, interdependence, genetics and evolution",
+          "statements": [
+            "Photosynthesis: reactants, products, leaf adaptations and importance for life and atmosphere.",
+            "Aerobic and anaerobic respiration release energy; compare reactants and products, including fermentation.",
+            "Organisms depend on each other in food webs; toxins can accumulate; insect pollination supports food security.",
+            "Heredity; chromosomes, genes and DNA, including contributions of Watson, Crick, Wilkins and Franklin.",
+            "Continuous and discontinuous variation; variation drives natural selection.",
+            "Environmental change can lead to extinction; biodiversity and gene banks matter."
+          ]
+        },
+        {
+          "strand": "Chemistry",
+          "statements": [
+            "Particle model explains solids, liquids, gases, gas pressure, changes of state and diffusion.",
+            "Atoms, elements and compounds; symbols and formulae; conservation of mass.",
+            "Pure and impure substances; separation by filtration, evaporation, distillation and chromatography.",
+            "Reactions rearrange atoms; word and symbol equations; combustion, thermal decomposition, oxidation and displacement.",
+            "Acids, alkalis, neutralisation, pH and indicators; acid and metal, acid and alkali reactions; catalysts.",
+            "Exothermic and endothermic changes (qualitative); periodic table, groups, periods and Mendeleev.",
+            "Reactivity series and extraction with carbon; properties of ceramics, polymers and composites.",
+            "Structure of the Earth, rock cycle, limited resources and recycling; atmosphere composition and carbon dioxide impact on climate."
+          ]
+        },
+        {
+          "strand": "Physics: energy, motion and forces",
+          "statements": [
+            "Energy: compare food, fuel, appliance and household energy values; units J, kJ, W, kW and kWh.",
+            "Energy transfers by conduction, radiation and other processes; energy is conserved; simple machines trade force and distance.",
+            "Speed equals distance divided by time; distance-time graphs; relative motion.",
+            "Forces as interactions; balanced and unbalanced forces; moments; friction; air and water resistance; Hooke's law as a special case.",
+            "Non-contact forces: gravity, magnetism and static electricity.",
+            "Pressure in fluids: pressure equals force divided by area; atmospheric and liquid pressure; upthrust, floating and sinking."
+          ]
+        },
+        {
+          "strand": "Physics: waves, electricity, matter and space",
+          "statements": [
+            "Waves: water waves are transverse; sound is a longitudinal vibration needing a medium; hearing ranges.",
+            "Light: ray model, reflection, refraction, lenses, the eye, colour and white light (qualitative).",
+            "Current electricity: current, potential difference, resistance, series and parallel circuits; resistance equals p.d. divided by current.",
+            "Static electricity and electric fields; magnetic fields, Earth's magnetism, electromagnets and motors (principles).",
+            "Matter: density, conservation of mass, Brownian motion, diffusion and internal energy.",
+            "Space physics: weight equals mass times gravitational field strength; seasons from Earth's tilt; stars, galaxies and light years."
+          ]
+        }
       ]
     }
   ],
   "yearMap": {
     "reception": [
-      { "unit": "Understanding the World: Autumn and the natural world", "focus": ["Autumn leaves and trees", "My five senses", "Animals and what they eat", "Autumn weather and seasonal change"], "skills": ["Observe closely outdoors", "Talk about what they see, hear and feel", "Sort and compare natural objects"], "keyTerms": ["leaf", "season", "senses", "habitat", "weather"], "assess": "Teacher observation against EYFS Understanding the World natural world goal", "prereq": "None", "leadsTo": "Year 1: Seasonal changes and Plants" },
-      { "unit": "Plants and growing", "focus": ["Planting seeds and bulbs", "What plants need", "Parts of a plant"], "skills": ["Observe and record growth over time", "Ask simple questions"], "keyTerms": ["seed", "grow", "water", "root", "flower"], "assess": "Observation and photographic record of growing", "prereq": "Autumn and the natural world", "leadsTo": "Year 1: Plants; Year 2: Plants" },
-      { "unit": "Animals and their homes", "focus": ["Familiar animals and what they eat", "Minibeasts and where they live", "Caring for living things"], "skills": ["Notice similarities and differences", "Use simple vocabulary to describe"], "keyTerms": ["animal", "minibeast", "home", "food", "baby"], "assess": "Observation and discussion", "prereq": "Animals and what they eat", "leadsTo": "Year 1: Animals including humans; Year 2: Living things and their habitats" }
+      {
+        "unit": "Understanding the World: Autumn and the natural world",
+        "focus": [
+          "Autumn leaves and trees",
+          "My five senses",
+          "Animals and what they eat",
+          "Autumn weather and seasonal change"
+        ],
+        "skills": [
+          "Observe closely outdoors",
+          "Talk about what they see, hear and feel",
+          "Sort and compare natural objects"
+        ],
+        "keyTerms": [
+          "leaf",
+          "season",
+          "senses",
+          "habitat",
+          "weather"
+        ],
+        "assess": "Teacher observation against EYFS Understanding the World natural world goal",
+        "prereq": "None",
+        "leadsTo": "Year 1: Seasonal changes and Plants"
+      },
+      {
+        "unit": "Plants and growing",
+        "focus": [
+          "Planting seeds and bulbs",
+          "What plants need",
+          "Parts of a plant"
+        ],
+        "skills": [
+          "Observe and record growth over time",
+          "Ask simple questions"
+        ],
+        "keyTerms": [
+          "seed",
+          "grow",
+          "water",
+          "root",
+          "flower"
+        ],
+        "assess": "Observation and photographic record of growing",
+        "prereq": "Autumn and the natural world",
+        "leadsTo": "Year 1: Plants; Year 2: Plants"
+      },
+      {
+        "unit": "Animals and their homes",
+        "focus": [
+          "Familiar animals and what they eat",
+          "Minibeasts and where they live",
+          "Caring for living things"
+        ],
+        "skills": [
+          "Notice similarities and differences",
+          "Use simple vocabulary to describe"
+        ],
+        "keyTerms": [
+          "animal",
+          "minibeast",
+          "home",
+          "food",
+          "baby"
+        ],
+        "assess": "Observation and discussion",
+        "prereq": "Animals and what they eat",
+        "leadsTo": "Year 1: Animals including humans; Year 2: Living things and their habitats"
+      }
     ],
     "y1": [
-      { "unit": "Plants and trees", "focus": ["Common wild and garden plants", "Parts of a plant", "Deciduous and evergreen trees"], "skills": ["Observe closely", "Identify and classify", "Record in drawings"], "keyTerms": ["root", "stem", "leaf", "flower", "deciduous", "evergreen"], "assess": "Labelled drawing and end of unit questions", "prereq": "Reception: Plants and growing", "leadsTo": "Year 2: Plants; Year 3: Plants" },
-      { "unit": "Animals including humans", "focus": ["Fish, amphibians, reptiles, birds, mammals", "Carnivores, herbivores, omnivores", "Parts of the body and the five senses"], "skills": ["Classify using observable features", "Ask simple questions"], "keyTerms": ["mammal", "bird", "reptile", "carnivore", "herbivore", "omnivore", "senses"], "assess": "Sorting task and short quiz", "prereq": "Reception: Animals and their homes", "leadsTo": "Year 2: Animals including humans" },
-      { "unit": "Everyday materials", "focus": ["Objects and the materials they are made from", "Wood, plastic, glass, metal, water, rock", "Simple properties"], "skills": ["Compare and group", "Perform simple tests"], "keyTerms": ["material", "hard", "soft", "waterproof", "transparent"], "assess": "Practical sorting and comparing task", "prereq": "None", "leadsTo": "Year 2: Uses of everyday materials" },
-      { "unit": "Seasonal changes", "focus": ["Autumn becomes winter", "Four seasons and weather", "Day length across the year"], "skills": ["Observe over time", "Record weather"], "keyTerms": ["season", "weather", "daylight", "autumn", "winter"], "assess": "Class weather record and discussion", "prereq": "Reception: Autumn and the natural world", "leadsTo": "Year 5: Earth and space" }
+      {
+        "unit": "Plants and trees",
+        "focus": [
+          "Common wild and garden plants",
+          "Parts of a plant",
+          "Deciduous and evergreen trees"
+        ],
+        "skills": [
+          "Observe closely",
+          "Identify and classify",
+          "Record in drawings"
+        ],
+        "keyTerms": [
+          "root",
+          "stem",
+          "leaf",
+          "flower",
+          "deciduous",
+          "evergreen"
+        ],
+        "assess": "Labelled drawing and end of unit questions",
+        "prereq": "Reception: Plants and growing",
+        "leadsTo": "Year 2: Plants; Year 3: Plants"
+      },
+      {
+        "unit": "Animals including humans",
+        "focus": [
+          "Fish, amphibians, reptiles, birds, mammals",
+          "Carnivores, herbivores, omnivores",
+          "Parts of the body and the five senses"
+        ],
+        "skills": [
+          "Classify using observable features",
+          "Ask simple questions"
+        ],
+        "keyTerms": [
+          "mammal",
+          "bird",
+          "reptile",
+          "carnivore",
+          "herbivore",
+          "omnivore",
+          "senses"
+        ],
+        "assess": "Sorting task and short quiz",
+        "prereq": "Reception: Animals and their homes",
+        "leadsTo": "Year 2: Animals including humans"
+      },
+      {
+        "unit": "Everyday materials",
+        "focus": [
+          "Objects and the materials they are made from",
+          "Wood, plastic, glass, metal, water, rock",
+          "Simple properties"
+        ],
+        "skills": [
+          "Compare and group",
+          "Perform simple tests"
+        ],
+        "keyTerms": [
+          "material",
+          "hard",
+          "soft",
+          "waterproof",
+          "transparent"
+        ],
+        "assess": "Practical sorting and comparing task",
+        "prereq": "None",
+        "leadsTo": "Year 2: Uses of everyday materials"
+      },
+      {
+        "unit": "Seasonal changes",
+        "focus": [
+          "Autumn becomes winter",
+          "Four seasons and weather",
+          "Day length across the year"
+        ],
+        "skills": [
+          "Observe over time",
+          "Record weather"
+        ],
+        "keyTerms": [
+          "season",
+          "weather",
+          "daylight",
+          "autumn",
+          "winter"
+        ],
+        "assess": "Class weather record and discussion",
+        "prereq": "Reception: Autumn and the natural world",
+        "leadsTo": "Year 5: Earth and space"
+      }
     ],
     "y2": [
-      { "unit": "Living things and their habitats", "focus": ["Living, dead and never alive", "Habitats and microhabitats", "Simple food chains"], "skills": ["Classify", "Gather and record data", "Use observations to suggest answers"], "keyTerms": ["habitat", "microhabitat", "food chain", "living", "dead"], "assess": "Habitat survey and food chain task", "prereq": "Year 1: Animals including humans", "leadsTo": "Year 4: Living things and their habitats" },
-      { "unit": "Plants", "focus": ["Seeds and bulbs growing", "What plants need: water, light, temperature", "Fair comparison of growth"], "skills": ["Ask simple questions", "Simple tests", "Record measurements"], "keyTerms": ["seed", "bulb", "germinate", "light", "water"], "assess": "Investigation write-up", "prereq": "Year 1: Plants and trees", "leadsTo": "Year 3: Plants" },
-      { "unit": "Animals including humans", "focus": ["Offspring grow into adults", "Needs: water, food, air", "Exercise, diet and hygiene"], "skills": ["Gather data", "Identify and classify"], "keyTerms": ["offspring", "adult", "survival", "exercise", "hygiene"], "assess": "Questioning and short report", "prereq": "Year 1: Animals including humans", "leadsTo": "Year 3: Nutrition and skeletons" },
-      { "unit": "Uses of everyday materials", "focus": ["Suitability of materials for uses", "Squashing, bending, twisting, stretching", "Changing the shape of solid objects"], "skills": ["Perform simple tests", "Compare and explain"], "keyTerms": ["suitable", "flexible", "rigid", "stretch", "squash"], "assess": "Practical test and conclusion", "prereq": "Year 1: Everyday materials", "leadsTo": "Year 5: Properties and changes of materials" }
+      {
+        "unit": "Living things and their habitats",
+        "focus": [
+          "Living, dead and never alive",
+          "Habitats and microhabitats",
+          "Simple food chains"
+        ],
+        "skills": [
+          "Classify",
+          "Gather and record data",
+          "Use observations to suggest answers"
+        ],
+        "keyTerms": [
+          "habitat",
+          "microhabitat",
+          "food chain",
+          "living",
+          "dead"
+        ],
+        "assess": "Habitat survey and food chain task",
+        "prereq": "Year 1: Animals including humans",
+        "leadsTo": "Year 4: Living things and their habitats"
+      },
+      {
+        "unit": "Plants",
+        "focus": [
+          "Seeds and bulbs growing",
+          "What plants need: water, light, temperature",
+          "Fair comparison of growth"
+        ],
+        "skills": [
+          "Ask simple questions",
+          "Simple tests",
+          "Record measurements"
+        ],
+        "keyTerms": [
+          "seed",
+          "bulb",
+          "germinate",
+          "light",
+          "water"
+        ],
+        "assess": "Investigation write-up",
+        "prereq": "Year 1: Plants and trees",
+        "leadsTo": "Year 3: Plants"
+      },
+      {
+        "unit": "Animals including humans",
+        "focus": [
+          "Offspring grow into adults",
+          "Needs: water, food, air",
+          "Exercise, diet and hygiene"
+        ],
+        "skills": [
+          "Gather data",
+          "Identify and classify"
+        ],
+        "keyTerms": [
+          "offspring",
+          "adult",
+          "survival",
+          "exercise",
+          "hygiene"
+        ],
+        "assess": "Questioning and short report",
+        "prereq": "Year 1: Animals including humans",
+        "leadsTo": "Year 3: Nutrition and skeletons"
+      },
+      {
+        "unit": "Uses of everyday materials",
+        "focus": [
+          "Suitability of materials for uses",
+          "Squashing, bending, twisting, stretching",
+          "Changing the shape of solid objects"
+        ],
+        "skills": [
+          "Perform simple tests",
+          "Compare and explain"
+        ],
+        "keyTerms": [
+          "suitable",
+          "flexible",
+          "rigid",
+          "stretch",
+          "squash"
+        ],
+        "assess": "Practical test and conclusion",
+        "prereq": "Year 1: Everyday materials",
+        "leadsTo": "Year 5: Properties and changes of materials"
+      }
     ],
     "y3": [
-      { "unit": "Plants", "focus": ["Parts of a flowering plant and their jobs", "What plants need to grow", "Water transport through a plant", "Pollination, seeds and life cycle"], "skills": ["Fair testing", "Take accurate measurements", "Report findings"], "keyTerms": ["pollination", "seed dispersal", "root", "stem", "nutrients"], "assess": "Investigation on water transport and unit test", "prereq": "Year 2: Plants", "leadsTo": "Year 5: Reproduction in plants; Year 7: Photosynthesis" },
-      { "unit": "Animals including humans", "focus": ["Nutrition and food groups", "A balanced diet", "Skeletons and bones", "Muscles, joints and movement"], "skills": ["Gather and classify data", "Use charts and tables"], "keyTerms": ["nutrition", "protein", "skeleton", "muscle", "joint"], "assess": "Data task on diet and short test", "prereq": "Year 2: Animals including humans", "leadsTo": "Year 8: Food and nutrition; Year 7: Cells and systems" },
-      { "unit": "Rocks and soils", "focus": ["Grouping rocks by properties", "How fossils form", "Soil from rock and organic matter"], "skills": ["Compare and group", "Make observations"], "keyTerms": ["igneous", "sedimentary", "fossil", "soil", "permeable"], "assess": "Rock testing task", "prereq": "Year 2: Uses of everyday materials", "leadsTo": "Year 6: Evolution and inheritance; KS3 Earth and atmosphere" },
-      { "unit": "Light", "focus": ["Light is needed to see", "Reflection", "Shadows and size patterns", "Dangers of sunlight"], "skills": ["Pattern seeking", "Measure shadow length"], "keyTerms": ["reflect", "shadow", "opaque", "source", "dark"], "assess": "Shadow investigation", "prereq": "Year 1: Seasonal changes", "leadsTo": "Year 6: Light; Year 8: Waves" },
-      { "unit": "Forces and magnets", "focus": ["Movement on different surfaces", "Contact and non-contact forces", "Magnetic materials and poles"], "skills": ["Fair test", "Make predictions"], "keyTerms": ["friction", "magnet", "attract", "repel", "pole"], "assess": "Magnet investigation and test", "prereq": "Year 2: Uses of everyday materials", "leadsTo": "Year 5: Forces; KS3 Forces and magnetism" }
+      {
+        "unit": "Plants",
+        "focus": [
+          "Parts of a flowering plant and their jobs",
+          "What plants need to grow",
+          "Water transport through a plant",
+          "Pollination, seeds and life cycle"
+        ],
+        "skills": [
+          "Fair testing",
+          "Take accurate measurements",
+          "Report findings"
+        ],
+        "keyTerms": [
+          "pollination",
+          "seed dispersal",
+          "root",
+          "stem",
+          "nutrients"
+        ],
+        "assess": "Investigation on water transport and unit test",
+        "prereq": "Year 2: Plants",
+        "leadsTo": "Year 5: Reproduction in plants; Year 7: Photosynthesis"
+      },
+      {
+        "unit": "Animals including humans",
+        "focus": [
+          "Nutrition and food groups",
+          "A balanced diet",
+          "Skeletons and bones",
+          "Muscles, joints and movement"
+        ],
+        "skills": [
+          "Gather and classify data",
+          "Use charts and tables"
+        ],
+        "keyTerms": [
+          "nutrition",
+          "protein",
+          "skeleton",
+          "muscle",
+          "joint"
+        ],
+        "assess": "Data task on diet and short test",
+        "prereq": "Year 2: Animals including humans",
+        "leadsTo": "Year 8: Food and nutrition; Year 7: Cells and systems"
+      },
+      {
+        "unit": "Rocks and soils",
+        "focus": [
+          "Grouping rocks by properties",
+          "How fossils form",
+          "Soil from rock and organic matter"
+        ],
+        "skills": [
+          "Compare and group",
+          "Make observations"
+        ],
+        "keyTerms": [
+          "igneous",
+          "sedimentary",
+          "fossil",
+          "soil",
+          "permeable"
+        ],
+        "assess": "Rock testing task",
+        "prereq": "Year 2: Uses of everyday materials",
+        "leadsTo": "Year 6: Evolution and inheritance; KS3 Earth and atmosphere"
+      },
+      {
+        "unit": "Light",
+        "focus": [
+          "Light is needed to see",
+          "Reflection",
+          "Shadows and size patterns",
+          "Dangers of sunlight"
+        ],
+        "skills": [
+          "Pattern seeking",
+          "Measure shadow length"
+        ],
+        "keyTerms": [
+          "reflect",
+          "shadow",
+          "opaque",
+          "source",
+          "dark"
+        ],
+        "assess": "Shadow investigation",
+        "prereq": "Year 1: Seasonal changes",
+        "leadsTo": "Year 6: Light; Year 8: Waves"
+      },
+      {
+        "unit": "Forces and magnets",
+        "focus": [
+          "Movement on different surfaces",
+          "Contact and non-contact forces",
+          "Magnetic materials and poles"
+        ],
+        "skills": [
+          "Fair test",
+          "Make predictions"
+        ],
+        "keyTerms": [
+          "friction",
+          "magnet",
+          "attract",
+          "repel",
+          "pole"
+        ],
+        "assess": "Magnet investigation and test",
+        "prereq": "Year 2: Uses of everyday materials",
+        "leadsTo": "Year 5: Forces; KS3 Forces and magnetism"
+      }
     ],
     "y4": [
-      { "unit": "Living things and their habitats", "focus": ["Grouping living things", "Using classification keys", "Changing environments and endangered species"], "skills": ["Classify", "Use and build keys"], "keyTerms": ["classification", "key", "vertebrate", "invertebrate", "endangered"], "assess": "Create and test a key", "prereq": "Year 2: Living things and their habitats", "leadsTo": "Year 6: Classification; Year 9: Biodiversity" },
-      { "unit": "States of matter", "focus": ["Solids, liquids and gases", "Changes of state: melting and freezing", "Evaporation and condensation", "The water cycle"], "skills": ["Measure temperature in degrees Celsius", "Record data in tables and graphs"], "keyTerms": ["melt", "freeze", "evaporate", "condense", "water cycle"], "assess": "Investigation of changes of state", "prereq": "Year 2: Uses of everyday materials", "leadsTo": "Year 7: Particle model; Year 5: Reversible changes" },
-      { "unit": "Animals including humans", "focus": ["The human digestive system", "Teeth and their jobs", "Food chains: producers, predators and prey"], "skills": ["Model a process", "Interpret food chains"], "keyTerms": ["digestion", "stomach", "incisor", "producer", "predator", "prey"], "assess": "Digestion and diet review", "prereq": "Year 3: Animals including humans", "leadsTo": "Year 8: Digestive system and enzymes; Year 9: Food webs" },
-      { "unit": "Sound", "focus": ["Sound from vibrations", "Sound travelling to the ear", "Pitch and volume patterns", "Sound fading with distance"], "skills": ["Pattern seeking", "Use data loggers"], "keyTerms": ["vibration", "pitch", "volume", "medium", "insulation"], "assess": "Pitch or volume investigation", "prereq": "Year 3: Forces and magnets", "leadsTo": "Year 8: Waves; KS4 Physics Topic 4" },
-      { "unit": "Electricity", "focus": ["Appliances and mains safety", "Series circuits and their parts", "Switches", "Conductors and insulators"], "skills": ["Build and test circuits", "Predict outcomes"], "keyTerms": ["circuit", "cell", "switch", "conductor", "insulator"], "assess": "Circuit building and conductor test", "prereq": "Year 3: Forces and magnets", "leadsTo": "Year 6: Electricity; Year 8: Current electricity" }
+      {
+        "unit": "Living things and their habitats",
+        "focus": [
+          "Grouping living things",
+          "Using classification keys",
+          "Changing environments and endangered species"
+        ],
+        "skills": [
+          "Classify",
+          "Use and build keys"
+        ],
+        "keyTerms": [
+          "classification",
+          "key",
+          "vertebrate",
+          "invertebrate",
+          "endangered"
+        ],
+        "assess": "Create and test a key",
+        "prereq": "Year 2: Living things and their habitats",
+        "leadsTo": "Year 6: Classification; Year 9: Biodiversity"
+      },
+      {
+        "unit": "States of matter",
+        "focus": [
+          "Solids, liquids and gases",
+          "Changes of state: melting and freezing",
+          "Evaporation and condensation",
+          "The water cycle"
+        ],
+        "skills": [
+          "Measure temperature in degrees Celsius",
+          "Record data in tables and graphs"
+        ],
+        "keyTerms": [
+          "melt",
+          "freeze",
+          "evaporate",
+          "condense",
+          "water cycle"
+        ],
+        "assess": "Investigation of changes of state",
+        "prereq": "Year 2: Uses of everyday materials",
+        "leadsTo": "Year 7: Particle model; Year 5: Reversible changes"
+      },
+      {
+        "unit": "Animals including humans",
+        "focus": [
+          "The human digestive system",
+          "Teeth and their jobs",
+          "Food chains: producers, predators and prey"
+        ],
+        "skills": [
+          "Model a process",
+          "Interpret food chains"
+        ],
+        "keyTerms": [
+          "digestion",
+          "stomach",
+          "incisor",
+          "producer",
+          "predator",
+          "prey"
+        ],
+        "assess": "Digestion and diet review",
+        "prereq": "Year 3: Animals including humans",
+        "leadsTo": "Year 8: Digestive system and enzymes; Year 9: Food webs"
+      },
+      {
+        "unit": "Sound",
+        "focus": [
+          "Sound from vibrations",
+          "Sound travelling to the ear",
+          "Pitch and volume patterns",
+          "Sound fading with distance"
+        ],
+        "skills": [
+          "Pattern seeking",
+          "Use data loggers"
+        ],
+        "keyTerms": [
+          "vibration",
+          "pitch",
+          "volume",
+          "medium",
+          "insulation"
+        ],
+        "assess": "Pitch or volume investigation",
+        "prereq": "Year 3: Forces and magnets",
+        "leadsTo": "Year 8: Waves; KS4 Physics Topic 4"
+      },
+      {
+        "unit": "Electricity",
+        "focus": [
+          "Appliances and mains safety",
+          "Series circuits and their parts",
+          "Switches",
+          "Conductors and insulators"
+        ],
+        "skills": [
+          "Build and test circuits",
+          "Predict outcomes"
+        ],
+        "keyTerms": [
+          "circuit",
+          "cell",
+          "switch",
+          "conductor",
+          "insulator"
+        ],
+        "assess": "Circuit building and conductor test",
+        "prereq": "Year 3: Forces and magnets",
+        "leadsTo": "Year 6: Electricity; Year 8: Current electricity"
+      }
     ],
     "y5": [
-      { "unit": "Living things: life cycles and reproduction", "focus": ["Life cycles of mammal, amphibian, insect, bird", "Sexual and asexual reproduction in plants", "Human growth and development to old age, including puberty"], "skills": ["Compare using data", "Use secondary sources"], "keyTerms": ["life cycle", "metamorphosis", "reproduction", "puberty", "gestation"], "assess": "Life cycle comparison and test", "prereq": "Year 3: Plants; Year 2: Animals including humans", "leadsTo": "Year 7: Reproduction; KS4 Biology Topic 3" },
-      { "unit": "Properties and changes of materials", "focus": ["Hardness, solubility, conductivity, magnetism", "Dissolving and separating mixtures", "Reversible and irreversible changes"], "skills": ["Plan fair tests and control variables", "Repeat readings"], "keyTerms": ["solution", "soluble", "filter", "reversible", "irreversible"], "assess": "Planned enquiry and write-up", "prereq": "Year 4: States of matter", "leadsTo": "Year 7: Mixtures and separation; KS4 Chemistry Topic 2" },
-      { "unit": "Earth and space", "focus": ["The Solar System", "Day and night", "The Moon and its phases", "How ideas about the Solar System changed"], "skills": ["Model with physical demonstrations", "Use secondary evidence"], "keyTerms": ["orbit", "rotation", "planet", "Moon phase", "heliocentric"], "assess": "Model explanation and test", "prereq": "Year 1: Seasonal changes", "leadsTo": "Year 9: Space physics; KS4 Physics Topic 7" },
-      { "unit": "Forces", "focus": ["Gravity and weight", "Air resistance", "Water resistance and friction", "Levers, pulleys and gears"], "skills": ["Measure forces", "Fair test with graphs"], "keyTerms": ["gravity", "friction", "air resistance", "lever", "pulley", "newton"], "assess": "Resistance investigation", "prereq": "Year 3: Forces and magnets", "leadsTo": "Year 8: Forces; KS4 Physics Topic 2 and Topic 9" }
+      {
+        "unit": "Living things: life cycles and reproduction",
+        "focus": [
+          "Life cycles of mammal, amphibian, insect, bird",
+          "Sexual and asexual reproduction in plants",
+          "Human growth and development to old age, including puberty"
+        ],
+        "skills": [
+          "Compare using data",
+          "Use secondary sources"
+        ],
+        "keyTerms": [
+          "life cycle",
+          "metamorphosis",
+          "reproduction",
+          "puberty",
+          "gestation"
+        ],
+        "assess": "Life cycle comparison and test",
+        "prereq": "Year 3: Plants; Year 2: Animals including humans",
+        "leadsTo": "Year 7: Reproduction; KS4 Biology Topic 3"
+      },
+      {
+        "unit": "Properties and changes of materials",
+        "focus": [
+          "Hardness, solubility, conductivity, magnetism",
+          "Dissolving and separating mixtures",
+          "Reversible and irreversible changes"
+        ],
+        "skills": [
+          "Plan fair tests and control variables",
+          "Repeat readings"
+        ],
+        "keyTerms": [
+          "solution",
+          "soluble",
+          "filter",
+          "reversible",
+          "irreversible"
+        ],
+        "assess": "Planned enquiry and write-up",
+        "prereq": "Year 4: States of matter",
+        "leadsTo": "Year 7: Mixtures and separation; KS4 Chemistry Topic 2"
+      },
+      {
+        "unit": "Earth and space",
+        "focus": [
+          "The Solar System",
+          "Day and night",
+          "The Moon and its phases",
+          "How ideas about the Solar System changed"
+        ],
+        "skills": [
+          "Model with physical demonstrations",
+          "Use secondary evidence"
+        ],
+        "keyTerms": [
+          "orbit",
+          "rotation",
+          "planet",
+          "Moon phase",
+          "heliocentric"
+        ],
+        "assess": "Model explanation and test",
+        "prereq": "Year 1: Seasonal changes",
+        "leadsTo": "Year 9: Space physics; KS4 Physics Topic 7"
+      },
+      {
+        "unit": "Forces",
+        "focus": [
+          "Gravity and weight",
+          "Air resistance",
+          "Water resistance and friction",
+          "Levers, pulleys and gears"
+        ],
+        "skills": [
+          "Measure forces",
+          "Fair test with graphs"
+        ],
+        "keyTerms": [
+          "gravity",
+          "friction",
+          "air resistance",
+          "lever",
+          "pulley",
+          "newton"
+        ],
+        "assess": "Resistance investigation",
+        "prereq": "Year 3: Forces and magnets",
+        "leadsTo": "Year 8: Forces; KS4 Physics Topic 2 and Topic 9"
+      }
     ],
     "y6": [
-      { "unit": "Light", "focus": ["How we see: light travels in straight lines", "Reflection and mirrors", "Shadows", "Refraction and colour"], "skills": ["Draw ray diagrams", "Test predictions"], "keyTerms": ["ray", "reflection", "refraction", "spectrum", "periscope"], "assess": "Ray diagram task and investigation", "prereq": "Year 3: Light", "leadsTo": "Year 8: Waves and light; KS4 Physics Topic 5" },
-      { "unit": "Animals including humans: circulation and lifestyle", "focus": ["The heart and circulatory system", "Exercise and the heart", "Diet, drugs and lifestyle"], "skills": ["Measure pulse and record in graphs", "Analyse results"], "keyTerms": ["heart", "artery", "vein", "blood", "pulse", "drug"], "assess": "Exercise and heart rate investigation", "prereq": "Year 4: Animals including humans", "leadsTo": "Year 7: Gas exchange and systems; KS4 Biology Topic 8" },
-      { "unit": "Evolution and inheritance", "focus": ["Fossils and ancient life", "Offspring resemble and vary from parents", "Adaptation and evolution"], "skills": ["Use secondary sources", "Explain using evidence"], "keyTerms": ["evolution", "adaptation", "inheritance", "fossil", "variation"], "assess": "Explanation task and test", "prereq": "Year 3: Rocks; Year 5: Life cycles", "leadsTo": "Year 9: Genetics and evolution; KS4 Biology Topic 3 and Topic 4" },
-      { "unit": "Living things: classification", "focus": ["Micro-organisms, plants, animals", "Grouping by observable features", "Justifying classification"], "skills": ["Classify and justify", "Use keys"], "keyTerms": ["micro-organism", "vertebrate", "classify", "kingdom"], "assess": "Classification task", "prereq": "Year 4: Living things and their habitats", "leadsTo": "Year 9: Biodiversity; KS4 Biology Topic 4" },
-      { "unit": "Electricity", "focus": ["Brightness and buzzer volume linked to cells", "Components and their effect", "Circuit symbols and diagrams"], "skills": ["Draw circuit diagrams", "Control variables"], "keyTerms": ["voltage", "cell", "bulb", "buzzer", "symbol"], "assess": "Circuit investigation", "prereq": "Year 4: Electricity", "leadsTo": "Year 8: Current electricity; KS4 Physics Topic 10" }
+      {
+        "unit": "Light",
+        "focus": [
+          "How we see: light travels in straight lines",
+          "Reflection and mirrors",
+          "Shadows",
+          "Refraction and colour"
+        ],
+        "skills": [
+          "Draw ray diagrams",
+          "Test predictions"
+        ],
+        "keyTerms": [
+          "ray",
+          "reflection",
+          "refraction",
+          "spectrum",
+          "periscope"
+        ],
+        "assess": "Ray diagram task and investigation",
+        "prereq": "Year 3: Light",
+        "leadsTo": "Year 8: Waves and light; KS4 Physics Topic 5"
+      },
+      {
+        "unit": "Animals including humans: circulation and lifestyle",
+        "focus": [
+          "The heart and circulatory system",
+          "Exercise and the heart",
+          "Diet, drugs and lifestyle"
+        ],
+        "skills": [
+          "Measure pulse and record in graphs",
+          "Analyse results"
+        ],
+        "keyTerms": [
+          "heart",
+          "artery",
+          "vein",
+          "blood",
+          "pulse",
+          "drug"
+        ],
+        "assess": "Exercise and heart rate investigation",
+        "prereq": "Year 4: Animals including humans",
+        "leadsTo": "Year 7: Gas exchange and systems; KS4 Biology Topic 8"
+      },
+      {
+        "unit": "Evolution and inheritance",
+        "focus": [
+          "Fossils and ancient life",
+          "Offspring resemble and vary from parents",
+          "Adaptation and evolution"
+        ],
+        "skills": [
+          "Use secondary sources",
+          "Explain using evidence"
+        ],
+        "keyTerms": [
+          "evolution",
+          "adaptation",
+          "inheritance",
+          "fossil",
+          "variation"
+        ],
+        "assess": "Explanation task and test",
+        "prereq": "Year 3: Rocks; Year 5: Life cycles",
+        "leadsTo": "Year 9: Genetics and evolution; KS4 Biology Topic 3 and Topic 4"
+      },
+      {
+        "unit": "Living things: classification",
+        "focus": [
+          "Micro-organisms, plants, animals",
+          "Grouping by observable features",
+          "Justifying classification"
+        ],
+        "skills": [
+          "Classify and justify",
+          "Use keys"
+        ],
+        "keyTerms": [
+          "micro-organism",
+          "vertebrate",
+          "classify",
+          "kingdom"
+        ],
+        "assess": "Classification task",
+        "prereq": "Year 4: Living things and their habitats",
+        "leadsTo": "Year 9: Biodiversity; KS4 Biology Topic 4"
+      },
+      {
+        "unit": "Electricity",
+        "focus": [
+          "Brightness and buzzer volume linked to cells",
+          "Components and their effect",
+          "Circuit symbols and diagrams"
+        ],
+        "skills": [
+          "Draw circuit diagrams",
+          "Control variables"
+        ],
+        "keyTerms": [
+          "voltage",
+          "cell",
+          "bulb",
+          "buzzer",
+          "symbol"
+        ],
+        "assess": "Circuit investigation",
+        "prereq": "Year 4: Electricity",
+        "leadsTo": "Year 8: Current electricity; KS4 Physics Topic 10"
+      }
     ],
     "y7": [
-      { "unit": "7A: Cells, tissues, organs and systems", "focus": ["Life processes", "Using a microscope", "Animal and plant cells and specialised cells", "Unicellular organisms", "Tissues, organs and organ systems"], "skills": ["Use a light microscope", "Draw scientific diagrams", "Calculate magnification"], "keyTerms": ["cell", "nucleus", "cytoplasm", "membrane", "tissue", "organ", "system"], "assess": "End of unit test and microscope drawing", "prereq": "Year 6: Animals including humans", "leadsTo": "Year 8: Digestion and gas exchange; KS4 Biology Topic 1" },
-      { "unit": "7E: Mixtures and separation", "focus": ["Pure substances and mixtures", "Solutions and solubility", "Filtration, evaporation, chromatography, distillation", "Choosing a separation method"], "skills": ["Plan and carry out separation", "Evaluate method"], "keyTerms": ["mixture", "solute", "solvent", "filtrate", "distillation", "chromatography"], "assess": "Practical task and end of unit test", "prereq": "Year 5: Properties and changes of materials", "leadsTo": "KS4 Chemistry Topic 2 (core practical 2.11)" },
-      { "unit": "Particle model and states of matter", "focus": ["Particle model for solids, liquids, gases", "Changes of state and energy", "Diffusion and gas pressure", "Density"], "skills": ["Explain with models", "Plot cooling curves"], "keyTerms": ["particle", "density", "diffusion", "pressure", "melting point"], "assess": "Model explanation and test", "prereq": "Year 4: States of matter", "leadsTo": "KS4 Chemistry Topic 2; Physics Topic 14" },
-      { "unit": "Forces and motion", "focus": ["Speed equals distance over time", "Distance-time graphs", "Balanced and unbalanced forces", "Friction and resistance"], "skills": ["Calculate speed", "Draw and read graphs", "Draw force diagrams"], "keyTerms": ["speed", "balanced", "resultant", "friction", "newton"], "assess": "Speed investigation and test", "prereq": "Year 5: Forces", "leadsTo": "KS4 Physics Topic 2" },
-      { "unit": "Plant nutrition and reproduction", "focus": ["Photosynthesis word equation", "Leaf adaptations and stomata", "Flowers, pollination and seed dispersal"], "skills": ["Plan a plant investigation", "Interpret results"], "keyTerms": ["photosynthesis", "chlorophyll", "stomata", "pollination", "fertilisation"], "assess": "Photosynthesis practical and test", "prereq": "Year 3: Plants; Year 5: Life cycles", "leadsTo": "KS4 Biology Topic 6" }
+      {
+        "unit": "7A: Cells, tissues, organs and systems",
+        "focus": [
+          "Life processes",
+          "Using a microscope",
+          "Animal and plant cells and specialised cells",
+          "Unicellular organisms",
+          "Tissues, organs and organ systems"
+        ],
+        "skills": [
+          "Use a light microscope",
+          "Draw scientific diagrams",
+          "Calculate magnification"
+        ],
+        "keyTerms": [
+          "cell",
+          "nucleus",
+          "cytoplasm",
+          "membrane",
+          "tissue",
+          "organ",
+          "system"
+        ],
+        "assess": "End of unit test and microscope drawing",
+        "prereq": "Year 6: Animals including humans",
+        "leadsTo": "Year 8: Digestion and gas exchange; KS4 Biology Topic 1"
+      },
+      {
+        "unit": "7E: Mixtures and separation",
+        "focus": [
+          "Pure substances and mixtures",
+          "Solutions and solubility",
+          "Filtration, evaporation, chromatography, distillation",
+          "Choosing a separation method"
+        ],
+        "skills": [
+          "Plan and carry out separation",
+          "Evaluate method"
+        ],
+        "keyTerms": [
+          "mixture",
+          "solute",
+          "solvent",
+          "filtrate",
+          "distillation",
+          "chromatography"
+        ],
+        "assess": "Practical task and end of unit test",
+        "prereq": "Year 5: Properties and changes of materials",
+        "leadsTo": "KS4 Chemistry Topic 2 (core practical 2.11)"
+      },
+      {
+        "unit": "Particle model and states of matter",
+        "focus": [
+          "Particle model for solids, liquids, gases",
+          "Changes of state and energy",
+          "Diffusion and gas pressure",
+          "Density"
+        ],
+        "skills": [
+          "Explain with models",
+          "Plot cooling curves"
+        ],
+        "keyTerms": [
+          "particle",
+          "density",
+          "diffusion",
+          "pressure",
+          "melting point"
+        ],
+        "assess": "Model explanation and test",
+        "prereq": "Year 4: States of matter",
+        "leadsTo": "KS4 Chemistry Topic 2; Physics Topic 14"
+      },
+      {
+        "unit": "Forces and motion",
+        "focus": [
+          "Speed equals distance over time",
+          "Distance-time graphs",
+          "Balanced and unbalanced forces",
+          "Friction and resistance"
+        ],
+        "skills": [
+          "Calculate speed",
+          "Draw and read graphs",
+          "Draw force diagrams"
+        ],
+        "keyTerms": [
+          "speed",
+          "balanced",
+          "resultant",
+          "friction",
+          "newton"
+        ],
+        "assess": "Speed investigation and test",
+        "prereq": "Year 5: Forces",
+        "leadsTo": "KS4 Physics Topic 2"
+      },
+      {
+        "unit": "Plant nutrition and reproduction",
+        "focus": [
+          "Photosynthesis word equation",
+          "Leaf adaptations and stomata",
+          "Flowers, pollination and seed dispersal"
+        ],
+        "skills": [
+          "Plan a plant investigation",
+          "Interpret results"
+        ],
+        "keyTerms": [
+          "photosynthesis",
+          "chlorophyll",
+          "stomata",
+          "pollination",
+          "fertilisation"
+        ],
+        "assess": "Photosynthesis practical and test",
+        "prereq": "Year 3: Plants; Year 5: Life cycles",
+        "leadsTo": "KS4 Biology Topic 6"
+      }
     ],
     "y8": [
-      { "unit": "8A: Food and nutrition", "focus": ["Nutrients and food tests", "Energy in food", "Balanced diets and deficiency diseases", "Digestive system, enzymes and absorption"], "skills": ["Carry out food tests", "Calculate energy requirements"], "keyTerms": ["carbohydrate", "protein", "enzyme", "absorption", "deficiency"], "assess": "Food test practical and end of unit test", "prereq": "Year 4: Animals including humans; Year 7: Cells and systems", "leadsTo": "KS4 Biology Topic 1" },
-      { "unit": "8E: Combustion", "focus": ["Burning fuels and oxidation", "Fire triangle", "Incomplete combustion and carbon monoxide", "Air pollution, acid rain and global warming"], "skills": ["Write word equations", "Evaluate evidence on climate"], "keyTerms": ["combustion", "oxygen", "carbon monoxide", "greenhouse effect", "fossil fuel"], "assess": "Practical and end of unit test", "prereq": "Year 5: Properties and changes of materials", "leadsTo": "KS4 Chemistry Topic 8" },
-      { "unit": "Respiration, breathing and gas exchange", "focus": ["Aerobic and anaerobic respiration", "Gas exchange system and breathing model", "Effects of exercise, asthma and smoking"], "skills": ["Measure lung volume", "Analyse data"], "keyTerms": ["alveoli", "respiration", "diaphragm", "lactic acid"], "assess": "Practical and test", "prereq": "Year 6: Circulation and lifestyle", "leadsTo": "KS4 Biology Topic 8" },
-      { "unit": "Electricity and magnetism", "focus": ["Current, potential difference and resistance", "Series and parallel circuits", "Static electricity", "Magnetic fields and electromagnets"], "skills": ["Use ammeters and voltmeters", "Calculate resistance"], "keyTerms": ["current", "voltage", "resistance", "series", "parallel", "electromagnet"], "assess": "Circuit practical and test", "prereq": "Year 6: Electricity", "leadsTo": "KS4 Physics Topics 10, 11, 12 and 13" },
-      { "unit": "Waves: sound and light", "focus": ["Transverse and longitudinal waves", "Sound, frequency and hearing", "Reflection, refraction and colour"], "skills": ["Draw ray diagrams", "Interpret wave data"], "keyTerms": ["frequency", "amplitude", "reflection", "refraction", "longitudinal"], "assess": "Ray practical and test", "prereq": "Year 4: Sound; Year 6: Light", "leadsTo": "KS4 Physics Topics 4 and 5" },
-      { "unit": "Chemical reactions and the periodic table", "focus": ["Atoms, elements and compounds", "Word and symbol equations", "Acids, alkalis and pH", "Periodic table groups and periods"], "skills": ["Balance simple equations", "Use indicators"], "keyTerms": ["atom", "compound", "neutralisation", "group", "period"], "assess": "End of unit test and practical", "prereq": "Year 7: Particle model", "leadsTo": "KS4 Chemistry Topics 1, 3 and 6" }
+      {
+        "unit": "8A: Food and nutrition",
+        "focus": [
+          "Nutrients and food tests",
+          "Energy in food",
+          "Balanced diets and deficiency diseases",
+          "Digestive system, enzymes and absorption"
+        ],
+        "skills": [
+          "Carry out food tests",
+          "Calculate energy requirements"
+        ],
+        "keyTerms": [
+          "carbohydrate",
+          "protein",
+          "enzyme",
+          "absorption",
+          "deficiency"
+        ],
+        "assess": "Food test practical and end of unit test",
+        "prereq": "Year 4: Animals including humans; Year 7: Cells and systems",
+        "leadsTo": "KS4 Biology Topic 1"
+      },
+      {
+        "unit": "8E: Combustion",
+        "focus": [
+          "Burning fuels and oxidation",
+          "Fire triangle",
+          "Incomplete combustion and carbon monoxide",
+          "Air pollution, acid rain and global warming"
+        ],
+        "skills": [
+          "Write word equations",
+          "Evaluate evidence on climate"
+        ],
+        "keyTerms": [
+          "combustion",
+          "oxygen",
+          "carbon monoxide",
+          "greenhouse effect",
+          "fossil fuel"
+        ],
+        "assess": "Practical and end of unit test",
+        "prereq": "Year 5: Properties and changes of materials",
+        "leadsTo": "KS4 Chemistry Topic 8"
+      },
+      {
+        "unit": "Respiration, breathing and gas exchange",
+        "focus": [
+          "Aerobic and anaerobic respiration",
+          "Gas exchange system and breathing model",
+          "Effects of exercise, asthma and smoking"
+        ],
+        "skills": [
+          "Measure lung volume",
+          "Analyse data"
+        ],
+        "keyTerms": [
+          "alveoli",
+          "respiration",
+          "diaphragm",
+          "lactic acid"
+        ],
+        "assess": "Practical and test",
+        "prereq": "Year 6: Circulation and lifestyle",
+        "leadsTo": "KS4 Biology Topic 8"
+      },
+      {
+        "unit": "Electricity and magnetism",
+        "focus": [
+          "Current, potential difference and resistance",
+          "Series and parallel circuits",
+          "Static electricity",
+          "Magnetic fields and electromagnets"
+        ],
+        "skills": [
+          "Use ammeters and voltmeters",
+          "Calculate resistance"
+        ],
+        "keyTerms": [
+          "current",
+          "voltage",
+          "resistance",
+          "series",
+          "parallel",
+          "electromagnet"
+        ],
+        "assess": "Circuit practical and test",
+        "prereq": "Year 6: Electricity",
+        "leadsTo": "KS4 Physics Topics 10, 11, 12 and 13"
+      },
+      {
+        "unit": "Waves: sound and light",
+        "focus": [
+          "Transverse and longitudinal waves",
+          "Sound, frequency and hearing",
+          "Reflection, refraction and colour"
+        ],
+        "skills": [
+          "Draw ray diagrams",
+          "Interpret wave data"
+        ],
+        "keyTerms": [
+          "frequency",
+          "amplitude",
+          "reflection",
+          "refraction",
+          "longitudinal"
+        ],
+        "assess": "Ray practical and test",
+        "prereq": "Year 4: Sound; Year 6: Light",
+        "leadsTo": "KS4 Physics Topics 4 and 5"
+      },
+      {
+        "unit": "Chemical reactions and the periodic table",
+        "focus": [
+          "Atoms, elements and compounds",
+          "Word and symbol equations",
+          "Acids, alkalis and pH",
+          "Periodic table groups and periods"
+        ],
+        "skills": [
+          "Balance simple equations",
+          "Use indicators"
+        ],
+        "keyTerms": [
+          "atom",
+          "compound",
+          "neutralisation",
+          "group",
+          "period"
+        ],
+        "assess": "End of unit test and practical",
+        "prereq": "Year 7: Particle model",
+        "leadsTo": "KS4 Chemistry Topics 1, 3 and 6"
+      }
     ],
     "y9": [
-      { "unit": "9A: Genetics and evolution", "focus": ["Continuous and discontinuous variation", "Inherited and environmental variation", "Chromosomes, genes and DNA", "Natural selection", "Extinction, gene banks and conservation"], "skills": ["Graph variation data", "Explain with evidence"], "keyTerms": ["variation", "gene", "DNA", "natural selection", "extinction"], "assess": "End of unit test and extended explanation", "prereq": "Year 6: Evolution and inheritance", "leadsTo": "KS4 Biology Topics 3, 4 and 9" },
-      { "unit": "9E: Making materials", "focus": ["Ceramics, polymers and composites", "Problems with plastics and recycling", "Life-cycle assessments", "Making polymers"], "skills": ["Compare materials with data", "Evaluate environmental impact"], "keyTerms": ["polymer", "composite", "ceramic", "recycling", "life-cycle"], "assess": "End of unit test", "prereq": "Year 5: Properties and changes of materials", "leadsTo": "KS4 Chemistry Topics 4 and 9" },
-      { "unit": "Ecosystems and material cycles", "focus": ["Food webs and interdependence", "Photosynthesis and respiration in cycles", "Pollination and food security", "Toxin accumulation"], "skills": ["Sampling techniques", "Interpret food webs"], "keyTerms": ["ecosystem", "food web", "bioaccumulation", "interdependence"], "assess": "Fieldwork task and test", "prereq": "Year 4: Food chains; Year 7: Plant nutrition", "leadsTo": "KS4 Biology Topic 9" },
-      { "unit": "Energy and energy resources", "focus": ["Energy stores and transfers", "Conduction and radiation", "Power and domestic energy costs", "Fuels and energy resources"], "skills": ["Calculate with kWh", "Draw energy diagrams"], "keyTerms": ["energy store", "joule", "watt", "kilowatt-hour", "conservation"], "assess": "Calculation task and test", "prereq": "Year 8: Combustion", "leadsTo": "KS4 Physics Topics 3 and 8" },
-      { "unit": "Earth, atmosphere and space", "focus": ["Structure of the Earth and rock cycle", "Atmosphere and climate", "Gravity, weight and the Solar System", "Seasons, stars and light years"], "skills": ["Use models", "Interpret climate data"], "keyTerms": ["rock cycle", "atmosphere", "gravity", "light year", "galaxy"], "assess": "End of unit test", "prereq": "Year 5: Earth and space", "leadsTo": "KS4 Chemistry Topic 8; Physics Topic 7" }
+      {
+        "unit": "9A: Genetics and evolution",
+        "focus": [
+          "Continuous and discontinuous variation",
+          "Inherited and environmental variation",
+          "Chromosomes, genes and DNA",
+          "Natural selection",
+          "Extinction, gene banks and conservation"
+        ],
+        "skills": [
+          "Graph variation data",
+          "Explain with evidence"
+        ],
+        "keyTerms": [
+          "variation",
+          "gene",
+          "DNA",
+          "natural selection",
+          "extinction"
+        ],
+        "assess": "End of unit test and extended explanation",
+        "prereq": "Year 6: Evolution and inheritance",
+        "leadsTo": "KS4 Biology Topics 3, 4 and 9"
+      },
+      {
+        "unit": "9E: Making materials",
+        "focus": [
+          "Ceramics, polymers and composites",
+          "Problems with plastics and recycling",
+          "Life-cycle assessments",
+          "Making polymers"
+        ],
+        "skills": [
+          "Compare materials with data",
+          "Evaluate environmental impact"
+        ],
+        "keyTerms": [
+          "polymer",
+          "composite",
+          "ceramic",
+          "recycling",
+          "life-cycle"
+        ],
+        "assess": "End of unit test",
+        "prereq": "Year 5: Properties and changes of materials",
+        "leadsTo": "KS4 Chemistry Topics 4 and 9"
+      },
+      {
+        "unit": "Ecosystems and material cycles",
+        "focus": [
+          "Food webs and interdependence",
+          "Photosynthesis and respiration in cycles",
+          "Pollination and food security",
+          "Toxin accumulation"
+        ],
+        "skills": [
+          "Sampling techniques",
+          "Interpret food webs"
+        ],
+        "keyTerms": [
+          "ecosystem",
+          "food web",
+          "bioaccumulation",
+          "interdependence"
+        ],
+        "assess": "Fieldwork task and test",
+        "prereq": "Year 4: Food chains; Year 7: Plant nutrition",
+        "leadsTo": "KS4 Biology Topic 9"
+      },
+      {
+        "unit": "Energy and energy resources",
+        "focus": [
+          "Energy stores and transfers",
+          "Conduction and radiation",
+          "Power and domestic energy costs",
+          "Fuels and energy resources"
+        ],
+        "skills": [
+          "Calculate with kWh",
+          "Draw energy diagrams"
+        ],
+        "keyTerms": [
+          "energy store",
+          "joule",
+          "watt",
+          "kilowatt-hour",
+          "conservation"
+        ],
+        "assess": "Calculation task and test",
+        "prereq": "Year 8: Combustion",
+        "leadsTo": "KS4 Physics Topics 3 and 8"
+      },
+      {
+        "unit": "Earth, atmosphere and space",
+        "focus": [
+          "Structure of the Earth and rock cycle",
+          "Atmosphere and climate",
+          "Gravity, weight and the Solar System",
+          "Seasons, stars and light years"
+        ],
+        "skills": [
+          "Use models",
+          "Interpret climate data"
+        ],
+        "keyTerms": [
+          "rock cycle",
+          "atmosphere",
+          "gravity",
+          "light year",
+          "galaxy"
+        ],
+        "assess": "End of unit test",
+        "prereq": "Year 5: Earth and space",
+        "leadsTo": "KS4 Chemistry Topic 8; Physics Topic 7"
+      }
     ]
   },
   "progression": [
-    { "thread": "Particles and matter", "steps": { "Y1": "Sort materials by simple properties", "Y4": "Solids, liquids, gases and changes of state", "Y5": "Dissolving and reversible or irreversible changes", "Y7": "Particle model for states, pressure and diffusion", "Y9": "Atoms, compounds and materials", "KS4": "Chemistry Topics 1 and 2; Physics Topic 14" } },
-    { "thread": "Energy", "steps": { "Y2": "Everyday uses of materials and heating", "Y4": "Electricity and sound as energy transfers", "Y6": "Cells and brightness in circuits", "Y9": "Energy stores, transfers, conservation and resources", "KS4": "Physics Topics 3 and 8" } },
-    { "thread": "Living things and their habitats", "steps": { "Y2": "Living, dead, never alive; habitats; food chains", "Y4": "Classification keys; changing environments", "Y6": "Classification; evolution and inheritance", "Y9": "Food webs, variation, extinction and biodiversity", "KS4": "Biology Topics 4 and 9" } },
-    { "thread": "Forces", "steps": { "Y3": "Pushes, pulls, friction and magnets", "Y5": "Gravity, air and water resistance, simple machines", "Y7": "Speed and balanced and unbalanced forces", "Y8": "Magnetic fields and electromagnets", "KS4": "Physics Topics 2, 9, 12 and 15" } },
-    { "thread": "Working scientifically and enquiry", "steps": { "Y1": "Ask simple questions and observe", "Y3": "Simple fair tests and measuring", "Y5": "Plan and control variables", "Y8": "Evaluate reliability and error", "KS4": "Core practicals and AO3 analysis" } },
-    { "thread": "Genetics and evolution", "steps": { "Y2": "Offspring grow into adults", "Y5": "Life cycles and reproduction", "Y6": "Inheritance, variation, adaptation and evolution", "Y9": "Chromosomes, genes, DNA and natural selection", "KS4": "Biology Topics 3 and 4" } }
+    {
+      "thread": "Particles and matter",
+      "steps": {
+        "Y1": "Sort materials by simple properties",
+        "Y4": "Solids, liquids, gases and changes of state",
+        "Y5": "Dissolving and reversible or irreversible changes",
+        "Y7": "Particle model for states, pressure and diffusion",
+        "Y9": "Atoms, compounds and materials",
+        "KS4": "Chemistry Topics 1 and 2; Physics Topic 14"
+      }
+    },
+    {
+      "thread": "Energy",
+      "steps": {
+        "Y2": "Everyday uses of materials and heating",
+        "Y4": "Electricity and sound as energy transfers",
+        "Y6": "Cells and brightness in circuits",
+        "Y9": "Energy stores, transfers, conservation and resources",
+        "KS4": "Physics Topics 3 and 8"
+      }
+    },
+    {
+      "thread": "Living things and their habitats",
+      "steps": {
+        "Y2": "Living, dead, never alive; habitats; food chains",
+        "Y4": "Classification keys; changing environments",
+        "Y6": "Classification; evolution and inheritance",
+        "Y9": "Food webs, variation, extinction and biodiversity",
+        "KS4": "Biology Topics 4 and 9"
+      }
+    },
+    {
+      "thread": "Forces",
+      "steps": {
+        "Y3": "Pushes, pulls, friction and magnets",
+        "Y5": "Gravity, air and water resistance, simple machines",
+        "Y7": "Speed and balanced and unbalanced forces",
+        "Y8": "Magnetic fields and electromagnets",
+        "KS4": "Physics Topics 2, 9, 12 and 15"
+      }
+    },
+    {
+      "thread": "Working scientifically and enquiry",
+      "steps": {
+        "Y1": "Ask simple questions and observe",
+        "Y3": "Simple fair tests and measuring",
+        "Y5": "Plan and control variables",
+        "Y8": "Evaluate reliability and error",
+        "KS4": "Core practicals and AO3 analysis"
+      }
+    },
+    {
+      "thread": "Genetics and evolution",
+      "steps": {
+        "Y2": "Offspring grow into adults",
+        "Y5": "Life cycles and reproduction",
+        "Y6": "Inheritance, variation, adaptation and evolution",
+        "Y9": "Chromosomes, genes, DNA and natural selection",
+        "KS4": "Biology Topics 3 and 4"
+      }
+    }
   ],
   "toKS4": "KS3 sets up the Pearson Edexcel GCSE (9-1) sciences: cells, organs and digestion lead to Biology Topics 1 and 2; variation, DNA and natural selection lead to Biology Topics 3 and 4; photosynthesis, respiration, ecosystems and plants lead to Biology Topics 6, 8 and 9. Particle model, separation, atoms, reactions and the periodic table feed Chemistry Topics 1 to 4 and 6; combustion, atmosphere and climate feed Chemistry Topic 8. Forces and motion, energy, waves, electricity, magnetism and space feed Physics Topics 2 to 5, 7 to 10 and 12 to 15. Working scientifically feeds all core practicals and AO3.",
   "links": [
-    { "with": "Geography", "topic": "Weather, seasons and the water cycle", "years": "Y1-Y4", "how": "Science explains seasonal change and state changes; Geography records weather and applies the water cycle." },
-    { "with": "Geography", "topic": "Habitats, ecosystems and conservation", "years": "Y2-Y9", "how": "Science supplies food chains and variation; Geography studies places and human impact." },
-    { "with": "Geography", "topic": "Rocks, the Earth's structure and the atmosphere", "years": "Y3, Y9", "how": "Rocks and soils early on, then rock cycle, Earth structure and climate." },
-    { "with": "Mathematics", "topic": "Measurement, graphs and statistics", "years": "Y3-Y9", "how": "Maths provides measurement, graphing and averages; Science uses them to analyse enquiry data." },
-    { "with": "History", "topic": "Ideas that changed science (Solar System models, DNA discovery)", "years": "Y5, Y9", "how": "History gives context to changing explanations; Science explains the models and evidence." },
-    { "with": "Design and Technology", "topic": "Materials and circuits", "years": "Y1-Y9", "how": "Science gives properties of materials and circuit rules; D&T applies them in making." },
-    { "with": "Computing", "topic": "Data logging and simulations", "years": "Y4-Y9", "how": "Computing supports sensors and spreadsheets used to collect and present science data." },
-    { "with": "Physical Education", "topic": "Diet, exercise, heart and lungs", "years": "Y2, Y6, Y8", "how": "Science explains the body's response; PE applies it in practice." },
-    { "with": "English", "topic": "Scientific vocabulary and explanations", "years": "Y1-Y9", "how": "English supports precise explanation and written reports." },
-    { "with": "Art", "topic": "Colour, light and observational drawing", "years": "Y3-Y8", "how": "Science explains light and colour; Art uses observation and drawing skills." }
+    {
+      "with": "Geography",
+      "topic": "Weather, seasons and the water cycle",
+      "years": "Y1-Y4",
+      "how": "Science explains seasonal change and state changes; Geography records weather and applies the water cycle."
+    },
+    {
+      "with": "Geography",
+      "topic": "Habitats, ecosystems and conservation",
+      "years": "Y2-Y9",
+      "how": "Science supplies food chains and variation; Geography studies places and human impact."
+    },
+    {
+      "with": "Geography",
+      "topic": "Rocks, the Earth's structure and the atmosphere",
+      "years": "Y3, Y9",
+      "how": "Rocks and soils early on, then rock cycle, Earth structure and climate."
+    },
+    {
+      "with": "Mathematics",
+      "topic": "Measurement, graphs and statistics",
+      "years": "Y3-Y9",
+      "how": "Maths provides measurement, graphing and averages; Science uses them to analyse enquiry data."
+    },
+    {
+      "with": "History",
+      "topic": "Ideas that changed science (Solar System models, DNA discovery)",
+      "years": "Y5, Y9",
+      "how": "History gives context to changing explanations; Science explains the models and evidence."
+    },
+    {
+      "with": "Design and Technology",
+      "topic": "Materials and circuits",
+      "years": "Y1-Y9",
+      "how": "Science gives properties of materials and circuit rules; D&T applies them in making."
+    },
+    {
+      "with": "Computing",
+      "topic": "Data logging and simulations",
+      "years": "Y4-Y9",
+      "how": "Computing supports sensors and spreadsheets used to collect and present science data."
+    },
+    {
+      "with": "Physical Education",
+      "topic": "Diet, exercise, heart and lungs",
+      "years": "Y2, Y6, Y8",
+      "how": "Science explains the body's response; PE applies it in practice."
+    },
+    {
+      "with": "English",
+      "topic": "Scientific vocabulary and explanations",
+      "years": "Y1-Y9",
+      "how": "English supports precise explanation and written reports."
+    },
+    {
+      "with": "Art",
+      "topic": "Colour, light and observational drawing",
+      "years": "Y3-Y8",
+      "how": "Science explains light and colour; Art uses observation and drawing skills."
+    }
   ],
   "gaps": [
-    "EYFS statutory framework text was not opened, so Reception statements and the Reception yearMap are written from the school's lesson material and general EYFS expectations and must be checked against the framework in force.",
-    "The final portion of the gov.uk page (end of the Key Stage 4 section) was not read; it is not needed here.",
-    "Year 7 to Year 9 allocation is a recommended sequence: unit titles from the school's lesson content (7A, 7E, 8A, 8E, 9A, 9E) plus other units added to cover the full Key Stage 3 content; KS1 and KS2 year-specific topics follow the National Curriculum year headings.",
-    "The Year 7 to Year 9 unit titles marked 7A to 9E come from the school's lesson files; non-lettered KS3 units are suggested and have no lesson files yet."
+    "School choice, not a verification gap: Year 7 to Year 9 allocation is a recommended sequence; unit titles marked 7A to 9E come from the school's lesson files.",
+    "School choice, not a verification gap: non-lettered KS3 units are suggested and have no lesson files yet.",
+    "Note: KS1 and KS2 year-specific topics follow the National Curriculum year headings."
   ]
 }
