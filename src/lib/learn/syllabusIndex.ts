@@ -98,8 +98,8 @@ export function boardLabel(slug: string, board: string | null, year: string): st
   const spec = data.specs[slug];
   const b = (board || "").trim();
   if (!spec || (year !== "y10" && year !== "y11")) return b || null;
-  const codes = b.match(/\b\d[A-Z0-9]{3,4}\b|\b8\d{3}\b/g) || [];
-  const specCodes = spec.code.match(/\b\d[A-Z0-9]{3,4}\b|\b8\d{3}\b/g) || [];
+  const codes: string[] = b.match(/\b\d[A-Z0-9]{3,4}\b|\b8\d{3}\b/g) || [];
+  const specCodes: string[] = spec.code.match(/\b\d[A-Z0-9]{3,4}\b|\b8\d{3}\b/g) || [];
   const agrees = !b || codes.length === 0 ? true : codes.every((c) => specCodes.includes(c));
   return agrees ? spec.label : b;
 }
