@@ -95,7 +95,11 @@ function useClockState(userId: string, roles: RoleGrant[]) {
     const events = ["pointerdown", "keydown", "mousemove", "touchstart", "scroll"];
     events.forEach((e) => window.addEventListener(e, bump, { passive: true }));
     const beat = () => {
-      void supabase.rpc("shift_heartbeat", { p_active: Date.now() - lastActive < IDLE_LIMIT_MS });
+      const active = Date.now() - lastActive < IDLE_LIMIT_MS;
+      void supabase.rpc("shift_heartbeat", { p_active: active }).then(({ error }) => {
+        // The old one-argument-free version is still live until migration 0104 is applied.
+        if (error && active) void supabase.rpc("shift_heartbeat");
+      });
     };
     beat();
     const t = window.setInterval(beat, 60 * 1000);
@@ -122,7 +126,11 @@ async function clockIn(userId: string, note: string): Promise<string | null> {
   const supabase = getSupabaseClient();
   if (!supabase) return "Not connected.";
   // Resumes the shift if it was closed for inactivity in the last 15 minutes (migration 0104).
-  const { error } = await supabase.rpc("clock_in_or_resume", { p_note: note.trim() || null });
+  let { error } = await supabase.rpc("clock_in_or_resume", { p_note: note.trim() || null });
+  // Until migration 0104 is live the function does not exist: clock in the plain way instead of failing.
+  if (error && (error.code === "PGRST202" || error.code === "42883" || /clock_in_or_resume|schema cache/i.test(error.message || ""))) {
+    ({ error } = await supabase.from("staff_shifts").insert({ user_id: userId, note: note.trim() || null }));
+  }
   // 23505: already has an open shift (e.g. another tab) - that's fine.
   if (error && error.code !== "23505") return "Couldn't clock you in. Check your connection and try again.";
   window.dispatchEvent(new Event(CLOCK_EVENT));
