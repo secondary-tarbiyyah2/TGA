@@ -20,7 +20,7 @@ export function buildCoverage() {
       if (!fs.existsSync(lf)) continue;
       for (const l of JSON.parse(fs.readFileSync(lf, "utf8")).lessons) {
         const text = [l.title, l.unit, ...(l.objectives || []), ...(l.keywords || []).flatMap((k) => [k.term, k.def]), l.bigQuestion].join(" ");
-        lessons.push({ id: `${y}/${l.n}`, year: y, n: l.n, title: l.title, unit: l.unit || "", t: new Set(tokens(text)), refs: new Set((String(l.unit || "").match(/\d+(?:\.\d+)+|\b\d[A-Z]\b/g) || []).map((r) => r.toLowerCase())) });
+        lessons.push({ id: `${y}/${l.n}`, year: y, n: l.n, title: l.title, unit: l.unit || "", t: new Set(tokens(text)), covers: new Set((Array.isArray(l.covers) ? l.covers : []).map(String)), refs: new Set((String(l.unit || "").match(/\d+(?:\.\d+)+|\b\d[A-Z]\b/g) || []).map((r) => r.toLowerCase())) });
       }
     }
     const units = spec.units.map((u) => {
@@ -35,7 +35,9 @@ export function buildCoverage() {
         };
         const local = inUnit.map(rate).filter((x) => x.shared >= 2 && x.score >= 0.34);
         const far = lessons.filter((l) => !inUnit.includes(l)).map(rate).filter((x) => x.shared >= 3 && x.score >= 0.6);
-        const scored = [...local, ...far].sort((a, b) => b.score - a.score).slice(0, 3);
+        // Lessons that declare the point in `covers` (e.g. "1.1.3") count outright.
+        const declared = lessons.filter((l) => l.covers.has(`${u.ref}.${i + 1}`)).map((l) => ({ l, score: 2 }));
+        const scored = [...declared, ...local, ...far].filter((x, k, a) => a.findIndex((y) => y.l.id === x.l.id) === k).sort((a, b) => b.score - a.score).slice(0, 3);
         return { n: i + 1, text: p, lessons: scored.map((x) => x.l.id) };
       });
       const covered = points.filter((p) => p.lessons.length).length;
