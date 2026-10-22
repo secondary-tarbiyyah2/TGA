@@ -974,9 +974,9 @@ function ConnectionsPanel({ subject, unit }: { subject: string; unit: string }) 
     }),
   );
   return (
-    <div className="grid gap-4 md:grid-cols-[19rem_minmax(0,1fr)]">
+    <div className="grid gap-4 md:grid-cols-[24rem_minmax(0,1fr)]">
       <div>
-        <svg viewBox="0 0 300 300" role="img" aria-label={`Map of cross-curricular links around ${home}`} className="w-full max-w-[19rem]">
+        <svg viewBox="-60 -8 420 316" role="img" aria-label={`Map of cross-curricular links around ${home}`} className="w-full max-w-[24rem]">
           {edges.map((e) => {
             const p = pos(e.a);
             const q = pos(e.b);
