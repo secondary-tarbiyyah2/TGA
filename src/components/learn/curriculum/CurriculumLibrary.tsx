@@ -159,7 +159,7 @@ function SignoffDialog({ target, current, onClose, onDone }: { target: { slug: s
     <Modal title={`Sign off: ${target.label}`} onClose={onClose}>
       <div className="space-y-3 p-4">
         <p className="text-sm text-ink/75">
-          {target.scope === "spec" ? "Record that the specification points for this unit match the board's own document." : "Record that this lesson is accurate, teaches the spec points it claims, and is ready to use."} Your name and today's date are recorded.
+          {target.scope === "spec" ? "Record that the specification points for this unit match the board's own document." : "Record that this lesson is accurate, teaches the spec points it claims, and is ready to use."} Your name and today&apos;s date are recorded.
         </p>
         <fieldset className="space-y-1">
           <legend className="text-sm font-semibold text-ink">Result</legend>
