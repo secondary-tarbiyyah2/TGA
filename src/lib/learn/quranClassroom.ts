@@ -2,7 +2,7 @@
 // Everything pupils and teachers see is COMPUTED here from the marks, so it can't drift from the data:
 //  - covered  = a surah assessed at least once
 //  - secure   = a covered surah whose average mark is 8 or more
-//  - revision = a covered surah comes due again 7 days after a low mark, 14 after a good one, 30 after an excellent one
+//  - revision = a covered surah comes due again 3 days after a fail, 7 after a developing mark, 14 after a good one, 30 after an excellent one
 
 import { JUZ_AMMA_FIRST, surahAyat } from "@/lib/learn/surahs";
 
@@ -45,7 +45,23 @@ export const avg = (xs: number[]): number | null => (xs.length ? Math.round((xs.
 export type SurahStat = { surah: number; avg: number; times: number; last: string };
 export type RevisionRow = SurahStat & { interval: number; gap: number; overdue: number; next: string; status: "due" | "soon" | "ok" };
 
-export const revisionInterval = (a: number) => (a >= 9 ? 30 : a >= 7 ? 14 : 7);
+export const revisionInterval = (a: number) => (a >= 9 ? 30 : a >= 7 ? 14 : a >= 5 ? 7 : 3);
+
+/**
+ * What each mark out of 10 means, so every teacher marks the same way.
+ * Fail is 0 to 4, pass is 5 or more, secure is 8 or more.
+ */
+export type MarkBand = { min: number; max: number; label: string; result: "Fail" | "Pass" | "Secure"; tone: "bad" | "warn" | "info" | "good"; means: string; next: string };
+export const MARK_BANDS: MarkBand[] = [
+  { min: 0, max: 0, label: "Not heard", result: "Fail", tone: "bad", means: "Absent, or no recitation was attempted.", next: "Set it again; speak to the pupil or parent if it keeps happening." },
+  { min: 1, max: 2, label: "Very weak", result: "Fail", tone: "bad", means: "Cannot recite without constant prompting, or most words are wrong.", next: "Reteach from the start with the teacher; revise again in 3 days." },
+  { min: 3, max: 4, label: "Weak", result: "Fail", tone: "bad", means: "Many errors in letters, makharij or tajweed, or long hesitations. Below the expected standard.", next: "Reteach the weak parts; revise again in 3 days." },
+  { min: 5, max: 6, label: "Developing", result: "Pass", tone: "warn", means: "Meets the basics with several errors. Needs support to be secure.", next: "Repeat with a focus area; revise again in 7 days." },
+  { min: 7, max: 7, label: "Good", result: "Pass", tone: "info", means: "Mostly accurate with a few errors. Ready to move on with a focus area.", next: "Move on; revise again in 14 days." },
+  { min: 8, max: 9, label: "Very good", result: "Secure", tone: "good", means: "Accurate and fluent with only slips. Secure.", next: "Move on; revise again in 14 to 30 days." },
+  { min: 10, max: 10, label: "Excellent", result: "Secure", tone: "good", means: "Flawless, fluent, and the tajweed rules applied throughout.", next: "Move on; revise again in 30 days." },
+];
+export const bandFor = (score: number | null | undefined): MarkBand | null => (score === null || score === undefined ? null : MARK_BANDS.find((b) => score >= b.min && score <= b.max) || null);
 
 export type PupilStats = {
   marks: QuranMark[];

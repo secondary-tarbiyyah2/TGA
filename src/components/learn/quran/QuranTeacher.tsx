@@ -7,7 +7,7 @@ import { Tabs } from "@/components/learn/Tabs";
 import { EmptyState, Notice, StatusChip, ui } from "@/components/learn/ui";
 import { FOCUS_AREAS, focusLabel, surahAyat, surahName, SURAHS } from "@/lib/learn/surahs";
 import {
-  addDaysISO, avg, ayatLabel, HW_KINDS, MARK_COLUMNS, nextSession, pupilStats, revisionRows, shortLevel, todayISO,
+  addDaysISO, avg, ayatLabel, bandFor, MARK_BANDS, HW_KINDS, MARK_COLUMNS, nextSession, pupilStats, revisionRows, shortLevel, todayISO,
   type Homework, type Level, type QuranMark, type Session,
 } from "@/lib/learn/quranClassroom";
 
@@ -84,6 +84,7 @@ export function QuranTeacher() {
   return (
     <div className="space-y-4">
       {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
+      <MarkScale />
       <Tabs
         label="Qur'an sections"
         value={tab}
@@ -110,6 +111,33 @@ export function QuranTeacher() {
   );
 }
 
+function MarkScale() {
+  return (
+    <details className={ui.card}>
+      <summary className="cursor-pointer text-sm font-semibold text-ink">What the marks mean (0 to 10)</summary>
+      <div className="mt-2 overflow-x-auto">
+        <table className="w-full min-w-[34rem] text-left text-sm">
+          <thead>
+            <tr className="text-xs text-ink/65">
+              <th className="py-1 pr-3 font-medium">Mark</th><th className="pr-3 font-medium">Level</th><th className="pr-3 font-medium">Result</th><th className="font-medium">What it looks like</th>
+            </tr>
+          </thead>
+          <tbody>
+            {MARK_BANDS.map((b) => (
+              <tr key={b.label} className="border-t border-gold-light/60 align-top">
+                <td className="py-1.5 pr-3 tabular-nums">{b.min === b.max ? b.min : `${b.min}-${b.max}`}</td>
+                <td className="pr-3"><StatusChip tone={b.tone}>{b.label}</StatusChip></td>
+                <td className="pr-3">{b.result}</td>
+                <td>{b.means}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  );
+}
+
 // ── shared mark form ────────────────────────────────────────────────────
 
 type MarkDraft = { score: number | null; focus: string[] };
@@ -118,7 +146,7 @@ function ScoreAndFocus({ draft, set }: { draft: MarkDraft; set: (d: MarkDraft) =
   return (
     <div className="space-y-3">
       <div>
-        <p className={ui.hint}>Mark out of 10 (10 is excellent)</p>
+        <p className={ui.hint}>Mark out of 10. Fail is 0 to 4, pass is 5 or more, secure is 8 or more.</p>
         <div className="mt-1 flex flex-wrap gap-1.5" role="group" aria-label="Mark out of 10">
           {Array.from({ length: 11 }, (_, n) => (
             <button key={n} type="button" aria-pressed={draft.score === n} onClick={() => set({ ...draft, score: n })} className={`${draft.score === n ? ui.chipOn : ui.chip} min-w-10 tabular-nums`}>
@@ -127,6 +155,11 @@ function ScoreAndFocus({ draft, set }: { draft: MarkDraft; set: (d: MarkDraft) =
           ))}
         </div>
       </div>
+      {bandFor(draft.score) && (
+        <p className="rounded-lg bg-cream/70 px-3 py-2 text-sm text-ink">
+          <span className="font-semibold">{draft.score}: {bandFor(draft.score)!.label} ({bandFor(draft.score)!.result}).</span> {bandFor(draft.score)!.means} {bandFor(draft.score)!.next}
+        </p>
+      )}
       <div>
         <p className={ui.hint}>Tajweed focus: tap anything that needs work</p>
         <div className="mt-1 flex flex-wrap gap-1.5" role="group" aria-label="Focus areas">
@@ -587,7 +620,7 @@ function RevisionTab({ data }: { data: Data }) {
   });
   return (
     <div className="space-y-3">
-      <p className="text-sm text-ink/75">A surah counts as covered once it has been assessed once. Revision keeps it secure: it comes due again 7 days after a low mark, 14 after a good mark and 30 after an excellent one. Set revision homework from Set homework, or hear it in a one-to-one.</p>
+      <p className="text-sm text-ink/75">A surah counts as covered once it has been assessed once. Revision keeps it secure: it comes due again 3 days after a fail (0 to 4), 7 after a developing mark (5 or 6), 14 after a good mark (7 or 8) and 30 after an excellent one (9 or 10). Set revision homework from Set homework, or hear it in a one-to-one.</p>
       <div className={ui.card}>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[32rem] text-left text-sm">

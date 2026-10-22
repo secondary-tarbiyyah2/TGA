@@ -6,7 +6,7 @@ import { Tabs } from "@/components/learn/Tabs";
 import { EmptyState, Notice, StatusChip, ui } from "@/components/learn/ui";
 import { focusLabel, JUZ_AMMA_COUNT, surahAr, surahName } from "@/lib/learn/surahs";
 import {
-  ayatLabel, HW_KINDS, MARK_COLUMNS, nextSession, pupilStats, revisionRows, SETTING_LABEL, shortLevel, todayISO,
+  ayatLabel, bandFor, HW_KINDS, MARK_COLUMNS, nextSession, pupilStats, revisionRows, SETTING_LABEL, shortLevel, todayISO,
   type Homework, type Level, type QuranMark, type Session,
 } from "@/lib/learn/quranClassroom";
 
@@ -139,7 +139,7 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
                         <td className="pr-3">{surahName(m.surah_from as number)}</td>
                         <td className="pr-3">{ayatLabel(m.surah_from, m.ayah_from, m.ayah_to)}</td>
                         <td className="pr-3">{SETTING_LABEL[m.setting]}</td>
-                        <td className="pr-3 font-semibold tabular-nums">{m.score}/10</td>
+                        <td className="pr-3 font-semibold tabular-nums">{m.score}/10 <span className="font-normal text-ink/65">{bandFor(m.score)?.label}</span></td>
                         <td>{(m.focus || []).map(focusLabel).join(", ") || "–"}</td>
                       </tr>
                     ))}
@@ -160,7 +160,7 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
               <div className="mt-2 flex flex-wrap gap-2">
                 {due.length ? due.map((r) => <StatusChip key={r.surah} tone="warn">{surahName(r.surah)} · {r.gap} days ago</StatusChip>) : <span className="text-sm text-ink/70">Nothing due. Well done.</span>}
               </div>
-              <p className="mt-3 text-xs text-ink/65">A surah comes due again 7 days after a low mark, 14 after a good one and 30 after an excellent one.</p>
+              <p className="mt-3 text-xs text-ink/65">A surah comes due again 3 days after a fail (0 to 4), 7 after a developing mark (5 or 6), 14 after a good one (7 or 8) and 30 after an excellent one (9 or 10).</p>
             </div>
             <div className={ui.card}>
               <div className="overflow-x-auto">

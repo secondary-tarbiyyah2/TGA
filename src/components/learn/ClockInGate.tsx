@@ -11,6 +11,9 @@ import { normalisePortalPath } from "@/lib/learn/nav";
 export const CLOCK_EVENT = "tga:clock-changed";
 
 /** Pages that are never gated: account recovery and safeguarding must always open. */
+/** No mouse, keyboard or touch for this long and the portal stops counting the time. */
+const IDLE_LIMIT_MS = 30 * 60 * 1000;
+
 const EXEMPT_PATHS = ["/account", "/report-concern"];
 
 type Policy = { require_clock_in: boolean; clock_in_roles: string[]; auto_clock_out_hours: number };
@@ -83,8 +86,16 @@ function useClockState(userId: string, roles: RoleGrant[]) {
   useEffect(() => {
     const supabase = getSupabaseClient();
     if (!supabase || !shiftId) return;
+    // Only count the portal as "in use" while someone is actually using it: a tab left open
+    // overnight stops refreshing the shift, which then closes at the last real activity.
+    let lastActive = Date.now();
+    const bump = () => {
+      lastActive = Date.now();
+    };
+    const events = ["pointerdown", "keydown", "mousemove", "touchstart", "scroll"];
+    events.forEach((e) => window.addEventListener(e, bump, { passive: true }));
     const beat = () => {
-      void supabase.rpc("shift_heartbeat");
+      void supabase.rpc("shift_heartbeat", { p_active: Date.now() - lastActive < IDLE_LIMIT_MS });
     };
     beat();
     const t = window.setInterval(beat, 60 * 1000);
@@ -98,6 +109,7 @@ function useClockState(userId: string, roles: RoleGrant[]) {
     return () => {
       window.clearInterval(t);
       document.removeEventListener("visibilitychange", onVisible);
+      events.forEach((e) => window.removeEventListener(e, bump));
     };
   }, [shiftId, load]);
 
