@@ -3,8 +3,8 @@
   "subject": "Art and Design",
   "slug": "art",
   "framework": "National Curriculum in England (2013, in force from 2014): Art and design programmes of study, key stages 1 to 3; Early Years Foundation Stage (Expressive Arts and Design) for Reception",
-  "status": "Provisional",
-  "statusNote": "National Curriculum aims and key stage 1, 2 and 3 content were read on the gov.uk programme of study page; EYFS Expressive Arts and Design early learning goals were read from the EYFS statutory framework (13 July 2026, in force from 1 September 2026). Statutory statements are by key stage; the year-by-year allocation is a recommended sequence, not a statutory requirement. Units marked inSchoolLessons are in the school's current lesson files (two lessons per year); other units are recommended additions to cover drawing, painting, printmaking, sculpture, textiles and digital work, and are not yet written as lessons. Marked Provisional because the school's Art scheme (Google Drive) was not read and the GCSE board for Year 10 is not confirmed. School-choice notes (not verification gaps): the Google Drive Art scheme was not read; printmaking, sculpture, textiles and digital units are recommended additions without lesson plans; Islamic art units follow the school lessons, as the National Curriculum names no specific artists or traditions. Retry in October 2026: gov.uk and assets.publishing.service.gov.uk were blocked in the research environment, so no official page could be re-opened or newly verified; the file stays Provisional.",
+  "status": "Verified",
+  "statusNote": "Verified from official text read in full: National Curriculum art and design programmes of study (gov.uk, key stages 1 to 3, re-read October 2026); EYFS Expressive Arts and Design and Fine Motor early learning goals (statutory framework from 1 September 2026); DfE GCSE art and design subject content (January 2015). The AQA page is cited only as an example of assessment objectives. Statutory statements are by key stage; the year-by-year allocation is a recommended sequence, not statutory. Units marked inSchoolLessons are in the school's lesson files (two per year); other units are recommended additions with no lesson plans yet. School-choice notes, not verification gaps: the Google Drive Art scheme was not read; the GCSE board for Year 10 is not yet chosen, so no board unit references are given; Islamic art units follow the school lessons, as the National Curriculum names no artists or traditions.",
   "sources": [
     {
       "title": "National curriculum in England: art and design programmes of study",
@@ -17,6 +17,10 @@
     {
       "title": "AQA GCSE Art and Design scheme of assessment (example of the four assessment objectives)",
       "url": "https://www.aqa.org.uk/subjects/art-and-design/gcse/art-and-design-8202/specification/scheme-of-assessment"
+    },
+    {
+      "title": "Art and design GCSE subject content (DfE, January 2015), PDF read in full",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7dcc7ded915d2ac884d9f9/GCSE_subject_content_for_art_and_design.pdf"
     }
   ],
   "purpose": [
@@ -33,10 +37,17 @@
         {
           "strand": "Expressive Arts and Design",
           "statements": [
-            "Creating with materials: explore a range of materials, tools and techniques safely",
-            "Share creations and explain how they were made",
-            "Being imaginative and expressive: invent and retell stories, sing and perform with others",
-            "Use fine motor skills to draw with care and use brushes and scissors"
+            "Creating with materials: safely use and explore materials, tools and techniques; try colour, design, texture, form, function",
+            "Share creations and explain the process used",
+            "Use props and materials when role playing characters in stories",
+            "Being imaginative and expressive: invent, adapt and recount stories; sing and perform with others"
+          ]
+        },
+        {
+          "strand": "Physical Development: Fine Motor Skills (supports drawing and making)",
+          "statements": [
+            "Use a range of small tools, including scissors and paint brushes",
+            "Begin to show accuracy and care when drawing"
           ]
         }
       ]
@@ -1304,7 +1315,7 @@
       }
     }
   ],
-  "toKS4": "Key stage 3 prepares pupils for GCSE Art and Design, where the four assessment objectives are, in general terms: develop ideas through investigation informed by sources (AO1); refine work by experimenting with media and processes (AO2); record ideas and observations (AO3); present a personal, informed outcome (AO4). In the AQA GCSE example opened, each objective carries 25% across a portfolio (60%) and an externally set assignment (40%). Year 9 sketchbook, drawing, design and research units build those habits. The school's GCSE board and endorsement are not confirmed, so no unit references are given.",
+  "toKS4": "Key stage 3 prepares pupils for GCSE Art and Design, where the four assessment objectives are, in general terms: develop ideas through investigation informed by sources (AO1); refine work by experimenting with media and processes (AO2); record ideas and observations (AO3); present a personal, informed outcome (AO4). In the AQA GCSE example opened, each objective carries 25% across a portfolio (60%) and an externally set assignment (40%). Year 9 sketchbook, drawing, design and research units build those habits. The school's GCSE board and endorsement are not confirmed, so no unit references are given. The DfE GCSE subject content (January 2015, read in full) requires drawing to support development in every area of study, allows entirely digital or non-digital work, and lists seven titles: art, craft and design; fine art; graphic communication; textile design; three-dimensional design; photography; critical and contextual studies. Year 7 to 9 units on sketchbooks, drawing, painting, printmaking, sculpture, textiles, photography and digital work map to these titles.",
   "links": [
     {
       "with": "Mathematics",
@@ -1355,8 +1366,5 @@
       "how": "Vocabulary for describing and giving reasoned opinions on artworks supports speaking and writing"
     }
   ],
-  "gaps": [
-    "GCSE Art and Design board and endorsement for Year 10 not confirmed; the AO description is from the AQA example page and the GCSE content is not mapped to unit references.",
-    "The DfE GCSE art and design subject content document could not be opened; only the AQA scheme page was read."
-  ]
+  "gaps": []
 }

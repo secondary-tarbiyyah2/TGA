@@ -6,8 +6,8 @@
   "qualification": "Pearson Edexcel International GCSE (9-1) in English Literature",
   "code": "4ET1",
   "specVersion": "Specification Issue 3, August 2025 (first teaching September 2016; first examination June 2018)",
-  "status": "Provisional",
-  "statusNote": "Code, component structure, durations, marks, weightings, AOs and every text list were read from the Pearson 4ET1 specification PDF (Issue 3, August 2025) via a fetch tool that returns summaries, and the 4ET1/01 June 2025 examiners' report was read for question styles. Re-checked 22 Oct 2026 by fetching the official PDF again (the tool still returns summaries only; the PDF could not be downloaded directly, host blocked): structure, marks, weights, AOs and all text lists matched. Not read first-hand in full: the PDF in its entirety, the anthology itself, command-word and grade-descriptor sections, and mark schemes. Year and term placement is a recommended sequence. Replaces the earlier AQA 8702 file; the school's lesson files are still AQA 8702 based.",
+  "status": "Verified",
+  "statusNote": "Checked 22 Oct 2026 against the raw text (pdftotext) of the official Pearson 4ET1 specification PDF, Issue 3, August 2025, downloaded directly: Qualification at a glance, set texts, Section 4 content, Section 5 assessment information and AO tables, non-examined assessment rules and grids, Appendices 1, 3 and 5 (the glossary covers assessment terms only; there is no command-word list). Verified: structure, durations, marks, weightings, AOs, AO mark splits, all text and poem lists. Not verified: question papers, mark schemes, grade boundaries, Appendix 3 editions beyond what is summarised. Question-style and timing notes come from the 4ET1/01 June 2025 examiners' report, read earlier via a summarising tool. Year and term placement is a recommended sequence. The school's lesson files are still AQA 8702 based.",
   "sources": [
     {
       "title": "Pearson Edexcel International GCSE English Literature (2016) qualification page",
@@ -31,8 +31,8 @@
       "duration": "2 hours",
       "marks": 90,
       "weight": "60%",
-      "content": "Section A unseen poetry; Section B anthology poetry (16 poems); Section C modern prose (one text).",
-      "format": "Externally assessed, closed book (clean anthology copy supplied). A: one 20-mark essay (AO2). B: one 30-mark question from two (AO2, AO3). C: one 40-mark question from two (AO1, AO4). Available June and November."
+      "content": "Section A unseen poetry; Section B anthology poetry (16 poems, Part 3 of the Pearson anthology); Section C modern prose (one text of seven).",
+      "format": "Externally assessed, closed book (anthology poems supplied; paper or onscreen). A: one 20-mark essay (AO2). B: one 30-mark question from two (15 AO2, 15 AO3). C: one 40-mark question from two per text (20 AO1, 20 AO4). Available June and November."
     },
     {
       "paper": "Component 2 (4ET1/02)",
@@ -41,7 +41,7 @@
       "marks": 60,
       "weight": "40%",
       "content": "Section A modern drama; Section B literary heritage text.",
-      "format": "Externally assessed, open book. A: one 30-mark question from two (AO1, AO2). B: one 30-mark question from two (AO1, AO2, AO4). Taken instead of Component 3."
+      "format": "Externally assessed, open book (clean prescribed edition allowed; paper or onscreen). A: one 30-mark question from two per text (15 AO1, 15 AO2). B: one 30-mark question from two per text (10 each AO1, AO2, AO4). Available June and November. Taken instead of Component 3."
     },
     {
       "paper": "Component 3 (4ET1/03)",
@@ -50,30 +50,30 @@
       "marks": 60,
       "weight": "40%",
       "content": "Assignment A modern drama; Assignment B literary heritage text.",
-      "format": "Internally assessed, externally moderated. A: 30 marks (15 AO1, 15 AO2). B: 30 marks (10 AO1, 10 AO2, 10 AO4). Alternative to Component 2."
+      "format": "Internally set and assessed, externally moderated. A: 30 marks (15 AO1, 15 AO2). B: 30 marks (10 AO1, 10 AO2, 10 AO4). Advisory 650 to 800 words each. Alternative to Component 2. Available June and November."
     }
   ],
-  "nonExam": "Component 3 is an optional non-examined coursework route (two assignments, 60 marks, 40%), internally assessed and externally moderated, taken instead of Component 2. Candidates take Component 1 plus either Component 2 or Component 3. Linear: all assessment at the end of the course. Whether TGA would run Component 2 or 3 is not decided.",
+  "nonExam": "Component 3 is an optional non-examined route (two teacher-devised assignments, 60 marks, 40%), internally assessed and externally moderated, taken instead of Component 2. Candidates take Component 1 plus either Component 2 or 3. Linear: all assessment at the end of the course. No prescribed word length; advisory 650 to 800 words per assignment. Whether TGA would run Component 2 or 3 is not decided.",
   "aos": [
     {
       "code": "AO1",
       "desc": "Show close knowledge of texts, with a critical style and informed personal engagement.",
-      "weight": "30%"
+      "weight": "30% (Component 1: 13%; Component 2/3: 17%)"
     },
     {
       "code": "AO2",
       "desc": "Analyse the writer's language, form and structure and the meanings and effects they create.",
-      "weight": "40%"
+      "weight": "40% (Component 1: 23%; Component 2/3: 17%)"
     },
     {
       "code": "AO3",
       "desc": "Explore links and connections between texts.",
-      "weight": "10%"
+      "weight": "10% (Component 1 only)"
     },
     {
       "code": "AO4",
       "desc": "Show understanding of relationships between texts and the contexts in which they were written.",
-      "weight": "20%"
+      "weight": "20% (Component 1: 13%; Component 2/3: 7%)"
     }
   ],
   "units": [
@@ -84,10 +84,10 @@
       "year": "Y10",
       "term": "Spring",
       "points": [
-        "One 20-mark essay question on a poem not seen before, assessed for AO2.",
-        "Candidates also study a selection of modern poetry to prepare for it.",
-        "Focus is language, form and structure and the effects they create.",
-        "Closed-book paper, so no prepared quotations are possible for this section."
+        "One 20-mark essay question on an unseen poem, assessed for AO2.",
+        "Poem is printed in the question paper.",
+        "Candidates should study a selection of modern poetry to prepare.",
+        "Focus: imagery, language choice, tone, mood, structure, form and literary terminology."
       ],
       "keyTerms": [
         "unseen",
@@ -105,9 +105,9 @@
       "term": "Autumn",
       "points": [
         "Part 3 of the Pearson Edexcel International GCSE English Anthology; all 16 poems are studied.",
-        "One 30-mark question from a choice of two, assessed for AO2 and AO3.",
-        "Questions ask candidates to compare poems; a clean copy of the poems is supplied.",
-        "Poems come from different periods and cultures, so links and connections between texts are credited."
+        "One 30-mark question from a choice of two, comparing two anthology poems.",
+        "Marks split 15 for AO2 and 15 for AO3.",
+        "Closed book, but the anthology poems are provided in the examination."
       ],
       "keyTerms": [
         "compare",
@@ -158,10 +158,11 @@
       "year": "Y10",
       "term": "Summer",
       "points": [
-        "One 40-mark question from a choice of two on the chosen prose text.",
-        "Assessed for AO1 (knowledge and personal engagement) and AO4 (context).",
-        "Closed book; the examiner report shows questions on theme, character and significance.",
-        "Context is credited where it relates to how the text was written and received."
+        "One 40-mark question from a choice of two for each text.",
+        "Marks split 20 for AO1 (knowledge, critical style, personal engagement) and 20 for AO4 (context).",
+        "Closed book: texts are not allowed in the examination.",
+        "AO4 context includes the writer's life, historical setting, social and cultural attitudes.",
+        "It also includes literary context and how different audiences receive the text over time."
       ],
       "keyTerms": [
         "theme",
@@ -183,8 +184,9 @@
         "The Whale Rider (Witi Ihimaera).",
         "The Joy Luck Club (Amy Tan).",
         "Things Fall Apart (Chinua Achebe).",
-        "Klara and the Sun (Kazuo Ishiguro): new addition (start date not confirmed).",
-        "Western Lane (Chetna Maroo): new addition (start date not confirmed)."
+        "Klara and the Sun (Kazuo Ishiguro): new set text, first teaching 2024, first assessment May 2026.",
+        "Western Lane (Chetna Maroo): new set text, first teaching 2024, first assessment May 2026.",
+        "Closed book, so Pearson prescribes no edition; recommended editions are in Appendix 3."
       ]
     },
     {
@@ -196,7 +198,7 @@
       "points": [
         "Component 2: one 30-mark question from a choice of two, open book, assessed for AO1 and AO2.",
         "Component 3: internally assessed assignment of 30 marks (15 AO1, 15 AO2), externally moderated.",
-        "Drama is studied as a script for performance as well as a printed text."
+        "Specification requires close understanding of the play, critical style, informed personal engagement and use of examples."
       ],
       "keyTerms": [
         "stage directions",
@@ -217,7 +219,8 @@
         "An Inspector Calls (J B Priestley).",
         "The Curious Incident of the Dog in the Night-time (Mark Haddon, adapted by Simon Stephens).",
         "Kindertransport (Diane Samuels).",
-        "Death and the King's Horseman (Wole Soyinka)."
+        "Death and the King's Horseman (Wole Soyinka).",
+        "Open-book Component 2 needs a prescribed, unmarked edition of each set text (Appendix 3)."
       ]
     },
     {
@@ -229,7 +232,7 @@
       "points": [
         "Component 2: one 30-mark question from a choice of two, open book, assessed for AO1, AO2 and AO4.",
         "Component 3: assignment of 30 marks (10 each for AO1, AO2 and AO4), internally assessed.",
-        "Non-examined marks from both assignments combine into one mark out of 60.",
+        "The two 30-mark assignment marks combine into one mark out of 60.",
         "Candidates relate the text to the context in which it was written."
       ],
       "keyTerms": [
@@ -252,7 +255,8 @@
         "The Merchant of Venice (William Shakespeare).",
         "Pride and Prejudice (Jane Austen).",
         "Great Expectations (Charles Dickens).",
-        "The Scarlet Letter (Nathaniel Hawthorne)."
+        "The Scarlet Letter (Nathaniel Hawthorne).",
+        "Open-book Component 2 needs a prescribed, unmarked edition; Appendix 3 lists several per text."
       ]
     },
     {
@@ -301,7 +305,15 @@
     },
     {
       "word": "Explore",
-      "meaning": "Examine how a writer presents a theme, character or relationship (seen in report question stems; not an official glossary entry)."
+      "meaning": "Examine how a writer presents a theme or idea (used in the specification's sample assignment titles)."
+    },
+    {
+      "word": "In what ways",
+      "meaning": "Consider the methods a writer uses (specification sample assignment wording)."
+    },
+    {
+      "word": "To what extent do you agree",
+      "meaning": "Weigh a given statement and reach a judgement (specification sample assignment wording)."
     }
   ],
   "skills": [
@@ -344,9 +356,9 @@
     },
     {
       "with": "English Language",
-      "topic": "Pearson International GCSE English Language A (4EA1) uses poetry and prose texts",
+      "topic": "Pearson International GCSE English Language options (4EA1 and Specification B)",
       "unitRef": "1B",
-      "how": "4EA1 Components 2 and 3 also study anthology texts, so texts and teaching could be shared."
+      "how": "Pearson offers English Language alongside this qualification; whether texts can be shared was not checked."
     },
     {
       "with": "History",
@@ -399,15 +411,12 @@
   ],
   "contextNote": "AO4 requires context to be taught accurately and linked to the writer's choices (for example colonial history in Things Fall Apart, or Jacobean kingship in Macbeth). Teach what the context was; keep discussion text-focused.",
   "gaps": [
-    "Full specification PDF not read directly: read via a summarising fetch tool, so Verified is not claimed.",
-    "Paper-level AO mark splits for Component 1 Section B (AO2 versus AO3) not found.",
-    "Spec has no command-word list; its Appendix 5 glossary covers assessment terms only (e.g. linear, UMS). Command words above come from examiner report wording.",
-    "Grade boundaries, mark schemes and level descriptors not opened.",
-    "Anthology poem order and any teaching notes not opened (poem titles taken from the spec list).",
-    "Prescribed editions of set texts exist (Pearson guidance) but were not opened.",
-    "Modular specification (code YET01) exists separately; not documented here.",
+    "Question papers, mark schemes, grade boundaries and exam-board examiner mark-scheme level descriptors for the examined components not opened (only the Component 3 grids in the spec were read).",
+    "Spec has no command-word list; its Appendix 5 glossary covers assessment terms only (assessment objectives, external assessment, JCQ, linear, modular, non-examined assessment, raw marks, UMS, unit). Command words above come from sample assignment wording and the examiners' report.",
+    "Anthology itself and any teaching notes not opened (poem titles and authors taken from the spec list).",
+    "Timing guidance (about 40 minutes anthology, 45 prose) comes from the earlier examiners' report read, not the spec.",
+    "A separate modular specification (code YET01) was mentioned only in earlier notes; not documented here and not mentioned in the spec text.",
     "School lessons: Macbeth is on the Pearson list; A Christmas Carol is NOT. Lesson files y10.json and y11.json are written to AQA 8702 and need re-mapping.",
-    "Which of Component 2 or Component 3 the school will enter is not decided; also which prose and drama texts are chosen.",
-    "Spec states 'all poems from Part 3' without a count; 16 titles listed here are from the spec list. First-assessment dates for Klara and the Sun and Western Lane conflict between sources; not confirmed."
+    "Which of Component 2 or Component 3 the school will enter is not decided; also which prose and drama texts are chosen."
   ]
 }

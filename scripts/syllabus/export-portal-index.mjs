@@ -12,6 +12,8 @@ const LABELS = {
   business: "Pearson Edexcel IGCSE 4BS1",
   "islamic-studies": "Pearson Edexcel IGCSE 4IS1",
 };
+import { buildCoverage } from "./coverage.mjs";
+const coverage = buildCoverage();
 const specs = {};
 for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
   const d = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
@@ -29,7 +31,10 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
     aos: (d.aos || []).map((a) => ({ code: a.code, desc: a.desc, weight: a.weight || "" })),
     commandWords: (d.commandWords || []).map((c) => ({ word: c.word, meaning: c.meaning })),
     gaps: d.gaps || [],
-    units: (d.units || []).map((u) => ({ ref: u.ref, title: u.title, paper: u.paper || "", year: u.year || "", points: u.points || [] })),
+    units: (d.units || []).map((u) => {
+      const cu = coverage[d.slug]?.units.find((x) => x.ref === u.ref);
+      return { ref: u.ref, title: u.title, paper: u.paper || "", year: u.year || "", points: u.points || [], pl: cu ? cu.points.map((p) => p.lessons) : [], lessons: cu ? cu.lessons : [] };
+    }),
   };
 }
 const syllabi = {};

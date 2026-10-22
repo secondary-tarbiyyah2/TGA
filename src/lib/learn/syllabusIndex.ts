@@ -1,6 +1,7 @@
 import raw from "./syllabusIndex.json";
 
-export type SpecUnit = { ref: string; title: string; paper: string; year: string; points: string[] };
+/** pl: for each point, the ids ("y10/12") of the lessons that teach it; lessons: every lesson id mapped to the unit. */
+export type SpecUnit = { ref: string; title: string; paper: string; year: string; points: string[]; pl: string[][]; lessons: string[] };
 export type Paper = { paper: string; title: string; duration: string; marks: number | string; weight: string; content: string; format: string };
 export type SpecInfo = {
   subject: string;

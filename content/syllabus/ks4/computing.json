@@ -7,7 +7,7 @@
   "code": "1CP2",
   "specVersion": "Issue 1, January 2020 (the only issue on Pearson's specification PDF; no issue-change notes in it). First teaching September 2020, first assessment May/June 2022. Paper 2 Programming Language Subset: Version 6, effective Summer 2025.",
   "status": "Verified",
-  "statusNote": "Verified against Pearson's own specification PDF (Issue 1, January 2020): qualification overview, assessment information, subject content for Topics 1 to 6 (every section and numbered point) and Appendix 1 command words were all read. The PDF was read through a text-extraction tool, so statements are paraphrased. The Programming Language Subset was read only as a summary of its constructs (Version 4, Summer 2023, and the Version 6 change summary for Summer 2025). Pearson's January 2024 subject update announces no specification changes. Section titles are Pearson's own; units are section level (e.g. 2.1) and the points carry the numbered spec references. Year and term placement is a recommended sequence.",
+  "statusNote": "Verified against Pearson's own specification PDF (Issue 1, January 2020), re-read as raw pdftotext -layout text: qualification overview, assessment information, Topics 1 to 6 (every section and numbered point, re-compared line by line, no differences found) and Appendix 1 command words. Paper 1 states calculators must not be used; the specification Paper 2 section and the Paper 2 sample paper cover state nothing on calculators. The Programming Language Subset Version 4 (Summer 2023) was read in full as raw text and is summarised at topic level in this file's plsSummary field; Version 6 (Summer 2025) was read only through Pearson's change summary because the full Version 6 PDF could not be located on Pearson's pages. Pearson's January 2024 subject update announces no specification changes. Units are section level (e.g. 2.1); points carry the numbered spec references. Year and term placement is a recommended sequence.",
   "sources": [
     {
       "title": "Pearson Edexcel GCSE Computer Science (2020) qualification and teaching support pages",
@@ -61,7 +61,7 @@
       "marks": 75,
       "weight": "50%",
       "content": "Topic 6: Problem solving with programming",
-      "format": "On-screen practical exam in Python 3 using the centre's IDE, no internet access. Six compulsory questions; coding files, printed paper and PLS supplied. Synoptic assessment is in this paper only. Calculator use is not stated for this paper."
+      "format": "On-screen practical exam in Python 3 using the centre's IDE, no internet access. Six compulsory questions; coding files, printed paper and PLS supplied. Synoptic assessment is in this paper only. The specification and sample paper give no calculator rule for Paper 2 (Paper 1 forbids calculators)."
     }
   ],
   "nonExam": "No coursework or programming project. A senior leader at each centre must complete a Practical Programming Statement, confirming students could design, write, test and refine Python programs; submit by 31 May of the exam year. Python 3 with the Pearson Programming Language Subset (PLS) supplied in the exam; any valid construct earns marks. Level 2 and computer-related maths are assessed in both papers. Graded 9 to 1 on the total mark only; below the minimum is U. Retakers must resit both papers in the same May/June series.",
@@ -669,9 +669,25 @@
   ],
   "contextNote": "",
   "gaps": [
-    "The Programming Language Subset was read only as summaries (Version 4, Summer 2023, and the Version 6 change list for Summer 2025); the full Version 6 text was not opened.",
+    "Programming Language Subset Version 6 (Summer 2025) full text was not opened; the summary uses Version 4 plus Pearson's Version 6 change summary, so check the live PLS each series.",
     "Paper 2 calculator use is not stated in the specification or sample paper; do not assume either way.",
     "Mark allocations per topic in Paper 1 are not given in the specification and were not recorded.",
-    "Specification read via text extraction, not page images; Appendix 2 (flowchart symbols) was not itemised."
-  ]
+    "Appendix 2 (flowchart symbols) was not itemised."
+  ],
+  "plsSummary": {
+    "source": "1CP2/02 Programming Language Subset, Version 4 (Summer 2023), read in full; Version 6 (Summer 2025) changes read from Pearson's summary only.",
+    "topics": [
+      "Defines the Python 3 constructs sufficient for every Paper 2 question; valid constructs beyond it still earn marks.",
+      "Comments (#), identifiers, primitive types, type conversion functions, constants and declaration by assignment.",
+      "Structured types: string, array and record, with zero-based indexing; two dimensions, no ragged structures.",
+      "Arithmetic, relational and logical operators, with Python symbols such as //, %, ** and ==.",
+      "Constructs: assignment, sequence, indentation blocking, if/elif/else, while, and for with range.",
+      "Subprograms: procedures and functions, with or without parameters, using def and return.",
+      "Screen and keyboard input/output with print and input; CSV text files opened to read, write or append.",
+      "Built-in, list and string subprograms, plus string formatting, slicing, concatenation and repetition.",
+      "Library modules: random, math, time and turtle graphics, each imported before use.",
+      "Style guidance: bracketing, spacing, line continuation, and carriage return and line feed characters."
+    ],
+    "version6Changes": "Summer 2025 clarifies the two supported dimensions and adjusts wording, brackets and spacing; no new constructs are listed in the summary."
+  }
 }

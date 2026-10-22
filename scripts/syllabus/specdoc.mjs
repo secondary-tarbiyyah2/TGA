@@ -82,6 +82,7 @@ export function specDocument(d, extra = {}) {
   const sections = ["1  Qualification at a glance", "2  Assessment overview", "3  Assessment objectives", `4  Content: ${d.units.length} units`, "5  Command words", "6  Skills and prior learning", "7  Cross-curricular links"];
   if (d.contextNote) sections.push("8  Teaching note");
   if (extra.internationalNote) sections.push(`${sections.length + 1}  International and EAL learners`);
+  if (extra.coverage) sections.push(`${sections.length + 1}  Tarbiyyah course map and teacher sign-off`);
   sections.push(`${sections.length + 1}  Sources, verification and open items`);
   sections.forEach((s) => kids.push(p([t(s, { size: 22 })], { after: 80 })));
 
@@ -105,6 +106,13 @@ export function specDocument(d, extra = {}) {
     kids.push(p([t(`${u.paper} · ${u.year}${u.term ? ` · ${u.term}` : ""}`, { size: 19, color: MUTED, bold: true })], { after: 60, keepNext: true }));
     kids.push(label("What the specification requires", acc));
     (u.points || []).forEach((pt, i) => kids.push(p([t(`${u.ref}.${i + 1}  `, { bold: true, color: acc, size: 19 }), t(pt)], { after: 50 })));
+    const cu = extra.coverage?.units?.find((x) => x.ref === u.ref);
+    if (cu) {
+      kids.push(label("Taught in our lessons", acc));
+      kids.push(p([t(cu.lessons.length ? cu.lessons.map((id) => id.replace("y", "Y").replace("/", " lesson ")).join(" · ") : "No lesson matched yet", { size: 20 })]));
+      const missing = cu.points.filter((x) => !x.lessons.length).map((x) => `${u.ref}.${x.n}`);
+      if (missing.length) kids.push(p([t(`Points with no lesson matched yet: ${missing.join(", ")}`, { size: 19, color: "B42318", bold: true })]));
+    }
     if ((u.keyTerms || []).length) { kids.push(label("Key terms", acc)); kids.push(p([t(u.keyTerms.join(" · "), { size: 20 })])); }
     const rel = (d.links || []).filter((l) => l.unitRef && clean(l.unitRef) === clean(u.ref));
     if (rel.length) { kids.push(label("Connects to", acc)); rel.forEach((l) => kids.push(bl(`${l.with}: ${l.topic}`))); }
@@ -128,6 +136,13 @@ export function specDocument(d, extra = {}) {
   if (extra.internationalNote) {
     kids.push(h1(`${n++}  International and EAL learners`, acc));
     extra.internationalNote.forEach((x) => (x.startsWith("- ") ? kids.push(bl(x.slice(2))) : kids.push(p([t(x)]))));
+  }
+  if (extra.coverage) {
+    const c = extra.coverage;
+    kids.push(h1(`${n++}  Tarbiyyah course map and teacher sign-off`, acc));
+    kids.push(p([t(`This is our own course, built to teach every point of the ${d.board} specification. ${c.covered} of ${c.points} points are matched to one or more of our ${c.lessonCount} lessons. Matching is suggested from wording and is confirmed by a teacher below. The source files in the school portal are the single source of truth; this document is generated from them, so a correction made there reaches every document, deck and screen.`)]));
+    kids.push(table(["Ref", "Unit", "Year", "Points", "Lessons", "Checked by", "Date"], c.units.map((u) => [u.ref, u.title, u.year || "", `${u.covered}/${u.total}`, u.lessons.length ? u.lessons.map((id) => id.replace("y", "Y").replace("/", " L")).join(", ") : "none yet", "", ""]), [0.8, 2.8, 0.6, 0.7, 2.0, 1.2, 0.9], acc));
+    kids.push(p([t("Sign-off: a teacher writes their name and the date once they have checked the unit's points against the board's own document and the lessons against the points. Record the result in the portal Lesson library too, so it is kept with the lesson.", { italics: true, size: 19, color: MUTED })]));
   }
   kids.push(...sourcesSection(d, acc));
   return build(kids, d, "Specification", acc);

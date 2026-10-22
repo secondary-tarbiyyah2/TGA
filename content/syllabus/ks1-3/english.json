@@ -3,20 +3,40 @@
   "subject": "English",
   "slug": "english",
   "framework": "National Curriculum in England (2014): English programmes of study, Key Stages 1 to 3, with EYFS Literacy and Communication and Language for Reception",
-  "status": "Provisional",
-  "statusNote": "The gov.uk English programmes of study (spoken language, reading, writing, KS1 to KS3, plus the KS4 outline) were opened and read. Not opened: the statutory Appendix 1 (spelling) and Appendix 2 (vocabulary, grammar, punctuation) documents, the glossary, and the EYFS statutory framework PDFs (only the gov.uk landing page was read), so the Reception row is provisional. Statutory content is set by key stage (Year 1 and Year 2 individually in KS1; two-year blocks in KS2; KS3 as one block); the year-by-year allocation here is a recommended sequence, and schools may teach content earlier or later within a key stage. Re-check attempt: gov.uk and assets.publishing.service.gov.uk were not reachable from the research environment, so Appendix 1, Appendix 2, the glossary and the EYFS framework could not be opened and no year-by-year spelling or grammar content has been added (it would not be sourced). School-choice notes (not verification gaps): year allocation follows the recommended sequence; Drama, PE, Quran and Arabic links are school subjects outside the English document.",
+  "status": "Verified",
+  "statusNote": "All content was compared with the official text, read as raw text from the gov.uk and assets.publishing.service.gov.uk PDFs listed in sources: the primary (KS1-2) and secondary (KS3) English programmes of study, Appendix 1 (spelling), Appendix 2 (vocabulary, grammar and punctuation), the glossary (used to check terminology) and the EYFS statutory framework for group and school-based providers (dated 13 July 2026, effective 1 September 2026): the Communication and Language, Literacy and Fine Motor sections and Early Learning Goals. EYFS assessment and welfare sections were not needed for this syllabus. The statutory content is set by key stage (Year 1 and Year 2 individually in KS1; two-year blocks in KS2; KS3 as one block); the year-by-year allocation, the phonics order in Reception and Year 1, and the chosen texts (The Explorer, war poetry, Of Mice and Men, and similar) are the school's recommended sequence, not statutory. Spelling and grammar are recorded at topic level in paraphrase; the Year 3-4 and Year 5-6 statutory word lists are named, not reproduced.",
   "sources": [
-    {
-      "title": "National Curriculum in England: English programmes of study (gov.uk)",
-      "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study"
-    },
     {
       "title": "National Curriculum in England: English programmes of study, publication page (gov.uk)",
       "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study"
     },
     {
-      "title": "Early years foundation stage framework, landing page (gov.uk; framework in force from 1 September 2026)",
+      "title": "English programmes of study: key stages 1 and 2 (primary PDF)",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7de93840f0b62305b7f8ee/PRIMARY_national_curriculum_-_English_220714.pdf"
+    },
+    {
+      "title": "English programmes of study: key stage 3 (secondary PDF, includes KS3 glossary)",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7b8761ed915d4147620f6b/SECONDARY_national_curriculum_-_English2.pdf"
+    },
+    {
+      "title": "English Appendix 1: Spelling (PDF)",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7ccc06ed915d63cc65ce61/English_Appendix_1_-_Spelling.pdf"
+    },
+    {
+      "title": "English Appendix 2: Vocabulary, grammar and punctuation (PDF)",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7d913aed915d3fb959486f/English_Appendix_2_-_Vocabulary_grammar_and_punctuation.pdf"
+    },
+    {
+      "title": "Glossary for the programmes of study for English (PDF)",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7c8e4ded915d48c24108e2/English_Glossary.pdf"
+    },
+    {
+      "title": "Early years foundation stage framework, landing page (gov.uk)",
       "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2"
+    },
+    {
+      "title": "EYFS statutory framework for group and school-based providers, from September 2026 (PDF)",
+      "url": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
     },
     {
       "title": "AQA GCSE English Language 8700 specification (for the KS4 link)",
@@ -36,29 +56,37 @@
   "keyStages": [
     {
       "ks": "EYFS",
-      "years": "Reception (provisional: framework PDFs not opened)",
+      "years": "Reception (EYFS framework in force from 1 September 2026)",
       "strands": [
         {
           "strand": "Communication and Language",
           "statements": [
-            "Listen attentively, understand and respond in conversation and stories.",
-            "Speak in full sentences, using new vocabulary and talking about experiences.",
-            "Ask questions and explain ideas to adults and peers."
+            "ELG Listening, Attention and Understanding: listen attentively and respond with relevant questions, comments and actions.",
+            "Comment on what they have heard and ask questions to clarify understanding.",
+            "Hold back-and-forth conversation with teachers and peers.",
+            "ELG Speaking: join group, class and one-to-one discussion, offering ideas with recently taught vocabulary.",
+            "Offer explanations for why things might happen, using new vocabulary from stories, non-fiction, rhymes and poems.",
+            "Express ideas and feelings in full sentences, using past, present and future tenses and conjunctions, with support."
           ]
         },
         {
           "strand": "Literacy: comprehension and word reading",
           "statements": [
-            "Discuss stories and rhymes, and retell them using new vocabulary.",
-            "Say sounds for letters and read simple words and sentences using phonics.",
-            "Read some common exception words."
+            "ELG Comprehension: retell stories and narratives in their own words, using recently introduced vocabulary.",
+            "Anticipate key events in stories where appropriate.",
+            "Use and understand new vocabulary in discussion of stories, non-fiction, rhymes, poems and role play.",
+            "ELG Word Reading: say a sound for each letter of the alphabet and at least 10 digraphs.",
+            "Read words consistent with their phonic knowledge by sound-blending.",
+            "Read aloud simple sentences and books matched to phonics, including some common exception words."
           ]
         },
         {
           "strand": "Literacy: writing",
           "statements": [
-            "Form letters correctly and spell words by saying sounds.",
-            "Write simple phrases and sentences that others can read."
+            "ELG Writing: write recognisable letters, most of them correctly formed.",
+            "Spell words by identifying sounds and representing them with a letter or letters.",
+            "Write simple phrases and sentences that others can read.",
+            "Related ELG Fine Motor Skills: hold a pencil effectively, using the tripod grip in almost all cases."
           ]
         }
       ]
@@ -93,8 +121,9 @@
           "statements": [
             "Listen to and discuss stories, poems and non-fiction above independent reading level.",
             "Retell familiar stories; recite poems by heart; discuss word meanings.",
+            "Discuss the sequence of events and how information is related (Year 2); recognise recurring literary language.",
             "Make inferences, ask and answer questions and predict.",
-            "Learn about cause and effect in narrative and non-fiction (Year 2).",
+            "Year 2 guidance (non-statutory): learn about cause and effect in narrative and non-fiction.",
             "Explain clearly their understanding of what is read and heard."
           ]
         },
@@ -171,7 +200,7 @@
           "strand": "Vocabulary, grammar and punctuation",
           "statements": [
             "Use a wider range of conjunctions, fronted adverbials with commas, and the present perfect (Years 3 to 4).",
-            "Punctuate direct speech; begin to notice Standard and non-Standard English.",
+            "Punctuate direct speech; use Standard English verb forms instead of local spoken forms (Year 4 appendix).",
             "Use relative clauses, modal verbs, passive verbs and expanded noun phrases (Years 5 to 6).",
             "Use brackets, dashes, colons, semi-colons and hyphens accurately (Years 5 to 6).",
             "Recognise formal and informal structures, including the subjunctive."
@@ -226,20 +255,62 @@
     },
     {
       "ks": "Statutory appendices",
-      "years": "Years 1 to 6 (and applied at KS3)",
+      "years": "Years 1 to 6 (applied and extended at KS3)",
       "strands": [
         {
           "strand": "Appendix 1: Spelling",
           "statements": [
-            "Sets year-by-year spelling patterns, rules and word lists; KS2 has Years 3 to 4 and Years 5 to 6 lists.",
-            "Covers prefixes, suffixes, homophones, plurals and common exception words (contents not opened)."
+            "Year 1 (revising Reception): alphabet sounds, digraphs, segmenting words into sounds, adjacent consonants.",
+            "Year 1: ff, ll, ss, zz, ck after short vowels; n before k; syllables; tch; /v/ followed by e.",
+            "Year 1: adding -s/-es, and -ing, -ed, -er, -est where the root word does not change.",
+            "Year 1: vowel digraphs and trigraphs, such as ai, oy, ee, ea, oo, ow, igh, air.",
+            "Year 1: words ending -y; ph and wh; k for /k/; prefix un-; compound words; common exception words.",
+            "Year 2: /dʒ/ spelt ge, dge or g; c before e, i, y; kn, gn and wr at word starts.",
+            "Year 2: word endings -le, -el, -al, -il, and -y for /aɪ/ (cry, fly).",
+            "Year 2: adding -es, -ed, -er, -est to words ending -y; dropping e before -ing; doubling consonants.",
+            "Year 2: a after w and qu; or and ar after w; /ʒ/ spelt s; -ey.",
+            "Year 2: suffixes -ment, -ness, -ful, -less, -ly; contractions; singular possessive apostrophe; -tion.",
+            "Year 2: homophones and near-homophones; further common exception words (such as door, because, great, people).",
+            "Years 3-4: doubling the final consonant before vowel suffixes in multi-syllable words, depending on stress.",
+            "Years 3-4: y spelt for /ɪ/ (gym, myth) and ou for /ʌ/ (young, touch).",
+            "Years 3-4: prefixes dis-, mis-, in- (il-, im-, ir-), re-, sub-, inter-, super-, anti-, auto-.",
+            "Years 3-4: suffixes -ation, -ly (with its exceptions), -ous, and endings -sure, -ture, -sion.",
+            "Years 3-4: endings for /ʃən/ spelt -tion, -sion, -ssion, -cian, chosen by the root word.",
+            "Years 3-4: ch for /k/ and /ʃ/; -gue and -que; sc for /s/; ei, eigh, ey for /eɪ/.",
+            "Years 3-4: possessive apostrophe with plural words; more homophones; statutory list of 100 words.",
+            "Years 5-6: endings -cious, -tious, -cial, -tial; -ant/-ance/-ancy and -ent/-ence/-ency.",
+            "Years 5-6: endings -able, -ible, -ably, -ibly; adding suffixes to words ending -fer.",
+            "Years 5-6: the hyphen after prefixes; ei after c; the letter string ough; silent letters.",
+            "Years 5-6: homophones and words often confused (advice/advise, affect/effect, principal/principle).",
+            "Years 5-6: statutory list of 100 words, with morphology and etymology as clues to spelling."
           ]
         },
         {
           "strand": "Appendix 2: Vocabulary, grammar and punctuation",
           "statements": [
-            "Lists the grammatical terms and structures pupils must learn each year.",
-            "Pupils learn correct terminology explicitly (detailed contents not opened)."
+            "Year 1: plural -s/-es; verb suffixes without spelling change; prefix un-; joining with and.",
+            "Year 1: sequencing sentences into short narratives; finger spaces; capital letters, full stops, question and exclamation marks.",
+            "Year 1 terms: letter, capital letter, word, singular, plural, sentence, punctuation, full stop, question mark, exclamation mark.",
+            "Year 2: nouns from -ness, -er and compounding; adjectives from -ful, -less; -er, -est and -ly.",
+            "Year 2: subordination (when, if, that, because), co-ordination (or, and, but), expanded noun phrases.",
+            "Year 2: statement, question, exclamation and command forms; consistent past and present tense, including progressive.",
+            "Year 2: commas in lists; apostrophes for missing letters and singular possession.",
+            "Year 2 terms: noun, noun phrase, compound, suffix, adjective, adverb, verb, tense, apostrophe, comma.",
+            "Year 3: prefixes forming nouns; a or an; word families; time, place and cause with conjunctions, adverbs, prepositions.",
+            "Year 3: paragraphs; headings and sub-headings; present perfect; inverted commas for direct speech.",
+            "Year 3 terms: preposition, conjunction, word family, prefix, clause, subordinate clause, direct speech, vowel, consonant, inverted commas.",
+            "Year 4: plural versus possessive -s; Standard English verb forms instead of local forms (we were, I did).",
+            "Year 4: noun phrases expanded with adjectives, nouns and prepositional phrases; fronted adverbials with commas.",
+            "Year 4: paragraphs around a theme; pronoun or noun choice for cohesion; speech punctuation; plural possession.",
+            "Year 4 terms: determiner, pronoun, possessive pronoun, adverbial.",
+            "Year 5: verbs formed with -ate, -ise, -ify; verb prefixes dis-, de-, mis-, over-, re-.",
+            "Year 5: relative clauses; possibility shown by adverbs or modal verbs; cohesion within and across paragraphs.",
+            "Year 5: brackets, dashes or commas for parenthesis; commas to clarify meaning.",
+            "Year 5 terms: modal verb, relative pronoun, relative clause, parenthesis, bracket, dash, cohesion, ambiguity.",
+            "Year 6: formal versus informal vocabulary and structures; synonyms and antonyms; the passive; subjunctive forms.",
+            "Year 6: wider cohesive devices including repetition and ellipsis; layout devices for structuring text.",
+            "Year 6: semi-colon, colon and dash between clauses; colons and semi-colons in lists; bullet points; hyphens.",
+            "Year 6 terms: subject, object, active, passive, synonym, antonym, ellipsis, hyphen, colon, semi-colon, bullet points."
           ]
         }
       ]
@@ -253,7 +324,8 @@
           "Listening games and environmental sounds",
           "Rhyme and alliteration",
           "Oral blending and segmenting",
-          "Songs, rhymes and story discussion"
+          "Songs, rhymes and story discussion",
+          "Conversation, full sentences and past, present and future tenses"
         ],
         "skills": [
           "Listening attentively",
@@ -287,7 +359,8 @@
           "grapheme",
           "phoneme",
           "blend",
-          "tricky word"
+          "tricky word",
+          "alphabet"
         ],
         "assess": "Phonics checks; dictation of words",
         "prereq": "Reception: first sounds",
@@ -296,7 +369,7 @@
       {
         "unit": "Letters g o c k and tricky words",
         "focus": [
-          "Further sounds",
+          "Further letters of the alphabet, taught in the school phonics order",
           "Reading captions",
           "Tricky words",
           "Writing words from sounds"
@@ -312,19 +385,46 @@
         ],
         "assess": "Phonics checks; writing samples",
         "prereq": "Reception: first letters",
-        "leadsTo": "Reception: ck, e, u, r"
+        "leadsTo": "Reception: remaining letters and first digraphs"
+      },
+      {
+        "unit": "Remaining letters and first digraphs",
+        "focus": [
+          "Reaching every letter of the alphabet and its most common sound",
+          "At least 10 digraphs, such as sh, ch, th, ng, ai, ee, oa",
+          "Blending words containing digraphs",
+          "More common exception words"
+        ],
+        "skills": [
+          "Decoding",
+          "Blending",
+          "Spelling by sounds"
+        ],
+        "keyTerms": [
+          "alphabet",
+          "digraph",
+          "blend",
+          "common exception word"
+        ],
+        "assess": "Phonics checks against the Word Reading goal",
+        "prereq": "Reception: letters g o c k",
+        "leadsTo": "Reception: ck, e, u, r, captions and stories"
       },
       {
         "unit": "Letters ck e u r, captions and stories",
         "focus": [
           "Reading and writing captions and short sentences",
           "Retelling a story",
-          "Talking about characters and events"
+          "Talking about characters and events",
+          "Reading simple sentences and books matched to phonics",
+          "Anticipating key events in a story",
+          "Writing phrases and sentences others can read"
         ],
         "skills": [
           "Sentence writing",
           "Retell",
-          "Comprehension by discussion"
+          "Comprehension by discussion",
+          "Pencil grip and letter formation"
         ],
         "keyTerms": [
           "sentence",
@@ -332,7 +432,7 @@
           "character"
         ],
         "assess": "Phonics screening practice; writing a caption",
-        "prereq": "Reception: letters g o c k",
+        "prereq": "Reception: remaining letters and first digraphs",
         "leadsTo": "Year 1: revising sounds and writing sentences"
       }
     ],
@@ -423,6 +523,31 @@
         "assess": "Short written story; phonics screening check",
         "prereq": "Year 1: long vowel sounds",
         "leadsTo": "Year 2: Phase 5 phonics and spelling"
+      },
+      {
+        "unit": "Year 1 spelling and grammar",
+        "focus": [
+          "Plural -s/-es and verb endings -ing, -ed, -er",
+          "Prefix un- and compound words",
+          "Capital letters for names and I; question and exclamation marks",
+          "Common exception words and days of the week"
+        ],
+        "skills": [
+          "Dictation",
+          "Spelling rules",
+          "Proofreading for punctuation"
+        ],
+        "keyTerms": [
+          "singular",
+          "plural",
+          "punctuation",
+          "question mark",
+          "exclamation mark",
+          "capital letter"
+        ],
+        "assess": "Dictated sentences; spelling check",
+        "prereq": "Reception: sounds, digraphs, simple sentences",
+        "leadsTo": "Year 2: suffixes and sentence types"
       }
     ],
     "y2": [
@@ -495,6 +620,33 @@
         "assess": "Story writing; reading comprehension",
         "prereq": "Year 1: story writing",
         "leadsTo": "Year 3: fables"
+      },
+      {
+        "unit": "Year 2 spelling and grammar",
+        "focus": [
+          "Spelling /dʒ/, /s/, /n/, /r/ and word endings -le, -el, -al, -il",
+          "Suffixes -ment, -ness, -ful, -less, -ly; -er and -est",
+          "Statements, questions, exclamations, commands; commas in lists",
+          "Past and present progressive; apostrophes for contractions and singular possession"
+        ],
+        "skills": [
+          "Dictation",
+          "Proofreading",
+          "Spelling rules"
+        ],
+        "keyTerms": [
+          "noun",
+          "adjective",
+          "adverb",
+          "verb",
+          "tense",
+          "suffix",
+          "apostrophe",
+          "comma"
+        ],
+        "assess": "Dictated sentences; spelling check; grammar quiz",
+        "prereq": "Year 1: sentences, plurals, un-",
+        "leadsTo": "Year 3: prefixes, conjunctions and word families"
       }
     ],
     "y3": [
@@ -544,6 +696,53 @@
         "assess": "Written fable; comprehension",
         "prereq": "Year 2: traditional tales",
         "leadsTo": "Year 4: adventure writing"
+      },
+      {
+        "unit": "Years 3 and 4 spelling: prefixes and suffixes",
+        "focus": [
+          "Prefixes dis-, mis-, in-, re-, sub-, inter-, super-, anti-, auto-",
+          "Suffixes -ation, -ly, -ous; endings -sure, -ture, -sion",
+          "Endings -tion, -sion, -ssion, -cian",
+          "Year 3-4 statutory word list (first half)"
+        ],
+        "skills": [
+          "Spelling rules",
+          "Word-family links",
+          "Dictionary use"
+        ],
+        "keyTerms": [
+          "prefix",
+          "suffix",
+          "word family",
+          "root word"
+        ],
+        "assess": "Spelling tests; dictation",
+        "prereq": "Year 2: suffixes and exception words",
+        "leadsTo": "Year 4: homophones and plural possessives"
+      },
+      {
+        "unit": "Year 3 grammar: words, clauses and paragraphs",
+        "focus": [
+          "a or an; word families",
+          "Conjunctions, adverbs and prepositions for time, place and cause",
+          "Present perfect against simple past",
+          "Paragraphs, headings and inverted commas"
+        ],
+        "skills": [
+          "Editing",
+          "Punctuating speech"
+        ],
+        "keyTerms": [
+          "preposition",
+          "conjunction",
+          "clause",
+          "subordinate clause",
+          "direct speech",
+          "inverted commas"
+        ],
+        "assess": "Short grammar quiz; edited writing",
+        "prereq": "Year 2: subordination and co-ordination",
+        "leadsTo": "Year 4: fronted adverbials and speech punctuation"
       }
     ],
     "y4": [
@@ -592,6 +791,50 @@
         "assess": "Extended narrative; reading comprehension",
         "prereq": "Year 3: fables",
         "leadsTo": "Year 5: suspense writing"
+      },
+      {
+        "unit": "Year 4 spelling: patterns and word list",
+        "focus": [
+          "Doubling consonants in longer words, by stress",
+          "Greek and French-origin spellings: ch, -gue, -que, sc",
+          "ei, eigh and ey for /eɪ/; homophones",
+          "Possessive apostrophe with plural words; second half of the Year 3-4 word list"
+        ],
+        "skills": [
+          "Spelling rules",
+          "Etymology as a clue",
+          "Proofreading"
+        ],
+        "keyTerms": [
+          "homophone",
+          "possessive apostrophe",
+          "root word"
+        ],
+        "assess": "Statutory word list test; dictation",
+        "prereq": "Year 3: prefixes and suffixes",
+        "leadsTo": "Year 5: -cious, -tial, -able and -ible"
+      },
+      {
+        "unit": "Year 4 grammar: noun phrases and cohesion",
+        "focus": [
+          "Plural versus possessive -s",
+          "Standard English verb forms (we were, I did)",
+          "Noun phrases with modifying adjectives, nouns and prepositional phrases",
+          "Pronoun or noun choice across sentences; paragraphs around a theme"
+        ],
+        "skills": [
+          "Editing",
+          "Cohesion"
+        ],
+        "keyTerms": [
+          "determiner",
+          "pronoun",
+          "possessive pronoun",
+          "adverbial"
+        ],
+        "assess": "Grammar quiz; edited writing",
+        "prereq": "Year 3: conjunctions and paragraphs",
+        "leadsTo": "Year 5: relative clauses and modal verbs"
       }
     ],
     "y5": [
@@ -660,6 +903,56 @@
         "assess": "Suspense scene; comprehension",
         "prereq": "Year 4: adventure writing",
         "leadsTo": "Year 6: reading skills"
+      },
+      {
+        "unit": "Years 5 and 6 spelling: endings and word list",
+        "focus": [
+          "-cious, -tious, -cial, -tial",
+          "-ant/-ance/-ancy and -ent/-ence/-ency",
+          "-able, -ible, -ably, -ibly; suffixes on words ending -fer",
+          "Hyphens after prefixes; ei after c; ough; silent letters",
+          "Year 5-6 statutory word list (first half)"
+        ],
+        "skills": [
+          "Spelling rules",
+          "Etymology and morphology as clues",
+          "Dictionary and thesaurus use"
+        ],
+        "keyTerms": [
+          "morphology",
+          "etymology",
+          "hyphen",
+          "homophone"
+        ],
+        "assess": "Spelling tests; dictation",
+        "prereq": "Year 4: prefixes, suffixes, homophones",
+        "leadsTo": "Year 6: words often confused and the rest of the list"
+      },
+      {
+        "unit": "Year 5 grammar: verbs, clauses and parenthesis",
+        "focus": [
+          "Verbs formed with -ate, -ise, -ify; prefixes dis-, de-, mis-, over-, re-",
+          "Relative clauses; adverbs and modal verbs for possibility",
+          "Brackets, dashes or commas for parenthesis; commas for meaning",
+          "Cohesion within and across paragraphs"
+        ],
+        "skills": [
+          "Sentence control",
+          "Editing"
+        ],
+        "keyTerms": [
+          "modal verb",
+          "relative pronoun",
+          "relative clause",
+          "parenthesis",
+          "bracket",
+          "dash",
+          "cohesion",
+          "ambiguity"
+        ],
+        "assess": "Grammar quiz; edited writing",
+        "prereq": "Year 4: noun phrases and fronted adverbials",
+        "leadsTo": "Year 6: passive, subjunctive and colons"
       }
     ],
     "y6": [
@@ -725,6 +1018,53 @@
         "assess": "Writing portfolio; review test",
         "prereq": "Year 6: grammar",
         "leadsTo": "Year 7: transition to secondary writing"
+      },
+      {
+        "unit": "Year 6 spelling: confused words and word list",
+        "focus": [
+          "Homophones and words often confused, such as advice/advise",
+          "Morphology and etymology as clues",
+          "Second half of the Year 5-6 statutory word list",
+          "Dictionary and thesaurus checks"
+        ],
+        "skills": [
+          "Spelling rules",
+          "Proofreading"
+        ],
+        "keyTerms": [
+          "synonym",
+          "antonym",
+          "homophone"
+        ],
+        "assess": "Spelling tests; dictation",
+        "prereq": "Year 5: -able, -ible, -ant, -ent, ough",
+        "leadsTo": "Year 7: applying Appendix 1 in extended writing"
+      },
+      {
+        "unit": "Year 6 grammar: formal and cohesive writing",
+        "focus": [
+          "Formal and informal vocabulary and structures; synonyms and antonyms",
+          "Passive and active; subjunctive; question tags",
+          "Cohesive devices, ellipsis, layout devices and bullet points",
+          "Semi-colons, colons and dashes between clauses; hyphens"
+        ],
+        "skills": [
+          "Proofreading",
+          "Formal register"
+        ],
+        "keyTerms": [
+          "subject",
+          "object",
+          "active",
+          "passive",
+          "ellipsis",
+          "colon",
+          "semi-colon",
+          "bullet points"
+        ],
+        "assess": "Grammar quiz; edited writing",
+        "prereq": "Year 5: relative clauses, modal verbs, parenthesis",
+        "leadsTo": "Year 7: analysing grammar in challenging texts"
       }
     ],
     "y7": [
@@ -810,6 +1150,28 @@
         "assess": "End of term writing task",
         "prereq": "Year 7: Trust, Leadership and Survival",
         "leadsTo": "Year 8: War poetry"
+      },
+      {
+        "unit": "Y7 language and accuracy",
+        "focus": [
+          "Applying Appendix 1 spelling rules in extended writing",
+          "Using Appendix 2 grammar to analyse the effect of challenging texts",
+          "Spoken and written registers; Standard English and other varieties",
+          "Precise linguistic and literary terminology"
+        ],
+        "skills": [
+          "Proofreading",
+          "Language analysis",
+          "Standard English"
+        ],
+        "keyTerms": [
+          "register",
+          "Standard English",
+          "terminology"
+        ],
+        "assess": "Edited extended writing; grammar in context",
+        "prereq": "Year 6: grammar and spelling",
+        "leadsTo": "Year 8"
       }
     ],
     "y8": [
@@ -873,6 +1235,28 @@
         "assess": "Comparative essay",
         "prereq": "Year 8: reading the poems",
         "leadsTo": "GCSE Literature: poetry comparison, Section B"
+      },
+      {
+        "unit": "Y8 language and accuracy",
+        "focus": [
+          "Applying Appendix 1 spelling rules in extended writing",
+          "Using Appendix 2 grammar to analyse the effect of challenging texts",
+          "Spoken and written registers; Standard English and other varieties",
+          "Precise linguistic and literary terminology"
+        ],
+        "skills": [
+          "Proofreading",
+          "Language analysis",
+          "Standard English"
+        ],
+        "keyTerms": [
+          "register",
+          "Standard English",
+          "terminology"
+        ],
+        "assess": "Edited extended writing; grammar in context",
+        "prereq": "Year 7",
+        "leadsTo": "Year 9"
       }
     ],
     "y9": [
@@ -935,6 +1319,28 @@
         "assess": "GCSE-style essay",
         "prereq": "Year 9: Chapter 1",
         "leadsTo": "Year 10: A Christmas Carol and Paper 1 reading"
+      },
+      {
+        "unit": "Y9 language and accuracy",
+        "focus": [
+          "Applying Appendix 1 spelling rules in extended writing",
+          "Using Appendix 2 grammar to analyse the effect of challenging texts",
+          "Spoken and written registers; Standard English and other varieties",
+          "Precise linguistic and literary terminology"
+        ],
+        "skills": [
+          "Proofreading",
+          "Language analysis",
+          "Standard English"
+        ],
+        "keyTerms": [
+          "register",
+          "Standard English",
+          "terminology"
+        ],
+        "assess": "Edited extended writing; grammar in context",
+        "prereq": "Year 8",
+        "leadsTo": "GCSE English Language and Literature"
       }
     ]
   },
@@ -990,6 +1396,17 @@
         "Y7": "A whole class novel",
         "Y8": "Comparing war poems",
         "Y9": "A modern whole text with context"
+      }
+    },
+    {
+      "thread": "Spelling",
+      "steps": {
+        "Reception": "Sound for each letter and at least 10 digraphs",
+        "Y1": "Taught sounds, ff/ll/ss, -s/-es, un-",
+        "Y2": "Alternative spellings, -ment, -ness, -ful, -ly, contractions",
+        "Y4": "Prefixes, -ous, -ation, plural possessive apostrophe",
+        "Y6": "-able/-ible, -cial/-tial, ough, words often confused",
+        "Y9": "Accurate spelling in extended writing"
       }
     }
   ],
@@ -1056,9 +1473,5 @@
       "how": "Performance uses voice, role and movement; English supplies the texts and expression."
     }
   ],
-  "gaps": [
-    "Appendix 1 (spelling) and Appendix 2 (vocabulary, grammar and punctuation) were not opened; their year-by-year word lists and terms are not recorded.",
-    "EYFS statutory framework PDFs were not opened: the Reception row is provisional and should be checked against the 2026 framework's Communication and Language and Literacy areas and Early Learning Goals.",
-    "The National Curriculum glossary was not opened."
-  ]
+  "gaps": []
 }

@@ -8,6 +8,8 @@ import { buildSpecDeck, buildSyllabusDeck } from "./decks.mjs";
 import { loadPack, buildMatrixDeck, groupOf } from "./matrix.mjs";
 import { buildUnitDeck } from "./unit-decks.mjs";
 import { specDocument, syllabusDocument, writeDoc } from "./specdoc.mjs";
+import { buildCoverage } from "./coverage.mjs";
+const coverage = buildCoverage();
 import { loadChapters, videoMapFor } from "./video-links.mjs";
 
 const args = process.argv.slice(2);
@@ -42,7 +44,7 @@ for (const d of pack.ks4) {
   const bd = /AQA/i.test(d.board) ? "AQA" : /edexcel|pearson/i.test(d.board) ? "Edexcel" : short(d.board).slice(0, 12);
   const vm = videoMapFor(d, chapters);
   vm.forEach((list, ref) => list.forEach((v) => videoLinks.push({ subject: d.subject, unitRef: ref, ...v })));
-  await saveDoc(specDocument(d, { internationalNote: d.internationalNote }), `${F.ks4}/${sub}/KS4_${sub}_${bd}-${code}_Specification.docx`, { kind: "spec", level: "KS4 (Y10-Y11)", subject: d.subject, board: d.board, code: d.code, status: d.status, units: d.units.length });
+  await saveDoc(specDocument(d, { internationalNote: d.internationalNote, coverage: coverage[d.slug] }), `${F.ks4}/${sub}/KS4_${sub}_${bd}-${code}_Specification.docx`, { kind: "spec", level: "KS4 (Y10-Y11)", subject: d.subject, board: d.board, code: d.code, status: d.status, units: d.units.length });
 }
 for (const d of pack.ks13) {
   const sub = short(d.subject);

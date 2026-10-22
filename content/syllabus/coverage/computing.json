@@ -1,0 +1,955 @@
+{
+ "subject": "Computer Science",
+ "board": "Pearson Edexcel",
+ "code": "1CP2",
+ "lessonCount": 59,
+ "points": 78,
+ "covered": 76,
+ "units": [
+  {
+   "ref": "1.1",
+   "title": "Computational thinking: 1.1 Decomposition and abstraction",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 2,
+   "total": 2,
+   "lessons": [
+    "y10/1",
+    "y10/9"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Understand how decomposition and abstraction help model real-world aspects and solve problems (1.1.1).",
+     "lessons": [
+      "y10/9",
+      "y10/1"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Understand the benefits of using subprograms (1.1.2).",
+     "lessons": [
+      "y10/9"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "1.2",
+   "title": "Computational thinking: 1.2 Algorithms",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 10,
+   "total": 10,
+   "lessons": [
+    "y10/2",
+    "y10/3",
+    "y10/4",
+    "y10/5",
+    "y10/9",
+    "y10/10",
+    "y10/11",
+    "y10/12",
+    "y10/13",
+    "y10/14",
+    "y10/25",
+    "y10/26",
+    "y10/28",
+    "y10/32"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Follow and write algorithms as flowcharts, pseudocode or code using sequence and selection (1.2.1).",
+     "lessons": [
+      "y10/3",
+      "y10/10",
+      "y10/2"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Use count-controlled and condition-controlled repetition, and iterate over every item in a data structure (1.2.1).",
+     "lessons": [
+      "y10/10"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Cover input, processing and output in algorithms (1.2.1).",
+     "lessons": [
+      "y10/2",
+      "y10/25",
+      "y10/9"
+     ]
+    },
+    {
+     "n": 4,
+     "text": "Know why variables, constants and one- and two-dimensional strings, records and arrays are needed (1.2.2).",
+     "lessons": [
+      "y10/11",
+      "y10/28"
+     ]
+    },
+    {
+     "n": 5,
+     "text": "Use arithmetic operators, including modulus, integer division and exponentiation (1.2.3).",
+     "lessons": [
+      "y10/32"
+     ]
+    },
+    {
+     "n": 6,
+     "text": "Use relational operators and the logical operators AND, OR and NOT (1.2.3).",
+     "lessons": [
+      "y10/12",
+      "y10/32"
+     ]
+    },
+    {
+     "n": 7,
+     "text": "Find an algorithm's output for given data, using a trace table for variable values (1.2.4).",
+     "lessons": [
+      "y10/12",
+      "y10/3",
+      "y10/11"
+     ]
+    },
+    {
+     "n": 8,
+     "text": "Know syntax, logic and runtime errors; identify and correct logic errors in algorithms (1.2.5).",
+     "lessons": [
+      "y10/13",
+      "y10/26",
+      "y10/3"
+     ]
+    },
+    {
+     "n": 9,
+     "text": "Understand how bubble sort, merge sort, linear search and binary search work (1.2.6).",
+     "lessons": [
+      "y10/14",
+      "y10/4",
+      "y10/5"
+     ]
+    },
+    {
+     "n": 10,
+     "text": "Judge fitness for purpose and efficiency: comparisons, loop passes and memory use (1.2.7).",
+     "lessons": [
+      "y10/13",
+      "y10/14"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "1.3",
+   "title": "Computational thinking: 1.3 Truth tables",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 1,
+   "total": 1,
+   "lessons": [
+    "y10/15",
+    "y10/16"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Apply AND, OR and NOT in truth tables with up to three inputs to solve problems (1.3.1).",
+     "lessons": [
+      "y10/16",
+      "y10/15"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "2.1",
+   "title": "Data: 2.1 Binary",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 6,
+   "total": 6,
+   "lessons": [
+    "y10/17",
+    "y10/18",
+    "y10/19",
+    "y10/20",
+    "y10/21"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Binary represents data and instructions; count the states available for a given number of bits (2.1.1).",
+     "lessons": [
+      "y10/17",
+      "y10/19",
+      "y10/21"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Represent unsigned integers and signed integers using two's complement (2.1.2).",
+     "lessons": [
+      "y10/18",
+      "y10/17",
+      "y10/19"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Convert between denary and 8-bit binary: 0 to 255, and -128 to +127 (2.1.3).",
+     "lessons": [
+      "y10/17",
+      "y10/18",
+      "y10/20"
+     ]
+    },
+    {
+     "n": 4,
+     "text": "Add two positive binary patterns and apply logical and arithmetic binary shifts (2.1.4).",
+     "lessons": [
+      "y10/19"
+     ]
+    },
+    {
+     "n": 5,
+     "text": "Explain overflow when a result exceeds the available bits (2.1.5).",
+     "lessons": [
+      "y10/19"
+     ]
+    },
+    {
+     "n": 6,
+     "text": "Explain why hexadecimal is used and convert between hex and binary (2.1.6).",
+     "lessons": [
+      "y10/20",
+      "y10/17",
+      "y10/18"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "2.2",
+   "title": "Data: 2.2 Data representation",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 4,
+   "total": 4,
+   "lessons": [
+    "y10/17",
+    "y10/18",
+    "y10/21",
+    "y10/22"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Represent characters using 7-bit ASCII (2.2.1).",
+     "lessons": [
+      "y10/21"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Describe bitmap images using pixels, resolution and colour depth (2.2.2).",
+     "lessons": [
+      "y10/22"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Describe sound sampling using amplitude, sample rate, bit depth and sample interval (2.2.3).",
+     "lessons": [
+      "y10/22"
+     ]
+    },
+    {
+     "n": 4,
+     "text": "Explain the limits of binary representation when the number of bits is fixed (2.2.4).",
+     "lessons": [
+      "y10/21",
+      "y10/17",
+      "y10/18"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "2.3",
+   "title": "Data: 2.3 Data storage and compression",
+   "year": "Y10",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y10/23",
+    "y10/24"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Know storage units: bit, nibble, byte, kibibyte, mebibyte, gibibyte, tebibyte (2.3.1).",
+     "lessons": [
+      "y10/23"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Construct expressions to calculate file sizes and data capacity requirements (2.3.1).",
+     "lessons": [
+      "y10/23"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Explain why compression is needed and compare lossless and lossy methods (2.3.2).",
+     "lessons": [
+      "y10/24"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "3.1",
+   "title": "Computers: 3.1 Hardware",
+   "year": "Y11",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 4,
+   "total": 4,
+   "lessons": [
+    "y11/1",
+    "y11/2",
+    "y11/3",
+    "y11/9",
+    "y11/10",
+    "y11/11"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Describe the von Neumann stored program concept (3.1.1).",
+     "lessons": [
+      "y11/9",
+      "y11/11",
+      "y11/3"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Explain the roles of RAM, control unit, ALU, registers, clock and the address, data and control buses in fetch-decode-execute (3.1.1).",
+     "lessons": [
+      "y11/9",
+      "y11/1"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Explain the role of secondary storage and how magnetic, optical and solid-state devices store data (3.1.2).",
+     "lessons": [
+      "y11/10",
+      "y11/2"
+     ]
+    },
+    {
+     "n": 4,
+     "text": "Know what an embedded system is and what embedded systems are used for (3.1.3).",
+     "lessons": [
+      "y11/10"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "3.2",
+   "title": "Computers: 3.2 Software",
+   "year": "Y11",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y11/3",
+    "y11/11",
+    "y11/12"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Describe operating system functions: file, process, peripheral and user management (3.2.1).",
+     "lessons": [
+      "y11/11",
+      "y11/3"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Describe utility software: repair, backup, compression, defragmentation and anti-malware (3.2.2).",
+     "lessons": [
+      "y11/11"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Explain robust software and finding vulnerabilities through audit trails and code reviews (3.2.3).",
+     "lessons": [
+      "y11/12"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "3.3",
+   "title": "Computers: 3.3 Programming languages",
+   "year": "Y11",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 2,
+   "total": 2,
+   "lessons": [
+    "y10/25",
+    "y11/4",
+    "y11/13"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Compare characteristics and purposes of low-level and high-level languages (3.3.1).",
+     "lessons": [
+      "y11/13",
+      "y11/4",
+      "y10/25"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Explain how interpreters and compilers translate high-level code into machine code differently (3.3.2).",
+     "lessons": [
+      "y11/13",
+      "y11/4"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "4.1",
+   "title": "Networks: 4.1 Networks",
+   "year": "Y11",
+   "paper": "Paper 1",
+   "status": "partial",
+   "covered": 8,
+   "total": 9,
+   "lessons": [
+    "y11/5",
+    "y11/6",
+    "y11/14",
+    "y11/15",
+    "y11/16",
+    "y11/17",
+    "y11/18",
+    "y11/19"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Explain why computers are connected in networks (4.1.1).",
+     "lessons": [
+      "y11/17",
+      "y11/14",
+      "y11/15"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Distinguish LAN and WAN (4.1.2).",
+     "lessons": []
+    },
+    {
+     "n": 3,
+     "text": "Describe how the internet is structured, including IP addressing and routers (4.1.3).",
+     "lessons": [
+      "y11/14",
+      "y11/6",
+      "y11/18"
+     ]
+    },
+    {
+     "n": 4,
+     "text": "Explain how wired and wireless connections affect speed, range, latency and bandwidth (4.1.4).",
+     "lessons": [
+      "y11/15"
+     ]
+    },
+    {
+     "n": 5,
+     "text": "Use bit-per-second speeds (kilobit, megabit, gigabit); build expressions linking file size, rate and time (4.1.5).",
+     "lessons": [
+      "y11/16"
+     ]
+    },
+    {
+     "n": 6,
+     "text": "Explain the role and need for protocols: Ethernet, Wi-Fi, TCP/IP, HTTP, HTTPS and FTP (4.1.6).",
+     "lessons": [
+      "y11/17"
+     ]
+    },
+    {
+     "n": 7,
+     "text": "Know the email protocols POP3, SMTP and IMAP (4.1.6).",
+     "lessons": [
+      "y11/17"
+     ]
+    },
+    {
+     "n": 8,
+     "text": "Describe the four-layer TCP/IP model: application, transport, internet and link (4.1.7).",
+     "lessons": [
+      "y11/18"
+     ]
+    },
+    {
+     "n": 9,
+     "text": "Describe the characteristics of bus, star and mesh topologies (4.1.8).",
+     "lessons": [
+      "y11/19",
+      "y11/5"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "4.2",
+   "title": "Networks: 4.2 Network security",
+   "year": "Y11",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y11/7",
+    "y11/8",
+    "y11/20"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Explain why network security matters (4.2.1).",
+     "lessons": [
+      "y11/7",
+      "y11/8",
+      "y11/20"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Know how vulnerabilities are found: penetration testing and ethical hacking (4.2.1).",
+     "lessons": [
+      "y11/20"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Know how networks are protected: access control, physical security and firewalls (4.2.1).",
+     "lessons": [
+      "y11/20",
+      "y11/8",
+      "y11/7"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "5.1",
+   "title": "Issues and impact: 5.1 Environmental",
+   "year": "Y11",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 2,
+   "total": 2,
+   "lessons": [
+    "y11/21"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Discuss environmental issues from digital devices: energy consumption, manufacturing, replacement cycles and disposal (5.1.1).",
+     "lessons": [
+      "y11/21"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Weigh environmental costs against benefits when giving a reasoned view in a Discuss question (5.1.1).",
+     "lessons": [
+      "y11/21"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "5.2",
+   "title": "Issues and impact: 5.2 Ethical and legal",
+   "year": "Y11",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y11/22",
+    "y11/23",
+    "y11/24"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Discuss ethical and legal issues in collecting and using personal data: privacy, ownership, consent, misuse, data protection (5.2.1).",
+     "lessons": [
+      "y11/22",
+      "y11/23",
+      "y11/24"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Discuss ethical and legal issues in AI, machine learning and robotics: accountability, safety, bias, liability (5.2.2).",
+     "lessons": [
+      "y11/23",
+      "y11/22"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Explain how intellectual property is protected: copyright, patents, trademarks and licensing (5.2.3).",
+     "lessons": [
+      "y11/24"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "5.3",
+   "title": "Issues and impact: 5.3 Cybersecurity",
+   "year": "Y11",
+   "paper": "Paper 1",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y11/7",
+    "y11/25",
+    "y11/26"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Describe malware threats: viruses, worms, Trojans, ransomware and keyloggers (5.3.1).",
+     "lessons": [
+      "y11/25"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Explain how unpatched software and out-of-date anti-malware are exploited, and how social engineering works (5.3.1).",
+     "lessons": [
+      "y11/25",
+      "y11/7"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Explain protections: anti-malware, encryption, acceptable use policies, backup and recovery (5.3.2).",
+     "lessons": [
+      "y11/26"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "6.1",
+   "title": "Problem solving with programming: 6.1 Develop code",
+   "year": "Y10",
+   "paper": "Paper 2",
+   "status": "covered",
+   "covered": 6,
+   "total": 6,
+   "lessons": [
+    "y10/1",
+    "y10/9",
+    "y10/13",
+    "y10/14",
+    "y10/25",
+    "y10/26",
+    "y10/28",
+    "y11/13"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Use decomposition and abstraction to analyse, understand and solve problems (6.1.1).",
+     "lessons": [
+      "y10/9",
+      "y10/25",
+      "y10/1"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Read, write, analyse and refine programs in a high-level language (6.1.2).",
+     "lessons": [
+      "y10/25",
+      "y11/13",
+      "y10/26"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Convert flowcharts and pseudocode into programs (6.1.3).",
+     "lessons": [
+      "y10/25",
+      "y10/28"
+     ]
+    },
+    {
+     "n": 4,
+     "text": "Make code readable and maintainable: layout, indentation, comments, meaningful identifiers, white space (6.1.4).",
+     "lessons": [
+      "y10/26"
+     ]
+    },
+    {
+     "n": 5,
+     "text": "Identify, locate and correct logic, syntax and runtime errors (6.1.5).",
+     "lessons": [
+      "y10/26",
+      "y10/13"
+     ]
+    },
+    {
+     "n": 6,
+     "text": "Judge fitness for purpose and efficiency with test data: comparisons, loop passes, memory use (6.1.6).",
+     "lessons": [
+      "y10/13",
+      "y10/14",
+      "y10/26"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "6.2",
+   "title": "Problem solving with programming: 6.2 Constructs",
+   "year": "Y10",
+   "paper": "Paper 2",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y10/10",
+    "y10/26",
+    "y10/27"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Identify structural components: constants, variables, initialisation, assignment, subprograms, parameters, input and output (6.2.1).",
+     "lessons": [
+      "y10/26"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Write programs using sequence, selection, and count- or condition-controlled repetition (6.2.2).",
+     "lessons": [
+      "y10/27",
+      "y10/10"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Iterate over every item in a data structure, with single entry and exit points (6.2.2).",
+     "lessons": [
+      "y10/27"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "6.3",
+   "title": "Problem solving with programming: 6.3 Data types and structures",
+   "year": "Y10",
+   "paper": "Paper 2",
+   "status": "covered",
+   "covered": 3,
+   "total": 3,
+   "lessons": [
+    "y10/11",
+    "y10/26",
+    "y10/28",
+    "y10/29"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Use primitive types (integer, real, Boolean, char) and one- and two-dimensional string, array and record types (6.3.1).",
+     "lessons": [
+      "y10/28",
+      "y10/11"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Use variables and constants (6.3.2).",
+     "lessons": [
+      "y10/11",
+      "y10/26",
+      "y10/28"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Manipulate strings: length, position, substrings and case conversion (6.3.3).",
+     "lessons": [
+      "y10/29"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "6.4",
+   "title": "Problem solving with programming: 6.4 Input/output",
+   "year": "Y10",
+   "paper": "Paper 2",
+   "status": "covered",
+   "covered": 4,
+   "total": 4,
+   "lessons": [
+    "y10/15",
+    "y10/26",
+    "y10/30",
+    "y10/31"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Accept and respond to user input (6.4.1).",
+     "lessons": [
+      "y10/30",
+      "y10/31"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Read from and write to CSV text files (6.4.2).",
+     "lessons": [
+      "y10/30",
+      "y10/15",
+      "y10/26"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Apply validation: length, presence, range and pattern checks (6.4.3).",
+     "lessons": [
+      "y10/31"
+     ]
+    },
+    {
+     "n": 4,
+     "text": "Apply authentication: ID and password, and lookup (6.4.4).",
+     "lessons": [
+      "y10/31"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "6.5",
+   "title": "Problem solving with programming: 6.5 Operators",
+   "year": "Y10",
+   "paper": "Paper 2",
+   "status": "partial",
+   "covered": 2,
+   "total": 3,
+   "lessons": [
+    "y10/32"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Use addition, subtraction, multiplication, division, modulus, integer division and exponentiation (6.5.1).",
+     "lessons": [
+      "y10/32"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Use equal to, not equal to, less than, greater than, and their or-equal-to forms (6.5.2).",
+     "lessons": []
+    },
+    {
+     "n": 3,
+     "text": "Use logical operators AND, OR and NOT (6.5.3).",
+     "lessons": [
+      "y10/32"
+     ]
+    }
+   ]
+  },
+  {
+   "ref": "6.6",
+   "title": "Problem solving with programming: 6.6 Subprograms",
+   "year": "Y10",
+   "paper": "Paper 2",
+   "status": "covered",
+   "covered": 4,
+   "total": 4,
+   "lessons": [
+    "y10/28",
+    "y10/33"
+   ],
+   "points": [
+    {
+     "n": 1,
+     "text": "Use built-in or library subprograms and write user-devised procedures and functions (6.6.1).",
+     "lessons": [
+      "y10/33"
+     ]
+    },
+    {
+     "n": 2,
+     "text": "Write functions that must return a value, with or without parameters (6.6.2).",
+     "lessons": [
+      "y10/33"
+     ]
+    },
+    {
+     "n": 3,
+     "text": "Write procedures that return no value, with or without parameters (6.6.2).",
+     "lessons": [
+      "y10/33"
+     ]
+    },
+    {
+     "n": 4,
+     "text": "Explain global and local variables and use each appropriately (6.6.3).",
+     "lessons": [
+      "y10/33",
+      "y10/28"
+     ]
+    }
+   ]
+  }
+ ]
+}

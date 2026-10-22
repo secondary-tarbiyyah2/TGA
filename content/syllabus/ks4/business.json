@@ -5,9 +5,9 @@
   "board": "Pearson Edexcel",
   "qualification": "International GCSE (9-1) Business",
   "code": "4BS1",
-  "specVersion": "Issue 2, February 2026 (as stated in the specification PDF text read); first teaching September 2017, first exam June 2019",
-  "status": "Provisional",
-  "statusNote": "Replaces the earlier UK GCSE 1BS0 file; correct qualification is Pearson Edexcel International GCSE Business 4BS1. The official specification PDF (Issue 2, February 2026) was re-read in this pass in separate sections: contents page, sections 1 to 5 at numbered sub-statement level (for example 1.1.1, 2.5.3, 5.2.3), assessment objectives, paper summary, quantitative skills and the Appendix 2 command words. Unit refs and titles match the PDF contents page, and each unit now covers every numbered statement. Kept Provisional because the only available PDF access was a fetch tool that returns model-written text, not raw page text, so wording was not checked against the page images. Year and term allocation is a recommended sequence, not a board requirement.",
+  "specVersion": "Issue 2, February 2026 (stated in the PDF footer and cover); first teaching September 2017, first exam June 2019",
+  "status": "Verified",
+  "statusNote": "Official Pearson 4BS1 specification PDF (Issue 2, February 2026) downloaded and read as raw text (pdftotext). Paper structure, marks, weights, assessment objectives, all five content sections at numbered statement level (1.1.1 to 5.4.1), Appendix 2 command words, Appendix 3 quantitative skills and Appendix 4 formulae were compared line by line against that text. The 2027 qualification page was also opened for the 4BS1 last-assessment date. Statements are paraphrased. Year and term allocation is a recommended sequence, not a board requirement. Sample assessment materials were not opened.",
   "sources": [
     {
       "title": "Pearson Edexcel International GCSE (9-1) Business 4BS1 specification (PDF)",
@@ -28,7 +28,7 @@
       "marks": 80,
       "weight": "50%",
       "content": "Whole specification, set in the context of a small business (up to 49 employees, local or national market)",
-      "format": "Four compulsory 20-mark questions mixing multiple choice, short answer, data response and open-ended writing; calculator allowed; June and November series; paper-based or onscreen"
+      "format": "Four compulsory 20-mark questions mixing multiple choice, short answer, data response and open-ended writing; calculator allowed; June and November series; paper-based or onscreen; Level 1/2, single tier of entry; share of total marks by AO: AO1 13.7%, AO2 19.4%, AO3 11.3%, AO4 5.6%"
     },
     {
       "paper": "Paper 2 (4BS1/02)",
@@ -37,7 +37,7 @@
       "marks": 80,
       "weight": "50%",
       "content": "Whole specification, set in the context of a large business (more than 250 employees, multinational or global market)",
-      "format": "Four compulsory 20-mark questions mixing multiple choice, short answer, data response and open-ended writing; calculator allowed; June and November series; paper-based or onscreen"
+      "format": "Four compulsory 20-mark questions mixing multiple choice, short answer, data response and open-ended writing; calculator allowed; June and November series; paper-based or onscreen; Level 1/2, single tier of entry; share of total marks by AO: AO1 13.7%, AO2 19.4%, AO3 11.3%, AO4 5.6%"
     }
   ],
   "nonExam": "None: 100% external written papers. Quantitative skills are 10% of total marks across both papers, always in a business context. Six ratio formulae are provided in the exam. Assessments use International Accounting Standards terms (for example statement of financial position, inventory).",
@@ -297,10 +297,10 @@
         "2.5.1 Organisational charts: hierarchical and flat structures",
         "2.5.1 Centralised and decentralised structures",
         "2.5.2 Roles and responsibilities: span of control, chain of command, delegation",
-        "2.5.3 Human resources: workforce planning, recruitment, training, health and safety, welfare, industrial relations",
+        "2.5.3 Human resources: workforce planning, recruitment and selection, training, health and safety, staff welfare, employment issues, industrial relations",
         "2.5.3 Human resources: disciplinary, grievance, dismissal, unfair dismissal, redundancy",
         "2.5.3 Finance: wages and salaries, cash-flow forecasting, budgets, accounting",
-        "2.5.3 Marketing: research, product planning, pricing, promotion, advertising, customer service, PR, packaging, distribution",
+        "2.5.3 Marketing: research, product planning, pricing, sales promotion, advertising, customer service, PR, packaging, distribution",
         "2.5.3 Production: manufacturing, designing new products, quality control, stock control"
       ],
       "keyTerms": [
@@ -617,12 +617,14 @@
     }
   ],
   "skills": [
-    "Quantitative skills (10% of marks): percentages, percentage change, averages",
-    "Revenue, cost and profit calculations; gross and net profit margin; average rate of return",
-    "Cash flow forecast calculations and interpretation",
-    "Interpreting graphs, charts, profitability ratios and market data",
-    "Applying knowledge to small-business and large-business contexts",
-    "Extended writing: analyse, justify and evaluate with a reasoned conclusion",
+    "Quantitative skills are 10% of total marks in both papers, always in a business context, at upper-secondary maths level",
+    "Calculate percentages, percentage changes, averages, revenue, costs and profit",
+    "Calculate gross profit margin and net profit margin, and average rate of return",
+    "Calculate cash-flow forecasts, including total costs, total revenue and net cash flow",
+    "Interpret graphs, charts and profitability ratios (gross and net profit margin)",
+    "Interpret financial data (profit and loss, average rate of return, cash-flow forecasts), market research data and market data (share, cost and price changes)",
+    "Formulae supplied in the exam: gross profit margin, operating profit margin, markup, ROCE, current ratio, acid test ratio",
+    "Extended writing: analyse, justify and evaluate with a supported conclusion",
     "Reading and writing English at roughly CEFR B2 level; desk calculator allowed, battery or solar only"
   ],
   "prerequisites": [
@@ -745,12 +747,9 @@
   ],
   "contextNote": "Both papers use real-style business contexts (small business in Paper 1, large or multinational in Paper 2). Teach the range of business viewpoints accurately and let pupils evaluate. Islamic perspectives in the links are enrichment and are not examined.",
   "gaps": [
-    "The PDF was read through a fetch tool that summarises text; no raw page text or page images were available, so wording of each statement was not compared character by character. Re-check against the PDF itself to set Verified.",
-    "Appendices on quantitative skills, formulae and IAS terminology were not re-read in detail in this pass; the skills list is carried from the earlier read.",
-    "4BS1 Paper 1 and Paper 2 test the whole specification; no board allocation of sections to papers exists, so every unit lists Papers 1 and 2.",
-    "The spec gives per-paper AO shares (AO1 13.7%, AO2 19.4%, AO3 11.3%, AO4 5.6%); the 2027 page states last assessment of 4BS1 is November 2028, so a cohort starting Year 10 in 2026 is within the window.",
     "Sample assessment materials, mark schemes and examiner reports were not opened.",
+    "Entry for 4BS1 should be confirmed with the exams officer; the board states the last 4BS1 assessment is November 2028.",
     "The school's lesson files were written to UK GCSE 1BS0 unit titles and need re-mapping to 4BS1.",
-    "Entry for 4BS1 (not UK GCSE 1BS0) should be confirmed with the exams officer."
+    "Spec Appendix 3 names net profit margin and average rate of return, but Appendix 4 supplies no formulae for them."
   ]
 }

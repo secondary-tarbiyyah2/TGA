@@ -122,6 +122,76 @@ function ActionMenu({ label, items, align = "right" }: { label: React.ReactNode;
 type UnitGroup = { key: string; subject_slug: string; subject: string; board: string | null; unit: string; lessons: CurriculumLesson[] };
 type UnitTab = "lessons" | "spec" | "connections" | "revision" | "results";
 const FILTER_KEY = "tga-library-filters";
+type Signoff = { subject_slug: string; scope: "spec" | "lesson"; ref: string; status: "in_review" | "approved" | "changes_needed"; note: string | null; checked_name: string | null; checked_at: string };
+const SIGNOFF_LABEL: Record<Signoff["status"], string> = { in_review: "In review", approved: "Approved", changes_needed: "Changes needed" };
+const signKey = (slug: string, scope: string, ref: string) => `${slug}|${scope}|${ref}`;
+const when = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
+/** A small chip showing who signed a unit or lesson off, or that nobody has yet. */
+function SignoffChip({ s }: { s: Signoff | undefined }) {
+  if (!s) return <span className="rounded-full bg-cream px-2 py-0.5 text-xs text-ink/60">Not signed off</span>;
+  const tone = s.status === "approved" ? "bg-teal-100 text-teal-900" : s.status === "changes_needed" ? "bg-red-100 text-red-900" : "bg-gold-100 text-gold-900";
+  return (
+    <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${tone}`} title={s.note || undefined}>
+      {SIGNOFF_LABEL[s.status]}
+      {s.checked_name ? ` · ${s.checked_name}` : ""} · {when(s.checked_at)}
+    </span>
+  );
+}
+
+/** Record a teacher's check of a specification unit or a lesson. Saved with their name and the date. */
+function SignoffDialog({ target, current, onClose, onDone }: { target: { slug: string; scope: "spec" | "lesson"; ref: string; label: string }; current: Signoff | undefined; onClose: () => void; onDone: () => void }) {
+  const supabase = getSupabaseClient();
+  const [status, setStatus] = useState<Signoff["status"] | "">(current?.status || "approved");
+  const [note, setNote] = useState(current?.note || "");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const save = async (clear = false) => {
+    if (!supabase) return;
+    setBusy(true);
+    setError(null);
+    const { error: err } = await supabase.rpc("curriculum_set_signoff", { p_subject: target.slug, p_scope: target.scope, p_ref: target.ref, p_status: clear ? null : status || null, p_note: clear ? null : note });
+    setBusy(false);
+    if (err) return setError("Couldn't save. Only teachers and admins can sign off.");
+    onDone();
+  };
+  return (
+    <Modal title={`Sign off: ${target.label}`} onClose={onClose}>
+      <div className="space-y-3 p-4">
+        <p className="text-sm text-ink/75">
+          {target.scope === "spec" ? "Confirm the specification points for this unit match the board's own document." : "Confirm this lesson is accurate, teaches the spec points it claims, and is ready to use."} Your name and today's date are recorded.
+        </p>
+        <fieldset className="space-y-1">
+          <legend className="text-sm font-semibold text-ink">Result</legend>
+          {(Object.keys(SIGNOFF_LABEL) as Signoff["status"][]).map((k) => (
+            <label key={k} className="flex items-center gap-2 text-sm">
+              <input type="radio" name="signoff-status" checked={status === k} onChange={() => setStatus(k)} />
+              {SIGNOFF_LABEL[k]}
+            </label>
+          ))}
+        </fieldset>
+        <label className="block text-sm font-semibold text-ink">
+          Note (optional)
+          <textarea value={note} onChange={(e) => setNote(e.target.value)} maxLength={500} rows={3} className="mt-1 block w-full rounded-lg border border-gold-light px-3 py-2 text-sm font-normal" placeholder="What you checked, or what needs changing" />
+        </label>
+        {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
+        <div className="flex flex-wrap gap-2">
+          <button type="button" disabled={busy || !status} onClick={() => save(false)} className={btnPrimary}>
+            {busy ? "Saving…" : "Save sign-off"}
+          </button>
+          {current && (
+            <button type="button" disabled={busy} onClick={() => save(true)} className={btn}>
+              Clear sign-off
+            </button>
+          )}
+          <button type="button" onClick={onClose} className={btn}>
+            Cancel
+          </button>
+        </div>
+      </div>
+    </Modal>
+  );
+}
 const unitKey = (subjectSlug: string, unit: string) => `${subjectSlug}::${unit}`;
 
 /**
@@ -147,6 +217,18 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   });
   const [tab, setTab] = useState<UnitTab>(linked.tab);
   const [message, setMessage] = useState<string | null>(null);
+  const [signoffs, setSignoffs] = useState<Record<string, Signoff>>({});
+  const [signing, setSigning] = useState<{ slug: string; scope: "spec" | "lesson"; ref: string; label: string } | null>(null);
+  const [approvedOnly, setApprovedOnly] = useState(false);
+  const loadSignoffs = useCallback(async () => {
+    if (!supabase) return;
+    const { data } = await supabase.from("curriculum_signoffs").select("subject_slug, scope, ref, status, note, checked_name, checked_at").limit(5000);
+    setSignoffs(Object.fromEntries(((data as Signoff[]) || []).map((r) => [signKey(r.subject_slug, r.scope, r.ref), r])));
+  }, [supabase]);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- load sign-offs once
+    loadSignoffs();
+  }, [loadSignoffs]);
   // Filters, remembered on this device.
   const [subjectFilter, setSubjectFilter] = useState("all");
   const [boardFilter, setBoardFilter] = useState("all");
@@ -248,7 +330,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   // Subjects, each with its units in teaching order.
   const allSubjects = useMemo(() => {
     const bySubject = new Map<string, { slug: string; name: string; units: Map<string, UnitGroup> }>();
-    (lessons || []).forEach((l) => {
+    (lessons || []).filter((l) => !approvedOnly || signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]?.status === "approved").forEach((l) => {
       const s = bySubject.get(l.subject_slug) || { slug: l.subject_slug, name: l.subject, units: new Map() };
       const u = l.unit || "Lessons";
       const k = unitKey(l.subject_slug, u);
@@ -266,7 +348,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     return [...bySubject.values()]
       .sort((a, b) => a.name.localeCompare(b.name))
       .map((s) => ({ ...s, units: [...s.units.values()].sort((a, b) => (a.lessons[0]?.lesson_no ?? 0) - (b.lessons[0]?.lesson_no ?? 0)) }));
-  }, [lessons, packs]);
+  }, [lessons, packs, approvedOnly, signoffs]);
 
   // Exam boards belong to subjects: once a subject is picked, only its own board(s) are offered.
   const boards = useMemo(() => [...new Set(allSubjects.filter((s) => subjectFilter === "all" || s.slug === subjectFilter).flatMap((s) => s.units.map((u) => u.board).filter(Boolean) as string[]))].sort(), [allSubjects, subjectFilter]);
@@ -279,7 +361,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
         .filter((s) => s.units.length > 0),
     [allSubjects, subjectFilter, boardFilter, verifiedOnly],
   );
-  const filtersOn = subjectFilter !== "all" || boardFilter !== "all" || verifiedOnly;
+  const filtersOn = subjectFilter !== "all" || boardFilter !== "all" || verifiedOnly || approvedOnly;
   const allUnits = useMemo(() => subjects.flatMap((s) => s.units), [subjects]);
   const packFor = useCallback((g: UnitGroup | undefined) => (g ? packs.find((p) => p.subject_slug === g.subject_slug && p.unit === g.unit) : undefined), [packs]);
 
@@ -374,6 +456,12 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               {l.version > 1 && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 font-medium text-teal-900">Edited · v{l.version}</span>}
             </span>
           </button>
+          <span className="flex items-center gap-1.5">
+            <SignoffChip s={signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]} />
+            <button type="button" className={btn} onClick={() => setSigning({ slug: l.subject_slug, scope: "lesson", ref: `${l.year}/${l.lesson_no}`, label: `${l.subject}, lesson ${l.lesson_no}: ${l.title}` })}>
+              Sign off
+            </button>
+          </span>
           {l.deck_path ? (
             <div className="flex flex-wrap items-center gap-1.5">
               {l.pdf_path && (
@@ -510,6 +598,12 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               </span>
               Verified specifications only
             </button>
+            <button type="button" role="switch" aria-checked={approvedOnly} onClick={() => { setApprovedOnly(!approvedOnly); setSelected(null); setWanted(null); }} className="inline-flex items-center gap-2 text-sm text-ink">
+              <span aria-hidden="true" className={`relative inline-block h-5 w-9 rounded-full transition ${approvedOnly ? "bg-teal-700" : "bg-ink/25"}`}>
+                <span className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-all ${approvedOnly ? "left-[1.1rem]" : "left-0.5"}`} />
+              </span>
+              Signed-off lessons only
+            </button>
             {filtersOn && (
               <button
                 type="button"
@@ -518,6 +612,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                   setSubjectFilter("all");
                   setBoardFilter("all");
                   setVerifiedOnly(false);
+                  setApprovedOnly(false);
                 }}
               >
                 Clear filters
@@ -722,7 +817,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     ) : (
                       <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit is a revision pack only; its summary and video are on the Revision pack tab.</p>
                     ))}
-                  {tab === "spec" && <SpecPanel slug={current.subject_slug} unit={current.unit} year={year || ""} />}
+                  {tab === "spec" && <SpecPanel slug={current.subject_slug} unit={current.unit} year={year || ""} signoffs={signoffs} onSign={(ref, label) => setSigning({ slug: current.subject_slug, scope: "spec", ref, label })} />}
                   {tab === "connections" && <ConnectionsPanel subject={current.subject} unit={current.unit} />}
                   {tab === "revision" && (
                     <RevisionPackPanel
@@ -778,6 +873,18 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           </div>
         </Modal>
       )}
+      {signing && (
+        <SignoffDialog
+          target={signing}
+          current={signoffs[signKey(signing.slug, signing.scope, signing.ref)]}
+          onClose={() => setSigning(null)}
+          onDone={() => {
+            setSigning(null);
+            setMessage("Sign-off saved.");
+            loadSignoffs();
+          }}
+        />
+      )}
       {replacing && (
         <ReplaceDialog
           lesson={replacing}
@@ -808,7 +915,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
 type PackQuestion = { id: string; topic: string; lesson_no: number | null; question: string; options: string[]; answer: number; explanation: string | null; in_quiz: boolean };
 
 /** The whole specification for this subject, laid out like the board's own document, with the units this lesson unit seems to cover opened first. Matching is by name, so treat it as a suggestion. */
-function SpecPanel({ slug, unit, year }: { slug: string; unit: string; year: string }) {
+function SpecPanel({ slug, unit, year, signoffs, onSign }: { slug: string; unit: string; year: string; signoffs: Record<string, Signoff>; onSign: (ref: string, label: string) => void }) {
   const spec = specFor(slug);
   const syl = syllabusFor(slug);
   const matches = useMemo(() => matchSpecUnits(slug, unit), [slug, unit]);
@@ -959,21 +1066,40 @@ function SpecPanel({ slug, unit, year }: { slug: string; unit: string; year: str
                     <span className="min-w-0 flex-1 text-sm font-semibold text-ink">
                       {u.title}
                       {hit && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 text-[11px] font-semibold text-teal-900">suggested</span>}
-                      <span className="block text-xs font-normal text-ink/60">{[u.year, `${u.points.length} points`].filter(Boolean).join(" · ")}</span>
+                      <span className="block text-xs font-normal text-ink/60">
+                        {[u.year, `${u.points.length} points`, u.pl?.length ? `${u.pl.filter((x) => x.length).length}/${u.points.length} have a lesson` : ""].filter(Boolean).join(" · ")}
+                      </span>
                     </span>
                     <span aria-hidden="true" className="pt-0.5 text-ink/50">{open ? "–" : "+"}</span>
                   </button>
                   {open && (
-                    <ol className="ml-[4.5rem] list-none space-y-1 px-4 pb-3 text-sm text-ink/85">
-                      {u.points.map((p, i) => (
-                        <li key={p} className="flex gap-2">
-                          <span className="w-10 shrink-0 font-mono text-xs text-ink/55">
-                            {u.ref}.{i + 1}
-                          </span>
-                          <span>{p}</span>
-                        </li>
-                      ))}
-                    </ol>
+                    <div className="px-4 pb-3 pl-[4.5rem]">
+                      <div className="mb-2 flex flex-wrap items-center gap-2">
+                        <SignoffChip s={signoffs[signKey(slug, "spec", u.ref)]} />
+                        <button type="button" className={btn} onClick={() => onSign(u.ref, `${spec.board} ${u.ref} ${u.title}`)}>
+                          Sign off this unit
+                        </button>
+                      </div>
+                      <ol className="list-none space-y-1 text-sm text-ink/85">
+                        {u.points.map((p, i) => (
+                          <li key={p} className="flex gap-2">
+                            <span className="w-10 shrink-0 font-mono text-xs text-ink/55">
+                              {u.ref}.{i + 1}
+                            </span>
+                            <span className="min-w-0 flex-1">{p}</span>
+                            {u.pl?.[i]?.length ? (
+                              <span className="shrink-0 text-xs text-teal-800" title="Lessons that teach this point">
+                                {u.pl[i].map((id) => `${id.replace("y", "Y").replace("/", " L")}`).join(", ")}
+                              </span>
+                            ) : (
+                              <span className="shrink-0 rounded-full bg-red-50 px-2 text-xs text-red-800" title="No lesson matched this point yet">
+                                no lesson yet
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
                   )}
                 </li>
               );

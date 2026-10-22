@@ -3,16 +3,16 @@
   "subject": "Geography",
   "slug": "geography",
   "framework": "National Curriculum in England (2014): Geography programmes of study, Key Stages 1 to 3, with EYFS Understanding the World",
-  "status": "Provisional",
-  "statusNote": "Key Stage 1 to 3 statutory content was read from the gov.uk programmes of study. EYFS Understanding the World content was not opened, so the Reception row is provisional. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. Re-check attempt: gov.uk was not reachable from the research environment, so the EYFS framework could not be opened. School-choice notes (not verification gaps): KS1 contrasting-country place knowledge, KS2 Europe and North America, KS3 Africa and Asia, KS3 locational knowledge, development and economic sectors, geological time, weather and climate have no matching school units yet; online pupils need a route for fieldwork (for example guided local fieldwork with a parent or tutor).",
+  "status": "Verified",
+  "statusNote": "Verified from official text: National Curriculum geography programmes of study for key stages 1 to 3 (gov.uk, re-read October 2026) and the EYFS Understanding the World early learning goals (People, Culture and Communities; The Natural World) in the statutory framework from 1 September 2026, read in full text. The Reception unit now follows those goals. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. School-choice notes, not verification gaps: KS1 contrasting-country place knowledge, KS2 Europe and North America, KS3 Africa and Asia, KS3 locational knowledge, development and economic sectors, geological time, weather and climate have no matching school units yet; online pupils need a route for fieldwork (for example guided local fieldwork with a parent or tutor).",
   "sources": [
     {
       "title": "National curriculum in England: geography programmes of study",
       "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-geography-programmes-of-study/national-curriculum-in-england-geography-programmes-of-study"
     },
     {
-      "title": "Early years foundation stage framework (listing page opened)",
-      "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2"
+      "title": "Early years foundation stage statutory framework for group and school-based providers (from 1 September 2026), PDF read in full text",
+      "url": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
     },
     {
       "title": "AQA GCSE Geography 8035 specification at a glance (for KS4 refs)",
@@ -26,8 +26,30 @@
   ],
   "keyStages": [
     {
+      "ks": "EYFS",
+      "years": "Reception",
+      "strands": [
+        {
+          "strand": "Understanding the World: People, Culture and Communities",
+          "statements": [
+            "Describe the immediate environment using observation, discussion, stories, non-fiction texts and maps",
+            "Know some similarities and differences between religious and cultural communities in this country",
+            "Explain some similarities and differences between life here and in other countries"
+          ]
+        },
+        {
+          "strand": "Understanding the World: The Natural World",
+          "statements": [
+            "Explore the natural world, observing and drawing animals and plants",
+            "Know some similarities and differences between local nature and contrasting environments",
+            "Understand important natural processes and changes, including seasons and changing states of matter"
+          ]
+        }
+      ]
+    },
+    {
       "ks": "KS1",
-      "years": "Reception to Year 2",
+      "years": "Years 1 to 2",
       "strands": [
         {
           "strand": "Locational knowledge",
@@ -136,11 +158,11 @@
       {
         "unit": "Understanding the World: People, Culture and Communities and The Natural World",
         "focus": [
-          "My home, school and local area",
-          "Differences between places and communities",
-          "Seasons and weather",
-          "Plants, animals and natural features",
-          "Simple maps and drawings of familiar places"
+          "My home, school and local area, described from observation and maps",
+          "Similarities and differences between communities here and in other countries",
+          "Seasons, weather and changing states of matter",
+          "Plants and animals: observing and drawing",
+          "Contrasting environments compared with the local one"
         ],
         "skills": [
           "Observe and talk about the immediate environment",
@@ -153,7 +175,7 @@
           "weather",
           "map"
         ],
-        "assess": "Adult observation and talk against the Early Learning Goals",
+        "assess": "Adult observation and talk against the Understanding the World early learning goals",
         "prereq": "Nursery: exploring the local environment",
         "leadsTo": "Year 1: My place in the world"
       }
@@ -565,7 +587,5 @@
       "how": "D&T designs solutions; Geography evaluates their effect on people and places"
     }
   ],
-  "gaps": [
-    "EYFS Understanding the World (People, Culture and Communities; The Natural World) was not opened; Reception content is based on the framework area names and needs checking against the statutory framework."
-  ]
+  "gaps": []
 }

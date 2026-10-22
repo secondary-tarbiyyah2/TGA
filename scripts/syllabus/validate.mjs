@@ -87,7 +87,7 @@ function checkHubs() {
 function walk(dir) {
   for (const n of fs.readdirSync(dir)) {
     const p = path.join(dir, n);
-    if (fs.statSync(p).isDirectory()) walk(p);
+    if (fs.statSync(p).isDirectory()) { if (n !== "coverage") walk(p); }
     else if (n.endsWith(".json")) {
       let d;
       try { d = JSON.parse(fs.readFileSync(p, "utf8")); } catch (x) { e(p, `invalid JSON: ${x.message}`); continue; }
