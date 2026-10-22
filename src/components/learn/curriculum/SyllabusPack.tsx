@@ -22,6 +22,7 @@ export function SyllabusPack() {
   const [groups, setGroups] = useState<Group[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let live = true;
@@ -30,9 +31,13 @@ export function SyllabusPack() {
         const sb = getSupabaseClient();
         if (!sb) throw new Error("Not connected.");
         const list = async (prefix: string) => {
-          const { data, error: e } = await sb.storage.from(BUCKET).list(prefix, { limit: 200, sortBy: { column: "name", order: "asc" } });
-          if (e) throw e;
-          return data || [];
+          // The database sometimes refuses a burst of connections ("too many connections"); wait and try again.
+          for (let attempt = 0; ; attempt++) {
+            const { data, error: e } = await sb.storage.from(BUCKET).list(prefix, { limit: 200, sortBy: { column: "name", order: "asc" } });
+            if (!e) return data || [];
+            if (attempt >= 4) throw e;
+            await new Promise((r) => setTimeout(r, 800 * (attempt + 1)));
+          }
         };
         const top = (await list(ROOT)).filter((x) => !x.id);
         const out: Group[] = [];
@@ -55,7 +60,7 @@ export function SyllabusPack() {
     return () => {
       live = false;
     };
-  }, []);
+  }, [attempt]);
 
   const open = async (path: string, download: boolean) => {
     setBusy(path);
@@ -79,7 +84,16 @@ export function SyllabusPack() {
       <p className={`${ui.hint} mt-2`}>
         Official specification content for every subject: Years 10 to 11 specifications, Reception to Year 9 syllabuses, and cross-curricular matrices. Each deck ends with its sources and open items. Staff only.
       </p>
-      {error && <p role="alert" className="mt-3 text-sm text-red-700">{error}</p>}
+      {error && (
+        <p role="alert" className="mt-3 text-sm text-red-700">
+          {error}{" "}
+          {!groups && (
+            <button type="button" className="font-semibold underline" onClick={() => { setError(null); setAttempt((n) => n + 1); }}>
+              Try again
+            </button>
+          )}
+        </p>
+      )}
       {!groups && !error && <p className="mt-3 text-sm text-ink/70">Loading…</p>}
       {groups && groups.length === 0 && <p className="mt-3 text-sm text-ink/70">The pack has not been uploaded yet.</p>}
       {groups?.map((g) => (

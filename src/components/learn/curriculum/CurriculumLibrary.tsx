@@ -192,6 +192,7 @@ function SignoffDialog({ target, current, onClose, onDone }: { target: { slug: s
     </Modal>
   );
 }
+const boardFamily = (b: string) => (/aqa/i.test(b) ? "AQA" : /edexcel|pearson/i.test(b) ? "Pearson Edexcel" : /ocr/i.test(b) ? "OCR" : "School curriculum");
 const unitKey = (subjectSlug: string, unit: string) => `${subjectSlug}::${unit}`;
 
 /**
@@ -349,12 +350,16 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   }, [lessons, packs, approvedOnly, signoffs]);
 
   // Exam boards belong to subjects: once a subject is picked, only its own board(s) are offered.
-  const boards = useMemo(() => [...new Set(allSubjects.filter((s) => subjectFilter === "all" || s.slug === subjectFilter).flatMap((s) => s.units.map((u) => u.board).filter(Boolean) as string[]))].sort(), [allSubjects, subjectFilter]);
+  // With every subject showing, offer the few board families (AQA, Pearson Edexcel…) instead of every exact title.
+  const boards = useMemo(() => {
+    const all = allSubjects.filter((s) => subjectFilter === "all" || s.slug === subjectFilter).flatMap((s) => s.units.map((u) => u.board).filter(Boolean) as string[]);
+    return [...new Set(subjectFilter === "all" ? all.map(boardFamily) : all)].sort();
+  }, [allSubjects, subjectFilter]);
   const subjects = useMemo(
     () =>
       allSubjects
         .filter((s) => subjectFilter === "all" || s.slug === subjectFilter)
-        .map((s) => ({ ...s, units: s.units.filter((u) => boardFilter === "all" || u.board === boardFilter) }))
+        .map((s) => ({ ...s, units: s.units.filter((u) => boardFilter === "all" || u.board === boardFilter || (!!u.board && boardFamily(u.board) === boardFilter)) }))
         .filter((s) => s.units.length > 0),
     [allSubjects, subjectFilter, boardFilter],
   );
