@@ -3,7 +3,7 @@
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { CurriculumLibrary } from "@/components/learn/curriculum/CurriculumLibrary";
-import { SyllabusPack } from "@/components/learn/curriculum/SyllabusPack";
+import Link from "next/link";
 
 export default function AdminCurriculumPage() {
   return (
@@ -15,7 +15,9 @@ export default function AdminCurriculumPage() {
           subtitle="Pick a year, then a unit. Each unit has its lessons (slides and plans, with version history), its revision pack for pupils, and pupil results."
         />
         <CurriculumLibrary area="admin" />
-          <SyllabusPack />
+          <p className="mt-4 text-sm text-ink/75">
+            Looking for the official specifications and syllabuses? <Link href="/admin/syllabus" className="font-semibold text-teal-800 underline">Open Syllabus and specifications</Link>.
+          </p>
       </LearnGate>
     </section>
   );

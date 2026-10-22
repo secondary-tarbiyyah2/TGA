@@ -112,7 +112,7 @@ export function buildMatrixDeck(pack) {
       s.addText(k, { x: b.x + 0.3, y: b.y + 0.15, w: b.w - 0.5, h: 0.5, fontFace: "Georgia", fontSize: 22, bold: true, color: theme.accent, margin: 0 });
       s.addText(v, { x: b.x + 0.3, y: b.y + 0.75, w: b.w - 0.5, h: b.h - 0.9, fontFace: FONT, fontSize: fitSize(v, b.w - 0.5, b.h - 0.9, 17, 11, 0), color: INK, valign: "top", margin: 0 });
     });
-    s.addText("Link counts come from the links recorded in each subject file. Unverified links stay Provisional until a teacher confirms them.", { x: MX, y: 6.55, w: W - 2 * MX, h: 0.4, fontFace: FONT, fontSize: 12, italic: true, color: MUTED, margin: 0 });
+    s.addText("Link counts come from the links recorded in each subject file.", { x: MX, y: 6.55, w: W - 2 * MX, h: 0.4, fontFace: FONT, fontSize: 12, italic: true, color: MUTED, margin: 0 });
   }
 
   // Heatmaps

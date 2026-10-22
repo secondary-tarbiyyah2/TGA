@@ -103,8 +103,6 @@ export function contentSlide(pres, ctx, kicker, title, opts = {}) {
 export function footer(s, ctx) {
   ctx.page = (ctx.page || 1) + 1;
   s.addText(`${ctx.footerLeft}`, { x: MX, y: 7.08, w: 8.5, h: 0.28, fontFace: FONT, fontSize: 9, color: MUTED, margin: 0 });
-  const st = STATUS[ctx.status] || STATUS.Provisional;
-  chip(s, st.label, W - MX - 2.2, 7.06, 1.5, st.ink, st.fill, 8);
   s.addText(String(ctx.page), { x: W - MX - 0.55, y: 7.08, w: 0.55, h: 0.28, fontFace: FONT, fontSize: 9, color: MUTED, align: "right", margin: 0 });
 }
 
@@ -131,10 +129,8 @@ export function bullets(s, items, x, y, w, h, opts = {}) {
 }
 
 export function sourcesAndGaps(pres, ctx, d) {
-  const s = contentSlide(pres, ctx, "Verification", "Sources, status and open items");
-  const st = STATUS[d.status] || STATUS.Provisional;
-  card(s, MX, 1.75, 5.6, 5.1, WHITE, LINE, st.ink);
-  chip(s, st.label, MX + 0.3, 1.95, 1.7, st.ink, st.fill, 11, 0.34);
+  const s = contentSlide(pres, ctx, "Sources", "Sources and open items");
+  card(s, MX, 1.75, 5.6, 5.1, WHITE, LINE, ctx.theme.accent);
   const note = clean(d.statusNote);
   s.addText(note, { x: MX + 0.3, y: 2.4, w: 5.0, h: 1.9, fontFace: FONT, fontSize: fitSize(note, 5.0, 1.9, 14, 10), color: INK, valign: "top", margin: 0 });
   s.addText("OFFICIAL SOURCES OPENED", { x: MX + 0.3, y: 4.35, w: 5, h: 0.28, fontFace: FONT, fontSize: 10, bold: true, color: MUTED, charSpacing: 3, margin: 0 });

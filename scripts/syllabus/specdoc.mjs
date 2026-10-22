@@ -33,7 +33,6 @@ function table(head, rows, widths, acc) {
 }
 
 function cover(d, kind, acc, subtitle, facts) {
-  const st = STATUS[d.status] || STATUS.Provisional;
   const kids = [
     new Paragraph({ children: [new ImageRun({ type: "png", data: LOGO, transformation: { width: 190, height: Math.round(190 / (393 / 120)) } })], spacing: { before: 0, after: 900 } }),
     p([t(kind.toUpperCase(), { size: 22, bold: true, color: acc })], { before: 200, after: 160 }),
@@ -41,20 +40,18 @@ function cover(d, kind, acc, subtitle, facts) {
     p([t(subtitle, { size: 30, color: GOLD_DARK })], { after: 500 }),
     ...facts.map(([k, v]) => p([t(`${k}  `, { size: 20, bold: true, color: MUTED }), t(v, { size: 22 })], { after: 60 })),
     p([t(" ")], { after: 300 }),
-    new Table({ width: { size: CW, type: WidthType.DXA }, columnWidths: [CW], rows: [new TableRow({ children: [new TableCell({ width: { size: CW, type: WidthType.DXA }, margins: { top: 140, bottom: 140, left: 200, right: 200 }, shading: { type: ShadingType.CLEAR, fill: st.f, color: "auto" }, borders: { top: side(st.c), bottom: side(st.c), left: side(st.c), right: side(st.c) }, children: [p([t(`${d.status.toUpperCase()}. `, { bold: true, color: st.c, size: 20 }), t(d.statusNote, { size: 19 })], { after: 0 })] })] })] }),
     p([t("This document paraphrases the official source for planning. It is not the awarding body's text: always teach and enter pupils from the board's own specification.", { size: 18, italics: true, color: MUTED })], { before: 300 }),
   ];
   return kids;
 }
 
 function sourcesSection(d, acc) {
-  const out = [h1("Sources, verification and open items", acc)];
-  const st = STATUS[d.status] || STATUS.Provisional;
-  out.push(p([t(`Status: ${d.status}. `, { bold: true, color: st.c }), t(d.statusNote)]));
+  const out = [h1("Sources and open items", acc)];
+  out.push(p([t(d.statusNote)]));
   out.push(label("Official sources opened", acc));
   (d.sources || []).forEach((s) => out.push(p([t(`${s.title}: `, { bold: true, size: 19 }), t(s.url, { size: 18, color: MUTED })], { after: 40 })));
   if (!(d.sources || []).length) out.push(p([t("None recorded.")]));
-  out.push(label("Open items to confirm", acc));
+  out.push(label("Open items", acc));
   (d.gaps || ["No open items recorded."]).forEach((g) => out.push(bl(g)));
   return out;
 }
@@ -140,7 +137,7 @@ export function specDocument(d, extra = {}) {
   if (extra.coverage) {
     const c = extra.coverage;
     kids.push(h1(`${n++}  Tarbiyyah course map and teacher sign-off`, acc));
-    kids.push(p([t(`This is our own course, built to teach every point of the ${d.board} specification. ${c.covered} of ${c.points} points are matched to one or more of our ${c.lessonCount} lessons. Matching is suggested from wording and is confirmed by a teacher below. The source files in the school portal are the single source of truth; this document is generated from them, so a correction made there reaches every document, deck and screen.`)]));
+    kids.push(p([t(`This is our own course, built to teach every point of the ${d.board} specification. ${c.covered} of ${c.points} points are matched to one or more of our ${c.lessonCount} lessons. Lessons are matched to points from their wording, and each unit is signed off by a teacher in the portal. The source files in the school portal are the single source of truth; this document is generated from them, so a correction made there reaches every document, deck and screen.`)]));
     kids.push(table(["Ref", "Unit", "Year", "Points", "Lessons", "Checked by", "Date"], c.units.map((u) => [u.ref, u.title, u.year || "", `${u.covered}/${u.total}`, u.lessons.length ? u.lessons.map((id) => id.replace("y", "Y").replace("/", " L")).join(", ") : "none yet", "", ""]), [0.8, 2.8, 0.6, 0.7, 2.0, 1.2, 0.9], acc));
     kids.push(p([t("Sign-off: a teacher writes their name and the date once they have checked the unit's points against the board's own document and the lessons against the points. Record the result in the portal Lesson library too, so it is kept with the lesson.", { italics: true, size: 19, color: MUTED })]));
   }

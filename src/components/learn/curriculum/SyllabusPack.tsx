@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 
@@ -13,16 +13,40 @@ type Group = { folder: string; subjects: { subject: string; files: Entry[] }[] }
 const niceFolder = (n: string) => n.replace(/^\d+_/, "").replace(/_/g, " ").replace(/-/g, " to ");
 const niceSubject = (n: string) => n.replace(/_/g, " ");
 
+const FILTER_KEY = "tga-syllabus-filter";
+const FILE_LABEL: Record<string, string> = { pptx: "Download PowerPoint", docx: "Download Word", xlsx: "Download spreadsheet" };
+
 /**
- * The syllabus and specification pack (decks built from content/syllabus by
- * the "Build syllabus pack" workflow). Staff-only: the lesson-decks bucket is
- * readable by teachers, admins and cover assistants only.
+ * The syllabus and specification pack, on its own page. Built from content/syllabus by the
+ * "Build syllabus pack" workflow. Staff-only: the lesson-decks bucket is readable by teachers,
+ * admins and cover assistants only. Nothing is listed until a subject is picked, so staff see
+ * one subject's documents at a time (the last choice is remembered).
  */
 export function SyllabusPack() {
   const [groups, setGroups] = useState<Group[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
+  const [subject, setSubject] = useState<string>("");
+  const [level, setLevel] = useState<string>("all");
+
+  useEffect(() => {
+    try {
+      const f = JSON.parse(window.localStorage.getItem(FILTER_KEY) || "{}");
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- restore the saved filter once after mount
+      if (typeof f.subject === "string") setSubject(f.subject);
+      if (typeof f.level === "string") setLevel(f.level);
+    } catch {
+      /* private mode: start unfiltered */
+    }
+  }, []);
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(FILTER_KEY, JSON.stringify({ subject, level }));
+    } catch {
+      /* ignore */
+    }
+  }, [subject, level]);
 
   useEffect(() => {
     let live = true;
@@ -32,11 +56,11 @@ export function SyllabusPack() {
         if (!sb) throw new Error("Not connected.");
         const list = async (prefix: string) => {
           // The database sometimes refuses a burst of connections ("too many connections"); wait and try again.
-          for (let attempt = 0; ; attempt++) {
+          for (let tries = 0; ; tries++) {
             const { data, error: e } = await sb.storage.from(BUCKET).list(prefix, { limit: 200, sortBy: { column: "name", order: "asc" } });
             if (!e) return data || [];
-            if (attempt >= 4) throw e;
-            await new Promise((r) => setTimeout(r, 800 * (attempt + 1)));
+            if (tries >= 4) throw e;
+            await new Promise((r) => setTimeout(r, 800 * (tries + 1)));
           }
         };
         const top = (await list(ROOT)).filter((x) => !x.id);
@@ -77,15 +101,42 @@ export function SyllabusPack() {
     }
   };
 
+  const subjects = useMemo(() => [...new Set((groups || []).flatMap((g) => g.subjects.map((s) => s.subject)).filter(Boolean))].sort((a, b) => a.localeCompare(b)), [groups]);
+  const levels = useMemo(() => (groups || []).filter((g) => g.subjects.some((s) => s.subject)).map((g) => g.folder), [groups]);
+  const intro = (groups || []).filter((g) => g.subjects.some((s) => !s.subject));
   const btn = `${ui.btnSecondary} ${ui.sm}`;
+  const chip = (on: boolean) => `rounded-full border px-3 py-1.5 text-sm transition ${on ? "border-teal-700 bg-teal-700 font-semibold text-white" : "border-gold-light bg-white text-ink hover:border-teal-700"}`;
+
+  const row = (name: string, label: string, sub: string, files: Entry[]) => {
+    const pdf = files.find((f) => f.name.endsWith(".pdf"));
+    const editable = files.find((f) => /\.(pptx|docx|xlsx)$/.test(f.name));
+    const ext = editable ? editable.name.split(".").pop() || "" : "";
+    return (
+      <li key={name} className="flex flex-wrap items-center justify-between gap-2 px-4 py-3">
+        <span className="min-w-0 text-sm text-ink">
+          <span className="font-medium">{label}</span>
+          {sub && <span className="ml-2 text-xs text-ink/60">{sub}</span>}
+        </span>
+        <span className="flex gap-2">
+          {pdf && (
+            <button type="button" className={btn} disabled={busy === pdf.path} onClick={() => open(pdf.path, false)}>
+              View PDF
+            </button>
+          )}
+          {editable && (
+            <button type="button" className={btn} disabled={busy === editable.path} onClick={() => open(editable.path, true)}>
+              {FILE_LABEL[ext] || "Download"}
+            </button>
+          )}
+        </span>
+      </li>
+    );
+  };
+
   return (
-    <details className={`${ui.card} mt-6`}>
-      <summary className="cursor-pointer text-base font-semibold text-ink">Syllabus and specification pack</summary>
-      <p className={`${ui.hint} mt-2`}>
-        Official specification content for every subject: Years 10 to 11 specifications, Reception to Year 9 syllabuses, and cross-curricular matrices. Each deck ends with its sources and open items. Staff only.
-      </p>
+    <div className="space-y-4">
       {error && (
-        <p role="alert" className="mt-3 text-sm text-red-700">
+        <p role="alert" className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">
           {error}{" "}
           {!groups && (
             <button type="button" className="font-semibold underline" onClick={() => { setError(null); setAttempt((n) => n + 1); }}>
@@ -94,39 +145,65 @@ export function SyllabusPack() {
           )}
         </p>
       )}
-      {!groups && !error && <p className="mt-3 text-sm text-ink/70">Loading…</p>}
-      {groups && groups.length === 0 && <p className="mt-3 text-sm text-ink/70">The pack has not been uploaded yet.</p>}
-      {groups?.map((g) => (
-        <section key={g.folder} className="mt-4">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-teal-900">{niceFolder(g.folder)}</h3>
-          <ul className="mt-2 divide-y divide-gold-light rounded-xl border border-gold-light">
-            {g.subjects.map((s) => {
-              const decks = s.files.filter((f) => f.name.endsWith(".pdf"));
-              return decks.map((pdf) => {
-                const pptx = s.files.find((f) => f.name === pdf.name.replace(/\.pdf$/, ".pptx"));
-                return (
-                  <li key={pdf.path} className="flex flex-wrap items-center justify-between gap-2 px-3 py-2">
-                    <span className="min-w-0 text-sm text-ink">
-                      <span className="font-medium">{s.subject ? niceSubject(s.subject) : pdf.name.replace(/\.pdf$/, "").replace(/_/g, " ")}</span>
-                      {s.subject && <span className="ml-2 text-xs text-ink/60">{pdf.name.replace(/\.pdf$/, "").replace(/_/g, " ")}</span>}
-                    </span>
-                    <span className="flex gap-2">
-                      <button type="button" className={btn} disabled={busy === pdf.path} onClick={() => open(pdf.path, false)}>
-                        View PDF
-                      </button>
-                      {pptx && (
-                        <button type="button" className={btn} disabled={busy === pptx.path} onClick={() => open(pptx.path, true)}>
-                          Download PowerPoint
-                        </button>
-                      )}
-                    </span>
-                  </li>
-                );
-              });
-            })}
+      {!groups && !error && <p className="text-sm text-ink/70">Loading…</p>}
+      {groups && groups.length === 0 && <p className="text-sm text-ink/70">The pack has not been uploaded yet.</p>}
+
+      {intro.map((g) => (
+        <section key={g.folder} aria-label={niceFolder(g.folder)} className="rounded-2xl border border-gold-light bg-white">
+          <h2 className="border-b border-gold-light px-4 py-2 text-xs font-semibold uppercase tracking-wide text-teal-900">{niceFolder(g.folder)}</h2>
+          <ul className="divide-y divide-gold-light">
+            {g.subjects
+              .filter((s) => !s.subject)
+              .flatMap((s) => s.files.filter((f) => f.name.endsWith(".pdf")).map((pdf) => row(pdf.path, pdf.name.replace(/\.pdf$/, "").replace(/_/g, " "), "", s.files.filter((f) => f.name.replace(/\.[^.]+$/, "") === pdf.name.replace(/\.pdf$/, "")))))}
           </ul>
         </section>
       ))}
-    </details>
+
+      {groups && subjects.length > 0 && (
+        <div className="rounded-2xl border border-gold-light bg-white p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Subject</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {subjects.map((sb) => (
+              <button key={sb} type="button" aria-pressed={subject === sb} onClick={() => setSubject(subject === sb ? "" : sb)} className={chip(subject === sb)}>
+                {niceSubject(sb)}
+              </button>
+            ))}
+          </div>
+          {levels.length > 1 && (
+            <>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/60">Level</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <button type="button" aria-pressed={level === "all"} onClick={() => setLevel("all")} className={chip(level === "all")}>
+                  All levels
+                </button>
+                {levels.map((l) => (
+                  <button key={l} type="button" aria-pressed={level === l} onClick={() => setLevel(level === l ? "all" : l)} className={chip(level === l)}>
+                    {niceFolder(l)}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {groups && subjects.length > 0 && !subject && (
+        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">Pick a subject to see its specification and syllabus documents.</p>
+      )}
+
+      {subject &&
+        (groups || [])
+          .filter((g) => level === "all" || g.folder === level)
+          .map((g) => ({ g, subs: g.subjects.filter((s) => s.subject === subject) }))
+          .filter((x) => x.subs.length > 0)
+          .map(({ g, subs }) => (
+            <section key={g.folder} aria-label={niceFolder(g.folder)} className="rounded-2xl border border-gold-light bg-white">
+              <h2 className="border-b border-gold-light px-4 py-2 text-xs font-semibold uppercase tracking-wide text-teal-900">{niceFolder(g.folder)}</h2>
+              <ul className="divide-y divide-gold-light">
+                {subs.flatMap((s) => s.files.filter((f) => f.name.endsWith(".pdf")).map((pdf) => row(pdf.path, niceSubject(s.subject), pdf.name.replace(/\.pdf$/, "").replace(/_/g, " "), s.files.filter((f) => f.name.replace(/\.[^.]+$/, "") === pdf.name.replace(/\.pdf$/, "")))))}
+              </ul>
+            </section>
+          ))}
+    </div>
   );
 }

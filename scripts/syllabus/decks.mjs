@@ -31,8 +31,6 @@ function titleSlide(pres, ctx, { label, title, sub, facts }) {
     chip(s, f, fx, fy, w, WHITE, tint(th.dark, 0.18), 11, 0.38);
     fx += w + 0.15;
   }
-  const st = STATUS[ctx.status] || STATUS.Provisional;
-  chip(s, st.label, MX + 0.2, fy + 0.62, 1.6, st.ink, st.fill, 10, 0.32);
   s.addImage({ path: LOGO_WHITE, x: MX + 0.2, y: 6.75, w: 1.9, h: 1.9 / LOGO_RATIO });
   s.addText("Syllabus & Specification Pack · 2026–27", { x: W - MX - 4.4, y: 6.95, w: 4.4, h: 0.3, fontFace: FONT, fontSize: 10, color: "BFC8C6", align: "right", margin: 0 });
   return s;

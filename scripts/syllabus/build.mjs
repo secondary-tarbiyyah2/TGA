@@ -76,7 +76,7 @@ await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix
     [F.mx, "Link heatmaps, 12 teaching hubs, year-by-year maps, spiral threads."],
     [F.ks4, "One specification document per examined subject (Word and PDF): how it is examined and what each unit requires."],
     [F.ks13, "One syllabus document per subject, Reception to Year 9 (Word and PDF): framework content, year-by-year units, progression."],
-    [F.src, "Sources opened, verification status and open items for every subject."],
+    [F.src, "Sources opened and open items for every subject."],
   ];
   rows.forEach(([a, b], i) => {
     const y = 1.8 + i * 1.0;
@@ -85,31 +85,18 @@ await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix
     s1.addText(b, { x: MX + 5.7, y, w: W - 2 * MX - 5.9, h: 0.88, fontFace: FONT, fontSize: fitSize(b, W - 2 * MX - 5.9, 0.8, 15, 10, 0), color: INK, valign: "middle", margin: 0 });
   });
 
-  const s2 = contentSlide(pres, ctx, "Reading the labels", "Verified and Provisional, and what to do about each");
-  const lab = [
-    ["VERIFIED", "Verified", "Structure and content were read from the official source (specification PDF or National Curriculum text). Safe to teach and plan from."],
-    ["PROVISIONAL", "Provisional", "Part of it could not be opened or confirmed, or relies on a recommended sequence. Check the Open items slide at the end of the deck before relying on it."],
-  ];
-  lab.forEach(([k, v, txt], i) => {
-    const st = STATUS[v];
-    const y = 1.9 + i * 1.9;
-    card(s2, MX, y, W - 2 * MX, 1.7, WHITE, LINE, st.ink);
-    chip(s2, k, MX + 0.4, y + 0.3, 2.0, st.ink, st.fill, 13, 0.4);
-    s2.addText(txt, { x: MX + 2.8, y: y + 0.15, w: W - 2 * MX - 3.1, h: 1.4, fontFace: FONT, fontSize: 18, color: INK, valign: "middle", margin: 0 });
-  });
-  s2.addText("Every deck states its sources on its last slide. Specification wording is paraphrased, not copied; always teach from the awarding body's own document.", { x: MX, y: 5.9, w: W - 2 * MX, h: 0.8, fontFace: FONT, fontSize: 14, italic: true, color: MUTED, margin: 0 });
 
   // register
   const mk = (txt, o = {}) => ({ text: clean(txt), options: { fontFace: FONT, fontSize: 10, color: INK, valign: "middle", ...o } });
   const reg = manifest.filter((m) => m.kind === "spec" || m.kind === "syllabus");
   for (let p = 0; p * 11 < reg.length; p++) {
     const s = contentSlide(pres, ctx, "File register", `All documents in the pack (${p + 1} of ${Math.ceil(reg.length / 11)})`);
-    const data = [["Level", "Subject", "Board or framework", "Status", "Units"].map((h) => mk(h, { bold: true, color: WHITE, fill: { color: theme.accent } }))];
-    reg.slice(p * 11, p * 11 + 11).forEach((m, i) => data.push([m.level, m.subject, m.kind === "spec" ? `${m.board} ${m.code}` : m.board.slice(0, 80), m.status, String(m.units)].map((x, j) => mk(x, { fill: { color: i % 2 ? WHITE : tint(theme.accent, 0.92) }, bold: j === 3, color: j === 3 ? (m.status === "Verified" ? "1E5B36" : "7A4B00") : INK }))));
-    s.addTable(data, { x: MX, y: 1.8, w: W - 2 * MX, colW: [1.7, 2.4, 5.2, 1.4, W - 2 * MX - 10.7], border: { type: "solid", color: LINE, pt: 0.75 }, margin: [0.06, 0.08, 0.06, 0.08] });
+    const data = [["Level", "Subject", "Board or framework", "Units"].map((h) => mk(h, { bold: true, color: WHITE, fill: { color: theme.accent } }))];
+    reg.slice(p * 11, p * 11 + 11).forEach((m, i) => data.push([m.level, m.subject, m.kind === "spec" ? `${m.board} ${m.code}` : m.board.slice(0, 80), String(m.units)].map((x, j) => mk(x, { fill: { color: i % 2 ? WHITE : tint(theme.accent, 0.92) }, bold: j === 3, color: j === 3 ? (m.status === "Verified" ? "1E5B36" : "7A4B00") : INK }))));
+    s.addTable(data, { x: MX, y: 1.8, w: W - 2 * MX, colW: [1.9, 2.6, 5.6, W - 2 * MX - 10.1], border: { type: "solid", color: LINE, pt: 0.75 }, margin: [0.06, 0.08, 0.06, 0.08] });
   }
 
-  const s4 = contentSlide(pres, ctx, "Needs your confirmation", "Board and code questions the school must settle");
+  const s4 = contentSlide(pres, ctx, "Open questions", "Board and code questions the school must settle");
   const items = [
     ["Arabic", "The Edexcel International GCSE Arabic course (4AA1) is a first-language qualification. Beginner Arabic in Years 3 to 9 does not lead into it. Confirm which Arabic course Years 10 and 11 sit."],
     ["Science", "Documented as Edexcel International GCSE Biology 4BI1, Chemistry 4CH1, Physics 4PH1 and Double Award 4SD0. Confirm separate or double award, and that Year 11 is on this course."],
@@ -154,7 +141,7 @@ Pure syllabus and specification content. Nothing here is about the school's own 
 | ${F.ks13} | One folder per subject: the syllabus deck (PPTX and PDF) for Reception to Year 9 |
 | ${F.src} | Sources opened, verification register, open items |
 
-Status labels: **Verified** means read from the official source; **Provisional** means part could not be confirmed (see the last slide of each deck).
+Each document ends with its sources and any open items.
 Specification wording is paraphrased. Teach from the awarding body's own document.
 `;
   fs.writeFileSync(path.join(OUT, "README.md"), rd);
