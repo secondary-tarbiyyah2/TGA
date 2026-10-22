@@ -1,14 +1,48 @@
 import raw from "./syllabusIndex.json";
 
 export type SpecUnit = { ref: string; title: string; paper: string; year: string; points: string[] };
-export type SpecInfo = { subject: string; board: string; code: string; status: string; units: SpecUnit[] };
+export type Paper = { paper: string; title: string; duration: string; marks: number | string; weight: string; content: string; format: string };
+export type SpecInfo = {
+  subject: string;
+  board: string;
+  code: string;
+  status: string;
+  statusNote: string;
+  qualification: string;
+  tiers: string;
+  nonExam: string;
+  assessment: Paper[];
+  aos: { code: string; desc: string; weight: string }[];
+  commandWords: { word: string; meaning: string }[];
+  gaps: string[];
+  units: SpecUnit[];
+};
+export type SyllabusUnit = { unit: string; focus: string[]; skills: string[]; keyTerms: string[]; assess: string };
+export type SyllabusInfo = { subject: string; framework: string; status: string; statusNote: string; years: Record<string, SyllabusUnit[]> };
 export type HubNode = { subject: string; ref: string; note: string };
 export type Hub = { id: string; title: string; hook: string; nodes: HubNode[] };
 
-const data = raw as unknown as { specs: Record<string, SpecInfo>; hubs: Hub[] };
+const data = raw as unknown as { specs: Record<string, SpecInfo>; syllabi: Record<string, SyllabusInfo>; hubs: Hub[] };
 
 export const specFor = (slug: string): SpecInfo | undefined => data.specs[slug];
-export const specStatus = (slug: string): string | undefined => data.specs[slug]?.status;
+export const syllabusFor = (slug: string): SyllabusInfo | undefined => data.syllabi[slug];
+export const specStatus = (slug: string): string | undefined => data.specs[slug]?.status ?? data.syllabi[slug]?.status;
+export const allHubs = (): Hub[] => data.hubs;
+
+/** Syllabus units for a year whose name overlaps the library unit's name (Reception to Year 9). */
+export function matchSyllabusUnits(slug: string, year: string, unitName: string, max = 3): SyllabusUnit[] {
+  const units = data.syllabi[slug]?.years[year] || [];
+  const uw = new Set(words(unitName));
+  return units
+    .map((u) => {
+      const tw = words(u.unit);
+      return { u, score: tw.length ? tw.filter((w) => uw.has(w)).length / tw.length : 0 };
+    })
+    .filter((x) => x.score >= 0.4)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, max)
+    .map((x) => x.u);
+}
 
 const STOP = new Set(["the", "and", "of", "in", "to", "a", "for", "unit", "spec", "section", "topic", "topics", "with", "on", "an"]);
 const words = (s: string) =>

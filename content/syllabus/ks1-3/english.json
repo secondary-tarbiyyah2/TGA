@@ -4,13 +4,28 @@
   "slug": "english",
   "framework": "National Curriculum in England (2014): English programmes of study, Key Stages 1 to 3, with EYFS Literacy and Communication and Language for Reception",
   "status": "Provisional",
-  "statusNote": "The gov.uk English programmes of study (spoken language, reading, writing, KS1 to KS3, plus the KS4 outline) were opened and read. Not opened: the statutory Appendix 1 (spelling) and Appendix 2 (vocabulary, grammar, punctuation) documents, the glossary, and the EYFS statutory framework PDFs (only the gov.uk landing page was read), so the Reception row is provisional. Statutory content is set by key stage (Year 1 and Year 2 individually in KS1; two-year blocks in KS2; KS3 as one block); the year-by-year allocation here is a recommended sequence, and schools may teach content earlier or later within a key stage.",
+  "statusNote": "The gov.uk English programmes of study (spoken language, reading, writing, KS1 to KS3, plus the KS4 outline) were opened and read. Not opened: the statutory Appendix 1 (spelling) and Appendix 2 (vocabulary, grammar, punctuation) documents, the glossary, and the EYFS statutory framework PDFs (only the gov.uk landing page was read), so the Reception row is provisional. Statutory content is set by key stage (Year 1 and Year 2 individually in KS1; two-year blocks in KS2; KS3 as one block); the year-by-year allocation here is a recommended sequence, and schools may teach content earlier or later within a key stage. Re-check attempt: gov.uk and assets.publishing.service.gov.uk were not reachable from the research environment, so Appendix 1, Appendix 2, the glossary and the EYFS framework could not be opened and no year-by-year spelling or grammar content has been added (it would not be sourced). School-choice notes (not verification gaps): year allocation follows the recommended sequence; Drama, PE, Quran and Arabic links are school subjects outside the English document.",
   "sources": [
-    { "title": "National Curriculum in England: English programmes of study (gov.uk)", "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study" },
-    { "title": "National Curriculum in England: English programmes of study, publication page (gov.uk)", "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study" },
-    { "title": "Early years foundation stage framework, landing page (gov.uk; framework in force from 1 September 2026)", "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2" },
-    { "title": "AQA GCSE English Language 8700 specification (for the KS4 link)", "url": "https://filestore.aqa.org.uk/resources/english/specifications/AQA-8700-SP-2015.PDF" },
-    { "title": "AQA GCSE English Literature 8702 specification (for the KS4 link)", "url": "https://filestore.aqa.org.uk/resources/english/specifications/AQA-8702-SP-2015.PDF" }
+    {
+      "title": "National Curriculum in England: English programmes of study (gov.uk)",
+      "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study/national-curriculum-in-england-english-programmes-of-study"
+    },
+    {
+      "title": "National Curriculum in England: English programmes of study, publication page (gov.uk)",
+      "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study"
+    },
+    {
+      "title": "Early years foundation stage framework, landing page (gov.uk; framework in force from 1 September 2026)",
+      "url": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2"
+    },
+    {
+      "title": "AQA GCSE English Language 8700 specification (for the KS4 link)",
+      "url": "https://filestore.aqa.org.uk/resources/english/specifications/AQA-8700-SP-2015.PDF"
+    },
+    {
+      "title": "AQA GCSE English Literature 8702 specification (for the KS4 link)",
+      "url": "https://filestore.aqa.org.uk/resources/english/specifications/AQA-8702-SP-2015.PDF"
+    }
   ],
   "purpose": [
     "English is essential to education: pupils must speak, read and write fluently to take part in society.",
@@ -23,131 +38,1027 @@
       "ks": "EYFS",
       "years": "Reception (provisional: framework PDFs not opened)",
       "strands": [
-        { "strand": "Communication and Language", "statements": ["Listen attentively, understand and respond in conversation and stories.", "Speak in full sentences, using new vocabulary and talking about experiences.", "Ask questions and explain ideas to adults and peers."] },
-        { "strand": "Literacy: comprehension and word reading", "statements": ["Discuss stories and rhymes, and retell them using new vocabulary.", "Say sounds for letters and read simple words and sentences using phonics.", "Read some common exception words."] },
-        { "strand": "Literacy: writing", "statements": ["Form letters correctly and spell words by saying sounds.", "Write simple phrases and sentences that others can read."] }
+        {
+          "strand": "Communication and Language",
+          "statements": [
+            "Listen attentively, understand and respond in conversation and stories.",
+            "Speak in full sentences, using new vocabulary and talking about experiences.",
+            "Ask questions and explain ideas to adults and peers."
+          ]
+        },
+        {
+          "strand": "Literacy: comprehension and word reading",
+          "statements": [
+            "Discuss stories and rhymes, and retell them using new vocabulary.",
+            "Say sounds for letters and read simple words and sentences using phonics.",
+            "Read some common exception words."
+          ]
+        },
+        {
+          "strand": "Literacy: writing",
+          "statements": [
+            "Form letters correctly and spell words by saying sounds.",
+            "Write simple phrases and sentences that others can read."
+          ]
+        }
       ]
     },
     {
       "ks": "KS1",
       "years": "Year 1 to Year 2",
       "strands": [
-        { "strand": "Spoken language (Years 1 to 6)", "statements": ["Listen and respond to adults and peers; ask relevant questions.", "Build vocabulary and articulate and justify answers and opinions.", "Give structured descriptions, explanations and narratives.", "Take part in collaborative conversation, staying on topic and building on comments.", "Use spoken language to speculate, hypothesise and explore ideas.", "Speak audibly and fluently in Standard English; take part in drama, presentations and debate.", "Consider different viewpoints and select registers for different purposes."] },
-        { "strand": "Word reading", "statements": ["Blend unfamiliar words using known grapheme-phoneme correspondences, including alternative sounds.", "Read common exception words and notice unusual spelling-sound links (Year 1).", "Read decodable books aloud accurately and reread them for fluency.", "In Year 2, read most words without sounding out, and split longer words into syllables."] },
-        { "strand": "Comprehension", "statements": ["Listen to and discuss stories, poems and non-fiction above independent reading level.", "Retell familiar stories; recite poems by heart; discuss word meanings.", "Make inferences, ask and answer questions and predict.", "Learn about cause and effect in narrative and non-fiction (Year 2).", "Explain clearly their understanding of what is read and heard."] },
-        { "strand": "Writing: transcription", "statements": ["Spell taught phonemes, common exception words and days of the week (Year 1).", "Spell with alternative graphemes, homophones, contractions and the singular possessive apostrophe (Year 2).", "Add suffixes -ment, -ness, -ful, -less and -ly (Year 2).", "Form lower-case letters, capitals and digits correctly; begin joining strokes in Year 2."] },
-        { "strand": "Writing: composition", "statements": ["Say sentences aloud, compose them orally, then write and reread them.", "Sequence sentences into short narratives (Year 1).", "Write personal, fictional and real narratives, accounts and poetry (Year 2).", "Plan with key vocabulary; proofread for sense and consistent tense."] },
-        { "strand": "Vocabulary, grammar and punctuation", "statements": ["Use capital letters, full stops, question and exclamation marks.", "Join words and clauses using 'and' (Year 1); use subordination and co-ordination (Year 2).", "Use statements, questions, exclamations and commands; expanded noun phrases.", "Use commas in lists and apostrophes for contractions and singular possession."] }
+        {
+          "strand": "Spoken language (Years 1 to 6)",
+          "statements": [
+            "Listen and respond to adults and peers; ask relevant questions.",
+            "Build vocabulary and articulate and justify answers and opinions.",
+            "Give structured descriptions, explanations and narratives.",
+            "Take part in collaborative conversation, staying on topic and building on comments.",
+            "Use spoken language to speculate, hypothesise and explore ideas.",
+            "Speak audibly and fluently in Standard English; take part in drama, presentations and debate.",
+            "Consider different viewpoints and select registers for different purposes."
+          ]
+        },
+        {
+          "strand": "Word reading",
+          "statements": [
+            "Blend unfamiliar words using known grapheme-phoneme correspondences, including alternative sounds.",
+            "Read common exception words and notice unusual spelling-sound links (Year 1).",
+            "Read decodable books aloud accurately and reread them for fluency.",
+            "In Year 2, read most words without sounding out, and split longer words into syllables."
+          ]
+        },
+        {
+          "strand": "Comprehension",
+          "statements": [
+            "Listen to and discuss stories, poems and non-fiction above independent reading level.",
+            "Retell familiar stories; recite poems by heart; discuss word meanings.",
+            "Make inferences, ask and answer questions and predict.",
+            "Learn about cause and effect in narrative and non-fiction (Year 2).",
+            "Explain clearly their understanding of what is read and heard."
+          ]
+        },
+        {
+          "strand": "Writing: transcription",
+          "statements": [
+            "Spell taught phonemes, common exception words and days of the week (Year 1).",
+            "Spell with alternative graphemes, homophones, contractions and the singular possessive apostrophe (Year 2).",
+            "Add suffixes -ment, -ness, -ful, -less and -ly (Year 2).",
+            "Form lower-case letters, capitals and digits correctly; begin joining strokes in Year 2."
+          ]
+        },
+        {
+          "strand": "Writing: composition",
+          "statements": [
+            "Say sentences aloud, compose them orally, then write and reread them.",
+            "Sequence sentences into short narratives (Year 1).",
+            "Write personal, fictional and real narratives, accounts and poetry (Year 2).",
+            "Plan with key vocabulary; proofread for sense and consistent tense."
+          ]
+        },
+        {
+          "strand": "Vocabulary, grammar and punctuation",
+          "statements": [
+            "Use capital letters, full stops, question and exclamation marks.",
+            "Join words and clauses using 'and' (Year 1); use subordination and co-ordination (Year 2).",
+            "Use statements, questions, exclamations and commands; expanded noun phrases.",
+            "Use commas in lists and apostrophes for contractions and singular possession."
+          ]
+        }
       ]
     },
     {
       "ks": "KS2",
       "years": "Year 3 to Year 6 (lower: Years 3 to 4; upper: Years 5 to 6)",
       "strands": [
-        { "strand": "Word reading", "statements": ["Use root words, prefixes and suffixes (morphology and etymology) to read and understand new words.", "Read further exception words and check unfamiliar pronunciations.", "By Year 5, read most words effortlessly and attend to every letter."] },
-        { "strand": "Comprehension", "statements": ["Read widely: fiction, poetry, plays, non-fiction, myths and legends, classic and modern texts.", "Explain words in context, infer feelings and motives with evidence, and predict.", "Summarise ideas across paragraphs; identify how language, structure and presentation shape meaning.", "Distinguish fact from opinion; evaluate figurative language (upper KS2).", "Prepare and perform poems and plays; learn poetry by heart.", "Discuss and challenge views courteously; compare characters, settings and texts."] },
-        { "strand": "Writing: transcription", "statements": ["Spell using prefixes, suffixes, homophones, silent letters and commonly misspelt words.", "Use the possessive apostrophe with plural nouns; check spellings in a dictionary.", "Write legibly in a joined style, faster and more fluently by Year 6; choose the right implement."] },
-        { "strand": "Writing: composition", "statements": ["Plan by identifying audience and purpose, using models and research.", "Draft with paragraphs, settings, characters, dialogue and organisational devices such as headings.", "Evaluate and edit own and others' writing; keep tense consistent; proofread.", "Perform compositions with suitable intonation, volume and movement."] },
-        { "strand": "Vocabulary, grammar and punctuation", "statements": ["Use a wider range of conjunctions, fronted adverbials with commas, and the present perfect (Years 3 to 4).", "Punctuate direct speech; begin to notice Standard and non-Standard English.", "Use relative clauses, modal verbs, passive verbs and expanded noun phrases (Years 5 to 6).", "Use brackets, dashes, colons, semi-colons and hyphens accurately (Years 5 to 6).", "Recognise formal and informal structures, including the subjunctive."] }
+        {
+          "strand": "Word reading",
+          "statements": [
+            "Use root words, prefixes and suffixes (morphology and etymology) to read and understand new words.",
+            "Read further exception words and check unfamiliar pronunciations.",
+            "By Year 5, read most words effortlessly and attend to every letter."
+          ]
+        },
+        {
+          "strand": "Comprehension",
+          "statements": [
+            "Read widely: fiction, poetry, plays, non-fiction, myths and legends, classic and modern texts.",
+            "Explain words in context, infer feelings and motives with evidence, and predict.",
+            "Summarise ideas across paragraphs; identify how language, structure and presentation shape meaning.",
+            "Distinguish fact from opinion; evaluate figurative language (upper KS2).",
+            "Prepare and perform poems and plays; learn poetry by heart.",
+            "Discuss and challenge views courteously; compare characters, settings and texts."
+          ]
+        },
+        {
+          "strand": "Writing: transcription",
+          "statements": [
+            "Spell using prefixes, suffixes, homophones, silent letters and commonly misspelt words.",
+            "Use the possessive apostrophe with plural nouns; check spellings in a dictionary.",
+            "Write legibly in a joined style, faster and more fluently by Year 6; choose the right implement."
+          ]
+        },
+        {
+          "strand": "Writing: composition",
+          "statements": [
+            "Plan by identifying audience and purpose, using models and research.",
+            "Draft with paragraphs, settings, characters, dialogue and organisational devices such as headings.",
+            "Evaluate and edit own and others' writing; keep tense consistent; proofread.",
+            "Perform compositions with suitable intonation, volume and movement."
+          ]
+        },
+        {
+          "strand": "Vocabulary, grammar and punctuation",
+          "statements": [
+            "Use a wider range of conjunctions, fronted adverbials with commas, and the present perfect (Years 3 to 4).",
+            "Punctuate direct speech; begin to notice Standard and non-Standard English.",
+            "Use relative clauses, modal verbs, passive verbs and expanded noun phrases (Years 5 to 6).",
+            "Use brackets, dashes, colons, semi-colons and hyphens accurately (Years 5 to 6).",
+            "Recognise formal and informal structures, including the subjunctive."
+          ]
+        }
       ]
     },
     {
       "ks": "KS3",
       "years": "Year 7 to Year 9",
       "strands": [
-        { "strand": "Reading", "statements": ["Read widely: whole books, short stories, poems and plays from different periods and authors.", "Include pre-1914 and contemporary literature, two Shakespeare plays and seminal world literature.", "Study at least two authors in depth each year.", "Make inferences with evidence; consider purpose, audience and context.", "Analyse how language, grammar, structure and organisation create meaning.", "Recognise poetic conventions; understand how drama works in performance; compare texts critically."] },
-        { "strand": "Writing", "statements": ["Write accurately, fluently and at length for many purposes and audiences.", "Forms include essays, narratives, scripts, poetry, talks, arguments and letters.", "Summarise and organise material; support ideas with factual detail.", "Use rhetorical and literary devices from reading.", "Plan, draft, edit and proofread; improve coherence."] },
-        { "strand": "Grammar and vocabulary", "statements": ["Extend Appendix 2 knowledge to analyse challenging texts and the effect of grammar.", "Use new vocabulary and constructions consciously in writing and speech.", "Understand differences between spoken and written language and between registers.", "Use Standard English confidently; use linguistic and literary terminology precisely."] },
-        { "strand": "Spoken English", "statements": ["Use Standard English in formal and informal contexts, including classroom discussion.", "Give short speeches and presentations; take part in formal debates.", "Summarise and build on others' points in structured discussion.", "Improvise, rehearse and perform scripts and poetry, using role, tone, volume and stillness."] }
+        {
+          "strand": "Reading",
+          "statements": [
+            "Read widely: whole books, short stories, poems and plays from different periods and authors.",
+            "Include pre-1914 and contemporary literature, two Shakespeare plays and seminal world literature.",
+            "Study at least two authors in depth each year.",
+            "Make inferences with evidence; consider purpose, audience and context.",
+            "Analyse how language, grammar, structure and organisation create meaning.",
+            "Recognise poetic conventions; understand how drama works in performance; compare texts critically."
+          ]
+        },
+        {
+          "strand": "Writing",
+          "statements": [
+            "Write accurately, fluently and at length for many purposes and audiences.",
+            "Forms include essays, narratives, scripts, poetry, talks, arguments and letters.",
+            "Summarise and organise material; support ideas with factual detail.",
+            "Use rhetorical and literary devices from reading.",
+            "Plan, draft, edit and proofread; improve coherence."
+          ]
+        },
+        {
+          "strand": "Grammar and vocabulary",
+          "statements": [
+            "Extend Appendix 2 knowledge to analyse challenging texts and the effect of grammar.",
+            "Use new vocabulary and constructions consciously in writing and speech.",
+            "Understand differences between spoken and written language and between registers.",
+            "Use Standard English confidently; use linguistic and literary terminology precisely."
+          ]
+        },
+        {
+          "strand": "Spoken English",
+          "statements": [
+            "Use Standard English in formal and informal contexts, including classroom discussion.",
+            "Give short speeches and presentations; take part in formal debates.",
+            "Summarise and build on others' points in structured discussion.",
+            "Improvise, rehearse and perform scripts and poetry, using role, tone, volume and stillness."
+          ]
+        }
       ]
     },
     {
       "ks": "Statutory appendices",
       "years": "Years 1 to 6 (and applied at KS3)",
       "strands": [
-        { "strand": "Appendix 1: Spelling", "statements": ["Sets year-by-year spelling patterns, rules and word lists; KS2 has Years 3 to 4 and Years 5 to 6 lists.", "Covers prefixes, suffixes, homophones, plurals and common exception words (contents not opened)."] },
-        { "strand": "Appendix 2: Vocabulary, grammar and punctuation", "statements": ["Lists the grammatical terms and structures pupils must learn each year.", "Pupils learn correct terminology explicitly (detailed contents not opened)."] }
+        {
+          "strand": "Appendix 1: Spelling",
+          "statements": [
+            "Sets year-by-year spelling patterns, rules and word lists; KS2 has Years 3 to 4 and Years 5 to 6 lists.",
+            "Covers prefixes, suffixes, homophones, plurals and common exception words (contents not opened)."
+          ]
+        },
+        {
+          "strand": "Appendix 2: Vocabulary, grammar and punctuation",
+          "statements": [
+            "Lists the grammatical terms and structures pupils must learn each year.",
+            "Pupils learn correct terminology explicitly (detailed contents not opened)."
+          ]
+        }
       ]
     }
   ],
   "yearMap": {
     "reception": [
-      { "unit": "Listening, rhyme and first sounds", "focus": ["Listening games and environmental sounds", "Rhyme and alliteration", "Oral blending and segmenting", "Songs, rhymes and story discussion"], "skills": ["Listening attentively", "Speaking in sentences", "Hearing initial sounds"], "keyTerms": ["rhyme", "sound", "syllable"], "assess": "Teacher observation; oral blending check", "prereq": "Nursery: songs, rhymes, early speech", "leadsTo": "Reception: letters and sounds" },
-      { "unit": "Letters and sounds: s a t p i n m d", "focus": ["Letter-sound correspondences", "Blending CVC words", "Letter formation", "First tricky words"], "skills": ["Decoding", "Blending", "Handwriting", "Phonics"], "keyTerms": ["grapheme", "phoneme", "blend", "tricky word"], "assess": "Phonics checks; dictation of words", "prereq": "Reception: first sounds", "leadsTo": "Reception: letters g o c k" },
-      { "unit": "Letters g o c k and tricky words", "focus": ["Further sounds", "Reading captions", "Tricky words", "Writing words from sounds"], "skills": ["Reading words", "Spelling by sounds", "Handwriting"], "keyTerms": ["caption", "tricky word"], "assess": "Phonics checks; writing samples", "prereq": "Reception: first letters", "leadsTo": "Reception: ck, e, u, r" },
-      { "unit": "Letters ck e u r, captions and stories", "focus": ["Reading and writing captions and short sentences", "Retelling a story", "Talking about characters and events"], "skills": ["Sentence writing", "Retell", "Comprehension by discussion"], "keyTerms": ["sentence", "full stop", "character"], "assess": "Phonics screening practice; writing a caption", "prereq": "Reception: letters g o c k", "leadsTo": "Year 1: revising sounds and writing sentences" }
+      {
+        "unit": "Listening, rhyme and first sounds",
+        "focus": [
+          "Listening games and environmental sounds",
+          "Rhyme and alliteration",
+          "Oral blending and segmenting",
+          "Songs, rhymes and story discussion"
+        ],
+        "skills": [
+          "Listening attentively",
+          "Speaking in sentences",
+          "Hearing initial sounds"
+        ],
+        "keyTerms": [
+          "rhyme",
+          "sound",
+          "syllable"
+        ],
+        "assess": "Teacher observation; oral blending check",
+        "prereq": "Nursery: songs, rhymes, early speech",
+        "leadsTo": "Reception: letters and sounds"
+      },
+      {
+        "unit": "Letters and sounds: s a t p i n m d",
+        "focus": [
+          "Letter-sound correspondences",
+          "Blending CVC words",
+          "Letter formation",
+          "First tricky words"
+        ],
+        "skills": [
+          "Decoding",
+          "Blending",
+          "Handwriting",
+          "Phonics"
+        ],
+        "keyTerms": [
+          "grapheme",
+          "phoneme",
+          "blend",
+          "tricky word"
+        ],
+        "assess": "Phonics checks; dictation of words",
+        "prereq": "Reception: first sounds",
+        "leadsTo": "Reception: letters g o c k"
+      },
+      {
+        "unit": "Letters g o c k and tricky words",
+        "focus": [
+          "Further sounds",
+          "Reading captions",
+          "Tricky words",
+          "Writing words from sounds"
+        ],
+        "skills": [
+          "Reading words",
+          "Spelling by sounds",
+          "Handwriting"
+        ],
+        "keyTerms": [
+          "caption",
+          "tricky word"
+        ],
+        "assess": "Phonics checks; writing samples",
+        "prereq": "Reception: first letters",
+        "leadsTo": "Reception: ck, e, u, r"
+      },
+      {
+        "unit": "Letters ck e u r, captions and stories",
+        "focus": [
+          "Reading and writing captions and short sentences",
+          "Retelling a story",
+          "Talking about characters and events"
+        ],
+        "skills": [
+          "Sentence writing",
+          "Retell",
+          "Comprehension by discussion"
+        ],
+        "keyTerms": [
+          "sentence",
+          "full stop",
+          "character"
+        ],
+        "assess": "Phonics screening practice; writing a caption",
+        "prereq": "Reception: letters g o c k",
+        "leadsTo": "Year 1: revising sounds and writing sentences"
+      }
     ],
     "y1": [
-      { "unit": "Revising our sounds and writing sentences", "focus": ["Revision of taught sounds", "Capital letters and full stops", "Spaces between words", "Writing from dictation"], "skills": ["Decoding", "Handwriting", "Sentence writing"], "keyTerms": ["sentence", "capital letter", "full stop", "finger space"], "assess": "Dictated sentence; phonics check", "prereq": "Reception: letters and sounds", "leadsTo": "Year 1: Phase 3 consonant sounds" },
-      { "unit": "Phase 3 consonant sounds", "focus": ["Digraphs: ch, sh, th, ng", "Reading and writing words with digraphs", "Tricky words"], "skills": ["Blending", "Spelling", "Reading fluency"], "keyTerms": ["digraph", "blend"], "assess": "Phonics check; spelling of taught words", "prereq": "Year 1: revising sounds", "leadsTo": "Year 1: long vowel sounds" },
-      { "unit": "Long vowel sounds ai, ee, igh, oa, oo", "focus": ["Long vowel graphemes", "Reading decodable books", "Common exception words", "Past tense -ed endings"], "skills": ["Fluency", "Spelling patterns"], "keyTerms": ["vowel", "grapheme", "suffix"], "assess": "Year 1 phonics screening check practice", "prereq": "Year 1: Phase 3 sounds", "leadsTo": "Year 1: more vowel sounds and story writing" },
-      { "unit": "More vowel sounds and writing a story", "focus": ["Further vowel sounds", "Story structure: beginning, middle, end", "Retelling and writing a short story", "Joining clauses with 'and'"], "skills": ["Composition", "Rereading for sense", "Retell"], "keyTerms": ["story", "beginning", "ending", "and"], "assess": "Short written story; phonics screening check", "prereq": "Year 1: long vowel sounds", "leadsTo": "Year 2: Phase 5 phonics and spelling" }
+      {
+        "unit": "Revising our sounds and writing sentences",
+        "focus": [
+          "Revision of taught sounds",
+          "Capital letters and full stops",
+          "Spaces between words",
+          "Writing from dictation"
+        ],
+        "skills": [
+          "Decoding",
+          "Handwriting",
+          "Sentence writing"
+        ],
+        "keyTerms": [
+          "sentence",
+          "capital letter",
+          "full stop",
+          "finger space"
+        ],
+        "assess": "Dictated sentence; phonics check",
+        "prereq": "Reception: letters and sounds",
+        "leadsTo": "Year 1: Phase 3 consonant sounds"
+      },
+      {
+        "unit": "Phase 3 consonant sounds",
+        "focus": [
+          "Digraphs: ch, sh, th, ng",
+          "Reading and writing words with digraphs",
+          "Tricky words"
+        ],
+        "skills": [
+          "Blending",
+          "Spelling",
+          "Reading fluency"
+        ],
+        "keyTerms": [
+          "digraph",
+          "blend"
+        ],
+        "assess": "Phonics check; spelling of taught words",
+        "prereq": "Year 1: revising sounds",
+        "leadsTo": "Year 1: long vowel sounds"
+      },
+      {
+        "unit": "Long vowel sounds ai, ee, igh, oa, oo",
+        "focus": [
+          "Long vowel graphemes",
+          "Reading decodable books",
+          "Common exception words",
+          "Past tense -ed endings"
+        ],
+        "skills": [
+          "Fluency",
+          "Spelling patterns"
+        ],
+        "keyTerms": [
+          "vowel",
+          "grapheme",
+          "suffix"
+        ],
+        "assess": "Year 1 phonics screening check practice",
+        "prereq": "Year 1: Phase 3 sounds",
+        "leadsTo": "Year 1: more vowel sounds and story writing"
+      },
+      {
+        "unit": "More vowel sounds and writing a story",
+        "focus": [
+          "Further vowel sounds",
+          "Story structure: beginning, middle, end",
+          "Retelling and writing a short story",
+          "Joining clauses with 'and'"
+        ],
+        "skills": [
+          "Composition",
+          "Rereading for sense",
+          "Retell"
+        ],
+        "keyTerms": [
+          "story",
+          "beginning",
+          "ending",
+          "and"
+        ],
+        "assess": "Short written story; phonics screening check",
+        "prereq": "Year 1: long vowel sounds",
+        "leadsTo": "Year 2: Phase 5 phonics and spelling"
+      }
     ],
     "y2": [
-      { "unit": "Phase 5 phonics and spelling", "focus": ["Alternative spellings for sounds", "Homophones and contractions", "Suffixes -ment, -ness, -ful, -less, -ly", "Common exception words"], "skills": ["Spelling", "Fluency", "Dictation"], "keyTerms": ["homophone", "suffix", "contraction", "syllable"], "assess": "Spelling test; dictation", "prereq": "Year 1: vowel sounds", "leadsTo": "Year 3: building better sentences" },
-      { "unit": "Sentences, nouns and punctuation", "focus": ["Four sentence types", "Expanded noun phrases", "Commas in lists", "Apostrophes for contractions and singular possession", "Co-ordination and subordination"], "skills": ["Sentence construction", "Punctuation"], "keyTerms": ["noun phrase", "statement", "command", "conjunction", "apostrophe"], "assess": "Grammar quiz; writing review", "prereq": "Year 1: sentences", "leadsTo": "Year 3: building better sentences" },
-      { "unit": "Jack and the Beanstalk: reading and writing a story", "focus": ["Reading a traditional tale", "Sequencing events and cause and effect", "Planning and writing a story", "Retelling with expression"], "skills": ["Retell", "Plan, write, proofread", "Inference"], "keyTerms": ["traditional tale", "setting", "character", "tense"], "assess": "Story writing; reading comprehension", "prereq": "Year 1: story writing", "leadsTo": "Year 3: fables" }
+      {
+        "unit": "Phase 5 phonics and spelling",
+        "focus": [
+          "Alternative spellings for sounds",
+          "Homophones and contractions",
+          "Suffixes -ment, -ness, -ful, -less, -ly",
+          "Common exception words"
+        ],
+        "skills": [
+          "Spelling",
+          "Fluency",
+          "Dictation"
+        ],
+        "keyTerms": [
+          "homophone",
+          "suffix",
+          "contraction",
+          "syllable"
+        ],
+        "assess": "Spelling test; dictation",
+        "prereq": "Year 1: vowel sounds",
+        "leadsTo": "Year 3: building better sentences"
+      },
+      {
+        "unit": "Sentences, nouns and punctuation",
+        "focus": [
+          "Four sentence types",
+          "Expanded noun phrases",
+          "Commas in lists",
+          "Apostrophes for contractions and singular possession",
+          "Co-ordination and subordination"
+        ],
+        "skills": [
+          "Sentence construction",
+          "Punctuation"
+        ],
+        "keyTerms": [
+          "noun phrase",
+          "statement",
+          "command",
+          "conjunction",
+          "apostrophe"
+        ],
+        "assess": "Grammar quiz; writing review",
+        "prereq": "Year 1: sentences",
+        "leadsTo": "Year 3: building better sentences"
+      },
+      {
+        "unit": "Jack and the Beanstalk: reading and writing a story",
+        "focus": [
+          "Reading a traditional tale",
+          "Sequencing events and cause and effect",
+          "Planning and writing a story",
+          "Retelling with expression"
+        ],
+        "skills": [
+          "Retell",
+          "Plan, write, proofread",
+          "Inference"
+        ],
+        "keyTerms": [
+          "traditional tale",
+          "setting",
+          "character",
+          "tense"
+        ],
+        "assess": "Story writing; reading comprehension",
+        "prereq": "Year 1: story writing",
+        "leadsTo": "Year 3: fables"
+      }
     ],
     "y3": [
-      { "unit": "Building better sentences", "focus": ["Conjunctions: when, if, because, although", "Adverbs and prepositions of time and cause", "Present perfect", "Paragraph organisation"], "skills": ["Complex sentences", "Editing", "Prefix and suffix spelling"], "keyTerms": ["conjunction", "clause", "preposition", "adverb", "paragraph"], "assess": "Sentence-level tasks; spelling test", "prereq": "Year 2: sentences and noun phrases", "leadsTo": "Year 4: punctuation and grammar" },
-      { "unit": "Fables: reading and writing a story with a moral", "focus": ["Reading fables and their morals", "Themes and conventions", "Planning, drafting, editing a fable", "Reading aloud with expression"], "skills": ["Inference", "Narrative writing", "Editing"], "keyTerms": ["fable", "moral", "theme", "character"], "assess": "Written fable; comprehension", "prereq": "Year 2: traditional tales", "leadsTo": "Year 4: adventure writing" }
+      {
+        "unit": "Building better sentences",
+        "focus": [
+          "Conjunctions: when, if, because, although",
+          "Adverbs and prepositions of time and cause",
+          "Present perfect",
+          "Paragraph organisation"
+        ],
+        "skills": [
+          "Complex sentences",
+          "Editing",
+          "Prefix and suffix spelling"
+        ],
+        "keyTerms": [
+          "conjunction",
+          "clause",
+          "preposition",
+          "adverb",
+          "paragraph"
+        ],
+        "assess": "Sentence-level tasks; spelling test",
+        "prereq": "Year 2: sentences and noun phrases",
+        "leadsTo": "Year 4: punctuation and grammar"
+      },
+      {
+        "unit": "Fables: reading and writing a story with a moral",
+        "focus": [
+          "Reading fables and their morals",
+          "Themes and conventions",
+          "Planning, drafting, editing a fable",
+          "Reading aloud with expression"
+        ],
+        "skills": [
+          "Inference",
+          "Narrative writing",
+          "Editing"
+        ],
+        "keyTerms": [
+          "fable",
+          "moral",
+          "theme",
+          "character"
+        ],
+        "assess": "Written fable; comprehension",
+        "prereq": "Year 2: traditional tales",
+        "leadsTo": "Year 4: adventure writing"
+      }
     ],
     "y4": [
-      { "unit": "Punctuation and grammar for stronger writing", "focus": ["Fronted adverbials and commas", "Direct speech punctuation", "Possessive apostrophes with plurals", "Standard English forms"], "skills": ["Punctuation", "Editing", "Standard English"], "keyTerms": ["fronted adverbial", "direct speech", "possessive apostrophe", "Standard English"], "assess": "Grammar and punctuation test; writing check", "prereq": "Year 3: sentences", "leadsTo": "Year 5: complex sentences" },
-      { "unit": "Sinbad and the roc: reading and writing an adventure", "focus": ["Reading an adventure story", "Setting, character and plot", "Dialogue", "Planning and writing an adventure"], "skills": ["Narrative writing", "Inference with evidence", "Dialogue punctuation"], "keyTerms": ["setting", "plot", "dialogue", "adventure"], "assess": "Extended narrative; reading comprehension", "prereq": "Year 3: fables", "leadsTo": "Year 5: suspense writing" }
+      {
+        "unit": "Punctuation and grammar for stronger writing",
+        "focus": [
+          "Fronted adverbials and commas",
+          "Direct speech punctuation",
+          "Possessive apostrophes with plurals",
+          "Standard English forms"
+        ],
+        "skills": [
+          "Punctuation",
+          "Editing",
+          "Standard English"
+        ],
+        "keyTerms": [
+          "fronted adverbial",
+          "direct speech",
+          "possessive apostrophe",
+          "Standard English"
+        ],
+        "assess": "Grammar and punctuation test; writing check",
+        "prereq": "Year 3: sentences",
+        "leadsTo": "Year 5: complex sentences"
+      },
+      {
+        "unit": "Sinbad and the roc: reading and writing an adventure",
+        "focus": [
+          "Reading an adventure story",
+          "Setting, character and plot",
+          "Dialogue",
+          "Planning and writing an adventure"
+        ],
+        "skills": [
+          "Narrative writing",
+          "Inference with evidence",
+          "Dialogue punctuation"
+        ],
+        "keyTerms": [
+          "setting",
+          "plot",
+          "dialogue",
+          "adventure"
+        ],
+        "assess": "Extended narrative; reading comprehension",
+        "prereq": "Year 3: fables",
+        "leadsTo": "Year 5: suspense writing"
+      }
     ],
     "y5": [
-      { "unit": "Complex sentences and cohesion", "focus": ["Relative clauses", "Modal verbs", "Parenthesis", "Cohesive devices across paragraphs"], "skills": ["Sentence control", "Cohesion", "Editing"], "keyTerms": ["relative clause", "modal verb", "parenthesis", "cohesion"], "assess": "Grammar and writing tasks", "prereq": "Year 4: punctuation and grammar", "leadsTo": "Year 6: SATs grammar" },
-      { "unit": "Poetry: The Eagle and writing about nature", "focus": ["Reading a classic poem", "Figurative language and its effect", "Performing poetry", "Writing nature poetry"], "skills": ["Language effect", "Performance", "Poetic writing"], "keyTerms": ["simile", "metaphor", "personification", "imagery"], "assess": "Written poem; discussion of effect", "prereq": "Year 4: language and description", "leadsTo": "Year 7 and Year 8 poetry" },
-      { "unit": "Suspense: reading and writing a tense scene", "focus": ["How suspense is built", "Sentence length for pace", "Planning and writing a scene"], "skills": ["Narrative craft", "Evaluating a text"], "keyTerms": ["suspense", "atmosphere", "pace"], "assess": "Suspense scene; comprehension", "prereq": "Year 4: adventure writing", "leadsTo": "Year 6: reading skills" }
+      {
+        "unit": "Complex sentences and cohesion",
+        "focus": [
+          "Relative clauses",
+          "Modal verbs",
+          "Parenthesis",
+          "Cohesive devices across paragraphs"
+        ],
+        "skills": [
+          "Sentence control",
+          "Cohesion",
+          "Editing"
+        ],
+        "keyTerms": [
+          "relative clause",
+          "modal verb",
+          "parenthesis",
+          "cohesion"
+        ],
+        "assess": "Grammar and writing tasks",
+        "prereq": "Year 4: punctuation and grammar",
+        "leadsTo": "Year 6: SATs grammar"
+      },
+      {
+        "unit": "Poetry: The Eagle and writing about nature",
+        "focus": [
+          "Reading a classic poem",
+          "Figurative language and its effect",
+          "Performing poetry",
+          "Writing nature poetry"
+        ],
+        "skills": [
+          "Language effect",
+          "Performance",
+          "Poetic writing"
+        ],
+        "keyTerms": [
+          "simile",
+          "metaphor",
+          "personification",
+          "imagery"
+        ],
+        "assess": "Written poem; discussion of effect",
+        "prereq": "Year 4: language and description",
+        "leadsTo": "Year 7 and Year 8 poetry"
+      },
+      {
+        "unit": "Suspense: reading and writing a tense scene",
+        "focus": [
+          "How suspense is built",
+          "Sentence length for pace",
+          "Planning and writing a scene"
+        ],
+        "skills": [
+          "Narrative craft",
+          "Evaluating a text"
+        ],
+        "keyTerms": [
+          "suspense",
+          "atmosphere",
+          "pace"
+        ],
+        "assess": "Suspense scene; comprehension",
+        "prereq": "Year 4: adventure writing",
+        "leadsTo": "Year 6: reading skills"
+      }
     ],
     "y6": [
-      { "unit": "Grammar, punctuation and vocabulary (SATs skills)", "focus": ["Subjunctive, passive, formal structures", "Semi-colons, colons, dashes, hyphens", "Word classes and clauses", "Vocabulary for precision"], "skills": ["Grammar terminology", "Proofreading"], "keyTerms": ["passive", "subjunctive", "semi-colon", "hyphen"], "assess": "End of Key Stage 2 grammar, punctuation and spelling style test", "prereq": "Year 5: complex sentences", "leadsTo": "Year 7: English 7" },
-      { "unit": "Reading skills for the SATs: The Lighthouse", "focus": ["Retrieval", "Inference with evidence", "Word meaning in context", "Summarising", "Language and structure effects"], "skills": ["Retrieve, infer, summarise, evaluate"], "keyTerms": ["retrieve", "infer", "summarise", "evidence"], "assess": "End of Key Stage 2 reading style paper", "prereq": "Year 5: suspense", "leadsTo": "Year 7: The Explorer" },
-      { "unit": "Writing formally and SATs review", "focus": ["Formal register and Standard English", "Editing for accuracy", "Review of weaker areas"], "skills": ["Formal writing", "Editing"], "keyTerms": ["formal", "register"], "assess": "Writing portfolio; review test", "prereq": "Year 6: grammar", "leadsTo": "Year 7: transition to secondary writing" }
+      {
+        "unit": "Grammar, punctuation and vocabulary (SATs skills)",
+        "focus": [
+          "Subjunctive, passive, formal structures",
+          "Semi-colons, colons, dashes, hyphens",
+          "Word classes and clauses",
+          "Vocabulary for precision"
+        ],
+        "skills": [
+          "Grammar terminology",
+          "Proofreading"
+        ],
+        "keyTerms": [
+          "passive",
+          "subjunctive",
+          "semi-colon",
+          "hyphen"
+        ],
+        "assess": "End of Key Stage 2 grammar, punctuation and spelling style test",
+        "prereq": "Year 5: complex sentences",
+        "leadsTo": "Year 7: English 7"
+      },
+      {
+        "unit": "Reading skills for the SATs: The Lighthouse",
+        "focus": [
+          "Retrieval",
+          "Inference with evidence",
+          "Word meaning in context",
+          "Summarising",
+          "Language and structure effects"
+        ],
+        "skills": [
+          "Retrieve, infer, summarise, evaluate"
+        ],
+        "keyTerms": [
+          "retrieve",
+          "infer",
+          "summarise",
+          "evidence"
+        ],
+        "assess": "End of Key Stage 2 reading style paper",
+        "prereq": "Year 5: suspense",
+        "leadsTo": "Year 7: The Explorer"
+      },
+      {
+        "unit": "Writing formally and SATs review",
+        "focus": [
+          "Formal register and Standard English",
+          "Editing for accuracy",
+          "Review of weaker areas"
+        ],
+        "skills": [
+          "Formal writing",
+          "Editing"
+        ],
+        "keyTerms": [
+          "formal",
+          "register"
+        ],
+        "assess": "Writing portfolio; review test",
+        "prereq": "Year 6: grammar",
+        "leadsTo": "Year 7: transition to secondary writing"
+      }
     ],
     "y7": [
-      { "unit": "The Explorer: Transformation Begins", "focus": ["Opening chapters and first impressions", "Retrieval and inference about character", "Predicting with evidence", "How an opening hooks the reader"], "skills": ["Retrieve and infer", "Explain with evidence"], "keyTerms": ["inference", "character", "predict", "hook"], "assess": "Weekly assessment on reading", "prereq": "Year 6: reading skills", "leadsTo": "Year 7: Survival and Setting" },
-      { "unit": "The Explorer: Survival and Setting", "focus": ["How setting is created", "Language of the rainforest", "Descriptive writing", "Cause and effect in the plot"], "skills": ["Language analysis", "Description"], "keyTerms": ["setting", "atmosphere", "imagery"], "assess": "Descriptive writing and analysis", "prereq": "Year 7: Transformation Begins", "leadsTo": "Year 7: Trust, Leadership and Survival" },
-      { "unit": "The Explorer: Trust, Leadership and Survival", "focus": ["Character relationships", "Leadership and conflict", "Writing about character with PETZAAL-style paragraphs"], "skills": ["Analytical paragraphs", "Quotation use"], "keyTerms": ["relationship", "motivation", "evidence"], "assess": "Paragraph response", "prereq": "Year 7: Survival and Setting", "leadsTo": "Year 7: Courage and Decision-Making" },
-      { "unit": "The Explorer: Courage and Decision-Making", "focus": ["Theme: courage", "Planning and writing a response", "Narrative writing task"], "skills": ["Extended response", "Narrative craft"], "keyTerms": ["theme", "narrative", "structure"], "assess": "End of term writing task", "prereq": "Year 7: Trust, Leadership and Survival", "leadsTo": "Year 8: War poetry" }
+      {
+        "unit": "The Explorer: Transformation Begins",
+        "focus": [
+          "Opening chapters and first impressions",
+          "Retrieval and inference about character",
+          "Predicting with evidence",
+          "How an opening hooks the reader"
+        ],
+        "skills": [
+          "Retrieve and infer",
+          "Explain with evidence"
+        ],
+        "keyTerms": [
+          "inference",
+          "character",
+          "predict",
+          "hook"
+        ],
+        "assess": "Weekly assessment on reading",
+        "prereq": "Year 6: reading skills",
+        "leadsTo": "Year 7: Survival and Setting"
+      },
+      {
+        "unit": "The Explorer: Survival and Setting",
+        "focus": [
+          "How setting is created",
+          "Language of the rainforest",
+          "Descriptive writing",
+          "Cause and effect in the plot"
+        ],
+        "skills": [
+          "Language analysis",
+          "Description"
+        ],
+        "keyTerms": [
+          "setting",
+          "atmosphere",
+          "imagery"
+        ],
+        "assess": "Descriptive writing and analysis",
+        "prereq": "Year 7: Transformation Begins",
+        "leadsTo": "Year 7: Trust, Leadership and Survival"
+      },
+      {
+        "unit": "The Explorer: Trust, Leadership and Survival",
+        "focus": [
+          "Character relationships",
+          "Leadership and conflict",
+          "Writing about character with PETZAAL-style paragraphs"
+        ],
+        "skills": [
+          "Analytical paragraphs",
+          "Quotation use"
+        ],
+        "keyTerms": [
+          "relationship",
+          "motivation",
+          "evidence"
+        ],
+        "assess": "Paragraph response",
+        "prereq": "Year 7: Survival and Setting",
+        "leadsTo": "Year 7: Courage and Decision-Making"
+      },
+      {
+        "unit": "The Explorer: Courage and Decision-Making",
+        "focus": [
+          "Theme: courage",
+          "Planning and writing a response",
+          "Narrative writing task"
+        ],
+        "skills": [
+          "Extended response",
+          "Narrative craft"
+        ],
+        "keyTerms": [
+          "theme",
+          "narrative",
+          "structure"
+        ],
+        "assess": "End of term writing task",
+        "prereq": "Year 7: Trust, Leadership and Survival",
+        "leadsTo": "Year 8: War poetry"
+      }
     ],
     "y8": [
-      { "unit": "War poetry: context and persuasion", "focus": ["Historical context of the First World War", "Propaganda and persuasive language", "Poetry terminology"], "skills": ["Context", "Language effect"], "keyTerms": ["propaganda", "context", "persuasion"], "assess": "Context and persuasion task", "prereq": "Year 7: analytical paragraphs", "leadsTo": "Year 8: reading the poems" },
-      { "unit": "War poetry: reading the poems", "focus": ["Owen, Rosenberg, McCrae, Brooke", "Imagery, tone, structure", "Close reading of poems"], "skills": ["Close reading", "Poetic methods"], "keyTerms": ["imagery", "tone", "stanza", "rhyme"], "assess": "Poem analysis", "prereq": "Year 8: context", "leadsTo": "Year 8: comparing poems" },
-      { "unit": "War poetry: comparing and responding", "focus": ["Comparing attitudes to war", "Comparative paragraphs", "Writing a personal response"], "skills": ["Comparison", "Personal response"], "keyTerms": ["compare", "contrast", "attitude"], "assess": "Comparative essay", "prereq": "Year 8: reading the poems", "leadsTo": "GCSE Literature: poetry comparison, Section B" }
+      {
+        "unit": "War poetry: context and persuasion",
+        "focus": [
+          "Historical context of the First World War",
+          "Propaganda and persuasive language",
+          "Poetry terminology"
+        ],
+        "skills": [
+          "Context",
+          "Language effect"
+        ],
+        "keyTerms": [
+          "propaganda",
+          "context",
+          "persuasion"
+        ],
+        "assess": "Context and persuasion task",
+        "prereq": "Year 7: analytical paragraphs",
+        "leadsTo": "Year 8: reading the poems"
+      },
+      {
+        "unit": "War poetry: reading the poems",
+        "focus": [
+          "Owen, Rosenberg, McCrae, Brooke",
+          "Imagery, tone, structure",
+          "Close reading of poems"
+        ],
+        "skills": [
+          "Close reading",
+          "Poetic methods"
+        ],
+        "keyTerms": [
+          "imagery",
+          "tone",
+          "stanza",
+          "rhyme"
+        ],
+        "assess": "Poem analysis",
+        "prereq": "Year 8: context",
+        "leadsTo": "Year 8: comparing poems"
+      },
+      {
+        "unit": "War poetry: comparing and responding",
+        "focus": [
+          "Comparing attitudes to war",
+          "Comparative paragraphs",
+          "Writing a personal response"
+        ],
+        "skills": [
+          "Comparison",
+          "Personal response"
+        ],
+        "keyTerms": [
+          "compare",
+          "contrast",
+          "attitude"
+        ],
+        "assess": "Comparative essay",
+        "prereq": "Year 8: reading the poems",
+        "leadsTo": "GCSE Literature: poetry comparison, Section B"
+      }
     ],
     "y9": [
-      { "unit": "Of Mice and Men: context and title", "focus": ["1930s America and the Great Depression", "Meaning of the title", "Context to prepare for AO3"], "skills": ["Context", "Prediction"], "keyTerms": ["Depression", "context", "theme"], "assess": "Context task", "prereq": "Year 8: context in poetry", "leadsTo": "Year 9: Chapter 1" },
-      { "unit": "Of Mice and Men: Chapter 1", "focus": ["Setting and character introductions", "Language and structure of the opening", "Analytical paragraphs"], "skills": ["Close analysis", "Quotations"], "keyTerms": ["setting", "foreshadowing", "dialogue"], "assess": "Extract analysis", "prereq": "Year 9: context", "leadsTo": "Year 9: Chapter 2" },
-      { "unit": "Of Mice and Men: Chapter 2 and writing the response", "focus": ["Character and relationships", "Planning and writing a GCSE-style essay", "Technical accuracy"], "skills": ["Essay writing", "AO1 to AO4 skills"], "keyTerms": ["argument", "thesis", "technical accuracy"], "assess": "GCSE-style essay", "prereq": "Year 9: Chapter 1", "leadsTo": "Year 10: A Christmas Carol and Paper 1 reading" }
+      {
+        "unit": "Of Mice and Men: context and title",
+        "focus": [
+          "1930s America and the Great Depression",
+          "Meaning of the title",
+          "Context to prepare for AO3"
+        ],
+        "skills": [
+          "Context",
+          "Prediction"
+        ],
+        "keyTerms": [
+          "Depression",
+          "context",
+          "theme"
+        ],
+        "assess": "Context task",
+        "prereq": "Year 8: context in poetry",
+        "leadsTo": "Year 9: Chapter 1"
+      },
+      {
+        "unit": "Of Mice and Men: Chapter 1",
+        "focus": [
+          "Setting and character introductions",
+          "Language and structure of the opening",
+          "Analytical paragraphs"
+        ],
+        "skills": [
+          "Close analysis",
+          "Quotations"
+        ],
+        "keyTerms": [
+          "setting",
+          "foreshadowing",
+          "dialogue"
+        ],
+        "assess": "Extract analysis",
+        "prereq": "Year 9: context",
+        "leadsTo": "Year 9: Chapter 2"
+      },
+      {
+        "unit": "Of Mice and Men: Chapter 2 and writing the response",
+        "focus": [
+          "Character and relationships",
+          "Planning and writing a GCSE-style essay",
+          "Technical accuracy"
+        ],
+        "skills": [
+          "Essay writing",
+          "AO1 to AO4 skills"
+        ],
+        "keyTerms": [
+          "argument",
+          "thesis",
+          "technical accuracy"
+        ],
+        "assess": "GCSE-style essay",
+        "prereq": "Year 9: Chapter 1",
+        "leadsTo": "Year 10: A Christmas Carol and Paper 1 reading"
+      }
     ]
   },
   "progression": [
-    { "thread": "Reading: phonics to fluency to inference", "steps": { "Reception": "Letter-sound knowledge; blend CVC words", "Y1": "Decode taught sounds; reread decodable books", "Y2": "Read fluently; make inferences; ask questions", "Y4": "Infer feelings and motives with evidence", "Y6": "Retrieve, infer, summarise and evaluate", "Y9": "Analyse language, structure and context; compare texts" } },
-    { "thread": "Writing: sentence to paragraph to structured argument", "steps": { "Reception": "Write a caption", "Y2": "Write a story with capital letters and full stops", "Y4": "Paragraphs, dialogue, fronted adverbials", "Y6": "Formal, cohesive writing", "Y8": "Comparative paragraphs", "Y9": "A structured essay argument" } },
-    { "thread": "Vocabulary and grammar", "steps": { "Y1": "Capital letters, full stops, 'and'", "Y2": "Noun phrases, sentence types, subordination", "Y4": "Fronted adverbials, speech punctuation", "Y5": "Relative clauses, modal verbs, parenthesis", "Y6": "Subjunctive, passive, semi-colons", "Y9": "Analyse grammatical effect and terminology" } },
-    { "thread": "Spoken language", "steps": { "Reception": "Listen and answer questions", "Y2": "Retell, recite and perform", "Y4": "Discuss and justify opinions", "Y6": "Present and debate formally", "Y9": "Short speeches, structured discussion in Standard English" } },
-    { "thread": "Poetry and literature", "steps": { "Reception": "Rhymes and songs", "Y5": "A classic poem and figurative language", "Y7": "A whole class novel", "Y8": "Comparing war poems", "Y9": "A modern whole text with context" } }
+    {
+      "thread": "Reading: phonics to fluency to inference",
+      "steps": {
+        "Reception": "Letter-sound knowledge; blend CVC words",
+        "Y1": "Decode taught sounds; reread decodable books",
+        "Y2": "Read fluently; make inferences; ask questions",
+        "Y4": "Infer feelings and motives with evidence",
+        "Y6": "Retrieve, infer, summarise and evaluate",
+        "Y9": "Analyse language, structure and context; compare texts"
+      }
+    },
+    {
+      "thread": "Writing: sentence to paragraph to structured argument",
+      "steps": {
+        "Reception": "Write a caption",
+        "Y2": "Write a story with capital letters and full stops",
+        "Y4": "Paragraphs, dialogue, fronted adverbials",
+        "Y6": "Formal, cohesive writing",
+        "Y8": "Comparative paragraphs",
+        "Y9": "A structured essay argument"
+      }
+    },
+    {
+      "thread": "Vocabulary and grammar",
+      "steps": {
+        "Y1": "Capital letters, full stops, 'and'",
+        "Y2": "Noun phrases, sentence types, subordination",
+        "Y4": "Fronted adverbials, speech punctuation",
+        "Y5": "Relative clauses, modal verbs, parenthesis",
+        "Y6": "Subjunctive, passive, semi-colons",
+        "Y9": "Analyse grammatical effect and terminology"
+      }
+    },
+    {
+      "thread": "Spoken language",
+      "steps": {
+        "Reception": "Listen and answer questions",
+        "Y2": "Retell, recite and perform",
+        "Y4": "Discuss and justify opinions",
+        "Y6": "Present and debate formally",
+        "Y9": "Short speeches, structured discussion in Standard English"
+      }
+    },
+    {
+      "thread": "Poetry and literature",
+      "steps": {
+        "Reception": "Rhymes and songs",
+        "Y5": "A classic poem and figurative language",
+        "Y7": "A whole class novel",
+        "Y8": "Comparing war poems",
+        "Y9": "A modern whole text with context"
+      }
+    }
   ],
   "toKS4": "KS3 reading, writing, grammar and spoken English prepare pupils for AQA GCSE English Language 8700 and English Literature 8702. For Language, Paper 1 (Explorations in Creative Reading and Writing: AO1, AO2, AO4 reading; AO5, AO6 writing) and Paper 2 (Writers' Viewpoints and Perspectives: AO1, AO2, AO3 reading; AO5, AO6 writing) each carry 80 marks and 50%; the Spoken Language endorsement (AO7 to AO9) is reported separately. For Literature, Paper 1 (Shakespeare and the 19th-century novel: 64 marks, 40%) and Paper 2 (Modern texts and poetry: 96 marks, 60%) assess AO1 to AO4. KS3 inference and evidence feed AO1, language and structure analysis feeds AO2, comparison of poems and viewpoints feeds AO3 (Language) and Literature's poetry comparison, context feeds Literature AO3, and the writing and grammar thread feeds AO5, AO6 and Literature AO4. The KS3 requirement for two Shakespeare plays and pre-1914 literature leads to the Paper 1 set texts.",
   "links": [
-    { "with": "History", "topic": "War poetry and the First World War; Victorian and 1930s context", "years": "Y8 to Y9", "how": "History supplies events and period; English analyses how writers respond." },
-    { "with": "Science", "topic": "Explanation and report writing; survival and the natural world in The Explorer", "years": "Y5 to Y7", "how": "Science supplies accurate content; English teaches clear explanatory writing and vocabulary." },
-    { "with": "Geography", "topic": "Rainforests and settings; descriptive and report writing about places", "years": "Y4 to Y7", "how": "Geography provides place knowledge; English develops description and setting." },
-    { "with": "Mathematics", "topic": "Precise vocabulary and reading word problems", "years": "Y3 to Y6", "how": "Maths needs careful reading; English teaches comprehension and precise word meaning." },
-    { "with": "Art", "topic": "Images as prompts for description and poetry", "years": "Reception to Y9", "how": "Art builds observation; English builds language to describe and respond." },
-    { "with": "Computing", "topic": "Instructions, clear explanation and presenting information", "years": "Y3 to Y9", "how": "Computing uses precise instructions; English teaches clarity and audience." },
-    { "with": "Quran and Arabic", "topic": "Recitation, memorisation and phonics-style decoding of a second script", "years": "Reception to Y6", "how": "Both build careful decoding and fluent recitation; English teaches blending, Arabic teaches its own letters." },
-    { "with": "Islamic Studies", "topic": "Discussion, retelling narrative accounts and justifying opinions", "years": "Y1 to Y9", "how": "Islamic Studies provides topics for talk; English develops discussion skills and structured retelling." },
-    { "with": "PSHE", "topic": "Discussion, debate and personal response in writing", "years": "Y5 to Y9", "how": "PSHE provides issues; English develops spoken argument and written viewpoints." },
-    { "with": "Drama and PE", "topic": "Performance of scripts and poetry; rhythm and rhyme", "years": "Reception to Y9", "how": "Performance uses voice, role and movement; English supplies the texts and expression." }
+    {
+      "with": "History",
+      "topic": "War poetry and the First World War; Victorian and 1930s context",
+      "years": "Y8 to Y9",
+      "how": "History supplies events and period; English analyses how writers respond."
+    },
+    {
+      "with": "Science",
+      "topic": "Explanation and report writing; survival and the natural world in The Explorer",
+      "years": "Y5 to Y7",
+      "how": "Science supplies accurate content; English teaches clear explanatory writing and vocabulary."
+    },
+    {
+      "with": "Geography",
+      "topic": "Rainforests and settings; descriptive and report writing about places",
+      "years": "Y4 to Y7",
+      "how": "Geography provides place knowledge; English develops description and setting."
+    },
+    {
+      "with": "Mathematics",
+      "topic": "Precise vocabulary and reading word problems",
+      "years": "Y3 to Y6",
+      "how": "Maths needs careful reading; English teaches comprehension and precise word meaning."
+    },
+    {
+      "with": "Art",
+      "topic": "Images as prompts for description and poetry",
+      "years": "Reception to Y9",
+      "how": "Art builds observation; English builds language to describe and respond."
+    },
+    {
+      "with": "Computing",
+      "topic": "Instructions, clear explanation and presenting information",
+      "years": "Y3 to Y9",
+      "how": "Computing uses precise instructions; English teaches clarity and audience."
+    },
+    {
+      "with": "Quran and Arabic",
+      "topic": "Recitation, memorisation and phonics-style decoding of a second script",
+      "years": "Reception to Y6",
+      "how": "Both build careful decoding and fluent recitation; English teaches blending, Arabic teaches its own letters."
+    },
+    {
+      "with": "Islamic Studies",
+      "topic": "Discussion, retelling narrative accounts and justifying opinions",
+      "years": "Y1 to Y9",
+      "how": "Islamic Studies provides topics for talk; English develops discussion skills and structured retelling."
+    },
+    {
+      "with": "PSHE",
+      "topic": "Discussion, debate and personal response in writing",
+      "years": "Y5 to Y9",
+      "how": "PSHE provides issues; English develops spoken argument and written viewpoints."
+    },
+    {
+      "with": "Drama and PE",
+      "topic": "Performance of scripts and poetry; rhythm and rhyme",
+      "years": "Reception to Y9",
+      "how": "Performance uses voice, role and movement; English supplies the texts and expression."
+    }
   ],
   "gaps": [
     "Appendix 1 (spelling) and Appendix 2 (vocabulary, grammar and punctuation) were not opened; their year-by-year word lists and terms are not recorded.",
     "EYFS statutory framework PDFs were not opened: the Reception row is provisional and should be checked against the 2026 framework's Communication and Language and Literacy areas and Early Learning Goals.",
-    "The National Curriculum glossary was not opened.",
-    "Year allocation of units follows the school's recommended sequence; statutory content is by key stage.",
-    "Drama and PE and Quran and Arabic links are school subjects outside the National Curriculum English document; check the school's own timetable."
+    "The National Curriculum glossary was not opened."
   ]
 }

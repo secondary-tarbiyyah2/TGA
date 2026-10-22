@@ -24,7 +24,7 @@ import {
   type CurriculumVersion,
 } from "@/lib/learn/curriculum";
 import { StatusChip, ui } from "@/components/learn/ui";
-import { hubsForSubject, matchSpecUnits, sameSubject, specFor, specStatus } from "@/lib/learn/syllabusIndex";
+import { allHubs, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, specStatus, syllabusFor } from "@/lib/learn/syllabusIndex";
 
 type ClassOpt = { id: string; name: string };
 
@@ -268,7 +268,8 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       .map((s) => ({ ...s, units: [...s.units.values()].sort((a, b) => (a.lessons[0]?.lesson_no ?? 0) - (b.lessons[0]?.lesson_no ?? 0)) }));
   }, [lessons, packs]);
 
-  const boards = useMemo(() => [...new Set(allSubjects.flatMap((s) => s.units.map((u) => u.board).filter(Boolean) as string[]))].sort(), [allSubjects]);
+  // Exam boards belong to subjects: once a subject is picked, only its own board(s) are offered.
+  const boards = useMemo(() => [...new Set(allSubjects.filter((s) => subjectFilter === "all" || s.slug === subjectFilter).flatMap((s) => s.units.map((u) => u.board).filter(Boolean) as string[]))].sort(), [allSubjects, subjectFilter]);
   const subjects = useMemo(
     () =>
       allSubjects
@@ -447,7 +448,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
         <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-gold-light bg-white px-4 py-3" role="group" aria-label="Filters">
           <label className="flex items-center gap-2 text-sm font-semibold text-ink">
             Subject
-            <select value={subjectFilter} onChange={(e) => { setSubjectFilter(e.target.value); setSelected(null); setWanted(null); }} className="rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm font-normal">
+            <select value={subjectFilter} onChange={(e) => { setSubjectFilter(e.target.value); setBoardFilter("all"); setSelected(null); setWanted(null); }} className="rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm font-normal">
               <option value="all">All subjects</option>
               {allSubjects.map((s) => (
                 <option key={s.slug} value={s.slug}>
@@ -676,7 +677,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     ) : (
                       <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">This unit is a revision pack only; its summary and video are on the Revision pack tab.</p>
                     ))}
-                  {tab === "spec" && <SpecPanel slug={current.subject_slug} unit={current.unit} />}
+                  {tab === "spec" && <SpecPanel slug={current.subject_slug} unit={current.unit} year={year || ""} />}
                   {tab === "connections" && <ConnectionsPanel subject={current.subject} unit={current.unit} />}
                   {tab === "revision" && (
                     <RevisionPackPanel
@@ -761,73 +762,286 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
 
 type PackQuestion = { id: string; topic: string; lesson_no: number | null; question: string; options: string[]; answer: number; explanation: string | null; in_quiz: boolean };
 
-/** The exam-board spec points this unit appears to cover. Matched by reference and title, so treat it as a suggestion. */
-function SpecPanel({ slug, unit }: { slug: string; unit: string }) {
+/** The whole specification for this subject, laid out like the board's own document, with the units this lesson unit seems to cover opened first. Matching is by name, so treat it as a suggestion. */
+function SpecPanel({ slug, unit, year }: { slug: string; unit: string; year: string }) {
   const spec = specFor(slug);
+  const syl = syllabusFor(slug);
   const matches = useMemo(() => matchSpecUnits(slug, unit), [slug, unit]);
-  if (!spec) return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No specification is loaded for this subject yet. KS4 subjects have one; KS1 to KS3 syllabuses are in the Syllabus and specification pack.</p>;
+  const matchRefs = useMemo(() => new Set(matches.map((m) => m.ref)), [matches]);
+  const [q, setQ] = useState("");
+  const [openRefs, setOpenRefs] = useState<Set<string> | null>(null);
+  const [view, setView] = useState<"unit" | "all">("unit");
+  if (!spec && !syl) return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No specification or syllabus is loaded for this subject yet.</p>;
+
+  if (!spec && syl) {
+    const here = matchSyllabusUnits(slug, year, unit);
+    const list = view === "unit" && here.length ? here : syl.years[year] || [];
+    return (
+      <div className="space-y-3">
+        <p className="rounded-xl border border-gold-light bg-cream px-3 py-2 text-xs text-ink/75">
+          {syl.framework} · status: <strong>{syl.status}</strong>. {view === "unit" && here.length ? "Suggested match for this unit." : `All ${yearLabel(year)} units.`}
+        </p>
+        {here.length > 0 && <Tabs variant="switch" items={[{ key: "unit", label: "This unit" }, { key: "all", label: `All ${yearLabel(year)}` }]} value={view} onChange={(k) => setView(k as "unit" | "all")} label="Show" />}
+        {list.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No syllabus units for {yearLabel(year)} in this subject.</p>}
+        {list.map((u) => (
+          <section key={u.unit} className="rounded-2xl border border-gold-light bg-white p-4">
+            <h3 className="text-sm font-semibold text-ink">{u.unit}</h3>
+            {u.focus.length > 0 && (
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink/85">
+                {u.focus.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            )}
+            {u.skills.length > 0 && <p className="mt-2 text-xs text-ink/70"><strong>Skills:</strong> {u.skills.join("; ")}</p>}
+            {u.keyTerms.length > 0 && <p className="mt-1 text-xs text-ink/70"><strong>Key terms:</strong> {u.keyTerms.join(", ")}</p>}
+            {u.assess && <p className="mt-1 text-xs text-ink/70"><strong>Assessment:</strong> {u.assess}</p>}
+          </section>
+        ))}
+      </div>
+    );
+  }
+
+  if (!spec) return null;
+  const ql = q.trim().toLowerCase();
+  const visible = spec.units.filter((u) => !ql || `${u.ref} ${u.title} ${u.points.join(" ")}`.toLowerCase().includes(ql));
+  const groups = new Map<string, typeof visible>();
+  visible.forEach((u) => {
+    const k = u.paper || "Units";
+    groups.set(k, [...(groups.get(k) || []), u]);
+  });
+  const isOpen = (u: { ref: string }) => (openRefs ? openRefs.has(u.ref) : matchRefs.has(u.ref)) || (!!ql && visible.length <= 8);
+  const toggle = (ref: string) => {
+    const base = openRefs ? new Set(openRefs) : new Set(matchRefs);
+    if (base.has(ref)) base.delete(ref);
+    else base.add(ref);
+    setOpenRefs(base);
+  };
   return (
     <div className="space-y-3">
-      <p className="rounded-xl border border-gold-light bg-cream px-3 py-2 text-xs text-ink/75">
-        {spec.board} {spec.code} · status: <strong>{spec.status}</strong>. Spec points are paraphrased, and the match to this unit is suggested from its name, so confirm before relying on it.
-      </p>
-      {matches.length === 0 ? (
-        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No spec unit matched this unit's name. Open the full specification in the Syllabus and specification pack.</p>
-      ) : (
-        matches.map((u) => (
-          <section key={u.ref} className="rounded-2xl border border-gold-light bg-white p-4">
-            <h3 className="text-sm font-semibold text-ink">
-              {u.ref} · {u.title}
-            </h3>
-            <p className="text-xs text-ink/60">{[u.paper, u.year].filter(Boolean).join(" · ")}</p>
-            <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm text-ink/85">
-              {u.points.map((p) => (
-                <li key={p}>{p}</li>
+      <div className="rounded-xl border border-gold-light bg-cream px-3 py-2 text-xs text-ink/75">
+        <strong>
+          {spec.board} {spec.code}
+        </strong>{" "}
+        · {spec.qualification} · status: <strong>{spec.status}</strong>
+        {spec.tiers ? ` · ${spec.tiers}` : ""}. Points are paraphrased. The units opened for this lesson unit are suggested from its name.
+        {spec.status !== "Verified" && spec.gaps.length > 0 && (
+          <details className="mt-1">
+            <summary className="cursor-pointer font-semibold">Not yet checked against the official document ({spec.gaps.length})</summary>
+            <ul className="mt-1 list-disc space-y-0.5 pl-5">
+              {spec.gaps.map((g) => (
+                <li key={g}>{g}</li>
               ))}
-            </ol>
-          </section>
-        ))
+            </ul>
+          </details>
+        )}
+      </div>
+
+      <details className="rounded-2xl border border-gold-light bg-white p-3">
+        <summary className="cursor-pointer text-sm font-semibold text-ink">How it is assessed ({spec.assessment.length} paper{spec.assessment.length === 1 ? "" : "s"}{spec.nonExam && !/^none/i.test(spec.nonExam) ? " + non-exam" : ""})</summary>
+        <div className="mt-2 overflow-x-auto">
+          <table className="w-full min-w-[32rem] text-left text-sm">
+            <thead className="text-xs uppercase tracking-wide text-ink/60">
+              <tr>
+                <th className="py-1 pr-3">Paper</th>
+                <th className="py-1 pr-3">Time</th>
+                <th className="py-1 pr-3">Marks</th>
+                <th className="py-1 pr-3">Weight</th>
+                <th className="py-1">Covers</th>
+              </tr>
+            </thead>
+            <tbody>
+              {spec.assessment.map((a) => (
+                <tr key={a.paper} className="border-t border-gold-light/70 align-top">
+                  <td className="py-1.5 pr-3 font-semibold">
+                    {a.paper}
+                    {a.title ? <span className="block text-xs font-normal text-ink/65">{a.title}</span> : null}
+                  </td>
+                  <td className="py-1.5 pr-3">{a.duration}</td>
+                  <td className="py-1.5 pr-3 tabular-nums">{a.marks}</td>
+                  <td className="py-1.5 pr-3">{a.weight}</td>
+                  <td className="py-1.5 text-ink/80">{a.content}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {spec.nonExam && !/^none/i.test(spec.nonExam) && <p className="mt-2 text-sm text-ink/80"><strong>Non-exam:</strong> {spec.nonExam}</p>}
+        {spec.aos.length > 0 && (
+          <ul className="mt-2 space-y-0.5 text-sm text-ink/80">
+            {spec.aos.map((a) => (
+              <li key={a.code}>
+                <strong>{a.code}</strong> ({a.weight}): {a.desc}
+              </li>
+            ))}
+          </ul>
+        )}
+        {spec.commandWords.length > 0 && (
+          <p className="mt-2 text-xs text-ink/70">
+            <strong>Command words:</strong> {spec.commandWords.map((c) => `${c.word} (${c.meaning})`).join("; ")}
+          </p>
+        )}
+      </details>
+
+      <div className="flex flex-wrap items-center gap-2">
+        <input type="search" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search this specification" placeholder={`Search ${spec.units.length} units and points`} className="min-w-0 flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm" />
+        <button type="button" className={btn} onClick={() => setOpenRefs(new Set(spec.units.map((u) => u.ref)))}>
+          Expand all
+        </button>
+        <button type="button" className={btn} onClick={() => setOpenRefs(new Set())}>
+          Collapse all
+        </button>
+      </div>
+      {matches.length > 0 && !ql && (
+        <p className="text-xs text-ink/65">
+          Suggested for this unit: {matches.map((m) => m.ref).join(", ")}
+        </p>
       )}
+      {visible.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-6 text-center text-sm text-ink/70">Nothing in the specification matches “{q}”.</p>}
+      {[...groups.entries()].map(([paper, us]) => (
+        <section key={paper} aria-label={paper} className="overflow-hidden rounded-2xl border border-gold-light bg-white">
+          <h3 className="border-b border-gold-light bg-cream px-4 py-2 text-xs font-semibold uppercase tracking-wide text-ink/65">
+            {paper} · {us.length} unit{us.length === 1 ? "" : "s"}
+          </h3>
+          <ul>
+            {us.map((u) => {
+              const open = isOpen(u);
+              const hit = matchRefs.has(u.ref);
+              return (
+                <li key={u.ref} className={`border-t border-gold-light/70 first:border-t-0 ${hit ? "bg-teal-50" : ""}`}>
+                  <button type="button" aria-expanded={open} onClick={() => toggle(u.ref)} className="flex w-full items-start gap-3 px-4 py-2.5 text-left">
+                    <span className="w-14 shrink-0 font-mono text-xs font-semibold text-ink/70">{u.ref}</span>
+                    <span className="min-w-0 flex-1 text-sm font-semibold text-ink">
+                      {u.title}
+                      {hit && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 text-[11px] font-semibold text-teal-900">suggested</span>}
+                      <span className="block text-xs font-normal text-ink/60">{[u.year, `${u.points.length} points`].filter(Boolean).join(" · ")}</span>
+                    </span>
+                    <span aria-hidden="true" className="pt-0.5 text-ink/50">{open ? "–" : "+"}</span>
+                  </button>
+                  {open && (
+                    <ol className="ml-[4.5rem] list-none space-y-1 px-4 pb-3 text-sm text-ink/85">
+                      {u.points.map((p, i) => (
+                        <li key={p} className="flex gap-2">
+                          <span className="w-10 shrink-0 font-mono text-xs text-ink/55">
+                            {u.ref}.{i + 1}
+                          </span>
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ))}
     </div>
   );
 }
 
-/** Cross-curricular teaching hubs that involve this subject, with the other subjects' links. */
+/**
+ * Cross-curricular links as a map: subjects sit round a circle, a line joins two subjects for every teaching hub they share,
+ * and picking a subject lists just the hubs that join it to this one.
+ */
 function ConnectionsPanel({ subject, unit }: { subject: string; unit: string }) {
-  const hubs = useMemo(() => hubsForSubject(subject), [subject]);
-  const uw = useMemo(() => new Set(unit.toLowerCase().split(/\W+/).filter((w) => w.length > 3)), [unit]);
-  const ranked = useMemo(() => {
-    const score = (h: (typeof hubs)[number]) => h.nodes.filter((n) => sameSubject(n.subject, subject)).reduce((t, n) => t + `${n.ref} ${n.note}`.toLowerCase().split(/\W+/).filter((w) => uw.has(w)).length, 0);
-    return [...hubs].sort((a, b) => score(b) - score(a));
-  }, [hubs, subject, uw]);
+  const hubs = allHubs();
+  const names = useMemo(() => {
+    const m = new Map<string, string>();
+    hubs.forEach((h) => h.nodes.forEach((n) => m.set(n.subject.toLowerCase(), n.subject)));
+    return [...m.values()].sort();
+  }, [hubs]);
+  const home = names.find((n) => sameSubject(n, subject)) || null;
+  const [pick, setPick] = useState<string | null>(null);
   const [open, setOpen] = useState<string | null>(null);
-  if (!ranked.length) return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No cross-curricular hubs include this subject yet.</p>;
+  const R = 118;
+  const C = 150;
+  const pos = (i: number) => {
+    const a = (i / names.length) * Math.PI * 2 - Math.PI / 2;
+    return { x: C + R * Math.cos(a), y: C + R * Math.sin(a) };
+  };
+  const shared = (a: string, b: string) => hubs.filter((h) => h.nodes.some((n) => n.subject === a) && h.nodes.some((n) => n.subject === b));
+  const uw = useMemo(() => new Set(unit.toLowerCase().split(/\W+/).filter((w) => w.length > 3)), [unit]);
+  const score = (h: (typeof hubs)[number]) => h.nodes.filter((n) => home && n.subject === home).reduce((t, n) => t + `${n.ref} ${n.note}`.toLowerCase().split(/\W+/).filter((w) => uw.has(w)).length, 0);
+  if (!home) return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No cross-curricular hubs include this subject yet.</p>;
+  const list = (pick ? shared(home, pick) : hubs.filter((h) => h.nodes.some((n) => n.subject === home))).sort((a, b) => score(b) - score(a));
+  const edges: { a: number; b: number; n: number; on: boolean }[] = [];
+  names.forEach((a, i) =>
+    names.forEach((b, j) => {
+      if (j <= i) return;
+      const n = shared(a, b).length;
+      if (n) edges.push({ a: i, b: j, n, on: a === home || b === home });
+    }),
+  );
   return (
-    <div className="space-y-2">
-      <p className="text-xs text-ink/65">Teaching hubs where {subject} meets other subjects. Most relevant to this unit first.</p>
-      {ranked.map((h) => (
-        <section key={h.id} className="rounded-2xl border border-gold-light bg-white">
-          <button type="button" aria-expanded={open === h.id} onClick={() => setOpen(open === h.id ? null : h.id)} className="flex w-full items-start gap-3 px-4 py-3 text-left">
-            <span className="min-w-0 flex-1">
-              <span className="block font-semibold text-ink">{h.title}</span>
-              <span className="block text-sm text-ink/70">{h.hook}</span>
-            </span>
-            <span aria-hidden="true" className="pt-1 text-ink/50">{open === h.id ? "–" : "+"}</span>
+    <div className="grid gap-4 md:grid-cols-[19rem_minmax(0,1fr)]">
+      <div>
+        <svg viewBox="0 0 300 300" role="img" aria-label={`Map of cross-curricular links around ${home}`} className="w-full max-w-[19rem]">
+          {edges.map((e) => {
+            const p = pos(e.a);
+            const q = pos(e.b);
+            const sel = pick && ((names[e.a] === home && names[e.b] === pick) || (names[e.b] === home && names[e.a] === pick));
+            return <line key={`${e.a}-${e.b}`} x1={p.x} y1={p.y} x2={q.x} y2={q.y} stroke={sel ? "#0f766e" : e.on ? "#0f766e" : "#c9c2b3"} strokeWidth={sel ? 4 : e.on ? 1 + e.n : 0.6 + e.n * 0.4} strokeOpacity={sel ? 1 : e.on ? 0.55 : 0.35} />;
+          })}
+          {names.map((n, i) => {
+            const p = pos(i);
+            const isHome = n === home;
+            const linked = !isHome && shared(home, n).length > 0;
+            const on = pick === n;
+            const left = p.x < C - 8;
+            const right = p.x > C + 8;
+            return (
+              <g key={n} onClick={() => linked && setPick(on ? null : n)} style={{ cursor: linked ? "pointer" : "default" }} role={linked ? "button" : undefined} tabIndex={linked ? 0 : undefined} aria-label={linked ? `${n}: ${shared(home, n).length} shared hubs` : n} onKeyDown={(e) => linked && (e.key === "Enter" || e.key === " ") && setPick(on ? null : n)}>
+                <circle cx={p.x} cy={p.y} r={isHome ? 11 : on ? 9 : 7} fill={isHome ? "#0f766e" : on ? "#b8892b" : linked ? "#ffffff" : "#e5e0d4"} stroke={isHome || linked ? "#0f766e" : "#c9c2b3"} strokeWidth={2} />
+                <text x={p.x + (left ? -13 : right ? 13 : 0)} y={p.y + (left || right ? 4 : p.y < C ? -14 : 20)} textAnchor={left ? "end" : right ? "start" : "middle"} fontSize="10" fontWeight={isHome || on ? 700 : 400} fill="currentColor">
+                  {n.replace("English ", "Eng. ")}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+        <p className="text-xs text-ink/65">Thick lines join {home} to other subjects. Click a subject to see the hubs you share with it.</p>
+        {pick && (
+          <button type="button" className={ui.btnLink} onClick={() => setPick(null)}>
+            Show all {home} hubs
           </button>
-          {open === h.id && (
-            <ul className="space-y-2 border-t border-gold-light/70 px-4 py-3">
-              {h.nodes.map((n) => (
-                <li key={`${n.subject}-${n.ref}`} className={`rounded-lg px-3 py-2 text-sm ${sameSubject(n.subject, subject) ? "bg-teal-50" : "bg-cream"}`}>
-                  <span className="font-semibold text-ink">
-                    {n.subject} <span className="font-normal text-ink/60">({n.ref})</span>
-                  </span>
-                  <span className="block text-ink/80">{n.note}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-      ))}
+        )}
+      </div>
+      <div className="space-y-2">
+        <p className="text-sm font-semibold text-ink">
+          {pick ? `${home} + ${pick}` : `Hubs involving ${home}`} · {list.length}
+        </p>
+        {list.map((h) => (
+          <section key={h.id} className="rounded-2xl border border-gold-light bg-white">
+            <button type="button" aria-expanded={open === h.id} onClick={() => setOpen(open === h.id ? null : h.id)} className="flex w-full items-start gap-3 px-4 py-3 text-left">
+              <span className="min-w-0 flex-1">
+                <span className="block font-semibold text-ink">{h.title}</span>
+                <span className="block text-sm text-ink/70">{h.hook}</span>
+                <span className="mt-1 flex flex-wrap gap-1">
+                  {h.nodes.map((n) => (
+                    <span key={`${n.subject}-${n.ref}`} className={`rounded-full px-2 py-0.5 text-[11px] ${n.subject === home ? "bg-teal-100 font-semibold text-teal-900" : "bg-cream text-ink/75"}`}>
+                      {n.subject}
+                    </span>
+                  ))}
+                </span>
+              </span>
+              <span aria-hidden="true" className="pt-1 text-ink/50">{open === h.id ? "–" : "+"}</span>
+            </button>
+            {open === h.id && (
+              <ul className="space-y-2 border-t border-gold-light/70 px-4 py-3">
+                {h.nodes.map((n) => (
+                  <li key={`${n.subject}-${n.ref}`} className={`rounded-lg px-3 py-2 text-sm ${n.subject === home ? "bg-teal-50" : "bg-cream"}`}>
+                    <span className="font-semibold text-ink">
+                      {n.subject} <span className="font-normal text-ink/60">({n.ref})</span>
+                    </span>
+                    <span className="block text-ink/80">{n.note}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))}
+      </div>
     </div>
   );
 }

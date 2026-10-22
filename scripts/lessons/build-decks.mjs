@@ -179,7 +179,9 @@ function tracker(slide, ctx, stage) {
     const on = i === stage;
     const done = i < stage;
     slide.addShape("ellipse", { x, y: 0.35, w: 0.24, h: 0.24, fill: { color: on ? ctx.accent : done ? GOLD : "FFFFFF" }, line: { color: on ? ctx.accent : done ? GOLD : "C9C2B3", width: 1.5 } });
-    slide.addText(label, { x: x - 0.4, y: 0.6, w: 1.05, h: 0.26, fontFace: FONT, fontSize: 10, bold: on, color: on ? ctx.accent : MUTED, align: "center" });
+    const target = ctx.nav?.stage?.[i];
+    const runs = target ? [{ text: label, options: { hyperlink: { slide: target, tooltip: `Jump to: ${ctx.nav.stageTitle?.[i] || label}` } } }] : label;
+    slide.addText(runs, { x: x - 0.4, y: 0.6, w: 1.05, h: 0.26, fontFace: FONT, fontSize: 10, bold: on, color: on ? ctx.accent : MUTED, align: "center" });
   });
 }
 
@@ -200,6 +202,18 @@ function header(slide, ctx, title, kicker, stage, minutes) {
   }
   slide.addShape("line", { x: 0.8, y: 1.85, w: 1.2, h: 0, line: { color: GOLD, width: 3 } });
   tracker(slide, ctx, stage);
+  // Navigation: remember where each stage starts (pass one), and add a way back to the lesson map (pass two).
+  const no = ctx.slideNo ? ctx.slideNo() : 0;
+  if (ctx.rec && no) {
+    if (stage != null && ctx.rec.stage[stage] == null) {
+      ctx.rec.stage[stage] = no;
+      ctx.rec.stageTitle[stage] = clean(title);
+    }
+    if (stage == null && ctx.rec.objectives == null) ctx.rec.objectives = no;
+  }
+  if (ctx.nav?.agenda) {
+    slide.addText([{ text: "↩ Lesson map", options: { hyperlink: { slide: ctx.nav.agenda, tooltip: "Back to the lesson map" } } }], { x: 10.0, y: 7.1, w: 2.1, h: 0.34, fontFace: FONT, fontSize: 11, bold: true, color: ctx.accent, align: "right", valign: "middle" });
+  }
 }
 
 /** Original TGA character for the youngest: Najm, a smiling eight-point star. */
@@ -443,7 +457,7 @@ function tajweedKeySlide(pptx, ctx) {
 const parts = makeParts({ fitSize, clean, FONT, INK, MUTED, GOLD, GOLD_DARK, GOLD_SOFT, CREAM, LINE });
 
 // ── The deck ───────────────────────────────────────────────────────────────
-function buildDeck(file, lesson, nextLesson) {
+function buildDeck(file, lesson, nextLesson, nav = null) {
   const pptx = new PptxGenJS();
   pptx.layout = "LAYOUT_WIDE"; // 13.33 x 7.5
   pptx.title = `${file.subject} ${YEAR_LABEL(file.year)} – ${lesson.title}`;
@@ -462,7 +476,7 @@ function buildDeck(file, lesson, nextLesson) {
   const band = bandFor(file.year);
   const B = BAND[band];
   const theme = themeFor(subjectSlug);
-  const ctx = { band, n: lesson.n, theme, accent: theme.accent || ACCENTS[subjectSlug] || TEAL, mathy: /^(mathematics|science|gcse-science|business)$/.test(subjectSlug), subjectLabel: file.subject, yearLabel: YEAR_LABEL(file.year) };
+  const ctx = { band, n: lesson.n, theme, accent: theme.accent || ACCENTS[subjectSlug] || TEAL, mathy: /^(mathematics|science|gcse-science|business)$/.test(subjectSlug), subjectLabel: file.subject, yearLabel: YEAR_LABEL(file.year), nav: nav || null, rec: { stage: {}, stageTitle: {}, agenda: null, close: null }, slideNo: () => slideCount };
   const quran = subjectSlug === "quran";
   const ks4 = file.year === "y10" || file.year === "y11";
   const duration = lesson.duration || (band === "early" ? 30 : band === "junior" ? 45 : 50);
@@ -531,6 +545,35 @@ function buildDeck(file, lesson, nextLesson) {
       s.addText([{ text: "LINKS  ", options: { bold: true, color: "E3C98F", charSpacing: 2 } }, { text: clean(lesson.crossCurricular), options: { color: "D9D4C7" } }], { x: 0.9, y: 5.6, w: 8.0, h: 0.9, fontFace: FONT, fontSize: fitSize(lesson.crossCurricular, 7.0, 0.9, 16, 11), valign: "top" });
     }
     s.addNotes(`Read the question aloud and take two or three first ideas. Do not answer it yet: pupils return to it at the exit ticket, which is where progress is evidenced.${lesson.smsc ? ` SMSC: ${clean(lesson.smsc)}` : ""}`);
+  }
+
+  // 1c. Lesson map: every stage of the lesson, each one a link to its first slide.
+  {
+    const s = pptx.addSlide();
+    ctx.rec.agenda = slideCount;
+    const dark = band !== "early";
+    s.background = { color: band === "early" ? "FFFBF3" : CREAM };
+    s.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
+    s.addText(band === "early" ? "OUR LESSON" : "LESSON MAP", { x: 0.8, y: 0.45, w: 8, h: 0.4, fontFace: FONT, fontSize: 14, bold: true, color: ctx.accent, charSpacing: 4 });
+    s.addText(clean(lesson.title), { x: 0.8, y: 0.85, w: 11.7, h: 0.9, fontFace: dark ? theme.head : FONT, fontSize: fitSize(lesson.title, fw(11.7, dark ? theme.head : FONT), 0.9, 32, 20), bold: true, color: INK, valign: "middle" });
+    s.addText("Click a stage to jump to it. Use “Lesson map” at the bottom of any slide to come back.", { x: 0.8, y: 1.75, w: 11.7, h: 0.35, fontFace: FONT, fontSize: 13, color: MUTED });
+    const labels = B.stages;
+    const rows = [];
+    if (ctx.nav?.objectives || true) rows.push({ label: B.objectivesTitle, sub: "What we are learning", target: ctx.nav?.objectives, n: "" });
+    labels.forEach((l, i) => rows.push({ label: l, sub: ctx.nav?.stageTitle?.[i] || "", target: ctx.nav?.stage?.[i], n: String(i + 1) }));
+    if (lesson.homework) rows.push({ label: B.homeworkKicker, sub: "Home learning and next lesson", target: ctx.nav?.close, n: "" });
+    const top = 2.3;
+    const rowH = Math.min(0.62, 4.5 / rows.length);
+    rows.forEach((r, i) => {
+      const y = top + i * (rowH + 0.06);
+      s.addShape("roundRect", { x: 0.8, y, w: 11.7, h: rowH, rectRadius: 0.1, fill: { color: "FFFFFF" }, line: { color: LINE, width: 1 } });
+      s.addShape("ellipse", { x: 1.0, y: y + (rowH - 0.38) / 2, w: 0.38, h: 0.38, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
+      s.addText(r.n || "•", { x: 1.0, y: y + (rowH - 0.38) / 2, w: 0.38, h: 0.38, fontFace: FONT, fontSize: 13, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
+      const lab = r.target ? [{ text: r.label, options: { bold: true, color: ctx.accent, hyperlink: { slide: r.target, tooltip: `Go to: ${r.label}` } } }] : [{ text: r.label, options: { bold: true, color: ctx.accent } }];
+      s.addText(lab, { x: 1.6, y, w: 3.0, h: rowH, fontFace: FONT, fontSize: 18, valign: "middle" });
+      s.addText(clean(r.sub), { x: 4.7, y, w: 7.6, h: rowH, fontFace: FONT, fontSize: fitSize(r.sub || " ", 7.6, rowH, 16, 11), color: INK, valign: "middle", fit: "shrink" });
+    });
+    s.addNotes("Show the lesson map at the start so pupils can see the journey. Each stage name is a link: use it to jump, for example straight to the independent task. The Lesson map link at the bottom of every slide returns here.");
   }
 
   // 2. Objectives ------------------------------------------------------------
@@ -760,6 +803,7 @@ function buildDeck(file, lesson, nextLesson) {
   {
     const s = pptx.addSlide();
     S.close = slideCount;
+    ctx.rec.close = slideCount;
     s.background = { color: band === "early" ? "FFFBF3" : CREAM };
     s.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
     const textW = band === "early" ? 8.2 : band === "junior" ? 10.0 : 8.3;
@@ -816,7 +860,9 @@ for (const f of walk(LESSONS).sort()) {
     const dir = path.join(outDir, subjectSlug, year);
     fs.mkdirSync(dir, { recursive: true });
     const next = ordered.find((l) => l.n === lesson.n + 1) || null;
-    const { pptx, slides, breaks, ctx } = buildDeck(file, lesson, next);
+    // Two passes: the first records where each stage starts, the second adds the links.
+    const first = buildDeck(file, lesson, next);
+    const { pptx, slides, breaks, ctx } = buildDeck(file, lesson, next, first.ctx.rec);
     await pptx.writeFile({ fileName: path.join(dir, name) });
     const planName = name.replace(/\.pptx$/, "-plan.docx");
     fs.writeFileSync(path.join(dir, planName), await buildPlan(file, lesson, { yearLabel: YEAR_LABEL(year), accent: ctx.accent, band: ctx.band, next, slides, breaks }));

@@ -7,7 +7,7 @@
   "code": "4BS1",
   "specVersion": "Issue 2, February 2026 (as stated in the specification PDF text read); first teaching September 2017, first exam June 2019",
   "status": "Provisional",
-  "statusNote": "Replaces the earlier UK GCSE 1BS0 file. The correct qualification is Pearson Edexcel International GCSE Business 4BS1. Opened: the Pearson International GCSE Business (2027) landing page (a new qualification, teaching from September 2027, so not relevant to a 2026-28 cohort) and the 4BS1 specification PDF. The PDF was read through a page-summarising fetch tool, not page by page. Paper structure, marks, weights, assessment objectives, command words, quantitative skills, formulae and the section 1 to 5 topic titles with their headline content were obtained. Full bullet-level wording of every sub-topic was not read, so status is Provisional. Not opened: the Pearson 4BS1 qualification page for the current course, sample assessment materials, mark schemes. Year and term allocation is a recommended sequence, not a board requirement.",
+  "statusNote": "Replaces the earlier UK GCSE 1BS0 file; correct qualification is Pearson Edexcel International GCSE Business 4BS1. The official specification PDF (Issue 2, February 2026) was re-read in this pass in separate sections: contents page, sections 1 to 5 at numbered sub-statement level (for example 1.1.1, 2.5.3, 5.2.3), assessment objectives, paper summary, quantitative skills and the Appendix 2 command words. Unit refs and titles match the PDF contents page, and each unit now covers every numbered statement. Kept Provisional because the only available PDF access was a fetch tool that returns model-written text, not raw page text, so wording was not checked against the page images. Year and term allocation is a recommended sequence, not a board requirement.",
   "sources": [
     {
       "title": "Pearson Edexcel International GCSE (9-1) Business 4BS1 specification (PDF)",
@@ -28,7 +28,7 @@
       "marks": 80,
       "weight": "50%",
       "content": "Whole specification, set in the context of a small business (up to 49 employees, local or national market)",
-      "format": "Four compulsory 20-mark questions mixing multiple choice, short answer, data response and open-ended writing; calculator allowed; June and November series"
+      "format": "Four compulsory 20-mark questions mixing multiple choice, short answer, data response and open-ended writing; calculator allowed; June and November series; paper-based or onscreen"
     },
     {
       "paper": "Paper 2 (4BS1/02)",
@@ -37,7 +37,7 @@
       "marks": 80,
       "weight": "50%",
       "content": "Whole specification, set in the context of a large business (more than 250 employees, multinational or global market)",
-      "format": "Four compulsory 20-mark questions mixing multiple choice, short answer, data response and open-ended writing; calculator allowed; June and November series"
+      "format": "Four compulsory 20-mark questions mixing multiple choice, short answer, data response and open-ended writing; calculator allowed; June and November series; paper-based or onscreen"
     }
   ],
   "nonExam": "None: 100% external written papers. Quantitative skills are 10% of total marks across both papers, always in a business context. Six ratio formulae are provided in the exam. Assessments use International Accounting Standards terms (for example statement of financial position, inventory).",
@@ -71,25 +71,41 @@
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Financial aims include survival, profit, sales, market share and financial security",
-        "Non-financial aims include social objectives, personal satisfaction, challenge, independence and control",
-        "Objectives change with market conditions, technology, performance, legislation and internal reasons"
+        "1.1.1 Financial aims: survival, profit, sales, market share, financial security",
+        "1.1.1 Non-financial aims: social objectives, personal satisfaction, challenge, independence, control",
+        "1.1.2 Aims and objectives change as the business evolves",
+        "1.1.2 Triggers: market conditions, technology, performance, legislation, internal reasons"
       ],
-      "keyTerms": ["aim", "objective", "survival", "profit", "market share"]
+      "keyTerms": [
+        "aim",
+        "objective",
+        "survival",
+        "profit",
+        "market share"
+      ]
     },
     {
       "ref": "1.2",
-      "title": "Types of organisation",
+      "title": "Types of organisations",
       "paper": "Papers 1 and 2",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Sole traders, partnerships, private and public limited companies and public corporations",
-        "Compare forms by risk, ownership, limited liability, control, finance and use of profits",
-        "Stakeholders and shareholders; judging which ownership form suits a business",
-        "Franchises, social enterprises and multinationals"
+        "1.2.1 Ownership types: sole trader, partnership, private and public limited company, public corporation",
+        "1.2.2 Compare forms by risk, ownership and limited liability",
+        "1.2.2 Reasons for and against public corporations being publicly owned",
+        "1.2.2 Compare control, sources of finance and use of profits",
+        "1.2.2 Stakeholders and shareholders; judge which ownership form suits a business",
+        "1.2.3 Other forms: franchises, social enterprises and multinationals"
       ],
-      "keyTerms": ["limited liability", "sole trader", "partnership", "franchise", "social enterprise", "shareholder"]
+      "keyTerms": [
+        "limited liability",
+        "sole trader",
+        "partnership",
+        "franchise",
+        "social enterprise",
+        "shareholder"
+      ]
     },
     {
       "ref": "1.3",
@@ -98,25 +114,33 @@
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Primary sector businesses extract resources",
-        "Secondary sector businesses convert materials into goods",
-        "Tertiary sector businesses provide services"
+        "1.3.1 Primary sector businesses extract raw materials",
+        "1.3.1 Secondary sector businesses convert raw materials into finished or semi-finished goods",
+        "1.3.1 Tertiary sector businesses provide a wide range of services"
       ],
-      "keyTerms": ["primary", "secondary", "tertiary"]
+      "keyTerms": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ]
     },
     {
       "ref": "1.4",
-      "title": "Location decisions",
+      "title": "Decisions on location",
       "paper": "Papers 1 and 2",
       "year": "Y10",
       "term": "Spring",
       "points": [
-        "Location depends on proximity to market, labour, materials and competitors",
-        "The nature of the activity shapes the location choice",
-        "The internet allows e-commerce instead of fixed premises",
-        "Legal controls and trade blocs influence where a business locates"
+        "1.4.1 Location and relocation depend on proximity to market, labour, materials and competitors",
+        "1.4.1 The nature of the business activity affects the location",
+        "1.4.1 The internet: e-commerce and/or fixed premises",
+        "1.4.1 Legal controls and trade blocs influence location"
       ],
-      "keyTerms": ["e-commerce", "proximity", "trade bloc"]
+      "keyTerms": [
+        "e-commerce",
+        "proximity",
+        "trade bloc"
+      ]
     },
     {
       "ref": "4.1",
@@ -125,12 +149,20 @@
       "year": "Y10",
       "term": "Spring",
       "points": [
-        "Research identifies customer needs and market gaps and reduces risk",
-        "Primary methods: surveys, questionnaires, focus groups, observation, test marketing",
-        "Secondary sources: internet, market reports, government reports",
-        "Qualitative and quantitative data, social media and reliability of results"
+        "4.1.1 Purpose: find customer wants and needs, identify market gaps",
+        "4.1.1 Reduces risk and provides evidence for decisions",
+        "4.1.2 Primary methods: surveys, questionnaires, focus groups, observation, test marketing",
+        "4.1.2 Secondary sources: online sources, market reports, government reports",
+        "4.1.3 Qualitative and quantitative data",
+        "4.1.3 Role of social media in gathering data; why data must be dependable"
       ],
-      "keyTerms": ["primary research", "secondary research", "qualitative", "quantitative", "test marketing"]
+      "keyTerms": [
+        "primary research",
+        "secondary research",
+        "qualitative",
+        "quantitative",
+        "test marketing"
+      ]
     },
     {
       "ref": "4.2",
@@ -139,54 +171,83 @@
       "year": "Y10",
       "term": "Spring",
       "points": [
-        "Marketing meets customer needs and builds relationships and loyalty",
-        "Market orientation versus product orientation; niche versus mass marketing",
-        "Businesses respond to changing needs, spending patterns and competition",
-        "Segmentation by location, demographics, lifestyle, income and age"
+        "4.2.1 Marketing meets customer requirements, builds relationships and retains loyal customers",
+        "4.2.1 Market orientation versus product orientation",
+        "4.2.1 Market share and its analysis",
+        "4.2.1 Niche versus mass marketing",
+        "4.2.2 Responding to shifting needs, spending patterns and increased competition",
+        "4.2.3 Segmentation by location, demographics, lifestyle, income and age"
       ],
-      "keyTerms": ["market segment", "niche market", "mass market", "market share"]
+      "keyTerms": [
+        "market segment",
+        "niche market",
+        "mass market",
+        "market share"
+      ]
     },
     {
       "ref": "4.3",
-      "title": "Marketing mix",
+      "title": "The marketing mix",
       "paper": "Papers 1 and 2",
       "year": "Y10",
       "term": "Summer",
       "points": [
-        "Product: new product development, goods versus services, packaging, life cycle, extension strategies, Boston matrix",
-        "Price: cost-plus, penetration, competition, skimming and promotional pricing",
-        "Place: retailers and e-tailers (e-commerce)",
-        "Promotion: advertising, sponsorship, trials, offers, branding, above and below the line, PR",
-        "Online promotion: targeted advertising, viral social media marketing and e-newsletters"
+        "4.3.1 Product: developing a new product or service; goods versus services",
+        "4.3.1 Packaging and its importance",
+        "4.3.1 Product life cycle phases and extension strategies",
+        "4.3.1 Boston matrix for managing the product portfolio",
+        "4.3.2 Price: cost-plus, penetration, competition-based, skimming and promotional pricing, and when each suits",
+        "4.3.3 Place: distribution through retailers and e-tailers (e-commerce)",
+        "4.3.4 Promotion: advertising, sponsorship, product trials, special offers and branding for different segments",
+        "4.3.4 Above-the-line and below-the-line promotion; public relations",
+        "4.3.4 Technology in promotion: targeted online advertising, viral social media, e-newsletters; importance of a brand"
       ],
-      "keyTerms": ["product life cycle", "Boston matrix", "penetration pricing", "price skimming", "branding", "e-tailer"]
+      "keyTerms": [
+        "product life cycle",
+        "Boston matrix",
+        "penetration pricing",
+        "price skimming",
+        "branding",
+        "e-tailer"
+      ]
     },
     {
       "ref": "2.1",
-      "title": "Communication",
+      "title": "Internal and external communication",
       "paper": "Papers 1 and 2",
       "year": "Y10",
       "term": "Summer",
       "points": [
-        "Good communication matters to a business",
-        "Communication methods, including IT, have benefits and limitations",
-        "Barriers to communication and how to remove them"
+        "2.1.1 Why good communication matters and problems caused by poor communication",
+        "2.1.1 Communication methods, including IT, with their benefits and limitations",
+        "2.1.2 How barriers to communication arise",
+        "2.1.2 Problems from ineffective communication and how to remove barriers"
       ],
-      "keyTerms": ["communication barrier", "channel"]
+      "keyTerms": [
+        "communication barrier",
+        "channel"
+      ]
     },
     {
       "ref": "2.2",
-      "title": "Recruitment and selection",
+      "title": "Recruitment and selection process",
       "paper": "Papers 1 and 2",
       "year": "Y10",
       "term": "Summer",
       "points": [
-        "Employment types: full-time, part-time, job share, casual, seasonal, temporary",
-        "Documents: job description, person specification, application form, CV",
-        "Internal versus external recruitment; advertising, shortlisting, interviewing",
-        "Legal controls: equal opportunities and minimum wage"
+        "2.2.1 Employment types: full-time, part-time, job share, casual, seasonal, temporary",
+        "2.2.2 Documents: job description, person specification, application form, CV",
+        "2.2.3 Internal versus external recruitment, job advertisements, shortlisting and interviewing",
+        "2.2.4 Equal opportunities law: gender, race, disability, religion, sexual preference, age",
+        "2.2.4 Minimum wage law and its effects on businesses"
       ],
-      "keyTerms": ["job description", "person specification", "shortlisting", "equal opportunities", "minimum wage"]
+      "keyTerms": [
+        "job description",
+        "person specification",
+        "shortlisting",
+        "equal opportunities",
+        "minimum wage"
+      ]
     },
     {
       "ref": "2.3",
@@ -195,11 +256,16 @@
       "year": "Y11",
       "term": "Autumn",
       "points": [
-        "Training matters to the business and to workers",
-        "Induction, on-the-job and off-the-job training",
-        "Training supports health and safety compliance; benefits and limitations"
+        "2.3.1 Importance of training to the business and to workers",
+        "2.3.1 Training types and purposes: induction, on-the-job, off-the-job",
+        "2.3.1 Training and compliance with health and safety law",
+        "2.3.1 Benefits and limitations of training"
       ],
-      "keyTerms": ["induction", "on-the-job", "off-the-job"]
+      "keyTerms": [
+        "induction",
+        "on-the-job",
+        "off-the-job"
+      ]
     },
     {
       "ref": "2.4",
@@ -208,12 +274,18 @@
       "year": "Y11",
       "term": "Autumn",
       "points": [
-        "Motivation helps attract and retain staff and raises productivity",
-        "Theories of Herzberg, Maslow and Taylor",
-        "Financial methods: remuneration, bonus, commission, promotion, fringe benefits",
-        "Non-financial methods: job rotation, job enrichment, autonomy"
+        "2.4.1 Motivation attracts and retains employees and improves productivity",
+        "2.4.1 Motivation theories of Herzberg, Maslow and Taylor",
+        "2.4.2 Financial methods: remuneration, bonuses, commission, promotion, fringe benefits",
+        "2.4.2 Non-financial methods: job rotation, job enrichment, autonomy"
       ],
-      "keyTerms": ["motivation", "Herzberg", "Maslow", "Taylor", "job enrichment"]
+      "keyTerms": [
+        "motivation",
+        "Herzberg",
+        "Maslow",
+        "Taylor",
+        "job enrichment"
+      ]
     },
     {
       "ref": "2.5",
@@ -222,25 +294,43 @@
       "year": "Y11",
       "term": "Autumn",
       "points": [
-        "Hierarchical versus flat structures; centralised versus decentralised decisions",
-        "Span of control, chain of command and delegation",
-        "Functional areas: human resources, finance, marketing and production"
+        "2.5.1 Organisational charts: hierarchical and flat structures",
+        "2.5.1 Centralised and decentralised structures",
+        "2.5.2 Roles and responsibilities: span of control, chain of command, delegation",
+        "2.5.3 Human resources: workforce planning, recruitment, training, health and safety, welfare, industrial relations",
+        "2.5.3 Human resources: disciplinary, grievance, dismissal, unfair dismissal, redundancy",
+        "2.5.3 Finance: wages and salaries, cash-flow forecasting, budgets, accounting",
+        "2.5.3 Marketing: research, product planning, pricing, promotion, advertising, customer service, PR, packaging, distribution",
+        "2.5.3 Production: manufacturing, designing new products, quality control, stock control"
       ],
-      "keyTerms": ["span of control", "chain of command", "delegation", "hierarchy"]
+      "keyTerms": [
+        "span of control",
+        "chain of command",
+        "delegation",
+        "hierarchy"
+      ]
     },
     {
       "ref": "3.1",
-      "title": "Sources of finance",
+      "title": "Business finance - sources",
       "paper": "Papers 1 and 2",
       "year": "Y11",
       "term": "Autumn",
       "points": [
-        "Finance needs are short-term or long-term, for start-up or expansion",
-        "Internal sources: personal savings, retained profit, selling assets",
-        "External sources: overdrafts, trade payables, loans, share capital and flotation",
-        "Venture capital and crowdfunding"
+        "3.1.1 Short-term and long-term finance needs",
+        "3.1.1 Finance to start up or expand a business",
+        "3.1.2 Internal sources: personal savings, retained profit, selling assets",
+        "3.1.3 External sources: overdrafts and trade payables",
+        "3.1.3 Loan capital and share capital, including stock market flotation for plcs",
+        "3.1.3 Venture capital and crowdfunding"
       ],
-      "keyTerms": ["overdraft", "retained profit", "flotation", "venture capital", "crowdfunding"]
+      "keyTerms": [
+        "overdraft",
+        "retained profit",
+        "flotation",
+        "venture capital",
+        "crowdfunding"
+      ]
     },
     {
       "ref": "3.2",
@@ -249,24 +339,38 @@
       "year": "Y11",
       "term": "Spring",
       "points": [
-        "Cash pays suppliers, overheads and employees; shortages risk insolvency",
-        "Cash and profit are different things",
-        "Calculate and interpret inflows, outflows, net cash flow, opening and closing balances"
+        "3.2.1 Cash pays suppliers, overheads and employees",
+        "3.2.1 Cash shortages can cause insolvency and failure",
+        "3.2.1 Cash and profit are different",
+        "3.2.2 Calculate and interpret cash inflows, outflows and net cash flow",
+        "3.2.2 Opening and closing cash balances"
       ],
-      "keyTerms": ["cash flow", "net cash flow", "insolvency", "opening balance"]
+      "keyTerms": [
+        "cash flow",
+        "net cash flow",
+        "insolvency",
+        "opening balance"
+      ]
     },
     {
       "ref": "3.3",
-      "title": "Costs and break-even",
+      "title": "Costs and break-even analysis",
       "paper": "Papers 1 and 2",
       "year": "Y11",
       "term": "Spring",
       "points": [
-        "Revenue, fixed costs, variable costs, total costs, profit and loss",
-        "Break-even output by formula or diagram",
-        "Interpret charts and the effect of changes in revenue and costs; know limitations"
+        "3.3.1 Revenue, fixed costs, variable costs and total costs",
+        "3.3.1 Profit and loss calculations",
+        "3.3.2 Break-even level of output from a formula or diagram",
+        "3.3.3 Effects of changes in revenue and costs on break-even charts",
+        "3.3.3 Limitations of break-even charts"
       ],
-      "keyTerms": ["fixed cost", "variable cost", "break-even", "margin of safety"]
+      "keyTerms": [
+        "fixed cost",
+        "variable cost",
+        "break-even",
+        "margin of safety"
+      ]
     },
     {
       "ref": "3.4",
@@ -275,11 +379,18 @@
       "year": "Y11",
       "term": "Spring",
       "points": [
-        "Statement of comprehensive income: sales, cost of sales, gross profit, expenses, operating profit",
-        "Statement of financial position: current and non-current assets and liabilities, capital employed",
-        "Candidates interpret these documents but do not construct them"
+        "3.4.1 Statement of comprehensive income: sales, cost of sales, gross profit, expenses, operating profit",
+        "3.4.1 Use it in decision making; construction is not required",
+        "3.4.1 The nature and importance of profit",
+        "3.4.2 Statement of financial position: current and non-current assets and liabilities, capital employed",
+        "3.4.2 Interpret it; construction is not required"
       ],
-      "keyTerms": ["gross profit", "operating profit", "capital employed", "inventory"]
+      "keyTerms": [
+        "gross profit",
+        "operating profit",
+        "capital employed",
+        "inventory"
+      ]
     },
     {
       "ref": "3.5",
@@ -288,11 +399,20 @@
       "year": "Y11",
       "term": "Spring",
       "points": [
-        "Ratios: gross and operating profit margin, markup, ROCE, current ratio, acid test ratio",
-        "Judge liquidity and compare over time or with other businesses",
-        "Use financial documents to assess performance and inform decisions"
+        "3.5.1 Calculate and analyse gross profit margin and operating profit margin",
+        "3.5.1 Calculate and analyse markup and return on capital employed (ROCE)",
+        "3.5.1 Calculate and analyse current ratio and acid test ratio; formulae are supplied in the exam",
+        "3.5.2 Concept and importance of liquidity",
+        "3.5.2 Compare liquidity with earlier years and other businesses",
+        "3.5.3 Use financial documents to assess performance and inform decisions"
       ],
-      "keyTerms": ["ROCE", "current ratio", "acid test ratio", "liquidity", "markup"]
+      "keyTerms": [
+        "ROCE",
+        "current ratio",
+        "acid test ratio",
+        "liquidity",
+        "markup"
+      ]
     },
     {
       "ref": "5.1",
@@ -301,24 +421,38 @@
       "year": "Y11",
       "term": "Spring",
       "points": [
-        "Internal and external economies of scale",
-        "Diseconomies and the limits of growth"
+        "5.1.1 Internal economies of scale: average total costs fall as output rises",
+        "5.1.1 External economies of scale: average total costs fall due to outside factors",
+        "5.1.2 Diseconomies of scale and limits to growth"
       ],
-      "keyTerms": ["economy of scale", "diseconomy of scale"]
+      "keyTerms": [
+        "economy of scale",
+        "diseconomy of scale"
+      ]
     },
     {
       "ref": "5.2",
-      "title": "Production, lean production and technology",
+      "title": "Production",
       "paper": "Papers 1 and 2",
       "year": "Y11",
       "term": "Summer",
       "points": [
-        "Job, batch and flow production; labour- versus capital-intensive methods",
-        "Calculate productivity and the effect of improving it",
-        "Lean production: just-in-time, Kaizen and effective use of resources",
-        "Technology such as robotics: balancing cost, productivity, quality and flexibility"
+        "5.2.1 Job, batch and flow production, and the impact of each",
+        "5.2.1 Labour-intensive and capital-intensive production",
+        "5.2.1 Calculate productivity and the effect of improving it",
+        "5.2.2 Lean production: just-in-time (JIT) and Kaizen",
+        "5.2.2 Using resources effectively",
+        "5.2.3 Impact of technology in production, including robotics",
+        "5.2.3 Balancing cost, productivity, quality and flexibility"
       ],
-      "keyTerms": ["job production", "batch production", "flow production", "JIT", "Kaizen", "productivity"]
+      "keyTerms": [
+        "job production",
+        "batch production",
+        "flow production",
+        "JIT",
+        "Kaizen",
+        "productivity"
+      ]
     },
     {
       "ref": "5.3",
@@ -327,10 +461,15 @@
       "year": "Y11",
       "term": "Summer",
       "points": [
-        "Enterprise, capital, land and labour as factors of production",
-        "How their relationships change; capital-intensive versus labour-intensive activity"
+        "5.3.1 Changing relationships between enterprise, capital, land and labour",
+        "5.3.1 Capital-intensive versus labour-intensive activities"
       ],
-      "keyTerms": ["enterprise", "capital", "land", "labour"]
+      "keyTerms": [
+        "enterprise",
+        "capital",
+        "land",
+        "labour"
+      ]
     },
     {
       "ref": "5.4",
@@ -339,11 +478,15 @@
       "year": "Y11",
       "term": "Summer",
       "points": [
-        "Quality matters for goods and services",
-        "Quality control and total quality management (TQM)",
-        "Quality as a source of competitive advantage"
+        "5.4.1 Concept of quality and its importance for goods and services",
+        "5.4.1 Quality control and total quality management (TQM)",
+        "5.4.1 Using quality to gain competitive advantage"
       ],
-      "keyTerms": ["quality control", "TQM", "competitive advantage"]
+      "keyTerms": [
+        "quality control",
+        "TQM",
+        "competitive advantage"
+      ]
     },
     {
       "ref": "1.5",
@@ -352,12 +495,19 @@
       "year": "Y11",
       "term": "Summer",
       "points": [
-        "Globalisation: concept, opportunities and threats",
-        "Multinationals: benefits to the firm, and benefits and drawbacks for host countries",
-        "Calculate exchange rate conversions",
-        "Exchange rate changes affect competitiveness, importers and exporters"
+        "1.5.1 Globalisation as a concept, with opportunities and threats for businesses",
+        "1.5.2 Growth of multinationals: benefits to the business",
+        "1.5.2 Benefits and possible drawbacks of multinationals to the host country or economy",
+        "1.5.3 Calculating exchange rates",
+        "1.5.4 Exchange rate changes affect international competitiveness, importers and exporters"
       ],
-      "keyTerms": ["globalisation", "multinational", "exchange rate", "exporter", "importer"]
+      "keyTerms": [
+        "globalisation",
+        "multinational",
+        "exchange rate",
+        "exporter",
+        "importer"
+      ]
     },
     {
       "ref": "1.6",
@@ -366,11 +516,17 @@
       "year": "Y11",
       "term": "Summer",
       "points": [
-        "Government spending on public services; taxation and limits on spending",
-        "Infrastructure, legislation and trade policy such as trading blocs and tariffs",
-        "Interest rate changes affect businesses and consumer spending"
+        "1.6.1 Government spending on public services, taxation and constraints on spending",
+        "1.6.2 Government influence through infrastructure provision and legislation",
+        "1.6.2 Trade policy: trading bloc membership and tariffs",
+        "1.6.3 Interest rate effects on businesses and consumer spending"
       ],
-      "keyTerms": ["taxation", "tariff", "interest rate", "infrastructure"]
+      "keyTerms": [
+        "taxation",
+        "tariff",
+        "interest rate",
+        "infrastructure"
+      ]
     },
     {
       "ref": "1.7",
@@ -379,36 +535,86 @@
       "year": "Y11",
       "term": "Summer",
       "points": [
-        "Social, technological, environmental and political influences on business decisions"
+        "1.7.1 Social factors affecting business decisions",
+        "1.7.1 Technological factors affecting business decisions",
+        "1.7.1 Environmental factors affecting business decisions",
+        "1.7.1 Political factors affecting business decisions"
       ],
-      "keyTerms": ["social", "technological", "environmental", "political"]
+      "keyTerms": [
+        "social",
+        "technological",
+        "environmental",
+        "political"
+      ]
     },
     {
       "ref": "1.8",
-      "title": "Business success",
+      "title": "What makes a business successful?",
       "paper": "Papers 1 and 2",
       "year": "Y11",
       "term": "Summer",
       "points": [
-        "Success measures: revenue, market share, customer satisfaction, profit, growth, owner and employee satisfaction",
-        "Failure reasons: cash flow or lack of finance, uncompetitive, failure to adapt"
+        "1.8.1 Measures: revenue, market share, customer satisfaction, profit and growth",
+        "1.8.1 Measures also include owner/shareholder satisfaction and employee satisfaction",
+        "1.8.2 Failure reasons: cash flow problems or lack of finance",
+        "1.8.2 Failure reasons: lack of competitiveness and failure to adapt to market changes"
       ],
-      "keyTerms": ["success", "failure", "customer satisfaction"]
+      "keyTerms": [
+        "success",
+        "failure",
+        "customer satisfaction"
+      ]
     }
   ],
   "commandWords": [
-    { "word": "Multiple-choice", "meaning": "Select one or more correct answers; recall or a calculation" },
-    { "word": "Define", "meaning": "Give the meaning of a term from the specification" },
-    { "word": "Give", "meaning": "Give an answer that tests recall of specification knowledge" },
-    { "word": "State", "meaning": "Give an answer of up to a sentence, chosen from the context" },
-    { "word": "Identify", "meaning": "Select the correct answer from a graph or table" },
-    { "word": "Calculate", "meaning": "Apply maths to given data and show working" },
-    { "word": "Complete the table", "meaning": "Work out the missing values in a table" },
-    { "word": "Outline", "meaning": "Give two linked points about a concept, placed in context" },
-    { "word": "Explain", "meaning": "Make a statement with two expansion points; no context needed" },
-    { "word": "Analyse", "meaning": "Extended answer exploring a concept in context" },
-    { "word": "Justify", "meaning": "Extended answer using given information to recommend one of two options" },
-    { "word": "Evaluate", "meaning": "Extended answer using knowledge to reach a supported conclusion" }
+    {
+      "word": "Multiple-choice",
+      "meaning": "Select one or more correct answers; recall or a calculation"
+    },
+    {
+      "word": "Define",
+      "meaning": "Give the meaning of a term from the specification"
+    },
+    {
+      "word": "Give",
+      "meaning": "Give an answer that tests recall of specification knowledge"
+    },
+    {
+      "word": "State",
+      "meaning": "Give an answer of up to a sentence, chosen from the context"
+    },
+    {
+      "word": "Identify",
+      "meaning": "Select the correct answer from a graph or table"
+    },
+    {
+      "word": "Calculate",
+      "meaning": "Apply maths to given data and show working"
+    },
+    {
+      "word": "Complete the table",
+      "meaning": "Work out the missing values in a table"
+    },
+    {
+      "word": "Outline",
+      "meaning": "Give two linked points about a concept, placed in context"
+    },
+    {
+      "word": "Explain",
+      "meaning": "Make a statement with two expansion points; no context needed"
+    },
+    {
+      "word": "Analyse",
+      "meaning": "Extended answer exploring a concept in context"
+    },
+    {
+      "word": "Justify",
+      "meaning": "Extended answer using given information to recommend one of two options"
+    },
+    {
+      "word": "Evaluate",
+      "meaning": "Extended answer using knowledge to reach a supported conclusion"
+    }
   ],
   "skills": [
     "Quantitative skills (10% of marks): percentages, percentage change, averages",
@@ -420,15 +626,42 @@
     "Reading and writing English at roughly CEFR B2 level; desk calculator allowed, battery or solar only"
   ],
   "prerequisites": [
-    { "from": "KS3 Mathematics: percentages, averages and substitution", "to": "3.3" },
-    { "from": "KS3 Mathematics: percentages and ratio", "to": "3.5" },
-    { "from": "1.2 Types of organisation", "to": "3.1" },
-    { "from": "4.1 Market research", "to": "4.3" },
-    { "from": "3.2 Cash flow forecasting", "to": "3.3" },
-    { "from": "3.3 Costs and break-even", "to": "3.4" },
-    { "from": "3.4 Financial documents", "to": "3.5" },
-    { "from": "1.4 Location decisions", "to": "1.5" },
-    { "from": "5.1 Economies and diseconomies of scale", "to": "5.2" }
+    {
+      "from": "KS3 Mathematics: percentages, averages and substitution",
+      "to": "3.3"
+    },
+    {
+      "from": "KS3 Mathematics: percentages and ratio",
+      "to": "3.5"
+    },
+    {
+      "from": "1.2 Types of organisation",
+      "to": "3.1"
+    },
+    {
+      "from": "4.1 Market research",
+      "to": "4.3"
+    },
+    {
+      "from": "3.2 Cash flow forecasting",
+      "to": "3.3"
+    },
+    {
+      "from": "3.3 Costs and break-even",
+      "to": "3.4"
+    },
+    {
+      "from": "3.4 Financial documents",
+      "to": "3.5"
+    },
+    {
+      "from": "1.4 Location decisions",
+      "to": "1.5"
+    },
+    {
+      "from": "5.1 Economies and diseconomies of scale",
+      "to": "5.2"
+    }
   ],
   "links": [
     {
@@ -512,13 +745,12 @@
   ],
   "contextNote": "Both papers use real-style business contexts (small business in Paper 1, large or multinational in Paper 2). Teach the range of business viewpoints accurately and let pupils evaluate. Islamic perspectives in the links are enrichment and are not examined.",
   "gaps": [
-    "Specification PDF read through a page-summarising fetch tool, not page by page. Bullet-level wording was not checked for every sub-topic, so points are paraphrased headline content only (notably 2.5 functional-area detail and 5.1 to 5.4).",
-    "Section and topic titles and numbering come from the fetch summary; confirm against the PDF contents page. The fetch listed three items numbered 5.2 (production, lean production, technology) and these are merged into one unit 5.2 here.",
+    "The PDF was read through a fetch tool that summarises text; no raw page text or page images were available, so wording of each statement was not compared character by character. Re-check against the PDF itself to set Verified.",
+    "Appendices on quantitative skills, formulae and IAS terminology were not re-read in detail in this pass; the skills list is carried from the earlier read.",
     "4BS1 Paper 1 and Paper 2 test the whole specification; no board allocation of sections to papers exists, so every unit lists Papers 1 and 2.",
-    "Assessment objective weightings recorded as ranges as the specification states them; per-paper approximate percentages not recorded.",
-    "The spec header showed Issue 2, February 2026; confirm the current issue and series dates with Pearson. The 2027 landing page states the last assessment of 4BS1 is November 2028, so a cohort starting Year 10 in 2026 sits within the window.",
-    "Sample assessment materials, mark schemes, examiner reports and the Pearson 4BS1 qualification page were not opened.",
-    "The school's lesson files were written to UK GCSE 1BS0 unit titles and do not match 4BS1; they need re-mapping.",
-    "Whether the school enters for 4BS1 (not UK GCSE 1BS0) should still be confirmed with the exams officer; the brief states International GCSE."
+    "The spec gives per-paper AO shares (AO1 13.7%, AO2 19.4%, AO3 11.3%, AO4 5.6%); the 2027 page states last assessment of 4BS1 is November 2028, so a cohort starting Year 10 in 2026 is within the window.",
+    "Sample assessment materials, mark schemes and examiner reports were not opened.",
+    "The school's lesson files were written to UK GCSE 1BS0 unit titles and need re-mapping to 4BS1.",
+    "Entry for 4BS1 (not UK GCSE 1BS0) should be confirmed with the exams officer."
   ]
 }
