@@ -144,3 +144,21 @@ await pool(manifest, 6, async (m) => {
 });
 console.log(`Uploaded ${uploaded}, refreshed ${metaOnly}, failed ${failed}`);
 if (failed > 0 && uploaded === 0) process.exit(1);
+
+// Remove lessons retired from the library (content/retired-lessons.json) so off-spec lessons leave the portal.
+if (mode === "upload" && fs.existsSync("content/retired-lessons.json")) {
+  const { retired = [] } = JSON.parse(fs.readFileSync("content/retired-lessons.json", "utf8"));
+  const rows = await existingRows();
+  let removed = 0;
+  for (const r of retired) {
+    const row = [...rows.values()].find(
+      (x) => x.subject_slug === r.subject_slug && String(x.year).toLowerCase() === String(r.year).toLowerCase() && Number(x.lesson_no) === Number(r.lesson_no),
+    );
+    if (!row) continue;
+    await supabase.from("curriculum_lesson_versions").delete().eq("lesson_id", row.id);
+    const { error } = await supabase.from("curriculum_lessons").delete().eq("id", row.id);
+    if (error) console.error(`::warning::retire ${r.subject_slug}/${r.year}/${r.lesson_no}: ${error.message}`);
+    else removed++;
+  }
+  console.log(`Retired ${removed} lesson(s) from the portal`);
+}
