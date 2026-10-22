@@ -3,7 +3,7 @@
   "year": "y11",
   "board": "Pearson Edexcel GCSE (9–1) Biology 1BI0, Chemistry 1CH0 and Physics 1PH0",
   "boardShort": "Edexcel GCSE 1BI0 · 1CH0 · 1PH0",
-  "source": "School Science curriculum journey 2026–27 (Year 11 Term 1: Organic Chemistry; Astrophysics) with Edexcel GCSE Biology Topic 9 (ecosystems and material cycles); school's Pearson Edexcel GCSE 5-year schemes; INSET lesson standard. Orbital-speed, red-shift-equation and HR-diagram content goes beyond GCSE 1PH0 and is marked as stretch. | Edexcel IGCSE 4BI1/4CH1 specification summary (content/syllabus/ks4/gcse-science.json), Y11 units Biology 3, Biology 4, Biology 5, Chemistry 3, Chemistry 4. Drive material not used. Not re-taught because covered by the existing lessons in content/lessons/gcse-science/y11.json: population, community, habitat, ecosystem and quadrats; biotic and abiotic factors; food chains, webs and pyramids and 10% energy transfer; carbon cycle; nitrogen cycle with named bacteria; pollution (sulfur dioxide, carbon monoxide, greenhouse gases, sewage and eutrophication) and deforestation (Biology 4 points 1, 3-7); hydrocarbons, formulae and homologous series, crude oil and fractional distillation, complete and incomplete combustion and acid rain, catalytic cracking, alkane and alkene reactions with the bromine water test, addition polymers (Chemistry 4 points 1 partly, 2-6, 8). Biology 4 biodiversity and distribution (point 2) and Chemistry 4 naming and isomers (point 1) are taught here. | Edexcel IGCSE Physics 4PH1 specification (units Physics 5-8, Y11). Existing UK-GCSE lessons in content/lessons/gcse-science/y11.json already cover Physics 8 gravity and the Solar System, g on other bodies, orbital speed (v = 2 pi r / T), life cycles of stars, colour and temperature, absolute magnitude and the HR diagram, red-shift and the CMB, so Physics 8 here adds orbits of comets and satellites and one consolidation lesson in exam terms.",
+  "source": "School Science curriculum journey 2026–27 (Year 11 Term 1: Organic Chemistry; Astrophysics) with Edexcel GCSE Biology Topic 9 (ecosystems and material cycles); school's Pearson Edexcel GCSE 5-year schemes; INSET lesson standard. Orbital-speed, red-shift-equation and HR-diagram content goes beyond GCSE 1PH0 and is marked as stretch. | Edexcel IGCSE 4BI1/4CH1 specification summary (content/syllabus/ks4/gcse-science.json), Y11 units Biology 3, Biology 4, Biology 5, Chemistry 3, Chemistry 4. Drive material not used. Not re-taught because covered by the existing lessons in content/lessons/gcse-science/y11.json: population, community, habitat, ecosystem and quadrats; biotic and abiotic factors; food chains, webs and pyramids and 10% energy transfer; carbon cycle; nitrogen cycle with named bacteria; pollution (sulfur dioxide, carbon monoxide, greenhouse gases, sewage and eutrophication) and deforestation (Biology 4 points 1, 3-7); hydrocarbons, formulae and homologous series, crude oil and fractional distillation, complete and incomplete combustion and acid rain, catalytic cracking, alkane and alkene reactions with the bromine water test, addition polymers (Chemistry 4 points 1 partly, 2-6, 8). Biology 4 biodiversity and distribution (point 2) and Chemistry 4 naming and isomers (point 1) are taught here. | Edexcel IGCSE Physics 4PH1 specification (units Physics 5-8, Y11). Existing UK-GCSE lessons in content/lessons/gcse-science/y11.json already cover Physics 8 gravity and the Solar System, g on other bodies, orbital speed (v = 2 pi r / T), life cycles of stars, colour and temperature, absolute magnitude and the HR diagram, red-shift and the CMB, so Physics 8 here adds orbits of comets and satellites and one consolidation lesson in exam terms. | Gap-fill against Pearson Edexcel International GCSE Biology 4BI1 / Double Award 4SD0 specification | Gap-fill against Pearson Edexcel International GCSE Chemistry 4CH1 and Physics 4PH1 (and Science Double Award 4SD0) specification",
   "lessons": [
     {
       "unit": "Biology Topic 9: Ecosystems and material cycles",
@@ -9392,6 +9392,3601 @@
       "send": "SEND: sequencing cards for the life cycle and sentence starters for the six-mark answer. EAL: pre-teach galaxy, red-shift, evidence. Stretch: use the red-shift equation z = Δλ ÷ λ = v ÷ c.",
       "board": "Pearson Edexcel International GCSE Physics (4PH1)",
       "boardShort": "Edexcel IGCSE"
+    },
+    {
+      "n": 64,
+      "unit": "Biology 3: Reproduction and inheritance",
+      "title": "Germination: food reserves for the seedling",
+      "covers": [
+        "Biology 3.6"
+      ],
+      "duration": 50,
+      "bigQuestion": "How can a tiny seed grow into a shoot before it has a single green leaf?",
+      "objectives": [
+        "Describe the food reserves in a seed and how they are used",
+        "Explain why dry mass falls during germination",
+        "Explain why the seedling can photosynthesise later and become independent"
+      ],
+      "successCriteria": [
+        "All: state that stored food is used for growth until leaves appear",
+        "Most: name starch, lipid and protein stores and say how they are used",
+        "Some: interpret a dry-mass graph and explain each stage"
+      ],
+      "crossCurricular": "Maths: reading and interpreting graphs; Chemistry: digestion by enzymes",
+      "smsc": "Spiritual: reflecting on growth and provision from a tiny seed",
+      "keywords": [
+        {
+          "term": "food reserve",
+          "def": "stored nutrients in a seed used for early growth"
+        },
+        {
+          "term": "cotyledon",
+          "def": "seed leaf that may store food or become the first leaves"
+        },
+        {
+          "term": "radicle",
+          "def": "the first root to emerge from a seed"
+        },
+        {
+          "term": "plumule",
+          "def": "the young shoot in a seed"
+        }
+      ],
+      "starter": [
+        "List the three conditions needed for germination.",
+        "Write the word equation for aerobic respiration.",
+        "Why does a plant need light?"
+      ],
+      "teach": [
+        {
+          "heading": "What is inside a seed?",
+          "bullets": [
+            "Embryo: radicle and plumule",
+            "Food store in cotyledons or endosperm",
+            "Stores: mainly starch, with lipid and protein",
+            "Tough coat protects the seed"
+          ],
+          "note": "Different seeds store food in different places; peas store food in cotyledons while cereals use endosperm. Ask pupils to say why a seed needs a food store (no leaves yet).",
+          "table": {
+            "head": [
+              "Store",
+              "Used for"
+            ],
+            "rows": [
+              [
+                "Starch",
+                "Digested to sugar, used in respiration"
+              ],
+              [
+                "Lipid",
+                "Energy store, respired"
+              ],
+              [
+                "Protein",
+                "Amino acids for growth"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "From seed to seedling",
+          "bullets": [
+            "Water swells the seed and activates enzymes",
+            "Enzymes digest starch to sugars",
+            "Sugars are respired for energy",
+            "Energy and materials build the radicle then plumule"
+          ],
+          "note": "Link to enzymes: amylase digests starch to maltose, which is converted to glucose (name sugars generally). Respiration needs oxygen so waterlogged seeds can fail to germinate.",
+          "cycle": [
+            "Seed takes in water",
+            "Enzymes digest food reserves",
+            "Sugars used for respiration and growth",
+            "Radicle then plumule emerge",
+            "Leaves open and photosynthesise"
+          ]
+        },
+        {
+          "heading": "Dry mass graph",
+          "bullets": [
+            "Fresh mass rises as water is taken up",
+            "Dry mass falls at first",
+            "Reserves are used up in respiration",
+            "Dry mass rises once photosynthesis begins"
+          ],
+          "note": "Fresh mass is misleading because of water. Dry mass means the seedling is dried to remove water. The lowest point is when the seedling starts photosynthesising enough to gain mass.",
+          "misconception": {
+            "wrong": "A germinating seedling gains dry mass straight away because it is growing",
+            "right": "Early growth uses up the stored food, so dry mass falls until leaves photosynthesise"
+          }
+        },
+        {
+          "heading": "Model: interpret the data",
+          "bullets": [
+            "Read the dip and recovery"
+          ],
+          "note": "Show a sample data set (illustrative).",
+          "model": {
+            "problem": "Dry mass of 20 seedlings: day 0 = 5.0 g, day 4 = 4.2 g, day 8 = 3.8 g, day 12 = 4.6 g. Explain the pattern.",
+            "steps": [
+              "Days 0 to 8: dry mass decreases by 1.2 g as the food store is respired to release energy",
+              "The seedling is growing but cannot photosynthesise enough yet",
+              "By day 12 the green leaves photosynthesise faster than respiration and dry mass rises"
+            ],
+            "answer": "Reserves are used until photosynthesis takes over, so dry mass falls and then increases"
+          }
+        },
+        {
+          "heading": "Check: using reserves",
+          "bullets": [
+            "One answer"
+          ],
+          "note": "The trap is chlorophyll in the seed from the start.",
+          "check": {
+            "q": "Why does a germinating seed not need light at first?",
+            "options": [
+              "It does not respire",
+              "It uses stored food for energy and growth",
+              "It photosynthesises underground",
+              "It absorbs sugar from the soil"
+            ],
+            "answer": 1,
+            "why": "The seed has stored food reserves that are respired to release energy; it only needs light once leaves have formed."
+          }
+        }
+      ],
+      "practice": [
+        "Name two food stores in seeds.",
+        "Why does dry mass fall in early germination?",
+        "Define radicle."
+      ],
+      "independent": [
+        "Core: Describe the stages of germination using the cycle.",
+        "Extend: Explain why water, oxygen and warmth are needed using the food reserves idea.",
+        "Stretch: Sketch and explain a dry mass graph from sowing to a mature seedling."
+      ],
+      "exit": [
+        "What gives the seedling energy before photosynthesis?",
+        "Name the first root.",
+        "What happens to dry mass first?"
+      ],
+      "homework": "Plan an investigation into dry mass of germinating cress seedlings over a week.",
+      "send": "Support: sequencing cards. EAL: glossary for radicle and plumule. Stretch: why light-grown and dark-grown seedlings differ in shape (outside spec).",
+      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
+      "boardShort": "Edexcel IGCSE Biology 4BI1"
+    },
+    {
+      "n": 65,
+      "unit": "Biology 3: Reproduction and inheritance",
+      "title": "RNA and the effect of DNA changes on proteins (Higher/Paper 2 only)",
+      "covers": [
+        "Biology 3.17",
+        "Biology 3.35"
+      ],
+      "duration": 50,
+      "bigQuestion": "How can changing a single letter in your DNA change a protein, or change nothing at all?",
+      "objectives": [
+        "Compare the structure of RNA and DNA",
+        "Describe how a change in DNA bases alters amino acid sequence",
+        "Explain how this may change the phenotype"
+      ],
+      "successCriteria": [
+        "All: state RNA is single-stranded with uracil replacing thymine",
+        "Most: write the mRNA from a DNA template",
+        "Some: explain when a mutation changes a protein and when it does not"
+      ],
+      "crossCurricular": "Chemistry: bonding; Maths: pattern and sequence",
+      "smsc": "Spiritual: reflection on precision and fragility in life",
+      "keywords": [
+        {
+          "term": "RNA",
+          "def": "single-stranded nucleic acid that carries instructions for making proteins"
+        },
+        {
+          "term": "uracil",
+          "def": "base in RNA that pairs with adenine"
+        },
+        {
+          "term": "codon",
+          "def": "three bases that code for one amino acid"
+        },
+        {
+          "term": "mutation",
+          "def": "a change in the DNA base sequence"
+        }
+      ],
+      "starter": [
+        "Name the four bases in DNA.",
+        "What is a gene?",
+        "What is a mutation?"
+      ],
+      "teach": [
+        {
+          "heading": "DNA and RNA compared (Higher/Paper 2 only)",
+          "bullets": [
+            "DNA: two strands, double helix",
+            "RNA: one strand",
+            "Thymine in DNA, uracil in RNA",
+            "Pairs: A-T and C-G; in RNA A-U"
+          ],
+          "note": "Flag: Higher/Paper 2 only. Also say RNA has a different sugar (ribose) than DNA (deoxyribose) if pupils ask; the spec focuses on single strand and uracil. mRNA is a copy of one gene.",
+          "compare": {
+            "left": {
+              "title": "DNA",
+              "points": [
+                "Double-stranded helix",
+                "Bases A, T, C, G",
+                "Stays in the nucleus"
+              ]
+            },
+            "right": {
+              "title": "RNA",
+              "points": [
+                "Single-stranded",
+                "Bases A, U, C, G",
+                "mRNA carries the code to ribosomes"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Model: copy DNA to mRNA",
+          "bullets": [
+            "Match each base",
+            "Remember T is replaced by U in RNA"
+          ],
+          "note": "Walk through the transcription step in one line, using the template strand.",
+          "model": {
+            "problem": "A DNA template strand reads TAC CCG AAA. Write the mRNA and the three codons.",
+            "steps": [
+              "T pairs with A: T-A-C gives A-U-G",
+              "C-C-G gives G-G-C",
+              "A-A-A gives U-U-U"
+            ],
+            "answer": "mRNA: AUG GGC UUU (codons AUG, GGC, UUU)"
+          }
+        },
+        {
+          "heading": "A DNA change can change the protein",
+          "bullets": [
+            "A base change alters a codon",
+            "May change one amino acid",
+            "Protein folds differently",
+            "Phenotype may change"
+          ],
+          "note": "Example: sickle cell: one base change alters one amino acid in haemoglobin, giving a haemoglobin that distorts the red cell. Check your class set for the exact amino acid names if used.",
+          "cycle": [
+            "Base changes in DNA",
+            "mRNA codon different",
+            "Different amino acid",
+            "Protein shape changes",
+            "Phenotype may change"
+          ]
+        },
+        {
+          "heading": "When a mutation does nothing",
+          "bullets": [
+            "Several codons can code for the same amino acid",
+            "A silent mutation has no effect",
+            "Many mutations occur in non-coding DNA"
+          ],
+          "note": "The genetic code is degenerate. Use the model: GGC and GGA both code for glycine, while UUU (phenylalanine) to UUA (leucine) changes the protein. Compare the two cases.",
+          "table": {
+            "head": [
+              "Original codon",
+              "Changed codon",
+              "Amino acid",
+              "Effect"
+            ],
+            "rows": [
+              [
+                "GGC",
+                "GGA",
+                "Glycine to glycine",
+                "None (silent)"
+              ],
+              [
+                "UUU",
+                "UUA",
+                "Phenylalanine to leucine",
+                "Protein may change"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check: choose the effect",
+          "bullets": [
+            "One answer"
+          ],
+          "note": "Reinforce that effect depends on whether the amino acid changes.",
+          "check": {
+            "q": "Which change is most likely to alter the phenotype?",
+            "options": [
+              "A mutation in a non-coding part of DNA",
+              "A base change giving a codon for the same amino acid",
+              "A base change giving a codon for a different amino acid in an enzyme",
+              "DNA being copied before mitosis"
+            ],
+            "answer": 2,
+            "why": "A different amino acid can change protein shape and function. Non-coding changes and silent changes usually have no effect on the protein."
+          }
+        }
+      ],
+      "practice": [
+        "Write the mRNA for DNA template TAC GCA.",
+        "Name one difference between RNA and DNA.",
+        "What is a codon?"
+      ],
+      "independent": [
+        "Core: Complete a table to convert four DNA triplets to mRNA codons.",
+        "Extend: Explain with an example how a substitution may have no effect.",
+        "Stretch: Explain why a mutation in an enzyme gene could change the phenotype."
+      ],
+      "exit": [
+        "What base replaces thymine in RNA?",
+        "How does a DNA change change a protein?",
+        "Define a mutation."
+      ],
+      "homework": "Exam-style: 'Describe how a change in the DNA base sequence could lead to a different phenotype.' (4 marks).",
+      "send": "Support: base-pair cards. EAL: bilingual vocabulary. Stretch: frameshift mutations and why they are more serious (not required).",
+      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
+      "boardShort": "Edexcel IGCSE Biology 4BI1"
+    },
+    {
+      "n": 66,
+      "unit": "Biology 3: Reproduction and inheritance",
+      "title": "Codominance (Higher/Paper 2 only)",
+      "covers": [
+        "Biology 3.21"
+      ],
+      "duration": 50,
+      "bigQuestion": "How can a person have both A and B blood types at the same time?",
+      "objectives": [
+        "Define codominance",
+        "Use genetic diagrams for a codominant gene",
+        "Distinguish codominance from dominance and blending"
+      ],
+      "successCriteria": [
+        "All: state that both alleles show in the phenotype of a heterozygote",
+        "Most: complete a genetic diagram for ABO blood groups",
+        "Some: predict probabilities of each phenotype"
+      ],
+      "crossCurricular": "Maths: probability; PSHE: blood donation",
+      "smsc": "Moral: donating blood and the common good",
+      "keywords": [
+        {
+          "term": "codominance",
+          "def": "both alleles are expressed in the heterozygote phenotype"
+        },
+        {
+          "term": "allele",
+          "def": "an alternative form of a gene"
+        },
+        {
+          "term": "heterozygous",
+          "def": "having two different alleles of a gene"
+        },
+        {
+          "term": "genotype",
+          "def": "the combination of alleles"
+        }
+      ],
+      "starter": [
+        "Define dominant allele.",
+        "Define heterozygous.",
+        "What is a monohybrid cross?"
+      ],
+      "teach": [
+        {
+          "heading": "Codominance (Higher/Paper 2 only)",
+          "bullets": [
+            "Neither allele is dominant",
+            "Heterozygote shows both traits",
+            "Each allele is shown by a capital letter with a superscript"
+          ],
+          "note": "Flag: Higher/Paper 2 only. In codominance neither allele masks the other. Roan cattle show both red and white hairs (not pink).",
+          "compare": {
+            "left": {
+              "title": "Dominance",
+              "points": [
+                "One allele masks the other",
+                "Heterozygote shows only dominant trait"
+              ]
+            },
+            "right": {
+              "title": "Codominance",
+              "points": [
+                "Both alleles show",
+                "Heterozygote shows both traits"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Human ABO blood groups",
+          "bullets": [
+            "Alleles: I^A, I^B and i",
+            "I^A and I^B are codominant",
+            "Both are dominant to i",
+            "Genotype I^A I^B gives group AB"
+          ],
+          "note": "Group A can be I^A I^A or I^A i; group B can be I^B I^B or I^B i; group O is ii. Use this for family examples.",
+          "table": {
+            "head": [
+              "Genotype",
+              "Blood group"
+            ],
+            "rows": [
+              [
+                "I^A I^A or I^A i",
+                "A"
+              ],
+              [
+                "I^B I^B or I^B i",
+                "B"
+              ],
+              [
+                "I^A I^B",
+                "AB"
+              ],
+              [
+                "i i",
+                "O"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: cross",
+          "bullets": [
+            "Write parent genotypes",
+            "Draw a Punnett square",
+            "Count outcomes"
+          ],
+          "note": "Take each gamete in turn and check each box.",
+          "model": {
+            "problem": "A parent with blood group A (I^A i) and a parent with group B (I^B i) have a child. Find the possible groups and probabilities.",
+            "steps": [
+              "Gametes: I^A or i from one parent; I^B or i from the other",
+              "Offspring: I^A I^B, I^A i, I^B i, i i",
+              "Phenotypes: AB, A, B, O"
+            ],
+            "answer": "Each of AB, A, B and O has a probability of 1 in 4 (25 per cent)"
+          }
+        },
+        {
+          "heading": "Roan cattle",
+          "bullets": [
+            "Red allele R, white allele W",
+            "RR red, WW white, RW roan",
+            "Roan has red and white hairs"
+          ],
+          "note": "Contrast with blending: the red and white hairs are visible separately. Calves of two roan parents can be red, roan or white, in a 1:2:1 ratio.",
+          "misconception": {
+            "wrong": "Codominance means the alleles blend to make an in-between colour",
+            "right": "In codominance both alleles are fully expressed, such as red and white hairs side by side"
+          }
+        },
+        {
+          "heading": "Check: heterozygote phenotype",
+          "bullets": [
+            "One answer"
+          ],
+          "note": "The trap is mixing up incomplete dominance and codominance.",
+          "check": {
+            "q": "A person has genotype I^A I^B. What is their blood group and why?",
+            "options": [
+              "A because I^A is dominant",
+              "B because I^B is dominant",
+              "AB because the alleles are codominant",
+              "O because neither is expressed"
+            ],
+            "answer": 2,
+            "why": "I^A and I^B are codominant so both are expressed, giving group AB."
+          }
+        }
+      ],
+      "practice": [
+        "Define codominance.",
+        "What blood groups can a child of I^A I^B and ii parents have?",
+        "Give one example of codominance."
+      ],
+      "independent": [
+        "Core: Draw two genetic diagrams for ABO crosses.",
+        "Extend: Explain why a parent with group A can have a child with group O.",
+        "Stretch: Can parents with groups A and B have an AB child? Show the cross."
+      ],
+      "exit": [
+        "What does codominant mean?",
+        "What genotype gives group O?",
+        "What is the probability of group AB from I^A I^B x ii?"
+      ],
+      "homework": "Family blood-group puzzle: work out possible genotypes for each person.",
+      "send": "Support: Punnett square templates. EAL: simple definitions on a card. Stretch: inheritance of the Rhesus factor (outside spec).",
+      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
+      "boardShort": "Edexcel IGCSE Biology 4BI1"
+    },
+    {
+      "n": 67,
+      "unit": "Biology 4: Ecology and the environment",
+      "title": "Biodiversity and trophic levels",
+      "covers": [
+        "Biology 4.3",
+        "Biology 4.6"
+      ],
+      "duration": 50,
+      "bigQuestion": "Why is a rainforest hundreds of times richer in species than a school field, and why does it matter?",
+      "objectives": [
+        "Define biodiversity",
+        "Name the trophic levels in a food chain",
+        "Classify organisms as producers, consumers or decomposers"
+      ],
+      "successCriteria": [
+        "All: define biodiversity and a trophic level",
+        "Most: label a food chain with trophic levels",
+        "Some: explain why higher biodiversity may support stability (Higher/Paper 2 only for biodiversity)"
+      ],
+      "crossCurricular": "Geography: ecosystems and habitats; Maths: counting and comparing",
+      "smsc": "Moral: stewardship (khilafah) of living things and habitats",
+      "keywords": [
+        {
+          "term": "biodiversity",
+          "def": "the variety of living organisms in an area (Higher/Paper 2 only)"
+        },
+        {
+          "term": "producer",
+          "def": "organism that makes food by photosynthesis"
+        },
+        {
+          "term": "primary consumer",
+          "def": "herbivore that eats producers"
+        },
+        {
+          "term": "decomposer",
+          "def": "bacteria or fungi that break down dead material"
+        }
+      ],
+      "starter": [
+        "Define habitat.",
+        "Name a food chain you know.",
+        "What are the arrows in a food chain?"
+      ],
+      "teach": [
+        {
+          "heading": "What is biodiversity? (Higher/Paper 2 only)",
+          "bullets": [
+            "The variety of living organisms in an ecosystem",
+            "More species means higher biodiversity",
+            "Also variation within each species",
+            "Can be sampled with quadrats"
+          ],
+          "note": "Flag: biodiversity is Higher/Paper 2 only. It is not the number of individuals. Habitats with many species are often more stable because food webs have alternatives.",
+          "compare": {
+            "left": {
+              "title": "High biodiversity",
+              "points": [
+                "Many species",
+                "Many food sources",
+                "Can recover better from change"
+              ]
+            },
+            "right": {
+              "title": "Low biodiversity",
+              "points": [
+                "Few species",
+                "Depends on a few food sources",
+                "Vulnerable to a single disease"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Trophic levels",
+          "bullets": [
+            "Level 1: producers",
+            "Level 2: primary consumers",
+            "Level 3: secondary consumers",
+            "Level 4: tertiary consumers",
+            "Decomposers break down dead material"
+          ],
+          "note": "Trophic means feeding. Arrows show the direction of energy transfer. Producers are at the base because they get energy from the sun.",
+          "cycle": [
+            "Producer (lettuce)",
+            "Primary consumer (snail)",
+            "Secondary consumer (thrush)",
+            "Tertiary consumer (sparrowhawk)",
+            "Decomposer recycles nutrients"
+          ]
+        },
+        {
+          "heading": "Model: classify organisms",
+          "bullets": [
+            "Look at what each organism eats"
+          ],
+          "note": "Model the reasoning using arrows.",
+          "model": {
+            "problem": "Food chain: grass, grasshopper, frog, snake. Name the trophic level of each organism.",
+            "steps": [
+              "Grass makes food by photosynthesis, so it is the producer (level 1)",
+              "Grasshopper eats grass: primary consumer (level 2)",
+              "Frog eats grasshopper: secondary consumer (level 3)",
+              "Snake eats frog: tertiary consumer (level 4)"
+            ],
+            "answer": "Producer, primary, secondary, tertiary consumer"
+          }
+        },
+        {
+          "heading": "Decomposers and omnivores",
+          "bullets": [
+            "Bacteria and fungi decompose dead matter",
+            "Release minerals and carbon dioxide",
+            "Omnivores feed at more than one level"
+          ],
+          "note": "Decomposers act on all levels. A human eating rice and fish is both a primary and a secondary consumer.",
+          "misconception": {
+            "wrong": "Decomposers are the last trophic level only",
+            "right": "Decomposers break down dead material from every level and return nutrients to the soil"
+          }
+        },
+        {
+          "heading": "Check: trophic level",
+          "bullets": [
+            "One answer"
+          ],
+          "note": "The trap is the producer being an animal.",
+          "check": {
+            "q": "In the chain oak leaf, caterpillar, blue tit, sparrowhawk, which is the secondary consumer?",
+            "options": [
+              "Oak leaf",
+              "Caterpillar",
+              "Blue tit",
+              "Sparrowhawk"
+            ],
+            "answer": 2,
+            "why": "The caterpillar eats the producer so it is the primary consumer. The blue tit eats the caterpillar, making it the secondary consumer."
+          }
+        }
+      ],
+      "practice": [
+        "Define producer.",
+        "Name a decomposer.",
+        "Define biodiversity."
+      ],
+      "independent": [
+        "Core: Label three food chains with trophic levels.",
+        "Extend: Explain why a field with one crop has lower biodiversity than a meadow.",
+        "Stretch: Explain why high biodiversity may help an ecosystem to recover after a disease."
+      ],
+      "exit": [
+        "What is a trophic level?",
+        "What do the arrows show?",
+        "Why are decomposers important?"
+      ],
+      "homework": "Build a food web for a local habitat and label each trophic level.",
+      "send": "Support: food chain card sort. EAL: bilingual terms. Stretch: compare biodiversity in two habitats using sample data.",
+      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
+      "boardShort": "Edexcel IGCSE Biology 4BI1"
+    },
+    {
+      "n": 68,
+      "unit": "Biology 4: Ecology and the environment",
+      "title": "Air pollution and greenhouse gases",
+      "covers": [
+        "Biology 4.12",
+        "Biology 4.13",
+        "Biology 4.14"
+      ],
+      "duration": 50,
+      "bigQuestion": "Why can a faulty heater kill silently while a power station can harm a distant lake?",
+      "objectives": [
+        "Describe the biological effects of sulfur dioxide and carbon monoxide",
+        "Name the greenhouse gases",
+        "Explain how human activities add to greenhouse gases"
+      ],
+      "successCriteria": [
+        "All: name the pollutants and gases",
+        "Most: explain the effect of each pollutant on living things",
+        "Some: link sources to the greenhouse gases they emit"
+      ],
+      "crossCurricular": "Chemistry: combustion and acid rain; Geography: environmental issues",
+      "smsc": "Moral: responsibility for the planet and neighbours",
+      "keywords": [
+        {
+          "term": "sulfur dioxide",
+          "def": "gas from burning sulfur-containing fuels that causes acid rain"
+        },
+        {
+          "term": "carbon monoxide",
+          "def": "poisonous gas from incomplete combustion"
+        },
+        {
+          "term": "greenhouse gas",
+          "def": "a gas that absorbs and re-emits heat in the atmosphere"
+        },
+        {
+          "term": "incomplete combustion",
+          "def": "burning with too little oxygen"
+        }
+      ],
+      "starter": [
+        "Write the word equation for complete combustion of a hydrocarbon.",
+        "What is a pollutant?",
+        "What does haemoglobin do?"
+      ],
+      "teach": [
+        {
+          "heading": "Sulfur dioxide",
+          "bullets": [
+            "Made when fuels containing sulfur burn",
+            "Dissolves in rain to make acid rain",
+            "Damages leaves and lowers soil and lake pH",
+            "Can harm fish and irritate lungs"
+          ],
+          "note": "Acid rain damages plant leaves, kills trees and leaches minerals such as magnesium from the soil. Acidic lake water reduces the survival of fish and other animals.",
+          "cycle": [
+            "Fossil fuel burned",
+            "SO2 released",
+            "Dissolves in rain",
+            "Acid rain falls",
+            "Leaves, soil and lakes damaged"
+          ]
+        },
+        {
+          "heading": "Carbon monoxide",
+          "bullets": [
+            "Made by incomplete combustion",
+            "Sources: car engines and faulty heaters",
+            "Combines with haemoglobin",
+            "Less oxygen carried: headache, collapse, death"
+          ],
+          "note": "CO binds to haemoglobin much more strongly than oxygen and does not let go easily, so the blood carries less oxygen. It is colourless and odourless, so alarms matter.",
+          "misconception": {
+            "wrong": "Carbon monoxide poisons by blocking the airways",
+            "right": "Carbon monoxide combines with haemoglobin so red blood cells carry less oxygen"
+          }
+        },
+        {
+          "heading": "The greenhouse gases",
+          "bullets": [
+            "Water vapour",
+            "Carbon dioxide",
+            "Methane",
+            "Nitrous oxide",
+            "CFCs"
+          ],
+          "note": "Human sources: CO2 from burning fossil fuels and deforestation; methane from cattle, rice paddies and landfill; nitrous oxide from fertilisers and combustion; CFCs from old fridges and aerosols (largely phased out). Water vapour is mostly natural.",
+          "table": {
+            "head": [
+              "Gas",
+              "Main human source"
+            ],
+            "rows": [
+              [
+                "Carbon dioxide",
+                "Burning fossil fuels, deforestation"
+              ],
+              [
+                "Methane",
+                "Cattle, rice paddies, landfill"
+              ],
+              [
+                "Nitrous oxide",
+                "Fertilisers, combustion"
+              ],
+              [
+                "CFCs",
+                "Old refrigerants, aerosols"
+              ],
+              [
+                "Water vapour",
+                "Mostly natural; rises as air warms"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: link source to gas",
+          "bullets": [
+            "Name activity, gas and why"
+          ],
+          "note": "Show the structure.",
+          "model": {
+            "problem": "Explain how keeping cattle increases greenhouse gases.",
+            "steps": [
+              "Cattle digestion releases methane",
+              "Methane is a greenhouse gas",
+              "More cattle means more methane in the atmosphere"
+            ],
+            "answer": "Cattle release methane, a greenhouse gas"
+          }
+        },
+        {
+          "heading": "Check: carbon monoxide",
+          "bullets": [
+            "One answer"
+          ],
+          "note": "Link to haemoglobin.",
+          "check": {
+            "q": "Why is carbon monoxide poisonous?",
+            "options": [
+              "It makes acid rain",
+              "It binds to haemoglobin so less oxygen is carried",
+              "It destroys leaves",
+              "It traps heat in the lungs"
+            ],
+            "answer": 1,
+            "why": "Carbon monoxide binds strongly to haemoglobin, reducing the oxygen carried by the blood."
+          }
+        }
+      ],
+      "practice": [
+        "Which gas forms acid rain?",
+        "Name two greenhouse gases.",
+        "Why is carbon monoxide dangerous?"
+      ],
+      "independent": [
+        "Core: Complete a table of pollutants, causes and effects.",
+        "Extend: Explain how acid rain harms a forest.",
+        "Stretch: Compare the sources of methane and nitrous oxide."
+      ],
+      "exit": [
+        "State one effect of sulfur dioxide.",
+        "Name the gas formed by incomplete combustion.",
+        "Give two human sources of CO2."
+      ],
+      "homework": "Research one greenhouse gas and make a fact card with a source, a human cause and a reduction.",
+      "send": "Support: matching cards. EAL: key terms. Stretch: why CFCs also harm the ozone layer (verify).",
+      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
+      "boardShort": "Edexcel IGCSE Biology 4BI1"
+    },
+    {
+      "n": 69,
+      "unit": "Biology 4: Ecology and the environment",
+      "title": "The enhanced greenhouse effect, global warming and deforestation",
+      "covers": [
+        "Biology 4.15",
+        "Biology 4.18"
+      ],
+      "duration": 50,
+      "bigQuestion": "If trees absorb carbon dioxide, what happens to the climate when a forest disappears?",
+      "objectives": [
+        "Explain the enhanced greenhouse effect and global warming",
+        "Describe consequences of global warming",
+        "Explain the effects of deforestation (Higher/Paper 2 only)"
+      ],
+      "successCriteria": [
+        "All: state that more greenhouse gases trap more heat",
+        "Most: list consequences of global warming",
+        "Some: explain the effects of deforestation on soil, water and gases (Higher/Paper 2 only)"
+      ],
+      "crossCurricular": "Geography: climate change and sustainable development; Maths: interpreting graphs",
+      "smsc": "Moral: caring for the planet for future generations",
+      "keywords": [
+        {
+          "term": "greenhouse effect",
+          "def": "greenhouse gases trap heat that would escape to space"
+        },
+        {
+          "term": "global warming",
+          "def": "the rise in average global temperature"
+        },
+        {
+          "term": "deforestation",
+          "def": "clearing of forests on a large scale"
+        },
+        {
+          "term": "evapotranspiration",
+          "def": "evaporation of water from soil and transpiration from plants"
+        }
+      ],
+      "starter": [
+        "Name two greenhouse gases.",
+        "Which gas do plants take in?",
+        "Define leaching."
+      ],
+      "teach": [
+        {
+          "heading": "Enhanced greenhouse effect",
+          "bullets": [
+            "Gases absorb heat radiated from Earth",
+            "More gas means more heat trapped",
+            "The extra effect is the enhanced greenhouse effect",
+            "Average temperatures rise: global warming"
+          ],
+          "note": "Natural greenhouse effect keeps the Earth warm enough for life. The enhanced effect is caused by additional gases from human activity.",
+          "cycle": [
+            "More greenhouse gases",
+            "More heat trapped",
+            "Atmosphere warms",
+            "Ice melts, seas rise",
+            "Climate changes"
+          ]
+        },
+        {
+          "heading": "Consequences of global warming",
+          "bullets": [
+            "Melting ice and rising sea level",
+            "Flooding of low-lying land",
+            "More extreme weather",
+            "Shifts in species' habitats and extinctions"
+          ],
+          "note": "Other effects: changes in rainfall, coral bleaching, changing crop yields, spread of some diseases. Present as consequences, not exact predictions.",
+          "table": {
+            "head": [
+              "Change",
+              "Consequence"
+            ],
+            "rows": [
+              [
+                "Warmer oceans",
+                "Sea level rises; coral bleaching"
+              ],
+              [
+                "Melting ice",
+                "Loss of habitats and flooding"
+              ],
+              [
+                "Changed rainfall",
+                "Droughts or floods"
+              ],
+              [
+                "Shifting climate zones",
+                "Species move or die out"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Deforestation (Higher/Paper 2 only)",
+          "bullets": [
+            "Trees cut for timber, farming, building",
+            "No roots: soil is eroded and leached",
+            "Less evapotranspiration, so less rainfall",
+            "Less photosynthesis: more CO2 remains"
+          ],
+          "note": "Flag: Higher/Paper 2 only. Burning or rotting of felled trees releases CO2 and fewer trees remove it. Eroded soil washes into rivers.",
+          "compare": {
+            "left": {
+              "title": "Soil and water",
+              "points": [
+                "Leaching of minerals",
+                "Soil erosion",
+                "Less evapotranspiration"
+              ]
+            },
+            "right": {
+              "title": "Atmospheric gases",
+              "points": [
+                "Less CO2 absorbed",
+                "More CO2 from burning and decay",
+                "Climate warms"
+              ]
+            },
+            "label": "effects"
+          }
+        },
+        {
+          "heading": "Model: explain deforestation",
+          "bullets": [
+            "Cause, effect, consequence"
+          ],
+          "note": "Link to the carbon cycle.",
+          "model": {
+            "problem": "Explain how deforestation increases the concentration of carbon dioxide in the atmosphere.",
+            "steps": [
+              "Fewer trees mean less photosynthesis, so less CO2 is taken in",
+              "Burning felled trees releases CO2",
+              "Decay by decomposers also releases CO2 through respiration"
+            ],
+            "answer": "Less CO2 is absorbed and more is released, so atmospheric CO2 rises"
+          }
+        },
+        {
+          "heading": "Check: effect of deforestation",
+          "bullets": [
+            "One answer"
+          ],
+          "note": "The trap is an increase in evapotranspiration.",
+          "check": {
+            "q": "Which is an effect of deforestation (Higher/Paper 2 only)?",
+            "options": [
+              "More evapotranspiration",
+              "Less soil erosion",
+              "Reduced rainfall locally",
+              "Less CO2 in the air"
+            ],
+            "answer": 2,
+            "why": "Fewer trees means less transpiration and evaporation, so less water vapour and rainfall. Soil erosion and CO2 increase."
+          }
+        }
+      ],
+      "practice": [
+        "Define the greenhouse effect.",
+        "State two consequences of global warming.",
+        "Higher: Give one effect of deforestation on soil."
+      ],
+      "independent": [
+        "Core: Draw a flowchart of the enhanced greenhouse effect.",
+        "Extend: Explain why a rise in sea level is a consequence.",
+        "Stretch (Higher/Paper 2 only): Explain the effects of deforestation on the soil and carbon cycle."
+      ],
+      "exit": [
+        "What is global warming?",
+        "How does deforestation raise atmospheric CO2?",
+        "Name one effect of climate change on organisms."
+      ],
+      "homework": "Write a 6-mark answer: 'Explain how human activities lead to global warming.'",
+      "send": "Support: sentence starters 'This causes...'. EAL: diagrams. Stretch: evaluate solutions such as reforestation.",
+      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
+      "boardShort": "Edexcel IGCSE Biology 4BI1"
+    },
+    {
+      "n": 70,
+      "unit": "Biology 4: Ecology and the environment",
+      "title": "Water pollution: sewage and eutrophication",
+      "covers": [
+        "Biology 4.16",
+        "Biology 4.17"
+      ],
+      "duration": 50,
+      "bigQuestion": "How can a lake full of nutrients end up with no fish?",
+      "objectives": [
+        "Describe the biological consequences of sewage pollution",
+        "Explain eutrophication caused by leached fertiliser",
+        "Compare the two processes"
+      ],
+      "successCriteria": [
+        "All: state that sewage and fertiliser reduce oxygen in water",
+        "Most: explain eutrophication in order",
+        "Some: compare sewage and fertiliser pollution"
+      ],
+      "crossCurricular": "Chemistry: nitrates and phosphates; Geography: water management",
+      "smsc": "Moral: sanitation and clean water as shared responsibilities",
+      "keywords": [
+        {
+          "term": "sewage",
+          "def": "human waste and water carried in drains"
+        },
+        {
+          "term": "eutrophication",
+          "def": "enrichment of water with minerals causing algal growth and loss of oxygen"
+        },
+        {
+          "term": "leaching",
+          "def": "washing of minerals out of soil by water"
+        },
+        {
+          "term": "algal bloom",
+          "def": "rapid growth of algae on the surface of water"
+        }
+      ],
+      "starter": [
+        "Define decomposer.",
+        "Why do plants need nitrate?",
+        "What is aerobic respiration?"
+      ],
+      "teach": [
+        {
+          "heading": "Sewage in rivers",
+          "bullets": [
+            "Contains organic matter and nutrients",
+            "Bacteria decompose it using oxygen",
+            "Dissolved oxygen falls",
+            "Fish and invertebrates die"
+          ],
+          "note": "Untreated sewage may also contain pathogens that cause diseases such as cholera and typhoid, so it is a health problem for people. Indicator species such as mayfly nymphs need high oxygen; bloodworms and sludgeworms tolerate low oxygen.",
+          "cycle": [
+            "Sewage enters river",
+            "Bacteria multiply",
+            "Oxygen used up",
+            "Fish die",
+            "Only tolerant species remain"
+          ]
+        },
+        {
+          "heading": "Eutrophication",
+          "bullets": [
+            "Fertiliser nitrates and phosphates leach into water",
+            "Algae grow rapidly: a bloom",
+            "Algae block light, plants below die",
+            "Decomposers use up oxygen",
+            "Fish die"
+          ],
+          "note": "Distinguish: sewage adds organic waste; fertiliser adds minerals that boost plant growth first. Algae die too, and decomposers multiply.",
+          "cycle": [
+            "Fertiliser leaches into water",
+            "Algal bloom",
+            "Light blocked, plants die",
+            "Decomposers multiply",
+            "Oxygen depleted, animals die"
+          ]
+        },
+        {
+          "heading": "Compare the two",
+          "bullets": [
+            "Both end with low oxygen and death of animals",
+            "Sewage: organic waste, bacteria use oxygen",
+            "Fertiliser: minerals cause algal bloom first",
+            "Fertiliser run-off is not sewage"
+          ],
+          "note": "Ask pupils to place each step on a Venn-style table.",
+          "table": {
+            "head": [
+              "Feature",
+              "Sewage",
+              "Eutrophication"
+            ],
+            "rows": [
+              [
+                "Pollutant",
+                "Organic waste, microbes",
+                "Nitrates and phosphates"
+              ],
+              [
+                "First change",
+                "Bacteria multiply",
+                "Algae multiply"
+              ],
+              [
+                "Oxygen falls because",
+                "Bacteria respire",
+                "Decomposers respire"
+              ],
+              [
+                "Result",
+                "Animals die",
+                "Animals die"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: explain eutrophication",
+          "bullets": [
+            "Order the stages with reasons"
+          ],
+          "note": "Show a full-mark chain.",
+          "model": {
+            "problem": "Explain how fertiliser leached from a field can kill the fish in a nearby lake.",
+            "steps": [
+              "Fertiliser minerals leach into the lake and increase nutrients",
+              "Algae grow rapidly and block light, so submerged plants die",
+              "Decomposers feeding on dead plants and algae use up oxygen",
+              "Fish suffocate from lack of dissolved oxygen"
+            ],
+            "answer": "Excess nutrients cause algal bloom, plants die, decomposers use oxygen, fish die"
+          }
+        },
+        {
+          "heading": "Check: why does oxygen fall?",
+          "bullets": [
+            "One answer"
+          ],
+          "note": "The trap is that algae use all the oxygen at night; it is the decomposers.",
+          "check": {
+            "q": "In eutrophication, why does the oxygen level in the water fall?",
+            "options": [
+              "Algae stop making oxygen in light",
+              "Decomposers respire aerobically while breaking down dead matter",
+              "Fertiliser reacts with oxygen",
+              "Fish breathe more"
+            ],
+            "answer": 1,
+            "why": "Large numbers of decomposers use oxygen for aerobic respiration as they break down the dead algae and plants."
+          }
+        }
+      ],
+      "practice": [
+        "Name two minerals in fertiliser.",
+        "Why does sewage reduce oxygen in a river?",
+        "What is an algal bloom?"
+      ],
+      "independent": [
+        "Core: Complete a four-step flowchart for eutrophication.",
+        "Extend: Compare sewage pollution with fertiliser pollution.",
+        "Stretch: Suggest two ways to prevent eutrophication and explain how each works."
+      ],
+      "exit": [
+        "Define eutrophication.",
+        "Name one effect of sewage on fish.",
+        "What does leaching mean?"
+      ],
+      "homework": "Exam-style: 'Explain why untreated sewage in a river can kill fish.' (4 marks).",
+      "send": "Support: sequencing cards. EAL: pictorial flow. Stretch: evaluate sustainable farming methods.",
+      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
+      "boardShort": "Edexcel IGCSE Biology 4BI1"
+    },
+    {
+      "n": 71,
+      "unit": "Biology 5: Use of biological resources",
+      "title": "Practical: anaerobic respiration in yeast",
+      "covers": [
+        "Biology 5.6"
+      ],
+      "duration": 50,
+      "bigQuestion": "How can you tell that a microscopic fungus is breathing without any oxygen?",
+      "objectives": [
+        "Describe a practical to investigate anaerobic respiration by yeast",
+        "Control variables and measure rate",
+        "Evaluate and explain results at different temperatures"
+      ],
+      "successCriteria": [
+        "All: write the equation for anaerobic respiration in yeast",
+        "Most: plan a fair test of one variable",
+        "Some: analyse data and explain the optimum and the decrease at high temperature"
+      ],
+      "crossCurricular": "Chemistry: enzymes and temperature; Maths: rates and graphs",
+      "smsc": "Spiritual: wonder at tiny organisms and their role in food",
+      "keywords": [
+        {
+          "term": "yeast",
+          "def": "a single-celled fungus used in baking and brewing"
+        },
+        {
+          "term": "fermentation",
+          "def": "anaerobic respiration by microorganisms"
+        },
+        {
+          "term": "limewater",
+          "def": "solution that turns cloudy with carbon dioxide"
+        },
+        {
+          "term": "control",
+          "def": "a set-up that shows what happens without the variable"
+        }
+      ],
+      "starter": [
+        "Write the equation for aerobic respiration.",
+        "What happens to an enzyme at 70 degrees C?",
+        "State the rate formula."
+      ],
+      "teach": [
+        {
+          "heading": "The reaction",
+          "bullets": [
+            "Glucose to ethanol and carbon dioxide",
+            "No oxygen needed",
+            "Releases less energy than aerobic respiration",
+            "Carbon dioxide makes bread rise"
+          ],
+          "note": "Word equation: glucose to ethanol + carbon dioxide. Carbon dioxide is the gas to measure. In baking, the ethanol evaporates; in this practical, it stays in the tube, so only a small volume is made.",
+          "compare": {
+            "left": {
+              "title": "Aerobic",
+              "points": [
+                "Uses oxygen",
+                "Glucose to carbon dioxide and water",
+                "Much more energy"
+              ]
+            },
+            "right": {
+              "title": "Anaerobic (yeast)",
+              "points": [
+                "No oxygen",
+                "Glucose to ethanol and carbon dioxide",
+                "Less energy"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "The set-up",
+          "bullets": [
+            "Yeast and glucose solution in a boiling tube",
+            "Layer of oil excludes oxygen",
+            "Delivery tube to limewater or gas syringe",
+            "Water bath at the chosen temperature"
+          ],
+          "note": "Variables to investigate: temperature, glucose concentration, with or without oil. Control: same volume and mass of yeast, same time, same volume of glucose, boiled yeast as a negative control. Safety: do not drink the mixture; wash hands.",
+          "cycle": [
+            "Mix yeast and glucose",
+            "Add oil layer",
+            "Set water bath temperature",
+            "Collect gas for fixed time",
+            "Record bubbles or volume"
+          ]
+        },
+        {
+          "heading": "Model: analyse results",
+          "bullets": [
+            "Rate = volume or count / time",
+            "Find the optimum"
+          ],
+          "note": "The data here are illustrative practice data.",
+          "model": {
+            "problem": "Bubbles per minute at 20, 30, 40, 50 and 60 degrees C: 8, 14, 22, 9 and 0. State the trend and explain it.",
+            "steps": [
+              "Rate rises from 20 to 40 degrees C: more kinetic energy and more collisions with enzymes",
+              "The highest rate is at 40 degrees C, the approximate optimum",
+              "At 50 and 60 degrees C the enzymes denature, so rate falls to zero"
+            ],
+            "answer": "Rate increases to an optimum near 40 degrees C and falls as enzymes denature"
+          }
+        },
+        {
+          "heading": "Improving reliability",
+          "bullets": [
+            "Repeat each temperature three times",
+            "Calculate a mean",
+            "Keep volumes identical",
+            "Count bubbles for a longer time or use a gas syringe"
+          ],
+          "note": "Discuss why counting bubbles is subjective (bubble size varies). The gas syringe gives volume.",
+          "misconception": {
+            "wrong": "Yeast respiration stops completely when oxygen is removed",
+            "right": "Yeast switches to anaerobic respiration and still releases carbon dioxide and ethanol"
+          }
+        },
+        {
+          "heading": "Check: interpret a result",
+          "bullets": [
+            "One answer"
+          ],
+          "note": "Make sure pupils can identify a control.",
+          "check": {
+            "q": "Why is a tube of boiled yeast included in the experiment?",
+            "options": [
+              "To speed up respiration",
+              "To act as a control showing no carbon dioxide is made without living yeast",
+              "To add oxygen",
+              "To lower the temperature"
+            ],
+            "answer": 1,
+            "why": "Boiled yeast is dead and enzymes are denatured, so no gas should be produced; it checks that gas comes from living yeast."
+          }
+        }
+      ],
+      "practice": [
+        "Why is oil placed on top of the mixture?",
+        "Write the word equation.",
+        "Name the control variable that must stay the same."
+      ],
+      "independent": [
+        "Core: Write a method listing the apparatus and variables.",
+        "Extend: Plot a graph of the sample data and describe it.",
+        "Stretch: Evaluate the method and suggest improvements."
+      ],
+      "exit": [
+        "Which gas is produced?",
+        "Why does the rate fall at 60 degrees C?",
+        "What is a control?"
+      ],
+      "homework": "Exam-style: 'Describe how you would investigate the effect of temperature on anaerobic respiration in yeast.' (6 marks).",
+      "send": "Support: step cards for the method. EAL: key vocabulary. Stretch: explain why bread is baked at high temperatures.",
+      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
+      "boardShort": "Edexcel IGCSE Biology 4BI1"
+    },
+    {
+      "unit": "Chemistry 3: Physical chemistry",
+      "n": 72,
+      "title": "Calorimetry practicals: measuring energy changes in solution and combustion",
+      "covers": [
+        "Chemistry 3.2",
+        "Chemistry 3.8"
+      ],
+      "duration": 50,
+      "bigQuestion": "How can a polystyrene cup and a thermometer tell us how much energy a reaction releases?",
+      "objectives": [
+        "Describe simple calorimetry for combustion, displacement, dissolving and neutralisation",
+        "Calculate energy transferred using Q = mc delta T",
+        "Evaluate sources of error and suggest improvements"
+      ],
+      "successCriteria": [
+        "All: describe the apparatus and what is measured",
+        "Most: calculate the energy change and the energy per mole",
+        "Some: evaluate heat loss and suggest improvements for each type of experiment"
+      ],
+      "crossCurricular": "Food technology: energy in food; Maths: unit conversions",
+      "smsc": "Moral: honest reporting of results and error",
+      "keywords": [
+        {
+          "term": "calorimeter",
+          "def": "apparatus used to measure the energy transferred in a reaction"
+        },
+        {
+          "term": "temperature change",
+          "def": "final temperature minus initial temperature"
+        },
+        {
+          "term": "specific heat capacity",
+          "def": "energy needed to raise 1 g (or 1 kg) of a substance by 1 °C"
+        },
+        {
+          "term": "molar enthalpy change",
+          "def": "energy change per mole of reactant, in kJ/mol"
+        }
+      ],
+      "starter": [
+        "Bismillah. Define exothermic and endothermic.",
+        "Write the word equation for neutralisation.",
+        "State the unit of energy."
+      ],
+      "teach": [
+        {
+          "heading": "Four types of calorimetry",
+          "bullets": [
+            "Combustion: burn fuel to heat water in a metal can",
+            "Neutralisation: mix acid and alkali in a polystyrene cup",
+            "Displacement: zinc powder into copper sulfate solution",
+            "Dissolving: salt dissolved in water; measure change"
+          ],
+          "note": "Compare the set-ups: neutralisation, displacement and dissolving use an insulated polystyrene cup with a lid, thermometer and stirrer. Combustion uses a spirit burner under a copper can of water. Ammonium nitrate dissolving is endothermic (temperature falls); neutralisation, displacement and combustion are exothermic (temperature rises). Safety: eye protection, alcohol burners, corrosive solutions.",
+          "table": {
+            "head": [
+              "Type",
+              "Apparatus",
+              "Measure"
+            ],
+            "rows": [
+              [
+                "Neutralisation",
+                "polystyrene cup, lid",
+                "temperature rise of solution"
+              ],
+              [
+                "Displacement",
+                "polystyrene cup, lid",
+                "temperature rise of solution"
+              ],
+              [
+                "Dissolving",
+                "polystyrene cup, lid",
+                "temperature change of water"
+              ],
+              [
+                "Combustion",
+                "spirit burner and copper can",
+                "temperature rise of water; mass of fuel burned"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Calculating the energy transferred",
+          "bullets": [
+            "Q = m c delta T",
+            "m: mass of water or solution in g",
+            "c = 4.2 J/g °C for water",
+            "delta T: temperature change in °C"
+          ],
+          "note": "Take the density of dilute solutions as that of water, so 1 cm3 has mass 1 g. Divide Q by moles of limiting reagent to give energy per mole; convert J to kJ. Mark energy change as negative for exothermic reactions (enthalpy change). Use data given in the question for c.",
+          "model": {
+            "problem": "25 cm3 of 2.0 mol/dm3 HCl is mixed with 25 cm3 of 2.0 mol/dm3 NaOH. The temperature rises by 13.6 °C. Calculate Q and the energy change per mole of water formed. (c = 4.2 J/g °C; 1 cm3 = 1 g)",
+            "steps": [
+              "m = 50 g; Q = 50 x 4.2 x 13.6 = 2856 J",
+              "Moles of HCl = 25/1000 x 2.0 = 0.050 mol",
+              "Energy per mole = 2856 / 0.050 = 57 120 J/mol",
+              "= about 57 kJ/mol (exothermic, so -57 kJ/mol)"
+            ],
+            "answer": "Q = 2856 J; about -57 kJ/mol"
+          }
+        },
+        {
+          "heading": "Check: the cup",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option A is the idea that a lid does not matter. Option D reverses the effect.",
+          "check": {
+            "q": "Why is a lid put on the polystyrene cup?",
+            "options": [
+              "to reduce heat loss to the surroundings",
+              "to increase the temperature rise",
+              "to make the reaction faster",
+              "to stop the solution reacting"
+            ],
+            "answer": 0,
+            "why": "A lid and polystyrene reduce the heat lost, giving a temperature change closer to the true value."
+          }
+        },
+        {
+          "heading": "Evaluating the results",
+          "bullets": [
+            "Heat loss makes the measured rise too small",
+            "In combustion most energy escapes to the air",
+            "Incomplete combustion reduces the energy",
+            "Use a lid, a draught shield and a stirrer"
+          ],
+          "note": "The measured value of combustion is much lower than the data-book value because of heat loss. Ask: how can you improve the experiment? (Insulate the can, put a draught shield around, bring the flame closer, stir the water, burn the fuel completely.)",
+          "misconception": {
+            "wrong": "The temperature of a reaction mixture shows how much energy was released, with no other factors.",
+            "right": "Heat losses and the mass of water also matter. Energy released depends on the temperature change AND the mass of the solution, and heat loss makes the measured value too low."
+          }
+        },
+        {
+          "heading": "Practical plan",
+          "bullets": [
+            "Measure volumes accurately",
+            "Record the initial temperature for a few minutes",
+            "Add the second reagent and stir",
+            "Record the highest or lowest temperature"
+          ],
+          "note": "For dissolving ammonium nitrate record the lowest temperature and for neutralisation record the highest. Plot temperature against time if possible and extrapolate to correct for heat loss."
+        }
+      ],
+      "practice": [
+        "Calculate Q for 100 g water heated through 8.0 °C (c = 4.2 J/g °C).",
+        "Explain why a polystyrene cup is used.",
+        "State whether dissolving ammonium nitrate is exothermic or endothermic."
+      ],
+      "independent": [
+        "Core: Describe how to measure the temperature change when zinc powder is added to copper sulfate solution.",
+        "Extend: A fuel heats 200 g water by 20 °C. Calculate the energy transferred.",
+        "Stretch: Compare the measured and data-book energy changes for burning ethanol and explain the difference."
+      ],
+      "exit": [
+        "State the equation for Q.",
+        "State two ways to improve a combustion experiment.",
+        "Big question: how do we measure energy from a reaction?"
+      ],
+      "homework": "Write a plan to compare two fuels using the same apparatus. State the variables to control.",
+      "send": "SEND/EAL: provide labelled diagrams and a substitution template. Stretch: explain why extrapolating the cooling curve improves accuracy.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Chemistry 3: Physical chemistry",
+      "n": 73,
+      "title": "Reversible reactions in practice: hydrated copper(II) sulfate and ammonium chloride",
+      "covers": [
+        "Chemistry 3.18"
+      ],
+      "duration": 50,
+      "bigQuestion": "Which solid changes from blue to white and back again, and which vanishes when heated but reappears elsewhere?",
+      "objectives": [
+        "Describe the reversible dehydration of hydrated copper(II) sulfate",
+        "Describe the thermal decomposition of ammonium chloride and its reversal",
+        "Write equations using the reversible arrow"
+      ],
+      "successCriteria": [
+        "All: state the colour changes of copper(II) sulfate",
+        "Most: write the equations for both reversible reactions",
+        "Some: explain the observations including the movement of the gases"
+      ],
+      "crossCurricular": "Chemistry in industry: drying agents; Geology: hydrated minerals",
+      "smsc": "Spiritual: reflection on the cycles in nature",
+      "keywords": [
+        {
+          "term": "reversible reaction",
+          "def": "a reaction where products can react to form the original reactants"
+        },
+        {
+          "term": "hydrated",
+          "def": "containing water of crystallisation"
+        },
+        {
+          "term": "anhydrous",
+          "def": "without water of crystallisation"
+        },
+        {
+          "term": "thermal decomposition",
+          "def": "breakdown of a compound by heat"
+        }
+      ],
+      "starter": [
+        "Bismillah. Define a reversible reaction.",
+        "State the symbol used for a reversible reaction.",
+        "Describe a test for water."
+      ],
+      "teach": [
+        {
+          "heading": "Hydrated copper(II) sulfate",
+          "bullets": [
+            "Blue crystals CuSO4.5H2O",
+            "Heat strongly: steam given off, white powder remains",
+            "Add water to the white solid: it turns blue and gets hot",
+            "The reaction reverses"
+          ],
+          "note": "Equation: CuSO4.5H2O (blue) reversible reaction CuSO4 (white) + 5H2O. Heating drives off the water (endothermic); adding water is exothermic and regenerates the blue colour. Anhydrous copper(II) sulfate is used as a test for water but does not show that water is pure. Do not heat the crystals above a gentle flame; the test tube should be held at an angle with the mouth pointing away.",
+          "compare": {
+            "left": {
+              "title": "Heating (forward)",
+              "points": [
+                "Blue crystals lose water",
+                "White powder remains",
+                "Endothermic"
+              ]
+            },
+            "right": {
+              "title": "Adding water (reverse)",
+              "points": [
+                "White powder turns blue",
+                "Gets hot",
+                "Exothermic"
+              ]
+            },
+            "label": "and"
+          }
+        },
+        {
+          "heading": "Equation practice",
+          "bullets": [
+            "Use a reversible arrow",
+            "Balance the 5H2O",
+            "State symbols (s) and (g)",
+            "Describe the colour change"
+          ],
+          "note": "Practise writing the equation. Check pupils put the 5 in front of H2O only, and treat the dot as 'with' water.",
+          "model": {
+            "problem": "Write the equation for the dehydration of hydrated copper(II) sulfate and describe what you see.",
+            "steps": [
+              "Hydrated copper(II) sulfate is CuSO4.5H2O",
+              "Heating releases water as steam",
+              "CuSO4.5H2O(s) reversible CuSO4(s) + 5H2O(g)",
+              "Blue crystals turn to a white powder"
+            ],
+            "answer": "CuSO4.5H2O(s) reversible CuSO4(s) + 5H2O(g); blue to white"
+          }
+        },
+        {
+          "heading": "Ammonium chloride",
+          "bullets": [
+            "Heat white ammonium chloride in a test tube",
+            "It decomposes to ammonia and hydrogen chloride gases",
+            "The gases rise, cool and recombine",
+            "White solid forms again on the cooler upper part of the tube"
+          ],
+          "note": "Equation: NH4Cl(s) reversible NH3(g) + HCl(g). Damp red litmus paper at the mouth turns blue first (ammonia), and then red or blue-to-red as hydrogen chloride arrives, because ammonia diffuses faster than hydrogen chloride (it is lighter). Do this as a demonstration in a fume cupboard or well-ventilated space. Pupils should explain that the solid seems to 'sublime' but in fact is decomposing and recombining.",
+          "cycle": [
+            "Heat the white solid ammonium chloride",
+            "It decomposes to NH3 and HCl gases",
+            "The gases rise up the cooler tube",
+            "They recombine on the glass",
+            "White solid ring forms on the upper tube"
+          ]
+        },
+        {
+          "heading": "Check: observations",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option B shows the idea that the solid sublimes. Option C reverses the colour change.",
+          "check": {
+            "q": "What is seen when anhydrous copper(II) sulfate is added to water?",
+            "options": [
+              "white powder stays white",
+              "it turns blue",
+              "it turns black",
+              "it gives off a gas"
+            ],
+            "answer": 1,
+            "why": "The white powder rehydrates, turns blue and the mixture warms up."
+          }
+        },
+        {
+          "heading": "Why this matters",
+          "bullets": [
+            "Reversible reactions can go either way",
+            "Conditions decide the direction",
+            "Changing temperature changes the position",
+            "Used in the Haber process later"
+          ],
+          "note": "Link to dynamic equilibrium in the existing lesson: in an open test tube the steam escapes, so the reverse reaction is not possible; in a closed system a mixture reaches equilibrium."
+        }
+      ],
+      "practice": [
+        "State the colour of hydrated copper(II) sulfate.",
+        "Write the equation for the thermal decomposition of ammonium chloride.",
+        "Explain why a white solid appears near the top of the tube."
+      ],
+      "independent": [
+        "Core: Describe what you see when blue copper(II) sulfate crystals are heated and then cooled with water added.",
+        "Extend: Write balanced equations with state symbols for both reactions.",
+        "Stretch: Explain why the products of ammonium chloride decomposition separate and can be identified with litmus."
+      ],
+      "exit": [
+        "State what 'anhydrous' means.",
+        "Write the symbol for a reversible reaction.",
+        "Big question: describe one reaction that goes both ways."
+      ],
+      "homework": "Write a short explanation of how ammonium chloride seems to disappear and reappear.",
+      "send": "SEND/EAL: provide a photo sequence and colour cards. Stretch: link to why sealed vessels allow equilibrium.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Chemistry 4: Organic chemistry",
+      "n": 74,
+      "title": "Homologous series, functional groups and isomers",
+      "covers": [
+        "Chemistry 4.3"
+      ],
+      "duration": 50,
+      "bigQuestion": "Why do chemists have so many compounds with similar names and similar formulae?",
+      "objectives": [
+        "Define homologous series, functional group and isomerism",
+        "Recognise members of a homologous series from formulae",
+        "Draw and name isomers of simple alkanes"
+      ],
+      "successCriteria": [
+        "All: say what a homologous series is",
+        "Most: identify a functional group and general formula",
+        "Some: draw and name all the isomers of C5H12 and C4H8"
+      ],
+      "crossCurricular": "Maths: patterns and sequences; Pharmacy",
+      "smsc": "Spiritual: order and pattern in creation",
+      "keywords": [
+        {
+          "term": "homologous series",
+          "def": "a family of compounds with the same functional group and general formula, differing by CH2"
+        },
+        {
+          "term": "functional group",
+          "def": "the atom or group of atoms that determines the chemical properties"
+        },
+        {
+          "term": "isomers",
+          "def": "compounds with the same molecular formula but different structural formulae"
+        },
+        {
+          "term": "general formula",
+          "def": "the formula that applies to all members of a series"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name the first four alkanes.",
+        "State the general formula of the alkanes.",
+        "Draw the displayed formula of ethene."
+      ],
+      "teach": [
+        {
+          "heading": "Homologous series",
+          "bullets": [
+            "Same functional group",
+            "Same general formula",
+            "Consecutive members differ by CH2",
+            "Similar chemical properties; physical properties change gradually"
+          ],
+          "note": "Examples: alkanes CnH2n+2 (C-C single bonds), alkenes CnH2n (C=C), alcohols CnH2n+1OH (-OH), carboxylic acids CnH2n+1COOH (-COOH). Physical properties such as boiling point increase with the chain length. Ask pupils to give the formula of the next member after C3H8 (C4H10).",
+          "table": {
+            "head": [
+              "Series",
+              "General formula",
+              "Functional group"
+            ],
+            "rows": [
+              [
+                "alkanes",
+                "CnH2n+2",
+                "C-C single bonds"
+              ],
+              [
+                "alkenes",
+                "CnH2n",
+                "C=C double bond"
+              ],
+              [
+                "alcohols",
+                "CnH2n+1OH",
+                "-OH"
+              ],
+              [
+                "carboxylic acids",
+                "CnH2n+1COOH",
+                "-COOH"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Functional groups",
+          "bullets": [
+            "Determines how a compound reacts",
+            "All alkenes decolourise bromine water",
+            "All alcohols react with sodium",
+            "The rest of the molecule matters less"
+          ],
+          "note": "Link to prior knowledge: bromine water test for C=C. A functional group is the reactive centre of the molecule, so members of a series react in similar ways. Ask: what is the functional group in ethanol?",
+          "misconception": {
+            "wrong": "Isomers are the same molecule drawn in a different way.",
+            "right": "Isomers are different compounds with the same molecular formula. They have different structures and often different properties. A different drawing of the same chain is not an isomer."
+          }
+        },
+        {
+          "heading": "Isomers",
+          "bullets": [
+            "Same molecular formula; different structure",
+            "C4H10: butane and 2-methylpropane",
+            "Branched isomers have lower boiling points",
+            "C5H12 has three isomers"
+          ],
+          "note": "Show the carbon skeletons: butane CH3CH2CH2CH3 and 2-methylpropane (CH3)2CHCH3. For C5H12: pentane, 2-methylbutane, 2,2-dimethylpropane. Branched isomers have lower boiling points because they have less surface contact between molecules (weaker intermolecular forces). Tip: do not count rotations or flips of the same chain as new isomers.",
+          "model": {
+            "problem": "Draw and name the isomers of C4H10.",
+            "steps": [
+              "Longest chain of 4 carbons: butane CH3CH2CH2CH3",
+              "Chain of 3 carbons with a CH3 branch on carbon 2: 2-methylpropane",
+              "Check both have formula C4H10",
+              "No other arrangement is possible"
+            ],
+            "answer": "Two isomers: butane and 2-methylpropane"
+          }
+        },
+        {
+          "heading": "Check: isomers",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option A has the same molecular formula and the same structure, so is not an isomer; Option C has a different formula.",
+          "check": {
+            "q": "Which pair are isomers?",
+            "options": [
+              "butane and butane drawn flipped",
+              "butane and 2-methylpropane",
+              "ethane and ethene",
+              "propane and butane"
+            ],
+            "answer": 1,
+            "why": "Both are C4H10 but have different arrangements of atoms. The others are the same molecule or have different formulae."
+          }
+        },
+        {
+          "heading": "Isomers in alkenes",
+          "bullets": [
+            "C4H8: but-1-ene and but-2-ene",
+            "The double bond is in a different position",
+            "2-methylpropene is a third isomer",
+            "Numbers show the position of the functional group"
+          ],
+          "note": "For C4H8 the structural isomers are but-1-ene, but-2-ene and 2-methylpropene (cyclic isomers are beyond the spec). Position isomers differ in where the C=C is, so the number in the name matters."
+        }
+      ],
+      "practice": [
+        "State the general formula of the alkenes.",
+        "Give the molecular formula of the next member after C3H7OH.",
+        "Explain why butane and 2-methylpropane are isomers."
+      ],
+      "independent": [
+        "Core: Complete a table of the first four members of the alkanes with formulae.",
+        "Extend: Draw the three isomers of C5H12 and name them.",
+        "Stretch: Explain why a branched isomer has a lower boiling point than the straight-chain isomer."
+      ],
+      "exit": [
+        "Define a functional group.",
+        "Draw one isomer of C4H10 that is not butane.",
+        "Big question: how can two compounds have the same formula but be different?"
+      ],
+      "homework": "Make a one-page poster on the four homologous series in the course, with a general formula and an example for each.",
+      "send": "SEND/EAL: provide molecular model pictures to compare isomers. Stretch: discuss why alkenes are more reactive than alkanes.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Chemistry 4: Organic chemistry",
+      "n": 75,
+      "title": "Alcohols: names, oxidation and why fermentation needs no air",
+      "covers": [
+        "Chemistry 4.30",
+        "Chemistry 4.31",
+        "Chemistry 4.33"
+      ],
+      "duration": 50,
+      "bigQuestion": "Why does wine turn to vinegar if it is left open to the air?",
+      "objectives": [
+        "Name and write formulae for methanol, ethanol, propan-1-ol and butan-1-ol",
+        "Describe three ways ethanol can be oxidised",
+        "Explain why fermentation needs no air and has an optimum temperature"
+      ],
+      "successCriteria": [
+        "All: name and write formulae for the first four alcohols",
+        "Most: state the products of oxidation of ethanol and the dichromate colour change",
+        "Some: explain the conditions for fermentation using enzymes and oxygen"
+      ],
+      "crossCurricular": "Biology: respiration in yeast; Food technology: vinegar",
+      "smsc": "Moral: understanding why Islam prohibits drinking alcohol, while chemistry studies ethanol as a fuel and solvent",
+      "keywords": [
+        {
+          "term": "alcohol",
+          "def": "organic compound containing the -OH functional group"
+        },
+        {
+          "term": "oxidation",
+          "def": "gain of oxygen (or loss of hydrogen)"
+        },
+        {
+          "term": "fermentation",
+          "def": "anaerobic breakdown of glucose by yeast to ethanol and carbon dioxide"
+        },
+        {
+          "term": "optimum temperature",
+          "def": "temperature at which a reaction or enzyme works best"
+        }
+      ],
+      "starter": [
+        "Bismillah. Write the general formula of the alcohols.",
+        "State the functional group of an alcohol.",
+        "State what an enzyme is."
+      ],
+      "teach": [
+        {
+          "heading": "The first four alcohols",
+          "bullets": [
+            "Methanol CH3OH",
+            "Ethanol C2H5OH",
+            "Propan-1-ol C3H7OH",
+            "Butan-1-ol C4H9OH"
+          ],
+          "note": "Paper 2 only: this lesson covers separate Chemistry (4CH1) content, not Double Award. General formula CnH2n+1OH. The number in propan-1-ol shows that the -OH is on the first carbon. Ask pupils to draw displayed formulae. Methanol is toxic, a reminder to never taste laboratory chemicals.",
+          "table": {
+            "head": [
+              "Name",
+              "Molecular formula",
+              "Displayed group"
+            ],
+            "rows": [
+              [
+                "methanol",
+                "CH3OH",
+                "C-OH"
+              ],
+              [
+                "ethanol",
+                "C2H5OH",
+                "CH3CH2-OH"
+              ],
+              [
+                "propan-1-ol",
+                "C3H7OH",
+                "CH3CH2CH2-OH"
+              ],
+              [
+                "butan-1-ol",
+                "C4H9OH",
+                "CH3CH2CH2CH2-OH"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Three ways to oxidise ethanol",
+          "bullets": [
+            "Burning in air: carbon dioxide and water",
+            "Microbial oxidation: ethanoic acid (vinegar)",
+            "Heat with acidified potassium dichromate(VI): ethanoic acid",
+            "Colour change orange to green"
+          ],
+          "note": "Equations: C2H5OH + 3O2 gives 2CO2 + 3H2O; C2H5OH + O2 gives CH3COOH + H2O (microbial oxidation by bacteria in air, which makes wine go sour); with acidified potassium dichromate(VI) the orange solution turns green as dichromate is reduced. The mixture is heated under reflux so that vapour is condensed and returned. Remember that dichromate(VI) is toxic and a carcinogen (teacher demonstration).",
+          "cycle": [
+            "Ethanol",
+            "Add oxidising agent or bacteria with air",
+            "Ethanal forms first (not required)",
+            "Further oxidation",
+            "Ethanoic acid"
+          ]
+        },
+        {
+          "heading": "Fermentation conditions",
+          "bullets": [
+            "C6H12O6 gives 2C2H5OH + 2CO2",
+            "Yeast enzymes act on glucose",
+            "No air: oxygen would give aerobic respiration or oxidise the ethanol",
+            "Optimum temperature about 30-40 °C (approx.)"
+          ],
+          "note": "Fermentation is anaerobic respiration by yeast. If air is present, yeast respire aerobically producing carbon dioxide and water, and bacteria may oxidise ethanol to ethanoic acid. Too cold: slow reaction because enzymes have low kinetic energy; too hot (above about 45 °C, approx.): enzymes are denatured and the yeast die. Use an airlock to let carbon dioxide escape but not let air in. Optimum around 35 °C (verify against the specification wording).",
+          "model": {
+            "problem": "Explain why a brewer keeps the fermentation vessel sealed and at about 35 °C.",
+            "steps": [
+              "Without oxygen, yeast produce ethanol and carbon dioxide (anaerobic)",
+              "Air would allow oxidation of ethanol to ethanoic acid",
+              "35 °C is near the optimum for yeast enzymes",
+              "Too high a temperature denatures the enzymes"
+            ],
+            "answer": "No air stops oxidation; the optimum temperature gives the fastest reaction without denaturing enzymes."
+          }
+        },
+        {
+          "heading": "Check: oxidation",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option B is the product of reduction. Option D is the common error of naming ethanal instead of ethanoic acid for the final product.",
+          "check": {
+            "q": "Acidified potassium dichromate(VI) is heated with ethanol. What colour change is seen?",
+            "options": [
+              "green to orange",
+              "orange to green",
+              "blue to white",
+              "colourless to pink"
+            ],
+            "answer": 1,
+            "why": "Dichromate(VI) is orange and is reduced to green chromium(III) as the ethanol is oxidised."
+          }
+        }
+      ],
+      "practice": [
+        "Write the formula of propan-1-ol.",
+        "Write the word equation for the complete combustion of ethanol.",
+        "State why fermentation is carried out without air."
+      ],
+      "independent": [
+        "Core: Draw displayed formulae for methanol and ethanol.",
+        "Extend: Write balanced equations for the burning of ethanol and for its microbial oxidation.",
+        "Stretch: Explain why wine left open goes sour and why a fermenter needs temperature control."
+      ],
+      "exit": [
+        "Name the functional group in alcohols.",
+        "State the colour change in the dichromate test.",
+        "Big question: what happens to wine left open and why?"
+      ],
+      "homework": "Write the equation for fermentation and explain two conditions needed.",
+      "send": "SEND/EAL: provide displayed formula templates and sequencing cards. Stretch: link to enzyme denaturation.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Chemistry 4: Organic chemistry",
+      "n": 76,
+      "title": "Carboxylic acid reactions and esters: smells, uses and preparation",
+      "covers": [
+        "Chemistry 4.36",
+        "Chemistry 4.42",
+        "Chemistry 4.43"
+      ],
+      "duration": 50,
+      "bigQuestion": "Why does a rotten pineapple smell so different from vinegar, yet they are chemically related?",
+      "objectives": [
+        "Describe the reactions of carboxylic acid solutions with metals and carbonates",
+        "State properties and uses of esters",
+        "Describe how to prepare ethyl ethanoate"
+      ],
+      "successCriteria": [
+        "All: write the word equations for the reactions of ethanoic acid",
+        "Most: describe the properties and uses of esters and the preparation steps",
+        "Some: write balanced symbol equations and explain each step in the preparation"
+      ],
+      "crossCurricular": "Food science: flavourings; Perfumery",
+      "smsc": "Moral: use natural gifts responsibly",
+      "keywords": [
+        {
+          "term": "carboxylic acid",
+          "def": "organic acid containing the -COOH group"
+        },
+        {
+          "term": "ester",
+          "def": "compound formed when an alcohol reacts with a carboxylic acid"
+        },
+        {
+          "term": "volatile",
+          "def": "evaporates easily"
+        },
+        {
+          "term": "catalyst",
+          "def": "speeds up a reaction without being used up"
+        }
+      ],
+      "starter": [
+        "Bismillah. State the formula and functional group of ethanoic acid.",
+        "State what an acid and a metal produce.",
+        "State the test for carbon dioxide."
+      ],
+      "teach": [
+        {
+          "heading": "Acid reactions of carboxylic acids",
+          "bullets": [
+            "With a reactive metal: salt and hydrogen",
+            "With a carbonate: salt, water and carbon dioxide",
+            "Salts are called ethanoates",
+            "Reactions are slower than with strong acids"
+          ],
+          "note": "Paper 2 only: separate Chemistry (4CH1) content. Equations: 2CH3COOH + Mg gives (CH3COO)2Mg + H2; 2CH3COOH + Na2CO3 gives 2CH3COONa + H2O + CO2. Ethanoic acid is a weak acid, so it ionises only partly, so fizzing is gentler than with hydrochloric acid. Pupils can test for hydrogen (squeaky pop) and carbon dioxide (limewater milky).",
+          "table": {
+            "head": [
+              "Reactant",
+              "Products",
+              "Test"
+            ],
+            "rows": [
+              [
+                "magnesium",
+                "magnesium ethanoate + hydrogen",
+                "squeaky pop"
+              ],
+              [
+                "sodium carbonate",
+                "sodium ethanoate + water + carbon dioxide",
+                "limewater turns milky"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Making an ester",
+          "bullets": [
+            "Ethanol + ethanoic acid gives ethyl ethanoate + water",
+            "Add a few drops of concentrated sulfuric acid",
+            "Warm gently in a hot water bath",
+            "Pour into sodium carbonate solution and smell"
+          ],
+          "note": "Equation: C2H5OH + CH3COOH reversible CH3COOC2H5 + H2O. Concentrated sulfuric acid is a catalyst and is corrosive; wear eye protection. Use a hot water bath, not a naked flame, as ethanol and the ester are flammable. Sodium carbonate solution neutralises excess acid so the fruity smell of the ester can be detected. The ester forms a separate layer on top of the aqueous solution.",
+          "cycle": [
+            "Mix ethanol and ethanoic acid",
+            "Add a few drops of concentrated sulfuric acid",
+            "Warm in a hot water bath",
+            "Pour into sodium carbonate solution",
+            "Smell the ester carefully (wafting)"
+          ]
+        },
+        {
+          "heading": "Properties and uses of esters",
+          "bullets": [
+            "Volatile, so they evaporate easily",
+            "Strong, often sweet or fruity smells",
+            "Used in food flavourings",
+            "Used in perfumes and solvents"
+          ],
+          "note": "Esters are the reason fruits and flowers smell as they do. Natural and artificial flavourings can contain esters. Names follow alcohol + acid: ethyl (from ethanol) ethanoate (from ethanoic acid). Ask: what ester forms from methanol and ethanoic acid? (methyl ethanoate)",
+          "model": {
+            "problem": "Name the ester formed from propan-1-ol and ethanoic acid, and state one use of esters.",
+            "steps": [
+              "The alcohol part gives the first word: propyl",
+              "The acid part gives the second word: ethanoate",
+              "Name: propyl ethanoate",
+              "Esters are used in perfumes and food flavourings"
+            ],
+            "answer": "Propyl ethanoate; used as flavourings or perfumes"
+          }
+        },
+        {
+          "heading": "Check: carboxylic acid with carbonate",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option C omits water, a common slip. Option D forgets that carbonates produce carbon dioxide, not hydrogen.",
+          "check": {
+            "q": "Which products form when ethanoic acid reacts with sodium carbonate?",
+            "options": [
+              "sodium ethanoate and hydrogen",
+              "sodium ethanoate, water and carbon dioxide",
+              "sodium ethanoate and carbon dioxide only",
+              "ethyl ethanoate and water"
+            ],
+            "answer": 1,
+            "why": "Acid + carbonate gives salt + water + carbon dioxide. Hydrogen comes from metals."
+          }
+        },
+        {
+          "heading": "Safety and evaluation",
+          "bullets": [
+            "Concentrated acid: eye protection",
+            "Heat with a water bath",
+            "Waft; do not sniff directly",
+            "Reversible reaction: yield is not 100%"
+          ],
+          "note": "Discuss why the reaction does not go to completion (reversible). Removing water or adding excess alcohol can increase the yield; mention only if pupils ask."
+        }
+      ],
+      "practice": [
+        "Write the word equation for ethanoic acid reacting with magnesium.",
+        "Name the ester made from methanol and propanoic acid.",
+        "State the role of concentrated sulfuric acid in ester preparation."
+      ],
+      "independent": [
+        "Core: Describe how to prepare ethyl ethanoate with a safety note.",
+        "Extend: Write balanced equations for ethanoic acid reacting with calcium carbonate.",
+        "Stretch: Explain why the esterification reaction does not give a 100% yield."
+      ],
+      "exit": [
+        "Name the group in a carboxylic acid.",
+        "State one use of an ester.",
+        "Big question: how are vinegar and fruity smells related?"
+      ],
+      "homework": "Find three esters in food or perfume ingredient lists and write the alcohol and acid for each.",
+      "send": "SEND/EAL: provide naming cards (alcohol + acid). Stretch: explain why esters have lower boiling points than the acids from which they are made (no hydrogen bonding; verify).",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Physics 5: Solids, liquids and gases",
+      "n": 77,
+      "title": "Pressure difference in a liquid and the units of pressure",
+      "covers": [
+        "Physics 5.1",
+        "Physics 5.7"
+      ],
+      "duration": 50,
+      "bigQuestion": "Why must a submarine hull be stronger the deeper it dives?",
+      "objectives": [
+        "State the units for pressure, density, length, area, volume, force, speed and acceleration",
+        "Calculate the pressure difference between two depths using delta p = h x rho x g",
+        "Explain why pressure increases with depth"
+      ],
+      "successCriteria": [
+        "All: state the units used with pressure and density",
+        "Most: calculate the pressure difference for a given depth",
+        "Some: calculate the pressure difference between two points and relate it to a real situation"
+      ],
+      "crossCurricular": "Geography: ocean depths; Engineering: dams and submarines",
+      "smsc": "Spiritual: wonder at the depths of the oceans",
+      "keywords": [
+        {
+          "term": "pressure",
+          "def": "force per unit area, in pascals"
+        },
+        {
+          "term": "density",
+          "def": "mass per unit volume, in kg/m3"
+        },
+        {
+          "term": "depth h",
+          "def": "vertical distance below the surface"
+        },
+        {
+          "term": "pascal",
+          "def": "unit of pressure; 1 Pa = 1 N/m2"
+        }
+      ],
+      "starter": [
+        "Bismillah. State the equation for pressure in terms of force and area.",
+        "Calculate the pressure from a 60 N force on 0.30 m2.",
+        "State the equation for density."
+      ],
+      "teach": [
+        {
+          "heading": "Units used in this topic",
+          "bullets": [
+            "Temperature: °C and kelvin (K)",
+            "Energy: J; mass: kg; density: kg/m3",
+            "Length: m; area: m2; volume: m3",
+            "Force: N; pressure: Pa; speed m/s; acceleration m/s2"
+          ],
+          "note": "Quick-fire. Convert: 1 cm3 = 1 x 10 to the power -6 m3; 1 g/cm3 = 1000 kg/m3; 1 cm2 = 1 x 10 to the power -4 m2. 1 Pa = 1 N/m2. Temperature changes in °C and K are the same size; absolute temperature in K = °C + 273.",
+          "table": {
+            "head": [
+              "Quantity",
+              "Unit"
+            ],
+            "rows": [
+              [
+                "pressure",
+                "pascal, Pa (N/m2)"
+              ],
+              [
+                "density",
+                "kg/m3"
+              ],
+              [
+                "area",
+                "m2"
+              ],
+              [
+                "volume",
+                "m3"
+              ],
+              [
+                "temperature",
+                "°C or K"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Pressure in a liquid",
+          "bullets": [
+            "Pressure acts in all directions",
+            "Increases with depth and with density",
+            "Due to the weight of the liquid above",
+            "Pressure difference = h x rho x g"
+          ],
+          "note": "Pressure difference between two levels: delta p = h rho g where h is the vertical height between them in m, rho the density in kg/m3 and g the gravitational field strength in N/kg. Pressure depends on vertical depth only, not on the shape of the container. The deep-sea or dam wall are thicker at the base. g = 10 N/kg is used here; use the value given.",
+          "model": {
+            "problem": "A diver is 20 m below the surface of sea water (density 1030 kg/m3). Calculate the pressure difference between the surface and the diver. (g = 10 N/kg)",
+            "steps": [
+              "delta p = h rho g",
+              "delta p = 20 x 1030 x 10",
+              "delta p = 206 000 Pa",
+              "Atmospheric pressure (about 100 000 Pa) acts too, so total about 306 000 Pa"
+            ],
+            "answer": "206 000 Pa (2.06 x 10 to the power 5 Pa)"
+          }
+        },
+        {
+          "heading": "Check: depth",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option B reverses the effect. Option D is the idea that volume of water matters.",
+          "check": {
+            "q": "A submarine dives from 50 m to 150 m. What happens to the pressure on the hull?",
+            "options": [
+              "it decreases",
+              "it increases by delta p = 100 x rho x g",
+              "it stays the same",
+              "it depends on the width of the ocean"
+            ],
+            "answer": 1,
+            "why": "Pressure difference depends on the vertical depth change of 100 m, the density and g."
+          }
+        },
+        {
+          "heading": "Difference between two points",
+          "bullets": [
+            "Use the vertical height between the points",
+            "Not the total depth if both are underwater",
+            "A dam is thicker at the bottom",
+            "Water towers use height to give pressure"
+          ],
+          "note": "Ask: what is the pressure difference between points 5 m and 20 m deep in a lake (density 1000 kg/m3)? h = 15 m so delta p = 15 x 1000 x 10 = 150 000 Pa. A water tower on a hill gives pressure at the tap because of the height of water above."
+        }
+      ],
+      "practice": [
+        "State the unit of pressure and its equivalent in N and m2.",
+        "Calculate the pressure difference for 8.0 m of water (1000 kg/m3, g = 10 N/kg).",
+        "Explain why the base of a dam is thicker."
+      ],
+      "independent": [
+        "Core: Calculate the pressure difference for three depths in sea water.",
+        "Extend: Calculate the pressure difference between 5 m and 25 m in a lake.",
+        "Stretch: Mercury has a density of 13 600 kg/m3. Calculate the height of a mercury column that gives a pressure of 100 000 Pa (g = 10 N/kg)."
+      ],
+      "exit": [
+        "State the equation for pressure difference in a liquid.",
+        "Calculate delta p for h = 12 m, rho = 1000 kg/m3, g = 10 N/kg.",
+        "Big question: why does a submarine need a strong hull?"
+      ],
+      "homework": "Look up the greatest depth of the Mariana Trench (about 11 km; verify) and estimate the pressure difference from the surface.",
+      "send": "SEND/EAL: provide a formula triangle with units. Stretch: explain why pressure at a point acts equally in all directions.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Physics 5: Solids, liquids and gases",
+      "n": 78,
+      "title": "Gas molecules and temperature, and the unit J/kg °C",
+      "covers": [
+        "Physics 5.2",
+        "Physics 5.18"
+      ],
+      "duration": 50,
+      "bigQuestion": "Why does a sealed can of gas become dangerous in a hot car?",
+      "objectives": [
+        "Explain that a higher temperature raises the average speed of gas molecules",
+        "Link molecular speed to gas pressure at constant volume",
+        "Use the unit J/kg °C for specific heat capacity (Paper 2 only)"
+      ],
+      "successCriteria": [
+        "All: state that hotter gas molecules move faster",
+        "Most: explain the rise in pressure using collisions",
+        "Some: use the specific heat capacity unit consistently in calculations"
+      ],
+      "crossCurricular": "Chemistry: collision theory; Safety: aerosol cans",
+      "smsc": "Moral: safety awareness and responsibility",
+      "keywords": [
+        {
+          "term": "kinetic theory",
+          "def": "gas particles move randomly and collide with surfaces to produce pressure"
+        },
+        {
+          "term": "absolute zero",
+          "def": "lowest possible temperature, 0 K"
+        },
+        {
+          "term": "kelvin",
+          "def": "unit of absolute temperature; K = °C + 273"
+        },
+        {
+          "term": "specific heat capacity",
+          "def": "energy needed to raise 1 kg by 1 °C, in J/kg °C"
+        }
+      ],
+      "starter": [
+        "Bismillah. Convert 27 °C to kelvin.",
+        "Describe the arrangement of particles in a gas.",
+        "State why gas pressure acts on the walls of a container."
+      ],
+      "teach": [
+        {
+          "heading": "Temperature and molecular speed",
+          "bullets": [
+            "Temperature measures the average kinetic energy of particles",
+            "Higher temperature: molecules move faster on average",
+            "Not every molecule has the same speed",
+            "At 0 K particles have minimum energy"
+          ],
+          "note": "Draw a Maxwell-style speed distribution only as a sketch: the curve shifts to higher speeds at higher temperature, but the key idea is average speed. Convert °C to K by adding 273. Avoid saying 'all molecules speed up equally'. Link to the previous lesson on the Kelvin scale and gas pressure.",
+          "compare": {
+            "left": {
+              "title": "Cooler gas",
+              "points": [
+                "Lower average speed",
+                "Fewer, weaker collisions",
+                "Lower pressure"
+              ]
+            },
+            "right": {
+              "title": "Hotter gas",
+              "points": [
+                "Higher average speed",
+                "More frequent, harder collisions",
+                "Higher pressure"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Explaining pressure changes",
+          "bullets": [
+            "Gas in a fixed container",
+            "Heating increases the average speed",
+            "More frequent and harder collisions with the walls",
+            "Pressure rises"
+          ],
+          "note": "Use the three-step explanation: faster, more often, harder. Each collision exerts a force; pressure is total force per area. Ask: why do aerosol cans warn against heating? Because the pressure can rise enough to burst the can.",
+          "model": {
+            "problem": "Explain why the pressure of a gas in a sealed rigid container rises when it is heated.",
+            "steps": [
+              "Heating gives the molecules more kinetic energy so they move faster",
+              "They hit the walls more often",
+              "Each collision has a greater force",
+              "The total force per unit area increases, so pressure rises"
+            ],
+            "answer": "Faster molecules collide more often and harder with the walls, increasing pressure."
+          }
+        },
+        {
+          "heading": "Check: kinetic theory",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option A is the typical idea that molecules expand. Option C misses that only the average speed rises.",
+          "check": {
+            "q": "A gas is heated in a rigid container. Which statement is correct?",
+            "options": [
+              "the molecules get bigger",
+              "the average speed of the molecules increases",
+              "all the molecules move at the same speed",
+              "the number of molecules increases"
+            ],
+            "answer": 1,
+            "why": "A higher temperature means a higher average kinetic energy and therefore speed, not bigger particles or more of them."
+          }
+        },
+        {
+          "heading": "The unit J/kg °C",
+          "bullets": [
+            "c = E / (m x delta T)",
+            "Energy in J, mass in kg, temperature change in °C",
+            "Water: about 4200 J/kg °C",
+            "Higher c: more energy needed to warm the same mass"
+          ],
+          "note": "Paper 2 only: the unit is flagged as separate Physics (4PH1) content. Link to the specific heat capacity lesson. Check the units: J / (kg x °C). Calculation: 0.50 kg of water heated by 20 °C needs 0.50 x 4200 x 20 = 42 000 J.",
+          "model": {
+            "problem": "How much energy is needed to heat 0.50 kg of water by 20 °C? (c = 4200 J/kg °C)",
+            "steps": [
+              "E = m c delta T",
+              "E = 0.50 x 4200 x 20",
+              "E = 42 000 J",
+              "Unit check: kg x J/kg °C x °C = J"
+            ],
+            "answer": "42 000 J"
+          }
+        }
+      ],
+      "practice": [
+        "Convert 100 °C to kelvin.",
+        "Explain why gas pressure rises when the temperature rises at constant volume.",
+        "Calculate the energy needed to heat 2.0 kg of water by 5.0 °C (c = 4200 J/kg °C)."
+      ],
+      "independent": [
+        "Core: Write a three-step explanation of why pressure rises on heating.",
+        "Extend: Calculate the energy to heat 1.5 kg of oil by 30 °C (c = 2000 J/kg °C).",
+        "Stretch: Explain what happens to the average speed of the molecules at absolute zero and why pressure falls to zero in the model."
+      ],
+      "exit": [
+        "State what happens to average molecular speed when temperature rises.",
+        "State the unit of specific heat capacity.",
+        "Big question: why is a hot car dangerous for a sealed spray can?"
+      ],
+      "homework": "Make a labelled diagram of gas particles in a cool and a hot container and write a three-sentence explanation.",
+      "send": "SEND/EAL: use a slow-motion particle animation and a sentence frame (faster, more often, harder). Stretch: relate the speed distribution to evaporation.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Physics 6: Magnetism and electromagnetism",
+      "n": 79,
+      "title": "Building an electromagnet and the units A, V and W",
+      "covers": [
+        "Physics 6.1",
+        "Physics 6.9"
+      ],
+      "duration": 50,
+      "bigQuestion": "How does a scrapyard crane pick up a car and then let go?",
+      "objectives": [
+        "State the units A, V and W",
+        "Describe the construction of an electromagnet",
+        "Explain how to increase the strength of an electromagnet"
+      ],
+      "successCriteria": [
+        "All: describe a solenoid with an iron core",
+        "Most: list three ways to increase strength and explain why soft iron is used",
+        "Some: plan an investigation of electromagnet strength with controlled variables"
+      ],
+      "crossCurricular": "Engineering: scrapyard cranes, relays and bells; Design technology",
+      "smsc": "Social: using technology to serve people",
+      "keywords": [
+        {
+          "term": "electromagnet",
+          "def": "a magnet created by an electric current in a coil"
+        },
+        {
+          "term": "solenoid",
+          "def": "a long coil of wire"
+        },
+        {
+          "term": "soft iron",
+          "def": "iron that magnetises easily and loses magnetism when the current stops"
+        },
+        {
+          "term": "core",
+          "def": "the material inside the coil"
+        }
+      ],
+      "starter": [
+        "Bismillah. Draw the magnetic field around a bar magnet.",
+        "State what is produced around a wire carrying a current.",
+        "State the equation for electrical power."
+      ],
+      "teach": [
+        {
+          "heading": "Units: ampere, volt, watt",
+          "bullets": [
+            "Current: ampere (A)",
+            "Potential difference: volt (V)",
+            "Power: watt (W) = V x A",
+            "Electromagnet power: P = IV"
+          ],
+          "note": "Quick check: a 12 V supply drives 3.0 A through a coil: P = 12 x 3.0 = 36 W. Remind pupils to use the correct units in each calculation. Link to the earlier electrical units lesson.",
+          "table": {
+            "head": [
+              "Quantity",
+              "Unit",
+              "Symbol"
+            ],
+            "rows": [
+              [
+                "current",
+                "ampere",
+                "A"
+              ],
+              [
+                "potential difference",
+                "volt",
+                "V"
+              ],
+              [
+                "power",
+                "watt",
+                "W"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Construction of an electromagnet",
+          "bullets": [
+            "Insulated copper wire wound into a coil (solenoid)",
+            "Soft iron core inside the coil",
+            "Direct current from a cell or power supply",
+            "Switch to turn the field on and off"
+          ],
+          "note": "Paper 2 only: separate Physics (4PH1) content. Insulated wire stops the current taking shortcuts between turns. Soft iron is magnetised by the coil field, so the total field is much stronger, but it loses its magnetism when the current is switched off. Steel would stay magnetised, so cannot be switched off. Uses: cranes in scrapyards, relays, electric bells, door locks.",
+          "compare": {
+            "left": {
+              "title": "Soft iron core",
+              "points": [
+                "Magnetises easily",
+                "Demagnetises when current stops",
+                "Used in electromagnets"
+              ]
+            },
+            "right": {
+              "title": "Steel core",
+              "points": [
+                "Stays magnetised",
+                "Cannot switch off",
+                "Used in permanent magnets"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Making it stronger",
+          "bullets": [
+            "More turns of wire",
+            "A larger current",
+            "A soft iron core",
+            "Tighter, closer turns"
+          ],
+          "note": "Test by counting how many paperclips are picked up. Control variables: same coil, same length of wire and the same nail. Increasing current heats the wire, so use short measurement times and take care. Ask pupils to plan the investigation and name the independent, dependent and control variables.",
+          "model": {
+            "problem": "A student wants to show how the number of turns affects the strength of an electromagnet. Describe the plan.",
+            "steps": [
+              "Independent variable: number of turns (e.g. 10, 20, 30, 40)",
+              "Dependent variable: number of paperclips picked up",
+              "Control: same current, same iron nail, same type of wire",
+              "Repeat three times and calculate the mean"
+            ],
+            "answer": "The more turns, the more paperclips are picked up."
+          }
+        },
+        {
+          "heading": "Check: strength",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option B would reduce the strength. Option C is a plausible but incorrect idea, since a plastic core does not concentrate the field.",
+          "check": {
+            "q": "Which change does NOT make an electromagnet stronger?",
+            "options": [
+              "more turns",
+              "a plastic core instead of iron",
+              "a larger current",
+              "adding a soft iron core"
+            ],
+            "answer": 1,
+            "why": "A plastic core is not magnetic and does not strengthen the field."
+          }
+        }
+      ],
+      "practice": [
+        "State the unit of power.",
+        "Calculate the power when 9.0 V drives a 2.0 A current through a coil.",
+        "Explain why soft iron is used for the core of an electromagnet."
+      ],
+      "independent": [
+        "Core: Draw and label an electromagnet.",
+        "Extend: Describe two uses of electromagnets and explain why an electromagnet is better than a permanent magnet in each.",
+        "Stretch: Explain why increasing the current has a limit in practice."
+      ],
+      "exit": [
+        "List three ways to strengthen an electromagnet.",
+        "State why the wire is insulated.",
+        "Big question: how does a crane drop the car?"
+      ],
+      "homework": "Build or sketch an electromagnet with a nail and wire and describe how you would test it.",
+      "send": "SEND/EAL: provide a labelled diagram and variable sorting cards. Stretch: explain how a relay uses a small current to switch a large one.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Physics 6: Magnetism and electromagnetism",
+      "n": 80,
+      "title": "The transformer: structure and power in equals power out",
+      "covers": [
+        "Physics 6.17",
+        "Physics 6.20"
+      ],
+      "duration": 50,
+      "bigQuestion": "How does a phone charger change 230 V into a safe 5 V?",
+      "objectives": [
+        "Describe the structure of a transformer",
+        "Use the turns ratio to calculate output voltage",
+        "Use VpIp = VsIs for a transformer that is 100% efficient"
+      ],
+      "successCriteria": [
+        "All: label the primary coil, secondary coil and iron core",
+        "Most: calculate the voltage from the turns and explain why a.c. is needed",
+        "Some: calculate currents for an ideal transformer and explain the benefit for power transmission"
+      ],
+      "crossCurricular": "Engineering: the National Grid; Technology: chargers",
+      "smsc": "Social: providing safe, shared electricity to communities",
+      "keywords": [
+        {
+          "term": "transformer",
+          "def": "device that changes the size of an alternating voltage"
+        },
+        {
+          "term": "primary coil",
+          "def": "the input coil"
+        },
+        {
+          "term": "secondary coil",
+          "def": "the output coil"
+        },
+        {
+          "term": "step-up",
+          "def": "transformer that increases the voltage"
+        }
+      ],
+      "starter": [
+        "Bismillah. State what electromagnetic induction is.",
+        "State the equation for electrical power.",
+        "Explain why transmission uses high voltage."
+      ],
+      "teach": [
+        {
+          "heading": "Structure of a transformer",
+          "bullets": [
+            "Two coils of insulated wire",
+            "Wound on a laminated soft iron core",
+            "Primary coil: input; secondary coil: output",
+            "The core links the magnetic field between the coils"
+          ],
+          "note": "Paper 2 only: separate Physics (4PH1) content. Alternating current in the primary creates a changing magnetic field in the core. This changing field induces an alternating voltage in the secondary. A direct current does not work because the field does not change. The core is laminated (made of thin sheets) to reduce eddy currents; mention as stretch only (verify). The number of turns decides the output voltage.",
+          "compare": {
+            "left": {
+              "title": "Step-up transformer",
+              "points": [
+                "More turns on secondary",
+                "Increases voltage",
+                "Decreases current"
+              ]
+            },
+            "right": {
+              "title": "Step-down transformer",
+              "points": [
+                "Fewer turns on secondary",
+                "Decreases voltage",
+                "Increases current"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Turns ratio",
+          "bullets": [
+            "Vp / Vs = Np / Ns",
+            "Vs = Vp x Ns / Np",
+            "Ratio of voltages equals ratio of turns",
+            "Only works with a.c."
+          ],
+          "note": "Check pupils use the same coil order on both sides. Example: 230 V input, primary of 1150 turns, secondary of 50 turns.",
+          "model": {
+            "problem": "A transformer has 1150 turns on the primary coil and 50 turns on the secondary coil. The input is 230 V. Calculate the output voltage.",
+            "steps": [
+              "Vp / Vs = Np / Ns",
+              "230 / Vs = 1150 / 50",
+              "Vs = 230 x 50 / 1150",
+              "Vs = 10 V"
+            ],
+            "answer": "10 V (a step-down transformer)"
+          }
+        },
+        {
+          "heading": "Power in equals power out",
+          "bullets": [
+            "Ideal transformer is 100% efficient",
+            "Power in = power out",
+            "VpIp = VsIs",
+            "Step up the voltage: the current falls"
+          ],
+          "note": "Apply it to the previous example: 10 V at 2.0 A secondary is 20 W, so Ip = 20 / 230 = 0.087 A. Real transformers lose some energy as heat, so output power is slightly smaller. High-voltage transmission means lower current in the cables, so less energy is wasted as heat (P = I squared R).",
+          "model": {
+            "problem": "The secondary of an ideal transformer delivers 2.0 A at 10 V. The primary voltage is 230 V. Calculate the primary current.",
+            "steps": [
+              "Power out = Vs Is = 10 x 2.0 = 20 W",
+              "Power in = power out = 20 W",
+              "Ip = P / Vp = 20 / 230",
+              "Ip = 0.087 A"
+            ],
+            "answer": "0.087 A"
+          }
+        },
+        {
+          "heading": "Check: ideal transformer",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option A is a usual error: confusing step-up with the same current. Option D forgets that direct current cannot work.",
+          "check": {
+            "q": "A step-up transformer has 100% efficiency. What happens to the current?",
+            "options": [
+              "it increases",
+              "it decreases",
+              "it stays the same",
+              "it is zero"
+            ],
+            "answer": 1,
+            "why": "Voltage increases, so for the same power the current must decrease."
+          }
+        },
+        {
+          "heading": "Why a.c. only",
+          "bullets": [
+            "a.c. gives a changing field",
+            "d.c. gives a steady field in the core",
+            "No change: no induced voltage",
+            "Link to the National Grid"
+          ],
+          "note": "Ask: what would a battery connected to the primary do? Nothing after the first moment, since there would be no changing flux. Link to the earlier electromagnetic induction lesson."
+        }
+      ],
+      "practice": [
+        "Name the three main parts of a transformer.",
+        "A transformer has 200 turns in the primary and 1000 in the secondary. The input is 12 V. Calculate the output voltage.",
+        "A step-down transformer is 100% efficient and the input is 230 V at 0.50 A. Calculate the output power."
+      ],
+      "independent": [
+        "Core: Label a transformer and describe how it works.",
+        "Extend: Calculate the secondary current for an ideal transformer with Vp = 230 V, Ip = 0.20 A, Vs = 23 V.",
+        "Stretch: Explain why high voltage transmission reduces energy loss in cables."
+      ],
+      "exit": [
+        "State why a transformer needs a.c.",
+        "State the power equation for an ideal transformer.",
+        "Big question: how does a charger give 5 V from 230 V?"
+      ],
+      "homework": "Look at the label of a phone charger and record the input and output voltages and calculate the turns ratio.",
+      "send": "SEND/EAL: provide a ratio template and labelled diagram. Stretch: calculate efficiency if the output is 90% of the input power.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Physics 7: Radioactivity and particles",
+      "n": 81,
+      "title": "Why fusion needs extreme temperature and pressure",
+      "covers": [
+        "Physics 7.26"
+      ],
+      "duration": 50,
+      "bigQuestion": "If fusion powers the Sun, why is it so hard to make on Earth?",
+      "objectives": [
+        "Describe nuclear fusion",
+        "Explain that nuclei repel each other because protons are positively charged",
+        "Explain why fusion needs high temperature and high pressure"
+      ],
+      "successCriteria": [
+        "All: describe what fusion is",
+        "Most: explain the electrostatic repulsion of nuclei",
+        "Some: justify the conditions in the Sun and in fusion reactors"
+      ],
+      "crossCurricular": "Energy engineering; Astronomy: how stars shine",
+      "smsc": "Spiritual: the Sun as a sign of order and benefit",
+      "keywords": [
+        {
+          "term": "nuclear fusion",
+          "def": "joining of two light nuclei to form a heavier nucleus, releasing energy"
+        },
+        {
+          "term": "electrostatic repulsion",
+          "def": "force pushing apart objects with like charges"
+        },
+        {
+          "term": "plasma",
+          "def": "a very hot gas of ions and electrons"
+        },
+        {
+          "term": "isotope",
+          "def": "atoms of the same element with different numbers of neutrons"
+        }
+      ],
+      "starter": [
+        "Bismillah. State the charge on a proton and a neutron.",
+        "State the rule for like charges.",
+        "Name the process that powers the Sun."
+      ],
+      "teach": [
+        {
+          "heading": "What is fusion?",
+          "bullets": [
+            "Two light nuclei join to form a heavier nucleus",
+            "Example: hydrogen isotopes forming helium",
+            "Energy is released",
+            "Powers the Sun and other stars"
+          ],
+          "note": "Reaction: hydrogen-2 (deuterium) + hydrogen-3 (tritium) gives helium-4 + a neutron + energy. Check the mass numbers: 2 + 3 = 4 + 1. Check the charge: 1 + 1 = 2 + 0. The mass of the products is very slightly smaller than the reactants; the difference is released as energy (E = mc squared is beyond this specification; do not require it).",
+          "table": {
+            "head": [
+              "Nucleus",
+              "Protons",
+              "Neutrons"
+            ],
+            "rows": [
+              [
+                "hydrogen-2 (deuterium)",
+                "1",
+                "1"
+              ],
+              [
+                "hydrogen-3 (tritium)",
+                "1",
+                "2"
+              ],
+              [
+                "helium-4",
+                "2",
+                "2"
+              ],
+              [
+                "neutron",
+                "0",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The barrier: electrostatic repulsion",
+          "bullets": [
+            "Nuclei contain protons: positive charge",
+            "Like charges repel",
+            "The repulsion grows as nuclei approach",
+            "Nuclei must get very close to fuse"
+          ],
+          "note": "Analogy: pushing two like magnetic poles together. The nuclei must get very close before the strong nuclear force (very short range) takes over and binds them. Therefore the nuclei need a large amount of kinetic energy to overcome repulsion. Do not use the word 'bonds' for the nuclear force without explanation.",
+          "misconception": {
+            "wrong": "Fusion happens easily because nuclei are very small and attract each other.",
+            "right": "Nuclei are positively charged and repel strongly. They must be given a lot of kinetic energy to get close enough to fuse."
+          }
+        },
+        {
+          "heading": "High temperature and high pressure",
+          "bullets": [
+            "High temperature: nuclei move very fast",
+            "Fast nuclei can overcome the repulsion",
+            "High pressure: nuclei close together",
+            "More frequent collisions give a higher fusion rate"
+          ],
+          "note": "The Sun's core is about 15 million °C (approx.; verify), with the huge pressure from gravity. Fusion reactors on Earth need temperatures of roughly 100 million °C or more (approx.) and a magnetic field to confine the plasma, because no material container could survive. Short answer model: high temperature gives enough kinetic energy to overcome repulsion; high pressure brings nuclei close together so collisions are frequent.",
+          "model": {
+            "problem": "Explain why nuclear fusion needs a very high temperature and pressure.",
+            "steps": [
+              "Nuclei are positively charged so they repel each other",
+              "High temperature gives nuclei enough kinetic energy to get close despite the repulsion",
+              "High pressure squeezes nuclei together so collisions are more frequent",
+              "So fusion is only possible in stars or specially built reactors"
+            ],
+            "answer": "High temperature overcomes electrostatic repulsion; high pressure increases collision rate."
+          }
+        },
+        {
+          "heading": "Check: fusion",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option A is the typical confusion with fission. Option C reverses the effect of temperature.",
+          "check": {
+            "q": "Why do nuclei need a lot of kinetic energy to fuse?",
+            "options": [
+              "to split into smaller nuclei",
+              "to overcome the electrostatic repulsion between protons",
+              "to lose neutrons",
+              "to become negatively charged"
+            ],
+            "answer": 1,
+            "why": "Protons repel each other. The nuclei need enough kinetic energy to get close enough to fuse."
+          }
+        }
+      ],
+      "practice": [
+        "State what happens in nuclear fusion.",
+        "Explain why nuclei repel each other.",
+        "State two conditions needed for fusion."
+      ],
+      "independent": [
+        "Core: Complete the fusion equation for deuterium and tritium by balancing the numbers.",
+        "Extend: Explain why fusion happens in the Sun but is hard to achieve in a laboratory.",
+        "Stretch: Compare fusion and fission in terms of fuel, products and conditions."
+      ],
+      "exit": [
+        "State why fusion needs a high temperature.",
+        "Name one thing the reactor must do with the plasma.",
+        "Big question: why is fusion hard on Earth?"
+      ],
+      "homework": "Write a 100-word paragraph explaining why fusion could be a useful source of energy and why it is difficult.",
+      "send": "SEND/EAL: use a magnet analogy and a labelled diagram. Stretch: explain magnetic confinement.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Physics 8: Astrophysics",
+      "n": 82,
+      "title": "The scale of the universe and gravitational field strength",
+      "covers": [
+        "Physics 8.1",
+        "Physics 8.2"
+      ],
+      "duration": 50,
+      "bigQuestion": "How many stars are there, and how heavy would you be on another world?",
+      "objectives": [
+        "State the units kg, m, m/s, m/s2, N, s and N/kg",
+        "Describe the hierarchy of planet, star, galaxy and universe",
+        "Use W = mg with different gravitational field strengths"
+      ],
+      "successCriteria": [
+        "All: order the objects by size and state the units",
+        "Most: describe the Milky Way and calculate weight on other worlds",
+        "Some: compare orders of magnitude and explain why weight varies while mass stays the same"
+      ],
+      "crossCurricular": "Geography: the Earth in space; Maths: standard form",
+      "smsc": "Spiritual: the vastness of creation and humility",
+      "keywords": [
+        {
+          "term": "galaxy",
+          "def": "a very large group of stars held together by gravity"
+        },
+        {
+          "term": "Milky Way",
+          "def": "the galaxy that contains our Solar System"
+        },
+        {
+          "term": "universe",
+          "def": "everything that exists: all space, matter and energy"
+        },
+        {
+          "term": "gravitational field strength",
+          "def": "force per unit mass, in N/kg"
+        }
+      ],
+      "starter": [
+        "Bismillah. State the equation for weight.",
+        "Name the force that keeps the planets in orbit.",
+        "Write 3 000 000 in standard form."
+      ],
+      "teach": [
+        {
+          "heading": "The hierarchy of the universe",
+          "bullets": [
+            "Solar System: Sun and its orbiting bodies",
+            "Galaxy: billions of stars",
+            "Universe: billions of galaxies",
+            "The Milky Way is our spiral galaxy"
+          ],
+          "note": "Use approximate figures with care: the Milky Way contains hundreds of billions of stars (approx. 100-400 billion; verify) and the observable universe has about two trillion galaxies in some estimates (verify). Say 'billions of galaxies' as in the specification. Distances: a light-year is about 9.5 x 10 to the power 15 m (verify). Our Sun is one ordinary star.",
+          "cycle": [
+            "Earth and the Moon",
+            "Solar System",
+            "Galaxy (Milky Way)",
+            "Galaxies in clusters",
+            "The universe"
+          ]
+        },
+        {
+          "heading": "Units in astrophysics",
+          "bullets": [
+            "Mass: kg; distance: m",
+            "Speed: m/s; acceleration: m/s2",
+            "Force: N; time: s",
+            "Gravitational field strength: N/kg"
+          ],
+          "note": "N/kg and m/s2 are equivalent for gravitational acceleration. Typical values (approx.; use values given in the exam): Earth 9.8 N/kg, Moon 1.6 N/kg, Mars 3.7 N/kg, Jupiter about 25 N/kg.",
+          "table": {
+            "head": [
+              "Body",
+              "g in N/kg (approx.)"
+            ],
+            "rows": [
+              [
+                "Earth",
+                "9.8"
+              ],
+              [
+                "Moon",
+                "1.6"
+              ],
+              [
+                "Mars",
+                "3.7"
+              ],
+              [
+                "Jupiter",
+                "25"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Weight on other worlds",
+          "bullets": [
+            "Mass stays the same everywhere",
+            "Weight W = m g",
+            "g depends on the body's mass and radius",
+            "Weight is a force in newtons"
+          ],
+          "note": "Common error: saying mass changes on the Moon. It does not.",
+          "model": {
+            "problem": "A 60 kg astronaut stands on the Moon where g = 1.6 N/kg. Calculate the weight. Compare with Earth (g = 10 N/kg).",
+            "steps": [
+              "W = m g",
+              "Moon: W = 60 x 1.6 = 96 N",
+              "Earth: W = 60 x 10 = 600 N",
+              "Mass is 60 kg in both places"
+            ],
+            "answer": "96 N on the Moon; 600 N on Earth; mass unchanged"
+          }
+        },
+        {
+          "heading": "Check: mass and weight",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option A is the main misconception. Option C swaps units.",
+          "check": {
+            "q": "An astronaut travels from Earth to the Moon. Which quantity stays the same?",
+            "options": [
+              "weight",
+              "mass",
+              "gravitational field strength",
+              "force of gravity"
+            ],
+            "answer": 1,
+            "why": "Mass is the amount of matter and does not change. Weight changes because g changes."
+          }
+        }
+      ],
+      "practice": [
+        "Put in order from smallest to largest: galaxy, planet, universe, star.",
+        "Calculate the weight of a 2.0 kg object on Mars (g = 3.7 N/kg).",
+        "State the unit of gravitational field strength."
+      ],
+      "independent": [
+        "Core: Complete the hierarchy table of the universe with an example of each.",
+        "Extend: Calculate the weight of a 50 kg person on the Earth, Moon and Jupiter.",
+        "Stretch: Jupiter has a much larger g than Earth. Explain what this tells you about the force on a 1 kg mass there and how its weight would compare."
+      ],
+      "exit": [
+        "Name the galaxy that contains our Sun.",
+        "State why mass does not change on the Moon.",
+        "Big question: how heavy would you be on another world?"
+      ],
+      "homework": "Write a postcard from another planet explaining your weight and why your mass did not change.",
+      "send": "SEND/EAL: provide a size-order card sort. Stretch: explain how standard form helps with large numbers.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Physics 8: Astrophysics",
+      "n": 83,
+      "title": "Stellar evolution compared: Sun-like stars and massive stars",
+      "covers": [
+        "Physics 8.9",
+        "Physics 8.10"
+      ],
+      "duration": 50,
+      "bigQuestion": "Will the Sun end with a bang or a whimper?",
+      "objectives": [
+        "Describe the evolution of Sun-like stars from nebula to white dwarf",
+        "Describe the evolution of stars more massive than the Sun",
+        "Explain how mass decides a star's final stage"
+      ],
+      "successCriteria": [
+        "All: order the stages for a Sun-like star",
+        "Most: compare the end stages of the two types of star",
+        "Some: explain stability on the main sequence and the origin of heavier elements"
+      ],
+      "crossCurricular": "Chemistry: origin of the elements; History: Islamic astronomers' observations",
+      "smsc": "Spiritual: reflecting on the life and end of stars",
+      "keywords": [
+        {
+          "term": "nebula",
+          "def": "a cloud of dust and gas where stars form"
+        },
+        {
+          "term": "main sequence",
+          "def": "long, stable stage where hydrogen fuses to helium in the core"
+        },
+        {
+          "term": "red giant",
+          "def": "large cool star after the core hydrogen is used up"
+        },
+        {
+          "term": "supernova",
+          "def": "explosion of a massive star at the end of its life"
+        }
+      ],
+      "starter": [
+        "Bismillah. State what force pulls a nebula together.",
+        "State what happens in the core of a main sequence star.",
+        "Define a galaxy."
+      ],
+      "teach": [
+        {
+          "heading": "Sun-like stars",
+          "bullets": [
+            "Nebula: a cloud of gas and dust",
+            "Protostar forms as gravity pulls the cloud together",
+            "Main sequence: hydrogen fuses into helium",
+            "Red giant, then white dwarf"
+          ],
+          "note": "Sequence: nebula, protostar, main sequence, red giant, white dwarf. Gravity pulls inwards; heat and radiation pressure from fusion push outwards; main sequence is stable because they balance. When the hydrogen in the core is used up, the core contracts and the outer layers expand and cool (red giant). The outer layers drift off and the core remains as a hot dense white dwarf, which cools over time (approx. billions of years).",
+          "cycle": [
+            "Nebula",
+            "Protostar",
+            "Main sequence",
+            "Red giant",
+            "White dwarf"
+          ]
+        },
+        {
+          "heading": "Massive stars",
+          "bullets": [
+            "Same start: nebula, protostar, main sequence",
+            "Then expand to a red supergiant",
+            "Core collapses and a supernova explodes",
+            "Leaves a neutron star or black hole"
+          ],
+          "note": "The spec points focus on the stages. Very massive stars create heavier elements by fusion, up to iron in the core, and the supernova spreads elements into space, which form new stars, planets and us. A neutron star is extremely dense; if the core is massive enough, a black hole forms (gravity so strong that not even light escapes).",
+          "compare": {
+            "left": {
+              "title": "Sun-like star",
+              "points": [
+                "Red giant",
+                "Outer layers drift off",
+                "White dwarf"
+              ]
+            },
+            "right": {
+              "title": "Massive star",
+              "points": [
+                "Red supergiant",
+                "Supernova",
+                "Neutron star or black hole"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Compare the paths",
+          "bullets": [
+            "The mass of the star decides its fate",
+            "Both start with nebula, protostar, main sequence",
+            "Larger mass: shorter life on the main sequence",
+            "Heavier elements formed and spread in a supernova"
+          ],
+          "note": "Ask: why do bigger stars live shorter lives? They use fuel much faster. Model answer below.",
+          "model": {
+            "problem": "Describe the differences between the life cycle of the Sun and a star much more massive than the Sun.",
+            "steps": [
+              "Both begin as a nebula that collapses to a protostar and then a main sequence star",
+              "The Sun becomes a red giant; the massive star becomes a red supergiant",
+              "The Sun's outer layers drift away leaving a white dwarf",
+              "The massive star ends in a supernova leaving a neutron star or black hole"
+            ],
+            "answer": "Mass decides the end stage: white dwarf for Sun-like stars; neutron star or black hole for much more massive stars."
+          }
+        },
+        {
+          "heading": "Check: end stages",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option A is the typical error of putting a black hole after any star. Option C is the wrong order.",
+          "check": {
+            "q": "Which is the final stage of a star like the Sun?",
+            "options": [
+              "black hole",
+              "white dwarf",
+              "supernova",
+              "neutron star"
+            ],
+            "answer": 1,
+            "why": "The Sun is not massive enough to become a supernova. It will end as a white dwarf."
+          }
+        }
+      ],
+      "practice": [
+        "Put in order: red giant, nebula, main sequence, white dwarf, protostar.",
+        "State what balances gravity during the main sequence.",
+        "State two differences between the end of the Sun and a more massive star."
+      ],
+      "independent": [
+        "Core: Draw a flow chart for the life cycle of the Sun.",
+        "Extend: Draw a flow chart for a massive star and compare the two.",
+        "Stretch: Explain why heavy elements on Earth came from earlier stars."
+      ],
+      "exit": [
+        "State the stage after the main sequence for a Sun-like star.",
+        "State what may be left after a supernova.",
+        "Big question: how does the Sun end?"
+      ],
+      "homework": "Create a labelled life-cycle diagram of the Sun with a one-sentence explanation for each stage.",
+      "send": "SEND/EAL: provide stage cards for sorting with pictures. Stretch: explain why stable stars need a balance of forces.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Physics 8: Astrophysics",
+      "n": 84,
+      "title": "The Hertzsprung-Russell diagram",
+      "covers": [
+        "Physics 8.12"
+      ],
+      "duration": 50,
+      "bigQuestion": "If we plot every star by brightness and temperature, what pattern appears?",
+      "objectives": [
+        "Draw the main components of the Hertzsprung-Russell (H-R) diagram",
+        "Place main sequence stars, red giants and white dwarfs",
+        "Use the diagram to follow the life of a star"
+      ],
+      "successCriteria": [
+        "All: label the axes and the main groups",
+        "Most: place the Sun and describe star movements",
+        "Some: use the diagram to compare stars' luminosity, temperature and size"
+      ],
+      "crossCurricular": "Maths: graphs with reversed axes; Astronomy",
+      "smsc": "Spiritual: finding order in what looks random",
+      "keywords": [
+        {
+          "term": "luminosity",
+          "def": "total energy emitted per second by a star"
+        },
+        {
+          "term": "surface temperature",
+          "def": "temperature at a star's visible surface, in kelvin"
+        },
+        {
+          "term": "main sequence",
+          "def": "band of stars in the H-R diagram where stars fuse hydrogen"
+        },
+        {
+          "term": "white dwarf",
+          "def": "small, hot, dim star"
+        }
+      ],
+      "starter": [
+        "Bismillah. State what makes a star hot.",
+        "Name the final stage of a Sun-like star.",
+        "State what colour hot stars appear."
+      ],
+      "teach": [
+        {
+          "heading": "The axes",
+          "bullets": [
+            "Vertical axis: luminosity (Sun = 1)",
+            "Horizontal axis: surface temperature",
+            "Temperature decreases to the right",
+            "Hot blue stars on the left; cool red on the right"
+          ],
+          "note": "Paper 2 only: separate Physics (4PH1) content. The unusual axis, with temperature decreasing from left to right, is a historic convention. Luminosity is often a log scale, with the Sun at 1. Typical temperatures: the Sun's surface is about 5800 K (approx.; verify); hot blue stars exceed 10 000 K. Colour: hot blue-white, then yellow, then orange and red.",
+          "table": {
+            "head": [
+              "Axis",
+              "Quantity",
+              "Direction"
+            ],
+            "rows": [
+              [
+                "vertical",
+                "luminosity",
+                "increases upwards"
+              ],
+              [
+                "horizontal",
+                "surface temperature",
+                "decreases to the right"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Groups of stars",
+          "bullets": [
+            "Main sequence: diagonal band, top left to bottom right",
+            "Red giants and supergiants: top right",
+            "White dwarfs: bottom left",
+            "The Sun is in the middle of the main sequence"
+          ],
+          "note": "Draw a sketch on the board. Red giants are cool but very luminous, so they must be very large. White dwarfs are hot but dim, so they must be very small. Most stars (about 90%, approx.) are on the main sequence. Stars move on the diagram as they evolve: from the main sequence to red giant, and then to the white dwarf region.",
+          "cycle": [
+            "Protostar contracts",
+            "Joins the main sequence",
+            "Moves up and right as a red giant",
+            "Core shrinks and outer layers lost",
+            "Ends in the white dwarf region"
+          ]
+        },
+        {
+          "heading": "Draw the diagram",
+          "bullets": [
+            "Label axes with direction",
+            "Draw the main sequence band",
+            "Mark red giants, supergiants and white dwarfs",
+            "Mark the Sun"
+          ],
+          "note": "Pupils sketch their own. Marks usually go for correct axes (with temperature reversed), position of main sequence, giants and white dwarfs.",
+          "model": {
+            "problem": "Sketch an H-R diagram and explain the position of white dwarfs.",
+            "steps": [
+              "Vertical axis luminosity, horizontal axis temperature decreasing to the right",
+              "Main sequence: band from top left to bottom right",
+              "Red giants: top right; white dwarfs: bottom left",
+              "White dwarfs are hot but have low luminosity, so they must be very small"
+            ],
+            "answer": "White dwarfs sit at bottom left: hot but small and dim."
+          }
+        },
+        {
+          "heading": "Check: reading the diagram",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option B confuses cool with hot. Option D reverses small and large.",
+          "check": {
+            "q": "A star is cool but has a high luminosity. Where is it on the H-R diagram?",
+            "options": [
+              "bottom left",
+              "top right",
+              "bottom right",
+              "on the main sequence centre"
+            ],
+            "answer": 1,
+            "why": "Cool stars are on the right; high luminosity means near the top. They are red giants or supergiants and are very large."
+          }
+        }
+      ],
+      "practice": [
+        "State the quantity on the vertical axis of the H-R diagram.",
+        "State where the Sun is found.",
+        "Describe the position of white dwarfs."
+      ],
+      "independent": [
+        "Core: Sketch an H-R diagram with the main groups.",
+        "Extend: Mark the path of the Sun from main sequence to white dwarf.",
+        "Stretch: Explain why a cool star can have a high luminosity."
+      ],
+      "exit": [
+        "Name the axes of the H-R diagram.",
+        "Name the region of the largest stars.",
+        "Big question: what pattern do stars make?"
+      ],
+      "homework": "Draw the H-R diagram on a poster and add three notes explaining why red giants and white dwarfs are where they are.",
+      "send": "SEND/EAL: provide a template diagram to complete. Stretch: link luminosity, temperature and radius (beyond specification; verify).",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+    },
+    {
+      "unit": "Physics 8: Astrophysics",
+      "n": 85,
+      "title": "Evolution of the universe and the case for the Big Bang",
+      "covers": [
+        "Physics 8.13"
+      ],
+      "duration": 50,
+      "bigQuestion": "What evidence tells us the universe had a beginning?",
+      "objectives": [
+        "Describe the past evolution of the universe according to the Big Bang theory",
+        "State the evidence for the Big Bang: red-shift and the cosmic microwave background",
+        "Evaluate how well the evidence supports the theory"
+      ],
+      "successCriteria": [
+        "All: describe the Big Bang in a sentence",
+        "Most: explain how red-shift and the CMB support it",
+        "Some: evaluate the evidence and compare it with the steady-state theory"
+      ],
+      "crossCurricular": "History of science; Philosophy: evidence and belief",
+      "smsc": "Spiritual: the universe as a sign; scientific theories change as evidence changes",
+      "keywords": [
+        {
+          "term": "Big Bang theory",
+          "def": "the universe began from a hot, dense state and has been expanding since"
+        },
+        {
+          "term": "red-shift",
+          "def": "stretching of light from a receding galaxy to longer wavelengths"
+        },
+        {
+          "term": "cosmic microwave background (CMB)",
+          "def": "microwave radiation arriving from all directions in space"
+        },
+        {
+          "term": "expansion",
+          "def": "the increase in distance between galaxies"
+        }
+      ],
+      "starter": [
+        "Bismillah. Define red-shift.",
+        "State where microwaves come in the electromagnetic spectrum.",
+        "State what the Doppler effect is."
+      ],
+      "teach": [
+        {
+          "heading": "The Big Bang model",
+          "bullets": [
+            "The universe began very small, hot and dense",
+            "It has expanded and cooled over time",
+            "Time began about 13.8 billion years ago (approx.; verify)",
+            "Space itself is expanding"
+          ],
+          "note": "Paper 2 only: separate Physics (4PH1) content. Avoid saying it was an explosion into empty space: space itself expands. Ask pupils to draw dots on a balloon, inflate, and watch the dots move apart; there is no centre. The age is approximately 13.8 billion years (verify the value used by the board).",
+          "timeline": [
+            {
+              "label": "Start",
+              "text": "Very hot, dense, tiny universe"
+            },
+            {
+              "label": "Early",
+              "text": "Expansion and cooling"
+            },
+            {
+              "label": "Later",
+              "text": "Matter clumps into stars and galaxies"
+            },
+            {
+              "label": "Now",
+              "text": "Universe still expanding"
+            }
+          ]
+        },
+        {
+          "heading": "Evidence 1: red-shift",
+          "bullets": [
+            "Light from distant galaxies is red-shifted",
+            "Galaxies are moving away from us",
+            "More distant galaxies show greater red-shift",
+            "So the universe is expanding"
+          ],
+          "note": "Link to the Doppler effect: waves from a receding source are stretched to longer wavelength. Extrapolating backwards in time, all matter was once together. Pupils must say 'more distant galaxies are moving away faster'. Do not imply that Earth is at the centre.",
+          "misconception": {
+            "wrong": "Red-shift shows that the Earth is at the centre of the universe.",
+            "right": "Every distant galaxy sees others moving away, like dots on an inflating balloon. There is no centre."
+          }
+        },
+        {
+          "heading": "Evidence 2: cosmic microwave background",
+          "bullets": [
+            "Microwaves arrive from all directions",
+            "Very nearly uniform",
+            "Remnant of the hot early universe",
+            "Stretched to microwave wavelength by expansion"
+          ],
+          "note": "The CMB is radiation released early in the universe's history. As space expanded the wavelength stretched from very short to the microwave region; today it corresponds to about 2.7 K (approx.; verify). The Big Bang predicted it before it was found. Competing steady-state theory could not explain it.",
+          "model": {
+            "problem": "Explain how red-shift and the CMB support the Big Bang theory.",
+            "steps": [
+              "Red-shift: galaxies move away from us, so the universe is expanding",
+              "More distant galaxies move away faster, matching an expanding universe",
+              "Expansion backwards in time suggests a hot dense start",
+              "CMB: leftover radiation from the early hot universe, stretched to microwaves, seen from all directions"
+            ],
+            "answer": "Red-shift shows expansion and the CMB shows a hot early universe, both predicted by the Big Bang theory."
+          }
+        },
+        {
+          "heading": "Check: evidence",
+          "bullets": [
+            "Whiteboards"
+          ],
+          "note": "Option A would be blue-shift. Option D is a common wrong claim.",
+          "check": {
+            "q": "Light from a distant galaxy has a longer wavelength than expected. This shows the galaxy is...",
+            "options": [
+              "moving towards us",
+              "moving away from us",
+              "at rest",
+              "exploding"
+            ],
+            "answer": 1,
+            "why": "Longer wavelength (red-shift) means the source is moving away from the observer."
+          }
+        },
+        {
+          "heading": "Evaluating the theory",
+          "bullets": [
+            "Two independent lines of evidence",
+            "Predictions tested by observation",
+            "Theories change as new data arrives",
+            "Questions remain: what came before?"
+          ],
+          "note": "Discuss science as an ongoing process: theory, prediction, observation. Ask: what would make scientists change their minds? Link to respect for evidence and humility about what we do not know."
+        }
+      ],
+      "practice": [
+        "State the evidence for an expanding universe.",
+        "Explain why the CMB is in the microwave region.",
+        "State why the Big Bang is not an explosion into empty space."
+      ],
+      "independent": [
+        "Core: Make a timeline of the universe from the Big Bang to now.",
+        "Extend: Explain how red-shift evidence supports expansion.",
+        "Stretch: Evaluate how the CMB supports the Big Bang more strongly than red-shift alone."
+      ],
+      "exit": [
+        "Name two pieces of evidence for the Big Bang.",
+        "State what red-shift shows.",
+        "Big question: what tells us the universe had a beginning?"
+      ],
+      "homework": "Write a balanced paragraph: 'the Big Bang theory is well supported by evidence'. Use at least two pieces of evidence.",
+      "send": "SEND/EAL: use the balloon model and a word bank. Stretch: discuss alternative theories and why they fell out of favour.",
+      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
+      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
     }
   ]
 }

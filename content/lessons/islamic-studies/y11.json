@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y11",
   "board": "Edexcel International GCSE Islamic Studies-style course",
-  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.8, 1.9, 2.1, 2.2, 2.3 and Appendix 5 passages (33:9, 5:3, 112:1-4, 9:128-129, 4:163); assumes Year 11 pupils have already covered spec 1.1-1.7 in Year 10; RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 2.4-2.9 and 3.6-3.9, plus one extra lesson deepening 2.2 (the six earlier prophets). Units 1.8, 1.9, 2.1, 2.2 and 2.3 are already covered in content/lessons/islamic-studies/y11.json (12 lessons) and are not duplicated here.",
+  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.8, 1.9, 2.1, 2.2, 2.3 and Appendix 5 passages (33:9, 5:3, 112:1-4, 9:128-129, 4:163); assumes Year 11 pupils have already covered spec 1.1-1.7 in Year 10; RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 2.4-2.9 and 3.6-3.9, plus one extra lesson deepening 2.2 (the six earlier prophets). Units 1.8, 1.9, 2.1, 2.2 and 2.3 are already covered in content/lessons/islamic-studies/y11.json (12 lessons) and are not duplicated here. | Gap-fill against Pearson Edexcel International GCSE Islamic Studies 4IS1 specification",
   "lessons": [
     {
       "unit": "Unit 1: Section A - The battles fought by the Prophet (spec 1.8)",
@@ -4251,6 +4251,298 @@
       "homework": "Write a letter to the editor of a local newspaper on how Muslims contribute to their community.",
       "send": "SEND/EAL: scenario cards; stretch: compare Islamic and British values statements.",
       "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
+      "boardShort": "Edexcel IGCSE 4IS1"
+    },
+    {
+      "unit": "Unit 2.1: The nature of belief in Allah",
+      "n": 33,
+      "title": "What the Qur'an teaches about Allah: Ayat al-Kursi and the names",
+      "duration": 50,
+      "bigQuestion": "How does the Qur'an describe the One we worship?",
+      "objectives": [
+        "Identify characteristics of Allah shown in the Qur'an",
+        "Explain what each characteristic teaches about Allah",
+        "Show how these shape the belief and behaviour of a Muslim"
+      ],
+      "successCriteria": [
+        "All: name three characteristics of Allah",
+        "Most: link each to a Qur'anic passage",
+        "Some: explain how a characteristic affects a Muslim's life"
+      ],
+      "crossCurricular": "Literature: reading a sacred text closely",
+      "smsc": "Spiritual: wonder, gratitude and humility before Allah",
+      "keywords": [
+        {
+          "term": "Ar-Rahman",
+          "def": "the Most Gracious"
+        },
+        {
+          "term": "Ar-Rahim",
+          "def": "the Most Merciful"
+        },
+        {
+          "term": "Al-Hayy",
+          "def": "the Ever-Living"
+        },
+        {
+          "term": "Al-Qayyum",
+          "def": "the Self-Subsisting, who sustains all"
+        },
+        {
+          "term": "Al-Alim",
+          "def": "the All-Knowing"
+        }
+      ],
+      "starter": [
+        "Bismillah. What does Tawhid mean?",
+        "Name two attributes of Allah you know.",
+        "What is shirk?"
+      ],
+      "teach": [
+        {
+          "heading": "Allah in the Qur'an",
+          "bullets": [
+            "The Qur'an begins by praising Allah as Rahman and Rahim.",
+            "It describes Allah as One, Creator, Knower and Sustainer.",
+            "Every surah (except one) begins with Bismillah."
+          ],
+          "note": "Open with Bismillah ar-Rahman ar-Rahim and ask what it tells us. The Qur'an teaches about Allah through names and descriptions; we use passages, not invention. Surah 1 praises Allah as Lord of the worlds, Rahman, Rahim, and Master of the Day of Judgment (verify 1:1-4). Surah 9 has no Bismillah at its beginning. Teacher note: every Qur'an reference here is marked verify; check the surah and ayah numbers and the translation against a trusted mushaf and translation before the lesson.",
+          "quote": {
+            "text": "There is nothing like Him. (Qur'an 42:11, verify)",
+            "source": "Qur'an 42:11 (verify reference and translation)"
+          }
+        },
+        {
+          "heading": "Ayat al-Kursi",
+          "bullets": [
+            "Allah is Ever-Living and Self-Sustaining.",
+            "Neither drowsiness nor sleep overtakes Him.",
+            "His knowledge and authority extend over the heavens and the earth."
+          ],
+          "note": "Teach from Qur'an 2:255 (verify). Paraphrase rather than quoting the whole verse. Points: Allah is al-Hayy, al-Qayyum; nothing happens without His permission; He knows what is before and behind people; His throne extends over the heavens and earth. Ask what this teaches about Allah's power and care. Avoid describing Allah in human terms; the Qur'an says there is nothing like Him. Teacher note: every Qur'an reference here is marked verify; check the surah and ayah numbers and the translation against a trusted mushaf and translation before the lesson."
+        },
+        {
+          "heading": "Names and what they show",
+          "note": "Link to the previous lessons on omnipotence, Creator, Merciful and Just. Add al-Alim (All-Knowing), al-Hayy, al-Qayyum. Suggest the Qur'an passage 59:22-24 as a source of a list of names (verify). For each, ask how a Muslim responds: gratitude, trust, fear of wrongdoing, hope in mercy. Pupils must give a characteristic, an evidence source and a consequence.",
+          "table": {
+            "head": [
+              "Characteristic",
+              "What it shows",
+              "Effect on a Muslim"
+            ],
+            "rows": [
+              [
+                "Ar-Rahman, Ar-Rahim",
+                "Allah is merciful and gracious",
+                "Hope, forgiveness, kindness"
+              ],
+              [
+                "Al-Hayy, Al-Qayyum",
+                "Allah is ever-living and sustains all",
+                "Trust and dependence"
+              ],
+              [
+                "Al-Alim",
+                "Allah knows everything",
+                "Honesty, awareness of Allah"
+              ],
+              [
+                "Al-Khaliq",
+                "Allah is the Creator",
+                "Gratitude, care for creation"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Worked example",
+          "note": "Show how a good 4-mark answer uses a point, a source and a link.",
+          "model": {
+            "problem": "Explain one characteristic of Allah shown in the Qur'an. (3 marks)",
+            "steps": [
+              "Point: Allah is Al-Alim, the All-Knowing",
+              "Evidence: the Qur'an teaches that nothing is hidden from Him (reference to verify)",
+              "Link: a Muslim tries to be honest, even in private, because Allah knows everything"
+            ],
+            "answer": "Characteristic, source, consequence for a Muslim"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer A (option 1). The other options are from different surahs or unrelated to constant care.",
+          "check": {
+            "q": "Which phrase from Ayat al-Kursi shows Allah is never tired or inattentive?",
+            "options": [
+              "Neither drowsiness nor sleep overtakes Him",
+              "Say: He is Allah, One",
+              "Whoever Allah guides",
+              "By the fig and the olive"
+            ],
+            "answer": 0,
+            "why": "Ayat al-Kursi teaches Allah never sleeps or slumbers, showing constant care. The Surah 112 option is about oneness, a different point."
+          }
+        }
+      ],
+      "practice": [
+        "Match each characteristic to its meaning: Al-Hayy; Al-Qayyum; Ar-Rahman; Al-Alim.",
+        "Write one sentence about how knowing that Allah is All-Knowing changes behaviour."
+      ],
+      "independent": [
+        "Core: Name three characteristics of Allah shown in the Qur'an. (3 marks)",
+        "Extend: Explain two characteristics of Allah shown in the Qur'an and how each affects a Muslim. (6 marks)",
+        "Stretch: 'Mercy is the most important characteristic of Allah.' Evaluate this view. (12 marks)"
+      ],
+      "exit": [
+        "Name one characteristic of Allah.",
+        "Why do Muslims begin with Bismillah?"
+      ],
+      "homework": "Learn the meaning of five names of Allah and write a sentence for each. Ask a teacher or imam to check the transliteration.",
+      "send": "SEND: picture cards for names. EAL: Arabic names with transliteration and translations. Stretch: compare two names that seem to point in different directions, such as Mercy and Justice.",
+      "covers": [
+        "2.1.4"
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1, paper 4IS1/01)",
+      "boardShort": "Edexcel IGCSE 4IS1"
+    },
+    {
+      "unit": "Unit 2.5: Akhirah",
+      "n": 34,
+      "title": "Akhirah in the Qur'an: accountability, resurrection and the record of deeds",
+      "duration": 50,
+      "bigQuestion": "How does the Qur'an make the next life real for the reader?",
+      "objectives": [
+        "Identify the Qur'an's main teachings on death, resurrection, accountability and the final abode",
+        "Explain how particular Qur'anic passages express these teachings",
+        "Show how belief in Akhirah affects Muslim behaviour"
+      ],
+      "successCriteria": [
+        "All: describe two teachings about Akhirah that appear in the Qur'an",
+        "Most: link each teaching to a passage",
+        "Some: evaluate how far the Qur'an's style makes Akhirah vivid"
+      ],
+      "crossCurricular": "English: imagery and tone in scripture",
+      "smsc": "Spiritual: accountability, hope and fear of Allah in balance",
+      "keywords": [
+        {
+          "term": "Akhirah",
+          "def": "the life after death"
+        },
+        {
+          "term": "Qiyamah",
+          "def": "the Day of Resurrection"
+        },
+        {
+          "term": "accountability",
+          "def": "being responsible for one's actions"
+        },
+        {
+          "term": "Mizan",
+          "def": "the scale on which deeds are weighed"
+        },
+        {
+          "term": "Jannah / Jahannam",
+          "def": "Paradise and Hell"
+        }
+      ],
+      "starter": [
+        "Bismillah. Define Akhirah.",
+        "What happens in Barzakh?",
+        "Name two beliefs about the Day of Judgment."
+      ],
+      "teach": [
+        {
+          "heading": "Where the Qur'an speaks of Akhirah",
+          "bullets": [
+            "Akhirah is one of the most frequent themes in the Qur'an.",
+            "Many short Makkan surahs describe the Day vividly.",
+            "Passages stress death, resurrection and accountability."
+          ],
+          "note": "Explain that the Qur'an returns to Akhirah often, often right after teachings about tawhid, to remind people that actions have consequences. Link to the previous lessons on Barzakh, the Day of Judgment, Jannah and Jahannam. Stress we use only passages we can reference; mark these references for checking. Teacher note: every Qur'an reference here is marked verify; check the surah and ayah numbers and the translation against a trusted mushaf and translation before the lesson.",
+          "quote": {
+            "text": "Every soul will taste death. (Qur'an 3:185, verify)",
+            "source": "Qur'an 3:185 (verify reference and translation)"
+          }
+        },
+        {
+          "heading": "Accountability and justice",
+          "bullets": [
+            "Surah 99 teaches that even tiny good or bad deeds will be seen.",
+            "Every deed is recorded and each person receives a record.",
+            "Justice means nobody is wronged on that Day."
+          ],
+          "note": "Teach Surah 99 (al-Zalzalah, verify), especially verses 7 and 8, about an atom's weight of good or evil being seen. Paraphrase. Another passage often cited is 17:13-14 on the record of deeds (verify). Ask what difference this belief makes to small everyday choices such as returning a lost item. Teacher note: every Qur'an reference here is marked verify; check the surah and ayah numbers and the translation against a trusted mushaf and translation before the lesson."
+        },
+        {
+          "heading": "Three groups and the final abode",
+          "note": "Surah 56 (al-Waqi'ah) describes people divided into groups on the Day (verify 56:7-10). Keep to a simple summary: some are foremost, some are people of the right, some are people of the left. Link to Jannah and Jahannam; the Qur'an uses vivid description of gardens and rivers and of punishment, and pupils should avoid adding details not in the text. Ask how fear and hope work together in a Muslim's faith.",
+          "compare": {
+            "left": {
+              "title": "Warnings",
+              "points": [
+                "Accountability for deeds",
+                "Punishment for rejecters and wrongdoers",
+                "Fear of Allah (taqwa)"
+              ]
+            },
+            "right": {
+              "title": "Promises",
+              "points": [
+                "Forgiveness and mercy",
+                "Reward for believers who do good",
+                "Hope in Jannah"
+              ]
+            },
+            "label": "balance"
+          }
+        },
+        {
+          "heading": "Worked example",
+          "note": "Show the P-E-E structure. A reference marked verify must be checked before an exam-style class uses it; in the exam candidates may paraphrase the meaning without the number.",
+          "model": {
+            "problem": "Explain one way the Qur'an teaches that Muslims will be accountable in Akhirah. (3 marks)",
+            "steps": [
+              "Point: the Qur'an teaches every deed will be seen, even the smallest",
+              "Evidence: Surah 99 says an atom's weight of good or evil will be seen (verify 99:7-8)",
+              "Link: so Muslims try to do good in private as well as in public"
+            ],
+            "answer": "Point, evidence, link to behaviour"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer C. A refers to Hajj. B is about charity. D is a different belief.",
+          "check": {
+            "q": "Which teaching about Akhirah does Surah 99 mainly express?",
+            "options": [
+              "Pilgrimage in Makkah",
+              "Giving zakah",
+              "Even tiny deeds will be seen and judged",
+              "Angels have different roles"
+            ],
+            "answer": 2,
+            "why": "Surah 99 stresses accountability for every deed, however small."
+          }
+        }
+      ],
+      "practice": [
+        "Give two reasons why the Qur'an returns often to the subject of Akhirah.",
+        "Write a sentence linking belief in accountability to honesty."
+      ],
+      "independent": [
+        "Core: Describe two teachings about Akhirah in the Qur'an. (4 marks)",
+        "Extend: Explain two ways the Qur'an expresses accountability. (6 marks)",
+        "Stretch: 'The Qur'an's teachings on Akhirah are most important in guiding behaviour.' Evaluate this view. (12 marks)"
+      ],
+      "exit": [
+        "Name one Qur'anic theme about Akhirah.",
+        "Why do Muslims believe all deeds matter?"
+      ],
+      "homework": "Choose one passage on Akhirah studied in class, check its reference in a translation, and write 5 sentences on what it teaches.",
+      "send": "SEND: card sort of teachings and passages. EAL: key terms in Arabic and English. Stretch: compare how Surah 99 and Surah 101 express accountability.",
+      "covers": [
+        "2.5.4"
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1, paper 4IS1/01)",
       "boardShort": "Edexcel IGCSE 4IS1"
     }
   ]

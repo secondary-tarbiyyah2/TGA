@@ -2,9 +2,9 @@
  "subject": "Mathematics",
  "board": "Pearson Edexcel",
  "code": "1MA1",
- "lessonCount": 132,
+ "lessonCount": 138,
  "points": 105,
- "covered": 100,
+ "covered": 105,
  "units": [
   {
    "ref": "N1-N9",
@@ -362,8 +362,8 @@
    "title": "Algebra: Higher graph work and real-life graphs",
    "year": "Y11",
    "paper": "Papers 1, 2 and 3",
-   "status": "partial",
-   "covered": 4,
+   "status": "covered",
+   "covered": 5,
    "total": 5,
    "lessons": [
     "y10/39",
@@ -372,13 +372,16 @@
     "y11/15",
     "y11/16",
     "y11/17",
-    "y11/18"
+    "y11/18",
+    "y11/50"
    ],
    "points": [
     {
      "n": 1,
      "text": "Sketch translations and reflections of a given function (A13, Higher only).",
-     "lessons": []
+     "lessons": [
+      "y11/50"
+     ]
     },
     {
      "n": 2,
@@ -412,7 +415,8 @@
      "text": "Use the equation of a circle centred on the origin and find a tangent at a point (A16, Higher only).",
      "lessons": [
       "y11/18",
-      "y11/16"
+      "y11/16",
+      "y11/50"
      ]
     }
    ]
@@ -1141,15 +1145,17 @@
    "title": "Probability",
    "year": "Y10",
    "paper": "Papers 1, 2 and 3",
-   "status": "partial",
-   "covered": 5,
+   "status": "covered",
+   "covered": 7,
    "total": 7,
    "lessons": [
     "y10/77",
     "y10/78",
     "y10/80",
     "y10/82",
-    "y10/83"
+    "y10/83",
+    "y10/84",
+    "y10/85"
    ],
    "points": [
     {
@@ -1162,7 +1168,9 @@
     {
      "n": 2,
      "text": "Use randomness, fairness and equally likely outcomes; link expected frequency to probability (P2, P3).",
-     "lessons": []
+     "lessons": [
+      "y10/84"
+     ]
     },
     {
      "n": 3,
@@ -1174,7 +1182,9 @@
     {
      "n": 4,
      "text": "Understand that larger unbiased samples tend towards the theoretical probability (P5).",
-     "lessons": []
+     "lessons": [
+      "y10/85"
+     ]
     },
     {
      "n": 5,
@@ -1204,21 +1214,26 @@
    "title": "Statistics",
    "year": "Y11",
    "paper": "Papers 1, 2 and 3",
-   "status": "partial",
-   "covered": 5,
+   "status": "covered",
+   "covered": 7,
    "total": 7,
    "lessons": [
     "y11/44",
     "y11/45",
     "y11/47",
     "y11/48",
-    "y11/49"
+    "y11/49",
+    "y11/51",
+    "y11/52",
+    "y11/53"
    ],
    "points": [
     {
      "n": 1,
      "text": "Infer properties of a population from samples, recognising limitations of sampling (S1).",
-     "lessons": []
+     "lessons": [
+      "y11/51"
+     ]
     },
     {
      "n": 2,
@@ -1230,7 +1245,10 @@
     {
      "n": 3,
      "text": "Construct and interpret histograms with unequal class widths and cumulative frequency graphs (S3, Higher only).",
-     "lessons": []
+     "lessons": [
+      "y11/52",
+      "y11/53"
+     ]
     },
     {
      "n": 4,
@@ -1243,7 +1261,8 @@
      "n": 5,
      "text": "At Higher use box plots, quartiles and interquartile range (S4).",
      "lessons": [
-      "y11/47"
+      "y11/47",
+      "y11/53"
      ]
     },
     {
@@ -1251,7 +1270,8 @@
      "text": "Use statistics to describe a population (S5).",
      "lessons": [
       "y11/44",
-      "y11/48"
+      "y11/48",
+      "y11/51"
      ]
     },
     {

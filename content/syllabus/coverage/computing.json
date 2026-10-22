@@ -2,9 +2,9 @@
  "subject": "Computer Science",
  "board": "Pearson Edexcel",
  "code": "1CP2",
- "lessonCount": 59,
+ "lessonCount": 61,
  "points": 78,
- "covered": 76,
+ "covered": 78,
  "units": [
   {
    "ref": "1.1",
@@ -447,8 +447,8 @@
    "title": "Networks: 4.1 Networks",
    "year": "Y11",
    "paper": "Paper 1",
-   "status": "partial",
-   "covered": 8,
+   "status": "covered",
+   "covered": 9,
    "total": 9,
    "lessons": [
     "y11/5",
@@ -458,7 +458,8 @@
     "y11/16",
     "y11/17",
     "y11/18",
-    "y11/19"
+    "y11/19",
+    "y11/27"
    ],
    "points": [
     {
@@ -473,7 +474,9 @@
     {
      "n": 2,
      "text": "Distinguish LAN and WAN (4.1.2).",
-     "lessons": []
+     "lessons": [
+      "y11/27"
+     ]
     },
     {
      "n": 3,
@@ -879,11 +882,12 @@
    "title": "Problem solving with programming: 6.5 Operators",
    "year": "Y10",
    "paper": "Paper 2",
-   "status": "partial",
-   "covered": 2,
+   "status": "covered",
+   "covered": 3,
    "total": 3,
    "lessons": [
-    "y10/32"
+    "y10/32",
+    "y10/34"
    ],
    "points": [
     {
@@ -896,7 +900,9 @@
     {
      "n": 2,
      "text": "Use equal to, not equal to, less than, greater than, and their or-equal-to forms (6.5.2).",
-     "lessons": []
+     "lessons": [
+      "y10/34"
+     ]
     },
     {
      "n": 3,

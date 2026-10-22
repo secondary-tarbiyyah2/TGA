@@ -2,7 +2,7 @@
   "subject": "English Language",
   "year": "y10",
   "board": "AQA 8700",
-  "source": "AQA GCSE English Language 8700 specification and Paper 1 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice extracts are teacher-written originals. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y10.json (which covers P1 Q1-Q5 well); these lessons add modelling lessons with new, original texts and cover the uncovered subject-content units SC-R and SC-W. Texts: original teacher-written extracts; the only quoted extracts are two sentences from Dickens, A Christmas Carol (1843, public domain).",
+  "source": "AQA GCSE English Language 8700 specification and Paper 1 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice extracts are teacher-written originals. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y10.json (which covers P1 Q1-Q5 well); these lessons add modelling lessons with new, original texts and cover the uncovered subject-content units SC-R and SC-W. Texts: original teacher-written extracts; the only quoted extracts are two sentences from Dickens, A Christmas Carol (1843, public domain). | Gap-fill against AQA 8700 specification",
   "lessons": [
     {
       "unit": "Unit 1: Paper 1 Section A - Reading literary fiction (Q1-Q3)",
@@ -2445,6 +2445,883 @@
       "homework": "Proofread a page of your own writing from this half-term, correct at least ten errors and list your three most common mistakes.",
       "send": "SEND: give a colour-coded proofreading checklist and allow a word processor with spellcheck for drafts. EAL/international: pre-teach 'splice', 'apostrophe', 'agreement'; idioms 'to get your facts straight', 'a slip of the pen'; stems: 'The correct form is ...', 'This is a comma splice because ...'. Cultural note: UK regional dialects are valued; Standard English is a shared formal code. Stretch: study how a published writer uses fragments for effect and imitate it.",
       "n": 21,
+      "board": "AQA GCSE English Language (9-1) 8700",
+      "boardShort": "AQA 8700"
+    },
+    {
+      "unit": "P1-A-Q1: Paper 1 Section A: Question 1, retrieval",
+      "covers": [
+        "P1-A-Q1.2"
+      ],
+      "title": "Question 1: identifying and interpreting explicit information and ideas",
+      "bigQuestion": "What exactly does the text say, and how can I prove it in my own words?",
+      "objectives": [
+        "Define explicit information and distinguish it from implicit information",
+        "Select four true details from a stated range of lines",
+        "Express each detail briefly, by quotation or paraphrase"
+      ],
+      "successCriteria": [
+        "All: find four explicit details within the lines given",
+        "Most: paraphrase or quote briefly and accurately",
+        "Some: interpret an explicit idea in your own words without drifting into opinion"
+      ],
+      "crossCurricular": "Geography: describing a place precisely from evidence",
+      "smsc": "Moral: honesty and accuracy, reporting only what is really there",
+      "keywords": [
+        {
+          "term": "explicit information",
+          "def": "details stated directly in the text"
+        },
+        {
+          "term": "implicit information",
+          "def": "ideas suggested but not directly stated"
+        },
+        {
+          "term": "paraphrase",
+          "def": "saying the same idea in your own words"
+        },
+        {
+          "term": "AO1",
+          "def": "the assessment objective: identify and interpret explicit and implicit information and ideas"
+        }
+      ],
+      "starter": [
+        "Bismillah. In one sentence, what is the difference between a fact and an opinion?",
+        "Paraphrase: 'The old gate groaned on its rusty hinges.'",
+        "Retrieval: how many marks is Paper 1 Question 1 worth?"
+      ],
+      "teach": [
+        {
+          "heading": "Explicit means 'said outright'",
+          "bullets": [
+            "Explicit: written directly, so you can point to it",
+            "Implicit: hinted at, so the reader has to infer",
+            "Question 1 rewards explicit ideas first",
+            "Interpret means: understand and restate accurately"
+          ],
+          "note": "Q1 is 4 marks, one per correct point, using a stated range of lines. Say that AO1 includes both explicit and implicit, but Q1 mostly rewards what is clearly stated. Ask pupils for an everyday example: 'It is raining' (explicit) versus 'Everyone arrived with wet hair' (implicit). Point out that interpreting an explicit idea means reading it accurately, for example turning 'a fire that had been lit that morning' into 'the fire was lit earlier today'."
+        },
+        {
+          "heading": "The extract (lines 1 to 6)",
+          "quote": {
+            "text": "1 The cottage stood at the end of the lane, where the tarmac gave up and the grass began.\n2 Its slate roof was green with moss, and one shutter hung from a single hinge.\n3 Smoke rose from the chimney in a thin, steady line.\n4 Inside, a clock ticked on the mantelpiece above a fire that had been lit that morning.\n5 Nora kept her boots by the door, as her father always had.\n6 Outside, the sea breathed against the rocks below.",
+            "source": "Original extract written for TGA"
+          },
+          "note": "Read aloud. Pre-teach 'tarmac' (the black road surface), 'shutter' (a hinged wooden cover for a window), 'mantelpiece' (the shelf above a fireplace). Tell pupils the numbers are line numbers, as on the real paper. Ask: where would you underline?"
+        },
+        {
+          "heading": "Model: four true things about the cottage",
+          "model": {
+            "problem": "Read lines 1 to 4. List four things about the cottage. (4 marks)",
+            "steps": [
+              "Underline only information about the cottage, not about Nora or the sea.",
+              "Choose four separate details; do not repeat the same idea twice.",
+              "Keep each answer short: a quotation of a few words or a brief paraphrase.",
+              "Write one detail per line so the examiner can credit each one."
+            ],
+            "answer": "1. It stands where the lane stops and the grass begins. 2. The roof is made of slate and covered in moss. 3. One shutter hangs from a single hinge. 4. Smoke rises from the chimney (a fire had been lit that morning)."
+          },
+          "note": "Think aloud as you select. Stress: line 5 is about Nora, so it would not answer 'about the cottage' unless the question asked about her. Explain that long copying earns nothing, only the precise point does. Note the fourth answer combines a detail and its proof, but pupils should still pick one clear idea."
+        },
+        {
+          "heading": "Hinge question",
+          "check": {
+            "q": "Which is the best answer to 'List four things about the cottage'?",
+            "options": [
+              "The cottage is lonely and sad.",
+              "One shutter hangs from a single hinge.",
+              "The cottage must be haunted."
+            ],
+            "answer": 1,
+            "why": "B is stated directly in line 2. A is an opinion and C is invented: neither can be proved from the lines."
+          },
+          "note": "Mini-whiteboards. Pupils holding A often feel the cottage is 'lonely'. Say that is a fair inference for Question 2 or 4, but Question 1 wants proof from the words on the page."
+        },
+        {
+          "heading": "Common error",
+          "misconception": {
+            "wrong": "Copying out a whole sentence: 'Its slate roof was green with moss, and one shutter hung from a single hinge.'",
+            "right": "Splitting it into two precise points: 'The roof is slate and mossy' and 'One shutter hangs by one hinge.'"
+          },
+          "note": "A long quotation can bundle two ideas and waste the line. Use the pencil-underline strategy: tick each separate idea. Model turning one long sentence into two short marks."
+        }
+      ],
+      "practice": [
+        "Using lines 3 and 4 only, write two true statements about the inside or smoke, each in under ten words.",
+        "Paraphrase 'a fire that had been lit that morning' in your own words.",
+        "Using line 6, state one explicit fact about the sea or the rocks."
+      ],
+      "independent": [
+        "Core: List four things the text tells us about the cottage, one per line, each under twelve words.",
+        "Extend: Write a Question 1 for lines 5 and 6 about Nora, then answer it with four details or as many as the text supports.",
+        "Stretch: Explain the difference between 'explicit' and 'implicit' using the words 'smoke rose in a thin, steady line' as your example."
+      ],
+      "exit": [
+        "Define 'explicit information' in your own words.",
+        "Give one explicit detail from the extract about the cottage.",
+        "Big question: how can you prove an answer is really in the text?"
+      ],
+      "homework": "Choose a paragraph from any book you are reading; write four explicit points about it, then one implicit idea, and label each.",
+      "send": "SEND: give a highlighted copy of the extract with the line numbers and a template with four numbered boxes. EAL/international: pre-teach 'tarmac', 'shutter', 'hinge', 'mantelpiece', 'moss'; stems: 'The text says that ...', 'It is made of ...'; pupils may paraphrase in short plain sentences. Stretch: write a Question 1 for a different set of lines and a mark scheme.",
+      "n": 22,
+      "duration": 50,
+      "board": "AQA GCSE English Language (9-1) 8700",
+      "boardShort": "AQA 8700"
+    },
+    {
+      "unit": "P1-A-Q2: Paper 1 Section A: Question 2, language",
+      "covers": [
+        "P1-A-Q2.4",
+        "P1-A-Q2.5"
+      ],
+      "title": "Question 2: using subject terminology so that effect leads the answer",
+      "bigQuestion": "How much terminology is enough, and why does effect matter more?",
+      "objectives": [
+        "Use terminology from simple (verb, adjective) to sophisticated (semantic field, juxtaposition)",
+        "Always follow a term with an analysis of effect",
+        "Recognise that the same language skill is tested again in Paper 2 Question 3"
+      ],
+      "successCriteria": [
+        "All: use at least one accurate term in a quoted sentence",
+        "Most: explain the effect on the reader after every term",
+        "Some: choose the most precise term and link it to the writer's purpose"
+      ],
+      "crossCurricular": "Science: precise vocabulary in explanations",
+      "smsc": "Social: communicating clearly with shared language",
+      "keywords": [
+        {
+          "term": "terminology",
+          "def": "the specialist words used to name language features"
+        },
+        {
+          "term": "semantic field",
+          "def": "a group of words linked by one topic"
+        },
+        {
+          "term": "juxtaposition",
+          "def": "placing contrasting ideas side by side"
+        },
+        {
+          "term": "sibilance",
+          "def": "repeated 's' sounds"
+        },
+        {
+          "term": "effect",
+          "def": "what the language makes the reader think or feel"
+        }
+      ],
+      "starter": [
+        "Bismillah. Label: 'storm' (noun), 'screamed' (verb), 'bitter' (adjective).",
+        "Define a simile and give one of your own.",
+        "Retrieval: what are the marks for Paper 1 Question 2?"
+      ],
+      "teach": [
+        {
+          "heading": "A ladder of terminology",
+          "table": {
+            "head": [
+              "Level",
+              "Examples",
+              "Use it to ..."
+            ],
+            "rows": [
+              [
+                "Simple",
+                "noun, verb, adjective, adverb",
+                "name the word class of a key word"
+              ],
+              [
+                "Secure",
+                "simile, metaphor, personification",
+                "name a technique, then explain it"
+              ],
+              [
+                "Sophisticated",
+                "semantic field, juxtaposition, sibilance, pathetic fallacy",
+                "link several choices to the writer's purpose"
+              ]
+            ]
+          },
+          "note": "Explain that terminology is credited from simple to sophisticated, but a very advanced word with no effect scores less than a simple word with a clear explanation. Say that the Question 2 prompt is 8 marks and examiners reward perceptive effect first. No marks are given for the number of terms."
+        },
+        {
+          "heading": "The extract",
+          "quote": {
+            "text": "The storm had been brewing all afternoon. By evening the sea was a grey, grumbling animal, and the cliffs stood in silence, watching. Salt stung Maya's lips. Behind her the harbour lights shivered; ahead, the black water rose and fell and rose again.",
+            "source": "Original extract written for TGA"
+          },
+          "note": "Read aloud, slowly. Pre-teach 'brewing' (developing, as tea does). Ask pupils to underline two words they could name (e.g. 'grumbling', 'shivered'). Remind them the extract is original and teacher-written."
+        },
+        {
+          "heading": "Model: terminology serves the effect",
+          "model": {
+            "problem": "How does the writer use language to describe the sea and the harbour? (8 marks)",
+            "steps": [
+              "Quote: 'the sea was a grey, grumbling animal'. Name it: a metaphor with a semantic field of animal behaviour.",
+              "Effect: the sea seems alive and bad-tempered, so the reader senses danger before anything happens.",
+              "Zoom: 'grumbling' is a verb form that suggests a low, threatening growl, not a loud roar.",
+              "Second quote: the cliffs 'stood in silence, watching'. Name it: personification.",
+              "Effect: the cliffs seem to judge Maya, so she feels alone and exposed."
+            ],
+            "answer": "The writer uses a metaphor, 'the sea was a grey, grumbling animal', to present the sea as alive and bad-tempered. The animal semantic field makes the reader sense danger before anything has happened, and the verb 'grumbling' suggests a low, threatening growl rather than a loud roar. The writer also personifies the cliffs, which 'stood in silence, watching', so they seem to judge Maya and she feels isolated and exposed. The repeated 'rose and fell and rose again' creates a relentless rhythm, making the water feel endless."
+          },
+          "note": "Underline the terms in one colour and the effect words in another. Ask pupils which colour dominates. Draw out that the terms are the signposts but the effect is the journey. Point out that 'rose and fell and rose again' repeats 'and' (polysyndeton) to build a relentless rhythm."
+        },
+        {
+          "heading": "Hinge question",
+          "check": {
+            "q": "Which sentence uses terminology best?",
+            "options": [
+              "'The writer uses sibilance, a metaphor and an adjective.'",
+              "'The metaphor \"grey, grumbling animal\" makes the sea seem alive and menacing, which unsettles the reader.'",
+              "'The sea is grey and grumbling.'"
+            ],
+            "answer": 1,
+            "why": "B names the technique, quotes it and explains the effect. A is a list of terms with no effect; C only retells."
+          },
+          "note": "Mini-whiteboards. Discuss why A is tempting: it looks sophisticated, yet there is nothing to credit beyond naming."
+        },
+        {
+          "heading": "Same skill, Paper 2",
+          "compare": {
+            "left": {
+              "title": "Paper 1 Question 2",
+              "points": [
+                "8 marks",
+                "Fiction extract",
+                "Language: words, phrases, techniques"
+              ]
+            },
+            "right": {
+              "title": "Paper 2 Question 3",
+              "points": [
+                "12 marks",
+                "Non-fiction source",
+                "Same skill: language, effect, terminology"
+              ]
+            },
+            "label": "vs"
+          },
+          "note": "Say clearly: the skill is the same (AO2 language), only the text type and mark total change. Tell pupils that practice now pays off in Year 11. Check marks against your specimen paper (8 and 12 respectively)."
+        }
+      ],
+      "practice": [
+        "Choose one sentence from the extract and write it as: term, quotation, effect.",
+        "Replace 'the writer uses an adjective' with a sentence that explains the effect of 'black' in 'black water'.",
+        "Give a simple term and a sophisticated term for the same phrase 'harbour lights shivered'."
+      ],
+      "independent": [
+        "Core: Write two sentences using a simple term and two effect explanations.",
+        "Extend: Write a six-sentence paragraph using at least three terms; underline each effect.",
+        "Stretch: Explain which of your terms is least necessary and why a paragraph might be better without it."
+      ],
+      "exit": [
+        "Give one term from each level of the ladder.",
+        "Complete: 'The metaphor ... makes the reader feel ...'.",
+        "Big question: why does effect matter more than the term?"
+      ],
+      "homework": "Read a paragraph from a novel you like. Write one analytical sentence using a simple term and one using a more sophisticated term, each with an effect.",
+      "send": "SEND: provide a terminology mat with definitions and examples, and a sentence frame 'The ... [term] ... makes the reader ...'. EAL/international: pre-teach 'brewing', 'grumbling', 'exposed'; allow terms to be written in first language alongside the English. Stretch: find a term not on the ladder, define it and use it accurately.",
+      "n": 23,
+      "duration": 50,
+      "board": "AQA GCSE English Language (9-1) 8700",
+      "boardShort": "AQA 8700"
+    },
+    {
+      "unit": "P1-A-Q4: Paper 1 Section A: Question 4, evaluation",
+      "covers": [
+        "P1-A-Q4.4"
+      ],
+      "title": "Question 4: agree or disagree, because the quality of evaluation earns the marks",
+      "bigQuestion": "If I disagree with the statement, will I lose marks?",
+      "objectives": [
+        "Understand that marks reward the quality of evaluation, not the position taken",
+        "Build a balanced evaluative judgement with evidence",
+        "Use evaluative stems to reach a justified view"
+      ],
+      "successCriteria": [
+        "All: state an opinion and support it with one quotation",
+        "Most: explain how the writer creates the effect and why you judge it as you do",
+        "Some: weigh up the statement and give a measured conclusion"
+      ],
+      "crossCurricular": "Citizenship: forming and justifying a reasoned opinion",
+      "smsc": "Moral: fairness in weighing evidence, even when you disagree",
+      "keywords": [
+        {
+          "term": "evaluate",
+          "def": "judge how successful something is, using evidence"
+        },
+        {
+          "term": "statement",
+          "def": "the opinion about the text printed in the question"
+        },
+        {
+          "term": "to what extent",
+          "def": "how far you agree"
+        },
+        {
+          "term": "justify",
+          "def": "give reasons and evidence for a view"
+        }
+      ],
+      "starter": [
+        "Bismillah. Complete: 'I partly agree because ...' about the statement 'Homework should be banned.'",
+        "Define 'evaluate' in your own words.",
+        "Retrieval: how many marks is Paper 1 Question 4?"
+      ],
+      "teach": [
+        {
+          "heading": "What Question 4 really tests",
+          "bullets": [
+            "A statement about the text is printed in the question",
+            "You judge how far you agree, citing evidence",
+            "The question carries 20 marks",
+            "Evaluation is marked on quality, not on which side you pick"
+          ],
+          "note": "State the key point twice: you cannot 'fail' by disagreeing. A pupil who disagrees with strong evidence and explanation will score as highly as one who agrees. Ask: why would examiners design it this way? (Because AO4 is about critical judgement.) The statement usually focuses on a part of the text, so pupils should stay within the lines given."
+        },
+        {
+          "heading": "The extract and statement",
+          "quote": {
+            "text": "Statement: 'The writer makes Maya seem very brave.' Evidence from the extract: She walked towards the black water, though her hands were trembling. 'I am not afraid,' she whispered, and did not believe a word of it.",
+            "source": "Original extract and statement written for TGA"
+          },
+          "note": "Read together. Elicit initial gut reactions: agree, disagree or partly. Emphasise that both brave (she walks forward) and afraid (trembling, whispered) are in the same lines, so strong answers can use both."
+        },
+        {
+          "heading": "Model: two high-quality answers, opposite views",
+          "compare": {
+            "left": {
+              "title": "Agree (mostly)",
+              "points": [
+                "'she walked towards the black water' shows decisive action",
+                "The determination is clear even while 'her hands were trembling'",
+                "Bravery here means acting despite fear"
+              ]
+            },
+            "right": {
+              "title": "Disagree (partly)",
+              "points": [
+                "'did not believe a word of it' shows Maya lies to herself",
+                "'whispered' suggests she lacks confidence",
+                "She seems frightened, so brave is too simple"
+              ]
+            },
+            "label": "vs"
+          },
+          "note": "Both positions can reach the top level because each uses precise quotation, explains how the writer creates the impression and gives a reasoned judgement. Ask pupils to find the strongest piece of evidence on each side. Emphasise 'to what extent' invites a nuanced view in the middle."
+        },
+        {
+          "heading": "Worked paragraph",
+          "model": {
+            "problem": "'The writer makes Maya seem very brave.' To what extent do you agree? (20 marks, one paragraph)",
+            "steps": [
+              "State your view clearly and with a degree: 'I partly agree.'",
+              "Choose a quotation that supports it and explain the writer's method.",
+              "Choose a quotation that complicates it and explain the effect.",
+              "Reach a judgement that weighs the two."
+            ],
+            "answer": "I partly agree that Maya seems brave. She 'walked towards the black water', and the verb 'walked' shows she is moving forward, not running away. However, the writer undercuts this with 'her hands were trembling', which makes her fear physical and visible. The final clause, 'did not believe a word of it', shows she is trying to persuade herself, so her bravery seems effortful rather than natural. Overall, the writer presents courage as acting despite fear, which makes Maya more convincing and human than a fearless hero."
+          },
+          "note": "Highlight the sequence: view, evidence, method, effect, weighing, judgement. Ask: where does it say 'I agree' or 'I disagree'? Only once, at the start. The rest is evaluation. Praise a model that changes mind within the paragraph, because that is critical."
+        },
+        {
+          "heading": "Hinge question",
+          "check": {
+            "q": "A pupil strongly disagrees with the statement and gives three well-explained quotations. What is the best prediction of their mark?",
+            "options": [
+              "Low, because the statement should be supported",
+              "High, because the evaluation is strong",
+              "Impossible to tell until you check the position"
+            ],
+            "answer": 1,
+            "why": "Marks are for the quality of the evaluation. Disagreement is fully acceptable if supported by evidence and analysis."
+          },
+          "note": "Mini-whiteboards. If some pick A, ask: what would the examiner be rewarding? Redirect to the quality of evaluation: evidence, method, effect, judgement."
+        }
+      ],
+      "practice": [
+        "Write a one-sentence view on the statement, using a degree such as 'partly', 'mostly' or 'completely'.",
+        "Select the best quotation to oppose your view and say what it suggests.",
+        "Finish: 'Overall, the writer presents Maya as ... because ...'"
+      ],
+      "independent": [
+        "Core: Write a four-sentence evaluative paragraph that agrees partly.",
+        "Extend: Write a second paragraph that argues the opposite view, using different quotations.",
+        "Stretch: Write a conclusion that explains why neither view is complete, linking to the writer's purpose."
+      ],
+      "exit": [
+        "True or false: you must agree with the statement to score highly.",
+        "Write one sentence beginning 'I partly agree because ...'.",
+        "Big question: how is the position you take marked?"
+      ],
+      "homework": "Take a statement about a character in a book you know, for example 'The writer makes the hero seem selfish'. Write one paragraph arguing for, and one against, then decide which you prefer.",
+      "send": "SEND: provide a sentence-starter card ('I agree because ...', 'However ...', 'This shows ...'). EAL/international: pre-teach 'undercut', 'trembling', 'determination', 'convincing'; allow a bilingual vocabulary list. Stretch: write one paragraph which changes position half way and explain why the change is valid.",
+      "n": 24,
+      "duration": 50,
+      "board": "AQA GCSE English Language (9-1) 8700",
+      "boardShort": "AQA 8700"
+    },
+    {
+      "unit": "P1-B-Q5: Paper 1 Section B: Question 5, descriptive or narrative writing",
+      "covers": [
+        "P1-B-Q5.2",
+        "P1-B-Q5.4"
+      ],
+      "title": "Question 5: choosing your task, and controlling tone, style, register and cohesion",
+      "bigQuestion": "How do I make my writing sound right for the task and hold together from start to finish?",
+      "objectives": [
+        "Choose between describing and narrating from the written prompt or image given",
+        "Control tone, style and register for the stated audience and purpose",
+        "Organise paragraphs so that the piece is coherent and cohesive"
+      ],
+      "successCriteria": [
+        "All: choose a task and keep one consistent tone",
+        "Most: use connectives and links that guide the reader",
+        "Some: shape tone, register and structure deliberately for effect"
+      ],
+      "crossCurricular": "Art: composition and the viewer's eye",
+      "smsc": "Cultural: seeing everyday scenes with fresh eyes",
+      "keywords": [
+        {
+          "term": "tone",
+          "def": "the attitude or mood of the writing"
+        },
+        {
+          "term": "register",
+          "def": "how formal or informal the language is"
+        },
+        {
+          "term": "coherence",
+          "def": "the piece makes sense as a whole"
+        },
+        {
+          "term": "cohesion",
+          "def": "ideas are linked smoothly between sentences and paragraphs"
+        },
+        {
+          "term": "narrative",
+          "def": "a story; description paints a picture"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name one feature of descriptive writing and one of narrative writing.",
+        "Is 'It was proper rubbish' formal or informal?",
+        "Retrieval: how many marks are given for content and organisation in Question 5?"
+      ],
+      "teach": [
+        {
+          "heading": "One extended task",
+          "bullets": [
+            "Question 5 is one extended task of 40 marks",
+            "Choose to describe or narrate, from a prompt or an image",
+            "The statement before the task sets audience and purpose",
+            "Commit to your choice within the first two minutes"
+          ],
+          "note": "AQA offers a choice of tasks; check the specimen paper for the exact layout this year (verify). Stress that either option can reach the top marks. Ask who prefers images and who prefers words, then discuss strengths. Note that 24 marks are for content and organisation and 16 for technical accuracy."
+        },
+        {
+          "heading": "Tone, style and register",
+          "table": {
+            "head": [
+              "Feature",
+              "What it means",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Tone",
+                "The mood or attitude",
+                "Calm, nostalgic, tense"
+              ],
+              [
+                "Style",
+                "Your choices of words and sentences",
+                "Short blunt sentences or flowing ones"
+              ],
+              [
+                "Register",
+                "How formal the language is",
+                "'Departed' (formal) versus 'left' (neutral)"
+              ],
+              [
+                "Audience",
+                "Who you write for",
+                "A local magazine editor"
+              ]
+            ]
+          },
+          "note": "Show how the same moment changes with tone: 'The train left.' versus 'The train slipped away, leaving silence on the platform.' Ask: which register suits a magazine competition entry? Stress consistency; avoid slipping into slang unless dialogue calls for it."
+        },
+        {
+          "heading": "Coherence and cohesion",
+          "cycle": [
+            "Open with a clear scene or situation",
+            "Link each paragraph to the last (time, place, contrast)",
+            "Develop one idea per paragraph",
+            "Return to an image or motif at the end"
+          ],
+          "note": "Coherence is the whole piece making sense; cohesion is the stitching between sentences. Model discourse markers such as 'Meanwhile', 'Moments later', 'Beyond the window'. Warn against starting every paragraph with 'Then'. A circular structure (return to the opening image) delivers cohesion."
+        },
+        {
+          "heading": "Model: a tightly controlled opening",
+          "model": {
+            "problem": "Write the opening of a description of a railway station at dusk (audience: a school magazine). Use a calm, observant tone and formal-neutral register.",
+            "steps": [
+              "Open with a precise setting detail rather than 'It was a station'.",
+              "Use one controlled metaphor and one sensory detail.",
+              "Vary sentence length and keep the tone steady.",
+              "End the paragraph with a link that leads to the next idea."
+            ],
+            "answer": "Dusk settled over the station like a grey blanket. Beneath the clock, a lone porter swept the same square of platform, patient as a metronome. The air smelled of cold iron and damp coats. Somewhere beyond the signal lamps, a train was breathing its way towards us. And yet nobody looked up."
+          },
+          "note": "Read it twice. Ask pupils to identify tone (calm, observant), register (formal-neutral) and the linking device ('And yet'). Stress that the standard is not long words but controlled, deliberate choices. Original model written for TGA."
+        },
+        {
+          "heading": "Hinge question",
+          "check": {
+            "q": "Which sentence breaks the register of a calm magazine description?",
+            "options": [
+              "The porter swept patiently beneath the clock.",
+              "The platform was totally mega boring, mate.",
+              "Dusk settled over the station."
+            ],
+            "answer": 1,
+            "why": "B slides into slang that clashes with the controlled, formal-neutral tone. A and C fit."
+          },
+          "note": "Mini-whiteboards. If pupils pick A or C, ask them to say what tone each sentence achieves."
+        }
+      ],
+      "practice": [
+        "Rewrite 'The sky was dark and I was scared' in a formal-neutral register with one metaphor.",
+        "Add a linking phrase to join these: 'The hall was silent.' 'A door opened.'",
+        "Choose a task (description or narrative) and write its first sentence with a clear tone."
+      ],
+      "independent": [
+        "Core: Write a five-sentence description of a street at dawn, keeping one tone.",
+        "Extend: Add two different linking devices and underline them.",
+        "Stretch: Write two openings of the same scene in two contrasting tones and explain how register shifts."
+      ],
+      "exit": [
+        "Define 'register' in your own words.",
+        "Write one linking phrase you could use between paragraphs.",
+        "Big question: how do tone and linking help your writing sound controlled?"
+      ],
+      "homework": "Choose one of the Question 5 tasks from your specimen paper. Plan it in five bullet points, naming your tone, register and the three links between paragraphs.",
+      "send": "SEND: give a paragraph frame and a link-words mat. EAL/international: pre-teach 'dusk', 'porter', 'metronome', 'signal lamps'; model the distinction between formal and informal with a two-column list. Stretch: write an extra paragraph that deliberately shifts tone and justify the shift.",
+      "n": 25,
+      "duration": 50,
+      "board": "AQA GCSE English Language (9-1) 8700",
+      "boardShort": "AQA 8700"
+    },
+    {
+      "unit": "P1-B-Q5: Paper 1 Section B: Question 5, descriptive or narrative writing",
+      "covers": [
+        "P1-B-Q5.6"
+      ],
+      "title": "Question 5: managing your time across the 1 hour 45 minute paper",
+      "bigQuestion": "How should I spend my 105 minutes so that Question 5 gets the time it deserves?",
+      "objectives": [
+        "Know the paper's length and the notional reading time included in it",
+        "Plan a realistic timing budget for each question",
+        "Reserve time at the end to check writing for accuracy"
+      ],
+      "successCriteria": [
+        "All: state the total time and where reading time sits",
+        "Most: build a timing plan that adds up to 105 minutes",
+        "Some: adapt the plan after a slow start without losing time for Question 5"
+      ],
+      "crossCurricular": "Maths: budgeting and adding times",
+      "smsc": "Moral: responsibility and self-discipline in using time well",
+      "keywords": [
+        {
+          "term": "notional",
+          "def": "counted as a guide rather than strictly timed"
+        },
+        {
+          "term": "timing plan",
+          "def": "a budget of minutes for each task"
+        },
+        {
+          "term": "proofread",
+          "def": "read through to find and fix errors"
+        }
+      ],
+      "starter": [
+        "Bismillah. How many minutes are in 1 hour 45 minutes?",
+        "List the five Paper 1 questions with their marks.",
+        "Retrieval: name two things to check in your Question 5 writing."
+      ],
+      "teach": [
+        {
+          "heading": "The paper in numbers",
+          "table": {
+            "head": [
+              "Part",
+              "Question",
+              "Marks",
+              "Time (approx.)"
+            ],
+            "rows": [
+              [
+                "Reading",
+                "Whole extract",
+                "none",
+                "15 min"
+              ],
+              [
+                "Section A",
+                "Q1",
+                "4",
+                "5 min"
+              ],
+              [
+                "Section A",
+                "Q2",
+                "8",
+                "10 min"
+              ],
+              [
+                "Section A",
+                "Q3",
+                "8",
+                "10 min"
+              ],
+              [
+                "Section A",
+                "Q4",
+                "20",
+                "20 min"
+              ],
+              [
+                "Section B",
+                "Q5",
+                "40",
+                "45 min"
+              ]
+            ]
+          },
+          "note": "Total: 105 minutes. Say that AQA builds a notional 15 minutes of reading time into the 1 hour 45 minutes; it is not separate time. The timings are guidance (approx.): verify against the paper's front cover and your specimen. Ask: why does Q5 get the longest slot? (40 of 80 marks.)"
+        },
+        {
+          "heading": "A timeline for Question 5",
+          "timeline": [
+            {
+              "label": "0 to 5 min",
+              "text": "Choose the task and plan"
+            },
+            {
+              "label": "5 to 40 min",
+              "text": "Write in a controlled, organised way"
+            },
+            {
+              "label": "40 to 45 min",
+              "text": "Proofread and fix errors"
+            }
+          ],
+          "note": "Model the plan: choose, plan, write, check. Warn against spending twenty minutes planning. Note that technical accuracy accounts for 16 marks, so the five-minute check is worth real marks. Use the idea of ihsan: doing a task with care and excellence."
+        },
+        {
+          "heading": "Model: adapting when you overrun",
+          "model": {
+            "problem": "You have 30 minutes left but have only just started Question 5. What do you do?",
+            "steps": [
+              "Stay calm and spend two minutes on a brief plan.",
+              "Shorten the piece: aim for a clear beginning, middle and end.",
+              "Write confidently; do not restart.",
+              "Leave the last three minutes for checking spelling and punctuation."
+            ],
+            "answer": "Plan for 2 minutes, write for 25, check for 3. A shorter, controlled piece with accurate punctuation will score better than an unfinished ambitious one."
+          },
+          "note": "Emphasise that panic wastes more time than a shorter piece. Ask pupils what they would cut: extra description, a second flashback, an overlong ending."
+        },
+        {
+          "heading": "Hinge question",
+          "check": {
+            "q": "Why is checking time built into the plan?",
+            "options": [
+              "It makes the paper longer",
+              "It protects marks for spelling, punctuation and sentence control",
+              "Examiners require a signature"
+            ],
+            "answer": 1,
+            "why": "Technical accuracy is worth 16 of the 40 marks, so a short check recovers marks cheaply."
+          },
+          "note": "Mini-whiteboards. Revisit 16 versus 24 marks."
+        },
+        {
+          "heading": "Common error",
+          "misconception": {
+            "wrong": "'I will use the 15 minutes of reading time as extra thinking time before I start writing.'",
+            "right": "The 15 minutes is notional and already inside the 1 hour 45 minutes. Use it for reading the extract, then keep moving."
+          },
+          "note": "Clarify that the paper is one continuous 1 hour 45 minutes. The 15 minutes is a recommended share, not extra time. Ask pupils to underline it on their timing plan."
+        }
+      ],
+      "practice": [
+        "Add: 15 + 5 + 10 + 10 + 20 + 45. What do you get?",
+        "Adjust the plan for a student who spends 25 minutes on Question 4.",
+        "Write the three steps of your Question 5 timeline in your own words."
+      ],
+      "independent": [
+        "Core: Create your own timing plan for Paper 1 on a small card.",
+        "Extend: Write a Question 5 title, plan it in 5 minutes using a timer.",
+        "Stretch: Write a short paragraph explaining how you would adapt the plan if you were slow on Question 2."
+      ],
+      "exit": [
+        "How long is Paper 1, and what part is notional reading time?",
+        "How many minutes would you give to checking Question 5?",
+        "Big question: why does Question 5 deserve the longest slot?"
+      ],
+      "homework": "Complete a timed 45-minute Question 5 at home using your plan, then note how long each stage actually took.",
+      "send": "SEND: provide a visual clock face with colour-coded slots and extra planning prompts. EAL/international: pre-teach 'notional', 'proofread', 'budget'; allow numbers in digits only. Stretch: design a personal exam routine that includes a breathing pause.",
+      "n": 26,
+      "duration": 50,
+      "board": "AQA GCSE English Language (9-1) 8700",
+      "boardShort": "AQA 8700"
+    },
+    {
+      "unit": "SC-W: Subject content: writing across the course",
+      "covers": [
+        "SC-W.4"
+      ],
+      "title": "Writing for impact: rhetorical and creative techniques",
+      "bigQuestion": "Which techniques make a reader stop, feel and remember?",
+      "objectives": [
+        "Identify rhetorical techniques (repetition, rule of three, rhetorical question, direct address)",
+        "Use creative techniques (motif, extended metaphor, short sentences) in your own writing",
+        "Choose a technique to fit audience and purpose, rather than adding all of them"
+      ],
+      "successCriteria": [
+        "All: use two techniques accurately in a short piece",
+        "Most: explain why each technique has impact",
+        "Some: blend rhetorical and creative techniques with control and restraint"
+      ],
+      "crossCurricular": "History: speeches that shaped public opinion",
+      "smsc": "Moral: using the power of words responsibly and truthfully",
+      "keywords": [
+        {
+          "term": "anaphora",
+          "def": "repeating the same words at the start of clauses"
+        },
+        {
+          "term": "tricolon",
+          "def": "a list of three, also called the rule of three"
+        },
+        {
+          "term": "rhetorical question",
+          "def": "a question asked for effect, not for an answer"
+        },
+        {
+          "term": "motif",
+          "def": "a repeated image or idea that links a text"
+        },
+        {
+          "term": "extended metaphor",
+          "def": "a metaphor developed across several sentences"
+        }
+      ],
+      "starter": [
+        "Bismillah. Turn this plain sentence into one with impact: 'It was a quiet night.'",
+        "Name one technique that could be used in a speech.",
+        "Retrieval: what does 'audience' mean in a writing task?"
+      ],
+      "teach": [
+        {
+          "heading": "Two toolkits",
+          "compare": {
+            "left": {
+              "title": "Rhetorical (persuading)",
+              "points": [
+                "Repetition and anaphora",
+                "Rule of three (tricolon)",
+                "Rhetorical questions",
+                "Direct address: 'you'"
+              ]
+            },
+            "right": {
+              "title": "Creative (describing, narrating)",
+              "points": [
+                "Motif and symbolism",
+                "Extended metaphor",
+                "Short sentences for shock",
+                "Shifts in focus or time"
+              ]
+            },
+            "label": "and"
+          },
+          "note": "Explain that Subject Content for writing expects pupils to use rhetorical and creative techniques for impact across both papers. Techniques overlap: a motif can persuade; a rhetorical question can build suspense. Ask: where have you seen the rule of three in advertising?"
+        },
+        {
+          "heading": "A public-domain model",
+          "quote": {
+            "text": "... government of the people, by the people, for the people, shall not perish from the earth.",
+            "source": "Abraham Lincoln, Gettysburg Address (1863)"
+          },
+          "note": "Point out the repeated 'of the people, by the people, for the people', which is both anaphora and a tricolon. This is public-domain text. Ask: what does the repetition make the audience feel? (Unity, dignity, rhythm.) Note it is a speech, so the sound matters."
+        },
+        {
+          "heading": "Model: from plain to powerful",
+          "model": {
+            "problem": "Rewrite for impact for a school assembly speech on kindness: 'We should be kind to each other at school.'",
+            "steps": [
+              "Add a rhetorical question that makes the audience reflect.",
+              "Use a tricolon to build rhythm.",
+              "Add direct address so the audience feels included.",
+              "End on a short, memorable sentence."
+            ],
+            "answer": "Who here has never needed a kind word? Kindness costs us nothing: a smile, a shared seat, a gentle hello. You hold that power every single day. Use it."
+          },
+          "note": "Break down each sentence aloud: the question, the tricolon (a smile, a shared seat, a gentle hello), the direct address 'You', the imperative 'Use it.' Ask pupils to read it as an assembly, feeling the impact. Original model written for TGA."
+        },
+        {
+          "heading": "Creative impact in narrative",
+          "model": {
+            "problem": "Open a narrative using a motif and an extended metaphor. Subject: waiting for results.",
+            "steps": [
+              "Pick a repeated image: a clock.",
+              "Build a metaphor in 2 to 3 sentences.",
+              "Use one very short sentence for emphasis.",
+              "Return to the motif at the end."
+            ],
+            "answer": "The clock on the wall was a patient judge. Each tick weighed another minute against me. Tick. Tick. Outside, the corridor filled with footsteps, and the judge went on ticking."
+          },
+          "note": "Name the motif (the clock), the extended metaphor (judge) and the fragment 'Tick. Tick.' as a deliberate short sentence. Stress that the ending returns to the clock, which delivers cohesion. Original model written for TGA."
+        },
+        {
+          "heading": "Hinge question",
+          "check": {
+            "q": "Which choice is best for impact in a narrative about the sea?",
+            "options": [
+              "Using five different techniques in one paragraph",
+              "Repeating one motif of waves and using a short sentence for the climax",
+              "Using a rhetorical question in every sentence"
+            ],
+            "answer": 1,
+            "why": "Controlled use of one motif plus a short sentence creates a deliberate effect; piling on techniques weakens impact."
+          },
+          "note": "Mini-whiteboards. Introduce 'less is more': one technique used well beats a list used badly."
+        }
+      ],
+      "practice": [
+        "Write a tricolon about your favourite season.",
+        "Turn 'Pollution is a problem' into a rhetorical question.",
+        "Choose a motif and write two sentences that repeat it."
+      ],
+      "independent": [
+        "Core: Write a four-sentence speech opening that uses direct address and a tricolon.",
+        "Extend: Write a six-sentence narrative paragraph with a motif and one short sentence.",
+        "Stretch: Write one paragraph that mixes a rhetorical question and an extended metaphor, then annotate the impact."
+      ],
+      "exit": [
+        "Name two rhetorical techniques and one creative technique.",
+        "Write one sentence with anaphora.",
+        "Big question: which technique had the most impact in your writing today, and why?"
+      ],
+      "homework": "Write a 120-word speech or story opening on a topic you care about, using at least two techniques, and annotate them.",
+      "send": "SEND: provide a technique mat with examples and a partly completed model. EAL/international: pre-teach 'tricolon', 'motif', 'patient judge', 'rhetorical'; give sentence frames: 'Who ...?', 'We will ..., we will ..., we will ...'. Stretch: analyse the impact of the Lincoln line on three levels (sound, meaning, audience).",
+      "n": 27,
+      "duration": 50,
       "board": "AQA GCSE English Language (9-1) 8700",
       "boardShort": "AQA 8700"
     }

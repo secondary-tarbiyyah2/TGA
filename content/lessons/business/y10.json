@@ -2,7 +2,7 @@
   "subject": "Business",
   "year": "y10",
   "board": "Edexcel",
-  "source": "Edexcel GCSE Business (1BS0) specification, Theme 1: Investigating small business (1.1 Enterprise and entrepreneurship, 1.2 Spotting a business opportunity, start of 1.3 Putting a business idea into practice). The school Drive holds only an AQA 8132 scheme of work and legacy topic folders, used for activity ideas only; all content written to the Edexcel specification and subject knowledge. Business examples are fictional unless stated | Edexcel 4BS1 specification (headline content for units 1.1-1.4, 4.1-4.3, 2.1-2.2). The older UK GCSE 1BS0 lessons in content/lessons/business/y10.json were checked: they cover aims, market research, segmentation and revenue/cost/profit for the old board; this set re-teaches those topics only where they appear as separate 4BS1 units (1.1, 4.1, 4.2) with new fictional contexts and IGCSE-style questions. No Drive material adapted.",
+  "source": "Edexcel GCSE Business (1BS0) specification, Theme 1: Investigating small business (1.1 Enterprise and entrepreneurship, 1.2 Spotting a business opportunity, start of 1.3 Putting a business idea into practice). The school Drive holds only an AQA 8132 scheme of work and legacy topic folders, used for activity ideas only; all content written to the Edexcel specification and subject knowledge. Business examples are fictional unless stated | Edexcel 4BS1 specification (headline content for units 1.1-1.4, 4.1-4.3, 2.1-2.2). The older UK GCSE 1BS0 lessons in content/lessons/business/y10.json were checked: they cover aims, market research, segmentation and revenue/cost/profit for the old board; this set re-teaches those topics only where they appear as separate 4BS1 units (1.1, 4.1, 4.2) with new fictional contexts and IGCSE-style questions. No Drive material adapted. | Gap-fill against Pearson Edexcel International GCSE (9-1) Business 4BS1 specification",
   "lessons": [
     {
       "unit": "Unit 1: Enterprise and entrepreneurship",
@@ -2962,6 +2962,701 @@
       ],
       "homework": "Find a real job advert and identify one duty and one skill required.",
       "send": "SEND: provide labelled examples of job description and person specification. EAL: pre-teach vacancy, shortlist. Stretch: investigate why job sharing might help some workers.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 4.1: Market research",
+      "covers": [
+        "4.1.2",
+        "4.1.4",
+        "4.1.6"
+      ],
+      "n": 22,
+      "title": "Market research: evidence, secondary sources and social media",
+      "duration": 50,
+      "bigQuestion": "How can a business trust the information it uses to make a big decision?",
+      "objectives": [
+        "Explain how market research reduces risk and gives evidence for decisions",
+        "Describe online sources, market reports and government reports as secondary research",
+        "Explain the role of social media in gathering data and why data must be dependable"
+      ],
+      "successCriteria": [
+        "All: state how research reduces risk and name three secondary sources",
+        "Most: judge one source for cost, age and relevance",
+        "Some: evaluate whether data from a social media poll is dependable enough for a 24,000 pound decision"
+      ],
+      "crossCurricular": "Maths: percentages and sample size; ICT: judging online sources",
+      "smsc": "Moral: honesty (sidq) when collecting and reporting what customers say",
+      "keywords": [
+        {
+          "term": "evidence",
+          "def": "facts and data that support a decision"
+        },
+        {
+          "term": "risk",
+          "def": "the chance that a decision turns out badly"
+        },
+        {
+          "term": "secondary research",
+          "def": "using information that already exists, collected by someone else"
+        },
+        {
+          "term": "market report",
+          "def": "a published study of an industry, often written by a research firm and sold for a fee"
+        },
+        {
+          "term": "government report",
+          "def": "official statistics and studies published by public bodies, often free"
+        },
+        {
+          "term": "dependable data",
+          "def": "data that is accurate, up to date, unbiased and relevant to the question"
+        }
+      ],
+      "starter": [
+        "Define primary research and give two methods.",
+        "Give one qualitative and one quantitative example of data about a cafe.",
+        "Why might a start-up choose a focus group rather than a large survey?"
+      ],
+      "teach": [
+        {
+          "heading": "Research reduces risk",
+          "bullets": [
+            "Every big decision has a risk of failure",
+            "Research gives evidence, not guesses",
+            "Evidence shows demand before money is spent",
+            "It reduces risk but never removes it"
+          ],
+          "note": "Bismillah. Context: fictional Hana's Halal Bakehouse wants to open a second branch costing 24,000 pounds. Ask: what could she do before signing the lease? Draw out that research tells her how many people might buy, what they will pay and who the competitors are. Stress the word 'reduces'. A decision backed by evidence is easier to defend to a bank or a partner, and easier to review later if it goes wrong."
+        },
+        {
+          "heading": "Secondary sources",
+          "note": "Go through the table. Hana has not collected any of this herself, so it is secondary. Ask which is cheapest (government reports, often free) and which is most specific (market report, but it can cost hundreds or thousands of pounds - say 'a fee', no exact figure needed). Emphasise date: check when it was published. Competitor websites and review sites count as online sources, but anyone can post anything online, so check who wrote it.",
+          "table": {
+            "head": [
+              "Source",
+              "Example for Hana",
+              "Strength",
+              "Weakness"
+            ],
+            "rows": [
+              [
+                "Online sources",
+                "Competitor menus, review sites, news articles",
+                "Fast and free",
+                "May be biased or inaccurate"
+              ],
+              [
+                "Market reports",
+                "Report on the UK bakery industry",
+                "Detailed, written by experts",
+                "Can be expensive; may not fit her town"
+              ],
+              [
+                "Government reports",
+                "Population and household spending statistics",
+                "Trusted, often free",
+                "General; may be out of date"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Social media as a data source",
+          "bullets": [
+            "Polls and comments show opinions quickly and cheaply",
+            "Reviews and shares show what customers like",
+            "Can spot trends and complaints early",
+            "Only those who post are heard"
+          ],
+          "note": "Hana posts a poll on her page and reads the comments under rivals' posts. Link to primary and secondary: her own poll is primary research; reading rivals' comments is closer to secondary. Be clear that a social media poll is quick but the people who respond are self-selected: usually existing followers, often younger, often the most enthusiastic. Ask: who is missing from her results?"
+        },
+        {
+          "heading": "Worked example: is the data dependable?",
+          "note": "Model the calculation then the judgement. Dependable data needs four tests: accurate, up to date, unbiased, relevant. Pupils often stop at the percentage; push them to say whether it can be trusted. Link to honesty: reporting a poor result truthfully protects the business from a costly mistake.",
+          "model": {
+            "problem": "Hana's poll gets 400 votes. 312 vote yes to opening a second branch. Her followers are mostly aged 18-25. Should she rely on the result?",
+            "steps": [
+              "Percentage yes = 312 divided by 400 = 0.78, so 78 per cent",
+              "Is the sample large? 400 is reasonable",
+              "Is it representative? Followers are mostly 18-25 and already like her bakery",
+              "Is it unbiased? Only people who chose to vote took part"
+            ],
+            "answer": "78 per cent yes, but not fully dependable: the sample is self-selected and narrow. Combine it with a survey of local residents and government population data."
+          }
+        },
+        {
+          "heading": "Check: secondary or primary?",
+          "note": "Answer B. Government population statistics already exist and were collected by someone else. A is her own poll (primary), C is first-hand observation (primary), D is a focus group (primary). Watch for pupils who think 'online' means secondary: her own social media poll is online but primary.",
+          "check": {
+            "q": "Which of these is secondary research for Hana?",
+            "options": [
+              "A poll she posts on her own page",
+              "Government statistics on how many families live in the area",
+              "Counting customers who enter a rival bakery",
+              "Eight neighbours tasting new cakes and giving views"
+            ],
+            "answer": 1,
+            "why": "Government statistics already exist and were collected by someone else. The others are collected first-hand, so they are primary."
+          }
+        },
+        {
+          "heading": "Why data must be dependable",
+          "bullets": [
+            "Wrong data leads to wrong decisions",
+            "Check the date, the author and the sample",
+            "Leading questions bias answers",
+            "Combine several sources to cross-check"
+          ],
+          "note": "Misconception to tackle: 'more data always means better data'. Ten thousand biased answers are still biased. Give a leading question: 'Wouldn't you agree our cakes are the best in town?' Ask pupils to rewrite it neutrally. Islamic ethos: honesty in business is a core value; a business should not twist results to get the answer it wants. Do not attribute any specific text; keep it as a principle."
+        }
+      ],
+      "practice": [
+        "Calculate the percentage: 156 of 600 followers vote yes in a poll.",
+        "State two advantages and one disadvantage of using government reports.",
+        "Hana finds a market report that is four years old. Explain one reason it may not be dependable."
+      ],
+      "independent": [
+        "Core: Copy and complete a table of three secondary sources for a halal grocery shop: example, one strength, one weakness.",
+        "Extend: Explain how social media could help Hana find out what customers think of a rival, and one limit of this data (4 marks).",
+        "Stretch: Evaluate (8 marks): Hana can pay a firm for a market report or rely on a free social media poll and government statistics. Which should she use before spending 24,000 pounds? Justify your judgement."
+      ],
+      "exit": [
+        "State one way market research reduces risk.",
+        "Name two secondary sources.",
+        "Big question: give one reason data might not be dependable."
+      ],
+      "homework": "Find one online article about a local business and write three lines on whether it is dependable: author, date, bias.",
+      "send": "SEND: give the table pre-filled with gaps; sentence starter 'This data is not dependable because...'. EAL: pair the terms with pictures of a report and a phone. Stretch: assess how self-selection affects a poll.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 4.2: The market",
+      "covers": [
+        "4.2.3",
+        "4.2.5"
+      ],
+      "n": 23,
+      "title": "Market share and responding to a changing market",
+      "duration": 50,
+      "bigQuestion": "If a business sells more than last year, can it still be losing ground?",
+      "objectives": [
+        "Calculate and interpret market share",
+        "Analyse market share to compare businesses and track performance",
+        "Explain how a business can respond to shifting needs, spending patterns and increased competition"
+      ],
+      "successCriteria": [
+        "All: calculate market share using the formula",
+        "Most: explain why share can fall when sales rise",
+        "Some: recommend and justify a response to a new competitor"
+      ],
+      "crossCurricular": "Maths: percentages and percentage change",
+      "smsc": "Social: fair competition and treating rivals with respect",
+      "keywords": [
+        {
+          "term": "market share",
+          "def": "a business's sales as a percentage of total sales in the market"
+        },
+        {
+          "term": "market size",
+          "def": "the total sales of all businesses in a market"
+        },
+        {
+          "term": "market growth",
+          "def": "an increase in the total sales of the market"
+        },
+        {
+          "term": "competitor",
+          "def": "another business selling similar products to the same customers"
+        },
+        {
+          "term": "spending pattern",
+          "def": "how customers choose to spend their money, for example more on value and less on luxuries"
+        }
+      ],
+      "starter": [
+        "Name two ways to segment a market.",
+        "What is the difference between a niche and a mass market?",
+        "Give one reason why customers' needs might change."
+      ],
+      "teach": [
+        {
+          "heading": "What is market share?",
+          "bullets": [
+            "Share of the whole market that one business wins",
+            "Measured by sales revenue or number of units",
+            "Market share (%) = firm's sales / total market sales x 100",
+            "A larger share usually means a stronger position"
+          ],
+          "note": "Bismillah. Context: fictional Zaytun Coffee Stop, one of several coffee shops in a town. Write the formula and read it as 'my slice of the pie'. The total market is every business's sales added together, including ours. Point out the answer is always a percentage between 0 and 100, and all shares in a market add up to 100 per cent."
+        },
+        {
+          "heading": "Worked example: calculate market share",
+          "note": "Model slowly; insist on the same units (both in pounds, same year). Then do the second step: change in share. Ask why 15 per cent is only meaningful when compared with rivals or with earlier years.",
+          "model": {
+            "problem": "Zaytun Coffee Stop's sales are 360,000 pounds a year. Total sales of coffee shops in the town are 2,400,000 pounds. Calculate its market share.",
+            "steps": [
+              "Formula: market share = firm's sales / total market sales x 100",
+              "= 360,000 / 2,400,000 x 100",
+              "= 0.15 x 100"
+            ],
+            "answer": "Market share = 15 per cent"
+          }
+        },
+        {
+          "heading": "Can sales rise but share fall?",
+          "note": "This is the key insight. Zaytun's sales rose from 300,000 to 330,000, up 10 per cent. But the whole market grew faster, from 2,000,000 to 2,500,000, up 25 per cent. Old share: 300,000 / 2,000,000 = 15 per cent. New share: 330,000 / 2,500,000 = 13.2 per cent. Competitors grew faster than Zaytun. Ask: should the owner celebrate? Discuss what to do next.",
+          "table": {
+            "head": [
+              "Measure",
+              "Year 1",
+              "Year 2",
+              "Change"
+            ],
+            "rows": [
+              [
+                "Zaytun sales",
+                "300,000 pounds",
+                "330,000 pounds",
+                "up 10%"
+              ],
+              [
+                "Total market sales",
+                "2,000,000 pounds",
+                "2,500,000 pounds",
+                "up 25%"
+              ],
+              [
+                "Market share",
+                "15%",
+                "13.2%",
+                "down 1.8 percentage points"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check: reading market share",
+          "note": "Answer C. Share = 90,000 / 600,000 x 100 = 15 per cent. Distractor A is sales divided by 100 and D is 90,000 divided by 690,000 (adding to the total wrongly). Remind pupils that the market total already includes the firm.",
+          "check": {
+            "q": "A bakery sells 90,000 pounds a year. The whole market sells 600,000 pounds. What is its market share?",
+            "options": [
+              "0.15 per cent",
+              "6.7 per cent",
+              "15 per cent",
+              "60 per cent"
+            ],
+            "answer": 2,
+            "why": "90,000 / 600,000 x 100 = 15 per cent. 6.7 comes from dividing the wrong way round (600,000 / 90,000)."
+          }
+        },
+        {
+          "heading": "Responding to change",
+          "bullets": [
+            "Shifting needs: adapt the product range",
+            "Spending patterns: offer value or lower-price options",
+            "Increased competition: differentiate, improve service, promote",
+            "Keep checking research and market share"
+          ],
+          "note": "Use three mini-cases for Zaytun. 1) Needs shift: more customers want sugar-free drinks, so add sugar-free syrups and food. 2) Spending falls when household costs rise: add a 'small and cheap' range, loyalty stamps, meal deals. 3) A national chain opens nearby: stress what makes Zaytun different (friendly service, halal-friendly menu, local sourcing) and increase local promotion. Ask which response suits which change and what each costs."
+        },
+        {
+          "heading": "Match the change to a response",
+          "note": "Pupils justify in pairs. There can be more than one sensible answer; marks go to a reason linked to the change. Reinforce that a business responds using evidence: market research and market share figures tell it when and what to change. Quote no external statistics.",
+          "table": {
+            "head": [
+              "Change in the market",
+              "Possible response",
+              "Why it helps"
+            ],
+            "rows": [
+              [
+                "Customers want healthier options",
+                "Add new low-sugar products",
+                "Meets needs, wins customers back"
+              ],
+              [
+                "Households spend less on treats",
+                "Cheaper small sizes, special offers",
+                "Keeps price-sensitive customers"
+              ],
+              [
+                "New rival opens nearby",
+                "Loyalty card, better service, local advertising",
+                "Retains loyal customers, protects share"
+              ],
+              [
+                "Rival cuts prices",
+                "Improve quality or add value instead of copying",
+                "Avoids a damaging price war"
+              ]
+            ]
+          }
+        }
+      ],
+      "practice": [
+        "Calculate market share: sales 48,000 pounds, market 320,000 pounds.",
+        "Last year a firm had 12 per cent share; this year it has 10 per cent while its sales rose. Give one possible reason.",
+        "Give one way a shop could respond if customers start spending less."
+      ],
+      "independent": [
+        "Core: A halal takeaway has sales of 75,000 pounds in a market worth 500,000 pounds. Calculate its share, then calculate it again after sales rise to 84,000 pounds and the market to 700,000 pounds.",
+        "Extend: Explain why the owner should not judge success on sales alone (4 marks).",
+        "Stretch: Evaluate (8 marks): a large chain opens next to a small family shop. Should the shop cut its prices or improve its service? Justify your recommendation."
+      ],
+      "exit": [
+        "Write the market share formula.",
+        "Calculate: sales 20,000 pounds, market 250,000 pounds.",
+        "Big question: how can a business with rising sales still be losing ground?"
+      ],
+      "homework": "Choose a local shop. Describe two ways it could respond if a rival opened next door, and which you recommend.",
+      "send": "SEND: provide the formula on a card and a calculator template. EAL: practise 'share' and 'market' with a pie-chart picture. Stretch: calculate percentage change in sales and market, then compare.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 4.3: The marketing mix",
+      "covers": [
+        "4.3.2"
+      ],
+      "n": 24,
+      "title": "Packaging and why it matters",
+      "duration": 50,
+      "bigQuestion": "How much of a product's success is in the box?",
+      "objectives": [
+        "State the functions of packaging",
+        "Explain why packaging is important for sales, brand and customers",
+        "Weigh the cost and environmental impact of packaging decisions"
+      ],
+      "successCriteria": [
+        "All: list four functions of packaging",
+        "Most: explain how packaging helps a business sell a product",
+        "Some: evaluate whether to pay more for premium packaging"
+      ],
+      "crossCurricular": "Design and Technology: materials; Science: preservation; Maths: unit cost and percentages",
+      "smsc": "Moral: honest labelling; avoiding waste as part of looking after resources entrusted to us",
+      "keywords": [
+        {
+          "term": "packaging",
+          "def": "the container or wrapper around a product"
+        },
+        {
+          "term": "protection",
+          "def": "stopping the product from being damaged or spoiled"
+        },
+        {
+          "term": "labelling",
+          "def": "information printed on the pack, such as ingredients and allergens"
+        },
+        {
+          "term": "brand image",
+          "def": "how customers see and feel about a brand"
+        },
+        {
+          "term": "unit cost",
+          "def": "the cost of making one item"
+        }
+      ],
+      "starter": [
+        "Name the four Ps of the marketing mix.",
+        "Give one example of a product life cycle extension strategy.",
+        "What is a brand?"
+      ],
+      "teach": [
+        {
+          "heading": "What does packaging do?",
+          "bullets": [
+            "Protects the product in transport and storage",
+            "Keeps food fresh and hygienic",
+            "Gives information and legal labelling",
+            "Promotes the brand and attracts customers"
+          ],
+          "note": "Bismillah. Hold up or describe two packs of dates: a plain plastic tub and a boxed gift set. Ask what each tells the customer. Packaging is part of the product element of the marketing mix. Functions: protect, preserve, inform, promote, make it convenient to carry, store or use. Mention that food labels must carry accurate ingredient and allergen information in many countries including the UK; on halal products, a recognised certification mark helps customers trust the claim. Honest labelling is also an ethical matter: customers rely on what we print."
+        },
+        {
+          "heading": "Why is it important?",
+          "note": "Use the compare slide. Packaging is often the first thing a customer sees in a shop or in a delivery. For an online seller it also needs to survive posting. Ask pupils to choose which side matters most for a luxury chocolate brand and which for a budget rice brand. Draw out: the answer depends on the target segment and on price positioning.",
+          "compare": {
+            "left": {
+              "title": "Benefits to the business",
+              "points": [
+                "Stands out against rivals on the shelf",
+                "Builds a recognisable brand",
+                "Supports a higher price",
+                "Reduces damaged goods and returns"
+              ]
+            },
+            "right": {
+              "title": "Costs and drawbacks",
+              "points": [
+                "Raises the cost of each unit",
+                "Heavy packaging raises delivery costs",
+                "Too much waste harms the environment",
+                "Poor labelling can break the law"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Worked example: packaging and cost",
+          "note": "Model the unit cost and the share of cost. Then ask: if the owner uses cost-plus pricing with a 50 per cent markup, what happens to the price? Price = 2.25 x 1.5 = 3.375, so about 3.38 pounds. A customer may or may not pay 38 pence more: this is where the evaluation lies. Link to target market: gift buyers may pay; everyday shoppers may not.",
+          "model": {
+            "problem": "A box of date biscuits costs 1.20 pounds ingredients, 0.35 pounds packaging and 0.45 pounds labour to make. Premium packaging would add 0.25 pounds. Find the unit cost now, the new unit cost, and packaging's share of the new cost.",
+            "steps": [
+              "Current unit cost = 1.20 + 0.35 + 0.45 = 2.00 pounds",
+              "New packaging cost = 0.35 + 0.25 = 0.60 pounds",
+              "New unit cost = 1.20 + 0.60 + 0.45 = 2.25 pounds",
+              "Packaging share = 0.60 / 2.25 x 100 = 26.7 per cent"
+            ],
+            "answer": "Unit cost rises from 2.00 to 2.25 pounds; packaging becomes about 26.7 per cent of cost. It is worth it only if customers will pay a higher price."
+          }
+        },
+        {
+          "heading": "Check: purpose of packaging",
+          "note": "Answer B. Tamper-evident seals protect and reassure the customer: protection and safety. A is promotion, C is price, D is about distribution. Use the whiteboards and ask pupils to explain why the others are less accurate.",
+          "check": {
+            "q": "A juice company adds a seal that shows if the bottle has been opened. Which function of packaging is this mainly?",
+            "options": [
+              "Promoting the brand",
+              "Protecting the product and reassuring customers",
+              "Lowering the price",
+              "Choosing a distribution channel"
+            ],
+            "answer": 1,
+            "why": "A tamper-evident seal protects the product and builds trust. The other options are different marketing mix decisions."
+          }
+        },
+        {
+          "heading": "Packaging, the environment and ethics",
+          "bullets": [
+            "Customers increasingly notice plastic and waste",
+            "Recyclable or refillable packs can improve image",
+            "Sustainable materials may cost more",
+            "Honest packs: no misleading claims or pictures"
+          ],
+          "note": "Ask: what is the trade-off between a cheaper plastic wrapper and a recyclable paper pack? Connect to stakeholders: customers, local council, environmental groups. Islamic ethos: stewardship (amanah) of resources and avoiding wastefulness are widely discussed values, so many Muslim customers and owners care about over-packaging; present it as a value the business may hold, not as a ruling. Do not quote texts unless you can verify them."
+        }
+      ],
+      "practice": [
+        "List four functions of packaging for a box of chocolates.",
+        "Calculate: ingredients 0.80 pounds, packaging 0.20 pounds, labour 0.50 pounds. Find unit cost and packaging's percentage of it.",
+        "Explain one way packaging could help a new brand compete with a well-known rival."
+      ],
+      "independent": [
+        "Core: Design (describe in words) packaging for a halal-certified snack for school children: three features and what each is for.",
+        "Extend: Explain two reasons a business might change to environmentally friendly packaging (4 marks).",
+        "Stretch: Evaluate (8 marks): a small online seller is deciding between cheap plain packaging and expensive branded packaging. Which should it choose? Consider cost, brand and customer."
+      ],
+      "exit": [
+        "State three functions of packaging.",
+        "Give one cost of improving packaging.",
+        "Big question: give one way packaging can affect a product's success."
+      ],
+      "homework": "Choose a product at home. Write down its packaging, three things the pack tells you, and one way it could be improved.",
+      "send": "SEND: provide a picture-based pack to label with functions. EAL: pre-teach protect, preserve, label. Stretch: calculate the price change using a 50 per cent markup.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
+    },
+    {
+      "unit": "Unit 2.2: Recruitment and selection process",
+      "covers": [
+        "2.2.1",
+        "2.2.4"
+      ],
+      "n": 25,
+      "title": "Types of employment and equal opportunities",
+      "duration": 50,
+      "bigQuestion": "How can a business be fair to everyone who applies to work for it, and still meet its own needs?",
+      "objectives": [
+        "Distinguish full-time, part-time, job share, casual, seasonal and temporary employment",
+        "Explain why a business might use each type",
+        "Explain the purpose of equal opportunities law and its effect on a business"
+      ],
+      "successCriteria": [
+        "All: define the six types of employment",
+        "Most: recommend a suitable type for a given business need",
+        "Some: evaluate the costs and benefits to a small business of following equal opportunities law"
+      ],
+      "crossCurricular": "PSHE and citizenship: rights at work; Maths: weekly wage calculations",
+      "smsc": "Moral and social: justice ('adl) and respect for every person's dignity in hiring",
+      "keywords": [
+        {
+          "term": "full-time",
+          "def": "working the standard full week set by the employer"
+        },
+        {
+          "term": "part-time",
+          "def": "working fewer hours than a full-time employee"
+        },
+        {
+          "term": "job share",
+          "def": "two people share the hours and duties of one full-time job"
+        },
+        {
+          "term": "casual",
+          "def": "working only when needed, with no guaranteed hours"
+        },
+        {
+          "term": "seasonal",
+          "def": "working during a busy time of year only"
+        },
+        {
+          "term": "temporary",
+          "def": "employed for a limited period, such as to cover absence"
+        },
+        {
+          "term": "equal opportunities",
+          "def": "the principle that people are treated fairly in recruitment and at work whatever their personal characteristics"
+        },
+        {
+          "term": "discrimination",
+          "def": "treating someone unfairly because of a personal characteristic"
+        }
+      ],
+      "starter": [
+        "Name two documents used in recruitment.",
+        "What is the difference between internal and external recruitment?",
+        "What does shortlisting mean?"
+      ],
+      "teach": [
+        {
+          "heading": "Six types of employment",
+          "note": "Bismillah. Context: fictional Barakah Bakery Cafe, busy at weekends, busier before Eid and in the summer. Use the table. Ask pupils to give a fictional worker for each row. Note that exact weekly hours for full-time differ between businesses and countries, so say 'the standard week set by the employer'. Casual workers may have no guaranteed hours but the business should still treat them fairly and pay what is agreed.",
+          "table": {
+            "head": [
+              "Type",
+              "What it means",
+              "Example at Barakah Bakery"
+            ],
+            "rows": [
+              [
+                "Full-time",
+                "Standard full week, usually permanent",
+                "Head baker"
+              ],
+              [
+                "Part-time",
+                "Fewer hours than full-time",
+                "Counter assistant, 20 hours a week"
+              ],
+              [
+                "Job share",
+                "Two people share one full-time job",
+                "Two parents split the manager's role"
+              ],
+              [
+                "Casual",
+                "Called in when needed, no set hours",
+                "Student for a busy Saturday"
+              ],
+              [
+                "Seasonal",
+                "Only during a busy time of year",
+                "Extra staff for the weeks before Eid"
+              ],
+              [
+                "Temporary",
+                "Fixed period, then ends",
+                "Cover for a staff member on leave for six months"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Choosing the right type",
+          "bullets": [
+            "Match staff hours to demand",
+            "Part-time and casual staff give flexibility",
+            "Full-time staff give stability and skill",
+            "Seasonal and temporary staff avoid long-term cost"
+          ],
+          "note": "Link to cost and risk. Using casual and seasonal staff means the business pays only when it is busy, but those staff may have less loyalty and need training quickly. Ask: why might a business not want to run only on casual staff? (Training costs, high turnover, lower skill and commitment.) Ask: who might prefer part-time or job share? (Parents, students, carers, older workers.)"
+        },
+        {
+          "heading": "Worked example: weekly wage cost",
+          "note": "Model the formula weekly wage = hours x hourly rate, then add up. Note this uses an invented hourly rate; do not suggest it is the legal minimum. Point out the saving from not paying a casual worker at quiet times, and that the total number of hours is what matters for a small firm's cash flow.",
+          "model": {
+            "problem": "Barakah Bakery pays 11 pounds an hour. Plan A: 1 full-time baker (40 hours) + 2 part-timers (20 hours each). Plan B: 1 full-time baker (40 hours) + 2 casual workers who work 12 hours each in a quiet week. Find the weekly wage cost of each plan.",
+            "steps": [
+              "Wage = hours x hourly rate",
+              "Plan A hours = 40 + 20 + 20 = 80; cost = 80 x 11 = 880 pounds",
+              "Plan B hours = 40 + 12 + 12 = 64; cost = 64 x 11 = 704 pounds",
+              "Difference = 880 - 704 = 176 pounds"
+            ],
+            "answer": "Plan A costs 880 pounds, Plan B 704 pounds: casual staff save 176 pounds in a quiet week, but offer less certainty for workers."
+          }
+        },
+        {
+          "heading": "Equal opportunities law",
+          "bullets": [
+            "Law protects workers and applicants from unfair treatment",
+            "Protected areas: gender, race, disability, religion, sexual preference, age",
+            "Applies to hiring, pay, promotion and dismissal",
+            "Details of the law differ between countries"
+          ],
+          "note": "Name the characteristics the specification lists: gender, race, disability, religion, sexual preference and age. In the UK this is covered by the Equality Act 2010 (verify wording before quoting); other countries have their own laws, so for the exam pupils need the idea and its effect on businesses. Teach this factually and respectfully: the law requires fair treatment at work, and our school ethos of justice and respect for people's dignity applies to all. Examples: a job advert asking for 'young men only' is unlawful discrimination; refusing to consider a disabled applicant who can do the job with reasonable adjustments is unlawful; refusing someone time for religious worship without good reason can cause problems. Keep the discussion on business practice, not personal beliefs."
+        },
+        {
+          "heading": "Check: spotting discrimination",
+          "note": "Answer C. Rejecting a candidate because of age rather than ability is discrimination. A and B select on skills; D is a normal requirement linked to the job. If pupils choose D, discuss that requirements must be genuinely needed for the role.",
+          "check": {
+            "q": "Which action is most likely to break equal opportunities law?",
+            "options": [
+              "Rejecting a candidate with no food hygiene certificate for a kitchen job",
+              "Choosing the applicant with the strongest interview score",
+              "Rejecting an applicant because they are 58 and 'too old to learn'",
+              "Asking all applicants to be available at weekends because the cafe is open then"
+            ],
+            "answer": 2,
+            "why": "Rejecting someone because of age rather than ability is discrimination. The other choices are linked to the job's genuine requirements."
+          }
+        },
+        {
+          "heading": "Effects on a business",
+          "note": "Use the compare slide to debate. Ask pupils to decide whether benefits outweigh costs for a small business. Evaluation phrases: 'in the short run', 'in the long run', 'it depends on the size of the business'. Costs include training managers, adjusting premises or equipment for a disabled employee, and the time needed to follow fair procedures; benefits include access to a wider pool of talent, a good reputation, loyal staff and avoiding claims and fines.",
+          "compare": {
+            "left": {
+              "title": "Benefits to the business",
+              "points": [
+                "Wider pool of talented applicants",
+                "Better reputation with customers",
+                "More motivated, loyal staff",
+                "Avoids legal action and fines"
+              ]
+            },
+            "right": {
+              "title": "Costs to the business",
+              "points": [
+                "Training for managers and staff",
+                "Changes to premises or equipment",
+                "Time spent keeping fair records",
+                "Risk of costly claims if breached"
+              ]
+            },
+            "label": "vs"
+          }
+        }
+      ],
+      "practice": [
+        "Which type of employment suits a worker needed only for the two weeks before Eid? Give a reason.",
+        "Calculate: 3 part-time staff work 15 hours each at 10 pounds an hour. Weekly wage cost?",
+        "Explain one benefit to a business of following equal opportunities law."
+      ],
+      "independent": [
+        "Core: Match six workers to the correct employment type and give a reason for each (matching table provided).",
+        "Extend: Explain two advantages and one disadvantage to a business of using seasonal staff (6 marks).",
+        "Stretch: Evaluate (8 marks): a small cafe owner says equal opportunities law is a burden. To what extent do you agree? Reach a conclusion."
+      ],
+      "exit": [
+        "Define job share and casual employment.",
+        "Name three characteristics protected by equal opportunities law.",
+        "Big question: one way to be fair to applicants and still meet the business's needs."
+      ],
+      "homework": "Write a short job advertisement for a part-time role at a halal grocery that is fair to all applicants and describes the job without discriminating.",
+      "send": "SEND: use a card-sort for the six types. EAL: pre-teach 'discriminate', 'seasonal', 'temporary' with examples. Stretch: discuss reasonable adjustments with a real-world scenario.",
       "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
       "boardShort": "Edexcel IGCSE 4BS1"
     }

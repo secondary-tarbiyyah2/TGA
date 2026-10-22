@@ -2,7 +2,7 @@
   "subject": "Geography",
   "year": "y10",
   "board": "AQA",
-  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data.",
+  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data. | Gap-fill against AQA GCSE Geography 8035 specification",
   "lessons": [
     {
       "unit": "Unit 1: Weather hazards (AQA 3.1.1 The challenge of natural hazards)",
@@ -7431,6 +7431,1032 @@
       "send": "SEND: step-by-step enquiry checklist. EAL: keyword cards. FLAG FOR TEACHER: AQA requires two fieldwork enquiries (one physical, one human, in two contrasting environments, with primary data collected on at least two outside-school occasions) and a signed centre fieldwork statement; the spec pack states secondary data alone does not meet this. An online cohort might meet it through supervised local fieldwork with a parent or tutor using a standard data pack, a partner centre or a residential day; the school must confirm this with AQA before relying on it. This lesson uses secondary data to teach the method only.",
       "board": "AQA GCSE (9-1) Geography 8035",
       "boardShort": "AQA GCSE Geography 8035"
+    },
+    {
+      "unit": "Unit 3.1.1.3: Weather hazards (3.1.1)",
+      "n": 46,
+      "title": "Climate change and tropical storms: more, stronger or different?",
+      "duration": 50,
+      "bigQuestion": "Will a warmer world bring more powerful storms, and to whom?",
+      "objectives": [
+        "Describe how climate change may alter the distribution, frequency and intensity of tropical storms",
+        "Explain the links between sea temperature, sea level and storm impacts",
+        "Evaluate how certain scientists are about these changes"
+      ],
+      "successCriteria": [
+        "All: say what may change about tropical storms",
+        "Most: explain why warmer seas and higher sea levels matter",
+        "Some: evaluate the certainty of predictions"
+      ],
+      "crossCurricular": "Science: energy transfer and the greenhouse effect",
+      "smsc": "Moral: responsibility to those most at risk from climate change (khilafah, stewardship)",
+      "keywords": [
+        {
+          "term": "distribution",
+          "def": "where something occurs across the world"
+        },
+        {
+          "term": "frequency",
+          "def": "how often an event happens"
+        },
+        {
+          "term": "intensity",
+          "def": "how strong an event is, such as wind speed"
+        },
+        {
+          "term": "storm surge",
+          "def": "a rise in sea level caused by low pressure and strong winds"
+        },
+        {
+          "term": "sea surface temperature",
+          "def": "the temperature of the top layer of the ocean"
+        }
+      ],
+      "starter": [
+        "Bismillah. At what sea temperature do tropical storms usually form?",
+        "Name three conditions needed for a tropical storm.",
+        "Name the main greenhouse gas added by burning fossil fuels."
+      ],
+      "teach": [
+        {
+          "heading": "Three things that could change",
+          "bullets": [
+            "Distribution: where storms form and track.",
+            "Frequency: how many storms occur each year.",
+            "Intensity: wind speed, rainfall and storm surge."
+          ],
+          "note": "Link the starter to the formation lesson: warm sea water is the fuel. Use the three words to organise the lesson, then ask pupils to predict each. Be careful: scientists are more confident about some changes than others. The prediction is described as 'may', never certain."
+        },
+        {
+          "heading": "Warmer seas: distribution and intensity",
+          "bullets": [
+            "Warmer oceans may allow storms to form further from the equator.",
+            "More heat energy may lead to stronger winds and heavier rain.",
+            "Some areas may see storms reaching places that rarely had them."
+          ],
+          "note": "Explain that tropical storms need sea surface temperatures of about 27 degrees C or more (approx.). If more ocean exceeds this, the potential area widens slightly. Stronger storms are expected because more energy and water vapour are available. Be honest: evidence that storms are moving poleward is still being researched; use cautious language such as 'may' and 'projected'. Case-study figures are approximate; verify against current sources before teaching."
+        },
+        {
+          "heading": "Frequency and sea level",
+          "bullets": [
+            "Total number of storms may stay similar or fall.",
+            "A greater share of storms may be the most intense categories.",
+            "Higher sea level makes storm surges reach further inland."
+          ],
+          "note": "Many studies suggest the total number of tropical storms might not rise, while the proportion of strong storms might. Ask why you would still prepare. Sea-level rise adds to storm surge: the same storm floods more land. This links to Haiyan and to low-lying coasts such as Bangladesh. State this as a projection not a fact."
+        },
+        {
+          "heading": "Applying it to the UK",
+          "note": "UK weather hazards are not tropical storms but climate change is linked to heavier rainfall, hotter summers and rising sea level. Use the July 2022 heatwave from the earlier lesson: 40 degrees C recorded for the first time in the UK (verify). A warmer atmosphere holds more water vapour, so heavy rainfall events may become more frequent. Keep to statements pupils can justify.",
+          "table": {
+            "head": [
+              "Hazard",
+              "Possible change"
+            ],
+            "rows": [
+              [
+                "Tropical storms",
+                "Stronger winds, heavier rain, higher surge"
+              ],
+              [
+                "UK heatwaves",
+                "More frequent and more intense"
+              ],
+              [
+                "UK heavy rainfall",
+                "More intense downpours, more flooding"
+              ],
+              [
+                "Coastal flooding",
+                "Higher sea level increases risk"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "How sure are we?",
+          "note": "Model the evaluation: describe the change, give the cause, then state the uncertainty. Use 'it is likely that', 'some studies suggest'. A 6-mark question wants balanced discussion and a judgement.",
+          "model": {
+            "problem": "Discuss how climate change may alter tropical storms. (4 marks)",
+            "steps": [
+              "Intensity: warmer sea surface gives more energy so winds and rainfall may increase",
+              "Distribution: warm water may extend further from the equator so storms may affect new areas",
+              "Frequency: total numbers may not rise, though the proportion of intense storms may",
+              "Sea level: higher seas increase storm surge and flooding"
+            ],
+            "answer": "Three or four linked points showing cause and effect, with careful wording"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer C. A confuses frequency with intensity. B overstates certainty. D reverses cause and effect.",
+          "check": {
+            "q": "Which statement is the most accurate about climate change and tropical storms?",
+            "options": [
+              "Storms will definitely form every month of the year",
+              "Climate change causes all storms",
+              "More heat energy may make the strongest storms more intense",
+              "Sea level rise reduces storm surge"
+            ],
+            "answer": 2,
+            "why": "Warmer seas give more energy so intense storms may become stronger; the evidence for frequency and distribution is less certain and sea-level rise increases surges."
+          }
+        }
+      ],
+      "practice": [
+        "Complete: a warmer ocean means ... energy for storms, so wind speeds may ...",
+        "Explain why a rise in sea level makes a storm surge more dangerous."
+      ],
+      "independent": [
+        "Core: Describe two ways climate change may affect tropical storms. (4 marks)",
+        "Extend: Explain how climate change may alter the distribution, frequency and intensity of tropical storms. (6 marks)",
+        "Stretch: 'Scientists are certain climate change will make tropical storms worse.' How far do you agree? (6 marks)"
+      ],
+      "exit": [
+        "Name the three things that may change.",
+        "Return to the big question: who is most at risk?"
+      ],
+      "homework": "Write a 100-word briefing for a coastal community on how climate change may affect storm risk.",
+      "send": "SEND: sentence starters for cause and effect. EAL: key terms with pictures. Stretch: compare projections for the Atlantic and Pacific.",
+      "covers": [
+        "3.1.1.3.4"
+      ],
+      "board": "AQA GCSE (9-1) Geography (8035)",
+      "boardShort": "AQA GCSE 8035"
+    },
+    {
+      "unit": "Unit 3.1.2.3: Hot deserts (3.1.2) - option, hot deserts or cold environments",
+      "n": 47,
+      "title": "Why does fragile land turn to desert? Weighing the causes of desertification",
+      "duration": 50,
+      "bigQuestion": "Which cause of desertification is hardest to stop, and why?",
+      "objectives": [
+        "State and explain each cause: climate change, population growth, fuelwood removal, overgrazing, over-cultivation, soil erosion",
+        "Show how the causes link together",
+        "Judge which causes are most important in a given place"
+      ],
+      "successCriteria": [
+        "All: list the causes of desertification",
+        "Most: explain how each cause damages land",
+        "Some: link causes and justify which matters most"
+      ],
+      "crossCurricular": "Science: soil structure and nutrients",
+      "smsc": "Moral: stewardship (khilafah) of land and fairness to local people",
+      "keywords": [
+        {
+          "term": "desertification",
+          "def": "land degradation in dry areas so it becomes desert-like"
+        },
+        {
+          "term": "fuelwood",
+          "def": "trees and branches cut for cooking and heating"
+        },
+        {
+          "term": "overgrazing",
+          "def": "too many animals on land strip the plants"
+        },
+        {
+          "term": "over-cultivation",
+          "def": "growing crops too often so the soil loses nutrients"
+        },
+        {
+          "term": "soil erosion",
+          "def": "removal of topsoil by wind or water"
+        }
+      ],
+      "starter": [
+        "Bismillah. Define desertification.",
+        "Name one place at risk, such as the Sahel.",
+        "What is the rainfall total of a hot desert, approximately?"
+      ],
+      "teach": [
+        {
+          "heading": "From pressure to degradation",
+          "bullets": [
+            "Dry-land ecosystems are fragile: plants and soil are thin.",
+            "Several pressures may act together.",
+            "Cause and effect chains show how."
+          ],
+          "note": "Revisit the first lesson on desertification, but go further: the exam question wants explanation, not lists. Introduce the six causes on the board. Say: every cause leads to the same outcome, bare soil. Ask pupils to predict what happens next once the cover is lost."
+        },
+        {
+          "heading": "Climate change and population growth",
+          "bullets": [
+            "Higher temperatures and less rainfall can cause drought.",
+            "More people need more food, water and fuel.",
+            "Pressure on a limited land area rises."
+          ],
+          "note": "Climate change: parts of the Sahel and Central Asia may become drier; plants die; soil dries and blows away. Population growth: more people, more livestock, more farms on the same land. Link them: population growth is a driver of the other human causes. Avoid saying all drylands are expanding; the pattern varies and evidence is debated."
+        },
+        {
+          "heading": "Fuelwood, overgrazing and over-cultivation",
+          "bullets": [
+            "Fuelwood removal: trees cut for cooking and heating.",
+            "Overgrazing: too many animals strip plants and compact soil.",
+            "Over-cultivation: no rest for the soil so nutrients run out."
+          ],
+          "note": "Explain each as a chain. Fuelwood removal: families with no other fuel cut trees; roots no longer hold soil. Overgrazing: animals eat and trample plants faster than they regrow. Over-cultivation: repeated crops without fallow or fertiliser remove nutrients, plants grow poorly and soil is exposed. Ask why people do these things (poverty, no alternative); this is empathy, not blame."
+        },
+        {
+          "heading": "Soil erosion: the result and the cause",
+          "note": "Draw the cycle; show it as a feedback loop. Wind and heavy rain remove the topsoil that holds nutrients and water. Lower fertility means fewer plants and more bare soil, so more erosion. Soil erosion both results from the other causes and worsens the problem. Pupils should write the cycle in their own words.",
+          "cycle": [
+            "Plants removed or die",
+            "Roots no longer bind soil",
+            "Wind and rain remove topsoil",
+            "Land less fertile, less water stored",
+            "Fewer plants can grow"
+          ]
+        },
+        {
+          "heading": "Link the causes and judge",
+          "note": "Model the 6-mark thinking: explain, link, judge. Then ask pupils to decide which cause is hardest to solve (population growth and poverty-driven fuelwood use are deep-rooted; climate change is global).",
+          "model": {
+            "problem": "Explain how overgrazing and population growth contribute to desertification. (4 marks)",
+            "steps": [
+              "Population growth means more people and livestock need food and land",
+              "More livestock means plants are eaten faster than they regrow",
+              "Roots no longer bind soil so wind and rain erode topsoil",
+              "The land becomes infertile and desert-like"
+            ],
+            "answer": "Linked chain from population growth to overgrazing to soil erosion"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer A. B is a result, not a cause. C mixes protection with cause. D is a management strategy.",
+          "check": {
+            "q": "Which is a cause of desertification linked to cooking and heating?",
+            "options": [
+              "Fuelwood removal",
+              "Tree planting",
+              "Using drip irrigation",
+              "Soil conservation"
+            ],
+            "answer": 0,
+            "why": "Cutting trees for fuel leaves soil exposed to erosion. The others are ways to reduce desertification."
+          }
+        }
+      ],
+      "practice": [
+        "Put these causes in a chain: population growth, overgrazing, bare soil, soil erosion.",
+        "Why is population growth hard to separate from the other causes?"
+      ],
+      "independent": [
+        "Core: Name four causes of desertification. (4 marks)",
+        "Extend: Explain how over-cultivation and fuelwood removal cause desertification. (6 marks)",
+        "Stretch: 'Human activity is the main cause of desertification.' How far do you agree? (6 marks)"
+      ],
+      "exit": [
+        "Define over-cultivation.",
+        "Return to the big question: which cause is hardest to stop and why?"
+      ],
+      "homework": "Create a poster showing how the six causes link to one another.",
+      "send": "SEND: chain cards. EAL: sentence stems with 'so', 'which leads to'. Stretch: research a place where desertification is being reversed.",
+      "covers": [
+        "3.1.2.3.5"
+      ],
+      "board": "AQA GCSE (9-1) Geography (8035)",
+      "boardShort": "AQA GCSE 8035"
+    },
+    {
+      "unit": "Unit 3.1.3.1: UK physical landscapes (3.1.3 Physical landscapes in the UK)",
+      "n": 48,
+      "title": "Using the UK overview as a base: why do landscapes differ across Britain?",
+      "duration": 50,
+      "bigQuestion": "How can a map of the UK help predict what a landscape looks like?",
+      "objectives": [
+        "Use the overview of the UK's uplands, lowlands, rivers and rock types to predict landscape features",
+        "Link rock type, past glaciation and processes to landscapes",
+        "Choose a landscape study and apply the overview to it"
+      ],
+      "successCriteria": [
+        "All: locate uplands and lowlands",
+        "Most: link rock type to relief",
+        "Some: use the overview to explain a chosen landscape"
+      ],
+      "crossCurricular": "Geology and history: the Ice Age legacy",
+      "smsc": "Spiritual: reflecting on Allah's variety in creation (landscape and people)",
+      "keywords": [
+        {
+          "term": "upland",
+          "def": "high land with steeper slopes and often harder rock"
+        },
+        {
+          "term": "lowland",
+          "def": "low-lying land with gentle slopes"
+        },
+        {
+          "term": "resistant rock",
+          "def": "rock that erodes slowly"
+        },
+        {
+          "term": "glaciation",
+          "def": "the effect of ice sheets and glaciers on land"
+        },
+        {
+          "term": "relief",
+          "def": "the height and shape of land"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name two uplands in the UK.",
+        "Name one major UK river.",
+        "What is erosion?"
+      ],
+      "teach": [
+        {
+          "heading": "Uplands and lowlands",
+          "bullets": [
+            "Uplands are mainly in the north and west.",
+            "Lowlands are mainly in the south and east.",
+            "Rock type and glaciation help explain this."
+          ],
+          "note": "Show a relief map of the UK. Ask pupils to find the Scottish Highlands, Lake District, Pennines, Snowdonia and south-west uplands. The overview from lesson 23 is the base. The point now is application: from the map, what can we predict?"
+        },
+        {
+          "heading": "Hard rock, soft rock",
+          "bullets": [
+            "North and west: older, harder rocks such as granite.",
+            "South and east: younger, softer rocks such as clay.",
+            "Hard rocks erode slowly and form higher land."
+          ],
+          "note": "Keep the generalisation but flag exceptions: chalk is relatively resistant but forms lowland hills (the Downs and Wolds). Hard rock tends to form upland; soft rock forms lowland and eroded coasts. Link to coastal and river landscapes: soft rock coasts such as Holderness erode quickly.",
+          "compare": {
+            "left": {
+              "title": "North and west",
+              "points": [
+                "Harder rocks such as granite and slate",
+                "Higher, steeper land",
+                "Heavier rainfall, ice sheets once covered"
+              ]
+            },
+            "right": {
+              "title": "South and east",
+              "points": [
+                "Softer rocks such as clay and sand",
+                "Lower, gentler relief",
+                "Less rainfall, more erosion by sea"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Ice, rivers and coasts",
+          "bullets": [
+            "Glaciers carved the upland valleys and left lakes.",
+            "Rivers flow from uplands toward the sea.",
+            "Coasts differ with rock type and wave energy."
+          ],
+          "note": "Link to lessons on the Lake District glaciation and River Tees. Rivers rise in the uplands (Tees in the Pennines) and flow east or south toward lower land. The overview becomes a toolkit: relief shows where rivers are steep, rock type shows which coast erodes fastest, past ice shows where U-shaped valleys occur."
+        },
+        {
+          "heading": "Applying the overview",
+          "note": "Worked example: pupils predict for a named place, then check. Keep it as a model: place, rock, relief, process, landform. Use it to introduce the chosen landscape studies (coast, river, glacial).",
+          "model": {
+            "problem": "Use the UK overview to predict the coastline and landscape of Holderness (east Yorkshire).",
+            "steps": [
+              "Location: east coast, lowland, in the south and east of the UK",
+              "Rock: soft boulder clay left by ice",
+              "Processes: waves erode easily so cliffs retreat quickly",
+              "Landforms: low cliffs, beaches, and a spit"
+            ],
+            "answer": "A fast-eroding soft-rock coast with beaches and a spit"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer B. A is an upland feature. C is the opposite. D mixes climate and rock.",
+          "check": {
+            "q": "Which landscape would you predict for a coast of soft clay on the east of England?",
+            "options": [
+              "Steep granite cliffs with few beaches",
+              "Low cliffs that retreat quickly",
+              "Glacial lakes and U-shaped valleys",
+              "High mountains with corries"
+            ],
+            "answer": 1,
+            "why": "Soft rock is easily eroded by waves, so the cliffs retreat quickly. Granite and corries belong to resistant, glaciated uplands."
+          }
+        }
+      ],
+      "practice": [
+        "On a blank map, shade uplands and label the River Severn, Thames and Tyne.",
+        "Explain why chalk is an exception to the hard/soft rule."
+      ],
+      "independent": [
+        "Core: Describe the pattern of uplands and lowlands in the UK. (3 marks)",
+        "Extend: Explain how rock type affects the UK landscape. (4 marks)",
+        "Stretch: Use the overview to predict and explain landscape features in the Lake District. (6 marks)"
+      ],
+      "exit": [
+        "Name two upland areas and one lowland area.",
+        "Return to the big question: what can a map predict?"
+      ],
+      "homework": "Choose a UK landscape and write a prediction paragraph using the map and the idea of rock type, relief and ice.",
+      "send": "SEND: annotated relief maps. EAL: key words with pictures. Stretch: use a geology map to test the predictions.",
+      "covers": [
+        "3.1.3.1.3"
+      ],
+      "board": "AQA GCSE (9-1) Geography (8035)",
+      "boardShort": "AQA GCSE 8035"
+    },
+    {
+      "unit": "Unit 3.1.3.2: Coastal landscapes in the UK (3.1.3) - option, two of coasts, rivers, glaciers",
+      "n": 49,
+      "title": "Case study: the Holderness coast and its landforms",
+      "duration": 50,
+      "bigQuestion": "Why does the Holderness coast retreat faster than almost anywhere in Europe?",
+      "objectives": [
+        "Locate the Holderness coast and explain why it erodes quickly",
+        "Describe landforms along it: cliffs, beaches, Spurn Head and Flamborough Head",
+        "Use named detail in exam answers"
+      ],
+      "successCriteria": [
+        "All: locate Holderness",
+        "Most: explain the rate of erosion",
+        "Some: explain how landforms along it differ"
+      ],
+      "crossCurricular": "History: lost villages along the coast",
+      "smsc": "Moral: care for communities affected by loss",
+      "keywords": [
+        {
+          "term": "Holderness",
+          "def": "the coast of east Yorkshire, England"
+        },
+        {
+          "term": "boulder clay",
+          "def": "soft rock left by ice, easily eroded"
+        },
+        {
+          "term": "longshore drift",
+          "def": "movement of sediment along the coast by waves at an angle"
+        },
+        {
+          "term": "Spurn Head",
+          "def": "a spit at the mouth of the Humber estuary"
+        },
+        {
+          "term": "Flamborough Head",
+          "def": "a chalk headland north of the Holderness coast"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name one process of coastal erosion.",
+        "How is a spit formed?",
+        "How does a headland form?"
+      ],
+      "teach": [
+        {
+          "heading": "Where and why",
+          "bullets": [
+            "Holderness is on the east coast of Yorkshire.",
+            "Cliffs are made of soft boulder clay.",
+            "Waves arrive across the North Sea with a long fetch."
+          ],
+          "note": "Locate on a map: from Flamborough Head south to Spurn Head. Erosion rates are among the fastest in Europe, averaging approximately 1.5 to 2 metres a year (approx., verify). Reasons: soft rock, strong waves from the north-east, a long fetch, and cliffs with little protection. Case-study figures are approximate; verify against current sources before teaching."
+        },
+        {
+          "heading": "Cliffs and beaches",
+          "bullets": [
+            "Boulder clay cliffs are low and unstable.",
+            "Rain makes clay slump.",
+            "Beach material is moved south by longshore drift."
+          ],
+          "note": "Draw the cliff with slumping and the narrow beach. Link to processes: hydraulic action, abrasion, and mass movement. Villages such as Skipsea have been lost over time (verify). Longshore drift moves material south along the coast, which feeds Spurn Head."
+        },
+        {
+          "heading": "Spurn Head",
+          "bullets": [
+            "A spit at the southern end of Holderness.",
+            "Formed from sediment moved south by longshore drift.",
+            "It has a curved end and mudflats behind it."
+          ],
+          "note": "Spurn Head is about 5 km long (approx., verify) and has been breached by storms. Explain how a spit forms: change of coastline direction, sediment deposited where waves lose energy, a hook from changing wave direction. This is a link to the spit formation lesson but with a real example.",
+          "timeline": [
+            {
+              "label": "North",
+              "text": "Cliffs erode; sediment released"
+            },
+            {
+              "label": "Longshore drift",
+              "text": "Sediment moves south"
+            },
+            {
+              "label": "Humber mouth",
+              "text": "Coast changes direction"
+            },
+            {
+              "label": "Deposition",
+              "text": "Spit builds out"
+            },
+            {
+              "label": "Storm waves",
+              "text": "Spit can be breached or reshaped"
+            }
+          ]
+        },
+        {
+          "heading": "Flamborough Head",
+          "note": "To the north, chalk is resistant, forming headlands with caves, arches and stacks (for example at Thornwick Bay; verify). This is the contrast: soft clay retreats rapidly, resistant chalk stays as a headland. Together they show how rock type affects landforms along one coastline.",
+          "compare": {
+            "left": {
+              "title": "Holderness (clay)",
+              "points": [
+                "Low, soft cliffs",
+                "Rapid retreat",
+                "Beaches and Spurn Head"
+              ]
+            },
+            "right": {
+              "title": "Flamborough (chalk)",
+              "points": [
+                "High, resistant cliffs",
+                "Headland, caves, arches, stacks",
+                "Slower retreat"
+              ]
+            },
+            "label": "contrast"
+          }
+        },
+        {
+          "heading": "Model answer with detail",
+          "note": "Use place-specific detail: name the coast, rock type, processes and the landform.",
+          "model": {
+            "problem": "Explain why Holderness has retreated faster than other coasts you have studied. (4 marks)",
+            "steps": [
+              "The cliffs are boulder clay, soft rock that is easily eroded",
+              "Waves from the North Sea have a long fetch so are powerful",
+              "Rain saturates clay, causing slumping, so cliffs retreat quickly",
+              "The sediment is carried south by longshore drift"
+            ],
+            "answer": "Rock type, wave power, mass movement, longshore drift"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer D. A is chalk. B is the process, not the reason. C is a landform formed elsewhere.",
+          "check": {
+            "q": "What is the best reason that the Holderness coast erodes so quickly?",
+            "options": [
+              "It is made of resistant chalk",
+              "It faces west",
+              "Waves never reach it",
+              "The cliffs are soft boulder clay and waves are powerful"
+            ],
+            "answer": 3,
+            "why": "Soft boulder clay is easily eroded by powerful North Sea waves."
+          }
+        }
+      ],
+      "practice": [
+        "Label a sketch of the Holderness coast: Flamborough Head, Spurn Head, Skipsea, Humber.",
+        "Why does material move south along the Holderness coast?"
+      ],
+      "independent": [
+        "Core: Describe the landforms of Spurn Head. (3 marks)",
+        "Extend: Explain why Holderness erodes more quickly than Flamborough Head. (4 marks)",
+        "Stretch: 'Rock type is the most important factor in coastal landforms.' How far do you agree, using the Holderness coast? (6 marks)"
+      ],
+      "exit": [
+        "Name one landform at each end of the coast studied.",
+        "Return to the big question: why is it so fast?"
+      ],
+      "homework": "Create a fact-file on Holderness with five facts, marking any figure that needs verifying.",
+      "send": "SEND: annotated map with labels. EAL: process words with pictures. Stretch: compare with another UK coast such as the Dorset coast.",
+      "covers": [
+        "3.1.3.2.7"
+      ],
+      "board": "AQA GCSE (9-1) Geography (8035)",
+      "boardShort": "AQA GCSE 8035"
+    },
+    {
+      "unit": "Unit 3.1.3.2: Coastal landscapes in the UK (3.1.3) - option, two of coasts, rivers, glaciers",
+      "n": 50,
+      "title": "Case study: managing the Holderness coast at Mappleton",
+      "duration": 50,
+      "bigQuestion": "Is it worth protecting one village if erosion moves elsewhere?",
+      "objectives": [
+        "Describe the coastal management scheme at Mappleton, Holderness",
+        "Evaluate its costs, benefits and effects on other places",
+        "Compare approaches such as hard engineering and managed retreat"
+      ],
+      "successCriteria": [
+        "All: name the methods used",
+        "Most: give benefits and costs",
+        "Some: evaluate the scheme using evidence"
+      ],
+      "crossCurricular": "Economics: cost-benefit decisions",
+      "smsc": "Moral: fairness between communities (adl) when protection helps some and harms others",
+      "keywords": [
+        {
+          "term": "rock armour",
+          "def": "large boulders placed at the foot of a cliff to absorb wave energy"
+        },
+        {
+          "term": "groyne",
+          "def": "a barrier built at right angles to the coast to trap sediment"
+        },
+        {
+          "term": "cost-benefit",
+          "def": "comparing money spent with what is saved"
+        },
+        {
+          "term": "downdrift",
+          "def": "the direction in which sediment is moved along the coast"
+        },
+        {
+          "term": "managed retreat",
+          "def": "allowing the sea to flood or erode areas deliberately"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name one hard engineering method.",
+        "Name one soft engineering method.",
+        "What is longshore drift?"
+      ],
+      "teach": [
+        {
+          "heading": "Why protect Mappleton?",
+          "bullets": [
+            "Mappleton is a village on the Holderness coast.",
+            "Erosion threatened homes, a farm and the main road.",
+            "The scheme was built in the early 1990s."
+          ],
+          "note": "Introduce the problem: cliff-top houses and the B1242 road at risk. The scheme was completed around 1991 (approx., verify) at a cost of approximately 2 million pounds (approx., verify). Ask pupils to guess what decisions councils make about where to spend money. Case-study figures are approximate; verify against current sources before teaching."
+        },
+        {
+          "heading": "What was built",
+          "bullets": [
+            "Rock armour at the base of the cliffs.",
+            "Two rock groynes to trap sediment on the beach.",
+            "Cliff regrading may also be used."
+          ],
+          "note": "Explain: rock armour absorbs wave energy; groynes trap beach material, widening the beach, which protects cliffs. Pupils should be able to state how each works. Mappleton's scheme is a hard engineering scheme; the beach increased in size in front of the village while it protected it.",
+          "table": {
+            "head": [
+              "Method",
+              "How it works",
+              "Weakness"
+            ],
+            "rows": [
+              [
+                "Rock armour",
+                "Absorbs wave energy",
+                "Expensive, can look unnatural"
+              ],
+              [
+                "Rock groynes",
+                "Trap sediment to widen beach",
+                "Starves beaches further down the coast"
+              ],
+              [
+                "Do nothing",
+                "No cost",
+                "Property and land lost"
+              ],
+              [
+                "Managed retreat",
+                "Allows erosion in low-value areas",
+                "People may need to move"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Benefits and costs",
+          "bullets": [
+            "Village and road protected for now.",
+            "Sediment trapped, so less supply to the south.",
+            "Erosion increased down the coast, such as at Cowden (verify)."
+          ],
+          "note": "Discuss the downdrift effect: groynes trap sediment that would feed the coast to the south, so those cliffs lost their protective beach and may erode faster. This is an unintended consequence. Link to the sediment cell idea. Ask who gains and who loses. Check the figures for Cowden (verify). Case-study figures are approximate; verify against current sources before teaching."
+        },
+        {
+          "heading": "Evaluating the scheme",
+          "note": "Worked 6-mark structure: for, against, judgement. Pupils must use the case-study detail. Remember a judgement requires a reason: 'on balance, it was worthwhile because... but the long-term cost is...'.",
+          "model": {
+            "problem": "Evaluate the coastal management scheme at Mappleton. (4 marks)",
+            "steps": [
+              "Benefit: rock armour and groynes protected homes, farmland and the road",
+              "Benefit: a wider beach also protects cliffs and provides some recreation",
+              "Cost: the scheme was expensive for a small village",
+              "Cost: sediment is trapped, which may increase erosion to the south; judgement: protects locally but moves the problem"
+            ],
+            "answer": "Balanced points and a short judgement"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer C. A is the opposite. B is a hard engineering method that does not affect downdrift. D is soft engineering.",
+          "check": {
+            "q": "Why may rock groynes at Mappleton increase erosion further south?",
+            "options": [
+              "They absorb all wave energy",
+              "They are too small",
+              "They trap sediment so the coast further south receives less beach material",
+              "They increase longshore drift"
+            ],
+            "answer": 2,
+            "why": "Groynes trap sediment moving south, so the next stretch of coast loses its protective beach."
+          }
+        }
+      ],
+      "practice": [
+        "List two benefits and two costs of the Mappleton scheme.",
+        "Explain why managed retreat might be chosen in a low-value area."
+      ],
+      "independent": [
+        "Core: Describe the management scheme at Mappleton. (4 marks)",
+        "Extend: Explain how groynes reduce erosion and why they can cause problems downdrift. (4 marks)",
+        "Stretch: 'Coastal management at Mappleton was worth the cost.' How far do you agree? (6 marks)"
+      ],
+      "exit": [
+        "Name the two hard engineering methods used.",
+        "Return to the big question: is it worth it?"
+      ],
+      "homework": "Write a balanced 150-word letter from a Mappleton resident and a Cowden resident about the scheme (use only facts from class).",
+      "send": "SEND: for and against cards. EAL: evaluation stems. Stretch: compare with a managed retreat scheme in the UK such as Medmerry.",
+      "covers": [
+        "3.1.3.2.7"
+      ],
+      "board": "AQA GCSE (9-1) Geography (8035)",
+      "boardShort": "AQA GCSE 8035"
+    },
+    {
+      "unit": "Unit 3.3.2: Fieldwork",
+      "n": 51,
+      "title": "Fieldwork requirements: two environments, two visits, physical and human",
+      "duration": 50,
+      "bigQuestion": "What must a complete fieldwork course include, and how does it link into Paper 3?",
+      "objectives": [
+        "State the requirements: two enquiries in two contrasting environments with at least two outside-school visits",
+        "Explain the need to cover physical and human geography and to show their interaction",
+        "Plan how your school's enquiries meet the requirements"
+      ],
+      "successCriteria": [
+        "All: state the requirements",
+        "Most: give examples of contrasting environments",
+        "Some: explain how physical and human geography can interact"
+      ],
+      "crossCurricular": "PSHE: working safely and collaboratively outdoors",
+      "smsc": "Social: respecting local people and the environment while collecting data",
+      "keywords": [
+        {
+          "term": "enquiry",
+          "def": "a structured investigation answering a question"
+        },
+        {
+          "term": "contrasting environments",
+          "def": "two different settings, such as a coast and a city"
+        },
+        {
+          "term": "interaction",
+          "def": "how physical and human geography affect each other"
+        },
+        {
+          "term": "primary data",
+          "def": "data you collect yourself"
+        },
+        {
+          "term": "secondary data",
+          "def": "data collected by others"
+        }
+      ],
+      "starter": [
+        "Bismillah. List the six stages of an enquiry.",
+        "What is a hypothesis?",
+        "Give one primary data method."
+      ],
+      "teach": [
+        {
+          "heading": "What the course requires",
+          "bullets": [
+            "Two geographical enquiries.",
+            "In two contrasting environments.",
+            "At least two visits outside school."
+          ],
+          "note": "Be accurate: the specification requires two enquiries, each in a contrasting environment, using primary data, and at least two outside-school visits. Physical and human geography must both be covered, and at least one enquiry must show interaction. Check the school's own plan and dates; this task covers requirements only. Online school: our fieldwork is arranged by tutors and families; check the school's fieldwork plan."
+        },
+        {
+          "heading": "Two contrasting environments",
+          "note": "Examples: a river or coast (physical) and an urban area (human) are contrasting. Ask pupils: why do we need contrasting settings? To show different geographical processes and methods. It also gives different data types and risks. For our school, one enquiry might be a physical one such as a river and the other a human one in a town.",
+          "table": {
+            "head": [
+              "Enquiry",
+              "Environment",
+              "Focus"
+            ],
+            "rows": [
+              [
+                "Enquiry 1",
+                "River or coast",
+                "Physical geography"
+              ],
+              [
+                "Enquiry 2",
+                "Urban area or tourist centre",
+                "Human geography"
+              ],
+              [
+                "At least one",
+                "Either",
+                "Show interaction"
+              ],
+              [
+                "Total",
+                "Two settings",
+                "Two or more outside visits"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Physical and human interaction",
+          "bullets": [
+            "Physical processes affect human activity.",
+            "Human activity can change physical processes.",
+            "One enquiry must show this link."
+          ],
+          "note": "Give examples: a coastal defence scheme that changes erosion (human affects physical); river flooding affecting land use (physical affects human); tourism and footpath erosion. Ask pupils to think of a question that mixes both: 'How do coastal defences affect beach profile and the local tourist economy?'"
+        },
+        {
+          "heading": "Planning a compliant course",
+          "note": "Model completing the audit using a plan: two enquiries, two settings, two visits, both physical and human covered, interaction shown.",
+          "model": {
+            "problem": "A school plans enquiry A on river width and depth, and enquiry B on shop types in the same town centre next to the river. Does the plan meet the requirements?",
+            "steps": [
+              "Two enquiries: yes",
+              "Contrasting environments: river and town centre can be contrasting",
+              "Physical and human both covered: yes, A physical, B human",
+              "Interaction: not yet shown; add a question about how the river affects land use or flooding in the town centre"
+            ],
+            "answer": "Almost. It needs one enquiry that shows interaction"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer B. A is wrong: two settings and two visits. C misses human geography. D: interaction needs showing in at least one.",
+          "check": {
+            "q": "Which plan meets the fieldwork requirements?",
+            "options": [
+              "One enquiry in one setting",
+              "Two enquiries in contrasting settings, physical and human covered, interaction shown",
+              "Two physical enquiries in the same place",
+              "One visit to a town"
+            ],
+            "answer": 1,
+            "why": "The course needs two contrasting settings with physical and human geography and at least one enquiry showing interaction."
+          }
+        }
+      ],
+      "practice": [
+        "List the requirements in your own words.",
+        "Suggest a contrasting pair of environments for your area."
+      ],
+      "independent": [
+        "Core: State two requirements for geographical fieldwork. (2 marks)",
+        "Extend: Suggest a fieldwork enquiry that shows the interaction of physical and human geography, and explain why. (4 marks)",
+        "Stretch: Plan a pair of enquiries that meet all requirements, giving the question, location and data for each. (6 marks)"
+      ],
+      "exit": [
+        "Name two contrasting environments.",
+        "Return to the big question: what must a course include?"
+      ],
+      "homework": "Write the titles of two possible enquiries and annotate how they meet the requirements.",
+      "send": "SEND: checklist with ticks. EAL: key words with images. Stretch: compare plans from different environments.",
+      "covers": [
+        "3.3.2.2",
+        "3.3.2.3"
+      ],
+      "board": "AQA GCSE (9-1) Geography (8035)",
+      "boardShort": "AQA GCSE 8035"
+    },
+    {
+      "unit": "Unit 3.3.2: Fieldwork",
+      "n": 52,
+      "title": "Fieldwork in the exam: your own enquiry titles and the signed statement",
+      "duration": 50,
+      "bigQuestion": "How do you show in Paper 3 that the fieldwork is really yours?",
+      "objectives": [
+        "Explain that the school submits a signed fieldwork statement",
+        "State your own enquiry titles and questions accurately in the exam",
+        "Use titles to structure answers"
+      ],
+      "successCriteria": [
+        "All: state the purpose of the signed statement",
+        "Most: write your enquiry titles correctly",
+        "Some: use titles to start clear answers"
+      ],
+      "crossCurricular": "English: writing precisely",
+      "smsc": "Moral: honesty and integrity in your own work (amanah)",
+      "keywords": [
+        {
+          "term": "fieldwork statement",
+          "def": "a signed declaration by the school that the required fieldwork took place"
+        },
+        {
+          "term": "enquiry title",
+          "def": "the question that your investigation answers"
+        },
+        {
+          "term": "hypothesis",
+          "def": "a statement that can be tested"
+        },
+        {
+          "term": "sampling",
+          "def": "choosing places or people to collect data from"
+        },
+        {
+          "term": "evaluation",
+          "def": "judging how reliable and useful the results are"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name two contrasting environments.",
+        "State one physical and one human enquiry you could do.",
+        "Why do we collect primary data?"
+      ],
+      "teach": [
+        {
+          "heading": "The signed fieldwork statement",
+          "bullets": [
+            "The school submits a signed statement to the exam board.",
+            "It confirms the fieldwork requirements were met.",
+            "Candidates must have done their own enquiries."
+          ],
+          "note": "Explain that this is an administrative step by the school, not something pupils sign. It supports the fairness of the exam. The exam asks questions about your own enquiries. Check the school's current fieldwork statement process with the exams officer; the exam board's rules should be checked for the year of entry."
+        },
+        {
+          "heading": "Your enquiry titles in the exam",
+          "bullets": [
+            "Paper 3 asks about your own fieldwork.",
+            "You write your enquiry titles in the answer booklet.",
+            "Answers must refer to what you did."
+          ],
+          "note": "Rehearse: pupils write their two titles from memory, each as a question with place, topic and data. Examples: 'How does the width of the river change downstream along the River X?' Insist on titles that are specific. Vague titles make answers harder. Ask pupils to check them with the teacher."
+        },
+        {
+          "heading": "Using the title to structure answers",
+          "note": "Use the lesson stages: question, data, method, presentation, conclusion, evaluation. Show how the title leads you into each part. A good answer starts by restating the title, then gives named method and data from your enquiry. A one-line 'I measured things' is not sufficient.",
+          "cycle": [
+            "Title and question",
+            "Method and sampling",
+            "Data and presentation",
+            "Analysis and conclusion",
+            "Evaluation"
+          ]
+        },
+        {
+          "heading": "Writing the title",
+          "note": "Model: turn a vague topic into a title and use it to start an answer.",
+          "model": {
+            "problem": "Write a suitable enquiry title for a human geography enquiry in a town centre and use it to open an answer on data collection.",
+            "steps": [
+              "Vague: 'shops in town'",
+              "Better title: 'How does the quality of the environment change from the centre of Leeds towards the edge of the central business district?' (place illustrative; use your own)",
+              "Opening of answer: 'In my enquiry into environmental quality, I used a bipolar survey at 10 sites along a transect...'"
+            ],
+            "answer": "A specific title with place and variable, then a method sentence"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer C. A confuses with exam entry. B is wrong because pupils write titles from their own work. D: statement is signed by the school.",
+          "check": {
+            "q": "Who submits the signed fieldwork statement?",
+            "options": [
+              "Each pupil in the exam",
+              "The exam board",
+              "The school",
+              "The local council"
+            ],
+            "answer": 2,
+            "why": "The school submits a signed statement that the fieldwork requirements were met; pupils then state their own enquiry titles in the exam."
+          }
+        }
+      ],
+      "practice": [
+        "Write the title of one of your enquiries as a question.",
+        "Explain why a precise title helps answer questions in Paper 3."
+      ],
+      "independent": [
+        "Core: Write the titles of your two enquiries. (2 marks)",
+        "Extend: Using one title, write the first two sentences of an answer describing your data collection. (3 marks)",
+        "Stretch: Evaluate how well your enquiry title could be answered by your data. (6 marks)"
+      ],
+      "exit": [
+        "Who signs the fieldwork statement?",
+        "Return to the big question: how do you show it is yours?"
+      ],
+      "homework": "Write your two enquiry titles from memory and one sentence on how the data answers each.",
+      "send": "SEND: title frames with blanks. EAL: sentence starters. Stretch: rewrite titles for clarity.",
+      "covers": [
+        "3.3.2.8"
+      ],
+      "board": "AQA GCSE (9-1) Geography (8035)",
+      "boardShort": "AQA GCSE 8035"
     }
   ]
 }

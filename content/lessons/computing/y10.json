@@ -2,7 +2,7 @@
   "subject": "Computing",
   "year": "y10",
   "board": "Edexcel",
-  "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 1 Computational thinking, Topic 6 Problem solving with programming; Python and pseudo-code, no non-exam assessment), sequence informed by the school's Drive Y10-11 scheme (1 Fundamentals of Algorithms, 2A Programming Basics) and Y9 Programming basics lesson plan | Edexcel GCSE Computer Science 1CP2 specification (syllabus file content/syllabus/ks4/computing.json: units 1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 6.1 to 6.6; Python 3). Original lessons. The existing y10 set (content/lessons/computing/y10.json) already introduces decomposition and abstraction, flowcharts, pseudo-code and trace tables, linear and binary search, bubble and merge sort, and Python variables, validation, lists and strings; these lessons do not re-teach those and instead cover the remaining spec points, add code tracing, efficiency and exam-style practice.",
+  "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 1 Computational thinking, Topic 6 Problem solving with programming; Python and pseudo-code, no non-exam assessment), sequence informed by the school's Drive Y10-11 scheme (1 Fundamentals of Algorithms, 2A Programming Basics) and Y9 Programming basics lesson plan | Edexcel GCSE Computer Science 1CP2 specification (syllabus file content/syllabus/ks4/computing.json: units 1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 6.1 to 6.6; Python 3). Original lessons. The existing y10 set (content/lessons/computing/y10.json) already introduces decomposition and abstraction, flowcharts, pseudo-code and trace tables, linear and binary search, bubble and merge sort, and Python variables, validation, lists and strings; these lessons do not re-teach those and instead cover the remaining spec points, add code tracing, efficiency and exam-style practice. | Gap-fill against Pearson Edexcel 1CP2 specification",
   "lessons": [
     {
       "unit": "Unit 1: Computational thinking (Topic 1)",
@@ -4796,6 +4796,175 @@
       "send": "SEND/EAL: provide a template with def, parameters and return highlighted. Stretch: ask for a function that calls another function.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
       "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 6.5: Operators (Problem solving with programming)",
+      "n": 34,
+      "title": "Relational operators: comparing values in Python",
+      "duration": 50,
+      "bigQuestion": "How does a program decide whether something is true or false?",
+      "objectives": [
+        "Use ==, !=, <, >, <= and >= in Python",
+        "Predict whether a comparison is True or False",
+        "Use comparisons in if statements and loops"
+      ],
+      "successCriteria": [
+        "All: use == and != correctly",
+        "Most: use all six relational operators in conditions",
+        "Some: debug conditions that confuse = with == or use the wrong boundary"
+      ],
+      "crossCurricular": "Maths: inequalities",
+      "smsc": "Moral: fair rules applied consistently",
+      "keywords": [
+        {
+          "term": "relational operator",
+          "def": "compares two values and gives True or False"
+        },
+        {
+          "term": "Boolean",
+          "def": "a value that is either True or False"
+        },
+        {
+          "term": "condition",
+          "def": "an expression a program tests to make a decision"
+        },
+        {
+          "term": "assignment",
+          "def": "storing a value in a variable using ="
+        },
+        {
+          "term": "boundary",
+          "def": "the value at which a comparison changes result"
+        }
+      ],
+      "starter": [
+        "Bismillah. What is the result of 7 % 3 and 7 // 3?",
+        "Name the data type of 3.5 and of 'hello'.",
+        "What does the AND operator return if one input is False?"
+      ],
+      "teach": [
+        {
+          "heading": "Comparing values",
+          "bullets": [
+            "A relational operator compares and returns True or False.",
+            "== equal, != not equal.",
+            "< less, > greater, <= and >= with or-equal-to."
+          ],
+          "note": "Show the six in a table with a Python example. Make the point that the result is a Boolean, not a number. Let pupils predict: 5 > 3, 5 == 3, 5 != 3. Edexcel examines Python so use exactly these symbols.",
+          "table": {
+            "head": [
+              "Meaning",
+              "Python",
+              "Example",
+              "Result"
+            ],
+            "rows": [
+              [
+                "equal to",
+                "==",
+                "4 == 4",
+                "True"
+              ],
+              [
+                "not equal to",
+                "!=",
+                "4 != 4",
+                "False"
+              ],
+              [
+                "less than",
+                "<",
+                "3 < 7",
+                "True"
+              ],
+              [
+                "greater than",
+                ">",
+                "3 > 7",
+                "False"
+              ],
+              [
+                "less than or equal to",
+                "<=",
+                "7 <= 7",
+                "True"
+              ],
+              [
+                "greater than or equal to",
+                ">=",
+                "6 >= 7",
+                "False"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "= versus ==",
+          "note": "This is the most common syntax error. One equals sign stores a value; two equals signs ask a question. Show the output of the code. Ask pupils what happens in an if statement if they write if age = 18.",
+          "code": {
+            "lang": "python",
+            "text": "age = 17\nprint(age == 18)\nprint(age != 18)\nprint(age >= 17)\nprint(age < 17)",
+            "output": "False\nTrue\nTrue\nFalse"
+          }
+        },
+        {
+          "heading": "Conditions in selection",
+          "note": "Trace the code with age 16, then with 18. The boundary is the key: age >= 18 includes 18, age > 18 does not. Ask which operator is needed for 'at least 18'. Link to testing boundary data from the testing lesson.",
+          "code": {
+            "lang": "python",
+            "text": "age = int(input(\"Age: \"))\nif age >= 18:\n    print(\"Adult ticket\")\nelif age >= 5:\n    print(\"Child ticket\")\nelse:\n    print(\"Free\")",
+            "output": "Age: 18\nAdult ticket"
+          }
+        },
+        {
+          "heading": "Worked example",
+          "note": "Walk through the three tests: the first condition False, so skip; second True. Emphasise that only the first True branch runs.",
+          "model": {
+            "problem": "A cinema discount is for score >= 50. What is printed for score = 50 and score = 49?",
+            "steps": [
+              "score = 50: 50 >= 50 is True, so discount",
+              "score = 49: 49 >= 50 is False, so no discount",
+              "Changing >= to > would remove the discount for 50"
+            ],
+            "answer": "50 gets a discount; 49 does not"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer C. A sets the value. B tests greater than. D is not equal. Use whiteboards.",
+          "check": {
+            "q": "Which line tests whether the variable password is equal to the string \"salam\"?",
+            "options": [
+              "password = \"salam\"",
+              "password > \"salam\"",
+              "password == \"salam\"",
+              "password != \"salam\""
+            ],
+            "answer": 2,
+            "why": "== tests equality. A single = would assign the value."
+          }
+        }
+      ],
+      "practice": [
+        "Predict True or False: 8 <= 8, 12 != 12, 5 > 9, 'a' == 'a'.",
+        "Write a condition to test that a number n is at least 10 and not equal to 15."
+      ],
+      "independent": [
+        "Core: Write a program that asks for a mark and prints 'Pass' if the mark is 40 or more, otherwise 'Fail'.",
+        "Extend: Write a program that asks for a password and prints 'Access granted' only if it is equal to a stored value; otherwise 'Try again'.",
+        "Stretch: A program says if score > 50 but the rules say 50 passes. Find and fix the error, then list two test values that show the problem. (3 marks)"
+      ],
+      "exit": [
+        "What does 4 != 5 evaluate to?",
+        "Write the Python symbol for 'less than or equal to'."
+      ],
+      "homework": "Write five comparisons that evaluate to True and five that evaluate to False, using all six relational operators.",
+      "send": "SEND: operator cards with examples; sentence stems. EAL: 'equal' versus 'not equal' vocabulary. Stretch: chain a comparison like 18 <= age < 65.",
+      "covers": [
+        "6.5.2"
+      ],
+      "board": "Pearson Edexcel Level 1/Level 2 GCSE (9-1) in Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     }
   ]
 }

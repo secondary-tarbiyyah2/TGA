@@ -2,7 +2,7 @@
   "subject": "Geography",
   "year": "y11",
   "board": "AQA",
-  "source": "AQA GCSE Geography (8035) Paper 2, 3.2.3 The challenge of resource management (water option); adapted from school Drive lesson plan 'Y11 Is the World Managing Resources Sustainably' (28/01/26), the Y10 KS4 curriculum map (resource management / water unit) and the AQA GCSE Geography 54321 water resources worksheet | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.2, 3.2.3.1 (UK demand and provision only), 3.2.3.2 (food option), 3.2.3.4 (energy option) and 3.3.1. Existing Y11 lessons already cover 3.2.3.1 global importance and inequality and the whole water option (3.2.3.3), so those are not re-taught. Case-study figures are approximate and flagged for teacher verification.",
+  "source": "AQA GCSE Geography (8035) Paper 2, 3.2.3 The challenge of resource management (water option); adapted from school Drive lesson plan 'Y11 Is the World Managing Resources Sustainably' (28/01/26), the Y10 KS4 curriculum map (resource management / water unit) and the AQA GCSE Geography 54321 water resources worksheet | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.2, 3.2.3.1 (UK demand and provision only), 3.2.3.2 (food option), 3.2.3.4 (energy option) and 3.3.1. Existing Y11 lessons already cover 3.2.3.1 global importance and inequality and the whole water option (3.2.3.3), so those are not re-taught. Case-study figures are approximate and flagged for teacher verification. | Gap-fill against AQA GCSE Geography 8035 specification",
   "lessons": [
     {
       "unit": "Unit 1: Resource management (AQA 3.2.3 The challenge of resource management)",
@@ -2998,6 +2998,347 @@
       "send": "SEND: stakeholder grid and sentence starters. EAL: glossary for evaluation terms. Stretch: write for two different stakeholder audiences. Teacher to adapt to the actual pre-release booklet when issued (12 weeks before the exam); the Marlow Bay scenario is invented.",
       "board": "AQA GCSE (9-1) Geography 8035",
       "boardShort": "AQA GCSE Geography 8035"
+    },
+    {
+      "unit": "Unit 3.2.3.1: Resource management (3.2.3 The challenge of resource management) - compulsory",
+      "n": 21,
+      "title": "The changing energy mix: from fossil fuels to renewables",
+      "duration": 50,
+      "bigQuestion": "How has where our energy comes from changed, and why?",
+      "objectives": [
+        "Describe the changing energy mix of the UK",
+        "Explain the decline of fossil fuels and the growth of renewables",
+        "Evaluate how far renewables can replace fossil fuels"
+      ],
+      "successCriteria": [
+        "All: define energy mix",
+        "Most: describe the change in UK energy sources",
+        "Some: explain reasons and evaluate"
+      ],
+      "crossCurricular": "Science: energy sources",
+      "smsc": "Moral: stewardship of the Earth for future generations",
+      "keywords": [
+        {
+          "term": "energy mix",
+          "def": "the proportion of different energy sources used"
+        },
+        {
+          "term": "fossil fuels",
+          "def": "coal, oil and natural gas"
+        },
+        {
+          "term": "renewable energy",
+          "def": "energy from sources that are replenished, such as wind and solar"
+        },
+        {
+          "term": "decarbonisation",
+          "def": "reducing carbon emissions"
+        },
+        {
+          "term": "net zero",
+          "def": "balancing carbon emissions with removals"
+        }
+      ],
+      "starter": [
+        "Bismillah. Name two fossil fuels.",
+        "What is energy security?",
+        "Name one renewable energy source."
+      ],
+      "teach": [
+        {
+          "heading": "What is the energy mix?",
+          "bullets": [
+            "The mix is the share of each source.",
+            "UK electricity and total energy are different.",
+            "Oil and gas still supply heating and transport."
+          ],
+          "note": "Define energy mix and separate electricity from total energy. For electricity, renewable sources overtook fossil fuels in a recent year (verify the exact year and share). Oil and natural gas are still used for transport and heating. Keep all statistics approximate and flagged for verification. Case-study figures are approximate; verify against current sources before teaching."
+        },
+        {
+          "heading": "The decline of fossil fuels",
+          "bullets": [
+            "Coal supplied most electricity a century ago.",
+            "Coal use fell sharply in recent decades.",
+            "The last coal-fired power station in the UK closed in 2024."
+          ],
+          "note": "The last UK coal power station, Ratcliffe-on-Soar, closed in September 2024 (verify). Reasons: coal is highly polluting; cheaper gas and renewables; climate policy. North Sea oil and gas production has also declined from its peak, so the UK imports more (verify).",
+          "timeline": [
+            {
+              "label": "1900s",
+              "text": "Coal dominates electricity"
+            },
+            {
+              "label": "1990s",
+              "text": "Gas replaces much coal"
+            },
+            {
+              "label": "2008",
+              "text": "Climate Change Act sets targets"
+            },
+            {
+              "label": "2010s",
+              "text": "Wind and solar grow rapidly"
+            },
+            {
+              "label": "2024",
+              "text": "Last coal power station closes"
+            }
+          ]
+        },
+        {
+          "heading": "The rise of renewables",
+          "bullets": [
+            "Wind, solar and biomass have grown quickly.",
+            "Offshore wind is a large part of UK electricity.",
+            "Costs have fallen and the UK has net zero targets."
+          ],
+          "note": "Mention the 2019 law committing to net zero by 2050 (verify). Offshore wind is strong because of high wind speeds around the UK coast. Costs for wind and solar have dropped significantly. Ask why growth is sometimes slow: planning, grid connection, and intermittency."
+        },
+        {
+          "heading": "Reasons for change",
+          "note": "Organise reasons: economic, environmental and political. Link to 'energy security' from previous lessons. Use a table; pupils annotate with an example for each.",
+          "table": {
+            "head": [
+              "Type",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Environmental",
+                "Reduce carbon emissions and air pollution"
+              ],
+              [
+                "Economic",
+                "Wind and solar costs have fallen"
+              ],
+              [
+                "Political",
+                "Targets for net zero by 2050"
+              ],
+              [
+                "Security",
+                "Less reliance on imported fuel"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Worked example",
+          "note": "Model describing a trend then explaining. Teach: 'Describe' uses figures from the source; 'Explain' uses linking words.",
+          "model": {
+            "problem": "Explain why the UK's energy mix has changed. (4 marks)",
+            "steps": [
+              "Coal use fell because it is polluting and a major source of carbon dioxide",
+              "Climate policy and net zero targets encourage cleaner sources",
+              "Costs of wind and solar have fallen, making them competitive",
+              "Together these changes reduced reliance on fossil fuels"
+            ],
+            "answer": "Reasons linked in a chain, with at least one developed"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer B. A is energy security. C is a fossil fuel. D is incorrect.",
+          "check": {
+            "q": "Which is the best description of 'energy mix'?",
+            "options": [
+              "The cost of energy",
+              "The proportion of different energy sources used",
+              "The use of only renewables",
+              "Importing energy"
+            ],
+            "answer": 1,
+            "why": "Energy mix means the share of each energy source in a country's supply."
+          }
+        }
+      ],
+      "practice": [
+        "Sort into fossil fuel or renewable: gas, solar, coal, offshore wind, oil, biomass.",
+        "Give two reasons why UK coal use has fallen."
+      ],
+      "independent": [
+        "Core: Describe how the UK's energy mix has changed. (3 marks)",
+        "Extend: Explain why fossil fuel use has declined while renewables have grown. (6 marks)",
+        "Stretch: 'The UK can rely entirely on renewable energy.' Evaluate this view. (9 marks)"
+      ],
+      "exit": [
+        "Define energy mix.",
+        "Return to the big question: how and why has it changed?"
+      ],
+      "homework": "Find a UK energy mix chart, note two changes over time and one reason for each. Mark any figure to verify.",
+      "send": "SEND: sorting cards and a labelled chart. EAL: key words with pictures. Stretch: compare the UK mix with another country.",
+      "covers": [
+        "3.2.3.1.6"
+      ],
+      "board": "AQA GCSE (9-1) Geography (8035)",
+      "boardShort": "AQA GCSE 8035"
+    },
+    {
+      "unit": "Unit 3.3.1: Issue evaluation",
+      "n": 22,
+      "title": "Using sources in issue evaluation: maps, graphs, statistics, photographs, satellite images and statements",
+      "duration": 50,
+      "bigQuestion": "How can different sources support a decision, and how reliable are they?",
+      "objectives": [
+        "Identify the types of source used in the issue evaluation booklet",
+        "Extract and use evidence from each type",
+        "Judge the usefulness and bias of sources"
+      ],
+      "successCriteria": [
+        "All: name source types and say what they show",
+        "Most: use evidence from three source types",
+        "Some: evaluate bias, reliability and limits of sources"
+      ],
+      "crossCurricular": "Media literacy and citizenship",
+      "smsc": "Moral: truthful use of evidence and fairness to stakeholders",
+      "keywords": [
+        {
+          "term": "stakeholder",
+          "def": "a person or group affected by a decision"
+        },
+        {
+          "term": "bias",
+          "def": "favouring one side unfairly"
+        },
+        {
+          "term": "reliable",
+          "def": "can be trusted"
+        },
+        {
+          "term": "evidence",
+          "def": "facts or information supporting a view"
+        },
+        {
+          "term": "satellite image",
+          "def": "a picture of Earth's surface from space"
+        }
+      ],
+      "starter": [
+        "Bismillah. What does 'evaluate' mean?",
+        "What is a stakeholder?",
+        "Name two sources you could use in a geographical enquiry."
+      ],
+      "teach": [
+        {
+          "heading": "The source types",
+          "bullets": [
+            "Maps, graphs and statistics.",
+            "Photographs and satellite images.",
+            "Stakeholder statements."
+          ],
+          "note": "Explain that the issue evaluation booklet contains a range of sources and the exam asks you to use them to reach a justified decision. The topic changes each year, so we practice with an invented example here: a proposal for a new flood barrier in a town. All numbers in this lesson are illustrative.",
+          "table": {
+            "head": [
+              "Source",
+              "What it can show",
+              "Watch out for"
+            ],
+            "rows": [
+              [
+                "Map",
+                "Location, distance, land use",
+                "Scale and date"
+              ],
+              [
+                "Graph",
+                "Trends and comparisons",
+                "Axes, scale"
+              ],
+              [
+                "Statistics",
+                "Exact amounts",
+                "Average hides detail"
+              ],
+              [
+                "Photograph",
+                "Appearance of a place",
+                "One moment in time"
+              ],
+              [
+                "Satellite image",
+                "Pattern over a large area",
+                "Resolution, date"
+              ],
+              [
+                "Stakeholder statement",
+                "Opinions and priorities",
+                "Bias"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Extracting evidence",
+          "bullets": [
+            "Quote or use a figure from the source.",
+            "Say what it shows.",
+            "Link it to the decision."
+          ],
+          "note": "Practice the format: evidence, meaning, link. Example: 'Source C shows 120 homes flooded in 2019, which means the town has a high flood risk, so it supports building the barrier.' Insist on using numbers and names from sources rather than general statements."
+        },
+        {
+          "heading": "Worked example: weighing sources",
+          "note": "Show how to use two sources with a limitation. Illustrative scenario: a graph shows rising flood events and a stakeholder statement from the council supporting the barrier. The council is a stakeholder with an interest, so it may be biased.",
+          "model": {
+            "problem": "Illustrative: a graph shows 3 floods in 2000-2009 and 7 in 2010-2019. A council statement says the barrier is 'essential'. Use the sources to support the barrier and comment on reliability. (4 marks)",
+            "steps": [
+              "Evidence: the graph shows floods rising from 3 to 7 per decade",
+              "Meaning: flood risk is increasing, so a barrier is more needed",
+              "Link to the decision: supports building the barrier",
+              "Reliability: the council may want the barrier to be approved, so its statement may be biased; the graph is more objective"
+            ],
+            "answer": "Evidence plus meaning plus reliability"
+          }
+        },
+        {
+          "heading": "Limits and bias",
+          "bullets": [
+            "Photos show only one moment.",
+            "Statistics may be averages that hide differences.",
+            "Stakeholders argue for their own interests."
+          ],
+          "note": "Ask pupils to pick one source and say one weakness. Sources used together (triangulation) give a stronger case. In the exam, decisions need a reasoned recommendation and an alternative considered.",
+          "misconception": {
+            "wrong": "A source is useless if it is biased",
+            "right": "Biased sources can still be useful for understanding a view; check them against other evidence"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer C. A is a weakness of maps. B is the benefit not the weakness. D is not relevant.",
+          "check": {
+            "q": "Why should you be cautious about a single stakeholder statement?",
+            "options": [
+              "It has a scale",
+              "It is a graph",
+              "It may reflect that group's own interests",
+              "It is a satellite image"
+            ],
+            "answer": 2,
+            "why": "Stakeholders may be biased toward their own interests, so check with other sources."
+          }
+        }
+      ],
+      "practice": [
+        "Match each source to one strength and one weakness.",
+        "Write an evidence, meaning, link sentence using a statistic."
+      ],
+      "independent": [
+        "Core: Name four types of source and say what each shows. (4 marks)",
+        "Extend: Use a source of your choice from an example booklet to support a decision. (4 marks)",
+        "Stretch: Evaluate how useful the sources are in making a decision. (6 marks)"
+      ],
+      "exit": [
+        "Which source type is likely to show bias?",
+        "Return to the big question: how can sources support a decision?"
+      ],
+      "homework": "Take any news report on a local development and list the types of source it uses and how reliable each is.",
+      "send": "SEND: source table with sentence starters. EAL: bilingual glossary. Stretch: rank the sources for reliability and justify.",
+      "covers": [
+        "3.3.1.3"
+      ],
+      "board": "AQA GCSE (9-1) Geography (8035)",
+      "boardShort": "AQA GCSE 8035"
     }
   ]
 }

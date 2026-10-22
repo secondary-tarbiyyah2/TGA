@@ -2,7 +2,7 @@
   "subject": "Computing",
   "year": "y11",
   "board": "Edexcel",
-  "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 3 Computers, Topic 4 Networks); sequence follows the school's Drive Y10-11 scheme of work topics (cyber security, networks) and the Computer Science 9-1 folder; Python practice retained for Paper 2 skills | Edexcel GCSE Computer Science 1CP2 specification (syllabus file content/syllabus/ks4/computing.json: units 3.1 to 3.3, 4.1, 4.2, 5.1 to 5.3). Original lessons. The existing y11 set (content/lessons/computing/y11.json) already gives an overview of the CPU and fetch-decode-execute, memory and storage, operating systems and utilities, translators, LAN/WAN, star and mesh topologies, common protocols, malware and network threats, and prevention; these lessons do not re-teach that overview and instead cover the remaining spec points (buses, von Neumann, embedded systems, robust software, internet structure, latency, transmission calculations, TCP/IP layers, bus topology, ethical issues, intellectual property, environmental impact) with deeper, exam-style treatment.",
+  "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 3 Computers, Topic 4 Networks); sequence follows the school's Drive Y10-11 scheme of work topics (cyber security, networks) and the Computer Science 9-1 folder; Python practice retained for Paper 2 skills | Edexcel GCSE Computer Science 1CP2 specification (syllabus file content/syllabus/ks4/computing.json: units 3.1 to 3.3, 4.1, 4.2, 5.1 to 5.3). Original lessons. The existing y11 set (content/lessons/computing/y11.json) already gives an overview of the CPU and fetch-decode-execute, memory and storage, operating systems and utilities, translators, LAN/WAN, star and mesh topologies, common protocols, malware and network threats, and prevention; these lessons do not re-teach that overview and instead cover the remaining spec points (buses, von Neumann, embedded systems, robust software, internet structure, latency, transmission calculations, TCP/IP layers, bus topology, ethical issues, intellectual property, environmental impact) with deeper, exam-style treatment. | Gap-fill against Pearson Edexcel 1CP2 specification",
   "lessons": [
     {
       "unit": "Unit 1: Computers (Topic 3)",
@@ -3779,6 +3779,144 @@
       "send": "SEND/EAL: give a cipher wheel or alphabet strip to use for the Caesar cipher. Stretch: ask for a comparison of symmetric and asymmetric encryption in 100 words.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
       "boardShort": "Edexcel GCSE CS 1CP2"
+    },
+    {
+      "unit": "Unit 4.1: Networks",
+      "n": 27,
+      "title": "LAN or WAN? Comparing local and wide area networks",
+      "duration": 50,
+      "bigQuestion": "Why does a school use a LAN, while a bank needs a WAN?",
+      "objectives": [
+        "Define LAN and WAN",
+        "Compare them by area, ownership, speed and typical examples",
+        "Choose the right network type for a scenario"
+      ],
+      "successCriteria": [
+        "All: define LAN and WAN",
+        "Most: give two differences",
+        "Some: justify a choice for a scenario"
+      ],
+      "crossCurricular": "Geography: global links and trade",
+      "smsc": "Social: connecting communities across distance",
+      "keywords": [
+        {
+          "term": "LAN",
+          "def": "local area network covering a small area such as a school"
+        },
+        {
+          "term": "WAN",
+          "def": "wide area network covering a large area such as a country"
+        },
+        {
+          "term": "the internet",
+          "def": "a global network of networks"
+        },
+        {
+          "term": "router",
+          "def": "connects networks and directs packets"
+        },
+        {
+          "term": "leased line",
+          "def": "a private link rented from a telecoms provider"
+        }
+      ],
+      "starter": [
+        "Bismillah. What is a network?",
+        "Name one wired and one wireless connection.",
+        "What does an IP address identify?"
+      ],
+      "teach": [
+        {
+          "heading": "What are LANs and WANs?",
+          "bullets": [
+            "LAN covers one site: a home, school or office.",
+            "WAN covers a large area: cities, countries, world.",
+            "The internet is the largest WAN."
+          ],
+          "note": "Use the existing lesson on why we network as recall. Define: LAN = local area network, WAN = wide area network. Ask pupils to name where they have used each. Home Wi-Fi is a LAN; a bank linking branches is a WAN."
+        },
+        {
+          "heading": "Comparing LAN and WAN",
+          "note": "Walk across the table. A LAN is usually owned and managed by one organisation, so it can control security and equipment. A WAN usually uses infrastructure of telecoms companies, so the organisation rents or uses it. Speed: LANs are generally faster and have lower latency. Avoid giving exact figures; say typically.",
+          "compare": {
+            "left": {
+              "title": "LAN",
+              "points": [
+                "Small area: building or site",
+                "Owned by one organisation",
+                "Usually faster, lower latency",
+                "Examples: school, home, office"
+              ]
+            },
+            "right": {
+              "title": "WAN",
+              "points": [
+                "Large area: towns, countries",
+                "Uses telecoms providers' links",
+                "Often slower, higher latency",
+                "Examples: internet, bank branches"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Choosing a network",
+          "note": "Scenario: a supermarket chain with 40 stores. Each store needs a LAN for tills and stock scanners; the stores connect over a WAN to head office to share sales data. Show how a router links a LAN to a WAN. Ask what could go wrong if the WAN link fails (stores still trade locally).",
+          "model": {
+            "problem": "A library has a till network in one building and shares a catalogue with 5 other libraries in different towns. Identify the network types.",
+            "steps": [
+              "Within one building: LAN",
+              "Linking libraries in different towns: WAN",
+              "A router connects the LAN to the WAN"
+            ],
+            "answer": "LAN inside each library; WAN between them"
+          }
+        },
+        {
+          "heading": "Common errors",
+          "note": "Pupils think a LAN must be wired or that a WAN is only the internet. Clarify: a LAN can be wireless (Wi-Fi) and a WAN can be a private network owned by a company.",
+          "misconception": {
+            "wrong": "A LAN is always wired and a WAN is always wireless",
+            "right": "Size and area decide the type; both can use wired or wireless links"
+          }
+        },
+        {
+          "heading": "Hinge question",
+          "note": "Answer B. A, C and D are all single-site LAN examples.",
+          "check": {
+            "q": "Which is an example of a WAN?",
+            "options": [
+              "A home Wi-Fi network",
+              "The internet",
+              "Two laptops in one room",
+              "A classroom printer network"
+            ],
+            "answer": 1,
+            "why": "The internet connects networks across the world. The others are on one site."
+          }
+        }
+      ],
+      "practice": [
+        "Write one similarity and two differences between LANs and WANs.",
+        "A charity has an office in London and one in Cairo. Which network type links them?"
+      ],
+      "independent": [
+        "Core: Label each as LAN or WAN: school computer room, online banking, a gaming cafe, ATMs linked to a bank.",
+        "Extend: Explain two reasons why a company connects its branch LANs using a WAN. (4 marks)",
+        "Stretch: Evaluate whether a school with 3 sites should use one WAN or separate LANs. (6 marks)"
+      ],
+      "exit": [
+        "Define LAN.",
+        "Name one advantage of a LAN over a WAN."
+      ],
+      "homework": "Draw a diagram of your home network and show where it connects to a WAN through the router.",
+      "send": "SEND: sorting cards with pictures. EAL: key terms translated. Stretch: research one WAN technology such as a leased line.",
+      "covers": [
+        "4.1.2"
+      ],
+      "board": "Pearson Edexcel Level 1/Level 2 GCSE (9-1) in Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     }
   ]
 }
