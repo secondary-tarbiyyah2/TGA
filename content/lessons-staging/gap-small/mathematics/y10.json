@@ -1,0 +1,307 @@
+{
+ "subject": "Mathematics",
+ "year": "y10",
+ "board": "Pearson Edexcel Level 1/Level 2 GCSE (9-1) in Mathematics (1MA1)",
+ "boardShort": "Edexcel GCSE 1MA1",
+ "source": "Gap-fill against Pearson Edexcel 1MA1 specification",
+ "lessons": [
+  {
+   "unit": "Probability (P1-P9)",
+   "n": 1,
+   "title": "Randomness, fairness and expected frequency",
+   "duration": 50,
+   "bigQuestion": "How can we tell whether a game is fair, and how many wins should we expect?",
+   "objectives": [
+    "Decide whether outcomes are equally likely and whether a process is fair",
+    "Use expected frequency = number of trials x probability",
+    "Judge whether results suggest a biased die or spinner"
+   ],
+   "successCriteria": [
+    "All: say whether a die or spinner is fair and find a probability from equally likely outcomes",
+    "Most: calculate expected frequencies",
+    "Some: explain whether results are evidence of bias"
+   ],
+   "crossCurricular": "Science: fair tests and random sampling",
+   "smsc": "Moral: fairness and honesty (adl) in games and in dealing with others",
+   "keywords": [
+    {
+     "term": "random",
+     "def": "each outcome is uncertain and cannot be predicted in advance"
+    },
+    {
+     "term": "equally likely",
+     "def": "outcomes that each have the same chance of happening"
+    },
+    {
+     "term": "fair",
+     "def": "describes a process where all outcomes are equally likely"
+    },
+    {
+     "term": "biased",
+     "def": "not fair: some outcomes are more likely than others"
+    },
+    {
+     "term": "expected frequency",
+     "def": "how many times we expect an outcome in a number of trials: n x p"
+    }
+   ],
+   "starter": [
+    "Bismillah. Write 3/10 as a decimal and as a percentage.",
+    "A bag has 3 red and 7 blue counters. What is P(red)?",
+    "Why must probabilities of all outcomes add to 1?"
+   ],
+   "teach": [
+    {
+     "heading": "Random and equally likely",
+     "bullets": [
+      "Random: each outcome is uncertain, so we cannot predict one result.",
+      "Equally likely: every outcome has the same chance.",
+      "Equally likely outcomes give P(event) = favourable / total."
+     ],
+     "note": "Ask pupils for examples of random things (a coin toss) and not-random things (the sun rising). Stress that random does not mean equally likely: a weather forecast of rain is random but not 50:50. Use a fair six-sided die: six equally likely outcomes so P(5) = 1/6, P(even) = 3/6 = 1/2."
+    },
+    {
+     "heading": "Is it fair?",
+     "bullets": [
+      "A fair process gives every outcome the same chance.",
+      "Spinner with sections 90, 90, 90, 90 degrees: fair.",
+      "Spinner with sections 180, 90, 45, 45 degrees: not fair."
+     ],
+     "note": "Draw both spinners. For the unfair one, probabilities are 1/2, 1/4, 1/8, 1/8 - they still add to 1. A game is fair if each player has the same chance of winning. Example: player A wins on 1-3, player B wins on 4-6 on a fair die. Fair. Ask: is it fair if A wins on 1 or 2 and B wins on 3, 4, 5 or 6?"
+    },
+    {
+     "heading": "Expected frequency",
+     "bullets": [
+      "Expected frequency = number of trials x probability.",
+      "It is an average, not a promise.",
+      "Actual results usually differ from the expected value."
+     ],
+     "note": "Introduce with a fair die rolled 120 times: expected 6s = 120 x 1/6 = 20. Be clear that exactly 20 sixes would be surprising. The word expected means the average over many repeats. Link to the previous lesson on the sum of probabilities.",
+     "model": {
+      "problem": "A spinner lands on blue with probability 0.3. It is spun 200 times. How many times would you expect blue?",
+      "steps": [
+       "Expected frequency = number of spins x probability",
+       "= 200 x 0.3",
+       "= 60"
+      ],
+      "answer": "About 60 times"
+     }
+    },
+    {
+     "heading": "Evidence of bias?",
+     "note": "Table: a die rolled 60 times gave 1:6, 2:8, 3:9, 4:10, 5:11, 6:16. A fair die would give 10 of each. Six is 6 more than expected, but with only 60 rolls this could be chance. Teach the habit: compare with expected, say whether the difference is big, and say that more trials give stronger evidence. Do not say a die is definitely biased from 60 rolls.",
+     "table": {
+      "head": [
+       "Score",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6"
+      ],
+      "rows": [
+       [
+        "Frequency",
+        "6",
+        "8",
+        "9",
+        "10",
+        "11",
+        "16"
+       ],
+       [
+        "Expected (fair die)",
+        "10",
+        "10",
+        "10",
+        "10",
+        "10",
+        "10"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "note": "Answer is B. A: wrong, 1/2 would be if there were two equally likely outcomes. C: probabilities need not be nice fractions. Use mini-whiteboards.",
+     "check": {
+      "q": "A fair 8-sided die is rolled 400 times. How many times would you expect a score of 8?",
+      "options": [
+       "200",
+       "50",
+       "8",
+       "400/8 = 5"
+      ],
+      "answer": 1,
+      "why": "P(8) = 1/8, so expected = 400 x 1/8 = 50. 200 comes from using 1/2, and 5 divides the wrong way round."
+     }
+    }
+   ],
+   "practice": [
+    "A fair spinner has 5 equal sections numbered 1 to 5. Write P(odd). Spun 150 times, how many odds are expected?",
+    "A game: roll a fair die. Aisha wins on 1 or 2, Bilal on 3, 4, 5 or 6. Is it fair? Explain."
+   ],
+   "independent": [
+    "Core: A fair die is rolled 90 times. Work out the expected number of (a) 4s (b) numbers greater than 4. A coin is flipped 50 times: expected heads?",
+    "Extend: P(red) = 0.35 on a spinner. In 240 spins, how many reds are expected? Why might the actual number be different? (2 marks)",
+    "Stretch: A 4-sided spinner landed on 1,2,3,4: 12, 18, 20, 30 times in 80 spins. Is there evidence the spinner is biased? Give a reasoned answer. (3 marks)"
+   ],
+   "exit": [
+    "A bag has 4 red and 6 green counters. One is picked at random. Is picking red or green equally likely? Explain.",
+    "A coin lands on heads 18 times in 30 flips. Is it definitely biased? Explain."
+   ],
+   "homework": "Design a fair game for two players using two coins. Show that each player has the same chance of winning.",
+   "send": "SEND: use real dice and a pre-drawn expected-frequency table. EAL: key words matched to pictures. Stretch: explain why a result far from expected may still be possible for a fair die.",
+   "covers": [
+    "P1-P9.2"
+   ]
+  },
+  {
+   "unit": "Probability (P1-P9)",
+   "n": 2,
+   "title": "Bigger samples, better estimates: relative frequency and theoretical probability",
+   "duration": 50,
+   "bigQuestion": "Why do casinos and insurers rely on large numbers of trials?",
+   "objectives": [
+    "Calculate relative frequency from experimental results",
+    "Explain that larger unbiased samples tend towards the theoretical probability",
+    "Estimate probabilities from experiments and use them for predictions"
+   ],
+   "successCriteria": [
+    "All: calculate a relative frequency",
+    "Most: choose the best estimate from several experiments",
+    "Some: combine sample results and explain the effect of sample size"
+   ],
+   "crossCurricular": "Science: repeating experiments to improve reliability",
+   "smsc": "Social: using fair evidence rather than guesswork (truthfulness)",
+   "keywords": [
+    {
+     "term": "relative frequency",
+     "def": "number of times an outcome occurs divided by number of trials"
+    },
+    {
+     "term": "theoretical probability",
+     "def": "the probability worked out from equally likely outcomes"
+    },
+    {
+     "term": "trial",
+     "def": "one go at an experiment"
+    },
+    {
+     "term": "unbiased sample",
+     "def": "a sample chosen with no outcome favoured"
+    },
+    {
+     "term": "estimate",
+     "def": "a best guess based on evidence"
+    }
+   ],
+   "starter": [
+    "Bismillah. A fair die is rolled 300 times. How many 3s expected?",
+    "Simplify 14/40.",
+    "Write 0.35 as a fraction in simplest form."
+   ],
+   "teach": [
+    {
+     "heading": "Relative frequency",
+     "bullets": [
+      "Relative frequency = frequency of outcome / total trials.",
+      "It is an estimate of probability from an experiment.",
+      "Give as a fraction or decimal."
+     ],
+     "note": "Recall that theoretical probability needs equally likely outcomes. When outcomes are not equally likely (a bent coin, a drawing pin landing point up) we find probability by experiment. A pin lands point up 14 times in 40: relative frequency 14/40 = 0.35."
+    },
+    {
+     "heading": "What happens as trials increase?",
+     "note": "Show the table. A fair coin has P(heads) = 0.5. Relative frequencies: 10 trials 7 heads gives 0.7; 50 trials 28 heads gives 0.56; 200 trials 104 gives 0.52; 1000 trials 507 gives 0.507. They settle near 0.5. Say: the early values wobble, the later ones are close. This tendency, not a guarantee, is the key idea.",
+     "table": {
+      "head": [
+       "Trials",
+       "Heads",
+       "Relative frequency"
+      ],
+      "rows": [
+       [
+        "10",
+        "7",
+        "0.7"
+       ],
+       [
+        "50",
+        "28",
+        "0.56"
+       ],
+       [
+        "200",
+        "104",
+        "0.52"
+       ],
+       [
+        "1000",
+        "507",
+        "0.507"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Large samples: but only if unbiased",
+     "bullets": [
+      "More trials usually gives a better estimate.",
+      "The experiment must be fair: no cheating or bias.",
+      "Small samples can be far from the true value."
+     ],
+     "note": "Discuss why the sample must be unbiased: if a coin is flipped by someone who flips it carefully to land heads, 10000 trials will not give 0.5. Also contrast: relative frequency gets closer to the true probability, but the number of heads does not become exactly half. After 1000 flips, 507 is 7 away from 500; the difference in the count can grow while the proportion settles."
+    },
+    {
+     "heading": "Combining and using results",
+     "note": "Walk through. Total trials 40 + 160 = 200. Total successes 12 + 52 = 64. Relative frequency 64/200 = 0.32. Use the larger sample (more trials) if you must choose one, but combining is best. Then use it: in 500 more trials, expect 500 x 0.32 = 160.",
+     "model": {
+      "problem": "A biased spinner: in 40 spins it landed on red 12 times. In a further 160 spins it landed on red 52 times. Estimate P(red) and the expected number of reds in 500 spins.",
+      "steps": [
+       "Total spins = 40 + 160 = 200",
+       "Total reds = 12 + 52 = 64",
+       "Relative frequency = 64/200 = 0.32",
+       "Expected in 500 spins = 500 x 0.32 = 160"
+      ],
+      "answer": "P(red) is about 0.32; expect about 160 reds"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "note": "Answer C. Pupils often choose the largest number of reds or say the average of the two decimals. A is tempting because 0.5 is theoretical.",
+     "check": {
+      "q": "Three people test a coin. Amy: 20 flips, 14 heads. Ben: 200 flips, 108 heads. Cara: 50 flips, 26 heads. Whose results give the best estimate of P(heads)?",
+      "options": [
+       "Amy, highest proportion of heads",
+       "Cara, closest to 0.5",
+       "Ben, most trials",
+       "All equally good"
+      ],
+      "answer": 2,
+      "why": "A larger unbiased sample tends to be closer to the true probability. Ben used 200 flips; relative frequency 0.54."
+     }
+    }
+   ],
+   "practice": [
+    "A drawing pin was dropped 80 times and landed point up 52 times. Find the relative frequency. Expected number point up in 300 drops?",
+    "Table of relative frequencies for a die showing 6: 10 rolls 0.3; 100 rolls 0.19; 1000 rolls 0.168. What do they suggest about P(6)?"
+   ],
+   "independent": [
+    "Core: A coin was flipped 40 times with 22 heads. Write the relative frequency of heads as a decimal.",
+    "Extend: Sam rolled a die 60 times and got 15 sixes; Tia rolled it 600 times and got 108 sixes. Whose estimate of P(six) is better? Explain. (3 marks)",
+    "Stretch: A spinner has red, blue, green. In 400 spins: red 148, blue 160, green 92. Estimate P(green), then estimate the number of blues in 1500 spins. (4 marks)"
+   ],
+   "exit": [
+    "Why is relative frequency from 1000 trials usually more reliable than from 10?",
+    "A fair die gave 4 sixes in 10 rolls. Does that mean the die is biased?"
+   ],
+   "homework": "Flip a coin 20 times, record the relative frequency after 5, 10 and 20 flips, and write one sentence about what you notice.",
+   "send": "SEND: pre-filled running-total tables and a calculator. EAL: sentence stem 'As the number of trials increases...'. Stretch: explain why the count of heads need not equal half the trials.",
+   "covers": [
+    "P1-P9.4"
+   ]
+  }
+ ]
+}

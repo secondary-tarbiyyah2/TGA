@@ -1,0 +1,531 @@
+{
+ "subject": "Mathematics",
+ "year": "y11",
+ "board": "Pearson Edexcel Level 1/Level 2 GCSE (9-1) in Mathematics (1MA1)",
+ "boardShort": "Edexcel GCSE 1MA1",
+ "source": "Gap-fill against Pearson Edexcel 1MA1 specification",
+ "lessons": [
+  {
+   "unit": "Algebra: Higher graph work and real-life graphs (A13-A16)",
+   "n": 1,
+   "title": "Sketching translations and reflections of a given function",
+   "duration": 50,
+   "bigQuestion": "How does changing a function's equation move its graph?",
+   "objectives": [
+    "Sketch y = f(x) + a, y = f(x + a), y = -f(x) and y = f(-x) from a given graph",
+    "Track key points such as maxima, minima and intercepts",
+    "Describe the effect of each change on the graph"
+   ],
+   "successCriteria": [
+    "All: sketch y = f(x) + a and y = -f(x)",
+    "Most: sketch y = f(x + a) and y = f(-x)",
+    "Some: sketch a combination and identify a transformation from key points"
+   ],
+   "crossCurricular": "Computing: transforming shapes in graphics software",
+   "smsc": "Social: seeing the same pattern from different viewpoints",
+   "keywords": [
+    {
+     "term": "translation",
+     "def": "a slide of the graph with no turning or resizing"
+    },
+    {
+     "term": "reflection",
+     "def": "a mirror image of the graph in an axis"
+    },
+    {
+     "term": "function f(x)",
+     "def": "a rule that gives one output for each input"
+    },
+    {
+     "term": "key points",
+     "def": "intercepts, turning points and asymptotes to track"
+    },
+    {
+     "term": "invariant point",
+     "def": "a point that does not move"
+    }
+   ],
+   "starter": [
+    "Bismillah. If f(x) = x^2 - 3, find f(2) and f(-2).",
+    "What is the turning point of y = (x - 1)^2 + 4?",
+    "Write the coordinates of the reflection of (3, 2) in the y-axis."
+   ],
+   "teach": [
+    {
+     "heading": "Four moves, four rules",
+     "note": "Use f(x) = x(4 - x) with roots (0,0), (4,0) and maximum (2,4). Pupils should know translation by vector from earlier lessons; this lesson is about sketching from a given picture. Rules: f(x) + a moves up by a; f(x + a) moves LEFT by a; -f(x) reflects in the x-axis; f(-x) reflects in the y-axis.",
+     "table": {
+      "head": [
+       "Equation",
+       "Effect",
+       "Vector or axis"
+      ],
+      "rows": [
+       [
+        "y = f(x) + a",
+        "up a",
+        "(0, a)"
+       ],
+       [
+        "y = f(x + a)",
+        "left a",
+        "(-a, 0)"
+       ],
+       [
+        "y = -f(x)",
+        "reflect",
+        "x-axis"
+       ],
+       [
+        "y = f(-x)",
+        "reflect",
+        "y-axis"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Worked example: translations",
+     "note": "Draw y = f(x) with max (2,4) and roots 0 and 4. For f(x - 3), every x-coordinate increases by 3: max (5,4), roots (3,0) and (7,0). Emphasise that x-changes happen 'inside the brackets' and do the opposite of what you expect.",
+     "model": {
+      "problem": "y = f(x) has a maximum at (2, 4) and crosses the x-axis at (0, 0) and (4, 0). Write the maximum point and the x-intercepts of y = f(x - 3) and of y = f(x) + 1.",
+      "steps": [
+       "f(x - 3): translation by (3, 0), x-values increase by 3",
+       "Maximum (2, 4) goes to (5, 4); intercepts (0,0), (4,0) go to (3,0), (7,0)",
+       "f(x) + 1: translation by (0, 1), y-values increase by 1",
+       "Maximum (2, 4) goes to (2, 5); the roots move off the x-axis because the whole curve is 1 higher"
+      ],
+      "answer": "f(x-3): max (5,4), roots x = 3, 7. f(x)+1: max (2,5)"
+     }
+    },
+    {
+     "heading": "Worked example: reflections",
+     "note": "Reflection in the x-axis flips y-signs: max (2,4) becomes minimum (2,-4); roots stay at 0 and 4 because they are on the axis. Reflection in the y-axis flips x-signs: max (-2,4), roots (0,0) and (-4,0). Pupils sketch on mini-whiteboards.",
+     "model": {
+      "problem": "Using the same f, write the turning point and roots of y = -f(x) and y = f(-x).",
+      "steps": [
+       "y = -f(x): multiply y-values by -1",
+       "Maximum (2, 4) becomes minimum (2, -4); roots stay (0,0) and (4,0)",
+       "y = f(-x): multiply x-values by -1",
+       "Maximum (2, 4) becomes (-2, 4); roots become (0,0) and (-4,0)"
+      ],
+      "answer": "-f(x): min (2,-4), roots 0, 4. f(-x): max (-2,4), roots 0, -4"
+     }
+    },
+    {
+     "heading": "Common errors",
+     "note": "The main error is f(x + 2) moves right. Give a memory: x + 2 needs x to be 2 smaller to give the same output, so the graph moves left. Another error: reflecting in the wrong axis. Ask which coordinate has its sign changed.",
+     "misconception": {
+      "wrong": "y = f(x + 2) moves the graph 2 to the right",
+      "right": "y = f(x + 2) moves the graph 2 to the left (vector (-2, 0))"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "note": "Answer B. A is the wrong direction (right), C is a vertical shift, D is the f(-x) reflection.",
+     "check": {
+      "q": "The point (3, 5) is on y = f(x). Which point is on y = f(x + 1)?",
+      "options": [
+       "(4, 5)",
+       "(2, 5)",
+       "(3, 6)",
+       "(-3, 5)"
+      ],
+      "answer": 1,
+      "why": "f(x + 1) is a translation by (-1, 0), so (3, 5) goes to (2, 5). (4,5) is the common wrong direction."
+     }
+    }
+   ],
+   "practice": [
+    "A graph y = f(x) has a minimum at (1, -3). Write the minimum of (a) y = f(x) + 4 (b) y = f(x - 2) (c) y = -f(x).",
+    "The graph of y = f(x) passes through (-2, 0) and (0, 3). Write one point on y = f(-x)."
+   ],
+   "independent": [
+    "Core: y = f(x) has a maximum (3, 5) and passes through (0, 0) and (6, 0). Sketch and label y = f(x) + 2 and y = -f(x).",
+    "Extend: Using the same graph, sketch y = f(x - 1) and y = f(-x), labelling key points. (4 marks)",
+    "Stretch: y = f(x) has a minimum (2, -1). The graph of y = -f(x) + 3 is drawn. Write its turning point and say whether it is a maximum or a minimum. (3 marks)"
+   ],
+   "exit": [
+    "Write one difference between y = f(x) + 1 and y = f(x + 1).",
+    "State the equation of the reflection of y = f(x) in the y-axis."
+   ],
+   "homework": "On squared paper draw a curve y = f(x) with three labelled points, then draw f(x) + 2 and f(-x) on the same axes.",
+   "send": "SEND: tracing paper to slide and flip the curve. EAL: vocabulary matching with 'inside' and 'outside' the brackets. Stretch: sketch y = -f(x - 2) + 1 for a given curve.",
+   "covers": [
+    "A13-A16.1"
+   ]
+  },
+  {
+   "unit": "Statistics (S1-S6)",
+   "n": 2,
+   "title": "Inferring from samples and estimating populations",
+   "duration": 50,
+   "bigQuestion": "What can a small sample tell us about a large population, and when should we doubt it?",
+   "objectives": [
+    "Use sample data to estimate a population proportion or total",
+    "Use capture-recapture to estimate a population size",
+    "Describe limitations of sampling and sources of bias"
+   ],
+   "successCriteria": [
+    "All: scale up a sample proportion",
+    "Most: use capture-recapture",
+    "Some: evaluate whether a sample result can be trusted"
+   ],
+   "crossCurricular": "Science: ecology and population studies",
+   "smsc": "Moral: honesty and care in reporting data",
+   "keywords": [
+    {
+     "term": "population",
+     "def": "the whole group being studied"
+    },
+    {
+     "term": "sample",
+     "def": "a part of the population selected for study"
+    },
+    {
+     "term": "capture-recapture",
+     "def": "a method for estimating animal population size"
+    },
+    {
+     "term": "bias",
+     "def": "unfairness in how a sample is chosen or results are used"
+    },
+    {
+     "term": "representative",
+     "def": "a sample that reflects the population"
+    }
+   ],
+   "starter": [
+    "Bismillah. 20% of 450 is?",
+    "Write 21/60 as a decimal.",
+    "Name two methods of sampling."
+   ],
+   "teach": [
+    {
+     "heading": "Sample to population",
+     "bullets": [
+      "A sample gives estimates, not exact values.",
+      "Estimate a total: population x sample proportion.",
+      "Larger, random samples are more reliable."
+     ],
+     "note": "Example: 60 students asked how they travel to school; 21 walk. Proportion 21/60 = 0.35. Estimate for the 1200-student school: 1200 x 0.35 = 420. Emphasise 'estimate' and the assumption that the sample represents everyone."
+    },
+    {
+     "heading": "Worked example: scaling up",
+     "note": "Check the sampling method: random selection from each year group would be better than only asking Year 7. If the sample was from one class, the estimate may be biased. This links to the lesson on sampling methods.",
+     "model": {
+      "problem": "In a random sample of 60 students, 21 walk to school. The school has 1200 students. Estimate how many walk.",
+      "steps": [
+       "Sample proportion = 21/60 = 0.35",
+       "Estimate = 1200 x 0.35",
+       "= 420"
+      ],
+      "answer": "About 420 students"
+     }
+    },
+    {
+     "heading": "Capture-recapture",
+     "note": "Story: 40 fish are caught, tagged and returned to the lake. After mixing, 50 fish are caught and 8 are tagged. Assume the sample proportion tagged (8/50) equals the population proportion tagged (40/N). So N = 40 x 50 / 8 = 250. State the assumptions: no births, deaths or migration in between, tagged fish mix evenly, tags do not harm survival or make fish easier to catch.",
+     "model": {
+      "problem": "40 fish are tagged and released. Later, 50 fish are caught, of which 8 are tagged. Estimate the number of fish in the lake.",
+      "steps": [
+       "Proportion tagged in sample = 8/50",
+       "Same proportion in lake: 40/N = 8/50",
+       "N = 40 x 50 / 8",
+       "N = 250"
+      ],
+      "answer": "About 250 fish"
+     }
+    },
+    {
+     "heading": "Limitations",
+     "bullets": [
+      "Small or biased samples can mislead.",
+      "Capture-recapture assumes a closed population.",
+      "Different samples give different estimates."
+     ],
+     "note": "Ask pupils: if the second catch were from the same corner of the lake, what happens? Discuss non-response, small samples and a sampling frame that leaves out part of the population. Link to Islamic ethics: presenting data honestly and not claiming more than the evidence supports."
+    },
+    {
+     "heading": "Hinge question",
+     "note": "Answer B. A sample of 20 is small, and the sample is only from one year group; both are limitations. Option C is an error: the sample proportion is not the population number.",
+     "check": {
+      "q": "A survey of 15 pupils from one Year 7 class finds 9 prefer football. A student says 60% of the whole school prefers football. What is the main problem?",
+      "options": [
+       "60% is calculated wrongly",
+       "The sample is small and unrepresentative",
+       "9 out of 15 is 0.9",
+       "The school is too big"
+      ],
+      "answer": 1,
+      "why": "9/15 = 60% is correct, but 15 pupils from one class may not represent the school."
+     }
+    }
+   ],
+   "practice": [
+    "In a random sample of 80 adults, 28 own a bicycle. Estimate how many of 5000 adults own a bicycle.",
+    "50 deer are tagged. A later sample of 40 contains 5 tagged deer. Estimate the deer population."
+   ],
+   "independent": [
+    "Core: In a sample of 25 batteries, 3 are faulty. Estimate the number of faulty batteries in a batch of 2000.",
+    "Extend: 30 birds are ringed. A later sample of 60 birds includes 9 ringed. Estimate the population and state one assumption. (4 marks)",
+    "Stretch: Explain two reasons why a capture-recapture estimate might be too high or too low. (4 marks)"
+   ],
+   "exit": [
+    "Write the formula you used for capture-recapture in words.",
+    "Why is a larger random sample better than a small one?"
+   ],
+   "homework": "Find a real example of a statistic in the news based on a sample. Say what the population is and one possible limitation.",
+   "send": "SEND: step cards with 'tagged / sample / total'. EAL: pictures of the lake. Stretch: explain why the formula rearranges to N = (M x n)/m.",
+   "covers": [
+    "S1-S6.1"
+   ]
+  },
+  {
+   "unit": "Statistics (S1-S6)",
+   "n": 3,
+   "title": "Histograms with unequal class widths: frequency density",
+   "duration": 50,
+   "bigQuestion": "Why must the height of a bar be frequency density, not frequency?",
+   "objectives": [
+    "Calculate frequency density = frequency / class width",
+    "Draw and read histograms with unequal class widths",
+    "Estimate frequencies from parts of a bar"
+   ],
+   "successCriteria": [
+    "All: calculate frequency density",
+    "Most: complete a histogram and read frequencies",
+    "Some: estimate counts within bars and find missing information"
+   ],
+   "crossCurricular": "Geography: population age data",
+   "smsc": "Social: representing data fairly (not misleading)",
+   "keywords": [
+    {
+     "term": "frequency density",
+     "def": "frequency divided by class width"
+    },
+    {
+     "term": "class width",
+     "def": "the size of the interval"
+    },
+    {
+     "term": "histogram",
+     "def": "a chart where area represents frequency"
+    },
+    {
+     "term": "continuous data",
+     "def": "data measured on a scale, such as time or height"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate value found assuming even spread within a class"
+    }
+   ],
+   "starter": [
+    "Bismillah. Work out 30 / 20 and 12 / 5.",
+    "Class 10 < t <= 30: what is its width?",
+    "What is the difference between a bar chart and a histogram?"
+   ],
+   "teach": [
+    {
+     "heading": "Why frequency density?",
+     "bullets": [
+      "Classes with different widths cannot be compared by height alone.",
+      "In a histogram, area of bar = frequency.",
+      "Frequency density = frequency / class width."
+     ],
+     "note": "Show an example where a wide class has the highest frequency but the bars would mislead if drawn by frequency. Explain that area is what represents frequency. The vertical axis is labelled frequency density. Bars touch because the data is continuous."
+    },
+    {
+     "heading": "Worked example: drawing",
+     "note": "Table: time t minutes: 0<t<=10 frequency 15; 10<t<=30 frequency 50; 30<t<=40 frequency 30; 40<t<=60 frequency 20. Widths 10, 20, 10, 20. FD: 1.5, 2.5, 3, 1. Check frequency = FD x width: 1.5 x 10 = 15. Pupils sketch the four bars.",
+     "model": {
+      "problem": "Find the frequency densities for: 0<t<=10 (15), 10<t<=30 (50), 30<t<=40 (30), 40<t<=60 (20).",
+      "steps": [
+       "0-10: 15 / 10 = 1.5",
+       "10-30: 50 / 20 = 2.5",
+       "30-40: 30 / 10 = 3",
+       "40-60: 20 / 20 = 1"
+      ],
+      "answer": "Heights 1.5, 2.5, 3 and 1"
+     }
+    },
+    {
+     "heading": "Worked example: reading and estimating",
+     "note": "A bar from 20 to 50 has height 0.8: width 30, frequency 24. To estimate the number between 20 and 30 in the 10 to 30 class (FD 2.5): the section from 20 to 30 is 10 wide, so 10 x 2.5 = 25. This assumes the data is evenly spread across the class; say so. From 30 to 40: 30. So between 20 and 40: 25 + 30 = 55.",
+     "model": {
+      "problem": "Using the table above, estimate how many times were between 20 and 40 minutes.",
+      "steps": [
+       "The class 10-30 has FD 2.5, so 20-30 is 10 x 2.5 = 25",
+       "The class 30-40 has frequency 30",
+       "Total = 25 + 30"
+      ],
+      "answer": "About 55"
+     }
+    },
+    {
+     "heading": "Common errors",
+     "note": "Plotting frequency as bar height is the standard mistake. Another is calculating a bar's frequency as height only. Give: frequency = FD x class width, always.",
+     "misconception": {
+      "wrong": "The height of a bar is its frequency",
+      "right": "The area of a bar is its frequency; height is frequency density"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "note": "Answer C: 4 x 5 = 20. A is the height, B the width, D adds them.",
+     "check": {
+      "q": "A histogram bar covers 10 < x <= 15 and has frequency density 4. What is the frequency?",
+      "options": [
+       "4",
+       "5",
+       "20",
+       "9"
+      ],
+      "answer": 2,
+      "why": "Frequency = frequency density x class width = 4 x 5 = 20."
+     }
+    }
+   ],
+   "practice": [
+    "Complete: class 0<x<=5, frequency 20; 5<x<=15, frequency 45; 15<x<=35, frequency 30. Work out the frequency densities.",
+    "A bar has width 8 and height 2.5. Find its frequency."
+   ],
+   "independent": [
+    "Core: Draw a histogram: 0<h<=2 (8), 2<h<=6 (24), 6<h<=12 (30), 12<h<=20 (16).",
+    "Extend: In a histogram, bar 10<x<=20 has frequency density 1.2 and bar 20<x<=40 has frequency 18. Find the density of the second and the number in the first. (3 marks)",
+    "Stretch: Estimate the number of values greater than 15 in a class 10<x<=20 with frequency 40, and the next class 20<x<=30 with frequency 25. (3 marks)"
+   ],
+   "exit": [
+    "Write the formula for frequency density.",
+    "Why do we use frequency density instead of frequency on the vertical axis?"
+   ],
+   "homework": "Find or invent a grouped table with unequal classes. Work out the frequency densities and sketch the histogram.",
+   "send": "SEND: pre-drawn axes and a calculator. EAL: key words glossary with diagram. Stretch: estimate the median from a histogram.",
+   "covers": [
+    "S1-S6.3"
+   ]
+  },
+  {
+   "unit": "Statistics (S1-S6)",
+   "n": 4,
+   "title": "Cumulative frequency graphs: median, quartiles and estimates",
+   "duration": 50,
+   "bigQuestion": "What can a cumulative frequency curve tell us at a glance?",
+   "objectives": [
+    "Build a cumulative frequency table and plot the graph",
+    "Estimate the median, quartiles and interquartile range",
+    "Estimate how many values lie above or below a given value"
+   ],
+   "successCriteria": [
+    "All: calculate cumulative frequencies",
+    "Most: plot and read the median",
+    "Some: find IQR and estimate numbers above a value"
+   ],
+   "crossCurricular": "Business: delivery times and quality control",
+   "smsc": "Moral: reading evidence carefully before judging",
+   "keywords": [
+    {
+     "term": "cumulative frequency",
+     "def": "a running total of frequencies"
+    },
+    {
+     "term": "median",
+     "def": "the middle value, at n/2"
+    },
+    {
+     "term": "quartile",
+     "def": "values at n/4 and 3n/4"
+    },
+    {
+     "term": "interquartile range",
+     "def": "upper quartile minus lower quartile"
+    },
+    {
+     "term": "upper class boundary",
+     "def": "the largest value in a class, where its point is plotted"
+    }
+   ],
+   "starter": [
+    "Bismillah. Median of 3, 5, 7, 9, 11?",
+    "Find 80 / 4 and 3 x 80 / 4.",
+    "What is the IQR if Q1 = 20 and Q3 = 36?"
+   ],
+   "teach": [
+    {
+     "heading": "Cumulative frequency",
+     "bullets": [
+      "Running total of the frequencies.",
+      "Plot against the UPPER class boundary.",
+      "Join with a smooth curve."
+     ],
+     "note": "Table: parcel mass m (kg): 0<m<=10: 4; 10<m<=20: 12; 20<m<=30: 24; 30<m<=40: 28; 40<m<=50: 12; total 80. Cumulative frequency 4, 16, 40, 68, 80, plotted at m = 10, 20, 30, 40, 50. Plot (0,0) as an extra start point if asked. Common error: plotting at the middle of the class."
+    },
+    {
+     "heading": "Reading the curve",
+     "bullets": [
+      "Median: read across from n/2.",
+      "Lower quartile at n/4; upper quartile at 3n/4.",
+      "IQR = UQ - LQ."
+     ],
+     "note": "With n = 80: median at the 40th value, LQ at the 20th, UQ at the 60th. Read across then down. From the data the curve passes through (30,40) so the median is 30 kg. Pupils should show construction lines on the graph.",
+     "model": {
+      "problem": "For the 80 parcels, estimate the lower quartile and upper quartile using straight lines between points. Then find the IQR.",
+      "steps": [
+       "LQ is the 20th value, between (20, 16) and (30, 40): 20 + (4/24) x 10 = 21.7",
+       "UQ is the 60th value, between (30, 40) and (40, 68): 30 + (20/28) x 10 = 37.1",
+       "IQR = 37.1 - 21.7 = 15.4"
+      ],
+      "answer": "LQ about 21.7 kg, UQ about 37.1 kg, IQR about 15.4 kg"
+     }
+    },
+    {
+     "heading": "Estimating numbers above a value",
+     "note": "Estimate the number above 35 kg. At 35, between (30,40) and (40,68): 40 + 0.5 x 28 = 54. So 80 - 54 = 26 parcels exceed 35 kg. On a drawn smooth curve readings may differ slightly; accept answers close to 26.",
+     "model": {
+      "problem": "Estimate how many parcels weigh more than 35 kg.",
+      "steps": [
+       "Cumulative frequency at 35 kg is halfway between 40 and 68",
+       "= 54",
+       "Number above 35 = 80 - 54"
+      ],
+      "answer": "About 26 parcels"
+     }
+    },
+    {
+     "heading": "Hinge question",
+     "note": "Answer B. A plots at the middle of the class. C confuses the median with the position. D uses the lower boundary.",
+     "check": {
+      "q": "Where should the cumulative frequency for the class 20 < m <= 30 be plotted?",
+      "options": [
+       "At m = 25",
+       "At m = 30",
+       "At m = 20",
+       "At m = 40"
+      ],
+      "answer": 1,
+      "why": "Cumulative frequency counts values up to the upper class boundary, so the point is plotted at m = 30."
+     }
+    }
+   ],
+   "practice": [
+    "Complete the cumulative frequency table: 0<x<=10: 3; 10<x<=20: 9; 20<x<=30: 18; 30<x<=40: 12.",
+    "For a graph with 60 values, at which cumulative frequencies do you read the median and quartiles?"
+   ],
+   "independent": [
+    "Core: Use the data above to plot the parcel graph and read the median.",
+    "Extend: A second depot has median 28 kg and IQR 10 kg. Compare it with the first depot (median 30, IQR 15.4). (2 marks)",
+    "Stretch: Estimate the number of parcels between 15 kg and 35 kg. (3 marks)"
+   ],
+   "exit": [
+    "How do you find the LQ from a graph with 120 values?",
+    "Why do you plot at the upper boundary?"
+   ],
+   "homework": "Collect 20 values of a measurement from home (for example, heights of family members' shoes), group them and draw a cumulative frequency graph.",
+   "send": "SEND: plot points on pre-drawn axes. EAL: labelled graph with median, LQ and UQ. Stretch: draw a box plot from the same graph.",
+   "covers": [
+    "S1-S6.3"
+   ]
+  }
+ ]
+}
