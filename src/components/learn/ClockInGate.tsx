@@ -121,7 +121,8 @@ function useClockState(userId: string, roles: RoleGrant[]) {
 async function clockIn(userId: string, note: string): Promise<string | null> {
   const supabase = getSupabaseClient();
   if (!supabase) return "Not connected.";
-  const { error } = await supabase.from("staff_shifts").insert({ user_id: userId, note: note.trim() || null });
+  // Resumes the shift if it was closed for inactivity in the last 15 minutes (migration 0104).
+  const { error } = await supabase.rpc("clock_in_or_resume", { p_note: note.trim() || null });
   // 23505: already has an open shift (e.g. another tab) - that's fine.
   if (error && error.code !== "23505") return "Couldn't clock you in. Check your connection and try again.";
   window.dispatchEvent(new Event(CLOCK_EVENT));

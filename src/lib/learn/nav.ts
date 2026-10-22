@@ -132,6 +132,7 @@ const SECTION_ORDER = SECTIONS.map((s) => s.label);
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   admin: [
     { href: "/admin/dashboard", label: "Home", icon: "house" },
+    { href: "/admin/actions", label: "Action centre", icon: "clipboardCheck", headOnly: true },
     { href: "/admin/classes", label: "Classes", icon: "presentation", headOnly: true, group: "Teaching", matchPrefixes: ["/admin/class"] },
     { href: "/admin/lessons", label: "Timetable and lessons", icon: "calendarDays", headOnly: true, group: "Teaching" },
     { href: "/admin/homework", label: "Homework", icon: "notebookPen", headOnly: true, group: "Teaching" },
@@ -160,6 +161,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/people", label: "People and accounts", icon: "users", group: "Admissions and staff" },
     { href: "/admin/staff", label: "Staff profiles", icon: "idCard", headOnly: true, group: "Admissions and staff" },
     { href: "/admin/staff-attendance", label: "Staff attendance", icon: "clock", headOnly: true, group: "Admissions and staff" },
+    { href: "/admin/handbook", label: "Staff handbook", icon: "bookOpen", group: "Admissions and staff" },
     { href: "/admin/fees", label: "Fees", icon: "wallet", headOnly: true, group: "Finance and policies" },
     { href: "/admin/compliance", label: "Safeguarding and compliance", icon: "shieldCheck", group: "Safeguarding" },
     { href: "/admin/documents", label: "Policies and signatures", icon: "fileText", headOnly: true, group: "Finance and policies" },
@@ -171,6 +173,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   ],
   teach: [
     { href: "/teach/dashboard", label: "Home", icon: "house" },
+    { href: "/teach/actions", label: "Action centre", icon: "clipboardCheck" },
     { href: "/teach/today", label: "Today", icon: "sun", matchPrefixes: ["/teach/enrichment"] },
     { href: "/teach/classes", label: "My classes", icon: "presentation", group: "Teaching", matchPrefixes: ["/teach/class", "/teach/lessons"] },
     { href: "/teach/homework", label: "Homework", icon: "notebookPen", group: "Teaching" },
@@ -190,10 +193,12 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/teach/announcements", label: "Announcements", icon: "megaphone", group: "Communication" },
     { href: "/teach/profile", label: "My profile", icon: "userRound", group: "My staff area" },
     { href: "/teach/clock", label: "My hours", icon: "clock", group: "My staff area" },
+    { href: "/teach/handbook", label: "Staff handbook", icon: "bookOpen", group: "My staff area" },
     { href: "/teach/absences", label: "Pupil absences", icon: "calendarX", group: "Pupils" },
   ],
   family: [
     { href: "/family/dashboard", label: "Home", icon: "house" },
+    { href: "/family/actions", label: "Action centre", icon: "clipboardCheck" },
     { href: "/family/classes", label: "Classes", icon: "presentation", group: "Learning", matchPrefixes: ["/family/class", "/family/lessons"] },
     { href: "/family/todo", label: "To do", icon: "listChecks", group: "Learning", matchPrefixes: ["/family/homework"] },
     { href: "/family/behaviour", label: "Behaviour", icon: "heartHandshake", group: "Progress" },
@@ -211,6 +216,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   ],
   student: [
     { href: "/student/dashboard", label: "Home", icon: "house" },
+    { href: "/student/actions", label: "Action centre", icon: "clipboardCheck" },
     { href: "/student/classes", label: "My classes", icon: "presentation", group: "Learning", matchPrefixes: ["/student/class", "/student/lessons"] },
     { href: "/student/todo", label: "To do", icon: "listChecks", group: "Learning", matchPrefixes: ["/student/homework"] },
     { href: "/student/revision", label: "Unit revision", icon: "bookOpenCheck", group: "Learning" },

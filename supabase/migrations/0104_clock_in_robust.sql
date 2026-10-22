@@ -74,3 +74,43 @@ $$;
 
 revoke all on function public.shift_heartbeat(boolean) from public, anon;
 grant execute on function public.shift_heartbeat(boolean) to authenticated;
+
+-- Coming back within 15 minutes of being closed for inactivity (a laptop that slept, a long call away
+-- from the keyboard) resumes the same shift instead of starting a new one, so there are no tiny gaps.
+-- A shift closed by the maximum length, or by an admin, is never resumed.
+create or replace function public.clock_in_or_resume(p_note text default null)
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_uid uuid := auth.uid();
+  v_hours int;
+  v_last public.staff_shifts;
+begin
+  if v_uid is null or not public.is_staff_member(v_uid) then
+    raise exception 'not allowed' using errcode = '42501';
+  end if;
+  if exists (select 1 from public.staff_shifts where user_id = v_uid and clocked_out_at is null) then
+    return 'already_in';
+  end if;
+  select auto_clock_out_hours into v_hours from public.lms_settings where id;
+  v_hours := coalesce(v_hours, 12);
+  select * into v_last from public.staff_shifts where user_id = v_uid order by clocked_in_at desc limit 1;
+  if found
+     and v_last.auto_closed
+     and v_last.clocked_out_by is null
+     and v_last.clocked_out_at is not null
+     and v_last.clocked_out_at > now() - interval '15 minutes'
+     and v_last.clocked_in_at + make_interval(hours => v_hours) > now() then
+    update public.staff_shifts set clocked_out_at = null, auto_closed = false, last_seen_at = now() where id = v_last.id;
+    return 'resumed';
+  end if;
+  insert into public.staff_shifts (user_id, note) values (v_uid, nullif(btrim(p_note), ''));
+  return 'started';
+end;
+$$;
+
+revoke all on function public.clock_in_or_resume(text) from public, anon;
+grant execute on function public.clock_in_or_resume(text) to authenticated;
