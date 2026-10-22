@@ -172,7 +172,7 @@ function TimetableContent() {
     <div>
       <LessonsHeader title="Timetable" subtitle="The weekly grid. Drag a lesson to move it; click it to edit; nothing goes live until you publish." actions={exportActions} />
       {!data.loaded ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : runs.length === 0 ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">
           No timetable yet. <Link href="/admin/lessons/generate" className="font-semibold underline">Generate one</Link> or start a blank draft.
@@ -204,7 +204,7 @@ function TimetableContent() {
             </div>
             {view !== "all" && (
               <div className="mt-2 flex flex-wrap gap-1.5" role="group" aria-label="Choose one">
-                {entities.length === 0 && <span className="text-sm text-ink/55">Nothing to show for this view yet.</span>}
+                {entities.length === 0 && <span className="text-sm text-ink/65">Nothing to show for this view yet.</span>}
                 {entities.map((e) => (
                   <button key={e.id} type="button" aria-pressed={e.id === effFocus} onClick={() => setFocus(e.id)} className={`${chipCls(e.id === effFocus)} !py-0.5 !text-xs`}>{e.label}</button>
                 ))}
@@ -217,7 +217,7 @@ function TimetableContent() {
               {run && (run.status === "published" || run.status === "superseded") && (
                 <button type="button" onClick={() => rollback(run.id)} className={ghost}>Make an editable draft from this version</button>
               )}
-              {run && !editable && <span className="text-xs text-ink/60">This version is {run.status} and read-only.</span>}
+              {run && !editable && <span className="text-xs text-ink/65">This version is {run.status} and read-only.</span>}
               {hardConflicts.length > 0 && <span className="text-xs text-red-800">Publishing blocked: {hardConflicts.length} hard conflict{hardConflicts.length === 1 ? "" : "s"}.</span>}
               {run?.solver_stats && (run.solver_stats as Record<string, unknown>).regenerate_pending === true && (
                 <button type="button" className={ghost} onClick={async () => { await reload(); if (runId) await loadDetail(runId); }}>Check for results</button>
@@ -262,7 +262,7 @@ function TimetableContent() {
               {conflicts.map((c) => <p key={c.id} className={`rounded-lg px-3 py-2 text-xs ${c.severity === "hard" ? "bg-red-50 text-red-800" : "bg-amber-50 text-amber-800"}`}>[{c.severity}] {c.message}</p>)}
               {issues.map((i, n) => <p key={`${i.slotId}-${n}`} className={`rounded-lg px-3 py-2 text-xs ${i.level === "hard" ? "bg-red-50 text-red-800" : "bg-amber-50 text-amber-800"}`}>{i.text}</p>)}
               {gaps.map((g) => <p key={g.cls.id} className="rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-800">{g.cls.name}: {g.placed} of {g.cls.weekly_lessons} weekly lessons placed.</p>)}
-              {warningCount === 0 && <p className="text-xs text-ink/60">No clashes, availability problems or missing lessons found. Lessons with a warning are outlined in red in the grid.</p>}
+              {warningCount === 0 && <p className="text-xs text-ink/65">No clashes, availability problems or missing lessons found. Lessons with a warning are outlined in red in the grid.</p>}
             </div>
           </details>
 

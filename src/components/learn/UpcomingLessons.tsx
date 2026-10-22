@@ -56,8 +56,8 @@ export function UpcomingLessons({
     })();
   }, [supabase, classIds.join(",")]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  if (lessons === null) return <p className="text-sm text-ink/60">Loading lessons…</p>;
-  if (lessons.length === 0) return <p className="text-sm text-ink/60">{emptyLabel}</p>;
+  if (lessons === null) return <p className="text-sm text-ink/65">Loading lessons…</p>;
+  if (lessons.length === 0) return <p className="text-sm text-ink/65">{emptyLabel}</p>;
 
   return (
     <ul className="space-y-2">
@@ -72,7 +72,7 @@ export function UpcomingLessons({
               {l.timetable_slots?.classes?.subjects?.name ? " — " : ""}
               {l.timetable_slots?.classes?.name}
             </span>
-            <span className="text-ink/60">
+            <span className="text-ink/65">
               {new Date(`${l.date}T00:00:00`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })} ·{" "}
               {l.timetable_slots?.start_time.slice(0, 5)}
             </span>

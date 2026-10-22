@@ -93,16 +93,16 @@ function LessonCard({ lesson, open, onToggle }: { lesson: TodayLesson; open: boo
       <div className="flex flex-wrap items-center gap-4 px-5 py-4">
         <span className="h-12 w-12 shrink-0 rounded-xl" style={classBannerStyle(lesson.slot.class_id)} aria-hidden="true" />
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold text-ink/60">
+          <p className="text-sm font-semibold text-ink/65">
             {lesson.slot.start_time.slice(0, 5)}–{lesson.slot.end_time.slice(0, 5)}
             {state === "live" && <span className="ml-2 rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">Live</span>}
             {state === "now" && <span className="ml-2 rounded-full bg-teal-700 px-2 py-0.5 text-xs font-semibold text-white">Now</span>}
-            {state === "done" && <span className="ml-2 rounded-full bg-cream px-2 py-0.5 text-xs font-semibold text-ink/60">Finished</span>}
+            {state === "done" && <span className="ml-2 rounded-full bg-cream px-2 py-0.5 text-xs font-semibold text-ink/65">Finished</span>}
           </p>
           <Link href={`/teach/class?id=${lesson.slot.class_id}`} className="block truncate text-lg font-semibold text-ink hover:text-teal-700">
             {lesson.slot.className}
           </Link>
-          {lesson.objectives && <p className="truncate text-sm text-ink/60">{lesson.objectives}</p>}
+          {lesson.objectives && <p className="truncate text-sm text-ink/65">{lesson.objectives}</p>}
         </div>
         <div className="flex items-center gap-2">
           <Link href={`/teach/lessons/view?id=${lesson.id}`} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
@@ -152,7 +152,7 @@ function TodayContent() {
       ) : lessons.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center">
           <p className="text-base font-semibold text-ink">No lessons today</p>
-          <p className="mt-1 text-sm text-ink/60">
+          <p className="mt-1 text-sm text-ink/65">
             Your week is on the <Link href="/teach/calendar" className="text-teal-700 underline">calendar</Link>.
           </p>
         </div>

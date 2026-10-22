@@ -61,7 +61,7 @@ function ChildTimetable({ classIds, yearGroup }: { classIds: string[] | null; ye
     ).then(({ data }) => setSlots((data as unknown as TimetableSlot[]) || []));
   }, [supabase, classIds]);
 
-  if (slots === null) return <p className="text-sm text-ink/60">Loading timetable…</p>;
+  if (slots === null) return <p className="text-sm text-ink/65">Loading timetable…</p>;
   return <TimetableGrid slots={slots} yearGroups={yearGroup ? [yearGroup] : undefined} />;
 }
 
@@ -108,7 +108,7 @@ function ChildCard({ child }: { child: Child }) {
       <details className="group mt-4 border-t border-gold-light pt-3">
         <summary className="flex cursor-pointer list-none items-center justify-between py-1 text-sm font-semibold text-ink">
           Timetable and upcoming lessons
-          <Icon name="chevronDown" className="h-4 w-4 text-ink/60 transition-transform group-open:rotate-180" />
+          <Icon name="chevronDown" className="h-4 w-4 text-ink/65 transition-transform group-open:rotate-180" />
         </summary>
         <div className="mt-3">
           <div className="print:hidden mb-2 flex justify-end">
@@ -216,7 +216,7 @@ function FamilyContent() {
         <details className="group rounded-2xl border border-gold-light bg-white print:hidden" open={children !== null && !hasChildren ? true : undefined}>
           <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-3">
             <h2 className="text-h3 font-semibold text-ink">{hasChildren ? "Add another child" : "Add your child"}</h2>
-            <Icon name="chevronDown" className="h-4 w-4 text-ink/60 transition-transform group-open:rotate-180" />
+            <Icon name="chevronDown" className="h-4 w-4 text-ink/65 transition-transform group-open:rotate-180" />
           </summary>
           <div className="border-t border-gold-light p-5">
             {!hasChildren && children !== null && <p className="mb-3 text-sm text-ink/70">Add your child to see their timetable, homework and reports.</p>}

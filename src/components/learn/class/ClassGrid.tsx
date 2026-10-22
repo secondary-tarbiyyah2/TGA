@@ -72,7 +72,7 @@ export function ClassCard({ cls, href, progress }: { cls: ClassSummary; href: st
               <div className="h-full rounded-full bg-teal-500" style={{ width: `${progress.percent}%` }} />
             </div>
           )}
-          <p className="text-xs text-ink/55">{progress?.label ?? " "}</p>
+          <p className="text-xs text-ink/65">{progress?.label ?? " "}</p>
         </div>
       </div>
     </Link>
@@ -169,7 +169,7 @@ export function ClassGrid({
   }
 
   if (classes.length === 0) {
-    return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/60">{emptyLabel}</p>;
+    return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">{emptyLabel}</p>;
   }
 
   return (
@@ -205,7 +205,7 @@ export function ClassGrid({
         </div>
       )}
       {shown.length === 0 ? (
-        <p className="text-sm text-ink/60">No classes match &ldquo;{query}&rdquo;.</p>
+        <p className="text-sm text-ink/65">No classes match &ldquo;{query}&rdquo;.</p>
       ) : view === "list" && controls ? (
         <ul className="space-y-2">
           {shown.map((c) => (

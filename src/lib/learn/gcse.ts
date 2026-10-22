@@ -25,7 +25,7 @@ export const GCSE_STATUS_META: Record<GcseStatus, { label: string; className: st
   ahead: { label: "Ahead", className: "bg-green-100 text-green-700" },
   on_track: { label: "On track", className: "bg-teal-100 text-teal-800" },
   behind: { label: "Behind", className: "bg-amber-100 text-amber-800" },
-  no_data: { label: "Awaiting actual grade", className: "bg-cream text-ink/60" },
+  no_data: { label: "Awaiting actual grade", className: "bg-cream text-ink/65" },
 };
 
 /**
@@ -107,7 +107,7 @@ export function trendDirection(points: TrendPoint[]): TrendDirection {
 export const TREND_META: Record<TrendDirection, { symbol: string; label: string; className: string }> = {
   up: { symbol: "▲", label: "Improving", className: "text-green-700" },
   down: { symbol: "▼", label: "Slipping", className: "text-red-700" },
-  flat: { symbol: "●", label: "Steady", className: "text-ink/50" },
+  flat: { symbol: "●", label: "Steady", className: "text-ink/65" },
   none: { symbol: "–", label: "No trend yet", className: "text-ink/40" },
 };
 

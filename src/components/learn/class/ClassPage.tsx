@@ -75,8 +75,8 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
       );
   }, [classId, childId]);
 
-  if (rows === null) return <p className="text-sm text-ink/60">Loading…</p>;
-  if (rows.length === 0) return <p className="text-sm text-ink/60">No grades recorded for this class yet.</p>;
+  if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (rows.length === 0) return <p className="text-sm text-ink/65">No grades recorded for this class yet.</p>;
   const teacher = !childId;
   const overall =
     settings?.showOverallGrade && childId
@@ -109,7 +109,7 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
             <tr key={r.id}>
               {teacher && <td className="px-5 py-2.5 font-medium text-ink">{r.children?.name || "—"}</td>}
               <td className="px-5 py-2.5 text-ink/80">{r.title}</td>
-              <td className="px-5 py-2.5 text-ink/60">{fmtDate(r.date)}</td>
+              <td className="px-5 py-2.5 text-ink/65">{fmtDate(r.date)}</td>
               <td className="px-5 py-2.5 text-right font-semibold tabular-nums text-ink">
                 {r.grade_label || (r.percent != null ? `${r.percent}%` : "—")}
               </td>
@@ -172,9 +172,9 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
     });
   }, [classId, area, childQuery]);
 
-  if (!classId) return <p className="text-sm text-ink/60">No class selected. Open one from the classes page.</p>;
+  if (!classId) return <p className="text-sm text-ink/65">No class selected. Open one from the classes page.</p>;
   if (cls === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
-  if (cls === null) return <p className="text-sm text-ink/60">That class couldn&apos;t be found, or you don&apos;t have access to it.</p>;
+  if (cls === null) return <p className="text-sm text-ink/65">That class couldn&apos;t be found, or you don&apos;t have access to it.</p>;
 
   const crumbs: Crumb[] = [
     { label: "Dashboard", href: `${area}/dashboard` },
@@ -191,9 +191,9 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           <span aria-hidden="true" className="h-10 w-1.5 shrink-0 rounded-full bg-teal-700" />
           <div className="min-w-0">
             <h1 className="truncate text-xl font-semibold tracking-tight text-ink">{cls.name}</h1>
-            {meta && <p className="text-sm text-ink/55">{meta}</p>}
+            {meta && <p className="text-sm text-ink/65">{meta}</p>}
           </div>
-          <Link href={crumbs[1].href as string} className="ml-auto shrink-0 text-sm text-ink/55 hover:text-teal-700 hover:underline">
+          <Link href={crumbs[1].href as string} className="ml-auto shrink-0 text-sm text-ink/65 hover:text-teal-700 hover:underline">
             All classes
           </Link>
         </div>
@@ -207,7 +207,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
                 scroll={false}
                 aria-current={active ? "page" : undefined}
                 className={`shrink-0 border-b-[3px] px-3 py-3 text-sm font-medium transition-colors ${
-                  active ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"
+                  active ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:text-ink"
                 }`}
               >
                 {TAB_LABELS[t]}

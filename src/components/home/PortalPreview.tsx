@@ -72,24 +72,24 @@ export function PortalPreview() {
               <span className="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-semibold text-teal-900">Year 5</span>
             </div>
             <div className="mt-3 rounded-2xl border border-gold-light/60 bg-white p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Up next · 10:15</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Up next · 10:15</p>
               <p className="mt-1 font-semibold">Mathematics — fractions of amounts</p>
               <span className="mt-3 inline-flex rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white">Join lesson</span>
             </div>
             <div className="mt-3 grid grid-cols-2 gap-3">
               <div className="rounded-2xl border border-gold-light/60 bg-white p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">This week</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">This week</p>
                 <p className="mt-1 text-2xl font-semibold tabular-nums text-teal-700">20/20</p>
                 <p className="text-xs text-ink/70">lessons attended</p>
               </div>
               <div className="rounded-2xl border border-gold-light/60 bg-white p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">To sign</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">To sign</p>
                 <p className="mt-1 text-2xl font-semibold tabular-nums text-teal-700">1</p>
                 <p className="text-xs text-ink/70">consent form</p>
               </div>
             </div>
             <div className="mt-3 space-y-3 rounded-2xl border border-gold-light/60 bg-white p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Qur&apos;an progress</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Qur&apos;an progress</p>
               <Bar label="Juz' 30 memorised" value={72} />
               <Bar label="Term target" value={58} />
             </div>

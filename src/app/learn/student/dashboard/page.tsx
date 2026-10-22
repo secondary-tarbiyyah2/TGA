@@ -152,7 +152,7 @@ function StudentContent() {
             <ReportConcernLink />
           </div>
           <PrintScope title="My timetable">
-            {slots === null ? <p className="text-sm text-ink/60">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} yearGroups={yearGroupName ? [yearGroupName] : undefined} />}
+            {slots === null ? <p className="text-sm text-ink/65">Loading…</p> : <TimetableGrid slots={slots} simplified={simplified} yearGroups={yearGroupName ? [yearGroupName] : undefined} />}
           </PrintScope>
           <IcsFeedLink />
         </div>

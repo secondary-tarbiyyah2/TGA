@@ -240,16 +240,16 @@ export function FamilyWithdrawal() {
                 <textarea required rows={3} className={`${ui.input} ${field}`} value={f.reason} onChange={(e) => set({ reason: e.target.value })} />
               </label>
               <label className={ui.label}>
-                Forwarding address <span className="font-normal text-ink/60">(if you are moving)</span>
+                Forwarding address <span className="font-normal text-ink/65">(if you are moving)</span>
                 <input className={`${ui.input} ${field}`} value={f.forwarding} onChange={(e) => set({ forwarding: e.target.value })} />
               </label>
               <div className="grid gap-3 sm:grid-cols-2">
                 <label className={ui.label}>
-                  Second parent or carer <span className="font-normal text-ink/60">(optional)</span>
+                  Second parent or carer <span className="font-normal text-ink/65">(optional)</span>
                   <input className={`${ui.input} ${field}`} value={f.parent2Name} onChange={(e) => set({ parent2Name: e.target.value })} />
                 </label>
                 <label className={ui.label}>
-                  Their email <span className="font-normal text-ink/60">(optional)</span>
+                  Their email <span className="font-normal text-ink/65">(optional)</span>
                   <input type="email" className={`${ui.input} ${field}`} value={f.parent2Email} onChange={(e) => set({ parent2Email: e.target.value })} />
                 </label>
               </div>

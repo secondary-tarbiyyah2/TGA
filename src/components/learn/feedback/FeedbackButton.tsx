@@ -205,7 +205,7 @@ function FeedbackDialog({ onClose }: { onClose: () => void }) {
                     <label key={k.key} className={`flex cursor-pointer flex-col gap-1 rounded-xl border p-3 text-sm transition-colors has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-teal-700 ${kind === k.key ? "border-teal-700 bg-teal-100/60" : "border-gold-light hover:bg-cream"}`}>
                       <input type="radio" name="fb-kind" value={k.key} checked={kind === k.key} onChange={() => setKind(k.key)} className="sr-only" />
                       <span className="flex items-center gap-2 font-semibold text-ink">
-                        <Icon name={k.icon} className={`h-[18px] w-[18px] ${kind === k.key ? "text-teal-700" : "text-ink/60"}`} />
+                        <Icon name={k.icon} className={`h-[18px] w-[18px] ${kind === k.key ? "text-teal-700" : "text-ink/65"}`} />
                         {KIND_LABEL[k.key]}
                       </span>
                       <span className="text-xs text-ink/65">{k.hint}</span>
@@ -306,10 +306,10 @@ function FeedbackDialog({ onClose }: { onClose: () => void }) {
                   <ul className="mt-2 space-y-1.5">
                     {files.map((f, i) => (
                       <li key={`${f.name}-${i}`} className="flex items-center gap-2 rounded-lg bg-cream px-3 py-1.5 text-sm">
-                        <Icon name={f.type.startsWith("image/") ? "image" : "file"} className="h-4 w-4 shrink-0 text-ink/60" />
+                        <Icon name={f.type.startsWith("image/") ? "image" : "file"} className="h-4 w-4 shrink-0 text-ink/65" />
                         <span className="min-w-0 flex-1 truncate text-ink">{f.name}</span>
                         <span className="shrink-0 text-xs text-ink/65">{formatBytes(f.size)}</span>
-                        <button type="button" onClick={() => setFiles(files.filter((_, j) => j !== i))} aria-label={`Remove ${f.name}`} className="-mr-1 rounded p-1 text-ink/60 hover:bg-white hover:text-ink">
+                        <button type="button" onClick={() => setFiles(files.filter((_, j) => j !== i))} aria-label={`Remove ${f.name}`} className="-mr-1 rounded p-1 text-ink/65 hover:bg-white hover:text-ink">
                           <Icon name="x" className="h-4 w-4" />
                         </button>
                       </li>
@@ -326,7 +326,7 @@ function FeedbackDialog({ onClose }: { onClose: () => void }) {
                       This page, your browser and your last {activity.length} action{activity.length === 1 ? "" : "s"} in the portal, so we can see what happened.
                     </span>
                   </span>
-                  <Icon name="chevronDown" className="h-4 w-4 shrink-0 text-ink/60 transition-transform group-open:rotate-180" />
+                  <Icon name="chevronDown" className="h-4 w-4 shrink-0 text-ink/65 transition-transform group-open:rotate-180" />
                 </summary>
                 <div className="space-y-3 border-t border-gold-light px-4 py-3 text-sm">
                   <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-xs">

@@ -255,7 +255,7 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
                 {ticket.attachments.map((a) => (
                   <li key={a.path}>
                     <button type="button" onClick={() => open(a.path)} className="flex w-full items-center gap-2 rounded-lg bg-cream px-3 py-2 text-left hover:bg-gold-100">
-                      <Icon name={a.mime.startsWith("image/") ? "image" : "file"} className="h-4 w-4 shrink-0 text-ink/60" />
+                      <Icon name={a.mime.startsWith("image/") ? "image" : "file"} className="h-4 w-4 shrink-0 text-ink/65" />
                       <span className="min-w-0 flex-1 truncate text-ink">{a.name}</span>
                       <span className="shrink-0 text-xs text-ink/65">{formatBytes(a.size)}</span>
                       <Icon name="download" className="h-4 w-4 shrink-0 text-teal-700" />

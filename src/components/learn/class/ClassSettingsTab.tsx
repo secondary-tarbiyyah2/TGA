@@ -155,7 +155,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
           <label className="block text-sm font-medium text-ink">
             Class name
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} disabled={!canRename} className={`${input} mt-1 disabled:bg-cream/60`} />
-            {!canRename && <span className="mt-1 block text-xs font-normal text-ink/55">The office changes the class name in Academic setup.</span>}
+            {!canRename && <span className="mt-1 block text-xs font-normal text-ink/65">The office changes the class name in Academic setup.</span>}
           </label>
           <label className="block text-sm font-medium text-ink">
             Subject
@@ -177,7 +177,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
         <label className="block text-sm font-medium text-ink">
           Virtual lesson link
           <input type="url" value={s.meetingLink} onChange={(e) => set({ meetingLink: e.target.value })} placeholder="https://… (Teams, Meet or Zoom)" className={`${input} mt-1`} />
-          <span className="mt-1 block text-xs font-normal text-ink/55">This is where &ldquo;Join lesson&rdquo; takes pupils and families.</span>
+          <span className="mt-1 block text-xs font-normal text-ink/65">This is where &ldquo;Join lesson&rdquo; takes pupils and families.</span>
         </label>
         <button type="button" onClick={saveDetails} className="rounded-lg bg-gold-700 px-5 py-2 text-sm font-medium text-white hover:bg-gold-900">
           Save details
@@ -217,8 +217,8 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
 
         <div>
           <h3 className="text-sm font-semibold text-ink">Grade categories</h3>
-          <p className="mt-1 text-xs text-ink/60">Used when the calculation is &ldquo;Weighted by category&rdquo;. Link a category to an assessment type so results count towards it.</p>
-          {cats.length === 0 && <p className="mt-2 text-sm text-ink/55">No categories yet.</p>}
+          <p className="mt-1 text-xs text-ink/65">Used when the calculation is &ldquo;Weighted by category&rdquo;. Link a category to an assessment type so results count towards it.</p>
+          {cats.length === 0 && <p className="mt-2 text-sm text-ink/65">No categories yet.</p>}
           <ul className="mt-2 divide-y divide-gold-light/60">
             {cats.map((c) => (
               <li key={c.id} className="flex flex-wrap items-center gap-3 py-2">

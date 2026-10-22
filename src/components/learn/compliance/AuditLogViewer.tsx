@@ -215,7 +215,7 @@ export function AuditLogViewer() {
           <tbody>
             {rows === null && (
               <tr>
-                <td colSpan={4} className="py-2 text-sm text-ink/60">
+                <td colSpan={4} className="py-2 text-sm text-ink/65">
                   Loading…
                 </td>
               </tr>
@@ -234,10 +234,10 @@ export function AuditLogViewer() {
             ))}
           </tbody>
         </table>
-        {rows?.length === 0 && !error && <p className="mt-2 text-sm text-ink/60">No matching audit entries.</p>}
+        {rows?.length === 0 && !error && <p className="mt-2 text-sm text-ink/65">No matching audit entries.</p>}
       </div>
 
-      <div className="mt-3 flex items-center gap-3 text-xs text-ink/60">
+      <div className="mt-3 flex items-center gap-3 text-xs text-ink/65">
         <button type="button" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-medium text-ink/80 hover:bg-cream disabled:opacity-40">
           Previous
         </button>

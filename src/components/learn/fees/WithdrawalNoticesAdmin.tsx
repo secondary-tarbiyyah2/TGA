@@ -76,7 +76,7 @@ export function WithdrawalNoticesAdmin({ compact = false }: { compact?: boolean 
     <section aria-labelledby="withdrawals-heading" className={`${ui.card} mb-6`}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h2 id="withdrawals-heading" className="font-serif text-lg font-semibold text-ink">
-          Withdrawal notices {open.length > 0 && <span className="text-sm font-normal text-ink/60">· {open.length} open</span>}
+          Withdrawal notices {open.length > 0 && <span className="text-sm font-normal text-ink/65">· {open.length} open</span>}
         </h2>
         {!compact && rows.length > open.length && (
           <button type="button" className={ui.btnLink} onClick={() => setShowAll((v) => !v)}>
@@ -90,7 +90,7 @@ export function WithdrawalNoticesAdmin({ compact = false }: { compact?: boolean 
         </div>
       )}
       {list.length === 0 ? (
-        <p className="mt-2 text-sm text-ink/60">No open notices.</p>
+        <p className="mt-2 text-sm text-ink/65">No open notices.</p>
       ) : (
         <ul className="mt-3 divide-y divide-gold-light/60">
           {list.map((r) => (
@@ -98,7 +98,7 @@ export function WithdrawalNoticesAdmin({ compact = false }: { compact?: boolean 
               <div className="flex flex-wrap items-start justify-between gap-2">
                 <div className="min-w-0">
                   <p className="font-medium text-ink">
-                    {r.children?.name || "Pupil"} <span className="font-normal text-ink/60">· last day {formatDate(r.last_day)}</span>
+                    {r.children?.name || "Pupil"} <span className="font-normal text-ink/65">· last day {formatDate(r.last_day)}</span>
                   </p>
                   <p className="text-ink/70">
                     {destinationLabel(r.destination)}
@@ -158,7 +158,7 @@ export function WithdrawalNoticesAdmin({ compact = false }: { compact?: boolean 
                     <input type="date" className={`${ui.input} mt-1`} value={edit.invoice} onChange={(e) => setEdit({ ...edit, invoice: e.target.value })} />
                   </label>
                   <label className={ui.label}>
-                    Note to the family <span className="font-normal text-ink/60">(they see this)</span>
+                    Note to the family <span className="font-normal text-ink/65">(they see this)</span>
                     <input className={`${ui.input} mt-1`} value={edit.notes} onChange={(e) => setEdit({ ...edit, notes: e.target.value })} />
                   </label>
                   <div className="flex flex-wrap gap-3 sm:col-span-2 lg:col-span-4">

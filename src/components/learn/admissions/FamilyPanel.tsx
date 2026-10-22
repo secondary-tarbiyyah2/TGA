@@ -63,7 +63,7 @@ export function FamilyPanel({
   return (
     <section aria-label="Family" className="rounded-xl border border-gold-light/50 bg-cream/50 p-4">
       <h3 className="font-serif text-lg font-semibold text-ink">Family</h3>
-      <p className="mt-1 text-xs text-ink/60">
+      <p className="mt-1 text-xs text-ink/65">
         {family.length} applications were submitted together by {lead.parent_name} ({lead.parent_email}). Each child is a separate application; the contact details are shared.
       </p>
       <ul className="mt-3 divide-y divide-gold-light/40 rounded-lg border border-gold-light/50 bg-white">
@@ -71,7 +71,7 @@ export function FamilyPanel({
           <li key={f.id} className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 text-sm">
             <span className="min-w-0">
               <span className="font-medium text-ink">{fullName(f)}</span>
-              <span className="block text-xs text-ink/60">
+              <span className="block text-xs text-ink/65">
                 {f.year_group_applying} · {f.reference || "No reference"} · {STATUS_LABELS[f.status]}
                 {i === 0 ? " · first child (parent ID)" : ""}
               </span>
@@ -90,9 +90,9 @@ export function FamilyPanel({
       <div className="mt-3 text-sm text-ink">
         <p className="font-medium">Fees for the family (estimate)</p>
         {sibPct > 0 ? (
-          <p className="text-xs text-ink/60">Sibling discount: {sibPct}% off from the second child onwards, in the order they were entered on the form.</p>
+          <p className="text-xs text-ink/65">Sibling discount: {sibPct}% off from the second child onwards, in the order they were entered on the form.</p>
         ) : (
-          <p className="text-xs text-ink/60">No sibling discount percentage is set in the fee settings, so none is applied.</p>
+          <p className="text-xs text-ink/65">No sibling discount percentage is set in the fee settings, so none is applied.</p>
         )}
         <ul className="mt-2 space-y-1">
           {estimate.perChild.map((c, i) => (
@@ -113,7 +113,7 @@ export function FamilyPanel({
             <button type="button" onClick={applyDiscount} disabled={saving} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
               {saving ? "Saving…" : `Apply ${app.child_first_name}'s discount to their fees`}
             </button>
-            <span className="text-xs text-ink/60">Sets this child&apos;s annual fee override to {gbp(mine.net)}.</span>
+            <span className="text-xs text-ink/65">Sets this child&apos;s annual fee override to {gbp(mine.net)}.</span>
           </div>
         )}
         {msg && <p role="status" className="mt-1 text-xs text-ink/70">{msg}</p>}

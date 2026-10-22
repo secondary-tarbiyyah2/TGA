@@ -121,7 +121,7 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
           <input type="checkbox" checked={staff.bookable === true} disabled={savingBookable} onChange={(e) => toggleBookable(e.target.checked)} className="mt-1" />
           <span>
             <span className="font-medium">Show on the public admissions booking page</span>
-            <span className="mt-1 block text-xs text-ink/60">Visitors can only book calls with this person while this is on. Availability below is saved either way.</span>
+            <span className="mt-1 block text-xs text-ink/65">Visitors can only book calls with this person while this is on. Availability below is saved either way.</span>
           </span>
         </label>
         {bookableError && <p role="alert" className="mt-2 text-xs text-red-700">{bookableError}</p>}
@@ -130,7 +130,7 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
       <div>
         <p className="text-sm font-medium text-ink">Weekly availability (admissions calls)</p>
         <ul className="mt-2 space-y-1.5">
-          {rules === null && <li className="text-sm text-ink/60">Loading…</li>}
+          {rules === null && <li className="text-sm text-ink/65">Loading…</li>}
           {(rules || []).map((r) => (
             <li key={r.id} className="flex items-center justify-between rounded-lg border border-gold-light/50 bg-white px-3 py-1.5 text-sm">
               <span>
@@ -141,7 +141,7 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
               </button>
             </li>
           ))}
-          {rules?.length === 0 && <li className="text-sm text-ink/60">No weekly availability set yet.</li>}
+          {rules?.length === 0 && <li className="text-sm text-ink/65">No weekly availability set yet.</li>}
         </ul>
         <form onSubmit={addRule} className="mt-3 flex flex-wrap items-end gap-2">
           <label className="text-xs text-ink">
@@ -232,7 +232,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
     a.click();
   }
 
-  if (bookings === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (bookings === null) return <p className="text-sm text-ink/65">Loading…</p>;
 
   const now = new Date();
   const upcoming = bookings.filter((b) => new Date(b.starts_at) >= now && b.status === "confirmed");
@@ -247,12 +247,12 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
         </button>
       </div>
       <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
-        {upcoming.length === 0 && <li className="p-3 text-sm text-ink/60">No upcoming bookings.</li>}
+        {upcoming.length === 0 && <li className="p-3 text-sm text-ink/65">No upcoming bookings.</li>}
         {upcoming.map((b) => (
           <li key={b.id} className="flex flex-wrap items-center justify-between gap-2 p-3">
             <div>
               <p className="text-sm font-medium text-ink">{new Date(b.starts_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })}</p>
-              <p className="text-xs text-ink/60">
+              <p className="text-xs text-ink/65">
                 {b.contact_name} — {b.contact_email}
               </p>
             </div>
@@ -279,13 +279,13 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
 
       <p className="text-sm font-medium text-ink">Past &amp; other bookings</p>
       <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
-        {past.length === 0 && <li className="p-3 text-sm text-ink/60">Nothing here yet.</li>}
+        {past.length === 0 && <li className="p-3 text-sm text-ink/65">Nothing here yet.</li>}
         {past.map((b) => (
           <li key={b.id} className="flex items-center justify-between p-3 text-sm">
             <span>
               {new Date(b.starts_at).toLocaleDateString("en-GB")} — {b.contact_name}
             </span>
-            <span className="text-ink/60">{b.status}</span>
+            <span className="text-ink/65">{b.status}</span>
           </li>
         ))}
       </ul>
@@ -308,11 +308,11 @@ function MyAvailability() {
       .then(({ data }) => setStaff((data as StaffRow) || "none"));
   }, [supabase, session]);
 
-  if (staff === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (staff === null) return <p className="text-sm text-ink/65">Loading…</p>;
   if (staff === "none") {
     return (
       <Card title="My availability">
-        <p className="text-sm text-ink/60">
+        <p className="text-sm text-ink/65">
           No staff record is linked to your account yet, so there&apos;s nothing to show here. If you take admissions calls, ask
           another admin to set this up.
         </p>
@@ -352,8 +352,8 @@ function AllStaff() {
 
   return (
     <Card title="All staff" description="Manage any staff member's admissions availability, bookable status, or Teams link — e.g. while covering for someone on leave.">
-      {staffList === null && <p className="text-sm text-ink/60">Loading…</p>}
-      {staffList?.length === 0 && <p className="text-sm text-ink/60">No staff records yet.</p>}
+      {staffList === null && <p className="text-sm text-ink/65">Loading…</p>}
+      {staffList?.length === 0 && <p className="text-sm text-ink/65">No staff records yet.</p>}
       <ul className="space-y-2">
         {(staffList || []).map((s) => (
           <li key={s.id} className="rounded-xl border border-gold-light/50">
@@ -398,7 +398,7 @@ export function CallsAndBookings() {
     <div className="space-y-6">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h2 font-semibold text-ink">Calls &amp; bookings</h2>
-        <p className="mt-1 text-sm text-ink/60">Manage admissions-call availability, bookable status, and bookings. These are short intro calls booked from the website. The GL assessment is a separate stage, scheduled on each application under Process.</p>
+        <p className="mt-1 text-sm text-ink/65">Manage admissions-call availability, bookable status, and bookings. These are short intro calls booked from the website. The GL assessment is a separate stage, scheduled on each application under Process.</p>
       </div>
 
       {canManageOthers && (

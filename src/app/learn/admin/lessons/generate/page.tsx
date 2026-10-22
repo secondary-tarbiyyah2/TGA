@@ -21,7 +21,7 @@ function Step({ n, title, help, active, children }: { n: number; title: string; 
         <span aria-hidden="true" className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-100 text-sm font-semibold text-gold-900">{n}</span>
         <div className="min-w-0">
           <h2 className="font-serif text-h3 font-semibold text-ink">{title}</h2>
-          <p className="mt-0.5 text-sm text-ink/60">{help}</p>
+          <p className="mt-0.5 text-sm text-ink/65">{help}</p>
         </div>
       </div>
       <div className="mt-4">{children}</div>
@@ -157,7 +157,7 @@ function GenerateContent() {
 
       <div className="space-y-5">
         <Step n={1} title="Choose the academic year" help="Which school year is this timetable for?" active={!year}>
-          {!data.loaded && <p className="text-sm text-ink/60">Loading…</p>}
+          {!data.loaded && <p className="text-sm text-ink/65">Loading…</p>}
           {data.loaded && data.years.length === 0 && (
             <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
               No academic year exists yet. <Link href="/admin/academic/years" className="font-semibold underline">Add one in Academic setup</Link>, then come back.
@@ -168,7 +168,7 @@ function GenerateContent() {
               <div className="flex flex-wrap gap-2" role="group" aria-label="Academic year">
                 {data.years.map((y) => <button key={y.id} type="button" aria-pressed={y.id === effYearId} onClick={() => setYearId(y.id)} className={chipCls(y.id === effYearId)}>{y.label}</button>)}
               </div>
-              {year && <p className="text-xs text-ink/60">{year.starts_on} to {year.ends_on}</p>}
+              {year && <p className="text-xs text-ink/65">{year.starts_on} to {year.ends_on}</p>}
               <label className="block max-w-md text-xs font-medium text-ink/70">
                 Name for this draft (optional)
                 <input value={runLabel} onChange={(e) => setRunLabel(e.target.value)} placeholder="e.g. Autumn draft 2" className={fieldCls} />
@@ -179,7 +179,7 @@ function GenerateContent() {
 
         <Step n={2} title="Check classes, teachers and availability" help="The generator can only place what is set up. Fix anything marked ! first." active={Boolean(year) && needsSetup}>
           {!year ? (
-            <p className="text-sm text-ink/60">Choose an academic year in step 1.</p>
+            <p className="text-sm text-ink/65">Choose an academic year in step 1.</p>
           ) : (
             <ul className="space-y-2">
               <Check ok={yearClasses.length > 0} fix={<Link href="/admin/academic/classes" className="text-sm font-semibold underline">Add classes</Link>}>
@@ -216,11 +216,11 @@ function GenerateContent() {
           {year && load.rows.length > 0 && (
             <div className="mt-4">
               <h3 className="text-sm font-semibold text-ink">Teacher load vs availability</h3>
-              <p className="text-xs text-ink/55">Lessons a week each teacher needs across every class, against the periods they can work (at most {DEFAULT_MAX_LESSONS_PER_DAY} lessons a day). Fix red rows first or the generator will leave lessons out.</p>
+              <p className="text-xs text-ink/65">Lessons a week each teacher needs across every class, against the periods they can work (at most {DEFAULT_MAX_LESSONS_PER_DAY} lessons a day). Fix red rows first or the generator will leave lessons out.</p>
               <div className="mt-2 overflow-x-auto rounded-xl border border-gold-light/50">
                 <table className="w-full min-w-[560px] border-collapse text-left text-sm">
                   <thead>
-                    <tr className="bg-cream/70 text-xs text-ink/60">
+                    <tr className="bg-cream/70 text-xs text-ink/65">
                       <th className="p-2 font-semibold">Teacher</th>
                       <th className="p-2 text-right font-semibold">Lessons needed</th>
                       <th className="p-2 text-right font-semibold">Available periods</th>
@@ -233,7 +233,7 @@ function GenerateContent() {
                       <tr key={r.teacherId} className="border-t border-gold-light/30 align-top">
                         <td className="p-2">
                           <span className="font-medium text-ink">{r.name}</span>
-                          <span className="block text-[11px] text-ink/55">{r.contributors.map((c) => `${c.label} ${c.lessons}`).join(", ")}</span>
+                          <span className="block text-[11px] text-ink/65">{r.contributors.map((c) => `${c.label} ${c.lessons}`).join(", ")}</span>
                         </td>
                         <td className="p-2 text-right tabular-nums">{r.lessons}</td>
                         <td className="p-2 text-right tabular-nums">{r.availablePeriods}</td>
@@ -262,7 +262,7 @@ function GenerateContent() {
             <button type="button" className={ghost} onClick={async () => { await reload(); setMessage("Checked for new drafts."); }}>Check for a new draft</button>
           </div>
           {waitingFrom !== null && <p className="mt-3 text-sm text-ink/70">Working… this page shows the draft by itself when it is ready.</p>}
-          {yearClasses.length === 0 && year && <p className="mt-3 text-xs text-ink/55">Add classes for {year.label} first (step 2).</p>}
+          {yearClasses.length === 0 && year && <p className="mt-3 text-xs text-ink/65">Add classes for {year.label} first (step 2).</p>}
         </Step>
 
         <Step n={4} title="Review, fix and publish" help="Open the draft in the timetable to move lessons, resolve warnings and publish." active={Boolean(latest)}>
@@ -270,14 +270,14 @@ function GenerateContent() {
             <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">No timetable yet. Complete steps 1 to 3, then your draft appears here.</p>
           ) : (
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="text-sm text-ink/80">Latest version: <strong>{latest.label}</strong> <span className="text-ink/55">({latest.status}, {latest.created_at.slice(0, 10)})</span></p>
+              <p className="text-sm text-ink/80">Latest version: <strong>{latest.label}</strong> <span className="text-ink/65">({latest.status}, {latest.created_at.slice(0, 10)})</span></p>
               <Link href="/admin/lessons/timetable" className={btn}>Open in timetable &rarr;</Link>
             </div>
           )}
           {latest && latestConflicts.some((c) => !c.resolved) && (
             <div className="mt-4">
               <ReconciliationPanel conflicts={latestConflicts} canRerun={false} onRerun={() => undefined} busy={false} lockedCount={0} />
-              <p className="mt-2 text-xs text-ink/60">To keep lessons you place by hand and re-generate the rest, open the draft in the timetable and use &ldquo;Re-run keeping locked lessons&rdquo;.</p>
+              <p className="mt-2 text-xs text-ink/65">To keep lessons you place by hand and re-generate the rest, open the draft in the timetable and use &ldquo;Re-run keeping locked lessons&rdquo;.</p>
             </div>
           )}
         </Step>

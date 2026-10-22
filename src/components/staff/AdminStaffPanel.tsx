@@ -107,14 +107,14 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
       <section>
         <h2 className="font-serif text-lg font-semibold text-ink">{roleFilter === "teacher" ? "Teacher accounts" : "Staff accounts"}</h2>
         <ul className="mt-3 divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
-          {visibleStaff.length === 0 && <li className="p-4 text-sm text-ink/60">No accounts yet.</li>}
+          {visibleStaff.length === 0 && <li className="p-4 text-sm text-ink/65">No accounts yet.</li>}
           {visibleStaff.map((s) => (
             <li key={s.id} className="flex flex-wrap items-center justify-between gap-3 p-4">
               <div>
                 <p className="font-medium text-ink">
-                  {s.display_name} <span className="text-xs text-ink/50">— {s.role_title}</span>
+                  {s.display_name} <span className="text-xs text-ink/65">— {s.role_title}</span>
                 </p>
-                <p className="text-xs text-ink/60">
+                <p className="text-xs text-ink/65">
                   {s.profiles?.email} · role: {s.profiles?.role} · {s.active ? "active" : "deactivated"}
                 </p>
               </div>
@@ -143,7 +143,7 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
 
       <section>
         <h2 className="font-serif text-lg font-semibold text-ink">{roleFilter === "teacher" ? "Create a teacher account" : "Invite a new staff account"}</h2>
-        <p className="mt-1 text-sm text-ink/60">
+        <p className="mt-1 text-sm text-ink/65">
           Creates the account with a temporary password right away — no email needed. We&apos;ll also try to email it,
           but either way you get a copyable password below to share yourself.
         </p>
@@ -192,23 +192,23 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
             <button type="button" onClick={copyCredentials} className="mt-3 rounded-full border border-gold-500 px-4 py-1.5 text-xs text-gold-700 hover:bg-cream">
               {copied ? "Copied!" : "Copy to clipboard"}
             </button>
-            <p className="mt-2 text-xs text-ink/50">This password is shown once — it won&apos;t be shown again after you leave this page.</p>
+            <p className="mt-2 text-xs text-ink/65">This password is shown once — it won&apos;t be shown again after you leave this page.</p>
           </div>
         )}
       </section>
 
       <section>
         <h2 className="font-serif text-lg font-semibold text-ink">Recent admin activity</h2>
-        <p className="mt-1 text-sm text-ink/60">Every change to staff accounts, roles and bookings is logged automatically.</p>
+        <p className="mt-1 text-sm text-ink/65">Every change to staff accounts, roles and bookings is logged automatically.</p>
         <ul className="mt-3 divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white text-sm">
-          {auditLog.length === 0 && <li className="p-4 text-ink/60">No activity yet.</li>}
+          {auditLog.length === 0 && <li className="p-4 text-ink/65">No activity yet.</li>}
           {auditLog.map((entry) => (
             <li key={entry.id} className="flex items-center justify-between p-3">
               <span>
                 <span className="font-medium text-ink">{entry.actor_email || "system"}</span>{" "}
-                <span className="text-ink/60">{entry.action.toLowerCase()}d {entry.target_table.replace(/_/g, " ")}</span>
+                <span className="text-ink/65">{entry.action.toLowerCase()}d {entry.target_table.replace(/_/g, " ")}</span>
               </span>
-              <span className="text-xs text-ink/50">{new Date(entry.created_at).toLocaleString("en-GB")}</span>
+              <span className="text-xs text-ink/65">{new Date(entry.created_at).toLocaleString("en-GB")}</span>
             </li>
           ))}
         </ul>

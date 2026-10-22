@@ -2,8 +2,8 @@ import type { ActivityEvent } from "@/lib/learn/activityLog";
 import { Icon, type IconName } from "@/components/learn/Icon";
 
 const TYPE: Record<ActivityEvent["type"], { icon: IconName; tone: string; label: string }> = {
-  page: { icon: "file", tone: "text-ink/60", label: "Page" },
-  click: { icon: "circleCheck", tone: "text-ink/60", label: "Action" },
+  page: { icon: "file", tone: "text-ink/65", label: "Page" },
+  click: { icon: "circleCheck", tone: "text-ink/65", label: "Action" },
   error: { icon: "bug", tone: "text-red-700", label: "Error" },
   request: { icon: "shieldAlert", tone: "text-red-700", label: "Failed request" },
 };
@@ -24,7 +24,7 @@ export function ActivityList({ events, empty = "Nothing recorded yet in this bro
           const t = TYPE[e.type] || TYPE.page;
           return (
             <li key={`${e.t}-${i}`} className="flex gap-2">
-              <time dateTime={e.t} className="w-12 shrink-0 tabular-nums text-ink/60">
+              <time dateTime={e.t} className="w-12 shrink-0 tabular-nums text-ink/65">
                 {new Date(e.t).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}
               </time>
               <Icon name={t.icon} className={`mt-px h-3.5 w-3.5 shrink-0 ${t.tone}`} />

@@ -45,7 +45,7 @@ function AcademicHub() {
         subtitle="Set the school up once, in order. Each step has its own page."
       />
       {!data.loaded ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : (
         <div className="space-y-5">
           <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-teal-500/30 bg-teal-100/60 px-4 py-3 text-sm text-teal-900">
@@ -64,7 +64,7 @@ function AcademicHub() {
                     <span aria-hidden="true" className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${c.done ? "bg-green-600 text-white" : "bg-gold-100 text-gold-900"}`}>{c.done ? "✓" : i + 1}</span>
                     <h2 className="font-serif text-h3 font-semibold text-ink">{c.title}</h2>
                   </div>
-                  <p className="mt-2 flex-1 text-sm text-ink/60">{c.help}</p>
+                  <p className="mt-2 flex-1 text-sm text-ink/65">{c.help}</p>
                   <p className="mt-3 text-xs font-semibold text-ink/70">{c.count} {c.count === 1 ? c.unit : c.unit.endsWith("s") ? c.unit + "es" : c.unit + "s"} &middot; {c.done ? "Done" : "To do"}</p>
                 </Link>
               </li>

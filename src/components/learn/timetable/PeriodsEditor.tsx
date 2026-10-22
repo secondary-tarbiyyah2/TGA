@@ -147,7 +147,7 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
           <h2 className="font-serif text-h3 font-semibold text-ink">School day</h2>
-          <p className="mt-0.5 text-sm text-ink/60">
+          <p className="mt-0.5 text-sm text-ink/65">
             Lessons, breaks, lunch, prayer and supervised enrichment (games, play, nasheed, reading club...). The timetable generator places lessons only in lesson periods. Enrichment and breaks appear on every timetable and calendar but have no teacher, so they never clash.
           </p>
         </div>
@@ -173,8 +173,8 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
                 <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${KIND_STYLE[p.kind].chip}`}>{KIND_STYLE[p.kind].label}</span>
                 <strong className="tabular-nums">{p.start_time}-{p.end_time}</strong>
                 <span>{p.name}</span>
-                {p.kind === "enrichment" && p.activity ? <span className="text-ink/60">({p.activity})</span> : null}
-                {p.kind === "enrichment" && p.supervisor_user_id ? <span className="text-ink/60">supervised by {p.supervisor_name || staffName(p.supervisor_user_id) || "a member of staff"}</span> : null}
+                {p.kind === "enrichment" && p.activity ? <span className="text-ink/65">({p.activity})</span> : null}
+                {p.kind === "enrichment" && p.supervisor_user_id ? <span className="text-ink/65">supervised by {p.supervisor_name || staffName(p.supervisor_user_id) || "a member of staff"}</span> : null}
                 {rowClashes.some((c) => c.periodId === p.id) ? <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-900">Supervisor is teaching then</span> : null}
                 <span className="text-xs text-ink/65">{daysLabel(p.weekdays)} · {audienceLabel(p.applies_to)}{p.active ? "" : " · off"}</span>
               </span>

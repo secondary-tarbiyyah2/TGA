@@ -175,14 +175,14 @@ function GateScreen({ userId, signedInName }: { userId: string; signedInName: st
   return (
     <div className="flex min-h-[70vh] w-full items-center justify-center py-10">
       <div className="w-full max-w-md rounded-2xl border border-gold-light bg-white p-6 text-center shadow-sm sm:p-8">
-        <p className="text-sm font-medium text-ink/60">
+        <p className="text-sm font-medium text-ink/65">
           {greeting}
           {first ? `, ${first}` : ""}
         </p>
         <p className="mt-3 text-5xl font-semibold tabular-nums tracking-tight text-ink sm:text-6xl" aria-live="off">
           {now.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}
         </p>
-        <p className="mt-1 text-sm text-ink/60">{now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</p>
+        <p className="mt-1 text-sm text-ink/65">{now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</p>
         <p className="mt-6 text-sm text-ink/75">You need to clock in before you can use the portal.</p>
         <input
           value={note}
@@ -205,7 +205,7 @@ function GateScreen({ userId, signedInName }: { userId: string; signedInName: st
             {error}
           </p>
         )}
-        <button type="button" onClick={signOut} className="mt-6 text-sm text-ink/55 underline hover:text-ink">
+        <button type="button" onClick={signOut} className="mt-6 text-sm text-ink/65 underline hover:text-ink">
           Sign out
         </button>
       </div>
@@ -238,7 +238,7 @@ export function ClockInGate({ userId, roles, children }: { userId: string; roles
   const exempt = EXEMPT_PATHS.some((x) => p === x || p.startsWith(x + "/"));
 
   if (!isStaff || exempt) return <>{children}</>;
-  if (!loaded) return <p className="py-10 text-ink/60">Loading…</p>;
+  if (!loaded) return <p className="py-10 text-ink/65">Loading…</p>;
   if (!failed && required && !shift) return <GateScreen userId={userId} signedInName={name} />;
 
   return (
@@ -321,7 +321,7 @@ export function ClockChip({ userId, roles }: { userId: string; roles: RoleGrant[
             <p className="text-sm font-medium text-ink">
               Clocked in at {new Date(shift.clocked_in_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}
             </p>
-            <p className="text-xs text-ink/55">{elapsed} so far. Closing the portal clocks you out automatically within a few minutes. Clocking out locks the portal until you clock in again.</p>
+            <p className="text-xs text-ink/65">{elapsed} so far. Closing the portal clocks you out automatically within a few minutes. Clocking out locks the portal until you clock in again.</p>
             <input
               value={note}
               onChange={(e) => setNote(e.target.value)}

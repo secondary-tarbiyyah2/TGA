@@ -257,7 +257,7 @@ export function PolicyEditor() {
             </p>
           ) : (
             <label className="block">
-              <span className="text-xs text-ink/60">Link to a file elsewhere (not needed if you upload one)</span>
+              <span className="text-xs text-ink/65">Link to a file elsewhere (not needed if you upload one)</span>
               <input value={draft.file_url} onChange={(e) => set("file_url", e.target.value)} placeholder="https://… or /policies/…pdf" className={inputCls} />
             </label>
           )}
@@ -301,7 +301,7 @@ export function PolicyEditor() {
   return (
     <Card title="Policy documents" description="The policies listed on the website's Policies page. Changes are live immediately: they appear on the website as soon as you save, with no rebuild. To choose which policies need a signature, use Documents & signatures.">
       {rows === null ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : (
         <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
           {live.map((r) => (
@@ -328,7 +328,7 @@ export function PolicyEditor() {
             </li>
           ))}
           {live.length === 0 && (
-            <li className="p-3 text-sm text-ink/60">
+            <li className="p-3 text-sm text-ink/65">
               No policies in the database yet.{" "}
               <button type="button" onClick={importCurrent} disabled={busy} className="font-medium text-teal-700 underline disabled:opacity-50">Import the current website policies</button>
             </li>
@@ -344,13 +344,13 @@ export function PolicyEditor() {
 
       {removed.length > 0 && (
         <div className="mt-4">
-          <button type="button" onClick={() => setShowRemoved((v) => !v)} className="text-xs font-medium text-ink/60 underline">
+          <button type="button" onClick={() => setShowRemoved((v) => !v)} className="text-xs font-medium text-ink/65 underline">
             {showRemoved ? "Hide" : "Show"} removed ({removed.length})
           </button>
           {showRemoved && (
             <ul className="mt-2 divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
               {removed.map((r) => (
-                <li key={r.id} className="flex items-center justify-between gap-3 p-3 text-sm text-ink/60">
+                <li key={r.id} className="flex items-center justify-between gap-3 p-3 text-sm text-ink/65">
                   <span>{r.number} &mdash; {r.title}</span>
                   <button type="button" onClick={() => restore(r)} disabled={busy} className="rounded-full border border-gold-light px-3 py-1 text-xs text-ink/75 hover:bg-cream disabled:opacity-50">Restore</button>
                 </li>

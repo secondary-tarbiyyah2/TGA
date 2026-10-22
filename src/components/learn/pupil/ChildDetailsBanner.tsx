@@ -53,7 +53,7 @@ export function ChildDetailsBanner() {
       <ul className="mt-3 space-y-2">
         {rows.map((r) => (
           <li key={r.id} className="rounded-xl bg-white/70 px-3 py-2 text-sm text-ink">
-            <span className="font-semibold">{r.name}</span> <span className="text-ink/60">({r.percent}% complete)</span>
+            <span className="font-semibold">{r.name}</span> <span className="text-ink/65">({r.percent}% complete)</span>
             <span className="block text-xs text-red-800">Still required: {r.missing.join(", ")}</span>
           </li>
         ))}

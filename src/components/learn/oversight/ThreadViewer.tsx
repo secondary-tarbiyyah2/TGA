@@ -42,7 +42,7 @@ export function ThreadViewer({ thread }: { thread: OversightThread }) {
       <div className="flex items-center justify-between gap-3 border-b border-ink/10 px-4 py-3">
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold text-ink">{threadTitle(thread)}</p>
-          <p className="truncate text-xs text-ink/55">
+          <p className="truncate text-xs text-ink/65">
             {thread.role_a} ↔ {thread.role_b}
             {thread.child_name ? ` · about ${thread.child_name}` : ""}
           </p>
@@ -56,8 +56,8 @@ export function ThreadViewer({ thread }: { thread: OversightThread }) {
       </div>
       <div className="min-h-0 flex-1 space-y-2 overflow-y-auto p-4">
         {error && <p className="text-sm text-red-700">Could not open this conversation: {error}</p>}
-        {!error && messages === null && <p className="text-sm text-ink/55">Opening…</p>}
-        {messages?.length === 0 && <p className="text-sm text-ink/55">No messages in this conversation.</p>}
+        {!error && messages === null && <p className="text-sm text-ink/65">Opening…</p>}
+        {messages?.length === 0 && <p className="text-sm text-ink/65">No messages in this conversation.</p>}
         {messages?.map((m) => {
           const day = new Date(m.created_at).toDateString();
           const showDay = day !== lastDay;

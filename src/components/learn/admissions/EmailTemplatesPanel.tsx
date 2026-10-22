@@ -214,12 +214,12 @@ export function EmailTemplatesPanel() {
             <input type="checkbox" className="mt-1" checked={NEVER_AUTO.includes(selected) || manualOnly ? false : cur.auto_send} disabled={NEVER_AUTO.includes(selected) || manualOnly || !loaded} onChange={(e) => set({ auto_send: e.target.checked })} />
             <span>
               Send automatically
-              <span className="block text-xs font-normal text-ink/60">{WHEN[selected]}</span>
+              <span className="block text-xs font-normal text-ink/65">{WHEN[selected]}</span>
             </span>
           </label>
           <div className="flex flex-wrap items-center gap-2">
             <VariablePicker onPick={insertVariable} />
-            <span className="text-xs text-ink/55">Values show as <span className="rounded bg-teal-100 px-1 text-teal-900">pills</span>. Insert goes where your cursor is (subject or message).</span>
+            <span className="text-xs text-ink/65">Values show as <span className="rounded bg-teal-100 px-1 text-teal-900">pills</span>. Insert goes where your cursor is (subject or message).</span>
           </div>
           {unknown.length > 0 && (
             <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">
@@ -246,7 +246,7 @@ export function EmailTemplatesPanel() {
             </button>
             <button type="button" onClick={sendTestToMe} className={ghostBtn}>Send test to me</button>
             {!isDefault && <span className="text-xs text-ink/65">Edited from the built-in text</span>}
-            {anyDirty && !dirty && <span className="text-xs text-ink/55">Other templates have unsaved changes (marked *).</span>}
+            {anyDirty && !dirty && <span className="text-xs text-ink/65">Other templates have unsaved changes (marked *).</span>}
             {msg && <span role={msg.ok ? "status" : "alert"} className={`text-xs ${msg.ok ? "text-teal-700" : "text-red-700"}`}>{msg.text}</span>}
           </div>
 

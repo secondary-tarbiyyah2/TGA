@@ -115,7 +115,7 @@ export function SyllabusPack() {
       <li key={name} className="flex flex-wrap items-center justify-between gap-2 px-4 py-3">
         <span className="min-w-0 text-sm text-ink">
           <span className="font-medium">{label}</span>
-          {sub && <span className="ml-2 text-xs text-ink/60">{sub}</span>}
+          {sub && <span className="ml-2 text-xs text-ink/65">{sub}</span>}
         </span>
         <span className="flex gap-2">
           {pdf && (
@@ -161,7 +161,7 @@ export function SyllabusPack() {
 
       {groups && subjects.length > 0 && (
         <div className="rounded-2xl border border-gold-light bg-white p-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Subject</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Subject</p>
           <div className="mt-2 flex flex-wrap gap-2">
             {subjects.map((sb) => (
               <button key={sb} type="button" aria-pressed={subject === sb} onClick={() => setSubject(subject === sb ? "" : sb)} className={chip(subject === sb)}>
@@ -171,7 +171,7 @@ export function SyllabusPack() {
           </div>
           {levels.length > 1 && (
             <>
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/60">Level</p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/65">Level</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <button type="button" aria-pressed={level === "all"} onClick={() => setLevel("all")} className={chip(level === "all")}>
                   All levels

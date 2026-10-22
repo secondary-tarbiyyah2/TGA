@@ -94,7 +94,7 @@ const fieldCls = ui.input;
 function StatTile({ label, value, sub, dot }: { label: string; value: string | number; sub?: string; dot?: string }) {
   return (
     <div className="rounded-2xl border border-gold-light bg-white p-4">
-      <p className="flex items-center gap-1.5 text-sm font-medium text-ink/60">
+      <p className="flex items-center gap-1.5 text-sm font-medium text-ink/65">
         {dot && <span aria-hidden="true" className={`h-2 w-2 rounded-full ${dot}`} />}
         {label}
       </p>
@@ -116,7 +116,7 @@ function Section({ title, hint, children }: { title: string; hint?: string; chil
   );
 }
 
-const th = "whitespace-nowrap border-b border-gold-light/50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/55";
+const th = "whitespace-nowrap border-b border-gold-light/50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/65";
 const td = "border-b border-gold-light/20 px-3 py-2";
 
 function ReportsContent() {
@@ -302,7 +302,7 @@ function ReportsContent() {
             </span>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
-            <label className="text-xs font-medium text-ink/60">
+            <label className="text-xs font-medium text-ink/65">
               From
               <input
                 type="date"
@@ -315,7 +315,7 @@ function ReportsContent() {
                 className={`mt-1 ${fieldCls}`}
               />
             </label>
-            <label className="text-xs font-medium text-ink/60">
+            <label className="text-xs font-medium text-ink/65">
               To
               <input
                 type="date"
@@ -328,7 +328,7 @@ function ReportsContent() {
                 className={`mt-1 ${fieldCls}`}
               />
             </label>
-            <label className="text-xs font-medium text-ink/60">
+            <label className="text-xs font-medium text-ink/65">
               Year group
               <select
                 value={yearGroupId}
@@ -346,7 +346,7 @@ function ReportsContent() {
                 ))}
               </select>
             </label>
-            <label className="text-xs font-medium text-ink/60">
+            <label className="text-xs font-medium text-ink/65">
               Class
               <select value={classId} onChange={(e) => setClassId(e.target.value)} className={`mt-1 ${fieldCls}`}>
                 <option value="">{yearGroupId ? "All classes in year group" : "All classes"}</option>
@@ -357,7 +357,7 @@ function ReportsContent() {
                 ))}
               </select>
             </label>
-            <label className="text-xs font-medium text-ink/60">
+            <label className="text-xs font-medium text-ink/65">
               Status
               <select value={status} onChange={(e) => setStatus(e.target.value as "" | Status)} className={`mt-1 ${fieldCls}`}>
                 <option value="">Any status</option>
@@ -368,7 +368,7 @@ function ReportsContent() {
                 ))}
               </select>
             </label>
-            <label className="text-xs font-medium text-ink/60">
+            <label className="text-xs font-medium text-ink/65">
               Student
               <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search name" className={`mt-1 ${fieldCls}`} />
             </label>
@@ -382,7 +382,7 @@ function ReportsContent() {
         </div>
 
         {error && <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load attendance: {error}</p>}
-        {rows === null && !error && !badRange && <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/60">Loading attendance…</p>}
+        {rows === null && !error && !badRange && <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/65">Loading attendance…</p>}
         {truncated && (
           <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
             Showing the first {MAX_ROWS.toLocaleString()} records for this date range. Narrow the dates to see everything.
@@ -401,7 +401,7 @@ function ReportsContent() {
             {total === 0 ? (
               <div className="rounded-2xl border border-dashed border-gold-light bg-white p-10 text-center">
                 <p className="font-medium text-ink">No attendance records match</p>
-                <p className="mt-1 text-sm text-ink/60">{filtersActive ? "Try clearing a filter or widening the date range." : "No registers were marked in this date range."}</p>
+                <p className="mt-1 text-sm text-ink/65">{filtersActive ? "Try clearing a filter or widening the date range." : "No registers were marked in this date range."}</p>
                 {filtersActive && (
                   <button type="button" onClick={reset} className="mt-3 rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold text-ink/80 hover:bg-cream">
                     Clear filters
@@ -539,7 +539,7 @@ function DayLessonCard({ lesson }: { lesson: DayLesson }) {
       <div className="flex flex-wrap items-center gap-3 px-4 py-3 sm:px-5">
         <span className="h-10 w-10 shrink-0 rounded-xl" style={classBannerStyle(lesson.classId)} aria-hidden="true" />
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold text-ink/60">
+          <p className="text-sm font-semibold text-ink/65">
             {lesson.start}–{lesson.end}
           </p>
           <Link href={`/admin/class?id=${lesson.classId}`} className="block truncate text-base font-semibold text-ink hover:text-teal-700">
@@ -613,12 +613,12 @@ function TakeRegister() {
         <button type="button" onClick={() => go(localDateKey(new Date()))} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-teal-700 hover:bg-cream">
           Today
         </button>
-        <span className="w-full text-sm text-ink/60 sm:ml-auto sm:w-auto">{label}</span>
+        <span className="w-full text-sm text-ink/65 sm:ml-auto sm:w-auto">{label}</span>
       </div>
       {lessons === null ? (
         <div className="h-40 animate-pulse rounded-2xl bg-white" />
       ) : lessons.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/60">No lessons on this day.</div>
+        <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">No lessons on this day.</div>
       ) : (
         <div className="space-y-4">
           {lessons.map((l) => (

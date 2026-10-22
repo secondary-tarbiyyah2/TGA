@@ -15,7 +15,7 @@ export function Switch({ checked, onChange, label, hint, disabled }: { checked: 
     <div className="flex items-start justify-between gap-4">
       <div className="min-w-0">
         <p className="text-sm font-medium text-ink">{label}</p>
-        {hint && <p className="mt-0.5 text-xs text-ink/60">{hint}</p>}
+        {hint && <p className="mt-0.5 text-xs text-ink/65">{hint}</p>}
       </div>
       <button
         type="button"
@@ -161,7 +161,7 @@ export function AnnouncementComposer({ classId, onPosted }: { classId: string; o
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="flex w-full items-center gap-3 rounded-2xl border border-gold-light bg-white px-5 py-4 text-left text-sm text-ink/60 shadow-sm hover:bg-cream/50"
+        className="flex w-full items-center gap-3 rounded-2xl border border-gold-light bg-white px-5 py-4 text-left text-sm text-ink/65 shadow-sm hover:bg-cream/50"
       >
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal-700 text-white" aria-hidden="true">
           +
@@ -270,7 +270,7 @@ export function AnnouncementComposer({ classId, onPosted }: { classId: string; o
           </select>
           {audience === "selected" && (
             <ul className="mt-2 grid max-h-40 gap-1 overflow-y-auto rounded-lg border border-gold-light/60 p-2 sm:grid-cols-2">
-              {pupils.length === 0 && <li className="text-sm text-ink/60">Loading pupils…</li>}
+              {pupils.length === 0 && <li className="text-sm text-ink/65">Loading pupils…</li>}
               {pupils.map((p) => (
                 <li key={p.id}>
                   <label className="flex items-center gap-2 text-sm text-ink/80">

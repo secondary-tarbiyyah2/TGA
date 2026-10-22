@@ -38,7 +38,7 @@ export function CurriculumContentEditor() {
     setMessage(publishMessage);
   }
 
-  if (!row) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (!row) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <Card title="Curriculum page content" description="Showing the current website text. Edit it and Save to change the site.">

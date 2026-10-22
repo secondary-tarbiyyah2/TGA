@@ -34,7 +34,7 @@ function Oversight() {
         Read-only oversight. Opening a conversation is recorded in the audit log.
       </div>
       {error && <p className="text-sm text-red-700">Could not load conversations: {error}</p>}
-      {!error && threads === null && <p className="text-ink/60">Loading…</p>}
+      {!error && threads === null && <p className="text-ink/65">Loading…</p>}
       {threads && (
         <div className="grid gap-4 md:h-[70vh] md:grid-cols-[minmax(0,22rem)_1fr]">
           <div className="min-h-0 max-h-[60vh] md:max-h-none">
@@ -44,7 +44,7 @@ function Oversight() {
             {active ? (
               <ThreadViewer key={active.thread_id} thread={active} />
             ) : (
-              <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-ink/20 p-6 text-sm text-ink/55">
+              <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-ink/20 p-6 text-sm text-ink/65">
                 Select a conversation to read it.
               </div>
             )}

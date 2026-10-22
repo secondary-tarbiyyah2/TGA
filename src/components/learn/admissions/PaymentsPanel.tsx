@@ -206,7 +206,7 @@ export function PaymentsPanel({
           ) : (
             <p>No fee band matched {app.year_group_applying}; add an annual fee override to see the totals.</p>
           )}
-          <p className="mt-1 text-xs text-ink/55">Verified total adds up the verified amounts you enter on each proof. Amounts are advisory; the flags above drive acceptance.</p>
+          <p className="mt-1 text-xs text-ink/65">Verified total adds up the verified amounts you enter on each proof. Amounts are advisory; the flags above drive acceptance.</p>
         </div>
         {familyPlan && ctx.details?.chosen_plan !== familyPlan && (
           <p className="mt-2 text-xs text-ink/70">
@@ -220,7 +220,7 @@ export function PaymentsPanel({
 
       <div className="flex flex-wrap items-center gap-3">
         <button type="button" onClick={() => setLinkEmail((v) => !v)} className={ghostBtn}>Email upload link</button>
-        <button type="button" onClick={() => void load()} className="text-xs text-ink/60 underline">Refresh</button>
+        <button type="button" onClick={() => void load()} className="text-xs text-ink/65 underline">Refresh</button>
         {pendingCount > 0 && <Pill tone="warn">{pendingCount} to review</Pill>}
       </div>
       {linkEmail && (
@@ -238,8 +238,8 @@ export function PaymentsPanel({
       )}
       {notice && <p role={notice.ok ? "status" : "alert"} className={`text-sm ${notice.ok ? "text-teal-700" : "text-red-700"}`}>{notice.text}</p>}
       {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
-      {proofs === null && !error && <p role="status" className="text-sm text-ink/60">Loading…</p>}
-      {proofs && proofs.length === 0 && <p className="text-sm text-ink/60">No proof of payment uploaded yet. The family uploads through the personal link in the offer email.</p>}
+      {proofs === null && !error && <p role="status" className="text-sm text-ink/65">Loading…</p>}
+      {proofs && proofs.length === 0 && <p className="text-sm text-ink/65">No proof of payment uploaded yet. The family uploads through the personal link in the offer email.</p>}
 
       {proofs && proofs.length > 0 && (
         <ul className="space-y-3">
@@ -248,7 +248,7 @@ export function PaymentsPanel({
               <div className="flex flex-wrap items-start justify-between gap-2">
                 <div className="min-w-0">
                   <p className="break-words text-sm font-medium text-ink">{p.file_name || "Proof of payment"}</p>
-                  <p className="text-xs text-ink/60">
+                  <p className="text-xs text-ink/65">
                     {new Date(p.uploaded_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })} · {(p.size_bytes / 1048576).toFixed(1)} MB
                   </p>
                 </div>
@@ -261,7 +261,7 @@ export function PaymentsPanel({
               </p>
               {p.family_note && <p className="mt-1 text-xs italic text-ink/70">&ldquo;{p.family_note}&rdquo;</p>}
               {p.status !== "pending" && (
-                <p className="mt-1 text-xs text-ink/60">
+                <p className="mt-1 text-xs text-ink/65">
                   {p.status === "verified" ? `Verified${p.amount_verified !== null ? ` at ${gbp(p.amount_verified)}` : ""}` : "Rejected"}
                   {p.verified_by && staffNames[p.verified_by] ? ` by ${staffNames[p.verified_by]}` : ""}
                   {p.verified_at ? ` on ${new Date(p.verified_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" })}` : ""}
@@ -276,7 +276,7 @@ export function PaymentsPanel({
                     <button type="button" onClick={() => { setVerifying(null); setRejecting({ id: p.id, reason: "", email: ctx.templates.payment_rejected?.auto_send ?? true }); }} className="rounded-lg border border-red-300 px-3 py-1.5 text-sm font-semibold text-red-700 hover:bg-red-50">Reject</button>
                   </>
                 )}
-                {p.status !== "pending" && <button type="button" onClick={() => void reset(p)} disabled={busyId === p.id} className="text-xs text-ink/60 underline">Reset to pending</button>}
+                {p.status !== "pending" && <button type="button" onClick={() => void reset(p)} disabled={busyId === p.id} className="text-xs text-ink/65 underline">Reset to pending</button>}
               </div>
 
               {verifying?.id === p.id && (

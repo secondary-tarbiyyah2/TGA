@@ -47,8 +47,8 @@ export function AnalyticsPanel() {
     })();
   }, [supabase]);
 
-  if (!supabase) return <p className="text-sm text-ink/60">The /learn area isn&apos;t connected yet.</p>;
-  if (!counts) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (!supabase) return <p className="text-sm text-ink/65">The /learn area isn&apos;t connected yet.</p>;
+  if (!counts) return <p className="text-sm text-ink/65">Loading…</p>;
 
   const dropOff = Object.entries(counts.stepViews).sort(([a], [b]) => Number(a) - Number(b));
   const completionRate = counts.started > 0 ? Math.round((counts.completed / counts.started) * 100) : 0;

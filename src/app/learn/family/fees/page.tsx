@@ -63,11 +63,11 @@ function FamilyFeesContent() {
     <>
       <PageHeader crumbs={[{ label: "Dashboard", href: "/family/dashboard" }, { label: "Fees" }]} title="Fees" subtitle="What has been charged, what you have paid, and what is still due." />
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load your fees. Please try again later.</p>}
-      {rows === null && <p className="text-sm text-ink/60">Loading…</p>}
+      {rows === null && <p className="text-sm text-ink/65">Loading…</p>}
       {rows && rows.length === 0 && !error && (
         <div className="rounded-2xl border border-gold-light bg-white p-8 text-center">
           <p className="font-medium text-ink">Nothing to pay</p>
-          <p className="mt-1 text-sm text-ink/60">No fees have been charged to your family yet. Published fees are on the <a href="/fees" className="underline">fees page</a>.</p>
+          <p className="mt-1 text-sm text-ink/65">No fees have been charged to your family yet. Published fees are on the <a href="/fees" className="underline">fees page</a>.</p>
         </div>
       )}
       {rows && rows.length > 0 && (
@@ -84,7 +84,7 @@ function FamilyFeesContent() {
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="min-w-0">
                     <p className="font-medium text-ink">{r.charge.description}</p>
-                    <p className="text-sm text-ink/60">{r.childName || "Whole family"}</p>
+                    <p className="text-sm text-ink/65">{r.childName || "Whole family"}</p>
                     <p className="mt-0.5 text-xs text-ink/65">Due {formatDate(r.charge.due_date)}</p>
                   </div>
                   <div className="text-right">

@@ -87,7 +87,7 @@ function AvailabilityContent() {
     <div>
       <LessonsHeader title="Teacher availability" subtitle="When each teacher can be given lessons. Teachers can also set this themselves in their portal." />
       {!data.loaded ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : data.years.length === 0 ? (
         <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">Add an academic year first.</p>
       ) : (
@@ -99,7 +99,7 @@ function AvailabilityContent() {
             <button type="button" aria-pressed={show === "missing"} onClick={() => setShow("missing")} className={chipCls(show === "missing")}>Not set {missing}</button>
           </div>
           {shown.length === 0 ? (
-            <p className="text-sm text-ink/60">{data.teachers.length === 0 ? "No teachers yet. Add them under People." : "Every teacher has set their availability."}</p>
+            <p className="text-sm text-ink/65">{data.teachers.length === 0 ? "No teachers yet. Add them under People." : "Every teacher has set their availability."}</p>
           ) : (
             <ul className="divide-y divide-gold-light/30">{shown.map((t) => <TeacherRow key={`${t.id}-${effYearId}`} teacher={t} rows={rowsFor(t.id)} yearId={effYearId} reload={reload} />)}</ul>
           )}

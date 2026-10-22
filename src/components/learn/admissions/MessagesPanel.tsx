@@ -53,7 +53,7 @@ export function MessagesPanel({ app, ctx, staffNames }: { app: ApplicationRow; c
     <div className="space-y-5">
       <section aria-label="Send update">
         <h3 className="text-sm font-semibold text-ink">Send update to {app.parent_name}</h3>
-        <p className="text-xs text-ink/60">Goes to {app.parent_email}. Pick a template: it is filled in from the application, the fees and the dates saved for it. Edit the wording if you like, then send. The template texts themselves are edited in Admissions &gt; Email settings.</p>
+        <p className="text-xs text-ink/65">Goes to {app.parent_email}. Pick a template: it is filled in from the application, the fees and the dates saved for it. Edit the wording if you like, then send. The template texts themselves are edited in Admissions &gt; Email settings.</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {SELECTABLE_TEMPLATES.map((t) => (
             <button
@@ -91,8 +91,8 @@ export function MessagesPanel({ app, ctx, staffNames }: { app: ApplicationRow; c
       <section aria-label="Message history">
         <h3 className="text-sm font-semibold text-ink">History</h3>
         {loadError && <p role="alert" className="mt-2 text-sm text-red-700">Couldn&apos;t load the history. <button type="button" onClick={() => void load()} className="underline">Try again</button></p>}
-        {!loadError && history === null && <p role="status" className="mt-2 text-sm text-ink/60">Loading…</p>}
-        {history && history.length === 0 && <p className="mt-2 text-sm text-ink/60">Nothing sent yet.</p>}
+        {!loadError && history === null && <p role="status" className="mt-2 text-sm text-ink/65">Loading…</p>}
+        {history && history.length === 0 && <p className="mt-2 text-sm text-ink/65">Nothing sent yet.</p>}
         {history && history.length > 0 && (
           <ol className="mt-3 space-y-3 border-l-2 border-gold-light/70 pl-4">
             {history.map((m) => (
@@ -100,7 +100,7 @@ export function MessagesPanel({ app, ctx, staffNames }: { app: ApplicationRow; c
                 <span aria-hidden="true" className={`absolute -left-[1.4rem] top-1.5 h-2.5 w-2.5 rounded-full ${m.email_sent ? "bg-teal-500" : "bg-red-600"}`} />
                 <button type="button" onClick={() => setOpenId(openId === m.id ? null : m.id)} aria-expanded={openId === m.id} className="block w-full text-left">
                   <span className="block text-sm font-medium text-ink">{m.subject}</span>
-                  <span className="block text-xs text-ink/60">
+                  <span className="block text-xs text-ink/65">
                     {TEMPLATE_LABELS[m.template as TemplateId] || m.template} · {new Date(m.sent_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })}
                     {m.sent_by && staffNames[m.sent_by] ? ` · ${staffNames[m.sent_by]}` : ""}
                     {" · "}

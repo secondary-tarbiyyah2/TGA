@@ -188,7 +188,7 @@ export function BookingCalendar() {
 
   if (staffStatus === "loading") {
     return (
-      <div role="status" aria-live="polite" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center text-sm text-ink/60">
+      <div role="status" aria-live="polite" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center text-sm text-ink/65">
         Loading booking calendar…
       </div>
     );
@@ -229,7 +229,7 @@ export function BookingCalendar() {
             </select>
           </label>
         )}
-        <p className="mt-2 text-sm text-ink/60">Times shown in your local timezone ({tz}), UK time alongside.</p>
+        <p className="mt-2 text-sm text-ink/65">Times shown in your local timezone ({tz}), UK time alongside.</p>
 
         <div className="mt-4 flex items-center justify-between">
           <button type="button" onClick={() => setMonthCursor((d) => new Date(d.getFullYear(), d.getMonth() - 1, 1))} aria-label="Previous month" className="p-2 text-gold-700">
@@ -241,7 +241,7 @@ export function BookingCalendar() {
           </button>
         </div>
 
-        <div className="mt-4 grid grid-cols-7 gap-1 text-center text-xs text-ink/60">
+        <div className="mt-4 grid grid-cols-7 gap-1 text-center text-xs text-ink/65">
           {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => <div key={d}>{d}</div>)}
         </div>
         <div className="mt-1 grid grid-cols-7 gap-1">
@@ -268,7 +268,7 @@ export function BookingCalendar() {
           })}
         </div>
         {loadingSlots && (
-          <p role="status" aria-live="polite" className="mt-3 text-xs text-ink/50">Loading availability…</p>
+          <p role="status" aria-live="polite" className="mt-3 text-xs text-ink/65">Loading availability…</p>
         )}
         {slotsError && !loadingSlots && (
           <p role="alert" className="mt-3 text-xs text-red-700">
@@ -276,7 +276,7 @@ export function BookingCalendar() {
           </p>
         )}
         {!slotsError && !loadingSlots && staffStatus === "ready" && Object.keys(slotsByDate).length === 0 && (
-          <p className="mt-3 text-xs text-ink/60">No times available this month. Try the next month, or email globalacademy@tarbiyyah.co.uk.</p>
+          <p className="mt-3 text-xs text-ink/65">No times available this month. Try the next month, or email globalacademy@tarbiyyah.co.uk.</p>
         )}
       </div>
 
@@ -338,7 +338,7 @@ export function BookingCalendar() {
               </select>
             </label>
             <label className="mt-4 block text-sm font-medium text-ink">
-              Anything we should know? <span className="font-normal text-ink/50">(optional)</span>
+              Anything we should know? <span className="font-normal text-ink/65">(optional)</span>
               <textarea name="notes" defaultValue={params.get("notes") || ""} rows={3} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
             </label>
             <label className="mt-4 flex items-start gap-2 text-sm text-ink/80">

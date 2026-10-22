@@ -21,7 +21,7 @@ function Inner({ title, subtitle, children }: { title: string; subtitle: string;
           </Link>
         }
       />
-      {!data.loaded ? <p className="text-sm text-ink/60">Loading…</p> : <div className="space-y-5">{children(data, reload)}</div>}
+      {!data.loaded ? <p className="text-sm text-ink/65">Loading…</p> : <div className="space-y-5">{children(data, reload)}</div>}
     </div>
   );
 }

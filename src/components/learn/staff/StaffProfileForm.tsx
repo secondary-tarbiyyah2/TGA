@@ -202,7 +202,7 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
         <input type="checkbox" className="mt-1" checked={form.contact_visible} onChange={(e) => set("contact_visible", e.target.checked)} />
         <span>
           Show my school email to families of my classes
-          <span className="block text-xs text-ink/55">Off by default. Families can always message you through the portal.</span>
+          <span className="block text-xs text-ink/65">Off by default. Families can always message you through the portal.</span>
         </span>
       </label>
 

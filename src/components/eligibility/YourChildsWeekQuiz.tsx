@@ -285,7 +285,7 @@ export function YourChildsWeekQuiz({
   }
 
   if (steps.length === 0) {
-    return <p className="text-center text-ink/60">The quiz isn&apos;t configured yet — please check back shortly.</p>;
+    return <p className="text-center text-ink/65">The quiz isn&apos;t configured yet — please check back shortly.</p>;
   }
 
   return (
@@ -295,7 +295,7 @@ export function YourChildsWeekQuiz({
           <div className="h-1.5 w-full overflow-hidden rounded-full bg-gold-100">
             <div className="h-full rounded-full bg-gold-500 transition-all duration-500 ease-out" style={{ width: `${progress}%` }} />
           </div>
-          <p className="mt-2 text-xs font-medium text-ink/50">Question {stepIndex + 1} of {totalSteps}</p>
+          <p className="mt-2 text-xs font-medium text-ink/65">Question {stepIndex + 1} of {totalSteps}</p>
         </div>
       )}
 
@@ -303,12 +303,12 @@ export function YourChildsWeekQuiz({
         currentStepQuestions.map((q, qi) => (
           <div key={q.key} className={qi > 0 ? "mt-8" : undefined}>
             {qi === 0 && stepIndex > 0 && (
-              <button type="button" onClick={() => goToStep(stepIndex - 1)} className="mb-4 text-sm text-ink/50 hover:text-ink/80">
+              <button type="button" onClick={() => goToStep(stepIndex - 1)} className="mb-4 text-sm text-ink/65 hover:text-ink/80">
                 Back
               </button>
             )}
             <h2 className="font-serif text-xl font-semibold text-ink sm:text-2xl">{q.title}</h2>
-            {q.subtitle && <p className="mt-1 text-sm text-ink/60">{q.subtitle}</p>}
+            {q.subtitle && <p className="mt-1 text-sm text-ink/65">{q.subtitle}</p>}
             <div className="mt-5">
               {q.type === "year_group" && (
                 <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
@@ -421,7 +421,7 @@ export function YourChildsWeekQuiz({
                 return (
                   <div key="sample_week" className="mt-6 rounded-2xl border border-gold-light/50 p-5">
                     <p className="font-semibold text-ink">A sample week for {yearGroupAnswer || "this year group"}, in your timezone</p>
-                    {sampleWeek.loading && <p className="mt-2 text-sm text-ink/50">Loading…</p>}
+                    {sampleWeek.loading && <p className="mt-2 text-sm text-ink/65">Loading…</p>}
                     {!sampleWeek.loading && sampleWeek.slots && sampleWeek.slots.length > 0 && (
                       <>
                         <ul className="mt-3 space-y-1.5 text-sm text-ink/80">
@@ -438,12 +438,12 @@ export function YourChildsWeekQuiz({
                       </>
                     )}
                     {!sampleWeek.loading && sampleWeek.slots && sampleWeek.slots.length === 0 && (
-                      <p className="mt-2 text-sm text-ink/60">
+                      <p className="mt-2 text-sm text-ink/65">
                         We haven&apos;t published a sample week for this year group yet — our admissions team can talk you through a typical week on a call.
                       </p>
                     )}
                     {!sampleWeek.loading && sampleWeek.slots === null && (
-                      <p className="mt-2 text-sm text-ink/60">A sample week isn&apos;t available to show right now — our admissions team can talk you through a typical week on a call.</p>
+                      <p className="mt-2 text-sm text-ink/65">A sample week isn&apos;t available to show right now — our admissions team can talk you through a typical week on a call.</p>
                     )}
                   </div>
                 );
@@ -551,7 +551,7 @@ export function YourChildsWeekQuiz({
             }
           })}
 
-          <p className="mt-6 text-center text-xs text-ink/50">{config.disclaimer}</p>
+          <p className="mt-6 text-center text-xs text-ink/65">{config.disclaimer}</p>
         </div>
       )}
     </div>
@@ -586,7 +586,7 @@ function IconOptionCard({ icon, label, detail, selected, onClick }: { icon?: imp
       {icon && icon !== "none" && <LineIcon icon={icon} className="mt-0.5 h-5 w-5 shrink-0 text-gold-700" />}
       <span>
         <span className="block font-medium text-ink">{label}</span>
-        {detail && <span className="block text-xs text-ink/60">{detail}</span>}
+        {detail && <span className="block text-xs text-ink/65">{detail}</span>}
       </span>
     </button>
   );

@@ -53,9 +53,9 @@ export function ReleasedReports() {
       <PrintStyles />
       <PageHeader title="Progress Reports" subtitle="Reports issued by the school, built from attendance, homework and grades." />
       {rows === null ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : rows.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/60">No reports have been issued yet. They will appear here once the school releases them.</div>
+        <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">No reports have been issued yet. They will appear here once the school releases them.</div>
       ) : (
         rows.map((r) => (
           <div key={r.id} className="space-y-2">

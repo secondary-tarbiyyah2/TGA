@@ -169,7 +169,7 @@ export function GcseOverview() {
   };
   const filtered = !!(year || classId || subjectId || search || status !== "all");
 
-  if (rows === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
 
   const visibleAttention = showAllAttention ? attention : attention.slice(0, 6);
 
@@ -178,9 +178,9 @@ export function GcseOverview() {
       <section aria-labelledby="gcse-attn" className="rounded-2xl border border-amber-200 bg-amber-50/50 p-4 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 id="gcse-attn" className="font-serif text-h3 font-semibold text-ink">
-            Needs attention {attention.length > 0 && <span className="ml-1 text-base font-normal text-ink/60">({attention.length})</span>}
+            Needs attention {attention.length > 0 && <span className="ml-1 text-base font-normal text-ink/65">({attention.length})</span>}
           </h2>
-          <span className="text-xs text-ink/55">Behind prediction, predicted below target, or a grade that has just dropped.</span>
+          <span className="text-xs text-ink/65">Behind prediction, predicted below target, or a grade that has just dropped.</span>
         </div>
         {attention.length === 0 ? (
           <p className="mt-3 text-sm text-ink/70">{scoped.length === 0 ? "No GCSE grades recorded yet." : "Nobody in this selection needs attention right now."}</p>
@@ -193,7 +193,7 @@ export function GcseOverview() {
                     <button type="button" onClick={() => setDrawerChild(r.child_id)} className="text-sm font-medium text-ink underline-offset-2 hover:underline">
                       {pupilName(r)}
                     </button>
-                    <span className="ml-2 text-xs text-ink/60">
+                    <span className="ml-2 text-xs text-ink/65">
                       {subjectName(r)}
                       {r.classes?.name ? ` · ${r.classes.name}` : ""}
                     </span>
@@ -295,7 +295,7 @@ export function GcseOverview() {
               ["grid", "Pupils × subjects"],
               ["subjects", "By subject"],
             ] as const).map(([id, label]) => (
-              <button key={id} type="button" aria-pressed={view === id} onClick={() => setView(id)} className={`rounded-md px-2.5 py-1 text-xs font-semibold ${view === id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}>
+              <button key={id} type="button" aria-pressed={view === id} onClick={() => setView(id)} className={`rounded-md px-2.5 py-1 text-xs font-semibold ${view === id ? "bg-white text-ink shadow-sm" : "text-ink/65 hover:text-ink"}`}>
                 {label}
               </button>
             ))}
@@ -304,11 +304,11 @@ export function GcseOverview() {
 
         <div className="mt-4 overflow-x-auto">
           {shown.length === 0 ? (
-            <p className="text-sm text-ink/60">{rows.length === 0 ? "No GCSE grades recorded yet." : "Nothing matches these filters."}</p>
+            <p className="text-sm text-ink/65">{rows.length === 0 ? "No GCSE grades recorded yet." : "Nothing matches these filters."}</p>
           ) : view === "grid" ? (
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="text-xs text-ink/60">
+                <tr className="text-xs text-ink/65">
                   <th scope="col" className="sticky left-0 bg-white py-1.5 pr-4 font-medium">Pupil</th>
                   {grid.subjects.map(([id, name]) => (
                     <th key={id} scope="col" className="py-1.5 pr-3 font-medium">
@@ -340,7 +340,7 @@ export function GcseOverview() {
                             className={`flex w-full min-w-[5.5rem] items-center gap-2 rounded-lg border border-gold-light/40 px-2 py-1 text-left ${GCSE_ROW_TINT[s.status] || "bg-white"} ${s.status === "behind" ? "border-amber-300" : ""}`}
                           >
                             <GradeChip grade={r.actual_grade} kind="Actual" />
-                            <span className="text-[11px] leading-tight text-ink/60">
+                            <span className="text-[11px] leading-tight text-ink/65">
                               T{r.target_grade ?? "–"} P{r.predicted_grade ?? "–"}
                             </span>
                             <span className={`text-[10px] ${dir.className}`} aria-hidden="true">
@@ -358,7 +358,7 @@ export function GcseOverview() {
           ) : (
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="text-xs text-ink/60">
+                <tr className="text-xs text-ink/65">
                   <th className="py-1.5 pr-3 font-medium">Subject</th>
                   <th className="py-1.5 pr-3 font-medium">Pupils</th>
                   <th className="py-1.5 pr-3 font-medium">Avg predicted</th>
@@ -386,7 +386,7 @@ export function GcseOverview() {
                             s.counts[st] > 0 ? <span key={st} style={{ width: `${(s.counts[st] / s.n) * 100}%` }} className={st === "behind" ? "bg-amber-400" : st === "on_track" ? "bg-teal-500" : st === "ahead" ? "bg-green-500" : "bg-ink/15"} /> : null
                           )}
                         </div>
-                        <p className="mt-1 text-[11px] text-ink/55">
+                        <p className="mt-1 text-[11px] text-ink/65">
                           {s.counts.behind} behind · {s.counts.on_track} on track · {s.counts.ahead} ahead · {s.counts.no_data} awaiting
                         </p>
                       </td>

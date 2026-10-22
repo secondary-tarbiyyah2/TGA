@@ -43,7 +43,7 @@ export function MessageSettings({ userId }: { userId: string }) {
       <div className="mt-3 flex items-start justify-between gap-4">
         <div className="text-sm text-ink">
           <p className="font-medium">Read receipts</p>
-          <p className="mt-1 text-ink/60">
+          <p className="mt-1 text-ink/65">
             When on, people you message can see when you have read their messages, and you can see when they read yours. If you turn this off, you won&apos;t send or see read receipts. Messages still show as sent, and school safeguarding oversight is unaffected.
           </p>
         </div>

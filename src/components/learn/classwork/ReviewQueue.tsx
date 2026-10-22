@@ -142,7 +142,7 @@ export function ReviewQueue() {
                       aria-current={k === marking.index ? "true" : undefined}
                       className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-sm ${k === marking.index ? "bg-teal-100 font-semibold text-teal-900" : "text-ink hover:bg-cream"}`}
                     >
-                      <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] ${returned ? "bg-teal-700 text-white" : "bg-cream text-ink/60"}`}>{returned ? "✓" : k + 1}</span>
+                      <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] ${returned ? "bg-teal-700 text-white" : "bg-cream text-ink/65"}`}>{returned ? "✓" : k + 1}</span>
                       <span className="min-w-0 flex-1 truncate">{i.child_name || "Pupil"}</span>
                       {i.is_late && <span className="text-[11px] font-medium text-amber-800">late</span>}
                     </button>

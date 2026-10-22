@@ -234,7 +234,7 @@ export function WeeklyGrid({
       <div className="overflow-x-auto rounded-xl border border-gold-light/50">
         <div className="min-w-[720px]">
           <div className="flex bg-cream/70 text-xs font-semibold text-ink/70">
-            <div style={{ width: GUTTER }} className="border-b border-gold-light/50 p-2 text-ink/60">Time</div>
+            <div style={{ width: GUTTER }} className="border-b border-gold-light/50 p-2 text-ink/65">Time</div>
             {WEEKDAYS.map((wd) => (
               <div key={wd.value} className="flex-1 border-b border-l border-gold-light/40 p-2">{wd.label}</div>
             ))}

@@ -42,7 +42,7 @@ export function RetentionRegistry() {
           <tbody>
             {schedule === null && (
               <tr>
-                <td colSpan={4} className="py-2 text-sm text-ink/60">
+                <td colSpan={4} className="py-2 text-sm text-ink/65">
                   Loading…
                 </td>
               </tr>
@@ -57,18 +57,18 @@ export function RetentionRegistry() {
             ))}
           </tbody>
         </table>
-        {schedule?.length === 0 && <p className="mt-2 text-sm text-ink/60">No retention schedule entries.</p>}
+        {schedule?.length === 0 && <p className="mt-2 text-sm text-ink/65">No retention schedule entries.</p>}
       </div>
 
-      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink/60">Recent retention job runs</p>
+      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink/65">Recent retention job runs</p>
       <ul className="mt-2 space-y-1">
-        {runs === null && <p className="text-sm text-ink/60">Loading…</p>}
+        {runs === null && <p className="text-sm text-ink/65">Loading…</p>}
         {(runs || []).map((r) => (
           <li key={r.id} className="text-sm text-ink/70">
             {new Date(r.run_at).toLocaleString("en-GB")} — {r.data_type}: {r.action}d {r.rows_affected} row(s)
           </li>
         ))}
-        {runs?.length === 0 && <p className="text-sm text-ink/60">No retention jobs have run yet.</p>}
+        {runs?.length === 0 && <p className="text-sm text-ink/65">No retention jobs have run yet.</p>}
       </ul>
     </div>
   );

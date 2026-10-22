@@ -252,7 +252,7 @@ export function HousesAdmin() {
 
   const editHouse = (id: string, patch: Partial<House>) => setHouses((hs) => (hs || []).map((h) => (h.id === id ? { ...h, ...patch } : h)));
 
-  if (houses === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (houses === null) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <div className="space-y-6">
@@ -260,7 +260,7 @@ export function HousesAdmin() {
 
       <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
         <h2 className="text-base font-semibold text-ink">Houses</h2>
-        <p className="mt-1 text-xs text-ink/60">Merits automatically earn points for the child&apos;s house. Archive a house to hide it from the table without losing its history.</p>
+        <p className="mt-1 text-xs text-ink/65">Merits automatically earn points for the child&apos;s house. Archive a house to hide it from the table without losing its history.</p>
         {houses.length > 0 && (
           <ul className="mt-3 space-y-2">
             {houses.map((h) => (
@@ -268,7 +268,7 @@ export function HousesAdmin() {
                 <input type="color" aria-label={`${h.name} colour`} value={HEX.test(h.colour) ? h.colour : "#B08E45"} onChange={(e) => editHouse(h.id, { colour: e.target.value })} className="h-8 w-10 cursor-pointer rounded border border-gold-light" />
                 <input aria-label="House name" value={h.name} maxLength={40} onChange={(e) => editHouse(h.id, { name: e.target.value })} className="w-40 rounded-lg border border-gold-light px-2 py-1" />
                 <input aria-label="Motto" placeholder="Motto (optional)" value={h.motto || ""} maxLength={120} onChange={(e) => editHouse(h.id, { motto: e.target.value })} className="min-w-0 flex-1 rounded-lg border border-gold-light px-2 py-1" />
-                <span className="text-xs text-ink/60">{counts.get(h.id) || 0} children</span>
+                <span className="text-xs text-ink/65">{counts.get(h.id) || 0} children</span>
                 <label className="flex items-center gap-1 text-xs text-ink/70">
                   <input type="checkbox" checked={h.active} onChange={(e) => editHouse(h.id, { active: e.target.checked })} />
                   Active
@@ -311,7 +311,7 @@ export function HousesAdmin() {
                 ["house", "A house"],
                 ["class", "A whole class"],
               ] as const).map(([id, label]) => (
-                <button key={id} type="button" aria-pressed={awardTarget === id} onClick={() => setAwardTarget(id)} className={`rounded-md px-3 py-1 text-xs font-semibold ${awardTarget === id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}>
+                <button key={id} type="button" aria-pressed={awardTarget === id} onClick={() => setAwardTarget(id)} className={`rounded-md px-3 py-1 text-xs font-semibold ${awardTarget === id ? "bg-white text-ink shadow-sm" : "text-ink/65 hover:text-ink"}`}>
                   {label}
                 </button>
               ))}
@@ -362,7 +362,7 @@ export function HousesAdmin() {
               </button>
             </div>
             {awardTarget === "class" && awardClass && classShare && (
-              <p className="mt-2 text-xs text-ink/60">
+              <p className="mt-2 text-xs text-ink/65">
                 {classShare.length === 0
                   ? "None of this class's pupils have a house yet."
                   : `${classShare.map((s) => `${houseById.get(s.houseId)?.name || "House"} +${(Number(awardPoints) || 0) * s.pupils}`).join(", ")}${classNoHouse > 0 ? `. ${classNoHouse} without a house earn nothing.` : "."}`}

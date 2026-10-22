@@ -49,7 +49,7 @@ export function StepCard({ step, title, help, done, children, id }: { step: numb
         </span>
         <div className="min-w-0">
           <h2 className="font-serif text-h3 font-semibold text-ink">{title}</h2>
-          <p className="mt-0.5 text-sm text-ink/60">{help}</p>
+          <p className="mt-0.5 text-sm text-ink/65">{help}</p>
         </div>
       </div>
       <div className="mt-4">{children}</div>

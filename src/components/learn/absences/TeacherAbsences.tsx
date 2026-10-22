@@ -71,8 +71,8 @@ export function TeacherAbsences() {
                 <li key={r.key} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm">
                   <span className="w-28 shrink-0 text-ink/65">{formatDay(r.date)}</span>
                   <span className="font-medium text-ink">{r.childName}</span>
-                  <span className="text-xs text-ink/60">{r.classes.join(", ")}</span>
-                  <span className="min-w-0 flex-1 text-ink/80">{r.why || <span className="text-ink/55">No reason given yet</span>}</span>
+                  <span className="text-xs text-ink/65">{r.classes.join(", ")}</span>
+                  <span className="min-w-0 flex-1 text-ink/80">{r.why || <span className="text-ink/65">No reason given yet</span>}</span>
                   {r.decided === "authorised" && <StatusChip tone="good">Authorised</StatusChip>}
                   {r.decided === "unauthorised" && <StatusChip tone="bad">Not authorised</StatusChip>}
                   {!r.why && <StatusChip tone="warn">Office following up</StatusChip>}

@@ -88,7 +88,7 @@ export function SampleWeeksPanel() {
     await load();
   }
 
-  if (!supabase) return <p className="text-sm text-ink/60">The /learn area isn&apos;t connected yet.</p>;
+  if (!supabase) return <p className="text-sm text-ink/65">The /learn area isn&apos;t connected yet.</p>;
 
   return (
     <div className="space-y-6">
@@ -178,7 +178,7 @@ export function SampleWeeksPanel() {
               )}
 
               {existing && expanded === existing.id && (
-                <ul className="mt-2 space-y-1 text-xs text-ink/60">
+                <ul className="mt-2 space-y-1 text-xs text-ink/65">
                   {(history[existing.id] || []).map((h) => (
                     <li key={h.id} className="flex items-center justify-between gap-2 border-b border-gold-light/20 py-1">
                       <span>{h.status} — run {runs.find((r) => r.id === h.run_id)?.label ?? h.run_id} — {new Date(h.changed_at).toLocaleString("en-GB")}</span>
@@ -205,7 +205,7 @@ export function SampleWeeksPanel() {
 function StatusBadge({ status }: { status?: string }) {
   if (!status) return <span className="rounded-full bg-cream px-2 py-0.5 text-xs text-ink/65">Not marked</span>;
   const tones: Record<string, string> = {
-    draft: "bg-cream text-ink/60",
+    draft: "bg-cream text-ink/65",
     review: "bg-amber-100 text-amber-800",
     published: "bg-gold-100 text-gold-800",
     archived: "bg-cream text-ink/65",

@@ -48,7 +48,7 @@ function StudentBehaviourContent() {
       <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "Behaviour" }]} title="My merits & badges" subtitle="Well done for the good things you do. Every merit counts." />
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
       {records === null ? (
-        <p className="text-ink/60">Loading…</p>
+        <p className="text-ink/65">Loading…</p>
       ) : (
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-3">

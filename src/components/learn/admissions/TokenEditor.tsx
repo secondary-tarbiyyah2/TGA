@@ -136,7 +136,7 @@ export function VariablePicker({ onPick }: { onPick: (token: string) => void }) 
                   className="block w-full rounded-md px-2 py-1 text-left hover:bg-cream"
                 >
                   <span className="rounded bg-teal-100 px-1 text-xs text-teal-900">{`{{${t.token}}}`}</span>
-                  <span className="mt-0.5 block text-[11px] text-ink/60">{t.description}</span>
+                  <span className="mt-0.5 block text-[11px] text-ink/65">{t.description}</span>
                 </button>
               </li>
             ))}

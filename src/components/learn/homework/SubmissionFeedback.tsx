@@ -285,7 +285,7 @@ export function SubmissionFeedback({
     <div className="mt-3 rounded-lg border border-gold-light/40 bg-white p-3">
       {files.length > 0 && (
         <div className="mb-3 space-y-1.5">
-          <p className="text-xs font-medium uppercase tracking-wide text-ink/60">Submitted files</p>
+          <p className="text-xs font-medium uppercase tracking-wide text-ink/65">Submitted files</p>
           <ul className="space-y-1.5">
             {files.map((f) => {
               const m = markupFor(f.path);
@@ -373,7 +373,7 @@ export function SubmissionFeedback({
             Save draft
           </button>
         )}
-        {busy && <span className="text-xs text-ink/60">Saving…</span>}
+        {busy && <span className="text-xs text-ink/65">Saving…</span>}
       </div>
       {existing?.status === "resubmitted" && existing.resubmitted_at && (
         <p className="mt-2 text-xs text-green-700">Resubmitted {new Date(existing.resubmitted_at).toLocaleString("en-GB")} — read the new version above, then return it again.</p>

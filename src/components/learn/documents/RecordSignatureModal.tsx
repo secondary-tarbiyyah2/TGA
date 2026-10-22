@@ -157,7 +157,7 @@ export function RecordSignatureModal({
       <div className="max-h-[92vh] w-full max-w-xl overflow-y-auto rounded-t-2xl bg-white shadow-xl sm:rounded-2xl">
         <div className="flex items-center justify-between border-b border-gold-light px-5 py-4">
           <h2 className="text-lg font-semibold text-ink">Record signature by hand</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/55 hover:bg-cream">
+          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream">
             ×
           </button>
         </div>
@@ -199,7 +199,7 @@ export function RecordSignatureModal({
             <textarea rows={2} value={note} onChange={(e) => setNote(e.target.value)} placeholder="e.g. Handed in at the open evening" className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
           </label>
           {bulk ? (
-            <p className="text-xs text-ink/55">Scans can&apos;t be attached in bulk. To keep a scan for someone, record their signature on its own.</p>
+            <p className="text-xs text-ink/65">Scans can&apos;t be attached in bulk. To keep a scan for someone, record their signature on its own.</p>
           ) : (
             <label className="block">
               <span className="font-medium text-ink">Scan of the signed copy (optional)</span>

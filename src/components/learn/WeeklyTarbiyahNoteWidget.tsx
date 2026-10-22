@@ -36,7 +36,7 @@ export function WeeklyTarbiyahNoteWidget({ childId, limit = 3 }: { childId: stri
       <ul className="mt-2 space-y-2">
         {rows.map((r) => (
           <li key={r.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
-            <p className="text-xs font-medium text-ink/60">Week of {new Date(r.week_of).toLocaleDateString("en-GB")}</p>
+            <p className="text-xs font-medium text-ink/65">Week of {new Date(r.week_of).toLocaleDateString("en-GB")}</p>
             <p className="mt-1 text-ink/80">{r.note}</p>
           </li>
         ))}

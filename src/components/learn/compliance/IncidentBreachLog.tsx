@@ -55,7 +55,7 @@ function IncidentCard({ incident }: { incident: Incident }) {
       <p className="mt-1 text-xs text-ink/65">
         Affected: {incident.affected_count ?? "not yet counted"} · discovered {new Date(incident.discovered_at).toLocaleString("en-GB")}
       </p>
-      <p className={`mt-1 text-xs font-semibold ${hoursLeft !== null && hoursLeft < 24 ? "text-red-700" : "text-ink/60"}`}>
+      <p className={`mt-1 text-xs font-semibold ${hoursLeft !== null && hoursLeft < 24 ? "text-red-700" : "text-ink/65"}`}>
         ICO 72-hour window: {hoursLeft === null ? "…" : hoursLeft >= 0 ? `${hoursLeft}h remaining` : `${Math.abs(hoursLeft)}h overdue`} (deadline {deadline.toLocaleString("en-GB")})
       </p>
       <ul className="mt-2 space-y-1 border-t border-gold-light/30 pt-2">
@@ -108,12 +108,12 @@ export function IncidentBreachLog() {
       <h2 className="font-serif text-h3 font-semibold text-ink">Incident &amp; data-breach log</h2>
       <p className="mt-1 text-xs text-ink/65">Every incident gets a structured ICO-notification checklist with a live 72-hour countdown from the moment it was logged as discovered.</p>
       <ul className="mt-3 space-y-2">
-        {incidents === null && <p className="text-sm text-ink/60">Loading…</p>}
+        {incidents === null && <p className="text-sm text-ink/65">Loading…</p>}
         {(incidents || []).map((i) => <IncidentCard key={i.id} incident={i} />)}
-        {incidents?.length === 0 && <p className="text-sm text-ink/60">No incidents logged.</p>}
+        {incidents?.length === 0 && <p className="text-sm text-ink/65">No incidents logged.</p>}
       </ul>
       <form onSubmit={submit} className="mt-4 space-y-2 border-t border-gold-light/30 pt-4">
-        <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Log a new incident</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Log a new incident</p>
         <div className="grid gap-2 sm:grid-cols-2">
           <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Title" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
           <select value={form.severity} onChange={(e) => setForm({ ...form, severity: e.target.value })} aria-label="Severity" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm">

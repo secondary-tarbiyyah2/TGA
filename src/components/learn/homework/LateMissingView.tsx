@@ -80,7 +80,7 @@ export function LateMissingView({ scope }: { scope: "teach" | "admin" }) {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="font-serif text-h3 font-semibold text-ink">Late &amp; missing</h2>
-          <p className="mt-1 text-sm text-ink/60">{scope === "admin" ? "Whole school." : "Your classes."} Homework that is overdue, handed in late, or waiting for a resubmission.</p>
+          <p className="mt-1 text-sm text-ink/65">{scope === "admin" ? "Whole school." : "Your classes."} Homework that is overdue, handed in late, or waiting for a resubmission.</p>
         </div>
         <select
           value={windowDays === null ? "all" : String(windowDays)}
@@ -119,25 +119,25 @@ export function LateMissingView({ scope }: { scope: "teach" | "admin" }) {
 
       <div className="mt-4 space-y-4">
         {rows === null ? (
-          <p className="text-sm text-ink/60">Loading…</p>
+          <p className="text-sm text-ink/65">Loading…</p>
         ) : error ? (
           <p className="text-sm text-red-700">{error}</p>
         ) : grouped.length === 0 ? (
-          <p className="text-sm text-ink/60">Nothing late or missing. Well done.</p>
+          <p className="text-sm text-ink/65">Nothing late or missing. Well done.</p>
         ) : (
           grouped.map(([id, g]) => (
             <div key={id}>
               <h3 className="text-sm font-semibold text-ink">
-                {g.name} <span className="font-normal text-ink/60">· {g.items.length}</span>
+                {g.name} <span className="font-normal text-ink/65">· {g.items.length}</span>
               </h3>
               <ul className="mt-1 divide-y divide-gold-light/30 rounded-lg border border-gold-light/40">
                 {g.items.map((r) => (
                   <li key={`${r.homework_id}-${r.child_id}`} className="flex flex-wrap items-center justify-between gap-2 p-2 text-sm">
                     <span className="min-w-0">
                       <span className="font-medium text-ink">{r.child_name || "Pupil"}</span>
-                      <span className="text-ink/60"> · {r.homework_title || "Homework"}</span>
+                      <span className="text-ink/65"> · {r.homework_title || "Homework"}</span>
                     </span>
-                    <span className="flex items-center gap-2 text-xs text-ink/60">
+                    <span className="flex items-center gap-2 text-xs text-ink/65">
                       Due {new Date(r.due_at).toLocaleDateString("en-GB")}
                       <span className={`rounded-full px-2 py-0.5 ${ATTENTION_META[r.attention].className}`}>{ATTENTION_META[r.attention].label}</span>
                     </span>

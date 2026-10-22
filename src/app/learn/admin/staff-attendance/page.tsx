@@ -87,7 +87,7 @@ function EditShift({ shift, name, adminId, onClose, onDone }: { shift: Shift; na
       <div className="w-full max-w-md rounded-t-2xl bg-white shadow-xl sm:rounded-2xl">
         <div className="flex items-center justify-between border-b border-gold-light px-5 py-4">
           <h2 className="text-lg font-semibold text-ink">Edit shift: {name}</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/55 hover:bg-cream">
+          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream">
             ×
           </button>
         </div>
@@ -273,7 +273,7 @@ function StaffAttendanceContent() {
           <h2 className="text-base font-semibold text-ink">On shift now ({open.length})</h2>
         </div>
         {open.length === 0 ? (
-          <p className="px-5 py-4 text-sm text-ink/60">Nobody is clocked in.</p>
+          <p className="px-5 py-4 text-sm text-ink/65">Nobody is clocked in.</p>
         ) : (
           <ul className="divide-y divide-gold-light">
             {open.map((s) => (
@@ -283,7 +283,7 @@ function StaffAttendanceContent() {
                 </span>
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium text-ink">{nameOf(s.user_id)}</p>
-                  <p className="text-xs text-ink/55">
+                  <p className="text-xs text-ink/65">
                     Since {timeOf(s.clocked_in_at)} · {formatDuration(now.getTime() - new Date(s.clocked_in_at).getTime())}
                     {s.note ? ` · ${s.note}` : ""}
                   </p>
@@ -300,12 +300,12 @@ function StaffAttendanceContent() {
       <section className={card}>
         <div className="border-b border-gold-light px-5 py-4">
           <h2 className="text-base font-semibold text-ink">Not clocked in today ({notIn.length})</h2>
-          <p className="mt-0.5 text-sm text-ink/60">Everyone with a staff role who has no shift today.</p>
+          <p className="mt-0.5 text-sm text-ink/65">Everyone with a staff role who has no shift today.</p>
         </div>
         {people === null ? (
           <div className="h-16 animate-pulse" />
         ) : notIn.length === 0 ? (
-          <p className="px-5 py-4 text-sm text-ink/60">Everyone has clocked in today.</p>
+          <p className="px-5 py-4 text-sm text-ink/65">Everyone has clocked in today.</p>
         ) : (
           <ul className="flex flex-wrap gap-2 px-5 py-4">
             {notIn.map((p) => (
@@ -320,15 +320,15 @@ function StaffAttendanceContent() {
       <section className={card}>
         <div className="flex flex-wrap items-end gap-3 border-b border-gold-light px-5 py-4">
           <h2 className="mr-auto text-base font-semibold text-ink">History</h2>
-          <label className="text-xs text-ink/60">
+          <label className="text-xs text-ink/65">
             From
             <input type="date" value={from} max={to} onChange={(e) => e.target.value && setFrom(e.target.value)} className="mt-1 block rounded-lg border border-gold-light px-2 py-1.5 text-sm text-ink" />
           </label>
-          <label className="text-xs text-ink/60">
+          <label className="text-xs text-ink/65">
             To
             <input type="date" value={to} min={from} onChange={(e) => e.target.value && setTo(e.target.value)} className="mt-1 block rounded-lg border border-gold-light px-2 py-1.5 text-sm text-ink" />
           </label>
-          <label className="text-xs text-ink/60">
+          <label className="text-xs text-ink/65">
             Expected start
             <input
               type="time"

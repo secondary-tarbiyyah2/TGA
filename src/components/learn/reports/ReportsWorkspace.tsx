@@ -499,7 +499,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                             <td className="hidden px-2 py-2.5 tabular-nums sm:table-cell">{sm ? fmtPct(sm.attendance.rate) : "–"}</td>
                             <td className="hidden px-2 py-2.5 tabular-nums sm:table-cell">{sm ? `${sm.homework.done}/${sm.homework.total}` : "–"}</td>
                             <td className="hidden px-2 py-2.5 tabular-nums md:table-cell">{sm ? fmtPct(sm.assessments.average_percent) : "–"}</td>
-                            <td className="px-2 py-2.5">{(rep?.overall_comment || "").trim() ? <span className="text-green-800">Written</span> : <span className="text-ink/55">Not yet</span>}</td>
+                            <td className="px-2 py-2.5">{(rep?.overall_comment || "").trim() ? <span className="text-green-800">Written</span> : <span className="text-ink/65">Not yet</span>}</td>
                             <td className="px-4 py-2.5 text-right">
                               <span className="inline-flex flex-wrap justify-end gap-1">
                                 {rep?.status === "draft" && rep.returned_reason && <StatusChip tone="warn">Sent back</StatusChip>}
@@ -511,7 +511,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                       })}
                     </tbody>
                   </table>
-                  <p className="px-4 py-2 text-xs text-ink/60">Choose a pupil to see their report and write the comment.</p>
+                  <p className="px-4 py-2 text-xs text-ink/65">Choose a pupil to see their report and write the comment.</p>
                 </div>
               )}
             </section>
@@ -539,7 +539,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                     <input type="checkbox" aria-label={`Select ${x.children?.name || "report"}`} checked={selected.includes(x.id)} onChange={(e) => setSelected((sl) => (e.target.checked ? [...sl, x.id] : sl.filter((y) => y !== x.id)))} className="mt-1" />
                     <div className="min-w-0 flex-1">
                       <p className="font-medium text-ink">
-                        {x.children?.name || "Pupil"} <span className="font-normal text-ink/60">· {x.terms?.name || "All time"}</span>
+                        {x.children?.name || "Pupil"} <span className="font-normal text-ink/65">· {x.terms?.name || "All time"}</span>
                       </p>
                       {x.overall_comment && <p className="line-clamp-2 text-ink/70">{x.overall_comment}</p>}
                     </div>
@@ -579,7 +579,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
               {recent.map((r) => (
                 <li key={r.id} className="flex flex-wrap items-center justify-between gap-2 py-2 text-sm">
                   <span className="min-w-0 font-medium text-ink">{r.children?.name || "Pupil"}</span>
-                  <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink/60">
+                  <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink/65">
                     <span>{r.terms?.name || "All time"}</span>
                     <span>{fmtDate(mode === "admin" ? r.released_at : r.updated_at)}</span>
                     <StatusBadge status={r.status} />
@@ -601,7 +601,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
                 ‹ Previous
               </button>
               <p className="min-w-0 flex-1 truncate text-center text-sm font-semibold text-ink">
-                {openKid.name} <span className="font-normal text-ink/60">· {openIdx + 1} of {ordered.length}</span>
+                {openKid.name} <span className="font-normal text-ink/65">· {openIdx + 1} of {ordered.length}</span>
               </p>
               <button type="button" className={`${btnGhost} ${ui.sm}`} disabled={openIdx >= ordered.length - 1} onClick={() => setOpenChild(ordered[openIdx + 1].id)}>
                 Next ›

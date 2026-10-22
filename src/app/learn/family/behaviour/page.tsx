@@ -88,9 +88,9 @@ function FamilyBehaviourContent() {
         </select>
       )}
       {children !== null && children.length === 0 ? (
-        <p className="rounded-xl border border-dashed border-gold-light bg-cream/30 px-4 py-8 text-center text-sm text-ink/60">No children are linked to your account yet.</p>
+        <p className="rounded-xl border border-dashed border-gold-light bg-cream/30 px-4 py-8 text-center text-sm text-ink/65">No children are linked to your account yet.</p>
       ) : records === null ? (
-        <p className="text-ink/60">Loading…</p>
+        <p className="text-ink/65">Loading…</p>
       ) : (
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
@@ -133,7 +133,7 @@ export default function FamilyBehaviourPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
-          <Suspense fallback={<p className="text-ink/60">Loading…</p>}>
+          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
             <FamilyBehaviourContent />
           </Suspense>
         </LearnShell>

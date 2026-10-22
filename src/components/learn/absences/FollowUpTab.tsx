@@ -153,11 +153,11 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
       {error && <p className="m-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">{error}</p>}
       <div className="px-4 py-4">
         {absences === null ? (
-          <p className="text-sm text-ink/60">Loading…</p>
+          <p className="text-sm text-ink/65">Loading…</p>
         ) : rows.length === 0 ? (
           <div className="py-4 text-center">
             <p className="font-medium text-ink">Nothing to follow up</p>
-            <p className="mt-1 text-sm text-ink/60">Every recent absence has a reason.</p>
+            <p className="mt-1 text-sm text-ink/65">Every recent absence has a reason.</p>
           </div>
         ) : (
           <ul className="space-y-3">
@@ -177,7 +177,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
                         {r.fu?.assigned ? ` · with ${r.fu.assigned}` : ""}
                       </p>
                       {overdue && <p className="mt-1 text-xs font-semibold text-red-800">Overdue: no first contact within one school day</p>}
-                      {r.fu?.next_action_due && <p className="mt-0.5 text-xs text-ink/55">Next action due {formatDay(r.fu.next_action_due)}</p>}
+                      {r.fu?.next_action_due && <p className="mt-0.5 text-xs text-ink/65">Next action due {formatDay(r.fu.next_action_due)}</p>}
                     </div>
                     <span className={`rounded-full px-2.5 py-1 text-xs font-medium capitalize ${STATUS_CHIP[status]}`}>{status}</span>
                   </div>
@@ -208,7 +208,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
                     >
                       Escalate to Headteacher
                     </Link>
-                    <button type="button" disabled={busyKey === r.key} onClick={() => setStatus(r, "closed", "Closed without an explanation.")} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-semibold text-ink/60 hover:bg-cream disabled:opacity-50">
+                    <button type="button" disabled={busyKey === r.key} onClick={() => setStatus(r, "closed", "Closed without an explanation.")} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-semibold text-ink/65 hover:bg-cream disabled:opacity-50">
                       Close
                     </button>
                   </div>
@@ -229,7 +229,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
           onSaved={reload}
         />
       )}
-      <p className="border-t border-gold-light/40 px-4 py-3 text-xs text-ink/55">Contact logs are staff-only and written to the audit log. Families only see that we have asked.</p>
+      <p className="border-t border-gold-light/40 px-4 py-3 text-xs text-ink/65">Contact logs are staff-only and written to the audit log. Families only see that we have asked.</p>
     </section>
   );
 }
@@ -267,7 +267,7 @@ function ContactModal({ row, ensure, onClose, onSaved }: { row: Row; ensure: (r:
   return (
     <Modal title={`Log contact: ${row.abs.childName}`} onClose={onClose}>
       <form onSubmit={submit} className="space-y-3">
-        <p className="text-sm text-ink/60">Absent {formatDay(row.abs.date)}</p>
+        <p className="text-sm text-ink/65">Absent {formatDay(row.abs.date)}</p>
         <label className="block text-sm font-medium text-ink">
           Method
           <select value={method} onChange={(e) => setMethod(e.target.value as Method)} className={modalFieldCls}>

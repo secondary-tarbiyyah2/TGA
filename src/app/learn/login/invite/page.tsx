@@ -85,7 +85,7 @@ export default function LearnInvitePage() {
     setPasswordSet(true);
   }
 
-  if (session === "loading" || verifying) return <p className="text-ink/60">Loading…</p>;
+  if (session === "loading" || verifying) return <p className="text-ink/65">Loading…</p>;
   if (!session) {
     return (
       <section className="app-pad">
@@ -107,7 +107,7 @@ export default function LearnInvitePage() {
       <section className="app-pad">
         <div className="mx-auto max-w-sm">
           <h1 className="font-serif text-h2 font-semibold text-ink">You&apos;re all set</h1>
-          <p className="mt-1 text-sm text-ink/60">Your password has been set.</p>
+          <p className="mt-1 text-sm text-ink/65">Your password has been set.</p>
           <button
             type="button"
             onClick={() => router.replace("/")}
@@ -124,7 +124,7 @@ export default function LearnInvitePage() {
     <section className="app-pad">
       <div className="mx-auto max-w-sm">
         <h1 className="font-serif text-h2 font-semibold text-ink">Set your password</h1>
-        <p className="mt-1 text-sm text-ink/60">Choose a password for your account.</p>
+        <p className="mt-1 text-sm text-ink/65">Choose a password for your account.</p>
         <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-3">
           <PasswordInput label="Password" required autoComplete="new-password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <PasswordInput label="Confirm password" required autoComplete="new-password" value={confirm} onChange={(e) => setConfirm(e.target.value)} />

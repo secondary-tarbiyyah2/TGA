@@ -103,7 +103,7 @@ function HomeworkItem({
       <button type="button" onClick={() => setExpanded((e) => !e)} className="flex w-full items-center justify-between gap-2 text-left" aria-expanded={expanded}>
         <span className="text-sm font-medium text-ink">{hw?.title || "Homework"}</span>
         <span className="flex shrink-0 items-center gap-2 text-xs">
-          <span className="text-ink/60">{new Date(row.due_at).toLocaleDateString("en-GB")}</span>
+          <span className="text-ink/65">{new Date(row.due_at).toLocaleDateString("en-GB")}</span>
           <span className={`rounded-full px-2 py-0.5 ${statusMeta.className}`}>{statusMeta.label}</span>
           {feedback && <FeedbackStatusChip status={feedback.status} />}
         </span>
@@ -122,7 +122,7 @@ function HomeworkItem({
 
           {submission ? (
             <div className="rounded-lg bg-cream p-3">
-              <p className="text-xs text-ink/60">Handed in {submission.submitted_at ? new Date(submission.submitted_at).toLocaleString("en-GB") : "—"}</p>
+              <p className="text-xs text-ink/65">Handed in {submission.submitted_at ? new Date(submission.submitted_at).toLocaleString("en-GB") : "—"}</p>
               {submission.response_text && <p className="mt-1 whitespace-pre-line">{submission.response_text}</p>}
               {submission.link_url && (
                 <p className="mt-1">
@@ -145,14 +145,14 @@ function HomeworkItem({
               <p className="rounded-lg bg-amber-50 p-3 text-amber-900">This homework is closed. It no longer accepts work after the due time.</p>
             ) : (
               <div>
-                <p className="mb-2 text-xs text-ink/60">
+                <p className="mb-2 text-xs text-ink/65">
                   You can hand in: {describeAllowed(hw as Homework, { types: SUBMISSION_TYPE_LABEL, files: FILE_CATEGORY_LABEL }).toLowerCase()}
                 </p>
                 <SubmitWork homework={{ id: row.homework_id, allowed_submission_types: hw.allowed_submission_types, allowed_file_types: hw.allowed_file_types }} childId={childId} actionLabel="Hand in" onDone={done} />
               </div>
             )
           ) : (
-            <p className="text-ink/60">Not yet submitted.</p>
+            <p className="text-ink/65">Not yet submitted.</p>
           )}
 
           {feedback ? (
@@ -180,7 +180,7 @@ function HomeworkItem({
                 onDone={done}
               />
               {replacing && !awaitingResubmission && (
-                <button type="button" onClick={() => setReplacing(false)} className="text-xs text-ink/60 underline">
+                <button type="button" onClick={() => setReplacing(false)} className="text-xs text-ink/65 underline">
                   Cancel
                 </button>
               )}
@@ -228,8 +228,8 @@ export function HomeworkForChild({ childId, canSubmit, classId, canResubmit = fa
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase, childId, classId]);
 
-  if (rows === null) return <p className="text-sm text-ink/60">Loading homework…</p>;
-  if (rows.length === 0) return <p className="text-sm text-ink/60">No homework set yet.</p>;
+  if (rows === null) return <p className="text-sm text-ink/65">Loading homework…</p>;
+  if (rows.length === 0) return <p className="text-sm text-ink/65">No homework set yet.</p>;
 
   return (
     <ul className="space-y-2">

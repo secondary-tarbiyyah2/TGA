@@ -114,7 +114,7 @@ export function HouseBoard({
           <h2 id="house-board-h" className="text-base font-semibold text-ink">
             Assign children
           </h2>
-          <p className="text-xs text-ink/60">Drag a child onto a house, or tick several and use Move selected. Siblings are placed together by auto-assign.</p>
+          <p className="text-xs text-ink/65">Drag a child onto a house, or tick several and use Move selected. Siblings are placed together by auto-assign.</p>
         </div>
         <button type="button" disabled={busy} onClick={onAutoAssign} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-semibold text-ink/80 hover:bg-cream disabled:opacity-50">
           Auto-assign everyone without a house
@@ -160,7 +160,7 @@ export function HouseBoard({
         </div>
       )}
 
-      {houses.filter((h) => h.active).length === 0 && <p className="mt-3 text-sm text-ink/60">Add a house above to start assigning children.</p>}
+      {houses.filter((h) => h.active).length === 0 && <p className="mt-3 text-sm text-ink/65">Add a house above to start assigning children.</p>}
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {columns.map((col) => {

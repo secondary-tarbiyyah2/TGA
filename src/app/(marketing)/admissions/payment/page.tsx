@@ -16,7 +16,7 @@ export default function AdmissionsPaymentPage() {
         <Kicker>Admissions</Kicker>
         <h1 className="text-h2 font-serif font-semibold text-ink">Upload proof of payment.</h1>
         <div className="mt-8">
-          <Suspense fallback={<p className="text-ink/60">Loading…</p>}>
+          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
             <PaymentProofClient />
           </Suspense>
         </div>

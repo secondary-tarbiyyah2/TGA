@@ -58,7 +58,7 @@ function ActivityFeed() {
         <ul className="divide-y divide-gold-light/70">
           {rows.map((r) => (
             <li key={r.id} className="flex items-start gap-3 px-5 py-3 text-sm">
-              <span aria-hidden="true" className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cream text-[11px] font-semibold text-ink/60">
+              <span aria-hidden="true" className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cream text-[11px] font-semibold text-ink/65">
                 {(r.actor_email || "S").slice(0, 1).toUpperCase()}
               </span>
               <div className="min-w-0">
@@ -172,7 +172,7 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
                     <span className="rounded-full bg-red-50 px-2.5 py-0.5 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Register missing</span>
                   )
                 ) : (
-                  <span className="rounded-full bg-cream px-2.5 py-0.5 text-xs font-medium text-ink/60">Later</span>
+                  <span className="rounded-full bg-cream px-2.5 py-0.5 text-xs font-medium text-ink/65">Later</span>
                 )}
               </li>
             );

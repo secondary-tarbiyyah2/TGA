@@ -181,7 +181,7 @@ function OfferSection({
           <label className="block text-sm font-medium text-ink">
             Place starts
             <input type="date" value={d.startDate} onChange={(e) => set("startDate", e.target.value)} className={fieldCls} />
-            <span className="mt-1 block text-xs font-normal text-ink/55">Family asked for: {app.preferred_start || "not given"}</span>
+            <span className="mt-1 block text-xs font-normal text-ink/65">Family asked for: {app.preferred_start || "not given"}</span>
           </label>
           <label className="block text-sm font-medium text-ink">
             Plan chosen
@@ -241,7 +241,7 @@ function OfferSection({
           <button type="button" onClick={() => { setComposing((c) => !c); setMsg(null); }} disabled={dirty} className={primaryBtn}>
             Send offer
           </button>
-          {dirty && <span className="text-xs text-ink/55">Save first, so the email uses the latest dates and amounts.</span>}
+          {dirty && <span className="text-xs text-ink/65">Save first, so the email uses the latest dates and amounts.</span>}
           {details?.offer_emailed_at && <Pill tone="good">Offer emailed {new Date(details.offer_emailed_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" })}</Pill>}
         </div>
         {composing && (
@@ -256,7 +256,7 @@ function OfferSection({
           />
         )}
         {(app.admin_fee_amount === null || app.deposit_amount === null) && (
-          <p className="mt-2 text-xs text-ink/55">
+          <p className="mt-2 text-xs text-ink/65">
             Registration fee default {formatMoney(fees.registrationFee)}; first payment default {fees.activeFirstPayment !== null ? formatMoney(fees.activeFirstPayment) : "set once a plan is chosen"}.
           </p>
         )}
@@ -283,11 +283,11 @@ function OfferSection({
         <button type="button" onClick={save} disabled={saving || !dirty} className={primaryBtn}>
           {saving ? "Saving…" : "Save offer & paperwork"}
         </button>
-        {dirty && !saving && <span className="text-xs text-ink/55">Unsaved changes</span>}
+        {dirty && !saving && <span className="text-xs text-ink/65">Unsaved changes</span>}
         {msg && <span role={msg.ok ? "status" : "alert"} className={`text-xs ${msg.ok ? "text-teal-700" : "text-red-700"}`}>{msg.text}</span>}
       </div>
 
-      {showAccept && (dirty ? <p className="text-xs text-ink/60">Save the changes above before accepting.</p> : <AcceptAccounts app={app} ctx={ctx} onMove={onMove} onCreateAccounts={onCreateAccounts} />)}
+      {showAccept && (dirty ? <p className="text-xs text-ink/65">Save the changes above before accepting.</p> : <AcceptAccounts app={app} ctx={ctx} onMove={onMove} onCreateAccounts={onCreateAccounts} />)}
     </div>
   );
 }

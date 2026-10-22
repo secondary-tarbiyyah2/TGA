@@ -67,7 +67,7 @@ export function ActionCentre({ role }: { role: Role }) {
           return (
             <section key={g.key} aria-labelledby={`ac-${g.key}`}>
               <h2 id={`ac-${g.key}`} className="text-base font-semibold text-ink">
-                {g.title} <span className="font-normal text-ink/60">· {list.length}</span>
+                {g.title} <span className="font-normal text-ink/65">· {list.length}</span>
               </h2>
               <p className={ui.hint}>{g.hint}</p>
               <ul className="mt-2 space-y-2">
@@ -79,7 +79,7 @@ export function ActionCentre({ role }: { role: Role }) {
                         {i.title}
                       </p>
                       <p className="mt-1 text-sm text-ink/75">{i.detail}</p>
-                      {i.who && <p className="mt-0.5 text-xs text-ink/60">{i.who}</p>}
+                      {i.who && <p className="mt-0.5 text-xs text-ink/65">{i.who}</p>}
                     </div>
                     <Link href={i.href} className={`${g.key === "now" ? ui.btnPrimary : ui.btnSecondary} ${ui.sm}`}>
                       {i.cta}
@@ -102,7 +102,7 @@ export function ActionCentre({ role }: { role: Role }) {
             <li><b>5 days:</b> escalate to the head teacher.</li>
             <li><b>3 missed in 14 days:</b> a pattern. Speak to the parent and agree support.</li>
           </ol>
-          <p className="mt-2 text-xs text-ink/60">The portal shows each stage and who is at it. It does not send emails or messages for you.</p>
+          <p className="mt-2 text-xs text-ink/65">The portal shows each stage and who is at it. It does not send emails or messages for you.</p>
         </details>
       )}
     </div>

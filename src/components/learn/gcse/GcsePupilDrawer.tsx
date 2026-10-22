@@ -128,15 +128,15 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-gold-light bg-white px-5 py-4">
           <div>
             <h2 className="font-serif text-h3 font-semibold text-ink">{childName}</h2>
-            <p className="text-xs text-ink/60">GCSE grades and history</p>
+            <p className="text-xs text-ink/65">GCSE grades and history</p>
           </div>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/55 hover:bg-cream">
+          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream">
             ×
           </button>
         </div>
 
         <div className="space-y-5 p-5">
-          {rows.length === 0 && <p className="text-sm text-ink/60">No GCSE grades recorded for this pupil yet.</p>}
+          {rows.length === 0 && <p className="text-sm text-ink/65">No GCSE grades recorded for this pupil yet.</p>}
           {rows.map((r) => {
             const hist = bySubject.get(r.subject_id) || [];
             const trend = actualTrend(hist);
@@ -149,7 +149,7 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
                   <GcseStatusChip row={r} />
                 </div>
                 <div className="mt-3 flex flex-wrap items-center gap-4">
-                  <div className="flex items-center gap-3 text-xs text-ink/60">
+                  <div className="flex items-center gap-3 text-xs text-ink/65">
                     <span className="flex items-center gap-1">Target <GradeChip grade={r.target_grade} kind="Target" /></span>
                     <span className="flex items-center gap-1">Predicted <GradeChip grade={r.predicted_grade} kind="Predicted" /></span>
                     <span className="flex items-center gap-1">Actual <GradeChip grade={r.actual_grade} kind="Actual" /></span>
@@ -180,7 +180,7 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
                       .reverse()
                       .map((h) => (
                         <li key={h.id} className="flex flex-wrap items-center justify-between gap-2 py-1.5">
-                          <span className="text-ink/60">
+                          <span className="text-ink/65">
                             {fmtDate(h.recorded_at)}
                             {h.kind === "mock" && <span className="ml-2 rounded bg-gold-light/40 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-gold-900">{h.label || "Mock"}</span>}
                           </span>
@@ -249,7 +249,7 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
               <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-ink">
                 <span role="status">
                   {markOk ? `${((m / o) * 100).toFixed(1)}% suggests grade ${suggested ?? "below 1"}.` : "Enter the mark to see a suggested grade."}
-                  {toNext && toNext.marks > 0 && <span className="ml-1 text-xs text-ink/60">{toNext.marks} more for grade {toNext.grade}.</span>}
+                  {toNext && toNext.marks > 0 && <span className="ml-1 text-xs text-ink/65">{toNext.marks} more for grade {toNext.grade}.</span>}
                 </span>
                 <label className="flex items-center gap-1 text-xs text-ink/70">
                   Grade

@@ -35,7 +35,7 @@ function ItemCard({ item, colour }: { item: DayItem; colour: string }) {
         <KindMark kind={item.kind} colour={colour} />
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-ink">{item.title}</p>
-          <p className="text-xs text-ink/60">
+          <p className="text-xs text-ink/65">
             {when}
             {when && item.className && item.className !== item.title ? " · " : ""}
             {item.className && item.className !== item.title ? item.className : ""}
@@ -45,8 +45,8 @@ function ItemCard({ item, colour }: { item: DayItem; colour: string }) {
               {item.childName}
             </p>
           )}
-          {meta && <p className="mt-0.5 text-xs text-ink/55">{meta}</p>}
-          {item.note && <p className="mt-1 line-clamp-3 text-xs text-ink/60">{item.note}</p>}
+          {meta && <p className="mt-0.5 text-xs text-ink/65">{meta}</p>}
+          {item.note && <p className="mt-1 line-clamp-3 text-xs text-ink/65">{item.note}</p>}
           {(item.href || item.joinUrl) && (
             <div className="mt-2 flex flex-wrap gap-2">
               {item.href && (
@@ -150,9 +150,9 @@ export function DayPanel({
 
       <div className="space-y-4 overflow-y-auto p-4">
         {loading ? (
-          <p className="text-sm text-ink/55">Loading…</p>
+          <p className="text-sm text-ink/65">Loading…</p>
         ) : items.length === 0 ? (
-          <p className="text-sm text-ink/55">{info.closure.length ? "School is closed — nothing scheduled." : weekend ? "Weekend — nothing scheduled." : "Nothing scheduled for this day."}</p>
+          <p className="text-sm text-ink/65">{info.closure.length ? "School is closed — nothing scheduled." : weekend ? "Weekend — nothing scheduled." : "Nothing scheduled for this day."}</p>
         ) : (
           ORDER.map((k) => {
             const list = items.filter((i) => i.kind === k);

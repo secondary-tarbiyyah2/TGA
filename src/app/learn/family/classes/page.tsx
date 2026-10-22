@@ -15,7 +15,7 @@ function ChildClasses({ child }: { child: FamilyChild }) {
     <section className="mb-10">
       <h2 className="mb-3 text-base font-semibold text-ink">
         {child.name}
-        {child.yearGroup && <span className="ml-2 text-sm font-normal text-ink/55">{child.yearGroup}</span>}
+        {child.yearGroup && <span className="ml-2 text-sm font-normal text-ink/65">{child.yearGroup}</span>}
       </h2>
       <ClassGrid viewer={viewer} classes={classes} hrefFor={(c) => `/family/class?id=${c.id}&child=${child.id}`} emptyLabel={`${child.name} isn't enrolled in any classes yet.`} />
     </section>
@@ -52,7 +52,7 @@ function FamilyClassesContent() {
       {children === null ? (
         <div className="h-48 animate-pulse rounded-2xl bg-white" />
       ) : children.length === 0 ? (
-        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/60">
+        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">
           No children on your account yet. Add them from your <Link href="/family/dashboard" className="text-teal-700 underline">dashboard</Link>.
         </p>
       ) : (
@@ -66,7 +66,7 @@ export default function FamilyClassesPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
-        <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
+        <Suspense fallback={<p className="text-sm text-ink/65">Loading…</p>}>
           <FamilyClassesContent />
         </Suspense>
       </LearnGate>

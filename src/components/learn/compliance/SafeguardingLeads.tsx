@@ -39,13 +39,13 @@ export function SafeguardingLeadsBanner({ canManage = false }: { canManage?: boo
     <section aria-label="Designated Safeguarding Lead" className="rounded-2xl border-2 border-teal-200 bg-teal-50 p-5">
       <p className="text-xs font-semibold uppercase tracking-wider text-teal-900/70">Designated Safeguarding Lead</p>
       {leads === null ? (
-        <p className="mt-1 text-sm text-ink/60">Loading…</p>
+        <p className="mt-1 text-sm text-ink/65">Loading…</p>
       ) : dsl.length > 0 ? (
         <p className="mt-1 font-serif text-h3 font-semibold text-ink">{joinNames(dsl)}</p>
       ) : (
         <p className="mt-1 text-sm font-semibold text-red-800">No Designated Safeguarding Lead has been assigned yet.</p>
       )}
-      <p className="mt-1 text-xs text-ink/60">
+      <p className="mt-1 text-xs text-ink/65">
         Concerns also go to the Headteacher{heads.length > 0 ? ` (${joinNames(heads)})` : ""}.{" "}
         {canManage ? (
           <>

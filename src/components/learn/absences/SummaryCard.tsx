@@ -5,7 +5,7 @@ import { formatDay, type Absence } from "./data";
 
 type Tally = { total: number; authorised: number; unauthorised: number; unexplained: number };
 const zero = (): Tally => ({ total: 0, authorised: 0, unauthorised: 0, unexplained: 0 });
-const th = "whitespace-nowrap border-b border-gold-light/50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/55";
+const th = "whitespace-nowrap border-b border-gold-light/50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-ink/65";
 const td = "border-b border-gold-light/20 px-3 py-2 tabular-nums";
 
 const KIND_CHIP: Record<Absence["kind"], string> = {
@@ -72,11 +72,11 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
         <p className="text-xs text-ink/65">{periodLabel}. Select a class to see who was away.</p>
       </div>
       {absences === null ? (
-        <p className="px-4 py-6 text-sm text-ink/60">Loading…</p>
+        <p className="px-4 py-6 text-sm text-ink/65">Loading…</p>
       ) : classes.length === 0 ? (
         <div className="px-4 py-8 text-center">
           <p className="font-medium text-ink">No absences in this period</p>
-          <p className="mt-1 text-sm text-ink/60">Nothing has been marked absent. That is good news.</p>
+          <p className="mt-1 text-sm text-ink/65">Nothing has been marked absent. That is good news.</p>
         </div>
       ) : (
         <div className="overflow-x-auto">
@@ -117,7 +117,7 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
           </table>
         </div>
       )}
-      <p className="border-t border-gold-light/40 px-4 py-3 text-xs text-ink/55">
+      <p className="border-t border-gold-light/40 px-4 py-3 text-xs text-ink/65">
         Unexplained is its own column on purpose: an absence nobody has told us about is a question still open, not one that was decided against.
       </p>
 
@@ -125,7 +125,7 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
         <div className="border-t border-gold-light px-4 py-4">
           <div className="mb-3 flex items-center justify-between gap-2">
             <h3 className="text-sm font-semibold text-ink">{openName}: who was away</h3>
-            <button type="button" onClick={() => setOpenClass(null)} className="rounded-lg px-2 py-1 text-xs font-medium text-ink/60 hover:bg-cream">
+            <button type="button" onClick={() => setOpenClass(null)} className="rounded-lg px-2 py-1 text-xs font-medium text-ink/65 hover:bg-cream">
               Close
             </button>
           </div>

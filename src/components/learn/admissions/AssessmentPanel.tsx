@@ -163,12 +163,12 @@ export function AssessmentPanel({
           <label className="block text-sm font-medium text-ink sm:col-span-2">
             Assessment date &amp; time (UK time)
             <input type="datetime-local" value={d.assessmentAt} onChange={(e) => set("assessmentAt", e.target.value)} className={fieldCls} />
-            {d.assessmentAt && <span className="mt-1 block text-xs font-normal text-ink/55">{fmtLondon(fromLondonInput(d.assessmentAt))}</span>}
+            {d.assessmentAt && <span className="mt-1 block text-xs font-normal text-ink/65">{fmtLondon(fromLondonInput(d.assessmentAt))}</span>}
           </label>
           <label className="block text-sm font-medium text-ink sm:col-span-2">
             Join link (Teams / Zoom / other)
             <input type="url" value={d.link} onChange={(e) => set("link", e.target.value)} placeholder={defaultLink ? `Default: ${defaultLink}` : "https://…"} maxLength={500} className={fieldCls} />
-            <span className="mt-1 block text-xs font-normal text-ink/55">Leave blank to use the default link from Admissions settings{defaultLink ? "" : " (none set yet)"}.</span>
+            <span className="mt-1 block text-xs font-normal text-ink/65">Leave blank to use the default link from Admissions settings{defaultLink ? "" : " (none set yet)"}.</span>
           </label>
           <label className="block text-sm font-medium text-ink sm:col-span-2">
             Duration shown to the family
@@ -183,7 +183,7 @@ export function AssessmentPanel({
           <button type="button" onClick={() => { setComposing((c) => !c); setMsg(null); }} disabled={!app.assessment_at || dirty} className={ghostBtn}>
             Email assessment details
           </button>
-          {(!app.assessment_at || dirty) && <span className="text-xs text-ink/55">{dirty ? "Save first." : "Set a date and time first."}</span>}
+          {(!app.assessment_at || dirty) && <span className="text-xs text-ink/65">{dirty ? "Save first." : "Set a date and time first."}</span>}
           {ctx.details?.assessment_emailed_at && <Pill tone="good">Emailed {new Date(ctx.details.assessment_emailed_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" })}</Pill>}
         </div>
         {composing && (
@@ -259,7 +259,7 @@ export function AssessmentPanel({
             Results PDF
             <input type="file" accept="application/pdf" disabled={uploading} onChange={(e) => { void uploadResults(e.target.files?.[0] || null); e.target.value = ""; }} className="mt-1 block w-full text-sm" />
           </label>
-          <p className="mt-1 text-xs text-ink/55">
+          <p className="mt-1 text-xs text-ink/65">
             {uploading ? "Uploading…" : ctx.details?.assessment_results_path ? "A results PDF is on file; see the Documents tab. Uploading another adds it alongside." : "Added to the Documents tab (PDF, up to 10 MB)."}
           </p>
         </div>
@@ -269,7 +269,7 @@ export function AssessmentPanel({
         <button type="button" onClick={save} disabled={saving || !dirty} className={primaryBtn}>
           {saving ? "Saving…" : "Save assessment"}
         </button>
-        {dirty && !saving && <span className="text-xs text-ink/55">Unsaved changes</span>}
+        {dirty && !saving && <span className="text-xs text-ink/65">Unsaved changes</span>}
         {msg && <span role={msg.ok ? "status" : "alert"} className={`text-xs ${msg.ok ? "text-teal-700" : "text-red-700"}`}>{msg.text}</span>}
       </div>
     </div>

@@ -212,7 +212,7 @@ function OpenEveningContent() {
       ) : sessions.length === 0 ? (
         <div className="rounded-2xl border border-gold-light bg-white px-5 py-12 text-center">
           <p className="text-base font-semibold text-ink">No open evenings yet</p>
-          <p className="mt-1 text-sm text-ink/60">Add one and it appears on the Open evening page of the website straight away.</p>
+          <p className="mt-1 text-sm text-ink/65">Add one and it appears on the Open evening page of the website straight away.</p>
         </div>
       ) : (
         <ul className="space-y-3">
@@ -233,7 +233,7 @@ function OpenEveningContent() {
                       <div className="min-w-0">
                         <p className="font-semibold text-ink">{s.title}</p>
                         <p className="text-sm text-ink/75">{ukDateTime(s.starts_at)} to {new Date(s.ends_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" })} (UK time)</p>
-                        <p className="mt-1 text-xs text-ink/60">
+                        <p className="mt-1 text-xs text-ink/65">
                           <span className={`mr-2 rounded-full px-2 py-0.5 font-semibold ${state === "On the website" ? "bg-green-100 text-green-900" : "bg-ink/5 text-ink/70"}`}>{state}</span>
                           {people} of {s.capacity} places booked · {confirmed.length} {confirmed.length === 1 ? "booking" : "bookings"}
                           {s.join_url ? "" : " · no joining link yet"}
@@ -255,7 +255,7 @@ function OpenEveningContent() {
                     {open && (
                       <div className="mt-4 border-t border-gold-light/60 pt-3">
                         {list.length === 0 ? (
-                          <p className="text-sm text-ink/60">Nobody has booked this evening yet.</p>
+                          <p className="text-sm text-ink/65">Nobody has booked this evening yet.</p>
                         ) : (
                           <>
                             <div className="mb-2 flex flex-wrap gap-3 text-xs">

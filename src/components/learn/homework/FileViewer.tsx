@@ -79,7 +79,7 @@ export function FileViewer({ file, onClose }: { file: ViewerFile; onClose: () =>
           </div>
         </div>
         <div className="flex min-h-0 flex-1 items-center justify-center overflow-auto bg-cream p-2">
-          {state.status === "loading" && <p role="status" className="text-sm text-ink/60">Loading…</p>}
+          {state.status === "loading" && <p role="status" className="text-sm text-ink/65">Loading…</p>}
           {state.status === "error" && (
             <p role="alert" className="max-w-sm text-center text-sm text-red-700">
               This file couldn&apos;t be opened. It may have been removed, or you may not have access to it.

@@ -45,7 +45,7 @@ export function MeetingLinksSection({ classes, reload }: { classes: ClassRow[]; 
   return (
     <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-sm text-ink/60">Paste a recurring Teams, Zoom or Meet link per class. It is used to join that class&apos;s lessons.</p>
+        <p className="text-sm text-ink/65">Paste a recurring Teams, Zoom or Meet link per class. It is used to join that class&apos;s lessons.</p>
         <div className="flex gap-2" role="group" aria-label="Show classes">
           {([["all", `All ${classes.length}`], ["missing", `No link ${missing}`]] as const).map(([id, label]) => (
             <button key={id} type="button" aria-pressed={show === id} onClick={() => setShow(id)} className={`rounded-full border px-3 py-1 text-sm font-medium ${show === id ? "border-gold-500 bg-gold-500 text-ink" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}>{label}</button>

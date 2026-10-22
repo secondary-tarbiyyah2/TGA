@@ -37,10 +37,10 @@ export function CredentialsCard({ creds, onDismiss }: { creds: IssuedCredentials
         {creds.kind === "new" ? `Login created for ${creds.childName}` : `New temporary password for ${creds.childName}`}
       </p>
       <dl className="mt-2 grid gap-2 sm:grid-cols-[auto_1fr_auto] sm:items-center">
-        <dt className="text-ink/60">Username</dt>
+        <dt className="text-ink/65">Username</dt>
         <dd className="break-all font-mono text-base font-semibold">{creds.username}</dd>
         <dd><CopyButton text={creds.username} label="username" /></dd>
-        <dt className="text-ink/60">Temporary password</dt>
+        <dt className="text-ink/65">Temporary password</dt>
         <dd className="break-all font-mono text-base font-semibold">{creds.password}</dd>
         <dd><CopyButton text={creds.password} label="password" /></dd>
       </dl>

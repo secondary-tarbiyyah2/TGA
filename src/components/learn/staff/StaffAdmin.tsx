@@ -32,7 +32,7 @@ const VETTING_COLUMNS = "user_id, dbs_check_date, dbs_renewal_due, right_to_work
 const INPUT = "mt-1 w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm text-ink";
 
 const STATE_STYLE: Record<DueState, string> = {
-  none: "bg-cream text-ink/60",
+  none: "bg-cream text-ink/65",
   ok: "bg-green-50 text-green-800",
   soon: "bg-amber-50 text-amber-900",
   overdue: "bg-red-50 text-red-800",
@@ -286,7 +286,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
             Designated Safeguarding Lead
           </label>
         </div>
-        <p className="mt-2 text-xs text-ink/60">
+        <p className="mt-2 text-xs text-ink/65">
           A Designated Safeguarding Lead receives reported concerns, can read the safeguarding log and sees flagged messages. There can be more than one: switch this on for a deputy too. The school must always have at least one.
           {!canSetDsl ? " Only the Headteacher can change this." : ""}
         </p>
@@ -387,7 +387,7 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
       <section aria-label="Staff list" className="rounded-2xl border border-gold-light bg-white">
         <div className="border-b border-gold-light px-4 py-3">
           <h2 className="text-sm font-semibold text-ink">Staff</h2>
-          {staff && <p className="text-xs text-ink/55">{flagged === 0 ? "All compliance dates are up to date." : `${flagged} with compliance items to check.`}</p>}
+          {staff && <p className="text-xs text-ink/65">{flagged === 0 ? "All compliance dates are up to date." : `${flagged} with compliance items to check.`}</p>}
           {staff && (
             <p className="mt-2 rounded-lg bg-teal-50 px-3 py-2 text-xs text-teal-900">
               <span className="font-semibold">Designated Safeguarding Lead: </span>
@@ -409,7 +409,7 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
           </div>
         )}
         {staff === null ? (
-          <p className="p-4 text-sm text-ink/60">Loading…</p>
+          <p className="p-4 text-sm text-ink/65">Loading…</p>
         ) : staff.length === 0 ? (
           <p className="p-4 text-sm text-amber-900">{problems.length > 0 ? "Couldn't load staff." : "No staff found."}</p>
         ) : (
@@ -429,7 +429,7 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
                       <span className="font-medium text-ink">{s.full_name}</span>
                       <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${STATE_STYLE[worst]}`}>{worst === "ok" ? "Up to date" : `${w.length} to check`}</span>
                     </span>
-                    <span className="block text-xs text-ink/55">
+                    <span className="block text-xs text-ink/65">
                       {s.roles.map((r) => learnRoleLabel(r)).join(", ")}
                       {s.is_dsl ? " · DSL" : ""}
                       {!s.active ? " · Inactive" : ""}
@@ -444,11 +444,11 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
 
       <section aria-label="Staff details" className="rounded-2xl border border-gold-light bg-white p-6">
         {!person ? (
-          <p className="text-sm text-ink/60">Choose a member of staff to edit their details, public profile and compliance dates.</p>
+          <p className="text-sm text-ink/65">Choose a member of staff to edit their details, public profile and compliance dates.</p>
         ) : (
           <div>
             <h2 className="font-serif text-h3 font-semibold text-ink">{person.full_name}</h2>
-            <p className="text-sm text-ink/60">{[person.roles.map((r) => learnRoleLabel(r)).join(", "), person.email].filter(Boolean).join(" · ")}</p>
+            <p className="text-sm text-ink/65">{[person.roles.map((r) => learnRoleLabel(r)).join(", "), person.email].filter(Boolean).join(" · ")}</p>
             {(warnings[person.user_id] || []).length > 0 && (
               <ul className="mt-3 flex flex-wrap gap-2" aria-label="Compliance warnings">
                 {warnings[person.user_id].map((w) => (

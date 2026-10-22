@@ -14,7 +14,7 @@ function StudentClassesContent() {
     <>
       <PageHeader crumbs={[{ label: "Dashboard", href: "/student/dashboard" }, { label: "My classes" }]} title="My classes" />
       {childId === null ? (
-        <p className="text-sm text-ink/60">Your account isn&apos;t linked to a student record yet.</p>
+        <p className="text-sm text-ink/65">Your account isn&apos;t linked to a student record yet.</p>
       ) : viewer ? (
         <ClassGrid viewer={viewer} classes={classes} hrefFor={(c) => `/student/class?id=${c.id}`} emptyLabel="You're not in any classes yet." />
       ) : (

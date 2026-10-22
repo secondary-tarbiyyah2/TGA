@@ -305,7 +305,7 @@ export function PackBuilder({
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
-          <p className="text-xs text-ink/60">{yearLabel} · revision pack</p>
+          <p className="text-xs text-ink/65">{yearLabel} · revision pack</p>
           <h2 className="text-h3 font-semibold text-ink">{id ? `Edit: ${title || unit}` : "New revision pack"}</h2>
         </div>
         <div className="flex gap-2">
@@ -400,7 +400,7 @@ export function PackBuilder({
                   className="aspect-video w-full rounded-lg bg-ink"
                 />
               ) : (
-                <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/60">
+                <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/65">
                   Loading the video…
                 </div>
               )}
@@ -457,8 +457,8 @@ export function PackBuilder({
                     <button type="button" onClick={() => setOpen(isOpen ? null : c.key)} aria-expanded={isOpen} className="flex w-full items-start gap-3 p-3 text-left">
                       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-teal-100 text-xs font-bold text-teal-900">{k + 1}</span>
                       <span className="min-w-0 flex-1">
-                        <span className="block text-sm font-semibold text-ink">{c.title || <em className="font-normal text-ink/55">Untitled chapter</em>}</span>
-                        <span className="block text-xs tabular-nums text-ink/60">
+                        <span className="block text-sm font-semibold text-ink">{c.title || <em className="font-normal text-ink/65">Untitled chapter</em>}</span>
+                        <span className="block text-xs tabular-nums text-ink/65">
                           {clock(c.start)}–{duration || c.end ? clock(end) : "end"}
                           {c.term && (
                             <span lang="ar" dir="rtl" className="ml-2 text-sm text-teal-700">
@@ -503,7 +503,7 @@ export function PackBuilder({
                             <input className={input} value={c.transliteration} onChange={(e) => setCh(c.key, { transliteration: e.target.value })} placeholder="ar-Rububiyyah" />
                           </label>
                           <label className="text-sm font-medium text-ink sm:col-span-2">
-                            Key points <span className="font-normal text-ink/60">(one per line)</span>
+                            Key points <span className="font-normal text-ink/65">(one per line)</span>
                             <textarea className={`${input} h-24`} value={c.points} onChange={(e) => setCh(c.key, { points: e.target.value })} />
                           </label>
                           <label className="text-sm font-medium text-ink">
@@ -515,7 +515,7 @@ export function PackBuilder({
                             <input className={input} value={c.quoteSrc} onChange={(e) => setCh(c.key, { quoteSrc: e.target.value })} placeholder="e.g. Surah al-Mulk 67:1" />
                           </label>
                           <label className="text-sm font-medium text-ink sm:col-span-2">
-                            Key words <span className="font-normal text-ink/60">(one per line)</span>
+                            Key words <span className="font-normal text-ink/65">(one per line)</span>
                             <textarea className={`${input} h-16`} value={c.keywords} onChange={(e) => setCh(c.key, { keywords: e.target.value })} />
                           </label>
                         </div>
@@ -566,7 +566,7 @@ export function PackBuilder({
               <input type="checkbox" className="mt-1" checked={!!checkedAt} onChange={(e) => markChecked(e.target.checked)} />
               <span>
                 I have checked the Arabic, the transliteration and every Qur&apos;an and hadith reference in this pack.
-                {checkedAt && <span className="block text-xs text-ink/60">Checked {new Date(checkedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</span>}
+                {checkedAt && <span className="block text-xs text-ink/65">Checked {new Date(checkedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</span>}
               </span>
             </label>
             <div className="flex flex-wrap items-center gap-2">
@@ -802,11 +802,11 @@ export function QuestionEditor({
         <p className="text-xs text-ink/65">Choose the circle beside the correct answer.</p>
         <div className="grid gap-2 sm:grid-cols-2">
           <label className="text-sm font-medium text-ink">
-            Why it&apos;s right <span className="font-normal text-ink/60">(shown after answering)</span>
+            Why it&apos;s right <span className="font-normal text-ink/65">(shown after answering)</span>
             <input className={input} value={draft.explanation} onChange={(e) => setDraft({ ...draft, explanation: e.target.value })} />
           </label>
           <label className="text-sm font-medium text-ink">
-            Hint <span className="font-normal text-ink/60">(practice coach)</span>
+            Hint <span className="font-normal text-ink/65">(practice coach)</span>
             <input className={input} value={draft.hint} onChange={(e) => setDraft({ ...draft, hint: e.target.value })} />
           </label>
         </div>

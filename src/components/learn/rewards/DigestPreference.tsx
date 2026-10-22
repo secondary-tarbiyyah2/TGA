@@ -58,7 +58,7 @@ export function DigestPreference() {
         <input type="checkbox" className="mt-1" checked={!optOut} disabled={busy} onChange={(e) => toggle(e.target.checked)} />
         <span>
           Email me a summary of my children&apos;s week every Friday afternoon
-          <span className="block text-xs text-ink/55">Attendance, homework, merits, teacher comments and next week&apos;s lessons, in one email per family.</span>
+          <span className="block text-xs text-ink/65">Attendance, homework, merits, teacher comments and next week&apos;s lessons, in one email per family.</span>
         </span>
       </label>
       {error && (

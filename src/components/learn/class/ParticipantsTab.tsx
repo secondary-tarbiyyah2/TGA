@@ -70,7 +70,7 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
       <div className="flex max-h-[90vh] w-full max-w-lg flex-col overflow-hidden rounded-t-2xl bg-white sm:rounded-2xl">
         <div className="flex items-center justify-between gap-3 border-b border-gold-light px-5 py-3.5">
           <h2 className="text-base font-semibold text-ink">Add participants</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-lg leading-none text-ink/60 hover:bg-cream">
+          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-lg leading-none text-ink/65 hover:bg-cream">
             ×
           </button>
         </div>
@@ -92,9 +92,9 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto">
           {candidates === null ? (
-            <p className="px-5 py-4 text-sm text-ink/60">Loading…</p>
+            <p className="px-5 py-4 text-sm text-ink/65">Loading…</p>
           ) : shown.length === 0 ? (
-            <p className="px-5 py-4 text-sm text-ink/60">No matching students to add.</p>
+            <p className="px-5 py-4 text-sm text-ink/65">No matching students to add.</p>
           ) : (
             <ul className="divide-y divide-gold-light/70">
               {shown.map((c) => (
@@ -115,7 +115,7 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
         )}
         {error && <p className="border-t border-red-200 bg-red-50 px-5 py-2 text-sm text-red-800">{error}</p>}
         <div className="flex items-center justify-between gap-3 border-t border-gold-light px-5 py-3">
-          <span className="text-sm text-ink/60">{picked.size} selected</span>
+          <span className="text-sm text-ink/65">{picked.size} selected</span>
           <div className="flex gap-2">
             <button type="button" onClick={onClose} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
               Cancel
@@ -173,7 +173,7 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
     onChanged?.();
   };
 
-  if (people === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (people === null) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <div className="space-y-6">
@@ -206,7 +206,7 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
         </div>
         {message && <p className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{message}</p>}
         {people.length === 0 ? (
-          <p className="text-sm text-ink/60">No students enrolled yet.</p>
+          <p className="text-sm text-ink/65">No students enrolled yet.</p>
         ) : (
           <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {people.map((p) => (

@@ -91,7 +91,7 @@ export function SingleCentralRecord() {
       <h2 className="font-serif text-h3 font-semibold text-ink">Single Central Record</h2>
       <p className="mt-1 text-xs text-ink/65">Recruitment/vetting checks for every staff member. DBS renewals due within 60 days are highlighted.</p>
       <div className="mt-3 space-y-2">
-        {staff === null && <p className="text-sm text-ink/60">Loading…</p>}
+        {staff === null && <p className="text-sm text-ink/65">Loading…</p>}
         {(staff || []).map((s) => {
           const v = records[s.user_id];
           return (
@@ -103,7 +103,7 @@ export function SingleCentralRecord() {
                 </button>
               </div>
               {v ? (
-                <p className="mt-1 text-xs text-ink/60">
+                <p className="mt-1 text-xs text-ink/65">
                   DBS: {v.dbs_check_date || "—"} (ref {v.dbs_certificate_reference || "—"}), renewal due {v.dbs_renewal_due || "—"}
                   {isExpiring(v.dbs_renewal_due) && <span className="font-semibold text-red-700"> — due soon/overdue</span>}
                   {" · "}References: {v.references_received ? "received" : "not received"} · Right to work: {v.right_to_work_verified ? `verified (${v.right_to_work_document_type || "type not set"})` : "not verified"}
@@ -145,7 +145,7 @@ export function SingleCentralRecord() {
             </div>
           );
         })}
-        {staff?.length === 0 && <p className="text-sm text-ink/60">No staff members found.</p>}
+        {staff?.length === 0 && <p className="text-sm text-ink/65">No staff members found.</p>}
       </div>
     </div>
   );

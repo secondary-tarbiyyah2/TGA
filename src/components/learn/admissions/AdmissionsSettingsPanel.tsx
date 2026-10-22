@@ -73,7 +73,7 @@ export function AdmissionsSettingsPanel() {
         <label className="block text-sm font-medium text-ink">
           Payment instructions (bank details)
           <textarea value={d.payment_instructions} onChange={(e) => set("payment_instructions", e.target.value)} rows={6} maxLength={2000} disabled={!loaded} className={`${fieldCls} font-mono text-xs`} />
-          <span className="mt-1 block text-xs font-normal text-ink/55">Pasted into the offer email under &ldquo;How to pay&rdquo;. The offer also asks families to use the child&apos;s full name as the reference.</span>
+          <span className="mt-1 block text-xs font-normal text-ink/65">Pasted into the offer email under &ldquo;How to pay&rdquo;. The offer also asks families to use the child&apos;s full name as the reference.</span>
         </label>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">

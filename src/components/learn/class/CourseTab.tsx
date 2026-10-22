@@ -54,7 +54,7 @@ const TONE: Record<NonNullable<Activity["status"]>["tone"], string> = {
   todo: "bg-teal-100 text-teal-900 ring-teal-700/20",
   late: "bg-red-50 text-red-800 ring-red-600/20",
   live: "bg-red-600 text-white ring-red-600",
-  muted: "bg-cream text-ink/60 ring-ink/10",
+  muted: "bg-cream text-ink/65 ring-ink/10",
 };
 
 function mondayOf(d: Date): Date {
@@ -231,7 +231,7 @@ function ActivityRow({ a }: { a: Activity }) {
         <span className="min-w-0 flex-1">
           <span className="block text-[11px] font-semibold uppercase tracking-wider text-ink/65">{k.label}</span>
           <span className="block truncate text-sm font-medium text-ink group-hover:text-teal-700 group-hover:underline">{a.title}</span>
-          <span className="block truncate text-xs text-ink/55">{a.meta}</span>
+          <span className="block truncate text-xs text-ink/65">{a.meta}</span>
         </span>
         {a.status && <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset ${TONE[a.status.tone]}`}>{a.status.label}</span>}
       </Link>
@@ -268,7 +268,7 @@ export function CourseTab({ classId, viewer, routes }: { classId: string; viewer
 
   if (activities === null) return <div className="h-64 animate-pulse rounded-2xl border border-gold-light bg-white" />;
   if (weeks.length === 0) {
-    return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/60">Nothing in this class yet. Lessons, assignments and grades will appear here week by week.</p>;
+    return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">Nothing in this class yet. Lessons, assignments and grades will appear here week by week.</p>;
   }
 
   return (
@@ -292,7 +292,7 @@ export function CourseTab({ classId, viewer, routes }: { classId: string; viewer
                   {current && (
                     <ul className="mb-1 ml-3 border-l border-gold-light pl-2">
                       {w.activities.map((a) => (
-                        <li key={a.id} className="truncate py-0.5 text-xs text-ink/60">
+                        <li key={a.id} className="truncate py-0.5 text-xs text-ink/65">
                           {a.title}
                         </li>
                       ))}

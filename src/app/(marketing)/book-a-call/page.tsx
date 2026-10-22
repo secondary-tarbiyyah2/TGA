@@ -71,7 +71,7 @@ export default async function BookACallPage() {
             </ul>
           </div>
         </div>
-        <Suspense fallback={<p className="text-ink/60">Loading booking calendar…</p>}>
+        <Suspense fallback={<p className="text-ink/65">Loading booking calendar…</p>}>
           <BookingCalendar />
         </Suspense>
       </Container>

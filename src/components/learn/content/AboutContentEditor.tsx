@@ -64,7 +64,7 @@ export function AboutContentEditor() {
     setMessage(publishMessage);
   }
 
-  if (!row) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (!row) return <p className="text-sm text-ink/65">Loading…</p>;
   const items = row.recipe_items || [];
   const setItems = (recipe_items: RecipeItem[]) => setRow({ ...row, recipe_items });
 

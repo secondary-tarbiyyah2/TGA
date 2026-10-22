@@ -48,21 +48,21 @@ function DocumentsContent() {
         {outstanding === 0 && (
           <div className="rounded-2xl border border-gold-light bg-white p-8 text-center">
             <p className="font-medium text-ink">All signed</p>
-            <p className="mt-1 text-sm text-ink/60">You have no documents waiting for your signature.</p>
+            <p className="mt-1 text-sm text-ink/65">You have no documents waiting for your signature.</p>
           </div>
         )}
 
         <div className="rounded-2xl border border-gold-light bg-white">
           <h2 className="border-b border-gold-light px-5 py-3 text-lg font-semibold text-ink">Signed by you</h2>
           {pdfError && <p role="alert" className="px-5 py-2 text-sm text-red-800">{pdfError}</p>}
-          {history === null && <p className="px-5 py-4 text-sm text-ink/60">Loading…</p>}
-          {history && history.length === 0 && <p className="px-5 py-4 text-sm text-ink/60">You have not signed any documents yet.</p>}
+          {history === null && <p className="px-5 py-4 text-sm text-ink/65">Loading…</p>}
+          {history && history.length === 0 && <p className="px-5 py-4 text-sm text-ink/65">You have not signed any documents yet.</p>}
           {history && history.length > 0 && (
             <ul className="divide-y divide-gold-light/70">
               {history.map((h) => (
                 <li key={h.id} className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 text-sm">
                   <span className="font-medium text-ink">{h.title}</span>
-                  <span className="flex flex-wrap items-center gap-3 text-ink/60">
+                  <span className="flex flex-wrap items-center gap-3 text-ink/65">
                     <span>
                       Signed{" "}
                       {new Date(h.signed_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}

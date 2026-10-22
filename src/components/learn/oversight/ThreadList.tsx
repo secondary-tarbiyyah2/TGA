@@ -50,7 +50,7 @@ export function ThreadList({
         className="mt-3 w-full rounded-lg border border-ink/15 bg-white px-3 py-2 text-sm"
       />
       <ul className="mt-3 min-h-0 flex-1 divide-y divide-ink/10 overflow-y-auto rounded-lg border border-ink/10 bg-white">
-        {shown.length === 0 && <li className="p-4 text-sm text-ink/55">No conversations match.</li>}
+        {shown.length === 0 && <li className="p-4 text-sm text-ink/65">No conversations match.</li>}
         {shown.map((t) => (
           <li key={t.thread_id}>
             <button
@@ -62,7 +62,7 @@ export function ThreadList({
                 <span className="shrink-0 text-xs text-ink/65">{shortTime(t.last_at)}</span>
               </span>
               <span className="mt-0.5 flex items-center gap-2">
-                <span className="truncate text-xs text-ink/60">
+                <span className="truncate text-xs text-ink/65">
                   {t.child_name ? `Re: ${t.child_name} · ` : ""}
                   {t.last_preview || "No messages yet"}
                 </span>

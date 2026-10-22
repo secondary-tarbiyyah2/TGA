@@ -39,7 +39,7 @@ function describeAmount(kind: TargetKind, n: number): string {
 
 /** Progress bars for a list of targets. */
 export function TargetList({ targets, entries, onDelete }: { targets: QuranTarget[]; entries: QuranEntry[]; onDelete?: (t: QuranTarget) => void }) {
-  if (targets.length === 0) return <p className="text-sm text-ink/60">No targets set yet.</p>;
+  if (targets.length === 0) return <p className="text-sm text-ink/65">No targets set yet.</p>;
   return (
     <ul className="space-y-3">
       {targets.map((t) => {
@@ -61,7 +61,7 @@ export function TargetList({ targets, entries, onDelete }: { targets: QuranTarge
             >
               <div className={`h-full rounded-full ${meta.bar}`} style={{ width: `${p.pct}%` }} />
             </div>
-            <p className="mt-1 flex flex-wrap items-center justify-between gap-2 text-xs text-ink/60">
+            <p className="mt-1 flex flex-wrap items-center justify-between gap-2 text-xs text-ink/65">
               <span>
                 {p.done} of {describeAmount(t.target_kind, p.total)} · by {new Date(t.due_date).toLocaleDateString("en-GB")}
                 {p.status !== "achieved" && p.daysLeft >= 0 ? ` · ${p.daysLeft} day${p.daysLeft === 1 ? "" : "s"} left` : ""}
@@ -169,7 +169,7 @@ export function QuranTargetsPanel({ childId, classId, entries, canEdit }: { chil
       )}
       {error && <p className="mt-2 text-sm text-red-700">{error}</p>}
       <div className="mt-3">
-        {targets === null ? <p className="text-sm text-ink/60">Loading targets…</p> : <TargetList targets={targets} entries={entries} onDelete={canEdit ? remove : undefined} />}
+        {targets === null ? <p className="text-sm text-ink/65">Loading targets…</p> : <TargetList targets={targets} entries={entries} onDelete={canEdit ? remove : undefined} />}
       </div>
     </div>
   );

@@ -127,8 +127,8 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
     await saveReason(childId, lessonDate, code, "");
   };
 
-  if (children === null) return <p className="px-5 py-4 text-sm text-ink/55">Loading register…</p>;
-  if (children.length === 0) return <p className="px-5 py-4 text-sm text-ink/55">No students enrolled in this class yet.</p>;
+  if (children === null) return <p className="px-5 py-4 text-sm text-ink/65">Loading register…</p>;
+  if (children.length === 0) return <p className="px-5 py-4 text-sm text-ink/65">No students enrolled in this class yet.</p>;
   const unmarked = children.filter((c) => !marks[c.id]);
   const taken = children.length - unmarked.length;
   const anyJoins = Object.keys(joined).length > 0;
@@ -181,7 +181,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                       role="radio"
                       aria-checked={on && !!current}
                       onClick={() => save([{ childId: c.id, status: st.value }])}
-                      className={`px-3 py-1.5 text-sm font-medium transition-colors ${on ? (current ? st.on : "bg-green-50 text-green-800") : "bg-white text-ink/60 hover:bg-cream"}`}
+                      className={`px-3 py-1.5 text-sm font-medium transition-colors ${on ? (current ? st.on : "bg-green-50 text-green-800") : "bg-white text-ink/65 hover:bg-cream"}`}
                     >
                       {st.label}
                     </button>
@@ -192,7 +192,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                 aria-label={`Other mark for ${c.name}`}
                 value={current === "not_engaged" || current === "technical" ? current : ""}
                 onChange={(e) => e.target.value && save([{ childId: c.id, status: e.target.value as Status }])}
-                className={`rounded-lg border px-2 py-1.5 text-sm ${current === "not_engaged" ? "border-amber-500 bg-amber-50 font-medium text-amber-900" : current === "technical" ? "border-slate-500 bg-slate-100 font-medium text-slate-800" : "border-gold-light bg-white text-ink/60"}`}
+                className={`rounded-lg border px-2 py-1.5 text-sm ${current === "not_engaged" ? "border-amber-500 bg-amber-50 font-medium text-amber-900" : current === "technical" ? "border-slate-500 bg-slate-100 font-medium text-slate-800" : "border-gold-light bg-white text-ink/65"}`}
               >
                 <option value="">Other…</option>
                 {OTHER_STATUSES.map((o) => (
@@ -202,12 +202,12 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                 ))}
               </select>
               {current === "absent" && lessonDate && !canRecordReason && (
-                <p className="w-full text-xs text-ink/60">
+                <p className="w-full text-xs text-ink/65">
                   Reason: {reasons[c.id] ? REASONS.find((r) => r.value === reasons[c.id])?.label || "Recorded" : "not given yet (the office follows this up)"}
                 </p>
               )}
               {current === "absent" && lessonDate && canRecordReason && (
-                <label className="flex w-full items-center gap-2 text-xs text-ink/60">
+                <label className="flex w-full items-center gap-2 text-xs text-ink/65">
                   Reason
                   <select value={reasons[c.id] || ""} onChange={(e) => setReason(c.id, e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
                     <option value="">Not recorded</option>

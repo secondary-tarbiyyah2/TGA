@@ -102,8 +102,8 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
     await saveDraft(clone(version.content));
   }
 
-  if (!supabase) return <p className="text-sm text-ink/60">The /learn area isn&apos;t connected yet.</p>;
-  if (status === "loading") return <p className="text-sm text-ink/60">Loading…</p>;
+  if (!supabase) return <p className="text-sm text-ink/65">The /learn area isn&apos;t connected yet.</p>;
+  if (status === "loading") return <p className="text-sm text-ink/65">Loading…</p>;
 
   const published = versions.find((v) => v.status === "published");
   const history = versions.filter((v) => v.id !== draftId);
@@ -133,7 +133,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
       {history.length > 0 && (
         <details className="rounded-2xl border border-gold-light/50 bg-white p-4">
           <summary className="cursor-pointer text-sm font-semibold text-ink">Version history / revert ({history.length})</summary>
-          <ul className="mt-3 space-y-1 text-xs text-ink/60">
+          <ul className="mt-3 space-y-1 text-xs text-ink/65">
             {history.map((v) => (
               <li key={v.id} className="flex items-center justify-between gap-2 border-b border-gold-light/20 py-1">
                 <span>{v.label} — {v.status} — {new Date(v.created_at).toLocaleString("en-GB")}</span>
@@ -211,22 +211,22 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
           <div className="flex items-center justify-between gap-2">
             <span className="text-xs font-medium text-ink/65">Step {q.step}</span>
             <div className="flex items-center gap-2">
-              <button type="button" onClick={() => move(i, -1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/60 hover:bg-cream" aria-label="Move up">↑</button>
-              <button type="button" onClick={() => move(i, 1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/60 hover:bg-cream" aria-label="Move down">↓</button>
-              <label className="flex items-center gap-1 text-xs text-ink/60">
+              <button type="button" onClick={() => move(i, -1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/65 hover:bg-cream" aria-label="Move up">↑</button>
+              <button type="button" onClick={() => move(i, 1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/65 hover:bg-cream" aria-label="Move down">↓</button>
+              <label className="flex items-center gap-1 text-xs text-ink/65">
                 <input type="checkbox" checked={q.active} onChange={(e) => updateQuestion(i, { active: e.target.checked })} />
                 Visible
               </label>
             </div>
           </div>
 
-          <label className="mt-3 block text-xs font-medium text-ink/60">Title</label>
+          <label className="mt-3 block text-xs font-medium text-ink/65">Title</label>
           <input value={q.title} onChange={(e) => updateQuestion(i, { title: e.target.value })} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
 
-          <label className="mt-2 block text-xs font-medium text-ink/60">Subtitle (optional)</label>
+          <label className="mt-2 block text-xs font-medium text-ink/65">Subtitle (optional)</label>
           <input value={q.subtitle ?? ""} onChange={(e) => updateQuestion(i, { subtitle: e.target.value })} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
 
-          <label className="mt-2 block text-xs font-medium text-ink/60">Show only when (simple rule)</label>
+          <label className="mt-2 block text-xs font-medium text-ink/65">Show only when (simple rule)</label>
           <ShowWhenEditor
             questions={config.questions}
             value={q.showWhen ?? []}
@@ -235,7 +235,7 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
 
           {q.type === "single_select" && (
             <div className="mt-3 space-y-2">
-              <p className="text-xs font-medium text-ink/60">Options</p>
+              <p className="text-xs font-medium text-ink/65">Options</p>
               {q.options.map((opt, oi) => (
                 <div key={oi} className="grid grid-cols-[1fr_1fr_auto_auto] items-center gap-2">
                   <input value={opt.label} onChange={(e) => updateOption(i, oi, { label: e.target.value })} placeholder="Label" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
@@ -447,7 +447,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
           </div>
 
           <div className="mt-3 rounded-xl bg-cream p-3">
-            <p className="text-xs font-medium text-ink/60">Then</p>
+            <p className="text-xs font-medium text-ink/65">Then</p>
             <select
               value={rule.action.type}
               onChange={(e) => {
@@ -543,8 +543,8 @@ function SectionsEditor({ config, onChange }: { config: QuizConfig; onChange: (n
             {RESULT_SECTION_LABELS[s.key]}
           </label>
           <div className="flex gap-1">
-            <button type="button" onClick={() => move(i, -1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/60 hover:bg-cream">↑</button>
-            <button type="button" onClick={() => move(i, 1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/60 hover:bg-cream">↓</button>
+            <button type="button" onClick={() => move(i, -1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/65 hover:bg-cream">↑</button>
+            <button type="button" onClick={() => move(i, 1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/65 hover:bg-cream">↓</button>
           </div>
         </div>
       ))}

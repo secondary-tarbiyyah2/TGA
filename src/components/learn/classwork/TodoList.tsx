@@ -97,7 +97,7 @@ function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: strin
       {items === null ? (
         <div className="m-5 h-24 animate-pulse rounded-lg bg-cream" />
       ) : list.length === 0 ? (
-        <p className="p-8 text-center text-sm text-ink/60">{empty[tab]}</p>
+        <p className="p-8 text-center text-sm text-ink/65">{empty[tab]}</p>
       ) : (
         <ul role="tabpanel" className="divide-y divide-gold-light/60 p-2">
           {list.map((i) => (
@@ -105,9 +105,9 @@ function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: strin
               <Link href={hwHref} className="flex flex-wrap items-center gap-3 rounded-lg px-3 py-3 hover:bg-cream">
                 <span className="min-w-0 flex-1">
                   <span className="block truncate text-sm font-medium text-ink">{i.title}</span>
-                  <span className="block truncate text-xs text-ink/60">{i.className}</span>
+                  <span className="block truncate text-xs text-ink/65">{i.className}</span>
                 </span>
-                <span className="text-xs text-ink/55">
+                <span className="text-xs text-ink/65">
                   {tab === "done" && i.submitted_at ? `Handed in ${fmt(i.submitted_at)}` : `Due ${fmt(i.due_at)}`}
                 </span>
                 {i.status === "late" && <span className="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800 ring-1 ring-inset ring-amber-600/20">Handed in late</span>}
@@ -124,7 +124,7 @@ function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: strin
 export function StudentTodo() {
   const childId = useStudentChildId();
   if (childId === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
-  if (!childId) return <p className="text-sm text-ink/60">No pupil account is linked to this login yet.</p>;
+  if (!childId) return <p className="text-sm text-ink/65">No pupil account is linked to this login yet.</p>;
   return <TodoBody childId={childId} hwHref="/student/homework" heading="To do" />;
 }
 
@@ -134,7 +134,7 @@ export function FamilyTodo({ initialChild }: { initialChild?: string }) {
   const [selected, setSelected] = useState(initialChild || "");
   const childId = selected || kids?.[0]?.id || "";
   if (kids === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
-  if (kids.length === 0) return <p className="text-sm text-ink/60">No children are linked to this account yet.</p>;
+  if (kids.length === 0) return <p className="text-sm text-ink/65">No children are linked to this account yet.</p>;
   return (
     <div className="space-y-3">
       {kids.length > 1 && (

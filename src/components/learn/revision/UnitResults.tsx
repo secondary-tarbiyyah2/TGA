@@ -159,7 +159,7 @@ export function UnitResults({ unitId }: { unitId: string }) {
               {stats.missed.length === 0 && <p className="text-sm text-ink/65">Nobody has missed a question yet.</p>}
               {stats.missed.map((m) => (
                 <div key={m.q.id} className="space-y-1 rounded-xl border border-gold-light/80 p-3 text-sm">
-                  <p className="text-xs text-ink/60">
+                  <p className="text-xs text-ink/65">
                     {m.q.topic} · missed by {m.wrong} of {m.total}
                   </p>
                   <p className="font-medium text-ink">{m.q.question}</p>
@@ -208,7 +208,7 @@ export function UnitResults({ unitId }: { unitId: string }) {
                         </th>
                         {stats.topics.map((t) => {
                           const c = cellFor(p.quiz!.answers, t);
-                          const cls2 = c.total === 0 ? "bg-cream text-ink/50" : c.right === c.total ? "bg-green-50 text-green-800" : c.right === 0 ? "bg-red-50 text-red-800" : "bg-amber-50 text-amber-900";
+                          const cls2 = c.total === 0 ? "bg-cream text-ink/65" : c.right === c.total ? "bg-green-50 text-green-800" : c.right === 0 ? "bg-red-50 text-red-800" : "bg-amber-50 text-amber-900";
                           return (
                             <td key={t} className={`rounded-md px-1 py-1.5 text-center font-semibold tabular-nums ${cls2}`}>
                               {c.total ? `${c.right}/${c.total}` : "–"}

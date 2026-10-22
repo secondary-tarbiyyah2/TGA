@@ -201,14 +201,14 @@ export function GcseInterventions() {
       )
     );
 
-  if (items === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (items === null) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6" aria-labelledby="gcse-int-h">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 id="gcse-int-h" className="font-serif text-h3 font-semibold text-ink">
           Interventions
-          <span className="ml-2 text-base font-normal text-ink/60">
+          <span className="ml-2 text-base font-normal text-ink/65">
             {counts.active} active{counts.overdue > 0 ? `, ${counts.overdue} overdue` : ""}
           </span>
         </h2>
@@ -221,7 +221,7 @@ export function GcseInterventions() {
           </button>
         </div>
       </div>
-      <p className="mt-1 text-sm text-ink/60">Staff-only. Each flag has an owner and a next step; families never see these notes.</p>
+      <p className="mt-1 text-sm text-ink/65">Staff-only. Each flag has an owner and a next step; families never see these notes.</p>
       {tableMissing && <p role="alert" className="mt-2 text-xs text-amber-800">The interventions table isn&apos;t there yet (migration 0090), so nothing can be saved until it is applied.</p>}
 
       {showForm && (
@@ -307,7 +307,7 @@ export function GcseInterventions() {
       </div>
 
       {shown.length === 0 ? (
-        <p className="mt-4 text-sm text-ink/60">{items.length === 0 ? "No interventions yet. Use “Flag a pupil” when someone needs extra support." : "Nothing in this view."}</p>
+        <p className="mt-4 text-sm text-ink/65">{items.length === 0 ? "No interventions yet. Use “Flag a pupil” when someone needs extra support." : "Nothing in this view."}</p>
       ) : (
         <ul className="mt-4 divide-y divide-gold-light/40">
           {shown.map((i) => {
@@ -317,13 +317,13 @@ export function GcseInterventions() {
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="min-w-0">
                     <span className="text-sm font-semibold text-ink">{i.children?.name || "Pupil"}</span>
-                    <span className="ml-2 text-xs text-ink/60">
+                    <span className="ml-2 text-xs text-ink/65">
                       {i.subjects?.name || "Subject"}
                       {i.classes?.name ? ` · ${i.classes.name}` : ""}
                     </span>
                     <p className="text-xs text-ink/75">{i.reason}</p>
                   </div>
-                  <label className="flex items-center gap-2 text-xs text-ink/60">
+                  <label className="flex items-center gap-2 text-xs text-ink/65">
                     <span className="sr-only">Status</span>
                     <span className={`rounded-full px-2 py-0.5 ${STATUS_CLASS[i.status]}`}>{STATUS_LABEL[i.status]}</span>
                     <select value={i.status} onChange={(e) => void patch(i, { status: e.target.value as Status })} aria-label={`Status for ${i.children?.name || "pupil"}`} className="rounded-md border border-gold-light/60 bg-white px-1.5 py-1 text-xs">
@@ -342,7 +342,7 @@ export function GcseInterventions() {
                     {i.next_step_due && <span className={`ml-2 rounded px-1.5 py-0.5 ${overdue ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>{overdue ? "Overdue, was due " : "Due "}{fmtDate(i.next_step_due)}</span>}
                   </dd>
                 </dl>
-                <label className="mt-2 block text-xs text-ink/60">
+                <label className="mt-2 block text-xs text-ink/65">
                   Notes
                   <textarea
                     defaultValue={i.note || ""}

@@ -93,7 +93,7 @@ export function ManageBookingClient() {
     else setError(json.error || "failed");
   }
 
-  if (loading) return <p className="text-ink/60">Loading your booking…</p>;
+  if (loading) return <p className="text-ink/65">Loading your booking…</p>;
   if (error === "no_token") {
     return (
       <div>
@@ -134,7 +134,7 @@ export function ManageBookingClient() {
       ) : booking.teamsJoinUrl ? (
         <a href={booking.teamsJoinUrl} className="mt-2 inline-block text-sm font-semibold text-gold-700 underline">Join on Microsoft Teams</a>
       ) : (
-        <p className="mt-2 text-sm text-ink/60">Your join link will appear here shortly before the call starts.</p>
+        <p className="mt-2 text-sm text-ink/65">Your join link will appear here shortly before the call starts.</p>
       )}
       <div className="mt-6 flex flex-wrap gap-3">
         <a href="/book-a-call" className="rounded-full border border-gold-500 px-4 py-2 text-sm font-medium text-gold-700 hover:bg-cream">
@@ -144,7 +144,7 @@ export function ManageBookingClient() {
           Cancel booking
         </button>
       </div>
-      <p className="mt-4 text-xs text-ink/50">To reschedule, book a different time above — your original slot will be freed once the new one is confirmed.</p>
+      <p className="mt-4 text-xs text-ink/65">To reschedule, book a different time above — your original slot will be freed once the new one is confirmed.</p>
     </div>
   );
 }

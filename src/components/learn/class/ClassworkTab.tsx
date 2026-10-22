@@ -309,7 +309,7 @@ export function ClassworkTab({ classId, viewer, classHref }: { classId: string; 
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-ink/60">Everything set for this class, grouped by topic.</p>
+        <p className="text-sm text-ink/65">Everything set for this class, grouped by topic.</p>
         {canEdit && <CreateMenu classHref={classHref} homeworkHref={homeworkHref(viewer)} onPick={(k) => (k === "topic" ? setNewTopic("") : setCreating(k))} />}
       </div>
 
@@ -344,7 +344,7 @@ export function ClassworkTab({ classId, viewer, classHref }: { classId: string; 
       )}
 
       {rows.length === 0 && topics.length === 0 && (
-        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/60">{canEdit ? "No classwork yet. Use Create to add an assignment, material or question." : "Nothing has been set for this class yet."}</p>
+        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">{canEdit ? "No classwork yet. Use Create to add an assignment, material or question." : "Nothing has been set for this class yet."}</p>
       )}
 
       {visibleGroups.map((g) => {
@@ -367,11 +367,11 @@ export function ClassworkTab({ classId, viewer, classHref }: { classId: string; 
                 )}
               </div>
             ) : (
-              <h2 className="px-4 pt-3 text-sm font-semibold text-ink/60">{topics.length > 0 ? "No topic" : "Classwork"}</h2>
+              <h2 className="px-4 pt-3 text-sm font-semibold text-ink/65">{topics.length > 0 ? "No topic" : "Classwork"}</h2>
             )}
             {!closed && (
               <ul className="divide-y divide-gold-light/60 px-2 pb-2">
-                {g.items.length === 0 && <li className="px-3 py-3 text-sm text-ink/55">Nothing in this topic yet.</li>}
+                {g.items.length === 0 && <li className="px-3 py-3 text-sm text-ink/65">Nothing in this topic yet.</li>}
                 {g.items.map((r) => {
                   const kindKey = r.type === "homework" ? "homework" : (r.row as Mat).kind;
                   const open = expanded === `${r.type}-${r.id}`;
@@ -390,7 +390,7 @@ export function ClassworkTab({ classId, viewer, classHref }: { classId: string; 
                               {r.title}
                             </button>
                           )}
-                          <p className="text-xs text-ink/55">{r.type === "homework" ? `Due ${fmtDue(r.at)}` : `Posted ${new Date(r.at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}`}</p>
+                          <p className="text-xs text-ink/65">{r.type === "homework" ? `Due ${fmtDue(r.at)}` : `Posted ${new Date(r.at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}`}</p>
                         </div>
                         {st && <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset ${st.cls}`}>{st.label}</span>}
                         {canEdit && (
@@ -411,7 +411,7 @@ export function ClassworkTab({ classId, viewer, classHref }: { classId: string; 
                       </div>
                       {open && r.type === "material" && (
                         <div className="mt-2 rounded-lg bg-cream/50 p-3 text-sm text-ink/85">
-                          {r.row.body ? <div className="space-y-1">{renderMarkup(r.row.body)}</div> : <p className="text-ink/55">No extra details.</p>}
+                          {r.row.body ? <div className="space-y-1">{renderMarkup(r.row.body)}</div> : <p className="text-ink/65">No extra details.</p>}
                           <AttachmentList attachments={cleanAttachments(r.row.resources)} />
                           {r.row.allow_comments && (
                             <p className="mt-3 text-xs">

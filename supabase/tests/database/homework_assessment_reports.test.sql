@@ -1,7 +1,7 @@
 -- Run via `supabase test db`. Covers 0010_homework.sql,
 -- 0011_assessment.sql and 0012_reports.sql RLS: homework/submission/mark
 -- visibility and release-gating, assessments moderation_notes hiding from
--- family, quran_progress assessment_lead gating, and term_reports approval
+-- family, quran_progress writes by teachers and assessment leads, and term_reports approval
 -- state-machine gating.
 begin;
 select plan(26);
@@ -116,11 +116,10 @@ select is((select moderation_notes from public.assessments where id = 'f200000a-
 
 -- ── quran_progress: assessment_lead gating ────────────────────────────────
 set local "request.jwt.claims" to '{"sub": "e2000000-0000-0000-0000-000000000002"}';
-select throws_ok(
+-- Since 0103 any teacher can mark Qur'an work (level groups are not tied to one class), so a class teacher CAN write.
+select lives_ok(
   $$insert into public.quran_progress (child_id, class_id, milestone_type, surah_from, surah_to, standard, recorded_by) values ('f2000000-0000-0000-0000-000000000005', 'f2000000-0000-0000-0000-000000000004', 'quran_memorisation', 78, 78, 'secure', 'e2000000-0000-0000-0000-000000000002')$$,
-  42501,
-  null,
-  'an ordinary class teacher (without assessment_lead) cannot write quran_progress'
+  'a class teacher can write quran_progress (0103)'
 );
 
 set local "request.jwt.claims" to '{"sub": "e2000000-0000-0000-0000-000000000005"}';
@@ -129,7 +128,7 @@ insert into public.quran_progress (id, child_id, class_id, milestone_type, surah
 select is((select count(*)::int from public.quran_progress where id = 'f200000a-0000-0000-0000-000000000003'), 1, 'assessment_lead CAN write quran_progress');
 
 set local "request.jwt.claims" to '{"sub": "e2000000-0000-0000-0000-000000000003"}';
-select is((select count(*)::int from public.quran_progress), 1, 'parent can read their child''s quran_progress');
+select is((select count(*)::int from public.quran_progress), 2, 'parent can read their child''s quran_progress');
 
 -- ── term_reports: draft->approve gated to head_teacher/admin ─────────────
 reset role;

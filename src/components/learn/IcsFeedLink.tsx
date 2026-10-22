@@ -152,7 +152,7 @@ export function IcsFeedLink() {
           <div className="relative w-full max-w-sm rounded-t-2xl bg-white p-5 shadow-xl sm:rounded-2xl">
             <div className="flex items-center justify-between">
               <h2 className="font-serif text-lg font-semibold text-ink">Add to my calendar</h2>
-              <button type="button" onClick={() => setOpen(false)} aria-label="Close" className="rounded-lg px-2 py-1 text-ink/60 hover:bg-cream">
+              <button type="button" onClick={() => setOpen(false)} aria-label="Close" className="rounded-lg px-2 py-1 text-ink/65 hover:bg-cream">
                 ✕
               </button>
             </div>
@@ -181,11 +181,11 @@ export function IcsFeedLink() {
                       </a>
                       <button type="button" onClick={copy} className={`${choice} flex-col border border-gold-light bg-white text-ink hover:bg-cream`}>
                         {copied ? "Link copied" : "Copy link"}
-                        <span className="text-xs font-normal text-ink/60">Paste it into any calendar&apos;s &ldquo;add by link&rdquo; option. Keep it private.</span>
+                        <span className="text-xs font-normal text-ink/65">Paste it into any calendar&apos;s &ldquo;add by link&rdquo; option. Keep it private.</span>
                       </button>
                     </>
                   ) : (
-                    <p role="status" className="py-6 text-center text-sm text-ink/60">
+                    <p role="status" className="py-6 text-center text-sm text-ink/65">
                       {error ? "" : busy ? "Setting up your link…" : ""}
                     </p>
                   )}

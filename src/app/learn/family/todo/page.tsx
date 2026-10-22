@@ -16,7 +16,7 @@ export default function FamilyTodoPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
-          <Suspense fallback={<p className="text-ink/60">Loading…</p>}>
+          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
             <Content />
           </Suspense>
         </LearnShell>

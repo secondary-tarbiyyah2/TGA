@@ -172,7 +172,7 @@ export function AudioNoteRecorder({ value, onChange }: { value: AudioNote | null
           <audio controls src={previewUrl} className="h-9 w-full max-w-xs">
             <track kind="captions" />
           </audio>
-          <p className="mt-1 text-xs text-ink/60">
+          <p className="mt-1 text-xs text-ink/65">
             {value && value.seconds > 0 ? `${formatSeconds(value.seconds)} · ` : ""}
             {value ? `${Math.max(1, Math.round(value.blob.size / 1024))} KB` : ""}
           </p>

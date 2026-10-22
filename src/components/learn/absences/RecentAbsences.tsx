@@ -26,9 +26,9 @@ export function RecentAbsences({ absences, onChanged }: { absences: Absence[] | 
         <p className="text-xs text-ink/65">Record why a child was away. Reasons are staff-only.</p>
       </div>
       {absences === null ? (
-        <p className="px-4 py-4 text-sm text-ink/60">Loading…</p>
+        <p className="px-4 py-4 text-sm text-ink/65">Loading…</p>
       ) : rows.length === 0 ? (
-        <p className="px-4 py-4 text-sm text-ink/60">No absences in this period.</p>
+        <p className="px-4 py-4 text-sm text-ink/65">No absences in this period.</p>
       ) : (
         <ul className="divide-y divide-gold-light/40">
           {rows.map((a) => (

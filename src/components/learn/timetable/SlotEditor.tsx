@@ -132,7 +132,7 @@ export function SlotEditor({
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-label={slot ? "Edit lesson" : "Add lesson"}>
       <div className="max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-white p-5 shadow-xl sm:max-w-md sm:rounded-2xl">
         <h3 className="font-serif text-h3 font-semibold text-ink">{slot ? "Edit lesson" : "Add a lesson"}</h3>
-        {slot && <p className="mt-0.5 text-sm text-ink/60">{slot.classes?.name} · {slot.subjects?.name}</p>}
+        {slot && <p className="mt-0.5 text-sm text-ink/65">{slot.classes?.name} · {slot.subjects?.name}</p>}
         <div className="mt-4 space-y-3">
           {!slot && (
             <label className="block text-xs font-medium text-ink/70">

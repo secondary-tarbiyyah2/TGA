@@ -85,14 +85,14 @@ export function WeeklyTarbiyahNoteForm({ childId, classId }: { childId: string; 
         <button type="button" disabled={busy || !note.trim()} onClick={submit} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
           {busy ? "Saving…" : "Save note"}
         </button>
-        {message && <span className="text-xs text-ink/60">{message}</span>}
+        {message && <span className="text-xs text-ink/65">{message}</span>}
       </div>
 
       {entries && entries.length > 0 && (
         <ul className="mt-4 space-y-2">
           {entries.map((e) => (
             <li key={e.id} className="rounded-lg border border-gold-light/40 p-2 text-sm">
-              <p className="text-xs font-medium text-ink/60">Week of {new Date(e.week_of).toLocaleDateString("en-GB")}</p>
+              <p className="text-xs font-medium text-ink/65">Week of {new Date(e.week_of).toLocaleDateString("en-GB")}</p>
               <p className="mt-1 text-ink/80">{e.note}</p>
             </li>
           ))}

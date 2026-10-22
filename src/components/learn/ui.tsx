@@ -28,7 +28,7 @@ export const ui = {
   /** Smaller buttons for inside rows and tables. */
   sm: "!px-2.5 !py-1 !text-xs",
 
-  input: `block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/45 disabled:bg-cream ${focus}`,
+  input: `block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/65 disabled:bg-cream ${focus}`,
   label: "block text-sm font-medium text-ink",
   hint: "text-xs text-ink/65",
 

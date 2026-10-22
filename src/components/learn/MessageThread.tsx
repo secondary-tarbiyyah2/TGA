@@ -189,9 +189,9 @@ export function MessageThread({ threadId, onSent, onRead }: { threadId: string; 
     <div className="flex h-[58vh] min-h-[340px] flex-col">
       <div className="flex-1 space-y-2 overflow-y-auto p-3">
         {messages === null ? (
-          <p className="text-sm text-ink/60">Loading…</p>
+          <p className="text-sm text-ink/65">Loading…</p>
         ) : messages.length === 0 ? (
-          <p className="text-sm text-ink/60">No messages yet — say hello.</p>
+          <p className="text-sm text-ink/65">No messages yet — say hello.</p>
         ) : (
           messages.map((m, i) => {
             const mine = m.sender_id === userId;

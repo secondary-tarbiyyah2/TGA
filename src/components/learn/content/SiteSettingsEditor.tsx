@@ -95,7 +95,7 @@ export function SiteSettingsEditor() {
     setMessage(publishMessage);
   }
 
-  if (!row) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (!row) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <Card title="Site settings" description="Contact details, fees, Open Evening links and key public-facing figures. Fields that already show text on the website are filled with that text; edit it and Save to change the site.">

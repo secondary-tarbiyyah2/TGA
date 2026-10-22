@@ -354,7 +354,7 @@ export function TermsManager({
                   ))}
                 </select>
               </Lbl>
-              <p className="pb-2 text-xs text-ink/60">Prefilled with typical UK dates (Sept–Dec, Jan–Mar, Apr–Jul). Change anything before saving.</p>
+              <p className="pb-2 text-xs text-ink/65">Prefilled with typical UK dates (Sept–Dec, Jan–Mar, Apr–Jul). Change anything before saving.</p>
             </div>
             {wizard.terms.map((d, i) => (
               <div key={i} className="rounded-xl border border-gold-light bg-white p-3">
@@ -398,13 +398,13 @@ export function TermsManager({
         )}
 
         {terms === null ? (
-          <p className="px-4 py-3 text-sm text-ink/55">Loading…</p>
+          <p className="px-4 py-3 text-sm text-ink/65">Loading…</p>
         ) : terms.length === 0 ? (
-          <p className="px-4 py-3 text-sm text-ink/55">No terms have been set up yet.{canManage ? " Use “Add term year” to create this year’s three terms in one go." : ""}</p>
+          <p className="px-4 py-3 text-sm text-ink/65">No terms have been set up yet.{canManage ? " Use “Add term year” to create this year’s three terms in one go." : ""}</p>
         ) : (
           grouped.map(([yid, list]) => (
             <div key={yid}>
-              <p className="bg-cream/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink/55">{yearById.get(yid)?.label || "No academic year"}</p>
+              <p className="bg-cream/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink/65">{yearById.get(yid)?.label || "No academic year"}</p>
               <ul className="divide-y divide-gold-light/60">
                 {list.map((t) => (
                   <li key={t.id} className="flex flex-wrap items-start gap-2 px-4 py-3 text-sm">
@@ -413,8 +413,8 @@ export function TermsManager({
                         {t.name}
                         {t.source === "sanity" && <span className="rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-medium text-sky-800">From website</span>}
                       </span>
-                      <span className="block text-xs text-ink/60">Starts: {both(t.starts_on)}</span>
-                      <span className="block text-xs text-ink/60">Ends: {both(t.ends_on)}</span>
+                      <span className="block text-xs text-ink/65">Starts: {both(t.starts_on)}</span>
+                      <span className="block text-xs text-ink/65">Ends: {both(t.ends_on)}</span>
                       {t.half_term_starts_on && t.half_term_ends_on && <span className="block text-xs text-amber-800">Half-term: {span(t.half_term_starts_on, t.half_term_ends_on)}</span>}
                     </div>
                     {canManage && t.source === "portal" && (
@@ -481,7 +481,7 @@ export function TermsManager({
           </div>
         )}
         {closures.length === 0 ? (
-          <p className="px-4 py-3 text-sm text-ink/55">None recorded.</p>
+          <p className="px-4 py-3 text-sm text-ink/65">None recorded.</p>
         ) : (
           <ul className="divide-y divide-gold-light/60">
             {closures.map((c) => (
@@ -490,7 +490,7 @@ export function TermsManager({
                   <span className="block font-medium text-ink">
                     {c.name} <span className="text-xs font-normal text-ink/65">· {CLOSURE_LABEL[c.kind]}</span>
                   </span>
-                  <span className="block text-xs text-ink/60">{span(c.starts_on, c.ends_on)}</span>
+                  <span className="block text-xs text-ink/65">{span(c.starts_on, c.ends_on)}</span>
                   {c.notes && <span className="block text-xs text-ink/65">{c.notes}</span>}
                 </div>
                 {canManage && (

@@ -117,7 +117,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
       </button>
 
       <div className="mt-4 border-t border-red-200 pt-3">
-        <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Chronology (append-only)</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Chronology (append-only)</p>
         <ul className="mt-2 space-y-2">
           {chronology === null && <p className="text-sm text-ink/65">Loading…</p>}
           {(chronology || []).map((c) => (
@@ -137,7 +137,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
       </div>
 
       <div className="mt-4 border-t border-red-200 pt-3">
-        <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">Secure attachments</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Secure attachments</p>
         <ul className="mt-2 space-y-1">
           {attachments === null && <p className="text-sm text-ink/65">Loading…</p>}
           {(attachments || []).map((a) => (
@@ -185,7 +185,7 @@ export function SafeguardingLog() {
         this section.
       </p>
       <ul className="mt-3 space-y-2">
-        {concerns === null && <p className="text-sm text-ink/60">Loading…</p>}
+        {concerns === null && <p className="text-sm text-ink/65">Loading…</p>}
         {(concerns || []).map((c) => (
           <li key={c.id}>
             <button
@@ -198,7 +198,7 @@ export function SafeguardingLog() {
             {selected === c.id && <ConcernDetail concern={c} onChanged={load} />}
           </li>
         ))}
-        {concerns?.length === 0 && <p className="text-sm text-ink/60">No safeguarding concerns recorded.</p>}
+        {concerns?.length === 0 && <p className="text-sm text-ink/65">No safeguarding concerns recorded.</p>}
       </ul>
     </div>
   );

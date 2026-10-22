@@ -105,7 +105,7 @@ function SearchChip({
             className="w-full rounded-lg border border-gold-light px-3 py-2 text-sm outline-none focus:border-green-600"
           />
           <ul role="listbox" aria-label={label} className="mt-1 max-h-56 overflow-y-auto">
-            {shown.length === 0 && <li className="px-3 py-2 text-sm text-ink/55">No matches.</li>}
+            {shown.length === 0 && <li className="px-3 py-2 text-sm text-ink/65">No matches.</li>}
             {shown.map((o) => (
               <li key={o.id} role="option" aria-selected={o.id === selectedId}>
                 <button

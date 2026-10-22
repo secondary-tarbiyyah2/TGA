@@ -55,7 +55,7 @@ function AdminGcseContent() {
           <>
             <div className="mb-6 rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
               <h2 className="font-serif text-h3 font-semibold text-ink">Enter or edit grades for a class</h2>
-              <p className="mt-1 text-sm text-ink/60">Fill down, paste from a spreadsheet, or take actuals from assessments, then save once.</p>
+              <p className="mt-1 text-sm text-ink/65">Fill down, paste from a spreadsheet, or take actuals from assessments, then save once.</p>
               <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="GCSE class" className="mt-3 rounded-md border border-gold-light/60 px-3 py-2 text-sm">
                 <option value="">Choose a Year 10 / 11 class…</option>
                 {classes.map((c) => (
@@ -64,7 +64,7 @@ function AdminGcseContent() {
                   </option>
                 ))}
               </select>
-              {classes.length === 0 && <p className="mt-2 text-sm text-ink/60">No Year 10 or Year 11 classes with a subject yet.</p>}
+              {classes.length === 0 && <p className="mt-2 text-sm text-ink/65">No Year 10 or Year 11 classes with a subject yet.</p>}
             </div>
             {classId && <GcseClassPanel key={classId} classId={classId} onSaved={() => setVersion((v) => v + 1)} />}
           </>

@@ -112,7 +112,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
             {formatWindow(ev.starts_at, ev.ends_at)} · {ev.slot_minutes}-minute meetings
             {ev.location ? ` · ${ev.location}` : ""}
           </p>
-          <p className="mt-1 text-xs text-ink/60">
+          <p className="mt-1 text-xs text-ink/65">
             {chosen.size} teacher{chosen.size === 1 ? "" : "s"} · {total} slots
             {bookings ? ` · ${bookings.length} booked` : ""}
           </p>
@@ -171,15 +171,15 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
                   {t.cover && <span className="text-xs text-ink/65">(TA / cover)</span>}
                 </label>
               ))}
-              {teachers.length === 0 && <p className="text-sm text-ink/60">No active teachers found. Check Staff for teachers who are marked inactive.</p>}
+              {teachers.length === 0 && <p className="text-sm text-ink/65">No active teachers found. Check Staff for teachers who are marked inactive.</p>}
             </div>
           </div>
           <div>
             <p className="text-sm font-medium text-ink">Bookings</p>
             {bookings === null ? (
-              <p className="mt-1 text-sm text-ink/60">Loading…</p>
+              <p className="mt-1 text-sm text-ink/65">Loading…</p>
             ) : bookings.length === 0 ? (
-              <p className="mt-1 text-sm text-ink/60">No bookings yet.</p>
+              <p className="mt-1 text-sm text-ink/65">No bookings yet.</p>
             ) : (
               <ul className="mt-2 divide-y divide-gold-light/30 rounded-lg border border-gold-light/40">
                 {bookings.map((b) => (
@@ -326,7 +326,7 @@ export function AdminParentEvenings() {
     <div className="space-y-6">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">New parent evening</h2>
-        <p className="mt-1 text-sm text-ink/60">It starts as a draft, hidden from parents. Open it for booking when the teachers are chosen.</p>
+        <p className="mt-1 text-sm text-ink/65">It starts as a draft, hidden from parents. Open it for booking when the teachers are chosen.</p>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title, e.g. Autumn parent evening" maxLength={120} aria-label="Title" className={`${inputCls} sm:col-span-2`} />
           <div>
@@ -375,7 +375,7 @@ export function AdminParentEvenings() {
                 {t.cover && <span className="text-xs text-ink/65">(TA / cover)</span>}
               </label>
             ))}
-            {teachers.filter((t) => !t.cover).length === 0 && <p className="text-sm text-ink/60 sm:col-span-2 md:col-span-3">No active teachers found. Teachers appear here once they hold the Teacher role and are active under Staff.</p>}
+            {teachers.filter((t) => !t.cover).length === 0 && <p className="text-sm text-ink/65 sm:col-span-2 md:col-span-3">No active teachers found. Teachers appear here once they hold the Teacher role and are active under Staff.</p>}
           </div>
           {loadProblems.length > 0 && (
             <p role="alert" className="mt-2 break-words text-xs text-amber-900">
@@ -390,9 +390,9 @@ export function AdminParentEvenings() {
       </div>
 
       {evenings === null ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : evenings.length === 0 ? (
-        <p className="text-sm text-ink/60">No parent evenings yet.</p>
+        <p className="text-sm text-ink/65">No parent evenings yet.</p>
       ) : (
         evenings.map((ev) => <EveningAdminCard key={ev.id} ev={ev} teachers={teachers} onChanged={load} />)
       )}

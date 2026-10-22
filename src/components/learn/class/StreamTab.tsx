@@ -91,9 +91,9 @@ function CommentThread({
       <ul className="space-y-2.5">
         {visible.map((c) => (
           <li key={c.id} className={`text-sm ${c.deleted_at ? "opacity-60" : ""}`}>
-            <p className="text-xs text-ink/60">
+            <p className="text-xs text-ink/65">
               <span className="font-semibold text-ink/80">{c.author_name}</span> · {fmtWhen(c.created_at)}
-              {c.deleted_at && <span className="ml-1 rounded bg-cream px-1.5 py-0.5 text-[11px] font-medium text-ink/60">Removed</span>}
+              {c.deleted_at && <span className="ml-1 rounded bg-cream px-1.5 py-0.5 text-[11px] font-medium text-ink/65">Removed</span>}
             </p>
             <p className={`whitespace-pre-wrap text-ink/85 ${c.deleted_at ? "line-through" : ""}`}>{c.body}</p>
             {!c.deleted_at && (isStaff || c.author_id === myId) && (
@@ -231,14 +231,14 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
         <section className="rounded-2xl border border-gold-light bg-white p-4">
           <h2 className="text-sm font-semibold text-ink">Upcoming</h2>
           {upcoming.length === 0 ? (
-            <p className="mt-2 text-sm text-ink/60">Nothing coming up.</p>
+            <p className="mt-2 text-sm text-ink/65">Nothing coming up.</p>
           ) : (
             <ul className="mt-2 space-y-2.5">
               {upcoming.map((u) => (
                 <li key={u.id}>
                   <Link href={u.href} className="block text-sm hover:underline">
                     <span className="font-medium text-ink">{u.title}</span>
-                    <span className="block text-xs text-ink/60">
+                    <span className="block text-xs text-ink/65">
                       {u.kind === "lesson" ? "Lesson" : "Due"} {fmtWhen(u.when)}
                     </span>
                   </Link>
@@ -261,7 +261,7 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
         {isStaff && <AnnouncementComposer classId={classId} onPosted={load} />}
         {items === null && <div className="h-28 animate-pulse rounded-2xl bg-white" />}
         {items !== null && shown.length === 0 && (
-          <p className="rounded-2xl border border-gold-light bg-white px-5 py-8 text-center text-sm text-ink/60">
+          <p className="rounded-2xl border border-gold-light bg-white px-5 py-8 text-center text-sm text-ink/65">
             {isStaff ? "Nothing here yet. Announce something to your class, or add classwork." : "Nothing has been posted to this class yet."}
           </p>
         )}
@@ -282,13 +282,13 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
                   <h3 className="text-base font-semibold text-ink">
                     {isAnn ? item.row.title : <Link href={classHref("classwork")} className="hover:underline">{item.row.title}</Link>}
                   </h3>
-                  <p className="text-xs text-ink/55">
+                  <p className="text-xs text-ink/65">
                     {isAnn ? "Announcement" : (item.row as MatRow).kind === "question" ? "New question" : "New material"} · {fmtWhen(item.at)}
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-1.5">
                   {scheduled && <span className="rounded-full bg-gold-light/50 px-2 py-0.5 text-xs font-medium text-gold-700">Scheduled</span>}
-                  {recalled && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/60">Removed</span>}
+                  {recalled && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/65">Removed</span>}
                   {isStaff && audience && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/70">{audience.length} selected pupil{audience.length === 1 ? "" : "s"}</span>}
                   {isStaff && isAnn && !recalled && (
                     <button type="button" onClick={() => recall(item.row.id)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">

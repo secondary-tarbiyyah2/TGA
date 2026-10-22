@@ -21,7 +21,7 @@ export function ResetLink({ show, onReset }: { show: boolean; onReset: () => voi
 }
 
 export function PrefilledHelp() {
-  return <p className="mb-4 text-xs text-ink/55">{PREFILLED_HELP}</p>;
+  return <p className="mb-4 text-xs text-ink/65">{PREFILLED_HELP}</p>;
 }
 
 /** Text input/textarea pre-filled with the live default, with badge + reset. */

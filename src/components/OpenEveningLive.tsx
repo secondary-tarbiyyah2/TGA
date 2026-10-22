@@ -175,7 +175,7 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
             </button>
           </div>
         ) : sessions === null ? (
-          <p role="status" aria-live="polite" className="mt-2 text-sm text-ink/60">Loading the upcoming evenings…</p>
+          <p role="status" aria-live="polite" className="mt-2 text-sm text-ink/65">Loading the upcoming evenings…</p>
         ) : sessions.length === 0 ? (
           loadFailed ? (
             <p className="mt-2 text-sm text-ink/70">
@@ -206,7 +206,7 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
                         <p className="font-semibold text-ink">{s.title}</p>
                         <p className="text-sm text-ink/80">{fmtDate(s.starts_at)}, {fmtTime(s.starts_at)} to {fmtTime(s.ends_at)}</p>
                         {s.description && <p className="mt-1 whitespace-pre-line text-sm text-ink/70">{s.description}</p>}
-                        <p className={`mt-1 text-xs font-medium ${full ? "text-red-700" : s.seats_left <= 5 ? "text-amber-800" : "text-ink/60"}`}>
+                        <p className={`mt-1 text-xs font-medium ${full ? "text-red-700" : s.seats_left <= 5 ? "text-amber-800" : "text-ink/65"}`}>
                           {full ? "Fully booked" : `${s.seats_left} ${s.seats_left === 1 ? "place" : "places"} left`}
                         </p>
                       </div>
@@ -233,7 +233,7 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
                             <input name="email" type="email" required autoComplete="email" maxLength={254} className={`${inputCls} ${bad("email")}`} />
                           </label>
                           <label className="block text-sm font-medium text-ink">
-                            Phone <span className="font-normal text-ink/50">(optional)</span>
+                            Phone <span className="font-normal text-ink/65">(optional)</span>
                             <input name="phone" type="tel" autoComplete="tel" maxLength={40} className={`${inputCls} ${bad("phone")}`} />
                           </label>
                           <label className="block text-sm font-medium text-ink">
@@ -250,7 +250,7 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
                           <input name="yearGroups" type="text" required maxLength={200} placeholder="For example: Year 4 and Year 7" className={`${inputCls} ${bad("yearGroups")}`} />
                         </label>
                         <label className="mt-4 block text-sm font-medium text-ink">
-                          Questions for the team <span className="font-normal text-ink/50">(optional)</span>
+                          Questions for the team <span className="font-normal text-ink/65">(optional)</span>
                           <textarea name="questions" rows={3} maxLength={2000} className={`${inputCls} ${bad("questions")}`} />
                         </label>
                         <label className="mt-4 flex items-start gap-2 text-sm text-ink/80">
@@ -268,7 +268,7 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
                           <button type="submit" disabled={status === "sending"} className="rounded-full bg-gold-700 px-5 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
                             {status === "sending" ? "Booking…" : "Confirm my place"}
                           </button>
-                          <button type="button" onClick={() => { setSelectedId(null); setMessage(null); }} className="text-sm text-ink/60 underline">Cancel</button>
+                          <button type="button" onClick={() => { setSelectedId(null); setMessage(null); }} className="text-sm text-ink/65 underline">Cancel</button>
                         </div>
                       </form>
                     )}
@@ -276,7 +276,7 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
                 );
               })}
             </ul>
-            <p className="mt-4 text-xs text-ink/60">
+            <p className="mt-4 text-xs text-ink/65">
               Questions, or need to change a booking? Email{" "}
               <a href={`mailto:${email}`} className="text-gold-700 underline">{email}</a>.
             </p>

@@ -86,7 +86,7 @@ export function InterviewPanel({
           <label className="block text-sm font-medium text-ink">
             Date &amp; time (UK time)
             <input type="datetime-local" value={d.at} onChange={(e) => set("at", e.target.value)} className={fieldCls} />
-            {d.at && <span className="mt-1 block text-xs font-normal text-ink/55">{fmtLondon(fromLondonInput(d.at))}</span>}
+            {d.at && <span className="mt-1 block text-xs font-normal text-ink/65">{fmtLondon(fromLondonInput(d.at))}</span>}
           </label>
           <label className="block text-sm font-medium text-ink">
             Interviewer
@@ -105,7 +105,7 @@ export function InterviewPanel({
           <button type="button" onClick={() => { setComposing((c) => !c); setMsg(null); }} disabled={!app.interview_at || dirty} className={ghostBtn}>
             Email interview invitation
           </button>
-          {(!app.interview_at || dirty) && <span className="text-xs text-ink/55">{dirty ? "Save first." : "Set a date and time first."}</span>}
+          {(!app.interview_at || dirty) && <span className="text-xs text-ink/65">{dirty ? "Save first." : "Set a date and time first."}</span>}
           {ctx.details?.interview_emailed_at && <Pill tone="good">Invited {new Date(ctx.details.interview_emailed_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" })}</Pill>}
         </div>
         {composing && (
@@ -142,7 +142,7 @@ export function InterviewPanel({
 
       <div className="flex items-center gap-3">
         <button type="button" onClick={save} disabled={saving || !dirty} className={primaryBtn}>{saving ? "Saving…" : "Save interview"}</button>
-        {dirty && !saving && <span className="text-xs text-ink/55">Unsaved changes</span>}
+        {dirty && !saving && <span className="text-xs text-ink/65">Unsaved changes</span>}
         {msg && <span role={msg.ok ? "status" : "alert"} className={`text-xs ${msg.ok ? "text-teal-700" : "text-red-700"}`}>{msg.text}</span>}
       </div>
     </div>

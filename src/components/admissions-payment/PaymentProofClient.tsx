@@ -143,7 +143,7 @@ export function PaymentProofClient() {
       </div>
     );
   }
-  if (!info) return <p role="status" className="text-ink/60">Loading…</p>;
+  if (!info) return <p role="status" className="text-ink/65">Loading…</p>;
 
   const toggle = (id: string) => setCovers((c) => (c.includes(id) ? c.filter((x) => x !== id) : [...c, id]));
 
@@ -222,7 +222,7 @@ export function PaymentProofClient() {
             {info.proofs.map((p, i) => (
               <li key={i} className="rounded-xl border border-gold-light/50 bg-white p-3 text-sm text-ink">
                 <p className="font-medium break-words">{p.fileName || "Proof of payment"}</p>
-                <p className="text-xs text-ink/60">
+                <p className="text-xs text-ink/65">
                   {new Date(p.uploadedAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })} ·{" "}
                   <span className={p.status === "verified" ? "font-semibold text-teal-700" : p.status === "rejected" ? "font-semibold text-red-700" : "text-ink/70"}>
                     {p.status === "verified" ? "Confirmed" : p.status === "rejected" ? "Not accepted" : "Waiting to be checked"}

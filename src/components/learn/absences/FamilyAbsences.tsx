@@ -135,7 +135,7 @@ export function FamilyAbsences() {
         <form ref={formRef} onSubmit={submit} className="space-y-4 rounded-2xl border border-gold-light bg-white p-4">
           <h2 className="text-base font-semibold text-ink">Tell us about an absence</h2>
           {children !== null && children.length === 0 ? (
-            <p className="text-sm text-ink/60">There are no children on your account yet. Once your child is enrolled you can send notes here.</p>
+            <p className="text-sm text-ink/65">There are no children on your account yet. Once your child is enrolled you can send notes here.</p>
           ) : (
             <>
               <fieldset>
@@ -205,9 +205,9 @@ export function FamilyAbsences() {
         <section className="rounded-2xl border border-gold-light bg-white p-4">
           <h2 className="text-base font-semibold text-ink">Your notes</h2>
           {notes === null ? (
-            <p className="mt-3 text-sm text-ink/60">Loading…</p>
+            <p className="mt-3 text-sm text-ink/65">Loading…</p>
           ) : notes.length === 0 ? (
-            <p className="mt-3 text-sm text-ink/60">You haven&apos;t sent any notes yet. If your child is ever unwell or away, tell us here and we&apos;ll take it from there.</p>
+            <p className="mt-3 text-sm text-ink/65">You haven&apos;t sent any notes yet. If your child is ever unwell or away, tell us here and we&apos;ll take it from there.</p>
           ) : (
             <ul className="mt-3 space-y-3">
               {notes.map((n) => (
@@ -219,9 +219,9 @@ export function FamilyAbsences() {
                     <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${CHIP[n.status]}`}>{n.status === "undecided" ? "Awaiting" : STATUS_LABEL[n.status]}</span>
                   </div>
                   <p className="mt-1 whitespace-pre-wrap text-sm text-ink/75">{n.reason}</p>
-                  {n.decision_note && <p className="mt-1 text-sm text-ink/60">From the school: {n.decision_note}</p>}
+                  {n.decision_note && <p className="mt-1 text-sm text-ink/65">From the school: {n.decision_note}</p>}
                   {n.status === "undecided" && (
-                    <button type="button" onClick={() => remove(n.id)} className="mt-2 text-xs font-medium text-ink/55 underline hover:text-ink">
+                    <button type="button" onClick={() => remove(n.id)} className="mt-2 text-xs font-medium text-ink/65 underline hover:text-ink">
                       Withdraw this note
                     </button>
                   )}

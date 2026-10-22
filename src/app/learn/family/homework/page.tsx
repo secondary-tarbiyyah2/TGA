@@ -42,7 +42,7 @@ function FamilyHomeworkContent() {
           ))}
         </select>
       )}
-      <div className="mt-6">{selected ? <HomeworkForChild childId={selected} canSubmit canResubmit /> : <p className="text-sm text-ink/60">Loading…</p>}</div>
+      <div className="mt-6">{selected ? <HomeworkForChild childId={selected} canSubmit canResubmit /> : <p className="text-sm text-ink/65">Loading…</p>}</div>
     </div>
   );
 }
@@ -52,7 +52,7 @@ export default function FamilyHomeworkPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
-          <Suspense fallback={<p className="text-ink/60">Loading…</p>}>
+          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
             <FamilyHomeworkContent />
           </Suspense>
         </LearnShell>

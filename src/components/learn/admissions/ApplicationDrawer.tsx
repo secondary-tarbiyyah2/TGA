@@ -126,7 +126,7 @@ export function ApplicationDrawer({
           <div className="flex items-start justify-between gap-3">
             <div>
               <h2 id="app-drawer-title" className="font-serif text-xl font-semibold text-ink">{childName}</h2>
-              <p className="text-xs text-ink/60">
+              <p className="text-xs text-ink/65">
                 {app.reference || "No reference"} · received {fmtDate(app.created_at)} · {STATUS_LABELS[app.status]}
               </p>
               {badge && <span className="mt-1 inline-block rounded-full bg-gold-100 px-2.5 py-0.5 text-xs font-semibold text-gold-900">{badge}</span>}
@@ -227,21 +227,21 @@ export function ApplicationDrawer({
 
           {tab === "process" &&
             (admissions.loading ? (
-              <p role="status" className="text-sm text-ink/60">Loading…</p>
+              <p role="status" className="text-sm text-ink/65">Loading…</p>
             ) : (
               <ProcessPanel key={app.id} app={app} ctx={admissions} staff={staff} baseCtx={templateCtx} onPatch={onPatch} onMove={onMove} onCreateAccounts={onCreateAccounts} />
             ))}
 
           {tab === "payments" &&
             (admissions.loading ? (
-              <p role="status" className="text-sm text-ink/60">Loading…</p>
+              <p role="status" className="text-sm text-ink/65">Loading…</p>
             ) : (
               <PaymentsPanel key={app.id} app={app} ctx={admissions} staffNames={staffNames} onPatch={onPatch} />
             ))}
 
           {tab === "messages" &&
             (admissions.loading ? (
-              <p role="status" className="text-sm text-ink/60">Loading…</p>
+              <p role="status" className="text-sm text-ink/65">Loading…</p>
             ) : (
               <MessagesPanel key={app.id} app={app} ctx={templateCtx} staffNames={staffNames} />
             ))}

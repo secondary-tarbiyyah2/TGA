@@ -233,7 +233,7 @@ export const SignaturePad = forwardRef<
         <span className="pointer-events-none absolute bottom-9 left-4 right-4 border-b border-ink/15" aria-hidden="true" />
       </div>
       <div className="mt-2 flex items-center justify-between gap-2">
-        <p className="text-xs text-ink/55" aria-live="polite">
+        <p className="text-xs text-ink/65" aria-live="polite">
           {state.hasInk && !state.valid ? "Please sign a little more fully." : "Use your finger, stylus or mouse."}
         </p>
         <div className="flex gap-2">

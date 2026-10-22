@@ -16,7 +16,7 @@ export default function ManageBookingPage() {
         <Kicker>Manage booking</Kicker>
         <h1 className="text-h2 font-serif font-semibold text-ink">Your booking.</h1>
         <div className="mt-8">
-          <Suspense fallback={<p className="text-ink/60">Loading…</p>}>
+          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
             <ManageBookingClient />
           </Suspense>
         </div>

@@ -115,7 +115,7 @@ function ReportConcernForm() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h1 className="font-serif text-h2 font-semibold text-ink">Report a concern</h1>
-      <p className="mt-1 text-sm text-ink/60">
+      <p className="mt-1 text-sm text-ink/65">
         Use this form to raise any safeguarding or welfare concern, whether it is about a child, a member of staff, or anything else.
         It goes directly, and only, to the school&apos;s Designated Safeguarding Lead and the Headteacher.
       </p>
@@ -177,9 +177,9 @@ export default function ReportConcernPage() {
   return (
     <section className="app-pad">
       <div className="mx-auto max-w-2xl">
-        {session === "loading" && <p className="text-ink/60">Loading…</p>}
+        {session === "loading" && <p className="text-ink/65">Loading…</p>}
         {session === null && (
-          <p className="text-ink/60">
+          <p className="text-ink/65">
             Please <Link href="/login" className="text-gold-700 underline">sign in</Link> to report a concern.
           </p>
         )}

@@ -33,7 +33,7 @@ function Section({ title, hint, children, onSave, busy, message }: { title: stri
     <section className="rounded-2xl border border-gold-light bg-white">
       <div className="border-b border-gold-light px-5 py-4">
         <h2 className="text-base font-semibold text-ink">{title}</h2>
-        <p className="mt-0.5 text-sm text-ink/60">{hint}</p>
+        <p className="mt-0.5 text-sm text-ink/65">{hint}</p>
       </div>
       <div className="px-5 py-5">{children}</div>
       {onSave && (
@@ -290,7 +290,7 @@ function Shortcuts() {
           <li key={l.href}>
             <Link href={l.href} className="block rounded-xl border border-gold-light p-4 hover:bg-cream">
               <span className="block text-sm font-semibold text-ink">{l.title}</span>
-              <span className="mt-0.5 block text-sm text-ink/60">{l.text}</span>
+              <span className="mt-0.5 block text-sm text-ink/65">{l.text}</span>
             </Link>
           </li>
         ))}

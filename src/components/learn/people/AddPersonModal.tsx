@@ -25,7 +25,7 @@ function Field({ label, hint, children }: { label: string; hint?: string; childr
     <label className="block text-sm">
       <span className="mb-1 block font-medium text-ink">{label}</span>
       {children}
-      {hint && <span className="mt-1 block text-xs text-ink/55">{hint}</span>}
+      {hint && <span className="mt-1 block text-xs text-ink/65">{hint}</span>}
     </label>
   );
 }
@@ -243,7 +243,7 @@ export function AddPersonModal({
       <div className="max-h-[92vh] w-full max-w-xl overflow-y-auto rounded-t-2xl bg-white shadow-xl sm:rounded-2xl">
         <div className="flex items-center justify-between border-b border-gold-light px-5 py-4">
           <h2 className="text-lg font-semibold text-ink">{title}</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/55 hover:bg-cream">
+          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream">
             ×
           </button>
         </div>
@@ -317,7 +317,7 @@ export function AddPersonModal({
                     </span>
                     <span>
                       <span className="block text-base font-semibold text-ink">{t.title}</span>
-                      <span className="block text-xs text-ink/60">{t.blurb}</span>
+                      <span className="block text-xs text-ink/65">{t.blurb}</span>
                     </span>
                   </button>
                 ))}
@@ -385,9 +385,9 @@ export function AddPersonModal({
 
                   <fieldset>
                     <legend className="mb-1 text-sm font-medium text-ink">Classes (optional)</legend>
-                    <p className="mb-1 text-xs text-ink/55">Choose as many as needed, for example one per subject.</p>
+                    <p className="mb-1 text-xs text-ink/65">Choose as many as needed, for example one per subject.</p>
                     {classes.length === 0 ? (
-                      <p className="text-xs text-ink/55">No classes have been set up yet.</p>
+                      <p className="text-xs text-ink/65">No classes have been set up yet.</p>
                     ) : (
                       <ul className="grid max-h-44 gap-1 overflow-y-auto rounded-lg border border-gold-light/70 p-2 sm:grid-cols-2">
                         {orderedClasses.map((c) => (
@@ -496,7 +496,7 @@ export function AddPersonModal({
 
               <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
                 {initialType ? <span /> : (
-                  <button type="button" onClick={() => { setType(null); setError(null); }} className="text-sm font-medium text-ink/60 hover:text-ink">
+                  <button type="button" onClick={() => { setType(null); setError(null); }} className="text-sm font-medium text-ink/65 hover:text-ink">
                     ← Back
                   </button>
                 )}

@@ -89,10 +89,10 @@ export function DocumentsPanel({ applicationId, sharedIdFrom }: { applicationId:
 
   return (
     <div className="space-y-4">
-      <p className="text-xs text-ink/60">Uploaded by the family on the application form, plus assessment results added by staff. Viewing a document is recorded in the audit log. Links expire after a few minutes.</p>
+      <p className="text-xs text-ink/65">Uploaded by the family on the application form, plus assessment results added by staff. Viewing a document is recorded in the audit log. Links expire after a few minutes.</p>
       {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
-      {docs === null && !error && <p role="status" className="text-sm text-ink/60">Loading…</p>}
-      {docs && docs.length === 0 && <p className="text-sm text-ink/60">No documents uploaded. The family may have emailed the report instead.</p>}
+      {docs === null && !error && <p role="status" className="text-sm text-ink/65">Loading…</p>}
+      {docs && docs.length === 0 && <p className="text-sm text-ink/65">No documents uploaded. The family may have emailed the report instead.</p>}
       {docs && docs.length > 0 && (
         <ul className="space-y-2">
           {docs.map((d, i) => {

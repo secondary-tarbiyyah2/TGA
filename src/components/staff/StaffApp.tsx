@@ -65,10 +65,10 @@ function SignIn() {
   return (
     <div className="max-w-sm">
       <div className="mb-4 flex gap-2 text-sm">
-        <button type="button" onClick={() => setMode("password")} className={`rounded-full px-3 py-1 ${mode === "password" ? "bg-gold-500 text-ink-900" : "text-ink/60 underline"}`}>
+        <button type="button" onClick={() => setMode("password")} className={`rounded-full px-3 py-1 ${mode === "password" ? "bg-gold-500 text-ink-900" : "text-ink/65 underline"}`}>
           Password
         </button>
-        <button type="button" onClick={() => setMode("link")} className={`rounded-full px-3 py-1 ${mode === "link" ? "bg-gold-500 text-ink-900" : "text-ink/60 underline"}`}>
+        <button type="button" onClick={() => setMode("link")} className={`rounded-full px-3 py-1 ${mode === "link" ? "bg-gold-500 text-ink-900" : "text-ink/65 underline"}`}>
           Email link
         </button>
       </div>
@@ -99,7 +99,7 @@ function SignIn() {
         </form>
       )}
       {error && <p role="alert" className="mt-3 text-sm text-red-700">{error}</p>}
-      <p className="mt-4 text-xs text-ink/50">
+      <p className="mt-4 text-xs text-ink/65">
         Staff accounts are created by an admin — this only works for emails already on file.
       </p>
     </div>
@@ -181,7 +181,7 @@ function TeacherDashboard({ staff }: { staff: StaffRow }) {
     <div className="space-y-6">
       <div>
         <h1 className="text-h2 font-serif font-semibold text-ink">Welcome, {staff.display_name}.</h1>
-        <p className="text-ink/60">{staff.role_title}</p>
+        <p className="text-ink/65">{staff.role_title}</p>
       </div>
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <p className="text-ink/75">
@@ -314,7 +314,7 @@ function Dashboard({ session }: { session: Session }) {
     a.click();
   }
 
-  if (!staff) return <p className="text-ink/60">Loading your staff profile…</p>;
+  if (!staff) return <p className="text-ink/65">Loading your staff profile…</p>;
   if (mustChangePassword) return <ForcePasswordChange userId={session.user.id} onDone={() => setMustChangePassword(false)} />;
 
   if (profileRole === "teacher") {
@@ -329,7 +329,7 @@ function Dashboard({ session }: { session: Session }) {
     <div className="space-y-10">
       <div>
         <h1 className="text-h2 font-serif font-semibold text-ink">Welcome, {staff.display_name}.</h1>
-        <p className="text-ink/60">{staff.role_title}</p>
+        <p className="text-ink/65">{staff.role_title}</p>
       </div>
 
       <section>
@@ -348,12 +348,12 @@ function Dashboard({ session }: { session: Session }) {
           <button type="button" onClick={exportCsv} className="rounded-full border border-gold-500 px-4 py-2 text-xs font-medium text-gold-700 hover:bg-cream">Export CSV</button>
         </div>
         <ul className="mt-3 divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
-          {upcoming.length === 0 && <li className="p-4 text-sm text-ink/60">No upcoming bookings.</li>}
+          {upcoming.length === 0 && <li className="p-4 text-sm text-ink/65">No upcoming bookings.</li>}
           {upcoming.map((b) => (
             <li key={b.id} className="flex flex-wrap items-center justify-between gap-2 p-4">
               <div>
                 <p className="font-medium text-ink">{new Date(b.starts_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })}</p>
-                <p className="text-sm text-ink/60">{b.contact_name} — {b.contact_email}</p>
+                <p className="text-sm text-ink/65">{b.contact_name} — {b.contact_email}</p>
               </div>
               <div className="flex gap-2">
                 <button type="button" onClick={() => setOutcome(b.id, "completed")} className="rounded-full border border-gold-500 px-3 py-1.5 text-xs text-gold-700 hover:bg-cream">Mark completed</button>
@@ -367,11 +367,11 @@ function Dashboard({ session }: { session: Session }) {
       <section>
         <h2 className="font-serif text-lg font-semibold text-ink">Past &amp; other bookings</h2>
         <ul className="mt-3 divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
-          {past.length === 0 && <li className="p-4 text-sm text-ink/60">Nothing here yet.</li>}
+          {past.length === 0 && <li className="p-4 text-sm text-ink/65">Nothing here yet.</li>}
           {past.map((b) => (
             <li key={b.id} className="flex items-center justify-between p-4 text-sm">
               <span>{new Date(b.starts_at).toLocaleDateString("en-GB")} — {b.contact_name}</span>
-              <span className="text-ink/60">{b.status}</span>
+              <span className="text-ink/65">{b.status}</span>
             </li>
           ))}
         </ul>
@@ -390,7 +390,7 @@ function Dashboard({ session }: { session: Session }) {
             />
             <span>
               <span className="font-medium">Show me on the public admissions booking page</span>
-              <span className="mt-1 block text-ink/60">
+              <span className="mt-1 block text-ink/65">
                 Visitors can only book calls with you while this is on. Your weekly availability below is saved either way.
               </span>
             </span>
@@ -432,7 +432,7 @@ function Dashboard({ session }: { session: Session }) {
       {profileRole === "admin" && (
         <section>
           <h2 className="font-serif text-lg font-semibold text-ink">Admin</h2>
-          <p className="mt-1 text-sm text-ink/60">Manage staff accounts, roles and see recent activity.</p>
+          <p className="mt-1 text-sm text-ink/65">Manage staff accounts, roles and see recent activity.</p>
           <div className="mt-4">
             <AdminStaffPanel />
           </div>
@@ -459,15 +459,15 @@ function TeachersOnlyAdminGate({ session }: { session: Session }) {
     });
   }, [supabase, session.user.id]);
 
-  if (profileRole === "loading") return <p className="text-ink/60">Loading…</p>;
+  if (profileRole === "loading") return <p className="text-ink/65">Loading…</p>;
   if (mustChangePassword) return <ForcePasswordChange userId={session.user.id} onDone={() => setMustChangePassword(false)} />;
   if (profileRole !== "admin") {
-    return <p className="text-ink/60">This page is only available to admin accounts.</p>;
+    return <p className="text-ink/65">This page is only available to admin accounts.</p>;
   }
   return (
     <div>
       <h1 className="text-h2 font-serif font-semibold text-ink">Teacher accounts</h1>
-      <p className="mt-2 text-ink/60">Create and manage teacher accounts. Teachers signing in land on their own dashboard, not this one.</p>
+      <p className="mt-2 text-ink/65">Create and manage teacher accounts. Teachers signing in land on their own dashboard, not this one.</p>
       <div className="mt-6">
         <AdminStaffPanel roleFilter="teacher" defaultInviteRole="teacher" />
       </div>
@@ -490,8 +490,8 @@ export function StaffApp({ view = "dashboard" }: { view?: "dashboard" | "teacher
     return () => sub.subscription.unsubscribe();
   }, []);
 
-  if (session === "loading") return <p className="text-ink/60">Loading…</p>;
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return <p className="text-ink/60">Staff area isn&apos;t connected yet.</p>;
+  if (session === "loading") return <p className="text-ink/65">Loading…</p>;
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return <p className="text-ink/65">Staff area isn&apos;t connected yet.</p>;
   if (!session) return <SignIn />;
   if (view === "teachers") return <TeachersOnlyAdminGate session={session} />;
   return <Dashboard session={session} />;

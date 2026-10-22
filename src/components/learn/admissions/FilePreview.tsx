@@ -44,7 +44,7 @@ export function FilePreview({ url, type, name, heightClass = "h-[28rem]" }: { ur
   }, [url, type]);
 
   const box = `${heightClass} w-full rounded-lg border border-gold-light/60 bg-white`;
-  if (state.status === "loading") return <p role="status" className={`${box} flex items-center justify-center text-sm text-ink/60`}>Loading preview…</p>;
+  if (state.status === "loading") return <p role="status" className={`${box} flex items-center justify-center text-sm text-ink/65`}>Loading preview…</p>;
   if (state.status === "error" || !state.blobUrl) {
     return (
       <p role="alert" className={`${box} flex items-center justify-center p-4 text-center text-sm text-ink/70`}>

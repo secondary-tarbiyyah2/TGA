@@ -78,7 +78,7 @@ export function FamilyRevision() {
             const tone = last === null ? "neutral" : last >= 80 ? "good" : last >= 60 ? "info" : "warn";
             return (
               <li key={u.id} className="rounded-2xl border border-gold-light bg-white p-4">
-                <p className="text-xs text-ink/60">{u.subject}</p>
+                <p className="text-xs text-ink/65">{u.subject}</p>
                 <p className="font-semibold text-ink">{u.title}</p>
                 <div className="mt-3 grid grid-cols-3 gap-2 text-center">
                   <div className="rounded-xl bg-cream/70 p-2">

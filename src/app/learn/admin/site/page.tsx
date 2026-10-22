@@ -45,7 +45,7 @@ function SiteAdminContent() {
             onClick={() => setTab(label)}
             aria-current={tab === label ? "page" : undefined}
             className={`-mb-px shrink-0 border-b-[3px] px-3 py-2.5 text-sm font-medium transition-colors ${
-              tab === label ? "border-teal-700 text-ink" : "border-transparent text-ink/60 hover:text-ink"
+              tab === label ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:text-ink"
             }`}
           >
             {label}
@@ -54,7 +54,7 @@ function SiteAdminContent() {
       </nav>
 
       {shown.length === 0 ? (
-        <p className="text-sm text-ink/60">Nothing matches &ldquo;{query}&rdquo;.</p>
+        <p className="text-sm text-ink/65">Nothing matches &ldquo;{query}&rdquo;.</p>
       ) : (
         <div className="space-y-4">
           {shown.map((s) => (
@@ -65,7 +65,7 @@ function SiteAdminContent() {
                   <li key={i.href}>
                     <Link href={i.href} className="group block rounded-lg px-2 py-1.5 hover:bg-cream">
                       <span className="block text-sm font-medium text-teal-700 group-hover:underline">{i.label}</span>
-                      {i.hint && <span className="block text-xs text-ink/55">{i.hint}</span>}
+                      {i.hint && <span className="block text-xs text-ink/65">{i.hint}</span>}
                     </Link>
                   </li>
                 ))}

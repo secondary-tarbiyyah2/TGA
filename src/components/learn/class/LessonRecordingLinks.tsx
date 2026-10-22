@@ -130,7 +130,7 @@ export function LessonRecordingPanel({ lessonInstanceId, canManage }: { lessonIn
   return (
     <div className="mt-4 border-t border-gold-light/60 pt-4">
       <h3 className="text-sm font-semibold text-ink">Lesson recording link</h3>
-      {rows.length === 0 && <p className="mt-1 text-sm text-ink/60">No recording has been added for this lesson.</p>}
+      {rows.length === 0 && <p className="mt-1 text-sm text-ink/65">No recording has been added for this lesson.</p>}
       <ul className="mt-2 space-y-2">
         {rows.map((r) => (
           <li key={r.id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg bg-cream/60 px-3 py-2">
@@ -138,7 +138,7 @@ export function LessonRecordingPanel({ lessonInstanceId, canManage }: { lessonIn
               <RecordingChip url={r.url} />
               {r.note && <span className="ml-2 text-sm text-ink/70">{r.note}</span>}
               {canManage && (
-                <p className="mt-1 text-xs text-ink/55">
+                <p className="mt-1 text-xs text-ink/65">
                   Confirmed by {r.profiles?.full_name || "staff"} on {new Date(r.acknowledged_at).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
                 </p>
               )}

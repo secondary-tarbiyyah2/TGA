@@ -120,9 +120,9 @@ export function NotificationBell({ userId }: { userId: string }) {
         <div className="absolute right-0 z-50 mt-2 w-80 rounded-xl border border-gold-light bg-white p-3 shadow-warm">
           <p className="px-1 pb-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Notifications</p>
           {signals === null ? (
-            <p className="p-2 text-sm text-ink/60">Loading…</p>
+            <p className="p-2 text-sm text-ink/65">Loading…</p>
           ) : signals.length === 0 ? (
-            <p className="p-2 text-sm text-ink/60">Nothing needs your attention.</p>
+            <p className="p-2 text-sm text-ink/65">Nothing needs your attention.</p>
           ) : (
             <ul className="max-h-80 space-y-1 overflow-y-auto">
               {signals.map((s) => (

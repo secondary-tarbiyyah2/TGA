@@ -226,7 +226,7 @@ export function ClassGradebook({
     return (
       <span className="tabular-nums text-ink">
         {Number(r.raw_score)}
-        {r.max_score !== null && <span className="text-ink/55">/{Number(r.max_score)}</span>}
+        {r.max_score !== null && <span className="text-ink/65">/{Number(r.max_score)}</span>}
       </span>
     );
   };
@@ -386,7 +386,7 @@ export function ClassGradebook({
                   <th key={c.key} scope="col" className="min-w-[7.5rem] px-2 py-2 text-left align-bottom">
                     <button type="button" onClick={() => openColumn(c)} className="block text-left hover:text-teal-800" title="Enter or change results">
                       <span className="block text-sm font-semibold text-ink">{c.title}</span>
-                      <span className="block text-xs font-normal text-ink/60">
+                      <span className="block text-xs font-normal text-ink/65">
                         {new Date(c.date).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}
                         {typeName(c.typeId) ? ` · ${typeName(c.typeId)}` : ""}
                         {c.max !== null ? ` · /${Number(c.max)}` : ""}

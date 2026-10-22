@@ -60,12 +60,12 @@ function ReceiptContent() {
     if (sigUrl) URL.revokeObjectURL(sigUrl);
   }, [sigUrl]);
 
-  if (state === "loading") return <p className="text-sm text-ink/60">Loading…</p>;
+  if (state === "loading") return <p className="text-sm text-ink/65">Loading…</p>;
   if (state === "missing" || !receipt)
     return (
       <div className="rounded-2xl border border-gold-light bg-white p-8 text-center">
         <p className="font-medium text-ink">We couldn&apos;t find that signed copy</p>
-        <p className="mt-1 text-sm text-ink/60">You can only open copies of documents you signed yourself (the Headteacher and admins can open any).</p>
+        <p className="mt-1 text-sm text-ink/65">You can only open copies of documents you signed yourself (the Headteacher and admins can open any).</p>
         <Link href="/documents" className="mt-4 inline-block text-sm font-medium text-teal-700 underline">Back to My documents</Link>
       </div>
     );
@@ -120,15 +120,15 @@ function ReceiptContent() {
               // eslint-disable-next-line @next/next/no-img-element -- private blob URL
               <img src={sigUrl} alt={`Handwritten signature of ${receipt.typed_full_name}`} className="mx-auto mt-2 max-h-32 w-auto" />
             ) : (
-              <p className="mt-2 text-sm text-ink/55">Loading signature…</p>
+              <p className="mt-2 text-sm text-ink/65">Loading signature…</p>
             )}
-            <p className="mt-2 border-t border-ink/20 pt-1 text-center text-xs text-ink/60">{receipt.typed_full_name}</p>
+            <p className="mt-2 border-t border-ink/20 pt-1 text-center text-xs text-ink/65">{receipt.typed_full_name}</p>
           </figure>
         )}
         <dl className="mt-6 divide-y divide-gold-light/70 text-sm">
           {rows.map(([k, v]) => (
             <div key={k} className="grid gap-1 py-3 sm:grid-cols-[180px_1fr]">
-              <dt className="text-ink/55">{k}</dt>
+              <dt className="text-ink/65">{k}</dt>
               <dd className={`break-all text-ink ${k.startsWith("Record") || k.startsWith("Signature image") || k === "Reference" ? "font-mono text-xs" : "font-medium"}`}>{v}</dd>
             </div>
           ))}

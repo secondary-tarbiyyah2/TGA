@@ -138,7 +138,7 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
   // Not a parent (or still working it out): never block. Parent roles load
   // before the RPC, so hold the page back only while we genuinely don't know.
   if (!user || !rolesLoaded || !isParent) return <>{children}</>;
-  if (!loaded) return <p className="py-10 text-center text-sm text-ink/60">Loading…</p>;
+  if (!loaded) return <p className="py-10 text-center text-sm text-ink/65">Loading…</p>;
 
   // Optional (since Oct 2026): with no PIN the family area simply opens. Parents
   // who share a device with their children can turn one on in Account.
@@ -157,10 +157,10 @@ export function FamilyPinGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-white px-4">
         <h1 className="font-serif text-h2 font-semibold text-ink">Parent PIN</h1>
-        <p className="mb-6 mt-1 max-w-xs text-center text-sm text-ink/60">Enter your 6-digit PIN to open the family area.</p>
+        <p className="mb-6 mt-1 max-w-xs text-center text-sm text-ink/65">Enter your 6-digit PIN to open the family area.</p>
         {hasErr && !has && <p className="mb-3 text-center text-sm text-red-700">We couldn&apos;t reach the server to check your PIN settings.</p>}
         <PinPad onSubmit={submit} busy={busy} error={err} />
-        <div className="mt-6 flex gap-4 text-xs text-ink/55">
+        <div className="mt-6 flex gap-4 text-xs text-ink/65">
           {hasErr && (
             <button type="button" onClick={() => void reload()} className="underline">
               Retry

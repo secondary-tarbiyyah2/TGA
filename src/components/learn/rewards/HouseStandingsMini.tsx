@@ -39,7 +39,7 @@ export function HouseStandingsMini({ refreshKey, highlightHouseId }: { refreshKe
   return (
     <aside aria-label="Live house standings" className="rounded-xl border border-gold-light/60 bg-cream/40 p-3">
       <div className="flex items-center justify-between">
-        <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/55">Live standings</h3>
+        <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Live standings</h3>
         <span className="text-[10px] text-ink/65">all time</span>
       </div>
       {rows === null ? (

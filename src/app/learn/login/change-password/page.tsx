@@ -54,12 +54,12 @@ export default function ChangePasswordPage() {
     router.replace("/");
   }
 
-  if (session === "loading") return <p className="text-ink/60">Loading…</p>;
+  if (session === "loading") return <p className="text-ink/65">Loading…</p>;
   if (!session) {
     return (
       <section className="app-pad">
         <div className="mx-auto max-w-sm">
-          <p className="text-ink/60">Please sign in first.</p>
+          <p className="text-ink/65">Please sign in first.</p>
           <Link href="/login" className="mt-3 inline-block text-sm font-semibold text-gold-700 underline">
             Go to sign in
           </Link>
@@ -72,7 +72,7 @@ export default function ChangePasswordPage() {
     <section className="app-pad">
       <div className="mx-auto max-w-sm">
         <h1 className="font-serif text-h2 font-semibold text-ink">Choose your own password</h1>
-        <p className="mt-1 text-sm text-ink/60">The password the school gave you was only temporary. Choose a new one that you will remember. Don&apos;t share it with anyone.</p>
+        <p className="mt-1 text-sm text-ink/65">The password the school gave you was only temporary. Choose a new one that you will remember. Don&apos;t share it with anyone.</p>
         <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-3">
           <PasswordInput label="New password" required autoComplete="new-password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <PasswordInput label="Type it again" required autoComplete="new-password" value={confirm} onChange={(e) => setConfirm(e.target.value)} />

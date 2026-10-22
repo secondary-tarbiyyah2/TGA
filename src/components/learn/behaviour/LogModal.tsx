@@ -135,7 +135,7 @@ export function LogModal({
       <div className="max-h-[92vh] w-full max-w-xl overflow-y-auto rounded-t-2xl bg-white shadow-xl sm:rounded-2xl">
         <div className="flex items-center justify-between border-b border-gold-light px-5 py-4">
           <h2 className="text-lg font-semibold text-ink">Log {kind === "incident" ? "an incident" : "a merit or demerit"}</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/55 hover:bg-cream">
+          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream">
             ×
           </button>
         </div>
@@ -174,7 +174,7 @@ export function LogModal({
               className="w-full rounded-lg border border-gold-light px-3 py-2 text-sm"
             />
             <ul className="mt-2 max-h-44 divide-y divide-gold-light/40 overflow-y-auto rounded-lg border border-gold-light/60">
-              {matches.length === 0 && <li className="px-3 py-3 text-ink/55">No students match.</li>}
+              {matches.length === 0 && <li className="px-3 py-3 text-ink/65">No students match.</li>}
               {matches.map((s) => {
                 const on = picked.includes(keyOf(s));
                 return (
@@ -256,11 +256,11 @@ export function LogModal({
               {detention && (
                 <div className="mt-3 flex flex-wrap gap-3">
                   <label>
-                    <span className="block text-xs text-ink/60">Date</span>
+                    <span className="block text-xs text-ink/65">Date</span>
                     <input type="date" value={detDate} min={todayIso()} onChange={(e) => setDetDate(e.target.value || nextWeekday())} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm" />
                   </label>
                   <label>
-                    <span className="block text-xs text-ink/60">Minutes</span>
+                    <span className="block text-xs text-ink/65">Minutes</span>
                     <input type="text" inputMode="decimal" min={5} max={120} step={5} value={detMinutes} onChange={(e) => setDetMinutes(Math.max(5, Number(e.target.value) || 30))} className="w-24 rounded-lg border border-gold-light px-3 py-1.5 text-sm" />
                   </label>
                 </div>

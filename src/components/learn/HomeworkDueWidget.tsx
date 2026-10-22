@@ -28,8 +28,8 @@ export function HomeworkDueWidget({ childId, title = "Upcoming homework" }: { ch
       .then(({ data }) => setRows(((data as unknown as Row[]) || []).filter((r) => (r.status === "not_yet_due" || r.status === "missing") && r.homework && !r.homework.archived_at)));
   }, [supabase, childId]);
 
-  if (rows === null) return <p className="text-sm text-ink/60">Loading homework…</p>;
-  if (rows.length === 0) return <p className="text-sm text-ink/60">No homework due.</p>;
+  if (rows === null) return <p className="text-sm text-ink/65">Loading homework…</p>;
+  if (rows.length === 0) return <p className="text-sm text-ink/65">No homework due.</p>;
 
   return (
     <div>
@@ -39,7 +39,7 @@ export function HomeworkDueWidget({ childId, title = "Upcoming homework" }: { ch
           <li key={r.homework_id} className="flex items-center justify-between rounded-lg border border-gold-light/40 p-2 text-sm">
             <span>{r.homework?.title || "Homework"}</span>
             <span className="flex items-center gap-2">
-              <span className="text-ink/60">{new Date(r.due_at).toLocaleDateString("en-GB")}</span>
+              <span className="text-ink/65">{new Date(r.due_at).toLocaleDateString("en-GB")}</span>
               {r.status === "missing" && <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs text-red-700">Missing</span>}
               {r.status === "not_yet_due" && <span className="rounded-full bg-gold-light/40 px-2 py-0.5 text-xs text-gold-700">Due</span>}
             </span>

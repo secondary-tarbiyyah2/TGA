@@ -25,9 +25,9 @@ function StudentLessonContent() {
     })();
   }, [supabase]);
 
-  if (!id) return <p className="text-sm text-ink/60">No lesson selected — open a lesson from your dashboard.</p>;
-  if (childId === undefined) return <p className="text-sm text-ink/60">Loading…</p>;
-  if (childId === null) return <p className="text-sm text-ink/60">Your account isn&apos;t linked to a student record yet.</p>;
+  if (!id) return <p className="text-sm text-ink/65">No lesson selected — open a lesson from your dashboard.</p>;
+  if (childId === undefined) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (childId === null) return <p className="text-sm text-ink/65">Your account isn&apos;t linked to a student record yet.</p>;
   return <LessonDetail lessonInstanceId={id} variant="student" childId={childId} />;
 }
 
@@ -36,7 +36,7 @@ export default function StudentLessonPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["student"]}>
         <LearnShell role="student">
-          <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
+          <Suspense fallback={<p className="text-sm text-ink/65">Loading…</p>}>
             <StudentLessonContent />
           </Suspense>
         </LearnShell>

@@ -108,7 +108,7 @@ export function TeacherMatrix({ classes, yearGroups, subjects, teachers, classTe
   return (
     <section id="teacher-matrix" className="scroll-mt-20 rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Who teaches what</h2>
-      <p className="mt-0.5 text-sm text-ink/60">
+      <p className="mt-0.5 text-sm text-ink/65">
         Each class subject has its own teacher, so one teacher can teach many classes. Pick a cell to choose the teacher, or to add a dated override such as cover while someone is away.
       </p>
 
@@ -178,7 +178,7 @@ export function TeacherMatrix({ classes, yearGroups, subjects, teachers, classTe
       {problems.length > 0 && (
         <ul className="mt-4 space-y-1" aria-label="Warnings">
           {problems.slice(0, 8).map((p, i) => <li key={i}><Notice tone="error">{p}</Notice></li>)}
-          {problems.length > 8 && <li className="text-xs text-ink/60">and {problems.length - 8} more.</li>}
+          {problems.length > 8 && <li className="text-xs text-ink/65">and {problems.length - 8} more.</li>}
         </ul>
       )}
 
@@ -297,7 +297,7 @@ function CellDialog({ cls, subject, teachers, rows, load, legacyTeacher, onClose
         <div className="flex items-start justify-between gap-2">
           <div>
             <h3 className="font-serif text-lg font-semibold text-ink">{subject.name}</h3>
-            <p className="text-xs text-ink/60">{cls.name}</p>
+            <p className="text-xs text-ink/65">{cls.name}</p>
           </div>
           <button type="button" className={ghostBtn} onClick={onClose}>Close</button>
         </div>
@@ -310,7 +310,7 @@ function CellDialog({ cls, subject, teachers, rows, load, legacyTeacher, onClose
           <p className="text-xs font-medium text-ink/70">Usual teacher{dflt ? `: ${name(dflt.teacher_id)}` : legacyTeacher ? `: ${name(legacyTeacher)} (from People, not yet saved here)` : ""}</p>
           <input className={inputCls} placeholder="Search teachers" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search teachers" autoFocus />
           <ul className="max-h-44 divide-y divide-gold-light/40 overflow-y-auto rounded-lg border border-gold-light/60">
-            {list.length === 0 && <li className="px-3 py-2 text-xs text-ink/60">No teachers match.</li>}
+            {list.length === 0 && <li className="px-3 py-2 text-xs text-ink/65">No teachers match.</li>}
             {list.map((t) => {
               const n = load.get(t.id) || 0;
               return (
@@ -328,7 +328,7 @@ function CellDialog({ cls, subject, teachers, rows, load, legacyTeacher, onClose
 
         <div className="mt-4 rounded-xl bg-cream/60 p-3">
           <p className="text-sm font-medium text-ink">Dated override</p>
-          <p className="text-xs text-ink/60">A different teacher for these dates only. Lessons in that period change teacher; the weekly timetable stays as it is.</p>
+          <p className="text-xs text-ink/65">A different teacher for these dates only. Lessons in that period change teacher; the weekly timetable stays as it is.</p>
           {overrides.length > 0 && (
             <ul className="mt-2 space-y-1">
               {overrides.map((o) => (

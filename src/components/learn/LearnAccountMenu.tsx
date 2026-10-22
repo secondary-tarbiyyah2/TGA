@@ -109,7 +109,7 @@ export function LearnAccountMenu({ session, roles }: { session: Session; roles: 
             </span>
             <div className="min-w-0">
               <p className="truncate text-sm font-semibold text-ink">{displayName}</p>
-              <p className="truncate text-xs text-ink/55">{session.user.email}</p>
+              <p className="truncate text-xs text-ink/65">{session.user.email}</p>
               {roleSummary && <p className="mt-0.5 truncate text-xs font-medium text-teal-700">{roleSummary}</p>}
             </div>
           </div>

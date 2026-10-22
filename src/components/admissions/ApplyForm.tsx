@@ -214,7 +214,7 @@ function DocPicker({
         <ul className="mt-2 space-y-1 text-sm text-ink/80">
           {files.map((f, i) => (
             <li key={`${f.name}-${i}`} className="flex items-center justify-between gap-3 rounded-lg bg-cream px-3 py-1.5">
-              <span className="min-w-0 truncate">{f.name} <span className="text-ink/50">({(f.size / 1048576).toFixed(1)} MB)</span></span>
+              <span className="min-w-0 truncate">{f.name} <span className="text-ink/65">({(f.size / 1048576).toFixed(1)} MB)</span></span>
               <button type="button" disabled={disabled} onClick={() => onRemove(i)} className="shrink-0 font-semibold text-gold-700 underline">
                 Remove
               </button>
@@ -253,15 +253,15 @@ function FeeSummary({
           return (
             <li key={k.key} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-4 py-3">
               <span className="min-w-0 break-words font-medium text-ink">
-                {kidName(k, i)} <span className="font-normal text-ink/60">({k.yearGroup || "year group not chosen"})</span>
+                {kidName(k, i)} <span className="font-normal text-ink/65">({k.yearGroup || "year group not chosen"})</span>
               </span>
               {c.gross <= 0 ? (
-                <span className="text-ink/60">Fee to be confirmed</span>
+                <span className="text-ink/65">Fee to be confirmed</span>
               ) : (
                 <span className="text-right text-ink">
                   {c.siblingDiscount > 0 ? (
                     <>
-                      <span className="text-ink/50 line-through">{formatGBP(c.gross)}</span>{" "}
+                      <span className="text-ink/65 line-through">{formatGBP(c.gross)}</span>{" "}
                       <span className="font-semibold">{formatGBP(c.net)}</span>
                       <span className="block text-xs text-teal-700">Sibling discount: {formatGBP(c.siblingDiscount)} off</span>
                     </>
@@ -691,7 +691,7 @@ export function ApplyForm({
             <li
               key={t}
               aria-current={i === step ? "step" : undefined}
-              className={`rounded-full px-3 py-1 font-medium ${i === step ? "bg-gold-500 text-ink-900" : i < step ? "bg-cream text-ink" : "bg-white text-ink/60 ring-1 ring-gold-light/50"}`}
+              className={`rounded-full px-3 py-1 font-medium ${i === step ? "bg-gold-500 text-ink-900" : i < step ? "bg-cream text-ink" : "bg-white text-ink/65 ring-1 ring-gold-light/50"}`}
             >
               {i + 1}. {t}
             </li>

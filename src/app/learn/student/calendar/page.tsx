@@ -14,7 +14,7 @@ function StudentCalendarContent() {
   return (
     <>
       <PageHeader title="Calendar" subtitle="Your lessons and when homework is due." />
-      {childId === null ? <p className="text-sm text-ink/60">Your account isn&apos;t linked to a student record yet.</p> : <CalendarView scope={scope} />}
+      {childId === null ? <p className="text-sm text-ink/65">Your account isn&apos;t linked to a student record yet.</p> : <CalendarView scope={scope} />}
       <IcsFeedLink />
     </>
   );

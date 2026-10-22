@@ -155,9 +155,9 @@ export function TeachPupils() {
         />
 
         {pupils === null ? (
-          <p className="text-sm text-ink/60">Loading…</p>
+          <p className="text-sm text-ink/65">Loading…</p>
         ) : rows.length === 0 ? (
-          <p className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/60">No pupils to show.</p>
+          <p className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/65">No pupils to show.</p>
         ) : (
           <ul className="divide-y divide-gold-light/50 rounded-2xl border border-gold-light bg-white">
             {rows.map((p) => {
@@ -179,7 +179,7 @@ export function TeachPupils() {
                     </span>
                     <span className="w-24 shrink-0 text-right">
                       <span className={`block text-sm font-semibold tabular-nums ${sig?.rate != null && sig.rate < 90 ? "text-amber-800" : "text-ink"}`}>{sig?.rate != null ? `${sig.rate}%` : "–"}</span>
-                      <span className="block text-[11px] text-ink/60">attendance, 30 days</span>
+                      <span className="block text-[11px] text-ink/65">attendance, 30 days</span>
                     </span>
                     <span className="flex basis-full flex-wrap items-center gap-1.5 sm:basis-auto">
                       {p.alerts.map((a) => (
@@ -213,7 +213,7 @@ export function TeachPupils() {
               <div className="border-t border-gold-light/60 bg-white px-4 py-3">
                 {ackError && <p className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{ackError}</p>}
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-xs text-ink/55">
+                  <p className="text-xs text-ink/65">
                     {ackState(open) === "current" && open.ack
                       ? `You acknowledged this on ${formatStamp(open.ack.acknowledged_at)}.`
                       : ackState(open) === "stale"

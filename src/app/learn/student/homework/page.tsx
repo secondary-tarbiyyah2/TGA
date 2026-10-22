@@ -26,7 +26,7 @@ function StudentHomeworkContent() {
   return (
     <div>
       <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "To do", href: "/student/todo" }, { label: "My homework" }]} title="My homework" subtitle="Hand in your work and read your teacher's feedback." />
-      <div className="rounded-2xl border border-gold-light bg-white p-6">{childId ? <HomeworkForChild childId={childId} canSubmit /> : <p className="text-sm text-ink/60">Loading…</p>}</div>
+      <div className="rounded-2xl border border-gold-light bg-white p-6">{childId ? <HomeworkForChild childId={childId} canSubmit /> : <p className="text-sm text-ink/65">Loading…</p>}</div>
     </div>
   );
 }

@@ -86,9 +86,9 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="min-w-0">
           <p className="font-medium text-ink">{rule.label}</p>
-          <p className="text-xs text-ink/60">{rule.description}</p>
+          <p className="text-xs text-ink/65">{rule.description}</p>
         </div>
-        <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${!rule.enabled ? "bg-ink/10 text-ink/60" : runnable.length > 0 ? "bg-amber-100 text-amber-900" : "bg-green-100 text-green-800"}`}>
+        <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${!rule.enabled ? "bg-ink/10 text-ink/65" : runnable.length > 0 ? "bg-amber-100 text-amber-900" : "bg-green-100 text-green-800"}`}>
           {!rule.enabled ? "Switched off" : runnable.length > 0 ? `${runnable.length} due` : "Nothing due"}
           {rule.enabled && held.length > 0 ? ` · ${held.length} held back` : ""}
         </span>
@@ -139,7 +139,7 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
               <div className="max-h-64 overflow-auto rounded-lg border border-gold-light/40">
                 <table className="w-full text-xs">
                   <thead>
-                    <tr className="bg-cream text-left text-ink/60">
+                    <tr className="bg-cream text-left text-ink/65">
                       <th className="px-2 py-1.5">Record</th>
                       <th className="px-2 py-1.5">Last activity</th>
                       <th className="px-2 py-1.5">Status</th>

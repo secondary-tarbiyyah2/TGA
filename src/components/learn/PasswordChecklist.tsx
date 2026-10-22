@@ -25,7 +25,7 @@ export function PasswordChecklist({ password, confirm }: { password: string; con
       )}
       <ul aria-label="Password requirements" className="space-y-1 text-sm">
         {checks.map((c) => (
-          <li key={c.id} className={c.ok ? "text-teal-700" : touched ? "text-red-700" : "text-ink/60"}>
+          <li key={c.id} className={c.ok ? "text-teal-700" : touched ? "text-red-700" : "text-ink/65"}>
             <span aria-hidden="true">{c.ok ? "✓" : touched ? "✗" : "•"}</span> {c.label}
             <span className="sr-only">{c.ok ? " (done)" : " (not yet)"}</span>
           </li>

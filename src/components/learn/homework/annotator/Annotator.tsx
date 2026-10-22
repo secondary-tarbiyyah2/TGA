@@ -537,7 +537,7 @@ export function Annotator({
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gold-light/40 px-3 py-2">
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold text-ink">{heading}</p>
-          <p className="truncate text-xs text-ink/60">{file.name}</p>
+          <p className="truncate text-xs text-ink/65">{file.name}</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           {kind === "image" && (

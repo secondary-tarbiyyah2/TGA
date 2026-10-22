@@ -79,7 +79,7 @@ export function DigestAdmin() {
           Every <strong>Friday at about 3pm</strong> each parent gets one email covering each of their children&apos;s week: attendance, homework, merits, teacher comments and next week&apos;s lessons. It sends once per family per week, and parents can switch it off from their family dashboard.
         </p>
         {families && (
-          <p className="mt-2 text-xs text-ink/60">
+          <p className="mt-2 text-xs text-ink/65">
             {families.length} families{optedOut > 0 ? `, ${optedOut} opted out` : ""}.{weekStart ? ` Showing the week beginning ${new Date(`${weekStart}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "long" })}.` : ""}
           </p>
         )}
@@ -102,16 +102,16 @@ export function DigestAdmin() {
           <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search parent or child" className="rounded-lg border border-gold-light px-3 py-1.5 text-sm" />
         </div>
         {families === null ? (
-          <p className="mt-3 text-sm text-ink/60">Loading…</p>
+          <p className="mt-3 text-sm text-ink/65">Loading…</p>
         ) : shown.length === 0 ? (
-          <p className="mt-3 text-sm text-ink/60">No families to show.</p>
+          <p className="mt-3 text-sm text-ink/65">No families to show.</p>
         ) : (
           <ul className="mt-3 divide-y divide-gold-light/50">
             {shown.slice(0, 100).map((f) => (
               <li key={f.parent_user_id} className="flex flex-wrap items-center justify-between gap-2 py-2 text-sm">
                 <span className="min-w-0">
                   <span className="block font-medium text-ink">{f.parent_name || f.parent_email}</span>
-                  <span className="block text-xs text-ink/60">
+                  <span className="block text-xs text-ink/65">
                     {f.children.join(", ")}
                     {f.opted_out ? " · opted out" : ""}
                     {f.this_week ? ` · ${STATUS_TEXT[f.this_week] || f.this_week}` : ""}
@@ -137,9 +137,9 @@ export function DigestAdmin() {
           <div className="flex items-center justify-between gap-2">
             <div className="min-w-0">
               <h2 className="text-base font-semibold text-ink">Preview: {preview.name}</h2>
-              <p className="truncate text-xs text-ink/60">Subject: {preview.subject}</p>
+              <p className="truncate text-xs text-ink/65">Subject: {preview.subject}</p>
             </div>
-            <button type="button" onClick={() => setPreview(null)} className="text-sm text-ink/60 underline">
+            <button type="button" onClick={() => setPreview(null)} className="text-sm text-ink/65 underline">
               Close
             </button>
           </div>

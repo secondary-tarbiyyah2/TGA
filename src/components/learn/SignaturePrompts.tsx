@@ -173,7 +173,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
       {hasDocs && (
         <div className="rounded-2xl border border-gold-light bg-white p-5">
           <h2 className="text-lg font-semibold text-ink">Pending your signature</h2>
-          <p className="mt-0.5 text-sm text-ink/60">Please read each document, then sign it by typing your full name and drawing your signature.</p>
+          <p className="mt-0.5 text-sm text-ink/65">Please read each document, then sign it by typing your full name and drawing your signature.</p>
           <ul className="mt-4 space-y-3">
             {docs.map((d) => {
               const isOpen = signing === d.document_id;
@@ -213,7 +213,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
                           {d.body}
                         </div>
                       )}
-                      {!d.body && !d.file_url && !d.file_path && <p className="text-sm text-ink/60">This document has no text attached — please check with the school office if you need a copy.</p>}
+                      {!d.body && !d.file_url && !d.file_path && <p className="text-sm text-ink/65">This document has no text attached — please check with the school office if you need a copy.</p>}
                       <label className="block text-sm text-ink">
                         Type your full name
                         <input
@@ -243,7 +243,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
                         >
                           {busy ? "Signing…" : "Sign"}
                         </button>
-                        <button type="button" onClick={() => setSigning(null)} className="text-sm text-ink/60 underline">
+                        <button type="button" onClick={() => setSigning(null)} className="text-sm text-ink/65 underline">
                           Cancel
                         </button>
                       </div>

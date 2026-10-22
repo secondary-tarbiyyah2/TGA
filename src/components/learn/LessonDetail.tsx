@@ -97,8 +97,8 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase, lessonInstanceId]);
 
-  if (lesson === undefined) return <p className="text-sm text-ink/60">Loading…</p>;
-  if (lesson === null) return <p className="text-sm text-ink/60">Lesson not found, or you don&apos;t have access to it.</p>;
+  if (lesson === undefined) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (lesson === null) return <p className="text-sm text-ink/65">Lesson not found, or you don&apos;t have access to it.</p>;
 
   const slot = lesson.timetable_slots;
   const title = `${slot?.classes?.subjects?.name || "Lesson"} — ${slot?.classes?.name || ""}`;
@@ -224,7 +224,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h1 className="font-serif text-h2 font-semibold text-ink">{title}</h1>
-            <p className="mt-1 text-sm text-ink/60">
+            <p className="mt-1 text-sm text-ink/65">
               {lesson.date} · {slot ? `${timeLabel(slot.start_time)}–${timeLabel(slot.end_time)}` : ""}
             </p>
           </div>
@@ -319,7 +319,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
       {variant === "teacher" && (
         <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
           <h2 className="font-serif text-h3 font-semibold text-ink">Register</h2>
-          {enrolledChildren.length === 0 && <p className="mt-2 text-sm text-ink/60">No enrolled students found for this class.</p>}
+          {enrolledChildren.length === 0 && <p className="mt-2 text-sm text-ink/65">No enrolled students found for this class.</p>}
           <ul className="mt-3 space-y-2">
             {enrolledChildren.map((c) => (
               <li key={c.id} className="flex items-center justify-between rounded-lg border border-gold-light/30 p-3 text-sm">
@@ -331,7 +331,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
                       type="button"
                       onClick={() => markAttendance(c.id, s)}
                       className={`rounded-full px-3 py-1 text-xs ${
-                        attendance[c.id] === s ? "bg-gold-500 text-ink-900" : "border border-gold-light/60 text-ink/60 hover:bg-cream"
+                        attendance[c.id] === s ? "bg-gold-500 text-ink-900" : "border border-gold-light/60 text-ink/65 hover:bg-cream"
                       }`}
                     >
                       {s}
@@ -378,7 +378,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
         {(variant === "parent" || variant === "student") && childId && (
           <div className="mt-4 border-t border-gold-light/30 pt-4">
             <p className="text-sm font-medium text-ink">Recording consent</p>
-            <p className="mt-1 text-xs text-ink/60">
+            <p className="mt-1 text-xs text-ink/65">
               Recordings of lessons are only visible to enrolled families once a parent has given consent. This is a whole-child
               setting, not per-lesson.
             </p>
@@ -402,7 +402,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
                 </button>
               </div>
             ) : (
-              <p className="mt-2 text-xs text-ink/60">Current status: {consentGiven === null ? "not set by parent" : consentGiven ? "given" : "withheld"}</p>
+              <p className="mt-2 text-xs text-ink/65">Current status: {consentGiven === null ? "not set by parent" : consentGiven ? "given" : "withheld"}</p>
             )}
           </div>
         )}
@@ -412,10 +412,10 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
         <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
           <h2 className="font-serif text-h3 font-semibold text-ink">Report an absence</h2>
           {absenceNoticeSent ? (
-            <p className="mt-2 text-sm text-ink/60">An absence notice has already been submitted for this lesson — thank you.</p>
+            <p className="mt-2 text-sm text-ink/65">An absence notice has already been submitted for this lesson — thank you.</p>
           ) : (
             <>
-              <p className="mt-1 text-xs text-ink/60">Let the teacher know in advance so this isn&apos;t flagged as unexplained.</p>
+              <p className="mt-1 text-xs text-ink/65">Let the teacher know in advance so this isn&apos;t flagged as unexplained.</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <input
                   value={absenceReason}

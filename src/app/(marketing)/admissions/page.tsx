@@ -52,14 +52,14 @@ export default async function AdmissionsPage() {
             <div className="rounded-2xl bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application and assessment fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">{formatGBP(settings.applicationFee)}</p>
-              <p className="mt-1 text-sm text-ink/60">Non-refundable. Covers the baseline assessment and the administrative review. Paid when you apply.</p>
+              <p className="mt-1 text-sm text-ink/65">Non-refundable. Covers the baseline assessment and the administrative review. Paid when you apply.</p>
             </div>
           )}
           {settings.registrationFee != null && (
             <div className="rounded-2xl bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">{formatGBP(settings.registrationFee)}</p>
-              <p className="mt-1 text-sm text-ink/60">One-off, per child, due when you accept an offer. Covers account setup, platform licences and onboarding. Refundable only within the 14-day cancellation period.</p>
+              <p className="mt-1 text-sm text-ink/65">One-off, per child, due when you accept an offer. Covers account setup, platform licences and onboarding. Refundable only within the 14-day cancellation period.</p>
             </div>
           )}
           <p className="text-sm text-ink/70 sm:col-span-2">

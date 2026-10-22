@@ -125,11 +125,11 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
 
       {items === null ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : visible.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-gold-light bg-white px-6 py-12 text-center">
           <p className="font-medium text-ink">{query ? "No notices match your search." : "No announcements yet."}</p>
-          <p className="mx-auto mt-1 max-w-sm text-sm text-ink/60">
+          <p className="mx-auto mt-1 max-w-sm text-sm text-ink/65">
             {query
               ? "Try a different word, or clear the search."
               : canManage
@@ -154,9 +154,9 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
                       <h2 className="text-base font-semibold text-ink">{a.title}</h2>
                       {a.pinned && <span className="rounded-full bg-gold-light/60 px-2 py-0.5 text-xs font-medium text-ink/70">Pinned</span>}
                       {recalled && <span className="rounded-full bg-red-50 px-2 py-0.5 text-xs font-medium text-red-700">Recalled</span>}
-                      {expired && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/60">Expired</span>}
+                      {expired && <span className="rounded-full bg-cream px-2 py-0.5 text-xs font-medium text-ink/65">Expired</span>}
                     </div>
-                    <p className="mt-1 text-xs text-ink/55">
+                    <p className="mt-1 text-xs text-ink/65">
                       {a.profiles?.full_name || "School staff"} · {formatDate(a.created_at)}
                       {a.edited_at ? " · edited" : ""}
                       {a.expires_at && !expired ? ` · expires ${formatDate(a.expires_at)}` : ""}

@@ -80,7 +80,7 @@ export function PupilRecord({
     // eslint-disable-next-line react-hooks/exhaustive-deps -- load once per pupil
   }, [child.id, showAcks, teacherView]);
 
-  if (!loaded) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (!loaded) return <p className="text-sm text-ink/65">Loading…</p>;
 
   const progress = completeness(details, contacts.length);
   const alerts = medicalAlerts(details);
@@ -102,7 +102,7 @@ export function PupilRecord({
         <div className="flex flex-wrap items-start justify-between gap-2">
           <div>
             <p className="text-lg font-semibold text-ink">{child.name}</p>
-            <p className="text-sm text-ink/60">
+            <p className="text-sm text-ink/65">
               {[child.yearGroup, child.classes.join(", "), child.dob ? `Born ${formatDob(child.dob)}${age !== null ? ` (${age})` : ""}` : ""].filter(Boolean).join(" · ")}
             </p>
           </div>
@@ -123,7 +123,7 @@ export function PupilRecord({
           <div className="flex-1">
             <ProgressBar percent={progress.percent} />
           </div>
-          <p className="text-xs text-ink/60">{details?.completed_at ? `Complete · ${formatStamp(details.completed_at)}` : `${progress.percent}% complete`}</p>
+          <p className="text-xs text-ink/65">{details?.completed_at ? `Complete · ${formatStamp(details.completed_at)}` : `${progress.percent}% complete`}</p>
         </div>
         )}
         {!details && <p className="mt-2 text-sm text-amber-800">The family hasn&apos;t started this record yet.</p>}
@@ -162,7 +162,7 @@ export function PupilRecord({
             {contacts.map((c, i) => (
               <li key={c.id} className="rounded-lg border border-gold-light/60 p-3 text-sm">
                 <p className="font-medium text-ink">
-                  {i + 1}. {c.name} <span className="font-normal text-ink/55">· {c.relationship}</span>
+                  {i + 1}. {c.name} <span className="font-normal text-ink/65">· {c.relationship}</span>
                 </p>
                 <p className="text-ink/80">
                   <a href={`tel:${c.phone.replace(/\s+/g, "")}`} className="underline">
@@ -191,14 +191,14 @@ export function PupilRecord({
       {showAcks && (
         <Section title="Teacher acknowledgements" className={vis("acks")}>
           {acks.length === 0 ? (
-            <p className="text-sm text-ink/60">No teacher has acknowledged this record yet.</p>
+            <p className="text-sm text-ink/65">No teacher has acknowledged this record yet.</p>
           ) : (
             <ul className="space-y-1.5 text-sm text-ink">
               {acks.map((a) => {
                 const stale = details && a.details_updated_at && new Date(details.updated_at).getTime() > new Date(a.details_updated_at).getTime() + 1000;
                 return (
                   <li key={a.id}>
-                    {a.profiles?.full_name || "Teacher"} <span className="text-ink/55">· {formatStamp(a.acknowledged_at)}</span>
+                    {a.profiles?.full_name || "Teacher"} <span className="text-ink/65">· {formatStamp(a.acknowledged_at)}</span>
                     {stale ? <span className="ml-2 rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900">Record changed since</span> : null}
                   </li>
                 );

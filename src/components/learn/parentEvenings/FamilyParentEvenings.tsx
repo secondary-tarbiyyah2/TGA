@@ -69,12 +69,12 @@ function SlotPicker({
   );
   const slots = useMemo(() => generateSlots(evening), [evening]);
 
-  if (taken === null) return <p className="mt-2 text-sm text-ink/60">Loading times…</p>;
-  if (slots.length === 0) return <p className="mt-2 text-sm text-ink/60">No times are available.</p>;
+  if (taken === null) return <p className="mt-2 text-sm text-ink/65">Loading times…</p>;
+  if (slots.length === 0) return <p className="mt-2 text-sm text-ink/65">No times are available.</p>;
 
   return (
     <div className="mt-2">
-      <p className="text-xs text-ink/60">{formatDay(evening.starts_at)} · {evening.slot_minutes}-minute meetings (UK time)</p>
+      <p className="text-xs text-ink/65">{formatDay(evening.starts_at)} · {evening.slot_minutes}-minute meetings (UK time)</p>
       <div className="mt-2 grid grid-cols-3 gap-2 sm:grid-cols-5 md:grid-cols-6">
         {slots.map((s) => {
           const key = slotKey(s);
@@ -180,7 +180,7 @@ function TeacherRow({
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <p className="text-sm font-medium text-ink">{option.teacher_name}</p>
-          {option.class_names && option.class_names.length > 0 && <p className="text-xs text-ink/60">{option.class_names.join(", ")}</p>}
+          {option.class_names && option.class_names.length > 0 && <p className="text-xs text-ink/65">{option.class_names.join(", ")}</p>}
         </div>
         {booking ? (
           <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -233,7 +233,7 @@ export function FamilyParentEvenings() {
     load();
   }, [load]);
 
-  if (evenings === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (evenings === null) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <div className="space-y-6">
@@ -252,7 +252,7 @@ export function FamilyParentEvenings() {
                 <span>
                   <span className="font-medium text-ink">{formatSlot(b.slot_start, b.slot_end)}</span>
                   <span className="text-ink/70"> · {b.teacher_name} about {b.child_name}</span>
-                  {b.location && <span className="block text-xs text-ink/60">{b.location}</span>}
+                  {b.location && <span className="block text-xs text-ink/65">{b.location}</span>}
                 </span>
                 {b.join_url ? (
                   <a href={b.join_url} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-medium text-white hover:bg-gold-900">
@@ -269,7 +269,7 @@ export function FamilyParentEvenings() {
 
       {evenings.length === 0 ? (
         <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-          <p className="text-sm text-ink/60">There are no parent evenings open for booking right now. You&apos;ll see them here when the school opens one.</p>
+          <p className="text-sm text-ink/65">There are no parent evenings open for booking right now. You&apos;ll see them here when the school opens one.</p>
         </div>
       ) : (
         evenings.map((ev) => {
@@ -282,9 +282,9 @@ export function FamilyParentEvenings() {
                 {formatDay(ev.starts_at)}, {formatTime(ev.starts_at)}–{formatTime(ev.ends_at)} · {ev.slot_minutes}-minute meetings
                 {ev.location ? ` · ${ev.location}` : ""}
               </p>
-              {ev.notes && <p className="mt-1 text-sm text-ink/60">{ev.notes}</p>}
+              {ev.notes && <p className="mt-1 text-sm text-ink/65">{ev.notes}</p>}
               {children.length === 0 ? (
-                <p className="mt-3 text-sm text-ink/60">None of your children&apos;s teachers are taking part in this evening.</p>
+                <p className="mt-3 text-sm text-ink/65">None of your children&apos;s teachers are taking part in this evening.</p>
               ) : (
                 children.map(([childId, childName]) => (
                   <div key={childId} className="mt-4">

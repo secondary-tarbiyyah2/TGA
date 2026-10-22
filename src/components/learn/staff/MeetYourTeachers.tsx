@@ -48,7 +48,7 @@ function TeacherCard({ t, photo, showClasses }: { t: TeacherCardData; photo?: st
         <StaffAvatar name={t.full_name} src={photo} size={56} />
         <div className="min-w-0">
           <h3 className="font-semibold text-ink">{name}</h3>
-          {showClasses && t.class_names && t.class_names.length > 0 && <p className="text-xs text-ink/55">{t.class_names.join(", ")}</p>}
+          {showClasses && t.class_names && t.class_names.length > 0 && <p className="text-xs text-ink/65">{t.class_names.join(", ")}</p>}
           {subjects.length > 0 && (
             <ul className="mt-1.5 flex flex-wrap gap-1.5" aria-label="Subjects taught">
               {subjects.map((s) => (
@@ -70,11 +70,11 @@ function TeacherCard({ t, photo, showClasses }: { t: TeacherCardData; photo?: st
             </p>
           )}
           {(t.years_experience != null || languages.length > 0) && (
-            <p className="text-xs text-ink/60">{[t.years_experience != null ? `${t.years_experience} years teaching` : "", languages.length ? `Speaks ${languages.join(", ")}` : ""].filter(Boolean).join(" · ")}</p>
+            <p className="text-xs text-ink/65">{[t.years_experience != null ? `${t.years_experience} years teaching` : "", languages.length ? `Speaks ${languages.join(", ")}` : ""].filter(Boolean).join(" · ")}</p>
           )}
         </div>
       ) : (
-        <p className="mt-3 text-sm text-ink/55">{t.full_name.split(" ")[0]} hasn&apos;t added a profile yet.</p>
+        <p className="mt-3 text-sm text-ink/65">{t.full_name.split(" ")[0]} hasn&apos;t added a profile yet.</p>
       )}
       {t.contact_email && (
         <p className="mt-3 text-sm">
@@ -102,7 +102,7 @@ export function MeetYourTeachers({ classId, bare = false }: { classId?: string; 
     ) : error ? (
       <p className="text-sm text-amber-900">Couldn&apos;t load your teachers just now.</p>
     ) : teachers.length === 0 ? (
-      <p className="text-sm text-ink/60">Your teachers will appear here once classes have been assigned.</p>
+      <p className="text-sm text-ink/65">Your teachers will appear here once classes have been assigned.</p>
     ) : (
       <ul className="grid gap-3 sm:grid-cols-2">
         {teachers.map((t) => (

@@ -76,7 +76,7 @@ export function GcseMocks() {
       )
     );
 
-  if (rows === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6" aria-labelledby="gcse-mocks-h">
@@ -88,7 +88,7 @@ export function GcseMocks() {
           Export CSV ({shown.length})
         </button>
       </div>
-      <p className="mt-1 text-sm text-ink/60">To add a result, open a pupil from the Overview tab and use &ldquo;Add a mock exam result&rdquo; (paper, date sat, mark and optional grade boundaries).</p>
+      <p className="mt-1 text-sm text-ink/65">To add a result, open a pupil from the Overview tab and use &ldquo;Add a mock exam result&rdquo; (paper, date sat, mark and optional grade boundaries).</p>
 
       <div className="mt-3 flex flex-wrap items-end gap-3 text-xs font-medium text-ink/70">
         <label>
@@ -120,7 +120,7 @@ export function GcseMocks() {
       </div>
 
       {shown.length === 0 ? (
-        <p className="mt-4 text-sm text-ink/60">{rows.length === 0 ? "No mock exam results recorded yet." : "Nothing matches these filters."}</p>
+        <p className="mt-4 text-sm text-ink/65">{rows.length === 0 ? "No mock exam results recorded yet." : "Nothing matches these filters."}</p>
       ) : (
         <>
           {summary.length > 0 && (
@@ -142,7 +142,7 @@ export function GcseMocks() {
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="text-xs text-ink/60">
+                <tr className="text-xs text-ink/65">
                   <th scope="col" className="py-1.5 pr-3 font-medium">Pupil</th>
                   <th scope="col" className="py-1.5 pr-3 font-medium">Subject</th>
                   <th scope="col" className="py-1.5 pr-3 font-medium">Paper</th>
@@ -166,7 +166,7 @@ export function GcseMocks() {
                 ))}
               </tbody>
             </table>
-            {shown.length > 400 && <p className="mt-2 text-xs text-ink/55">Showing the newest 400 of {shown.length}. Use the filters or export for everything.</p>}
+            {shown.length > 400 && <p className="mt-2 text-xs text-ink/65">Showing the newest 400 of {shown.length}. Use the filters or export for everything.</p>}
           </div>
         </>
       )}

@@ -108,7 +108,7 @@ export const SignatureCapture = forwardRef<
             {/* eslint-disable-next-line @next/next/no-img-element -- local blob preview */}
             <img src={saved.url} alt="Your saved signature" className="mx-auto max-h-28 w-auto" />
             <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs">
-              <span className="text-ink/60">Your saved signature. It will be used when you tick the box and sign.</span>
+              <span className="text-ink/65">Your saved signature. It will be used when you tick the box and sign.</span>
               <span className="flex gap-3">
                 <button type="button" onClick={() => setUseSaved(false)} className="font-medium text-teal-700 underline">Draw a new one</button>
                 <button
@@ -122,7 +122,7 @@ export const SignatureCapture = forwardRef<
                     setSaved(null);
                     setUseSaved(false);
                   }}
-                  className="text-ink/55 underline"
+                  className="text-ink/65 underline"
                 >
                   Forget it
                 </button>

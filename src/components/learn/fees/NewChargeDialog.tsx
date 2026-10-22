@@ -190,7 +190,7 @@ export function NewChargeDialog({
             </label>
           </div>
           {band && (
-            <div className="flex flex-wrap items-center gap-2 text-xs text-ink/60">
+            <div className="flex flex-wrap items-center gap-2 text-xs text-ink/65">
               <span>Fee table ({band.yearGroupRange}):</span>
               {(
                 [

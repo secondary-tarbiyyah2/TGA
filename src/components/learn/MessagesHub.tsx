@@ -198,7 +198,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
       ) : nobodyToMessage && (threads || []).length === 0 ? (
         <div className="rounded-2xl border border-dashed border-gold-light bg-white p-10 text-center">
           <p className="text-base font-semibold text-ink">No one else is set up yet</p>
-          <p className="mx-auto mt-1 max-w-md text-sm text-ink/60">
+          <p className="mx-auto mt-1 max-w-md text-sm text-ink/65">
             As soon as other teachers, admins or parents have accounts, they&apos;ll appear here and you can message them in one click.
           </p>
           {canAddPeople && (
@@ -214,7 +214,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
               {sorted.length === 0 && (
                 <li className="px-5 py-10 text-center">
                   <p className="text-sm font-semibold text-ink">No conversations yet</p>
-                  <p className="mt-1 text-sm text-ink/60">Press “New message” to say hello.</p>
+                  <p className="mt-1 text-sm text-ink/65">Press “New message” to say hello.</p>
                 </li>
               )}
               {sorted.map((t) => {
@@ -257,7 +257,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
             {activeThread ? (
               <div>
                 <div className="flex items-center gap-3 border-b border-gold-light px-4 py-3">
-                  <button type="button" onClick={() => setActive(null)} aria-label="Back to conversations" className="rounded-lg px-2 py-1 text-ink/60 hover:bg-cream md:hidden">
+                  <button type="button" onClick={() => setActive(null)} aria-label="Back to conversations" className="rounded-lg px-2 py-1 text-ink/65 hover:bg-cream md:hidden">
                     ‹
                   </button>
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials(activeOther?.full_name || "?")}</span>
@@ -274,7 +274,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
             ) : (
               <div className="flex h-full min-h-[320px] flex-col items-center justify-center px-6 py-16 text-center">
                 <p className="text-base font-semibold text-ink">Pick a conversation</p>
-                <p className="mt-1 text-sm text-ink/60">or start a new one with the button above.</p>
+                <p className="mt-1 text-sm text-ink/65">or start a new one with the button above.</p>
               </div>
             )}
           </div>
@@ -293,7 +293,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
                   setQuery("");
                 }}
                 aria-label="Close"
-                className="rounded-lg px-2 py-1 text-xl leading-none text-ink/55 hover:bg-cream"
+                className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream"
               >
                 ×
               </button>
@@ -325,7 +325,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
                     </div>
                   ),
               )}
-              {filtered.length === 0 && <p className="px-4 py-8 text-center text-sm text-ink/55">No one matches “{query}”.</p>}
+              {filtered.length === 0 && <p className="px-4 py-8 text-center text-sm text-ink/65">No one matches “{query}”.</p>}
             </div>
           </div>
         </div>

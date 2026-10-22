@@ -104,7 +104,7 @@ export function PupilRevision() {
                   onClick={() => openUnit(u.id)}
                   className="flex flex-col gap-3 rounded-2xl border border-gold-light bg-white p-4 text-left hover:border-teal-700 focus-visible:border-teal-700"
                 >
-                  <span className="text-xs font-medium uppercase tracking-wide text-ink/55">{u.kind === "summary" ? (u.has_video ? "Video and summary" : "Summary") : "Lesson slides"}</span>
+                  <span className="text-xs font-medium uppercase tracking-wide text-ink/65">{u.kind === "summary" ? (u.has_video ? "Video and summary" : "Summary") : "Lesson slides"}</span>
                   <span className="text-base font-semibold text-ink">{u.title}</span>
                   <span className="text-xs text-ink/65">
                     {u.topics} topic{u.topics === 1 ? "" : "s"} · {u.questions} quiz questions
@@ -163,7 +163,7 @@ function UnitView({ id, onBack }: { id: string; onBack: () => void }) {
       {unit && (
         <>
           <div>
-            <p className="text-sm text-ink/60">{unit.subject}</p>
+            <p className="text-sm text-ink/65">{unit.subject}</p>
             <h2 className="text-h2 font-semibold text-ink">{unit.title}</h2>
           </div>
           <Tabs
@@ -296,13 +296,13 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
               <span className="block font-medium">{x.title}</span>
               {chaptered ? (
                 (chapters ? x.video_path : true) && (
-                  <span className="block text-xs text-ink/60">
+                  <span className="block text-xs text-ink/65">
                     Chapter {k + 1}
                     {lengthOf(k) ? ` · ${lengthOf(k)}` : ""}
                   </span>
                 )
               ) : (
-                x.time && <span className="block text-xs text-ink/60">Video {x.time}</span>
+                x.time && <span className="block text-xs text-ink/65">Video {x.time}</span>
               )}
             </span>
           </button>
@@ -370,7 +370,7 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
                 )}
               </div>
             ) : (
-              <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/60">
+              <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/65">
                 Loading the video…
               </div>
             )}
@@ -497,7 +497,7 @@ function LessonSlidesView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => voi
                   View slides
                 </button>
               ) : (
-                <span className="text-xs text-ink/60">Slides coming soon</span>
+                <span className="text-xs text-ink/65">Slides coming soon</span>
               )}
             </div>
             {viewing?.no === l.lesson_no && (
@@ -505,7 +505,7 @@ function LessonSlidesView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => voi
                 {viewing.url ? (
                   <iframe src={viewing.url} title={`${l.title} slides`} className="h-[70vh] w-full rounded-lg border border-gold-light" />
                 ) : (
-                  <p className="p-6 text-center text-sm text-ink/60">Opening…</p>
+                  <p className="p-6 text-center text-sm text-ink/65">Opening…</p>
                 )}
               </div>
             )}
@@ -673,7 +673,7 @@ function QuizView({ unit, onDone, onPractice }: { unit: PupilUnit; onDone: () =>
   return (
     <div className="space-y-4 rounded-2xl border border-gold-light bg-white p-5">
       <Progress round={round} />
-      <div className="flex flex-wrap justify-between gap-2 text-xs text-ink/60">
+      <div className="flex flex-wrap justify-between gap-2 text-xs text-ink/65">
         <span className="tabular-nums">
           Question {round.i + 1} of {round.questions.length}
         </span>
@@ -774,7 +774,7 @@ function PracticeView({ unit, initialTopic, onChange }: { unit: PupilUnit; initi
         )}
       </div>
       <aside className="space-y-2 rounded-2xl border border-gold-light bg-white p-4" aria-label="Your topics">
-        <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/55">Your topics</h3>
+        <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Your topics</h3>
         <ul className="space-y-1">
           {unit.topics.map((t) => {
             const lv = level(t.topic);
@@ -801,7 +801,7 @@ function PracticeView({ unit, initialTopic, onChange }: { unit: PupilUnit; initi
             );
           })}
         </ul>
-        <p className="pt-2 text-xs text-ink/60">
+        <p className="pt-2 text-xs text-ink/65">
           A topic moves up one step on each day you get it right without a hint. Three steps means mastered; it then comes back for review after 3 days, then a week.
         </p>
       </aside>

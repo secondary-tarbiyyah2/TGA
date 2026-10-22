@@ -109,7 +109,7 @@ function ComplianceContent() {
             {isHeadTeacherOrAdmin && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
                 <h2 className="font-serif text-h3 font-semibold text-ink">Audit log and data protection</h2>
-                <p className="mt-1 text-sm text-ink/60">
+                <p className="mt-1 text-sm text-ink/65">
                   The <a href="/admin/audit-log" className="font-medium text-teal-700 underline">audit log</a> has filters and CSV export, with restricted records masked. <a href="/admin/data-protection" className="font-medium text-teal-700 underline">Data protection</a> holds the retention rules and subject access exports.
                 </p>
               </div>

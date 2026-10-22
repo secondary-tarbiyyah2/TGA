@@ -455,7 +455,7 @@ function SummaryContent() {
         </p>
       )}
 
-      {!calc && !error && <p role="status" className="py-10 text-center text-sm text-ink/60">Loading summary…</p>}
+      {!calc && !error && <p role="status" className="py-10 text-center text-sm text-ink/65">Loading summary…</p>}
 
       {calc && (
         <>
@@ -488,7 +488,7 @@ function SummaryContent() {
           </div>
 
           {rows.length === 0 ? (
-            <div className="rounded-2xl border border-gold-light bg-white p-8 text-center text-sm text-ink/60">
+            <div className="rounded-2xl border border-gold-light bg-white p-8 text-center text-sm text-ink/65">
               No classes to show yet. Add classes under Academic setup and they will appear here.
             </div>
           ) : (

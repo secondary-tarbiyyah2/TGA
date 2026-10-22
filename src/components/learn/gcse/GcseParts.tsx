@@ -155,7 +155,7 @@ export function BoundaryCalculator() {
           </label>
           <p role="status" className="pb-1.5 text-sm text-ink">
             {pct === null ? "Enter a mark to see the grade." : grade === null ? `${pct.toFixed(1)}%: below grade 1.` : `${pct.toFixed(1)}% is grade ${grade}.`}
-            {next && <span className="ml-1 text-xs text-ink/60">{next.marks} more {next.marks === 1 ? "mark" : "marks"} for grade {next.grade}.</span>}
+            {next && <span className="ml-1 text-xs text-ink/65">{next.marks} more {next.marks === 1 ? "mark" : "marks"} for grade {next.grade}.</span>}
           </p>
         </div>
         <button type="button" onClick={() => setEditing((v) => !v)} aria-expanded={editing} className="text-xs font-medium text-ink/70 underline">

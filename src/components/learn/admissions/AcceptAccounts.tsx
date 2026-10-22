@@ -106,7 +106,7 @@ export function AcceptAccounts({
   return (
     <section aria-label="Accept and create accounts" className="rounded-xl border border-gold-light/50 bg-white p-4">
       <h3 className="font-serif text-lg font-semibold text-ink">Accept and create accounts</h3>
-      <p className="mt-1 text-xs text-ink/60">
+      <p className="mt-1 text-xs text-ink/65">
         Accepting an application creates the accounts automatically: the parent account for {app.guardian_is_other && app.guardian_email ? app.guardian_email : app.parent_email} (a setup link is
         emailed, never a password), the pupil record, the classes chosen below and, if ticked, a username login for the pupil. The parent receives one email with everything. Safe to run again: nothing is duplicated.
       </p>
@@ -121,7 +121,7 @@ export function AcceptAccounts({
             Classes <span className="font-normal text-ink/65">(optional, choose as many as needed: one per subject)</span>
           </legend>
           {classes.length === 0 ? (
-            <p className="mt-1 text-xs text-ink/55">No classes have been set up yet. You can enrol {app.child_first_name} later from Academic.</p>
+            <p className="mt-1 text-xs text-ink/65">No classes have been set up yet. You can enrol {app.child_first_name} later from Academic.</p>
           ) : (
             <ul className="mt-2 grid max-h-48 gap-1 overflow-y-auto rounded-lg border border-gold-light/50 p-2 sm:grid-cols-2">
               {ordered.map((c) => (

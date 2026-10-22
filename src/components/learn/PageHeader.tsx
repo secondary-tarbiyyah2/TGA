@@ -23,7 +23,7 @@ export function PageHeader({
     <div className="mb-6">
       {crumbs.length > 0 && (
         <nav aria-label="Breadcrumb" className="mb-2">
-          <ol className="flex flex-wrap items-center gap-1 text-sm text-ink/55">
+          <ol className="flex flex-wrap items-center gap-1 text-sm text-ink/65">
             {crumbs.map((c, i) => (
               <li key={`${c.label}-${i}`} className="flex items-center gap-1">
                 {i > 0 && (
@@ -48,7 +48,7 @@ export function PageHeader({
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div className="min-w-0">
           <h1 className="text-2xl font-semibold tracking-tight text-ink">{title}</h1>
-          {subtitle && <p className="mt-1 text-sm text-ink/60">{subtitle}</p>}
+          {subtitle && <p className="mt-1 text-sm text-ink/65">{subtitle}</p>}
         </div>
         {actions && <div className="flex flex-wrap items-center gap-2">{actions}</div>}
       </div>

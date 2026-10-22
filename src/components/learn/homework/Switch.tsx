@@ -18,7 +18,7 @@ export function Switch({
     <div className="flex items-start justify-between gap-3">
       <div className="min-w-0">
         <p className="text-sm font-medium text-ink">{label}</p>
-        {description && <p className="text-xs text-ink/60">{description}</p>}
+        {description && <p className="text-xs text-ink/65">{description}</p>}
       </div>
       <button
         type="button"

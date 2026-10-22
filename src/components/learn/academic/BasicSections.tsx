@@ -83,7 +83,7 @@ export function YearsSection({ years, terms, reload }: Common & { years: Academi
               ) : (
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="text-sm font-medium text-ink">
-                    {y.label} <span className="font-normal text-ink/55">· {y.starts_on} to {y.ends_on}</span>
+                    {y.label} <span className="font-normal text-ink/65">· {y.starts_on} to {y.ends_on}</span>
                     {y.is_test && <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs text-amber-800">TEST</span>}
                   </div>
                   <button type="button" className={ghostBtn} onClick={() => { setEditId(y.id); setDraft({ label: y.label, starts_on: y.starts_on, ends_on: y.ends_on }); setError(null); }}>Edit</button>
@@ -181,7 +181,7 @@ export function YearGroupsSection({ yearGroups, classes, enrolments, reload }: C
             ) : (
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="font-medium text-ink">{y.name}</span>
-                <span className="text-xs text-ink/60">{y.capacity ? `${used(y.id)} of ${y.capacity} places used` : "Capacity not set"}</span>
+                <span className="text-xs text-ink/65">{y.capacity ? `${used(y.id)} of ${y.capacity} places used` : "Capacity not set"}</span>
                 <span className="flex gap-1">
                   <button type="button" className={ghostBtn} onClick={() => { setEditId(y.id); setDraft({ name: y.name, sort_order: String(y.sort_order), capacity: y.capacity ? String(y.capacity) : "" }); setError(null); }}>Edit</button>
                   <button type="button" className={dangerBtn} onClick={() => remove(y)}>Remove</button>

@@ -101,7 +101,7 @@ function ReviewCard({ review, onChanged }: { review: ReviewRow; onChanged: () =>
       </div>
 
       <fieldset className="mt-3" disabled={done || busy}>
-        <legend className="text-xs font-semibold uppercase tracking-wide text-ink/60">Review checklist</legend>
+        <legend className="text-xs font-semibold uppercase tracking-wide text-ink/65">Review checklist</legend>
         <ul className="mt-1 space-y-1">
           {checklist.map((c, i) => (
             <li key={c.key}>
@@ -210,7 +210,7 @@ export function SafeguardingReviews() {
           <ReviewCard key={r.id} review={r} onChanged={load} />
         ))}
       </ul>
-      {rows !== null && open.length === 0 && <p className="mt-3 text-sm text-ink/60">All reviews are complete.</p>}
+      {rows !== null && open.length === 0 && <p className="mt-3 text-sm text-ink/65">All reviews are complete.</p>}
 
       {closed.length > 0 && (
         <div className="mt-4">

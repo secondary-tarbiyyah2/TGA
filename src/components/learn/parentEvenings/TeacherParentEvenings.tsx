@@ -94,12 +94,12 @@ function EveningCard({ row, ev }: { row: Row; ev: ParentEvening }) {
       </div>
 
       <h3 className="mt-5 text-sm font-semibold text-ink">
-        Your schedule <span className="font-normal text-ink/60">· {schedule ? schedule.length : 0} of {total} slots booked</span>
+        Your schedule <span className="font-normal text-ink/65">· {schedule ? schedule.length : 0} of {total} slots booked</span>
       </h3>
       {schedule === null ? (
-        <p className="mt-2 text-sm text-ink/60">Loading…</p>
+        <p className="mt-2 text-sm text-ink/65">Loading…</p>
       ) : schedule.length === 0 ? (
-        <p className="mt-2 text-sm text-ink/60">No bookings yet.</p>
+        <p className="mt-2 text-sm text-ink/65">No bookings yet.</p>
       ) : (
         <ul className="mt-2 divide-y divide-gold-light/30 rounded-lg border border-gold-light/40">
           {schedule.map((b) => (
@@ -143,11 +143,11 @@ export function TeacherParentEvenings() {
       });
   }, [supabase]);
 
-  if (rows === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
   if (rows.length === 0) {
     return (
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <p className="text-sm text-ink/60">You haven&apos;t been added to a parent evening yet. The office adds teachers when an evening is set up.</p>
+        <p className="text-sm text-ink/65">You haven&apos;t been added to a parent evening yet. The office adds teachers when an evening is set up.</p>
       </div>
     );
   }

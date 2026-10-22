@@ -49,7 +49,7 @@ export function ParentSetup({ hasChild }: { hasChild: boolean }) {
     <section className={ui.card} aria-labelledby="parent-setup">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 id="parent-setup" className="text-base font-semibold text-ink">
-          Getting started <span className="font-normal text-ink/60">· {count} of {STEPS.length}</span>
+          Getting started <span className="font-normal text-ink/65">· {count} of {STEPS.length}</span>
         </h2>
         <button
           type="button"

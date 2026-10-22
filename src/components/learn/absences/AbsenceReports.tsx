@@ -53,13 +53,13 @@ export function AbsenceReports({ absences, periodLabel }: { absences: Absence[] 
         )}
       </div>
       {absences === null ? (
-        <p className="px-4 py-4 text-sm text-ink/60">Loading…</p>
+        <p className="px-4 py-4 text-sm text-ink/65">Loading…</p>
       ) : (
         <table className="w-full text-left text-sm">
           <thead>
             <tr>
-              <th className="border-b border-gold-light/50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-ink/55">Reason</th>
-              <th className="border-b border-gold-light/50 px-4 py-2 text-right text-xs font-semibold uppercase tracking-wide text-ink/55">Days</th>
+              <th className="border-b border-gold-light/50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-ink/65">Reason</th>
+              <th className="border-b border-gold-light/50 px-4 py-2 text-right text-xs font-semibold uppercase tracking-wide text-ink/65">Days</th>
             </tr>
           </thead>
           <tbody>
@@ -72,7 +72,7 @@ export function AbsenceReports({ absences, periodLabel }: { absences: Absence[] 
           </tbody>
         </table>
       )}
-      {!canExport && <p className="border-t border-gold-light/40 px-4 py-3 text-xs text-ink/55">Exporting needs the data export permission.</p>}
+      {!canExport && <p className="border-t border-gold-light/40 px-4 py-3 text-xs text-ink/65">Exporting needs the data export permission.</p>}
     </section>
   );
 }

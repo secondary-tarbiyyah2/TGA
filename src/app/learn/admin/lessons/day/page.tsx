@@ -63,14 +63,14 @@ function DayContent() {
     <div>
       <LessonsHeader title="School day" subtitle="The blocks of the school day (lessons, breaks, lunch, prayer, enrichment) and the protected times no lesson may overlap." />
       {!data.loaded ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : (
         <div className="space-y-5">
           <PeriodsEditor periods={data.periods} reload={reload} staff={data.teachers} />
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
             <h2 className="font-serif text-h3 font-semibold text-ink">Protected times</h2>
-            <p className="mt-0.5 text-sm text-ink/60">Prayer or Jumu&apos;ah breaks. Lessons that overlap one are flagged on the timetable.</p>
+            <p className="mt-0.5 text-sm text-ink/65">Prayer or Jumu&apos;ah breaks. Lessons that overlap one are flagged on the timetable.</p>
             <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Academic year">
               {data.years.map((y) => <button key={y.id} type="button" aria-pressed={y.id === effYearId} onClick={() => setYearId(y.id)} className={chipCls(y.id === effYearId)}>{y.label}</button>)}
             </div>
@@ -80,7 +80,7 @@ function DayContent() {
               <ul className="mt-3 divide-y divide-gold-light/30">
                 {[...protectedHere].sort((a, b) => a.weekday - b.weekday || a.start_time.localeCompare(b.start_time)).map((p) => (
                   <li key={p.id} className="flex items-center justify-between gap-2 py-2 text-sm">
-                    <span><strong>{p.name}</strong> <span className="text-ink/60">{WEEKDAYS.find((w) => w.value === p.weekday)?.label || p.weekday} {hhmm(p.start_time)}–{hhmm(p.end_time)}</span></span>
+                    <span><strong>{p.name}</strong> <span className="text-ink/65">{WEEKDAYS.find((w) => w.value === p.weekday)?.label || p.weekday} {hhmm(p.start_time)}–{hhmm(p.end_time)}</span></span>
                     <button type="button" onClick={() => remove(p.id)} className="rounded-lg px-2 py-1 text-xs font-medium text-red-700 hover:bg-red-50">Remove</button>
                   </li>
                 ))}
@@ -104,14 +104,14 @@ function DayContent() {
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
             <h2 className="font-serif text-h3 font-semibold text-ink">Sessions (rooms)</h2>
-            <p className="mt-0.5 text-sm text-ink/60">For an online school a room is a virtual session (a meeting link a lesson runs in). Two lessons can share a session only at different times.</p>
+            <p className="mt-0.5 text-sm text-ink/65">For an online school a room is a virtual session (a meeting link a lesson runs in). Two lessons can share a session only at different times.</p>
             {data.sessions.length === 0 ? (
               <p className="mt-3 rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-3 text-sm text-ink/70">None are set up.</p>
             ) : (
               <ul className="mt-3 divide-y divide-gold-light/30">
                 {data.sessions.map((s) => (
                   <li key={s.id} className="flex items-center justify-between gap-2 py-2 text-sm">
-                    <span><strong>{s.name}</strong>{s.meeting_url ? <span className="ml-2 break-all text-ink/60">{s.meeting_url}</span> : null}</span>
+                    <span><strong>{s.name}</strong>{s.meeting_url ? <span className="ml-2 break-all text-ink/65">{s.meeting_url}</span> : null}</span>
                     <button type="button" onClick={() => removeSession(s.id)} className="rounded-lg px-2 py-1 text-xs font-medium text-red-700 hover:bg-red-50">Remove</button>
                   </li>
                 ))}

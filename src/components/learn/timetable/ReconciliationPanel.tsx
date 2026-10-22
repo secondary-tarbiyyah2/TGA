@@ -40,8 +40,8 @@ export function ReconciliationPanel({ conflicts, canRerun, onRerun, busy, locked
           if (items.length === 0) return null;
           return (
             <div key={g.title}>
-              <h3 className="text-sm font-semibold text-ink">{g.title} <span className="font-normal text-ink/55">({items.length})</span></h3>
-              {g.help && <p className="text-xs text-ink/55">{g.help}</p>}
+              <h3 className="text-sm font-semibold text-ink">{g.title} <span className="font-normal text-ink/65">({items.length})</span></h3>
+              {g.help && <p className="text-xs text-ink/65">{g.help}</p>}
               <ul className="mt-1 space-y-1">
                 {items.map((c) => <li key={c.id} className={`rounded-lg px-3 py-2 text-xs ${c.severity === "hard" ? "bg-red-50 text-red-900" : "bg-white text-amber-900"}`}>{clean(c.message)}</li>)}
               </ul>
@@ -55,7 +55,7 @@ export function ReconciliationPanel({ conflicts, canRerun, onRerun, busy, locked
           </div>
         )}
       </div>
-      <p className="mt-3 text-xs text-ink/55">Tip: fix the cause (availability, teacher mapping or lessons per week), place any lesson by hand and it is locked, then re-run to fill the rest around it.</p>
+      <p className="mt-3 text-xs text-ink/65">Tip: fix the cause (availability, teacher mapping or lessons per week), place any lesson by hand and it is locked, then re-run to fill the rest around it.</p>
     </section>
   );
 }

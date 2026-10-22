@@ -220,7 +220,7 @@ export function HomeworkEditor({
       </label>
 
       <div className="space-y-3 rounded-lg border border-gold-light/40 p-3">
-        <p className="text-xs font-medium uppercase tracking-wide text-ink/60">What students can hand in</p>
+        <p className="text-xs font-medium uppercase tracking-wide text-ink/65">What students can hand in</p>
         {ALL_SUBMISSION_TYPES.map((t) => (
           <Switch
             key={t}
@@ -232,7 +232,7 @@ export function HomeworkEditor({
         ))}
         {filesOn && (
           <div className="space-y-3 border-t border-gold-light/30 pt-3">
-            <p className="text-xs text-ink/60">Allowed kinds of file (up to {formatBytes(MAX_FILE_BYTES)} each)</p>
+            <p className="text-xs text-ink/65">Allowed kinds of file (up to {formatBytes(MAX_FILE_BYTES)} each)</p>
             <div className="grid gap-3 sm:grid-cols-2">
               {ALL_FILE_CATEGORIES.map((c) => (
                 <Switch key={c} label={FILE_CATEGORY_LABEL[c]} checked={cats.includes(c)} onChange={(on) => toggleCat(c, on)} />
@@ -248,7 +248,7 @@ export function HomeworkEditor({
 
       <div className="space-y-2 rounded-lg border border-gold-light/40 p-3">
         <div className="flex items-center justify-between gap-2">
-          <p className="text-xs font-medium uppercase tracking-wide text-ink/60">Attachments for students</p>
+          <p className="text-xs font-medium uppercase tracking-wide text-ink/65">Attachments for students</p>
           <button type="button" disabled={busy} onClick={() => picker.current?.click()} className="rounded-lg border border-gold-light bg-white px-3 py-1 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
             Add files
           </button>

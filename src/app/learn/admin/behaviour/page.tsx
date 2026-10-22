@@ -157,7 +157,7 @@ function BehaviourContent() {
       />
 
       {records === null ? (
-        <p className="text-ink/60">Loading…</p>
+        <p className="text-ink/65">Loading…</p>
       ) : tab === "badges" ? (
         <div className="space-y-4">
           <AwardBadgeForm students={students} onAwarded={load} />
@@ -205,7 +205,7 @@ function BehaviourContent() {
                 <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
                   <h3 className="mb-3 text-base font-semibold text-ink">Top merit earners</h3>
                   {top.length === 0 ? (
-                    <p className="text-sm text-ink/60">No merits yet this period.</p>
+                    <p className="text-sm text-ink/65">No merits yet this period.</p>
                   ) : (
                     <ol className="space-y-2 text-sm">
                       {top.map((t, i) => (

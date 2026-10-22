@@ -7,7 +7,7 @@ import { BADGE_TYPES, badgeEmoji, fmtDate, type BadgeAward, type StudentOption }
 /** Awarded badges as a shelf of tiles. */
 export function BadgeShelf({ badges, showStudent = false, empty = "No badges yet. They will appear here as they are earned." }: { badges: BadgeAward[]; showStudent?: boolean; empty?: string }) {
   if (badges.length === 0) {
-    return <p className="rounded-xl border border-dashed border-gold-light bg-cream/30 px-4 py-8 text-center text-sm text-ink/60">{empty}</p>;
+    return <p className="rounded-xl border border-dashed border-gold-light bg-cream/30 px-4 py-8 text-center text-sm text-ink/65">{empty}</p>;
   }
   return (
     <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">

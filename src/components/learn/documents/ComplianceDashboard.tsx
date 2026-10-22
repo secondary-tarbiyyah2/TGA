@@ -305,7 +305,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
           </div>
 
           {alerts === null && <div className="h-32 animate-pulse rounded-2xl bg-cream" />}
-          {alerts && shown.length === 0 && <p className="rounded-2xl border border-gold-light bg-white px-5 py-8 text-center text-sm text-ink/60">Nothing here. No alerts match this view.</p>}
+          {alerts && shown.length === 0 && <p className="rounded-2xl border border-gold-light bg-white px-5 py-8 text-center text-sm text-ink/65">Nothing here. No alerts match this view.</p>}
           {SEVERITY_ORDER.map((sev) => {
             const group = shown.filter((a) => a.severity === sev);
             if (group.length === 0) return null;
@@ -349,7 +349,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
                           </div>
                         </div>
                         {(a.state?.acknowledged_at || a.state?.resolved_at) && (
-                          <p className="mt-2 border-t border-black/5 pt-2 text-xs text-ink/60">
+                          <p className="mt-2 border-t border-black/5 pt-2 text-xs text-ink/65">
                             {a.state?.acknowledged_at && <>Acknowledged by {names[a.state.acknowledged_by || ""] || "a colleague"}, {fmt(a.state.acknowledged_at)}. </>}
                             {a.state?.resolved_at && <>Resolved by {names[a.state.resolved_by || ""] || "a colleague"}, {fmt(a.state.resolved_at)}. </>}
                             {a.state?.note && <span className="text-ink/80">Note: {a.state.note}</span>}

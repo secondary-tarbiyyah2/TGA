@@ -60,7 +60,7 @@ export function EmailComposer({
 
   return (
     <div className="mt-3 space-y-3 rounded-xl border border-gold-light/50 bg-white p-4">
-      <p className="text-xs text-ink/60">
+      <p className="text-xs text-ink/65">
         To {app.parent_email}. Sent from the admissions mailbox; replies come back to the same mailbox. Everything is already filled in from the application: edit the wording if you like, then send. {note}
       </p>
       <label className="block text-sm font-medium text-ink">

@@ -39,7 +39,7 @@ function GenerateInstances({ runId, onDone }: { runId: string; onDone: () => voi
   return (
     <details className="rounded-2xl border border-gold-light/50 bg-white p-4">
       <summary className="cursor-pointer text-sm font-semibold text-ink">Create dated lessons from the published timetable</summary>
-      <p className="mt-2 text-sm text-ink/60">Creates one lesson (join link, objectives, resources, register, recording) for each occurrence of every published timetable slot in the range. Safe to re-run: existing dates are never duplicated.</p>
+      <p className="mt-2 text-sm text-ink/65">Creates one lesson (join link, objectives, resources, register, recording) for each occurrence of every published timetable slot in the range. Safe to re-run: existing dates are never duplicated.</p>
       <div className="mt-3 flex flex-wrap items-end gap-2">
         <label className="text-xs font-medium text-ink/70">From<input type="date" value={from} onChange={(e) => setFrom(e.target.value)} className={fieldCls} /></label>
         <label className="text-xs font-medium text-ink/70">To<input type="date" value={to} onChange={(e) => setTo(e.target.value)} className={fieldCls} /></label>
@@ -85,7 +85,7 @@ function ListContent() {
     <div>
       <LessonsHeader title="Lessons" subtitle="Dated lessons made from the published timetable: join links, details and cover." />
       {!data.loaded ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : !published ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">
           No published timetable yet, so there are no lessons. <Link href="/admin/lessons/timetable" className="font-semibold underline">Review and publish a timetable</Link>.
@@ -100,9 +100,9 @@ function ListContent() {
               ))}
             </div>
             {rows === null ? (
-              <p className="mt-4 text-sm text-ink/60">Loading…</p>
+              <p className="mt-4 text-sm text-ink/65">Loading…</p>
             ) : rows.length === 0 ? (
-              <p className="mt-4 text-sm text-ink/60">No lessons in this range. Use &quot;Create dated lessons&quot; above to make them.</p>
+              <p className="mt-4 text-sm text-ink/65">No lessons in this range. Use &quot;Create dated lessons&quot; above to make them.</p>
             ) : (
               <div className="mt-4 space-y-4">
                 {[...byDate.entries()].map(([date, list]) => (
@@ -114,8 +114,8 @@ function ListContent() {
                         const link = s?.classes?.meeting_url;
                         return (
                           <li key={r.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 py-2 text-sm">
-                            <span className="w-24 shrink-0 tabular-nums text-ink/60">{s ? `${hhmm(s.start_time)}–${hhmm(s.end_time)}` : ""}</span>
-                            <span className="min-w-0 flex-1 basis-48"><strong className="text-ink">{s?.subjects?.name}</strong> <span className="text-ink/70">({s?.classes?.name})</span> <span className="text-ink/55">· {s ? teacherName(s.teacher_user_id) : ""}</span></span>
+                            <span className="w-24 shrink-0 tabular-nums text-ink/65">{s ? `${hhmm(s.start_time)}–${hhmm(s.end_time)}` : ""}</span>
+                            <span className="min-w-0 flex-1 basis-48"><strong className="text-ink">{s?.subjects?.name}</strong> <span className="text-ink/70">({s?.classes?.name})</span> <span className="text-ink/65">· {s ? teacherName(s.teacher_user_id) : ""}</span></span>
                             {r.bbb_status === "live" && <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-900">Live</span>}
                             {link && <a href={link} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-gold-700 underline">Join link</a>}
                             <Link href={`/admin/lessons/view?id=${r.id}`} className="text-xs font-semibold text-gold-700 underline">Open</Link>
@@ -127,7 +127,7 @@ function ListContent() {
                 ))}
               </div>
             )}
-            <p className="mt-4 text-xs text-ink/55">To move a weekly lesson, edit it in the <Link href="/admin/lessons/timetable" className="underline">timetable</Link>. For a one-off absence, arrange cover there.</p>
+            <p className="mt-4 text-xs text-ink/65">To move a weekly lesson, edit it in the <Link href="/admin/lessons/timetable" className="underline">timetable</Link>. For a one-off absence, arrange cover there.</p>
           </div>
         </div>
       )}

@@ -9,7 +9,7 @@ import type { ClassViewer } from "@/lib/learn/classes";
 function FamilyClassContent() {
   const childId = useSearchParams().get("child");
   const viewer = useMemo<ClassViewer | null>(() => (childId ? { kind: "parent", childId } : null), [childId]);
-  if (!viewer) return <p className="text-sm text-ink/60">Open a class from Classes to see it here.</p>;
+  if (!viewer) return <p className="text-sm text-ink/65">Open a class from Classes to see it here.</p>;
   return <ClassPage viewer={viewer} />;
 }
 
@@ -17,7 +17,7 @@ export default function FamilyClassPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
-        <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
+        <Suspense fallback={<p className="text-sm text-ink/65">Loading…</p>}>
           <FamilyClassContent />
         </Suspense>
       </LearnGate>

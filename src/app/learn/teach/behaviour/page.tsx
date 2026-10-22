@@ -96,9 +96,9 @@ function TeachBehaviourContent() {
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
 
       {classes === null || students === null ? (
-        <p className="text-ink/60">Loading…</p>
+        <p className="text-ink/65">Loading…</p>
       ) : classes.length === 0 ? (
-        <p className="rounded-xl border border-dashed border-gold-light bg-cream/30 px-4 py-8 text-center text-sm text-ink/60">You are not assigned to any classes yet, so there is no one to log behaviour for.</p>
+        <p className="rounded-xl border border-dashed border-gold-light bg-cream/30 px-4 py-8 text-center text-sm text-ink/65">You are not assigned to any classes yet, so there is no one to log behaviour for.</p>
       ) : (
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
@@ -125,7 +125,7 @@ function TeachBehaviourContent() {
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
             <h3 className="mb-3 text-base font-semibold text-ink">Quick log</h3>
             {visibleStudents.length === 0 ? (
-              <p className="text-sm text-ink/60">No students are enrolled in this class yet.</p>
+              <p className="text-sm text-ink/65">No students are enrolled in this class yet.</p>
             ) : (
               <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {visibleStudents.map((s) => (

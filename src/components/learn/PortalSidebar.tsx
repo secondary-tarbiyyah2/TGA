@@ -281,7 +281,7 @@ function SidebarBody({
               </span>
               <span className="min-w-0">
                 <span className="block truncate text-sm font-semibold text-ink">{fullName || session.user.email || "Your account"}</span>
-                <span className="block truncate text-xs text-ink/60">{roleLabel}</span>
+                <span className="block truncate text-xs text-ink/65">{roleLabel}</span>
               </span>
             </Link>
             <button type="button" onClick={signOut} title="Sign out" aria-label="Sign out" className="portal-icon-btn shrink-0 hover:!bg-red-50 hover:!text-red-700">

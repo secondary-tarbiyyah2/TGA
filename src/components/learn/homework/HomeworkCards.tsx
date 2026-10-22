@@ -137,7 +137,7 @@ export function HomeworkCard({
             {hw.title}
             {archived && <span className="ml-2 rounded-full bg-ink/10 px-2 py-0.5 text-xs font-normal text-ink/70">Deleted</span>}
           </p>
-          <p className="text-xs text-ink/60">
+          <p className="text-xs text-ink/65">
             {hw.classes?.name} · Due {formatDue(hw.due_at)}
             {hw.edited_at && <span title={`Edited ${formatEdited(hw.edited_at)}`}> · Edited {formatEdited(hw.edited_at)}</span>}
           </p>
@@ -184,12 +184,12 @@ export function HomeworkCard({
       {open && (
         <div className="mt-3 space-y-2 border-t border-gold-light/30 pt-3">
           {statuses === null ? (
-            <p className="text-sm text-ink/60">Loading…</p>
+            <p className="text-sm text-ink/65">Loading…</p>
           ) : statuses.length === 0 ? (
-            <p className="text-sm text-ink/60">No enrolled students.</p>
+            <p className="text-sm text-ink/65">No enrolled students.</p>
           ) : (
             <>
-              <p className="text-xs text-ink/60">
+              <p className="text-xs text-ink/65">
                 {handedIn} of {statuses.length} handed in
                 {missing > 0 && <span className="text-red-700"> · {missing} missing</span>}
                 {late > 0 && <span className="text-amber-700"> · {late} late</span>}
@@ -198,7 +198,7 @@ export function HomeworkCard({
                 s.submission_id ? (
                   <MarkRow key={s.child_id} submissionId={s.submission_id} childName={children[s.child_id] || s.child_id} maxPoints={hw.max_points ?? null} onSaved={load} />
                 ) : (
-                  <div key={s.child_id} className="rounded-lg border border-gold-light/40 p-3 text-sm text-ink/60">
+                  <div key={s.child_id} className="rounded-lg border border-gold-light/40 p-3 text-sm text-ink/65">
                     {children[s.child_id] || s.child_id} — not submitted{s.status === "missing" ? " (missing)" : ""}
                   </div>
                 )

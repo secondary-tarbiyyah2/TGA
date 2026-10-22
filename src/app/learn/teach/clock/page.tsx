@@ -68,9 +68,9 @@ function MyHoursContent() {
 
   const stat = (label: string, value: string, sub: string) => (
     <div className="rounded-2xl border border-gold-light bg-white p-5">
-      <p className="text-xs font-semibold uppercase tracking-wide text-ink/55">{label}</p>
+      <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">{label}</p>
       <p className="mt-1 text-2xl font-semibold tabular-nums text-ink">{value}</p>
-      <p className="text-sm text-ink/60">{sub}</p>
+      <p className="text-sm text-ink/65">{sub}</p>
     </div>
   );
 
@@ -100,12 +100,12 @@ function MyHoursContent() {
         {shifts === null ? (
           <div className="h-24 animate-pulse" />
         ) : monthShifts.length === 0 ? (
-          <p className="px-5 py-4 text-sm text-ink/60">No shifts yet this month.</p>
+          <p className="px-5 py-4 text-sm text-ink/65">No shifts yet this month.</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full min-w-[420px] text-sm">
               <thead>
-                <tr className="border-b border-gold-light text-left text-xs font-semibold uppercase tracking-wide text-ink/55">
+                <tr className="border-b border-gold-light text-left text-xs font-semibold uppercase tracking-wide text-ink/65">
                   <th className="px-4 py-2">Date</th>
                   <th className="px-4 py-2">In</th>
                   <th className="px-4 py-2">Out</th>

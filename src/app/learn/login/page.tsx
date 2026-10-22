@@ -83,7 +83,7 @@ export default function LearnLoginPage() {
   // dashboard rather than showing the login form again.
   if (!finishing && session && session !== "loading" && rolesLoaded && roles.length > 0) {
     router.replace(dashboardPathForRole(roles[0].role));
-    return <p className="text-ink/60">Redirecting…</p>;
+    return <p className="text-ink/65">Redirecting…</p>;
   }
 
   async function handleSubmit(e: React.FormEvent) {

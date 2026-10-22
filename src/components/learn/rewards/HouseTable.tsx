@@ -66,7 +66,7 @@ export function HouseTable({ title = "House points" }: { title?: string }) {
               type="button"
               aria-pressed={period === p.id}
               onClick={() => setPeriod(p.id)}
-              className={`rounded-md px-2.5 py-1 text-xs font-semibold ${period === p.id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}
+              className={`rounded-md px-2.5 py-1 text-xs font-semibold ${period === p.id ? "bg-white text-ink shadow-sm" : "text-ink/65 hover:text-ink"}`}
             >
               {p.label}
             </button>

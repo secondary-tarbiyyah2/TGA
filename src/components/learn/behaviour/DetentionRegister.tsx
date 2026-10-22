@@ -12,7 +12,7 @@ function Item({ d, canAct, busy, onSet, showDate }: { d: Detention; canAct: bool
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <p className="truncate font-medium text-ink">{d.children?.name || "Student"}</p>
-          <p className="text-xs text-ink/55">
+          <p className="text-xs text-ink/65">
             {showDate ? `${fmtDate(d.scheduled_for)} · ` : ""}
             {d.duration_minutes} min{d.notes ? ` · ${d.notes}` : ""}
           </p>
@@ -38,7 +38,7 @@ function Column({ title, tone, children, count, empty }: { title: string; tone: 
     <div className="min-w-0">
       <h4 className={`mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide ${tone}`}>
         {title}
-        <span className="rounded-full bg-cream px-1.5 py-0.5 text-[11px] text-ink/60">{count}</span>
+        <span className="rounded-full bg-cream px-1.5 py-0.5 text-[11px] text-ink/65">{count}</span>
       </h4>
       {count === 0 ? <p className="rounded-lg border border-dashed border-gold-light px-3 py-4 text-center text-xs text-ink/65">{empty}</p> : <ul className="space-y-2">{children}</ul>}
     </div>
@@ -114,7 +114,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
               <Item key={d.id} d={d} canAct={canAct} busy={busy} onSet={set} showDate />
             ))}
           </Column>
-          <Column title="Upcoming" tone="text-ink/60" count={upcoming.length} empty="Nothing scheduled.">
+          <Column title="Upcoming" tone="text-ink/65" count={upcoming.length} empty="Nothing scheduled.">
             {upcoming.map((d) => (
               <Item key={d.id} d={d} canAct={false} busy={busy} onSet={set} showDate />
             ))}
@@ -133,7 +133,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
             )}
           </div>
           {todays.length + overdue.length === 0 ? (
-            <p className="rounded-lg border border-dashed border-gold-light px-3 py-6 text-center text-sm text-ink/55">No follow-up sessions to register today.</p>
+            <p className="rounded-lg border border-dashed border-gold-light px-3 py-6 text-center text-sm text-ink/65">No follow-up sessions to register today.</p>
           ) : (
             <ul className="grid gap-2 md:grid-cols-2">
               {[...overdue, ...todays].map((d) => (
@@ -146,7 +146,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
 
       {view === "roster" &&
         (roster.length === 0 ? (
-          <p className="rounded-lg border border-dashed border-gold-light px-3 py-6 text-center text-sm text-ink/55">No follow-up sessions have been set yet.</p>
+          <p className="rounded-lg border border-dashed border-gold-light px-3 py-6 text-center text-sm text-ink/65">No follow-up sessions have been set yet.</p>
         ) : (
           <ul className="grid gap-2 md:grid-cols-2">
             {roster.map((d) => (

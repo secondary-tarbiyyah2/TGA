@@ -301,7 +301,7 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
       </div>
 
       {pupils.length === 0 ? (
-        <p className="mt-3 text-sm text-ink/60">No pupils enrolled in this class.</p>
+        <p className="mt-3 text-sm text-ink/65">No pupils enrolled in this class.</p>
       ) : (
         <>
           <div className="mt-4 flex flex-wrap gap-2 text-xs" aria-label="Class summary">
@@ -384,7 +384,7 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
           <div className="mt-4 overflow-x-auto">
             <table className={`w-full text-left text-sm ${editMode ? "min-w-[40rem]" : ""}`}>
               <thead>
-                <tr className="text-xs text-ink/60">
+                <tr className="text-xs text-ink/65">
                   <th className="py-1.5 pr-3 font-medium">Pupil</th>
                   <th className="py-1.5 pr-2 font-medium">Target</th>
                   <th className="py-1.5 pr-2 font-medium">Predicted</th>
@@ -524,7 +524,7 @@ export function GcseProgressWidget({ childId }: { childId: string }) {
   return (
     <div className="sm:col-span-2">
       <h3 className="text-sm font-medium text-ink">GCSE progress</h3>
-      <p className="mt-1 text-xs text-ink/60">
+      <p className="mt-1 text-xs text-ink/65">
         {counts.behind > 0 ? `${counts.behind} ${counts.behind === 1 ? "subject is" : "subjects are"} below the predicted grade. ` : ""}
         {counts.on_track + counts.ahead > 0 ? `${counts.on_track + counts.ahead} on track or ahead. ` : ""}
         {counts.no_data > 0 ? `${counts.no_data} waiting for a current grade.` : ""}
@@ -541,7 +541,7 @@ export function GcseProgressWidget({ childId }: { childId: string }) {
                 <span className="text-sm font-semibold text-ink">{r.subjects?.name || "Subject"}</span>
                 <GcseStatusChip row={r} />
               </div>
-              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-ink/60">
+              <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-ink/65">
                 <span className="flex items-center gap-1">Target <GradeChip grade={r.target_grade} kind="Target" /></span>
                 <span className="flex items-center gap-1">Predicted <GradeChip grade={r.predicted_grade} kind="Predicted" /></span>
                 <span className="flex items-center gap-1">Actual <GradeChip grade={r.actual_grade} kind="Actual" /></span>

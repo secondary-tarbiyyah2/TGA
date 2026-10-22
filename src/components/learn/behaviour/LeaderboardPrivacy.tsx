@@ -52,7 +52,7 @@ export function LeaderboardPrivacy({ kids }: { kids: { id: string; name: string 
   if (kids.length === 0) return null;
   return (
     <details className="mt-4 text-sm">
-      <summary className="cursor-pointer text-xs font-medium text-ink/60 hover:text-ink">Leaderboard privacy</summary>
+      <summary className="cursor-pointer text-xs font-medium text-ink/65 hover:text-ink">Leaderboard privacy</summary>
       <div className="mt-2 space-y-1.5">
         {kids.map((k) => (
           <label key={k.id} className="flex items-center gap-2 text-ink/80">

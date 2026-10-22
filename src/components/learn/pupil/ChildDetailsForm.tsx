@@ -354,7 +354,7 @@ export function ChildDetailsForm() {
       />
 
       {children !== null && children.length === 0 && (
-        <p className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/60">There are no children on your account yet. Once your child is enrolled you can fill in their details here.</p>
+        <p className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/65">There are no children on your account yet. Once your child is enrolled you can fill in their details here.</p>
       )}
 
       {children !== null && children.length > 0 && (
@@ -378,7 +378,7 @@ export function ChildDetailsForm() {
           <section className="rounded-2xl border border-gold-light bg-white p-4" aria-label="Progress">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h2 className="text-base font-semibold text-ink">{childName}</h2>
-              <p className="text-sm text-ink/60">{progress.percent}% complete{details?.completed_at ? ` · finished ${formatStamp(details.completed_at)}` : ""}</p>
+              <p className="text-sm text-ink/65">{progress.percent}% complete{details?.completed_at ? ` · finished ${formatStamp(details.completed_at)}` : ""}</p>
             </div>
             <div className="mt-2">
               <ProgressBar percent={progress.percent} />
@@ -424,7 +424,7 @@ export function ChildDetailsForm() {
           {saved && !error && <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-800">{saved}</p>}
 
           {loading ? (
-            <p className="text-sm text-ink/60">Loading…</p>
+            <p className="text-sm text-ink/65">Loading…</p>
           ) : (
             <div className="rounded-2xl border border-gold-light bg-white p-4">
               {step === "basics" && (
@@ -492,7 +492,7 @@ export function ChildDetailsForm() {
                     Please give at least two people we can call in an emergency, in the order we should try them. They don&apos;t have to live with you.
                     <Required />
                   </p>
-                  {drafts.length === 0 && <p className="text-sm text-ink/55">No contacts yet.</p>}
+                  {drafts.length === 0 && <p className="text-sm text-ink/65">No contacts yet.</p>}
                   <ul className="space-y-3">
                     {drafts.map((d, i) => (
                       <li key={d.key} className="rounded-xl border border-gold-light/70 p-3">
@@ -554,7 +554,7 @@ export function ChildDetailsForm() {
                     name="trip"
                     error={shown("consents").trip_consent}
                   />
-                  <p className="text-xs text-ink/55">You can change your mind at any time by coming back to this page.</p>
+                  <p className="text-xs text-ink/65">You can change your mind at any time by coming back to this page.</p>
                   <SaveRow busy={busy} onSave={saveConsents} label="Save consents" />
                   {nextStep("consents") === undefined && progress.percent === 100 && <p className="text-sm text-green-700">That&apos;s everything. Thank you.</p>}
                 </div>
@@ -616,7 +616,7 @@ function Area({ label, hint, value, onChange }: { label: string; hint?: string; 
   return (
     <label className="block text-sm font-medium text-ink">
       {label}
-      {hint && <span className="mt-0.5 block text-xs font-normal text-ink/55">{hint}</span>}
+      {hint && <span className="mt-0.5 block text-xs font-normal text-ink/65">{hint}</span>}
       <textarea rows={2} value={value} onChange={(e) => onChange(e.target.value)} className={fieldCls} />
     </label>
   );

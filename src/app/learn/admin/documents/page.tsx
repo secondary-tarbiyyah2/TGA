@@ -101,7 +101,7 @@ function Bar({ signed, required }: { signed: number; required: number }) {
       <div className="h-2 overflow-hidden rounded-full bg-cream">
         <div className="h-full rounded-full bg-teal-600" style={{ width: `${pct}%` }} />
       </div>
-      <p className="mt-1 text-xs text-ink/55">
+      <p className="mt-1 text-xs text-ink/65">
         {signed} of {required} signed
       </p>
     </div>
@@ -195,7 +195,7 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
       <div className="max-h-[92vh] w-full max-w-xl overflow-y-auto rounded-t-2xl bg-white shadow-xl sm:rounded-2xl">
         <div className="flex items-center justify-between border-b border-gold-light px-5 py-4">
           <h2 className="text-lg font-semibold text-ink">New document to sign</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/55 hover:bg-cream">
+          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream">
             ×
           </button>
         </div>
@@ -430,7 +430,7 @@ function DocumentsContent() {
           {policies === null ? (
             <div className="h-40 animate-pulse" />
           ) : policies.length === 0 ? (
-            <p className="px-5 py-10 text-center text-sm text-ink/60">No policies are published on the website yet.</p>
+            <p className="px-5 py-10 text-center text-sm text-ink/65">No policies are published on the website yet.</p>
           ) : (
             <ul className="divide-y divide-gold-light/70">
               {policies.map((p) => {
@@ -465,7 +465,7 @@ function DocumentsContent() {
                     </div>
                     {on ? (
                       <div className="mt-3 flex flex-wrap items-center gap-3 pl-12">
-                        <span className="text-xs text-ink/55">Who must sign:</span>
+                        <span className="text-xs text-ink/65">Who must sign:</span>
                         <AudiencePicker
                           value={audiences}
                           disabled={busy}
@@ -490,7 +490,7 @@ function DocumentsContent() {
           ) : signing.length === 0 ? (
             <div className="px-5 py-12 text-center">
               <p className="text-base font-semibold text-ink">Nothing needs a signature yet</p>
-              <p className="mt-1 text-sm text-ink/60">Switch on &ldquo;Requires signature&rdquo; for a website policy, or create your own document.</p>
+              <p className="mt-1 text-sm text-ink/65">Switch on &ldquo;Requires signature&rdquo; for a website policy, or create your own document.</p>
             </div>
           ) : (
             <ul className="divide-y divide-gold-light/70">
@@ -536,7 +536,7 @@ function DocumentsContent() {
                       </button>
                     )}
                     {d.source !== "sanity" && (
-                      <button type="button" onClick={() => stopSigning(d)} className="text-sm font-medium text-ink/55 hover:text-red-700">
+                      <button type="button" onClick={() => stopSigning(d)} className="text-sm font-medium text-ink/65 hover:text-red-700">
                         Stop
                       </button>
                     )}
@@ -569,7 +569,7 @@ function DocumentsContent() {
                   Record {g.targets.length} by hand: {g.title}
                 </button>
               ))}
-              <button type="button" onClick={() => setPicked(new Set())} className="text-xs text-ink/60 underline">
+              <button type="button" onClick={() => setPicked(new Set())} className="text-xs text-ink/65 underline">
                 Clear
               </button>
               {pickedByDoc.size > 1 && <span className="text-xs text-ink/65">Each document is recorded separately.</span>}
@@ -578,7 +578,7 @@ function DocumentsContent() {
           {outstanding === null ? (
             <div className="h-32 animate-pulse" />
           ) : outstandingShown.length === 0 ? (
-            <p className="px-5 py-10 text-center text-sm text-ink/60">{outstanding.length === 0 ? "Everyone is up to date." : "No one matches."}</p>
+            <p className="px-5 py-10 text-center text-sm text-ink/65">{outstanding.length === 0 ? "Everyone is up to date." : "No one matches."}</p>
           ) : (
             <ul className="divide-y divide-gold-light/70">
               {outstandingShown.map((person) => {

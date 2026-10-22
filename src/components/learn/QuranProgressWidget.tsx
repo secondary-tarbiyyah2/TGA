@@ -73,8 +73,8 @@ export function QuranProgressWidget({ childId, limit = 5 }: { childId: string; l
   const achieved = milestones.filter((m) => m.achieved);
   const next = milestones.find((m) => !m.achieved && !m.id.startsWith("target-"));
 
-  if (rows === null) return <p className="text-sm text-ink/60">Loading Qur&apos;an &amp; Islamic Studies progress…</p>;
-  if (rows.length === 0 && (targets || []).length === 0) return <p className="text-sm text-ink/60">No progress recorded yet.</p>;
+  if (rows === null) return <p className="text-sm text-ink/65">Loading Qur&apos;an &amp; Islamic Studies progress…</p>;
+  if (rows.length === 0 && (targets || []).length === 0) return <p className="text-sm text-ink/65">No progress recorded yet.</p>;
 
   return (
     <div>
@@ -84,9 +84,9 @@ export function QuranProgressWidget({ childId, limit = 5 }: { childId: string; l
         <div className="mt-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 rounded-lg bg-cream p-2 text-sm">
           <span>
             <span className="font-serif text-lg font-semibold text-ink">{scores.average}</span>
-            <span className="text-ink/60">/10 average</span>
+            <span className="text-ink/65">/10 average</span>
           </span>
-          <span className="text-xs text-ink/60">
+          <span className="text-xs text-ink/65">
             {scores.sessions} rated session{scores.sessions === 1 ? "" : "s"}
             {scores.latest !== null ? ` · latest ${scores.latest}/10` : ""}
           </span>
@@ -112,7 +112,7 @@ export function QuranProgressWidget({ childId, limit = 5 }: { childId: string; l
                 {m.label}
               </li>
             ))}
-            {next && <li className="rounded-full border border-dashed border-gold-light px-2 py-0.5 text-xs text-ink/60">Next: {next.label}</li>}
+            {next && <li className="rounded-full border border-dashed border-gold-light px-2 py-0.5 text-xs text-ink/65">Next: {next.label}</li>}
           </ul>
         </div>
       )}
@@ -126,12 +126,12 @@ export function QuranProgressWidget({ childId, limit = 5 }: { childId: string; l
                   {entryLabel(r)}
                   {r.score !== null && r.score !== undefined && <span className="ml-2 rounded-full bg-gold-light/40 px-2 py-0.5 text-xs font-semibold text-gold-900">{r.score}/10</span>}
                 </span>
-                <span className="flex items-center gap-1.5 text-xs text-ink/60">
+                <span className="flex items-center gap-1.5 text-xs text-ink/65">
                   {r.standard && <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${STANDARD_DOT[r.standard]}`} />}
                   {r.standard ? STANDARD_LABEL[r.standard] : ""} · {new Date(r.session_date || r.recorded_at).toLocaleDateString("en-GB")}
                 </span>
               </div>
-              {r.note && <p className="mt-1 text-xs text-ink/60">{r.note}</p>}
+              {r.note && <p className="mt-1 text-xs text-ink/65">{r.note}</p>}
             </li>
           ))}
         </ul>

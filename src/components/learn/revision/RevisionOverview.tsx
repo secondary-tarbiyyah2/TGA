@@ -72,7 +72,7 @@ export function RevisionOverview({ area }: { area: "teach" | "admin" }) {
                   <tr key={r.unit_id} className="border-t border-gold-light/70">
                     <td className="px-4 py-3">
                       <span className="block font-semibold text-ink">{r.title}</span>
-                      <span className="block text-xs text-ink/60">
+                      <span className="block text-xs text-ink/65">
                         {yearLabel(r.year)} · {r.subject}
                       </span>
                     </td>

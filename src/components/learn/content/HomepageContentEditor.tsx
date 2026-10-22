@@ -113,7 +113,7 @@ export function HomepageContentEditor() {
     setMessage(publishMessage);
   }
 
-  if (!row) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (!row) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <Card title="Homepage content" description="Showing the current website text. Edit it and Save to change the site.">

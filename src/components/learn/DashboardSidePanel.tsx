@@ -35,8 +35,8 @@ const BUCKET_ORDER = ["Overdue", "Today", "Tomorrow", "This week", "Later"];
 
 /** Moodle's Timeline block: what's due, grouped by when. */
 function Timeline({ items }: { items: TimelineItem[] | null }) {
-  if (items === null) return <p className="text-sm text-ink/55">Loading…</p>;
-  if (items.length === 0) return <p className="text-sm text-ink/55">Nothing due in the next two weeks.</p>;
+  if (items === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (items.length === 0) return <p className="text-sm text-ink/65">Nothing due in the next two weeks.</p>;
   const groups = BUCKET_ORDER.map((b) => ({ b, list: items.filter((i) => bucketOf(i.dueAt) === b) })).filter((g) => g.list.length > 0);
   return (
     <div className="space-y-4">
@@ -50,7 +50,7 @@ function Timeline({ items }: { items: TimelineItem[] | null }) {
                   <span aria-hidden="true" className="mt-1.5 h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: classColour(i.classId) }} />
                   <span className="min-w-0">
                     <span className="block truncate text-sm font-medium text-ink">{i.title}</span>
-                    <span className="block truncate text-xs text-ink/55">
+                    <span className="block truncate text-xs text-ink/65">
                       {i.className}
                       {i.who ? ` · ${i.who}` : ""} ·{" "}
                       {new Date(i.dueAt).toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}

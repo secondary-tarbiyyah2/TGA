@@ -23,8 +23,8 @@ export function LatestGradesWidget({ childId, limit = 5 }: { childId: string; li
       .then(({ data }) => setRows((data as Row[]) || []));
   }, [supabase, childId, limit]);
 
-  if (rows === null) return <p className="text-sm text-ink/60">Loading grades…</p>;
-  if (rows.length === 0) return <p className="text-sm text-ink/60">No grades recorded yet.</p>;
+  if (rows === null) return <p className="text-sm text-ink/65">Loading grades…</p>;
+  if (rows.length === 0) return <p className="text-sm text-ink/65">No grades recorded yet.</p>;
 
   return (
     <div>
@@ -33,7 +33,7 @@ export function LatestGradesWidget({ childId, limit = 5 }: { childId: string; li
         {rows.map((r) => (
           <li key={r.id} className="flex items-center justify-between rounded-lg border border-gold-light/40 p-2 text-sm">
             <span>{r.title}</span>
-            <span className="text-ink/60">
+            <span className="text-ink/65">
               {r.grade_label || (r.percent !== null ? `${r.percent}%` : "—")} · {new Date(r.date).toLocaleDateString("en-GB")}
             </span>
           </li>

@@ -129,7 +129,7 @@ const when = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "
 
 /** A small chip showing who signed a unit or lesson off, or that nobody has yet. */
 function SignoffChip({ s }: { s: Signoff | undefined }) {
-  if (!s) return <span className="rounded-full bg-cream px-2 py-0.5 text-xs text-ink/60">Not signed off</span>;
+  if (!s) return <span className="rounded-full bg-cream px-2 py-0.5 text-xs text-ink/65">Not signed off</span>;
   const tone = s.status === "approved" ? "bg-teal-100 text-teal-900" : s.status === "changes_needed" ? "bg-red-100 text-red-900" : "bg-gold-100 text-gold-900";
   return (
     <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${tone}`} title={s.note || undefined}>
@@ -556,7 +556,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       {(allSubjects.length > 1 || boards.length > 1) && (
         <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4" role="group" aria-label="Filters">
           <div>
-            <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink/60">Subject</p>
+            <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink/65">Subject</p>
             <div className="flex flex-wrap gap-2">
               {[{ slug: "all", name: "All subjects", n: allSubjects.reduce((t, x) => t + x.units.length, 0) }, ...allSubjects.map((x) => ({ slug: x.slug, name: x.name, n: x.units.length }))].map((x) => {
                 const on = subjectFilter === x.slug;
@@ -584,7 +584,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {boards.length > 0 && (
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-semibold uppercase tracking-wide text-ink/60">Exam board</span>
+                <span className="text-xs font-semibold uppercase tracking-wide text-ink/65">Exam board</span>
                 {subjectFilter === "all" && boards.length > 1 && (
                   <>
                     <button type="button" aria-pressed={boardFilter === "all"} onClick={() => setBoardFilter("all")} className={`rounded-full border px-3 py-1 text-sm ${boardFilter === "all" ? "border-gold-500 bg-gold-100 font-semibold text-gold-900" : "border-gold-light text-ink hover:bg-cream"}`}>
@@ -737,7 +737,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             </button>
             {subjects.map((s) => (
               <div key={s.slug}>
-                <p className="px-2 pb-1 text-xs font-semibold uppercase tracking-wide text-ink/55">{s.name}</p>
+                <p className="px-2 pb-1 text-xs font-semibold uppercase tracking-wide text-ink/65">{s.name}</p>
                 <ul className="space-y-0.5">
                   {s.units.map((u) => {
                     const p = packFor(u);
@@ -751,7 +751,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                           className={`flex w-full items-start gap-2 rounded-lg px-2 py-1.5 text-left text-sm ${active ? "bg-teal-100 font-semibold text-teal-900" : "text-ink/85 hover:bg-cream"}`}
                         >
                           <span className="min-w-0 flex-1">{u.unit}</span>
-                          <span className="flex shrink-0 items-center gap-1 pt-0.5 text-xs font-normal text-ink/55">
+                          <span className="flex shrink-0 items-center gap-1 pt-0.5 text-xs font-normal text-ink/65">
                             {u.lessons.length > 0 && <span className="tabular-nums">{u.lessons.length}</span>}
                             {p && <span title={p.takers ? `${p.takers} pupils have revised` : "Revision pack ready"} className={`h-2 w-2 rounded-full ${p.takers ? "bg-teal-700" : "bg-gold-500"}`} />}
                           </span>
@@ -762,7 +762,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                 </ul>
               </div>
             ))}
-            <p className="flex items-center gap-1.5 border-t border-gold-light px-2 pt-2 text-xs text-ink/60">
+            <p className="flex items-center gap-1.5 border-t border-gold-light px-2 pt-2 text-xs text-ink/65">
               <span className="h-2 w-2 rounded-full bg-gold-500" /> revision pack
               <span className="ml-2 h-2 w-2 rounded-full bg-teal-700" /> pupils have revised
             </p>
@@ -781,7 +781,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               current && (
                 <section aria-label={current.unit} className="space-y-3">
                   <div className="rounded-2xl border border-gold-light bg-white p-4">
-                    <p className="text-xs text-ink/60">
+                    <p className="text-xs text-ink/65">
                       {current.subject}
                       {current.board ? ` · ${current.board}` : ""}
                     </p>
@@ -995,7 +995,7 @@ function SpecPanel({ slug, unit, year, signoffs, onSign, onOpenLesson }: { slug:
         <summary className="cursor-pointer text-sm font-semibold text-ink">How it is assessed ({spec.assessment.length} paper{spec.assessment.length === 1 ? "" : "s"}{spec.nonExam && !/^none/i.test(spec.nonExam) ? " + non-exam" : ""})</summary>
         <div className="mt-2 overflow-x-auto">
           <table className="w-full min-w-[32rem] text-left text-sm">
-            <thead className="text-xs uppercase tracking-wide text-ink/60">
+            <thead className="text-xs uppercase tracking-wide text-ink/65">
               <tr>
                 <th className="py-1 pr-3">Paper</th>
                 <th className="py-1 pr-3">Time</th>
@@ -1068,11 +1068,11 @@ function SpecPanel({ slug, unit, year, signoffs, onSign, onOpenLesson }: { slug:
                     <span className="min-w-0 flex-1 text-sm font-semibold text-ink">
                       {u.title}
                       {hit && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 text-[11px] font-semibold text-teal-900">this unit</span>}
-                      <span className="block text-xs font-normal text-ink/60">
+                      <span className="block text-xs font-normal text-ink/65">
                         {[u.year, `${u.points.length} points`, u.pl?.length ? `${u.pl.filter((x) => x.length).length}/${u.points.length} have a lesson` : ""].filter(Boolean).join(" · ")}
                       </span>
                     </span>
-                    <span aria-hidden="true" className="pt-0.5 text-ink/50">{open ? "–" : "+"}</span>
+                    <span aria-hidden="true" className="pt-0.5 text-ink/65">{open ? "–" : "+"}</span>
                   </button>
                   {open && (
                     <div className="px-4 pb-3 pl-[4.5rem]">
@@ -1085,7 +1085,7 @@ function SpecPanel({ slug, unit, year, signoffs, onSign, onOpenLesson }: { slug:
                       <ol className="list-none space-y-1 text-sm text-ink/85">
                         {u.points.map((p, i) => (
                           <li key={p} className="flex gap-2">
-                            <span className="w-10 shrink-0 font-mono text-xs text-ink/55">
+                            <span className="w-10 shrink-0 font-mono text-xs text-ink/65">
                               {u.ref}.{i + 1}
                             </span>
                             <span className="min-w-0 flex-1">{p}</span>
@@ -1208,7 +1208,7 @@ function ConnectionsPanel({ subject, unit, onOpenLesson }: { subject: string; un
                 return (
                   <li key={`${n.subject}-${n.ref}`} className={`rounded-xl border px-4 py-3 text-sm ${n.subject === home ? "border-teal-700 bg-teal-50" : "border-gold-light bg-white"}`}>
                     <span className="font-semibold text-ink">
-                      {n.subject} <span className="font-normal text-ink/60">({n.ref})</span>
+                      {n.subject} <span className="font-normal text-ink/65">({n.ref})</span>
                     </span>
                     <span className="block text-ink/80">{n.note}</span>
                     <span className="mt-1 block text-xs italic text-ink/65">Ask pupils: what does {n.subject} add to the story of “{openHub.title}”?</span>
@@ -1369,7 +1369,7 @@ function RevisionPackPanel({ pack, onChanged, onBuild }: { pack: StaffUnit | und
           {video ? (
             <video key={videoPath} src={video} controls playsInline preload="metadata" className="aspect-video w-full rounded-lg bg-ink" />
           ) : (
-            <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/60">
+            <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/65">
               Loading the video…
             </div>
           )}
@@ -1442,7 +1442,7 @@ function ReplaceDialog({ lesson, onClose, onDone }: { lesson: CurriculumLesson; 
           PDF copy for pupils (optional)
           <input type="file" accept=".pdf,application/pdf" onChange={(e) => setPdf(e.target.files?.[0] || null)} className="mt-1 block w-full text-sm" />
         </label>
-        <p className="text-xs text-ink/55">In PowerPoint use File → Export → PDF. Without a PDF, pupils get the PowerPoint to download.</p>
+        <p className="text-xs text-ink/65">In PowerPoint use File → Export → PDF. Without a PDF, pupils get the PowerPoint to download.</p>
         <label className="block font-medium">
           What did you change? (optional)
           <input type="text" value={note} onChange={(e) => setNote(e.target.value)} maxLength={200} placeholder="e.g. Shortened for a catch-up lesson" className="mt-1 block w-full rounded-md border border-gold-light px-3 py-2 text-sm" />
@@ -1491,13 +1491,13 @@ function HistoryDialog({ lesson, onClose, onChanged }: { lesson: CurriculumLesso
       <div className="p-4">
         {error && <p className="mb-2 text-sm text-red-700">{error}</p>}
         {!versions ? (
-          <p className="text-sm text-ink/60">Loading…</p>
+          <p className="text-sm text-ink/65">Loading…</p>
         ) : (
           <ul className="space-y-2">
             {versions.map((v) => (
               <li key={v.id} className="flex flex-wrap items-center gap-2 rounded-md border border-gold-light/70 px-3 py-2 text-sm">
                 <span className="font-semibold">v{v.version}</span>
-                <span className="text-ink/60">{new Date(v.created_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</span>
+                <span className="text-ink/65">{new Date(v.created_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</span>
                 <span className="min-w-0 flex-1 truncate text-ink/70">{v.note || (v.version === 1 ? "Original" : "")}</span>
                 <button type="button" className={btn} onClick={() => get(v)}>
                   Download
@@ -1606,7 +1606,7 @@ function ShareDialog({ lesson, area, onClose, onDone }: { lesson: CurriculumLess
                 Also attach the editable PowerPoint
               </label>
             )}
-            <p className="text-xs text-ink/55">Posts the lesson slides as material in the class&apos;s Classwork. Pupils and families can view the PDF there.</p>
+            <p className="text-xs text-ink/65">Posts the lesson slides as material in the class&apos;s Classwork. Pupils and families can view the PDF there.</p>
           </>
         )}
         {error && <p className="text-red-700">{error}</p>}

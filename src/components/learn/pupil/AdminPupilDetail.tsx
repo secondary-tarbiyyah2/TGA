@@ -47,7 +47,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
     return (
       <>
         <PageHeader crumbs={crumbs} title="Pupil not found" />
-        <p className="text-sm text-ink/60">We couldn&apos;t find that pupil.</p>
+        <p className="text-sm text-ink/65">We couldn&apos;t find that pupil.</p>
       </>
     );
   }
@@ -58,7 +58,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
         <PageHeader crumbs={crumbs} title={child?.name || "Pupil"} subtitle="Pupil information. Opening this record is logged because it contains medical details." actions={<PrintButton label="Print view" />} />
       </div>
       <PrintScope title={`Pupil information: ${child?.name || ""}`}>
-        {state === "loading" || !child ? <p className="text-sm text-ink/60">Loading…</p> : <PupilRecord child={child} showAcks />}
+        {state === "loading" || !child ? <p className="text-sm text-ink/65">Loading…</p> : <PupilRecord child={child} showAcks />}
       </PrintScope>
       {child && (
         <div className="print:hidden">

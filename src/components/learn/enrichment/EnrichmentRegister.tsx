@@ -104,7 +104,7 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
     setTicks((prev) => [...prev.filter((t) => !(t.period_id === pid && childIds.includes(t.child_id))), ...childIds.map((child_id) => ({ period_id: pid, child_id, present }))]);
   };
 
-  if (periods === null) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (periods === null) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <div className="space-y-4">
@@ -154,9 +154,9 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
               <div>
                 <h2 className="font-serif text-h3 font-semibold text-ink">
                   {p.name}
-                  {p.activity ? <span className="ml-2 text-sm font-normal text-ink/60">{p.activity}</span> : null}
+                  {p.activity ? <span className="ml-2 text-sm font-normal text-ink/65">{p.activity}</span> : null}
                 </h2>
-                <p className="text-xs text-ink/60">
+                <p className="text-xs text-ink/65">
                   {p.start_time}-{p.end_time}
                   {p.supervisor_name ? ` · supervised by ${p.supervisor_name}` : " · no supervisor set"}
                 </p>
@@ -169,7 +169,7 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
               </p>
             </div>
             {roster.length === 0 ? (
-              <p className="px-5 py-4 text-sm text-ink/60">No enrolled children are down for this block.</p>
+              <p className="px-5 py-4 text-sm text-ink/65">No enrolled children are down for this block.</p>
             ) : (
               <>
                 {mode === "supervisor" && unticked.length > 0 && (

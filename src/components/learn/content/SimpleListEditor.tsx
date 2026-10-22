@@ -101,7 +101,7 @@ export function SimpleListEditor({
   return (
     <Card title={title} description={description}>
       {rows === null ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : (
         <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
           {rows.map((r) => (
@@ -123,7 +123,7 @@ export function SimpleListEditor({
               )}
             </li>
           ))}
-          {rows.length === 0 && <li className="p-3 text-sm text-ink/60">Nothing here yet.</li>}
+          {rows.length === 0 && <li className="p-3 text-sm text-ink/65">Nothing here yet.</li>}
         </ul>
       )}
 

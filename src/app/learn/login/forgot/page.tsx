@@ -82,7 +82,7 @@ export default function ForgotPasswordPage() {
     <section className="app-pad">
       <div className="mx-auto max-w-sm">
         <h1 className="font-serif text-h2 font-semibold text-ink">Reset your password</h1>
-        <p className="mt-1 text-sm text-ink/60">Enter the email address your account was set up with.</p>
+        <p className="mt-1 text-sm text-ink/65">Enter the email address your account was set up with.</p>
         <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-3">
           <label className="block text-sm font-medium text-ink">
             Email

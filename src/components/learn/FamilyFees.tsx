@@ -65,7 +65,7 @@ export function FamilyFees({ familyChildren }: { familyChildren: Child[] }) {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Our fees</h2>
-      <p className="mt-1 text-sm text-ink/60">Based on each child&apos;s year group, from the published fee table.</p>
+      <p className="mt-1 text-sm text-ink/65">Based on each child&apos;s year group, from the published fee table.</p>
 
       <div className="mt-4 space-y-3">
         {rows.map(({ child, band }) => {
@@ -74,7 +74,7 @@ export function FamilyFees({ familyChildren }: { familyChildren: Child[] }) {
             <div key={child.id} className="rounded-xl bg-cream p-4">
               <div className="flex items-center justify-between">
                 <span className="font-medium text-ink">{child.name}</span>
-                <span className="text-xs text-ink/60">{band.yearGroupRange}</span>
+                <span className="text-xs text-ink/65">{band.yearGroupRange}</span>
               </div>
               <div className="mt-2 flex items-center justify-between text-sm">
                 <span className="text-ink/70">Annual fee</span>

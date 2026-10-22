@@ -203,13 +203,13 @@ export function CoverSuggestions() {
     [absences, slots, covers, staff, subjectLinks, periods, today],
   );
 
-  if (!loaded) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (!loaded) return <p className="text-sm text-ink/65">Loading…</p>;
 
   return (
     <div className="space-y-5">
       <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">Record a teacher&apos;s absence</h2>
-        <p className="mt-0.5 text-sm text-ink/60">Enter the days a teacher is away. Their lessons in that time are listed below with free, qualified staff you can assign in one click.</p>
+        <p className="mt-0.5 text-sm text-ink/65">Enter the days a teacher is away. Their lessons in that time are listed below with free, qualified staff you can assign in one click.</p>
         <div className="mt-3 grid gap-3 sm:grid-cols-4">
           <label className="block text-xs font-medium text-ink/70">
             Teacher
@@ -254,7 +254,7 @@ export function CoverSuggestions() {
           <div className="flex flex-wrap items-start justify-between gap-2">
             <div>
               <h3 className="font-serif text-h3 font-semibold text-ink">Suggest cover: {nameOf(absence.teacher_user_id)}</h3>
-              <p className="text-sm text-ink/60">
+              <p className="text-sm text-ink/65">
                 {dateLabel(absence.starts_on)}
                 {absence.ends_on !== absence.starts_on ? ` to ${dateLabel(absence.ends_on)}` : ""}
                 {absence.reason ? ` · ${absence.reason}` : ""}
@@ -280,7 +280,7 @@ export function CoverSuggestions() {
                       {options.slice(0, 6).map((o) => (
                         <li key={o.staff.id} className="flex items-center gap-2 rounded-lg border border-gold-light/60 bg-cream/40 px-2.5 py-1.5">
                           <span>
-                            <span className="font-medium text-ink">{o.staff.name}</span> <span className="text-xs text-ink/55">{o.why}</span>
+                            <span className="font-medium text-ink">{o.staff.name}</span> <span className="text-xs text-ink/65">{o.why}</span>
                           </span>
                           <button type="button" onClick={() => assign(need, o.staff.id, absence)} disabled={busy !== null} className={small}>
                             {busy === `${need.key}|${o.staff.id}` ? "Assigning…" : "Assign cover"}

@@ -36,7 +36,7 @@ function Stat({ label, value, sub }: { label: string; value: string; sub?: strin
     <div className="rounded-xl border border-gold-light/40 bg-cream/40 p-3">
       <p className="text-xs uppercase tracking-wide text-ink/65">{label}</p>
       <p className="mt-0.5 text-xl font-semibold text-ink">{value}</p>
-      {sub && <p className="text-xs text-ink/60">{sub}</p>}
+      {sub && <p className="text-xs text-ink/65">{sub}</p>}
     </div>
   );
 }
@@ -171,7 +171,7 @@ export function ReportDocument({
       </header>
       <div className="p-4 sm:p-6">
       <div className="mt-4 space-y-3">
-        {classes.length === 0 && legacy.length === 0 && <p className="text-sm text-ink/60">No recorded attendance, homework or grades for this period.</p>}
+        {classes.length === 0 && legacy.length === 0 && <p className="text-sm text-ink/65">No recorded attendance, homework or grades for this period.</p>}
         {classes.map((c) => (
           <ClassBlock key={c.class_id} c={c} />
         ))}
@@ -189,7 +189,7 @@ export function ReportDocument({
           )}
         </section>
       </div>
-      <footer className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-gold-light/50 pt-3 text-[11px] text-ink/60">
+      <footer className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-gold-light/50 pt-3 text-[11px] text-ink/65">
         <span>Tarbiyyah Global Academy · part of the Tarbiyyah Education Trust</span>
         <span>globalacademy@tarbiyyah.co.uk</span>
       </footer>

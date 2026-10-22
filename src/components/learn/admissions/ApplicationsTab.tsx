@@ -85,7 +85,7 @@ function ApplicationCard({
         <span className="mt-0.5 block text-xs text-ink/70">
           {app.year_group_applying} · age {ageFromDob(app.child_dob) || "?"}
         </span>
-        <span className="block text-xs text-ink/60">{app.parent_name}</span>
+        <span className="block text-xs text-ink/65">{app.parent_name}</span>
         {familySize > 1 && <span className="mt-0.5 inline-block rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900">{(app.sibling_index ?? 1) > 1 ? "Sibling" : `Family of ${familySize}`}</span>}
         <span className="block text-xs text-ink/65">Received {fmtShort(app.created_at)}</span>
         <span className="mt-1.5 flex items-center gap-1" role="img" aria-label={pips.map((p) => `${p.label} ${PIP_WORD[p.state]}`).join(", ")}>
@@ -421,7 +421,7 @@ export function ApplicationsTab() {
             />
             <span>
               <span className="font-medium">Accepting applications</span>
-              <span className="block text-xs text-ink/60">
+              <span className="block text-xs text-ink/65">
                 {accepting === null ? "Checking…" : accepting ? "The form is open to families." : "Families see an “applications are closed” message instead of the form."}
               </span>
             </span>
@@ -458,7 +458,7 @@ export function ApplicationsTab() {
             ))}
           </select>
         </label>
-        <p className="pb-2 text-sm text-ink/60">
+        <p className="pb-2 text-sm text-ink/65">
           {newCount} new · {rows.length} total
         </p>
         {canExport && (
@@ -475,7 +475,7 @@ export function ApplicationsTab() {
         </p>
       )}
 
-      {load === "loading" && <p role="status" className="text-sm text-ink/60">Loading applications…</p>}
+      {load === "loading" && <p role="status" className="text-sm text-ink/65">Loading applications…</p>}
       {load === "error" && (
         <div role="alert" className="rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
           Couldn&apos;t load applications.{" "}
@@ -490,7 +490,7 @@ export function ApplicationsTab() {
 
       {load === "ready" && rows.length > 0 && (
         <>
-          {filtered.length === 0 && <p className="text-sm text-ink/60">No applications match your search.</p>}
+          {filtered.length === 0 && <p className="text-sm text-ink/65">No applications match your search.</p>}
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
             {PIPELINE_STATUSES.map((s) => (
               <Column key={s} status={s} apps={byStatus(s)} dragOver={dragOver} setDragOver={setDragOver} onDropOn={handleDrop} cardProps={cardProps} familySizes={familySizes} />

@@ -249,17 +249,17 @@ function FeesContent() {
         />
       </div>
 
-      {rows === null && <p className="text-sm text-ink/60">Loading…</p>}
+      {rows === null && <p className="text-sm text-ink/65">Loading…</p>}
       {rows && rows.length === 0 && !loadError && (
         <div className="rounded-2xl border border-gold-light bg-white p-8 text-center">
           <p className="font-medium text-ink">No charges yet</p>
-          <p className="mt-1 text-sm text-ink/60">Raise a charge for one family, or for a whole year group or class in a few clicks.</p>
+          <p className="mt-1 text-sm text-ink/65">Raise a charge for one family, or for a whole year group or class in a few clicks.</p>
           <button type="button" onClick={() => setCreating(true)} className="mt-4 rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
             + New charge
           </button>
         </div>
       )}
-      {rows && rows.length > 0 && filtered.length === 0 && <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/60">Nothing matches those filters.</p>}
+      {rows && rows.length > 0 && filtered.length === 0 && <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/65">Nothing matches those filters.</p>}
 
       {rows && filtered.length > 0 && view === "charges" && (
         <ul className="space-y-3">
@@ -268,7 +268,7 @@ function FeesContent() {
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="font-medium text-ink">{r.charge.description}</p>
-                  <p className="text-sm text-ink/60">
+                  <p className="text-sm text-ink/65">
                     {r.familyName}
                     {r.childName && ` · ${r.childName}`}
                     {r.yearGroup && ` (${r.yearGroup})`}
@@ -327,7 +327,7 @@ function FeesContent() {
         <div className="overflow-x-auto rounded-2xl border border-gold-light bg-white">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead>
-              <tr className="text-ink/60">
+              <tr className="text-ink/65">
                 {["Family", "Charges", "Billed", "Paid", "Balance", "Overdue"].map((h, i) => (
                   <th key={h} className={`border-b border-gold-light p-3 font-semibold ${i > 1 ? "text-right" : ""}`}>{h}</th>
                 ))}

@@ -27,7 +27,7 @@ export function TimetableGrid({ slots, simplified = false, showClassLabel = fals
   const stored = useTimetablePeriods();
   if (slots.length === 0) {
     return (
-      <p className="text-sm text-ink/60">
+      <p className="text-sm text-ink/65">
         {emptyMessage || "No published timetable yet — check back once the school has published one."}
       </p>
     );
@@ -118,7 +118,7 @@ export function TimetableGrid({ slots, simplified = false, showClassLabel = fals
             }
             return (
               <tr key={r.key} className={(p?.band || (r.start >= "14:00" ? "B" : "A")) === "B" ? "bg-cream/40" : undefined}>
-                <td className={`${cellPad} ${textSize} border-b border-gold-light/20 whitespace-nowrap text-ink/60`}>
+                <td className={`${cellPad} ${textSize} border-b border-gold-light/20 whitespace-nowrap text-ink/65`}>
                   {r.start}–{r.end}
                 </td>
                 {WEEKDAYS.map((wd) => {
@@ -132,7 +132,7 @@ export function TimetableGrid({ slots, simplified = false, showClassLabel = fals
                         >
                           {s.subjects?.name || "Lesson"}
                           {showClassLabel && s.classes ? (
-                            <div className="text-xs font-normal text-ink/60">
+                            <div className="text-xs font-normal text-ink/65">
                               {s.classes.year_group} · {s.classes.name}
                             </div>
                           ) : null}

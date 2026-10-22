@@ -146,7 +146,7 @@ export function SubjectAccessExport() {
 
       {candidates && (
         <ul className="mt-2 divide-y divide-gold-light/40 rounded-lg border border-gold-light/50">
-          {candidates.length === 0 && <li className="px-3 py-2 text-sm text-ink/60">No match.</li>}
+          {candidates.length === 0 && <li className="px-3 py-2 text-sm text-ink/65">No match.</li>}
           {candidates.map((c) => (
             <li key={c.id}>
               <button type="button" onClick={() => { setChosen(c); setResult(null); }} className={`flex w-full items-center justify-between px-3 py-2 text-left text-sm hover:bg-cream ${chosen?.id === c.id ? "bg-cream font-medium" : ""}`}>
@@ -210,9 +210,9 @@ export function SubjectAccessExport() {
         </div>
       )}
 
-      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink/60">Recent exports</p>
+      <p className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink/65">Recent exports</p>
       <ul className="mt-2 space-y-1">
-        {log === null && <li className="text-sm text-ink/60">Loading…</li>}
+        {log === null && <li className="text-sm text-ink/65">Loading…</li>}
         {(log || []).map((l) => (
           <li key={l.id} className="text-sm text-ink/70">
             {fmt(l.created_at)} · {l.subject_type === "pupil" ? "Pupil" : "Parent"} {l.subject_label}
@@ -220,7 +220,7 @@ export function SubjectAccessExport() {
             {l.include_child_records ? " · with child records" : ""} · {l.files_deleted_at || new Date(l.expires_at).getTime() < now ? "link expired" : `link live until ${fmt(l.expires_at)}`}
           </li>
         ))}
-        {log?.length === 0 && <li className="text-sm text-ink/60">No exports yet.</li>}
+        {log?.length === 0 && <li className="text-sm text-ink/65">No exports yet.</li>}
       </ul>
     </div>
   );

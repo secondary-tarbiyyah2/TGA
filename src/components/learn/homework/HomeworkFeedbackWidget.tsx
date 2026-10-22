@@ -47,7 +47,7 @@ export function HomeworkFeedbackWidget({ childId, href }: { childId: string; hre
     };
   }, [supabase, childId]);
 
-  if (attention === null || feedback === null) return <p className="text-sm text-ink/60">Loading homework feedback…</p>;
+  if (attention === null || feedback === null) return <p className="text-sm text-ink/65">Loading homework feedback…</p>;
 
   return (
     <div>
@@ -58,7 +58,7 @@ export function HomeworkFeedbackWidget({ childId, href }: { childId: string; hre
         </Link>
       </div>
       {attention.length === 0 && feedback.length === 0 ? (
-        <p className="mt-2 text-sm text-ink/60">Nothing needs attention.</p>
+        <p className="mt-2 text-sm text-ink/65">Nothing needs attention.</p>
       ) : (
         <ul className="mt-2 space-y-2">
           {attention.map((r) => (
@@ -73,7 +73,7 @@ export function HomeworkFeedbackWidget({ childId, href }: { childId: string; hre
                 <span className="min-w-0 truncate">{f.submission?.homework?.title || "Homework"}</span>
                 <FeedbackStatusChip status={f.status} />
               </div>
-              <p className="mt-1 line-clamp-2 text-xs text-ink/60">
+              <p className="mt-1 line-clamp-2 text-xs text-ink/65">
                 {f.feedback_text || (f.audio_path ? "Audio note from your teacher." : "")}
                 {f.feedback_text && f.audio_path ? " (+ audio note)" : ""}
               </p>

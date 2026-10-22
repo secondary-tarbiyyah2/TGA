@@ -113,7 +113,7 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
                 {stats.surahs.map((s) => (
                   <li key={s.surah} className="grid grid-cols-[minmax(0,9rem)_1fr_auto] items-center gap-3 text-sm sm:grid-cols-[minmax(0,12rem)_1fr_auto]">
                     <span className="truncate text-ink">
-                      {surahName(s.surah)} <span lang="ar" dir="rtl" className="text-ink/60">{surahAr(s.surah)}</span>
+                      {surahName(s.surah)} <span lang="ar" dir="rtl" className="text-ink/65">{surahAr(s.surah)}</span>
                     </span>
                     <span className="h-2.5 overflow-hidden rounded-full bg-cream" role="img" aria-label={`${s.avg} out of 10`}>
                       <span className={`block h-full rounded-full ${s.avg >= 8 ? "bg-teal-700" : s.avg >= 6 ? "bg-gold-500" : "bg-red-600"}`} style={{ width: `${s.avg * 10}%` }} />

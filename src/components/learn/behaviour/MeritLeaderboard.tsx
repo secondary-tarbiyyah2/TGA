@@ -120,7 +120,7 @@ export function MeritLeaderboard({
                 type="button"
                 aria-pressed={period === p.id}
                 onClick={() => setPeriod(p.id)}
-                className={`rounded-md px-2.5 py-1 text-xs font-semibold ${period === p.id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}
+                className={`rounded-md px-2.5 py-1 text-xs font-semibold ${period === p.id ? "bg-white text-ink shadow-sm" : "text-ink/65 hover:text-ink"}`}
               >
                 {p.label}
               </button>
@@ -133,9 +133,9 @@ export function MeritLeaderboard({
         {rows === null ? (
           <div className="h-32 animate-pulse rounded-xl bg-cream" />
         ) : error ? (
-          <p className="text-sm text-ink/60">The leaderboard isn&apos;t available right now.</p>
+          <p className="text-sm text-ink/65">The leaderboard isn&apos;t available right now.</p>
         ) : rows.length === 0 ? (
-          <p className="text-sm text-ink/60">{empty}</p>
+          <p className="text-sm text-ink/65">{empty}</p>
         ) : (
           <>
             <ol className="flex items-end justify-center gap-2 sm:gap-4" aria-label="Top three">
@@ -150,7 +150,7 @@ export function MeritLeaderboard({
                     {r.is_mine && <span className="mt-0.5 rounded-full bg-teal-100 px-2 py-0.5 text-[11px] font-semibold text-teal-900">{mineLabel}</span>}
                     <span className={`mt-1.5 flex w-full flex-col items-center justify-start rounded-t-lg border-x border-t pt-1.5 motion-safe:transition-all ${place.height} ${place.tone}`}>
                       <span className="text-lg font-semibold tabular-nums text-ink">{r.merits}</span>
-                      <span className="text-[11px] text-ink/60">
+                      <span className="text-[11px] text-ink/65">
                         <span className="sr-only">{place.word} place, </span>merits
                       </span>
                     </span>

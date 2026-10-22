@@ -24,7 +24,7 @@ function HubContent() {
     <div>
       <LessonsHeader title="Timetable & lessons" subtitle="Everything about when lessons happen, split into short pages." />
       {!data.loaded ? (
-        <p className="text-sm text-ink/60">Loading…</p>
+        <p className="text-sm text-ink/65">Loading…</p>
       ) : (
         <>
           {data.years.length === 0 && (
@@ -37,7 +37,7 @@ function HubContent() {
               <li key={c.href}>
                 <Link href={c.href} className="flex h-full flex-col rounded-2xl border border-gold-light/50 bg-white p-4 transition hover:border-gold-500 hover:shadow-sm">
                   <h2 className="font-serif text-h3 font-semibold text-ink">{c.title}</h2>
-                  <p className="mt-1 flex-1 text-sm text-ink/60">{c.help}</p>
+                  <p className="mt-1 flex-1 text-sm text-ink/65">{c.help}</p>
                   <p className={`mt-3 text-xs font-semibold ${c.ok ? "text-green-800" : "text-amber-800"}`}>{c.status}</p>
                 </Link>
               </li>

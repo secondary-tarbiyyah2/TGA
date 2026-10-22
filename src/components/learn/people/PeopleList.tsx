@@ -144,7 +144,7 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
             ))}
             {!person.profileId && <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-800">No login yet</span>}
           </div>
-          <p className="truncate text-xs text-ink/55">{[person.username ? `Username: ${person.username}` : null, person.email, ...meta].filter(Boolean).join(" · ") || "—"}</p>
+          <p className="truncate text-xs text-ink/65">{[person.username ? `Username: ${person.username}` : null, person.email, ...meta].filter(Boolean).join(" · ") || "—"}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {person.profileId && person.roles.some((r) => r === "teacher" || r === "teaching_assistant_cover" || r === "head_teacher" || r === "admin") && (
@@ -290,13 +290,13 @@ export function PeopleList({
       </div>
 
       {loading ? (
-        <p className="p-6 text-sm text-ink/60">Loading…</p>
+        <p className="p-6 text-sm text-ink/65">Loading…</p>
       ) : error ? (
         <p className="p-6 text-sm text-amber-900">{error}</p>
       ) : people.length === 0 ? (
         <div className="p-10 text-center">
           <p className="text-base font-semibold text-ink">No one here yet</p>
-          <p className="mt-1 text-sm text-ink/60">Add your first member of staff, parent or student to get started.</p>
+          <p className="mt-1 text-sm text-ink/65">Add your first member of staff, parent or student to get started.</p>
           <button type="button" onClick={onAdd} className={`${GOLD_BUTTON} mt-4`}>
             Add person
           </button>
@@ -304,7 +304,7 @@ export function PeopleList({
       ) : shown.length === 0 ? (
         <div className="p-10 text-center">
           <p className="text-base font-semibold text-ink">No matches</p>
-          <p className="mt-1 text-sm text-ink/60">
+          <p className="mt-1 text-sm text-ink/65">
             {search.trim() ? `Nothing matches "${search.trim()}"` : "No one in this group yet"}. Try a different search or filter.
           </p>
         </div>

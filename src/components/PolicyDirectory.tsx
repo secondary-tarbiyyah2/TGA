@@ -56,7 +56,7 @@ function PolicyList({ policies, complaintsLastYear }: { policies: PolicyLink[]; 
           <li key={p._id} className="flex flex-wrap items-start justify-between gap-3 px-5 py-4">
             <div>
               <p className="flex flex-wrap items-center gap-2 font-medium text-ink">
-                <span className="text-ink/60">{p.number}</span> {p.title}
+                <span className="text-ink/65">{p.number}</span> {p.title}
                 <CategoryBadge category={p.category} />
               </p>
               {p.summary && <p className="mt-0.5 text-xs text-ink/70">{p.summary}</p>}

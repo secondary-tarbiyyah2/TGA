@@ -287,7 +287,7 @@ export function StarManager({ isHead }: { isHead: boolean }) {
         <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
           <h2 className="text-base font-semibold text-ink">Waiting for approval</h2>
           {pending.length === 0 ? (
-            <p className="mt-2 text-sm text-ink/60">No nominations are waiting.</p>
+            <p className="mt-2 text-sm text-ink/65">No nominations are waiting.</p>
           ) : (
             <ul className="mt-3 space-y-2">
               {pending.map((s) => (
@@ -301,9 +301,9 @@ export function StarManager({ isHead }: { isHead: boolean }) {
       <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
         <h2 className="text-base font-semibold text-ink">{isHead ? "Stars by class" : "Nominate a star"}</h2>
         {classes === null ? (
-          <p className="mt-2 text-sm text-ink/60">Loading…</p>
+          <p className="mt-2 text-sm text-ink/65">Loading…</p>
         ) : classes.length === 0 ? (
-          <p className="mt-2 text-sm text-ink/60">{isHead ? "There are no classes yet." : "You haven't been assigned to any classes yet."}</p>
+          <p className="mt-2 text-sm text-ink/65">{isHead ? "There are no classes yet." : "You haven't been assigned to any classes yet."}</p>
         ) : (
           <>
             <div className="mt-3 flex flex-wrap gap-3">
@@ -397,7 +397,7 @@ export function StarManager({ isHead }: { isHead: boolean }) {
 
             <h3 className="mt-5 text-sm font-semibold text-ink">Recent stars in this class</h3>
             {stars.length === 0 ? (
-              <p className="mt-1 text-sm text-ink/60">None yet.</p>
+              <p className="mt-1 text-sm text-ink/65">None yet.</p>
             ) : (
               <ul className="mt-2 space-y-2">
                 {stars.map((s) => (

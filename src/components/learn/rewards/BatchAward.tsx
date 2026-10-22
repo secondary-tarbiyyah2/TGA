@@ -71,10 +71,10 @@ export function BatchAward({ classId, roster, onAwarded }: { classId: string; ro
       <h2 id="batch-award-h" className="text-base font-semibold text-ink">
         Reward a group or the whole class
       </h2>
-      <p className="mt-1 text-xs text-ink/60">Tick pupils, or reward everyone at once. Merits earn house points automatically; badges go on the pupil&apos;s shelf.</p>
+      <p className="mt-1 text-xs text-ink/65">Tick pupils, or reward everyone at once. Merits earn house points automatically; badges go on the pupil&apos;s shelf.</p>
 
       {pupils.length === 0 ? (
-        <p className="mt-3 text-sm text-ink/60">No pupils in this class.</p>
+        <p className="mt-3 text-sm text-ink/65">No pupils in this class.</p>
       ) : (
         <div className="mt-3 grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
           <div>
@@ -100,7 +100,7 @@ export function BatchAward({ classId, roster, onAwarded }: { classId: string; ro
                 ["merit", "Merit (house points)"],
                 ["badge", "Star badge"],
               ] as const).map(([id, label]) => (
-                <button key={id} type="button" aria-pressed={kind === id} onClick={() => setKind(id)} className={`flex-1 rounded-md px-2.5 py-1 text-xs font-semibold ${kind === id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}>
+                <button key={id} type="button" aria-pressed={kind === id} onClick={() => setKind(id)} className={`flex-1 rounded-md px-2.5 py-1 text-xs font-semibold ${kind === id ? "bg-white text-ink shadow-sm" : "text-ink/65 hover:text-ink"}`}>
                   {label}
                 </button>
               ))}

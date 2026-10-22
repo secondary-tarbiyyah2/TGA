@@ -51,7 +51,7 @@ export function PinSetup({
   return (
     <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center overflow-y-auto bg-white px-4">
       <h1 className="font-serif text-h2 font-semibold text-ink">{title}</h1>
-      <p className="mb-2 mt-1 max-w-xs text-center text-sm text-ink/60">{intro}</p>
+      <p className="mb-2 mt-1 max-w-xs text-center text-sm text-ink/65">{intro}</p>
       <p className="mb-5 text-sm font-medium text-ink">{first === null ? `Choose a ${PIN_LENGTH}-digit PIN` : "Enter it again to confirm"}</p>
       <PinPad key={first === null ? "enter" : "confirm"} onSubmit={onSubmit} busy={busy} error={err} submitLabel={first === null ? "Next" : "Save PIN"} />
       <p className="mt-6 max-w-xs text-center text-xs text-ink/65">Avoid obvious PINs such as 123456 or your child&apos;s birthday. You&apos;ll be asked for it each time you open the family area.</p>

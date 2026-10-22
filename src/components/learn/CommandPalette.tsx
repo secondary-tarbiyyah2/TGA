@@ -202,11 +202,11 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         type="button"
         onClick={openPalette}
         aria-label="Search"
-        className="mr-1 hidden h-9 w-56 items-center gap-2 rounded-full border border-gold-light bg-cream/50 px-3 text-sm text-ink/55 hover:bg-cream md:flex"
+        className="mr-1 hidden h-9 w-56 items-center gap-2 rounded-full border border-gold-light bg-cream/50 px-3 text-sm text-ink/65 hover:bg-cream md:flex"
       >
         <SearchIcon className="h-4 w-4" />
         <span>Search…</span>
-        <kbd className="ml-auto rounded border border-gold-light bg-white px-1.5 py-0.5 text-[11px] font-medium text-ink/55">Ctrl K</kbd>
+        <kbd className="ml-auto rounded border border-gold-light bg-white px-1.5 py-0.5 text-[11px] font-medium text-ink/65">Ctrl K</kbd>
       </button>
 
       {open &&
@@ -232,14 +232,14 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                   placeholder={canSearchPeople ? "Search pages, classes and people…" : "Search pages and classes…"}
                   className="h-14 min-w-0 flex-1 bg-transparent text-base text-ink placeholder:text-ink/65 focus:outline-none"
                 />
-                <button type="button" onClick={closePalette} className="rounded-md border border-gold-light px-2 py-1 text-xs font-medium text-ink/55 hover:bg-cream">
+                <button type="button" onClick={closePalette} className="rounded-md border border-gold-light px-2 py-1 text-xs font-medium text-ink/65 hover:bg-cream">
                   Esc
                 </button>
               </div>
 
               <div ref={listRef} id="cmdk-list" role="listbox" aria-label="Results" className="overflow-y-auto p-2">
                 {items.length === 0 ? (
-                  <p className="px-3 py-10 text-center text-sm text-ink/60">
+                  <p className="px-3 py-10 text-center text-sm text-ink/65">
                     {loadingMore ? "Searching…" : searching ? `Nothing matches "${query.trim()}". Try a page, class${canSearchPeople ? " or person" : ""} name.` : "Start typing to search."}
                   </p>
                 ) : (

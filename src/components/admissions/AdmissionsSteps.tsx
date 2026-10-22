@@ -63,7 +63,7 @@ export function AdmissionsTimeline({ steps, currentIndex, notes }: { steps: Proc
               <span
                 aria-hidden="true"
                 className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold ${
-                  state === "done" ? "bg-teal-700 text-white" : state === "current" ? "bg-gold-500 text-ink-900 ring-4 ring-gold-100" : "bg-white text-ink/55 ring-1 ring-gold-light"
+                  state === "done" ? "bg-teal-700 text-white" : state === "current" ? "bg-gold-500 text-ink-900 ring-4 ring-gold-100" : "bg-white text-ink/65 ring-1 ring-gold-light"
                 }`}
               >
                 {state === "done" ? "✓" : i + 1}
@@ -82,7 +82,7 @@ export function AdmissionsTimeline({ steps, currentIndex, notes }: { steps: Proc
                   </span>
                   <OwnerChip owner={s.owner} />
                 </div>
-                <p className={`mt-1 break-words text-sm ${state === "later" ? "text-ink/60" : "text-ink/75"}`}>{notes?.[i] ?? s.body}</p>
+                <p className={`mt-1 break-words text-sm ${state === "later" ? "text-ink/65" : "text-ink/75"}`}>{notes?.[i] ?? s.body}</p>
               </div>
             </div>
           </li>

@@ -143,9 +143,9 @@ export function AnnouncementsFeed({
         </div>
       )}
       {items === null ? (
-        <p className="mt-3 text-sm text-ink/60">Loading…</p>
+        <p className="mt-3 text-sm text-ink/65">Loading…</p>
       ) : items.length === 0 ? (
-        <p className="mt-3 text-sm text-ink/60">No announcements yet.</p>
+        <p className="mt-3 text-sm text-ink/65">No announcements yet.</p>
       ) : (
         <ul className="mt-3 space-y-3">
           {items.map((a) => (

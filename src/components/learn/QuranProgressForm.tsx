@@ -177,7 +177,7 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
         {(() => {
           const sum = summariseScores(entries || []);
           return sum.sessions > 0 ? (
-            <p className="mt-1 text-xs text-ink/60">
+            <p className="mt-1 text-xs text-ink/65">
               Average {sum.average}/10 over {sum.sessions} rated session{sum.sessions === 1 ? "" : "s"}
               {sum.trend ? ` · ${TREND_LABEL[sum.trend].toLowerCase()}` : ""}
             </p>
@@ -192,7 +192,7 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
                     ? `Surah ${e.surah_from}${e.surah_to && e.surah_to !== e.surah_from ? `–${e.surah_to}` : ""}${e.juz ? ` (Juz ${e.juz})` : ""}`
                     : e.topic}
                 </span>
-                <span className="text-ink/60">
+                <span className="text-ink/65">
                   {e.score !== null && e.score !== undefined ? `${e.score}/10 · ` : ""}
                   {e.pages ? `${e.pages} pg · ` : ""}
                   {e.standard} · {new Date(e.session_date || e.recorded_at).toLocaleDateString("en-GB")}

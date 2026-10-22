@@ -90,7 +90,7 @@ export function FeesEditor() {
     };
   }, [supabase]);
 
-  if (!bands || !settings) return <p className="text-sm text-ink/60">Loading…</p>;
+  if (!bands || !settings) return <p className="text-sm text-ink/65">Loading…</p>;
 
   const terms = Number(settings.fee_terms);
   const instalments = Number(settings.fee_instalments);
@@ -208,7 +208,7 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Number of terms
             <input type="text" inputMode="decimal" min={1} max={MAX_TERMS} step={1} value={settings.fee_terms} onChange={(e) => setSettings({ ...settings, fee_terms: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.terms} (Fees Policy: 4 Dec 2026 and 28 Mar 2027). Termly fee = annual fee ÷ terms.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_DEFAULTS.terms} (Fees Policy: 4 Dec 2026 and 28 Mar 2027). Termly fee = annual fee ÷ terms.</span>
           </label>
           <label className="text-sm text-ink">
             Number of monthly instalments
@@ -225,22 +225,22 @@ export function FeesEditor() {
             <datalist id="fee-instalment-choices">
               {INSTALMENT_CHOICES.map((n) => <option key={n} value={n} />)}
             </datalist>
-            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_DEFAULTS.instalments} (4 Dec 2026, then 28 Dec 2026 to 28 Jun 2027). Monthly fee = annual fee ÷ instalments.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_DEFAULTS.instalments} (4 Dec 2026, then 28 Dec 2026 to 28 Jun 2027). Monthly fee = annual fee ÷ instalments.</span>
           </label>
           <label className="text-sm text-ink">
             Application fee (£, non-refundable)
             <input type="text" inputMode="decimal" min={0} step="0.01" value={settings.application_fee} onChange={(e) => setSettings({ ...settings, application_fee: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Default £{FEE_POLICY_DEFAULTS.applicationFee} (Fees Policy). Covers the baseline assessment and admin review. Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default £{FEE_POLICY_DEFAULTS.applicationFee} (Fees Policy). Covers the baseline assessment and admin review. Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink">
             Annual payment discount (%)
             <input type="text" inputMode="decimal" min={0} max={100} step="0.1" value={settings.annual_discount_percent} onChange={(e) => setSettings({ ...settings, annual_discount_percent: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 4 Dec 2026. Applied automatically in the fee estimator.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 4 Dec 2026. Applied automatically in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink">
             Registration fee (£, one-time, per child)
             <input type="text" inputMode="decimal" min={0} step="0.01" value={settings.registration_fee} onChange={(e) => setSettings({ ...settings, registration_fee: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Default £{FEE_POLICY_DEFAULTS.registrationFee} (Fees Policy). Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default £{FEE_POLICY_DEFAULTS.registrationFee} (Fees Policy). Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink sm:col-span-2">
             Payment schedule text (shown on the Fees page)
@@ -250,7 +250,7 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Deposit (£, default amount)
             <input type="text" inputMode="decimal" min={0} step="0.01" value={settings.admissions_deposit_amount} onChange={(e) => setSettings({ ...settings, admissions_deposit_amount: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Default deposit used by the admissions process. Leave blank for none.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default deposit used by the admissions process. Leave blank for none.</span>
           </label>
         </div>
       </Card>
@@ -260,7 +260,7 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Sibling discount (%)
             <input type="text" inputMode="decimal" min={0} max={100} step="0.1" value={settings.sibling_discount_percent} onChange={(e) => setSettings({ ...settings, sibling_discount_percent: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/60">Leave blank for no sibling discount.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Leave blank for no sibling discount.</span>
           </label>
           <label className="text-sm text-ink">
             Sibling discount note
@@ -315,7 +315,7 @@ export function FeesEditor() {
         >
           Add a discount
         </button>
-        <p className="mt-2 text-xs text-ink/60">Save with the &quot;Save fees&quot; button below.</p>
+        <p className="mt-2 text-xs text-ink/65">Save with the &quot;Save fees&quot; button below.</p>
       </Card>
 
       <Card title="Fee bands" description="Name, order, annual fee and an optional note. Published on the Fees page and used by the fee estimator.">
@@ -351,7 +351,7 @@ export function FeesEditor() {
         >
           Add a band
         </button>
-        <p className="mt-2 text-xs text-ink/60">Order here is the order on the public page. The fee estimator and quiz expect bands in year-group order (Reception first).</p>
+        <p className="mt-2 text-xs text-ink/65">Order here is the order on the public page. The fee estimator and quiz expect bands in year-group order (Reception first).</p>
       </Card>
 
       <Card title="Live preview" description="Exactly what the public Fees page will show after saving.">

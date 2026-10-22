@@ -11,7 +11,7 @@ export function Modal({ title, onClose, children }: { title: string; onClose: ()
       <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl bg-white p-5 shadow-xl" onClick={(e) => e.stopPropagation()}>
         <div className="mb-3 flex items-start justify-between gap-3">
           <h2 className="text-base font-semibold text-ink">{title}</h2>
-          <button type="button" onClick={onClose} className="rounded-lg px-2 py-1 text-sm text-ink/55 hover:bg-cream" aria-label="Close">
+          <button type="button" onClick={onClose} className="rounded-lg px-2 py-1 text-sm text-ink/65 hover:bg-cream" aria-label="Close">
             Close
           </button>
         </div>
@@ -42,7 +42,7 @@ export function ReasonModal({ childId, childName, date, dateLabel, initialCode, 
   return (
     <Modal title={`Reason for ${childName}'s absence`} onClose={onClose}>
       <form onSubmit={submit} className="space-y-3">
-        <p className="text-sm text-ink/60">{dateLabel}</p>
+        <p className="text-sm text-ink/65">{dateLabel}</p>
         <label className="block text-sm font-medium text-ink">
           Reason
           <select value={code} onChange={(e) => setCode(e.target.value)} className={modalFieldCls}>

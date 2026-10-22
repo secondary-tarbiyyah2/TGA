@@ -27,13 +27,13 @@ export function PasswordInput({ label, hint, className, ...rest }: Props) {
           onClick={() => setShown((v) => !v)}
           aria-pressed={shown}
           aria-label={shown ? `Hide ${label.toLowerCase()}` : `Show ${label.toLowerCase()}`}
-          className="absolute inset-y-0 right-0 flex items-center rounded-r-lg px-3 text-xs font-semibold text-ink/60 hover:text-ink"
+          className="absolute inset-y-0 right-0 flex items-center rounded-r-lg px-3 text-xs font-semibold text-ink/65 hover:text-ink"
         >
           {shown ? "Hide" : "Show"}
         </button>
       </div>
       {hint && (
-        <p id={`${id}-hint`} className="mt-1 text-xs font-normal text-ink/55">
+        <p id={`${id}-hint`} className="mt-1 text-xs font-normal text-ink/65">
           {hint}
         </p>
       )}

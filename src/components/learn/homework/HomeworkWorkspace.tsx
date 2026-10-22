@@ -129,13 +129,13 @@ export function HomeworkWorkspace({
             <section className="rounded-2xl border border-gold-light bg-white p-6">
               <div className="flex items-center justify-between gap-3">
                 <h2 className="text-base font-semibold text-ink">{editing ? `Edit “${editing.title}”` : "Set new homework"}</h2>
-                <button type="button" onClick={closeForm} className="text-sm text-ink/55 hover:text-ink">
+                <button type="button" onClick={closeForm} className="text-sm text-ink/65 hover:text-ink">
                   Close
                 </button>
               </div>
               <div className="mt-4">
                 {classes === null ? (
-                  <p className="text-sm text-ink/60">Loading…</p>
+                  <p className="text-sm text-ink/65">Loading…</p>
                 ) : (
                   <HomeworkEditor
                     key={editing?.id ?? "new"}
@@ -159,7 +159,7 @@ export function HomeworkWorkspace({
           ) : shown.length === 0 ? (
             <div className="rounded-2xl border border-gold-light bg-white p-10 text-center">
               <p className="text-base font-semibold text-ink">No homework yet{classId ? " for this class" : ""}</p>
-              <p className="mx-auto mt-1 max-w-sm text-sm text-ink/60">Set a piece of homework and pupils and families will see it straight away.</p>
+              <p className="mx-auto mt-1 max-w-sm text-sm text-ink/65">Set a piece of homework and pupils and families will see it straight away.</p>
               {!formOpen && (
                 <button type="button" onClick={() => setComposing(true)} className="mt-4 rounded-xl bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
                   + Set homework
@@ -184,7 +184,7 @@ function Group({ title, hint, items, onEdit, onChanged }: { title: string; hint:
     <section>
       <div className="mb-3 flex items-baseline gap-2">
         <h2 className="text-base font-semibold text-ink">{title}</h2>
-        <span className="rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-ink/60">{items.length}</span>
+        <span className="rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-ink/65">{items.length}</span>
         <span className="text-sm text-ink/65">{hint}</span>
       </div>
       <div className="space-y-3">

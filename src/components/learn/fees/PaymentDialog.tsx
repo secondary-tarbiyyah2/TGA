@@ -58,7 +58,7 @@ export function PaymentDialog({
     <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true">
       <div className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-t-2xl border border-gold-light bg-white p-5 sm:rounded-2xl">
         <h2 className="text-lg font-semibold text-ink">{fullPayment ? "Mark as paid" : "Record payment"}</h2>
-        <p className="mt-0.5 text-sm text-ink/60">
+        <p className="mt-0.5 text-sm text-ink/65">
           {title} · balance {formatGBP(balance)}
         </p>
         <div className="mt-4 space-y-3 text-sm">

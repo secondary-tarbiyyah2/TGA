@@ -243,7 +243,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                   <h3 className="text-lg font-semibold text-ink">
                     {mode === "month" ? `${hijriMonthName(hm.month)} ${hm.year} AH` : mode === "week" ? `Week of ${formatHijri(toHijri(weekDays[0]), false)}` : formatHijri(toHijri(parseKey(selected)))}
                   </h3>
-                  <p className="text-xs text-ink/55">
+                  <p className="text-xs text-ink/65">
                     {mode === "month" ? gregSpan(grid.first, grid.last) : mode === "week" ? gregSpan(weekDays[0], weekDays[6]) : gregLong(parseKey(selected))}
                   </p>
                 </div>
@@ -254,7 +254,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                       type="button"
                       aria-pressed={mode === m.id}
                       onClick={() => setMode(m.id)}
-                      className={`rounded-lg px-2.5 py-1 text-xs font-medium sm:text-sm ${mode === m.id ? "bg-white text-ink shadow-sm" : "text-ink/60 hover:text-ink"}`}
+                      className={`rounded-lg px-2.5 py-1 text-xs font-medium sm:text-sm ${mode === m.id ? "bg-white text-ink shadow-sm" : "text-ink/65 hover:text-ink"}`}
                     >
                       {m.label}
                     </button>
@@ -288,7 +288,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                 <p className="font-medium text-green-800">
                   {formatHijri(todayHijri())} · {gregLong(today)}
                 </p>
-                <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-ink/60" aria-label="Legend">
+                <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-ink/65" aria-label="Legend">
                   <span className="inline-flex items-center gap-1.5"><Mark kind="lesson" colour="#555" /> Lesson</span>
                   <span className="inline-flex items-center gap-1.5"><Mark kind="homework" colour="#555" /> Homework due</span>
                   <span className="inline-flex items-center gap-1.5"><Mark kind="assessment" colour="#555" size={7} /> Assessment</span>
@@ -296,7 +296,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                   <span className="text-ink/65">{perChild ? "Colour = child" : "Colour = class"}</span>
                 </p>
                 {mode === "month" && (
-                  <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-ink/60">
+                  <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-ink/65">
                     <span className="inline-flex items-center gap-1.5"><span aria-hidden="true" className="h-3 w-3 rounded border border-green-200 bg-green-50" /> Term</span>
                     <span className="inline-flex items-center gap-1.5"><span aria-hidden="true" className="h-3 w-3 rounded border border-amber-200 bg-amber-50" /> Half-term</span>
                     <span className="inline-flex items-center gap-1.5"><span aria-hidden="true" className="h-3 w-3 rounded border border-red-200 bg-red-50" /> INSET / closure</span>
@@ -362,7 +362,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                               {marks.map((e) => (
                                 <Mark key={e.id} kind={e.kind} colour={itemColour(e, childOrder)} size={e.kind === "assessment" ? 6 : 8} />
                               ))}
-                              {list.length > marks.length && <span className="text-[10px] font-medium text-ink/55">+{list.length - marks.length}</span>}
+                              {list.length > marks.length && <span className="text-[10px] font-medium text-ink/65">+{list.length - marks.length}</span>}
                             </span>
                           )}
                           {list.length > 0 && (
@@ -403,12 +403,12 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                                 {list.slice(0, 4).map((e) => (
                                   <span key={e.id} className="flex items-center gap-2 text-sm text-ink">
                                     <Mark kind={e.kind} colour={itemColour(e, childOrder)} />
-                                    <span className="w-11 shrink-0 text-xs text-ink/55">{e.time || ""}</span>
+                                    <span className="w-11 shrink-0 text-xs text-ink/65">{e.time || ""}</span>
                                     <span className="truncate">{e.kind === "homework" ? `Due: ${e.title}` : e.title}</span>
                                     {e.childName && <span className="shrink-0 text-xs text-ink/65">{e.childName}</span>}
                                   </span>
                                 ))}
-                                {list.length > 4 && <span className="block text-xs font-medium text-ink/55">+{list.length - 4} more</span>}
+                                {list.length > 4 && <span className="block text-xs font-medium text-ink/65">+{list.length - 4} more</span>}
                               </span>
                             )}
                           </span>
@@ -450,15 +450,15 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
         <section className="rounded-2xl border border-gold-light bg-white">
           <h3 className="border-b border-gold-light px-4 py-3 text-sm font-semibold text-ink">Upcoming term dates and deadlines</h3>
           {terms === null || !data ? (
-            <p className="px-4 py-3 text-sm text-ink/55">Loading…</p>
+            <p className="px-4 py-3 text-sm text-ink/65">Loading…</p>
           ) : upcoming.length === 0 ? (
-            <p className="px-4 py-3 text-sm text-ink/55">No upcoming term boundaries or deadlines.</p>
+            <p className="px-4 py-3 text-sm text-ink/65">No upcoming term boundaries or deadlines.</p>
           ) : (
             <ul className="divide-y divide-gold-light/60">
               {upcoming.map((u) => (
                 <li key={u.key} className="px-4 py-2.5 text-sm">
                   <span className="block font-medium text-ink">{u.label}</span>
-                  <span className="block text-xs text-ink/55">{bothDates(u.date)}</span>
+                  <span className="block text-xs text-ink/65">{bothDates(u.date)}</span>
                 </li>
               ))}
             </ul>
@@ -526,7 +526,7 @@ export function MiniCalendar({ scope, href }: { scope: CalendarScope | null; hre
               >
                 {c.hijriDay}
               </span>
-              <span aria-hidden="true" className={`text-[10px] leading-3 tabular-nums ${key === todayKey ? "font-semibold text-teal-700" : "text-ink/60"}`}>
+              <span aria-hidden="true" className={`text-[10px] leading-3 tabular-nums ${key === todayKey ? "font-semibold text-teal-700" : "text-ink/65"}`}>
                 {c.date.getDate()}
               </span>
               <span className="flex h-1.5 gap-0.5">

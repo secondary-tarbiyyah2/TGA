@@ -54,7 +54,7 @@ export function SignatureHistory({ refreshKey }: { refreshKey: number }) {
           <li key={r.id} className="px-5 py-2.5 text-sm">
             <span className="font-medium text-ink">{r.typed_full_name}</span>
             <span className="ml-2 text-ink/65">{r.document_title_signed || "Document"}</span>
-            <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs text-ink/55">
+            <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs text-ink/65">
               <span className="rounded-full bg-cream px-2 py-0.5 font-medium text-ink/75">{methodBadge(r.method, r.recorded_by_name)}</span>
               <span>signed {new Date(r.signed_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" })}</span>
               {r.record_note && <span>· {r.record_note}</span>}

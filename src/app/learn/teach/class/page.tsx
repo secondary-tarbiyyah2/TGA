@@ -11,7 +11,7 @@ export default function TeachClassPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
-        <Suspense fallback={<p className="text-sm text-ink/60">Loading…</p>}>
+        <Suspense fallback={<p className="text-sm text-ink/65">Loading…</p>}>
           <ClassPage viewer={VIEWER} />
         </Suspense>
       </LearnGate>
