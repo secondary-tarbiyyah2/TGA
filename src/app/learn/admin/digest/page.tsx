@@ -9,7 +9,7 @@ export default function AdminDigestPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <PageHeader
-          crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Weekly digest" }]}
+          crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Weekly digest" }]}
           title="Weekly parent digest"
           subtitle="The Friday email to parents. Preview any family's digest or send yourself a test."
         />

@@ -41,7 +41,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
     };
   }, [id]);
 
-  const crumbs = [{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Pupils", href: "/admin/pupils" }, { label: child?.name || "Pupil" }];
+  const crumbs = [{ label: "Home", href: "/admin/dashboard" }, { label: "Pupils", href: "/admin/pupils" }, { label: child?.name || "Pupil" }];
 
   if (state === "missing") {
     return (

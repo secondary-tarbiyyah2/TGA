@@ -259,7 +259,7 @@ button:not(:disabled),
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgb(27 30 33 / 0.62);
+  color: color-mix(in oklab, var(--color-ink) 62%, transparent);
 }
 .portal-nav-row {
   display: flex;
@@ -270,11 +270,11 @@ button:not(:disabled),
   padding: 0 0.75rem;
   font-size: 0.9375rem;
   font-weight: 500;
-  color: rgb(27 30 33 / 0.78);
+  color: color-mix(in oklab, var(--color-ink) 78%, transparent);
   transition: background 120ms, color 120ms;
 }
 .portal-nav-row > svg:first-child {
-  color: rgb(27 30 33 / 0.5);
+  color: color-mix(in oklab, var(--color-ink) 50%, transparent);
 }
 .portal-nav-row:hover {
   background: var(--portal-hover);
@@ -285,6 +285,7 @@ button:not(:disabled),
   background: var(--color-teal-100);
   color: var(--color-teal-900);
   font-weight: 600;
+  box-shadow: inset 3px 0 0 0 var(--color-teal-700); /* a clear "you are here" bar */
 }
 .portal-nav-row--active > svg:first-child,
 .portal-nav-row.text-teal-900 > svg:first-child {

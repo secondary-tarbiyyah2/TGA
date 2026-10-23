@@ -106,7 +106,7 @@ export type SidebarIcon = IconName;
 /** `group` is the section the item sits under; items with no group are the
  * always-visible links at the top. `matchPrefixes` keeps an item highlighted
  * across related routes (e.g. a single class page keeps "My classes" lit). */
-export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean; group?: string; matchPrefixes?: string[] };
+export type SidebarItem = { href: string; label: string; icon: SidebarIcon; headOnly?: boolean; group?: string; matchPrefixes?: string[]; badge?: "actions" | "messages" | "todo" };
 export type SidebarGroup = { label: string; icon: SidebarIcon; items: SidebarItem[] };
 
 // Section names and their icons. Order here is the order in the sidebar.
@@ -132,7 +132,7 @@ const SECTION_ORDER = SECTIONS.map((s) => s.label);
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   admin: [
     { href: "/admin/dashboard", label: "Home", icon: "house" },
-    { href: "/admin/actions", label: "Action centre", icon: "flag", headOnly: true },
+    { href: "/admin/actions", label: "Action centre", icon: "flag", headOnly: true, badge: "actions" },
     { href: "/admin/classes", label: "Classes", icon: "presentation", headOnly: true, group: "Teaching", matchPrefixes: ["/admin/class"] },
     { href: "/admin/lessons", label: "Timetable and lessons", icon: "layoutDashboard", headOnly: true, group: "Teaching" },
     { href: "/admin/homework", label: "Homework", icon: "notebookPen", headOnly: true, group: "Teaching" },
@@ -152,7 +152,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/calendar", label: "Calendar", icon: "calendarDays", group: "Calendar" },
     { href: "/admin/parent-evenings", label: "Parent evenings", icon: "users", headOnly: true, group: "Calendar" },
     { href: "/admin/open-evening", label: "Open evenings", icon: "school", group: "Calendar" },
-    { href: "/admin/messages", label: "Messages", icon: "messageSquare", headOnly: true, group: "Communication" },
+    { href: "/admin/messages", label: "Messages", icon: "messageSquare", headOnly: true, badge: "messages", group: "Communication" },
     { href: "/admin/announcements", label: "Announcements", icon: "megaphone", headOnly: true, group: "Communication" },
     { href: "/admin/digest", label: "Weekly digest", icon: "inbox", headOnly: true, group: "Communication" },
     { href: "/admin/message-oversight", label: "Message oversight", icon: "shieldAlert", headOnly: true, group: "Communication" },
@@ -173,11 +173,11 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   ],
   teach: [
     { href: "/teach/dashboard", label: "Home", icon: "house" },
-    { href: "/teach/actions", label: "Action centre", icon: "flag" },
+    { href: "/teach/actions", label: "Action centre", icon: "flag", badge: "actions" },
     { href: "/teach/today", label: "Today", icon: "sun", matchPrefixes: ["/teach/enrichment"] },
-    { href: "/teach/classes", label: "My classes", icon: "presentation", group: "Teaching", matchPrefixes: ["/teach/class", "/teach/lessons"] },
+    { href: "/teach/classes", label: "My classes", icon: "presentation", matchPrefixes: ["/teach/class", "/teach/lessons"] },
     { href: "/teach/homework", label: "Homework", icon: "notebookPen", group: "Teaching" },
-    { href: "/teach/review", label: "To review", icon: "clipboardCheck", group: "Teaching" },
+    { href: "/teach/review", label: "To review", icon: "clipboardCheck" },
     { href: "/teach/assessment", label: "Assessment and grades", icon: "award", group: "Teaching" },
     { href: "/teach/curriculum", label: "Lesson library", icon: "library", group: "Teaching" },
     { href: "/teach/syllabus", label: "Syllabus and specs", icon: "scrollText", group: "Teaching" },
@@ -189,7 +189,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/teach/reports", label: "Reports", icon: "fileText", group: "Pupils" },
     { href: "/teach/calendar", label: "Calendar", icon: "calendarDays", group: "Calendar" },
     { href: "/teach/parent-evenings", label: "Parent evenings", icon: "users", group: "Calendar" },
-    { href: "/teach/messages", label: "Messages", icon: "messageSquare", group: "Communication" },
+    { href: "/teach/messages", label: "Messages", icon: "messageSquare", badge: "messages" },
     { href: "/teach/announcements", label: "Announcements", icon: "megaphone", group: "Communication" },
     { href: "/teach/profile", label: "My profile", icon: "userRound", group: "My staff area" },
     { href: "/teach/clock", label: "My hours", icon: "clock", group: "My staff area" },
@@ -198,16 +198,16 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   ],
   family: [
     { href: "/family/dashboard", label: "Home", icon: "house" },
-    { href: "/family/actions", label: "Action centre", icon: "flag" },
+    { href: "/family/actions", label: "Action centre", icon: "flag", badge: "actions" },
     { href: "/family/classes", label: "Classes", icon: "presentation", group: "Learning", matchPrefixes: ["/family/class", "/family/lessons"] },
-    { href: "/family/todo", label: "To do", icon: "listChecks", group: "Learning", matchPrefixes: ["/family/homework"] },
+    { href: "/family/todo", label: "To do", icon: "listChecks", badge: "todo", matchPrefixes: ["/family/homework"] },
     { href: "/family/behaviour", label: "Behaviour", icon: "heartHandshake", group: "Progress" },
     { href: "/family/reports", label: "Reports", icon: "fileText", group: "Progress" },
     { href: "/family/revision", label: "Revision", icon: "target", group: "Progress" },
     { href: "/family/quran", label: "Qur'an and Qaidah", icon: "bookMarked", group: "Qur'an" },
     { href: "/family/calendar", label: "Calendar", icon: "calendarDays", group: "Calendar" },
     { href: "/family/parent-evenings", label: "Parent evenings", icon: "users", group: "Calendar" },
-    { href: "/family/messages", label: "Messages", icon: "messageSquare", group: "Communication" },
+    { href: "/family/messages", label: "Messages", icon: "messageSquare", badge: "messages" },
     { href: "/family/announcements", label: "Announcements", icon: "megaphone", group: "Communication" },
     { href: "/family/child-details", label: "Child details", icon: "contact", group: "My family" },
     { href: "/family/absences", label: "Report an absence", icon: "calendarX", group: "My family" },
@@ -216,9 +216,9 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   ],
   student: [
     { href: "/student/dashboard", label: "Home", icon: "house" },
-    { href: "/student/actions", label: "Action centre", icon: "flag" },
-    { href: "/student/classes", label: "My classes", icon: "presentation", group: "Learning", matchPrefixes: ["/student/class", "/student/lessons"] },
-    { href: "/student/todo", label: "To do", icon: "listChecks", group: "Learning", matchPrefixes: ["/student/homework"] },
+    { href: "/student/actions", label: "Action centre", icon: "flag", badge: "actions" },
+    { href: "/student/classes", label: "My classes", icon: "presentation", matchPrefixes: ["/student/class", "/student/lessons"] },
+    { href: "/student/todo", label: "To do", icon: "listChecks", badge: "todo", matchPrefixes: ["/student/homework"] },
     { href: "/student/revision", label: "Unit revision", icon: "target", group: "Learning" },
     { href: "/student/quran", label: "Qur'an and Qaidah", icon: "bookMarked", group: "Qur'an" },
     { href: "/student/calendar", label: "Calendar", icon: "calendarDays", group: "Learning" },
@@ -277,9 +277,9 @@ export const AREA_SUBTITLE: Record<PortalArea, string> = {
 /** The four pages each kind of user goes to most: the phone tab bar shows
  * these, and the phone "More" menu leaves them out so nothing appears twice. */
 export const MOBILE_TABS: Record<PortalArea, string[]> = {
-  student: ["/student/dashboard", "/student/classes", "/student/todo", "/student/calendar"],
-  family: ["/family/dashboard", "/family/classes", "/family/todo", "/family/messages"],
-  teach: ["/teach/today", "/teach/classes", "/teach/review", "/teach/messages"],
+  student: ["/student/dashboard", "/student/todo", "/student/actions", "/student/classes"],
+  family: ["/family/dashboard", "/family/todo", "/family/actions", "/family/messages"],
+  teach: ["/teach/today", "/teach/classes", "/teach/actions", "/teach/messages"],
   admin: ["/admin/dashboard", "/admin/attendance", "/admin/messages", "/admin/calendar"],
 };
 

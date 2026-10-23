@@ -9,7 +9,7 @@ export default function AdminEnrichmentPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <PageHeader
-          crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Enrichment" }]}
+          crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Enrichment" }]}
           title="Enrichment attendance"
           subtitle="Who joined each supervised enrichment block, as ticked by its supervisor."
         />

@@ -270,7 +270,7 @@ function ReportsContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Attendance" }]}
+        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Attendance" }]}
         title="Attendance"
         subtitle="Whole-school register, filtered by lesson date."
         actions={
@@ -601,7 +601,7 @@ function TakeRegister() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Take register" subtitle="Take or correct the register for any lesson in the school." />
+      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Take register" subtitle="Take or correct the register for any lesson in the school." />
       <div className="mb-5 flex flex-wrap items-center gap-2 rounded-2xl border border-gold-light bg-white p-3">
         <button type="button" onClick={() => go(shiftDate(date, -1))} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream" aria-label="Previous day">
           ‹ Prev

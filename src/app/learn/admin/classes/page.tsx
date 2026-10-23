@@ -12,7 +12,7 @@ function AdminClassesContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Classes" }]}
+        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Classes" }]}
         title="Classes"
         subtitle="Every class in the school. Open one to see its week-by-week course page."
         actions={

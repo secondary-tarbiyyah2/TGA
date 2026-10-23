@@ -150,7 +150,7 @@ function ContentAdmin() {
   const [tab, setTab] = useState<Tab>("Site settings");
   return (
     <div className="space-y-6">
-      <PageHeader crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Website content" }]} title="Website content" subtitle="Everything published on the public website, managed here." />
+      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Website content" }]} title="Website content" subtitle="Everything published on the public website, managed here." />
       <div className="flex flex-wrap gap-2">
         {TABS.map((t) => (
           <button

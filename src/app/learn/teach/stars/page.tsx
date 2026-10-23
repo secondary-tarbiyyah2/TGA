@@ -11,7 +11,7 @@ export default function TeachStarsPage() {
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
           <PageHeader
-            crumbs={[{ label: "Dashboard", href: "/teach/dashboard" }, { label: "Star of the week" }]}
+            crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Star of the week" }]}
             title="Star of the week"
             subtitle="Nominate one pupil from each of your classes. The Headteacher approves, then the family gets a certificate."
           />

@@ -76,7 +76,7 @@ function FamilyBehaviourContent() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Dashboard", href: "/family/dashboard" }, { label: "Behaviour" }]} title="Behaviour" subtitle={`Celebrating ${childName}'s good choices and progress.`} />
+      <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Behaviour" }]} title="Behaviour" subtitle={`Celebrating ${childName}'s good choices and progress.`} />
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
       {children && children.length > 1 && (
         <select value={selected} onChange={(e) => setSelected(e.target.value)} aria-label="Child" className="mb-4 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm">

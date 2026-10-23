@@ -79,7 +79,7 @@ function TeachBehaviourContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Dashboard", href: "/teach/dashboard" }, { label: "Behaviour" }]}
+        crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Behaviour" }]}
         title="Behaviour"
         subtitle="Celebrate good choices and follow up on the rest, for the students you teach."
         actions={

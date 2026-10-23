@@ -9,7 +9,7 @@ export default function AdminParentEveningsPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <PageHeader
-          crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Parent evenings" }]}
+          crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Parent evenings" }]}
           title="Parent evenings"
           subtitle="Set the date, meeting length and teachers. Parents book their own slot from the family area; no slot can be booked twice."
         />

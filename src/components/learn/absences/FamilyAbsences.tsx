@@ -110,7 +110,7 @@ export function FamilyAbsences() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Dashboard", href: "/family/dashboard" }, { label: "Absences" }]} title="Report an absence" subtitle="Let us know why your child was, or will be, away. It helps us look after them." />
+      <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Absences" }]} title="Report an absence" subtitle="Let us know why your child was, or will be, away. It helps us look after them." />
       {loadError && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load. Please refresh in a moment.</p>}
 
       {nudges.length > 0 && (

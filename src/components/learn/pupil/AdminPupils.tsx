@@ -112,7 +112,7 @@ export function AdminPupils() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Pupils" }]} title="Pupils" subtitle="Home, health, emergency contacts and consents for every pupil, as completed by their families." />
+      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Pupils" }]} title="Pupils" subtitle="Home, health, emergency contacts and consents for every pupil, as completed by their families." />
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
 
       <div className="space-y-4">

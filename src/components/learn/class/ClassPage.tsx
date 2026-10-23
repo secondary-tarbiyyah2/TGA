@@ -177,7 +177,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
   if (cls === null) return <p className="text-sm text-ink/65">That class couldn&apos;t be found, or you don&apos;t have access to it.</p>;
 
   const crumbs: Crumb[] = [
-    { label: "Dashboard", href: `${area}/dashboard` },
+    { label: "Home", href: `${area}/dashboard` },
     { label: viewer.kind === "staff" ? "Classes" : "My classes", href: `${area}/classes${viewer.kind === "parent" ? `?child=${viewer.childId}` : ""}` },
     { label: cls.name },
   ];

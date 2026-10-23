@@ -13,9 +13,9 @@ const STAFF_VIEWER: ClassViewer = { kind: "staff" };
 const TEACHER_VIEWER: ClassViewer = { kind: "teacher" };
 
 const CRUMBS: Record<AnnouncementsMode, { label: string; href: string }> = {
-  admin: { label: "Dashboard", href: "/admin/dashboard" },
-  teach: { label: "Dashboard", href: "/teach/dashboard" },
-  family: { label: "Dashboard", href: "/family/dashboard" },
+  admin: { label: "Home", href: "/admin/dashboard" },
+  teach: { label: "Home", href: "/teach/dashboard" },
+  family: { label: "Home", href: "/family/dashboard" },
   student: { label: "Home", href: "/student/dashboard" },
 };
 

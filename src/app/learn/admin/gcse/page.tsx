@@ -40,7 +40,7 @@ function AdminGcseContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "GCSE progress" }]}
+        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "GCSE progress" }]}
         title="GCSE progress"
         subtitle="Target, predicted and actual grades (1–9) for Years 10 and 11. See who needs help first, compare classes and subjects, and open a pupil for their grade history and mock exams, and track interventions with an owner and next step. Pupils and parents see their own."
       />

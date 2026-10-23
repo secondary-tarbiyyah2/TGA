@@ -11,7 +11,7 @@ export default function TeachQuranPage() {
       <LearnGate allowedRoles={["teacher"]}>
         <LearnShell role="teach">
           <PageHeader
-            crumbs={[{ label: "Dashboard", href: "/teach/dashboard" }, { label: "Qur'an" }]}
+            crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Qur'an" }]}
             title="Qur'an and Qaidah"
             subtitle="Set homework for a level group, mark it out of 10, schedule one-to-one recitation and keep revision on track."
           />

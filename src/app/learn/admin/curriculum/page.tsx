@@ -10,7 +10,7 @@ export default function AdminCurriculumPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <PageHeader
-          crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Lesson library" }]}
+          crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Lesson library" }]}
           title="Lesson library"
           subtitle="Pick a year, then a unit. Each unit has its lessons (slides and plans, with version history), its revision pack for pupils, and pupil results."
         />

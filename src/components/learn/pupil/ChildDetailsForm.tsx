@@ -348,7 +348,7 @@ export function ChildDetailsForm() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Dashboard", href: "/family/dashboard" }, { label: "Child details" }]}
+        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Child details" }]}
         title="Child details"
         subtitle="The information every school needs: home, health, who to call in an emergency, and your consents. Each section saves as you go."
       />

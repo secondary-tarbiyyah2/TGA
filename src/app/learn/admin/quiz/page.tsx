@@ -35,7 +35,7 @@ function AdminQuizContent() {
   return (
     <div>
       <PageHeader
-        crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Quiz and sample weeks" }]}
+        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Quiz and sample weeks" }]}
         title="Quiz and sample weeks"
         subtitle={"Edit \"Your Child's Week\": questions, the rules editor, result sections, sample weeks for each year group, and quiz analytics."}
       />

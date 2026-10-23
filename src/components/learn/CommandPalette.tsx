@@ -79,8 +79,15 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         else openPalette();
       }
     };
+    const onOpenEvent = () => {
+      if (!open) openPalette();
+    };
+    window.addEventListener("tga:open-search", onOpenEvent);
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("tga:open-search", onOpenEvent);
+      window.removeEventListener("keydown", onKey);
+    };
   }, [open, openPalette, closePalette]);
 
   // Classes and recent pages load when the palette first opens.

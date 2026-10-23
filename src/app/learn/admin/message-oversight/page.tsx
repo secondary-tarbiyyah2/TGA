@@ -27,7 +27,7 @@ function Oversight() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Dashboard", href: "/learn" }, { label: "Message oversight" }]}
+        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Message oversight" }]}
         title="Message oversight"
       />
       <div role="note" className="mb-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">

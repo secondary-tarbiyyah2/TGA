@@ -90,7 +90,7 @@ function ComplianceContent() {
 
   return (
     <div className="space-y-6">
-      <PageHeader crumbs={[{ label: "Dashboard", href: "/admin/dashboard" }, { label: "Safeguarding and compliance" }]} title="Safeguarding and compliance" subtitle="Alerts that need action, outstanding policy signatures, and the school's statutory records." />
+      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Safeguarding and compliance" }]} title="Safeguarding and compliance" subtitle="Alerts that need action, outstanding policy signatures, and the school's statutory records." />
 
       <SafeguardingLeadsBanner canManage={isHeadTeacher} />
 

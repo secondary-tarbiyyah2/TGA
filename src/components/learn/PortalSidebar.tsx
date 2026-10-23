@@ -10,6 +10,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
 import { AREA_SUBTITLE, MOBILE_TABS, isSidebarItemActive, sidebarLayout, withoutPages, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
 import { Icon } from "@/components/learn/Icon";
+import { NavBadge, useNavBadges, type NavBadges } from "@/lib/learn/navBadges";
 
 const AREA_NAMES: Record<string, string> = {
   "/admin/dashboard": "School administration",
@@ -68,18 +69,20 @@ function useOpenSections(area: PortalArea, sections: SidebarGroup[], pathname: s
   return { open, toggle, ensureOpen, activeLabel };
 }
 
-function NavLink({ item, active, collapsed, onNavigate }: { item: SidebarItem; active: boolean; collapsed: boolean; onNavigate?: () => void }) {
+function NavLink({ item, active, collapsed, onNavigate, count }: { item: SidebarItem; active: boolean; collapsed: boolean; onNavigate?: () => void; count?: number }) {
   return (
     <Link
       href={item.href}
       onClick={onNavigate}
       aria-current={active ? "page" : undefined}
       title={collapsed ? item.label : undefined}
-      aria-label={collapsed ? item.label : undefined}
-      className={`portal-nav-row ${collapsed ? "justify-center" : ""} ${active ? "portal-nav-row--active" : ""}`}
+      aria-label={collapsed ? (count ? `${item.label} (${count} waiting)` : item.label) : undefined}
+      className={`portal-nav-row relative ${collapsed ? "justify-center" : ""} ${active ? "portal-nav-row--active" : ""}`}
     >
       <Icon name={item.icon} className="h-5 w-5 shrink-0" />
       {!collapsed && <span className="min-w-0 flex-1 truncate">{item.label}</span>}
+      {!collapsed && <NavBadge count={count} alert={item.badge !== "messages"} />}
+      {collapsed && !!count && <span aria-hidden="true" className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-700" />}
     </Link>
   );
 }
@@ -93,6 +96,7 @@ function NavSection({
   onToggle,
   onExpandTo,
   onNavigate,
+  badges,
 }: {
   section: SidebarGroup;
   isOpen: boolean;
@@ -102,6 +106,7 @@ function NavSection({
   onToggle: () => void;
   onExpandTo?: () => void;
   onNavigate?: () => void;
+  badges: NavBadges;
 }) {
   const panelId = useId();
   if (collapsed) {
@@ -137,8 +142,9 @@ function NavSection({
             const active = isSidebarItemActive(pathname, i);
             return (
               <li key={i.href}>
-                <Link href={i.href} onClick={onNavigate} aria-current={active ? "page" : undefined} className={`portal-nav-sub ${active ? "portal-nav-sub--active" : ""}`}>
-                  {i.label}
+                <Link href={i.href} onClick={onNavigate} aria-current={active ? "page" : undefined} className={`portal-nav-sub flex items-center gap-2 ${active ? "portal-nav-sub--active" : ""}`}>
+                  <span className="min-w-0 flex-1 truncate">{i.label}</span>
+                  <NavBadge count={i.badge ? badges[i.badge] : undefined} alert={i.badge !== "messages"} />
                 </Link>
               </li>
             );
@@ -182,6 +188,7 @@ function SidebarBody({
   const firstSection = entries.findIndex((e) => e.kind === "section" || !!e.item.group);
   const sections = entries.flatMap((e) => (e.kind === "section" ? [e.section] : []));
   const { open, toggle, ensureOpen, activeLabel } = useOpenSections(area, sections, pathname);
+  const badges = useNavBadges(area);
   const areas = [...new Set(roles.map((r) => dashboardPathForRole(r.role)))];
   const roleLabel = [...new Set(roles.map((r) => learnRoleLabel(r.role)))].join(" · ");
   const displayName = fullName || session.user.email || "Your account";
@@ -224,6 +231,19 @@ function SidebarBody({
         )}
       </div>
 
+      <div className={collapsed ? "px-2 pb-1" : "px-3 pb-1"}>
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event("tga:open-search"))}
+          title="Search pupils, pages and classes (Ctrl K)"
+          aria-label="Search pupils, pages and classes"
+          className={collapsed ? "portal-nav-row w-full justify-center" : "flex w-full items-center gap-2 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink/60 hover:border-teal-700 hover:text-ink"}
+        >
+          <Icon name="search" className="h-4 w-4 shrink-0" />
+          {!collapsed && <span className="min-w-0 flex-1 truncate text-left">Search…</span>}
+          {!collapsed && <kbd className="rounded border border-gold-light bg-cream px-1.5 py-0.5 text-[10px] font-medium text-ink/60">Ctrl K</kbd>}
+        </button>
+      </div>
       <nav aria-label={AREA_SUBTITLE[area]} className={`min-h-0 flex-1 overflow-y-auto overscroll-contain pb-4 ${collapsed ? "px-2" : "px-3"}`}>
         {!collapsed && <p className="portal-nav-label">{AREA_SUBTITLE[area]}</p>}
         <ul className="space-y-0.5">
@@ -231,9 +251,10 @@ function SidebarBody({
             <li key={e.kind === "link" ? e.item.href : e.section.label}>
               {idx === firstSection && idx > 0 && <div role="presentation" className={`my-2 border-t border-gold-light ${collapsed ? "mx-1" : "mx-2"}`} />}
               {e.kind === "link" ? (
-                <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} collapsed={collapsed} onNavigate={onNavigate} />
+                <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} collapsed={collapsed} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} />
               ) : (
                 <NavSection
+                  badges={badges}
                   section={e.section}
                   isOpen={open.has(e.section.label)}
                   hasActive={e.section.label === activeLabel}
