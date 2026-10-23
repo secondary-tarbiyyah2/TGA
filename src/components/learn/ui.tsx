@@ -48,6 +48,22 @@ const CHIP: Record<Tone, string> = {
   bad: "bg-red-50 text-red-800 ring-red-600/20",
 };
 
+
+/** An on/off switch with a sliding knob — clearer than a bare checkbox for settings. */
+export function Switch({ checked, onChange, label, hint }: { checked: boolean; onChange: (next: boolean) => void; label: string; hint?: string }) {
+  return (
+    <button type="button" role="switch" aria-checked={checked} onClick={() => onChange(!checked)} className={`group flex w-full items-start gap-3 rounded-lg px-3 py-2 text-left hover:bg-cream ${focus}`}>
+      <span aria-hidden="true" className={`relative mt-0.5 inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors ${checked ? "bg-teal-700" : "bg-ink/25"}`}>
+        <span className={`absolute h-4 w-4 rounded-full bg-white shadow transition-[left] motion-reduce:transition-none ${checked ? "left-[18px]" : "left-0.5"}`} />
+      </span>
+      <span className="min-w-0">
+        <span className="block text-sm font-medium text-ink">{label}</span>
+        {hint && <span className="block text-xs text-ink/65">{hint}</span>}
+      </span>
+    </button>
+  );
+}
+
 /** A small status label: Present, Late, Draft, Issued, Overdue… */
 export function StatusChip({ tone = "neutral", children }: { tone?: Tone; children: ReactNode }) {
   return <span className={`inline-flex shrink-0 items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset ${CHIP[tone]}`}>{children}</span>;

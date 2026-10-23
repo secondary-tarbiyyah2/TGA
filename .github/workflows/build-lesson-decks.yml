@@ -102,7 +102,7 @@ jobs:
         run: |
           if ! command -v soffice >/dev/null; then
             sudo apt-get update -y
-            sudo apt-get install -y --no-install-recommends libreoffice-impress fonts-liberation fonts-crosextra-carlito fonts-noto-core fonts-noto-naskh-arabic || sudo apt-get install -y libreoffice
+            sudo apt-get install -y --no-install-recommends libreoffice-impress fonts-liberation fonts-crosextra-carlito fonts-dejavu-core fonts-noto-core fonts-noto-naskh-arabic || sudo apt-get install -y libreoffice
           fi
 
       - name: Convert needed decks to PDF

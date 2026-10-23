@@ -6,6 +6,7 @@ import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatStamp } from "./data";
 import { PupilRecord } from "./PupilRecord";
+import { PupilOverview } from "./PupilOverview";
 import { ackState, usePupils, type PupilRow } from "./usePupils";
 import { Tabs } from "@/components/learn/Tabs";
 import { localDateKey } from "@/lib/learn/calendar";
@@ -206,7 +207,8 @@ export function TeachPupils() {
                 Close
               </button>
             </div>
-            <div className="overflow-y-auto p-4">
+            <div className="space-y-4 overflow-y-auto p-4">
+              <PupilOverview childId={open.id} />
               <PupilRecord teacherView child={{ id: open.id, name: open.name, dob: open.dob, yearGroup: open.yearGroup, classes: open.classes.map((c) => c.name) }} />
             </div>
             {canAcknowledge && (

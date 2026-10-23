@@ -147,7 +147,7 @@ export function LearnAccountMenu({ session, roles }: { session: Session; roles: 
 
           <div className="border-t border-gold-light/70 p-1.5">
             <p className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink/65">View</p>
-            <ViewSettingsPanel />
+            <ViewSettingsPanel portal />
           </div>
 
           <div className="border-t border-gold-light/70 p-1.5">

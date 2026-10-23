@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Switch } from "@/components/learn/ui";
 
 const KEY = "tga-view";
-type View = { text: boolean; reading: boolean; contrast: boolean };
-const OFF: View = { text: false, reading: false, contrast: false };
+type View = { text: boolean; reading: boolean; contrast: boolean; dark: boolean };
+const OFF: View = { text: false, reading: false, contrast: false, dark: false };
 
 function read(): View {
   try {
@@ -19,6 +20,7 @@ function apply(v: View) {
   r.toggleAttribute("data-large-text", v.text);
   r.toggleAttribute("data-reading", v.reading);
   r.toggleAttribute("data-contrast", v.contrast);
+  r.toggleAttribute("data-dark", v.dark);
 }
 
 /** Restores the saved view settings as soon as any page with a header opens. */
@@ -28,14 +30,15 @@ export function useRestoreView() {
   }, []);
 }
 
-const OPTIONS: { key: keyof View; label: string; hint: string }[] = [
+const OPTIONS: { key: keyof View; label: string; hint: string; portalOnly?: boolean }[] = [
+  { key: "dark", label: "Dark mode", hint: "A dark portal, easier on the eyes in the evening.", portalOnly: true },
   { key: "text", label: "Larger text", hint: "Bigger type everywhere." },
   { key: "reading", label: "Easy reading", hint: "Softer background, wider spacing, left-aligned text." },
   { key: "contrast", label: "High contrast", hint: "Darker text and stronger lines." },
 ];
 
-/** The three view options as switches. Remembered on this device. */
-export function ViewSettingsPanel({ className = "" }: { className?: string }) {
+/** The view options as switches. Remembered on this device; dark mode only shows (and applies) in the portal. */
+export function ViewSettingsPanel({ className = "", portal = false }: { className?: string; portal?: boolean }) {
   const [view, setView] = useState<View>(OFF);
   useEffect(() => {
     const v = read();
@@ -55,14 +58,8 @@ export function ViewSettingsPanel({ className = "" }: { className?: string }) {
   };
   return (
     <div className={className}>
-      {OPTIONS.map((o) => (
-        <label key={o.key} className="flex cursor-pointer items-start gap-3 rounded-lg px-3 py-2 hover:bg-cream">
-          <input type="checkbox" role="switch" checked={view[o.key]} onChange={() => toggle(o.key)} className="mt-1 h-4 w-4 accent-teal-700" />
-          <span>
-            <span className="block text-sm font-medium text-ink">{o.label}</span>
-            <span className="block text-xs text-ink/65">{o.hint}</span>
-          </span>
-        </label>
+      {OPTIONS.filter((o) => portal || !o.portalOnly).map((o) => (
+        <Switch key={o.key} checked={view[o.key]} onChange={() => toggle(o.key)} label={o.label} hint={o.hint} />
       ))}
     </div>
   );

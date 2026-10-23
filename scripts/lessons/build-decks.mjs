@@ -361,8 +361,9 @@ function layoutSplit(slide, ctx, bullets, area, keyword) {
   const gap = 0.18;
   const h = Math.min(1.5, (area.h - gap * (list.length - 1)) / list.length);
   const size = Math.min(...list.map((b) => fitSize(b, w - 0.9, h - 0.15, BAND[ctx.band].bodyMax - 4, BAND[ctx.band].bodyMin)));
+  const yStart = area.y + Math.max(0, (area.h - (list.length * h + (list.length - 1) * gap)) / 2);
   list.forEach((b, i) => {
-    const y = area.y + i * (h + gap);
+    const y = yStart + i * (h + gap);
     slide.addShape("roundRect", { x, y, w, h, rectRadius: 0.1, fill: { color: i % 2 ? "FFFFFF" : CREAM }, line: { color: LINE, width: 0.75 } });
     slide.addShape("rect", { x: x + 0.25, y: y + h / 2 - 0.09, w: 0.18, h: 0.18, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 }, rotate: 45 });
     slide.addText(clean(b), { x: x + 0.65, y, w: w - 0.85, h, fontFace: FONT, fontSize: size, color: INK, valign: "middle" });
@@ -491,9 +492,27 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
   // Count slides as they're added so the lesson plan can point to them.
   const addSlide = pptx.addSlide.bind(pptx);
   let slideCount = 0;
+  // Recurring-decimal dots and other combining marks (U+0300-036F) garble in Calibri/Carlito/
+  // Georgia under LibreOffice, which makes the PDF copies wrong; DejaVu Sans anchors them
+  // correctly (verified by rendering). Any text run containing one is switched to DejaVu Sans.
+  const COMB = /[\u0300-\u036f\u20d0-\u20dc]/;
   pptx.addSlide = (o) => {
     slideCount++;
-    return addSlide(o);
+    const s = addSlide(o);
+    const at = s.addText.bind(s);
+    s.addText = (txt, opts = {}) => {
+      if (typeof txt === "string" && COMB.test(txt)) return at(txt, { ...opts, fontFace: "DejaVu Sans" });
+      if (Array.isArray(txt)) return at(txt.map((r) => (r && typeof r === "object" && typeof r.text === "string" && COMB.test(r.text) ? { ...r, options: { ...(r.options || {}), fontFace: "DejaVu Sans" } } : r)), opts);
+      return at(txt, opts);
+    };
+    const atb = s.addTable.bind(s);
+    const fixCell = (c) => {
+      if (typeof c === "string" && COMB.test(c)) return { text: c, options: { fontFace: "DejaVu Sans" } };
+      if (c && typeof c === "object" && typeof c.text === "string" && COMB.test(c.text)) return { ...c, options: { ...(c.options || {}), fontFace: "DejaVu Sans" } };
+      return c;
+    };
+    s.addTable = (rows, opts) => atb(Array.isArray(rows) ? rows.map((r) => (Array.isArray(r) ? r.map(fixCell) : r)) : rows, opts);
+    return s;
   };
   const S = { teach: [] };
   let breaksAdded = 0;
@@ -517,8 +536,8 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     background: { color: "FFFFFF" },
     objects: [
       { rect: { x: 0, y: 7.05, w: W, h: 0.45, fill: { color: "FFFFFF" }, line: { color: "E5E5E5", width: 0.5 } } },
-      { image: { path: LOGO_DARK, x: 0.45, y: 7.1, w: 0.34 * LOGO_RATIO, h: 0.34 } },
-      { text: { text: `${ctx.subjectLabel} · ${ctx.yearLabel} · Lesson ${lesson.n}`, options: { x: 2.0, y: 7.1, w: 8, h: 0.34, fontFace: FONT, fontSize: 11, color: MUTED, valign: "middle" } } },
+      { text: { text: "TARBIYYAH GLOBAL ACADEMY", options: { x: 0.45, y: 7.1, w: 2.5, h: 0.34, fontFace: FONT, fontSize: 9, bold: true, color: GOLD_DARK, charSpacing: 2, valign: "middle" } } },
+      { text: { text: `${ctx.subjectLabel} · ${ctx.yearLabel} · Lesson ${lesson.n}`, options: { x: 3.1, y: 7.1, w: 6.9, h: 0.34, fontFace: FONT, fontSize: 11, color: MUTED, valign: "middle" } } },
     ],
     slideNumber: { x: 12.2, y: 7.1, w: 0.7, h: 0.34, fontFace: FONT, fontSize: 11, color: MUTED, align: "right" },
   });
@@ -818,14 +837,16 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       }
       const n = cards.length;
       const gap = 0.3;
-      const w = (11.8 - gap * (n - 1)) / n;
-      const h = hub ? 2.3 : 3.6;
+      const w = Math.min(n === 1 ? 7.6 : 5.9, (11.8 - gap * (n - 1)) / n);
+      const h = hub ? 2.3 : Math.min(3.6, n === 1 ? 2.6 : 3.6);
+      const x0 = 0.8 + (11.8 - (w * n + gap * (n - 1))) / 2;
+      if (!hub && h < 3.4) y += 0.45; // centre a shallow row in the space
       cards.forEach((c, i) => {
-        const x = 0.8 + i * (w + gap);
+        const x = x0 + i * (w + gap);
         s.addShape("roundRect", { x, y, w, h, rectRadius: 0.12, fill: { color: "FFFFFF" }, line: { color: ctx.accent, width: 2 } });
         s.addShape("rect", { x, y, w, h: 0.62, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
-        s.addText(clean(c.head), { x: x + 0.2, y, w: w - 0.4, h: 0.62, fontFace: FONT, fontSize: 18, bold: true, color: "FFFFFF", valign: "middle" });
-        s.addText(clean(c.text), { x: x + 0.2, y: y + 0.72, w: w - 0.4, h: h - 0.85, fontFace: FONT, fontSize: fitSize(clean(c.text), w - 0.4, h - 0.85, 18, 11), color: INK, valign: "top" });
+        s.addText(clean(c.head), { x: x + 0.25, y, w: w - 0.5, h: 0.62, fontFace: FONT, fontSize: 18, bold: true, color: "FFFFFF", valign: "middle" });
+        s.addText(clean(c.text), { x: x + 0.25, y: y + 0.72, w: w - 0.5, h: h - 0.92, fontFace: FONT, fontSize: fitSize(clean(c.text), w - 0.5, h - 0.92, 19, 13), color: INK, valign: "middle" });
       });
       y += h + 0.25;
       s.addShape("roundRect", { x: 0.8, y, w: 11.8, h: Math.min(0.8, 6.85 - y), rectRadius: 0.1, fill: { color: "FBF3DC" }, line: { color: GOLD, width: 1.5 } });

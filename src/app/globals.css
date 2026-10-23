@@ -481,3 +481,96 @@ html[data-contrast] :is(.text-ink\/60, .text-ink\/65, .text-ink\/70, .text-ink\/
 html[data-contrast] a:not([class]) {
   text-decoration: underline;
 }
+
+/* ── Dark mode (the "Dark mode" switch in the portal account menu; ViewSettings.tsx sets
+   data-dark on <html>). Portal only: everything below is scoped to .portal, so the marketing
+   site keeps its daylight look. Utilities resolve the theme variables at the element, so
+   redefining the variables inside this scope recolours the whole portal; the few classes that
+   use one colour as both a text and a background colour get their background pinned by class. */
+html[data-dark] .portal {
+  color-scheme: dark;
+  --portal-canvas: #16181a;
+  --color-white: #1f2225; /* cards */
+  --color-cream: #292c2f; /* tint surface */
+  --portal-hover: #2d3135;
+  --color-gold-light: #3c4044; /* hairlines */
+  --portal-shadow-rgb: 0, 0, 0;
+  --portal-focus-ring: rgba(95, 194, 187, 0.35);
+  --background: #16181a;
+  --foreground: #e9e7e2;
+
+  --color-ink: #e9e7e2;
+  --color-ink-900: #edebe6;
+  --color-ink-700: #d2cfc9;
+  --color-ink-500: #a2a7ad;
+
+  --color-gold-50: #232528;
+  --color-gold-100: #38332a;
+  --color-gold-300: #5f5a49;
+  --color-gold-500: #c8a858;
+  --color-gold-700: #dcbc6c; /* as text */
+  --color-gold-900: #e8d194; /* as text */
+  --color-gold: #c8a858;
+  --color-gold-dark: #e8d194;
+
+  --color-teal-50: #1a2e2c;
+  --color-teal-100: #1d3a37;
+  --color-teal-500: #4fb3ab;
+  --color-teal-700: #63c4bc; /* as text */
+  --color-teal-900: #a3ded8;
+
+  --color-red-50: #3a2522;
+  --color-red-100: #4a2d28;
+  --color-red-200: #6e4038;
+  --color-red-300: #7d4a40;
+  --color-red-700: #f09a8d; /* as text */
+  --color-red-800: #f4b1a6;
+  --color-amber-50: #3a3220;
+  --color-amber-100: #4a3f27;
+  --color-amber-200: #6e5c30;
+  --color-amber-600: #d9a93f;
+  --color-amber-800: #e6c57e;
+  --color-amber-900: #efd396;
+  --color-green-50: #20352a;
+  --color-green-100: #294434;
+  --color-green-200: #3a5c46;
+  --color-green-700: #93d5ab;
+  --color-green-800: #a7deba;
+  --color-green-900: #bae6c9;
+}
+/* Colours used as solid backgrounds with white (or ink) text keep button-like depth. */
+html[data-dark] .portal {
+  --color-red-600: #c0594c;
+}
+html[data-dark] .portal :is(.bg-gold-700) {
+  background-color: #8a6f2e;
+}
+html[data-dark] .portal :is(.hover\:bg-gold-900:hover, .bg-gold-900) {
+  background-color: #6e5724;
+}
+html[data-dark] .portal :is(.bg-teal-700) {
+  background-color: #1f6f6b;
+}
+html[data-dark] .portal :is(.bg-teal-600) {
+  background-color: #257f7a;
+}
+html[data-dark] .portal :is(.bg-red-700, .hover\:bg-red-800:hover) {
+  background-color: #a8453a;
+}
+html[data-dark] .portal :is(.bg-gold-500) {
+  background-color: #b08e45;
+}
+html[data-dark] .portal :is(.bg-teal-900) {
+  background-color: #0f3d3a;
+}
+/* The wordmark is ink-on-transparent; on a dark sidebar show it as white. */
+html[data-dark] .portal img[src*="ga-wordmark"] {
+  filter: brightness(0) invert(1) opacity(0.92);
+}
+html[data-dark] .portal :is(.shadow-warm, .shadow-sm, .shadow, .shadow-lg) {
+  --tw-shadow-color: rgba(0, 0, 0, 0.45);
+}
+/* Easy reading's parchment background only applies in light mode. */
+html[data-dark][data-reading] .portal:not(.fixed) {
+  background: #191c1e;
+}

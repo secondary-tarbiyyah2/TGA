@@ -26,7 +26,8 @@ const slug = (s) => clean(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/
 const yl = (y) => (/^y(\d+)$/.test(y) ? `Year ${y.slice(1)}` : y === "reception" ? "Reception" : y);
 const LETTERS = "ABCDEFGH";
 
-const run = (t, o = {}) => new TextRun({ text: String(t ?? "").replace(/[ \t]+/g, " "), font: o.font || FONT, size: o.size || 21, bold: o.bold, italics: o.italics, color: o.color || INK });
+const COMB = /[\u0300-\u036f\u20d0-\u20dc]/;
+const run = (t, o = {}) => new TextRun({ text: String(t ?? "").replace(/[ \t]+/g, " "), font: COMB.test(String(t ?? "")) ? "DejaVu Sans" : o.font || FONT, size: o.size || 21, bold: o.bold, italics: o.italics, color: o.color || INK });
 const para = (kids, o = {}) => new Paragraph({ children: Array.isArray(kids) ? kids : [kids], spacing: { before: o.before ?? 0, after: o.after ?? 80, line: 270 }, alignment: o.align, numbering: o.numbering, keepNext: o.keepNext, indent: o.indent, shading: o.fill ? { type: ShadingType.CLEAR, fill: o.fill, color: "auto" } : undefined, border: o.border });
 const bullet = (t, o = {}) => para([run(t, o)], { numbering: { reference: "b", level: 0 }, after: 40 });
 const h1 = (t, accent) => para([run(t.toUpperCase(), { size: 26, bold: true, color: accent })], { before: 280, after: 120, keepNext: true, border: { bottom: { style: BorderStyle.SINGLE, size: 10, color: accent, space: 4 } } });
