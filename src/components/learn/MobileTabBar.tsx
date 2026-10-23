@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MOBILE_TABS, SIDEBAR_NAV, isSidebarItemActive, type PortalArea, type SidebarItem } from "@/lib/learn/nav";
+import { MOBILE_TABS, SIDEBAR_NAV, isSidebarItemActive, tileFor, type PortalArea, type SidebarItem } from "@/lib/learn/nav";
+import { useNavBadges } from "@/lib/learn/navBadges";
 import { Icon } from "@/components/learn/Icon";
 
 // The four places each kind of user goes most, one tap away at the bottom
@@ -24,6 +25,7 @@ export const OPEN_MENU_EVENT = "tga-open-menu";
 
 export function MobileTabBar({ area, roles }: { area: PortalArea; roles: string[] }) {
   const pathname = usePathname();
+  const badges = useNavBadges(area);
   const isHead = roles.some((r) => r === "head_teacher" || r === "admin");
   const items = MOBILE_TABS[area]
     .map((href) => SIDEBAR_NAV[area].find((i) => i.href === href))
@@ -38,8 +40,9 @@ export function MobileTabBar({ area, roles }: { area: PortalArea; roles: string[
           return (
             <li key={i.href} className="flex-1">
               <Link href={i.href} aria-current={active ? "page" : undefined} className={`flex flex-col items-center gap-0.5 px-1 pb-1.5 pt-2 text-[11px] font-medium ${active ? "text-teal-700" : "text-ink/65"}`}>
-                <span className={`flex h-7 w-12 items-center justify-center rounded-full ${active ? "bg-teal-100" : ""}`}>
+                <span className={`portal-tile relative !h-7 !w-12 !rounded-full ${active ? tileFor(i.icon) : ""}`} style={active ? undefined : { background: "transparent", color: "inherit" }}>
                   <Icon name={i.icon} className="h-5 w-5" />
+                  {!!(i.badge && badges[i.badge]) && <span aria-hidden="true" className="absolute right-2 top-0 h-2 w-2 rounded-full bg-red-700" />}
                 </span>
                 {SHORT[i.label] || i.label}
               </Link>

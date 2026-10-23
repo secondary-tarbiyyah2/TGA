@@ -9,7 +9,7 @@ import { MARK_COLUMNS, nextSession, pupilStats, revisionRows, todayISO, type Qur
 
 export type Urgency = "now" | "soon" | "info";
 export type ActionArea = "Homework" | "Qur'an" | "Absence";
-export type ActionItem = { id: string; area: ActionArea; urgency: Urgency; title: string; detail: string; href: string; cta: string; who?: string };
+export type ActionItem = { id: string; area: ActionArea; urgency: Urgency; title: string; detail: string; href: string; cta: string; who?: string; people?: { id: string; name: string }[] };
 export type Role = "teach" | "admin" | "student" | "family";
 
 const DAY = 86_400_000;
@@ -52,7 +52,8 @@ export async function loadStaffItems(role: "teach" | "admin"): Promise<ActionIte
       urgency: st.urgency,
       title: `${plural(list.length, "pupil")} missing "${list[0].homework_title}"`,
       detail: `${list[0].class_name || "Class"} · due ${over <= 0 ? "today" : `${plural(over, "day")} ago`} · ${st.label}: ${st.step}`,
-      who: list.slice(0, 4).map((l) => l.child_name).filter(Boolean).join(", ") + (list.length > 4 ? ` and ${list.length - 4} more` : ""),
+      people: list.slice(0, 4).flatMap((l) => (l.child_name ? [{ id: l.child_id, name: l.child_name }] : [])),
+      who: list.length > 4 ? `and ${list.length - 4} more` : undefined,
       href: `${base}/homework`,
       cta: "Open late and missing",
     });
@@ -70,6 +71,7 @@ export async function loadStaffItems(role: "teach" | "admin"): Promise<ActionIte
       urgency: "now",
       title: `${list[0].child_name || "A pupil"} has missed ${list.length} pieces in 14 days`,
       detail: "A pattern, not a one-off. Speak to the parent and agree support.",
+      people: list[0].child_name ? [{ id, name: list[0].child_name }] : undefined,
       href: `${base}/homework`,
       cta: "See the pieces",
     });
@@ -111,16 +113,16 @@ async function loadQuranTeacherItems(): Promise<ActionItem[]> {
   const sessions = (se.data as Session[]) || [];
   const marks = (mk.data as QuranMark[]) || [];
   const out: ActionItem[] = [];
-  const dueNames: string[] = [];
-  const unbooked: string[] = [];
+  const due: { id: string; name: string }[] = [];
+  const unbooked: { id: string; name: string }[] = [];
   for (const id of pid) {
     if (!inQuran.has(id)) continue;
     const name = seen.get(id) || "Pupil";
-    if (revisionRows(pupilStats(marks.filter((m) => m.child_id === id))).some((r) => r.status === "due")) dueNames.push(name);
-    if (!nextSession(sessions.filter((s) => s.child_id === id))) unbooked.push(name);
+    if (revisionRows(pupilStats(marks.filter((m) => m.child_id === id))).some((r) => r.status === "due")) due.push({ id, name });
+    if (!nextSession(sessions.filter((s) => s.child_id === id))) unbooked.push({ id, name });
   }
-  if (dueNames.length) out.push({ id: "q-rev", area: "Qur'an", urgency: "soon", title: `${plural(dueNames.length, "pupil")} with Qur'an revision due`, detail: "Set revision homework or hear it in a one-to-one.", who: dueNames.slice(0, 5).join(", "), href: "/teach/quran", cta: "Open Qur'an" });
-  if (unbooked.length) out.push({ id: "q-book", area: "Qur'an", urgency: "soon", title: `${plural(unbooked.length, "pupil")} with no one-to-one booked`, detail: "Schedule their next recitation session.", who: unbooked.slice(0, 5).join(", "), href: "/teach/quran", cta: "Schedule sessions" });
+  if (due.length) out.push({ id: "q-rev", area: "Qur'an", urgency: "soon", title: `${plural(due.length, "pupil")} with Qur'an revision due`, detail: "Set revision homework or hear it in a one-to-one.", people: due.slice(0, 5), href: "/teach/quran", cta: "Open Qur'an" });
+  if (unbooked.length) out.push({ id: "q-book", area: "Qur'an", urgency: "soon", title: `${plural(unbooked.length, "pupil")} with no one-to-one booked`, detail: "Schedule their next recitation session.", people: unbooked.slice(0, 5), href: "/teach/quran", cta: "Schedule sessions" });
   return out;
 }
 

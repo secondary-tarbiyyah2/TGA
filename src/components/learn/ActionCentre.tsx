@@ -79,7 +79,21 @@ export function ActionCentre({ role }: { role: Role }) {
                         {i.title}
                       </p>
                       <p className="mt-1 text-sm text-ink/75">{i.detail}</p>
-                      {i.who && <p className="mt-0.5 text-xs text-ink/65">{i.who}</p>}
+                      {(i.people?.length || i.who) && (
+                        <p className="mt-0.5 text-xs text-ink/65">
+                          {role === "teach" && i.people
+                            ? i.people.map((p, n) => (
+                                <span key={p.id}>
+                                  {n > 0 && ", "}
+                                  <Link href={`/teach/pupils?pupil=${p.id}`} className="font-medium text-teal-700 hover:underline">
+                                    {p.name}
+                                  </Link>
+                                </span>
+                              ))
+                            : i.people?.map((p) => p.name).join(", ")}
+                          {i.who ? ` ${i.who}` : ""}
+                        </p>
+                      )}
                     </div>
                     <Link href={i.href} className={`${g.key === "now" ? ui.btnPrimary : ui.btnSecondary} ${ui.sm}`}>
                       {i.cta}

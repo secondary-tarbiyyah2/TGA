@@ -9,6 +9,7 @@ import { AdminLeaderboard } from "@/components/learn/behaviour/LeaderboardCards"
 import { StatTile } from "@/components/learn/Card";
 import { WithdrawalNoticesAdmin } from "@/components/learn/fees/WithdrawalNoticesAdmin";
 import { DashboardHero } from "@/components/learn/DashboardHero";
+import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { useLearnPermission, useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -257,6 +258,8 @@ function DashboardContent() {
           { label: "Need attention", value: (absenceCount ?? 0) + (outstandingCount ?? 0), tone: "pink" },
         ]}
       />
+
+      <ActionCentreWidget role="admin" />
 
       <section aria-labelledby="today-heading">
         <h2 id="today-heading" className="text-sm font-semibold text-ink">

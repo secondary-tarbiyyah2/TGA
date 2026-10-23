@@ -229,6 +229,21 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   ],
 };
 
+
+/** The sidebar's coloured icon tiles: one hue per icon family, so the same idea keeps the same
+ * colour in every area (classes teal, messages blue, safeguarding red, rewards gold...). */
+const TILE_HUE: Partial<Record<SidebarIcon, string>> = {
+  house: "tile-gold", houseHeart: "tile-gold", school: "tile-gold", star: "tile-gold", trophy: "tile-gold", award: "tile-gold",
+  sun: "tile-amber", calendarDays: "tile-amber", scrollText: "tile-amber", megaphone: "tile-amber", hourglass: "tile-amber",
+  flag: "tile-rose", heartHandshake: "tile-rose", shieldCheck: "tile-rose", shieldAlert: "tile-rose", calendarX: "tile-rose", palette: "tile-rose",
+  presentation: "tile-teal", library: "tile-teal", layers: "tile-teal", layoutDashboard: "tile-teal", calculator: "tile-teal",
+  messageSquare: "tile-blue", messageSquarePlus: "tile-blue", users: "tile-blue", contact: "tile-blue", idCard: "tile-blue", userRoundPlus: "tile-blue", globe: "tile-blue", monitor: "tile-blue", languages: "tile-blue",
+  clipboardCheck: "tile-violet", listChecks: "tile-violet", notebookPen: "tile-violet", graduationCap: "tile-violet", fileText: "tile-violet", fileCheck: "tile-violet",
+  bookMarked: "tile-emerald", bookOpen: "tile-emerald", moon: "tile-emerald", bookOpenCheck: "tile-emerald",
+  target: "tile-green", chartLine: "tile-green", chartColumnIncreasing: "tile-green", wallet: "tile-green", flask: "tile-green", activity: "tile-green", userCheck: "tile-green", calendarCheck: "tile-green",
+};
+export const tileFor = (icon: SidebarIcon): string => TILE_HUE[icon] || "tile-slate";
+
 /** Is this sidebar item the current page (own route, sub-page or any matchPrefix)? */
 export function isSidebarItemActive(pathname: string, item: SidebarItem): boolean {
   if (isActivePath(pathname, item.href)) return true;

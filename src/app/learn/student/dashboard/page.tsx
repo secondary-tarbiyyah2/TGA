@@ -1,6 +1,7 @@
 "use client";
 
 import { DashboardHero } from "@/components/learn/DashboardHero";
+import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -95,6 +96,8 @@ function StudentContent() {
   const content = (
     <div className="space-y-6">
       <DashboardHero subtitle="Ready to learn today?" chips={[{ label: "Lessons a week", value: slots === null ? "…" : slots.length, tone: "yellow" }]} />
+
+        <ActionCentreWidget role="student" />
       {childId && <JoinLessonCard who={{ kind: "student", childId }} />}
       {childId && <UpNextCard classIds={slots === null ? null : classIds} childId={childId} lessonHref={(id) => `/student/lessons/view?id=${id}`} homeworkHref="/student/todo" />}
 

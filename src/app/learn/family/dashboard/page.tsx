@@ -3,6 +3,7 @@
 import { UpNextCard } from "@/components/learn/UpNextCard";
 import { Icon } from "@/components/learn/Icon";
 import { DashboardHero } from "@/components/learn/DashboardHero";
+import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
@@ -182,6 +183,8 @@ function FamilyContent() {
     <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }}>
       <div className="space-y-6">
         <DashboardHero subtitle="Your children's school life in one place" chips={[{ label: "Children", value: children === null ? "…" : children.length, tone: "yellow" }]} />
+
+        <ActionCentreWidget role="family" />
         <ChildDetailsBanner />
         <SignaturePrompts />
         <JoinLessonCard who={{ kind: "parent" }} />

@@ -49,18 +49,29 @@ const CHIP: Record<Tone, string> = {
 };
 
 
-/** An on/off switch with a sliding knob — clearer than a bare checkbox for settings. */
+/** An on/off switch: a sliding knob that carries a tick when on. Use for every yes/no setting. */
 export function Switch({ checked, onChange, label, hint }: { checked: boolean; onChange: (next: boolean) => void; label: string; hint?: string }) {
   return (
     <button type="button" role="switch" aria-checked={checked} onClick={() => onChange(!checked)} className={`group flex w-full items-start gap-3 rounded-lg px-3 py-2 text-left hover:bg-cream ${focus}`}>
-      <span aria-hidden="true" className={`relative mt-0.5 inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors ${checked ? "bg-teal-700" : "bg-ink/25"}`}>
-        <span className={`absolute h-4 w-4 rounded-full bg-white shadow transition-[left] motion-reduce:transition-none ${checked ? "left-[18px]" : "left-0.5"}`} />
-      </span>
+      <SwitchKnob checked={checked} />
       <span className="min-w-0">
         <span className="block text-sm font-medium text-ink">{label}</span>
         {hint && <span className="block text-xs text-ink/65">{hint}</span>}
       </span>
     </button>
+  );
+}
+
+/** The visual part of the switch, shared so every toggle in the portal looks identical. */
+export function SwitchKnob({ checked }: { checked: boolean }) {
+  return (
+    <span aria-hidden="true" className={`relative mt-0.5 inline-flex h-6 w-11 shrink-0 items-center rounded-full shadow-inner transition-colors duration-200 ${checked ? "bg-teal-700" : "bg-ink/20"}`}>
+      <span className={`absolute flex h-5 w-5 items-center justify-center rounded-full bg-white shadow transition-[left] duration-200 motion-reduce:transition-none ${checked ? "left-[22px]" : "left-0.5"}`}>
+        <svg viewBox="0 0 24 24" className={`h-3 w-3 transition-opacity ${checked ? "text-teal-700 opacity-100" : "opacity-0"}`} fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      </span>
+    </span>
   );
 }
 

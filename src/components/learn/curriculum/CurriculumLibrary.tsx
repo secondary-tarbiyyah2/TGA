@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { classColour, myTeachingClasses } from "@/lib/learn/classes";
@@ -791,9 +793,9 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                         {current.lessons.length} lesson{current.lessons.length === 1 ? "" : "s"}
                       </span>
                       {currentPack && (
-                        <span className="rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900">
-                          Revision pack · {currentPack.questions} quiz questions{currentPack.takers ? ` · ${currentPack.takers} pupils` : ""}
-                        </span>
+                        <Link href={`/${area}/revision`} className="rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900 hover:bg-gold-300/60" title="Open the revision results">
+                          Revision pack · {currentPack.questions} quiz questions{currentPack.takers ? ` · ${currentPack.takers} pupils` : ""} →
+                        </Link>
                       )}
                       <span className="flex-1" />
                       {current.lessons.length > 0 && (

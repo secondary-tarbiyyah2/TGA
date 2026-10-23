@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
-import { AREA_SUBTITLE, MOBILE_TABS, isSidebarItemActive, sidebarLayout, withoutPages, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
+import { AREA_SUBTITLE, MOBILE_TABS, isSidebarItemActive, sidebarLayout, tileFor, withoutPages, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
 import { Icon } from "@/components/learn/Icon";
 import { NavBadge, useNavBadges, type NavBadges } from "@/lib/learn/navBadges";
 
@@ -79,7 +79,9 @@ function NavLink({ item, active, collapsed, onNavigate, count }: { item: Sidebar
       aria-label={collapsed ? (count ? `${item.label} (${count} waiting)` : item.label) : undefined}
       className={`portal-nav-row relative ${collapsed ? "justify-center" : ""} ${active ? "portal-nav-row--active" : ""}`}
     >
-      <Icon name={item.icon} className="h-5 w-5 shrink-0" />
+      <span className={`portal-tile ${tileFor(item.icon)}`} aria-hidden="true">
+        <Icon name={item.icon} />
+      </span>
       {!collapsed && <span className="min-w-0 flex-1 truncate">{item.label}</span>}
       {!collapsed && <NavBadge count={count} alert={item.badge !== "messages"} />}
       {collapsed && !!count && <span aria-hidden="true" className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-700" />}
@@ -119,7 +121,9 @@ function NavSection({
         aria-label={`${section.label} (open sidebar)`}
         className={`portal-nav-row justify-center ${hasActive ? "portal-nav-row--active" : ""}`}
       >
-        <Icon name={section.icon} className="h-5 w-5 shrink-0" />
+        <span className={`portal-tile ${tileFor(section.icon)}`} aria-hidden="true">
+          <Icon name={section.icon} />
+        </span>
       </button>
     );
   }
@@ -132,7 +136,9 @@ function NavSection({
         aria-controls={panelId}
         className={`portal-nav-row w-full ${hasActive && !isOpen ? "portal-nav-row--active" : ""} ${hasActive ? "text-teal-900" : ""}`}
       >
-        <Icon name={section.icon} className="h-5 w-5 shrink-0" />
+        <span className={`portal-tile ${tileFor(section.icon)}`} aria-hidden="true">
+          <Icon name={section.icon} />
+        </span>
         <span className="min-w-0 flex-1 truncate text-left">{section.label}</span>
         <Icon name="chevronDown" className={`h-4 w-4 shrink-0 text-ink/65 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
       </button>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { Tabs } from "@/components/learn/Tabs";
@@ -677,7 +678,10 @@ function DataTab({ data, pupilLevels, pupilsIn }: { data: Data; pupilLevels: (p:
             <tbody>
               {rows.map(({ p, s, next }) => (
                 <tr key={p.id} className="border-t border-gold-light/60 align-top">
-                  <td className="py-1.5 pr-3">{p.name}{p.year ? ` (${p.year})` : ""}</td>
+                  <td className="py-1.5 pr-3">
+                    <Link href={`/teach/pupils?pupil=${p.id}`} className="font-medium text-teal-700 hover:underline">{p.name}</Link>
+                    {p.year ? ` (${p.year})` : ""}
+                  </td>
                   <td className="pr-3">{pupilLevels(p)}</td>
                   <td className="pr-3 tabular-nums">{s.overall ?? "–"}</td>
                   <td className="pr-3">{s.count}</td>

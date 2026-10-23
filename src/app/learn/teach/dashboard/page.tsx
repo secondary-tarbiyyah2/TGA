@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { DashboardHero } from "@/components/learn/DashboardHero";
+import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
@@ -71,6 +72,8 @@ function TeachContent() {
     <DashboardWithPanel viewer={{ kind: "teacher", classIds }}>
       <div className="space-y-5">
         <DashboardHero subtitle="What needs doing today" chips={[{ label: "Lessons this week", value: slots === null ? "…" : slots.length, tone: "yellow" }, { label: "My classes", value: classIds.length, tone: "white" }]} />
+
+        <ActionCentreWidget role="teach" />
 
         <TeachNow slots={slots} />
 

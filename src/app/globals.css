@@ -583,3 +583,62 @@ html[data-dark] .portal :is(.shadow-warm, .shadow-sm, .shadow, .shadow-lg) {
 html[data-dark][data-reading] .portal:not(.fixed) {
   background: #191c1e;
 }
+
+/* ── Sidebar icon tiles: a coloured rounded square behind every icon, one hue per idea
+   (tileFor in nav.ts). The active page's tile goes solid. All eight hues have dark values. */
+.portal-tile {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.55rem;
+  background: var(--tile-bg);
+  color: var(--tile-fg);
+  transition: background 120ms, color 120ms;
+}
+.portal-tile > svg {
+  height: 1.05rem;
+  width: 1.05rem;
+}
+.portal-nav-row--active .portal-tile {
+  background: var(--tile-fg);
+  color: #ffffff;
+}
+.portal {
+  --tile-gold-bg: #f5ecd6; --tile-gold-fg: #7d6428;
+  --tile-amber-bg: #f9ecd2; --tile-amber-fg: #96620f;
+  --tile-rose-bg: #f9e5e0; --tile-rose-fg: #a23b2a;
+  --tile-teal-bg: #ddeeec; --tile-teal-fg: #1f6f6b;
+  --tile-blue-bg: #e2ecf6; --tile-blue-fg: #2d5f86;
+  --tile-violet-bg: #eae6f5; --tile-violet-fg: #54468a;
+  --tile-emerald-bg: #ddeeea; --tile-emerald-fg: #0b4f45;
+  --tile-green-bg: #e2f0e6; --tile-green-fg: #2f6b45;
+  --tile-slate-bg: #eceae4; --tile-slate-fg: #585f66;
+}
+html[data-dark] .portal {
+  --tile-gold-bg: #38332a; --tile-gold-fg: #dcbc6c;
+  --tile-amber-bg: #3a3220; --tile-amber-fg: #e6c57e;
+  --tile-rose-bg: #3a2522; --tile-rose-fg: #f09a8d;
+  --tile-teal-bg: #1d3a37; --tile-teal-fg: #63c4bc;
+  --tile-blue-bg: #1d2d3f; --tile-blue-fg: #7eb3dc;
+  --tile-violet-bg: #2a2540; --tile-violet-fg: #b3a4e0;
+  --tile-emerald-bg: #1a2e2c; --tile-emerald-fg: #7cccc5;
+  --tile-green-bg: #20352a; --tile-green-fg: #93d5ab;
+  --tile-slate-bg: #2c3034; --tile-slate-fg: #a2a7ad;
+}
+.tile-gold { --tile-bg: var(--tile-gold-bg); --tile-fg: var(--tile-gold-fg); }
+.tile-amber { --tile-bg: var(--tile-amber-bg); --tile-fg: var(--tile-amber-fg); }
+.tile-rose { --tile-bg: var(--tile-rose-bg); --tile-fg: var(--tile-rose-fg); }
+.tile-teal { --tile-bg: var(--tile-teal-bg); --tile-fg: var(--tile-teal-fg); }
+.tile-blue { --tile-bg: var(--tile-blue-bg); --tile-fg: var(--tile-blue-fg); }
+.tile-violet { --tile-bg: var(--tile-violet-bg); --tile-fg: var(--tile-violet-fg); }
+.tile-emerald { --tile-bg: var(--tile-emerald-bg); --tile-fg: var(--tile-emerald-fg); }
+.tile-green { --tile-bg: var(--tile-green-bg); --tile-fg: var(--tile-green-fg); }
+.tile-slate { --tile-bg: var(--tile-slate-bg); --tile-fg: var(--tile-slate-fg); }
+/* Tiles make rows a little taller, and the icon no longer needs its own grey. */
+.portal-nav-row {
+  min-height: 2.75rem;
+  padding: 0.375rem 0.625rem;
+}

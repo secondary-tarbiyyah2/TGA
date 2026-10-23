@@ -105,6 +105,19 @@ export function TeachPupils() {
     });
   }, [pupils, q, cls, only, signals]);
 
+  // Links from the Action centre and the Qur'an page land here as ?pupil=<id>: open that pupil.
+  useEffect(() => {
+    if (!pupils) return;
+    const id = new URLSearchParams(window.location.search).get("pupil");
+    const hit = id && pupils.find((p) => p.id === id);
+    if (hit) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- open the linked pupil once the list arrives
+      setOpen(hit);
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only when the pupil list first arrives
+  }, [pupils === null]);
+
   const todo = (pupils || []).filter((p) => p.classes.length > 0 && ackState(p) !== "current").length;
 
   const acknowledge = async (p: PupilRow) => {
