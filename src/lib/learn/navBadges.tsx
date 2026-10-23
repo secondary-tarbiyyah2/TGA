@@ -60,6 +60,7 @@ export function useNavBadges(area: PortalArea): NavBadges {
     try {
       const cached = JSON.parse(window.sessionStorage.getItem(KEY(area)) || "null") as { at: number; badges: NavBadges } | null;
       if (cached && Date.now() - cached.at < TTL) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- restore the cached counts once after mount
         setBadges(cached.badges);
         return;
       }
