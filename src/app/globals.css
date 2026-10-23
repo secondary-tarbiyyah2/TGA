@@ -140,8 +140,7 @@ button:not(:disabled),
    public site is unaffected. It redefines the tokens the portal's
    utilities already use (border-gold-light, bg-cream, rounded-2xl,
    text-h2/h3), so all 36 portal pages pick it up without editing each one.
-   Gold stays as the brand accent on buttons and links; teal marks
-   navigation and state. */
+   Logo gold marks buttons, links and navigation; teal-500 marks done/positive state. */
 .portal {
   /* Warm neutrals so the portal sits in the same family as the gold, ink
      and cream brand (DESIGN.md) rather than a generic blue SaaS canvas. */
@@ -149,7 +148,13 @@ button:not(:disabled),
   --color-cream: #f4f1ea; /* hover and tint surface */
   --portal-canvas: #f8f6f1; /* page background behind cards */
   --portal-hover: #f1ede4; /* row hover */
-  --portal-focus-ring: rgba(31, 111, 107, 0.22); /* teal-700 at 22% */
+  --portal-focus-ring: rgba(125, 100, 40, 0.28); /* logo gold (gold-700) at 28% */
+  --portal-hero-bg: #1b1e21; /* ink: the welcome banner on every dashboard */
+  /* Logo-gold portal: actions, links, focus and "you are here" use the gold of the
+     logo. teal-500 is deliberately left as the positive/"done" state colour. */
+  --color-teal-900: var(--color-gold-900);
+  --color-teal-700: var(--color-gold-700);
+  --color-teal-100: var(--color-gold-100);
   --portal-shadow-rgb: 60, 48, 20; /* warm ink for card shadows */
   --radius-2xl: 1rem;
   --radius-xl: 0.75rem;
@@ -183,7 +188,7 @@ button:not(:disabled),
 }
 .portal :is(input, select, textarea):focus-visible {
   outline: none;
-  border-color: var(--color-teal-500);
+  border-color: var(--color-teal-700);
   box-shadow: 0 0 0 3px var(--portal-focus-ring);
 }
 /* Dropdowns: one consistent look (soft chevron, roomy padding) instead of the browser default. */
@@ -198,7 +203,7 @@ button:not(:disabled),
   cursor: pointer;
 }
 .portal select:not([multiple]):not([size]):hover:not(:disabled) {
-  border-color: var(--color-teal-500);
+  border-color: var(--color-teal-700);
 }
 .portal select:disabled {
   opacity: 0.6;
@@ -246,6 +251,9 @@ button:not(:disabled),
 .portal-icon-btn:hover {
   background: var(--portal-hover);
   color: var(--color-ink-900);
+}
+.portal-hero {
+  background: var(--portal-hero-bg);
 }
 .portal-sidebar {
   border-right: 1px solid var(--color-gold-light);
@@ -515,10 +523,10 @@ html[data-dark] .portal {
   --color-gold-dark: #e8d194;
 
   --color-teal-50: #1a2e2c;
-  --color-teal-100: #1d3a37;
-  --color-teal-500: #4fb3ab;
-  --color-teal-700: #63c4bc; /* as text */
-  --color-teal-900: #a3ded8;
+  --color-teal-100: #33290f; /* logo gold, dark surface */
+  --color-teal-500: #4fb3ab; /* positive state stays teal */
+  --color-teal-700: #e3c98f; /* logo gold, as text */
+  --color-teal-900: #f0dfb4;
 
   --color-red-50: #3a2522;
   --color-red-100: #4a2d28;
@@ -550,10 +558,10 @@ html[data-dark] .portal :is(.hover\:bg-gold-900:hover, .bg-gold-900) {
   background-color: #6e5724;
 }
 html[data-dark] .portal :is(.bg-teal-700) {
-  background-color: #1f6f6b;
+  background-color: #8a6f2e;
 }
 html[data-dark] .portal :is(.bg-teal-600) {
-  background-color: #257f7a;
+  background-color: #7d6428;
 }
 html[data-dark] .portal :is(.bg-red-700, .hover\:bg-red-800:hover) {
   background-color: #a8453a;
@@ -562,7 +570,7 @@ html[data-dark] .portal :is(.bg-gold-500) {
   background-color: #b08e45;
 }
 html[data-dark] .portal :is(.bg-teal-900) {
-  background-color: #0f3d3a;
+  background-color: #5e4b1e;
 }
 /* The wordmark is ink-on-transparent; on a dark sidebar show it as white. */
 html[data-dark] .portal img[src*="ga-wordmark"] {

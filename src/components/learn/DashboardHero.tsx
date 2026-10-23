@@ -14,7 +14,7 @@ function formatChipValue(v: string | number): string {
 
 /**
  * The big welcome banner at the top of every dashboard: greeting, date and a
- * couple of headline numbers, on the brand teal with a quiet eight-point-star
+ * couple of headline numbers, on logo-gold-on-ink with a quiet eight-point-star
  * pattern. Fetches the signed-in user's first name itself, so any dashboard
  * can drop it in.
  */
@@ -38,8 +38,8 @@ export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chi
   const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
 
   return (
-    <section className="relative overflow-hidden rounded-2xl bg-teal-700 px-6 py-7 text-white sm:px-8">
-      <svg aria-hidden="true" className="pointer-events-none absolute -right-6 -top-10 h-[130%] w-[46%] text-white/[0.07]" viewBox="0 0 240 240" preserveAspectRatio="xMaxYMid slice">
+    <section className="relative overflow-hidden rounded-2xl portal-hero px-6 py-7 text-white sm:px-8">
+      <svg aria-hidden="true" className="pointer-events-none absolute -right-6 -top-10 h-[130%] w-[46%] text-gold-500/[0.16]" viewBox="0 0 240 240" preserveAspectRatio="xMaxYMid slice">
         <defs>
           <pattern id="hero-star" width="60" height="60" patternUnits="userSpaceOnUse">
             <path d="M30 4l5.5 13.2L48.8 11.2 42.8 24.5 56 30l-13.2 5.5 6 13.3-13.3-6L30 56l-5.5-13.2-13.3 6 6-13.3L4 30l13.2-5.5-6-13.3 13.3 6z" fill="currentColor" />
@@ -48,7 +48,7 @@ export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chi
         <rect width="240" height="240" fill="url(#hero-star)" />
       </svg>
       <div className="relative">
-        <p className="text-sm text-white/80">{today}</p>
+        <p className="text-sm font-medium tracking-wide text-gold-300">{today}</p>
         <h1 className="mt-1 text-2xl font-semibold tracking-tight sm:text-[1.75rem]">
           {greeting}
           {firstName ? `, ${firstName}` : ""}
@@ -57,7 +57,7 @@ export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chi
         {chips.length > 0 && (
           <dl className="mt-5 flex flex-wrap gap-3">
             {chips.map((c) => (
-              <div key={c.label} className="flex min-w-[9rem] flex-col-reverse rounded-xl bg-white/10 px-4 py-2.5 ring-1 ring-inset ring-white/15">
+              <div key={c.label} className="flex min-w-[9rem] flex-col-reverse rounded-xl bg-white/10 px-4 py-2.5 ring-1 ring-inset ring-gold-500/40">
                 <dt className="text-xs font-medium text-white/85">{c.label}</dt>
                 <dd className="flex items-center gap-2 text-2xl font-semibold tabular-nums leading-tight">
                   {formatChipValue(c.value)}
