@@ -20,7 +20,7 @@ const RESULT_SECTION_LABELS: Record<ResultSectionKey, string> = {
   starting_points: "Arabic / Qur'an starting points",
   fees: "Fee estimate",
   timezone_flag: "Timezone workability flag",
-  hifz_role_note: "Hifz role note / flags from rules",
+  hifz_role_note: "Hifdh role note / flags from rules",
   ctas: "Calls to action (email plan / book a call)",
 };
 
@@ -412,7 +412,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
   return (
     <div className="space-y-4">
       <p className="text-xs text-ink/65">
-        Example: &quot;If Arabic level is None and Hifz focus is Central, show this message and this flag.&quot; Pick a
+        Example: &quot;If Arabic level is None and Hifdh focus is Central, show this message and this flag.&quot; Pick a
         question and an answer for each line below, choose whether every line needs to match or just one of them, then
         say what should happen when they do.
       </p>

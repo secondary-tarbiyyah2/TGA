@@ -818,7 +818,7 @@ export function ApplyForm({
                   <input {...kidProps(i, "currentSchoolYear")} type="text" maxLength={60} className={inputCls} />
                 </Field>
                 <div className="sm:col-span-2">
-                  <Field id={`f-c${i}-islamicEducation`} label="Previous Islamic education" optional hint="For example Qur'an level, any hifz, and Arabic.">
+                  <Field id={`f-c${i}-islamicEducation`} label="Previous Islamic education" optional hint="For example Qur'an level, any hifdh, and Arabic.">
                     <textarea {...kidProps(i, "islamicEducation")} rows={2} maxLength={1500} className={inputCls} />
                   </Field>
                 </div>

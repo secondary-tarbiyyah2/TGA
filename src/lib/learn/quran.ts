@@ -1,4 +1,4 @@
-// Qur'an & Hifz progress helpers (supabase/migrations/0072_progress_tracking.sql).
+// Qur'an & Hifdh progress helpers (supabase/migrations/0072_progress_tracking.sql).
 //
 // Teachers rate every session as a whole number out of 10 (recitation,
 // tajweed and memorisation quality combined). On top of those entries sit

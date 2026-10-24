@@ -185,7 +185,7 @@ export const faqEntries: FaqEntry[] = [
   { _id: "f24", category: "Curriculum", order: 3, question: "Are the teachers qualified?", answer: "Yes. Every subject is taught by a qualified teacher with the relevant subject knowledge, an enhanced DBS check (or the overseas equivalent) and safeguarding training, and Qur'an is taught by experienced Qur'an teachers. Our Safer Recruitment Policy sets out every check we make." },
   { _id: "f25", category: "Curriculum", order: 4, question: "How will I know how my child is doing?", answer: "Live progress on the Parent Portal (attendance, homework, Qur'an marks, merits and teacher messages), a written report each term, two parents' evenings a year, and a weekly tarbiyyah note from the form tutor. Entry and annual standardised assessments give an objective benchmark." },
   { _id: "f26", category: "Curriculum", order: 5, question: "Will my child be able to move back to a mainstream school?", answer: "Yes. Because we follow the national curriculum year by year and keep full records, pupils can transfer into any UK school at the matching year group, and we provide a transfer report." },
-  { _id: "f27", category: "Islamic Studies", order: 1, question: "How is Qur'an taught, and is hifz compulsory?", answer: "Qur'an is on the timetable every week in small groups set by ability, not by age: Qa'idah and early reading, fluent reading with tajweed, and memorisation. Every pupil memorises at a pace agreed with you; a full hifz track is available for pupils and families who want it to be central." },
+  { _id: "f27", category: "Islamic Studies", order: 1, question: "How is Qur'an taught, and is hifdh compulsory?", answer: "Qur'an is on the timetable every week in small groups set by ability, not by age: Qa'idah and early reading, fluent reading with tajweed, and memorisation. Every pupil memorises at a pace agreed with you; a full hifdh track is available for pupils and families who want it to be central." },
   { _id: "f28", category: "Islamic Studies", order: 2, question: "Will my child learn Arabic properly?", answer: "Yes. Arabic is taught as a language from Year 1, with reading, writing, speaking and grammar, so pupils connect with the Qur'an and classical texts directly, and it leads to GCSE Arabic in Years 10 and 11." },
   { _id: "f29", category: "Islamic Studies", order: 3, question: "What is taught in Islamic Studies, and from which perspective?", answer: "Aqeedah, fiqh, seerah, hadith and akhlaq, taught from the Qur'an and Sunnah following the understanding of the early generations, in an age-appropriate way, leading to the Edexcel International GCSE in Islamic Studies. We are happy to talk through the syllabus with you." },
   { _id: "f30", category: "Islamic Studies", order: 4, question: "How do you keep lessons appropriate for an Islamic setting?", answer: "Teachers set the tone: cameras and conduct follow our Online Conduct and RECIPE expectations, chat is controlled by the teacher, and one-to-one sessions are only ever scheduled through the Academy calendar, with parents told in advance and the session recorded. Ask us at an open evening about class arrangements for your child's year group." },
@@ -241,9 +241,9 @@ export const differentiators: Differentiator[] = [
   {
     _id: "d2", order: 2, visible: true, icon: "quran",
     status: "Draft / concept — not yet confirmed",
-    title: "Hifz as a first-class subject",
+    title: "Hifdh as a first-class subject",
     summary: "Qur'an memorisation progress tracked on a dashboard alongside academic subjects — not an after-school extra.",
-    detail: "Hifz sits on the timetable and the progress report with the same weight as English or Maths, not as a footnote club.",
+    detail: "Hifdh sits on the timetable and the progress report with the same weight as English or Maths, not as a footnote club.",
   },
   {
     _id: "d3", order: 3, visible: true, icon: "family",

@@ -203,7 +203,7 @@ export function YourChildsWeekQuiz({
     : config.resultHeading.replace(/\{name\},?\s*/, "").replace(/^[a-z]/, (c) => c.toUpperCase());
 
   const bookCallHref = `/book-a-call?name=${encodeURIComponent(contactName)}&email=${encodeURIComponent(contactEmail)}&year=${encodeURIComponent(yearGroupAnswer)}&notes=${encodeURIComponent(
-    `From "Your Child's Week" — timezone: ${timezone}${timeInfo?.concern ? ", TIMEZONE CONCERN: lessons fall outside a workable local window" : ""}, hifz role: ${answers.hifz_role ?? "n/a"}`
+    `From "Your Child's Week" — timezone: ${timezone}${timeInfo?.concern ? ", TIMEZONE CONCERN: lessons fall outside a workable local window" : ""}, hifdh role: ${answers.hifz_role ?? "n/a"}`
   )}`;
 
   async function submitLead(e: React.FormEvent) {

@@ -44,10 +44,10 @@ function entryLabel(r: Row): string {
 }
 
 /**
- * Hifz/Qur'an memorisation and Islamic Studies progress, read straight from
+ * Hifdh/Qur'an memorisation and Islamic Studies progress, read straight from
  * quran_progress (0011, extended in 0072 with the teacher's 0-10 session
  * score) and quran_targets. Shown on the family and student dashboards
- * alongside LatestGradesWidget so Hifz reads as a first-class subject:
+ * alongside LatestGradesWidget so Hifdh reads as a first-class subject:
  * average score out of 10 with its trend, progress bars towards the teacher's
  * targets, the milestones reached so far, and the latest sessions.
  */

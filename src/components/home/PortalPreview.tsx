@@ -12,7 +12,7 @@ const FEATURES = [
   { title: "Today's lessons", body: "The day's live lessons (UK time), with one tap to join on Microsoft Teams." },
   { title: "Registers & attendance", body: "Every lesson's register, so you know straight away if your child was missed." },
   { title: "Homework & grades", body: "What's due, what's been marked, and the feedback that came with it." },
-  { title: "Qur'an progress", body: "Hifz and recitation targets tracked alongside every other subject." },
+  { title: "Qur'an progress", body: "Hifdh and recitation targets tracked alongside every other subject." },
   { title: "Weekly Tarbiyah Note", body: "A personal note on character and akhlaq from the form tutor." },
   { title: "Message teachers", body: "Talk to your child's teachers directly, on safeguarded, logged channels." },
   { title: "Sign forms online", body: "Consents and policies signed with your own hand signature — no printing." },

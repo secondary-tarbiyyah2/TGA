@@ -36,10 +36,10 @@ export default defineType({
       name: "subject",
       title: "Subject",
       type: "string",
-      description: "Type the subject name exactly as it appears in that key stage's subject list on the Curriculum page (e.g. \"Mathematics\", \"Qur'an & Hifz\") so it groups correctly.",
+      description: "Type the subject name exactly as it appears in that key stage's subject list on the Curriculum page (e.g. \"Mathematics\", \"Qur'an & Hifdh\") so it groups correctly.",
       validation: (r) => r.required(),
     }),
-    defineField({ name: "title", title: "Document title", type: "string", description: "e.g. \"Year 7 Science overview\" or \"KS2 Qur'an & Hifz scheme of work\".", validation: (r) => r.required() }),
+    defineField({ name: "title", title: "Document title", type: "string", description: "e.g. \"Year 7 Science overview\" or \"KS2 Qur'an & Hifdh scheme of work\".", validation: (r) => r.required() }),
     defineField({
       name: "term",
       title: "Term",
