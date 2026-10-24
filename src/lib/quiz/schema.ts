@@ -13,7 +13,10 @@
  * consent, quiz_leads.
  */
 
-export type LineIcon = "book" | "moon" | "graduation-cap" | "clock" | "home" | "compass" | "none";
+export type LineIcon =
+  | "book" | "moon" | "graduation-cap" | "clock" | "home" | "compass"
+  | "sprout" | "letters" | "speech" | "pages" | "bookmark" | "target" | "scales" | "user-check" | "users" | "user-away"
+  | "none";
 
 export type QuestionType = "year_group" | "timezone" | "single_select";
 

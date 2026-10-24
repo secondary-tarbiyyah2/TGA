@@ -32,6 +32,8 @@ const fmtDate = (iso: string) =>
 const fmtTime = (iso: string) => new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" });
 
 const inputCls = "mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2";
+/** Year 1 to Year 11: the Academy does not run Reception. */
+const YEAR_GROUPS = Array.from({ length: 11 }, (_, i) => `Year ${i + 1}`);
 
 function errorMessage(code: string | undefined, seatsLeft?: number): string {
   switch (code) {
@@ -129,7 +131,7 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
           email: form.get("email"),
           phone: form.get("phone"),
           attendees: Number(form.get("attendees")),
-          yearGroups: form.get("yearGroups"),
+          yearGroups: form.getAll("yearGroups").join(", "),
           questions: form.get("questions"),
           consent: form.get("consent") === "yes",
           company: form.get("company"),
@@ -245,10 +247,24 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
                             </select>
                           </label>
                         </div>
-                        <label className="mt-4 block text-sm font-medium text-ink">
-                          Your children&apos;s year groups
-                          <input name="yearGroups" type="text" required maxLength={200} placeholder="For example: Year 4 and Year 7" className={`${inputCls} ${bad("yearGroups")}`} />
-                        </label>
+                        <fieldset className="mt-4">
+                          <legend className="text-sm font-medium text-ink">
+                            Your children&apos;s year groups <span className="font-normal text-ink/65">(tick all that apply, for September 2026 to July 2027)</span>
+                          </legend>
+                          <div className={`mt-2 grid grid-cols-3 gap-2 sm:grid-cols-4 ${bad("yearGroups") ? "rounded-lg ring-2 ring-red-400 p-1" : ""}`}>
+                            {YEAR_GROUPS.map((y) => (
+                              <label key={y} className="flex cursor-pointer items-center gap-2 rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm text-ink has-[:checked]:border-gold-500 has-[:checked]:bg-gold-50 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-gold-500">
+                                <input type="checkbox" name="yearGroups" value={y} className="accent-gold-700" />
+                                {y}
+                              </label>
+                            ))}
+                            <label className="flex cursor-pointer items-center gap-2 rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm text-ink has-[:checked]:border-gold-500 has-[:checked]:bg-gold-50">
+                              <input type="checkbox" name="yearGroups" value="Not sure yet" className="accent-gold-700" />
+                              Not sure yet
+                            </label>
+                          </div>
+                          {bad("yearGroups") && <p className="mt-1 text-sm text-red-700">Tick at least one year group.</p>}
+                        </fieldset>
                         <label className="mt-4 block text-sm font-medium text-ink">
                           Questions for the team <span className="font-normal text-ink/65">(optional)</span>
                           <textarea name="questions" rows={3} maxLength={2000} className={`${inputCls} ${bad("questions")}`} />

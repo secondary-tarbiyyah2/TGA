@@ -31,7 +31,7 @@ const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 // Live lessons a week and their length, from the Curriculum Policy (12).
 const stages = [
-  { stage: "Year 1 – Year 2", href: "/curriculum/reception-year-2", week: "15 lessons of 30 min a week" },
+  { stage: "Year 1 – Year 2", href: "/curriculum/year-1-2", week: "15 lessons of 30 min a week" },
   { stage: "Year 3 – Year 6", href: "/curriculum/year-3-6", week: "20 live lessons a week, 45 minutes each" },
   { stage: "Year 7 – Year 9", href: "/curriculum/year-7-9", week: "25 live lessons a week, 50 minutes each" },
   { stage: "Year 10 – Year 11 (GCSE)", href: "/curriculum/year-10-11", week: "25 live lessons a week, GCSE and International GCSE" },

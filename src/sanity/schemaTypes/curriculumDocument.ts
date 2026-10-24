@@ -14,7 +14,7 @@ import { defineField, defineType } from "sanity";
 // self-contained. If a key stage's slug/range ever changes there, update
 // this list to match.
 const KEY_STAGES = [
-  { title: "Reception – Year 2", value: "reception-year-2" },
+  { title: "Year 1 – Year 2", value: "year-1-2" },
   { title: "Year 3 – Year 6", value: "year-3-6" },
   { title: "Year 7 – Year 9", value: "year-7-9" },
   { title: "Year 10 – Year 11", value: "year-10-11" },

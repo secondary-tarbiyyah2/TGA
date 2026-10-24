@@ -163,7 +163,7 @@ export function YearGroupsSection({ yearGroups, classes, enrolments, reload }: C
   };
 
   return (
-    <StepCard step={2} id="year-groups" done={yearGroups.length > 0} title="Year groups" help="Reception, Year 1 and so on. Capacity is the total places in that year; leave it blank to hide “places remaining” on the public site.">
+    <StepCard step={2} id="year-groups" done={yearGroups.length > 0} title="Year groups" help="Year 1, Year 2 and so on (the Academy starts at Year 1). Capacity is the total places in that year; leave it blank to hide “places remaining” on the public site.">
       {yearGroups.length === 0 && <EmptyState>No year groups yet. Add them below, in order from youngest to oldest.</EmptyState>}
       <ul className="space-y-2">
         {yearGroups.map((y) => (

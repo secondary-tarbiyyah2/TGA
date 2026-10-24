@@ -325,7 +325,7 @@ export function FeesEditor() {
               <div className="grid gap-3 sm:grid-cols-[1fr_10rem]">
                 <label className="text-sm text-ink">
                   Band name
-                  <input value={b.year_group_range} onChange={(e) => patch(b.key, { year_group_range: e.target.value })} className={input} placeholder="e.g. Reception – Year 2" />
+                  <input value={b.year_group_range} onChange={(e) => patch(b.key, { year_group_range: e.target.value })} className={input} placeholder="e.g. Year 1 – Year 2" />
                 </label>
                 <label className="text-sm text-ink">
                   Annual fee (£)
@@ -351,7 +351,7 @@ export function FeesEditor() {
         >
           Add a band
         </button>
-        <p className="mt-2 text-xs text-ink/65">Order here is the order on the public page. The fee estimator and quiz expect bands in year-group order (Reception first).</p>
+        <p className="mt-2 text-xs text-ink/65">Order here is the order on the public page. The fee estimator and quiz expect bands in year-group order (Year 1 first).</p>
       </Card>
 
       <Card title="Live preview" description="Exactly what the public Fees page will show after saving.">

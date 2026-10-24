@@ -8,12 +8,14 @@ import type { FaqEntry } from "@/content/seed";
 // Policies page's parent-question grouping. Each internal category maps to
 // exactly one group; no FAQ content changes, just how it's organised.
 const PARENT_GROUPS: { heading: string; categories: string[] }[] = [
-  { heading: "How do we apply, and when?", categories: ["Admissions"] },
-  { heading: "What does it cost?", categories: ["Fees"] },
-  { heading: "What will my child learn?", categories: ["Curriculum"] },
-  { heading: "How is Qur'an and Islamic Studies taught?", categories: ["Islamic Studies"] },
-  { heading: "What do we need at home?", categories: ["Technology"] },
-  { heading: "Will my child be supported?", categories: ["SEND"] },
+  { heading: "Applying, deadlines and open evenings", categories: ["Admissions"] },
+  { heading: "The school day", categories: ["School day"] },
+  { heading: "Fees and paying", categories: ["Fees"] },
+  { heading: "What my child will learn", categories: ["Curriculum"] },
+  { heading: "Qur'an, Arabic and Islamic Studies", categories: ["Islamic Studies"] },
+  { heading: "Equipment, Teams and the portal", categories: ["Technology"] },
+  { heading: "Additional needs and accessibility", categories: ["SEND"] },
+  { heading: "Keeping children safe", categories: ["Safeguarding"] },
 ];
 
 function FaqList({ entries, openId, setOpenId }: { entries: FaqEntry[]; openId: string | null; setOpenId: (id: string | null) => void }) {

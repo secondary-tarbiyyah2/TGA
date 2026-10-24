@@ -19,20 +19,6 @@ const FEATURES = [
   { title: "Fees & reports", body: "Invoices, payment plans and termly reports in one place." },
 ];
 
-function Bar({ value, label }: { value: number; label: string }) {
-  return (
-    <div>
-      <div className="flex justify-between text-xs text-ink/70">
-        <span>{label}</span>
-        <span className="tabular-nums">{value}%</span>
-      </div>
-      <div className="mt-1 h-2 rounded-full bg-teal-100">
-        <div className="h-2 rounded-full bg-teal-500" style={{ width: `${value}%` }} />
-      </div>
-    </div>
-  );
-}
-
 export function PortalPreview() {
   return (
     <section className="section-pad bg-teal-900 text-cream" aria-labelledby="portal-heading">
@@ -65,40 +51,85 @@ export function PortalPreview() {
           </Link>
         </div>
 
+        {/* Drawn to match the real family dashboard (src/app/learn/family/dashboard):
+            ink welcome banner with the date and a chip, the Action centre, "Up next"
+            with Join, then the child card with homework, grades, Qur'an and the note. */}
         <figure className="mx-auto w-full max-w-md">
-          <div className="rounded-3xl bg-cream p-4 text-ink shadow-2xl ring-1 ring-white/10">
-            <div className="flex items-center justify-between border-b border-gold-light/60 pb-3">
-              <p className="font-serif font-semibold">Assalamu alaykum, Umm Yusuf</p>
-              <span className="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-semibold text-teal-900">Year 5</span>
-            </div>
-            <div className="mt-3 rounded-2xl border border-gold-light/60 bg-white p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Up next · 10:15</p>
-              <p className="mt-1 font-semibold">Mathematics — fractions of amounts</p>
-              <span className="mt-3 inline-flex rounded-lg bg-teal-700 px-3 py-1.5 text-xs font-semibold text-white">Join lesson</span>
-            </div>
-            <div className="mt-3 grid grid-cols-2 gap-3">
-              <div className="rounded-2xl border border-gold-light/60 bg-white p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">This week</p>
-                <p className="mt-1 text-2xl font-semibold tabular-nums text-teal-700">20/20</p>
-                <p className="text-xs text-ink/70">lessons attended</p>
-              </div>
-              <div className="rounded-2xl border border-gold-light/60 bg-white p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">To sign</p>
-                <p className="mt-1 text-2xl font-semibold tabular-nums text-teal-700">1</p>
-                <p className="text-xs text-ink/70">consent form</p>
+          <div className="rounded-3xl bg-cream p-3 text-ink shadow-2xl ring-1 ring-white/10 sm:p-4">
+            <div className="rounded-2xl bg-ink-900 px-5 py-4 text-white">
+              <p className="text-xs font-medium tracking-wide text-gold-300">Tuesday 8 December</p>
+              <p className="mt-0.5 text-lg font-semibold tracking-tight">Good morning, Umm Yusuf</p>
+              <p className="text-xs text-white/80">Your children&apos;s school life in one place</p>
+              <div className="mt-3 inline-flex min-w-[8rem] flex-col-reverse rounded-xl bg-white/10 px-3 py-2 ring-1 ring-inset ring-gold-500/40">
+                <span className="text-[11px] font-medium text-white/85">Children</span>
+                <span className="text-xl font-semibold tabular-nums leading-tight">1</span>
               </div>
             </div>
-            <div className="mt-3 space-y-3 rounded-2xl border border-gold-light/60 bg-white p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Qur&apos;an progress</p>
-              <Bar label="Juz' 30 memorised" value={72} />
-              <Bar label="Term target" value={58} />
+
+            <div className="mt-3 rounded-2xl border border-gold-light bg-white p-4">
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-semibold">Action centre</p>
+                <span className="text-xs font-medium text-gold-700">Open Action centre</span>
+              </div>
+              <ul className="mt-2 space-y-1.5 text-xs">
+                <li className="flex items-center justify-between rounded-lg bg-cream px-3 py-2"><span>Sign: Photo consent 2026–27</span><span className="rounded-full bg-gold-100 px-2 py-0.5 font-semibold text-gold-900">Today</span></li>
+                <li className="flex items-center justify-between rounded-lg bg-cream px-3 py-2"><span>Science homework due</span><span className="text-ink/60">Thu</span></li>
+              </ul>
             </div>
-            <div className="mt-3 rounded-2xl border-l-4 border-gold-500 bg-gold-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-gold-900">Weekly Tarbiyah Note</p>
-              <p className="mt-1 text-sm text-ink/80">&ldquo;Yusuf showed real <em>sabr</em> (<span lang="ar" dir="rtl">صَبْر</span>) this week, sticking with a hard problem until he solved it…&rdquo;</p>
+
+            <div className="mt-3 rounded-2xl border border-gold-light bg-white">
+              <p className="px-4 pt-3 text-sm font-semibold">Up next for Yusuf</p>
+              <div className="flex items-center justify-between gap-3 px-4 pb-4 pt-2">
+                <div>
+                  <p className="text-xs text-ink/65">10:15 – 11:00 · Mathematics</p>
+                  <p className="text-sm font-medium">Fractions of amounts</p>
+                </div>
+                <span className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white">Join</span>
+              </div>
+            </div>
+
+            <div className="mt-3 rounded-2xl border border-gold-light bg-white p-4">
+              <p className="text-base font-semibold">Yusuf Khan <span className="ml-1 text-xs font-normal text-ink/65">Year 5</span></p>
+              <div className="mt-3 flex items-center justify-between">
+                <p className="text-xs font-semibold">Homework and grades</p>
+                <span className="text-xs font-medium text-gold-700">See everything to do</span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-3 text-xs">
+                <div>
+                  <p className="font-medium">Due this week</p>
+                  <p className="mt-1 text-ink/70">Maths · fractions worksheet · Thu</p>
+                  <p className="text-ink/70">English · reading log · Fri</p>
+                </div>
+                <div>
+                  <p className="font-medium">Latest grades</p>
+                  <p className="mt-1 text-ink/70">Science quiz · <span className="font-semibold text-ink">8/10</span></p>
+                  <p className="text-ink/70">Arabic vocabulary · <span className="font-semibold text-ink">Secure</span></p>
+                </div>
+              </div>
+              <div className="mt-3">
+                <p className="text-xs font-medium">Qur&apos;an &amp; Islamic Studies</p>
+                <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 rounded-lg bg-cream p-2 text-xs">
+                  <span><span className="font-serif text-base font-semibold">8.2</span> <span className="text-ink/65">/10 average</span></span>
+                  <span className="text-ink/65">4 recitations this term</span>
+                  <span className="font-medium text-teal-700">Improving</span>
+                </div>
+                <ul className="mt-2 flex flex-wrap gap-1.5 text-[11px]">
+                  <li className="rounded-full bg-green-100 px-2 py-0.5 text-green-800">Surah al-Mulk secure</li>
+                  <li className="rounded-full border border-dashed border-gold-light px-2 py-0.5 text-ink/65">Next: Surah al-Qalam</li>
+                </ul>
+              </div>
+              <div className="mt-3">
+                <p className="text-xs font-medium">Weekly Tarbiyah Note</p>
+                <p className="mt-1.5 rounded-lg border border-gold-light/40 p-3 text-xs text-ink/80">&ldquo;Yusuf showed real <em>sabr</em> (<span lang="ar" dir="rtl">صَبْر</span>) this week, sticking with a hard problem until he solved it.&rdquo; <span className="text-ink/55">— Ustadh Bilal, form tutor</span></p>
+              </div>
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
+              <span className="rounded-lg bg-gold-700 px-3 py-1.5 text-white">Report an absence</span>
+              <span className="rounded-lg border border-gold-500 px-3 py-1.5 text-gold-700">Message a teacher</span>
             </div>
           </div>
-          <figcaption className="mt-3 text-center text-xs text-cream/70">Illustration of the parent dashboard — not a real pupil.</figcaption>
+          <figcaption className="mt-3 text-center text-xs text-cream/70">The family dashboard as it appears in the portal — an illustration, not a real pupil.</figcaption>
         </figure>
       </Container>
     </section>

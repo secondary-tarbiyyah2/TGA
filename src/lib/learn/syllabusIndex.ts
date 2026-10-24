@@ -31,7 +31,7 @@ export const syllabusFor = (slug: string): SyllabusInfo | undefined => data.syll
 export const specStatus = (slug: string): string | undefined => data.specs[slug]?.status ?? data.syllabi[slug]?.status;
 export const allHubs = (): Hub[] => data.hubs;
 
-/** Syllabus units for a year whose name overlaps the library unit's name (Reception to Year 9). */
+/** Syllabus units for a year whose name overlaps the library unit's name (Year 1 to Year 9). */
 export function matchSyllabusUnits(slug: string, year: string, unitName: string, max = 3): SyllabusUnit[] {
   const units = data.syllabi[slug]?.years[year] || [];
   const uw = new Set(words(unitName));

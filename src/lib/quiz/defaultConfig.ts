@@ -49,10 +49,10 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       type: "single_select",
       active: true,
       options: [
-        { value: "none", label: "No prior Arabic", icon: "book" },
-        { value: "beginner", label: "Beginner", detail: "Knows some letters and sounds", icon: "book" },
-        { value: "conversational", label: "Conversational", detail: "Can read and follow simple text", icon: "book" },
-        { value: "fluent", label: "Fluent or near-fluent", icon: "book" },
+        { value: "none", label: "No prior Arabic", detail: "Starting from the very first letters.", icon: "sprout" },
+        { value: "beginner", label: "Beginner", detail: "Knows some letters and sounds.", icon: "letters" },
+        { value: "conversational", label: "Conversational", detail: "Can read and follow simple text.", icon: "speech" },
+        { value: "fluent", label: "Fluent or near-fluent", detail: "Reads, writes and speaks with confidence.", icon: "book" },
       ],
     },
     {
@@ -63,10 +63,10 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       type: "single_select",
       active: true,
       options: [
-        { value: "none", label: "Just starting out", icon: "moon" },
-        { value: "reading", label: "Learning to read (Qa'idah / early Qur'an)", icon: "moon" },
-        { value: "reading-fluent", label: "Reads fluently, little or no hifz yet", icon: "moon" },
-        { value: "hifz-in-progress", label: "Already memorising (hifz in progress)", icon: "moon" },
+        { value: "none", label: "Just starting out", detail: "Not yet reading Arabic script.", icon: "sprout" },
+        { value: "reading", label: "Learning to read", detail: "Qa'idah or early Qur'an reading.", icon: "letters" },
+        { value: "reading-fluent", label: "Reads fluently", detail: "Little or no memorisation yet.", icon: "pages" },
+        { value: "hifz-in-progress", label: "Already memorising", detail: "Hifz in progress, with surahs secured.", icon: "bookmark" },
       ],
     },
     {
@@ -77,9 +77,9 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       type: "single_select",
       active: true,
       options: [
-        { value: "central", label: "Central", detail: "Hifz is the main priority, academics build around it.", icon: "moon" },
-        { value: "alongside", label: "Alongside academics", detail: "Meaningful hifz progress and a full academic curriculum.", icon: "compass" },
-        { value: "not-yet", label: "Not at this stage", detail: "Focused on the British curriculum for now.", icon: "graduation-cap" },
+        { value: "central", label: "Central", detail: "Hifz is the main priority, academics build around it.", icon: "target" },
+        { value: "alongside", label: "Alongside academics", detail: "Meaningful hifz progress and a full academic curriculum.", icon: "scales" },
+        { value: "not-yet", label: "Not at this stage", detail: "Qur'an recitation and understanding first; memorisation can come later.", icon: "graduation-cap" },
       ],
     },
     {
@@ -91,9 +91,9 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       type: "single_select",
       active: true,
       options: [
-        { value: "yes", label: "Yes, usually available", icon: "home" },
-        { value: "sometimes", label: "Sometimes", icon: "home" },
-        { value: "no", label: "No, rarely available", icon: "home" },
+        { value: "yes", label: "Yes, usually available", detail: "An adult is nearby for most lessons.", icon: "user-check" },
+        { value: "sometimes", label: "Sometimes", detail: "Depends on the day or the lesson.", icon: "users" },
+        { value: "no", label: "No, rarely available", detail: "My child will mostly be learning independently.", icon: "user-away" },
       ],
     },
   ],

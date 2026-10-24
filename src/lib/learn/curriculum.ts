@@ -32,7 +32,9 @@ export type CurriculumVersion = {
 
 export const LESSON_COLUMNS = "id, subject_slug, subject, year, board, unit, lesson_no, title, duration, objectives, deck_path, pdf_path, version, edited_at, plan_pdf_path, plan_docx_path";
 
-export const YEARS = ["reception", "y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8", "y9", "y10", "y11"];
+// Year 1 to Year 11: the Academy does not run Reception (the "reception" code is still
+// accepted by the database for any legacy content, and labelled if it appears).
+export const YEARS = ["y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8", "y9", "y10", "y11"];
 
 export function yearLabel(y: string): string {
   return y === "reception" ? "Reception" : `Year ${y.slice(1)}`;

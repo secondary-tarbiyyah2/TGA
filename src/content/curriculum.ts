@@ -22,7 +22,7 @@ export const SCHOOL_WEEK_NOTE =
 
 export const keyStages: KeyStage[] = [
   {
-    slug: "reception-year-2",
+    slug: "year-1-2",
     range: "Year 1 – Year 2",
     title: "Key Stage 1",
     subjects: [

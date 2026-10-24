@@ -58,10 +58,10 @@ export const PERIOD_KINDS: { value: PeriodKind; label: string }[] = [
   { value: "enrichment", label: "Enrichment (supervised, no teaching)" },
 ];
 
-/** Who a period is for. 'gcse' = Years 10-11, 'ks3' = Years 7-9, 'primary' = Reception-Year 6. */
+/** Who a period is for. 'gcse' = Years 10-11, 'ks3' = Years 7-9, 'primary' = Year 1-Year 6. */
 export const AUDIENCES: { value: string; label: string }[] = [
   { value: "all", label: "Everyone" },
-  { value: "primary", label: "Primary (Reception-Y6)" },
+  { value: "primary", label: "Primary (Y1-Y6)" },
   { value: "ks3", label: "Years 7-9" },
   { value: "gcse", label: "GCSE (Years 10-11)" },
 ];

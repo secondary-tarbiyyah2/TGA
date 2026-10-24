@@ -5,7 +5,7 @@ export default defineType({
   title: "Fee band",
   type: "document",
   fields: [
-    defineField({ name: "yearGroupRange", title: "Year group range", type: "string", description: "e.g. \"Reception – Year 2\"", validation: (r) => r.required() }),
+    defineField({ name: "yearGroupRange", title: "Year group range", type: "string", description: "e.g. \"Year 1 – Year 2\"", validation: (r) => r.required() }),
     defineField({ name: "order", title: "Display order", type: "number", validation: (r) => r.required() }),
     defineField({ name: "annualFee", title: "Annual fee (£) - the only stored fee figure", type: "number", validation: (r) => r.required().positive() }),
     // Deprecated + ignored: termly/monthly are derived from the annual fee

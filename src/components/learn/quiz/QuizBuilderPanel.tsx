@@ -7,7 +7,7 @@ import type { LineIcon, QuizConfig, QuizQuestion, QuizRule, RuleCondition, RuleO
 
 type VersionRow = { id: string; status: string; label: string; content: QuizConfig; published_at: string | null; created_at: string };
 
-const ICONS: LineIcon[] = ["book", "moon", "graduation-cap", "clock", "home", "compass", "none"];
+const ICONS: LineIcon[] = ["book", "pages", "sprout", "letters", "speech", "bookmark", "target", "scales", "graduation-cap", "clock", "home", "compass", "user-check", "users", "user-away", "none"];
 const OPERATORS: RuleOperator[] = ["equals", "not_equals", "in", "not_in"];
 const OPERATOR_LABELS: Record<RuleOperator, string> = {
   equals: "is",

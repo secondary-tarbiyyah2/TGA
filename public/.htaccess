@@ -43,6 +43,8 @@ RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 # domain. See deploy/policy.php.
 # Policies were renumbered in September 2026 (SMSC folded into others), so
 # old addresses forward to the same policy's new one.
+# The Academy starts at Year 1; the old key-stage URL redirects.
+RewriteRule ^curriculum/reception-year-2/?$ /curriculum/year-1-2/ [R=301,L]
 RewriteRule ^policies/17-rshe\.pdf$ /policies/17-relationships-sex-and-health-education.pdf [R=301,L]
 RewriteRule ^policies/19-careers\.pdf$ /policies/18-careers-education-and-guidance.pdf [R=301,L]
 RewriteRule ^policies/25-admissions\.pdf$ /policies/24-admissions.pdf [R=301,L]

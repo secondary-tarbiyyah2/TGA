@@ -20,46 +20,51 @@ export function RecipeValues() {
   return (
     <section className="section-pad" aria-labelledby="recipe-heading">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
-          <div>
-            <Kicker>Character, every day</Kicker>
-            <h2 id="recipe-heading" className="text-h2 font-serif font-semibold text-ink">
-              Our <span className="text-gold-700">RECIPE</span> for character.
-            </h2>
-            <p className="mt-4 text-ink/75">
-              In an online school, much of a child&apos;s conduct happens without an adult in the room. So we teach six values
-              by name — one each half term in assemblies and form time — and recognise them with merits, a RECIPE Star in every
-              class, and a character comment on every report.
-            </p>
-            <Link href="/policies/23-recipe-character-framework.pdf" className="mt-6 inline-block text-sm font-semibold text-gold-700 underline">
-              Read the RECIPE Character Framework (PDF)
-            </Link>
-          </div>
-          <ol className="grid gap-3 sm:grid-cols-2">
-            {VALUES.map((v) => (
-              <li key={v.name} className="flex gap-4 rounded-2xl border border-gold-light/60 bg-white p-5">
-                <span aria-hidden="true" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-ink-900 font-serif text-xl font-bold text-gold-300">
-                  {v.letter}
-                </span>
-                <div className="min-w-0">
-                  <p className="flex flex-wrap items-baseline gap-x-2 font-semibold text-ink">
-                    {v.name}
-                    {v.arabic && (
-                      <span lang="ar" dir="rtl" className="text-lg font-bold text-teal-700">
-                        {v.arabic}
-                      </span>
-                    )}
-                  </p>
-                  <p className="text-sm text-ink/70">
-                    {v.meaning}
-                    {v.term && <> (<em>{v.term}</em>)</>}
-                  </p>
-                  <p className="mt-2 text-sm text-ink/80">{v.online}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+        <div className="max-w-2xl">
+          <Kicker>Character, every day</Kicker>
+          <h2 id="recipe-heading" className="text-h2 font-serif font-semibold text-ink">
+            Our <span className="text-gold-700">RECIPE</span> for character.
+          </h2>
+          <p className="mt-4 text-ink/75">
+            In an online school, much of a child&apos;s conduct happens without an adult in the room. So we teach six values
+            by name — one each half term in assemblies and form time — and recognise them with merits, a RECIPE Star in every
+            class, and a character comment on every report.
+          </p>
         </div>
+
+        {/* The word itself, spelled out as one row of six — never a grid of boxes. */}
+        <ol className="mt-10 grid grid-cols-6 gap-1.5 sm:gap-3" aria-label="The six RECIPE values">
+          {VALUES.map((v, i) => (
+            <li key={`${v.letter}-${i}`} className="flex flex-col items-center rounded-xl border border-gold-light/60 bg-white px-1 py-3 text-center sm:rounded-2xl sm:px-3 sm:py-5">
+              <span aria-hidden="true" className="font-serif text-3xl font-bold leading-none text-gold-700 sm:text-5xl">{v.letter}</span>
+              <span className="mt-2 text-[10px] font-semibold leading-tight text-ink sm:text-sm">{v.name}</span>
+              {v.arabic ? (
+                <span lang="ar" dir="rtl" className="mt-1 text-sm font-bold leading-none text-teal-700 sm:text-xl">{v.arabic}</span>
+              ) : (
+                <span aria-hidden="true" className="mt-1 text-sm leading-none text-ink/30 sm:text-xl">·</span>
+              )}
+            </li>
+          ))}
+        </ol>
+
+        {/* What each value means, and what it looks like in an online classroom. One line each. */}
+        <dl className="mt-8 divide-y divide-gold-light/50 rounded-2xl border border-gold-light/60 bg-white">
+          {VALUES.map((v, i) => (
+            <div key={`${v.name}-${i}`} className="grid gap-1 px-5 py-3 sm:grid-cols-[11rem_1fr] sm:gap-6">
+              <dt className="font-semibold text-ink">
+                <span aria-hidden="true" className="mr-2 font-serif text-gold-700">{v.letter}</span>
+                {v.name}
+                {v.term && <span className="ml-1 text-sm font-normal text-ink/60"><em>{v.term}</em></span>}
+              </dt>
+              <dd className="text-sm text-ink/75">
+                <span className="text-ink">{v.meaning}.</span> {v.online}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <Link href="/policies/23-recipe-character-framework.pdf" className="mt-6 inline-block text-sm font-semibold text-gold-700 underline">
+          Read the RECIPE Character Framework (PDF)
+        </Link>
       </Container>
     </section>
   );

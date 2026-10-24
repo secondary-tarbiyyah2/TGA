@@ -50,7 +50,7 @@ function TabContent({ tab }: { tab: Tab }) {
           orderKey="order_index"
           rowLabel={(r) => `${r.question}`}
           fields={[
-            { key: "category", label: "Category", type: "select", options: ["Admissions", "Fees", "Curriculum", "Technology", "Islamic Studies", "SEND"], required: true },
+            { key: "category", label: "Category", type: "select", options: ["Admissions", "School day", "Fees", "Curriculum", "Islamic Studies", "Technology", "SEND", "Safeguarding"], required: true },
             { key: "order_index", label: "Display order", type: "number" },
             { key: "question", label: "Question", required: true },
             { key: "answer", label: "Answer", type: "textarea", required: true },

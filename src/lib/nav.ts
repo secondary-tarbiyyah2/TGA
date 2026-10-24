@@ -43,7 +43,7 @@ export type HubCard = { href: string; title: string; body: string };
 
 export const learningHub: HubCard[] = [
   { href: "/curriculum", title: "Curriculum", body: "Qur'an, Arabic and Islamic Studies alongside the full national curriculum, by key stage, Year 1 to GCSE." },
-  { href: "/curriculum/reception-year-2", title: "Year 1 – Year 2", body: "View timetable, subjects and sample week." },
+  { href: "/curriculum/year-1-2", title: "Year 1 – Year 2", body: "View timetable, subjects and sample week." },
   { href: "/curriculum/year-3-6", title: "Year 3 – Year 6", body: "View timetable, subjects and sample week." },
   { href: "/curriculum/year-7-9", title: "Year 7 – Year 9", body: "View timetable, subjects and sample week." },
   { href: "/curriculum/year-10-11", title: "Year 10 – Year 11 (GCSE)", body: "View timetable, subjects and sample week." },

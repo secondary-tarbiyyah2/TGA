@@ -262,8 +262,9 @@ export function entryAcademicYear(preferredStart?: string | null, today: Date = 
 
 /**
  * Suggested year group from a date of birth (yyyy-mm-dd): the child's age on
- * 31 August of the entry year. Age 4 = Reception, 5 = Year 1 ... 15 = Year 11.
- * Returns null when the date is invalid or outside Reception to Year 11.
+ * 31 August of the entry year. Age 5 = Year 1 ... 15 = Year 11. The Academy
+ * does not run Reception, so a four-year-old is too young (null).
+ * Returns null when the date is invalid or outside Year 1 to Year 11.
  */
 export function suggestYearGroup(dob: string, preferredStart?: string | null, today: Date = new Date()): { yearGroup: string; entryYear: number; ageAtEntry: number } | null {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dob);
@@ -273,8 +274,8 @@ export function suggestYearGroup(dob: string, preferredStart?: string | null, to
   const entryYear = entryAcademicYear(preferredStart, today);
   // Born 1 Sep or later: one year younger on the 31 Aug cut-off.
   const age = entryYear - by - (bm >= 9 ? 1 : 0);
-  if (age < 4 || age > 15) return null;
-  return { yearGroup: age === 4 ? "Reception" : `Year ${age - 4}`, entryYear, ageAtEntry: age };
+  if (age < 5 || age > 15) return null;
+  return { yearGroup: `Year ${age - 4}`, entryYear, ageAtEntry: age };
 }
 
 /** Why an application should not yet move to Accepted (empty = fine). */
