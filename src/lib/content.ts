@@ -9,6 +9,7 @@ import {
   type FeeBand, type FaqEntry, type TermDate, type Testimonial, type StaffMember, type Differentiator, type PolicyLink, type SiteSettings,
   type HomepageContent, type AboutContent, type CurriculumContent, type CurriculumDocument,
 } from "@/content/seed";
+import { keyStages as seedKeyStages, type KeyStage } from "@/content/curriculum";
 
 /** Every getter below reads live content from Supabase (0025_website_content.sql
  * and later migrations), and falls back to bundled seed content (same shape)
@@ -104,6 +105,8 @@ export const getLiveSiteSettings = async (): Promise<SiteSettings | null> => {
       regulatoryStatusNote: (r.regulatory_status_note as string) || undefined,
       headteacherWelcomeQuote: (r.headteacher_welcome_quote as string) || undefined,
       headteacherName: (r.headteacher_name as string) || undefined,
+      policiesIntro: (r.policies_intro as string) || undefined,
+      policiesAccessibleFormatsNote: (r.policies_accessible_formats_note as string) || undefined,
     };
     return settings;
   } catch {
@@ -198,7 +201,7 @@ function mapDifferentiator(r: Record<string, unknown>): Differentiator {
 
 export const getPolicyLinks = () =>
   queryOrFallback<PolicyLink[]>(
-    (s) => s.from("policy_links").select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index").order("order_index"),
+    (s) => s.from("policy_links").select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index, featured").eq("visibility", "public").order("order_index"),
     seedPolicyLinks
   ).then((rows) => (rows === seedPolicyLinks ? rows : rows.map((r: unknown) => mapPolicyLink(r as Record<string, unknown>))));
 
@@ -211,7 +214,8 @@ export const getLivePolicyLinks = async (): Promise<PolicyLink[] | null> => {
   try {
     const { data, error } = await supabase
       .from("policy_links")
-      .select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index")
+      .select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index, featured")
+      .eq("visibility", "public")
       .order("order_index");
     if (error || !Array.isArray(data)) return null;
     return data.map((r: unknown) => mapPolicyLink(r as Record<string, unknown>));
@@ -226,6 +230,30 @@ function mapPolicyLink(r: Record<string, unknown>): PolicyLink {
     parentQuestionCategory: (r.parent_question_category as PolicyLink["parentQuestionCategory"]) || undefined,
     fileUrl: r.file_url as string, summary: (r.summary as string) || undefined,
     lastReviewed: (r.last_reviewed as string) || undefined, nextReview: (r.next_review as string) || undefined, order: r.order_index as number,
+    featured: r.featured === true,
+  };
+}
+
+/** Key-stage curriculum pages (/curriculum/<slug>): subjects, live lessons a
+ * week and intro text, editable at /learn/admin/content -> Curriculum page.
+ * Falls back to src/content/curriculum.ts. Hidden pages (visible = false) are
+ * left out, so they disappear from the curriculum index, nav and sitemap on
+ * the next rebuild. */
+export const getKeyStages = () =>
+  queryOrFallback<KeyStage[]>(
+    (s) => s.from("key_stage_pages").select("slug, range, title, intro, subjects, weekly, lesson_length, total_lessons, note, gcse_note, order_index").eq("visible", true).order("order_index"),
+    seedKeyStages
+  ).then((rows) => (rows === seedKeyStages ? rows : rows.map((r: unknown) => mapKeyStage(r as Record<string, unknown>))));
+
+function mapKeyStage(r: Record<string, unknown>): KeyStage {
+  const subjects = Array.isArray(r.subjects) ? (r.subjects as unknown[]).map(String) : [];
+  const weekly = Array.isArray(r.weekly)
+    ? (r.weekly as Record<string, unknown>[]).map((w) => ({ subject: String(w.subject ?? ""), lessons: typeof w.lessons === "number" ? w.lessons : String(w.lessons ?? "") }))
+    : [];
+  return {
+    slug: r.slug as string, range: r.range as string, title: r.title as string, subjects, weekly,
+    liveSplit: (r.intro as string) || "", lessonLength: (r.lesson_length as string) || "", totalLessons: (r.total_lessons as string) || "",
+    note: (r.note as string) || undefined, gcseNote: (r.gcse_note as string) || undefined,
   };
 }
 

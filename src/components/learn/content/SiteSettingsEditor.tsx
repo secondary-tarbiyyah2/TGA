@@ -30,6 +30,8 @@ type Row = {
   regulatory_status_note: string | null;
   headteacher_welcome_quote: string | null;
   headteacher_name: string | null;
+  policies_intro: string | null;
+  policies_accessible_formats_note: string | null;
 };
 
 const DEFAULT_KEYS = ["cta_primary_label", "cta_primary_href", "admissions_email"] as const;
@@ -56,6 +58,8 @@ const FIELDS: { key: keyof Row; label: string; type?: "text" | "number" | "texta
   { key: "registration_body", label: "Registration body" },
   { key: "registration_number", label: "Registration number" },
   { key: "regulatory_status_note", label: "Regulatory status note", type: "textarea" },
+  { key: "policies_intro", label: "Policies page: intro sentence", type: "textarea", hint: "Shown under the Policies heading. Live immediately, no rebuild." },
+  { key: "policies_accessible_formats_note", label: "Policies page: accessible formats note", type: "textarea", hint: "Shown at the foot of the Policies page, e.g. how to request large print or a Word version. Live immediately." },
   { key: "headteacher_name", label: "Headteacher name" },
   { key: "headteacher_welcome_quote", label: "Headteacher welcome quote (homepage + About)", type: "textarea", hint: "Only shown publicly once this is filled in." },
 ];

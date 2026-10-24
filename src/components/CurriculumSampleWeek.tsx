@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SCHOOL_WEEK_NOTE, keyStages, type KeyStage } from "@/content/curriculum";
+import { SCHOOL_WEEK_NOTE, keyStages as defaultStages, type KeyStage } from "@/content/curriculum";
 
 /** Live lessons a week by subject for one key stage, from the Curriculum Policy. */
 export function WeeklyLessons({ ks }: { ks: KeyStage }) {
@@ -43,7 +43,8 @@ export function WeeklyLessons({ ks }: { ks: KeyStage }) {
 }
 
 /** The curriculum index page's key-stage switcher. */
-export function CurriculumSampleWeek() {
+export function CurriculumSampleWeek({ stages }: { stages?: KeyStage[] }) {
+  const keyStages = stages && stages.length > 0 ? stages : defaultStages;
   const [active, setActive] = useState(keyStages[0].slug);
   const stage = keyStages.find((ks) => ks.slug === active) || keyStages[0];
 

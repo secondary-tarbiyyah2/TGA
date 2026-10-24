@@ -7,6 +7,7 @@ import { SiteSettingsEditor } from "@/components/learn/content/SiteSettingsEdito
 import { HomepageContentEditor } from "@/components/learn/content/HomepageContentEditor";
 import { AboutContentEditor } from "@/components/learn/content/AboutContentEditor";
 import { CurriculumContentEditor } from "@/components/learn/content/CurriculumContentEditor";
+import { KeyStagePagesEditor } from "@/components/learn/content/KeyStagePagesEditor";
 import { PolicyEditor } from "@/components/learn/documents/PolicyEditor";
 import { FeesEditor } from "@/components/learn/content/FeesEditor";
 import { SimpleListEditor } from "@/components/learn/content/SimpleListEditor";
@@ -32,7 +33,12 @@ function TabContent({ tab }: { tab: Tab }) {
     case "About page":
       return <AboutContentEditor />;
     case "Curriculum page":
-      return <CurriculumContentEditor />;
+      return (
+        <div className="space-y-6">
+          <CurriculumContentEditor />
+          <KeyStagePagesEditor />
+        </div>
+      );
     case "Fees":
       return <FeesEditor />;
     case "FAQs":

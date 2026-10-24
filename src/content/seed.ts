@@ -89,6 +89,10 @@ export type SiteSettings = {
   regulatoryStatusNote?: string;
   headteacherWelcomeQuote?: string;
   headteacherName?: string;
+  /** Editable intro sentence on the Policies page. */
+  policiesIntro?: string;
+  /** Editable "accessible formats" note at the foot of the Policies page. */
+  policiesAccessibleFormatsNote?: string;
 };
 
 export const siteSettings: SiteSettings = {
@@ -288,6 +292,8 @@ export type PolicyLink = {
   lastReviewed?: string;
   nextReview?: string;
   order?: number;
+  /** Shown in the "Key documents" box at the top of the Policies page. */
+  featured?: boolean;
 };
 
 // Every policy here was issued September 2026 for the 2026–27 academic year,
@@ -303,7 +309,7 @@ const NEXT_REVIEW = "2027-08-31";
 // call, not a new fact: every document keeps its existing DfE category,
 // number and file — only how they're grouped on the page changes.
 export const policyLinks: PolicyLink[] = [
-  { _id: "p01", number: "01", order: 1, category: "required", parentQuestionCategory: "safety", title: "Child Protection and Safeguarding Policy", fileUrl: "/policies/01-child-protection-and-safeguarding.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p01", number: "01", order: 1, category: "required", featured: true, parentQuestionCategory: "safety", title: "Child Protection and Safeguarding Policy", fileUrl: "/policies/01-child-protection-and-safeguarding.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
   { _id: "policy-02-online-safety-and-acceptable-use", number: "02", order: 2, category: "published", parentQuestionCategory: "safety", title: "Online Safety and Acceptable Use Policy", fileUrl: "/policies/02-online-safety-and-acceptable-use.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
   { _id: "policy-03-live-lesson-protocols", number: "03", order: 3, category: "published", parentQuestionCategory: "safety", title: "Live Lesson Protocols", fileUrl: "/policies/03-live-lesson-protocols.pdf", summary: "How live online lessons are run safely, calmly and well.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
   { _id: "policy-04-recording-of-live-lessons-and-use-of-images", number: "04", order: 4, category: "published", parentQuestionCategory: "data", title: "Recording of Live Lessons and Use of Images Policy", fileUrl: "/policies/04-recording-of-live-lessons-and-use-of-images.pdf", summary: "When lessons are recorded, who can see them and how long they are kept.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
@@ -325,11 +331,11 @@ export const policyLinks: PolicyLink[] = [
   { _id: "policy-21-flexible-learning", number: "21", order: 20, category: "published", parentQuestionCategory: "curriculum", title: "Flexible Learning Policy", fileUrl: "/policies/21-flexible-learning.pdf", summary: "Timetable options for families across time zones and circumstances.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
   { _id: "policy-22-enrichment-and-clubs", number: "22", order: 21, category: "published", parentQuestionCategory: "curriculum", title: "Enrichment and Clubs Policy", fileUrl: "/policies/22-enrichment-and-clubs.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
   { _id: "policy-23-recipe-character-framework", number: "23", order: 22, category: "published", parentQuestionCategory: "curriculum", title: "RECIPE Character Framework", fileUrl: "/policies/23-recipe-character-framework.pdf", summary: "How our values are taught, lived and recognised every day.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p25", number: "24", order: 23, category: "required", parentQuestionCategory: "admissions-fees", title: "Admissions Policy", fileUrl: "/policies/24-admissions.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p26", number: "25", order: 24, category: "required", parentQuestionCategory: "admissions-fees", title: "Fees Policy", fileUrl: "/policies/25-fees.pdf", summary: "Terms should be read before enrolling.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p27", number: "26", order: 25, category: "required", parentQuestionCategory: "complaints", title: "Concerns and Complaints Policy", fileUrl: "/policies/26-concerns-and-complaints.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p25", number: "24", order: 23, category: "required", featured: true, parentQuestionCategory: "admissions-fees", title: "Admissions Policy", fileUrl: "/policies/24-admissions.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p26", number: "25", order: 24, category: "required", featured: true, parentQuestionCategory: "admissions-fees", title: "Fees Policy", fileUrl: "/policies/25-fees.pdf", summary: "Terms should be read before enrolling.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p27", number: "26", order: 25, category: "required", featured: true, parentQuestionCategory: "complaints", title: "Concerns and Complaints Policy", fileUrl: "/policies/26-concerns-and-complaints.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
   { _id: "policy-27-parent-communication-charter", number: "27", order: 26, category: "published", parentQuestionCategory: "complaints", title: "Parent Communication Charter", fileUrl: "/policies/27-parent-communication-charter.pdf", summary: "How and when we keep in touch, and how quickly we reply.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
-  { _id: "p29", number: "28", order: 27, category: "required", parentQuestionCategory: "data", title: "Data Protection Policy", fileUrl: "/policies/28-data-protection.pdf", summary: "See also our short Privacy Notice.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
+  { _id: "p29", number: "28", order: 27, category: "required", featured: true, parentQuestionCategory: "data", title: "Data Protection Policy", fileUrl: "/policies/28-data-protection.pdf", summary: "See also our short Privacy Notice.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
   { _id: "p30", number: "29", order: 28, category: "required", parentQuestionCategory: "curriculum", title: "Equality, Diversity and Accessibility Policy", fileUrl: "/policies/29-equality-diversity-and-accessibility.pdf", summary: "Includes our accessibility plan.", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
 ];
 

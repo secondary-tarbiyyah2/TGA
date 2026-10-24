@@ -26,10 +26,17 @@ export default async function AdmissionsPage() {
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             A straightforward, six-step process, from your online application to your child&apos;s first lesson, including a supervised remote assessment and an interview with you and your child. Applications for the December 2026 launch are open now.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button href="/admissions/apply">Apply now</Button>
+            <a href="/prospectus/TGA-Prospectus-2026-27.pdf" className="font-semibold text-gold-700 underline" target="_blank" rel="noopener noreferrer">
+              Download the prospectus (PDF, 20 pages)<span className="sr-only">, opens in a new tab</span>
+            </a>
           </div>
           <p className="mt-4 max-w-2xl text-sm text-ink/70">
+            Apply by Friday 27 November 2026 for the founding cohort; later applications are considered while places remain. Come to an{" "}
+            <Link href="/open-evening" className="font-semibold text-gold-700 underline">open evening or taster morning</Link> first if you would like to.
+          </p>
+          <p className="mt-2 max-w-2xl text-sm text-ink/70">
             Not sure it&apos;s the right fit yet?{" "}
             <Link href="/eligibility" className="font-semibold text-gold-700 underline">Take our 2-minute fit quiz</Link>{" "}
             for a personalised recommendation before you apply.

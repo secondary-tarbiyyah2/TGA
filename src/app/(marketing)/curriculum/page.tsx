@@ -4,8 +4,7 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
 import { AdmissionsStrip } from "@/components/AdmissionsStrip";
-import { keyStages } from "@/content/curriculum";
-import { getCurriculumContent } from "@/lib/content";
+import { getCurriculumContent, getKeyStages } from "@/lib/content";
 import { CurriculumSampleWeek } from "@/components/CurriculumSampleWeek";
 
 export const metadata: Metadata = pageMetadata({
@@ -15,7 +14,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function CurriculumPage() {
-  const content = await getCurriculumContent();
+  const [content, keyStages] = await Promise.all([getCurriculumContent(), getKeyStages()]);
 
   return (
     <>
@@ -54,7 +53,7 @@ export default async function CurriculumPage() {
           <Kicker>Sample weekly timetable</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">See how a typical week looks.</h2>
           <div className="mt-8 max-w-xl">
-            <CurriculumSampleWeek />
+            <CurriculumSampleWeek stages={keyStages} />
           </div>
         </Container>
       </section>

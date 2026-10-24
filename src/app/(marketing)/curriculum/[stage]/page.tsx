@@ -4,19 +4,18 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
-import { keyStages } from "@/content/curriculum";
 import { WeeklyLessons } from "@/components/CurriculumSampleWeek";
-import { getCurriculumDocuments } from "@/lib/content";
+import { getCurriculumDocuments, getKeyStages } from "@/lib/content";
 
 const TERM_LABEL: Record<string, string> = { autumn: "Autumn", spring: "Spring", summer: "Summer" };
 
-export function generateStaticParams() {
-  return keyStages.map((ks) => ({ stage: ks.slug }));
+export async function generateStaticParams() {
+  return (await getKeyStages()).map((ks) => ({ stage: ks.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ stage: string }> }): Promise<Metadata> {
   const { stage } = await params;
-  const ks = keyStages.find((k) => k.slug === stage);
+  const ks = (await getKeyStages()).find((k) => k.slug === stage);
   if (!ks) return {};
   return pageMetadata({
     title: `${ks.range} Curriculum`,
@@ -27,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ stage: st
 
 export default async function KeyStagePage({ params }: { params: Promise<{ stage: string }> }) {
   const { stage } = await params;
-  const ks = keyStages.find((k) => k.slug === stage);
+  const ks = (await getKeyStages()).find((k) => k.slug === stage);
   if (!ks) notFound();
 
   const documents = (await getCurriculumDocuments()).filter((d) => d.keyStage === stage);

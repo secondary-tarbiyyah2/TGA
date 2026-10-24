@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
-import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { PolicyDirectory } from "@/components/PolicyDirectory";
@@ -24,10 +23,6 @@ export default async function PoliciesPage() {
       <Container className="max-w-2xl">
         <Kicker>Policies</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">School policies.</h1>
-        <p className="mt-4 text-ink/70">
-          Our statutory policies for the 2026&ndash;27 academic year. For our privacy notice, see the{" "}
-          <Link href="/legal/privacy" className="font-semibold text-gold-700 underline">Privacy page</Link>.
-        </p>
 
         <PolicyDirectory
           initialPolicies={policies}
@@ -36,6 +31,9 @@ export default async function PoliciesPage() {
             safeguardingLeadContact: siteSettings.safeguardingLeadContact,
             regulatoryStatusNote: siteSettings.regulatoryStatusNote,
             complaintsLastYear: siteSettings.complaintsLastYear,
+            admissionsEmail: siteSettings.admissionsEmail,
+            policiesIntro: siteSettings.policiesIntro,
+            policiesAccessibleFormatsNote: siteSettings.policiesAccessibleFormatsNote,
           }}
         />
       </Container>

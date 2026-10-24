@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { keyStages } from "@/content/curriculum";
+import { getKeyStages } from "@/lib/content";
 
 export const dynamic = "force-static";
 
@@ -11,7 +11,8 @@ const routes = [
   "legal/privacy", "legal/cookies", "legal/terms", "accessibility",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const keyStages = await getKeyStages();
   const staticRoutes = routes.map((route) => ({
     // Trailing slash matches the exported URLs (trailingSlash: true) and each page's canonical.
     url: route ? `${siteUrl}/${route}/` : `${siteUrl}/`,
