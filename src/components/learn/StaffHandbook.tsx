@@ -2,9 +2,22 @@ import { MARK_BANDS } from "@/lib/learn/quranClassroom";
 import { ui } from "@/components/learn/ui";
 
 /** The few things every member of staff needs to know, in one place. Written to match how the portal behaves today. */
+const HANDBOOK_PDF = "https://globalacademy.tarbiyyah.co.uk/staff/TGA-Staff-Handbook-2026-27.pdf";
+
 export function StaffHandbook() {
   return (
     <div className="space-y-4">
+      <section className={`${ui.card} flex flex-wrap items-center justify-between gap-3`}>
+        <div>
+          <h2 className="text-base font-semibold text-ink">Staff Handbook 2026–27 (PDF)</h2>
+          <p className="text-sm text-ink/70">The full handbook: the school day, how we teach, safeguarding, behaviour, marking, attendance, recording and data, online conduct, the portal, who to contact, and a first-week checklist.</p>
+        </div>
+        <div className="flex gap-2">
+          <a href={HANDBOOK_PDF} target="_blank" rel="noreferrer" className="rounded-full bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">Download PDF</a>
+          <a href="https://globalacademy.tarbiyyah.co.uk/policies/" target="_blank" rel="noreferrer" className="rounded-full border border-gold-500 px-4 py-2 text-sm font-semibold text-gold-700 hover:bg-cream">All policies</a>
+        </div>
+      </section>
+      <p className="text-sm text-ink/65">Below: the portal how-tos, kept short. The PDF is the full version and the policies are the authority.</p>
       <Section title="Start of day: clocking in">
         <ul>
           <li>Clock in when the portal asks. Your time counts while you are using the portal.</li>
