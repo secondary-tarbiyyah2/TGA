@@ -8,7 +8,7 @@ changes; if a task conflicts with it, flag the conflict rather than silently pic
 Tarbiyyah Global Academy (TGA) — an online British school (Reception to Year 11) under the
 Tarbiyyah Education Trust (10+ years running Tarbiyyah Primary, Tarbiyyah Secondary Boys,
 Tarbiyyah Al-Banaat). Live, timetabled lessons with qualified UK teachers; British curriculum
-taught with *tarbiyyah* (nurturing character and faith). Live lessons launch January 2027.
+taught with *tarbiyyah* (nurturing character and faith). Live lessons launch 7 December 2026.
 Audience: Muslim families in the UK and abroad — "wherever home is."
 
 ## Architecture
