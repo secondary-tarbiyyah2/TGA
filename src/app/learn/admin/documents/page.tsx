@@ -25,6 +25,7 @@ type SignableDoc = {
   body: string | null;
   file_path: string | null;
   original_path: string | null;
+  auto_audience?: boolean;
 };
 type Progress = { document_id: string; required_count: number; signed_count: number };
 type Outstanding = { user_id: string; full_name: string | null; email: string | null; title: string; document_id: string };
@@ -280,7 +281,7 @@ function DocumentsContent() {
     );
     if (!supabase) return;
     const [d, p, o, rq] = await Promise.all([
-      supabase.from("signable_documents").select("id, sanity_document_id, title, requires_signature, target_roles, source, file_url, body, file_path, original_path"),
+      supabase.from("signable_documents").select("id, sanity_document_id, title, requires_signature, target_roles, source, file_url, body, file_path, original_path, auto_audience"),
       supabase.from("document_signature_progress").select("document_id, required_count, signed_count"),
       supabase.from("outstanding_signatures").select("user_id, full_name, email, title, document_id"),
       supabase.from("signature_requests").select("document_id, user_id, requested_at, email_sent").order("requested_at", { ascending: false }).limit(1000),
@@ -301,7 +302,7 @@ function DocumentsContent() {
   const docForPolicy = (id: string) => (docs || []).find((d) => d.sanity_document_id === `policy:${id}`);
   const signing = (docs || []).filter((d) => d.requires_signature);
 
-  const savePolicy = async (p: PolicyRow, on: boolean, audiences: Audience[]) => {
+  const savePolicy = async (p: PolicyRow, on: boolean, audiences: Audience[], auto = false) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     setNote(null);
@@ -316,12 +317,42 @@ function DocumentsContent() {
       target_roles: roles.length ? roles : existing?.target_roles || audienceToRoles(["parents"]),
       requires_signature: on,
       source: "policy" as const,
+      auto_audience: auto,
     };
     const { error } = existing
       ? await supabase.from("signable_documents").update(fields).eq("id", existing.id)
       : await supabase.from("signable_documents").insert({ ...fields, sanity_document_id: `policy:${p.id}`, policy_link_id: isUuid ? p.id : null, current_asset_id: "pending" });
     setBusyId(null);
     if (error) return setNote("Couldn't save. Only a Headteacher or Admin can change this.");
+    await load();
+  };
+
+  /** The automatic audience for a policy (policy_signing_audience in the database): who it
+   * is written for, worked out from the title. Empty means information only. */
+  const recommended = async (p: PolicyRow): Promise<Audience[]> => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return [];
+    const { data } = await supabase.rpc("policy_signing_audience", { p_number: p.number, p_title: p.title });
+    return rolesToAudience((data as string[]) || []);
+  };
+
+  const applyRecommended = async (p: PolicyRow) => {
+    const a = await recommended(p);
+    await savePolicy(p, a.length > 0, a, true);
+  };
+
+  const autoAssignAll = async () => {
+    if (!policies) return;
+    if (!confirm("Set every website policy to its automatic audience? Audiences you have customised by hand are kept.")) return;
+    setBusyId("all");
+    for (const p of policies) {
+      const d = docForPolicy(p.id);
+      if (d && d.auto_audience === false) continue;
+      const a = await recommended(p);
+      await savePolicy(p, a.length > 0, a, true);
+    }
+    setBusyId(null);
+    setNote("Recorded: every policy now has its automatic audience (hand-set ones kept).");
     await load();
   };
 
@@ -427,6 +458,14 @@ function DocumentsContent() {
 
       {tab === "policies" && (
         <div className="overflow-hidden rounded-2xl border border-gold-light bg-white">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gold-light/70 bg-cream/60 px-5 py-3">
+            <p className="text-xs text-ink/70">
+              Each policy is routed automatically to the people it is written for (staff, parents, pupils) from its title, and a new policy is routed the moment it is added. You can still change any audience by hand; hand-set ones show no <span className="font-semibold">Auto</span> badge.
+            </p>
+            <button type="button" onClick={autoAssignAll} disabled={busyId === "all"} className="rounded-full border border-teal-700 px-3 py-1 text-xs font-medium text-teal-700 hover:bg-teal-700/5 disabled:opacity-50">
+              {busyId === "all" ? "Working…" : "Re-apply automatic audiences"}
+            </button>
+          </div>
           {policies === null ? (
             <div className="h-40 animate-pulse" />
           ) : policies.length === 0 ? (
@@ -453,6 +492,7 @@ function DocumentsContent() {
                         </p>
                       </div>
                       {on && prog && <Bar signed={prog.signed_count} required={prog.required_count} />}
+                      {d && d.auto_audience !== false && <span className="rounded-full bg-teal-700/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-teal-700" title="Audience set automatically from the policy title">Auto</span>}
                       <label className="flex items-center gap-2 text-sm font-medium text-ink/80">
                         <Switch
                           on={on}
@@ -471,9 +511,15 @@ function DocumentsContent() {
                           disabled={busy}
                           onChange={(v) => (v.length ? savePolicy(p, true, v) : setNote("At least one group must sign, or switch the signature off."))}
                         />
+                        {d?.auto_audience === false && (
+                          <button type="button" onClick={() => applyRecommended(p)} disabled={busy} className="text-xs font-medium text-teal-700 underline disabled:opacity-50">Use automatic audience</button>
+                        )}
                       </div>
                     ) : (
-                      <p className="mt-1 pl-12 text-xs text-ink/65">View only. Nobody is asked to sign this.</p>
+                      <p className="mt-1 pl-12 text-xs text-ink/65">
+                        View only. Nobody is asked to sign this.
+                        {d?.auto_audience === false && <> <button type="button" onClick={() => applyRecommended(p)} disabled={busy} className="font-medium text-teal-700 underline disabled:opacity-50">Use automatic audience</button></>}
+                      </p>
                     )}
                   </li>
                 );
