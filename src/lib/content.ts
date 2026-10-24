@@ -107,6 +107,8 @@ export const getLiveSiteSettings = async (): Promise<SiteSettings | null> => {
       headteacherName: (r.headteacher_name as string) || undefined,
       policiesIntro: (r.policies_intro as string) || undefined,
       policiesAccessibleFormatsNote: (r.policies_accessible_formats_note as string) || undefined,
+      sampleLessonVideoUrl: (r.sample_lesson_video_url as string) || undefined,
+      sampleLessonNote: (r.sample_lesson_note as string) || undefined,
     };
     return settings;
   } catch {

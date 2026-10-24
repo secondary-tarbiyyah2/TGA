@@ -93,6 +93,10 @@ export type SiteSettings = {
   policiesIntro?: string;
   /** Editable "accessible formats" note at the foot of the Policies page. */
   policiesAccessibleFormatsNote?: string;
+  /** Unlisted YouTube (or Teams/Stream) embed URL for the hidden /sample-lesson page. */
+  sampleLessonVideoUrl?: string;
+  /** Short note shown above the sample lesson (teacher, year group, subject). */
+  sampleLessonNote?: string;
 };
 
 export const siteSettings: SiteSettings = {

@@ -32,6 +32,8 @@ type Row = {
   headteacher_name: string | null;
   policies_intro: string | null;
   policies_accessible_formats_note: string | null;
+  sample_lesson_video_url: string | null;
+  sample_lesson_note: string | null;
 };
 
 const DEFAULT_KEYS = ["cta_primary_label", "cta_primary_href", "admissions_email"] as const;
@@ -59,6 +61,8 @@ const FIELDS: { key: keyof Row; label: string; type?: "text" | "number" | "texta
   { key: "registration_number", label: "Registration number" },
   { key: "regulatory_status_note", label: "Regulatory status note", type: "textarea" },
   { key: "policies_intro", label: "Policies page: intro sentence", type: "textarea", hint: "Shown under the Policies heading. Live immediately, no rebuild." },
+  { key: "sample_lesson_video_url", label: "Sample lesson video URL (hidden /sample-lesson page)", type: "url", hint: "Upload the recording to YouTube as Unlisted and paste the watch or embed link. The page is not in the menu, sitemap or search engines; the link goes in open-evening confirmation emails." },
+  { key: "sample_lesson_note", label: "Sample lesson caption", hint: "e.g. Year 5 Mathematics with Ustadh … , recorded October 2026." },
   { key: "policies_accessible_formats_note", label: "Policies page: accessible formats note", type: "textarea", hint: "Shown at the foot of the Policies page, e.g. how to request large print or a Word version. Live immediately." },
   { key: "headteacher_name", label: "Headteacher name" },
   { key: "headteacher_welcome_quote", label: "Headteacher welcome quote (homepage + About)", type: "textarea", hint: "Only shown publicly once this is filled in." },

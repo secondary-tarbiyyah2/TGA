@@ -105,6 +105,10 @@ Deno.serve(async (req) => {
   let emailSent = false;
   if (session) {
     const when = ukWhen(session.starts_at as string);
+    // The hidden sample-lesson page is linked only once the school has set a
+    // recording URL in site settings (/learn/admin/content -> Site settings).
+    const { data: siteRow } = await supabase.from("site_settings").select("sample_lesson_video_url").eq("id", true).maybeSingle();
+    const sampleLessonReady = !!(siteRow && (siteRow as { sample_lesson_video_url: string | null }).sample_lesson_video_url);
     const joinUrl = (session.join_url as string | null) || "";
     const title = session.title as string;
     const ics = buildIcs({
@@ -128,6 +132,8 @@ Deno.serve(async (req) => {
         <p>Thank you for booking <strong>${esc(title)}</strong>. We have reserved ${attendees === 1 ? "1 place" : `${attendees} places`} for you on <strong>${esc(when)}</strong>.</p>
         ${joinUrl ? `<p><a href="${esc(joinUrl)}" style="color:#5E4B1E;">Join the open evening online</a>. No download is needed; just click the link at the time.</p>` : `<p>We will email you the joining link before the evening.</p>`}
         <p>The calendar invitation is attached. We will also send you a reminder the day before.</p>
+        ${sampleLessonReady ? `<p>Before the evening, you can <a href="${SITE_URL}/sample-lesson/" style="color:#5E4B1E;">watch a recording of a real live lesson</a> (please keep the link within your family).</p>` : ""}
+        <p>You may also like to read our <a href="${SITE_URL}/prospectus/TGA-Prospectus-2026-27.pdf" style="color:#5E4B1E;">prospectus</a> beforehand.</p>
         <p>If you can no longer come, please reply to this email or write to <a href="mailto:${esc(ADMISSIONS_EMAIL)}" style="color:#5E4B1E;">${esc(ADMISSIONS_EMAIL)}</a> so that someone else can have your place.</p>
         <p>We look forward to meeting you.</p>
       `),
