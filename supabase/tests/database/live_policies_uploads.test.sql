@@ -37,8 +37,11 @@ select is((select current_asset_id from public.signable_documents where id = 'f8
 
 -- A website policy's signature record follows the policy, and replacing the
 -- file (a new file_updated_at at the same address) is a new version.
-insert into public.signable_documents (id, sanity_document_id, source, policy_link_id, title, file_url, requires_signature) values
-  ('f8600000-0000-0000-0000-000000000012', 'policy:f8600000-0000-0000-0000-000000000001', 'policy', 'f8600000-0000-0000-0000-000000000001', 'old title', '/policies/x.pdf', true);
+-- Since 0108 the signature record is created automatically when the policy
+-- is added (with its automatic audience); the test gives it a fixed id.
+update public.signable_documents
+  set id = 'f8600000-0000-0000-0000-000000000012', title = 'old title', requires_signature = true
+  where sanity_document_id = 'policy:f8600000-0000-0000-0000-000000000001';
 update public.policy_links set file_updated_at = '2026-01-01T00:00:00Z', title = 'Renamed Policy' where id = 'f8600000-0000-0000-0000-000000000001';
 select is((select current_asset_id from public.signable_documents where id = 'f8600000-0000-0000-0000-000000000012'), '/policies/x.pdf?v=1767225600000', 'replacing a policy file makes a new version of its signature record');
 select is((select title from public.signable_documents where id = 'f8600000-0000-0000-0000-000000000012'), '99. Renamed Policy', 'the signature record follows the policy title');
