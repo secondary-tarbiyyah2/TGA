@@ -141,6 +141,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     { href: "/admin/revision", label: "Revision results", icon: "chartLine", headOnly: true, group: "Teaching" },
     { href: "/admin/academic", label: "Academic setup", icon: "layers", group: "Teaching" },
     { href: "/admin/pupils", label: "Pupil records", icon: "contact", group: "Pupils" },
+    { href: "/admin/assessments", label: "Baseline assessments", icon: "clipboardCheck", group: "Pupils" },
     { href: "/admin/attendance", label: "Attendance", icon: "userCheck", headOnly: true, group: "Pupils" },
     { href: "/admin/absences", label: "Absences", icon: "calendarX", headOnly: true, group: "Pupils" },
     { href: "/admin/enrichment", label: "Enrichment attendance", icon: "calendarCheck", headOnly: true, group: "Pupils" },

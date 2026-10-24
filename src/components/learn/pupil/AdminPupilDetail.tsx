@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { BaselineAssessments } from "./BaselineAssessments";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { PrintButton } from "@/components/learn/PrintButton";
 import { PrintScope } from "@/components/learn/printScope";
@@ -61,9 +62,14 @@ export function AdminPupilDetail({ id }: { id: string }) {
         {state === "loading" || !child ? <p className="text-sm text-ink/65">Loading…</p> : <PupilRecord child={child} showAcks />}
       </PrintScope>
       {child && (
-        <div className="print:hidden">
-          <LeaderboardPrivacy kids={[{ id: child.id, name: child.name }]} />
-        </div>
+        <>
+          <div className="mt-4">
+            <BaselineAssessments childId={child.id} canEdit />
+          </div>
+          <div className="print:hidden">
+            <LeaderboardPrivacy kids={[{ id: child.id, name: child.name }]} />
+          </div>
+        </>
       )}
     </>
   );
