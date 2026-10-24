@@ -18,6 +18,7 @@ import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { buildIcs } from "../_shared/ics.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
+import { generateToken, hashToken } from "../_shared/manageToken.ts";
 
 const SITE_URL = Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk";
 const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
@@ -37,6 +38,29 @@ Deno.serve(async (req) => {
     body = await req.json();
   } catch {
     return jsonResponse({ ok: false, error: "invalid_json" }, 400);
+  }
+
+  // Self-service cancel from the confirmation email: { action: "cancel", token }.
+  if (body.action === "cancel") {
+    const token = String(body.token || "");
+    if (!/^[A-Za-z0-9_-]{20,}$/.test(token)) return jsonResponse({ ok: false, error: "invalid_token" }, 400);
+    const tokenHash = await hashToken(token);
+    const { data: b } = await supabase
+      .from("open_evening_bookings")
+      .select("id, status, parent_name, email, session_id, open_evening_sessions(title, starts_at)")
+      .eq("manage_token_hash", tokenHash)
+      .maybeSingle();
+    if (!b) return jsonResponse({ ok: false, error: "not_found" }, 404);
+    const bk = b as { id: string; status: string; parent_name: string; email: string; open_evening_sessions: { title: string; starts_at: string } | null };
+    if (bk.status === "cancelled") return jsonResponse({ ok: true, already: true, title: bk.open_evening_sessions?.title });
+    const { error } = await supabase.from("open_evening_bookings").update({ status: "cancelled", cancelled_at: new Date().toISOString() }).eq("id", bk.id);
+    if (error) return jsonResponse({ ok: false, error: "cancel_failed" }, 500);
+    await sendEmail({
+      to: bk.email, toName: bk.parent_name,
+      subject: `Your place is cancelled: ${bk.open_evening_sessions?.title ?? "open evening"} — Tarbiyyah Global Academy`,
+      html: emailShell(`<h1 style="font-size:20px;margin:0 0 16px;">Your place is cancelled</h1><p>Assalamu alaikum ${esc(bk.parent_name.split(" ")[0])},</p><p>We have cancelled your place at <strong>${esc(bk.open_evening_sessions?.title ?? "the open evening")}</strong>. You are welcome to <a href="${SITE_URL}/open-evening/" style="color:#5E4B1E;">book another session</a> at any time.</p>`),
+    });
+    return jsonResponse({ ok: true, title: bk.open_evening_sessions?.title, startsAt: bk.open_evening_sessions?.starts_at });
   }
 
   // Honeypot: a real visitor never fills this hidden field. Accept silently
@@ -93,6 +117,10 @@ Deno.serve(async (req) => {
   }
 
   const bookingId = r.booking_id as string;
+  // Self-service link: store only the hash, send the token in the email.
+  const manageToken = generateToken();
+  await supabase.from("open_evening_bookings").update({ manage_token_hash: await hashToken(manageToken) }).eq("id", bookingId);
+  const manageUrl = `${SITE_URL}/open-evening/manage/?token=${manageToken}`;
   const { data: session } = await supabase
     .from("open_evening_sessions")
     .select("title, description, starts_at, ends_at, join_url")
@@ -134,7 +162,7 @@ Deno.serve(async (req) => {
         <p>The calendar invitation is attached. We will also send you a reminder the day before.</p>
         ${sampleLessonReady ? `<p>Before the evening, you can <a href="${SITE_URL}/sample-lesson/" style="color:#5E4B1E;">watch a recording of a real live lesson</a> (please keep the link within your family).</p>` : ""}
         <p>You may also like to read our <a href="${SITE_URL}/prospectus/TGA-Prospectus-2026-27.pdf" style="color:#5E4B1E;">prospectus</a> beforehand.</p>
-        <p>If you can no longer come, please reply to this email or write to <a href="mailto:${esc(ADMISSIONS_EMAIL)}" style="color:#5E4B1E;">${esc(ADMISSIONS_EMAIL)}</a> so that someone else can have your place.</p>
+        <p>If you can no longer come, <a href="${manageUrl}" style="color:#5E4B1E;">cancel your place here</a> so that someone else can have it — no need to email. You can book a different session from the open evenings page.</p>
         <p>We look forward to meeting you.</p>
       `),
       icsContent: ics,
