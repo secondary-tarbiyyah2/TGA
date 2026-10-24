@@ -50,6 +50,11 @@ jobs:
         run: |
           npx next typegen
           npx tsc --noEmit
+      - name: Entry assessment self-test
+        if: always()
+        # Builds papers for every year group and checks every question is well-formed,
+        # then checks the scoring recovers simulated pupils' known levels.
+        run: node --experimental-strip-types scripts/assess-selftest.ts
 
   a11y:
     runs-on: ubuntu-latest

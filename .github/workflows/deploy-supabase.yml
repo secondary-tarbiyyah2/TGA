@@ -321,6 +321,7 @@ jobs:
           # reminders: hourly scheduled job, requires the service-role key.
           supabase functions deploy policy-file --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy open-evening-book --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy entry-assessment --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy open-evening-reminders --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
 
       # Sign-in emails: Amazon SES SMTP when SES_SMTP_USER/SES_SMTP_PASS (and
