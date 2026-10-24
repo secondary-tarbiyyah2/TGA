@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { ReportDocument, PrintStyles } from "./ReportDocument";
 import { asNarrative } from "./summary";
+import { EmptyState } from "@/components/learn/ui";
 
 type Row = {
   id: string;
@@ -55,7 +56,7 @@ export function ReleasedReports() {
       {rows === null ? (
         <p className="text-sm text-ink/65">Loading…</p>
       ) : rows.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">No reports have been issued yet. They will appear here once the school releases them.</div>
+        <EmptyState title="No reports yet" icon="fileText" tile="tile-blue">Reports are written at the end of each term and appear here the day the school releases them, with a note from the form tutor.</EmptyState>
       ) : (
         rows.map((r) => (
           <div key={r.id} className="space-y-2">

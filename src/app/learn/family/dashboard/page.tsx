@@ -125,11 +125,6 @@ function ChildCard({ child }: { child: Child }) {
         </div>
       </details>
 
-      {classIds && classIds.length > 0 && (
-        <div className="mt-4 border-t border-gold-light pt-4">
-          <AnnouncementsFeed classIds={classIds} limit={3} />
-        </div>
-      )}
     </section>
   );
 }

@@ -19,8 +19,10 @@ const AREA_NAMES: Record<string, string> = {
   "/student/dashboard": "Student portal",
 };
 
+const TITLE_RE = /^(ustadh|ustadha|ustaadh|ustaadha|shaykh|sheikh|shaykha|mr|mrs|ms|miss|dr|br|sr|brother|sister|imam|hafiz|hafidh|hafiza|maulana|mufti|qari|qariah|sayyid|sayyida)\.?$/i;
 function initialsOf(name: string): string {
   const parts = name.replace(/@.*/, "").split(/[\s._-]+/).filter(Boolean);
+  while (parts.length > 1 && TITLE_RE.test(parts[0])) parts.shift();
   return ((parts[0]?.[0] || "") + (parts.length > 1 ? parts[parts.length - 1][0] : "")).toUpperCase() || "?";
 }
 

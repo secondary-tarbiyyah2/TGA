@@ -329,7 +329,7 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
         email: r.email,
         phone: r.phone,
         title: r.display_title,
-        roles: r.roles.filter((x): x is LearnRole => (STAFF_ROLE_LIST as string[]).includes(x)),
+        roles: (r.roles ?? []).filter((x): x is LearnRole => (STAFF_ROLE_LIST as string[]).includes(x)),
         active: r.active,
         is_dsl: r.is_dsl,
       }));

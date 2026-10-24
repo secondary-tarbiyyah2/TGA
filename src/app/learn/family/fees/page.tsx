@@ -8,6 +8,7 @@ import { METHOD_LABEL, STATUS_LABEL, STATUS_STYLE, chargeStatus, formatDate, rou
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
 import { FamilyWithdrawal } from "@/components/learn/fees/FamilyWithdrawal";
+import { EmptyState, ui } from "@/components/learn/ui";
 
 type Row = { charge: FeeCharge; childName: string; payments: FeePayment[]; paid: number; balance: number; status: ChargeStatus };
 
@@ -65,10 +66,7 @@ function FamilyFeesContent() {
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load your fees. Please try again later.</p>}
       {rows === null && <p className="text-sm text-ink/65">Loading…</p>}
       {rows && rows.length === 0 && !error && (
-        <div className="rounded-2xl border border-gold-light bg-white p-8 text-center">
-          <p className="font-medium text-ink">Nothing to pay</p>
-          <p className="mt-1 text-sm text-ink/65">No fees have been charged to your family yet. Published fees are on the <a href="/fees" className="underline">fees page</a>.</p>
-        </div>
+        <EmptyState title="Nothing to pay" icon="wallet" tile="tile-green" action={<a href="https://globalacademy.tarbiyyah.co.uk/fees/" className={ui.btnSecondary}>See published fees</a>}>No fees have been charged to your family yet. Invoices and payment plans appear here once your child&apos;s place is confirmed.</EmptyState>
       )}
       {rows && rows.length > 0 && (
         <>

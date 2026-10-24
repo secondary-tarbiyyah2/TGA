@@ -245,6 +245,21 @@ const TILE_HUE: Partial<Record<SidebarIcon, string>> = {
 };
 export const tileFor = (icon: SidebarIcon): string => TILE_HUE[icon] || "tile-slate";
 
+export const dashboardPathForArea = (area: PortalArea): string => `/${area}/dashboard`;
+
+/** The sidebar item a page belongs to (its own route, a sub-page or a matchPrefix), with its section — used by PageHeader for the icon tile and breadcrumb. */
+export function navItemFor(pathname: string): { item: SidebarItem; area: PortalArea } | null {
+  const area = portalAreaFor(pathname);
+  if (!area) return null;
+  const items = SIDEBAR_NAV[area];
+  const p = normalisePortalPath(pathname);
+  // Prefer the longest matching href so "/admin/lessons/runs" picks Lessons, not Home.
+  const exact = items.filter((i) => p === i.href || p.startsWith(i.href + "/")).sort((a, b) => b.href.length - a.href.length)[0];
+  if (exact) return { item: exact, area };
+  const byPrefix = items.find((i) => i.matchPrefixes?.some((m) => p === m || p.startsWith(m + "/")));
+  return byPrefix ? { item: byPrefix, area } : null;
+}
+
 /** Is this sidebar item the current page (own route, sub-page or any matchPrefix)? */
 export function isSidebarItemActive(pathname: string, item: SidebarItem): boolean {
   if (isActivePath(pathname, item.href)) return true;

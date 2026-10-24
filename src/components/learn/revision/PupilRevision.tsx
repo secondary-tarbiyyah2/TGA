@@ -23,7 +23,7 @@ import {
   type PupilUnit,
   type PupilUnitCard,
 } from "@/lib/learn/revision";
-import { ui } from "@/components/learn/ui";
+import { EmptyState, ui } from "@/components/learn/ui";
 
 const btn = ui.btnSecondary;
 const btnPrimary = ui.btnPrimary;
@@ -86,9 +86,7 @@ export function PupilRevision() {
       )}
       {units === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
       {units && units.length === 0 && !error && (
-        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
-          No revision units for your year yet. Your teachers add them as the year goes on.
-        </p>
+        <EmptyState title="No revision units yet" icon="bookOpenCheck" tile="tile-teal">Your teachers add a summary and a quiz for each unit as the year goes on. Check back after your first topics.</EmptyState>
       )}
       {[...bySubject.entries()].map(([subject, list]) => (
         <section key={subject} aria-label={subject} className="space-y-3">

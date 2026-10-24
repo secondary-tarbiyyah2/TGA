@@ -12,6 +12,7 @@
  * Use these instead of writing button and input classes by hand.
  */
 import type { ReactNode } from "react";
+import { Icon, type IconName } from "@/components/learn/Icon";
 
 const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700";
 
@@ -96,12 +97,16 @@ export function Notice({ tone = "info", children }: { tone?: Exclude<Tone, "neut
   );
 }
 
-/** "Nothing here yet" with what to do about it. */
-export function EmptyState({ title, children }: { title: string; children?: ReactNode }) {
+/** "Nothing here yet" with what to do about it: an icon tile, the headline, one line of help and (ideally) the action that fills it. */
+export function EmptyState({ title, children, icon = "inbox", tile = "tile-gold", action }: { title: string; children?: ReactNode; icon?: IconName; tile?: string; action?: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-dashed border-gold-light bg-white px-5 py-8 text-center">
-      <p className="text-sm font-semibold text-ink">{title}</p>
+    <div className="portal-empty rounded-2xl border border-dashed border-gold-light px-5 py-10 text-center">
+      <span className={`portal-tile portal-tile--lg mx-auto ${tile}`} aria-hidden="true">
+        <Icon name={icon} />
+      </span>
+      <p className="mt-4 text-base font-semibold text-ink">{title}</p>
       {children && <div className="mx-auto mt-1 max-w-md text-sm text-ink/70">{children}</div>}
+      {action && <div className="mt-4 flex justify-center gap-2">{action}</div>}
     </div>
   );
 }

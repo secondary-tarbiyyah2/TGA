@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type KeyboardEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 
 /**
  * The one tab control for the portal, so switching between views looks and
@@ -49,6 +49,27 @@ export function Tabs<K extends string>({
   className?: string;
 }) {
   const refs = useRef<Array<HTMLButtonElement | null>>([]);
+  const listRef = useRef<HTMLDivElement | null>(null);
+  const [more, setMore] = useState(false);
+  // Fade the right edge only while there is more to scroll to.
+  useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+    const check = () => setMore(el.scrollWidth - el.clientWidth - el.scrollLeft > 4);
+    check();
+    el.addEventListener("scroll", check, { passive: true });
+    const ro = new ResizeObserver(check);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", check);
+      ro.disconnect();
+    };
+  }, [items]);
+  // On phones the row scrolls; keep the selected tab in view so nothing is "cut off".
+  useEffect(() => {
+    const i = items.findIndex((t) => t.key === value);
+    refs.current[i]?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [value, items]);
 
   const onKeyDown = (e: KeyboardEvent<HTMLButtonElement>, index: number) => {
     const last = items.length - 1;
@@ -61,11 +82,11 @@ export function Tabs<K extends string>({
 
   const listCls =
     variant === "line"
-      ? "flex gap-1 overflow-x-auto border-b border-gold-light"
-      : `${fill ? "flex" : "inline-flex max-w-full"} gap-1 overflow-x-auto rounded-xl border border-gold-light bg-cream p-1`;
+      ? "portal-tabs flex gap-1 overflow-x-auto border-b border-gold-light"
+      : `portal-tabs ${fill ? "flex" : "inline-flex max-w-full"} gap-1 overflow-x-auto rounded-xl border border-gold-light bg-cream p-1`;
 
   return (
-    <div role="tablist" aria-label={label} className={`${listCls} ${className}`}>
+    <div ref={listRef} role="tablist" aria-label={label} className={`${listCls} ${more ? "portal-tabs--more" : ""} ${className}`}>
       {items.map((t, i) => {
         const selected = t.key === value;
         const tabCls =

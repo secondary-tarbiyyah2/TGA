@@ -40,7 +40,7 @@ function AcademicHub() {
   return (
     <div>
       <PageHeader
-        crumbs={[{ label: "Admin", href: "/admin" }, { label: "Academic setup" }]}
+        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Academic setup" }]}
         title="Academic setup"
         subtitle="Set the school up once, in order. Each step has its own page."
       />

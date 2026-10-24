@@ -15,7 +15,7 @@ import {
   type OpenEveningSession,
 } from "@/lib/learn/openEvening";
 import { useNow } from "@/lib/learn/useNow";
-import { ui } from "@/components/learn/ui";
+import { EmptyState, ui } from "@/components/learn/ui";
 
 type Draft = {
   title: string;
@@ -210,10 +210,7 @@ function OpenEveningContent() {
       {sessions === null ? (
         <div className="h-40 animate-pulse rounded-2xl border border-gold-light bg-white" />
       ) : sessions.length === 0 ? (
-        <div className="rounded-2xl border border-gold-light bg-white px-5 py-12 text-center">
-          <p className="text-base font-semibold text-ink">No open evenings yet</p>
-          <p className="mt-1 text-sm text-ink/65">Add one and it appears on the Open evening page of the website straight away.</p>
-        </div>
+        <EmptyState title="No open evenings yet" icon="calendarDays" tile="tile-gold">Add one and it appears on the Open evening page of the website straight away, with its own booking form.</EmptyState>
       ) : (
         <ul className="space-y-3">
           {sessions.map((s) => {

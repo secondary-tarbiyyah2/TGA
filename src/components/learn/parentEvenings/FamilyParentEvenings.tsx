@@ -14,6 +14,7 @@ import {
   type ParentEvening,
 } from "@/lib/learn/parentEvenings";
 import { useNow } from "@/lib/learn/useNow";
+import { EmptyState } from "@/components/learn/ui";
 
 type Option = { evening_id: string; child_id: string; child_name: string; teacher_id: string; teacher_name: string; class_names: string[] | null };
 type MyBooking = {
@@ -268,9 +269,7 @@ export function FamilyParentEvenings() {
       )}
 
       {evenings.length === 0 ? (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-          <p className="text-sm text-ink/65">There are no parent evenings open for booking right now. You&apos;ll see them here when the school opens one.</p>
-        </div>
+        <EmptyState title="No parent evenings open for booking" icon="calendarCheck" tile="tile-violet">There are two a year. When the school opens one you will see the dates here and can book a slot with each of your child&apos;s teachers.</EmptyState>
       ) : (
         evenings.map((ev) => {
           const mine = options.filter((o) => o.evening_id === ev.id);

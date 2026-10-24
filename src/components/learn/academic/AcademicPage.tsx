@@ -12,7 +12,7 @@ function Inner({ title, subtitle, children }: { title: string; subtitle: string;
   return (
     <div>
       <PageHeader
-        crumbs={[{ label: "Admin", href: "/admin" }, { label: "Academic setup", href: "/admin/academic" }, { label: title }]}
+        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Academic setup", href: "/admin/academic" }, { label: title }]}
         title={title}
         subtitle={subtitle}
         actions={

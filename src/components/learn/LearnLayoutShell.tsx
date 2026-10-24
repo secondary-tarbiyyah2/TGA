@@ -138,7 +138,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
           </div>
         </header>
 
-        <main id="main" className="flex-1 pb-20 lg:pb-0">
+        <main id="main" className="flex-1 overflow-x-clip pb-20 lg:pb-0">
           <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
             <SignatureBanner />
             <ClockInGate userId={activeSession.user.id} roles={roles}>

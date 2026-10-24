@@ -18,6 +18,14 @@ function formatChipValue(v: string | number): string {
  * pattern. Fetches the signed-in user's first name itself, so any dashboard
  * can drop it in.
  */
+/** "Ustadh Bilal Ahmed" → "Bilal": titles and honorifics are not first names. */
+export function firstNameOf(fullName: string): string | null {
+  const TITLES = /^(ustadh|ustadha|ustaadh|ustaadha|shaykh|sheikh|shaykha|mr|mrs|ms|miss|dr|br|sr|brother|sister|imam|hafiz|hafidh|hafiza|maulana|mufti|qari|qariah|sayyid|sayyida)\.?$/i;
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  while (parts.length > 1 && TITLES.test(parts[0])) parts.shift();
+  return parts[0] || null;
+}
+
 export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chips?: HeroChip[] }) {
   const { session } = useLearnSession();
   const [firstName, setFirstName] = useState<string | null>(null);
@@ -30,7 +38,7 @@ export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chi
       .select("full_name")
       .eq("id", session.user.id)
       .maybeSingle()
-      .then(({ data }) => setFirstName(((data as { full_name?: string } | null)?.full_name || "").split(" ")[0] || null));
+      .then(({ data }) => setFirstName(firstNameOf((data as { full_name?: string } | null)?.full_name || "")));
   }, [session]);
 
   const hour = new Date().getHours();
