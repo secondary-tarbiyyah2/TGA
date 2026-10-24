@@ -11,11 +11,11 @@ import type { QuizConfig } from "./schema";
 export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
   schemaVersion: 1,
   intro: {
-    kicker: "Your child's week",
-    title: "See what a real week at TGA could look like for your child.",
-    body: "Five short questions — no generic form, just a personalised weekly plan in your own timezone.",
+    kicker: "Is TGA right for your child?",
+    title: "Find out in two minutes.",
+    body: "Five short questions. You get your child's year group and key stage, what the live day looks like in your own time zone, the fee band, and the next step — no generic form.",
   },
-  resultHeading: "{name}, here is your child's recommended pathway.",
+  resultHeading: "{name}, here is how Tarbiyyah Global Academy would work for your child.",
   disclaimer:
     "This is a personalised estimate based on your answers, not a placement decision — starting points and timings are confirmed during application.",
   consentText:

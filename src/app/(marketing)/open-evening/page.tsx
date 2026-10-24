@@ -18,12 +18,13 @@ export default async function OpenEveningPage() {
   return (
     <section className="section-pad">
       <Container className="max-w-2xl">
-        <Kicker>Come and see for yourself</Kicker>
-        <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Open evenings and a taster morning.</h1>
+        <Kicker>See it live, from your own sofa</Kicker>
+        <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Meet us online: open evenings and a taster morning.</h1>
         <p className="mt-6 text-lg text-ink/75">
           Meet the Headteacher, see a sample live lesson and the Parent and Student Portals, and ask anything you like.
-          At the taster morning your child joins real lessons. Every session is online; register below and the joining
-          link is emailed to you.
+          At the taster morning your child joins real lessons, in two age bands so every lesson is pitched right: Years 1–6
+          at 10:00 and Years 7–11 at 11:15 UK time. Every session is online; register below and the joining link is emailed
+          to you.
         </p>
         <p className="mt-4 text-sm text-ink/70">
           Live lessons begin on Monday 7 December 2026. Read the{" "}

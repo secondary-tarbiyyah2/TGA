@@ -62,15 +62,16 @@ export default async function AboutPage() {
         <Container>
           <Kicker>Our character framework — RECIPE</Kicker>
           <h2 className="font-serif text-3xl font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ol className="mt-10 grid grid-cols-3 gap-3 md:grid-cols-6" aria-label="The six RECIPE values">
             {recipe.map((r) => (
-              <div key={r.word} className="rounded-2xl bg-white p-6 shadow-sm">
-                <span className="font-serif text-3xl font-bold text-gold">{r.letter}</span>
-                <h3 className="mt-2 font-semibold text-ink">{r.word}</h3>
-                <p className="mt-1 text-sm text-ink/70">{r.body}</p>
-              </div>
+              <li key={r.word} className="flex flex-col rounded-2xl border border-gold-light/60 bg-white p-4 text-center shadow-sm">
+                <span aria-hidden="true" className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-ink-900 font-serif text-2xl font-bold text-gold-300">{r.letter}</span>
+                <h3 className="mt-3 font-semibold text-ink">{r.word}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-ink/70">{r.body}</p>
+              </li>
             ))}
-          </div>
+          </ol>
+          <p className="mt-4 text-sm text-ink/70">Read together, the six letters spell RECIPE: one value a half term, recognised with merits, a RECIPE Star in every class and a character comment on every report.</p>
         </Container>
       </section>
 

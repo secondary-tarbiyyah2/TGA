@@ -19,7 +19,7 @@ export const primaryNav: NavEntry[] = [
     label: "About",
     items: [
       { href: "/about", label: "About us" },
-      { href: "/team", label: "Meet the team" },
+      { href: "/curriculum", label: "Curriculum" },
       { href: "/testimonials", label: "Testimonials" },
     ],
   },
@@ -29,7 +29,9 @@ export const primaryNav: NavEntry[] = [
     items: [
       { href: "/admissions", label: "How to apply" },
       { href: "/fees", label: "Fees" },
+      { href: "/open-evening", label: "Open evenings & taster morning" },
       { href: "/eligibility", label: "Is it right for us?" },
+      { href: "/prospectus/TGA-Prospectus-2026-27.pdf", label: "Prospectus (PDF)" },
       { href: "/book-a-call", label: "Book a free call" },
     ],
   },
@@ -40,13 +42,13 @@ export const primaryNav: NavEntry[] = [
 export type HubCard = { href: string; title: string; body: string };
 
 export const learningHub: HubCard[] = [
-  { href: "/curriculum", title: "Curriculum", body: "The full British national curriculum plus Islamic Studies, by key stage, Year 1 to GCSE." },
+  { href: "/curriculum", title: "Curriculum", body: "Qur'an, Arabic and Islamic Studies alongside the full national curriculum, by key stage, Year 1 to GCSE." },
   { href: "/curriculum/reception-year-2", title: "Year 1 – Year 2", body: "View timetable, subjects and sample week." },
   { href: "/curriculum/year-3-6", title: "Year 3 – Year 6", body: "View timetable, subjects and sample week." },
   { href: "/curriculum/year-7-9", title: "Year 7 – Year 9", body: "View timetable, subjects and sample week." },
   { href: "/curriculum/year-10-11", title: "Year 10 – Year 11 (GCSE)", body: "View timetable, subjects and sample week." },
   { href: "/pastoral-care", title: "Pastoral care & SEND", body: "How we support every child's wellbeing, character and additional needs." },
-  { href: "/eligibility", title: "Your child's week", body: "Five short questions to see a sample week in your own timezone." },
+  { href: "/eligibility", title: "Is it right for us?", body: "Two minutes: year group, your local lesson times, fees and the next step." },
 ];
 
 export const parentsHub: HubCard[] = [
@@ -60,7 +62,6 @@ export const parentsHub: HubCard[] = [
 ];
 
 export const aboutHub: HubCard[] = [
-  { href: "/team", title: "Meet the team", body: "Who teaches at the Academy, as appointments are confirmed." },
   { href: "/testimonials", title: "Testimonials", body: "What parents and students say about the Academy." },
   { href: "/safeguarding", title: "Safeguarding", body: "Our commitment to every child's safety." },
   { href: "/pastoral-care", title: "Pastoral care", body: "How we nurture wellbeing and character." },
@@ -72,7 +73,6 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
     heading: "School",
     links: [
       { href: "/about", label: "About us" },
-      { href: "/team", label: "Meet the team" },
       { href: "/testimonials", label: "Testimonials" },
       { href: "/curriculum", label: "Curriculum" },
       { href: "/learning", label: "Learning" },

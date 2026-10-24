@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const covers = [
-  "The full British curriculum and Islamic Studies, at your child's key stage",
+  "The specialist curriculum — Qur'an, Arabic, Islamic Studies and the national curriculum — at your child's key stage",
   "Live-lesson timing and how it works from your timezone",
   "Fees, payment plans and next steps for the December 2026 launch",
   "Any questions about admissions, assessment or your child's needs",

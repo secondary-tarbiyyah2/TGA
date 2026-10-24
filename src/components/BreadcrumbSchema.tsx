@@ -15,7 +15,7 @@ const NAMES: Record<string, string> = {
   "/learning": "Learning",
   "/curriculum": "Curriculum",
   "/pastoral-care": "Pastoral care & SEND",
-  "/eligibility": "Your child's week",
+  "/eligibility": "Is it right for us?",
   "/admissions": "Admissions",
   "/fees": "Fees",
   "/book-a-call": "Book a free call",

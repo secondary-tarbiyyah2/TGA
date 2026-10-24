@@ -15,12 +15,12 @@ import { RecipeValues } from "@/components/home/RecipeValues";
 
 export const metadata: Metadata = pageMetadata({
   title: "A specialist, quality education, rooted in faith",
-  description: "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified teachers on the full British curriculum, from Year 1 to Year 11, taught with tarbiyyah at its heart.",
+  description: "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified teachers — Qur'an, Arabic and Islamic Studies alongside the full national curriculum, from Year 1 to Year 11, taught with tarbiyyah at its heart.",
   path: "",
 });
 
 const defaultPillars = [
-  { title: "Specialist curriculum", body: "The full British curriculum, live-timetabled, taught to GCSE by qualified teachers." },
+  { title: "Specialist curriculum", body: "Qur'an, Arabic and Islamic Studies every week, with the full national curriculum to GCSE, taught live by qualified teachers." },
   { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage — not an add-on." },
   { title: "Live, small classes", body: "Real-time lessons with no more than 15 pupils in a class, so every child is known and supported." },
 ];
@@ -71,7 +71,7 @@ export default async function HomePage() {
               <p className="mt-6 max-w-xl text-lg text-ink/75">{content.heroBody}</p>
             ) : (
               <p className="mt-6 max-w-xl text-lg text-ink/75">
-                Live, timetabled lessons with qualified teachers on the full British curriculum, taught with{" "}
+                Live, timetabled lessons with qualified teachers — Qur'an, Arabic and Islamic Studies alongside the full national curriculum, taught with{" "}
                 <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Year 1 to Year 11, live
                 lessons launching December 2026.
               </p>
@@ -124,7 +124,7 @@ export default async function HomePage() {
             <h2 className="text-h2 font-serif font-semibold text-ink">{content.stagesHeading || "A specialist curriculum, from Year 1 to GCSE."}</h2>
             <p className="mt-4 text-ink/75">
               {content.stagesBody ||
-                "The full British curriculum, live-timetabled and taught by qualified teachers — with Qur'an, Islamic Studies and Arabic woven through every key stage, not bolted on."}
+                "The deen at the heart of the day — Qur'an, Islamic Studies and Arabic on the timetable at every key stage — with the full national curriculum to GCSE, taught live by qualified teachers."}
             </p>
             <Button href="/learning" variant="secondary" className="mt-6">
               Explore learning
