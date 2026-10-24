@@ -88,8 +88,16 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
   useEffect(() => {
     if (!open) return;
 
-    const previousOverflow = document.body.style.overflow;
+    // Lock the page behind the drawer. overflow:hidden alone is ignored by
+    // touch scrolling on iOS and some Android browsers (the page kept
+    // scrolling under the open menu), so the body is pinned in place and
+    // its scroll position restored on close.
+    const scrollY = window.scrollY;
+    const previous = { overflow: document.body.style.overflow, position: document.body.style.position, top: document.body.style.top, width: document.body.style.width };
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
 
     const panel = panelRef.current;
     const focusable = panel?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
@@ -114,7 +122,11 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
 
     document.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow = previous.overflow;
+      document.body.style.position = previous.position;
+      document.body.style.top = previous.top;
+      document.body.style.width = previous.width;
+      window.scrollTo(0, scrollY);
       document.removeEventListener("keydown", onKeyDown);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps -- close()/triggerRef are stable for this component's lifetime; re-running per open-state change only
@@ -129,7 +141,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
       role="dialog"
       aria-modal="true"
       aria-label="Site menu"
-      className="fixed inset-0 top-20 z-40 flex flex-col overflow-y-auto bg-cream lg:hidden"
+      className="fixed inset-0 top-20 z-40 flex flex-col overflow-y-auto overscroll-contain bg-cream lg:hidden"
     >
       <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 p-5">
         {primaryNav.map((entry) =>
@@ -185,7 +197,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
         </Link>
       </nav>
       <div className="border-t border-gold-light/40 px-3 py-3">
-        <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-ink/65">View</p>
+        <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-ink/65">Make this site easier to read</p>
         <ViewSettingsPanel />
       </div>
       <div className="sticky bottom-0 border-t border-gold-light/40 bg-cream p-5">

@@ -65,7 +65,7 @@ export function ViewSettingsPanel({ className = "", portal = false }: { classNam
   );
 }
 
-/** A button with a small pop-over, for the public header. */
+/** "Aa" display button in the public header: opens a centred dialog with the display options. */
 export function ViewSettingsMenu() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -73,37 +73,46 @@ export function ViewSettingsMenu() {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    const onDown = (e: MouseEvent) => ref.current && !ref.current.contains(e.target as Node) && setOpen(false);
     document.addEventListener("keydown", onKey);
-    document.addEventListener("mousedown", onDown);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    ref.current?.querySelector<HTMLElement>("button")?.focus();
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.removeEventListener("mousedown", onDown);
+      document.body.style.overflow = prev;
     };
   }, [open]);
   return (
-    <div ref={ref} className="relative">
+    <>
       <button
         type="button"
+        aria-haspopup="dialog"
         aria-expanded={open}
-        aria-controls="view-settings"
-        onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream hover:text-gold-700"
+        onClick={() => setOpen(true)}
+        title="Display options: larger text, easy reading, high contrast"
+        className="flex items-center gap-2 rounded-full border border-gold-light/70 px-3 py-1.5 text-sm font-medium text-ink/80 hover:border-gold-500 hover:text-gold-700"
       >
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 7v.01" />
-          <path d="M8 10h8" />
-          <path d="M12 10v7" />
-          <path d="m9 21 3-4 3 4" />
-        </svg>
-        View
+        <span aria-hidden="true" className="font-serif text-[15px] font-bold leading-none tracking-tight">Aa</span>
+        <span className="sr-only">Display options</span>
+        <span aria-hidden="true" className="hidden xl:inline">Display</span>
       </button>
       {open && (
-        <div id="view-settings" role="group" aria-label="View settings" className="absolute right-0 top-full z-20 mt-2 w-72 rounded-2xl border border-gold-light/60 bg-white p-2 shadow-warm">
-          <ViewSettingsPanel />
+        <div className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/40 p-4 sm:items-center" onMouseDown={(e) => e.target === e.currentTarget && setOpen(false)}>
+          <div ref={ref} role="dialog" aria-modal="true" aria-labelledby="view-settings-title" className="w-full max-w-md rounded-3xl border border-gold-light/60 bg-white p-6 shadow-warm">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h2 id="view-settings-title" className="font-serif text-xl font-semibold text-ink">Make this site easier to read</h2>
+                <p className="mt-1 text-sm text-ink/70">Your choices are remembered on this device.</p>
+              </div>
+              <button type="button" onClick={() => setOpen(false)} aria-label="Close" className="rounded-full p-2 text-ink/70 hover:bg-cream">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6l-12 12" /></svg>
+              </button>
+            </div>
+            <ViewSettingsPanel className="mt-4" />
+            <button type="button" onClick={() => setOpen(false)} className="mt-5 w-full rounded-full bg-gold-500 px-4 py-3 text-sm font-semibold text-ink-900 hover:brightness-95">Done</button>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

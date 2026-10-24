@@ -1,8 +1,10 @@
-name: Diagnose Resend email delivery
+name: Diagnose email delivery
 
-# Manually-triggered. Reports (as run annotations) whether the sending domain
-# is verified with Resend and what Resend says when a real test email is sent
-# from the same address the portal uses. Never prints the API key.
+# Manually-triggered. For each provider the Edge Functions can use (Microsoft
+# Graph, Amazon SES, Resend) reports — as run annotations — whether its secrets
+# are set and what the provider says to a real test send from the address the
+# portal uses. For Resend it also prints the DNS records the domain still needs.
+# Never prints a secret.
 
 on:
   workflow_dispatch:
@@ -14,16 +16,75 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      MS_TENANT_ID: ${{ secrets.MS_TENANT_ID }}
+      AWS_SES_REGION: ${{ secrets.AWS_SES_REGION }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
     steps:
-      - name: Domain status and test send
+      - name: Which providers are configured
+        env:
+          MS_TENANT_ID: ${{ secrets.MS_TENANT_ID }}
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          MS_CLIENT_SECRET: ${{ secrets.MS_CLIENT_SECRET }}
+          MS_SENDER_EMAIL: ${{ secrets.MS_SENDER_EMAIL }}
+          AWS_SES_REGION: ${{ secrets.AWS_SES_REGION }}
+          AWS_SES_ACCESS_KEY_ID: ${{ secrets.AWS_SES_ACCESS_KEY_ID }}
+          AWS_SES_SECRET_ACCESS_KEY: ${{ secrets.AWS_SES_SECRET_ACCESS_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          s() { if [ -n "$2" ]; then echo "$1=set"; else echo "$1=EMPTY"; fi; }
+          echo "::notice title=Secrets present::$(s MS_TENANT_ID "$MS_TENANT_ID") $(s MS_CLIENT_ID "$MS_CLIENT_ID") $(s MS_CLIENT_SECRET "$MS_CLIENT_SECRET") $(s MS_SENDER_EMAIL "$MS_SENDER_EMAIL") $(s AWS_SES_REGION "$AWS_SES_REGION") $(s AWS_SES_ACCESS_KEY_ID "$AWS_SES_ACCESS_KEY_ID") $(s AWS_SES_SECRET_ACCESS_KEY "$AWS_SES_SECRET_ACCESS_KEY") $(s RESEND_API_KEY "$RESEND_API_KEY")"
+
+      - name: Microsoft Graph token and test send
+        if: ${{ env.MS_TENANT_ID != '' }}
+        env:
+          MS_TENANT_ID: ${{ secrets.MS_TENANT_ID }}
+          MS_CLIENT_ID: ${{ secrets.MS_CLIENT_ID }}
+          MS_CLIENT_SECRET: ${{ secrets.MS_CLIENT_SECRET }}
+          MS_SENDER_EMAIL: ${{ secrets.MS_SENDER_EMAIL }}
+          TO: ${{ inputs.to }}
+        run: |
+          T=$(curl -sS "https://login.microsoftonline.com/$MS_TENANT_ID/oauth2/v2.0/token" \
+            -d client_id="$MS_CLIENT_ID" -d client_secret="$MS_CLIENT_SECRET" \
+            -d scope=https://graph.microsoft.com/.default -d grant_type=client_credentials)
+          TOKEN=$(echo "$T" | jq -r '.access_token // empty')
+          if [ -z "$TOKEN" ]; then echo "::error title=Graph token::$(echo "$T" | jq -c 'del(.access_token)' | cut -c1-400)"; exit 0; fi
+          echo "::notice title=Graph token::acquired"
+          R=$(curl -sS -w ' HTTP %{http_code}' "https://graph.microsoft.com/v1.0/users/$MS_SENDER_EMAIL/sendMail" \
+            -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+            -d "{\"message\":{\"subject\":\"TGA email test (Graph)\",\"body\":{\"contentType\":\"HTML\",\"content\":\"<p>Test from the Learn portal diagnostics via Microsoft 365.</p>\"},\"toRecipients\":[{\"emailAddress\":{\"address\":\"$TO\"}}]}}")
+          echo "::notice title=Graph test send (202 = sent)::$(echo "$R" | cut -c1-400)"
+
+      - name: Amazon SES test send
+        if: ${{ env.AWS_SES_REGION != '' }}
+        env:
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_SES_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_SES_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SES_SECRET_ACCESS_KEY }}
+          TO: ${{ inputs.to }}
+        run: |
+          echo "::notice title=SES identities::$(aws sesv2 list-email-identities --output json 2>&1 | jq -c '[.EmailIdentities[] | {IdentityName, SendingEnabled, VerificationStatus}]' 2>/dev/null | cut -c1-400)"
+          echo "::notice title=SES account::$(aws sesv2 get-account --output json 2>&1 | jq -c '{ProductionAccessEnabled, SendingEnabled}' 2>/dev/null)"
+          R=$(aws sesv2 send-email --from-email-address "Tarbiyyah Global Academy <noreply@globalacademy.tarbiyyah.co.uk>" \
+            --destination "ToAddresses=$TO" \
+            --content '{"Simple":{"Subject":{"Data":"TGA email test (SES)"},"Body":{"Html":{"Data":"<p>Test from the Learn portal diagnostics via Amazon SES.</p>"}}}}' 2>&1 | cut -c1-400)
+          echo "::notice title=SES test send::$R"
+
+      - name: Resend domain status, DNS records and test send
+        if: ${{ env.RESEND_API_KEY != '' }}
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           TO: ${{ inputs.to }}
         run: |
-          if [ -z "$RESEND_API_KEY" ]; then echo "::error::RESEND_API_KEY secret is EMPTY"; exit 1; fi
           D=$(curl -sS https://api.resend.com/domains -H "Authorization: Bearer $RESEND_API_KEY")
-          echo "::notice title=Resend domains::$(echo "$D" | jq -c '.' | cut -c1-400)"
+          echo "::notice title=Resend domains::$(echo "$D" | jq -c '[.data[] | {name, status, region}]' | cut -c1-400)"
+          for ID in $(echo "$D" | jq -r '.data[].id'); do
+            curl -sS "https://api.resend.com/domains/$ID" -H "Authorization: Bearer $RESEND_API_KEY" \
+              | jq -r '.records[] | "::notice title=DNS record needed (\(.record) \(.type) \(.status))::name=\(.name) value=\(.value) \(if .priority then "priority=\(.priority)" else "" end)"'
+            # Ask Resend to re-check the DNS (harmless if nothing changed).
+            curl -sS -X POST "https://api.resend.com/domains/$ID/verify" -H "Authorization: Bearer $RESEND_API_KEY" >/dev/null || true
+          done
           R=$(curl -sS -w ' HTTP %{http_code}' https://api.resend.com/emails \
             -H "Authorization: Bearer $RESEND_API_KEY" -H "Content-Type: application/json" \
-            -d "{\"from\":\"Tarbiyyah Global Academy <noreply@globalacademy.tarbiyyah.co.uk>\",\"to\":[\"$TO\"],\"subject\":\"TGA email test\",\"html\":\"<p>Test from the Learn portal diagnostics.</p>\"}")
+            -d "{\"from\":\"Tarbiyyah Global Academy <noreply@globalacademy.tarbiyyah.co.uk>\",\"to\":[\"$TO\"],\"subject\":\"TGA email test (Resend)\",\"html\":\"<p>Test from the Learn portal diagnostics via Resend.</p>\"}")
           echo "::notice title=Resend test send::$(echo "$R" | cut -c1-400)"
