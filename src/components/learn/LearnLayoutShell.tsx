@@ -79,6 +79,8 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
       return !c;
     });
   const activeSession = session && session !== "loading" ? session : null;
+  // The entry assessment is a full-screen, distraction-free page of its own (no portal chrome).
+  if (/^\/(learn\/)?assessment(\/|$)/.test(pathname || "")) return <div className="portal">{children}</div>;
   const signedIn = !!(activeSession && rolesLoaded && roles.length > 0);
   const homeHref = signedIn ? dashboardPathForRole(roles[0].role) : "/";
   // Pages outside an area (/account, /report-concern) keep the sidebar of

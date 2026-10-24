@@ -8,7 +8,7 @@ export type BaselineRow = {
   id: string;
   child_id: string;
   provider: string;
-  test: "CAT4" | "NGRT" | "PTE" | "PTM" | "Baseline interview" | "Other";
+  test: "CAT4" | "NGRT" | "PTE" | "PTM" | "Baseline interview" | "Other" | "TGA entry assessment";
   level: string | null;
   taken_on: string;
   verbal_sas: number | null;
@@ -22,7 +22,42 @@ export type BaselineRow = {
   age_equivalent: string | null;
   notes: string | null;
   source: "manual" | "csv_import";
+  details?: {
+    estimates?: { area: string; label: string; workingAt: number; band: string }[];
+    quran?: { group: string } | null;
+    arabic?: { group: string } | null;
+    recommendations?: { area: string; text: string }[];
+    year?: number;
+  } | null;
 };
+
+const TGA_BAND: Record<string, string> = { "Well below": "bg-red-100 text-red-800", Below: "bg-amber-100 text-amber-900", Expected: "bg-gold-100 text-gold-900", Above: "bg-teal-700/10 text-teal-700", "Well above": "bg-teal-700/10 text-teal-700" };
+const yr = (t: number) => (t < 0.75 ? "below Y1" : t >= 11.75 ? "beyond Y11" : `Y${Math.round(t)}`);
+
+function TgaResult({ r }: { r: BaselineRow }) {
+  const d = r.details || {};
+  return (
+    <div className="mt-2 space-y-2">
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+        {(d.estimates || []).map((e) => (
+          <div key={e.area} className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-ink/60">{e.label}</p>
+            <p className="text-lg font-semibold tabular-nums text-ink">{yr(e.workingAt)}</p>
+            <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold ${TGA_BAND[e.band] || "bg-cream text-ink/70"}`}>{e.band}</span>
+          </div>
+        ))}
+      </div>
+      {(d.quran || d.arabic) && (
+        <p className="text-sm text-ink/80">{d.quran ? <><b>Qur&apos;an:</b> {d.quran.group}. </> : null}{d.arabic ? <><b>Arabic:</b> {d.arabic.group}.</> : null}</p>
+      )}
+      {d.recommendations && d.recommendations.length > 0 && (
+        <ul className="list-disc space-y-0.5 pl-5 text-sm text-ink/75">
+          {d.recommendations.filter((x) => x.area !== "Qur'an" && x.area !== "Arabic").slice(0, 4).map((x, i) => <li key={i}><b>{x.area}:</b> {x.text}</li>)}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 export const TESTS: { key: BaselineRow["test"]; label: string; batteries: boolean }[] = [
   { key: "CAT4", label: "CAT4 (reasoning: verbal, quantitative, non-verbal, spatial)", batteries: true },
@@ -115,7 +150,7 @@ export function BaselineAssessments({ childId, canEdit }: { childId: string; can
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <h2 id="baseline-heading" className="text-base font-semibold text-ink">Baseline and standardised assessments</h2>
-          <p className="text-xs text-ink/65">GL Assessment results (CAT4, NGRT, PTE, PTM) as recorded from the GL report. SAS: mean 100, 89–111 is average.</p>
+          <p className="text-xs text-ink/65">TGA entry assessment (working-at year for each area, plus Qur&apos;an and Arabic groups) and any GL Assessment results. For GL&apos;s SAS, 100 is average and 89–111 is the average band.</p>
         </div>
         {canEdit && !adding && (
           <button type="button" onClick={() => setAdding(true)} className={ui.btnSecondary}>Add a result</button>
@@ -125,7 +160,7 @@ export function BaselineAssessments({ childId, canEdit }: { childId: string; can
       {rows === null ? (
         <p className="mt-3 text-sm text-ink/65">Loading…</p>
       ) : rows.length === 0 ? (
-        <p className="mt-3 text-sm text-ink/65">No results recorded yet. Entry assessments are sat on GL&apos;s platform; record the scores here or import GL&apos;s CSV export from Assessments.</p>
+        <p className="mt-3 text-sm text-ink/65">No results yet. Issue a TGA entry assessment from Entry assessments; results appear here automatically when it is marked.</p>
       ) : (
         <ul className="mt-3 space-y-3">
           {rows.map((r) => (
@@ -134,9 +169,11 @@ export function BaselineAssessments({ childId, canEdit }: { childId: string; can
                 <p className="text-sm font-semibold text-ink">
                   {r.test}{r.level ? ` · Level ${r.level}` : ""} <span className="font-normal text-ink/65">· {new Date(r.taken_on).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })} · {r.provider}{r.source === "csv_import" ? " · imported" : ""}</span>
                 </p>
-                {canEdit && <button type="button" onClick={() => remove(r)} className={ui.btnLinkDanger}>Remove</button>}
+                {canEdit && r.test !== "TGA entry assessment" && <button type="button" onClick={() => remove(r)} className={ui.btnLinkDanger}>Remove</button>}
               </div>
-              {r.test === "CAT4" ? (
+              {r.test === "TGA entry assessment" ? (
+                <TgaResult r={r} />
+              ) : r.test === "CAT4" ? (
                 <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-5">
                   <Sas label="Verbal" v={r.verbal_sas} /><Sas label="Quantitative" v={r.quantitative_sas} /><Sas label="Non-verbal" v={r.nonverbal_sas} /><Sas label="Spatial" v={r.spatial_sas} /><Sas label="Mean" v={r.mean_sas} />
                 </div>
