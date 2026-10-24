@@ -230,6 +230,10 @@ export default function LearnLoginPage() {
             <a href={`${MAIN_SITE_ORIGIN}/admissions/`} className="font-semibold text-gold-700 underline">
               Apply for December 2026
             </a>
+            <span className="mx-2 text-ink/30">·</span>
+            <Link href="/install" className="font-semibold text-gold-700 underline">
+              Get the app
+            </Link>
           </p>
         </div>
       </div>

@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
   openGraph: null,
   twitter: null,
+  // Installable as an app ("Add to Home Screen" / "Install TGA Portal"): see
+  // public/learn/app.webmanifest, public/learn/sw.js and the /install page.
+  manifest: "/app.webmanifest",
+  appleWebApp: { capable: true, title: "TGA Portal", statusBarStyle: "default" },
+  icons: { apple: "/app-apple-touch-icon.png" },
 };
 
 export default function LearnLayout({ children }: { children: React.ReactNode }) {

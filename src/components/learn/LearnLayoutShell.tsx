@@ -16,6 +16,7 @@ import { Icon } from "@/components/learn/Icon";
 import { ActivityRecorder } from "@/components/learn/feedback/ActivityRecorder";
 import { FeedbackButton } from "@/components/learn/feedback/FeedbackButton";
 import { MobileTabBar } from "@/components/learn/MobileTabBar";
+import { InstallAppSetup } from "@/components/learn/InstallApp";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -88,6 +89,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
     return (
       <div className="portal flex min-h-screen flex-col">
         <ActivityRecorder />
+        <InstallAppSetup />
         <header className="sticky top-0 z-40 border-b border-gold-light bg-white">
           <div className="mx-auto flex h-[60px] max-w-[1440px] items-center px-4 sm:px-6 lg:px-8">
             <Link href={homeHref} aria-label="Tarbiyyah Global Academy">
@@ -110,6 +112,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="portal min-h-screen">
       <ActivityRecorder />
+      <InstallAppSetup />
       <PortalSidebar area={area} session={activeSession} roles={roles} collapsed={collapsed} onToggle={toggleSidebar} />
 
       <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-out ${collapsed ? "lg:pl-[76px]" : "lg:pl-[272px]"}`}>

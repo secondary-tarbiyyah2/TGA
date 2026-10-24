@@ -54,6 +54,17 @@ RewriteOptions IgnoreInherit
   Header set Content-Security-Policy "default-src 'self'; connect-src 'self' https://*.supabase.co https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; worker-src 'self' blob:; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; frame-src blob:; child-src blob:; object-src blob:; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 </IfModule>
 
+# The portal installs as an app (app.webmanifest + sw.js at the root).
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType text/javascript .js
+</IfModule>
+<Files "sw.js">
+  <IfModule mod_headers.c>
+    Header set Service-Worker-Allowed "/"
+  </IfModule>
+</Files>
+
 # Don't expose dotfiles (e.g. this .htaccess) to the web.
 <FilesMatch "^\.">
   Require all denied

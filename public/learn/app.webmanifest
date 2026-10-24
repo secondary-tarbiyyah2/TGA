@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "TGA Portal — Tarbiyyah Global Academy",
+  "short_name": "TGA Portal",
+  "description": "Lessons, homework, Qur'an progress and messages for Tarbiyyah Global Academy families, pupils and staff.",
+  "start_url": "/?source=app",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "any",
+  "background_color": "#F7F4EC",
+  "theme_color": "#1B1E21",
+  "lang": "en-GB",
+  "categories": ["education"],
+  "icons": [
+    { "src": "/app-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/app-icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

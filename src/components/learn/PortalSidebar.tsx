@@ -10,6 +10,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
 import { AREA_SUBTITLE, MOBILE_TABS, isSidebarItemActive, sidebarLayout, tileFor, withoutPages, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
 import { Icon } from "@/components/learn/Icon";
+import { InstallAppLink } from "@/components/learn/InstallApp";
 import { NavBadge, useNavBadges, type NavBadges } from "@/lib/learn/navBadges";
 
 const AREA_NAMES: Record<string, string> = {
@@ -290,6 +291,9 @@ function SidebarBody({
             ))}
           </div>
         )}
+        <div className={`mt-4 border-t border-gold-light pt-3 ${collapsed ? "flex justify-center" : ""}`}>
+          <InstallAppLink onNavigate={onNavigate} compact={collapsed} />
+        </div>
       </nav>
 
       <div className={`shrink-0 border-t border-gold-light ${collapsed ? "flex flex-col items-center gap-1.5 px-2 py-3" : "p-3"}`}>
