@@ -141,8 +141,18 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
       role="dialog"
       aria-modal="true"
       aria-label="Site menu"
-      className="fixed inset-0 top-20 z-40 flex flex-col overflow-y-auto overscroll-contain bg-cream lg:hidden"
+      className="fixed inset-0 z-[60] flex flex-col overflow-y-auto overscroll-contain bg-cream lg:hidden"
+      style={{ height: "100dvh" }}
     >
+      {/* The drawer carries its own top bar, so it fills the whole screen whatever the page behind it is doing. */}
+      <div className="sticky top-0 z-10 flex h-20 shrink-0 items-center justify-between border-b border-gold-light/40 bg-cream px-5">
+        <Link href="/" onClick={close} className="flex items-center" aria-label="Tarbiyyah Global Academy — home">
+          <Image src="/brand/ga-wordmark.png" alt="" width={180} height={55} />
+        </Link>
+        <button type="button" onClick={close} aria-label="Close menu" className="rounded-md p-2 text-gold-700" style={{ touchAction: "manipulation" }}>
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6l-12 12" /></svg>
+        </button>
+      </div>
       <nav aria-label="Primary" className="flex flex-1 flex-col gap-1 p-5">
         {primaryNav.map((entry) =>
           isNavGroup(entry) ? (
