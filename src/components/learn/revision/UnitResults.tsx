@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { TONE, band, pct, unitInsights, type Insights } from "@/lib/learn/revision";
-import { ui } from "@/components/learn/ui";
+import { EmptyState, ui } from "@/components/learn/ui";
 
 const btn = `${ui.btnSecondary} ${ui.sm}`;
 
@@ -126,17 +126,19 @@ export function UnitResults({ unitId }: { unitId: string }) {
         {!data.unit.published && <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-900">Hidden from pupils</span>}
       </div>
 
+      {stats.taken.length > 0 && (
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Stat value={`${stats.taken.length}/${data.pupils.length}`} label="pupils have taken the quiz" />
         <Stat value={stats.avg === null ? "–" : `${stats.avg}%`} label="average score" tone={stats.avg === null ? undefined : band(stats.avg).tone} />
         <Stat value={stats.topicStats[0]?.topic || "–"} label={stats.topicStats[0] ? `weakest topic (${stats.topicStats[0].p}%)` : "weakest topic"} small />
         <Stat value={String(stats.under.length)} label="pupils under 60%" tone={stats.under.length ? "bad" : undefined} />
       </div>
+      )}
 
       {stats.taken.length === 0 ? (
-        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
-          No quiz results yet. They appear here as soon as pupils take the quiz in Unit revision.
-        </p>
+        <EmptyState title="No quiz results yet" icon="chartColumnIncreasing" tile="tile-teal">
+          {data.pupils.length} pupil{data.pupils.length === 1 ? "" : "s"} can take this unit&apos;s quiz in Unit revision. Scores, weakest topics and who needs help appear here as soon as they do.
+        </EmptyState>
       ) : (
         <>
           <div className="grid gap-4 lg:grid-cols-2">

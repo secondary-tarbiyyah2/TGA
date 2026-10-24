@@ -529,23 +529,81 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
 
   return (
     <div className="space-y-4">
-      <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4">
+      {/* One compact filter card: year on top, then search and the filters as dropdowns in a single row. */}
+      <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4" role="group" aria-label="Find lessons">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <p className="text-sm font-semibold text-ink">Year group</p>
+          {year && <Tabs variant="switch" items={yearTabs} value={year} onChange={setYear} label="Year group" />}
           {myYears.length > 0 && <p className="text-xs text-ink/65">• = a year you teach</p>}
         </div>
-        {year && <Tabs variant="switch" items={yearTabs} value={year} onChange={setYear} label="Year group" />}
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2">
           <input
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder={`Search ${year ? yearLabel(year) : ""} lessons by title, unit or objective`}
-            aria-label="Search lessons"
-            className="min-w-0 flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm"
+            placeholder={`Search ${year ? yearLabel(year) : ""} lessons`}
+            aria-label="Search lessons by title, unit or objective"
+            className="min-w-[12rem] flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm"
           />
+          {allSubjects.length > 1 && (
+            <select
+              aria-label="Subject"
+              value={subjectFilter}
+              onChange={(e) => {
+                setSubjectFilter(e.target.value);
+                setBoardFilter("all");
+                setSelected(null);
+                setWanted(null);
+              }}
+              className="w-auto max-w-[16rem] rounded-lg border border-gold-light py-2 pl-3 text-sm"
+            >
+              <option value="all">All subjects ({allSubjects.reduce((t, x) => t + x.units.length, 0)})</option>
+              {allSubjects.map((x) => (
+                <option key={x.slug} value={x.slug}>
+                  {x.name} ({x.units.length})
+                </option>
+              ))}
+            </select>
+          )}
+          {boards.length > 1 && (
+            <select aria-label="Exam board" value={boardFilter} onChange={(e) => setBoardFilter(e.target.value)} className="w-auto max-w-[14rem] rounded-lg border border-gold-light py-2 pl-3 text-sm">
+              <option value="all">Any exam board</option>
+              {boards.map((bd) => (
+                <option key={bd} value={bd}>
+                  {bd}
+                </option>
+              ))}
+            </select>
+          )}
+          <button
+            type="button"
+            aria-pressed={approvedOnly}
+            onClick={() => {
+              setApprovedOnly(!approvedOnly);
+              setSelected(null);
+              setWanted(null);
+            }}
+            className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm font-medium transition ${approvedOnly ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink hover:border-teal-700"}`}
+          >
+            {approvedOnly ? "✓ " : ""}Signed off only
+          </button>
+          {filtersOn && (
+            <button
+              type="button"
+              className={ui.btnLink}
+              onClick={() => {
+                setSubjectFilter("all");
+                setBoardFilter("all");
+                setApprovedOnly(false);
+              }}
+            >
+              Clear
+            </button>
+          )}
+        </div>
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-gold-light/60 pt-3">
           <p className="text-sm text-ink/65" aria-live="polite">
             {!lessons ? "Loading…" : results ? `${results.length} match${results.length === 1 ? "" : "es"}` : `${lessons.length} lessons · ${allUnits.length} units`}
+            {boards.length === 1 && <span className="ml-2 rounded-full bg-gold-100 px-2 py-0.5 text-xs font-semibold text-gold-900">{boards[0]}</span>}
           </p>
           {year && !building && (
             <button type="button" className={btn} onClick={() => setBuilding({})}>
@@ -554,85 +612,6 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           )}
         </div>
       </div>
-
-      {(allSubjects.length > 1 || boards.length > 1) && (
-        <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4" role="group" aria-label="Filters">
-          <div>
-            <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink/65">Subject</p>
-            <div className="flex flex-wrap gap-2">
-              {[{ slug: "all", name: "All subjects", n: allSubjects.reduce((t, x) => t + x.units.length, 0) }, ...allSubjects.map((x) => ({ slug: x.slug, name: x.name, n: x.units.length }))].map((x) => {
-                const on = subjectFilter === x.slug;
-                return (
-                  <button
-                    key={x.slug}
-                    type="button"
-                    aria-pressed={on}
-                    onClick={() => {
-                      setSubjectFilter(x.slug);
-                      setBoardFilter("all");
-                      setSelected(null);
-                      setWanted(null);
-                    }}
-                    className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${on ? "border-teal-700 bg-teal-700 font-semibold text-white" : "border-gold-light bg-white text-ink hover:bg-cream"}`}
-                  >
-                    {x.slug !== "all" && <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full ring-1 ring-white/70" style={{ backgroundColor: classColour(x.slug) }} />}
-                    {x.name}
-                    <span className={`rounded-full px-1.5 text-xs tabular-nums ${on ? "bg-white/25" : "bg-cream text-ink/65"}`}>{x.n}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            {boards.length > 0 && (
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-semibold uppercase tracking-wide text-ink/65">Exam board</span>
-                {subjectFilter === "all" && boards.length > 1 && (
-                  <>
-                    <button type="button" aria-pressed={boardFilter === "all"} onClick={() => setBoardFilter("all")} className={`rounded-full border px-3 py-1 text-sm ${boardFilter === "all" ? "border-gold-500 bg-gold-100 font-semibold text-gold-900" : "border-gold-light text-ink hover:bg-cream"}`}>
-                      Any
-                    </button>
-                  </>
-                )}
-                {boards.length > 1 || subjectFilter === "all" ? (
-                  boards.map((bd) => (
-                    <button key={bd} type="button" aria-pressed={boardFilter === bd} onClick={() => setBoardFilter(boardFilter === bd ? "all" : bd)} className={`max-w-[18rem] truncate rounded-full border px-3 py-1 text-sm ${boardFilter === bd ? "border-gold-500 bg-gold-100 font-semibold text-gold-900" : "border-gold-light text-ink hover:bg-cream"}`} title={bd}>
-                      {bd}
-                    </button>
-                  ))
-                ) : (
-                  <span className="rounded-full bg-gold-100 px-3 py-1 text-sm font-semibold text-gold-900">{boards[0]}</span>
-                )}
-              </div>
-            )}
-            <button
-              type="button"
-              aria-pressed={approvedOnly}
-              onClick={() => {
-                setApprovedOnly(!approvedOnly);
-                setSelected(null);
-                setWanted(null);
-              }}
-              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition ${approvedOnly ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink hover:border-teal-700"}`}
-            >
-              {approvedOnly ? "✓ " : ""}Signed-off lessons
-            </button>
-            {filtersOn && (
-              <button
-                type="button"
-                className={`ml-auto ${ui.btnLink}`}
-                onClick={() => {
-                  setSubjectFilter("all");
-                  setBoardFilter("all");
-                  setApprovedOnly(false);
-                }}
-              >
-                Clear filters
-              </button>
-            )}
-          </div>
-        </div>
-      )}
 
       {building && year && (
         <PackBuilder
