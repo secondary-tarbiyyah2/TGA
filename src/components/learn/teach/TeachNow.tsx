@@ -7,6 +7,7 @@ import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { localDateKey } from "@/lib/learn/calendar";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { ackState, usePupils } from "@/components/learn/pupil/usePupils";
+import { Icon, type IconName } from "@/components/learn/Icon";
 
 type Lesson = { id: string; classId: string; className: string; start: string; end: string; live: boolean; registerTaken: boolean };
 type Counts = { toMark: number; oldestDays: number; unread: number; toSign: number; dueSoon: number };
@@ -112,17 +113,19 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
   const missingRegisters = (lessons || []).filter((l) => !l.registerTaken && now >= hhmm(l.start)).length;
   const toRead = pupils === null ? null : pupils.filter((p) => p.classes.length > 0 && ackState(p) !== "current").length;
 
-  const stats: { label: string; n: number | null; note: string; href: string; urgent: boolean }[] = [
-    { label: "Registers due", n: counts ? missingRegisters : null, note: missingRegisters ? "Lessons started without a register" : "All taken so far today", href: "/teach/today", urgent: missingRegisters > 0 },
+  const stats: { label: string; n: number | null; note: string; href: string; urgent: boolean; icon: IconName; tile: string }[] = [
+    { label: "Registers due", n: counts ? missingRegisters : null, note: missingRegisters ? "Lessons started without a register" : "All taken so far today", href: "/teach/today", urgent: missingRegisters > 0, icon: "clipboardCheck", tile: "tile-teal" },
     {
       label: "To mark",
       n: counts?.toMark ?? null,
       note: counts?.toMark ? (counts.oldestDays >= 1 ? `Oldest waiting ${counts.oldestDays} day${counts.oldestDays === 1 ? "" : "s"}` : "Handed in today") : "All caught up",
       href: "/teach/review",
       urgent: !!counts && counts.oldestDays >= 7,
+      icon: "notebookPen",
+      tile: "tile-violet",
     },
-    { label: "Homework due soon", n: counts?.dueSoon ?? null, note: "Set by you, due in the next 7 days", href: "/teach/homework", urgent: false },
-    { label: "Pupil records to read", n: toRead, note: toRead ? "Medical and emergency details" : "All read", href: "/teach/pupils", urgent: !!toRead },
+    { label: "Homework due soon", n: counts?.dueSoon ?? null, note: "Set by you, due in the next 7 days", href: "/teach/homework", urgent: false, icon: "listChecks", tile: "tile-blue" },
+    { label: "Pupil records to read", n: toRead, note: toRead ? "Medical and emergency details" : "All read", href: "/teach/pupils", urgent: !!toRead, icon: "idCard", tile: "tile-rose" },
   ];
   const actions = [
     { label: "Take a register", href: "/teach/today" },
@@ -137,10 +140,13 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
       <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="What needs doing">
         {stats.map((st) => (
           <li key={st.label}>
-            <Link href={st.href} className={`block h-full rounded-2xl border bg-white p-4 transition hover:shadow-sm ${st.urgent ? "border-amber-300" : "border-gold-light"}`}>
-              <span className={`block text-3xl font-semibold tabular-nums ${st.urgent ? "text-amber-800" : "text-ink"}`}>{st.n === null ? "…" : st.n}</span>
-              <span className="mt-1 block text-sm font-semibold text-ink">{st.label}</span>
-              <span className="block text-xs text-ink/65">{st.note}</span>
+            <Link href={st.href} className={`group flex h-full items-start gap-3 rounded-2xl border bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md ${st.urgent ? "border-amber-300 bg-amber-50/40" : "border-gold-light"}`}>
+              <span className={`portal-tile ${st.tile} mt-0.5`} aria-hidden="true"><Icon name={st.icon} /></span>
+              <span className="min-w-0">
+                <span className={`block text-3xl font-semibold leading-none tabular-nums ${st.urgent ? "text-amber-800" : "text-ink"}`}>{st.n === null ? "…" : st.n}</span>
+                <span className="mt-1.5 block text-sm font-semibold text-ink">{st.label}</span>
+                <span className="block text-xs text-ink/65">{st.note}</span>
+              </span>
             </Link>
           </li>
         ))}
