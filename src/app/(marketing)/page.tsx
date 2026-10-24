@@ -71,7 +71,7 @@ export default async function HomePage() {
               <p className="mt-6 max-w-xl text-lg text-ink/75">{content.heroBody}</p>
             ) : (
               <p className="mt-6 max-w-xl text-lg text-ink/75">
-                Live, timetabled lessons with qualified teachers — Qur'an, Arabic and Islamic Studies alongside the full national curriculum, taught with{" "}
+                Live, timetabled lessons with qualified teachers — Qur&apos;an, Arabic and Islamic Studies alongside the full national curriculum, taught with{" "}
                 <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Year 1 to Year 11, live
                 lessons launching December 2026.
               </p>

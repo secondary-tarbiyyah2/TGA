@@ -125,7 +125,7 @@ export function BaselineAssessments({ childId, canEdit }: { childId: string; can
       {rows === null ? (
         <p className="mt-3 text-sm text-ink/65">Loading…</p>
       ) : rows.length === 0 ? (
-        <p className="mt-3 text-sm text-ink/65">No results recorded yet. Entry assessments are sat on GL's platform; record the scores here or import GL&apos;s CSV export from Assessments.</p>
+        <p className="mt-3 text-sm text-ink/65">No results recorded yet. Entry assessments are sat on GL&apos;s platform; record the scores here or import GL&apos;s CSV export from Assessments.</p>
       ) : (
         <ul className="mt-3 space-y-3">
           {rows.map((r) => (
