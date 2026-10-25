@@ -8,7 +8,7 @@ import { getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Open Evenings & Taster Morning",
-  description: "Register for a virtual open evening (12 and 22 November) or the taster morning (21 November) ahead of our December 2026 launch.",
+  description: "Register for a virtual open evening (12 and 22 November) or a taster morning (14 or 28 November) ahead of our December 2026 launch.",
   path: "/open-evening",
 });
 
@@ -19,10 +19,10 @@ export default async function OpenEveningPage() {
     <section className="section-pad">
       <Container className="max-w-2xl">
         <Kicker>See it live, from your own sofa</Kicker>
-        <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Meet us online: open evenings and a taster morning.</h1>
+        <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Meet us online: open evenings and taster mornings.</h1>
         <p className="mt-6 text-lg text-ink/75">
           Meet the Headteacher, see a sample live lesson and the Parent and Student Portals, and ask anything you like.
-          At the taster morning your child joins real lessons, in two age bands so every lesson is pitched right: Years 1–6
+          At a taster morning (Saturday 14 or 28 November) your child joins real lessons, in two age bands so every lesson is pitched right: Years 1–6
           at 10:00 and Years 7–11 at 11:15 UK time. Every session is online; register below and the joining link is emailed
           to you.
         </p>
