@@ -13,7 +13,7 @@ export default function TeachStarsPage() {
           <PageHeader
             crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Star of the week" }]}
             title="Star of the week"
-            subtitle="Nominate one pupil from each of your classes. The Headteacher approves, then the family gets a certificate."
+            subtitle="Each week, choose one pupil from each of your classes. The Headteacher approves, the class sees a shout-out and the family gets a certificate."
           />
           <StarManager isHead={false} />
         </LearnShell>

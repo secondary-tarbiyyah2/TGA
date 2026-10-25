@@ -1,7 +1,7 @@
 import { PrintSheet } from "@/components/learn/print";
 import { StatusChip, type Tone } from "@/components/learn/ui";
 import { PRINT_AREA } from "./printArea";
-import type { ClassSummary, ReportNarrative } from "./summary";
+import type { ClassSummary, ReportNarrative, SubjectRating } from "./summary";
 
 export { PRINT_AREA };
 
@@ -84,13 +84,33 @@ function quranSub(q: ClassSummary["quran"]): string {
   return parts.length > 0 ? parts.join(" · ") : q.latest || "No entries";
 }
 
-function ClassBlock({ c }: { c: ClassSummary }) {
+function ClassBlock({ c, rating }: { c: ClassSummary; rating?: SubjectRating }) {
   const a = c.attendance;
   const h = c.homework;
   const s = c.assessments;
   return (
     <section className="break-inside-avoid rounded-xl border border-gold-light/40 p-4">
-      <h3 className="font-serif text-lg font-semibold text-ink">{c.class_name}</h3>
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <h3 className="font-serif text-lg font-semibold text-ink">{c.class_name}</h3>
+        {rating?.by && <p className="text-xs text-ink/65">{rating.by}</p>}
+      </div>
+      {(rating?.effort || rating?.attainment) && (
+        <dl className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-sm">
+          {rating.attainment && (
+            <div className="flex gap-1.5">
+              <dt className="text-ink/65">Attainment:</dt>
+              <dd className="font-medium text-ink">{rating.attainment}</dd>
+            </div>
+          )}
+          {rating.effort && (
+            <div className="flex gap-1.5">
+              <dt className="text-ink/65">Effort:</dt>
+              <dd className="font-medium text-ink">{rating.effort}</dd>
+            </div>
+          )}
+        </dl>
+      )}
+      {rating?.comment && <p className="mt-2 whitespace-pre-wrap text-sm text-ink/80">{rating.comment}</p>}
       <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Stat label="Attendance" value={fmtPct(a.rate)} sub={a.total === 0 ? "No lessons recorded" : `${a.attended} attended · ${a.absent} missed${a.excused ? ` · ${a.excused} excused` : ""}`} />
         <Stat label="Homework" value={h.total === 0 ? "–" : `${h.done}/${h.total}`} sub={h.rate === null ? "None set" : `${h.rate}% completed`} />
@@ -173,7 +193,7 @@ export function ReportDocument({
       <div className="mt-4 space-y-3">
         {classes.length === 0 && legacy.length === 0 && <p className="text-sm text-ink/65">No recorded attendance, homework or grades for this period.</p>}
         {classes.map((c) => (
-          <ClassBlock key={c.class_id} c={c} />
+          <ClassBlock key={c.class_id} c={c} rating={narrative?.ratings?.[c.class_id]} />
         ))}
         <section className="break-inside-avoid rounded-xl border border-gold-light/40 p-4">
           <h3 className="font-serif text-lg font-semibold text-ink">Teacher&apos;s comment</h3>

@@ -28,13 +28,27 @@ export type ClassSummary = {
   /** Optional so snapshots stored before the behaviour module still render. */
   behaviour?: BehaviourSummary;
 };
+/** A teacher's judgement for one class (subject) on a pupil's report. */
+export type SubjectRating = {
+  effort?: string | null;
+  attainment?: string | null;
+  comment?: string | null;
+  /** Name of the teacher who wrote it, for the report. */
+  by?: string | null;
+  updated_at?: string;
+};
 /** Snapshot stored in term_reports.narrative. Safeguarding data is never part of it. */
 export type ReportNarrative = {
   version: 1;
   generated_at: string;
   term_label: string;
   classes: Record<string, ClassSummary>;
+  /** Effort / attainment / subject comment per class id (optional: older snapshots have none). */
+  ratings?: Record<string, SubjectRating>;
 };
+
+export const EFFORT_OPTIONS = ["Excellent", "Good", "Satisfactory", "Needs to improve"] as const;
+export const ATTAINMENT_OPTIONS = ["Above expected", "At expected", "Working towards expected", "Below expected"] as const;
 export type TermOption = { id: string; name: string; starts_on: string; ends_on: string };
 export type DateRange = { start: string | null; end: string | null };
 
@@ -44,7 +58,7 @@ export function termRange(t: TermOption | null): DateRange {
 
 const PAGE = 1000;
 
-async function fetchAll<T>(build: (from: number, to: number) => PromiseLike<{ data: unknown }>): Promise<T[]> {
+export async function fetchAll<T>(build: (from: number, to: number) => PromiseLike<{ data: unknown }>): Promise<T[]> {
   const out: T[] = [];
   for (let from = 0; ; from += PAGE) {
     const res = await build(from, from + PAGE - 1);
@@ -246,7 +260,17 @@ export function mergeNarrative(existing: ReportNarrative | null, summary: ClassS
     generated_at: new Date().toISOString(),
     term_label: termLabel,
     classes: { ...(existing?.classes || {}), [summary.class_id]: summary },
+    ...(existing?.ratings ? { ratings: existing.ratings } : {}),
   };
+}
+
+/** The narrative with one class's rating replaced (or removed when empty). */
+export function withRating(n: ReportNarrative, classId: string, rating: SubjectRating | null): ReportNarrative {
+  const ratings = { ...(n.ratings || {}) };
+  const empty = !rating || (!rating.effort && !rating.attainment && !(rating.comment || "").trim());
+  if (empty) delete ratings[classId];
+  else ratings[classId] = { ...rating, comment: (rating.comment || "").trim() || null, updated_at: new Date().toISOString() };
+  return { ...n, ratings };
 }
 
 export function asNarrative(v: unknown): ReportNarrative | null {

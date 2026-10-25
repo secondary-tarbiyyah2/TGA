@@ -12,12 +12,9 @@ export default function AdminRewardsPage() {
         <PageHeader
           crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Houses & stars" }]}
           title="Houses & stars"
-          subtitle="Set up houses, award bonus points, and approve each class's Star of the Week."
+          subtitle="Choose and approve each class's Star of the Week, see who hasn't been star yet, and run the house points."
         />
-        <div className="space-y-8">
-          <StarManager isHead />
-          <HousesAdmin />
-        </div>
+        <StarManager isHead housesAdmin={<HousesAdmin />} />
       </LearnGate>
     </section>
   );

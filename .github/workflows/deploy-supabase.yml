@@ -315,6 +315,8 @@ jobs:
           supabase functions deploy weekly-digest --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # star-certificate: verified; staff only (re-checked in the function).
           supabase functions deploy star-certificate --project-ref "${{ steps.project.outputs.ref }}"
+          # absence-escalate: verified; head/admin only (re-checked in the function).
+          supabase functions deploy absence-escalate --project-ref "${{ steps.project.outputs.ref }}"
           # policy-file: public website policies streamed to deploy/policy.php
           # (the main site's /policies/<slug>.pdf); open-evening-book: the
           # public booking form (honeypot + rate limit inside); open-evening-

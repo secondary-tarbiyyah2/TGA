@@ -27,6 +27,51 @@ type Tab = "basics" | "health" | "contacts" | "consents" | "acks";
  * log. `showAcks` adds the teacher acknowledgements tab (Headteacher/admin).
  * Every section is also rendered when printing, whichever tab is open.
  */
+export type RecordData = {
+  details: PupilDetails | null;
+  contacts: EmergencyContact[];
+  acks: Acknowledgement[];
+  loaded: boolean;
+  error: string | null;
+};
+
+/** Loads one pupil's record (RLS decides what a teacher may see) and logs the view, once per pupil. */
+export function usePupilRecordData(childId: string, { teacherView = false, showAcks = false }: { teacherView?: boolean; showAcks?: boolean } = {}, onLoaded?: (d: PupilDetails | null, contacts: EmergencyContact[]) => void): RecordData {
+  const [state, setState] = useState<RecordData>({ details: null, contacts: [], acks: [], loaded: false, error: null });
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    let cancelled = false;
+    (async () => {
+      const [d, c, a] = await Promise.all([
+        teacherView
+          ? supabase
+              .rpc("teacher_pupil_health")
+              .then((r) => ({ data: ((r.data as unknown as PupilDetails[]) || []).find((x) => x.child_id === childId) || null, error: r.error }))
+          : supabase.from("pupil_details").select(DETAILS_SELECT).eq("child_id", childId).maybeSingle(),
+        supabase.from("pupil_emergency_contacts").select(CONTACT_SELECT).eq("child_id", childId).order("priority"),
+        showAcks
+          ? supabase.from("pupil_detail_acknowledgements").select("id, child_id, teacher_id, acknowledged_at, details_updated_at, profiles(full_name)").eq("child_id", childId).order("acknowledged_at", { ascending: false })
+          : Promise.resolve({ data: [], error: null }),
+      ]);
+      if (cancelled) return;
+      const row = (d.data as unknown as PupilDetails | null) || null;
+      const list = (c.data as unknown as EmergencyContact[]) || [];
+      setState({ details: row, contacts: list, acks: (a.data as unknown as Acknowledgement[]) || [], loaded: true, error: d.error || c.error ? "Some of this record couldn't load." : null });
+      onLoaded?.(row, list);
+      // Medical information is sensitive: record that a staff member opened it.
+      void supabase.rpc("log_pupil_detail_view", { p_child_id: childId });
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- load once per pupil
+  }, [childId, showAcks, teacherView]);
+  return state;
+}
+
+export type RecordSection = "basics" | "health" | "contacts" | "consents" | "acks";
+
 export function PupilRecord({
   child,
   showAcks = false,
@@ -39,46 +84,9 @@ export function PupilRecord({
   teacherView?: boolean;
   onLoaded?: (d: PupilDetails | null, contacts: EmergencyContact[]) => void;
 }) {
-  const [details, setDetails] = useState<PupilDetails | null>(null);
-  const [contacts, setContacts] = useState<EmergencyContact[]>([]);
-  const [acks, setAcks] = useState<Acknowledgement[]>([]);
-  const [loaded, setLoaded] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const data = usePupilRecordData(child.id, { teacherView, showAcks }, onLoaded);
+  const { details, contacts, acks, loaded, error } = data;
   const [tab, setTab] = useState<Tab>(teacherView ? "health" : "basics");
-
-  useEffect(() => {
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    let cancelled = false;
-    (async () => {
-      const [d, c, a] = await Promise.all([
-        teacherView
-          ? supabase
-              .rpc("teacher_pupil_health")
-              .then((r) => ({ data: ((r.data as unknown as PupilDetails[]) || []).find((x) => x.child_id === child.id) || null, error: r.error }))
-          : supabase.from("pupil_details").select(DETAILS_SELECT).eq("child_id", child.id).maybeSingle(),
-        supabase.from("pupil_emergency_contacts").select(CONTACT_SELECT).eq("child_id", child.id).order("priority"),
-        showAcks
-          ? supabase.from("pupil_detail_acknowledgements").select("id, child_id, teacher_id, acknowledged_at, details_updated_at, profiles(full_name)").eq("child_id", child.id).order("acknowledged_at", { ascending: false })
-          : Promise.resolve({ data: [], error: null }),
-      ]);
-      if (cancelled) return;
-      const row = (d.data as unknown as PupilDetails | null) || null;
-      const list = (c.data as unknown as EmergencyContact[]) || [];
-      setDetails(row);
-      setContacts(list);
-      setAcks((a.data as unknown as Acknowledgement[]) || []);
-      setError(d.error || c.error ? "Some of this record couldn't load." : null);
-      setLoaded(true);
-      onLoaded?.(row, list);
-      // Medical information is sensitive: record that a staff member opened it.
-      void supabase.rpc("log_pupil_detail_view", { p_child_id: child.id });
-    })();
-    return () => {
-      cancelled = true;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- load once per pupil
-  }, [child.id, showAcks, teacherView]);
 
   if (!loaded) return <p className="text-sm text-ink/65">Loading…</p>;
 
@@ -131,6 +139,30 @@ export function PupilRecord({
 
       <Tabs items={tabs} value={tab} onChange={setTab} label="Pupil record sections" className="print:hidden" />
 
+      <RecordSections data={data} teacherView={teacherView} showAcks={showAcks} visible={(k) => vis(k)} />
+    </div>
+  );
+}
+
+/** The record's sections. `visible` returns extra classes per section (e.g. "hidden print:block" for the tabs not open). */
+export function RecordSections({
+  data,
+  teacherView = false,
+  showAcks = false,
+  only,
+  visible = () => "",
+}: {
+  data: RecordData;
+  teacherView?: boolean;
+  showAcks?: boolean;
+  /** Render just these sections. */
+  only?: RecordSection[];
+  visible?: (k: RecordSection) => string;
+}) {
+  const { details, contacts, acks } = data;
+  const vis = (k: RecordSection) => (only && !only.includes(k) ? "hidden" : visible(k));
+  return (
+    <>
       {!teacherView && (
       <Section title="Basics" className={vis("basics")}>
         <Row label="Gender" value={details?.gender === "male" ? "Male" : details?.gender === "female" ? "Female" : ""} />
@@ -207,7 +239,7 @@ export function PupilRecord({
           )}
         </Section>
       )}
-    </div>
+    </>
   );
 }
 

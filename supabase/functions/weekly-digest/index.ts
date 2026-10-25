@@ -13,7 +13,8 @@
 //                       that hour in the UK, so one workflow can carry both the
 //                       BST and the GMT cron slots.
 //   * Admin tools    -- a signed-in Headteacher/Admin JWT:
-//                       { action: "families" }                         list families + this week's status
+//                       { action: "families" }                         list families + this week's status,
+//                                                                       year groups and whether it is test data
 //                       { action: "preview", parent_user_id }          returns { subject, html }
 //                       { action: "test", parent_user_id }             emails the preview to the CALLER only
 //                       Previews/tests are never logged and never reach the parent.
@@ -134,7 +135,7 @@ async function runAdmin(me: { id: string; email?: string }, body: Record<string,
 
   if (action === "families") {
     const { families, optedOut } = await loadFamilies(service, { includeTest: true });
-    const { data: logs } = await service.from("weekly_digest_log").select("parent_user_id, status, sent_at").eq("week_start", week.weekStart);
+    const { data: logs } = await service.from("weekly_digest_log").select("parent_user_id, status, sent_at, detail").eq("week_start", week.weekStart);
     const logBy = new Map((logs || []).map((l) => [l.parent_user_id as string, l]));
     return jsonResponse({
       ok: true,
@@ -146,8 +147,12 @@ async function runAdmin(me: { id: string; email?: string }, body: Record<string,
           parent_name: f.parentName,
           parent_email: f.parentEmail,
           children: f.children.map((c) => c.name),
+          children_detail: f.children.map((c) => ({ name: c.name, year_group: c.yearGroup })),
+          is_test: f.children.length > 0 && f.children.every((c) => c.isTest),
           opted_out: optedOut.has(f.parentId),
           this_week: (logBy.get(f.parentId)?.status as string | undefined) || null,
+          this_week_sent_at: (logBy.get(f.parentId)?.sent_at as string | undefined) || null,
+          this_week_detail: (logBy.get(f.parentId)?.detail as string | undefined) || null,
         })),
     });
   }

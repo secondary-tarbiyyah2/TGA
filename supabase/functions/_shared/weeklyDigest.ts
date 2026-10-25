@@ -65,7 +65,7 @@ const clip = (s: string, n: number) => (s.length > n ? `${s.slice(0, n - 1).trim
 const firstName = (name: string) => String(name || "").trim().split(/\s+/)[0] || "your child";
 
 // ── data ────────────────────────────────────────────────────────────────
-export type FamilyChild = { id: string; name: string; yearGroup: string | null };
+export type FamilyChild = { id: string; name: string; yearGroup: string | null; isTest?: boolean };
 export type Family = { parentId: string; parentName: string; parentEmail: string; children: FamilyChild[] };
 
 /** Week the digest covers: Monday..Sunday of the UK week containing `onDate`. */
@@ -89,7 +89,7 @@ export async function loadFamilies(
   for (const k of (kids || []) as Row[]) {
     const yg = Array.isArray(k.year_groups) ? k.year_groups[0]?.name : k.year_groups?.name;
     const list = byParent.get(k.parent_user_id) || [];
-    list.push({ id: k.id, name: k.name, yearGroup: yg || null });
+    list.push({ id: k.id, name: k.name, yearGroup: yg || null, isTest: !!k.is_test });
     byParent.set(k.parent_user_id, list);
   }
   const parentIds = [...byParent.keys()];
@@ -316,67 +316,104 @@ async function loadChildWeeks(service: Service, children: FamilyChild[], week: R
   return out;
 }
 
+// ── settings (0132) ─────────────────────────────────────────────────────
+export type DigestSettings = {
+  include_attendance: boolean;
+  include_homework: boolean;
+  include_merits: boolean;
+  include_comments: boolean;
+  include_star: boolean;
+  include_next_week: boolean;
+  intro: string | null;
+};
+export const DEFAULT_SETTINGS: DigestSettings = {
+  include_attendance: true,
+  include_homework: true,
+  include_merits: true,
+  include_comments: true,
+  include_star: true,
+  include_next_week: true,
+  intro: null,
+};
+
+/** The school's digest settings; every section is on when none are saved (or the table isn't there yet). */
+export async function loadDigestSettings(service: Service): Promise<DigestSettings> {
+  try {
+    const { data, error } = await service.from("digest_settings").select("include_attendance, include_homework, include_merits, include_comments, include_star, include_next_week, intro").eq("id", true).maybeSingle();
+    if (error || !data) return DEFAULT_SETTINGS;
+    return { ...DEFAULT_SETTINGS, ...(data as Partial<DigestSettings>) };
+  } catch {
+    return DEFAULT_SETTINGS;
+  }
+}
+
 // ── rendering ───────────────────────────────────────────────────────────
 const H3 = `margin:18px 0 6px;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:${GOLD};`;
 const P = "margin:0 0 6px;font-size:14px;line-height:1.5;";
 const UL = "margin:0 0 6px;padding-left:20px;font-size:14px;line-height:1.5;";
 
-function renderChild(w: ChildWeek): string {
+function renderChild(w: ChildWeek, cfg: DigestSettings): string {
   const name = esc(w.child.name);
   const fn = esc(firstName(w.child.name));
   let h = `<div style="margin:0 0 28px;padding:0 0 4px;">
     <h2 style="margin:0 0 4px;font-size:20px;">${name}${w.child.yearGroup ? ` <span style="font-size:13px;font-weight:normal;color:${MUTED};">${esc(w.child.yearGroup)}</span>` : ""}</h2>`;
 
-  if (w.star) {
+  if (w.star && cfg.include_star) {
     h += `<p style="margin:8px 0;padding:10px 12px;background:#FDF6E3;border-left:3px solid ${GOLD};font-size:14px;line-height:1.5;">&#9733; <strong>${fn} was Star of the Week${w.star.className ? ` in ${esc(w.star.className)}` : ""}!</strong><br>${esc(w.star.reason)}</p>`;
   }
 
   // Attendance
-  h += `<h3 style="${H3}">Attendance</h3>`;
-  if (w.total === 0) {
-    h += `<p style="${P}">No lessons were registered this week.</p>`;
-  } else {
-    h += `<p style="${P}">${fn} attended <strong>${w.attended} of ${w.total}</strong> lessons${w.late > 0 ? ` (${w.late} arrived late)` : ""}.`;
-    if (w.absent > 0) h += ` ${w.absent} ${w.absent === 1 ? "lesson was" : "lessons were"} missed &ndash; if you haven&rsquo;t already, please let the school know the reason.`;
-    h += `</p>`;
+  if (cfg.include_attendance) {
+    h += `<h3 style="${H3}">Attendance</h3>`;
+    if (w.total === 0) {
+      h += `<p style="${P}">No lessons were registered this week.</p>`;
+    } else {
+      h += `<p style="${P}">${fn} attended <strong>${w.attended} of ${w.total}</strong> lessons${w.late > 0 ? ` (${w.late} arrived late)` : ""}.`;
+      if (w.absent > 0) h += ` ${w.absent} ${w.absent === 1 ? "lesson was" : "lessons were"} missed &ndash; if you haven&rsquo;t already, please let the school know the reason.`;
+      h += `</p>`;
+    }
   }
 
   // Homework
-  h += `<h3 style="${H3}">Homework</h3>`;
-  if (w.hwHandedIn.length === 0 && w.hwToDo.length === 0 && w.hwNext.length === 0) {
-    h += `<p style="${P}">No homework was due this week.</p>`;
-  } else {
-    if (w.hwHandedIn.length > 0) {
-      h += `<p style="${P}"><strong>Handed in</strong></p><ul style="${UL}">${w.hwHandedIn
-        .map((i) => `<li>${esc(i.title)}${i.className ? ` <span style="color:${MUTED};">(${esc(i.className)})</span>` : ""}${i.late ? ` <span style="color:${MUTED};">&ndash; handed in after the deadline</span>` : ""}</li>`)
-        .join("")}</ul>`;
-    }
-    if (w.hwToDo.length > 0) {
-      h += `<p style="${P}"><strong>Still to hand in</strong></p><ul style="${UL}">${w.hwToDo
-        .map((i) => `<li>${esc(i.title)}${i.className ? ` <span style="color:${MUTED};">(${esc(i.className)})</span>` : ""} <span style="color:${MUTED};">&ndash; due ${esc(i.due)}</span></li>`)
-        .join("")}</ul>`;
-    }
-    if (w.hwHandedIn.length > 0 && w.hwToDo.length === 0) h += `<p style="${P}">Everything due so far has been handed in. Well done!</p>`;
-    if (w.hwNext.length > 0) {
-      h += `<p style="${P}"><strong>Due next week</strong></p><ul style="${UL}">${w.hwNext
-        .map((i) => `<li>${esc(i.title)}${i.className ? ` <span style="color:${MUTED};">(${esc(i.className)})</span>` : ""} <span style="color:${MUTED};">&ndash; ${esc(i.due)}</span></li>`)
-        .join("")}</ul>`;
+  if (cfg.include_homework) {
+    h += `<h3 style="${H3}">Homework</h3>`;
+    if (w.hwHandedIn.length === 0 && w.hwToDo.length === 0 && w.hwNext.length === 0) {
+      h += `<p style="${P}">No homework was due this week.</p>`;
+    } else {
+      if (w.hwHandedIn.length > 0) {
+        h += `<p style="${P}"><strong>Handed in</strong></p><ul style="${UL}">${w.hwHandedIn
+          .map((i) => `<li>${esc(i.title)}${i.className ? ` <span style="color:${MUTED};">(${esc(i.className)})</span>` : ""}${i.late ? ` <span style="color:${MUTED};">&ndash; handed in after the deadline</span>` : ""}</li>`)
+          .join("")}</ul>`;
+      }
+      if (w.hwToDo.length > 0) {
+        h += `<p style="${P}"><strong>Still to hand in</strong></p><ul style="${UL}">${w.hwToDo
+          .map((i) => `<li>${esc(i.title)}${i.className ? ` <span style="color:${MUTED};">(${esc(i.className)})</span>` : ""} <span style="color:${MUTED};">&ndash; due ${esc(i.due)}</span></li>`)
+          .join("")}</ul>`;
+      }
+      if (w.hwHandedIn.length > 0 && w.hwToDo.length === 0) h += `<p style="${P}">Everything due so far has been handed in. Well done!</p>`;
+      if (w.hwNext.length > 0) {
+        h += `<p style="${P}"><strong>Due next week</strong></p><ul style="${UL}">${w.hwNext
+          .map((i) => `<li>${esc(i.title)}${i.className ? ` <span style="color:${MUTED};">(${esc(i.className)})</span>` : ""} <span style="color:${MUTED};">&ndash; ${esc(i.due)}</span></li>`)
+          .join("")}</ul>`;
+      }
     }
   }
 
   // Merits
-  h += `<h3 style="${H3}">Merits</h3>`;
-  if (w.merits.length === 0) {
-    h += `<p style="${P}">No merits recorded this week.</p>`;
-  } else {
-    h += `<p style="${P}">${fn} earned <strong>${w.meritPoints} merit ${w.meritPoints === 1 ? "point" : "points"}</strong> this week.</p><ul style="${UL}">${w.merits
-      .slice(0, 6)
-      .map((m) => `<li>${esc(m.category)} <span style="color:${MUTED};">(+${esc(m.points)}, ${esc(shortDate(m.occurred_on))})</span></li>`)
-      .join("")}</ul>`;
+  if (cfg.include_merits) {
+    h += `<h3 style="${H3}">Merits</h3>`;
+    if (w.merits.length === 0) {
+      h += `<p style="${P}">No merits recorded this week.</p>`;
+    } else {
+      h += `<p style="${P}">${fn} earned <strong>${w.meritPoints} merit ${w.meritPoints === 1 ? "point" : "points"}</strong> this week.</p><ul style="${UL}">${w.merits
+        .slice(0, 6)
+        .map((m) => `<li>${esc(m.category)} <span style="color:${MUTED};">(+${esc(m.points)}, ${esc(shortDate(m.occurred_on))})</span></li>`)
+        .join("")}</ul>`;
+    }
   }
 
   // Teacher comments
-  if (w.comments.length > 0) {
+  if (cfg.include_comments && w.comments.length > 0) {
     h += `<h3 style="${H3}">Teacher comments</h3>`;
     h += w.comments
       .slice(0, 6)
@@ -385,25 +422,27 @@ function renderChild(w: ChildWeek): string {
   }
 
   // Next week
-  h += `<h3 style="${H3}">Next week&rsquo;s lessons</h3>`;
-  if (w.nextDays.length === 0) {
-    h += `<p style="${P}">No lessons are on the timetable for next week.</p>`;
-  } else {
-    h += `<table role="presentation" cellpadding="0" cellspacing="0" style="font-size:14px;line-height:1.5;width:100%;">${w.nextDays
-      .map(
-        (d) =>
-          `<tr><td style="padding:3px 12px 3px 0;vertical-align:top;white-space:nowrap;color:${MUTED};">${esc(dayLabel(d.date))}</td><td style="padding:3px 0;">${
-            d.closure ? `<em>No lessons &ndash; ${esc(d.closure)}</em>` : d.lessons.map((l) => esc(l)).join("<br>")
-          }</td></tr>`,
-      )
-      .join("")}</table>`;
+  if (cfg.include_next_week) {
+    h += `<h3 style="${H3}">Next week&rsquo;s lessons</h3>`;
+    if (w.nextDays.length === 0) {
+      h += `<p style="${P}">No lessons are on the timetable for next week.</p>`;
+    } else {
+      h += `<table role="presentation" cellpadding="0" cellspacing="0" style="font-size:14px;line-height:1.5;width:100%;">${w.nextDays
+        .map(
+          (d) =>
+            `<tr><td style="padding:3px 12px 3px 0;vertical-align:top;white-space:nowrap;color:${MUTED};">${esc(dayLabel(d.date))}</td><td style="padding:3px 0;">${
+              d.closure ? `<em>No lessons &ndash; ${esc(d.closure)}</em>` : d.lessons.map((l) => esc(l)).join("<br>")
+            }</td></tr>`,
+        )
+        .join("")}</table>`;
+    }
   }
   return h + `</div>`;
 }
 
 export type DigestResult = { subject: string; html: string; childCount: number } | null;
 
-function renderFamilyDigest(family: Family, weeks: Map<string, ChildWeek>, week: ReturnType<typeof weekFor>, opts: { testBanner?: string }): DigestResult {
+function renderFamilyDigest(family: Family, weeks: Map<string, ChildWeek>, week: ReturnType<typeof weekFor>, opts: { testBanner?: string }, cfg: DigestSettings): DigestResult {
   const ordered = family.children.map((c) => weeks.get(c.id)).filter((w): w is ChildWeek => Boolean(w));
   if (ordered.length === 0 || ordered.every((w) => w.classNames.length === 0)) return null;
 
@@ -416,8 +455,8 @@ function renderFamilyDigest(family: Family, weeks: Map<string, ChildWeek>, week:
     <p style="margin:0 0 4px;font-size:13px;color:${MUTED};">Week of ${esc(shortDate(week.weekStart))} &ndash; ${esc(shortDate(week.weekEnd))}</p>
     <h1 style="margin:0 0 12px;font-size:22px;">${esc(joined)}&rsquo;s week</h1>
     <p style="${P}">${greeting}</p>
-    <p style="${P}margin-bottom:20px;">Here is a summary of the week and what is coming up.</p>
-    ${ordered.map(renderChild).join(`<hr style="border:none;border-top:1px solid #eee;margin:0 0 24px;">`)}
+    <p style="${P}margin-bottom:20px;">${cfg.intro && cfg.intro.trim() ? esc(cfg.intro.trim()) : "Here is a summary of the week and what is coming up."}</p>
+    ${ordered.map((w) => renderChild(w, cfg)).join(`<hr style="border:none;border-top:1px solid #eee;margin:0 0 24px;">`)}
     <p style="margin:8px 0 18px;"><a href="${LEARN_SITE_URL}/family/dashboard" style="color:${GOLD};">Open the family dashboard &rarr;</a></p>
     <p style="margin:0;font-size:12px;color:#777;line-height:1.5;">You receive this every Friday because you are a parent at Tarbiyyah Global Academy.
       You can switch it off any time under &ldquo;Weekly email&rdquo; on your <a href="${LEARN_SITE_URL}/family/dashboard" style="color:#777;">family dashboard</a>.</p>`;
@@ -435,10 +474,11 @@ export async function buildDigests(
   service: Service,
   families: Family[],
   week: ReturnType<typeof weekFor>,
-  opts: { testBanner?: string } = {},
+  opts: { testBanner?: string; settings?: DigestSettings } = {},
 ): Promise<Map<string, DigestResult>> {
+  const cfg = opts.settings || (await loadDigestSettings(service));
   const weeks = await loadChildWeeks(service, families.flatMap((f) => f.children), week);
   const out = new Map<string, DigestResult>();
-  for (const f of families) out.set(f.parentId, renderFamilyDigest(f, weeks, week, opts));
+  for (const f of families) out.set(f.parentId, renderFamilyDigest(f, weeks, week, opts, cfg));
   return out;
 }

@@ -1,81 +1,152 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PageHeader } from "@/components/learn/PageHeader";
-import { ReportDocument, PrintStyles } from "./ReportDocument";
+import { Tabs } from "@/components/learn/Tabs";
+import { EmptyState, StatusChip, ui } from "@/components/learn/ui";
+import { ReportDocument, PrintStyles, fmtPct, overallOf } from "./ReportDocument";
 import { asNarrative } from "./summary";
-import { EmptyState } from "@/components/learn/ui";
 
 type Row = {
   id: string;
   report_id: string;
   version: number;
+  child_id: string;
   overall_comment: string | null;
   subject_comments: Record<string, string> | null;
   narrative: unknown;
   released_at: string | null;
   children?: { name: string } | null;
-  terms?: { name: string } | null;
+  terms?: { name: string; starts_on: string } | null;
 };
 
-/** Issued progress reports for the signed-in parent/student (latest issued version of each). RLS limits rows to the caller's own child. */
+const longDate = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }) : "");
+
+/**
+ * Issued progress reports for the signed-in parent or pupil: a list of reports
+ * (one per child per term, newest first), and one report at a time to read or
+ * print. Only the latest issued copy of each is shown (0097); RLS limits rows
+ * to the caller's own children.
+ */
 export function ReleasedReports() {
-  const supabase = getSupabaseClient();
   const [rows, setRows] = useState<Row[] | null>(null);
-  const [printId, setPrintId] = useState<string | null>(null);
+  const [child, setChild] = useState<string>("");
+  const [openId, setOpenId] = useState<string | null>(null);
+  const [printing, setPrinting] = useState(false);
 
   useEffect(() => {
+    const supabase = getSupabaseClient();
     if (!supabase) return;
-    // The issued copies (0097): a report reopened for a correction keeps
-    // showing its last issued version here until it is issued again.
+    let alive = true;
     supabase
       .from("term_report_versions")
-      .select("id, report_id, version, overall_comment, subject_comments, narrative, released_at, children(name), terms(name)")
+      .select("id, report_id, version, child_id, overall_comment, subject_comments, narrative, released_at, children(name), terms(name, starts_on)")
       .order("released_at", { ascending: false })
       .then(({ data }) => {
+        if (!alive) return;
         const latest = new Map<string, Row>();
         for (const r of (data as unknown as Row[]) || []) {
           const cur = latest.get(r.report_id);
           if (!cur || r.version > cur.version) latest.set(r.report_id, r);
         }
-        setRows([...latest.values()].sort((a, b) => (b.released_at || "").localeCompare(a.released_at || "")));
+        setRows([...latest.values()].sort((a, b) => (b.terms?.starts_on || b.released_at || "").localeCompare(a.terms?.starts_on || a.released_at || "")));
       });
-  }, [supabase]);
+    return () => {
+      alive = false;
+    };
+  }, []);
 
-  const print = (id: string) => {
-    setPrintId(id);
-    window.addEventListener("afterprint", () => setPrintId(null), { once: true });
+  const children = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const r of rows || []) m.set(r.child_id, r.children?.name || "Pupil");
+    return Array.from(m, ([id, name]) => ({ id, name })).sort((a, b) => a.name.localeCompare(b.name));
+  }, [rows]);
+  const activeChild = child && children.some((c) => c.id === child) ? child : children[0]?.id || "";
+  const list = (rows || []).filter((r) => children.length < 2 || r.child_id === activeChild);
+  const open = (rows || []).find((r) => r.id === openId) || null;
+
+  const print = () => {
+    setPrinting(true);
+    window.addEventListener("afterprint", () => setPrinting(false), { once: true });
     setTimeout(() => window.print(), 100);
   };
 
   return (
     <div className="space-y-4">
       <PrintStyles />
-      <PageHeader title="Progress Reports" subtitle="Reports issued by the school, built from attendance, homework and grades." />
+      <div className="print:hidden">
+        <PageHeader title="Progress reports" subtitle="End-of-term reports from the school: attendance, homework, merits, Qur'an and grades, with your teachers' comments." />
+      </div>
+
       {rows === null ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <div className="h-40 animate-pulse rounded-2xl bg-white" />
       ) : rows.length === 0 ? (
-        <EmptyState title="No reports yet" icon="fileText" tile="tile-blue">Reports are written at the end of each term and appear here the day the school releases them, with a note from the form tutor.</EmptyState>
-      ) : (
-        rows.map((r) => (
-          <div key={r.id} className="space-y-2">
-            <ReportDocument
-              childName={r.children?.name || "Student"}
-              termLabel={r.terms?.name || "All time"}
-              issuedAt={r.released_at}
-              narrative={asNarrative(r.narrative)}
-              comment={r.overall_comment}
-              subjectComments={r.subject_comments || undefined}
-              printing={printId === r.id}
-            />
-            <div className="flex justify-end print:hidden">
-              <button type="button" onClick={() => print(r.id)} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:bg-cream">
-                Print / Save as PDF
-              </button>
-            </div>
+        <EmptyState title="No reports yet" icon="fileText" tile="tile-blue">
+          Reports are written at the end of each term and appear here the day the school issues them.
+        </EmptyState>
+      ) : open ? (
+        <div className="space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-2 print:hidden">
+            <button type="button" onClick={() => setOpenId(null)} className={`${ui.btnSecondary} ${ui.sm}`}>
+              ‹ All reports
+            </button>
+            <button type="button" onClick={print} className={`${ui.btnSecondary} ${ui.sm}`}>
+              Print or save as PDF
+            </button>
           </div>
-        ))
+          <ReportDocument
+            childName={open.children?.name || "Pupil"}
+            termLabel={open.terms?.name || "All time"}
+            issuedAt={open.released_at}
+            narrative={asNarrative(open.narrative)}
+            comment={open.overall_comment}
+            subjectComments={open.subject_comments || undefined}
+            printing={printing}
+          />
+        </div>
+      ) : (
+        <>
+          {children.length > 1 && <Tabs variant="switch" label="Child" value={activeChild} onChange={setChild} items={children.map((c) => ({ key: c.id, label: c.name.split(/\s+/)[0] }))} />}
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {list.map((r) => {
+              const n = asNarrative(r.narrative);
+              const o = n ? overallOf(Object.values(n.classes)) : null;
+              return (
+                <li key={r.id}>
+                  <button type="button" onClick={() => setOpenId(r.id)} className="block h-full w-full rounded-2xl border border-gold-light bg-white p-4 text-left transition hover:border-teal-500/40 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <p className="font-semibold text-ink">{r.terms?.name || "All time"}</p>
+                        <p className="text-xs text-ink/65">
+                          {r.children?.name || "Pupil"} · issued {longDate(r.released_at)}
+                        </p>
+                      </div>
+                      {r.version > 1 && <StatusChip tone="info">Corrected</StatusChip>}
+                    </div>
+                    {o && (
+                      <dl className="mt-3 grid grid-cols-3 gap-2 text-center">
+                        <div className="rounded-lg bg-cream/60 p-2">
+                          <dt className="text-[11px] text-ink/65">Attendance</dt>
+                          <dd className="text-sm font-semibold text-ink">{fmtPct(o.rate)}</dd>
+                        </div>
+                        <div className="rounded-lg bg-cream/60 p-2">
+                          <dt className="text-[11px] text-ink/65">Homework</dt>
+                          <dd className="text-sm font-semibold text-ink">{o.hwTotal ? `${o.hwDone}/${o.hwTotal}` : "–"}</dd>
+                        </div>
+                        <div className="rounded-lg bg-cream/60 p-2">
+                          <dt className="text-[11px] text-ink/65">Average</dt>
+                          <dd className="text-sm font-semibold text-ink">{fmtPct(o.avg)}</dd>
+                        </div>
+                      </dl>
+                    )}
+                    <p className="mt-3 text-sm font-medium text-teal-700">Read the report &rarr;</p>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </>
       )}
     </div>
   );

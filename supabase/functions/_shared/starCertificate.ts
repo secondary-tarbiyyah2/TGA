@@ -16,6 +16,8 @@ export type CertificateInput = {
   fullName: string;
   firstName: string;
   reason: string;
+  /** Optional personal message from the teacher (0131), printed in italics under the reason. */
+  message?: string | null;
   className: string;
   /** ISO date (YYYY-MM-DD) of the Monday the week began. */
   weekStart: string;
@@ -120,11 +122,19 @@ export async function buildStarCertificate(input: CertificateInput): Promise<Uin
 
   center(`Well done, ${input.firstName}!`, H - 312, serifItalic, 22);
 
-  const reasonLines = wrap(serif, 15, input.reason, 560).slice(0, 4);
+  const message = (input.message || "").trim();
+  const reasonLines = wrap(serif, 15, input.reason, 560).slice(0, message ? 3 : 4);
   let y = H - 344;
   for (const l of reasonLines) {
     center(l, y, serif, 15);
     y -= 21;
+  }
+  if (message) {
+    y -= 6;
+    for (const l of wrap(serifItalic, 13, `"${message}"`, 520).slice(0, 2)) {
+      center(l, y, serifItalic, 13, GREY);
+      y -= 18;
+    }
   }
 
   const detail = [input.className, `Week beginning ${weekLong(input.weekStart)}`].filter(Boolean).join("  ·  ");

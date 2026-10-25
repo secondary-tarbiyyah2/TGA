@@ -67,7 +67,7 @@ Deno.serve(async (req) => {
 
   const { data: star } = await service
     .from("star_of_the_week")
-    .select("id, child_id, week_start, reason, status, certificate_path, decided_at, children(name, parent_user_id), classes(name)")
+    .select("id, child_id, week_start, reason, message, status, certificate_path, decided_at, children(name, parent_user_id), classes(name)")
     .eq("id", starId)
     .maybeSingle();
   if (!star) return jsonResponse({ ok: false, error: "not_found" }, 404);
@@ -90,6 +90,7 @@ Deno.serve(async (req) => {
         fullName,
         firstName,
         reason: star.reason,
+        message: (star as { message?: string | null }).message || null,
         className: cls?.name || "",
         weekStart: star.week_start,
         approvedAt: star.decided_at,
@@ -122,6 +123,7 @@ Deno.serve(async (req) => {
           <p style="margin:0 0 12px;">Assalamu alaykum${parent.full_name ? ` ${esc(parent.full_name)}` : ""},</p>
           <p style="margin:0 0 12px;">We are delighted to share that <strong>${esc(fullName)}</strong> has been chosen as Star of the Week${cls?.name ? ` in ${esc(cls.name)}` : ""}.</p>
           <p style="margin:0 0 12px;padding:10px 12px;background:#FDF6E3;border-left:3px solid #B08E45;"><em>${esc(star.reason)}</em></p>
+          ${(star as { message?: string | null }).message ? `<p style="margin:0 0 12px;">A message from the class teacher: &ldquo;${esc(String((star as { message?: string | null }).message))}&rdquo;</p>` : ""}
           <p style="margin:0 0 12px;">Their certificate is attached. You can also find it any time on your <a href="${LEARN_SITE_URL}/family/dashboard" style="color:#B08E45;">family dashboard</a>.</p>
           <p style="margin:0;">Well done, ${esc(firstName)}, and thank you for your support at home.</p>`);
         const r = await sendEmail({
