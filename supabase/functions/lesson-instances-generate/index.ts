@@ -6,6 +6,7 @@
 // timetabler, or be head_teacher/admin.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
+import { runInBackground, syncTeamsMeetings, teamsMeetingsEnabled } from "../_shared/teamsMeetings.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -83,5 +84,8 @@ Deno.serve(async (req) => {
     .upsert(rows, { onConflict: "timetable_slot_id,date", ignoreDuplicates: true, count: "exact" });
   if (insertErr) return jsonResponse({ ok: false, error: "db_error", detail: insertErr.message }, 500);
 
-  return jsonResponse({ ok: true, created: count ?? rows.length });
+  // New lessons may need Teams meetings: sync after replying (no-op until Microsoft 365 is set up).
+  if (teamsMeetingsEnabled()) runInBackground(syncTeamsMeetings(serviceClient));
+
+  return jsonResponse({ ok: true, created: count ?? rows.length, teams_sync: teamsMeetingsEnabled() ? "started" : "off" });
 });

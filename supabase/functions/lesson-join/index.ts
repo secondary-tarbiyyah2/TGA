@@ -84,6 +84,29 @@ Deno.serve(async (req) => {
   else if (isParentOfEnrolledChild || isEnrolledStudent) role = "viewer";
   else return jsonResponse({ ok: false, error: "forbidden" }, 403);
 
+  // A per-lesson Teams meeting made by teams-sync (lesson_teams_meetings) wins:
+  // it is the meeting the timetable says this lesson uses.
+  {
+    const { data: teams } = await serviceClient
+      .from("lesson_teams_meetings")
+      .select("join_url")
+      .eq("lesson_instance_id", lessonInstanceId)
+      .eq("status", "active")
+      .not("join_url", "is", null)
+      .maybeSingle();
+    const teamsUrl = (teams as { join_url: string | null } | null)?.join_url;
+    if (teamsUrl) {
+      await serviceClient.from("audit_log").insert({
+        actor_id: userId,
+        action: "LESSON_JOIN",
+        target_table: "lesson_instances",
+        target_id: lessonInstanceId,
+        changes: { role, provider: "teams" },
+      });
+      return jsonResponse({ ok: true, joinUrl: teamsUrl, role, provider: "teams" });
+    }
+  }
+
   // No BigBlueButton server yet: fall back to the class's own recurring
   // meeting link (e.g. a Microsoft Teams link) so lessons still run.
   if (!bbbConfigured()) {

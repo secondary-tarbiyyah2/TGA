@@ -12,6 +12,7 @@
 // rule "rollback = republish an old run's slots as a new run".
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
+import { runInBackground, syncTeamsMeetings, teamsMeetingsEnabled } from "../_shared/teamsMeetings.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -146,6 +147,10 @@ Deno.serve(async (req) => {
     .update({ status: "published", published_by: caller.id, published_at: new Date().toISOString() })
     .eq("id", runToPublishId);
   if (publishErr) return jsonResponse({ ok: false, error: "publish_failed", detail: publishErr.message }, 500);
+
+  // Teams meetings follow the published timetable: the superseded run's meetings
+  // are cancelled and any already-generated lessons get theirs. Runs after replying.
+  if (teamsMeetingsEnabled()) runInBackground(syncTeamsMeetings(serviceClient));
 
   return jsonResponse({ ok: true, run_id: runToPublishId });
 });

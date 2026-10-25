@@ -506,6 +506,8 @@ Every email the site sends goes through one of three providers, each used
 only when its secrets exist, tried in this order:
 
 1. **Microsoft 365** (`MS_*` secrets): sent from the school's Outlook mailbox.
+   The same app registration also creates Teams meetings for lessons and
+   reads Teams attendance: see `docs/microsoft-365-setup.md`.
 2. **Amazon SES** (`AWS_SES_*` secrets): `supabase/functions/_shared/ses.ts`,
    and `scripts/lib/sendMail.mjs` for the scheduled GitHub Actions jobs.
 3. **Resend** (`RESEND_API_KEY`): the original provider, kept as a fallback.

@@ -1,0 +1,78 @@
+name: Teams meetings sync
+
+# Keeps a Microsoft Teams meeting on every upcoming lesson that has no class
+# link of its own (created, moved or cancelled to match the published
+# timetable), then reads Teams attendance reports for lessons that have ended
+# so teachers see "Teams says joined…" hints on the register. All the logic,
+# and the "never create a meeting twice" guarantee, live in the teams-sync
+# Edge Function (supabase/functions/_shared/teamsMeetings.ts); this only
+# calls it. Until Microsoft 365 is set up (docs/microsoft-365-setup.md) the
+# function just replies "off" and this job succeeds without doing anything.
+#
+# Publishing a timetable and generating lessons also start a sync straight
+# away, so this schedule is a safety net plus the attendance pick-up.
+# Kept to a few runs a day to stay inside GitHub's free Actions minutes.
+# The function is deployed with --no-verify-jwt and checks for the
+# service-role key as the Bearer token.
+
+on:
+  schedule:
+    - cron: "35 5 * * *" # early morning UTC, every day: meetings for the next two weeks
+    - cron: "35 12,16,19 * * 1-6" # after morning, afternoon and evening lessons: attendance
+  workflow_dispatch:
+
+concurrency:
+  group: teams-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref and service-role key
+        id: keys
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          SERVICE_ROLE=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Call teams-sync
+        run: |
+          set -uo pipefail
+          CODE=$(curl -sS --max-time 300 -o /tmp/out.txt -w "%{http_code}" -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/teams-sync" \
+            -H "apikey: ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Content-Type: application/json" \
+            -d '{"action":"sync"}')
+          BODY=$(head -c 1200 /tmp/out.txt | tr '\n' ' ')
+          if [ "$CODE" -ge 400 ]; then
+            echo "::error::teams-sync returned HTTP $CODE: $BODY"
+            exit 1
+          fi
+          echo "HTTP $CODE: $BODY"
+          # Surface Graph problems (missing permission, expired secret) as a warning without failing the job.
+          if jq -e '(.meetings.failed // 0) + (.attendance.failed // 0) > 0' /tmp/out.txt >/dev/null 2>&1; then
+            echo "::warning::teams-sync had failures: $(jq -c '[.meetings.errors, .attendance.errors]' /tmp/out.txt 2>/dev/null | head -c 600)"
+          fi

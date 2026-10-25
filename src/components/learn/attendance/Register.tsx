@@ -27,6 +27,13 @@ export const STATUS_LABEL: Record<Status, string> = {
   technical: "Couldn't connect",
 };
 
+type TeamsHint = { child_id: string; first_join_at: string | null; total_seconds: number; matched_by: string };
+const TEAMS_MATCH_LABEL: Record<string, string> = {
+  pupil_account: "the pupil's portal email",
+  microsoft_email: "the pupil's Microsoft 365 account",
+  parent_account: "the parent's email (they may have joined for the pupil)",
+};
+
 /** One-click register: everyone shows as Present until you change them;
  * every tap saves straight away. "Mark everyone else present" saves the
  * untouched rows in one go. */
@@ -44,6 +51,8 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   // Who pressed "Join lesson" (lesson_joins): child id -> first join time. Used to pre-fill 'present'.
   const [joined, setJoined] = useState<Record<string, string>>({});
   const [joinsLoaded, setJoinsLoaded] = useState(false);
+  // Teams attendance report (teams-sync, 0145): a hint only — never used to mark anyone.
+  const [teams, setTeams] = useState<Record<string, TeamsHint>>({});
 
   const loadJoins = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -56,6 +65,24 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
     }
     setJoined(map);
     setJoinsLoaded(true);
+  }, [lessonId]);
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    let alive = true;
+    supabase
+      .from("lesson_teams_attendance")
+      .select("child_id, first_join_at, total_seconds, matched_by")
+      .eq("lesson_instance_id", lessonId)
+      .then(({ data, error }) => {
+        // Table missing (0145 not applied) or Teams attendance off: no hints, register unchanged.
+        if (!alive || error) return;
+        setTeams(Object.fromEntries(((data as TeamsHint[] | null) || []).map((t) => [t.child_id, t])));
+      });
+    return () => {
+      alive = false;
+    };
   }, [lessonId]);
 
   useEffect(() => {
@@ -156,6 +183,11 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           </button>
         )}
       </div>
+      {Object.keys(teams).length > 0 && (
+        <p className="border-b border-gold-light/70 bg-indigo-50/50 px-5 py-2 text-xs text-indigo-900">
+          &ldquo;Teams says&rdquo; tags come from the Microsoft Teams attendance report. They are suggestions only and are never saved as marks; pupils Teams couldn&apos;t match by email show no tag.
+        </p>
+      )}
       <ul className="divide-y divide-gold-light/70">
         {children.map((c) => {
           const current = marks[c.id];
@@ -167,6 +199,15 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
               <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">
                 {c.name}
                 {didJoin ? <span className="ml-2 text-xs font-normal text-green-800">Joined {timeOf(joined[c.id])}</span> : anyJoins ? <span className="ml-2 text-xs font-normal text-amber-800">Has not joined</span> : null}
+                {teams[c.id] && (
+                  <span
+                    className="ml-2 inline-block rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-normal text-indigo-900"
+                    title={`Suggestion from the Microsoft Teams attendance report, matched by ${TEAMS_MATCH_LABEL[teams[c.id].matched_by] || "email"}. It is not saved as a mark: choose the mark yourself.`}
+                  >
+                    Teams says {teams[c.id].first_join_at ? `joined ${timeOf(teams[c.id].first_join_at!)}, ` : ""}
+                    {Math.round(teams[c.id].total_seconds / 60)} min
+                  </span>
+                )}
               </span>
               <span className="w-14 text-right text-xs text-ink/65" aria-live="polite">
                 {saving[c.id] === "saving" ? "Saving…" : saving[c.id] === "error" ? <span className="text-red-700">Not saved</span> : saving[c.id] === "saved" ? "Saved" : current ? "" : "Not yet"}

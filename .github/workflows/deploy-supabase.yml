@@ -191,6 +191,26 @@ jobs:
             supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" MS_TENANT_ID="$MS_TENANT_ID" MS_CLIENT_ID="$MS_CLIENT_ID" MS_CLIENT_SECRET="$MS_CLIENT_SECRET" MS_SENDER_EMAIL="$MS_SENDER_EMAIL"
           fi
 
+      # Teams meetings / attendance switches (docs/microsoft-365-setup.md).
+      # Each is set only when the GitHub secret exists, so values set directly
+      # in the Supabase dashboard are never blanked.
+      - name: Set Microsoft Teams secrets (if provided)
+        env:
+          MS_MEETING_ORGANISER: ${{ secrets.MS_MEETING_ORGANISER }}
+          MS_TEAMS_ATTENDANCE: ${{ secrets.MS_TEAMS_ATTENDANCE }}
+          MS_TEAMS_MEETINGS: ${{ secrets.MS_TEAMS_MEETINGS }}
+          MS_TEAMS_INVITE_FAMILIES: ${{ secrets.MS_TEAMS_INVITE_FAMILIES }}
+          MS_TENANT_DOMAINS: ${{ secrets.MS_TENANT_DOMAINS }}
+        run: |
+          ARGS=()
+          for NAME in MS_MEETING_ORGANISER MS_TEAMS_ATTENDANCE MS_TEAMS_MEETINGS MS_TEAMS_INVITE_FAMILIES MS_TENANT_DOMAINS; do
+            VALUE="${!NAME}"
+            if [ -n "$VALUE" ]; then ARGS+=("$NAME=$VALUE"); fi
+          done
+          if [ ${#ARGS[@]} -gt 0 ]; then
+            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" "${ARGS[@]}"
+          fi
+
       # Amazon SES (see _shared/ses.ts). Only set when all three secrets
       # exist, so blanks never overwrite a working server secret. When set,
       # Edge Functions send via SES and only fall back to Resend on failure.
@@ -325,6 +345,11 @@ jobs:
           supabase functions deploy open-evening-book --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy entry-assessment --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy open-evening-reminders --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # teams-sync: Microsoft Teams meetings + attendance for lessons. No
+          # gateway JWT check because the cron (teams-sync.yml) is not a user;
+          # the function accepts the service-role key or a signed-in
+          # Headteacher/Admin (School settings → Microsoft 365 connection).
+          supabase functions deploy teams-sync --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
 
       # Sign-in emails: Amazon SES SMTP when SES_SMTP_USER/SES_SMTP_PASS (and
       # AWS_SES_REGION) are set, otherwise Resend SMTP. Built with jq so a

@@ -7,6 +7,7 @@ import { PageHeader } from "@/components/learn/PageHeader";
 import { learnRoleLabel, STAFF_ROLES } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
+import { Microsoft365Connection } from "@/components/learn/settings/Microsoft365Connection";
 
 type LmsSettings = {
   recording_retention_days: number;
@@ -309,6 +310,7 @@ export default function AdminSettingsPage() {
           <LessonSettings />
           <MessagingSettings />
           <ClockInSettingsSection />
+          <Microsoft365Connection />
           <Shortcuts />
         </div>
       </LearnGate>

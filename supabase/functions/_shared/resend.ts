@@ -5,6 +5,7 @@
 //   3. Resend                — RESEND_API_KEY
 // so switching provider is a matter of adding or removing secrets.
 import { sendViaSes, sesConfigured } from "./ses.ts";
+import { graphConfigured, graphRaw } from "./graph.ts";
 
 const BRAND = {
   gold: "#B08E45",
@@ -36,31 +37,10 @@ export function emailShell(bodyHtml: string): string {
 // When MS_TENANT_ID / MS_CLIENT_ID / MS_CLIENT_SECRET / MS_SENDER_EMAIL are set,
 // mail is sent FROM that Outlook mailbox (it appears in the mailbox's Sent Items
 // and replies land there). Otherwise we fall back to Resend below.
-let graphToken: { value: string; exp: number } | null = null;
-
-async function getGraphToken(): Promise<string> {
-  if (graphToken && graphToken.exp > Date.now() + 60_000) return graphToken.value;
-  const tenant = Deno.env.get("MS_TENANT_ID")!;
-  const res = await fetch(`https://login.microsoftonline.com/${tenant}/oauth2/v2.0/token`, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      client_id: Deno.env.get("MS_CLIENT_ID")!,
-      client_secret: Deno.env.get("MS_CLIENT_SECRET")!,
-      scope: "https://graph.microsoft.com/.default",
-      grant_type: "client_credentials",
-    }),
-  });
-  const json = await res.json().catch(() => ({}));
-  if (!res.ok || !json.access_token) throw new Error(`token HTTP ${res.status}: ${String(json.error_description || json.error || "").slice(0, 200)}`);
-  graphToken = { value: json.access_token, exp: Date.now() + (Number(json.expires_in) || 3000) * 1000 };
-  return graphToken.value;
-}
-
+// Token handling, retries and permission-aware errors live in ./graph.ts.
 async function sendViaGraph(opts: SendOpts): Promise<{ ok: boolean; detail: string }> {
   const sender = Deno.env.get("MS_SENDER_EMAIL")!;
   try {
-    const token = await getGraphToken();
     const attachments: Record<string, unknown>[] = [];
     if (opts.icsContent) {
       attachments.push({
@@ -74,10 +54,13 @@ async function sendViaGraph(opts: SendOpts): Promise<{ ok: boolean; detail: stri
       attachments.push({ "@odata.type": "#microsoft.graph.fileAttachment", name: a.filename, contentBytes: a.content });
     }
     const replyTo = Deno.env.get("ADMISSIONS_EMAIL") || sender;
-    const res = await fetch(`https://graph.microsoft.com/v1.0/users/${encodeURIComponent(sender)}/sendMail`, {
+    const res = await graphRaw(`/users/${encodeURIComponent(sender)}/sendMail`, {
       method: "POST",
-      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
+      permission: "Mail.Send",
+      // A retried sendMail could deliver twice, so only retry throttling (429), which Graph rejects before sending.
+      attempts: 3,
+      retryServerErrors: false,
+      body: {
         message: {
           subject: opts.subject,
           body: { contentType: "HTML", content: opts.html },
@@ -86,11 +69,11 @@ async function sendViaGraph(opts: SendOpts): Promise<{ ok: boolean; detail: stri
           ...(attachments.length ? { attachments } : {}),
         },
         saveToSentItems: true,
-      }),
+      },
     });
     if (res.status === 202 || res.ok) return { ok: true, detail: "sent via Microsoft 365" };
-    const body = await res.text();
-    return { ok: false, detail: `Microsoft 365 HTTP ${res.status}: ${body.slice(0, 300)}` };
+    await res.body?.cancel();
+    return { ok: false, detail: `Microsoft 365 HTTP ${res.status}: sender mailbox ${sender} not found` };
   } catch (e) {
     return { ok: false, detail: `Microsoft 365: ${String(e).slice(0, 300)}` };
   }
@@ -123,7 +106,7 @@ export async function sendEmail(opts: {
   if (/\.test$/i.test(opts.to.trim())) return { ok: false, detail: "Not sent: test account (.test address)" };
   // Preferred: send from the school's Outlook mailbox through Microsoft Graph.
   let graphFailure = "";
-  if (Deno.env.get("MS_TENANT_ID") && Deno.env.get("MS_CLIENT_ID") && Deno.env.get("MS_CLIENT_SECRET") && Deno.env.get("MS_SENDER_EMAIL")) {
+  if (graphConfigured() && Deno.env.get("MS_SENDER_EMAIL")) {
     const g = await sendViaGraph(opts);
     if (g.ok) return g;
     graphFailure = g.detail;
