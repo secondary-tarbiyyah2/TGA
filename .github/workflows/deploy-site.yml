@@ -196,6 +196,27 @@ jobs:
           # register.config.php, which isn't committed to git — see README).
           dangerous-clean-slate: false
 
+      # The old hand-built static site left top-level pages on the server
+      # (faq.html, offer.html, …) that this build never overwrites or removes,
+      # and they still described Reception, A Levels and a January start.
+      # .htaccess already 301s them, but delete the files too. Only these
+      # exact names are touched (never index.html, PHP or config files), and
+      # a missing file is not an error, so this is safe to run every deploy.
+      - name: Delete the old static site's pages from the server
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_DIR: ${{ vars.FTP_REMOTE_DIR || './' }}
+        run: |
+          sudo apt-get install -y -qq lftp >/dev/null
+          cmds="set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate no; cd \"$FTP_DIR\";"
+          for f in admissions.html faq.html offer.html register.html trust.html why.html; do
+            cmds="$cmds rm -f $f;"
+          done
+          cmds="$cmds cls -1 *.html; bye"
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -p 21 "$FTP_HOST" -e "$cmds" || echo "Old-page clean-up could not finish; the .htaccess redirects still cover them."
+
       # Skipped until FTP_LEARN_USERNAME is set — see this workflow's top
       # comment. Uses its OWN FTP account (scoped directly to
       # public_html/learn, server-dir "./") rather than FTP_USERNAME/
