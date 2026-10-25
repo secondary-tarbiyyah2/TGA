@@ -48,11 +48,13 @@ async function upsertAll(table, rows) {
 const { error: settingsErr } = await supabase.from("site_settings").update({
   cta_primary_label: "Apply Now",
   cta_primary_href: "/admissions",
-  application_fee: 100,
-  registration_fee: 550,
+  // Prospectus 2026-27 (v5) / Fees Policy: £50 application, £250 registration,
+  // 2 termly or 8 monthly payments (4 Dec 2026, then 28 Dec 2026 to 28 Jun 2027).
+  application_fee: 50,
+  registration_fee: 250,
   // Termly/monthly fees are derived from annual_fee in the app (src/lib/fees.ts).
   fee_terms: 2,
-  fee_instalments: 7,
+  fee_instalments: 8,
   annual_discount_percent: 2,
   admissions_email: "globalacademy@tarbiyyah.co.uk",
   complaints_last_year: 0,
@@ -68,50 +70,22 @@ console.log("Updated site_settings.");
 
 // ── fee_bands ────────────────────────────────────────────────────────────
 await upsertAll("fee_bands", [
-  { id: deterministicId("fb1"), year_group_range: "Reception – Year 2", order_index: 1, annual_fee: 1596 },
-  { id: deterministicId("fb2"), year_group_range: "Year 3 – Year 6", order_index: 2, annual_fee: 2130 },
-  { id: deterministicId("fb3"), year_group_range: "Year 7 – Year 9", order_index: 3, annual_fee: 2796 },
-  { id: deterministicId("fb4"), year_group_range: "Year 10 – Year 11", order_index: 4, annual_fee: 3000, notes: "GCSE exam entry fees are billed separately by the exam centre." },
+  // Founding-cohort tuition, December 2026 to July 2027 (Prospectus v5 p.18).
+  { id: deterministicId("fb1"), year_group_range: "Year 1 – Year 2", order_index: 1, annual_fee: 1710 },
+  { id: deterministicId("fb2"), year_group_range: "Year 3 – Year 6", order_index: 2, annual_fee: 2282 },
+  { id: deterministicId("fb3"), year_group_range: "Year 7 – Year 9", order_index: 3, annual_fee: 2996 },
+  { id: deterministicId("fb4"), year_group_range: "Year 10 – Year 11", order_index: 4, annual_fee: 3214, notes: "Exam entry fees are not included: families pay the exam centre directly." },
 ]);
 
 // ── faq_entries ──────────────────────────────────────────────────────────
-await upsertAll("faq_entries", [
-  { id: deterministicId("f1"), category: "Admissions", order_index: 1, question: "How do I apply for a place?", answer: "Start by registering your interest, then complete the multi-step application form on the Admissions page. We'll confirm receipt, arrange an entry assessment where relevant, and follow up with next steps." },
-  { id: deterministicId("f2"), category: "Admissions", order_index: 2, question: "Is there an entry assessment?", answer: "Yes — a short, age-appropriate assessment helps us understand where your child is and how best to support them from day one. Details are shared once your application is received." },
-  { id: deterministicId("f3"), category: "Fees", order_index: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers the baseline assessment and administrative review. It is separate from the one-time {{registrationFee}} registration fee, which is payable on acceptance of a place and no later than 19 December 2026." },
-  { id: deterministicId("f4"), category: "Fees", order_index: 2, question: "Can I pay fees monthly?", answer: "Yes. Fees are for the shortened January–July 2027 period. You can pay annually (with a {{annualDiscount}} discount if paid in full by 19 December 2026), termly ({{terms}} payments) or monthly ({{instalments}} payments) for every year group band. The instalments always add up exactly to the annual fee — see the Fees page for the full table and payment dates." },
-  { id: deterministicId("f5"), category: "Curriculum", order_index: 1, question: "Is this the full British curriculum?", answer: "Yes. It is taught live by qualified teachers in classes of no more than 15, alongside Qur'an, Arabic and Islamic Studies, through to GCSE and International GCSE in Years 10 and 11." },
-  { id: deterministicId("f6"), category: "Technology", order_index: 1, question: "What equipment does my child need?", answer: "A laptop or desktop computer (Windows or Mac) or an iPad, with a working webcam, microphone and headset, and Microsoft Teams installed (free); a reliable broadband connection; and a quiet space to study. For secure tests the device must run Safe Exam Browser (Windows, Mac or iPad). We do a device check with you before your child starts." },
-  { id: deterministicId("f7"), category: "Islamic Studies", order_index: 1, question: "How is Qur'an memorisation (hifdh) taught?", answer: "Qur'an recitation, Tajweed and memorisation are taught live every week (two or three lessons, depending on the key stage), in groups set by ability after the entry assessment, with progress tracked alongside every other subject." },
-  { id: deterministicId("f8"), category: "SEND", order_index: 1, question: "Do you support children with additional needs?", answer: "We aim to support a range of additional needs within our online setting. Please tell us about your child's needs during the application so we can discuss what's possible together." },
-  { id: deterministicId("f9"), category: "Admissions", order_index: 3, question: "What year groups do you accept?", answer: "We accept children from Reception through to Year 11 — Early Years and Key Stage 1 through to GCSE (Key Stage 4)." },
-  { id: deterministicId("f10"), category: "Admissions", order_index: 4, question: "When does Tarbiyyah Global Academy launch, and can I apply now?", answer: "Live lessons launch in January 2027. Applications are open now — you can register your interest or start the full application at any time before then." },
-  { id: deterministicId("f11"), category: "Admissions", order_index: 5, question: "What's the difference between registering interest and applying?", answer: "Registering interest is a short, no-obligation form so we can keep you updated as places open. Applying is the full multi-step application, including your child's year group, and starts the formal admissions process." },
-  { id: deterministicId("f12"), category: "Admissions", order_index: 6, question: "What happens after I submit my application?", answer: "We confirm receipt, arrange an entry assessment where relevant, and follow up with next steps. Places are offered subject to assessment and availability, and confirmed once the one-time registration fee is paid." },
-  { id: deterministicId("f13"), category: "Admissions", order_index: 7, question: "Can my family apply from outside the UK?", answer: "Yes. Tarbiyyah Global Academy is an online school for families anywhere in the world, bringing the same ethos and standard of care as our established UK schools to wherever home is." },
-  { id: deterministicId("f14"), category: "Fees", order_index: 3, question: "What does the published fee include, and what's billed separately?", answer: "The published fee covers tuition and core digital learning materials. Exam entry fees are not included: families register their child at an approved exam centre and pay the centre's charges. Any physical textbook needed is listed at enrolment." },
-  { id: deterministicId("f15"), category: "Fees", order_index: 4, question: "Are fees inclusive of VAT?", answer: "Yes — every figure on our Fees page is inclusive of 20% VAT, so there's nothing extra added on top of the published price." },
-  { id: deterministicId("f16"), category: "Fees", order_index: 5, question: "What happens if I need to withdraw, or a payment is missed?", answer: "Our Fees Policy, published on the Policies page, sets out payment terms, refunds and what happens if a payment is missed — please read it before enrolling." },
-  { id: deterministicId("f17"), category: "Fees", order_index: 6, question: "How do I actually pay fees?", answer: "Fees can be paid by standing order (best for monthly plans), card, or bank transfer. Full payment details are in our Fees Policy and are sent with your offer." },
-  { id: deterministicId("f18"), category: "Curriculum", order_index: 2, question: "What year groups and key stages do you cover?", answer: "Reception and Key Stage 1 (Reception–Year 2), Key Stage 2 (Year 3–6), Key Stage 3 (Year 7–9), and Key Stage 4/GCSE (Year 10–11) — see our Curriculum page for the full subject list and a sample week at each stage." },
-  { id: deterministicId("f19"), category: "Curriculum", order_index: 3, question: "Do you teach GCSEs?", answer: "Yes. Years 10 and 11 follow live GCSE and International GCSE courses in core and option subjects. Exam entry fees are paid by families directly to the exam centre." },
-  { id: deterministicId("f20"), category: "Curriculum", order_index: 4, question: "What does a typical school week look like?", answer: "A live-timetabled mix of academic subjects, Islamic Studies, Qur'an and Arabic, with independent work and PE/wellbeing time built in — see the sample week on each key stage's curriculum page." },
-  { id: deterministicId("f21"), category: "Technology", order_index: 2, question: "Can we choose our timetable?", answer: "Most pupils follow the standard live timetable: 09:00–15:00 UK time Monday to Thursday, and 09:00–12:00 on Fridays. Reception to Year 9 can choose a four-day live week (Monday to Thursday, with Friday as a structured independent study day). For families in other time zones there are time-zone flexible options. Years 10 and 11 follow the full live timetable. See our Flexible Learning Policy." },
-  { id: deterministicId("f22"), category: "Technology", order_index: 3, question: "Will my child be in front of a screen all day?", answer: "No. Lessons are structured with regular breaks, offline and hands-on activities, and independent work that doesn't require a device, so learning stays healthy and sustainable." },
-  { id: deterministicId("f23"), category: "Technology", order_index: 4, question: "Will there be a separate parent/student portal to log into?", answer: "Yes. Every family has a Parent Portal and every pupil a Student Portal, with the timetable, homework, attendance, messages to teachers, reports and forms to sign. Live lessons are taught on Microsoft Teams: pupils press Join on the portal and go straight into the lesson. Accounts are created when you accept a place." },
-  { id: deterministicId("f24"), category: "Islamic Studies", order_index: 2, question: "Is Qur'an memorisation (hifdh) part of the curriculum at every stage?", answer: "Yes — Qur'an & Hifdh appears as a subject on the timetable at every key stage, from Reception through to GCSE, alongside academic subjects." },
-  { id: deterministicId("f25"), category: "Islamic Studies", order_index: 3, question: "Is Arabic taught, and is it compulsory?", answer: "Yes, Arabic is taught as a timetabled subject at every key stage, from Reception through to Year 11." },
-  { id: deterministicId("f26"), category: "Islamic Studies", order_index: 4, question: "How does Islamic Studies fit alongside the British curriculum?", answer: "Islamic Studies, Qur'an and Arabic are taught on the timetable at every key stage, alongside the full British curriculum through to GCSE — not as an after-school extra." },
-  { id: deterministicId("f27"), category: "SEND", order_index: 2, question: "Do you have a SEND policy?", answer: "Yes — our SEND and Inclusion Policy is published in full on the Policies page, alongside our Equality, Diversity and Accessibility Policy." },
-  { id: deterministicId("f28"), category: "SEND", order_index: 3, question: "Can I discuss my child's needs before applying?", answer: "Yes — contact us any time before or during your application to talk through what support might look like for your child." },
-  { id: deterministicId("f29"), category: "SEND", order_index: 4, question: "What should I include in my application about my child's needs?", answer: "Please tell us about your child's needs in the application's notes section (or get in touch beforehand) so we can discuss what's possible together ahead of any entry assessment." },
-]);
+// Not seeded here any more: the FAQs are maintained in the database
+// (migrations 0113_faq_revamp.sql and 0135_cross_source_alignment.sql, then
+// /learn/admin/content). The original 2025 list (Reception, January 2027
+// launch, £100/£550 fees) is out of date and must not be pushed back.
 
 // ── site_term_dates ──────────────────────────────────────────────────────
-await upsertAll("site_term_dates", [
-  { id: deterministicId("t1"), label: "Applications open", kind: "Admissions deadline", date: "2026-09-01", confirmed: false },
-  { id: deterministicId("t2"), label: "Spring Term begins (launch)", kind: "Term date", date: "2027-01-06", confirmed: false },
-]);
+// Not seeded here any more: the confirmed 2026-27 dates come from the
+// prospectus via migration 0106_prospectus_open_evenings_calendar.sql.
 
 // ── testimonials ─────────────────────────────────────────────────────────
 await upsertAll("testimonials", [

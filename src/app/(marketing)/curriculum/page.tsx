@@ -19,15 +19,18 @@ const STRANDS = [
   { title: "Tarbiyyah and character", body: "Prayer built into the day, the RECIPE values taught by name, PSHE and wellbeing, and careers guidance from Year 7 — so pupils grow in knowledge, character and faith together." },
 ];
 
-// KS4 boards as decided by the school (October 2026). History is not offered at KS4.
+// KS4 subjects and boards as set in the portal (content/syllabus/ks4, the
+// specifications the lessons are written to). History is not offered at KS4.
 const EXAM_BOARDS = [
-  { subject: "English Language", qualification: "GCSE", board: "AQA" },
-  { subject: "English Literature", qualification: "GCSE", board: "Pearson Edexcel" },
-  { subject: "Mathematics", qualification: "GCSE / International GCSE", board: "Confirmed at course start" },
-  { subject: "Science (Combined or separate)", qualification: "International GCSE", board: "Pearson Edexcel" },
-  { subject: "Islamic Studies", qualification: "International GCSE", board: "Pearson Edexcel" },
-  { subject: "Arabic", qualification: "GCSE", board: "Pearson Edexcel" },
-  { subject: "Business", qualification: "International GCSE", board: "Pearson Edexcel" },
+  { subject: "English Language", qualification: "GCSE (8700)", board: "AQA" },
+  { subject: "English Literature", qualification: "International GCSE (4ET1)", board: "Pearson Edexcel" },
+  { subject: "Mathematics", qualification: "GCSE (1MA1)", board: "Pearson Edexcel" },
+  { subject: "Science: Double Award, or separate Biology, Chemistry and Physics", qualification: "International GCSE (4SD0 / 4BI1, 4CH1, 4PH1)", board: "Pearson Edexcel" },
+  { subject: "Islamic Studies", qualification: "International GCSE (4IS1)", board: "Pearson Edexcel" },
+  { subject: "Option: Arabic", qualification: "GCSE (1AA0)", board: "Pearson Edexcel" },
+  { subject: "Option: Business", qualification: "International GCSE (4BS1)", board: "Pearson Edexcel" },
+  { subject: "Option: Computer Science", qualification: "GCSE (1CP2)", board: "Pearson Edexcel" },
+  { subject: "Option: Geography", qualification: "GCSE (8035)", board: "AQA" },
 ];
 
 export default async function CurriculumPage() {
@@ -73,7 +76,7 @@ export default async function CurriculumPage() {
           <Kicker>GCSE and International GCSE</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Recognised qualifications, sat as private candidates.</h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Years 10 and 11 follow two-year courses with the exam boards below. Pupils sit their exams at an approved centre near home; we help families register and pay the centre directly (see the Examinations and Private Candidates Policy).
+            Years 10 and 11 follow two-year courses with the exam boards below: the core subjects plus two options. History is not offered at GCSE. Pupils sit their exams at an approved centre near home; we help families register and pay the centre directly (see the Examinations and Private Candidates Policy).
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-gold-light/50 bg-white">
             <table className="w-full text-sm">

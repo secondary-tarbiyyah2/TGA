@@ -207,7 +207,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       conditions: [{ questionKey: "hifz_role", operator: "equals", value: "alongside" }],
       action: {
         type: "show_text",
-        text: "We teach a dedicated Qur'an and Islamic Studies programme alongside the full British curriculum, giving meaningful hifdh progress without it being the sole focus.",
+        text: "We teach a dedicated Qur'an and Islamic Studies programme alongside the full national curriculum, giving meaningful hifdh progress without it being the sole focus.",
       },
     },
     {
@@ -219,7 +219,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       conditions: [{ questionKey: "hifz_role", operator: "equals", value: "not-yet" }],
       action: {
         type: "show_text",
-        text: "The core offer is the full British curriculum — Qur'an and Islamic Studies run alongside it, available whenever you're ready to make more of it.",
+        text: "The core offer is the full national curriculum — Qur'an and Islamic Studies run alongside it, available whenever you're ready to make more of it.",
       },
     },
     {

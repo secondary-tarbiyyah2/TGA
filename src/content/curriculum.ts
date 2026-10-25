@@ -1,7 +1,10 @@
-// Key stage pages. Subjects, live lessons per week and lesson length are
-// taken from the Curriculum Policy (policy 12, 2026–27, section 4); the
-// four-day week and hours from the Flexible Learning Policy (21). If the
-// policy changes, change this file to match.
+// Key stage pages. Subjects and exam boards follow the portal (the lesson
+// library in content/lessons and the specifications in content/syllabus/ks4,
+// which the school treats as the source of truth for what is taught). Live
+// lessons per week and lesson length are taken from the Curriculum Policy
+// (policy 12, 2026–27, section 4); the four-day week and hours from the
+// Flexible Learning Policy (21). If either changes, change this file (and the
+// key_stage_pages rows, editable at /learn/admin/content) to match.
 
 export type KeyStage = {
   slug: string;
@@ -26,20 +29,25 @@ export const keyStages: KeyStage[] = [
     range: "Year 1 – Year 2",
     title: "Key Stage 1",
     subjects: [
-      "Phonics and early reading (a systematic synthetic phonics programme)",
-      "English",
-      "Mathematics and number",
-      "Understanding the world and science",
-      "Qur'an, du'a and Islamic manners",
-      "Arabic and Islamic Studies",
-      "PSHE, PE, art and wellbeing",
+      "English, with systematic synthetic phonics and early reading",
+      "Mathematics",
+      "Science",
+      "History",
+      "Geography",
+      "Computing",
+      "Art and design",
+      "PE",
+      "PSHE and RSE",
+      "Qur'an and Tajweed",
+      "Arabic",
+      "Islamic Studies, including du'a and Islamic manners",
     ],
     liveSplit:
-      "Short, engaging live sessions focused on phonics, early reading and number, with Qur'an, du'a and Islamic manners. Much of the learning is practical and done away from the screen with a parent, following guidance sent home each week.",
+      "Short, engaging 30-minute live lessons across the full curriculum, with a strong focus on phonics, early reading and number, alongside Qur'an, du'a and Islamic manners. Much of the learning is practical and done away from the screen with a parent, following guidance sent home each week.",
     weekly: [
       { subject: "English and phonics", lessons: 5 },
       { subject: "Mathematics", lessons: 4 },
-      { subject: "Understanding the world", lessons: 1 },
+      { subject: "Science, history, geography and computing", lessons: 1 },
       { subject: "Qur'an and Tajweed", lessons: 3 },
       { subject: "Arabic and Islamic Studies", lessons: 1 },
       { subject: "PSHE, RSE, PE, art and wellbeing", lessons: 1 },
@@ -82,7 +90,7 @@ export const keyStages: KeyStage[] = [
       "Art and design",
       "PE and wellbeing",
       "PSHE and RSE",
-      "Qur'an",
+      "Qur'an and Tajweed",
       "Islamic Studies",
     ],
     liveSplit: "Live subject lessons across the week, building the independent study habits pupils need ahead of GCSE.",
@@ -104,13 +112,15 @@ export const keyStages: KeyStage[] = [
     range: "Year 10 – Year 11",
     title: "Key Stage 4 (GCSE)",
     subjects: [
-      "GCSE or International GCSE English Language",
-      "English Literature",
-      "Mathematics",
-      "Combined or separate sciences",
-      "Islamic Studies",
-      "Two options, for example history, geography, computer science, business or Arabic",
+      "English Language (GCSE, AQA)",
+      "English Literature (International GCSE, Pearson Edexcel)",
+      "Mathematics (GCSE, Pearson Edexcel)",
+      "Combined (Double Award) or separate sciences: Biology, Chemistry and Physics (International GCSE, Pearson Edexcel)",
+      "Islamic Studies (International GCSE, Pearson Edexcel)",
+      "Two options from Geography (GCSE, AQA), Computer Science (GCSE, Pearson Edexcel), Business (International GCSE, Pearson Edexcel) and Arabic (GCSE, Pearson Edexcel)",
       "Qur'an and Tajweed",
+      "PE and wellbeing",
+      "PSHE and RSE",
     ],
     liveSplit:
       "Live GCSE and International GCSE lessons in every subject. Subjects are chosen so they suit online learners sitting exams as private candidates, for example without practical components that need a centre.",
@@ -125,7 +135,7 @@ export const keyStages: KeyStage[] = [
     ],
     lessonLength: "50 minutes",
     totalLessons: "25 live lessons a week",
-    note: "Years 10 and 11 follow the full live timetable, because GCSE courses need it.",
+    note: "Years 10 and 11 follow the full live timetable, because GCSE courses need it. History is not offered at GCSE.",
     gcseNote: "Exam entry fees are not included in tuition: families register their child at an approved exam centre and pay the centre's charges.",
   },
 ];
