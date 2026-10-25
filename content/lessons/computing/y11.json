@@ -1,7 +1,10 @@
 {
   "subject": "Computing",
   "year": "y11",
-  "board": "Edexcel",
+  "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+  "boardShort": "Edexcel GCSE 1CP2",
+  "exam": "Pearson Edexcel International GCSE (9-1) Computer Science (4CP0)",
+  "examShort": "Edexcel IGCSE 4CP0",
   "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 3 Computers, Topic 4 Networks); sequence follows the school's Drive Y10-11 scheme of work topics (cyber security, networks) and the Computer Science 9-1 folder; Python practice retained for Paper 2 skills | Edexcel GCSE Computer Science 1CP2 specification (syllabus file content/syllabus/ks4/computing.json: units 3.1 to 3.3, 4.1, 4.2, 5.1 to 5.3). Original lessons. The existing y11 set (content/lessons/computing/y11.json) already gives an overview of the CPU and fetch-decode-execute, memory and storage, operating systems and utilities, translators, LAN/WAN, star and mesh topologies, common protocols, malware and network threats, and prevention; these lessons do not re-teach that overview and instead cover the remaining spec points (buses, von Neumann, embedded systems, robust software, internet structure, latency, transmission calculations, TCP/IP layers, bus topology, ethical issues, intellectual property, environmental impact) with deeper, exam-style treatment. | Gap-fill against Pearson Edexcel 1CP2 specification",
   "lessons": [
     {
@@ -97,7 +100,9 @@
         "Give two ways to increase the performance of a CPU."
       ],
       "homework": "Research the CPU in a modern phone or laptop. State its clock speed, number of cores and cache size and explain what each means.",
-      "send": "SEND/EAL: provide a colour-coded diagram and a card sort for register names. Stretch: explain why cache is faster than RAM but smaller."
+      "send": "SEND/EAL: provide a colour-coded diagram and a card sort for register names. Stretch: explain why cache is faster than RAM but smaller.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1: Computers (Topic 3)",
@@ -189,7 +194,9 @@
         "Give one advantage of solid-state storage over magnetic storage."
       ],
       "homework": "Find the RAM and storage type of a device in your home. Explain whether it is suitable for its purpose.",
-      "send": "SEND/EAL: provide an annotated comparison table with icons and a word bank. Stretch: explain why SSDs are often used as the main drive in laptops but hard disks in servers storing large archives."
+      "send": "SEND/EAL: provide an annotated comparison table with icons and a word bank. Stretch: explain why SSDs are often used as the main drive in laptops but hard disks in servers storing large archives.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1: Computers (Topic 3)",
@@ -279,7 +286,9 @@
         "Give two examples of utility software and say what they do."
       ],
       "homework": "List the utility software on a home computer or phone and explain what each does. If you cannot find any, research what built-in tools do the same job.",
-      "send": "SEND/EAL: provide a sorting activity with icons for system and application software. Stretch: explain how multitasking appears to run several programs at the same time."
+      "send": "SEND/EAL: provide a sorting activity with icons for system and application software. Stretch: explain how multitasking appears to run several programs at the same time.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1: Computers (Topic 3)",
@@ -374,7 +383,9 @@
         "State one difference between a compiler and an interpreter."
       ],
       "homework": "Research one embedded system (such as a washing machine). Explain why its programmers might use a low-level language.",
-      "send": "SEND/EAL: provide a flow diagram showing source code to translator to machine code and a word bank. Stretch: explain what happens when a compiled program contains a syntax error."
+      "send": "SEND/EAL: provide a flow diagram showing source code to translator to machine code and a word bank. Stretch: explain what happens when a compiled program contains a syntax error.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2: Networks (Topic 4)",
@@ -465,7 +476,9 @@
         "State one advantage of a mesh topology."
       ],
       "homework": "Draw the network in your home (router, devices, connection to the internet) and say whether it is a LAN. Explain which devices are wired or wireless.",
-      "send": "SEND/EAL: provide topology diagrams to label and a table with icons for advantages and disadvantages. Stretch: calculate the number of cables needed for a full mesh of 6 devices (15)."
+      "send": "SEND/EAL: provide topology diagrams to label and a table with icons for advantages and disadvantages. Stretch: calculate the number of cables needed for a full mesh of 6 devices (15).",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2: Networks (Topic 4)",
@@ -561,7 +574,9 @@
         "State the purpose of HTTPS."
       ],
       "homework": "Use the command prompt or an online tool to look up an IP address for a website (for example with nslookup). Record the website name and the address, and describe how DNS helped.",
-      "send": "SEND/EAL: provide a matching activity for protocols and a labelled diagram of a network. Stretch: explain the difference between IPv4 and IPv6 addresses and why IPv6 was developed."
+      "send": "SEND/EAL: provide a matching activity for protocols and a labelled diagram of a network. Stretch: explain the difference between IPv4 and IPv6 addresses and why IPv6 was developed.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2: Networks (Topic 4)",
@@ -658,7 +673,9 @@
         "State one difference between a virus and a worm."
       ],
       "homework": "Find a real news report about a cyber attack. Summarise what happened, the type of attack and the impact in 100 words.",
-      "send": "SEND/EAL: provide threat cards with pictures to match with descriptions. Stretch: explain why DDoS attacks are harder to block than DoS attacks."
+      "send": "SEND/EAL: provide threat cards with pictures to match with descriptions. Stretch: explain why DDoS attacks are harder to block than DoS attacks.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2: Networks (Topic 4)",
@@ -749,7 +766,9 @@
         "Give one offence covered by the Computer Misuse Act 1990."
       ],
       "homework": "Review your own online security. List three improvements you or your family could make and which threat each would reduce.",
-      "send": "SEND/EAL: provide a matching grid of threats and defences with icons. Stretch: write a Python function that encrypts a message with a Caesar shift of a given key."
+      "send": "SEND/EAL: provide a matching grid of threats and defences with icons. Stretch: write a Python function that encrypts a message with a Caesar shift of a given key.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 3.1: Computers: architecture, memory and storage",
@@ -923,7 +942,7 @@
       "homework": "Draw a labelled diagram of the CPU, RAM and the three buses, and use arrows to show what travels on each when an instruction is fetched.",
       "send": "SEND/EAL: provide a diagram with boxes for CPU parts and a word bank. Stretch: ask for an explanation of how the width of the address bus limits RAM.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 3.1: Computers: architecture, memory and storage",
@@ -1122,7 +1141,7 @@
       "homework": "List ten things in your home that contain an embedded system. For three of them, say what the system does and why it needs no keyboard.",
       "send": "SEND/EAL: give labelled pictures of each storage type for matching to the key word. Stretch: ask for an evaluation of cloud storage against local storage. This lesson builds on y11 lesson 2 (memory and storage) by adding the mechanisms and embedded systems.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 3.2: Computers: operating systems, utilities and robust software",
@@ -1325,7 +1344,7 @@
       "homework": "Write 150 words on what would happen to a school if its operating system had no user management.",
       "send": "SEND/EAL: provide a sorting task: cards with functions and cards with examples. Stretch: ask for a comparison of full and incremental backup.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 3.2: Computers: operating systems, utilities and robust software",
@@ -1508,7 +1527,7 @@
       "homework": "Look up an example of a software failure in the news (a bug or a data breach). Write 100 words on which robust-software practice might have prevented it.",
       "send": "SEND/EAL: provide the log table with the suspicious rows highlighted and a sentence frame. Stretch: ask for a comparison of a code review with automated testing.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 3.3: Computers: programming languages and translators",
@@ -1678,7 +1697,7 @@
       "homework": "Make a poster comparing high-level language, assembly and machine code with an example of each and a use for each.",
       "send": "SEND/EAL: give a two-column sort of statements 'compiler' and 'interpreter'. Stretch: ask pupils to explain what a bytecode interpreter is.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 4.1: Networks: types, protocols and connections",
@@ -1833,7 +1852,7 @@
       "homework": "Find your device's IP address (or use the pretend address 192.168.1.15) and write 100 words explaining what the number tells a network and what it does not tell.",
       "send": "SEND/EAL: give a labelled map of the internet with arrows to follow and a word bank. Stretch: ask for a comparison of IPv4 and IPv6 with the number of addresses (2^32 and 2^128). The existing y11 lessons 5 and 6 introduce LAN, WAN and addresses; this lesson adds the reasons for networks and internet structure.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 4.1: Networks: types, protocols and connections",
@@ -2001,7 +2020,7 @@
       "homework": "Test the connection in two different rooms (or use a speed test) and record download speed and latency. Explain the difference in 100 words.",
       "send": "SEND/EAL: give a picture of the road analogy with labels. Stretch: ask for an evaluation of the drawbacks of each choice. The existing y11 lesson 5 mentions bandwidth and media; this lesson separates latency and compares connection types in detail.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 4.1: Networks: types, protocols and connections",
@@ -2139,7 +2158,7 @@
       "homework": "Time how long a real download takes, use its size and your answer to work out the speed in Mbit/s, and compare with a speed test.",
       "send": "SEND/EAL: give a formula triangle and a conversion ladder, with the first step filled in. Stretch: ask for calculations with minutes and with mebibytes, noting the effect of the unit. Check the paper's own definition of M for network questions.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 4.1: Networks: types, protocols and connections",
@@ -2312,7 +2331,7 @@
       "homework": "Make a quick-reference card for all nine protocols with a one-line purpose and an everyday example for each.",
       "send": "SEND/EAL: give a matching task with protocol cards and picture cards. Stretch: ask for a protocol choice for five new scenarios with reasons.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 4.1: Networks: types, protocols and connections",
@@ -2456,7 +2475,7 @@
       "homework": "Create an analogy (not the postal one) for the four layers and explain each part.",
       "send": "SEND/EAL: give a four-layer template with pictures and a word bank. Stretch: ask for the effect on the model if a new protocol replaces Wi-Fi.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 4.1: Networks: types, protocols and connections",
@@ -2624,7 +2643,7 @@
       "homework": "Draw the network in your home or school as a topology diagram and say which topology it is closest to and why.",
       "send": "SEND/EAL: give outline diagrams to label and a table to complete with key words. Stretch: ask for a calculation of the links for 12 devices. Existing y11 lesson 5 covers star and mesh; this lesson adds bus and a full three-way comparison.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 4.2: Networks: network security",
@@ -2777,7 +2796,7 @@
       "homework": "Write a security checklist for a mosque office computer containing donor records, using at least four measures from this lesson.",
       "send": "SEND/EAL: provide a matching task (measure, how it works, threat) and the cycle as a picture. Stretch: ask for a discussion of the Computer Misuse Act 1990 and ethical hacking permission.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 5.1: Issues and impact: environmental effects",
@@ -2949,7 +2968,7 @@
       "homework": "Interview family members about what they do with old phones or computers. Write 150 words on what happens to them and how it could be improved.",
       "send": "SEND/EAL: give a life-cycle diagram to label and sentence starters ('This harms the environment because...'). Stretch: ask for a conclusion that weighs the scale of each impact.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 5.2: Issues and impact: ethical, legal and ownership issues",
@@ -3096,7 +3115,7 @@
       "homework": "Read the privacy settings of one app you use. List what it collects, how you could limit it, and whether you think consent is clear.",
       "send": "SEND/EAL: give principle cards and example cards to pair. Stretch: ask for a comparison of what is legal and what is ethical.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 5.2: Issues and impact: ethical, legal and ownership issues",
@@ -3271,7 +3290,7 @@
       "homework": "Find a news story about AI. Write 150 words on the benefit, the risk and who should be accountable.",
       "send": "SEND/EAL: provide a table with benefit, risk and sentence starters. Stretch: ask for a proposal for how to test a system for bias before it is used.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 5.2: Issues and impact: ethical, legal and ownership issues",
@@ -3437,7 +3456,7 @@
       "homework": "Find a Creative Commons image, record the licence terms and write how you would credit it.",
       "send": "SEND/EAL: give cards with works (poem, logo, invention) to match to protections. Stretch: ask for a comparison of the length and cost of each protection.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 5.3: Issues and impact: cybersecurity",
@@ -3604,7 +3623,7 @@
       "homework": "Collect three examples of scam messages (real or described). For each, identify the clues and the type of attack.",
       "send": "SEND/EAL: give a sort of threat cards by definition and example. Stretch: ask for an incident report analysing how an attack succeeded. Existing y11 lesson 7 introduces threats; this lesson adds technical vulnerabilities and compares the malware types.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 5.3: Issues and impact: cybersecurity",
@@ -3778,7 +3797,7 @@
       "homework": "Write a clear acceptable use policy of five rules for pupils using school computers, with a reason for each.",
       "send": "SEND/EAL: give a cipher wheel or alphabet strip to use for the Caesar cipher. Stretch: ask for a comparison of symmetric and asymmetric encryption in 100 words.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 4.1: Networks",
@@ -3915,7 +3934,7 @@
       "covers": [
         "4.1.2"
       ],
-      "board": "Pearson Edexcel Level 1/Level 2 GCSE (9-1) in Computer Science (1CP2)",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
       "boardShort": "Edexcel GCSE 1CP2"
     }
   ]

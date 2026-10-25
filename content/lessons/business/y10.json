@@ -1,325 +1,11 @@
 {
   "subject": "Business",
   "year": "y10",
-  "board": "Edexcel",
-  "source": "Edexcel GCSE Business (1BS0) specification, Theme 1: Investigating small business (1.1 Enterprise and entrepreneurship, 1.2 Spotting a business opportunity, start of 1.3 Putting a business idea into practice). The school Drive holds only an AQA 8132 scheme of work and legacy topic folders, used for activity ideas only; all content written to the Edexcel specification and subject knowledge. Business examples are fictional unless stated | Edexcel 4BS1 specification (headline content for units 1.1-1.4, 4.1-4.3, 2.1-2.2). The older UK GCSE 1BS0 lessons in content/lessons/business/y10.json were checked: they cover aims, market research, segmentation and revenue/cost/profit for the old board; this set re-teaches those topics only where they appear as separate 4BS1 units (1.1, 4.1, 4.2) with new fictional contexts and IGCSE-style questions. No Drive material adapted. | Gap-fill against Pearson Edexcel International GCSE (9-1) Business 4BS1 specification",
+  "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+  "source": "Lessons 4, 8: first written to the UK GCSE 1BS0 specification and re-mapped to 4BS1 units (4.2 and 3.3); the other 1BS0 lessons were retired as off-spec or duplicates (content/retired-lessons.json). Business examples are fictional unless stated | Edexcel 4BS1 specification (headline content for units 1.1-1.4, 4.1-4.3, 2.1-2.2). The older UK GCSE 1BS0 lessons in content/lessons/business/y10.json were checked: they cover aims, market research, segmentation and revenue/cost/profit for the old board; this set re-teaches those topics only where they appear as separate 4BS1 units (1.1, 4.1, 4.2) with new fictional contexts and IGCSE-style questions. No Drive material adapted. | Gap-fill against Pearson Edexcel International GCSE (9-1) Business 4BS1 specification",
   "lessons": [
     {
-      "unit": "Unit 1: Enterprise and entrepreneurship",
-      "n": 1,
-      "title": "Why businesses exist: needs, wants and enterprise",
-      "duration": 50,
-      "objectives": [
-        "Explain the purpose of a business and distinguish needs from wants and goods from services",
-        "Define enterprise and entrepreneur and describe what an entrepreneur does"
-      ],
-      "keywords": [
-        {
-          "term": "business enterprise",
-          "def": "an organisation that provides goods or services to meet customer needs and wants"
-        },
-        {
-          "term": "entrepreneur",
-          "def": "a person who takes the risk of starting and running a business"
-        },
-        {
-          "term": "need",
-          "def": "something a person must have to live, such as food, water and shelter"
-        },
-        {
-          "term": "want",
-          "def": "something a person would like but could live without"
-        },
-        {
-          "term": "enterprise",
-          "def": "the skill of seeing an opportunity and organising resources to use it"
-        }
-      ],
-      "starter": [
-        "Name two things you bought or used this week. Who made or supplied each one?",
-        "Is a coat in winter a need or a want? Explain.",
-        "Give one difference between a good and a service."
-      ],
-      "teach": [
-        {
-          "heading": "Bismillah: business as halal earning",
-          "bullets": [
-            "Trade is encouraged in Islam when done honestly",
-            "The Prophet (peace be upon him) was a trader",
-            "We study business to understand how money and work connect"
-          ],
-          "note": "Begin with bismillah. Point out that Qur'an 2:275 says Allah has permitted trade, and that the Prophet (peace be upon him) worked as a merchant before prophethood. A reported saying in Sahih al-Bukhari is that no one has eaten better food than what he earned by the work of his own hands. Set the tone: we learn business skills so we can earn honestly and serve people well."
-        },
-        {
-          "heading": "The purpose of business",
-          "bullets": [
-            "Businesses meet customers' needs and wants",
-            "They produce goods or provide services",
-            "They add value to resources",
-            "They aim to earn a reward for the owner"
-          ],
-          "note": "Ask: what is the point of a business? Draw out that it takes inputs (resources) and turns them into something people will pay for. Goods are physical (a loaf of bread); services are not (a haircut). Many businesses sell both, such as a restaurant."
-        },
-        {
-          "heading": "Needs and wants",
-          "bullets": [
-            "Needs: food, water, shelter, clothing",
-            "Wants: designer trainers, the latest phone",
-            "Wants change; needs stay similar",
-            "Scarcity forces people to choose"
-          ],
-          "note": "Common misconception: the same item cannot be both. A phone may be a want for one person but close to a need for a person who runs a business from it. Introduce scarcity: resources are limited, so choices must be made, and businesses compete to be chosen."
-        },
-        {
-          "heading": "Enterprise and entrepreneurs",
-          "bullets": [
-            "Enterprise: spotting and acting on an opportunity",
-            "An entrepreneur organises the resources",
-            "They make decisions and take risks",
-            "They hope to earn profit as a reward"
-          ],
-          "note": "Link to the four things an entrepreneur brings together: land, labour, capital and enterprise (the factors of production, though the Edexcel spec focuses on the entrepreneur's role). Ask pupils to name a young entrepreneur they know of. Stress that entrepreneurs are not only huge names; a market stall owner is one."
-        },
-        {
-          "heading": "Worked example: Bilal's tutoring service",
-          "bullets": [
-            "Bilal sees pupils struggling with GCSE maths",
-            "He organises a room, resources and himself",
-            "He sells a service at 12 pounds an hour",
-            "He takes the risk that pupils may not come"
-          ],
-          "note": "Walk through each bullet and label it: opportunity, resources, service not good, price, risk. Ask: what would Bilal's want or need be for his customers? (Parents want grades; pupils need to pass.) This models the 'identify, apply' skill for later exam answers."
-        }
-      ],
-      "practice": [
-        "Sort into needs or wants and goods or services: bottled water, a mobile phone contract, a plumber's visit, a pair of football boots.",
-        "Explain in two sentences what an entrepreneur does, using the words 'risk' and 'resources'.",
-        "A halal bakery sells bread and also offers cake-decorating classes. Identify one good and one service it provides."
-      ],
-      "independent": [
-        "Make a table of five local businesses, stating the need or want each meets and whether it sells goods, services or both.",
-        "Explain why a business needs customers in order to survive (4 marks style: identify, then explain two linked points).",
-        "Write a short paragraph on whether a market stall owner counts as an entrepreneur. Justify your answer."
-      ],
-      "exit": [
-        "Define 'entrepreneur' in one sentence.",
-        "Give one example of a want and one of a need that a business could meet."
-      ],
-      "homework": "Interview a family member or neighbour who runs or has run a business and write five sentences on why they started it.",
-      "send": "SEND/EAL: card sort of needs/wants and goods/services with picture support and a word bank. Stretch: explain why the same product could be a need for one customer and a want for another."
-    },
-    {
-      "unit": "Unit 1: Enterprise and entrepreneurship",
-      "n": 2,
-      "title": "Risk and reward: the entrepreneur's decision",
-      "duration": 50,
-      "objectives": [
-        "Describe the risks and rewards of starting a business",
-        "Analyse why entrepreneurs start a business and the qualities they need"
-      ],
-      "keywords": [
-        {
-          "term": "risk",
-          "def": "the chance that something goes wrong, such as losing money"
-        },
-        {
-          "term": "reward",
-          "def": "the benefit an entrepreneur gains from running a business"
-        },
-        {
-          "term": "profit",
-          "def": "revenue minus total costs"
-        },
-        {
-          "term": "business failure",
-          "def": "when a business cannot pay its debts and has to close"
-        },
-        {
-          "term": "independence",
-          "def": "being your own boss and making your own decisions"
-        }
-      ],
-      "starter": [
-        "Define 'entrepreneur'.",
-        "Give one example of a want a new business could meet.",
-        "What is the difference between a good and a service?"
-      ],
-      "teach": [
-        {
-          "heading": "Why start a business?",
-          "bullets": [
-            "To earn profit and financial security",
-            "To be your own boss",
-            "To follow a passion or idea",
-            "To meet a need in the community"
-          ],
-          "note": "Ask pupils to rank these motives. Stress that profit is not the only reason: many entrepreneurs want independence or to help others. In Islam, a business that serves the community's genuine needs with honest dealing is a form of worship when the intention is right."
-        },
-        {
-          "heading": "The risks of starting up",
-          "bullets": [
-            "Losing the money you invested",
-            "No guaranteed wage or sick pay",
-            "Long working hours and stress",
-            "Business failure and debt"
-          ],
-          "note": "Most new businesses do not last for many years; do not quote a precise statistic unless you have the source. Ask: why is a regular job less risky? (Fixed wage, holiday pay, employer takes the risk.)"
-        },
-        {
-          "heading": "The rewards of success",
-          "bullets": [
-            "Profit, which belongs to the owner",
-            "Independence and control",
-            "Personal satisfaction and pride",
-            "Business success and growth"
-          ],
-          "note": "Reward is not guaranteed. Link risk and reward: usually the higher the risk, the higher the possible reward. Connect to the principle that profit in Islam should come from real trade and shared risk, not from guaranteed gains."
-        },
-        {
-          "heading": "Entrepreneurial qualities",
-          "bullets": [
-            "Willingness to take risks",
-            "Creativity and new ideas",
-            "Determination and hard work",
-            "Good communication and honesty"
-          ],
-          "note": "Edexcel questions often ask you to identify a quality from a case study. Practice quoting: 'Aisha keeps trying after her first order was refused, showing determination'. Add honesty (sidq and amanah) as a key quality of a trusted trader."
-        },
-        {
-          "heading": "Worked example: Aisha's cupcake business",
-          "bullets": [
-            "She spends 600 pounds on equipment",
-            "She earns 1,500 pounds in her first month",
-            "Costs are 900 pounds, so profit is 600 pounds",
-            "A bad month could mean a loss"
-          ],
-          "note": "Work out: profit = revenue minus costs = 1,500 - 900 = 600 pounds. Then ask: what would she have if sales were 700 pounds? (A loss of 200 pounds.) Show that the same decision can give profit or loss, which is risk."
-        }
-      ],
-      "practice": [
-        "List two risks and two rewards for someone leaving a job to open a halal grocery shop.",
-        "Aisha's revenue is 1,200 pounds and her costs are 1,350 pounds. Calculate her profit or loss.",
-        "Which entrepreneurial quality does a person show if they redesign a product after customer complaints? Explain."
-      ],
-      "independent": [
-        "Explain two reasons why someone might start their own business instead of working for an employer.",
-        "Explain one way risk and reward are connected for a new business (4 marks style).",
-        "Write a paragraph assessing whether the rewards of owning a business outweigh the risks for a school leaver."
-      ],
-      "exit": [
-        "State two risks of starting a business.",
-        "Calculate profit if revenue is 2,000 pounds and costs are 1,450 pounds."
-      ],
-      "homework": "Choose a real small business you know and write six sentences on its likely risks and rewards for the owner.",
-      "send": "SEND/EAL: risk and reward sorting cards with symbols; sentence starter 'A risk is... A reward is...'. Stretch: evaluate whether profit is always the main reward."
-    },
-    {
-      "unit": "Unit 1: Enterprise and entrepreneurship",
-      "n": 3,
-      "title": "The dynamic business world: new ideas and adding value",
-      "duration": 50,
-      "objectives": [
-        "Explain why business ideas come from changes in technology and consumer wants",
-        "Describe ways a business can add value to compete"
-      ],
-      "keywords": [
-        {
-          "term": "dynamic",
-          "def": "always changing"
-        },
-        {
-          "term": "obsolete",
-          "def": "no longer wanted or used because something better has replaced it"
-        },
-        {
-          "term": "added value",
-          "def": "the difference between the cost of inputs and the selling price of the product"
-        },
-        {
-          "term": "unique selling point (USP)",
-          "def": "a feature that makes a product different from competitors"
-        },
-        {
-          "term": "brand",
-          "def": "a name, logo or image that identifies a business and its products"
-        }
-      ],
-      "starter": [
-        "State two risks of starting a business.",
-        "State two rewards of starting a business.",
-        "Name one quality of a successful entrepreneur."
-      ],
-      "teach": [
-        {
-          "heading": "Business never stands still",
-          "bullets": [
-            "Customer tastes change",
-            "Technology creates new options",
-            "Old products can become obsolete",
-            "Businesses must adapt or lose customers"
-          ],
-          "note": "Ask pupils: how did people listen to music 20 years ago compared with today? Use this to show products becoming obsolete and new markets appearing. Keep examples general to avoid factual error."
-        },
-        {
-          "heading": "Where new ideas come from",
-          "bullets": [
-            "New technology: apps, online selling",
-            "Changing lifestyles: busy people want convenience",
-            "Gaps in the market",
-            "Improving an existing product"
-          ],
-          "note": "Misconception: ideas must be completely new. Most successful ideas are improvements or new combinations. Ask pupils to spot a gap at school or in their community, such as a quick halal breakfast option."
-        },
-        {
-          "heading": "Adding value",
-          "bullets": [
-            "Added value = selling price minus cost of inputs",
-            "Convenience, quality, design",
-            "Branding and customer service",
-            "Higher value allows higher prices or more sales"
-          ],
-          "note": "Show a worked example: a baker spends 0.40 pounds on ingredients per loaf and sells it for 2.20 pounds. Added value is 1.80 pounds. Ask how they could raise it (better packaging, a local brand, home delivery)."
-        },
-        {
-          "heading": "Unique selling point",
-          "bullets": [
-            "A USP is what makes you different",
-            "It can be price, quality or service",
-            "It should matter to customers",
-            "It must be honest, not exaggerated"
-          ],
-          "note": "Stress the honesty point: Islam condemns deception in trade. A reported saying in Sahih Muslim states that whoever cheats us is not one of us. A USP must be true; false claims also break consumer law."
-        },
-        {
-          "heading": "Why businesses fail",
-          "bullets": [
-            "Not enough customers",
-            "Poor cash management",
-            "Poor quality or service",
-            "Failing to change with the market"
-          ],
-          "note": "Link back to dynamic markets. Ask pupils to pick the most likely reason for failure for a new bookshop. Accept different answers if they justify them with business reasoning."
-        }
-      ],
-      "practice": [
-        "A café buys ingredients for 1.10 pounds and sells a smoothie for 3.60 pounds. Calculate the added value.",
-        "Give two ways a trainer shop could add value without cutting its price.",
-        "Explain what makes a product obsolete, with one example."
-      ],
-      "independent": [
-        "Choose a product and list three changes in consumer wants or technology that could make it obsolete.",
-        "Explain two ways a new business could create a unique selling point (4 marks style).",
-        "Write a paragraph: is adding value more important than low prices for a new small business? Justify your view."
-      ],
-      "exit": [
-        "Define 'added value'.",
-        "State one way a business can add value to its product."
-      ],
-      "homework": "Pick a local shop or online seller and write a short note on its USP and two ways it adds value.",
-      "send": "SEND/EAL: add-value calculation scaffold with ready-made subtraction frames. Stretch: explain how added value affects both price and profit."
-    },
-    {
-      "unit": "Unit 2: Spotting a business opportunity",
+      "unit": "Unit 4.2: The market",
       "n": 4,
       "title": "Customer needs and market segmentation",
       "duration": 50,
@@ -363,7 +49,7 @@
             "Choice: are there options?",
             "Convenience: is it easy to buy and use?"
           ],
-          "note": "Make clear these are the Edexcel customer needs. Ask pupils to rank them for a school lunch and then for a laptop to see priorities change. Add that for Muslim customers, halal certification can be an essential need, not an optional extra."
+          "note": "Make clear these are the customer needs a business must meet. Ask pupils to rank them for a school lunch and then for a laptop to see priorities change. Add that for Muslim customers, halal certification can be an essential need, not an optional extra."
         },
         {
           "heading": "Why identify customers?",
@@ -413,7 +99,7 @@
       ],
       "independent": [
         "Choose a product of your own and describe its target market using at least three types of segmentation.",
-        "Explain two benefits to a small business of segmenting its market (4 marks style).",
+        "Explain two benefits to a small business of segmenting its market (Explain: a point developed with two linked expansion points).",
         "Write a paragraph assessing whether price or quality is more important to customers of a school uniform supplier."
       ],
       "exit": [
@@ -421,325 +107,12 @@
         "Give two ways a market can be segmented."
       ],
       "homework": "Look at an advert and write five sentences identifying its target market and the evidence for it.",
-      "send": "SEND/EAL: matching cards for segment type and example. Stretch: explain why segments can overlap and how a business decides which one to prioritise."
+      "send": "SEND/EAL: matching cards for segment type and example. Stretch: explain why segments can overlap and how a business decides which one to prioritise.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
     },
     {
-      "unit": "Unit 2: Spotting a business opportunity",
-      "n": 5,
-      "title": "Market research: finding out what customers want",
-      "duration": 50,
-      "objectives": [
-        "Explain the purpose of market research and distinguish primary from secondary research",
-        "Evaluate the usefulness of research methods and data types for a small business"
-      ],
-      "keywords": [
-        {
-          "term": "market research",
-          "def": "collecting information about customers, competitors and the market"
-        },
-        {
-          "term": "primary research",
-          "def": "new information collected first-hand for a specific purpose"
-        },
-        {
-          "term": "secondary research",
-          "def": "information that already exists, collected by someone else"
-        },
-        {
-          "term": "qualitative data",
-          "def": "opinions and feelings that are not numbers"
-        },
-        {
-          "term": "quantitative data",
-          "def": "numerical data that can be counted and analysed"
-        }
-      ],
-      "starter": [
-        "Define 'target market'.",
-        "List three ways to segment a market.",
-        "Why is it risky to sell to 'everyone'?"
-      ],
-      "teach": [
-        {
-          "heading": "Why do market research?",
-          "bullets": [
-            "Find out what customers want",
-            "Reduce the risk of failure",
-            "Learn about competitors",
-            "Decide on price and location"
-          ],
-          "note": "Link to risk from lesson 2. Ask: would you open a shop without knowing if anybody wants what you sell? Research cannot remove risk but it reduces it."
-        },
-        {
-          "heading": "Primary research",
-          "bullets": [
-            "Surveys and questionnaires",
-            "Interviews and focus groups",
-            "Observation and product trials",
-            "Specific to your needs but costs time and money"
-          ],
-          "note": "Explain each method with a quick example. Teach that a good questionnaire has clear, unbiased questions. Misconception: online surveys are always cheap; they are, but responses may not represent the target market."
-        },
-        {
-          "heading": "Secondary research",
-          "bullets": [
-            "Government statistics and reports",
-            "Market reports and trade magazines",
-            "Websites and social media",
-            "Cheaper and quicker but may be out of date"
-          ],
-          "note": "Emphasise that secondary data was collected for another purpose, so it may not fit. Ask pupils how a new halal food company could use government population data on where Muslims live (as an indicator of demand)."
-        },
-        {
-          "heading": "Qualitative or quantitative?",
-          "bullets": [
-            "Quantitative: 62 percent prefer delivery",
-            "Qualitative: 'I like the friendly service'",
-            "Numbers show scale; opinions show why",
-            "Most businesses use both"
-          ],
-          "note": "Practise classification with quick examples. Tell pupils that quantitative data is easier to analyse and compare but does not explain why people think as they do."
-        },
-        {
-          "heading": "Sampling and reliability",
-          "bullets": [
-            "A sample is a smaller group from the target market",
-            "A larger, random sample is more reliable",
-            "Biased questions give poor results",
-            "Check how recent the data is"
-          ],
-          "note": "Worked example: a café asks 20 friends and 18 love the idea. Why is that unreliable? (Too small, friends are biased, not representative.) A better sample: 200 people selected at random from the target area."
-        }
-      ],
-      "practice": [
-        "Classify each as primary or secondary: a survey of 50 students, a government census report, a trade magazine article, a focus group.",
-        "A new halal pizza takeaway wants to know prices customers will pay. Suggest one primary method and explain why.",
-        "Explain why asking only friends and family may lead to poor research results."
-      ],
-      "independent": [
-        "Write five questions for a questionnaire for a new hijab and modest-fashion brand, including at least one qualitative and one quantitative question.",
-        "Explain one advantage and one disadvantage of secondary research for a start-up (4 marks style).",
-        "Write a paragraph: should a new business rely on primary or secondary research? Justify your recommendation."
-      ],
-      "exit": [
-        "State the difference between primary and secondary research.",
-        "Give one example of quantitative data."
-      ],
-      "homework": "Design a short survey of five questions for your family about a product idea and write a brief note on how you would use the results.",
-      "send": "SEND/EAL: pre-written survey question frames. Stretch: evaluate how sample size and bias affect decision-making."
-    },
-    {
-      "unit": "Unit 2: Spotting a business opportunity",
-      "n": 6,
-      "title": "Competition and market mapping",
-      "duration": 50,
-      "objectives": [
-        "Explain how competition affects a small business",
-        "Interpret a market map to identify a gap in the market"
-      ],
-      "keywords": [
-        {
-          "term": "competitor",
-          "def": "a business selling similar products to the same customers"
-        },
-        {
-          "term": "market map",
-          "def": "a diagram showing where competing products sit, for example on price and quality"
-        },
-        {
-          "term": "gap in the market",
-          "def": "an unmet customer need that no business is yet supplying"
-        },
-        {
-          "term": "competitive advantage",
-          "def": "something that lets a business perform better than its rivals"
-        },
-        {
-          "term": "market share",
-          "def": "a business's sales as a percentage of total sales in the market"
-        }
-      ],
-      "starter": [
-        "Define primary research.",
-        "Give an example of qualitative data.",
-        "State one problem with a very small sample."
-      ],
-      "teach": [
-        {
-          "heading": "Understanding competition",
-          "bullets": [
-            "Rivals sell to the same customers",
-            "Direct and indirect competitors",
-            "Competition can lower prices",
-            "Competition can force higher quality"
-          ],
-          "note": "Distinguish direct competitors (another halal burger kiosk) from indirect (a sandwich shop). Ask whether competition is good for customers. Usually yes, but it makes survival harder for small firms."
-        },
-        {
-          "heading": "Effects on small businesses",
-          "bullets": [
-            "Lower profits if prices are cut",
-            "Need to stand out with a USP",
-            "Risk of losing customers",
-            "May push the business to improve"
-          ],
-          "note": "Edexcel often asks for the impact of competition on a business. Model a chain of reasoning: new rival opens, customers switch, sales fall, profit falls, owner must cut costs or add value."
-        },
-        {
-          "heading": "Market mapping",
-          "bullets": [
-            "A grid with two features, e.g. price and quality",
-            "Each competitor is plotted as a point",
-            "Gaps show unmet needs",
-            "Crowded areas show strong competition"
-          ],
-          "note": "Draw a 2 by 2 grid: price (low to high) on one axis, quality (low to high) on the other. Plot four sandwich shops. Ask: where is the gap? Misconception: a gap always means opportunity. It may mean there are no customers there."
-        },
-        {
-          "heading": "Using the map",
-          "bullets": [
-            "Spot a gap such as high quality at low price",
-            "Check there is demand through research",
-            "Position your product clearly",
-            "Review as competitors change"
-          ],
-          "note": "Emphasise that the gap must be tested. Link to market research. Competition should be fair; Islam supports healthy competition in good deeds, and honest rivalry, not spreading false rumours about a competitor."
-        },
-        {
-          "heading": "Worked example: Maryam's bakery",
-          "bullets": [
-            "Rivals: supermarket (low price, medium quality), artisan bakery (high price, high quality)",
-            "Gap: medium price, high quality, halal",
-            "Maryam positions her bakery in that gap",
-            "She tests demand with a survey"
-          ],
-          "note": "Plot the three businesses on the board and show the gap. Ask what could go wrong (e.g. customers may not pay medium price for high quality) and how she can find out."
-        }
-      ],
-      "practice": [
-        "Name one direct and one indirect competitor for a halal fast-food kiosk.",
-        "On a price/quality grid, a business has high price and low quality. Why is this likely to struggle?",
-        "Give two ways a small business can compete without lowering price."
-      ],
-      "independent": [
-        "Draw a market map for four local food outlets and identify a possible gap.",
-        "Explain two ways a new competitor could affect an existing small shop (4 marks style).",
-        "Write a paragraph assessing whether competition is more of a threat or an opportunity for a start-up."
-      ],
-      "exit": [
-        "Define 'gap in the market'.",
-        "State one way competition can affect a small business."
-      ],
-      "homework": "Choose a product and plot at least five competing brands on a price/quality market map; label any gaps.",
-      "send": "SEND/EAL: pre-drawn grid and cut-out business cards to position. Stretch: assess why a gap in the market may not be profitable."
-    },
-    {
-      "unit": "Unit 3: Putting a business idea into practice",
-      "n": 7,
-      "title": "Business aims and objectives",
-      "duration": 50,
-      "objectives": [
-        "Distinguish between business aims and objectives",
-        "Explain financial and non-financial aims of a new business and why they differ"
-      ],
-      "keywords": [
-        {
-          "term": "aim",
-          "def": "the long-term goal a business wants to achieve"
-        },
-        {
-          "term": "objective",
-          "def": "a specific target that helps achieve an aim, often with a number and a date"
-        },
-        {
-          "term": "survival",
-          "def": "keeping the business going, especially in the first year"
-        },
-        {
-          "term": "social objective",
-          "def": "a goal to benefit people or the community, not only to make profit"
-        },
-        {
-          "term": "financial security",
-          "def": "having enough stable income to pay bills with confidence"
-        }
-      ],
-      "starter": [
-        "What is a market map?",
-        "State two effects of competition on a business.",
-        "Define 'competitive advantage'."
-      ],
-      "teach": [
-        {
-          "heading": "Aims versus objectives",
-          "bullets": [
-            "Aim: where the business wants to be",
-            "Objective: a specific step to get there",
-            "Objectives are measurable",
-            "Objectives have a time limit"
-          ],
-          "note": "Give an example: Aim: become the favourite local halal bakery. Objective: sell 500 loaves a week by next June. Ask pupils to turn a vague aim into an objective with a number and a date."
-        },
-        {
-          "heading": "Financial aims",
-          "bullets": [
-            "Survival, especially for new firms",
-            "Profit",
-            "Sales and sales growth",
-            "Market share and financial security"
-          ],
-          "note": "Explain that survival is the first aim for most start-ups. Profit comes later. Show that sales growth is not the same as profit; selling more at a loss does not help."
-        },
-        {
-          "heading": "Non-financial aims",
-          "bullets": [
-            "Social objectives: helping the community",
-            "Personal satisfaction and challenge",
-            "Independence and control",
-            "Ethical aims, such as fair treatment of staff"
-          ],
-          "note": "Link to Islamic ethics: Qur'an 4:29 permits trade based on mutual consent, and honest dealing is part of faith. A business with social objectives, such as donating a percentage to a local food bank, can still make a profit. Ask whether social aims reduce profit."
-        },
-        {
-          "heading": "Why aims differ",
-          "bullets": [
-            "Owner's personality and motives",
-            "Age and stage of the business",
-            "Competition and the economy",
-            "Size: sole trader or larger firm"
-          ],
-          "note": "Use two cases: a new sole trader (survival and independence) and an established firm (growth and market share). Ask why a start-up cannot easily aim for 30 percent market share."
-        },
-        {
-          "heading": "SMART objectives",
-          "bullets": [
-            "Specific, Measurable, Achievable",
-            "Realistic and Time-bound",
-            "Helps judge success",
-            "Motivates staff and owner"
-          ],
-          "note": "Work through a SMART objective: 'Increase monthly sales from 2,000 to 2,400 pounds within six months' (that is a 20 percent increase). Check pupils can calculate 20 percent of 2,000."
-        }
-      ],
-      "practice": [
-        "Turn this aim into an objective: 'We want to be well known in our area.'",
-        "Sort into financial or non-financial: survival, helping the community, profit, independence.",
-        "Explain why a new business might choose survival as its first aim."
-      ],
-      "independent": [
-        "Write one aim and two SMART objectives for a new halal catering company.",
-        "Explain two reasons why aims may differ between a new sole trader and a large company (4 marks style).",
-        "Write a paragraph assessing whether profit should be the most important aim for a small business."
-      ],
-      "exit": [
-        "State the difference between an aim and an objective.",
-        "Give one financial and one non-financial aim."
-      ],
-      "homework": "Research a small business online and write five sentences on its likely aims and how you can tell.",
-      "send": "SEND/EAL: aim/objective sorting activity and SMART checklist. Stretch: evaluate whether non-financial aims could harm a business's survival."
-    },
-    {
-      "unit": "Unit 3: Putting a business idea into practice",
+      "unit": "Unit 3.3: Costs and break-even",
       "n": 8,
       "title": "Revenue, costs and profit",
       "duration": 50,
@@ -833,7 +206,7 @@
       ],
       "independent": [
         "A business sells 300 notebooks at 4 pounds. Fixed costs 350 pounds, variable cost 1.50 per notebook. Calculate revenue, total costs and profit.",
-        "Explain two reasons why a business might make a loss even if sales are high (4 marks style).",
+        "Explain two reasons why a business might make a loss even if sales are high (Explain: a point developed with two linked expansion points).",
         "Write a paragraph assessing whether a start-up should focus on cutting costs or increasing revenue."
       ],
       "exit": [
@@ -841,12 +214,18 @@
         "Give one fixed cost and one variable cost for a bakery."
       ],
       "homework": "Create your own business with a price and costs, and calculate its revenue, total costs and profit for one month.",
-      "send": "SEND/EAL: worked calculation frames with boxes to fill. Stretch: calculate profit if price rises 10 percent and sales fall 5 percent."
+      "send": "SEND/EAL: worked calculation frames with boxes to fill. Stretch: calculate profit if price rises 10 percent and sales fall 5 percent.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
     },
     {
       "unit": "Unit 1.1: Business objectives",
       "n": 9,
       "title": "Business aims and objectives: why a business exists and where it is heading",
+      "covers": [
+        "1.1.1",
+        "1.1.2"
+      ],
       "duration": 50,
       "bigQuestion": "If a business makes no profit, has it failed?",
       "objectives": [
@@ -3660,5 +3039,6 @@
       "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
       "boardShort": "Edexcel IGCSE 4BS1"
     }
-  ]
+  ],
+  "boardShort": "Edexcel IGCSE 4BS1"
 }

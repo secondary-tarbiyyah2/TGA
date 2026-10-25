@@ -21,7 +21,11 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
     subject: d.subject,
     board: d.board,
     code: d.code,
-    label: LABELS[d.slug] || `${d.board} ${d.code}`,
+    // Taught from a UK GCSE spec but entered for an International GCSE: show both.
+    label: d.examEntry ? `Taught: ${d.board} GCSE ${d.code} · Exam: ${d.examEntry.label || `${d.examEntry.board} ${d.examEntry.code}`}` : LABELS[d.slug] || `${d.board} ${d.code}`,
+    examEntry: d.examEntry
+      ? { board: d.examEntry.board, qualification: d.examEntry.qualification, code: d.examEntry.code, label: d.examEntry.label || "", papers: d.examEntry.papers || "", series: d.examEntry.series || "", privateCandidates: d.examEntry.privateCandidates || "", choice: d.examEntry.choice || "", notes: d.examEntry.notes || [] }
+      : null,
     status: d.status,
     statusNote: d.statusNote || "",
     qualification: d.qualification || "",

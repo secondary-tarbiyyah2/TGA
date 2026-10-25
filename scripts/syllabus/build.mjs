@@ -96,14 +96,14 @@ await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix
     s.addTable(data, { x: MX, y: 1.8, w: W - 2 * MX, colW: [1.9, 2.6, 5.6, W - 2 * MX - 10.1], border: { type: "solid", color: LINE, pt: 0.75 }, margin: [0.06, 0.08, 0.06, 0.08] });
   }
 
-  const s4 = contentSlide(pres, ctx, "Open questions", "Board and code questions the school must settle");
+  const s4 = contentSlide(pres, ctx, "Exam entry and open questions", "What pupils sit, and what the school must still confirm");
   const items = [
-    ["Arabic", "The Edexcel International GCSE Arabic course (4AA1) is a first-language qualification. Beginner Arabic in Years 3 to 9 does not lead into it. Confirm which Arabic course Years 10 and 11 sit."],
-    ["Science", "Documented as Edexcel International GCSE Biology 4BI1, Chemistry 4CH1, Physics 4PH1 and Double Award 4SD0. Confirm separate or double award, and that Year 11 is on this course."],
-    ["Business", "Documented as Edexcel International GCSE 4BS1. Existing lesson files follow the UK GCSE titles and need re-mapping."],
-    ["Islamic Studies", "Documented as Edexcel International GCSE 4IS1. Confirm it is current for 2026-27."],
-    ["English Language", "Documented as AQA 8700 (UK GCSE). If you enter the international version, that is OxfordAQA International GCSE English Language (9270): tell me and I will switch it."],
-    ["English Literature", "Documented as Edexcel International GCSE 4ET1. A Christmas Carol is not on Pearson's list (Macbeth is), and the lesson files still follow AQA 8702."],
+    ["Exam entry", "Every pupil sits Pearson Edexcel International GCSEs. Mathematics, Computer Science, English Language, Geography and Arabic are taught from the UK GCSE spec; pupils are entered for 4MA1, 4CP0, 4EB1, 4GE1 and 4AA1 (see each spec's examEntry)."],
+    ["Arabic", "The International GCSE is Arabic (First Language) 4AA1: reading, summary, grammar and writing, no listening or speaking. Confirm each pupil's entry by the end of Year 10."],
+    ["Computer Science", "4CP0 Paper 2 is a 3-hour practical on a computer, June only. Confirm the exam centre can run it before entering a private candidate."],
+    ["Science", "Edexcel International GCSE Biology 4BI1, Chemistry 4CH1, Physics 4PH1 and Double Award 4SD0. Confirm separate or double award for each pupil."],
+    ["Business", "Edexcel International GCSE 4BS1, last assessed November 2028. The UK GCSE 1BS0 lessons were re-mapped or retired."],
+    ["English Literature", "Edexcel International GCSE 4ET1. Macbeth is a Pearson set text; the AQA 8702 lessons (A Christmas Carol and the AQA Macbeth format) were retired."],
   ];
 
   const bx = gridBoxes(6, { x: MX, y: 1.8, w: W - 2 * MX, h: 5.05 }, 2, 0.2);

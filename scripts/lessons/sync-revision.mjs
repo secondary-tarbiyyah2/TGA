@@ -16,6 +16,7 @@
 // unpublished.
 import fs from "node:fs";
 import path from "node:path";
+import { retiredChecker } from "./retired.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
 const LESSONS = path.join(ROOT, "content/lessons");
@@ -71,6 +72,7 @@ function keywordQuestions(prefix, topic, lessonNo, words, pool) {
 }
 
 function lessonPacks() {
+  const isRetired = retiredChecker();
   const packs = [];
   if (!fs.existsSync(LESSONS)) return packs;
   for (const subjectSlug of fs.readdirSync(LESSONS).sort()) {
@@ -82,6 +84,7 @@ function lessonPacks() {
       const units = new Map();
       (j.lessons || []).forEach((l, idx) => {
         const n = l.n || idx + 1;
+        if (isRetired(subjectSlug, year, n)) return; // content/retired-lessons.json
         const unit = l.unit || "Lessons";
         if (!units.has(unit)) units.set(unit, []);
         units.get(unit).push({ ...l, n });
@@ -284,7 +287,26 @@ async function sync(packs) {
       retired += gone.length;
     }
   }
-  console.log(`Synced ${units} revision units, ${qs} questions${retired ? `, retired ${retired}` : ""}.`);
+  // Units built from content that content no longer produces (their lessons were retired in
+  // content/retired-lessons.json, or the unit was renamed): switch off the questions this script
+  // loaded, and unpublish the unit unless staff have added questions of their own to it.
+  let unpublished = 0;
+  const live = new Set(packs.map((p) => `${p.subject_slug}/${p.year}/${p.unit}`));
+  const { data: contentUnits, error: e5 } = await supabase.from("revision_units").select("id, subject_slug, year, unit, published").eq("source", "content");
+  if (e5) throw new Error(`Listing revision units: ${e5.message}`);
+  for (const u of contentUnits || []) {
+    if (live.has(`${u.subject_slug}/${u.year}/${u.unit}`)) continue;
+    const { data: off, error: e6 } = await supabase.from("revision_questions").update({ active: false }).eq("unit_id", u.id).eq("source", "content").eq("active", true).select("id");
+    if (e6) throw new Error(`Retiring questions for ${u.unit}: ${e6.message}`);
+    retired += (off || []).length;
+    if (!u.published) continue;
+    const { count } = await supabase.from("revision_questions").select("id", { count: "exact", head: true }).eq("unit_id", u.id).eq("active", true);
+    if (count) continue;
+    const { error: e7 } = await supabase.from("revision_units").update({ published: false, updated_at: new Date().toISOString() }).eq("id", u.id);
+    if (e7) throw new Error(`Unpublishing ${u.unit}: ${e7.message}`);
+    unpublished++;
+  }
+  console.log(`Synced ${units} revision units, ${qs} questions${retired ? `, retired ${retired}` : ""}${unpublished ? `, unpublished ${unpublished} unit(s) no longer in content` : ""}.`);
 }
 
 const mode = process.argv[2] || "check";

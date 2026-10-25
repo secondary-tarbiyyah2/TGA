@@ -3,6 +3,7 @@
 // slide blocks (model, check, quote, …) defined in deck-parts.mjs.
 import fs from "node:fs";
 import path from "node:path";
+import { retiredChecker } from "./retired.mjs";
 const root = process.env.LESSONS_DIR ? new URL(process.env.LESSONS_DIR.replace(/\/?$/, "/"), "file://" + process.cwd() + "/").pathname : new URL("../../content/lessons/", import.meta.url).pathname;
 // Year 1 to Year 11 only: the Academy does not run Reception.
 const YEARS = Array.from({ length: 11 }, (_, i) => `y${i + 1}`);
@@ -56,6 +57,7 @@ function checkBlock(id, t) {
   return true;
 }
 
+const isRetired = retiredChecker();
 for (const f of walk(root)) {
   files++;
   const rel = path.relative(root, f);
@@ -65,9 +67,12 @@ for (const f of walk(root)) {
   if ((NOT_TAUGHT[slug] || []).includes(j.year)) err(rel, `${j.subject} is not taught in ${j.year.toUpperCase()}`);
   if (!Array.isArray(j.lessons) || !j.lessons.length) { err(rel, "no lessons"); continue; }
   const seen = new Set();
+  const [subjectSlug] = rel.split(path.sep);
   for (const l of j.lessons) {
     lessons++;
     const id = `${rel}#${l.n}`;
+    // A retired lesson (content/retired-lessons.json) must be removed from the file, not left beside the list.
+    if (!process.env.LESSONS_DIR && isRetired(subjectSlug, j.year, l.n)) err(id, "is listed in content/retired-lessons.json: remove it from this file (its number is not reused)");
     if (!l.unit || !Number.isInteger(l.n) || !l.title) err(id, "needs unit, n, title");
     if (seen.has(l.n)) err(id, "duplicate n"); seen.add(l.n);
     if (!Array.isArray(l.objectives) || l.objectives.length < 1) err(id, "objectives");

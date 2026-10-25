@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { themeFor } from "../lessons/deck-parts.mjs";
+import { retiredChecker } from "../lessons/retired.mjs";
 
 const require = createRequire(import.meta.url);
 const { AlignmentType, BorderStyle, Document, Footer, Header, ImageRun, LevelFormat, Packer, PageBreak, PageNumber, Paragraph, ShadingType, Table, TableCell, TableLayoutType, TableRow, TextRun, WidthType } = require("docx");
@@ -180,6 +181,7 @@ function build(subjectSlug, file, year, unit, lessons) {
 
 let n = 0;
 const manifest = [];
+const isRetired = retiredChecker();
 for (const subjectSlug of fs.readdirSync(LESSONS).sort()) {
   const dir = path.join(LESSONS, subjectSlug);
   if (!fs.statSync(dir).isDirectory()) continue;
@@ -189,6 +191,7 @@ for (const subjectSlug of fs.readdirSync(LESSONS).sort()) {
     const j = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
     const units = new Map();
     (j.lessons || []).forEach((l, i) => {
+      if (isRetired(subjectSlug, year, l.n || i + 1)) return; // content/retired-lessons.json
       const u = l.unit || "Lessons";
       if (!units.has(u)) units.set(u, []);
       units.get(u).push({ ...l, n: l.n || i + 1 });

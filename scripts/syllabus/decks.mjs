@@ -57,8 +57,8 @@ export function buildSpecDeck(d, videoMap) {
   titleSlide(pres, ctx, {
     label: `Specification · ${d.years}`,
     title: d.subject,
-    sub: `${d.board} ${d.qualification}${d.code ? ` (${d.code})` : ""}`,
-    facts: [d.board, `Code ${d.code}`, /foundation/i.test(d.tiers || "") ? "Foundation and Higher" : "Single tier", `${(d.units || []).length} units`].filter(Boolean),
+    sub: `${d.board} ${d.qualification}${d.code ? ` (${d.code})` : ""}${d.examEntry ? ` · Exam: ${d.examEntry.board} ${d.examEntry.qualification} (${d.examEntry.code})` : ""}`,
+    facts: [d.board, `Code ${d.code}`, d.examEntry ? `Exam ${d.examEntry.code}` : "", /foundation/i.test(d.tiers || "") ? "Foundation and Higher" : "Single tier", `${(d.units || []).length} units`].filter(Boolean),
   });
 
   // At a glance
@@ -66,7 +66,7 @@ export function buildSpecDeck(d, videoMap) {
     const s = contentSlide(pres, ctx, "At a glance", `${d.subject}: the qualification in one view`);
     const items = [
       ["Awarding body", d.board],
-      ["Qualification", `${d.qualification}${d.code ? ` · ${d.code}` : ""}`],
+      ["Qualification", `${d.qualification}${d.code ? ` · ${d.code}` : ""}${d.examEntry ? ` (exam: ${d.examEntry.label || d.examEntry.code})` : ""}`],
       ["Course length", d.years],
       ["Tiers", clean(d.tiers).length > 70 ? clean(d.tiers).slice(0, 67).replace(/\s+\S*$/, "") + "…" : d.tiers],
       ["Grading", "9 to 1 (9 highest)"],

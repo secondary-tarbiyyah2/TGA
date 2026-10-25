@@ -1,430 +1,11 @@
 {
   "subject": "Business",
   "year": "y11",
-  "board": "Edexcel",
-  "source": "Edexcel GCSE Business (1BS0) specification, Theme 2: Building a business, section 2.1 Growing the business (organic and external growth, financing growth, changes in aims, globalisation, ethics and the environment); retrieval starters draw on Theme 1 which is assumed taught in Year 10. The school Drive holds only an AQA 8132 scheme of work and legacy topic folders, used for activity ideas only; all content written to the Edexcel specification and subject knowledge. Business examples are fictional unless stated | Edexcel 4BS1 specification (headline content for units 2.3-2.5, 3.1-3.5, 5.1-5.4, 1.5-1.8). The older UK GCSE 1BS0 lessons in content/lessons/business/y11.json already cover economies and diseconomies of scale, globalisation, trade barriers and ethics for the old board; this set re-teaches 5.1 and 1.5 only with 4BS1-specific content (exchange-rate calculations, multinationals and host countries) and IGCSE-style questions. | Gap-fill against Pearson Edexcel International GCSE (9-1) Business 4BS1 specification",
+  "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+  "source": "Lessons 5, 6, 7, 8: first written to the UK GCSE 1BS0 specification and re-mapped to 4BS1 units (1.1, 1.5, 1.6 and 1.7); the other 1BS0 lessons were retired as off-spec or duplicates (content/retired-lessons.json). Business examples are fictional unless stated | Edexcel 4BS1 specification (headline content for units 2.3-2.5, 3.1-3.5, 5.1-5.4, 1.5-1.8). The older UK GCSE 1BS0 lessons in content/lessons/business/y11.json already cover economies and diseconomies of scale, globalisation, trade barriers and ethics for the old board; this set re-teaches 5.1 and 1.5 only with 4BS1-specific content (exchange-rate calculations, multinationals and host countries) and IGCSE-style questions. | Gap-fill against Pearson Edexcel International GCSE (9-1) Business 4BS1 specification",
   "lessons": [
     {
-      "unit": "Unit 1: Growing the business",
-      "n": 1,
-      "title": "Why and how businesses grow: organic growth",
-      "duration": 50,
-      "objectives": [
-        "Explain why businesses want to grow and how growth can be measured",
-        "Describe organic growth and assess its advantages and disadvantages"
-      ],
-      "keywords": [
-        {
-          "term": "business growth",
-          "def": "an increase in the size of a business, such as sales, staff or outlets"
-        },
-        {
-          "term": "organic growth",
-          "def": "growth from within the business using its own resources and sales"
-        },
-        {
-          "term": "external growth",
-          "def": "growth by joining with or buying another business"
-        },
-        {
-          "term": "market share",
-          "def": "a business's sales as a percentage of total market sales"
-        },
-        {
-          "term": "diversify",
-          "def": "to sell new types of product or enter new markets to spread risk"
-        }
-      ],
-      "starter": [
-        "State the formula for profit.",
-        "Define 'entrepreneur'.",
-        "Give two ways a market can be segmented."
-      ],
-      "teach": [
-        {
-          "heading": "Bismillah: growth with barakah",
-          "bullets": [
-            "Growth is a goal, not a licence to cut corners",
-            "Honest trade brings lasting trust",
-            "Seek success through lawful, fair means"
-          ],
-          "note": "Begin with bismillah. Recall the reported saying in Sahih al-Bukhari and Muslim that if buyer and seller are truthful and make things clear, their trade is blessed; if they conceal and lie, the blessing is lost. Set the theme for Theme 2: how a business can grow, and what it must consider on the way."
-        },
-        {
-          "heading": "Why businesses grow",
-          "bullets": [
-            "Higher profits",
-            "Greater market share",
-            "Economies of scale: lower unit costs",
-            "Spreading risk and security"
-          ],
-          "note": "Link back to Theme 1 aims. Ask: why would a successful single-site bakery want a second branch? Draw out profit, security and market share. Warn that bigger is not always better, which we will see with diseconomies."
-        },
-        {
-          "heading": "Measuring growth",
-          "bullets": [
-            "Sales revenue",
-            "Number of employees or outlets",
-            "Profit",
-            "Market share"
-          ],
-          "note": "Use the formula: percentage change = (new - old) / old x 100. Worked: revenue rises from 80,000 to 92,000 pounds. Change 12,000 / 80,000 = 0.15, so 15 percent growth."
-        },
-        {
-          "heading": "Organic growth methods",
-          "bullets": [
-            "Sell more to existing customers",
-            "Launch new products",
-            "Enter new markets, such as online",
-            "Open new branches funded by profits"
-          ],
-          "note": "Explain organic = internal. Examples: a halal burger kiosk adds a delivery app and a new menu item. Ask: how is this different from buying a rival kiosk? (Using own resources and sales, not acquisition.)"
-        },
-        {
-          "heading": "Advantages and disadvantages",
-          "bullets": [
-            "Advantage: owner keeps control",
-            "Advantage: lower risk, steady pace",
-            "Disadvantage: slow",
-            "Disadvantage: limited by available finance"
-          ],
-          "note": "Model a balanced judgement: organic growth is safer but slower, so rivals may take the market in the meantime. Remind pupils that Edexcel assess questions need a justified conclusion."
-        }
-      ],
-      "practice": [
-        "Calculate the percentage growth if sales rise from 50,000 to 60,000 pounds.",
-        "Give two ways a small halal grocer could grow organically.",
-        "State two reasons why a business might want to grow."
-      ],
-      "independent": [
-        "Explain two reasons why a successful restaurant might want to grow (4 marks style).",
-        "A business grows revenue from 120,000 to 138,000 pounds. Calculate percentage growth and comment on whether this is strong.",
-        "Write a paragraph assessing whether organic growth is the best way for a small business to expand."
-      ],
-      "exit": [
-        "Define 'organic growth'.",
-        "State one disadvantage of organic growth."
-      ],
-      "homework": "Choose a business you know and write six sentences explaining how it has grown organically.",
-      "send": "SEND/EAL: percentage change formula card with worked boxes. Stretch: discuss how growth might conflict with a business's ethical aims."
-    },
-    {
-      "unit": "Unit 1: Growing the business",
-      "n": 2,
-      "title": "External growth: mergers and takeovers",
-      "duration": 50,
-      "objectives": [
-        "Distinguish between a merger and a takeover",
-        "Evaluate the benefits and risks of external growth for a business"
-      ],
-      "keywords": [
-        {
-          "term": "merger",
-          "def": "when two businesses agree to join together to form one business"
-        },
-        {
-          "term": "takeover",
-          "def": "when one business buys enough shares to gain control of another"
-        },
-        {
-          "term": "external (inorganic) growth",
-          "def": "growth by joining with or taking over another business"
-        },
-        {
-          "term": "horizontal integration",
-          "def": "joining with a business at the same stage of production"
-        },
-        {
-          "term": "vertical integration",
-          "def": "joining with a business at a different stage of the supply chain"
-        }
-      ],
-      "starter": [
-        "Define organic growth.",
-        "Calculate percentage growth: revenue from 40,000 to 46,000 pounds.",
-        "Give one advantage of organic growth."
-      ],
-      "teach": [
-        {
-          "heading": "What is external growth?",
-          "bullets": [
-            "Growth through other businesses",
-            "Faster than organic growth",
-            "Often needs a lot of money",
-            "Two main routes: merger or takeover"
-          ],
-          "note": "Contrast with last lesson: organic = from within, external = joining with another firm. Ask pupils why a business might choose speed over control."
-        },
-        {
-          "heading": "Mergers and takeovers",
-          "bullets": [
-            "Merger: two firms agree to join",
-            "Takeover: one firm buys control of another",
-            "Takeovers can be friendly or hostile",
-            "Disney took over Pixar in 2006"
-          ],
-          "note": "The Disney and Pixar example is real: Disney acquired Pixar in 2006. Keep other details out unless you have checked them. Misconception: merger and takeover are identical. In a merger both agree to form one company; in a takeover one buyer controls the other."
-        },
-        {
-          "heading": "Types of integration",
-          "bullets": [
-            "Horizontal: two bakeries join",
-            "Backward vertical: bakery buys a flour mill",
-            "Forward vertical: bakery buys retail shops",
-            "Aims: more market share or control of supply"
-          ],
-          "note": "Treat as an extension for stronger pupils. Draw a supply chain with flour mill, bakery, shop. Ask which type of integration gives control over costs and which gives more customers."
-        },
-        {
-          "heading": "Benefits of external growth",
-          "bullets": [
-            "Rapid increase in size and market share",
-            "Fewer competitors",
-            "Access to new markets, skills and brands",
-            "Economies of scale"
-          ],
-          "note": "Give a case: a halal sauce company takes over a rival that exports to the Middle East. It instantly gains new customers and export contacts. Discuss why this is quicker than building those contacts from scratch."
-        },
-        {
-          "heading": "Risks and problems",
-          "bullets": [
-            "High cost of buying the business",
-            "Clashing cultures and staff worries",
-            "Job losses and loss of trust",
-            "The combined business may be hard to manage"
-          ],
-          "note": "Add ethical considerations: staff must be treated fairly during redundancies; honesty with shareholders and workers matters. Ask pupils to give a final judgement on a case: is it better for a small firm to merge or to stay organic? Justify."
-        }
-      ],
-      "practice": [
-        "Explain the difference between a merger and a takeover.",
-        "State one benefit and one risk of external growth.",
-        "A small cafe chain buys a coffee supplier. Is this horizontal or vertical integration? Explain."
-      ],
-      "independent": [
-        "Explain two reasons why a company might take over a rival (4 marks style).",
-        "Case study: two halal food retailers merge and there are job losses. Analyse one possible effect on employees.",
-        "Write a paragraph evaluating whether external growth is better than organic growth for a medium-sized business."
-      ],
-      "exit": [
-        "Define 'takeover'.",
-        "State one problem a business might face after merging."
-      ],
-      "homework": "Research a real merger or takeover and write six sentences on why it happened and what the effects were.",
-      "send": "SEND/EAL: merger/takeover comparison table to complete. Stretch: evaluate how culture differences between firms could cause a merger to fail."
-    },
-    {
-      "unit": "Unit 1: Growing the business",
-      "n": 3,
-      "title": "Economies and diseconomies of scale",
-      "duration": 50,
-      "objectives": [
-        "Describe types of economies of scale and calculate unit costs",
-        "Explain why businesses can suffer diseconomies of scale"
-      ],
-      "keywords": [
-        {
-          "term": "economies of scale",
-          "def": "falling average cost per unit as output rises"
-        },
-        {
-          "term": "diseconomies of scale",
-          "def": "rising average cost per unit when a business becomes too big"
-        },
-        {
-          "term": "unit cost",
-          "def": "total cost divided by the number of units produced"
-        },
-        {
-          "term": "bulk buying",
-          "def": "buying large quantities to get a lower price per item"
-        },
-        {
-          "term": "specialisation",
-          "def": "workers or managers focusing on one type of task"
-        }
-      ],
-      "starter": [
-        "Define 'merger'.",
-        "Give two reasons why a business might want to grow.",
-        "Calculate total cost: fixed 400 pounds and variable 600 pounds."
-      ],
-      "teach": [
-        {
-          "heading": "What are economies of scale?",
-          "bullets": [
-            "Cost per unit falls as output rises",
-            "Bigger firms spread fixed costs",
-            "Not the same as total costs falling",
-            "A key reason for growth"
-          ],
-          "note": "Misconception: total costs fall. Total costs rise as output rises; it is cost per unit that falls. Ask pupils why one loaf costs a bakery more to make when it bakes 10 loaves than when it bakes 1,000."
-        },
-        {
-          "heading": "Types of economy of scale",
-          "bullets": [
-            "Purchasing: bulk-buy discounts",
-            "Technical: bigger, more efficient machines",
-            "Financial: cheaper loans for large firms",
-            "Managerial: specialist managers"
-          ],
-          "note": "Give a simple example of each. Purchasing: ordering 1,000 kg of flour for less per kilo. Technical: an industrial oven. Marketing economies can be added: one advert reaches many customers."
-        },
-        {
-          "heading": "Worked example: calculating unit cost",
-          "bullets": [
-            "Unit cost = total cost / output",
-            "1,000 units cost 5,000 pounds: 5.00 each",
-            "5,000 units cost 20,000 pounds: 4.00 each",
-            "Unit cost has fallen by 1.00 pound"
-          ],
-          "note": "Work through the maths: 5,000 / 1,000 = 5; 20,000 / 5,000 = 4. Ask: what happens to profit per unit if the selling price is 6 pounds? (Profit per unit rises from 1 to 2 pounds.)"
-        },
-        {
-          "heading": "Diseconomies of scale",
-          "bullets": [
-            "Communication problems in a large firm",
-            "Slower decisions",
-            "Lower motivation and worker morale",
-            "Unit costs rise again"
-          ],
-          "note": "Use the idea of a school with 5,000 pupils: it would be harder for leaders to know everyone. Ask pupils to explain how poor communication might add costs. Show a U-shaped average cost curve verbally."
-        },
-        {
-          "heading": "Managing growth wisely",
-          "bullets": [
-            "Delegate and use clear systems",
-            "Keep workers involved and fairly treated",
-            "Do not expand faster than you can manage",
-            "Keep quality and honesty at the centre"
-          ],
-          "note": "Link to Islamic ethics: consultation (shura) and fair treatment of workers are part of good management. A large firm still owes honest dealing and fair wages."
-        }
-      ],
-      "practice": [
-        "Calculate unit cost: 2,400 pounds for 600 units.",
-        "A firm buys flour in bulk and pays less per kilo. Identify the type of economy of scale.",
-        "Give two reasons why a very large business may have higher unit costs."
-      ],
-      "independent": [
-        "Calculate the unit costs: 800 units for 4,000 pounds; 4,000 units for 14,000 pounds. Comment on the change.",
-        "Explain two economies of scale a growing halal food manufacturer could gain (4 marks style).",
-        "Write a paragraph assessing whether growth is always good for a business's unit costs."
-      ],
-      "exit": [
-        "Define 'economies of scale'.",
-        "State one cause of diseconomies of scale."
-      ],
-      "homework": "Write a short explanation, with a numerical example, of how bulk buying could lower the cost per unit for a school canteen.",
-      "send": "SEND/EAL: unit cost formula card and calculation boxes. Stretch: explain why fixed costs are important in economies of scale."
-    },
-    {
-      "unit": "Unit 1: Growing the business",
-      "n": 4,
-      "title": "Financing growth: retained profit, loans and share capital",
-      "duration": 50,
-      "objectives": [
-        "Describe the main sources of finance for business growth",
-        "Assess which source of finance suits a given situation, including the Islamic view of interest"
-      ],
-      "keywords": [
-        {
-          "term": "retained profit",
-          "def": "profit kept in the business rather than paid to owners"
-        },
-        {
-          "term": "loan",
-          "def": "money borrowed from a lender and repaid over time, usually with interest"
-        },
-        {
-          "term": "interest",
-          "def": "the extra amount paid for borrowing money"
-        },
-        {
-          "term": "share capital",
-          "def": "money raised by selling shares in a company"
-        },
-        {
-          "term": "riba",
-          "def": "interest or unjustified gain on a loan, which is forbidden in Islam"
-        }
-      ],
-      "starter": [
-        "Define 'unit cost'.",
-        "State two economies of scale.",
-        "Define 'takeover'."
-      ],
-      "teach": [
-        {
-          "heading": "Why growth needs finance",
-          "bullets": [
-            "New premises and equipment cost money",
-            "More stock and staff must be paid",
-            "Takeovers require large sums",
-            "Finance comes from inside or outside"
-          ],
-          "note": "Link to growth methods. Ask pupils how a business with 5,000 pounds could open a new branch costing 40,000 pounds. Introduce internal and external sources."
-        },
-        {
-          "heading": "Retained profit",
-          "bullets": [
-            "Profit reinvested in the business",
-            "Free of interest and no need to borrow",
-            "Owner keeps control",
-            "Only possible if the business is profitable"
-          ],
-          "note": "Retained profit is the cheapest source but slow. Worked example: a business makes 30,000 pounds profit and retains 20,000 to fund a new oven. Ask why a new business may have little retained profit."
-        },
-        {
-          "heading": "Loans",
-          "bullets": [
-            "Borrow from a bank for a set period",
-            "Repay with interest",
-            "Quick for large sums",
-            "Risk: repayments due even if sales fall"
-          ],
-          "note": "Calculation: a 50,000 pound loan at 8 percent annual interest costs 4,000 pounds in interest a year (50,000 x 0.08). Ask: what if sales drop? Repayments still have to be made, so the risk stays with the borrower."
-        },
-        {
-          "heading": "Share capital",
-          "bullets": [
-            "Limited companies sell shares to investors",
-            "Raises large sums without repayments",
-            "Owners must share profits and some control",
-            "Public companies sell shares publicly"
-          ],
-          "note": "Distinguish sole traders (cannot sell shares) from limited companies. Shareholders receive dividends if profit is made. Misconception: shares must be repaid; they do not, but shareholders gain ownership."
-        },
-        {
-          "heading": "Islamic note: interest and riba",
-          "bullets": [
-            "Interest-based loans are riba in Islam",
-            "Qur'an 2:275: trade is lawful, riba is forbidden",
-            "Alternatives: partnership and profit-sharing",
-            "Ask qualified scholars about specific contracts"
-          ],
-          "note": "Present respectfully and as a note. Qur'an 2:275 says that Allah has permitted trade and forbidden riba. Muslim business owners may prefer retained profit, investment from partners who share profit and loss (musharakah or mudarabah), or halal shares. Mention that the exam still expects knowledge of loans and interest; our faith position does not prevent us from understanding them. For specific contracts, advise pupils to consult a qualified scholar."
-        }
-      ],
-      "practice": [
-        "Calculate annual interest on a 20,000 pound loan at 5 percent.",
-        "State one advantage and one disadvantage of retained profit.",
-        "Why can a sole trader not raise finance by selling shares?"
-      ],
-      "independent": [
-        "Explain two reasons why a growing company might use retained profit rather than a loan (4 marks style).",
-        "A halal restaurant chain wants 100,000 pounds to open three branches. Recommend a source of finance and justify your choice.",
-        "Write a paragraph assessing whether share capital is better than loans for financing growth."
-      ],
-      "exit": [
-        "Define 'retained profit'.",
-        "State one drawback of using a loan to finance growth."
-      ],
-      "homework": "Write six sentences comparing two sources of finance for a business wanting to open a second shop, including one halal-compatible alternative.",
-      "send": "SEND/EAL: comparison table with sentence starters. Stretch: evaluate the effect of interest on a start-up's profit."
-    },
-    {
-      "unit": "Unit 1: Growing the business",
+      "unit": "Unit 1.1: Business objectives",
       "n": 5,
       "title": "Changing aims and objectives as a business grows",
       "duration": 50,
@@ -517,7 +98,7 @@
         "State two external factors that could change a business's objectives."
       ],
       "independent": [
-        "Explain two reasons why a business might change its objectives from growth to survival (4 marks style).",
+        "Explain two reasons why a business might change its objectives from growth to survival (Explain: a point developed with two linked expansion points).",
         "Case study: a halal supermarket faces a new rival and rising costs. Analyse how its objectives might change.",
         "Write a paragraph assessing the most important factor in changing aims and objectives."
       ],
@@ -526,10 +107,12 @@
         "Calculate market share: 5,000 pounds sales in a 100,000 pound market."
       ],
       "homework": "Choose a business and write six sentences on how its aims might differ in year 1 and year 10.",
-      "send": "SEND/EAL: timeline cards for Noor's Kitchen. Stretch: assess whether external or internal factors matter most."
+      "send": "SEND/EAL: timeline cards for Noor's Kitchen. Stretch: assess whether external or internal factors matter most.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
     },
     {
-      "unit": "Unit 2: Globalisation, ethics and the environment",
+      "unit": "Unit 1.5: Business and the international economy",
       "n": 6,
       "title": "Business and globalisation: trading across borders",
       "duration": 50,
@@ -622,7 +205,7 @@
         "Explain one problem a small business might face when selling in another country."
       ],
       "independent": [
-        "Explain two benefits to a business of becoming a multinational (4 marks style).",
+        "Explain two benefits to a business of becoming a multinational (Explain: a point developed with two linked expansion points).",
         "Case study: a UK halal food firm starts exporting. Analyse two issues it must consider.",
         "Write a paragraph assessing whether globalisation helps or harms small local businesses."
       ],
@@ -631,10 +214,12 @@
         "State one advantage of exporting."
       ],
       "homework": "Look at five items in your home and write down where each was made; explain two benefits of global trade to you as a customer.",
-      "send": "SEND/EAL: world map matching of imports/exports with labels. Stretch: evaluate the effect of globalisation on a local halal butcher."
+      "send": "SEND/EAL: world map matching of imports/exports with labels. Stretch: evaluate the effect of globalisation on a local halal butcher.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
     },
     {
-      "unit": "Unit 2: Globalisation, ethics and the environment",
+      "unit": "Unit 1.6: Government objectives and policies; Unit 1.4: Decisions on location",
       "n": 7,
       "title": "Trade barriers, e-commerce and changing location",
       "duration": 50,
@@ -727,7 +312,7 @@
         "State two advantages of e-commerce for a small retailer."
       ],
       "independent": [
-        "Explain two effects of a tariff on a UK importer (4 marks style).",
+        "Explain two effects of a tariff on a UK importer (Explain: a point developed with two linked expansion points).",
         "Case study: a clothing firm moves production abroad to cut costs. Analyse one benefit and one risk.",
         "Write a paragraph assessing whether e-commerce is more important than trade blocs for helping a small business trade abroad."
       ],
@@ -736,10 +321,12 @@
         "Give one advantage of e-commerce."
       ],
       "homework": "Research one product you use that is traded across borders and write six sentences on how tariffs or e-commerce might affect its price or availability.",
-      "send": "SEND/EAL: tariff calculation frame and vocabulary matching. Stretch: evaluate whether free trade benefits all countries equally."
+      "send": "SEND/EAL: tariff calculation frame and vocabulary matching. Stretch: evaluate whether free trade benefits all countries equally.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
     },
     {
-      "unit": "Unit 2: Globalisation, ethics and the environment",
+      "unit": "Unit 1.7: External factors",
       "n": 8,
       "title": "Ethics, the environment and business decisions",
       "duration": 50,
@@ -823,7 +410,7 @@
             "Think about all stakeholders",
             "Justify with evidence"
           ],
-          "note": "Teach a 9-mark judgement structure: points for and against, link to context, then a justified conclusion. Practise with: Should a clothing firm use more expensive, ethically sourced cotton?"
+          "note": "Teach the 4BS1 Evaluate structure: points for and against, linked to the business context, then a supported conclusion. Practise with: Should a clothing firm use more expensive, ethically sourced cotton?"
         }
       ],
       "practice": [
@@ -832,7 +419,7 @@
         "Explain one possible benefit to a business of having a good reputation."
       ],
       "independent": [
-        "Explain two possible costs to a business of acting ethically (4 marks style).",
+        "Explain two possible costs to a business of acting ethically (Explain: a point developed with two linked expansion points).",
         "Case study: a clothing company uses cheaper suppliers with poor working conditions. Analyse two possible consequences for the company.",
         "Write a paragraph evaluating whether profit or ethics should come first when making business decisions. Reach a justified conclusion."
       ],
@@ -841,7 +428,9 @@
         "Give one reason why acting ethically can help a business."
       ],
       "homework": "Choose a well-known business and write a short evaluation of its ethical or environmental practices, using at least two pieces of evidence.",
-      "send": "SEND/EAL: costs/benefits table with sentence starters. Stretch: compare ethical decision-making for a small firm and a multinational."
+      "send": "SEND/EAL: costs/benefits table with sentence starters. Stretch: compare ethical decision-making for a small firm and a multinational.",
+      "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
+      "boardShort": "Edexcel IGCSE 4BS1"
     },
     {
       "unit": "Unit 2.3: Training",
@@ -4500,5 +4089,6 @@
       "board": "Pearson Edexcel International GCSE (9-1) Business (4BS1)",
       "boardShort": "Edexcel IGCSE 4BS1"
     }
-  ]
+  ],
+  "boardShort": "Edexcel IGCSE 4BS1"
 }

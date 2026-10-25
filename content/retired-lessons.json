@@ -1,50 +1,312 @@
 {
-  "note": "Lessons removed from the library (off-spec). upload-decks deletes their portal rows and files.",
+  "note": "Lessons removed from the library (off-spec for the portal's KS4 specifications, a subject or key stage not offered, or a duplicate). Retire a lesson by removing it from content/lessons/<subject>/<year>.json AND listing it here: upload-decks then deletes its portal row, versions and files; build-decks, revision packs, booklets, coverage and merge-lessons skip it; validate fails if it is still in a lesson file. Lesson numbers listed here are never reused. title and reason are for people; scripts match on subject_slug, year and lesson_no (merge-lessons also skips a staged lesson with a retired title).",
   "retired": [
     {
       "subject_slug": "english-literature",
       "year": "y10",
-      "lesson_no": 1
+      "lesson_no": 1,
+      "reason": "Written to AQA 8702 Paper 1 Section B (A Christmas Carol), which is not a Pearson 4ET1 set text"
     },
     {
       "subject_slug": "english-literature",
       "year": "y10",
-      "lesson_no": 2
+      "lesson_no": 2,
+      "reason": "Written to AQA 8702 Paper 1 Section B (A Christmas Carol), which is not a Pearson 4ET1 set text"
     },
     {
       "subject_slug": "english-literature",
       "year": "y10",
-      "lesson_no": 3
+      "lesson_no": 3,
+      "reason": "Written to AQA 8702 Paper 1 Section B (A Christmas Carol), which is not a Pearson 4ET1 set text"
     },
     {
       "subject_slug": "english-literature",
       "year": "y10",
-      "lesson_no": 4
+      "lesson_no": 4,
+      "reason": "Written to AQA 8702 Paper 1 Section B (A Christmas Carol), which is not a Pearson 4ET1 set text"
     },
     {
       "subject_slug": "english-literature",
       "year": "y10",
-      "lesson_no": 5
+      "lesson_no": 5,
+      "reason": "Written to AQA 8702 Paper 1 Section B (A Christmas Carol), which is not a Pearson 4ET1 set text"
     },
     {
       "subject_slug": "english-literature",
       "year": "y10",
-      "lesson_no": 6
+      "lesson_no": 6,
+      "reason": "Written to AQA 8702 Paper 1 Section B (A Christmas Carol), which is not a Pearson 4ET1 set text"
     },
     {
       "subject_slug": "english-literature",
       "year": "y10",
-      "lesson_no": 7
+      "lesson_no": 7,
+      "reason": "Written to AQA 8702 Paper 1 Section B (A Christmas Carol), which is not a Pearson 4ET1 set text"
     },
     {
       "subject_slug": "english-literature",
       "year": "y10",
-      "lesson_no": 8
+      "lesson_no": 8,
+      "reason": "Written to AQA 8702 Paper 1 Section B (A Christmas Carol), which is not a Pearson 4ET1 set text"
     },
     {
       "subject_slug": "english-literature",
       "year": "y10",
-      "lesson_no": 36
+      "lesson_no": 36,
+      "title": "Dickens on the Pearson list: from A Christmas Carol to Great Expectations",
+      "reason": "A Christmas Carol is not a Pearson 4ET1 set text"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y10",
+      "lesson_no": 1,
+      "title": "Crime, law and punishment: the big picture and Anglo-Saxon crime",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y10",
+      "lesson_no": 2,
+      "title": "Anglo-Saxon law enforcement: tithings, hue and cry and courts",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y10",
+      "lesson_no": 3,
+      "title": "Anglo-Saxon trials and punishments: wergild, ordeal and oath-helpers",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y10",
+      "lesson_no": 4,
+      "title": "Norman changes: Forest Laws, murdrum and control",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y10",
+      "lesson_no": 5,
+      "title": "Medieval law enforcement: sheriffs, constables and juries",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y10",
+      "lesson_no": 6,
+      "title": "The Church and the law: sanctuary, benefit of clergy and heresy",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y10",
+      "lesson_no": 7,
+      "title": "Medieval punishment, the Black Death and new crimes",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y10",
+      "lesson_no": 8,
+      "title": "Review: continuity and change c1000-c1500 and exam practice",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y11",
+      "lesson_no": 1,
+      "title": "The early Nazi Party, 1919-22",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y11",
+      "lesson_no": 2,
+      "title": "The Munich Putsch and Mein Kampf, 1923-24",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y11",
+      "lesson_no": 3,
+      "title": "The lean years, 1924-29",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y11",
+      "lesson_no": 4,
+      "title": "The Wall Street Crash and the Great Depression in Germany",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y11",
+      "lesson_no": 5,
+      "title": "Why did people vote Nazi? Propaganda, the SA and Hitler's appeal",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y11",
+      "lesson_no": 6,
+      "title": "Political intrigue, 1932-33: Hindenburg, Papen and Schleicher",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y11",
+      "lesson_no": 7,
+      "title": "Hitler becomes Chancellor, January 1933",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "history",
+      "year": "y11",
+      "lesson_no": 8,
+      "title": "The Reichstag Fire and the Enabling Act, 1933",
+      "reason": "History is not offered at KS4 (KS1 to KS3 only)"
+    },
+    {
+      "subject_slug": "english-literature",
+      "year": "y11",
+      "lesson_no": 1,
+      "title": "Macbeth: Shakespeare, Jacobean England and the exam",
+      "reason": "Written to AQA 8702 Paper 1 Section A (closed-book extract and whole-play question); Macbeth is taught for Pearson 4ET1 Component 2/3 Section B in lessons 11 to 16 and 24"
+    },
+    {
+      "subject_slug": "english-literature",
+      "year": "y11",
+      "lesson_no": 2,
+      "title": "Act 1: the witches, the prophecy and Macbeth's ambition",
+      "reason": "Written to AQA 8702 Paper 1 Section A (closed-book extract and whole-play question); Macbeth is taught for Pearson 4ET1 Component 2/3 Section B in lessons 11 to 16 and 24"
+    },
+    {
+      "subject_slug": "english-literature",
+      "year": "y11",
+      "lesson_no": 3,
+      "title": "Act 1: Lady Macbeth, Duncan and the decision to kill",
+      "reason": "Written to AQA 8702 Paper 1 Section A (closed-book extract and whole-play question); Macbeth is taught for Pearson 4ET1 Component 2/3 Section B in lessons 11 to 16 and 24"
+    },
+    {
+      "subject_slug": "english-literature",
+      "year": "y11",
+      "lesson_no": 4,
+      "title": "Act 2: the dagger, the murder and guilt",
+      "reason": "Written to AQA 8702 Paper 1 Section A (closed-book extract and whole-play question); Macbeth is taught for Pearson 4ET1 Component 2/3 Section B in lessons 11 to 16 and 24"
+    },
+    {
+      "subject_slug": "english-literature",
+      "year": "y11",
+      "lesson_no": 5,
+      "title": "Acts 3 and 4: tyranny, Banquo and the apparitions",
+      "reason": "Written to AQA 8702 Paper 1 Section A (closed-book extract and whole-play question); Macbeth is taught for Pearson 4ET1 Component 2/3 Section B in lessons 11 to 16 and 24"
+    },
+    {
+      "subject_slug": "english-literature",
+      "year": "y11",
+      "lesson_no": 6,
+      "title": "Act 5: guilt, downfall and restoration of order",
+      "reason": "Written to AQA 8702 Paper 1 Section A (closed-book extract and whole-play question); Macbeth is taught for Pearson 4ET1 Component 2/3 Section B in lessons 11 to 16 and 24"
+    },
+    {
+      "subject_slug": "english-literature",
+      "year": "y11",
+      "lesson_no": 7,
+      "title": "Themes and the whole-play view: ambition, kingship, the supernatural and appearance",
+      "reason": "Written to AQA 8702 Paper 1 Section A (closed-book extract and whole-play question); Macbeth is taught for Pearson 4ET1 Component 2/3 Section B in lessons 11 to 16 and 24"
+    },
+    {
+      "subject_slug": "english-literature",
+      "year": "y11",
+      "lesson_no": 8,
+      "title": "Writing a Section A response: extract and whole play",
+      "reason": "Written to AQA 8702 Paper 1 Section A (closed-book extract and whole-play question); Macbeth is taught for Pearson 4ET1 Component 2/3 Section B in lessons 11 to 16 and 24"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y10",
+      "lesson_no": 1,
+      "title": "Why businesses exist: needs, wants and enterprise",
+      "reason": "UK GCSE 1BS0 Theme 1.1 (enterprise, entrepreneurs, adding value): not in the 4BS1 specification"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y10",
+      "lesson_no": 2,
+      "title": "Risk and reward: the entrepreneur's decision",
+      "reason": "UK GCSE 1BS0 Theme 1.1 (enterprise, entrepreneurs, adding value): not in the 4BS1 specification"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y10",
+      "lesson_no": 3,
+      "title": "The dynamic business world: new ideas and adding value",
+      "reason": "UK GCSE 1BS0 Theme 1.1 (enterprise, entrepreneurs, adding value): not in the 4BS1 specification"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y10",
+      "lesson_no": 6,
+      "title": "Competition and market mapping",
+      "reason": "UK GCSE 1BS0 1.2.4 market mapping: not in the 4BS1 specification"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y10",
+      "lesson_no": 5,
+      "title": "Market research: finding out what customers want",
+      "reason": "Duplicate: 4BS1 4.1 market research is taught in lessons 15 and 22"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y10",
+      "lesson_no": 7,
+      "title": "Business aims and objectives",
+      "reason": "Duplicate: 4BS1 1.1 business objectives is taught in lesson 9"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y11",
+      "lesson_no": 1,
+      "title": "Why and how businesses grow: organic growth",
+      "reason": "UK GCSE 1BS0 Theme 2.1 (organic growth, mergers and takeovers): not in the 4BS1 specification"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y11",
+      "lesson_no": 2,
+      "title": "External growth: mergers and takeovers",
+      "reason": "UK GCSE 1BS0 Theme 2.1 (organic growth, mergers and takeovers): not in the 4BS1 specification"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y11",
+      "lesson_no": 3,
+      "title": "Economies and diseconomies of scale",
+      "reason": "Duplicate: 4BS1 5.1 economies of scale is taught in lesson 17"
+    },
+    {
+      "subject_slug": "business",
+      "year": "y11",
+      "lesson_no": 4,
+      "title": "Financing growth: retained profit, loans and share capital",
+      "reason": "Duplicate: 4BS1 3.1 sources of finance is taught in lesson 12"
+    },
+    {
+      "subject_slug": "gcse-science",
+      "year": "y10",
+      "lesson_no": 3,
+      "title": "Microscopy, magnification and units",
+      "reason": "UK GCSE 1BI0 Topic 1 microscopy and magnification: not in the 4BI1 or 4SD0 specification"
+    },
+    {
+      "subject_slug": "gcse-science",
+      "year": "y11",
+      "lesson_no": 9,
+      "title": "The Earth's atmosphere: past and present",
+      "reason": "UK GCSE 1CH0 Topic 8 evolution of the early atmosphere: not in the 4CH1 or 4SD0 specification"
     }
   ]
 }

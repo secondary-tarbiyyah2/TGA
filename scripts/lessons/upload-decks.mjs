@@ -6,6 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
+import { retiredChecker, retiredList } from "./retired.mjs";
 
 const [mode, dirArg] = process.argv.slice(2);
 const dir = path.resolve(dirArg || "out/decks");
@@ -16,7 +17,8 @@ if (!url || !key || !["plan", "upload"].includes(mode)) {
   process.exit(1);
 }
 const supabase = createClient(url, key, { auth: { persistSession: false } });
-const manifest = JSON.parse(fs.readFileSync(path.join(dir, "manifest.json"), "utf8"));
+const isRetired = retiredChecker();
+const manifest = JSON.parse(fs.readFileSync(path.join(dir, "manifest.json"), "utf8")).filter((m) => !isRetired(m.subject_slug, m.year, m.lesson_no));
 const force = process.env.FORCE === "1";
 
 async function existingRows() {
@@ -24,7 +26,7 @@ async function existingRows() {
   for (let from = 0; ; from += 1000) {
     const { data, error } = await supabase
       .from("curriculum_lessons")
-      .select("id, subject_slug, year, lesson_no, deck_path, version, plan_pdf_path")
+      .select("id, subject_slug, year, lesson_no, deck_path, pdf_path, version, plan_pdf_path, plan_docx_path")
       .range(from, from + 999);
     if (error) throw error;
     for (const r of data) out.set(`${r.subject_slug}/${r.year}/${r.lesson_no}`, r);
@@ -145,20 +147,30 @@ await pool(manifest, 6, async (m) => {
 console.log(`Uploaded ${uploaded}, refreshed ${metaOnly}, failed ${failed}`);
 if (failed > 0 && uploaded === 0) process.exit(1);
 
-// Remove lessons retired from the library (content/retired-lessons.json) so off-spec lessons leave the portal.
-if (mode === "upload" && fs.existsSync("content/retired-lessons.json")) {
-  const { retired = [] } = JSON.parse(fs.readFileSync("content/retired-lessons.json", "utf8"));
-  const rows = await existingRows();
+// Remove lessons retired from the library (content/retired-lessons.json) so off-spec lessons leave the portal:
+// the lesson row, its versions, and their deck, PDF and lesson-plan files in storage.
+if (mode === "upload") {
+  const retired = retiredList();
+  const rows = retired.length ? await existingRows() : new Map();
   let removed = 0;
   for (const r of retired) {
     const row = [...rows.values()].find(
       (x) => x.subject_slug === r.subject_slug && String(x.year).toLowerCase() === String(r.year).toLowerCase() && Number(x.lesson_no) === Number(r.lesson_no),
     );
     if (!row) continue;
+    const { data: versions } = await supabase.from("curriculum_lesson_versions").select("deck_path, pdf_path").eq("lesson_id", row.id);
+    const files = [row.deck_path, row.pdf_path, row.plan_pdf_path, row.plan_docx_path, ...(versions || []).flatMap((v) => [v.deck_path, v.pdf_path])].filter(Boolean);
     await supabase.from("curriculum_lesson_versions").delete().eq("lesson_id", row.id);
     const { error } = await supabase.from("curriculum_lessons").delete().eq("id", row.id);
-    if (error) console.error(`::warning::retire ${r.subject_slug}/${r.year}/${r.lesson_no}: ${error.message}`);
-    else removed++;
+    if (error) {
+      console.error(`::warning::retire ${r.subject_slug}/${r.year}/${r.lesson_no}: ${error.message}`);
+      continue;
+    }
+    removed++;
+    if (files.length) {
+      const { error: e2 } = await supabase.storage.from("lesson-decks").remove([...new Set(files)]);
+      if (e2) console.error(`::warning::retire ${r.subject_slug}/${r.year}/${r.lesson_no} files: ${e2.message}`);
+    }
   }
   console.log(`Retired ${removed} lesson(s) from the portal`);
 }

@@ -3,11 +3,25 @@ import raw from "./syllabusIndex.json";
 /** pl: for each point, the ids ("y10/12") of the lessons that teach it; lessons: every lesson id mapped to the unit. */
 export type SpecUnit = { ref: string; title: string; paper: string; year: string; points: string[]; pl: string[][]; lessons: string[] };
 export type Paper = { paper: string; title: string; duration: string; marks: number | string; weight: string; content: string; format: string };
+/** Set when the course is taught from a UK GCSE spec but pupils are entered for an International GCSE. */
+export type ExamEntry = {
+  board: string;
+  qualification: string;
+  code: string;
+  label: string;
+  papers: string;
+  series: string;
+  privateCandidates: string;
+  choice: string;
+  notes: string[];
+};
 export type SpecInfo = {
   subject: string;
   board: string;
   code: string;
+  /** "Pearson Edexcel IGCSE 4BS1", or "Taught: … · Exam: …" when examEntry is set. */
   label: string;
+  examEntry: ExamEntry | null;
   status: string;
   statusNote: string;
   qualification: string;
@@ -91,7 +105,7 @@ export const sameSubject = (a: string, b: string) => {
 };
 
 /**
- * One consistent board label per KS4 subject ("Pearson Edexcel 4BS1"). A lesson's own board text is replaced only when it
+ * One consistent board label per KS4 subject ("Pearson Edexcel 4BS1"; "Taught: … · Exam: …" when pupils sit a different qualification). A lesson's own board text is replaced only when it
  * agrees with the specification (no code, or the spec's code). A different code, e.g. an older AQA or UK GCSE lesson, is left as written.
  */
 export function boardLabel(slug: string, board: string | null, year: string): string | null {

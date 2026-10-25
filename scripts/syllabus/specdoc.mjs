@@ -84,12 +84,21 @@ export function specDocument(d, extra = {}) {
   sections.forEach((s) => kids.push(p([t(s, { size: 22 })], { after: 80 })));
 
   kids.push(h1("1  Qualification at a glance", acc));
-  kids.push(table(["Item", "Detail"], [["Awarding body", d.board], ["Qualification", clean(d.qualification)], ["Code", clean(d.code)], ["Course length", d.years], ["Tiers", clean(d.tiers)], ["Grading", "9 to 1 (9 is the highest grade)"], ["Specification issue", clean(d.specVersion)]], [1.4, 3.6], acc));
+  kids.push(table(["Item", "Detail"], [["Awarding body", d.board], ["Qualification", clean(d.qualification)], ["Code", clean(d.code)], ...(d.examEntry ? [["Exam pupils sit", `${d.examEntry.board} ${clean(d.examEntry.qualification)} (${d.examEntry.code})`]] : []), ["Course length", d.years], ["Tiers", clean(d.tiers)], ["Grading", "9 to 1 (9 is the highest grade)"], ["Specification issue", clean(d.specVersion)]], [1.4, 3.6], acc));
 
   kids.push(h1("2  Assessment overview", acc));
   kids.push(table(["Paper", "Title", "Time", "Marks", "Weight", "What is examined, and how"], (d.assessment || []).map((a) => [a.paper, a.title, a.duration, String(a.marks), a.weight, `${a.content}${a.format ? `. ${a.format}` : ""}`]), [1.2, 1.6, 1, 0.7, 0.8, 4], acc));
   kids.push(label("Non-examined component", acc));
   kids.push(p([t(d.nonExam || "None")]));
+  if (d.examEntry) {
+    // Taught from this specification, but pupils sit a different (International GCSE) qualification.
+    const x = d.examEntry;
+    kids.push(label(`Exam entry: ${x.board} ${clean(x.qualification)} (${x.code})`, acc));
+    kids.push(p([t(clean(x.summary || `Pupils are entered for ${x.board} ${x.qualification} (${x.code}).`))]));
+    kids.push(table(["Item", "Detail"], [["Papers", clean(x.papers)], ["Exam series", clean(x.series)], ["Tiers", clean(x.tier || "")], ["Private candidates", clean(x.privateCandidates)], ...(x.choice ? [["Why this version", clean(x.choice)]] : []), ["Regulation", clean(x.regulation || "")]].filter((r) => r[1]), [1.4, 3.6], acc));
+    kids.push(p([t("What teachers must add or change so pupils are ready for the International GCSE papers:", { bold: true })]));
+    (x.notes || []).forEach((n) => kids.push(bl(clean(n))));
+  }
 
   kids.push(h1("3  Assessment objectives", acc));
   kids.push(table(["Objective", "What it assesses", "Weighting"], (d.aos || []).map((a) => [a.code, a.desc, a.weight || ""]), [1, 5, 1.5], acc));

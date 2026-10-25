@@ -4,6 +4,7 @@
 // The mapping is suggested by wording overlap; a teacher confirms it through the portal sign-off.
 import fs from "node:fs";
 import path from "node:path";
+import { retiredChecker } from "../lessons/retired.mjs";
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
 const STOP = new Set("the and for with that this from their they them are was were have has had not but all can any into out use used using how what when which who why its our your you will may must also than then these those about over under between within each such more most other only same some both through during without including include includes".split(" "));
@@ -11,6 +12,7 @@ const stem = (w) => w.replace(/(ing|ed|es|s|ly)$/i, "").slice(0, 7);
 const tokens = (s) => [...new Set(String(s || "").toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter((w) => w.length > 3 && !STOP.has(w)).map(stem))];
 
 export function buildCoverage() {
+  const isRetired = retiredChecker();
   const out = {};
   for (const file of fs.readdirSync(path.join(root, "content/syllabus/ks4")).filter((f) => f.endsWith(".json")).sort()) {
     const spec = JSON.parse(fs.readFileSync(path.join(root, "content/syllabus/ks4", file), "utf8"));
@@ -19,6 +21,7 @@ export function buildCoverage() {
       const lf = path.join(root, "content/lessons", spec.slug, `${y}.json`);
       if (!fs.existsSync(lf)) continue;
       for (const l of JSON.parse(fs.readFileSync(lf, "utf8")).lessons) {
+        if (isRetired(spec.slug, y, l.n)) continue; // content/retired-lessons.json
         const text = [l.title, l.unit, ...(l.objectives || []), ...(l.keywords || []).flatMap((k) => [k.term, k.def]), l.bigQuestion].join(" ");
         lessons.push({ id: `${y}/${l.n}`, year: y, n: l.n, title: l.title, unit: l.unit || "", t: new Set(tokens(text)), covers: new Set((Array.isArray(l.covers) ? l.covers : []).map(String)), refs: new Set((String(l.unit || "").match(/\d+(?:\.\d+)+|\b\d[A-Z]\b/g) || []).map((r) => r.toLowerCase())) });
       }

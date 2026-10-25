@@ -45,6 +45,15 @@ function spec(f, d) {
   if (!arr(d.skills)) w(f, "skills empty");
   if (!arr(d.links)) w(f, "no cross-curricular links");
   if (d.units && new Set(d.units.map((u) => u.ref)).size !== d.units.length) e(f, "duplicate unit refs");
+  // examEntry: the course is taught from this (UK GCSE) spec but pupils are entered for another qualification.
+  if (d.examEntry != null) {
+    const x = d.examEntry;
+    for (const k of ["board", "qualification", "code", "label", "papers", "series", "privateCandidates"]) if (!str(x[k])) e(f, `examEntry.${k} missing`);
+    if (!arr(x.notes)) e(f, "examEntry.notes missing (what teachers must add or change for the exam)");
+    if (!arr(x.sources)) e(f, "examEntry.sources missing");
+    else x.sources.forEach((s, i) => { if (!str(s.title) || !/^https?:\/\//.test(s.url || "")) e(f, `examEntry.sources[${i}] needs title and http(s) url`); });
+    if (str(x.code) && x.code === d.code) e(f, "examEntry.code is the same as the taught spec code: remove examEntry");
+  }
 }
 
 const YEARS = ["reception", "y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8", "y9"];

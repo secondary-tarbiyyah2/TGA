@@ -1,7 +1,10 @@
 {
   "subject": "Computing",
   "year": "y10",
-  "board": "Edexcel",
+  "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+  "boardShort": "Edexcel GCSE 1CP2",
+  "exam": "Pearson Edexcel International GCSE (9-1) Computer Science (4CP0)",
+  "examShort": "Edexcel IGCSE 4CP0",
   "source": "Edexcel GCSE Computer Science 1CP2 specification (Topic 1 Computational thinking, Topic 6 Problem solving with programming; Python and pseudo-code, no non-exam assessment), sequence informed by the school's Drive Y10-11 scheme (1 Fundamentals of Algorithms, 2A Programming Basics) and Y9 Programming basics lesson plan | Edexcel GCSE Computer Science 1CP2 specification (syllabus file content/syllabus/ks4/computing.json: units 1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 6.1 to 6.6; Python 3). Original lessons. The existing y10 set (content/lessons/computing/y10.json) already introduces decomposition and abstraction, flowcharts, pseudo-code and trace tables, linear and binary search, bubble and merge sort, and Python variables, validation, lists and strings; these lessons do not re-teach those and instead cover the remaining spec points, add code tracing, efficiency and exam-style practice. | Gap-fill against Pearson Edexcel 1CP2 specification",
   "lessons": [
     {
@@ -91,7 +94,9 @@
         "Give one reason for using decomposition when writing a large program."
       ],
       "homework": "Choose a real system (such as an online shop). Describe how it could be decomposed and what abstractions it uses. Write 150 words.",
-      "send": "SEND/EAL: provide a tree diagram template and sentence stems ('This is abstraction because...'). Stretch: evaluate whether a given abstraction has removed too much detail."
+      "send": "SEND/EAL: provide a tree diagram template and sentence stems ('This is abstraction because...'). Stretch: evaluate whether a given abstraction has removed too much detail.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1: Computational thinking (Topic 1)",
@@ -188,7 +193,9 @@
         "State the output of the sum flowchart if the limit changes from 5 to 4."
       ],
       "homework": "Draw a flowchart for an algorithm that asks for a password up to 3 times and ends with 'Locked' if all attempts are wrong.",
-      "send": "SEND/EAL: provide symbol stencils and partly completed flowcharts. Stretch: draw a flowchart with a nested decision for a ticket price calculator."
+      "send": "SEND/EAL: provide symbol stencils and partly completed flowcharts. Stretch: draw a flowchart with a nested decision for a ticket price calculator.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1: Computational thinking (Topic 1)",
@@ -277,7 +284,9 @@
         "State the output of: SET x TO 2; FOR i FROM 1 TO 3; SET x TO x * 2; OUTPUT x. (16)"
       ],
       "homework": "Write pseudo-code for a program which asks for 5 test marks and outputs the average. Trace it with 60, 70, 80, 90, 100.",
-      "send": "SEND/EAL: provide trace table templates and pre-filled first rows; use colour to track variables. Stretch: find and correct two errors in an unfamiliar pseudo-code algorithm."
+      "send": "SEND/EAL: provide trace table templates and pre-filled first rows; use colour to track variables. Stretch: find and correct two errors in an unfamiliar pseudo-code algorithm.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1: Computational thinking (Topic 1)",
@@ -368,7 +377,9 @@
         "Which search is usually faster on a large sorted list, and why?"
       ],
       "homework": "Write pseudo-code for a linear search that outputs the position of a target in a list or 'not found'. Test with two lists.",
-      "send": "SEND/EAL: provide cards to physically cross out halves; show each step in colour. Stretch: work out the maximum number of comparisons binary search needs for 31 items (5)."
+      "send": "SEND/EAL: provide cards to physically cross out halves; show each step in colour. Stretch: work out the maximum number of comparisons binary search needs for 31 items (5).",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1: Computational thinking (Topic 1)",
@@ -458,7 +469,9 @@
         "After one pass of 6, 5, 1, 4 what is the list? (5 1 4 6)"
       ],
       "homework": "Bubble sort the list 12, 5, 9, 1, 8 and show every pass. Explain how you know when to stop.",
-      "send": "SEND/EAL: use physical number cards and highlighters to mark the pair being compared. Stretch: describe how a flag variable could stop the sort early."
+      "send": "SEND/EAL: use physical number cards and highlighters to mark the pair being compared. Stretch: describe how a flag variable could stop the sort early.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1: Computational thinking (Topic 1)",
@@ -547,7 +560,9 @@
         "Give one reason merge sort needs more memory than bubble sort."
       ],
       "homework": "Merge sort the list 14, 3, 9, 20, 1, 7 and show your working. Then explain why merge sort is a divide and conquer algorithm.",
-      "send": "SEND/EAL: provide a split-and-merge template with boxes; use number cards. Stretch: count the comparisons used in your merge sort and compare with a bubble sort of the same list."
+      "send": "SEND/EAL: provide a split-and-merge template with boxes; use number cards. Stretch: count the comparisons used in your merge sort and compare with a bubble sort of the same list.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2: Programming in Python (Topic 6)",
@@ -636,7 +651,9 @@
         "Name one example each of normal, boundary and erroneous test data for an age between 0 and 120."
       ],
       "homework": "Write and test a Python program that converts a number of minutes into hours and minutes and validates the input is not negative.",
-      "send": "SEND/EAL: provide code with comments and blanks and a data type glossary. Stretch: use try and except to handle non-numeric input without crashing."
+      "send": "SEND/EAL: provide code with comments and blanks and a data type glossary. Stretch: use try and except to handle non-numeric input without crashing.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2: Programming in Python (Topic 6)",
@@ -727,7 +744,9 @@
         "Write the Python expression for the number of items in a list called scores."
       ],
       "homework": "Write a Python program which asks the user for 5 marks, stores them in a list, then prints the total, average and highest mark.",
-      "send": "SEND/EAL: provide code with comments to match to descriptions, and colour index positions on a list diagram. Stretch: implement a bubble sort in Python for a list of 6 numbers."
+      "send": "SEND/EAL: provide code with comments to match to descriptions, and colour index positions on a list diagram. Stretch: implement a bubble sort in Python for a list of 6 numbers.",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1.1: Computational thinking: decomposition, abstraction and subprograms",
@@ -899,7 +918,7 @@
       "homework": "Choose a program you use (a bus app, a game or a banking app). Write 120 words on how it could be decomposed and what abstraction its model uses.",
       "send": "SEND/EAL: give a blank three-column table (sub-problem, input, output) and sentence stems such as 'The model ignores ... because ...'. Stretch: evaluate a model that has ignored too much detail and say what to add. Builds on y10 lesson 1, which introduced the terms; this lesson applies them to modelling and adds subprograms (1.1.2).",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
@@ -1051,7 +1070,7 @@
       "homework": "Write an algorithm in pseudocode for a till that adds the prices in a list until the total passes 20 pounds. State which constructs you used.",
       "send": "SEND/EAL: give colour-coded cards (sequence blue, selection green, repetition orange) to sort lines of an algorithm. Stretch: write the loop in two ways, with for and with while.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
@@ -1211,7 +1230,7 @@
       "homework": "Draw a 3 by 4 array holding a weekly prayer timetable of your choosing and write five statements that read or change cells.",
       "send": "SEND/EAL: provide a printed grid with numbered rows and columns and a word bank (row, column, index, field). Stretch: write a loop to total every cell of a 2D array.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
@@ -1398,7 +1417,7 @@
       "homework": "Write a short algorithm using a loop and one IF. Swap with a partner (or ask someone at home), trace it for the input 6 and write down what it does.",
       "send": "SEND/EAL: give a pre-drawn trace table with column headings and the first row filled. Stretch: ask for the trace of a nested loop.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
@@ -1568,7 +1587,7 @@
       "homework": "Write a short program in Python containing one syntax, one logic and one runtime error (in three separate versions). Annotate each with the type and the fix.",
       "send": "SEND/EAL: provide a sorting task with the three error types as cards and example snippets. Stretch: ask for a test plan with 8 rows covering every kind of test data.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1.2: Computational thinking: algorithms, data structures and testing",
@@ -1720,7 +1739,7 @@
       "homework": "Write a half-page comparing linear and binary search using a library catalogue as the example. Include the checks needed for 1000 books.",
       "send": "SEND/EAL: give cut-up cards of a merge sort to rearrange into order. Stretch: ask for the most checks for 1000 items and the reasoning. Existing y10 lessons 4 to 6 teach how the algorithms work; this lesson adds code tracing and efficiency comparison.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1.3: Computational thinking: logic and truth tables",
@@ -1890,7 +1909,7 @@
       "homework": "Find two real conditions from home or the masjid (for example 'open if it is Friday and before 2 pm') and write each as a logic expression with a truth table.",
       "send": "SEND/EAL: give a blank truth table with the inputs filled in and a key (1 = true). Stretch: ask for expressions with a hidden NOT and justify the output.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 1.3: Computational thinking: logic and truth tables",
@@ -2062,7 +2081,7 @@
       "homework": "Choose a safety system (a car seatbelt warning, an oven door lock). Write its logic as an expression with three inputs and a truth table.",
       "send": "SEND/EAL: give a pre-filled template with the eight input rows and the helper column labelled. Stretch: show the expression can be rewritten without brackets and test it with a truth table.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2.1: Data: binary and number representation",
@@ -2263,7 +2282,7 @@
       "homework": "Write your age, your house number and the number of letters in your name in 8-bit binary. Show working for each.",
       "send": "SEND/EAL: keep the place-value strip visible and provide a template with the 8 columns. Stretch: ask for conversions using 12-bit binary and the number of states.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2.1: Data: binary and number representation",
@@ -2419,7 +2438,7 @@
       "homework": "Make a conversion chart for the numbers -8 to +7 in 4-bit two's complement (place values -8, 4, 2, 1).",
       "send": "SEND/EAL: provide a place-value strip with -128 in a different colour. Stretch: ask for 16-bit extreme values (-32 768 to +32 767) with reasoning.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2.1: Data: binary and number representation",
@@ -2577,7 +2596,7 @@
       "homework": "Make a table of every addition from 100 + 100 to 100 + 160 (in steps of 20) and mark which ones overflow an 8-bit unsigned register.",
       "send": "SEND/EAL: give a column-addition template with carry boxes. Stretch: ask for an arithmetic shift of a negative number.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2.1: Data: binary and number representation",
@@ -2749,7 +2768,7 @@
       "homework": "Find the hex colour codes of three colours used on a website you know. Convert each of the red, green and blue values to denary.",
       "send": "SEND/EAL: give the table of 16 hex digits with binary as a reference card. Stretch: ask for a three-byte colour value to be written in binary.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2.2: Data: representing text, images and sound",
@@ -2925,7 +2944,7 @@
       "homework": "Write your first name and your mother's name in ASCII denary codes, with a short note on any characters that could not be shown.",
       "send": "SEND/EAL: provide the ASCII reference table with codes for A, a and 0 marked. Stretch: build a short substitution cipher with chr and ord.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2.2: Data: representing text, images and sound",
@@ -3111,7 +3130,7 @@
       "homework": "Make a 6 x 6 pixel image of a simple shape as a grid of 0s and 1s and write the binary for each row.",
       "send": "SEND/EAL: provide a ready-drawn 5 x 5 grid and a labelled diagram of a sampled wave. Stretch: ask for the quality-size trade-off to be evaluated.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2.3: Data: storage units and compression",
@@ -3281,7 +3300,7 @@
       "homework": "Find the file sizes of three files on a device and find how many of each would fit on a 32 GiB drive. Show conversions.",
       "send": "SEND/EAL: give a conversion ladder diagram (multiply down, divide up by 1024). Stretch: ask for calculations with several unit changes. Note: y11 lesson 2 of the existing set uses 1000 for unit steps; this lesson follows the specification's binary units.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 2.3: Data: storage units and compression",
@@ -3452,7 +3471,7 @@
       "homework": "Look at the file sizes of a photo as a PNG and as a JPEG (or find the sizes online). Write 100 words on which you would use for a website and why.",
       "send": "SEND/EAL: give a decoding worksheet with RLE pairs boxed. Stretch: ask for an evaluation of RLE on text with few repeated characters.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.1: Problem solving with programming: designing, reading and refining programs",
@@ -3603,7 +3622,7 @@
       "homework": "Choose a short problem (for example calculating the cost of a taxi ride). Write inputs, processes and outputs, then the Python program for it.",
       "send": "SEND/EAL: give a translation table (SET, FOR, WHILE, SEND) next to each statement in Python. Stretch: ask for a refined version with a function. This lesson focuses on Paper 2 programming; the flowchart and pseudocode basics are in the existing y10 lessons 2 and 3.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.1: Problem solving with programming: designing, reading and refining programs",
@@ -3756,7 +3775,7 @@
       "homework": "Write a short Python program that totals a list of numbers. Deliberately introduce one bug of each type in three copies and note how Python reports (or does not report) each.",
       "send": "SEND/EAL: provide a debugging checklist (read message, find the line, predict, fix) and a word bank. Stretch: ask pupils to review a classmate's code for readability. Existing y10 lesson 7 introduced validation and testing; this lesson adds style, debugging and evaluation.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.2: Problem solving with programming: program structure and control",
@@ -3889,7 +3908,7 @@
       "homework": "Write a program with a library import, a constant, a function and a main loop, and label each structural part with a comment.",
       "send": "SEND/EAL: give a program with sections cut apart to reorder and label. Stretch: ask for a nested loop program printing a multiplication grid.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.3: Problem solving with programming: data types, variables and strings",
@@ -4027,7 +4046,7 @@
       "homework": "Write a short program with at least four variables of different types (including one constant) and print the type of each.",
       "send": "SEND/EAL: provide a card sort of values and their type names. Stretch: ask for a 2D structure holding a timetable and a loop that prints each day's lessons.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.3: Problem solving with programming: data types, variables and strings",
@@ -4188,7 +4207,7 @@
       "homework": "Write a program that takes the sentence 'Learning is a path to Jannah' and prints the number of letters, the first word and the sentence in capitals.",
       "send": "SEND/EAL: give an indexed strip of letters for each example. Stretch: ask for a function that counts any given letter.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.4: Problem solving with programming: input, files, validation and authentication",
@@ -4355,7 +4374,7 @@
       "homework": "Create a small CSV (on paper) of five classmates' favourite numbers, then write the Python that reads it and prints the mean.",
       "send": "SEND/EAL: provide the file program with gaps to fill. Stretch: ask for error handling when the file is missing.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.4: Problem solving with programming: input, files, validation and authentication",
@@ -4521,7 +4540,7 @@
       "homework": "Choose a form you use (a library card or school login). List every field and say which validation check you would use for each.",
       "send": "SEND/EAL: give a matching task for check and example (and a function template). Stretch: ask for a function that combines several checks.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.5: Problem solving with programming: operators",
@@ -4658,7 +4677,7 @@
       "homework": "Write five different expressions that use %, // and ** and work out the results by hand. Check with Python.",
       "send": "SEND/EAL: give an operator card with symbol, name and example for each. Stretch: ask for the digit-sum of a four-digit number using a loop.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.6: Problem solving with programming: subprograms and scope",
@@ -4795,7 +4814,7 @@
       "homework": "Write a program with two functions and one procedure for a task of your choice (for example a canteen bill). Label each as a function or procedure.",
       "send": "SEND/EAL: provide a template with def, parameters and return highlighted. Stretch: ask for a function that calls another function.",
       "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE CS 1CP2"
+      "boardShort": "Edexcel GCSE 1CP2"
     },
     {
       "unit": "Unit 6.5: Operators (Problem solving with programming)",
@@ -4963,7 +4982,7 @@
       "covers": [
         "6.5.2"
       ],
-      "board": "Pearson Edexcel Level 1/Level 2 GCSE (9-1) in Computer Science (1CP2)",
+      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
       "boardShort": "Edexcel GCSE 1CP2"
     }
   ]

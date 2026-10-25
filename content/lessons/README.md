@@ -7,14 +7,22 @@ One JSON file per subject + year group: `content/lessons/<subject-slug>/<year>.j
 {
   "subject": "Mathematics",
   "year": "y10",
-  "board": "Pearson Edexcel International GCSE Mathematics A (4MA1)",
-  "boardShort": "Edexcel IGCSE 4MA1",
+  "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
+  "boardShort": "Edexcel GCSE 1MA1 Higher",
+  "exam": "Pearson Edexcel International GCSE (9-1) Mathematics A (4MA1), Higher tier",
+  "examShort": "Edexcel IGCSE 4MA1",
   "source": "Which school material was adapted",
   "lessons": [ { ...lesson... } ]
 }
 ```
 
+`board` is the specification the lessons are taught from (KS4: the portal spec in `content/syllabus/ks4`).
 `boardShort` is optional: it goes on the title slide, where the full name is too long.
+`exam` / `examShort` are set only when pupils sit a different qualification from the one taught (the spec's
+`examEntry`, e.g. taught from GCSE 1MA1, entered for International GCSE 4MA1); decks then show the exam.
+
+To retire a lesson, remove it from its file and add `{ "subject_slug", "year", "lesson_no", "title", "reason" }` to
+`content/retired-lessons.json` (see its `note`). Retired lesson numbers are never reused.
 
 ## Lesson
 

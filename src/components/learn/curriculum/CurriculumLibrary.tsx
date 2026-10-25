@@ -965,12 +965,61 @@ function SpecPanel({ slug, unit, year, signoffs, onSign, onOpenLesson }: { slug:
   return (
     <div className="space-y-3">
       <div className="rounded-xl border border-gold-light bg-cream px-3 py-2 text-xs text-ink/75">
-        <strong>
-          {spec.board} {spec.code}
-        </strong>{" "}
-        · {spec.qualification}
+        {spec.examEntry ? (
+          <>
+            <strong>
+              Taught: {spec.board} {spec.code}
+            </strong>{" "}
+            · {spec.qualification} ·{" "}
+            <strong>
+              Exam: {spec.examEntry.board} {spec.examEntry.qualification} ({spec.examEntry.code})
+            </strong>
+          </>
+        ) : (
+          <>
+            <strong>
+              {spec.board} {spec.code}
+            </strong>{" "}
+            · {spec.qualification}
+          </>
+        )}
         {spec.tiers ? ` · ${spec.tiers}` : ""}
       </div>
+
+      {spec.examEntry && (
+        <details className="rounded-2xl border border-gold-light bg-white p-3">
+          <summary className="cursor-pointer text-sm font-semibold text-ink">Getting ready for the {spec.examEntry.code} exam</summary>
+          <div className="mt-2 space-y-2 text-sm text-ink/85">
+            <p>
+              Pupils are taught from {spec.board} {spec.code} but sit {spec.examEntry.board} {spec.examEntry.qualification} ({spec.examEntry.code}).
+            </p>
+            <p>
+              <strong>Papers:</strong> {spec.examEntry.papers}
+            </p>
+            <p>
+              <strong>Exam series:</strong> {spec.examEntry.series}
+            </p>
+            <p>
+              <strong>Private candidates:</strong> {spec.examEntry.privateCandidates}
+            </p>
+            {spec.examEntry.choice && (
+              <p>
+                <strong>Why this version:</strong> {spec.examEntry.choice}
+              </p>
+            )}
+            {spec.examEntry.notes.length > 0 && (
+              <>
+                <p className="font-semibold text-ink">What to add or change for the exam</p>
+                <ul className="list-disc space-y-1 pl-5">
+                  {spec.examEntry.notes.map((n) => (
+                    <li key={n}>{n}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
+        </details>
+      )}
 
       <details className="rounded-2xl border border-gold-light bg-white p-3">
         <summary className="cursor-pointer text-sm font-semibold text-ink">How it is assessed ({spec.assessment.length} paper{spec.assessment.length === 1 ? "" : "s"}{spec.nonExam && !/^none/i.test(spec.nonExam) ? " + non-exam" : ""})</summary>

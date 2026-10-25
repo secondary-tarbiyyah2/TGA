@@ -1,12 +1,12 @@
 {
   "subject": "Science (GCSE Biology, Chemistry, Physics)",
   "year": "y11",
-  "board": "Pearson Edexcel GCSE (9–1) Biology 1BI0, Chemistry 1CH0 and Physics 1PH0",
-  "boardShort": "Edexcel GCSE 1BI0 · 1CH0 · 1PH0",
-  "source": "School Science curriculum journey 2026–27 (Year 11 Term 1: Organic Chemistry; Astrophysics) with Edexcel GCSE Biology Topic 9 (ecosystems and material cycles); school's Pearson Edexcel GCSE 5-year schemes; INSET lesson standard. Orbital-speed, red-shift-equation and HR-diagram content goes beyond GCSE 1PH0 and is marked as stretch. | Edexcel IGCSE 4BI1/4CH1 specification summary (content/syllabus/ks4/gcse-science.json), Y11 units Biology 3, Biology 4, Biology 5, Chemistry 3, Chemistry 4. Drive material not used. Not re-taught because covered by the existing lessons in content/lessons/gcse-science/y11.json: population, community, habitat, ecosystem and quadrats; biotic and abiotic factors; food chains, webs and pyramids and 10% energy transfer; carbon cycle; nitrogen cycle with named bacteria; pollution (sulfur dioxide, carbon monoxide, greenhouse gases, sewage and eutrophication) and deforestation (Biology 4 points 1, 3-7); hydrocarbons, formulae and homologous series, crude oil and fractional distillation, complete and incomplete combustion and acid rain, catalytic cracking, alkane and alkene reactions with the bromine water test, addition polymers (Chemistry 4 points 1 partly, 2-6, 8). Biology 4 biodiversity and distribution (point 2) and Chemistry 4 naming and isomers (point 1) are taught here. | Edexcel IGCSE Physics 4PH1 specification (units Physics 5-8, Y11). Existing UK-GCSE lessons in content/lessons/gcse-science/y11.json already cover Physics 8 gravity and the Solar System, g on other bodies, orbital speed (v = 2 pi r / T), life cycles of stars, colour and temperature, absolute magnitude and the HR diagram, red-shift and the CMB, so Physics 8 here adds orbits of comets and satellites and one consolidation lesson in exam terms. | Gap-fill against Pearson Edexcel International GCSE Biology 4BI1 / Double Award 4SD0 specification | Gap-fill against Pearson Edexcel International GCSE Chemistry 4CH1 and Physics 4PH1 (and Science Double Award 4SD0) specification",
+  "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+  "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0",
+  "source": "Lessons 1 to 20: first written from the school Science curriculum journey 2026-27 (Organic chemistry; Astrophysics) and Pearson Edexcel GCSE schemes, re-mapped to 4BI1 Biology 4, 4CH1 Chemistry 4 and 4PH1 Physics 8 (early-atmosphere lesson 9 retired as not on the International GCSE); orbital speed, red-shift and the HR diagram are 4PH1 content (red-shift, absolute magnitude and the HR diagram are Physics only, not Double Award) | Edexcel IGCSE 4BI1/4CH1 specification summary (content/syllabus/ks4/gcse-science.json), Y11 units Biology 3, Biology 4, Biology 5, Chemistry 3, Chemistry 4. Drive material not used. Not re-taught because covered by the existing lessons in content/lessons/gcse-science/y11.json: population, community, habitat, ecosystem and quadrats; biotic and abiotic factors; food chains, webs and pyramids and 10% energy transfer; carbon cycle; nitrogen cycle with named bacteria; pollution (sulfur dioxide, carbon monoxide, greenhouse gases, sewage and eutrophication) and deforestation (Biology 4 points 1, 3-7); hydrocarbons, formulae and homologous series, crude oil and fractional distillation, complete and incomplete combustion and acid rain, catalytic cracking, alkane and alkene reactions with the bromine water test, addition polymers (Chemistry 4 points 1 partly, 2-6, 8). Biology 4 biodiversity and distribution (point 2) and Chemistry 4 naming and isomers (point 1) are taught here. | Edexcel IGCSE Physics 4PH1 specification (units Physics 5-8, Y11). Existing UK-GCSE lessons in content/lessons/gcse-science/y11.json already cover Physics 8 gravity and the Solar System, g on other bodies, orbital speed (v = 2 pi r / T), life cycles of stars, colour and temperature, absolute magnitude and the HR diagram, red-shift and the CMB, so Physics 8 here adds orbits of comets and satellites and one consolidation lesson in exam terms. | Gap-fill against Pearson Edexcel International GCSE Biology 4BI1 / Double Award 4SD0 specification | Gap-fill against Pearson Edexcel International GCSE Chemistry 4CH1 and Physics 4PH1 (and Science Double Award 4SD0) specification",
   "lessons": [
     {
-      "unit": "Biology Topic 9: Ecosystems and material cycles",
+      "unit": "Biology 4: Ecology and the environment",
       "n": 1,
       "title": "Ecosystems and sampling with quadrats",
       "duration": 50,
@@ -56,7 +56,7 @@
             "Ecosystem: community + environment",
             "Habitat: where an organism lives"
           ],
-          "note": "Edexcel GCSE Biology definitions must be precise."
+          "note": "Edexcel International GCSE Biology definitions (4BI1 4.1) must be precise."
         },
         {
           "heading": "Random sampling",
@@ -127,11 +127,13 @@
         "Why repeat quadrats?",
         "What is a transect used for?"
       ],
-      "homework": "Edexcel GCSE Biology-style quadrat practical question (8 marks).",
-      "send": "Support: calculation frame. Stretch: capture–recapture method."
+      "homework": "Edexcel International GCSE Biology-style quadrat practical question (8 marks).",
+      "send": "Support: calculation frame. Stretch: capture–recapture method.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Biology Topic 9: Ecosystems and material cycles",
+      "unit": "Biology 4: Ecology and the environment",
       "n": 2,
       "title": "Biotic and abiotic factors",
       "duration": 50,
@@ -276,11 +278,13 @@
         "Name two biotic factors.",
         "Why do predator peaks come after prey peaks?"
       ],
-      "homework": "Edexcel GCSE Biology data-analysis question on factors affecting distribution.",
-      "send": "Support: sorting cards. Stretch: graph interpretation."
+      "homework": "Edexcel International GCSE Biology data-analysis question on factors affecting distribution.",
+      "send": "Support: sorting cards. Stretch: graph interpretation.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Biology Topic 9: Ecosystems and material cycles",
+      "unit": "Biology 4: Ecology and the environment",
       "n": 3,
       "title": "Food chains, food webs and trophic levels",
       "duration": 50,
@@ -355,7 +359,7 @@
             "Biomass: usually a pyramid",
             "Energy: always a pyramid"
           ],
-          "note": "Edexcel GCSE Biology asks for explanations of shapes.",
+          "note": "Edexcel International GCSE Biology asks for explanations of shapes.",
           "compare": {
             "left": {
               "title": "Pyramid of numbers",
@@ -435,11 +439,13 @@
         "Direction of arrows?",
         "Which pyramid shows energy loss?"
       ],
-      "homework": "Edexcel GCSE Biology food web questions (8 marks).",
-      "send": "Support: food web templates. Stretch: oceanic pyramids."
+      "homework": "Edexcel International GCSE Biology food web questions (8 marks).",
+      "send": "Support: food web templates. Stretch: oceanic pyramids.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Biology Topic 9: Ecosystems and material cycles",
+      "unit": "Biology 4: Ecology and the environment",
       "n": 4,
       "title": "Energy transfer between trophic levels",
       "duration": 50,
@@ -556,11 +562,13 @@
         "Main way energy is lost?",
         "Why are food chains short?"
       ],
-      "homework": "Edexcel GCSE Biology energy-efficiency calculations.",
-      "send": "Support: calculation frame. Stretch: warm- and cold-blooded comparisons."
+      "homework": "Edexcel International GCSE Biology energy-efficiency calculations.",
+      "send": "Support: calculation frame. Stretch: warm- and cold-blooded comparisons.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Biology Topic 9: Ecosystems and material cycles",
+      "unit": "Biology 4: Ecology and the environment",
       "n": 5,
       "title": "The carbon cycle",
       "duration": 50,
@@ -684,11 +692,13 @@
         "Two processes that release CO₂?",
         "Where is carbon stored long-term?"
       ],
-      "homework": "Edexcel GCSE Biology carbon cycle questions (6 marks).",
-      "send": "Support: cycle diagram with blanks. Stretch: oceans as carbon sinks."
+      "homework": "Edexcel International GCSE Biology carbon cycle questions (6 marks).",
+      "send": "Support: cycle diagram with blanks. Stretch: oceans as carbon sinks.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Biology Topic 9: Ecosystems and material cycles",
+      "unit": "Biology 4: Ecology and the environment",
       "n": 6,
       "title": "The nitrogen cycle",
       "duration": 50,
@@ -743,7 +753,7 @@
           "bullets": [
             "Each stage relies on bacteria (except lightning and the Haber process)"
           ],
-          "note": "Edexcel GCSE Biology requires the names of processes and bacteria.",
+          "note": "Edexcel International GCSE Biology requires the names of processes and bacteria.",
           "table": {
             "head": [
               "Process",
@@ -837,11 +847,13 @@
         "Why can't plants use N₂?",
         "Why drain waterlogged soil?"
       ],
-      "homework": "Edexcel GCSE Biology nitrogen cycle exam question (6 marks).",
-      "send": "Support: labelled cycle with blanks. Stretch: Haber link."
+      "homework": "Edexcel International GCSE Biology nitrogen cycle exam question (6 marks).",
+      "send": "Support: labelled cycle with blanks. Stretch: Haber link.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Biology Topic 9: Ecosystems and material cycles",
+      "unit": "Biology 4: Ecology and the environment",
       "n": 7,
       "title": "Human influences: pollution and eutrophication",
       "duration": 50,
@@ -909,7 +921,7 @@
             "CO: toxic",
             "CO₂ and methane: greenhouse gases"
           ],
-          "note": "Link to Edexcel GCSE Biology 4.x on air pollution."
+          "note": "Link to 4BI1 Section 4 (human influences on the environment) on air pollution."
         },
         {
           "heading": "Deforestation",
@@ -981,11 +993,13 @@
         "Why do fish die in eutrophication?",
         "One effect of deforestation?"
       ],
-      "homework": "Edexcel GCSE Biology human influences exam questions; begin ecology revision mind map.",
-      "send": "Support: step cards to order. Stretch: data interpretation."
+      "homework": "Edexcel International GCSE Biology human influences exam questions; begin ecology revision mind map.",
+      "send": "Support: step cards to order. Stretch: data interpretation.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+      "unit": "Chemistry 4: Organic chemistry",
       "n": 8,
       "title": "Hydrocarbons and homologous series",
       "duration": 50,
@@ -1072,7 +1086,7 @@
             "Similar chemical properties",
             "Trend in physical properties (e.g. boiling point)"
           ],
-          "note": "Edexcel GCSE Chemistry definition."
+          "note": "Edexcel International GCSE Chemistry definition."
         },
         {
           "heading": "Using the general formula",
@@ -1133,155 +1147,21 @@
         "Define hydrocarbon.",
         "Formula of butane?"
       ],
-      "homework": "Edexcel GCSE Chemistry organic formula questions.",
-      "send": "Support: molecular model kit images. Stretch: naming rules."
+      "homework": "Edexcel International GCSE Chemistry organic formula questions.",
+      "send": "Support: molecular model kit images. Stretch: naming rules.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Chemistry Topic 8: Fuels and Earth science",
-      "title": "The Earth's atmosphere: past and present",
-      "duration": 50,
-      "bigQuestion": "Where did the oxygen we breathe come from?",
-      "objectives": [
-        "Describe how the early atmosphere formed and changed",
-        "Explain how oxygen increased and carbon dioxide decreased",
-        "Describe the test for oxygen"
-      ],
-      "successCriteria": [
-        "Describe the early atmosphere from volcanic activity",
-        "Explain the role of oceans, photosynthesis and sedimentary rocks",
-        "Evaluate the evidence for theories of the early atmosphere"
-      ],
-      "crossCurricular": "Biology: photosynthesis; Geography: climate change",
-      "smsc": "Spiritual: the sky as a protected canopy (Surah Al-Anbiya 21:32)",
-      "keywords": [
-        {
-          "term": "early atmosphere",
-          "def": "mainly carbon dioxide and water vapour from volcanoes, little or no oxygen"
-        },
-        {
-          "term": "photosynthesis",
-          "def": "plants and algae use carbon dioxide and release oxygen"
-        },
-        {
-          "term": "sedimentary rock",
-          "def": "rock that can lock up carbon, e.g. limestone"
-        },
-        {
-          "term": "glowing splint",
-          "def": "relights in oxygen"
-        }
-      ],
-      "starter": [
-        "Products of complete combustion?",
-        "Word equation for photosynthesis?",
-        "What % of air is nitrogen (roughly)?",
-        "Test for carbon dioxide?"
-      ],
-      "teach": [
-        {
-          "heading": "From volcanoes to oxygen",
-          "bullets": [
-            "A long story over billions of years"
-          ],
-          "note": "Answer the big question.",
-          "timeline": [
-            {
-              "label": "Early Earth",
-              "text": "volcanoes release CO₂ and water vapour"
-            },
-            {
-              "label": "Cooling",
-              "text": "water vapour condenses to form oceans"
-            },
-            {
-              "label": "Oceans",
-              "text": "CO₂ dissolves in the oceans"
-            },
-            {
-              "label": "Algae and plants",
-              "text": "photosynthesis adds O₂, removes CO₂"
-            },
-            {
-              "label": "Today",
-              "text": "about 78% N₂, 21% O₂, 0.04% CO₂"
-            }
-          ]
-        },
-        {
-          "heading": "Carbon locked away",
-          "bullets": [
-            "Shells and skeletons form limestone",
-            "Plants become coal; organisms become oil and gas"
-          ],
-          "note": "Link to fossil fuels from the crude oil lessons."
-        },
-        {
-          "heading": "Testing for oxygen",
-          "bullets": [
-            "Glowing splint relights"
-          ],
-          "note": "Edexcel GCSE test. Show video.",
-          "model": {
-            "problem": "Describe how to show a gas is oxygen",
-            "steps": [
-              "Light a wooden splint, then blow it out so it glows",
-              "Place the glowing splint into the gas",
-              "It relights: the gas is oxygen"
-            ],
-            "answer": "Glowing splint relights"
-          }
-        },
-        {
-          "heading": "Evidence is limited",
-          "bullets": [
-            "No one measured air 4 billion years ago"
-          ],
-          "note": "Scientists use rocks, ice cores and modern volcanoes.",
-          "misconception": {
-            "wrong": "Scientists know exactly what the early atmosphere was like",
-            "right": "Theories are based on indirect evidence and are still debated"
-          }
-        },
-        {
-          "heading": "Check: process",
-          "bullets": [],
-          "note": "Show me on 3.",
-          "check": {
-            "q": "Which process increased oxygen in the atmosphere?",
-            "options": [
-              "Volcanic activity",
-              "Photosynthesis by algae and plants",
-              "Combustion",
-              "Dissolving in oceans"
-            ],
-            "answer": 1,
-            "why": "Photosynthesis releases oxygen. Volcanoes released mainly CO₂ and water vapour."
-          }
-        }
-      ],
-      "practice": [
-        "Name two gases in the early atmosphere.",
-        "How did CO₂ levels fall?",
-        "Test for oxygen?"
-      ],
-      "independent": [
-        "Core: Write the story of the atmosphere in five steps.",
-        "Extend: Explain how carbon became locked in sedimentary rocks and fossil fuels.",
-        "Stretch: Evaluate why theories about the early atmosphere are uncertain."
-      ],
-      "exit": [
-        "Main gas in the early atmosphere?",
-        "Two ways CO₂ was removed?",
-        "What does a glowing splint show?"
-      ],
-      "homework": "Edexcel GCSE Chemistry Topic 8 atmosphere questions (8 marks).",
-      "send": "Support: timeline cards. Stretch: ice-core evidence.",
-      "n": 9
-    },
-    {
-      "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+      "unit": "Chemistry 4: Organic chemistry",
       "n": 10,
       "title": "Crude oil and fractional distillation",
+      "covers": [
+        "Chemistry 4.7",
+        "Chemistry 4.8",
+        "Chemistry 4.9",
+        "Chemistry 4.10"
+      ],
       "duration": 50,
       "bigQuestion": "How does a thick black liquid become petrol, diesel and bitumen?",
       "objectives": [
@@ -1333,7 +1213,7 @@
         {
           "heading": "Fractions and uses",
           "bullets": [
-            "Edexcel GCSE Chemistry named fractions"
+            "4CH1 named fractions"
           ],
           "note": "Learn top to bottom.",
           "table": {
@@ -1430,11 +1310,13 @@
         "Use of diesel?",
         "Why is the column hot at the bottom?"
       ],
-      "homework": "Edexcel GCSE Chemistry crude oil questions (8 marks).",
-      "send": "Support: column template. Stretch: supply and demand data."
+      "homework": "Edexcel International GCSE Chemistry crude oil questions (8 marks).",
+      "send": "Support: column template. Stretch: supply and demand data.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+      "unit": "Chemistry 4: Organic chemistry",
       "n": 11,
       "title": "Combustion of fuels and pollutants",
       "duration": 50,
@@ -1536,7 +1418,7 @@
             "Reduces oxygen transport",
             "Colourless, odourless"
           ],
-          "note": "Edexcel GCSE Chemistry asks for this explanation.",
+          "note": "Edexcel International GCSE Chemistry asks for this explanation.",
           "misconception": {
             "wrong": "Nitrogen oxides come from nitrogen in the fuel",
             "right": "They form from nitrogen and oxygen in the air at high temperatures"
@@ -1574,11 +1456,13 @@
         "How do NOₓ form?",
         "Effect of SO₂?"
       ],
-      "homework": "Edexcel GCSE Chemistry combustion equation practice.",
-      "send": "Support: balancing frame. Stretch: catalytic converter equations."
+      "homework": "Edexcel International GCSE Chemistry combustion equation practice.",
+      "send": "Support: balancing frame. Stretch: catalytic converter equations.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+      "unit": "Chemistry 4: Organic chemistry",
       "n": 12,
       "title": "Cracking",
       "duration": 50,
@@ -1635,7 +1519,7 @@
             "Heat to vaporise",
             "Silica or alumina catalyst at about 600–700 °C"
           ],
-          "note": "Edexcel GCSE Chemistry conditions."
+          "note": "Edexcel International GCSE Chemistry conditions."
         },
         {
           "heading": "Equations",
@@ -1697,11 +1581,13 @@
         "Catalyst used?",
         "Why is ethene useful?"
       ],
-      "homework": "Edexcel GCSE Chemistry cracking questions (6 marks).",
-      "send": "Support: atom-counting frame. Stretch: multi-product equations."
+      "homework": "Edexcel International GCSE Chemistry cracking questions (6 marks).",
+      "send": "Support: atom-counting frame. Stretch: multi-product equations.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+      "unit": "Chemistry 4: Organic chemistry",
       "n": 13,
       "title": "Alkanes and alkenes: reactions",
       "duration": 50,
@@ -1839,11 +1725,13 @@
         "Name the reaction type for alkenes with bromine.",
         "Why don't alkanes react with bromine water in the dark?"
       ],
-      "homework": "Edexcel GCSE Chemistry alkene questions (8 marks).",
-      "send": "Support: colour cards. Stretch: hydrogenation."
+      "homework": "Edexcel International GCSE Chemistry alkene questions (8 marks).",
+      "send": "Support: colour cards. Stretch: hydrogenation.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Chemistry Topics 8–9: Fuels, Earth science and organic chemistry",
+      "unit": "Chemistry 4: Organic chemistry",
       "n": 14,
       "title": "Addition polymers",
       "duration": 50,
@@ -1920,7 +1808,7 @@
             "Incineration: energy but toxic gases",
             "Recycling: sorting is difficult"
           ],
-          "note": "Edexcel GCSE Chemistry requires disposal problems.",
+          "note": "4CH1 4.47 requires disposal problems.",
           "table": {
             "head": [
               "Method",
@@ -1989,11 +1877,13 @@
         "Monomer of PVC?",
         "Why is landfill a problem for polymers?"
       ],
-      "homework": "Edexcel GCSE Chemistry polymer questions; start organic chemistry revision cards.",
-      "send": "Support: repeat-unit template. Stretch: condensation polymers preview (separate chemistry)."
+      "homework": "Edexcel International GCSE Chemistry polymer questions; start organic chemistry revision cards.",
+      "send": "Support: repeat-unit template. Stretch: condensation polymers preview (separate chemistry).",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Physics Topic 7: Astronomy (Physics only)",
+      "unit": "Physics 8: Astrophysics",
       "n": 15,
       "title": "Gravity and the Solar System",
       "duration": 50,
@@ -2042,7 +1932,7 @@
             "Eight planets",
             "Moons, dwarf planets, comets, asteroids"
           ],
-          "note": "Edexcel GCSE Physics Section 8."
+          "note": "4PH1 Section 8: Astrophysics."
         },
         {
           "heading": "Gravity and orbits",
@@ -2130,13 +2020,15 @@
         "Shape of a comet's orbit?",
         "Why do astronauts float?"
       ],
-      "homework": "Edexcel GCSE Physics Section 8 questions on gravity and orbits.",
-      "send": "Support: Solar System diagram. Stretch: Newton's cannonball."
+      "homework": "Edexcel International GCSE Physics Section 8 questions on gravity and orbits.",
+      "send": "Support: Solar System diagram. Stretch: Newton's cannonball.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Physics Topic 7: Astronomy (Physics only)",
+      "unit": "Physics 8: Astrophysics",
       "n": 16,
-      "title": "Orbital speed (stretch beyond GCSE)",
+      "title": "Orbital speed",
       "duration": 50,
       "bigQuestion": "How fast is the International Space Station moving?",
       "objectives": [
@@ -2183,7 +2075,7 @@
             "r in metres, T in seconds",
             "Distance round the orbit ÷ time"
           ],
-          "note": "Edexcel GCSE Physics formula."
+          "note": "Edexcel International GCSE Physics formula."
         },
         {
           "heading": "The ISS",
@@ -2245,11 +2137,13 @@
         "Units for T?",
         "What period does a geostationary satellite have?"
       ],
-      "homework": "Edexcel GCSE Physics orbital speed calculations.",
-      "send": "Support: calculation frame. Stretch: Kepler's third law preview."
+      "homework": "Edexcel International GCSE Physics orbital speed calculations.",
+      "send": "Support: calculation frame. Stretch: Kepler's third law preview.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Physics Topic 7: Astronomy (Physics only)",
+      "unit": "Physics 8: Astrophysics",
       "n": 17,
       "title": "The life cycle of stars",
       "duration": 50,
@@ -2299,7 +2193,7 @@
             "Fusion begins: main sequence",
             "Outward pressure balances gravity"
           ],
-          "note": "Edexcel GCSE Physics terms."
+          "note": "Edexcel International GCSE Physics terms."
         },
         {
           "heading": "Two paths",
@@ -2388,11 +2282,13 @@
         "What process powers stars?",
         "End stage of the most massive stars?"
       ],
-      "homework": "Edexcel GCSE Physics star life cycle questions.",
-      "send": "Support: card sort. Stretch: HR diagram preview."
+      "homework": "Edexcel International GCSE Physics star life cycle questions.",
+      "send": "Support: card sort. Stretch: HR diagram preview.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Physics Topic 7: Astronomy (Physics only)",
+      "unit": "Physics 8: Astrophysics",
       "n": 18,
       "title": "Classifying stars: colour and temperature",
       "duration": 50,
@@ -2479,7 +2375,7 @@
             "Absolute: at a standard distance (true output)",
             "Lower magnitude number = brighter"
           ],
-          "note": "Edexcel GCSE Physics terms."
+          "note": "Edexcel International GCSE Physics terms."
         },
         {
           "heading": "HR diagram",
@@ -2542,11 +2438,13 @@
         "What does absolute magnitude measure?",
         "Where is the main sequence?"
       ],
-      "homework": "Edexcel GCSE Physics HR diagram questions.",
-      "send": "Support: labelled HR diagram. Stretch: luminosity calculations."
+      "homework": "Edexcel International GCSE Physics HR diagram questions.",
+      "send": "Support: labelled HR diagram. Stretch: luminosity calculations.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Physics Topic 7: Astronomy (Physics only)",
+      "unit": "Physics 8: Astrophysics",
       "n": 19,
       "title": "Red-shift and the expanding universe",
       "duration": 50,
@@ -2678,11 +2576,13 @@
         "Red-shift equation?",
         "What does red-shift tell us about the universe?"
       ],
-      "homework": "Edexcel GCSE Physics red-shift calculation questions.",
-      "send": "Support: equation frame. Stretch: Hubble's law."
+      "homework": "Edexcel International GCSE Physics red-shift calculation questions.",
+      "send": "Support: equation frame. Stretch: Hubble's law.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
-      "unit": "Physics Topic 7: Astronomy (Physics only)",
+      "unit": "Physics 8: Astrophysics",
       "n": 20,
       "title": "Cosmic microwave background and evaluating the Big Bang",
       "duration": 50,
@@ -2820,8 +2720,10 @@
         "Evidence for expansion?",
         "Which theory explains the CMB?"
       ],
-      "homework": "Edexcel GCSE Physics Section 8 revision: astrophysics past-paper questions.",
-      "send": "Support: evidence cards. Stretch: dark matter."
+      "homework": "Edexcel International GCSE Physics Section 8 revision: astrophysics past-paper questions.",
+      "send": "Support: evidence cards. Stretch: dark matter.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 3: Reproduction and inheritance",
@@ -2965,8 +2867,8 @@
       ],
       "homework": "Find two examples of asexual reproduction in organisms and write one sentence on each.",
       "send": "SEND/EAL: pictures of runners, tubers and cuttings. Stretch: link to the future lesson on micropropagation.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 3: Reproduction and inheritance",
@@ -3116,8 +3018,8 @@
       ],
       "homework": "Draw a labelled flower and add arrows for pollen's path.",
       "send": "SEND/EAL: model flowers with labels. Stretch: describe how seeds are dispersed.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 3: Reproduction and inheritance",
@@ -3302,8 +3204,8 @@
       ],
       "homework": "Complete a summary sheet of the male and female systems and the cycle.",
       "send": "SEND/EAL: labelled diagrams with a glossary; offer a teacher-led alternative if families request it. Stretch: how does the contraceptive pill use hormones?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 3: Reproduction and inheritance",
@@ -3458,8 +3360,8 @@
       ],
       "homework": "Write a short paragraph on how a gene becomes a protein, using at least six key terms.",
       "send": "SEND/EAL: base-pair cards to physically match. Stretch: explain why the genetic code is described as universal.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 3: Reproduction and inheritance",
@@ -3603,8 +3505,8 @@
       ],
       "homework": "Complete three crosses with Punnett squares and ratios.",
       "send": "SEND/EAL: gamete cards to physically build squares. Stretch: what is a test cross?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 3: Reproduction and inheritance",
@@ -3744,8 +3646,8 @@
       ],
       "homework": "Design and solve two pedigree problems for a partner.",
       "send": "SEND/EAL: colour-coded pedigree symbols. Stretch: sex-linked inheritance of red–green colour blindness.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 3: Reproduction and inheritance",
@@ -3886,8 +3788,8 @@
       ],
       "homework": "Draw a diagram of a cell with 4 chromosomes dividing by mitosis and by meiosis.",
       "send": "SEND/EAL: chromosome cards to physically sort. Stretch: how does non-disjunction cause Down syndrome?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 3: Reproduction and inheritance",
@@ -4028,8 +3930,8 @@
       ],
       "homework": "Collect data on a continuous and a discontinuous feature in your family (with permission) and present it.",
       "send": "SEND/EAL: sorting cards with pictures. Stretch: why might a mutation be beneficial in a changing environment?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 3: Reproduction and inheritance",
@@ -4156,8 +4058,8 @@
       ],
       "homework": "Write a 150-word exam-style explanation of antibiotic resistance.",
       "send": "SEND/EAL: sequence cards of the stages. Stretch: why must people finish an antibiotic course even if they feel well?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 4: Ecology and the environment",
@@ -4326,8 +4228,8 @@
       ],
       "homework": "Plan a biodiversity survey of a school garden: method, variables and a risk assessment.",
       "send": "SEND/EAL: photographs of species with name cards. Stretch: name another measure such as an index of diversity.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 5: Use of biological resources",
@@ -4488,8 +4390,8 @@
       ],
       "homework": "Write a short plan for a school glasshouse to grow cucumbers, justifying each control.",
       "send": "SEND/EAL: pictures of glasshouse controls. Stretch: calculate cost-benefit if CO₂ enrichment costs £3 more.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 5: Use of biological resources",
@@ -4640,8 +4542,8 @@
       ],
       "homework": "Make a flow chart of yoghurt production with controlled conditions beside each step.",
       "send": "SEND/EAL: flow cards in order. Stretch: why do bakers add sugar to dough?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 5: Use of biological resources",
@@ -4768,8 +4670,8 @@
       ],
       "homework": "Research one crop or animal that has been selectively bred and summarise the changes.",
       "send": "SEND/EAL: before/after pictures of crops. Stretch: how does inbreeding increase recessive disorders?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 5: Use of biological resources",
@@ -4898,8 +4800,8 @@
       ],
       "homework": "Write a short paragraph explaining GM insulin to a person with diabetes.",
       "send": "SEND/EAL: step cards with diagrams. Stretch: how can the gene be made from mRNA?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Biology 5: Use of biological resources",
@@ -5056,8 +4958,8 @@
       ],
       "homework": "Write a balanced 150-word evaluation of GM crops.",
       "send": "SEND/EAL: diagrams with caption matching. Stretch: how are mitochondria DNA inherited in Dolly?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 3: Physical chemistry",
@@ -5206,8 +5108,8 @@
       ],
       "homework": "Write a method for finding the energy change on dissolving a salt, with a table of results.",
       "send": "SEND/EAL: formula triangle for Q; practice with small numbers. Stretch: compare the enthalpy values of different fuels.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 3: Physical chemistry",
@@ -5366,8 +5268,8 @@
       ],
       "homework": "Complete three bond-energy calculations and draw their energy diagrams.",
       "send": "SEND/EAL: step table for calculation (broken, made, difference). Stretch: effect of a catalyst on the diagram.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 3: Physical chemistry",
@@ -5564,8 +5466,8 @@
       ],
       "homework": "Explain in 100 words why food spoils faster in summer using collision theory.",
       "send": "SEND/EAL: particle diagrams for each factor. Stretch: use the initial gradient to find the initial rate.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 3: Physical chemistry",
@@ -5705,8 +5607,8 @@
       ],
       "homework": "Annotate two reaction profiles: one exothermic, one endothermic, each with and without catalyst.",
       "send": "SEND/EAL: pre-drawn axes to label. Stretch: why is platinum used in catalytic converters?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 3: Physical chemistry",
@@ -5863,8 +5765,8 @@
       ],
       "homework": "Write a summary table of the factors that change the position of equilibrium.",
       "send": "SEND/EAL: escalator analogy diagram; sentence frames. Stretch: link to Le Chatelier's principle.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 4: Organic chemistry",
@@ -6038,8 +5940,8 @@
       ],
       "homework": "Complete a naming worksheet for 10 compounds (alkanes, alkenes, alcohols, acids).",
       "send": "SEND/EAL: stem cards (meth, eth, prop...). Stretch: name a branched alkene.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 4: Organic chemistry",
@@ -6218,8 +6120,8 @@
       ],
       "homework": "Write a risk assessment for burning alcohols in a spirit burner.",
       "send": "SEND/EAL: comparison table scaffolds. Stretch: why does the boiling point increase with chain length?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 4: Organic chemistry",
@@ -6359,8 +6261,8 @@
       ],
       "homework": "Write an equation for making any ester and name all species.",
       "send": "SEND/EAL: flash cards for names (stem + yl/oate). Stretch: why does the reaction use an acid catalyst?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 4: Organic chemistry",
@@ -6530,8 +6432,8 @@
       ],
       "homework": "Make a summary diagram of polymers: addition, condensation and biopolymers.",
       "send": "SEND/EAL: colour-coded blocks on cards. Stretch: why does nylon have strong intermolecular forces?",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Chemistry (4CH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 5: Solids, liquids and gases",
@@ -6662,8 +6564,8 @@
       ],
       "homework": "Write the method for finding the density of a liquid, including a table headed with units and a way to improve accuracy.",
       "send": "SEND: give a formula triangle and a unit conversion card. EAL: pre-teach displace, meniscus. Stretch: use density to identify a metal.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 5: Solids, liquids and gases",
@@ -6815,8 +6717,8 @@
       ],
       "homework": "Explain in four sentences why camel feet or snowshoes spread weight, using the equation p = F ÷ A.",
       "send": "SEND: give a worked-example frame with units. EAL: pre-teach pascal, area, depth. Stretch: calculate total pressure including the atmosphere.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 5: Solids, liquids and gases",
@@ -6965,8 +6867,8 @@
       ],
       "homework": "Draw a flow diagram of the changes of state, annotated with the energy transfers, and write a paragraph on the plateau.",
       "send": "SEND: label-the-curve template with word bank. EAL: pre-teach latent, plateau, sublimation. Stretch: E = mL for latent heat calculations (check against the specification).",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 5: Solids, liquids and gases",
@@ -7099,8 +7001,8 @@
       ],
       "homework": "Write up the specific-heat-capacity experiment with a results table, an energy-temperature graph and an evaluation.",
       "send": "SEND: give a rearrangement triangle for ΔQ, m, c and Δθ. EAL: pre-teach capacity, insulate. Stretch: connect c to the particle model.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 5: Solids, liquids and gases",
@@ -7250,8 +7152,8 @@
       ],
       "homework": "Make a leaflet warning about the dangers of leaving aerosol cans in a hot car, with the particle explanation and one calculation.",
       "send": "SEND: give a conversion card and a step table (convert, substitute, rearrange). EAL: pre-teach random, collide, absolute. Stretch: the link between temperature and average kinetic energy.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 5: Solids, liquids and gases",
@@ -7386,8 +7288,8 @@
       ],
       "homework": "Complete a summary table of the two gas laws: variables kept constant, equation, graph shape and particle explanation.",
       "send": "SEND: give the two-law summary table with gaps. EAL: pre-teach compress, expand, constant. Stretch: combine laws as p₁V₁ ÷ T₁ = p₂V₂ ÷ T₂.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 6: Magnetism and electromagnetism",
@@ -7530,8 +7432,8 @@
       ],
       "homework": "Draw and label three field patterns (bar magnet, two unlike poles, two like poles) and write one sentence under each.",
       "send": "SEND: use a pre-drawn dot grid for field plotting. EAL: pre-teach pole, attract, repel, induced. Stretch: describe the Earth's magnetic field and how it protects against charged particles.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 6: Magnetism and electromagnetism",
@@ -7676,8 +7578,8 @@
       ],
       "homework": "Draw a labelled diagram of a relay and write the numbered steps showing how it works.",
       "send": "SEND: give a relay diagram with a word bank. EAL: pre-teach solenoid, armature, core. Stretch: investigate how field strength inside a solenoid varies with current.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 6: Magnetism and electromagnetism",
@@ -7824,8 +7726,8 @@
       ],
       "homework": "Draw a labelled d.c. motor and number the steps of a half rotation.",
       "send": "SEND: use a printed left-hand-rule fingers card. EAL: pre-teach commutator, brush, coil. Stretch: link F = BIL qualitatively to motor design (check the specification).",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 6: Magnetism and electromagnetism",
@@ -7968,8 +7870,8 @@
       ],
       "homework": "Draw a labelled diagram of an a.c. generator and write the steps to produce one cycle of output.",
       "send": "SEND: give a labelled generator diagram to cut and sequence. EAL: pre-teach induced, slip rings, cut field lines. Stretch: explain Lenz's law qualitatively.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 6: Magnetism and electromagnetism",
@@ -8109,8 +8011,8 @@
       ],
       "homework": "Draw the National Grid flow diagram from power station to home and explain the voltage changes at each stage.",
       "send": "SEND: give a flow-diagram template for the National Grid with sentence starters. EAL: pre-teach primary, secondary, transmit. Stretch: explain why real transformers are not perfectly efficient (eddy currents, resistance).",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 7: Radioactivity and particles",
@@ -8274,8 +8176,8 @@
       ],
       "homework": "Make a table of three elements with their protons, neutrons, electrons and symbols using nuclear notation, plus one isotope for each.",
       "send": "SEND: give a notation template with arrows pointing to A, Z, symbol. EAL: pre-teach nucleus, nucleon, isotope. Stretch: explain why nuclei with too many neutrons are unstable.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 7: Radioactivity and particles",
@@ -8427,8 +8329,8 @@
       ],
       "homework": "Draw a chart showing which absorber stops each type of radiation, and write a short caption explaining ionisation.",
       "send": "SEND: give a penetration diagram with the absorbers to label. EAL: pre-teach penetration, ionise, absorb. Stretch: explain deflection in electric and magnetic fields.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 7: Radioactivity and particles",
@@ -8579,8 +8481,8 @@
       ],
       "homework": "Write three balanced nuclear equations (alpha, beta, gamma) and check the sums for each.",
       "send": "SEND: give a balancing grid with A and Z columns. EAL: pre-teach daughter, emit, parent. Stretch: explain why beta emission needs an antineutrino (beyond the specification).",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 7: Radioactivity and particles",
@@ -8728,8 +8630,8 @@
       ],
       "homework": "Draw a decay graph for a sample of 1000 Bq with a half-life of 10 minutes for 0 to 50 minutes, labelling each half-life on the graph.",
       "send": "SEND: give a halving table to complete. EAL: pre-teach decay, halve, background. Stretch: link random decay to the exponential equation.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 7: Radioactivity and particles",
@@ -8881,8 +8783,8 @@
       ],
       "homework": "Write a fact file on one use of radioactivity, covering radiation type, half-life, why it is suitable and safety precautions.",
       "send": "SEND: give a table with use / radiation / reason to match. EAL: pre-teach irradiate, contaminate, tracer. Stretch: explain the ALARA principle.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 7: Radioactivity and particles",
@@ -9051,8 +8953,8 @@
       ],
       "homework": "Draw and label a diagram of a nuclear reactor and write a sentence for the function of each part.",
       "send": "SEND: give a labelled reactor diagram and a function matching task. EAL: pre-teach split, join, moderator, absorb. Stretch: explain mass defect qualitatively.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 8: Astrophysics",
@@ -9201,8 +9103,8 @@
       ],
       "homework": "Draw an elliptical orbit for a comet with the Sun marked and annotate the speed at three positions.",
       "send": "SEND: give an orbit diagram to annotate with arrows. EAL: pre-teach elliptical, geostationary, period. Stretch: derive the orbital speed from gravitational force (beyond the specification).",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 8: Astrophysics",
@@ -9390,8 +9292,8 @@
       ],
       "homework": "Create a revision poster showing the life cycle of a Sun-like star and a massive star, with one sentence on the forces involved at each stage.",
       "send": "SEND: sequencing cards for the life cycle and sentence starters for the six-mark answer. EAL: pre-teach galaxy, red-shift, evidence. Stretch: use the red-shift equation z = Δλ ÷ λ = v ÷ c.",
-      "board": "Pearson Edexcel International GCSE Physics (4PH1)",
-      "boardShort": "Edexcel IGCSE"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "n": 64,
@@ -9551,8 +9453,8 @@
       ],
       "homework": "Plan an investigation into dry mass of germinating cress seedlings over a week.",
       "send": "Support: sequencing cards. EAL: glossary for radicle and plumule. Stretch: why light-grown and dark-grown seedlings differ in shape (outside spec).",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
-      "boardShort": "Edexcel IGCSE Biology 4BI1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "n": 65,
@@ -9730,8 +9632,8 @@
       ],
       "homework": "Exam-style: 'Describe how a change in the DNA base sequence could lead to a different phenotype.' (4 marks).",
       "send": "Support: base-pair cards. EAL: bilingual vocabulary. Stretch: frameshift mutations and why they are more serious (not required).",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
-      "boardShort": "Edexcel IGCSE Biology 4BI1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "n": 66,
@@ -9905,8 +9807,8 @@
       ],
       "homework": "Family blood-group puzzle: work out possible genotypes for each person.",
       "send": "Support: Punnett square templates. EAL: simple definitions on a card. Stretch: inheritance of the Rhesus factor (outside spec).",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
-      "boardShort": "Edexcel IGCSE Biology 4BI1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "n": 67,
@@ -10067,8 +9969,8 @@
       ],
       "homework": "Build a food web for a local habitat and label each trophic level.",
       "send": "Support: food chain card sort. EAL: bilingual terms. Stretch: compare biodiversity in two habitats using sample data.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
-      "boardShort": "Edexcel IGCSE Biology 4BI1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "n": 68,
@@ -10239,8 +10141,8 @@
       ],
       "homework": "Research one greenhouse gas and make a fact card with a source, a human cause and a reduction.",
       "send": "Support: matching cards. EAL: key terms. Stretch: why CFCs also harm the ozone layer (verify).",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
-      "boardShort": "Edexcel IGCSE Biology 4BI1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "n": 69,
@@ -10420,8 +10322,8 @@
       ],
       "homework": "Write a 6-mark answer: 'Explain how human activities lead to global warming.'",
       "send": "Support: sentence starters 'This causes...'. EAL: diagrams. Stretch: evaluate solutions such as reforestation.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
-      "boardShort": "Edexcel IGCSE Biology 4BI1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "n": 70,
@@ -10596,8 +10498,8 @@
       ],
       "homework": "Exam-style: 'Explain why untreated sewage in a river can kill fish.' (4 marks).",
       "send": "Support: sequencing cards. EAL: pictorial flow. Stretch: evaluate sustainable farming methods.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
-      "boardShort": "Edexcel IGCSE Biology 4BI1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "n": 71,
@@ -10757,8 +10659,8 @@
       ],
       "homework": "Exam-style: 'Describe how you would investigate the effect of temperature on anaerobic respiration in yeast.' (6 marks).",
       "send": "Support: step cards for the method. EAL: key vocabulary. Stretch: explain why bread is baked at high temperatures.",
-      "board": "Pearson Edexcel International GCSE Biology (4BI1) and Science (Double Award) (4SD0)",
-      "boardShort": "Edexcel IGCSE Biology 4BI1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 3: Physical chemistry",
@@ -10925,8 +10827,8 @@
       ],
       "homework": "Write a plan to compare two fuels using the same apparatus. State the variables to control.",
       "send": "SEND/EAL: provide labelled diagrams and a substitution template. Stretch: explain why extrapolating the cooling curve improves accuracy.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 3: Physical chemistry",
@@ -11085,8 +10987,8 @@
       ],
       "homework": "Write a short explanation of how ammonium chloride seems to disappear and reappear.",
       "send": "SEND/EAL: provide a photo sequence and colour cards. Stretch: link to why sealed vessels allow equilibrium.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 4: Organic chemistry",
@@ -11252,8 +11154,8 @@
       ],
       "homework": "Make a one-page poster on the four homologous series in the course, with a general formula and an example for each.",
       "send": "SEND/EAL: provide molecular model pictures to compare isomers. Stretch: discuss why alkenes are more reactive than alkanes.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 4: Organic chemistry",
@@ -11414,8 +11316,8 @@
       ],
       "homework": "Write the equation for fermentation and explain two conditions needed.",
       "send": "SEND/EAL: provide displayed formula templates and sequencing cards. Stretch: link to enzyme denaturation.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Chemistry 4: Organic chemistry",
@@ -11576,8 +11478,8 @@
       ],
       "homework": "Find three esters in food or perfume ingredient lists and write the alcohol and acid for each.",
       "send": "SEND/EAL: provide naming cards (alcohol + acid). Stretch: explain why esters have lower boiling points than the acids from which they are made (no hydrogen bonding; verify).",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 5: Solids, liquids and gases",
@@ -11729,8 +11631,8 @@
       ],
       "homework": "Look up the greatest depth of the Mariana Trench (about 11 km) and estimate the pressure difference from the surface.",
       "send": "SEND/EAL: provide a formula triangle with units. Stretch: explain why pressure at a point acts equally in all directions.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 5: Solids, liquids and gases",
@@ -11883,8 +11785,8 @@
       ],
       "homework": "Make a labelled diagram of gas particles in a cool and a hot container and write a three-sentence explanation.",
       "send": "SEND/EAL: use a slow-motion particle animation and a sentence frame (faster, more often, harder). Stretch: relate the speed distribution to evaporation.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 6: Magnetism and electromagnetism",
@@ -12051,8 +11953,8 @@
       ],
       "homework": "Build or sketch an electromagnet with a nail and wire and describe how you would test it.",
       "send": "SEND/EAL: provide a labelled diagram and variable sorting cards. Stretch: explain how a relay uses a small current to switch a large one.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 6: Magnetism and electromagnetism",
@@ -12215,8 +12117,8 @@
       ],
       "homework": "Look at the label of a phone charger and record the input and output voltages and calculate the turns ratio.",
       "send": "SEND/EAL: provide a ratio template and labelled diagram. Stretch: calculate efficiency if the output is 90% of the input power.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 7: Radioactivity and particles",
@@ -12372,8 +12274,8 @@
       ],
       "homework": "Write a 100-word paragraph explaining why fusion could be a useful source of energy and why it is difficult.",
       "send": "SEND/EAL: use a magnet analogy and a labelled diagram. Stretch: explain magnetic confinement.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 8: Astrophysics",
@@ -12528,8 +12430,8 @@
       ],
       "homework": "Write a postcard from another planet explaining your weight and why your mass did not change.",
       "send": "SEND/EAL: provide a size-order card sort. Stretch: explain how standard form helps with large numbers.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 8: Astrophysics",
@@ -12679,8 +12581,8 @@
       ],
       "homework": "Create a labelled life-cycle diagram of the Sun with a one-sentence explanation for each stage.",
       "send": "SEND/EAL: provide stage cards for sorting with pictures. Stretch: explain why stable stars need a balance of forces.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 8: Astrophysics",
@@ -12829,8 +12731,8 @@
       ],
       "homework": "Draw the H-R diagram on a poster and add three notes explaining why red giants and white dwarfs are where they are.",
       "send": "SEND/EAL: provide a template diagram to complete. Stretch: link luminosity, temperature and radius (beyond specification; verify).",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     },
     {
       "unit": "Physics 8: Astrophysics",
@@ -12985,8 +12887,8 @@
       ],
       "homework": "Write a balanced paragraph: 'the Big Bang theory is well supported by evidence'. Use at least two pieces of evidence.",
       "send": "SEND/EAL: use the balloon model and a word bank. Stretch: discuss alternative theories and why they fell out of favour.",
-      "board": "Pearson Edexcel International GCSE (9-1) Chemistry 4CH1 and Physics 4PH1 (Science Double Award 4SD0)",
-      "boardShort": "Edexcel IGCSE 4CH1 · 4PH1"
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     }
   ]
 }

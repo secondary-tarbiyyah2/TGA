@@ -57,6 +57,14 @@ content/syllabus/
 }
 ```
 `year` is `Y10` or `Y11` (the recommended teaching year; the board allows two-year or flexible sequencing).
+
+Optional `examEntry`: set it when the course is taught from this (UK GCSE) specification but pupils are entered
+for a different qualification (TGA pupils sit Pearson Edexcel International GCSEs). Shape:
+`{ "summary", "board", "qualification", "code", "label", "tier", "papers", "series", "privateCandidates",
+"choice" (optional: why this version), "notes": ["what teachers must add or change for the exam"], "regulation",
+"checked", "sources": [{ "title", "url" }] }`. The portal then shows "Taught: … · Exam: …", the syllabus pack adds
+an exam-entry section, and lesson files carry `exam` / `examShort`. Verify every code and paper from the board's own
+specification, like the rest of the file.
 Every spec unit the board lists at section level must appear in `units` so the coverage list is complete.
 
 ## ks1-3/<slug>.json  (kind "syllabus")

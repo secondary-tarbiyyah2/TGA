@@ -23,6 +23,7 @@ import path from "node:path";
 import { createRequire } from "node:module";
 import { buildPlan } from "./lesson-plan.mjs";
 import { themeFor, makeParts } from "./deck-parts.mjs";
+import { retiredChecker } from "./retired.mjs";
 
 // Cross-curricular hubs: lessons that teach a hub's spec unit get a "Connect it" slide (see content/syllabus/matrices/hubs.json).
 const HUBS_BY_LESSON = (() => {
@@ -566,7 +567,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       parts.motif(s, theme, { x: 9.0, y: 1.65, w: 4.0, h: 4.85 });
       s.addImage({ path: LOGO_WHITE, x: 1.0, y: 0.6, w: 0.8 * LOGO_RATIO, h: 0.8 });
       s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: "Arial", fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
-      const chip = band === "junior" ? `MISSION ${lesson.n}  ·  ${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}` : `${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}${ks4 && (lesson.boardShort || lesson.board || file.boardShort || file.board) ? `  ·  ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board).toUpperCase()}` : ""}`;
+      const chip = band === "junior" ? `MISSION ${lesson.n}  ·  ${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}` : `${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}${ks4 && (file.examShort || file.exam) ? `  ·  EXAM: ${clean(file.examShort || file.exam).toUpperCase()}` : ks4 && (lesson.boardShort || lesson.board || file.boardShort || file.board) ? `  ·  ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board).toUpperCase()}` : ""}`;
       s.addText(chip, { x: 1.0, y: 2.2, w: 7.9, h: 0.45, fontFace: FONT, fontSize: Math.min(16, fitSize(chip, 7.0, 0.42, 16, 9)), bold: true, color: "E3C98F", charSpacing: 3, fit: "shrink" });
       s.addText(lesson.title, { x: 1.0, y: 2.75, w: 7.8, h: 2.0, fontFace: theme.head, fontSize: fitSize(lesson.title, fw(7.8, theme.head), 2.0, 46, 22), bold: true, color: "FFFFFF", valign: "top" });
       s.addText(clean(lesson.unit), { x: 1.0, y: 4.9, w: 7.8, h: 0.5, fontFace: FONT, fontSize: fitSize(lesson.unit, 7.8, 0.5, 20, 12), color: "D9D4C7" });
@@ -662,7 +663,9 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       s.addShape("roundRect", { x: 9.6, y: 2.15, w: 3.0, h: 4.6, rectRadius: 0.12, fill: { color: TEAL_SOFT }, line: { color: TEAL_SOFT, width: 0 } });
       s.addText("THE BIG PICTURE", { x: 9.85, y: 2.35, w: 2.5, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 2 });
       s.addText(clean(lesson.unit), { x: 9.85, y: 2.75, w: 2.5, h: 1.9, fontFace: FONT, fontSize: fitSize(lesson.unit, 2.5, 1.9, 20, 12), bold: true, color: INK, valign: "top" });
-      s.addText(ks4 && (lesson.board || file.board) ? `Exam board: ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board)}` : `Lesson ${lesson.n}`, { x: 9.85, y: 4.8, w: 2.5, h: 0.4, fontFace: FONT, fontSize: 14, color: TEAL, bold: true });
+      // examShort: the International GCSE pupils sit when the course is taught from a UK GCSE specification.
+      const boardText = ks4 && (file.examShort || file.exam) ? `Exam: ${clean(file.examShort || file.exam)}` : ks4 && (lesson.board || file.board) ? `Exam board: ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board)}` : `Lesson ${lesson.n}`;
+      s.addText(boardText, { x: 9.85, y: 4.8, w: 2.5, h: 0.4, fontFace: FONT, fontSize: fitSize(boardText, 2.5, 0.4, 14, 10), color: TEAL, bold: true });
       s.addText(nextLesson ? `Builds towards: ${clean(nextLesson.title)}` : "End of this sequence", { x: 9.85, y: 5.25, w: 2.5, h: 1.3, fontFace: FONT, fontSize: fitSize(nextLesson ? nextLesson.title + "Builds towards: " : "x", 2.5, 1.3, 14, 10), color: MUTED, valign: "top" });
     }
     const extras = [lesson.crossCurricular ? `Cross-curricular links: ${clean(lesson.crossCurricular)}` : "", lesson.smsc ? `SMSC: ${clean(lesson.smsc)}` : ""].filter(Boolean).join(" ");
@@ -928,19 +931,21 @@ function walk(d) {
 
 const manifest = [];
 let built = 0;
+const isRetired = retiredChecker();
 for (const f of walk(LESSONS).sort()) {
   const rel = path.relative(LESSONS, f).replace(/\.json$/, ""); // subject/year
   if (only && !rel.startsWith(only)) continue;
   const data = JSON.parse(fs.readFileSync(f, "utf8"));
   const [subjectSlug, year] = rel.split(path.sep);
   const file = { ...data, year: data.year || year, path: f };
-  const ordered = [...data.lessons].sort((a, b) => a.n - b.n);
-  for (const lesson of ordered) {
+  // Retired lessons (content/retired-lessons.json) are never built, so they cannot return to the portal.
+  const ordered = [...data.lessons].filter((l) => !isRetired(subjectSlug, year, l.n)).sort((a, b) => a.n - b.n);
+  for (const [i, lesson] of ordered.entries()) {
     if (built >= limit) break;
     const name = `${String(lesson.n).padStart(2, "0")}-${slug(lesson.title)}.pptx`;
     const dir = path.join(outDir, subjectSlug, year);
     fs.mkdirSync(dir, { recursive: true });
-    const next = ordered.find((l) => l.n === lesson.n + 1) || null;
+    const next = ordered[i + 1] || null; // the next lesson taught, even across a retired lesson's number
     // Two passes: the first records where each stage starts, the second adds the links.
     const first = buildDeck(file, lesson, next);
     const { pptx, slides, breaks, ctx } = buildDeck(file, lesson, next, first.ctx.rec);

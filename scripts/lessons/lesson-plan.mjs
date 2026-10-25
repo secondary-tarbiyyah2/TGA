@@ -114,7 +114,7 @@ export async function buildPlan(file, lesson, meta) {
   // Title block
   children.push(
     new Paragraph({
-      children: [new TextRun({ text: `${clean(file.subject).toUpperCase()}  ·  ${meta.yearLabel.toUpperCase()}${(lesson.board || file.board) && /^y1[01]$/.test(file.year) ? `  ·  ${clean(lesson.board || file.board).toUpperCase()}` : ""}`, font: FONT, size: 19, bold: true, color: accent, characterSpacing: 30 })],
+      children: [new TextRun({ text: `${clean(file.subject).toUpperCase()}  ·  ${meta.yearLabel.toUpperCase()}${(lesson.board || file.board) && /^y1[01]$/.test(file.year) ? `  ·  ${clean(lesson.board || file.board).toUpperCase()}` : ""}${(file.examShort || file.exam) && /^y1[01]$/.test(file.year) ? `  ·  EXAM: ${clean(file.examShort || file.exam).toUpperCase()}` : ""}`, font: FONT, size: 19, bold: true, color: accent, characterSpacing: 30 })],
       spacing: { after: 40 },
     }),
     para([run(`Lesson ${lesson.n}: ${lesson.title}`, { size: 36, bold: true })], { after: 40 }),
