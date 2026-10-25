@@ -152,7 +152,7 @@ export default async function HomePage() {
         <Container className="grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-gold-light/60 bg-white p-6">
             <h2 className="font-serif text-2xl font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h2>
-            <p className="mt-2 text-ink/75">{content.feeTeaserBody || 'Every fee is published on our website — nothing shared only "on enquiry." Annual, termly and monthly plans are available for every year group.'}</p>
+            <p className="mt-2 text-ink/75">{content.feeTeaserBody || 'Every fee is published on our website — nothing shared only "on enquiry." Annual, two-payment and monthly plans are available for every year group.'}</p>
             <Button href="/fees" variant="secondary" className="mt-5">
               See fees and payment plans
             </Button>

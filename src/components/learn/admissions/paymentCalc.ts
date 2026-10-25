@@ -72,7 +72,7 @@ export function summariseFees(args: {
     });
     plans.push({
       id: "termly",
-      label: `Termly (${sched.terms} payments)`,
+      label: `${sched.terms} payments`,
       firstPayment: sched.termly[0],
       detail: `first payment ${gbp(sched.termly[0])} of ${sched.terms}, ${gbp(sched.annual)} in total`,
     });

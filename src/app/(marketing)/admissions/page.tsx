@@ -66,11 +66,11 @@ export default async function AdmissionsPage() {
             <div className="rounded-2xl bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">{formatGBP(settings.registrationFee)}</p>
-              <p className="mt-1 text-sm text-ink/65">One-off, per child, due when you accept an offer. Covers account setup, platform licences and onboarding. Refundable only within the 14-day cancellation period.</p>
+              <p className="mt-1 text-sm text-ink/65">One-off, due when you accept an offer: £125 for each additional sibling. Covers account setup, platform licences and onboarding. Refundable only within the 14-day cancellation period.</p>
             </div>
           )}
           <p className="text-sm text-ink/70 sm:col-span-2">
-            Tuition is then paid on the dates in our Fees Policy: the whole year (with {settings.annualDiscountPercent ? `${settings.annualDiscountPercent}% off` : "a discount"}) or the first termly payment by 4 December 2026, or monthly from 28 December 2026. See the{" "}
+            Tuition is then paid on the dates in our Fees Policy: the whole year (with {settings.annualDiscountPercent ? `${settings.annualDiscountPercent}% off` : "a discount"}), the first of two payments or the first monthly payment is due with the registration fee by Friday 4 December 2026; the second payment is due on 28 March 2027, and monthly payments on the 28th of each month from 28 December 2026 to 28 June 2027. See the{" "}
             <Link href="/fees#estimator" className="font-semibold text-gold-700 underline">fee estimator</Link> for your family&apos;s figures.
           </p>
         </Container>
@@ -87,8 +87,8 @@ export default async function AdmissionsPage() {
             <Button href="/admissions/apply">Apply now</Button>
           </div>
           <p className="mt-4 text-xs text-ink/70">
-            Key admissions dates for the December 2026 launch will be published on our{" "}
-            <a href="/term-dates" className="underline">Term Dates</a> page once confirmed.
+            Key admissions dates for the December 2026 launch, including the 27 November application deadline and the 30 November to 4 December induction week, are on our{" "}
+            <a href="/term-dates" className="underline">Term Dates</a> page.
           </p>
         </Container>
       </section>

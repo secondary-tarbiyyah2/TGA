@@ -7,7 +7,7 @@ import { computeFeeSchedule, estimateFamilyFees, FEE_DEFAULTS, FEE_POLICY_DEFAUL
 
 const PLANS: { value: PaymentPlan; label: string }[] = [
   { value: "annual", label: "Annual (pay in full)" },
-  { value: "termly", label: "Termly" },
+  { value: "termly", label: "2 payments" },
   { value: "monthly", label: "Monthly" },
 ];
 
@@ -88,7 +88,7 @@ export function FeeEstimator({
   if (!estimate || !schedule) return null;
 
   const checkable = discounts.map((d, i) => ({ d, i })).filter(({ d }) => !d.appliesAutomatically);
-  const unitLabel = plan === "annual" ? "once, by 4 December 2026" : plan === "termly" ? "per term" : "per month";
+  const unitLabel = plan === "annual" ? "once, by 4 December 2026" : plan === "termly" ? "per payment" : "per month";
   const evenPayments = estimate.payments.every((p) => p === estimate.payments[0]);
   const sel = "mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm";
 
@@ -114,7 +114,7 @@ export function FeeEstimator({
             {PLANS.map((f) => (
               <option key={f.value} value={f.value}>
                 {f.label}
-                {f.value === "termly" ? ` (${schedule.terms} payments)` : f.value === "monthly" ? ` (${schedule.instalments} payments)` : ""}
+                {f.value === "termly" ? "" : f.value === "monthly" ? ` (${schedule.instalments} payments)` : ""}
               </option>
             ))}
           </select>
@@ -211,11 +211,11 @@ export function FeeEstimator({
               <span className="shrink-0">{formatGBP(estimate.applicationFeeTotal)}</span>
             </li>
             <li className="flex justify-between gap-3">
-              <span>Registration fee{childCount > 1 ? ` (${childCount} × ${formatGBP(registrationFee)})` : ""}<span className="block text-xs text-ink/70">One-off, due when you accept an offer.</span></span>
+              <span>Registration fee{childCount > 1 ? ` (${formatGBP(registrationFee)} + ${childCount - 1} × ${formatGBP(registrationFee / 2)} for each additional sibling)` : ""}<span className="block text-xs text-ink/70">One-off, due when you accept an offer.</span></span>
               <span className="shrink-0">{formatGBP(estimate.registrationFeeTotal)}</span>
             </li>
             <li className="flex justify-between gap-3">
-              <span>First {plan === "annual" ? "payment (the full year)" : plan === "termly" ? "term" : "month"}</span>
+              <span>First {plan === "annual" ? "payment (the full year)" : plan === "termly" ? "of two payments" : "month"}</span>
               <span className="shrink-0">{formatGBP(estimate.firstPayment)}</span>
             </li>
           </ul>

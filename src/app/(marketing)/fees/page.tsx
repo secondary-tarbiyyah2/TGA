@@ -35,12 +35,12 @@ export default async function FeesPage() {
           <Kicker>Fees &amp; Payment Plans</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Transparent fees, no surprises.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            Every figure is published here — nothing shared only on enquiry. Choose annual, termly or monthly
-            payment for any year group.
+            Every figure is published here — nothing shared only on enquiry. Choose to pay annually, in two payments
+            or monthly for any year group.
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/70">
             Live lessons launch in December 2026, so the fees below are for the shortened December 2026–July 2027 period.
-            Choose to pay annually, termly ({terms} payments) or monthly ({instalments} payments). All fees are
+            Choose to pay annually, in {terms} payments or monthly ({instalments} payments). All fees are
             inclusive of VAT. Examination fees are not included and are paid directly to the examination centre.
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/70">
@@ -55,12 +55,12 @@ export default async function FeesPage() {
         <Container>
           <div className="overflow-x-auto rounded-2xl border border-gold-light/50">
             <table className="w-full min-w-[560px] text-left text-sm">
-              <caption className="sr-only">Tuition fees by year group: annual total, termly and monthly instalments</caption>
+              <caption className="sr-only">Tuition fees by year group: annual total, {terms} payments and monthly instalments</caption>
               <thead className="bg-cream text-ink/70">
                 <tr>
                   <th scope="col" className="px-4 py-3 font-semibold">Year group</th>
                   <th scope="col" className="px-4 py-3 font-semibold">Annual (Dec 2026–Jul 2027)</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Termly ({terms} payments)</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">{terms} payments</th>
                   <th scope="col" className="px-4 py-3 font-semibold">Monthly ({instalments} payments)</th>
                 </tr>
               </thead>
@@ -90,7 +90,7 @@ export default async function FeesPage() {
           </div>
           <p className="mt-3 text-xs text-ink/70">
             Every payment plan adds up to exactly the annual total: each instalment is the annual fee divided by{" "}
-            {terms} termly or {instalments} monthly payments, and if the division leaves a few pence over they are
+            {terms} payments or {instalments} monthly payments, and if the division leaves a few pence over they are
             added to the final instalment. A {discountPercent}% discount applies when the annual option is chosen and
             paid in full by 4 December 2026.
           </p>
@@ -109,7 +109,7 @@ export default async function FeesPage() {
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
-              <p className="mt-1 text-sm text-ink/70">One-time, per child, due on acceptance of a place and no later than 4 December 2026.</p>
+              <p className="mt-1 text-sm text-ink/70">One-off, due on acceptance of a place and no later than 4 December 2026. £125 for each additional sibling. Refundable only within the 14-day cancellation period.</p>
             </div>
             {settings.siblingDiscountPercent != null && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">
@@ -125,7 +125,7 @@ export default async function FeesPage() {
             <p className="mb-8 max-w-2xl text-ink/70">{scheduleText}</p>
             <Kicker>Payment methods</Kicker>
             <p className="text-ink/70">
-              Fees can be paid by bank transfer or card. Full payment instructions are shared with your offer, after the assessment and interview. You then send proof of payment (a screenshot or receipt) to confirm your place.
+              Fees can be paid by standing order (preferred for monthly plans), card or bank transfer, using your child&apos;s full name as the reference. Full payment instructions are shared with your offer, after the assessment and interview. You then send proof of payment (a screenshot or receipt) to confirm your place.
             </p>
           </div>
         </Container>

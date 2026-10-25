@@ -195,7 +195,7 @@ export function NewChargeDialog({
               {(
                 [
                   ["Annual", band.annualFee],
-                  ["Termly", band.termlyFee],
+                  ["Each of 2 payments", band.termlyFee],
                   ["Monthly", band.monthlyFee],
                 ] as [string, number][]
               ).map(([label, v]) => (

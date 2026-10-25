@@ -41,7 +41,7 @@ export const homepageDefaults = {
     "The deen at the heart of the day — Qur'an, Islamic Studies and Arabic on the timetable at every key stage — with the full national curriculum to GCSE, taught live by qualified teachers.",
   fee_teaser_heading: "Transparent fees, no surprises.",
   fee_teaser_body:
-    'Every fee is published on our website — nothing shared only "on enquiry." Annual, termly and monthly plans are available for every year group.',
+    'Every fee is published on our website — nothing shared only "on enquiry." Annual, two-payment and monthly plans are available for every year group.',
   safe_heading: "Safe, open and accountable.",
   safe_body:
     "Every member of staff is vetted before they start (an enhanced DBS check in the UK, an overseas criminal record check for staff abroad), and a named Designated Safeguarding Lead is responsible for keeping children safe.",

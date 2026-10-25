@@ -294,7 +294,7 @@ function FeeSummary({
         </div>
         {plan && estimate.payments.length > 1 && (
           <div className="flex justify-between gap-4 text-ink/80">
-            <dt>{plan === "termly" ? `Paid in ${terms} terms` : `Paid in ${instalments} monthly payments`}</dt>
+            <dt>{plan === "termly" ? `Paid in ${terms} payments` : `Paid in ${instalments} monthly payments`}</dt>
             <dd>{evenPayments ? `${formatGBP(estimate.payments[0])} per ${unit}` : `${formatGBP(estimate.payments[0])} per ${unit}, final ${formatGBP(estimate.payments[estimate.payments.length - 1])}`}</dd>
           </div>
         )}
@@ -664,7 +664,7 @@ export function ApplyForm({
           <p className="mt-6 break-words rounded-lg bg-cream px-3 py-2 text-sm text-ink/80">
             You told us you expect to pay <strong>{values.paymentPlan}</strong>
             {names.length > 1 ? ` for ${names.length} children` : ""}. You can still change this before you accept an offer.
-            {registrationFee != null && ` The registration fee is ${formatGBP(registrationFee)} per child.`}
+            {registrationFee != null && ` The registration fee is ${formatGBP(registrationFee)}${names.length > 1 ? `, and ${formatGBP(registrationFee / 2)} for each additional sibling` : ""}.`}
             {names.length > 1 && estimate.totalDiscount > 0 && chosenPlan && ` Estimated tuition for the family, after discounts: ${formatGBP(estimate.total)}.`}
           </p>
         )}
@@ -941,7 +941,7 @@ export function ApplyForm({
         <>
           <Section title="Fees and plan" intro={`Here is what ${childLabel} would cost, with any sibling discount already applied.`}>
             <FeeSummary estimate={estimate} kids={kids} plan={chosenPlan} siblingPercent={sibPct} siblingNote={siblingDiscountNote} terms={terms} instalments={instalments} />
-            <Field id="f-paymentPlan" label="Payment plan you expect to use" error={errors.paymentPlan} hint="Annual, termly or monthly. This is only your intention; you confirm it when you accept an offer.">
+            <Field id="f-paymentPlan" label="Payment plan you expect to use" error={errors.paymentPlan} hint="Annual, 2 payments or monthly. This is only your intention; you confirm it when you accept an offer.">
               <select {...props("paymentPlan")} className={inputCls}>
                 <option value="">Select a plan</option>
                 {PAYMENT_PLAN_OPTIONS.map((p) => (

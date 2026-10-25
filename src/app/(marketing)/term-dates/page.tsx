@@ -37,9 +37,13 @@ export default async function TermDatesPage() {
                   <div>
                     <p className="font-medium text-ink">{d.label}</p>
                     <p className="text-xs text-ink/70">{d.kind}</p>
+                    {d.notes && <p className="mt-1 text-xs text-ink/70">{d.notes}</p>}
                   </div>
-                  <p className="text-sm font-semibold text-gold-700">
+                  <p className="text-right text-sm font-semibold text-gold-700">
                     {new Date(d.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}
+                    {d.endDate && d.endDate !== d.date && (
+                      <> – {new Date(d.endDate).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</>
+                    )}
                   </p>
                 </li>
               ))}

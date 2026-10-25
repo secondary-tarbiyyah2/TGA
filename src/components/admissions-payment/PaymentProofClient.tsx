@@ -14,7 +14,7 @@ const COVERS = [
 ] as const;
 const PLANS = [
   { id: "monthly", label: "Monthly instalments" },
-  { id: "termly", label: "Termly payments" },
+  { id: "termly", label: "2 payments" },
   { id: "annual", label: "Annual, paid in full" },
 ] as const;
 

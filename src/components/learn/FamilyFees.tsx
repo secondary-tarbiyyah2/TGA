@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { matchFeeBand } from "@/lib/learn/fees";
+import { estimateFamilyFees, FEE_DEFAULTS } from "@/lib/fees";
 import { formatGBP } from "@/lib/format";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { FeeBand } from "@/content/seed";
@@ -61,6 +62,11 @@ export function FamilyFees({ familyChildren }: { familyChildren: Child[] }) {
   if (rows.length === 0) return null;
 
   const hasSiblingDiscount = (siblingDiscountPercent ?? 0) > 0 && enrolledCount >= 2;
+  // Prospectus p.18 / Fees Policy: the discount is on the younger siblings' tuition
+  // (5% second child, 10% third and later), never on the first child.
+  const sibling = hasSiblingDiscount
+    ? estimateFamilyFees({ children: rows.map((r) => ({ label: r.child.name, annual: r.band.annualFee })), plan: "annual", terms: FEE_DEFAULTS.terms, instalments: FEE_DEFAULTS.instalments, annualDiscountPercent: 0, siblingDiscountPercent, applicationFee: 0, registrationFee: 0 }).perChild
+    : null;
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
@@ -68,8 +74,8 @@ export function FamilyFees({ familyChildren }: { familyChildren: Child[] }) {
       <p className="mt-1 text-sm text-ink/65">Based on each child&apos;s year group, from the published fee table.</p>
 
       <div className="mt-4 space-y-3">
-        {rows.map(({ child, band }) => {
-          const discount = hasSiblingDiscount ? (band.annualFee * (siblingDiscountPercent as number)) / 100 : 0;
+        {rows.map(({ child, band }, i) => {
+          const discount = sibling?.[i]?.siblingDiscount ?? 0;
           return (
             <div key={child.id} className="rounded-xl bg-cream p-4">
               <div className="flex items-center justify-between">
@@ -80,7 +86,7 @@ export function FamilyFees({ familyChildren }: { familyChildren: Child[] }) {
                 <span className="text-ink/70">Annual fee</span>
                 <span className="font-medium text-ink">{formatGBP(band.annualFee)}</span>
               </div>
-              {hasSiblingDiscount && (
+              {discount > 0 && (
                 <div className="mt-1 flex items-center justify-between text-sm text-gold-700">
                   <span>Sibling discount{siblingDiscountNote ? ` (${siblingDiscountNote})` : ""}</span>
                   <span>−{formatGBP(discount)}</span>

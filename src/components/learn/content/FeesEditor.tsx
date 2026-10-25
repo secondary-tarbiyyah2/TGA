@@ -203,12 +203,12 @@ export function FeesEditor() {
 
   return (
     <div className="space-y-6">
-      <Card title="Fee schedule settings" description="Applies to every band. Termly and monthly amounts are worked out from the annual fee — you never type them.">
+      <Card title="Fee schedule settings" description="Applies to every band. The two-payment and monthly amounts are worked out from the annual fee — you never type them.">
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="text-sm text-ink">
             Number of terms
             <input type="text" inputMode="decimal" min={1} max={MAX_TERMS} step={1} value={settings.fee_terms} onChange={(e) => setSettings({ ...settings, fee_terms: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_DEFAULTS.terms} (Fees Policy: 4 Dec 2026 and 28 Mar 2027). Termly fee = annual fee ÷ terms.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_DEFAULTS.terms} (Fees Policy: 4 Dec 2026 and 28 Mar 2027). Each payment = annual fee ÷ number of payments.</span>
           </label>
           <label className="text-sm text-ink">
             Number of monthly instalments
@@ -361,7 +361,7 @@ export function FeesEditor() {
               <tr>
                 <th className="px-3 py-2 font-semibold">Band</th>
                 <th className="px-3 py-2 font-semibold">Annual total</th>
-                <th className="px-3 py-2 font-semibold">Termly ({live.terms})</th>
+                <th className="px-3 py-2 font-semibold">{live.terms} payments</th>
                 <th className="px-3 py-2 font-semibold">Monthly ({live.instalments})</th>
                 <th className="px-3 py-2 font-semibold">Sum check</th>
               </tr>

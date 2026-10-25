@@ -152,7 +152,7 @@ export function ageFromDob(dob: string): string {
 
 export const PAYMENT_PLAN_OPTIONS = [
   { value: "annual", label: "Annual (pay in full)" },
-  { value: "termly", label: "Termly" },
+  { value: "termly", label: "2 payments" },
   { value: "monthly", label: "Monthly" },
 ] as const;
 export type PaymentPlanIntent = (typeof PAYMENT_PLAN_OPTIONS)[number]["value"];
@@ -214,20 +214,20 @@ export function admissionsProcessSteps(fees: { applicationFee?: number; registra
     {
       title: "Family video call",
       owner: "together",
-      short: "A conversation with you and your child. We decide within ten working days.",
-      body: "A video call with a member of the leadership team, you (the parent or guardian) and your child, about learning goals, values and any support needs. We normally give you our decision within ten working days of a complete application.",
+      short: "A conversation with you and your child. Offers are normally made within three working days.",
+      body: "A video call with the Headteacher or a member of the leadership team, you (the parent or guardian) and your child, about learning goals, values and any support needs. Offers are made in writing, normally within three working days of the meeting (and within ten working days of a complete application).",
     },
     {
       title: "Offer and securing your place",
       owner: "you",
-      short: `We email the offer. Accept within five working days and pay the ${reg} registration fee to secure your place.`,
-      body: `We email you a conditional offer with the terms and conditions. To accept, reply within five working days and pay the ${reg} registration fee (and the ${app} application fee, if not already paid), sending proof of payment. Tuition is then paid on the dates in the Fees Policy: annually or the first termly payment by 4 December 2026, or monthly from 28 December 2026. You can cancel within 14 days of accepting, as the Fees Policy explains.`,
+      short: `We email the offer. Accept within five working days and pay the ${reg} registration fee and first fee payment to secure your place.`,
+      body: `We email you a conditional offer with the terms and conditions. To accept, reply within five working days and pay the ${reg} registration fee (£125 for each additional sibling) and the ${app} application fee, if not already paid, sending proof of payment. The first tuition payment (the whole year, the first of two payments, or the first monthly payment) is due by Friday 4 December 2026; the rest follow the Fees Policy (28 March 2027 for the second of two payments; the 28th of each month from 28 December 2026 to 28 June 2027 for monthly). You can cancel within 14 days of accepting, as the Fees Policy explains.`,
     },
     {
       title: "Welcome",
       owner: "us",
-      short: "We create your accounts and take you through onboarding.",
-      body: "We create your parent and pupil accounts, email you the sign-in details, and take you through onboarding ahead of live lessons in December 2026.",
+      short: "We create your accounts; induction week runs 30 November to 4 December.",
+      body: "We create your parent and pupil accounts, email you the sign-in details, and welcome your child to induction week (30 November to 4 December 2026) to set up accounts, test devices and meet teachers, ahead of the first live lessons on Monday 7 December 2026.",
     },
   ];
 }

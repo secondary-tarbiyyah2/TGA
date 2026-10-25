@@ -205,7 +205,7 @@ export function buildFamilyFeesText(family: FamilyInput | null | undefined): str
     const afterSibling = usable.perChild.reduce((sum, f) => sum + f.net, 0);
     const annualOff = Math.round((afterSibling - usable.total) * 100) / 100;
     if (annualOff > 0.004) lines.push(`Annual payment discount: -${gbp(annualOff)}`);
-    const how = usable.plan === "annual" ? "paid in full" : usable.plan === "termly" ? "paid termly" : "paid monthly";
+    const how = usable.plan === "annual" ? "paid in full" : usable.plan === "termly" ? "paid in 2 payments" : "paid monthly";
     lines.push(`Estimated total: ${gbp(usable.total)} (${how}).`);
     lines.push("This is an estimate only. Your offer confirms the exact fees.");
   }
@@ -625,7 +625,7 @@ export const SAMPLE_APP: AppInput = {
   child_first_name: "Yusuf",
   child_last_name: "Rahman",
   year_group_applying: "Year 4",
-  preferred_start: "January 2027",
+  preferred_start: "December 2026",
   assessment_at: "2026-11-09T10:00:00.000Z",
   interview_at: "2026-11-16T16:30:00.000Z",
   offer_deadline: null,
@@ -639,24 +639,24 @@ export const SAMPLE_STAGE: StageInput = {
   assessment_duration_text: null,
   interview_interviewer: "Mrs Aisha Khan",
   interview_link: "https://teams.microsoft.com/l/meetup-join/sample-interview",
-  offer_start_date: "2027-01-11",
+  offer_start_date: "2026-12-07",
 };
 
 export const SAMPLE_FEES: FeesInput = {
-  applicationFee: 100,
+  applicationFee: 50,
   applicationFeeReceived: false,
-  registrationFee: 150,
-  annualFee: 3500,
+  registrationFee: 250,
+  annualFee: 2282,
   plans: [
-    { id: "monthly", label: "Monthly (7 instalments)", firstPayment: 500, detail: "first instalment £500 of 7, £3,500 in total" },
-    { id: "termly", label: "Termly (2 payments)", firstPayment: 1750, detail: "first payment £1,750 of 2, £3,500 in total" },
-    { id: "annual", label: "Annual, paid in full", firstPayment: 3430, detail: "£3,430 after the £70 discount if paid in full by 19 December 2026" },
+    { id: "monthly", label: "Monthly (8 instalments)", firstPayment: 285.25, detail: "first instalment £285.25 of 8, £2,282 in total" },
+    { id: "termly", label: "2 payments", firstPayment: 1141, detail: "first payment £1,141 of 2, £2,282 in total" },
+    { id: "annual", label: "Annual, paid in full", firstPayment: 2236.36, detail: "£2,236.36 after the £45.64 discount if paid in full by 4 December 2026" },
   ],
 };
 
 export const SAMPLE_EXTRA = {
   payment_covers: "Registration fee, First payment",
-  payment_amount: "£650",
+  payment_amount: "£535.25",
   reject_reason: "The screenshot was cropped and the amount could not be read.",
   reject_item: "the file \"receipt.png\"",
 };

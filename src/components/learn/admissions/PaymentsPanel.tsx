@@ -36,7 +36,7 @@ type Proof = {
 
 const PROOF_COLUMNS = "id, submission_id, kind, covers, plan, amount_claimed, family_note, file_path, file_name, content_type, size_bytes, uploaded_at, status, amount_verified, verified_by, verified_at, note";
 const COVER_LABELS: Record<string, string> = { application_fee: "Application fee", registration_fee: "Registration fee", first_payment: "First payment" };
-const PLAN_LABELS: Record<PlanId, string> = { annual: "Annual", termly: "Termly", monthly: "Monthly" };
+const PLAN_LABELS: Record<PlanId, string> = { annual: "Annual", termly: "2 payments", monthly: "Monthly" };
 const today = () => new Date().toISOString().slice(0, 10);
 
 export function PaymentsPanel({
