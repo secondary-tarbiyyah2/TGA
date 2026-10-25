@@ -8,7 +8,7 @@ import { getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Open Evenings & Taster Morning",
-  description: "Register for a virtual open evening (12 and 15 November) or the taster morning (14 November) ahead of our December 2026 launch.",
+  description: "Register for a virtual open evening (12 and 22 November) or the taster morning (21 November) ahead of our December 2026 launch.",
   path: "/open-evening",
 });
 

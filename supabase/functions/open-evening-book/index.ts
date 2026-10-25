@@ -119,13 +119,18 @@ Deno.serve(async (req) => {
   const bookingId = r.booking_id as string;
   // Self-service link: store only the hash, send the token in the email.
   const manageToken = generateToken();
-  await supabase.from("open_evening_bookings").update({ manage_token_hash: await hashToken(manageToken) }).eq("id", bookingId);
   const manageUrl = `${SITE_URL}/open-evening/manage/?token=${manageToken}`;
   const { data: session } = await supabase
     .from("open_evening_sessions")
     .select("title, description, starts_at, ends_at, join_url")
     .eq("id", sessionId)
     .single();
+  // notified_starts_at: the time this family has been told. If an admin later
+  // moves the session, open-evening-reminders sends a "new date" notice.
+  await supabase
+    .from("open_evening_bookings")
+    .update({ manage_token_hash: await hashToken(manageToken), notified_starts_at: session?.starts_at ?? null })
+    .eq("id", bookingId);
 
   // The booking is already saved. Everything below is best effort and never
   // changes the answer the parent sees, but failures are logged so "I never
