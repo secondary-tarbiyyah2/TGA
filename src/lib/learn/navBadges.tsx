@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { PortalArea } from "@/lib/learn/nav";
 
-export type NavBadgeKey = "actions" | "messages" | "todo";
+export type NavBadgeKey = "actions" | "messages" | "todo" | "review";
 export type NavBadges = Partial<Record<NavBadgeKey, number>>;
 
 const KEY = (area: string) => `tga-nav-badges:${area}`;
@@ -36,6 +36,11 @@ async function load(area: PortalArea): Promise<NavBadges> {
         supabase.from("absence_followups").select("id", { count: "exact", head: true }).in("status", ["open", "contacted", "escalated"]),
       ]);
       out.actions = (hw.count || 0) + (fu.count || 0);
+      if (area === "teach") {
+        // Work handed in and not yet returned (the To review page's own source).
+        const { count } = await supabase.from("homework_review_queue").select("submission_id", { count: "exact", head: true });
+        out.review = count || 0;
+      }
     } else {
       // A pupil's (or family's) own homework: RLS already limits rows to their children.
       const since = new Date(Date.now() - 30 * DAY).toISOString();

@@ -69,7 +69,7 @@ export function HomeworkWorkspace({
     <>
       <PageHeader
         crumbs={crumbs}
-        title="Homework"
+        title={scope === "admin" ? "All classwork" : "All homework"}
         subtitle={subtitle}
         actions={
           tab === "set" && !formOpen ? (

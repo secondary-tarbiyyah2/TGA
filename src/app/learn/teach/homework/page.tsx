@@ -38,7 +38,7 @@ function TeachHomeworkContent() {
   return (
     <HomeworkWorkspace
       scope="teach"
-      subtitle="Set homework for your classes, then mark what is handed in."
+      subtitle="Homework across all your classes. To set and mark work for one class, open the class and use its Classwork tab."
       classes={classes}
       homework={homework}
       showDeleted={showDeleted}

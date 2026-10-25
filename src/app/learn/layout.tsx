@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { LearnLayoutShell } from "@/components/learn/LearnLayoutShell";
 
 // The portal gets its own browser-tab title and description rather than
@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   appleWebApp: { capable: true, title: "TGA Portal", statusBarStyle: "default" },
   icons: { apple: "/app-apple-touch-icon.png" },
 };
+
+// The installed app's title bar (and a phone's status bar) matches the
+// portal's white top bar rather than the marketing site's dark header.
+export const viewport: Viewport = { themeColor: "#FFFFFF" };
 
 export default function LearnLayout({ children }: { children: React.ReactNode }) {
   return <LearnLayoutShell>{children}</LearnLayoutShell>;

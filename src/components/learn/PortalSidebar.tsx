@@ -27,6 +27,9 @@ function initialsOf(name: string): string {
   return ((parts[0]?.[0] || "") + (parts.length > 1 ? parts[parts.length - 1][0] : "")).toUpperCase() || "?";
 }
 
+/** Unread messages and work to mark are blue counts; things overdue are red. */
+const isAlertBadge = (i: SidebarItem) => i.badge !== "messages" && i.badge !== "review";
+
 const OPEN_KEY = (area: PortalArea) => `tga-nav-open:${area}`;
 
 /** Which sections are open. Remembered per browser and per area; the
@@ -86,7 +89,7 @@ function NavLink({ item, active, collapsed, onNavigate, count }: { item: Sidebar
         <Icon name={item.icon} />
       </span>
       {!collapsed && <span className="min-w-0 flex-1 truncate">{item.label}</span>}
-      {!collapsed && <NavBadge count={count} alert={item.badge !== "messages"} />}
+      {!collapsed && <NavBadge count={count} alert={isAlertBadge(item)} />}
       {collapsed && !!count && <span aria-hidden="true" className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-700" />}
     </Link>
   );
@@ -114,6 +117,8 @@ function NavSection({
   badges: NavBadges;
 }) {
   const panelId = useId();
+  // A closed section still says something inside it is waiting.
+  const waiting = section.items.reduce((n, i) => n + ((i.badge && badges[i.badge]) || 0), 0);
   if (collapsed) {
     // Icon rail: the section's icon opens the full sidebar with this section open.
     return (
@@ -121,12 +126,13 @@ function NavSection({
         type="button"
         onClick={onExpandTo}
         title={section.label}
-        aria-label={`${section.label} (open sidebar)`}
-        className={`portal-nav-row justify-center ${hasActive ? "portal-nav-row--active" : ""}`}
+        aria-label={`${section.label} (open sidebar)${waiting ? `, ${waiting} waiting` : ""}`}
+        className={`portal-nav-row relative justify-center ${hasActive ? "portal-nav-row--active" : ""}`}
       >
         <span className={`portal-tile ${tileFor(section.icon)}`} aria-hidden="true">
           <Icon name={section.icon} />
         </span>
+        {!!waiting && <span aria-hidden="true" className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-700" />}
       </button>
     );
   }
@@ -143,6 +149,7 @@ function NavSection({
           <Icon name={section.icon} />
         </span>
         <span className="min-w-0 flex-1 truncate text-left">{section.label}</span>
+        {!isOpen && !!waiting && <span aria-label={`${waiting} waiting`} className="h-2 w-2 shrink-0 rounded-full bg-red-700" />}
         <Icon name="chevronDown" className={`h-4 w-4 shrink-0 text-ink/65 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
       </button>
       <div id={panelId} className="portal-nav-panel" data-open={isOpen || undefined} inert={!isOpen || undefined}>
@@ -153,7 +160,7 @@ function NavSection({
               <li key={i.href}>
                 <Link href={i.href} onClick={onNavigate} aria-current={active ? "page" : undefined} className={`portal-nav-sub flex items-center gap-2 ${active ? "portal-nav-sub--active" : ""}`}>
                   <span className="min-w-0 flex-1 truncate">{i.label}</span>
-                  <NavBadge count={i.badge ? badges[i.badge] : undefined} alert={i.badge !== "messages"} />
+                  <NavBadge count={i.badge ? badges[i.badge] : undefined} alert={isAlertBadge(i)} />
                 </Link>
               </li>
             );
@@ -221,15 +228,15 @@ function SidebarBody({
 
   return (
     <div className="flex h-full flex-col">
-      <div className={`flex h-[68px] shrink-0 items-center ${collapsed ? "justify-center px-2" : "justify-between gap-2 pl-5 pr-3"}`}>
+      <div className={`portal-sidebar-head flex h-[68px] shrink-0 items-center ${collapsed ? "justify-center px-2" : "justify-between gap-2 pl-5 pr-3"}`}>
         {collapsed ? (
-          <button type="button" onClick={onToggle} title="Open sidebar" aria-label="Open sidebar" className="portal-icon-btn">
-            <Icon name="panelLeftOpen" className="h-5 w-5" />
-          </button>
+          <Link href={areas.find((a) => a.startsWith(`/${area}/`)) || areas[0] || "/"} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home" title="Home">
+            <Image src="/brand/ga-logo-square.png" alt="" width={36} height={36} priority className="h-9 w-9 max-w-none rounded-lg" />
+          </Link>
         ) : (
           <>
-            <Link href={areas.find((a) => a.startsWith(`/${area}/`)) || areas[0] || "/"} onClick={onNavigate} className="min-w-0">
-              <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={128} height={39} priority />
+            <Link href={areas.find((a) => a.startsWith(`/${area}/`)) || areas[0] || "/"} onClick={onNavigate} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home">
+              <Image src="/brand/ga-wordmark.png" alt="" width={128} height={39} priority className="h-[38px] w-[128px] max-w-none object-contain" />
             </Link>
             {onToggle && (
               <button type="button" onClick={onToggle} title="Collapse sidebar" aria-label="Collapse sidebar" className="portal-icon-btn">
@@ -240,7 +247,12 @@ function SidebarBody({
         )}
       </div>
 
-      <div className={collapsed ? "px-2 pb-1" : "px-3 pb-1"}>
+      <div className={collapsed ? "space-y-0.5 px-2 pb-1" : "px-3 pb-1"}>
+        {collapsed && (
+          <button type="button" onClick={onToggle} title="Open sidebar" aria-label="Open sidebar" className="portal-nav-row w-full justify-center">
+            <Icon name="panelLeftOpen" className="h-5 w-5" />
+          </button>
+        )}
         <button
           type="button"
           onClick={() => window.dispatchEvent(new Event("tga:open-search"))}

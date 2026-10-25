@@ -5,10 +5,10 @@ import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchAllClasses, fetchChildClasses, fetchTeacherClasses, readRecentPages, type ClassSummary } from "@/lib/learn/classes";
-import { visibleSidebar, type PortalArea } from "@/lib/learn/nav";
+import { visiblePages, type PortalArea } from "@/lib/learn/nav";
 import { Icon } from "@/components/learn/Icon";
 
-type Item = { id: string; group: "Recent" | "Pages" | "Classes" | "People"; label: string; hint?: string; href: string };
+type Item = { id: string; group: "Recent" | "Pages" | "Classes" | "People"; label: string; hint?: string; href: string; keywords?: string };
 type PersonHit = { id: string; full_name: string | null; email: string | null };
 
 const GROUPS: Item["group"][] = ["Recent", "Pages", "Classes", "People"];
@@ -141,7 +141,8 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
 
   const items = useMemo((): Item[] => {
     const q = query.trim().toLowerCase();
-    const pages: Item[] = visibleSidebar(area, roles).map((p) => ({ id: `page:${p.href}`, group: "Pages", label: p.label, href: p.href }));
+    // Every page, hub tabs included: "Absences" shows as "Absences · Attendance".
+    const pages: Item[] = visiblePages(area, roles).map((p) => ({ id: `page:${p.href}`, group: "Pages", label: p.label, hint: p.parent, href: p.href, keywords: p.hint }));
     const cls: Item[] = (classes || []).map((c) => ({
       id: `class:${c.id}`,
       group: "Classes",
@@ -154,8 +155,11 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
       return { id: `person:${p.id}`, group: "People", label: name, hint: p.full_name ? p.email || undefined : undefined, href: `/admin/people?q=${encodeURIComponent(name)}` };
     });
     if (!q) return [...recent.slice(0, 5), ...pages.slice(0, 8)];
-    const match = (i: Item) => i.label.toLowerCase().includes(q) || (i.hint || "").toLowerCase().includes(q);
-    return [...pages.filter(match).slice(0, 8), ...cls.filter(match).slice(0, 8), ...ppl];
+    const match = (i: Item) => `${i.label} ${i.hint || ""} ${i.keywords || ""}`.toLowerCase().includes(q);
+    // Pages whose name matches come before ones that only match their description.
+    const named = pages.filter((i) => `${i.label} ${i.hint || ""}`.toLowerCase().includes(q));
+    const described = pages.filter((i) => !named.includes(i) && match(i));
+    return [...[...named, ...described].slice(0, 10), ...cls.filter(match).slice(0, 8), ...ppl];
   }, [query, area, roles, classes, people, recent]);
 
   useEffect(() => {

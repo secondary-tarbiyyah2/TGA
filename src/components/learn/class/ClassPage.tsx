@@ -14,6 +14,10 @@ import { ClassSettingsTab } from "@/components/learn/class/ClassSettingsTab";
 import { fetchClassSettings, overallPercent, type ClassSettings, type GradeCategory } from "@/lib/learn/classSettings";
 import { MeetYourTeachers } from "@/components/learn/staff/MeetYourTeachers";
 import { JoinLessonCard } from "@/components/learn/live/JoinLessonCard";
+import { ClassGradebook } from "@/components/learn/assessment/ClassGradebook";
+import { ClassAttendanceTab } from "@/components/learn/class/ClassAttendanceTab";
+import { ClassInsightsTab } from "@/components/learn/class/ClassInsightsTab";
+import { useClassRoster } from "@/components/learn/class/PupilPicker";
 
 /** Route bases per viewer, e.g. the class page and lesson page URLs. */
 function routesFor(viewer: ClassViewer) {
@@ -122,26 +126,49 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
   );
 }
 
+/** Staff: the class gradebook (pupils down the side, assessments across), the same one as Teaching › Gradebook. */
+function StaffGrades({ classId }: { classId: string }) {
+  const pupils = useClassRoster(classId);
+  const [subjectId, setSubjectId] = useState<string | null | undefined>(undefined);
+  const [selected, setSelected] = useState("");
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    supabase
+      .from("classes")
+      .select("subject_id")
+      .eq("id", classId)
+      .maybeSingle()
+      .then(({ data }) => setSubjectId((data as { subject_id: string | null } | null)?.subject_id ?? null));
+  }, [classId]);
+  if (subjectId === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  return <ClassGradebook classId={classId} subjectId={subjectId} pupils={pupils} selected={selected} onSelect={(id) => setSelected(id === selected ? "" : id)} />;
+}
+
 /**
- * One class's own page: coloured banner, breadcrumb, then the class
- * sections as tabs: Stream (announcements, upcoming), Classwork (grouped by
- * topic), Lessons (the week-by-week course view), People, Grades and, for
- * staff, Settings. The tab lives in the URL (?tab=grades) so it survives a
- * refresh. Older links (?tab=course, assignments, participants,
- * announcements) still land on the matching new tab.
+ * One class's own page, the home for its teaching work (Google Classroom's
+ * class, Teams for Education's class team): a header, then the class
+ * sections as tabs: Stream (announcements, upcoming), Classwork (assign,
+ * mark and To review, grouped by topic), Lessons (the week-by-week course
+ * view), People, and Grades; staff also get Attendance (this class's
+ * registers), Insights (the class at a glance) and Settings. The tab lives in
+ * the URL (?tab=grades) so it survives a refresh. Older links (?tab=course,
+ * assignments, participants, announcements) still land on the matching tab.
  */
-type TabKey = "stream" | "classwork" | "lessons" | "people" | "grades" | "settings";
+type TabKey = "stream" | "classwork" | "lessons" | "people" | "attendance" | "grades" | "insights" | "settings";
 
 const TAB_LABELS: Record<TabKey, string> = {
   stream: "Stream",
   classwork: "Classwork",
   lessons: "Lessons",
   people: "People",
+  attendance: "Attendance",
   grades: "Grades",
+  insights: "Insights",
   settings: "Settings",
 };
 
-const TAB_ALIASES: Record<string, TabKey> = { course: "lessons", assignments: "classwork", participants: "people", announcements: "stream" };
+const TAB_ALIASES: Record<string, TabKey> = { course: "lessons", assignments: "classwork", participants: "people", announcements: "stream", register: "attendance", gradebook: "grades" };
 
 export function ClassPage({ viewer }: { viewer: ClassViewer }) {
   const params = useSearchParams();
@@ -151,7 +178,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
   const childQuery = viewer.kind === "parent" ? `&child=${viewer.childId}` : "";
   const isStaff = viewer.kind === "teacher" || viewer.kind === "staff";
 
-  const tabs: TabKey[] = isStaff ? ["stream", "classwork", "lessons", "people", "grades", "settings"] : ["stream", "classwork", "lessons", "people", "grades"];
+  const tabs: TabKey[] = isStaff ? ["stream", "classwork", "lessons", "people", "attendance", "grades", "insights", "settings"] : ["stream", "classwork", "lessons", "people", "grades"];
   const rawTab = params.get("tab") || "";
   const requested = (TAB_ALIASES[rawTab] ?? rawTab) as TabKey;
   const tab: TabKey = tabs.includes(requested) ? requested : "stream";
@@ -227,7 +254,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
 
       {tab === "stream" && <StreamTab classId={cls.id} viewer={viewer} area={area} classHref={classHref} />}
 
-      {tab === "classwork" && <ClassworkTab classId={cls.id} viewer={viewer} classHref={classHref} />}
+      {tab === "classwork" && <ClassworkTab classId={cls.id} classTitle={cls.name} viewer={viewer} classHref={classHref} />}
 
       {tab === "lessons" && <CourseTab classId={cls.id} viewer={viewer} routes={{ area, lessonBase, extra, classHref }} />}
 
@@ -240,20 +267,18 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
           <MeetYourTeachers classId={cls.id} />
         ))}
 
-      {tab === "grades" && (
-        <Panel
-          title="Grades"
-          action={
-            viewer.kind === "teacher" ? (
-              <Link href="/teach/assessment" className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900">
-                + Record a grade
-              </Link>
-            ) : undefined
-          }
-        >
-          <GradesTab classId={cls.id} viewer={viewer} />
-        </Panel>
-      )}
+      {tab === "attendance" && isStaff && <ClassAttendanceTab classId={cls.id} area={area} />}
+
+      {tab === "grades" &&
+        (isStaff ? (
+          <StaffGrades classId={cls.id} />
+        ) : (
+          <Panel title="Grades">
+            <GradesTab classId={cls.id} viewer={viewer} />
+          </Panel>
+        ))}
+
+      {tab === "insights" && isStaff && <ClassInsightsTab classId={cls.id} classHref={classHref} />}
 
       {tab === "settings" && isStaff && <ClassSettingsTab classId={cls.id} className={cls.name} subject={cls.subject} canRename={viewer.kind === "staff"} />}
     </div>

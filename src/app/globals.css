@@ -437,6 +437,30 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
   outline-offset: 2px;
 }
 
+/* Installed app with the title bar hidden (Chrome/Edge "window controls overlay"): the
+   manifest no longer asks for it, but an app installed before that change, or a user who
+   turns it on from the app menu, gets the window buttons drawn over the page. Keep the
+   sidebar logo and the top bar below that strip, and let the strip drag the window. */
+@media (display-mode: window-controls-overlay) {
+  .portal-sidebar,
+  .portal-topbar {
+    padding-top: env(titlebar-area-height, 0px);
+  }
+  .portal-sidebar::before,
+  .portal-topbar::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: env(titlebar-area-height, 0px);
+    app-region: drag;
+    -webkit-app-region: drag;
+  }
+  .portal-topbar :is(a, button, input) {
+    app-region: no-drag;
+    -webkit-app-region: no-drag;
+  }
+}
+
 /* Phone tab bar: clear of the iPhone home indicator. */
 .portal-tabbar {
   padding-bottom: env(safe-area-inset-bottom);
@@ -461,13 +485,38 @@ html:has(.portal-topbar) {
   scroll-padding-top: 76px;
 }
 
-/* ── View settings (components/ViewSettings.tsx): larger text, easy reading, high contrast.
-   Chosen by the visitor and remembered on their device. Set as attributes on <html>. */
-html[data-large-text] body {
-  font-size: 19px;
+/* ── View settings (components/ViewSettings.tsx): text size, easy reading, high contrast,
+   reduced motion. Chosen by the visitor and remembered on their device. Set as attributes on
+   <html>. Text size scales the root, so every rem-based size (all of Tailwind's text-*,
+   spacing and the portal's controls) grows together; fixed px widths (the sidebar) stay put. */
+html[data-large-text] {
+  font-size: 112.5%;
 }
-html[data-large-text] .portal {
-  font-size: 17px;
+html[data-large-text][data-text-size="larger"] {
+  font-size: 125%;
+}
+html[data-reduce-motion] *,
+html[data-reduce-motion] *::before,
+html[data-reduce-motion] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+/* The Motion card's "Standard" preview: a dot sliding along a track. */
+@keyframes view-preview-move {
+  0%, 100% { left: 0; }
+  50% { left: calc(100% - 0.5rem); }
+}
+.view-preview-move {
+  animation: view-preview-move 1.8s ease-in-out infinite;
+}
+/* Option cards keep their own look under easy reading (no 72ch cap, no wide spacing). */
+html[data-reading] .view-dialog,
+html[data-reading] .view-choice {
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: 1.4;
 }
 html[data-reading] body,
 html[data-reading] .portal:not(.fixed) {
@@ -632,6 +681,18 @@ html[data-dark][data-reading] .portal:not(.fixed) {
 .portal-tile--lg > svg {
   height: 1.5rem;
   width: 1.5rem;
+}
+/* Hub tabs (HubTabs in PageHeader.tsx): small tiles, solid on the page you are on. */
+.hub-tabs .portal-tile > svg {
+  height: 0.85rem;
+  width: 0.85rem;
+}
+.hub-tabs [aria-current="page"] .portal-tile {
+  background: var(--tile-fg);
+  color: #ffffff;
+}
+.hub-tabs [aria-current="page"] .portal-tile > svg {
+  fill: rgb(255 255 255 / 0.22);
 }
 /* Tab rows scroll sideways on narrow screens; a soft fade at the right edge says "there is more". */
 .portal-tabs {

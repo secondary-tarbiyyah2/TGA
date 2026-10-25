@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MOBILE_TABS, SIDEBAR_NAV, isSidebarItemActive, tileFor, type PortalArea, type SidebarItem } from "@/lib/learn/nav";
+import { MOBILE_TABS, isSidebarItemActive, itemHasHref, tileFor, visibleSidebar, type PortalArea, type SidebarItem } from "@/lib/learn/nav";
 import { useNavBadges } from "@/lib/learn/navBadges";
 import { Icon } from "@/components/learn/Icon";
 
@@ -19,6 +19,7 @@ const SHORT: Record<string, string> = {
   Messages: "Messages",
   Today: "Today",
   Attendance: "Attendance",
+  "Action centre": "Actions",
 };
 
 export const OPEN_MENU_EVENT = "tga-open-menu";
@@ -26,10 +27,10 @@ export const OPEN_MENU_EVENT = "tga-open-menu";
 export function MobileTabBar({ area, roles }: { area: PortalArea; roles: string[] }) {
   const pathname = usePathname();
   const badges = useNavBadges(area);
-  const isHead = roles.some((r) => r === "head_teacher" || r === "admin");
+  const visible = visibleSidebar(area, roles);
   const items = MOBILE_TABS[area]
-    .map((href) => SIDEBAR_NAV[area].find((i) => i.href === href))
-    .filter((i): i is SidebarItem => !!i && (isHead || !i.headOnly))
+    .map((href) => visible.find((i) => itemHasHref(i, href)))
+    .filter((i): i is SidebarItem => !!i)
     .slice(0, 4);
   if (!items.length) return null;
   return (
@@ -38,7 +39,7 @@ export function MobileTabBar({ area, roles }: { area: PortalArea; roles: string[
         {items.map((i) => {
           const active = isSidebarItemActive(pathname, i);
           return (
-            <li key={i.href} className="flex-1">
+            <li key={i.id || i.href} className="flex-1">
               <Link href={i.href} aria-current={active ? "page" : undefined} className={`flex flex-col items-center gap-0.5 px-1 pb-1.5 pt-2 text-[11px] font-medium ${active ? "text-teal-700" : "text-ink/65"}`}>
                 <span className={`portal-tile relative !h-7 !w-12 !rounded-full ${active ? tileFor(i.icon) : ""}`} style={active ? undefined : { background: "transparent", color: "inherit" }}>
                   <Icon name={i.icon} className="h-5 w-5" />

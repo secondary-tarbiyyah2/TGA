@@ -31,7 +31,7 @@ function AdminHomeworkContent() {
   return (
     <HomeworkWorkspace
       scope="admin"
-      subtitle="Set, edit and mark homework for any class. Students and families see it exactly as they would from a teacher."
+      subtitle="Classwork set across every class, with late and missing work. Each class also has its own Classwork tab, where work is set and marked."
       classes={classes}
       homework={homework}
       showDeleted={showDeleted}

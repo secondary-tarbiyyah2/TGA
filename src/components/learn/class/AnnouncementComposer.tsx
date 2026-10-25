@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { safeHttpUrl, toggleList, wrapSelection, type Edit } from "@/lib/learn/markup";
 import { uploadClassFile, type Attachment } from "@/components/learn/class/Attachments";
-
-type Pupil = { id: string; name: string };
+import { PupilPicker } from "@/components/learn/class/PupilPicker";
 
 const TOOL = "rounded-md px-2.5 py-1 text-sm text-ink/80 hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700";
 
@@ -45,29 +44,14 @@ export function AnnouncementComposer({ classId, onPosted }: { classId: string; o
   const [links, setLinks] = useState<{ label: string; url: string }[]>([]);
   const [files, setFiles] = useState<Attachment[]>([]);
   const [linkDraft, setLinkDraft] = useState("");
-  const [audience, setAudience] = useState<"all" | "selected">("all");
-  const [pupils, setPupils] = useState<Pupil[]>([]);
-  const [picked, setPicked] = useState<Set<string>>(new Set());
+  // null: the whole class; otherwise the chosen pupils.
+  const [audience, setAudience] = useState<string[] | null>(null);
   const [later, setLater] = useState(false);
   const [publishAt, setPublishAt] = useState("");
   const [allowComments, setAllowComments] = useState(true);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const area = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    if (!open || audience !== "selected" || pupils.length > 0) return;
-    const supabase = getSupabaseClient();
-    if (!supabase) return;
-    supabase
-      .from("enrolments")
-      .select("child_id, children(name)")
-      .eq("class_id", classId)
-      .then(({ data }) => {
-        const rows = ((data as unknown as { child_id: string; children: { name: string } | null }[]) || []).map((r) => ({ id: r.child_id, name: r.children?.name || "Pupil" }));
-        setPupils(rows.sort((a, b) => a.name.localeCompare(b.name)));
-      });
-  }, [open, audience, classId, pupils.length]);
 
   const apply = (fn: (value: string, s: number, e: number) => Edit) => {
     const el = area.current;
@@ -109,8 +93,7 @@ export function AnnouncementComposer({ classId, onPosted }: { classId: string; o
     setLinks([]);
     setFiles([]);
     setLinkDraft("");
-    setAudience("all");
-    setPicked(new Set());
+    setAudience(null);
     setLater(false);
     setPublishAt("");
     setAllowComments(true);
@@ -122,7 +105,7 @@ export function AnnouncementComposer({ classId, onPosted }: { classId: string; o
     const supabase = getSupabaseClient();
     if (!supabase) return;
     if (!title.trim() || !body.trim()) return setError("Add a title and a message.");
-    if (audience === "selected" && picked.size === 0) return setError("Choose at least one pupil, or send to the whole class.");
+    if (audience !== null && audience.length === 0) return setError("Choose at least one pupil, or send to the whole class.");
     let at: string | null = null;
     if (later) {
       const d = new Date(publishAt);
@@ -145,7 +128,7 @@ export function AnnouncementComposer({ classId, onPosted }: { classId: string; o
         attachments: [...files, ...links],
         allow_comments: allowComments,
         publish_at: at,
-        audience_child_ids: audience === "selected" ? Array.from(picked) : null,
+        audience_child_ids: audience,
         author_id: user.id,
       });
       if (err) return setError("Could not post. Try again.");
@@ -255,44 +238,7 @@ export function AnnouncementComposer({ classId, onPosted }: { classId: string; o
       </div>
 
       <div className="mt-5 space-y-4 border-t border-gold-light/60 pt-4">
-        <div>
-          <label htmlFor="ann-audience" className="text-sm font-medium text-ink">
-            For
-          </label>
-          <select
-            id="ann-audience"
-            value={audience}
-            onChange={(e) => setAudience(e.target.value as "all" | "selected")}
-            className="ml-3 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm"
-          >
-            <option value="all">All pupils in this class</option>
-            <option value="selected">Selected pupils</option>
-          </select>
-          {audience === "selected" && (
-            <ul className="mt-2 grid max-h-40 gap-1 overflow-y-auto rounded-lg border border-gold-light/60 p-2 sm:grid-cols-2">
-              {pupils.length === 0 && <li className="text-sm text-ink/65">Loading pupils…</li>}
-              {pupils.map((p) => (
-                <li key={p.id}>
-                  <label className="flex items-center gap-2 text-sm text-ink/80">
-                    <input
-                      type="checkbox"
-                      checked={picked.has(p.id)}
-                      onChange={() =>
-                        setPicked((s) => {
-                          const n = new Set(s);
-                          if (n.has(p.id)) n.delete(p.id);
-                          else n.add(p.id);
-                          return n;
-                        })
-                      }
-                    />
-                    {p.name}
-                  </label>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <PupilPicker classId={classId} value={audience} onChange={setAudience} />
         <Switch checked={later} onChange={setLater} label="Schedule for later" hint="It stays hidden from pupils and families until then." />
         {later && (
           <input type="datetime-local" value={publishAt} onChange={(e) => setPublishAt(e.target.value)} aria-label="Publish at" className="rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm" />

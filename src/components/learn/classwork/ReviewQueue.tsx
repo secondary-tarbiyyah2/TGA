@@ -35,12 +35,18 @@ const btnPrimary = ui.btnPrimary;
  * form, with Previous / Next, so a whole class is marked without going back
  * to the list. A piece of work only leaves the queue once it has been
  * returned (saved in the database), never just because it was opened.
+ *
+ * Inside a class (Classwork › To review) it is given `classId` and shows
+ * just that class, without its own heading; `homeworkId` opens one
+ * assignment's marking straight away.
  */
-export function ReviewQueue() {
+export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false, onCount }: { classId?: string; homeworkId?: string; embedded?: boolean; onCount?: (n: number) => void } = {}) {
   const now = useNow();
   const [items, setItems] = useState<Item[] | null>(null);
   const [maxPoints, setMaxPoints] = useState<Record<string, number | null>>({});
-  const [classId, setClassId] = useState("");
+  const [chosenClass, setClassId] = useState("");
+  const classId = fixedClass || chosenClass;
+  const Heading = embedded ? "h2" : "h1";
   const [only, setOnly] = useState<"all" | "week" | "late">("all");
   const [error, setError] = useState(false);
   // The pupils being marked (a snapshot, so the order doesn't jump as work is returned).
@@ -49,20 +55,21 @@ export function ReviewQueue() {
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    const { data, error: err } = await supabase
+    let q = supabase
       .from("homework_review_queue")
-      .select("submission_id, homework_id, homework_title, class_id, class_name, child_id, child_name, due_at, submitted_at, is_late")
-      .order("submitted_at", { ascending: true })
-      .limit(1000);
+      .select("submission_id, homework_id, homework_title, class_id, class_name, child_id, child_name, due_at, submitted_at, is_late");
+    if (fixedClass) q = q.eq("class_id", fixedClass);
+    const { data, error: err } = await q.order("submitted_at", { ascending: true }).limit(1000);
     if (err) setError(true);
     const rows = (data as unknown as Item[]) || [];
     setItems(rows);
+    onCount?.(rows.length);
     const ids = [...new Set(rows.map((r) => r.homework_id))];
     if (ids.length) {
       const { data: hw } = await supabase.from("homework").select("id, max_points").in("id", ids);
       setMaxPoints(Object.fromEntries(((hw as { id: string; max_points: number | null }[]) || []).map((h) => [h.id, h.max_points])));
     }
-  }, []);
+  }, [fixedClass, onCount]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load
@@ -100,12 +107,12 @@ export function ReviewQueue() {
   // Open a homework's marking view from a link (?homework=<id>).
   useEffect(() => {
     if (!items || marking) return;
-    const id = new URLSearchParams(window.location.search).get("homework");
+    const id = homeworkId || new URLSearchParams(window.location.search).get("homework");
     if (!id) return;
     const list = items.filter((i) => i.homework_id === id);
     // eslint-disable-next-line react-hooks/set-state-in-effect -- one-off: honour the link once the queue has loaded
     if (list.length) setMarking({ title: list[0].homework_title, items: list, index: 0 });
-  }, [items, marking]);
+  }, [items, marking, homeworkId]);
 
   if (marking) {
     const cur = marking.items[marking.index];
@@ -119,7 +126,7 @@ export function ReviewQueue() {
             ‹ Back to the queue
           </button>
           <div className="min-w-0 flex-1">
-            <h1 className="truncate font-serif text-h3 font-semibold text-ink">{marking.title}</h1>
+            <Heading className="truncate font-serif text-h3 font-semibold text-ink">{marking.title}</Heading>
             <p className="text-sm text-ink/65">
               {cur.class_name ? `${cur.class_name} · ` : ""}Pupil {marking.index + 1} of {marking.items.length} · {done} returned
             </p>
@@ -194,18 +201,22 @@ export function ReviewQueue() {
 
   return (
     <div className="space-y-4">
-      <div>
-        <h1 className="font-serif text-h2 font-semibold text-ink">To review</h1>
-        <p className="text-sm text-ink/65">Work handed in and waiting to be marked, by assignment, oldest first.</p>
-      </div>
+      {!embedded && (
+        <div>
+          <h1 className="font-serif text-h2 font-semibold text-ink">To review</h1>
+          <p className="text-sm text-ink/65">Work handed in and waiting to be marked, by assignment, oldest first. Each class also has its own list under Classwork.</p>
+        </div>
+      )}
       {items === null ? (
         <div className="h-24 animate-pulse rounded-2xl bg-white" />
       ) : error ? (
         <p className="rounded-2xl bg-white p-5 text-sm text-red-800">The review list could not be loaded. Refresh to try again.</p>
       ) : items.length === 0 ? (
-        <p className="rounded-2xl border border-gold-light bg-white p-8 text-center text-sm text-ink/65">Nothing to review. You are all caught up.</p>
+        <p className="rounded-2xl border border-gold-light bg-white p-8 text-center text-sm text-ink/65">Nothing to review{fixedClass ? " in this class" : ""}. You are all caught up.</p>
       ) : (
-        <div className="grid gap-4 lg:grid-cols-[15rem_minmax(0,1fr)]">
+        <div className={fixedClass ? "" : "grid gap-4 lg:grid-cols-[15rem_minmax(0,1fr)]"}>
+          {!fixedClass && (
+          <>
           {/* Classes: a list with counts on wide screens, a drop-down on phones. */}
           <label className="block text-sm font-semibold text-ink lg:hidden">
             Class
@@ -236,6 +247,8 @@ export function ReviewQueue() {
               ))}
             </ul>
           </nav>
+          </>
+          )}
 
           <div className="min-w-0 rounded-2xl border border-gold-light bg-white">
             <div className="border-b border-gold-light px-4 py-3">

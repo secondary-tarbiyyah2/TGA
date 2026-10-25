@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Switch } from "@/components/learn/homework/Switch";
 import {
@@ -21,8 +21,14 @@ import {
 } from "@/lib/learn/homeworkFiles";
 import { attachmentsOf, fileTypesOf, submissionTypesOf, toLocalInput, type Homework } from "@/lib/learn/homework";
 import { ui } from "@/components/learn/ui";
+import { PupilPicker } from "@/components/learn/class/PupilPicker";
 
 export type ClassOption = { id: string; name: string };
+export type HomeworkKind = "assignment" | "quiz";
+
+/** Classwork extras (migration 0125). Read on their own, so the editor still
+ * works, as before, on a database that doesn't have them yet. */
+type Extras = { assigned_child_ids: string[] | null; kind: HomeworkKind; topic_id: string | null };
 
 const inputCls = ui.input;
 const MAX_ATTACHMENTS = 10;
@@ -31,13 +37,17 @@ function friendlyError(message: string): string {
   if (/class_locked_has_submissions/.test(message)) return "Students have already handed work in, so this homework can't be moved to another class.";
   if (/not_your_class/.test(message)) return "You can only move homework to a class you teach.";
   if (/row-level security|violates row-level/.test(message)) return "You don't have permission to do that for this class.";
+  if (/assigned_child_ids|homework_kind_check|'kind' column/.test(message)) return "Setting work for chosen pupils (or as a quiz) isn't switched on yet. Set it for the whole class, or ask the office to run the latest update.";
+  if (/homework_assigned_not_empty/.test(message)) return "Choose at least one pupil, or set it for the whole class.";
   return message;
 }
 
 /**
  * Create or edit a homework assignment: title, instructions, due date/time, mark
- * out of, which kinds of work students may hand in, late policy, attachments and
- * class. Used by the teacher and admin homework pages.
+ * out of, which kinds of work students may hand in, late policy, attachments,
+ * class, who it is for (the whole class or chosen pupils) and, in a class's
+ * Classwork, its topic. Used by the class Classwork tab and the teacher and
+ * admin homework overviews.
  */
 export function HomeworkEditor({
   classes,
@@ -45,6 +55,10 @@ export function HomeworkEditor({
   editing,
   onSaved,
   onCancel,
+  lockClass = false,
+  topics,
+  initialTopicId = "",
+  kind: newKind = "assignment",
 }: {
   classes: ClassOption[];
   initialClassId?: string;
@@ -52,9 +66,41 @@ export function HomeworkEditor({
   /** note: something to tell the user after saving (e.g. an attachment that did not upload). */
   onSaved: (note?: string) => void;
   onCancel?: () => void;
+  /** Inside a class: no class picker. */
+  lockClass?: boolean;
+  /** Inside a class: the class's Classwork topics, so the work can be filed under one. */
+  topics?: { id: string; name: string }[];
+  initialTopicId?: string;
+  /** For new work: a quiz is an assignment with marks, shown as "Quiz". */
+  kind?: HomeworkKind;
 }) {
   const supabase = getSupabaseClient();
   const [chosenClass, setClassId] = useState(editing?.class_id || initialClassId || "");
+  const [assigned, setAssigned] = useState<string[] | null>(null);
+  const [topicId, setTopicId] = useState(initialTopicId);
+  const [saved, setSaved] = useState<Extras | null>(null);
+  const kind: HomeworkKind = editing ? saved?.kind || "assignment" : newKind;
+
+  // When editing, read who it is for, its kind and topic (columns from 0125/0079).
+  useEffect(() => {
+    if (!supabase || !editing) return;
+    let alive = true;
+    supabase
+      .from("homework")
+      .select("assigned_child_ids, kind, topic_id")
+      .eq("id", editing.id)
+      .maybeSingle()
+      .then(({ data, error: err }) => {
+        if (!alive || err || !data) return;
+        const x = data as unknown as Extras;
+        setSaved(x);
+        setAssigned(x.assigned_child_ids && x.assigned_child_ids.length ? x.assigned_child_ids : null);
+        setTopicId(x.topic_id || "");
+      });
+    return () => {
+      alive = false;
+    };
+  }, [supabase, editing]);
   // Falls back to the first class once the list has loaded.
   const classId = chosenClass || classes[0]?.id || "";
   const [title, setTitle] = useState(editing?.title || "");
@@ -87,7 +133,20 @@ export function HomeworkEditor({
   const pointsNumber = maxPoints.trim() === "" ? null : Number(maxPoints);
   const pointsInvalid = pointsNumber !== null && (!Number.isFinite(pointsNumber) || pointsNumber < 0 || pointsNumber > 100000);
   const filesOn = types.includes("file");
-  const canSave = !!classId && title.trim() !== "" && dueAt !== "" && !pointsInvalid && (!filesOn || cats.length > 0) && !busy;
+  const audienceEmpty = assigned !== null && assigned.length === 0;
+  const pointsMissing = kind === "quiz" && pointsNumber === null;
+  const canSave = !!classId && title.trim() !== "" && dueAt !== "" && !pointsInvalid && !pointsMissing && !audienceEmpty && (!filesOn || cats.length > 0) && !busy;
+
+  /** Only the classwork columns that differ from the default, so saving whole-class
+   * work never touches columns an older database doesn't have. */
+  const extras = (): Record<string, unknown> => {
+    const out: Record<string, unknown> = {};
+    if (assigned !== null) out.assigned_child_ids = assigned;
+    else if (saved?.assigned_child_ids) out.assigned_child_ids = null;
+    if (!editing && kind === "quiz") out.kind = "quiz";
+    if (topics && (topicId || null) !== (saved?.topic_id ?? null)) out.topic_id = topicId || null;
+    return out;
+  };
 
   const addAttachments = (list: FileList | null) => {
     if (!list) return;
@@ -141,7 +200,7 @@ export function HomeworkEditor({
         const { done, failed } = await uploadAttachments(editing.id);
         const attachments = [...kept, ...done];
         const removed = attachmentsOf(editing).filter((a) => !kept.some((k) => k.path === a.path));
-        const patch = { ...fields, attachments, ...(classId !== editing.class_id ? { class_id: classId } : {}) };
+        const patch = { ...fields, ...extras(), attachments, ...(classId !== editing.class_id ? { class_id: classId } : {}) };
         const { error: err } = await supabase.from("homework").update(patch).eq("id", editing.id);
         if (err) {
           // The new files are orphans now; clean them up.
@@ -159,7 +218,7 @@ export function HomeworkEditor({
       } = await supabase.auth.getUser();
       if (!user) return;
       const id = crypto.randomUUID();
-      const { error: insErr } = await supabase.from("homework").insert({ id, class_id: classId, teacher_id: user.id, ...fields });
+      const { error: insErr } = await supabase.from("homework").insert({ id, class_id: classId, teacher_id: user.id, ...fields, ...extras() });
       if (insErr) {
         setError(friendlyError(insErr.message));
         return;
@@ -181,6 +240,7 @@ export function HomeworkEditor({
       setMaxPoints("");
       setNewFiles([]);
       setProgress({});
+      setAssigned(null);
       onSaved(note);
     } finally {
       setBusy(false);
@@ -190,17 +250,42 @@ export function HomeworkEditor({
   return (
     <div className="space-y-4">
       <div className="grid gap-3 sm:grid-cols-2">
-        <label className="block text-sm">
-          <span className="mb-1 block text-xs font-medium text-ink/70">Class</span>
-          <select value={classId} onChange={(e) => setClassId(e.target.value)} className={inputCls}>
-            {classes.length === 0 && <option value="">No classes</option>}
-            {classes.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-        </label>
+        {lockClass ? (
+          topics ? (
+            <label className="block text-sm">
+              <span className="mb-1 block text-xs font-medium text-ink/70">Topic</span>
+              <select value={topicId} onChange={(e) => setTopicId(e.target.value)} className={inputCls}>
+                <option value="">No topic</option>
+                {topics.map((t) => (
+                  <option key={t.id} value={t.id}>
+                    {t.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ) : (
+            <div />
+          )
+        ) : (
+          <label className="block text-sm">
+            <span className="mb-1 block text-xs font-medium text-ink/70">Class</span>
+            <select
+              value={classId}
+              onChange={(e) => {
+                setClassId(e.target.value);
+                setAssigned(null); // chosen pupils belong to the old class
+              }}
+              className={inputCls}
+            >
+              {classes.length === 0 && <option value="">No classes</option>}
+              {classes.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <label className="block text-sm">
           <span className="mb-1 block text-xs font-medium text-ink/70">Due</span>
           <input type="datetime-local" value={dueAt} onChange={(e) => setDueAt(e.target.value)} className={inputCls} />
@@ -214,8 +299,14 @@ export function HomeworkEditor({
         <span className="mb-1 block text-xs font-medium text-ink/70">Instructions</span>
         <textarea value={instructions} onChange={(e) => setInstructions(e.target.value)} rows={4} placeholder="Objectives, instructions, resource links" className={inputCls} />
       </label>
+      {classId && (
+        <div className="rounded-lg border border-gold-light/40 p-3">
+          <PupilPicker classId={classId} value={assigned} onChange={setAssigned} />
+          {audienceEmpty && <p className="mt-2 text-xs text-red-700">Choose at least one pupil, or set it for all pupils.</p>}
+        </div>
+      )}
       <label className="block text-sm sm:w-48">
-        <span className="mb-1 block text-xs font-medium text-ink/70">Marks available (optional)</span>
+        <span className="mb-1 block text-xs font-medium text-ink/70">{kind === "quiz" ? "Marks available" : "Marks available (optional)"}</span>
         <input type="text" inputMode="decimal" min={0} step="any" value={maxPoints} onChange={(e) => setMaxPoints(e.target.value)} placeholder="e.g. 10" className={inputCls} />
       </label>
 
@@ -290,6 +381,7 @@ export function HomeworkEditor({
         )}
       </div>
 
+      {pointsMissing && <p className="text-xs text-ink/70">A quiz needs the marks it is out of.</p>}
       {error && (
         <p role="alert" className="text-sm text-red-700">
           {error}
@@ -297,7 +389,7 @@ export function HomeworkEditor({
       )}
       <div className="flex flex-wrap gap-2">
         <button type="button" disabled={!canSave} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
-          {busy ? "Saving…" : editing ? "Save changes" : "Set homework"}
+          {busy ? "Saving…" : editing ? "Save changes" : kind === "quiz" ? "Set quiz" : lockClass ? "Assign" : "Set homework"}
         </button>
         {onCancel && (
           <button type="button" disabled={busy} onClick={onCancel} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50">

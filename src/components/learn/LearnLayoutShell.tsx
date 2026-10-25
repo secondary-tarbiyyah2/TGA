@@ -17,6 +17,8 @@ import { ActivityRecorder } from "@/components/learn/feedback/ActivityRecorder";
 import { FeedbackButton } from "@/components/learn/feedback/FeedbackButton";
 import { MobileTabBar } from "@/components/learn/MobileTabBar";
 import { InstallAppSetup } from "@/components/learn/InstallApp";
+import { HubTabs } from "@/components/learn/PageHeader";
+import { ViewSettingsMenu } from "@/components/ViewSettings";
 
 const ADMIN_ISH_ROLES = ["head_teacher", "admin", "admissions"];
 
@@ -49,7 +51,9 @@ function useWesternDigits() {
  * Signed in: an app shell. A fixed sidebar down the left holds every
  * destination for the area, in sections that open and close in place, with
  * your name and sign-out at the bottom; a slim top bar has search, clock-in,
- * report-a-concern and notifications. On phones the sidebar becomes a drawer.
+ * display options, report-a-concern and notifications. On phones the sidebar
+ * becomes a drawer. On a hub's pages (nav.ts) the hub's tabs sit at the top
+ * of the content.
  * The pages inside use Moodle's patterns (class cards, weekly course
  * pages, timeline and calendar blocks).
  *
@@ -92,10 +96,10 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
       <div className="portal flex min-h-screen flex-col">
         <ActivityRecorder />
         <InstallAppSetup />
-        <header className="sticky top-0 z-40 border-b border-gold-light bg-white">
+        <header className="portal-topbar sticky top-0 z-40 border-b border-gold-light bg-white">
           <div className="mx-auto flex h-[60px] max-w-[1440px] items-center px-4 sm:px-6 lg:px-8">
-            <Link href={homeHref} aria-label="Tarbiyyah Global Academy">
-              <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={124} height={38} priority />
+            <Link href={homeHref} aria-label="Tarbiyyah Global Academy" className="flex shrink-0 items-center">
+              <Image src="/brand/ga-wordmark.png" alt="" width={124} height={37} priority className="h-[37px] w-[124px] max-w-none object-contain" />
             </Link>
             {activeSession && rolesLoaded && roles.length > 0 && (
               <div className="ml-auto">
@@ -121,13 +125,14 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
         <header className="portal-topbar sticky top-0 z-20">
           <div className="flex h-[60px] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
-            <Link href={homeHref} className="lg:hidden" aria-label="Tarbiyyah Global Academy — your dashboard">
-              <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={110} height={34} priority />
+            <Link href={homeHref} className="flex shrink-0 items-center lg:hidden" aria-label="Tarbiyyah Global Academy — your dashboard">
+              <Image src="/brand/ga-wordmark.png" alt="" width={110} height={33} priority className="h-[33px] w-[110px] max-w-none object-contain" />
             </Link>
 
             <div className="ml-auto flex items-center gap-1">
               <CommandPalette area={area} roles={roles.map((r) => r.role)} />
               <ClockChip userId={activeSession.user.id} roles={roles} />
+              <ViewSettingsMenu variant="portal" />
               <FeedbackButton />
               <Link
                 href="/report-concern"
@@ -146,6 +151,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
         <main id="main" className="flex-1 overflow-x-clip pb-20 lg:pb-0">
           <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
             <SignatureBanner />
+            <HubTabs roles={roles.map((r) => r.role)} />
             <ClockInGate userId={activeSession.user.id} roles={roles}>
               {children}
             </ClockInGate>
