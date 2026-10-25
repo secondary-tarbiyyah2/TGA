@@ -46,7 +46,14 @@ export type ApplicationRow = {
   parent_email: string;
   parent_phone: string;
   relationship: string | null;
+  /** Whole address on one line (older rows only have this; since 0151 the form fills it from the parts below). */
   address: string | null;
+  /** 0151: the pupil's home address, in parts. */
+  address_line1?: string | null;
+  address_line2?: string | null;
+  address_town?: string | null;
+  address_postcode?: string | null;
+  address_country?: string | null;
   child_first_name: string;
   child_last_name: string;
   child_dob: string;
@@ -137,7 +144,7 @@ export function processPips(a: Pick<ApplicationRow, "assessment_at" | "interview
 }
 
 export const APPLICATION_COLUMNS =
-  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, payment_plan_intent, children_applying, sibling_applicants, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, offer_made_at, offer_deadline, admin_fee_amount, admin_fee_received, admin_fee_received_at, deposit_amount, deposit_received_at, parent_profile_id, child_id, student_profile_id, accounts_created_at, family_id, sibling_index, guardian_is_other, guardian_name, guardian_relationship, guardian_email, guardian_phone, guardian_address, created_at, updated_at";
+  "id, reference, status, parent_name, parent_email, parent_phone, relationship, address, address_line1, address_line2, address_town, address_postcode, address_country, child_first_name, child_last_name, child_dob, child_gender, year_group_applying, preferred_start, current_school, current_school_year, previous_islamic_education, send_or_medical_notes, how_heard, sibling_at_tarbiyyah, sibling_details, payment_plan_intent, children_applying, sibling_applicants, consent_contact, consent_data, declaration_name, notes, assigned_to, assessment_at, interview_at, report_received, deposit_received, id_documents_received, decision_note, offer_made_at, offer_deadline, admin_fee_amount, admin_fee_received, admin_fee_received_at, deposit_amount, deposit_received_at, parent_profile_id, child_id, student_profile_id, accounts_created_at, family_id, sibling_index, guardian_is_other, guardian_name, guardian_relationship, guardian_email, guardian_phone, guardian_address, created_at, updated_at";
 
 /** Age in whole years from an ISO date (yyyy-mm-dd), e.g. "7". Empty if invalid. */
 export function ageFromDob(dob: string): string {
@@ -158,12 +165,13 @@ export const PAYMENT_PLAN_OPTIONS = [
 export type PaymentPlanIntent = (typeof PAYMENT_PLAN_OPTIONS)[number]["value"];
 
 /** Kinds of uploaded document, tagged in the storage file name: <application_id>/<kind>-<uuid>.<ext> (migration 0060). */
-export type DocumentKind = "report" | "parent_id" | "child_id" | "guardian_id";
+export type DocumentKind = "report" | "parent_id" | "child_id" | "guardian_id" | "address_proof";
 export const DOCUMENT_KIND_LABELS: Record<DocumentKind, string> = {
   report: "School report",
   parent_id: "Parent or guardian photo ID",
   child_id: "Child's passport or birth certificate",
   guardian_id: "Legal guardian's photo ID",
+  address_proof: "Proof of the pupil's home address",
 };
 export const DOCUMENT_ACCEPT = "application/pdf,image/jpeg,image/png,.pdf,.jpg,.jpeg,.png";
 export const MAX_ID_FILES = 3;
@@ -197,7 +205,7 @@ export function admissionsProcessSteps(fees: { applicationFee?: number; registra
       title: "Apply",
       owner: "you",
       short: "Complete the online form and upload your documents.",
-      body: "Complete the online application form and upload a school report, photo ID for a parent or guardian, and your child's passport or birth certificate. Applying for more than one child? Add them all in the same form.",
+      body: "Complete the online application form, including your child's home address, and upload a school report, photo ID for a parent or guardian, your child's passport or birth certificate, and proof of your child's home address. Applying for more than one child? Add them all in the same form.",
     },
     {
       title: "We review your application",
@@ -288,4 +296,48 @@ export function acceptanceBlockers(a: Pick<ApplicationRow, "admin_fee_received" 
 
 export function formatMoney(n: number | null | undefined): string {
   return n === null || n === undefined ? "" : `\u00a3${Number(n).toLocaleString("en-GB", { minimumFractionDigits: Number.isInteger(Number(n)) ? 0 : 2 })}`;
+}
+
+// ── the pupil's home address (0151) ──────────────────────────────────────
+
+export type AddressParts = {
+  address_line1?: string | null;
+  address_line2?: string | null;
+  address_town?: string | null;
+  address_postcode?: string | null;
+  address_country?: string | null;
+};
+
+/**
+ * Countries (as spelled in src/lib/countries.ts) with no postcode system in
+ * general use, so the form does not insist on one. Everywhere else the
+ * postcode or ZIP is required.
+ */
+export const COUNTRIES_WITHOUT_POSTCODES: readonly string[] = [
+  "Angola", "Bahamas", "Belize", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cameroon", "Central African Republic", "Chad",
+  "Comoros", "Congo", "Djibouti", "Dominica", "Equatorial Guinea", "Eritrea", "Fiji", "Gambia", "Ghana", "Grenada", "Guyana",
+  "Hong Kong", "Kiribati", "Libya", "Mali", "Mauritania", "Palau", "Qatar", "Rwanda", "Samoa", "Seychelles",
+  "Sierra Leone", "Solomon Islands", "Somalia", "South Sudan", "Suriname", "Syria", "Timor-Leste", "Togo", "Tonga",
+  "Trinidad and Tobago", "Tuvalu", "Uganda", "United Arab Emirates", "Vanuatu", "Yemen", "Zimbabwe",
+];
+
+/** True when the postcode may be left blank for this country (case-insensitive). */
+export function postcodeOptionalFor(country: string): boolean {
+  const c = country.trim().toLowerCase();
+  if (!c) return false;
+  return COUNTRIES_WITHOUT_POSTCODES.some((x) => x.toLowerCase() === c) || c === "uae";
+}
+
+/** The address parts on one line, e.g. "1 High St, Flat 2, London, N1 1AA, United Kingdom". Empty when none given. */
+export function addressOneLine(a: AddressParts): string {
+  return [a.address_line1, a.address_line2, a.address_town, a.address_postcode, a.address_country]
+    .map((x) => (x || "").trim())
+    .filter(Boolean)
+    .join(", ");
+}
+
+/** The address for display: the parts one per line, or the older free-text address when there are no parts. */
+export function addressBlock(a: AddressParts & { address?: string | null }): string {
+  const lines = [a.address_line1, a.address_line2, a.address_town, a.address_postcode, a.address_country].map((x) => (x || "").trim()).filter(Boolean);
+  return lines.length > 0 ? lines.join("\n") : (a.address || "").trim();
 }

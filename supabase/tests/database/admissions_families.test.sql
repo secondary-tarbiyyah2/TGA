@@ -2,10 +2,11 @@
 -- form can create a family and several linked applications but read nothing
 -- back, new applications default to the Admissions Team assignee, nobody can
 -- assign someone else at submission, a different legal guardian must be
--- complete, the upload gate knows the guardian ID kind, and staff can read
+-- complete, the upload gate knows the guardian ID and proof of address kinds,
+-- the pupil's home address (0151) is accepted on submission, and staff can read
 -- the linked applications of a family.
 begin;
-select plan(11);
+select plan(12);
 
 insert into auth.users (id, email) values
   ('e8100000-0000-0000-0000-000000000001', 'team-fam@example.com'),
@@ -35,10 +36,11 @@ select lives_ok(
 select lives_ok(
   $$insert into public.admissions_applications
       (id, family_id, sibling_index, parent_name, parent_email, parent_phone, child_first_name, child_last_name, child_dob, child_gender,
-       year_group_applying, consent_contact, consent_data, declaration_name)
+       year_group_applying, consent_contact, consent_data, declaration_name,
+       address_line1, address_town, address_postcode, address_country)
     values
-      ('e8100000-0000-0000-0000-0000000000a1', 'e8100000-0000-0000-0000-0000000000f1', 1, 'Test Parent', 'tp-fam@example.com', '07700900123', 'Aisha', 'Parent', '2016-03-04', 'Female', 'Year 3', true, true, 'Test Parent'),
-      ('e8100000-0000-0000-0000-0000000000a2', 'e8100000-0000-0000-0000-0000000000f1', 2, 'Test Parent', 'tp-fam@example.com', '07700900123', 'Omar', 'Parent', '2018-05-06', 'Male', 'Year 1', true, true, 'Test Parent')$$,
+      ('e8100000-0000-0000-0000-0000000000a1', 'e8100000-0000-0000-0000-0000000000f1', 1, 'Test Parent', 'tp-fam@example.com', '07700900123', 'Aisha', 'Parent', '2016-03-04', 'Female', 'Year 3', true, true, 'Test Parent', '1 High Street', 'London', 'N1 1AA', 'United Kingdom'),
+      ('e8100000-0000-0000-0000-0000000000a2', 'e8100000-0000-0000-0000-0000000000f1', 2, 'Test Parent', 'tp-fam@example.com', '07700900123', 'Omar', 'Parent', '2018-05-06', 'Male', 'Year 1', true, true, 'Test Parent', '1 High Street', 'London', 'N1 1AA', 'United Kingdom')$$,
   'anon can submit two linked applications for one family'
 );
 
@@ -64,6 +66,7 @@ select is((select count(*)::int from public.admissions_families), 0, 'anon canno
 select is((select count(*)::int from public.admissions_applications), 0, 'anon cannot read applications back');
 
 select is(public.admissions_upload_allowed('e8100000-0000-0000-0000-0000000000a1/guardian_id-e8100000-0000-0000-0000-0000000000b1.pdf'), true, 'upload gate accepts a guardian ID for a fresh application');
+select is(public.admissions_upload_allowed('e8100000-0000-0000-0000-0000000000a1/address_proof-e8100000-0000-0000-0000-0000000000b2.pdf'), true, 'upload gate accepts a proof of address (0151)');
 select is(public.admissions_upload_allowed('e8100000-0000-0000-0000-0000000000a1/passport-e8100000-0000-0000-0000-0000000000b1.pdf'), false, 'upload gate refuses an unknown document kind');
 
 -- Staff -------------------------------------------------------------------

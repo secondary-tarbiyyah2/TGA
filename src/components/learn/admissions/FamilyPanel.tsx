@@ -123,7 +123,7 @@ export function FamilyPanel({
         <span className="font-medium">Legal parent or guardian: </span>
         {app.guardian_is_other
           ? `${app.guardian_name || "Someone else"}${app.guardian_relationship ? ` (${app.guardian_relationship})` : ""}, ${app.guardian_email || "no email"}, ${app.guardian_phone || "no phone"}. Their ID is on this application.`
-          : `Same as the family contact${app.sibling_index && app.sibling_index > 1 ? `. The photo ID is shared with ${fullName(lead)}'s application.` : "."}`}
+          : `Same as the family contact${app.sibling_index && app.sibling_index > 1 ? `. The photo ID and proof of address are shared with ${fullName(lead)}'s application.` : "."}`}
       </p>
     </section>
   );

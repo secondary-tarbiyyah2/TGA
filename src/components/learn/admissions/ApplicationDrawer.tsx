@@ -15,6 +15,7 @@ import {
   PIPELINE_STATUSES,
   SIDELINE_STATUSES,
   STATUS_LABELS,
+  addressBlock,
   ageFromDob,
   type ApplicationPatch,
   type ApplicationRow,
@@ -206,7 +207,7 @@ export function ApplicationDrawer({
                   <Row label="Relationship">{app.relationship}</Row>
                   <Row label="Email"><a href={`mailto:${app.parent_email}`} className="text-teal-700 underline">{app.parent_email}</a></Row>
                   <Row label="Phone">{app.parent_phone}</Row>
-                  <Row label="Address">{app.address}</Row>
+                  <Row label="Pupil's home address">{addressBlock(app)}</Row>
                   <Row label="Current school">{app.current_school}</Row>
                   <Row label="Current year">{app.current_school_year}</Row>
                   <Row label="Previous Islamic education">{app.previous_islamic_education}</Row>

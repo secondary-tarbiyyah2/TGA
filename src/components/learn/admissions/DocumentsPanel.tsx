@@ -12,13 +12,14 @@ const KIND_LABELS: Record<string, string> = {
   parent_id: "Parent/guardian ID",
   child_id: "Child ID",
   guardian_id: "Legal guardian ID",
+  address_proof: "Proof of address",
   results: "Assessment results",
 };
 
 /** "<kind>-<uuid>.<ext>" (or legacy "<uuid>.pdf" = school report) -> label + extension. */
 function describeFile(name: string, index: number): { label: string; ext: string; kind: string } {
   const ext = (name.split(".").pop() || "pdf").toLowerCase();
-  const kind = /^(report|parent_id|child_id|guardian_id|results)-/.exec(name)?.[1] || "report";
+  const kind = /^(report|parent_id|child_id|guardian_id|address_proof|results)-/.exec(name)?.[1] || "report";
   return { label: `${KIND_LABELS[kind]} ${index}`, ext, kind };
 }
 
@@ -53,7 +54,7 @@ export function DocumentsPanel({ applicationId, sharedIdFrom }: { applicationId:
     if (sharedId && sharedId !== applicationId) {
       const { data: leadFiles } = await supabase.storage.from(DOCUMENTS_BUCKET).list(sharedId, { limit: 50, sortBy: { column: "created_at", order: "asc" } });
       shared = (leadFiles || [])
-        .filter((o) => o.name && o.name.startsWith("parent_id-"))
+        .filter((o) => o.name && (o.name.startsWith("parent_id-") || o.name.startsWith("address_proof-")))
         .map((o) => ({
           path: `${sharedId}/${o.name}`,
           name: o.name,

@@ -13,6 +13,11 @@
 // also stops the portal's own automatic acknowledgement doubling up later.
 // Honours the 'received' template's auto-send switch. Never fatal for the form:
 // the browser ignores a failure here.
+//
+// It also emails the admissions inbox (ADMISSIONS_EMAIL) a summary of the new
+// application(s): contact details, the pupil's home address (0151) and each
+// child, with a link to the portal. Sent once per family whatever the
+// auto-send switch (a booking_attempts marker stops repeats).
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { sendEmail, emailShell } from "../_shared/resend.ts";
@@ -22,6 +27,8 @@ const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 
+const ADMISSIONS_EMAIL = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
+const LEARN_SITE_URL = (Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk").replace(/\/$/, "");
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const FRESH_MS = 30 * 60 * 1000;
 
@@ -50,7 +57,16 @@ type AppRow = {
   sibling_index: number | null;
   parent_name: string;
   parent_email: string;
+  parent_phone: string;
+  relationship: string | null;
+  address: string | null;
+  address_line1: string | null;
+  address_line2: string | null;
+  address_town: string | null;
+  address_postcode: string | null;
+  address_country: string | null;
   child_first_name: string;
+  child_dob: string;
   child_last_name: string;
   year_group_applying: string;
   preferred_start: string | null;
@@ -62,7 +78,7 @@ type AppRow = {
 };
 
 const APP_COLUMNS =
-  "id, reference, status, created_at, family_id, sibling_index, parent_name, parent_email, child_first_name, child_last_name, year_group_applying, preferred_start, assessment_at, interview_at, offer_deadline, report_received, id_documents_received";
+  "id, reference, status, created_at, family_id, sibling_index, parent_name, parent_email, parent_phone, relationship, address, address_line1, address_line2, address_town, address_postcode, address_country, child_first_name, child_last_name, child_dob, year_group_applying, preferred_start, assessment_at, interview_at, offer_deadline, report_received, id_documents_received";
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
@@ -97,16 +113,18 @@ Deno.serve(async (req) => {
   const lead = siblings[0];
   if (lead.id !== app.id) return jsonResponse({ ok: true, skipped: "not_lead" });
 
+  const staffNotified = await notifyAdmissions(lead, siblings);
+
   const { count } = await serviceClient
     .from("admissions_messages")
     .select("id", { count: "exact", head: true })
     .in("application_id", siblings.map((s) => s.id))
     .eq("template", "received");
-  if ((count ?? 0) > 0) return jsonResponse({ ok: true, skipped: "already_sent" });
+  if ((count ?? 0) > 0) return jsonResponse({ ok: true, skipped: "already_sent", staffNotified });
 
   const { data: row } = await serviceClient.from("admissions_email_templates").select("subject, body, auto_send").eq("key", "received").maybeSingle();
   const tpl = row ? { subject: row.subject as string, body: row.body as string, auto_send: Boolean(row.auto_send) } : DEFAULT_TEMPLATES.received;
-  if (!tpl.auto_send) return jsonResponse({ ok: true, skipped: "auto_send_off" });
+  if (!tpl.auto_send) return jsonResponse({ ok: true, skipped: "auto_send_off", staffNotified });
 
   const [{ data: settings }, { data: stage }] = await Promise.all([
     serviceClient.from("site_settings").select("payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone").eq("id", true).maybeSingle(),
@@ -144,5 +162,48 @@ Deno.serve(async (req) => {
     })),
   ]);
 
-  return jsonResponse({ ok: true, emailSent });
+  return jsonResponse({ ok: true, emailSent, staffNotified });
 });
+
+/** The pupil's home address, one part per line (or the older one-line address). */
+function addressLines(a: AppRow): string[] {
+  const parts = [a.address_line1, a.address_line2, a.address_town, a.address_postcode, a.address_country].map((x) => (x || "").trim()).filter(Boolean);
+  if (parts.length > 0) return parts;
+  return (a.address || "").trim() ? [(a.address || "").trim()] : [];
+}
+
+/** One summary email to the admissions inbox per family. Best effort; never throws. */
+async function notifyAdmissions(lead: AppRow, siblings: AppRow[]): Promise<boolean> {
+  try {
+    const marker = `appnotify:${lead.id}`;
+    const { count } = await serviceClient.from("booking_attempts").select("id", { count: "exact", head: true }).eq("email", marker);
+    if ((count ?? 0) > 0) return false;
+    await serviceClient.from("booking_attempts").insert({ ip_hash: "admissions-submitted", email: marker });
+
+    const row = (label: string, value: string) =>
+      `<tr><td style="padding:4px 12px 4px 0;vertical-align:top;color:#6b6b6b;white-space:nowrap;">${escapeHtml(label)}</td><td style="padding:4px 0;vertical-align:top;">${value}</td></tr>`;
+    const addr = addressLines(lead);
+    const children = siblings
+      .map((s) => `<li style="margin:0 0 4px;"><strong>${escapeHtml(`${s.child_first_name} ${s.child_last_name}`.trim())}</strong>, ${escapeHtml(s.year_group_applying)}, born ${escapeHtml(s.child_dob)}${s.reference ? ` (${escapeHtml(s.reference)})` : ""}</li>`)
+      .join("");
+    const names = siblings.map((s) => s.child_first_name.trim()).join(", ");
+    const subject = `New application${siblings.length > 1 ? "s" : ""}: ${lead.reference || ""} ${names}`.replace(/\s+/g, " ").trim();
+    const html = emailShell(
+      `<p style="margin:0 0 12px;">A new application was submitted on the website${siblings.length > 1 ? ` for ${siblings.length} children, linked as one family` : ""}.</p>` +
+        `<table style="border-collapse:collapse;margin:0 0 16px;font-size:14px;">` +
+        row("Parent or guardian", `${escapeHtml(lead.parent_name)}${lead.relationship ? ` (${escapeHtml(lead.relationship)})` : ""}`) +
+        row("Email", `<a href="mailto:${escapeHtml(lead.parent_email)}" style="color:#5E4B1E;">${escapeHtml(lead.parent_email)}</a>`) +
+        row("Phone", escapeHtml(lead.parent_phone)) +
+        row("Pupil's home address", addr.length > 0 ? addr.map(escapeHtml).join("<br>") : "Not given") +
+        row("Preferred start", escapeHtml(lead.preferred_start || "Not given")) +
+        `</table>` +
+        `<p style="margin:0 0 6px;"><strong>${siblings.length > 1 ? "Children" : "Child"}</strong></p><ul style="margin:0 0 16px;padding-left:20px;">${children}</ul>` +
+        `<p style="margin:0 0 20px;"><a href="${LEARN_SITE_URL}/admin/admissions" style="color:#B08E45;">Review in Admissions &rarr;</a></p>`,
+    );
+    const result = await sendEmail({ to: ADMISSIONS_EMAIL, subject, html });
+    return result.ok;
+  } catch (e) {
+    console.error("admissions notification failed", e);
+    return false;
+  }
+}

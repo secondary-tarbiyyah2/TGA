@@ -245,7 +245,7 @@ export function buildTemplateContext(
 
   const missing: string[] = [];
   if (!app.report_received) missing.push(`- ${child}'s most recent school report (PDF)`);
-  if (!app.id_documents_received) missing.push(`- ID documents: a passport or birth certificate for ${child}, and photo ID for a parent or guardian`);
+  if (!app.id_documents_received) missing.push(`- Proof of identity and address for ${child}: a passport or birth certificate, and a recent document showing the home address (for example a utility bill, council tax bill or bank statement), plus photo ID for a parent or guardian`);
   if (missing.length === 0) missing.push("- Any further documents we have asked for");
 
   const v: TemplateVars = {
@@ -542,7 +542,7 @@ After paying, please upload a screenshot or receipt (JPG, PNG or PDF, up to 10 M
 Please do not share this link. Your place is confirmed once our team has checked the payment, and we will email you when it is.
 {{/payment_link}}
 
-Your child's place is held only once the payments above have been received and verified. If we have not heard from you by the deadline, we may offer the place to another family. Please also send us ID documents for {{child_first_name}} and a parent or guardian (for example a passport or birth certificate) if you have not already.
+Your child's place is held only once the payments above have been received and verified. If we have not heard from you by the deadline, we may offer the place to another family. Please also send us ID documents for {{child_first_name}} and a parent or guardian (for example a passport or birth certificate), and proof of {{child_first_name}}'s home address (for example a recent utility bill, council tax bill or bank statement), if you have not already.
 
 If you have any questions, just reply to this email.
 

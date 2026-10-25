@@ -109,7 +109,7 @@ const APP_CHILD_FIELDS = [
   "year_group_applying", "preferred_start", "current_school", "current_school_year",
   "previous_islamic_education", "send_or_medical_notes", "sibling_at_tarbiyyah", "sibling_details",
 ];
-const APP_PARENT_FIELDS = ["parent_name", "parent_email", "parent_phone", "relationship", "address", "how_heard", "consent_contact", "consent_data", "declaration_name"];
+const APP_PARENT_FIELDS = ["parent_name", "parent_email", "parent_phone", "relationship", "address", "address_line1", "address_line2", "address_town", "address_postcode", "address_country", "how_heard", "consent_contact", "consent_data", "declaration_name"];
 
 async function admissionsSection(parentEmail: string | null, childName: string | null, childDob: string | null, includeParentFields: boolean): Promise<Section> {
   const title = "Admissions record";

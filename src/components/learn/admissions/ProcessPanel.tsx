@@ -270,7 +270,7 @@ function OfferSection({
           </label>
           <label className="flex items-center gap-2 text-sm text-ink">
             <input type="checkbox" checked={d.ids} onChange={(e) => set("ids", e.target.checked)} />
-            ID documents received
+            ID documents and proof of address received
           </label>
         </div>
         <label className="mt-3 block text-sm font-medium text-ink">

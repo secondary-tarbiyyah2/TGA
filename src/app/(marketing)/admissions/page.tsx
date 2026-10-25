@@ -81,7 +81,7 @@ export default async function AdmissionsPage() {
           <Kicker>Application form</Kicker>
           <h2 className="font-serif text-3xl font-semibold text-ink">Start your application.</h2>
           <p className="mt-3 text-ink/70">
-            Our online form takes about ten minutes. Have your details and your child&apos;s to hand, plus a recent school report, photo ID for a parent or guardian, and your child&apos;s passport or birth certificate (PDF, JPG or PNG) ready to upload. Applying for more than one child? Add them all in the same form: you only enter your own details once.
+            Our online form takes about ten minutes. Have your details and your child&apos;s to hand, plus a recent school report, photo ID for a parent or guardian, and proof of identity and address for your child (a passport or birth certificate, and a recent bill or statement showing your home address), as a PDF, JPG or PNG, ready to upload. Applying for more than one child? Add them all in the same form: you only enter your own details once.
           </p>
           <div className="mt-6">
             <Button href="/admissions/apply">Apply now</Button>

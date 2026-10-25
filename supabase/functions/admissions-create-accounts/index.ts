@@ -160,6 +160,24 @@ Deno.serve(async (req) => {
     notes.push(`${childName} already had a pupil record.`);
   }
 
+  // ── 2b. start the pupil's details with the home address from the form (0151) ──
+  // Only when the pupil has no details record yet: anything the family or
+  // staff have already entered is never overwritten.
+  const line1 = typeof app.address_line1 === "string" ? app.address_line1.trim() : "";
+  if (line1) {
+    const { data: existingDetails } = await serviceClient.from("pupil_details").select("id").eq("child_id", childId).maybeSingle();
+    if (!existingDetails) {
+      const { error: detailsErr } = await serviceClient.from("pupil_details").insert({
+        child_id: childId,
+        address_line1: line1,
+        address_line2: (typeof app.address_line2 === "string" && app.address_line2.trim()) || null,
+        town: (typeof app.address_town === "string" && app.address_town.trim()) || null,
+        postcode: (typeof app.address_postcode === "string" && app.address_postcode.trim()) || null,
+      });
+      notes.push(detailsErr ? `Could not copy the home address into the pupil's details (${detailsErr.message}).` : "Home address copied into the pupil's details.");
+    }
+  }
+
   // ── 3. class enrolments (a child may be in several) ───────────────────
   const rawClassIds: unknown[] = Array.isArray(body.classIds) ? (body.classIds as unknown[]) : ((stage?.account_class_ids as unknown[] | null) || []);
   const classIds = [...new Set(rawClassIds.filter((c): c is string => typeof c === "string" && UUID.test(c)))];

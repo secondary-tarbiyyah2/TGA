@@ -14,11 +14,14 @@ import {
   MAX_REPORT_FILES,
   PAYMENT_PLAN_OPTIONS,
   YEAR_GROUP_OPTIONS,
+  addressOneLine,
   admissionsProcessSteps,
   documentExtension,
+  postcodeOptionalFor,
   suggestYearGroup,
   type DocumentKind,
 } from "@/components/admissions/applicationShared";
+import { COUNTRIES } from "@/lib/countries";
 import { bandForYearGroup } from "@/components/learn/admissions/paymentCalc";
 import type { FeeBand } from "@/content/seed";
 import { FEE_DEFAULTS, FEE_POLICY_DEFAULTS, estimateFamilyFees, type FamilyEstimate, type PaymentPlan } from "@/lib/fees";
@@ -28,7 +31,8 @@ import { formatGBP } from "@/lib/format";
 
 /** Fields about the family (entered once, whatever the number of children). */
 type ParentKey =
-  | "parentName" | "parentEmail" | "parentPhone" | "relationship" | "address" | "preferredStart" | "howHeard"
+  | "parentName" | "parentEmail" | "parentPhone" | "relationship" | "preferredStart" | "howHeard"
+  | "addressLine1" | "addressLine2" | "addressTown" | "addressPostcode" | "addressCountry"
   | "siblingDetails" | "declarationName" | "website" | "paymentPlan";
 type BoolKey = "sibling" | "consentContact" | "consentData";
 type Values = Record<ParentKey, string> & Record<BoolKey, boolean>;
@@ -70,7 +74,8 @@ const STEP_TITLES = ["About you", "Your children", "Fees and declaration"] as co
 const CHILD_LIMITS: Record<ChildDocKind, number> = { report: MAX_REPORT_FILES, child_id: MAX_ID_FILES, guardian_id: MAX_ID_FILES };
 
 const INITIAL: Values = {
-  parentName: "", parentEmail: "", parentPhone: "", relationship: "", address: "", preferredStart: "", howHeard: "",
+  parentName: "", parentEmail: "", parentPhone: "", relationship: "", preferredStart: "", howHeard: "",
+  addressLine1: "", addressLine2: "", addressTown: "", addressPostcode: "", addressCountry: "",
   siblingDetails: "", declarationName: "", website: "", paymentPlan: "",
   sibling: false, consentContact: false, consentData: false,
 };
@@ -107,6 +112,11 @@ function phoneError(phone: string, who: string): string | undefined {
   return undefined;
 }
 
+function postcodeError(postcode: string, country: string): string | undefined {
+  if (postcode.trim() || postcodeOptionalFor(country)) return undefined;
+  return "Please enter the postcode or ZIP code. If there is no postcode where you live, type \"None\".";
+}
+
 function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: File[]): Errors {
   const e: Errors = {};
   const put = (k: string, msg: string | undefined) => {
@@ -117,6 +127,10 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
     if (!v.parentEmail.trim()) put("parentEmail", "Please enter your email address.");
     else if (!EMAIL_RE.test(v.parentEmail.trim())) put("parentEmail", "That doesn't look like an email address. It should look like name@example.com.");
     put("parentPhone", phoneError(v.parentPhone, "you"));
+    put("addressCountry", v.addressCountry.trim() ? undefined : "Please enter the country your child lives in.");
+    put("addressLine1", v.addressLine1.trim() ? undefined : "Please enter the first line of your child's home address.");
+    put("addressTown", v.addressTown.trim() ? undefined : "Please enter the town or city.");
+    put("addressPostcode", postcodeError(v.addressPostcode, v.addressCountry));
     put("doc-parent_id", parentIds.length === 0 ? "Please upload photo ID for a parent or guardian." : undefined);
   }
   if (step === 1) {
@@ -338,6 +352,7 @@ export function ApplyForm({
   const [values, setValues] = useState<Values>(INITIAL);
   const [kids, setKids] = useState<ChildForm[]>(() => [blankChild("kid-first")]);
   const [parentIds, setParentIds] = useState<File[]>([]);
+  const [addressProofs, setAddressProofs] = useState<File[]>([]);
   const [errors, setErrors] = useState<Errors>({});
   const [submitError, setSubmitError] = useState(false);
   const [step, setStep] = useState(0);
@@ -440,6 +455,14 @@ export function ApplyForm({
     clearError("doc-parent_id");
     setParentIds((f) => [...f, ...incoming]);
   }
+  function addAddressProofs(list: FileList | null) {
+    if (!list) return;
+    const incoming = Array.from(list);
+    const problem = fileProblem(incoming, addressProofs.length, MAX_ID_FILES);
+    if (problem) return setErrors((er) => ({ ...er, "doc-address_proof": problem }));
+    clearError("doc-address_proof");
+    setAddressProofs((f) => [...f, ...incoming]);
+  }
   function addKidFiles(i: number, kind: ChildDocKind, list: FileList | null) {
     if (!list) return;
     const incoming = Array.from(list);
@@ -525,6 +548,15 @@ export function ApplyForm({
     const parentName = values.parentName.trim();
     const parentEmail = values.parentEmail.trim();
     const parentPhone = values.parentPhone.trim();
+    const addressParts = {
+      address_line1: values.addressLine1.trim(),
+      address_line2: nullIfEmpty(values.addressLine2),
+      address_town: values.addressTown.trim(),
+      address_postcode: nullIfEmpty(values.addressPostcode),
+      address_country: values.addressCountry.trim(),
+    };
+    // The one-line copy keeps the older free-text column (and anything reading it) filled.
+    const address = addressOneLine(addressParts).slice(0, 500) || null;
     const { error: famErr } = await supabase.from("admissions_families").insert({
       id: familyId,
       lead_application_id: appIds[0],
@@ -532,7 +564,8 @@ export function ApplyForm({
       parent_email: parentEmail,
       parent_phone: parentPhone,
       relationship: nullIfEmpty(values.relationship),
-      address: nullIfEmpty(values.address),
+      address,
+      ...addressParts,
       children_count: kids.length,
       fee_snapshot: snapshot,
     });
@@ -551,7 +584,8 @@ export function ApplyForm({
         parent_email: parentEmail,
         parent_phone: parentPhone,
         relationship: nullIfEmpty(values.relationship),
-        address: nullIfEmpty(values.address),
+        address,
+        ...addressParts,
         child_first_name: k.firstName.trim(),
         child_last_name: k.lastName.trim(),
         child_dob: k.dob,
@@ -599,6 +633,7 @@ export function ApplyForm({
       }
     };
     await upload(appIds[0], "parent_id", parentIds, "your photo ID");
+    await upload(appIds[0], "address_proof", addressProofs, "your proof of address");
     for (let i = 0; i < kids.length; i++) {
       const k = kids[i];
       const who = k.firstName.trim() || `child ${i + 1}`;
@@ -647,7 +682,9 @@ export function ApplyForm({
     const uploadNote =
       failedUploads.length > 0
         ? `Your application was sent, but we couldn't upload ${failedUploads.join(", ")}. Please email ${failedUploads.length > 1 ? "them" : "it"} to ${admissionsEmail}.`
-        : "Thank you for uploading your documents. We will tell you if we need anything else.";
+        : addressProofs.length === 0
+          ? `Thank you for uploading your documents. We will ask you for proof of ${names.length > 1 ? "your children's" : "your child's"} home address during the review, or you can email it to ${admissionsEmail}.`
+          : "Thank you for uploading your documents. We will tell you if we need anything else.";
     return (
       <div role="status" className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
         <h3 className="text-center font-serif text-xl font-semibold text-ink">
@@ -714,11 +751,6 @@ export function ApplyForm({
             <Field id="f-parentPhone" label="Phone number" error={errors.parentPhone}>
               <input {...props("parentPhone")} type="tel" autoComplete="tel" maxLength={40} className={inputCls} />
             </Field>
-            <div className="sm:col-span-2">
-              <Field id="f-address" label="Home address" optional>
-                <textarea {...props("address")} rows={2} maxLength={500} autoComplete="street-address" className={inputCls} />
-              </Field>
-            </div>
             <Field id="f-preferredStart" label="Preferred start" optional>
               <input {...props("preferredStart")} type="text" maxLength={120} placeholder="e.g. December 2026" className={inputCls} />
             </Field>
@@ -728,8 +760,55 @@ export function ApplyForm({
           </Section>
 
           <Section
-            title="Your photo ID"
-            intro="Admissions is a safeguarding process, so we verify the identity of the adults with parental responsibility. Files are stored privately and only admissions staff can open them. We ask for this once and use it for every child you apply for. If a child's legal parent or guardian is someone else, you can add their details for that child on the next step."
+            title={kids.length > 1 ? "Your children's home address" : "Your child's home address"}
+            intro="Where the child you are applying for lives. If you are applying for several children, use the address they live at with you. We will ask you for proof of this address."
+          >
+            <div className="sm:col-span-2">
+              <Field id="f-addressCountry" label="Country" error={errors.addressCountry}>
+                <input {...props("addressCountry")} type="text" list="apply-countries" autoComplete="country-name" maxLength={80} className={inputCls} />
+                <datalist id="apply-countries">
+                  {COUNTRIES.map((c) => (
+                    <option key={c} value={c} />
+                  ))}
+                </datalist>
+              </Field>
+            </div>
+            <div className="sm:col-span-2">
+              <Field id="f-addressLine1" label="Address line 1" error={errors.addressLine1}>
+                <input {...props("addressLine1")} type="text" autoComplete="address-line1" maxLength={120} className={inputCls} />
+              </Field>
+            </div>
+            <div className="sm:col-span-2">
+              <Field id="f-addressLine2" label="Address line 2" optional>
+                <input {...props("addressLine2")} type="text" autoComplete="address-line2" maxLength={120} className={inputCls} />
+              </Field>
+            </div>
+            <Field id="f-addressTown" label="Town or city" error={errors.addressTown}>
+              <input {...props("addressTown")} type="text" autoComplete="address-level2" maxLength={80} className={inputCls} />
+            </Field>
+            {(() => {
+              const optional = postcodeOptionalFor(values.addressCountry);
+              const hint = optional
+                ? `There is usually no postcode in ${values.addressCountry.trim()}, so you can leave this blank.`
+                : "If there is no postcode where you live, type \"None\".";
+              return (
+                <Field id="f-addressPostcode" label="Postcode or ZIP code" optional={optional} hint={hint} error={errors.addressPostcode}>
+                  <input
+                    {...props("addressPostcode")}
+                    type="text"
+                    autoComplete="postal-code"
+                    maxLength={20}
+                    aria-describedby={errors.addressPostcode ? "e-f-addressPostcode" : "h-f-addressPostcode"}
+                    className={inputCls}
+                  />
+                </Field>
+              );
+            })()}
+          </Section>
+
+          <Section
+            title="Proof of identity and address"
+            intro="Admissions is a safeguarding process, so we verify the identity of the adults with parental responsibility, and we need proof of identity and address for the pupil. Files are stored privately and only admissions staff can open them. We ask for these once and use them for every child you apply for. You upload each child's passport or birth certificate on the next step, where you can also add a different legal parent or guardian."
           >
             <div className="sm:col-span-2">
               <DocPicker
@@ -744,6 +823,20 @@ export function ApplyForm({
                 onRemove={(idx) => setParentIds((f) => f.filter((_, x) => x !== idx))}
               />
             </div>
+            <div className="sm:col-span-2">
+              <DocPicker
+                id="f-doc-address_proof"
+                label={kids.length > 1 ? "Proof of your children's home address" : "Proof of your child's home address"}
+                optional
+                hint={`A recent utility bill, council tax bill, bank statement or tenancy agreement showing the address above, dated in the last three months. PDF, JPG or PNG, up to ${MAX_ID_FILES} files, 10 MB each. If you don't have it to hand, we will ask for it during the review, or you can email it to ${admissionsEmail}.`}
+                files={addressProofs}
+                limit={MAX_ID_FILES}
+                error={errors["doc-address_proof"]}
+                disabled={busy}
+                onAdd={addAddressProofs}
+                onRemove={(idx) => setAddressProofs((f) => f.filter((_, x) => x !== idx))}
+              />
+            </div>
           </Section>
         </>
       )}
@@ -751,7 +844,7 @@ export function ApplyForm({
       {step === 1 && (
         <>
           <p className="text-sm text-ink/70">
-            Add a card for each child. Each child becomes their own application, and we link them as one family. Your details and photo ID are shared, so you do not repeat them.
+            Add a card for each child. Each child becomes their own application, and we link them as one family. Your details, home address, photo ID and proof of address are shared, so you do not repeat them.
           </p>
           {kids.map((k, i) => (
             <fieldset key={k.key} className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
@@ -846,7 +939,7 @@ export function ApplyForm({
                   <DocPicker
                     id={`f-c${i}-doc-child_id`}
                     label="Passport or birth certificate"
-                    hint={`PDF, JPG or PNG, up to ${MAX_ID_FILES} files, 10 MB each.`}
+                    hint={`Your child's proof of identity. PDF, JPG or PNG, up to ${MAX_ID_FILES} files, 10 MB each.`}
                     files={k.docs.child_id}
                     limit={MAX_ID_FILES}
                     error={errors[`c${i}-doc-child_id`]}

@@ -295,7 +295,7 @@ export function ApplicationsTab() {
           }
           if (!window.confirm(`${pendingProofs} proof${pendingProofs === 1 ? "" : "s"} of payment ${pendingProofs === 1 ? "is" : "are"} still unverified. As Headteacher you can override. Move to Accepted anyway?`)) return false;
         }
-        if (!current.id_documents_received && !window.confirm("ID documents are not marked as received yet. Move to Accepted anyway?")) return false;
+        if (!current.id_documents_received && !window.confirm("ID documents and proof of address are not marked as received yet. Move to Accepted anyway?")) return false;
       }
       setActionError(null);
       setNotice(null);
@@ -389,6 +389,7 @@ export function ApplicationsTab() {
   function exportCsv() {
     const cols = [
       "reference", "status", "created_at", "parent_name", "parent_email", "parent_phone", "relationship", "address",
+      "address_line1", "address_line2", "address_town", "address_postcode", "address_country",
       "child_first_name", "child_last_name", "child_dob", "child_gender", "year_group_applying", "preferred_start",
       "current_school", "current_school_year", "previous_islamic_education", "send_or_medical_notes", "how_heard",
       "sibling_at_tarbiyyah", "sibling_details", "consent_contact", "consent_data", "declaration_name", "notes",
