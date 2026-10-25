@@ -11,24 +11,44 @@ export const WEEKDAYS: { value: number; label: string; short: string }[] = [
   { value: 5, label: "Friday", short: "Fri" },
 ];
 
-// Two live-lesson time bands (see scripts/timetable-solver/generate.py's
-// module docstring) — this school teaches an international,
-// timezone-spread cohort across two daily windows. This is the actual
-// scheduling engine's structure; it is independent of the (now removed)
-// "Two live-lesson time bands" marketing differentiator, which described
-// specific named bands (UK/Europe/West-Africa, Gulf/South-Asia) that were
-// never confirmed as a commitment.
-export const PERIODS: { start: string; end: string; band: "A" | "B" }[] = [
-  { start: "09:00", end: "10:00", band: "A" },
-  { start: "10:00", end: "11:00", band: "A" },
-  { start: "11:15", end: "12:15", band: "A" },
-  { start: "15:00", end: "16:00", band: "B" },
-  { start: "16:00", end: "17:00", band: "B" },
-  { start: "17:15", end: "18:15", band: "B" },
+// The prospectus school day (UK time). Monday-Thursday: form time
+// 09:00-09:10, five 50-minute lessons with 10-minute movement breaks, lunch
+// and Dhuhr 12:00-13:00, Asr break 13:50-14:00, end of day 14:50-15:00, no
+// lessons after 15:00. Friday: form time and Lessons 1-3 only (09:00-12:00),
+// then Jumu'ah. Matches scripts/timetable-solver/generate.py's default grid
+// and migration 0150. Band "A" = inside the school day; "B" is only used for
+// a stored period that starts at or after 15:00 (out of hours).
+const MON_FRI = [1, 2, 3, 4, 5];
+const MON_THU = [1, 2, 3, 4];
+export const PERIODS: { start: string; end: string; band: "A" | "B"; weekdays: number[] }[] = [
+  { start: "09:10", end: "10:00", band: "A", weekdays: MON_FRI },
+  { start: "10:10", end: "11:00", band: "A", weekdays: MON_FRI },
+  { start: "11:10", end: "12:00", band: "A", weekdays: MON_FRI },
+  { start: "13:00", end: "13:50", band: "A", weekdays: MON_THU },
+  { start: "14:00", end: "14:50", band: "A", weekdays: MON_THU },
 ];
 
-// ── Admin-editable school day (table public.timetable_periods, migration
-// 0066). PERIODS above stays as the fallback used when the table is empty
+/** A period starting at or after this is outside the school day (band "B"). */
+export const END_OF_SCHOOL_DAY = "15:00";
+export const bandFor = (start: string): "A" | "B" => (start < END_OF_SCHOOL_DAY ? "A" : "B");
+
+/**
+ * Live lesson length by year group (prospectus): Years 1-2 30 min, Years 3-6
+ * 45 min, Years 7-11 50 min. Shorter primary lessons start at the same period
+ * start times and simply end earlier. Mirrors lesson_minutes_for() in the
+ * solver and the class defaults set by migration 0150.
+ */
+export function lessonMinutesFor(yearGroupName: string | null | undefined): number {
+  const name = (yearGroupName || "").trim().toLowerCase();
+  if (name.startsWith("reception")) return 30;
+  const m = name.match(/(\d+)/);
+  if (!m) return 50;
+  const n = Number(m[1]);
+  return n <= 2 ? 30 : n <= 6 ? 45 : 50;
+}
+
+// ── Admin-editable school day (table public.timetable_periods, migrations
+// 0066 and 0150). PERIODS above stays as the fallback used when the table is empty
 // or not migrated yet, so nothing ever breaks.
 export type PeriodKind = "lesson" | "break" | "lunch" | "prayer" | "enrichment";
 
@@ -113,11 +133,16 @@ export function periodApplies(p: { applies_to: string[] }, viewer?: string[]): b
   return p.applies_to.some((a) => tokens.has(a.trim().toLowerCase()));
 }
 
-/** The built-in day, used when no periods are stored. */
+/** The built-in day, used when no periods are stored (same as migration 0150). */
+const block = (id: string, name: string, kind: PeriodKind, start_time: string, end_time: string, weekdays: number[], sort: number): TimetablePeriod => ({ id, name, kind, start_time, end_time, weekdays, band: bandFor(start_time), applies_to: ["all"], activity: null, sort, active: true });
 export const FALLBACK_PERIODS: TimetablePeriod[] = [
-  ...PERIODS.map((p, i): TimetablePeriod => ({ id: `fallback-lesson-${i}`, name: `Period ${i + 1}`, kind: "lesson", start_time: p.start, end_time: p.end, weekdays: [1, 2, 3, 4, 5], band: p.band, applies_to: ["all"], activity: null, sort: i * 10, active: true })),
-  { id: "fallback-break-1", name: "Break", kind: "break", start_time: "11:00", end_time: "11:15", weekdays: [1, 2, 3, 4, 5], band: "A", applies_to: ["all"], activity: null, sort: 5, active: true },
-  { id: "fallback-break-2", name: "Break", kind: "break", start_time: "17:00", end_time: "17:15", weekdays: [1, 2, 3, 4, 5], band: "B", applies_to: ["all"], activity: null, sort: 55, active: true },
+  block("fallback-form", "Form time", "break", "09:00", "09:10", MON_FRI, 5),
+  ...PERIODS.map((p, i): TimetablePeriod => ({ id: `fallback-lesson-${i}`, name: `Lesson ${i + 1}`, kind: "lesson", start_time: p.start, end_time: p.end, weekdays: p.weekdays, band: p.band, applies_to: ["all"], activity: null, sort: (i + 1) * 10, active: true })),
+  block("fallback-break-1", "Break", "break", "10:00", "10:10", MON_FRI, 15),
+  block("fallback-break-2", "Break", "break", "11:00", "11:10", MON_FRI, 25),
+  block("fallback-lunch", "Lunch & Dhuhr", "lunch", "12:00", "13:00", MON_THU, 35),
+  block("fallback-break-3", "Break (Asr, extended Nov-Feb)", "break", "13:50", "14:00", MON_THU, 45),
+  block("fallback-end", "End of day", "break", "14:50", "15:00", MON_THU, 55),
 ];
 
 type PeriodRow = {
@@ -193,18 +218,20 @@ export function effectivePeriods(stored: TimetablePeriod[] | null | undefined): 
   return active.length > 0 ? active : FALLBACK_PERIODS;
 }
 
-/** Lesson periods as the simple {start,end,band} shape the old PERIODS had. */
-export function lessonPeriods(stored: TimetablePeriod[] | null | undefined, viewer?: string[]): { start: string; end: string; band: string }[] {
+/** Lesson periods as the simple {start,end,band,weekdays} shape PERIODS has (weekdays merged across identical times). */
+export function lessonPeriods(stored: TimetablePeriod[] | null | undefined, viewer?: string[]): { start: string; end: string; band: string; weekdays: number[] }[] {
   const lessons = effectivePeriods(stored).filter((p) => p.kind === "lesson" && (viewer === undefined || periodApplies(p, viewer)));
-  const seen = new Set<string>();
-  const out: { start: string; end: string; band: string }[] = [];
+  const byKey = new Map<string, { start: string; end: string; band: string; weekdays: number[] }>();
   for (const p of lessons) {
     const key = `${p.start_time}-${p.end_time}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push({ start: p.start_time, end: p.end_time, band: p.band || (p.start_time < "14:00" ? "A" : "B") });
+    const seen = byKey.get(key);
+    if (seen) {
+      seen.weekdays = Array.from(new Set([...seen.weekdays, ...p.weekdays])).sort((a, b) => a - b);
+      continue;
+    }
+    byKey.set(key, { start: p.start_time, end: p.end_time, band: p.band || bandFor(p.start_time), weekdays: [...p.weekdays] });
   }
-  return out.sort((a, b) => a.start.localeCompare(b.start));
+  return Array.from(byKey.values()).sort((a, b) => a.start.localeCompare(b.start));
 }
 
 export type TimetableSlot = {

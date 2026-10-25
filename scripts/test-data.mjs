@@ -330,16 +330,18 @@ async function generate() {
     "test timetable",
   );
   const PERIODS = [
-    ["09:00", "09:50"],
-    ["10:00", "10:50"],
-    ["11:15", "12:05"],
-    ["12:15", "13:05"],
+    ["09:10", "10:00"],
+    ["10:10", "11:00"],
+    ["11:10", "12:00"],
+    ["13:00", "13:50"],
     ["14:00", "14:50"],
   ];
   const lessonsByClass = new Map();
   for (const [ci, c] of classes.entries()) {
-    const days = [1 + (ci % 5), 1 + ((ci + 2) % 5)];
     const period = PERIODS[ci % PERIODS.length];
+    // Afternoon lessons are Monday-Thursday only (Friday afternoon is Jumu'ah).
+    const nDays = period[0] >= "12:00" ? 4 : 5;
+    const days = [1 + (ci % nDays), 1 + ((ci + 2) % nDays)];
     const slots = must(
       await sb
         .from("timetable_slots")

@@ -13,7 +13,7 @@ function TeacherRow({ teacher, rows, yearId, reload }: { teacher: Teacher; rows:
   const [open, setOpen] = useState(false);
   const [weekday, setWeekday] = useState(1);
   const [start, setStart] = useState("09:00");
-  const [end, setEnd] = useState("12:15");
+  const [end, setEnd] = useState("15:00");
   const [error, setError] = useState<string | null>(null);
 
   const add = async () => {

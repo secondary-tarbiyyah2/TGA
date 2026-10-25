@@ -114,20 +114,20 @@ export function selfTestChecks(): string[] {
     const got = findClashes(slots).map((c) => c.kind).sort().join(",");
     if (got !== [...kinds].sort().join(",")) failed.push(`${name}: expected [${kinds}] got [${got}]`);
   };
-  expect("no clash", [mk("1", "A", "T", 1, "09:00", "10:00"), mk("2", "B", "T", 1, "10:00", "11:00")], []);
+  expect("no clash", [mk("1", "A", "T", 1, "09:10", "10:00"), mk("2", "B", "T", 1, "10:10", "11:00")], []);
   expect("teacher in two classes", [mk("1", "A", "T", 1, "09:00", "10:00"), mk("2", "B", "T", 1, "09:00", "10:00")], ["teacher"]);
   expect("teacher partial overlap", [mk("1", "A", "T", 2, "09:00", "10:00"), mk("2", "B", "T", 2, "09:30", "10:30")], ["teacher"]);
   expect("same time other day", [mk("1", "A", "T", 1, "09:00", "10:00"), mk("2", "B", "T", 2, "09:00", "10:00")], []);
   expect("class double-booked", [mk("1", "A", "T1", 1, "09:00", "10:00"), mk("2", "A", "T2", 1, "09:00", "10:00")], ["class"]);
   expect("both", [mk("1", "A", "T", 1, "09:00", "10:00"), mk("2", "A", "T", 1, "09:00", "10:00")], ["class", "teacher"]);
   expect("bad times", [mk("1", "A", "T", 1, "10:00", "09:00")], ["time"]);
-  const block = (supervisor: string | null): TimetablePeriod => ({ id: "p", name: "Enrichment", kind: "enrichment", start_time: "12:45", end_time: "13:30", weekdays: [1, 2], band: "A", applies_to: ["all"], activity: null, sort: 0, active: true, supervisor_user_id: supervisor });
+  const block = (supervisor: string | null): TimetablePeriod => ({ id: "p", name: "Enrichment", kind: "enrichment", start_time: "12:15", end_time: "12:45", weekdays: [1, 2], band: "A", applies_to: ["all"], activity: null, sort: 0, active: true, supervisor_user_id: supervisor });
   const supervised = (slots: TimetableSlot[], supervisor: string | null) => supervisorClashes(slots, [block(supervisor)]).length;
-  if (supervised([mk("1", "A", "T", 1, "13:00", "14:00")], "T") !== 1) failed.push("supervisor teaching during the block should warn");
-  if (supervised([mk("1", "A", "T", 3, "13:00", "14:00")], "T") !== 0) failed.push("supervisor teaching on another day should not warn");
-  if (supervised([mk("1", "A", "T", 1, "13:30", "14:00")], "T") !== 0) failed.push("lesson starting when the block ends should not warn");
-  if (supervised([mk("1", "A", "U", 1, "13:00", "14:00")], "T") !== 0) failed.push("a different teacher should not warn");
-  if (supervised([mk("1", "A", "T", 1, "13:00", "14:00")], null) !== 0) failed.push("a block with no supervisor should not warn");
+  if (supervised([mk("1", "A", "T", 1, "12:30", "13:20")], "T") !== 1) failed.push("supervisor teaching during the block should warn");
+  if (supervised([mk("1", "A", "T", 3, "12:30", "13:20")], "T") !== 0) failed.push("supervisor teaching on another day should not warn");
+  if (supervised([mk("1", "A", "T", 1, "12:45", "13:35")], "T") !== 0) failed.push("lesson starting when the block ends should not warn");
+  if (supervised([mk("1", "A", "U", 1, "12:30", "13:20")], "T") !== 0) failed.push("a different teacher should not warn");
+  if (supervised([mk("1", "A", "T", 1, "12:30", "13:20")], null) !== 0) failed.push("a block with no supervisor should not warn");
   return failed;
 }
 
@@ -163,7 +163,7 @@ export function teacherLoadTable(args: {
   protectedTimes: Protected[];
   maxPerDay?: number;
   /** Lesson periods (stored school day); defaults to the built-in PERIODS. */
-  periods?: { start: string; end: string }[];
+  periods?: { start: string; end: string; weekdays?: number[] }[];
 }): { rows: TeacherLoadRow[]; unassignedLessons: number } {
   const { yearId, subjects, subjectTeachers, classTeachers, teachers } = args;
   const maxPerDay = args.maxPerDay ?? DEFAULT_MAX_LESSONS_PER_DAY;
@@ -209,6 +209,7 @@ export function teacherLoadTable(args: {
     for (const wd of WEEKDAYS) {
       let day = 0;
       for (const p of gridPeriods) {
+        if (p.weekdays && !p.weekdays.includes(wd.value)) continue; // e.g. no afternoon lessons on Friday
         const ok = avail.some((a) => a.teacher_user_id === teacherId && a.weekday === wd.value && hhmm(a.start_time) <= p.start && p.end <= hhmm(a.end_time));
         const blocked = prot.some((q) => q.weekday === wd.value && hhmm(q.start_time) < p.end && p.start < hhmm(q.end_time));
         if (ok && !blocked) day++;

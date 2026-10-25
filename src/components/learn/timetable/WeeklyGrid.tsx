@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { WEEKDAYS, PERIODS, AUDIENCES, type PeriodKind, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
+import { WEEKDAYS, FALLBACK_PERIODS, AUDIENCES, type PeriodKind, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
 import { classColour, hhmm, moveProblem, type Colour, type LockableSlot, type Teacher } from "./types";
 
 const PX_PER_MIN = 1.15; // vertical scale: 60 min = 69px
@@ -78,7 +78,7 @@ export function WeeklyGrid({
   moveNotes?: (slot: TimetableSlot, weekday: number, start: string, end: string) => string[];
   /** Extra shaded bands (protected times such as prayer or lunch). */
   breaks?: GridBreak[];
-  /** The school day's stored periods. Their non-lesson blocks (break, lunch, prayer, enrichment) are drawn as bands; with none, gaps between the standard lesson periods show as breaks. */
+  /** The school day's stored periods. Their non-lesson blocks (break, lunch, prayer, enrichment) are drawn as bands; with none, the built-in day's blocks are drawn. */
   periods?: TimetablePeriod[];
 }) {
   const [drag, setDrag] = useState<Drag | null>(null);
@@ -115,21 +115,16 @@ export function WeeklyGrid({
   for (let m = lo; m <= hi; m += 60) hours.push(m);
 
   // Bands: the stored non-lesson periods (break, lunch, prayer, enrichment); with
-  // none stored, short gaps between the standard periods; then protected times.
+  // none stored, the built-in day's blocks; then protected times.
   const bands: { weekday: number | null; weekdays?: number[]; start: number; end: number; label: string; className: string }[] = [];
-  const blocks = (periods ?? []).filter((p) => p.active && p.kind !== "lesson");
+  const stored = (periods ?? []).filter((p) => p.active);
+  // With no stored day, draw the built-in day's blocks (form time, breaks, lunch & Dhuhr).
+  const blocks = (stored.length > 0 ? stored : FALLBACK_PERIODS).filter((p) => p.active && p.kind !== "lesson");
   if (blocks.length > 0) {
     for (const p of blocks) {
       const who = p.applies_to.includes("all") ? "" : ` (${p.applies_to.map((a) => AUDIENCES.find((x) => x.value === a)?.label ?? a).join(", ")})`;
       const kind = p.kind as Exclude<PeriodKind, "lesson">;
       bands.push({ weekday: null, weekdays: p.weekdays, start: toMin(p.start_time), end: toMin(p.end_time), label: `${p.name}${p.kind === "enrichment" && p.activity ? `: ${p.activity}` : ""}${p.kind === "enrichment" && p.supervisor_name ? ` · ${p.supervisor_name}` : ""}${who}`, className: BAND_CLASS[kind] });
-    }
-  } else {
-    const sortedPeriods = [...PERIODS].sort((a, b) => a.start.localeCompare(b.start));
-    for (let i = 0; i + 1 < sortedPeriods.length; i++) {
-      const a = toMin(sortedPeriods[i].end);
-      const b = toMin(sortedPeriods[i + 1].start);
-      if (b > a && b - a <= 30) bands.push({ weekday: null, start: a, end: b, label: "Break", className: BAND_CLASS.break });
     }
   }
   for (const p of breaks ?? []) bands.push({ weekday: p.weekday, start: toMin(p.start), end: toMin(p.end), label: p.name, className: "bg-orange-100/80 text-orange-900/80" });

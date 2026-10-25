@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { classTeacherNames, todayIso, type CstRow } from "@/lib/learn/teacherFor";
+import { lessonMinutesFor } from "@/lib/learn/timetable";
 import { cleanMeetingUrl, dangerBtn, EmptyState, Field, ghostBtn, inputCls, Notice, primaryBtn, StepCard } from "./shared";
 import type { AcademicYear, Child, ClassRow, ClassTeacher, Enrolment, Subject, Teacher, YearGroup } from "./shared";
 
@@ -21,7 +22,10 @@ type Props = {
 };
 
 type Draft = { name: string; year_group_id: string; subject_id: string; academic_year_id: string; weekly_lessons: string; lesson_length_minutes: string; meeting_url: string };
-const BLANK: Draft = { name: "", year_group_id: "", subject_id: "", academic_year_id: "", weekly_lessons: "1", lesson_length_minutes: "60", meeting_url: "" };
+const BLANK: Draft = { name: "", year_group_id: "", subject_id: "", academic_year_id: "", weekly_lessons: "1", lesson_length_minutes: "50", meeting_url: "" };
+
+/** Lengths treated as "not chosen yet": picking a year group replaces them with that year's prospectus length. */
+const DEFAULT_LENGTHS = ["", "30", "45", "50", "60"];
 
 const MEETING_HELP = "Paste a recurring Teams (or Zoom/Meet) link. Used to join this class's lessons.";
 
@@ -30,7 +34,7 @@ function ClassFields({ d, set, props }: { d: Draft; set: (f: (s: Draft) => Draft
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       <Field label="Class name"><input className={inputCls} value={d.name} onChange={(e) => set((s) => ({ ...s, name: e.target.value }))} placeholder="Year 7 Arabic" /></Field>
       <Field label="Year group">
-        <select className={inputCls} value={d.year_group_id} onChange={(e) => set((s) => ({ ...s, year_group_id: e.target.value }))}>
+        <select className={inputCls} value={d.year_group_id} onChange={(e) => { const id = e.target.value; set((s) => ({ ...s, year_group_id: id, lesson_length_minutes: DEFAULT_LENGTHS.includes(s.lesson_length_minutes.trim()) ? String(lessonMinutesFor(props.yearGroups.find((y) => y.id === id)?.name)) : s.lesson_length_minutes })); }}>
           <option value="">Choose…</option>
           {props.yearGroups.map((y) => <option key={y.id} value={y.id}>{y.name}</option>)}
         </select>

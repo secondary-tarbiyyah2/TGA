@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { btn, chipCls, fieldCls, ghost } from "@/components/learn/timetable/api";
 import { supervisorClashes } from "@/components/learn/timetable/checks";
 import type { Teacher } from "@/components/learn/timetable/types";
-import { AUDIENCES, ENRICHMENT_ACTIVITIES, FALLBACK_PERIODS, KIND_STYLE, PERIOD_KINDS, WEEKDAYS, getPublishedRunId, type PeriodKind, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
+import { AUDIENCES, bandFor, ENRICHMENT_ACTIVITIES, FALLBACK_PERIODS, KIND_STYLE, PERIOD_KINDS, WEEKDAYS, getPublishedRunId, type PeriodKind, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type Draft = {
@@ -95,7 +95,7 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
       applies_to: draft.applies,
       activity: draft.kind === "enrichment" && draft.activity.trim() ? draft.activity.trim() : null,
       supervisor_user_id: draft.kind === "enrichment" && draft.supervisor ? draft.supervisor : null,
-      band: draft.start < "14:00" ? "A" : "B",
+      band: bandFor(draft.start),
       sort: Number(draft.start.replace(":", "")),
       active: draft.active,
     };
@@ -160,7 +160,7 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
 
       {periods.length === 0 ? (
         <div className="mt-3 rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-3 text-sm text-ink/70">
-          <p>No periods are stored yet, so the built-in day is used (two bands, three lessons each, Monday to Friday).</p>
+          <p>No periods are stored yet, so the built-in school day is used (form time 09:00, five 50-minute lessons Monday to Thursday with lunch and Dhuhr 12:00-13:00, three lessons on Friday before Jumu&apos;ah; no lessons after 15:00).</p>
           <button type="button" className={`${ghost} mt-2`} onClick={loadStarter} disabled={busy}>
             Load the starter day to edit it
           </button>

@@ -36,17 +36,20 @@ Reconciliation (added with migration 0056):
     concrete suggestions. Everything lands in timetable_conflicts (kind, details).
   * Tunables: TT_MAX_LESSONS_PER_DAY (6), TT_MAX_CONSECUTIVE (3), or the CLI flags.
 
-Two "live-lesson time bands" (grep hit: src/sanity/schemaTypes/curriculumContent.ts
-`timeBandsHeading`/`timeBandsBody` — this school teaches an international,
-timezone-spread cohort across two daily live-lesson windows). This solver
-encodes that as PERIODS below: a morning UK band and an
-afternoon/evening-UK band, so the solver can place subjects into whichever
-band suits the timezone soft-constraint weighting per class (see
-`--timezone-hint` per class in the DB, read from classes.timezone_band if
-present — Phase A keeps this simple: two fixed bands, weighted equally
-unless a class overrides it).
+Default school day (the prospectus, UK time; matches src/lib/learn/timetable.ts
+PERIODS and migration 0150): Monday-Thursday form time 09:00-09:10, Lessons
+1-3 at 09:10, 10:10 and 11:10 (50 min, 10-minute movement breaks), lunch and
+Dhuhr 12:00-13:00, Lesson 4 13:00-13:50, Asr break 13:50-14:00, Lesson 5
+14:00-14:50, end of day 14:50-15:00; no lessons after 15:00. Friday: Lessons
+1-3 only (09:00-12:00), then Jumu'ah. Band "A" is the school day; a stored
+period starting at or after 15:00 is band "B" (out of hours).
 
-School-day periods (migration 0066): the grid above is only the DEFAULT. The
+Lesson lengths: Years 1-2 30 min, Years 3-6 45 min, Years 7-11 50 min. A
+class's lesson starts at the period start and lasts its lesson_length_minutes
+(capped at the period length), so primary lessons end early inside the
+period (see `slot_end`).
+
+School-day periods (migrations 0066, 0150): the grid above is only the DEFAULT. The
 head edits the real day in the `timetable_periods` table (admin UI: School
 day). `fetch_inputs` reads the active rows with kind='lesson' and calls
 `set_periods()`; each row has weekdays and `applies_to` (year-group audiences
@@ -74,23 +77,47 @@ except ImportError:  # pragma: no cover - only needed for the live DB path
 
 WEEKDAYS = [1, 2, 3, 4, 5]  # Monday=1 .. Friday=5 (Sunday=0, Saturday=6 unused)
 
-# Two fixed daily live-lesson time bands (see module docstring). Each band
-# is split into fixed-length periods matching each class's
-# lesson_length_minutes where possible; Phase A uses a simple 60-minute
-# period grid, which covers the seed/test data and the common case.
-BAND_A = [(time(9, 0), time(10, 0)), (time(10, 0), time(11, 0)), (time(11, 15), time(12, 15))]   # UK morning
-BAND_B = [(time(15, 0), time(16, 0)), (time(16, 0), time(17, 0)), (time(17, 15), time(18, 15))]  # UK afternoon/evening
-_DEFAULT_PERIODS = [(i, start, end, "A") for i, (start, end) in enumerate(BAND_A)] + [
-    (i + len(BAND_A), start, end, "B") for i, (start, end) in enumerate(BAND_B)
+# The prospectus school day (see module docstring). Lessons 1-3 run every
+# weekday; Lessons 4-5 Monday-Thursday only (Friday afternoon is Jumu'ah).
+MON_THU = {1, 2, 3, 4}
+_DEFAULT_GRID = [
+    (time(9, 10), time(10, 0), set(WEEKDAYS)),
+    (time(10, 10), time(11, 0), set(WEEKDAYS)),
+    (time(11, 10), time(12, 0), set(WEEKDAYS)),
+    (time(13, 0), time(13, 50), MON_THU),
+    (time(14, 0), time(14, 50), MON_THU),
 ]
+END_OF_SCHOOL_DAY = time(15, 0)
+_DEFAULT_PERIODS = [(i, start, end, "A") for i, (start, end, _d) in enumerate(_DEFAULT_GRID)]
 PERIODS = list(_DEFAULT_PERIODS)
 # Parallel to PERIODS: which weekdays / audiences each period is open to.
-PERIOD_META: list[dict] = [{"weekdays": set(WEEKDAYS), "applies": {"all"}} for _ in PERIODS]
+PERIOD_META: list[dict] = [{"weekdays": set(d), "applies": {"all"}} for _s, _e, d in _DEFAULT_GRID]
 # Teacher load rules (hard). Overridable via env or CLI flags.
 MAX_CONSECUTIVE_TEACHING_PERIODS = int(os.environ.get("TT_MAX_CONSECUTIVE", "3"))
 MAX_TEACHER_LESSONS_PER_DAY = int(os.environ.get("TT_MAX_LESSONS_PER_DAY", "6"))
 # Two periods count as "back to back" when the gap between them is at most this.
 CONTIGUOUS_GAP_MINUTES = 15
+
+
+def lesson_minutes_for(year_group_name: str | None) -> int:
+    """Prospectus lesson length; mirrors lessonMinutesFor() in src/lib/learn/timetable.ts."""
+    name = (year_group_name or "").strip().lower()
+    if name.startswith("reception"):
+        return 30
+    m = re.search(r"(\d+)", name)
+    if not m:
+        return 50
+    n = int(m.group(1))
+    return 30 if n <= 2 else 45 if n <= 6 else 50
+
+
+def slot_end(start: time, period_end: time, length_minutes: int | None) -> time:
+    """End of a lesson that starts at the period start: its own length, never past the period end."""
+    if not length_minutes or length_minutes <= 0:
+        return period_end
+    total = start.hour * 60 + start.minute + int(length_minutes)
+    end = time(min(total // 60, 23), total % 60 if total // 60 <= 23 else 59)
+    return min(end, period_end)
 
 
 @dataclass
@@ -307,7 +334,7 @@ def fetch_inputs(supabase, academic_year_label: str) -> Inputs:
                     subject_id=sid,
                     subject_name=subj.get("name", "?"),
                     weekly_lessons=lessons,
-                    lesson_length_minutes=c["lesson_length_minutes"],
+                    lesson_length_minutes=c.get("lesson_length_minutes") or lesson_minutes_for(year_groups.get(c["year_group_id"])),
                     is_core=bool(subj.get("is_core")),
                     eligible_teacher_ids=eligible,
                 )
@@ -443,7 +470,7 @@ def _mins(t: time) -> int:
 
 ALL_CELLS = [(wd, idx) for wd in WEEKDAYS for idx, _s, _e, _b in PERIODS]
 # Contiguous stretches of the lesson day (periods at most CONTIGUOUS_GAP_MINUTES
-# apart are one stretch): the default grid gives the two bands, 09:00-12:15 and 15:00-18:15.
+# apart are one stretch): the default grid gives 09:10-12:00 and 13:00-14:50.
 SCHOOL_DAY_SPANS: list = []
 # Index pairs of lesson periods whose times overlap (only with custom periods).
 OVERLAPPING_PERIODS: list = []
@@ -518,10 +545,10 @@ def set_periods(rows: list[dict]) -> None:
         parsed.append((start, end, days, applies))
     if not parsed:
         PERIODS = list(_DEFAULT_PERIODS)
-        PERIOD_META = [{"weekdays": set(WEEKDAYS), "applies": {"all"}} for _ in PERIODS]
+        PERIOD_META = [{"weekdays": set(d), "applies": {"all"}} for _s, _e, d in _DEFAULT_GRID]
     else:
         parsed.sort(key=lambda p: (p[0], p[1]))
-        PERIODS = [(i, st, en, "A" if st < time(14, 0) else "B") for i, (st, en, _d, _a) in enumerate(parsed)]
+        PERIODS = [(i, st, en, "A" if st < END_OF_SCHOOL_DAY else "B") for i, (st, en, _d, _a) in enumerate(parsed)]
         PERIOD_META = [{"weekdays": d, "applies": a} for _st, _en, d, a in parsed]
     _rebuild_derived()
 
@@ -749,7 +776,7 @@ def solve(inputs: Inputs) -> SolveResult:
                         "teacher_user_id": chosen,
                         "weekday": wd,
                         "start_time": s.isoformat(),
-                        "end_time": e.isoformat(),
+                        "end_time": slot_end(s, e, c.lesson_length_minutes).isoformat(),
                     }
                 )
     return SolveResult(

@@ -152,7 +152,7 @@ def main() -> int:
                 "academic_year_id": year_id,
                 "weekday": wd,
                 "start_time": "09:00",
-                "end_time": "12:15",
+                "end_time": "12:00",
                 "contracted": True,
             }
             for wd in weekdays
@@ -161,8 +161,8 @@ def main() -> int:
                 "teacher_user_id": teacher_ids[name],
                 "academic_year_id": year_id,
                 "weekday": wd,
-                "start_time": "15:00",
-                "end_time": "18:15",
+                "start_time": "13:00",
+                "end_time": "15:00",
                 "contracted": True,
             }
             for wd in weekdays
@@ -221,7 +221,7 @@ def main() -> int:
                     "year_group_id": year_groups[yg],
                     "subject_id": subjects[subj],
                     "weekly_lessons": weekly,
-                    "lesson_length_minutes": 60,
+                    "lesson_length_minutes": 45,  # Years 3-5: prospectus KS2 length
                     "is_test": True,
                 }
             )

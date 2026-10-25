@@ -1,6 +1,6 @@
 "use client";
 
-import { WEEKDAYS, KIND_STYLE, effectivePeriods, periodApplies, timeLabel, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
+import { WEEKDAYS, KIND_STYLE, bandFor, effectivePeriods, periodApplies, timeLabel, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
 import { useTimetablePeriods } from "@/lib/learn/useTimetablePeriods";
 
 type Props = {
@@ -117,7 +117,7 @@ export function TimetableGrid({ slots, simplified = false, showClassLabel = fals
               );
             }
             return (
-              <tr key={r.key} className={(p?.band || (r.start >= "14:00" ? "B" : "A")) === "B" ? "bg-cream/40" : undefined}>
+              <tr key={r.key} className={(p?.band || bandFor(r.start)) === "B" ? "bg-cream/40" : undefined}>
                 <td className={`${cellPad} ${textSize} border-b border-gold-light/20 whitespace-nowrap text-ink/65`}>
                   {r.start}–{r.end}
                 </td>
