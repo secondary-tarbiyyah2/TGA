@@ -48,6 +48,11 @@ update public.fee_bands set year_group_range = 'Year 1 – Year 2' where year_gr
 
 -- Eight monthly payments (4 December, then the 28th of each month from
 -- 28 December to 28 June), not seven; payment dates from 4 December, not 19.
+-- The live database never got payment_schedule_text (an earlier version of
+-- 0057 ran without it), so make sure it exists before it is updated.
+alter table public.site_settings
+  add column if not exists payment_schedule_text text not null default
+    'Termly payments are due on 4 December 2026 and 28 March 2027. The first monthly payment is due on 4 December 2026, then payments are taken on the 28th of each month from 28 December 2026 to 28 June 2027. The registration fee is due on acceptance and no later than 4 December 2026.';
 update public.site_settings set fee_instalments = 8 where id = true and fee_instalments = 7;
 update public.site_settings set payment_schedule_text = 'Termly payments are due on 4 December 2026 and 28 March 2027. The first monthly payment is due on 4 December 2026, then payments are taken on the 28th of each month from 28 December 2026 to 28 June 2027. The registration fee is due on acceptance and no later than 4 December 2026.'
   where id = true and payment_schedule_text like '%19 December 2026%';
