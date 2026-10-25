@@ -4,7 +4,10 @@
 import fs from "node:fs";
 import path from "node:path";
 const root = process.env.LESSONS_DIR ? new URL(process.env.LESSONS_DIR.replace(/\/?$/, "/"), "file://" + process.cwd() + "/").pathname : new URL("../../content/lessons/", import.meta.url).pathname;
-const YEARS = ["reception", ...Array.from({ length: 11 }, (_, i) => `y${i + 1}`)];
+// Year 1 to Year 11 only: the Academy does not run Reception.
+const YEARS = Array.from({ length: 11 }, (_, i) => `y${i + 1}`);
+// Subjects not taught in a year (History is not offered at KS4 / GCSE).
+const NOT_TAUGHT = { history: ["y10", "y11"] };
 const BLOCKS = ["model", "check", "quote", "compare", "timeline", "table", "code", "misconception", "cycle"];
 let bad = 0, files = 0, lessons = 0;
 const blockCount = Object.fromEntries(BLOCKS.map((k) => [k, 0]));
@@ -57,7 +60,9 @@ for (const f of walk(root)) {
   files++;
   const rel = path.relative(root, f);
   let j; try { j = JSON.parse(fs.readFileSync(f, "utf8")); } catch (e) { err(rel, "invalid JSON " + e.message); continue; }
-  if (!j.subject || !j.board || !YEARS.includes(j.year)) err(rel, "needs subject, board, valid year");
+  if (!j.subject || !j.board || !YEARS.includes(j.year)) err(rel, "needs subject, board, valid year (Year 1 to Year 11)");
+  const slug = rel.split(/[\\/]/)[0];
+  if ((NOT_TAUGHT[slug] || []).includes(j.year)) err(rel, `${j.subject} is not taught in ${j.year.toUpperCase()}`);
   if (!Array.isArray(j.lessons) || !j.lessons.length) { err(rel, "no lessons"); continue; }
   const seen = new Set();
   for (const l of j.lessons) {
