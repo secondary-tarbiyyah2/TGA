@@ -5,6 +5,9 @@
 // (policy 12, 2026–27, section 4); the four-day week and hours from the
 // Flexible Learning Policy (21). If either changes, change this file (and the
 // key_stage_pages rows, editable at /learn/admin/content) to match.
+// PSHE: Years 1-6 have PSHE only (no RSE or sex education); Years 7-11 have
+// PSHE and RSE taught from an Islamic perspective, to boys and girls
+// separately (RSHE Policy 17; migration 0152 updates the DB copies).
 
 export type KeyStage = {
   slug: string;
@@ -37,7 +40,7 @@ export const keyStages: KeyStage[] = [
       "Computing",
       "Art and design",
       "PE",
-      "PSHE and RSE",
+      "PSHE",
       "Qur'an and Tajweed",
       "Arabic",
       "Islamic Studies, including du'a and Islamic manners",
@@ -50,7 +53,7 @@ export const keyStages: KeyStage[] = [
       { subject: "Science, history, geography and computing", lessons: 1 },
       { subject: "Qur'an and Tajweed", lessons: 3 },
       { subject: "Arabic and Islamic Studies", lessons: 1 },
-      { subject: "PSHE, RSE, PE, art and wellbeing", lessons: 1 },
+      { subject: "PSHE, PE, art and wellbeing", lessons: 1 },
     ],
     lessonLength: "30 minutes",
     totalLessons: "15 live lessons a week (Years 1–2)",
@@ -60,7 +63,7 @@ export const keyStages: KeyStage[] = [
     slug: "year-3-6",
     range: "Year 3 – Year 6",
     title: "Key Stage 2",
-    subjects: ["English", "Mathematics", "Science", "History", "Geography", "Computing", "Art and design", "PE (at home)", "PSHE and RSE", "Qur'an and Tajweed", "Arabic", "Islamic Studies"],
+    subjects: ["English", "Mathematics", "Science", "History", "Geography", "Computing", "Art and design", "PE (at home)", "PSHE", "Qur'an and Tajweed", "Arabic", "Islamic Studies"],
     liveSplit: "A full live timetable taught by qualified teachers, with homework and independent tasks set and marked between lessons.",
     weekly: [
       { subject: "English", lessons: 5 },
@@ -69,7 +72,7 @@ export const keyStages: KeyStage[] = [
       { subject: "History, geography and computing", lessons: 2 },
       { subject: "Qur'an and Tajweed", lessons: 2 },
       { subject: "Arabic and Islamic Studies", lessons: 2 },
-      { subject: "PSHE, RSE, PE, art and wellbeing", lessons: 2 },
+      { subject: "PSHE, PE, art and wellbeing", lessons: 2 },
     ],
     lessonLength: "45 minutes",
     totalLessons: "20 live lessons a week",
@@ -89,7 +92,7 @@ export const keyStages: KeyStage[] = [
       "Arabic",
       "Art and design",
       "PE and wellbeing",
-      "PSHE and RSE",
+      "PSHE and RSE (Islamic perspective)",
       "Qur'an and Tajweed",
       "Islamic Studies",
     ],
@@ -101,7 +104,7 @@ export const keyStages: KeyStage[] = [
       { subject: "History, geography and computing", lessons: 3 },
       { subject: "Qur'an and Tajweed", lessons: 3 },
       { subject: "Arabic and Islamic Studies", lessons: 4 },
-      { subject: "PSHE, RSE, PE, art and wellbeing", lessons: 3 },
+      { subject: "PSHE and RSE (Islamic perspective), PE, art and wellbeing", lessons: 3 },
     ],
     lessonLength: "50 minutes",
     totalLessons: "25 live lessons a week",
@@ -120,7 +123,7 @@ export const keyStages: KeyStage[] = [
       "Two options from Geography (International GCSE 4GE1, taught from the AQA GCSE course), Computer Science (International GCSE 4CP0, taught from the Pearson Edexcel GCSE course), Business (International GCSE 4BS1) and Arabic (International GCSE Arabic as a first language 4AA1, taught from the Pearson Edexcel GCSE course)",
       "Qur'an and Tajweed",
       "PE and wellbeing",
-      "PSHE and RSE",
+      "PSHE and RSE (Islamic perspective)",
     ],
     liveSplit:
       "Live lessons in every subject, leading to Pearson Edexcel International GCSEs. Subjects are chosen so they suit online learners sitting exams as private candidates, for example without coursework that a centre must supervise.",
@@ -131,7 +134,7 @@ export const keyStages: KeyStage[] = [
       { subject: "Two International GCSE options", lessons: 4 },
       { subject: "Qur'an and Tajweed", lessons: 2 },
       { subject: "Arabic and Islamic Studies", lessons: 2 },
-      { subject: "PSHE, RSE, PE and wellbeing", lessons: 2 },
+      { subject: "PSHE and RSE (Islamic perspective), PE and wellbeing", lessons: 2 },
     ],
     lessonLength: "50 minutes",
     totalLessons: "25 live lessons a week",

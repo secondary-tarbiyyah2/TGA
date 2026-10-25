@@ -245,7 +245,26 @@ export const getKeyStages = () =>
   queryOrFallback<KeyStage[]>(
     (s) => s.from("key_stage_pages").select("slug, range, title, intro, subjects, weekly, lesson_length, total_lessons, note, gcse_note, order_index").eq("visible", true).order("order_index"),
     seedKeyStages
-  ).then((rows) => (rows === seedKeyStages ? rows : rows.map((r: unknown) => mapKeyStage(r as Record<string, unknown>))));
+  ).then((rows) => (rows === seedKeyStages ? rows : withEveryKeyStage(rows.map((r: unknown) => mapKeyStage(r as Record<string, unknown>)))));
+
+/** Older slugs still found in some databases, and the page each now lives at. */
+const LEGACY_STAGE_SLUGS: Record<string, string> = { "reception-year-2": "year-1-2" };
+const currentStageSlug = (slug: string) => LEGACY_STAGE_SLUGS[slug] || slug;
+
+/** Every key stage page always exists, whatever the database holds: rows on
+ * an old slug are moved to the current one, and any stage missing from the
+ * database falls back to the built-in copy, so /curriculum/<stage>/ is
+ * always built (a build that ran before a migration can't drop a page). */
+function withEveryKeyStage(rows: KeyStage[]): KeyStage[] {
+  const bySlug = new Map<string, KeyStage>();
+  for (const r of rows) {
+    const slug = currentStageSlug(r.slug);
+    if (!bySlug.has(slug) || r.slug === slug) bySlug.set(slug, { ...r, slug });
+  }
+  for (const seed of seedKeyStages) if (!bySlug.has(seed.slug)) bySlug.set(seed.slug, seed);
+  const order = seedKeyStages.map((k) => k.slug);
+  return [...bySlug.values()].sort((a, b) => (order.indexOf(a.slug) + 1 || 99) - (order.indexOf(b.slug) + 1 || 99));
+}
 
 function mapKeyStage(r: Record<string, unknown>): KeyStage {
   const subjects = Array.isArray(r.subjects) ? (r.subjects as unknown[]).map(String) : [];
@@ -327,5 +346,5 @@ export const getCurriculumDocuments = () =>
   ).then((rows) => (rows === seedCurriculumDocuments ? rows : rows.map((r: unknown) => mapCurriculumDocument(r as Record<string, unknown>))));
 
 function mapCurriculumDocument(r: Record<string, unknown>): CurriculumDocument {
-  return { _id: r.id as string, keyStage: r.key_stage as string, subject: r.subject as string, title: r.title as string, term: (r.term as CurriculumDocument["term"]) || undefined, fileUrl: r.file_url as string, order: r.order_index as number };
+  return { _id: r.id as string, keyStage: currentStageSlug(r.key_stage as string), subject: r.subject as string, title: r.title as string, term: (r.term as CurriculumDocument["term"]) || undefined, fileUrl: r.file_url as string, order: r.order_index as number };
 }

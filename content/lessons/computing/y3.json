@@ -15,9 +15,18 @@
         "Write a clear algorithm for a familiar task"
       ],
       "keywords": [
-        { "term": "algorithm", "def": "a precise set of steps to solve a problem" },
-        { "term": "decomposition", "def": "breaking a big problem into smaller parts" },
-        { "term": "precise", "def": "exact and clear, with nothing left to guess" }
+        {
+          "term": "algorithm",
+          "def": "a precise set of steps to solve a problem"
+        },
+        {
+          "term": "decomposition",
+          "def": "breaking a big problem into smaller parts"
+        },
+        {
+          "term": "precise",
+          "def": "exact and clear, with nothing left to guess"
+        }
       ],
       "starter": [
         "Bismillah. What is an algorithm?",
@@ -27,22 +36,39 @@
       "teach": [
         {
           "heading": "Precise algorithms",
-          "bullets": ["Computers follow instructions exactly.", "Vague steps cause bugs.", "'Put jam on bread' is vague; 'spread 1 spoon of jam' is precise."],
+          "bullets": [
+            "Computers follow instructions exactly.",
+            "Vague steps cause bugs.",
+            "'Put jam on bread' is vague; 'spread 1 spoon of jam' is precise."
+          ],
           "note": "Run the classic unplugged challenge: read out vague instructions for drawing a house and have pupils draw on paper, then compare drawings. Then repeat with precise instructions such as 'draw a square 4 cm wide'. Discuss why the results differ."
         },
         {
           "heading": "Decomposition",
-          "bullets": ["A big job is easier in small parts.", "Planning a party: invite, food, games, clean up.", "Each part is a smaller problem."],
-          "note": "Ask: how would you plan a class tea party? Draw a tree on screen with four branches. Explain decomposition means breaking the problem down, and that programmers do this for every program."
+          "bullets": [
+            "A big job is easier in small parts.",
+            "Planning a class picnic: invite, food, games, clean up.",
+            "Each part is a smaller problem."
+          ],
+          "note": "Ask: how would you plan a class picnic? Draw a tree on screen with four branches. Explain decomposition means breaking the problem down, and that programmers do this for every program."
         },
         {
           "heading": "Decompose a game",
-          "bullets": ["Game: a cat chases a ball.", "Part 1: the cat moves.", "Part 2: the ball moves.", "Part 3: the score changes."],
+          "bullets": [
+            "Game: a cat chases a ball.",
+            "Part 1: the cat moves.",
+            "Part 2: the ball moves.",
+            "Part 3: the score changes."
+          ],
           "note": "Show this as a diagram on screen. Ask which part they would build first. Stress that we test each small part before putting them together. This prepares them for building in Scratch."
         },
         {
           "heading": "Writing it down",
-          "bullets": ["Use numbered steps.", "One action in each step.", "Check each step with a friend."],
+          "bullets": [
+            "Use numbered steps.",
+            "One action in each step.",
+            "Check each step with a friend."
+          ],
           "note": "Model writing the algorithm for 'make a paper aeroplane' as 6 numbered steps. Ask pupils to find any step that is unclear. Misconception: more words always means clearer; clear steps can be short."
         }
       ],
@@ -74,9 +100,18 @@
         "Predict, run and debug a short Scratch program"
       ],
       "keywords": [
-        { "term": "sprite", "def": "a character or object in a Scratch program" },
-        { "term": "event", "def": "something that starts a script, such as clicking the green flag" },
-        { "term": "script", "def": "a stack of blocks that make up a program" }
+        {
+          "term": "sprite",
+          "def": "a character or object in a Scratch program"
+        },
+        {
+          "term": "event",
+          "def": "something that starts a script, such as clicking the green flag"
+        },
+        {
+          "term": "script",
+          "def": "a stack of blocks that make up a program"
+        }
       ],
       "starter": [
         "Bismillah. Decomposition means breaking a ___ problem into ___ parts.",
@@ -86,22 +121,39 @@
       "teach": [
         {
           "heading": "Meet Scratch",
-          "bullets": ["The stage is where things happen.", "Sprites are the characters.", "Blocks snap together into scripts."],
+          "bullets": [
+            "The stage is where things happen.",
+            "Sprites are the characters.",
+            "Blocks snap together into scripts."
+          ],
           "note": "Share your screen with Scratch open. Point out the stage, sprite list, block palette and script area. Pupils need a free Scratch account or the offline editor; if using the browser editor with no account, remind them to save the file using File, Save to your computer."
         },
         {
           "heading": "Events start scripts",
-          "bullets": ["'When green flag clicked' starts a script.", "'When space key pressed' starts a script.", "Scripts run top to bottom."],
+          "bullets": [
+            "'When green flag clicked' starts a script.",
+            "'When space key pressed' starts a script.",
+            "Scripts run top to bottom."
+          ],
           "note": "Demonstrate a one-block script: when green flag clicked, move 10 steps. Click the flag several times; the sprite keeps moving. Emphasise that blocks run in order from top to bottom."
         },
         {
           "heading": "A greeting sequence",
-          "bullets": ["When green flag clicked.", "Say 'Assalamu alaykum!' for 2 seconds.", "Move 50 steps.", "Say 'Welcome!' for 2 seconds."],
+          "bullets": [
+            "When green flag clicked.",
+            "Say 'Assalamu alaykum!' for 2 seconds.",
+            "Move 50 steps.",
+            "Say 'Welcome!' for 2 seconds."
+          ],
           "note": "Build this live and ask pupils to predict what will happen before you click the flag. Show how swapping two blocks changes the story. Link to the sunnah of greeting with salam first."
         },
         {
           "heading": "Debugging a script",
-          "bullets": ["Run it and watch carefully.", "Which block is wrong?", "Change one thing, run again."],
+          "bullets": [
+            "Run it and watch carefully.",
+            "Which block is wrong?",
+            "Change one thing, run again."
+          ],
           "note": "Show a buggy script where the sprite moves before it says hello when it should say first. Ask pupils how to fix it by swapping blocks. Model changing one thing at a time, so we know what fixed it."
         }
       ],
@@ -133,9 +185,18 @@
         "Draw a square and a pattern using a loop"
       ],
       "keywords": [
-        { "term": "loop", "def": "a block that repeats the instructions inside it" },
-        { "term": "repeat", "def": "do the same steps a set number of times" },
-        { "term": "pen", "def": "an extension that draws lines as a sprite moves" }
+        {
+          "term": "loop",
+          "def": "a block that repeats the instructions inside it"
+        },
+        {
+          "term": "repeat",
+          "def": "do the same steps a set number of times"
+        },
+        {
+          "term": "pen",
+          "def": "an extension that draws lines as a sprite moves"
+        }
       ],
       "starter": [
         "Bismillah. What does 'when green flag clicked' do?",
@@ -145,22 +206,38 @@
       "teach": [
         {
           "heading": "Why loops?",
-          "bullets": ["Move 10, turn 9 written forty times is long!", "Repeat 40: move 10, turn 9.", "Loops save time and avoid mistakes."],
+          "bullets": [
+            "Move 10, turn 9 written forty times is long!",
+            "Repeat 40: move 10, turn 9.",
+            "Loops save time and avoid mistakes."
+          ],
           "note": "Show a script with the same two blocks copied twelve times. Ask what would happen if they made a mistake in one copy. Then show the same script using one repeat block. Pupils should see loops are shorter and easier to fix."
         },
         {
           "heading": "The repeat block",
-          "bullets": ["'repeat 10' goes around other blocks.", "Blocks inside run 10 times.", "Blocks outside run once."],
+          "bullets": [
+            "'repeat 10' goes around other blocks.",
+            "Blocks inside run 10 times.",
+            "Blocks outside run once."
+          ],
           "note": "Demonstrate dragging a move block inside and outside a repeat. Ask pupils where the sprite finishes in each case. Misconception: pupils think the number is the number of extra repeats; it is the total number of times."
         },
         {
           "heading": "Draw a square",
-          "bullets": ["Pen down.", "Repeat 4: move 100 steps, turn 90 degrees.", "Pen up."],
+          "bullets": [
+            "Pen down.",
+            "Repeat 4: move 100 steps, turn 90 degrees.",
+            "Pen up."
+          ],
           "note": "Add the Pen extension and build the script live. A square has 4 equal sides and 4 right angles. Ask: what would repeat 5 draw? Test the answer; pupils will see a missing line or an open shape, which leads to discussion."
         },
         {
           "heading": "Patterns with loops",
-          "bullets": ["Triangle: repeat 3, turn 120 degrees.", "Hexagon: repeat 6, turn 60 degrees.", "Change the numbers to change the shape."],
+          "bullets": [
+            "Triangle: repeat 3, turn 120 degrees.",
+            "Hexagon: repeat 6, turn 60 degrees.",
+            "Change the numbers to change the shape."
+          ],
           "note": "Test the triangle and hexagon scripts live. Link to Islamic geometric patterns: many are built from repeated shapes, such as hexagons and stars. Encourage pupils to experiment with the angle and repeat numbers and explain what changes."
         }
       ],
@@ -192,9 +269,18 @@
         "Test, debug and improve the program"
       ],
       "keywords": [
-        { "term": "animation", "def": "pictures shown quickly one after another so they seem to move" },
-        { "term": "test", "def": "run a program to check it works" },
-        { "term": "improve", "def": "change a program to make it better" }
+        {
+          "term": "animation",
+          "def": "pictures shown quickly one after another so they seem to move"
+        },
+        {
+          "term": "test",
+          "def": "run a program to check it works"
+        },
+        {
+          "term": "improve",
+          "def": "change a program to make it better"
+        }
       ],
       "starter": [
         "Bismillah. What does the 'repeat' block do?",
@@ -204,22 +290,38 @@
       "teach": [
         {
           "heading": "The project",
-          "bullets": ["Make an animated Eid greeting card.", "Use at least one sequence.", "Use at least one loop."],
+          "bullets": [
+            "Make an animated Eid greeting card.",
+            "Use at least one sequence.",
+            "Use at least one loop."
+          ],
           "note": "Introduce the project and show a quick example: a star spins while the sprite says 'Eid Mubarak!'. Explain the success criteria and ask pupils to suggest extras. Remember that Eid cards and greetings are a joyful part of our culture."
         },
         {
           "heading": "Plan in parts",
-          "bullets": ["Scene 1: sprite says hello.", "Scene 2: decorations move or spin.", "Scene 3: final message appears."],
+          "bullets": [
+            "Scene 1: sprite says hello.",
+            "Scene 2: decorations move or spin.",
+            "Scene 3: final message appears."
+          ],
           "note": "Reuse decomposition from lesson 1. Pupils sketch three boxes on paper (storyboard) and write which blocks they will need. Check plans before they start building."
         },
         {
           "heading": "Build and test",
-          "bullets": ["Build one scene at a time.", "Test after every few blocks.", "Fix bugs before moving on."],
+          "bullets": [
+            "Build one scene at a time.",
+            "Test after every few blocks.",
+            "Fix bugs before moving on."
+          ],
           "note": "Walk round the breakout rooms or watch screens shared in Teams. Ask the question: what did you predict would happen? Highlight good debugging. Typical bugs: loops outside scripts, missing event block, sprite at wrong place."
         },
         {
           "heading": "Share and improve",
-          "bullets": ["Show your card to a partner.", "Say one thing that works well.", "Say one thing to improve."],
+          "bullets": [
+            "Show your card to a partner.",
+            "Say one thing that works well.",
+            "Say one thing to improve."
+          ],
           "note": "Model kind feedback: 'I like how... Next time you could...'. Link to sincere advice (nasihah) given with kindness. Give time for pupils to make one improvement."
         }
       ],
@@ -237,7 +339,7 @@
         "Name one bug you found and fixed today.",
         "Which part of your program uses a loop?"
       ],
-      "homework": "Add one more improvement to your card (a sound or a new costume) and describe in one sentence what you changed.",
+      "homework": "Add one more improvement to your card (a new backdrop or a new costume) and describe in one sentence what you changed.",
       "send": "SEND/EAL: provide a template project with scenes set up and sentence starters for feedback. Stretch: ask pupils to add a click event so the viewer chooses the next scene."
     }
   ]

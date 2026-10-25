@@ -866,7 +866,7 @@
               "Sub-problem 2: decide direction (input: current floor and target floor; output: up or down)",
               "Sub-problem 3: move the lift and stop at the floor (output: motor command)",
               "Sub-problem 4: open and close the doors",
-              "Model keeps: current floor, target floor, door state. It ignores: the colour of the lift, who is inside, the music"
+              "Model keeps: current floor, target floor, door state. It ignores: the colour of the lift, who is inside, the mirror"
             ],
             "answer": "Four sub-problems, each with clear inputs and outputs, and a model that stores only the data the control program needs."
           }
@@ -3286,7 +3286,7 @@
       "practice": [
         "State how many bytes are in 5 KiB.",
         "A 1-bit image is 100 x 80 pixels. Calculate its size in bytes.",
-        "How many 2 MiB songs fit on a 1 GiB memory card?"
+        "How many 2 MiB photos fit on a 1 GiB memory card?"
       ],
       "independent": [
         "Core: A photo is 1024 x 768 pixels with 24-bit colour. Calculate its size in bytes and in KiB.",
@@ -3376,10 +3376,10 @@
           "heading": "Which to use?",
           "bullets": [
             "Lossless: documents, program files, medical scans",
-            "Lossy: photos, music, video for viewing or listening",
+            "Lossy: photos, audio, video for viewing or listening",
             "Lossy quality drops if compressed too much"
           ],
-          "note": "Ask: what happens if a spreadsheet is compressed with a lossy method? Numbers would change. Photos and music have detail that humans barely notice, so lossy methods remove that. Examples: ZIP and PNG are lossless; JPEG and MP3 are lossy. The exam asks for reasons, so link the method to the purpose.",
+          "note": "Ask: what happens if a spreadsheet is compressed with a lossy method? Numbers would change. Photos and sound recordings have detail that humans barely notice, so lossy methods remove that. Examples: ZIP and PNG are lossless; JPEG and MP3 are lossy. The exam asks for reasons, so link the method to the purpose.",
           "table": {
             "head": [
               "File",
