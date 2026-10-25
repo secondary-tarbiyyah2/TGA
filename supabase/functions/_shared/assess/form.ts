@@ -1,10 +1,12 @@
 // Builds one pupil's paper. Every sitting gets its own seed, so the questions
-// (and the numbers in them) differ from child to child, while the paper can be
-// rebuilt exactly from the seed for review or appeal.
+// (and the numbers in them), their order and the order of the options all
+// differ from child to child, while the paper can be rebuilt exactly from the
+// seed for review or appeal. The answer key stays on the server.
 import { type Item, mcq, type Rng, Rng as R, hashSeed } from "./core.ts";
 import { mathsFor } from "./maths.ts";
 import { nonVerbalItems, quantitativeItems } from "./reasoning.ts";
-import { ANALOGIES, ANTONYMS, type Band, GRAMMAR, ODD_ONE_OUT, PASSAGES, PHONICS, SPELLINGS, SYNONYMS, WRITING_PROMPTS } from "./content.ts";
+import { ANALOGIES, ANTONYMS, type Band, GRAMMAR, ODD_ONE_OUT, type Passage, PASSAGES, PHONICS, SPELLINGS, SYNONYMS, WRITING_PROMPTS } from "./content.ts";
+import { paperRange } from "./curriculum.ts";
 
 export type SectionKey = "maths" | "english" | "reasoning" | "writing" | "quran" | "arabic";
 export type Section = {
@@ -16,12 +18,38 @@ export type Section = {
   candidate: boolean;
   items: Item[];
   passages?: { id: string; title: string; text: string }[];
-  writingPrompt?: { title: string; prompt: string; guide: string };
+  writingPrompt?: { id?: string; title: string; prompt: string; guide: string; purpose?: string; audience?: string };
 };
-export type Form = { version: 1; year: number; seed: number; sections: Section[]; readAloud: boolean };
-export type FormOptions = { extraTimePct?: number; readAloud?: boolean; skip?: SectionKey[] };
+/** Breaks the child may take during a timed part: the clock pauses and the questions are hidden. */
+export type BreakRules = { perSection: number; minutes: number };
+export type Form = {
+  version: 1;
+  year: number;
+  seed: number;
+  sections: Section[];
+  readAloud: boolean;
+  /** Read each question out automatically when it appears (youngest pupils, or by arrangement). */
+  autoRead?: boolean;
+  breaks?: BreakRules;
+};
+export type FormOptions = { extraTimePct?: number; readAloud?: boolean; autoRead?: boolean; skip?: SectionKey[]; breaks?: Partial<BreakRules> };
 
 export const bandFor = (year: number): Band => (year <= 2 ? 1 : year <= 4 ? 2 : year <= 6 ? 3 : year <= 9 ? 4 : 5);
+
+/** Default breaks: younger children get more, shorter ones. Staff can change them per pupil. */
+export function defaultBreaks(year: number): BreakRules {
+  if (year <= 2) return { perSection: 3, minutes: 3 };
+  if (year <= 6) return { perSection: 2, minutes: 3 };
+  return { perSection: 1, minutes: 5 };
+}
+export function breakRulesFor(form: Pick<Form, "year" | "breaks">): BreakRules {
+  return form.breaks || defaultBreaks(form.year);
+}
+
+/** The passages a pupil in this year may be given (a passage's `years`, else its band). */
+export function passagesFor(year: number): Passage[] {
+  return PASSAGES.filter((p) => (p.years ? year >= p.years[0] && year <= p.years[1] : p.band === bandFor(year)));
+}
 
 /** Spread n picks evenly across a level-sorted list (with a little randomness), reusing generators if needed. */
 function spread<T extends { level: number }>(r: Rng, list: T[], n: number): T[] {
@@ -35,20 +63,38 @@ function spread<T extends { level: number }>(r: Rng, list: T[], n: number): T[] 
   return out;
 }
 
+/**
+ * Per-pupil order that still runs roughly easy to hard: shuffle within small
+ * blocks, so children start with something they can do, but no two pupils
+ * see the same question in the same place.
+ */
+function blockShuffle<T>(r: Rng, list: T[], size = 4): T[] {
+  const out: T[] = [];
+  for (let i = 0; i < list.length; i += size) out.push(...r.shuffle(list.slice(i, i + size)));
+  return out;
+}
+
 const inRange = (lvl: number, lo: number, hi: number) => lvl >= lo - 0.01 && lvl <= hi + 0.01;
+const PUNCTUATION_OBJECTIVE = /punctuat|capital|comma|apostrophe|inverted|speech|hyphen|dash|colon|brackets|question mark|exclamation|full stop|its and it's/i;
 
 export function buildForm(year: number, seed: number, opts: FormOptions = {}): Form {
   const r = new R(seed);
   const Y = Math.min(11, Math.max(1, Math.round(year)));
-  const lo = Math.max(1, Y - 2), hi = Math.min(11.9, Y + 1.5);
+  const { lo, hi } = paperRange(Y);
   const young = Y <= 2;
-  const readAloud = opts.readAloud || Y <= 3;
+  const readAloud = !!opts.readAloud || Y <= 3;
+  const autoRead = opts.autoRead ?? (Y <= 2 || !!opts.readAloud);
   const extra = 1 + (opts.extraTimePct || 0) / 100;
   const mins = (m: number) => Math.round(m * extra);
   let n = 0;
   const id = (p: string) => `${p}${(++n).toString(36)}`;
   const sections: Section[] = [];
   const skip = new Set(opts.skip || []);
+  const def = defaultBreaks(Y);
+  const breaks: BreakRules = {
+    perSection: Math.max(0, Math.min(6, Math.round(opts.breaks?.perSection ?? def.perSection))),
+    minutes: Math.max(1, Math.min(15, Math.round(opts.breaks?.minutes ?? def.minutes))),
+  };
 
   // ── Maths ──
   if (!skip.has("maths")) {
@@ -59,45 +105,50 @@ export function buildForm(year: number, seed: number, opts: FormOptions = {}): F
       // The youngest pupils answer by tapping, never typing.
       if (young && made.type === "numeric") {
         const ans = Number(made.answer);
-        const m = mcq(r, String(ans), [String(ans + 1), String(ans - 1), String(ans + 10)]);
+        const m = mcq(r, String(ans), [String(ans + 1), String(ans - 1), String(ans + 10)], [String(ans + 2), String(ans - 2)]);
         return { id: id("m"), strand: "maths", level: g.level, objective: g.objective, ...made, type: "mcq", choices: m.choices, answer: m.answer };
       }
       return { id: id("m"), strand: "maths", level: g.level, objective: g.objective, ...made };
     });
-    sections.push({ key: "maths", title: young ? "Numbers" : "Maths", intro: young ? "Tap the right answer. You can press the speaker to hear the question again." : "Work out each answer. You may use paper for working, but not a calculator.", minutes: mins(young ? 12 : Y <= 6 ? 25 : 35), candidate: true, items });
+    sections.push({ key: "maths", title: young ? "Numbers" : "Maths", intro: young ? "Tap the right answer. Press the speaker to hear the question again." : "Work out each answer. You may use paper for working out, but not a calculator.", minutes: mins(young ? 12 : Y <= 6 ? 25 : 35), candidate: true, items: blockShuffle(r, items) });
   }
 
-  // ── English: reading (+ phonics for the youngest), spelling, grammar ──
+  // ── English: the reading text first, then its questions; then spelling and grammar ──
   if (!skip.has("english")) {
-    const band = bandFor(Y);
-    const passage = r.pick(PASSAGES.filter((p) => p.band === band));
+    const passage = r.pick(passagesFor(Y));
     const items: Item[] = [];
     if (young) {
-      for (const p of spread(r, PHONICS.filter((p) => inRange(p.level, 1, 2.6)), 6)) {
+      const ph: Item[] = [];
+      for (const p of spread(r, PHONICS.filter((p) => inRange(p.level, 1, Math.min(hi, 2.6))), Y === 1 ? 5 : 6)) {
         const m = mcq(r, p.say, p.choices.filter((c) => c !== p.say));
-        items.push({ id: id("p"), strand: "phonics", level: p.level, objective: "Phonics: hear a word, find it", type: "mcq", stem: "Listen, then tap the word you hear.", say: p.say, choices: m.choices, answer: m.answer });
+        ph.push({ id: id("p"), strand: "phonics", level: p.level, objective: "Phonics: hear a word, find it", type: "mcq", stem: "Listen. Tap the word you hear.", say: p.say, speakChoices: false, choices: m.choices, answer: m.answer });
       }
+      items.push(...r.shuffle(ph));
     }
-    for (const q of passage.questions) {
+    // Reading questions stay in text order (they follow the story), with shuffled options.
+    // Questions pitched above this year's range are left out (easier ones stay: they find gaps).
+    for (const q of passage.questions.filter((q) => q.level <= hi + 0.01)) {
       const correct = q.choices[q.answer];
       const m = mcq(r, correct, q.choices.filter((_, i) => i !== q.answer));
-      items.push({ id: id("r"), strand: "reading", level: q.level, objective: `Reading: ${q.skill}`, type: "mcq", stem: q.q, choices: m.choices, answer: m.answer, passageId: passage.id, say: readAloud ? q.q : undefined });
+      items.push({ id: id("r"), strand: "reading", level: q.level, objective: `Reading: ${q.skill}`, type: "mcq", stem: q.q, choices: m.choices, answer: m.answer, passageId: passage.id });
     }
     if (!young) {
+      const sg: Item[] = [];
       for (const s of spread(r, SPELLINGS.filter((s) => inRange(s.level, lo, hi)), Y <= 6 ? 6 : 5)) {
         const m = mcq(r, s.correct, s.wrong);
-        items.push({ id: id("s"), strand: "spelling", level: s.level, objective: `Spelling (Year ${Math.floor(s.level)} words)`, type: "mcq", stem: "Which word is spelt correctly?", choices: m.choices, answer: m.answer });
+        sg.push({ id: id("s"), strand: "spelling", level: s.level, objective: `Spelling (Year ${Math.floor(s.level)} words)`, type: "mcq", stem: "Which word is spelt correctly?", speakChoices: false, choices: m.choices, answer: m.answer });
       }
       for (const g of spread(r, GRAMMAR.filter((g) => inRange(g.level, lo, hi)), Y <= 6 ? 6 : 7)) {
         const correct = g.choices[g.answer];
         const m = mcq(r, correct, g.choices.filter((_, i) => i !== g.answer));
-        items.push({ id: id("g"), strand: "grammar", level: g.level, objective: g.objective, type: "mcq", stem: g.stem, choices: m.choices, answer: m.answer });
+        sg.push({ id: id("g"), strand: "grammar", level: g.level, objective: g.objective, type: "mcq", stem: g.stem, speakPunctuation: PUNCTUATION_OBJECTIVE.test(g.objective) || undefined, choices: m.choices, answer: m.answer });
       }
+      items.push(...blockShuffle(r, sg.sort((a, b) => a.level - b.level)));
     }
     sections.push({
       key: "english",
       title: young ? "Listening and reading" : "English",
-      intro: young ? "Listen to each word, then read a short story and answer the questions." : "Read the passage carefully, then answer the questions. You can look back at the passage at any time.",
+      intro: young ? "First listen and find some words. Then read a short story and answer questions about it." : "First read the text. Then answer the questions. You can look back at the text at any time.",
       minutes: mins(young ? 12 : Y <= 6 ? 30 : 35),
       candidate: true,
       items,
@@ -122,12 +173,14 @@ export function buildForm(year: number, seed: number, opts: FormOptions = {}): F
       for (const v of spread(r, r.shuffle(verbal), nV)) {
         if (v.kind === "syn" || v.kind === "ant") {
           const m = mcq(r, v.w.answer, v.w.distractors);
-          add("verbal", { level: v.level, objective: v.kind === "syn" ? "Words with similar meanings" : "Words with opposite meanings", type: "mcq", stem: v.kind === "syn" ? `Which word is closest in meaning to “${v.w.word}”?` : `Which word is most opposite in meaning to “${v.w.word}”?`, choices: m.choices, answer: m.answer });
+          add("verbal", { level: v.level, objective: v.kind === "syn" ? "Words with similar meanings" : "Words with opposite meanings", type: "mcq", stem: v.kind === "syn" ? `Which word means nearly the same as “${v.w.word}”?` : `Which word means the opposite of “${v.w.word}”?`, choices: m.choices, answer: m.answer });
         } else if (v.kind === "ana") {
           const m = mcq(r, v.a.answer, v.a.distractors);
           add("verbal", { level: v.level, objective: "Word analogies", type: "mcq", stem: `${v.a.a} is to ${v.a.b} as ${v.a.c} is to …?`, choices: m.choices, answer: m.answer });
         } else {
-          add("verbal", { level: v.level, objective: "Odd one out (words)", type: "mcq", stem: "Which word does not belong with the others?", choices: [...v.o.options], answer: v.o.options[v.o.answer] });
+          const correct = v.o.options[v.o.answer];
+          const m = mcq(r, correct, v.o.options.filter((_, i) => i !== v.o.answer), [], 5);
+          add("verbal", { level: v.level, objective: "Odd one out (words)", type: "mcq", stem: "Which word does not belong with the others?", choices: m.choices, answer: m.answer });
         }
       }
     }
@@ -144,14 +197,14 @@ export function buildForm(year: number, seed: number, opts: FormOptions = {}): F
       minutes: mins(wp.minutes),
       candidate: !young,
       items: young ? [] : [{ id: id("w"), strand: "reading", level: Y, objective: "Extended writing", type: "text", stem: wp.prompt, answer: "" }],
-      writingPrompt: { title: wp.title, prompt: wp.prompt, guide: wp.guide },
+      writingPrompt: { id: wp.id, title: wp.title, prompt: wp.prompt, guide: wp.guide, purpose: wp.purpose, audience: wp.audience },
     });
   }
 
   if (!skip.has("quran")) sections.push({ key: "quran", title: "Qur'an", intro: "Assessed live by a teacher on the family call: recitation, tajweed and memorisation.", minutes: 10, candidate: false, items: [] });
   if (!skip.has("arabic")) sections.push({ key: "arabic", title: "Arabic", intro: "Assessed live by a teacher on the family call: letters, reading and understanding.", minutes: 8, candidate: false, items: [] });
 
-  return { version: 1, year: Y, seed, sections, readAloud };
+  return { version: 1, year: Y, seed, sections, readAloud, autoRead, breaks };
 }
 
 export const newSeed = (salt: string): number => hashSeed(`${salt}:${Date.now()}:${Math.random()}`);

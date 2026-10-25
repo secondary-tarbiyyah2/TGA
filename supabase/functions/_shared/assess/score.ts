@@ -7,7 +7,9 @@
 // year group has enough sittings, the Edge Function adds where the child sits
 // among other TGA pupils of the same year (cohort percentile).
 import { type Item, markItem, type Strand } from "./core.ts";
-import type { Form, SectionKey } from "./form.ts";
+import type { BreakRules, Form, SectionKey } from "./form.ts";
+import type { IntegritySummary } from "./integrity.ts";
+import { bandOfMean, meanOf, WRITING_STRANDS, type WritingMark } from "./writing.ts";
 
 export type Responses = Record<string, { value: unknown; ms?: number }>;
 
@@ -27,25 +29,49 @@ export type StrandResult = {
 
 export type Rubric = Record<string, number>;
 export type TeacherMarks = {
-  writing?: { scores: Rubric; notes?: string; markedBy?: string; markedAt?: string };
+  writing?: {
+    scores: Rubric; notes?: string; markedBy?: string; markedAt?: string;
+    /** Overall judgement set by staff when it differs from the strands' average (with a reason). */
+    overall?: BandName; overrideReason?: string;
+    /** How the staff mark relates to the AI/estimate first mark. */
+    decision?: "accepted" | "adjusted" | "overridden" | "staff";
+  };
   quran?: { stage: number; tajweed: number; fluency: number; juz: number; lastSurah?: string; notes?: string; markedBy?: string; markedAt?: string };
   arabic?: { letters: number; vowelled: number; unvowelled: number; understanding: number; speaking: number; notes?: string; markedBy?: string; markedAt?: string };
 };
 
-export type Integrity = { tabHides: number; fastAnswers: number; answered: number; unanswered: number; timedOutSections: string[] };
-export type Context = { year: number; ageMonths?: number | null; summerBorn?: boolean; eal?: boolean; send?: string | null; extraTimePct?: number; readAloud?: boolean };
+export type Integrity = IntegritySummary;
+export type Context = {
+  year: number; ageMonths?: number | null; summerBorn?: boolean; eal?: boolean; send?: string | null;
+  extraTimePct?: number; readAloud?: boolean; largeText?: boolean; breaks?: BreakRules; otherArrangements?: string;
+};
+
+export type WritingReport = {
+  band: BandName; mean: number; workingAt: number;
+  /** staff = checked by a teacher; ai / estimate = first mark only, still to be checked. */
+  source: "staff" | "ai" | "estimate";
+  provisional: boolean;
+  strands: { key: string; label: string; score: number; comment?: string }[];
+  feedback?: string; nextSteps?: string[]; flags?: string[];
+  checkedBy?: string; checkedAt?: string; decision?: string; overrideReason?: string; notes?: string; wordCount?: number;
+};
 
 export type Report = {
-  version: 1;
+  version: 2;
   year: number;
+  /** One line per area for the top of the report: Maths, English, Reasoning, Writing. */
+  headline: { key: string; label: string; workingAt: number | null; band: BandName | null; note: string }[];
+  /** One-line recommendation for placement. */
+  placement: string;
   strands: StrandResult[];
-  writing: { band: BandName; mean: number; workingAt: number } | null;
+  writing: WritingReport | null;
   quran: { group: string; summary: string } | null;
   arabic: { group: string; summary: string } | null;
-  overall: { attainment: number | null; reasoning: number | null };
+  overall: { attainment: number | null; english: number | null; reasoning: number | null };
   narrative: string[];
-  recommendations: { area: string; text: string }[];
-  integrity: Integrity & { notes: string[] };
+  recommendations: { area: string; subject: "Maths" | "English" | "Reasoning" | "Qur'an and Arabic" | "Support"; text: string }[];
+  integrity: Integrity;
+  access: { extraTimePct?: number; readAloud?: boolean; largeText?: boolean; breaks?: BreakRules; other?: string };
   pendingTeacherSections: SectionKey[];
   /** Same as pendingTeacherSections (kept for the function and pupil-record sync). */
   pending: SectionKey[];
@@ -139,16 +165,40 @@ export function arabicGroup(a: NonNullable<TeacherMarks["arabic"]>): { group: st
   return { group, summary: `Letters ${a.letters}/2, reads vowelled text ${a.vowelled}/4, unvowelled ${a.unvowelled}/4, understanding ${a.understanding}/4, speaking ${a.speaking}/4.` };
 }
 
-export const WRITING_RUBRIC: { key: string; label: string; hint: string }[] = [
-  { key: "composition", label: "Content and effect", hint: "Ideas fit the task, purpose and reader" },
-  { key: "organisation", label: "Organisation", hint: "Opening, paragraphs or sequence, ending" },
-  { key: "vocabulary", label: "Vocabulary", hint: "Precise, varied word choice" },
-  { key: "sentences", label: "Sentences and punctuation", hint: "Range of sentence types, accurate punctuation" },
-  { key: "accuracy", label: "Spelling and presentation", hint: "Spelling for the year group, handwriting or layout" },
-];
+export const WRITING_RUBRIC = WRITING_STRANDS;
 /** Each criterion is marked 0–4 RELATIVE TO THE YEAR GROUP: 0 well below, 1 below, 2 expected, 3 above, 4 well above. */
 
-export function buildReport(form: Form, responses: Responses, marks: TeacherMarks, ctx: Context, events: { tabHides: number; timedOutSections: string[] }): Report {
+/** The writing result: the staff mark when there is one, otherwise the AI (or estimate) first mark, shown as provisional. */
+export function writingResult(year: number, marks: TeacherMarks, first?: (WritingMark & { createdAt?: string }) | null): WritingReport | null {
+  const w = marks.writing;
+  const label = (k: string) => WRITING_STRANDS.find((s) => s.key === k)?.label || k;
+  if (w?.scores && Object.keys(w.scores).length) {
+    const mean = Object.values(w.scores).reduce((a, b) => a + b, 0) / Object.values(w.scores).length;
+    const band = w.overall || bandOfMean(mean);
+    const comments = first && w.decision !== "staff" ? first.strands : {};
+    return {
+      band, mean: Math.round(mean * 10) / 10, workingAt: Math.round((year + (BAND_ORDER.indexOf(band) - 2)) * 10) / 10,
+      source: "staff", provisional: false,
+      strands: WRITING_STRANDS.filter((s) => w.scores[s.key] !== undefined).map((s) => ({ key: s.key, label: s.label, score: w.scores[s.key], comment: w.scores[s.key] === comments[s.key]?.score ? comments[s.key]?.comment : undefined })),
+      feedback: first?.feedback || undefined, nextSteps: first?.nextSteps?.length ? first.nextSteps : undefined, flags: first?.flags?.length ? first.flags : undefined,
+      checkedBy: w.markedBy, checkedAt: w.markedAt, decision: w.decision, overrideReason: w.overrideReason, notes: w.notes, wordCount: first?.wordCount,
+    };
+  }
+  if (first) {
+    const mean = meanOf(first.strands);
+    return {
+      band: first.overall, mean: Math.round(mean * 10) / 10, workingAt: Math.round(first.workingAt * 10) / 10,
+      source: first.source === "staff" ? "staff" : first.source, provisional: true,
+      strands: WRITING_STRANDS.filter((s) => first.strands[s.key]).map((s) => ({ key: s.key, label: label(s.key), score: first.strands[s.key].score, comment: first.strands[s.key].comment })),
+      feedback: first.feedback, nextSteps: first.nextSteps, flags: first.flags, wordCount: first.wordCount,
+    };
+  }
+  return null;
+}
+
+const BAND_ORDER: BandName[] = ["Well below", "Below", "Expected", "Above", "Well above"];
+
+export function buildReport(form: Form, responses: Responses, marks: TeacherMarks, ctx: Context, integrity: Integrity, extra: { firstWritingMark?: (WritingMark & { createdAt?: string }) | null } = {}): Report {
   const Y = form.year;
   const auto = form.sections.filter((s) => s.candidate).flatMap((s) => s.items.filter((i) => i.type !== "text"));
   const right = new Map(auto.map((i) => [i.id, markItem(i, responses[i.id]?.value)]));
@@ -168,32 +218,18 @@ export function buildReport(form: Form, responses: Responses, marks: TeacherMark
     });
   }
 
-  // Overall attainment (maths + reading + SPaG) and reasoning (all three families), each one estimate across their items.
+  // Overall attainment (maths + English), English on its own, and reasoning (all three families).
   const pool = (keys: Strand[]) => auto.filter((i) => keys.includes(i.strand));
   const est = (its: Item[]) => estimate(its, its.map((i) => right.get(i.id) === true), Y)?.theta ?? null;
   const attainment = est(pool(["maths", "reading", "phonics", "spelling", "grammar"]));
+  const english = est(pool(["reading", "phonics", "spelling", "grammar"]));
   const reasoning = est(pool(["verbal", "quantitative", "nonverbal"]));
 
-  // Teacher-marked sections.
-  let writing: Report["writing"] = null;
-  if (marks.writing?.scores && Object.keys(marks.writing.scores).length) {
-    const vals = Object.values(marks.writing.scores);
-    const mean = vals.reduce((a, b) => a + b, 0) / vals.length;
-    writing = { mean: Math.round(mean * 10) / 10, band: bandOf(mean - 2), workingAt: Math.round((Y + (mean - 2)) * 10) / 10 };
-  }
+  // Teacher-marked sections. Writing counts only once a member of staff has checked it.
+  const writing = writingResult(Y, marks, extra.firstWritingMark);
   const quran = marks.quran ? quranGroup(marks.quran) : null;
   const arabic = marks.arabic ? arabicGroup(marks.arabic) : null;
-  const pending = form.sections.filter((s) => (s.key === "writing" && !writing) || (s.key === "quran" && !quran) || (s.key === "arabic" && !arabic)).map((s) => s.key);
-
-  // Integrity.
-  const timed = auto.map((i) => responses[i.id]).filter(Boolean);
-  const fast = timed.filter((r) => typeof r.ms === "number" && r.ms < 2500).length;
-  const unanswered = auto.filter((i) => responses[i.id] === undefined || responses[i.id].value === "" || responses[i.id].value === null).length;
-  const integrityNotes: string[] = [];
-  if (events.tabHides >= 3) integrityNotes.push(`The test window was left ${events.tabHides} times. Discuss with the family before relying on the results.`);
-  if (timed.length && fast / timed.length > 0.3) integrityNotes.push(`${fast} answers were given in under 2.5 seconds, which can mean guessing. Treat the lowest strands with caution.`);
-  if (unanswered / Math.max(1, auto.length) > 0.2) integrityNotes.push(`${unanswered} questions were left unanswered${events.timedOutSections.length ? ` (time ran out in ${events.timedOutSections.join(", ")})` : ""}.`);
-  if (!integrityNotes.length) integrityNotes.push("No concerns: the test was completed in one window at a normal pace.");
+  const pending = form.sections.filter((s) => (s.key === "writing" && (!writing || writing.provisional)) || (s.key === "quran" && !quran) || (s.key === "arabic" && !arabic)).map((s) => s.key);
 
   // Narrative and recommendations.
   const by = Object.fromEntries(strands.map((s) => [s.key, s]));
@@ -211,13 +247,17 @@ export function buildReport(form: Form, responses: Responses, marks: TeacherMark
   const dm = d(by.maths);
   if (dm !== null) {
     const set = dm <= -1.5 ? "a support group with a catch-up plan" : dm <= -0.5 ? "the core group, with targeted gap teaching" : dm < 1.75 ? "the core group" : "the extension group";
-    recs.push({ area: "Maths", text: `Place in ${set}.${by.maths.gaps.length ? ` Gaps to teach first: ${by.maths.gaps.slice(0, 5).join("; ")}.` : ""}` });
+    recs.push({ area: "Maths", subject: "Maths", text: `Place in ${set}.${by.maths.gaps.length ? ` Gaps to teach first: ${by.maths.gaps.slice(0, 5).join("; ")}.` : ""}` });
   }
   const dr = d(by.reading);
-  if (dr !== null && dr <= -0.5) recs.push({ area: "Reading", text: dr <= -1.5 ? `Daily guided reading and a phonics check${Y <= 4 ? "" : " (secondary phonics catch-up if gaps are found)"}; review after half a term.` : "Guided reading twice a week and reading at home every day; review after half a term." });
-  else if (dr !== null && dr >= 1.75) recs.push({ area: "Reading", text: "Strong reader: stretch with challenging texts and the reading list for the year above." });
+  if (dr !== null && dr <= -0.5) recs.push({ area: "Reading", subject: "English", text: dr <= -1.5 ? `Daily guided reading and a phonics check${Y <= 4 ? "" : " (secondary phonics catch-up if gaps are found)"}; review after half a term.` : "Guided reading twice a week and reading at home every day; review after half a term." });
+  else if (dr !== null && dr >= 1.75) recs.push({ area: "Reading", subject: "English", text: "Strong reader: stretch with challenging texts and the reading list for the year above." });
   const ds = d(by.spag);
-  if (ds !== null && ds <= -1) recs.push({ area: "Spelling and grammar", text: `Weekly spelling and grammar practice from the Year ${Math.max(1, Math.round(by.spag.workingAt ?? Y))} list.${by.spag.gaps.length ? ` Start with: ${by.spag.gaps.slice(0, 3).join("; ")}.` : ""}` });
+  if (ds !== null && ds <= -1) recs.push({ area: "Spelling and grammar", subject: "English", text: `Weekly spelling and grammar practice from the Year ${Math.max(1, Math.round(by.spag.workingAt ?? Y))} list.${by.spag.gaps.length ? ` Start with: ${by.spag.gaps.slice(0, 3).join("; ")}.` : ""}` });
+  if (writing) {
+    const steps = writing.nextSteps?.length ? ` Next steps: ${writing.nextSteps.slice(0, 2).join("; ")}.` : "";
+    recs.push({ area: "Writing", subject: "English", text: `Writing judged ${writing.band.toLowerCase()} expectation for Year ${Y}${writing.provisional ? " (first mark, still to be checked by a teacher)" : ""}.${steps}${writing.notes ? ` Teacher's note: ${writing.notes}` : ""}` });
+  }
 
   const rs = ["verbal", "quantitative", "nonverbal"].map((k) => by[k]).filter((s): s is StrandResult => !!s && s.workingAt !== null);
   if (rs.length >= 2) {
@@ -228,28 +268,53 @@ export function buildReport(form: Form, responses: Responses, marks: TeacherMark
       if (lo.key === "verbal" && ctx.eal) t += " With English as an additional language, low verbal reasoning is more likely to reflect vocabulary than ability; build academic vocabulary and re-check next term.";
       else if (lo.key === "verbal") t += " The pupil may understand more than they can yet put into words: use diagrams, models and worked examples, and teach vocabulary explicitly.";
       else if (hi.key === "verbal") t += " Explain in words and give spoken reasoning tasks; support visual-spatial work (shapes, graphs, geometry) with hands-on models.";
-      recs.push({ area: "How the pupil learns", text: t });
+      recs.push({ area: "How the pupil learns", subject: "Reasoning", text: t });
     }
   }
   if (reasoning !== null && attainment !== null) {
-    if (reasoning - attainment >= 1.5) recs.push({ area: "Potential", text: "Reasoning is well ahead of attainment, which usually means gaps in previous teaching rather than ability. Expect quick progress with a catch-up plan; set targets above the current level." });
-    if (reasoning - Y <= -1.5 && attainment - Y <= -1.5) recs.push({ area: "Support", text: "Both reasoning and attainment are well below expectation. Share the report with the SENCo and the family before placement, and agree whether further assessment would help. This report is not a diagnosis." });
+    if (reasoning - attainment >= 1.5) recs.push({ area: "Potential", subject: "Reasoning", text: "Reasoning is well ahead of attainment, which usually means gaps in previous teaching rather than ability. Expect quick progress with a catch-up plan; set targets above the current level." });
+    if (reasoning - Y <= -1.5 && attainment - Y <= -1.5) recs.push({ area: "Support", subject: "Support", text: "Both reasoning and attainment are well below expectation. Share the report with the SENCo and the family before placement, and agree whether further assessment would help. This report is not a diagnosis." });
   }
-  if (writing) recs.push({ area: "Writing", text: `Writing judged ${writing.band.toLowerCase()} expectation for Year ${Y}.${marks.writing?.notes ? ` Teacher's note: ${marks.writing.notes}` : ""}` });
-  if (quran) recs.push({ area: "Qur'an", text: `${quran.group}. ${quran.summary}` });
-  if (arabic) recs.push({ area: "Arabic", text: `${arabic.group}. ${arabic.summary}` });
+  if (integrity.counts.breaks >= 2) recs.push({ area: "Support", subject: "Support", text: "Several breaks helped this pupil to keep going. Short movement breaks and work in small chunks may help in class too. This is an observation, not a diagnosis." });
+  if (quran) recs.push({ area: "Qur'an", subject: "Qur'an and Arabic", text: `${quran.group}. ${quran.summary}` });
+  if (arabic) recs.push({ area: "Arabic", subject: "Qur'an and Arabic", text: `${arabic.group}. ${arabic.summary}` });
 
   if (ctx.summerBorn) narrative.push("Born in the summer term, so among the youngest in the year group: bear this in mind for borderline results.");
-  if (ctx.extraTimePct || ctx.readAloud) narrative.push(`Access arrangements used: ${[ctx.extraTimePct ? `${ctx.extraTimePct}% extra time` : "", ctx.readAloud ? "questions read aloud" : ""].filter(Boolean).join(", ")}.`);
+  const used = [ctx.extraTimePct ? `${ctx.extraTimePct}% extra time` : "", ctx.readAloud ? "questions read aloud" : "", ctx.largeText ? "larger text" : "", integrity.counts.breaks ? `${integrity.counts.breaks} break${integrity.counts.breaks === 1 ? "" : "s"}` : ""].filter(Boolean);
+  if (used.length) narrative.push(`Access arrangements used: ${used.join(", ")}.`);
+
+  // Headline: one line per area against the year expectation.
+  const line = (key: string, label: string, at: number | null, note: string) => ({ key, label, workingAt: at, band: at === null ? null : bandOf(at - Y), note });
+  const headline: Report["headline"] = [];
+  if (by.maths) headline.push(line("maths", "Maths", by.maths.workingAt, `${by.maths.correct}/${by.maths.total} correct`));
+  if (english !== null || by.reading) headline.push(line("english", Y <= 2 ? "English (phonics and reading)" : "English (reading, spelling, grammar)", english, [by.reading ? `reading ${by.reading.correct}/${by.reading.total}` : "", by.spag ? `spelling and grammar ${by.spag.correct}/${by.spag.total}` : ""].filter(Boolean).join(", ")));
+  if (reasoning !== null) headline.push(line("reasoning", "Reasoning", reasoning, Y <= 2 ? "shapes and numbers" : "shapes, numbers and words"));
+  if (writing) headline.push({ key: "writing", label: "Writing", workingAt: writing.workingAt, band: writing.band, note: writing.provisional ? (writing.source === "ai" ? "AI first mark, to be checked" : "estimate, needs staff marking") : "checked by a teacher" });
+
+  // One-line placement.
+  // Writing counts towards placement only once a teacher has checked it.
+  const areaBands = headline.filter((h) => h.band && h.key !== "reasoning" && !(h.key === "writing" && writing?.provisional)) as { label: string; band: BandName; key: string }[];
+  const short = (k: string) => (k === "english" ? "English" : k === "writing" ? "writing" : "maths");
+  const wellBelow = areaBands.filter((h) => h.band === "Well below").map((h) => short(h.key));
+  const below = areaBands.filter((h) => h.band === "Below").map((h) => short(h.key));
+  const ahead = areaBands.filter((h) => h.band === "Above" || h.band === "Well above").map((h) => short(h.key));
+  const list = (xs: string[]) => (xs.length <= 1 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
+  let placement = `Place in Year ${Y}`;
+  if (!areaBands.length) placement += "; results are not ready yet.";
+  else if (wellBelow.length) placement += ` with a catch-up plan in ${list(wellBelow)}${below.length ? ` and targeted gap teaching in ${list(below)}` : ""}; review after half a term.`;
+  else if (below.length) placement += ` in the core groups, with targeted gap teaching in ${list(below)}.`;
+  else placement += ` in the core groups${ahead.length ? `, with extension work in ${list(ahead)}` : ""}.`;
+  if (integrity.rating === "Review needed") placement += " Check the notes on how it was sat before relying on this.";
 
   const estimates = strands.filter((x) => x.workingAt !== null && x.band).map((x) => ({ area: x.key, label: x.label, workingAt: x.workingAt as number, band: x.band as BandName }));
-  if (writing) estimates.push({ area: "writing", label: "Writing", workingAt: writing.workingAt, band: writing.band });
+  if (writing && !writing.provisional) estimates.push({ area: "writing", label: "Writing", workingAt: writing.workingAt, band: writing.band });
   return {
-    version: 1, year: Y, strands, writing, quran, arabic, pending, estimates, summary: narrative,
-    overall: { attainment, reasoning },
+    version: 2, year: Y, headline, placement, strands, writing, quran, arabic, pending, estimates, summary: narrative,
+    overall: { attainment, english, reasoning },
     narrative, recommendations: recs,
-    integrity: { tabHides: events.tabHides, fastAnswers: fast, answered: auto.length - unanswered, unanswered, timedOutSections: events.timedOutSections, notes: integrityNotes },
+    integrity,
+    access: { extraTimePct: ctx.extraTimePct || undefined, readAloud: ctx.readAloud || undefined, largeText: ctx.largeText || undefined, breaks: ctx.breaks, other: ctx.otherArrangements || undefined },
     pendingTeacherSections: pending,
-    caveat: "Results are measured against national curriculum expectations for each year group (curriculum-referenced), from a paper generated for this pupil. They are not a nationally standardised score. Use them with the family conversation and teachers' judgement, never alone.",
+    caveat: "Results are measured against national curriculum expectations for each year group (curriculum-referenced), from a paper generated for this pupil. They are not a nationally standardised score, and this report is not a diagnosis. Use it with the family conversation and teachers' judgement, never alone.",
   };
 }

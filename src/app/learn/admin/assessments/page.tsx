@@ -14,7 +14,7 @@ export default function AdminAssessmentsPage() {
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
         <PageHeader
           title="Entry assessments"
-          subtitle="Our own entry assessment: every child gets a paper made for their year group, marked automatically, with Writing, Qur'an and Arabic marked by a teacher. Results go on the pupil's record."
+          subtitle="Our own entry assessment: every child gets a paper made for their year group, marked automatically. Writing is first-marked by AI and checked by a teacher; Qur'an and Arabic are marked by a teacher. Results go on the pupil's record."
         />
         <Tabs
           label="Assessment type"
@@ -25,7 +25,7 @@ export default function AdminAssessmentsPage() {
             { key: "tga", label: "TGA entry assessment" },
             { key: "gl", label: "GL Assessment results (optional)" },
           ]}
-          className="mb-5"
+          className="mb-5 print:hidden"
         />
         <div {...tabPanelProps("assess", tab)}>{tab === "tga" ? <EntryAssessmentsAdmin /> : <BaselineImport />}</div>
       </LearnGate>

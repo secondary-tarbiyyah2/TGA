@@ -2,7 +2,7 @@
 //
 // Everything in /assess is pure TypeScript (no Deno or Node APIs), so the same
 // code generates papers in the Edge Function and runs under `node
-// --experimental-strip-types` in scripts/assess-selftest.mjs.
+// --experimental-strip-types` in scripts/assess-selftest.ts.
 //
 // An Item is generated on the server from a seed and stored WITH its answer in
 // assessment_sittings.form (service role only). What the candidate's browser
@@ -45,11 +45,20 @@ export type Item = {
   tolerance?: number;
   /** Text answers that also count as right (case/space-insensitive). */
   accept?: string[];
+  /**
+   * Read-aloud: false when reading the options out would give the answer away
+   * (phonics: the child must find the word they heard; spelling: a voice reads
+   * a misspelling and the right spelling the same way). The stem is still read.
+   */
+  speakChoices?: boolean;
+  /** Read-aloud: speak punctuation marks and capital letters in the options (punctuation questions). */
+  speakPunctuation?: boolean;
 };
 
 export type PublicItem = Omit<Item, "answer" | "tolerance" | "accept">;
 
 export function toPublic(item: Item): PublicItem {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- these keys are removed on purpose
   const { answer: _a, tolerance: _t, accept: _c, ...rest } = item;
   return rest;
 }
@@ -133,7 +142,20 @@ export function numericDistractors(rng: Rng, ans: number, extra: number[] = []):
   return rng.shuffle([...cands]).slice(0, 6).map(fmt);
 }
 
+// ── powers ─────────────────────────────────────────────────────────────────
+// Powers are written with real superscript characters (x⁵, 10⁻³), never "x^5",
+// so they read correctly anywhere the text is shown (sitting page, staff
+// views, emails). The browser renderer also turns any older "^n" into <sup>.
+const SUP: Record<string, string> = { "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹", "-": "⁻", "−": "⁻", n: "ⁿ" };
+export const sup = (e: number | string): string => String(e).split("").map((c) => SUP[c] ?? c).join("");
+
+/** Round away floating-point noise (4.7 × 1000 = 4700.000000000001). */
+export const clean = (n: number, dp = 6): number => Math.round(n * 10 ** dp) / 10 ** dp;
+
+/** Numbers as shown to pupils: thousands commas, and a proper minus sign (−) for negatives. */
 export function fmt(n: number): string {
+  n = clean(n);
+  if (n < 0) return `−${fmt(-n)}`;
   if (Number.isInteger(n)) return n.toLocaleString("en-GB");
   return String(Math.round(n * 1000) / 1000);
 }
@@ -141,7 +163,7 @@ export function fmt(n: number): string {
 export function markItem(item: Item, response: unknown): boolean {
   if (response === null || response === undefined || response === "") return false;
   if (item.type === "numeric") {
-    const v = Number(String(response).replace(/[,£\s]/g, "").replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x0660)));
+    const v = Number(String(response).replace(/[,£\s]/g, "").replace(/[−–]/g, "-").replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x0660)));
     if (!Number.isFinite(v)) return false;
     return Math.abs(v - Number(item.answer)) <= (item.tolerance ?? 1e-9);
   }

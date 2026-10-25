@@ -23,11 +23,36 @@ const SERIES: SeriesRule[] = [
   { level: 10.5, name: "n² + n", make: (r) => { const o = r.int(1, 4); return Array.from({ length: 6 }, (_, i) => (i + o) ** 2 + (i + o)); } },
 ];
 
+/**
+ * Every "next number" that some simple rule would also give for these five
+ * terms (constant difference, second or third differences, ratio, alternating
+ * steps, adding the previous two, ×2 + 1, two interleaved sequences). A
+ * distractor that fits one of these could be defended, so it is never offered.
+ */
+export function plausibleNext(t: number[]): Set<number> {
+  const out = new Set<number>();
+  const d = t.slice(1).map((v, i) => v - t[i]);
+  const d2 = d.slice(1).map((v, i) => v - d[i]);
+  const d3 = d2.slice(1).map((v, i) => v - d2[i]);
+  if (d.every((x) => x === d[0])) out.add(t[4] + d[0]);
+  if (d2.every((x) => x === d2[0])) out.add(t[4] + d[3] + d2[0]);
+  if (d3.every((x) => x === d3[0])) out.add(t[4] + d[3] + d2[2] + d3[0]);
+  if (t[0] !== 0 && t.slice(1).every((v, i) => t[i] !== 0 && v / t[i] === t[1] / t[0])) out.add(t[4] * (t[1] / t[0]));
+  if (d[0] === d[2] && d[1] === d[3]) out.add(t[4] + d[0]);
+  if (t.slice(2).every((v, i) => v === t[i] + t[i + 1])) out.add(t[3] + t[4]);
+  if (t.slice(1).every((v, i) => v === 2 * t[i] + 1)) out.add(2 * t[4] + 1);
+  if (t[2] - t[0] === t[4] - t[2] && t[3] - t[1] !== 0) out.add(t[3] + (t[3] - t[1]));
+  return out;
+}
+
 function seriesItem(r: Rng, rule: SeriesRule): Made {
   const s = rule.make(r);
   const shown = s.slice(0, 5), ans = s[5];
   const d = s[5] - s[4];
-  const m = mcq(r, fmt(ans), [fmt(s[4] + (s[4] - s[3])), fmt(ans + 1), fmt(ans - 1), fmt(s[4] + d * 2)], [fmt(ans + 2), fmt(ans - 2), fmt(ans * 2)]);
+  const fits = plausibleNext(shown);
+  const ok = (v: number) => v !== ans && !fits.has(v);
+  const pick = (vs: number[]) => vs.filter(ok).map(fmt);
+  const m = mcq(r, fmt(ans), pick([s[4] + (s[4] - s[3]), ans + 1, ans - 1, s[4] + d * 2]), pick([ans + 2, ans - 2, ans * 2, ans + 3, ans - 3]));
   return { level: rule.level, objective: `Number pattern: ${rule.name}`, type: "mcq", stem: `What comes next?  ${shown.map(fmt).join(",  ")},  ?`, choices: m.choices, answer: m.answer };
 }
 
@@ -37,7 +62,7 @@ function functionMachineItem(r: Rng, level: number): Made {
   const xs = r.sample([1, 2, 3, 4, 5, 6, 7, 8, 10], 3);
   const ans = f(xs[2]);
   const m = mcq(r, fmt(ans), [fmt(a * xs[2]), fmt(xs[2] + b + a), fmt(ans + a)], [fmt(ans + 1), fmt(ans - 1)]);
-  return { level, objective: "Number relationships: find the rule", type: "mcq", stem: `${xs[0]} → ${f(xs[0])}     ${xs[1]} → ${f(xs[1])}     ${xs[2]} → ?`, choices: m.choices, answer: m.answer };
+  return { level, objective: "Number relationships: find the rule", type: "mcq", stem: `${xs[0]} → ${fmt(f(xs[0]))}     ${xs[1]} → ${fmt(f(xs[1]))}     ${xs[2]} → ?`, choices: m.choices, answer: m.answer };
 }
 
 function balanceItem(r: Rng, level: number): Made {
@@ -50,15 +75,17 @@ function balanceItem(r: Rng, level: number): Made {
 
 export function quantitativeItems(r: Rng, lo: number, hi: number, n: number): Made[] {
   const out: Made[] = [];
-  const rules = SERIES.filter((s) => s.level >= lo - 1 && s.level <= hi + 1);
+  // Only rules inside the paper's range, so a young child never meets a pattern meant for Year 10.
+  const rules = SERIES.filter((s) => s.level >= lo - 0.01 && s.level <= hi + 0.01);
+  const clamp = (v: number) => Math.min(hi, Math.max(lo, v));
   for (let i = 0; i < n; i++) {
     const level = lo + ((hi - lo) * i) / Math.max(1, n - 1);
     const kind = i % 3;
     if (kind === 0 && rules.length) {
       const near = [...rules].sort((a, b) => Math.abs(a.level - level) - Math.abs(b.level - level));
       out.push(seriesItem(r, near[r.int(0, Math.min(2, near.length - 1))]));
-    } else if (kind === 1 && level >= 3) out.push(functionMachineItem(r, Math.round(level * 2) / 2));
-    else out.push(balanceItem(r, Math.max(1.5, Math.round(level * 2) / 2)));
+    } else if (kind === 1 && level >= 3) out.push(functionMachineItem(r, clamp(Math.round(level * 2) / 2)));
+    else out.push(balanceItem(r, clamp(Math.max(1.5, Math.round(level * 2) / 2))));
   }
   return out;
 }
@@ -185,10 +212,11 @@ function nvMatrix(r: Rng, level: number): Made {
 
 export function nonVerbalItems(r: Rng, lo: number, hi: number, n: number): Made[] {
   const out: Made[] = [];
+  const clamp = (v: number) => Math.min(hi, Math.max(lo, v));
   for (let i = 0; i < n; i++) {
-    const level = Math.round((lo + ((hi - lo) * i) / Math.max(1, n - 1)) * 2) / 2;
+    const level = clamp(Math.round((lo + ((hi - lo) * i) / Math.max(1, n - 1)) * 2) / 2);
     const k = i % 3;
-    out.push(k === 0 ? nvSeries(r, level) : k === 1 ? nvOddOneOut(r, level) : nvMatrix(r, Math.max(level, 3)));
+    out.push(k === 0 ? nvSeries(r, level) : k === 1 ? nvOddOneOut(r, level) : nvMatrix(r, clamp(Math.max(level, 2))));
   }
   return out;
 }

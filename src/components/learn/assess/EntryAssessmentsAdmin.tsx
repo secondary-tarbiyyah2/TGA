@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { EmptyState, Notice, StatusChip, Switch, ui, type Tone } from "@/components/learn/ui";
 import { Icon } from "@/components/learn/Icon";
 import { EntryReport, type ReportData } from "@/components/learn/assess/EntryReport";
+import { MathText } from "@/components/learn/assess/MathText";
 
 type Row = {
   id: string; candidate_name: string; year: number; status: string; created_at: string; started_at: string | null; submitted_at: string | null; completed_at: string | null;
@@ -63,6 +64,8 @@ export function EntryAssessmentsAdmin() {
 
   return (
     <div className="space-y-5">
+      {/* When a report is open, only the report prints. */}
+      <div className={`space-y-5 ${open ? "print:hidden" : ""}`}>
       <div className="grid gap-3 sm:grid-cols-4">
         {[
           { k: "active" as const, label: "Waiting for the pupil", n: count(["issued", "in_progress"]), icon: "hourglass" as const, tile: "tile-blue" },
@@ -143,6 +146,7 @@ export function EntryAssessmentsAdmin() {
         </ul>
       )}
 
+      </div>
       {open && <Detail row={open} onClose={() => setOpenId(null)} onChanged={load} onAct={act} />}
     </div>
   );
@@ -173,6 +177,9 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
   const [readAloud, setReadAloud] = useState(false);
   const [largeText, setLargeText] = useState(false);
   const [skipLive, setSkipLive] = useState(false);
+  const [breaks, setBreaks] = useState<"default" | "0" | "1" | "2" | "3" | "4" | "6">("default");
+  const [breakMins, setBreakMins] = useState(0);
+  const [other, setOther] = useState("");
   const [invigilator, setInvigilator] = useState("");
   const [email, setEmail] = useState(true);
   const [busy, setBusy] = useState(false);
@@ -202,7 +209,10 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
       candidateName: who === "other" ? name.trim() : undefined,
       year: effectiveYear,
       eal,
-      access: { extraTimePct: extra, readAloud, largeText },
+      access: {
+        extraTimePct: extra, readAloud, largeText, other: other.trim() || undefined,
+        breaks: breaks === "default" && !breakMins ? undefined : { perSection: breaks === "default" ? defaultBreaks(effectiveYear).perSection : Number(breaks), minutes: breakMins || defaultBreaks(effectiveYear).minutes },
+      },
       skip: skipLive ? ["quran", "arabic"] : [],
       invigilator: invigilator.trim() || undefined,
       email: who === "applicant" && email ? true : undefined,
@@ -256,14 +266,32 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
           <label className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-cream">
             <span className="font-medium text-ink">Extra time</span>
             <select value={extra} onChange={(e) => setExtra(Number(e.target.value))} className={`${ui.input} !w-auto`}>
-              {[0, 25, 50].map((v) => <option key={v} value={v}>{v ? `${v}%` : "None"}</option>)}
+              {[0, 25, 50, 100].map((v) => <option key={v} value={v}>{v ? `${v}%` : "None"}</option>)}
             </select>
           </label>
-          <Switch checked={readAloud} onChange={setReadAloud} label="Read questions aloud" hint="On automatically for Years 1–3" />
+          <div className="flex flex-wrap items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-cream">
+            <label className="flex items-center gap-2"><span className="font-medium text-ink">Breaks in each part</span>
+              <select value={breaks} onChange={(e) => setBreaks(e.target.value as typeof breaks)} className={`${ui.input} !w-auto`}>
+                <option value="default">{effectiveYear >= 1 ? `Usual for Year ${effectiveYear} (${defaultBreaks(effectiveYear).perSection})` : "Usual for the year"}</option>
+                {["0", "1", "2", "3", "4", "6"].map((v) => <option key={v} value={v}>{v === "0" ? "No breaks" : v}</option>)}
+              </select>
+            </label>
+            <label className="flex items-center gap-2"><span className="text-ink/70">of</span>
+              <select value={breakMins} onChange={(e) => setBreakMins(Number(e.target.value))} className={`${ui.input} !w-auto`} aria-label="Length of each break">
+                <option value={0}>{effectiveYear >= 1 ? `${defaultBreaks(effectiveYear).minutes} min (usual)` : "usual length"}</option>
+                {[2, 3, 5, 8, 10].map((v) => <option key={v} value={v}>{v} min</option>)}
+              </select>
+            </label>
+          </div>
+          <Switch checked={readAloud} onChange={setReadAloud} label="Read questions aloud" hint="Available to Years 1–3 anyway; when on, each question is also read out automatically" />
           <Switch checked={largeText} onChange={setLargeText} label="Bigger text" />
           <Switch checked={eal} onChange={setEal} label="English is an additional language" hint="Shown on the report so verbal results are read with care" />
           <Switch checked={skipLive} onChange={setSkipLive} label="Skip Qur'an and Arabic" hint="For example if already assessed another way" />
         </div>
+        <label className={`${ui.label} mt-2`}>Other arrangements (optional, shown on the report)
+          <input value={other} onChange={(e) => setOther(e.target.value)} maxLength={200} placeholder="e.g. a parent reads the screen's buttons; coloured overlay" className={`mt-1 ${ui.input}`} />
+        </label>
+        <p className={`${ui.hint} mt-2`}>Breaks pause the clock and hide the questions; the report notes them as allowed. Years 1–2 are offered a break halfway through each part and between parts.</p>
       </fieldset>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -273,7 +301,7 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
         {who === "applicant" && <div className="self-end"><Switch checked={email} onChange={setEmail} label="Email the link to the parent now" /></div>}
       </div>
 
-      {effectiveYear >= 1 && <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/75">Year {effectiveYear}: {effectiveYear <= 2 ? "about 35 minutes on screen in three short parts (Numbers, Listening and reading, Puzzles), then writing, Qur'an and Arabic on the call." : effectiveYear <= 6 ? "about 1 hour 35 minutes on screen in four parts the child can spread over several sittings, then Qur'an and Arabic on the call." : "about 2 hours on screen in four parts the child can spread over several sittings, then Qur'an and Arabic on the call."}{extra ? ` Times include ${extra}% extra.` : ""}</p>}
+      {effectiveYear >= 1 && <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/75">Year {effectiveYear}: {effectiveYear <= 2 ? "about 35 minutes on screen in three short parts (Numbers, Listening and reading, Puzzles), then writing, Qur'an and Arabic on the call." : effectiveYear <= 6 ? "about 1 hour 35 minutes on screen in four parts the child can spread over several sittings, then Qur'an and Arabic on the call." : "about 2 hours on screen in four parts the child can spread over several sittings, then Qur'an and Arabic on the call."}{extra ? ` Times include ${extra}% extra.` : ""} Breaks pause the clock.</p>}
       {err && <Notice tone="bad">{err}</Notice>}
       <div className="flex gap-2">
         <button type="button" onClick={submit} disabled={busy} className={ui.btnPrimary}>{busy ? "Making the paper…" : "Make the assessment"}</button>
@@ -283,16 +311,36 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
   );
 }
 
+type AdminItem = { id: string; type: string; strand: string; level: number; objective: string; stem: string; choices?: string[]; choiceSvgs?: string[]; answer: string | number; unit?: string; tolerance?: number; passageId?: string };
+type Full = {
+  form: { year: number; sections: { key: string; title: string; candidate: boolean; writingPrompt?: { title: string; prompt: string; guide: string }; items: AdminItem[] }[] };
+  responses: Record<string, { value: unknown; ms?: number; g?: number; n?: number }>;
+  sections_log: { key: string; timedOut: boolean }[];
+};
+export type WritingMarkRow = {
+  id: string; source: "ai" | "estimate" | "staff"; status: "ok" | "error"; model: string | null; strands: Record<string, { score: number; comment?: string }>;
+  overall: string | null; feedback: string | null; next_steps: string[] | null; flags: string[] | null; confidence: string | null; word_count: number | null;
+  error: string | null; decision: string | null; override_reason: string | null; notes: string | null; created_by_email: string | null; created_at: string; based_on: string | null;
+};
+
 function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => void; onChanged: () => void; onAct: (id: string, a: "reissue" | "email" | "void", extra?: Record<string, unknown>) => void }) {
   const supabase = getSupabaseClient();
-  const [full, setFull] = useState<{ form: { sections: { key: string; writingPrompt?: { title: string; prompt: string; guide: string }; items: { id: string; type: string }[] }[] }; responses: Record<string, { value: unknown }>; sections_log: { key: string; timedOut: boolean }[]; events: { type: string }[] } | null>(null);
+  const [full, setFull] = useState<Full | null>(null);
+  const [wmarks, setWmarks] = useState<WritingMarkRow[]>([]);
   const [report, setReport] = useState<ReportData | null>(row.report);
   const [status, setStatus] = useState(row.status);
 
+  const loadMarks = useCallback(async () => {
+    if (!supabase) return;
+    const { data } = await supabase.from("entry_assessment_writing_marks").select("*").eq("assessment_id", row.id).order("created_at", { ascending: false }).limit(20);
+    setWmarks((data as WritingMarkRow[]) || []);
+  }, [supabase, row.id]);
   useEffect(() => {
     if (!supabase) return;
-    supabase.from("entry_assessments").select("form, responses, sections_log, events").eq("id", row.id).single().then(({ data }) => setFull(data as never));
-  }, [supabase, row.id]);
+    supabase.from("entry_assessments").select("form, responses, sections_log").eq("id", row.id).single().then(({ data }) => setFull(data as never));
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load
+    loadMarks();
+  }, [supabase, row.id, loadMarks]);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
@@ -309,40 +357,52 @@ function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => v
     if (!res.ok) return edgeErrorMessage(res);
     setReport(res.report as ReportData);
     setStatus(res.status as string);
+    if (section === "writing") loadMarks();
     onChanged();
     return null;
   };
+  const remark = async () => {
+    const res = await callEdgeFunction("entry-assessment", { action: "ai_mark", id: row.id });
+    if (!res.ok) return edgeErrorMessage(res);
+    if (res.report) setReport(res.report as ReportData);
+    if (res.status) setStatus(res.status as string);
+    await loadMarks();
+    onChanged();
+    return res.aiError ? `AI marking didn't work (${String(res.aiError)}), so an estimate was made instead.` : null;
+  };
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-ink/40" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
-      <div role="dialog" aria-modal="true" aria-labelledby="ea-title" className="flex h-full w-full max-w-4xl flex-col overflow-y-auto bg-cream shadow-2xl">
-        <div className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-gold-light bg-white px-5 py-4">
+    <div className="fixed inset-0 z-50 flex justify-end bg-ink/40 print:static print:block print:bg-transparent" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
+      <div role="dialog" aria-modal="true" aria-labelledby="ea-title" className="flex h-full w-full max-w-4xl flex-col overflow-y-auto bg-cream shadow-2xl print:h-auto print:max-w-none print:overflow-visible print:bg-white print:shadow-none">
+        <div className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-gold-light bg-white px-5 py-4 print:static print:border-0 print:px-0">
           <div>
             <h2 id="ea-title" className="text-xl font-semibold text-ink">{row.candidate_name}</h2>
             <p className="text-sm text-ink/65">Year {row.year}{row.dob ? ` · born ${new Date(row.dob).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}` : ""}{row.eal ? " · EAL" : ""}{row.invigilator ? ` · supervised by ${row.invigilator}` : ""}</p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 print:hidden">
             <StatusChip tone={(STATUS[status] || STATUS.issued).tone}>{(STATUS[status] || STATUS.issued).label}</StatusChip>
-            <button type="button" onClick={() => window.print()} className={`${ui.btnSecondary} ${ui.sm} print:hidden`}>Print</button>
+            <button type="button" onClick={() => window.print()} className={`${ui.btnSecondary} ${ui.sm}`}>Print</button>
             <button type="button" onClick={onClose} aria-label="Close" className="portal-icon-btn"><Icon name="x" /></button>
           </div>
         </div>
 
-        <div className="space-y-5 p-5">
+        <div className="space-y-5 p-5 print:p-0">
           {["issued", "in_progress"].includes(status) && (
-            <Notice tone="info">The pupil hasn&apos;t finished the on-screen parts yet. You can still mark the Qur&apos;an and Arabic parts from the family call now.</Notice>
+            <div className="print:hidden"><Notice tone="info">The pupil hasn&apos;t finished the on-screen parts yet. You can still mark the Qur&apos;an and Arabic parts from the family call now.</Notice></div>
           )}
 
+          {report ? <EntryReport report={report} name={row.candidate_name} /> : <EmptyState title="The report appears when the pupil finishes" icon="fileText" tile="tile-blue">Results are worked out as soon as the on-screen parts are done; Writing is first-marked automatically and checked by you, and Qur&apos;an and Arabic are added when you mark them.</EmptyState>}
+
           {(hasSection("writing") || hasSection("quran") || hasSection("arabic")) && (
-            <section className={`${ui.card} space-y-5`} aria-label="Teacher-marked parts">
+            <section className={`${ui.card} space-y-5 print:hidden`} aria-label="Teacher-marked parts">
               <h3 className="text-base font-semibold text-ink">Teacher-marked parts</h3>
-              {hasSection("writing") && <WritingMark year={row.year} prompt={writingSection?.writingPrompt} text={writingText} live={!writingItem} initial={(row.marks as { writing?: { scores: Record<string, number>; notes?: string } } | null)?.writing} onSave={(d) => saveMark("writing", d)} />}
+              {hasSection("writing") && <WritingMark year={row.year} prompt={writingSection?.writingPrompt} text={writingText} live={!writingItem} initial={(row.marks as { writing?: WritingInitial } | null)?.writing} marks={wmarks} onSave={(d) => saveMark("writing", d)} onRemark={writingItem && ["submitted", "complete"].includes(status) ? remark : undefined} />}
               {hasSection("quran") && <QuranMark initial={(row.marks as { quran?: Record<string, unknown> } | null)?.quran} onSave={(d) => saveMark("quran", d)} />}
               {hasSection("arabic") && <ArabicMark initial={(row.marks as { arabic?: Record<string, unknown> } | null)?.arabic} onSave={(d) => saveMark("arabic", d)} />}
             </section>
           )}
 
-          {report ? <EntryReport report={report} name={row.candidate_name} /> : <EmptyState title="The report appears when the pupil finishes" icon="fileText" tile="tile-blue">Results are worked out as soon as the on-screen parts are done; the Writing, Qur&apos;an and Arabic parts are added when you mark them.</EmptyState>}
+          {full && <AnswerReview full={full} />}
 
           <div className="flex flex-wrap gap-2 border-t border-gold-light pt-4 print:hidden">
             {status !== "void" && <button type="button" onClick={() => onAct(row.id, "reissue", { newPaper: true })} className={ui.btnSecondary}>Start again with a new paper</button>}
@@ -354,13 +414,64 @@ function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => v
   );
 }
 
+function isRight(it: AdminItem, v: unknown): boolean | null {
+  if (v === undefined || v === null || v === "") return null;
+  if (it.type === "numeric") {
+    const n = Number(String(v).replace(/[,£\s]/g, "").replace(/[−–]/g, "-"));
+    return Number.isFinite(n) && Math.abs(n - Number(it.answer)) <= (it.tolerance ?? 1e-9);
+  }
+  if (it.type === "mcq") return String(v).trim() === String(it.answer).trim();
+  return null;
+}
+
+/** Every question the pupil saw, their answer, the right answer and the time taken. */
+function AnswerReview({ full }: { full: Full }) {
+  const sections = full.form.sections.filter((s) => s.candidate && s.items.some((i) => i.type !== "text"));
+  if (!sections.length) return null;
+  return (
+    <details className={`${ui.card} print:hidden`}>
+      <summary className="cursor-pointer text-base font-semibold text-ink">Answers, question by question</summary>
+      <p className="mt-2 text-xs text-ink/60">For checking and appeals. Times under 2.5 seconds are shown in amber.</p>
+      {sections.map((s) => (
+        <div key={s.key} className="mt-4 overflow-x-auto">
+          <h4 className="text-sm font-semibold text-ink">{s.title}</h4>
+          <table className="mt-1 w-full min-w-[40rem] text-left text-sm">
+            <thead className="text-xs text-ink/60"><tr><th className="py-1 pr-2 font-medium">#</th><th className="py-1 pr-2 font-medium">Question</th><th className="py-1 pr-2 font-medium">Answer given</th><th className="py-1 pr-2 font-medium">Right answer</th><th className="py-1 pr-2 font-medium">Time</th></tr></thead>
+            <tbody className="divide-y divide-gold-light/50">
+              {s.items.filter((i) => i.type !== "text").map((it, n) => {
+                const r = full.responses[it.id];
+                const ok = isRight(it, r?.value);
+                const t = r?.ms ?? r?.g;
+                return (
+                  <tr key={it.id} className="align-top">
+                    <td className="py-1.5 pr-2 tabular-nums text-ink/60">{n + 1}</td>
+                    <td className="py-1.5 pr-2"><MathText text={it.stem} className="line-clamp-2" /><span className="block text-xs text-ink/55">{it.objective} · level {it.level}</span></td>
+                    <td className={`py-1.5 pr-2 ${ok === true ? "text-green-800" : ok === false ? "text-red-800" : "text-ink/50"}`}>{r?.value === undefined || r?.value === "" ? "–" : <MathText text={String(r.value)} />}{ok === true ? " ✓" : ok === false ? " ✗" : ""}</td>
+                    <td className="py-1.5 pr-2"><MathText text={String(it.answer)} />{it.unit && it.unit !== "£" ? ` ${it.unit}` : ""}</td>
+                    <td className={`py-1.5 pr-2 tabular-nums ${typeof t === "number" && t < 2500 ? "text-amber-700" : "text-ink/60"}`}>{typeof t === "number" ? `${(t / 1000).toFixed(1)} s` : "–"}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      ))}
+    </details>
+  );
+}
+
+// Same strands, in the same order, as supabase/functions/_shared/assess/writing.ts.
 const WRITING = [
-  { key: "composition", label: "Content and effect", hint: "Ideas fit the task, purpose and reader" },
+  { key: "composition", label: "Composition and effect", hint: "Ideas fit the task, purpose and reader" },
   { key: "organisation", label: "Organisation", hint: "Opening, paragraphs or sequence, ending" },
+  { key: "sentences", label: "Sentence structure and punctuation", hint: "Range of sentence types, accurate punctuation" },
+  { key: "accuracy", label: "Spelling", hint: "Spelling for the year group (and presentation)" },
   { key: "vocabulary", label: "Vocabulary", hint: "Precise, varied word choice" },
-  { key: "sentences", label: "Sentences and punctuation", hint: "Range of sentences, accurate punctuation" },
-  { key: "accuracy", label: "Spelling and presentation", hint: "Spelling for the year group, handwriting or layout" },
 ];
+/** Usual breaks per part (mirrors defaultBreaks in the paper builder). */
+function defaultBreaks(year: number) {
+  return year <= 2 ? { perSection: 3, minutes: 3 } : year <= 6 ? { perSection: 2, minutes: 3 } : { perSection: 1, minutes: 5 };
+}
 const SCALE = ["Well below", "Below", "Expected", "Above", "Well above"];
 
 function Scale({ value, onChange, labels = SCALE, name }: { value: number | undefined; onChange: (v: number) => void; labels?: string[]; name: string }) {
@@ -373,27 +484,83 @@ function Scale({ value, onChange, labels = SCALE, name }: { value: number | unde
   );
 }
 
-function SaveRow({ onSave, ready }: { onSave: () => Promise<string | null>; ready: boolean }) {
+function SaveRow({ onSave, ready, label = "Save marks" }: { onSave: () => Promise<string | null>; ready: boolean; label?: string }) {
   const [state, setState] = useState<"idle" | "saving" | "saved">("idle");
   const [err, setErr] = useState<string | null>(null);
   return (
     <div className="flex items-center gap-3">
-      <button type="button" disabled={!ready || state === "saving"} onClick={async () => { setState("saving"); const e = await onSave(); setErr(e); setState(e ? "idle" : "saved"); }} className={`${ui.btnPrimary} ${ui.sm}`}>{state === "saving" ? "Saving…" : "Save marks"}</button>
+      <button type="button" disabled={!ready || state === "saving"} onClick={async () => { setState("saving"); const e = await onSave(); setErr(e); setState(e ? "idle" : "saved"); }} className={`${ui.btnPrimary} ${ui.sm}`}>{state === "saving" ? "Saving…" : label}</button>
       {state === "saved" && <span className="text-sm text-green-800">Saved, report updated</span>}
       {err && <span className="text-sm text-red-700">{err}</span>}
     </div>
   );
 }
 
-function WritingMark({ year, prompt, text, live, initial, onSave }: { year: number; prompt?: { title: string; prompt: string; guide: string }; text: string; live: boolean; initial?: { scores: Record<string, number>; notes?: string }; onSave: (d: Record<string, unknown>) => Promise<string | null> }) {
+type WritingInitial = { scores: Record<string, number>; notes?: string; overall?: string; overrideReason?: string; decision?: string; markedBy?: string; markedAt?: string };
+const FLAG_LABEL: Record<string, string> = {
+  very_short: "Very short for the time given", off_topic: "May not answer the task", possibly_not_own_work: "Style may not be the pupil's own",
+  safeguarding_concern: "Possible safeguarding concern", not_in_english: "Not written in English", hard_to_read: "Hard to read",
+};
+const bandOfMean = (mean: number) => { const d = mean - 2; return d <= -1.5 ? "Well below" : d <= -0.5 ? "Below" : d < 0.75 ? "Expected" : d < 1.75 ? "Above" : "Well above"; };
+
+function WritingMark({ year, prompt, text, live, initial, marks, onSave, onRemark }: {
+  year: number; prompt?: { title: string; prompt: string; guide: string }; text: string; live: boolean; initial?: WritingInitial; marks: WritingMarkRow[];
+  onSave: (d: Record<string, unknown>) => Promise<string | null>; onRemark?: () => Promise<string | null>;
+}) {
+  const first = marks.find((m) => m.source !== "staff" && m.status === "ok") || null;
+  const failed = marks.find((m) => m.source === "ai" && m.status === "error");
+  const lastStaff = marks.find((m) => m.source === "staff") || null;
   const [scores, setScores] = useState<Record<string, number>>(initial?.scores || {});
+  const [overall, setOverall] = useState(initial?.overall || "");
+  const [reason, setReason] = useState(initial?.overrideReason || "");
   const [notes, setNotes] = useState(initial?.notes || "");
+  const [remarking, setRemarking] = useState(false);
+  const [remarkMsg, setRemarkMsg] = useState<string | null>(null);
+  // Start from the first mark when there is no staff mark yet.
+  const seeded = useRef(false);
+  useEffect(() => {
+    if (seeded.current || initial?.scores || !first) return;
+    seeded.current = true;
+    setScores(Object.fromEntries(WRITING.filter((c) => typeof first.strands?.[c.key]?.score === "number").map((c) => [c.key, first.strands[c.key].score])));
+  }, [first, initial?.scores]);
+
+  const complete = WRITING.every((c) => scores[c.key] !== undefined);
+  const mean = complete ? WRITING.reduce((p, c) => p + scores[c.key], 0) / WRITING.length : null;
+  const avgBand = mean === null ? null : bandOfMean(mean);
+  const overriding = !!overall && overall !== avgBand;
+  const unchanged = !!first && WRITING.every((c) => first.strands?.[c.key]?.score === scores[c.key]) && !overriding;
+
   return (
     <div className="space-y-3 rounded-xl border border-gold-light/70 p-4">
-      <div className="flex items-center gap-2"><span className="portal-tile tile-violet" aria-hidden="true"><Icon name="notebookPen" /></span><h4 className="font-semibold text-ink">Writing</h4></div>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex items-center gap-2"><span className="portal-tile tile-violet" aria-hidden="true"><Icon name="notebookPen" /></span><h4 className="font-semibold text-ink">Writing</h4></div>
+        {lastStaff ? <StatusChip tone="good">Checked by {lastStaff.created_by_email || "staff"} on {new Date(lastStaff.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</StatusChip> : first ? <StatusChip tone="warn">Waiting for a staff check</StatusChip> : null}
+      </div>
       {prompt && <p className="text-sm text-ink/75"><b>{prompt.title}.</b> {prompt.prompt}<br /><span className="text-ink/60">Secure for this band: {prompt.guide}</span></p>}
       {live ? <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/75">Done on the call: read the task aloud, the child writes on paper and holds it up to the camera. Mark what you see.</p> : text ? <blockquote className="max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-gold-light/70 bg-cream/60 p-3 text-sm leading-relaxed text-ink/90">{text}<footer className="mt-2 text-xs text-ink/55">{text.trim().split(/\s+/).length} words</footer></blockquote> : <p className="text-sm text-ink/60">No writing submitted yet.</p>}
-      <p className="text-xs text-ink/60">Mark each against what is expected for Year {year}.</p>
+
+      {!live && first && (
+        <div className="rounded-lg border border-violet-200 bg-violet-50/60 p-3 text-sm">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="font-semibold text-ink">{first.source === "ai" ? "AI first mark" : "Estimate – needs staff marking"}{first.overall ? `: ${first.overall}` : ""}</p>
+            <span className="text-xs text-ink/55">{first.source === "ai" ? `${first.model || "AI"}${first.confidence ? `, ${first.confidence} confidence` : ""}` : "length, sentences, punctuation and a short spelling list"} · {new Date(first.created_at).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</span>
+          </div>
+          {(first.flags || []).includes("safeguarding_concern") && <p className="mt-2 rounded-md border border-red-200 bg-red-50 px-2 py-1 font-medium text-red-900">Possible safeguarding concern flagged. Read the writing and follow the safeguarding policy.</p>}
+          {first.feedback && <p className="mt-1 text-ink/80">{first.feedback}</p>}
+          <ul className="mt-2 space-y-0.5 text-xs text-ink/75">{WRITING.map((c) => first.strands?.[c.key] && <li key={c.key}><b className="text-ink">{c.label}: {SCALE[first.strands[c.key].score]}.</b> {first.strands[c.key].comment}</li>)}</ul>
+          {(first.next_steps || []).length > 0 && <p className="mt-2 text-xs text-ink/75"><b className="text-ink">Next steps:</b> {(first.next_steps || []).join("; ")}</p>}
+          {(first.flags || []).filter((f) => f !== "safeguarding_concern").length > 0 && <p className="mt-1 text-xs text-ink/65">Notes: {(first.flags || []).filter((f) => f !== "safeguarding_concern").map((f) => FLAG_LABEL[f] || f).join("; ")}</p>}
+        </div>
+      )}
+      {!live && failed && (!first || failed.created_at > first.created_at) && <p className="text-xs text-amber-800">The last AI marking didn&apos;t work ({failed.error}). {first ? "Showing the estimate instead." : ""}</p>}
+      {!live && onRemark && (
+        <div className="flex flex-wrap items-center gap-2">
+          <button type="button" disabled={remarking} onClick={async () => { setRemarking(true); setRemarkMsg(await onRemark()); setRemarking(false); }} className={`${ui.btnSecondary} ${ui.sm}`}>{remarking ? "Marking…" : first ? "First-mark again" : "First-mark this writing"}</button>
+          {remarkMsg && <span className="text-xs text-ink/70">{remarkMsg}</span>}
+        </div>
+      )}
+
+      <p className="text-xs text-ink/60">Your marks: each strand against what is expected for Year {year}. {first ? "They start from the first mark; change any you disagree with." : ""}</p>
       <div className="space-y-2">
         {WRITING.map((c) => (
           <div key={c.key} className="grid gap-1 sm:grid-cols-[14rem_1fr] sm:items-center">
@@ -402,8 +569,21 @@ function WritingMark({ year, prompt, text, live, initial, onSave }: { year: numb
           </div>
         ))}
       </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label className={ui.label}>Overall judgement
+          <select value={overall} onChange={(e) => setOverall(e.target.value)} className={`mt-1 ${ui.input}`}>
+            <option value="">{avgBand ? `From the strands: ${avgBand}` : "From the strands"}</option>
+            {SCALE.map((b) => <option key={b} value={b}>{b}</option>)}
+          </select>
+        </label>
+        {overriding && (
+          <label className={ui.label}>Reason for changing it (needed)
+            <input value={reason} onChange={(e) => setReason(e.target.value)} maxLength={2000} className={`mt-1 ${ui.input}`} placeholder="e.g. strong ideas held back by handwriting speed" />
+          </label>
+        )}
+      </div>
       <label className={ui.label}>Note for the report (optional)<textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={2} className={`mt-1 ${ui.input}`} /></label>
-      <SaveRow ready={WRITING.every((c) => scores[c.key] !== undefined)} onSave={() => onSave({ scores, notes })} />
+      <SaveRow ready={complete && (!overriding || reason.trim().length >= 3)} label={unchanged ? "Accept the first mark" : "Save my marks"} onSave={() => onSave({ scores, notes, overall: overriding ? overall : undefined, overrideReason: overriding ? reason.trim() : undefined, basedOn: first?.id })} />
     </div>
   );
 }

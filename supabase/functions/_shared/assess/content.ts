@@ -4,12 +4,18 @@
 //
 // `level` = national-curriculum year (1–11) at which a typical pupil answers
 // correctly roughly 60–70% of the time. Decimals allowed.
-// Bands: 1 = Y1–2, 2 = Y3–4, 3 = Y5–6, 4 = Y7–9, 5 = Y10–11.
+// Bands: 1 = Y1–2, 2 = Y3–4, 3 = Y5–6, 4 = Y7–9, 5 = Y10–11. A passage may
+// narrow its band with `years` (Year 1 has its own, much shorter, texts).
+//
+// Content rules (the list is BANNED in curriculum.ts, checked by
+// scripts/assess-selftest.ts): any religious content must be accurate and
+// uncontroversial for a mainstream Sunni school, the banned references must
+// never appear, and texts must suit the youngest year that reads them.
 
 export type Band = 1 | 2 | 3 | 4 | 5;
 export type Skill = "retrieval" | "inference" | "vocabulary" | "sequence" | "purpose" | "language";
 export type PassageQuestion = { q: string; choices: [string, string, string, string]; answer: 0 | 1 | 2 | 3; skill: Skill; level: number };
-export type Passage = { id: string; band: Band; title: string; kind: "fiction" | "non-fiction" | "poem"; text: string; questions: PassageQuestion[] };
+export type Passage = { id: string; band: Band; years?: [number, number]; title: string; kind: "fiction" | "non-fiction" | "poem"; text: string; questions: PassageQuestion[] };
 
 export type Mcq = { stem: string; choices: [string, string, string, string]; answer: 0 | 1 | 2 | 3; level: number; objective: string };
 export type Spelling = { correct: string; wrong: [string, string, string]; level: number };
@@ -24,10 +30,53 @@ export type WritingPrompt = { id: string; band: Band; title: string; prompt: str
 // ---------------------------------------------------------------------------
 
 export const PASSAGES: Passage[] = [
-  // ----- Band 1 (Years 1–2) -----
+  // ----- Band 1: Year 1 (very short; read to the child as well) -----
+  {
+    id: "y1-big-box",
+    band: 1,
+    years: [1, 1],
+    title: "The Big Box",
+    kind: "fiction",
+    text: [
+      "Musa has a big box. He gets in it.",
+      "“It is a ship!” said Musa.",
+      "Then Mum came in. “Where is Musa?” she said.",
+      "Musa popped up. “Here I am!”",
+      "Mum got in too. Now it is a ship for two.",
+    ].join("\n\n"),
+    questions: [
+      { q: "What does Musa have?", choices: ["a big box", "a red hat", "a toy ship", "a cat"], answer: 0, skill: "retrieval", level: 1.0 },
+      { q: "What does Musa say the box is?", choices: ["a car", "a house", "a ship", "a bed"], answer: 2, skill: "retrieval", level: 1.2 },
+      { q: "Who came in?", choices: ["Dad", "Mum", "Gran", "a cat"], answer: 1, skill: "retrieval", level: 1.3 },
+      { q: "How do you think Musa feels?", choices: ["sad", "cross", "scared", "happy"], answer: 3, skill: "inference", level: 1.8 },
+    ],
+  },
+  {
+    id: "y1-ducks",
+    band: 1,
+    years: [1, 1],
+    title: "Ducks",
+    kind: "non-fiction",
+    text: [
+      "A duck is a bird. It has two legs and two wings.",
+      "A duck can swim. Its big flat feet help it swim fast.",
+      "A duck can fly too.",
+      "Ducks eat plants and bugs. They live on ponds and rivers.",
+      "A baby duck is a duckling.",
+    ].join("\n\n"),
+    questions: [
+      { q: "How many legs does a duck have?", choices: ["one", "two", "four", "six"], answer: 1, skill: "retrieval", level: 1.0 },
+      { q: "What helps a duck swim fast?", choices: ["its wings", "its tail", "its feet", "its beak"], answer: 2, skill: "retrieval", level: 1.4 },
+      { q: "What is a baby duck?", choices: ["a duckling", "a chick", "a puppy", "a kitten"], answer: 0, skill: "vocabulary", level: 1.5 },
+      { q: "Where do ducks live?", choices: ["in caves", "in the sand", "in trees", "on ponds and rivers"], answer: 3, skill: "retrieval", level: 1.7 },
+    ],
+  },
+
+  // ----- Band 1: Year 2 -----
   {
     id: "b1-red-hat",
     band: 1,
+    years: [2, 2],
     title: "Amina's Red Hat",
     kind: "fiction",
     text: [
@@ -47,6 +96,7 @@ export const PASSAGES: Passage[] = [
   {
     id: "b1-busy-bees",
     band: 1,
+    years: [2, 2],
     title: "Busy Bees",
     kind: "non-fiction",
     text: [
@@ -57,9 +107,9 @@ export const PASSAGES: Passage[] = [
     ].join("\n\n"),
     questions: [
       { q: "How many wings does a bee have?", choices: ["two", "six", "four", "eight"], answer: 2, skill: "retrieval", level: 1.2 },
-      { q: "What is the sweet juice that bees drink from flowers called?", choices: ["nectar", "milk", "pollen", "honey"], answer: 0, skill: "retrieval", level: 1.6 },
+      { q: "What is the sweet juice that bees drink called?", choices: ["nectar", "milk", "pollen", "honey"], answer: 0, skill: "retrieval", level: 1.6 },
       { q: "Which bee lays the eggs?", choices: ["the king", "the queen", "the biggest worker", "the baby bee"], answer: 1, skill: "retrieval", level: 1.8 },
-      { q: "Why might a farmer be glad to see bees on the farm?", choices: ["Bees help the fruit to grow.", "Bees eat the weeds.", "Bees make the farm noisy.", "Bees keep the birds away."], answer: 0, skill: "inference", level: 2.5 },
+      { q: "Why is a farmer glad to see bees?", choices: ["Bees help the fruit to grow.", "Bees eat the weeds.", "Bees make the farm noisy.", "Bees keep the birds away."], answer: 0, skill: "inference", level: 2.5 },
     ],
   },
 
@@ -84,7 +134,7 @@ export const PASSAGES: Passage[] = [
       { q: "Why did Yusuf's stomach flutter?", choices: ["He was hungry.", "He had caught Grandmother's cold.", "He was nervous about serving customers on his own.", "He did not like the smell of the spices."], answer: 2, skill: "inference", level: 3.5 },
       { q: "The stall was 'crammed with baskets'. What does 'crammed' mean?", choices: ["packed full", "painted brightly", "kept tidy", "nearly empty"], answer: 0, skill: "vocabulary", level: 3.5 },
       { q: "Who was Yusuf's first customer?", choices: ["a chef", "a café owner", "a bride's mother", "a tall man who wanted to bake a cake"], answer: 3, skill: "sequence", level: 3.2 },
-      { q: "'His voice no longer shook when he spoke.' What does this tell us about Yusuf by midday?", choices: ["He had lost his voice.", "He was becoming more confident.", "He was tired of talking.", "He had stopped speaking to customers."], answer: 1, skill: "inference", level: 4.2 },
+      { q: "'His voice no longer shook when he spoke.' What does this tell us about Yusuf?", choices: ["He had lost his voice.", "He was becoming more confident.", "He was tired of talking.", "He had stopped speaking to customers."], answer: 1, skill: "inference", level: 4.2 },
       { q: "What does Grandmother mean when she says Yusuf now has 'a spice merchant's voice'?", choices: ["He can sing loudly in the market.", "He sounds just like his grandmother.", "He can now talk to customers with confidence.", "He has caught a cold from the spice dust."], answer: 2, skill: "language", level: 4.8 },
     ],
   },
@@ -101,12 +151,12 @@ export const PASSAGES: Passage[] = [
       "Today, camels are still important to many families. They provide milk, wool and transport. Some people even race them! It is easy to see why these patient, hard-working animals are so highly valued.",
     ].join("\n\n"),
     questions: [
-      { q: "According to the text, what is a camel's hump mostly made of?", choices: ["fat", "water", "muscle", "bone"], answer: 0, skill: "retrieval", level: 2.8 },
-      { q: "'They can drink an enormous amount.' Which word is closest in meaning to 'enormous'?", choices: ["tiny", "sudden", "very large", "cold"], answer: 2, skill: "vocabulary", level: 3.2 },
+      { q: "What is a camel's hump mostly made of?", choices: ["fat", "water", "muscle", "bone"], answer: 0, skill: "retrieval", level: 2.8 },
+      { q: "'They can drink an enormous amount.' What does 'enormous' mean?", choices: ["tiny", "sudden", "very large", "cold"], answer: 2, skill: "vocabulary", level: 3.2 },
       { q: "Why might a camel's hump flop over to one side?", choices: ["The camel has drunk too much water.", "The camel has used up much of its stored fat.", "The camel is getting ready to race.", "The camel has been sitting in the wind."], answer: 1, skill: "inference", level: 4.0 },
       { q: "How do camels stop sand getting into their eyes?", choices: ["They close their nostrils.", "They have wide, padded feet.", "They have two rows of long eyelashes.", "They turn their backs to the wind."], answer: 2, skill: "retrieval", level: 3.5 },
-      { q: "Which word best describes how the writer feels about camels?", choices: ["bored", "frightened", "annoyed", "admiring"], answer: 3, skill: "inference", level: 4.5 },
-      { q: "Why does the writer include the sentence 'Many people think a camel's hump is full of water'?", choices: ["to correct a common mistake", "to tell a joke about camels", "to show that the writer is unsure", "to persuade readers to buy a camel"], answer: 0, skill: "purpose", level: 4.6 },
+      { q: "How does the writer feel about camels?", choices: ["bored", "frightened", "annoyed", "admiring"], answer: 3, skill: "inference", level: 4.5 },
+      { q: "Why does the writer say 'Many people think a camel's hump is full of water'?", choices: ["to correct a common mistake", "to tell a joke about camels", "to show that the writer is unsure", "to persuade readers to buy a camel"], answer: 0, skill: "purpose", level: 4.6 },
     ],
   },
 
@@ -128,12 +178,12 @@ export const PASSAGES: Passage[] = [
       "Layla smiled. In the city, the night sky had always seemed empty. She had never realised how much it had been hiding.",
     ].join("\n\n"),
     questions: [
-      { q: "According to Uncle Khalid, what does the name 'Aldebaran' mean?", choices: ["the traveller", "the follower", "the bright one", "the leader"], answer: 1, skill: "retrieval", level: 4.5 },
+      { q: "What does the star name 'Aldebaran' mean?", choices: ["the traveller", "the follower", "the bright one", "the leader"], answer: 1, skill: "retrieval", level: 4.5 },
       { q: "Which of these happened first?", choices: ["Idris counted the stars.", "They ate bread and lentil soup.", "They laid out rugs on the sand.", "Uncle Khalid covered the embers with sand."], answer: 2, skill: "sequence", level: 4.8 },
-      { q: "'Idris looked only slightly reassured.' This suggests that Idris…", choices: ["was still a little worried about scorpions", "had completely forgotten about scorpions", "wanted to go and look for scorpions", "thought his uncle was joking"], answer: 0, skill: "inference", level: 5.5 },
+      { q: "'Idris looked only slightly reassured.' What does this tell us about Idris?", choices: ["was still a little worried about scorpions", "had completely forgotten about scorpions", "wanted to go and look for scorpions", "thought his uncle was joking"], answer: 0, skill: "inference", level: 5.5 },
       { q: "'As her eyes adjusted, more and more appeared.' Here, 'adjusted' means…", choices: ["became tired", "filled with tears", "closed slowly", "got used to the darkness"], answer: 3, skill: "vocabulary", level: 5.5 },
-      { q: "Why did Uncle Khalid most likely cover the embers before they looked at the sky?", choices: ["to save the wood for breakfast", "because the soup was finished", "so that the sky would look darker and the stars brighter", "to keep the scorpions away"], answer: 2, skill: "inference", level: 6.2 },
-      { q: "The writer says the stars were 'thick as spilt sugar'. What does this comparison suggest?", choices: ["The stars looked sticky and sweet.", "There were countless tiny, bright points crowded together.", "The stars were falling towards the ground.", "The sky was white rather than dark."], answer: 1, skill: "language", level: 6.8 },
+      { q: "Why did Uncle Khalid cover the fire's embers before they looked up?", choices: ["to save the wood for breakfast", "because the soup was finished", "so that the sky would look darker and the stars brighter", "to keep the scorpions away"], answer: 2, skill: "inference", level: 6.2 },
+      { q: "The stars were 'thick as spilt sugar'. What does this suggest?", choices: ["The stars looked sticky and sweet.", "There were countless tiny, bright points crowded together.", "The stars were falling towards the ground.", "The sky was white rather than dark."], answer: 1, skill: "language", level: 6.8 },
     ],
   },
   {
@@ -142,17 +192,17 @@ export const PASSAGES: Passage[] = [
     title: "Al-Jazari: The Engineer of Wonders",
     kind: "non-fiction",
     text: [
-      "More than eight hundred years ago, in the city of Diyarbakır in what is now Turkey, an engineer named Ismail al-Jazari was busy designing machines that seemed almost magical. He worked for the rulers of the region, and his job was to build devices that were both useful and astonishing.",
-      "In 1206, al-Jazari completed a remarkable book describing about fifty of his inventions. For each machine, he drew careful diagrams and wrote step-by-step instructions, so that other engineers could build it for themselves. This was unusual for the time: many inventors kept their methods secret.",
-      "One of his most famous creations was the elephant clock. Inside a model elephant, a bowl with a tiny hole slowly sank in a tank of water. As it sank, it pulled on strings that set off a chain of movements every half hour: a ball dropped, a bird whistled and a figure struck a cymbal.",
-      "Al-Jazari also designed machines for raising water from rivers and wells. Farmers in dry regions needed a steady supply of water for their crops, and lifting it by hand was exhausting work. Some of these machines used a crank, a part that changes a turning movement into a back-and-forth movement. Many later machines relied on the same idea.",
-      "Today, engineers and historians still study his book, and model makers have rebuilt several of his machines from his drawings. Some people call al-Jazari one of the fathers of robotics, because his moving figures were controlled automatically.",
-      "His work shows that great inventions often come from careful observation, patience and a little playfulness.",
+      "More than eight hundred years ago, an engineer named Ismail al-Jazari lived in the city of Diyarbakır, in what is now Turkey. He worked for the rulers of the region. His job was to build machines that were useful and seemed almost magical.",
+      "In 1206, al-Jazari finished a book about his inventions. It describes about fifty machines. For each one, he drew careful diagrams and wrote step-by-step instructions, so that other engineers could build it too. This was unusual at the time, because many inventors kept their methods secret.",
+      "One of his most famous creations was the elephant clock. Inside a model elephant, a bowl with a tiny hole sat in a tank of water. Slowly, the bowl filled and sank. As it sank, it pulled on strings. Every half hour, this set off a chain of movements: a ball dropped, a bird whistled and a figure struck a cymbal.",
+      "Al-Jazari also designed machines for raising water from rivers and wells. Farmers in dry places needed a steady supply of water for their crops, and lifting it by hand was exhausting work. Some of his machines used a crank. A crank is a part that changes a turning movement into a back-and-forth movement. Many later machines used the same idea.",
+      "Today, engineers and historians still study his book. Model makers have rebuilt several of his machines from his drawings. Some people call al-Jazari one of the fathers of robotics, because his moving figures worked by themselves.",
+      "His work shows that great inventions often come from careful watching, patience and a little playfulness.",
     ].join("\n\n"),
     questions: [
       { q: "In which year did al-Jazari complete his book of inventions?", choices: ["1026", "1602", "1260", "1206"], answer: 3, skill: "retrieval", level: 4.5 },
-      { q: "The writer says that sharing instructions 'was unusual for the time'. What does this suggest about al-Jazari?", choices: ["He wanted other engineers to learn from his work.", "He did not care whether his machines worked.", "He was worried about his secrets being stolen.", "He could not draw very well."], answer: 0, skill: "inference", level: 5.5 },
-      { q: "'Lifting it by hand was exhausting work.' Which word is closest in meaning to 'exhausting'?", choices: ["exciting", "very tiring", "dangerous", "quick"], answer: 1, skill: "vocabulary", level: 5.0 },
+      { q: "Sharing instructions 'was unusual at the time'. What does this suggest about al-Jazari?", choices: ["He wanted other engineers to learn from his work.", "He did not care whether his machines worked.", "He was worried about his secrets being stolen.", "He could not draw very well."], answer: 0, skill: "inference", level: 5.5 },
+      { q: "'Lifting it by hand was exhausting work.' What does 'exhausting' mean?", choices: ["exciting", "very tiring", "dangerous", "quick"], answer: 1, skill: "vocabulary", level: 5.0 },
       { q: "How did the elephant clock show that half an hour had passed?", choices: ["A number appeared on the elephant's side.", "A bowl rose to the top of the tank.", "A chain of movements and sounds took place.", "A person rang a bell inside the elephant."], answer: 2, skill: "retrieval", level: 5.2 },
       { q: "Why does the writer describe al-Jazari's machines as 'almost magical'?", choices: ["They were made by magicians.", "They moved and made sounds by themselves in surprising ways.", "They were too small to see.", "They only worked at night."], answer: 1, skill: "inference", level: 6.0 },
       { q: "Why does the writer explain what a crank is?", choices: ["to show that cranks were first used in Turkey", "to argue that cranks are better than engines", "to describe how al-Jazari spent his free time", "to help the reader understand a technical word"], answer: 3, skill: "purpose", level: 6.5 },
@@ -243,26 +293,25 @@ export const PASSAGES: Passage[] = [
     ],
   },
   {
-    id: "b5-house-of-wisdom",
+    id: "b5-thames",
     band: 5,
-    title: "The Long Conversation",
+    title: "The River That Came Back",
     kind: "non-fiction",
     text: [
-      "When we imagine scientific discovery, we often picture a lone genius: an apple falling on a head, a bath overflowing, a sudden cry of “Eureka!” These stories are memorable, but they can mislead. Most of the time, knowledge grows not through solitary flashes of brilliance but through a long conversation between many people, across centuries and languages.",
-      "Few places illustrate this better than the House of Wisdom in Baghdad. In the eighth and ninth centuries, the city's rulers supported scholars who gathered manuscripts from Greek, Persian, Indian and Syriac sources and translated them into Arabic. Works on astronomy, medicine and mathematics that might otherwise have been lost were copied, studied and – crucially – questioned.",
-      "Translation, in this sense, was never merely a matter of swapping one word for another. To render a Greek treatise on geometry into clear Arabic, a translator had to understand its arguments thoroughly. In doing so, scholars often spotted errors, filled gaps and suggested improvements. The mathematician al-Khwarizmi wrote one book explaining the Indian system of numerals and another setting out a systematic method for solving equations. The word “algebra” comes from the title of that second book, and “algorithm” from a Latin version of his name.",
-      "The conversation did not stop in Baghdad. Over the following centuries, many Arabic texts travelled to cities such as Toledo in Spain, where they were translated again, this time into Latin. The numerals most of the world uses today originated in India, were developed by mathematicians writing in Arabic, and only later became common in Europe.",
-      "None of this means that individual brilliance is unimportant. Al-Khwarizmi and the scholars who followed him, such as Ibn al-Haytham, were extraordinary thinkers. Yet even they depended on those before them, and on the libraries, patrons and copyists who made earlier work available. A single idea may carry one person's name, but it rests on foundations laid by many hands.",
-      "There is a lesson here for us. Modern science is more international than ever: a discovery in one laboratory may be tested and refined in another within days. The House of Wisdom reminds us that this openness is not new. The most productive periods in the history of knowledge have often been those in which people were willing to learn from others, to question, and to build carefully on what they had inherited.",
-      "The genius in the bath makes a good story. The long conversation makes a truer one.",
+      "In the summer of 1858, London held its breath. For decades, the city's waste had poured straight into the River Thames, and a long heatwave turned the water into a stinking soup. Newspapers called it the Great Stink. Curtains soaked in chemicals were hung at the windows of the Houses of Parliament, but the smell still seeped through.",
+      "The crisis forced the government to act. The engineer Joseph Bazalgette designed a vast new network of sewers to carry waste away from the centre of the city and out towards the sea. It included more than a thousand miles of street sewers feeding into great brick tunnels, many of them built by hand. It was one of the greatest engineering achievements of its age, and much of it is still in use today.",
+      "Yet the river's troubles were far from over. As London kept growing, so did the waste. Factories along the banks released chemicals, and sewage works damaged during the Second World War were slow to be repaired. By the 1950s, the water in central London held so little oxygen that scientists from the Natural History Museum declared the tidal Thames biologically dead.",
+      "What happened next surprised almost everyone. New treatment works were built, factories were required to clean their waste, and laws were tightened. Slowly, oxygen returned to the water, and wildlife followed. Today, more than a hundred species of fish have been recorded in the tidal Thames, along with seals, porpoises and even seahorses.",
+      "The recovery is not complete. After heavy rain, the old Victorian sewers can still overflow into the river, carrying untreated sewage with them. A new “super sewer” has been built beneath the river to catch most of this overflow. Plastic waste and wet wipes remain a stubborn problem.",
+      "The story of the Thames offers a lesson that reaches far beyond one river. Damage that took a century to cause cannot be undone overnight, but nor is it necessarily permanent. When people understand a problem, are willing to pay for the solution and keep working at it for many years, even a river once declared dead can come back to life.",
     ].join("\n\n"),
     questions: [
-      { q: "What is the writer's main purpose in this text?", choices: ["to tell the life story of al-Khwarizmi", "to argue that knowledge usually grows through cooperation across cultures and centuries", "to explain how to translate Greek into Arabic", "to prove that individual geniuses never existed"], answer: 1, skill: "purpose", level: 9.0 },
-      { q: "According to the text, where does the word 'algorithm' come from?", choices: ["the title of al-Khwarizmi's book", "a Greek word for number", "a Latin version of al-Khwarizmi's name", "the name of a library in Toledo"], answer: 2, skill: "retrieval", level: 8.5 },
-      { q: "Why does the writer open with images of an apple, a bath and a cry of 'Eureka!'?", choices: ["to introduce a popular idea of discovery that the text will challenge", "to show that the writer prefers physics to mathematics", "to describe famous experiments from the House of Wisdom", "to make the reader laugh before a serious topic"], answer: 0, skill: "language", level: 9.5 },
-      { q: "'To render a Greek treatise on geometry into clear Arabic.' Here, 'render' means…", choices: ["to draw", "to translate", "to give back", "to make worse"], answer: 1, skill: "vocabulary", level: 9.5 },
-      { q: "Why does the writer say translation 'was never merely a matter of swapping one word for another'?", choices: ["Translators were paid by the word.", "Arabic has fewer words than Greek.", "Most translations at the time were inaccurate.", "Translators had to understand, and often improve, the ideas they translated."], answer: 3, skill: "inference", level: 10.0 },
-      { q: "What does the final sentence, 'The long conversation makes a truer one', suggest?", choices: ["Long stories are always more accurate than short ones.", "The idea of shared, gradual progress gives a more accurate picture of how science develops.", "Scientists should talk more in their laboratories.", "The story of the bath is completely invented."], answer: 1, skill: "inference", level: 10.8 },
+      { q: "What is the writer's main purpose?", choices: ["to explain how to build a sewer", "to tell how a polluted river recovered, and what we can learn from it", "to persuade readers to swim in the Thames", "to describe the life of Joseph Bazalgette"], answer: 1, skill: "purpose", level: 9.0 },
+      { q: "In the 1950s, what did scientists say about the tidal Thames?", choices: ["It was too cold for fish.", "It was the cleanest river in Europe.", "It was 'biologically dead'.", "It was full of seahorses."], answer: 2, skill: "retrieval", level: 8.5 },
+      { q: "'The smell still seeped through.' Here, 'seeped' means…", choices: ["flowed slowly through small gaps", "disappeared completely", "was blown away by the wind", "became much stronger"], answer: 0, skill: "vocabulary", level: 9.0 },
+      { q: "Why does the writer begin with the Great Stink of 1858?", choices: ["to show that London still smells today", "to explain how the curtains were made", "to prove that Victorian engineers were careless", "to open with a vivid moment that shows how bad the problem was"], answer: 3, skill: "language", level: 9.5 },
+      { q: "Why does the writer say the recovery 'is not complete'?", choices: ["The fish have left the river again.", "Sewers can still overflow after heavy rain, and plastic is still a problem.", "The new sewer was never finished.", "The seals are eating all the fish."], answer: 1, skill: "inference", level: 10.0 },
+      { q: "What does the final paragraph suggest?", choices: ["Rivers always recover without any help.", "The Thames is now completely clean.", "Long-term effort, and a willingness to pay, can repair serious damage.", "Pollution only matters in big cities."], answer: 2, skill: "inference", level: 10.8 },
     ],
   },
 ];
