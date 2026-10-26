@@ -66,6 +66,7 @@ on:
       - "next.config.ts"
       - "tsconfig.json"
       - ".github/workflows/deploy-site.yml"
+      - "deploy/preview-key.txt"
   workflow_dispatch:
   # sanity-content-published: fired by a Sanity webhook (see
   # scripts/setup-sanity-webhook.mjs) -- kept for the LMS's own
