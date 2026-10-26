@@ -6,7 +6,6 @@ import { ApplyForm } from "@/components/admissions/ApplyForm";
 import { AdmissionsStepsGrid } from "@/components/admissions/AdmissionsSteps";
 import { FALLBACK_ADMISSIONS_EMAIL, admissionsProcessSteps } from "@/components/admissions/applicationShared";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
-import { PRELAUNCH } from "@/lib/prelaunch";
 import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -38,7 +37,7 @@ export default async function ApplyPage() {
             Six steps from application to welcome, including a remote assessment and an interview with you and your child. The form below takes about ten minutes in three short steps, and you can apply for several children at once without repeating your own details.
           </p>
           <p className="mt-4 text-sm text-ink/70">
-            <Link href={PRELAUNCH ? "/" : "/admissions"} className="font-semibold text-gold-700 underline">{PRELAUNCH ? "Back to the homepage" : "Back to admissions"}</Link>
+            <Link href="/admissions" className="font-semibold text-gold-700 underline">Back to admissions</Link>
           </p>
         </Container>
       </section>

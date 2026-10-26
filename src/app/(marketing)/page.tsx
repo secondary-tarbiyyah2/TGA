@@ -12,8 +12,6 @@ import { admissionsProcessSteps } from "@/components/admissions/applicationShare
 import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
 import { PortalPreview } from "@/components/home/PortalPreview";
 import { RecipeValues } from "@/components/home/RecipeValues";
-import { PrelaunchHome } from "@/components/prelaunch/PrelaunchHome";
-import { PRELAUNCH } from "@/lib/prelaunch";
 
 export const metadata: Metadata = pageMetadata({
   title: "A specialist, quality education, rooted in faith",
@@ -40,7 +38,6 @@ const stages = [
 ];
 
 export default async function HomePage() {
-  if (PRELAUNCH) return <PrelaunchHome />;
   const [testimonials, faqs, settings, content] = await Promise.all([getTestimonials(), getFaqEntries(), getSiteSettings(), getHomepageContent()]);
   const pillars = content.pillars?.length ? content.pillars : defaultPillars;
   // The homepage summary uses the SAME steps as the Admissions page

@@ -12,8 +12,8 @@ const routes = [
   "legal/privacy", "legal/cookies", "legal/terms", "accessibility",
 ];
 
-// Pre-launch: only the pages that are open (src/lib/prelaunch.ts).
-const prelaunchRoutes = ["", "open-evening", "admissions/apply", "legal/privacy", "legal/cookies", "legal/terms"];
+// Pre-launch: only the public holding page and the legal pages (src/lib/prelaunch.ts).
+const prelaunchRoutes = ["", "legal/privacy", "legal/cookies", "legal/terms"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (PRELAUNCH) {

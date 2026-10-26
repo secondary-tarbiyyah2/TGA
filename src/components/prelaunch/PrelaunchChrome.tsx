@@ -5,31 +5,17 @@ import { getSiteSettings } from "@/lib/content";
 
 export function PrelaunchHeader() {
   return (
-    <>
-    <div role="note" className="bg-ink px-4 py-2.5 text-center text-sm font-medium text-cream">
-      <span className="mr-2 inline-block rounded-full bg-gold-500 px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-ink-900">Under development</span>
-      Our website is still being built. Register your interest and we will let you know when it opens.
-    </div>
     <header className="border-b border-gold-light/40 bg-cream">
       <div role="note" className="bg-ink px-4 py-2 text-center text-xs font-medium text-cream sm:text-sm">
-        Our website is under development. For now you can register your interest, apply and book an open evening.
-      </div>
-      <div role="note" className="bg-ink px-4 py-2 text-center text-sm text-cream">
-        <strong className="font-semibold text-gold-300">Our website is under development.</strong>{" "}
-        For now you can register your interest, apply online or book an open evening. The full site will open soon.
+        Our website is under development. For now, please register your interest and we will be in touch.
       </div>
       <Container className="flex h-[72px] items-center justify-between gap-4">
         <Link href="/" aria-label="Tarbiyyah Global Academy: home" className="flex shrink-0 items-center">
           <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={150} height={45} priority className="h-[44px] w-auto" />
         </Link>
-        <nav aria-label="Main" className="flex items-center gap-2 text-sm font-semibold sm:gap-4">
-          <Link href="/open-evening/" className="hidden rounded-full px-3 py-2 text-ink/80 hover:text-ink sm:inline-block">Open evenings</Link>
-          <Link href="/admissions/apply/" className="rounded-full px-3 py-2 text-ink/80 hover:text-ink">Apply</Link>
-          <Link href="/#register" className="rounded-full bg-gold-500 px-4 py-2 text-ink-900 hover:brightness-95">Register interest</Link>
-        </nav>
+        <a href="#register" className="rounded-full bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 hover:brightness-95">Register interest</a>
       </Container>
     </header>
-    </>
   );
 }
 

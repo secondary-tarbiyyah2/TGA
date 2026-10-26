@@ -37,23 +37,44 @@ RewriteOptions IgnoreInherit
 RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 
 # ── PRE-LAUNCH (October 2026) ────────────────────────────────────────────────
-# The website is under development. Until the full site opens, only the
-# holding homepage (register interest),
-# the online application form (and its payment page), the open evenings
-# booking page, booking management links from emails and the legal pages are
-# public. Every other page redirects to the homepage.
-# Assets, PHP form handlers, policy files, the prospectus, /learn, /staff and
-# /studio are untouched. 302 (temporary) so nothing is cached as permanent.
-# TO OPEN THE FULL SITE: delete this block and set PRELAUNCH = false in
+# The website is under development. The public sees only the holding page
+# (/coming-soon/, shown at "/") with the register-interest form, plus the
+# legal pages and booking-management links already emailed to families.
+# Every other page address redirects to "/".
+#
+# Staff preview, no login: opening https://globalacademy.tarbiyyah.co.uk/?preview=<key>
+# sets a 30-day cookie in that browser, and with it the full site works as
+# normal. "?preview=off" removes it. __PREVIEW_KEY__ is replaced at deploy time
+# (deploy-site.yml) with deploy/preview-key.txt or the PREVIEW_KEY secret;
+# change the key and redeploy to cut off old links.
+#
+# TO OPEN THE FULL SITE: delete this block, set PRELAUNCH = false in
 # src/lib/prelaunch.ts, then redeploy.
+RewriteCond %{QUERY_STRING} (^|&)preview=__PREVIEW_KEY__(&|$)
+RewriteRule ^(.*)$ /$1? [CO=tga_preview:__PREVIEW_KEY__:globalacademy.tarbiyyah.co.uk:43200:/:1:1,R=302,L]
+RewriteCond %{QUERY_STRING} (^|&)preview=off(&|$)
+RewriteRule ^(.*)$ /$1? [CO=tga_preview:off:globalacademy.tarbiyyah.co.uk:-1:/:1:1,R=302,L]
+
+# Without the preview cookie: any page address other than the open ones goes to "/".
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_preview=__PREVIEW_KEY__(;|$)
 RewriteCond %{REQUEST_URI} !^/$
-RewriteCond %{REQUEST_URI} !^/index\.(html|txt)$
-RewriteCond %{REQUEST_URI} !^/(open-evening|manage-booking|legal|admissions/apply|admissions/payment)(/|$)
+RewriteCond %{REQUEST_URI} !^/(coming-soon|legal|manage-booking)(/|$)
 RewriteCond %{REQUEST_URI} !^/(_next|brand|learn|studio|staff|policies|prospectus)/
 RewriteCond %{REQUEST_URI} !\.(php|png|jpe?g|webp|gif|svg|ico|webmanifest|xml|ics|js|css|woff2?|json|pdf|docx|map)$
 RewriteCond %{REQUEST_URI} !^/robots\.txt$
 RewriteRule ^ / [R=302,L]
-# ── end PRE-LAUNCH ───────────────────────────────────────────────────────────
+# ...and "/" itself shows the holding page.
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_preview=__PREVIEW_KEY__(;|$)
+RewriteRule ^(index\.html)?$ /coming-soon/index.html [L]
+
+# The same address now serves different pages with and without the cookie,
+# so HTML must never be reused from a browser cache.
+<IfModule mod_headers.c>
+  <If "%{REQUEST_URI} =~ m#(/|\.html|\.txt)$#">
+    Header always set Cache-Control "no-store"
+    Header always set Vary "Cookie"
+  </If>
+</IfModule>
 
 # Policy documents (/policies/<slug>.pdf or .docx) are served live by
 # policy.php, which streams whatever is currently uploaded in the admin

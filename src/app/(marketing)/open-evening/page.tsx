@@ -5,7 +5,6 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { OpenEveningLive } from "@/components/OpenEveningLive";
 import { getSiteSettings } from "@/lib/content";
-import { PRELAUNCH } from "@/lib/prelaunch";
 
 export const metadata: Metadata = pageMetadata({
   title: "Open Evenings & Taster Morning",
@@ -27,19 +26,11 @@ export default async function OpenEveningPage() {
           at 10:00 and Years 7–11 at 11:15 UK time. Every session is online; register below and the joining link is emailed
           to you.
         </p>
-        {PRELAUNCH ? (
-          <p className="mt-4 text-sm text-ink/70">
-            The Academy opens in January 2027.{" "}
-            <Link href="/#register" className="font-semibold text-gold-700 underline">Register your interest</Link>{" "}
-            and we will keep you updated as applications open.
-          </p>
-        ) : (
         <p className="mt-4 text-sm text-ink/70">
           Live lessons begin on Monday 11 January 2027. Read the{" "}
           <a href="/prospectus/TGA-Prospectus-2026-27.pdf" className="font-semibold text-gold-700 underline" target="_blank" rel="noopener noreferrer">prospectus (PDF)<span className="sr-only">, opens in a new tab</span></a>{" "}
           before you come, or <Link href="/book-a-call" className="font-semibold text-gold-700 underline">book a call</Link> with the admissions team at any time.
         </p>
-        )}
 
         {/* Dates, places left and the booking form load in the browser, so a new
             evening added in the admin portal appears without a site rebuild. */}
