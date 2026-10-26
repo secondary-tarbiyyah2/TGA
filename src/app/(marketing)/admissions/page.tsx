@@ -33,7 +33,7 @@ export default async function AdmissionsPage() {
             </a>
           </div>
           <p className="mt-4 max-w-2xl text-sm text-ink/70">
-            Apply by Friday 11 December 2026 for the founding cohort; later applications are considered while places remain. Come to an{" "}
+            Apply by Friday 18 December 2026 for the founding cohort; later applications are considered while places remain. Come to an{" "}
             <Link href="/open-evening" className="font-semibold text-gold-700 underline">open evening or taster morning</Link> first if you would like to.
           </p>
           <p className="mt-2 max-w-2xl text-sm text-ink/70">
@@ -70,7 +70,7 @@ export default async function AdmissionsPage() {
             </div>
           )}
           <p className="text-sm text-ink/70 sm:col-span-2">
-            Tuition is then paid on the dates in our Fees Policy: the whole year (with {settings.annualDiscountPercent ? `${settings.annualDiscountPercent}% off` : "a discount"}), the first of two payments or the first monthly payment is due with the registration fee by Friday 18 December 2026; the second payment is due on 28 March 2027, and monthly payments on the 28th of each month from 28 January to 28 June 2027. See the{" "}
+            Tuition is then paid on the dates in our Fees Policy: the whole year (with {settings.annualDiscountPercent ? `${settings.annualDiscountPercent}% off` : "a discount"}), the first of two payments or the first monthly payment is due with the registration fee by Friday 8 January 2027; the second payment is due on 28 March 2027, and monthly payments on the 28th of each month from 28 January to 28 June 2027. See the{" "}
             <Link href="/fees#estimator" className="font-semibold text-gold-700 underline">fee estimator</Link> for your family&apos;s figures.
           </p>
         </Container>
@@ -87,7 +87,7 @@ export default async function AdmissionsPage() {
             <Button href="/admissions/apply">Apply now</Button>
           </div>
           <p className="mt-4 text-xs text-ink/70">
-            Key admissions dates for the January 2027 launch, including the 11 December application deadline and the 14 to 18 December induction week, are on our{" "}
+            Key admissions dates for the January 2027 launch, including the 18 December application deadline and the 4 to 8 January induction week, are on our{" "}
             <a href="/term-dates" className="underline">Term Dates</a> page.
           </p>
         </Container>

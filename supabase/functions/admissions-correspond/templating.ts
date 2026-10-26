@@ -639,7 +639,7 @@ export const SAMPLE_STAGE: StageInput = {
   assessment_duration_text: null,
   interview_interviewer: "Mrs Aisha Khan",
   interview_link: "https://teams.microsoft.com/l/meetup-join/sample-interview",
-  offer_start_date: "2027-01-04",
+  offer_start_date: "2027-01-11",
 };
 
 export const SAMPLE_FEES: FeesInput = {
@@ -650,7 +650,7 @@ export const SAMPLE_FEES: FeesInput = {
   plans: [
     { id: "monthly", label: "Monthly (7 instalments)", firstPayment: 304.29, detail: "first instalment £304.29 of 7, £2,130 in total" },
     { id: "termly", label: "2 payments", firstPayment: 1065, detail: "first payment £1,065 of 2, £2,130 in total" },
-    { id: "annual", label: "Annual, paid in full", firstPayment: 2087.4, detail: "£2,087.40 after the £42.60 discount if paid in full by 18 December 2026" },
+    { id: "annual", label: "Annual, paid in full", firstPayment: 2087.4, detail: "£2,087.40 after the £42.60 discount if paid in full by 8 January 2027" },
   ],
 };
 

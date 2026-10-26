@@ -36,6 +36,25 @@ RewriteOptions IgnoreInherit
 # confirmed working for a real staff member — see SETUP.md.
 RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 
+# ── PRE-LAUNCH (October 2026) ────────────────────────────────────────────────
+# The website is under development. Until the full site opens, only the
+# holding homepage (register interest),
+# the online application form (and its payment page), the open evenings
+# booking page, booking management links from emails and the legal pages are
+# public. Every other page redirects to the homepage.
+# Assets, PHP form handlers, policy files, the prospectus, /learn, /staff and
+# /studio are untouched. 302 (temporary) so nothing is cached as permanent.
+# TO OPEN THE FULL SITE: delete this block and set PRELAUNCH = false in
+# src/lib/prelaunch.ts, then redeploy.
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/index\.(html|txt)$
+RewriteCond %{REQUEST_URI} !^/(open-evening|manage-booking|legal|admissions/apply|admissions/payment)(/|$)
+RewriteCond %{REQUEST_URI} !^/(_next|brand|learn|studio|staff|policies|prospectus)/
+RewriteCond %{REQUEST_URI} !\.(php|png|jpe?g|webp|gif|svg|ico|webmanifest|xml|ics|js|css|woff2?|json|pdf|docx|map)$
+RewriteCond %{REQUEST_URI} !^/robots\.txt$
+RewriteRule ^ / [R=302,L]
+# ── end PRE-LAUNCH ───────────────────────────────────────────────────────────
+
 # Policy documents (/policies/<slug>.pdf or .docx) are served live by
 # policy.php, which streams whatever is currently uploaded in the admin
 # portal and falls back to the PDF bundled in /policies/ — so a policy edit

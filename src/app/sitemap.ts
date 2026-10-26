@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getKeyStages } from "@/lib/content";
+import { PRELAUNCH } from "@/lib/prelaunch";
 
 export const dynamic = "force-static";
 
@@ -11,7 +12,13 @@ const routes = [
   "legal/privacy", "legal/cookies", "legal/terms", "accessibility",
 ];
 
+// Pre-launch: only the pages that are open (src/lib/prelaunch.ts).
+const prelaunchRoutes = ["", "open-evening", "admissions/apply", "legal/privacy", "legal/cookies", "legal/terms"];
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  if (PRELAUNCH) {
+    return prelaunchRoutes.map((route) => ({ url: route ? `${siteUrl}/${route}/` : `${siteUrl}/`, lastModified: new Date() }));
+  }
   const keyStages = await getKeyStages();
   const staticRoutes = routes.map((route) => ({
     // Trailing slash matches the exported URLs (trailingSlash: true) and each page's canonical.

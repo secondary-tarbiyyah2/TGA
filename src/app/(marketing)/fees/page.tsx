@@ -59,7 +59,7 @@ export default async function FeesPage() {
               <thead className="bg-cream text-ink/70">
                 <tr>
                   <th scope="col" className="px-4 py-3 font-semibold">Year group</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Annual (Dec 2026–Jul 2027)</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Annual (Jan–Jul 2027)</th>
                   <th scope="col" className="px-4 py-3 font-semibold">{terms} payments</th>
                   <th scope="col" className="px-4 py-3 font-semibold">Monthly ({instalments} payments)</th>
                 </tr>
@@ -92,7 +92,7 @@ export default async function FeesPage() {
             Every payment plan adds up to exactly the annual total: each instalment is the annual fee divided by{" "}
             {terms} payments or {instalments} monthly payments, and if the division leaves a few pence over they are
             added to the final instalment. A {discountPercent}% discount applies when the annual option is chosen and
-            paid in full by 18 December 2026.
+            paid in full by 8 January 2027.
           </p>
           {rows.some((r) => roundingNote(r.sched.monthly)) && (
             <p className="mt-1 text-xs text-ink/70">
@@ -109,7 +109,7 @@ export default async function FeesPage() {
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
-              <p className="mt-1 text-sm text-ink/70">One-off, due on acceptance of a place and no later than 18 December 2026. £125 for each additional sibling. Refundable only within the 14-day cancellation period.</p>
+              <p className="mt-1 text-sm text-ink/70">One-off, due on acceptance of a place and no later than 8 January 2027. £125 for each additional sibling. Refundable only within the 14-day cancellation period.</p>
             </div>
             {settings.siblingDiscountPercent != null && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">

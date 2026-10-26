@@ -12,6 +12,8 @@ import { admissionsProcessSteps } from "@/components/admissions/applicationShare
 import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
 import { PortalPreview } from "@/components/home/PortalPreview";
 import { RecipeValues } from "@/components/home/RecipeValues";
+import { PrelaunchHome } from "@/components/prelaunch/PrelaunchHome";
+import { PRELAUNCH } from "@/lib/prelaunch";
 
 export const metadata: Metadata = pageMetadata({
   title: "A specialist, quality education, rooted in faith",
@@ -38,6 +40,7 @@ const stages = [
 ];
 
 export default async function HomePage() {
+  if (PRELAUNCH) return <PrelaunchHome />;
   const [testimonials, faqs, settings, content] = await Promise.all([getTestimonials(), getFaqEntries(), getSiteSettings(), getHomepageContent()]);
   const pillars = content.pillars?.length ? content.pillars : defaultPillars;
   // The homepage summary uses the SAME steps as the Admissions page
@@ -95,7 +98,7 @@ export default async function HomePage() {
               <Image src="/hero.webp" alt="An open notebook and pen on a warm wooden desk — calm, focused learning" fill className="object-cover" priority sizes="(min-width: 1024px) 24rem, 80vw" />
             </div>
             <div className="shadow-warm absolute -bottom-4 -left-4 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-gold-700">
-              Live lessons from Dec 2026
+              Live lessons from Jan 2027
             </div>
           </div>
         </Container>
