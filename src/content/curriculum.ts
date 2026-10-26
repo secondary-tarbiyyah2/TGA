@@ -10,8 +10,7 @@
 // are taught from Year 7, to boys and girls separately.
 // Lessons a week must fit the school day: lessons 1-3 run Monday to Friday
 // and lessons 4-5 Monday to Thursday, so a full live week has 23 slots
-// (migration 0150). PE is a home-based activity programme, not full PE: one
-// shared live lesson a week with art, camera optional, plus set activities.
+// (migration 0150). PE is not offered (owner decision, 26 October 2026).
 
 export type KeyStage = {
   slug: string;
@@ -43,14 +42,13 @@ export const keyStages: KeyStage[] = [
       "Geography",
       "Computing",
       "Art and design",
-      "PE at home",
       "PSHE",
       "Qur'an and Tajweed",
       "Arabic",
       "Islamic Studies, including du'a and Islamic manners",
     ],
     liveSplit:
-      "Short, engaging 30-minute live lessons across the full curriculum, with a strong focus on phonics, early reading and number, alongside Qur'an, du'a and Islamic manners. Much of the learning is practical and done away from the screen with a parent, following guidance sent home each week, including art and PE at home.",
+      "Short, engaging 30-minute live lessons across the full curriculum, with a strong focus on phonics, early reading and number, alongside Qur'an, du'a and Islamic manners. Much of the learning is practical and done away from the screen with a parent, following guidance sent home each week, including art.",
     weekly: [
       { subject: "English and phonics", lessons: 5 },
       { subject: "Mathematics", lessons: 4 },
@@ -67,7 +65,7 @@ export const keyStages: KeyStage[] = [
     slug: "year-3-6",
     range: "Year 3 – Year 6",
     title: "Key Stage 2",
-    subjects: ["English", "Mathematics", "Science", "History", "Geography", "Computing", "Art and design", "PE at home", "PSHE", "Qur'an and Tajweed", "Arabic", "Islamic Studies"],
+    subjects: ["English", "Mathematics", "Science", "History", "Geography", "Computing", "Art and design", "PSHE", "Qur'an and Tajweed", "Arabic", "Islamic Studies"],
     liveSplit: "A full live timetable taught by qualified teachers, with homework and independent tasks set and marked between lessons.",
     weekly: [
       { subject: "English", lessons: 5 },
@@ -77,7 +75,7 @@ export const keyStages: KeyStage[] = [
       { subject: "Qur'an and Tajweed", lessons: 2 },
       { subject: "Arabic and Islamic Studies", lessons: 2 },
       { subject: "PSHE", lessons: 1 },
-      { subject: "Art and design, PE at home", lessons: 1 },
+      { subject: "Art and design", lessons: 1 },
     ],
     lessonLength: "45 minutes",
     totalLessons: "20 live lessons a week",
@@ -96,7 +94,6 @@ export const keyStages: KeyStage[] = [
       "Computing",
       "Arabic",
       "Art and design",
-      "PE at home",
       "PSHE",
       "Qur'an and Tajweed",
       "Islamic Studies",
@@ -110,7 +107,7 @@ export const keyStages: KeyStage[] = [
       { subject: "Qur'an and Tajweed", lessons: 3 },
       { subject: "Arabic and Islamic Studies", lessons: 4 },
       { subject: "PSHE", lessons: 1 },
-      { subject: "Art and design, PE at home", lessons: 1 },
+      { subject: "Art and design", lessons: 1 },
     ],
     lessonLength: "50 minutes",
     totalLessons: "23 live lessons a week",
