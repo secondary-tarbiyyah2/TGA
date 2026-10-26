@@ -11,7 +11,7 @@ export function PrelaunchHome() {
   return (
     <section className="geo-texture bg-cream pb-20">
       {/* Mobile order: intro, form, then the three points; desktop puts the form beside both. */}
-      <Container className="grid gap-10 pt-6 lg:grid-cols-[1.05fr_1fr] lg:gap-x-16 lg:gap-y-10 lg:pt-12">
+      <Container className="grid gap-10 pt-12 lg:grid-cols-[1.05fr_1fr] lg:gap-x-16 lg:gap-y-10 lg:pt-16">
         <div className="text-center lg:col-start-1 lg:row-start-1 lg:self-end lg:text-left">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-700">Opening January 2027</p>
           <h1 className="mt-4 text-display font-serif font-semibold text-ink">

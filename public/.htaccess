@@ -37,9 +37,9 @@ RewriteOptions IgnoreInherit
 RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 
 # ── PRE-LAUNCH (October 2026) ────────────────────────────────────────────────
-# The website is under development. The public sees only the holding page
-# (/coming-soon/, shown at "/") with the register-interest form, plus the
-# legal pages and booking-management links already emailed to families.
+# The website is under development. The public sees only the holding pages
+# (/coming-soon/..., shown at "/", /term-dates/, /fees/ and /curriculum/), plus
+# the legal pages and booking-management links already emailed to families.
 # Every other page address redirects to "/".
 #
 # Staff preview, no login: opening https://globalacademy.tarbiyyah.co.uk/?preview=<key>
@@ -59,13 +59,21 @@ RewriteRule ^(.*)$ /$1? [CO=tga_preview:off:globalacademy.tarbiyyah.co.uk:-1:/:1
 RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_preview=__PREVIEW_KEY__(;|$)
 RewriteCond %{REQUEST_URI} !^/$
 RewriteCond %{REQUEST_URI} !^/(coming-soon|legal|manage-booking)(/|$)
+RewriteCond %{REQUEST_URI} !^/(term-dates|fees|curriculum)/?$
 RewriteCond %{REQUEST_URI} !^/(_next|brand|learn|studio|staff|policies|prospectus)/
 RewriteCond %{REQUEST_URI} !\.(php|png|jpe?g|webp|gif|svg|ico|webmanifest|xml|ics|js|css|woff2?|json|pdf|docx|map)$
 RewriteCond %{REQUEST_URI} !^/robots\.txt$
 RewriteRule ^ / [R=302,L]
-# ...and "/" itself shows the holding page.
+# The public holding pages, at their normal addresses: "/" (register
+# interest), /term-dates/, /fees/ and /curriculum/ (subjects).
 RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_preview=__PREVIEW_KEY__(;|$)
 RewriteRule ^(index\.html)?$ /coming-soon/index.html [L]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_preview=__PREVIEW_KEY__(;|$)
+RewriteRule ^term-dates/?$ /coming-soon/term-dates/index.html [L]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_preview=__PREVIEW_KEY__(;|$)
+RewriteRule ^fees/?$ /coming-soon/fees/index.html [L]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_preview=__PREVIEW_KEY__(;|$)
+RewriteRule ^curriculum/?$ /coming-soon/subjects/index.html [L]
 
 # The same address now serves different pages with and without the cookie,
 # so HTML must never be reused from a browser cache.

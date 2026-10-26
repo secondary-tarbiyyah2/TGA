@@ -2,14 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { getSiteSettings } from "@/lib/content";
+import { PrelaunchNav } from "./PrelaunchNav";
 
 export function PrelaunchHeader() {
   return (
-    <header className="bg-cream">
-      <Container className="flex h-24 items-center justify-center">
-        <Link href="/" aria-label="Tarbiyyah Global Academy: home" className="flex items-center">
-          <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={190} height={57} priority className="h-[56px] w-auto" />
-        </Link>
+    <header className="sticky top-0 z-40 border-b border-gold-light/40 bg-cream">
+      <Container className="flex h-20 items-center justify-between gap-4">
+        <a href="/" aria-label="Tarbiyyah Global Academy: home" className="flex shrink-0 items-center">
+          <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={170} height={51} priority className="h-[48px] w-auto" />
+        </a>
+        <PrelaunchNav />
       </Container>
     </header>
   );
