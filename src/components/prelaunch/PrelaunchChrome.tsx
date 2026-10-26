@@ -12,6 +12,9 @@ export function PrelaunchHeader() {
         <a href="/" aria-label="Tarbiyyah Global Academy: home" className="flex shrink-0 items-center">
           <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={170} height={51} priority className="h-[48px] w-auto" />
         </a>
+        <span className="mr-auto hidden rounded-full border border-gold-300 bg-gold-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-gold-700 lg:inline-block">
+          Full website coming soon
+        </span>
         <PrelaunchNav />
       </Container>
     </header>

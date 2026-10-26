@@ -92,6 +92,7 @@ export function PrelaunchNav() {
               ))}
             </ul>
             <div className="p-6">
+              <p className="mb-3 text-center text-xs text-ink/55">Full website coming soon</p>
               <a href="/#register" onClick={() => setOpen(false)} className="block rounded-full bg-gold-500 px-5 py-3 text-center font-semibold text-ink-900">
                 Register interest
               </a>

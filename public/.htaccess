@@ -44,16 +44,16 @@ RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 #
 # Staff preview, no login: opening https://globalacademy.tarbiyyah.co.uk/?preview=<key>
 # sets a 30-day cookie in that browser, and with it the full site works as
-# normal. "?preview=off" removes it. __PREVIEW_KEY__ is replaced at deploy time
+# normal (tga_preview_ui is a readable twin that shows a "Staff preview" label). "?preview=off" removes it. __PREVIEW_KEY__ is replaced at deploy time
 # (deploy-site.yml) with deploy/preview-key.txt or the PREVIEW_KEY secret;
 # change the key and redeploy to cut off old links.
 #
 # TO OPEN THE FULL SITE: delete this block, set PRELAUNCH = false in
 # src/lib/prelaunch.ts, then redeploy.
 RewriteCond %{QUERY_STRING} (^|&)preview=__PREVIEW_KEY__(&|$)
-RewriteRule ^(.*)$ /$1? [CO=tga_preview:__PREVIEW_KEY__:globalacademy.tarbiyyah.co.uk:43200:/:1:1,R=302,L]
+RewriteRule ^(.*)$ /$1? [CO=tga_preview:__PREVIEW_KEY__:globalacademy.tarbiyyah.co.uk:43200:/:1:1,CO=tga_preview_ui:1:globalacademy.tarbiyyah.co.uk:43200:/:1:0,R=302,L]
 RewriteCond %{QUERY_STRING} (^|&)preview=off(&|$)
-RewriteRule ^(.*)$ /$1? [CO=tga_preview:off:globalacademy.tarbiyyah.co.uk:-1:/:1:1,R=302,L]
+RewriteRule ^(.*)$ /$1? [CO=tga_preview:off:globalacademy.tarbiyyah.co.uk:-1:/:1:1,CO=tga_preview_ui:0:globalacademy.tarbiyyah.co.uk:-1:/:1:0,R=302,L]
 
 # Without the preview cookie: any page address other than the open ones goes to "/".
 RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_preview=__PREVIEW_KEY__(;|$)

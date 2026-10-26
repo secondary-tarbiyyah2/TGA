@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { StaffPreviewBadge } from "@/components/prelaunch/StaffPreviewBadge";
 
 // The public marketing site's chrome — every route in this `(marketing)`
 // group (the homepage plus About/Admissions/Fees/etc.) gets this Header and
@@ -20,6 +21,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
       <Footer />
       <MobileCtaBar />
       <BreadcrumbSchema />
+      <StaffPreviewBadge />
     </>
   );
 }
