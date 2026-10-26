@@ -49,12 +49,12 @@ const { error: settingsErr } = await supabase.from("site_settings").update({
   cta_primary_label: "Apply Now",
   cta_primary_href: "/admissions",
   // Prospectus 2026-27 (v5) / Fees Policy: £50 application, £250 registration,
-  // 2 termly or 8 monthly payments (4 Dec 2026, then 28 Dec 2026 to 28 Jun 2027).
+  // 2 termly or 7 monthly payments (4 Dec 2026, then 28 Dec 2026 to 28 Jun 2027).
   application_fee: 50,
   registration_fee: 250,
   // Termly/monthly fees are derived from annual_fee in the app (src/lib/fees.ts).
   fee_terms: 2,
-  fee_instalments: 8,
+  fee_instalments: 7,
   annual_discount_percent: 2,
   admissions_email: "globalacademy@tarbiyyah.co.uk",
   complaints_last_year: 0,
@@ -70,11 +70,11 @@ console.log("Updated site_settings.");
 
 // ── fee_bands ────────────────────────────────────────────────────────────
 await upsertAll("fee_bands", [
-  // Founding-cohort tuition, December 2026 to July 2027 (Prospectus v5 p.18).
-  { id: deterministicId("fb1"), year_group_range: "Year 1 – Year 2", order_index: 1, annual_fee: 1710 },
-  { id: deterministicId("fb2"), year_group_range: "Year 3 – Year 6", order_index: 2, annual_fee: 2282 },
-  { id: deterministicId("fb3"), year_group_range: "Year 7 – Year 9", order_index: 3, annual_fee: 2996 },
-  { id: deterministicId("fb4"), year_group_range: "Year 10 – Year 11", order_index: 4, annual_fee: 3214, notes: "Exam entry fees are not included: families pay the exam centre directly." },
+  // Founding-cohort tuition, January to July 2027 (Prospectus v5 p.18).
+  { id: deterministicId("fb1"), year_group_range: "Year 1 – Year 2", order_index: 1, annual_fee: 1596 },
+  { id: deterministicId("fb2"), year_group_range: "Year 3 – Year 6", order_index: 2, annual_fee: 2130 },
+  { id: deterministicId("fb3"), year_group_range: "Year 7 – Year 9", order_index: 3, annual_fee: 2796 },
+  { id: deterministicId("fb4"), year_group_range: "Year 10 – Year 11", order_index: 4, annual_fee: 3000, notes: "Exam entry fees are not included: families pay the exam centre directly." },
 ]);
 
 // ── faq_entries ──────────────────────────────────────────────────────────

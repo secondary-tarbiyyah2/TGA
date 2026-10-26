@@ -28,7 +28,7 @@ export default async function TeamPage() {
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             {staff.length > 0
               ? "Every teacher is introduced here, with their qualifications and a short video."
-              : "Each teacher will be introduced here, with their qualifications and a short video, ahead of live lessons in December 2026."}
+              : "Each teacher will be introduced here, with their qualifications and a short video, ahead of live lessons in January 2027."}
           </p>
         </Container>
       </section>

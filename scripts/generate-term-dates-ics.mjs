@@ -26,12 +26,10 @@ const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2025-01-01";
 // convention already used by scripts/seed-sanity.mjs).
 // Prospectus 2026-27 p.19 (same rows as migration 0106 / site_term_dates).
 const seedTermDates = [
-  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000001", label: "Application deadline for the founding cohort", kind: "Admissions deadline", date: "2026-11-27", notes: "Applications received after 27 November are welcome and are considered while places remain.", confirmed: true },
-  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000003", label: "Induction week", kind: "Event", date: "2026-11-30", endDate: "2026-12-04", notes: "Set up accounts, test devices and meet teachers.", confirmed: true },
-  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000002", label: "Registration fee and first fee payment due", kind: "Admissions deadline", date: "2026-12-04", confirmed: true },
-  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000004", label: "Founding term (first live lessons Monday 7 December)", kind: "Term date", date: "2026-12-07", endDate: "2026-12-18", confirmed: true },
-  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000005", label: "Winter break", kind: "Holiday", date: "2026-12-19", endDate: "2027-01-04", confirmed: true },
-  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000006", label: "Spring term A", kind: "Term date", date: "2027-01-05", endDate: "2027-02-12", confirmed: true },
+  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000001", label: "Application deadline for the founding cohort", kind: "Admissions deadline", date: "2026-12-11", notes: "Applications received after 11 December are welcome and are considered while places remain.", confirmed: true },
+  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000003", label: "Induction week", kind: "Event", date: "2026-12-14", endDate: "2026-12-18", notes: "Set up accounts, test devices and meet teachers.", confirmed: true },
+  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000002", label: "Registration fee and first fee payment due", kind: "Admissions deadline", date: "2026-12-18", confirmed: true },
+  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000006", label: "Spring term A (first live lessons Monday 4 January)", kind: "Term date", date: "2027-01-04", endDate: "2027-02-12", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000007", label: "Ramadan and Eid break", kind: "Holiday", date: "2027-02-15", endDate: "2027-03-12", notes: "Islamic dates depend on the moon sighting and may move by a day or two.", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000008", label: "Spring term B", kind: "Term date", date: "2027-03-15", endDate: "2027-03-25", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000009", label: "Easter break", kind: "Holiday", date: "2027-03-26", endDate: "2027-03-30", confirmed: true },

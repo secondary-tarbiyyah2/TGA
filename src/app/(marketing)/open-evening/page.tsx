@@ -8,7 +8,7 @@ import { getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Open Evenings & Taster Morning",
-  description: "Register for a virtual open evening (12 and 22 November) or a taster morning (14 or 28 November) ahead of our December 2026 launch.",
+  description: "Register for a virtual open evening (26 November and 6 December) or a taster morning (28 November or 12 December) ahead of our January 2027 launch.",
   path: "/open-evening",
 });
 
@@ -22,12 +22,12 @@ export default async function OpenEveningPage() {
         <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Meet us online: open evenings and taster mornings.</h1>
         <p className="mt-6 text-lg text-ink/75">
           Meet the Headteacher, see a sample live lesson and the Parent and Student Portals, and ask anything you like.
-          At a taster morning (Saturday 14 or 28 November) your child joins real lessons, in two age bands so every lesson is pitched right: Years 1–6
+          At a taster morning (Saturday 28 November or 12 December) your child joins real lessons, in two age bands so every lesson is pitched right: Years 1–6
           at 10:00 and Years 7–11 at 11:15 UK time. Every session is online; register below and the joining link is emailed
           to you.
         </p>
         <p className="mt-4 text-sm text-ink/70">
-          Live lessons begin on Monday 7 December 2026. Read the{" "}
+          Live lessons begin on Monday 4 January 2027. Read the{" "}
           <a href="/prospectus/TGA-Prospectus-2026-27.pdf" className="font-semibold text-gold-700 underline" target="_blank" rel="noopener noreferrer">prospectus (PDF)<span className="sr-only">, opens in a new tab</span></a>{" "}
           before you come, or <Link href="/book-a-call" className="font-semibold text-gold-700 underline">book a call</Link> with the admissions team at any time.
         </p>

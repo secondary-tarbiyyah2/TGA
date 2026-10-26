@@ -102,7 +102,7 @@ export default async function SampleLessonPage() {
 
           <p className="mt-10 text-ink/75">
             Questions after watching? <Link href="/book-a-call" className="font-semibold text-gold-700 underline">Book a call</Link> with the admissions team, or{" "}
-            <Link href="/admissions/apply" className="font-semibold text-gold-700 underline">start an application</Link> for the December 2026 founding cohort.
+            <Link href="/admissions/apply" className="font-semibold text-gold-700 underline">start an application</Link> for the January 2027 founding cohort.
           </p>
         </Container>
       </section>

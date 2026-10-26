@@ -229,13 +229,13 @@ export function admissionsProcessSteps(fees: { applicationFee?: number; registra
       title: "Offer and securing your place",
       owner: "you",
       short: `We email the offer. Accept within five working days and pay the ${reg} registration fee and first fee payment to secure your place.`,
-      body: `We email you a conditional offer with the terms and conditions. To accept, reply within five working days and pay the ${reg} registration fee (£125 for each additional sibling) and the ${app} application fee, if not already paid, sending proof of payment. The first tuition payment (the whole year, the first of two payments, or the first monthly payment) is due by Friday 4 December 2026; the rest follow the Fees Policy (28 March 2027 for the second of two payments; the 28th of each month from 28 December 2026 to 28 June 2027 for monthly). You can cancel within 14 days of accepting, as the Fees Policy explains.`,
+      body: `We email you a conditional offer with the terms and conditions. To accept, reply within five working days and pay the ${reg} registration fee (£125 for each additional sibling) and the ${app} application fee, if not already paid, sending proof of payment. The first tuition payment (the whole year, the first of two payments, or the first monthly payment) is due by Friday 18 December 2026; the rest follow the Fees Policy (28 March 2027 for the second of two payments; the 28th of each month from 28 January to 28 June 2027 for monthly). You can cancel within 14 days of accepting, as the Fees Policy explains.`,
     },
     {
       title: "Welcome",
       owner: "us",
-      short: "We create your accounts; induction week runs 30 November to 4 December.",
-      body: "We create your parent and pupil accounts, email you the sign-in details, and welcome your child to induction week (30 November to 4 December 2026) to set up accounts, test devices and meet teachers, ahead of the first live lessons on Monday 7 December 2026.",
+      short: "We create your accounts; induction week runs 14 to 18 December.",
+      body: "We create your parent and pupil accounts, email you the sign-in details, and welcome your child to induction week (14 to 18 December 2026) to set up accounts, test devices and meet teachers, ahead of the first live lessons on Monday 4 January 2027.",
     },
   ];
 }

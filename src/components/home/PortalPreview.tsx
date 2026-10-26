@@ -57,7 +57,7 @@ export function PortalPreview() {
         <figure className="mx-auto w-full max-w-md">
           <div className="rounded-3xl bg-cream p-3 text-ink shadow-2xl ring-1 ring-white/10 sm:p-4">
             <div className="rounded-2xl bg-ink-900 px-5 py-4 text-white">
-              <p className="text-xs font-medium tracking-wide text-gold-300">Tuesday 8 December</p>
+              <p className="text-xs font-medium tracking-wide text-gold-300">Tuesday 5 January</p>
               <p className="mt-0.5 text-lg font-semibold tracking-tight">Good morning, Umm Yusuf</p>
               <p className="text-xs text-white/80">Your children&apos;s school life in one place</p>
               <div className="mt-3 inline-flex min-w-[8rem] flex-col-reverse rounded-xl bg-white/10 px-3 py-2 ring-1 ring-inset ring-gold-500/40">

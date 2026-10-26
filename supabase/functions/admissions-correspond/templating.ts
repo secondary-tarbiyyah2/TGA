@@ -625,9 +625,9 @@ export const SAMPLE_APP: AppInput = {
   child_first_name: "Yusuf",
   child_last_name: "Rahman",
   year_group_applying: "Year 4",
-  preferred_start: "December 2026",
-  assessment_at: "2026-11-09T10:00:00.000Z",
-  interview_at: "2026-11-16T16:30:00.000Z",
+  preferred_start: "January 2027",
+  assessment_at: "2026-11-30T10:00:00.000Z",
+  interview_at: "2026-12-03T16:30:00.000Z",
   offer_deadline: null,
   report_received: true,
   id_documents_received: false,
@@ -639,18 +639,18 @@ export const SAMPLE_STAGE: StageInput = {
   assessment_duration_text: null,
   interview_interviewer: "Mrs Aisha Khan",
   interview_link: "https://teams.microsoft.com/l/meetup-join/sample-interview",
-  offer_start_date: "2026-12-07",
+  offer_start_date: "2027-01-04",
 };
 
 export const SAMPLE_FEES: FeesInput = {
   applicationFee: 50,
   applicationFeeReceived: false,
   registrationFee: 250,
-  annualFee: 2282,
+  annualFee: 2130,
   plans: [
-    { id: "monthly", label: "Monthly (8 instalments)", firstPayment: 285.25, detail: "first instalment £285.25 of 8, £2,282 in total" },
-    { id: "termly", label: "2 payments", firstPayment: 1141, detail: "first payment £1,141 of 2, £2,282 in total" },
-    { id: "annual", label: "Annual, paid in full", firstPayment: 2236.36, detail: "£2,236.36 after the £45.64 discount if paid in full by 4 December 2026" },
+    { id: "monthly", label: "Monthly (7 instalments)", firstPayment: 304.29, detail: "first instalment £304.29 of 7, £2,130 in total" },
+    { id: "termly", label: "2 payments", firstPayment: 1065, detail: "first payment £1,065 of 2, £2,130 in total" },
+    { id: "annual", label: "Annual, paid in full", firstPayment: 2087.4, detail: "£2,087.40 after the £42.60 discount if paid in full by 18 December 2026" },
   ],
 };
 

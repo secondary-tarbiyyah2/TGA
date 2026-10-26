@@ -52,7 +52,7 @@ export const learningHub: HubCard[] = [
 ];
 
 export const parentsHub: HubCard[] = [
-  { href: "/term-dates", title: "Term dates", body: "Term dates and the admissions calendar for the December 2026 launch." },
+  { href: "/term-dates", title: "Term dates", body: "Term dates and the admissions calendar for the January 2027 launch." },
   { href: "/policies", title: "Policies", body: "Our statutory school policies, including Safeguarding, Admissions, Fees and Data Protection." },
   { href: "/safeguarding", title: "Safeguarding", body: "How we keep children safe, and how to raise a concern." },
   { href: "/pastoral-care", title: "Pastoral care & SEND", body: "Wellbeing, character and additional needs support." },

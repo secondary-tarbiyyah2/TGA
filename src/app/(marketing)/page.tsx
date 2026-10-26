@@ -73,7 +73,7 @@ export default async function HomePage() {
               <p className="mt-6 max-w-xl text-lg text-ink/75">
                 Live, timetabled lessons with qualified teachers — Qur&apos;an, Arabic and Islamic Studies alongside the full national curriculum, taught with{" "}
                 <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Year 1 to Year 11, live
-                lessons launching December 2026.
+                lessons launching January 2027.
               </p>
             )}
             <div className="mt-8 flex flex-wrap gap-4">
@@ -160,7 +160,7 @@ export default async function HomePage() {
           <div className="rounded-2xl border border-gold-light/60 bg-white p-6">
             <h2 className="font-serif text-2xl font-semibold text-ink">{howItWorksHeading}</h2>
             <p className="mt-2 text-ink/75">
-              {howItWorks.map((st) => st.title).join(" → ")}. Places are offered for live lessons from December 2026.
+              {howItWorks.map((st) => st.title).join(" → ")}. Places are offered for live lessons from January 2027.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Button href="/admissions">How to apply</Button>
@@ -229,7 +229,7 @@ export default async function HomePage() {
 
       <CtaBand
         heading="Be among the first families to join."
-        body="Tell us a little about your child and we'll be in touch as places open for December 2026. No obligation."
+        body="Tell us a little about your child and we'll be in touch as places open for January 2027. No obligation."
       />
     </>
   );

@@ -88,7 +88,7 @@ export function FeeEstimator({
   if (!estimate || !schedule) return null;
 
   const checkable = discounts.map((d, i) => ({ d, i })).filter(({ d }) => !d.appliesAutomatically);
-  const unitLabel = plan === "annual" ? "once, by 4 December 2026" : plan === "termly" ? "per payment" : "per month";
+  const unitLabel = plan === "annual" ? "once, by 18 December 2026" : plan === "termly" ? "per payment" : "per month";
   const evenPayments = estimate.payments.every((p) => p === estimate.payments[0]);
   const sel = "mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm";
 
@@ -167,7 +167,7 @@ export function FeeEstimator({
       )}
 
       <div className="mt-6 rounded-xl bg-cream p-4" aria-live="polite">
-        <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">Tuition, December 2026 to July 2027</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">Tuition, January to July 2027</p>
         {estimate.perChild.map((c, i) => (
           <div key={i} className="mt-1 flex items-center justify-between gap-3 text-sm">
             <span className="text-ink/70">{c.label}</span>
@@ -228,7 +228,7 @@ export function FeeEstimator({
       </div>
 
       <p className="mt-3 text-xs text-ink/70">
-        Estimate only, not a binding quote. All fees are inclusive of VAT and cover the shortened December 2026 to July 2027 period; examination fees are extra. Final fees, discounts and eligibility are confirmed by the school in your offer.
+        Estimate only, not a binding quote. All fees are inclusive of VAT and cover the shortened January to July 2027 period; examination fees are extra. Final fees, discounts and eligibility are confirmed by the school in your offer.
       </p>
     </div>
   );
