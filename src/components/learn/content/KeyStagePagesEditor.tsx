@@ -160,7 +160,7 @@ export function KeyStagePagesEditor() {
                     <input value={r.lesson_length || ""} onChange={(e) => update(r.slug, { lesson_length: e.target.value })} placeholder="e.g. 50 minutes" className={inputCls} />
                   </label>
                   <label className="text-sm text-ink">Total line
-                    <input value={r.total_lessons || ""} onChange={(e) => update(r.slug, { total_lessons: e.target.value })} placeholder="e.g. 25 live lessons a week" className={inputCls} />
+                    <input value={r.total_lessons || ""} onChange={(e) => update(r.slug, { total_lessons: e.target.value })} placeholder="e.g. 23 live lessons a week" className={inputCls} />
                   </label>
                   <label className="text-sm text-ink sm:col-span-2">Note under the table
                     <textarea value={r.note || ""} onChange={(e) => update(r.slug, { note: e.target.value })} rows={2} className={inputCls} />

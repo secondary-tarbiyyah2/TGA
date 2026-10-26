@@ -16,7 +16,7 @@ export const metadata: Metadata = pageMetadata({
 const STRANDS = [
   { title: "Qur'an, Arabic and Islamic Studies", body: "Qur'an recitation, Tajweed and memorisation in groups set by ability; Arabic as the Academy's language so pupils connect with the texts directly; Islamic Studies covering aqeedah, fiqh, seerah and hadith. On the timetable every week, not an after-school extra." },
   { title: "The national curriculum, to International GCSE", body: "English, Mathematics, Science, humanities and computing, sequenced from Year 1 to International GCSE, taught live by qualified teachers in classes of no more than 15." },
-  { title: "Tarbiyyah and character", body: "Prayer built into the day, the RECIPE values taught by name, PSHE and wellbeing, and careers guidance from Year 7 — so pupils grow in knowledge, character and faith together." },
+  { title: "Tarbiyyah and character", body: "Prayer built into the day, the RECIPE values taught by name, PSHE, and careers guidance from Year 7 — so pupils grow in knowledge, character and faith together." },
 ];
 
 // KS4 subjects as set in the portal (content/syllabus/ks4). Every pupil sits Pearson Edexcel

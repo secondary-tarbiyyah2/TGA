@@ -19,7 +19,7 @@ const CANON: Record<string, string> = { "computer science": "Computing", computi
 const canon = (n: string) => CANON[niceSubject(n).toLowerCase()] || niceSubject(n);
 const SUBJECT_ICON: Record<string, IconName> = {
   Arabic: "languages", "Art and Design": "palette", Business: "briefcase", Computing: "monitor", English: "notebookPen", Geography: "globe", History: "hourglass",
-  "Islamic Studies": "moon", Mathematics: "calculator", "Physical Education": "activity", "PSHE RSHE and Citizenship": "heartHandshake", "PSHE RSE and Citizenship": "heartHandshake", "Quran and Tajweed": "bookMarked", Science: "flask",
+  "Islamic Studies": "moon", Mathematics: "calculator", "Physical Education": "activity", PSHE: "heartHandshake", "PSHE RSHE and Citizenship": "heartHandshake", "PSHE RSE and Citizenship": "heartHandshake", "Quran and Tajweed": "bookMarked", Science: "flask",
 };
 const iconFor = (n: string): IconName => SUBJECT_ICON[n] || "bookOpen";
 const fileKind = (name: string) => (name.split(".").pop() || "").toUpperCase();
