@@ -26,6 +26,9 @@ jobs:
             echo "C /about/ with jar: $(h -b /tmp/jar "$U/about/")"
             echo "D /fees/ with cookie: $(h -H "Cookie: tga_preview=$KEY" "$U/fees/")"
             echo "E /admissions/apply/ with cookie: $(h -H "Cookie: tga_preview=$KEY" "$U/admissions/apply/")"
+            rm -f /tmp/j2
+            echo "F browser flow (follow redirects, keep cookies): $(curl -sS -L -c /tmp/j2 -b /tmp/j2 -o /tmp/body -w 'final=%{url_effective} status=%{http_code}' "http://globalacademy.tarbiyyah.co.uk/about/?preview=$KEY" | sed "s/$KEY/<key>/g") TITLE $(grep -o '<title>[^<]*' /tmp/body | head -1 | sed 's/<title>//')"
+            echo "G public /about/ (follow): $(curl -sS -L -o /tmp/body -w 'final=%{url_effective}' "$U/about/") TITLE $(grep -o '<title>[^<]*' /tmp/body | head -1 | sed 's/<title>//')"
           } > /tmp/out
           cat /tmp/out
           echo "::warning title=preview probe::$(tr '\n' '#' < /tmp/out | cut -c1-3000)"
