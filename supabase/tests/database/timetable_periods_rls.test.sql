@@ -17,8 +17,8 @@ insert into public.user_roles (user_id, role, scope_type, scope_id) values
   ('e6600000-0000-0000-0000-000000000002', 'teacher', 'none', null);
 
 select ok(
-  (select count(*) from public.timetable_periods where kind = 'lesson' and 'all' = any(applies_to)) >= 6,
-  'starter day has the six standard lesson periods'
+  (select count(*) from public.timetable_periods where kind = 'lesson' and 'all' = any(applies_to)) >= 5,
+  'school day has the five standard lesson periods (0150)'
 );
 
 set local role authenticated;
