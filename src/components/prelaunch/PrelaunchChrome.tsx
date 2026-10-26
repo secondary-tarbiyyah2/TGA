@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- the holding pages are served by .htaccess rewrites, so links are full page loads (src/lib/prelaunch.ts) */
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";

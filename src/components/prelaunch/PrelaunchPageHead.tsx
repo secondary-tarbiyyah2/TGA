@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- the holding pages are served by .htaccess rewrites, so links are full page loads (src/lib/prelaunch.ts) */
 import { Container } from "@/components/Container";
 
 export function PrelaunchPageHead({ kicker, title, children }: { kicker: string; title: string; children?: React.ReactNode }) {

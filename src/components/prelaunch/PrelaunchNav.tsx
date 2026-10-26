@@ -1,6 +1,7 @@
 "use client";
+/* eslint-disable @next/next/no-html-link-for-pages -- plain links on purpose, see below */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 // Plain <a> links on purpose: the holding pages are served at public addresses
 // by .htaccess rewrites, so full page loads are the reliable way to move
@@ -12,6 +13,8 @@ export const PRELAUNCH_LINKS = [
   { href: "/curriculum/", label: "Subjects" },
 ];
 
+const noSubscribe = () => () => {};
+
 function isCurrent(href: string, path: string | null) {
   if (path === null) return false;
   const p = path.endsWith("/") ? path : path + "/";
@@ -20,8 +23,8 @@ function isCurrent(href: string, path: string | null) {
 
 export function PrelaunchNav() {
   const [open, setOpen] = useState(false);
-  const [path, setPath] = useState<string | null>(null);
-  useEffect(() => setPath(window.location.pathname), []);
+  // null while rendering on the server, so no link is marked current until the browser knows the address.
+  const path = useSyncExternalStore(noSubscribe, () => window.location.pathname, () => null);
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
