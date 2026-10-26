@@ -6,7 +6,7 @@ import { PrelaunchHome } from "@/components/prelaunch/PrelaunchHome";
 // PRE-LAUNCH block in public/.htaccess rewrites every page address here), so
 // its canonical address is the homepage.
 export const metadata: Metadata = pageMetadata({
-  title: "Our website is under development",
+  title: "Opening January 2027",
   description: "Tarbiyyah Global Academy, a live online Islamic school for Year 1 to Year 11, opens in January 2027. Register your interest.",
   path: "",
 });
