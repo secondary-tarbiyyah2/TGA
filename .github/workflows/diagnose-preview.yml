@@ -18,13 +18,13 @@ jobs:
         run: |
           KEY="$(tr -d '[:space:]' < deploy/preview-key.txt)"
           U="https://globalacademy.tarbiyyah.co.uk"
-          note() { echo "::notice title=$1::$(echo "$2" | tr '\n' ' ' | tr -s ' ' | cut -c1-900)"; }
+          note() { echo "::notice title=$1::$(echo "$2" | tr -d '\r' | tr '\n' '|' | tr -s ' ' | cut -c1-900)"; }
           h() { curl -sS -o /tmp/body -D - "$@" 2>&1 | grep -iE '^(HTTP/|location|set-cookie|server|cf-cache-status|cache-control|vary|x-robots-tag|age):' ; echo "TITLE: $(grep -o '<title>[^<]*' /tmp/body | head -1)"; }
           note "1 public /" "$(h "$U/")"
           note "2 public /about/" "$(h "$U/about/")"
           note "3 preview link" "$(h "$U/?preview=$KEY")"
           rm -f /tmp/jar; curl -sS -o /dev/null -c /tmp/jar "$U/?preview=$KEY"
-          note "4 cookie jar" "$(grep -v '^#' /tmp/jar | awk '{print $1, $4, $6, $7}')"
+          note "4 cookie jar" "$(sed 's/^#HttpOnly_//' /tmp/jar | grep -v '^#' | awk '{print $1, $4, $6, $7}')"
           note "5 / with jar" "$(h -b /tmp/jar "$U/")"
           note "6 /about/ with jar" "$(h -b /tmp/jar "$U/about/")"
           note "7 /about/ with manual cookie" "$(h -H "Cookie: tga_preview=$KEY" "$U/about/")"
