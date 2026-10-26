@@ -76,8 +76,13 @@ RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_preview=__PREVIEW_KEY__(;|$)
 RewriteRule ^curriculum/?$ /coming-soon/subjects/index.html [L]
 
 # The same address now serves different pages with and without the cookie,
-# so HTML must never be reused from a browser cache.
+# so HTML must never be reused from a browser cache. Anything served to the
+# staff preview (or the preview link itself) is marked noindex, so the preview
+# never shows up in search results.
 <IfModule mod_headers.c>
+  <If "%{HTTP_COOKIE} =~ /tga_preview=__PREVIEW_KEY__/ || %{QUERY_STRING} =~ /(^|&)preview=/">
+    Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+  </If>
   <If "%{REQUEST_URI} =~ m#(/|\.html|\.txt)$#">
     Header always set Cache-Control "no-store"
     Header always set Vary "Cookie"
