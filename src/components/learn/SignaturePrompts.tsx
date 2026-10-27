@@ -171,7 +171,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
         </p>
       )}
       {hasDocs && (
-        <div className="rounded-2xl border border-gold-light bg-white p-5">
+        <div data-onboarding className="rounded-2xl border border-gold-light bg-white p-5">
           <h2 className="text-lg font-semibold text-ink">Pending your signature</h2>
           <p className="mt-0.5 text-sm text-ink/65">Please read each document, then sign it by typing your full name and drawing your signature.</p>
           <ul className="mt-4 space-y-3">

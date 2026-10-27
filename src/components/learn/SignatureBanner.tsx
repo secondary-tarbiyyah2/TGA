@@ -28,7 +28,7 @@ export function SignatureBanner() {
   if (count === 0 || studentOnly) return null;
 
   return (
-    <div role="status" className="flex flex-wrap items-center justify-between gap-3 border-b border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
+    <div role="status" data-onboarding className="flex flex-wrap items-center justify-between gap-3 border-b border-amber-200 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
       <span className="font-medium">
         You have {count} document{count === 1 ? "" : "s"} to sign
       </span>

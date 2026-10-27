@@ -74,24 +74,17 @@ const TIDY = `(() => {
   document.querySelectorAll("[title],[aria-label]").forEach((el) => {
     for (const a of ["title", "aria-label"]) if (el.getAttribute(a)) el.setAttribute(a, swap(el.getAttribute(a)));
   });
-  walker.currentNode = document.body;
-  // The greeting uses the account's first name ("Demo").
+  // The greeting and avatar use the demo account's name.
   const w2 = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-  while ((n = w2.nextNode())) if (/^(Good (morning|afternoon|evening)|Assalamu alaykum), Demo$/.test(n.nodeValue.trim())) n.nodeValue = n.nodeValue.replace("Demo", "Umm Yusuf");
+  while ((n = w2.nextNode())) {
+    const t = n.nodeValue.trim();
+    if (t === "Demo") n.nodeValue = n.nodeValue.replace("Demo", "Umm Yusuf");
+    else if (/^(Good (morning|afternoon|evening)|Assalamu alaykum), Demo$/.test(t)) n.nodeValue = n.nodeValue.replace("Demo", "Umm Yusuf");
+    else if (t === "DP") n.nodeValue = n.nodeValue.replace("DP", "UY");
+  }
   // A settled family's view: drop the one-off onboarding prompts (sign the
   // policies, finish the child's details) and the cookie banner.
-  const card = (el) => {
-    while (el.parentElement && el.parentElement !== document.body) {
-      const p = el.parentElement;
-      if (p.children.length > 1 && p.textContent.length > el.textContent.length * 1.5) return el;
-      el = p;
-    }
-    return el;
-  };
-  for (const phrase of ["documents to sign", "Please complete your child", "Pending your signature", "We use essential cookies"]) {
-    const it = document.evaluate("//*[contains(text(), '" + phrase.replace("'", "") + "')]", document.body, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
-    for (let i = 0; i < it.snapshotLength; i++) { const c = card(it.snapshotItem(i)); if (c && c !== document.body) c.remove(); }
-  }
+  document.querySelectorAll('[data-onboarding], [aria-label="Cookie consent"]').forEach((el) => el.remove());
   document.querySelectorAll("[data-staff-preview]").forEach((el) => el.remove());
 })()`;
 

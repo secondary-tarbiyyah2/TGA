@@ -45,7 +45,7 @@ export function ChildDetailsBanner() {
   if (!rows || rows.length === 0) return null;
 
   return (
-    <section role="alert" aria-label="Child details required" className="print:hidden rounded-2xl border-2 border-red-300 bg-red-50 p-5">
+    <section role="alert" aria-label="Child details required" data-onboarding className="print:hidden rounded-2xl border-2 border-red-300 bg-red-50 p-5">
       <h2 className="text-base font-semibold text-red-900">Please complete your child&apos;s details</h2>
       <p className="mt-1 text-sm text-red-900/80">
         The school needs these for every pupil (home address, GP, health, two emergency contacts and your consents). This notice stays here until each record is complete.
