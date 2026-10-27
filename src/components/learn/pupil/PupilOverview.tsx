@@ -79,7 +79,7 @@ export function PupilOverview({ childId }: { childId: string }) {
     <section aria-label="Progress at a glance" className="rounded-xl border border-gold-light/60 bg-white p-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="text-sm font-semibold text-ink">Progress at a glance</h3>
-        <span className="text-xs text-ink/60">last 60 days</span>
+        <span className="text-xs text-ink/65">last 60 days</span>
       </div>
       <dl className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Fig label="Homework handed in" value={total ? `${handedIn}/${total}` : "–"} warn={d.missing > 0} sub={d.missing ? `${d.missing} missing` : d.late ? `${d.late} late` : "all on time"} />
@@ -93,7 +93,7 @@ export function PupilOverview({ childId }: { childId: string }) {
             <p key={r.homework_id} className="flex flex-wrap items-center gap-2 text-sm text-ink">
               <StatusChip tone="bad">Missing</StatusChip>
               <span className="min-w-0 flex-1 truncate">{r.homework_title}</span>
-              <span className="text-xs text-ink/60">due {fmt(r.due_at)}</span>
+              <span className="text-xs text-ink/65">due {fmt(r.due_at)}</span>
             </p>
           ))}
           {(d.quran?.focus.length || 0) > 0 && (

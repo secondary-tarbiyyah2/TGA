@@ -8,7 +8,7 @@ export function PrelaunchPageHead({ kicker, title, children }: { kicker: string;
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-700">{kicker}</p>
         <h1 className="mt-3 font-serif text-4xl font-semibold text-ink sm:text-5xl">{title}</h1>
         {children && <div className="mt-5 max-w-2xl text-lg text-ink/75">{children}</div>}
-        <p className="mt-4 text-sm text-ink/55">Our full website is still being finalised, so details here may change before launch.</p>
+        <p className="mt-4 text-sm text-ink/65">Our full website is still being finalised, so details here may change before launch.</p>
       </Container>
     </section>
   );

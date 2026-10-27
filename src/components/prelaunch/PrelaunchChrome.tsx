@@ -26,7 +26,7 @@ export async function PrelaunchFooter() {
   const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
   return (
     <footer className="border-t border-gold-light/40 bg-cream">
-      <Container className="flex flex-col items-center gap-3 py-8 text-center text-xs text-ink/60 sm:flex-row sm:justify-between sm:text-left">
+      <Container className="flex flex-col items-center gap-3 py-8 text-center text-xs text-ink/65 sm:flex-row sm:justify-between sm:text-left">
         <p>© {new Date().getFullYear()} Tarbiyyah Education Trust · Part of the Tarbiyyah family of schools</p>
         <ul className="flex flex-wrap justify-center gap-x-5 gap-y-1">
           <li><a className="hover:text-ink" href={`mailto:${email}`}>{email}</a></li>

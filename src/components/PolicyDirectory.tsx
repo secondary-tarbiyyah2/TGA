@@ -93,7 +93,7 @@ function PolicyRow({ p, complaintsLastYear, highlight }: { p: PolicyLink; compla
         {word ? "Open Word file" : "Open PDF"}
         <span className="sr-only">: {p.title} (opens in a new tab)</span>
       </a>
-      <span className="hidden text-xs text-ink/60 print:block">{p.fileUrl}</span>
+      <span className="hidden text-xs text-ink/65 print:block">{p.fileUrl}</span>
     </li>
   );
 }

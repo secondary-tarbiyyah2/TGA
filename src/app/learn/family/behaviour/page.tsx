@@ -130,7 +130,7 @@ function FamilyBehaviourContent() {
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
             <h3 className="mb-3 text-base font-semibold text-ink">
-              Recent records {records.length > 0 && <span className="font-normal text-ink/60">· {records.length}</span>}
+              Recent records {records.length > 0 && <span className="font-normal text-ink/65">· {records.length}</span>}
             </h3>
             <RecordsTable records={records.slice(0, shown)} showStudent={false} empty="Nothing recorded yet. Good things are on the way, in sha Allah." />
             {records.length > shown && (

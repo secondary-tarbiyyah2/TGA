@@ -94,7 +94,7 @@ export function Microsoft365Connection() {
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-medium text-ink">
                       {c.label}
-                      {c.optional && <span className="ml-2 text-xs font-normal text-ink/60">optional</span>}
+                      {c.optional && <span className="ml-2 text-xs font-normal text-ink/65">optional</span>}
                     </p>
                     <p className="mt-0.5 break-words text-xs text-ink/70">{c.detail}</p>
                   </div>
@@ -112,10 +112,10 @@ export function Microsoft365Connection() {
                     {meetings.last_error ? <span className="block text-xs text-red-800">{meetings.last_error}</span> : null}
                   </>
                 ) : null}
-                {meetings.last_change && <span className="block text-xs text-ink/60">Last change {new Date(meetings.last_change).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</span>}
+                {meetings.last_change && <span className="block text-xs text-ink/65">Last change {new Date(meetings.last_change).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</span>}
               </p>
             ) : (
-              <p className="text-xs text-ink/60">Lesson meeting records aren&apos;t available yet (database update 0145 not applied).</p>
+              <p className="text-xs text-ink/65">Lesson meeting records aren&apos;t available yet (database update 0145 not applied).</p>
             )}
           </>
         )}

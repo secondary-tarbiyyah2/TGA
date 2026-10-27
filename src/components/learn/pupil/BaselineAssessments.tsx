@@ -41,7 +41,7 @@ function TgaResult({ r }: { r: BaselineRow }) {
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         {(d.estimates || []).map((e) => (
           <div key={e.area} className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2">
-            <p className="text-[11px] font-semibold uppercase tracking-wide text-ink/60">{e.label}</p>
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-ink/65">{e.label}</p>
             <p className="text-lg font-semibold tabular-nums text-ink">{yr(e.workingAt)}</p>
             <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold ${TGA_BAND[e.band] || "bg-cream text-ink/70"}`}>{e.band}</span>
           </div>
@@ -84,7 +84,7 @@ function Sas({ label, v }: { label: string; v: number | null }) {
   const b = sasBand(v);
   return (
     <div className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2">
-      <p className="text-[11px] font-semibold uppercase tracking-wide text-ink/60">{label}</p>
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-ink/65">{label}</p>
       <p className="text-lg font-semibold tabular-nums text-ink">{v ?? "–"}</p>
       {b && <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold ${b.cls}`}>{b.label}</span>}
     </div>
@@ -180,9 +180,9 @@ export function BaselineAssessments({ childId, canEdit }: { childId: string; can
               ) : (
                 <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
                   <Sas label="SAS" v={r.score_sas} />
-                  {r.stanine != null && <div className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2"><p className="text-[11px] font-semibold uppercase tracking-wide text-ink/60">Stanine</p><p className="text-lg font-semibold tabular-nums">{r.stanine}</p></div>}
-                  {r.percentile != null && <div className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2"><p className="text-[11px] font-semibold uppercase tracking-wide text-ink/60">Percentile</p><p className="text-lg font-semibold tabular-nums">{r.percentile}</p></div>}
-                  {r.age_equivalent && <div className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2"><p className="text-[11px] font-semibold uppercase tracking-wide text-ink/60">Age equivalent</p><p className="text-lg font-semibold">{r.age_equivalent}</p></div>}
+                  {r.stanine != null && <div className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2"><p className="text-[11px] font-semibold uppercase tracking-wide text-ink/65">Stanine</p><p className="text-lg font-semibold tabular-nums">{r.stanine}</p></div>}
+                  {r.percentile != null && <div className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2"><p className="text-[11px] font-semibold uppercase tracking-wide text-ink/65">Percentile</p><p className="text-lg font-semibold tabular-nums">{r.percentile}</p></div>}
+                  {r.age_equivalent && <div className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2"><p className="text-[11px] font-semibold uppercase tracking-wide text-ink/65">Age equivalent</p><p className="text-lg font-semibold">{r.age_equivalent}</p></div>}
                 </div>
               )}
               {r.notes && <p className="mt-2 text-sm text-ink/75">{r.notes}</p>}

@@ -27,9 +27,9 @@ import { AxeBuilder } from "@axe-core/playwright";
 const OUT_DIR = path.resolve(process.argv[2] || "out");
 const SKIP_PREFIXES = ["/learn", "/studio"];
 
-// Audit priority 1 (muted grey text at 4.3:1). Re-enable in step 2 of the
-// audit, when the muted-text token moves to ink/70.
-const KNOWN_DISABLED_RULES = ["color-contrast"];
+// Muted text now floors at ink/65 (>= 4.9:1 on every brand background), so
+// colour contrast is checked again. Keep this list empty.
+const KNOWN_DISABLED_RULES = [];
 
 const MIME = {
   ".html": "text/html; charset=utf-8",

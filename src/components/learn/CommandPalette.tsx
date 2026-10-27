@@ -214,7 +214,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         type="button"
         onClick={openPalette}
         aria-label="Search"
-        className="mr-1 hidden h-10 w-60 items-center gap-2 rounded-lg border border-gold-light bg-white px-3 text-sm text-ink/60 transition-colors hover:border-ink/25 hover:text-ink md:flex"
+        className="mr-1 hidden h-10 w-60 items-center gap-2 rounded-lg border border-gold-light bg-white px-3 text-sm text-ink/65 transition-colors hover:border-ink/25 hover:text-ink md:flex"
       >
         <SearchIcon className="h-4 w-4" />
         <span>Search…</span>

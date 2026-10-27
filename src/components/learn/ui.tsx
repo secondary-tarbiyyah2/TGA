@@ -47,7 +47,7 @@ export function btn(variant: ButtonVariant = "secondary", size: ButtonSize = "md
   return `${btnBase} ${VARIANT[variant]}${size === "sm" ? ` ${SM}` : ""}`;
 }
 
-const inputBase = `block w-full min-h-11 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/55 transition-colors hover:border-ink/25 sm:min-h-10 disabled:cursor-not-allowed disabled:bg-cream disabled:opacity-70 ${focus}`;
+const inputBase = `block w-full min-h-11 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/65 transition-colors hover:border-ink/25 sm:min-h-10 disabled:cursor-not-allowed disabled:bg-cream disabled:opacity-70 ${focus}`;
 const chipBase = `inline-flex min-h-11 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border px-3.5 text-sm font-medium transition-colors sm:min-h-8 sm:px-3 ${focus}`;
 
 export const ui = {

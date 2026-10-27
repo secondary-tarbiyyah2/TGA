@@ -220,7 +220,7 @@ function Families({ families }: { families: DigestFamily[] | null }) {
       cell: (f) => (
         <span className="min-w-0">
           <span className="block font-medium text-ink">{f.parent_name || f.parent_email}</span>
-          {f.parent_name && <span className="block truncate text-xs text-ink/60">{f.parent_email}</span>}
+          {f.parent_name && <span className="block truncate text-xs text-ink/65">{f.parent_email}</span>}
         </span>
       ),
     },
@@ -248,7 +248,7 @@ function Families({ families }: { families: DigestFamily[] | null }) {
         ) : f.this_week === "sending" ? (
           <StatusChip tone="warn">Sending</StatusChip>
         ) : (
-          <span className="text-xs text-ink/60">{f.is_test ? "Test family" : "Not sent yet"}</span>
+          <span className="text-xs text-ink/65">{f.is_test ? "Test family" : "Not sent yet"}</span>
         ),
     },
     {
@@ -341,7 +341,7 @@ function History({ weeks, families }: { weeks: WeekStat[] | null; families: Dige
               {w.failed > 0 && <StatusChip tone="bad">{w.failed} failed</StatusChip>}
               {w.sending > 0 && <StatusChip tone="warn">{w.sending} sending</StatusChip>}
               {w.failed === 0 && w.sending === 0 && <StatusChip tone="good">All delivered</StatusChip>}
-              <span className="ml-auto text-xs text-ink/60">{w.lastSent ? `Last sent ${stampLabel(w.lastSent)}` : ""}</span>
+              <span className="ml-auto text-xs text-ink/65">{w.lastSent ? `Last sent ${stampLabel(w.lastSent)}` : ""}</span>
             </div>
             {w.failures.length > 0 && (
               <details className="mt-1.5">
@@ -354,7 +354,7 @@ function History({ weeks, families }: { weeks: WeekStat[] | null; families: Dige
                     </li>
                   ))}
                 </ul>
-                <p className="mt-1 text-[11px] text-ink/60">Failed emails are retried automatically on the next scheduled run that week.</p>
+                <p className="mt-1 text-[11px] text-ink/65">Failed emails are retried automatically on the next scheduled run that week.</p>
               </details>
             )}
           </li>

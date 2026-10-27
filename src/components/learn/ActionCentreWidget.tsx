@@ -64,7 +64,7 @@ export function ActionCentreWidget({ role }: { role: Role }) {
     <section aria-labelledby="ac-widget" className="rounded-2xl border border-gold-light bg-white p-4 sm:p-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 id="ac-widget" className="text-sm font-semibold text-ink">
-          Needs you <span className="font-normal text-ink/60">· {urgent.length}</span>
+          Needs you <span className="font-normal text-ink/65">· {urgent.length}</span>
         </h2>
         <Link href={`${base}/actions`} className={`${ui.btnSecondary} ${ui.sm}`}>
           Open Action centre
@@ -80,7 +80,7 @@ export function ActionCentreWidget({ role }: { role: Role }) {
           </li>
         ))}
       </ul>
-      {urgent.length > 3 && <p className="mt-2 text-xs text-ink/60">and {urgent.length - 3} more in the Action centre.</p>}
+      {urgent.length > 3 && <p className="mt-2 text-xs text-ink/65">and {urgent.length - 3} more in the Action centre.</p>}
     </section>
   );
 }

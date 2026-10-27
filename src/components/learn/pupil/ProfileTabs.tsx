@@ -113,8 +113,8 @@ export function PupilAttendanceTab({ childId }: { childId: string }) {
                 <li key={date} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm">
                   <span className="w-28 shrink-0 text-ink/70">{fmt(date)}</span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-ink">{note?.reason || reasonLabel(code) || <span className="text-ink/60">No reason given</span>}</span>
-                    <span className="block text-xs text-ink/60">{Array.from(new Set(classes)).join(", ")}</span>
+                    <span className="block text-ink">{note?.reason || reasonLabel(code) || <span className="text-ink/65">No reason given</span>}</span>
+                    <span className="block text-xs text-ink/65">{Array.from(new Set(classes)).join(", ")}</span>
                   </span>
                   {note?.status === "authorised" && <StatusChip tone="good">Authorised</StatusChip>}
                   {note?.status === "unauthorised" && <StatusChip tone="bad">Not authorised</StatusChip>}
@@ -192,7 +192,7 @@ export function PupilBehaviourTab({ childId, extra }: { childId: string; extra?:
             {approved.map((s) => (
               <li key={s.id} className="px-4 py-2.5 text-sm">
                 <p className="text-ink">
-                  Week beginning {fmt(s.week_start)} <span className="text-ink/60">· {s.classes?.name}</span>
+                  Week beginning {fmt(s.week_start)} <span className="text-ink/65">· {s.classes?.name}</span>
                 </p>
                 <p className="text-xs text-ink/70">{s.reason}</p>
               </li>
@@ -218,7 +218,7 @@ export function PupilBehaviourTab({ childId, extra }: { childId: string; extra?:
                 <span className="w-28 shrink-0 text-ink/70">{fmt(r.occurred_on)}</span>
                 <StatusChip tone={r.kind === "merit" ? "good" : r.kind === "demerit" ? "warn" : "bad"}>{r.kind === "merit" ? `Merit +${r.points}` : r.kind === "demerit" ? `Demerit ${r.points}` : "Incident"}</StatusChip>
                 <span className="min-w-0 flex-1 text-ink/80">{r.category}</span>
-                <span className="text-xs text-ink/60">{r.classes?.name || ""}</span>
+                <span className="text-xs text-ink/65">{r.classes?.name || ""}</span>
               </li>
             ))}
           </ul>
@@ -281,11 +281,11 @@ export function PupilReportsTab({ childId, childName }: { childId: string; child
                 <span className="min-w-0 flex-1 text-ink">{w.terms?.name || "All time"}</span>
                 {w.status === "draft" && w.returned_reason && <StatusChip tone="warn">Sent back</StatusChip>}
                 <StatusBadge status={w.status} />
-                <span className="text-xs text-ink/60">updated {fmtLong(w.updated_at)}</span>
+                <span className="text-xs text-ink/65">updated {fmtLong(w.updated_at)}</span>
               </li>
             ))}
           </ul>
-          <p className="px-4 pb-3 text-xs text-ink/60">
+          <p className="px-4 pb-3 text-xs text-ink/65">
             Reports are written per class in{" "}
             <Link href="/admin/reports" className="text-teal-700 underline">
               Progress reports
@@ -317,7 +317,7 @@ export function PupilReportsTab({ childId, childName }: { childId: string; child
             {issued.map((r) => (
               <li key={r.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm">
                 <span className="min-w-0 flex-1 text-ink">{r.terms?.name || "All time"}</span>
-                <span className="text-xs text-ink/60">issued {fmtLong(r.released_at)}</span>
+                <span className="text-xs text-ink/65">issued {fmtLong(r.released_at)}</span>
                 <button type="button" onClick={() => setOpen(r.id)} className={`${ui.btnSecondary} ${ui.sm}`}>
                   View
                 </button>

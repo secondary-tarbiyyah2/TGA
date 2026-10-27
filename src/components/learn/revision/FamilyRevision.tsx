@@ -151,7 +151,7 @@ function RevisionBySubject({ list, name }: { list: Unit[]; name: string }) {
       {subjects.map(({ subject, active, idle }) => (
         <section key={subject} aria-label={subject}>
           <h2 className="mb-2 text-sm font-semibold text-ink">
-            {subject} <span className="font-normal text-ink/60">· {active.length + idle.length} unit{active.length + idle.length === 1 ? "" : "s"}</span>
+            {subject} <span className="font-normal text-ink/65">· {active.length + idle.length} unit{active.length + idle.length === 1 ? "" : "s"}</span>
           </h2>
           {active.length > 0 && (
             <ul className="mb-2 grid gap-3 sm:grid-cols-2">
@@ -172,7 +172,7 @@ function RevisionBySubject({ list, name }: { list: Unit[]; name: string }) {
                 {idle.map((u) => (
                   <li key={u.id} className="flex flex-wrap items-center justify-between gap-2 py-2 text-sm">
                     <span className="text-ink">{u.title}</span>
-                    <span className="text-xs text-ink/60">
+                    <span className="text-xs text-ink/65">
                       {u.topics} topic{u.topics === 1 ? "" : "s"}
                     </span>
                   </li>

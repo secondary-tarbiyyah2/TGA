@@ -85,13 +85,13 @@ export function InstallGuide() {
         </div>
       ) : null}
 
-      <h2 className="mt-8 text-sm font-semibold uppercase tracking-wide text-ink/60">Step by step</h2>
+      <h2 className="mt-8 text-sm font-semibold uppercase tracking-wide text-ink/65">Step by step</h2>
       <ul className="mt-3 space-y-2">
         {DEVICES.map((d) => (
           <li key={d.key} className="rounded-2xl border border-gold-light bg-white">
             <button type="button" aria-expanded={open === d.key} onClick={() => setOpen(open === d.key ? null : d.key)} className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left">
               <span className="font-semibold text-ink">{d.label}</span>
-              <Icon name="chevronDown" className={`h-4 w-4 text-ink/60 transition-transform ${open === d.key ? "rotate-180" : ""}`} />
+              <Icon name="chevronDown" className={`h-4 w-4 text-ink/65 transition-transform ${open === d.key ? "rotate-180" : ""}`} />
             </button>
             {open === d.key && (
               <ol className="list-decimal space-y-1.5 px-5 pb-5 pl-10 text-sm text-ink/80">
@@ -103,7 +103,7 @@ export function InstallGuide() {
           </li>
         ))}
       </ul>
-      <p className="mt-6 text-xs text-ink/60">
+      <p className="mt-6 text-xs text-ink/65">
         The app is the same secure portal: you sign in once and stay signed in on that device. Updates arrive automatically; there is nothing to update yourself. To remove it, delete it like any other app.
       </p>
     </div>

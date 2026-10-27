@@ -81,7 +81,7 @@ export default async function AboutPage() {
                   {ar && (
                     <p className="mt-2 flex h-12 flex-col items-center justify-center">
                       <span lang="ar" dir="rtl" className="text-xl leading-none text-teal-700">{ar.arabic}</span>
-                      <span className="mt-1.5 text-xs italic text-ink/60">{ar.term}</span>
+                      <span className="mt-1.5 text-xs italic text-ink/65">{ar.term}</span>
                     </p>
                   )}
                   <p className="mt-3 text-sm leading-relaxed text-ink/70">{r.body}</p>
