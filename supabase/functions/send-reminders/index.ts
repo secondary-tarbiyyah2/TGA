@@ -1,6 +1,6 @@
-// Called by pg_cron every 15 minutes (see SETUP.md for the one-time Vault +
-// cron.schedule setup). Idempotent: each booking's reminder_24h_sent_at /
-// reminder_1h_sent_at columns mean a booking is never reminded twice even
+// Called by pg_cron every 15 minutes (scheduled by migration 0160; the URL and
+// service-role key it needs are written to Vault by deploy-supabase.yml).
+// Idempotent: each booking's reminder_24h_sent_at / reminder_1h_sent_at columns mean a booking is never reminded twice even
 // if this runs slightly early/late relative to the exact 24h/1h mark.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { jsonResponse } from "../_shared/cors.ts";

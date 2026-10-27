@@ -57,7 +57,7 @@ name: Deploy site
 
 on:
   push:
-    branches: [claude/sweet-albattani-e7fav5, main]
+    branches: [main]
     paths:
       - "src/**"
       - "public/**"

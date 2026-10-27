@@ -3,7 +3,8 @@ name: Notify flagged messages
 # A flagged message (0013's keyword-match trigger on message_thread_
 # messages) previously had NO alerting at all — a safeguarding lead had to
 # happen to open Compliance to ever see one. This calls the deployed
-# notify-flagged-messages Edge Function every 15 minutes, which emails
+# notify-flagged-messages Edge Function every 3 hours (see the cron note
+# below), which emails
 # every current safeguarding_lead and marks each message notified so it's
 # never sent twice. Same "find the project ref, call its Edge Function"
 # pattern as check-bookable-staff.yml; runs frequently (unlike the weekly

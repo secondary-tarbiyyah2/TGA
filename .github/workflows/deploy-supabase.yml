@@ -27,7 +27,7 @@ name: Deploy Supabase backend
 
 on:
   push:
-    branches: [claude/sweet-albattani-e7fav5, main]
+    branches: [main]
     paths:
       - "supabase/**"
       - ".github/workflows/deploy-supabase.yml"
@@ -165,6 +165,29 @@ jobs:
             echo "anon_key=$ANON"
             echo "service_role_key=$SERVICE_ROLE"
           } >> "$GITHUB_OUTPUT"
+
+      # pg_cron jobs (send-reminders, see migration 0160) call Edge Functions
+      # through pg_net and read the URL + service-role key from Vault. Storing
+      # them here on every deploy means there is no manual Studio step and a
+      # rotated key is picked up automatically. The key goes in the request
+      # body only (never in the log), via the Management API SQL endpoint.
+      - name: Store cron secrets in Vault
+        env:
+          REF: ${{ steps.project.outputs.ref }}
+          SERVICE_ROLE: ${{ steps.keys.outputs.service_role_key }}
+        run: |
+          set -euo pipefail
+          # Neither value can contain a single quote (URL + JWT), so plain
+          # quoting is safe here.
+          Q=$(jq -cn --arg url "https://$REF.supabase.co/functions/v1" --arg key "$SERVICE_ROLE" \
+            --arg q "'" '{query: "select public.set_edge_function_cron_secrets(\($q)\($url)\($q), \($q)\($key)\($q))"}')
+          CODE=$(curl -sS -o /tmp/vault.txt -w "%{http_code}" -X POST "https://api.supabase.com/v1/projects/$REF/database/query" \
+            -H "Authorization: Bearer $SUPABASE_ACCESS_TOKEN" -H "Content-Type: application/json" -d "$Q")
+          if [ "$CODE" -ge 400 ]; then
+            echo "::error::Storing cron secrets in Vault failed (HTTP $CODE): $(head -c 300 /tmp/vault.txt | grep -v -i "$SERVICE_ROLE" || true)"
+            exit 1
+          fi
+          echo "Vault secrets for pg_cron updated."
 
       - name: Set Edge Function secrets
         run: |
