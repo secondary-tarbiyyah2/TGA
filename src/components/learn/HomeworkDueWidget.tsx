@@ -1,5 +1,6 @@
 "use client";
 
+import { attachHomework } from "@/lib/learn/homeworkStatus";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -19,13 +20,16 @@ export function HomeworkDueWidget({ childId, title = "Upcoming homework" }: { ch
     if (!supabase || !childId) return;
     supabase
       .from("homework_status")
-      .select("homework_id, due_at, status, homework:homework_id(title, class_id, archived_at)")
+      .select("homework_id, due_at, status")
       .eq("child_id", childId)
       .order("due_at", { ascending: true })
       // Still to do = not handed in yet (due or overdue). "late" in
       // homework_status means *handed in* late, so it's done, not due.
       // Archived (deleted) homework is never shown to pupils or parents.
-      .then(({ data }) => setRows(((data as unknown as Row[]) || []).filter((r) => (r.status === "not_yet_due" || r.status === "missing") && r.homework && !r.homework.archived_at)));
+      .then(async ({ data }) => {
+        const withHw = (await attachHomework(supabase, data as unknown as { homework_id: string }[], "title, class_id, archived_at")) as unknown as Row[];
+        setRows(withHw.filter((r) => (r.status === "not_yet_due" || r.status === "missing") && r.homework && !r.homework.archived_at));
+      });
   }, [supabase, childId]);
 
   if (rows === null) return <p className="text-sm text-ink/65">Loading homework…</p>;

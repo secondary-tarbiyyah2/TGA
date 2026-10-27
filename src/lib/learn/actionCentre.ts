@@ -3,6 +3,7 @@
 // absence_followups, Qur'an marks and sessions), so an item disappears by itself as soon as the underlying
 // thing is done: nobody ticks anything twice. Reads are RLS-scoped, so each role only sees its own people.
 
+import { attachHomework } from "@/lib/learn/homeworkStatus";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { MARK_COLUMNS, nextSession, pupilStats, revisionRows, todayISO, type QuranMark, type Session } from "@/lib/learn/quranClassroom";
@@ -136,8 +137,9 @@ export async function loadPupilItems(children: { id: string; name: string }[], r
   const items: ActionItem[] = [];
   for (const c of children) {
     const who = role === "family" ? `${c.name.split(" ")[0]}: ` : "";
-    const hw = await supabase.from("homework_status").select("homework_id, due_at, child_id, status, homework:homework_id(title)").eq("child_id", c.id).gte("due_at", new Date(Date.now() - 30 * DAY).toISOString());
-    for (const r of ((hw.data as unknown as Status[]) || []).filter((x) => x.homework)) {
+    const hw = await supabase.from("homework_status").select("homework_id, due_at, child_id, status").eq("child_id", c.id).gte("due_at", new Date(Date.now() - 30 * DAY).toISOString());
+    const hwRows = (await attachHomework(supabase, hw.data as unknown as { homework_id: string }[], "title")) as unknown as Status[];
+    for (const r of hwRows.filter((x) => x.homework)) {
       const title = r.homework?.title || "Homework";
       if (r.status === "missing") {
         const over = daysAgo(r.due_at);

@@ -1,5 +1,6 @@
 "use client";
 
+import { attachHomework } from "@/lib/learn/homeworkStatus";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -131,10 +132,11 @@ function useActivities(classId: string, viewer: ClassViewer, routes: Routes): Ac
       if (childId) {
         const { data } = await supabase
           .from("homework_status")
-          .select("homework_id, due_at, status, homework:homework_id(title)")
+          .select("homework_id, due_at, status")
           .eq("child_id", childId)
           .eq("class_id", classId);
-        for (const h of (data as unknown as { homework_id: string; due_at: string; status: string; homework?: { title: string } | null }[]) || []) {
+        const withHw = await attachHomework<{ homework_id: string; due_at: string; status: string }, { title: string }>(supabase, data as unknown as { homework_id: string; due_at: string; status: string }[], "title");
+        for (const h of withHw) {
           const s =
             h.status === "on_time"
               ? { label: "Handed in", tone: "done" as const }

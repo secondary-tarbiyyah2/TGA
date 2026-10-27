@@ -1,5 +1,6 @@
 "use client";
 
+import { attachHomework } from "@/lib/learn/homeworkStatus";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -110,7 +111,7 @@ function useTimeline(viewer: Viewer): TimelineItem[] | null {
         if (kids.length === 0) return setItems([]);
         const { data } = await supabase
           .from("homework_status")
-          .select("homework_id, child_id, class_id, due_at, status, homework:homework_id(title, archived_at, classes(name))")
+          .select("homework_id, child_id, class_id, due_at, status")
           .in(
             "child_id",
             kids.map((k) => k.id),
@@ -118,8 +119,7 @@ function useTimeline(viewer: Viewer): TimelineItem[] | null {
           .in("status", ["not_yet_due", "missing"])
           .lte("due_at", horizon)
           .order("due_at");
-        const rows =
-          (data as unknown as { homework_id: string; child_id: string; class_id: string; due_at: string; status: string; homework?: { title: string; archived_at?: string | null; classes?: { name: string } | null } | null }[]) || [];
+        const rows = (await attachHomework(supabase, data as unknown as { homework_id: string }[], "title, archived_at, classes(name)")) as unknown as { homework_id: string; child_id: string; class_id: string; due_at: string; status: string; homework?: { title: string; archived_at?: string | null; classes?: { name: string } | null } | null }[];
         // Archived (deleted) homework is never shown to pupils or parents.
         out = rows.filter((r) => r.homework && !r.homework.archived_at).map((r) => {
           const kid = kids.find((k) => k.id === r.child_id);

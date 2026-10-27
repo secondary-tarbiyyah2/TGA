@@ -1,5 +1,6 @@
 "use client";
 
+import { attachHomework } from "@/lib/learn/homeworkStatus";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -106,13 +107,14 @@ function useUrgentHomework(childId: string | undefined): HwItem[] | null {
     let alive = true;
     supabase
       .from("homework_status")
-      .select("homework_id, due_at, status, homework:homework_id(title)")
+      .select("homework_id, due_at, status")
       .eq("child_id", childId)
       .in("status", ["missing", "not_yet_due"])
       .order("due_at", { ascending: true })
-      .then(({ data }) => {
+      .then(async ({ data }) => {
+        const withHw = (await attachHomework(supabase, data as unknown as { homework_id: string }[], "title")) as unknown as HwRaw[];
         if (!alive) return;
-        const rows = ((data as unknown as HwRaw[] | null) || []).filter((r) => r.homework);
+        const rows = withHw.filter((r) => r.homework);
         // Overdue first (oldest first), then what's due soonest.
         const overdue = rows.filter((r) => r.status === "missing");
         const due = rows.filter((r) => r.status === "not_yet_due");

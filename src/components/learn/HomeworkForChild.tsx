@@ -1,5 +1,6 @@
 "use client";
 
+import { attachHomework } from "@/lib/learn/homeworkStatus";
 import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { FEEDBACK_COLUMNS, type HomeworkFeedback } from "@/lib/learn/homeworkFeedback";
@@ -223,12 +224,13 @@ export function HomeworkForChild({
     if (!supabase || !childId) return;
     const { data } = await supabase
       .from("homework_status")
-      .select("homework_id, due_at, status, submission_id, homework:homework_id(title, instructions, max_points, allowed_submission_types, allowed_file_types, late_policy, attachments, edited_at)")
+      .select("homework_id, due_at, status, submission_id")
       .eq("child_id", childId)
       .match(classId ? { class_id: classId } : {})
       .order("due_at", { ascending: false });
     // Archived homework is hidden from families by RLS, so its embedded homework comes back null.
-    setRows(((data as unknown as Row[]) || []).filter((r) => r.homework));
+    const withHw = await attachHomework(supabase, data as unknown as { homework_id: string }[], "title, instructions, max_points, allowed_submission_types, allowed_file_types, late_policy, attachments, edited_at");
+    setRows((withHw as unknown as Row[]).filter((r) => r.homework));
     // Teacher feedback for this child's submissions (RLS limits it to what the viewer may see).
     const { data: fb } = await supabase.from("homework_feedback").select(`${FEEDBACK_COLUMNS}, submission:submission_id!inner(child_id)`).eq("submission.child_id", childId);
     const map: Record<string, HomeworkFeedback> = {};
