@@ -51,6 +51,30 @@ if (child) {
   }
 }
 
+// Keep the demo family's next fortnight looking like a normal school week:
+// lessons on its timetable slots and one piece of homework coming up.
+if (child) {
+  const { data: enrs } = await admin.from("enrolments").select("class_id").eq("child_id", child.id);
+  const classIds = (enrs || []).map((e) => e.class_id);
+  if (classIds.length) {
+    const { data: slots } = await admin.from("timetable_slots").select("id, weekday, class_id").in("class_id", classIds);
+    const today = new Date();
+    today.setUTCHours(0, 0, 0, 0);
+    const rows = [];
+    for (let d = 0; d <= 14; d++) {
+      const date = new Date(today.getTime() + d * 86_400_000);
+      for (const sl of slots || []) if (sl.weekday === date.getUTCDay()) rows.push({ timetable_slot_id: sl.id, date: date.toISOString().slice(0, 10), objectives: "Revision and new learning", bbb_status: "not_started", recording_enabled: false });
+    }
+    if (rows.length) await admin.from("lesson_instances").upsert(rows, { onConflict: "timetable_slot_id,date", ignoreDuplicates: true });
+    const soon = new Date(today.getTime() + 3 * 86_400_000).toISOString();
+    const { data: upcoming } = await admin.from("homework").select("id").in("class_id", classIds).gte("due_at", today.toISOString()).limit(1);
+    if (!upcoming?.length) {
+      const { data: t } = await admin.from("profiles").select("id").eq("email", "demo-teacher@tarbiyyah.co.uk").maybeSingle();
+      if (t) await admin.from("homework").insert({ class_id: classIds[0], teacher_id: t.id, title: "Recite Surah Al-Mulk 11 to 20", instructions: "Recite to a parent twice and note any mistakes.", due_at: soon });
+    }
+  }
+}
+
 // Sign in with a one-off token (no password involved).
 const { data: link, error: linkErr } = await admin.auth.admin.generateLink({ type: "magiclink", email: EMAIL });
 if (linkErr) throw linkErr;
@@ -78,9 +102,13 @@ const TIDY = `(() => {
   const w2 = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   while ((n = w2.nextNode())) {
     const t = n.nodeValue.trim();
-    if (t === "Demo") n.nodeValue = n.nodeValue.replace("Demo", "Umm Yusuf");
-    else if (/^(Good (morning|afternoon|evening)|Assalamu alaykum), Demo$/.test(t)) n.nodeValue = n.nodeValue.replace("Demo", "Umm Yusuf");
-    else if (t === "DP") n.nodeValue = n.nodeValue.replace("DP", "UY");
+    const ctx = (n.parentElement && n.parentElement.textContent) || "";
+    let v = n.nodeValue
+      .replace(/(Up next for\\s*)Demo\\b/, "$1Yusuf")
+      .replace(/((Good (morning|afternoon|evening)|Assalamu alaykum),\\s*)Demo\\b/, "$1Umm Yusuf");
+    if (t === "Demo") v = /Up next/.test(ctx) ? v.replace("Demo", "Yusuf") : v.replace("Demo", "Umm Yusuf");
+    if (t === "DP") v = v.replace("DP", "UY");
+    if (v !== n.nodeValue) n.nodeValue = v;
   }
   // A settled family's view: drop the one-off onboarding prompts (sign the
   // policies, finish the child's details) and the cookie banner.
@@ -108,6 +136,7 @@ for (const s of shots) {
     await page.waitForTimeout(500);
     await page.evaluate(TIDY);
   }
+  await page.evaluate(TIDY);
   const path = `${OUT}/${s.name}.png`;
   await page.screenshot({ path, fullPage: false });
   console.log(`captured ${path} at ${page.url()}`);
