@@ -24,7 +24,7 @@ export const metadata: Metadata = pageMetadata({
 
 const defaultPillars = [
   { title: "Specialist curriculum", body: "Qur'an, Arabic and Islamic Studies every week, with the full national curriculum to GCSE, taught live by qualified teachers." },
-  { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage, not an add-on." },
+  { title: "Character and faith", body: "Tarbiyyah runs through the day: our RECIPE values taught by name, a form tutor who knows each child, and faith as the foundation, not an add-on." },
   { title: "Live, small classes", body: "Real-time lessons with no more than 15 pupils in a class, so every child is known and supported." },
 ];
 

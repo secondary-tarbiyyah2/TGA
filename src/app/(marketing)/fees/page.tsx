@@ -45,7 +45,7 @@ export default async function FeesPage() {
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/70">
             Read the full{" "}
-            <Link href="/policies" className="font-semibold text-gold-700 underline">Fees Policy</Link>{" "}
+            <a href="/policies/25-fees.pdf" className="font-semibold text-gold-700 underline">Fees Policy (PDF)</a>{" "}
             before enrolling, it covers payment terms, refunds and what happens if a payment is missed.
           </p>
         </Container>

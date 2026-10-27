@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
-import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { getPolicyLinks, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -16,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
 export default async function SafeguardingPage() {
   const [settings, policies] = await Promise.all([getSiteSettings(), getPolicyLinks()]);
   const safeguardingPolicy = policies.find((p) => p.number === "01");
-  const complaintsPolicy = policies.find((p) => p.number === "27");
+  const complaintsPolicy = policies.find((p) => p.number === "26");
   const email = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
 
   return (
@@ -114,8 +113,6 @@ export default async function SafeguardingPage() {
           </p>
         </Container>
       </section>
-
-      <AdmissionsStrip />
       <CtaBand heading="Have a question first?" body="Get in touch and we'll point you to the right person." ctaLabel="Contact us" ctaHref="/contact" />
     </>
   );

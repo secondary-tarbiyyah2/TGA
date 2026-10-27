@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "./Container";
 import { footerColumns } from "@/lib/nav";
 import { getSiteSettings } from "@/lib/content";
+import { telHref } from "@/lib/format";
 import { LEARN_ORIGIN } from "@/lib/learn/origin";
 import { CookieSettingsLink } from "./CookieSettingsLink";
 
@@ -22,7 +23,7 @@ export async function Footer() {
           <ul className="mt-4 text-sm">
             <li><a className="inline-block py-1.5 text-cream/75 hover:text-cream" href={`mailto:${email}`}>{email}</a></li>
             {settings.contactPhone && (
-              <li><a className="inline-block py-1.5 text-cream/75 hover:text-cream" href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`}>{settings.contactPhone}</a></li>
+              <li><a className="inline-block py-1.5 text-cream/75 hover:text-cream" href={telHref(settings.contactPhone)}>{settings.contactPhone}</a></li>
             )}
             {settings.contactAddress ? (
               <li className="whitespace-pre-line text-cream/75">{settings.contactAddress}</li>

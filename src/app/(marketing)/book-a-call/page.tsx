@@ -45,7 +45,7 @@ export default async function BookACallPage() {
           {fromMonthly != null && (
             <p className="mt-3 text-sm font-medium text-ink/80">
               Fees from {formatGBP(fromMonthly)}/month, see the{" "}
-              <Link href="/policies" className="font-semibold text-gold-700 underline">Fees Policy</Link> for full details.
+              <a href="/policies/25-fees.pdf" className="font-semibold text-gold-700 underline">Fees Policy (PDF)</a> for full details.
             </p>
           )}
           <p className="mt-4 text-ink/75">A member of our admissions team will cover:</p>

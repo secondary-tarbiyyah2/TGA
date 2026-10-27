@@ -19,7 +19,6 @@ export const primaryNav: NavEntry[] = [
     label: "About",
     items: [
       { href: "/about", label: "About us" },
-      { href: "/curriculum", label: "Curriculum" },
       { href: "/testimonials", label: "Testimonials" },
     ],
   },
@@ -97,6 +96,7 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
       { href: "/safeguarding", label: "Safeguarding" },
       { href: "/policies", label: "Policies" },
       { href: "/faqs", label: "FAQs" },
+      { href: "/contact", label: "Contact" },
     ],
   },
   {
@@ -106,7 +106,6 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
       { href: "/legal/cookies", label: "Cookie policy" },
       { href: "/accessibility", label: "Accessibility" },
       { href: "/legal/terms", label: "Terms" },
-      { href: "/contact", label: "Contact" },
     ],
   },
 ];

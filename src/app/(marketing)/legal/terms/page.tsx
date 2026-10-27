@@ -31,7 +31,7 @@ export default async function TermsPage() {
           This website is provided to give information about Tarbiyyah Global Academy and to let families register
           interest, apply, and book admissions calls or open evenings. You agree to use it only for these purposes,
           and not to attempt to disrupt it or access any part of it you&apos;re not authorised to use, including the
-          staff, teacher, parent and student areas at <code>/learn</code>, which are restricted to account holders.
+          staff, teacher, parent and student areas of the portal at learn.tarbiyyah.co.uk, which are restricted to account holders.
         </p>
 
         <h2 className="mt-8 font-serif text-lg font-semibold text-ink">Content and accuracy</h2>
