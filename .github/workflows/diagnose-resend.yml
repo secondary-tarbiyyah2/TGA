@@ -81,6 +81,13 @@ jobs:
           for ID in $(echo "$D" | jq -r '.data[].id'); do
             curl -sS "https://api.resend.com/domains/$ID" -H "Authorization: Bearer $RESEND_API_KEY" \
               | jq -r '.records[] | "::notice title=DNS record needed (\(.record) \(.type) \(.status))::name=\(.name) value=\(.value) \(if .priority then "priority=\(.priority)" else "" end)"'
+            # Compare the DKIM value Resend expects with what public DNS serves.
+            REC=$(curl -sS "https://api.resend.com/domains/$ID" -H "Authorization: Bearer $RESEND_API_KEY")
+            DNAME=$(echo "$REC" | jq -r '.name')
+            EXP=$(echo "$REC" | jq -r '.records[] | select(.record=="DKIM") | .value' | head -n1)
+            ACT=$(dig +short TXT "resend._domainkey.$DNAME" @1.1.1.1 | tr -d '" \n')
+            if [ "$EXP" = "$ACT" ]; then M=match; else M=DIFFERENT; fi
+            echo "::notice title=DKIM compare::$M expected_len=${#EXP} dns_len=${#ACT} expected_tail=${EXP: -24} dns_tail=${ACT: -24}"
             # Ask Resend to re-check the DNS (harmless if nothing changed).
             curl -sS -X POST "https://api.resend.com/domains/$ID/verify" -H "Authorization: Bearer $RESEND_API_KEY" >/dev/null || true
           done
