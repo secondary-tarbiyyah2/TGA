@@ -191,7 +191,8 @@ function summaryPacks() {
       kind: "summary",
       // A slide's own chapter video ("video": path under this folder) is uploaded by
       // sync() and stored on the slide as video_path.
-      summary: slides.map(({ keywords, hint, video, ...s }) => ({ ...s, keywords: (keywords || []).map((k) => k.t), ...(video ? { video: path.join(REVISION, video) } : {}) })),
+      // `hint` is deliberately dropped from the stored summary (it is for the practice coach only).
+      summary: slides.map(({ keywords, video, ...s }) => ({ ...s, hint: undefined, keywords: (keywords || []).map((k) => k.t), ...(video ? { video: path.join(REVISION, video) } : {}) })),
       sort_order: j.sort_order ?? 0,
       questions,
       video: j.video ? path.join(REVISION, j.video) : null,

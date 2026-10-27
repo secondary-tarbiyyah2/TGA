@@ -77,7 +77,6 @@ function syllabus(f, d) {
   if (!str(d.toKS4)) w(f, "toKS4 missing");
 }
 
-const specRefs = {};
 function matrix(f, d) {
   if (!str(d.kind)) e(f, "kind missing");
   if (d.kind === "hubs") hubsToCheck.push([f, d]);

@@ -35,7 +35,7 @@
 // SANITY_API_TOKEN.
 import { createClient } from "@supabase/supabase-js";
 import { createClient as createSanityClient } from "@sanity/client";
-import { mailConfigured, sendMail } from "./lib/sendMail.mjs";
+import { sendMail } from "./lib/sendMail.mjs";
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;

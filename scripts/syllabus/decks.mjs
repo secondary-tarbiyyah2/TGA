@@ -3,12 +3,11 @@
 //   buildSyllabusDeck(d)  Reception to Year 9 programme (kind "syllabus")
 import { lessonsFor } from "./unit-decks.mjs";
 import {
-  W, H, MX, INK, MUTED, GOLD, GOLD_DARK, GOLD_SOFT, CREAM, LINE, WHITE, FONT, LOGO_WHITE, LOGO_RATIO, STATUS,
+  W, H, MX, INK, MUTED, GOLD, GOLD_DARK, GOLD_SOFT, LINE, WHITE, FONT, LOGO_WHITE, LOGO_RATIO,
   clean, fitSize, makeTheme, tint, newDeck, contentSlide, chip, card, bullets, sourcesAndGaps, gridBoxes, yearLabel,
 } from "./lib.mjs";
 
 const chunk = (a, n) => Array.from({ length: Math.ceil(a.length / n) }, (_, i) => a.slice(i * n, i * n + n));
-const YEAR_ORDER = ["reception", "y1", "y2", "y3", "y4", "y5", "y6", "y7", "y8", "y9", "y10", "y11"];
 const yrNum = (k) => { const s = String(k).toLowerCase(); return s.startsWith("r") ? 0 : Number((s.match(/\d+/) || [99])[0]); };
 
 function titleSlide(pres, ctx, { label, title, sub, facts }) {
@@ -79,7 +78,6 @@ export function buildSpecDeck(d, videoMap) {
       s.addText(k.toUpperCase(), { x: b.x + 0.3, y: b.y + 0.15, w: b.w - 0.4, h: 0.28, fontFace: FONT, fontSize: 10, bold: true, color: MUTED, charSpacing: 3, margin: 0 });
       s.addText(clean(v), { x: b.x + 0.3, y: b.y + 0.45, w: b.w - 0.45, h: b.h - 0.55, fontFace: theme.head, fontSize: fitSize(v, b.w - 0.45, b.h - 0.55, 22, 12, 0, 0.9), bold: true, color: INK, valign: "top", margin: 0 });
     });
-    const totalMarks = (d.assessment || []).reduce((a, p) => a + (p.marks || 0), 0);
     const bx = { x: MX, y: 4.65, w: W - 2 * MX, h: 2.2 };
     card(s, bx.x, bx.y, bx.w, bx.h, tint(theme.accent, 0.93), tint(theme.accent, 0.7));
     s.addText("ASSESSMENT SUMMARY", { x: bx.x + 0.3, y: bx.y + 0.15, w: 5, h: 0.28, fontFace: FONT, fontSize: 10, bold: true, color: theme.accent, charSpacing: 3, margin: 0 });

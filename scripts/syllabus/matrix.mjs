@@ -2,8 +2,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import {
-  W, MX, INK, MUTED, GOLD, GOLD_DARK, GOLD_SOFT, LINE, WHITE, FONT, ROOT,
-  clean, fitSize, makeTheme, tint, newDeck, contentSlide, chip, card, bullets, gridBoxes, yearLabel, LOGO_WHITE, LOGO_RATIO, H,
+  W, MX, INK, MUTED, GOLD, LINE, WHITE, FONT, ROOT,
+  clean, fitSize, makeTheme, tint, newDeck, contentSlide, chip, card, gridBoxes, yearLabel, LOGO_WHITE, LOGO_RATIO, H,
 } from "./lib.mjs";
 
 export const GROUPS = ["Mathematics", "English", "Science", "Computing", "Geography", "History", "Islamic Studies", "Qur'an and Tajweed", "Arabic", "Business", "Art and Design", "Physical Education", "PSHE"];
@@ -183,7 +183,6 @@ export function buildMatrixDeck(pack) {
   // Spiral threads
   {
     const rows = pack.ks13.flatMap((d) => (d.progression || []).map((t) => {
-      const ks = Object.keys(t.steps || {}).sort();
       const nk = (k) => (String(k).toLowerCase().startsWith("r") ? 0 : Number((String(k).match(/\d+/) || [99])[0]));
       const sorted = Object.keys(t.steps || {}).sort((a, b) => nk(a) - nk(b));
       return [groupOf(d.subject) || d.subject, t.thread, `${sorted[0]}: ${t.steps[sorted[0]]}`, `${sorted[sorted.length - 1]}: ${t.steps[sorted[sorted.length - 1]]}`];

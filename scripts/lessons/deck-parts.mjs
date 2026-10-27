@@ -53,7 +53,7 @@ export function makeParts(h) {
   const line = (s, x, y, w, hh, color, width, transparency = 0) => s.addShape("line", { x, y, w, h: hh, line: { color, width, transparency } });
 
   const motifs = {
-    grid(s, b, th) {
+    grid(s, b) {
       const step = 0.42;
       for (let x = b.x; x <= b.x + b.w + 0.01; x += step) line(s, x, b.y, 0, b.h, "FFFFFF", 0.5, 86);
       for (let y = b.y; y <= b.y + b.h + 0.01; y += step) line(s, b.x, y, b.w, 0, "FFFFFF", 0.5, 86);

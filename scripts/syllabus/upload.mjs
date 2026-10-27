@@ -38,7 +38,10 @@ if (!failed) {
   async function scan(prefix) {
     const { data, error } = await supabase.storage.from("lesson-decks").list(prefix, { limit: 1000 });
     if (error) throw error;
-    for (const e of data) (e.id ? (keep.has(`${prefix}/${e.name}`) || stale.push(`${prefix}/${e.name}`)) : await scan(`${prefix}/${e.name}`));
+    for (const e of data) {
+      if (!e.id) await scan(`${prefix}/${e.name}`);
+      else if (!keep.has(`${prefix}/${e.name}`)) stale.push(`${prefix}/${e.name}`);
+    }
   }
   await scan("syllabus-pack");
   if (stale.length) {

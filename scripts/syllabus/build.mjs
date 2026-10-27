@@ -3,10 +3,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { ROOT, W, MX, INK, MUTED, GOLD, GOLD_SOFT, LINE, WHITE, FONT, H, LOGO_WHITE, LOGO_RATIO, clean, slugify, ensureDir, makeTheme, tint, newDeck, contentSlide, chip, card, gridBoxes, STATUS, fitSize } from "./lib.mjs";
-import { buildSpecDeck, buildSyllabusDeck } from "./decks.mjs";
-import { loadPack, buildMatrixDeck, groupOf } from "./matrix.mjs";
-import { buildUnitDeck } from "./unit-decks.mjs";
+import { ROOT, W, MX, INK, GOLD, LINE, WHITE, FONT, H, LOGO_WHITE, LOGO_RATIO, clean, ensureDir, makeTheme, tint, newDeck, contentSlide, chip, card, gridBoxes, fitSize } from "./lib.mjs";
+import { loadPack, buildMatrixDeck } from "./matrix.mjs";
 import { specDocument, syllabusDocument, writeDoc } from "./specdoc.mjs";
 import { buildCoverage } from "./coverage.mjs";
 const coverage = buildCoverage();
