@@ -90,13 +90,15 @@ Deno.serve(async (req) => {
   // exclusion constraint (bookings_no_staff_overlap) is the real guarantee
   // against a race, this check is just to return a friendly "slot taken"
   // error rather than a raw constraint-violation error when it happens.
-  const { data: staff, error: staffErr } = await supabase
+  const { data: staffRow, error: staffErr } = await supabase
     .from("staff_members")
     .select("id, display_name, teams_meeting_url, profiles!inner(email, full_name)")
     .eq("id", staffId)
     .single();
 
-  if (staffErr || !staff) return jsonResponse({ ok: false, error: "unknown_staff" }, 400);
+  if (staffErr || !staffRow) return jsonResponse({ ok: false, error: "unknown_staff" }, 400);
+  // Without generated DB types supabase-js types a to-one join as an array.
+  const staff = staffRow as unknown as { id: string; display_name: string; teams_meeting_url: string | null; profiles: { email: string; full_name: string } };
 
   // The slot must be one the booking page could have offered: produced by
   // get_open_slots for this staff member (which applies their availability,

@@ -51,7 +51,7 @@ Deno.serve(async (req) => {
       .eq("manage_token_hash", tokenHash)
       .maybeSingle();
     if (!b) return jsonResponse({ ok: false, error: "not_found" }, 404);
-    const bk = b as { id: string; status: string; parent_name: string; email: string; open_evening_sessions: { title: string; starts_at: string } | null };
+    const bk = b as unknown as { id: string; status: string; parent_name: string; email: string; open_evening_sessions: { title: string; starts_at: string } | null };
     if (bk.status === "cancelled") return jsonResponse({ ok: true, already: true, title: bk.open_evening_sessions?.title });
     const { error } = await supabase.from("open_evening_bookings").update({ status: "cancelled", cancelled_at: new Date().toISOString() }).eq("id", bk.id);
     if (error) return jsonResponse({ ok: false, error: "cancel_failed" }, 500);
