@@ -14,6 +14,7 @@ const CHIP: Record<NoteStatus, string> = {
   unauthorised: "bg-red-50 text-red-800",
 };
 const fieldCls = `mt-1 ${ui.input}`;
+const REASONS = ["Unwell", "Medical or dental appointment", "Family emergency", "Religious observance", "Other"];
 
 export function FamilyAbsences() {
   const [children, setChildren] = useState<Child[] | null>(null);
@@ -33,6 +34,14 @@ export function FamilyAbsences() {
   const [formError, setFormError] = useState<string | null>(null);
   const [sent, setSent] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
+  // "Tell us why" on an unexplained absence opens a short form in place,
+  // so the parent never loses their spot on the page.
+  const [openNudge, setOpenNudge] = useState<string | null>(null);
+  const [qCategory, setQCategory] = useState("");
+  const [qReason, setQReason] = useState("");
+  const [qBusy, setQBusy] = useState(false);
+  const [qError, setQError] = useState<string | null>(null);
+  const [thanked, setThanked] = useState<string | null>(null);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -66,13 +75,27 @@ export function FamilyAbsences() {
     });
   }, [unexplained]);
 
-  const prefill = (a: Absence) => {
-    setChildIds([a.childId]);
-    setWhen("dates");
-    setFromDate(a.date);
-    setToDate(a.date);
-    setSent(false);
-    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const openQuick = (key: string) => {
+    setOpenNudge((cur) => (cur === key ? null : key));
+    setQCategory("");
+    setQReason("");
+    setQError(null);
+  };
+
+  const sendQuick = async (a: Absence) => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    if (!qCategory) return setQError("Please choose a reason.");
+    if (qCategory === "Other" && !qReason.trim()) return setQError("Please tell us a little about why.");
+    setQBusy(true);
+    setQError(null);
+    const text = qReason.trim() ? `${qCategory}: ${qReason.trim()}` : qCategory;
+    const { error } = await supabase.from("absence_notes").insert({ child_id: a.childId, from_date: a.date, to_date: a.date, reason: text });
+    setQBusy(false);
+    if (error) return setQError("We couldn't send that just now. Please try again.");
+    setOpenNudge(null);
+    setThanked(`${a.childName} on ${formatDay(a.date)}`);
+    setTick((t) => t + 1);
   };
 
   const submit = async (e: React.FormEvent) => {
@@ -113,20 +136,47 @@ export function FamilyAbsences() {
       <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Absences" }]} title="Report an absence" subtitle="Let us know why your child was, or will be, away. It helps us look after them." />
       {loadError && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load. Please refresh in a moment.</p>}
 
+      {thanked && <p role="status" className="mb-4 rounded-lg bg-green-50 px-4 py-2 text-sm text-green-800">Thank you. We&apos;ve noted the reason for {thanked}.</p>}
       {nudges.length > 0 && (
         <section aria-label="Absences we haven't heard about" className="mb-5 rounded-2xl border border-amber-200 bg-amber-50/60 p-4">
           <h2 className="text-sm font-semibold text-amber-950">We haven&apos;t heard about these yet</h2>
+          <p className="mt-0.5 text-xs text-amber-900/80">Tap &ldquo;Tell us why&rdquo; to explain one without leaving this spot.</p>
           <ul className="mt-2 space-y-2">
-            {nudges.map((a) => (
-              <li key={`${a.childId}|${a.date}`} className="flex flex-wrap items-center justify-between gap-2 text-sm text-amber-950">
-                <span>
-                  Please tell us why {a.childName} was absent on {formatDay(a.date)}
-                </span>
-                <button type="button" onClick={() => prefill(a)} className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-sm font-semibold text-amber-950 hover:bg-amber-100">
-                  Tell us why
-                </button>
-              </li>
-            ))}
+            {nudges.map((a) => {
+              const key = `${a.childId}|${a.date}`;
+              const open = openNudge === key;
+              return (
+                <li key={key} className="rounded-xl bg-white/70 p-3 text-sm text-amber-950">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span>
+                      {a.childName} was absent on {formatDay(a.date)}
+                    </span>
+                    <button type="button" aria-expanded={open} onClick={() => openQuick(key)} className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-sm font-semibold text-amber-950 hover:bg-amber-100">
+                      {open ? "Cancel" : "Tell us why"}
+                    </button>
+                  </div>
+                  {open && (
+                    <div className="mt-3 space-y-3 border-t border-amber-200 pt-3">
+                      <div className="flex flex-wrap gap-2" role="group" aria-label="Reason">
+                        {REASONS.map((c) => (
+                          <button key={c} type="button" aria-pressed={qCategory === c} onClick={() => setQCategory(c)} className={qCategory === c ? ui.chipOn : ui.chip}>
+                            {c}
+                          </button>
+                        ))}
+                      </div>
+                      <label className="block text-sm font-medium text-ink">
+                        {qCategory === "Other" ? "Tell us why" : "Anything else? (optional)"}
+                        <textarea rows={2} value={qReason} onChange={(e) => setQReason(e.target.value)} className={fieldCls} />
+                      </label>
+                      {qError && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{qError}</p>}
+                      <button type="button" disabled={qBusy} onClick={() => sendQuick(a)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+                        {qBusy ? "Sending…" : "Send"}
+                      </button>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}
@@ -182,7 +232,7 @@ export function FamilyAbsences() {
               <fieldset>
                 <legend className="text-sm font-medium text-ink">Why?</legend>
                 <div className="mt-1.5 flex flex-wrap gap-2">
-                  {["Unwell", "Medical or dental appointment", "Family emergency", "Religious observance", "Other"].map((c) => (
+                  {REASONS.map((c) => (
                     <button key={c} type="button" aria-pressed={category === c} onClick={() => setCategory(c)} className={category === c ? ui.chipOn : ui.chip}>
                       {c}
                     </button>
