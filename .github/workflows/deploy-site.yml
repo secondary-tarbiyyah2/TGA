@@ -183,7 +183,7 @@ jobs:
         run: npm run split-static-export
 
       # Pre-launch staff preview (see src/lib/prelaunch.ts): write the private
-      # preview key into the main site's .htaccess. The PREVIEW_KEY secret wins
+      # preview key into the main site's and the portal's .htaccess. The PREVIEW_KEY secret wins
       # if set; otherwise deploy/preview-key.txt (this repo is private). With
       # neither, a random throwaway key keeps the gate closed to everyone.
       - name: Set the staff preview key
@@ -194,8 +194,8 @@ jobs:
           if [ -z "$key" ] && [ -f deploy/preview-key.txt ]; then key="$(tr -d '[:space:]' < deploy/preview-key.txt)"; fi
           if [ -z "$key" ]; then key="$(openssl rand -hex 24)"; echo "::warning::PREVIEW_KEY secret not set; staff preview disabled for this deploy."; fi
           case "$key" in *[!A-Za-z0-9]*) echo "::error::PREVIEW_KEY must be letters and digits only"; exit 1;; esac
-          sed -i "s/__PREVIEW_KEY__/$key/g" out-main/.htaccess
-          if grep -q "__PREVIEW_KEY__" out-main/.htaccess; then echo "::error::preview key placeholder left in .htaccess"; exit 1; fi
+          sed -i "s/__PREVIEW_KEY__/$key/g" out-main/.htaccess out-learn/.htaccess
+          if grep -q "__PREVIEW_KEY__" out-main/.htaccess out-learn/.htaccess; then echo "::error::preview key placeholder left in .htaccess"; exit 1; fi
 
       - name: Deploy main site to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

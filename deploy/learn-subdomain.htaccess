@@ -19,6 +19,21 @@ Options -Indexes
 RewriteEngine On
 RewriteOptions IgnoreInherit
 
+# ── PRE-LAUNCH: STAFF ONLY ──────────────────────────────────────────────────
+# The portal is restricted to staff until launch. Opening
+# https://learn.tarbiyyah.co.uk/?key=<key> (or the staff preview link for the
+# website, https://preview.tarbiyyah.co.uk/?key=<key>) sets a 30-day cookie for
+# *.tarbiyyah.co.uk, so one staff link opens both. Without it, every address
+# shows a short "staff only" page. __PREVIEW_KEY__ is replaced at deploy time
+# (deploy-site.yml) from deploy/preview-key.txt or the PREVIEW_KEY secret.
+# TO OPEN THE PORTAL: delete this block and redeploy.
+RewriteCond %{QUERY_STRING} (^|&)key=__PREVIEW_KEY__(&|$)
+RewriteRule ^(.*)$ https://learn.tarbiyyah.co.uk/$1? [CO=tga_staff:__PREVIEW_KEY__:.tarbiyyah.co.uk:43200:/:1:1,R=302,L]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_staff=__PREVIEW_KEY__(;|$)
+RewriteCond %{REQUEST_URI} !^/(staff-only\.html|robots\.txt|favicon\.(ico|png|svg)|brand/ga-wordmark\.png)$
+RewriteRule ^ /staff-only.html [L]
+# ── end PRE-LAUNCH ──────────────────────────────────────────────────────────
+
 # Never cached (by any proxy/browser between here and the visitor — there is
 # no CDN in front of this host), never indexed, and locked to a CSP with no
 # third-party origins at all (no analytics/chat-widget script tags exist

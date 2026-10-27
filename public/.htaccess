@@ -48,8 +48,8 @@ RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
 # 2. STAFF PREVIEW  https://preview.tarbiyyah.co.uk
 #    The full website as it will be when published. Private: opening
 #    https://preview.tarbiyyah.co.uk/?key=<key> once lets that browser use it
-#    for 30 days (the cookie belongs to the preview address only, so the public
-#    address is never affected). Without it, visitors get a short "staff only"
+#    for 30 days and also opens the staff-only portal (learn.tarbiyyah.co.uk).
+#    The public address never looks at this cookie, so it is never affected. Without it, visitors get a short "staff only"
 #    page. Every response is noindex and its robots.txt disallows everything,
 #    so it never appears in search results.
 #    Needs, once: a proxied "preview" DNS record in Cloudflare and the
@@ -73,7 +73,7 @@ RewriteRule ^(.*)$ https://globalacademy.tarbiyyah.co.uk/$1? [CO=tga_preview:off
 # ── 2. Staff preview site ──
 RewriteCond %{HTTP_HOST} ^preview\. [NC]
 RewriteCond %{QUERY_STRING} (^|&)key=__PREVIEW_KEY__(&|$)
-RewriteRule ^(.*)$ https://preview.tarbiyyah.co.uk/$1? [CO=tga_staff:__PREVIEW_KEY__:preview.tarbiyyah.co.uk:43200:/:1:1,CO=tga_preview_ui:1:preview.tarbiyyah.co.uk:43200:/:1:0,R=302,L]
+RewriteRule ^(.*)$ https://preview.tarbiyyah.co.uk/$1? [CO=tga_staff:__PREVIEW_KEY__:.tarbiyyah.co.uk:43200:/:1:1,CO=tga_preview_ui:1:preview.tarbiyyah.co.uk:43200:/:1:0,R=302,L]
 RewriteCond %{HTTP_HOST} ^preview\. [NC]
 RewriteRule ^robots\.txt$ /robots-preview.txt [L]
 RewriteCond %{HTTP_HOST} ^preview\. [NC]

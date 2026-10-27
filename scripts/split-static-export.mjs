@@ -89,6 +89,8 @@ async function main() {
 
   await cp(path.join(repoRoot, "deploy", "calendar.php"), path.join(outLearnDir, "calendar.php"));
   await cp(path.join(repoRoot, "deploy", "learn-subdomain.htaccess"), path.join(outLearnDir, ".htaccess"));
+  // Pre-launch "staff only" page, shown by the gate in that .htaccess.
+  await cp(path.join(repoRoot, "public", "staff-only.html"), path.join(outLearnDir, "staff-only.html"));
 
   const [mainTop, learnTop] = await Promise.all([readdir(outMainDir), readdir(outLearnDir)]);
   console.log("");

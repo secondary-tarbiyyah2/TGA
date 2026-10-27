@@ -554,11 +554,13 @@ One-time setup:
    The free wildcard certificate already covers `*.tarbiyyah.co.uk`.
 2. **cPanel → Domains → Create a new domain:** `preview.tarbiyyah.co.uk`,
    untick "Share document root" and set the document root to the SAME folder
-   the main site is deployed to (the folder holding this site's `.htaccess`,
-   e.g. `public_html/globalacademy.tarbiyyah.co.uk`). No second deploy or FTP
-   account is needed.
+   the main site is deployed to: `public_html/globalacademy`. No second
+   deploy or FTP account is needed.
 
-Staff then open `https://preview.tarbiyyah.co.uk/?key=<key>` once per browser
+The portal (learn.tarbiyyah.co.uk) is staff-only too until launch
+(`deploy/learn-subdomain.htaccess`). Staff open `https://preview.tarbiyyah.co.uk/?key=<key>`
+(or `https://learn.tarbiyyah.co.uk/?key=<key>`) once per browser; the cookie is
+set for `*.tarbiyyah.co.uk`, so either link opens both
 (key: `deploy/preview-key.txt`, or the `PREVIEW_KEY` secret if set). Without it
 the address shows a short "staff only" page. Every preview response carries
 `X-Robots-Tag: noindex` and its `robots.txt` disallows everything. Change the
