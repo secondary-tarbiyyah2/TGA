@@ -114,6 +114,21 @@ RewriteRule ^curriculum/?$ /coming-soon/subjects/index.html [L]
   <If "%{REQUEST_URI} =~ m#(/|\.html|\.txt)$#">
     Header always set Cache-Control "no-store"
   </If>
+
+  # Baseline security headers for every response on both hosts. No full
+  # Content-Security-Policy here: the pages frame CMS-chosen URLs (open
+  # evening booking widget, lesson/recording videos) whose origins change,
+  # and a policy that breaks those silently is worse than none; the /learn
+  # subdomain, which frames nothing external, carries a strict CSP of its own
+  # (deploy/learn-subdomain.htaccess). frame-ancestors still stops this site
+  # being framed by others (clickjacking), the only CSP directive that matters
+  # for a static brochure site.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Content-Security-Policy "frame-ancestors 'self'"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
 </IfModule>
 
 # Policy documents (/policies/<slug>.pdf or .docx) are served live by
