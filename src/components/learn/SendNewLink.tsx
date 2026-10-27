@@ -38,7 +38,8 @@ export function SendNewLink({ defaultEmail = "" }: { defaultEmail?: string }) {
   if (sent) {
     return (
       <p role="status" className="mt-3 rounded-lg bg-teal-50 px-3 py-2 text-sm text-teal-900">
-        If an account exists for <strong>{email.trim()}</strong>, a new link is on its way. Check your inbox and spam folder. Use the newest email: older links stop working.
+        If an account exists for <strong>{email.trim()}</strong>, a new email is on its way with a link and a 6-digit code. Check your inbox and spam folder; use the newest email.{" "}
+        <a href={`/login/forgot?code=1&email=${encodeURIComponent(email.trim())}`} className="font-semibold underline">Enter the code</a>
       </p>
     );
   }
