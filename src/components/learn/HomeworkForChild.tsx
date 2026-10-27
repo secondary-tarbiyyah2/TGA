@@ -122,7 +122,7 @@ function HomeworkItem({
 
           {submission ? (
             <div className="rounded-lg bg-cream p-3">
-              <p className="text-xs text-ink/65">Handed in {submission.submitted_at ? new Date(submission.submitted_at).toLocaleString("en-GB") : "—"}</p>
+              <p className="text-xs text-ink/65">Handed in {submission.submitted_at ? new Date(submission.submitted_at).toLocaleString("en-GB") : "–"}</p>
               {submission.response_text && <p className="mt-1 whitespace-pre-line">{submission.response_text}</p>}
               {submission.link_url && (
                 <p className="mt-1">

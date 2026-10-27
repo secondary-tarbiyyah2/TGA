@@ -94,7 +94,7 @@ export const shortDay = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDat
 export const longDay = (iso: string) => new Date(`${iso}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
 export const firstName = (name: string) => name.trim().split(/\s+/)[0] || name;
-/** "Aisha K." — how the school shout-out names a pupil. */
+/** "Aisha K."– how the school shout-out names a pupil. */
 export function shoutName(name: string): string {
   const parts = name.trim().split(/\s+/);
   return parts.length > 1 ? `${parts[0]} ${parts[parts.length - 1].charAt(0).toUpperCase()}.` : parts[0] || name;

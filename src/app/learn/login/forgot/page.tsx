@@ -16,7 +16,7 @@ import { friendlyPasswordError } from "@/lib/learn/passwordRules";
  *
  * The link it emails is the same "recovery" type used by staff invites, so
  * it lands on the existing /learn/login/invite page, which already knows
- * how to accept a recovery session and let someone set a new password —
+ * how to accept a recovery session and let someone set a new password, 
  * no second "set password" page needed.
  *
  * Deliberately never reveals whether an email address has an account:
@@ -92,7 +92,7 @@ export default function ForgotPasswordPage() {
       const res = await supabase.auth.resetPasswordForEmail(clean, {
       // window.location.origin, not a hardcoded string: once this page is
       // served from the /learn subdomain, that origin already IS the right
-      // one (see src/lib/learn/origin.ts) — and Supabase's redirect
+      // one (see src/lib/learn/origin.ts) · and Supabase's redirect
       // allowlist (deploy-supabase.yml) must include it.
       redirectTo: `${window.location.origin}/login/invite`,
       });
@@ -108,7 +108,7 @@ export default function ForgotPasswordPage() {
       return;
     }
     // Always show the same confirmation, whether or not the address
-    // matched an account — never let this page reveal that.
+    // matched an account, never let this page reveal that.
     setSent(true);
   }
 

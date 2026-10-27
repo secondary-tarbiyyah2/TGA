@@ -9,7 +9,7 @@ import { LessonDetail } from "@/components/learn/LessonDetail";
 function TeachLessonContent() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
-  if (!id) return <p className="text-sm text-ink/65">No lesson selected — open a lesson from your dashboard.</p>;
+  if (!id) return <p className="text-sm text-ink/65">No lesson selected, open a lesson from your dashboard.</p>;
   return <LessonDetail lessonInstanceId={id} variant="teacher" />;
 }
 

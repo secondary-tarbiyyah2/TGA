@@ -9,11 +9,11 @@ import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Book an Admissions Call",
-  description: "Book a free 20-minute admissions call with our team, on Microsoft Teams — no obligation.",
+  description: "Book a free 20-minute admissions call with our team, on Microsoft Teams, no obligation.",
 };
 
 const covers = [
-  "The specialist curriculum — Qur'an, Arabic, Islamic Studies and the national curriculum — at your child's key stage",
+  "The specialist curriculum, Qur'an, Arabic, Islamic Studies and the national curriculum, at your child's key stage",
   "Live-lesson timing and how it works from your timezone",
   "Fees, payment plans and next steps for the January 2027 launch",
   "Any questions about admissions, assessment or your child's needs",
@@ -27,7 +27,7 @@ const afterBooking = [
 
 export default async function BookACallPage() {
   // Fee bands are ordered Y1→Y11 by `order` (see
-  // src/lib/quiz/feeBand.ts's same assumption elsewhere) — the first band
+  // src/lib/quiz/feeBand.ts's same assumption elsewhere) · the first band
   // is the school's actual cheapest, so this is a real "from" figure, not
   // a guess. Hidden entirely if no fee bands are configured yet, rather
   // than showing a fabricated number.
@@ -42,7 +42,7 @@ export default async function BookACallPage() {
           <h1 className="text-h2 font-serif font-semibold text-ink">A free 20-minute call, no obligation.</h1>
           {fromMonthly != null && (
             <p className="mt-3 text-sm font-medium text-ink/80">
-              Fees from {formatGBP(fromMonthly)}/month — see the{" "}
+              Fees from {formatGBP(fromMonthly)}/month, see the{" "}
               <Link href="/policies" className="font-semibold text-gold-700 underline">Fees Policy</Link> for full details.
             </p>
           )}
@@ -56,7 +56,7 @@ export default async function BookACallPage() {
             ))}
           </ul>
           <p className="mt-6 rounded-2xl bg-gold-100 p-4 text-sm text-ink/80">
-            Calls are on Microsoft Teams — no download needed, just click the link in your confirmation email at the
+            Calls are on Microsoft Teams, no download needed, just click the link in your confirmation email at the
             time of your call.
           </p>
           <div className="mt-6">

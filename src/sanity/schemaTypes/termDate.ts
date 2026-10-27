@@ -21,7 +21,7 @@ export default defineType({
       title: "Confirmed",
       type: "boolean",
       initialValue: false,
-      description: "Only confirmed dates are ever shown on the public Term Dates page — leave off while a date is provisional.",
+      description: "Only confirmed dates are ever shown on the public Term Dates page, leave off while a date is provisional.",
     }),
   ],
   preview: {

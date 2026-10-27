@@ -17,7 +17,7 @@ export function ApplicationForm() {
   const [status, setStatus] = useState<Status>("idle");
   // Pre-fill from a register-interest submission made earlier on this same
   // device, so a family that already told us who they are doesn't have to
-  // retype it — and so the two submissions carry the same lead reference.
+  // retype it, and so the two submissions carry the same lead reference.
   // See src/lib/leadRef.ts for why this (not server-side dedup) is the
   // honest limit given this site's stateless PHP mail backend.
   const [prefill, setPrefill] = useState<StoredRegisterInterest | null>(null);
@@ -53,7 +53,7 @@ export function ApplicationForm() {
       <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center">
         <h3 className="font-serif text-xl font-semibold text-ink">Application received.</h3>
         <p className="mt-2 text-ink/70">
-          Thank you — we&apos;ve received your application and will be in touch with next steps, including any entry
+          Thank you, we&apos;ve received your application and will be in touch with next steps, including any entry
           assessment.
         </p>
       </div>
@@ -81,11 +81,11 @@ export function ApplicationForm() {
         <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-gold-700">Step 1 · About you</p>
         {prefill && (
           <p className="mb-4 rounded-lg bg-cream px-3 py-2 text-xs text-ink/70">
-            We&apos;ve filled in your details from when you registered interest — please check them and update anything that&apos;s changed.
+            We&apos;ve filled in your details from when you registered interest, please check them and update anything that&apos;s changed.
           </p>
         )}
         {/* key forces a remount once prefill loads from localStorage after
-            mount, so defaultValue (uncontrolled inputs) actually applies —
+            mount, so defaultValue (uncontrolled inputs) actually applies, 
             defaultValue only takes effect when a DOM node is first created. */}
         <div key={prefill ? "prefilled" : "empty"} className="grid gap-4 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">

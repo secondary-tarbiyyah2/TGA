@@ -1,12 +1,12 @@
 // Fires the "Generate timetable" GitHub Actions workflow
 // (.github/workflows/generate-timetable.yml) via GitHub's workflow_dispatch
 // API, so a Headteacher/Admin/Timetabler can start a new draft timetable
-// run from a button on /learn/admin/lessons — no GitHub access required
+// run from a button on /learn/admin/lessons, no GitHub access required
 // (reported feedback: "the user explicitly does not want to touch GitHub
 // at all"). This function only ever DISPATCHES the workflow; the workflow
 // itself still runs on its own time in GitHub Actions using the CP-SAT
 // solver against the live Supabase project, and writes its result back to
-// timetable_runs/timetable_slots/timetable_conflicts exactly as before —
+// timetable_runs/timetable_slots/timetable_conflicts exactly as before, 
 // the existing /learn/admin/lessons draft-review UI picks that up once it
 // appears, same as it already does for a manually-triggered run. This
 // function does not, and cannot, poll GitHub's own run status back to the
@@ -16,17 +16,17 @@
 // admin ("did a new draft appear").
 //
 // Deployed WITH JWT verification: only a caller holding the `timetabler`
-// permission or head_teacher/admin may call this at all — re-checked here
+// permission or head_teacher/admin may call this at all, re-checked here
 // server-side from THEIR OWN user_roles/user_permissions, never trusted
 // from the request body. Same requirement, same re-check shape, as
 // timetable-move and timetable-cover.
 //
-// Requires the `GH_DISPATCH_TOKEN` Edge Function secret — the SAME
+// Requires the `GH_DISPATCH_TOKEN` Edge Function secret, the SAME
 // fine-grained GitHub PAT already documented in SETUP.md for the Sanity
 // publish webhook (repository access: only this repo, permission:
 // "Actions: Read and write"). That scope already covers firing
 // workflow_dispatch on any workflow in this repo, so this reuses the exact
-// same secret rather than asking for a second one — see SETUP.md for the
+// same secret rather than asking for a second one, see SETUP.md for the
 // one manual step (adding it as an Edge Function secret too; it's already
 // a GitHub Actions repo secret from the Sanity webhook setup, but Edge
 // Function secrets and GitHub Actions repo secrets are two separate
@@ -65,7 +65,7 @@ Deno.serve(async (req) => {
 
   if (!ghDispatchToken) {
     return jsonResponse(
-      { ok: false, error: "not_configured", detail: "GH_DISPATCH_TOKEN Edge Function secret is not set — see SETUP.md." },
+      { ok: false, error: "not_configured", detail: "GH_DISPATCH_TOKEN Edge Function secret is not set, see SETUP.md." },
       500
     );
   }
@@ -100,7 +100,7 @@ Deno.serve(async (req) => {
   );
 
   // GitHub returns 204 No Content on a successful dispatch, with no run id
-  // in the response — there's genuinely nothing more specific to report
+  // in the response, there's genuinely nothing more specific to report
   // back than "it was accepted"; the admin sees the actual result once the
   // new draft appears in timetable_runs, same as a manual trigger today.
   if (dispatchRes.status !== 204) {

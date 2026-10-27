@@ -34,7 +34,7 @@ export type EvaluatedResult = {
  * group (AND or OR, per rule) against the family's answers and collects
  * whichever actions matched, in rule order. Deliberately simple and pure
  * (no network, no randomness) so the exact same function powers the public
- * result screen AND the admin's "preview as a parent" tool — they can never
+ * result screen AND the admin's "preview as a parent" tool, they can never
  * disagree about what a given set of answers produces.
  */
 export function evaluateRules(config: QuizConfig, answers: QuizAnswers): EvaluatedResult {

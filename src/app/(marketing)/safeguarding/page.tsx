@@ -63,8 +63,8 @@ export default async function SafeguardingPage() {
             <h2 className="font-serif text-2xl font-semibold text-ink">If you&apos;re worried about a child.</h2>
             <div className="mt-4 space-y-3 text-ink/75">
               <p>
-                If you have any concern about a child&apos;s safety or wellbeing — including something a child has
-                told you, or something you&apos;ve noticed yourself — please contact our Designated Safeguarding Lead
+                If you have any concern about a child&apos;s safety or wellbeing, including something a child has
+                told you, or something you&apos;ve noticed yourself, please contact our Designated Safeguarding Lead
                 directly, or email{" "}
                 <a href={`mailto:${email}`} className="font-semibold text-gold-700 underline">{email}</a>{" "}
                 marking your message &ldquo;Safeguarding&rdquo; so it reaches the right person without delay.

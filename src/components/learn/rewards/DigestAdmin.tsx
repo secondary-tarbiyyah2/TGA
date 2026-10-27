@@ -13,12 +13,12 @@ import { STATUS_TEXT, digestHref, nextSendLabel, stampLabel, weekLabel, type Dig
 
 // Headteacher/Admin tools for the Friday weekly digest (weekly-digest Edge
 // Function), as separate views rather than one long page:
-//   Overview  — the schedule, last and next send, families, opt-outs and how
+//   Overview, the schedule, last and next send, families, opt-outs and how
 //               the last run went;
-//   Families  — search and filter every family; Preview opens in a side panel;
-//   Preview   — one family's email as the parent sees it (its own page);
-//   History   — sent / failed counts for past weeks (weekly_digest_log, 0073);
-//   Settings  — which sections the email includes (digest_settings, 0132).
+//   Families, search and filter every family; Preview opens in a side panel;
+//   Preview, one family's email as the parent sees it (its own page);
+//   History, sent / failed counts for past weeks (weekly_digest_log, 0073);
+//   Settings, which sections the email includes (digest_settings, 0132).
 // Previews and tests are never sent to the family and never logged.
 
 type LogRow = { week_start: string; parent_user_id: string; status: "sending" | "sent" | "failed"; detail: string | null; sent_at: string | null };

@@ -126,9 +126,9 @@ export function BaselineImport() {
                 {parsed.map((p, i) => (
                   <tr key={i} className="border-t border-gold-light/60">
                     <td className="py-1.5 pr-3">{p.name || <span className="text-ink/50">(no name)</span>}</td>
-                    <td className="py-1.5 pr-3">{p.match ? <span className="text-teal-700">{p.match.name}{p.match.year ? ` · ${p.match.year}` : ""}</span> : <span className="text-red-700">No match — add on the pupil record</span>}</td>
+                    <td className="py-1.5 pr-3">{p.match ? <span className="text-teal-700">{p.match.name}{p.match.year ? ` · ${p.match.year}` : ""}</span> : <span className="text-red-700">No match, add on the pupil record</span>}</td>
                     <td className="py-1.5 pr-3">{p.taken || <span className="text-red-700">missing</span>}</td>
-                    <td className="py-1.5 pr-3 tabular-nums">{Object.entries(p.v).filter(([, v]) => v != null).map(([k, v]) => `${k} ${v}`).join(" · ") || "—"}</td>
+                    <td className="py-1.5 pr-3 tabular-nums">{Object.entries(p.v).filter(([, v]) => v != null).map(([k, v]) => `${k} ${v}`).join(" · ") || "–"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -150,7 +150,7 @@ export function BaselineImport() {
               return (
                 <li key={r.id} className="flex flex-wrap items-center justify-between gap-2 py-2">
                   <span><span className="font-medium text-ink">{r.children?.name ?? "Pupil"}</span> <span className="text-ink/65">· {r.test} · {new Date(r.taken_on).toLocaleDateString("en-GB")}</span></span>
-                  <span className="tabular-nums">{main ?? "—"} {b && <span className={`ml-1 rounded-full px-2 py-0.5 text-[10px] font-semibold ${b.cls}`}>{b.label}</span>}</span>
+                  <span className="tabular-nums">{main ?? "–"} {b && <span className={`ml-1 rounded-full px-2 py-0.5 text-[10px] font-semibold ${b.cls}`}>{b.label}</span>}</span>
                 </li>
               );
             })}

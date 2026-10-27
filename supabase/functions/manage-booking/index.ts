@@ -1,5 +1,5 @@
 // Lets a parent view, reschedule or cancel a booking using the token from
-// their confirmation email — no login required. The token is never stored
+// their confirmation email, no login required. The token is never stored
 // raw (see _shared/manageToken.ts), so this function re-hashes whatever
 // it's given and looks up by hash.
 import { createClient } from "jsr:@supabase/supabase-js@2";
@@ -52,7 +52,7 @@ Deno.serve(async (req) => {
   // email (the original ask that prompted this: /manage-booking with no
   // token just dead-ended at "use the link from your confirmation email",
   // with no way forward). Looks up by email instead of token, issues a
-  // FRESH manage token (the old one still works too — this doesn't revoke
+  // FRESH manage token (the old one still works too, this doesn't revoke
   // it), and emails a link. Always responds ok regardless of whether a
   // match was found, so this can't be used to enumerate which email
   // addresses have booked a call.
@@ -102,10 +102,10 @@ Deno.serve(async (req) => {
   if (!booking) return jsonResponse({ ok: false, error: "not_found" }, 404);
 
   if (action === "view") {
-    // In-house video call (BigBlueButton — same system already powering
+    // In-house video call (BigBlueButton, same system already powering
     // lessons) replaces the old external Teams link wherever BBB is
     // configured; Teams stays as the fallback for a deployment that hasn't
-    // set up BBB yet — never a broken/placeholder link either way. Only
+    // set up BBB yet, never a broken/placeholder link either way. Only
     // built within a join window around the booking (not days early): no
     // point spinning up a meeting, and the guest join URL, on BBB's server
     // for a call that isn't starting yet.
@@ -159,7 +159,7 @@ Deno.serve(async (req) => {
 
     const cancelIcs = buildIcs({
       uid: `booking-${booking.id}@globalacademy.tarbiyyah.co.uk`,
-      title: "Cancelled: Admissions call — Tarbiyyah Global Academy",
+      title: "Cancelled: Admissions call | Tarbiyyah Global Academy",
       description: "This call has been cancelled.",
       location: booking.teams_join_url || "",
       startsAt: new Date(booking.starts_at),
@@ -209,7 +209,7 @@ Deno.serve(async (req) => {
 
     const updateIcs = buildIcs({
       uid: `booking-${booking.id}@globalacademy.tarbiyyah.co.uk`,
-      title: "Updated: Admissions call — Tarbiyyah Global Academy",
+      title: "Updated: Admissions call | Tarbiyyah Global Academy",
       description: `Join on Microsoft Teams: ${booking.teams_join_url}`,
       location: booking.teams_join_url || "",
       startsAt: new Date(newStart),

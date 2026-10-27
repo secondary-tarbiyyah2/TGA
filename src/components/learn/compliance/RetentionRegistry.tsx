@@ -7,7 +7,7 @@ type ScheduleRow = { id: string; data_type: string; description: string; retenti
 type RunRow = { id: number; data_type: string; run_at: string; action: string; rows_affected: number };
 
 /**
- * Read-only view of the retention registry (0015_compliance.sql) — the
+ * Read-only view of the retention registry (0015_compliance.sql) · the
  * schedule itself and a log of what each retention job actually did on its
  * last few runs. Writes to retention_schedule stay Headteacher/Admin-only
  * and aren't exposed here (this is a compliance viewer, not a settings
@@ -28,7 +28,7 @@ export function RetentionRegistry() {
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Retention schedule</h2>
-      <p className="mt-1 text-xs text-ink/65">By data type, fed by the school&apos;s actual scheduled jobs — not a duplicated set of numbers.</p>
+      <p className="mt-1 text-xs text-ink/65">By data type, fed by the school&apos;s actual scheduled jobs, not a duplicated set of numbers.</p>
       <div className="mt-3 overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
@@ -65,7 +65,7 @@ export function RetentionRegistry() {
         {runs === null && <p className="text-sm text-ink/65">Loading…</p>}
         {(runs || []).map((r) => (
           <li key={r.id} className="text-sm text-ink/70">
-            {new Date(r.run_at).toLocaleString("en-GB")} — {r.data_type}: {r.action}d {r.rows_affected} row(s)
+            {new Date(r.run_at).toLocaleString("en-GB")} · {r.data_type}: {r.action}d {r.rows_affected} row(s)
           </li>
         ))}
         {runs?.length === 0 && <p className="text-sm text-ink/65">No retention jobs have run yet.</p>}

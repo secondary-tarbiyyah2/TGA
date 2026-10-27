@@ -23,7 +23,7 @@ export function RegisterInterestForm() {
       });
       if (!res.ok) throw new Error("failed");
       // Lets the admissions application form (if the same family completes
-      // it on this device) pre-fill and carry the same lead reference — see
+      // it on this device) pre-fill and carry the same lead reference, see
       // src/lib/leadRef.ts for why this is the honest limit of "one lead"
       // linking given this site's stateless PHP mail backend.
       saveRegisterInterest({

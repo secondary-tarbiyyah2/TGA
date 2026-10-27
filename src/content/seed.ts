@@ -1,7 +1,7 @@
 /**
  * Fallback content, used whenever Sanity isn't configured yet (see src/lib/sanity/env.ts).
  * Shapes mirror the Sanity schemas 1:1 so swapping in real CMS data is a no-op for pages.
- * Figures/copy marked isPlaceholder or "Draft / concept" are not confirmed — see task brief.
+ * Figures/copy marked isPlaceholder or "Draft / concept" are not confirmed, see task brief.
  */
 
 import { withDerivedFees, FEE_DEFAULTS, FEE_POLICY_DEFAULTS, type FeeSchedule } from "@/lib/fees";
@@ -37,11 +37,11 @@ const seedFeeBandsAnnual: { _id: string; yearGroupRange: string; order: number; 
 ];
 export const feeBands: FeeBand[] = seedFeeBandsAnnual.map((b) => withDerivedFees(b, FEE_DEFAULTS));
 
-// Fields left empty/undefined here are deliberately NOT invented — every page
+// Fields left empty/undefined here are deliberately NOT invented, every page
 // reading them must hide the corresponding section rather than show a blank
 // or fabricated value. Only figures the school has actually confirmed are
 // filled in (and only as a build-time fallback for when Sanity is
-// unreachable — the live values always come from Sanity once configured).
+// unreachable, the live values always come from Sanity once configured).
 export type Discount = {
   label: string;
   type: "percent" | "fixedAmount";
@@ -72,7 +72,7 @@ export type SiteSettings = {
   siblingDiscountNote?: string;
   // General-purpose discount catalogue for the fee estimator, beyond the
   // legacy sibling-discount fields above. Empty until the school confirms
-  // a real discount to add — see ground rule 2, never invent an entry here.
+  // a real discount to add, see ground rule 2, never invent an entry here.
   discounts?: Discount[];
   bookingWidgetUrl?: string;
   openEveningRecordingUrl?: string;
@@ -117,7 +117,7 @@ export const siteSettings: SiteSettings = {
 
 // Editable-page-section content: every field here is optional and mirrors
 // what's already hardcoded on the corresponding page. A page reads
-// `content.someField || "the existing default copy"` — so leaving Studio
+// `content.someField || "the existing default copy"`– so leaving Studio
 // blank changes nothing, and an admin can override any field without a
 // code change or redeploy waiting on anything but the next scheduled/
 // webhook-triggered rebuild.
@@ -165,7 +165,7 @@ export const faqEntries: FaqEntry[] = [
   { _id: "f2", category: "Admissions", order: 2, question: "Which year groups can apply?", answer: "Year 1 to Year 11 (children aged 5 to 15 on 31 August 2026). We do not run Reception. Year group is set by age in the normal English way; if you are not sure which year your child falls into, the application works it out from their date of birth." },
   { _id: "f3", category: "Admissions", order: 3, question: "How do I apply, step by step?", answer: "1) Register for an open evening or book a call if you want to talk to us first. 2) Complete the online application (about ten minutes) and pay the {{applicationFee}} application fee, by Friday 18 December 2026 for the founding cohort. 3) Your child sits a short online entry assessment and we have a conversation with you. 4) We offer a place in writing. 5) You accept by paying the {{registrationFee}} registration fee and the first fee payment (by Friday 8 January 2027) and signing the parent agreement on the portal. 6) Induction week (4 to 8 January), then live lessons begin on Monday 11 January 2027." },
   { _id: "f4", category: "Admissions", order: 4, question: "What is the entry assessment like?", answer: "It is short, age-appropriate and online: a reading and maths check, a few minutes of Qur'an reading or recitation at whatever level your child is at, and a friendly conversation. It is used to place your child in the right Qur'an and Arabic group and to plan support, not to turn children away. Nothing needs revising for it." },
-  { _id: "f5", category: "Admissions", order: 5, question: "Can we see the school before we commit?", answer: "Yes. We are holding two online open evenings — Thursday 26 November at 7:30pm and Sunday 6 December at 4:00pm (UK time) — where you meet the Headteacher and teachers and ask anything. After both open evenings there is a taster morning on Saturday 12 December: Years 1 to 6 at 10:00 and Years 7 to 11 at 11:15, where your child joins a real live lesson. Register from the Open evenings page; the joining link and a calendar invite are emailed to you." },
+  { _id: "f5", category: "Admissions", order: 5, question: "Can we see the school before we commit?", answer: "Yes. We are holding two online open evenings, Thursday 26 November at 7:30pm and Sunday 6 December at 4:00pm (UK time) · where you meet the Headteacher and teachers and ask anything. After both open evenings there is a taster morning on Saturday 12 December: Years 1 to 6 at 10:00 and Years 7 to 11 at 11:15, where your child joins a real live lesson. Register from the Open evenings page; the joining link and a calendar invite are emailed to you." },
   { _id: "f6", category: "Admissions", order: 6, question: "Can we apply from outside the UK?", answer: "Yes. Lessons run 09:00 to 15:00 UK time, so the Academy works well for families in the UK, Europe, North and West Africa, Turkey and the Middle East. Check the timings in your own time zone with the two-minute Is TGA right for us? check before you apply." },
   { _id: "f7", category: "Admissions", order: 7, question: "Can my child join part-way through the year?", answer: "Yes, where there is a place in the year group. The same application, assessment and induction steps apply, and fees are adjusted for the part of the year your child attends." },
   { _id: "f8", category: "Admissions", order: 8, question: "What is the difference between registering interest and applying?", answer: "Registering interest is a short form so we can keep you updated and invite you to events; it commits you to nothing. Applying is the full application with the {{applicationFee}} fee, and starts the admissions process." },
@@ -182,10 +182,10 @@ export const faqEntries: FaqEntry[] = [
   { _id: "f19", category: "Fees", order: 5, question: "What is not included in the fees?", answer: "International GCSE exam entry fees, which are paid directly to the exam centre; any printed textbooks or stationery you choose to buy; and your own device and internet connection." },
   { _id: "f20", category: "Fees", order: 6, question: "Is there a probationary period?", answer: "Yes. Every new pupil joins on a probationary basis for their first half term, so both the family and the Academy can judge whether online learning at TGA is right for the child. Progress is monitored closely with regular feedback during that time." },
   { _id: "f21", category: "Fees", order: 7, question: "What happens if we withdraw or miss a payment?", answer: "One half term's written notice is required to withdraw a pupil, using the Withdrawal Form on the website, and fees remain payable for the notice period. If a payment is missed you are given 14 days' written notice to pay before anything else happens; the Fees Policy on the Policies page sets out the full process, refunds and the 14-day cancellation right." },
-  { _id: "f22", category: "Curriculum", order: 1, question: "What does my child study?", answer: "Three strands every week: Qur'an, Arabic and Islamic Studies; the full national curriculum (English, Mathematics, Science, humanities, computing, art, PSHE and PE); and tarbiyyah — character, built around our RECIPE values. The exact subjects for each key stage are on the Curriculum page." },
+  { _id: "f22", category: "Curriculum", order: 1, question: "What does my child study?", answer: "Three strands every week: Qur'an, Arabic and Islamic Studies; the full national curriculum (English, Mathematics, Science, humanities, computing, art, PSHE and PE); and tarbiyyah, character, built around our RECIPE values. The exact subjects for each key stage are on the Curriculum page." },
   { _id: "f23", category: "Curriculum", order: 2, question: "Which GCSEs do you offer, and with which exam boards?", answer: "Every pupil sits Pearson Edexcel International GCSEs. Core: English Language (4EB1); English Literature (4ET1); Mathematics (4MA1); Science, as Double Award (4SD0) or separate Biology, Chemistry and Physics (4BI1, 4CH1, 4PH1); and Islamic Studies (4IS1). Pupils also choose two options from Arabic (Arabic as a first language, 4AA1), Business (4BS1), Computer Science (4CP0) and Geography (4GE1). In English Language, Mathematics, Computer Science, Geography and Arabic we teach the UK GCSE course (AQA or Pearson Edexcel) and add what the International GCSE exam needs. History is not offered at GCSE. Pupils sit their exams as private candidates at an approved centre near home, and we guide you through registering." },
   { _id: "f24", category: "Curriculum", order: 3, question: "Are the teachers qualified?", answer: "Yes. Every subject is taught by a qualified teacher with the relevant subject knowledge, an enhanced DBS check (or the overseas equivalent) and safeguarding training, and Qur'an is taught by experienced Qur'an teachers. Our Safer Recruitment Policy sets out every check we make." },
-  { _id: "f25", category: "Curriculum", order: 4, question: "How will I know how my child is doing?", answer: "Live progress on the Parent Portal (attendance, homework, Qur'an marks, merits and teacher messages), a written report each term, two parents' evenings a year, and a weekly tarbiyyah note from the form tutor. Entry and annual standardised assessments give an objective benchmark." },
+  { _id: "f25", category: "Curriculum", order: 4, question: "How will I know how my child is doing?", answer: "Live progress on the Parent Portal (attendance, homework, Qur'an marks, merits and teacher messages), a written report each term, two parents' evenings a year, and a weekly Tarbiyah Note from the form tutor. Entry and annual standardised assessments give an objective benchmark." },
   { _id: "f26", category: "Curriculum", order: 5, question: "Will my child be able to move back to a mainstream school?", answer: "Yes. Because we follow the national curriculum year by year and keep full records, pupils can transfer into any UK school at the matching year group, and we provide a transfer report." },
   { _id: "f27", category: "Islamic Studies", order: 1, question: "How is Qur'an taught, and is hifdh compulsory?", answer: "Qur'an is on the timetable every week in small groups set by ability, not by age: Qa'idah and early reading, fluent reading with tajweed, and memorisation. Every pupil memorises at a pace agreed with you; a full hifdh track is available for pupils and families who want it to be central." },
   { _id: "f28", category: "Islamic Studies", order: 2, question: "Will my child learn Arabic properly?", answer: "Yes. Arabic is taught as a language from Year 1, with reading, writing, speaking and grammar, so pupils connect with the Qur'an and classical texts directly. In Years 10 and 11 it can be taken as an option, taught from the Pearson Edexcel GCSE course and sat as the Pearson Edexcel International GCSE in Arabic as a first language (4AA1)." },
@@ -200,7 +200,7 @@ export const faqEntries: FaqEntry[] = [
   { _id: "f36", category: "SEND", order: 2, question: "Can you support a child who is behind in reading, maths or Qur'an?", answer: "Yes. The entry assessment shows us where your child is, and Qur'an and Arabic groups are set by level, not age. Small classes make catch-up practical, and the portal shows you progress week by week." },
   { _id: "f37", category: "SEND", order: 3, question: "Is the website and portal accessible?", answer: "Yes. Use the Aa button in the menu for larger text, easier reading and high contrast; the portal has the same options. Policies are available in accessible formats on request, and we welcome feedback on anything that is hard to use." },
   { _id: "f38", category: "Safeguarding", order: 1, question: "How do you keep children safe online?", answer: "Every member of staff is DBS-checked and safeguarding-trained; live lessons are recorded for safeguarding purposes and run on Academy accounts only; one-to-one sessions are scheduled through the Academy calendar, with the parent informed and the session recorded; and a Designated Safeguarding Lead oversees it all. The Safeguarding and Online Safety policies are on the Policies page." },
-  { _id: "f39", category: "Safeguarding", order: 2, question: "Who do I contact if I am worried about something?", answer: "Your child's form tutor for everyday matters, or the Designated Safeguarding Lead for any concern about a child's safety — their contact details are on the Policies page and in the portal. Concerns and complaints follow the published Concerns and Complaints Policy." },
+  { _id: "f39", category: "Safeguarding", order: 2, question: "Who do I contact if I am worried about something?", answer: "Your child's form tutor for everyday matters, or the Designated Safeguarding Lead for any concern about a child's safety, their contact details are on the Policies page and in the portal. Concerns and complaints follow the published Concerns and Complaints Policy." },
 ];
 
 export const faqCategories = ["Admissions", "School day", "Fees", "Curriculum", "Islamic Studies", "Technology", "SEND", "Safeguarding"] as const;
@@ -227,8 +227,8 @@ export const termDates: TermDate[] = [
 export type Testimonial = { _id: string; quote: string; attribution: string; role: "Parent" | "Student"; isPlaceholder: boolean; order?: number };
 
 export const testimonials: Testimonial[] = [
-  { _id: "ts1", role: "Parent", isPlaceholder: true, order: 1, quote: "Placeholder quote — real parent testimonials will replace this once launch families are enrolled.", attribution: "Parent, placeholder" },
-  { _id: "ts2", role: "Student", isPlaceholder: true, order: 2, quote: "Placeholder quote — real student testimonials will replace this once launch families are enrolled.", attribution: "Student, placeholder" },
+  { _id: "ts1", role: "Parent", isPlaceholder: true, order: 1, quote: "Placeholder quote, real parent testimonials will replace this once launch families are enrolled.", attribution: "Parent, placeholder" },
+  { _id: "ts2", role: "Student", isPlaceholder: true, order: 2, quote: "Placeholder quote, real student testimonials will replace this once launch families are enrolled.", attribution: "Student, placeholder" },
 ];
 
 export type StaffMember = { _id: string; name: string; roleTitle: string; qualifications?: string; introVideoUrl?: string; isPlaceholder: boolean; order?: number };
@@ -244,7 +244,7 @@ export type Differentiator = {
   summary: string;
   detail?: string;
   icon?: string;
-  status: "Confirmed commitment" | "Draft / concept — not yet confirmed";
+  status: "Confirmed commitment" | "Draft / concept, not yet confirmed";
   visible: boolean;
   order?: number;
 };
@@ -252,14 +252,14 @@ export type Differentiator = {
 export const differentiators: Differentiator[] = [
   {
     _id: "d2", order: 2, visible: true, icon: "quran",
-    status: "Draft / concept — not yet confirmed",
+    status: "Draft / concept, not yet confirmed",
     title: "Hifdh as a first-class subject",
-    summary: "Qur'an memorisation progress tracked on a dashboard alongside academic subjects — not an after-school extra.",
+    summary: "Qur'an memorisation progress tracked on a dashboard alongside academic subjects, not an after-school extra.",
     detail: "Hifdh sits on the timetable and the progress report with the same weight as English or Maths, not as a footnote club.",
   },
   {
     _id: "d3", order: 3, visible: true, icon: "family",
-    status: "Draft / concept — not yet confirmed",
+    status: "Draft / concept, not yet confirmed",
     title: "Big Sibling mentorship",
     summary: "Peer mentors from Tarbiyyah Primary and Secondary support Academy pupils, connecting the whole Tarbiyyah family.",
   },
@@ -267,32 +267,32 @@ export const differentiators: Differentiator[] = [
     _id: "d5", order: 5, visible: true, icon: "users",
     status: "Confirmed commitment",
     title: "Meet the Teachers",
-    summary: "Every teacher is public on our website — qualifications and a short intro video, before you ever apply.",
+    summary: "Every teacher is public on our website, qualifications and a short intro video, before you ever apply.",
   },
   {
     _id: "d6", order: 6, visible: true, icon: "note",
     status: "Confirmed commitment",
     title: "Weekly Tarbiyah Note",
-    summary: "A personal weekly update on your child's character and akhlaq from their form tutor — separate from academic reports.",
+    summary: "A personal weekly update on your child's character and akhlaq from their form tutor, separate from academic reports.",
   },
   {
     _id: "d7", order: 7, visible: true, icon: "portfolio",
-    status: "Draft / concept — not yet confirmed",
+    status: "Draft / concept, not yet confirmed",
     title: "Student portfolio",
     summary: "Recitation recordings, projects and artwork collected across the year into one growing portfolio.",
   },
   {
     _id: "d8", order: 8, visible: true, icon: "calendar",
-    status: "Draft / concept — not yet confirmed",
+    status: "Draft / concept, not yet confirmed",
     title: "Bookable teacher office hours",
-    summary: "1:1 time with your child's teacher, booked directly — no waiting for parents' evening.",
+    summary: "1:1 time with your child's teacher, booked directly, no waiting for parents' evening.",
   },
   {
     _id: "d9", order: 9, visible: true, icon: "heart",
     status: "Confirmed commitment",
     title: "Transparent bursary seats",
     // The real count is set by an admin (public.site_settings.bursary_seats,
-    // migration 0020) and substituted into this summary on the homepage —
+    // migration 0020) and substituted into this summary on the homepage, 
     // see BursarySeatsSummary. This fallback text is only ever shown if
     // that live value can't be reached, so it names no number.
     summary: "A tracked number of bursary/scholarship seats each year, published openly rather than handled quietly on request.",
@@ -317,17 +317,17 @@ export type PolicyLink = {
 };
 
 // Every policy here was issued September 2026 for the 2026–27 academic year,
-// with a next review due August 2027 — the standard cycle stated on each
+// with a next review due August 2027, the standard cycle stated on each
 // document itself (see e.g. the Concerns and Complaints Policy).
 const ISSUED = "2026-09-01";
 const NEXT_REVIEW = "2027-08-31";
 
 // parentQuestionCategory groups the Policies page by what a parent is
 // actually trying to find out, rather than by DfE required/published
-// category (that split is kept too — see `category` — just shown as a badge
+// category (that split is kept too, see `category`– just shown as a badge
 // now instead of as the section headings). This grouping is an editorial/UX
 // call, not a new fact: every document keeps its existing DfE category,
-// number and file — only how they're grouped on the page changes.
+// number and file, only how they're grouped on the page changes.
 export const policyLinks: PolicyLink[] = [
   { _id: "p01", number: "01", order: 1, category: "required", featured: true, parentQuestionCategory: "safety", title: "Child Protection and Safeguarding Policy", fileUrl: "/policies/01-child-protection-and-safeguarding.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
   { _id: "policy-02-online-safety-and-acceptable-use", number: "02", order: 2, category: "published", parentQuestionCategory: "safety", title: "Online Safety and Acceptable Use Policy", fileUrl: "/policies/02-online-safety-and-acceptable-use.pdf", lastReviewed: ISSUED, nextReview: NEXT_REVIEW },
@@ -370,6 +370,6 @@ export type CurriculumDocument = {
 };
 
 // No real curriculum overview/scheme-of-work documents have been produced
-// yet — deliberately empty rather than invented, so the section on each
+// yet, deliberately empty rather than invented, so the section on each
 // /curriculum/[stage] page stays hidden until an admin uploads a real one.
 export const curriculumDocuments: CurriculumDocument[] = [];

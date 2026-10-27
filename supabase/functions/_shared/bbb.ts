@@ -3,7 +3,7 @@
 // Placement note (deliberate deviation from the brief's suggested
 // `src/lib/bbb.ts`): this project's Next.js site is a static export with NO
 // server runtime at all (see next.config.ts `output: "export"` and
-// DESIGN.md) — every file under `src/` ships to the browser bundle or runs
+// DESIGN.md) · every file under `src/` ships to the browser bundle or runs
 // only at build time on GitHub Actions. There is no server-side request
 // handler in `src/` for a "server-side only" module to live in safely. The
 // only place in this codebase that already holds a secret and talks to a
@@ -12,11 +12,11 @@
 // follows that exact, already-established pattern instead of inventing a
 // dead (or dangerous) `src/lib/bbb.ts` that nothing server-side would ever
 // import. BBB_SERVER_URL / BBB_SECRET are read from Edge Function
-// environment only — never referenced from src/.
+// environment only, never referenced from src/.
 //
 // BBB API reference: https://docs.bigbluebutton.org/development/api
 // Auth: every call is a GET/POST with its params (in insertion order) plus
-// the shared secret hashed together as `checksum` — BBB rejects any request
+// the shared secret hashed together as `checksum`– BBB rejects any request
 // whose checksum doesn't match. No SDK needed; this is the documented norm.
 
 // Accept the base URL however it's pasted: "https://bbb.example.com",
@@ -30,7 +30,7 @@ const BBB_SERVER_URL = (Deno.env.get("BBB_SERVER_URL") || "")
 const BBB_SECRET = Deno.env.get("BBB_SECRET") || "";
 // BBB >= 2.6 defaults to sha256 checksums (api version 2.0); older servers
 // need "sha1". Configurable so this doesn't silently break against an
-// older self-hosted server — see SETUP.md for how to check your server's
+// older self-hosted server, see SETUP.md for how to check your server's
 // version.
 const CHECKSUM_ALGO = (Deno.env.get("BBB_CHECKSUM_ALGORITHM") || "sha256").toLowerCase();
 
@@ -53,7 +53,7 @@ async function checksum(callName: string, query: string): Promise<string> {
 }
 
 /** Builds a fully-signed BBB API URL for the given call and params. Never
- * logged, never returned to a client — every caller of this module runs
+ * logged, never returned to a client, every caller of this module runs
  * server-side inside an Edge Function. */
 export async function signedUrl(callName: string, params: Record<string, string | undefined>): Promise<string> {
   const usp = new URLSearchParams();
@@ -85,15 +85,15 @@ export type BbbRole = "moderator" | "viewer";
 
 /**
  * Idempotently ensures a meeting exists for this lesson instance and
- * returns its meetingID (the lesson_instance.id itself — deterministic, so
+ * returns its meetingID (the lesson_instance.id itself, deterministic, so
  * "create" is safe to call every time someone joins; BBB returns success
  * for an already-running meeting with the same ID rather than erroring).
  *
  * Safety settings applied here directly answer the ground rules:
- *  - guestPolicy=ASK_MODERATOR: BBB's waiting room — no one enters live
+ *  - guestPolicy=ASK_MODERATOR: BBB's waiting room, no one enters live
  *    until the moderator (teacher) admits them.
  *  - lockSettingsDisablePrivateChat=true: BBB's in-meeting chat becomes
- *    whole-class/moderated only — no unsupervised 1:1 teacher-student
+ *    whole-class/moderated only, no unsupervised 1:1 teacher-student
  *    private channel is possible inside the call (see final report for the
  *    residual-risk note on this).
  *  - record=<recordingEnabled>, autoStartRecording=false: recording is
@@ -121,7 +121,7 @@ export async function ensureMeeting(opts: {
     muteOnStart: "true",
     logoutURL: "about:blank",
     // Explicit rather than relying on BBB's own server default (which
-    // varies by version/config) — the moderator's in-call toolbar gets a
+    // varies by version/config) · the moderator's in-call toolbar gets a
     // native "Create breakout rooms" button. breakoutRoomsRecord stays
     // false: recording only ever happens in the main room, on an explicit
     // moderator action (see setRecordingStatus), never automatically in a
@@ -141,7 +141,7 @@ export async function ensureMeeting(opts: {
 }
 
 /** Builds a role-scoped join URL. This is the ONLY thing ever returned to
- * the client — never the passwords, never the raw secret. */
+ * the client, never the passwords, never the raw secret. */
 export async function buildJoinUrl(opts: {
   meetingId: string;
   fullName: string;
@@ -158,11 +158,11 @@ export async function buildJoinUrl(opts: {
 }
 
 /**
- * Guest join URL for someone with no Supabase account at all — a
+ * Guest join URL for someone with no Supabase account at all, a
  * prospective parent booking an admissions call, who we can't ask to sign
  * in before we've even offered them a place. Relies on guestPolicy=
  * ASK_MODERATOR (set in ensureMeeting): no password is passed, so BBB puts
- * them in its waiting room until the staff moderator admits them — same
+ * them in its waiting room until the staff moderator admits them, same
  * safeguard as an authenticated viewer, just without the login step.
  */
 export async function buildGuestJoinUrl(opts: { meetingId: string; fullName: string }): Promise<string> {
@@ -205,12 +205,12 @@ export type BbbRecording = {
   meetingId: string;
   startTime: number | null;
   endTime: number | null;
-  playbackUrl: string | null; // streaming playback (presentation format) — never a raw download
-  rawDownloadUrl: string | null; // "podcast"/raw format if published — ONLY ever surfaced by recording-export
+  playbackUrl: string | null; // streaming playback (presentation format) · never a raw download
+  rawDownloadUrl: string | null; // "podcast"/raw format if published, ONLY ever surfaced by recording-export
 };
 
 /** Lists recordings for a meeting. `getRecordings` doesn't require the
- * secret to be scoped per-role — it's the caller's job (the Edge Function)
+ * secret to be scoped per-role, it's the caller's job (the Edge Function)
  * to decide who ever sees the result of this call. */
 export async function listRecordings(meetingId: string): Promise<BbbRecording[]> {
   const url = await signedUrl("getRecordings", { meetingID: meetingId });
@@ -250,7 +250,7 @@ export async function deleteRecording(recordId: string): Promise<{ ok: boolean }
   return { ok: textBetween(text, "returncode") === "SUCCESS" };
 }
 
-/** Deterministic, per-lesson-instance passwords — never stored anywhere
+/** Deterministic, per-lesson-instance passwords, never stored anywhere
  * (not in the DB, not logged); derived on demand from the server secret so
  * every Edge Function call reconstructs the same pair without needing a
  * "meeting passwords" table (data minimisation: one less place holding

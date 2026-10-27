@@ -1,16 +1,16 @@
 <?php
 /**
  * Email settings for the register-interest and application form handlers
- * (register.php / apply.php) — TEMPLATE.
+ * (register.php / apply.php) · TEMPLATE.
  *
  * Copy this file to register.config.php in this same directory (it's
- * gitignored — never commit the real one, it holds a live Brevo API key).
+ * gitignored, never commit the real one, it holds a live Brevo API key).
  * If this server already ran the legacy static site, a real
- * register.config.php may already exist here from that deployment — same
+ * register.config.php may already exist here from that deployment, same
  * filename, same shape, so it should keep working unchanged.
  *
  * ── HOW MAIL LEAVES THIS SERVER ──────────────────────────────────────────
- * Via the Brevo HTTPS API (port 443), NOT SMTP — see the original
+ * Via the Brevo HTTPS API (port 443), NOT SMTP, see the original
  * legacy-static/register.config.example.php for the full reasoning (GoDaddy
  * shared hosts firewall outbound SMTP; Brevo is what tarbiyyah.co.uk's SPF/
  * DKIM records authorise). register.php/apply.php fall back to PHP mail()

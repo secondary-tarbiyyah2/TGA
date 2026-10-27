@@ -14,14 +14,14 @@ import { keyStages as seedKeyStages, type KeyStage } from "@/content/curriculum"
 /** Every getter below reads live content from Supabase (0025_website_content.sql
  * and later migrations), and falls back to bundled seed content (same shape)
  * whenever Supabase isn't configured or a query fails/returns nothing. This
- * used to read from Sanity — moved so every piece of content (marketing site
+ * used to read from Sanity, moved so every piece of content (marketing site
  * + the /learn portal) is managed from one place, editable at
  * /learn/admin/content, rather than a separate CMS with its own login.
  *
  * This site is statically exported (output: "export"), so these queries only
- * ever run at build time — there is no server to re-fetch at request time.
+ * ever run at build time, there is no server to re-fetch at request time.
  * An edit in /learn/admin/content appears on the next rebuild/redeploy
- * (triggered automatically on save — see that page), not instantly.
+ * (triggered automatically on save, see that page), not instantly.
  *
  * Exceptions that are live immediately: the Policies page, the FAQs page and
  * the open-evening page re-read the database in the visitor's browser (the

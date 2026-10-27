@@ -18,7 +18,7 @@ const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 function SignIn() {
   // Password sign-in first: magic-link email delivery is currently broken
   // (Resend sending-domain isn't verified), so password is the only option
-  // that actually works right now. Both stay available — once email is
+  // that actually works right now. Both stay available, once email is
   // fixed, magic link works again with no code change needed.
   const [mode, setMode] = useState<"password" | "link">("password");
   const [email, setEmail] = useState("");
@@ -35,7 +35,7 @@ function SignIn() {
     if (error) {
       // invalid_credentials covers both "wrong password" and "no such
       // account" (Supabase deliberately doesn't distinguish, to avoid
-      // leaking which emails exist) — anything else is a real error
+      // leaking which emails exist) · anything else is a real error
       // (network, rate limit, etc.) and shouldn't be misreported as that.
       setError(
         error.code === "invalid_credentials"
@@ -51,7 +51,7 @@ function SignIn() {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     // shouldCreateUser: false is the whole "invite-only, no public sign-up"
-    // mechanism — Supabase Auth refuses to send a link for an email with no
+    // mechanism, Supabase Auth refuses to send a link for an email with no
     // existing auth.users account, no custom check needed.
     const { error } = await supabase.auth.signInWithOtp({ email, options: { shouldCreateUser: false } });
     if (error) setError("Something went wrong. If you're expecting staff access, contact an admin.");
@@ -100,7 +100,7 @@ function SignIn() {
       )}
       {error && <p role="alert" className="mt-3 text-sm text-red-700">{error}</p>}
       <p className="mt-4 text-xs text-ink/65">
-        Staff accounts are created by an admin — this only works for emails already on file.
+        Staff accounts are created by an admin, this only works for emails already on file.
       </p>
     </div>
   );
@@ -112,7 +112,7 @@ function ForcePasswordChange({ userId, onDone }: { userId: string; onDone: () =>
   const [confirm, setConfirm] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  // True once auth.updateUser has actually succeeded — lets a failed retry
+  // True once auth.updateUser has actually succeeded, lets a failed retry
   // below skip re-submitting the password (which would just no-op) and go
   // straight to the flag update, instead of asking for it again.
   const [passwordChanged, setPasswordChanged] = useState(false);
@@ -141,14 +141,14 @@ function ForcePasswordChange({ userId, onDone }: { userId: string; onDone: () =>
       }
       setPasswordChanged(true);
     }
-    // Password is already changed at this point either way — a failure here
+    // Password is already changed at this point either way, a failure here
     // only means the "ask again next time" flag didn't clear, so it's safe
     // (and necessary) to let the user retry just this part without
     // re-entering a password that's already set.
     const { error: flagErr } = await supabase.from("profiles").update({ must_change_password: false }).eq("id", userId);
     setBusy(false);
     if (flagErr) {
-      setError("Your password was changed, but we couldn't finish updating your account — please try again.");
+      setError("Your password was changed, but we couldn't finish updating your account, please try again.");
       return;
     }
     onDone();
@@ -157,7 +157,7 @@ function ForcePasswordChange({ userId, onDone }: { userId: string; onDone: () =>
   return (
     <div className="mx-auto max-w-sm rounded-2xl border border-gold-500/40 bg-gold-50 p-6">
       <h2 className="font-serif text-lg font-semibold text-ink">Set a new password</h2>
-      <p className="mt-1 text-sm text-ink/70">You&apos;re signing in with a temporary password — choose a new one to continue.</p>
+      <p className="mt-1 text-sm text-ink/70">You&apos;re signing in with a temporary password, choose a new one to continue.</p>
       <form onSubmit={handleSubmit} className="mt-4 space-y-3">
         <label className="block text-sm font-medium text-ink">
           New password
@@ -185,7 +185,7 @@ function TeacherDashboard({ staff }: { staff: StaffRow }) {
       </div>
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <p className="text-ink/75">
-          Your teacher dashboard — lessons, homework, attendance and grades will live here once the Learning
+          Your teacher dashboard, lessons, homework, attendance and grades will live here once the Learning
           Platform is built. For now this confirms your account is set up correctly with teacher access.
         </p>
       </div>
@@ -353,7 +353,7 @@ function Dashboard({ session }: { session: Session }) {
             <li key={b.id} className="flex flex-wrap items-center justify-between gap-2 p-4">
               <div>
                 <p className="font-medium text-ink">{new Date(b.starts_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })}</p>
-                <p className="text-sm text-ink/65">{b.contact_name} — {b.contact_email}</p>
+                <p className="text-sm text-ink/65">{b.contact_name} · {b.contact_email}</p>
               </div>
               <div className="flex gap-2">
                 <button type="button" onClick={() => setOutcome(b.id, "completed")} className="rounded-full border border-gold-500 px-3 py-1.5 text-xs text-gold-700 hover:bg-cream">Mark completed</button>
@@ -370,7 +370,7 @@ function Dashboard({ session }: { session: Session }) {
           {past.length === 0 && <li className="p-4 text-sm text-ink/65">Nothing here yet.</li>}
           {past.map((b) => (
             <li key={b.id} className="flex items-center justify-between p-4 text-sm">
-              <span>{new Date(b.starts_at).toLocaleDateString("en-GB")} — {b.contact_name}</span>
+              <span>{new Date(b.starts_at).toLocaleDateString("en-GB")} · {b.contact_name}</span>
               <span className="text-ink/65">{b.status}</span>
             </li>
           ))}

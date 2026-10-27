@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import type { FaqEntry } from "@/content/seed";
 
 // Grouped by the question a parent actually has, rather than the internal
-// DfE-style category (Admissions/Fees/Curriculum/...) — same idea as the
+// DfE-style category (Admissions/Fees/Curriculum/...) · same idea as the
 // Policies page's parent-question grouping. Each internal category maps to
 // exactly one group; no FAQ content changes, just how it's organised.
 const PARENT_GROUPS: { heading: string; categories: string[] }[] = [

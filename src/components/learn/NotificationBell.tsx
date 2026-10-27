@@ -11,7 +11,7 @@ type Signal = { id: string; message: string; href: string; createdAt: string };
  * A real notification centre for admin-ish roles, aggregated from the
  * SAME live tables the admin dashboard's "At a glance" tiles already
  * query (absence alerts via audit_log, outstanding_signatures, flagged
- * messages) — never a separate notifications table that could drift from
+ * messages) · never a separate notifications table that could drift from
  * what's actually true. "Unread" is tracked per-user via
  * notification_reads.last_read_at (0024): opening the dropdown marks
  * everything currently shown as read by bumping that timestamp.
@@ -32,7 +32,7 @@ export function NotificationBell({ userId }: { userId: string }) {
       const [{ data: absences }, { data: outstanding }, flaggedResult, { data: feedback }] = await Promise.all([
         supabase.from("audit_log").select("id, created_at").eq("action", "ABSENCE_ALERT_SENT").order("created_at", { ascending: false }).limit(10),
         // outstanding_signatures is current STATE (who hasn't signed right
-        // now), not an event log — it has no created_at to know "when this
+        // now), not an event log, it has no created_at to know "when this
         // became outstanding", so these are always listed for visibility
         // but deliberately excluded from the unread badge count below
         // rather than guessing a timestamp that would either miscount as

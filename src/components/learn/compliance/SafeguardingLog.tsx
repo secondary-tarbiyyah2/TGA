@@ -142,7 +142,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
           {attachments === null && <p className="text-sm text-ink/65">Loading…</p>}
           {(attachments || []).map((a) => (
             <li key={a.id} className="text-sm text-ink/70">
-              {a.filename} — {new Date(a.uploaded_at).toLocaleDateString("en-GB")}
+              {a.filename} · {new Date(a.uploaded_at).toLocaleDateString("en-GB")}
             </li>
           ))}
           {attachments?.length === 0 && <p className="text-sm text-ink/65">No attachments.</p>}
@@ -193,7 +193,7 @@ export function SafeguardingLog() {
               onClick={() => setSelected(selected === c.id ? null : c.id)}
               className="w-full rounded-lg border border-gold-light/40 p-3 text-left text-sm hover:bg-cream"
             >
-              <span className="font-semibold">{c.subject_description}</span> — {c.status} ({c.severity}) · {new Date(c.created_at).toLocaleDateString("en-GB")}
+              <span className="font-semibold">{c.subject_description}</span> · {c.status} ({c.severity}) · {new Date(c.created_at).toLocaleDateString("en-GB")}
             </button>
             {selected === c.id && <ConcernDetail concern={c} onChanged={load} />}
           </li>

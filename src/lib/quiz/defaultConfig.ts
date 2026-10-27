@@ -6,18 +6,18 @@ import type { QuizConfig } from "./schema";
  * Supabase connection configured yet, or none published yet), and also the
  * starting point an admin's first draft is created from in the quiz
  * builder. All copy here is careful, honest wording the school actually
- * stands behind — nothing here is a placeholder.
+ * stands behind, nothing here is a placeholder.
  */
 export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
   schemaVersion: 1,
   intro: {
     kicker: "Is TGA right for your child?",
     title: "Find out in two minutes.",
-    body: "Five short questions. You get your child's year group and key stage, what the live day looks like in your own time zone, the fee band, and the next step — no generic form.",
+    body: "Five short questions. You get your child's year group and key stage, what the live day looks like in your own time zone, the fee band, and the next step, no generic form.",
   },
   resultHeading: "{name}, here is how Tarbiyyah Global Academy would work for your child.",
   disclaimer:
-    "This is a personalised estimate based on your answers, not a placement decision — starting points and timings are confirmed during application.",
+    "This is a personalised estimate based on your answers, not a placement decision, starting points and timings are confirmed during application.",
   consentText:
     "You can email me this plan as a PDF. I agree to be contacted by Tarbiyyah Global Academy about my child's place, and understand I can withdraw consent at any time.",
   questions: [
@@ -105,7 +105,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       order: 1,
       match: "all",
       conditions: [{ questionKey: "arabic_level", operator: "equals", value: "none" }],
-      action: { type: "recommend_start", subject: "arabic", startingPoint: "Arabic Foundations — letters, sounds and first vocabulary" },
+      action: { type: "recommend_start", subject: "arabic", startingPoint: "Arabic Foundations, letters, sounds and first vocabulary" },
     },
     {
       id: "rule-arabic-beginner",
@@ -114,7 +114,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       order: 2,
       match: "all",
       conditions: [{ questionKey: "arabic_level", operator: "equals", value: "beginner" }],
-      action: { type: "recommend_start", subject: "arabic", startingPoint: "Early Reading Arabic — building on known letters and sounds" },
+      action: { type: "recommend_start", subject: "arabic", startingPoint: "Early Reading Arabic, building on known letters and sounds" },
     },
     {
       id: "rule-arabic-conversational",
@@ -123,7 +123,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       order: 3,
       match: "all",
       conditions: [{ questionKey: "arabic_level", operator: "equals", value: "conversational" }],
-      action: { type: "recommend_start", subject: "arabic", startingPoint: "Intermediate Arabic — reading fluency and grammar" },
+      action: { type: "recommend_start", subject: "arabic", startingPoint: "Intermediate Arabic, reading fluency and grammar" },
     },
     {
       id: "rule-arabic-fluent",
@@ -132,7 +132,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       order: 4,
       match: "all",
       conditions: [{ questionKey: "arabic_level", operator: "equals", value: "fluent" }],
-      action: { type: "recommend_start", subject: "arabic", startingPoint: "Advanced Arabic — full fluency and literary texts" },
+      action: { type: "recommend_start", subject: "arabic", startingPoint: "Advanced Arabic, full fluency and literary texts" },
     },
     {
       id: "rule-quran-none",
@@ -141,7 +141,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       order: 5,
       match: "all",
       conditions: [{ questionKey: "quran_level", operator: "equals", value: "none" }],
-      action: { type: "recommend_start", subject: "quran", startingPoint: "Qa'idah — Arabic letters and Qur'anic reading from the very start" },
+      action: { type: "recommend_start", subject: "quran", startingPoint: "Qa'idah, Arabic letters and Qur'anic reading from the very start" },
     },
     {
       id: "rule-quran-reading",
@@ -150,7 +150,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       order: 6,
       match: "all",
       conditions: [{ questionKey: "quran_level", operator: "equals", value: "reading" }],
-      action: { type: "recommend_start", subject: "quran", startingPoint: "Qur'an Reading — completing Qa'idah into fluent recitation" },
+      action: { type: "recommend_start", subject: "quran", startingPoint: "Qur'an Reading, completing Qa'idah into fluent recitation" },
     },
     {
       id: "rule-quran-reading-fluent",
@@ -159,7 +159,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       order: 7,
       match: "all",
       conditions: [{ questionKey: "quran_level", operator: "equals", value: "reading-fluent" }],
-      action: { type: "recommend_start", subject: "quran", startingPoint: "Hifdh Introduction — first surahs and memorisation technique" },
+      action: { type: "recommend_start", subject: "quran", startingPoint: "Hifdh Introduction, first surahs and memorisation technique" },
     },
     {
       id: "rule-quran-hifz-in-progress",
@@ -168,7 +168,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       order: 8,
       match: "all",
       conditions: [{ questionKey: "quran_level", operator: "equals", value: "hifz-in-progress" }],
-      action: { type: "recommend_start", subject: "quran", startingPoint: "Hifdh Continuation — an assessment places your child at their current juz'" },
+      action: { type: "recommend_start", subject: "quran", startingPoint: "Hifdh Continuation, an assessment places your child at their current juz'" },
     },
     {
       id: "rule-hifz-central-flag",
@@ -183,7 +183,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       action: {
         type: "show_flag",
         tone: "info",
-        text: "Since Arabic is brand new and hifdh is your main priority, we'd start with Arabic Foundations running alongside Qa'idah — hifdh pace naturally follows once early reading is secure.",
+        text: "Since Arabic is brand new and hifdh is your main priority, we'd start with Arabic Foundations running alongside Qa'idah, hifdh pace naturally follows once early reading is secure.",
       },
     },
     {
@@ -195,7 +195,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       conditions: [{ questionKey: "hifz_role", operator: "equals", value: "central" }],
       action: {
         type: "show_text",
-        text: "Hifdh sits on the timetable with the same weight as English or Maths — not an after-school extra.",
+        text: "Hifdh sits on the timetable with the same weight as English or Maths, not an after-school extra.",
       },
     },
     {
@@ -219,7 +219,7 @@ export const DEFAULT_QUIZ_CONFIG: QuizConfig = {
       conditions: [{ questionKey: "hifz_role", operator: "equals", value: "not-yet" }],
       action: {
         type: "show_text",
-        text: "The core offer is the full national curriculum — Qur'an and Islamic Studies run alongside it, available whenever you're ready to make more of it.",
+        text: "The core offer is the full national curriculum, Qur'an and Islamic Studies run alongside it, available whenever you're ready to make more of it.",
       },
     },
     {

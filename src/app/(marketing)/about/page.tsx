@@ -16,6 +16,15 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const defaultRecipe = aboutDefaults.recipe_items;
+// The Arabic term behind each value, shown the same way on every card.
+const RECIPE_ARABIC: Record<string, { arabic: string; term: string }> = {
+  Resilience: { arabic: "صَبْر", term: "sabr" },
+  Eeman: { arabic: "إِيمَان", term: "eeman" },
+  Contentment: { arabic: "شُكْر", term: "shukr" },
+  Integrity: { arabic: "أَمَانَة", term: "amanah" },
+  Progress: { arabic: "تَقَدُّم", term: "taqaddum" },
+  Excellence: { arabic: "إِحْسَان", term: "ihsan" },
+};
 
 export default async function AboutPage() {
   const [content, settings] = await Promise.all([getAboutContent(), getSiteSettings()]);
@@ -31,7 +40,7 @@ export default async function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             {content.heroBody ||
-              "Tarbiyyah Global Academy is a specialist online school where academic excellence meets Islamic values — preparing children for success in this life and the Hereafter."}
+              "Tarbiyyah Global Academy is a specialist online school where academic excellence meets Islamic values, preparing children for success in this life and the Hereafter."}
           </p>
         </Container>
       </section>
@@ -60,18 +69,27 @@ export default async function AboutPage() {
 
       <section className="geo-texture bg-cream section-pad">
         <Container>
-          <Kicker>Our character framework — RECIPE</Kicker>
+          <Kicker>Our character framework, RECIPE</Kicker>
           <h2 className="font-serif text-3xl font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
-          <ol className="mt-10 grid grid-cols-3 gap-3 md:grid-cols-6" aria-label="The six RECIPE values">
-            {recipe.map((r) => (
-              <li key={r.word} className="flex flex-col rounded-2xl border border-gold-light/60 bg-white p-4 text-center shadow-sm">
-                <span aria-hidden="true" className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-ink-900 font-serif text-2xl font-bold text-gold-300">{r.letter}</span>
-                <h3 className="mt-3 font-semibold text-ink">{r.word}</h3>
-                <p className="mt-1 text-xs leading-relaxed text-ink/70">{r.body}</p>
-              </li>
-            ))}
+          <ol className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6" aria-label="The six RECIPE values">
+            {recipe.map((r) => {
+              const ar = RECIPE_ARABIC[r.word];
+              return (
+                <li key={r.word} className="flex h-full flex-col items-center rounded-2xl border border-gold-light/60 bg-white px-4 py-6 text-center shadow-sm">
+                  <span aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-xl bg-ink-900 font-serif text-2xl font-bold text-gold-300">{r.letter}</span>
+                  <h3 className="mt-4 font-semibold text-ink">{r.word}</h3>
+                  {ar && (
+                    <p className="mt-2 flex h-12 flex-col items-center justify-center">
+                      <span lang="ar" dir="rtl" className="text-xl leading-none text-teal-700">{ar.arabic}</span>
+                      <span className="mt-1.5 text-xs italic text-ink/60">{ar.term}</span>
+                    </p>
+                  )}
+                  <p className="mt-3 text-sm leading-relaxed text-ink/70">{r.body}</p>
+                </li>
+              );
+            })}
           </ol>
-          <p className="mt-4 text-sm text-ink/70">Read together, the six letters spell RECIPE: one value a half term, recognised with merits, a RECIPE Star in every class and a character comment on every report.</p>
+          <p className="mt-6 text-sm text-ink/70">Read together, the six letters spell RECIPE: one value a half term, recognised with merits, a RECIPE Star in every class and a character comment on every report.</p>
         </Container>
       </section>
 
@@ -82,11 +100,11 @@ export default async function AboutPage() {
             <h2 className="font-serif text-3xl font-semibold text-ink">{content.familyHeading || "10+ years, three established schools."}</h2>
             <p className="mt-4 text-ink/75">
               {content.familyBody ||
-                "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools — Tarbiyyah Primary, Tarbiyyah Secondary School for Boys, and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world."}
+                "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools, Tarbiyyah Primary, Tarbiyyah Secondary School for Boys, and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world."}
             </p>
           </div>
           {/* Same Site Settings field the homepage's welcome quote uses (see
-              src/app/(marketing)/page.tsx) — this used to be a hardcoded
+              src/app/(marketing)/page.tsx) · this used to be a hardcoded
               quote with a hardcoded name here, out of step with the
               homepage's "only a real, admin-confirmed quote appears"
               pattern and liable to go stale/wrong independently of it. */}

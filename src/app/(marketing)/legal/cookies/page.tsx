@@ -28,7 +28,7 @@ export default function CookiePolicyPage() {
             <h2 className="font-serif text-lg font-semibold text-ink">Analytics</h2>
             <p className="mt-1 text-sm">
               We use Plausible Analytics, a cookieless, privacy-friendly analytics tool that does not track
-              individuals or store personal data — no consent is required for it under UK GDPR, but you can find out
+              individuals or store personal data, no consent is required for it under UK GDPR, but you can find out
               more at{" "}
               <a href="https://plausible.io/data-policy" target="_blank" rel="noopener" className="underline">
                 plausible.io/data-policy

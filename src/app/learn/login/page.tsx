@@ -79,7 +79,7 @@ export default function LearnLoginPage() {
   }, []);
   const current = AUDIENCES.find((a) => a.id === audience) ?? AUDIENCES[0];
 
-  // Already signed in with a known role — send them straight to their
+  // Already signed in with a known role, send them straight to their
   // dashboard rather than showing the login form again.
   if (!finishing && session && session !== "loading" && rolesLoaded && roles.length > 0) {
     router.replace(dashboardPathForRole(roles[0].role));
@@ -107,7 +107,7 @@ export default function LearnLoginPage() {
     setBusy(false);
 
     // Fire-and-forget: this is a supplementary lockout/audit layer, not the
-    // security boundary (see learn-login's own comments) — a slow or failed
+    // security boundary (see learn-login's own comments) · a slow or failed
     // record call should never block the user's actual sign-in result.
     callLearnLogin("record", { email: loginEmail, success: !signInErr });
 

@@ -5,7 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 
 type Row = { id: string; title: string; date: string; percent: number | null; grade_label: string | null };
 
-/** Latest grades for a dashboard — reads assessments_for_family (0011),
+/** Latest grades for a dashboard, reads assessments_for_family (0011),
  * which already omits moderation_notes and is scoped to the caller's own
  * child/self via its own definition. */
 export function LatestGradesWidget({ childId, limit = 5 }: { childId: string; limit?: number }) {
@@ -34,7 +34,7 @@ export function LatestGradesWidget({ childId, limit = 5 }: { childId: string; li
           <li key={r.id} className="flex items-center justify-between rounded-lg border border-gold-light/40 p-2 text-sm">
             <span>{r.title}</span>
             <span className="text-ink/65">
-              {r.grade_label || (r.percent !== null ? `${r.percent}%` : "—")} · {new Date(r.date).toLocaleDateString("en-GB")}
+              {r.grade_label || (r.percent !== null ? `${r.percent}%` : "–")} · {new Date(r.date).toLocaleDateString("en-GB")}
             </span>
           </li>
         ))}

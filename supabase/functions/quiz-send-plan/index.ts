@@ -7,12 +7,12 @@
 //
 // Deliberately re-fetches the lead row by id and checks its email matches
 // the request rather than trusting a client-supplied email for the send
-// target — leadId alone isn't a secret (it's returned to the browser), so
+// target, leadId alone isn't a secret (it's returned to the browser), so
 // without this check a caller could pass someone else's leadId with an
 // email address of their choosing and use this function as a relay to
 // spam that address. All other plan content (sample week, starting
 // points, fee line, timezone note) is accepted from the client, HTML-
-// escaped before use — it's already exactly what that same browser
+// escaped before use, it's already exactly what that same browser
 // session just rendered on screen from a published quiz config,
 // re-deriving it here from quiz_leads.answers_snapshot would duplicate
 // the whole rules engine (src/lib/quiz/rules.ts) and sample-week/timezone
@@ -71,7 +71,7 @@ Deno.serve(async (req) => {
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;">
         ${sampleSlots
           .map(
-            (s) => `<tr><td style="padding:4px 0;border-bottom:1px solid #eee;">${esc(s.weekdayName)} — ${esc(s.subject)}</td>
+            (s) => `<tr><td style="padding:4px 0;border-bottom:1px solid #eee;">${esc(s.weekdayName)} · ${esc(s.subject)}</td>
               <td style="padding:4px 0;border-bottom:1px solid #eee;text-align:right;font-weight:bold;">${esc(s.startLabel)}–${esc(s.endLabel)}</td></tr>`
           )
           .join("")}
@@ -113,7 +113,7 @@ Deno.serve(async (req) => {
       <h1 style="font-size:20px;margin:0 0 16px;">Assalamu alaikum ${esc(firstName)},</h1>
       <p style="font-size:14px;">Here is the personalised plan from your "Your Child's Week" quiz.</p>
       ${sections.join("")}
-      <p style="font-size:14px;margin-top:24px;">This is a personalised estimate based on your answers, not a placement decision — starting points and timings are confirmed during application.</p>
+      <p style="font-size:14px;margin-top:24px;">This is a personalised estimate based on your answers, not a placement decision, starting points and timings are confirmed during application.</p>
       <p style="font-size:14px;">Any questions? Just reply to this email, or <a href="https://globalacademy.tarbiyyah.co.uk/book-a-call" style="color:#5E4B1E;">book a free 20-minute call</a>.</p>
     `),
   });

@@ -1,9 +1,9 @@
 // Staff-side counterpart to manage-booking's guest join link: creates/
 // fetches the BBB meeting for an admissions/parent-meeting booking and
 // returns a MODERATOR join URL for the staff member running it. Deployed
-// WITH JWT verification — only an authenticated staff account can reach
+// WITH JWT verification, only an authenticated staff account can reach
 // this at all (unlike the family side, which is a prospective parent with
-// no account yet — see manage-booking's guest join instead).
+// no account yet, see manage-booking's guest join instead).
 //
 // Same meetingId convention as manage-booking (`booking-${booking.id}`),
 // so whichever side calls first (staff opening early, or a family member
@@ -66,7 +66,7 @@ Deno.serve(async (req) => {
     const teamsUrl =
       booking.teams_join_url || booking.staff_members?.teams_meeting_url || Deno.env.get("ADMISSIONS_TEAMS_URL") || null;
     if (!teamsUrl) {
-      return jsonResponse({ ok: false, error: "bbb_not_configured", detail: "BBB_SERVER_URL/BBB_SECRET are not set yet — see SETUP.md." }, 503);
+      return jsonResponse({ ok: false, error: "bbb_not_configured", detail: "BBB_SERVER_URL/BBB_SECRET are not set yet, see SETUP.md." }, 503);
     }
     await serviceClient.from("audit_log").insert({
       actor_id: userId,

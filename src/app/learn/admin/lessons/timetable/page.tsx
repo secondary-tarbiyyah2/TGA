@@ -160,7 +160,7 @@ function TimetableContent() {
     }
   };
 
-  const title = `Timetable${run ? ` — ${run.label}` : ""}${effFocus ? ` — ${entities.find((e) => e.id === effFocus)?.label}` : ""}`;
+  const title = `Timetable${run ? ` · ${run.label}` : ""}${effFocus ? ` · ${entities.find((e) => e.id === effFocus)?.label}` : ""}`;
   const exportActions = (
     <div className="flex gap-2">
       <button type="button" className={ghost} disabled={shown.length === 0} onClick={() => printTimetable(title, shown, teacherName)}>Print</button>

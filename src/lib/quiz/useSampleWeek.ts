@@ -23,7 +23,7 @@ const WEEKDAY_ORDER = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "
  * Reads the REAL published per-year-group sample week from the LMS via
  * public_sample_timetable_week(year_group_name) (0016), converts each slot
  * from its stored base timezone (Europe/London) into the family's own
- * timezone with correct DST handling, and NEVER fabricates a week — an
+ * timezone with correct DST handling, and NEVER fabricates a week, an
  * empty array here means genuinely nothing has been published yet for this
  * year group, and the result screen must render the honest fallback, not
  * invent a plausible-looking timetable.

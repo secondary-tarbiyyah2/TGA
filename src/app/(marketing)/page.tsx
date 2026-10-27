@@ -11,17 +11,17 @@ import { getFaqEntries, getHomepageContent, getSiteSettings, getTestimonials } f
 import { admissionsProcessSteps } from "@/components/admissions/applicationShared";
 import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
 import { PortalPreview } from "@/components/home/PortalPreview";
-import { RecipeValues } from "@/components/home/RecipeValues";
+import { AdmissionsProcessFlow } from "@/components/admissions/AdmissionsSteps";
 
 export const metadata: Metadata = pageMetadata({
   title: "A specialist, quality education, rooted in faith",
-  description: "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified teachers — Qur'an, Arabic and Islamic Studies alongside the full national curriculum, from Year 1 to Year 11, taught with tarbiyyah at its heart.",
+  description: "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified teachers: Qur'an, Arabic and Islamic Studies alongside the full national curriculum, from Year 1 to Year 11, taught with tarbiyyah at its heart.",
   path: "",
 });
 
 const defaultPillars = [
   { title: "Specialist curriculum", body: "Qur'an, Arabic and Islamic Studies every week, with the full national curriculum to GCSE, taught live by qualified teachers." },
-  { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage — not an add-on." },
+  { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage, not an add-on." },
   { title: "Live, small classes", body: "Real-time lessons with no more than 15 pupils in a class, so every child is known and supported." },
 ];
 
@@ -43,10 +43,8 @@ export default async function HomePage() {
   // The homepage summary uses the SAME steps as the Admissions page
   // (admissionsProcessSteps), so the two can never disagree. It previously
   // fell back to a separate four-step list under a "six steps" heading.
-  const howItWorks = admissionsProcessSteps({ applicationFee: settings.applicationFee, registrationFee: settings.registrationFee }).map(
-    (s, i) => ({ step: String(i + 1), title: s.title, body: s.short }),
-  );
-  const stepCount = numberWord(howItWorks.length);
+  const processSteps = admissionsProcessSteps({ applicationFee: settings.applicationFee, registrationFee: settings.registrationFee });
+  const stepCount = numberWord(processSteps.length);
   // A CMS heading is only used if it doesn't state a different number of steps.
   const cmsHeading = content.howItWorksHeading;
   const cmsHeadingCountOk = !cmsHeading || !NUMBER_WORDS.some((w) => w !== stepCount && new RegExp(`\\b${w}\\s+steps\\b`, "i").test(cmsHeading));
@@ -59,20 +57,20 @@ export default async function HomePage() {
       <section className="geo-texture relative overflow-hidden bg-cream">
         <Container className="grid gap-12 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
           <div>
-            <Kicker>{content.heroKicker || "An online school by Tarbiyyah Education Trust"}</Kicker>
+            <Kicker>{content.heroKicker || "An online school for homeschooling families"}</Kicker>
             {content.heroHeading ? (
               <h1 className="text-display font-serif font-semibold text-ink">{content.heroHeading}</h1>
             ) : (
               <h1 className="text-display font-serif font-semibold text-ink">
-                A specialist, quality education — <span className="text-gold-700">wherever home is.</span>
+                A specialist, quality education, <span className="text-gold-700">wherever home is.</span>
               </h1>
             )}
             {content.heroBody ? (
               <p className="mt-6 max-w-xl text-lg text-ink/75">{content.heroBody}</p>
             ) : (
               <p className="mt-6 max-w-xl text-lg text-ink/75">
-                Live, timetabled lessons with qualified teachers — Qur&apos;an, Arabic and Islamic Studies alongside the full national curriculum, taught with{" "}
-                <em>tarbiyyah</em> — the nurturing of character and faith — at its heart. Year 1 to Year 11, live
+                A full online school for homeschooling families. Live, timetabled lessons with qualified teachers: Qur&apos;an, Arabic and Islamic Studies alongside the full national curriculum, taught with{" "}
+                <em>tarbiyyah</em> (the nurturing of character and faith) at its heart. Year 1 to Year 11, live
                 lessons launching January 2027.
               </p>
             )}
@@ -92,7 +90,7 @@ export default async function HomePage() {
           </div>
           <div className="relative mx-auto w-full max-w-sm">
             <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border-2 border-gold-300 shadow-warm">
-              <Image src="/hero.webp" alt="An open notebook and pen on a warm wooden desk — calm, focused learning" fill className="object-cover" priority sizes="(min-width: 1024px) 24rem, 80vw" />
+              <Image src="/hero.webp" alt="An open notebook and pen on a warm wooden desk, calm, focused learning" fill className="object-cover" priority sizes="(min-width: 1024px) 24rem, 80vw" />
             </div>
             <div className="shadow-warm absolute -bottom-4 -left-4 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-gold-700">
               Live lessons from Jan 2027
@@ -124,7 +122,7 @@ export default async function HomePage() {
             <h2 className="text-h2 font-serif font-semibold text-ink">{content.stagesHeading || "A specialist curriculum, from Year 1 to GCSE."}</h2>
             <p className="mt-4 text-ink/75">
               {content.stagesBody ||
-                "The deen at the heart of the day — Qur'an, Islamic Studies and Arabic on the timetable at every key stage — with the full national curriculum to GCSE, taught live by qualified teachers."}
+                "The deen at the heart of the day: Qur'an, Islamic Studies and Arabic on the timetable at every key stage, with the full national curriculum to GCSE, taught live by qualified teachers."}
             </p>
             <Button href="/learning" variant="secondary" className="mt-6">
               Explore learning
@@ -141,38 +139,41 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* PARENT PORTAL — the website and the portal as one school. */}
+      {/* PARENT PORTAL, the website and the portal as one school. */}
       <PortalPreview />
 
-      {/* RECIPE — our character framework (policy 23). */}
-      <RecipeValues />
-
-      {/* FEES AND JOINING — one band, with the detail on its own pages. */}
+      {/* HOW TO JOIN, the same steps as the Admissions page, as a process graphic. */}
       <section className="geo-texture bg-cream section-pad">
-        <Container className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-gold-light/60 bg-white p-6">
-            <h2 className="font-serif text-2xl font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h2>
-            <p className="mt-2 text-ink/75">{content.feeTeaserBody || 'Every fee is published on our website — nothing shared only "on enquiry." Annual, two-payment and monthly plans are available for every year group.'}</p>
-            <Button href="/fees" variant="secondary" className="mt-5">
-              See fees and payment plans
+        <Container>
+          <Kicker>Admissions</Kicker>
+          <h2 className="text-h2 font-serif font-semibold text-ink">{howItWorksHeading}</h2>
+          <p className="mt-3 max-w-2xl text-ink/75">Places are offered for live lessons from January 2027.</p>
+          <AdmissionsProcessFlow steps={processSteps} />
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Button href="/admissions">How to apply</Button>
+            <Button href="/book-a-call" variant="secondary">
+              Book a free call
             </Button>
-          </div>
-          <div className="rounded-2xl border border-gold-light/60 bg-white p-6">
-            <h2 className="font-serif text-2xl font-semibold text-ink">{howItWorksHeading}</h2>
-            <p className="mt-2 text-ink/75">
-              {howItWorks.map((st) => st.title).join(" → ")}. Places are offered for live lessons from January 2027.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <Button href="/admissions">How to apply</Button>
-              <Button href="/book-a-call" variant="secondary">
-                Book a free call
-              </Button>
-            </div>
           </div>
         </Container>
       </section>
 
-      {/* TESTIMONIALS — only once real ones exist. */}
+      {/* FEES */}
+      <section className="section-pad">
+        <Container>
+          <div className="flex flex-col gap-5 rounded-2xl border border-gold-light/60 bg-white p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="font-serif text-2xl font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h2>
+              <p className="mt-2 text-ink/75">{content.feeTeaserBody || 'Every fee is published on our website, nothing shared only "on enquiry." Annual, two-payment and monthly plans are available for every year group.'}</p>
+            </div>
+            <Button href="/fees" variant="secondary" className="shrink-0">
+              See fees and payment plans
+            </Button>
+          </div>
+        </Container>
+      </section>
+
+      {/* TESTIMONIALS, only once real ones exist. */}
       {realTestimonials.length > 0 && (
         <section className="section-pad">
           <Container>
@@ -204,7 +205,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* HEADTEACHER WELCOME — only renders once a genuine quote has been
+      {/* HEADTEACHER WELCOME, only renders once a genuine quote has been
           entered in Site settings; never a drafted-for-them stand-in. */}
       {settings.headteacherWelcomeQuote && (
         <section className="geo-texture bg-ink-900 section-pad text-cream">
@@ -221,7 +222,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Founding cohort places — renders nothing until an admin has set a
+      {/* Founding cohort places, renders nothing until an admin has set a
           real capacity for at least one year group (see PlacesRemaining). */}
       <Container>
         <PlacesRemaining />

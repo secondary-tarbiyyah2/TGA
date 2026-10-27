@@ -73,7 +73,7 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
     });
     setInviting(false);
     if (error || !data?.ok) {
-      setInviteError("Couldn't create the account — check the details and try again.");
+      setInviteError("Couldn't create the account, check the details and try again.");
       return;
     }
     setInviteResult({ email, tempPassword: data.tempPassword, loginUrl: data.loginUrl, emailSent: data.emailSent });
@@ -112,7 +112,7 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
             <li key={s.id} className="flex flex-wrap items-center justify-between gap-3 p-4">
               <div>
                 <p className="font-medium text-ink">
-                  {s.display_name} <span className="text-xs text-ink/65">— {s.role_title}</span>
+                  {s.display_name} <span className="text-xs text-ink/65">– {s.role_title}</span>
                 </p>
                 <p className="text-xs text-ink/65">
                   {s.profiles?.email} · role: {s.profiles?.role} · {s.active ? "active" : "deactivated"}
@@ -144,7 +144,7 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
       <section>
         <h2 className="font-serif text-lg font-semibold text-ink">{roleFilter === "teacher" ? "Create a teacher account" : "Invite a new staff account"}</h2>
         <p className="mt-1 text-sm text-ink/65">
-          Creates the account with a temporary password right away — no email needed. We&apos;ll also try to email it,
+          Creates the account with a temporary password right away, no email needed. We&apos;ll also try to email it,
           but either way you get a copyable password below to share yourself.
         </p>
         <form onSubmit={invite} className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -182,7 +182,7 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
         {inviteResult && (
           <div className="mt-4 rounded-2xl border border-gold-500/40 bg-gold-50 p-4">
             <p className="text-sm font-semibold text-ink">
-              Account ready for {inviteResult.email}. {inviteResult.emailSent ? "An email was also sent." : "The email could not be sent — share these details yourself:"}
+              Account ready for {inviteResult.email}. {inviteResult.emailSent ? "An email was also sent." : "The email could not be sent, share these details yourself:"}
             </p>
             <div className="mt-2 space-y-1 font-mono text-xs text-ink/80">
               <p>Sign in: {inviteResult.loginUrl}</p>
@@ -192,7 +192,7 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
             <button type="button" onClick={copyCredentials} className="mt-3 rounded-full border border-gold-500 px-4 py-1.5 text-xs text-gold-700 hover:bg-cream">
               {copied ? "Copied!" : "Copy to clipboard"}
             </button>
-            <p className="mt-2 text-xs text-ink/65">This password is shown once — it won&apos;t be shown again after you leave this page.</p>
+            <p className="mt-2 text-xs text-ink/65">This password is shown once, it won&apos;t be shown again after you leave this page.</p>
           </div>
         )}
       </section>

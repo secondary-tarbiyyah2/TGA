@@ -144,7 +144,7 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
             ))}
             {!person.profileId && <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-800">No login yet</span>}
           </div>
-          <p className="truncate text-xs text-ink/65">{[person.username ? `Username: ${person.username}` : null, person.email, ...meta].filter(Boolean).join(" · ") || "—"}</p>
+          <p className="truncate text-xs text-ink/65">{[person.username ? `Username: ${person.username}` : null, person.email, ...meta].filter(Boolean).join(" · ") || "–"}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {person.profileId && person.roles.some((r) => r === "teacher" || r === "teaching_assistant_cover" || r === "head_teacher" || r === "admin") && (

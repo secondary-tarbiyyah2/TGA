@@ -9,7 +9,7 @@ import { ui } from "@/components/learn/ui";
  * Make (or edit) a revision pack in the portal, the way Aqeedah 1 was made:
  *
  *   1. Upload one summary video (e.g. a narrated slideshow exported as MP4).
- *   2. Mark where each chapter starts while watching it — or paste a list of
+ *   2. Mark where each chapter starts while watching it, or paste a list of
  *      times like "0:00 What is aqeedah?". Each chapter stops at its own end,
  *      so pupils never see the start of the next one; trim the end if needed.
  *   3. Write the chapter's summary slide: Arabic term, transliteration, key

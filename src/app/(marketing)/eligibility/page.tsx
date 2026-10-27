@@ -8,7 +8,7 @@ import { DEFAULT_QUIZ_CONFIG } from "@/lib/quiz/defaultConfig";
 
 export const metadata: Metadata = pageMetadata({
   title: "Your Child's Week",
-  description: "Five short questions to see a sample week for your child at Tarbiyyah Global Academy, in your own timezone — with fees and next steps.",
+  description: "Five short questions to see a sample week for your child at Tarbiyyah Global Academy, in your own timezone, with fees and next steps.",
   path: "/eligibility",
 });
 

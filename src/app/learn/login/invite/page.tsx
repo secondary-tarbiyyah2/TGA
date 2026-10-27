@@ -14,7 +14,7 @@ import { SendNewLink } from "@/components/learn/SendNewLink";
  * Where a one-time invite/recovery link (from learn-invite or
  * scripts/invite-first-head-teacher.mjs) lands. Supabase's client SDK
  * establishes a session automatically from the link's URL on page load
- * (detectSessionInUrl, on by default) — no password has ever existed for
+ * (detectSessionInUrl, on by default) · no password has ever existed for
  * this account until the form below sets one.
  */
 export default function LearnInvitePage() {

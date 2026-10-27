@@ -15,10 +15,11 @@ export function PrelaunchHome() {
         <div className="text-center lg:col-start-1 lg:row-start-1 lg:self-end lg:text-left">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-700">Opening January 2027</p>
           <h1 className="mt-4 text-display font-serif font-semibold text-ink">
-            A live online Islamic school, <span className="text-gold-700">wherever home is.</span>
+            A live online Islamic school <span className="text-gold-700">for homeschooling families.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-ink/75 lg:mx-0">
-            Tarbiyyah Global Academy joins Tarbiyyah Primary, Tarbiyyah Secondary School for Boys and Tarbiyyah Al-Banaat,
+            A full school day taught live by qualified teachers, from Year 1 to Year 11, so your child learns at home with a
+            proper timetable, classmates and teachers. Tarbiyyah Global Academy joins Tarbiyyah Primary, Tarbiyyah Secondary School for Boys and Tarbiyyah Al-Banaat,
             bringing more than ten years of Islamic and academic education to families anywhere in the world.
           </p>
         </div>

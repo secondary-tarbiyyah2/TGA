@@ -147,9 +147,9 @@ export async function graphRaw(pathOrUrl: string, opts: GraphRequest = {}): Prom
     let explained = `Microsoft Graph ${method} ${shortPath(url)} failed (HTTP ${res.status} ${code}): ${message}`;
     if (res.status === 403) {
       if (/application access policy/i.test(message)) {
-        explained += " — the Teams application access policy has not been granted to this organiser yet (New-CsApplicationAccessPolicy / Grant-CsApplicationAccessPolicy; allow up to 30 minutes after granting).";
+        explained += ". The Teams application access policy has not been granted to this organiser yet (New-CsApplicationAccessPolicy / Grant-CsApplicationAccessPolicy; allow up to 30 minutes after granting).";
       } else if (opts.permission) {
-        explained += ` — the app registration needs the "${opts.permission}" APPLICATION permission with admin consent (or, if mailbox access is scoped with Exchange RBAC for Applications, this mailbox is outside that scope).`;
+        explained += `. The app registration needs the "${opts.permission}" APPLICATION permission with admin consent (or, if mailbox access is scoped with Exchange RBAC for Applications, this mailbox is outside that scope).`;
       }
     }
     throw new GraphError(explained, res.status, code);

@@ -29,10 +29,10 @@ function describeRecipients(recipients: Recipient[]): { dsl: string[]; heads: st
 
 /**
  * The reporting entry point every /learn role (staff, parent, student) can
- * reach — see 0015_compliance.sql's safeguarding_concerns header for why
+ * reach, see 0015_compliance.sql's safeguarding_concerns header for why
  * the record this creates is then locked to Safeguarding Lead + Head
  * Teacher only, including for the person submitting it here. This page
- * deliberately does NOT try to show "your past reports" — there is nothing
+ * deliberately does NOT try to show "your past reports"– there is nothing
  * to show, by design.
  */
 function ReportConcernForm() {
@@ -51,7 +51,7 @@ function ReportConcernForm() {
   useEffect(() => {
     if (!supabase) return;
     // Categories are readable only by Safeguarding Lead/Headteacher (0015)
-    // — a reporter never needs to browse this list, so it's fine that a
+    //, a reporter never needs to browse this list, so it's fine that a
     // plain parent/student/teacher gets an empty list back here and falls
     // through to the free-text-only "Other" path below.
     supabase.from("safeguarding_categories").select("id, label").eq("active", true).order("label").then(({ data }) => setCategories((data as Category[]) || []));
@@ -168,7 +168,7 @@ function ReportConcernForm() {
   );
 }
 
-// Deliberately not wrapped in LearnGate — every /learn role, staff or not,
+// Deliberately not wrapped in LearnGate, every /learn role, staff or not,
 // should be able to reach this with only an ordinary sign-in, no role check
 // at all. The write itself is still fully RLS-scoped (0015): reported_by
 // must equal auth.uid(), and there is no read access back.

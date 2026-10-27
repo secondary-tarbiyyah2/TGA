@@ -85,7 +85,7 @@ function Sas({ label, v }: { label: string; v: number | null }) {
   return (
     <div className="rounded-lg border border-gold-light/60 bg-cream/40 px-3 py-2">
       <p className="text-[11px] font-semibold uppercase tracking-wide text-ink/60">{label}</p>
-      <p className="text-lg font-semibold tabular-nums text-ink">{v ?? "—"}</p>
+      <p className="text-lg font-semibold tabular-nums text-ink">{v ?? "–"}</p>
       {b && <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold ${b.cls}`}>{b.label}</span>}
     </div>
   );

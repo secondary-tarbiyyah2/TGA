@@ -1,4 +1,4 @@
-// Tarbiyyah Global Academy — entry assessment content bank (English).
+// Tarbiyyah Global Academy, entry assessment content bank (English).
 // Hand-written, original content. British English throughout.
 // Pure TypeScript, no imports: runs in Deno and Node (--experimental-strip-types).
 //
@@ -525,7 +525,7 @@ export const SPELLINGS: Spelling[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// SYNONYMS (60 items, 12 per band) — "closest in meaning"
+// SYNONYMS (60 items, 12 per band) · "closest in meaning"
 // ---------------------------------------------------------------------------
 
 export const SYNONYMS: WordItem[] = [
@@ -601,7 +601,7 @@ export const SYNONYMS: WordItem[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// ANTONYMS (60 items, 12 per band) — "most opposite in meaning"
+// ANTONYMS (60 items, 12 per band) · "most opposite in meaning"
 // ---------------------------------------------------------------------------
 
 export const ANTONYMS: WordItem[] = [
@@ -677,7 +677,7 @@ export const ANTONYMS: WordItem[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// ANALOGIES (50 items, 10 per band) — a is to b as c is to ?
+// ANALOGIES (50 items, 10 per band) · a is to b as c is to ?
 // ---------------------------------------------------------------------------
 
 export const ANALOGIES: Analogy[] = [
@@ -809,7 +809,7 @@ export const ODD_ONE_OUT: OddOne[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// PHONICS (24 items, Years 1–2) — the computer says `say`; child picks it.
+// PHONICS (24 items, Years 1–2) · the computer says `say`; child picks it.
 // ---------------------------------------------------------------------------
 
 export const PHONICS: Phonics[] = [
@@ -844,7 +844,7 @@ export const PHONICS: Phonics[] = [
 // ---------------------------------------------------------------------------
 
 export const WRITING_PROMPTS: WritingPrompt[] = [
-  // Band 1 — read aloud by the teacher in a live call; child writes on paper and holds it to the camera.
+  // Band 1, read aloud by the teacher in a live call; child writes on paper and holds it to the camera.
   {
     id: "b1-favourite-animal",
     band: 1,

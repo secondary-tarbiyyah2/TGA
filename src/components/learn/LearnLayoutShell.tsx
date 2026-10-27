@@ -125,7 +125,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
         <header className="portal-topbar sticky top-0 z-20">
           <div className="flex h-[60px] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
-            <Link href={homeHref} className="flex shrink-0 items-center lg:hidden" aria-label="Tarbiyyah Global Academy — your dashboard">
+            <Link href={homeHref} className="flex shrink-0 items-center lg:hidden" aria-label="Tarbiyyah Global Academy, your dashboard">
               <Image src="/brand/ga-wordmark.png" alt="" width={110} height={33} priority className="h-[33px] w-[110px] max-w-none object-contain" />
             </Link>
 

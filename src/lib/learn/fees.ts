@@ -1,7 +1,7 @@
 import type { FeeBand } from "@/content/seed";
 
 // Sanity's feeBand.yearGroupRange is free text ("Reception – Year 2"), and
-// Supabase's year_groups.name is also free text ("Year 4") — there's no
+// Supabase's year_groups.name is also free text ("Year 4") · there's no
 // shared foreign key between the two CMSs (deliberately: fee bands are
 // published content, year groups are academic-structure data; see 0008's
 // own comments on keeping Sanity-owned content out of hand-entered tables).

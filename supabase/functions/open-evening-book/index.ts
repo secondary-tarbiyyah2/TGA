@@ -57,7 +57,7 @@ Deno.serve(async (req) => {
     if (error) return jsonResponse({ ok: false, error: "cancel_failed" }, 500);
     await sendEmail({
       to: bk.email, toName: bk.parent_name,
-      subject: `Your place is cancelled: ${bk.open_evening_sessions?.title ?? "open evening"} — Tarbiyyah Global Academy`,
+      subject: `Your place is cancelled: ${bk.open_evening_sessions?.title ?? "open evening"} | Tarbiyyah Global Academy`,
       html: emailShell(`<h1 style="font-size:20px;margin:0 0 16px;">Your place is cancelled</h1><p>Assalamu alaikum ${esc(bk.parent_name.split(" ")[0])},</p><p>We have cancelled your place at <strong>${esc(bk.open_evening_sessions?.title ?? "the open evening")}</strong>. You are welcome to <a href="${SITE_URL}/open-evening/" style="color:#5E4B1E;">book another session</a> at any time.</p>`),
     });
     return jsonResponse({ ok: true, title: bk.open_evening_sessions?.title, startsAt: bk.open_evening_sessions?.starts_at });
@@ -146,7 +146,7 @@ Deno.serve(async (req) => {
     const title = session.title as string;
     const ics = buildIcs({
       uid: `open-evening-${bookingId}@globalacademy.tarbiyyah.co.uk`,
-      title: `${title} — Tarbiyyah Global Academy`,
+      title: `${title} | Tarbiyyah Global Academy`,
       description: joinUrl ? `Join online: ${joinUrl}` : `Details: ${SITE_URL}/open-evening`,
       location: joinUrl || "Online",
       startsAt: new Date(session.starts_at as string),
@@ -158,7 +158,7 @@ Deno.serve(async (req) => {
     const parentResult = await sendEmail({
       to: email,
       toName: parentName,
-      subject: `Your place is booked: ${title} — Tarbiyyah Global Academy`,
+      subject: `Your place is booked: ${title} | Tarbiyyah Global Academy`,
       html: emailShell(`
         <h1 style="font-size:20px;margin:0 0 16px;">Your place is booked</h1>
         <p>Assalamu alaikum ${esc(parentName.split(" ")[0])},</p>
@@ -167,7 +167,7 @@ Deno.serve(async (req) => {
         <p>The calendar invitation is attached. We will also send you a reminder the day before.</p>
         ${sampleLessonReady ? `<p>Before the evening, you can <a href="${SITE_URL}/sample-lesson/" style="color:#5E4B1E;">watch a recording of a real live lesson</a> (please keep the link within your family).</p>` : ""}
         <p>You may also like to read our <a href="${SITE_URL}/prospectus/TGA-Prospectus-2026-27.pdf" style="color:#5E4B1E;">prospectus</a> beforehand.</p>
-        <p>If you can no longer come, <a href="${manageUrl}" style="color:#5E4B1E;">cancel your place here</a> so that someone else can have it — no need to email. You can book a different session from the open evenings page.</p>
+        <p>If you can no longer come, <a href="${manageUrl}" style="color:#5E4B1E;">cancel your place here</a> so that someone else can have it, no need to email. You can book a different session from the open evenings page.</p>
         <p>We look forward to meeting you.</p>
       `),
       icsContent: ics,

@@ -25,7 +25,7 @@ function humanizeAuditAction(action: string): string {
 
 type AuditRow = { id: number; actor_email: string | null; action: string; target_table: string | null; created_at: string };
 
-/** A Dojo-style "what just happened" feed, straight from audit_log — never
+/** A Dojo-style "what just happened" feed, straight from audit_log, never
  * a separate hand-maintained activity table, so it can't drift from what
  * actually happened. Read-only, admin-only (same RLS as Compliance's own
  * audit_log queries). */
@@ -186,7 +186,7 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
 
 /**
  * Replaces the previous bare "Welcome, signed in as X" line with real
- * at-a-glance counts — reported from a live screenshot as "too simplistic".
+ * at-a-glance counts, reported from a live screenshot as "too simplistic".
  * Every number here is the SAME query the Compliance page already runs
  * (see admin/compliance/page.tsx), never an invented figure: this page is
  * just surfacing what's already true elsewhere, one click closer to where
@@ -196,7 +196,7 @@ function DashboardContent() {
   const { roles } = useLearnSession();
   const isSafeguardingLead = useLearnPermission("safeguarding_lead");
   // roles can hold one row per scope (e.g. several classes) that all
-  // resolve to the same label — dedupe before display, or "Headteacher"
+  // resolve to the same label, dedupe before display, or "Headteacher"
   // repeats once per underlying row (seen live: "Headteacher, Head
   // Teacher, Headteacher…").
   const isHead = roles.some((r) => r.role === "head_teacher" || r.role === "admin");

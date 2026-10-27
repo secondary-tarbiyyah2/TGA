@@ -339,7 +339,7 @@ async function emailLink(row: Row, to: string, toName: string, token: string) {
   const live = row.form.sections.filter((s) => !s.candidate).map((s) => s.title);
   return await sendEmail({
     to, toName,
-    subject: `${first}'s entry assessment — Tarbiyyah Global Academy`,
+    subject: `${first}'s entry assessment | Tarbiyyah Global Academy`,
     html: emailShell(`<h1 style="font-size:20px;margin:0 0 16px;">${esc(first)}'s entry assessment</h1>
 <p>Assalamu alaikum ${esc(toName.split(" ")[0])},</p>
 <p>Here is ${esc(first)}'s entry assessment for Year ${row.year}. It takes about ${total} minutes in timed parts. ${esc(first)} can rest between parts, and can press "Take a break" during a part: the clock stops and the questions are hidden until they carry on. It helps us place ${esc(first)} in the right groups from day one; there is nothing to revise.</p>
@@ -347,7 +347,7 @@ async function emailLink(row: Row, to: string, toName: string, token: string) {
 <ul style="padding-left:18px;color:#444;">
 <li>Use a laptop, desktop or tablet in a quiet room, with headphones or speakers: questions can be read aloud.</li>
 <li>Please close other apps and tabs first. The assessment opens in full screen and notes if the window is left, so that we can read the results fairly.</li>
-<li>${row.year <= 2 ? "You may help with the mouse or reading the screen's buttons, but please don't help with the answers." : "Please don't help with the answers — we want to see what " + esc(first) + " can do on their own."}</li>
+<li>${row.year <= 2 ? "You may help with the mouse or reading the screen's buttons, but please don't help with the answers." : "Please don't help with the answers, we want to see what " + esc(first) + " can do on their own."}</li>
 ${live.length ? `<li>The ${esc(live.join(", ").replace(/, ([^,]*)$/, " and $1"))} part${live.length === 1 ? " is" : "s are"} done with a teacher on your family call.</li>` : ""}
 <li>The link works until ${expires}. It is for ${esc(first)} only, and works in one window at a time.</li>
 </ul>`),

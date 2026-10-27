@@ -23,8 +23,8 @@ function localTz(): string {
 }
 
 // YYYY-MM-DD from the date's LOCAL parts. (toISOString() converts to UTC, which
-// shifts midnight-local dates back a day for anyone ahead of UTC — e.g. UK
-// summer time — so month ranges and day cells drifted by one day.)
+// shifts midnight-local dates back a day for anyone ahead of UTC, e.g. UK
+// summer time, so month ranges and day cells drifted by one day.)
 function fmtDateKey(d: Date): string {
   const y = d.getFullYear();
   const m = String(d.getMonth() + 1).padStart(2, "0");
@@ -45,7 +45,7 @@ export function BookingCalendar() {
   const [loadingSlots, setLoadingSlots] = useState(false);
   // "loading" until the bookable-staff query returns. "none" means the query
   // worked but no staff member is marked bookable; "error" means it failed.
-  // Both must be shown to the visitor — never a silently empty calendar.
+  // Both must be shown to the visitor, never a silently empty calendar.
   const [staffStatus, setStaffStatus] = useState<"loading" | "ready" | "none" | "error">("loading");
   const [slotsError, setSlotsError] = useState(false);
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
@@ -162,7 +162,7 @@ export function BookingCalendar() {
         <ul className="mt-6 space-y-2 text-left text-sm text-ink/70">
           <li className="flex items-start gap-2">
             <span aria-hidden="true" className="mt-1 text-gold-500">◆</span>
-            A confirmation email with the Teams link and a calendar invite — sent now.
+            A confirmation email with the Teams link and a calendar invite, sent now.
           </li>
           <li className="flex items-start gap-2">
             <span aria-hidden="true" className="mt-1 text-gold-500">◆</span>
@@ -224,7 +224,7 @@ export function BookingCalendar() {
             Speak with
             <select value={staffId} onChange={(e) => setStaffId(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2">
               {staffList.map((s) => (
-                <option key={s.id} value={s.id}>{s.display_name} — {s.role_title}</option>
+                <option key={s.id} value={s.id}>{s.display_name} · {s.role_title}</option>
               ))}
             </select>
           </label>

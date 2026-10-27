@@ -20,8 +20,8 @@
 // MS_TEAMS_MEETINGS is not "0"), so nothing changes until the owner finishes
 // the Microsoft 365 set-up.
 //
-// Data minimisation: the meeting subject is "<Subject> — <Class>" (e.g.
-// "Maths — Year 7A"); no pupil names are ever sent to Graph. Attendees are
+// Data minimisation: the meeting subject is "<Subject> – <Class>" (e.g.
+// "Maths, Year 7A"); no pupil names are ever sent to Graph. Attendees are
 // off by default; the teacher is invited when the event lives in the shared
 // mailbox, and parents only if MS_TEAMS_INVITE_FAMILIES=1. Lobby settings are
 // left at the tenant default (people in the school's organisation bypass it).
@@ -357,7 +357,7 @@ export async function syncTeamsMeetings(sb: SupabaseClient, opts: { dryRun?: boo
     const start = schoolTimeToUtc(l.date, s.start_time);
     const end = schoolTimeToUtc(l.date, s.end_time);
     if (end <= now) continue;
-    const subject = `${s.subjects?.name || "Lesson"}${s.classes?.name ? ` — ${s.classes.name}` : ""}`.slice(0, 200);
+    const subject = `${s.subjects?.name || "Lesson"}${s.classes?.name ? ` · ${s.classes.name}` : ""}`.slice(0, 200);
     desired.set(l.id, { lesson: l, start, end, subject, teacherId: l.teacher_user_id || s.teacher_user_id, classId: s.class_id });
   }
   summary.lessons = desired.size;

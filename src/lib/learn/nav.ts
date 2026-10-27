@@ -443,7 +443,7 @@ function itemScore(p: string, item: SidebarItem): number {
 }
 
 /** The sidebar item a page belongs to (its own route, a sub-page, a hub tab
- * or a matchPrefix), plus the hub tab it is on, if any — used by PageHeader
+ * or a matchPrefix), plus the hub tab it is on, if any, used by PageHeader
  * for the icon tile and breadcrumb. */
 export function navItemFor(pathname: string): { item: SidebarItem; tab: HubTab | null; area: PortalArea } | null {
   const area = portalAreaFor(pathname);
@@ -503,7 +503,7 @@ export function visibleSidebar(area: PortalArea, roles: string[]): SidebarItem[]
 }
 
 /** Every page this user can open in an area, one row per page (hub tabs
- * included, with the hub as `parent`) — the command palette lists these. */
+ * included, with the hub as `parent`) · the command palette lists these. */
 export function visiblePages(area: PortalArea, roles: string[]): { href: string; label: string; hint?: string; parent?: string; icon: SidebarIcon }[] {
   return visibleSidebar(area, roles).flatMap((i) =>
     i.tabs && i.tabs.length > 1

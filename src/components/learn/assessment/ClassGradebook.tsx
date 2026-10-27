@@ -219,10 +219,10 @@ export function ClassGradebook({
   }
 
   const cell = (r: Row | undefined) => {
-    if (!r) return <span className="text-ink/35">—</span>;
+    if (!r) return <span className="text-ink/35">–</span>;
     if (r.status !== "marked") return <span className="text-xs font-medium text-ink/70">{STATUS_SHORT[r.status]}</span>;
     if (r.grade_label) return <span className="font-semibold text-ink">{r.grade_label}</span>;
-    if (r.raw_score === null) return <span className="text-ink/35">—</span>;
+    if (r.raw_score === null) return <span className="text-ink/35">–</span>;
     return (
       <span className="tabular-nums text-ink">
         {Number(r.raw_score)}
@@ -414,7 +414,7 @@ export function ClassGradebook({
                         {cell(c.rows.get(p.id))}
                       </td>
                     ))}
-                    <td className="px-3 py-2 text-right tabular-nums">{avg === null ? <span className="text-ink/35">—</span> : `${avg}%`}</td>
+                    <td className="px-3 py-2 text-right tabular-nums">{avg === null ? <span className="text-ink/35">–</span> : `${avg}%`}</td>
                   </tr>
                 );
               })}

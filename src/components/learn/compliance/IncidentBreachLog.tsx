@@ -20,7 +20,7 @@ function IncidentCard({ incident }: { incident: Incident }) {
   const supabase = getSupabaseClient();
   const [items, setItems] = useState<ChecklistItem[] | null>(null);
   // Date.now() is impure and can't be called during render (react-hooks/purity)
-  // — captured once via effect instead, same as every other "how much time
+  //, captured once via effect instead, same as every other "how much time
   // is left" widget in this codebase.
   const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
@@ -63,7 +63,7 @@ function IncidentCard({ incident }: { incident: Incident }) {
           <li key={it.id} className="flex items-center gap-2 text-xs">
             <input type="checkbox" checked={it.done} onChange={() => toggle(it)} />
             <span className={it.done ? "text-ink/65 line-through" : "text-ink/80"}>{ITEM_LABELS[it.item_key] || it.item_key}</span>
-            {it.done && it.done_at && <span className="text-ink/65">— {new Date(it.done_at).toLocaleString("en-GB")}</span>}
+            {it.done && it.done_at && <span className="text-ink/65">– {new Date(it.done_at).toLocaleString("en-GB")}</span>}
           </li>
         ))}
       </ul>
@@ -71,7 +71,7 @@ function IncidentCard({ incident }: { incident: Incident }) {
   );
 }
 
-/** Headteacher/Admin write, view_compliance read — see 0015. */
+/** Headteacher/Admin write, view_compliance read, see 0015. */
 export function IncidentBreachLog() {
   const supabase = getSupabaseClient();
   const [incidents, setIncidents] = useState<Incident[] | null>(null);

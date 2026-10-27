@@ -1,5 +1,5 @@
 // Shared country list for the admissions-call booking form and the
-// application form — a plain autocomplete list (via <datalist>) rather
+// application form, a plain autocomplete list (via <datalist>) rather
 // than a long forced <select>, so typing narrows it instead of scrolling
 // through ~195 options, while still allowing free text for anyone whose
 // country isn't listed or who prefers to just type it.

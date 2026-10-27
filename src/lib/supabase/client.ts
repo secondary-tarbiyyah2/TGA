@@ -1,9 +1,9 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 /**
- * Only the anon key is ever used here — safe to ship in frontend code.
+ * Only the anon key is ever used here, safe to ship in frontend code.
  * Import this ONLY from client components that actually need Supabase
- * (booking, portals, staff area), per DESIGN.md — it's dead weight on every
+ * (booking, portals, staff area), per DESIGN.md, it's dead weight on every
  * other page otherwise.
  */
 let cached: SupabaseClient | null = null;

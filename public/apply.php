@@ -1,6 +1,6 @@
 <?php
 /**
- * Tarbiyyah Global Academy — application handler.
+ * Tarbiyyah Global Academy, application handler.
  *
  * Receives the multi-step admissions application (ApplicationForm.tsx POSTs
  * JSON here) and emails it via Brevo. See _mailer.php for the mail transport
@@ -34,7 +34,7 @@ $childName  = mailer_clean($body['child_name']  ?? '');
 $yeargroup  = mailer_clean($body['yeargroup']   ?? '');
 $consent    = mailer_clean($body['consent']     ?? '');
 $notes      = trim((string) ($body['notes'] ?? ''));
-// See register.php for what this is — the same reference sent for a prior
+// See register.php for what this is, the same reference sent for a prior
 // register-interest submission from the same email, so the two can be
 // matched as one lead by a human or a downstream CRM.
 $leadRef    = mailer_clean($body['lead_ref']    ?? '');
@@ -55,7 +55,7 @@ if ($errors) {
     exit;
 }
 
-$subject = 'New application — ' . $childName . ' (' . $yeargroup . ')';
+$subject = 'New application' . $childName . ' (' . $yeargroup . ')';
 $text = implode("\n", [
     'A new application was submitted on Tarbiyyah Global Academy.',
     '',
@@ -69,7 +69,7 @@ $text = implode("\n", [
     '  Name: ' . $childName,
     '  Year group: ' . $yeargroup,
     '',
-    'Lead reference: ' . ($leadRef !== '' ? $leadRef : '(none)') . ' — matches a register-interest email with the same reference.',
+    'Lead reference: ' . ($leadRef !== '' ? $leadRef : '(none)') . '– matches a register-interest email with the same reference.',
     'Previously registered interest (same device): ' . ($hadRegisteredInterest ? 'Yes' : 'Not indicated'),
     '',
     'Notes: ' . ($notes !== '' ? $notes : '(none)'),
@@ -78,7 +78,7 @@ $text = implode("\n", [
 list($sent, $transport, $detail) = mailer_send(MAIL_RECIPIENT, MAIL_SITE, $subject, $text, $email, $parentName);
 
 mailer_log(($sent ? 'OK   ' : 'FAIL ') . 'apply child=' . $childName . ' year=' . $yeargroup
-    . ' from_applicant=' . $email . ' via=' . $transport . ' — ' . $detail);
+    . ' from_applicant=' . $email . ' via=' . $transport . '– ' . $detail);
 
 if (MAIL_SEND_ACK && $sent) {
     $firstName = trim(strtok($parentName, ' '));
@@ -96,8 +96,8 @@ if (MAIL_SEND_ACK && $sent) {
         MAIL_SITE,
         'Part of the Tarbiyyah Education Trust',
     ]);
-    list($ackOk, $ackTransport, $ackDetail) = mailer_send($email, $parentName, 'Application received — ' . MAIL_SITE, $ackText, MAIL_RECIPIENT, MAIL_SITE);
-    mailer_log(($ackOk ? 'OK   ' : 'FAIL ') . 'apply ack to=' . $email . ' via=' . $ackTransport . ' — ' . $ackDetail);
+    list($ackOk, $ackTransport, $ackDetail) = mailer_send($email, $parentName, 'Application received' . MAIL_SITE, $ackText, MAIL_RECIPIENT, MAIL_SITE);
+    mailer_log(($ackOk ? 'OK   ' : 'FAIL ') . 'apply ack to=' . $email . ' via=' . $ackTransport . '– ' . $ackDetail);
 }
 
 mailer_forward_to_crm(['type' => 'application', 'leadRef' => $leadRef, 'parentName' => $parentName, 'email' => $email, 'phone' => $phone, 'country' => $country, 'childName' => $childName, 'yeargroup' => $yeargroup, 'notes' => $notes, 'submittedAt' => gmdate('c')]);

@@ -11,7 +11,7 @@ export function CookieConsent() {
 
   useEffect(() => {
     // Reading localStorage requires the client, so whether to show the banner can only be
-    // known post-mount — an effect (not a lazy initializer) is the correct tool here.
+    // known post-mount, an effect (not a lazy initializer) is the correct tool here.
     let shouldShow = true;
     try {
       shouldShow = !window.localStorage.getItem(STORAGE_KEY);
@@ -26,7 +26,7 @@ export function CookieConsent() {
     try {
       window.localStorage.setItem(STORAGE_KEY, consent);
     } catch {
-      // Storage unavailable (private browsing etc.) — still honour the choice for this visit.
+      // Storage unavailable (private browsing etc.) · still honour the choice for this visit.
     }
     setVisible(false);
     window.dispatchEvent(new CustomEvent("tga-cookie-consent", { detail: consent }));
@@ -43,7 +43,7 @@ export function CookieConsent() {
     >
       <p className="text-sm text-ink/80">
         We use essential cookies to run this site, and (with your consent) analytics cookies to understand how
-        it&apos;s used. You can change your choice at any time — see our{" "}
+        it&apos;s used. You can change your choice at any time, see our{" "}
         <a href="/legal/cookies" className="underline text-gold-700">
           Cookie Policy
         </a>

@@ -11,7 +11,7 @@ import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Admissions",
-  description: "How to apply to Tarbiyyah Global Academy — process, entry assessment, key dates, and the application form.",
+  description: "How to apply to Tarbiyyah Global Academy, process, entry assessment, key dates, and the application form.",
 };
 
 export default async function AdmissionsPage() {

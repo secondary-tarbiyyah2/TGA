@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { FALLBACK_PERIODS } from "@/lib/learn/timetable";
 
 // Common home timezones for a globally-spread family audience, grouped
-// roughly by region. Real IANA zone identifiers — the actual conversion
+// roughly by region. Real IANA zone identifiers, the actual conversion
 // math (below) is real, not illustrative; only the "which cities to list"
 // choice is editorial.
 const ZONES: { label: string; tz: string }[] = [
@@ -24,7 +24,7 @@ const ZONES: { label: string; tz: string }[] = [
 
 // A real, non-DST-ambiguous reference date (mid-March, before the UK's
 // clock change) used purely to anchor the UK wall-clock times below to an
-// actual instant so Intl can convert them — the times themselves (from
+// actual instant so Intl can convert them, the times themselves (from
 // FALLBACK_PERIODS, the scheduling engine's built-in school day) are real, not invented.
 function ukTimeOnRefDate(hhmm: string): Date {
   const [h, m] = hhmm.split(":").map(Number);
@@ -43,7 +43,7 @@ function formatInZone(d: Date, tz: string): string {
  * where they live.
  */
 export function TimezoneConverter() {
-  const [tz, setTz] = useState(ZONES[1].tz); // Lagos default — a globally-spread audience, not a UK-centric default
+  const [tz, setTz] = useState(ZONES[1].tz); // Lagos default, a globally-spread audience, not a UK-centric default
 
   const bands = useMemo(() => {
     const span = (weekday: number) => {

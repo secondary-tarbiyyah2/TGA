@@ -206,7 +206,7 @@ function FeesContent() {
         }
       />
       <WithdrawalNoticesAdmin />
-      {!canExport && <p className="-mt-3 mb-4 text-xs text-ink/65">Exporting requires the &quot;Can export data&quot; permission — ask a Headteacher to grant it.</p>}
+      {!canExport && <p className="-mt-3 mb-4 text-xs text-ink/65">Exporting requires the &quot;Can export data&quot; permission, ask a Headteacher to grant it.</p>}
       {notice && (
         <p role="status" className="mb-4 rounded-lg border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-800">
           {notice}
@@ -344,7 +344,7 @@ function FeesContent() {
                   <td className="border-b border-gold-light/40 p-3 text-right tabular-nums">{formatGBP(f.billed)}</td>
                   <td className="border-b border-gold-light/40 p-3 text-right tabular-nums">{formatGBP(f.paid)}</td>
                   <td className="border-b border-gold-light/40 p-3 text-right font-semibold tabular-nums">{formatGBP(f.balance)}</td>
-                  <td className={`border-b border-gold-light/40 p-3 text-right tabular-nums ${f.overdue > 0 ? "font-semibold text-red-700" : "text-ink/65"}`}>{f.overdue > 0 ? formatGBP(f.overdue) : "—"}</td>
+                  <td className={`border-b border-gold-light/40 p-3 text-right tabular-nums ${f.overdue > 0 ? "font-semibold text-red-700" : "text-ink/65"}`}>{f.overdue > 0 ? formatGBP(f.overdue) : "–"}</td>
                 </tr>
               ))}
             </tbody>

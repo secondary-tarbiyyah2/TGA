@@ -18,7 +18,7 @@ async function callManageBooking(action: string, token: string, extra: Record<st
   return res.json();
 }
 
-/** Fallback for a lost/never-received confirmation email — the only way
+/** Fallback for a lost/never-received confirmation email, the only way
  * forward used to be "use the link from your confirmation email", a dead
  * end if that email never arrived. Deliberately shows the same
  * "if we found it, check your email" message either way (see the Edge
@@ -34,7 +34,7 @@ function ResendLinkForm() {
     try {
       await callManageBooking("resend_link", "", { email: email.trim() });
     } catch {
-      // fall through to the same message regardless — see note above
+      // fall through to the same message regardless, see note above
     }
     setStatus("done");
   }
@@ -105,7 +105,7 @@ export function ManageBookingClient() {
   if (error) {
     return (
       <div>
-        <p className="text-ink/70">We couldn&apos;t find that booking — the link may have expired. Get a new one below, or email us at globalacademy@tarbiyyah.co.uk.</p>
+        <p className="text-ink/70">We couldn&apos;t find that booking, the link may have expired. Get a new one below, or email us at globalacademy@tarbiyyah.co.uk.</p>
         <ResendLinkForm />
       </div>
     );
@@ -144,7 +144,7 @@ export function ManageBookingClient() {
           Cancel booking
         </button>
       </div>
-      <p className="mt-4 text-xs text-ink/65">To reschedule, book a different time above — your original slot will be freed once the new one is confirmed.</p>
+      <p className="mt-4 text-xs text-ink/65">To reschedule, book a different time above, your original slot will be freed once the new one is confirmed.</p>
     </div>
   );
 }

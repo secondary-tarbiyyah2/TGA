@@ -2,13 +2,13 @@ import { defineField, defineType } from "sanity";
 
 // Admin-editable curriculum overview/scheme-of-work documents, shown on each
 // key stage's /curriculum/[stage] page grouped by subject. Mirrors
-// policyLink.ts exactly (file upload + fallback URL) — same pattern, no new
+// policyLink.ts exactly (file upload + fallback URL) · same pattern, no new
 // approach. Hidden entirely on the site wherever no document has been
 // uploaded for a given key stage (see getCurriculumDocuments in
-// src/lib/content.ts and the [stage] page) — no placeholder ever shown.
+// src/lib/content.ts and the [stage] page) · no placeholder ever shown.
 //
 // The value list below is deliberately duplicated from src/content/curriculum.ts's
-// keyStages (rather than imported) — no other schema file in this project
+// keyStages (rather than imported) · no other schema file in this project
 // imports from src/content, and Sanity Studio's own build doesn't share
 // Next.js's path-alias resolution, so this keeps the schema safely
 // self-contained. If a key stage's slug/range ever changes there, update
@@ -44,15 +44,15 @@ export default defineType({
       name: "term",
       title: "Term",
       type: "string",
-      description: "Optional — leave blank if the document covers the whole year.",
+      description: "Optional, leave blank if the document covers the whole year.",
       options: { list: [{ title: "Autumn", value: "autumn" }, { title: "Spring", value: "spring" }, { title: "Summer", value: "summer" }] },
     }),
-    defineField({ name: "file", title: "Document file (PDF)", type: "file", options: { accept: "application/pdf" }, description: "Upload here to publish/update — no code change needed." }),
+    defineField({ name: "file", title: "Document file (PDF)", type: "file", options: { accept: "application/pdf" }, description: "Upload here to publish/update, no code change needed." }),
     defineField({ name: "fileUrl", title: "Document URL (fallback)", type: "url", description: "Used only if no file is uploaded above." }),
     defineField({ name: "order", title: "Display order", type: "number" }),
   ],
   preview: {
     select: { title: "title", subject: "subject", keyStage: "keyStage" },
-    prepare: ({ title, subject, keyStage }) => ({ title, subtitle: [keyStage, subject].filter(Boolean).join(" — ") }),
+    prepare: ({ title, subject, keyStage }) => ({ title, subtitle: [keyStage, subject].filter(Boolean).join("– ") }),
   },
 });

@@ -39,7 +39,7 @@ function errorMessage(code: string | undefined, seatsLeft?: number): string {
   switch (code) {
     case "full":
       return seatsLeft && seatsLeft > 0
-        ? `Sorry, only ${seatsLeft} ${seatsLeft === 1 ? "place is" : "places are"} left on this evening. Please reduce the number attending, or choose another date.`
+        ? "Sorry, there isn't room for that many on this session. Please reduce the number attending, or choose another date."
         : "Sorry, this evening is now fully booked. Please choose another date, or email us and we will add you to a waiting list.";
     case "already_booked":
       return "There is already a booking for this email address on this evening. Please check your inbox, or email us if you need to change it.";
@@ -208,9 +208,7 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
                         <p className="font-semibold text-ink">{s.title}</p>
                         <p className="text-sm text-ink/80">{fmtDate(s.starts_at)}, {fmtTime(s.starts_at)} to {fmtTime(s.ends_at)}</p>
                         {s.description && <p className="mt-1 whitespace-pre-line text-sm text-ink/70">{s.description}</p>}
-                        <p className={`mt-1 text-xs font-medium ${full ? "text-red-700" : s.seats_left <= 5 ? "text-amber-800" : "text-ink/65"}`}>
-                          {full ? "Fully booked" : `${s.seats_left} ${s.seats_left === 1 ? "place" : "places"} left`}
-                        </p>
+                        {full && <p className="mt-1 text-xs font-medium text-red-700">Fully booked</p>}
                       </div>
                       {!full && !active && (
                         <button

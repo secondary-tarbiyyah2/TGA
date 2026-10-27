@@ -40,7 +40,7 @@ function csvCell(v: unknown): string {
   if (/^[=+\-@\t\r]/.test(s)) s = `'${s}`; // stop spreadsheet formula injection
   return `"${s.replace(/"/g, '""')}"`;
 }
-const tableLabel = (t: string | null) => (t ? t.replace(/_/g, " ") : "—");
+const tableLabel = (t: string | null) => (t ? t.replace(/_/g, " ") : "–");
 
 /**
  * Audit log viewer for the Headteacher and Admin. Reads through the

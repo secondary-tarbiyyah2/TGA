@@ -1,9 +1,9 @@
 // Two related, deliberately separate actions on ONE recording:
-//   mode: "stream" — returns BBB's streaming playback URL (no download) to
+//   mode: "stream"– returns BBB's streaming playback URL (no download) to
 //     an enrolled child's parent/student (gated on recording_consents) or
 //     the class's teacher/staff with manage_academic. This is the ONLY path
 //     most people ever get.
-//   mode: "export" — returns BBB's raw file URL. Restricted to Head
+//   mode: "export"– returns BBB's raw file URL. Restricted to Head
 //     Teacher/Admin who ALSO hold the can_export_data permission. Every
 //     call (both modes) is logged to audit_log with actor + mode, per the
 //     ground rule that raw-file access itself must be logged.

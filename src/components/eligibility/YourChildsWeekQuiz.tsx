@@ -194,7 +194,7 @@ export function YourChildsWeekQuiz({
 
   const firstName = contactName ? capitaliseName(contactName).split(" ")[0] : "";
   // Before the parent has typed their name (in the CTA form further down
-  // the same screen), "{name}, here is..." has no name to fill in yet —
+  // the same screen), "{name}, here is..." has no name to fill in yet, 
   // substituting a filler word there ("there, here is...") reads as
   // broken English, not a personalised greeting. Drop the name clause
   // entirely and capitalise what's left instead.
@@ -203,7 +203,7 @@ export function YourChildsWeekQuiz({
     : config.resultHeading.replace(/\{name\},?\s*/, "").replace(/^[a-z]/, (c) => c.toUpperCase());
 
   const bookCallHref = `/book-a-call?name=${encodeURIComponent(contactName)}&email=${encodeURIComponent(contactEmail)}&year=${encodeURIComponent(yearGroupAnswer)}&notes=${encodeURIComponent(
-    `From "Your Child's Week" — timezone: ${timezone}${timeInfo?.concern ? ", TIMEZONE CONCERN: lessons fall outside a workable local window" : ""}, hifdh role: ${answers.hifz_role ?? "n/a"}`
+    `From "Your Child's Week"– timezone: ${timezone}${timeInfo?.concern ? ", TIMEZONE CONCERN: lessons fall outside a workable local window" : ""}, hifdh role: ${answers.hifz_role ?? "n/a"}`
   )}`;
 
   async function submitLead(e: React.FormEvent) {
@@ -218,13 +218,13 @@ export function YourChildsWeekQuiz({
     const supabase = getSupabaseClient();
     if (supabase) {
       const ref = await leadRef(contactEmail);
-      // The id is generated here, not read back via .select() — quiz_leads
+      // The id is generated here, not read back via .select() · quiz_leads
       // deliberately has no SELECT policy for anon ("anon cannot read back
       // the lead they just submitted", enforced by RLS and proven in
       // quiz_v2_rls.test.sql), so a .select().single() after this insert
       // asks Postgres to RETURNING a row anon isn't allowed to see, and
       // Postgres reports that as "new row violates row-level security
-      // policy" — indistinguishable from the insert itself being rejected.
+      // policy"– indistinguishable from the insert itself being rejected.
       // Same pattern already used for quiz_sessions' id in session.ts.
       const leadId = generateId();
       const { error } = await supabase.from("quiz_leads").insert({
@@ -239,19 +239,19 @@ export function YourChildsWeekQuiz({
         answers_snapshot: answers,
       });
       if (error) {
-        setLeadError("Something went wrong saving your details — please try again, or book a call instead.");
+        setLeadError("Something went wrong saving your details, please try again, or book a call instead.");
         setLeadSubmitting(false);
         return;
       }
 
-      // The lead row is saved either way — this call only decides whether
+      // The lead row is saved either way, this call only decides whether
       // we can also honestly record "an email actually went out." Never
       // record pdf_email_sent before this confirms success (see
       // quiz-send-plan's header comment): that event feeds the admin
       // analytics panel's "PDF emails" count, which must not lie about
       // deliveries that never happened.
       const feeSummary = feeBand
-        ? `${feeBand.yearGroupRange}: ${formatGBP(feeBand.annualFee)} for the year, ${formatGBP(feeBand.schedule?.termlyAmount ?? feeBand.termlyFee)} × 2 payments or ${formatGBP(feeBand.schedule?.monthlyAmount ?? feeBand.monthlyFee)} × ${feeBand.schedule?.instalments ?? 7} monthly payments${siblingDiscountNote ? ` — ${siblingDiscountNote}` : ""}`
+        ? `${feeBand.yearGroupRange}: ${formatGBP(feeBand.annualFee)} for the year, ${formatGBP(feeBand.schedule?.termlyAmount ?? feeBand.termlyFee)} × 2 payments or ${formatGBP(feeBand.schedule?.monthlyAmount ?? feeBand.monthlyFee)} × ${feeBand.schedule?.instalments ?? 7} monthly payments${siblingDiscountNote ? ` · ${siblingDiscountNote}` : ""}`
         : "";
       const functionUrl = getEdgeFunctionUrl("quiz-send-plan");
       const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -267,7 +267,7 @@ export function YourChildsWeekQuiz({
               startingPoints: evaluated.startingPoints,
               feeSummary,
               timezoneFlagText: timeInfo?.concern
-                ? `From your timezone, our live lessons (9am–3pm UK) fall around ${formatLocalHour(timeInfo.localStart)}–${formatLocalHour(timeInfo.localEnd)} — outside hours that work well for most children. We don't have an alternative live-lesson time slot to offer at this stage, so we'd want to talk this through honestly with you before you apply.`
+                ? `From your timezone, our live lessons (9am–3pm UK) fall around ${formatLocalHour(timeInfo.localStart)}–${formatLocalHour(timeInfo.localEnd)} · outside hours that work well for most children. We don't have an alternative live-lesson time slot to offer at this stage, so we'd want to talk this through honestly with you before you apply.`
                 : "",
               texts: evaluated.texts,
             }),
@@ -276,7 +276,7 @@ export function YourChildsWeekQuiz({
           if (result?.ok) recordQuizEvent(sessionRowId, "pdf_email_sent", stepIndex);
         } catch {
           // Lead is already saved; a failed send just means we don't record
-          // the event below — no user-facing error needed for this part.
+          // the event below, no user-facing error needed for this part.
         }
       }
     }
@@ -285,7 +285,7 @@ export function YourChildsWeekQuiz({
   }
 
   if (steps.length === 0) {
-    return <p className="text-center text-ink/65">The quiz isn&apos;t configured yet — please check back shortly.</p>;
+    return <p className="text-center text-ink/65">The quiz isn&apos;t configured yet, please check back shortly.</p>;
   }
 
   return (
@@ -347,7 +347,7 @@ export function YourChildsWeekQuiz({
                         </p>
                       ) : (
                         <p>
-                          Our live lessons run roughly 9am–3pm UK time — from your timezone that is around{" "}
+                          Our live lessons run roughly 9am–3pm UK time, from your timezone that is around{" "}
                           <strong>{formatLocalHour(timeInfo.localStart)}–{formatLocalHour(timeInfo.localEnd)}</strong>, a workable school day.
                         </p>
                       )}
@@ -427,7 +427,7 @@ export function YourChildsWeekQuiz({
                         <ul className="mt-3 space-y-1.5 text-sm text-ink/80">
                           {sampleWeek.slots.map((slot, i) => (
                             <li key={i} className="flex items-center justify-between border-b border-gold-light/20 pb-1.5 last:border-0">
-                              <span>{slot.weekdayName} — {slot.subject}</span>
+                              <span>{slot.weekdayName} · {slot.subject}</span>
                               <span className="font-medium text-ink">{slot.startLabel}–{slot.endLabel}</span>
                             </li>
                           ))}
@@ -439,11 +439,11 @@ export function YourChildsWeekQuiz({
                     )}
                     {!sampleWeek.loading && sampleWeek.slots && sampleWeek.slots.length === 0 && (
                       <p className="mt-2 text-sm text-ink/65">
-                        We haven&apos;t published a sample week for this year group yet — our admissions team can talk you through a typical week on a call.
+                        We haven&apos;t published a sample week for this year group yet, our admissions team can talk you through a typical week on a call.
                       </p>
                     )}
                     {!sampleWeek.loading && sampleWeek.slots === null && (
-                      <p className="mt-2 text-sm text-ink/65">A sample week isn&apos;t available to show right now — our admissions team can talk you through a typical week on a call.</p>
+                      <p className="mt-2 text-sm text-ink/65">A sample week isn&apos;t available to show right now, our admissions team can talk you through a typical week on a call.</p>
                     )}
                   </div>
                 );
@@ -464,7 +464,7 @@ export function YourChildsWeekQuiz({
                   <div key="timezone_flag" className="mt-6 rounded-2xl bg-red-50 p-5 text-red-900">
                     <p className="font-semibold">Worth talking through first: timing</p>
                     <p className="mt-1 text-sm">
-                      From your timezone, our live lessons (9am–3pm UK) fall around {formatLocalHour(timeInfo.localStart)}–{formatLocalHour(timeInfo.localEnd)} —
+                      From your timezone, our live lessons (9am–3pm UK) fall around {formatLocalHour(timeInfo.localStart)}–{formatLocalHour(timeInfo.localEnd)}, 
                       outside hours that work well for most children. We don&apos;t have an alternative live-lesson time slot to offer at this stage, so we&apos;d
                       want to talk this through honestly with you before you apply.
                     </p>
@@ -487,7 +487,7 @@ export function YourChildsWeekQuiz({
                 return (
                   <div key="fees" className="mt-6">
                     {keyStage && (
-                      <p className="mb-2 text-sm text-ink/70">{keyStage.title} ({keyStage.range}) — {keyStage.liveSplit}</p>
+                      <p className="mb-2 text-sm text-ink/70">{keyStage.title} ({keyStage.range}) · {keyStage.liveSplit}</p>
                     )}
                     <p className="mb-2 text-sm font-semibold text-ink">Your personalised fee estimate</p>
                     <FeeEstimator
@@ -507,7 +507,7 @@ export function YourChildsWeekQuiz({
                     <div className="rounded-2xl border border-gold-light/50 p-5">
                       <p className="font-semibold text-ink">Email me this plan</p>
                       {leadSubmitted ? (
-                        <p className="mt-2 text-sm text-ink/70">Thank you — we&apos;ve saved your plan and our admissions team will follow up by email shortly.</p>
+                        <p className="mt-2 text-sm text-ink/70">Thank you, we&apos;ve saved your plan and our admissions team will follow up by email shortly.</p>
                       ) : (
                         <form onSubmit={submitLead} className="mt-3 space-y-3">
                           <div className="hidden" aria-hidden="true">

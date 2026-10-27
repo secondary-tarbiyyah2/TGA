@@ -199,7 +199,7 @@ export function HomeworkCard({
                   <MarkRow key={s.child_id} submissionId={s.submission_id} childName={children[s.child_id] || s.child_id} maxPoints={hw.max_points ?? null} onSaved={load} />
                 ) : (
                   <div key={s.child_id} className="rounded-lg border border-gold-light/40 p-3 text-sm text-ink/65">
-                    {children[s.child_id] || s.child_id} — not submitted{s.status === "missing" ? " (missing)" : ""}
+                    {children[s.child_id] || s.child_id} · not submitted{s.status === "missing" ? " (missing)" : ""}
                   </div>
                 )
               )}

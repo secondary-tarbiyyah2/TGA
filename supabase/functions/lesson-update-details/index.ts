@@ -3,7 +3,7 @@
 // dedicated Edge Function rather than a direct RLS write policy because
 // lesson_instances also carries BBB fields (bbb_status, bbb_meeting_id,
 // recording_paused) that must NEVER be client-writable, and Postgres RLS
-// can't restrict individual columns within one UPDATE policy — see
+// can't restrict individual columns within one UPDATE policy, see
 // 0009_lessons_attendance.sql's comment on this table.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";

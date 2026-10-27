@@ -53,7 +53,7 @@ export default async function PrivacyPolicyPage() {
         <h2 className="mt-8 font-serif text-lg font-semibold text-ink">Children&apos;s data</h2>
         <p className="mt-2 text-ink/75">
           Where a form asks about your child, you are providing that information as their parent or guardian. We
-          collect the minimum needed for admissions and, once enrolled, safeguarding and education — never more than
+          collect the minimum needed for admissions and, once enrolled, safeguarding and education, never more than
           the purpose requires, in line with the ICO&apos;s Children&apos;s Code.
         </p>
 
@@ -61,7 +61,7 @@ export default async function PrivacyPolicyPage() {
         <p className="mt-2 text-ink/75">
           We use a small number of processors to run this website and its systems, each bound by a data processing
           agreement: Supabase (database, authentication and booking systems), Sanity (website content management),
-          and, where enabled, Resend (transactional email) and Plausible (cookieless analytics — see our{" "}
+          and, where enabled, Resend (transactional email) and Plausible (cookieless analytics, see our{" "}
           <a href="/legal/cookies" className="underline">Cookie Policy</a>). We do not sell personal data, and we
           only share it with anyone else where the law requires it or you&apos;ve asked us to.
         </p>
@@ -69,7 +69,7 @@ export default async function PrivacyPolicyPage() {
         <h2 className="mt-8 font-serif text-lg font-semibold text-ink">How long we keep it</h2>
         <p className="mt-2 text-ink/75">
           We keep personal data only for as long as necessary for the purpose it was collected for, in line with the
-          school&apos;s retention schedule — for example, an unsuccessful application is not kept indefinitely.
+          school&apos;s retention schedule, for example, an unsuccessful application is not kept indefinitely.
           Contact us for specifics about any particular record.
         </p>
 

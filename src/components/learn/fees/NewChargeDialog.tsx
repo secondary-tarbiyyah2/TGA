@@ -89,7 +89,7 @@ export function NewChargeDialog({
     const { error: err } = await supabase.from("fee_charges").insert(rows);
     setBusy(false);
     if (err) {
-      setError("Could not create the charge — please try again.");
+      setError("Could not create the charge, please try again.");
       return;
     }
     onDone(rows.length);

@@ -1,14 +1,14 @@
 /**
- * Shared shape for "Your Child's Week" — the public quiz
+ * Shared shape for "Your Child's Week"– the public quiz
  * (src/components/eligibility/YourChildsWeekQuiz.tsx) and the admin
  * quiz/rules builder (src/app/learn/admin/quiz) both read and write this
  * same TS shape. A whole config is stored as ONE jsonb blob per
- * quiz_config_versions row (0016_eligibility_quiz_v2.sql) — draft, review,
- * published or archived — so publishing/reverting is a single atomic
+ * quiz_config_versions row (0016_eligibility_quiz_v2.sql) · draft, review,
+ * published or archived, so publishing/reverting is a single atomic
  * status flip on one row, never a half-published mix of old and new
  * questions.
  *
- * No PII ever lives in this shape — it is copy and rules only. Answers
+ * No PII ever lives in this shape, it is copy and rules only. Answers
  * given by a real family live in quiz_sessions (anonymous) and, only after
  * consent, quiz_leads.
  */
@@ -51,8 +51,8 @@ export type QuizRule = {
 };
 
 export type QuizQuestion = {
-  key: string; // stable machine key — referenced by RuleCondition.questionKey; never renamed once rules use it
-  step: number; // which visible step (1..N) this question appears on — two questions can share a step (e.g. Arabic + Qur'an level both on step 3), rendered together under one "Question X of N" progress label
+  key: string; // stable machine key, referenced by RuleCondition.questionKey; never renamed once rules use it
+  step: number; // which visible step (1..N) this question appears on, two questions can share a step (e.g. Arabic + Qur'an level both on step 3), rendered together under one "Question X of N" progress label
   order: number; // ordering within its step, and of steps themselves
   title: string;
   subtitle?: string;
@@ -93,7 +93,7 @@ export function sortedActive<T extends { order: number; active: boolean }>(items
   return items.filter((i) => i.active).sort((a, b) => a.order - b.order);
 }
 
-/** Groups active questions by their `step`, in ascending step order — used by both the public quiz and the admin preview. */
+/** Groups active questions by their `step`, in ascending step order, used by both the public quiz and the admin preview. */
 export function questionsByStep(questions: QuizQuestion[]): { step: number; questions: QuizQuestion[] }[] {
   const active = questions.filter((q) => q.active);
   const steps = Array.from(new Set(active.map((q) => q.step))).sort((a, b) => a - b);

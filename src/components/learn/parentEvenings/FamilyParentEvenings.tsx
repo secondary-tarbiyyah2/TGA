@@ -260,7 +260,7 @@ export function FamilyParentEvenings() {
                     Join meeting
                   </a>
                 ) : (
-                  <span className="text-xs text-ink/65">No online link — see location</span>
+                  <span className="text-xs text-ink/65">No online link, see location</span>
                 )}
               </li>
             ))}

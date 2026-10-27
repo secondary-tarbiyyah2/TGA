@@ -44,7 +44,7 @@ at the school's existing material for your subject and USE/ADAPT it where it exi
 - Schemes of work folder 1-R1OVBf7dHRegT6oicCbByMpZTAijAYz (per-subject folders; also "Oak National" 1FcCWuBxQb2FqXIaaknKtJGvTc9uzA7KM)
 - Lesson plan examples folder 1itUcJNfzq5zJ62kUX4N1cs6pbOGCI33R
 - Curriculum policy doc id 1exDql1D7y-nGYrH0414KrpCItuW63OWVH0Lf3kokW04
-Spend modest effort there (a handful of searches/reads); do not stall if a folder is empty — fall back to the
+Spend modest effort there (a handful of searches/reads); do not stall if a folder is empty, fall back to the
 National Curriculum / the board's specification from your own knowledge.
 Record in each file a top-level `"source"` string: which Drive material was adapted, or "National Curriculum" / the spec code you wrote to.
 
@@ -54,7 +54,7 @@ Each lesson follows: retrieval starter → short explanation (4-6 teach slides) 
 independent practice → exit ticket → homework. Include a teacher `note` on every teach slide (what to say, what to
 ask, likely misconceptions). Keep bullets short (they go on slides). Keep JSON valid (no trailing commas, no comments).
 Islamic ethos: begin lessons naturally with bismillah/adab where fitting; never invent hadith, ayat or scholarly
-quotes — only include Qur'an/hadith references you are certain are authentic and cite them plainly.
+quotes, only include Qur'an/hadith references you are certain are authentic and cite them plainly.
 
 ## Process
 1. Write one JSON file per year group at `content/lessons/<subject-slug>/<year>.json` (create folders). Never reuse a lesson number listed in `content/retired-lessons.json`.

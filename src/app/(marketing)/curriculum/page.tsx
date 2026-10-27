@@ -9,14 +9,14 @@ import { CurriculumSampleWeek } from "@/components/CurriculumSampleWeek";
 
 export const metadata: Metadata = pageMetadata({
   title: "Curriculum",
-  description: "A specialist curriculum — Qur'an, Arabic and Islamic Studies alongside the full national curriculum, by key stage, Year 1 to International GCSE.",
+  description: "A specialist curriculum, Qur'an, Arabic and Islamic Studies alongside the full national curriculum, by key stage, Year 1 to International GCSE.",
   path: "/curriculum",
 });
 
 const STRANDS = [
   { title: "Qur'an, Arabic and Islamic Studies", body: "Qur'an recitation, Tajweed and memorisation in groups set by ability; Arabic as the Academy's language so pupils connect with the texts directly; Islamic Studies covering aqeedah, fiqh, seerah and hadith. On the timetable every week, not an after-school extra." },
   { title: "The national curriculum, to International GCSE", body: "English, Mathematics, Science, humanities and computing, sequenced from Year 1 to International GCSE, taught live by qualified teachers in classes of no more than 15." },
-  { title: "Tarbiyyah and character", body: "Prayer built into the day, the RECIPE values taught by name, PSHE, and careers guidance from Year 7 — so pupils grow in knowledge, character and faith together." },
+  { title: "Tarbiyyah and character", body: "Prayer built into the day, the RECIPE values taught by name, PSHE, and careers guidance from Year 7, so pupils grow in knowledge, character and faith together." },
 ];
 
 // KS4 subjects as set in the portal (content/syllabus/ks4). Every pupil sits Pearson Edexcel
@@ -48,7 +48,7 @@ export default async function CurriculumPage() {
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             {content.heroBody || (
               <>
-                A specialist curriculum, live-timetabled and taught by qualified teachers, through to International GCSE —
+                A specialist curriculum, live-timetabled and taught by qualified teachers, through to International GCSE, 
                 with Qur&apos;an, Islamic Studies and Arabic on the timetable at every key stage.
               </>
             )}

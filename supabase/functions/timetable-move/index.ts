@@ -1,7 +1,7 @@
 // Server-side re-check + apply for a manual drag-and-drop timetable edit.
 // The review UI does an immediate client-side check for instant feedback,
 // but per the ground rule "never trust client-only validation", the move
-// is only actually saved here — after independently re-verifying it
+// is only actually saved here, after independently re-verifying it
 // against every hard constraint the solver itself enforces, using the
 // service-role key so this function (not RLS, not the client) is the
 // single source of truth for "is this move allowed".

@@ -3,11 +3,11 @@
  * same: one primary action style, one secondary, one destructive; one input
  * style; one set of status chips and notices. Colour has a job:
  *
- *   gold   — the action you take (Save, Submit, Mark, Issue)
- *   teal   — where you are / what is selected (tabs, chosen filters, rows)
- *   amber  — needs attention soon (due, late, waiting)
- *   red    — a problem, or something that can't be undone (Delete)
- *   green  — done (saved, returned, present)
+ *   gold, the action you take (Save, Submit, Mark, Issue)
+ *   teal, where you are / what is selected (tabs, chosen filters, rows)
+ *   amber, needs attention soon (due, late, waiting)
+ *   red, a problem, or something that can't be undone (Delete)
+ *   green, done (saved, returned, present)
  *
  * Use these instead of writing button and input classes by hand.
  */

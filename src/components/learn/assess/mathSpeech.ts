@@ -129,7 +129,7 @@ export function punctuationToSpeech(input: string): string {
       post.unshift(END[c]);
       t = t.slice(0, -1);
     }
-    if (t === "–" || t === "—" || t === "-") { out.push(...pre, "dash", ...post); continue; }
+    if (t === "–" || t === "–" || t === "-") { out.push(...pre, "dash", ...post); continue; }
     let word = t.replace(/['’]/g, " apostrophe ").replace(/(\w)-(\w)/g, "$1 hyphen $2");
     if (/^[A-Z]/.test(t)) word = `capital ${t[0]}, ${word}`;
     out.push(...pre, word, ...post);

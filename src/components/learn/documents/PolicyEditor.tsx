@@ -332,8 +332,8 @@ export function PolicyEditor() {
         </label>
         <label className="text-sm text-ink">Who can see it
           <select value={draft.visibility} onChange={(e) => set("visibility", e.target.value as Row["visibility"])} className={inputCls}>
-            <option value="public">Everyone — listed on the website</option>
-            <option value="staff">Staff only — for signing and compliance, not listed publicly</option>
+            <option value="public">Everyone, listed on the website</option>
+            <option value="staff">Staff only, for signing and compliance, not listed publicly</option>
           </select>
         </label>
         <label className="flex items-center gap-2 pt-6 text-sm text-ink">

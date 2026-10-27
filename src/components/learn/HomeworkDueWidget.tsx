@@ -6,7 +6,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 type Row = { homework_id: string; due_at: string; status: string; homework: { title: string; class_id: string; archived_at: string | null } | null };
 
 /**
- * "Upcoming homework" for a dashboard — reads homework_status (0010, a
+ * "Upcoming homework" for a dashboard, reads homework_status (0010, a
  * view that computes on_time/late/missing at read time) scoped to one
  * child, filtered client-side to not-yet-due/late/missing (i.e. anything
  * still relevant to act on, not a full history).

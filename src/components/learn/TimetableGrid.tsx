@@ -5,7 +5,7 @@ import { useTimetablePeriods } from "@/lib/learn/useTimetablePeriods";
 
 type Props = {
   slots: TimetableSlot[];
-  /** Larger, simpler cells for younger students — UI-only branch, same data/permissions (see ground rules). */
+  /** Larger, simpler cells for younger students, UI-only branch, same data/permissions (see ground rules). */
   simplified?: boolean;
   /** Show the subject's class/year-group label too (useful for teacher/admin views spanning several classes). */
   showClassLabel?: boolean;
@@ -28,7 +28,7 @@ export function TimetableGrid({ slots, simplified = false, showClassLabel = fals
   if (slots.length === 0) {
     return (
       <p className="text-sm text-ink/65">
-        {emptyMessage || "No published timetable yet — check back once the school has published one."}
+        {emptyMessage || "No published timetable yet, check back once the school has published one."}
       </p>
     );
   }

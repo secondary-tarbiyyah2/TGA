@@ -8,7 +8,7 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
   return "items" in entry;
 }
 
-// Five top-level items — About / Learning / Admissions / Parents / Contact —
+// Five top-level items, About / Learning / Admissions / Parents / Contact, 
 // plus a prominent "Apply" CTA and a "Log in" link. Only About and Admissions
 // open a (single-level) dropdown; Learning and Parents are plain links to hub
 // pages (/learning, /parents) whose sub-pages are presented as cards, so the
@@ -116,10 +116,10 @@ export const footerNav = footerColumns.flatMap((c) => c.links);
 
 // Primary header CTA is Apply; a free call stays reachable under Admissions.
 export const primaryCta = { href: "/admissions", label: "Apply" };
-// Single log-in destination across header, mobile drawer and footer — /staff
+// Single log-in destination across header, mobile drawer and footer, /staff
 // and /portal both 301-redirect to this same URL at the server level (see
 // public/.htaccess), so there is only ever one login entry point live. This
 // is a cross-origin, absolute link (not "/learn/login") because /learn lives
-// on its own subdomain — see src/lib/learn/origin.ts.
+// on its own subdomain, see src/lib/learn/origin.ts.
 export const portalCta = { href: `${LEARN_ORIGIN}/login`, label: "Log in" };
 export const openEveningCta = { href: "/open-evening", label: "Book Open Evening" };

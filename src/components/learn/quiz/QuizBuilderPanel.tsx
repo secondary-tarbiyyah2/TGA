@@ -115,7 +115,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
           {published ? (
             <>Live version published {published.published_at ? new Date(published.published_at).toLocaleString("en-GB") : ""}</>
           ) : (
-            <>Nothing published yet — the public quiz is showing the bundled fallback copy.</>
+            <>Nothing published yet, the public quiz is showing the bundled fallback copy.</>
           )}
           {saveState === "saving" && <span className="ml-2 text-xs text-ink/65">Saving…</span>}
           {saveState === "saved" && <span className="ml-2 text-xs text-gold-700">Saved</span>}
@@ -136,7 +136,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
           <ul className="mt-3 space-y-1 text-xs text-ink/65">
             {history.map((v) => (
               <li key={v.id} className="flex items-center justify-between gap-2 border-b border-gold-light/20 py-1">
-                <span>{v.label} — {v.status} — {new Date(v.created_at).toLocaleString("en-GB")}</span>
+                <span>{v.label} · {v.status} · {new Date(v.created_at).toLocaleString("en-GB")}</span>
                 <button type="button" onClick={() => revertTo(v)} className="shrink-0 rounded-lg border border-gold-light px-2 py-0.5 text-[11px] font-medium hover:bg-cream bg-white text-ink/80 transition-colors">
                   Load into draft
                 </button>
@@ -262,7 +262,7 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
  * show-only-when editor and the rules editor. Picks a question by its
  * real title (never the internal key), and for a single_select question
  * picks the answer from its actual option labels instead of typing a raw
- * value by hand — the free-text value box was the main "too technical"
+ * value by hand, the free-text value box was the main "too technical"
  * pain point, since it silently failed if you didn't type the exact
  * internal value.
  */

@@ -1,11 +1,11 @@
 import { defineField, defineType } from "sanity";
 
-// Singleton (_id: "homepageContent") — lets Headteacher/Admin edit the
+// Singleton (_id: "homepageContent") · lets Headteacher/Admin edit the
 // homepage's headline copy, pillar cards and "how it works" steps from
 // Studio, with draft/publish/history/revert, instead of needing a code
 // change + redeploy for every wording tweak. Every field is optional and
 // falls back to the existing bundled copy (src/content/seed.ts) when left
-// blank — so an empty Studio never breaks the homepage, it just shows the
+// blank, so an empty Studio never breaks the homepage, it just shows the
 // same copy the page already ships with today.
 export default defineType({
   name: "homepageContent",
@@ -19,7 +19,7 @@ export default defineType({
   ],
   fields: [
     defineField({ name: "heroKicker", title: "Kicker (small text above headline)", type: "string", group: "hero" }),
-    defineField({ name: "heroHeading", title: "Headline", type: "string", group: "hero", description: "Plain text — the gold highlight styling on the live page is applied automatically to the last clause." }),
+    defineField({ name: "heroHeading", title: "Headline", type: "string", group: "hero", description: "Plain text, the gold highlight styling on the live page is applied automatically to the last clause." }),
     defineField({ name: "heroBody", title: "Intro paragraph", type: "text", rows: 3, group: "hero" }),
 
     defineField({

@@ -10,7 +10,7 @@ import { formatGBP } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Apply online",
-  description: "Apply for a place at Tarbiyyah Global Academy — our online application form and what happens next.",
+  description: "Apply for a place at Tarbiyyah Global Academy, our online application form and what happens next.",
 };
 
 export default async function ApplyPage() {

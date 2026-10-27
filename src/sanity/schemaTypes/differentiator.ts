@@ -14,7 +14,7 @@ export default defineType({
       title: "Status",
       type: "string",
       options: { list: ["Confirmed commitment", "Draft / concept — not yet confirmed"] },
-      initialValue: "Draft / concept — not yet confirmed",
+      initialValue: "Draft / concept, not yet confirmed",
       validation: (r) => r.required(),
     }),
     defineField({ name: "visible", title: "Show on site", type: "boolean", initialValue: true }),

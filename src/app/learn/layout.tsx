@@ -6,7 +6,7 @@ import { LearnLayoutShell } from "@/components/learn/LearnLayoutShell";
 // (the subdomain also sends an X-Robots-Tag noindex header; this is the
 // in-page equivalent, in case that header is ever lost).
 export const metadata: Metadata = {
-  title: { absolute: "TGA Portal", template: "%s — TGA Portal" },
+  title: { absolute: "TGA Portal", template: "%s, TGA Portal" },
   description: "The Tarbiyyah Global Academy portal for parents, students and staff.",
   robots: { index: false, follow: false },
   openGraph: null,

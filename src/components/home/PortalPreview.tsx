@@ -5,8 +5,8 @@ import { portalCta } from "@/lib/nav";
 /**
  * "Your window into school": what a parent actually gets in the portal, drawn
  * in the portal's own style (white cards, teal actions) so the website and
- * the portal feel like one school. The dashboard is an illustration — no
- * real pupil's data — and is labelled as such.
+ * the portal feel like one school. The dashboard is an illustration, no
+ * real pupil's data, and is labelled as such.
  */
 const FEATURES = [
   { title: "Today's lessons", body: "The day's live lessons (UK time), with one tap to join on Microsoft Teams." },
@@ -15,7 +15,7 @@ const FEATURES = [
   { title: "Qur'an progress", body: "Hifdh and recitation targets tracked alongside every other subject." },
   { title: "Weekly Tarbiyah Note", body: "A personal note on character and akhlaq from the form tutor." },
   { title: "Message teachers", body: "Talk to your child's teachers directly, on safeguarded, logged channels." },
-  { title: "Sign forms online", body: "Consents and policies signed with your own hand signature — no printing." },
+  { title: "Sign forms online", body: "Consents and policies signed with your own hand signature, no printing." },
   { title: "Fees & reports", body: "Invoices, payment plans and termly reports in one place." },
 ];
 
@@ -29,7 +29,7 @@ export function PortalPreview() {
             The parent portal
           </div>
           <h2 id="portal-heading" className="text-h2 font-serif font-semibold text-white">
-            You stay close to school — without doing the teaching.
+            You stay close to school, without doing the teaching.
           </h2>
           <p className="mt-4 text-cream/80">
             Every family gets its own login to the same portal our teachers use, so you see what they see: lessons, registers,
@@ -72,7 +72,7 @@ export function PortalPreview() {
                 <span className="text-xs font-medium text-gold-700">Open Action centre</span>
               </div>
               <ul className="mt-2 space-y-1.5 text-xs">
-                <li className="flex items-center justify-between rounded-lg bg-cream px-3 py-2"><span>Sign: Photo consent 2026–27</span><span className="rounded-full bg-gold-100 px-2 py-0.5 font-semibold text-gold-900">Today</span></li>
+                <li className="flex items-center justify-between rounded-lg bg-cream px-3 py-2"><span>Book a parents&apos; evening slot</span><span className="rounded-full bg-gold-100 px-2 py-0.5 font-semibold text-gold-900">Today</span></li>
                 <li className="flex items-center justify-between rounded-lg bg-cream px-3 py-2"><span>Science homework due</span><span className="text-ink/60">Thu</span></li>
               </ul>
             </div>
@@ -120,7 +120,7 @@ export function PortalPreview() {
               </div>
               <div className="mt-3">
                 <p className="text-xs font-medium">Weekly Tarbiyah Note</p>
-                <p className="mt-1.5 rounded-lg border border-gold-light/40 p-3 text-xs text-ink/80">&ldquo;Yusuf showed real <em>sabr</em> (<span lang="ar" dir="rtl">صَبْر</span>) this week, sticking with a hard problem until he solved it.&rdquo; <span className="text-ink/55">— Ustadh Bilal, form tutor</span></p>
+                <p className="mt-1.5 rounded-lg border border-gold-light/40 p-3 text-xs text-ink/80">&ldquo;On time and ready for every lesson this week. Yusuf kept going with a tricky tajweed exercise until he had it right, and was kind and helpful to a classmate in group work.&rdquo; <span className="text-ink/55">– Ustadh Bilal, form tutor</span></p>
               </div>
             </div>
 
@@ -129,7 +129,7 @@ export function PortalPreview() {
               <span className="rounded-lg border border-gold-500 px-3 py-1.5 text-gold-700">Message a teacher</span>
             </div>
           </div>
-          <figcaption className="mt-3 text-center text-xs text-cream/70">The family dashboard as it appears in the portal — an illustration, not a real pupil.</figcaption>
+          <figcaption className="mt-3 text-center text-xs text-cream/70">The family dashboard as it appears in the portal, an illustration, not a real pupil.</figcaption>
         </figure>
       </Container>
     </section>

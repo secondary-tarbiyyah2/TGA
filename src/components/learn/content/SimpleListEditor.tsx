@@ -17,7 +17,7 @@ type Row = Record<string, unknown> & { id?: string };
 
 /** Shared add/edit/delete list editor for the simpler website-content
  * tables (FAQs, testimonials, team profiles, differentiators, policies,
- * term dates, curriculum documents) — these all share the same shape
+ * term dates, curriculum documents) · these all share the same shape
  * (a flat row of text/number/boolean fields, ordered by order_index),
  * so one generic editor replaces eight near-identical bespoke ones. */
 export function SimpleListEditor({
@@ -154,7 +154,7 @@ function RowForm({ fields, draft, setDraft, onSave, onCancel, busy }: { fields: 
               <input type="checkbox" checked={Boolean(draft[f.key])} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.checked })} className="mt-2 block" />
             ) : f.type === "select" ? (
               <select value={(draft[f.key] as string) || ""} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.value || null })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
-                <option value="">—</option>
+                <option value="">–</option>
                 {(f.options || []).map((o) => (
                   <option key={o} value={o}>{o}</option>
                 ))}

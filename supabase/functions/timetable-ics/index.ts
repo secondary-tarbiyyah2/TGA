@@ -1,7 +1,7 @@
 // Token-protected .ics calendar feed for a signed-in user's own PUBLISHED
 // timetable. Deployed WITHOUT JWT verification (--no-verify-jwt, same as
 // learn-login/book-admissions-call) because calendar apps poll this URL
-// with no Supabase session at all — security comes entirely from the
+// with no Supabase session at all, security comes entirely from the
 // token being unguessable and revocable (see ics_tokens' migration
 // comment), never from "logged in as this user".
 //
@@ -21,7 +21,7 @@ async function hashToken(token: string): Promise<string> {
 
 function toIcsDateForNextOccurrence(weekday: number, time: string): Date {
   // weekday: 1=Mon..5=Fri. Finds the next occurrence of that weekday/time
-  // from today (UTC), which is enough for a first useful .ics — a real
+  // from today (UTC), which is enough for a first useful .ics, a real
   // recurring event is expressed below via RRULE, this just anchors DTSTART.
   const [h, m] = time.split(":").map(Number);
   const now = new Date();
@@ -162,7 +162,7 @@ Deno.serve(async (req) => {
     "PRODID:-//Tarbiyyah Global Academy//Learn Timetable//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
-    "X-WR-CALNAME:Tarbiyyah Global Academy — Timetable",
+    "X-WR-CALNAME:Tarbiyyah Global Academy, Timetable",
     "REFRESH-INTERVAL;VALUE=DURATION:PT12H",
   ];
 

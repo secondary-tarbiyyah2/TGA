@@ -21,7 +21,7 @@ type HistoryRow = { id: string; run_id: string; status: string; note: string | n
  * published timetable_run's slots for a specific year_group as the public
  * sample week, with its own draft -> review -> published lifecycle and a
  * real history/revert. RLS (0016_eligibility_quiz_v2.sql) is the actual
- * boundary — this UI only renders for head_teacher/admin because LearnGate
+ * boundary, this UI only renders for head_teacher/admin because LearnGate
  * already restricts the page, and every write here still goes through the
  * same policies a direct API call would.
  */
@@ -96,7 +96,7 @@ export function SampleWeeksPanel() {
         <div className="rounded-2xl bg-amber-50 p-5 text-amber-900">
           <p className="font-semibold">No published sample week</p>
           <p className="mt-1 text-sm">
-            The following year groups have no published sample week — the public quiz will show the honest fallback
+            The following year groups have no published sample week, the public quiz will show the honest fallback
             for them until one is marked here: {gaps.map((g) => g.year_group_name).join(", ")}.
           </p>
         </div>
@@ -181,7 +181,7 @@ export function SampleWeeksPanel() {
                 <ul className="mt-2 space-y-1 text-xs text-ink/65">
                   {(history[existing.id] || []).map((h) => (
                     <li key={h.id} className="flex items-center justify-between gap-2 border-b border-gold-light/20 py-1">
-                      <span>{h.status} — run {runs.find((r) => r.id === h.run_id)?.label ?? h.run_id} — {new Date(h.changed_at).toLocaleString("en-GB")}</span>
+                      <span>{h.status} · run {runs.find((r) => r.id === h.run_id)?.label ?? h.run_id} · {new Date(h.changed_at).toLocaleString("en-GB")}</span>
                       <button
                         type="button"
                         onClick={() => saveMark(yg.id, h.run_id, h.status as Mark["status"], existing)}

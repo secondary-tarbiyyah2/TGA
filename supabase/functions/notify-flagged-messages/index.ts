@@ -1,13 +1,13 @@
 // Closes a real gap: message_thread_messages' keyword-match trigger
 // (0013) sets flagged=true on a concerning message, but nothing ever told
-// the safeguarding lead — it just sat there until someone happened to
+// the safeguarding lead, it just sat there until someone happened to
 // open Compliance. Runs on a schedule (see
 // .github/workflows/notify-flagged-messages.yml), same pattern as every
 // other alert in this codebase (send-reminders, lms-absence-alerts,
 // nudge-outstanding-signatures): find what's new, email it, mark it
 // notified so it's never sent twice.
 //
-// No JWT verification needed — this is scheduled, not user-triggered
+// No JWT verification needed, this is scheduled, not user-triggered
 // (see supabase/config.toml's other scheduled functions, none of which
 // verify_jwt either); it uses the service-role key throughout.
 import { createClient } from "jsr:@supabase/supabase-js@2";
@@ -35,7 +35,7 @@ Deno.serve(async (req) => {
   if (error) return jsonResponse({ ok: false, error: "query_failed", detail: error.message }, 500);
   if (!pending || pending.length === 0) return jsonResponse({ ok: true, notified: 0 });
 
-  // Everyone currently holding the safeguarding_lead add-on permission —
+  // Everyone currently holding the safeguarding_lead add-on permission, 
   // same permission model 0013's own "safeguarding lead reads flagged
   // messages" RLS policy and Compliance's flagged-message view already
   // use, so "who gets alerted" and "who can see it once alerted" are

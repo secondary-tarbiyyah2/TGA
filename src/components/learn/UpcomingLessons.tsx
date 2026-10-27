@@ -13,7 +13,7 @@ type LessonRow = {
 /**
  * A short list of upcoming (and just-past, for easy "go back and register
  * attendance") lesson instances, linking through to the full lesson page.
- * Shared across the teacher/parent/student dashboards — each passes its own
+ * Shared across the teacher/parent/student dashboards, each passes its own
  * already-RLS-scoped Supabase query.
  */
 export function UpcomingLessons({
@@ -69,7 +69,7 @@ export function UpcomingLessons({
           >
             <span className="font-medium text-ink">
               {l.timetable_slots?.classes?.subjects?.name}
-              {l.timetable_slots?.classes?.subjects?.name ? " — " : ""}
+              {l.timetable_slots?.classes?.subjects?.name ? "– " : ""}
               {l.timetable_slots?.classes?.name}
             </span>
             <span className="text-ink/65">

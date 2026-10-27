@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// Pages that already are (or sit inside) the apply / booking flow — a second
+// Pages that already are (or sit inside) the apply / booking flow, a second
 // "Apply" bar there would just be noise over the form.
 const HIDDEN_ON = ["/admissions/apply", "/book-a-call", "/manage-booking"];
 

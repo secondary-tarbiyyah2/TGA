@@ -11,7 +11,7 @@ const STANDARDS = ["introduced", "consolidating", "secure", "fluent"] as const;
 
 /**
  * Only rendered for someone holding the `assessment_lead` add-on
- * permission (checked by the caller via useLearnPermission — see
+ * permission (checked by the caller via useLearnPermission, see
  * 0011_assessment.sql's RLS, which is the real enforcement point; this
  * form simply can't submit anything that policy would reject anyway).
  * Two entry shapes, matching quran_progress' own CHECK constraint:

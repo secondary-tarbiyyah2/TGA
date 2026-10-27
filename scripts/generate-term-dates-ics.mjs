@@ -1,14 +1,14 @@
 // Generates public/term-dates.ics at build time, from the same confirmed
 // term dates the Term Dates page shows (getTermDates() in src/lib/content.ts
-// — Sanity if configured, else the bundled seed fallback). This site is a
+//, Sanity if configured, else the bundled seed fallback). This site is a
 // fully static export with no server/API routes, so the .ics has to exist as
 // a real file written before `next build` runs (wired in as the "prebuild"
-// npm script) rather than generated on demand — a static file downloads
+// npm script) rather than generated on demand, a static file downloads
 // reliably from every mobile calendar app, unlike a `data:` URI link, which
 // several iOS/Android calendar apps handle inconsistently.
 //
 // If there are zero confirmed term dates, no file is written (and any stale
-// one from a previous build is removed) — the Term Dates page hides the
+// one from a previous build is removed) · the Term Dates page hides the
 // download link entirely rather than ever offering an empty calendar.
 import { createClient } from "@sanity/client";
 import { writeFileSync, existsSync, unlinkSync, mkdirSync } from "node:fs";
@@ -81,7 +81,7 @@ function buildIcs(dates) {
       `DTSTART;VALUE=DATE:${start}`,
       `DTEND;VALUE=DATE:${end}`,
       `SUMMARY:${icsEscape(`${d.label} (Tarbiyyah Global Academy)`)}`,
-      `DESCRIPTION:${icsEscape(d.kind + (d.notes ? ` — ${d.notes}` : ""))}`,
+      `DESCRIPTION:${icsEscape(d.kind + (d.notes ? ` · ${d.notes}` : ""))}`,
       "END:VEVENT"
     );
   }
@@ -93,7 +93,7 @@ const dates = await fetchConfirmedTermDates();
 
 if (dates.length === 0) {
   if (existsSync(outPath)) unlinkSync(outPath);
-  console.log("No confirmed term dates — skipped writing public/term-dates.ics.");
+  console.log("No confirmed term dates, skipped writing public/term-dates.ics.");
 } else {
   mkdirSync(path.dirname(outPath), { recursive: true });
   writeFileSync(outPath, buildIcs(dates), "utf8");

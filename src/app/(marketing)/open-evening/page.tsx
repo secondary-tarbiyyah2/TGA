@@ -32,7 +32,7 @@ export default async function OpenEveningPage() {
           before you come, or <Link href="/book-a-call" className="font-semibold text-gold-700 underline">book a call</Link> with the admissions team at any time.
         </p>
 
-        {/* Dates, places left and the booking form load in the browser, so a new
+        {/* Dates and the booking form load in the browser, so a new
             evening added in the admin portal appears without a site rebuild. */}
         <OpenEveningLive
           initialSettings={{

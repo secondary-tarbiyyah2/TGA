@@ -1,5 +1,5 @@
 // Creates or re-invites a /learn account: generates a one-time setup link
-// (never a password — nothing here ever displays, logs, or emails a
+// (never a password, nothing here ever displays, logs, or emails a
 // credential) and grants the requested primary role plus any add-on
 // permissions. Deployed WITH JWT verification: only a caller who already
 // holds Headteacher or Admin (per THEIR OWN user_roles rows, re-checked
@@ -8,12 +8,12 @@
 // requires the caller to specifically be Headteacher.
 //
 // The full staff-creation form (capability preview, recruitment gate,
-// subjects/year-groups/classes UI) is Phase 2 — this function is the
+// subjects/year-groups/classes UI) is Phase 2, this function is the
 // server-side plumbing Phase 2's UI calls into, plus what the Phase 1
 // bootstrap script (scripts/invite-first-head-teacher.mjs) uses directly
 // via the service-role key to create the very first Headteacher account
 // (that script doesn't go through this HTTP function at all, since there's
-// no existing Headteacher yet to authorize the call — see that script's
+// no existing Headteacher yet to authorize the call, see that script's
 // own comments).
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
@@ -24,7 +24,7 @@ const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 // /learn lives on its own subdomain (see SETUP.md, "Moving /learn to its own
-// subdomain") — LEARN_SITE_URL, not SITE_URL (the main marketing domain), is
+// subdomain") · LEARN_SITE_URL, not SITE_URL (the main marketing domain), is
 // where the setup link must land.
 const learnSiteUrl = Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk";
 
@@ -39,7 +39,7 @@ const SENSITIVE_ROLES: Role[] = ["head_teacher", "admin"];
 const SENSITIVE_ADD_ONS: AddOn[] = ["safeguarding_lead"];
 
 // Kept local rather than shared with the frontend's role-label helper
-// (src/lib/learn/session.ts) — Edge Functions run on Deno with their own
+// (src/lib/learn/session.ts) · Edge Functions run on Deno with their own
 // module resolution, and this is only ever used for the email subject/body
 // below, not anywhere roles are actually enforced.
 const ROLE_LABEL: Record<Role, string> = {
@@ -53,7 +53,7 @@ const ROLE_LABEL: Record<Role, string> = {
 };
 
 // Coarse mapping onto the legacy profiles.role vocabulary (0001/0005),
-// which the pre-existing booking admin panel still reads — kept working
+// which the pre-existing booking admin panel still reads, kept working
 // rather than left null (profiles.role is NOT NULL), not otherwise used by
 // anything under /learn.
 function legacyProfileRole(role: Role): string {
@@ -79,7 +79,7 @@ async function requireInviter(authHeader: string | null) {
   const callerClient = createClient(supabaseUrl, anonKey, { global: { headers: { Authorization: authHeader } } });
   const { data: userData } = await callerClient.auth.getUser();
   if (!userData?.user) return null;
-  // Read the caller's OWN roles under their OWN RLS — never trusts a role
+  // Read the caller's OWN roles under their OWN RLS, never trusts a role
   // claimed in the request body.
   const { data: roleRows } = await callerClient.from("user_roles").select("role").eq("user_id", userData.user.id);
   const roles = (roleRows || []).map((r) => r.role as Role);
@@ -131,7 +131,7 @@ Deno.serve(async (req) => {
     userId = existing.id;
   } else {
     isNewUser = true;
-    // No password set at all — Supabase creates the account in an
+    // No password set at all, Supabase creates the account in an
     // unusable state until the invite link below is used to set one.
     const { data: created, error: createErr } = await serviceClient.auth.admin.createUser({ email, email_confirm: true });
     if (createErr || !created?.user) return jsonResponse({ ok: false, error: "create_failed", detail: createErr?.message }, 500);
@@ -183,10 +183,10 @@ Deno.serve(async (req) => {
   const setupCode = linkData.properties.email_otp || null;
 
   // Actually email the setup link rather than only handing it back for the
-  // inviting admin to copy and send themselves by hand — reported as "we
+  // inviting admin to copy and send themselves by hand, reported as "we
   // need something better, like an email sent for them to make [an]
   // account". Failure here is never fatal to the invite itself (the
-  // account/role are already created either way) — the admin still gets
+  // account/role are already created either way) · the admin still gets
   // setupLink back in the response as a fallback they can copy manually if
   // Resend is down or misconfigured; emailSent tells the frontend which
   // happened so it never claims an email went out that didn't.

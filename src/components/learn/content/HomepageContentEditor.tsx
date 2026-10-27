@@ -123,7 +123,7 @@ export function HomepageContentEditor() {
         <DefaultTextField label="Hero body" value={row.hero_body} def={D.hero_body} multiline onChange={(v) => setRow({ ...row, hero_body: v })} />
         <TitleBodyListEditor label="Three pillars" items={row.pillars} def={D.pillars} onChange={(pillars) => setRow({ ...row, pillars })} />
         <DefaultTextField label="“How it works” heading" value={row.how_it_works_heading} def={D.how_it_works_heading} wide onChange={(v) => setRow({ ...row, how_it_works_heading: v })} />
-        <TitleBodyListEditor label="How it works — steps" items={row.how_it_works_steps} def={D.how_it_works_steps} onChange={(how_it_works_steps) => setRow({ ...row, how_it_works_steps })} />
+        <TitleBodyListEditor label="How it works, steps" items={row.how_it_works_steps} def={D.how_it_works_steps} onChange={(how_it_works_steps) => setRow({ ...row, how_it_works_steps })} />
         <DefaultTextField label="Stages heading" value={row.stages_heading} def={D.stages_heading} onChange={(v) => setRow({ ...row, stages_heading: v })} />
         <DefaultTextField label="Stages body" value={row.stages_body} def={D.stages_body} multiline onChange={(v) => setRow({ ...row, stages_body: v })} />
         <DefaultTextField label="Fee teaser heading" value={row.fee_teaser_heading} def={D.fee_teaser_heading} onChange={(v) => setRow({ ...row, fee_teaser_heading: v })} />

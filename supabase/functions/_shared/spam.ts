@@ -1,6 +1,6 @@
 import type { SupabaseClient } from "jsr:@supabase/supabase-js@2";
 
-/** Best-effort, low-cardinality hash — never store raw IPs. */
+/** Best-effort, low-cardinality hash, never store raw IPs. */
 export async function hashIp(ip: string): Promise<string> {
   const data = new TextEncoder().encode(ip);
   const digest = await crypto.subtle.digest("SHA-256", data);

@@ -2,7 +2,7 @@
 // role, or (de)activate one. Deployed WITH JWT verification on (unlike the
 // public booking functions), so a request with no valid Supabase session is
 // rejected before it even reaches this code. That only proves "some
-// logged-in user called this" though — the actual "are they an admin?"
+// logged-in user called this" though, the actual "are they an admin?"
 // check below is what matters, using the caller's own JWT so it runs under
 // their RLS (an admin can read any profile; anyone else can only read their
 // own), never trusting a role the client merely claims to have.
@@ -70,7 +70,7 @@ Deno.serve(async (req) => {
     if (!email || !displayName || !roleTitle) return jsonResponse({ ok: false, error: "missing_fields" }, 400);
 
     // Creates the account directly with a temporary password rather than
-    // GoTrue's inviteUserByEmail — that both creates the user AND requires
+    // GoTrue's inviteUserByEmail, that both creates the user AND requires
     // sending an email in one call, so it fails outright (as it did in
     // production) whenever email delivery isn't working. Email is instead
     // attempted afterwards, separately, and never blocks the account from

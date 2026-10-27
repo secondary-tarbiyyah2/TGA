@@ -7,7 +7,7 @@ import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 
 export const metadata: Metadata = pageMetadata({
   title: "Pastoral Care & SEND Support",
-  description: "How we support every child's wellbeing, character and additional needs — including the Weekly Tarbiyah Note.",
+  description: "How we support every child's wellbeing, character and additional needs, including the Weekly Tarbiyah Note.",
   path: "/pastoral-care",
 });
 
@@ -20,7 +20,7 @@ export default function PastoralCarePage() {
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Every child known, every child supported.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             An online school still means real relationships. Every pupil has a form tutor who knows them personally
-            — academically and personally.
+            – academically and personally.
           </p>
         </Container>
       </section>
@@ -31,7 +31,7 @@ export default function PastoralCarePage() {
           <h2 className="font-serif text-2xl font-semibold text-ink">A personal update, every week.</h2>
           <p className="mt-4 max-w-2xl text-ink/75">
             Alongside academic reports, your child&apos;s form tutor sends a personal weekly note on their character
-            and akhlaq — how they&apos;ve been with their peers, their effort and attitude, and anything worth
+            and akhlaq, how they&apos;ve been with their peers, their effort and attitude, and anything worth
             celebrating or working on. It&apos;s separate from academic reporting, because we want you to know your
             child as a person, not just as a set of grades.
           </p>
@@ -51,7 +51,7 @@ export default function PastoralCarePage() {
       </section>
 
       <AdmissionsStrip />
-      <CtaBand heading="Questions about pastoral or SEND support?" body="Reach out — we're happy to talk it through before you apply." ctaLabel="Contact us" ctaHref="/contact" />
+      <CtaBand heading="Questions about pastoral or SEND support?" body="Reach out, we're happy to talk it through before you apply." ctaLabel="Contact us" ctaHref="/contact" />
     </>
   );
 }

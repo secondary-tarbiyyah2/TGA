@@ -51,7 +51,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   // Who pressed "Join lesson" (lesson_joins): child id -> first join time. Used to pre-fill 'present'.
   const [joined, setJoined] = useState<Record<string, string>>({});
   const [joinsLoaded, setJoinsLoaded] = useState(false);
-  // Teams attendance report (teams-sync, 0145): a hint only — never used to mark anyone.
+  // Teams attendance report (teams-sync, 0145): a hint only, never used to mark anyone.
   const [teams, setTeams] = useState<Record<string, TeamsHint>>({});
 
   const loadJoins = useCallback(async () => {

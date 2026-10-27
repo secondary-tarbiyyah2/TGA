@@ -6,7 +6,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 type Row = { year_group_id: string; name: string; sort_order: number; capacity: number | null; places_remaining: number | null };
 
 /**
- * Reads public.year_group_places (migration 0019) — a view, not a typed
+ * Reads public.year_group_places (migration 0019) · a view, not a typed
  * number anywhere in this component, so there is nothing here to keep in
  * sync by hand. Only year groups an admin has actually set a capacity for
  * appear at all; this never shows a placeholder or "spaces available"

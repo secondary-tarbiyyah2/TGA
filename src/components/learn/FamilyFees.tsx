@@ -11,7 +11,7 @@ import type { FeeBand } from "@/content/seed";
 type Child = { id: string; name: string; year_groups?: { name: string } | null };
 
 /**
- * This family's actual billing view — distinct from the public /fees
+ * This family's actual billing view, distinct from the public /fees
  * estimator (which is a self-serve, no-data-collected calculator anyone can
  * play with). Here, "siblings enrolled" is read from this family's real
  * `enrolments`, not typed in by hand, so the sibling discount line reflects
@@ -20,7 +20,7 @@ type Child = { id: string; name: string; year_groups?: { name: string } | null }
  * Only the sibling discount is computed automatically. The other
  * eligibility-based discounts in Sanity's `discounts` catalogue
  * (bursaries, staff discount, etc.) require an admissions decision per
- * family that no system in this codebase yet records — showing them here
+ * family that no system in this codebase yet records, showing them here
  * as "applied" would be inventing a fact (ground rule 2), so this view
  * simply omits that section rather than guess. See the final report.
  */

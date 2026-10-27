@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity";
 
-// Singleton (_id: "curriculumContent") — lets Headteacher/Admin edit the
+// Singleton (_id: "curriculumContent") · lets Headteacher/Admin edit the
 // Curriculum ("Learning") page's headline copy without code. Optional
-// fields fall back to the existing bundled copy when blank — see
+// fields fall back to the existing bundled copy when blank, see
 // homepageContent.ts for the same pattern and reasoning.
 export default defineType({
   name: "curriculumContent",

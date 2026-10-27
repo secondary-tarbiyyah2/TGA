@@ -203,7 +203,7 @@ export function FeesEditor() {
 
   return (
     <div className="space-y-6">
-      <Card title="Fee schedule settings" description="Applies to every band. The two-payment and monthly amounts are worked out from the annual fee — you never type them.">
+      <Card title="Fee schedule settings" description="Applies to every band. The two-payment and monthly amounts are worked out from the annual fee, you never type them.">
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="text-sm text-ink">
             Number of terms
@@ -386,7 +386,7 @@ export function FeesEditor() {
                     <td className="px-3 py-2">{termly.headline}<span className="block text-xs text-ink/70">{termly.detail}</span></td>
                     <td className="px-3 py-2">{monthly.headline}<span className="block text-xs text-ink/70">{monthly.detail}</span>{note && <span className="mt-1 block text-xs text-amber-700">{note} Check this matches the Fees Policy PDF.</span>}</td>
                     <td className={`px-3 py-2 font-semibold ${ok ? "text-green-700" : "text-red-700"}`}>
-                      {ok ? `OK — both plans total ${formatGBP(sched.annual)}` : "MISMATCH"}
+                      {ok ? `OK, both plans total ${formatGBP(sched.annual)}` : "MISMATCH"}
                     </td>
                   </tr>
                 );

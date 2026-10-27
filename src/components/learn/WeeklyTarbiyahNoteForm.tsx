@@ -14,12 +14,12 @@ function mondayOf(date: Date): string {
 }
 
 /**
- * A form tutor's weekly character/akhlaq note for one child — separate
+ * A form tutor's weekly character/akhlaq note for one child, separate
  * from academic assessment and Qur'an progress (see QuranProgressForm),
  * matching the marketing pitch's "Weekly Tarbiyah Note... separate from
  * academic reports" (differentiator d6 / pastoral-care page). RLS
- * (weekly_tarbiyah_notes, 0023) is the real gate on who can write one —
- * any teacher of the child's class — this form just can't submit
+ * (weekly_tarbiyah_notes, 0023) is the real gate on who can write one, 
+ * any teacher of the child's class, this form just can't submit
  * anything that policy would reject.
  */
 export function WeeklyTarbiyahNoteForm({ childId, classId }: { childId: string; classId: string }) {
@@ -67,7 +67,7 @@ export function WeeklyTarbiyahNoteForm({ childId, classId }: { childId: string; 
   return (
     <div className="mt-6 border-t border-gold-light/30 pt-4">
       <h3 className="text-sm font-medium text-ink">Weekly Tarbiyah Note</h3>
-      <p className="mt-1 text-xs text-ink/65">A short personal note on this child&apos;s character and akhlaq this week — separate from grades.</p>
+      <p className="mt-1 text-xs text-ink/65">A short personal note on this child&apos;s character and akhlaq this week, separate from grades.</p>
       <div className="mt-3 flex flex-wrap items-end gap-2">
         <label className="text-xs text-ink/70">
           Week of

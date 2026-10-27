@@ -3,7 +3,7 @@
 // Used by sendEmail() in ./resend.ts when AWS_SES_REGION,
 // AWS_SES_ACCESS_KEY_ID and AWS_SES_SECRET_ACCESS_KEY are set (see
 // deploy-supabase.yml). The access key belongs to an IAM user that may only
-// call ses:SendEmail / ses:SendRawEmail — nothing else in the AWS account.
+// call ses:SendEmail / ses:SendRawEmail, nothing else in the AWS account.
 //
 // No AWS SDK: requests are signed with Signature Version 4 using WebCrypto,
 // and the message is sent as raw MIME so attachments (.ics invites, PDFs)

@@ -19,7 +19,7 @@ type OutstandingDoc = {
 };
 
 /**
- * "Pending your signature" — reads my_outstanding_signatures (0014/0028),
+ * "Pending your signature"– reads my_outstanding_signatures (0014/0028),
  * which is already scoped to the caller (auth.uid()) inside the view itself.
  * The signer can read the document (text and/or a file link) before
  * signing. Signing is a direct insert into document_signatures: RLS
@@ -107,7 +107,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
       if (cap.blob) {
         image = await uploadSignatureImage(supabase, user.id, signatureId, cap.blob);
         if (!image) {
-          setError("Could not save your drawn signature — please try again.");
+          setError("Could not save your drawn signature, please try again.");
           return;
         }
       }
@@ -126,7 +126,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
         .select("id")
         .maybeSingle();
       if (insertErr) {
-        setError("Could not record your signature — please try again.");
+        setError("Could not record your signature, please try again.");
         return;
       }
       if (cap.saveDefault && cap.blob) void saveDefaultSignature(supabase, user.id, cap.blob);
@@ -213,7 +213,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
                           {d.body}
                         </div>
                       )}
-                      {!d.body && !d.file_url && !d.file_path && <p className="text-sm text-ink/65">This document has no text attached — please check with the school office if you need a copy.</p>}
+                      {!d.body && !d.file_url && !d.file_path && <p className="text-sm text-ink/65">This document has no text attached, please check with the school office if you need a copy.</p>}
                       <label className="block text-sm text-ink">
                         Type your full name
                         <input

@@ -304,7 +304,7 @@ export function makeParts(h) {
       s.addText("“", { x: area.x + 0.15, y: area.y - 0.15, w: 1.3, h: 1.5, fontFace: "Georgia", fontSize: 110, color: "E3C98F" });
       const isAr = /[؀-ۿ]/.test(q.text || "");
       s.addText(t(q.text), { x: area.x + 0.6, y: area.y + 0.9, w: leftW - 1.1, h: area.h - 1.75, fontFace: isAr ? "Arial" : "Georgia", fontSize: fitSize(q.text, leftW - 1.1, area.h - 1.75, isAr ? 36 : 28, 13), italic: !isAr, color: "FFFFFF", valign: "middle", align: isAr ? "right" : "left", rtlMode: isAr });
-      if (q.source) s.addText(`— ${t(q.source)}`, { x: area.x + 0.6, y: area.y + area.h - 0.75, w: leftW - 1.1, h: 0.5, fontFace: FONT, fontSize: fitSize(q.source, leftW - 1.6, 0.5, 16, 10), color: "E3C98F", valign: "middle" });
+      if (q.source) s.addText(`– ${t(q.source)}`, { x: area.x + 0.6, y: area.y + area.h - 0.75, w: leftW - 1.1, h: 0.5, fontFace: FONT, fontSize: fitSize(q.source, leftW - 1.6, 0.5, 16, 10), color: "E3C98F", valign: "middle" });
       if (bullets.length) sideBullets(s, ctx, bullets, area.x + leftW + 0.3, area.y, area.w - leftW - 0.3, area.h, "Annotate");
     },
 

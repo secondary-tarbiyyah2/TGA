@@ -15,8 +15,8 @@ export type LoadedQuizConfig = {
 /**
  * Loads the currently PUBLISHED quiz config from Supabase (RLS: anon can
  * only read status = 'published', see 0016_eligibility_quiz_v2.sql), and
- * falls back to the bundled DEFAULT_QUIZ_CONFIG — same "hide/fallback
- * gracefully, never invent" pattern as getFeeBands()/getSiteSettings() —
+ * falls back to the bundled DEFAULT_QUIZ_CONFIG, same "hide/fallback
+ * gracefully, never invent" pattern as getFeeBands()/getSiteSettings(), 
  * whenever Supabase isn't configured, nothing has been published yet, or
  * the fetch fails outright.
  */

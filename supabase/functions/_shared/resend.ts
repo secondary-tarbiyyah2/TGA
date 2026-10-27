@@ -1,8 +1,8 @@
 // Sends branded HTML email, optionally with an .ics or other attachments.
 // Providers are tried in order, each only if its secrets are set:
-//   1. Microsoft 365 (Graph) — from the school's Outlook mailbox
-//   2. Amazon SES            — see ./ses.ts (AWS_SES_* secrets)
-//   3. Resend                — RESEND_API_KEY
+//   1. Microsoft 365 (Graph) · from the school's Outlook mailbox
+//   2. Amazon SES, see ./ses.ts (AWS_SES_* secrets)
+//   3. Resend, RESEND_API_KEY
 // so switching provider is a matter of adding or removing secrets.
 import { sendViaSes, sesConfigured } from "./ses.ts";
 import { graphConfigured, graphRaw } from "./graph.ts";

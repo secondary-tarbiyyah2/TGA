@@ -376,7 +376,7 @@ export function SubmissionFeedback({
         {busy && <span className="text-xs text-ink/65">Saving…</span>}
       </div>
       {existing?.status === "resubmitted" && existing.resubmitted_at && (
-        <p className="mt-2 text-xs text-green-700">Resubmitted {new Date(existing.resubmitted_at).toLocaleString("en-GB")} — read the new version above, then return it again.</p>
+        <p className="mt-2 text-xs text-green-700">Resubmitted {new Date(existing.resubmitted_at).toLocaleString("en-GB")} · read the new version above, then return it again.</p>
       )}
 
       {viewing && <FileViewer file={viewing} onClose={() => setViewing(null)} />}

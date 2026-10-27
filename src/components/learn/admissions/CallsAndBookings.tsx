@@ -7,7 +7,7 @@ import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 /**
- * Starts (or rejoins) the in-house video call for a booking — same
+ * Starts (or rejoins) the in-house video call for a booking, same
  * BigBlueButton system already running lessons, including native
  * moderator breakout rooms, rather than the old external Teams-link
  * workaround. Returns a role-scoped join URL the caller opens directly;
@@ -27,17 +27,17 @@ const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Frida
 /**
  * Direct replacement for the booking/availability half of the old
  * src/components/staff/StaffApp.tsx (Teams link, bookable toggle, weekly
- * availability, bookings list + CSV export) — the old /staff route redirects
+ * availability, bookings list + CSV export) · the old /staff route redirects
  * here once this is confirmed working (see public/.htaccess's comment on
  * that redirect, currently held back specifically until this page existed).
  *
  * StaffApp.tsx only ever showed this to non-teacher staff (teachers got a
- * placeholder "your dashboard will live here" screen instead) — this page's
+ * placeholder "your dashboard will live here" screen instead) · this page's
  * own gate (head_teacher/admin/admissions) is a faithful continuation of
  * that same population, not a new restriction.
  *
  * "All staff" is genuinely new: StaffApp.tsx only ever showed someone their
- * OWN row. RLS already supports this without any migration — checked, not
+ * OWN row. RLS already supports this without any migration, checked, not
  * assumed: staff_members/availability_rules/bookings all have an existing
  * "admin manage/update all" policy keyed off profiles.role = 'admin', and
  * learn-invite's legacyProfileRole() already maps head_teacher/admin/
@@ -253,7 +253,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
             <div>
               <p className="text-sm font-medium text-ink">{new Date(b.starts_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })}</p>
               <p className="text-xs text-ink/65">
-                {b.contact_name} — {b.contact_email}
+                {b.contact_name} · {b.contact_email}
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -283,7 +283,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
         {past.map((b) => (
           <li key={b.id} className="flex items-center justify-between p-3 text-sm">
             <span>
-              {new Date(b.starts_at).toLocaleDateString("en-GB")} — {b.contact_name}
+              {new Date(b.starts_at).toLocaleDateString("en-GB")} · {b.contact_name}
             </span>
             <span className="text-ink/65">{b.status}</span>
           </li>
@@ -351,7 +351,7 @@ function AllStaff() {
   };
 
   return (
-    <Card title="All staff" description="Manage any staff member's admissions availability, bookable status, or Teams link — e.g. while covering for someone on leave.">
+    <Card title="All staff" description="Manage any staff member's admissions availability, bookable status, or Teams link, e.g. while covering for someone on leave.">
       {staffList === null && <p className="text-sm text-ink/65">Loading…</p>}
       {staffList?.length === 0 && <p className="text-sm text-ink/65">No staff records yet.</p>}
       <ul className="space-y-2">

@@ -26,7 +26,7 @@ export function learnRoleLabel(role: LearnRole): string {
   return ROLE_LABELS[role];
 }
 
-// Root-relative, not "/learn/..." — these pages live at the /learn
+// Root-relative, not "/learn/..."– these pages live at the /learn
 // subdomain's own root (see src/lib/learn/origin.ts), so an in-app link
 // between them should never carry the old path prefix.
 export function dashboardPathForRole(role: LearnRole): string {
@@ -38,7 +38,7 @@ export function dashboardPathForRole(role: LearnRole): string {
 
 /**
  * The client-side view of "who is signed in and what /learn roles do they
- * hold" — used to decide WHAT TO RENDER (role switcher, which dashboard).
+ * hold"– used to decide WHAT TO RENDER (role switcher, which dashboard).
  * This is UX only, never the security boundary: every role grant here comes
  * from a `user_roles` row that Postgres RLS already scoped to "rows the
  * caller is allowed to read" (see 0007_learn_roles_permissions.sql), and
@@ -87,7 +87,7 @@ export type LearnAddOnPermission = "timetabler" | "safeguarding_lead" | "can_exp
 
 /**
  * Whether the signed-in user currently holds a given add-on permission
- * (separate from `roles` above — add-ons stack on top of any primary
+ * (separate from `roles` above, add-ons stack on top of any primary
  * role via `user_permissions`, see 0007_learn_roles_permissions.sql).
  * UX only, same caveat as useLearnSession: the real enforcement is RLS /
  * the Edge Function that re-checks this same permission server-side.

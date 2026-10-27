@@ -22,7 +22,7 @@ const HELPFUL = [
 ];
 
 // Rendered outside the (marketing) group (the root layout has no chrome), so
-// it brings its own Header/Footer — this is also what becomes 404.html in the
+// it brings its own Header/Footer, this is also what becomes 404.html in the
 // static export.
 export default function NotFound() {
   return (
@@ -34,7 +34,7 @@ export default function NotFound() {
             <Kicker>Error 404</Kicker>
             <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">We can&apos;t find that page.</h1>
             <p className="mt-6 text-lg text-ink/75">
-              The link may be out of date or mistyped. Here are the places families most often look for — or head
+              The link may be out of date or mistyped. Here are the places families most often look for, or head
               back to the homepage.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">

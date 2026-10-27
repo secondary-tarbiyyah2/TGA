@@ -21,9 +21,9 @@ const EMPTY_FORM = {
 };
 
 /**
- * The Single Central Record — Headteacher/Admin only (0015), not broadly
+ * The Single Central Record, Headteacher/Admin only (0015), not broadly
  * staff-visible, standard SCR practice. Right-to-work is deliberately
- * verified/date/type/verifier only, never a document number — see the
+ * verified/date/type/verifier only, never a document number, see the
  * migration header for the data-minimization reasoning.
  */
 export function SingleCentralRecord() {
@@ -33,7 +33,7 @@ export function SingleCentralRecord() {
   const [editing, setEditing] = useState<string | null>(null);
   const [form, setForm] = useState(EMPTY_FORM);
   const [busy, setBusy] = useState(false);
-  // Date.now() is impure and can't be called during render — captured once
+  // Date.now() is impure and can't be called during render, captured once
   // via effect, same pattern as IncidentBreachLog.
   const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
@@ -104,8 +104,8 @@ export function SingleCentralRecord() {
               </div>
               {v ? (
                 <p className="mt-1 text-xs text-ink/65">
-                  DBS: {v.dbs_check_date || "—"} (ref {v.dbs_certificate_reference || "—"}), renewal due {v.dbs_renewal_due || "—"}
-                  {isExpiring(v.dbs_renewal_due) && <span className="font-semibold text-red-700"> — due soon/overdue</span>}
+                  DBS: {v.dbs_check_date || "–"} (ref {v.dbs_certificate_reference || "–"}), renewal due {v.dbs_renewal_due || "–"}
+                  {isExpiring(v.dbs_renewal_due) && <span className="font-semibold text-red-700">– due soon/overdue</span>}
                   {" · "}References: {v.references_received ? "received" : "not received"} · Right to work: {v.right_to_work_verified ? `verified (${v.right_to_work_document_type || "type not set"})` : "not verified"}
                   {" · "}Qualifications: {v.qualification_check_done ? "checked" : "not checked"}
                 </p>

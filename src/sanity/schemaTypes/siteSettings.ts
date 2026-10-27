@@ -23,12 +23,12 @@ export default defineType({
       name: "siblingDiscountPercent",
       title: "Sibling discount (%)",
       type: "number",
-      description: "Leave blank if there is no sibling discount yet — the fees page hides this row until a value is set.",
+      description: "Leave blank if there is no sibling discount yet, the fees page hides this row until a value is set.",
       group: "fees",
     }),
     defineField({
       name: "siblingDiscountNote",
-      title: "Sibling discount — how it applies",
+      title: "Sibling discount, how it applies",
       type: "text",
       rows: 2,
       description: "e.g. which child the discount applies to, from which sibling onward.",
@@ -40,7 +40,7 @@ export default defineType({
       type: "array",
       group: "fees",
       description:
-        "General-purpose discount catalogue for the fee estimator (early-registration, bursary, multi-child, etc). Leave empty until the school has confirmed a real discount to add here — an empty list hides the fee estimator's discount section entirely.",
+        "General-purpose discount catalogue for the fee estimator (early-registration, bursary, multi-child, etc). Leave empty until the school has confirmed a real discount to add here, an empty list hides the fee estimator's discount section entirely.",
       of: [
         defineField({
           name: "discount",
@@ -73,7 +73,7 @@ export default defineType({
               type: "number",
               hidden: ({ parent }) => (parent as { type?: string } | undefined)?.type !== "fixedAmount",
             }),
-            defineField({ name: "note", title: "Note — how it applies", type: "text", rows: 2 }),
+            defineField({ name: "note", title: "Note, how it applies", type: "text", rows: 2 }),
             defineField({
               name: "appliesAutomatically",
               title: "Applies automatically (no eligibility check needed)",
@@ -87,7 +87,7 @@ export default defineType({
               type: "text",
               rows: 2,
               description:
-                "For discounts needing a human check (e.g. a bursary). Shown as an 'I believe I qualify' checkbox on the fee estimator — never applied automatically, and final eligibility is always confirmed during application.",
+                "For discounts needing a human check (e.g. a bursary). Shown as an 'I believe I qualify' checkbox on the fee estimator, never applied automatically, and final eligibility is always confirmed during application.",
             }),
           ],
           preview: {
@@ -102,15 +102,15 @@ export default defineType({
     }),
     defineField({ name: "bookingWidgetUrl", title: "Open Evening booking widget URL", type: "url", description: "Embed link for the booking widget (e.g. Calendly).", group: "launch" }),
     defineField({ name: "openEveningRecordingUrl", title: "Past open evening recording URL", type: "url", group: "launch" }),
-    defineField({ name: "portalUrl", title: "Parent/Student portal URL (legacy — superseded by /learn)", type: "url", group: "launch" }),
+    defineField({ name: "portalUrl", title: "Parent/Student portal URL (legacy, superseded by /learn)", type: "url", group: "launch" }),
 
     defineField({ name: "admissionsEmail", title: "Admissions email", type: "string", initialValue: "globalacademy@tarbiyyah.co.uk", group: "contact" }),
     defineField({ name: "contactPhone", title: "Contact phone number", type: "string", description: "Leave blank to hide from the site until a real number is confirmed.", group: "contact" }),
     defineField({ name: "contactAddress", title: "Postal address", type: "text", rows: 3, group: "contact" }),
     defineField({ name: "openingHours", title: "Office opening hours", type: "text", rows: 3, description: "e.g. Monday–Friday, 9am–4pm (UK time). Leave blank to hide.", group: "contact" }),
 
-    defineField({ name: "safeguardingLeadName", title: "Designated Safeguarding Lead — name", type: "string", group: "safeguarding" }),
-    defineField({ name: "safeguardingLeadContact", title: "Designated Safeguarding Lead — contact (email or phone)", type: "string", group: "safeguarding" }),
+    defineField({ name: "safeguardingLeadName", title: "Designated Safeguarding Lead, name", type: "string", group: "safeguarding" }),
+    defineField({ name: "safeguardingLeadContact", title: "Designated Safeguarding Lead, contact (email or phone)", type: "string", group: "safeguarding" }),
     defineField({
       name: "complaintsLastYear",
       title: "Formal complaints in the last academic year",
@@ -124,28 +124,28 @@ export default defineType({
       name: "registrationBody",
       title: "Registration/regulatory body",
       type: "string",
-      description: "e.g. a named regulator, once actually registered. Leave blank until confirmed — never state a regulatory status that isn't yet true.",
+      description: "e.g. a named regulator, once actually registered. Leave blank until confirmed, never state a regulatory status that isn't yet true.",
       group: "compliance",
     }),
     defineField({ name: "registrationNumber", title: "Registration number", type: "string", group: "compliance" }),
     defineField({
       name: "regulatoryStatusNote",
-      title: "Regulatory status — public-facing note",
+      title: "Regulatory status, public-facing note",
       type: "text",
       rows: 3,
-      description: "Exact, factual wording only. This is the only regulatory claim ever shown publicly — nothing is stated beyond what's entered here.",
+      description: "Exact, factual wording only. This is the only regulatory claim ever shown publicly, nothing is stated beyond what's entered here.",
       group: "compliance",
     }),
 
     defineField({
       name: "headteacherWelcomeQuote",
-      title: "Headteacher welcome — quote",
+      title: "Headteacher welcome, quote",
       type: "text",
       rows: 4,
-      description: "Must be an actual quote provided by the Headteacher. Leave blank to hide this section — never a stand-in or drafted-for-them quote.",
+      description: "Must be an actual quote provided by the Headteacher. Leave blank to hide this section, never a stand-in or drafted-for-them quote.",
       group: "welcome",
     }),
-    defineField({ name: "headteacherName", title: "Headteacher — name", type: "string", group: "welcome" }),
+    defineField({ name: "headteacherName", title: "Headteacher, name", type: "string", group: "welcome" }),
   ],
   preview: {
     prepare: () => ({ title: "Site settings" }),

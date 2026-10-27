@@ -1,6 +1,6 @@
 // Publish, or roll back, a timetable run. Deployed WITH JWT verification;
 // only head_teacher/admin may call this at all (re-checked here from the
-// caller's OWN user_roles, never trusted from the request body) — matches
+// caller's OWN user_roles, never trusted from the request body) · matches
 // the ground rule "Publish action (Headteacher/Admin/Timetabler only)"
 // (timetabler alone is deliberately NOT enough for publish/rollback: those
 // are higher-stakes than editing a draft, same reasoning 0007 already
@@ -8,7 +8,7 @@
 //
 // POST body: { action: "publish", run_id } | { action: "rollback", run_id }
 // "rollback" republishes an OLD run's slots as a brand-new run (never
-// mutates history), then publishes that new run — matching the ground
+// mutates history), then publishes that new run, matching the ground
 // rule "rollback = republish an old run's slots as a new run".
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
@@ -73,7 +73,7 @@ Deno.serve(async (req) => {
         academic_year_id: targetRun.academic_year_id,
         term_id: targetRun.term_id,
         status: "draft",
-        label: `${targetRun.label} — rollback`,
+        label: `${targetRun.label} · rollback`,
         generated_by: "rollback",
         source_run_id: run_id,
         created_by: caller.id,
@@ -101,7 +101,7 @@ Deno.serve(async (req) => {
       .limit(1);
     if (unresolvedHard && unresolvedHard.length > 0) {
       return jsonResponse(
-        { ok: false, error: "unresolved_hard_conflicts", detail: "This run has unresolved hard conflicts — resolve or accept them first." },
+        { ok: false, error: "unresolved_hard_conflicts", detail: "This run has unresolved hard conflicts, resolve or accept them first." },
         409
       );
     }
@@ -131,7 +131,7 @@ Deno.serve(async (req) => {
   }
 
   // Supersede the currently published run for the same academic year (if
-  // any), then publish the target run — done as two sequential updates
+  // any), then publish the target run, done as two sequential updates
   // (Supabase's JS client has no multi-statement transaction API); a
   // failure between them leaves at most a stale "published" flag on the
   // old run alongside the new one, which the next publish/rollback call

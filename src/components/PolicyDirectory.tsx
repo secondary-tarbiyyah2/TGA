@@ -25,7 +25,7 @@ function formatReviewDate(iso?: string): string | null {
 
 // Groups the full policy list by the question a parent actually has, rather
 // than by DfE required/published category (that split is kept as a small
-// badge on each row instead — see CategoryBadge). The same keys and
+// badge on each row instead, see CategoryBadge). The same keys and
 // headings are offered in the admin Policy editor.
 const PARENT_QUESTION_GROUPS: { key: ParentQuestionCategory; heading: string; anchor: string }[] = [
   { key: "safety", heading: "Is my child safe?", anchor: "safety" },
@@ -189,7 +189,7 @@ export function PolicyDirectory({ initialPolicies, initialSettings }: { initialP
           {settings.safeguardingLeadName && (
             <p>
               <span className="font-semibold text-ink">Designated Safeguarding Lead:</span> {settings.safeguardingLeadName}
-              {settings.safeguardingLeadContact && <> — {settings.safeguardingLeadContact}</>}{" "}
+              {settings.safeguardingLeadContact && <> · {settings.safeguardingLeadContact}</>}{" "}
               <Link href="/safeguarding" className="font-semibold text-gold-700 underline">Read our safeguarding approach</Link>
             </p>
           )}

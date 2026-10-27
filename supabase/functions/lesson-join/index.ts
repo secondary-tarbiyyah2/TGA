@@ -1,6 +1,6 @@
 // Creates/fetches the BBB meeting for a lesson instance and returns a
 // role-scoped, signed join URL. Deployed WITH JWT verification. Never
-// returns the BBB shared secret, meeting passwords, or an unsigned URL —
+// returns the BBB shared secret, meeting passwords, or an unsigned URL, 
 // only the final, ready-to-open join link for THIS caller's role.
 //
 // Role mapping (ground rule: moderator for the teacher, viewer for
@@ -10,7 +10,7 @@
 //     (so an admin can step in in an emergency; still logged)
 //   - a parent of an enrolled child, or the enrolled child's own student
 //     account -> viewer
-// Anyone else gets 403 — RLS on lesson_instances would already have hidden
+// Anyone else gets 403, RLS on lesson_instances would already have hidden
 // the lesson from them client-side, but this is the actual enforcement
 // point (see 0009's migration header on why lesson_instances has no client
 // write policy: the same reasoning applies to "who may start/join a call").
@@ -131,12 +131,12 @@ Deno.serve(async (req) => {
     return jsonResponse({ ok: true, joinUrl: link, role, provider: "link" });
   }
 
-  // Deterministic external meeting ID — the lesson instance's own id, so
+  // Deterministic external meeting ID, the lesson instance's own id, so
   // "ensure it exists" is naturally idempotent across repeated joins.
   const meetingId = `lesson-${instance.id}`;
   const { moderatorPassword, attendeePassword } = await derivePasswords(meetingId);
 
-  const meetingName = `${(instance.timetable_slots as unknown as { classes?: { subjects?: { name?: string } } })?.classes?.subjects?.name || "Lesson"} — ${
+  const meetingName = `${(instance.timetable_slots as unknown as { classes?: { subjects?: { name?: string } } })?.classes?.subjects?.name || "Lesson"} · ${
     (instance.timetable_slots as unknown as { classes?: { name?: string } })?.classes?.name || ""
   }`.trim();
 
@@ -156,7 +156,7 @@ Deno.serve(async (req) => {
     .update({ bbb_meeting_id: meetingId, bbb_status: "live" })
     .eq("id", lessonInstanceId)
     .is("bbb_meeting_id", null);
-  // (only sets it the first time — repeated joins don't need another write;
+  // (only sets it the first time, repeated joins don't need another write;
   // "is bbb_meeting_id null" makes this a harmless no-op afterwards)
 
   const joinUrl = await buildJoinUrl({

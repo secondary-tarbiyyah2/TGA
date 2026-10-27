@@ -1,7 +1,7 @@
 import type { LineIcon as LineIconKey } from "@/lib/quiz/schema";
 
 /**
- * Small, discreet line icons in brand colour only — deliberately not
+ * Small, discreet line icons in brand colour only, deliberately not
  * emoji. Kept to a fixed, curated set (matching the LineIcon union in
  * src/lib/quiz/schema.ts) so admin-authored option copy can reference an
  * icon by name without ever being able to inject an arbitrary glyph.

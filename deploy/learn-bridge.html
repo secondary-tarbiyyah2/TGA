@@ -10,7 +10,7 @@
 <script>
   // /learn used to be a path on this domain; it now lives on its own
   // subdomain (learn.tarbiyyah.co.uk) for real browser-origin
-  // isolation — see SETUP.md, "Moving /learn to its own subdomain". This
+  // isolation, see SETUP.md, "Moving /learn to its own subdomain". This
   // page exists ONLY so that links already sent before the move (invite
   // emails, password-reset emails, bookmarks, search results) keep working
   // instead of 404ing once the /learn folder is removed from this domain
@@ -21,7 +21,7 @@
   // (#access_token=...), which browsers do not send to the server and do
   // not reliably re-attach across an Apache RewriteRule redirect. Reading
   // window.location.hash here and copying it onto the destination URL
-  // ourselves removes any doubt — an already-sent invite/reset link must
+  // ourselves removes any doubt, an already-sent invite/reset link must
   // not silently break and lock someone out.
   (function () {
     var path = window.location.pathname.replace(/^\/learn/, "") || "/";

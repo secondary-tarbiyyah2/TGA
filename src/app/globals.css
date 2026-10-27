@@ -4,11 +4,11 @@
   --background: #fdfbf6;
   --foreground: #1b1e21;
 
-  /* Brand — gold, sampled from public/brand/ga-wordmark.png (see DESIGN.md).
+  /* Brand, gold, sampled from public/brand/ga-wordmark.png (see DESIGN.md).
      The dominant logo pixel colour was #7C6428, essentially identical to the
      brand gold-700 below. Full scale + WCAG contrast table in DESIGN.md. */
-  --color-gold-900: #5e4b1e; /* darkest — hover states, small text */
-  --color-gold-700: #7d6428; /* LOGO GOLD — headline accents, links */
+  --color-gold-900: #5e4b1e; /* darkest, hover states, small text */
+  --color-gold-700: #7d6428; /* LOGO GOLD, headline accents, links */
   --color-gold-500: #b08e45; /* button fills (with ink-900 text), icons, rules */
   --color-gold-300: #e3c98f; /* borders, hover tints */
   --color-gold-100: #f5ecd6; /* soft section backgrounds, chips */
@@ -16,12 +16,12 @@
 
   --color-ink-900: #1b1e21; /* headings, primary text */
   --color-ink-700: #3a3f45; /* body text */
-  --color-ink-500: #6b7178; /* muted text (large text only — see DESIGN.md) */
+  --color-ink-500: #6b7178; /* muted text (large text only, see DESIGN.md) */
 
   --color-cream: #fdfbf6;
   --color-white: #ffffff;
 
-  /* Secondary accent — a deep teal, the colour most associated with
+  /* Secondary accent, a deep teal, the colour most associated with
      Islamic geometric tilework alongside gold, so it reads as deliberate
      rather than arbitrary. The site was gold/cream/ink only (flagged as
      monochrome in a design review); this gives a second accent for
@@ -30,7 +30,7 @@
      primary actions, plus sparing marketing-site use to break up 20+
      visually-identical sections) rather than every element competing for
      the same gold. */
-  --color-teal-900: #0f3d3a; /* darkest — portal hover states */
+  --color-teal-900: #0f3d3a; /* darkest, portal hover states */
   --color-teal-700: #1f6f6b; /* portal primary actions, links-in-portal */
   --color-teal-500: #3b9a93; /* fills, icons */
   --color-teal-100: #e3f2f0; /* soft backgrounds, chips */
@@ -90,7 +90,7 @@ body {
 }
 
 /* Tailwind's preflight resets <button> to `cursor: default` (matching the
-   native OS default) rather than `pointer` — every clickable button on
+   native OS default) rather than `pointer`– every clickable button on
    this site (option cards, CTAs, admin controls) needs the hand cursor
    back, since they all visually read as clickable. Disabled buttons keep
    the default "not clickable" cursor. */
@@ -102,7 +102,7 @@ button:not(:disabled),
 /* Fluid type scale (see DESIGN.md spacing/layout rules). Spacing itself uses
    Tailwind's own numeric utilities directly (p-6=24px, p-8=32px, p-12=48px,
    p-16=64px, p-24=96px…) rather than a parallel token set, since that scale
-   already is an 8px-based system — no need to duplicate it. */
+   already is an 8px-based system, no need to duplicate it. */
 .text-display {
   font-size: clamp(2.5rem, 5.5vw, 4.25rem); /* 40–68px */
   line-height: 1.08;
@@ -116,7 +116,7 @@ button:not(:disabled),
   line-height: 1.25;
 }
 
-/* Section vertical rhythm — marketing pages only (hero-style breathing
+/* Section vertical rhythm, marketing pages only (hero-style breathing
    room between sections). NOT for /learn: applying this to every portal
    page left a 64–128px dead gap above content on every dashboard, more
    appropriate to a handful of marketing sections per page than a dense
@@ -126,7 +126,7 @@ button:not(:disabled),
   padding-bottom: clamp(4rem, 10vw, 8rem);
 }
 
-/* The /learn portal's equivalent — same job (top-level vertical spacing
+/* The /learn portal's equivalent, same job (top-level vertical spacing
    for the page's outer <section>) at a scale that fits a dense,
    frequently-revisited app UI rather than an occasional marketing page. */
 .app-pad {
@@ -365,7 +365,7 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
   );
 }
 
-/* Soft warm shadow — ink at low opacity, not a generic grey drop-shadow. */
+/* Soft warm shadow, ink at low opacity, not a generic grey drop-shadow. */
 .shadow-warm {
   box-shadow: 0 8px 24px -8px rgba(27, 30, 33, 0.12), 0 2px 8px -2px rgba(27, 30, 33, 0.08);
 }
@@ -384,7 +384,7 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
 }
 
 /* Thin gold "foil" divider: a hairline rule with a small 8-point star at its
-   centre. Use sparingly — see DESIGN.md brand direction. */
+   centre. Use sparingly, see DESIGN.md brand direction. */
 .foil-divider {
   display: flex;
   align-items: center;

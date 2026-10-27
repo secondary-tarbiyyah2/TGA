@@ -169,7 +169,7 @@ function MarkSchemesAdmin() {
   return (
     <div className="rounded-2xl border border-gold-light bg-white p-4 sm:p-5">
       <h2 className="text-base font-semibold text-ink">Mark schemes &amp; grade boundaries</h2>
-      <p className="mt-1 text-xs text-ink/65">Per-subject percentage bands — the single source of truth grades are resolved against, never hardcoded.</p>
+      <p className="mt-1 text-xs text-ink/65">Per-subject percentage bands, the single source of truth grades are resolved against, never hardcoded.</p>
       <div className="mt-3 flex flex-wrap gap-2">
         <select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} aria-label="Subject" className={`${ui.input} !w-auto`}>
           <option value="">Select a subject…</option>

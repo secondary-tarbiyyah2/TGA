@@ -1,7 +1,7 @@
 /**
  * DST-aware timezone helpers, lifted from the original
  * src/components/eligibility/EligibilityQuiz.tsx (now superseded by
- * YourChildsWeekQuiz) rather than reinvented — this logic was already
+ * YourChildsWeekQuiz) rather than reinvented, this logic was already
  * correct (uses Intl's own offset resolution, so DST is handled by the
  * platform, not a hand-maintained table) and both the quiz and the admin
  * "preview as a parent" tool need the exact same behaviour.

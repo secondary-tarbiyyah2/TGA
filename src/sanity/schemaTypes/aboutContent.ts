@@ -1,9 +1,9 @@
 import { defineField, defineType } from "sanity";
 
-// Singleton (_id: "aboutContent") — lets Headteacher/Admin edit the About
+// Singleton (_id: "aboutContent") · lets Headteacher/Admin edit the About
 // page's mission, safeguarding summary, RECIPE character framework and
 // "Tarbiyyah family" copy without code. Optional fields fall back to the
-// existing bundled copy when blank — see homepageContent.ts for the same
+// existing bundled copy when blank, see homepageContent.ts for the same
 // pattern and reasoning.
 export default defineType({
   name: "aboutContent",

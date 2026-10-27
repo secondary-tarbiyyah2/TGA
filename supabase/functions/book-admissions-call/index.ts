@@ -1,5 +1,5 @@
 // Public admissions-call booking. Deployed with verify_jwt = false (see
-// supabase/config.toml) since anonymous visitors call this with no session —
+// supabase/config.toml) since anonymous visitors call this with no session, 
 // spam protection is the honeypot + timing + rate-limit checks below, not JWT
 // auth. Uses the service-role key so it can insert into bookings, whose RLS
 // deliberately has no anon/authenticated INSERT policy (see migration).
@@ -80,7 +80,7 @@ Deno.serve(async (req) => {
 
   // Re-check the slot is still free and insert, inside one round trip. The
   // exclusion constraint (bookings_no_staff_overlap) is the real guarantee
-  // against a race — this check is just to return a friendly "slot taken"
+  // against a race, this check is just to return a friendly "slot taken"
   // error rather than a raw constraint-violation error when it happens.
   const { data: staff, error: staffErr } = await supabase
     .from("staff_members")
@@ -116,7 +116,7 @@ Deno.serve(async (req) => {
 
   if (insertErr) {
     // 23P01 = exclusion_violation, i.e. the exact "someone else just took
-    // this slot" race — the one case get_open_slots alone can't prevent.
+    // this slot" race, the one case get_open_slots alone can't prevent.
     if (insertErr.code === "23P01") {
       return jsonResponse({ ok: false, error: "slot_taken" }, 409);
     }
@@ -130,7 +130,7 @@ Deno.serve(async (req) => {
 
   const ics = buildIcs({
     uid: `booking-${booking.id}@globalacademy.tarbiyyah.co.uk`,
-    title: "Admissions call — Tarbiyyah Global Academy",
+    title: "Admissions call | Tarbiyyah Global Academy",
     description: `Join on Microsoft Teams: ${teamsUrl}\n\nManage this booking: ${manageUrl}`,
     location: teamsUrl,
     startsAt,
@@ -139,7 +139,7 @@ Deno.serve(async (req) => {
     attendeeEmail: email,
   });
 
-  // Never let a failed send block the booking (it's already saved) — but
+  // Never let a failed send block the booking (it's already saved) · but
   // previously a failure here was completely invisible: sendEmail() never
   // throws, and the result was discarded, so "the parent never got an
   // email" had no trace anywhere. Logging it means it now shows up in
@@ -149,12 +149,12 @@ Deno.serve(async (req) => {
   const parentEmailResult = await sendEmail({
     to: email,
     toName: parentName,
-    subject: "Your admissions call is confirmed — Tarbiyyah Global Academy",
+    subject: "Your admissions call is confirmed | Tarbiyyah Global Academy",
     html: emailShell(`
       <h1 style="font-size:20px;margin:0 0 16px;">Your call is confirmed</h1>
       <p>Assalamu alaikum ${parentName.split(" ")[0]},</p>
       <p>Your admissions call is booked for <strong>${whenText}</strong>.</p>
-      <p><a href="${teamsUrl}" style="color:#5E4B1E;">Join on Microsoft Teams</a> — no download needed, just click the link at the time of your call.</p>
+      <p><a href="${teamsUrl}" style="color:#5E4B1E;">Join on Microsoft Teams</a>. No download needed, just click the link at the time of your call.</p>
       <p>Need to change or cancel? <a href="${manageUrl}" style="color:#5E4B1E;">Manage your booking</a>.</p>
       <p>We look forward to speaking with you.</p>
     `),
@@ -168,7 +168,7 @@ Deno.serve(async (req) => {
   const staffEmailResult = await sendEmail({
     to: staff.profiles.email,
     toName: staff.profiles.full_name,
-    subject: `New admissions call — ${parentName}`,
+    subject: `New admissions call · ${parentName}`,
     html: emailShell(`
       <h1 style="font-size:20px;margin:0 0 16px;">New admissions call booked</h1>
       <p><strong>${whenText}</strong></p>

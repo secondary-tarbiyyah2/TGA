@@ -111,11 +111,11 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
         <tbody className="divide-y divide-gold-light/70">
           {rows.map((r) => (
             <tr key={r.id}>
-              {teacher && <td className="px-5 py-2.5 font-medium text-ink">{r.children?.name || "—"}</td>}
+              {teacher && <td className="px-5 py-2.5 font-medium text-ink">{r.children?.name || "–"}</td>}
               <td className="px-5 py-2.5 text-ink/80">{r.title}</td>
               <td className="px-5 py-2.5 text-ink/65">{fmtDate(r.date)}</td>
               <td className="px-5 py-2.5 text-right font-semibold tabular-nums text-ink">
-                {r.grade_label || (r.percent != null ? `${r.percent}%` : "—")}
+                {r.grade_label || (r.percent != null ? `${r.percent}%` : "–")}
               </td>
             </tr>
           ))}

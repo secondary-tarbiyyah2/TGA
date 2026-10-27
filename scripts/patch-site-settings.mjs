@@ -1,4 +1,4 @@
-// One-off targeted patch to the live siteSettings singleton — unlike
+// One-off targeted patch to the live siteSettings singleton, unlike
 // seed-sanity.mjs (createOrReplace, full document), this only sets the
 // specific fields given so it never clobbers other fields an admin may have
 // already edited in Studio since seeding.

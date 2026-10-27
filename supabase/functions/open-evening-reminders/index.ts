@@ -75,7 +75,7 @@ Deno.serve(async (req) => {
     const result = await sendEmail({
       to: b.email,
       toName: b.parent_name,
-      subject: `Reminder: ${s.title} is tomorrow — Tarbiyyah Global Academy`,
+      subject: `Reminder: ${s.title} is tomorrow | Tarbiyyah Global Academy`,
       html: emailShell(`
         <h1 style="font-size:20px;margin:0 0 16px;">Your open evening is tomorrow</h1>
         <p>Assalamu alaikum ${esc(b.parent_name.split(" ")[0])},</p>
@@ -129,7 +129,7 @@ async function sendDateChangeNotices(dryRun: boolean): Promise<{ sent: number; f
     const manageUrl = `${SITE_URL}/open-evening/manage/?token=${token}`;
     const ics = buildIcs({
       uid: `open-evening-${b.id}@globalacademy.tarbiyyah.co.uk`,
-      title: `${s.title} — Tarbiyyah Global Academy`,
+      title: `${s.title} | Tarbiyyah Global Academy`,
       description: s.join_url ? `Join online: ${s.join_url}` : `Details: ${SITE_URL}/open-evening`,
       location: s.join_url || "Online",
       startsAt: new Date(s.starts_at),
@@ -141,7 +141,7 @@ async function sendDateChangeNotices(dryRun: boolean): Promise<{ sent: number; f
     const result = await sendEmail({
       to: b.email,
       toName: b.parent_name,
-      subject: `New date: ${s.title} — Tarbiyyah Global Academy`,
+      subject: `New date: ${s.title} | Tarbiyyah Global Academy`,
       html: emailShell(`
         <h1 style="font-size:20px;margin:0 0 16px;">Your session has a new date</h1>
         <p>Assalamu alaikum ${esc(b.parent_name.split(" ")[0])},</p>

@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function TeamPage() {
-  // Unconfirmed entries never render publicly — no visible "bio to follow"
+  // Unconfirmed entries never render publicly, no visible "bio to follow"
   // placeholder; a staff member simply appears once an admin has real
   // details for them, per the no-visible-placeholder rule.
   const [all, settings] = await Promise.all([getStaffMembers(), getSiteSettings()]);

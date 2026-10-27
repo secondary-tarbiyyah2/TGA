@@ -23,12 +23,12 @@ function daysUntil(iso: string) {
 /**
  * Headteacher/Admin can log and action requests; anyone holding
  * can_export_data can see the queue too (they run the export mechanics)
- * but cannot change status — enforced by RLS (0015), this component just
+ * but cannot change status, enforced by RLS (0015), this component just
  * hides the action controls for them as a convenience.
  */
 export function DataRights() {
   const supabase = getSupabaseClient();
-  const canAction = useLearnPermission("can_export_data"); // not authoritative — RLS is; used only to decide whether to show the action form
+  const canAction = useLearnPermission("can_export_data"); // not authoritative, RLS is; used only to decide whether to show the action form
   const [requests, setRequests] = useState<Request[] | null>(null);
   const [form, setForm] = useState({ request_type: "subject_access", requester_name: "", requester_email: "", subject_description: "" });
   const [busy, setBusy] = useState(false);
@@ -75,7 +75,7 @@ export function DataRights() {
           const days = daysUntil(deadline);
           return (
             <li key={r.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
-              <p className="font-semibold">{r.request_type.replace("_", " ")} — {r.requester_name} ({r.requester_email})</p>
+              <p className="font-semibold">{r.request_type.replace("_", " ")} · {r.requester_name} ({r.requester_email})</p>
               <p className="mt-0.5 text-ink/70">Subject: {r.subject_description}</p>
               <p className={`mt-1 text-xs ${days < 7 ? "font-semibold text-red-700" : "text-ink/65"}`}>
                 Status: {r.status} · deadline {new Date(deadline).toLocaleDateString("en-GB")} ({days < 0 ? "overdue" : `${days} day(s) left`})

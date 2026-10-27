@@ -29,7 +29,7 @@ import { ReportConcernLink } from "@/components/learn/ReportConcernLink";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 
-// Younger year groups (Reception - Year 3) get a bigger, simpler view —
+// Younger year groups (Reception - Year 3) get a bigger, simpler view, 
 // same data and RLS as every other student account (see the Phase A
 // ground rule: "the only difference for younger students is a
 // simpler/larger-UI frontend view, not a different data/permission

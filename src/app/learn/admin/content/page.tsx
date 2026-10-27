@@ -15,7 +15,7 @@ import { PageHeader } from "@/components/learn/PageHeader";
 
 // Real editor, replacing the old "link out to Sanity Studio" stub now
 // that website content lives in this database (0025_website_content.sql)
-// instead of a separate CMS — see content.ts for the read side. Tabbed
+// instead of a separate CMS, see content.ts for the read side. Tabbed
 // rather than one long page: 12 content types is too much to scroll
 // through, and most edits only ever touch one of them at a time.
 const TABS = [
@@ -66,7 +66,7 @@ function TabContent({ tab }: { tab: Tab }) {
           title="Term dates & admissions calendar"
           description="Only entries with Confirmed = on ever show on the public Term Dates page or its .ics download."
           orderKey="date"
-          rowLabel={(r) => `${r.label} — ${r.date}${r.confirmed ? "" : " (not confirmed — hidden publicly)"}`}
+          rowLabel={(r) => `${r.label} · ${r.date}${r.confirmed ? "" : " (not confirmed, hidden publicly)"}`}
           fields={[
             { key: "label", label: "Label", required: true },
             { key: "kind", label: "Kind", type: "select", options: ["Term date", "Holiday", "Admissions deadline", "Event"], required: true },
@@ -82,7 +82,7 @@ function TabContent({ tab }: { tab: Tab }) {
         <SimpleListEditor
           table="testimonials"
           title="Testimonials"
-          description="Placeholder testimonials never show publicly — only untick Placeholder once it's a real quote."
+          description="Placeholder testimonials never show publicly, only untick Placeholder once it's a real quote."
           orderKey="order_index"
           rowLabel={(r) => `${r.attribution}${r.is_placeholder ? " (placeholder)" : ""}`}
           fields={[
@@ -99,9 +99,9 @@ function TabContent({ tab }: { tab: Tab }) {
         <SimpleListEditor
           table="team_profiles"
           title="Team profiles"
-          description="Placeholder profiles never show publicly — only untick Placeholder once it's a real, confirmed bio."
+          description="Placeholder profiles never show publicly, only untick Placeholder once it's a real, confirmed bio."
           orderKey="order_index"
-          rowLabel={(r) => `${r.name} — ${r.role_title}${r.is_placeholder ? " (placeholder)" : ""}`}
+          rowLabel={(r) => `${r.name} · ${r.role_title}${r.is_placeholder ? " (placeholder)" : ""}`}
           fields={[
             { key: "name", label: "Name", required: true },
             { key: "role_title", label: "Role title", required: true },
@@ -119,7 +119,7 @@ function TabContent({ tab }: { tab: Tab }) {
           title="Differentiators ('What makes us different')"
           description="Only 'Confirmed commitment' + Visible entries show on the homepage."
           orderKey="order_index"
-          rowLabel={(r) => `${r.title} — ${r.status}${r.visible ? "" : " (hidden)"}`}
+          rowLabel={(r) => `${r.title} · ${r.status}${r.visible ? "" : " (hidden)"}`}
           fields={[
             { key: "title", label: "Title", required: true },
             { key: "summary", label: "Summary", type: "textarea", required: true },
@@ -138,7 +138,7 @@ function TabContent({ tab }: { tab: Tab }) {
           title="Curriculum documents"
           description="Scheme-of-work / subject overview PDFs shown on each key stage's curriculum page."
           orderKey="order_index"
-          rowLabel={(r) => `${r.title} (${r.key_stage} — ${r.subject})`}
+          rowLabel={(r) => `${r.title} (${r.key_stage} · ${r.subject})`}
           fields={[
             { key: "key_stage", label: "Key stage slug (e.g. year-3-6)", required: true },
             { key: "subject", label: "Subject", required: true },

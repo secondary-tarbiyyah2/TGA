@@ -1,6 +1,6 @@
 // Login rate-limiting/lockout support for /learn. Deployed WITHOUT JWT
 // verification (--no-verify-jwt) since it must be callable before the user
-// has a session at all — that's the whole point.
+// has a session at all, that's the whole point.
 //
 // Honest limitation, documented rather than hidden: this function can only
 // see attempts a client actually reports to it. A client that skips calling
@@ -9,7 +9,7 @@
 // sign-in, which this supplements (account-level lockout + a visible
 // login_attempts audit trail) rather than replaces. The real login call
 // itself (supabase.auth.signInWithPassword) still goes directly from the
-// browser to Supabase Auth — this function only sits either side of it.
+// browser to Supabase Auth, this function only sits either side of it.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 
@@ -54,7 +54,7 @@ Deno.serve(async (req) => {
       .limit(LOCKOUT_THRESHOLD * 3);
     if (error) return jsonResponse({ ok: false, error: "check_failed", detail: error.message }, 500);
 
-    // Count only the CONSECUTIVE most-recent failures — a success anywhere
+    // Count only the CONSECUTIVE most-recent failures, a success anywhere
     // in the window resets the count, so one bad guess days apart from
     // genuine sign-ins never accumulates into a lockout.
     let consecutiveFailures = 0;

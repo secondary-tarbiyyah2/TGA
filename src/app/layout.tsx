@@ -16,9 +16,9 @@ const siteUrl = "https://globalacademy.tarbiyyah.co.uk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: "Tarbiyyah Global Academy — A specialist, quality education, rooted in faith", template: "%s — Tarbiyyah Global Academy" },
+  title: { default: "Tarbiyyah Global Academy | Online Islamic school for homeschooling families", template: "%s | Tarbiyyah Global Academy" },
   description:
-    "An online school by the Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified teachers — Qur'an, Arabic and Islamic Studies alongside the full national curriculum, Year 1 to Year 11, launching January 2027.",
+    "An online Islamic school for homeschooling families, by the Tarbiyyah Education Trust. Live, timetabled lessons with qualified teachers: Qur'an, Arabic and Islamic Studies alongside the full national curriculum, Year 1 to Year 11, launching January 2027.",
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 };
 
-// ink-900 — matches the brand's deep-ink token, not the old burgundy.
+// ink-900, matches the brand's deep-ink token, not the old burgundy.
 export const viewport: Viewport = { themeColor: "#1B1E21" };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
@@ -51,12 +51,12 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   // skip-link, cookie consent and analytics only. The public marketing
   // Header/Footer live one level down in src/app/(marketing)/layout.tsx, and
   // the authenticated /learn area has its own shell in
-  // src/app/learn/layout.tsx — neither renders the other's chrome. Before
+  // src/app/learn/layout.tsx, neither renders the other's chrome. Before
   // this split, EVERY /learn page rendered the public Header/Footer AND
   // AdminShell's own sidebar stacked on top of each other (reported as
   // "crowded... and it shows Log in even when I'm signed in").
   //
-  // Built only from real, already-published fields — site settings (contact
+  // Built only from real, already-published fields, site settings (contact
   // phone/address) if set, and the Trust link already stated in the footer.
   // Never adds a rating, review or accreditation claim that isn't backed by
   // an actual confirmed field elsewhere on the site (see ground rule 2).
@@ -66,7 +66,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     "@type": "EducationalOrganization",
     name: "Tarbiyyah Global Academy",
     description:
-      "A specialist online school by the Tarbiyyah Education Trust — live, timetabled lessons with qualified teachers — Qur'an, Arabic and Islamic Studies alongside the full national curriculum, Year 1 to Year 11, taught with tarbiyyah at its heart.",
+      "An online Islamic school for homeschooling families, by the Tarbiyyah Education Trust. Live, timetabled lessons with qualified teachers: Qur'an, Arabic and Islamic Studies alongside the full national curriculum, Year 1 to Year 11, taught with tarbiyyah at its heart.",
     url: siteUrl,
     logo: { "@type": "ImageObject", url: `${siteUrl}/brand/ga-logo-square.png`, width: 512, height: 512 },
     image: `${siteUrl}/brand/ga-wordmark.png`,
@@ -95,7 +95,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         <a href="#main" className="skip-link">Skip to content</a>
         {/* The `#main` skip-link target is rendered by the nested layout
             below (the public (marketing) group's <main id="main"> around
-            Header/Footer, or /learn's own <main id="main"> in its shell) —
+            Header/Footer, or /learn's own <main id="main"> in its shell), 
             not here, so there's never more than one <main> landmark on a
             page. */}
         <div className="flex flex-1 flex-col">{children}</div>

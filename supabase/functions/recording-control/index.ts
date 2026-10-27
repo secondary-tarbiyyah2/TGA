@@ -1,6 +1,6 @@
 // Pause/resume the in-progress recording for a lesson instance. Deployed
 // WITH JWT verification: only the class's own teacher/TA-cover, or staff
-// with manage_academic/head_teacher/admin, may call this — re-checked
+// with manage_academic/head_teacher/admin, may call this, re-checked
 // server-side from the caller's own user_roles/user_permissions, never
 // trusted from the request body.
 import { createClient } from "jsr:@supabase/supabase-js@2";

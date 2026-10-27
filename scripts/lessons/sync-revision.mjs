@@ -5,10 +5,10 @@
 //   node scripts/lessons/sync-revision.mjs sync    -> loads them (needs SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY)
 //
 // Where packs come from:
-//   * content/lessons/<subject>/<year>.json — every unit whose lessons hold at least
+//   * content/lessons/<subject>/<year>.json, every unit whose lessons hold at least
 //     MIN_QUIZ hinge questions (`check` blocks) gets a pack. The pupil's summary is the
 //     unit's own lesson slides. Each lesson's key words also become practice questions.
-//   * content/revision/*.json — packs with their own summary slides, questions and
+//   * content/revision/*.json, packs with their own summary slides, questions and
 //     (optionally) a video, e.g. Aqeedah 1.
 //
 // Only questions this script loaded (source = 'content') are ever updated or retired;

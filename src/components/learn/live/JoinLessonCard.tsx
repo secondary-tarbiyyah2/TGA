@@ -253,7 +253,7 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
                 <p className="text-xs font-semibold uppercase tracking-wider text-teal-800">{started ? "Lesson in progress" : `Starts at ${l.start}`}</p>
                 <h2 className="mt-1 font-serif text-h2 font-semibold text-ink">
                   {l.subject}
-                  {l.className ? ` — ${l.className}` : ""}
+                  {l.className ? ` · ${l.className}` : ""}
                 </h2>
                 <p className="mt-0.5 text-sm text-ink/70">
                   {l.start}–{l.end}
@@ -269,7 +269,7 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
                       disabled={busy !== null}
                       className="rounded-xl bg-gold-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-gold-900 disabled:opacity-60"
                     >
-                      {busy === `${l.id}:${k.id}` ? "Joining…" : l.kids.length > 1 ? `Join lesson — ${k.name}` : "Join lesson"}
+                      {busy === `${l.id}:${k.id}` ? "Joining…" : l.kids.length > 1 ? `Join lesson · ${k.name}` : "Join lesson"}
                     </button>
                   ))
                 ) : (

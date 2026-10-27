@@ -1,6 +1,6 @@
 <?php
 /**
- * Shared mailer helpers for register.php and apply.php — ported from the
+ * Shared mailer helpers for register.php and apply.php, ported from the
  * legacy static site's register.php, which used the Brevo HTTPS API because
  * this host firewalls outbound SMTP and only Brevo passes SPF/DKIM for
  * tarbiyyah.co.uk. See register.config.example.php for the full reasoning.
@@ -94,11 +94,11 @@ function mailer_send($to, $toName, $subject, $text, $replyEmail = '', $replyName
         }
 
         $detail = $cerr !== '' ? 'curl: ' . $cerr : 'HTTP ' . $status . ' ' . substr((string) $resp, 0, 300);
-        mailer_log('WARN  brevo send failed to ' . $to . ' — ' . $detail);
+        mailer_log('WARN  brevo send failed to ' . $to . '– ' . $detail);
         // fall through to mail()
     }
 
-    // ---- Fallback: PHP mail() — expected to fail SPF, used only so nothing is lost.
+    // ---- Fallback: PHP mail() · expected to fail SPF, used only so nothing is lost.
     $enc = function ($name) {
         return $name === '' ? '' : '=?UTF-8?B?' . base64_encode($name) . '?= ';
     };

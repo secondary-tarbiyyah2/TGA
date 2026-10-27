@@ -1,4 +1,4 @@
-// Minimal iCalendar (RFC 5545) generator — just enough for a single-event
+// Minimal iCalendar (RFC 5545) generator, just enough for a single-event
 // invite/update/cancellation, which is all a booking confirmation needs.
 
 function toIcsDate(d: Date): string {

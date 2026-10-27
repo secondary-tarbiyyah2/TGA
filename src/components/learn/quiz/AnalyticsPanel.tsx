@@ -16,7 +16,7 @@ type Counts = {
  * Counts/funnel only, deliberately not a full BI dashboard (per the
  * brief). Reads quiz_sessions/quiz_events (head_teacher/admin read-all
  * policy, 0016) and quiz_leads. All figures are computed live from real
- * rows — nothing here is a placeholder metric.
+ * rows, nothing here is a placeholder metric.
  */
 export function AnalyticsPanel() {
   const supabase = getSupabaseClient();
@@ -77,7 +77,7 @@ export function AnalyticsPanel() {
       )}
 
       <p className="text-xs text-ink/65">
-        Session data is fully anonymous until a family submits their email with consent (a quiz_leads row) — figures
+        Session data is fully anonymous until a family submits their email with consent (a quiz_leads row) · figures
         here can never be traced back to an identity before that point.
       </p>
     </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /**
- * A small, always-visible link to /learn/report-concern — dropped next to
+ * A small, always-visible link to /learn/report-concern, dropped next to
  * "Sign out" on every dashboard (admin, teach, family, student) so the
  * concern-reporting entry point required by the compliance brief is
  * reachable by every role, not buried in an admin-only page.

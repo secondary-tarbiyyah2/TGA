@@ -91,3 +91,41 @@ export function AdmissionsTimeline({ steps, currentIndex, notes }: { steps: Proc
     </ol>
   );
 }
+
+/**
+ * The admissions journey as a process graphic: numbered stages joined by a
+ * line, left to right on large screens and top to bottom on phones, so the
+ * order is unmistakable. Used on the homepage.
+ */
+export function AdmissionsProcessFlow({ steps }: { steps: ProcessStep[] }) {
+  return (
+    <ol className="relative mt-10 grid gap-0 lg:grid-cols-6 lg:gap-4">
+      {/* Desktop connector running through the centre of the number badges. */}
+      <span aria-hidden="true" className="absolute left-[8.33%] right-[8.33%] top-6 hidden h-0.5 bg-gold-300 lg:block" />
+      {steps.map((s, i) => {
+        const last = i === steps.length - 1;
+        return (
+          <li key={s.title} className="relative flex gap-4 lg:flex-col lg:items-center lg:gap-0 lg:text-center">
+            <div className="flex w-12 shrink-0 flex-col items-center lg:w-auto">
+              <span
+                aria-hidden="true"
+                className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 font-serif text-xl font-bold text-ink-900 ring-4 ring-cream"
+              >
+                {i + 1}
+              </span>
+              {!last && <span aria-hidden="true" className="w-0.5 flex-1 bg-gold-300 lg:hidden" />}
+            </div>
+            <div className={`min-w-0 flex-1 lg:mt-4 ${last ? "" : "pb-8 lg:pb-0"}`}>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-700">Step {i + 1}</p>
+              <h3 className="mt-1 break-words font-serif text-lg font-semibold leading-snug text-ink">{s.title}</h3>
+              <p className="mt-1.5 break-words text-sm text-ink/70">{s.short}</p>
+              <span className="mt-3 inline-block">
+                <OwnerChip owner={s.owner} />
+              </span>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}

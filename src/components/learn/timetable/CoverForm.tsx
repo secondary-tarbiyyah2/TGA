@@ -33,7 +33,7 @@ export function CoverForm({ slots, teachers, onDone }: { slots: TimetableSlot[];
         <label className="block text-xs font-medium text-ink/70">Lesson
           <select value={slotId} onChange={(e) => setSlotId(e.target.value)} className={fieldCls}>
             <option value="">Choose…</option>
-            {slots.map((s) => <option key={s.id} value={s.id}>{s.subjects?.name} ({s.classes?.name}) — {WEEKDAYS.find((w) => w.value === s.weekday)?.short} {timeLabel(s.start_time)}</option>)}
+            {slots.map((s) => <option key={s.id} value={s.id}>{s.subjects?.name} ({s.classes?.name}) · {WEEKDAYS.find((w) => w.value === s.weekday)?.short} {timeLabel(s.start_time)}</option>)}
           </select>
         </label>
         <label className="block text-xs font-medium text-ink/70">Date

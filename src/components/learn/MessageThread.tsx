@@ -33,7 +33,7 @@ function dayLabel(iso: string): string {
 
 /** A single open thread's messages + compose box. Moderation model: sends
  * immediately (see 0013_messaging.sql's header for why), keyword-flagged
- * messages are just shown as normal to the two participants — flagging
+ * messages are just shown as normal to the two participants, flagging
  * only changes who ELSE (the Safeguarding Lead) can see it, never blocks
  * sending. */
 export function MessageThread({ threadId, onSent, onRead }: { threadId: string; onSent?: () => void; onRead?: () => void }) {
@@ -191,7 +191,7 @@ export function MessageThread({ threadId, onSent, onRead }: { threadId: string; 
         {messages === null ? (
           <p className="text-sm text-ink/65">Loading…</p>
         ) : messages.length === 0 ? (
-          <p className="text-sm text-ink/65">No messages yet — say hello.</p>
+          <p className="text-sm text-ink/65">No messages yet, say hello.</p>
         ) : (
           messages.map((m, i) => {
             const mine = m.sender_id === userId;

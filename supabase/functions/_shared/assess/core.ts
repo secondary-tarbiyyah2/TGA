@@ -34,7 +34,7 @@ export type Item = {
   /** For picture-choice puzzles: each choice is an SVG. */
   choiceSvgs?: string[];
   choices?: string[];
-  /** Words read aloud by the browser (speech synthesis) — phonics and young-reader support. */
+  /** Words read aloud by the browser (speech synthesis) · phonics and young-reader support. */
   say?: string;
   /** Reading passages: the passage id this question belongs to (passage text is sent once per section). */
   passageId?: string;

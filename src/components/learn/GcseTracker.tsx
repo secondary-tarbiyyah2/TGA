@@ -266,7 +266,7 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
     <div className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h2 className="font-serif text-h3 font-semibold text-ink">GCSE grades — {cls.subjects?.name || cls.name}</h2>
+          <h2 className="font-serif text-h3 font-semibold text-ink">GCSE grades · {cls.subjects?.name || cls.name}</h2>
           <p className="mt-1 max-w-2xl text-sm text-ink/65">Target, predicted and actual grades (1–9). Pupils and parents see them with a plain-English explanation.</p>
         </div>
         <div className="flex flex-wrap items-center gap-2">

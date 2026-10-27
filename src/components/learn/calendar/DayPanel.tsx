@@ -97,7 +97,7 @@ export function DayPanel({
   const h = toHijri(d);
   const info = dayInfo(dateKey, terms, closures);
   const banners: { text: string; tone: "green" | "amber" | "red" }[] = [];
-  for (const c of info.closure) banners.push({ text: `${c.name} (${CLOSURE_LABEL[c.kind]})${c.notes ? ` — ${c.notes}` : ""}`, tone: "red" });
+  for (const c of info.closure) banners.push({ text: `${c.name} (${CLOSURE_LABEL[c.kind]})${c.notes ? ` · ${c.notes}` : ""}`, tone: "red" });
   if (info.halfTerm && info.term) banners.push({ text: `${info.term.name} · half-term break`, tone: "amber" });
   else if (info.term) banners.push({ text: info.term.name, tone: "green" });
   else if (terms && terms.length) banners.push({ text: "Outside term time", tone: "amber" });
@@ -152,7 +152,7 @@ export function DayPanel({
         {loading ? (
           <p className="text-sm text-ink/65">Loading…</p>
         ) : items.length === 0 ? (
-          <p className="text-sm text-ink/65">{info.closure.length ? "School is closed — nothing scheduled." : weekend ? "Weekend — nothing scheduled." : "Nothing scheduled for this day."}</p>
+          <p className="text-sm text-ink/65">{info.closure.length ? "School is closed, nothing scheduled." : weekend ? "Weekend, nothing scheduled." : "Nothing scheduled for this day."}</p>
         ) : (
           ORDER.map((k) => {
             const list = items.filter((i) => i.kind === k);

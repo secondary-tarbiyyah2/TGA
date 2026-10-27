@@ -19,7 +19,7 @@ export default function LearnLandingPage() {
   const uniqueRoles = [...new Set(roles.map((r) => r.role))];
 
   if (uniqueRoles.length === 0) {
-    return <p className="text-ink/65">Your account doesn&apos;t have any /learn access yet — ask an admin to set this up.</p>;
+    return <p className="text-ink/65">Your account doesn&apos;t have any /learn access yet, ask an admin to set this up.</p>;
   }
 
   if (uniqueRoles.length === 1) {

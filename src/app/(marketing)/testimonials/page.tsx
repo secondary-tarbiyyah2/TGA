@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function TestimonialsPage() {
-  // Never show a fabricated/placeholder quote as if it were real — a
+  // Never show a fabricated/placeholder quote as if it were real, a
   // testimonial only appears once an admin has a genuine one to publish.
   const testimonials = (await getTestimonials()).filter((t) => !t.isPlaceholder);
 

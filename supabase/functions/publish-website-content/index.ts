@@ -1,11 +1,11 @@
 // Triggers a site rebuild after an admin saves a change in
-// /learn/admin/content — the site is a static export, so a database write
+// /learn/admin/content, the site is a static export, so a database write
 // alone never appears live on its own. Previously (with Sanity) this was a
 // webhook Sanity called on publish; now the admin UI calls this directly
 // right after its own save succeeds, one less moving part than going
 // through a third party first.
 //
-// Deployed WITH JWT verification (unlike the public booking functions) —
+// Deployed WITH JWT verification (unlike the public booking functions), 
 // a request with no valid session is rejected before reaching this code.
 // The real "are they allowed to trigger a rebuild?" check below still runs
 // under the caller's own JWT/RLS, never trusting a role the client merely

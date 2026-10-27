@@ -75,7 +75,7 @@ function EveningCard({ row, ev }: { row: Row; ev: ParentEvening }) {
 
       <div className="mt-4">
         <label className="block text-xs font-medium text-ink/70" htmlFor={`pe-link-${ev.id}`}>
-          Your online meeting link (optional — parents get it with their booking)
+          Your online meeting link (optional, parents get it with their booking)
         </label>
         <div className="mt-1 flex flex-wrap gap-2">
           <input

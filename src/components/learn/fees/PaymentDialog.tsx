@@ -48,7 +48,7 @@ export function PaymentDialog({
     });
     setBusy(false);
     if (err) {
-      setError("Could not record the payment — please try again.");
+      setError("Could not record the payment, please try again.");
       return;
     }
     onDone();

@@ -120,7 +120,7 @@ export function SubmitWork({
         );
         if (!res.ok) {
           setPicked((cur) => cur.map((c) => (c.key === p.key ? { ...c, error: res.error } : c)));
-          setError(`"${p.file.name}" didn't upload: ${res.error} Nothing has been handed in yet — try again.`);
+          setError(`"${p.file.name}" didn't upload: ${res.error} Nothing has been handed in yet, try again.`);
           return;
         }
         uploaded.push({ path, name: p.file.name, mime, size: p.file.size });

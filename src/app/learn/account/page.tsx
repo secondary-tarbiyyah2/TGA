@@ -13,8 +13,8 @@ import { MessageSettings } from "@/components/learn/messages/MessageSettings";
 import { PageHeader } from "@/components/learn/PageHeader";
 
 /**
- * The signed-in user's OWN account settings — password only, since MFA was
- * removed app-wide (see supabase/migrations/0020_remove_mfa.sql) —
+ * The signed-in user's OWN account settings, password only, since MFA was
+ * removed app-wide (see supabase/migrations/0020_remove_mfa.sql), 
  * deliberately separate from `/admin/settings` (site-wide LMS settings such
  * as recording retention), and open to every /learn role, not just admin.
  * Before this page existed there was no personal-account entry point at

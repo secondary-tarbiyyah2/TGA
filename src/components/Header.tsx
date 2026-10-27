@@ -48,18 +48,18 @@ function DesktopDropdown({ group, open, onToggle, onClose }: { group: NavGroup; 
   );
 }
 
-// Rendered via a portal into document.body — NOT as a descendant of <header>.
+// Rendered via a portal into document.body, NOT as a descendant of <header>.
 // <header> has `backdrop-blur` (backdrop-filter), which per the CSS spec
 // creates a new containing block for any `position: fixed` descendant, the
 // same way `transform` or `filter` do. A `fixed inset-0` drawer nested
 // inside that header was being positioned relative to the header's own
-// 80px-tall box instead of the viewport — collapsing to zero height and
+// 80px-tall box instead of the viewport, collapsing to zero height and
 // staying invisible even though its open/close state was toggling
 // correctly. Verified with Playwright device emulation (iPhone/Android/
 // tablet viewports): the drawer's computed height was exactly 0px while
 // nested inside the blurred header, and became correct (full viewport
 // height below the header) the moment it was rendered outside it. A portal
-// is the robust fix — the drawer's positioning no longer depends on
+// is the robust fix, the drawer's positioning no longer depends on
 // whatever CSS an ancestor happens to have now or in the future.
 function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: () => void; triggerRef: React.RefObject<HTMLButtonElement | null> }) {
   const [mobileOpenGroups, setMobileOpenGroups] = useState<Set<string>>(new Set());
@@ -146,7 +146,7 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
     >
       {/* The drawer carries its own top bar, so it fills the whole screen whatever the page behind it is doing. */}
       <div className="sticky top-0 z-10 flex h-20 shrink-0 items-center justify-between border-b border-gold-light/40 bg-cream px-5">
-        <Link href="/" onClick={close} className="flex items-center" aria-label="Tarbiyyah Global Academy — home">
+        <Link href="/" onClick={close} className="flex items-center" aria-label="Tarbiyyah Global Academy, home">
           <Image src="/brand/ga-wordmark.png" alt="" width={180} height={55} />
         </Link>
         <button type="button" onClick={close} aria-label="Close menu" className="rounded-md p-2 text-gold-700" style={{ touchAction: "manipulation" }}>
@@ -272,7 +272,7 @@ export function Header() {
       }`}
     >
       <Container className="flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center" aria-label="Tarbiyyah Global Academy — home">
+        <Link href="/" className="flex items-center" aria-label="Tarbiyyah Global Academy, home">
           <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={220} height={67} priority />
         </Link>
 

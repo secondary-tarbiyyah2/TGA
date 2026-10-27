@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-// Shared card shell for /learn admin pages — every page previously repeated
+// Shared card shell for /learn admin pages, every page previously repeated
 // the same `rounded-2xl border border-gold-light/50 bg-white p-6` div by
 // hand with no visual distinction between "nothing to see here" and
 // "something needs attention" (reported from a live screenshot as "options

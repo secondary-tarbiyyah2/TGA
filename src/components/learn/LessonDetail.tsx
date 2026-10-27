@@ -101,7 +101,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
   if (lesson === null) return <p className="text-sm text-ink/65">Lesson not found, or you don&apos;t have access to it.</p>;
 
   const slot = lesson.timetable_slots;
-  const title = `${slot?.classes?.subjects?.name || "Lesson"} — ${slot?.classes?.name || ""}`;
+  const title = `${slot?.classes?.subjects?.name || "Lesson"} · ${slot?.classes?.name || ""}`;
 
   const join = async () => {
     // Open the tab during the click; Safari/Firefox block it after an await.
@@ -171,7 +171,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
       if (!result.ok || !result.url) {
         setMessage(
           result.error === "forbidden_or_consent_required"
-            ? "Consent hasn't been given for this recording yet — give consent below to view it."
+            ? "Consent hasn't been given for this recording yet, give consent below to view it."
             : `Could not open recording: ${edgeErrorMessage(result)}`
         );
         return;
@@ -249,7 +249,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
         </div>
         {message && <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-800">{message}</p>}
         <p className="mt-3 text-xs text-ink/65">
-          Waiting room is on — students and parents wait for the teacher to admit them. In-meeting chat is whole-class only (no
+          Waiting room is on, students and parents wait for the teacher to admit them. In-meeting chat is whole-class only (no
           private 1:1 chat).
         </p>
       </div>
@@ -365,7 +365,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
                     disabled={busy}
                     onClick={() => watchRecording(r.id, "export")}
                     className="rounded-lg border border-red-300 px-3 py-1.5 text-xs text-red-700 font-medium transition-colors"
-                    title="Requires Headteacher/Admin with Can export data — every use is logged"
+                    title="Requires Headteacher/Admin with Can export data, every use is logged"
                   >
                     Export raw file (logged)
                   </button>
@@ -412,7 +412,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
         <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
           <h2 className="font-serif text-h3 font-semibold text-ink">Report an absence</h2>
           {absenceNoticeSent ? (
-            <p className="mt-2 text-sm text-ink/65">An absence notice has already been submitted for this lesson — thank you.</p>
+            <p className="mt-2 text-sm text-ink/65">An absence notice has already been submitted for this lesson, thank you.</p>
           ) : (
             <>
               <p className="mt-1 text-xs text-ink/65">Let the teacher know in advance so this isn&apos;t flagged as unexplained.</p>

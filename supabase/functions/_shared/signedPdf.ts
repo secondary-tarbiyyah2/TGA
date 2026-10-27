@@ -359,7 +359,7 @@ async function loadSignatureImage(service: Service, pdf: PDFDocument, sig: SigRo
 }
 
 function stampFooters(pdf: PDFDocument, font: PDFFont, sig: SigRow) {
-  const text = safe(font, `Signed by ${sig.typed_full_name} on ${ukDate(sig.signed_at)} — ref ${shortRef(sig.id)}`);
+  const text = safe(font, `Signed by ${sig.typed_full_name} on ${ukDate(sig.signed_at)} · ref ${shortRef(sig.id)}`);
   for (const page of pdf.getPages()) {
     if (page.getRotation().angle % 360 !== 0) continue; // rotated pages: skip rather than stamp sideways
     const { width } = page.getSize();

@@ -1,6 +1,6 @@
 /**
  * The brand's 8-point geometric star (two overlapping squares, one turned
- * 45°) — see DESIGN.md: "Our identity = gold, ink, cream, 8-point
+ * 45°) · see DESIGN.md: "Our identity = gold, ink, cream, 8-point
  * geometric star". Decorative only; colour comes from `currentColor`.
  */
 export function StarMark({ className = "h-6 w-6", filled = false }: { className?: string; filled?: boolean }) {

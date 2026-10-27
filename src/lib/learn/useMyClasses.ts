@@ -8,14 +8,14 @@ export type MyClassOption = { id: string; name: string; subject_id: string | nul
 
 /**
  * The signed-in teacher/TA's own classes (myTeachingClasses: role,
- * subject mapping or published timetable) — the same query that was previously copy-pasted (with
+ * subject mapping or published timetable) · the same query that was previously copy-pasted (with
  * small drifts) across /teach/homework, /teach/assessment and
  * /teach/reports. Centralised here so the three pickers stay in sync
  * instead of quietly diverging.
  *
  * `autoSelectFirst` mirrors each page's previous behaviour: homework/
  * assessment only defaulted the selection if nothing was chosen yet,
- * reports always defaulted on load — both are safe to run once, since this
+ * reports always defaulted on load, both are safe to run once, since this
  * only fires on mount, not on every subsequent re-render.
  */
 export function useMyClasses(autoSelectFirst: (firstId: string) => void = () => {}) {

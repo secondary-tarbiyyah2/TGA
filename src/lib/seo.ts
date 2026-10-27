@@ -7,7 +7,7 @@ export const SITE_NAME = "Tarbiyyah Global Academy";
  * Per-page metadata with a canonical URL and matching Open Graph / Twitter
  * tags. A page-level `openGraph` replaces the root layout's wholesale in the
  * Metadata API (it is not deep-merged), so the share image is repeated here.
- * `path` is the route without a trailing slash ("/fees", "" for home) — the
+ * `path` is the route without a trailing slash ("/fees", "" for home) · the
  * site is exported with trailingSlash, so the canonical gets one.
  */
 export function pageMetadata({
@@ -20,7 +20,7 @@ export function pageMetadata({
   path: string;
 }): Metadata {
   const canonical = path ? `${path.replace(/\/$/, "")}/` : "/";
-  const fullTitle = `${title} — ${SITE_NAME}`;
+  const fullTitle = `${title} | ${SITE_NAME}`;
   return {
     title,
     description,

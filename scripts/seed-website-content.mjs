@@ -29,7 +29,7 @@ if (!supabaseUrl || !serviceRoleKey) {
 const supabase = createClient(supabaseUrl, serviceRoleKey);
 
 // Deterministic UUIDs derived from the original seed _id strings, so
-// re-running this script upserts the same rows rather than duplicating —
+// re-running this script upserts the same rows rather than duplicating, 
 // plain randomUUID() would break that on a second run. Not cryptographic,
 // just needs to be stable and UUID-shaped: a SHA-256 of the seed string
 // gives 64 hex chars, plenty for the 32 a UUID needs.
@@ -89,8 +89,8 @@ await upsertAll("fee_bands", [
 
 // ── testimonials ─────────────────────────────────────────────────────────
 await upsertAll("testimonials", [
-  { id: deterministicId("ts1"), role: "Parent", is_placeholder: true, order_index: 1, quote: "Placeholder quote — real parent testimonials will replace this once launch families are enrolled.", attribution: "Parent, placeholder" },
-  { id: deterministicId("ts2"), role: "Student", is_placeholder: true, order_index: 2, quote: "Placeholder quote — real student testimonials will replace this once launch families are enrolled.", attribution: "Student, placeholder" },
+  { id: deterministicId("ts1"), role: "Parent", is_placeholder: true, order_index: 1, quote: "Placeholder quote, real parent testimonials will replace this once launch families are enrolled.", attribution: "Parent, placeholder" },
+  { id: deterministicId("ts2"), role: "Student", is_placeholder: true, order_index: 2, quote: "Placeholder quote, real student testimonials will replace this once launch families are enrolled.", attribution: "Student, placeholder" },
 ]);
 
 // ── team_profiles ────────────────────────────────────────────────────────
@@ -101,12 +101,12 @@ await upsertAll("team_profiles", [
 
 // ── differentiators ──────────────────────────────────────────────────────
 await upsertAll("differentiators", [
-  { id: deterministicId("d2"), order_index: 2, visible: true, icon: "quran", status: "Draft / concept — not yet confirmed", title: "Hifdh as a first-class subject", summary: "Qur'an memorisation progress tracked on a dashboard alongside academic subjects — not an after-school extra.", detail: "Hifdh sits on the timetable and the progress report with the same weight as English or Maths, not as a footnote club." },
-  { id: deterministicId("d3"), order_index: 3, visible: true, icon: "family", status: "Draft / concept — not yet confirmed", title: "Big Sibling mentorship", summary: "Peer mentors from Tarbiyyah Primary and Secondary support Academy pupils, connecting the whole Tarbiyyah family." },
-  { id: deterministicId("d5"), order_index: 5, visible: true, icon: "users", status: "Confirmed commitment", title: "Meet the Teachers", summary: "Every teacher is public on our website — qualifications and a short intro video, before you ever apply." },
-  { id: deterministicId("d6"), order_index: 6, visible: true, icon: "note", status: "Confirmed commitment", title: "Weekly Tarbiyah Note", summary: "A personal weekly update on your child's character and akhlaq from their form tutor — separate from academic reports." },
-  { id: deterministicId("d7"), order_index: 7, visible: true, icon: "portfolio", status: "Draft / concept — not yet confirmed", title: "Student portfolio", summary: "Recitation recordings, projects and artwork collected across the year into one growing portfolio." },
-  { id: deterministicId("d8"), order_index: 8, visible: true, icon: "calendar", status: "Draft / concept — not yet confirmed", title: "Bookable teacher office hours", summary: "1:1 time with your child's teacher, booked directly — no waiting for parents' evening." },
+  { id: deterministicId("d2"), order_index: 2, visible: true, icon: "quran", status: "Draft / concept, not yet confirmed", title: "Hifdh as a first-class subject", summary: "Qur'an memorisation progress tracked on a dashboard alongside academic subjects, not an after-school extra.", detail: "Hifdh sits on the timetable and the progress report with the same weight as English or Maths, not as a footnote club." },
+  { id: deterministicId("d3"), order_index: 3, visible: true, icon: "family", status: "Draft / concept, not yet confirmed", title: "Big Sibling mentorship", summary: "Peer mentors from Tarbiyyah Primary and Secondary support Academy pupils, connecting the whole Tarbiyyah family." },
+  { id: deterministicId("d5"), order_index: 5, visible: true, icon: "users", status: "Confirmed commitment", title: "Meet the Teachers", summary: "Every teacher is public on our website, qualifications and a short intro video, before you ever apply." },
+  { id: deterministicId("d6"), order_index: 6, visible: true, icon: "note", status: "Confirmed commitment", title: "Weekly Tarbiyah Note", summary: "A personal weekly update on your child's character and akhlaq from their form tutor, separate from academic reports." },
+  { id: deterministicId("d7"), order_index: 7, visible: true, icon: "portfolio", status: "Draft / concept, not yet confirmed", title: "Student portfolio", summary: "Recitation recordings, projects and artwork collected across the year into one growing portfolio." },
+  { id: deterministicId("d8"), order_index: 8, visible: true, icon: "calendar", status: "Draft / concept, not yet confirmed", title: "Bookable teacher office hours", summary: "1:1 time with your child's teacher, booked directly, no waiting for parents' evening." },
   { id: deterministicId("d9"), order_index: 9, visible: true, icon: "heart", status: "Confirmed commitment", title: "Transparent bursary seats", summary: "A tracked number of bursary/scholarship seats each year, published openly rather than handled quietly on request." },
 ]);
 

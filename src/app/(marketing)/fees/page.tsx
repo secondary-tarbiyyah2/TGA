@@ -35,7 +35,7 @@ export default async function FeesPage() {
           <Kicker>Fees &amp; Payment Plans</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Transparent fees, no surprises.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            Every figure is published here — nothing shared only on enquiry. Choose to pay annually, in two payments
+            Every figure is published here, nothing shared only on enquiry. Choose to pay annually, in two payments
             or monthly for any year group.
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/70">
@@ -46,7 +46,7 @@ export default async function FeesPage() {
           <p className="mt-3 max-w-2xl text-sm text-ink/70">
             Read the full{" "}
             <Link href="/policies" className="font-semibold text-gold-700 underline">Fees Policy</Link>{" "}
-            before enrolling — it covers payment terms, refunds and what happens if a payment is missed.
+            before enrolling, it covers payment terms, refunds and what happens if a payment is missed.
           </p>
         </Container>
       </section>
