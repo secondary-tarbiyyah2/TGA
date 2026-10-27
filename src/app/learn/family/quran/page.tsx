@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { EmptyState, ui } from "@/components/learn/ui";
 import { useFamilyChildren } from "@/lib/learn/classes";
+import { useSelectedChild } from "@/lib/learn/selectedChild";
 import { QuranPupilView } from "@/components/learn/quran/QuranPupilView";
 
 function Content() {
   const children = useFamilyChildren();
-  const [childId, setChildId] = useState("");
-  const current = childId || children?.[0]?.id || "";
+  const [current, setChildId] = useSelectedChild(children ? children.map((c) => c.id) : null);
   const name = children?.find((c) => c.id === current)?.name?.split(" ")[0];
   return (
     <>
@@ -35,7 +35,9 @@ export default function FamilyQuranPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
-          <Content />
+          <Suspense fallback={<div className="h-40 animate-pulse rounded-2xl bg-white" />}>
+            <Content />
+          </Suspense>
         </LearnShell>
       </LearnGate>
     </section>

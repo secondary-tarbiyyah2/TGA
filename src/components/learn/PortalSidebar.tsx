@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -326,9 +326,36 @@ export function PortalSidebarDrawer(props: { area: PortalArea; session: Session;
     return () => window.removeEventListener("tga-open-menu", openMenu);
   }, []);
 
+  // Focus management for the drawer dialog: focus moves into it on open,
+  // Tab cycles inside it, and focus returns to whatever opened it on close.
+  const drawerRef = useRef<HTMLDivElement | null>(null);
+  const returnFocus = useRef<HTMLElement | null>(null);
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    returnFocus.current = document.activeElement as HTMLElement | null;
+    const focusable = () =>
+      Array.from(drawerRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])') || []).filter(
+        (el) => !el.closest("[inert]"),
+      );
+    window.setTimeout(() => focusable()[0]?.focus(), 0);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const els = focusable();
+      if (!els.length) return;
+      const first = els[0];
+      const last = els[els.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
     document.addEventListener("keydown", onKey);
     // Stop the page behind the drawer scrolling with it.
     const prevOverflow = document.body.style.overflow;
@@ -336,18 +363,20 @@ export function PortalSidebarDrawer(props: { area: PortalArea; session: Session;
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
+      const el = returnFocus.current;
+      if (el && document.contains(el)) window.setTimeout(() => el.focus(), 0);
     };
   }, [open]);
 
   // No menu button of its own: on phones the tab bar is the navigation, and
-  // its "More" button opens this drawer with the tab-bar pages left out.
+  // its "Menu" button opens this drawer with the tab-bar pages left out.
   return (
     <div className="lg:hidden">
       {open &&
         createPortal(
           <div className="portal fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
             <button type="button" aria-label="Close" className="absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
-            <div className="portal-drawer absolute inset-y-0 left-0 w-[86%] max-w-[320px] bg-white shadow-xl">
+            <div ref={drawerRef} className="portal-drawer absolute inset-y-0 left-0 w-[86%] max-w-[320px] bg-white shadow-xl">
               <SidebarBody {...props} hidePages={mobileTabsFor(props.area, props.roles.map((r) => r.role)).map((i) => i.href)} onNavigate={() => setOpen(false)} onClose={() => setOpen(false)} />
             </div>
           </div>,

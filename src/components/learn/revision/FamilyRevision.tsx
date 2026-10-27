@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useFamilyChildren } from "@/lib/learn/classes";
+import { useSelectedChild } from "@/lib/learn/selectedChild";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { Icon } from "@/components/learn/Icon";
 import { EmptyState, StatusChip, ui } from "@/components/learn/ui";
@@ -32,10 +33,9 @@ const started = (u: Unit) => u.quizzes > 0 || u.practice > 0 || u.mastered > 0;
  */
 export function FamilyRevision() {
   const children = useFamilyChildren();
-  const [childId, setChildId] = useState("");
+  const [current, setChildId] = useSelectedChild(children ? children.map((c) => c.id) : null);
   const [units, setUnits] = useState<{ child: string; list: Unit[] } | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const current = childId || children?.[0]?.id || "";
 
   useEffect(() => {
     const supabase = getSupabaseClient();

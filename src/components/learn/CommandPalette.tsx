@@ -90,6 +90,16 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
     };
   }, [open, openPalette, closePalette]);
 
+  // The page behind the palette must not scroll while it is open.
+  useEffect(() => {
+    if (!open) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open]);
+
   // Classes and recent pages load when the palette first opens.
   useEffect(() => {
     if (!open) return;
@@ -173,7 +183,9 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
   }, [active]);
 
   const go = (item: Item) => {
-    setOpen(false);
+    // closePalette (not setOpen) so focus goes back to the trigger button
+    // once the new page has rendered, as it does on Escape.
+    closePalette();
     router.push(item.href);
   };
 
@@ -234,6 +246,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                   type="text"
                   role="combobox"
                   aria-expanded="true"
+                  aria-autocomplete="list"
                   aria-controls="cmdk-list"
                   aria-activedescendant={items[active] ? `cmdk-opt-${active}` : undefined}
                   aria-label="Search pages, classes and people"
@@ -249,6 +262,9 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                 </button>
               </div>
 
+              <p className="sr-only" aria-live="polite">
+                {searching && !loadingMore ? (items.length === 0 ? "No results." : `${items.length} result${items.length === 1 ? "" : "s"}.`) : ""}
+              </p>
               <div ref={listRef} id="cmdk-list" role="listbox" aria-label="Results" className="overflow-y-auto p-2">
                 {items.length === 0 ? (
                   <p className="px-3 py-10 text-center text-sm text-ink/65">

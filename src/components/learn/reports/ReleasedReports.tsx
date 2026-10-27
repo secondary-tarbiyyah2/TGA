@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { useSelectedChild } from "@/lib/learn/selectedChild";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { Tabs } from "@/components/learn/Tabs";
 import { EmptyState, StatusChip, ui } from "@/components/learn/ui";
@@ -31,7 +32,6 @@ const longDate = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString
  */
 export function ReleasedReports() {
   const [rows, setRows] = useState<Row[] | null>(null);
-  const [child, setChild] = useState<string>("");
   const [openId, setOpenId] = useState<string | null>(null);
   const [printing, setPrinting] = useState(false);
   // Opening a report swaps the list for the report: start it at the top, and
@@ -75,7 +75,9 @@ export function ReleasedReports() {
     for (const r of rows || []) m.set(r.child_id, r.children?.name || "Pupil");
     return Array.from(m, ([id, name]) => ({ id, name })).sort((a, b) => a.name.localeCompare(b.name));
   }, [rows]);
-  const activeChild = child && children.some((c) => c.id === child) ? child : children[0]?.id || "";
+  // Same child as the rest of the family area (a student has one child, so
+  // this is a no-op for them).
+  const [activeChild, setChild] = useSelectedChild(rows ? children.map((c) => c.id) : null);
   const list = (rows || []).filter((r) => children.length < 2 || r.child_id === activeChild);
   const open = (rows || []).find((r) => r.id === openId) || null;
 

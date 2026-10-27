@@ -4,7 +4,7 @@ import { UpNextCard } from "@/components/learn/UpNextCard";
 import { Icon } from "@/components/learn/Icon";
 import { DashboardHero } from "@/components/learn/DashboardHero";
 import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -26,6 +26,7 @@ import { ui } from "@/components/learn/ui";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { useSelectedChild } from "@/lib/learn/selectedChild";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { ukToday } from "@/lib/learn/ukTime";
 
@@ -124,8 +125,6 @@ function ChildCard({ child }: { child: Child }) {
   );
 }
 
-const CHILD_KEY = "tga-family-dashboard-child";
-
 function FamilyContent() {
   const supabase = getSupabaseClient();
   const [children, setChildren] = useState<Child[] | null>(null);
@@ -135,8 +134,9 @@ function FamilyContent() {
   const [addError, setAddError] = useState<string | null>(null);
   const [added, setAdded] = useState<string | null>(null);
   // With several children, show one at a time (chosen with the chips) rather
-  // than stacking every child's full card down the page. Remembered per browser.
-  const [chosen, setChosen] = useState("");
+  // than stacking every child's full card down the page. The choice is shared
+  // with every other family page (src/lib/learn/selectedChild.ts).
+  const [chosen, choose] = useSelectedChild(children ? children.map((c) => c.id) : null);
 
   const loadChildren = async () => {
     if (!supabase) return;
@@ -147,22 +147,8 @@ function FamilyContent() {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load, not a render-cycle sync
     loadChildren();
-    try {
-      setChosen(window.localStorage.getItem(CHILD_KEY) || "");
-    } catch {
-      /* storage unavailable: first child */
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase]);
-
-  const choose = (id: string) => {
-    setChosen(id);
-    try {
-      window.localStorage.setItem(CHILD_KEY, id);
-    } catch {
-      /* fine unremembered */
-    }
-  };
 
   const addChild = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -293,7 +279,9 @@ export default function FamilyDashboardPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
-          <FamilyContent />
+          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
+            <FamilyContent />
+          </Suspense>
         </LearnShell>
       </LearnGate>
     </section>
