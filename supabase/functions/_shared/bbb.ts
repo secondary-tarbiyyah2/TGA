@@ -244,7 +244,7 @@ async function fetchRecordings(url: string): Promise<BbbRecording[]> {
     }
     out.push({
       recordID,
-      meetingId,
+      meetingId: textBetween(recordingXml, "meetingID") || "",
       startTime: startTime ? Number(startTime) : null,
       endTime: endTime ? Number(endTime) : null,
       playbackUrl,
