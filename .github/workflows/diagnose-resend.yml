@@ -89,7 +89,10 @@ jobs:
             if [ "$EXP" = "$ACT" ]; then M=match; else M=DIFFERENT; fi
             echo "::notice title=DKIM compare::$M expected_len=${#EXP} dns_len=${#ACT} expected_tail=${EXP: -24} dns_tail=${ACT: -24}"
             # Ask Resend to re-check the DNS (harmless if nothing changed).
-            curl -sS -X POST "https://api.resend.com/domains/$ID/verify" -H "Authorization: Bearer $RESEND_API_KEY" >/dev/null || true
+            # Only when it has failed: asking again resets a verified/pending domain to pending.
+            if [ "$(echo "$REC" | jq -r '.status')" = "failed" ]; then
+              curl -sS -X POST "https://api.resend.com/domains/$ID/verify" -H "Authorization: Bearer $RESEND_API_KEY" >/dev/null || true
+            fi
           done
           R=$(curl -sS -w ' HTTP %{http_code}' https://api.resend.com/emails \
             -H "Authorization: Bearer $RESEND_API_KEY" -H "Content-Type: application/json" \
