@@ -21,18 +21,9 @@ jobs:
           h() { curl -sS --max-time 20 -o /tmp/body -D - "$@" 2>&1 | tr -d '\r' | grep -iE '^(HTTP/|location|set-cookie|cf-cache-status|cache-control|x-robots-tag):' | sed "s/$KEY/<key>/g" | tr '\n' '|'; echo "TITLE $(grep -o '<title>[^<]*' /tmp/body | head -1 | sed 's/<title>//')"; }
           rm -f /tmp/jar; curl -sS -o /dev/null -c /tmp/jar "$U/?preview=$KEY"
           {
-            echo "A public /: $(h "$U/")"
-            echo "B public /about/: $(h "$U/about/")"
-            echo "C preview dns: $(getent hosts preview.tarbiyyah.co.uk | head -1 || echo none)"
-            echo "D preview / no key: $(h https://preview.tarbiyyah.co.uk/)"
-            echo "E preview robots: $(curl -sS --max-time 20 https://preview.tarbiyyah.co.uk/robots.txt | tr '\n' ' ')"
-            rm -f /tmp/j2
-            echo "F preview flow: $(curl -sS --max-time 30 -L -c /tmp/j2 -b /tmp/j2 -o /tmp/body -w 'final=%{url_effective} status=%{http_code}' "https://preview.tarbiyyah.co.uk/about/?key=$KEY" | sed "s/$KEY/<key>/g") TITLE $(grep -o '<title>[^<]*' /tmp/body | head -1 | sed 's/<title>//')"
-            echo "G preview /fees/ with jar: $(h -b /tmp/j2 https://preview.tarbiyyah.co.uk/fees/)"
-            echo "H preview /admissions/apply/ with jar: $(h -b /tmp/j2 https://preview.tarbiyyah.co.uk/admissions/apply/)"
-            echo "I portal /login/ no key: $(h https://learn.tarbiyyah.co.uk/login/)"
-            echo "J portal /login/ with jar: $(h -b /tmp/j2 https://learn.tarbiyyah.co.uk/login/)"
-            echo "K public / with jar: $(h -b /tmp/j2 "$U/")"
+            for n in send.globalacademy rsend.globalacademy; do echo "DNS $n CNAME: $(dig +short CNAME $n.tarbiyyah.co.uk @1.1.1.1) | A: $(dig +short A $n.tarbiyyah.co.uk @1.1.1.1 | head -2 | tr '\n' ' ')"; done
+            echo "DNS TXT resend._domainkey.globalacademy: $(dig +short TXT resend._domainkey.globalacademy.tarbiyyah.co.uk @1.1.1.1 | cut -c1-60)"
+            echo "DNS TXT (other spellings): $(dig +short TXT resend._domainkey.globalacademy.tarbiyyah.co.uk.tarbiyyah.co.uk @1.1.1.1 | cut -c1-40) / $(dig +short CNAME resend._domainkey.globalacademy.tarbiyyah.co.uk @1.1.1.1)"
           } > /tmp/out
           cat /tmp/out
           echo "::warning title=preview probe::$(tr '\n' '#' < /tmp/out | cut -c1-3000)"
