@@ -13,7 +13,7 @@ export function StaffPreviewBadge() {
   const on = useSyncExternalStore(noSubscribe, hasPreview, () => false);
   if (!on) return null;
   return (
-    <div className="pointer-events-none fixed bottom-4 left-4 z-[60] print:hidden">
+    <div className="pointer-events-none fixed bottom-24 left-4 z-[60] print:hidden md:bottom-4">
       <div className="pointer-events-auto flex items-center gap-2 rounded-full bg-ink px-3.5 py-2 text-xs font-semibold text-cream shadow-lg">
         <span aria-hidden="true" className="h-2 w-2 rounded-full bg-gold-300" />
         Staff preview: not yet public

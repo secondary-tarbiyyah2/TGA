@@ -53,7 +53,7 @@ export default async function FeesPage() {
 
       <section className="section-pad">
         <Container>
-          <div className="overflow-x-auto rounded-2xl border border-gold-light/50">
+          <div tabIndex={0} role="region" aria-label="Tuition fees table, scrolls sideways on small screens" className="overflow-x-auto rounded-2xl border border-gold-light/50">
             <table className="w-full min-w-[560px] text-left text-sm">
               <caption className="sr-only">Tuition fees by year group: annual total, {terms} payments and monthly instalments</caption>
               <thead className="bg-cream text-ink/70">
@@ -131,7 +131,7 @@ export default async function FeesPage() {
         </Container>
       </section>
 
-      <section id="estimator" className="bg-cream py-16">
+      <section id="estimator" className="section-pad bg-cream">
         <Container>
           <Kicker>Estimate your fees</Kicker>
           <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">See a personalised estimate</h2>

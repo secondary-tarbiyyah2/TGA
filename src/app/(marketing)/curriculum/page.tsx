@@ -79,7 +79,7 @@ export default async function CurriculumPage() {
           <p className="mt-4 max-w-2xl text-ink/75">
             Years 10 and 11 follow two-year courses: the core subjects plus two options. Every pupil sits Pearson Edexcel International GCSEs. In English Language, Mathematics, Computer Science, Geography and Arabic we teach the UK GCSE course and add what the International GCSE exam needs, so pupils are ready for its papers. History is not offered at GCSE. Pupils sit their exams at an approved centre near home; we help families register and pay the centre directly (see the Examinations and Private Candidates Policy).
           </p>
-          <div className="mt-8 overflow-x-auto rounded-2xl border border-gold-light/50 bg-white">
+          <div tabIndex={0} role="region" aria-label="GCSE subjects table, scrolls sideways on small screens" className="mt-8 overflow-x-auto rounded-2xl border border-gold-light/50 bg-white">
             <table className="w-full min-w-[36rem] text-sm">
               <caption className="sr-only">International GCSE subjects: what is taught and the exam pupils sit</caption>
               <thead>
