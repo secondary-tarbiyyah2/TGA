@@ -120,7 +120,7 @@ export default function ForgotPasswordPage() {
           <p className="mt-2 text-sm text-ink/70">
             If an account exists for <strong>{email || "that address"}</strong>, we&apos;ve sent an email with a 6-digit code and a
             reset link. Use whichever is easier: open the link on this device, or type the code below (handy if the email is
-            on your phone). Both expire after an hour and work once.
+            on your phone). Both expire after 24 hours and work once.
           </p>
           <form onSubmit={handleCode} noValidate className="mt-6 space-y-3">
             <label className="block text-sm font-medium text-ink">

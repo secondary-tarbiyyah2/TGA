@@ -34,6 +34,7 @@
 //     password, and the lockout in learn-login is keyed on the synthetic
 //     address, so it protects username sign-in in exactly the same way.
 import type { SupabaseClient } from "jsr:@supabase/supabase-js@2";
+import { setupCodeHtml } from "./setupCode.ts";
 import { emailShell } from "./resend.ts";
 
 export const STUDENT_EMAIL_DOMAIN = "students.tarbiyyah.internal";
@@ -215,7 +216,7 @@ export type CredentialsEmailInput = {
   /** Present only when a student login was just created or reset. */
   student?: { username: string; password: string; reason: "new" | "reset" };
   /** Present when the parent has to set up (or re-set) their own account. */
-  parentSetup?: { link: string; isNew: boolean };
+  parentSetup?: { link: string; isNew: boolean; code?: string | null; email?: string };
   /** Any extra paragraph (e.g. "also a sibling") in plain text. */
   note?: string;
 };
@@ -238,6 +239,7 @@ export function credentialsEmail(input: CredentialsEmailInput): { subject: strin
     parts.push(
       `<p style="margin:0 0 12px;"><strong>Your parent account.</strong> ${input.parentSetup.isNew ? "Set a password to sign in and follow your child's progress." : "Use this link to set a new password."}</p>`,
       `<p style="margin:0 0 24px;"><a href="${escapeHtml(input.parentSetup.link)}" style="display:inline-block;background:#B08E45;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:bold;">${input.parentSetup.isNew ? "Set up your account" : "Set a new password"}</a></p>`,
+      setupCodeHtml(input.parentSetup.code, input.learnSiteUrl.replace(/\/$/, ""), input.parentSetup.email || ""),
     );
   }
 

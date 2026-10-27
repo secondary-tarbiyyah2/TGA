@@ -39,7 +39,7 @@ const TABS: { id: Tab; label: string; roles: LearnRole[]; chips: Chip[] }[] = [
   },
 ];
 
-type RowMsg = { kind: "ok" | "err"; text: string; link?: string };
+type RowMsg = { kind: "ok" | "err"; text: string; link?: string; code?: string };
 
 function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChild: (parentId: string) => void; onChanged: () => void }) {
   const supabase = getSupabaseClient();
@@ -49,10 +49,10 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
   const [loginEmail, setLoginEmail] = useState("");
   const [creds, setCreds] = useState<IssuedCredentials | null>(null);
 
-  const describe = (r: { emailSent?: boolean; setupLink?: string }, email: string): RowMsg =>
+  const describe = (r: { emailSent?: boolean; setupLink?: string; setupCode?: string }, email: string): RowMsg =>
     r.emailSent
       ? { kind: "ok", text: `Invite sent to ${email}.` }
-      : { kind: "err", text: `Account is ready but the email to ${email} couldn't be sent. Copy the setup link and send it yourself:`, link: r.setupLink };
+      : { kind: "err", text: `Account is ready but the email to ${email} couldn't be sent. Send them the setup link, or the code with the address learn.tarbiyyah.co.uk/login/forgot:`, link: r.setupLink, code: r.setupCode };
 
   // Same learn-invite call as adding: for an existing account it sends a fresh setup / password-reset link.
   const resend = async () => {
@@ -202,6 +202,11 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
                 {msg.link}
               </a>
             </>
+          )}
+          {msg.code && (
+            <span className="mt-1 block">
+              Setup code: <strong className="font-mono text-sm tracking-[0.3em]">{msg.code}</strong>
+            </span>
           )}
         </p>
       )}

@@ -28,6 +28,8 @@ export type InviteResult = {
   profileId?: string;
   isNewUser?: boolean;
   setupLink?: string;
+  /** 6-digit code that goes with the setup link (for finishing on another device). */
+  setupCode?: string;
   emailSent?: boolean;
 };
 

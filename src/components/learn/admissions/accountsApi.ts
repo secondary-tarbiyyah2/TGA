@@ -12,6 +12,7 @@ export type AccountsResult = {
   credentials?: IssuedCredentials;
   /** Present only when the parent's setup email could not be sent. */
   setupLink?: string;
+  setupCode?: string;
   parentEmail?: string;
   emailSent: boolean;
   emailError?: string;
@@ -42,7 +43,7 @@ export async function createAccountsFor(
     const msg = (r.error && ERRORS[r.error]) || edgeErrorMessage(r);
     return { ok: false, notes: [msg], emailSent: false };
   }
-  const parent = (r.parent || {}) as { profileId?: string; email?: string; setupLink?: string };
+  const parent = (r.parent || {}) as { profileId?: string; email?: string; setupLink?: string; setupCode?: string };
   const student = (r.student || null) as { profileId?: string; username?: string; password?: string } | null;
   const childName = `${app.child_first_name} ${app.child_last_name}`.trim();
   const emailSent = r.emailSent === true;
@@ -58,6 +59,7 @@ export async function createAccountsFor(
         ? { key: `${app.id}-${Date.now()}`, childName, username: student.username, password: student.password, parentEmail: parent.email, emailSent, emailError, kind: "new" }
         : undefined,
     setupLink: parent.setupLink,
+    setupCode: parent.setupCode,
     parentEmail: parent.email,
     emailSent,
     emailError,

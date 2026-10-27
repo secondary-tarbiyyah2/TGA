@@ -9,7 +9,7 @@ import { GOLD_BUTTON, INPUT_CLASS, friendlyError, invite, type ClassOption, type
 
 export type PersonType = "student" | "parent" | "teacher" | "staff";
 
-type Outcome = { text: string; link?: string; creds?: IssuedCredentials };
+type Outcome = { text: string; link?: string; code?: string; creds?: IssuedCredentials };
 
 type LoginMode = "username" | "email" | "none";
 
@@ -35,8 +35,9 @@ function describeInvite(name: string, email: string, r: InviteResult, what: stri
     return { text: r.isNewUser === false ? `Invite sent to ${email} (they already had an account, so this also adds the ${what} role).` : `Invite sent to ${email}.` };
   }
   return {
-    text: `${name}'s account is ready, but the email to ${email} couldn't be sent. Copy their setup link and send it yourself (shown once):`,
+    text: `${name}'s account is ready, but the email to ${email} couldn't be sent. Send them the setup link, or the code with the address learn.tarbiyyah.co.uk/login/forgot (shown once):`,
     link: r.setupLink,
+    code: r.setupCode,
   };
 }
 
@@ -261,6 +262,15 @@ export function AddPersonModal({
                         <input readOnly value={o.link} onFocus={(e) => e.currentTarget.select()} className="min-w-0 flex-1 rounded border border-gold-light bg-white px-2 py-1 text-xs" aria-label="Setup link" />
                         <button type="button" onClick={() => copy(o.link as string)} className="rounded-lg border border-gold-light bg-white px-3 py-1 text-xs font-semibold hover:bg-cream">
                           {copied === o.link ? "Copied" : "Copy link"}
+                        </button>
+                      </span>
+                    )}
+                    {o.code && (
+                      <span className="mt-2 flex flex-wrap items-center gap-2">
+                        <span className="text-xs text-ink/70">Setup code</span>
+                        <span className="rounded bg-white px-2 py-1 font-mono text-base font-bold tracking-[0.3em]">{o.code}</span>
+                        <button type="button" onClick={() => copy(o.code as string)} className="rounded-lg border border-gold-light bg-white px-3 py-1 text-xs font-semibold hover:bg-cream">
+                          {copied === o.code ? "Copied" : "Copy code"}
                         </button>
                       </span>
                     )}

@@ -95,7 +95,7 @@ export function AcceptAccounts({
       if (r.ok && !r.emailSent && (r.setupLink || r.credentials)) {
         setNotes((n) => [...n, { text: `The email to ${r.parentEmail || "the parent"} could not be sent${r.emailError ? ` (${r.emailError})` : ""}.`, bad: true }]);
       }
-      if (r.setupLink) setNotes((n) => [...n, { text: `Copy this setup link and send it yourself: ${r.setupLink}`, bad: true }]);
+      if (r.setupLink) setNotes((n) => [...n, { text: `Send the parent this setup link: ${r.setupLink}${r.setupCode ? ` (or the code ${r.setupCode}, entered at learn.tarbiyyah.co.uk/login/forgot)` : ""}`, bad: true }]);
     } finally {
       setBusy(false);
     }

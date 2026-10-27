@@ -118,6 +118,7 @@ Deno.serve(async (req) => {
   if (roleErr) return jsonResponse({ ok: false, error: "role_grant_failed", detail: roleErr.message }, 500);
 
   let setupLink: string | null = null;
+  let setupCode: string | null = null;
   if (isNewUser || resend) {
     const { data: linkData, error: linkErr } = await serviceClient.auth.admin.generateLink({
       type: "recovery",
@@ -127,6 +128,7 @@ Deno.serve(async (req) => {
     if (linkErr || !linkData) return jsonResponse({ ok: false, error: "link_generation_failed", detail: linkErr?.message }, 500);
     const hashed = linkData.properties.hashed_token;
     setupLink = hashed ? `${learnSiteUrl}/login/invite?token_hash=${encodeURIComponent(hashed)}&type=recovery` : linkData.properties.action_link;
+    setupCode = linkData.properties.email_otp || null;
   }
   notes.push(isNewUser ? "Parent account created." : "Parent account already existed.");
 
@@ -242,7 +244,7 @@ Deno.serve(async (req) => {
       childName,
       learnSiteUrl,
       student: studentCreds,
-      parentSetup: setupLink ? { link: setupLink, isNew: isNewUser } : undefined,
+      parentSetup: setupLink ? { link: setupLink, isNew: isNewUser, code: setupCode, email: contactEmail } : undefined,
     });
     loggedSubject = mail.subject;
     try {
@@ -278,6 +280,7 @@ Deno.serve(async (req) => {
       isNewUser,
       // Only handed back when the email did not go, so staff can pass it on by hand.
       setupLink: setupLink && !emailSent ? setupLink : undefined,
+      setupCode: setupLink && !emailSent ? setupCode : undefined,
     },
     childId,
     enrolledClassIds: enrolled,

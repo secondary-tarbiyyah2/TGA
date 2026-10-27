@@ -356,6 +356,8 @@ jobs:
       # password containing + / = or quotes can't break the JSON.
       # The password-reset email carries a 6-digit code as well as the link,
       # so it can be read on another device (see src/app/learn/login/forgot).
+      # Security emails: every password set/change and email change is
+      # notified to the account holder (Supabase security notifications).
       - name: Configure Auth (magic link via SES or Resend SMTP)
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
@@ -385,10 +387,16 @@ jobs:
               smtp_user: $user,
               smtp_pass: $pass,
               smtp_sender_name: "Tarbiyyah Global Academy",
-              mailer_otp_exp: 3600,
+              mailer_otp_exp: 86400,
               mailer_otp_length: 6,
               mailer_subjects_recovery: "Your password reset code",
-              mailer_templates_recovery_content: ("<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1b1e21;max-width:520px;margin:0 auto;padding:24px\"><p style=\"font-size:16px\">Assalamu alaikum,</p><p style=\"font-size:16px\">We received a request to reset the password for your Tarbiyyah Global Academy account. Enter this code on the reset page:</p><p style=\"font-size:32px;font-weight:bold;letter-spacing:8px;text-align:center;background:#f5ecd6;border-radius:12px;padding:16px;margin:24px 0\">{{ .Token }}</p><p style=\"font-size:16px\">Or, if you are on the device you asked from, use this link:</p><p style=\"text-align:center;margin:24px 0\"><a href=\"" + $learn + "/login/invite?token_hash={{ .TokenHash }}&type=recovery\" style=\"background:#7d6428;color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:bold;display:inline-block\">Reset my password</a></p><p style=\"font-size:14px;color:#6b7178\">The code and the link work once and expire after an hour. If you did not ask for this, you can ignore this email: your password will not change.</p><p style=\"font-size:14px;color:#6b7178\">Tarbiyyah Global Academy</p></div>")
+              mailer_notifications_password_changed_enabled: true,
+              mailer_subjects_password_changed_notification: "Your password was changed",
+              mailer_templates_password_changed_notification_content: ("<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1b1e21;max-width:520px;margin:0 auto;padding:24px\"><p style=\"font-size:16px\">Assalamu alaikum,</p><p style=\"font-size:16px\">The password for your Tarbiyyah Global Academy account ({{ .Email }}) has just been set or changed.</p><p style=\"font-size:16px\">If this was you, for example because you have just set up your account or reset your password, there is nothing else to do.</p><p style=\"font-size:16px\"><strong>If it was not you</strong>, reset your password straight away at <a href=\"" + $learn + "/login/forgot\">" + $learn + "/login/forgot</a> and contact the school office at globalacademy@tarbiyyah.co.uk.</p><p style=\"font-size:14px;color:#6b7178\">Tarbiyyah Global Academy</p></div>"),
+              mailer_notifications_email_changed_enabled: true,
+              mailer_subjects_email_changed_notification: "Your account email was changed",
+              mailer_templates_email_changed_notification_content: ("<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1b1e21;max-width:520px;margin:0 auto;padding:24px\"><p style=\"font-size:16px\">Assalamu alaikum,</p><p style=\"font-size:16px\">The email address for your Tarbiyyah Global Academy account has been changed from {{ .OldEmail }} to {{ .Email }}.</p><p style=\"font-size:16px\"><strong>If you did not make this change</strong>, contact the school office straight away at globalacademy@tarbiyyah.co.uk.</p><p style=\"font-size:14px;color:#6b7178\">Tarbiyyah Global Academy</p></div>"),
+              mailer_templates_recovery_content: ("<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1b1e21;max-width:520px;margin:0 auto;padding:24px\"><p style=\"font-size:16px\">Assalamu alaikum,</p><p style=\"font-size:16px\">We received a request to reset the password for your Tarbiyyah Global Academy account. Enter this code on the reset page:</p><p style=\"font-size:32px;font-weight:bold;letter-spacing:8px;text-align:center;background:#f5ecd6;border-radius:12px;padding:16px;margin:24px 0\">{{ .Token }}</p><p style=\"font-size:16px\">Or, if you are on the device you asked from, use this link:</p><p style=\"text-align:center;margin:24px 0\"><a href=\"" + $learn + "/login/invite?token_hash={{ .TokenHash }}&type=recovery\" style=\"background:#7d6428;color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:bold;display:inline-block\">Reset my password</a></p><p style=\"font-size:14px;color:#6b7178\">The code and the link work once and expire after 24 hours. If you did not ask for this, you can ignore this email: your password will not change.</p><p style=\"font-size:14px;color:#6b7178\">Tarbiyyah Global Academy</p></div>")
             }' > /tmp/auth-config.json
           curl -sS -X PATCH "https://api.supabase.com/v1/projects/${{ steps.project.outputs.ref }}/config/auth" \
             -H "Authorization: Bearer ${SUPABASE_ACCESS_TOKEN}" \

@@ -18,6 +18,7 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { sendEmail, emailShell } from "../_shared/resend.ts";
+import { setupCodeHtml } from "../_shared/setupCode.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -178,6 +179,8 @@ Deno.serve(async (req) => {
   const setupLink = hashed
     ? `${learnSiteUrl}/login/invite?token_hash=${encodeURIComponent(hashed)}&type=recovery`
     : linkData.properties.action_link;
+  // The same email also carries the 6-digit code, for finishing on another device.
+  const setupCode = linkData.properties.email_otp || null;
 
   // Actually email the setup link rather than only handing it back for the
   // inviting admin to copy and send themselves by hand — reported as "we
@@ -203,7 +206,8 @@ Deno.serve(async (req) => {
           ${isNewUser ? "Set up your account" : "Reset your password"}
         </a>
       </p>
-      <p style="margin:0;font-size:13px;color:#777;">This link is for you alone and expires after a short time. If you didn't expect this email, you can ignore it.</p>
+      ${setupCodeHtml(setupCode, learnSiteUrl, email)}
+      <p style="margin:0;font-size:13px;color:#777;">The link and the code are for you alone, work once and expire after 24 hours. If you didn't expect this email, you can ignore it.</p>
     `),
   });
 
@@ -212,6 +216,7 @@ Deno.serve(async (req) => {
     profileId: userId,
     isNewUser,
     setupLink,
+    setupCode,
     emailSent: emailResult.ok,
     emailError: emailResult.ok ? undefined : emailResult.detail,
   });
