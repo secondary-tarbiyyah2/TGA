@@ -80,15 +80,22 @@ jobs:
           echo "::add-mask::$SERVICE_ROLE"
           echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
 
+      # The inputs reach the shell ONLY as environment variables. Interpolating
+      # ${{ inputs.* }} straight into the script would let whoever can dispatch
+      # this workflow (any portal user with the timetabler permission, via the
+      # trigger-timetable-generation function) run arbitrary commands in a job
+      # that holds the service-role key.
       - name: Run the solver
         env:
           SUPABASE_URL: https://${{ steps.project.outputs.ref }}.supabase.co
           SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          ACADEMIC_YEAR_LABEL: ${{ inputs.academic_year_label }}
+          RUN_LABEL: ${{ inputs.run_label }}
         run: |
           set -euo pipefail
-          ARGS=(--academic-year-label "${{ inputs.academic_year_label }}")
-          if [ -n "${{ inputs.run_label }}" ]; then
-            ARGS+=(--label "${{ inputs.run_label }}")
+          ARGS=(--academic-year-label "$ACADEMIC_YEAR_LABEL")
+          if [ -n "$RUN_LABEL" ]; then
+            ARGS+=(--label "$RUN_LABEL")
           fi
           python3 scripts/timetable-solver/generate.py "${ARGS[@]}" | tee /tmp/solver-output.txt
 

@@ -10,8 +10,16 @@
 // login_attempts audit trail) rather than replaces. The real login call
 // itself (supabase.auth.signInWithPassword) still goes directly from the
 // browser to Supabase Auth, this function only sits either side of it.
+//
+// Because "record" is unauthenticated and the outcome it reports cannot be
+// verified, the lockout is scoped to the (email, IP) pair: five failures
+// from one connection lock that connection out of that account, never the
+// account itself. Otherwise anyone could post five fake failures and lock
+// the Headteacher out from anywhere. One connection may also record at most
+// RECORD_CAP attempts per window, so the audit table cannot be flooded.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
+import { hashIp } from "../_shared/spam.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -20,12 +28,11 @@ const serviceClient = createClient(supabaseUrl, serviceRoleKey);
 const LOCKOUT_THRESHOLD = 5; // failed attempts
 const LOCKOUT_WINDOW_MINUTES = 15;
 const LOCKOUT_DURATION_MINUTES = 15;
+const RECORD_CAP = 60; // rows one connection may add per window
 
-async function ipHash(req: Request): Promise<string> {
+function ipHash(req: Request): Promise<string> {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-  const bytes = new TextEncoder().encode(ip);
-  const digest = await crypto.subtle.digest("SHA-256", bytes);
-  return Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, "0")).join("");
+  return hashIp(ip);
 }
 
 Deno.serve(async (req) => {
@@ -41,18 +48,23 @@ Deno.serve(async (req) => {
 
   const action = String(body.action || "");
   const email = String(body.email || "").trim().toLowerCase();
-  if (!email) return jsonResponse({ ok: false, error: "missing_email" }, 400);
+  if (!email || email.length > 254) return jsonResponse({ ok: false, error: "missing_email" }, 400);
+  const ip = await ipHash(req);
+  const since = new Date(Date.now() - LOCKOUT_WINDOW_MINUTES * 60_000).toISOString();
 
   if (action === "check") {
-    const since = new Date(Date.now() - LOCKOUT_WINDOW_MINUTES * 60_000).toISOString();
     const { data: attempts, error } = await serviceClient
       .from("login_attempts")
       .select("success, attempted_at")
       .eq("email", email)
+      .eq("ip_hash", ip)
       .gte("attempted_at", since)
       .order("attempted_at", { ascending: false })
       .limit(LOCKOUT_THRESHOLD * 3);
-    if (error) return jsonResponse({ ok: false, error: "check_failed", detail: error.message }, 500);
+    if (error) {
+      console.error("learn-login check:", error.message);
+      return jsonResponse({ ok: false, error: "check_failed" }, 500);
+    }
 
     // Count only the CONSECUTIVE most-recent failures, a success anywhere
     // in the window resets the count, so one bad guess days apart from
@@ -75,8 +87,17 @@ Deno.serve(async (req) => {
 
   if (action === "record") {
     const success = Boolean(body.success);
-    const { error } = await serviceClient.from("login_attempts").insert({ email, success, ip_hash: await ipHash(req) });
-    if (error) return jsonResponse({ ok: false, error: "record_failed", detail: error.message }, 500);
+    const { count } = await serviceClient
+      .from("login_attempts")
+      .select("id", { count: "exact", head: true })
+      .eq("ip_hash", ip)
+      .gte("attempted_at", since);
+    if ((count ?? 0) >= RECORD_CAP) return jsonResponse({ ok: false, error: "rate_limited" }, 429);
+    const { error } = await serviceClient.from("login_attempts").insert({ email, success, ip_hash: ip });
+    if (error) {
+      console.error("learn-login record:", error.message);
+      return jsonResponse({ ok: false, error: "record_failed" }, 500);
+    }
     return jsonResponse({ ok: true });
   }
 

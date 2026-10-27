@@ -7,6 +7,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 export function RegisterInterestForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [errorKind, setErrorKind] = useState<"failed" | "rate_limited">("failed");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -21,7 +22,7 @@ export function RegisterInterestForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...data, lead_ref: ref, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone }),
       });
-      if (!res.ok) throw new Error("failed");
+      if (!res.ok) throw new Error(res.status === 429 ? "rate_limited" : "failed");
       // Lets the admissions application form (if the same family completes
       // it on this device) pre-fill and carry the same lead reference, see
       // src/lib/leadRef.ts for why this is the honest limit of "one lead"
@@ -34,7 +35,8 @@ export function RegisterInterestForm() {
         lead_ref: ref,
       });
       setStatus("success");
-    } catch {
+    } catch (err) {
+      setErrorKind(err instanceof Error && err.message === "rate_limited" ? "rate_limited" : "failed");
       setStatus("error");
     }
   }
@@ -93,7 +95,8 @@ export function RegisterInterestForm() {
       </button>
       {status === "error" && (
         <p role="alert" className="mt-4 text-sm text-red-700">
-          Something went wrong. Please try again, or email{" "}
+          {errorKind === "rate_limited" ? "Too many submissions from this connection in the last hour. " : "Something went wrong. "}
+          Please try again later, or email{" "}
           <a href="mailto:globalacademy@tarbiyyah.co.uk" className="underline">globalacademy@tarbiyyah.co.uk</a> directly.
         </p>
       )}

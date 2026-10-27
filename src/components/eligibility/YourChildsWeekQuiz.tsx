@@ -262,6 +262,7 @@ export function YourChildsWeekQuiz({
             headers: { "Content-Type": "application/json", apikey: anonKey, Authorization: `Bearer ${anonKey}` },
             body: JSON.stringify({
               leadId,
+              email: contactEmail.trim().toLowerCase(),
               yearGroup: yearGroupAnswer,
               sampleSlots: sampleWeek.slots || [],
               startingPoints: evaluated.startingPoints,

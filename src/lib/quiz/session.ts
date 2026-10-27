@@ -90,6 +90,9 @@ export async function upsertQuizSession(params: {
       // Anon has no SELECT policy on quiz_sessions (write-only, by design, 
       // see 0016's table comment), so this never chains .select(): a plain
       // update with Prefer: return=minimal needs no read-back permission.
+      // The UPDATE policy (migration 0161) only allows the row whose
+      // session_token matches this header, so one browser can never touch
+      // another browser's session.
       await supabase
         .from("quiz_sessions")
         .update({
@@ -99,7 +102,8 @@ export async function upsertQuizSession(params: {
           answers: params.answers,
           completed_at: params.completed ? new Date().toISOString() : undefined,
         })
-        .eq("id", params.rowId);
+        .eq("id", params.rowId)
+        .setHeader("x-quiz-session", token);
       return params.rowId;
     }
 

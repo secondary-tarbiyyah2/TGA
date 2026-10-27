@@ -10,7 +10,7 @@
 // Deployed WITH JWT verification.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
-import { bbbConfigured, listRecordings } from "../_shared/bbb.ts";
+import { bbbConfigured, getRecordingById } from "../_shared/bbb.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -98,8 +98,10 @@ Deno.serve(async (req) => {
     }
   }
 
-  const bbbRecordings = await listRecordings(recording.bbb_recording_id);
-  const match = bbbRecordings.find((r) => r.recordID === recording.bbb_recording_id) || bbbRecordings[0];
+  // Looked up by recordID: bbb_recording_id is a recording id, not a meeting
+  // id, and the old "first result" fallback could hand back a different
+  // lesson's recording.
+  const match = await getRecordingById(recording.bbb_recording_id);
   if (!match) return jsonResponse({ ok: false, error: "not_available_on_bbb" }, 502);
 
   const url = mode === "export" ? match.rawDownloadUrl : match.playbackUrl;

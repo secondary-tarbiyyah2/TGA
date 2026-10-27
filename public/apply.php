@@ -17,6 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+if (!mailer_check_origin($cfg)) {
+    http_response_code(403);
+    echo json_encode(['ok' => false, 'error' => 'forbidden_origin']);
+    exit;
+}
+
 $body = mailer_read_body();
 
 // Honeypot: silently accept (200) so bots don't retry, but send nothing.
@@ -26,14 +32,14 @@ if (!empty($body['company'])) {
     exit;
 }
 
-$parentName = mailer_clean($body['parent_name'] ?? '');
-$email      = mailer_clean($body['email']       ?? '');
-$phone      = mailer_clean($body['phone']       ?? '');
+$parentName = mailer_clean($body['parent_name'] ?? '', 120);
+$email      = mailer_clean($body['email']       ?? '', 254);
+$phone      = mailer_clean($body['phone']       ?? '', 40);
 $country    = mailer_clean($body['country']     ?? '');
 $childName  = mailer_clean($body['child_name']  ?? '');
 $yeargroup  = mailer_clean($body['yeargroup']   ?? '');
 $consent    = mailer_clean($body['consent']     ?? '');
-$notes      = trim((string) ($body['notes'] ?? ''));
+$notes      = mb_substr(trim((string) ($body['notes'] ?? '')), 0, 2000);
 // See register.php for what this is, the same reference sent for a prior
 // register-interest submission from the same email, so the two can be
 // matched as one lead by a human or a downstream CRM.
@@ -55,7 +61,13 @@ if ($errors) {
     exit;
 }
 
-$subject = 'New application' . $childName . ' (' . $yeargroup . ')';
+if (mailer_rate_limited($email, $cfg)) {
+    http_response_code(429);
+    echo json_encode(['ok' => false, 'error' => 'rate_limited']);
+    exit;
+}
+
+$subject = 'New application: ' . $childName . ' (' . $yeargroup . ')';
 $text = implode("\n", [
     'A new application was submitted on Tarbiyyah Global Academy.',
     '',
@@ -81,12 +93,12 @@ mailer_log(($sent ? 'OK   ' : 'FAIL ') . 'apply child=' . $childName . ' year=' 
     . ' from_applicant=' . $email . ' via=' . $transport . '– ' . $detail);
 
 if (MAIL_SEND_ACK && $sent) {
-    $firstName = trim(strtok($parentName, ' '));
+    $firstName = mailer_safe_name(strtok($parentName, ' '));
     $greetName = $firstName !== '' ? ' ' . $firstName : '';
     $ackText = implode("\n", [
         'Assalamu alaikum' . $greetName . ',',
         '',
-        'Thank you for applying to Tarbiyyah Global Academy on behalf of ' . $childName . '. We',
+        'Thank you for applying to Tarbiyyah Global Academy on behalf of ' . (mailer_safe_name($childName, 60) ?: 'your child') . '. We',
         'have received your application and will be in touch with next steps, including any',
         'entry assessment.',
         '',
@@ -96,7 +108,7 @@ if (MAIL_SEND_ACK && $sent) {
         MAIL_SITE,
         'Part of the Tarbiyyah Education Trust',
     ]);
-    list($ackOk, $ackTransport, $ackDetail) = mailer_send($email, $parentName, 'Application received' . MAIL_SITE, $ackText, MAIL_RECIPIENT, MAIL_SITE);
+    list($ackOk, $ackTransport, $ackDetail) = mailer_send($email, $parentName, 'Application received | ' . MAIL_SITE, $ackText, MAIL_RECIPIENT, MAIL_SITE);
     mailer_log(($ackOk ? 'OK   ' : 'FAIL ') . 'apply ack to=' . $email . ' via=' . $ackTransport . '– ' . $ackDetail);
 }
 
