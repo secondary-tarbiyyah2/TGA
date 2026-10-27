@@ -23,12 +23,16 @@ jobs:
           {
             echo "A public /: $(h "$U/")"
             echo "B public /about/: $(h "$U/about/")"
-            echo "C public old link: $(h "$U/?preview=$KEY")"
-            echo "D public / with old cookie: $(h -H "Cookie: tga_preview=$KEY" "$U/")"
-            echo "E preview dns: $(getent hosts preview.tarbiyyah.co.uk || echo none)"
-            echo "F preview / no key: $(h https://preview.tarbiyyah.co.uk/ 2>&1)"
+            echo "C preview dns: $(getent hosts preview.tarbiyyah.co.uk | head -1 || echo none)"
+            echo "D preview / no key: $(h https://preview.tarbiyyah.co.uk/)"
+            echo "E preview robots: $(curl -sS --max-time 20 https://preview.tarbiyyah.co.uk/robots.txt | tr '\n' ' ')"
             rm -f /tmp/j2
-            echo "G preview flow: $(curl -sS -L -c /tmp/j2 -b /tmp/j2 -o /tmp/body -w 'final=%{url_effective} status=%{http_code}' "https://preview.tarbiyyah.co.uk/about/?key=$KEY" 2>&1 | sed "s/$KEY/<key>/g") TITLE $(grep -o '<title>[^<]*' /tmp/body | head -1 | sed 's/<title>//')"
+            echo "F preview flow: $(curl -sS --max-time 30 -L -c /tmp/j2 -b /tmp/j2 -o /tmp/body -w 'final=%{url_effective} status=%{http_code}' "https://preview.tarbiyyah.co.uk/about/?key=$KEY" | sed "s/$KEY/<key>/g") TITLE $(grep -o '<title>[^<]*' /tmp/body | head -1 | sed 's/<title>//')"
+            echo "G preview /fees/ with jar: $(h -b /tmp/j2 https://preview.tarbiyyah.co.uk/fees/)"
+            echo "H preview /admissions/apply/ with jar: $(h -b /tmp/j2 https://preview.tarbiyyah.co.uk/admissions/apply/)"
+            echo "I portal /login/ no key: $(h https://learn.tarbiyyah.co.uk/login/)"
+            echo "J portal /login/ with jar: $(h -b /tmp/j2 https://learn.tarbiyyah.co.uk/login/)"
+            echo "K public / with jar: $(h -b /tmp/j2 "$U/")"
           } > /tmp/out
           cat /tmp/out
           echo "::warning title=preview probe::$(tr '\n' '#' < /tmp/out | cut -c1-3000)"
