@@ -22,8 +22,9 @@ import { PageHeader } from "@/components/learn/PageHeader";
  * Reached from the account menu in every /learn area's top bar (see
  * src/app/learn/layout.tsx + LearnAccountMenu.tsx).
  */
-function ChangePassword() {
+function ChangePassword({ email }: { email: string | null }) {
   const supabase = getSupabaseClient();
+  const [current, setCurrent] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [message, setMessage] = useState<string | null>(null);
@@ -43,10 +44,27 @@ function ChangePassword() {
       setFailed(true);
       return;
     }
+    if (!current) {
+      setMessage("Enter your current password first.");
+      setFailed(true);
+      return;
+    }
     setBusy(true);
     setMessage(null);
     let error: unknown = null;
     try {
+      // Re-authenticate before changing: an unattended signed-in device must
+      // not be enough to take the account over. Signing in again with the
+      // same credentials leaves the current session as it is.
+      if (email) {
+        const check = await supabase.auth.signInWithPassword({ email, password: current });
+        if (check.error) {
+          setBusy(false);
+          setMessage("That current password is not right.");
+          setFailed(true);
+          return;
+        }
+      }
       const res = await supabase.auth.updateUser({ password });
       error = res.error;
     } catch (err) {
@@ -58,16 +76,18 @@ function ChangePassword() {
       setFailed(true);
       return;
     }
+    setCurrent("");
     setPassword("");
     setConfirm("");
     setFailed(false);
-    setMessage("Your password has been changed.");
+    setMessage("Your password has been changed. We've emailed you to confirm it.");
   };
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-h3 font-semibold text-ink">Password</h2>
       <form onSubmit={submit} noValidate className="mt-3 flex flex-wrap items-end gap-2">
+        <PasswordInput label="Current password" value={current} onChange={(e) => setCurrent(e.target.value)} autoComplete="current-password" />
         <PasswordInput label="New password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="new-password" />
         <PasswordInput label="Confirm" value={confirm} onChange={(e) => setConfirm(e.target.value)} autoComplete="new-password" />
         <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
@@ -96,7 +116,7 @@ function AccountContent() {
         title="Your account"
         subtitle={`${session && session !== "loading" ? session.user.email : ""} · ${roles.map((r) => learnRoleLabel(r.role)).join(", ") || "no portal role yet"}`}
       />
-      <ChangePassword />
+      <ChangePassword email={session && session !== "loading" ? (session.user.email ?? null) : null} />
       {session && session !== "loading" && !roles.every((r) => r.role === "student") && <MessageSettings userId={session.user.id} />}
       {session && session !== "loading" && roles.some((r) => r.role === "parent") && <ParentPinSettings userId={session.user.id} />}
       {roles.some((r) => r.role === "parent") && <DigestPreference />}
