@@ -540,3 +540,27 @@ goes in the website code or a `NEXT_PUBLIC_*` variable.
 
 The SES identity lives in Stockholm only: in the AWS console, select
 Europe (Stockholm) before looking for it.
+
+## Staff preview site (pre-launch)
+
+While the public address shows the holding site, staff see the full website at
+**https://preview.tarbiyyah.co.uk**. Both are served from the same deployed
+files; `public/.htaccess` (the PRE-LAUNCH block) picks the site by address.
+
+One-time setup:
+
+1. **Cloudflare → DNS → Add record:** type `CNAME`, name `preview`, target
+   `globalacademy.tarbiyyah.co.uk`, proxy status **Proxied** (orange cloud).
+   The free wildcard certificate already covers `*.tarbiyyah.co.uk`.
+2. **cPanel → Domains → Create a new domain:** `preview.tarbiyyah.co.uk`,
+   untick "Share document root" and set the document root to the SAME folder
+   the main site is deployed to (the folder holding this site's `.htaccess`,
+   e.g. `public_html/globalacademy.tarbiyyah.co.uk`). No second deploy or FTP
+   account is needed.
+
+Staff then open `https://preview.tarbiyyah.co.uk/?key=<key>` once per browser
+(key: `deploy/preview-key.txt`, or the `PREVIEW_KEY` secret if set). Without it
+the address shows a short "staff only" page. Every preview response carries
+`X-Robots-Tag: noindex` and its `robots.txt` disallows everything. Change the
+key and redeploy to cut off old links. At launch, delete the PRE-LAUNCH block
+and the preview subdomain.
