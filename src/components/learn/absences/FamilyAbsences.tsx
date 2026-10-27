@@ -37,7 +37,9 @@ export function FamilyAbsences() {
   const formRef = useRef<HTMLFormElement | null>(null);
   // "Tell us why" on an unexplained absence opens a short form in place,
   // so the parent never loses their spot on the page.
-  const [openNudge, setOpenNudge] = useState<string | null>(null);
+  const [showNote, setShowNote] = useState(false);
+  // Days answered this visit drop out at once, before the reload comes back.
+  const [sentKeys, setSentKeys] = useState<string[]>([]);
   const [qCategory, setQCategory] = useState("");
   const [qReason, setQReason] = useState("");
   const [qBusy, setQBusy] = useState(false);
@@ -46,6 +48,12 @@ export function FamilyAbsences() {
   const [confirmWithdraw, setConfirmWithdraw] = useState<string | null>(null);
   const [withdrawError, setWithdrawError] = useState<string | null>(null);
   const [showAllNotes, setShowAllNotes] = useState(false);
+  // One thing at a time: a simple start screen, then either the report form
+  // or the missed days one by one.
+  const [view, setView] = useState<"home" | "report" | "reasons">("home");
+  const [step, setStep] = useState(0);
+  const [applyAll, setApplyAll] = useState(false);
+  const [doneCount, setDoneCount] = useState(0);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -79,32 +87,44 @@ export function FamilyAbsences() {
     return unexplained.filter((a) => {
       const k = `${a.childId}|${a.date}`;
       if (seen.has(k)) return false;
+      if (sentKeys.includes(k)) return false;
       if ((notes || []).some((n) => n.child_id === a.childId && a.date >= n.from_date && a.date <= n.to_date)) return false;
       seen.add(k);
       return true;
     });
-  }, [unexplained, notes]);
+  }, [unexplained, notes, sentKeys]);
 
-  const openQuick = (key: string) => {
-    setOpenNudge((cur) => (cur === key ? null : key));
+  const resetQuick = () => {
     setQCategory("");
     setQReason("");
     setQError(null);
+    setShowNote(false);
   };
 
-  const sendQuick = async (a: Absence) => {
+  const startReasons = () => {
+    resetQuick();
+    setStep(0);
+    setApplyAll(false);
+    setDoneCount(0);
+    setThanked(null);
+    setView("reasons");
+  };
+
+  const sendQuick = async (list: Absence[]) => {
     const supabase = getSupabaseClient();
-    if (!supabase) return;
+    if (!supabase || !list.length) return;
     if (!qCategory) return setQError("Please choose a reason.");
     if (qCategory === "Other" && !qReason.trim()) return setQError("Please tell us a little about why.");
     setQBusy(true);
     setQError(null);
     const text = qReason.trim() ? `${qCategory}: ${qReason.trim()}` : qCategory;
-    const { error } = await supabase.from("absence_notes").insert({ child_id: a.childId, from_date: a.date, to_date: a.date, reason: text });
+    const { error } = await supabase.from("absence_notes").insert(list.map((a) => ({ child_id: a.childId, from_date: a.date, to_date: a.date, reason: text })));
     setQBusy(false);
     if (error) return setQError("We couldn't send that just now. Please try again.");
-    setOpenNudge(null);
-    setThanked(`${a.childName} on ${formatDay(a.date)}`);
+    setDoneCount((n) => n + list.length);
+    setSentKeys((k) => [...k, ...list.map((a) => `${a.childId}|${a.date}`)]);
+    resetQuick();
+    setApplyAll(false);
     setTick((t) => t + 1);
   };
 
@@ -164,94 +184,216 @@ export function FamilyAbsences() {
       />
       {loadError && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load. Please refresh in a moment.</p>}
 
-      {thanked && (
-        <p role="status" className="mb-4 rounded-lg bg-green-50 px-4 py-2 text-sm text-green-800">
-          Thank you. We&apos;ve noted the reason for {thanked}.
-        </p>
-      )}
-      {nudges.length > 0 && (
-        <section aria-label="Absences we haven't heard about" className="mb-5 rounded-2xl border border-amber-200 bg-amber-50/60 p-4">
-          <h2 className="text-sm font-semibold text-amber-950">We haven&apos;t heard about these yet</h2>
-          <p className="mt-0.5 text-xs text-amber-900/80">Tap &ldquo;Tell us why&rdquo; to explain one without leaving this spot.</p>
-          <ul className="mt-2 space-y-2">
-            {nudges.map((a) => {
-              const key = `${a.childId}|${a.date}`;
-              const open = openNudge === key;
-              return (
-                <li key={key} className="rounded-xl bg-white/70 p-3 text-sm text-amber-950">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span>
-                      {a.childName} was absent on {formatDay(a.date)}
-                    </span>
-                    <button
-                      type="button"
-                      aria-expanded={open}
-                      onClick={() => openQuick(key)}
-                      className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-sm font-semibold text-amber-950 hover:bg-amber-100"
-                    >
-                      {open ? "Cancel" : "Tell us why"}
-                    </button>
-                  </div>
-                  {open && (
-                    <div className="mt-3 space-y-3 border-t border-amber-200 pt-3">
-                      <div className="flex flex-wrap gap-2" role="group" aria-label="Reason">
-                        {REASONS.map((c) => (
-                          <button key={c} type="button" aria-pressed={qCategory === c} onClick={() => setQCategory(c)} className={qCategory === c ? ui.chipOn : ui.chip}>
-                            {c}
-                          </button>
-                        ))}
-                      </div>
-                      <label className="block text-sm font-medium text-ink">
-                        {qCategory === "Other" ? "Tell us why" : "Anything else? (optional)"}
-                        <textarea rows={2} value={qReason} onChange={(e) => setQReason(e.target.value)} className={fieldCls} />
-                      </label>
-                      {qError && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{qError}</p>}
-                      <button
-                        type="button"
-                        disabled={qBusy}
-                        onClick={() => sendQuick(a)}
-                        className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50"
-                      >
-                        {qBusy ? "Sending…" : "Send"}
-                      </button>
+      {view === "home" && (
+        <>
+          {thanked && (
+            <p role="status" className="mb-4 rounded-lg bg-green-50 px-4 py-2 text-sm text-green-800">
+              {thanked}
+            </p>
+          )}
+          <div className="grid gap-3 sm:grid-cols-2">
+            <button
+              type="button"
+              onClick={() => {
+                setSent(false);
+                setFormError(null);
+                setView("report");
+              }}
+              className="flex min-h-28 flex-col items-start justify-between rounded-2xl border border-gold-light bg-white p-5 text-left shadow-sm transition hover:border-gold-500 hover:shadow-md"
+            >
+              <span className="text-lg font-semibold text-ink">Report an absence</span>
+              <span className="mt-1 text-sm text-ink/65">Your child is, or will be, away.</span>
+            </button>
+            {nudges.length > 0 ? (
+              <button
+                type="button"
+                onClick={startReasons}
+                className="flex min-h-28 flex-col items-start justify-between rounded-2xl border border-amber-300 bg-amber-50 p-5 text-left shadow-sm transition hover:border-amber-500 hover:shadow-md"
+              >
+                <span className="flex items-center gap-2 text-lg font-semibold text-amber-950">
+                  Give reasons
+                  <span className="rounded-full bg-amber-500 px-2 py-0.5 text-xs font-bold text-white">{nudges.length}</span>
+                </span>
+                <span className="mt-1 text-sm text-amber-900/80">
+                  {nudges.length === 1 ? "1 missed day needs a reason." : `${nudges.length} missed days need a reason.`} One at a time, a few taps each.
+                </span>
+              </button>
+            ) : (
+              <div className="flex min-h-28 flex-col justify-center rounded-2xl border border-green-200 bg-green-50/60 p-5">
+                <span className="text-lg font-semibold text-green-900">All up to date</span>
+                <span className="mt-1 text-sm text-green-800/80">Every missed day has a reason.</span>
+              </div>
+            )}
+          </div>
+
+          <section className="mt-6 rounded-2xl border border-gold-light bg-white p-4">
+            <h2 className="text-base font-semibold text-ink">Your notes{notes && notes.length > 0 ? <span className="font-normal text-ink/60"> · {notes.length}</span> : null}</h2>
+            {withdrawError && <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{withdrawError}</p>}
+            {notes === null ? (
+              <p className="mt-3 text-sm text-ink/65">Loading…</p>
+            ) : notes.length === 0 ? (
+              <p className="mt-3 text-sm text-ink/65">No notes yet. When you report an absence it will appear here, with the school&apos;s reply.</p>
+            ) : (
+              <ul className="mt-2 divide-y divide-gold-light/50">
+                {(visibleNotes || []).map((n) => (
+                  <li key={n.id} className="py-3">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <p className="text-sm font-medium text-ink">
+                        {nameOf(n.child_id)} <span className="font-normal text-ink/65">· {formatRange(n.from_date, n.to_date)}</span>
+                      </p>
+                      <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${CHIP[n.status]}`}>{n.status === "undecided" ? "Awaiting" : STATUS_LABEL[n.status]}</span>
                     </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </section>
+                    <p className="mt-0.5 whitespace-pre-wrap text-sm text-ink/70">{n.reason}</p>
+                    {n.decision_note && <p className="mt-1 text-sm text-ink/65">From the school: {n.decision_note}</p>}
+                    {n.status === "undecided" &&
+                      (confirmWithdraw === n.id ? (
+                        <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">
+                          <span className="text-ink/75">Withdraw this note?</span>
+                          <button type="button" onClick={() => remove(n.id)} className={`${ui.btnPrimary} ${ui.sm}`}>
+                            Yes, withdraw
+                          </button>
+                          <button type="button" onClick={() => setConfirmWithdraw(null)} className={`${ui.btnSecondary} ${ui.sm}`}>
+                            Keep it
+                          </button>
+                        </div>
+                      ) : (
+                        <button type="button" onClick={() => setConfirmWithdraw(n.id)} className="mt-1 inline-flex min-h-9 items-center text-xs font-medium text-ink/65 underline hover:text-ink">
+                          Withdraw
+                        </button>
+                      ))}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {notes && notes.length > NOTES_SHOWN && (
+              <button type="button" onClick={() => setShowAllNotes((v) => !v)} className="mt-2 text-sm font-medium text-teal-700 hover:underline">
+                {showAllNotes ? "Show fewer" : `Show all ${notes.length} notes`}
+              </button>
+            )}
+          </section>
+        </>
       )}
 
-      <div className="grid gap-5 lg:grid-cols-2">
-        <form ref={formRef} onSubmit={submit} className="space-y-4 rounded-2xl border border-gold-light bg-white p-4">
-          <h2 className="text-base font-semibold text-ink">Tell us about an absence</h2>
+      {view !== "home" && (
+        <button type="button" onClick={() => setView("home")} className="mb-4 inline-flex min-h-10 items-center gap-1 text-sm font-medium text-gold-700 hover:underline">
+          <span aria-hidden="true">←</span> Back to absences
+        </button>
+      )}
+
+      {view === "reasons" &&
+        (() => {
+          const remaining = nudges.slice(step);
+          const current = remaining[0];
+          if (!current) {
+            return (
+              <section className="mx-auto max-w-xl rounded-2xl border border-green-200 bg-green-50 p-6 text-center">
+                <p className="text-lg font-semibold text-green-900">{nudges.length ? "Thank you." : doneCount ? "Thank you, that's everything." : "Nothing left to explain."}</p>
+                <p className="mt-1 text-sm text-green-800">
+                  {doneCount ? `We've noted ${doneCount === 1 ? "1 reason" : `${doneCount} reasons`}. ` : ""}
+                  {nudges.length ? `You skipped ${nudges.length === 1 ? "1 day" : `${nudges.length} days`}; come back to ${nudges.length === 1 ? "it" : "them"} any time.` : "The school will be in touch only if they need anything else."}
+                </p>
+                <button type="button" onClick={() => { setView("home"); }} className={`${ui.btnPrimary} mt-4`}>
+                  Done
+                </button>
+              </section>
+            );
+          }
+          const sameChild = remaining.filter((a) => a.childId === current.childId);
+          const others = remaining.length - 1;
+          const batch = applyAll ? remaining : [current];
+          return (
+            <section className="mx-auto max-w-xl rounded-2xl border border-amber-200 bg-white p-5 sm:p-6">
+              <p className="text-xs font-semibold uppercase tracking-wide text-amber-800">
+                {nudges.length - remaining.length + 1} of {nudges.length}
+              </p>
+              <h2 className="mt-1 text-xl font-semibold text-ink">
+                Why was {current.childName.split(" ")[0]} away on {formatDay(current.date)}?
+              </h2>
+              <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Reason">
+                {REASONS.map((c) => (
+                  <button key={c} type="button" aria-pressed={qCategory === c} onClick={() => setQCategory(c)} className={qCategory === c ? ui.chipOn : ui.chip}>
+                    {c}
+                  </button>
+                ))}
+              </div>
+              {(qCategory === "Other" || showNote) && (
+                <label className="mt-4 block text-sm font-medium text-ink">
+                  {qCategory === "Other" ? "Tell us why" : "Anything else? (optional)"}
+                  <textarea rows={2} value={qReason} onChange={(e) => setQReason(e.target.value)} className={fieldCls} />
+                </label>
+              )}
+              {qCategory && qCategory !== "Other" && !showNote && (
+                <button type="button" onClick={() => setShowNote(true)} className="mt-3 text-sm font-medium text-teal-700 hover:underline">
+                  Add a note (optional)
+                </button>
+              )}
+              {others > 0 && (
+                <label className="mt-4 flex items-start gap-2 text-sm text-ink/80">
+                  <input type="checkbox" checked={applyAll} onChange={(e) => setApplyAll(e.target.checked)} className="mt-0.5 h-4 w-4" />
+                  <span>
+                    Use this reason for the other {others === 1 ? "missed day" : `${others} missed days`} too
+                    {sameChild.length === remaining.length ? "" : " (all children)"}
+                  </span>
+                </label>
+              )}
+              {qError && <p className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{qError}</p>}
+              <div className="mt-5 flex flex-wrap gap-2">
+                <button type="button" disabled={qBusy} onClick={() => sendQuick(batch)} className={`${ui.btnPrimary} disabled:opacity-50`}>
+                  {qBusy ? "Sending…" : others > 0 && !applyAll ? "Send and next" : "Send"}
+                </button>
+                {others > 0 && (
+                  <button type="button" onClick={() => { resetQuick(); setStep((n) => n + 1); }} className={ui.btnSecondary}>
+                    Skip for now
+                  </button>
+                )}
+              </div>
+            </section>
+          );
+        })()}
+
+      {view === "report" && (
+        <form ref={formRef} onSubmit={submit} className="mx-auto max-w-xl space-y-5 rounded-2xl border border-gold-light bg-white p-5 sm:p-6">
           {children !== null && children.length === 0 ? (
             <p className="text-sm text-ink/65">There are no children on your account yet. Once your child is enrolled you can send notes here.</p>
+          ) : sent ? (
+            <div className="text-center">
+              <p className="text-lg font-semibold text-green-900">Thank you, we&apos;ve got it.</p>
+              <p className="mt-1 text-sm text-ink/70">Your child&apos;s teachers can see the reason. The office will be in touch only if they need anything else.</p>
+              <div className="mt-4 flex flex-wrap justify-center gap-2">
+                <button type="button" onClick={() => setView("home")} className={ui.btnPrimary}>
+                  Done
+                </button>
+                <button type="button" onClick={() => setSent(false)} className={ui.btnSecondary}>
+                  Report another
+                </button>
+              </div>
+            </div>
           ) : (
             <>
+              {(children || []).length > 1 && (
+                <fieldset>
+                  <legend className="text-sm font-semibold text-ink">Who is away?</legend>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {(children || []).map((c) => {
+                      const on = childIds.includes(c.id);
+                      return (
+                        <button
+                          key={c.id}
+                          type="button"
+                          aria-pressed={on}
+                          onClick={() => edit(setChildIds)(on ? childIds.filter((x) => x !== c.id) : [...childIds, c.id])}
+                          className={on ? ui.chipOn : ui.chip}
+                        >
+                          {c.name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </fieldset>
+              )}
               <fieldset>
-                <legend className="text-sm font-medium text-ink">Who will be away?</legend>
-                <div className="mt-1.5 flex flex-wrap gap-2">
-                  {(children || []).map((c) => {
-                    const on = childIds.includes(c.id);
-                    return (
-                      <button
-                        key={c.id}
-                        type="button"
-                        aria-pressed={on}
-                        onClick={() => edit(setChildIds)(on ? childIds.filter((x) => x !== c.id) : [...childIds, c.id])}
-                        className={on ? ui.chipOn : ui.chip}
-                      >
-                        {c.name}
-                      </button>
-                    );
-                  })}
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend className="text-sm font-medium text-ink">When?</legend>
-                <div className="mt-1.5 flex flex-wrap gap-2">
+                <legend className="text-sm font-semibold text-ink">When?</legend>
+                <div className="mt-2 flex flex-wrap gap-2">
                   {(
                     [
                       ["today", `Today (${dayChip(todayKey)})`],
@@ -265,7 +407,7 @@ export function FamilyAbsences() {
                   ))}
                 </div>
                 {when === "dates" && (
-                  <div className="mt-2 grid gap-3 sm:grid-cols-2">
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
                     <label className="block text-sm text-ink">
                       First day away
                       <input
@@ -274,7 +416,6 @@ export function FamilyAbsences() {
                         onChange={(e) => {
                           const v = e.target.value;
                           edit(setFromDate)(v);
-                          // Keep the range valid: moving the first day past the last moves the last too.
                           if (v && toDate < v) setToDate(v);
                         }}
                         className={fieldCls}
@@ -288,8 +429,8 @@ export function FamilyAbsences() {
                 )}
               </fieldset>
               <fieldset>
-                <legend className="text-sm font-medium text-ink">Why?</legend>
-                <div className="mt-1.5 flex flex-wrap gap-2">
+                <legend className="text-sm font-semibold text-ink">Why?</legend>
+                <div className="mt-2 flex flex-wrap gap-2">
                   {REASONS.map((c) => (
                     <button key={c} type="button" aria-pressed={category === c} onClick={() => edit(setCategory)(c)} className={category === c ? ui.chipOn : ui.chip}>
                       {c}
@@ -297,69 +438,18 @@ export function FamilyAbsences() {
                   ))}
                 </div>
               </fieldset>
-              <label className="block text-sm font-medium text-ink">
+              <label className="block text-sm font-semibold text-ink">
                 {category === "Other" ? "Tell us why" : "Anything else? (optional)"}
-                <textarea rows={3} value={reason} onChange={(e) => edit(setReason)(e.target.value)} placeholder="e.g. A temperature since last night, back on Thursday." className={fieldCls} />
+                <textarea rows={2} value={reason} onChange={(e) => edit(setReason)(e.target.value)} placeholder="e.g. A temperature since last night, back on Thursday." className={`${fieldCls} font-normal`} />
               </label>
               {formError && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{formError}</p>}
-              {sent && (
-                <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-800">
-                  Thank you. Your child&apos;s teachers can see the reason, and the office will be in touch only if they need anything else.
-                </p>
-              )}
-              <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50 sm:w-auto">
+              <button type="submit" disabled={busy} className={`${ui.btnPrimary} w-full disabled:opacity-50`}>
                 {busy ? "Sending…" : "Send"}
               </button>
             </>
           )}
         </form>
-
-        <section className="rounded-2xl border border-gold-light bg-white p-4">
-          <h2 className="text-base font-semibold text-ink">Your notes{notes && notes.length > 0 ? <span className="font-normal text-ink/60"> · {notes.length}</span> : null}</h2>
-          {withdrawError && <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{withdrawError}</p>}
-          {notes === null ? (
-            <p className="mt-3 text-sm text-ink/65">Loading…</p>
-          ) : notes.length === 0 ? (
-            <p className="mt-3 text-sm text-ink/65">You haven&apos;t sent any notes yet. If your child is ever unwell or away, tell us here and we&apos;ll take it from there.</p>
-          ) : (
-            <ul className="mt-3 space-y-3">
-              {(visibleNotes || []).map((n) => (
-                <li key={n.id} className="rounded-xl border border-gold-light/60 p-3">
-                  <div className="flex flex-wrap items-start justify-between gap-2">
-                    <p className="text-sm font-medium text-ink">
-                      {nameOf(n.child_id)} <span className="font-normal text-ink/65">· {formatRange(n.from_date, n.to_date)}</span>
-                    </p>
-                    <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${CHIP[n.status]}`}>{n.status === "undecided" ? "Awaiting" : STATUS_LABEL[n.status]}</span>
-                  </div>
-                  <p className="mt-1 whitespace-pre-wrap text-sm text-ink/75">{n.reason}</p>
-                  {n.decision_note && <p className="mt-1 text-sm text-ink/65">From the school: {n.decision_note}</p>}
-                  {n.status === "undecided" &&
-                    (confirmWithdraw === n.id ? (
-                      <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">
-                        <span className="text-ink/75">Withdraw this note?</span>
-                        <button type="button" onClick={() => remove(n.id)} className={`${ui.btnPrimary} ${ui.sm}`}>
-                          Yes, withdraw
-                        </button>
-                        <button type="button" onClick={() => setConfirmWithdraw(null)} className={`${ui.btnSecondary} ${ui.sm}`}>
-                          Keep it
-                        </button>
-                      </div>
-                    ) : (
-                      <button type="button" onClick={() => setConfirmWithdraw(n.id)} className="mt-1 inline-flex min-h-9 items-center text-xs font-medium text-ink/65 underline hover:text-ink">
-                        Withdraw this note
-                      </button>
-                    ))}
-                </li>
-              ))}
-            </ul>
-          )}
-          {notes && notes.length > NOTES_SHOWN && (
-            <button type="button" onClick={() => setShowAllNotes((v) => !v)} className="mt-3 text-sm font-medium text-teal-700 hover:underline">
-              {showAllNotes ? "Show fewer" : `Show all ${notes.length} notes`}
-            </button>
-          )}
-        </section>
-      </div>
+      )}
     </>
   );
 }
