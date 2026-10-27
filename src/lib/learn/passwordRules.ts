@@ -89,6 +89,9 @@ export function friendlyPasswordError(err: unknown, context: PasswordErrorContex
     return "That email address does not look right. Check it for typos and try again.";
   }
   if (code === "signup_disabled" || code === "email_provider_disabled") return "Email sign-in is switched off for now. Contact the school office.";
+  if (context === "request" && (code === "unexpected_failure" || (typeof status === "number" && status >= 500) || msg.includes("sending") || msg.includes("smtp"))) {
+    return "We could not send the reset email just now. Wait a minute and try again; if it keeps happening, contact the school office.";
+  }
   if (
     code === "unexpected_failure" ||
     (typeof status === "number" && status >= 500) ||

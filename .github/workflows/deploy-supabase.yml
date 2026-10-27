@@ -367,12 +367,16 @@ jobs:
           LEARN_SITE_URL: ${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}
         run: |
           set -euo pipefail
-          if [ -n "$SES_SMTP_USER" ] && [ -n "$SES_SMTP_PASS" ] && [ -n "$AWS_SES_REGION" ]; then
+          # Resend first: the domain is verified there (27 Oct 2026). SES is only
+          # a fallback when no Resend key is set.
+          if [ -n "$RESEND_API_KEY" ]; then
+            SMTP_HOST="smtp.resend.com"; SMTP_USER="resend"; SMTP_PASS="$RESEND_API_KEY"
+            echo "Auth emails: Resend SMTP"
+          elif [ -n "$SES_SMTP_USER" ] && [ -n "$SES_SMTP_PASS" ] && [ -n "$AWS_SES_REGION" ]; then
             SMTP_HOST="email-smtp.${AWS_SES_REGION}.amazonaws.com"; SMTP_USER="$SES_SMTP_USER"; SMTP_PASS="$SES_SMTP_PASS"
             echo "Auth emails: Amazon SES SMTP ($SMTP_HOST)"
           else
-            SMTP_HOST="smtp.resend.com"; SMTP_USER="resend"; SMTP_PASS="$RESEND_API_KEY"
-            echo "Auth emails: Resend SMTP"
+            echo "::error::No SMTP credentials (RESEND_API_KEY or SES_SMTP_*)"; exit 1
           fi
           jq -n \
             --arg host "$SMTP_HOST" --arg user "$SMTP_USER" --arg pass "$SMTP_PASS" --arg learn "$LEARN_SITE_URL" \
@@ -387,6 +391,7 @@ jobs:
               smtp_user: $user,
               smtp_pass: $pass,
               smtp_sender_name: "Tarbiyyah Global Academy",
+              rate_limit_email_sent: 100,
               mailer_otp_exp: 86400,
               mailer_otp_length: 6,
               mailer_subjects_recovery: "Your password reset code",
