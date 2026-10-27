@@ -77,3 +77,14 @@ verify_jwt = false
 
 [functions.entry-assessment]
 verify_jwt = false
+
+# Deployed with --no-verify-jwt in deploy-supabase.yml; listed here so a local
+# `supabase functions serve` and a plain `functions deploy` behave the same.
+[functions.learn-login]
+verify_jwt = false
+
+[functions.timetable-ics]
+verify_jwt = false
+
+[functions.teams-sync]
+verify_jwt = false
