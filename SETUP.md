@@ -559,7 +559,7 @@ One-time setup:
 
 The portal (learn.tarbiyyah.co.uk) is staff-only too until launch
 (`deploy/learn-subdomain.htaccess`). Staff open `https://preview.tarbiyyah.co.uk/?key=<key>`
-(or `https://learn.tarbiyyah.co.uk/?key=<key>`) once per browser; the cookie is
+(or `https://learn.tarbiyyah.co.uk/?key=<key>`) once per browser (access is renewed on every visit, so it does not expire while used); the cookie is
 set for `*.tarbiyyah.co.uk`, so either link opens both
 (key: `deploy/preview-key.txt`, or the `PREVIEW_KEY` secret if set). Without it
 the address shows a short "staff only" page. Every preview response carries

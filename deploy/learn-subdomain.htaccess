@@ -22,13 +22,17 @@ RewriteOptions IgnoreInherit
 # ── PRE-LAUNCH: STAFF ONLY ──────────────────────────────────────────────────
 # The portal is restricted to staff until launch. Opening
 # https://learn.tarbiyyah.co.uk/?key=<key> (or the staff preview link for the
-# website, https://preview.tarbiyyah.co.uk/?key=<key>) sets a 30-day cookie for
+# website, https://preview.tarbiyyah.co.uk/?key=<key>) sets a cookie (renewed on every visit, so it does not run out) for
 # *.tarbiyyah.co.uk, so one staff link opens both. Without it, every address
 # shows a short "staff only" page. __PREVIEW_KEY__ is replaced at deploy time
 # (deploy-site.yml) from deploy/preview-key.txt or the PREVIEW_KEY secret.
 # TO OPEN THE PORTAL: delete this block and redeploy.
 RewriteCond %{QUERY_STRING} (^|&)key=__PREVIEW_KEY__(&|$)
-RewriteRule ^(.*)$ https://learn.tarbiyyah.co.uk/$1? [CO=tga_staff:__PREVIEW_KEY__:.tarbiyyah.co.uk:43200:/:1:1,R=302,L]
+RewriteRule ^(.*)$ https://learn.tarbiyyah.co.uk/$1? [CO=tga_staff:__PREVIEW_KEY__:.tarbiyyah.co.uk:576000:/:1:1,R=302,L]
+# Renew the staff cookie on every page visit, so access never runs out while used.
+RewriteCond %{HTTP_COOKIE} (^|;\s*)tga_staff=__PREVIEW_KEY__(;|$)
+RewriteCond %{REQUEST_URI} (/|\.html)$
+RewriteRule ^ - [CO=tga_staff:__PREVIEW_KEY__:.tarbiyyah.co.uk:576000:/:1:1]
 RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_staff=__PREVIEW_KEY__(;|$)
 RewriteCond %{REQUEST_URI} !^/(staff-only\.html|robots\.txt|favicon\.(ico|png|svg)|brand/ga-wordmark\.png)$
 RewriteRule ^ /staff-only.html [L]
