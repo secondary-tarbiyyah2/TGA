@@ -43,7 +43,8 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
 }
 const syllabi = {};
 const dir2 = path.join(root, "content/syllabus/ks1-3");
-for (const f of fs.readdirSync(dir2).filter((x) => x.endsWith(".json")).sort()) {
+// PE is not offered (owner decision, 26 October 2026), so it is left out of the portal syllabus.
+for (const f of fs.readdirSync(dir2).filter((x) => x.endsWith(".json") && x !== "pe.json").sort()) {
   const d = JSON.parse(fs.readFileSync(path.join(dir2, f), "utf8"));
   syllabi[d.slug] = {
     subject: d.subject,

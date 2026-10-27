@@ -1,12 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { portalCta } from "@/lib/nav";
 
 /**
- * "Your window into school": what a parent actually gets in the portal, drawn
- * in the portal's own style (white cards, teal actions) so the website and
- * the portal feel like one school. The dashboard is an illustration, no
- * real pupil's data, and is labelled as such.
+ * "Your window into school": what a parent actually gets in the portal, with
+ * real screenshots of the family dashboard (a demo family, not a real pupil).
  */
 const FEATURES = [
   { title: "Today's lessons", body: "The day's live lessons (UK time), with one tap to join on Microsoft Teams." },
@@ -22,8 +21,8 @@ const FEATURES = [
 export function PortalPreview() {
   return (
     <section className="section-pad bg-teal-900 text-cream" aria-labelledby="portal-heading">
-      <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
+      <Container className="grid gap-12">
+        <div className="max-w-5xl">
           <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
             <span className="h-px w-8 bg-gold-300" aria-hidden="true" />
             The parent portal
@@ -31,11 +30,11 @@ export function PortalPreview() {
           <h2 id="portal-heading" className="text-h2 font-serif font-semibold text-white">
             You stay close to school, without doing the teaching.
           </h2>
-          <p className="mt-4 text-cream/80">
+          <p className="mt-4 max-w-2xl text-cream/80">
             Every family gets its own login to the same portal our teachers use, so you see what they see: lessons, registers,
             marking and the weekly note on your child&apos;s character.
           </p>
-          <ul className="mt-8 grid gap-x-6 gap-y-4 sm:grid-cols-2">
+          <ul className="mt-8 grid gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
             {FEATURES.map((f) => (
               <li key={f.title} className="flex gap-3">
                 <span aria-hidden="true" className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gold-300" />
@@ -51,85 +50,28 @@ export function PortalPreview() {
           </Link>
         </div>
 
-        {/* Drawn to match the real family dashboard (src/app/learn/family/dashboard):
-            ink welcome banner with the date and a chip, the Action centre, "Up next"
-            with Join, then the child card with homework, grades, Qur'an and the note. */}
-        <figure className="mx-auto w-full max-w-md">
-          <div className="rounded-3xl bg-cream p-3 text-ink shadow-2xl ring-1 ring-white/10 sm:p-4">
-            <div className="rounded-2xl bg-ink-900 px-5 py-4 text-white">
-              <p className="text-xs font-medium tracking-wide text-gold-300">Tuesday 5 January</p>
-              <p className="mt-0.5 text-lg font-semibold tracking-tight">Good morning, Umm Yusuf</p>
-              <p className="text-xs text-white/80">Your children&apos;s school life in one place</p>
-              <div className="mt-3 inline-flex min-w-[8rem] flex-col-reverse rounded-xl bg-white/10 px-3 py-2 ring-1 ring-inset ring-gold-500/40">
-                <span className="text-[11px] font-medium text-white/85">Children</span>
-                <span className="text-xl font-semibold tabular-nums leading-tight">1</span>
-              </div>
-            </div>
-
-            <div className="mt-3 rounded-2xl border border-gold-light bg-white p-4">
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold">Action centre</p>
-                <span className="text-xs font-medium text-gold-700">Open Action centre</span>
-              </div>
-              <ul className="mt-2 space-y-1.5 text-xs">
-                <li className="flex items-center justify-between rounded-lg bg-cream px-3 py-2"><span>Book a parents&apos; evening slot</span><span className="rounded-full bg-gold-100 px-2 py-0.5 font-semibold text-gold-900">Today</span></li>
-                <li className="flex items-center justify-between rounded-lg bg-cream px-3 py-2"><span>Science homework due</span><span className="text-ink/60">Thu</span></li>
-              </ul>
-            </div>
-
-            <div className="mt-3 rounded-2xl border border-gold-light bg-white">
-              <p className="px-4 pt-3 text-sm font-semibold">Up next for Yusuf</p>
-              <div className="flex items-center justify-between gap-3 px-4 pb-4 pt-2">
-                <div>
-                  <p className="text-xs text-ink/65">10:15 – 11:00 · Mathematics</p>
-                  <p className="text-sm font-medium">Fractions of amounts</p>
-                </div>
-                <span className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white">Join</span>
-              </div>
-            </div>
-
-            <div className="mt-3 rounded-2xl border border-gold-light bg-white p-4">
-              <p className="text-base font-semibold">Yusuf Khan <span className="ml-1 text-xs font-normal text-ink/65">Year 5</span></p>
-              <div className="mt-3 flex items-center justify-between">
-                <p className="text-xs font-semibold">Homework and grades</p>
-                <span className="text-xs font-medium text-gold-700">See everything to do</span>
-              </div>
-              <div className="mt-2 grid grid-cols-2 gap-3 text-xs">
-                <div>
-                  <p className="font-medium">Due this week</p>
-                  <p className="mt-1 text-ink/70">Maths · fractions worksheet · Thu</p>
-                  <p className="text-ink/70">English · reading log · Fri</p>
-                </div>
-                <div>
-                  <p className="font-medium">Latest grades</p>
-                  <p className="mt-1 text-ink/70">Science quiz · <span className="font-semibold text-ink">8/10</span></p>
-                  <p className="text-ink/70">Arabic vocabulary · <span className="font-semibold text-ink">Secure</span></p>
-                </div>
-              </div>
-              <div className="mt-3">
-                <p className="text-xs font-medium">Qur&apos;an &amp; Islamic Studies</p>
-                <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 rounded-lg bg-cream p-2 text-xs">
-                  <span><span className="font-serif text-base font-semibold">8.2</span> <span className="text-ink/65">/10 average</span></span>
-                  <span className="text-ink/65">4 recitations this term</span>
-                  <span className="font-medium text-teal-700">Improving</span>
-                </div>
-                <ul className="mt-2 flex flex-wrap gap-1.5 text-[11px]">
-                  <li className="rounded-full bg-green-100 px-2 py-0.5 text-green-800">Surah al-Mulk secure</li>
-                  <li className="rounded-full border border-dashed border-gold-light px-2 py-0.5 text-ink/65">Next: Surah al-Qalam</li>
-                </ul>
-              </div>
-              <div className="mt-3">
-                <p className="text-xs font-medium">Weekly Tarbiyah Note</p>
-                <p className="mt-1.5 rounded-lg border border-gold-light/40 p-3 text-xs text-ink/80">&ldquo;On time and ready for every lesson this week. Yusuf kept going with a tricky tajweed exercise until he had it right, and was kind and helpful to a classmate in group work.&rdquo; <span className="text-ink/55">– Ustadh Bilal, form tutor</span></p>
-              </div>
-            </div>
-
-            <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold">
-              <span className="rounded-lg bg-gold-700 px-3 py-1.5 text-white">Report an absence</span>
-              <span className="rounded-lg border border-gold-500 px-3 py-1.5 text-gold-700">Message a teacher</span>
-            </div>
+        {/* Real screenshots of the family dashboard (captured from the live
+            portal by scripts/capture-portal-screenshots.mjs): a phone on small
+            screens, a desktop browser on large ones. */}
+        <figure className="mx-auto w-full max-w-xs lg:hidden">
+          <div className="aspect-[390/844] overflow-hidden rounded-[2.25rem] border-[6px] border-ink-900 bg-ink-900 shadow-2xl">
+            <Image src="/portal/family-dashboard-phone.png" alt="The family dashboard in the Parent Portal on a phone" width={1170} height={4500} className="h-auto w-full rounded-[1.8rem]" sizes="20rem" />
           </div>
-          <figcaption className="mt-3 text-center text-xs text-cream/70">The family dashboard as it appears in the portal, an illustration, not a real pupil.</figcaption>
+          <figcaption className="mt-3 text-center text-xs text-cream/70">The Parent Portal on a phone (sample family).</figcaption>
+        </figure>
+      </Container>
+      <Container className="hidden lg:block">
+        <figure className="mt-12">
+          <div className="overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-white/15">
+            <div className="flex items-center gap-2 border-b border-ink/10 bg-cream px-4 py-2.5" aria-hidden="true">
+              <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+              <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+              <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+              <span className="ml-4 rounded-md bg-white px-3 py-1 text-xs text-ink/60">learn.tarbiyyah.co.uk/family/dashboard</span>
+            </div>
+            <Image src="/portal/family-dashboard-desktop.png" alt="The family dashboard in the Parent Portal on a computer" width={2880} height={1920} className="h-auto w-full" sizes="(min-width: 1280px) 72rem, 100vw" />
+          </div>
+          <figcaption className="mt-3 text-center text-xs text-cream/70">The Parent Portal on a computer (sample family).</figcaption>
         </figure>
       </Container>
     </section>

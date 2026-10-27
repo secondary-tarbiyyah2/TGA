@@ -52,14 +52,14 @@ export const keyStages: KeyStage[] = [
     weekly: [
       { subject: "English and phonics", lessons: 5 },
       { subject: "Mathematics", lessons: 4 },
-      { subject: "Science, history, geography and computing", lessons: 1 },
+      { subject: "Science, history, geography, computing, art and design", lessons: 1 },
       { subject: "Qur'an and Tajweed", lessons: 3 },
       { subject: "Arabic and Islamic Studies", lessons: 1 },
       { subject: "PSHE", lessons: 1 },
     ],
     lessonLength: "30 minutes",
     totalLessons: "15 live lessons a week (Years 1–2)",
-    note: "Years 1–2 have short daily live sessions (about 2 hours a day) with guided activities at home. A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is also available for Year 1 to Year 9.",
+    note: "Years 1–2 have short daily live sessions (about 1.5 hours a day) with guided activities at home. A four-day live week (Monday to Thursday, with Friday as a structured independent study day) is also available for Year 1 to Year 9.",
   },
   {
     slug: "year-3-6",
