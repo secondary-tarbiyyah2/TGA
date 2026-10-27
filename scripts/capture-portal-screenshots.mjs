@@ -108,6 +108,7 @@ const TIDY = `(() => {
       .replace(/((Good (morning|afternoon|evening)|Assalamu alaykum),\\s*)Demo\\b/, "$1Umm Yusuf");
     if (t === "Demo") v = /Up next/.test(ctx) ? v.replace("Demo", "Yusuf") : v.replace("Demo", "Umm Yusuf");
     if (t === "DP") v = v.replace("DP", "UY");
+    if (t === ", Demo") v = v.replace("Demo", "Umm Yusuf");
     if (v !== n.nodeValue) n.nodeValue = v;
   }
   // A settled family's view: drop the one-off onboarding prompts (sign the
