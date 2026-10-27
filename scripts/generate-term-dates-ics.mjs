@@ -33,7 +33,7 @@ const seedTermDates = [
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000006", label: "Spring term A (first live lessons Monday 11 January)", kind: "Term date", date: "2027-01-11", endDate: "2027-02-12", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000007", label: "Ramadan and Eid break", kind: "Holiday", date: "2027-02-15", endDate: "2027-03-12", notes: "Islamic dates depend on the moon sighting and may move by a day or two.", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000008", label: "Spring term B", kind: "Term date", date: "2027-03-15", endDate: "2027-03-25", confirmed: true },
-  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000009", label: "Easter break", kind: "Holiday", date: "2027-03-26", endDate: "2027-03-30", confirmed: true },
+  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000009", label: "Spring half term", kind: "Holiday", date: "2027-03-26", endDate: "2027-03-30", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000010", label: "Summer term A", kind: "Term date", date: "2027-03-31", endDate: "2027-05-07", notes: "No lessons on Friday 9 April (INSET) or Monday 3 May.", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000011", label: "Eid al-Adha half term", kind: "Holiday", date: "2027-05-10", endDate: "2027-05-21", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000012", label: "Summer term B", kind: "Term date", date: "2027-05-24", endDate: "2027-07-09", notes: "No lessons on Monday 31 May. Awards ceremony (online) in early July.", confirmed: true },
