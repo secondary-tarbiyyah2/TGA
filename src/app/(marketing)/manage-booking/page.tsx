@@ -6,6 +6,7 @@ import { ManageBookingClient } from "./ManageBookingClient";
 
 export const metadata: Metadata = {
   title: "Manage Your Booking",
+  description: "Reschedule or cancel your admissions call using the link in your confirmation email.",
   robots: { index: false, follow: false },
 };
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
@@ -8,10 +9,11 @@ import { FALLBACK_ADMISSIONS_EMAIL, admissionsProcessSteps } from "@/components/
 import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Apply online",
   description: "Apply for a place at Tarbiyyah Global Academy, our online application form and what happens next.",
-};
+  path: "/admissions/apply",
+});
 
 export default async function ApplyPage() {
   const [settings, feeBands] = await Promise.all([getSiteSettings(), getFeeBands()]);

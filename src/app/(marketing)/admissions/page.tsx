@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
@@ -9,10 +10,11 @@ import { admissionsProcessSteps } from "@/components/admissions/applicationShare
 import { getSiteSettings } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Admissions",
   description: "How to apply to Tarbiyyah Global Academy, process, entry assessment, key dates, and the application form.",
-};
+  path: "/admissions",
+});
 
 export default async function AdmissionsPage() {
   const settings = await getSiteSettings();

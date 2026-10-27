@@ -14,8 +14,11 @@ import { PortalPreview } from "@/components/home/PortalPreview";
 import { AdmissionsProcessFlow } from "@/components/admissions/AdmissionsSteps";
 
 export const metadata: Metadata = pageMetadata({
-  title: "A specialist, quality education, rooted in faith",
-  description: "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified teachers: Qur'an, Arabic and Islamic Studies alongside the full national curriculum, from Year 1 to Year 11, taught with tarbiyyah at its heart.",
+  // Kept short: search results cut titles at about 60 characters and
+  // descriptions at about 160, and the template adds " | Tarbiyyah Global
+  // Academy" to the title.
+  title: "Specialist online Islamic school",
+  description: "Online Islamic school by Tarbiyyah Education Trust: live lessons with qualified teachers, Qur'an, Arabic and Islamic Studies alongside the national curriculum, Year 1 to 11.",
   path: "",
 });
 

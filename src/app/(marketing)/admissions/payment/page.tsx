@@ -6,6 +6,7 @@ import { PaymentProofClient } from "@/components/admissions-payment/PaymentProof
 
 export const metadata: Metadata = {
   title: "Upload Proof of Payment",
+  description: "Send us proof of your application fee payment using the link in your email.",
   robots: { index: false, follow: false },
 };
 

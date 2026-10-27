@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Container } from "@/components/Container";
@@ -7,10 +8,11 @@ import { BookingCalendar } from "@/components/booking/BookingCalendar";
 import { getFeeBands } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Book an Admissions Call",
   description: "Book a free 20-minute admissions call with our team, on Microsoft Teams, no obligation.",
-};
+  path: "/book-a-call",
+});
 
 const covers = [
   "The specialist curriculum, Qur'an, Arabic, Islamic Studies and the national curriculum, at your child's key stage",

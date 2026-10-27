@@ -30,7 +30,6 @@ export function PrelaunchHome() {
             <p className="mt-2 text-ink/70">Founding places are limited. Be the first to hear when admissions open and to receive invitations to our online open evenings.</p>
           </div>
           <RegisterInterestForm />
-          <p className="mt-4 text-center text-sm text-ink/65 lg:text-left">Our full website launches soon.</p>
         </div>
 
         <dl className="grid gap-6 text-left sm:grid-cols-3 lg:col-start-1 lg:row-start-2 lg:self-start">

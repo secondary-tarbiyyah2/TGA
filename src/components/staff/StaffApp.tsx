@@ -64,11 +64,13 @@ function SignIn() {
 
   return (
     <div className="max-w-sm">
-      <div className="mb-4 flex gap-2 text-sm">
-        <button type="button" onClick={() => setMode("password")} className={`rounded-full px-3 py-1 ${mode === "password" ? "bg-gold-500 text-ink-900" : "text-ink/65 underline"}`}>
+      <h1 className="font-serif text-h3 font-semibold text-ink">Staff sign in</h1>
+      <p className="mb-4 mt-1 text-sm text-ink/70">Admissions booking panel. Teaching and portal access is at the Learn portal.</p>
+      <div className="mb-4 flex gap-2 text-sm" role="group" aria-label="Sign-in method">
+        <button type="button" aria-pressed={mode === "password"} onClick={() => setMode("password")} className={`min-h-10 rounded-full px-3 py-1 ${mode === "password" ? "bg-gold-500 text-ink-900" : "text-ink/65 underline"}`}>
           Password
         </button>
-        <button type="button" onClick={() => setMode("link")} className={`rounded-full px-3 py-1 ${mode === "link" ? "bg-gold-500 text-ink-900" : "text-ink/65 underline"}`}>
+        <button type="button" aria-pressed={mode === "link"} onClick={() => setMode("link")} className={`min-h-10 rounded-full px-3 py-1 ${mode === "link" ? "bg-gold-500 text-ink-900" : "text-ink/65 underline"}`}>
           Email link
         </button>
       </div>
